@@ -132,6 +132,15 @@
             },
             {
                 "text": "There are green and black lizards! s_c realizes they're not real immediatelty and decided to come back to this loaction to collect fake lizards for future pranks on clanmates.",
+                "stat_trait": [
+                    "adventurous",
+                    "shameless",
+                    "sneaky",
+                    "strange",
+                    "troublesome",
+                    "chilish",
+                    "troublesome"
+                ],
                 "exp": 5,
                 "weight": 20
             },
@@ -139,14 +148,7 @@
                 "text": "s_c remembers seeing these green and black lizards being shown to {PRONOUN/s_c/object} by a kittypet before, who called them 'lego dragons'. s_c wonders if Legodragon would be a proper name for a warrior.",
                 "exp": 5,
                 "weight": 20,
-                "stat_trait": [
-                    "adventurous",
-                    "shameless",
-                    "sneaky",
-                    "strange",
-                    "troublesome",
-                    "chilish."
-                ]
+                "stat_skill": ["LORE,1"]
             }
         ],
         "fail_outcomes": [

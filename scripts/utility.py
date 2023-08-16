@@ -911,6 +911,7 @@ def history_text_adjust(text,
         text = text.replace("r_c", str(other_cat_rc.name))
     return text
 
+
 def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
     """
     This function is for adjusting the text of ongoing events
@@ -1100,9 +1101,6 @@ def ceremony_text_adjust(Cat,
     adjust_text = process_text(adjust_text, cat_dict)
 
     return adjust_text, random_living_parent, random_dead_parent
-
-
-
 
 
 def shorten_text_to_fit(name, length_limit, font_size=None, font_type="resources/fonts/NotoSans-Medium.ttf"):

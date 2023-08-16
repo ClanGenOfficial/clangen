@@ -25,23 +25,8 @@
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
-                        "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/s_c/object}. It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly.",
-                "exp": 10,
-                "weight": 5,
-                "herbs": ["random_herbs"],
-                "relationships": [
-                    {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 5
@@ -57,8 +42,8 @@
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 5
@@ -73,8 +58,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -5
@@ -89,8 +74,8 @@
                 "can_have_stat": ["r_c"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["p_l"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -5
@@ -109,7 +94,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [-1, -1],
+            "all apprentices": [-1, -1],
             "medicine cat": [1, 6],
             "healer cats": [1, 6],
             "normal adult": [-1, -1]
@@ -126,8 +111,8 @@
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 5
@@ -141,8 +126,8 @@
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 5
@@ -158,8 +143,8 @@
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["s_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 5
@@ -174,8 +159,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -5
@@ -190,8 +175,8 @@
                 "can_have_stat": ["r_c"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["s_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -5

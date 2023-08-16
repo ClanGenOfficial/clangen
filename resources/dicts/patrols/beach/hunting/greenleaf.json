@@ -353,8 +353,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol", "r_c"],
-                        "cats_from": ["clan", "clan", "patrol"],
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 5
@@ -367,8 +367,8 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol", "r_c"],
-                        "cats_from": ["clan", "clan", "patrol"],
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 5
@@ -379,14 +379,14 @@
                 "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the red fox nor her dependent cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
                 "exp": 30,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,3"],
+                "stat_skill": ["FIGHTER,2"],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "patrol", "s_c"],
-                        "cats_from": ["clan", "clan", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect", "trust"],
-                        "amount": 5
+                        "amount": 10
                     }
                 ]
             },
@@ -410,11 +410,11 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "patrol", "s_c"],
-                        "cats_from": ["clan", "clan", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect", "trust"],
-                        "amount": 5
+                        "amount": 10
                     }
                 ]
             }
@@ -438,10 +438,24 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply, the rest of the patrol have to rescue {PRONOUN/s_c/object} from the red vixen.",
                 "exp": 0,
                 "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "altruistic",
+                    "ambitious",
+                    "bloodthirsty",
+                    "bold",
+                    "confident",
+                    "daring",
+                    "fierce",
+                    "responsible",
+                    "righteous",
+                    "troublesome",
+                    "vengeful"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol", "r_c"],
-                        "cats_from": ["clan", "clan", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
@@ -460,8 +474,8 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol", "r_c"],
-                        "cats_from": ["clan", "clan", "patrol"],
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
@@ -486,8 +500,8 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol", "r_c"],
-                        "cats_from": ["clan", "clan", "patrol"],
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
@@ -498,9 +512,23 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up on the fight.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": [
+                    "adventurous",
+                    "altruistic",
+                    "ambitious",
+                    "bloodthirsty",
+                    "bold",
+                    "confident",
+                    "daring",
+                    "fierce",
+                    "responsible",
+                    "righteous",
+                    "troublesome",
+                    "vengeful"
+                ],
                 "injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["s_c"],
                         "injuries": ["big_bite_injury"],
                         "scars": ["NECKBITE"]
                     }
@@ -512,8 +540,8 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol", "r_c"],
-                        "cats_from": ["clan", "clan", "patrol"],
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
@@ -543,8 +571,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol", "r_c"],
-                        "cats_from": ["clan", "clan", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 5
@@ -557,8 +585,8 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol", "r_c"],
-                        "cats_from": ["clan", "clan", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 5
@@ -572,11 +600,11 @@
                 "stat_skill": ["FIGHTER,3"],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "patrol", "s_c"],
-                        "cats_from": ["clan", "clan", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect", "trust"],
-                        "amount": 5
+                        "amount": 10
                     }
                 ]
             },
@@ -600,8 +628,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "patrol", "s_c"],
-                        "cats_from": ["clan", "clan", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 5
@@ -616,7 +644,7 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol", "r_c"],
+                        "cats_to": ["patrol"],
                         "cats_from": ["clan", "clan", "patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
@@ -628,10 +656,24 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply, the rest of the patrol have to rescue {PRONOUN/s_c/object} from the red vixen.",
                 "exp": 0,
                 "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "altruistic",
+                    "ambitious",
+                    "bloodthirsty",
+                    "bold",
+                    "confident",
+                    "daring",
+                    "fierce",
+                    "responsible",
+                    "righteous",
+                    "troublesome",
+                    "vengeful"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol", "r_c"],
-                        "cats_from": ["clan", "clan", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
@@ -664,9 +706,23 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up on the fight.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": [
+                    "adventurous",
+                    "altruistic",
+                    "ambitious",
+                    "bloodthirsty",
+                    "bold",
+                    "confident",
+                    "daring",
+                    "fierce",
+                    "responsible",
+                    "righteous",
+                    "troublesome",
+                    "vengeful"
+                ],
                 "injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["s_c"],
                         "injuries": ["big_bite_injury"],
                         "scars": ["NECKBITE"]
                     }
@@ -674,8 +730,8 @@
                 "history_text": { "scar": "m_c carries a scar from a fight with a red vixen." },
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol", "r_c"],
-                        "cats_from": ["clan", "clan", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
@@ -720,7 +776,7 @@
                 "stat_skill": ["FIGHTER,3"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect", "trust"],
@@ -748,7 +804,7 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect", "trust"],
@@ -808,9 +864,23 @@
                 "text": "s_c is determined to win, but the red vixen is determined to live, and that makes all the difference. s_c ends up pinned in a defensible hiding spot, bleeding and terrified, until the vixen judges {PRONOUN/s_c/object} no longer a threat and continues on her way.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": [
+                    "adventurous",
+                    "altruistic",
+                    "ambitious",
+                    "bloodthirsty",
+                    "bold",
+                    "confident",
+                    "daring",
+                    "fierce",
+                    "responsible",
+                    "righteous",
+                    "troublesome",
+                    "vengeful"
+                ],
                 "injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["s_c"],
                         "injuries": ["big_bite_injury", "shock"],
                         "scars": ["THREE"]
                     }
@@ -822,7 +892,7 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect", "trust"],
@@ -853,9 +923,9 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
-                        "mutual": false,
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": 5
                     }
@@ -867,8 +937,8 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 5
@@ -882,8 +952,8 @@
                 "stat_skill": ["FIGHTER,3"],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 5
@@ -910,8 +980,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 5
@@ -926,8 +996,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
@@ -938,10 +1008,24 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply, the gray vixen slips past {PRONOUN/s_c/object} and flees into the maze of the sand dunes.",
                 "exp": 0,
                 "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "altruistic",
+                    "ambitious",
+                    "bloodthirsty",
+                    "bold",
+                    "confident",
+                    "daring",
+                    "fierce",
+                    "responsible",
+                    "righteous",
+                    "troublesome",
+                    "vengeful"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
@@ -974,9 +1058,23 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking {PRONOUN/s_c/object} ass over paws as she flees from the patrol.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": [
+                    "adventurous",
+                    "altruistic",
+                    "ambitious",
+                    "bloodthirsty",
+                    "bold",
+                    "confident",
+                    "daring",
+                    "fierce",
+                    "responsible",
+                    "righteous",
+                    "troublesome",
+                    "vengeful"
+                ],
                 "injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["s_c"],
                         "injuries": ["minor_injury"],
                         "scars": ["LEGBITE"]
                     }
@@ -984,8 +1082,8 @@
                 "history_text": { "scar": "m_c carries a scar from a fight with a gray vixen." },
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
@@ -1044,8 +1142,8 @@
                 "stat_skill": ["FIGHTER,3"],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 5
@@ -1072,8 +1170,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 5
@@ -1100,10 +1198,24 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply, the gray vixen slips past {PRONOUN/s_c/object} and flees into the maze of the sand dunes.",
                 "exp": 0,
                 "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "altruistic",
+                    "ambitious",
+                    "bloodthirsty",
+                    "bold",
+                    "confident",
+                    "daring",
+                    "fierce",
+                    "responsible",
+                    "righteous",
+                    "troublesome",
+                    "vengeful"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
@@ -1124,8 +1236,8 @@
                 "history_text": { "scar": "m_c carries a scar from a fight with a gray vixen." },
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
@@ -1136,9 +1248,23 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking {PRONOUN/s_c/object} ass over paws as she flees from the patrol.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": [
+                    "adventurous",
+                    "altruistic",
+                    "ambitious",
+                    "bloodthirsty",
+                    "bold",
+                    "confident",
+                    "daring",
+                    "fierce",
+                    "responsible",
+                    "righteous",
+                    "troublesome",
+                    "vengeful"
+                ],
                 "injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["s_c"],
                         "injuries": ["minor_injury"],
                         "scars": ["LEGBITE"]
                     }
@@ -1146,8 +1272,8 @@
                 "history_text": { "scar": "m_c carries a scar from a fight with a gray vixen." },
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
@@ -1248,6 +1374,20 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses them deeply, the gray vixen slips past {PRONOUN/s_c/object} and flees into the maze of the sand dunes.",
                 "exp": 0,
                 "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "altruistic",
+                    "ambitious",
+                    "bloodthirsty",
+                    "bold",
+                    "confident",
+                    "daring",
+                    "fierce",
+                    "responsible",
+                    "righteous",
+                    "troublesome",
+                    "vengeful"
+                ],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1284,9 +1424,23 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the stocky gray vixen is cunning, sinking her teeth into s_c to distract {PRONOUN/s_c/object} as she flees.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": [
+                    "adventurous",
+                    "altruistic",
+                    "ambitious",
+                    "bloodthirsty",
+                    "bold",
+                    "confident",
+                    "daring",
+                    "fierce",
+                    "responsible",
+                    "righteous",
+                    "troublesome",
+                    "vengeful"
+                ],
                 "injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["s_c"],
                         "injuries": ["big_bite_injury"],
                         "scars": ["THREE"]
                     }

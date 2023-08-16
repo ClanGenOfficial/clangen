@@ -1652,8 +1652,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 5
@@ -1665,10 +1665,11 @@
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["MEDIATOR,1"],
+                "can_have_stat": ["p_l"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 5
@@ -1683,8 +1684,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -5
@@ -1696,10 +1697,11 @@
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["troublesome", "childish"],
+                "can_have_stat": ["r_c"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -5
@@ -1734,8 +1736,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 5
@@ -1747,10 +1749,11 @@
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["MEDIATOR,1"],
+                "can_have_stat": ["p_l"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 5
@@ -1765,8 +1768,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -5
@@ -1778,10 +1781,11 @@
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["troublesome", "childish"],
+                "can_have_stat": ["r_c"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -5
@@ -1815,8 +1819,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 5
@@ -1830,8 +1834,8 @@
                 "stat_skill": ["MEDIATOR,1"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 5
@@ -1846,8 +1850,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -5
@@ -1861,8 +1865,8 @@
                 "stat_trait": ["troublesome", "childish"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -5
@@ -1897,8 +1901,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 5
@@ -1912,8 +1916,8 @@
                 "stat_skill": ["MEDIATOR,1"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 5
@@ -1928,8 +1932,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -5
@@ -1943,8 +1947,8 @@
                 "stat_trait": ["troublesome", "childish"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -5
@@ -1978,8 +1982,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 5
@@ -1993,8 +1997,8 @@
                 "stat_skill": ["MEDIATOR,1"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 5
@@ -2009,8 +2013,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -5
@@ -2024,8 +2028,8 @@
                 "stat_trait": ["troublesome", "childish"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -5
@@ -2060,8 +2064,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 5
@@ -2075,8 +2079,8 @@
                 "stat_skill": ["MEDIATOR,1"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 5
@@ -2091,8 +2095,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -5
@@ -2106,8 +2110,8 @@
                 "stat_trait": ["troublesome", "childish"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -5
@@ -2141,8 +2145,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 5
@@ -2156,8 +2160,8 @@
                 "stat_skill": ["MEDIATOR,1"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 5
@@ -2172,8 +2176,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -5
@@ -2187,8 +2191,8 @@
                 "stat_trait": ["troublesome", "childish"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -5
@@ -2223,8 +2227,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 5
@@ -2238,8 +2242,8 @@
                 "stat_skill": ["MEDIATOR,1"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 5
@@ -2254,8 +2258,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -5
@@ -2269,8 +2273,8 @@
                 "stat_trait": ["troublesome", "childish"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -5

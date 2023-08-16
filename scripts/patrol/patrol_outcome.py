@@ -198,18 +198,13 @@ class PatrolOutcome():
     def _allowed_stat_cat_specfic(self, kitty:Cat, patrol:'Patrol', allowed_specfic) -> bool:
         """Helper that handled specfic stat cat requriments. """
 
-        cat_number = len(patrol.patrol_cats)
-
-        if cat_number == 1:
-            # When you have a one cat patrol, no
-            # no filtering for random_cat and patrol_leader
-            # random cat and patrol leader will be the 
-            # same, and stat cat can also be the same cat
+        if "any" in allowed_specfic:
+            # Special allowed_specfic that allows all. 
             return True
         
         # With allowed_specfic empty, that means the stat can can be anyone that's not patrol leader
-        # or stat cat
-        if not allowed_specfic:
+        # or stat cat. This can
+        if not allowed_specfic or "no_pl_rc" in allowed_specfic:
             if kitty in (patrol.patrol_leader, patrol.patrol_random_cat):
                 return False
             return True
@@ -221,6 +216,9 @@ class PatrolOutcome():
             return True
         if "app1" in allowed_specfic and len(patrol.patrol_apprentices) >= 1 and \
                 kitty == patrol.patrol_apprentices[0]:
+            return True
+        if "app1" in allowed_specfic and len(patrol.patrol_apprentices) >= 2 and \
+                kitty == patrol.patrol_apprentices[1]:
             return True
         
         return False
@@ -235,7 +233,10 @@ class PatrolOutcome():
         # Grab any specfic stat cat requirements: 
         allowed_specfic = [x for x in self.can_have_stat if x in 
                            ("r_c", "p_l", "app1")]
-        if not allowed_specfic and len(patrol.patrol_cats) == 2:
+        
+        # Special default behavior for patrols less than two cats.
+        # Patrol leader is the only one allowed to be stat_cat in patrols equal to or less than than two cats 
+        if not allowed_specfic and len(patrol.patrol_cats) <= 2:
             allowed_specfic = ["p_l"]
 
         
@@ -358,7 +359,7 @@ class PatrolOutcome():
             return ""
         
         body = True
-        if "no_body" is self.dead_cats:
+        if "no_body" in self.dead_cats:
             body=False
         
         results = []
@@ -688,7 +689,7 @@ class PatrolOutcome():
     def _handle_herbs(self, patrol:'Patrol') -> str:
         """ Handle giving herbs """
         
-        if not self.herbs:
+        if not self.herbs or game.clan.game_mode == "classic":
             return ""
         
         large_bonus = False
@@ -743,7 +744,7 @@ class PatrolOutcome():
         if not FRESHKILL_ACTIVE:
             return
         
-        if not self.prey:
+        if not self.prey or game.clan.game_mode == "classic":
             return ""
         
         basic_amount = PREY_REQUIREMENT["warrior"]
@@ -846,7 +847,7 @@ class PatrolOutcome():
             if sub[0].moons < 3:
                 # Search for parent
                 for sub_sub in patrol.new_cats:
-                    if sub_sub[0] != sub[0] and (sub_sub[0].gender == "female" or game.settings['same sex breeding']) \
+                    if sub_sub[0] != sub[0] and (sub_sub[0].gender == "female" or game.settings['same sex birth']) \
                             and sub_sub[0].ID in (sub[0].parent1, sub[0].parent2) and not (sub_sub[0].dead or sub_sub[0].outside):
                         sub_sub[0].get_injured("recovering from birth")
                         break # Break - only one parent ever gives birth
@@ -1018,7 +1019,7 @@ class PatrolOutcome():
     def __handle_scarring(self, cat:Cat, scar_list:str, patrol:'Patrol') -> str:
         """Add scar and scar history. Returns scar given """
         
-        if cat.pelt.scars >= 4:
+        if len(cat.pelt.scars) >= 4:
             return None
         
         scar_list = [x for x in scar_list if x in Pelt.scars1 + Pelt.scars2 + Pelt.scars3 

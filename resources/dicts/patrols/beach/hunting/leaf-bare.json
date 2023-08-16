@@ -503,9 +503,9 @@
                 "prey": ["small"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
                         "values": ["romantic", "comfort", "trust"],
                         "amount": 5
                     }
@@ -519,8 +519,8 @@
                 "prey": ["small"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["s_c"],
                         "mutual": false,
                         "values": ["romantic", "comfort", "trust"],
                         "amount": 5
@@ -535,8 +535,8 @@
                 "prey": ["small"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["s_c"],
                         "mutual": false,
                         "values": ["romantic", "comfort", "trust"],
                         "amount": 5
@@ -559,8 +559,8 @@
                 "history_text": { "scar": "m_c caught a chill while hunting in leaf-bare." },
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": false,
                         "values": ["romantic", "comfort", "trust"],
                         "amount": -5
