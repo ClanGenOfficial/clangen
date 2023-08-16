@@ -217,7 +217,7 @@ class PatrolOutcome():
         if "app1" in allowed_specfic and len(patrol.patrol_apprentices) >= 1 and \
                 kitty == patrol.patrol_apprentices[0]:
             return True
-        if "app1" in allowed_specfic and len(patrol.patrol_apprentices) >= 2 and \
+        if "app2" in allowed_specfic and len(patrol.patrol_apprentices) >= 2 and \
                 kitty == patrol.patrol_apprentices[1]:
             return True
         
