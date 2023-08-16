@@ -1481,8 +1481,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": false,
                         "values": ["romantic", "comfort", "trust"],
                         "amount": 5
@@ -1496,8 +1496,8 @@
                 "stat_skill": ["SPEAKER,2"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": false,
                         "values": ["romantic", "comfort", "trust"],
                         "amount": 5
@@ -1511,8 +1511,8 @@
                 "stat_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": false,
                         "values": ["romantic", "comfort", "trust"],
                         "amount": 5
@@ -1527,8 +1527,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": false,
                         "values": ["romantic", "comfort", "trust"],
                         "amount": -5

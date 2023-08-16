@@ -1706,13 +1706,14 @@
         "biome": ["forest"],
         "season": ["Any"],
         "types": ["herb_gathering"],
-        "tags": ["romantic", "six_apprentices"],
+        "tags": ["romantic", "rom_two_apps"],
         "patrol_art": "med_general_intro",
         "min_cats": 6,
         "max_cats": 6,
         "min_max_status": {
             "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6]
+            "healer cats": [1, 6],
+            "all apprentices": [6, 6]
         },
         "weight": 20,
         "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up {PRONOUN/app2/poss} face into a stupid expression around the stick {PRONOUN/app2/subject} {VERB/app2/hold/holds} in {PRONOUN/app2/poss} mouth.",
@@ -1726,15 +1727,15 @@
                 "herbs": ["cobwebs"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["dislike"],
                         "amount": -10
@@ -1748,15 +1749,15 @@
                 "herbs": ["many_herbs", "cobwebs"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["dislike"],
                         "amount": -10
@@ -1771,8 +1772,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -10
@@ -2160,12 +2161,12 @@
             "all apprentices": [2, 2]
         },
         "weight": 20,
-        "intro_text": "p_l comes up to meet app2, quietly apologising about app2 being sent to help p_l collect moss.",
+        "intro_text": "p_l comes up to meet r_c, quietly apologising about r_c being sent to help p_l collect moss.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "There's nothing to apologize for! app2 bumps p_l's shoulder affectionately, brushing past {PRONOUN/p_l/object} with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
+                "text": "There's nothing to apologize for! r_c bumps p_l's shoulder affectionately, brushing past {PRONOUN/p_l/object} with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss"],
@@ -2187,7 +2188,7 @@
                 ]
             },
             {
-                "text": "app2 seems somewhat irritated at first, but as p_l keeps chatting to {PRONOUN/app2/object}, {PRONOUN/app2/subject} {VERB/app2/start/starts} to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp.",
+                "text": "app2 seems somewhat irritated at first, but as p_l keeps chatting to {PRONOUN/r_c/object}, {PRONOUN/r_c/subject} {VERB/r_c/start/starts} to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "moss"],
@@ -2211,7 +2212,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app2 shrugs, tailtip twitching with irritation. It's fine, it's totally not like {PRONOUN/app2/subject}'d prefer to be hunting, doing something actually useful... That attitude, unfortunately, is present through the entire patrol, and each apprentice is too snappy and standoffish to manage gathering anything other than negative thoughts.",
+                "text": "r_c shrugs, tailtip twitching with irritation. It's fine, it's totally not like {PRONOUN/r_c/subject}'d prefer to be hunting, doing something actually useful... That attitude, unfortunately, is present through the entire patrol, and each apprentice is too snappy and standoffish to manage gathering anything other than negative thoughts.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2238,7 +2239,7 @@
         "biome": ["forest"],
         "season": ["Any"],
         "types": ["herb_gathering"],
-        "tags": ["romantic"],
+        "tags": ["romantic", "rom_two_apps"],
         "patrol_art": "med_general_intro",
         "min_cats": 3,
         "max_cats": 3,
@@ -2249,26 +2250,26 @@
             "all apprentices": [3, 3]
         },
         "weight": 20,
-        "intro_text": "As the apprentices head out to collect moss, app2 screws up {PRONOUN/app2/poss} face into a stupid expression at the menial nature of the task.",
+        "intro_text": "As the apprentices head out to collect moss, app3 screws up {PRONOUN/app3/poss} face into a stupid expression at the menial nature of the task.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Though the other cat of their group doesn't look thrilled, app2 insists there's nothing to apologize for. app2 bumps p_l's shoulder affectionately, brushing past {PRONOUN/p_l/object} with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
+                "text": "Though the other cat of their group doesn't look thrilled, app2 insists there's nothing to apologize for. app2 bumps app1's shoulder affectionately, brushing past {PRONOUN/app1/object} with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["dislike"],
                         "amount": -10
@@ -2276,21 +2277,21 @@
                 ]
             },
             {
-                "text": "Out of the cats in the group, app2 is the one that seems irritated about it at first. As p_l keeps chatting to {PRONOUN/app2/object}, however, {PRONOUN/app2/subject} {VERB/app2/start/starts} to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp.",
+                "text": "Out of the cats in the group, app2 is the one that seems irritated about it at first. As app1 keeps chatting to {PRONOUN/app2/object}, however, {PRONOUN/app2/subject} {VERB/app2/start/starts} to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "moss"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["dislike"],
                         "amount": -10
@@ -2305,15 +2306,15 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -10
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["dislike"],
                         "amount": 10
@@ -2327,7 +2328,7 @@
         "biome": ["forest"],
         "season": ["Any"],
         "types": ["herb_gathering"],
-        "tags": ["romantic"],
+        "tags": ["romantic", "rom_two_apps"],
         "patrol_art": "med_general_intro",
         "min_cats": 4,
         "max_cats": 4,
@@ -2338,26 +2339,26 @@
             "all apprentices": [4, 4]
         },
         "weight": 20,
-        "intro_text": "As the apprentices head out to collect moss, app2 screws up their {PRONOUN/app2/poss} into a stupid expression at the menial nature of the task.",
+        "intro_text": "As the apprentices head out to collect moss, app3 screws up their {PRONOUN/app3/poss} into a stupid expression at the menial nature of the task.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "Though the others of their group don't look thrilled, app2 insists there's nothing to apologize for. app2 bumps p_l's shoulder affectionately, brushing past {PRONOUN/p_l/object} with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
+                "text": "Though the others of their group don't look thrilled, app2 insists there's nothing to apologize for. app2 bumps app1's shoulder affectionately, brushing past {PRONOUN/app1/object} with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["dislike"],
                         "amount": -10
@@ -2365,21 +2366,21 @@
                 ]
             },
             {
-                "text": "Out of the cats in the group, app2 is the one that seems irritated about it at first. As p_l keeps chatting to {PRONOUN/app2/object}, however, {PRONOUN/app2/subject} {VERB/app2/start/starts} to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp.",
+                "text": "Out of the cats in the group, app2 is the one that seems irritated about it at first. As app1 keeps chatting to {PRONOUN/app2/object}, however, {PRONOUN/app2/subject} {VERB/app2/start/starts} to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "moss"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["dislike"],
                         "amount": -10
@@ -2394,15 +2395,15 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -10
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["dislike"],
                         "amount": 10
@@ -2594,7 +2595,7 @@
         "biome": ["forest"],
         "season": ["Any"],
         "types": ["herb_gathering"],
-        "tags": ["romantic"],
+        "tags": ["romantic", "rom_two_apps"],
         "patrol_art": "med_general_intro",
         "min_cats": 5,
         "max_cats": 5,
@@ -2605,26 +2606,26 @@
             "all apprentices": [5, 5]
         },
         "weight": 20,
-        "intro_text": "As the apprentices head out to collect moss, app2 screws up {PRONOUN/app2/poss} face into a stupid expression at the menial nature of the task.",
+        "intro_text": "As the apprentices head out to collect moss, app3 screws up {PRONOUN/app3/poss} face into a stupid expression at the menial nature of the task.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "Though the others of their group don't look thrilled, app2 insists there's nothing to apologize for. app2 bumps p_l's shoulder affectionately, brushing past {PRONOUN/p_l/object} with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
+                "text": "Though the others of their group don't look thrilled, app2 insists there's nothing to apologize for. app2 bumps app1's shoulder affectionately, brushing past {PRONOUN/app1/object} with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["dislike"],
                         "amount": -10
@@ -2632,21 +2633,21 @@
                 ]
             },
             {
-                "text": "Out of the cats in the group, app2 is the one that seems irritated about it at first. As p_l keeps chatting to {PRONOUN/app2/object}, however, {PRONOUN/app2/subject} {VERB/app2/start/starts} to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp.",
+                "text": "Out of the cats in the group, app2 is the one that seems irritated about it at first. As app1 keeps chatting to {PRONOUN/app2/object}, however, {PRONOUN/app2/subject} {VERB/app2/start/starts} to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "moss"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["dislike"],
                         "amount": -10
@@ -2661,15 +2662,15 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -10
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["dislike"],
                         "amount": 10
@@ -2772,36 +2773,37 @@
         "biome": ["forest"],
         "season": ["Any"],
         "types": ["herb_gathering"],
-        "tags": ["romantic", "six_apprentices"],
+        "tags": ["romantic"],
         "patrol_art": "med_general_intro",
         "min_cats": 6,
         "max_cats": 6,
         "min_max_status": {
             "apprentice": [1, 6],
             "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6]
+            "healer cats": [1, 6],
+            "all apprentices": [6, 6]
         },
         "weight": 20,
-        "intro_text": "As the apprentices head out to collect moss, app2 screws up {PRONOUN/app2/poss} face into a stupid expression at the menial nature of the task.",
+        "intro_text": "As the apprentices head out to collect moss, app3 screws up {PRONOUN/app3/poss} face into a stupid expression at the menial nature of the task.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "Though the others of their group don't look thrilled, app2 insists there's nothing to apologize for. app2 bumps p_l's shoulder affectionately, brushing past {PRONOUN/p_l/object} with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
+                "text": "Though the others of their group don't look thrilled, app2 insists there's nothing to apologize for. app2 bumps app1's shoulder affectionately, brushing past {PRONOUN/app1/object} with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["dislike"],
                         "amount": -10
@@ -2809,14 +2811,14 @@
                 ]
             },
             {
-                "text": "Out of the cats in the group, app2 is the one that seems irritated about it at first. As p_l keeps chatting to {PRONOUN/app2/object}, however, {PRONOUN/app2/subject} {VERB/app2/start/starts} to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp.",
+                "text": "Out of the cats in the group, app2 is the one that seems irritated about it at first. As app1 keeps chatting to {PRONOUN/app2/object}, however, {PRONOUN/app2/subject} {VERB/app2/start/starts} to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "moss"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 10
@@ -2838,15 +2840,15 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -10
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["dislike"],
                         "amount": 10

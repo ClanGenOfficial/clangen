@@ -543,7 +543,7 @@
                     {
                         "cats_to": ["app1"],
                         "cats_from": ["app2"],
-                        "mutual": false,
+                        "mutual": true,
                         "values": ["romantic", "platonic", "comfort"],
                         "amount": 5
                     }
@@ -557,7 +557,7 @@
                     {
                         "cats_to": ["app1"],
                         "cats_from": ["app2"],
-                        "mutual": false,
+                        "mutual": true,
                         "values": ["romantic", "platonic", "comfort"],
                         "amount": 5
                     }
@@ -578,12 +578,12 @@
                     "thoughtful",
                     "wise"
                 ],
-                "can_have_stat": ["app"],
+                "can_have_stat": ["app2"],
                 "relationships": [
                     {
                         "cats_to": ["app1"],
                         "cats_from": ["app2"],
-                        "mutual": false,
+                        "mutual": true,
                         "values": ["romantic", "platonic", "comfort"],
                         "amount": 5
                     }

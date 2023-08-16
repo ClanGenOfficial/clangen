@@ -190,8 +190,8 @@
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 5
@@ -203,11 +203,12 @@
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
+                "can_have_stat": ["r_c"],
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 5
@@ -222,8 +223,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -5
@@ -235,10 +236,11 @@
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["troublesome", "childish"],
+                "can_have_stat": ["r_c"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -5
@@ -274,8 +276,8 @@
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 5
@@ -289,8 +291,8 @@
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 5
@@ -302,11 +304,12 @@
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1", "MEDIATOR,1"],
+                "can_have_stat": ["r_c"],
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 5
@@ -321,8 +324,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -5
@@ -333,11 +336,12 @@
                 "text": "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
+                "can_have_stat": ["r_c"],
                 "stat_trait": ["troublesome", "childish"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "s_c"],
-                        "cats_from": ["r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -5

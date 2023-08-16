@@ -1246,7 +1246,7 @@
                 "weight": 5
             },
             {
-                "text": "Tail lashing excitedly, app1 hunts in the strange, forbidden land, ducking around corners and crawling over gardens with {PRONOUN/app1/poss} belly low to the ground. A successful, sneaky hunt.",
+                "text": "Tail lashing excitedly, s_c hunts in the strange, forbidden land, ducking around corners and crawling over gardens with {PRONOUN/app1/poss} belly low to the ground. A successful, sneaky hunt.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1281,7 +1281,7 @@
                 "can_have_stat": ["app"]
             },
             {
-                "text": "Carelessly, s_c is seen by Twolegs, and taken from c_n.",
+                "text": "Carelessly, r_c is seen by Twolegs, and taken from c_n.",
                 "exp": 0,
                 "weight": 10,
                 "lost_cats": ["r_c"]
@@ -1312,9 +1312,9 @@
                 "prey": ["medium"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
                         "values": ["romantic", "platonic"],
                         "amount": 5
                     }
@@ -1326,9 +1326,9 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
                         "values": ["romantic", "platonic"],
                         "amount": 5
                     }
@@ -1341,9 +1341,9 @@
                 "stat_skill": ["CLEVER,1"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
                         "values": ["romantic", "platonic"],
                         "amount": 5
                     }
@@ -1365,9 +1365,9 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
                         "values": ["romantic", "platonic"],
                         "amount": 5
                     }
@@ -1381,9 +1381,9 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
                         "values": ["romantic", "platonic"],
                         "amount": -5
                     }
@@ -1406,9 +1406,9 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
                         "values": ["romantic", "platonic"],
                         "amount": -5
                     }
@@ -1421,9 +1421,9 @@
                 "lost_cats": ["r_c"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
                         "values": ["romantic", "platonic"],
                         "amount": -5
                     }
@@ -1445,7 +1445,7 @@
             "all apprentices": [2, 2]
         },
         "weight": 20,
-        "intro_text": "Boldly, eyes daring app1 to say no, app2 suggests hunting by the Twoleg dens. Where apprentices are definitely not allowed.",
+        "intro_text": "Boldly, eyes daring p_l to say no, r_c suggests hunting by the Twoleg dens. Where apprentices are definitely not allowed.",
         "decline_text": "On second thought, they decide to reline their nests today instead.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -1456,30 +1456,30 @@
                 "prey": ["medium"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
                         "values": ["romantic", "platonic"],
                         "amount": 5
                     }
                 ]
             },
             {
-                "text": "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for app2. {PRONOUN/app2/subject/CAP} {VERB/app2/fetch/fetches} app1, and both apprentices loudly proclaim how much better fresh-kill is, but both are also wide eyed and thrilled by the experience.",
+                "text": "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for r_c. {PRONOUN/r_c/subject/CAP} {VERB/r_c/fetch/fetches} p_l, and both apprentices loudly proclaim how much better fresh-kill is, but both are also wide eyed and thrilled by the experience.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
                         "values": ["romantic", "platonic"],
                         "amount": 5
                     }
                 ]
             },
             {
-                "text": "Tail lashing excitedly, app1 hunts in the strange, forbidden land, ducking around corners and crawling over gardens with {PRONOUN/app1/poss} belly low to the ground. app2 tries to be even sneakier, and so app1 ups {PRONOUN/app1/poss} game, until they're both probably the most obvious pair of cats in the neighborhood.",
+                "text": "Tail lashing excitedly, p_l hunts in the strange, forbidden land, ducking around corners and crawling over gardens with {PRONOUN/p_l/poss} belly low to the ground. r_c tries to be even sneakier, and so p_l ups {PRONOUN/p_l/poss} game, until they're both probably the most obvious pair of cats in the neighborhood.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1492,12 +1492,12 @@
                     "sneaky",
                     "strange"
                 ],
-                "can_have_stat": ["app"],
+                "can_have_stat": ["r_c"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
                         "values": ["romantic", "platonic"],
                         "amount": 5
                     }
@@ -1506,14 +1506,14 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Carelessly, app2 is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, {PRONOUN/app2/subject} {VERB/app2/hear/hears} app1 yowling from outside, and the two cats manage to craft an escape plan through a broken window. Shivering, app2 presses {PRONOUN/app1/poss} pelt against app1 as they pad home.",
+                "text": "Carelessly, p_l is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} r_c yowling from outside, and the two cats manage to craft an escape plan through a broken window. Shivering, p_l presses {PRONOUN/p_l/poss} pelt against r_c as they pad home.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
                         "values": ["romantic", "platonic"],
                         "amount": -5
                     }
@@ -1534,27 +1534,26 @@
                     "thoughtful",
                     "wise"
                 ],
-                "can_have_stat": ["app"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
                         "values": ["romantic", "platonic"],
                         "amount": -5
                     }
                 ]
             },
             {
-                "text": "Carelessly, app1 is seen by Twolegs, and taken from c_n.",
+                "text": "Carelessly, r_c is seen by Twolegs, and taken from c_n.",
                 "exp": 0,
                 "weight": 10,
                 "lost_cats": ["r_c"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
                         "values": ["romantic", "platonic"],
                         "amount": -5
                     }
@@ -2301,6 +2300,12 @@
                 "text": "Terror freezes s_c as the massive fox sees {PRONOUN/s_c/object}, and comes to investigate, its distorted stretched legs carrying it smoothly through the grass. As the massive nose, as big as app1's entire head, wuffles closer, app1 desperately swipes {PRONOUN/s_c/poss} claws. {PRONOUN/s_c/poss/CAP} screw {PRONOUN/s_c/poss} eyes shut at the outraged yelp, and feel {PRONOUN/s_c/self} being taken up and tossed by those gaping jaws. {PRONOUN/s_c/subject/CAP} {VERB/s_c/tense/tenses}, waiting for death to descend, and wait, and... waiting?",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": [
+                    "nervious",
+                    "insecure",
+                    "grumpy",
+                    "calm"
+                ],
                 "injury": [
                     {
                         "cats": ["app1"],

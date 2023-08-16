@@ -1952,7 +1952,8 @@
         "max_cats": 6,
         "min_max_status": {
             "apprentice": [1, 6],
-            "all apprentices": [2, 2]
+            "all apprentices": [2, 2],
+            "normal adult": [1, 6]
         },
         "weight": 20,
         "intro_text": "The patrol heads out near dawn, taking advantage of the cooler temperatures before the sun rises to it's full strength. However, app1 seems more focused on app2 than the pursuit of prey.",
@@ -1968,7 +1969,7 @@
                     {
                         "cats_to": ["app1"],
                         "cats_from": ["app2"],
-                        "mutual": false,
+                        "mutual": true,
                         "values": ["romantic", "respect"],
                         "amount": 5
                     }
@@ -1983,7 +1984,7 @@
                     {
                         "cats_to": ["app1"],
                         "cats_from": ["app2"],
-                        "mutual": false,
+                        "mutual": true,
                         "values": ["romantic", "respect"],
                         "amount": 5
                     }
@@ -2002,12 +2003,13 @@
                     "shameless",
                     "troublesome"
                 ],
+                "can_have_stat": ["app1"],
                 "prey": ["medium"],
                 "relationships": [
                     {
                         "cats_to": ["app1"],
                         "cats_from": ["app2"],
-                        "mutual": false,
+                        "mutual": true,
                         "values": ["romantic", "respect"],
                         "amount": 5
                     }
@@ -2023,7 +2025,7 @@
                     {
                         "cats_to": ["app1"],
                         "cats_from": ["app2"],
-                        "mutual": false,
+                        "mutual": true,
                         "values": ["romantic", "respect"],
                         "amount": -5
                     }
