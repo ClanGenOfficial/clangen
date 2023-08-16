@@ -147,6 +147,7 @@ class PatrolOutcome():
                     exp=_d.get("exp"),
                     stat_skill=_d.get("stat_skill"),
                     stat_trait=_d.get("stat_trait"),
+                    can_have_stat=_d.get("can_have_stat"),
                     dead_cats=_d.get("dead_cats"),
                     injury=_d.get("injury"),
                     lost_cats=_d.get("lost_cats"),
@@ -232,7 +233,7 @@ class PatrolOutcome():
         
         # Grab any specfic stat cat requirements: 
         allowed_specfic = [x for x in self.can_have_stat if x in 
-                           ("r_c", "p_l", "app1")]
+                           ("r_c", "p_l", "app1", "app2", "any", "not_pl_rc")]
         
         # Special default behavior for patrols less than two cats.
         # Patrol leader is the only one allowed to be stat_cat in patrols equal to or less than than two cats 
@@ -1007,9 +1008,13 @@ class PatrolOutcome():
         
         # Option to override backstory if added
         for _tag in attribute_list:
-            match = re.match(r"backstory:(.+?)", _tag)
-            if match and match.group(1) in BACKSTORIES["backstories"]:
-                chosen_backstory = match.group(1)
+            match = re.match(r"backstory:(.+)", _tag)
+            if match:
+                stor = [x for x in match.group(1).split(",") if x in BACKSTORIES["backstories"]]
+                if not stor:
+                    continue
+                
+                chosen_backstory = choice(stor)
                 break
         
         # LITTER

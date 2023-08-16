@@ -2131,5 +2131,126 @@
                 "outsider_rep": -2
             }
         ]
+    },
+    {
+        "patrol_id": "gen_bord_app_otherclanapp1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["new_cat"],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "The patrol comes across a o_c_n apprentice, waiting quietly at the border. When the apprentices notices the patrol, they press themselves to the ground, begging to join c_n.",
+        "decline_text": "This seems like a o_c_n problem. They order the apprentice to go back home and continue the patrol.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "The patrol brings the apprentice back to camp, where {PRONOUN/n_c:0/subject} {VERB/n_c:0/are/is} accepted into the clan. Although, this doesn't help relations with o_c_n.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["status:apprentice", "backstory:otherclan2"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "other_clan_rep": -1
+            },
+            {
+                "text": "The patrol brings the apprentice back to camp. At first, the clan wants to send {PRONOUN/n_c:0/object} home, but {PRONOUN/n_c:0/subject} {VERB/n_c:0/refuse/refuses} to leave. Reluctantly, c_n lets {PRONOUN/n_c:0/subject} stay. o_c_n is not pleased.",
+                "exp": 10,
+                "weight": 10,
+                "new_cat": [
+                    ["status:apprentice", "backstory:otherclan2"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "other_clan_rep": -1
+            },
+            {
+                "text": "s_c is eager to steal an o_c_n's apprentice right out from under their noses. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stick/sticks} close to the apprentice on their way back to camp. At first, the clan is unsure, but s_c vouches for n_c:0, and {PRONOUN/n_c:0/subject} are allowed to join the clan.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": ["ambitious", "daring", "bold", "fierce", "bloodthirsty", "troublesome"],
+                "can_have_stat": ["any"],
+                "new_cat": [
+                    ["status:apprentice", "backstory:otherclan2"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": ["platonic", "trust"],
+                        "amount": 6
+                    }
+                ],
+                "other_clan_rep": -1
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol brings the apprentice back to camp. However, c_n doesn't want to sully relations with o_c_n, and the apprentice is escorted home.",
+                "exp": 0,
+                "weight": 20,
+                "other_clan_rep": 0
+            },
+            {
+                "text": "The patrol brings the apprentice, back to camp. However, the clan is unwelcoming, and the apprentice slips out in the middle of the night, dejected.",
+                "exp": 0,
+                "weight": 5,
+                "other_clan_rep": 0
+            },
+            {
+                "text": "s_c knows accepting this apprentice will cause conflict with o_c_n, and c_n can't risk a war. Still, {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to help. {PRONOUN/s_c/subject/CAP} {VERB/s_c/subject/sit/sits} with the apprentice for a while, listening to their problems and offering advice. The apprentice returns home with a new prespective.",
+                "exp": 5,
+                "weight": 5,
+                "stat_skill": ["MEDIATOR,2", "SPEAKER,2"],
+                "can_have_stat": ["any"],
+                "other_clan_rep": 1
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "This apprentice is clearly a spy, sent by o_c_n to weaken c_n. The patrol drives the apprentice away, but they put up a good fight.",
+                "exp": 0,
+                "weight": 20,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["battle_injury"]
+                    }
+                ],
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "This apprentice is clearly a spy, sent by o_c_n to weaken c_n. The patrol sends them home, bleeding from a few new scratches.",
+                "exp": 10,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     }
 ]
