@@ -883,7 +883,7 @@ class PatrolOutcome():
             gender = "male"
         elif "female" in attribute_list:
             gender = "female"
-        elif "gave_birth" in attribute_list and not game.settings["same sex birth"]:
+        elif "can_birth" in attribute_list and not game.settings["same sex birth"]:
             gender = "female"
         else:
             gender = None
@@ -938,9 +938,6 @@ class PatrolOutcome():
                 chosen_backstory = match.group(1)
                 break
         
-        # Is the cat dead?
-        alive = "dead" not in attribute_list
-        
         #Grabs any relations. Note that any relations to this cat must be generated first! 
         parents = []
         for _tag in attribute_list:
@@ -970,7 +967,13 @@ class PatrolOutcome():
             outside = True
             status = cat_type
             new_name = False
-            thought = choice(["Is curious about the new cats they just meet."])
+            thought = "Is wondering about the new cats they just meet."
+            
+        # Is the cat dead?
+        alive = True
+        if "dead" in attribute_list:
+            alive = False
+            thought = "Explores a new starry world"
         
         # Biological parents can be added if they are created before this cat
         parent1 = None

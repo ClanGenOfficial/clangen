@@ -396,8 +396,6 @@ class Cat():
         body - defaults to True, use this to mark if the body was recovered so
         that grief messages will align with body status
 
-        died_by_condition - defaults to False, use this to mark if the cat is dying via a condition.
-
         May return some additional text to add to the death event.
         """
         self.injuries.clear()

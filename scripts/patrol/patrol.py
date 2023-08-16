@@ -545,7 +545,7 @@ class Patrol():
                     print(f"Issue with status limits: {patrol.patrol_id}")
                     continue
                 
-                if not (num[0] <= self.patrol_statuses.get(sta, 0) <= num[1]):
+                if not (num[0] <= self.patrol_statuses.get(sta, -1) <= num[1]):
                     flag = True
                     break
             if flag:
