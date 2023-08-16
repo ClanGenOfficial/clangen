@@ -1091,22 +1091,6 @@
             {
                 "text": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see app1 holding one of {PRONOUN/app1/poss} paws off the ground. It seems that the apprentice stepped on a thorn. Ouch! {PRONOUN/app1/subject/CAP}'ll have to go back to camp and fix that up.",
                 "exp": 0,
-                "weight": 20
-            },
-            {
-                "text": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see app1 holding one of {PRONOUN/app1/poss} paws off the ground. It seems that the apprentice stepped on a thorn. Ouch! {PRONOUN/app1/subject/CAP}'ll have to go back to camp and fix that up.",
-                "exp": 0,
-                "weight": 20
-            },
-            {
-                "text": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see app1 holding one of {PRONOUN/app1/poss} paws off the ground. It seems that the apprentice stepped on a thorn. Ouch! {PRONOUN/app1/subject/CAP}'ll have to go back to camp and fix that up.",
-                "exp": 0,
-                "weight": 10,
-                "dead_cats": ["r_c"]
-            },
-            {
-                "text": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see app1 holding one of {PRONOUN/app1/poss} paws off the ground. It seems that the apprentice stepped on a thorn. Ouch! {PRONOUN/app1/subject/CAP}'ll have to go back to camp and fix that up.",
-                "exp": 0,
                 "weight": 10,
                 "injury": [
                     {
@@ -1154,23 +1138,6 @@
             }
         ],
         "fail_outcomes": [
-            {
-                "text": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see r_c holding one of {PRONOUN/r_c/poss} paws off the ground. It seems that the other cat stepped on a thorn. Ouch! {PRONOUN/r_c/subject/CAP}'ll have to go back to camp and fix that up.",
-                "exp": 0,
-                "weight": 20
-            },
-            {
-                "text": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see r_c holding one of {PRONOUN/r_c/poss} paws off the ground. It seems that the other cat stepped on a thorn. Ouch! {PRONOUN/r_c/subject/CAP}'ll have to go back to camp and fix that up.",
-                "exp": 0,
-                "weight": 20
-            },
-            {
-                "text": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see r_c holding one of {PRONOUN/r_c/poss} paws off the ground. It seems that the other cat stepped on a thorn. Ouch! {PRONOUN/r_c/subject/CAP}'ll have to go back to camp and fix that up.",
-                "exp": 0,
-                "weight": 10,
-                "dead_cats": ["r_c"],
-                "history_text": { "scar": "m_c was scarred after stepping on a thorn." }
-            },
             {
                 "text": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see r_c holding one of {PRONOUN/r_c/poss} paws off the ground. It seems that the other cat stepped on a thorn. Ouch! {PRONOUN/r_c/subject/CAP}'ll have to go back to camp and fix that up.",
                 "exp": 0,

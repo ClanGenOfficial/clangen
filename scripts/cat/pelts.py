@@ -577,7 +577,7 @@ class Pelt():
             if chosen_white:
                 chosen_pelt = "TwoColour"
             else:
-                chosen_white = "SingleColour"
+                chosen_pelt = "SingleColour"
         elif chosen_pelt == "Calico":
             if not chosen_white:
                 chosen_pelt = "Tortie"
