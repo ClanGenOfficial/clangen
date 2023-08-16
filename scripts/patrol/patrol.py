@@ -67,6 +67,8 @@ class Patrol():
             game.settings.get('disasters')
         )
         
+        print(f'Total Number of Possible Patrols | normal: {len(final_patrols)}, romantic: {len(final_romance_patrols)} ')
+        
         if final_patrols:
             normal_event_choice = choices(final_patrols, weights=[x.weight for x in final_patrols])[0]
         else:
@@ -550,7 +552,7 @@ class Patrol():
                     print(f"Issue with status limits: {patrol.patrol_id}")
                     continue
                 
-                if not (num[0] <= self.patrol_statuses.get(sta, 0) <= num[1]):
+                if not (num[0] <= self.patrol_statuses.get(sta, -1) <= num[1]):
                     flag = True
                     break
             if flag:
@@ -658,9 +660,7 @@ class Patrol():
         
         final_event, success = self.calculate_success(chosen_success, chosen_failure)
         
-        print(f"PATROL ID: {self.patrol_event.patrol_id}")
-        print(f"Success: {success}")
-        
+        print(f"PATROL ID: {self.patrol_event.patrol_id} | SUCCESS: {success}")        
         
         # Run the chosen outcome
         return final_event.execute_outcome(self)

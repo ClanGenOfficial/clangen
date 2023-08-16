@@ -404,7 +404,7 @@ def create_new_cat(Cat,
         if outside:
             new_cat.outside = True
         if not alive:
-            new_cat.dead = True
+            new_cat.die()
 
         # newbie thought
         new_cat.thought = thought
@@ -453,7 +453,7 @@ def create_outside_cat(Cat, status, backstory, alive=True, thought=None):
     new_cat.outside = True
 
     if not alive:
-        new_cat.dead = True
+        new_cat.die()
 
     thought = "Wonders about those Clan cats they just met"
     new_cat.thought = thought
