@@ -56,6 +56,9 @@ def test():
         "mur_c": _r
     }
     
+    for x in range(0, 11):
+        replacement_dict[f"n_c:{x}"] = _r
+    
     for (root, _, files) in os.walk("resources"):
         for file in files:
             if file.endswith(".json") and file != "credits_text.json":
