@@ -972,7 +972,7 @@ class PatrolOutcome():
                 continue
             
             if match.group(1) in Cat.age_moons:
-                age = randint(Cat.age_moons[0], Cat.age_moons[1])
+                age = randint(Cat.age_moons[match.group(1)][0], Cat.age_moons[match.group(1)][1])
                 break
             
             # Set same as first mate.
