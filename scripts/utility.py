@@ -214,22 +214,22 @@ def change_clan_relations(other_clan, difference):
 
 def create_new_cat(Cat,
                    Relationship,
-                   new_name=False,
-                   loner=False,
-                   kittypet=False,
-                   kit=False,
-                   litter=False,
-                   other_clan=None,
-                   backstory=None,
-                   status=None,
-                   age=None,
-                   gender=None,
-                   thought='Is looking around the camp with wonder',
-                   alive=True,
-                   outside=False,
+                   new_name:bool=False,
+                   loner:bool=False,
+                   kittypet:bool=False,
+                   kit:bool=False,
+                   litter:bool=False,
+                   other_clan:bool=None,
+                   backstory:bool=None,
+                   status:str=None,
+                   age:int=None,
+                   gender:str=None,
+                   thought:str='Is looking around the camp with wonder',
+                   alive:bool=True,
+                   outside:bool=False,
                    parent1:str=None,
                    parent2:str=None
-	):
+	) -> list:
     """
     This function creates new cats and then returns a list of those cats
     :param Cat: pass the Cat class
@@ -239,7 +239,7 @@ def create_new_cat(Cat,
     :param kittypet: set True if cat(s) is a kittypet - default: False
     :param kit: set True if the cat is a lone kitten - default: False
     :param litter: set True if a litter of kittens needs to be generated - default: False
-    :param other_clan: if new cat(s) are from a neighboring clan, pass the name of their home Clan - default: None
+    :param other_clan: if new cat(s) are from a neighboring clan, set true
     :param backstory: a list of possible backstories.json for the new cat(s) - default: None
     :param status: set as the rank you want the new cat to have - default: None (will cause a random status to be picked)
     :param age: set the age of the new cat(s) - default: None (will be random or if kit/litter is true, will be kitten.
@@ -263,24 +263,25 @@ def create_new_cat(Cat,
     if not litter:
         number_of_cats = 1
     else:
-        number_of_cats = choices([2, 3, 4, 5], [5, 4, 1, 1], k=1)
-        number_of_cats = number_of_cats[0]
-    # setting age
-    if not age and age != 0:
+        number_of_cats = choices([2, 3, 4, 5], [5, 4, 1, 1], k=1)[0]
+    
+    
+    if not isinstance(age, int):
         if status == "newborn":
             age = 0
         elif litter or kit:
             age = randint(0, 5)
-        elif status == 'apprentice':
+        elif status in ('apprentice', 'medicine cat apprentice', 'mediator apprentice'):
             age = randint(6, 11)
         elif status == 'warrior':
             age = randint(23, 120)
         elif status == 'medicine cat':
             age = randint(23, 140)
+        elif status == 'elder':
+            age = randint(120, 130)
         else:
             age = randint(6, 120)
-    else:
-        age = age
+    
     # setting status
     if not status:
         if age == 0:
@@ -291,6 +292,8 @@ def create_new_cat(Cat,
             status = "apprentice"
         elif age >= 12:
             status = "warrior"
+        elif age >= 120:
+            status = 'elder'
 
     # cat creation and naming time
     for index in range(number_of_cats):

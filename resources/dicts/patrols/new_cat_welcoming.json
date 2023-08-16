@@ -587,7 +587,7 @@
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
-                    ["status:medicine cat", "clancat"]
+                    ["status:medicine cat", "loner"]
                 ],
                 "relationships": [
                     {
@@ -604,7 +604,7 @@
                 "exp": 10,
                 "weight": 5,
                 "new_cat": [
-                    ["status:medicine cat", "clancat"],
+                    ["status:medicine cat", "loner"],
                     ["litter", "parent:0", "status:kitten"]
                 ],
                 "relationships": [
@@ -625,7 +625,7 @@
                 "weight": 20,
                 "outsider_rep": 0,
                 "new_cat": [
-                    ["meeting", "clancat"]
+                    ["meeting", "loner"]
                 ]
             }
         ],
@@ -666,7 +666,7 @@
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
-                    ["status:medicine cat", "clancat"]
+                    ["status:medicine cat", "loner"]
                 ],
                 "relationships": [
                     {
@@ -683,7 +683,7 @@
                 "exp": 10,
                 "weight": 5,
                 "new_cat": [
-                    ["status:medicine cat", "clancat"],
+                    ["status:medicine cat", "loner"],
                     ["litter", "parent:0", "status:kitten"]
                 ],
                 "relationships": [
@@ -704,7 +704,7 @@
                 "weight": 20,
                 "outsider_rep": 0,
                 "new_cat": [
-                    ["meeting", "clancat"]
+                    ["meeting", "loner"]
                 ]
             }
         ],
