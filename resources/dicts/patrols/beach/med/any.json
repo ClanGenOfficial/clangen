@@ -324,28 +324,6 @@
             {
                 "text": "The keen eyed s_c spots herbs quickly, and the cats harvest them and retreat back to the camp, where it's nice and dry. No point in lingering for a second more than {PRONOUN/s_c/subject} {VERB/s_c/need/needs} to with the weather like this!",
                 "exp": 10,
-                "weight": 5,
-                "herbs": ["random_herbs"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -10
-                    }
-                ]
-            },
-            {
-                "text": "The keen eyed s_c spots herbs quickly, and the cats harvest them and retreat back to the camp, where it's nice and dry. No point in lingering for a second more than {PRONOUN/s_c/subject} {VERB/s_c/need/needs} to with the weather like this!",
-                "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
                 "herbs": ["many_herbs"],
@@ -638,12 +616,6 @@
             {
                 "text": "s_c deftly picks out an entire horsetail shoot, bringing back quite the impressive addition to the Clan's herb stores.",
                 "exp": 10,
-                "weight": 5,
-                "herbs": ["many_herbs", "horsetail"]
-            },
-            {
-                "text": "s_c deftly picks out an entire horsetail shoot, bringing back quite the impressive addition to the Clan's herb stores.",
-                "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
                 "herbs": ["many_herbs", "horsetail"]
@@ -794,28 +766,6 @@
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["horsetail"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -10
-                    }
-                ]
-            },
-            {
-                "text": "s_c deftly picks out an entire horsetail shoot, bringing back quite the impressive addition to the Clan's herb stores with the help of the warriors.",
-                "exp": 10,
-                "weight": 5,
-                "herbs": ["many_herbs", "horsetail"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],

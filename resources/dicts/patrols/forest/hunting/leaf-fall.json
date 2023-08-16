@@ -700,6 +700,7 @@
                 "text": "s_c knows they are one of the Clan's greatest hunters. They spot the rat king and charge into its lair. But the King proves too great a foe for a single cat, and it sends s_c back with wounds to tell their tale.",
                 "exp": 0,
                 "weight": 10,
+                "stat_skill": ["HUNTER,1"],
                 "injury": [
                     {
                         "cats": ["patrol"],
@@ -766,7 +767,8 @@
                 "text": "s_c knows they are one of the Clan's greatest hunters. They spot the rat king and charge into its lair. But the King proves too great a foe for a single cat, and it kills the would-be kingslayer.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["multi", "some_lives"],
+                "stat_skill": ["HUNTER,1"],
+                "dead_cats": ["s_c"],
                 "history_text": {
                     "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after battling the rat king."
                 }
@@ -1874,10 +1876,11 @@
                 "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarasses them deeply the rest of the patrol have to rescue them from the red vixen.",
                 "exp": 0,
                 "weight": 20,
+                "stat_skill": ["FIGHTER,1"],
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol", "r_c"],
-                        "cats_from": ["clan", "clan", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
@@ -2352,10 +2355,11 @@
                 "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarasses them deeply the gray vixen slips past them and flees further into the forest.",
                 "exp": 0,
                 "weight": 20,
+                "stat_skill": ["FIGHTER,1"],
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
@@ -2388,9 +2392,10 @@
                 "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking them ass over paws as she flees from the patrol.",
                 "exp": 0,
                 "weight": 10,
+                "stat_skill": ["FIGHTER,1"],
                 "injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["s_c"],
                         "injuries": ["minor_injury"],
                         "scars": ["LEFTEAR"]
                     }
@@ -2398,7 +2403,7 @@
                 "history_text": { "scar": "m_c carries a scar from a fox fight." },
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol", "patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
@@ -2514,9 +2519,10 @@
                 "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarasses them deeply the gray vixen slips past them and flees further into the forest.",
                 "exp": 0,
                 "weight": 20,
+                "stat_skill": ["FIGHTER,1"],
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol", "patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
@@ -2550,9 +2556,10 @@
                 "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking them ass over paws as she flees from the patrol.",
                 "exp": 0,
                 "weight": 10,
+                "stat_skill": ["FIGHTER,1"],
                 "injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["s_c"],
                         "injuries": ["minor_injury"],
                         "scars": ["RIGHTEAR"]
                     }
@@ -2560,7 +2567,7 @@
                 "history_text": { "scar": "m_c carries a scar from a red fox fight." },
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol", "patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
@@ -2676,6 +2683,7 @@
                 "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarasses them deeply the gray vixen slips past them and flees further into the forest.",
                 "exp": 0,
                 "weight": 20,
+                "stat_skill": ["FIGHTER,1"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -2712,9 +2720,10 @@
                 "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the stocky gray vixen is cunning, sinking her teeth into s_c to distract them as she flees.",
                 "exp": 0,
                 "weight": 10,
+                "stat_skill": ["FIGHTER,1"],
                 "injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["s_c"],
                         "injuries": ["big_bite_injury"],
                         "scars": ["ONE"]
                     }

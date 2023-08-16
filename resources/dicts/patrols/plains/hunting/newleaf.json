@@ -533,8 +533,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol", "r_c"],
-                        "cats_from": ["clan", "clan", "patrol"],
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
@@ -545,10 +545,11 @@
                 "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply. the rest of the patrol have to rescue them from the red vixen.",
                 "exp": 0,
                 "weight": 20,
+                "stat_skill": ["FIGHTER,1"],
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol", "r_c"],
-                        "cats_from": ["clan", "clan", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
@@ -735,10 +736,11 @@
                 "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the rest of the patrol have to rescue them from the red vixen.",
                 "exp": 0,
                 "weight": 20,
+                "stat_skill": ["FIGHTER,1"],
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol", "r_c"],
-                        "cats_from": ["clan", "clan", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5

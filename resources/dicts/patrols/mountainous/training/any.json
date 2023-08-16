@@ -29,6 +29,7 @@
             },
             {
                 "text": "By the end of the patrol s_c is hopping nimbly from crack to crag, easily scaling the cliff walls.",
+                "stat_skill": ["CLIMBER,1"],
                 "exp": 20,
                 "weight": 20
             }

@@ -281,6 +281,7 @@
                 "text": "s_c listens intently and tells r_c not to be weirded out, but {PRONOUN/s_c/subject} had seen the dream, too. r_c is alarmed, but s_c soothes {PRONOUN/r_c/object}, explaining that StarClan sometimes shows {PRONOUN/s_c/object} others' dreams. This one, luckily, was nothing but a mild warning.",
                 "exp": 20,
                 "weight": 20,
+                "stat_skill": ["DREAM,1", "STAR,2"],
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
@@ -358,6 +359,8 @@
                 "text": "s_c often feels like StarClan walks with {PRONOUN/s_c/object}, and this is just another instance on the path. {PRONOUN/s_c/subject/CAP} {VERB/s_c/use/uses} the solo patrol to collect {PRONOUN/s_c/poss} thoughts, and by the time {PRONOUN/s_c/subject} {VERB/s_c/pad/pads} home with a good bundle of cobwebs, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} ready for the next step {PRONOUN/s_c/poss} vision hinted at.",
                 "exp": 20,
                 "weight": 20,
+                "stat_skill": ["STAR,1"],
+                "stat_trait": ["faithful"],
                 "herbs": ["cobwebs"]
             }
         ],
@@ -418,6 +421,7 @@
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
+                "stat_skill": ["DREAM,1", "STAR,2"],
                 "relationships": [
                     {
                         "cats_to": ["p_l", "p_l"],
@@ -869,6 +873,7 @@
                 "text": "s_c had seen before how connected p_l was to StarClan, and began telling {PRONOUN/p_l/object} more than they would have told any other Clan cat about their ancestors. p_l and s_c spend much of their patrol gathering herbs and discussing the hard-hitting questions on prophecies and StarClan's gifts.",
                 "exp": 10,
                 "weight": 20,
+                "stat_skill": ["LORE,1", "STAR,1"],
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
@@ -934,10 +939,16 @@
                 ]
             },
             {
-                "text": "p_l knows why this bothers s_c so much. A powerful connection to StarClan for either of them allows them to understand how their legacy would be told again and again to kits in the future. But p_l does {PRONOUN/p_l/poss} best to ease s_c's worries. To c_n, s_c would be a legend worth remembering one day. s_c brightens up at that remark, and the two go back to their herb hunt.",
+                "text": "p_l knows why this bothers s_c so much. A powerful connection to StarClan allows them to understand how their legacy would be told again and again to kits in the future. But p_l does {PRONOUN/p_l/poss} best to ease s_c's worries. To c_n, s_c would be a legend worth remembering one day. s_c brightens up at that remark, and the two go back to their herb hunt.",
                 "exp": 10,
                 "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "insecure"
+                ],
                 "herbs": ["random_herbs"],
+                "can_have_stat": ["r_c"],
                 "relationships": [
                     {
                         "cats_to": ["p_l", "s_c"],
@@ -2371,6 +2382,7 @@
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
+                "stat_skill": ["STORY,1", "LORE,1"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],

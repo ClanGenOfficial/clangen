@@ -2206,6 +2206,14 @@
                 "exp": 30,
                 "weight": 20,
                 "prey": ["large"],
+                "stat_trait": [
+                    "calm",
+                    "ambitious",
+                    "compassionate",
+                    "charismatic",
+                    "bold",
+                    "responsible"
+                ],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -2252,6 +2260,14 @@
                 "text": "Confronted with the roiling mass of flesh, s_c panics, and is no help as the patrol tries to decide what to do. In the end, the octopus slithers into the ocean and disappears.",
                 "exp": 0,
                 "weight": 20,
+                "stat_trait": [
+                    "nervous",
+                    "insecure",
+                    "childish",
+                    "lonesome",
+                    "loving",
+                    "strange"
+                ],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],

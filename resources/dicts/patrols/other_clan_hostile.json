@@ -1122,7 +1122,17 @@
                 "text": "s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c doesn't come back to camp. Their body is found along the border, and o_c_n boasts about it at the next Gathering.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": ["s_c"],
+                "stat_trait": [
+                    "bloodthirsty",
+                    "vengeful",
+                    "fierce",
+                    "daring",
+                    "bold",
+                    "cold",
+                    "confident",
+                    "grumpy"
+                ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
                     "reg_death": "m_c was killed by a hostile Clan.",
@@ -1134,6 +1144,16 @@
                 "text": "s_c can't contain their hatred for o_c_n, not even meeting a patrol of theirs at the border as a lone cat. They come back to camp bleeding.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": [
+                    "bloodthirsty",
+                    "vengeful",
+                    "fierce",
+                    "daring",
+                    "bold",
+                    "cold",
+                    "confident",
+                    "grumpy"
+                ],
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -1233,7 +1253,17 @@
                 "text": "s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c loses a life in a vicious fight. o_c_n boasts about it at the next Gathering.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "stat_trait": [
+                    "bloodthirsty",
+                    "vengeful",
+                    "fierce",
+                    "daring",
+                    "bold",
+                    "cold",
+                    "confident",
+                    "grumpy"
+                ],
+                "dead_cats": ["s_c"],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
                     "reg_death": "m_c was killed by a hostile Clan.",
@@ -1244,10 +1274,20 @@
             {
                 "text": "s_c can't contain their hatred for o_c_n, not even meeting a patrol of theirs at the border as a lone cat. They come back to camp bleeding.",
                 "exp": 0,
+                "stat_trait": [
+                    "bloodthirsty",
+                    "vengeful",
+                    "fierce",
+                    "daring",
+                    "bold",
+                    "cold",
+                    "confident",
+                    "grumpy"
+                ],
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["s_c"],
                         "injuries": ["battle_injury"],
                         "scars": ["CATBITE"]
                     }
@@ -1809,7 +1849,16 @@
                 "text": "s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c doesn't come back to camp. Their body is found along the border, and o_c_n boasts about it at the next Gathering.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "stat_trait": [
+                    "bloodthirsty",
+                    "daring",
+                    "grumpy",
+                    "vengeful",
+                    "fierce",
+                    "confident",
+                    "cold"
+                ],
+                "dead_cats": ["s_c"],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
                     "reg_death": "m_c was killed by a hostile Clan.",
@@ -1821,9 +1870,19 @@
                 "text": "s_c can't contain their hatred for o_c_n, not even meeting a patrol of theirs at the border as a lone cat. They come back to camp bleeding.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": [
+                    "bloodthirsty",
+                    "vengeful",
+                    "fierce",
+                    "daring",
+                    "bold",
+                    "cold",
+                    "confident",
+                    "grumpy"
+                ],
                 "injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["s_c"],
                         "injuries": ["battle_injury"],
                         "scars": ["FACE"]
                     }
@@ -1920,7 +1979,17 @@
                 "text": "s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c loses a life in a vicious fight. o_c_n boasts about it at the next Gathering.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "stat_trait": [
+                    "bloodthirsty",
+                    "vengeful",
+                    "fierce",
+                    "daring",
+                    "bold",
+                    "cold",
+                    "confident",
+                    "grumpy"
+                ],
+                "dead_cats": ["s_c"],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
                     "reg_death": "m_c was killed by a hostile Clan.",
@@ -1932,9 +2001,19 @@
                 "text": "s_c can't contain their hatred for o_c_n, not even meeting a patrol of theirs at the border as a lone cat. They come back to camp bleeding.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": [
+                    "bloodthirsty",
+                    "vengeful",
+                    "fierce",
+                    "daring",
+                    "bold",
+                    "cold",
+                    "confident",
+                    "grumpy"
+                ],
                 "injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["s_c"],
                         "injuries": ["battle_injury"],
                         "scars": ["ONE"]
                     }
@@ -2496,7 +2575,17 @@
                 "text": "s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c doesn't come back to camp. Their body is found along the border, and o_c_n boasts about it at the next Gathering.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": ["s_c"],
+                "stat_trait": [
+                    "bloodthirsty",
+                    "vengeful",
+                    "fierce",
+                    "daring",
+                    "bold",
+                    "cold",
+                    "confident",
+                    "grumpy"
+                ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
                     "reg_death": "m_c was killed by a hostile Clan.",
@@ -2508,9 +2597,19 @@
                 "text": "s_c can't contain their hatred for o_c_n, not even meeting a patrol of theirs at the border as a lone cat. They come back to camp bleeding.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": [
+                    "bloodthirsty",
+                    "vengeful",
+                    "fierce",
+                    "daring",
+                    "bold",
+                    "cold",
+                    "confident",
+                    "grumpy"
+                ],
                 "injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["s_c"],
                         "injuries": ["battle_injury"],
                         "scars": ["CHEEK"]
                     }
@@ -2607,7 +2706,17 @@
                 "text": "s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c loses a life in a vicious fight. o_c_n boasts about it at the next Gathering.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": ["s_c"],
+                "stat_trait": [
+                    "bloodthirsty",
+                    "vengeful",
+                    "fierce",
+                    "daring",
+                    "bold",
+                    "cold",
+                    "confident",
+                    "grumpy"
+                ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
                     "reg_death": "m_c was killed by a hostile Clan.",
@@ -2619,9 +2728,19 @@
                 "text": "s_c can't contain their hatred for o_c_n, not even meeting a patrol of theirs at the border as a lone cat. They come back to camp bleeding.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": [
+                    "bloodthirsty",
+                    "vengeful",
+                    "fierce",
+                    "daring",
+                    "bold",
+                    "cold",
+                    "confident",
+                    "grumpy"
+                ],
                 "injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["s_c"],
                         "injuries": ["battle_injury"],
                         "scars": ["CATBITE"]
                     }
@@ -3183,7 +3302,17 @@
                 "text": "s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c doesn't come back to camp. Their body is found along the border, and o_c_n boasts about it at the next Gathering.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": ["s_c"],
+                "stat_trait": [
+                    "bloodthirsty",
+                    "vengeful",
+                    "fierce",
+                    "daring",
+                    "bold",
+                    "cold",
+                    "confident",
+                    "grumpy"
+                ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
                     "reg_death": "m_c was killed by a hostile Clan.",
@@ -3195,9 +3324,19 @@
                 "text": "s_c can't contain their hatred for o_c_n, not even meeting a patrol of theirs at the border as a lone cat. They come back to camp bleeding.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": [
+                    "bloodthirsty",
+                    "vengeful",
+                    "fierce",
+                    "daring",
+                    "bold",
+                    "cold",
+                    "confident",
+                    "grumpy"
+                ],
                 "injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["s_c"],
                         "injuries": ["battle_injury"],
                         "scars": ["BRIDGE"]
                     }
@@ -3294,7 +3433,17 @@
                 "text": "s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c loses a life in a vicious fight. o_c_n boasts about it at the next Gathering.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": ["s_c"],
+                "stat_trait": [
+                    "bloodthirsty",
+                    "vengeful",
+                    "fierce",
+                    "daring",
+                    "bold",
+                    "cold",
+                    "confident",
+                    "grumpy"
+                ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
                     "reg_death": "m_c was killed by a hostile Clan.",
@@ -3308,10 +3457,20 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["s_c"],
                         "injuries": ["battle_injury"],
                         "scars": ["BRIDGE"]
                     }
+                ],
+                "stat_trait": [
+                    "bloodthirsty",
+                    "vengeful",
+                    "fierce",
+                    "daring",
+                    "bold",
+                    "cold",
+                    "confident",
+                    "grumpy"
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",

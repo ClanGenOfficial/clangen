@@ -202,13 +202,13 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "The betony shrubs are in full bloom, with bees buzzing busily around them, and p_l follows their industrious example as {PRONOUN/p_l/subject} {VERB/s_c/gather/gathers}. {PRONOUN/p_l/subject/CAP} {VERB/s_c/prune/prunes} back enough betony to find a surprisingly intact goldenrod plant hidden under it, also ready for harvest.",
+                "text": "The betony shrubs are in full bloom, with bees buzzing busily around them, and p_l follows their industrious example as {PRONOUN/p_l/subject} {VERB/p_l/gather/gathers}. {PRONOUN/p_l/subject/CAP} {VERB/p_l/prune/prunes} back enough betony to find a surprisingly intact goldenrod plant hidden under it, also ready for harvest.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["goldenrod", "betony"]
             },
             {
-                "text": "Betony is especially useful for cats who breathe with a rasp, and p_l is always keen to help Clanmates with the condition. With the great haul of betony p_l brings back, {PRONOUN/p_l/subject}'ll be able to dose {PRONOUN/p_l/poss} Clanmates and prevent coughs and chest infections - and {PRONOUN/p_l/subject}{VERB/s_c/'ve/'s} even found a little goldenrod to go with it!",
+                "text": "Betony is especially useful for cats who breathe with a rasp, and p_l is always keen to help Clanmates with the condition. With the great haul of betony p_l brings back, {PRONOUN/p_l/subject}'ll be able to dose {PRONOUN/p_l/poss} Clanmates and prevent coughs and chest infections - and {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} even found a little goldenrod to go with it!",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "goldenrod", "betony"]

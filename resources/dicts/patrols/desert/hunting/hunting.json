@@ -489,6 +489,8 @@
                 "text": "s_c chooses to hunt with r_c, the spiritual warrior gently guiding the conversation. r_c feels deeply privileged and far more at peace after confiding in them.",
                 "exp": 20,
                 "weight": 20,
+                "stat_skill": ["STAR,1"],
+                "stat_trait": ["faithful"],
                 "prey": ["medium"],
                 "relationships": [
                     {

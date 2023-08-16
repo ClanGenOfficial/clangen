@@ -95,7 +95,7 @@ class Patrol():
         
         if path == "decline":
             if self.patrol_event:
-                return self.patrol_event.decline_text, ""
+                return self.process_text(self.patrol_event.decline_text, None), ""
             else:
                 return "Error - no event chosen", ""
         

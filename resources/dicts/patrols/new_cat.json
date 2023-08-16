@@ -2657,6 +2657,7 @@
                 "text": "s_c, upon seeing several kits trapped by a Twoleg contraption, immediately jumps into the cold harsh water of the sea. {PRONOUN/s_c/subject/CAP} {VERB/s_c/use/uses} a piece of wood as a makeshift raft and {VERB/s_c/paddle/paddles} the kits back to shore where the rest of the patrol can keep them warm, before racing them back to camp to be cuddled into the pelt of a loving queen.",
                 "exp": 15,
                 "weight": 20,
+                "stat_skill": ["SWIMMER,1"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
