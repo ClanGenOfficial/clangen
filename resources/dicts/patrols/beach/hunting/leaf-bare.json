@@ -1,278 +1,573 @@
 [
     {
         "patrol_id": "bch_hunt_leaf-bare_solosquirrel1",
-        "biome": "beach",
-        "season": "leaf-bare",
-        "tags": [
-            "hunting",
-            "no_app",
-            "medium_prey"
-        ],
+        "biome": ["beach"],
+        "season": ["leaf-bare"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
         "intro_text": "p_l walks low to the ground, paws soft and light so as not to make a sound. {PRONOUN/p_l/poss/CAP} jaws hang open to taste at the air, and a tingle of satisfaction shoots through {PRONOUN/p_l/object} as {PRONOUN/p_l/subject} {VERB/p_l/scent/scents} a nearby ground squirrel, scrounging in the sand for its stashed-away food.",
         "decline_text": "p_l watches it for a moment, then turns away and leaves. There's still time before leaf-bare, and if {PRONOUN/p_l/subject} {VERB/p_l/wait/waits} just a bit {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} sure to catch something even bigger.",
         "chance_of_success": 30,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "The wind shifts, but before the squirrel can react p_l acts fast and leaps, stopping it from shrieking an alarm call with a quick nip to the back of the neck.",
-            "unscathed_rare": "The squirrel doesn't notice p_l stalking up to them.. that is, until {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} already pounced and {VERB/p_l/have/has} it between {PRONOUN/p_l/poss} jaws. It's a little late to do anything about it at that point, though.",
-            "stat_skill": "The squirrel blissfully snuffles around in the sand, completely unaware of the looming danger it's in. s_c stalks, as quiet as the wind, and doesn't even need to pounce; {PRONOUN/s_c/subject} just {VERB/s_c/walk/walks} right up behind it and {VERB/s_c/take/takes} the kill."
-        },
-        "fail_text": {
-            "unscathed_common": "The wind shifts, and the squirrel stiffens, shrieks out an alarm call, and vanishes back into its burrow. Oh well."
-        },
-        "win_skills": [
-            "HUNTER,1"
+        "success_outcomes": [
+            {
+                "text": "The wind shifts, but before the squirrel can react p_l acts fast and leaps, stopping it from shrieking an alarm call with a quick nip to the back of the neck.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"]
+            },
+            {
+                "text": "The squirrel doesn't notice p_l stalking up to them.. that is, until {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} already pounced and {VERB/p_l/have/has} it between {PRONOUN/p_l/poss} jaws. It's a little late to do anything about it at that point, though.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["medium"]
+            },
+            {
+                "text": "The squirrel blissfully snuffles around in the sand, completely unaware of the looming danger it's in. s_c stalks, as quiet as the wind, and doesn't even need to pounce; {PRONOUN/s_c/subject} just {VERB/s_c/walk/walks} right up behind it and {VERB/s_c/take/takes} the kill.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["HUNTER,1"],
+                "prey": ["medium"]
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "The wind shifts, and the squirrel stiffens, shrieks out an alarm call, and vanishes back into its burrow. Oh well.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
     },
     {
         "patrol_id": "bch_hunt_leaf-bare_soloappsquirrel1",
-        "biome": "beach",
-        "season": "leaf-bare",
-        "tags": [
-            "hunting",
-            "apprentice",
-            "medium_prey"
-        ],
+        "biome": ["beach"],
+        "season": ["leaf-bare"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "app1 has snuck out of camp alone, hoping {PRONOUN/app1/subject}'ll find a nice fat ground squirrel. Running through everything {PRONOUN/app1/subject}{VERB/app1/'ve/'s} been taught in {PRONOUN/app1/poss} head, {PRONOUN/app1/subject} carefully {VERB/s_c/scent/scents} the air and {VERB/s_c/strain/strains} {PRONOUN/app1/poss} ears, hoping for any hint of the burrowing critters in the stony outcrop they like to nest in.",
         "decline_text": "{PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} focusing so hard, {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} notice a Clanmate is standing silently behind {PRONOUN/app1/object}, waiting for {PRONOUN/app1/object} to notice that {PRONOUN/app1/subject}{VERB/app1/'ve/'s} been caught red-pawed. Oops!",
         "chance_of_success": 10,
-        "exp": 30,
-        "success_text": {
-            "unscathed_common": "The wind blows a scent towards them, and app1 immediately drops into a crouch. {PRONOUN/app1/subject/CAP} {VERB/app1/track/tracks} it down to a shallow burrow; when {PRONOUN/app1/subject} {VERB/app1/shimmy/shimmies} {PRONOUN/app1/poss} head and shoulders inside, {PRONOUN/app1/subject} {VERB/app1/find/finds} a sleeping squirrel! An easy kill, and a good meal for someone at camp.",
-            "unscathed_rare": "app1 walks in circles for a bit, and is about to give up and go home, when {PRONOUN/app1/subject} nearly {VERB/app1/trip/trips} over a ground squirrel burrow. A chitter from within gets {PRONOUN/app1/object} excited, and {PRONOUN/app1/subject} {VERB/app1/thrust/thrusts} a paw into the entrance and {VERB/app1/yank/yanks} a squirrel out!"
-        },
-        "fail_text": {
-            "unscathed_common": "Unfortunately, {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} end up finding anything, and {PRONOUN/app1/subject} {VERB/app1/slink/slinks} back to camp empty-pawed."
-        },
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "success_outcomes": [
+            {
+                "text": "The wind blows a scent towards them, and app1 immediately drops into a crouch. {PRONOUN/app1/subject/CAP} {VERB/app1/track/tracks} it down to a shallow burrow; when {PRONOUN/app1/subject} {VERB/app1/shimmy/shimmies} {PRONOUN/app1/poss} head and shoulders inside, {PRONOUN/app1/subject} {VERB/app1/find/finds} a sleeping squirrel! An easy kill, and a good meal for someone at camp.",
+                "exp": 30,
+                "weight": 20,
+                "prey": ["medium"]
+            },
+            {
+                "text": "app1 walks in circles for a bit, and is about to give up and go home, when {PRONOUN/app1/subject} nearly {VERB/app1/trip/trips} over a ground squirrel burrow. A chitter from within gets {PRONOUN/app1/object} excited, and {PRONOUN/app1/subject} {VERB/app1/thrust/thrusts} a paw into the entrance and {VERB/app1/yank/yanks} a squirrel out!",
+                "exp": 30,
+                "weight": 5,
+                "prey": ["medium"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Unfortunately, {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} end up finding anything, and {PRONOUN/app1/subject} {VERB/app1/slink/slinks} back to camp empty-pawed.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
     },
     {
         "patrol_id": "bch_hunt_leaf-bare_mentorsquirrel1",
-        "biome": "beach",
-        "season": "leaf-bare",
-        "tags": [
-            "hunting",
-            "warrior",
-            "apprentice",
-            "medium_prey",
-            "comfort",
-            "trust"
-        ],
+        "biome": ["beach"],
+        "season": ["leaf-bare"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "p_l and app1 sit on the beach, near a network of ground squirrel burrows hidden in the stones. This is one of a few such networks, rotated around by mentors to teach apprentices their hunting skills. app1 scents the air as instructed, and points out a burrow; sure enough, there's a squirrel's head poking out the entrance!",
         "decline_text": "p_l praises {PRONOUN/app1/object} and smiles, but reminds app1 that they aren't there to hunt, just to observe and discuss. There'll be plenty of time another day!",
         "chance_of_success": 40,
-        "exp": 30,
-        "success_text": {
-            "unscathed_common": "p_l praises {PRONOUN/app1/object} and smiles, and app1 drops into a hunting crouch as the squirrel crawls out of the burrow. Though {PRONOUN/app1/poss} paws are rather unpracticed, the basic knowledge is solid, and {PRONOUN/app1/poss} hunt is a success!",
-            "unscathed_rare": "p_l praises {PRONOUN/app1/object} and smiles, and app1 drops into a hunting crouch as the squirrel crawls out of the burrow. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} nervous, of course, but {PRONOUN/app1/poss} technique is pretty-near flawless, and {PRONOUN/app1/subject} {VERB/app1/catch/catches} the squirrel easily!"
-        },
-        "fail_text": {
-            "unscathed_common": "p_l praises {PRONOUN/app1/object} and smiles, and app1 drops into a hunting crouch as the squirrel crawls out of the burrow. Unfortunately, in {PRONOUN/app1/poss} excitement, app1 loses {PRONOUN/app1/poss} footing, and {PRONOUN/app1/poss} claws skid a little on the rocks; the squirrel shrieks at {PRONOUN/app1/object} and vanishes into the burrow."
-        },
-        "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "success_outcomes": [
+            {
+                "text": "p_l praises {PRONOUN/app1/object} and smiles, and app1 drops into a hunting crouch as the squirrel crawls out of the burrow. Though {PRONOUN/app1/poss} paws are rather unpracticed, the basic knowledge is solid, and {PRONOUN/app1/poss} hunt is a success!",
+                "exp": 30,
+                "weight": 20,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "p_l praises {PRONOUN/app1/object} and smiles, and app1 drops into a hunting crouch as the squirrel crawls out of the burrow. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} nervous, of course, but {PRONOUN/app1/poss} technique is pretty-near flawless, and {PRONOUN/app1/subject} {VERB/app1/catch/catches} the squirrel easily!",
+                "exp": 30,
+                "weight": 5,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l praises {PRONOUN/app1/object} and smiles, and app1 drops into a hunting crouch as the squirrel crawls out of the burrow. Unfortunately, in {PRONOUN/app1/poss} excitement, app1 loses {PRONOUN/app1/poss} footing, and {PRONOUN/app1/poss} claws skid a little on the rocks; the squirrel shrieks at {PRONOUN/app1/object} and vanishes into the burrow.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
     },
     {
         "patrol_id": "bch_hunt_leaf-bare_squirrel_rattlesnakerumble1",
-        "biome": "beach",
-        "season": "leaf-bare",
-        "tags": [
-            "hunting",
-            "platonic",
-            "respect",
-            "trust",
-            "medium_prey",
-            "no_fail_prey",
-            "injury",
-            "snake bite",
-            "poisoned",
-            "scar",
-            "SNAKE"
-        ],
+        "biome": ["beach"],
+        "season": ["leaf-bare"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "As the patrol walks through the sandy beaches of their territory, a low sound kicks up just at the edges of their hearing. p_l comes to an abrupt stop and scrambles backwards, hissing at the others to stop as well, once they realize what's making it - there's a rattlesnake, staring down a ground squirrel!",
         "decline_text": "The patrol wastes no time in turning tail and going home, not wanting to risk being on the receiving end of a rattlesnake even if there's a squirrel to be caught.",
         "chance_of_success": 20,
-        "exp": 50,
-        "success_text": {
-            "unscathed_common": "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. The snake backs up and hisses, before turning and slithering away. r_c wastes no time in pouncing on the squirrel now that it's safe to approach, securing the meal for the Clan!",
-            "unscathed_rare": "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. The snake backs up and hisses, and the squirrel lunges! The patrol is stupefied, watching it attack and send it fleeing, before r_c remembers what {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing and kills the squirrel before it, too, flees.",
-            "stat_skill": "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. s_c moves in once {PRONOUN/s_c/subject} {VERB/s_c/realize/realizes} the snake is intimidated by the squirrel, killing <i>both</i> of them before either can fully react! The patrol lets s_c carry both home, eager to show the Clan what {PRONOUN/s_c/subject} accomplished."
-        },
-        "fail_text": {
-            "unscathed_common": "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. The snake backs up and hisses, and the squirrel lunges! The patrol is stupefied, watching it attack and send it fleeing, and nobody even thinks to catch the squirrel until it, too, is long gone.",
-            "injury": "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. r_c moves in once {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} the snake is intimidated by it, but {VERB/r_c/don't/doesn't} anticipate it turning on them instead! With no squirrel, no snake, and an envenomed bite, r_c is rushed home to the medicine den."
-        },
-        "win_skills": [
-            "HUNTER,1"
+        "success_outcomes": [
+            {
+                "text": "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. The snake backs up and hisses, before turning and slithering away. r_c wastes no time in pouncing on the squirrel now that it's safe to approach, securing the meal for the Clan!",
+                "exp": 50,
+                "weight": 20,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. The snake backs up and hisses, and the squirrel lunges! The patrol is stupefied, watching it attack and send it fleeing, before r_c remembers what {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing and kills the squirrel before it, too, flees.",
+                "exp": 50,
+                "weight": 5,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. s_c moves in once {PRONOUN/s_c/subject} {VERB/s_c/realize/realizes} the snake is intimidated by the squirrel, killing <i>both</i> of them before either can fully react! The patrol lets s_c carry both home, eager to show the Clan what {PRONOUN/s_c/subject} accomplished.",
+                "exp": 50,
+                "weight": 20,
+                "stat_skill": ["HUNTER,1"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c was scarred by a rattlesnake."
-        }
+        "fail_outcomes": [
+            {
+                "text": "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. The snake backs up and hisses, and the squirrel lunges! The patrol is stupefied, watching it attack and send it fleeing, and nobody even thinks to catch the squirrel until it, too, is long gone.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. r_c moves in once {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} the snake is intimidated by it, but {VERB/r_c/don't/doesn't} anticipate it turning on them instead! With no squirrel, no snake, and an envenomed bite, r_c is rushed home to the medicine den.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["snake bite", "poisoned"],
+                        "scars": ["SNAKE"]
+                    }
+                ],
+                "history_text": { "scar": "m_c was scarred by a rattlesnake." },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "bch_hunt_leaf-bare_groupsquirrel1",
-        "biome": "beach",
-        "season": "leaf-bare",
-        "tags": [
-            "hunting",
-            "respect",
-            "patrol_to_r_c",
-            "medium_prey0",
-            "large_prey1",
-            "large_prey2"
-        ],
+        "biome": ["beach"],
+        "season": ["leaf-bare"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "p_l's patrol strolls leisurely along the coastline, careful to avoid the chilly spray of the waves. One cat raises their tail, signaling the others to be still; they've scented ground squirrels nearby.",
         "decline_text": "p_l quietly shakes {PRONOUN/p_l/poss} head and leads the patrol elsewhere. Better not to disturb the squirrels, who are loud and territorial.",
         "chance_of_success": 30,
-        "exp": 30,
-        "success_text": {
-            "unscathed_common": "The patrol makes short work of locating the squirrels, spreading out into a loose formation to encircle their prey. Slowly, they move in, the circle getting tighter and tighter, until they're finally seen. The squirrels screech and scatter in different directions, but the circle cuts off their escape, and by the end of it they're fresh-kill.",
-            "unscathed_rare": "First order of business is blocking their access to any nearby burrows, which r_c takes care of. After that, it's a matter of finding and catching the squirrels, which proves to be simple, especially with their access to safety denied. One really couldn't ask for a better hunt.",
-            "stat_skill": "s_c murmurs instructions to {PRONOUN/s_c/poss} Clanmates, who nod silently and move into position. One cat feints at a squirrel, who raises the alarm and turns to run; another cat blocks off the nearby burrow's entrance, forcing the squirrels to run towards s_c; and s_c lunges in for the kill. A flawless hunt, not a single squirrel left behind."
-        },
-        "fail_text": {
-            "unscathed_common": "It only takes one squirrel spotting r_c to raise the alarm before they've all vanished into their burrows. Though the others made a few catches before they scattered, they didn't get nearly what they would have otherwise."
-        },
-        "win_skills": [
-            "HUNTER,1"
+        "success_outcomes": [
+            {
+                "text": "The patrol makes short work of locating the squirrels, spreading out into a loose formation to encircle their prey. Slowly, they move in, the circle getting tighter and tighter, until they're finally seen. The squirrels screech and scatter in different directions, but the circle cuts off their escape, and by the end of it they're fresh-kill.",
+                "exp": 30,
+                "weight": 20,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "First order of business is blocking their access to any nearby burrows, which r_c takes care of. After that, it's a matter of finding and catching the squirrels, which proves to be simple, especially with their access to safety denied. One really couldn't ask for a better hunt.",
+                "exp": 30,
+                "weight": 5,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c murmurs instructions to {PRONOUN/s_c/poss} Clanmates, who nod silently and move into position. One cat feints at a squirrel, who raises the alarm and turns to run; another cat blocks off the nearby burrow's entrance, forcing the squirrels to run towards s_c; and s_c lunges in for the kill. A flawless hunt, not a single squirrel left behind.",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["HUNTER,1"],
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "It only takes one squirrel spotting r_c to raise the alarm before they've all vanished into their burrows. Though the others made a few catches before they scattered, they didn't get nearly what they would have otherwise.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
     },
     {
         "patrol_id": "bch_hunt_leafbaresnowstorm1",
-        "biome": "beach",
-        "season": "leaf-bare",
-        "tags": [
-            "hunting",
-            "large_prey",
-            "comfort",
-            "trust",
-            "patrol_to_p_l",
-            "patrol_to_r_c",
-            "cold_injury",
-            "no_fail_prey"
-        ],
+        "biome": ["beach"],
+        "season": ["leaf-bare"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "gen_hunt_leafbaresnowstorm",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
         "chance_of_success": 40,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "Despite the snow, the patrol manages to hunt successfully, finding crabs running about on the beach, oblivious to leaf-bare. With the sea to provide there's more than enough to bring a good haul back to c_n, and as p_l leads them home there's a sense of security and competence driving them onwards.",
-            "stat_skill": "Everyone looks admiringly at s_c by the end of the afternoon. Every cat carries something home, but nearly all of it was caught by s_c.",
-            "stat_trait": "s_c really keeps the patrol on task and motivated through the sharp cold of the leaf-bare morning, not through authority or commands, but with a gentle voice and compassionate understanding that encourages every cat to do their best for c_n."
-        },
-        "fail_text": {
-            "unscathed_common": "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol retreats to a sea cave, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball while they wait for the storm to blow over.",
-            "injury": "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol retreats to a sea cave, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball. Still, when they return to camp r_c is cold and chilled."
-        },
-        "win_skills": [
-            "HUNTER,2"
+        "success_outcomes": [
+            {
+                "text": "Despite the snow, the patrol manages to hunt successfully, finding crabs running about on the beach, oblivious to leaf-bare. With the sea to provide there's more than enough to bring a good haul back to c_n, and as p_l leads them home there's a sense of security and competence driving them onwards.",
+                "exp": 10,
+                "weight": 20,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c", "p_l"],
+                        "cats_from": ["patrol", "patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Everyone looks admiringly at s_c by the end of the afternoon. Every cat carries something home, but nearly all of it was caught by s_c.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["HUNTER,2"],
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c", "p_l"],
+                        "cats_from": ["patrol", "patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c really keeps the patrol on task and motivated through the sharp cold of the leaf-bare morning, not through authority or commands, but with a gentle voice and compassionate understanding that encourages every cat to do their best for c_n.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving"],
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c", "p_l"],
+                        "cats_from": ["patrol", "patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "altruistic",
-            "compassionate",
-            "empathetic",
-            "faithful",
-            "loving"
-        ],
-        "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c caught a chill while hunting in leaf-bare."
-        }
+        "fail_outcomes": [
+            {
+                "text": "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol retreats to a sea cave, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball while they wait for the storm to blow over.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c", "p_l"],
+                        "cats_from": ["patrol", "patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol retreats to a sea cave, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball. Still, when they return to camp r_c is cold and chilled.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": []
+                    }
+                ],
+                "history_text": { "scar": "m_c caught a chill while hunting in leaf-bare." },
+                "relationships": [
+                    {
+                        "cats_to": ["r_c", "p_l"],
+                        "cats_from": ["patrol", "patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "bch_hunt_leafbaresnowstorm2",
-        "biome": "beach",
-        "season": "leaf-bare",
-        "tags": [
-            "hunting",
-            "small_prey",
-            "cold_injury",
-            "no_fail_prey"
-        ],
+        "biome": ["beach"],
+        "season": ["leaf-bare"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "gen_hunt_leafbaresnowstorm",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
         "decline_text": "{PRONOUN/r_c/subject} {VERB/r_c/decide/decides} to turn back and wait until the snow dies down.",
         "chance_of_success": 40,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "Despite the snow, r_c manages to hunt successfully, finding the normal number of crabs obliviously scurrying about.",
-            "stat_skill": "s_c really shows {PRONOUN/r_c/poss} talent, bringing a clutch of crabs back to camp for the fresh-kill pile."
-        },
-        "fail_text": {
-            "injury": "The prey must be hiding; r_c catches nothing. As a snowstorm descends and visibility drops, {PRONOUN/r_c/subject} {VERB/r_c/hide/hides} in a sea cave, shivering and tightly tucked up against the cold. When {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp r_c is cold and chilled, but otherwise unharmed."
-        },
-        "win_skills": [
-            "HUNTER,2"
+        "success_outcomes": [
+            {
+                "text": "Despite the snow, r_c manages to hunt successfully, finding the normal number of crabs obliviously scurrying about.",
+                "exp": 10,
+                "weight": 20,
+                "prey": ["small"]
+            },
+            {
+                "text": "s_c really shows {PRONOUN/r_c/poss} talent, bringing a clutch of crabs back to camp for the fresh-kill pile.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["HUNTER,2"],
+                "prey": ["small"]
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c caught a chill while hunting in leaf-bare."
-        }
+        "fail_outcomes": [
+            {
+                "text": "The prey must be hiding; r_c catches nothing. As a snowstorm descends and visibility drops, {PRONOUN/r_c/subject} {VERB/r_c/hide/hides} in a sea cave, shivering and tightly tucked up against the cold. When {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp r_c is cold and chilled, but otherwise unharmed.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": []
+                    }
+                ],
+                "history_text": { "scar": "m_c caught a chill while hunting in leaf-bare." }
+            }
+        ]
     },
     {
         "patrol_id": "bch_hunt_leafbaresnowstorm3",
-        "biome": "beach",
-        "season": "leaf-bare",
-        "tags": [
-            "hunting",
-            "small_prey",
-            "comfort",
-            "trust",
-            "rel_patrol",
-            "romantic",
-            "no_app",
-            "cold_injury"
-        ],
+        "biome": ["beach"],
+        "season": ["leaf-bare"],
+        "types": ["hunting"],
+        "tags": ["romantic"],
+        "patrol_art": "gen_hunt_leafbaresnowstorm",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
         "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
         "chance_of_success": 40,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. The cats retreat into a sea cave and cuddle together, sharing what little warmth they have. Each cat takes a turn on the most exposed side of the huddle, selflessly risking themselves.",
-            "stat_skill": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. s_c keeps everyone's spirits up as the patrol hides in the lee of a cliff where the wind can't get them, until everyone is talking, shaky and unhappy, but keeping each other's spirits up.",
-            "stat_trait": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. As the cats hide from the wind, s_c keeps an eye out for everyone. It's a long couple of hours, but with gentle understanding and compassion the cats make it though safely, closer than ever afterwards."
-        },
-        "fail_text": {
-            "injury": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. Finally, after what feels like moons, the snowstorm leaves and the cats trudge back home. Unfortunately, r_c hasn't escaped unscathed, {PRONOUN/r_c/poss} body chilled and refusing to warm up properly."
-        },
-        "win_skills": [
-            "SPEAKER,2"
+        "success_outcomes": [
+            {
+                "text": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. The cats retreat into a sea cave and cuddle together, sharing what little warmth they have. Each cat takes a turn on the most exposed side of the huddle, selflessly risking themselves.",
+                "exp": 10,
+                "weight": 20,
+                "prey": ["small"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. s_c keeps everyone's spirits up as the patrol hides in the lee of a cliff where the wind can't get them, until everyone is talking, shaky and unhappy, but keeping each other's spirits up.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,2"],
+                "prey": ["small"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": ["romantic", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. As the cats hide from the wind, s_c keeps an eye out for everyone. It's a long couple of hours, but with gentle understanding and compassion the cats make it though safely, closer than ever afterwards.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving"],
+                "prey": ["small"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": ["romantic", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "altruistic",
-            "compassionate",
-            "empathetic",
-            "faithful",
-            "loving"
-        ],
-        "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c caught a chill while hunting in leaf-bare."
-        }
+        "fail_outcomes": [
+            {
+                "text": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. Finally, after what feels like moons, the snowstorm leaves and the cats trudge back home. Unfortunately, r_c hasn't escaped unscathed, {PRONOUN/r_c/poss} body chilled and refusing to warm up properly.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": []
+                    }
+                ],
+                "history_text": { "scar": "m_c caught a chill while hunting in leaf-bare." },
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romantic", "comfort", "trust"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
     }
 ]

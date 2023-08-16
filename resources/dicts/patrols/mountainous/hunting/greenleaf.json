@@ -1,539 +1,1411 @@
 [
     {
         "patrol_id": "mtn_hunt_greenleaf_heat1",
-        "biome": "mountainous",
-        "season": "greenleaf",
-        "tags": [
-            "hunting",
-            "platonic",
-            "large_prey"
-        ],
+        "biome": ["mountainous"],
+        "season": ["greenleaf"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "It's hot out today, and the hunting patrol bounces around, infused with energy as they seek out prey.",
         "decline_text": "The patrol decides to head back to camp. They can hunt a different day.",
         "chance_of_success": 50,
-        "exp": 15,
-        "success_text": {
-            "unscathed_common": "It feels like every creature on the mountains is out enjoying the weather and fattening up, and the cats have what feels like the perfect day, sun and heat and prey dripping from every moment.",
-            "unscathed_rare": "In the heat of midday, yawning with the sleepy pleasure of the heat, r_c hears a croaking bleat. The patrol trots off to investigate, and finds an upside-down mountain sheep stuck in a crevice. Not only do they bring back as much meat as they can carry, but they make sure to bring back wool, too. It's never to early to be thinking about next leaf-bare."
-        },
-        "fail_text": {
-            "unscathed_common": "No way, it's too hot for this. They can try to hunt again later."
-        },
-        "min_cats": 2,
-        "max_cats": 6
+        "success_outcomes": [
+            {
+                "text": "It feels like every creature on the mountains is out enjoying the weather and fattening up, and the cats have what feels like the perfect day, sun and heat and prey dripping from every moment.",
+                "exp": 15,
+                "weight": 20,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "In the heat of midday, yawning with the sleepy pleasure of the heat, r_c hears a croaking bleat. The patrol trots off to investigate, and finds an upside-down mountain sheep stuck in a crevice. Not only do they bring back as much meat as they can carry, but they make sure to bring back wool, too. It's never to early to be thinking about next leaf-bare.",
+                "exp": 15,
+                "weight": 5,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "No way, it's too hot for this. They can try to hunt again later.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
     },
     {
         "patrol_id": "mtn_hunt_greenleaf_eagleswim1",
-        "biome": "mountainous",
-        "season": "greenleaf",
-        "tags": [
-            "hunting",
-            "warrior",
-            "trust",
-            "beak_bite",
-            "scar",
-            "BEAKCHEEK",
-            "large_prey0",
-            "large_prey1",
-            "huge_prey2",
-            "huge_prey3"
-        ],
+        "biome": ["mountainous"],
+        "season": ["greenleaf"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 1,
+        "max_cats": 3,
+        "min_max_status": {
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "The hunting patrol spots an eagle on the wing over a large bend in the river, and watches as it swoops to dig its talons through the spine of an impressively big fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
         "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
         "chance_of_success": 30,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "Your patrol uses the eagle as a scout for their own hunt, and eventually manage several smaller catches from the same riverbank that cumulatively are just as impressive as the eagle's massive catch.",
-            "unscathed_rare": "The cats' eyes light up with possibility, watching the eagle swimming awkwardly. p_l leads the patrol yowling threats and insults from the riverbank and making a massive racket. Bewildered, the eagle eventually gives up its catch and takes to the air. The massive fish is c_n's as soon as they can work out how to fish it from the river.",
-            "stat_skill": "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. {PRONOUN/s_c/subject/CAP} {VERB/s_c/win/wins} both the fish and the predator as prey for c_n.",
-            "stat_trait": "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards shore, and just as it's going to climb out s_c pounces, fighting in the shallows where s_c has the edge over the bird in swimming. {PRONOUN/s_c/subject/CAP} {VERB/s_c/win/wins} both the fish and the predator as prey for c_n."
-        },
-        "fail_text": {
-            "unscathed_common": "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and they're driven back, giving up on the idea of scavenging.",
-            "injury": "The patrol decides to fight the eagle in the water for possession of the prey, but while it's talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat."
-        },
-        "win_skills": [
-            "FIGHTER,3"
+        "success_outcomes": [
+            {
+                "text": "Your patrol uses the eagle as a scout for their own hunt, and eventually manage several smaller catches from the same riverbank that cumulatively are just as impressive as the eagle's massive catch.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The cats' eyes light up with possibility, watching the eagle swimming awkwardly. p_l leads the patrol yowling threats and insults from the riverbank and making a massive racket. Bewildered, the eagle eventually gives up its catch and takes to the air. The massive fish is c_n's as soon as they can work out how to fish it from the river.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. {PRONOUN/s_c/subject/CAP} {VERB/s_c/win/wins} both the fish and the predator as prey for c_n.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,3"],
+                "prey": ["huge"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards shore, and just as it's going to climb out s_c pounces, fighting in the shallows where s_c has the edge over the bird in swimming. {PRONOUN/s_c/subject/CAP} {VERB/s_c/win/wins} both the fish and the predator as prey for c_n.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["ambitious"],
+                "prey": ["huge"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "ambitious"
-        ],
-        "min_cats": 1,
-        "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c carries a scar from an eagle's beak."
-        }
+        "fail_outcomes": [
+            {
+                "text": "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and they're driven back, giving up on the idea of scavenging.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "The patrol decides to fight the eagle in the water for possession of the prey, but while it's talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["beak_bite"],
+                        "scars": ["BEAKCHEEK"]
+                    }
+                ],
+                "history_text": { "scar": "m_c carries a scar from an eagle's beak." },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
     },
     {
         "patrol_id": "mtn_hunt_greenleaf_eagleswim2",
-        "biome": "mountainous",
-        "season": "greenleaf",
-        "tags": [
-            "hunting",
-            "warrior",
-            "trust",
-            "beak_bite",
-            "scar",
-            "BEAKCHEEK",
-            "large_prey0",
-            "large_prey1",
-            "huge_prey2",
-            "huge_prey3"
-        ],
+        "biome": ["mountainous"],
+        "season": ["greenleaf"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "The hunting patrol spots an eagle on the wing over a large bend in the river, and watches as it swoops to dig its talons through the spine of an impressively big fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
         "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
         "chance_of_success": 40,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "Your patrol uses the eagle as a scout for their own hunt, and eventually manage several smaller catches from the same riverbank that cumulatively are just as impressive as the eagle's massive catch.",
-            "unscathed_rare": "The cats' eyes light up with possibility, watching the eagle swimming awkwardly. p_l leads the patrol yowling threats and insults from the riverbank and making a massive racket. Bewildered, the eagle eventually gives up its catch and takes to the air. The massive fish is c_n's as soon as they can work out how to fish it from the river.",
-            "stat_skill": "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. {PRONOUN/s_c/subject/CAP} {VERB/s_c/win/wins} both the fish and the predator as prey for c_n.",
-            "stat_trait": "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. {PRONOUN/s_c/subject/CAP} {VERB/s_c/win/wins} both the fish and the predator as prey for c_n."
-        },
-        "fail_text": {
-            "unscathed_common": "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and they are driven back, giving up on the idea of scavenging.",
-            "injury": "The patrol decides to fight the eagle in the water for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat."
-        },
-        "win_skills": [
-            "FIGHTER,3"
+        "success_outcomes": [
+            {
+                "text": "Your patrol uses the eagle as a scout for their own hunt, and eventually manage several smaller catches from the same riverbank that cumulatively are just as impressive as the eagle's massive catch.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The cats' eyes light up with possibility, watching the eagle swimming awkwardly. p_l leads the patrol yowling threats and insults from the riverbank and making a massive racket. Bewildered, the eagle eventually gives up its catch and takes to the air. The massive fish is c_n's as soon as they can work out how to fish it from the river.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. {PRONOUN/s_c/subject/CAP} {VERB/s_c/win/wins} both the fish and the predator as prey for c_n.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,3"],
+                "prey": ["huge"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. {PRONOUN/s_c/subject/CAP} {VERB/s_c/win/wins} both the fish and the predator as prey for c_n.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["ambitious"],
+                "prey": ["huge"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "ambitious"
-        ],
-        "min_cats": 4,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c carries a scar from an eagle's beak."
-        }
+        "fail_outcomes": [
+            {
+                "text": "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and they are driven back, giving up on the idea of scavenging.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "The patrol decides to fight the eagle in the water for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["beak_bite"],
+                        "scars": ["BEAKCHEEK"]
+                    }
+                ],
+                "history_text": { "scar": "m_c carries a scar from an eagle's beak." },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
     },
     {
         "patrol_id": "mtn_hunt_greenleaf_eagleswim3",
-        "biome": "mountainous",
-        "season": "greenleaf",
-        "tags": [
-            "hunting",
-            "warrior",
-            "trust",
-            "cruel_season",
-            "beak_bite",
-            "death",
-            "large_prey0",
-            "large_prey1",
-            "huge_prey2",
-            "huge_prey3",
-            "scar",
-            "BEAKLOWER"
-        ],
+        "biome": ["mountainous"],
+        "season": ["greenleaf"],
+        "types": ["hunting"],
+        "tags": ["cruel_season"],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 1,
+        "max_cats": 3,
+        "min_max_status": {
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "The hunting patrol spots an eagle on the wing over a large bend in the river, and watches as it swoops to dig its talons through the spine of an impressively big fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
         "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
         "chance_of_success": 30,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "Your patrol uses the eagle as a scout for their own hunt, and eventually manage several smaller catches from the same riverbank that cumulatively are just as impressive as the eagle's massive catch.",
-            "unscathed_rare": "The cats' eyes light up with possibility, watching the eagle swimming awkwardly. p_l leads the patrol yowling threats and insults from the riverbank and making a massive racket. Bewildered, the eagle eventually gives up its catch and takes to the air. The massive fish is c_n's as soon as they can work out how to fish it from the river.",
-            "stat_skill": "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. {PRONOUN/s_c/subject/CAP} {VERB/s_c/win/wins} both the fish and the predator as prey for c_n.",
-            "stat_trait": "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards shore, and just as it's going to climb out s_c pounces, fighting in the shallows where s_c has the edge over the bird in swimming. {PRONOUN/s_c/subject/CAP} {VERB/s_c/win/wins} both the fish and the predator as prey for c_n."
-        },
-        "fail_text": {
-            "unscathed_common": "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and they are driven back, giving up on the idea of scavenging.",
-            "unscathed_stat": "Far too keen to try and prove {PRONOUN/s_c/self} against the king of the skies, s_c leaps for the eagle and startles it into flight with it's massive catch, and the opportunity is lost.",
-            "death": "The patrol decides to fight the eagle in the water for possession of the prey, but the bird drops the prey and a furious haphazard swimming fight ensues, its talons and beak and wing failing in an uncoordinated dangerous tangle that brings r_c below the water. It's hard to say what kills {PRONOUN/r_c/object}, the talon wounds or drowning.",
-            "injury": "The patrol decides to fight the eagle in the water for possession of the prey, but while it's talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat.",
-            "stat_injury": "Keen to prove {PRONOUN/s_c/self}, s_c dives into the water and leaps for the eagle. Instead what {PRONOUN/s_c/subject} {VERB/s_c/get/gets} is a damp, cold trip in the water, and the associated chills that come with that.",
-            "leader_death": "Another member of the patrol tries to start a fight with the eagle as it climbs onto the riverbank, and p_l gets between them, taking the furious bird's full wrath. {PRONOUN/p_l/subject/CAP} {VERB/p_l/lose/loses} a life bleeding out on the ground, and all for the sake of a silly fish."
-        },
-        "win_skills": [
-            "FIGHTER,3"
+        "success_outcomes": [
+            {
+                "text": "Your patrol uses the eagle as a scout for their own hunt, and eventually manage several smaller catches from the same riverbank that cumulatively are just as impressive as the eagle's massive catch.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The cats' eyes light up with possibility, watching the eagle swimming awkwardly. p_l leads the patrol yowling threats and insults from the riverbank and making a massive racket. Bewildered, the eagle eventually gives up its catch and takes to the air. The massive fish is c_n's as soon as they can work out how to fish it from the river.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. {PRONOUN/s_c/subject/CAP} {VERB/s_c/win/wins} both the fish and the predator as prey for c_n.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,3"],
+                "prey": ["huge"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards shore, and just as it's going to climb out s_c pounces, fighting in the shallows where s_c has the edge over the bird in swimming. {PRONOUN/s_c/subject/CAP} {VERB/s_c/win/wins} both the fish and the predator as prey for c_n.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["ambitious"],
+                "prey": ["huge"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "ambitious"
-        ],
-        "fail_trait": [
-            "bloodthirsty"
-        ],
-        "min_cats": 1,
-        "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c carries a scar from an eagle's beak.",
-            "reg_death": "m_c was killed by an eagle, scrapping over food.",
-            "lead_death": "{VERB/m_c/were/was} killed by an eagle"
-        }
+        "fail_outcomes": [
+            {
+                "text": "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and they are driven back, giving up on the idea of scavenging.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Far too keen to try and prove {PRONOUN/s_c/self} against the king of the skies, s_c leaps for the eagle and startles it into flight with it's massive catch, and the opportunity is lost.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["bloodthirsty"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "The patrol decides to fight the eagle in the water for possession of the prey, but the bird drops the prey and a furious haphazard swimming fight ensues, its talons and beak and wing failing in an uncoordinated dangerous tangle that brings r_c below the water. It's hard to say what kills {PRONOUN/r_c/object}, the talon wounds or drowning.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c carries a scar from an eagle's beak.",
+                    "reg_death": "m_c was killed by an eagle, scrapping over food.",
+                    "lead_death": "{VERB/m_c/were/was} killed by an eagle"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "The patrol decides to fight the eagle in the water for possession of the prey, but while it's talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["beak_bite"],
+                        "scars": ["BEAKLOWER"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c carries a scar from an eagle's beak.",
+                    "reg_death": "m_c was killed by an eagle, scrapping over food.",
+                    "lead_death": "{VERB/m_c/were/was} killed by an eagle"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Keen to prove {PRONOUN/s_c/self}, s_c dives into the water and leaps for the eagle. Instead what {PRONOUN/s_c/subject} {VERB/s_c/get/gets} is a damp, cold trip in the water, and the associated chills that come with that.",
+                "exp": 0,
+                "weight": 10,
+                "stat_trait": ["bloodthirsty"],
+                "injury": [
+                    {
+                        "cats": ["s_c"],
+                        "injuries": ["beak_bite"],
+                        "scars": ["BEAKLOWER"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c carries a scar from an eagle's beak.",
+                    "reg_death": "m_c was killed by an eagle, scrapping over food.",
+                    "lead_death": "{VERB/m_c/were/was} killed by an eagle"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "mtn_hunt_greenleaf_eagleswim4",
-        "biome": "mountainous",
-        "season": "greenleaf",
-        "tags": [
-            "hunting",
-            "warrior",
-            "trust",
-            "cruel_season",
-            "beak_bite",
-            "death",
-            "large_prey0",
-            "large_prey1",
-            "huge_prey2",
-            "huge_prey3",
-            "scar",
-            "BEAKLOWER"
-        ],
+        "biome": ["mountainous"],
+        "season": ["greenleaf"],
+        "types": ["hunting"],
+        "tags": ["cruel_season"],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "The hunting patrol spots an eagle on the wing over a large bend in the river, and watches as it swoops to dig its talons through the spine of an impressively big fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
         "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
         "chance_of_success": 40,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "Your patrol uses the eagle as a scout for their own hunt, and eventually manage several smaller catches from the same riverbank that cumulatively are just as impressive as the eagle's massive catch.",
-            "unscathed_rare": "The cats' eyes light up with possibility, watching the eagle swimming awkwardly. p_l leads the patrol yowling threats and insults from the riverbank and making a massive racket. Bewildered, the eagle eventually gives up its catch and takes to the air. The massive fish is c_n's as soon as they can work out how to fish it from the river.",
-            "stat_skill": "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. They win both the fish and the predator as prey for c_n.",
-            "stat_trait": "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. They win both the fish and the predator as prey for c_n."
-        },
-        "fail_text": {
-            "unscathed_common": "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and they're driven back, giving up on the idea of scavenging.",
-            "death": "The patrol decides to fight the eagle in the water for possession of the prey, but the bird drops the prey and a furious haphazard swimming fight ensues, its talons and beak and wing failing in an uncoordinated dangerous tangle that brings r_c below the water. It's hard to say what kills {PRONOUN/r_c/object}, the talon wounds or drowning.",
-            "injury": "The patrol decides to fight the eagle in the water for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat."
-        },
-        "win_skills": [
-            "FIGHTER,3"
+        "success_outcomes": [
+            {
+                "text": "Your patrol uses the eagle as a scout for their own hunt, and eventually manage several smaller catches from the same riverbank that cumulatively are just as impressive as the eagle's massive catch.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The cats' eyes light up with possibility, watching the eagle swimming awkwardly. p_l leads the patrol yowling threats and insults from the riverbank and making a massive racket. Bewildered, the eagle eventually gives up its catch and takes to the air. The massive fish is c_n's as soon as they can work out how to fish it from the river.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. They win both the fish and the predator as prey for c_n.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,3"],
+                "prey": ["huge"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. They win both the fish and the predator as prey for c_n.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["ambitious"],
+                "prey": ["huge"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "ambitious"
-        ],
-        "min_cats": 4,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c carries a scar from an eagle's beak.",
-            "reg_death": "m_c was killed by an eagle, scrapping over food.",
-            "lead_death": "{VERB/m_c/were/was} killed by an eagle"
-        }
+        "fail_outcomes": [
+            {
+                "text": "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and they're driven back, giving up on the idea of scavenging.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "The patrol decides to fight the eagle in the water for possession of the prey, but the bird drops the prey and a furious haphazard swimming fight ensues, its talons and beak and wing failing in an uncoordinated dangerous tangle that brings r_c below the water. It's hard to say what kills {PRONOUN/r_c/object}, the talon wounds or drowning.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c carries a scar from an eagle's beak.",
+                    "reg_death": "m_c was killed by an eagle, scrapping over food.",
+                    "lead_death": "{VERB/m_c/were/was} killed by an eagle"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "The patrol decides to fight the eagle in the water for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["beak_bite"],
+                        "scars": ["BEAKLOWER"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c carries a scar from an eagle's beak.",
+                    "reg_death": "m_c was killed by an eagle, scrapping over food.",
+                    "lead_death": "{VERB/m_c/were/was} killed by an eagle"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "mtn_hunt_fox_greenleafscavenge1",
-        "biome": "mountainous",
-        "season": "greenleaf",
-        "tags": [
-            "hunting",
-            "scar",
-            "NECKBITE",
-            "injury",
-            "clan_to_patrol",
-            "respect",
-            "rel_patrol",
-            "big_bite_injury",
-            "large_prey"
-        ],
+        "biome": ["mountainous"],
+        "season": ["greenleaf"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 3,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a mountain goat kid carcass. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 40,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
-            "stat_skill": "s_c shows {PRONOUN/s_c/poss} strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
-            "stat_trait": "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
-        },
-        "fail_text": {
-            "unscathed_common": "Your patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
-            "injury": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
-            "stat_injury": "s_c means well, but {PRONOUN/s_c/subject} {VERB/s_c/are/is} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
-        },
-        "win_skills": [
-            "FIGHTER,1"
+        "success_outcomes": [
+            {
+                "text": "Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol", "patrol"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c shows {PRONOUN/s_c/poss} strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,1"],
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol", "patrol"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. It's only one bite, but the fox has had enough and flees.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "altruistic",
+                    "ambitious",
+                    "confident",
+                    "daring",
+                    "fierce",
+                    "responsible",
+                    "righteous"
+                ],
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol", "patrol"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "adventurous",
-            "altruistic",
-            "ambitious",
-            "confident",
-            "daring",
-            "fierce",
-            "responsible",
-            "righteous"
-        ],
-        "fail_trait": [
-            "troublesome",
-            "vengeful",
-            "bloodthirsty",
-            "bold"
-        ],
-        "min_cats": 2,
-        "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c carries a scar from a fox fight."
-        }
+        "fail_outcomes": [
+            {
+                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol", "patrol"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["big_bite_injury"],
+                        "scars": ["NECKBITE"]
+                    }
+                ],
+                "history_text": { "scar": "m_c carries a scar from a fox fight." },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol", "patrol"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "s_c means well, but {PRONOUN/s_c/subject} {VERB/s_c/are/is} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the hurt s_c.",
+                "exp": 0,
+                "weight": 10,
+                "stat_trait": ["troublesome", "vengeful", "bloodthirsty", "bold"],
+                "injury": [
+                    {
+                        "cats": ["s_c"],
+                        "injuries": ["big_bite_injury"],
+                        "scars": ["NECKBITE"]
+                    }
+                ],
+                "history_text": { "scar": "m_c carries a scar from a fox fight." },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol", "patrol"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
     },
     {
         "patrol_id": "mtn_hunt_fox_greenleafscavenge2",
-        "biome": "mountainous",
-        "season": "greenleaf",
-        "tags": [
-            "hunting",
-            "scar",
-            "NECKBITE",
-            "injury",
-            "clan_to_patrol",
-            "respect",
-            "rel_patrol",
-            "big_bite_injury",
-            "large_prey"
-        ],
+        "biome": ["mountainous"],
+        "season": ["greenleaf"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a mountain goat kid carcass. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 40,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "Your cats are smaller but heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
-            "stat_skill": "s_c shows {PRONOUN/s_c/poss} strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hind legs. The fox runs, but there's no way it'll live long with such a crippling injury.",
-            "stat_trait": "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good."
-        },
-        "fail_text": {
-            "unscathed_common": "Your patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there were no injuries.",
-            "injury": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
-            "stat_injury": "s_c means well, but {PRONOUN/s_c/subject} {VERB/s_c/are/is} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
-        },
-        "win_skills": [
-            "FIGHTER,1"
+        "success_outcomes": [
+            {
+                "text": "Your cats are smaller but heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol", "patrol"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c shows {PRONOUN/s_c/poss} strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hind legs. The fox runs, but there's no way it'll live long with such a crippling injury.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,1"],
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol", "patrol"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "altruistic",
+                    "ambitious",
+                    "confident",
+                    "daring",
+                    "fierce",
+                    "responsible",
+                    "righteous"
+                ],
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol", "patrol"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "adventurous",
-            "altruistic",
-            "ambitious",
-            "confident",
-            "daring",
-            "fierce",
-            "responsible",
-            "righteous"
-        ],
-        "fail_trait": [
-            "troublesome",
-            "vengeful",
-            "bloodthirsty",
-            "bold"
-        ],
-        "min_cats": 4,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c carries a scar from a fox fight."
-        }
+        "fail_outcomes": [
+            {
+                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there were no injuries.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol", "patrol"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["big_bite_injury"],
+                        "scars": ["NECKBITE"]
+                    }
+                ],
+                "history_text": { "scar": "m_c carries a scar from a fox fight." },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol", "patrol"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "s_c means well, but {PRONOUN/s_c/subject} {VERB/s_c/are/is} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the hurt s_c.",
+                "exp": 0,
+                "weight": 10,
+                "stat_trait": ["troublesome", "vengeful", "bloodthirsty", "bold"],
+                "injury": [
+                    {
+                        "cats": ["s_c"],
+                        "injuries": ["big_bite_injury"],
+                        "scars": ["NECKBITE"]
+                    }
+                ],
+                "history_text": { "scar": "m_c carries a scar from a fox fight." },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol", "patrol"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
     },
     {
         "patrol_id": "mtn_hunt_fox_greenleafscavenge3",
-        "biome": "mountainous",
-        "season": "greenleaf",
-        "tags": [
-            "hunting",
-            "scar",
-            "THREE",
-            "injury",
-            "clan_to_patrol",
-            "respect",
-            "death",
-            "small_bite_injury",
-            "large_prey"
-        ],
+        "biome": ["mountainous"],
+        "season": ["greenleaf"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "r_c catches the scent of a red fox. Tracking it, {PRONOUN/r_c/subject} {VERB/r_c/find/finds} the animal feeding on a mountain goat kid carcass. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 30,
-        "exp": 30,
-        "success_text": {
-            "unscathed_common": "r_c is smaller, alone, and half the red fox's weight, but it has a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle. The fox, already stuffed full and unwilling to lose blood over it, leaves the kill with a grumble.",
-            "stat_skill": "s_c uses every trick in {PRONOUN/s_c/poss} talented fighting skillset to attack the fox with no one to watch {PRONOUN/s_c/poss} flank, until the perfect opportunity opens up and {PRONOUN/s_c/subject} {VERB/s_c/pounce/pounces} onto the fox's back, digging in {PRONOUN/s_c/poss} claws. It's a wild ride through the forest until the fox bucks {PRONOUN/s_c/object} off, but it wins {PRONOUN/s_c/object} the kid carcass.",
-            "stat_trait": "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. But then {PRONOUN/s_c/subject} {VERB/s_c/are/is} stuck, unwilling to let go and risk being bitten. {PRONOUN/s_c/subject/CAP} {VERB/s_c/are/is} dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the kid."
-        },
-        "fail_text": {
-            "unscathed_common": "r_c fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
-            "death": "Fiercely, r_c throws {PRONOUN/r_c/self} at the fox, determined to win the kid prize. But the fox values it just as dearly, and manages to get a good grip on r_c, shaking {PRONOUN/r_c/object} to pieces and killing {PRONOUN/r_c/object}.",
-            "injury": "r_c launches into battle, but is caught with a nasty bite, and retreats to limp back home. The fox doesn't follow, happy enough to eat the kid instead of the foolish cat.",
-            "stat_injury": "s_c is overconfident in {PRONOUN/s_c/subject} {VERB/s_c/are/is} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/retreat/retreats}, bleeding and in pain, and the fox settles back down to its meal."
-        },
-        "win_skills": [
-            "FIGHTER,2"
+        "success_outcomes": [
+            {
+                "text": "r_c is smaller, alone, and half the red fox's weight, but it has a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle. The fox, already stuffed full and unwilling to lose blood over it, leaves the kill with a grumble.",
+                "exp": 30,
+                "weight": 20,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c uses every trick in {PRONOUN/s_c/poss} talented fighting skillset to attack the fox with no one to watch {PRONOUN/s_c/poss} flank, until the perfect opportunity opens up and {PRONOUN/s_c/subject} {VERB/s_c/pounce/pounces} onto the fox's back, digging in {PRONOUN/s_c/poss} claws. It's a wild ride through the forest until the fox bucks {PRONOUN/s_c/object} off, but it wins {PRONOUN/s_c/object} the kid carcass.",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,2"],
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. But then {PRONOUN/s_c/subject} {VERB/s_c/are/is} stuck, unwilling to let go and risk being bitten. {PRONOUN/s_c/subject/CAP} {VERB/s_c/are/is} dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the kid.",
+                "exp": 30,
+                "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "altruistic",
+                    "ambitious",
+                    "confident",
+                    "daring",
+                    "fierce",
+                    "responsible",
+                    "righteous"
+                ],
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "adventurous",
-            "altruistic",
-            "ambitious",
-            "confident",
-            "daring",
-            "fierce",
-            "responsible",
-            "righteous"
-        ],
-        "fail_trait": [
-            "troublesome",
-            "vengeful",
-            "bloodthirsty",
-            "bold"
-        ],
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c carries a scar from a solo fox fight.",
-            "reg_death": "m_c fell in a solo battle with a fox.",
-            "lead_death": "{VERB/m_c/were/was} killed in battle with a fox"
-        }
+        "fail_outcomes": [
+            {
+                "text": "r_c fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Fiercely, r_c throws {PRONOUN/r_c/self} at the fox, determined to win the kid prize. But the fox values it just as dearly, and manages to get a good grip on r_c, shaking {PRONOUN/r_c/object} to pieces and killing {PRONOUN/r_c/object}.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c carries a scar from a solo fox fight.",
+                    "reg_death": "m_c fell in a solo battle with a fox.",
+                    "lead_death": "{VERB/m_c/were/was} killed in battle with a fox"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "r_c launches into battle, but is caught with a nasty bite, and retreats to limp back home. The fox doesn't follow, happy enough to eat the kid instead of the foolish cat.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["small_bite_injury"],
+                        "scars": ["THREE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c carries a scar from a solo fox fight.",
+                    "reg_death": "m_c fell in a solo battle with a fox.",
+                    "lead_death": "{VERB/m_c/were/was} killed in battle with a fox"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c is overconfident in {PRONOUN/s_c/subject} {VERB/s_c/are/is} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/retreat/retreats}, bleeding and in pain, and the fox settles back down to its meal.",
+                "exp": 0,
+                "weight": 10,
+                "stat_trait": ["troublesome", "vengeful", "bloodthirsty", "bold"],
+                "injury": [
+                    {
+                        "cats": ["s_c"],
+                        "injuries": ["small_bite_injury"],
+                        "scars": ["THREE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c carries a scar from a solo fox fight.",
+                    "reg_death": "m_c fell in a solo battle with a fox.",
+                    "lead_death": "{VERB/m_c/were/was} killed in battle with a fox"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "mtn_hunt_greenleaf_solosquirrel1",
-        "biome": "mountainous",
-        "season": "greenleaf",
-        "tags": [
-            "hunting",
-            "no_app",
-            "medium_prey"
-        ],
+        "biome": ["mountainous"],
+        "season": ["greenleaf"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
         "intro_text": "p_l tastes the air and perks up - there's a squirrel nearby, nibbling the lush plant growth near the base of a tree!",
         "decline_text": "After a moment's deliberation, r_c decides to move on.",
         "chance_of_success": 50,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "The wind suddenly shifts, and the squirrel jerks its head up in alarm. p_l thinks fast, bolting to cut off its escape before delivering the killing blow.",
-            "unscathed_rare": "Though it tries to escape, p_l is faster and smarter - {PRONOUN/p_l/subject} {VERB/p_l/slam/slams} a paw down on the squirrel's tail before it can go very far, and kill it with ease.",
-            "stat_skill": "s_c silently slinks through the underbrush, going undetected until {PRONOUN/s_c/subject} {VERB/s_c/have/has} pounced - and by then it's far too late for the squirrel to do anything about it."
-        },
-        "fail_text": {
-            "unscathed_common": "p_l shifts on some pebbles as {PRONOUN/p_l/subject} {VERB/p_l/ready/readies} {PRONOUN/p_l/self} to pounce, and the resulting clatter alerts the squirrel. It doesn't even spare {PRONOUN/p_l/object} a glance as it scurries up the tree and out of sight."
-        },
-        "win_skills": [
-            "HUNTER,1"
+        "success_outcomes": [
+            {
+                "text": "The wind suddenly shifts, and the squirrel jerks its head up in alarm. p_l thinks fast, bolting to cut off its escape before delivering the killing blow.",
+                "exp": 10,
+                "weight": 20,
+                "prey": ["medium"]
+            },
+            {
+                "text": "Though it tries to escape, p_l is faster and smarter - {PRONOUN/p_l/subject} {VERB/p_l/slam/slams} a paw down on the squirrel's tail before it can go very far, and kill it with ease.",
+                "exp": 10,
+                "weight": 5,
+                "prey": ["medium"]
+            },
+            {
+                "text": "s_c silently slinks through the underbrush, going undetected until {PRONOUN/s_c/subject} {VERB/s_c/have/has} pounced - and by then it's far too late for the squirrel to do anything about it.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["HUNTER,1"],
+                "prey": ["medium"]
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "p_l shifts on some pebbles as {PRONOUN/p_l/subject} {VERB/p_l/ready/readies} {PRONOUN/p_l/self} to pounce, and the resulting clatter alerts the squirrel. It doesn't even spare {PRONOUN/p_l/object} a glance as it scurries up the tree and out of sight.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
     },
     {
         "patrol_id": "mtn_hunt_greenleaf_soloappsquirrel1",
-        "biome": "mountainous",
-        "season": "greenleaf",
-        "tags": [
-            "hunting",
-            "apprentice",
-            "medium_prey"
-        ],
+        "biome": ["mountainous"],
+        "season": ["greenleaf"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "app1 scents a squirrel on the air! Greenleaf has made prey fat and unaware, surely this would be an easy catch?",
         "decline_text": "{PRONOUN/app1/subject/CAP} {VERB/app1/decide/decides} to move on and ignore the squirrel for now.",
         "chance_of_success": 50,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/app1/subject/CAP} {VERB/app1/are/is} right not to - {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/return/returns} home with {PRONOUN/app1/poss} chest puffed out in pride.",
-            "unscathed_rare": "Though {PRONOUN/app1/subject} {VERB/app1/are/is} a little sloppy, and the squirrel quickly spots {PRONOUN/app1/object}, app1 manages to secure the catch in the end!"
-        },
-        "fail_text": {
-            "unscathed_common": "Poor app1 focuses too hard on making sure {PRONOUN/app1/poss} hunting crouch is correct - by the time {PRONOUN/app1/subject} {VERB/app1/feel/feels} ready, the squirrel is long gone."
-        },
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "success_outcomes": [
+            {
+                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/app1/subject/CAP} {VERB/app1/are/is} right not to - {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/return/returns} home with {PRONOUN/app1/poss} chest puffed out in pride.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"]
+            },
+            {
+                "text": "Though {PRONOUN/app1/subject} {VERB/app1/are/is} a little sloppy, and the squirrel quickly spots {PRONOUN/app1/object}, app1 manages to secure the catch in the end!",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["medium"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Poor app1 focuses too hard on making sure {PRONOUN/app1/poss} hunting crouch is correct - by the time {PRONOUN/app1/subject} {VERB/app1/feel/feels} ready, the squirrel is long gone.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
     },
     {
         "patrol_id": "mtn_hunt_greenleaf_mentorsquirrel1",
-        "biome": "mountainous",
-        "season": "greenleaf",
-        "tags": [
-            "hunting",
-            "apprentice",
-            "medium_prey",
-            "comfort",
-            "trust",
-            "warrior"
-        ],
+        "biome": ["mountainous"],
+        "season": ["greenleaf"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "p_l instructs app1 to scent the air, and nods in approval when app1 says {PRONOUN/app1/subject} {VERB/app1/smell/smells} squirrel. With greenleaf comes fatter prey that tends to stick to shady spots - p_l points out a few likely destinations the squirrel may be heading to, then softly asks app1 how {PRONOUN/app1/subject} would like to proceed.",
         "decline_text": "app1 looks apprehensive, and quietly says they want to look for something easier.",
         "chance_of_success": 50,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/app1/subject/CAP} {VERB/app1/are/is} right not to - {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/puff/puffs} {PRONOUN/app1/poss} chest out in pride as p_l praises {PRONOUN/app1/object}.",
-            "unscathed_rare": "Though {PRONOUN/app1/subject} {VERB/app1/are/is} a little sloppy, and the squirrel quickly spots {PRONOUN/app1/object}, app1 manages to secure the catch in the end! p_l looks pleased, and gives {PRONOUN/app1/object} tips to improve {PRONOUN/app1/poss} technique next time."
-        },
-        "fail_text": {
-            "unscathed_common": "A misplaced step onto loose gravel is all that's needed to scare the squirrel away, and app1 watches in disappointment as it scampers away."
-        },
-        "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "success_outcomes": [
+            {
+                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/app1/subject/CAP} {VERB/app1/are/is} right not to - {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/puff/puffs} {PRONOUN/app1/poss} chest out in pride as p_l praises {PRONOUN/app1/object}.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Though {PRONOUN/app1/subject} {VERB/app1/are/is} a little sloppy, and the squirrel quickly spots {PRONOUN/app1/object}, app1 manages to secure the catch in the end! p_l looks pleased, and gives {PRONOUN/app1/object} tips to improve {PRONOUN/app1/poss} technique next time.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "A misplaced step onto loose gravel is all that's needed to scare the squirrel away, and app1 watches in disappointment as it scampers away.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
     },
     {
         "patrol_id": "mtn_hunt_greenleaf_squirrel_treetoptumble1",
-        "biome": "mountainous",
-        "season": "greenleaf",
-        "tags": [
-            "hunting",
-            "deputy",
-            "platonic",
-            "respect",
-            "trust",
-            "medium_prey",
-            "herb",
-            "oak_leaves",
-            "injury",
-            "broken bone"
-        ],
+        "biome": ["mountainous"],
+        "season": ["greenleaf"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "deputy": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "As the patrol walks through the wooded slopes, a loud chittering from above interrupts them. One cat looks up just in time to get a shower of twigs and leaves to the face, while another exclaims aloud as they spot squirrels darting through the branches above.",
         "decline_text": "Though they snort in amusement, the patrol decides to move on to easier prey, rather than waste their energy amongst the trees.",
         "chance_of_success": 60,
-        "exp": 40,
-        "success_text": {
-            "unscathed_common": "Before anyone can even speak, there's a loud crack from above. The cats scatter as a branch crashes down, bringing both squirrels and a shower of oak leaves with it! The patrol thinks fast, and pounce on the squirrels before they can escape. They head home with their bounty, each cat feeling quite pleased with themself.",
-            "unscathed_rare": "A mischievous look in their eye, the deputy challenges their Clanmates - whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long someone calls out in triumph. Not only do they have the squirrel, they have a pawful of oak leaves for the medicine cat!",
-            "stat_skill": "With a glint in their eye, s_c is up in the trees before anyone can say anything. There's rustling, a short pause, then squirrel carcasses begin falling to the ground, one by one. s_c descends when {PRONOUN/s_c/subject} {VERB/s_c/finish/finishes} with a mouthful of oak leaves, curling {PRONOUN/s_c/poss} tail in pride at the looks on {PRONOUN/s_c/poss} Clanmates faces."
-        },
-        "fail_text": {
-            "unscathed_common": "Though they try to climb the trees in pursuit, the squirrels are much more suited to running along the branches, and they easily leave the patrol floundering as they disappear into the distance.",
-            "injury": "The patrol fans out, some cats climbing, some staying on the ground. The hunt comes to an abrupt end, however, when r_c yowls in fear as {PRONOUN/r_c/subject} {VERB/r_c/plummet/plummets} from the branches and land heavily on the ground. {PRONOUN/r_c/poss/CAP} Clanmates help {PRONOUN/r_c/object} home and settle {PRONOUN/r_c/object} into the medicine cat's den, guilt and regret prickling at them for pursuing such a foolhardy hunt."
-        },
-        "win_skills": [
-            "HUNTER,1"
+        "success_outcomes": [
+            {
+                "text": "Before anyone can even speak, there's a loud crack from above. The cats scatter as a branch crashes down, bringing both squirrels and a shower of oak leaves with it! The patrol thinks fast, and pounce on the squirrels before they can escape. They head home with their bounty, each cat feeling quite pleased with themself.",
+                "exp": 40,
+                "weight": 20,
+                "herbs": ["oak_leaves"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "A mischievous look in their eye, the deputy challenges their Clanmates - whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long someone calls out in triumph. Not only do they have the squirrel, they have a pawful of oak leaves for the medicine cat!",
+                "exp": 40,
+                "weight": 5,
+                "herbs": ["oak_leaves"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "With a glint in their eye, s_c is up in the trees before anyone can say anything. There's rustling, a short pause, then squirrel carcasses begin falling to the ground, one by one. s_c descends when {PRONOUN/s_c/subject} {VERB/s_c/finish/finishes} with a mouthful of oak leaves, curling {PRONOUN/s_c/poss} tail in pride at the looks on {PRONOUN/s_c/poss} Clanmates faces.",
+                "exp": 40,
+                "weight": 20,
+                "stat_skill": ["HUNTER,1"],
+                "herbs": ["oak_leaves"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "Though they try to climb the trees in pursuit, the squirrels are much more suited to running along the branches, and they easily leave the patrol floundering as they disappear into the distance.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "trust"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "The patrol fans out, some cats climbing, some staying on the ground. The hunt comes to an abrupt end, however, when r_c yowls in fear as {PRONOUN/r_c/subject} {VERB/r_c/plummet/plummets} from the branches and land heavily on the ground. {PRONOUN/r_c/poss/CAP} Clanmates help {PRONOUN/r_c/object} home and settle {PRONOUN/r_c/object} into the medicine cat's den, guilt and regret prickling at them for pursuing such a foolhardy hunt.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["broken bone"],
+                        "scars": []
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "trust"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
     },
     {
         "patrol_id": "mtn_hunt_greenleaf_groupsquirrel1",
-        "biome": "mountainous",
-        "season": "greenleaf",
-        "tags": [
-            "hunting",
-            "respect",
-            "patrol_to_r_c",
-            "medium_prey0",
-            "large_prey1",
-            "large_prey2"
-        ],
+        "biome": ["mountainous"],
+        "season": ["greenleaf"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "As the patrol walks through the wooded slopes, r_c explains an idea {PRONOUN/r_c/subject} had for squirrel hunting. It sounds a little strange, but perhaps it could work?",
         "decline_text": "The patrol decides they'd rather not spend time on something that might not work when they could be doing something they know <i>does</i>.",
         "chance_of_success": 60,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "r_c suggests baiting the squirrels with food and picking them off when they come out to eat. It's pretty tedious, and they end up having to move a few times, but it does work, and the patrol heads home with a decent amount of prey.",
-            "unscathed_rare": "r_c suggests baiting the squirrels with food and picking them off when they come out to eat. Waiting is the most difficult part; the squirrels don't seem to expect the trap, and they come home laden with prey.",
-            "stat_skill": "r_c suggests baiting the squirrels with food and picking them off when they come out to eat. All the patrol has to do is set the trap - with s_c on the patrol, they rarely have to lift a paw, and each cat carries multiple squirrels home."
-        },
-        "fail_text": {
-            "unscathed_common": "r_c suggests finding squirrels sheltered in trees, climbing above them, and shaking the branches to scare them down. Unfortunately for them, the idea is a little too far out there, and while they do manage a few small catches, the day is mostly wasted with little to show for it."
-        },
-        "win_skills": [
-            "HUNTER,1"
+        "success_outcomes": [
+            {
+                "text": "r_c suggests baiting the squirrels with food and picking them off when they come out to eat. It's pretty tedious, and they end up having to move a few times, but it does work, and the patrol heads home with a decent amount of prey.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "r_c suggests baiting the squirrels with food and picking them off when they come out to eat. Waiting is the most difficult part; the squirrels don't seem to expect the trap, and they come home laden with prey.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "r_c suggests baiting the squirrels with food and picking them off when they come out to eat. All the patrol has to do is set the trap - with s_c on the patrol, they rarely have to lift a paw, and each cat carries multiple squirrels home.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["HUNTER,1"],
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "r_c suggests finding squirrels sheltered in trees, climbing above them, and shaking the branches to scare them down. Unfortunately for them, the idea is a little too far out there, and while they do manage a few small catches, the day is mostly wasted with little to show for it.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
     }
 ]

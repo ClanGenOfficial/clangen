@@ -1,728 +1,1578 @@
 [
     {
         "patrol_id": "pln_hunt_leaf-bare_snowstorm1",
-        "biome": "plains",
-        "season": "leaf-bare",
-        "tags": [
-            "hunting",
-            "comfort",
-            "trust",
-            "patrol_to_p_l",
-            "patrol_to_r_c",
-            "cold_injury",
-            "small_prey0",
-            "medium_prey1",
-            "medium_prey2",
-            "large_prey3",
-            "no_fail_prey"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["hunting"],
+        "tags": ["large_prey3"],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
         "chance_of_success": 30,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "Despite the snow, the patrol manages to hunt successfully, finding mice scurrying along paths worn in through the snow. Only a couple, but in this season, that's more than enough to count as a success, and as p_l leads them home there's a sense of security and competence driving them onwards.",
-            "stat_skill": "Everyone looks admiringly at s_c by the end of the afternoon. Every cat carries something home, but nearly all of it was caught by s_c.",
-            "stat_trait": "s_c really keeps the patrol on task and motivated through the sharp cold of the leaf-bare morning, not through authority or commands, but with a gentle voice and compassionate understanding that encourages every cat to do their best for c_n."
-        },
-        "fail_text": {
-            "unscathed_common": "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol clumps together in a dip on the plains, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball.",
-            "injury": "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol clumps together in a dip on the plains, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball. Still, when they return to camp r_c is cold and chilled."
-        },
-        "win_skills": [
-            "HUNTER,2"
+        "success_outcomes": [
+            {
+                "text": "Despite the snow, the patrol manages to hunt successfully, finding mice scurrying along paths worn in through the snow. Only a couple, but in this season, that's more than enough to count as a success, and as p_l leads them home there's a sense of security and competence driving them onwards.",
+                "exp": 10,
+                "weight": 20,
+                "prey": ["small"],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c", "p_l"],
+                        "cats_from": ["patrol", "patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Everyone looks admiringly at s_c by the end of the afternoon. Every cat carries something home, but nearly all of it was caught by s_c.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["HUNTER,2"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c", "p_l"],
+                        "cats_from": ["patrol", "patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c really keeps the patrol on task and motivated through the sharp cold of the leaf-bare morning, not through authority or commands, but with a gentle voice and compassionate understanding that encourages every cat to do their best for c_n.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c", "p_l"],
+                        "cats_from": ["patrol", "patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "altruistic",
-            "compassionate",
-            "empathetic",
-            "faithful",
-            "loving"
-        ],
-        "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c caught a chill while hunting in leaf-bare."
-        }
+        "fail_outcomes": [
+            {
+                "text": "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol clumps together in a dip on the plains, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c", "p_l"],
+                        "cats_from": ["patrol", "patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol clumps together in a dip on the plains, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball. Still, when they return to camp r_c is cold and chilled.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": []
+                    }
+                ],
+                "history_text": { "scar": "m_c caught a chill while hunting in leaf-bare." },
+                "relationships": [
+                    {
+                        "cats_to": ["r_c", "p_l"],
+                        "cats_from": ["patrol", "patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "pln_hunt_leaf-bare_snowstorm2",
-        "biome": "plains",
-        "season": "leaf-bare",
-        "tags": [
-            "hunting",
-            "cold_injury",
-            "medium_prey0",
-            "medium_prey1",
-            "large_prey2",
-            "no_fail_prey"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["hunting"],
+        "tags": ["large_prey2"],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "It starts snowing soon after r_c sets out, trying to bring back something, anything, for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
         "chance_of_success": 40,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "Despite the snow, r_c manages to hunt successfully, finding a mouse underneath snow blanketing the grasslands. Only one, but in this season, that's more than enough to count as a success.",
-            "stat_skill": "s_c really shows their talent, bringing a clutch of mice back to camp for the fresh-kill pile."
-        },
-        "fail_text": {
-            "injury": "The prey must be hiding; r_c catches nothing. As a snowstorm descends and visibility drops, they hide in the mouth of a rabbit warren, shivering and tightly tucked up against the cold. When they return to camp r_c is cold and chilled, their paws and tail prickling with the danger of frostbite."
-        },
-        "win_skills": [
-            "HUNTER,2"
+        "success_outcomes": [
+            {
+                "text": "Despite the snow, r_c manages to hunt successfully, finding a mouse underneath snow blanketing the grasslands. Only one, but in this season, that's more than enough to count as a success.",
+                "exp": 10,
+                "weight": 20,
+                "prey": ["medium"]
+            },
+            {
+                "text": "s_c really shows their talent, bringing a clutch of mice back to camp for the fresh-kill pile.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["HUNTER,2"],
+                "prey": ["medium"]
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c caught a chill while hunting in leaf-bare."
-        }
+        "fail_outcomes": [
+            {
+                "text": "The prey must be hiding; r_c catches nothing. As a snowstorm descends and visibility drops, they hide in the mouth of a rabbit warren, shivering and tightly tucked up against the cold. When they return to camp r_c is cold and chilled, their paws and tail prickling with the danger of frostbite.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": []
+                    }
+                ],
+                "history_text": { "scar": "m_c caught a chill while hunting in leaf-bare." }
+            }
+        ]
     },
     {
         "patrol_id": "pln_hunt_leaf-bare_snowstorm3",
-        "biome": "plains",
-        "season": "leaf-bare",
-        "tags": [
-            "hunting",
-            "comfort",
-            "trust",
-            "rel_patrol",
-            "romantic",
-            "no_app",
-            "death",
-            "cold_injury"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["hunting"],
+        "tags": ["romantic"],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
         "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
         "chance_of_success": 30,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. The cats retreat under some evergreen shrubs and cuddle together, sharing what little warmth they have. Each cat takes a turn on the most exposed side of the huddle, selflessly risking themselves.",
-            "stat_skill": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. s_c keeps everyone's spirits up as the patrol hides inside the mouth to an abandoned badger sett, until everyone is talking, shaky and unhappy, but keeping each other's spirits up.",
-            "stat_trait": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. As the cats hide from the wind in a stream gully, s_c keeps an eye out for everyone. It's a long couple of hours, but with gentle understanding and compassion the cats make it though safely, closer than ever afterwards."
-        },
-        "fail_text": {
-            "death": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. As the cats huddle together, desperately trying to conserve warmth, no one notices that r_c has stopped responding. At some point in the storm, their life slips away, and their distraught Clanmates are left to carry their body home.",
-            "injury": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. When the snowstorm leaves, finally, and the cats trudge back home, but r_c hasn't escaped unscathed, their body chilled and refusing to warm up properly."
-        },
-        "win_skills": [
-            "SPEAKER,2"
+        "success_outcomes": [
+            {
+                "text": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. The cats retreat under some evergreen shrubs and cuddle together, sharing what little warmth they have. Each cat takes a turn on the most exposed side of the huddle, selflessly risking themselves.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. s_c keeps everyone's spirits up as the patrol hides inside the mouth to an abandoned badger sett, until everyone is talking, shaky and unhappy, but keeping each other's spirits up.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,2"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. As the cats hide from the wind in a stream gully, s_c keeps an eye out for everyone. It's a long couple of hours, but with gentle understanding and compassion the cats make it though safely, closer than ever afterwards.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "altruistic",
-            "compassionate",
-            "empathetic",
-            "faithful",
-            "loving"
-        ],
-        "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c caught a chill while hunting in leaf-bare.",
-            "reg_death": "m_c froze to death while hunting in a storm.",
-            "lead_death": "froze to death while hunting"
-        }
+        "fail_outcomes": [
+            {
+                "text": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. As the cats huddle together, desperately trying to conserve warmth, no one notices that r_c has stopped responding. At some point in the storm, their life slips away, and their distraught Clanmates are left to carry their body home.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c caught a chill while hunting in leaf-bare.",
+                    "reg_death": "m_c froze to death while hunting in a storm.",
+                    "lead_death": "froze to death while hunting"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. When the snowstorm leaves, finally, and the cats trudge back home, but r_c hasn't escaped unscathed, their body chilled and refusing to warm up properly.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": []
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c caught a chill while hunting in leaf-bare.",
+                    "reg_death": "m_c froze to death while hunting in a storm.",
+                    "lead_death": "froze to death while hunting"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "pln_hunt_redfox_leaf-barescavenge1",
-        "biome": "plains",
-        "season": "leaf-bare",
-        "tags": [
-            "hunting",
-            "large_prey",
-            "fighting",
-            "scar",
-            "NECKBITE",
-            "big_bite_injury",
-            "clan_to_patrol",
-            "respect",
-            "rel_patrol"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 3,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a pronghorn carcass, either a small doe or one of last newleaf's fawns. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 30,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
-            "stat_skill": "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
-            "stat_trait": "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
-        },
-        "fail_text": {
-            "unscathed_common": "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
-            "injury": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
-            "stat_injury": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
-        },
-        "win_skills": [
-            "FIGHTER,1"
+        "success_outcomes": [
+            {
+                "text": "Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol", "patrol"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,1"],
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol", "patrol"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. It's only one bite, but the fox has had enough and flees.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "altruistic",
+                    "ambitious",
+                    "confident",
+                    "daring",
+                    "fierce",
+                    "responsible",
+                    "righteous"
+                ],
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol", "patrol"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "adventurous",
-            "altruistic",
-            "ambitious",
-            "confident",
-            "daring",
-            "fierce",
-            "responsible",
-            "righteous"
-        ],
-        "fail_trait": [
-            "troublesome",
-            "vengeful",
-            "bloodthirsty",
-            "bold"
-        ],
-        "min_cats": 2,
-        "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c carries a scar from a fox fight."
-        }
+        "fail_outcomes": [
+            {
+                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol", "patrol"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["big_bite_injury"],
+                        "scars": ["NECKBITE"]
+                    }
+                ],
+                "history_text": { "scar": "m_c carries a scar from a fox fight." },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol", "patrol"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the hurt s_c.",
+                "exp": 0,
+                "weight": 10,
+                "stat_trait": ["troublesome", "vengeful", "bloodthirsty", "bold"],
+                "injury": [
+                    {
+                        "cats": ["s_c"],
+                        "injuries": ["big_bite_injury"],
+                        "scars": ["NECKBITE"]
+                    }
+                ],
+                "history_text": { "scar": "m_c carries a scar from a fox fight." },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol", "patrol"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
     },
     {
         "patrol_id": "pln_hunt_redfox_leaf-barescavenge2",
-        "biome": "plains",
-        "season": "leaf-bare",
-        "tags": [
-            "hunting",
-            "large_prey",
-            "fighting",
-            "scar",
-            "NECKBITE",
-            "big_bite_injury",
-            "clan_to_patrol",
-            "respect",
-            "rel_patrol"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a pronghorn carcass, either a small doe or one of last newleaf's fawns. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 10,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "Your cats are smaller but heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
-            "stat_skill": "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hindlegs. The fox runs, but there's no way it'll live long with such a crippling injury.",
-            "stat_trait": "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good."
-        },
-        "fail_text": {
-            "unscathed_common": "Your patrol fails to drive away the fox, which keeps possession of the food. However with so many cats to protect each other, there were no injuries.",
-            "injury": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
-            "stat_injury": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
-        },
-        "win_skills": [
-            "FIGHTER,1"
+        "success_outcomes": [
+            {
+                "text": "Your cats are smaller but heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol", "patrol"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hindlegs. The fox runs, but there's no way it'll live long with such a crippling injury.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,1"],
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol", "patrol"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "altruistic",
+                    "ambitious",
+                    "confident",
+                    "daring",
+                    "fierce",
+                    "responsible",
+                    "righteous"
+                ],
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol", "patrol"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "adventurous",
-            "altruistic",
-            "ambitious",
-            "confident",
-            "daring",
-            "fierce",
-            "responsible",
-            "righteous"
-        ],
-        "fail_trait": [
-            "troublesome",
-            "vengeful",
-            "bloodthirsty",
-            "bold"
-        ],
-        "min_cats": 4,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c carries a scar from a fox fight."
-        }
+        "fail_outcomes": [
+            {
+                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However with so many cats to protect each other, there were no injuries.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol", "patrol"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["big_bite_injury"],
+                        "scars": ["NECKBITE"]
+                    }
+                ],
+                "history_text": { "scar": "m_c carries a scar from a fox fight." },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol", "patrol"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the hurt s_c.",
+                "exp": 0,
+                "weight": 10,
+                "stat_trait": ["troublesome", "vengeful", "bloodthirsty", "bold"],
+                "injury": [
+                    {
+                        "cats": ["s_c"],
+                        "injuries": ["big_bite_injury"],
+                        "scars": ["NECKBITE"]
+                    }
+                ],
+                "history_text": { "scar": "m_c carries a scar from a fox fight." },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol", "patrol"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
     },
     {
         "patrol_id": "pln_hunt_redfox_leaf-barescavenge3",
-        "biome": "plains",
-        "season": "leaf-bare",
-        "tags": [
-            "hunting",
-            "large_prey",
-            "fighting",
-            "scar",
-            "THREE",
-            "big_bite_injury",
-            "clan_to_patrol",
-            "respect"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "r_c catches the scent of a red fox. Tracking it, {PRONOUN/r_c/self} {VERB/r_c/find/finds} the animal feeding on a pronghorn carcass, either a small doe or one of last newleaf's fawns. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 10,
-        "exp": 30,
-        "success_text": {
-            "unscathed_common": "r_c may be smaller, alone, and half its weight, but the fox has a prize {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} willing to fight for. With a prayer to StarClan, {PRONOUN/r_c/subject} {VERB/r_c/throw/throws} {PRONOUN/r_c/self} into battle. The fox, already stuffed full of venison and unwilling to lose blood over it, leaves the kill with a grumble.",
-            "stat_skill": "s_c uses every trick in their talented fighting skillset to attack the fox with no one to watch their flank, until the perfect opportunity opens up. They pounce onto the fox's back, digging in their claws. It's a wild ride through the plains until the fox bucks them off, but it wins them the fawn carcass.",
-            "stat_trait": "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. But then {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} stuck, unwilling to let go and risk being bitten. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} dragged through the plains, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the fawn."
-        },
-        "fail_text": {
-            "unscathed_common": "r_c fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
-            "death": "Fiercely, r_c throws {PRONOUN/r_c/self} at the fox, determined to win the fawn prize. But the fox values it just as dearly, and manages to get a good grip on r_c, shaking {PRONOUN/r_c/object} to pieces and killing {PRONOUN/r_c/object}.",
-            "injury": "r_c launches into battle, but is caught with a nasty bite, and retreats to limp back home. The fox doesn't follow, happy enough to eat the fawn instead of the foolish cat.",
-            "stat_injury": "s_c is overconfident in {PRONOUN/s_c/poss} attack, and the fox manages to sink their teeth into {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/retreat/retreats}, bleeding and in pain, and the fox settles back down to its meal."
-        },
-        "win_skills": [
-            "FIGHTER,2"
+        "success_outcomes": [
+            {
+                "text": "r_c may be smaller, alone, and half its weight, but the fox has a prize {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} willing to fight for. With a prayer to StarClan, {PRONOUN/r_c/subject} {VERB/r_c/throw/throws} {PRONOUN/r_c/self} into battle. The fox, already stuffed full of venison and unwilling to lose blood over it, leaves the kill with a grumble.",
+                "exp": 30,
+                "weight": 20,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c uses every trick in their talented fighting skillset to attack the fox with no one to watch their flank, until the perfect opportunity opens up. They pounce onto the fox's back, digging in their claws. It's a wild ride through the plains until the fox bucks them off, but it wins them the fawn carcass.",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,2"],
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. But then {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} stuck, unwilling to let go and risk being bitten. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} dragged through the plains, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the fawn.",
+                "exp": 30,
+                "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "altruistic",
+                    "ambitious",
+                    "confident",
+                    "daring",
+                    "fierce",
+                    "responsible",
+                    "righteous"
+                ],
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "adventurous",
-            "altruistic",
-            "ambitious",
-            "confident",
-            "daring",
-            "fierce",
-            "responsible",
-            "righteous"
-        ],
-        "fail_trait": [
-            "troublesome",
-            "vengeful",
-            "bloodthirsty",
-            "bold"
-        ],
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c carries a scar from a solo fox fight.",
-            "reg_death": "m_c fell in a solo battle with a fox.",
-            "lead_death": "died in battle with a fox"
-        }
+        "fail_outcomes": [
+            {
+                "text": "r_c fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "Fiercely, r_c throws {PRONOUN/r_c/self} at the fox, determined to win the fawn prize. But the fox values it just as dearly, and manages to get a good grip on r_c, shaking {PRONOUN/r_c/object} to pieces and killing {PRONOUN/r_c/object}.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c carries a scar from a solo fox fight.",
+                    "reg_death": "m_c fell in a solo battle with a fox.",
+                    "lead_death": "died in battle with a fox"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "r_c launches into battle, but is caught with a nasty bite, and retreats to limp back home. The fox doesn't follow, happy enough to eat the fawn instead of the foolish cat.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["big_bite_injury"],
+                        "scars": ["THREE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c carries a scar from a solo fox fight.",
+                    "reg_death": "m_c fell in a solo battle with a fox.",
+                    "lead_death": "died in battle with a fox"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "s_c is overconfident in {PRONOUN/s_c/poss} attack, and the fox manages to sink their teeth into {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/retreat/retreats}, bleeding and in pain, and the fox settles back down to its meal.",
+                "exp": 0,
+                "weight": 10,
+                "stat_trait": ["troublesome", "vengeful", "bloodthirsty", "bold"],
+                "injury": [
+                    {
+                        "cats": ["s_c"],
+                        "injuries": ["big_bite_injury"],
+                        "scars": ["THREE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c carries a scar from a solo fox fight.",
+                    "reg_death": "m_c fell in a solo battle with a fox.",
+                    "lead_death": "died in battle with a fox"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
     },
     {
         "patrol_id": "pln_hunt_swiftfox_leaf-barescavenge1",
-        "biome": "plains",
-        "season": "leaf-bare",
-        "tags": [
-            "hunting",
-            "large_prey",
-            "comfort",
-            "respect",
-            "rel_patrol"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "Your patrol catches the scent of a fox. Tracking it, they find a swift fox feeding on a cow carcass, either a small female or one of last newleaf's calves. The cat-sized predator definitely didn't kill this massive hunk of fresh-kill.",
         "decline_text": "Your patrol decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
         "chance_of_success": 40,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "As the patrol approaches, the swift fox spots them and backs off from the carcass with a whine. Your cats can feed in peace for now, but larger predators will surely soon come to throw them off the kill. By cooperating together, the patrol is able to at least drag some of the intestines home to camp.",
-            "stat_skill": "s_c sits and watches the swift fox as the patrol takes over the kill without a fight. It wanders the area, grabbing pieces of gristle and meat and caching them in little holes, giving s_c an idea. Together the Clan cats gnaw off a leg, and take their bony prize back to camp for c_n.",
-            "stat_trait": "While the rest of the patrol feeds on the kill, the swift fox gnawing on the head at the other end in uneasy truce, s_c keeps watch. It turns out to have been a wise move, as they spot a cougar's ears sticking up out of the grass. The kill's original owner is coming back, and the cats vacate with speed."
-        },
-        "fail_text": {
-            "unscathed_common": "The swift fox gives up on the kill with a snarl, but a coyote yip in the distance sends both the smaller predator species running, the cats puffed up and uncomfortable.",
-            "unscathed_stat": "The swift fox gives up the kill, but s_c pursues the fox anyway... up until it turns and threatens them with snapping teeth. s_c calls the rest of the patrol for backup and no one is injured, but by the time they get back to the kill ravens are circling overhead. The patrol gives it up, knowing bigger predators will arrive soon."
-        },
-        "win_skills": [
-            "CLEVER,1"
+        "success_outcomes": [
+            {
+                "text": "As the patrol approaches, the swift fox spots them and backs off from the carcass with a whine. Your cats can feed in peace for now, but larger predators will surely soon come to throw them off the kill. By cooperating together, the patrol is able to at least drag some of the intestines home to camp.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c sits and watches the swift fox as the patrol takes over the kill without a fight. It wanders the area, grabbing pieces of gristle and meat and caching them in little holes, giving s_c an idea. Together the Clan cats gnaw off a leg, and take their bony prize back to camp for c_n.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLEVER,1"],
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "While the rest of the patrol feeds on the kill, the swift fox gnawing on the head at the other end in uneasy truce, s_c keeps watch. It turns out to have been a wise move, as they spot a cougar's ears sticking up out of the grass. The kill's original owner is coming back, and the cats vacate with speed.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "altruistic",
+                    "patient",
+                    "responsible",
+                    "thoughtful",
+                    "wise",
+                    "calm",
+                    "careful",
+                    "insecure",
+                    "nervous",
+                    "sneaky"
+                ],
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "altruistic",
-            "patient",
-            "responsible",
-            "thoughtful",
-            "wise",
-            "calm",
-            "careful",
-            "insecure",
-            "nervous",
-            "sneaky"
-        ],
-        "fail_trait": [
-            "bold",
-            "childish",
-            "confident",
-            "daring",
-            "playful",
-            "shameless"
-        ],
-        "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "The swift fox gives up on the kill with a snarl, but a coyote yip in the distance sends both the smaller predator species running, the cats puffed up and uncomfortable.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "The swift fox gives up the kill, but s_c pursues the fox anyway... up until it turns and threatens them with snapping teeth. s_c calls the rest of the patrol for backup and no one is injured, but by the time they get back to the kill ravens are circling overhead. The patrol gives it up, knowing bigger predators will arrive soon.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "bold",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "shameless"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
     },
     {
         "patrol_id": "pln_hunt_swiftfox_leaf-barescavenge2",
-        "biome": "plains",
-        "season": "leaf-bare",
-        "tags": [
-            "hunting",
-            "small_prey",
-            "fighting",
-            "scar",
-            "NECKBITE",
-            "death",
-            "no_body",
-            "small_bite_injury"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "r_c catches the scent of a fox. Tracking it, they find a swift fox feeding on a cow carcass, either a small female or one of last newleaf's calves. Roughly equal in size to r_c, the swift fox definitely didn't bring down this feast themselves.",
         "decline_text": "r_c decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
         "chance_of_success": 40,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "r_c approaches the kill, fur puffed up. The swift fox grumbles, but with a hiss both animals agree to disagree, feeding from opposite ends of the calf without further trouble. r_c is able to find some decent scraps to carry back to camp, though with only them there they can't bring back as much meat as they'd like.",
-            "stat_skill": "Watching the swift fox at the carcass, s_c notices it stripping meat from the calf and caching it in little holes, and starts to copy it. The bigger predators will return to claim the calf soon, but by the time they do s_c will have hidden away the choicest morsels to fetch later.",
-            "stat_trait": "With great care, aware that the kill's original owner must be somewhere about, s_c snatches the first large scrap they find and leaves the swift fox to risk the wrath of the bigger predators."
-        },
-        "fail_text": {
-            "unscathed_common": "A coyote yip in the distance sends both the smaller predator species running before r_c can muscle in on the feeding opportunity.",
-            "unscathed_stat": "The swift fox gives up the kill, but s_c pursues the fox anyway... up until it turns and threatens them with snapping teeth. s_c dances out of the way, but hears the caw of ravens descending on the carcass, and knows it would be too dangerous to return.",
-            "death": "r_c happily tucks into the massive calf - there's more than enough room for both them and the small fox to feed. They hear a massive, outraged yowl, and a blow from behind sends them to StarClan with a single hit. They never saw what did it.",
-            "injury": "Puffed up, r_c approaches the swift fox. But there's only one of them, and the fox is their equal in size and weight. Instead of running or giving it, it snarls, and attacks. r_c gives just as good as they get, and both animals end up limping away from the kill.",
-            "stat_injury": "The swift fox gives up the kill, but s_c pursues the fox anyway... up until it turns and threatens them with snapping teeth, sinking them into s_c and giving them bigger problems than scavenging from a carcass."
-        },
-        "win_skills": [
-            "FIGHTER,1"
+        "success_outcomes": [
+            {
+                "text": "r_c approaches the kill, fur puffed up. The swift fox grumbles, but with a hiss both animals agree to disagree, feeding from opposite ends of the calf without further trouble. r_c is able to find some decent scraps to carry back to camp, though with only them there they can't bring back as much meat as they'd like.",
+                "exp": 10,
+                "weight": 20,
+                "prey": ["small"]
+            },
+            {
+                "text": "Watching the swift fox at the carcass, s_c notices it stripping meat from the calf and caching it in little holes, and starts to copy it. The bigger predators will return to claim the calf soon, but by the time they do s_c will have hidden away the choicest morsels to fetch later.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,1"],
+                "prey": ["small"]
+            },
+            {
+                "text": "With great care, aware that the kill's original owner must be somewhere about, s_c snatches the first large scrap they find and leaves the swift fox to risk the wrath of the bigger predators.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": [
+                    "altruistic",
+                    "patient",
+                    "responsible",
+                    "thoughtful",
+                    "wise",
+                    "calm",
+                    "careful",
+                    "insecure",
+                    "nervous",
+                    "sneaky"
+                ],
+                "prey": ["small"]
+            }
         ],
-        "win_trait": [
-            "altruistic",
-            "patient",
-            "responsible",
-            "thoughtful",
-            "wise",
-            "calm",
-            "careful",
-            "insecure",
-            "nervous",
-            "sneaky"
-        ],
-        "fail_trait": [
-            "bold",
-            "childish",
-            "confident",
-            "daring",
-            "playful",
-            "shameless"
-        ],
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c carries a scar from fighting with a swift fox.",
-            "reg_death": "While scavenging alone, m_c was killed by a predator they didn't see.",
-            "lead_death": "{VERB/m_c/were/was} killed by a predator"
-        }
+        "fail_outcomes": [
+            {
+                "text": "A coyote yip in the distance sends both the smaller predator species running before r_c can muscle in on the feeding opportunity.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "The swift fox gives up the kill, but s_c pursues the fox anyway... up until it turns and threatens them with snapping teeth. s_c dances out of the way, but hears the caw of ravens descending on the carcass, and knows it would be too dangerous to return.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "bold",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "shameless"
+                ]
+            },
+            {
+                "text": "r_c happily tucks into the massive calf - there's more than enough room for both them and the small fox to feed. They hear a massive, outraged yowl, and a blow from behind sends them to StarClan with a single hit. They never saw what did it.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c carries a scar from fighting with a swift fox.",
+                    "reg_death": "While scavenging alone, m_c was killed by a predator they didn't see.",
+                    "lead_death": "{VERB/m_c/were/was} killed by a predator"
+                }
+            },
+            {
+                "text": "Puffed up, r_c approaches the swift fox. But there's only one of them, and the fox is their equal in size and weight. Instead of running or giving it, it snarls, and attacks. r_c gives just as good as they get, and both animals end up limping away from the kill.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["small_bite_injury"],
+                        "scars": ["NECKBITE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c carries a scar from fighting with a swift fox.",
+                    "reg_death": "While scavenging alone, m_c was killed by a predator they didn't see.",
+                    "lead_death": "{VERB/m_c/were/was} killed by a predator"
+                }
+            },
+            {
+                "text": "The swift fox gives up the kill, but s_c pursues the fox anyway... up until it turns and threatens them with snapping teeth, sinking them into s_c and giving them bigger problems than scavenging from a carcass.",
+                "exp": 0,
+                "weight": 10,
+                "stat_trait": [
+                    "bold",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "shameless"
+                ],
+                "injury": [
+                    {
+                        "cats": ["s_c"],
+                        "injuries": ["small_bite_injury"],
+                        "scars": ["NECKBITE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c carries a scar from fighting with a swift fox.",
+                    "reg_death": "While scavenging alone, m_c was killed by a predator they didn't see.",
+                    "lead_death": "{VERB/m_c/were/was} killed by a predator"
+                }
+            }
+        ]
     },
     {
         "patrol_id": "pln_hunt_leaf-bare_solosquirrel1",
-        "biome": "plains",
-        "season": "leaf-bare",
-        "tags": [
-            "hunting",
-            "no_app",
-            "medium_prey"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
         "intro_text": "p_l walks low to the ground, paws soft and light so as to minimize the crunch of snow. Sniffing at every burrow they come across, they finally discover one with a scent from within: ground squirrel!",
         "decline_text": "p_l studies the burrow, then shakes their head. Too much hassle for one scraggly, thin squirrel.",
         "chance_of_success": 30,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "p_l scrabbles at the entrance to the burrow a bit, hoping to dislodge enough earth to flush the squirrel out. It works; it's chittering and angry, but disoriented enough to make for an easy kill.",
-            "unscathed_rare": "p_l examines the burrow a bit, before sticking a paw inside and swiping around. It takes a few passes, but they hook their claws into fur and yank the squirrel out by the tail, killing it before it can fully wake up.",
-            "stat_skill": "s_c slowly walks over the burrow, testing their steps before stopping at what they guess to be the mid-point. They rear up on their hind legs and slam down onto the ground, resulting in an outraged shrieking and scrabbling from within. Quickly hopping back to the entrance, they wait overtop to swipe the escaping squirrel up and kill it."
-        },
-        "fail_text": {
-            "unscathed_common": "p_l tries their best, but they can't flush out or reach the sleeping squirrel."
-        },
-        "win_skills": [
-            "HUNTER,1"
+        "success_outcomes": [
+            {
+                "text": "p_l scrabbles at the entrance to the burrow a bit, hoping to dislodge enough earth to flush the squirrel out. It works; it's chittering and angry, but disoriented enough to make for an easy kill.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"]
+            },
+            {
+                "text": "p_l examines the burrow a bit, before sticking a paw inside and swiping around. It takes a few passes, but they hook their claws into fur and yank the squirrel out by the tail, killing it before it can fully wake up.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["medium"]
+            },
+            {
+                "text": "s_c slowly walks over the burrow, testing their steps before stopping at what they guess to be the mid-point. They rear up on their hind legs and slam down onto the ground, resulting in an outraged shrieking and scrabbling from within. Quickly hopping back to the entrance, they wait overtop to swipe the escaping squirrel up and kill it.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["HUNTER,1"],
+                "prey": ["medium"]
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "p_l tries their best, but they can't flush out or reach the sleeping squirrel.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
     },
     {
         "patrol_id": "pln_hunt_leaf-bare_soloappsquirrel1",
-        "biome": "plains",
-        "season": "leaf-bare",
-        "tags": [
-            "hunting",
-            "apprentice",
-            "medium_prey",
-            "no_fail_prey"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "app1 has snuck out of camp alone, hoping to bring something home for the Clan. Running through everything they've been taught in their head, they carefully scent the air and strain their ears, hoping for any hint of prey.",
         "decline_text": "They're focusing so hard, they don't notice a Clanmate is standing silently behind them, waiting for them to notice that they've been caught red-pawed. Oops!",
         "chance_of_success": 10,
-        "exp": 30,
-        "success_text": {
-            "unscathed_common": "The wind blows a scent towards them, and app1 immediately drops into a crouch. They track it down to a shallow burrow; when they shimmy their head and shoulders inside, they find a hibernating squirrel! An easy kill, and a good meal for someone at camp.",
-            "unscathed_rare": "app1 walks in circles for a bit, and is about to give up and go home, when they nearly trip over a ground squirrel burrow. A chitter from within gets them excited, and they thrust a paw into the entrance and yank a squirrel out!"
-        },
-        "fail_text": {
-            "unscathed_common": "Unfortunately, they don't end up finding anything, and they slink back to camp empty-pawed."
-        },
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "success_outcomes": [
+            {
+                "text": "The wind blows a scent towards them, and app1 immediately drops into a crouch. They track it down to a shallow burrow; when they shimmy their head and shoulders inside, they find a hibernating squirrel! An easy kill, and a good meal for someone at camp.",
+                "exp": 30,
+                "weight": 20,
+                "prey": ["medium"]
+            },
+            {
+                "text": "app1 walks in circles for a bit, and is about to give up and go home, when they nearly trip over a ground squirrel burrow. A chitter from within gets them excited, and they thrust a paw into the entrance and yank a squirrel out!",
+                "exp": 30,
+                "weight": 5,
+                "prey": ["medium"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Unfortunately, they don't end up finding anything, and they slink back to camp empty-pawed.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "pln_hunt_leaf-bare_mentorsquirrel1",
-        "biome": "plains",
-        "season": "leaf-bare",
-        "tags": [
-            "hunting",
-            "warrior",
-            "apprentice",
-            "medium_prey",
-            "comfort",
-            "trust"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "p_l and app1 sit in the plains, near a network of ground squirrel burrows. This is one of a few such networks, rotated around by mentors to teach apprentices their hunting skills. app1 scents the air as instructed, and points out a burrow; sure enough, when they quietly look inside, there's a sleeping squirrel!",
         "decline_text": "p_l praises them and smiles, but reminds app1 that they aren't there to hunt, just to observe and discuss. There'll be plenty of time another day!",
         "chance_of_success": 40,
-        "exp": 30,
-        "success_text": {
-            "unscathed_common": "p_l praises them and smiles, and app1 ponders how best to get the squirrel. They settle for sticking their whole head in, just barely able to reach in far enough to snatch it up by the teeth and kill it in the same bite.",
-            "unscathed_rare": "p_l praises them and smiles, and app1 ponders how best to get the squirrel. p_l reminds them that they're allowed to work together, and app1 decides to go to the back entrance and screech into the burrow. That wakes the squirrel up, who rushes out and is killed by p_l. app1 looks absolutely thrilled when p_l commends their thinking and strategy!"
-        },
-        "fail_text": {
-            "unscathed_common": "p_l praises them and smiles, and app1 ponders how best to get the squirrel. No amount of them scrabbling or yowling rouses the squirrel, however, nor can they reach it."
-        },
-        "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "success_outcomes": [
+            {
+                "text": "p_l praises them and smiles, and app1 ponders how best to get the squirrel. They settle for sticking their whole head in, just barely able to reach in far enough to snatch it up by the teeth and kill it in the same bite.",
+                "exp": 30,
+                "weight": 20,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "p_l praises them and smiles, and app1 ponders how best to get the squirrel. p_l reminds them that they're allowed to work together, and app1 decides to go to the back entrance and screech into the burrow. That wakes the squirrel up, who rushes out and is killed by p_l. app1 looks absolutely thrilled when p_l commends their thinking and strategy!",
+                "exp": 30,
+                "weight": 5,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l praises them and smiles, and app1 ponders how best to get the squirrel. No amount of them scrabbling or yowling rouses the squirrel, however, nor can they reach it.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
     },
     {
         "patrol_id": "pln_hunt_leaf-bare_squirrel_burrowbusiness1",
-        "biome": "plains",
-        "season": "leaf-bare",
-        "tags": [
-            "hunting",
-            "medium_prey0",
-            "large_prey1",
-            "apprentice",
-            "three_apprentices",
-            "comfort",
-            "trust",
-            "platonic",
-            "injury",
-            "injure_all",
-            "non_lethal",
-            "scrapes",
-            "claw-wound",
-            "scar",
-            "SNOUT"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 3,
+        "max_cats": 3,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [3, 3]
+        },
+        "weight": 20,
         "intro_text": "The trio is gathered around an isolated burrow, discussing their plan in hushed mews. This burrow is an abandoned rabbit's warren, but currently is home to ground squirrels. The three entrances seem just big enough for the apprentices to crawl inside, bringing the hunt right to the squirrels, who should be in the midst of hibernation right now.",
         "decline_text": "... On second thought, maybe this is too risky. app1 and app2 exchange nervous glances, and app3 shuffles their paws before suggesting they go home instead, to which the others gladly agree. Better to stick to what they know.",
         "chance_of_success": 20,
-        "exp": 50,
-        "success_text": {
-            "unscathed_common": "Slowly, carefully, the young cats enter the burrow. It's dark and cramped, but they fit fine, and are able to follow their noses to the heart of the den. It's easy pickings at that point; the squirrels are awake, and some wriggle past, but when they emerge (covered in dirt and mud), it's with a good haul of squirrels to bring home!",
-            "unscathed_rare": "Slowly, carefully, the young cats enter the burrow. It's dark and cramped, but they fit fine, and are able to follow their noses to the heart of the den. It's easy pickings at that point; with the squirrels all asleep, the apprentices kill them quietly and without any fuss. It takes two trips for them to bring it all home!"
-        },
-        "fail_text": {
-            "unscathed_common": "Slowly, carefully, the young cats enter the burrow. It's dark and cramped, but they fit fine, and are able to follow their noses to the heart of the den. Unfortunately, the burrow is barren, not a single squirrel to be found, and the apprentices head home disappointed.",
-            "injury": "Slowly, carefully, the young cats enter the burrow. It's dark and cramped, but they fit fine, and are able to follow their noses to the heart of the den. Unfortunately, the squirrels are awake, and angry! They hiss and chitter in rage, swiping at their muzzles and driving the apprentices back out of the burrow, where they turn tail and run home."
-        },
-        "min_cats": 3,
-        "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c was scarred as an apprentice by an angry ground squirrel."
-        }
+        "success_outcomes": [
+            {
+                "text": "Slowly, carefully, the young cats enter the burrow. It's dark and cramped, but they fit fine, and are able to follow their noses to the heart of the den. It's easy pickings at that point; the squirrels are awake, and some wriggle past, but when they emerge (covered in dirt and mud), it's with a good haul of squirrels to bring home!",
+                "exp": 50,
+                "weight": 20,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Slowly, carefully, the young cats enter the burrow. It's dark and cramped, but they fit fine, and are able to follow their noses to the heart of the den. It's easy pickings at that point; with the squirrels all asleep, the apprentices kill them quietly and without any fuss. It takes two trips for them to bring it all home!",
+                "exp": 50,
+                "weight": 5,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Slowly, carefully, the young cats enter the burrow. It's dark and cramped, but they fit fine, and are able to follow their noses to the heart of the den. Unfortunately, the burrow is barren, not a single squirrel to be found, and the apprentices head home disappointed.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort", "trust"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "Slowly, carefully, the young cats enter the burrow. It's dark and cramped, but they fit fine, and are able to follow their noses to the heart of the den. Unfortunately, the squirrels are awake, and angry! They hiss and chitter in rage, swiping at their muzzles and driving the apprentices back out of the burrow, where they turn tail and run home.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["patrol"],
+                        "injuries": ["claw-wound", "scrapes", "non_lethal"],
+                        "scars": ["SNOUT"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred as an apprentice by an angry ground squirrel."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort", "trust"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
     },
     {
         "patrol_id": "pln_hunt_leaf-bare_groupsquirrel1",
-        "biome": "plains",
-        "season": "leaf-bare",
-        "tags": [
-            "hunting",
-            "medium_prey",
-            "comfort",
-            "trust",
-            "platonic",
-            "respect"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "p_l's patrol strolls through the plains, snow crunching underpaw. One cat raises their tail, signaling the others to be still; they've scented ground squirrels nearby.",
         "decline_text": "p_l quietly shakes their head and leads the patrol elsewhere. They'll be tucked away in their burrows, which is.. a lot of work for a few thin squirrels.",
         "chance_of_success": 30,
-        "exp": 30,
-        "success_text": {
-            "unscathed_common": "It's a lot of investigation in the snow, but eventually the patrol finds a burrow with a good amount of sleeping squirrels within. One cat shoves their paw in, swiping around until their claws hook into fur, and yanks each squirrel out for a waiting cat to finish off.",
-            "unscathed_rare": "It's a lot of investigation in the snow, but eventually the patrol finds a burrow with a good amount of sleeping squirrels within. This burrow has a back exit; r_c sticks their muzzle in it and starts yowling down the burrow, waking the squirrels and flushing them out the front, where rest of the patrol awaits with unsheathed claws.",
-            "stat_skill": "s_c is able to swiftly follow the scent to its origin; a burrow of hibernating squirrels, of course. They think for a short time, then direct their Clanmates into different positions, before walking on top of the burrow and slamming their paws down repeatedly. That wakes the squirrels, who rush out and right into the waiting paws of the patrol."
-        },
-        "fail_text": {
-            "unscathed_common": "They search as hard as they can, but can never quite seem to find where the squirrels are hiding. Oh well."
-        },
-        "win_skills": [
-            "HUNTER,1"
+        "success_outcomes": [
+            {
+                "text": "It's a lot of investigation in the snow, but eventually the patrol finds a burrow with a good amount of sleeping squirrels within. One cat shoves their paw in, swiping around until their claws hook into fur, and yanks each squirrel out for a waiting cat to finish off.",
+                "exp": 30,
+                "weight": 20,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "It's a lot of investigation in the snow, but eventually the patrol finds a burrow with a good amount of sleeping squirrels within. This burrow has a back exit; r_c sticks their muzzle in it and starts yowling down the burrow, waking the squirrels and flushing them out the front, where rest of the patrol awaits with unsheathed claws.",
+                "exp": 30,
+                "weight": 5,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c is able to swiftly follow the scent to its origin; a burrow of hibernating squirrels, of course. They think for a short time, then direct their Clanmates into different positions, before walking on top of the burrow and slamming their paws down repeatedly. That wakes the squirrels, who rush out and right into the waiting paws of the patrol.",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["HUNTER,1"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "They search as hard as they can, but can never quite seem to find where the squirrels are hiding. Oh well.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
     },
     {
         "patrol_id": "pln_hunt_leaf-bare_solomouse1",
-        "biome": "plains",
-        "season": "leaf-bare",
-        "tags": [
-            "hunting",
-            "no_app",
-            "medium_prey"
-        ],
-        "intro_text": "r_c catches scent of a mouse nearby. But there aren't any footprints imprinted on top of the snow to follow.",
-        "decline_text": "Your patrol ignores the mouse.",
-        "success_text": {
-            "unscathed_common": "r_c sniffs carefully - no, the scent is definitely here. They creep round the edge of the snowdrift, spot a little burow entrance, and settle down to wait. When they come wandering back into camp, they're cold and stiff - but there's mice to be added to the fresh-kill pile.",
-            "unscathed_rare": "Carefully, r_c waits. Something skitters under the snow. Pinpointing the location of their prey, r_c leap high and dives, aws first, into the snowdrift. They purr in satisfaction as prey-blood hits their tongue.",
-            "stat_skill": "s_c immediately drops into a practised crouch, shimmying flawlessly along the ground and taking the perfectly plump mouse completely by surprise before it can retreat into its under-snow burrow."
-        },
-        "fail_text": {
-            "unscathed_common": "r_c narrowly misses the mouse."
-        },
-        "chance_of_success": 40,
-        "exp": 10,
-        "win_skills": [
-            "HUNTER,1"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
         "min_cats": 1,
         "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "r_c catches scent of a mouse nearby. But there aren't any footprints imprinted on top of the snow to follow.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "r_c sniffs carefully - no, the scent is definitely here. They creep round the edge of the snowdrift, spot a little burow entrance, and settle down to wait. When they come wandering back into camp, they're cold and stiff - but there's mice to be added to the fresh-kill pile.",
+                "exp": 10,
+                "weight": 20,
+                "prey": ["medium"]
+            },
+            {
+                "text": "Carefully, r_c waits. Something skitters under the snow. Pinpointing the location of their prey, r_c leap high and dives, aws first, into the snowdrift. They purr in satisfaction as prey-blood hits their tongue.",
+                "exp": 10,
+                "weight": 5,
+                "prey": ["medium"]
+            },
+            {
+                "text": "s_c immediately drops into a practised crouch, shimmying flawlessly along the ground and taking the perfectly plump mouse completely by surprise before it can retreat into its under-snow burrow.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["HUNTER,1"],
+                "prey": ["medium"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c narrowly misses the mouse.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
     },
     {
         "patrol_id": "pln_hunt_leaf-bare_soloappmouse1",
-        "biome": "plains",
-        "season": "leaf-bare",
-        "tags": [
-            "hunting",
-            "apprentice",
-            "no_fail_prey",
-            "medium_prey1",
-            "scar",
-            "cold_injury"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "app1 catches scent of a mouse nearby. But they lash they tail, confused - everything is covered in snow, where could the prey be?",
         "decline_text": "Your patrol ignores the mouse.",
         "chance_of_success": 20,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "It's under the snow! Flush with enthusiasm, app1 digs at the snow bank, spraying white powder everywhere. But the mouse is long gone before they can dig down to them, escaped off into another series of tunnels.",
-            "unscathed_rare": "Hold on - the mouse must be under the snow, not on top of it. app1 patiently waits for a sound, listening to the near silence of a snow-covered world under something starts to skitter close by. Pouncing blindly forward, they sink into the snow well over their head - but they can feel prey in their paws!"
-        },
-        "fail_text": {
-            "unscathed_common": "Confused and crestfallen, app1 wanders back to camp.",
-            "injury": "It's under the snow! Flush with enthusiasm, app1 digs at the snow bank, spraying white powder everywhere. But the mouse is long gone before they can dig down to them, escaped off into another series of tunnels, and app1 shivers as they pad back to camp."
-        },
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "success_outcomes": [
+            {
+                "text": "It's under the snow! Flush with enthusiasm, app1 digs at the snow bank, spraying white powder everywhere. But the mouse is long gone before they can dig down to them, escaped off into another series of tunnels.",
+                "exp": 20,
+                "weight": 20
+            },
+            {
+                "text": "Hold on - the mouse must be under the snow, not on top of it. app1 patiently waits for a sound, listening to the near silence of a snow-covered world under something starts to skitter close by. Pouncing blindly forward, they sink into the snow well over their head - but they can feel prey in their paws!",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["medium"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Confused and crestfallen, app1 wanders back to camp.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "It's under the snow! Flush with enthusiasm, app1 digs at the snow bank, spraying white powder everywhere. But the mouse is long gone before they can dig down to them, escaped off into another series of tunnels, and app1 shivers as they pad back to camp.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["cold_injury"],
+                        "scars": []
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "pln_hunt_leaf-bare_mentormouse1",
-        "biome": "plains",
-        "season": "leaf-bare",
-        "tags": [
-            "hunting",
-            "apprentice",
-            "small_prey0",
-            "medium_prey1",
-            "comfort",
-            "trust",
-            "warrior"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "app1 catches scent of a mouse nearby. They're confused, asking where it could be, given there's not footprints in the snow, until p_l indicates the snowdrift itself with a wave of their tail.",
         "decline_text": "Your patrol ignores the mouse.",
         "chance_of_success": 40,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "Oh. This is what those lessons with the high hunting pounce were for. app1 positions themselves and launches up, falling ungainly on top of the snowdrift and burying themselves in cold white fluff. Fox-dung! But p_l approaches them afterwards with a commiserating purr. Even though app1 missed their mouse, the commotion was enough to startle another into p_l's paws, so they don't return home without any prey.",
-            "unscathed_rare": "Oh. This is what those lessons with the high hunting pounce were for. app1 positions themselves and launches up, falling form on high in a graceful dive into the snow. They split out frozen white fluff, laughing excitedly - they can feel a mouse pinned under their paws!"
-        },
-        "fail_text": {
-            "unscathed_common": "app1 tries to dive for the mouse in the snow, but the only thing they catch under their claws is a pebble. p_l curls around them to warm them up afterwards, instructing them on the delicate art of pouncing for prey you can't see."
-        },
-        "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "success_outcomes": [
+            {
+                "text": "Oh. This is what those lessons with the high hunting pounce were for. app1 positions themselves and launches up, falling ungainly on top of the snowdrift and burying themselves in cold white fluff. Fox-dung! But p_l approaches them afterwards with a commiserating purr. Even though app1 missed their mouse, the commotion was enough to startle another into p_l's paws, so they don't return home without any prey.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["small"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Oh. This is what those lessons with the high hunting pounce were for. app1 positions themselves and launches up, falling form on high in a graceful dive into the snow. They split out frozen white fluff, laughing excitedly - they can feel a mouse pinned under their paws!",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "app1 tries to dive for the mouse in the snow, but the only thing they catch under their claws is a pebble. p_l curls around them to warm them up afterwards, instructing them on the delicate art of pouncing for prey you can't see.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
     },
     {
         "patrol_id": "pln_hunt_leaf-bare_mice_appshowoff1",
-        "biome": "plains",
-        "season": "leaf-bare",
-        "tags": [
-            "hunting",
-            "romantic",
-            "respect",
-            "rel_two_apps",
-            "apprentice",
-            "two_apprentices",
-            "medium_prey"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["hunting"],
+        "tags": ["rom_two_apps", "romantic"],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [2, 2],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "The patrol heads out at sunhigh, trying to press the weak warmth of the sun into their pelts. p_l is a little irritated to see that app1 is more focused on app2 than the challenge of hunting during leaf-bare.",
         "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
         "chance_of_success": 30,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "While p_l was right - app1 definitely cares more about how they look to app2 than hunting - it turns out fine. The patrol picks up a good haul of mice that were out trying to navigate the recent snowfalls, and p_l indulgently makes sure to tell app1 their reaction speed was very good in front of app2.",
-            "unscathed_rare": "While the way app1 tries to burst out of a bush on a rabbit was categorically silly, the mice that were startled into the claws of the rest of the hunting patrol make up for it, and all the adults remember being young, dumb, and stupid with the desire to impress a pretty pelt. p_l takes app1 aside for a quiet word about toning it down a little, but the hunting trip goes well.",
-            "stat_trait": "There is a time and a place for app1 to try their luck looking good in front of app2 - and that time is now! They trot back to camp at the front of the hunting patrol, carrying the mice they caught with slightly more than the right amount of pride."
-        },
-        "fail_text": {
-            "injury": "app1 is so busy watching if app2 is watching <i>them</i> that they forget to watch their own paws - and falling into a truly shockingly large snowdrift impressed nobody."
-        },
-        "win_trait": [
-            "bold",
-            "charismatic",
-            "confident",
-            "daring",
-            "fierce",
-            "shameless",
-            "troublesome"
+        "success_outcomes": [
+            {
+                "text": "While p_l was right - app1 definitely cares more about how they look to app2 than hunting - it turns out fine. The patrol picks up a good haul of mice that were out trying to navigate the recent snowfalls, and p_l indulgently makes sure to tell app1 their reaction speed was very good in front of app2.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": true,
+                        "values": ["romantic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "While the way app1 tries to burst out of a bush on a rabbit was categorically silly, the mice that were startled into the claws of the rest of the hunting patrol make up for it, and all the adults remember being young, dumb, and stupid with the desire to impress a pretty pelt. p_l takes app1 aside for a quiet word about toning it down a little, but the hunting trip goes well.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": true,
+                        "values": ["romantic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "There is a time and a place for app1 to try their luck looking good in front of app2 - and that time is now! They trot back to camp at the front of the hunting patrol, carrying the mice they caught with slightly more than the right amount of pride.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "bold",
+                    "charismatic",
+                    "confident",
+                    "daring",
+                    "fierce",
+                    "shameless",
+                    "troublesome"
+                ],
+                "can_have_stat": ["app1"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": true,
+                        "values": ["romantic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": []
     },
     {
         "patrol_id": "pln_hunt_leaf-bare_groupmice1",
-        "biome": "plains",
-        "season": "leaf-bare",
-        "tags": [
-            "hunting",
-            "respect",
-            "patrol_to_r_c",
-            "medium_prey"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "r_c suggests the patrol hunts close to home - there's no use exhausting themselves pushing through the high snowdrifts.",
         "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
         "chance_of_success": 40,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "As they arrive, the patrol startles two mice, and r_c manages to react quick enough to kill one with an inelegant pounce. It's a good omen for the rest of the morning's work, which proves to be a productive and satisfying hunt.",
-            "unscathed_rare": "It's worth it to reserve their strength during leaf-bare, and the hunting grounds near camp are still good enough. They bring the mice they find back to the fresh-kill pile, all pleased with their contributions.",
-            "stat_skill": "These are the times that it really pays to have a hunter of s_c's caliber on the patrol - they really go above and beyond, impressing everyone and leaving a trail of terror among the local mice."
-        },
-        "fail_text": {
-            "unscathed_common": "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames them for it."
-        },
-        "win_skills": [
-            "HUNTER,1"
+        "success_outcomes": [
+            {
+                "text": "As they arrive, the patrol startles two mice, and r_c manages to react quick enough to kill one with an inelegant pounce. It's a good omen for the rest of the morning's work, which proves to be a productive and satisfying hunt.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "It's worth it to reserve their strength during leaf-bare, and the hunting grounds near camp are still good enough. They bring the mice they find back to the fresh-kill pile, all pleased with their contributions.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "These are the times that it really pays to have a hunter of s_c's caliber on the patrol - they really go above and beyond, impressing everyone and leaving a trail of terror among the local mice.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["HUNTER,1"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames them for it.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
     }
 ]
