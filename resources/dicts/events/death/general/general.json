@@ -16,10 +16,7 @@
         "history_text": {
             "reg_death": "m_c was secretly murdered by r_c.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer."
-        },
-        "other_cat_skill": [
-            "CLEVER,1"
-        ]
+        }
     },
     {
         "camp": "any",

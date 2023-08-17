@@ -1898,15 +1898,15 @@
     },
     {
         "patrol_id": "mnt_hunt_newcat_leaf-barecatcrywelcoming1",
-        "biome": ["mountainous"],
-        "season": ["leaf-bare"],
+        "biome": ["Any"],
+        "season": ["Any"],
         "types": ["hunting"],
         "tags": ["new_cat"],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [1, 6]
+            "all apprentices": [-1, -1]
         },
         "weight": 20,
         "intro_text": "It's a cold day in c_n's territory, and app1 is the only cat stepping out. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} by {PRONOUN/app1/self} when {PRONOUN/app1/subject} {VERB/app1/hear/hears} a cat screaming for help.",
@@ -1918,7 +1918,7 @@
                 "exp": 20,
                 "weight": 20,
                 "new_cat": [
-                    ["kittypet"]
+                    ["kittypet", "age:mate", "mate:p_l"]
                 ],
                 "relationships": [
                     {
