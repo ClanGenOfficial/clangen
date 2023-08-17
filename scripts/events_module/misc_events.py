@@ -48,17 +48,17 @@ class MiscEvents():
             
         reveal = False
         victim = None
-        if cat.history:
-            history = cat.history.get_murders(cat)
-            if history:
-                if "is_murderer" in history:
-                    murder_history = history["is_murderer"]
-                    reveal = True 
-                    for murder in murder_history:
-                        murder_index = murder_history.index(murder)
-                        if murder_history[murder_index]["revealed"] is True:
-                            continue
-                        victim = murder_history[murder_index]["victim"]
+        cat_history = History.get_murders(cat)
+        if cat_history:
+            if "is_murderer" in cat_history:
+                murder_history = cat_history["is_murderer"]
+                for murder in murder_history:
+                    murder_index = murder_history.index(murder)
+                    if murder_history[murder_index]["revealed"] is True:
+                        continue
+                    victim = murder_history[murder_index]["victim"]
+                    reveal = True
+                    break
 
         #print('misc event', cat.ID)
         final_events = GenerateEvents.filter_possible_short_events(acc_checked_events, cat, other_cat, war, enemy_clan, other_clan,

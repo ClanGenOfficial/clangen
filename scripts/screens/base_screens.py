@@ -8,7 +8,7 @@ from scripts.game_structure.image_button import UIImageButton
 import pygame_gui
 from scripts.game_structure.windows import SaveCheck, EventLoading
 from scripts.game_structure.propagating_thread import PropagatingThread
-from threading import get_ident
+from threading import get_ident, Semaphore
 
 class Screens():
     game_screen = screen
@@ -114,7 +114,9 @@ class Screens():
         # Dictionary of work done, keyed by the target function name
         self.work_done = {}
         
-
+        # To prevent race unwanted race conditions
+        self._semaphore = Semaphore(1)
+        
     def loading_screen_start_work(self,
                                   target:callable,
                                   args:tuple=tuple()) -> PropagatingThread:
@@ -124,25 +126,34 @@ class Screens():
         work_thread = PropagatingThread(target=self._work_target, args=(target,args), daemon=True)
         game.switches['window_open'] = True
         
+        # Semephore prevents race condition on the work_done flag. 
+        self._semaphore.acquire()
         work_thread.start()
         self.work_done[work_thread.ident] = False
+        self._semaphore.release()
         
         return work_thread
         
     def _work_target(self, target, args):
         
+        self._semaphore.acquire()
+        exp = None
         try:
             target(*args)
-        except:
-            raise
-        finally:
-            self.work_done[get_ident()] = True
-
+        except Exception as e:
+            exp = e
+        
+        self.work_done[get_ident()] = True
+        self._semaphore.release()
+        
+        if exp:
+            raise exp
+        
     def loading_screen_on_use(self, 
                               work_thread:PropagatingThread,
                               final_actions:callable,
                               loading_screen_pos:tuple=None, 
-                              delay:float=0.7) -> bool:
+                              delay:float=0.7) -> None:
         """Handles all actions that must be run every frame for the loading window to work. 
         Also handles creating and killing the loading window. 
          """
@@ -174,7 +185,7 @@ class Screens():
             final_actions()
             game.switches['window_open'] = False
             
-        return self.work_done
+        return
         
     def fill(self, tuple):
         pygame.Surface.fill(color=tuple)
