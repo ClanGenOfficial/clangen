@@ -663,7 +663,8 @@ class Pregnancy_Events():
                                                 status=random.choice(["loner", "kittypet"]),
                                                 alive=False,
                                                 thought=thought,
-                                                age=randint(15,120))[0]
+                                                age=randint(15,120),
+                                                outside=True)[0]
                     blood_parent.thought = thought
                 
                 kit = Cat(parent1=blood_parent.ID ,moons=0, backstory=backstory, status='newborn')
