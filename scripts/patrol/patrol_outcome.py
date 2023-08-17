@@ -906,7 +906,7 @@ class PatrolOutcome():
             in_patrol_cats["s_c"] = self.stat_cat
         give_mates = []
         for tag in attribute_list:
-            match = re.match(r"mate:([,0-9a-zA-Z]+)", tag)
+            match = re.match(r"mate:([_,0-9a-zA-Z]+)", tag)
             if not match:
                 continue
             
