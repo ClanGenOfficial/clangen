@@ -8,6 +8,7 @@ from scripts.game_structure.image_button import UIImageButton, UISpriteButton
 from scripts.patrol.patrol import Patrol
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game, MANAGER
+from scripts.game_structure.propagating_thread import PropagatingThread
 
 
 class PatrolScreen(Screens):
@@ -42,6 +43,10 @@ class PatrolScreen(Screens):
         self.app_mentor = None
         self.able_cats = None
         self.current_patrol = None
+        self.display_text = ""
+        self.results_text = ""
+        self.start_patrol_thread = None
+        self.proceed_patrol_thread = None
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -205,15 +210,22 @@ class PatrolScreen(Screens):
             self.update_button()
         elif event.ui_element == self.elements['patrol_start']:
             self.selected_cat = None
-            self.open_patrol_event_screen()  # Starting patrol.
-
+            self.start_patrol_thread = self.loading_screen_start_work(self.run_patrol_start)
+            
     def handle_patrol_events_event(self, event):
-        if event.ui_element == self.elements["proceed"]:
-            self.open_patrol_complete_screen("proceed")
+        if game.switches["window_open"]:
+            return
+        
+        inp = None
+        if event.ui_element == self.elements["proceed"]:            
+            inp = "proceed"
         elif event.ui_element == self.elements["not_proceed"]:
-            self.open_patrol_complete_screen("notproceed")
+            inp = "notproceed"
         elif event.ui_element == self.elements["antagonize"]:
-            self.open_patrol_complete_screen("antagonize")
+            inp = "antagonize"
+        
+        if inp:
+            self.proceed_patrol_thread = self.loading_screen_start_work(self.run_patrol_proceed, (inp,))
 
     def handle_patrol_complete_events(self, event):
         if event.ui_element == self.elements['patrol_again']:
@@ -372,6 +384,8 @@ class PatrolScreen(Screens):
         self.clear_cat_buttons()
         self.patrol_obj = Patrol()
 
+        self.display_text = ""
+        self.results_text = ""
         self.current_patrol = []
         self.current_page = 1
         self.patrol_stage = 'choose_cats'
@@ -469,11 +483,23 @@ class PatrolScreen(Screens):
         self.update_cat_images_buttons()
         self.update_button()
 
+    def run_patrol_start(self):
+        """Runs patrol start. To be run in a seperate thread.  """
+        try:
+            self.display_text = self.patrol_obj.setup_patrol(self.current_patrol, self.patrol_type)
+        except RuntimeError:
+            self.display_text = None
+        
     def open_patrol_event_screen(self):
         """Open the patrol event screen. This sets up the patrol starting"""
         self.clear_page()
         self.clear_cat_buttons()
         self.patrol_stage = 'patrol_events'
+
+        if self.display_text is None:
+            # No patrol events were found. 
+            self.change_screen("camp screen")
+            return
 
         # Layout images
         self.elements['event_bg'] = pygame_gui.elements.UIImage(scale(pygame.Rect((762, 330), (708, 540))),
@@ -494,14 +520,7 @@ class PatrolScreen(Screens):
                                                                        pygame.image.load(
                                                                            "resources/images/patrol_sprite_frame.png").convert_alpha(),
                                                                        (640, 640)
-                                                                   ), manager=MANAGER)
-
-        # Add selected cats to the patrol.
-        try:
-            intro_text = self.patrol_obj.setup_patrol(self.current_patrol, self.patrol_type)
-        except RuntimeError:
-            self.change_screen("camp screen")
-            return
+                                                                   ), manager=MANAGER) 
 
 
         self.elements['intro_image'] = pygame_gui.elements.UIImage(
@@ -513,7 +532,7 @@ class PatrolScreen(Screens):
         # Prepare Intro Text
         # adjusting text for solo patrols
         #intro_text = adjust_patrol_text(intro_text, self.patrol_obj)
-        self.elements["patrol_text"] = pygame_gui.elements.UITextBox(intro_text,
+        self.elements["patrol_text"] = pygame_gui.elements.UITextBox(self.display_text,
                                                                      scale(pygame.Rect((770, 345), (670, 500))),
                                                                      object_id="#text_box_30_horizleft_pad_10_10_spacing_95",
                                                                      manager=MANAGER)
@@ -573,7 +592,17 @@ class PatrolScreen(Screens):
         if not self.patrol_obj.patrol_event.antag_success_outcomes:
             self.elements["antagonize"].hide()
 
-    def open_patrol_complete_screen(self, user_input):
+    def run_patrol_proceed(self, user_input):
+        """Proceeds the patrol - to be run in the seperate thread. """
+        
+        if user_input in ["nopro", "notproceed"]:
+            self.display_text, self.results_text = self.patrol_obj.proceed_patrol("decline")
+        elif user_input in ["antag", "antagonize"]:
+            self.display_text, self.results_text = self.patrol_obj.proceed_patrol("antag")
+        else:
+            self.display_text, self.results_text = self.patrol_obj.proceed_patrol("proceed")
+
+    def open_patrol_complete_screen(self):
         """Deals with the next stage of the patrol, including antagonize, proceed, and do not proceed.
         You must put the type of next step (user input) into the user_input parameter.
         For antagonize: user_input = "antag" or "antagonize"
@@ -585,14 +614,7 @@ class PatrolScreen(Screens):
                                                      object_id="#return_to_clan", manager=MANAGER)
         self.elements['patrol_again'] = UIImageButton(scale(pygame.Rect((1120, 274), (324, 60))), "",
                                                       object_id="#patrol_again", manager=MANAGER)
-        
-        if user_input in ["nopro", "notproceed"]:
-            display_text, results = self.patrol_obj.proceed_patrol("decline")
-        elif user_input in ["antag", "antagonize"]:
-            display_text, results = self.patrol_obj.proceed_patrol("antag")
-        else:
-            display_text, results = self.patrol_obj.proceed_patrol("proceed")
-        
+                
         # Adjust text for solo patrols
         #display_text = adjust_patrol_text(display_text, self.patrol_obj)
 
@@ -601,9 +623,9 @@ class PatrolScreen(Screens):
                                                                         object_id=get_text_box_theme(
                                                                             "#text_box_22_horizcenter_spacing_95"),
                                                                         manager=MANAGER)
-        self.elements["patrol_results"].set_text(results)
+        self.elements["patrol_results"].set_text(self.results_text)
 
-        self.elements["patrol_text"].set_text(display_text)
+        self.elements["patrol_text"].set_text(self.display_text)
 
         self.elements["proceed"].disable()
         self.elements["not_proceed"].disable()
@@ -937,7 +959,9 @@ class PatrolScreen(Screens):
         self.clear_cat_buttons()
 
     def on_use(self):
-        pass
+        
+        self.loading_screen_on_use(self.start_patrol_thread, self.open_patrol_event_screen)
+        self.loading_screen_on_use(self.proceed_patrol_thread, self.open_patrol_complete_screen)
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
