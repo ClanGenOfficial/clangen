@@ -1143,21 +1143,25 @@ class Cat():
             trait = giver_cat.personality.trait
             cluster2, second_cluster2 = self.get_cluster(trait)
             life_list = []
-            victim_in_lifegiver = False
-            if game.clan.your_cat.history:
-                if game.clan.your_cat.history.murder and "murdered" in tags:
-                    if "is_murderer" in game.clan.your_cat.history.murder:
-                        if len(game.clan.your_cat.history.murder["is_murderer"]) > 0:
-                            for i in game.clan.your_cat.history.murder["is_murderer"]:
-                                if i['victim'] == giver_cat.ID:
-                                    victim_in_lifegiver = True
+            if game.clan.your_cat.ID == self.ID:
+                victim_in_lifegiver = False
+                if game.clan.your_cat.history:
+                    if game.clan.your_cat.history.murder and "murdered" in tags:
+                        if "is_murderer" in game.clan.your_cat.history.murder:
+                            if len(game.clan.your_cat.history.murder["is_murderer"]) > 0:
+                                for i in game.clan.your_cat.history.murder["is_murderer"]:
+                                    if i['victim'] == giver_cat.ID:
+                                        victim_in_lifegiver = True
                                         
             for life in possible_lives:
                 tags = possible_lives[life]["tags"]
                 rank = giver_cat.status
-                if victim_in_lifegiver and "murdered" not in tags:
-                    continue
-                if not victim_in_lifegiver and "murdered" in tags:
+                if game.clan.your_cat.ID == self.ID:
+                    if victim_in_lifegiver and "murdered" not in tags:
+                        continue
+                    if not victim_in_lifegiver and "murdered" in tags:
+                        continue
+                elif "murdered" in tags:
                     continue
                 if "unknown_blessing" in tags:
                     continue
