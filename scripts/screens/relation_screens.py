@@ -1196,8 +1196,8 @@ class ChooseMateScreen(Screens):
         self.no_kits_message = None
         
         #Loading screen
-        self.work_thread = PropagatingThread()
-
+        self.work_thread = None
+        
     def handle_event(self, event):
         """ Handles events. """
         if game.switches["window_open"]:

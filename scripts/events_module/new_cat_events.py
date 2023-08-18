@@ -107,7 +107,6 @@ class NewCatEvents:
             status = "medicine cat"
 
 
-        
         created_cats = create_new_cat(Cat,
                                       Relationship,
                                       new_cat_event.new_name,
@@ -129,9 +128,8 @@ class NewCatEvents:
                                           status=random.choice(["loner", "kittypet"]),
                                           alive=False,
                                           thought=thought,
-                                          age=random.randint(15,120))[0]
-            blood_parent.outside = True
-            game.clan.add_to_unknown(blood_parent)
+                                          age=random.randint(15,120),
+                                          outside=True)[0]
             
             
         for new_cat in created_cats:
