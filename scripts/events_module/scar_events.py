@@ -86,20 +86,15 @@ class Scar_Events():
         "broken bone": bone_scars,
         "head damage": head_scars
     }
-    
 
-    def __init__(self) -> None:
-        self.history = History()
-        self.event_sums = 0
-        self.had_one_event = False
-
-    def handle_scars(self, cat, injury_name):
+    @staticmethod
+    def handle_scars(cat, injury_name):
         """ 
         This function handles the scars
         """
         
         # If the injury can't give a scar, move return None, None
-        if injury_name not in self.scar_allowed:
+        if injury_name not in Scar_Events.scar_allowed:
             return None, None
         
         moons_with = game.clan.age - cat.injuries[injury_name]["moon_start"]
@@ -116,7 +111,7 @@ class Scar_Events():
 
             specialty = None  # Scar to be set
 
-            scar_pool = [i for i in self.scar_allowed[injury_name] if i not in cat.pelt.scars]
+            scar_pool = [i for i in Scar_Events.scar_allowed[injury_name] if i not in cat.pelt.scars]
             if 'NOPAW' in cat.pelt.scars:
                 scar_pool = [i for i in scar_pool if i not in ['TOETRAP', 'RATBITE', "FROSTSOCK"]]
             if 'NOTAIL' in cat.pelt.scars:
@@ -157,7 +152,7 @@ class Scar_Events():
                 return None, None
             
             # If we've reached this point, we can move foward with giving history. 
-            self.history.add_scar(cat,
+            History.add_scar(cat,
                                   f"m_c was scarred from an injury ({injury_name}).",
                                   condition=injury_name)
 

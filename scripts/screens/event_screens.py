@@ -56,11 +56,10 @@ class EventsScreen(Screens):
         self.cat_profile_buttons = {}
         self.scroll_height = {}
         self.CEREMONY_TXT = None
-        self.events_thread = threading.Thread()
         self.start = 0
         self.loading_window = None
         self.done_moon = False
-        self.events_thread = PropagatingThread()
+        self.events_thread = None
 
         # Stores the involved cat button that currently has its cat profile buttons open
         self.open_involved_cat_button = None

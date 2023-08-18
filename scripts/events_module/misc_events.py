@@ -15,12 +15,8 @@ from scripts.event_class import Single_Event
 class MiscEvents():
     """All events that do not fit in a different category."""
 
-    def __init__(self) -> None:
-        self.event_sums = 0
-        self.had_one_event = False
-        self.generate_events = GenerateEvents()
-
-    def handle_misc_events(self, cat, other_cat=None, war=False, enemy_clan=None, alive_kits=False, accessory=False, ceremony=False):
+    @staticmethod
+    def handle_misc_events(cat, other_cat=None, war=False, enemy_clan=None, alive_kits=False, accessory=False, ceremony=False):
         """ 
         This function handles the misc events
         """
@@ -34,7 +30,7 @@ class MiscEvents():
         if other_clan:
             other_clan_name = f'{other_clan.name}Clan'
 
-        possible_events = self.generate_events.possible_short_events(cat.status, cat.age, "misc_events")
+        possible_events = GenerateEvents.possible_short_events(cat.status, cat.age, "misc_events")
         acc_checked_events = []
         for event in possible_events:
             if (ceremony and "ceremony" not in event.tags) or (not ceremony and "ceremony" in event.tags):
@@ -65,7 +61,7 @@ class MiscEvents():
                     break
 
         #print('misc event', cat.ID)
-        final_events = self.generate_events.filter_possible_short_events(acc_checked_events, cat, other_cat, war, enemy_clan, other_clan,
+        final_events = GenerateEvents.filter_possible_short_events(acc_checked_events, cat, other_cat, war, enemy_clan, other_clan,
                                                                    alive_kits, murder_reveal=reveal)
 
         # ---------------------------------------------------------------------------- #
@@ -78,12 +74,12 @@ class MiscEvents():
             return
 
         if misc_event.accessories:
-            self.handle_accessories(cat, misc_event.accessories)
+            MiscEvents.handle_accessories(cat, misc_event.accessories)
 
         # let's change some relationship values \o/ check if another cat is mentioned and if they live
         if "other_cat" in misc_event.tags:
             involved_cats.append(other_cat.ID)
-            self.handle_relationship_changes(cat, misc_event, other_cat)
+            MiscEvents.handle_relationship_changes(cat, misc_event, other_cat)
         else:
             other_cat = None
 
@@ -114,7 +110,8 @@ class MiscEvents():
         if reveal and victim:
             History.reveal_murder(cat, other_cat, Cat, victim, murder_index)
 
-    def handle_relationship_changes(self, cat, misc_event, other_cat):
+    @staticmethod
+    def handle_relationship_changes(cat, misc_event, other_cat):
 
         n = 5
         romantic = 0
@@ -174,7 +171,8 @@ class MiscEvents():
             jealousy,
             trust)
 
-    def handle_accessories(self, cat, possible_accs):
+    @staticmethod
+    def handle_accessories(cat, possible_accs):
         acc_list = []
         if "WILD" in possible_accs:
             acc_list.extend(Pelt.wild_accessories)
@@ -220,7 +218,8 @@ class MiscEvents():
             cat.inventory = []
         cat.inventory.append(acc)
 
-    def handle_murder_self_reveals(self, cat):
+    @staticmethod
+    def handle_murder_self_reveals(cat):
         ''' Handles reveals for murders where the murderer reveals themself '''
         if cat.personality.lawfulness > 8:
             murderer_guilty = random.choice([True, False])
@@ -236,5 +235,6 @@ class MiscEvents():
 
         return bool(chance_roll = 1)
 
-    def handle_murder_witness_reveals(self, cat, other_cat):
+    @staticmethod
+    def handle_murder_witness_reveals(cat, other_cat):
         ''' Handles reveals where the witness reveals the murderer '''
