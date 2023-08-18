@@ -132,7 +132,7 @@ class Pelt():
                  name:str="SingleColour",
                  length:str="short",
                  colour:str="WHITE",
-                 white_patches:str=None,
+                 white_patches:list=None,
                  eye_color:str="BLUE",
                  eye_colour2:str=None,
                  tortiebase:str=None,
@@ -843,10 +843,20 @@ class Pelt():
         else:
             weights = (10, 10, 10, 10, 1)
 
+        chosen_white_patches = set(())
         white_list = [Pelt.little_white, Pelt.mid_white, Pelt.high_white, Pelt.mostly_white, ['FULLWHITE']]
-        chosen_white_patches = choice(
+        chosen_white_patches.add(choice(
             random.choices(white_list, weights=weights, k=1)[0]
-        )
+        ))
+        print(chosen_white_patches)
+
+        if not random.getrandbits(1):
+            weights = (10, 5, 1, 0, 0)
+            chosen_white_patches.add(choice(
+                random.choices(white_list, weights=weights, k=1)[0]
+            ))
+            print("two patches")
+            print(chosen_white_patches)
 
         self.white_patches = chosen_white_patches
         if self.points and self.white_patches in [Pelt.high_white, Pelt.mostly_white, 'FULLWHITE']:
