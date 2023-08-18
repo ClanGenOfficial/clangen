@@ -81,34 +81,34 @@
 	},
 	"mates":{
 		"age_range": 40,
-		"chance_fulfilled_condition": 5,
-		"chance_friends_to_lovers": 250,
+		"chance_fulfilled_condition": 2,
+		"chance_friends_to_lovers": 50,
 		"confession": {
 			"make_confession" : {
-				"romantic": 30,
-				"platonic": 15,
-				"dislike": -15,
+				"romantic": 20,
+				"platonic": 10,
+				"dislike": -10,
 				"admiration": 0,
-				"comfortable": 10,
+				"comfortable": 5,
 				"jealousy": 0,
 				"trust": 0
 			},
 			"accept_confession" : {
-				"romantic": 17,
-				"platonic": 15,
-				"dislike": -10,
+				"romantic": 12,
+				"platonic": 10,
+				"dislike": -5,
 				"admiration": 0,
-				"comfortable": 10,
+				"comfortable": 5,
 				"jealousy": 0,
 				"trust": 0
 			}
 		},
 		"mate_condition": {
-			"romantic": 20,
-			"platonic": 30,
-			"dislike": -10,
+			"romantic": 10,
+			"platonic": 20,
+			"dislike": -5,
 			"admiration": 0,
-			"comfortable": 20,
+			"comfortable": 15,
 			"jealousy": 0,
 			"trust": 0
 		},
@@ -218,9 +218,9 @@
 	"pregnancy": {
 		"birth_cooldown": 6,
 		"primary_chance_mated": 80,
-		"primary_chance_unmated": 130,
+		"primary_chance_unmated": 250,
 		"random_affair_chance": 50,
-		"unmated_random_affair_chance": 10,
+		"unmated_random_affair_chance": 1,
 		"one_kit_possibility": {"young adult": 8, "adult": 9, "senior adult": 10, "senior": 4},
         "two_kit_possibility": {"young adult": 10, "adult": 13, "senior adult": 15, "senior": 3},
         "three_kit_possibility": {"young adult": 17, "adult": 15, "senior adult": 5, "senior": 1},
