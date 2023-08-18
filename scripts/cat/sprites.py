@@ -195,7 +195,9 @@ class Sprites():
         # acorn's white patches: the sequel
         for a, i in enumerate(['RIGHTEAR', 'LEFTEAR', 'ESTRELLA', 'SHOOTINGSTAR', 'EYESPOT', 'REVERSEEYE',
             'FADEBELLY', 'FRONT', 'BLOSSOMSTEP', 'PEBBLE', 'TAILTWO', 'BUDDY', 'BACKSPOT', 'EYEBAGS']):
-            self.make_group('whitepatches', (a, 7), 'white' + i)
+            self.make_group('whitepatches', (a, 7), f'white{i}')
+        for a, i in enumerate(['BULLSEYE']):
+            self.make_group('whitepatches', (a, 8), 'white' + i)
 
         # single (solid)
         for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
