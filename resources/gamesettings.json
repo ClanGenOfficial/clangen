@@ -140,6 +140,11 @@
             "Enable display of new accessories from Ohdan's mod",
             "Disabling new accessories display will make LifeGen compatible with sprite mods",
             true
+        ],
+        "special_dates": [
+            "Allow special date events",
+            "Certain changes may be made to the game on special days such as April Fools",
+            false
         ]
     },
     "relation": {

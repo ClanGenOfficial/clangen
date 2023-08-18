@@ -441,6 +441,11 @@ class PatrolScreen(Screens):
         self.clear_cat_buttons()
         self.patrol_stage = 'patrol_events'
 
+        if self.display_text is None:
+            # No patrol events were found. 
+            self.change_screen("camp screen")
+            return
+
         # Layout images
         self.elements['event_bg'] = pygame_gui.elements.UIImage(scale(pygame.Rect((762, 330), (708, 540))),
                                                                 pygame.transform.scale(
@@ -460,24 +465,19 @@ class PatrolScreen(Screens):
                                                                        pygame.image.load(
                                                                            "resources/images/patrol_sprite_frame.png").convert_alpha(),
                                                                        (640, 640)
-                                                                   ), manager=MANAGER)
+                                                                   ), manager=MANAGER) 
 
-        # Add selected cats to the patrol.
-        try:
-            intro_text = self.patrol_obj.setup_patrol(self.current_patrol, self.patrol_type)
-        except RuntimeError:
-            self.change_screen("camp screen")
 
         self.elements['intro_image'] = pygame_gui.elements.UIImage(
                         scale(pygame.Rect((150, 300), (600, 600))),
                         pygame.transform.scale(
-                            self.patrol_obj.patrol_art, (600, 600))
+                            self.patrol_obj.get_patrol_art(), (600, 600))
                     )
 
         # Prepare Intro Text
         # adjusting text for solo patrols
-        intro_text = adjust_patrol_text(intro_text, self.patrol_obj)
-        self.elements["patrol_text"] = pygame_gui.elements.UITextBox(intro_text,
+        #intro_text = adjust_patrol_text(intro_text, self.patrol_obj)
+        self.elements["patrol_text"] = pygame_gui.elements.UITextBox(self.display_text,
                                                                      scale(pygame.Rect((770, 345), (670, 500))),
                                                                      object_id="#text_box_30_horizleft_pad_10_10_spacing_95",
                                                                      manager=MANAGER)
@@ -489,14 +489,15 @@ class PatrolScreen(Screens):
         for x in self.patrol_obj.patrol_cats:
             if x != self.patrol_obj.patrol_leader:
                 members.append(str(x.name))
-            if x.ID == game.clan.your_cat.ID:
-                game.switches['patrolled'].append("2")
-        for x in self.patrol_obj.patrol_skills:
-            if x.get_short_skill() not in skills:
-                skills.append(x.get_short_skill())
-        for x in self.patrol_obj.patrol_traits:
-            if x not in traits:
-                traits.append(x)
+        for x in self.patrol_obj.patrol_cats:
+            if x.personality.trait not in traits:
+                traits.append(x.personality.trait)
+            
+            if x.skills.primary and x.skills.primary.get_short_skill() not in skills:
+                skills.append(x.skills.primary.get_short_skill())
+                
+            if x.skills.secondary and x.skills.secondary.get_short_skill() not in skills:
+                skills.append(x.skills.secondary.get_short_skill())
 
         self.elements['patrol_info'] = pygame_gui.elements.UITextBox(
             f'patrol leader: {str(self.patrol_obj.patrol_leader.name)} \n'
@@ -533,7 +534,7 @@ class PatrolScreen(Screens):
 
         self.elements["antagonize"] = UIImageButton(scale(pygame.Rect((1100, 980), (344, 72))), "",
                                                     object_id="#antagonize_button", manager=MANAGER)
-        if self.patrol_obj.patrol_event.antagonize_text is None:
+        if not self.patrol_obj.patrol_event.antag_success_outcomes:
             self.elements["antagonize"].hide()
 
     def open_patrol_complete_screen(self, user_input):
@@ -557,7 +558,7 @@ class PatrolScreen(Screens):
             display_text = self.patrol_obj.proceed_patrol("proceed")
         
         # Adjust text for solo patrols
-        display_text = adjust_patrol_text(display_text, self.patrol_obj)
+        # display_text = adjust_patrol_text(display_text, self.patrol_obj)
 
         self.elements["patrol_results"] = pygame_gui.elements.UITextBox("",
                                                                         scale(pygame.Rect((1100, 1000), (344, 300))),
@@ -1484,12 +1485,15 @@ class PatrolScreen2(Screens):
         for x in self.patrol_obj.patrol_cats:
             if x != self.patrol_obj.patrol_leader:
                 members.append(str(x.name))
-        for x in self.patrol_obj.patrol_skills:
-            if x.get_short_skill() not in skills:
-                skills.append(x.get_short_skill())
-        for x in self.patrol_obj.patrol_traits:
-            if x not in traits:
-                traits.append(x)
+        for x in self.patrol_obj.patrol_cats:
+            if x.personality.trait not in traits:
+                traits.append(x.personality.trait)
+            
+            if x.skills.primary and x.skills.primary.get_short_skill() not in skills:
+                skills.append(x.skills.primary.get_short_skill())
+                
+            if x.skills.secondary and x.skills.secondary.get_short_skill() not in skills:
+                skills.append(x.skills.secondary.get_short_skill())
 
         self.elements['patrol_info'] = pygame_gui.elements.UITextBox(
             f'patrol leader: {str(self.patrol_obj.patrol_leader.name)} \n'
@@ -3365,6 +3369,11 @@ class PatrolScreen4(Screens):
         self.clear_cat_buttons()
         self.patrol_stage = 'patrol_events'
 
+        if self.display_text is None:
+            # No patrol events were found. 
+            self.change_screen("camp screen")
+            return
+
         # Layout images
         self.elements['event_bg'] = pygame_gui.elements.UIImage(scale(pygame.Rect((762, 330), (708, 540))),
                                                                 pygame.transform.scale(
@@ -3384,24 +3393,19 @@ class PatrolScreen4(Screens):
                                                                        pygame.image.load(
                                                                            "resources/images/patrol_sprite_frame.png").convert_alpha(),
                                                                        (640, 640)
-                                                                   ), manager=MANAGER)
+                                                                   ), manager=MANAGER) 
 
-        # Add selected cats to the patrol.
-        try:
-            intro_text = self.patrol_obj.setup_patrol(self.current_patrol, self.patrol_type)
-        except RuntimeError:
-            self.change_screen("camp screen")
 
         self.elements['intro_image'] = pygame_gui.elements.UIImage(
                         scale(pygame.Rect((150, 300), (600, 600))),
                         pygame.transform.scale(
-                            self.patrol_obj.patrol_art, (600, 600))
+                            self.patrol_obj.get_patrol_art(), (600, 600))
                     )
 
         # Prepare Intro Text
         # adjusting text for solo patrols
-        intro_text = adjust_patrol_text(intro_text, self.patrol_obj)
-        self.elements["patrol_text"] = pygame_gui.elements.UITextBox(intro_text,
+        #intro_text = adjust_patrol_text(intro_text, self.patrol_obj)
+        self.elements["patrol_text"] = pygame_gui.elements.UITextBox(self.display_text,
                                                                      scale(pygame.Rect((770, 345), (670, 500))),
                                                                      object_id="#text_box_30_horizleft_pad_10_10_spacing_95",
                                                                      manager=MANAGER)
@@ -3413,14 +3417,15 @@ class PatrolScreen4(Screens):
         for x in self.patrol_obj.patrol_cats:
             if x != self.patrol_obj.patrol_leader:
                 members.append(str(x.name))
-            if x.ID == game.clan.your_cat.ID:
-                game.switches['patrolled'].append("4")
-        for x in self.patrol_obj.patrol_skills:
-            if x.get_short_skill() not in skills:
-                skills.append(x.get_short_skill())
-        for x in self.patrol_obj.patrol_traits:
-            if x not in traits:
-                traits.append(x)
+        for x in self.patrol_obj.patrol_cats:
+            if x.personality.trait not in traits:
+                traits.append(x.personality.trait)
+            
+            if x.skills.primary and x.skills.primary.get_short_skill() not in skills:
+                skills.append(x.skills.primary.get_short_skill())
+                
+            if x.skills.secondary and x.skills.secondary.get_short_skill() not in skills:
+                skills.append(x.skills.secondary.get_short_skill())
 
         self.elements['patrol_info'] = pygame_gui.elements.UITextBox(
             f'patrol leader: {str(self.patrol_obj.patrol_leader.name)} \n'
@@ -3457,7 +3462,7 @@ class PatrolScreen4(Screens):
 
         self.elements["antagonize"] = UIImageButton(scale(pygame.Rect((1100, 980), (344, 72))), "",
                                                     object_id="#antagonize_button", manager=MANAGER)
-        if self.patrol_obj.patrol_event.antagonize_text is None:
+        if not self.patrol_obj.patrol_event.antag_success_outcomes:
             self.elements["antagonize"].hide()
 
     def open_patrol_complete_screen(self, user_input):
@@ -3481,7 +3486,7 @@ class PatrolScreen4(Screens):
             display_text = self.patrol_obj.proceed_patrol("proceed")
         
         # Adjust text for solo patrols
-        display_text = adjust_patrol_text(display_text, self.patrol_obj)
+        # display_text = adjust_patrol_text(display_text, self.patrol_obj)
 
         self.elements["patrol_results"] = pygame_gui.elements.UITextBox("",
                                                                         scale(pygame.Rect((1100, 1000), (344, 300))),
