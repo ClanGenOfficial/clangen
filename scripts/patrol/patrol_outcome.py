@@ -980,7 +980,6 @@ class PatrolOutcome():
                 age = randint(Cat.age_moons[give_mates[0].age][0], 
                               Cat.age_moons[give_mates[0].age][1])  
         
-
         # CAT TYPES AND BACKGROUND
         if "kittypet" in attribute_list:
             cat_type = "kittypet"
@@ -993,8 +992,17 @@ class PatrolOutcome():
         else:
             cat_type = choice(['kittypet', 'loner', 'former Clancat'])
         
-        # Choose backstory based on cat type, and if they are joining as a med cat:
-        if status == "medicine cat" and cat_type == "former Clancat":
+        # LITTER
+        litter = False
+        if "litter" in attribute_list:
+            litter = True
+            if status not in ("kitten", "newborn"):
+                status = "kitten"
+        
+        # CHOOSE DEFAULT BACKSTORY BASED ON CAT TYPE, STATUS.
+        if status in ("kitten", "newborn"):
+            chosen_backstory = choice(BACKSTORIES["backstory_categories"]["abandoned_backstories"])
+        elif status == "medicine cat" and cat_type == "former Clancat":
             chosen_backstory = choice(["medicine_cat", "disgraced1"])
         elif status == "medicine cat":
             chosen_backstory = choice(["wandering_healer1", "wandering_healer2"])
@@ -1003,10 +1011,9 @@ class PatrolOutcome():
                 x = "former_clancat"
             else:
                 x = cat_type
-
             chosen_backstory = choice(BACKSTORIES["backstory_categories"].get(f"{x}_backstories", ["outsider1"]))
         
-        # Option to override backstory if added
+        # OPTION TO OVERRIDE DEFAULT BACKSTORY
         for _tag in attribute_list:
             match = re.match(r"backstory:(.+)", _tag)
             if match:
@@ -1016,13 +1023,6 @@ class PatrolOutcome():
                 
                 chosen_backstory = choice(stor)
                 break
-        
-        # LITTER
-        litter = False
-        if "litter" in attribute_list:
-            litter = True
-            if status not in ("kitten", "newborn"):
-                status = "kitten"
         
         # KITTEN THOUGHT
         if status in ("kitten", "newborn"):
@@ -1067,7 +1067,7 @@ class PatrolOutcome():
         # Add relations to biological parents, if needed
         # Also relations to cat generated in the same block - they are littermates
         # Also make mates
-        # DON'T ADD RELATION TO CAT IN THE PATROL
+        # DON'T ADD RELATION TO CATS IN THE PATROL
         # That is done in the relationships block of the patrol, to give control for writing. 
         for n_c in new_cats:
             
@@ -1076,6 +1076,8 @@ class PatrolOutcome():
                 if n_c == inter_cat or n_c.ID in inter_cat.mate:
                     continue
                 
+                # This is some duplicate work, since this trigger inheritance re-calcs
+                # TODO: Optimize
                 n_c.set_mate(inter_cat)
             
             #Relations to cats in the same block (littermates)
@@ -1114,8 +1116,6 @@ class PatrolOutcome():
                 
             # Update inheritance
             n_c.create_inheritance_new_cat() 
-                
-            
                 
         return new_cats
                  

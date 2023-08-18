@@ -49,6 +49,9 @@ class PatrolScreen(Screens):
         self.proceed_patrol_thread = None
 
     def handle_event(self, event):
+        if game.switches["window_open"]:
+            return
+        
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if self.patrol_stage == "choose_cats":
                 self.handle_choose_cats_events(event)
@@ -58,52 +61,6 @@ class PatrolScreen(Screens):
                 self.handle_patrol_complete_events(event)
 
             self.menu_button_pressed(event)
-
-            # Checking if the mentor or mate selection buttons are clicked. This must be separate, because
-            # these buttons may not exist.
-            if "mate_button" in self.elements:
-                if event.ui_element == self.elements['mate_button']:
-                    self.selected_cat = self.mate
-                    self.update_button()
-                    self.update_cat_images_buttons()
-                    self.update_selected_cat()
-
-            if 'app_mentor_button' in self.elements:
-                if event.ui_element == self.elements['app_mentor_button']:
-                    self.selected_cat = self.app_mentor
-                    self.update_button()
-                    self.update_cat_images_buttons()
-                    self.update_selected_cat()
-
-            # Check if apprentice cycle buttons are clicked.
-            if "cycle_app_mentor_left_button" in self.elements:
-                if event.ui_element == self.elements['cycle_app_mentor_left_button']:
-                    self.selected_apprentice_index -= 1
-                    self.app_mentor = self.selected_cat.apprentice[self.selected_apprentice_index]
-                    self.update_selected_cat()
-                    self.update_button()
-
-            if "cycle_app_mentor_right_button" in self.elements:
-                if event.ui_element == self.elements['cycle_app_mentor_right_button']:
-                    self.selected_apprentice_index += 1
-                    self.app_mentor = self.selected_cat.apprentice[self.selected_apprentice_index]
-                    self.update_selected_cat()
-                    self.update_button()
-
-            # Check if mate cycle buttons are clicked.
-            if "cycle_mate_left_button" in self.elements:
-                if event.ui_element == self.elements['cycle_mate_left_button']:
-                    self.selected_mate_index -= 1
-                    self.mate = self.selected_cat.mate[self.selected_mate_index]
-                    self.update_selected_cat()
-                    self.update_button()
-
-            if "cycle_mate_right_button" in self.elements:
-                if event.ui_element == self.elements['cycle_mate_right_button']:
-                    self.selected_mate_index += 1
-                    self.mate = self.selected_cat.mate[self.selected_mate_index]
-                    self.update_selected_cat()
-                    self.update_button()
 
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
             if event.key == pygame.K_LEFT:
@@ -211,10 +168,38 @@ class PatrolScreen(Screens):
         elif event.ui_element == self.elements['patrol_start']:
             self.selected_cat = None
             self.start_patrol_thread = self.loading_screen_start_work(self.run_patrol_start)
+        elif event.ui_element == self.elements.get('mate_button'):
+            self.selected_cat = self.mate
+            self.update_button()
+            self.update_cat_images_buttons()
+            self.update_selected_cat()
+        elif event.ui_element == self.elements.get('app_mentor_button'):
+            self.selected_cat = self.app_mentor
+            self.update_button()
+            self.update_cat_images_buttons()
+            self.update_selected_cat()
+        elif event.ui_element == self.elements.get('cycle_app_mentor_left_button'):
+            self.selected_apprentice_index -= 1
+            self.app_mentor = self.selected_cat.apprentice[self.selected_apprentice_index]
+            self.update_selected_cat()
+            self.update_button()
+        elif event.ui_element == self.elements.get('cycle_app_mentor_right_button'):
+            self.selected_apprentice_index += 1
+            self.app_mentor = self.selected_cat.apprentice[self.selected_apprentice_index]
+            self.update_selected_cat()
+            self.update_button()
+        elif event.ui_element == self.elements.get('cycle_mate_left_button'):
+            self.selected_mate_index -= 1
+            self.mate = self.selected_cat.mate[self.selected_mate_index]
+            self.update_selected_cat()
+            self.update_button()
+        elif event.ui_element == self.elements.get('cycle_mate_right_button'):
+            self.selected_mate_index += 1
+            self.mate = self.selected_cat.mate[self.selected_mate_index]
+            self.update_selected_cat()
+            self.update_button()
             
     def handle_patrol_events_event(self, event):
-        if game.switches["window_open"]:
-            return
         
         inp = None
         if event.ui_element == self.elements["proceed"]:            
