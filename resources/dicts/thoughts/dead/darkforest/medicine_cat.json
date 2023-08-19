@@ -2,16 +2,30 @@
       { 
         "id": "dark_forest_medcat_to_living_other_medcat",
         "thoughts": [
-            "Is indicating to r_c the closer bush of deathberries",
-            "Is deliberately whispering contradicting herbs to r_c so {PRONOUN/r_c/subject} will make a mistake."
+            "Is indicating to r_c the closest bush of deathberries",
+            "Is deliberately whispering contradicting herbs to r_c so {PRONOUN/r_c/subject} will make a mistake",
+            "Wants to switch herbs places in the store so r_c will accidentally poison a Clanmate"
             ],  
         "random_status_constraint": [
                 "medicine cat",
                 "medicine cat apprentice"
             ],
-             "random_living_status": [
+         "random_living_status": [
                 "living"
-        ]
+            ]
      
-    }
+       },
+       {
+         "id": "dark_forest_medcat_to_living_medcat_apprentice",
+         "thoughts": [
+               "Hopes r_c will follow the path {PRONOUN/m_c/subject} took",
+               "Is trying to teach r_c poisonous herbs in {PRONOUN/r_c/poss} dreams"
+            ],
+        "random_status_constraint": [
+              "medicine cat apprrentice"
+            ],
+        "random_living_status" : [
+              "living"
+            ]
+       }
 ]
