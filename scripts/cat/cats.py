@@ -2884,6 +2884,7 @@ class Cat():
                 "skill_dict": self.skills.get_skill_dict(),
                 "scars": self.pelt.scars if self.pelt.scars else [],
                 "accessory": self.pelt.accessory,
+                "accessory2": self.pelt.accessory,
                 "experience": self.experience,
                 "dead_moons": self.dead_for,
                 "current_apprentice": [appr for appr in self.apprentice],
