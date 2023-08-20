@@ -1,163 +1,261 @@
 [
     {
         "patrol_id": "gen_your_cat70",
-        "biome": "Any",
-        "season": "leaf-bare",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "camp"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "You need to make a decision about the allocation of prey during the scarce leaf-bare. The Clan's survival depends on your decision.",
-        "success_text": {
-            "unscathed_common": "Your fair and thoughtful decision ensures that all cats get enough to eat, despite the scarcity. The Clan appreciates your wise leadership."
-        },
-        "fail_text": {
-            "unscathed_common": "Despite your best efforts, there's unrest in the Clan due to the scarcity of food. The harsh realities of leadership weigh heavy on you."
-        },
         "decline_text": "Rather than making the decision alone, you decide to hold a Clan meeting to discuss the issue. The Clan appreciates your democratic leadership style.",
         "chance_of_success": 75,
-        "exp": 60,
-        "win_skills": [
-            "wise leader"
+        "success_outcomes": [
+            {
+                "text": "Your fair and thoughtful decision ensures that all cats get enough to eat, despite the scarcity. The Clan appreciates your wise leadership.",
+                "exp": 60,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 6
+        "fail_outcomes": [
+            {
+                "text": "Despite your best efforts, there's unrest in the Clan due to the scarcity of food. The harsh realities of leadership weigh heavy on you.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "lifegen_X",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "border"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "As you ponder over a tough decision to make for the clan, you wonder if it would be wise to confide some of your clan members and ask for their opinions and advice.",
-        "success_text": {
-            "unscathed_common": "You cave in and decide to ask the senior warriors what they think about your decision. You and your clanmates are able to have a serious conversation, going over the advantages and disadvantages of your plan and how it could affect the clan's future. You are able to walk away confident in both your decision and the opinions of your clanmates."
-        },
-        "fail_text": {
-            "unscathed_common": "You cave in and decide to ask the senior warriors what they think about your decision. Unfortunately, each of your clanmates seem to have a different opinion from one another and are unable to see each other eye to eye. You break up the conversation and stalk back to your den, your time wasted and your mind split with indecision."
-        },
         "decline_text": "You decide not to confide in your clanmates, confident in your ability to make decisions on your own.",
         "chance_of_success": 50,
-        "exp": 10,
-        "win_skills": [
-            "very smart"
+        "success_outcomes": [
+            {
+                "text": "You cave in and decide to ask the senior warriors what they think about your decision. You and your clanmates are able to have a serious conversation, going over the advantages and disadvantages of your plan and how it could affect the clan's future. You are able to walk away confident in both your decision and the opinions of your clanmates.",
+                "exp": 10,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 1
-    },    
+        "fail_outcomes": [
+            {
+                "text": "You cave in and decide to ask the senior warriors what they think about your decision. Unfortunately, each of your clanmates seem to have a different opinion from one another and are unable to see each other eye to eye. You break up the conversation and stalk back to your den, your time wasted and your mind split with indecision.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
+    },
     {
         "patrol_id": "gen_your_cat71",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "camp"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "A neighboring Clan has been encroaching on your territory. As the leader, you have to decide how to respond.",
-        "success_text": {
-            "unscathed_common": "Your decision to send a stern warning to the other Clan proves effective. They apologize and promise to respect the borders. Your Clan admires your assertiveness."
-        },
-        "fail_text": {
-            "unscathed_common": "Despite your stern warning, the other Clan continues to violate the borders. This challenge tests your resolve as a leader."
-        },
         "decline_text": "Rather than making a hasty decision, you decide to gather more information about the situation. Your Clan respects your thoroughness.",
         "chance_of_success": 70,
-        "exp": 60,
-        "win_skills": [
-            "wise leader"
+        "success_outcomes": [
+            {
+                "text": "Your decision to send a stern warning to the other Clan proves effective. They apologize and promise to respect the borders. Your Clan admires your assertiveness.",
+                "exp": 60,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 6
+        "fail_outcomes": [
+            {
+                "text": "Despite your stern warning, the other Clan continues to violate the borders. This challenge tests your resolve as a leader.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "lifegen_X",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "border"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "During a moment of downtime, a clan member approaches you. They inform you that they have a few concerns regarding a decision that you recently made for the clan, and they would like to give their input",
-        "success_text": {
-            "unscathed_common": "You make sure to listen fully to your clanmate's concerns, allowing them to voice out their full opinion and give their own insight on how this decision may affect the clan in the future. You thank them for their decision to confide in you and promise to have a word with the clan's senior warriors and elders to see what they think."
-        },
-        "fail_text": {
-            "unscathed_common": "You lash out at your clanmate with your teeth bared, harshly telling them that they do not have the right to question your orders and defy you so openly. Your clanmate scrambles away, their expression unreadable and their claws tugging at the ground."
-        },
         "decline_text": "You tell your clanmate that they can voice their concerns in a private conversation later.",
         "chance_of_success": 50,
-        "exp": 10,
-        "win_skills": [
-            "very smart"
+        "success_outcomes": [
+            {
+                "text": "You make sure to listen fully to your clanmate's concerns, allowing them to voice out their full opinion and give their own insight on how this decision may affect the clan in the future. You thank them for their decision to confide in you and promise to have a word with the clan's senior warriors and elders to see what they think.",
+                "exp": 10,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 1
-    },    
+        "fail_outcomes": [
+            {
+                "text": "You lash out at your clanmate with your teeth bared, harshly telling them that they do not have the right to question your orders and defy you so openly. Your clanmate scrambles away, their expression unreadable and their claws tugging at the ground.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
+    },
     {
         "patrol_id": "gen_your_cat72",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "camp"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "An argument between two senior warriors threatens to divide the Clan. You need to intervene and restore peace.",
-        "success_text": {
-            "unscathed_common": "Your wise words defuse the tension and resolve the argument. The Clan is grateful for your balanced judgment."
-        },
-        "fail_text": {
-            "unscathed_common": "Despite your intervention, the warriors continue to argue. This tests your patience and leadership skills."
-        },
         "decline_text": "Instead of directly intervening, you decide to involve the Clan's mediator. This thoughtful action shows your belief in the strengths of your Clan members.",
         "chance_of_success": 70,
-        "exp": 60,
-        "win_skills": [
-            "wise leader"
+        "success_outcomes": [
+            {
+                "text": "Your wise words defuse the tension and resolve the argument. The Clan is grateful for your balanced judgment.",
+                "exp": 60,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 6
+        "fail_outcomes": [
+            {
+                "text": "Despite your intervention, the warriors continue to argue. This tests your patience and leadership skills.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat73",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "camp"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "A fierce storm has damaged the camp, and as the leader, you must organize the repair efforts.",
-        "success_text": {
-            "unscathed_common": "With your guidance, the Clan works together efficiently to repair the camp. The Clan appreciates your clear direction and leadership."
-        },
-        "fail_text": {
-            "unscathed_common": "Despite your efforts, the repair process is slow and arduous. This difficult situation tests your leadership."
-        },
         "decline_text": "Rather than dictating the repair process, you decide to listen to the ideas of your Clan members. This approach shows your trust in your Clan's abilities.",
         "chance_of_success": 75,
-        "exp": 65,
-        "win_skills": [
-            "wise leader"
+        "success_outcomes": [
+            {
+                "text": "With your guidance, the Clan works together efficiently to repair the camp. The Clan appreciates your clear direction and leadership.",
+                "exp": 65,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 6
+        "fail_outcomes": [
+            {
+                "text": "Despite your efforts, the repair process is slow and arduous. This difficult situation tests your leadership.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat74",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "camp"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "An epidemic has spread through the Clan and you must decide how to handle the crisis.",
-        "success_text": {
-            "unscathed_common": "You calmly organize a quarantine and direct the medicine cat's efforts. Your Clan admires your composure and swift decision-making in the face of adversity."
-        },
-        "fail_text": {
-            "unscathed_common": "Despite your efforts, the epidemic continues to spread and the medicine cats have to work overtime. This crisis tests your leadership in a way nothing else has."
-        },
         "decline_text": "Recognizing your limitations in medical matters, you choose to defer to the medicine cat's judgment. The Clan appreciates your humility and trust in others.",
         "chance_of_success": 70,
-        "exp": 65,
-        "win_skills": [
-            "wise leader"
+        "success_outcomes": [
+            {
+                "text": "You calmly organize a quarantine and direct the medicine cat's efforts. Your Clan admires your composure and swift decision-making in the face of adversity.",
+                "exp": 65,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 6
+        "fail_outcomes": [
+            {
+                "text": "Despite your efforts, the epidemic continues to spread and the medicine cats have to work overtime. This crisis tests your leadership in a way nothing else has.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     }
 ]

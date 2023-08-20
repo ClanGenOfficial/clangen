@@ -1,138 +1,224 @@
-[{
-    "patrol_id": "gen_your_cat45",
-    "biome": "Any",
-    "season": "Any",
-    "tags": [
-    "camp"
-    ],
-    "intro_text": "Your mentor asks you to identify various herbs as part of your training. You feel a bit nervous but know this is important for your future role.",
-    "success_text": {
-    "unscathed_common": "You confidently identify each herb correctly. Your mentor praises your knowledge and dedication, encouraging you to keep practicing."
-    },
-    "fail_text": {
-    "unscathed_common": "You mix up a couple of herbs, and your mentor corrects you sternly."
-    },
-    "decline_text": "You decide to take a break from the training, feeling overwhelmed. Your mentor understands and assures you that it's okay to take things slow.",
-    "chance_of_success": 55,
-    "exp": 20,
-    "win_skills": [
-    "very smart"
-    ],
-    "min_cats": 1,
-    "max_cats": 2
+[
+    {
+        "patrol_id": "gen_your_cat45",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [
+            "camp"
+        ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "Your mentor asks you to identify various herbs as part of your training. You feel a bit nervous but know this is important for your future role.",
+        "decline_text": "You decide to take a break from the training, feeling overwhelmed. Your mentor understands and assures you that it's okay to take things slow.",
+        "chance_of_success": 55,
+        "success_outcomes": [
+            {
+                "text": "You confidently identify each herb correctly. Your mentor praises your knowledge and dedication, encouraging you to keep practicing.",
+                "exp": 20,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "You mix up a couple of herbs, and your mentor corrects you sternly.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "lifegen_X",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "border"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "While out of camp with your mentor, they decide to quiz you on various different herbs and their uses stating that it is important to remember each herb and remedy so that they can be prepared for any kind of emergency.",
-        "success_text": {
-            "unscathed_common": "You are able to easily rattle off each use for the majority of the herbs that your mentor names, taking care to also include how to properly use each herb. When you are finished, your mentor gives you a nod of approval, saying that your training so far is paying off. You continue on, happy to have your mentor's support and approval."
-        },
-        "fail_text": {
-            "unscathed_common": "You try your best, you really do! However, as frustrating as it is, your mind seems to have jumbled up all of the remedies that you had learned. You ultimately fail the quiz. Although your mentor promises that everything will come in time, you can feel their disappointment. You continue on, your head down and your confidence shattered."
-        },
         "decline_text": "Before your mentor can ask anything, the two of you stumble upon an unknown patch of herbs. Your mentor decides to put the quiz on hold, asking you to help them gather the herbs instead.",
         "chance_of_success": 50,
-        "exp": 10,
-        "win_skills": [
-            "very smart"
+        "success_outcomes": [
+            {
+                "text": "You are able to easily rattle off each use for the majority of the herbs that your mentor names, taking care to also include how to properly use each herb. When you are finished, your mentor gives you a nod of approval, saying that your training so far is paying off. You continue on, happy to have your mentor's support and approval.",
+                "exp": 10,
+                "weight": 20
+            }
         ],
+        "fail_outcomes": [
+            {
+                "text": "You try your best, you really do! However, as frustrating as it is, your mind seems to have jumbled up all of the remedies that you had learned. You ultimately fail the quiz. Although your mentor promises that everything will come in time, you can feel their disappointment. You continue on, your head down and your confidence shattered.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_your_cat46",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [
+            "camp"
+        ],
+        "patrol_art": "gen_hunt_mouse",
         "min_cats": 1,
-        "max_cats": 1
-    },    
-    {
-    "patrol_id": "gen_your_cat46",
-    "biome": "Any",
-    "season": "Any",
-    "tags": [
-    "camp"
-    ],
-    "intro_text": "A kit has a minor scratch. Your mentor suggests you treat it to gain some practical experience.",
-    "success_text": {
-    "unscathed_common": "You successfully treat the scratch, using the proper herbs and methods. The kit thanks you, and your mentor compliments your skills."
-    },
-    "fail_text": {
-    "unscathed_common": "You're a bit hesitant and fumble with the herbs. Your mentor has to step in to help."
-    },
-    "decline_text": "You decide to watch your mentor do it this time, feeling unsure about your abilities. Your mentor understands and promises to guide you next time.",
-    "chance_of_success": 60,
-    "exp": 25,
-    "win_skills": [
-    "very careful"
-    ],
-    "min_cats": 1,
-    "max_cats": 2
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "A kit has a minor scratch. Your mentor suggests you treat it to gain some practical experience.",
+        "decline_text": "You decide to watch your mentor do it this time, feeling unsure about your abilities. Your mentor understands and promises to guide you next time.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "You successfully treat the scratch, using the proper herbs and methods. The kit thanks you, and your mentor compliments your skills.",
+                "exp": 25,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "You're a bit hesitant and fumble with the herbs. Your mentor has to step in to help.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
-    "patrol_id": "gen_your_cat47",
-    "biome": "Any",
-    "season": "Any",
-    "tags": [
-    "camp"
-    ],
-    "intro_text": "Your mentor is taking you to a hidden place where special medicinal herbs grow. You feel excited and privileged.",
-    "success_text": {
-    "unscathed_common": "You successfully locate and collect the special herbs, gaining valuable knowledge in the process. Your mentor seems pleased with your progress."
-    },
-    "fail_text": {
-    "unscathed_common": "You struggle to find the correct herbs and accidently pick a few wrong ones. Your mentor corrects you, reminding you to be patient and observant."
-    },
-    "decline_text": "You decide to stay in camp and practice your existing knowledge, feeling that rushing into new things might confuse you. Your mentor appreciates your thoughtfulness.",
-    "chance_of_success": 65,
-    "exp": 30,
-    "win_skills": [
-    "very smart"
-    ],
-    "min_cats": 1,
-    "max_cats": 2
-    },
-    {
-    "patrol_id": "gen_your_cat48",
-    "biome": "Any",
-    "season": "Any",
-    "tags": [
-    "camp"
-    ],
-    "intro_text": "An elder seems to be having trouble sleeping. Your mentor suggests you prepare a remedy to help.",
-    "success_text": {
-    "unscathed_common": "You prepare the remedy accurately, and it helps the elder sleep comfortably. You feel content, and your mentor praises your empathy and skill."
-    },
-    "fail_text": {
-    "unscathed_common": "You mix the herbs in the wrong proportions, and the remedy doesn't work as expected."
-    },
-    "decline_text": "You feel unsure about preparing the remedy and decide to watch your mentor do it instead. They understand your hesitance and guide you through the process.",
-    "chance_of_success": 50,
-    "exp": 25,
-    "win_skills": [
-    "very caring"
-    ],
-    "min_cats": 1,
-    "max_cats": 2
+        "patrol_id": "gen_your_cat47",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [
+            "camp"
+        ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "Your mentor is taking you to a hidden place where special medicinal herbs grow. You feel excited and privileged.",
+        "decline_text": "You decide to stay in camp and practice your existing knowledge, feeling that rushing into new things might confuse you. Your mentor appreciates your thoughtfulness.",
+        "chance_of_success": 65,
+        "success_outcomes": [
+            {
+                "text": "You successfully locate and collect the special herbs, gaining valuable knowledge in the process. Your mentor seems pleased with your progress.",
+                "exp": 30,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "You struggle to find the correct herbs and accidently pick a few wrong ones. Your mentor corrects you, reminding you to be patient and observant.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
-    "patrol_id": "gen_your_cat49",
-    "biome": "Any",
-    "season": "Any",
-    "tags": [
-    "camp"
-    ],
-    "intro_text": "A patrol returns with minor injuries. You have the chance to step up and help your mentor in treating them.",
-    "success_text": {
-    "unscathed_common": "You treat the injuries efficiently under your mentor's watchful eyes, proving that you are progressing well in your training."
+        "patrol_id": "gen_your_cat48",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [
+            "camp"
+        ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "An elder seems to be having trouble sleeping. Your mentor suggests you prepare a remedy to help.",
+        "decline_text": "You feel unsure about preparing the remedy and decide to watch your mentor do it instead. They understand your hesitance and guide you through the process.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "You prepare the remedy accurately, and it helps the elder sleep comfortably. You feel content, and your mentor praises your empathy and skill.",
+                "exp": 25,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "You mix the herbs in the wrong proportions, and the remedy doesn't work as expected.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
-    "fail_text": {
-    "unscathed_common": "You're a bit shaky and make a few mistakes, and your mentor steps in to correct you."
-    },
-    "decline_text": "Feeling overwhelmed, you decide to assist your mentor instead of taking the lead. Your mentor understands and appreciates your help.",
-    "chance_of_success": 55,
-    "exp": 30,
-    "win_skills": [
-    "very caring"
-    ],
-    "min_cats": 1,
-    "max_cats": 3
-    }]
+    {
+        "patrol_id": "gen_your_cat49",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [
+            "camp"
+        ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 3,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "A patrol returns with minor injuries. You have the chance to step up and help your mentor in treating them.",
+        "decline_text": "Feeling overwhelmed, you decide to assist your mentor instead of taking the lead. Your mentor understands and appreciates your help.",
+        "chance_of_success": 55,
+        "success_outcomes": [
+            {
+                "text": "You treat the injuries efficiently under your mentor's watchful eyes, proving that you are progressing well in your training.",
+                "exp": 30,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "You're a bit shaky and make a few mistakes, and your mentor steps in to correct you.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
+    }
+]

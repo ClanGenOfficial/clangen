@@ -1,186 +1,298 @@
-[{
-    "patrol_id": "gen_your_cat55",
-    "biome": "Any",
-    "season": "Any",
-    "tags": [
-    "camp"
-    ],
-    "intro_text": "A dispute breaks out between two apprentices over who gets to go on the next patrol. As a mediator apprentice, it's your job to resolve it.",
-    "success_text": {
-    "unscathed_common": "You listen to both sides and propose a fair solution. Both apprentices agree and thank you for your help. Your skills as a mediator are improving."
-    },
-    "fail_text": {
-    "unscathed_common": "You try to mediate, but the apprentices are too heated. They're eventually separated by a senior warrior. Despite the outcome, you've learned from the experience."
-    },
-    "decline_text": "You decide to let a senior warrior handle the situation, feeling it's beyond your current capabilities. They handle it effectively, and you learn from their methods.",
-    "chance_of_success": 50,
-    "exp": 25,
-    "win_skills": [
-    "very smart"
-    ],
-    "min_cats": 1,
-    "max_cats": 2
+[
+    {
+        "patrol_id": "gen_your_cat55",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [
+            "camp"
+        ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "A dispute breaks out between two apprentices over who gets to go on the next patrol. As a mediator apprentice, it's your job to resolve it.",
+        "decline_text": "You decide to let a senior warrior handle the situation, feeling it's beyond your current capabilities. They handle it effectively, and you learn from their methods.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "You listen to both sides and propose a fair solution. Both apprentices agree and thank you for your help. Your skills as a mediator are improving.",
+                "exp": 25,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "You try to mediate, but the apprentices are too heated. They're eventually separated by a senior warrior. Despite the outcome, you've learned from the experience.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
-    "patrol_id": "gen_your_cat56",
-    "biome": "Any",
-    "season": "Any",
-    "tags": [
-    "camp"
-    ],
-    "intro_text": "Two warriors are arguing about a recent border skirmish with another Clan. Tensions are rising, and you feel it's your duty to intervene.",
-    "success_text": {
-    "unscathed_common": "You step in and help defuse the argument. The warriors appreciate your diplomatic approach, and the camp atmosphere returns to normal."
-    },
-    "fail_text": {
-    "unscathed_common": "You attempt to mediate, but the warriors are not in a mood to listen. A senior warrior steps in to calm them down. It's a lesson on when to intervene and when to step back."
-    },
-    "decline_text": "You decide not to get involved, feeling the issue is too sensitive for your current skills. A senior warrior intervenes, and you observe how they handle the situation.",
-    "chance_of_success": 55,
-    "exp": 30,
-    "win_skills": [
-    "very smart"
-    ],
-    "min_cats": 1,
-    "max_cats": 2
-    },
-    {
-    "patrol_id": "gen_your_cat57",
-    "biome": "Any",
-    "season": "Any",
-    "tags": [
-    "camp"
-    ],
-    "intro_text": "A warrior has been excessively harsh in their training, causing an apprentice to lose confidence. You think you can help.",
-    "success_text": {
-    "unscathed_common": "You talk to both the apprentice and the warrior separately. You help the warrior understand the apprentice's perspective, and the training becomes more balanced."
-    },
-    "fail_text": {
-    "unscathed_common": "You try to mediate, but the warrior is defensive, and the apprentice is upset. Eventually, a senior warrior steps in to handle the situation."
-    },
-    "decline_text": "You decide to let a senior warrior handle the situation, as it involves an important aspect of Clan life: training. You observe the resolution keenly.",
-    "chance_of_success": 40,
-    "exp": 35,
-    "win_skills": [
-    "very caring"
-    ],
-    "min_cats": 1,
-    "max_cats": 2
+        "patrol_id": "gen_your_cat56",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [
+            "camp"
+        ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "Two warriors are arguing about a recent border skirmish with another Clan. Tensions are rising, and you feel it's your duty to intervene.",
+        "decline_text": "You decide not to get involved, feeling the issue is too sensitive for your current skills. A senior warrior intervenes, and you observe how they handle the situation.",
+        "chance_of_success": 55,
+        "success_outcomes": [
+            {
+                "text": "You step in and help defuse the argument. The warriors appreciate your diplomatic approach, and the camp atmosphere returns to normal.",
+                "exp": 30,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "You attempt to mediate, but the warriors are not in a mood to listen. A senior warrior steps in to calm them down. It's a lesson on when to intervene and when to step back.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
-    "patrol_id": "gen_your_cat58",
-    "biome": "Any",
-    "season": "Any",
-    "tags": [
-    "camp"
-    ],
-    "intro_text": "An elder feels that their stories are not being appreciated by the younger generation. You think you can help bridge the gap.",
-    "success_text": {
-    "unscathed_common": "You organise a story session where the elder shares their tales, and the younger cats listen intently. The elder feels appreciated, and the younger cats learn valuable lessons."
-    },
-    "fail_text": {
-    "unscathed_common": "You try to organise a story session, but the younger cats are restless, and the elder feels even more discouraged. It's a hard situation, but you learn from it."
-    },
-    "decline_text": "You decide to first talk to the younger cats and understand their point of view before proceeding further. The elder appreciates your thoughtful approach.",
-    "chance_of_success": 55,
-    "exp": 40,
-    "win_skills": [
-    "very caring"
-    ],
-    "min_cats": 1,
-    "max_cats": 2
+        "patrol_id": "gen_your_cat57",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [
+            "camp"
+        ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "A warrior has been excessively harsh in their training, causing an apprentice to lose confidence. You think you can help.",
+        "decline_text": "You decide to let a senior warrior handle the situation, as it involves an important aspect of Clan life: training. You observe the resolution keenly.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "You talk to both the apprentice and the warrior separately. You help the warrior understand the apprentice's perspective, and the training becomes more balanced.",
+                "exp": 35,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "You try to mediate, but the warrior is defensive, and the apprentice is upset. Eventually, a senior warrior steps in to handle the situation.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
-    "patrol_id": "gen_your_cat59",
-    "biome": "Any",
-    "season": "Any",
-    "tags": [
-    "camp"
-    ],
-    "intro_text": "A couple of apprentices have started a prank war, disrupting the peace in the camp. You decide to step in.",
-    "success_text": {
-    "unscathed_common": "You talk to the apprentices, make them realise the effect of their pranks on the Clan, and they agree to stop. Your mediation skills are getting better every day."
+        "patrol_id": "gen_your_cat58",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [
+            "camp"
+        ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "An elder feels that their stories are not being appreciated by the younger generation. You think you can help bridge the gap.",
+        "decline_text": "You decide to first talk to the younger cats and understand their point of view before proceeding further. The elder appreciates your thoughtful approach.",
+        "chance_of_success": 55,
+        "success_outcomes": [
+            {
+                "text": "You organise a story session where the elder shares their tales, and the younger cats listen intently. The elder feels appreciated, and the younger cats learn valuable lessons.",
+                "exp": 40,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "You try to organise a story session, but the younger cats are restless, and the elder feels even more discouraged. It's a hard situation, but you learn from it.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
-    "fail_text": {
-    "unscathed_common": "You try to mediate, but the apprentices don't take you seriously, and the prank war continues. Eventually, a senior warrior has to step in."
-    },
-    "decline_text": "You decide to let the senior warriors handle this, as it involves maintaining discipline in the Clan. You observe how they handle the situation.",
-    "chance_of_success": 40,
-    "exp": 35,
-    "win_skills": [
-    "very smart"
-    ],
-    "min_cats": 1,
-    "max_cats": 2
+    {
+        "patrol_id": "gen_your_cat59",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [
+            "camp"
+        ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "A couple of apprentices have started a prank war, disrupting the peace in the camp. You decide to step in.",
+        "decline_text": "You decide to let the senior warriors handle this, as it involves maintaining discipline in the Clan. You observe how they handle the situation.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "You talk to the apprentices, make them realise the effect of their pranks on the Clan, and they agree to stop. Your mediation skills are getting better every day.",
+                "exp": 35,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "You try to mediate, but the apprentices don't take you seriously, and the prank war continues. Eventually, a senior warrior has to step in.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "lifegen_X",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "border"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "While assisting in various menial tasks around camp, you notice a commotion coming from a couple of warriors in the clearing. They seem to be locked in an argument over an event that occurred earlier that day.",
-        "success_text": {
-            "unscathed_common": "With the help of your training, you quickly manage to get the warriors to calm down enough to tell you what the disagreement is about. Now that you have a full understanding of the issue, you begin to mediate back and forth between both cats, attempting to allow them to understand each other's point of view. By the end of it, the two are able to walk away with smooth pelts, the issue being resolved."
-        },
-        "fail_text": {
-            "unscathed_common": "Although you try your best to calm the warriors down, everything you say seems to rub them the wrong way. One spits at you, stating that they don't need help from a half-trained apprentice. You turn away with your pride wounded and a stinging reminder that not every mediation will be a success."
-        },
         "decline_text": "You shrug and continue your task with a dismissive flick of your tail. Whatever the issue is can be resolved without your help.",
         "chance_of_success": 50,
-        "exp": 10,
-        "win_skills": [
-            "very smart"
+        "success_outcomes": [
+            {
+                "text": "With the help of your training, you quickly manage to get the warriors to calm down enough to tell you what the disagreement is about. Now that you have a full understanding of the issue, you begin to mediate back and forth between both cats, attempting to allow them to understand each other's point of view. By the end of it, the two are able to walk away with smooth pelts, the issue being resolved.",
+                "exp": 10,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 1
+        "fail_outcomes": [
+            {
+                "text": "Although you try your best to calm the warriors down, everything you say seems to rub them the wrong way. One spits at you, stating that they don't need help from a half-trained apprentice. You turn away with your pride wounded and a stinging reminder that not every mediation will be a success.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "lifegen_X",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "border"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "As you plan to pounce on a moth, you hear two fellow apprentices arguing loudly. The elders are complaining, but the two ignore them and continue on. You look over too see a young warrior frantically trying to end the argument with no luck.",
-        "success_text": {
-            "unscathed_common": "You decide to trot over, forgetting about the moth. You quickly intervene, asking the apprentices what's going on. One of them explains that they want the first go at moss ball with the warrior, and so does the other. You negotiate a solution, smoothing over the potential fight. The warrior thanks you, and you leave the area with a confident nod. Later the elders come up to you with a thanks, and offer to share a meal with you. You gladly accept, soaking in all their knowledge."
-        },
-        "fail_text": {
-            "unscathed_common": "You decide to trot over, forgetting about the moth. You quickly intervene, asking the apprentices what's going on. One of them explains that they want the first go at moss ball with the warrior, and so does the other. Despite your attempts to negotiate a solution with them, it only gets worse. It takes one of the elders to step in to solve it. The warrior thanks you for trying, and you nod with a frown. You leave the area with your tail tucked, filled with disappointment."
-        },
         "decline_text": "You turn your head back at the moth, ignoring the loud arguing. You attempt to pounce on it, but end up stumbling over. Thankfully, no one was watching.",
         "chance_of_success": 60,
-        "exp": 15,
-        "win_skills": [
-            "quick to help"
+        "success_outcomes": [
+            {
+                "text": "You decide to trot over, forgetting about the moth. You quickly intervene, asking the apprentices what's going on. One of them explains that they want the first go at moss ball with the warrior, and so does the other. You negotiate a solution, smoothing over the potential fight. The warrior thanks you, and you leave the area with a confident nod. Later the elders come up to you with a thanks, and offer to share a meal with you. You gladly accept, soaking in all their knowledge.",
+                "exp": 15,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 1
-    },{
+        "fail_outcomes": [
+            {
+                "text": "You decide to trot over, forgetting about the moth. You quickly intervene, asking the apprentices what's going on. One of them explains that they want the first go at moss ball with the warrior, and so does the other. Despite your attempts to negotiate a solution with them, it only gets worse. It takes one of the elders to step in to solve it. The warrior thanks you for trying, and you nod with a frown. You leave the area with your tail tucked, filled with disappointment.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
+    },
+    {
         "patrol_id": "gen_your_cat515",
-        "biome": "Any",
-        "season": "Any",
-        "tags": [
-        "camp"
+        "biome": [
+            "Any"
         ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [
+            "camp"
+        ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "Your mentor and the leader are in an argument. The leader seems angry, and your mentor is trying to calm them down.",
-        "success_text": {
-        "unscathed_common": "You step in and after a few calming words, you manage to get through to the leader, and they can come to a compromise. Your mentor is proud of how you handled the situation."
-        },
-        "fail_text": {
-        "unscathed_common": "You step in to try and calm the leader down, but you just escalate the situation further, leading them to leave. Your mentor thanks you for the attempt, and tells you the leader would calm down eventually."
-        },
         "decline_text": "After a bit of thought, you decide it's better to let your mentor handle that and you back off.",
         "chance_of_success": 50,
-        "exp": 25,
-        "win_skills": [
-        "very smart"
+        "success_outcomes": [
+            {
+                "text": "You step in and after a few calming words, you manage to get through to the leader, and they can come to a compromise. Your mentor is proud of how you handled the situation.",
+                "exp": 25,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 2
-        }
-    
-    
-    ]
+        "fail_outcomes": [
+            {
+                "text": "You step in to try and calm the leader down, but you just escalate the situation further, leading them to leave. Your mentor thanks you for the attempt, and tells you the leader would calm down eventually.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
+    }
+]

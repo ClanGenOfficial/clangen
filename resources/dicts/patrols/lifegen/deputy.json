@@ -1,312 +1,483 @@
-[{
-    "patrol_id": "gen_your_cat65",
-    "biome": "Any",
-    "season": "Any",
-    "tags": [
-    "camp"
-    ],
-    "intro_text": "You need to organize the dawn patrol, however there seems to be a shortage of warriors ready to head out.",
-    "success_text": {
-    "unscathed_common": "Despite the shortage, you manage to assemble a strong and motivated patrol. Your leadership qualities shine through."
-    },
-    "fail_text": {
-    "unscathed_common": "You struggle to assemble a strong patrol. This setback reminds you of the challenges of leadership."
-    },
-    "decline_text": "Rather than pushing the tired warriors, you decide to join the patrol yourself. Your decision is respected by the Clan.",
-    "chance_of_success": 50,
-    "exp": 50,
-    "win_skills": [
-    "strong leader"
-    ],
-    "min_cats": 1,
-    "max_cats": 4
+[
+    {
+        "patrol_id": "gen_your_cat65",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [
+            "camp"
+        ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 4,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "You need to organize the dawn patrol, however there seems to be a shortage of warriors ready to head out.",
+        "decline_text": "Rather than pushing the tired warriors, you decide to join the patrol yourself. Your decision is respected by the Clan.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "Despite the shortage, you manage to assemble a strong and motivated patrol. Your leadership qualities shine through.",
+                "exp": 50,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "You struggle to assemble a strong patrol. This setback reminds you of the challenges of leadership.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
-    "patrol_id": "gen_your_cat66",
-    "biome": "Any",
-    "season": "Any",
-    "tags": [
-    "camp"
-    ],
-    "intro_text": "As deputy, it's your duty to deal with a recent feud between two warriors over a prey dispute.",
-    "success_text": {
-    "unscathed_common": "You mediate effectively, resolving the feud and restoring peace. Your fairness and authority are respected by the Clan."
-    },
-    "fail_text": {
-    "unscathed_common": "Despite your best efforts, the feud continues. It's a tough reminder that not all disputes can be easily resolved."
-    },
-    "decline_text": "You decide to bring this matter to the Clan leader, feeling it's too delicate to handle on your own. Your humility is appreciated by the Clan.",
-    "chance_of_success": 65,
-    "exp": 45,
-    "win_skills": [
-    "strong leader"
-    ],
-    "min_cats": 1,
-    "max_cats": 4
-    },
-    {
-    "patrol_id": "gen_your_cat67",
-    "biome": "Any",
-    "season": "Any",
-    "tags": [
-    "camp"
-    ],
-    "intro_text": "A young apprentice is having trouble with their warrior training. You decide to step in and help.",
-    "success_text": {
-    "unscathed_common": "You manage to encourage and help the apprentice, who shows great improvement. Your mentorship skills are admired by the Clan."
-    },
-    "fail_text": {
-    "unscathed_common": "Despite your encouragement, the apprentice continues to struggle. It's a challenging reminder of the difficulties of mentorship."
-    },
-    "decline_text": "You decide to pair the apprentice with a more experienced mentor, hoping that different teaching methods will help. Your thoughtful decision is respected by the Clan.",
-    "chance_of_success": 55,
-    "exp": 50,
-    "win_skills": [
-    "strong leader"
-    ],
-    "min_cats": 1,
-    "max_cats": 4
+        "patrol_id": "gen_your_cat66",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [
+            "camp"
+        ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 4,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "As deputy, it's your duty to deal with a recent feud between two warriors over a prey dispute.",
+        "decline_text": "You decide to bring this matter to the Clan leader, feeling it's too delicate to handle on your own. Your humility is appreciated by the Clan.",
+        "chance_of_success": 65,
+        "success_outcomes": [
+            {
+                "text": "You mediate effectively, resolving the feud and restoring peace. Your fairness and authority are respected by the Clan.",
+                "exp": 45,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Despite your best efforts, the feud continues. It's a tough reminder that not all disputes can be easily resolved.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
-    "patrol_id": "gen_your_cat68",
-    "biome": "Any",
-    "season": "leaf-bare",
-    "tags": [
-    "camp"
-    ],
-    "intro_text": "A harsh leaf-bare is approaching, and you're tasked with devising a strategy for the Clan's survival.",
-    "success_text": {
-    "unscathed_common": "Your strategy of rationing and sharing heat proves effective, ensuring the Clan's survival through the leaf-bare. Your foresight is commended by the Clan."
-    },
-    "fail_text": {
-    "unscathed_common": "Despite your strategy, leaf-bare proves to be challenging for the Clan. This setback strengthens your resolve to do better next time."
-    },
-    "decline_text": "Feeling the weight of this task, you decide to collaborate with the Clan's senior warriors and the medicine cat. The Clan appreciates your wise decision.",
-    "chance_of_success": 50,
-    "exp": 55,
-    "win_skills": [
-    "strong leader"
-    ],
-    "min_cats": 1,
-    "max_cats": 4
+        "patrol_id": "gen_your_cat67",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [
+            "camp"
+        ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 4,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "A young apprentice is having trouble with their warrior training. You decide to step in and help.",
+        "decline_text": "You decide to pair the apprentice with a more experienced mentor, hoping that different teaching methods will help. Your thoughtful decision is respected by the Clan.",
+        "chance_of_success": 55,
+        "success_outcomes": [
+            {
+                "text": "You manage to encourage and help the apprentice, who shows great improvement. Your mentorship skills are admired by the Clan.",
+                "exp": 50,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Despite your encouragement, the apprentice continues to struggle. It's a challenging reminder of the difficulties of mentorship.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
-    "patrol_id": "gen_your_cat69",
-    "biome": "Any",
-    "season": "Any",
-    "tags": [
-    "camp"
-    ],
-    "intro_text": "As deputy, you are put in charge of some battle training review with the new warriors. It's your task to ensure they are ready for the trials of Clan life.",
-    "success_text": {
-    "unscathed_common": "Your training methods prove effective, and the new warriors are well-prepared. Your dedication to the Clan is recognized by all."
+        "patrol_id": "gen_your_cat68",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [
+            "camp"
+        ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 4,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "A harsh leaf-bare is approaching, and you're tasked with devising a strategy for the Clan's survival.",
+        "decline_text": "Feeling the weight of this task, you decide to collaborate with the Clan's senior warriors and the medicine cat. The Clan appreciates your wise decision.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "Your strategy of rationing and sharing heat proves effective, ensuring the Clan's survival through the leaf-bare. Your foresight is commended by the Clan.",
+                "exp": 55,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Despite your strategy, leaf-bare proves to be challenging for the Clan. This setback strengthens your resolve to do better next time.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
-    "fail_text": {
-    "unscathed_common": "Despite your best efforts, the new warriors are struggling with the basics. It's a stark reminder of the challenges of training."
-    },
-    "decline_text": "Feeling that the new warriors could benefit from different perspectives, you arrange for other experienced warriors to share their knowledge. The Clan appreciates your inclusive approach.",
-    "chance_of_success": 50,
-    "exp": 55,
-    "win_skills": [
-    "strong leader"
-    ],
-    "min_cats": 1,
-    "max_cats": 4
+    {
+        "patrol_id": "gen_your_cat69",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [
+            "camp"
+        ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 4,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "As deputy, you are put in charge of some battle training review with the new warriors. It's your task to ensure they are ready for the trials of Clan life.",
+        "decline_text": "Feeling that the new warriors could benefit from different perspectives, you arrange for other experienced warriors to share their knowledge. The Clan appreciates your inclusive approach.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "Your training methods prove effective, and the new warriors are well-prepared. Your dedication to the Clan is recognized by all.",
+                "exp": 55,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Despite your best efforts, the new warriors are struggling with the basics. It's a stark reminder of the challenges of training.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "lifegen_X",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "border"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "As you are assigning cats to their designated patrols, one clan member questions you about your choice to set them to a specific border, arguing that another one would be much easier to patrol.",
-        "success_text": {
-            "unscathed_common": "While you understand your clan member's point of view, you explain that all of the clan's borders must be checked on regularly, and that they were doing the clan a favor by going on that patrol. Thankfully, your clanmate seems to understand and thanks you for your explanation."
-        },
-        "fail_text": {
-            "unscathed_common": "While you understand your clan member's point of view, you explain that all of the clan's borders must be checked on regularly, and that they were doing the clan a favor by going on that patrol. Unfortunately, your clanmate fails to see your reasoning and argues back, saying that their point still stands. In the end, you decide to switch them out with another cat, allowing them to join a different patrol."
-        },
         "decline_text": "You firmly state that you do not have time for cats to question your orders and send the patrol off without any further explanation.",
         "chance_of_success": 50,
-        "exp": 10,
-        "win_skills": [
-            "very smart"
+        "success_outcomes": [
+            {
+                "text": "While you understand your clan member's point of view, you explain that all of the clan's borders must be checked on regularly, and that they were doing the clan a favor by going on that patrol. Thankfully, your clanmate seems to understand and thanks you for your explanation.",
+                "exp": 10,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 1
+        "fail_outcomes": [
+            {
+                "text": "While you understand your clan member's point of view, you explain that all of the clan's borders must be checked on regularly, and that they were doing the clan a favor by going on that patrol. Unfortunately, your clanmate fails to see your reasoning and argues back, saying that their point still stands. In the end, you decide to switch them out with another cat, allowing them to join a different patrol.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "lifegen_1",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "hunting"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "One of the apprentices complains about their mentor being too hard on them during the hunting sessions. They request you to intervene.",
-        "success_text": {
-            "unscathed_common": "You speak with the mentor, explaining the apprentice's concerns. The mentor understands and promises to be more patient and understanding. The apprentice thanks you."
-        },
-        "fail_text": {
-            "unscathed_common": "You try to talk to the mentor but they dismiss the concerns, saying that toughness is necessary for survival. The apprentice is disappointed."
-        },
         "decline_text": "You remind the apprentice that their training is supposed to be hard, encouraging them to keep trying their best.",
         "chance_of_success": 60,
-        "exp": 15,
-        "win_skills": [
-            "persuasive"
+        "success_outcomes": [
+            {
+                "text": "You speak with the mentor, explaining the apprentice's concerns. The mentor understands and promises to be more patient and understanding. The apprentice thanks you.",
+                "exp": 15,
+                "weight": 20
+            }
         ],
+        "fail_outcomes": [
+            {
+                "text": "You try to talk to the mentor but they dismiss the concerns, saying that toughness is necessary for survival. The apprentice is disappointed.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
+    },
+    {
+        "patrol_id": "lifegen_2",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [
+            "border"
+        ],
+        "patrol_art": "gen_hunt_mouse",
         "min_cats": 1,
-        "max_cats": 2
-},
-{
-    "patrol_id": "lifegen_2",
-    "biome": "Any",
-    "season": "Any",
-    "tags": [
-        "border"
-    ],
-    "intro_text": "A clan member has fallen into the river during a fishing patrol and is afraid of water now. They seek your guidance.",
-    "success_text": {
-        "unscathed_common": "You spend some time with the clan member, gradually easing their fear of water. Eventually, they regain their confidence and thank you."
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "A clan member has fallen into the river during a fishing patrol and is afraid of water now. They seek your guidance.",
+        "decline_text": "You don't have time for this. You send the clan member to the medicine cat instead.",
+        "chance_of_success": 70,
+        "success_outcomes": [
+            {
+                "text": "You spend some time with the clan member, gradually easing their fear of water. Eventually, they regain their confidence and thank you.",
+                "exp": 20,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Despite your efforts, the clan member is still scared and is unable to overcome their fear.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
-    "fail_text": {
-        "unscathed_common": "Despite your efforts, the clan member is still scared and is unable to overcome their fear."
+    {
+        "patrol_id": "lifegen_3",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [
+            "border"
+        ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 3,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "A clan member reports sighting a fox near the border. You need to decide whether to send a patrol or not.",
+        "decline_text": "You decide to monitor the situation for now, hoping the fox won't pose a threat.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "You decide to send a patrol. The cats manage to chase the fox away without any casualties.",
+                "exp": 15,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "You decide to send a patrol. However, the fox turns out to be more aggressive than expected, causing injuries to the patrol cats.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
-    "decline_text": "You don't have time for this. You send the clan member to the medicine cat instead.",
-    "chance_of_success": 70,
-    "exp": 20,
-    "win_skills": [
-        "empathetic"
-    ],
-    "min_cats": 1,
-    "max_cats": 1
-},
-{
-    "patrol_id": "lifegen_3",
-    "biome": "Any",
-    "season": "Any",
-    "tags": [
-        "border"
-    ],
-    "intro_text": "A clan member reports sighting a fox near the border. You need to decide whether to send a patrol or not.",
-    "success_text": {
-        "unscathed_common": "You decide to send a patrol. The cats manage to chase the fox away without any casualties."
+    {
+        "patrol_id": "lifegen_4",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [
+            "border"
+        ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "An apprentice has consumed some unknown berries and is feeling sick. The medicine cat needs your help to find the right herbs while they monitor the apprentice's condition.",
+        "decline_text": "You decide to let the medicine cat handle the situation on their own.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "You successfully find the needed plants and the apprentice recovers quickly with you and the medicine cat's help.",
+                "exp": 20,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "You try your best but fail to find the right herbs. The apprentice's condition worsens before the medicine cat finally identifies and finds the correct herbs.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
-    "fail_text": {
-        "unscathed_common": "You decide to send a patrol. However, the fox turns out to be more aggressive than expected, causing injuries to the patrol cats."
+    {
+        "patrol_id": "lifegen_5",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [
+            "border"
+        ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "A pair of rogue cats have been spotted near the territory. They claim to be just passing through, but the clan is uneasy.",
+        "decline_text": "You advise the clan to stay vigilant and continue their usual duties, hoping the rogues will keep their word and move on.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "You decide to personally monitor the rogues, ensuring they leave the territory without causing trouble.",
+                "exp": 15,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Despite your vigilance, the rogue cats manage to steal some prey, causing unrest among the clan members.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
-    "decline_text": "You decide to monitor the situation for now, hoping the fox won't pose a threat.",
-    "chance_of_success": 50,
-    "exp": 15,
-    "win_skills": [
-        "strategic"
-    ],
-    "min_cats": 1,
-    "max_cats": 3
-},
-{
-    "patrol_id": "lifegen_4",
-    "biome": "Any",
-    "season": "Any",
-    "tags": [
-        "border"
-    ],
-    "intro_text": "An apprentice has consumed some unknown berries and is feeling sick. The medicine cat needs your help to find the right herbs while they monitor the apprentice's condition.",
-    "success_text": {
-        "unscathed_common": "You successfully find the needed plants and the apprentice recovers quickly with you and the medicine cat's help."
+    {
+        "patrol_id": "lifegen_6",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [
+            "training"
+        ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "An apprentice is struggling with the advanced fighting techniques. They approach you for additional training.",
+        "decline_text": "You advise the apprentice to be patient and keep practicing, assuring them that mastery takes time.",
+        "chance_of_success": 70,
+        "success_outcomes": [
+            {
+                "text": "Your training sessions prove fruitful and the apprentice's fighting skills improve significantly.",
+                "exp": 20,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Despite your efforts, the apprentice struggles to pick up the new techniques.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
-    "fail_text": {
-        "unscathed_common": "You try your best but fail to find the right herbs. The apprentice's condition worsens before the medicine cat finally identifies and finds the correct herbs."
-    },
-    "decline_text": "You decide to let the medicine cat handle the situation on their own.",
-    "chance_of_success": 60,
-    "exp": 20,
-    "win_skills": [
-        "knowledgeable"
-    ],
-    "min_cats": 1,
-    "max_cats": 1
-},
-{
-    "patrol_id": "lifegen_5",
-    "biome": "Any",
-    "season": "Any",
-    "tags": [
-        "border"
-    ],
-    "intro_text": "A pair of rogue cats have been spotted near the territory. They claim to be just passing through, but the clan is uneasy.",
-    "success_text": {
-        "unscathed_common": "You decide to personally monitor the rogues, ensuring they leave the territory without causing trouble."
-    },
-    "fail_text": {
-        "unscathed_common": "Despite your vigilance, the rogue cats manage to steal some prey, causing unrest among the clan members."
-    },
-    "decline_text": "You advise the clan to stay vigilant and continue their usual duties, hoping the rogues will keep their word and move on.",
-    "chance_of_success": 50,
-    "exp": 15,
-    "win_skills": [
-        "observant"
-    ],
-    "min_cats": 1,
-    "max_cats": 2
-},
-{
-    "patrol_id": "lifegen_6",
-    "biome": "Any",
-    "season": "Any",
-    "tags": [
-        "training"
-    ],
-    "intro_text": "An apprentice is struggling with the advanced fighting techniques. They approach you for additional training.",
-    "success_text": {
-        "unscathed_common": "Your training sessions prove fruitful and the apprentice's fighting skills improve significantly."
-    },
-    "fail_text": {
-        "unscathed_common": "Despite your efforts, the apprentice struggles to pick up the new techniques."
-    },
-    "decline_text": "You advise the apprentice to be patient and keep practicing, assuring them that mastery takes time.",
-    "chance_of_success": 70,
-    "exp": 20,
-    "win_skills": [
-        "experienced"
-    ],
-    "min_cats": 1,
-    "max_cats": 1
-},
-{
-    "patrol_id": "lifegen_8",
-    "biome": "Forest",
-    "season": "Greenleaf",
-    "tags": [
-        "border"
-    ],
-    "intro_text": "There are suspicious markings on trees near the border. A few clan members believe it could be a sign of a rival clan encroaching.",
-    "success_text": {
-        "unscathed_common": "You lead a patrol to investigate and find it's just a group of kittypets. You manage to chase them away."
-    },
-    "fail_text": {
-        "unscathed_common": "You decide to ignore the markings, but it turns out to be a sign of a rival clan. They take advantage of the situation and attack your clan."
-    },
-    "decline_text": "You choose to ignore the markings for now, deciding to keep a watchful eye on the border instead.",
-    "chance_of_success": 50,
-    "exp": 20,
-    "win_skills": [
-        "cautious"
-    ],
-    "min_cats": 1,
-    "max_cats": 3
-}
-
-
-
-
-
-
-
-    ]
-    
-    
-    
-    
-    
+    {
+        "patrol_id": "lifegen_8",
+        "biome": [
+            "Forest"
+        ],
+        "season": [
+            "Greenleaf"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [
+            "border"
+        ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 3,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "There are suspicious markings on trees near the border. A few clan members believe it could be a sign of a rival clan encroaching.",
+        "decline_text": "You choose to ignore the markings for now, deciding to keep a watchful eye on the border instead.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "You lead a patrol to investigate and find it's just a group of kittypets. You manage to chase them away.",
+                "exp": 20,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "You decide to ignore the markings, but it turns out to be a sign of a rival clan. They take advantage of the situation and attack your clan.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
+    }
+]

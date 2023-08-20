@@ -1,753 +1,1199 @@
 [
     {
         "patrol_id": "gen_your_cat10",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "training"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "Your mentor suggests an additional training session focusing on tracking skills. An opportunity to sharpen your senses and improve your hunting prowess.",
-        "success_text": {
-            "unscathed_common": "You graciously accept the extra training and astoundingly track a mouse using its scent alone. Your mentor observes with a sense of pride and nods approvingly at your progress."
-        },
-        "fail_text": {
-            "unscathed_common": "You give your best shot at tracking a squirrel but end up going in circles. Nevertheless, you learnt something from this experience."
-        },
         "decline_text": "You opt to skip the training for the day and instead, decide to rest and rejuvenate your energy for the challenges ahead.",
         "chance_of_success": 50,
-        "exp": 20,
-        "win_skills": [
-            "fantastic hunter"
+        "success_outcomes": [
+            {
+                "text": "You graciously accept the extra training and astoundingly track a mouse using its scent alone. Your mentor observes with a sense of pride and nods approvingly at your progress.",
+                "exp": 20,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 2
+        "fail_outcomes": [
+            {
+                "text": "You give your best shot at tracking a squirrel but end up going in circles. Nevertheless, you learnt something from this experience.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat11",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "border"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 5,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "The deputy selects you to go on a dawn patrol.",
-        "success_text": {
-            "unscathed_common": "You participate in the patrol and successfully scout the clan borders. Your keen sense of alertness impresses everyone around."
-        },
-        "fail_text": {
-            "unscathed_common": "During the patrol, an unsuspecting twig snaps under your paw, alerting a potential prey. The experience serves as a reminder to tread more carefully in the future."
-        },
         "decline_text": "You try to decline the task. The deputy raises an eyebrow, stating that you have to go unless you're sick or injured. Everyone must do their part in the Clan. Tail drooping, you head for the camp entrance.",
         "chance_of_success": 60,
-        "exp": 20,
-        "win_skills": [
-            "very smart"
+        "success_outcomes": [
+            {
+                "text": "You participate in the patrol and successfully scout the clan borders. Your keen sense of alertness impresses everyone around.",
+                "exp": 20,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 5
+        "fail_outcomes": [
+            {
+                "text": "During the patrol, an unsuspecting twig snaps under your paw, alerting a potential prey. The experience serves as a reminder to tread more carefully in the future.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat12",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "border"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 4,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "The wise elders ask if you would be willing to share your fresh-kill with them. Would you like to partake in this meal-sharing tradition?",
-        "success_text": {
-            "unscathed_common": "You agree to share your meal with the elders, who, in return, share fascinating tales from their youth."
-        },
-        "fail_text": {
-            "unscathed_common": "You extend the offer to share your meal but unfortunately, you drop it in the dirt. The elders laugh good-naturedly and assure you it's alright."
-        },
         "decline_text": "You decide to graciously decline the offer, preferring to enjoy your meal in solitude.",
         "chance_of_success": 70,
-        "exp": 15,
-        "win_skills": [
-            "very smart"
+        "success_outcomes": [
+            {
+                "text": "You agree to share your meal with the elders, who, in return, share fascinating tales from their youth.",
+                "exp": 15,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 4
+        "fail_outcomes": [
+            {
+                "text": "You extend the offer to share your meal but unfortunately, you drop it in the dirt. The elders laugh good-naturedly and assure you it's alright.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat13",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "training"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "You notice a branch hanging low with a tempting leaf just out of reach.",
-        "success_text": {
-            "unscathed_common": "With a quick jump and a swipe, you manage to snag the leaf. Your agility surprises even you."
-        },
-        "fail_text": {
-            "unscathed_common": "You leap for the leaf but miss, landing in a heap on the ground. Your mentor teases you but encourages you to try again."
-        },
         "decline_text": "You decide to leave the leaf alone and go back to your training.",
         "chance_of_success": 55,
-        "exp": 15,
-        "win_skills": [
-            "very smart"
+        "success_outcomes": [
+            {
+                "text": "With a quick jump and a swipe, you manage to snag the leaf. Your agility surprises even you.",
+                "exp": 15,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 2
+        "fail_outcomes": [
+            {
+                "text": "You leap for the leaf but miss, landing in a heap on the ground. Your mentor teases you but encourages you to try again.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat14",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "training"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "You spot a lone crow sitting on a branch. It screeches at you irritatingly.",
-        "success_text": {
-            "unscathed_common": "You successfully chase the crow away, demonstrating your courage and determination."
-        },
-        "fail_text": {
-            "unscathed_common": "You make a leap for the crow, but it flies away before you can get close. You land clumsily but unharmed."
-        },
         "decline_text": "You decide not to bother with the crow and focus on your other tasks.",
         "chance_of_success": 40,
-        "exp": 20,
-        "win_skills": [
-            "very smart"
+        "success_outcomes": [
+            {
+                "text": "You successfully chase the crow away, demonstrating your courage and determination.",
+                "exp": 20,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 2
+        "fail_outcomes": [
+            {
+                "text": "You make a leap for the crow, but it flies away before you can get close. You land clumsily but unharmed.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat15",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "training"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "Your mentor suggests that it's time to hone your climbing skills. You see a tall tree nearby, its branches waving invitingly in the wind.",
-        "success_text": {
-            "unscathed_common": "Summoning your courage, you ascend the tree swiftly and smoothly. From the top, you enjoy a bird's-eye view of the forest. Your mentor gazes up in admiration, praising your agility and bravery."
-        },
-        "fail_text": {
-            "unscathed_common": "You muster your courage and make an attempt to climb, but a slippery branch leads to a minor mishap. You land softly on the ground, a bit bruised but largely unscathed. Your mentor reminds you that failure is the stepping stone to success."
-        },
         "decline_text": "You choose not to climb the tree, deciding that it's a bit too daunting for now. You promise yourself to try again another day when you feel more prepared.",
         "chance_of_success": 55,
-        "exp": 15,
-        "win_skills": [
-            "very agile"
+        "success_outcomes": [
+            {
+                "text": "Summoning your courage, you ascend the tree swiftly and smoothly. From the top, you enjoy a bird's-eye view of the forest. Your mentor gazes up in admiration, praising your agility and bravery.",
+                "exp": 15,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 2
+        "fail_outcomes": [
+            {
+                "text": "You muster your courage and make an attempt to climb, but a slippery branch leads to a minor mishap. You land softly on the ground, a bit bruised but largely unscathed. Your mentor reminds you that failure is the stepping stone to success.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat16",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "border"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 5,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "An emergency gathering has been called, suspecting an invasion by the rival clan. You're asked to participate in the border patrol.",
-        "success_text": {
-            "unscathed_common": "You accept the task and, with your keen senses, you successfully spot traces of the rival clan. The clan praises your vigilance, which has helped avert a potential crisis."
-        },
-        "fail_text": {
-            "unscathed_common": "Despite your best efforts, you fail to notice any signs of the rival clan. You return to your clan feeling a bit downcast, but your clanmates appreciate your effort and reassure you for the future."
-        },
         "decline_text": "You decide to decline the task, feeling a bit overwhelmed. You resolve to support your clan in other ways.",
         "chance_of_success": 60,
-        "exp": 20,
-        "win_skills": [
-            "very vigilant"
+        "success_outcomes": [
+            {
+                "text": "You accept the task and, with your keen senses, you successfully spot traces of the rival clan. The clan praises your vigilance, which has helped avert a potential crisis.",
+                "exp": 20,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 5
+        "fail_outcomes": [
+            {
+                "text": "Despite your best efforts, you fail to notice any signs of the rival clan. You return to your clan feeling a bit downcast, but your clanmates appreciate your effort and reassure you for the future.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat17",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "border"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "The leader asks for a volunteer to deliver a message to the next clan. The journey is long and fraught with potential danger.",
-        "success_text": {
-            "unscathed_common": "You bravely volunteer and embark on the journey. Navigating through unfamiliar territory, you successfully deliver the message and return unscathed, gaining your leader's admiration."
-        },
-        "fail_text": {
-            "unscathed_common": "You volunteer and set off on your journey, but you lose your way and return without delivering the message. The leader comforts you, reminding that every failure teaches a lesson."
-        },
         "decline_text": "You choose to not volunteer for the task, as the journey feels too perilous. You decide to support the clan in more familiar ways.",
         "chance_of_success": 65,
-        "exp": 25,
-        "win_skills": [
-            "very brave"
+        "success_outcomes": [
+            {
+                "text": "You bravely volunteer and embark on the journey. Navigating through unfamiliar territory, you successfully deliver the message and return unscathed, gaining your leader's admiration.",
+                "exp": 25,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 1
+        "fail_outcomes": [
+            {
+                "text": "You volunteer and set off on your journey, but you lose your way and return without delivering the message. The leader comforts you, reminding that every failure teaches a lesson.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat18",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "training"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "Your mentor proposes a swimming lesson in the nearby creek. The water looks cold and fast, but you understand the importance of learning.",
-        "success_text": {
-            "unscathed_common": "You dive into the creek and, after some initial struggles, manage to swim. Your mentor cheers from the bank, happy with your progress."
-        },
-        "fail_text": {
-            "unscathed_common": "Despite your best efforts, you struggle to stay afloat and return to the bank feeling a bit disappointed. Your mentor assures you that it's normal and encourages you to try again another day."
-        },
         "decline_text": "You decide to decline the swimming lesson for now. The water looks too intimidating, and you choose to practice on land instead.",
         "chance_of_success": 50,
-        "exp": 15,
-        "win_skills": [
-            "very brave"
+        "success_outcomes": [
+            {
+                "text": "You dive into the creek and, after some initial struggles, manage to swim. Your mentor cheers from the bank, happy with your progress.",
+                "exp": 15,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 2
+        "fail_outcomes": [
+            {
+                "text": "Despite your best efforts, you struggle to stay afloat and return to the bank feeling a bit disappointed. Your mentor assures you that it's normal and encourages you to try again another day.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat19",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "border"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 3,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "A thick fog has set over the clan territory, and there are reports of unusual scents near the border. You are called upon to investigate.",
-        "success_text": {
-            "unscathed_common": "Braving the fog, you proceed to investigate and successfully identify the unusual scent as a harmless raccoon. Your clan appreciates your bravery and keen senses."
-        },
-        "fail_text": {
-            "unscathed_common": "Despite your best efforts, the thick fog hampers your investigation and you're unable to identify the source of the scent. Your clan still values your courage and encourages you to keep practicing."
-        },
         "decline_text": "You decide to decline the task. The thick fog makes it a challenging mission and you choose to help the clan with other tasks.",
         "chance_of_success": 45,
-        "exp": 20,
-        "win_skills": [
-            "very courageous"
+        "success_outcomes": [
+            {
+                "text": "Braving the fog, you proceed to investigate and successfully identify the unusual scent as a harmless raccoon. Your clan appreciates your bravery and keen senses.",
+                "exp": 20,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 3
+        "fail_outcomes": [
+            {
+                "text": "Despite your best efforts, the thick fog hampers your investigation and you're unable to identify the source of the scent. Your clan still values your courage and encourages you to keep practicing.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat20",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "border"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "An elder invites you to share a meal. It's a chance to bond and hear stories from their past.",
-        "success_text": {
-            "unscathed_common": "You accept the invitation and enjoy an afternoon filled with captivating tales of the clan's history. The elder cat appreciates your company, and you gain a newfound respect for their wisdom."
-        },
-        "fail_text": {
-            "unscathed_common": "You join the elder, but your conversation is cut short by an unexpected disturbance in the camp. Despite the interruption, the elder appreciates your intent."
-        },
         "decline_text": "You politely decline the elder's invitation, deciding to focus on your training instead.",
         "chance_of_success": 70,
-        "exp": 15,
-        "win_skills": [
-            "very social"
+        "success_outcomes": [
+            {
+                "text": "You accept the invitation and enjoy an afternoon filled with captivating tales of the clan's history. The elder cat appreciates your company, and you gain a newfound respect for their wisdom.",
+                "exp": 15,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 2
+        "fail_outcomes": [
+            {
+                "text": "You join the elder, but your conversation is cut short by an unexpected disturbance in the camp. Despite the interruption, the elder appreciates your intent.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat21",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "border"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "A fellow apprentice challenges you to a friendly sparring match. It's a great way to practice combat skills.",
-        "success_text": {
-            "unscathed_common": "You accept the challenge and emerge victorious. Both of you enjoy the match, and your relationship with the other apprentice strengthens."
-        },
-        "fail_text": {
-            "unscathed_common": "You accept the challenge but end up losing the match. Despite the defeat, your spirits remain high, and your bond with the other apprentice grows stronger."
-        },
         "decline_text": "You decide to decline the challenge and choose to focus on your individual training instead. There will be other opportunities for friendly sparring.",
         "chance_of_success": 55,
-        "exp": 20,
-        "win_skills": [
-            "good fighter"
+        "success_outcomes": [
+            {
+                "text": "You accept the challenge and emerge victorious. Both of you enjoy the match, and your relationship with the other apprentice strengthens.",
+                "exp": 20,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 2
+        "fail_outcomes": [
+            {
+                "text": "You accept the challenge but end up losing the match. Despite the defeat, your spirits remain high, and your bond with the other apprentice grows stronger.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat22",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "border"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "A queen in the nursery asks you to watch over her kits while she fetches fresh moss. It's a chance to show your nurturing side.",
-        "success_text": {
-            "unscathed_common": "You agree and keep a careful eye on the playful kits. The queen returns and thanks you for your help, appreciating your kindness and responsibility."
-        },
-        "fail_text": {
-            "unscathed_common": "You try your best to watch the kits, but they prove too mischievous to handle. One attempts to climb on your back, while another sinks their tiny fangs into your tail. You screech, and the tired queen has to rush back to the nursery to help."
-        },
         "decline_text": "You politely decline the queen's request, as you feel unprepared for the task.",
         "chance_of_success": 65,
-        "exp": 15,
-        "win_skills": [
-            "very responsible"
+        "success_outcomes": [
+            {
+                "text": "You agree and keep a careful eye on the playful kits. The queen returns and thanks you for your help, appreciating your kindness and responsibility.",
+                "exp": 15,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 1
+        "fail_outcomes": [
+            {
+                "text": "You try your best to watch the kits, but they prove too mischievous to handle. One attempts to climb on your back, while another sinks their tiny fangs into your tail. You screech, and the tired queen has to rush back to the nursery to help.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat24",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "border"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "A warrior asks you to join them on nighttime guard duty.",
-        "success_text": {
-            "unscathed_common": "You join the warrior and spend the night listening to their wisdom and experiences while keeping the Clan safe. The shared vigil strengthens your bond and deepens your understanding of the clan's values."
-        },
-        "fail_text": {
-            "unscathed_common": "You attempt to join the vigil but struggle to stay awake. After a while, the warrior nudges you and urges you to go back to your den."
-        },
         "decline_text": "You decide to decline the vigil and choose to rest instead.",
         "chance_of_success": 65,
-        "exp": 20,
-        "win_skills": [
-            "very attentive"
+        "success_outcomes": [
+            {
+                "text": "You join the warrior and spend the night listening to their wisdom and experiences while keeping the Clan safe. The shared vigil strengthens your bond and deepens your understanding of the clan's values.",
+                "exp": 20,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 2
+        "fail_outcomes": [
+            {
+                "text": "You attempt to join the vigil but struggle to stay awake. After a while, the warrior nudges you and urges you to go back to your den.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat25",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "border"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "You notice a fellow apprentice looking nervous as they approach you. They awkwardly ask if you would share a meal with them.",
-        "success_text": {
-            "unscathed_common": "Despite feeling a little shy, you accept the invitation. Both of you enjoy the meal and share a few laughs, leaving you with a warm feeling."
-        },
-        "fail_text": {
-            "unscathed_common": "You feel a rush of nervousness and end up stuttering a refusal. Later, you regret your reaction but hope to make it up to them."
-        },
         "decline_text": "Feeling too shy, you politely decline the offer.",
         "chance_of_success": 60,
-        "exp": 15,
-        "win_skills": [
-            "very social"
+        "success_outcomes": [
+            {
+                "text": "Despite feeling a little shy, you accept the invitation. Both of you enjoy the meal and share a few laughs, leaving you with a warm feeling.",
+                "exp": 15,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 2
+        "fail_outcomes": [
+            {
+                "text": "You feel a rush of nervousness and end up stuttering a refusal. Later, you regret your reaction but hope to make it up to them.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat26",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "border"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "During a shared training session, another apprentice accidentally stumbles into you. Both of you fall to the ground in a tangle of limbs. They blush and stammer an apology.",
-        "success_text": {
-            "unscathed_common": "You reassure them that it's okay and manage to share a good laugh about it. The training session turns out to be a fun one, and your bond with them grows."
-        },
-        "fail_text": {
-            "unscathed_common": "Caught off guard, you react awkwardly, which makes them feel more embarrassed. You wish you had handled the situation better."
-        },
         "decline_text": "You decide to continue with your training, shaking off the moment.",
         "chance_of_success": 55,
-        "exp": 20,
-        "win_skills": [
-            "good communicator"
+        "success_outcomes": [
+            {
+                "text": "You reassure them that it's okay and manage to share a good laugh about it. The training session turns out to be a fun one, and your bond with them grows.",
+                "exp": 20,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 2
+        "fail_outcomes": [
+            {
+                "text": "Caught off guard, you react awkwardly, which makes them feel more embarrassed. You wish you had handled the situation better.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat27",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "border"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "You and another apprentice are tasked with collecting moss. As you work together, you can't help but notice how they look under the sunlight.",
-        "success_text": {
-            "unscathed_common": "You manage to keep your feelings under control and focus on the task. By the end of it, you both have a good laugh and your bond grows stronger."
-        },
-        "fail_text": {
-            "unscathed_common": "You become so lost in your thoughts that you misplace some moss. They help you correct the mistake, but you're left feeling embarrassed."
-        },
         "decline_text": "Feeling flustered, you decide to leave the task to them and assist elsewhere in the camp. You hope to handle your feelings better next time.",
         "chance_of_success": 50,
-        "exp": 20,
-        "win_skills": [
-            "very organized"
+        "success_outcomes": [
+            {
+                "text": "You manage to keep your feelings under control and focus on the task. By the end of it, you both have a good laugh and your bond grows stronger.",
+                "exp": 20,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 2
+        "fail_outcomes": [
+            {
+                "text": "You become so lost in your thoughts that you misplace some moss. They help you correct the mistake, but you're left feeling embarrassed.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat28",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "border"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "One of your fellow apprentices has a difficult time during training. Seeing them upset, you consider offering them comfort.",
-        "success_text": {
-            "unscathed_common": "You approach them and offer kind words of encouragement. They thank you for your support, and your relationship with them grows."
-        },
-        "fail_text": {
-            "unscathed_common": "You try to comfort them, but your words come out clumsily, leading to an awkward silence. You feel bad but decide to learn from the experience."
-        },
         "decline_text": "Feeling unsure about what to say, you decide not to approach them. You hope they'll feel better soon.",
         "chance_of_success": 60,
-        "exp": 20,
-        "win_skills": [
-            "very empathetic"
+        "success_outcomes": [
+            {
+                "text": "You approach them and offer kind words of encouragement. They thank you for your support, and your relationship with them grows.",
+                "exp": 20,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 2
+        "fail_outcomes": [
+            {
+                "text": "You try to comfort them, but your words come out clumsily, leading to an awkward silence. You feel bad but decide to learn from the experience.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat29",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "border"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "An apprentice you're close to accidentally trods over you as they leave the apprentice den. They're visibly embarrassed.",
-        "success_text": {
-            "unscathed_common": "You chuckle, making light of the situation. They join in the laughter, and you both continue your duties in higher spirits."
-        },
-        "fail_text": {
-            "unscathed_common": "You react with surprise, which makes them feel even more embarrassed. You try to laugh it off, but the atmosphere remains awkward."
-        },
         "decline_text": "Deciding to give them space, you quietly clean up and go about your duties elsewhere in the camp.",
         "chance_of_success": 50,
-        "exp": 15,
-        "win_skills": [
-            "very patient"
+        "success_outcomes": [
+            {
+                "text": "You chuckle, making light of the situation. They join in the laughter, and you both continue your duties in higher spirits.",
+                "exp": 15,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 2
+        "fail_outcomes": [
+            {
+                "text": "You react with surprise, which makes them feel even more embarrassed. You try to laugh it off, but the atmosphere remains awkward.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat30",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "training",
             "apprentice"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "Your mentor tasks you with hunting for the elders.",
-        "success_text": {
-            "unscathed_common": "As you hunt, you find a mouse nest, you burrow down into the nest and catch any you can get your claws on, the elders will be please tonight!"
-        },
-        "fail_text": {
-            "unscathed_common": "The territory seems to be bare tonight, you can't catch a whiff of prey."
-        },
         "decline_text": "You decide not to hunt for the elders and instead focus on your training.",
         "chance_of_success": 40,
-        "exp": 20,
-        "win_skills": [
-            "very smart"
+        "success_outcomes": [
+            {
+                "text": "As you hunt, you find a mouse nest, you burrow down into the nest and catch any you can get your claws on, the elders will be please tonight!",
+                "exp": 20,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 2
+        "fail_outcomes": [
+            {
+                "text": "The territory seems to be bare tonight, you can't catch a whiff of prey.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat31",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "training",
             "apprentice"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "You go out battle training with your mentor",
-        "success_text": {
-            "unscathed_common": "You have a blast! Your mentor shares their best moves with you and you even show them a couple of your own."
-        },
-        "fail_text": {
-            "unscathed_common": "You can't seem to put your paws were your mentor tells you and finally they decide its time to finish."
-        },
         "decline_text": "You decide not to go battle training so you hunt instead.",
         "chance_of_success": 40,
-        "exp": 20,
-        "win_skills": [
-            "very smart"
+        "success_outcomes": [
+            {
+                "text": "You have a blast! Your mentor shares their best moves with you and you even show them a couple of your own.",
+                "exp": 20,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 2
+        "fail_outcomes": [
+            {
+                "text": "You can't seem to put your paws were your mentor tells you and finally they decide its time to finish.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat32",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "training",
             "apprentice"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "Your mentor asks if you would like to check the borders with them",
-        "success_text": {
-            "unscathed_common": "You jump to your paws excitedly, running after you mentor to explore the territory, they escort you through the scenery showing you places in the territory you never knew existed!"
-        },
-        "fail_text": {
-            "unscathed_common": "You jump to your paws and run after them, as you trek through the territory you become excited and run off, your mentor's walking to slow anyway. After a moment you realize you don't recognise this part of the forest, eventually your mentor finds you and leads you back to camp with a scolding about running off."
-        },
         "decline_text": "You decline the offer.",
         "chance_of_success": 40,
-        "exp": 20,
-        "win_skills": [
-            "very smart"
+        "success_outcomes": [
+            {
+                "text": "You jump to your paws excitedly, running after you mentor to explore the territory, they escort you through the scenery showing you places in the territory you never knew existed!",
+                "exp": 20,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 2
+        "fail_outcomes": [
+            {
+                "text": "You jump to your paws and run after them, as you trek through the territory you become excited and run off, your mentor's walking to slow anyway. After a moment you realize you don't recognise this part of the forest, eventually your mentor finds you and leads you back to camp with a scolding about running off.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat33",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "training",
             "apprentice"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "You go out hunting with your mentor",
-        "success_text": {
-            "unscathed_common": "You have a blast! Your mentor shows you the best places for prey and you both come back with a hefty haul."
-        },
-        "fail_text": {
-            "unscathed_common": "You can't seem to find any prey, your mentor comforts you, saying they wouldn't have had any hope of finding prey in this terrible weather either."
-        },
         "decline_text": "You decide not to go hunting so you practice your battle moves instead.",
         "chance_of_success": 40,
-        "exp": 20,
-        "win_skills": [
-            "very smart"
+        "success_outcomes": [
+            {
+                "text": "You have a blast! Your mentor shows you the best places for prey and you both come back with a hefty haul.",
+                "exp": 20,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 2
+        "fail_outcomes": [
+            {
+                "text": "You can't seem to find any prey, your mentor comforts you, saying they wouldn't have had any hope of finding prey in this terrible weather either.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat34",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "training",
             "apprentice"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "You go out hunting with your mentor",
-        "success_text": {
-            "unscathed_common": "This is a stealth lesson, and you are the stealthiest cat today, you bring brack more prey than your mentor!"
-        },
-        "fail_text": {
-            "unscathed_common": "You can't seem to find any prey, the scents are all just muddled up today, you watch as a senior warrior pads past, their jaws full with freshly caught prey, maybe it was just bad luck."
-        },
         "decline_text": "You decide not to go hunting so you practice your battle moves instead.",
         "chance_of_success": 40,
-        "exp": 20,
-        "win_skills": [
-            "very smart"
+        "success_outcomes": [
+            {
+                "text": "This is a stealth lesson, and you are the stealthiest cat today, you bring brack more prey than your mentor!",
+                "exp": 20,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 2
+        "fail_outcomes": [
+            {
+                "text": "You can't seem to find any prey, the scents are all just muddled up today, you watch as a senior warrior pads past, their jaws full with freshly caught prey, maybe it was just bad luck.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat35",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "training",
             "apprentice"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "You think about hunting by yourself, hoping it might impress your mentor.",
-        "success_text": {
-            "unscathed_common": "You go out alone, the peace and quiet gives you time to perfect your hunting crouch and you bring back an impressive amount of prey, your mentor watches as you enter the camp their eyes glowing with pride."
-        },
-        "fail_text": {
-            "unscathed_common": "As you head out, every creaking branch and swishing fern makes you jump, maybe hunting alone wasn't the best idea..."
-        },
         "decline_text": "You decide not to go hunting alone you'd rather not upset your mentor.",
         "chance_of_success": 40,
-        "exp": 20,
-        "win_skills": [
-            "very smart"
+        "success_outcomes": [
+            {
+                "text": "You go out alone, the peace and quiet gives you time to perfect your hunting crouch and you bring back an impressive amount of prey, your mentor watches as you enter the camp their eyes glowing with pride.",
+                "exp": 20,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 2
+        "fail_outcomes": [
+            {
+                "text": "As you head out, every creaking branch and swishing fern makes you jump, maybe hunting alone wasn't the best idea...",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat36",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "training",
             "apprentice"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "You think about hunting by yourself, hoping it might impress your mentor.",
-        "success_text": {
-            "unscathed_common": "You go out alone, the peace and quiet gives you confidence and you seem to be focusing better, you catch the most prey you've ever caught!"
-        },
-        "fail_text": {
-            "unscathed_common": "As you head out, the territory seems to grow into a maze, every tree and rock looks the same, as you begin to panic, a patrol of warriors stumble upon you looking surprised to see you alone, you mentor happens to be in the patrol and they scold you for being so reckless, immediately taking you home."
-        },
         "decline_text": "You decide not to go hunting alone you'd rather not upset your mentor.",
         "chance_of_success": 40,
-        "exp": 20,
-        "win_skills": [
-            "very smart"
+        "success_outcomes": [
+            {
+                "text": "You go out alone, the peace and quiet gives you confidence and you seem to be focusing better, you catch the most prey you've ever caught!",
+                "exp": 20,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 2
+        "fail_outcomes": [
+            {
+                "text": "As you head out, the territory seems to grow into a maze, every tree and rock looks the same, as you begin to panic, a patrol of warriors stumble upon you looking surprised to see you alone, you mentor happens to be in the patrol and they scold you for being so reckless, immediately taking you home.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat37",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "training",
             "apprentice"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "You decide to take some time to perfect you hunting technique",
-        "success_text": {
-            "unscathed_common": "Finding a quiet place not too far from camp, you work hard at your hunting crouch, practicing you stealth amongst some long grass and familiarise yourself with wind changes, you return to camp feeling pleased with your progress."
-        },
-        "fail_text": {
-            "unscathed_common": "You can't seem to find anywhere to practice your moves that doesn't already have a cat, you can't think about anything with all the warriors trudging around in your space."
-        },
         "decline_text": "You decide that your battle skills need more work and practice on that instead.",
         "chance_of_success": 40,
-        "exp": 20,
-        "win_skills": [
-            "very smart"
+        "success_outcomes": [
+            {
+                "text": "Finding a quiet place not too far from camp, you work hard at your hunting crouch, practicing you stealth amongst some long grass and familiarise yourself with wind changes, you return to camp feeling pleased with your progress.",
+                "exp": 20,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 2
+        "fail_outcomes": [
+            {
+                "text": "You can't seem to find anywhere to practice your moves that doesn't already have a cat, you can't think about anything with all the warriors trudging around in your space.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat38",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "training",
             "apprentice"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "You decide to take some time to perfect you fighting techniques.",
-        "success_text": {
-            "unscathed_common": "Finding a quiet place not too far from camp, you work hard at practicing ambushes, defensive and offensive attacks, even coming up with a brand new move to show your mentor! You return to camp feeling pleased with your progress."
-        },
-        "fail_text": {
-            "unscathed_common": "You can't seem to find anywhere to practice your moves that doesn't already have a cat, you can't think about anything with all the warriors trudging around in your space."
-        },
         "decline_text": "You decide that your hunting techniques need more work and you practice that instead.",
         "chance_of_success": 40,
-        "exp": 20,
-        "win_skills": [
-            "very smart"
+        "success_outcomes": [
+            {
+                "text": "Finding a quiet place not too far from camp, you work hard at practicing ambushes, defensive and offensive attacks, even coming up with a brand new move to show your mentor! You return to camp feeling pleased with your progress.",
+                "exp": 20,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 2
+        "fail_outcomes": [
+            {
+                "text": "You can't seem to find anywhere to practice your moves that doesn't already have a cat, you can't think about anything with all the warriors trudging around in your space.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat39",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "training",
             "apprentice"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "The medicine cat asks you to collect some more moss for the herb storage",
-        "success_text": {
-            "unscathed_common": "You agree, although moss collecting being one of the more boring duties, its still an important task and you work hard at bringing home a healthy collection of fresh moss, familiarising yourself with the territory as you go."
-        },
-        "fail_text": {
-            "unscathed_common": "You agree, but as you pad through the territory a downpour of rain soils any moss that could have been collected, you return back empty pawed."
-        },
         "decline_text": "Medicine cat duties! No way! Your training to be a warrior!",
         "chance_of_success": 40,
-        "exp": 20,
-        "win_skills": [
-            "very smart"
+        "success_outcomes": [
+            {
+                "text": "You agree, although moss collecting being one of the more boring duties, its still an important task and you work hard at bringing home a healthy collection of fresh moss, familiarising yourself with the territory as you go.",
+                "exp": 20,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 2
+        "fail_outcomes": [
+            {
+                "text": "You agree, but as you pad through the territory a downpour of rain soils any moss that could have been collected, you return back empty pawed.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat40",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "training",
             "apprentice"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "Your mentor asks you to clean out the elders den",
-        "success_text": {
-            "unscathed_common": "Although being one of the worst duties and apprentice can be assigned, the task you have been given must be done, as you clean out the moss the elders tell you an enthralling tale of daring and courage keeping up the good spirits, it turns out that the task wasn't as bad as you thought."
-        },
-        "fail_text": {
-            "unscathed_common": "Although grumbling and complaining you agree to do the task, but your bad mood makes the elders cranky and you begin a heated debate about were the softest moss should be placed, eventually they send you out stating they can do it themselves."
-        },
         "decline_text": "Cleaning out the elders den? You slip away quietly saying your off to gather moss, but you curl up and take nap in a patch of warm sun.",
         "chance_of_success": 40,
-        "exp": 20,
-        "win_skills": [
-            "very smart"
+        "success_outcomes": [
+            {
+                "text": "Although being one of the worst duties and apprentice can be assigned, the task you have been given must be done, as you clean out the moss the elders tell you an enthralling tale of daring and courage keeping up the good spirits, it turns out that the task wasn't as bad as you thought.",
+                "exp": 20,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 2
+        "fail_outcomes": [
+            {
+                "text": "Although grumbling and complaining you agree to do the task, but your bad mood makes the elders cranky and you begin a heated debate about were the softest moss should be placed, eventually they send you out stating they can do it themselves.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat41",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "training",
             "apprentice"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "Your mentor asks you to check the elders for ticks",
-        "success_text": {
-            "unscathed_common": "You agree, although moss collecting being one of the more boring duties, its still an important task and you work hard at bringing home a healthy collection of fresh moss, familiarising yourself with the territory as you go."
-        },
-        "fail_text": {
-            "unscathed_common": "Although grumbling and complaining you agree to do the task, dreading it with every hair on your pelt, but as you walk to the den, the mousebile in your jaws, you stumble, the foul stuff spilling all over your muzzle! It takes forever to get the smell out of your pelt and another apprentice has already done the task by the time your done."
-        },
         "decline_text": "Checking the elders for ticks? Yuck!",
         "chance_of_success": 40,
-        "exp": 20,
-        "win_skills": [
-            "very smart"
+        "success_outcomes": [
+            {
+                "text": "You agree, although moss collecting being one of the more boring duties, its still an important task and you work hard at bringing home a healthy collection of fresh moss, familiarising yourself with the territory as you go.",
+                "exp": 20,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 2
+        "fail_outcomes": [
+            {
+                "text": "Although grumbling and complaining you agree to do the task, dreading it with every hair on your pelt, but as you walk to the den, the mousebile in your jaws, you stumble, the foul stuff spilling all over your muzzle! It takes forever to get the smell out of your pelt and another apprentice has already done the task by the time your done.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "lifegen_X",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "training",
             "bloodthirsty_only"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "Your mentor brings you out of camp for a training session. You crouch down, ready for a spar, and they tell you to keep your claws unsheathed for the fight.",
-        "success_text": {
-            "unscathed_common": "The two of you trade blows fiercely, aiming to draw blood. By the end, you're exhausted, panting and bleeding, but still standing. Your mentor looks at you proudly, sporting some scratches of their own, and says you'll make a fearsome warrior. "
-        },
-        "fail_text": {
-            "unscathed_common": "You try your best to take their words to heart, but you can barely touch them anyway. Their claws score into your flank over and over again, until you're covered in scratches. They seem disappointed in you, and you limp back to the medicine cat's den, bruised and bleeding. "
-        },
         "decline_text": "You hesitate, unsure if your leader would approve. They sense your unwillingness, and tell you to forget about it with a disappointed flick of their tail.",
         "chance_of_success": 40,
-        "exp": 20,
-        "win_skills": [
-            "bloodthirsty"
+        "success_outcomes": [
+            {
+                "text": "The two of you trade blows fiercely, aiming to draw blood. By the end, you're exhausted, panting and bleeding, but still standing. Your mentor looks at you proudly, sporting some scratches of their own, and says you'll make a fearsome warrior. ",
+                "exp": 20,
+                "weight": 20
+            }
         ],
-        "min_cats": 2,
-        "max_cats": 2
+        "fail_outcomes": [
+            {
+                "text": "You try your best to take their words to heart, but you can barely touch them anyway. Their claws score into your flank over and over again, until you're covered in scratches. They seem disappointed in you, and you limp back to the medicine cat's den, bruised and bleeding. ",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     }
-    
-    
 ]

@@ -1,199 +1,335 @@
 [
     {
         "patrol_id": "gen_your_cat40",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "border"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "A young apprentice approaches you, curious to hear about your past adventures. You reminisce, wondering whether you should indulge them with a story.",
-        "success_text": {
-            "unscathed_common": "You decide to share a story, captivating the apprentice with tales of your past. They hang on your every word, awestruck and inspired by your experiences."
-        },
-        "fail_text": {
-            "unscathed_common": "You attempt to recount a tale, but the details seem fuzzy. What did you do again?"
-        },
         "decline_text": "You politely decline, feeling tired. The apprentice is understanding and promises to return another time for your tales.",
         "chance_of_success": 60,
-        "exp": 10,
-        "win_skills": [
-            "excellent storyteller"
+        "success_outcomes": [
+            {
+                "text": "You decide to share a story, captivating the apprentice with tales of your past. They hang on your every word, awestruck and inspired by your experiences.",
+                "exp": 10,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 2
+        "fail_outcomes": [
+            {
+                "text": "You attempt to recount a tale, but the details seem fuzzy. What did you do again?",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat42",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "border"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 3,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "The leader asks for your opinion on a dispute between two warriors. You feel respected, knowing that your wisdom is still valued.",
-        "success_text": {
-            "unscathed_common": "You weigh the situation and provide a fair resolution. The leader appreciates your wisdom, and the warriors agree to your solution."
-        },
-        "fail_text": {
-            "unscathed_common": "You attempt to mediate, but the warriors seem unconvinced. The leader decides to handle the matter personally."
-        },
         "decline_text": "You politely decline, feeling unsure about your ability to resolve the issue. The leader respects your decision and turns to other clan members for advice.",
         "chance_of_success": 50,
-        "exp": 10,
-        "win_skills": [
-            "very wise"
+        "success_outcomes": [
+            {
+                "text": "You weigh the situation and provide a fair resolution. The leader appreciates your wisdom, and the warriors agree to your solution.",
+                "exp": 10,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 3
+        "fail_outcomes": [
+            {
+                "text": "You attempt to mediate, but the warriors seem unconvinced. The leader decides to handle the matter personally.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat43",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "border"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "A kit comes running up to you, asking for a play fight. Despite your old bones, you consider their request, remembering your own playful youth.",
-        "success_text": {
-            "unscathed_common": "You agree and have a gentle play fight with the kit. They squeal in delight and declare you the best playmate ever."
-        },
-        "fail_text": {
-            "unscathed_common": "You agree to the play fight but soon find your joints complaining."
-        },
         "decline_text": "You decline, explaining that you're too old for play fighting. The kit seems disappointed but understands. They scamper off to find another playmate.",
         "chance_of_success": 45,
-        "exp": 10,
-        "win_skills": [
-            "kind"
+        "success_outcomes": [
+            {
+                "text": "You agree and have a gentle play fight with the kit. They squeal in delight and declare you the best playmate ever.",
+                "exp": 10,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 2
+        "fail_outcomes": [
+            {
+                "text": "You agree to the play fight but soon find your joints complaining.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat44",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "border"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "A young warrior offers to fetch you fresh-kill. You contemplate whether you should accept or insist on doing it yourself for old times' sake.",
-        "success_text": {
-            "unscathed_common": "You graciously accept their offer and enjoy a well-chosen piece of fresh-kill. The young warrior seems pleased to be of help."
-        },
-        "fail_text": {
-            "unscathed_common": "You decide to do it yourself but find that you're not as fast as you used to be. The warrior steps in, understanding your desire to be independent."
-        },
         "decline_text": "You politely decline, deciding to fetch your own meal. The young warrior nods respectfully and offers their help should you need it later.",
         "chance_of_success": 50,
-        "exp": 10,
-        "win_skills": [
-            "independent"
+        "success_outcomes": [
+            {
+                "text": "You graciously accept their offer and enjoy a well-chosen piece of fresh-kill. The young warrior seems pleased to be of help.",
+                "exp": 10,
+                "weight": 20
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 2
+        "fail_outcomes": [
+            {
+                "text": "You decide to do it yourself but find that you're not as fast as you used to be. The warrior steps in, understanding your desire to be independent.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat46",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "border"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "The camp is relatively empty as many cats have gone out to do their daily patrols or hunting, and you decide to help tidy up... and maybe add a decoration or two? You start to have a couple doubts as you gather the materials... is this a good idea?",
-        "success_text": {
-            "unscathed_common": "You begin to work on sprucing up the camp, doubts shaken away as if they were a flea. Some of the other cats still here decide to lend a helping paw, gathering things you were missing and reaching places you couldn't get to. When the warriors return to the camp, they're pleasantly surprised by the minute changes, and you get to see every single one's pleased reaction."
-        },
-        "fail_text": {
-            "unscathed_common": "You begin to work on sprucing up the camp, doubts shaken away as if they were a flea. The other cats seem annoyed by what you're doing, but you continue anyway until you're done. Once the clan gets home, they seem perturbed by the changes, and one of them even comes up and scolds you! Perhaps going back to bed would've been a better idea..."
-        },
         "decline_text": "No, it's not. You put your things away and go back to the Elder's Den, deciding to just take a nap instead.",
         "chance_of_success": 50,
-        "exp": 10,
-        "win_skills": [],
-        "min_cats": 1,
-        "max_cats": 2
+        "success_outcomes": [
+            {
+                "text": "You begin to work on sprucing up the camp, doubts shaken away as if they were a flea. Some of the other cats still here decide to lend a helping paw, gathering things you were missing and reaching places you couldn't get to. When the warriors return to the camp, they're pleasantly surprised by the minute changes, and you get to see every single one's pleased reaction.",
+                "exp": 10,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "You begin to work on sprucing up the camp, doubts shaken away as if they were a flea. The other cats seem annoyed by what you're doing, but you continue anyway until you're done. Once the clan gets home, they seem perturbed by the changes, and one of them even comes up and scolds you! Perhaps going back to bed would've been a better idea...",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat46",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "border"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "You've been thinking about going out on a walk, though there have been reports of fox scent in the area. Whilst that's not necessarily a big deal for a cat in a patrol, as it seems to be a moreso younger and more inexperienced fox, it may be a danger to you.",
-        "success_text": {
-            "unscathed_common": "You go out on your walk, and everything is peaceful. The sun is shining, and leaves seem to gracefully trail after you as you walk. It was worth it to see such sights, and now you're ready to go home and get some rest."
-        },
-        "fail_text": {
-            "unscathed_common": "You go out on your walk, but whilst things are peaceful at first... they aren't for the whole time. The fox, it seems, thought you would be something good enough to hunt, and it chases you around before a patrol finds you and comes to help. Whilst you were luckily unscathed, your pride remains pretty bruised."
-        },
         "decline_text": "Yeah, it's probably best if you stay in camp, safe from any sort of danger. You'll just go out when it's safer.",
         "chance_of_success": 50,
-        "exp": 10,
-        "win_skills": [],
-        "min_cats": 1,
-        "max_cats": 2
+        "success_outcomes": [
+            {
+                "text": "You go out on your walk, and everything is peaceful. The sun is shining, and leaves seem to gracefully trail after you as you walk. It was worth it to see such sights, and now you're ready to go home and get some rest.",
+                "exp": 10,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "You go out on your walk, but whilst things are peaceful at first... they aren't for the whole time. The fox, it seems, thought you would be something good enough to hunt, and it chases you around before a patrol finds you and comes to help. Whilst you were luckily unscathed, your pride remains pretty bruised.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat46",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "border"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "You were just trying to rest, the Warriors out on patrol and the Medicine Cat out gathering herbs, however the squeals of other cats managed to wake you up from your nap. You rush outside, and it seems a snake has slithered its way into the middle of the camp. The cats look to you for help, you are the one in the best condition in the camp at the moment, so they're hoping you'll have a plan.",
-        "success_text": {
-            "unscathed_common": "You move into action, quickly grabbing the snake by its tail. You drag it out of the camp where you let it free, watching it slither into the grasses as your clanmates let out a loud sigh of relief.."
-        },
-        "fail_text": {
-            "unscathed_common": "You try your best to help with the issue, but as you dodge the snake's lunges, it seems you only make it madder. It's finally removed from the camp once a warrior gets back from patrol, and you can't help but feel embarrassed about what'd happened."
-        },
         "decline_text": "Nope. Nope nope. Nope. You hurry back into the den, not willing to deal with the snake.",
         "chance_of_success": 50,
-        "exp": 10,
-        "win_skills": [],
-        "min_cats": 1,
-        "max_cats": 2
+        "success_outcomes": [
+            {
+                "text": "You move into action, quickly grabbing the snake by its tail. You drag it out of the camp where you let it free, watching it slither into the grasses as your clanmates let out a loud sigh of relief..",
+                "exp": 10,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "You try your best to help with the issue, but as you dodge the snake's lunges, it seems you only make it madder. It's finally removed from the camp once a warrior gets back from patrol, and you can't help but feel embarrassed about what'd happened.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat46",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "border"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "You wake up from a nightmare, your heart racing and your eyes wide. You have no idea what spurred on said nightmare, but you're unable to go back to sleep with it still whirling in your mind. You quickly leave the den, deciding to take a walk outside for a little while, though you soon start to hear rustling in the bushes.",
-        "success_text": {
-            "unscathed_common": "You gently move the bushes, only to see a familiar face. It's one of your clanmates, who seemed to have come out on a walk as well. You two chat a little bit, and they seem to understand you a little better. You're glad to have come out here and, whilst it takes a little bit longer than usual, you are able to go back to sleep."
-        },
-        "fail_text": {
-            "unscathed_common": "You yowl in surprise as a cat from one of the neighboring clans lunges out at you. They hiss at you, and you realize you accidentally had crossed the border. Luckily, they agree not to tell their or your clan about this, but you're left wishing you'd never left at all."
-        },
         "decline_text": "Yeah, no, that's too much for you. You return to camp, even more freaked out then you were before, and unable to go back to sleep.",
         "chance_of_success": 50,
-        "exp": 10,
-        "win_skills": [],
-        "min_cats": 1,
-        "max_cats": 2
+        "success_outcomes": [
+            {
+                "text": "You gently move the bushes, only to see a familiar face. It's one of your clanmates, who seemed to have come out on a walk as well. You two chat a little bit, and they seem to understand you a little better. You're glad to have come out here and, whilst it takes a little bit longer than usual, you are able to go back to sleep.",
+                "exp": 10,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "You yowl in surprise as a cat from one of the neighboring clans lunges out at you. They hiss at you, and you realize you accidentally had crossed the border. Luckily, they agree not to tell their or your clan about this, but you're left wishing you'd never left at all.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "gen_your_cat46",
-        "biome": "Any",
-        "season": "Any",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "hunting"
+        ],
         "tags": [
             "border"
         ],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "You've noticed how bored the apprentices have become with their exhausting routines, and you have a plan to entertain them - or at least keep them occupied.",
-        "success_text": {
-            "unscathed_common": "You and the medicine cat devise a traveling-herb class for the apprentices, laying different clusters of herbs out in a clearing and showing all the apprentices to teach them about the plants. At the end of the meeting, you split the apprentices into teams and quiz them all on uses for the herbs. Not only do they have an unforgettable time playing and learning what traveling herbs serve what purposes, but Team Squirrel also gets bragging rights at the next Gathering!"
-        },
-        "fail_text": {
-            "unscathed_common": "You meticulously scheme all day and all night with your endless pool of free time, so much so that the idea turns more into a daydream than something actually achievable. When you pitch your idea to the deputy, they shake their head and tell you it's too ambitious. Indeed, none of the apprentices seem interested in the elaborate game you spent all that time preparing."
-        },
         "decline_text": "You decide that the apprentices should entertain themselves for once. It's not your problem.",
         "chance_of_success": 50,
-        "exp": 10,
-        "win_skills": [],
-        "min_cats": 1,
-        "max_cats": 2
+        "success_outcomes": [
+            {
+                "text": "You and the medicine cat devise a traveling-herb class for the apprentices, laying different clusters of herbs out in a clearing and showing all the apprentices to teach them about the plants. At the end of the meeting, you split the apprentices into teams and quiz them all on uses for the herbs. Not only do they have an unforgettable time playing and learning what traveling herbs serve what purposes, but Team Squirrel also gets bragging rights at the next Gathering!",
+                "exp": 10,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "You meticulously scheme all day and all night with your endless pool of free time, so much so that the idea turns more into a daydream than something actually achievable. When you pitch your idea to the deputy, they shake their head and tell you it's too ambitious. Indeed, none of the apprentices seem interested in the elaborate game you spent all that time preparing.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     }
 ]
