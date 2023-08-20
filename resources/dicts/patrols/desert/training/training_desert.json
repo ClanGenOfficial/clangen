@@ -1,656 +1,1210 @@
 [
     {
         "patrol_id": "dst_train_session1",
-        "biome": "desert",
-        "tags": [
-            "apprentice",
-            "training",
-            "injury"
-        ],
+        "biome": ["desert"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "The patrol wants to hold a training session for r_c.  They decide to focus on how best to use gusts of sand or dust to blind prey to your attacks.",
         "decline_text": "They decide to focus on the patrolling the territory instead, training can wait for another day.",
         "chance_of_success": 50,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "r_c listens carefully as the p_l explains how to spot a gust of wind approaching and how to use the noise and stinging sand to your advantage.",
-            "unscathed_rare": "r_c picks up the instruction quickly and the patrol soon plays a small game, freezing and only moving to tag each other during wind gusts, to test the apprentice's abilities.",
-            "stat_trait": "By the end of the patrol s_c is able to move steadily with the wind and sand, their movements sure and confident"
-        },
-        "fail_text": {
-            "unscathed_common": "r_c tries to learn to track the wind gusts, but they can't quite manage to pick up the trick to it.",
-            "unscathed_stat": "s_c struggles to take the lesson seriously and eventually the training session ends early with no real progress made.",
-            "injury": "r_c makes their way into the sand dunes to try out the advice p_l has given them, but they open their eyes at exactly the wrong point in time and get a blast full of sand to the face!  Just like it can blind prey, the stinging sand wind can also bind yourself, a lesson that r_c has learnt the hard way."
-        },
-        "win_trait": [
-            "calm",
-            "careful",
-            "sneak",
-            "quiet",
-            "patient"
+        "success_outcomes": [
+            {
+                "text": "r_c listens carefully as the p_l explains how to spot a gust of wind approaching and how to use the noise and stinging sand to your advantage.",
+                "exp": 10,
+                "weight": 20
+            },
+            {
+                "text": "r_c picks up the instruction quickly and the patrol soon plays a small game, freezing and only moving to tag each other during wind gusts, to test the apprentice's abilities.",
+                "exp": 10,
+                "weight": 5
+            },
+            {
+                "text": "By the end of the patrol s_c is able to move steadily with the wind and sand, their movements sure and confident",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": ["calm", "careful", "sneak", "quiet", "patient"]
+            }
         ],
-        "fail_trait": [
-            "troublesome",
-            "playful",
-            "noisy"
-        ],
-        "min_cats": 2,
-        "max_cats": 6
+        "fail_outcomes": [
+            {
+                "text": "r_c tries to learn to track the wind gusts, but they can't quite manage to pick up the trick to it.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "s_c struggles to take the lesson seriously and eventually the training session ends early with no real progress made.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["troublesome", "playful", "noisy"]
+            }
+        ]
     },
     {
         "patrol_id": "dst_train_sett1",
-        "biome": "desert",
-        "season": "Any",
-        "tags": [
-            "death",
-            "scar",
-            "ONE",
-            "training"
-        ],
+        "biome": ["desert"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "r_c wanders past an old badger sett overlooking a dried up riverbed, only to freeze. There's new scent here, acrid and sour.",
         "decline_text": "Surely it must be nothing... uneasily, r_c continues on.",
         "chance_of_success": 40,
-        "exp": 30,
-        "success_text": {
-            "unscathed_common": "Feeling ever so alone on their solo patrol, r_c carefully sniffs around the mouth of the burrow, but the scent change is unmistakable - a new badger occupant has moved in. Creeping forward, belly flat in the dirt, they manage just enough of a glimpse to confirm the badger's presence before it moves and r_c shots backwards, sprinting back to camp to warn everyone.",
-            "unscathed_rare": "Feeling ever so alone on their solo patrol, r_c carefully sniffs around the mouth of the burrow, but after a few moments, realizes that the scent is relatively weak.  A badger was here, no doubt about it, but it doesn't seem to have taken up residence.  This will be important information to report back at camp.",
-            "stat_skill": "s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking their head in front of a predator. They search the scrubland around the sett thoroughly, and come up with fresh badger scat, stinky, horrible, and perfect proof of the new occupant of the sett.",
-            "stat_trait": "Carefully considering their options, r_c decides on stakeout, and watches from a shaded vantage point. When the badger pokes its head above ground at dusk, they're prepared, and dart off back to camp to warn everyone before the predator has blinked the sleep out of its eyes."
-        },
-        "fail_text": {
-            "unscathed_stat": "Well, the only way to know is to check! s_c scrambles into the den for a look, and it's only by the grace of StarClan that they're able to redirect that speed to twist around just as fast, furious fizzing following them up the burrow tunnel, leaving behind clumps of their own fur.",
-            "death": "r_c carefully approaches the burrow, trying to figure out if there's anything new inside. It's so dark, and it all smells the same, so they try to creep just a little closer - but the floor drops away steeply below their paws, and they lose their grip, skidding downwards into a disturbed and lethal badger.",
-            "injury": "While r_c is carefully sniffing at the burrow entrance, there's a soft pawstep on the dry ground behind them. It's difficult to say who's more surprised, r_c or the badger, and it charges towards the sett. r_c leaps out of the way, but its claws catch their pelt, and it's a bloodied cat that limps back into camp to report the whole sorry adventure."
-        },
-        "win_skills": [
-            "CLEVER,1"
+        "success_outcomes": [
+            {
+                "text": "Feeling ever so alone on their solo patrol, r_c carefully sniffs around the mouth of the burrow, but the scent change is unmistakable - a new badger occupant has moved in. Creeping forward, belly flat in the dirt, they manage just enough of a glimpse to confirm the badger's presence before it moves and r_c shots backwards, sprinting back to camp to warn everyone.",
+                "exp": 30,
+                "weight": 20
+            },
+            {
+                "text": "Feeling ever so alone on their solo patrol, r_c carefully sniffs around the mouth of the burrow, but after a few moments, realizes that the scent is relatively weak.  A badger was here, no doubt about it, but it doesn't seem to have taken up residence.  This will be important information to report back at camp.",
+                "exp": 30,
+                "weight": 5
+            },
+            {
+                "text": "s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking their head in front of a predator. They search the scrubland around the sett thoroughly, and come up with fresh badger scat, stinky, horrible, and perfect proof of the new occupant of the sett.",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["CLEVER,1"]
+            },
+            {
+                "text": "Carefully considering their options, r_c decides on stakeout, and watches from a shaded vantage point. When the badger pokes its head above ground at dusk, they're prepared, and dart off back to camp to warn everyone before the predator has blinked the sleep out of its eyes.",
+                "exp": 30,
+                "weight": 20,
+                "stat_trait": [
+                    "patient",
+                    "responsible",
+                    "thoughtful",
+                    "wise",
+                    "calm",
+                    "careful",
+                    "nervous",
+                    "sneaky",
+                    "strange"
+                ]
+            }
         ],
-        "win_trait": [
-            "patient",
-            "responsible",
-            "thoughtful",
-            "wise",
-            "calm",
-            "careful",
-            "nervous",
-            "sneaky",
-            "strange"
-        ],
-        "fail_trait": [
-            "adventurous",
-            "ambitious",
-            "bloodthirsty",
-            "bold",
-            "confident",
-            "daring",
-            "fierce",
-            "insecure",
-            "playful",
-            "shameless",
-            "troublesome",
-            "vengeful"
-        ],
-        "min_cats": 1,
-        "max_cats": 1,
-        "history_text": {
-            "scar": "m_c was scarred by a badger.",
-            "reg_death": "m_c lost their life to a badger."
-        }
+        "fail_outcomes": [
+            {
+                "text": "Well, the only way to know is to check! s_c scrambles into the den for a look, and it's only by the grace of StarClan that they're able to redirect that speed to twist around just as fast, furious fizzing following them up the burrow tunnel, leaving behind clumps of their own fur.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "ambitious",
+                    "bloodthirsty",
+                    "bold",
+                    "confident",
+                    "daring",
+                    "fierce",
+                    "insecure",
+                    "playful",
+                    "shameless",
+                    "troublesome",
+                    "vengeful"
+                ]
+            },
+            {
+                "text": "r_c carefully approaches the burrow, trying to figure out if there's anything new inside. It's so dark, and it all smells the same, so they try to creep just a little closer - but the floor drops away steeply below their paws, and they lose their grip, skidding downwards into a disturbed and lethal badger.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c was scarred by a badger.",
+                    "reg_death": "m_c lost their life to a badger."
+                }
+            }
+        ]
     },
     {
         "patrol_id": "dst_train_sett2",
-        "biome": "desert",
-        "season": "Any",
-        "tags": [
-            "death",
-            "scar",
-            "ONE",
-            "training"
-        ],
+        "biome": ["desert"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "p_l wanders past an old badger sett overlooking a dried up riverbed, only to freeze. There's new scent here, acrid and sour.",
         "decline_text": "Surely it must be nothing... uneasily, the patrol continues on.",
         "chance_of_success": 40,
-        "exp": 30,
-        "success_text": {
-            "unscathed_common": "Calling the rest of the patrol over, the cats discuss their next move. If a badger has moved in, they need to confirm it. Eventually p_l comes up with a plan, sweeping the ground in front of the sett entrance clean with their tails. The cats will be able to come back tomorrow, and see if anything has left tracks.",
-            "unscathed_rare": "This can't be left unknown. The patrol brainstorms ideas, until eventually they have a workable plan. p_l takes the most unpleasant job, carefully moving fallen cacti spikes and thorny scrubs, until the cats gingerly push them down the slope of the badger set. Outraged, pained fizzing confirms the new occupant.",
-            "stat_skill": "s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking their head in front of a predator. They lead the patrol on a search of the scrubland around the sett, and come up with fresh badger scat, stinky, horrible, and perfect proof of the new occupant.",
-            "stat_trait": "Carefully considering their options, s_c decides to set up a stakeout with the patrol. When the badger pokes its head above the ground at dusk, they're prepared, and everyone turns for home, fading through the grass before the predator has blinked the sleep out of its eyes."
-        },
-        "fail_text": {
-            "unscathed_common": "The cats try to clean the opening to the sett free of tracks, but the ground is slightly too damp and the dirt just ends up clumped oddly to their tails. Before they know it they're tired, thirsty, and going home with nothing to show for it.",
-            "unscathed_stat": "Well, the only way to know is to check! s_c scrambles into the den for a look, and it's only by the grace of StarClan that they're able to redirect that speed to twist around just as fast, furious fizzing following them up the burrow tunnel, leaving behind clumps of their own fur.",
-            "injury": "While the patrol are sniffing at the burrow entrance there's a rustle from the scrubland. It's difficult to say who's more surprised, cats or badger, and it charges towards the sett. There's a confused rush with paws and fur flying as the melee of creatures tries to sort itself out, and it ends with one badger returned to home and a couple of battered patrol members. In a couple moons, this'll probably be a funny story."
-        },
-        "win_skills": [
-            "CLEVER,1"
+        "success_outcomes": [
+            {
+                "text": "Calling the rest of the patrol over, the cats discuss their next move. If a badger has moved in, they need to confirm it. Eventually p_l comes up with a plan, sweeping the ground in front of the sett entrance clean with their tails. The cats will be able to come back tomorrow, and see if anything has left tracks.",
+                "exp": 30,
+                "weight": 20
+            },
+            {
+                "text": "This can't be left unknown. The patrol brainstorms ideas, until eventually they have a workable plan. p_l takes the most unpleasant job, carefully moving fallen cacti spikes and thorny scrubs, until the cats gingerly push them down the slope of the badger set. Outraged, pained fizzing confirms the new occupant.",
+                "exp": 30,
+                "weight": 5
+            },
+            {
+                "text": "s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking their head in front of a predator. They lead the patrol on a search of the scrubland around the sett, and come up with fresh badger scat, stinky, horrible, and perfect proof of the new occupant.",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["CLEVER,1"]
+            },
+            {
+                "text": "Carefully considering their options, s_c decides to set up a stakeout with the patrol. When the badger pokes its head above the ground at dusk, they're prepared, and everyone turns for home, fading through the grass before the predator has blinked the sleep out of its eyes.",
+                "exp": 30,
+                "weight": 20,
+                "stat_trait": [
+                    "patient",
+                    "responsible",
+                    "thoughtful",
+                    "wise",
+                    "calm",
+                    "careful",
+                    "nervous",
+                    "sneaky",
+                    "strange"
+                ]
+            }
         ],
-        "win_trait": [
-            "patient",
-            "responsible",
-            "thoughtful",
-            "wise",
-            "calm",
-            "careful",
-            "nervous",
-            "sneaky",
-            "strange"
-        ],
-        "fail_trait": [
-            "adventurous",
-            "ambitious",
-            "bloodthirsty",
-            "bold",
-            "confident",
-            "daring",
-            "fierce",
-            "insecure",
-            "playful",
-            "shameless",
-            "troublesome",
-            "vengeful"
-        ],
-        "min_cats": 2,
-        "max_cats": 6,
-        "history_text": {
-            "scar": "This cat was scarred by a badger."
-        }
+        "fail_outcomes": [
+            {
+                "text": "The cats try to clean the opening to the sett free of tracks, but the ground is slightly too damp and the dirt just ends up clumped oddly to their tails. Before they know it they're tired, thirsty, and going home with nothing to show for it.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "Well, the only way to know is to check! s_c scrambles into the den for a look, and it's only by the grace of StarClan that they're able to redirect that speed to twist around just as fast, furious fizzing following them up the burrow tunnel, leaving behind clumps of their own fur.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "ambitious",
+                    "bloodthirsty",
+                    "bold",
+                    "confident",
+                    "daring",
+                    "fierce",
+                    "insecure",
+                    "playful",
+                    "shameless",
+                    "troublesome",
+                    "vengeful"
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "dst_train_stuck1",
-        "biome": "desert",
-        "season": "Any",
-        "tags": [
-            "training",
-            "platonic",
-            "comfort",
-            "injury",
-            "death",
-            "scar",
-            "BRIDGE"
-        ],
+        "biome": ["desert"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "Up at the front of the patrol, p_l hears a quiet swish and startled yowling. Turning back, they spot r_c being swallowed by a collapsing sand dune.",
         "decline_text": "p_l runs back to camp to fetch help.",
         "chance_of_success": 50,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "p_l frees their Clanmate, and settles down to groom the sand from their pelt, everyone relieved to have gotten off so lightly.",
-            "unscathed_rare": "p_l digs through the sand, lifting it from r_c for long enough for the other cat to scramble free.",
-            "stat_skill": "Not letting themselves panic, s_c carefully assesses the collapsed dune trapping their Clanmate. They point out a stable path to dig them out from above, and r_c is recovered, scared but okay.",
-            "stat_trait": "Creeping in as close as possible, s_c purrs to their Clanmate, keeping them calm as the patrol carefully digs down to them."
-        },
-        "fail_text": {
-            "unscathed_common": "The patrol works all day to free their Clanmate and gets nothing else done.",
-            "unscathed_stat": "Harshly, s_c tells their Clanmate that they're on their own - this patrol is too important to wait for some idiot who got stuck.",
-            "death": "p_l works frantically, but r_c is under the sand for too long, and slips away as the patrol tries desperately to free them.",
-            "injury": "The patrol eventually manages to rescue r_c, but they need to be helped back to camp, wheezing and injured."
-        },
-        "win_skills": [
-            "CLEVER,2"
+        "success_outcomes": [
+            {
+                "text": "p_l frees their Clanmate, and settles down to groom the sand from their pelt, everyone relieved to have gotten off so lightly.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "p_l digs through the sand, lifting it from r_c for long enough for the other cat to scramble free.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Not letting themselves panic, s_c carefully assesses the collapsed dune trapping their Clanmate. They point out a stable path to dig them out from above, and r_c is recovered, scared but okay.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLEVER,2"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Creeping in as close as possible, s_c purrs to their Clanmate, keeping them calm as the patrol carefully digs down to them.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "altruistic",
+                    "compassionate",
+                    "empathetic",
+                    "faithful",
+                    "loving",
+                    "patient",
+                    "responsible",
+                    "thoughtful",
+                    "wise",
+                    "inquisitive"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "altruistic",
-            "compassionate",
-            "empathetic",
-            "faithful",
-            "loving",
-            "patient",
-            "responsible",
-            "thoughtful",
-            "wise",
-            "inquisitive"
-        ],
-        "fail_trait": [
-            "ambitious",
-            "bloodthirsty",
-            "cold",
-            "fierce",
-            "shameless",
-            "strict",
-            "troublesome",
-            "vengeful",
-            "bossy"
-        ],
-        "min_cats": 2,
-        "max_cats": 6,
-        "history_text": {
-            "scar": "m_c carries a scar from being trapped on patrol",
-            "reg_death": "m_c tragically died after being trapped on patrol."
-        }
+        "fail_outcomes": [
+            {
+                "text": "The patrol works all day to free their Clanmate and gets nothing else done.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Harshly, s_c tells their Clanmate that they're on their own - this patrol is too important to wait for some idiot who got stuck.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful",
+                    "bossy"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "p_l works frantically, but r_c is under the sand for too long, and slips away as the patrol tries desperately to free them.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c carries a scar from being trapped on patrol",
+                    "reg_death": "m_c tragically died after being trapped on patrol."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "dst_train_stuck2",
-        "biome": "desert",
-        "season": "Any",
-        "tags": [
-            "training",
-            "platonic",
-            "comfort",
-            "injury",
-            "death",
-            "scar",
-            "TOETRAP"
-        ],
+        "biome": ["desert"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "Trailing behind the patrol, there's a quiet swish below r_c. They look around wildly, just in time for the world to tip upside-down as the sand dune beneath them collapses.",
         "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
         "chance_of_success": 50,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "Their Clanmates come running at their yowls, and r_c is soon freed, shaken but unharmed. The patrol settles down as everyone comforts each other.",
-            "unscathed_rare": "p_l digs through the sand, lifting it from r_c for long enough for the other cat to scramble free.",
-            "stat_skill": "Not letting themselves panic, s_c carefully assesses the collapsed dune trapping their Clanmate. They point out a stable path to dig them out from above, and r_c is recovered, scared but okay.",
-            "stat_trait": "Creeping in as close as possible, s_c purrs to r_c, keeping them calm as the patrol carefully digs down to them. r_c blinks up at them, holding on to their presence in the scary situation."
-        },
-        "fail_text": {
-            "unscathed_common": "The patrol works all day to free r_c and gets nothing else done.",
-            "unscathed_stat": "Harshly, s_c tells r_c that they're on their own - this patrol is too important to wait for some idiot who got stuck.",
-            "death": "Hurt and wheezing, r_c hears the patrol panicking as they drift to StarClan.",
-            "injury": "The patrol eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured."
-        },
-        "win_skills": [
-            "CLEVER,2"
+        "success_outcomes": [
+            {
+                "text": "Their Clanmates come running at their yowls, and r_c is soon freed, shaken but unharmed. The patrol settles down as everyone comforts each other.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "p_l digs through the sand, lifting it from r_c for long enough for the other cat to scramble free.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Not letting themselves panic, s_c carefully assesses the collapsed dune trapping their Clanmate. They point out a stable path to dig them out from above, and r_c is recovered, scared but okay.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLEVER,2"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Creeping in as close as possible, s_c purrs to r_c, keeping them calm as the patrol carefully digs down to them. r_c blinks up at them, holding on to their presence in the scary situation.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "altruistic",
+                    "compassionate",
+                    "empathetic",
+                    "faithful",
+                    "loving",
+                    "patient",
+                    "responsible",
+                    "thoughtful",
+                    "wise",
+                    "inquisitive"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "altruistic",
-            "compassionate",
-            "empathetic",
-            "faithful",
-            "loving",
-            "patient",
-            "responsible",
-            "thoughtful",
-            "wise",
-            "inquisitive"
-        ],
-        "fail_trait": [
-            "ambitious",
-            "bloodthirsty",
-            "cold",
-            "fierce",
-            "shameless",
-            "strict",
-            "troublesome",
-            "vengeful",
-            "bossy"
-        ],
-        "min_cats": 2,
-        "max_cats": 6,
-        "history_text": {
-            "scar": "m_c carries a scar from being trapped on patrol",
-            "reg_death": "m_c tragically died after being trapped on patrol."
-        }
+        "fail_outcomes": [
+            {
+                "text": "The patrol works all day to free r_c and gets nothing else done.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Harshly, s_c tells r_c that they're on their own - this patrol is too important to wait for some idiot who got stuck.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful",
+                    "bossy"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Hurt and wheezing, r_c hears the patrol panicking as they drift to StarClan.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c carries a scar from being trapped on patrol",
+                    "reg_death": "m_c tragically died after being trapped on patrol."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "dst_train_stuck3",
-        "biome": "desert",
-        "season": "Any",
-        "tags": [
-            "training",
-            "injury",
-            "death",
-            "scar",
-            "RIGHTEAR"
-        ],
+        "biome": ["desert"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "Out in the desert training alone, r_c hears a quiet swoosh, and the world disappears as they fall into a collapsing sand dune.",
         "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
         "chance_of_success": 50,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "r_c spends the entire day carefully working their way free of the repeatedly collapsing dune, and gets nothing else done.",
-            "unscathed_rare": "r_c can see light through the sand, and desperately claws their way up to it, emerging back into the world above with a new nightmare to take home with them."
-        },
-        "fail_text": {
-            "unscathed_common": "r_c yowls until their voice is hoarse and croaky, and it takes hours before any of their Clanmates pass by to hear them, but eventually they're freed.",
-            "death": "Hurt and wheezing, r_c is alone as they drift to StarClan.",
-            "injury": "r_c eventually manages to pull themselves free, but they're battered and injured, and have to spend the night out alone on the beach before a patrol finds them the next morning and helps them back to camp."
-        },
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c carries a scar from being trapped on patrol",
-            "reg_death": "m_c tragically died after being trapped on patrol."
-        }
+        "success_outcomes": [
+            {
+                "text": "r_c spends the entire day carefully working their way free of the repeatedly collapsing dune, and gets nothing else done.",
+                "exp": 20,
+                "weight": 20
+            },
+            {
+                "text": "r_c can see light through the sand, and desperately claws their way up to it, emerging back into the world above with a new nightmare to take home with them.",
+                "exp": 20,
+                "weight": 5
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c yowls until their voice is hoarse and croaky, and it takes hours before any of their Clanmates pass by to hear them, but eventually they're freed.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "Hurt and wheezing, r_c is alone as they drift to StarClan.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c carries a scar from being trapped on patrol",
+                    "reg_death": "m_c tragically died after being trapped on patrol."
+                }
+            }
+        ]
     },
     {
         "patrol_id": "dst_train_soloapp1",
-        "biome": "desert",
-        "season": "Any",
-        "tags": [
-            "training",
-            "apprentice",
-            "injury",
-            "scar",
-            "SIDE"
-        ],
+        "biome": ["desert"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "r_c heads out into the desert alone, but maybe an apprentice shouldn't try to do a solo patrol.",
         "decline_text": "r_c turns back to camp, deciding that this is a bad idea.",
         "chance_of_success": 30,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "At least this is a good chance to learn the territory! r_c heads off to map out the paths through a rocky maze they've always found confusing.",
-            "unscathed_rare": "r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow!",
-            "stat_trait": "There's nothing to worry about! s_c pads confidently through c_n territory, assured in their safety by the strength of c_n borders."
-        },
-        "fail_text": {
-            "unscathed_common": "r_c gets lost in the territory and doesn't learn anything.",
-            "unscathed_stat": "s_c shivers a little, imagining what could be out there... no, definitely not. They turn around and go straight back to camp.",
-            "injury": "The apprentice wanders along obliviously, and manages to wedge themselves between two rocks. Bruised and sore, r_c has to report to the medicine cat den when they return to camp."
-        },
-        "win_trait": [
-            "adventurous",
-            "bold",
-            "charismatic",
-            "childish",
-            "confident",
-            "daring",
-            "playful",
-            "righteous"
+        "success_outcomes": [
+            {
+                "text": "At least this is a good chance to learn the territory! r_c heads off to map out the paths through a rocky maze they've always found confusing.",
+                "exp": 20,
+                "weight": 20
+            },
+            {
+                "text": "r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow!",
+                "exp": 20,
+                "weight": 5
+            },
+            {
+                "text": "There's nothing to worry about! s_c pads confidently through c_n territory, assured in their safety by the strength of c_n borders.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ]
+            }
         ],
-        "fail_trait": [
-            "insecure",
-            "lonesome",
-            "nervous"
-        ],
-        "min_cats": 1,
-        "max_cats": 1,
-        "history_text": {
-            "scar": "m_c got injured as an apprentice, exploring alone."
-        }
+        "fail_outcomes": [
+            {
+                "text": "r_c gets lost in the territory and doesn't learn anything.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "s_c shivers a little, imagining what could be out there... no, definitely not. They turn around and go straight back to camp.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["insecure", "lonesome", "nervous"]
+            }
+        ]
     },
     {
         "patrol_id": "dst_train_solo2",
-        "biome": "desert",
-        "season": "Any",
-        "tags": [
-            "training"
-        ],
+        "biome": ["desert"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "r_c heads out into the desert alone, wanting to explore and have some time to themselves.",
         "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
         "chance_of_success": 30,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "r_c heads off to map out the paths through a rocky maze they've always found confusing. Hunting, fighting, driving off predators, it all requires knowledge of their home turf, it's always worth making sure their mental map is up to date.",
-            "unscathed_rare": "r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow!",
-            "stat_skill": "r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Further investigation shows it's springfed, and s_c purrs. This reliable water source will be important during baking hot greenleaf.",
-            "stat_trait": "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way."
-        },
-        "fail_text": {
-            "unscathed_common": "r_c gets lost in the territory. Somehow.",
-            "unscathed_stat": "s_c shivers a little, thinking of the dangers of solo patrols... no, definitely not. They turn around and go straight back to camp."
-        },
-        "win_skills": [
-            "CLEVER,1"
+        "success_outcomes": [
+            {
+                "text": "r_c heads off to map out the paths through a rocky maze they've always found confusing. Hunting, fighting, driving off predators, it all requires knowledge of their home turf, it's always worth making sure their mental map is up to date.",
+                "exp": 20,
+                "weight": 20
+            },
+            {
+                "text": "r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow!",
+                "exp": 20,
+                "weight": 5
+            },
+            {
+                "text": "r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Further investigation shows it's springfed, and s_c purrs. This reliable water source will be important during baking hot greenleaf.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLEVER,1"]
+            },
+            {
+                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ]
+            }
         ],
-        "win_trait": [
-            "adventurous",
-            "bold",
-            "charismatic",
-            "childish",
-            "confident",
-            "daring",
-            "playful",
-            "righteous"
-        ],
-        "fail_trait": [
-            "insecure",
-            "lonesome",
-            "nervous"
-        ],
-        "min_cats": 1,
-        "max_cats": 1
+        "fail_outcomes": [
+            {
+                "text": "r_c gets lost in the territory. Somehow.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "s_c shivers a little, thinking of the dangers of solo patrols... no, definitely not. They turn around and go straight back to camp.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["insecure", "lonesome", "nervous"]
+            }
+        ]
     },
     {
         "patrol_id": "desert_train_solo3",
-        "biome": "desert",
-        "season": "Any",
-        "tags": [
-            "training",
-            "deputy"
-        ],
+        "biome": ["desert"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "deputy": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "r_c heads out into the desert alone, wanting to explore and have some time to themselves.",
         "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
         "chance_of_success": 30,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "r_c heads off to map out the paths through a rocky maze they've always found confusing. Hunting, fighting, driving off predators, it all requires knowledge of their home turf, it's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
-            "unscathed_rare": "r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Purring, they take the opportunity for a small moment of peace, relaxing and enjoying the view.",
-            "stat_skill": "r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Further investigation shows it's springfed, and s_c purrs. This reliable water source will be important during baking hot greenleaf, there's a relief to discovering it.",
-            "stat_trait": "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way."
-        },
-        "fail_text": {
-            "unscathed_common": "r_c gets lost in the territory. Somehow.",
-            "unscathed_stat": "s_c wavers in their decision. They have so much work to do, so many other things pulling on their time... no, definitely not. They turn around and go straight back to camp."
-        },
-        "win_skills": [
-            "CLEVER,1"
+        "success_outcomes": [
+            {
+                "text": "r_c heads off to map out the paths through a rocky maze they've always found confusing. Hunting, fighting, driving off predators, it all requires knowledge of their home turf, it's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
+                "exp": 20,
+                "weight": 20
+            },
+            {
+                "text": "r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Purring, they take the opportunity for a small moment of peace, relaxing and enjoying the view.",
+                "exp": 20,
+                "weight": 5
+            },
+            {
+                "text": "r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Further investigation shows it's springfed, and s_c purrs. This reliable water source will be important during baking hot greenleaf, there's a relief to discovering it.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLEVER,1"]
+            },
+            {
+                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ]
+            }
         ],
-        "win_trait": [
-            "adventurous",
-            "bold",
-            "charismatic",
-            "childish",
-            "confident",
-            "daring",
-            "playful",
-            "righteous"
-        ],
-        "fail_trait": [
-            "insecure",
-            "lonesome",
-            "nervous"
-        ],
-        "min_cats": 1,
-        "max_cats": 1
+        "fail_outcomes": [
+            {
+                "text": "r_c gets lost in the territory. Somehow.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "s_c wavers in their decision. They have so much work to do, so many other things pulling on their time... no, definitely not. They turn around and go straight back to camp.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["insecure", "lonesome", "nervous"]
+            }
+        ]
     },
     {
         "patrol_id": "dst_train_solo4",
-        "biome": "desert",
-        "season": "Any",
-        "tags": [
-            "training",
-            "leader"
-        ],
+        "biome": ["desert"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "leader": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "r_c heads out into the desert alone, wanting to explore and have some time to themselves.",
         "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
         "chance_of_success": 30,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "r_c heads off to map out the paths through a rocky maze they've always found confusing. Hunting, fighting, driving off predators, it all requires knowledge of their home turf, it's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
-            "unscathed_rare": "r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Purring, they take the opportunity for a small moment of peace, relaxing and enjoying the view.",
-            "stat_skill": "r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Further investigation shows it's springfed, and s_c purrs. This reliable water source will be important during baking hot greenleaf, there's a relief to discovering it.",
-            "stat_trait": "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way."
-        },
-        "fail_text": {
-            "unscathed_common": "r_c gets lost in the territory. Somehow.",
-            "unscathed_stat": "s_c wavers in their decision. They have so much work to do, so many other things pulling on their time... no, definitely not. They turn around and go straight back to camp."
-        },
-        "win_skills": [
-            "CLEVER,1"
+        "success_outcomes": [
+            {
+                "text": "r_c heads off to map out the paths through a rocky maze they've always found confusing. Hunting, fighting, driving off predators, it all requires knowledge of their home turf, it's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
+                "exp": 20,
+                "weight": 20
+            },
+            {
+                "text": "r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Purring, they take the opportunity for a small moment of peace, relaxing and enjoying the view.",
+                "exp": 20,
+                "weight": 5
+            },
+            {
+                "text": "r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Further investigation shows it's springfed, and s_c purrs. This reliable water source will be important during baking hot greenleaf, there's a relief to discovering it.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLEVER,1"]
+            },
+            {
+                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ]
+            }
         ],
-        "win_trait": [
-            "adventurous",
-            "bold",
-            "charismatic",
-            "childish",
-            "confident",
-            "daring",
-            "playful",
-            "righteous"
-        ],
-        "fail_trait": [
-            "insecure",
-            "lonesome",
-            "nervous"
-        ],
-        "min_cats": 1,
-        "max_cats": 1
+        "fail_outcomes": [
+            {
+                "text": "r_c gets lost in the territory. Somehow.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "s_c wavers in their decision. They have so much work to do, so many other things pulling on their time... no, definitely not. They turn around and go straight back to camp.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["insecure", "lonesome", "nervous"]
+            }
+        ]
     },
     {
         "patrol_id": "dst_train_oasisswim1",
-        "biome": "desert",
-        "season": "Any",
-        "tags": [
-            "training",
-            "apprentice",
-            "two_apprentices",
-            "rel_two_apps",
-            "romantic",
-            "platonic",
-            "comfort"
-        ],
+        "biome": ["desert"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": ["rom_two_apps", "romantic"],
+        "patrol_art": "train_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [2, 2]
+        },
+        "weight": 20,
         "intro_text": "app1 runs along in the heat of the desert day, cajoling app2, who's really not keen on this sudden adventure at an unreasonably hot hour.",
         "decline_text": "The apprentices are called back to camp to kitsit.",
         "chance_of_success": 70,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "Rounding a bends in the rocky path, app1 ducks under a thron tree, and through a gap between two rock pillars, and app2 emerges into the alcove beyond with a gasp. A little hidden pool lies perfectly still and quiet in the shade, and both apprentices leap into the water with exclamations of relief.",
-            "unscathed_rare": "When app1 shows app2 the hidden pool they've found, app2 can barely believe it! They spent the hot midday playing in the water, splashing and play-fighting and having the time of their lives!",
-            "stat_trait": "When s_c shows app2 the hidden pool they've found, app2 can barely believe it! Stuttering but determined, s_c explains that they wondered if, possibly, maybe, app2 would like to go on a... date? app2 looks away with a purr and murmurs a soft yes to the ground, suddenly unable to make eye contact. They swim and bask in the sun together, quietly thrilled."
-        },
-        "fail_text": {
-            "unscathed_common": "app2 refuses to go any further from camp while it's so hot, and app1 gives up on their idea, disappointed they didn't get to spend time with app2.",
-            "unscathed_stat": "app2 stops them on the rocky path, and asks why app1 wanted to wander off into the wilderness so badly. app1 stutters out some nonsense about hunting, and then runs off into the desert."
-        },
-        "win_trait": [
-            "adventurous",
-            "bold",
-            "charismatic",
-            "childish",
-            "confident",
-            "daring",
-            "playful",
-            "righteous"
+        "success_outcomes": [
+            {
+                "text": "Rounding a bends in the rocky path, app1 ducks under a thron tree, and through a gap between two rock pillars, and app2 emerges into the alcove beyond with a gasp. A little hidden pool lies perfectly still and quiet in the shade, and both apprentices leap into the water with exclamations of relief.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "When app1 shows app2 the hidden pool they've found, app2 can barely believe it! They spent the hot midday playing in the water, splashing and play-fighting and having the time of their lives!",
+                "exp": 10,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "When s_c shows app2 the hidden pool they've found, app2 can barely believe it! Stuttering but determined, s_c explains that they wondered if, possibly, maybe, app2 would like to go on a... date? app2 looks away with a purr and murmurs a soft yes to the ground, suddenly unable to make eye contact. They swim and bask in the sun together, quietly thrilled.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "app2 refuses to go any further from camp while it's so hot, and app1 gives up on their idea, disappointed they didn't get to spend time with app2.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "app2 stops them on the rocky path, and asks why app1 wanted to wander off into the wilderness so badly. app1 stutters out some nonsense about hunting, and then runs off into the desert.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "dst_train_glowingscorpians1",
-        "biome": "desert",
-        "season": "Any",
-        "tags": [
-            "training",
-            "apprentice",
-            "two_apprentices",
-            "rel_two_apps",
-            "romantic",
-            "platonic",
-            "comfort"
-        ],
+        "biome": ["desert"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": ["rom_two_apps", "romantic"],
+        "patrol_art": "train_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [2, 2]
+        },
+        "weight": 20,
         "intro_text": "Fluffed up against the cold, app1 and app2 walk to a outlook overlooking the sandy scrubland.",
         "decline_text": "Oh no! They both forgot that they were on elder nest change duty this evening!",
         "chance_of_success": 70,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "Watching the glowing dots scurrying around on the sand, bluer than blue, app1 purrs, telling app2 this is what they wanted to show them. app2 can't believe that scorpions glow in the dark, how cool! They watch them together, chatting about the weird insects and having a great time.",
-            "unscathed_rare": "With the full moon and the spread of stars in the night sky being mirrored by the glowing scorpions scurrying around on the ground, app2 realises that this is all very romantic. Excited, they put their paw over app1's, and both of them blush hard enough to see through their fur.",
-            "stat_trait": "When s_c shows app2 the glowing scorpions, app2 can barely believe it! Stuttering but determined, s_c explains that they wondered if, possibly, maybe, app2 would like to go on a... date? app2 looks away with a purr and murmurs a soft yes to the ground, suddenly unable to make eye contact. They swim and bask in the sun together, quietly thrilled."
-        },
-        "fail_text": {
-            "unscathed_common": "Watching the glowing dots scurrying around on the sand, bluer than blue, app1 purrs, telling app2 this is what they wanted to show them. app2 looks horrified - scorpions? They don't care that the bugs glow, ewww!",
-            "unscathed_stat": "app2 stops them on the outlook, and asks why app1 wanted to wander off into the wilderness so badly. app1 stutters out some nonsense about hunting, and then runs off into the desert."
-        },
-        "win_trait": [
-            "adventurous",
-            "bold",
-            "charismatic",
-            "childish",
-            "confident",
-            "daring",
-            "playful",
-            "righteous"
+        "success_outcomes": [
+            {
+                "text": "Watching the glowing dots scurrying around on the sand, bluer than blue, app1 purrs, telling app2 this is what they wanted to show them. app2 can't believe that scorpions glow in the dark, how cool! They watch them together, chatting about the weird insects and having a great time.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "With the full moon and the spread of stars in the night sky being mirrored by the glowing scorpions scurrying around on the ground, app2 realises that this is all very romantic. Excited, they put their paw over app1's, and both of them blush hard enough to see through their fur.",
+                "exp": 10,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "When s_c shows app2 the glowing scorpions, app2 can barely believe it! Stuttering but determined, s_c explains that they wondered if, possibly, maybe, app2 would like to go on a... date? app2 looks away with a purr and murmurs a soft yes to the ground, suddenly unable to make eye contact. They swim and bask in the sun together, quietly thrilled.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "Watching the glowing dots scurrying around on the sand, bluer than blue, app1 purrs, telling app2 this is what they wanted to show them. app2 looks horrified - scorpions? They don't care that the bugs glow, ewww!",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "app2 stops them on the outlook, and asks why app1 wanted to wander off into the wilderness so badly. app1 stutters out some nonsense about hunting, and then runs off into the desert.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "dst_train_throwsand1",
-        "biome": "desert",
-        "season": "Any",
-        "tags": [
-            "training",
-            "apprentice",
-            "two_apprentices",
-            "rel_two_apps",
-            "romantic",
-            "platonic",
-            "comfort"
-        ],
+        "biome": ["desert"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": ["rom_two_apps", "romantic"],
+        "patrol_art": "train_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [2, 2]
+        },
+        "weight": 20,
         "intro_text": "Playing near the camp at sunset, app1 scuffs their paw over the ground, throwing a pawful of sand at app2.",
         "decline_text": "Oh no! They both forgot that they were on elder nest change duty this evening!",
         "chance_of_success": 70,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "Watching the glowing dots scurrying around on the sand, bluer than blue, app1 purrs, telling app2 this is what they wanted to show them. app2 can't believe that scorpions glow in the dark, how cool! They watch them together, chatting about the weird insects and having a great time.",
-            "unscathed_rare": "With the full moon and the spread of stars in the night sky being mirrored by the glowing scorpions scurrying around on the ground, app2 realises that this is all very romantic. Excited, they put their paw over app1's, and both of them blush hard enough to see through their fur.",
-            "stat_trait": "When s_c shows app2 the glowing scorpions, app2 can barely believe it! Stuttering but determined, s_c explains that they wondered if, possibly, maybe, app2 would like to go on a... date? app2 looks away with a purr and murmurs a soft yes to the ground, suddenly unable to make eye contact. They swim and bask in the sun together, quietly thrilled."
-        },
-        "fail_text": {
-            "unscathed_common": "Watching the glowing dots scurrying around on the sand, bluer than blue, app1 purrs, telling app2 this is what they wanted to show them. app2 looks horrified - scorpions? They don't care that the bugs glow, ewww!",
-            "unscathed_stat": "app2 stops them on the outlook, and asks why app1 wanted to wander off into the wilderness so badly. app1 stutters out some nonsense about hunting, and then runs off into the desert."
-        },
-        "win_trait": [
-            "adventurous",
-            "bold",
-            "charismatic",
-            "childish",
-            "confident",
-            "daring",
-            "playful",
-            "righteous"
+        "success_outcomes": [
+            {
+                "text": "Watching the glowing dots scurrying around on the sand, bluer than blue, app1 purrs, telling app2 this is what they wanted to show them. app2 can't believe that scorpions glow in the dark, how cool! They watch them together, chatting about the weird insects and having a great time.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "With the full moon and the spread of stars in the night sky being mirrored by the glowing scorpions scurrying around on the ground, app2 realises that this is all very romantic. Excited, they put their paw over app1's, and both of them blush hard enough to see through their fur.",
+                "exp": 10,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "When s_c shows app2 the glowing scorpions, app2 can barely believe it! Stuttering but determined, s_c explains that they wondered if, possibly, maybe, app2 would like to go on a... date? app2 looks away with a purr and murmurs a soft yes to the ground, suddenly unable to make eye contact. They swim and bask in the sun together, quietly thrilled.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "Watching the glowing dots scurrying around on the sand, bluer than blue, app1 purrs, telling app2 this is what they wanted to show them. app2 looks horrified - scorpions? They don't care that the bugs glow, ewww!",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "app2 stops them on the outlook, and asks why app1 wanted to wander off into the wilderness so badly. app1 stutters out some nonsense about hunting, and then runs off into the desert.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "dst_train_sunset1",
-        "biome": "desert",
-        "season": "Any",
-        "tags": [
-            "training",
-            "warrior",
-            "romantic",
-            "platonic",
-            "comfort",
-            "no_app"
-        ],
+        "biome": ["desert"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": ["romantic"],
+        "patrol_art": "train_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "all apprentices": [-1, -1],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "p_l approaches r_c, asking if they wouldn't mind showing p_l their hunting techniques, and perhaps doing some training with them?",
         "decline_text": "r_c declines gently, explaining that they have too much work to do.",
         "chance_of_success": 50,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "The cats go out together in the late of the day, as the temperature drops to it's best, cool but not cold. r_c goes through their tricks, showing p_l how they use the low slanted light to make tracks more obvious, as p_l watches with eyes that r_c notices are a bit too admiring for what's just a little trick. They smirk, showing off a little.",
-            "unscathed_rare": "it's a long but satisfying training session, with both cats having an in depth chance to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching them instead of the sun, and smiles.",
-            "stat_skill": "s_c is a fantastic hunter, and p_l isn't shy about telling them so. They blush, but work through it, showing p_l how to use the a sand scrape to blend into the horizon so that prey won't see their silhouette.",
-            "stat_trait": "p_l marvels at the opportunity to have s_c's time to themselves. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so."
-        },
-        "fail_text": {
-            "unscathed_common": "r_c tries, but both the cats are too tired after a long day's work, and end up snapping at each other. It's nothing serious, but both agree to take some time to cool off.",
-            "unscathed_stat": "r_c spots p_l looking at them a little bit too admiringly, and ends the training session early, diplomatically making up an excuse."
-        },
-        "win_skills": [
-            "HUNTER,3"
+        "success_outcomes": [
+            {
+                "text": "The cats go out together in the late of the day, as the temperature drops to it's best, cool but not cold. r_c goes through their tricks, showing p_l how they use the low slanted light to make tracks more obvious, as p_l watches with eyes that r_c notices are a bit too admiring for what's just a little trick. They smirk, showing off a little.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "it's a long but satisfying training session, with both cats having an in depth chance to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching them instead of the sun, and smiles.",
+                "exp": 10,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c is a fantastic hunter, and p_l isn't shy about telling them so. They blush, but work through it, showing p_l how to use the a sand scrape to blend into the horizon so that prey won't see their silhouette.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["HUNTER,3"],
+                "can_have_stat": ["r_c"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "p_l marvels at the opportunity to have s_c's time to themselves. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ],
+                "can_have_stat": ["r_c"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "adventurous",
-            "bold",
-            "charismatic",
-            "childish",
-            "confident",
-            "daring",
-            "playful",
-            "righteous"
-        ],
-        "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "r_c tries, but both the cats are too tired after a long day's work, and end up snapping at each other. It's nothing serious, but both agree to take some time to cool off.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "r_c spots p_l looking at them a little bit too admiringly, and ends the training session early, diplomatically making up an excuse.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     }
 ]

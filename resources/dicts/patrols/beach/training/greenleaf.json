@@ -1,35 +1,81 @@
 [
     {
         "patrol_id": "bch_train_romantic_oceanswim1",
-        "biome": "beach",
-        "season": "greenleaf",
-        "tags": [
-            "training",
-            "warrior",
-            "no_app",
-            "romantic"
-        ],
+        "biome": ["beach"],
+        "season": ["greenleaf"],
+        "types": ["training"],
+        "tags": ["romantic"],
+        "patrol_art": "train_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "all apprentices": [-1, -1],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "p_l suggests to r_c that it is the perfect weather to go for a swim in the ocean together.",
         "decline_text": "r_c isn't convinced, and suggests they should probably focus on the patrol instead.",
         "chance_of_success": 60,
-        "exp": 5,
-        "success_text": {
-            "unscathed_common": "p_l flashes r_c a playful look and leaps smoothly into the water. When p_l emerges from the water, {PRONOUN/p_l/poss} slicked fur clinging to {PRONOUN/p_l/poss} muscles, r_c can't help but admire p_l for {PRONOUN/p_l/poss} strength. With the way r_c's heart is fluttering, it may not just be p_l's strength {PRONOUN/r_c/subject} {VERB/r_c/admire/admires}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/brush/brushes} it aside and plunge in after {PRONOUN/p_l/object}.",
-            "unscathed_rare": "Silence meets {PRONOUN/p_l/poss} question, and just as p_l is about to turn and ask again, r_c shoves {PRONOUN/p_l/object} bodily into the water. Spluttering from the cold saltwater, p_l finds it quite difficult to scowl as though {PRONOUN/p_l/subject} {VERB/p_l/mean/means} it, captivated by the sound of r_c's joyous laughter, the sunlight catching on {PRONOUN/r_c/poss} pelt in just the right way."
-        },
-        "fail_text": {
-            "unscathed_common": "r_c dips one paw in the water and hisses, proclaiming that it's much too cold and urging p_l to come back to camp with {PRONOUN/r_c/object} instead.",
-            "unscathed_stat": "s_c tries {PRONOUN/s_c/poss} best to show off {PRONOUN/s_c/poss} swimming skills, but {PRONOUN/s_c/poss} companion just isn't paying attention, too focused on {PRONOUN/r_c/poss} own swimming to notice. Eventually, s_c gives up for now, discouraged."
-        },
-        "fail_trait": [
-            "ambitious",
-            "childish",
-            "insecure",
-            "lonesome"
+        "success_outcomes": [
+            {
+                "text": "p_l flashes r_c a playful look and leaps smoothly into the water. When p_l emerges from the water, {PRONOUN/p_l/poss} slicked fur clinging to {PRONOUN/p_l/poss} muscles, r_c can't help but admire p_l for {PRONOUN/p_l/poss} strength. With the way r_c's heart is fluttering, it may not just be p_l's strength {PRONOUN/r_c/subject} {VERB/r_c/admire/admires}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/brush/brushes} it aside and plunge in after {PRONOUN/p_l/object}.",
+                "exp": 5,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romantic"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Silence meets {PRONOUN/p_l/poss} question, and just as p_l is about to turn and ask again, r_c shoves {PRONOUN/p_l/object} bodily into the water. Spluttering from the cold saltwater, p_l finds it quite difficult to scowl as though {PRONOUN/p_l/subject} {VERB/p_l/mean/means} it, captivated by the sound of r_c's joyous laughter, the sunlight catching on {PRONOUN/r_c/poss} pelt in just the right way.",
+                "exp": 5,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romantic"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "r_c dips one paw in the water and hisses, proclaiming that it's much too cold and urging p_l to come back to camp with {PRONOUN/r_c/object} instead.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romantic"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c tries {PRONOUN/s_c/poss} best to show off {PRONOUN/s_c/poss} swimming skills, but {PRONOUN/s_c/poss} companion just isn't paying attention, too focused on {PRONOUN/r_c/poss} own swimming to notice. Eventually, s_c gives up for now, discouraged.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["ambitious", "childish", "insecure", "lonesome"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romantic"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     }
 ]

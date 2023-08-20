@@ -86,7 +86,7 @@
 		"id": "admire_med_inc_med2",
 		"interactions": [
 			"m_c escorted r_c so {PRONOUN/r_c/subject} could gather herbs.",
-			"m_c thought of r_c on the last patrol and brought an herb back with {PRONOUN/m_c/poss}.",
+			"m_c thought of r_c on the last patrol and brought an herb back with {PRONOUN/m_c/object}.",
 			"m_c notices that r_c is trying really hard to be a great medicine cat.",
 			"m_c is suddenly struck by the thought of how much r_c does to keep the Clan healthy.",
 			"m_c thanks r_c for keeping the Clan healthy.",

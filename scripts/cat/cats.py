@@ -396,8 +396,6 @@ class Cat():
         body - defaults to True, use this to mark if the body was recovered so
         that grief messages will align with body status
 
-        died_by_condition - defaults to False, use this to mark if the cat is dying via a condition.
-
         May return some additional text to add to the death event.
         """
         self.injuries.clear()
@@ -569,10 +567,10 @@ class Cat():
             
                 grief_type = "minor"
                 
-                # These minor grief message will be applied as throughts. 
+                # These minor grief message will be applied as thoughts. 
                 minor_grief_messages = (
                             "Told a fond story at r_c's vigil",
-                            "Bargins with StarClan, begging them to send r_c back",
+                            "Bargains with StarClan, begging them to send r_c back",
                             "Sat all night at r_c's vigil",
                             "Will never forget r_c",
                             "Prays that r_c is safe in StarClan",

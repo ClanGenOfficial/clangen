@@ -17,9 +17,6 @@ from scripts.cat.pelts import Pelt
 import ujson
 import logging
 
-import datetime
-from enum import Enum
-
 logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache
 
@@ -214,20 +211,22 @@ def change_clan_relations(other_clan, difference):
 
 def create_new_cat(Cat,
                    Relationship,
-                   new_name=False,
-                   loner=False,
-                   kittypet=False,
-                   kit=False,
-                   litter=False,
-                   other_clan=None,
-                   backstory=None,
-                   status=None,
-                   age=None,
-                   gender=None,
-                   thought='Is looking around the camp with wonder',
-                   alive=True,
-                   outside=False
-	):
+                   new_name:bool=False,
+                   loner:bool=False,
+                   kittypet:bool=False,
+                   kit:bool=False,
+                   litter:bool=False,
+                   other_clan:bool=None,
+                   backstory:bool=None,
+                   status:str=None,
+                   age:int=None,
+                   gender:str=None,
+                   thought:str='Is looking around the camp with wonder',
+                   alive:bool=True,
+                   outside:bool=False,
+                   parent1:str=None,
+                   parent2:str=None
+	) -> list:
     """
     This function creates new cats and then returns a list of those cats
     :param Cat: pass the Cat class
@@ -237,7 +236,7 @@ def create_new_cat(Cat,
     :param kittypet: set True if cat(s) is a kittypet - default: False
     :param kit: set True if the cat is a lone kitten - default: False
     :param litter: set True if a litter of kittens needs to be generated - default: False
-    :param other_clan: if new cat(s) are from a neighboring clan, pass the name of their home Clan - default: None
+    :param other_clan: if new cat(s) are from a neighboring clan, set true
     :param backstory: a list of possible backstories.json for the new cat(s) - default: None
     :param status: set as the rank you want the new cat to have - default: None (will cause a random status to be picked)
     :param age: set the age of the new cat(s) - default: None (will be random or if kit/litter is true, will be kitten.
@@ -245,6 +244,8 @@ def create_new_cat(Cat,
     :param thought: if you need to give a custom "welcome" thought, set it here
     :param alive: set this as False to generate the cat as already dead - default: True (alive)
     :param outside: set this as True to generate the cat as an outsider instead of as part of the Clan - default: False (Clan cat)
+    :param parent1: Cat ID to set as the biological parent1
+    :param parent2: Cat ID object to set as the biological parert2
     """
     accessory = None
     if isinstance(backstory, list):
@@ -259,22 +260,25 @@ def create_new_cat(Cat,
     if not litter:
         number_of_cats = 1
     else:
-        number_of_cats = choices([2, 3, 4, 5], [5, 4, 1, 1], k=1)
-        number_of_cats = number_of_cats[0]
-    # setting age
-    if not age and age != 0:
-        if litter or kit:
+        number_of_cats = choices([2, 3, 4, 5], [5, 4, 1, 1], k=1)[0]
+    
+    
+    if not isinstance(age, int):
+        if status == "newborn":
+            age = 0
+        elif litter or kit:
             age = randint(0, 5)
-        elif status == 'apprentice':
+        elif status in ('apprentice', 'medicine cat apprentice', 'mediator apprentice'):
             age = randint(6, 11)
         elif status == 'warrior':
             age = randint(23, 120)
         elif status == 'medicine cat':
             age = randint(23, 140)
+        elif status == 'elder':
+            age = randint(120, 130)
         else:
             age = randint(6, 120)
-    else:
-        age = age
+    
     # setting status
     if not status:
         if age == 0:
@@ -285,6 +289,8 @@ def create_new_cat(Cat,
             status = "apprentice"
         elif age >= 12:
             status = "warrior"
+        elif age >= 120:
+            status = 'elder'
 
     # cat creation and naming time
     for index in range(number_of_cats):
@@ -299,7 +305,9 @@ def create_new_cat(Cat,
             new_cat = Cat(moons=age,
                           status=status,
                           gender=_gender,
-                          backstory=backstory)
+                          backstory=backstory,
+                          parent1=parent1,
+                          parent2=parent2)
         else:
             # grab starting names and accs for loners/kittypets
             if kittypet:
@@ -326,12 +334,16 @@ def create_new_cat(Cat,
                                   prefix=name,
                                   status=status,
                                   gender=_gender,
-                                  backstory=backstory)
+                                  backstory=backstory,
+                                  parent1=parent1,
+                                  parent2=parent2)
                 else:  # completely new name
                     new_cat = Cat(moons=age,
                                   status=status,
                                   gender=_gender,
-                                  backstory=backstory)
+                                  backstory=backstory,
+                                  parent1=parent1,
+                                  parent2=parent2)
             # these cats keep their old names
             else:
                 new_cat = Cat(moons=age,
@@ -339,7 +351,9 @@ def create_new_cat(Cat,
                               suffix="",
                               status=status,
                               gender=_gender,
-                              backstory=backstory)
+                              backstory=backstory,
+                              parent1=parent1,
+                              parent2=parent2)
 
         # give em a collar if they got one
         if accessory:
@@ -393,7 +407,7 @@ def create_new_cat(Cat,
         if outside:
             new_cat.outside = True
         if not alive:
-            new_cat.dead = True
+            new_cat.die()
 
         # newbie thought
         new_cat.thought = thought
@@ -442,7 +456,7 @@ def create_outside_cat(Cat, status, backstory, alive=True, thought=None):
     new_cat.outside = True
 
     if not alive:
-        new_cat.dead = True
+        new_cat.die()
 
     thought = "Wonders about those Clan cats they just met"
     new_cat.thought = thought
@@ -621,14 +635,15 @@ def get_amount_of_cats_with_relation_value_towards(cat, value, all_cats):
 
 def change_relationship_values(cats_to: list,
                                cats_from: list,
-                               romantic_love=0,
-                               platonic_like=0,
-                               dislike=0,
-                               admiration=0,
-                               comfortable=0,
-                               jealousy=0,
-                               trust=0,
-                               auto_romance=False
+                               romantic_love:int=0,
+                               platonic_like:int=0,
+                               dislike:int=0,
+                               admiration:int=0,
+                               comfortable:int=0,
+                               jealousy:int=0,
+                               trust:int=0,
+                               auto_romance:bool=False,
+                               log:str=None
                                ):
     """
     changes relationship values according to the parameters.
@@ -639,6 +654,7 @@ def change_relationship_values(cats_to: list,
     auto_romance - if this is set to False (which is the default) then if the cat_from already has romantic value
             with cat_to then the platonic_like param value will also be used for the romantic_love param
             if you don't want this to happen, then set auto_romance to False
+    log - string to add to relationship log. 
 
     use the relationship value params to indicate how much the values should change.
     
@@ -686,6 +702,9 @@ def change_relationship_values(cats_to: list,
                   " /Comfort: " + str(comfortable) +
                   " /Jealousy: " + str(jealousy) +
                   " /Trust: " + str(trust)) if changed else print("No relationship change")'''
+                  
+            if log and isinstance(log, str):
+                rel.log.append(log)
 
 
 # ---------------------------------------------------------------------------- #
@@ -895,6 +914,7 @@ def history_text_adjust(text,
         text = text.replace("r_c", str(other_cat_rc.name))
     return text
 
+
 def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
     """
     This function is for adjusting the text of ongoing events
@@ -1084,143 +1104,6 @@ def ceremony_text_adjust(Cat,
     adjust_text = process_text(adjust_text, cat_dict)
 
     return adjust_text, random_living_parent, random_dead_parent
-
-
-def adjust_patrol_text(text, patrol):
-    """
-    this adjusts the patrol text
-    :param text: this is the text that is being adjusted
-    :param patrol: this is the full patrol object
-    """
-
-    vowels = ['A', 'E', 'I', 'O', 'U']
-    if not text:
-        text = 'This should not appear, report as a bug please!'
-
-    replace_dict = {
-        "p_l": (str(patrol.patrol_leader.name), choice(patrol.patrol_leader.pronouns)),
-    }
-
-    if len(patrol.patrol_cats) > 1:
-        replace_dict["r_c"] = (str(patrol.patrol_random_cat.name),
-                               choice(patrol.patrol_random_cat.pronouns))
-    else:
-        replace_dict["r_c"] = (str(patrol.patrol_leader.name),
-                               choice(patrol.patrol_leader.pronouns))
-
-    other_cats = [i for i in patrol.patrol_cats if i not in [patrol.patrol_leader, patrol.patrol_random_cat]]
-    if len(other_cats) >= 1:
-        replace_dict['o_c1'] = (str(other_cats[0].name),
-                                choice(other_cats[0].pronouns))
-    if len(other_cats) >= 2:
-        replace_dict['o_c2'] = (str(other_cats[1].name),
-                                choice(other_cats[1].pronouns))
-    if len(other_cats) >= 3:
-        replace_dict['o_c3'] = (str(other_cats[2].name),
-                                choice(other_cats[2].pronouns))
-    if len(other_cats) == 4:
-        replace_dict['o_c4'] = (str(other_cats[3].name),
-                                choice(other_cats[3].pronouns))
-
-    if len(patrol.patrol_apprentices) > 0:
-        replace_dict["app1"] = (str(patrol.patrol_apprentices[0].name), choice(patrol.patrol_apprentices[0].pronouns))
-    if len(patrol.patrol_apprentices) > 1:
-        replace_dict["app2"] = (str(patrol.patrol_apprentices[1].name), choice(patrol.patrol_apprentices[1].pronouns))
-    if len(patrol.patrol_apprentices) > 2:
-        replace_dict["app3"] = (str(patrol.patrol_apprentices[2].name), choice(patrol.patrol_apprentices[2].pronouns))
-    if len(patrol.patrol_apprentices) > 3:
-        replace_dict["app4"] = (str(patrol.patrol_apprentices[3].name), choice(patrol.patrol_apprentices[3].pronouns))
-    if len(patrol.patrol_apprentices) > 4:
-        replace_dict["app5"] = (str(patrol.patrol_apprentices[4].name), choice(patrol.patrol_apprentices[4].pronouns))
-    if len(patrol.patrol_apprentices) > 5:
-        replace_dict["app6"] = (str(patrol.patrol_apprentices[5].name), choice(patrol.patrol_apprentices[5].pronouns))
-
-    stat_cat = None
-    if patrol.patrol_win_stat_cat:
-        stat_cat = patrol.patrol_win_stat_cat
-    elif patrol.patrol_fail_stat_cat:
-        stat_cat = patrol.patrol_fail_stat_cat
-    if stat_cat:
-        replace_dict['s_c'] = (str(stat_cat.name), choice(stat_cat.pronouns))
-    else:
-        replace_dict['s_c'] = (str(patrol.patrol_leader.name),
-                               choice(patrol.patrol_leader.pronouns))
-
-    text = process_text(text, replace_dict)
-    text = adjust_prey_abbr(text)
-
-    other_clan_name = patrol.other_clan.name
-    s = 0
-    for x in range(text.count('o_c_n')):
-        if 'o_c_n' in text:
-            for y in vowels:
-                if str(other_clan_name).startswith(y):
-                    modify = text.split()
-                    pos = 0
-                    if 'o_c_n' in modify:
-                        pos = modify.index('o_c_n')
-                    if "o_c_n's" in modify:
-                        pos = modify.index("o_c_n's")
-                    if 'o_c_n.' in modify:
-                        pos = modify.index('o_c_n.')
-                    if modify[pos - 1] == 'a':
-                        modify.remove('a')
-                        modify.insert(pos - 1, 'an')
-                    text = " ".join(modify)
-                    break
-
-    text = text.replace('o_c_n', str(other_clan_name) + 'Clan')
-
-    clan_name = game.clan.name
-    s = 0
-    pos = 0
-    for x in range(text.count('c_n')):
-        if 'c_n' in text:
-            for y in vowels:
-                if str(clan_name).startswith(y):
-                    modify = text.split()
-                    if 'c_n' in modify:
-                        pos = modify.index('c_n')
-                    if "c_n's" in modify:
-                        pos = modify.index("c_n's")
-                    if 'c_n.' in modify:
-                        pos = modify.index('c_n.')
-                    if modify[pos - 1] == 'a':
-                        modify.remove('a')
-                        modify.insert(pos - 1, 'an')
-                    text = " ".join(modify)
-                    break
-
-    text = text.replace('c_n', str(game.clan.name) + 'Clan')
-
-    # Prey lists for forest random prey patrols
-    fst_tinyprey_singlular = ['shrew', 'robin', 'vole', 'dormouse', 'blackbird',
-                              'wood mouse', 'lizard', 'tiny grass snake', 'finch', 'sparrow',
-                              'small bird', 'young rat', 'young hedgehog', 'big beetle', 'woodrat',
-                              'white-footed mouse', 'golden mouse', 'young squirrel', 'chipmunk', ]
-    text = text.replace('f_tp_s', str(fst_tinyprey_singlular))
-
-    fst_tinyprey_plural = ['mice', 'mice', 'mice', 'shrews', 'robins', 'voles', 'mice', 'blackbirds',
-                           'mice', 'mice', 'lizards', 'small birds', 'small birds', 'sparrows',
-                           'sleepy dormice', 'chipmunks', 'woodrats', ]
-    text = text.replace('f_tp_p', str(fst_tinyprey_plural))
-
-    fst_midprey_singlular = ['plump shrew', 'woodpecker', 'mole', 'fat dormouse', 'blackbird',
-                             'field vole', 'big lizard', 'grass snake', 'half-grown rabbit', 'hedgehog',
-                             'red squirrel', 'gray squirrel', 'rat', 'flying squirrel', 'kingfisher', ]
-    text = text.replace('f_mp_s', str(fst_midprey_singlular))
-
-    fst_midprey_plural = ['plump shrews', 'woodpeckers', 'moles', 'blackbirds',
-                          'field voles', 'big lizards', 'grass snakes', 'half-grown rabbits', 'hedgehogs',
-                          'red squirrels', 'gray squirrels', 'rats', ]
-    text = text.replace('f_mp_p', str(fst_midprey_plural))
-
-    text, senses, list_type = find_special_list_types(text)
-    if list_type:
-        sign_list = get_special_snippet_list(list_type, amount=randint(1, 3), sense_groups=senses)
-        text = text.replace(list_type, str(sign_list))
-
-    return text
 
 
 def shorten_text_to_fit(name, length_limit, font_size=None, font_type="resources/fonts/NotoSans-Medium.ttf"):
@@ -1479,40 +1362,6 @@ def apply_opacity(surface, opacity):
             pixel[3] = int(pixel[3] * opacity / 100)
             surface.set_at((x, y), tuple(pixel))
     return surface
-
-
-# ---------------------------------------------------------------------------- #
-#                                Fun Date Stuff                                #
-# ---------------------------------------------------------------------------- #
-
-class SpecialDate(Enum):
-    """
-    Enum keeping track of registered 'special dates'. Format is (mm, dd).
-    """
-    APRIL_FOOLS = (4, 1)
-    HALLOWEEN = (10, 31)
-    NEW_YEARS = (1, 1)
-
-
-def is_today(date: SpecialDate) -> bool:
-    """
-    Checks if today is a specified 'special date'.
-    """
-    today = datetime.date.today()
-    return (today.month, today.day) == date.value
-
-
-def get_special_date() -> SpecialDate:
-    """
-    If today is a 'special date', return the SpecialDate. 
-
-    Otherwise, return None.
-    """
-    today = datetime.date.today()
-    for date in SpecialDate:
-        if (today.month, today.day) == date.value:
-            return date
-    return None
 
 
 # ---------------------------------------------------------------------------- #

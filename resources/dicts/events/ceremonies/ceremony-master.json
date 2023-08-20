@@ -1653,7 +1653,7 @@
       "cunning",
       "rebellious"
     ],
-    "(old_name) is so sure of {PRONOUN/m_c/poss} skill as medicine cat that {PRONOUN/m_c/subject} {VERB/m_c/ask/asks} to choose {PRONOUN/m_c/subject} own name. While it may not be traditional, no one can think of a better fitting name for {PRONOUN/m_c/object} then the one {PRONOUN/m_c/subject} chose {PRONOUN/m_c/self}, and welcome m_c warmly as a full medicine cat."
+    "(old_name) is so sure of {PRONOUN/m_c/poss} skill as medicine cat that {PRONOUN/m_c/subject} {VERB/m_c/ask/asks} to choose {PRONOUN/m_c/poss} own name. While it may not be traditional, no one can think of a better fitting name for {PRONOUN/m_c/object} than the one {PRONOUN/m_c/subject} chose {PRONOUN/m_c/self}, and welcome m_c warmly as a full medicine cat."
   ],
   "med_23": [
     [
@@ -1728,7 +1728,7 @@
       "insecure",
       "gloomy"
     ],
-    "While the rest of the Clan may not understand it (old_name) enjoys {PRONOUN/m_c/poss} time alone in the medicine den. In fact, now {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} m_c, {PRONOUN/m_c/subject} can't wait to get back to it, and away from the center of attention."
+    "While the rest of the Clan may not understand it (old_name) enjoys {PRONOUN/m_c/poss} time alone in the medicine den. In fact, now that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} m_c, {PRONOUN/m_c/subject} can't wait to get back to it, and away from the center of attention."
   ],
   "med_29": [
     [
@@ -1752,7 +1752,7 @@
       "general_backstory",
       "loyal"
     ],
-    "c_n has raised and cared for (old_name), and (old_name) wants nothing more but to do the same, taking on the name m_c as a full medicine cat of c_n. {PRONOUN/m_c/subject/CAP} will be thinking of how to care for c_n until the day {PRONOUN/m_c/poss} {VERB/m_c/depart/departs} for StarClan, and maybe even after."
+    "c_n has raised and cared for (old_name), and (old_name) wants nothing more but to do the same, taking on the name m_c as a full medicine cat of c_n. {PRONOUN/m_c/subject/CAP} will be thinking of how to care for c_n until the day {PRONOUN/m_c/subject} {VERB/m_c/depart/departs} for StarClan, and maybe even after."
   ],
   "med_31": [
     [
@@ -1764,7 +1764,7 @@
       "general_backstory",
       "nervous"
     ],
-    "(old_name) know all the herbs, {PRONOUN/m_c/subject} {VERB/m_c/know/knows} how to treat rat bites, but surely {PRONOUN/m_c/subject} {VERB/m_c/need/needs} to learn more? StarClan assures {PRONOUN/m_c/object} that {PRONOUN/m_c/subject}'ll do fine, and gives {PRONOUN/m_c/object} the name m_c as a sign of trust, even if m_c is sure it's still too soon."
+    "(old_name) knows all the herbs, {PRONOUN/m_c/subject} {VERB/m_c/know/knows} how to treat rat bites, but surely {PRONOUN/m_c/subject} {VERB/m_c/need/needs} to learn more? StarClan assures {PRONOUN/m_c/object} that {PRONOUN/m_c/subject}'ll do fine, and gives {PRONOUN/m_c/object} the name m_c as a sign of trust, even if m_c is sure it's still too soon."
   ],
   "med_32": [
     [

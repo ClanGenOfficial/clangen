@@ -23,7 +23,7 @@ class removeCatCommand(Command):
     aliases = ["r"]
     usage = "<cat name|id>"
 
-    def callback(self, args: list[str]):
+    def callback(self, args: List[str]):
         if len(args) == 0:
             add_output_line_to_log("Please specify a cat name or ID")
             return
@@ -39,7 +39,7 @@ class listCatsCommand(Command):
     description = "List all cats"
     aliases = ["l"]
 
-    def callback(self, args: list[str]):
+    def callback(self, args: List[str]):
         for cat in Cat.all_cats_list:
             add_output_line_to_log(f"{cat.ID} - {cat.name}, {cat.status}, {cat.moons} moons old")
 
@@ -49,7 +49,7 @@ class ageCatsCommand(Command):
     aliases = ["a"]
     usage = "<cat name|id> [number]"
 
-    def callback(self, args: list[str]):
+    def callback(self, args: List[str]):
         if len(args) == 0:
             add_output_line_to_log("Please specify a cat name or ID")
             return
@@ -81,5 +81,5 @@ class CatsCommand(Command):
         ageCatsCommand()
     ]
 
-    def callback(self, args: list[str]):
+    def callback(self, args: List[str]):
         add_output_line_to_log("Please specify a subcommand")
