@@ -90,6 +90,19 @@ class Patrol():
             
         Patrol.used_patrols.append(self.patrol_event.patrol_id)
         
+        patrol_cat_ids = []
+        for c in patrol_cats:
+            patrol_cat_ids.append(c.ID)
+        if game.clan.your_cat.ID in patrol_cat_ids:
+            if game.current_screen == 'patrol screen':
+                game.switches['patrolled'].append('2')
+            elif game.current_screen == 'patrol screen2':
+                game.switches['patrolled'].append('1')
+            elif game.current_screen == 'patrol screen3':
+                game.switches['patrolled'].append('3')
+            else:
+                game.switches['patrolled'].append('4')
+        
         return self.process_text(self.patrol_event.intro_text, None)
 
     def proceed_patrol(self, path:str="proceed") -> Tuple[str]:
@@ -334,7 +347,7 @@ class Patrol():
                 possible_patrols.extend(self.generate_patrol_events(self.OTHER_CLAN_HOSTILE))
 
         if game.current_screen == 'patrol screen2' or game.current_screen =='patrol screen4':
-            final_patrols, final_romance_patrols = self. get_filtered_patrols(possible_patrols, biome, current_season,
+            final_patrols, final_romance_patrols = self.get_filtered_patrols(possible_patrols, biome, current_season,
                                                                             patrol_type)
 
         # This is a debug option. If the patrol_id set isn "debug_ensure_patrol" is possible, 
@@ -632,15 +645,15 @@ class Patrol():
                     elif 'herb_gathering' not in patrol.types and patrol_type == 'med':
                         continue
 
-                # cruel season tag check
-                if "cruel_season" in patrol.tags:
-                    if game.clan.game_mode != 'cruel_season':
-                        continue
+            # cruel season tag check
+            if "cruel_season" in patrol.tags:
+                if game.clan.game_mode != 'cruel_season':
+                    continue
 
-                if "romantic" in patrol.tags:
-                    romantic_patrols.append(patrol)
-                else:
-                    filtered_patrols.append(patrol)
+            if "romantic" in patrol.tags:
+                romantic_patrols.append(patrol)
+            else:
+                filtered_patrols.append(patrol)
 
         # I'll get to that later, hahah TODO
         #if patrol_type == 'hunting':

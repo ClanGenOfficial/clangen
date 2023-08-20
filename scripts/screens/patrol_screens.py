@@ -265,8 +265,8 @@ class PatrolScreen(Screens):
                 # self.elements['mouse'].enable()
                 # self.elements['claws'].enable()
                 # self.elements['herb'].enable()
-                self.elements['cat_icon'].disable()
-                self.elements['your_cat'].enable()
+                self.elements['cat_icon'].enable() 
+                self.elements['your_cat'].disable()
                 if game.clan.your_cat.joined_df:
                     self.elements['df_icon'].enable()
                 if game.clan.your_cat.moons >= 12:
@@ -470,22 +470,6 @@ class PatrolScreen(Screens):
         self.elements['patrol_start'] = UIImageButton(scale(pygame.Rect((666, 1200), (270, 60))), "",
                                                       object_id="#start_patrol_button", manager=MANAGER)
         self.elements['patrol_start'].disable()
-        self.elements['cat_icon'] = UIImageButton(scale(pygame.Rect((646, 1120), (68, 68))), "",
-                                             object_id="#events_cat_button"
-                                             , manager=MANAGER)
-        self.elements['cat_icon'].disable()
-        self.elements['df_icon'] = UIImageButton(scale(pygame.Rect((726, 1120), (68, 68))), "",
-                                               object_id="#dark_forest_button"
-                                               , manager=MANAGER)
-        self.elements['df_icon'].disable()
-        self.elements['date_icon'] = UIImageButton(scale(pygame.Rect((806, 1120), (68, 68))), "",
-                                               object_id="#flirt_button"
-                                               , manager=MANAGER)
-        self.elements['date_icon'].disable()
-        self.elements['your_cat'] = UIImageButton(scale(pygame.Rect((886, 1120), (68, 68))), "",
-                                              object_id="#paw_patrol_button"
-                                              , manager=MANAGER)
-        self.elements['your_cat'].disable()
 
         self.update_cat_images_buttons()
         self.update_button()
@@ -1261,7 +1245,7 @@ class PatrolScreen2(Screens):
                 self.elements['paw'].enable()
                 self.elements['mouse'].enable()
                 self.elements['claws'].enable()
-                self.elements['herb'].enable()
+                self.elements['herb'].enable() 
                 self.elements['cat_icon'].disable()
                 self.elements['your_cat'].enable()
                 if game.clan.your_cat.joined_df:
@@ -1998,6 +1982,8 @@ class PatrolScreen3(Screens):
                                         (332, 340))
     cat_icon = pygame.transform.scale(pygame.image.load("resources/images/buttons/cat_icon.png").convert_alpha(),
                                       (100, 100))
+    df_icon = pygame.transform.scale(pygame.image.load("resources/images/buttons/df_toggle.png").convert_alpha(),
+                                      (100, 100))
     date_icon = pygame.transform.scale(pygame.image.load("resources/images/buttons/flirt.png").convert_alpha(),
                                       (100, 100))
 
@@ -2021,8 +2007,15 @@ class PatrolScreen3(Screens):
         self.app_mentor = None
         self.able_cats = None
         self.current_patrol = None
+        self.display_text = ""
+        self.results_text = ""
+        self.start_patrol_thread = None
+        self.proceed_patrol_thread = None
 
     def handle_event(self, event):
+        if game.switches["window_open"]:
+            return
+        
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if self.patrol_stage == "choose_cats":
                 self.handle_choose_cats_events(event)
@@ -2032,52 +2025,6 @@ class PatrolScreen3(Screens):
                 self.handle_patrol_complete_events(event)
 
             self.menu_button_pressed(event)
-
-            # Checking if the mentor or mate selection buttons are clicked. This must be separate, because
-            # these buttons may not exist.
-            if "mate_button" in self.elements:
-                if event.ui_element == self.elements['mate_button']:
-                    self.selected_cat = self.mate
-                    self.update_button()
-                    self.update_cat_images_buttons()
-                    self.update_selected_cat()
-
-            if 'app_mentor_button' in self.elements:
-                if event.ui_element == self.elements['app_mentor_button']:
-                    self.selected_cat = self.app_mentor
-                    self.update_button()
-                    self.update_cat_images_buttons()
-                    self.update_selected_cat()
-
-            # Check if apprentice cycle buttons are clicked.
-            if "cycle_app_mentor_left_button" in self.elements:
-                if event.ui_element == self.elements['cycle_app_mentor_left_button']:
-                    self.selected_apprentice_index -= 1
-                    self.app_mentor = self.selected_cat.apprentice[self.selected_apprentice_index]
-                    self.update_selected_cat()
-                    self.update_button()
-
-            if "cycle_app_mentor_right_button" in self.elements:
-                if event.ui_element == self.elements['cycle_app_mentor_right_button']:
-                    self.selected_apprentice_index += 1
-                    self.app_mentor = self.selected_cat.apprentice[self.selected_apprentice_index]
-                    self.update_selected_cat()
-                    self.update_button()
-
-            # Check if mate cycle buttons are clicked.
-            if "cycle_mate_left_button" in self.elements:
-                if event.ui_element == self.elements['cycle_mate_left_button']:
-                    self.selected_mate_index -= 1
-                    self.mate = self.selected_cat.mate[self.selected_mate_index]
-                    self.update_selected_cat()
-                    self.update_button()
-
-            if "cycle_mate_right_button" in self.elements:
-                if event.ui_element == self.elements['cycle_mate_right_button']:
-                    self.selected_mate_index += 1
-                    self.mate = self.selected_cat.mate[self.selected_mate_index]
-                    self.update_selected_cat()
-                    self.update_button()
 
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
             if event.key == pygame.K_LEFT:
@@ -2104,6 +2051,7 @@ class PatrolScreen3(Screens):
             self.selected_cat = choice(self.able_cats)
             self.update_selected_cat()
             self.update_button()
+        
         # Check is a cat is clicked
         elif event.ui_element in self.cat_buttons.values():
             self.selected_cat = event.ui_element.return_cat_object()
@@ -2175,15 +2123,50 @@ class PatrolScreen3(Screens):
         
         elif event.ui_element == self.elements['patrol_start']:
             self.selected_cat = None
-            self.open_patrol_event_screen()  # Starting patrol.
-
+            self.start_patrol_thread = self.loading_screen_start_work(self.run_patrol_start)
+        elif event.ui_element == self.elements.get('mate_button'):
+            self.selected_cat = self.mate
+            self.update_button()
+            self.update_cat_images_buttons()
+            self.update_selected_cat()
+        elif event.ui_element == self.elements.get('app_mentor_button'):
+            self.selected_cat = self.app_mentor
+            self.update_button()
+            self.update_cat_images_buttons()
+            self.update_selected_cat()
+        elif event.ui_element == self.elements.get('cycle_app_mentor_left_button'):
+            self.selected_apprentice_index -= 1
+            self.app_mentor = self.selected_cat.apprentice[self.selected_apprentice_index]
+            self.update_selected_cat()
+            self.update_button()
+        elif event.ui_element == self.elements.get('cycle_app_mentor_right_button'):
+            self.selected_apprentice_index += 1
+            self.app_mentor = self.selected_cat.apprentice[self.selected_apprentice_index]
+            self.update_selected_cat()
+            self.update_button()
+        elif event.ui_element == self.elements.get('cycle_mate_left_button'):
+            self.selected_mate_index -= 1
+            self.mate = self.selected_cat.mate[self.selected_mate_index]
+            self.update_selected_cat()
+            self.update_button()
+        elif event.ui_element == self.elements.get('cycle_mate_right_button'):
+            self.selected_mate_index += 1
+            self.mate = self.selected_cat.mate[self.selected_mate_index]
+            self.update_selected_cat()
+            self.update_button()
+            
     def handle_patrol_events_event(self, event):
-        if event.ui_element == self.elements["proceed"]:
-            self.open_patrol_complete_screen("proceed")
+        
+        inp = None
+        if event.ui_element == self.elements["proceed"]:            
+            inp = "proceed"
         elif event.ui_element == self.elements["not_proceed"]:
-            self.open_patrol_complete_screen("notproceed")
+            inp = "notproceed"
         elif event.ui_element == self.elements["antagonize"]:
-            self.open_patrol_complete_screen("antagonize")
+            inp = "antagonize"
+        
+        if inp:
+            self.proceed_patrol_thread = self.loading_screen_start_work(self.run_patrol_proceed, (inp,))
 
     def handle_patrol_complete_events(self, event):
         if event.ui_element == self.elements['patrol_again']:
@@ -2344,6 +2327,8 @@ class PatrolScreen3(Screens):
         self.clear_cat_buttons()
         self.patrol_obj = Patrol()
 
+        self.display_text = ""
+        self.results_text = ""
         self.current_patrol = []
         self.current_page = 1
         self.patrol_stage = 'choose_cats'
@@ -2390,22 +2375,24 @@ class PatrolScreen3(Screens):
                                                  , manager=MANAGER)
 
         # patrol type buttons - disabled for now
-        # self.elements['paw'] = UIImageButton(scale(pygame.Rect((646, 1120), (68, 68))), "",
-        #                                      object_id="#paw_patrol_button"
-        #                                      , manager=MANAGER)
-        # self.elements['paw'].disable()
-        # self.elements['mouse'] = UIImageButton(scale(pygame.Rect((726, 1120), (68, 68))), "",
-        #                                        object_id="#mouse_patrol_button"
-        #                                        , manager=MANAGER)
-        # self.elements['mouse'].disable()
-        # self.elements['claws'] = UIImageButton(scale(pygame.Rect((806, 1120), (68, 68))), "",
-        #                                        object_id="#claws_patrol_button"
-        #                                        , manager=MANAGER)
-        # self.elements['claws'].disable()
-        # self.elements['herb'] = UIImageButton(scale(pygame.Rect((886, 1120), (68, 68))), "",
-        #                                       object_id="#herb_patrol_button"
-        #                                       , manager=MANAGER)
-        # self.elements['herb'].disable()
+        
+            
+        self.elements['cat_icon'] = UIImageButton(scale(pygame.Rect((646, 1120), (68, 68))), "",
+                                             object_id="#events_cat_button"
+                                             , manager=MANAGER)
+        self.elements['cat_icon'].disable()
+        self.elements['df_icon'] = UIImageButton(scale(pygame.Rect((726, 1120), (68, 68))), "",
+                                               object_id="#dark_forest_button"
+                                               , manager=MANAGER)
+        self.elements['df_icon'].disable()
+        self.elements['date_icon'] = UIImageButton(scale(pygame.Rect((806, 1120), (68, 68))), "",
+                                               object_id="#flirt_button"
+                                               , manager=MANAGER)
+        self.elements['date_icon'].disable()
+        self.elements['your_cat'] = UIImageButton(scale(pygame.Rect((886, 1120), (68, 68))), "",
+                                              object_id="#paw_patrol_button"
+                                              , manager=MANAGER)
+        self.elements['your_cat'].disable()
 
         # Able cat page buttons
         self.elements['last_page'] = UIImageButton(scale(pygame.Rect((150, 924), (68, 68))), "",
@@ -2437,28 +2424,17 @@ class PatrolScreen3(Screens):
         self.elements['patrol_start'] = UIImageButton(scale(pygame.Rect((666, 1200), (270, 60))), "",
                                                       object_id="#start_patrol_button", manager=MANAGER)
         self.elements['patrol_start'].disable()
-        
-        self.elements['cat_icon'] = UIImageButton(scale(pygame.Rect((646, 1120), (68, 68))), "",
-                                             object_id="#events_cat_button"
-                                             , manager=MANAGER)
-        self.elements['cat_icon'].disable()
-        self.elements['df_icon'] = UIImageButton(scale(pygame.Rect((726, 1120), (68, 68))), "",
-                                               object_id="#dark_forest_button"
-                                               , manager=MANAGER)
-        self.elements['df_icon'].disable()
-        self.elements['date_icon'] = UIImageButton(scale(pygame.Rect((806, 1120), (68, 68))), "",
-                                               object_id="#flirt_button"
-                                               , manager=MANAGER)
-        self.elements['date_icon'].disable()
-        self.elements['your_cat'] = UIImageButton(scale(pygame.Rect((886, 1120), (68, 68))), "",
-                                              object_id="#paw_patrol_button"
-                                              , manager=MANAGER)
-        self.elements['your_cat'].disable()
-
 
         self.update_cat_images_buttons()
         self.update_button()
 
+    def run_patrol_start(self):
+        """Runs patrol start. To be run in a seperate thread.  """
+        try:
+            self.display_text = self.patrol_obj.setup_patrol(self.current_patrol, self.patrol_type)
+        except RuntimeError:
+            self.display_text = None
+        
     def open_patrol_event_screen(self):
         """Open the patrol event screen. This sets up the patrol starting"""
         self.clear_page()
@@ -2513,12 +2489,15 @@ class PatrolScreen3(Screens):
         for x in self.patrol_obj.patrol_cats:
             if x != self.patrol_obj.patrol_leader:
                 members.append(str(x.name))
-        for x in self.patrol_obj.patrol_skills:
-            if x.get_short_skill() not in skills:
-                skills.append(x.get_short_skill())
-        for x in self.patrol_obj.patrol_traits:
-            if x not in traits:
-                traits.append(x)
+        for x in self.patrol_obj.patrol_cats:
+            if x.personality.trait not in traits:
+                traits.append(x.personality.trait)
+            
+            if x.skills.primary and x.skills.primary.get_short_skill() not in skills:
+                skills.append(x.skills.primary.get_short_skill())
+                
+            if x.skills.secondary and x.skills.secondary.get_short_skill() not in skills:
+                skills.append(x.skills.secondary.get_short_skill())
 
         self.elements['patrol_info'] = pygame_gui.elements.UITextBox(
             f'patrol leader: {str(self.patrol_obj.patrol_leader.name)} \n'
@@ -2601,7 +2580,6 @@ class PatrolScreen3(Screens):
         """Updates all the cat sprite buttons. Also updates the skills tab, if open, and the next and
             previous page buttons.  """
         self.clear_cat_buttons()  # Clear all the cat buttons
-        
 
         self.able_cats = []
         the_cat = game.clan.your_cat
@@ -2653,8 +2631,6 @@ class PatrolScreen3(Screens):
                 self.elements["last_page"].disable()
             else:
                 self.elements["last_page"].enable()
-        
-        
 
         # Draw able cats.
         pos_y = 1000
@@ -2786,11 +2762,9 @@ class PatrolScreen3(Screens):
                                                                           manager=MANAGER)
 
             name = str(self.selected_cat.name)  # get name
-            if len(name) >= 16:  # check name length
-                short_name = name[0:15]
-                name = short_name + '..'
+            short_name = shorten_text_to_fit(name, 350, 30)
 
-            self.elements['selected_name'] = pygame_gui.elements.UITextBox(name,
+            self.elements['selected_name'] = pygame_gui.elements.UITextBox(short_name,
                                                                            scale(pygame.Rect((600, 650), (400, 60))),
                                                                            object_id=get_text_box_theme(
                                                                                "#text_box_30_horizcenter"),
@@ -2936,7 +2910,9 @@ class PatrolScreen3(Screens):
         self.clear_cat_buttons()
 
     def on_use(self):
-        pass
+        
+        self.loading_screen_on_use(self.start_patrol_thread, self.open_patrol_event_screen)
+        self.loading_screen_on_use(self.proceed_patrol_thread, self.open_patrol_complete_screen)
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
@@ -2966,6 +2942,7 @@ class PatrolScreen4(Screens):
                                       (100, 100))
     date_icon = pygame.transform.scale(pygame.image.load("resources/images/buttons/flirt.png").convert_alpha(),
                                       (100, 100))
+
     current_patrol = []
     patrol_stage = 'choose_cats'  # Can be 'choose_cats' or 'patrol_events' Controls the stage of patrol.
     patrol_screen = 'patrol_cats'  # Can be "patrol_cats" or "skills". Controls the tab on the select_cats stage
@@ -2986,8 +2963,15 @@ class PatrolScreen4(Screens):
         self.app_mentor = None
         self.able_cats = None
         self.current_patrol = None
+        self.display_text = ""
+        self.results_text = ""
+        self.start_patrol_thread = None
+        self.proceed_patrol_thread = None
 
     def handle_event(self, event):
+        if game.switches["window_open"]:
+            return
+        
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if self.patrol_stage == "choose_cats":
                 self.handle_choose_cats_events(event)
@@ -2997,52 +2981,6 @@ class PatrolScreen4(Screens):
                 self.handle_patrol_complete_events(event)
 
             self.menu_button_pressed(event)
-
-            # Checking if the mentor or mate selection buttons are clicked. This must be separate, because
-            # these buttons may not exist.
-            if "mate_button" in self.elements:
-                if event.ui_element == self.elements['mate_button']:
-                    self.selected_cat = self.mate
-                    self.update_button()
-                    self.update_cat_images_buttons()
-                    self.update_selected_cat()
-
-            if 'app_mentor_button' in self.elements:
-                if event.ui_element == self.elements['app_mentor_button']:
-                    self.selected_cat = self.app_mentor
-                    self.update_button()
-                    self.update_cat_images_buttons()
-                    self.update_selected_cat()
-
-            # Check if apprentice cycle buttons are clicked.
-            if "cycle_app_mentor_left_button" in self.elements:
-                if event.ui_element == self.elements['cycle_app_mentor_left_button']:
-                    self.selected_apprentice_index -= 1
-                    self.app_mentor = self.selected_cat.apprentice[self.selected_apprentice_index]
-                    self.update_selected_cat()
-                    self.update_button()
-
-            if "cycle_app_mentor_right_button" in self.elements:
-                if event.ui_element == self.elements['cycle_app_mentor_right_button']:
-                    self.selected_apprentice_index += 1
-                    self.app_mentor = self.selected_cat.apprentice[self.selected_apprentice_index]
-                    self.update_selected_cat()
-                    self.update_button()
-
-            # Check if mate cycle buttons are clicked.
-            if "cycle_mate_left_button" in self.elements:
-                if event.ui_element == self.elements['cycle_mate_left_button']:
-                    self.selected_mate_index -= 1
-                    self.mate = self.selected_cat.mate[self.selected_mate_index]
-                    self.update_selected_cat()
-                    self.update_button()
-
-            if "cycle_mate_right_button" in self.elements:
-                if event.ui_element == self.elements['cycle_mate_right_button']:
-                    self.selected_mate_index += 1
-                    self.mate = self.selected_cat.mate[self.selected_mate_index]
-                    self.update_selected_cat()
-                    self.update_button()
 
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
             if event.key == pygame.K_LEFT:
@@ -3069,6 +3007,7 @@ class PatrolScreen4(Screens):
             self.selected_cat = choice(self.able_cats)
             self.update_selected_cat()
             self.update_button()
+        
         # Check is a cat is clicked
         elif event.ui_element in self.cat_buttons.values():
             self.selected_cat = event.ui_element.return_cat_object()
@@ -3140,15 +3079,50 @@ class PatrolScreen4(Screens):
         
         elif event.ui_element == self.elements['patrol_start'] and len(self.current_patrol) == 2:
             self.selected_cat = None
-            self.open_patrol_event_screen()  # Starting patrol.
-
+            self.start_patrol_thread = self.loading_screen_start_work(self.run_patrol_start)
+        elif event.ui_element == self.elements.get('mate_button'):
+            self.selected_cat = self.mate
+            self.update_button()
+            self.update_cat_images_buttons()
+            self.update_selected_cat()
+        elif event.ui_element == self.elements.get('app_mentor_button'):
+            self.selected_cat = self.app_mentor
+            self.update_button()
+            self.update_cat_images_buttons()
+            self.update_selected_cat()
+        elif event.ui_element == self.elements.get('cycle_app_mentor_left_button'):
+            self.selected_apprentice_index -= 1
+            self.app_mentor = self.selected_cat.apprentice[self.selected_apprentice_index]
+            self.update_selected_cat()
+            self.update_button()
+        elif event.ui_element == self.elements.get('cycle_app_mentor_right_button'):
+            self.selected_apprentice_index += 1
+            self.app_mentor = self.selected_cat.apprentice[self.selected_apprentice_index]
+            self.update_selected_cat()
+            self.update_button()
+        elif event.ui_element == self.elements.get('cycle_mate_left_button'):
+            self.selected_mate_index -= 1
+            self.mate = self.selected_cat.mate[self.selected_mate_index]
+            self.update_selected_cat()
+            self.update_button()
+        elif event.ui_element == self.elements.get('cycle_mate_right_button'):
+            self.selected_mate_index += 1
+            self.mate = self.selected_cat.mate[self.selected_mate_index]
+            self.update_selected_cat()
+            self.update_button()
+            
     def handle_patrol_events_event(self, event):
-        if event.ui_element == self.elements["proceed"]:
-            self.open_patrol_complete_screen("proceed")
+        
+        inp = None
+        if event.ui_element == self.elements["proceed"]:            
+            inp = "proceed"
         elif event.ui_element == self.elements["not_proceed"]:
-            self.open_patrol_complete_screen("notproceed")
+            inp = "notproceed"
         elif event.ui_element == self.elements["antagonize"]:
-            self.open_patrol_complete_screen("antagonize")
+            inp = "antagonize"
+        
+        if inp:
+            self.proceed_patrol_thread = self.loading_screen_start_work(self.run_patrol_proceed, (inp,))
 
     def handle_patrol_complete_events(self, event):
         if event.ui_element == self.elements['patrol_again']:
@@ -3237,7 +3211,7 @@ class PatrolScreen4(Screens):
                 self.elements['info'] = pygame_gui.elements.UITextBox(
                     text, scale(pygame.Rect((500, 1050), (600, 800))),
                     object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER
-                ) 
+                )
             # else:
             #     self.elements['paw'].hide()
             #     self.elements['mouse'].hide()
@@ -3309,6 +3283,8 @@ class PatrolScreen4(Screens):
         self.clear_cat_buttons()
         self.patrol_obj = Patrol()
 
+        self.display_text = ""
+        self.results_text = ""
         self.current_patrol = []
         self.current_page = 1
         self.patrol_stage = 'choose_cats'
@@ -3355,22 +3331,24 @@ class PatrolScreen4(Screens):
                                                  , manager=MANAGER)
 
         # patrol type buttons - disabled for now
-        # self.elements['paw'] = UIImageButton(scale(pygame.Rect((646, 1120), (68, 68))), "",
-        #                                      object_id="#paw_patrol_button"
-        #                                      , manager=MANAGER)
-        # self.elements['paw'].disable()
-        # self.elements['mouse'] = UIImageButton(scale(pygame.Rect((726, 1120), (68, 68))), "",
-        #                                        object_id="#mouse_patrol_button"
-        #                                        , manager=MANAGER)
-        # self.elements['mouse'].disable()
-        # self.elements['claws'] = UIImageButton(scale(pygame.Rect((806, 1120), (68, 68))), "",
-        #                                        object_id="#claws_patrol_button"
-        #                                        , manager=MANAGER)
-        # self.elements['claws'].disable()
-        # self.elements['herb'] = UIImageButton(scale(pygame.Rect((886, 1120), (68, 68))), "",
-        #                                       object_id="#herb_patrol_button"
-        #                                       , manager=MANAGER)
-        # self.elements['herb'].disable()
+        
+            
+        self.elements['cat_icon'] = UIImageButton(scale(pygame.Rect((646, 1120), (68, 68))), "",
+                                             object_id="#events_cat_button"
+                                             , manager=MANAGER)
+        self.elements['cat_icon'].disable()
+        self.elements['df_icon'] = UIImageButton(scale(pygame.Rect((726, 1120), (68, 68))), "",
+                                               object_id="#dark_forest_button"
+                                               , manager=MANAGER)
+        self.elements['df_icon'].disable()
+        self.elements['date_icon'] = UIImageButton(scale(pygame.Rect((806, 1120), (68, 68))), "",
+                                               object_id="#flirt_button"
+                                               , manager=MANAGER)
+        self.elements['date_icon'].disable()
+        self.elements['your_cat'] = UIImageButton(scale(pygame.Rect((886, 1120), (68, 68))), "",
+                                              object_id="#paw_patrol_button"
+                                              , manager=MANAGER)
+        self.elements['your_cat'].disable()
 
         # Able cat page buttons
         self.elements['last_page'] = UIImageButton(scale(pygame.Rect((150, 924), (68, 68))), "",
@@ -3402,28 +3380,18 @@ class PatrolScreen4(Screens):
         self.elements['patrol_start'] = UIImageButton(scale(pygame.Rect((666, 1200), (270, 60))), "",
                                                       object_id="#start_patrol_button", manager=MANAGER)
         self.elements['patrol_start'].disable()
-        
-        self.elements['cat_icon'] = UIImageButton(scale(pygame.Rect((646, 1120), (68, 68))), "",
-                                             object_id="#events_cat_button"
-                                             , manager=MANAGER)
-        self.elements['cat_icon'].disable()
-        self.elements['df_icon'] = UIImageButton(scale(pygame.Rect((726, 1120), (68, 68))), "",
-                                               object_id="#dark_forest_button"
-                                               , manager=MANAGER)
-        self.elements['df_icon'].disable()
-        self.elements['date_icon'] = UIImageButton(scale(pygame.Rect((806, 1120), (68, 68))), "",
-                                               object_id="#flirt_button"
-                                               , manager=MANAGER)
-        self.elements['date_icon'].disable()
-        self.elements['your_cat'] = UIImageButton(scale(pygame.Rect((886, 1120), (68, 68))), "",
-                                              object_id="#paw_patrol_button"
-                                              , manager=MANAGER)
-        self.elements['your_cat'].disable()
 
         self.current_patrol.append(game.clan.your_cat)
         self.update_cat_images_buttons()
         self.update_button()
 
+    def run_patrol_start(self):
+        """Runs patrol start. To be run in a seperate thread.  """
+        try:
+            self.display_text = self.patrol_obj.setup_patrol(self.current_patrol, self.patrol_type)
+        except RuntimeError:
+            self.display_text = None
+        
     def open_patrol_event_screen(self):
         """Open the patrol event screen. This sets up the patrol starting"""
         self.clear_page()
@@ -3526,7 +3494,17 @@ class PatrolScreen4(Screens):
         if not self.patrol_obj.patrol_event.antag_success_outcomes:
             self.elements["antagonize"].hide()
 
-    def open_patrol_complete_screen(self, user_input):
+    def run_patrol_proceed(self, user_input):
+        """Proceeds the patrol - to be run in the seperate thread. """
+        
+        if user_input in ["nopro", "notproceed"]:
+            self.display_text, self.results_text = self.patrol_obj.proceed_patrol("decline")
+        elif user_input in ["antag", "antagonize"]:
+            self.display_text, self.results_text = self.patrol_obj.proceed_patrol("antag")
+        else:
+            self.display_text, self.results_text = self.patrol_obj.proceed_patrol("proceed")
+
+    def open_patrol_complete_screen(self):
         """Deals with the next stage of the patrol, including antagonize, proceed, and do not proceed.
         You must put the type of next step (user input) into the user_input parameter.
         For antagonize: user_input = "antag" or "antagonize"
@@ -3538,25 +3516,18 @@ class PatrolScreen4(Screens):
                                                      object_id="#return_to_clan", manager=MANAGER)
         self.elements['patrol_again'] = UIImageButton(scale(pygame.Rect((1120, 274), (324, 60))), "",
                                                       object_id="#patrol_again", manager=MANAGER)
-        
-        if user_input in ["nopro", "notproceed"]:
-            display_text = self.patrol_obj.proceed_patrol("decline")
-        elif user_input in ["antag", "antagonize"]:
-            display_text = self.patrol_obj.proceed_patrol("antag")
-        else:
-            display_text = self.patrol_obj.proceed_patrol("proceed")
-        
+                
         # Adjust text for solo patrols
-        # display_text = adjust_patrol_text(display_text, self.patrol_obj)
+        #display_text = adjust_patrol_text(display_text, self.patrol_obj)
 
         self.elements["patrol_results"] = pygame_gui.elements.UITextBox("",
                                                                         scale(pygame.Rect((1100, 1000), (344, 300))),
                                                                         object_id=get_text_box_theme(
                                                                             "#text_box_22_horizcenter_spacing_95"),
                                                                         manager=MANAGER)
-        self.elements["patrol_results"].set_text(self.patrol_obj.results())
+        self.elements["patrol_results"].set_text(self.results_text)
 
-        self.elements["patrol_text"].set_text(display_text)
+        self.elements["patrol_text"].set_text(self.display_text)
 
         self.elements["proceed"].disable()
         self.elements["not_proceed"].disable()
@@ -3614,8 +3585,6 @@ class PatrolScreen4(Screens):
                 self.elements["last_page"].disable()
             else:
                 self.elements["last_page"].enable()
-        
-        
 
         # Draw able cats.
         pos_y = 1000
@@ -3747,11 +3716,9 @@ class PatrolScreen4(Screens):
                                                                           manager=MANAGER)
 
             name = str(self.selected_cat.name)  # get name
-            if len(name) >= 16:  # check name length
-                short_name = name[0:15]
-                name = short_name + '..'
+            short_name = shorten_text_to_fit(name, 350, 30)
 
-            self.elements['selected_name'] = pygame_gui.elements.UITextBox(name,
+            self.elements['selected_name'] = pygame_gui.elements.UITextBox(short_name,
                                                                            scale(pygame.Rect((600, 650), (400, 60))),
                                                                            object_id=get_text_box_theme(
                                                                                "#text_box_30_horizcenter"),
