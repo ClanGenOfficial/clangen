@@ -10,6 +10,7 @@ from scripts.game_structure.windows import SaveCheck, EventLoading
 from scripts.game_structure.propagating_thread import PropagatingThread
 from threading import get_ident, Semaphore
 
+
 class Screens():
     game_screen = screen
     game_x = screen_x

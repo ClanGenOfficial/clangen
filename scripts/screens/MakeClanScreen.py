@@ -2,7 +2,7 @@ import pygame
 from random import choice, randrange
 import pygame_gui
 
-from .base_screens import Screens
+from .Screens import Screens
 
 from scripts.utility import get_text_box_theme, scale
 from scripts.clan import Clan

@@ -82,7 +82,7 @@
 	"mates":{
 		"age_range": 40,
 		"chance_fulfilled_condition": 5,
-		"chance_friends_to_lovers": 250,
+		"chance_friends_to_lovers": 170,
 		"confession": {
 			"make_confession" : {
 				"romantic": 30,
@@ -114,10 +114,10 @@
 		},
 		"platonic_to_romantic": {
 			"romantic": 0,
-			"platonic": 40,
+			"platonic": 30,
 			"dislike": -15,
 			"admiration": 0,
-			"comfortable": 25,
+			"comfortable": 20,
 			"jealousy": 0,
 			"trust": 0
 		},

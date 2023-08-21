@@ -2,7 +2,7 @@ from random import choice, sample
 import pygame
 import pygame_gui
 
-from .base_screens import Screens
+from .Screens import Screens
 from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton
 from scripts.patrol.patrol import Patrol
