@@ -8,8 +8,7 @@ from scripts.game_structure.image_button import UIImageButton
 import pygame_gui
 from scripts.game_structure.windows import SaveCheck, EventLoading
 from scripts.game_structure.propagating_thread import PropagatingThread
-from threading import get_ident, Semaphore
-
+from threading import current_thread
 
 class Screens():
     game_screen = screen
@@ -115,38 +114,30 @@ class Screens():
         # Dictionary of work done, keyed by the target function name
         self.work_done = {}
         
-        # To prevent race unwanted race conditions
-        self._semaphore = Semaphore(1)
-        
     def loading_screen_start_work(self,
                                   target:callable,
+                                  thread_name:str="work_thread",
                                   args:tuple=tuple()) -> PropagatingThread:
         """Creates and starts the work_thread. 
             Returns the started thread. """
 
-        work_thread = PropagatingThread(target=self._work_target, args=(target,args), daemon=True)
-        game.switches['window_open'] = True
+        work_thread = PropagatingThread(target=self._work_target, args=(target,args), 
+                                        name=thread_name, daemon=True)
         
-        # Semephore prevents race condition on the work_done flag. 
-        self._semaphore.acquire()
+        game.switches['window_open'] = True
         work_thread.start()
-        self.work_done[work_thread.ident] = False
-        self._semaphore.release()
         
         return work_thread
         
     def _work_target(self, target, args):
         
-        self._semaphore.acquire()
         exp = None
         try:
             target(*args)
+            self.work_done[current_thread().name] = True
         except Exception as e:
             exp = e
-        
-        self.work_done[get_ident()] = True
-        self._semaphore.release()
-        
+
         if exp:
             raise exp
         
@@ -174,14 +165,14 @@ class Screens():
             self.loading_window = None
         
         # Handles displaying the events once timeskip is done. 
-        if self.work_done.get(work_thread.ident, False):
+        if self.work_done.get(work_thread.name, False):
             # By this time, the thread should have already finished.
             # This line allows exceptions in the work thread to be 
             # passed to the main thread, so issues in the work thread are not
             # silent failures. 
             work_thread.join()
             
-            self.work_done.pop(work_thread.ident)
+            self.work_done.pop(work_thread.name)
             
             final_actions()
             game.switches['window_open'] = False
