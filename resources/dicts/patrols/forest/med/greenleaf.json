@@ -6060,5 +6060,60 @@
                 ]
             }
         ]
+    },
+    {
+        "patrol_id": "fst_med_corpselily1",
+        "biome": ["forest"],
+        "season": ["greenleaf"],
+        "types": ["herb_gathering"],
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "medicine cat apprentice": [1, 6],
+            "medicine cat": [1, 6],
+            "normal adult": [-1, -1]
+        },
+        "tags": [],
+        "intro_text": "p_l sets off to find the bulbs of a corpse lily, so that app1 can learn both risk and reward.",
+        "decline_text": "Still, they're lilies - poisonous and deadly. p_l decides to not risk both their lives.",
+        "chance_of_success": 70,
+        "weight": 20,
+        "success_outcomes" : [
+            {
+                "text": "p_l finds a cluster of corpse lilies, wilting. The flowers, red and spindly, droop towards the floor. p_l steers clear, but has a productive session telling app1 about their memory enhancing effects.",
+                "exp": 20,
+                "weight": 20
+            },
+            {
+                "text": "There's plenty of corpse lilies here, and p_l can only be thankful the pollen can be washed off with moss, <i>and</i> that app1 hung back while {PRONOUN/p_l/subject} {VERB/p_l/explain/explains} the strange effects of poison.",
+                "exp": 20,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l moves at the wrong time, pollen whipped up by the warm wind. However, and thankfully, app1 warns {PRONOUN/p_l/object} about the cloud of red-tinted pollen before it descends, bringing the two to camp, worse for wear.",
+                "exp": 0,
+                "weight": 20,
+                "injury": [
+                    {
+                        "cats": ["patrol"],
+                        "injuries": ["poisoned"]
+                    }
+                ],
+                "history_text": {
+                    "reg_death": "This cat was poisoned by a corpse lily."
+                }
+            },
+            {
+                "text": "p_l moves at the wrong time, pollen whipped up by the warm wind. Still, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} {PRONOUN/p_l/self} trudging on - only to collapse a few heartbeats later.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["p_l"],
+                "history_text": {
+                    "reg_death": "This cat was poisoned by a corpse lily."
+                }
+            }
+        ]
     }
 ]

@@ -343,7 +343,8 @@
                 ],
                 "new_cat": [
                     ["loner"]
-                ]
+                ],
+                "outsider_rep": 1
             }
         ],
         "fail_outcomes": [
@@ -405,7 +406,8 @@
                 ],
                 "new_cat": [
                     ["loner"]
-                ]
+                ],
+                "outsider_rep": 1
             }
         ],
         "fail_outcomes": [
