@@ -1525,49 +1525,26 @@
             }
         }
     },
-    "#prevent_kits_button": 
+    "#cat_toggles_button": 
     {
         "prototype": "#image_button",
 		"images":
         {
             "normal_image":
             {
-                "path": "resources/images/buttons/prevent_kits.png"
+                "path": "resources/images/buttons/cat_toggles.png"
             },
             "hovered_image":
             {
-                "path": "resources/images/buttons/prevent_kits_hover.png"
+                "path": "resources/images/buttons/cat_toggles_hover.png"
             },
 			"selected_image":
             {
-                "path": "resources/images/buttons/prevent_kits_hover.png"
+                "path": "resources/images/buttons/cat_toggles_hover.png"
             },
             "disabled_image":
             {
-                "path":"resources/images/buttons/prevent_kits_unavailable.png"
-            }
-        }
-    },
-    "#allow_kits_button": 
-    {
-        "prototype": "#image_button",
-		"images":
-        {
-            "normal_image":
-            {
-                "path": "resources/images/buttons/allow_kits.png"
-            },
-            "hovered_image":
-            {
-                "path": "resources/images/buttons/allow_kits_hover.png"
-            },
-			"selected_image":
-            {
-                "path": "resources/images/buttons/allow_kits_hover.png"
-            },
-            "disabled_image":
-            {
-                "path":"resources/images/buttons/allow_kits_unavailable.png"
+                "path":"resources/images/buttons/cat_toggles_unavailable.png"
             }
         }
     },

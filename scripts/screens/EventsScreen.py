@@ -1,8 +1,6 @@
 import pygame_gui
-import threading
-import time
 
-from .base_screens import Screens, cat_profiles
+from .Screens import Screens
 import pygame
 from scripts.events import events_class
 from scripts.utility import get_living_clan_cat_count, get_text_box_theme, scale, shorten_text_to_fit
@@ -12,7 +10,6 @@ from ..cat.cats import Cat
 from ..game_structure import image_cache
 from scripts.event_class import Single_Event
 from scripts.game_structure.windows import GameOver
-from scripts.game_structure.propagating_thread import PropagatingThread
 
 
 class EventsScreen(Screens):
@@ -76,9 +73,11 @@ class EventsScreen(Screens):
                 self.other_clans_alert.kill()
             elif event.ui_element == self.misc_events_button and self.misc_alert:
                 self.misc_alert.kill()
+        
         if game.switches['window_open']:
-            pass
-        elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            return
+        
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             
             if event.ui_element == self.timeskip_button:
                 

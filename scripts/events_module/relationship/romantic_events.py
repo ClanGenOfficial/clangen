@@ -119,6 +119,7 @@ class Romantic_Events():
             ROMANTIC_INTERACTIONS["positive"].extend(dictionary["increase"])
             ROMANTIC_INTERACTIONS["negative"].extend(dictionary["decrease"])
 
+
     @staticmethod
     def start_interaction(cat_from, cat_to):
         """
@@ -185,7 +186,7 @@ class Romantic_Events():
         in_de_crease = "increase" if positive else "decrease"
         rel_type = "romantic"
         relationship.chosen_interaction = chosen_interaction
-        relationship.interaction_affect_relationships(in_de_crease, interaction.intensity, rel_type)
+        relationship.interaction_affect_relationships(in_de_crease, chosen_interaction.intensity, rel_type)
 
         # give cats injuries if the game mode is not classic
         if len(chosen_interaction.get_injuries) > 0 and game.clan.game_mode != 'classic':
@@ -252,38 +253,116 @@ class Romantic_Events():
         return True
 
     @staticmethod
-    def handle_new_mates(relationship, cat_from, cat_to):
-        """More in depth check if the cats will become mates."""
-        if cat_from.ID in cat_to.mate:
-            if cat_to.ID not in cat_from.mate:
-                cat_to.set_mate(cat_from)
+    def handle_mating_and_breakup(cat):
+        """Handle events related to making new mates, and breaking up. """
+        
+        if cat.no_mates:
             return
-        relationship_to = relationship.opposite_relationship
-        become_mates, mate_string = Romantic_Events.check_if_new_mate(relationship, relationship_to, cat_from, cat_to)
+        
+        Romantic_Events.handle_moving_on(cat)
+        Romantic_Events.handle_breakup_events(cat)
+        Romantic_Events.handle_new_mate_events(cat)
+        
+        
+    
+    @staticmethod
+    def handle_new_mate_events(cat):
+        """Triggers and handles any events that result in a new mate """
+        
+        # First, check high love confession
+        flag = Romantic_Events.handle_confession(cat)
+        if flag:
+            return
+        
+        # Then, handle more random mating
+        # Choose some subset of cats that they have relationships with
+        if not cat.relationships:
+            return
+        subset = [Cat.fetch_cat(x) for x in cat.relationships if isinstance(Cat.fetch_cat(x), Cat) and not (Cat.fetch_cat(x).dead or Cat.fetch_cat(x).outside)]
+        if not subset:
+            return
+        
+        subset = random.sample(subset, max(int(len(subset) / 3), 1))
+        
+        for other_cat in subset:
+            relationship = cat.relationships.get(other_cat.ID)
+            flag = Romantic_Events.handle_new_mates(cat, other_cat)
+            if flag:
+                return
+        
+    @staticmethod
+    def handle_breakup_events(cat: Cat):
+        """Triggers and handles any events that results in a breakup """
+        
+        for x in cat.mate:
+            mate_ob = Cat.fetch_cat(x)
+            if not isinstance(mate_ob, Cat):
+                continue
+                        
+            flag = Romantic_Events.handle_breakup(cat, mate_ob)
+            if flag:
+                return
+        
+         
+    @staticmethod
+    def handle_moving_on(cat):
+        """Handles moving on from dead or outside mates """
+        for mate_id in cat.mate:
+            if mate_id not in Cat.all_cats:
+                print(f"WARNING: Cat #{cat} has a invalid mate. It will be removed.")
+                cat.mate.remove(mate_id)
+                continue
+
+            cat_mate = Cat.fetch_cat(mate_id)
+            # Move on from dead mates
+            if cat_mate and "grief stricken" not in cat.illnesses and ((cat_mate.dead and cat_mate.dead_for >= 4) or cat_mate.outside):
+                # randint is a slow function, don't call it unless we have to.
+                if not cat_mate.no_mates and random.random() > 0.5:
+                    text = f'{cat.name} will always love {cat_mate.name} but has decided to move on.'
+                    game.cur_events_list.append(Single_Event(text, "relation", [cat.ID, cat_mate.ID]))
+                    cat.unset_mate(cat_mate)
+    
+    
+    @staticmethod
+    def handle_new_mates(cat_from, cat_to) -> bool:
+        """More in depth check if the cats will become mates."""
+        
+        become_mates, mate_string = Romantic_Events.check_if_new_mate(cat_from, cat_to)
 
         if become_mates and mate_string:
             cat_from.set_mate(cat_to)
             game.cur_events_list.append(Single_Event(mate_string, ["relation", "misc"], [cat_from.ID, cat_to.ID]))
+            return True
+        
+        return False
 
     @staticmethod
-    def handle_breakup(relationship_from, relationship_to, cat_from, cat_to):
+    def handle_breakup(cat_from: Cat, cat_to:Cat) -> bool:
         ''' Handles cats breaking up their relationship '''
-        from_mate_in_clan = False
-        if cat_to.ID in cat_from.mate:
-            from_mate_in_clan = cat_to.is_alive() and not cat_to.outside
-        else:
-            return
+        
+        if cat_from.ID not in cat_to.mate:
+            return False
+        
+        if cat_from.no_mates or cat_to.no_mates:
+            return False
+        
+        if not Romantic_Events.check_if_breakup(cat_from, cat_to):
+            return False
+        
+        # Determine if this is a nice breakup or a fight breakup
+        had_fight = not int(random.random() * 3)
 
-        if cat_from in cat_to.mate and from_mate_in_clan:
-            if Romantic_Events.check_if_breakup(relationship_from, relationship_to, cat_from, cat_to):
-                # TODO: filter log to check if last interaction was a fight
-                had_fight = False
-                cat_from.unset_mate(cat_to, breakup=True, fight=had_fight)
-                text = f"{cat_from.name} and {cat_to.name} broke up."
-                game.cur_events_list.append(Single_Event(text, ["relation", "misc"], [cat_from.ID, cat_to.ID]))
+        # TODO : more varied breakup text.
+        cat_from.unset_mate(cat_to, breakup=True, fight=had_fight)
+        if had_fight:
+            text = f"{cat_from.name} and {cat_to.name} had a huge fight and broke up."
+        else:
+            text = f"{cat_from.name} and {cat_to.name} broke up."
+        game.cur_events_list.append(Single_Event(text, ["relation", "misc"], [cat_from.ID, cat_to.ID]))
+        return True
 
     @staticmethod
-    def handle_confession(cat_from):
+    def handle_confession(cat_from) -> bool:
         """
         Check if the cat has a high love for another and mate them if there are in the boundaries 
         :param cat: cat in question
@@ -317,6 +396,7 @@ class Romantic_Events():
         if not rel_to_check:
             highest_romantic_relation.link_relationship()
             rel_to_check = highest_romantic_relation.opposite_relationship
+        
         if Romantic_Events.relationship_fulfill_condition(rel_to_check, condition):
             become_mate = True
             mate_string = Romantic_Events.get_mate_string("high_romantic", poly, cat_from, cat_to)
@@ -361,57 +441,41 @@ class Romantic_Events():
         return choice(list_to_choice)
 
     @staticmethod
-    def check_if_breakup(relationship_from, relationship_to, cat_from, cat_to):
+    def check_if_breakup(cat_from, cat_to):
         """ More in depth check if the cats will break up.
             Returns:
                 bool (True or False)
         """
-        if not relationship_from or not relationship_to or not cat_from or cat_to:
+        
+        if cat_from.ID not in cat_to.mate:
             return False
-        will_break_up = False
-        # TODO: Check log for had fight check
-        had_fight = False
 
-        chance_number = Romantic_Events.get_breakup_chance(relationship_from, relationship_to, cat_from, cat_to)
-
-        # chance = randint(1, chance_number)
-        chance = int(random.random() * chance_number)
-        if not chance:
-            if relationship_from.dislike > 30:
-                will_break_up = True
-                relationship_to.romantic_love -= 10
-                relationship_from.romantic_love -= 10
-            elif relationship_from.romantic_love < 50:
-                will_break_up = True
-                relationship_to.romantic_love -= 10
-                relationship_from.romantic_love -= 10
-            elif had_fight:
-                text = f"{cat_from.name} and {cat_to.name} had a fight and nearly broke up."
-                # game.relation_events_list.insert(0, text)
-                game.cur_events_list.append(Single_Event(text, "relation", [cat_from.ID, cat_to.ID]))
-            else:
-                text = f"{cat_from.name} and {cat_to.name} have somewhat different views about their relationship."
-                # game.relation_events_list.insert(0, text)
-                game.cur_events_list.append(Single_Event(text, "relation", [cat_from.ID, cat_to.ID]))
-                relationship_from.romantic_love -= 10
-                relationship_to.romantic_love -= 10
-                relationship_from.comfortable -= 20
-                relationship_to.comfortable -= 20
-                relationship_from.platonic_like -= 20
-                relationship_to.platonic_like -= 20
-                relationship_from.admiration -= 10
-                relationship_to.admiration -= 10
-
-        return will_break_up
+        chance_number = Romantic_Events.get_breakup_chance(cat_from, cat_to)
+        
+        return not int(random.random() * chance_number)
 
     @staticmethod
-    def check_if_new_mate(relationship_from, relationship_to, cat_from, cat_to):
+    def check_if_new_mate(cat_from, cat_to):
         """Checks if the two cats can become mates, or not. Returns: boolean and event_string"""
         become_mates = False
         young_age = ['newborn', 'kitten', 'adolescent']
-        if cat_from.age in young_age or cat_to.age in young_age:
-            return  False, None
-
+        if not cat_from.is_potential_mate(cat_to):
+            return False, None
+        
+        if cat_from.ID in cat_to.mate:
+            return False, None
+        
+        # Gather relationships
+        if cat_to.ID in cat_from.relationships:
+            relationship_from = cat_from.relationships[cat_to.ID]
+        else:
+            relationship_from = cat_from.create_one_relationship(cat_to)
+            
+        if cat_from.ID in cat_to.relationships:
+            relationship_to = cat_to.relationships[cat_from.ID]
+        else:
+            relationship_to = cat_to.create_one_relationship(cat_from)
+        
         mate_string = None
         mate_chance = game.config["mates"]["chance_fulfilled_condition"]
         hit = int(random.random() * mate_chance)
@@ -447,6 +511,8 @@ class Romantic_Events():
             print("----- POLY-POLY-POLY", cat_from.name, cat_to.name)
             print(cat_from.mate)
             print(cat_to.mate)
+        else:
+            print("BECOME MATES")
 
         mate_string = Romantic_Events.prepare_relationship_string(mate_string, cat_from, cat_to)
 
@@ -623,12 +689,24 @@ class Romantic_Events():
     # ---------------------------------------------------------------------------- #
 
     @staticmethod
-    def get_breakup_chance(relationship_from, relationship_to, cat_from, cat_to):
+    def get_breakup_chance(cat_from:Cat, cat_to:Cat) -> int:
         """ Looks into the current values and calculate the chance of breaking up. The lower, the more likely they will break up.
             Returns:
                 integer (number)
         """
-        chance_number = 80
+        # Gather relationships
+        if cat_to.ID in cat_from.relationships:
+            relationship_from = cat_from.relationships[cat_to.ID]
+        else:
+            relationship_from = cat_from.create_one_relationship(cat_to)
+            
+        if cat_from.ID in cat_to.relationships:
+            relationship_to = cat_to.relationships[cat_from.ID]
+        else:
+            relationship_to = cat_to.create_one_relationship(cat_from)
+        
+        
+        chance_number = 35
 
         # change the chance based on the current relationship
         if relationship_from.romantic_love > 80:
@@ -697,4 +775,5 @@ class Romantic_Events():
         if chance_number <= 0:
             chance_number = 1
 
+        #print(f"BREAKUP CHANCE - {cat_to.name}, {cat_from.name}: {chance_number}")
         return chance_number
