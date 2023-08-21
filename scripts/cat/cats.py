@@ -2095,6 +2095,7 @@ class Cat():
                 self_relationship.trust -= 10
                 self_relationship.mate = False
                 if fight:
+                    self_relationship.romantic_love -= 20
                     self_relationship.platonic_like -= 30
 
             if not other_cat.dead:
@@ -2107,6 +2108,7 @@ class Cat():
                 other_relationship.trust -= 10
                 other_relationship.mate = False
                 if fight:
+                    self_relationship.romantic_love -= 20
                     other_relationship.platonic_like -= 30
 
         self.mate.remove(other_cat.ID)

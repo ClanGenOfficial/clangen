@@ -314,6 +314,9 @@ class Romantic_Events():
                 continue
 
             cat_mate = Cat.fetch_cat(mate_id)
+            if cat_mate.no_mates:
+                return
+            
             # Move on from dead mates
             if cat_mate and "grief stricken" not in cat.illnesses and ((cat_mate.dead and cat_mate.dead_for >= 4) or cat_mate.outside):
                 # randint is a slow function, don't call it unless we have to.
@@ -350,6 +353,7 @@ class Romantic_Events():
             return False
         
         # Determine if this is a nice breakup or a fight breakup
+        # TODO - make this better
         had_fight = not int(random.random() * 3)
 
         # TODO : more varied breakup text.
@@ -706,16 +710,16 @@ class Romantic_Events():
             relationship_to = cat_to.create_one_relationship(cat_from)
         
         
-        chance_number = 40
+        chance_number = 45
 
-        chance_number -= int(relationship_from.romantic_love / 20)
-        chance_number -= int(relationship_from.romantic_love / 20)
-        chance_number -= int(relationship_from.platonic_like / 20)
-        chance_number -= int(relationship_to.platonic_like / 20)
-        chance_number -= int(relationship_from.dislike / 20)
-        chance_number -= int(relationship_from.jealousy / 20)
-        chance_number -= int(relationship_to.dislike / 20)
-        chance_number -= int(relationship_to.jealousy / 20)
+        chance_number += int(relationship_from.romantic_love / 20)
+        chance_number += int(relationship_from.romantic_love / 20)
+        chance_number += int(relationship_from.platonic_like / 20)
+        chance_number += int(relationship_to.platonic_like / 20)
+        chance_number -= int(relationship_from.dislike / 15)
+        chance_number -= int(relationship_from.jealousy / 15)
+        chance_number -= int(relationship_to.dislike / 15)
+        chance_number -= int(relationship_to.jealousy / 15)
 
         # change the change based on the personality
         get_along = get_personality_compatibility(cat_from, cat_to)
@@ -724,22 +728,8 @@ class Romantic_Events():
         if get_along is not None and not get_along:
             chance_number -= 10
 
-        # change the chance based on the last interactions
-        if len(relationship_from.log) > 0:
-            # check last interaction
-            last_log1 = relationship_from.log[len(relationship_from.log) - 1]
-
-            if 'negative' in last_log1:
-                chance_number -= 3
-                if 'fight' in last_log1:
-                    chance_number -= 5
-                if 'argument' in last_log1:
-                    chance_number -= 5
-                if 'different view' in last_log1:
-                    chance_number -= 2
-
         # Then, at least a 1/5 chance
-        chance_number = max(chance_number, 10)
+        chance_number = max(chance_number, 5)
 
-        #print(f"BREAKUP CHANCE - {cat_to.name}, {cat_from.name}: {chance_number}")
+        print(f"BREAKUP CHANCE - {cat_to.name}, {cat_from.name}: {chance_number}")
         return chance_number
