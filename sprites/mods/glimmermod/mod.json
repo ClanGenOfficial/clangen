@@ -85,6 +85,33 @@
 				"DARKBROWN": "dark brown",
 				"CHOCOLATE": "chocolate"
 			}
+		},
+		"samiglimagouti": {
+			"0": {
+				"WHITE": "white",
+				"PALEGREY": "pale grey",
+				"SILVER": "silver",
+				"GREY": "grey",
+				"DARKGREY": "dark grey",
+				"GHOST": "ghost",
+				"BLACK": "black"
+				},
+			"1": {
+				"CREAM": "cream",
+				"PALEGINGER": "pale ginger",
+				"GOLDEN": "golden",
+				"GINGER": "ginger",
+				"DARKGINGER": "dark ginger",
+				"SIENNA": "sienna"
+			},
+			"2": {
+				"LIGHTBROWN": "light brown",
+				"LILAC": "lilac",
+				"BROWN": "brown",
+				"GOLDEN-BROWN": "golden-brown",
+				"DARKBROWN": "dark brown",
+				"CHOCOLATE": "chocolate"
+			}
 		}
 	}
 }
