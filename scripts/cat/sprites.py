@@ -39,6 +39,9 @@ class Sprites():
             print("ERROR: Reading White Patches Tints")
             
     def load_mods(self):
+        """
+        Scan mods folder for pelt mods.
+        """
         for name in glob.glob('sprites/mods/*'):
             modfile = name + "/mod.json"
             _, shortname = name.split("\\")
@@ -120,13 +123,15 @@ class Sprites():
                 y_spr += 1
     
     def load_spritemods(self):
-        for x in self.spritemods:
-            for name in glob.glob(f"sprites/mods/{x}/*.png"):
-                for sheet in self.spritemods[x]["pelts"]:
-                    self.spritesheet(f"sprites/mods/{x}/{sheet}.png", sheet)
-                    for group in self.spritemods[x]["pelts"][sheet]:
-                        for a, i in enumerate(self.spritemods[x]["pelts"][sheet][group]):
-                            sprites.make_group(sheet, (a, int(group)), sheet + i)
+        """
+        Load spritesheets from pelt mods.
+        """
+        for x in self.spritemods: # check each mod
+            for sheet in self.spritemods[x]["pelts"]: # check json for the spritesheets for each pattern
+                self.spritesheet(f"sprites/mods/{x}/{sheet}.png", sheet) # load each sheet
+                for group in self.spritemods[x]["pelts"][sheet]: # split sheet into each row of sprites
+                    for a, i in enumerate(self.spritemods[x]["pelts"][sheet][group]): # split each row into colors
+                        sprites.make_group(sheet, (a, int(group)), sheet + i) # split each color into individual sprites
 
 
 
