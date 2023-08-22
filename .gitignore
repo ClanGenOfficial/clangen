@@ -95,8 +95,8 @@ saves\clanlist.txt
 saves\settings.txt
 
 #Mods
-mods/*
-mods\*
+sprites/mods/*
+sprites/mods\*
 
 # Logs
 logs/
