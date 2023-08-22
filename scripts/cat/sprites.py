@@ -126,7 +126,7 @@ class Sprites():
                     self.spritesheet(f"sprites/mods/{x}/{sheet}.png", sheet)
                     for group in self.spritemods[x]["pelts"][sheet]:
                         for a, i in enumerate(self.spritemods[x]["pelts"][sheet][group]):
-                            sprites.make_group(sheet, (a, 0), self.spritemods[x]["mininame"] + i)
+                            sprites.make_group(sheet, (a, int(group)), sheet + i)
 
 
 
@@ -163,8 +163,6 @@ class Sprites():
                 self.spritesheet(f"sprites/aprilfools{x}.png", x)
             else:
                 self.spritesheet(f"sprites/{x}.png", x)
-                
-        self.load_spritemods()
 
         # Line art
         self.make_group('lineart', (0, 0), 'lines')
