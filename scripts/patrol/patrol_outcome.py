@@ -978,7 +978,13 @@ class PatrolOutcome():
             # Set same as first mate.
             if match.group(1) == "mate" and give_mates:
                 age = randint(Cat.age_moons[give_mates[0].age][0], 
-                              Cat.age_moons[give_mates[0].age][1])  
+                              Cat.age_moons[give_mates[0].age][1])
+                break
+                
+            if match.group(1) == "has_kits":
+                age = randint(14, 120)
+                break
+                
         
         # CAT TYPES AND BACKGROUND
         if "kittypet" in attribute_list:

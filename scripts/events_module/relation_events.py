@@ -57,23 +57,12 @@ class Relation_Events():
         if not random.getrandbits(4):
             Relation_Events.romantic_events(cat)
             
-        Relation_Events.mating_and_breakup(cat)
+        Romantic_Events.handle_mating_and_breakup(cat)
 
         
     # ---------------------------------------------------------------------------- #
     #                                new event types                               #
     # ---------------------------------------------------------------------------- #
-    @staticmethod
-    def mating_and_breakup(cat):
-        """Triggers and handles all events that can cause a cat to gain or lose a mate.  """
-        
-        # If no_mates has been toggles on, stop at this step. 
-        if cat.no_mates:
-            return
-        
-        Romantic_Events.handle_breakup_events(cat)
-        Romantic_Events.handle_new_mate_events(cat)
-
 
     @staticmethod
     def romantic_events(cat):

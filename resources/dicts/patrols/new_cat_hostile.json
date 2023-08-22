@@ -36,7 +36,7 @@
                 "exp": 10,
                 "weight": 5,
                 "new_cat": [
-                    ["status:warrior", "loner"],
+                    ["age:has_kits", "loner"],
                     ["litter", "parent:0", "status:kitten"]
                 ],
                 "relationships": [
@@ -115,7 +115,7 @@
                 "exp": 10,
                 "weight": 5,
                 "new_cat": [
-                    ["status:warrior", "loner"],
+                    ["age:has_kits", "loner"],
                     ["litter", "parent:0", "status:kitten"]
                 ],
                 "relationships": [
@@ -194,7 +194,7 @@
                 "exp": 10,
                 "weight": 5,
                 "new_cat": [
-                    ["status:warrior", "kittypet"],
+                    ["age:has_kits", "kittypet"],
                     ["litter", "parent:0", "status:kitten"]
                 ],
                 "relationships": [
@@ -273,7 +273,7 @@
                 "exp": 10,
                 "weight": 5,
                 "new_cat": [
-                    ["status:warrior", "kittypet"],
+                    ["age:has_kits", "kittypet"],
                     ["litter", "parent:0", "status:kitten"]
                 ],
                 "relationships": [
@@ -598,7 +598,7 @@
                 "exp": 10,
                 "weight": 5,
                 "new_cat": [
-                    ["status:medicine cat", "loner"],
+                    ["status:medicine cat", "age:has_kits", "loner"],
                     ["litter", "parent:0", "status:kitten"]
                 ],
                 "relationships": [
@@ -677,7 +677,7 @@
                 "exp": 10,
                 "weight": 5,
                 "new_cat": [
-                    ["status:medicine cat", "loner"],
+                    ["status:medicine cat", "age:has_kits", "loner"],
                     ["litter", "parent:0", "status:kitten"]
                 ],
                 "relationships": [
@@ -927,7 +927,7 @@
                 "exp": 30,
                 "weight": 20,
                 "new_cat": [
-                    ["kittypet", "female", "dead"],
+                    ["kittypet", "female", "dead",  "age:has_kits"],
                     ["litter", "parent:0", "status:kitten", "backstory:abandoned1,abandoned4"]
                 ],
                 "relationships": [
@@ -945,7 +945,7 @@
                 "exp": 30,
                 "weight": 5,
                 "new_cat": [
-                    ["kittypet", "female", "dead"],
+                    ["kittypet", "female", "dead", "age:has_kits"],
                     ["litter", "parent:0", "status:kitten", "backstory:abandoned1,abandoned4"]
                 ],
                 "relationships": [
@@ -964,7 +964,7 @@
                 "weight": 20,
                 "stat_trait": ["careful", "thoughtful"],
                 "new_cat": [
-                    ["kittypet", "female", "dead"],
+                    ["kittypet", "female", "dead", "age:has_kits"],
                     ["litter", "parent:0", "status:kitten", "backstory:abandoned1,abandoned4"]
                 ],
                 "relationships": [
@@ -1027,7 +1027,7 @@
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
-                    ["status:warrior", "can_birth"],
+                    ["status:warrior", "can_birth", "age:has_kits"],
                     ["litter", "parent:0", "status:newborn"]
                 ],
                 "relationships": [
@@ -1045,7 +1045,7 @@
                 "exp": 10,
                 "weight": 5,
                 "new_cat": [
-                    ["status:warrior", "can_birth"],
+                    ["age:has_kits", "can_birth"],
                     ["litter", "parent:0", "status:newborn"]
                 ],
                 "relationships": [
@@ -1108,7 +1108,7 @@
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
-                    ["status:warrior", "dead", "meeting", "can_birth"],
+                    ["age:has_kits", "dead", "meeting", "can_birth"],
                     ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
                 ],
                 "relationships": [
@@ -1126,7 +1126,7 @@
                 "exp": 10,
                 "weight": 5,
                 "new_cat": [
-                    ["status:warrior", "dead", "meeting", "can_birth", "can_birth"],
+                    ["age:has_kits", "dead", "meeting", "can_birth"],
                     ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
                 ],
                 "relationships": [
@@ -1191,7 +1191,7 @@
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
-                    ["status:warrior", "can_birth"],
+                    ["age:has_kits", "can_birth"],
                     ["litter", "parent:0", "status:newborn"]
                 ],
                 "relationships": [
@@ -1209,7 +1209,7 @@
                 "exp": 10,
                 "weight": 5,
                 "new_cat": [
-                    ["status:warrior", "can_birth"],
+                    ["age:has_kits", "can_birth"],
                     ["litter", "parent:0", "status:newborn"]
                 ],
                 "relationships": [
@@ -1274,7 +1274,7 @@
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
-                    ["status:warrior", "dead", "meeting", "can_birth"],
+                    ["age:has_kits", "dead", "meeting", "can_birth"],
                     ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
                 ],
                 "relationships": [
@@ -1292,7 +1292,7 @@
                 "exp": 10,
                 "weight": 5,
                 "new_cat": [
-                    ["status:warrior", "dead", "meeting", "can_birth"],
+                    ["age:has_kits", "dead", "meeting", "can_birth"],
                     ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
                 ],
                 "relationships": [
@@ -1356,7 +1356,7 @@
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
-                    ["status:warrior", "can_birth"],
+                    ["age:has_kits", "can_birth"],
                     ["litter", "parent:0", "status:newborn"]
                 ],
                 "relationships": [
@@ -1374,7 +1374,7 @@
                 "exp": 10,
                 "weight": 5,
                 "new_cat": [
-                    ["status:warrior", "can_birth"],
+                    ["age:has_kits", "can_birth"],
                     ["litter", "parent:0", "status:newborn"]
                 ],
                 "relationships": [
@@ -1438,7 +1438,7 @@
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
-                    ["status:warrior", "dead", "meeting", "can_birth"],
+                    ["age:has_kits", "dead", "meeting", "can_birth"],
                     ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
                 ],
                 "relationships": [
@@ -1456,7 +1456,7 @@
                 "exp": 10,
                 "weight": 5,
                 "new_cat": [
-                    ["status:warrior", "dead", "meeting", "can_birth"],
+                    ["age:has_kits", "dead", "meeting", "can_birth"],
                     ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
                 ],
                 "relationships": [

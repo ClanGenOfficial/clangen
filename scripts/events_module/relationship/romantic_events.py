@@ -314,6 +314,9 @@ class Romantic_Events():
                 continue
 
             cat_mate = Cat.fetch_cat(mate_id)
+            if cat_mate.no_mates:
+                return
+            
             # Move on from dead mates
             if cat_mate and "grief stricken" not in cat.illnesses and ((cat_mate.dead and cat_mate.dead_for >= 4) or cat_mate.outside):
                 # randint is a slow function, don't call it unless we have to.
@@ -350,6 +353,7 @@ class Romantic_Events():
             return False
         
         # Determine if this is a nice breakup or a fight breakup
+        # TODO - make this better
         had_fight = not int(random.random() * 3)
 
         # TODO : more varied breakup text.
@@ -407,8 +411,8 @@ class Romantic_Events():
             mate_string = Romantic_Events.get_mate_string("high_romantic", poly, cat_from, cat_to)
         else:
             mate_string = Romantic_Events.get_mate_string("rejected", poly, cat_from, cat_to)
-            cat_from.relationships[cat_to.ID].romantic_love -= 8
-            cat_to.relationships[cat_from.ID].comfortable -= 8
+            cat_from.relationships[cat_to.ID].romantic_love -= 10
+            cat_to.relationships[cat_from.ID].comfortable -= 10
 
         mate_string = Romantic_Events.prepare_relationship_string(mate_string, cat_from, cat_to)
         game.cur_events_list.append(Single_Event(mate_string, ["relation", "misc"], [cat_from.ID, cat_to.ID]))
@@ -706,31 +710,16 @@ class Romantic_Events():
             relationship_to = cat_to.create_one_relationship(cat_from)
         
         
-        chance_number = 35
+        chance_number = 45
 
-        # change the chance based on the current relationship
-        if relationship_from.romantic_love > 80:
-            chance_number += 15
-        elif relationship_from.romantic_love > 60:
-            chance_number += 10
-        if relationship_to.romantic_love > 80:
-            chance_number += 15
-        elif relationship_to.romantic_love > 60:
-            chance_number += 10
-
-        if relationship_from.platonic_like > 80:
-            chance_number += 15
-        elif relationship_from.platonic_like > 60:
-            chance_number += 10
-        if relationship_from.platonic_like > 80:
-            chance_number += 15
-        elif relationship_from.platonic_like > 60:
-            chance_number += 10
-
-        chance_number -= int(relationship_from.dislike / 2)
-        chance_number -= int(relationship_from.jealousy / 4)
-        chance_number -= int(relationship_to.dislike / 2)
-        chance_number -= int(relationship_to.jealousy / 4)
+        chance_number += int(relationship_from.romantic_love / 20)
+        chance_number += int(relationship_from.romantic_love / 20)
+        chance_number += int(relationship_from.platonic_like / 20)
+        chance_number += int(relationship_to.platonic_like / 20)
+        chance_number -= int(relationship_from.dislike / 15)
+        chance_number -= int(relationship_from.jealousy / 15)
+        chance_number -= int(relationship_to.dislike / 15)
+        chance_number -= int(relationship_to.jealousy / 15)
 
         # change the change based on the personality
         get_along = get_personality_compatibility(cat_from, cat_to)
@@ -739,41 +728,8 @@ class Romantic_Events():
         if get_along is not None and not get_along:
             chance_number -= 10
 
-        # change the chance based on the last interactions
-        if len(relationship_from.log) > 0:
-            # check last interaction
-            last_log1 = relationship_from.log[len(relationship_from.log) - 1]
+        # Then, at least a 1/5 chance
+        chance_number = max(chance_number, 5)
 
-            if 'negative' in last_log1:
-                chance_number -= 30
-                if 'fight' in last_log1:
-                    chance_number -= 20
-                if 'argument' in last_log1:
-                    chance_number -= 10
-                if 'different view' in last_log1:
-                    chance_number -= 5
-            
-            # also look at the last 3 interactions if there are more than that
-            if len(relationship_from.log) > 2:
-                last_log2 = relationship_from.log[len(relationship_from.log) - 2]
-                if 'negative' in last_log2:
-                    chance_number -= 15
-                last_log3 = relationship_from.log[len(relationship_from.log) - 3]
-                if 'negative' in last_log3:
-                    chance_number -= 10
-
-            # check all interactions - positive and negative will "balance" each other out
-            negative_interactions = list(filter(lambda inter: 'negative' in inter, relationship_from.log))
-            chance_number -= len(negative_interactions)
-            positive_interactions = list(filter(lambda inter: 'positive' in inter, relationship_from.log))
-            chance_number += len(positive_interactions)
-
-            if len(negative_interactions) * 2 > len(positive_interactions) and len(relationship_from.log) > 5 :
-                chance_number -= 20
-
-        # this should be nearly impossible, that chance is lower than 0
-        if chance_number <= 0:
-            chance_number = 1
-
-        #print(f"BREAKUP CHANCE - {cat_to.name}, {cat_from.name}: {chance_number}")
+        print(f"BREAKUP CHANCE - {cat_to.name}, {cat_from.name}: {chance_number}")
         return chance_number
