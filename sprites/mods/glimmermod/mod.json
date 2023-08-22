@@ -2,6 +2,7 @@
 	"modname": "Sami's Glimmer Test Pelts",
 	"mininame": "samiglim",
 	"creator": "RAYTRAC3R (Sami)",
+	"description": "This is an example mod for testing purposes!",
 	"pelts":
 		{
 		"samiglimmersingle": {
