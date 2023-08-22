@@ -94,6 +94,10 @@ saves\
 saves\clanlist.txt
 saves\settings.txt
 
+#Mods
+mods/*
+mods\*
+
 # Logs
 logs/
 
