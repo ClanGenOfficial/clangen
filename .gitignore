@@ -97,6 +97,7 @@ saves\settings.txt
 #Mods
 sprites/mods/*
 sprites/mods\*
+sprites\mods\*
 
 # Logs
 logs/
