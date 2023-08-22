@@ -2,11 +2,14 @@ import pygame
 
 import ujson
 
+import glob
+
 from scripts.game_structure.game_essentials import game
 
 class Sprites():
     cat_tints = {}
     white_patches_tints = {}
+    spritemods = {}
 
     def __init__(self, size=None):
         """Class that handles and hold all spritesheets. 
@@ -20,6 +23,7 @@ class Sprites():
         self.sprites = {}
         
         self.load_tints()
+        self.load_mods()
 
     def load_tints(self):
         try:
@@ -33,6 +37,14 @@ class Sprites():
                 self.white_patches_tints = ujson.loads(read_file.read())
         except:
             print("ERROR: Reading White Patches Tints")
+            
+    def load_mods(self):
+        for name in glob.glob('sprites/mods/*'):
+            modfile = name + "/mod.json"
+            _, shortname = name.split("\\")
+            with open(modfile, 'r') as read_file:
+                self.spritemods[shortname] = ujson.loads(read_file.read())
+                self.spritemods[shortname]["modname"]
             
     def spritesheet(self, a_file, name):
         """
@@ -106,6 +118,17 @@ class Sprites():
             if x_spr == sprites_x:
                 x_spr = 0
                 y_spr += 1
+    
+    def load_spritemods(self):
+        for x in self.spritemods:
+            for name in glob.glob(f"sprites/mods/{x}/*.png"):
+                for sheet in self.spritemods[x]["pelts"]:
+                    self.spritesheet(f"sprites/mods/{x}/{sheet}.png", sheet)
+                    for group in self.spritemods[x]["pelts"][sheet]:
+                        for a, i in enumerate(self.spritemods[x]["pelts"][sheet][group]):
+                            sprites.make_group(sheet, (a, 0), self.spritemods[x]["mininame"] + i)
+
+
 
     def load_all(self):
         # get the width and height of the spritesheet
@@ -124,8 +147,8 @@ class Sprites():
             print(f"if you are a modder, please update scripts/cat/sprites.py and do a search for 'if width / 3 == height / 7:'")
 
         del width, height # unneeded
-
-        for x in [
+        
+        vanillasprites = [
             'lineart', 'singlecolours', 'speckledcolours', 'tabbycolours',
             'whitepatches', 'eyes', 'eyes2', 'skin', 'scars', 'missingscars',
             'collars', 'bellcollars', 'bowcollars', 'nyloncollars',
@@ -133,13 +156,15 @@ class Sprites():
             'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours', 
             'shadersnewwhite', 'lineartdead', 'tortiepatchesmasks', 
             'medcatherbs', 'lineartdf', 'lightingnew', 'fademask',
-            'fadestarclan', 'fadedarkforest'
-
-        ]:
+            'fadestarclan', 'fadedarkforest']
+        
+        for x in vanillasprites:
             if 'lineart' in x and game.config['fun']['april_fools']:
                 self.spritesheet(f"sprites/aprilfools{x}.png", x)
             else:
                 self.spritesheet(f"sprites/{x}.png", x)
+                
+        self.load_spritemods()
 
         # Line art
         self.make_group('lineart', (0, 0), 'lines')

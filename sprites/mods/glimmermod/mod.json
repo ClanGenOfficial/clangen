@@ -1,0 +1,35 @@
+{
+	"modname": "Sami's Glimmer Test Pelts",
+	"mininame": "samiglim",
+	"creator": "RAYTRAC3R (Sami)",
+	"pelts":
+		{
+		"samiglimmersingle": {
+			"1": {
+				"WHITE": "white",
+				"PALEGREY": "pale grey",
+				"SILVER": "silver",
+				"GREY": "grey",
+				"DARKGREY": "dark grey",
+				"GHOST": "ghost",
+				"BLACK": "black"
+				},
+			"2": {
+				"CREAM": "cream",
+				"PALEGINGER": "pale ginger",
+				"GOLDEN": "golden",
+				"GINGER": "ginger",
+				"DARKGINGER": "dark ginger",
+				"SIENNA": "sienna"
+			},
+			"3": {
+				"LIGHTBROWN": "light brown",
+				"LILAC": "lilac",
+				"BROWN": "brown",
+				"GOLDEN-BROWN": "golden-brown",
+				"DARKBROWN": "dark brown",
+				"CHOCOLATE": "chocolate"
+			}
+		}
+	}
+}

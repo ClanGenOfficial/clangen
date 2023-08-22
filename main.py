@@ -184,6 +184,8 @@ def load_data():
     
     #load in the spritesheets
     sprites.load_all()
+    #load mod spritesheets
+    sprites.load_spritemods()
 
     clan_list = game.read_clans()
     if clan_list:

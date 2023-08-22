@@ -27,6 +27,10 @@ class Pelt():
         'Tortie': None,
         'Calico': None,
     }
+    for x in sprites.spritemods:
+        print(x)
+        sprites_names[x] = sprites.spritemods[x]["mininame"]
+        print(sprites_names)
     
     # ATTRIBUTES, including non-pelt related
     pelt_colours = [
@@ -51,6 +55,8 @@ class Pelt():
                     'BRIE', 'BELOVED']
     tortiebases = ['single', 'tabby', 'bengal', 'marbled', 'ticked', 'smoke', 'rosette', 'speckled', 'mackerel',
                 'classic', 'sokoke', 'agouti', 'singlestripe']
+    print("spritemods:")
+    print(sprites.spritemods)
 
     pelt_length = ["short", "medium", "long"]
     eye_colours = ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 'DARKBLUE', 'GREY', 'CYAN', 'EMERALD', 'PALEBLUE', 
@@ -92,6 +98,9 @@ class Pelt():
     plain = ["SingleColour", "TwoColour", "Smoke", "Singlestripe"]
     exotic = ["Bengal", "Marbled"]
     torties = ["Tortie", "Calico"]
+    for x in sprites.spritemods:
+        exotic.append(x)
+    print(exotic)
     pelt_categories = [tabbies, spotted, plain, exotic, torties]
 
     # SPRITE NAMES
