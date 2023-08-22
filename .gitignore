@@ -98,7 +98,7 @@ saves\settings.txt
 sprites/mods/*
 sprites/mods\*
 sprites\mods\*
-sprites/mods/glimmermod
+sprites/mods/glimmermod/
 
 # Logs
 logs/
