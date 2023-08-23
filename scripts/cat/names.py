@@ -102,7 +102,8 @@ class Name():
             
             i = 0
             while nono_name.lower() in self.names_dict["inappropriate_names"] or triple_letter or double_animal or \
-                    (self.prefix.lower() in self.suffix.lower() and not str(self.prefix) == '') or (self.suffix.lower() in self.prefix.lower() and not str(self.suffix) == ''):
+                    (self.prefix.lower() in self.suffix.lower() and not str(self.prefix) == '') or (self.suffix.lower() in self.prefix.lower() and not str(self.suffix) == '')
+                    \ and self.prefix.lower() == self.suffix.lower():
 
                 # check if random die was for prefix
                 if name_fixpref:
