@@ -371,8 +371,9 @@ class PatrolOutcome():
                     results.append(f"{_cat.name} lost all of their lives.")
                 elif "some_lives" in self.dead_cats:
                     game.clan.leader_lives -= random.randint(1, max(1, game.clan.leader_lives - 1))
-                    results.append(f"{_cat.name} some lives.")
+                    results.append(f"{_cat.name} lost some lives.")
                 else:
+                    game.clan.leader_lives -= 1
                     results.append(f"{_cat.name} lost one life.")
             else:
                 results.append(f"{_cat.name} died.")
@@ -386,8 +387,6 @@ class PatrolOutcome():
         
     def _handle_lost(self, patrol:'Patrol') -> str:
         """ Handle losing cats """
-        
-        """Handle killing cats """
         
         if not self.lost_cats:
             return ""
@@ -416,13 +415,13 @@ class PatrolOutcome():
         
         cats_to_lose = gather_cat_objects(self.lost_cats, patrol)
         if not cats_to_lose:
-            print(f"Something was indicated in lost_cats, but no acual cats were indicated: {self.lost_cats}")
+            print(f"Something was indicated in lost_cats, but no cats were indicated: {self.lost_cats}")
             return ""
         
         
         results = []
         for _cat in cats_to_lose:
-            results.append("f{_cat.name} has been lost.")
+            results.append(f"{_cat.name} has been lost.")
             _cat.gone()
             #_cat.greif(body=False)
             
