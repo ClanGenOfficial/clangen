@@ -356,7 +356,7 @@ class PatrolOutcome():
         
         cats_to_kill = gather_cat_objects(self.dead_cats, patrol)
         if not cats_to_kill:
-            print(f"Something was indicated in dead_cats, but no acual cats were indicated: {self.dead_cats}")
+            print(f"Something was indicated in dead_cats, but no cats were indicated: {self.dead_cats}")
             return ""
         
         body = True
@@ -807,52 +807,13 @@ class PatrolOutcome():
                                                                patrol)) 
             
             for cat in patrol.new_cats[-1]:
-                if cat.outside:
-                    results.append(f"The patrol meet {cat.name}.")
+                if cat.dead:
+                    results.append(f"{cat.name}'s ghost now wanders.")
+                elif cat.outside:
+                    results.append(f"The patrol met {cat.name}.")
                 else:
                     results.append(f"{cat.name} joined the clan.")
             
-        
-        in_patrol_cats = {
-            "p_l": patrol.patrol_leader,
-            "r_c": patrol.patrol_random_cat,
-        }
-        if self.stat_cat:
-            in_patrol_cats["s_c"] = self.stat_cat
-        
-        # Now, a second time to establish non-biological relations
-        for i, attribute_list in enumerate(self.new_cat):
-            # Mates
-            for tag in attribute_list:
-                match = re.match(r"mates:([,0-9a-zA-Z]+)", tag)
-                if not match:
-                    continue
-                
-                mate_indexes = match.group(1).split(",")
-                
-                # TODO: make this less ugly
-                for index in mate_indexes:
-                    if index in in_patrol_cats:
-                        if in_patrol_cats[index] in ("apprentice", "medicine cat apprentice"):
-                            print("Can't give apprentices mates")
-                            continue
-                        
-                        for cat in cat.patrol.new_cats[i]:
-                            cat.set_mate(in_patrol_cats[index])
-                            
-                    try:
-                        index = int(index)
-                    except ValueError:
-                        print(f"mate-index not correct: {index}")
-                    
-                    if index >= len(attribute_list):
-                        continue
-                    
-                    for cat in patrol.new_cats[i]:
-                        for other in patrol.new_cats[index]:
-                            if cat.ID not in other.mate:
-                                cat.set_mate(other)
-                                
         # Check to see if any young litters joined with alive parents.
         # If so, see if recovering from birth condition is needed
         # and give the condition
