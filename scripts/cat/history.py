@@ -337,7 +337,7 @@ class History:
             # Will probably sound weird, but it's better than nothing
             if not death_text:
                 if cat.status == 'leader':
-                    death_text = f"died from an injury of illness ({condition})"
+                    death_text = f"died from an injury or illness ({condition})"
                 else:
                     death_text = f"m_c died from an injury or illness ({condition})."
             if not scar_text:

@@ -10,11 +10,9 @@ from scripts.cat.cats import Cat
 
 class Welcoming_Events():
     """All events which are related to welcome a new cat in the clan."""
-
-    def __init__(self) -> None:
-        pass
     
-    def welcome_cat(self, clan_cat: Cat, new_cat: Cat) -> None:
+    @staticmethod    
+    def welcome_cat(clan_cat: Cat, new_cat: Cat) -> None:
         """Checks and triggers the welcome event from the Clan cat to the new cat.
 
             Parameters
@@ -44,7 +42,7 @@ class Welcoming_Events():
             print(f"ERROR: there is no welcoming json for the status {status}")
         else:
             possible_events.extend(WELCOMING_MASTER_DICT[status])
-        filtered_events = self.filter_welcome_interactions(possible_events, new_cat)
+        filtered_events = Welcoming_Events.filter_welcome_interactions(possible_events, new_cat)
 
         # choose which interaction will be displayed
         random_interaction = choice(filtered_events)
@@ -98,7 +96,8 @@ class Welcoming_Events():
             else:
                 new_cat.relationships[clan_cat.ID].log.append(interaction_str + f" - {new_cat.name} was {new_cat.moons} moons old")
 
-    def filter_welcome_interactions(self, welcome_interactions : list, new_cat: Cat) -> list:
+    @staticmethod
+    def filter_welcome_interactions(welcome_interactions : list, new_cat: Cat) -> list:
         """Filter welcome events based on states.
     
             Parameters

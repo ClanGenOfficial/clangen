@@ -237,7 +237,7 @@ class Relationship():
             -------
         """
         amount = self.get_amount(in_de_crease, intensity)
-        passive_buff = int(amount/game.config["relationship"]["passive_influence_div"])
+        passive_buff = int(abs(amount/game.config["relationship"]["passive_influence_div"]))
 
         # influence the own relationship
         if rel_type == "romantic":

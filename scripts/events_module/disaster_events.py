@@ -13,12 +13,7 @@ from scripts.event_class import Single_Event
 class DisasterEvents():
     """All events with a connection to disasters."""
 
-    def __init__(self) -> None:
-        self.event_sums = 0
-        self.had_one_event = False
-        self.generate_events = GenerateEvents()
-        pass
-
+    @staticmethod
     def handle_disasters(self):
         """ 
         This function handles the disasters
@@ -38,7 +33,7 @@ class DisasterEvents():
 
         print('new disaster')
 
-        possible_events = self.generate_events.possible_ongoing_events("disasters")
+        possible_events = GenerateEvents.possible_ongoing_events("disasters")
         final_events = []
 
         for event in possible_events:
@@ -127,7 +122,7 @@ class DisasterEvents():
                         Single_Event(event, "misc"))
 
                     # now grab all the disaster's info and save it
-                    secondary_disaster = self.generate_events.possible_ongoing_events(
+                    secondary_disaster = GenerateEvents.possible_ongoing_events(
                                                                     "disasters",
                                                                     specific_event=secondary_disaster["disaster"])
                     game.clan.secondary_disaster = secondary_disaster

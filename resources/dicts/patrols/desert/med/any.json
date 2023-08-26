@@ -1,870 +1,2087 @@
 [
     {
         "patrol_id": "dst_med_soloripples1",
-        "biome": "desert",
-        "season": "Any",
-        "tags": [
-            "herb_gathering",
-            "comfort",
-            "respect",
-            "trust",
-            "med_cat",
-            "med_only"
-        ],
+        "biome": ["desert"],
+        "season": ["Any"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
+        },
+        "weight": 20,
         "intro_text": "p_l sees weird ripples on the water of the underground spring while collecting fresh water.",
         "decline_text": "p_l is in a hurry and does not stop to look at the ripples.",
         "chance_of_success": 45,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "As p_l looks into the water of the underground spring {PRONOUN/p_l/subject} {VERB/p_l/are/is} greeted by an intense vision. {PRONOUN/p_l/subject/CAP} {VERB/p_l/drop/drops} what {PRONOUN/p_l/subject} {VERB/p_l/are/is} doing and race back to the camp to tell and consult with {PRONOUN/p_l/poss} leader.",
-            "unscathed_rare": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is} greeted with the vision of a cat {PRONOUN/p_l/subject} had failed to save looking content and happy in StarClan, saying that {PRONOUN/p_l/subject} {VERB/p_l/were/was} not at fault for their death. {PRONOUN/p_l/subject/CAP} {VERB/p_l/feel/feels} unburdened and at peace after receiving that vision."
-        },
-        "fail_text": {
-            "unscathed_common": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/gaze/gazes} into the water of the underground spring only to see the weird ripples were caused by a small fish flopping around. p_l feels disappointed because {PRONOUN/p_l/subject} really could have used some guidance from StarClan."
-        },
-        "min_cats": 1,
-        "max_cats": 1,
-        "constraints": {
-            "skill": [
-                "PROPHET,1"
-            ]
-        }
+        "pl_skill_constraint": ["PROPHET,1"],
+        "success_outcomes": [
+            {
+                "text": "As p_l looks into the water of the underground spring {PRONOUN/p_l/subject} {VERB/p_l/are/is} greeted by an intense vision. {PRONOUN/p_l/subject/CAP} {VERB/p_l/drop/drops} what {PRONOUN/p_l/subject} {VERB/p_l/are/is} doing and race back to the camp to tell and consult with {PRONOUN/p_l/poss} leader.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is} greeted with the vision of a cat {PRONOUN/p_l/subject} had failed to save looking content and happy in StarClan, saying that {PRONOUN/p_l/subject} {VERB/p_l/were/was} not at fault for their death. {PRONOUN/p_l/subject/CAP} {VERB/p_l/feel/feels} unburdened and at peace after receiving that vision.",
+                "exp": 10,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/gaze/gazes} into the water of the underground spring only to see the weird ripples were caused by a small fish flopping around. p_l feels disappointed because {PRONOUN/p_l/subject} really could have used some guidance from StarClan.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "dst_med_app_herblocation1",
-        "biome": "desert",
-        "season": "Any",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "apprentice",
-            "trust",
-            "respect",
-            "med_only",
-            "random_herbs"
-        ],
+        "biome": ["desert"],
+        "season": ["Any"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
+        },
+        "weight": 20,
         "intro_text": "p_l decides it's a good opportunity to show app1 where the most commonly needed herbs are in the territory, both above and underground away from the hot sun.",
         "decline_text": "As {PRONOUN/p_l/subject} {VERB/p_l/see/sees} app1's absent minded gaze, {PRONOUN/p_l/subject} {VERB/p_l/change/changes} {PRONOUN/p_l/poss} mind. Maybe another day, when app1 is more focused and less liable to get a heatstroke when they go to show {PRONOUN/app1/object} the herbs aboveground",
         "chance_of_success": 65,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "app1 is focused and attentive. p_l is confident that next time there is an emergency, app1 will be able to find those herbs both under and above ground without {PRONOUN/p_l/object} if needed.",
-            "unscathed_rare": "As p_l is explaining why and where the herbs are growing, app1 lets out a shout. To p_l's surprise, {PRONOUN/app1/subject} {VERB/app1/have/has} found a previously unknown patch of an uncommon herb. Stunned and filled with pride that {PRONOUN/app1/subject} found and recognized the herb, p_l promises {PRONOUN/app1/object} the first pick of fresh-kill."
-        },
-        "fail_text": {
-            "unscathed_common": "app1 is constantly distracted and running ahead much to the frustration of p_l. Evidently no new knowledge will be learned that day."
-        },
-        "min_cats": 2,
-        "max_cats": 2
+        "success_outcomes": [
+            {
+                "text": "app1 is focused and attentive. p_l is confident that next time there is an emergency, app1 will be able to find those herbs both under and above ground without {PRONOUN/p_l/object} if needed.",
+                "exp": 10,
+                "weight": 20,
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "As p_l is explaining why and where the herbs are growing, app1 lets out a shout. To p_l's surprise, {PRONOUN/app1/subject} {VERB/app1/have/has} found a previously unknown patch of an uncommon herb. Stunned and filled with pride that {PRONOUN/app1/subject} found and recognized the herb, p_l promises {PRONOUN/app1/object} the first pick of fresh-kill.",
+                "exp": 10,
+                "weight": 5,
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "app1 is constantly distracted and running ahead much to the frustration of p_l. Evidently no new knowledge will be learned that day.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "dst_med_app_herblocation2",
-        "biome": "desert",
-        "season": "Any",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "apprentice",
-            "med_only",
-            "random_herbs"
-        ],
-        "intro_text": "app1 has been sent out into the desert to try to find some specific herbs alone.",
-        "decline_text": "Nervous and with the hot sun pounding on {PRONOUN/app1/poss} back, {PRONOUN/app1/subject} {VERB/app1/decides} to go back to camp and try again another day, {PRONOUN/app1/poss} tail dragging behind {PRONOUN/app1/object}.",
-        "chance_of_success": 40,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "app1 is focused and determined to prove {PRONOUN/app1/poss} independence. {PRONOUN/app1/subject/CAP} {VERB/app1/find/finds} the herbs easily, and bring them back to camp with {PRONOUN/app1/poss} head held up high, no sweat, no stress, no fuss.",
-            "unscathed_rare": "app1 goes to a known herb patch - but the plant has died! {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't give up, hunting around in the area until {PRONOUN/app1/subject} find a smaller overlooked patch that still has leaves on it."
-        },
-        "fail_text": {
-            "unscathed_common": "app1 goes to a known herb patch - but the plant has died! {PRONOUN/app1/subject/CAP} give up and return to camp, feeling terrible."
-        },
+        "biome": ["desert"],
+        "season": ["Any"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
         "min_cats": 1,
-        "max_cats": 1
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "app1 has been sent out into the desert to try to find some specific herbs alone.",
+        "decline_text": "Nervous and with the hot sun pounding on {PRONOUN/app1/poss} back, {PRONOUN/app1/subject} {VERB/app1/decide/decides} to go back to camp and try again another day, {PRONOUN/app1/poss} tail dragging behind {PRONOUN/app1/object}.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "app1 is focused and determined to prove {PRONOUN/app1/poss} independence. {PRONOUN/app1/subject/CAP} {VERB/app1/find/finds} the herbs easily, and bring them back to camp with {PRONOUN/app1/poss} head held up high, no sweat, no stress, no fuss.",
+                "exp": 10,
+                "weight": 20,
+                "herbs": ["random_herbs"]
+            },
+            {
+                "text": "app1 goes to a known herb patch - but the plant has died! {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't give up, hunting around in the area until {PRONOUN/app1/subject} find a smaller overlooked patch that still has leaves on it.",
+                "exp": 10,
+                "weight": 5,
+                "herbs": ["random_herbs"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "app1 goes to a known herb patch - but the plant has died! {PRONOUN/app1/subject/CAP} give up and return to camp, feeling terrible.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "dst_medcat_emergency1",
-        "biome": "desert",
-        "season": "greenleaf",
-        "tags": [
-            "herb_gathering",
-            "med_only",
-            "no_app",
-            "med_cat",
-            "clan_to_patrol",
-            "respect",
-            "trust"
-        ],
+        "biome": ["desert"],
+        "season": ["greenleaf"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "all apprentices": [-1, -1],
+            "normal adult": [-1, -1]
+        },
+        "weight": 20,
         "intro_text": "p_l, fueled by desperation and unable to leave the Clan because of the heat of greenleaf withering c_n, ingests a piece of sacred cacti hoping to trigger a vision.",
         "decline_text": "At that exact moment a cat walks into the medicine cat den looking for p_l. {PRONOUN/p_l/subject/CAP} {VERB/p_l/put/puts} the piece of cacti back, having to wait for a better time.",
         "chance_of_success": 50,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "Guided by the visions and dreams sent by StarClan, images of the suffering of greenleaf and the hope for new life flash before {PRONOUN/p_l/poss} eyes. p_l awakes relieved and determined. {PRONOUN/p_l/subject/CAP} {VERB/p_l/know/knows} now what actions {PRONOUN/p_l/subject} should take to save c_n",
-            "stat_skill": "strong connection to StarClan",
-            "stat_trait": "faithful"
-        },
-        "fail_text": {
-            "unscathed_common": "p_l wakes up confused and unable to remember if {PRONOUN/p_l/subject} have communicated with StarClan. The only thought bouncing around in {PRONOUN/p_l/poss} head for some reason is the word quenchy. Frustrated, p_l realizes that StarClan won't help {PRONOUN/p_l/object} this time.",
-            "death": "r_c has an unexpected severe reaction to the cacti, {PRONOUN/r_c/poss} throat swelling shut in seconds. Unable to call for help, {PRONOUN/p_l/subject} fade away toward StarClan. c_n will have to mourn one more cat."
-        },
-        "win_skills": [
-            "STAR,2",
-            "CLAIRVOYANT,2",
-            "PROPHET,3",
-            "DREAM,2"
+        "success_outcomes": [
+            {
+                "text": "Guided by the visions and dreams sent by StarClan, images of the suffering of greenleaf and the hope for new life flash before {PRONOUN/p_l/poss} eyes. p_l awakes relieved and determined. {PRONOUN/p_l/subject/CAP} {VERB/p_l/know/knows} now what actions {PRONOUN/p_l/subject} should take to save c_n",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "strong connection to StarClan",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["STAR,2", "CLAIRVOYANT,2", "PROPHET,3", "DREAM,2"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "faithful",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["faithful", "strange", "thoughtful", "wise"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "faithful",
-            "strange",
-            "thoughtful",
-            "wise"
-        ],
-        "min_cats": 1,
-        "max_cats": 1,
-        "Antagonize_text": null,
-        "Antagonize_fail_text": null,
-        "history_text": {
-            "reg_death": "m_c died trying to communicate with StarClan using a rare and dangerous ritual in an attempt to save {PRONOUN/m_c/poss} Clan."
-        }
+        "fail_outcomes": [
+            {
+                "text": "p_l wakes up confused and unable to remember if {PRONOUN/p_l/subject} have communicated with StarClan. The only thought bouncing around in {PRONOUN/p_l/poss} head for some reason is the word quenchy. Frustrated, p_l realizes that StarClan won't help {PRONOUN/p_l/object} this time.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "r_c has an unexpected severe reaction to the cacti, {PRONOUN/r_c/poss} throat swelling shut in seconds. Unable to call for help, {PRONOUN/p_l/subject} fade away toward StarClan. c_n will have to mourn one more cat.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "reg_death": "m_c died trying to communicate with StarClan using a rare and dangerous ritual in an attempt to save {PRONOUN/m_c/poss} Clan."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "dst_med_lungwort1",
-        "biome": "desert",
-        "season": "newleaf",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "apprentice",
-            "med_only",
-            "herb",
-            "comfort",
-            "respect",
-            "trust",
-            "dislike"
-        ],
+        "biome": ["desert"],
+        "season": ["newleaf"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
+        },
+        "weight": 20,
         "intro_text": "p_l and app1 head out for lungwort, with p_l starting a lesson on the value of this rare herb for treating yellowcough.",
         "decline_text": "A cat grabs p_l's attention before they can leave. Sighing, the expedition is delayed for another time.",
         "chance_of_success": 15,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest before the plants die back inthe withering heat of greenleaf. For just a second, p_l feels the weight of {PRONOUN/p_l/poss} responsibilities lift, and {PRONOUN/p_l/subject} {VERB/p_l/let/lets} out a whoop and stop to play with app1.",
-            "unscathed_rare": "app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers {PRONOUN/app1/object} with praise, app1 feeling like {PRONOUN/app1/subject} could burst with accomplishment.",
-            "stat_skill": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
-            "stat_trait": "Night falls, and still s_c insists they keep going - lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves."
-        },
-        "fail_text": {
-            "unscathed_common": "Not only do they not find anything, app1 seems to take in absolutely nothing of what p_l is teaching {PRONOUN/app1/object}, and by the time they're back at camp, p_l wants to scream."
-        },
-        "win_skills": [
-            "SENSE,2",
-            "CLEVER,3"
+        "success_outcomes": [
+            {
+                "text": "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest before the plants die back inthe withering heat of greenleaf. For just a second, p_l feels the weight of {PRONOUN/p_l/poss} responsibilities lift, and {PRONOUN/p_l/subject} {VERB/p_l/let/lets} out a whoop and stop to play with app1.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers {PRONOUN/app1/object} with praise, app1 feeling like {PRONOUN/app1/subject} could burst with accomplishment.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SENSE,2", "CLEVER,3"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Night falls, and still s_c insists they keep going - lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["patient"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "patient"
-        ],
-        "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "Not only do they not find anything, app1 seems to take in absolutely nothing of what p_l is teaching {PRONOUN/app1/object}, and by the time they're back at camp, p_l wants to scream.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "dst_med_lungwort2",
-        "biome": "desert",
-        "season": "newleaf",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "herb",
-            "no_app",
-            "clan_to_patrol",
-            "respect",
-            "injury",
-            "sore"
-        ],
+        "biome": ["desert"],
+        "season": ["newleaf"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
         "intro_text": "p_l is on a mission to find lungwort now that greenleaf is on the horizon. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n stock up.",
         "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave camp.",
         "chance_of_success": 15,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "It takes {PRONOUN/p_l/object} all day, but eventually, finally, p_l spots the speckled leaves {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been looking for, so crucial to stock up on before the withering heat of greenleaf. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
-            "unscathed_rare": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. Frustratingly, p_l doesn't have the capacity to cart everything back to camp, but {PRONOUN/p_l/subject} {VERB/p_l/stick/sticks} the location in {PRONOUN/p_l/poss} mind as a place to return to.",
-            "stat_skill": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
-            "stat_trait": "Night falls, and still s_c insists to {PRONOUN/s_c/self} that {PRONOUN/s_c/subject} {VERB/s_c/need/needs} to keep going - {PRONOUN/s_c/subject} just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until {PRONOUN/s_c/subject} {VERB/s_c/find/finds} those precious speckled leaves."
-        },
-        "fail_text": {
-            "injury": "p_l searches until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
-        },
-        "win_skills": [
-            "SENSE,2",
-            "CLEVER,3"
+        "success_outcomes": [
+            {
+                "text": "It takes {PRONOUN/p_l/object} all day, but eventually, finally, p_l spots the speckled leaves {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been looking for, so crucial to stock up on before the withering heat of greenleaf. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. Frustratingly, p_l doesn't have the capacity to cart everything back to camp, but {PRONOUN/p_l/subject} {VERB/p_l/stick/sticks} the location in {PRONOUN/p_l/poss} mind as a place to return to.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SENSE,2", "CLEVER,3"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Night falls, and still s_c insists to {PRONOUN/s_c/self} that {PRONOUN/s_c/subject} {VERB/s_c/need/needs} to keep going - {PRONOUN/s_c/subject} just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until {PRONOUN/s_c/subject} {VERB/s_c/find/finds} those precious speckled leaves.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["patient"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "patient"
-        ],
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "p_l searches until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["sore"],
+                        "scars": []
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "dst_med_lungwort3",
-        "biome": "desert",
-        "season": "newleaf",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "warrior",
-            "herb",
-            "dislike",
-            "injury",
-            "sore",
-            "many_herbs1"
-        ],
+        "biome": ["desert"],
+        "season": ["newleaf"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 3,
+        "min_max_status": {
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "p_l is on a mission to find lungwort now that greenleaf is on the horizon. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n replenish their stocks of it. {PRONOUN/p_l/subject/CAP} {VERB/p_l/take/takes} along a warrior escort to help.",
         "decline_text": "A cat grabs p_l's attention before they can leave.",
         "chance_of_success": 15,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to stock up on before the withering heat of greenleaf. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
-            "unscathed_rare": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l loads up {PRONOUN/p_l/poss} mostly-obliging escort and carries the extensive harvest home, tail waving jovially with {PRONOUN/p_l/poss} good mood.",
-            "stat_skill": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
-            "stat_trait": "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
-        },
-        "fail_text": {
-            "unscathed_stat": "By the time they give up and return to camp, p_l is approaching explosion point with r_c. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'ve/'s} gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today.",
-            "injury": "p_l searches until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
-        },
-        "win_skills": [
-            "SENSE,2",
-            "CLEVER,3"
+        "success_outcomes": [
+            {
+                "text": "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to stock up on before the withering heat of greenleaf. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l loads up {PRONOUN/p_l/poss} mostly-obliging escort and carries the extensive harvest home, tail waving jovially with {PRONOUN/p_l/poss} good mood.",
+                "exp": 20,
+                "weight": 5,
+                "herbs": ["many_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SENSE,2", "CLEVER,3"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["patient"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "patient"
-        ],
-        "fail_trait": [
-            "troublesome",
-            "childish"
-        ],
-        "min_cats": 2,
-        "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "By the time they give up and return to camp, p_l is approaching explosion point with r_c. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'ve/'s} gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["troublesome", "childish"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "p_l searches until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["sore"],
+                        "scars": []
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "dst_med_lungwort4",
-        "biome": "desert",
-        "season": "leaf-bare",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "apprentice",
-            "med_only",
-            "herb",
-            "comfort",
-            "respect",
-            "trust",
-            "dislike"
-        ],
+        "biome": ["desert"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
+        },
+        "weight": 20,
         "intro_text": "p_l and app1 head out for lungwort, with p_l starting a lesson on the value of this rare herb for treating yellowcough.",
         "decline_text": "A cat grabs p_l's attention before they can leave. Sighing, the expedition is delayed for another time.",
         "chance_of_success": 15,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, and they let out a whoop and stop to play with app1.",
-            "unscathed_rare": "app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers {PRONOUN/app1/object} with praise, app1 feeling like {PRONOUN/app1/subject} could burst with accomplishment.",
-            "stat_skill": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
-            "stat_trait": "Night falls, and still s_c insists they keep going - lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves."
-        },
-        "fail_text": {
-            "unscathed_common": "Not only do they not find anything, app1 seems to take in absolutely nothing of what p_l is teaching {PRONOUN/app1/object}, and by the time they're back at camp, p_l wants to scream."
-        },
-        "win_skills": [
-            "SENSE,2",
-            "CLEVER,3"
+        "success_outcomes": [
+            {
+                "text": "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, and they let out a whoop and stop to play with app1.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers {PRONOUN/app1/object} with praise, app1 feeling like {PRONOUN/app1/subject} could burst with accomplishment.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SENSE,2", "CLEVER,3"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Night falls, and still s_c insists they keep going - lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["patient"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "patient"
-        ],
-        "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "Not only do they not find anything, app1 seems to take in absolutely nothing of what p_l is teaching {PRONOUN/app1/object}, and by the time they're back at camp, p_l wants to scream.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "dst_med_lungwort5",
-        "biome": "desert",
-        "season": "leaf-bare",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "herb",
-            "no_app",
-            "clan_to_patrol",
-            "respect",
-            "injury",
-            "sore"
-        ],
+        "biome": ["desert"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
         "intro_text": "p_l is on a mission to find lungwort now that leaf-bare is here. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n stock up on it.",
         "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave camp.",
         "chance_of_success": 15,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "It takes {PRONOUN/p_l/object} all day, but eventually, finally, p_l spots the speckled leaves {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been looking for, so crucial to harvest while the growing season is upon them. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
-            "unscathed_rare": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. Frustratingly, p_l doesn't have the capacity to cart everything back to camp, but they stick the location in {PRONOUN/p_l/poss} mind as a place to return to.",
-            "stat_skill": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
-            "stat_trait": "Night falls, and still s_c insists to {PRONOUN/s_c/self} that {PRONOUN/s_c/subject} {VERB/s_c/need/needs} to keep going - {PRONOUN/s_c/subject} just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until {PRONOUN/s_c/subject} {VERB/s_c/find/finds} those precious speckled leaves."
-        },
-        "fail_text": {
-            "injury": "p_l searches until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
-        },
-        "win_skills": [
-            "SENSE,2",
-            "CLEVER,3"
+        "success_outcomes": [
+            {
+                "text": "It takes {PRONOUN/p_l/object} all day, but eventually, finally, p_l spots the speckled leaves {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been looking for, so crucial to harvest while the growing season is upon them. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. Frustratingly, p_l doesn't have the capacity to cart everything back to camp, but they stick the location in {PRONOUN/p_l/poss} mind as a place to return to.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SENSE,2", "CLEVER,3"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Night falls, and still s_c insists to {PRONOUN/s_c/self} that {PRONOUN/s_c/subject} {VERB/s_c/need/needs} to keep going - {PRONOUN/s_c/subject} just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until {PRONOUN/s_c/subject} {VERB/s_c/find/finds} those precious speckled leaves.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["patient"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "patient"
-        ],
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "p_l searches until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["sore"],
+                        "scars": []
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "dst_med_lungwort6",
-        "biome": "desert",
-        "season": "leaf-bare",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "warrior",
-            "herb",
-            "dislike",
-            "injury",
-            "sore",
-            "many_herbs1"
-        ],
+        "biome": ["desert"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 3,
+        "min_max_status": {
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "p_l is on a mission to find lungwort now that leaf-bare is here. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n won't run out of it. {PRONOUN/p_l/subject/CAP} take along a warrior escort to help.",
         "decline_text": "A cat grabs p_l's attention before they can leave.",
         "chance_of_success": 15,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
-            "unscathed_rare": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l loads up {PRONOUN/p_l/poss} mostly-obliging escort and carries the extensive harvest home, tail waving jovially with {PRONOUN/p_l/poss} good mood.",
-            "stat_skill": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
-            "stat_trait": "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
-        },
-        "fail_text": {
-            "unscathed_stat": "By the time they give up and return to camp, p_l is approaching explosion point with r_c. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'ve/'s} gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today.",
-            "injury": "p_l searches until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
-        },
-        "win_skills": [
-            "SENSE,2",
-            "CLEVER,3"
+        "success_outcomes": [
+            {
+                "text": "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l loads up {PRONOUN/p_l/poss} mostly-obliging escort and carries the extensive harvest home, tail waving jovially with {PRONOUN/p_l/poss} good mood.",
+                "exp": 20,
+                "weight": 5,
+                "herbs": ["many_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SENSE,2", "CLEVER,3"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["patient"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "patient"
-        ],
-        "fail_trait": [
-            "troublesome",
-            "childish"
-        ],
-        "min_cats": 2,
-        "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "By the time they give up and return to camp, p_l is approaching explosion point with r_c. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'ve/'s} gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["troublesome", "childish"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "p_l searches until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["sore"],
+                        "scars": []
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "dst_med_lungwort7",
-        "biome": "desert",
-        "season": "leaf-fall",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "apprentice",
-            "med_only",
-            "herb",
-            "comfort",
-            "respect",
-            "trust",
-            "dislike"
-        ],
+        "biome": ["desert"],
+        "season": ["leaf-fall"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
+        },
+        "weight": 20,
         "intro_text": "p_l and app1 head out for lungwort, with p_l starting a lesson on the value of this rare herb for treating yellowcough.",
         "decline_text": "A cat grabs p_l's attention before they can leave. Sighing, the expedition is delayed for another time.",
         "chance_of_success": 15,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to replenishing the Clan's stores after the long greenleaf. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, and {PRONOUN/p_l/subject} let out a whoop and stop to play with app1.",
-            "unscathed_rare": "app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers {PRONOUN/app1/object} with praise, app1 feeling like {PRONOUN/app1/subject} could burst with accomplishment.",
-            "stat_skill": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
-            "stat_trait": "Night falls, and still s_c insists they keep going - lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves."
-        },
-        "fail_text": {
-            "unscathed_common": "Not only do they not find anything, app1 seems to take in absolutely nothing of what p_l is teaching {PRONOUN/app1/object}, and by the time they're back at camp, p_l wants to scream."
-        },
-        "win_skills": [
-            "SENSE,2",
-            "CLEVER,3"
+        "success_outcomes": [
+            {
+                "text": "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to replenishing the Clan's stores after the long greenleaf. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, and {PRONOUN/p_l/subject} let out a whoop and stop to play with app1.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers {PRONOUN/app1/object} with praise, app1 feeling like {PRONOUN/app1/subject} could burst with accomplishment.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SENSE,2", "CLEVER,3"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Night falls, and still s_c insists they keep going - lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["patient"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "patient"
-        ],
-        "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "Not only do they not find anything, app1 seems to take in absolutely nothing of what p_l is teaching {PRONOUN/app1/object}, and by the time they're back at camp, p_l wants to scream.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "dst_med_lungwort8",
-        "biome": "desert",
-        "season": "leaf-fall",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "herb",
-            "no_app",
-            "clan_to_patrol",
-            "respect",
-            "injury",
-            "sore"
-        ],
+        "biome": ["desert"],
+        "season": ["leaf-fall"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
         "intro_text": "p_l is on a mission to find lungwort now that leaf-fall is here. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n replenish their stocks of it.",
         "decline_text": "A cat grabs p_l's attention before they can leave camp.",
         "chance_of_success": 15,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "It takes {PRONOUN/p_l/object} all day, but eventually, finally, p_l spots the speckled leaves {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been looking for, so crucial to replenishing the Clan's stores after the long greenleaf. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
-            "unscathed_rare": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. Frustratingly, p_l doesn't have the capacity to cart everything back to camp, but they stick the location in {PRONOUN/p_l/poss} mind as a place to return to.",
-            "stat_skill": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
-            "stat_trait": "Night falls, and still s_c insists to {PRONOUN/s_c/self} that {PRONOUN/s_c/subject} {VERB/s_c/need/needs} to keep going - {PRONOUN/s_c/subject} just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until {PRONOUN/s_c/subject} {VERB/s_c/find/finds} those precious speckled leaves."
-        },
-        "fail_text": {
-            "injury": "p_l searches until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
-        },
-        "win_skills": [
-            "SENSE,2",
-            "CLEVER,3"
+        "success_outcomes": [
+            {
+                "text": "It takes {PRONOUN/p_l/object} all day, but eventually, finally, p_l spots the speckled leaves {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been looking for, so crucial to replenishing the Clan's stores after the long greenleaf. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. Frustratingly, p_l doesn't have the capacity to cart everything back to camp, but they stick the location in {PRONOUN/p_l/poss} mind as a place to return to.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SENSE,2", "CLEVER,3"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Night falls, and still s_c insists to {PRONOUN/s_c/self} that {PRONOUN/s_c/subject} {VERB/s_c/need/needs} to keep going - {PRONOUN/s_c/subject} just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until {PRONOUN/s_c/subject} {VERB/s_c/find/finds} those precious speckled leaves.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["patient"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "patient"
-        ],
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "p_l searches until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["sore"],
+                        "scars": []
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "dst_med_lungwort9",
-        "biome": "desert",
-        "season": "leaf-fall",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "warrior",
-            "herb",
-            "dislike",
-            "injury",
-            "sore",
-            "many_herbs1"
-        ],
+        "biome": ["desert"],
+        "season": ["leaf-fall"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 3,
+        "min_max_status": {
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "p_l is on a mission to find lungwort now that leaf-fall is here. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n replenish their stocks of it. {PRONOUN/p_l/subject/CAP} take along a warrior escort to help.",
         "decline_text": "A cat grabs p_l's attention before they can leave.",
         "chance_of_success": 15,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to replenishing the Clan's stores after the long greenleaf. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/subject} off guard.",
-            "unscathed_rare": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l loads up {PRONOUN/p_l/poss} mostly-obliging escort and carries the extensive harvest home, tail waving jovially with {PRONOUN/p_l/poss} good mood.",
-            "stat_skill": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
-            "stat_trait": "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
-        },
-        "fail_text": {
-            "unscathed_stat": "By the time they give up and return to camp, p_l is approaching explosion point with r_c. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'ve/'s} gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today.",
-            "injury": "p_l searches until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
-        },
-        "win_skills": [
-            "SENSE,2",
-            "CLEVER,3"
+        "success_outcomes": [
+            {
+                "text": "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to replenishing the Clan's stores after the long greenleaf. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/subject} off guard.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l loads up {PRONOUN/p_l/poss} mostly-obliging escort and carries the extensive harvest home, tail waving jovially with {PRONOUN/p_l/poss} good mood.",
+                "exp": 20,
+                "weight": 5,
+                "herbs": ["many_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SENSE,2", "CLEVER,3"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["patient"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "patient"
-        ],
-        "fail_trait": [
-            "troublesome",
-            "childish"
-        ],
-        "min_cats": 2,
-        "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "By the time they give up and return to camp, p_l is approaching explosion point with r_c. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'ve/'s} gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["troublesome", "childish"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "p_l searches until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["sore"],
+                        "scars": []
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "dst_med_rescue1",
-        "biome": "desert",
-        "season": "Any",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "med_only",
-            "new_cat",
-            "kits"
-        ],
+        "biome": ["desert"],
+        "season": ["Any"],
+        "types": ["herb_gathering"],
+        "tags": ["new_cat"],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
+        },
+        "weight": 20,
         "intro_text": "p_l while searching for some specific herbs is startled by weird sounds and whispers on the wind.",
         "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, they go back to c_n to ask for help and guidance.",
         "chance_of_success": 35,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "p_l, sure that it is a sign of StarClan, follows the sounds and whispers on the wind and finds a queen who lost their life in a harsh kitting, their newborn kits clinging to a body that will never move again. p_l instantly wraps {PRONOUN/p_l/self} around the kits and orders r_c back to camp to find help and a queen willing to nurse them.",
-            "unscathed_rare": "p_l follows the strange sounds on the wind and finds a struggling queen with their newborn kits clinging to them. r_c sprints back to camp to get help while p_l tries to make the queen eat some strengthening herbs. Thankful for the help, the queen joins c_n with their kits."
-        },
-        "fail_text": {
-            "unscathed_common": "p_l follows the strange sounds on the wind and finds the bodies of an unknown queen with their kits slowly going cold. r_c goes back to camp to get help to bring their bodies back to camp to pay respects and bury them."
-        },
-        "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": "null, ",
-        "antagonize_fail_text": "null, ",
-        "history_text": {
-            "scar": "Scar",
-            "lead_death": "Death"
-        }
+        "success_outcomes": [
+            {
+                "text": "p_l, sure that it is a sign of StarClan, follows the sounds and whispers on the wind and finds a queen who lost their life in a harsh kitting, their newborn kits clinging to a body that will never move again. p_l instantly wraps {PRONOUN/p_l/self} around the kits and orders r_c back to camp to find help and a queen willing to nurse them.",
+                "exp": 10,
+                "weight": 20
+            },
+            {
+                "text": "p_l follows the strange sounds on the wind and finds a struggling queen with their newborn kits clinging to them. r_c sprints back to camp to get help while p_l tries to make the queen eat some strengthening herbs. Thankful for the help, the queen joins c_n with their kits.",
+                "exp": 10,
+                "weight": 5
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l follows the strange sounds on the wind and finds the bodies of an unknown queen with their kits slowly going cold. r_c goes back to camp to get help to bring their bodies back to camp to pay respects and bury them.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_fail_outcomes": [
+            { "text": "null, ", "exp": 0, "weight": 20, "outsider_rep": -1 }
+        ],
+        "antag_success_outcomes": [
+            { "text": "null, ", "exp": 10, "weight": 20, "outsider_rep": -2 }
+        ]
     },
     {
         "patrol_id": "dst_med_romance1",
-        "biome": "desert",
-        "season": "newleaf",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "warrior",
-            "herb",
-            "romantic",
-            "platonic",
-            "respect",
-            "p_l_to_r_c",
-            "s_c_to_r_c",
-            "no_app"
-        ],
+        "biome": ["desert"],
+        "season": ["newleaf"],
+        "types": ["herb_gathering"],
+        "tags": ["romantic"],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "all apprentices": [-1, -1],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "p_l goes out with a warrior escort, both for safety as they look for newleaf's fresh buds, and for carrying capacity should they find anything.",
         "decline_text": "{PRONOUN/p_l/poss/CAP} escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
         "chance_of_success": 60,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "Surprisingly, r_c actually starts up a conversation with {PRONOUN/p_l/object} about the herbs they're looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes {PRONOUN/p_l/poss} heart feel lighter getting to share {PRONOUN/p_l/poss} knowledge and skills with someone who respects {PRONOUN/p_l/object}.",
-            "stat_skill": "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
-        },
-        "fail_text": {
-            "unscathed_common": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common and the other cat bluntly refuses to talk about boring herbs.",
-            "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}'re obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
-        },
-        "win_skills": [
-            "MEDIATOR,1"
+        "success_outcomes": [
+            {
+                "text": "Surprisingly, r_c actually starts up a conversation with {PRONOUN/p_l/object} about the herbs they're looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes {PRONOUN/p_l/poss} heart feel lighter getting to share {PRONOUN/p_l/poss} knowledge and skills with someone who respects {PRONOUN/p_l/object}.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["MEDIATOR,1"],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "fail_trait": [
-            "troublesome",
-            "childish"
-        ],
-        "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common and the other cat bluntly refuses to talk about boring herbs.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}'re obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["troublesome", "childish"],
+                "can_have_stat": ["r_c"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "dst_med_romance2",
-        "biome": "desert",
-        "season": "leaf-bare",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "med_only",
-            "herb",
-            "romantic",
-            "platonic",
-            "respect",
-            "p_l_to_r_c",
-            "s_c_to_r_c"
-        ],
+        "biome": ["desert"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
+        "tags": ["romantic"],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
+        },
+        "weight": 20,
         "intro_text": "p_l heads out, leading a patrol of medicine cats to go find the buds of newleaf.",
         "decline_text": ". . .And they're called back almost immediately, as one of the elders starts hacking up something.",
         "chance_of_success": 60,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "The ground is slippery and damp, and as p_l falls, r_c catches {PRONOUN/p_l/object}. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
-            "stat_skill": "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} felt in moons when they come back to camp, smiling softly."
-        },
-        "fail_text": {
-            "unscathed_common": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common.",
-            "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}'re obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
-        },
-        "win_skills": [
-            "MEDIATOR,1"
+        "success_outcomes": [
+            {
+                "text": "The ground is slippery and damp, and as p_l falls, r_c catches {PRONOUN/p_l/object}. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} felt in moons when they come back to camp, smiling softly.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["MEDIATOR,1"],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "fail_trait": [
-            "troublesome",
-            "childish"
-        ],
-        "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}'re obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["troublesome", "childish"],
+                "can_have_stat": ["r_c"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "dst_med_romance3",
-        "biome": "desert",
-        "season": "leaf-bare",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "warrior",
-            "herb",
-            "romantic",
-            "platonic",
-            "respect",
-            "p_l_to_r_c",
-            "s_c_to_r_c"
-        ],
+        "biome": ["desert"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
+        "tags": ["romantic"],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "p_l goes out with a warrior escort, both for safety as they look to take advantage of the leaf-bare growing season, and for carrying capacity should they find anything.",
         "decline_text": "{PRONOUN/p_l/poss/CAP} escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
         "chance_of_success": 60,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "Surprisingly, r_c actually starts up a conversation with {PRONOUN/p_l/object} about the herbs they're looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes {PRONOUN/p_l/poss} heart feel lighter getting to share {PRONOUN/p_l/poss} knowledge and skills with someone who respects {PRONOUN/p_l/object}.",
-            "stat_skill": "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} felt in moons when they come back to camp, smiling softly."
-        },
-        "fail_text": {
-            "unscathed_common": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common and the other cat bluntly refuses to talk about boring herbs.",
-            "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}'re obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
-        },
-        "win_skills": [
-            "MEDIATOR,1"
+        "success_outcomes": [
+            {
+                "text": "Surprisingly, r_c actually starts up a conversation with {PRONOUN/p_l/object} about the herbs they're looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes {PRONOUN/p_l/poss} heart feel lighter getting to share {PRONOUN/p_l/poss} knowledge and skills with someone who respects {PRONOUN/p_l/object}.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} felt in moons when they come back to camp, smiling softly.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["MEDIATOR,1"],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "fail_trait": [
-            "troublesome",
-            "childish"
-        ],
-        "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common and the other cat bluntly refuses to talk about boring herbs.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}'re obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["troublesome", "childish"],
+                "can_have_stat": ["r_c"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "dst_med_romance4",
-        "biome": "desert",
-        "season": "leaf-bare",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "med_only",
-            "herb",
-            "romantic",
-            "platonic",
-            "respect",
-            "p_l_to_r_c",
-            "s_c_to_r_c"
-        ],
+        "biome": ["desert"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
+        "tags": ["romantic"],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
+        },
+        "weight": 20,
         "intro_text": "p_l heads out, leading a patrol of medicine cats to go find some of the bounty of leaf-bare.",
         "decline_text": ". . .And they're called back almost immediately, as one of the elders starts hacking up something.",
         "chance_of_success": 60,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "The ground is dusty and slippery, and as p_l falls, r_c catches {PRONOUN/p_l/object}. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
-            "stat_skill": "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} felt in moons when they come back to camp, smiling softly."
-        },
-        "fail_text": {
-            "unscathed_common": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common.",
-            "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}'re obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
-        },
-        "win_skills": [
-            "MEDIATOR,1"
+        "success_outcomes": [
+            {
+                "text": "The ground is dusty and slippery, and as p_l falls, r_c catches {PRONOUN/p_l/object}. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} felt in moons when they come back to camp, smiling softly.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["MEDIATOR,1"],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "fail_trait": [
-            "troublesome",
-            "childish"
-        ],
-        "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}'re obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["troublesome", "childish"],
+                "can_have_stat": ["r_c"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "dst_med_romance5",
-        "biome": "desert",
-        "season": "leaf-fall",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "warrior",
-            "herb",
-            "romantic",
-            "platonic",
-            "respect",
-            "p_l_to_r_c",
-            "s_c_to_r_c"
-        ],
+        "biome": ["desert"],
+        "season": ["leaf-fall"],
+        "types": ["herb_gathering"],
+        "tags": ["romantic"],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "p_l goes out with a warrior escort, both for safety as they try to stock up under the clear leaf-fall skies, and for carrying capacity should they find anything.",
         "decline_text": "{PRONOUN/p_l/poss/CAP} escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
         "chance_of_success": 60,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "Surprisingly, r_c actually starts up a conversation with {PRONOUN/p_l/object} about the herbs they're looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes {PRONOUN/p_l/poss} heart feel lighter getting to share {PRONOUN/p_l/poss} knowledge and skills with someone who respects {PRONOUN/p_l/object}.",
-            "stat_skill": "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} felt in moons when they come back to camp, smiling softly."
-        },
-        "fail_text": {
-            "unscathed_common": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common and the other cat bluntly refuses to talk about boring herbs.",
-            "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}'re obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
-        },
-        "win_skills": [
-            "MEDIATOR,1"
+        "success_outcomes": [
+            {
+                "text": "Surprisingly, r_c actually starts up a conversation with {PRONOUN/p_l/object} about the herbs they're looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes {PRONOUN/p_l/poss} heart feel lighter getting to share {PRONOUN/p_l/poss} knowledge and skills with someone who respects {PRONOUN/p_l/object}.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} felt in moons when they come back to camp, smiling softly.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["MEDIATOR,1"],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "fail_trait": [
-            "troublesome",
-            "childish"
-        ],
-        "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common and the other cat bluntly refuses to talk about boring herbs.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}'re obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["troublesome", "childish"],
+                "can_have_stat": ["r_c"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "dst_med_romance6",
-        "biome": "desert",
-        "season": "leaf-fall",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "med_only",
-            "herb",
-            "romantic",
-            "platonic",
-            "respect",
-            "p_l_to_r_c",
-            "s_c_to_r_c"
-        ],
+        "biome": ["desert"],
+        "season": ["leaf-fall"],
+        "types": ["herb_gathering"],
+        "tags": ["romantic"],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
+        },
+        "weight": 20,
         "intro_text": "p_l heads out, leading a patrol of medicine cats to go stock up on the first harvests available in leaf-fall.",
         "decline_text": ". . .And they're called back almost immediately, as one of the elders starts hacking up something.",
         "chance_of_success": 60,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "The ground is slippery and damp, and as p_l falls, r_c catches {PRONOUN/p_l/object}. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
-            "stat_skill": "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} felt in moons when they come back to camp, smiling softly."
-        },
-        "fail_text": {
-            "unscathed_common": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common.",
-            "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}'re obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
-        },
-        "win_skills": [
-            "MEDIATOR,1"
+        "success_outcomes": [
+            {
+                "text": "The ground is slippery and damp, and as p_l falls, r_c catches {PRONOUN/p_l/object}. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} felt in moons when they come back to camp, smiling softly.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["MEDIATOR,1"],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "fail_trait": [
-            "troublesome",
-            "childish"
-        ],
-        "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}'re obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["troublesome", "childish"],
+                "can_have_stat": ["r_c"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "dst_med_romance7",
-        "biome": "desert",
-        "season": "greenleaf",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "warrior",
-            "herb",
-            "romantic",
-            "platonic",
-            "respect",
-            "p_l_to_r_c",
-            "s_c_to_r_c"
-        ],
+        "biome": ["desert"],
+        "season": ["greenleaf"],
+        "types": ["herb_gathering"],
+        "tags": ["romantic"],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "p_l goes out with a warrior escort, both for safety as they look for sorely needed fresh supplies that have survived greenleaf so far, and for carrying capacity should they find anything.",
         "decline_text": "{PRONOUN/p_l/poss/CAP} escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
         "chance_of_success": 60,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "Surprisingly, r_c actually starts up a conversation with {PRONOUN/p_l/object} about the herbs they're looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes {PRONOUN/p_l/poss} heart feel lighter getting to share {PRONOUN/p_l/poss} knowledge and skills with someone who respects {PRONOUN/p_l/object}.",
-            "stat_skill": "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} felt in moons when they come back to camp, smiling softly."
-        },
-        "fail_text": {
-            "unscathed_common": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common and the other cat bluntly refuses to talk about boring herbs.",
-            "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}'re obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
-        },
-        "win_skills": [
-            "MEDIATOR,1"
+        "success_outcomes": [
+            {
+                "text": "Surprisingly, r_c actually starts up a conversation with {PRONOUN/p_l/object} about the herbs they're looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes {PRONOUN/p_l/poss} heart feel lighter getting to share {PRONOUN/p_l/poss} knowledge and skills with someone who respects {PRONOUN/p_l/object}.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} felt in moons when they come back to camp, smiling softly.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["MEDIATOR,1"],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "fail_trait": [
-            "troublesome",
-            "childish"
-        ],
-        "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common and the other cat bluntly refuses to talk about boring herbs.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}'re obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["troublesome", "childish"],
+                "can_have_stat": ["r_c"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "dst_med_romance8",
-        "biome": "desert",
-        "season": "greenleaf",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "med_only",
-            "herb",
-            "romantic",
-            "platonic",
-            "respect",
-            "p_l_to_r_c",
-            "s_c_to_r_c"
-        ],
+        "biome": ["desert"],
+        "season": ["greenleaf"],
+        "types": ["herb_gathering"],
+        "tags": ["romantic"],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
+        },
+        "weight": 20,
         "intro_text": "p_l heads out, leading a patrol of medicine cats to go find any fresh herbs that have survived greenleaf so far.",
         "decline_text": "...And they're called back almost immediately, as one of the elders starts hacking up something.",
         "chance_of_success": 60,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "The ground is slippery with frost, and as p_l falls, r_c catches {PRONOUN/p_l/object}. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
-            "stat_skill": "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} felt in moons when they come back to camp, smiling softly."
-        },
-        "fail_text": {
-            "unscathed_common": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common.",
-            "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}'re obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
-        },
-        "win_skills": [
-            "MEDIATOR,1"
+        "success_outcomes": [
+            {
+                "text": "The ground is slippery with frost, and as p_l falls, r_c catches {PRONOUN/p_l/object}. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} felt in moons when they come back to camp, smiling softly.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["MEDIATOR,1"],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "fail_trait": [
-            "troublesome",
-            "childish"
-        ],
-        "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}'re obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["troublesome", "childish"],
+                "can_have_stat": ["r_c"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "dst_med_appfirstsign1",
-        "biome": "desert",
-        "season": "Any",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "apprentice",
-            "med_only",
-            "herb"
-        ],
+        "biome": ["desert"],
+        "season": ["Any"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
+        },
+        "weight": 20,
         "intro_text": "p_l is out to gather a few herbs at the behest of {PRONOUN/p_l/poss} mentor. The wind is gently rustling the scrubby grass as {PRONOUN/p_l/subject} pad along.",
         "decline_text": "Just before the apprentice can leave, {PRONOUN/p_l/poss} mentor calls for {PRONOUN/p_l/poss} attention. Apparently they have a different task that's more pressing.",
         "chance_of_success": 50,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "p_l is plucking some rosemary when {PRONOUN/p_l/poss} attention is suddenly grabbed by omen_list_sight. At the sight, the fur on {PRONOUN/p_l/poss} back prickles slightly and {PRONOUN/p_l/subject} can hear {PRONOUN/p_l/poss} thundering heartbeat. {PRONOUN/p_l/subject/CAP} have to tell {PRONOUN/p_l/poss} mentor about this sign right away!"
-        },
-        "fail_text": {
-            "unscathed_common": "p_l feels a pit of dread beginning to form in {PRONOUN/p_l/poss} belly. {PRONOUN/p_l/subject/CAP} forgot where to find the herb that {PRONOUN/p_l/poss} mentor wanted. {PRONOUN/p_l/subject/CAP} scent the air hopefully, but it's useless. {PRONOUN/p_l/subject/CAP}'ll have to swallow {PRONOUN/p_l/poss} shame and return to ask for directions."
-        },
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "success_outcomes": [
+            {
+                "text": "p_l is plucking some rosemary when {PRONOUN/p_l/poss} attention is suddenly grabbed by omen_list_sight. At the sight, the fur on {PRONOUN/p_l/poss} back prickles slightly and {PRONOUN/p_l/subject} can hear {PRONOUN/p_l/poss} thundering heartbeat. {PRONOUN/p_l/subject/CAP} have to tell {PRONOUN/p_l/poss} mentor about this sign right away!",
+                "exp": 20,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l feels a pit of dread beginning to form in {PRONOUN/p_l/poss} belly. {PRONOUN/p_l/subject/CAP} forgot where to find the herb that {PRONOUN/p_l/poss} mentor wanted. {PRONOUN/p_l/subject/CAP} scent the air hopefully, but it's useless. {PRONOUN/p_l/subject/CAP}'ll have to swallow {PRONOUN/p_l/poss} shame and return to ask for directions.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     }
 ]

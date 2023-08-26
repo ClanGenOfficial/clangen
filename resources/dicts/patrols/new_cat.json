@@ -1,969 +1,2717 @@
 [
     {
         "patrol_id": "gen_bord_newcat1",
-        "biome": "Any",
-        "season": "Any",
-        "tags": [
-            "border",
-            "new_cat_loner_warrior_litter1",
-            "reputation",
-            "meeting"
-        ],
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["new_cat"],
+        "patrol_art": "gen_bord_newcat",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "Your patrol finds a loner who is interested in joining the Clan.",
         "decline_text": "Your patrol decides not to confront the loner.",
-        "success_text": {
-            "unscathed_common": "The patrol convinces the loner to join the Clan.",
-            "unscathed_rare": "The patrol convinces the loner to join the Clan, and they join with their litter of kits."
-        },
-        "fail_text": {
-            "unscathed_common": "The loner decides against joining after hearing more about Clan life."
-        },
-        "antagonize_text": "Your patrol drives the loner off of the territory.",
-        "antagonize_fail_text": "The loner is unimpressed by their hostility and decides this Clan is not for them.",
         "chance_of_success": 40,
-        "exp": 10,
-        "win_skills": [
-            "SPEAKER,1"
+        "success_outcomes": [
+            {
+                "text": "The patrol convinces the loner to join the Clan.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["loner", "status:warrior"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "The patrol convinces the loner to join the Clan, and they join with their litter of kits.",
+                "exp": 10,
+                "weight": 5,
+                "new_cat": [
+                    ["loner", "age:has_kits"],
+                    ["litter", "parent:0", "status:kitten"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            }
         ],
-        "min_cats": 2,
-        "max_cats": 6
+        "fail_outcomes": [
+            {
+                "text": "The loner decides against joining after hearing more about Clan life.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["meeting", "loner"]
+                ]
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "The loner is unimpressed by their hostility and decides this Clan is not for them.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "Your patrol drives the loner off of the territory.",
+                "exp": 10,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     },
     {
         "patrol_id": "gen_bord_newcat3",
-        "biome": "Any",
-        "season": "Any",
-        "tags": [
-            "border",
-            "new_cat_loner_warrior_litter1",
-            "reputation",
-            "meeting"
-        ],
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["new_cat"],
+        "patrol_art": "gen_bord_newcat",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "p_l finds a loner who is interested in joining the Clan.",
         "decline_text": "p_l decides not to confront the loner.",
-        "success_text": {
-            "unscathed_common": "p_l convinces the loner to join the Clan.",
-            "unscathed_rare": "p_l convinces the loner to join the Clan, and they join with their litter of kits."
-        },
-        "fail_text": {
-            "unscathed_common": "The loner decides against joining after hearing more about Clan life."
-        },
-        "antagonize_text": "p_l drives the loner off of the territory.",
-        "antagonize_fail_text": "The loner is unimpressed by p_l's hostility and decides this Clan is not for them.",
         "chance_of_success": 40,
-        "exp": 10,
-        "win_skills": [
-            "SPEAKER,1"
+        "success_outcomes": [
+            {
+                "text": "p_l convinces the loner to join the Clan.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["loner", "status:warrior"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "p_l convinces the loner to join the Clan, and they join with their litter of kits.",
+                "exp": 10,
+                "weight": 5,
+                "new_cat": [
+                    ["loner", "age:has_kits"],
+                    ["litter", "parent:0", "status:kitten"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 1
+        "fail_outcomes": [
+            {
+                "text": "The loner decides against joining after hearing more about Clan life.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["meeting", "loner"]
+                ]
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "The loner is unimpressed by p_l's hostility and decides this Clan is not for them.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "p_l drives the loner off of the territory.",
+                "exp": 10,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     },
     {
         "patrol_id": "gen_bord_newcatkittypet2",
-        "biome": "Any",
-        "season": "Any",
-        "tags": [
-            "border",
-            "new_cat_warrior_kittypet_litter1",
-            "reputation",
-            "meeting"
-        ],
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["new_cat"],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "Your patrol finds a kittypet who is interested in joining the Clan.",
         "decline_text": "Your patrol decides not to confront the kittypet.",
         "chance_of_success": 40,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "The patrol convinces the kittypet to join the Clan.",
-            "unscathed_rare": "The patrol convinces the kittypet to join the Clan, and they join with their litter of kits."
-        },
-        "fail_text": {
-            "unscathed_common": "The description of Clan life frightens the kittypet."
-        },
-        "min_cats": 2,
-        "max_cats": 6,
-        "win_skills": [
-            "SPEAKER,1"
+        "success_outcomes": [
+            {
+                "text": "The patrol convinces the kittypet to join the Clan.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["status:warrior", "kittypet"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "The patrol convinces the kittypet to join the Clan, and they join with their litter of kits.",
+                "exp": 10,
+                "weight": 5,
+                "new_cat": [
+                    ["age:has_kits", "kittypet"],
+                    ["litter", "parent:0", "status:kitten"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            }
         ],
-        "antagonize_text": "Your patrol drives the kittypet off of the territory.",
-        "antagonize_fail_text": "The kittypet is taken aback by their hostility and decides that Clan life is not for them."
+        "fail_outcomes": [
+            {
+                "text": "The description of Clan life frightens the kittypet.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["meeting", "kittypet"]
+                ]
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "The kittypet is taken aback by their hostility and decides that Clan life is not for them.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "Your patrol drives the kittypet off of the territory.",
+                "exp": 10,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     },
     {
         "patrol_id": "gen_bord_newcatkittypet6",
-        "biome": "Any",
-        "season": "Any",
-        "tags": [
-            "border",
-            "new_cat_warrior_kittypet_litter1",
-            "reputation",
-            "meeting"
-        ],
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["new_cat"],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "p_l finds a kittypet who is interested in joining the Clan.",
         "decline_text": "p_l decides not to confront the kittypet.",
         "chance_of_success": 40,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "p_l convinces the kittypet to join the Clan.",
-            "unscathed_rare": "p_l convinces the kittypet to join the Clan, and they join with their litter of kits."
-        },
-        "fail_text": {
-            "unscathed_common": "The description of Clan life frightens the kittypet."
-        },
-        "min_cats": 1,
-        "max_cats": 1,
-        "win_skills": [
-            "SPEAKER,1"
+        "success_outcomes": [
+            {
+                "text": "p_l convinces the kittypet to join the Clan.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["status:warrior", "kittypet"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "p_l convinces the kittypet to join the Clan, and they join with their litter of kits.",
+                "exp": 10,
+                "weight": 5,
+                "new_cat": [
+                    ["age:has_kits", "kittypet"],
+                    ["litter", "parent:0", "status:kitten"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            }
         ],
-        "antagonize_text": "p_l drives the kittypet off of the territory.",
-        "antagonize_fail_text": "The kittypet is taken aback by p_l's hostility and decides that Clan life is not for them."
+        "fail_outcomes": [
+            {
+                "text": "The description of Clan life frightens the kittypet.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["meeting", "kittypet"]
+                ]
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "The kittypet is taken aback by p_l's hostility and decides that Clan life is not for them.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "p_l drives the kittypet off of the territory.",
+                "exp": 10,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     },
     {
         "patrol_id": "gen_bord_newcatthunderpath3",
-        "biome": "Any",
-        "season": "Any",
-        "tags": [
-            "border",
-            "new_cat_warrior",
-            "new_cat_injury",
-            "nc_blunt_force_injury",
-            "reputation",
-            "no_change_fail_rep"
-        ],
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["new_cat"],
+        "patrol_art": "gen_bord_newcatthunderpath",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "r_c finds a wounded cat near the Thunderpath.",
         "decline_text": "They leave the wounded cat alone.",
-        "success_text": {
-            "unscathed_common": "The patrol approaches the injured cat and sees signs of life. They gingerly pick up the cat and take them back to camp to be treated by the medicine cat. The cat is grateful for their help and decides to join the Clan."
-        },
-        "fail_text": {
-            "unscathed_common": "As r_c inspects the cat, {PRONOUN/r_c/subject} {VERB/r_c/find/finds} that they are already hunting with their ancestors.",
-            "unscathed_stat": "The cats attempt to carry the cat back to camp, but the cat passes on the way. They stop to bury the cat before continuing home."
-        },
-        "antagonize_text": "Your patrol drives the cat off of the territory. It's not c_n's problem.",
-        "antagonize_fail_text": "The patrol tries to drive the cat away, but they trip and stumble over a loose twig. They lay on the ground and don't get back up. The patrol takes a bit of time to bury them - just to keep the scavengers away.",
         "chance_of_success": 40,
-        "exp": 10,
-        "win_skills": [
-            "CLEVER,1"
+        "success_outcomes": [
+            {
+                "text": "The patrol approaches the injured cat and sees signs of life. They gingerly pick up the cat and take them back to camp to be treated by the medicine cat. The cat is grateful for their help and decides to join the Clan.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["status:warrior"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1,
+                "injury": [
+                    {
+                        "cats": ["n_c:0"],
+                        "injuries": ["blunt_force_injury"],
+                        "no_results": true
+                    }
+                ]
+            }
         ],
-        "min_cats": 2,
-        "max_cats": 6
+        "fail_outcomes": [
+            {
+                "text": "As r_c inspects the cat, {PRONOUN/r_c/subject} {VERB/r_c/find/finds} that they are already hunting with their ancestors.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": 0
+            },
+            {
+                "text": "The cats attempt to carry the cat back to camp, but the cat passes on the way. They stop to bury the cat before continuing home.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": 0
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "The patrol tries to drive the cat away, but they trip and stumble over a loose twig. They lay on the ground and don't get back up. The patrol takes a bit of time to bury them - just to keep the scavengers away.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "Your patrol drives the cat off of the territory. It's not c_n's problem.",
+                "exp": 10,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     },
     {
         "patrol_id": "gen_bord_newcatthunderpath4",
-        "biome": "Any",
-        "season": "Any",
-        "tags": [
-            "border",
-            "new_cat_warrior",
-            "new_cat_injury",
-            "nc_blunt_force_injury",
-            "reputation",
-            "no_change_fail_rep"
-        ],
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["new_cat"],
+        "patrol_art": "gen_bord_newcatthunderpath",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "p_l finds a wounded cat near the Thunderpath.",
         "decline_text": "p_l leaves the wounded cat alone.",
-        "success_text": {
-            "unscathed_common": "p_l approaches the injured cat and sees signs of life. {PRONOUN/p_l/subject/CAP} gingerly {VERB/p_l/pick/picks} up the cat and {VERB/p_l/take/takes} them back to camp to be treated by the medicine cat. The cat is grateful for their help and decides to join the Clan."
-        },
-        "fail_text": {
-            "unscathed_common": "As p_l inspects the cat, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} that they are already hunting with their ancestors.",
-            "unscathed_stat": "p_l attempts to carry the cat back to camp, but the cat passes on the way. {PRONOUN/p_l/subject/CAP} {VERB/p_l/stop/stops} to bury the cat before continuing home."
-        },
-        "antagonize_text": "p_l drives the cat off of the territory. It's not c_n's problem.",
-        "antagonize_fail_text": "p_l tries to drive the cat away, but they trip and stumble over a loose twig. They lay on the ground and don't get back up. p_l takes a bit of time to bury them - just to keep the scavengers away.",
         "chance_of_success": 40,
-        "exp": 10,
-        "win_skills": [
-            "CLEVER,1"
+        "success_outcomes": [
+            {
+                "text": "p_l approaches the injured cat and sees signs of life. {PRONOUN/p_l/subject/CAP} gingerly {VERB/p_l/pick/picks} up the cat and {VERB/p_l/take/takes} them back to camp to be treated by the medicine cat. The cat is grateful for their help and decides to join the Clan.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["status:warrior"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1,
+                "injury": [
+                    {
+                        "cats": ["n_c:0"],
+                        "injuries": ["blunt_force_injury"],
+                        "no_results": true
+                    }
+                ]
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 1
+        "fail_outcomes": [
+            {
+                "text": "As p_l inspects the cat, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} that they are already hunting with their ancestors.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": 0
+            },
+            {
+                "text": "p_l attempts to carry the cat back to camp, but the cat passes on the way. {PRONOUN/p_l/subject/CAP} {VERB/p_l/stop/stops} to bury the cat before continuing home.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": 0
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "p_l tries to drive the cat away, but they trip and stumble over a loose twig. They lay on the ground and don't get back up. p_l takes a bit of time to bury them - just to keep the scavengers away.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "p_l drives the cat off of the territory. It's not c_n's problem.",
+                "exp": 10,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     },
     {
         "patrol_id": "gen_bord_newkit2",
-        "biome": "Any",
-        "season": "Any",
-        "tags": [
-            "border",
-            "new_cat_kitten",
-            "reputation",
-            "no_change_fail_rep"
-        ],
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["new_cat"],
+        "patrol_art": "gen_bord_newkit",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "r_c finds an abandoned kit whose parents are nowhere to be found.",
         "decline_text": "They decide to leave the kit alone.",
-        "success_text": {
-            "unscathed_common": "The kit is taken back to camp and nursed back to health."
-        },
-        "fail_text": {
-            "unscathed_common": "The kit is taken back to camp, but grows weak and dies a few days later.",
-            "unscathed_stat": "The patrol approaches the kit, only to realize that it's already gone. They swiftly bury it and move on."
-        },
-        "antagonize_text": "Your patrol moves the kit away from the territory, they have no interest in strange kits.",
-        "antagonize_fail_text": "The kit smells of Twolegs, your patrol has no interest in what will surely grow to be a weak cat.",
         "chance_of_success": 40,
-        "exp": 10,
-        "win_skills": [
-            "CLEVER,1"
+        "success_outcomes": [
+            {
+                "text": "The kit is taken back to camp and nursed back to health.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["status:kitten"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            }
         ],
-        "min_cats": 2,
-        "max_cats": 6
+        "fail_outcomes": [
+            {
+                "text": "The kit is taken back to camp, but grows weak and dies a few days later.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": 0
+            },
+            {
+                "text": "The patrol approaches the kit, only to realize that it's already gone. They swiftly bury it and move on.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": 0
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "The kit smells of Twolegs, your patrol has no interest in what will surely grow to be a weak cat.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "Your patrol moves the kit away from the territory, they have no interest in strange kits.",
+                "exp": 10,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     },
     {
         "patrol_id": "gen_bord_newkit6",
-        "biome": "Any",
-        "season": "Any",
-        "tags": [
-            "border",
-            "new_cat_kitten",
-            "reputation",
-            "no_change_fail_rep"
-        ],
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["new_cat"],
+        "patrol_art": "gen_bord_newkit",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "p_l finds an abandoned kit whose parents are nowhere to be found.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to leave the kit alone.",
-        "success_text": {
-            "unscathed_common": "The kit is taken back to camp and nursed back to health."
-        },
-        "fail_text": {
-            "unscathed_common": "The kit is taken back to camp, but grows weak and dies a few days later.",
-            "unscathed_stat": "p_l approaches the kit, only to realize that it's already gone. {PRONOUN/p_l/subject/CAP} swiftly {VERB/p_l/bury/buries} it and {VERB/p_l/move/moves} on."
-        },
-        "antagonize_text": "p_l moves the kit away from the territory, {PRONOUN/p_l/subject} {VERB/p_l/have/has} no interest in strange kits.",
-        "antagonize_fail_text": "The kit smells of Twolegs, p_l has no interest in what will surely grow to be a weak cat.",
         "chance_of_success": 40,
-        "exp": 10,
-        "win_skills": [
-            "CLEVER,1"
+        "success_outcomes": [
+            {
+                "text": "The kit is taken back to camp and nursed back to health.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["status:kitten"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 1
+        "fail_outcomes": [
+            {
+                "text": "The kit is taken back to camp, but grows weak and dies a few days later.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": 0
+            },
+            {
+                "text": "p_l approaches the kit, only to realize that it's already gone. {PRONOUN/p_l/subject/CAP} swiftly {VERB/p_l/bury/buries} it and {VERB/p_l/move/moves} on.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": 0
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "The kit smells of Twolegs, p_l has no interest in what will surely grow to be a weak cat.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "p_l moves the kit away from the territory, {PRONOUN/p_l/subject} {VERB/p_l/have/has} no interest in strange kits.",
+                "exp": 10,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     },
     {
         "patrol_id": "gen_bord_healer1",
-        "biome": "Any",
-        "season": "Any",
-        "tags": [
-            "border",
-            "new_cat_medcat_loner_litter1",
-            "reputation",
-            "meeting"
-        ],
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["new_cat"],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "r_c finds a loner who offers their healing skills in exchange for shelter.",
         "decline_text": "The patrol declines their offer.",
-        "success_text": {
-            "unscathed_common": "The new medicine cat is welcomed into the Clan.",
-            "unscathed_rare": "The new medicine cat is welcomed into the Clan along with their litter of kits."
-        },
-        "fail_text": {
-            "unscathed_common": "After hearing more about your Clan, the loner decides not to join."
-        },
-        "antagonize_text": "Your patrol drives the cat off of the territory.",
-        "antagonize_fail_text": "The loner is unimpressed by their hostility and decides this Clan is not for them.",
         "chance_of_success": 40,
-        "exp": 10,
-        "win_skills": [
-            "SPEAKER,2"
+        "success_outcomes": [
+            {
+                "text": "The new medicine cat is welcomed into the Clan.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["status:medicine cat", "loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "The new medicine cat is welcomed into the Clan along with their litter of kits.",
+                "exp": 10,
+                "weight": 5,
+                "new_cat": [
+                    ["status:medicine cat", "loner", "age:has_kits"],
+                    ["litter", "parent:0", "status:kitten"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            }
         ],
-        "min_cats": 2,
-        "max_cats": 6
+        "fail_outcomes": [
+            {
+                "text": "After hearing more about your Clan, the loner decides not to join.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["meeting", "loner"]
+                ]
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "The loner is unimpressed by their hostility and decides this Clan is not for them.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "Your patrol drives the cat off of the territory.",
+                "exp": 10,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     },
     {
         "patrol_id": "gen_bord_healer4",
-        "biome": "Any",
-        "season": "Any",
-        "tags": [
-            "border",
-            "new_cat_medcat_loner_litter1",
-            "reputation",
-            "meeting"
-        ],
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["new_cat"],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "p_l finds a loner who offers their healing skills in exchange for shelter.",
         "decline_text": "p_l declines their offer.",
-        "success_text": {
-            "unscathed_common": "The new medicine cat is welcomed into the Clan.",
-            "unscathed_rare": "The new medicine cat is welcomed into the Clan along with their litter of kits."
-        },
-        "fail_text": {
-            "unscathed_common": "After hearing more about your Clan, the loner decides not to join."
-        },
-        "antagonize_text": "p_l drives the cat off of the territory.",
-        "antagonize_fail_text": "The loner is unimpressed by p_l's hostility and decides this Clan is not for them.",
         "chance_of_success": 40,
-        "exp": 10,
-        "win_skills": [
-            "SPEAKER,2"
+        "success_outcomes": [
+            {
+                "text": "The new medicine cat is welcomed into the Clan.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["status:medicine cat", "loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "The new medicine cat is welcomed into the Clan along with their litter of kits.",
+                "exp": 10,
+                "weight": 5,
+                "new_cat": [
+                    ["status:medicine cat", "loner", "age:has_kits"],
+                    ["litter", "parent:0", "status:kitten"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 1
+        "fail_outcomes": [
+            {
+                "text": "After hearing more about your Clan, the loner decides not to join.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["meeting", "loner"]
+                ]
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "The loner is unimpressed by p_l's hostility and decides this Clan is not for them.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "p_l drives the cat off of the territory.",
+                "exp": 10,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     },
     {
         "patrol_id": "gen_bord_lonerchase1",
-        "biome": "Any",
-        "season": "Any",
-        "tags": [
-            "border",
-            "new_cat_loner",
-            "reputation",
-            "injury",
-            "claw-wound",
-            "scar",
-            "RIGHTEAR",
-            "meeting"
-        ],
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["new_cat"],
+        "patrol_art": "gen_bord_lonerchase",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "Your patrol cautiously moves towards the sound of barking. Near the border, they spot a dog chasing something. Oh no, it's a cat!",
         "decline_text": "The patrol decides not to interfere. Surely the cat can handle itself, the dog isn't even that big.",
         "chance_of_success": 40,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "The patrol swiftly jumps into action. They capture the dog's attention and draw it away from the cat. r_c stays hidden and goes to the cat while the rest of the patrol lures the dog away. They're unharmed, and this display of bravery makes them want to join the Clan!",
-            "stat_skill": "s_c leaps into action, pelting towards the dog with a yowl rising in {PRONOUN/s_c/poss} throat. The dog looks alarmed by this newcomer and abandons the chase as s_c swipes at it. The loner, ruffled but unharmed, is amazed by this display. After some chatting, they decide to join the Clan."
-        },
-        "fail_text": {
-            "unscathed_common": "The patrol swiftly jumps into action. They capture the dog's attention and draw it away from the cat. r_c stayed hidden while the rest of the patrol lured the dog away, but when {PRONOUN/r_c/subject} {VERB/r_c/go/goes} to find the cat, {PRONOUN/r_c/subject} {VERB/r_c/see/sees} that it's still running! Oh well, at least they're alright.",
-            "injury": "The patrol jumps into action and chases the dog off without much difficulty. A group of cats is much different than a single one. However, the distressed loner seems to think that they're a threat and takes a swipe at r_c before running off."
-        },
-        "antagonize_text": "Your patrol watches as the loner climbs up a spindly tree to escape the dog, and then promptly proceed to chase the dog out of the territory and warn the loner not to cross the border.",
-        "antagonize_fail_text": "The loner escapes the dog by climbing a tree and scowls at the patrol, who stood by watching.",
-        "history_text": {
-            "scar": "m_c was scarred when a loner attacked {PRONOUN/m_c/object}.",
-            "reg_death": "m_c died after a loner attacked {PRONOUN/m_c/object}.",
-            "lead_death": "{VERB/m_c/were/was} attacked by a loner"
-        },
-        "win_skills": [
-            "FIGHTER,1"
+        "success_outcomes": [
+            {
+                "text": "The patrol swiftly jumps into action. They capture the dog's attention and draw it away from the cat. r_c stays hidden and goes to the cat while the rest of the patrol lures the dog away. They're unharmed, and this display of bravery makes them want to join the Clan!",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "s_c leaps into action, pelting towards the dog with a yowl rising in {PRONOUN/s_c/poss} throat. The dog looks alarmed by this newcomer and abandons the chase as s_c swipes at it. The loner, ruffled but unharmed, is amazed by this display. After some chatting, they decide to join the Clan.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,1"],
+                "new_cat": [
+                    ["loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            }
         ],
-        "min_cats": 3,
-        "max_cats": 6
+        "fail_outcomes": [
+            {
+                "text": "The patrol swiftly jumps into action. They capture the dog's attention and draw it away from the cat. r_c stayed hidden while the rest of the patrol lured the dog away, but when {PRONOUN/r_c/subject} {VERB/r_c/go/goes} to find the cat, {PRONOUN/r_c/subject} {VERB/r_c/see/sees} that it's still running! Oh well, at least they're alright.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["meeting", "loner"]
+                ]
+            },
+            {
+                "text": "The patrol jumps into action and chases the dog off without much difficulty. A group of cats is much different than a single one. However, the distressed loner seems to think that they're a threat and takes a swipe at r_c before running off.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["claw-wound"],
+                        "scars": ["RIGHTEAR"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred when a loner attacked {PRONOUN/m_c/object}.",
+                    "reg_death": "m_c died after a loner attacked {PRONOUN/m_c/object}.",
+                    "lead_death": "{VERB/m_c/were/was} attacked by a loner"
+                },
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["meeting", "loner"]
+                ]
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "The loner escapes the dog by climbing a tree and scowls at the patrol, who stood by watching.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "Your patrol watches as the loner climbs up a spindly tree to escape the dog, and then promptly proceed to chase the dog out of the territory and warn the loner not to cross the border.",
+                "exp": 10,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     },
     {
         "patrol_id": "gen_med_rescue1",
-        "biome": "Any",
-        "season": "Any",
-        "tags": [
-            "herb_gathering",
-            "med_only",
-            "new_cat_warrior_litter1_litter0_litternewborn",
-            "no_change_fail_rep"
-        ],
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["herb_gathering"],
+        "tags": ["new_cat"],
+        "patrol_art": "gen_med_rescue",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [-1, -1],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
+        },
+        "weight": 20,
         "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
         "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance.",
         "chance_of_success": 45,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "The sounds die away and then start up again in strange, unpredictable intervals. Investigating, p_l suddenly finds {PRONOUN/p_l/self} nose to nose with a panting, bleeding queen, one desperately trying to keep their newborn litter quiet. p_l brings the queen back to camp, where the Clan can assist.",
-            "unscathed_rare": "p_l follows the strange sounds on the wind and finds a struggling queen with their newborn kits clinging to them. r_c sprints back to camp to find help while p_l tries to make the queen eat some strengthening herbs. Thankful for the help, the queen joins c_n with their kits."
-        },
-        "fail_text": {
-            "unscathed_common": "p_l follows the strange sounds on the wind and finds the bodies of an unknown queen with their kits beside them, slowly going cold. r_c goes back to camp to find help bringing their bodies back to camp to pay respects."
-        },
-        "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to its source, and what might have been.",
-        "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of an unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, {PRONOUN/p_l/subject} {VERB/p_l/return/returns} home, {PRONOUN/p_l/poss} mind clouded."
+        "success_outcomes": [
+            {
+                "text": "The sounds die away and then start up again in strange, unpredictable intervals. Investigating, p_l suddenly finds {PRONOUN/p_l/self} nose to nose with a panting, bleeding queen, one desperately trying to keep their newborn litter quiet. p_l brings the queen back to camp, where the Clan can assist.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["can_birth", "age:has_kits"],
+                    ["litter", "parent:0", "status:newborn"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "p_l follows the strange sounds on the wind and finds a struggling queen with their newborn kits clinging to them. r_c sprints back to camp to find help while p_l tries to make the queen eat some strengthening herbs. Thankful for the help, the queen joins c_n with their kits.",
+                "exp": 10,
+                "weight": 5,
+                "new_cat": [
+                    ["can_birth", "age:has_kits"],
+                    ["litter", "parent:0", "status:newborn"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l follows the strange sounds on the wind and finds the bodies of an unknown queen with their kits beside them, slowly going cold. r_c goes back to camp to find help bringing their bodies back to camp to pay respects.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": 0
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "p_l begrudgingly follows the sound, only to find the bodies of an unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, {PRONOUN/p_l/subject} {VERB/p_l/return/returns} home, {PRONOUN/p_l/poss} mind clouded.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "p_l hisses at StarClan for the sign, refusing to follow it to its source, and what might have been.",
+                "exp": 10,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     },
     {
         "patrol_id": "gen_med_rescue2",
-        "biome": "Any",
-        "season": "Any",
-        "tags": [
-            "herb_gathering",
-            "med_only",
-            "new_cat_warrior_litter1_litter0_dead_outside_litternewborn_orphaned1_orphaned2",
-            "no_change_fail_rep"
-        ],
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["herb_gathering"],
+        "tags": ["new_cat"],
+        "patrol_art": "gen_med_rescue",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [-1, -1],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
+        },
+        "weight": 20,
         "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
         "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance.",
         "chance_of_success": 45,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "p_l, sure that it is a sign of StarClan, follows the faint wailing. Instead {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a queen who lost their life in a harsh kitting, their newborn kits clinging to a body that will never move again. p_l instantly wraps {PRONOUN/p_l/self} around the kits and orders r_c back to camp to find help and a queen willing to nurse them.",
-            "unscathed_rare": "It takes ages for p_l to pinpoint the sounds, but eventually {PRONOUN/p_l/subject} {VERB/p_l/uncover/uncovers} the hidden birthing nest of a dead, cold queen, their newborn kits by their side. p_l makes sure the queen is given a vigil - as the kits grow older, they'll have questions about their parent."
-        },
-        "fail_text": {
-            "unscathed_common": "p_l follows the strange sounds on the wind and finds the body of an unknown queen with their kits beside them, slowly going cold. r_c goes back to camp to find help bringing their bodies back to camp to pay respects."
-        },
-        "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to its source, and what might have been.",
-        "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of an unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, {PRONOUN/p_l/subject} {VERB/p_l/return/returns} home, {PRONOUN/p_l/poss} mind clouded."
+        "success_outcomes": [
+            {
+                "text": "p_l, sure that it is a sign of StarClan, follows the faint wailing. Instead {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a queen who lost their life in a harsh kitting, their newborn kits clinging to a body that will never move again. p_l instantly wraps {PRONOUN/p_l/self} around the kits and orders r_c back to camp to find help and a queen willing to nurse them.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["dead", "meeting", "can_birth", "age:has_kits"],
+                    ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "It takes ages for p_l to pinpoint the sounds, but eventually {PRONOUN/p_l/subject} {VERB/p_l/uncover/uncovers} the hidden birthing nest of a dead, cold queen, their newborn kits by their side. p_l makes sure the queen is given a vigil - as the kits grow older, they'll have questions about their parent.",
+                "exp": 10,
+                "weight": 5,
+                "new_cat": [
+                    ["dead", "meeting", "can_birth", "age:has_kits"],
+                    ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l follows the strange sounds on the wind and finds the body of an unknown queen with their kits beside them, slowly going cold. r_c goes back to camp to find help bringing their bodies back to camp to pay respects.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": 0
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "p_l begrudgingly follows the sound, only to find the bodies of an unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, {PRONOUN/p_l/subject} {VERB/p_l/return/returns} home, {PRONOUN/p_l/poss} mind clouded.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "p_l hisses at StarClan for the sign, refusing to follow it to its source, and what might have been.",
+                "exp": 10,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     },
     {
         "patrol_id": "gen_med_rescue3",
-        "biome": "Any",
-        "season": "Any",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "med_only",
-            "no_app",
-            "new_cat_warrior_litter1_litter0_litternewborn",
-            "no_change_fail_rep"
-        ],
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["herb_gathering"],
+        "tags": ["new_cat"],
+        "patrol_art": "gen_med_rescue",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "all apprentices": [-1, -1],
+            "normal adult": [-1, -1]
+        },
+        "weight": 20,
         "intro_text": "While searching for some specific herbs p_l is startled by weird sounds and whispers on the wind.",
         "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance.",
         "chance_of_success": 45,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "The sounds die away and then start up again in strange, unpredictable intervals. Investigating, p_l suddenly finds {PRONOUN/p_l/self} nose to nose with a panting, bleeding queen, one desperately trying to keep their newborn litter quiet. p_l brings the queen back to camp, where the Clan can assist.",
-            "unscathed_rare": "p_l follows the strange sounds on the wind and finds a struggling queen with their newborn kits clinging to them. p_l tries to make the queen eat some strengthening herbs, and slowly helps them back to camp. Thankful for the help, the queen joins c_n with their kits."
-        },
-        "fail_text": {
-            "unscathed_common": "p_l follows the strange sounds on the wind and finds the body of an unknown queen with their kits beside them, slowly going cold. They cancel their patrol and return to camp to get help sending these lost souls to StarClan."
-        },
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to its source, and what might have been.",
-        "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of an unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, {PRONOUN/p_l/subject} {VERB/p_l/return/returns} home, their mind clouded."
+        "success_outcomes": [
+            {
+                "text": "The sounds die away and then start up again in strange, unpredictable intervals. Investigating, p_l suddenly finds {PRONOUN/p_l/self} nose to nose with a panting, bleeding queen, one desperately trying to keep their newborn litter quiet. p_l brings the queen back to camp, where the Clan can assist.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["age:has_kits", "can_birth"],
+                    ["litter", "parent:0", "status:newborn"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "p_l follows the strange sounds on the wind and finds a struggling queen with their newborn kits clinging to them. p_l tries to make the queen eat some strengthening herbs, and slowly helps them back to camp. Thankful for the help, the queen joins c_n with their kits.",
+                "exp": 10,
+                "weight": 5,
+                "new_cat": [
+                    ["age:has_kits", "can_birth"],
+                    ["litter", "parent:0", "status:newborn"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l follows the strange sounds on the wind and finds the body of an unknown queen with their kits beside them, slowly going cold. They cancel their patrol and return to camp to get help sending these lost souls to StarClan.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": 0
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "p_l begrudgingly follows the sound, only to find the bodies of an unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, {PRONOUN/p_l/subject} {VERB/p_l/return/returns} home, their mind clouded.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "p_l hisses at StarClan for the sign, refusing to follow it to its source, and what might have been.",
+                "exp": 10,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     },
     {
         "patrol_id": "gen_med_rescue4",
-        "biome": "Any",
-        "season": "Any",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "med_only",
-            "no_app",
-            "new_cat_warrior_litter1_litter0_dead_outside_litternewborn_orphaned1_orphaned2",
-            "no_change_fail_rep"
-        ],
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["herb_gathering"],
+        "tags": ["new_cat"],
+        "patrol_art": "gen_med_rescue",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "all apprentices": [-1, -1],
+            "normal adult": [-1, -1]
+        },
+        "weight": 20,
         "intro_text": "While searching for some specific herbs p_l is startled by weird sounds and whispers on the wind.",
         "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance.",
         "chance_of_success": 45,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "p_l, sure that it is a sign of StarClan, follows the faint wailing. Instead {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a queen who lost their life in a harsh kitting, their newborn kits clinging to a body that will never move again. p_l instantly wraps {PRONOUN/p_l/self} around the kits and starts thinking about what {PRONOUN/p_l/subject}'ll need to do to move them to camp.",
-            "unscathed_rare": "It takes ages for p_l to pinpoint the sounds, but eventually {PRONOUN/p_l/subject} {VERB/p_l/find/finds} the hidden birthing nest of a dead, cold queen, their newborn kits by their side. p_l makes sure the queen is given a vigil - as the kits grow older, they'll have questions about their parent."
-        },
-        "fail_text": {
-            "unscathed_common": "p_l follows the strange sounds on the wind and finds the body of an unknown queen with their kits beside them, slowly going cold. {PRONOUN/p_l/subject/CAP} {VERB/p_l/cancel/cancels} {PRONOUN/p_l/poss} patrol and {VERB/p_l/return/returns} to camp to get help sending these lost souls to StarClan."
-        },
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to its source, and what might have been.",
-        "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of an unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, {PRONOUN/p_l/subject} {VERB/p_l/return/returns} home, {PRONOUN/p_l/poss} mind clouded."
+        "success_outcomes": [
+            {
+                "text": "p_l, sure that it is a sign of StarClan, follows the faint wailing. Instead {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a queen who lost their life in a harsh kitting, their newborn kits clinging to a body that will never move again. p_l instantly wraps {PRONOUN/p_l/self} around the kits and starts thinking about what {PRONOUN/p_l/subject}'ll need to do to move them to camp.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["age:has_kits", "dead", "meeting", "can_birth"],
+                    ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "It takes ages for p_l to pinpoint the sounds, but eventually {PRONOUN/p_l/subject} {VERB/p_l/find/finds} the hidden birthing nest of a dead, cold queen, their newborn kits by their side. p_l makes sure the queen is given a vigil - as the kits grow older, they'll have questions about their parent.",
+                "exp": 10,
+                "weight": 5,
+                "new_cat": [
+                    ["age:has_kits", "dead", "meeting", "can_birth"],
+                    ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l follows the strange sounds on the wind and finds the body of an unknown queen with their kits beside them, slowly going cold. {PRONOUN/p_l/subject/CAP} {VERB/p_l/cancel/cancels} {PRONOUN/p_l/poss} patrol and {VERB/p_l/return/returns} to camp to get help sending these lost souls to StarClan.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": 0
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "p_l begrudgingly follows the sound, only to find the bodies of an unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, {PRONOUN/p_l/subject} {VERB/p_l/return/returns} home, {PRONOUN/p_l/poss} mind clouded.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "p_l hisses at StarClan for the sign, refusing to follow it to its source, and what might have been.",
+                "exp": 10,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     },
     {
         "patrol_id": "gen_med_rescuesoloapp1",
-        "biome": "Any",
-        "season": "Any",
-        "tags": [
-            "herb_gathering",
-            "med_only",
-            "apprentice",
-            "new_cat_warrior_litter1_litter0_litternewborn",
-            "no_change_fail_rep",
-            "injury",
-            "shock"
-        ],
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["herb_gathering"],
+        "tags": ["new_cat"],
+        "patrol_art": "med_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice": [-1, -1],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
+        },
+        "weight": 20,
         "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
         "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance.",
         "chance_of_success": 45,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "The sounds die away and then start up again in strange, unpredictable intervals. Investigating, p_l suddenly finds {PRONOUN/p_l/self} nose to nose with a panting, bleeding queen, one desperately trying to keep their newborn litter quiet. {PRONOUN/p_l/subject/CAP} {VERB/p_l/run/runs} for home, desperate to bring help.",
-            "unscathed_rare": "p_l follows the strange sounds on the wind and finds a struggling queen with their newborn kits clinging to them. Panicking, {PRONOUN/p_l/subject} {VERB/p_l/ask/asks} the queen to hold on just a little longer while {PRONOUN/p_l/subject} {VERB/p_l/fetch/fetches} help, then {VERB/p_l/sprint/sprints} for home, yowling in case any patrol is nearby to assist."
-        },
-        "fail_text": {
-            "injury": "p_l follows the strange sounds on the wind and finds the bodies of an unknown queen with their kits beside them, slowly going cold. {PRONOUN/p_l/subject/CAP} desperately {VERB/p_l/try/tries} to save a kitten, but can't, and a Clanmate finds {PRONOUN/p_l/object} there sobbing hours later."
-        },
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to its source, and what might have been.",
-        "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of an unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, {PRONOUN/p_l/subject} {VERB/p_l/return/returns} home, {PRONOUN/p_l/poss} mind clouded."
+        "success_outcomes": [
+            {
+                "text": "The sounds die away and then start up again in strange, unpredictable intervals. Investigating, p_l suddenly finds {PRONOUN/p_l/self} nose to nose with a panting, bleeding queen, one desperately trying to keep their newborn litter quiet. {PRONOUN/p_l/subject/CAP} {VERB/p_l/run/runs} for home, desperate to bring help.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["age:has_kits", "can_birth"],
+                    ["litter", "parent:0", "status:newborn"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "p_l follows the strange sounds on the wind and finds a struggling queen with their newborn kits clinging to them. Panicking, {PRONOUN/p_l/subject} {VERB/p_l/ask/asks} the queen to hold on just a little longer while {PRONOUN/p_l/subject} {VERB/p_l/fetch/fetches} help, then {VERB/p_l/sprint/sprints} for home, yowling in case any patrol is nearby to assist.",
+                "exp": 10,
+                "weight": 5,
+                "new_cat": [
+                    ["age:has_kits", "can_birth"],
+                    ["litter", "parent:0", "status:newborn"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l follows the strange sounds on the wind and finds the bodies of an unknown queen with their kits beside them, slowly going cold. {PRONOUN/p_l/subject/CAP} desperately {VERB/p_l/try/tries} to save a kitten, but can't, and a Clanmate finds {PRONOUN/p_l/object} there sobbing hours later.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["shock"],
+                        "scars": []
+                    }
+                ],
+                "outsider_rep": 0
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "p_l begrudgingly follows the sound, only to find the bodies of an unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, {PRONOUN/p_l/subject} {VERB/p_l/return/returns} home, {PRONOUN/p_l/poss} mind clouded.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "p_l hisses at StarClan for the sign, refusing to follow it to its source, and what might have been.",
+                "exp": 10,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     },
     {
         "patrol_id": "gen_med_rescuesoloapp2",
-        "biome": "Any",
-        "season": "Any",
-        "tags": [
-            "herb_gathering",
-            "med_only",
-            "apprentice",
-            "new_cat_warrior_litter1_litter0_dead_outside_litternewborn_orphaned1_orphaned2",
-            "no_change_fail_rep",
-            "injury",
-            "shock"
-        ],
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["herb_gathering"],
+        "tags": ["new_cat"],
+        "patrol_art": "med_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice": [-1, -1],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
+        },
+        "weight": 20,
         "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
         "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance.",
         "chance_of_success": 45,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "p_l, sure that it is a sign of StarClan, follows the faint wailing. Instead {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a queen who lost their life in a harsh kitting, their newborn kits clinging to a body that will never move again. p_l tries to comfort the poor kittens, curling around them to share {PRONOUN/p_l/poss} body heat, and wails until a passing patrol hears {PRONOUN/p_l/object}.",
-            "unscathed_rare": "It takes ages for p_l to pinpoint the sounds, but eventually {PRONOUN/p_l/subject} {VERB/p_l/uncover/uncovers} the hidden birthing nest of a dead, cold queen, their newborn kits by their side. p_l vows to be the new kits' family, to make sure they'll grow up loved and accepted."
-        },
-        "fail_text": {
-            "injury": "p_l follows the strange sounds on the wind and finds the body of an unknown queen with their kits beside them, slowly going cold. {PRONOUN/p_l/subject/CAP} desperately {VERB/p_l/try/tries} to save a kitten, but can't, and a Clanmate finds {PRONOUN/p_l/object} there sobbing hours later."
-        },
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to its source, and what might have been.",
-        "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of an unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, {PRONOUN/p_l/subject} {VERB/p_l/return/returns} home, {PRONOUN/p_l/poss} mind clouded."
+        "success_outcomes": [
+            {
+                "text": "p_l, sure that it is a sign of StarClan, follows the faint wailing. Instead {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a queen who lost their life in a harsh kitting, their newborn kits clinging to a body that will never move again. p_l tries to comfort the poor kittens, curling around them to share {PRONOUN/p_l/poss} body heat, and wails until a passing patrol hears {PRONOUN/p_l/object}.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["age:has_kits", "dead", "meeting", "can_birth"],
+                    ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "It takes ages for p_l to pinpoint the sounds, but eventually {PRONOUN/p_l/subject} {VERB/p_l/uncover/uncovers} the hidden birthing nest of a dead, cold queen, their newborn kits by their side. p_l vows to be the new kits' family, to make sure they'll grow up loved and accepted.",
+                "exp": 10,
+                "weight": 5,
+                "new_cat": [
+                    ["age:has_kits", "dead", "meeting", "can_birth"],
+                    ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l follows the strange sounds on the wind and finds the body of an unknown queen with their kits beside them, slowly going cold. {PRONOUN/p_l/subject/CAP} desperately {VERB/p_l/try/tries} to save a kitten, but can't, and a Clanmate finds {PRONOUN/p_l/object} there sobbing hours later.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["shock"],
+                        "scars": []
+                    }
+                ],
+                "outsider_rep": 0
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "p_l begrudgingly follows the sound, only to find the bodies of an unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, {PRONOUN/p_l/subject} {VERB/p_l/return/returns} home, {PRONOUN/p_l/poss} mind clouded.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "p_l hisses at StarClan for the sign, refusing to follow it to its source, and what might have been.",
+                "exp": 10,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     },
     {
         "patrol_id": "bch_bord_newcat_abandontwoleg1",
-        "biome": "beach",
-        "season": "Any",
-        "tags": [
-            "fighting",
-            "border",
-            "new_cat_elder_loner",
-            "no_new_cat2",
-            "no_new_cat3",
-            "death"
-        ],
+        "biome": ["beach"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["new_cat"],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "p_l hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach.",
         "decline_text": "p_l decides not to investigate.",
         "chance_of_success": 10,
-        "exp": 30,
-        "success_text": {
-            "unscathed_common": "It's just an odd loner singing to themself. p_l greets them, and as the loner's home isn't on c_n territory, it's a polite interaction without any hostility. The older cat looks like they could use a meal, and p_l invites them to c_n's camp. The loner agrees.",
-            "unscathed_rare": "It's just an odd loner singing to themself. When they see p_l they invite {PRONOUN/p_l/object} to sing along, but instead, p_l offers the strange, battered-looking cat an introduction to c_n. It's got to be far less lonely than their current life.",
-            "stat_skill": "s_c walks into an ambush set by a group of rogues. It's only by the grace of StarClan that s_c has the fighting skill and confidence to escape, running for {PRONOUN/s_c/poss} life to get back to camp. ",
-            "stat_trait": "s_c has a bad feeling about this. At first it seems like {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats lingering around the Twoleg nest. Forewarned, s_c retreats to safety."
-        },
-        "fail_text": {
-            "death": "p_l decides that a quick peek can't hurt. As {PRONOUN/p_l/subject} {VERB/p_l/venture/ventures} into the nest, ears pricked with curiosity, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} notice the lithe forms of rogues moving to block the entrance until it's too late. p_l never makes it back to camp."
-        },
-        "win_skills": [
-            "FIGHTER,3"
+        "success_outcomes": [
+            {
+                "text": "It's just an odd loner singing to themself. p_l greets them, and as the loner's home isn't on c_n territory, it's a polite interaction without any hostility. The older cat looks like they could use a meal, and p_l invites them to c_n's camp. The loner agrees.",
+                "exp": 30,
+                "weight": 20,
+                "new_cat": [
+                    ["status:elder", "age:senior", "loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "It's just an odd loner singing to themself. When they see p_l they invite {PRONOUN/p_l/object} to sing along, but instead, p_l offers the strange, battered-looking cat an introduction to c_n. It's got to be far less lonely than their current life.",
+                "exp": 30,
+                "weight": 5,
+                "new_cat": [
+                    ["status:elder", "age:senior", "loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "s_c walks into an ambush set by a group of rogues. It's only by the grace of StarClan that s_c has the fighting skill and confidence to escape, running for {PRONOUN/s_c/poss} life to get back to camp. ",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,3"],
+                "new_cat": [
+                    ["status:elder", "age:senior", "loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "s_c has a bad feeling about this. At first it seems like {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats lingering around the Twoleg nest. Forewarned, s_c retreats to safety.",
+                "exp": 30,
+                "weight": 20,
+                "stat_trait": ["careful", "insecure", "nervous"],
+                "new_cat": [
+                    ["status:elder", "age:senior", "loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            }
         ],
-        "win_trait": [
-            "careful",
-            "insecure",
-            "nervous"
+        "fail_outcomes": [
+            {
+                "text": "p_l decides that a quick peek can't hurt. As {PRONOUN/p_l/subject} {VERB/p_l/venture/ventures} into the nest, ears pricked with curiosity, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} notice the lithe forms of rogues moving to block the entrance until it's too late. p_l never makes it back to camp.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "reg_death": "This cat died in an ambush set by rogues.",
+                    "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
+                },
+                "outsider_rep": -1
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": "p_l can sense it's a trap, and waits just outside, setting {PRONOUN/p_l/poss} own trap. {PRONOUN/p_l/subject/CAP} {VERB/p_l/manage/manages} to set up such a yowl that it sends the rogues running as if LionClan were after them.",
-        "antagonize_fail_text": "p_l can sense it's a trap, and tries to get the upper paw, only to find rogues waiting for {PRONOUN/p_l/object} there too. p_l escapes with {PRONOUN/p_l/poss} life, but fear in {PRONOUN/p_l/poss} heart.",
-        "history_text": {
-            "reg_death": "This cat died in an ambush set by rogues.",
-            "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
-        }
+        "antag_fail_outcomes": [
+            {
+                "text": "p_l can sense it's a trap, and tries to get the upper paw, only to find rogues waiting for {PRONOUN/p_l/object} there too. p_l escapes with {PRONOUN/p_l/poss} life, but fear in {PRONOUN/p_l/poss} heart.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "p_l can sense it's a trap, and waits just outside, setting {PRONOUN/p_l/poss} own trap. {PRONOUN/p_l/subject/CAP} {VERB/p_l/manage/manages} to set up such a yowl that it sends the rogues running as if LionClan were after them.",
+                "exp": 30,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     },
     {
         "patrol_id": "bch_bord_newcat_abandontwoleg2",
-        "biome": "beach",
-        "season": "Any",
-        "tags": [
-            "fighting",
-            "border",
-            "new_cat_elder_loner",
-            "no_new_cat2",
-            "no_new_cat3",
-            "multi_deaths"
-        ],
+        "biome": ["beach"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["new_cat"],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "The patrol hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach.",
         "decline_text": "The patrol decides not to investigate.",
         "chance_of_success": 40,
-        "exp": 30,
-        "success_text": {
-            "unscathed_common": "It's just an odd loner singing to themself. The patrol greets them, and as the loner's home isn't on c_n territory, it's a polite interaction without any hostility. The older cat looks like they could use a meal, and p_l invites them to c_n's camp. The loner agrees.",
-            "unscathed_rare": "It's just an odd loner singing to themself. When they see r_c they invite them to sing along, but instead, r_c offers the strange, battered-looking cat an introduction to c_n. It's got to be far less lonely than their current life.",
-            "stat_skill": "The patrol walks into an ambush set by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the ferocity of LionClan, the strength of TigerClan, and the agility of LeopardClan. Shaken, but no more than bruised, the patrol manages to retreat to safety.",
-            "stat_trait": "s_c signals for the patrol to stop. Carefully, quietly, {PRONOUN/s_c/subject} {VERB/s_c/explain/explains} {PRONOUN/s_c/poss} concerns about the unknown situation. At first it seems like {PRONOUN/p_l/subject}{VERB/s_c/'re/'s} being too cautious - but then p_l picks up on the scent of strange cats lingering around the Twoleg nest. Forewarned, the patrol retreats to safety."
-        },
-        "fail_text": {
-            "death": "Your patrol walks into an ambush. Before p_l can so much as yowl a warning, a group of rogues creeps from the shadows to surround the Clan cats on all sides. Few of the cats manage to escape, and any that are left behind are found the next morning, cold and covered in battle wounds."
-        },
-        "win_skills": [
-            "FIGHTER,3"
+        "success_outcomes": [
+            {
+                "text": "It's just an odd loner singing to themself. The patrol greets them, and as the loner's home isn't on c_n territory, it's a polite interaction without any hostility. The older cat looks like they could use a meal, and p_l invites them to c_n's camp. The loner agrees.",
+                "exp": 30,
+                "weight": 20,
+                "new_cat": [
+                    ["status:elder", "age:senior", "loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "It's just an odd loner singing to themself. When they see r_c they invite them to sing along, but instead, r_c offers the strange, battered-looking cat an introduction to c_n. It's got to be far less lonely than their current life.",
+                "exp": 30,
+                "weight": 5,
+                "new_cat": [
+                    ["status:elder", "age:senior", "loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "The patrol walks into an ambush set by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the ferocity of LionClan, the strength of TigerClan, and the agility of LeopardClan. Shaken, but no more than bruised, the patrol manages to retreat to safety.",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,3"],
+                "new_cat": [
+                    ["status:elder", "age:senior", "loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "s_c signals for the patrol to stop. Carefully, quietly, {PRONOUN/s_c/subject} {VERB/s_c/explain/explains} {PRONOUN/s_c/poss} concerns about the unknown situation. At first it seems like {PRONOUN/p_l/subject}{VERB/s_c/'re/'s} being too cautious - but then p_l picks up on the scent of strange cats lingering around the Twoleg nest. Forewarned, the patrol retreats to safety.",
+                "exp": 30,
+                "weight": 20,
+                "stat_trait": ["careful", "insecure", "nervous"],
+                "new_cat": [
+                    ["status:elder", "age:senior", "loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            }
         ],
-        "win_trait": [
-            "careful",
-            "insecure",
-            "nervous"
+        "fail_outcomes": [
+            {
+                "text": "Your patrol walks into an ambush. Before p_l can so much as yowl a warning, a group of rogues creeps from the shadows to surround the Clan cats on all sides. Few of the cats manage to escape, and any that are left behind are found the next morning, cold and covered in battle wounds.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["multi"],
+                "history_text": {
+                    "reg_death": "This cat died in an ambush set by rogues.",
+                    "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
+                },
+                "outsider_rep": -1
+            }
         ],
-        "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": "r_c can sense it's a trap, and waits just outside, setting {PRONOUN/r_c/poss} own trap. {PRONOUN/r_c/subject/CAP} {VERB/r_c/manage/manages} to set up such a yowl that it sends the rogues running as if LionClan were after them.",
-        "antagonize_fail_text": "r_c can sense it's a trap, and tries to get the upper paw, only to find rogues waiting for {PRONOUN/r_c/object} there too. r_c escapes with {PRONOUN/r_c/poss} life, but fear in {PRONOUN/r_c/poss} heart.",
-        "history_text": {
-            "reg_death": "This cat died in an ambush set by rogues.",
-            "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
-        }
+        "antag_fail_outcomes": [
+            {
+                "text": "r_c can sense it's a trap, and tries to get the upper paw, only to find rogues waiting for {PRONOUN/r_c/object} there too. r_c escapes with {PRONOUN/r_c/poss} life, but fear in {PRONOUN/r_c/poss} heart.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "r_c can sense it's a trap, and waits just outside, setting {PRONOUN/r_c/poss} own trap. {PRONOUN/r_c/subject/CAP} {VERB/r_c/manage/manages} to set up such a yowl that it sends the rogues running as if LionClan were after them.",
+                "exp": 30,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     },
     {
         "patrol_id": "fst_bord_noise2",
-        "biome": "forest",
-        "season": "Any",
-        "tags": [
-            "border",
-            "battle_injury",
-            "scar",
-            "BRIDGE",
-            "reputation",
-            "new_cat_apprentice"
-        ],
+        "biome": ["forest"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["new_cat"],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from a nearby bush.",
         "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
         "chance_of_success": 50,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "p_l goes to check the bush and finds a loner sheepishly hiding inside. It seems the stranger was thinking of asking to join the Clan. They're a bit intimidated though and, after speaking to p_l for a little while, they decide to join the Clan.",
-            "unscathed_rare": "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out with a young cat chasing it! p_l stops the cat, impressed with their hunting skills, and invites them to join the Clan, to which the young cat agrees.",
-            "stat_skill": "s_c cautiously checks the bush, only to be surprised by a weight slamming into {PRONOUN/p_l/poss}! {PRONOUN/p_l/subject/CAP} {VERB/p_l/recover/recovers}, only to see a young loner snarling at the patrol. Impressed with the cat's bravery, s_c invites them to join the Clan, to which the young cat agrees."
-        },
-        "fail_text": {
-            "unscathed_common": "p_l pads closer to the bush, intent on finding the source of the noise, only to come face to face with a skunk! The poor cat ends up stinking for days after the unfortunate incident.",
-            "unscathed_stat": "s_c doesn't even hesitate before splitting from the patrol to check on the source of the noise. {PRONOUN/s_c/subject/CAP} quickly {VERB/s_c/regret/regrets} {PRONOUN/s_c/poss} impulsivity, however, when an angry raccoon bursts from the bush! s_c gets quite the scare, but thankfully the raccoon only wanted to get away from {PRONOUN/s_c/object} and quickly runs off back into the undergrowth.",
-            "injury": "p_l takes the lead in checking the source of the noise and comes face to face with a rogue hiding in the bush! The rogue takes a swipe at p_l, but doesn't get much damage in before p_l retaliates and chases the intruder out of c_n territory."
-        },
-        "win_skills": [
-            "FIGHTER,1"
+        "success_outcomes": [
+            {
+                "text": "p_l goes to check the bush and finds a loner sheepishly hiding inside. It seems the stranger was thinking of asking to join the Clan. They're a bit intimidated though and, after speaking to p_l for a little while, they decide to join the Clan.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["status:apprentice"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out with a young cat chasing it! p_l stops the cat, impressed with their hunting skills, and invites them to join the Clan, to which the young cat agrees.",
+                "exp": 10,
+                "weight": 5,
+                "new_cat": [
+                    ["status:apprentice"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "s_c cautiously checks the bush, only to be surprised by a weight slamming into {PRONOUN/p_l/poss}! {PRONOUN/p_l/subject/CAP} {VERB/p_l/recover/recovers}, only to see a young loner snarling at the patrol. Impressed with the cat's bravery, s_c invites them to join the Clan, to which the young cat agrees.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,1"],
+                "new_cat": [
+                    ["status:apprentice"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            }
         ],
-        "fail_trait": [
-            "daring",
-            "bold",
-            "ambitious"
+        "fail_outcomes": [
+            {
+                "text": "p_l pads closer to the bush, intent on finding the source of the noise, only to come face to face with a skunk! The poor cat ends up stinking for days after the unfortunate incident.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            },
+            {
+                "text": "s_c doesn't even hesitate before splitting from the patrol to check on the source of the noise. {PRONOUN/s_c/subject/CAP} quickly {VERB/s_c/regret/regrets} {PRONOUN/s_c/poss} impulsivity, however, when an angry raccoon bursts from the bush! s_c gets quite the scare, but thankfully the raccoon only wanted to get away from {PRONOUN/s_c/object} and quickly runs off back into the undergrowth.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["daring", "bold", "ambitious"],
+                "outsider_rep": -1
+            },
+            {
+                "text": "p_l takes the lead in checking the source of the noise and comes face to face with a rogue hiding in the bush! The rogue takes a swipe at p_l, but doesn't get much damage in before p_l retaliates and chases the intruder out of c_n territory.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["p_l"],
+                        "injuries": ["battle_injury"],
+                        "scars": ["BRIDGE"]
+                    }
+                ],
+                "history_text": { "scar": "m_c gained a scar after tussling with a rogue." },
+                "outsider_rep": -1
+            }
         ],
-        "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": "A loner and their kits emerge from the bush, but p_l shakes {PRONOUN/p_l/poss} head, and {VERB/p_l/inform/informs} {PRONOUN/p_l/object} there's no room in c_n.",
-        "antagonize_fail_text": "A loner and their kits emerge from the bush, but p_l shakes {PRONOUN/p_l/poss} head, and {VERB/p_l/tell/tells} the loner {PRONOUN/p_l/subject} meant it when {PRONOUN/p_l/subject} said {PRONOUN/p_l/subject} didn't want to see them again. The loner hisses and scratches at p_l. Rumors start at camp over what p_l said to the loner.",
-        "history_text": {
-            "scar": "m_c gained a scar after tussling with a rogue."
-        }
+        "antag_fail_outcomes": [
+            {
+                "text": "A loner and their kits emerge from the bush, but p_l shakes {PRONOUN/p_l/poss} head, and {VERB/p_l/tell/tells} the loner {PRONOUN/p_l/subject} meant it when {PRONOUN/p_l/subject} said {PRONOUN/p_l/subject} didn't want to see them again. The loner hisses and scratches at p_l. Rumors start at camp over what p_l said to the loner.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "A loner and their kits emerge from the bush, but p_l shakes {PRONOUN/p_l/poss} head, and {VERB/p_l/inform/informs} {PRONOUN/p_l/object} there's no room in c_n.",
+                "exp": 10,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     },
     {
         "patrol_id": "pln_bord_abandontwoleg1",
-        "biome": "plains",
-        "season": "Any",
-        "tags": [
-            "fighting",
-            "border",
-            "new_cat_elder_loner",
-            "no_new_cat2",
-            "no_new_cat3",
-            "disaster"
-        ],
+        "biome": ["plains"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["new_cat", "disaster"],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "Your patrol hears some odd noises coming from an abandoned Twoleg nest out on the plains.",
         "decline_text": "Your patrol decides not to investigate.",
         "chance_of_success": 40,
-        "exp": 30,
-        "success_text": {
-            "unscathed_common": "It's just an odd loner singing to themself. The patrol greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility. The older cat looks like they could use a meal, and p_l invites them to c_n's camp. The loner agrees.",
-            "unscathed_rare": "It's just an odd loner singing to themself. When they see the patrol they invite them to sing too, but instead, p_l offers the somewhat battered looking and strange cat an introduction to c_n. It's got to be far less lonely than their current life.",
-            "stat_skill": "Your patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the ferocity of LionClan, the strength of TigerClan, and the flexibility of LeopardClan. Shaken, but no more than bruised, the patrol manages to retreat to safety.",
-            "stat_trait": "s_c signals for the patrol to stop. Carefully, quietly, {PRONOUN/s_c/subject} {VERB/s_c/voice/voices} {PRONOUN/s_c/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety."
-        },
-        "fail_text": {
-            "death": "Your patrol walks into an ambush by a group of rogues and everyone is slaughtered."
-        },
-        "win_skills": [
-            "FIGHTER,3"
+        "success_outcomes": [
+            {
+                "text": "It's just an odd loner singing to themself. The patrol greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility. The older cat looks like they could use a meal, and p_l invites them to c_n's camp. The loner agrees.",
+                "exp": 30,
+                "weight": 20,
+                "new_cat": [
+                    ["status:elder", "age:senior", "loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "It's just an odd loner singing to themself. When they see the patrol they invite them to sing too, but instead, p_l offers the somewhat battered looking and strange cat an introduction to c_n. It's got to be far less lonely than their current life.",
+                "exp": 30,
+                "weight": 5,
+                "new_cat": [
+                    ["status:elder", "age:senior", "loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "Your patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the ferocity of LionClan, the strength of TigerClan, and the flexibility of LeopardClan. Shaken, but no more than bruised, the patrol manages to retreat to safety.",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,3"],
+                "new_cat": [
+                    ["status:elder", "age:senior", "loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "s_c signals for the patrol to stop. Carefully, quietly, {PRONOUN/s_c/subject} {VERB/s_c/voice/voices} {PRONOUN/s_c/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety.",
+                "exp": 30,
+                "weight": 20,
+                "stat_trait": ["careful", "insecure", "nervous"],
+                "new_cat": [
+                    ["status:elder", "age:senior", "loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            }
         ],
-        "win_trait": [
-            "careful",
-            "insecure",
-            "nervous"
+        "fail_outcomes": [
+            {
+                "text": "Your patrol walks into an ambush by a group of rogues and everyone is slaughtered.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["patrol"],
+                "history_text": {
+                    "reg_death": "This cat died from being ambushed by rogues.",
+                    "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
+                },
+                "outsider_rep": -1
+            }
         ],
-        "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": "r_c can sense it's a trap, and waits just outside, setting {PRONOUN/r_c/poss} own trap. {PRONOUN/r_c/subject} {VERB/r_c/manage/manages} to set up such a yowl that it sends the rogues running as if LionClan were after them.",
-        "antagonize_fail_text": "r_c can sense it's a trap, and tries to get the upper paw, only to find rogues waiting for {PRONOUN/r_c/object} there too. r_c escapes with {PRONOUN/r_c/poss} life, but fear in {PRONOUN/r_c/poss} heart.",
-        "history_text": {
-            "reg_death": "This cat died from being ambushed by rogues.",
-            "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
-        }
+        "antag_fail_outcomes": [
+            {
+                "text": "r_c can sense it's a trap, and tries to get the upper paw, only to find rogues waiting for {PRONOUN/r_c/object} there too. r_c escapes with {PRONOUN/r_c/poss} life, but fear in {PRONOUN/r_c/poss} heart.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "r_c can sense it's a trap, and waits just outside, setting {PRONOUN/r_c/poss} own trap. {PRONOUN/r_c/subject} {VERB/r_c/manage/manages} to set up such a yowl that it sends the rogues running as if LionClan were after them.",
+                "exp": 30,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     },
     {
         "patrol_id": "pln_bord_abandontwoleg2",
-        "biome": "plains",
-        "season": "Any",
-        "tags": [
-            "fighting",
-            "border",
-            "new_cat_elder_loner",
-            "no_new_cat2",
-            "no_new_cat3",
-            "death"
-        ],
+        "biome": ["plains"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["new_cat"],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "r_c hears some odd noises coming from an abandoned Twoleg nest out on the plains.",
         "decline_text": "r_c decides not to investigate.",
         "chance_of_success": 30,
-        "exp": 30,
-        "success_text": {
-            "unscathed_common": "It's just an odd loner singing to themself. r_c greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility. The older cat looks like they could use a meal, and r_c invites them to c_n's camp. The loner agrees.",
-            "unscathed_rare": "It's just an odd loner singing to themself. When they see r_c, they invite {PRONOUN/r_c/object} to sing too, but instead, r_c offers the somewhat battered looking and strange cat an introduction to c_n. It's got to be far less lonely than their current life.",
-            "stat_skill": "s_c walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c has the fighting skill and confidence to escape, running for {PRONOUN/s_c/poss} life.",
-            "stat_trait": "s_c has a bad feeling about this. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety."
-        },
-        "fail_text": {
-            "death": "r_c decides that a quick peek can't hurt. As {PRONOUN/r_c/subject} {VERB/r_c/venture/ventures} into the nest, ears pricked with curiosity, {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} notice the lithe forms of rogues moving to block the entrance until it's too late. r_c never makes it back to camp."
-        },
-        "win_skills": [
-            "FIGHTER,3"
+        "success_outcomes": [
+            {
+                "text": "It's just an odd loner singing to themself. r_c greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility. The older cat looks like they could use a meal, and r_c invites them to c_n's camp. The loner agrees.",
+                "exp": 30,
+                "weight": 20,
+                "new_cat": [
+                    ["status:elder", "age:senior", "loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "It's just an odd loner singing to themself. When they see r_c, they invite {PRONOUN/r_c/object} to sing too, but instead, r_c offers the somewhat battered looking and strange cat an introduction to c_n. It's got to be far less lonely than their current life.",
+                "exp": 30,
+                "weight": 5,
+                "new_cat": [
+                    ["status:elder", "age:senior", "loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "s_c walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c has the fighting skill and confidence to escape, running for {PRONOUN/s_c/poss} life.",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,3"],
+                "new_cat": [
+                    ["status:elder", "age:senior", "loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "s_c has a bad feeling about this. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety.",
+                "exp": 30,
+                "weight": 20,
+                "stat_trait": ["careful", "insecure", "nervous"],
+                "new_cat": [
+                    ["status:elder", "age:senior", "loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            }
         ],
-        "win_trait": [
-            "careful",
-            "insecure",
-            "nervous"
+        "fail_outcomes": [
+            {
+                "text": "r_c decides that a quick peek can't hurt. As {PRONOUN/r_c/subject} {VERB/r_c/venture/ventures} into the nest, ears pricked with curiosity, {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} notice the lithe forms of rogues moving to block the entrance until it's too late. r_c never makes it back to camp.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "reg_death": "This cat died from being ambushed by rogues while on a solo patrol.",
+                    "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush while on a solo patrol"
+                },
+                "outsider_rep": -1
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": "r_c can sense it's a trap, and waits just outside, setting {PRONOUN/r_c/poss} own trap. {PRONOUN/r_c/subject} {VERB/r_c/manage/manages} to set up such a yowl that it sends the rogues running as if LionClan were after them.",
-        "antagonize_fail_text": "r_c can sense it's a trap, and tries to get the upper paw, only to find rogues waiting for {PRONOUN/r_c/object} there too. r_c escapes with {PRONOUN/r_c/poss} life, but fear in {PRONOUN/r_c/poss} heart.",
-        "history_text": {
-            "reg_death": "This cat died from being ambushed by rogues while on a solo patrol.",
-            "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush while on a solo patrol"
-        }
+        "antag_fail_outcomes": [
+            {
+                "text": "r_c can sense it's a trap, and tries to get the upper paw, only to find rogues waiting for {PRONOUN/r_c/object} there too. r_c escapes with {PRONOUN/r_c/poss} life, but fear in {PRONOUN/r_c/poss} heart.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "r_c can sense it's a trap, and waits just outside, setting {PRONOUN/r_c/poss} own trap. {PRONOUN/r_c/subject} {VERB/r_c/manage/manages} to set up such a yowl that it sends the rogues running as if LionClan were after them.",
+                "exp": 30,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     },
     {
         "patrol_id": "fst_hunt_twolegplacekittens1",
-        "biome": "forest",
-        "season": "Any",
-        "tags": [
-            "hunting",
-            "no_fail_prey",
-            "new_cat_kittypet_female_dead_litter0_litter1_litter3_abandoned1_abandoned4"
-        ],
+        "biome": ["forest"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": ["new_cat"],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "The patrol approaches a Twoleg nest in the woods while hunting.",
         "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 40,
-        "exp": 30,
-        "success_text": {
-            "unscathed_common": "p_l hears r_c softly calling {PRONOUN/p_l/object} through the bushes, and drops the idea of following mouse scent, hurrying to {PRONOUN/p_l/poss} mate's side. r_c, head poking into the nest's garden through a gap in the fence, murmurs something about Twoleg kits. Twoleg kits? No, r_c corrects, the <i>Twolegs's kits</i>, the Twolegs <i>have kittens</i> wandering through the nest's garden, they need to be rescued.",
-            "unscathed_rare": "Near the Twoleg den, p_l suddenly hears furious growls. Tiny, adorable, furious growls. A kitten tries to pounce on p_l, barely coming up to {PRONOUN/p_l/poss} elbows. Before little teeth can do any damage, p_l gently flips the tiny cat over and places a gentle paw on their back, completely pinning them as they struggle with all their might. r_c, called over by the mighty fight, asks the little warrior what on earth they're doing. Why, they're defending their territory of course!",
-            "stat_trait": "Furious, high pitched yowls greet the patrol, as a tiny kittypet kitten comes roaring out of the Twoleg nest to try and fight them. Terrifying. s_c tips the little fighter over and carefully scruffs the tiny warrior - they can't leave them here. The kitten insists that they're a big cat and they're <b>fine</b>, but after a couple minutes, does reveal their mother is dead. Twolegs have kept them alive somehow, but c_n will do better."
-        },
-        "fail_text": {
-            "unscathed_common": "Twoleg kits scare the patrol away."
-        },
-        "win_trait": [
-            "careful",
-            "thoughtful"
+        "relationship_constraint": ["mates"],
+        "success_outcomes": [
+            {
+                "text": "p_l hears r_c softly calling {PRONOUN/p_l/object} through the bushes, and drops the idea of following mouse scent, hurrying to {PRONOUN/p_l/poss} mate's side. r_c, head poking into the nest's garden through a gap in the fence, murmurs something about Twoleg kits. Twoleg kits? No, r_c corrects, the <i>Twolegs's kits</i>, the Twolegs <i>have kittens</i> wandering through the nest's garden, they need to be rescued.",
+                "exp": 30,
+                "weight": 20,
+                "new_cat": [
+                    ["kittypet", "can_birth", "dead", "age:has_kits"],
+                    ["litter", "parent:0", "status:kitten", "backstory:abandoned1,abandoned4"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "Near the Twoleg den, p_l suddenly hears furious growls. Tiny, adorable, furious growls. A kitten tries to pounce on p_l, barely coming up to {PRONOUN/p_l/poss} elbows. Before little teeth can do any damage, p_l gently flips the tiny cat over and places a gentle paw on their back, completely pinning them as they struggle with all their might. r_c, called over by the mighty fight, asks the little warrior what on earth they're doing. Why, they're defending their territory of course!",
+                "exp": 30,
+                "weight": 5,
+                "new_cat": [
+                    ["kittypet", "can_birth", "dead", "age:has_kits"],
+                    ["litter", "parent:0", "status:kitten", "backstory:abandoned1,abandoned4"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "Furious, high pitched yowls greet the patrol, as a tiny kittypet kitten comes roaring out of the Twoleg nest to try and fight them. Terrifying. s_c tips the little fighter over and carefully scruffs the tiny warrior - they can't leave them here. The kitten insists that they're a big cat and they're <b>fine</b>, but after a couple minutes, does reveal their mother is dead. Twolegs have kept them alive somehow, but c_n will do better.",
+                "exp": 30,
+                "weight": 20,
+                "stat_trait": ["careful", "thoughtful"],
+                "new_cat": [
+                    ["kittypet", "can_birth", "dead", "age:has_kits"],
+                    ["parent:0", "status:kitten", "backstory:abandoned1,abandoned4"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            }
         ],
-        "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": "A kittypet kitten approaches the patrol, yowling furiously. p_l bats it aside as the warrior continue hunting, unruffled.",
-        "antagonize_fail_text": "The kittypet kittens trying furiously to defend their territory ruin all the hunting to be had, and the patrol returns home, irritated but impressed by the kittens' bravery.",
-        "constraints": {
-            "relationship": [
-                "mates"
-            ]
-        }
+        "fail_outcomes": [
+            {
+                "text": "Twoleg kits scare the patrol away.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "The kittypet kittens trying furiously to defend their territory ruin all the hunting to be had, and the patrol returns home, irritated but impressed by the kittens' bravery.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "A kittypet kitten approaches the patrol, yowling furiously. p_l bats it aside as the warrior continue hunting, unruffled.",
+                "exp": 30,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     },
     {
         "patrol_id": "gen_bord_curiouskittypet2",
-        "biome": "Any",
-        "season": "Any",
-        "tags": [
-            "border",
-            "new_cat_kittypet",
-            "reputation",
-            "scar",
-            "CATBITE",
-            "battle_injury",
-            "meeting"
-        ],
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["new_cat"],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "As the patrol is checking the border lines, they hear the traipse of pawsteps through the territory.",
         "decline_text": "They decide to leave it alone. It's probably just another Clanmate out in the territory.",
         "chance_of_success": 50,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "The patrol approaches warily and comes upon a kittypet that's sniffing around. The kittypet notices their arrival and brightly says that they've heard about the Clan and wish to join. The patrol agrees to take them back to camp.",
-            "unscathed_rare": "The patrol follows the noise and comes upon a kittypet that's sniffing around. The kittypet notices them and bundles towards the patrol, whose pelts bush out in surprise. The kittypet quickly begins a story about how they've been training for <i>days</i> now and they're finally ready to join c_n. Well alright then!",
-            "stat_skill": "The patrol follows the noise and comes upon a kittypet that's sniffing around. The kittypet turns and bristles, hissing at the patrol. s_c calls out a greeting to them and engages them in conversation, which seems to calm them down. They even agree when s_c asks if they'd like to join the Clan!"
-        },
-        "fail_text": {
-            "unscathed_common": "The patrol follows the sound, intent on finding the intruder. They come upon a kittypet sniffing around. When the kittypet notices them, however, it turns tail and makes a hasty getaway. At least it's off the territory now.",
-            "unscathed_stat": "The patrol follows the sound, intent on finding the intruder. They come upon a kittypet sniffing around. They're about to approach calmly when s_c lets out a yowl and rushes towards the kittypet, who quickly turns tail.",
-            "injury": "The patrol follows the sound, ready to confront the intruder. They come upon a large kittypet that's sniffing around. They begin to approach, but the kittypet immediately turns on them. r_c doesn't have enough time to move as the kittypet launches a quick attack. p_l bats the kittypet away and helps r_c back to camp."
-        },
-        "win_skills": [
-            "SPEAKER,1"
+        "success_outcomes": [
+            {
+                "text": "The patrol approaches warily and comes upon a kittypet that's sniffing around. The kittypet notices their arrival and brightly says that they've heard about the Clan and wish to join. The patrol agrees to take them back to camp.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["kittypet"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "The patrol follows the noise and comes upon a kittypet that's sniffing around. The kittypet notices them and bundles towards the patrol, whose pelts bush out in surprise. The kittypet quickly begins a story about how they've been training for <i>days</i> now and they're finally ready to join c_n. Well alright then!",
+                "exp": 10,
+                "weight": 5,
+                "new_cat": [
+                    ["kittypet"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "The patrol follows the noise and comes upon a kittypet that's sniffing around. The kittypet turns and bristles, hissing at the patrol. s_c calls out a greeting to them and engages them in conversation, which seems to calm them down. They even agree when s_c asks if they'd like to join the Clan!",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,1"],
+                "new_cat": [
+                    ["kittypet"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            }
         ],
-        "fail_trait": [
-            "vengeful",
-            "bloodthirsty"
+        "fail_outcomes": [
+            {
+                "text": "The patrol follows the sound, intent on finding the intruder. They come upon a kittypet sniffing around. When the kittypet notices them, however, it turns tail and makes a hasty getaway. At least it's off the territory now.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["meeting", "kittypet"]
+                ]
+            },
+            {
+                "text": "The patrol follows the sound, intent on finding the intruder. They come upon a kittypet sniffing around. They're about to approach calmly when s_c lets out a yowl and rushes towards the kittypet, who quickly turns tail.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["vengeful", "bloodthirsty"],
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["meeting", "kittypet"]
+                ]
+            },
+            {
+                "text": "The patrol follows the sound, ready to confront the intruder. They come upon a large kittypet that's sniffing around. They begin to approach, but the kittypet immediately turns on them. r_c doesn't have enough time to move as the kittypet launches a quick attack. p_l bats the kittypet away and helps r_c back to camp.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["battle_injury"],
+                        "scars": ["CATBITE"]
+                    }
+                ],
+                "history_text": { "scar": "This cat gained a scar from a fight with an angry kittypet." },
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["meeting", "kittypet"]
+                ]
+            }
         ],
-        "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": "The patrol follows the sound, intent on finding the intruder. A kittypet! No wonder they were so loud. They scare them off easily.",
-        "antagonize_fail_text": "The patrol follows the noise and comes upon a kittypet that's sniffing around. The kittypet quickly begins a story about how they've been training for <i>days</i> now and they're finally ready to join c_n. p_l laughs and gets swatted by the angry kittypet. Embarrassed, the patrol goes home.",
-        "history_text": {
-            "scar": "This cat gained a scar from a fight with an angry kittypet."
-        }
+        "antag_fail_outcomes": [
+            {
+                "text": "The patrol follows the noise and comes upon a kittypet that's sniffing around. The kittypet quickly begins a story about how they've been training for <i>days</i> now and they're finally ready to join c_n. p_l laughs and gets swatted by the angry kittypet. Embarrassed, the patrol goes home.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "The patrol follows the sound, intent on finding the intruder. A kittypet! No wonder they were so loud. They scare them off easily.",
+                "exp": 10,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     },
     {
         "patrol_id": "gen_bord_injuredcat2",
-        "biome": "Any",
-        "season": "Any",
-        "tags": [
-            "border",
-            "new_cat",
-            "reputation",
-            "new_cat_loner",
-            "new_cat_injury",
-            "nc_battle_injury"
-        ],
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["new_cat"],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "The patrol is checking along the border lines when they hear a startling sound - a hiss of pain? They quickly follow the sound to the source. It's a loner, and they appear to be injured.",
         "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
         "chance_of_success": 50,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "The patrol approaches cautiously. The loner draws themself up, but doing so causes them to let out another hiss. p_l offers to bring them to camp. Though they seem hesitant, the loner agrees.",
-            "unscathed_rare": "The patrol approaches cautiously. The loner lifts their head and asks for help. p_l agrees. {PRONOUN/p_l/subject/CAP} can't leave a fellow cat to die.",
-            "stat_skill": "The loner hisses defensively as the patrol comes closer. s_c speaks soothingly to the loner, assuring them that they mean no harm and simply want to help. The loner seems distrustful, but allows p_l to help them back to camp."
-        },
-        "fail_text": {
-            "unscathed_common": "The patrol warily approaches the loner, who doesn't seem to notice them. It's obvious that the cat is bleeding out. p_l attempts to staunch the bleeding and carry the cat to camp, but it's no use. Hopefully the loner didn't suffer too much."
-        },
-        "win_skills": [
-            "SPEAKER,1"
+        "success_outcomes": [
+            {
+                "text": "The patrol approaches cautiously. The loner draws themself up, but doing so causes them to let out another hiss. p_l offers to bring them to camp. Though they seem hesitant, the loner agrees.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1,
+                "injury": [
+                    {
+                        "cats": ["n_c:0"],
+                        "injuries": ["battle_injury"],
+                        "no_results": true
+                    }
+                ]
+            },
+            {
+                "text": "The patrol approaches cautiously. The loner lifts their head and asks for help. p_l agrees. {PRONOUN/p_l/subject/CAP} can't leave a fellow cat to die.",
+                "exp": 10,
+                "weight": 5,
+                "new_cat": [
+                    ["loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1,
+                "injury": [
+                    {
+                        "cats": ["n_c:0"],
+                        "injuries": ["battle_injury"],
+                        "no_results": true
+                    }
+                ]
+            },
+            {
+                "text": "The loner hisses defensively as the patrol comes closer. s_c speaks soothingly to the loner, assuring them that they mean no harm and simply want to help. The loner seems distrustful, but allows p_l to help them back to camp.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,1"],
+                "new_cat": [
+                    ["loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1,
+                "injury": [
+                    {
+                        "cats": ["n_c:0"],
+                        "injuries": ["battle_injury"],
+                        "no_results": true
+                    }
+                ]
+            }
         ],
-        "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": "The patrol launches into attack, only to find the loner that they've been fighting is too weak to fight back. They go home with blood on their paws.",
-        "antagonize_fail_text": "The patrol approaches the loner cautiously, intending to attack. Instead, they find a StarClan warrior, who scolds them all for being willing to attack a hurt loner. With shame in their hearts, the patrol goes back home, and tell no one of what they saw."
+        "fail_outcomes": [
+            {
+                "text": "The patrol warily approaches the loner, who doesn't seem to notice them. It's obvious that the cat is bleeding out. p_l attempts to staunch the bleeding and carry the cat to camp, but it's no use. Hopefully the loner didn't suffer too much.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "The patrol approaches the loner cautiously, intending to attack. Instead, they find a StarClan warrior, who scolds them all for being willing to attack a hurt loner. With shame in their hearts, the patrol goes back home, and tell no one of what they saw.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "The patrol launches into attack, only to find the loner that they've been fighting is too weak to fight back. They go home with blood on their paws.",
+                "exp": 10,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     },
     {
         "patrol_id": "gen_bord_injuredcatsolo2",
-        "biome": "Any",
-        "season": "Any",
-        "tags": [
-            "border",
-            "new_cat",
-            "reputation",
-            "new_cat_loner",
-            "new_cat_injury",
-            "nc_battle_injury"
-        ],
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["new_cat"],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "p_l is checking along the border lines when {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a startling sound - a hiss of pain? {PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/follow/follows} the sound to the source. It's a loner, and they appear to be injured.",
         "decline_text": "It's probably nothing. p_l leaves the noise alone and continues on {PRONOUN/p_l/poss} way.",
         "chance_of_success": 50,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "p_l approaches cautiously. The loner draws themself up, but doing so causes them to let out another hiss. p_l offers to bring them to camp. Though they seem hesitant, the loner agrees.",
-            "unscathed_rare": "p_l approaches cautiously. The loner lifts their head and asks for help. p_l agrees. {PRONOUN/p_l/subject/CAP} can't leave a fellow cat to die.",
-            "stat_skill": "The loner hisses defensively as s_c comes closer. {PRONOUN/s_c/subject/CAP} {VERB/s_c/speak/speaks} soothingly to the loner, assuring them that {PRONOUN/s_c/subject} {VERB/s_c/mean/means} no harm and simply {VERB/s_c/mean/means} to help. The loner seems distrustful, but allows s_c to help them back to camp."
-        },
-        "fail_text": {
-            "unscathed_common": "p_l warily approaches the loner, who doesn't seem to notice {PRONOUN/p_l/object}. It's obvious that the cat is bleeding out. p_l attempts to staunch the bleeding and carry the cat to camp, but it's no use. Hopefully the loner didn't suffer too much."
-        },
-        "win_skills": [
-            "SPEAKER,1"
+        "success_outcomes": [
+            {
+                "text": "p_l approaches cautiously. The loner draws themself up, but doing so causes them to let out another hiss. p_l offers to bring them to camp. Though they seem hesitant, the loner agrees.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1,
+                "injury": [
+                    {
+                        "cats": ["n_c:0"],
+                        "injuries": ["battle_injury"],
+                        "no_results": true
+                    }
+                ]
+            },
+            {
+                "text": "p_l approaches cautiously. The loner lifts their head and asks for help. p_l agrees. {PRONOUN/p_l/subject/CAP} can't leave a fellow cat to die.",
+                "exp": 10,
+                "weight": 5,
+                "new_cat": [
+                    ["loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1,
+                "injury": [
+                    {
+                        "cats": ["n_c:0"],
+                        "injuries": ["battle_injury"],
+                        "no_results": true
+                    }
+                ]
+            },
+            {
+                "text": "The loner hisses defensively as s_c comes closer. {PRONOUN/s_c/subject/CAP} {VERB/s_c/speak/speaks} soothingly to the loner, assuring them that {PRONOUN/s_c/subject} {VERB/s_c/mean/means} no harm and simply {VERB/s_c/mean/means} to help. The loner seems distrustful, but allows s_c to help them back to camp.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,1"],
+                "new_cat": [
+                    ["loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1,
+                "injury": [
+                    {
+                        "cats": ["n_c:0"],
+                        "injuries": ["battle_injury"],
+                        "no_results": true
+                    }
+                ]
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": "p_l launches into attack, only to find the loner that {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been fighting is too weak to fight back. {PRONOUN/p_l/subject/CAP} {VERB/p_l/go/goes} home with blood on {PRONOUN/p_l/poss} paws.",
-        "antagonize_fail_text": "p_l approaches the loner cautiously, intending to attack. Instead, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a StarClan warrior, who scolds {PRONOUN/p_l/object} for being willing to attack a hurt loner. With shame in {PRONOUN/p_l/poss} heart, p_l goes back home, and tells no one of what {PRONOUN/p_l/subject} saw."
+        "fail_outcomes": [
+            {
+                "text": "p_l warily approaches the loner, who doesn't seem to notice {PRONOUN/p_l/object}. It's obvious that the cat is bleeding out. p_l attempts to staunch the bleeding and carry the cat to camp, but it's no use. Hopefully the loner didn't suffer too much.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "p_l approaches the loner cautiously, intending to attack. Instead, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a StarClan warrior, who scolds {PRONOUN/p_l/object} for being willing to attack a hurt loner. With shame in {PRONOUN/p_l/poss} heart, p_l goes back home, and tells no one of what {PRONOUN/p_l/subject} saw.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "p_l launches into attack, only to find the loner that {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been fighting is too weak to fight back. {PRONOUN/p_l/subject/CAP} {VERB/p_l/go/goes} home with blood on {PRONOUN/p_l/poss} paws.",
+                "exp": 10,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     },
     {
         "patrol_id": "mnt_hunt_newcat_leaf-barecatcryneutral1",
-        "biome": "mountainous",
-        "season": "leaf-bare",
-        "tags": [
-            "hunting",
-            "new_cat_kittypet_injury",
-            "nc_cold_injury",
-            "apprentice"
-        ],
+        "biome": ["mountainous"],
+        "season": ["leaf-bare"],
+        "types": ["hunting"],
+        "tags": ["new_cat"],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "It's a cold day in c_n's territory, and app1 is the only cat stepping out. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} by {PRONOUN/app1/self} when {PRONOUN/app1/subject} {VERB/app1/hear/hears} a cat screaming for help.",
         "decline_text": "Nope, not today, there's no way app1 is running after ghost cats, no thank you.",
         "chance_of_success": 40,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "It's probably dangerous, but... there's no way app1 can live with leaving some poor soul alone on the mountainside in the cold. Following the piteous cries, app1 rounds a bend and spots a puffed out bundle of terrified screams sitting by the side of one of the few thunderpaths that cross c_n territory. {PRONOUN/app1/subject/CAP} {VERB/app1/sigh/sighs}, climbing down the slope and calling out in reassurance to the kittypet.",
-            "unscathed_rare": "StarClan, but the cat {PRONOUN/app1/subject} {VERB/app1/find/finds} is weird, their fur soft and thin, their cries desperate as they call in confusion. app1 comes down to them, startling the poor thing half out of their pelt, and ask if they need assistance - this cat clearly doesn't belong here.",
-            "stat_trait": "app1 follows the sad cries to find a kittypet, lost and alone and cold. The apprentice introduces {PRONOUN/app1/self} cheerfully, and the desperate kittypet slowly loses a little of their fear as app1 guides them back to camp, sure that the Leader will know what to do with them."
-        },
-        "fail_text": {
-            "unscathed_common": "The cat seems to be moving all over the place, and finally, app1 gives up and goes home, too tired to catch more than a mouthful.",
-            "unscathed_stat": "s_c calls out to the cat, only to be met with raucous cawing. {VERB/s_c/Are/Is} {PRONOUN/s_c/subject} being laughed at? {PRONOUN/s_c/subject} {VERB/s_c/decide/decides} to slink off, leaving it be."
-        },
-        "win_skills": [],
-        "win_trait": [
-            "adventurous",
-            "playful",
-            "strange",
-            "childish",
-            "shameless"
+        "success_outcomes": [
+            {
+                "text": "It's probably dangerous, but... there's no way app1 can live with leaving some poor soul alone on the mountainside in the cold. Following the piteous cries, app1 rounds a bend and spots a puffed out bundle of terrified screams sitting by the side of one of the few thunderpaths that cross c_n territory. {PRONOUN/app1/subject/CAP} {VERB/app1/sigh/sighs}, climbing down the slope and calling out in reassurance to the kittypet.",
+                "exp": 20,
+                "weight": 20,
+                "new_cat": [
+                    ["kittypet"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1,
+                "injury": [
+                    {
+                        "cats": ["n_c:0"],
+                        "injuries": ["cold_injury"],
+                        "no_results": true
+                    }
+                ]
+            },
+            {
+                "text": "StarClan, but the cat {PRONOUN/app1/subject} {VERB/app1/find/finds} is weird, their fur soft and thin, their cries desperate as they call in confusion. app1 comes down to them, startling the poor thing half out of their pelt, and ask if they need assistance - this cat clearly doesn't belong here.",
+                "exp": 20,
+                "weight": 5,
+                "new_cat": [
+                    ["kittypet"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1,
+                "injury": [
+                    {
+                        "cats": ["n_c:0"],
+                        "injuries": ["cold_injury"],
+                        "no_results": true
+                    }
+                ]
+            },
+            {
+                "text": "app1 follows the sad cries to find a kittypet, lost and alone and cold. The apprentice introduces {PRONOUN/app1/self} cheerfully, and the desperate kittypet slowly loses a little of their fear as app1 guides them back to camp, sure that the Leader will know what to do with them.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["adventurous", "playful", "strange", "childish", "shameless"],
+                "new_cat": [
+                    ["kittypet"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1,
+                "injury": [
+                    {
+                        "cats": ["n_c:0"],
+                        "injuries": ["cold_injury"],
+                        "no_results": true
+                    }
+                ]
+            }
         ],
-        "fail_skills": [],
-        "fail_trait": [
-            "troublesome",
-            "bold",
-            "daring",
-            "ambitious"
+        "fail_outcomes": [
+            {
+                "text": "The cat seems to be moving all over the place, and finally, app1 gives up and goes home, too tired to catch more than a mouthful.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            },
+            {
+                "text": "s_c calls out to the cat, only to be met with raucous cawing. {VERB/s_c/Are/Is} {PRONOUN/s_c/subject} being laughed at? {PRONOUN/s_c/subject} {VERB/s_c/decide/decides} to slink off, leaving it be.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["troublesome", "bold", "daring", "ambitious"],
+                "outsider_rep": -1
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": "app1 screams that this is c_n's territory and there's no help for anyone else. A kittypet runs from {PRONOUN/app1/object}, terrified of the echoing voice.",
-        "antagonize_fail_text": "app1 charges after the sound to attack the cat, only for a kittypet to bowl {PRONOUN/app1/object} right over as the terrified Twoleg pet, fully grown and fat, runs app1 over in their haste to get away."
+        "antag_fail_outcomes": [
+            {
+                "text": "app1 charges after the sound to attack the cat, only for a kittypet to bowl {PRONOUN/app1/object} right over as the terrified Twoleg pet, fully grown and fat, runs app1 over in their haste to get away.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "app1 screams that this is c_n's territory and there's no help for anyone else. A kittypet runs from {PRONOUN/app1/object}, terrified of the echoing voice.",
+                "exp": 20,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     },
     {
         "patrol_id": "gen_bord_elder_rescue1",
-        "biome": "Any",
-        "season": "Any",
-        "tags": [
-            "new_cat_elder_kittypet",
-            "new_cat_injury",
-            "nc_blunt_force_injury",
-            "border",
-            "adult_stat",
-            "blunt_force_injury",
-            "border"
-        ],
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["new_cat"],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "The patrol hears desperate screams coming from a nearby lake.",
         "decline_text": "It's not the scream of any cat p_l recognizes, so {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to continue the patrol without checking it out. Surely whoever it is will be fine. Surely.",
         "chance_of_success": 85,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "The patrol races towards the sound. They're puzzled when they only see a Twoleg, but realization soon dawns when the bag it holds thrashes and wails. Jumping into action, the c_n cats startle the Twoleg into letting go of the bag. While the angered Twoleg is distracted, p_l and r_c hurriedly get the shivering old cat out of sight, promising them safety in c_n for as long as they wish.",
-            "stat_trait": "s_c sees the Twoleg, the thrashing bag, the stones piled within - it's now or never to save this poor cat. The patrol leaps and claws at the Twoleg, while s_c sneaks over to the bag, gently hurrying the elderly cat to a safe hiding place. As the patrol retreats, s_c softly reassures the old cat, promising that c_n would be honored to take them in."
-        },
-        "fail_text": {
-            "injury": "As soon as {PRONOUN/r_c/subject} {VERB/r_c/see/sees} a Twoleg holding a thrashing, screaming bag, {PRONOUN/r_c/subject} {VERB/r_c/leap/leaps} into action. Unfortunately r_c is just a tad too slow, earning quite a hard kick against a tree. p_l orders the patrol to protect and carry r_c while they retreat, hearts aching for the cat they couldn't save.",
-            "stat_injury": "s_c can't take the sight of the Twoleg clutching the screeching bag. {PRONOUN/s_c/subject/CAP} {VERB/s_c/leap/leaps} into action without waiting for the rest of the patrol to back {PRONOUN/s_c/object} up, and {PRONOUN/s_c/subject} {VERB/s_c/pay/pays} the price. Grabbed by the scruff and thrown hard to the ground, all the patrol can do is grab s_c and flee to the safety of c_n."
-        },
-        "win_skills": [
-            "CLEVER,2",
-            "FIGHTER,1",
-            "INSIGHTFUL,1"
+        "success_outcomes": [
+            {
+                "text": "The patrol races towards the sound. They're puzzled when they only see a Twoleg, but realization soon dawns when the bag it holds thrashes and wails. Jumping into action, the c_n cats startle the Twoleg into letting go of the bag. While the angered Twoleg is distracted, p_l and r_c hurriedly get the shivering old cat out of sight, promising them safety in c_n for as long as they wish.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["status:elder", "age:senior", "kittypet"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1,
+                "injury": [
+                    {
+                        "cats": ["n_c:0"],
+                        "injuries": ["blunt_force_injury"],
+                        "no_results": true
+                    }
+                ]
+            },
+            {
+                "text": "s_c sees the Twoleg, the thrashing bag, the stones piled within - it's now or never to save this poor cat. The patrol leaps and claws at the Twoleg, while s_c sneaks over to the bag, gently hurrying the elderly cat to a safe hiding place. As the patrol retreats, s_c softly reassures the old cat, promising that c_n would be honored to take them in.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": ["wise", "thoughtful"],
+                "can_have_stat": ["adult"],
+                "new_cat": [
+                    ["status:elder", "age:senior", "kittypet"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1,
+                "injury": [
+                    {
+                        "cats": ["n_c:0"],
+                        "injuries": ["blunt_force_injury"],
+                        "no_results": true
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "wise",
-            "thoughtful"
+        "fail_outcomes": [
+            {
+                "text": "As soon as {PRONOUN/r_c/subject} {VERB/r_c/see/sees} a Twoleg holding a thrashing, screaming bag, {PRONOUN/r_c/subject} {VERB/r_c/leap/leaps} into action. Unfortunately r_c is just a tad too slow, earning quite a hard kick against a tree. p_l orders the patrol to protect and carry r_c while they retreat, hearts aching for the cat they couldn't save.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["blunt_force_injury"],
+                        "scars": []
+                    }
+                ],
+                "outsider_rep": -1
+            },
+            {
+                "text": "s_c can't take the sight of the Twoleg clutching the screeching bag. {PRONOUN/s_c/subject/CAP} {VERB/s_c/leap/leaps} into action without waiting for the rest of the patrol to back {PRONOUN/s_c/object} up, and {PRONOUN/s_c/subject} {VERB/s_c/pay/pays} the price. Grabbed by the scruff and thrown hard to the ground, all the patrol can do is grab s_c and flee to the safety of c_n.",
+                "exp": 0,
+                "weight": 10,
+                "stat_trait": ["loving", "compassionate"],
+                "can_have_stat": ["adult"],
+                "injury": [
+                    {
+                        "cats": ["s_c"],
+                        "injuries": ["blunt_force_injury"],
+                        "scars": []
+                    }
+                ],
+                "outsider_rep": -1
+            }
         ],
-        "fail_trait": [
-            "loving",
-            "compassionate"
+        "antag_fail_outcomes": [
+            {
+                "text": "The patrol quickly turns away once they realize that a Twoleg and a kittypet are involved. Not their problem. Still, when they hear a loud splash, and the screaming bubbles and stops, everyone goes quiet. The rest of the patrol is spent in silence, shame churning their stomachs and making them feel ill.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
         ],
-        "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": "As soon as the patrol realizes that the sound is coming from a Twoleg clutching a screeching bag, they quickly turn and resume their patrol. Kittypets are <i>not</i> their problem.",
-        "antagonize_fail_text": "The patrol quickly turns away once they realize that a Twoleg and a kittypet are involved. Not their problem. Still, when they hear a loud splash, and the screaming bubbles and stops, everyone goes quiet. The rest of the patrol is spent in silence, shame churning their stomachs and making them feel ill."
+        "antag_success_outcomes": [
+            {
+                "text": "As soon as the patrol realizes that the sound is coming from a Twoleg clutching a screeching bag, they quickly turn and resume their patrol. Kittypets are <i>not</i> their problem.",
+                "exp": 10,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     },
     {
         "patrol_id": "bch_bord_ocean_newcatkits1",
-        "biome": "beach",
-        "season": "leaf-bare",
-        "tags": [
-            "border",
-            "new_cat_litter0_litter3_dead_orphaned6",
-            "platonic",
-            "comfort",
-            "warrior",
-            "shivering",
-            "frostbite",
-            "injure_all"
-        ],
+        "biome": ["beach"],
+        "season": ["leaf-bare"],
+        "types": ["border"],
+        "tags": ["new_cat"],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "p_l hears desperate mewling coming from the ocean. ",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} that {PRONOUN/p_l/poss} imagination is just playing tricks on {PRONOUN/p_l/object} and continue the patrol.",
         "chance_of_success": 20,
-        "exp": 15,
-        "success_text": {
-            "unscathed_common": "The patrol races towards the section of beach they heard the wailing coming from. To their horror they see several kits just barely keeping their heads above water, the remains of a Twoleg thing trapping them in place. p_l and r_c leap into the water, grabbing the kits by their scruffs and handing them over to the rest of the patrol.",
-            "stat_trait": "s_c, upon seeing several kits trapped by a Twoleg contraption, immediately jumps into the cold harsh water of the sea. {PRONOUN/s_c/subject/CAP} {VERB/s_c/use/uses} a piece of wood as a makeshift raft and {VERB/s_c/paddle/paddles} the kits back to shore where the rest of the patrol can keep them warm, before racing them back to camp to be cuddled into the pelt of a loving queen."
-        },
-        "fail_text": {
-            "unscathed_common": "To the cats' horror, they were too late, the bodies of several kits washing ashore. They mutter a prayer before gently picking up the kits, and the patrol swims the little bodies back out into the cold ocean, ensuring that the kits rest within the ocean's embrace."
-        },
-        "win_skills": [],
-        "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": "Hissing to {PRONOUN/p_l/self}, p_l turns and stalks off to continue the patrol, deliberately ignoring the mewls. It must be a trick of the wind, {PRONOUN/p_l/subject} {VERB/p_l/inform/informs} {PRONOUN/p_l/poss} companions, and no cat dares to argue.",
-        "antagonize_fail_text": "The cats argue with each other about whether or not they should check out the source of the mewling. By the time they've decided what to do, the sound has already faded away."
+        "success_outcomes": [
+            {
+                "text": "The patrol races towards the section of beach they heard the wailing coming from. To their horror they see several kits just barely keeping their heads above water, the remains of a Twoleg thing trapping them in place. p_l and r_c leap into the water, grabbing the kits by their scruffs and handing them over to the rest of the patrol.",
+                "exp": 15,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "new_cat": [
+                    ["dead"],
+                    ["litter", "parent:0", "status:kitten", "backstory:orphaned6"]
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "s_c, upon seeing several kits trapped by a Twoleg contraption, immediately jumps into the cold harsh water of the sea. {PRONOUN/s_c/subject/CAP} {VERB/s_c/use/uses} a piece of wood as a makeshift raft and {VERB/s_c/paddle/paddles} the kits back to shore where the rest of the patrol can keep them warm, before racing them back to camp to be cuddled into the pelt of a loving queen.",
+                "exp": 15,
+                "weight": 20,
+                "stat_skill": ["SWIMMER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "new_cat": [
+                    ["dead", "age:has_kits"],
+                    ["litter", "parent:0", "status:kitten", "backstory:orphaned6"]
+                ],
+                "outsider_rep": 1
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "To the cats' horror, they were too late, the bodies of several kits washing ashore. They mutter a prayer before gently picking up the kits, and the patrol swims the little bodies back out into the cold ocean, ensuring that the kits rest within the ocean's embrace.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "The cats argue with each other about whether or not they should check out the source of the mewling. By the time they've decided what to do, the sound has already faded away.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "Hissing to {PRONOUN/p_l/self}, p_l turns and stalks off to continue the patrol, deliberately ignoring the mewls. It must be a trick of the wind, {PRONOUN/p_l/subject} {VERB/p_l/inform/informs} {PRONOUN/p_l/poss} companions, and no cat dares to argue.",
+                "exp": 15,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     }
 ]

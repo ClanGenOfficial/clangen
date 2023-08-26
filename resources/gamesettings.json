@@ -130,6 +130,11 @@
             "Allow medicine cats to be randomly selected on patrol",
             "Medicine cats can be selected with the patrol buttons +1, +3,+6",
             true
+        ],
+        "special_dates": [
+            "Allow special date events",
+            "Certain changes may be made to the game on special days such as April Fools",
+            true
         ]
     },
     "relation": {

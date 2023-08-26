@@ -13,13 +13,8 @@ from scripts.event_class import Single_Event
 class OutsiderEvents:
     """All events with a connection to outsiders."""
 
-    def __init__(self) -> None:
-        self.event_sums = 0
-        self.had_one_event = False
-        self.generate_events = GenerateEvents()
-        pass
-
-    def killing_outsiders(self, cat: Cat):
+    @staticmethod
+    def killing_outsiders(cat: Cat):
         # killing outside cats
         if cat.outside:
             if random.getrandbits(6) == 1 and not cat.dead:
@@ -38,21 +33,25 @@ class OutsiderEvents:
                 game.cur_events_list.append(
                     Single_Event(text, "birth_death", cat.ID))
                 
-    def lost_cat_become_outsider(self, cat: Cat):
+    @staticmethod
+    def lost_cat_become_outsider(cat: Cat):
         """ 
         this will be for lost cats becoming kittypets/loners/etc
         TODO: need to make a unique backstory for these cats so they still have thoughts related to their clan
         """
         if random.getrandbits(7) == 1 and not cat.dead:
-            self.become_kittypet(cat)
+            OutsiderEvents.become_kittypet(cat)
 
-    def become_kittypet(self, cat: Cat):
+    @staticmethod
+    def become_kittypet(cat: Cat):
         # TODO: Make backstory for all of these + for exiled cats
         cat.status = 'kittypet'
 
-    def become_loner(self, cat: Cat):
+    @staticmethod
+    def become_loner(cat: Cat):
         cat.status = 'loner'
 
-    def become_rogue(self, cat: Cat):
+    @staticmethod
+    def become_rogue(cat: Cat):
         """Cats will probably only become rogues if they were exiled formerly"""
         cat.status = 'rogue'
