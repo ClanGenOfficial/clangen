@@ -726,74 +726,68 @@ class Condition_Events():
 
     @staticmethod
     def determine_retirement(cat, triggered):
-        retire_chances = {
-            'newborn': 0,
-            'kitten': 0,
-            'adolescent': 100,
-            'young adult': 80,
-            'adult': 70,
-            'senior adult': 50,
-            'senior': 10
-        }
+        
+        if game.settings['retirement'] or cat.no_retire:
+            return
 
         if not triggered and not cat.dead and cat.status not in \
                 ['leader', 'medicine cat', 'kitten', 'newborn', 'medicine cat apprentice', 'mediator',
-                 'mediator apprentice', 'elder'] \
-                and game.settings['retirement'] is False:
+                 'mediator apprentice', 'elder']:
             for condition in cat.permanent_condition:
-                if cat.permanent_condition[condition]['severity'] in ['major', 'severe']:
+                if cat.permanent_condition[condition]['severity'] not in ['major', 'severe']:
+                    continue
                     
-                    if cat.permanent_condition[condition]['severity'] == "severe":
-                        # Higher changes for "severe". These are meant to be nearly 100% without 
-                        # being 100%
-                        retire_chances = {
-                            'newborn': 0,
-                            'kitten': 0,
-                            'adolescent': 50,  # This is high so instances where an cat retires the same moon they become an apprentice is rare
-                            'young adult': 10,
-                            'adult': 5,
-                            'senior adult': 5,
-                            'senior': 5
-                        }
-                    else:
-                        retire_chances = {
-                            'newborn': 0,
-                            'kitten': 0,
-                            'adolescent': 100,
-                            'young adult': 80,
-                            'adult': 70,
-                            'senior adult': 50,
-                            'senior': 10
-                        }
-                    
-                    chance = int(retire_chances.get(cat.age))
-                    if not int(random.random() * chance):
-                        retire_involved = [cat.ID]
-                        if cat.age == 'adolescent':
-                            event = f"{cat.name} decides they'd rather spend their time helping around camp and entertaining the " \
-                                    f"kits, they're warmly welcomed into the elder's den."
-                        elif game.clan.leader is not None:
-                            if not game.clan.leader.dead and not game.clan.leader.exiled and \
-                                    not game.clan.leader.outside and cat.moons < 120:
-                                retire_involved.append(game.clan.leader.ID)
-                                event = f"{game.clan.leader.name}, seeing {cat.name} struggling the last few moons " \
-                                        f"approaches them and promises them that no one would think less of them for " \
-                                        f"retiring early and that they would still be a valuable member of the Clan " \
-                                        f"as an elder. {cat.name} agrees and later that day their elder ceremony " \
-                                        f"is held."
-                            else:
-                                event = f'{cat.name} has decided to retire from normal Clan duty.'
+                if cat.permanent_condition[condition]['severity'] == "severe":
+                    # Higher changes for "severe". These are meant to be nearly 100% without
+                    # being 100%
+                    retire_chances = {
+                        'newborn': 0,
+                        'kitten': 0,
+                        'adolescent': 50,  # This is high so instances where an cat retires the same moon they become an apprentice is rare
+                        'young adult': 10,
+                        'adult': 5,
+                        'senior adult': 5,
+                        'senior': 5
+                    }
+                else:
+                    retire_chances = {
+                        'newborn': 0,
+                        'kitten': 0,
+                        'adolescent': 100,
+                        'young adult': 80,
+                        'adult': 70,
+                        'senior adult': 50,
+                        'senior': 10
+                    }
+                
+                chance = int(retire_chances.get(cat.age))
+                if not int(random.random() * chance):
+                    retire_involved = [cat.ID]
+                    if cat.age == 'adolescent':
+                        event = f"{cat.name} decides they'd rather spend their time helping around camp and entertaining the " \
+                                f"kits, they're warmly welcomed into the elder's den."
+                    elif game.clan.leader is not None:
+                        if not game.clan.leader.dead and not game.clan.leader.exiled and \
+                                not game.clan.leader.outside and cat.moons < 120:
+                            retire_involved.append(game.clan.leader.ID)
+                            event = f"{game.clan.leader.name}, seeing {cat.name} struggling the last few moons " \
+                                    f"approaches them and promises them that no one would think less of them for " \
+                                    f"retiring early and that they would still be a valuable member of the Clan " \
+                                    f"as an elder. {cat.name} agrees and later that day their elder ceremony " \
+                                    f"is held."
                         else:
                             event = f'{cat.name} has decided to retire from normal Clan duty.'
+                    else:
+                        event = f'{cat.name} has decided to retire from normal Clan duty.'
 
-                        if cat.age == 'adolescent':
-                            event += f" They are given the name {cat.name.prefix}{cat.name.suffix} in honor " \
-                                     f"of their contributions to {game.clan.name}Clan."
+                    if cat.age == 'adolescent':
+                        event += f" They are given the name {cat.name.prefix}{cat.name.suffix} in honor " \
+                                    f"of their contributions to {game.clan.name}Clan."
 
-                        cat.retire_cat()
-                        # Don't add this to the condition event list: instead make it it's own event, a ceremony. 
-                        game.cur_events_list.append(
-                                Single_Event(event, "ceremony", retire_involved))
+                    cat.retire_cat()
+                    # Don't add this to the condition event list: instead make it it's own event, a ceremony. 
+                    game.cur_events_list.append(
+                            Single_Event(event, "ceremony", retire_involved))
 
     @staticmethod
     def give_risks(cat, event_list, condition, progression, conditions, dictionary):

@@ -113,7 +113,7 @@ def get_living_clan_cat_count(Cat):
     return count
 
 
-def get_cats_same_age(cat, Relationship, range=10):  # pylint: disable=redefined-builtin
+def get_cats_same_age(cat, range=10):  # pylint: disable=redefined-builtin
     """Look for all cats in the Clan and returns a list of cats, which are in the same age range as the given cat."""
     cats = []
     for inter_cat in cat.all_cats.values():
@@ -134,7 +134,7 @@ def get_cats_same_age(cat, Relationship, range=10):  # pylint: disable=redefined
     return cats
 
 
-def get_free_possible_mates(cat, Relationship):
+def get_free_possible_mates(cat):
     """Returns a list of available cats, which are possible mates for the given cat."""
     cats = []
     for inter_cat in cat.all_cats.values():
@@ -149,8 +149,7 @@ def get_free_possible_mates(cat, Relationship):
                 inter_cat.create_one_relationship(cat)
             continue
 
-        if inter_cat.is_potential_mate(cat, for_love_interest=True) and cat.is_potential_mate(inter_cat,
-                                                                                              for_love_interest=True):
+        if inter_cat.is_potential_mate(cat, for_love_interest=True):
             cats.append(inter_cat)
     return cats
 
@@ -565,8 +564,8 @@ def get_personality_compatibility(cat1, cat2):
     return None
 
 
-def get_cats_of_romantic_interest(cat, Relationship):
-    """Returns a list of cats, those cats are love interest of the given cat."""
+def get_cats_of_romantic_interest(cat):
+    """Returns a list of cats, those cats are love interest of the given cat"""
     cats = []
     for inter_cat in cat.all_cats.values():
         if inter_cat.dead or inter_cat.outside or inter_cat.exiled:
@@ -579,8 +578,9 @@ def get_cats_of_romantic_interest(cat, Relationship):
             if cat.ID not in inter_cat.relationships:
                 inter_cat.create_one_relationship(cat)
             continue
-
-        if cat.relationships[inter_cat.ID].romantic_love > 0:
+        
+        # Extra check to ensure they are potential mates
+        if inter_cat.is_potential_mate(cat, for_love_interest=True) and cat.relationships[inter_cat.ID].romantic_love > 0:
             cats.append(inter_cat)
     return cats
 

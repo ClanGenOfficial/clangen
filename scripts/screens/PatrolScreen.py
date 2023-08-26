@@ -2,7 +2,7 @@ from random import choice, sample
 import pygame
 import pygame_gui
 
-from .base_screens import Screens
+from .Screens import Screens
 from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton
 from scripts.patrol.patrol import Patrol
@@ -167,7 +167,7 @@ class PatrolScreen(Screens):
             self.update_button()
         elif event.ui_element == self.elements['patrol_start']:
             self.selected_cat = None
-            self.start_patrol_thread = self.loading_screen_start_work(self.run_patrol_start)
+            self.start_patrol_thread = self.loading_screen_start_work(self.run_patrol_start, "start")
         elif event.ui_element == self.elements.get('mate_button'):
             self.selected_cat = self.mate
             self.update_button()
@@ -210,7 +210,7 @@ class PatrolScreen(Screens):
             inp = "antagonize"
         
         if inp:
-            self.proceed_patrol_thread = self.loading_screen_start_work(self.run_patrol_proceed, (inp,))
+            self.proceed_patrol_thread = self.loading_screen_start_work(self.run_patrol_proceed, "proceed", (inp,))
 
     def handle_patrol_complete_events(self, event):
         if event.ui_element == self.elements['patrol_again']:

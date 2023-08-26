@@ -206,10 +206,14 @@ class Cat():
         self.permanent_condition = {}
         self.df = False
         self.experience_level = None
-        self.no_kits = False
         
+        # Various behavior toggles
+        self.no_kits = False
+        self.no_mates = False
+        self.no_retire = False
         self.prevent_fading = False  # Prevents a cat from fading.
-        self.faded_offspring = []  # Stores of a list of faded offspring, for family page purposes.
+        
+        self.faded_offspring = []  # Stores of a list of faded offspring, for relation tracking purposes
 
         self.faded = faded  # This is only used to flag cat that are faded, but won't be added to the faded list until
         # the next save.
@@ -1329,8 +1333,8 @@ class Cat():
     def relationship_interaction(self):
         """Randomly choose a cat of the Clan and have a interaction with them."""
         # if the cat has no relationships, skip
-        if not self.relationships or len(self.relationships) < 1:
-            return
+        #if not self.relationships or len(self.relationships) < 1:
+        #    return
 
         cats_to_choose = [iter_cat for iter_cat in Cat.all_cats.values() if iter_cat.ID != self.ID and \
                           not iter_cat.outside and not iter_cat.exiled and not iter_cat.dead]
@@ -2030,6 +2034,10 @@ class Cat():
         # just to be sure, check if it is not the same cat
         if self.ID == other_cat.ID:
             return False
+        
+        #No Mates Check
+        if self.no_mates or other_cat.no_mates:
+            return False
 
         # Inheritance check
         if self.is_related(other_cat, game.settings["first cousin mates"]):
@@ -2087,6 +2095,7 @@ class Cat():
                 self_relationship.trust -= 10
                 self_relationship.mate = False
                 if fight:
+                    self_relationship.romantic_love -= 20
                     self_relationship.platonic_like -= 30
 
             if not other_cat.dead:
@@ -2099,6 +2108,7 @@ class Cat():
                 other_relationship.trust -= 10
                 other_relationship.mate = False
                 if fight:
+                    self_relationship.romantic_love -= 20
                     other_relationship.platonic_like -= 30
 
         self.mate.remove(other_cat.ID)
@@ -2859,6 +2869,8 @@ class Cat():
                 "dead": self.dead,
                 "paralyzed": self.pelt.paralyzed,
                 "no_kits": self.no_kits,
+                "no_retire": self.no_retire,
+                "no_mates": self.no_mates,
                 "exiled": self.exiled,
                 "pelt_name": self.pelt.name,
                 "pelt_color": self.pelt.colour,
