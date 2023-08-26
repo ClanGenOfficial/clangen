@@ -136,7 +136,7 @@
         "biome": ["Any"],
         "season": ["Any"],
         "types": ["herb_gathering"],
-        "tags": ["jealousy"],
+        "tags": [],
         "patrol_art": "gen_med_vision",
         "min_cats": 2,
         "max_cats": 6,
@@ -161,6 +161,13 @@
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["jealousy"],
+                        "amount": -5
                     }
                 ]
             },
@@ -176,6 +183,13 @@
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["jealousy"],
+                        "amount": -5
                     }
                 ]
             },
@@ -193,6 +207,13 @@
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["jealousy"],
+                        "amount": -5
                     }
                 ]
             }
@@ -209,6 +230,13 @@
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": -5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["jealousy"],
+                        "amount": 5
                     }
                 ]
             },
@@ -224,6 +252,13 @@
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": -5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["jealousy"],
+                        "amount": 5
                     }
                 ]
             }
@@ -234,7 +269,7 @@
         "biome": ["Any"],
         "season": ["Any"],
         "types": ["herb_gathering"],
-        "tags": ["jealousy"],
+        "tags": [],
         "patrol_art": "gen_med_vision",
         "min_cats": 2,
         "max_cats": 6,
@@ -259,6 +294,13 @@
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["jealousy"],
+                        "amount": -5
                     }
                 ]
             },
@@ -274,6 +316,13 @@
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["jealousy"],
+                        "amount": -5
                     }
                 ]
             },
@@ -290,6 +339,13 @@
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["jealousy"],
+                        "amount": -5
                     }
                 ]
             }
@@ -306,6 +362,13 @@
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": -5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["jealousy"],
+                        "amount": 5
                     }
                 ]
             },
@@ -321,6 +384,13 @@
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": -5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["jealousy"],
+                        "amount": 5
                     }
                 ]
             }
@@ -373,7 +443,7 @@
         "biome": ["Any"],
         "season": ["Any"],
         "types": ["herb_gathering"],
-        "tags": ["jealousy"],
+        "tags": [],
         "patrol_art": "gen_med_vision",
         "min_cats": 2,
         "max_cats": 6,
@@ -398,6 +468,13 @@
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l", "p_l"],
+                        "cats_from": ["patrol", "r_c"],
+                        "mutual": true,
+                        "values": ["jealousy"],
+                        "amount": -5
                     }
                 ]
             },
@@ -413,6 +490,13 @@
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l", "p_l"],
+                        "cats_from": ["patrol", "r_c"],
+                        "mutual": true,
+                        "values": ["jealousy"],
+                        "amount": -5
                     }
                 ]
             },
@@ -429,6 +513,13 @@
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l", "p_l"],
+                        "cats_from": ["patrol", "r_c"],
+                        "mutual": true,
+                        "values": ["jealousy"],
+                        "amount": -5
                     }
                 ]
             }
@@ -445,6 +536,13 @@
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": -5
+                    },
+                    {
+                        "cats_to": ["p_l", "p_l"],
+                        "cats_from": ["patrol", "r_c"],
+                        "mutual": true,
+                        "values": ["jealousy"],
+                        "amount": 5
                     }
                 ]
             },
@@ -460,6 +558,13 @@
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": -5
+                    },
+                    {
+                        "cats_to": ["p_l", "p_l"],
+                        "cats_from": ["patrol", "r_c"],
+                        "mutual": true,
+                        "values": ["jealousy"],
+                        "amount": 5
                     }
                 ]
             }
@@ -2619,7 +2724,7 @@
         "biome": ["Any"],
         "season": ["Any"],
         "types": ["herb_gathering"],
-        "tags": ["jealousy"],
+        "tags": [],
         "patrol_art": "gen_med_warappmedapp_herbcontest",
         "min_cats": 2,
         "max_cats": 2,
@@ -2651,7 +2756,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": ["dislike", "jealousy"],
                         "amount": -5
                     }
                 ]
@@ -2673,7 +2778,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": ["dislike", "jealousy"],
                         "amount": -5
                     }
                 ]
@@ -2696,7 +2801,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": ["dislike", "jealousy"],
                         "amount": -5
                     }
                 ]
@@ -2719,7 +2824,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": ["dislike", "jealousy"],
                         "amount": 5
                     }
                 ]
@@ -2741,7 +2846,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": ["dislike", "jealousy"],
                         "amount": 5
                     }
                 ]

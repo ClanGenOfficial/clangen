@@ -494,7 +494,7 @@
         "biome": ["Any"],
         "season": ["Any"],
         "types": ["hunting"],
-        "tags": ["jealousy"],
+        "tags": [],
         "patrol_art": "gen_hunt_vision",
         "min_cats": 2,
         "max_cats": 6,
@@ -516,6 +516,13 @@
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealousy"],
+                        "amount": -5
                     }
                 ]
             },
@@ -531,6 +538,13 @@
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealousy"],
+                        "amount": -5
                     }
                 ]
             },
@@ -548,6 +562,13 @@
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealousy"],
+                        "amount": -5
                     }
                 ]
             }
@@ -564,6 +585,13 @@
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealousy"],
+                        "amount": 5
                     }
                 ],
                 "prey": ["very_small"]
@@ -579,6 +607,13 @@
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealousy"],
+                        "amount": 5
                     }
                 ],
                 "prey": ["very_small"]
