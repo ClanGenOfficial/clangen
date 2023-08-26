@@ -584,7 +584,7 @@
         "reputation": [
             "welcoming"
         ],
-        "event_text": "A loner leaves their litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/subject} own.",
+        "event_text": "A loner leaves their litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/poss} own.",
         "loner": true,
         "litter": true,
         "backstory": [
@@ -609,7 +609,7 @@
         "reputation": [
             "welcoming"
         ],
-        "event_text": "A kittypet leaves their litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/subject} own.",
+        "event_text": "A kittypet leaves their litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/poss} own.",
         "kittypet": true,
         "litter": true,
         "backstory": [
