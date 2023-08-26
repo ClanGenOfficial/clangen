@@ -1410,7 +1410,7 @@
         "biome": ["mountainous"],
         "season": ["newleaf"],
         "types": ["herb_gathering"],
-        "tags": ["jealousy"],
+        "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 3,
         "max_cats": 6,
@@ -1440,7 +1440,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": ["dislike", "jealousy"],
                         "amount": -10
                     }
                 ]
@@ -1462,7 +1462,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": ["dislike", "jealousy"],
                         "amount": -10
                     }
                 ]
@@ -1485,7 +1485,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": ["dislike", "jealousy"],
                         "amount": -10
                     }
                 ]
@@ -1508,7 +1508,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": ["dislike", "jealousy"],
                         "amount": 10
                     }
                 ]
