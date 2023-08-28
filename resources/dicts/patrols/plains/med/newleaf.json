@@ -1433,7 +1433,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The many stems of goldenrod surround p_l as they work, snipping off stems and clumps of tiny yellow flowers to bring back to c_n's herb stores. The patrol chats as they work, exchanging gossip and news as the smell of cut stems wreathes around them",
+                "text": "The many stems of goldenrod surround p_l as they work, snipping off stems and clumps of tiny yellow flowers to bring back to c_n's herb stores. The patrol chats as they work, exchanging gossip and news as the smell of cut stems wreathes around them.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["goldenrod"],

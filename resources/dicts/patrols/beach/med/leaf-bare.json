@@ -1158,20 +1158,6 @@
             {
                 "text": "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
                 "exp": 0,
-                "weight": 20
-            },
-            {
-                "text": "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
-                "exp": 0,
-                "weight": 10,
-                "dead_cats": ["r_c"],
-                "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
-                }
-            },
-            {
-                "text": "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
-                "exp": 0,
                 "weight": 10,
                 "injury": [
                     {

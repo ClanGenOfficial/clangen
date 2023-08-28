@@ -375,6 +375,15 @@ class Cat():
 
     def __repr__(self):
         return "CAT OBJECT:" + self.ID
+    
+    def __eq__(self, other):
+        if not isinstance(other, Cat):
+            return False
+        
+        return self.ID == other.ID
+    
+    def __hash__(self):
+        return hash(self.ID)
 
     @property
     def mentor(self):
