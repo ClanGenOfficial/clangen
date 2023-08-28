@@ -741,7 +741,7 @@ class PatrolOutcome():
         insert = re.sub("[_]", " ", insert)
         
         game.herb_events_list.append(f"{insert.capitalize()} gathered on a patrol.")
-        return f"{insert.capitalize()} gathered on this patrol."
+        return f"{insert.capitalize()} gathered."
         
     def _handle_prey(self, patrol:'Patrol') -> str:
         """ Handle giving prey """
