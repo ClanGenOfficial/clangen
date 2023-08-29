@@ -2424,7 +2424,7 @@
         "win_skills": ["CLEVER,0", "INSIGHTFUL,0", "SENSE,0", "STORY,0", "HEALER,0", "LORE,0"],
         "min_cats": 3,
         "max_cats": 6
-},
+    },
     {
         "patrol_id": "fst_hunt_random_greenleafsolowarrior1",
         "biome": "forest",
