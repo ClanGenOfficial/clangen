@@ -1,33 +1,44 @@
 [
     {
         "patrol_id": "pln_bord_shortswim1",
-        "biome": "plains",
-        "season": "greenleaf",
-        "tags": [
-            "border"
-        ],
+        "biome": ["plains"],
+        "season": ["greenleaf"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "r_c looks at the small watering hole {PRONOUN/r_c/subject} {VERB/r_c/pass/passes} by on the way to mark the border, and debates if {PRONOUN/r_c/subject} should stop for a quick swim to cool off.",
         "decline_text": "r_c decides to continue with the patrol instead.",
         "chance_of_success": 50,
-        "exp": 5,
-        "success_text": {
-            "unscathed_common": "They stop to swim for a few moments and feel rejuvenated, cooled and ready to continue.",
-            "stat_trait": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/keep/keeps} going, responsibly, although r_c wades through the watering hole as {PRONOUN/r_c/subject} {VERB/r_c/do/does}, letting the water cool {PRONOUN/r_c/poss} paws pleasantly."
-        },
-        "fail_text": {
-            "unscathed_common": "{PRONOUN/r_c/subject/CAP} get distracted while splashing in the water. r_c swears {PRONOUN/r_c/subject} saw a fish, but it derails {PRONOUN/r_c/poss} border patrol completely and {PRONOUN/r_c/subject} {VERB/r_c/get/gets} nothing done."
-        },
-        "win_trait": [
-            "responsible",
-            "thoughtful",
-            "loyal",
-            "righteous",
-            "cold",
-            "strict"
+        "success_outcomes": [
+            {
+                "text": "They stop to swim for a few moments and feel rejuvenated, cooled and ready to continue.",
+                "exp": 5,
+                "weight": 20
+            },
+            {
+                "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/keep/keeps} going, responsibly, although r_c wades through the watering hole as {PRONOUN/r_c/subject} {VERB/r_c/do/does}, letting the water cool {PRONOUN/r_c/poss} paws pleasantly.",
+                "exp": 5,
+                "weight": 20,
+                "stat_trait": [
+                    "responsible",
+                    "thoughtful",
+                    "loyal",
+                    "righteous",
+                    "cold",
+                    "strict"
+                ]
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "{PRONOUN/r_c/subject/CAP} get distracted while splashing in the water. r_c swears {PRONOUN/r_c/subject} saw a fish, but it derails {PRONOUN/r_c/poss} border patrol completely and {PRONOUN/r_c/subject} {VERB/r_c/get/gets} nothing done.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     }
 ]

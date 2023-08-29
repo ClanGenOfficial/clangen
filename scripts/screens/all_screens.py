@@ -1,15 +1,29 @@
-from .base_screens import Screens
-from .cat_screens import ProfileScreen, CeremonyScreen, RoleScreen, SpriteInspectScreen
-from .clan_creation_screens import MakeClanScreen
-from .catlist_screens import ClanScreen, StarClanScreen, DFScreen, ListScreen, AllegiancesScreen, MedDenScreen
-from .event_screens import EventsScreen
-from .organizational_screens import\
-    StartScreen, SettingsScreen, SwitchClanScreen, StatsScreen
-from .patrol_screens import PatrolScreen
-from .relation_screens import\
-    RelationshipScreen, ChooseMateScreen, FamilyTreeScreen, ChooseMentorScreen, MediationScreen, ChooseAdoptiveParentScreen
-#from scripts.screens.relation.choose_adoptive_parent import ChooseAdoptiveParentScreen
-from .world_screens import OutsideClanScreen, UnknownResScreen
+from .Screens import Screens
+from .StartScreen import StartScreen
+from .PatrolScreen import PatrolScreen
+from .AllegiancesScreen import AllegiancesScreen
+from .CeremonyScreen import CeremonyScreen
+from .ChooseAdoptiveParentScreen import ChooseAdoptiveParentScreen
+from .ProfileScreen import ProfileScreen
+from .RoleScreen import RoleScreen
+from .SpriteInspectScreen import SpriteInspectScreen
+from .DFScreen import DFScreen
+from .StarClanScreen import StarClanScreen
+from .UnknownResScreen import UnknownResScreen
+from .MakeClanScreen import MakeClanScreen
+from .MedDenScreen import MedDenScreen
+from .RelationshipScreen import RelationshipScreen
+from .SettingsScreen import SettingsScreen
+from .SwitchClanScreen import SwitchClanScreen
+from .ClanScreen import ClanScreen
+from .ListScreen import ListScreen
+from .StatsScreen import StatsScreen
+from .EventsScreen import EventsScreen
+from .ChooseMateScreen import ChooseMateScreen
+from .ChooseMentorScreen import ChooseMentorScreen
+from .FamilyTreeScreen import FamilyTreeScreen
+from .OutsideClanScreen import OutsideClanScreen
+from .MediationScreen import MediationScreen
 
 # ---------------------------------------------------------------------------- #
 #                                  UI RULES                                    #

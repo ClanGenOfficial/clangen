@@ -1,14 +1,14 @@
 import pygame
 
-from scripts.utility import update_sprite, scale, scale_dimentions
+from scripts.utility import update_sprite, scale
 from scripts.cat.cats import Cat
-from scripts.clan import Clan
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton
 import pygame_gui
 from scripts.game_structure.windows import SaveCheck, EventLoading
 from scripts.game_structure.propagating_thread import PropagatingThread
+from threading import current_thread
 
 class Screens():
     game_screen = screen
@@ -110,38 +110,51 @@ class Screens():
         
         # Place to store the loading window
         self.loading_window = None
-        self.work_done = False
         
-
+        # Dictionary of work done, keyed by the target function name
+        self.work_done = {}
+        
     def loading_screen_start_work(self,
-                                  target) -> PropagatingThread:
+                                  target:callable,
+                                  thread_name:str="work_thread",
+                                  args:tuple=tuple()) -> PropagatingThread:
         """Creates and starts the work_thread. 
             Returns the started thread. """
 
-        work_thread = PropagatingThread(target=self._work_target, args=(target,), daemon=True)
+        work_thread = PropagatingThread(target=self._work_target, args=(target,args), 
+                                        name=thread_name, daemon=True)
+        
         game.switches['window_open'] = True
         work_thread.start()
         
         return work_thread
         
-    
-    def _work_target(self, target):
+    def _work_target(self, target, args):
         
+        exp = None
         try:
-            target()
-        except:
-            raise
-        finally:
-            self.work_done = True
+            target(*args)
+            self.work_done[current_thread().name] = True
+        except Exception as e:
+            exp = e
 
+        if exp:
+            raise exp
+        
     def loading_screen_on_use(self, 
                               work_thread:PropagatingThread,
-                              final_actions,
+                              final_actions:callable,
                               loading_screen_pos:tuple=None, 
-                              delay:float=0.7) -> bool:
+                              delay:float=0.7) -> None:
         """Handles all actions that must be run every frame for the loading window to work. 
         Also handles creating and killing the loading window. 
          """
+        
+        if not isinstance(work_thread, PropagatingThread):
+            if self.loading_window:
+                self.loading_window.kill()
+                self.loading_window = None
+            return
         
         # Handled the loading animation, both creating and killing it. 
         if not self.loading_window and work_thread.is_alive() \
@@ -152,18 +165,19 @@ class Screens():
             self.loading_window = None
         
         # Handles displaying the events once timeskip is done. 
-        if self.work_done:
+        if self.work_done.get(work_thread.name, False):
             # By this time, the thread should have already finished.
             # This line allows exceptions in the work thread to be 
             # passed to the main thread, so issues in the work thread are not
             # silent failures. 
             work_thread.join()
             
+            self.work_done.pop(work_thread.name)
+            
             final_actions()
             game.switches['window_open'] = False
-            self.work_done = False
             
-        return self.work_done
+        return
         
     def fill(self, tuple):
         pygame.Surface.fill(color=tuple)

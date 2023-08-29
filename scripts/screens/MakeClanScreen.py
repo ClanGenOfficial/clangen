@@ -2,7 +2,7 @@ import pygame
 from random import choice, randrange
 import pygame_gui
 
-from .base_screens import Screens
+from .Screens import Screens
 
 from scripts.utility import get_text_box_theme, scale
 from scripts.clan import Clan
@@ -12,7 +12,7 @@ from re import sub
 from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton
 from scripts.game_structure.game_essentials import game, MANAGER
-from scripts.patrol import Patrol
+from scripts.patrol.patrol import Patrol
 
 
 class MakeClanScreen(Screens):

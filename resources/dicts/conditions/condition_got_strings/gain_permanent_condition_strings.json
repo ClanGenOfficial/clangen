@@ -143,13 +143,14 @@
             "m_c begins to practice moving around camp, trying to get used to the lack of depth perception that {PRONOUN/m_c/poss} vision loss is causing."
         ],
         "blind": [
-            "The knock to {PRONOUN/m_c/poss} head has blinded {PRONOUN/m_c/object}. r_c tells m_c {PRONOUN/m_c/poss} vision will never returns. Something in {PRONOUN/m_c/poss} eyes must have been damaged by the blow.",
+            "The knock to {PRONOUN/m_c/poss} head has blinded {PRONOUN/m_c/object}. r_c tells m_c {PRONOUN/m_c/poss} vision will never return. Something in {PRONOUN/m_c/poss} eyes must have been damaged by the blow.",
             "m_c hasn't been able to see clearly since {PRONOUN/m_c/subject} {VERB/m_c/were/was} hit in the head, and it only gets worse by the day. Eventually r_c breaks the news that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going blind.",
             "m_c stumbles through camp, trying {PRONOUN/m_c/poss} best to learn the layout. It seems like {PRONOUN/m_c/poss} head injury has made {PRONOUN/m_c/object} go blind and {PRONOUN/m_c/poss} vision doesn't seem to be returning any time soon."
         ],
         "loss of balance": [
             "m_c stumbles through the medicine den, trying to walk a straight line as r_c instructed. r_c tells {PRONOUN/m_c/object} that the newfound lack of balance might be a permanent result of {PRONOUN/m_c/poss} head injury.",
-            "m_c finds that {PRONOUN/m_c/subject} {VERB/m_c/have/has} to concentrate to stay upright while standing and the newfound loss of balance is endlessly frustrating to {PRONOUN/m_c/subject}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/surmise/surmises} that it's likely been caused by {PRONOUN/m_c/poss} head injury."
+            "m_c finds that {PRONOUN/m_c/subject} {VERB/m_c/have/has} to concentrate to stay upright while standing and the newfound loss of balance is endlessly frustrating to {PRONOUN/m_c/subject}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/surmise/surmises} that it's likely been caused by {PRONOUN/m_c/poss} head injury.",
+            "Though {PRONOUN/m_c/poss} head injury has healed, m_c feels like a newborn kitten on {PRONOUN/m_c/poss} legs as {PRONOUN/m_c/subject} {VERB/m_c/stumble/stumbles} around the medicine den. {PRONOUN/m_c/subject/CAP} {VERB/m_c/sigh/sighs} and {VERB/m_c/accept/accepts} the fact that {PRONOUN/m_c/poss} balance will likely never be the same."
         ],
         "partial hearing loss": [
             "m_c tells r_c that {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} {PRONOUN/m_c/poss} hearing has gotten worse. r_c assesses {PRONOUN/m_c/poss} hearing and confirms it, {PRONOUN/m_c/poss} hearing is failing and it can only be due to the head injury {PRONOUN/m_c/subject} suffered.",
@@ -198,7 +199,7 @@
     },
     "broken back": {
         "paralyzed": [
-            "r_c is gentle when {PRONOUN/r_c/subject} {VERB/r_c/break/breaks} the news, but m_c had already expected it. {PRONOUN/m_c/subject}'ll never walk again.",
+            "r_c is gentle when {PRONOUN/r_c/subject} {VERB/r_c/break/breaks} the news, but m_c had already expected it. {PRONOUN/m_c/subject/CAP}'ll never walk again.",
             "m_c tries to keep the disappointment down. Logically, {PRONOUN/m_c/subject} knew this was inevitable. Emotionally, {PRONOUN/m_c/subject} just can't accept that {PRONOUN/m_c/subject}'ll never walk again.",
             "m_c continues to do {PRONOUN/m_c/poss} exercises dutifully, hoping beyond hope that someday it will pay off. For now though, {PRONOUN/m_c/subject} {VERB/m_c/know/knows} this paralysis is {PRONOUN/m_c/poss} new reality."
         ]

@@ -1,831 +1,2235 @@
 [
     {
         "patrol_id": "mtn_med_romance_leaf-bare1",
-        "biome": "mountainous",
-        "season": "leaf-bare",
-        "tags": [
-            "herb_gathering",
-            "warrior",
-            "random_herbs",
-            "romantic",
-            "platonic",
-            "respect",
-            "p_l_to_r_c",
-            "s_c_to_r_c",
-            "rc_has_stat"
-        ],
+        "biome": ["mountainous"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
+        "tags": ["romantic"],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "p_l goes out with a warrior escort, both for safety as they look for useful fresh supplies that have survived leaf-bare so far, and for carrying capacity should they find anything.",
         "decline_text": "Their escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
         "chance_of_success": 60,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "Surprisingly, r_c actually starts up a conversation with them about the herbs they're looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes their heart feel lighter getting to share their knowledge and skills with someone who respects them.",
-            "stat_skill": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with them. It's just a herb gathering patrol, but p_l feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
-        },
-        "fail_text": {
-            "unscathed_common": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common, and the other cat bluntly refuses to talk about boring herbs.",
-            "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
-        },
-        "win_skills": [
-            "SPEAKER,1"
+        "success_outcomes": [
+            {
+                "text": "Surprisingly, r_c actually starts up a conversation with them about the herbs they're looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes their heart feel lighter getting to share their knowledge and skills with someone who respects them.",
+                "exp": 10,
+                "weight": 20,
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with them. It's just a herb gathering patrol, but p_l feels more relaxed than they've felt in moons when they come back to camp, smiling softly.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,1"],
+                "can_have_stat": ["r_c"],
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "fail_trait": [
-            "troublesome",
-            "childish"
-        ],
-        "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common, and the other cat bluntly refuses to talk about boring herbs.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["troublesome", "childish"],
+                "can_have_stat": ["r_c"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "mtn_med_romance_leaf-bare2",
-        "biome": "mountainous",
-        "season": "leaf-bare",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "med_only",
-            "random_herbs",
-            "romantic",
-            "platonic",
-            "respect",
-            "p_l_to_r_c",
-            "s_c_to_r_c",
-            "rc_has_stat"
-        ],
+        "biome": ["mountainous"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
+        "tags": ["romantic"],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
+        },
+        "weight": 20,
         "intro_text": "p_l heads out, leading a patrol of medicine cats to go find any fresh herbs that have survived leaf-bare so far.",
         "decline_text": "... And they're called back almost immediately, as one of the elders has started hacking something up.",
         "chance_of_success": 60,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "The ground is slippery with frost, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
-            "stat_skill": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with them. It's just a herb gathering patrol, but p_l feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
-        },
-        "fail_text": {
-            "unscathed_common": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common.",
-            "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
-        },
-        "win_skills": [
-            "SPEAKER,1",
-            "MEDIATOR,1"
+        "success_outcomes": [
+            {
+                "text": "The ground is slippery with frost, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+                "exp": 10,
+                "weight": 20,
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with them. It's just a herb gathering patrol, but p_l feels more relaxed than they've felt in moons when they come back to camp, smiling softly.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,1", "MEDIATOR,1"],
+                "can_have_stat": ["r_c"],
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "fail_trait": [
-            "troublesome",
-            "childish"
-        ],
-        "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "fail_outcomes": [
+            {
+                "text": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["troublesome", "childish"],
+                "can_have_stat": ["r_c"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "mtn_med_gatheringblackberry_leaf-bare1",
-        "biome": "mountainous",
-        "season": "leaf-bare",
-        "tags": [
-            "herb_gathering",
-            "cold_injury",
-            "scar",
-            "FROSTSOCK",
-            "herb",
-            "blackberry",
-            "raspberry"
-        ],
+        "biome": ["mountainous"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "healer cats": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "Hmm. p_l heads out, deciding that c_n needs more blackberry leaves in their stores.",
         "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
         "chance_of_success": 40,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "While neither blackberry nor raspberry, whose brambles look similar, lose their leaves completely, leaf-bare is hard on any plant, and p_l has to balance the plant's needs, the Clan's and their own frozen paws as they try to gather what leaves they can.",
-            "unscathed_rare": "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still living leaves from a tangle bramble of blackberry and raspberry.",
-            "stat_skill": "s_c spots a sheltered corner that has protected a pocket of brambles of blackberry and raspberry from the cold, and expertly maneuvers in to pluck the leaves for c_n."
-        },
-        "fail_text": {
-            "unscathed_common": "The blackberry bramble has died back, withered and dry, and p_l can't get any fresh leaves from this. They note with growing concern that leaf-bare might have killed the plant.",
-            "injury": "p_l carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/p_l/subject/CAP} {VERB/p_l/overcompensate/overcompensates} {PRONOUN/p_l/poss} balance, falling into a deep snowbank that {PRONOUN/p_l/subject} {VERB/p_l/emerge/emerges} from with a deep shiver racking {PRONOUN/p_l/poss} body."
-        },
-        "win_skills": [
-            "SENSE,2"
+        "success_outcomes": [
+            {
+                "text": "While neither blackberry nor raspberry, whose brambles look similar, lose their leaves completely, leaf-bare is hard on any plant, and p_l has to balance the plant's needs, the Clan's and their own frozen paws as they try to gather what leaves they can.",
+                "exp": 10,
+                "weight": 20,
+                "herbs": ["raspberry", "blackberry"]
+            },
+            {
+                "text": "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still living leaves from a tangle bramble of blackberry and raspberry.",
+                "exp": 10,
+                "weight": 5,
+                "herbs": ["raspberry", "blackberry"]
+            },
+            {
+                "text": "s_c spots a sheltered corner that has protected a pocket of brambles of blackberry and raspberry from the cold, and expertly maneuvers in to pluck the leaves for c_n.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["raspberry", "blackberry"]
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
-        }
+        "fail_outcomes": [
+            {
+                "text": "The blackberry bramble has died back, withered and dry, and p_l can't get any fresh leaves from this. They note with growing concern that leaf-bare might have killed the plant.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "p_l carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/p_l/subject/CAP} {VERB/p_l/overcompensate/overcompensates} {PRONOUN/p_l/poss} balance, falling into a deep snowbank that {PRONOUN/p_l/subject} {VERB/p_l/emerge/emerges} from with a deep shiver racking {PRONOUN/p_l/poss} body.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTSOCK"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                }
+            }
+        ]
     },
     {
         "patrol_id": "mtn_med_gatheringblackberry_leaf-bare2",
-        "biome": "mountainous",
-        "season": "leaf-bare",
-        "tags": [
-            "herb_gathering",
-            "cold_injury",
-            "scar",
-            "FROSTSOCK",
-            "med_cat",
-            "herb",
-            "blackberry",
-            "raspberry",
-            "big_change",
-            "platonic",
-            "dislike",
-            "comfort",
-            "respect",
-            "trust",
-            "apprentice"
-        ],
+        "biome": ["mountainous"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "medicine cat": [1, 6],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "Hmm. p_l heads out with app1, deciding that c_n needs more blackberry leaves in their stores.",
         "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
         "chance_of_success": 40,
-        "exp": 30,
-        "success_text": {
-            "unscathed_common": "While neither blackberry nor raspberry, whose brambles look similar, lose their leaves completely, leaf-bare is hard on any plant, and p_l has to balance the plant's needs, the Clan's and their own frozen paws as they try to gather what leaves they can. It's a great help having app1 with them.",
-            "unscathed_rare": "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still living leaves from a tangle bramble of blackberry and raspberry. app1 holds their breath, hoping their mentor comes down unscathed.",
-            "stat_skill": "s_c spots a sheltered corner that has protected a pocket of brambles of blackberry and raspberry from the cold, and expertly maneuvers in to pluck the leaves for c_n. They leave app1 outside, not wanting to risk their apprentice in the snow and thorns."
-        },
-        "fail_text": {
-            "unscathed_common": "The blackberry bramble has died back, withered and dry, and p_l can't get any fresh leaves from this. They note with growing concern that leaf-bare might have killed the plant, exchanging a worried glance with app1.",
-            "injury": "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/r_c/subject/CAP} {VERB/r_c/overcompensate/overcompensates} {PRONOUN/r_c/poss} balance, falling into a deep snowbank that {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from with a deep shiver racking {PRONOUN/r_c/poss} body."
-        },
-        "win_skills": [
-            "SENSE,2"
+        "success_outcomes": [
+            {
+                "text": "While neither blackberry nor raspberry, whose brambles look similar, lose their leaves completely, leaf-bare is hard on any plant, and p_l has to balance the plant's needs, the Clan's and their own frozen paws as they try to gather what leaves they can. It's a great help having app1 with them.",
+                "exp": 30,
+                "weight": 20,
+                "herbs": ["raspberry", "blackberry"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still living leaves from a tangle bramble of blackberry and raspberry. app1 holds their breath, hoping their mentor comes down unscathed.",
+                "exp": 30,
+                "weight": 5,
+                "herbs": ["raspberry", "blackberry"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "s_c spots a sheltered corner that has protected a pocket of brambles of blackberry and raspberry from the cold, and expertly maneuvers in to pluck the leaves for c_n. They leave app1 outside, not wanting to risk their apprentice in the snow and thorns.",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["raspberry", "blackberry"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            }
         ],
-        "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
-        }
+        "fail_outcomes": [
+            {
+                "text": "The blackberry bramble has died back, withered and dry, and p_l can't get any fresh leaves from this. They note with growing concern that leaf-bare might have killed the plant, exchanging a worried glance with app1.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/r_c/subject/CAP} {VERB/r_c/overcompensate/overcompensates} {PRONOUN/r_c/poss} balance, falling into a deep snowbank that {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from with a deep shiver racking {PRONOUN/r_c/poss} body.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTSOCK"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "mtn_med_gatheringblackberry_leaf-bare3",
-        "biome": "mountainous",
-        "season": "leaf-bare",
-        "tags": [
-            "herb_gathering",
-            "warrior",
-            "cold_injury",
-            "scar",
-            "FROSTSOCK",
-            "herb",
-            "blackberry",
-            "raspberry",
-            "big_change",
-            "patrol_to_p_l",
-            "platonic",
-            "dislike",
-            "respect"
-        ],
+        "biome": ["mountainous"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "Hmm. p_l heads out, deciding that c_n needs more blackberry leaves in their stores, bringing along anyone who isn't busy with other work.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 20,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "While neither blackberry nor raspberry, whose brambles look similar, lose their leaves completely, leaf-bare is hard on any plant, and p_l has to balance the plant's needs, the Clan's and their own frozen paws as they try to gather what leaves they can. The patrol sees their stress, and gathers around to support them.",
-            "unscathed_rare": "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still living leaves from a tangle bramble of blackberry and raspberry. The rest of the patrol gingerly follows their lead, and together they manage as decent a harvest as anyone can expect from leaf-bare.",
-            "stat_skill": "s_c spots a sheltered corner that has protected a pocket of brambles of blackberry and raspberry from the cold, and expertly maneuvers in to pluck the leaves for c_n. They pass them out to the members of the patrol from within the thicket, and their entourage ensures that p_l is able to bring a huge quantity of fresh blackberry leaves home."
-        },
-        "fail_text": {
-            "unscathed_common": "The blackberry bramble has died back, withered and dry, and p_l can't get any fresh leaves from this. They note with growing concern that leaf-bare might have killed the plant. They'll have to try a different blackberry bush on another day.",
-            "injury": "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/r_c/subject/CAP} {VERB/r_c/overcompensate/overcompensates} {PRONOUN/r_c/poss} balance, falling into a deep snowbank that {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from with a deep shiver racking {PRONOUN/r_c/poss} body."
-        },
-        "win_skills": [
-            "SENSE,2"
+        "success_outcomes": [
+            {
+                "text": "While neither blackberry nor raspberry, whose brambles look similar, lose their leaves completely, leaf-bare is hard on any plant, and p_l has to balance the plant's needs, the Clan's and their own frozen paws as they try to gather what leaves they can. The patrol sees their stress, and gathers around to support them.",
+                "exp": 10,
+                "weight": 20,
+                "herbs": ["raspberry", "blackberry"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still living leaves from a tangle bramble of blackberry and raspberry. The rest of the patrol gingerly follows their lead, and together they manage as decent a harvest as anyone can expect from leaf-bare.",
+                "exp": 10,
+                "weight": 5,
+                "herbs": ["raspberry", "blackberry"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "s_c spots a sheltered corner that has protected a pocket of brambles of blackberry and raspberry from the cold, and expertly maneuvers in to pluck the leaves for c_n. They pass them out to the members of the patrol from within the thicket, and their entourage ensures that p_l is able to bring a huge quantity of fresh blackberry leaves home.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["raspberry", "blackberry"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            }
         ],
-        "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
-        }
+        "fail_outcomes": [
+            {
+                "text": "The blackberry bramble has died back, withered and dry, and p_l can't get any fresh leaves from this. They note with growing concern that leaf-bare might have killed the plant. They'll have to try a different blackberry bush on another day.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/r_c/subject/CAP} {VERB/r_c/overcompensate/overcompensates} {PRONOUN/r_c/poss} balance, falling into a deep snowbank that {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from with a deep shiver racking {PRONOUN/r_c/poss} body.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTSOCK"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "mtn_med_gatheringburdock_leaf-bare1",
-        "biome": "mountainous",
-        "season": "leaf-bare",
-        "tags": [
-            "herb_gathering",
-            "cold_injury",
-            "scar",
-            "FROSTMITT",
-            "herb",
-            "burdock"
-        ],
+        "biome": ["mountainous"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "healer cats": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "As the snows of leaf-bare blow around camp, p_l eyes their herb stores. They should still be able to dig up burdock. p_l heads out to replenish the Clan's stocks.",
         "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
         "chance_of_success": 20,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "p_l's pawpads are nearly frozen, trying to dig up burdock in the cold, but somehow they manage it, and it's worth all the effort and misery to know how crucial these fresh herbs could be for the Clan.",
-            "unscathed_rare": "It's very difficult, especially with the plant's leafy top-half gone until newleaf, but p_l somehow manages to find a burdock plant and bring its roots home.",
-            "stat_skill": "s_c remembers exactly where the burdock plant grew in greenleaf, even if it's buried under snow now. After all, s_c is after the roots, and those are still perfectly harvestable in leaf-bare."
-        },
-        "fail_text": {
-            "unscathed_common": "Maybe they're just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon.",
-            "injury": "r_c digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. The cold has leached all the heat from their pelt, and they arrive back at camp miserable and cold."
-        },
-        "win_skills": [
-            "SENSE,2"
+        "success_outcomes": [
+            {
+                "text": "p_l's pawpads are nearly frozen, trying to dig up burdock in the cold, but somehow they manage it, and it's worth all the effort and misery to know how crucial these fresh herbs could be for the Clan.",
+                "exp": 10,
+                "weight": 20,
+                "herbs": ["burdock"]
+            },
+            {
+                "text": "It's very difficult, especially with the plant's leafy top-half gone until newleaf, but p_l somehow manages to find a burdock plant and bring its roots home.",
+                "exp": 10,
+                "weight": 5,
+                "herbs": ["burdock"]
+            },
+            {
+                "text": "s_c remembers exactly where the burdock plant grew in greenleaf, even if it's buried under snow now. After all, s_c is after the roots, and those are still perfectly harvestable in leaf-bare.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["burdock"]
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
-        }
+        "fail_outcomes": [
+            {
+                "text": "Maybe they're just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "r_c digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. The cold has leached all the heat from their pelt, and they arrive back at camp miserable and cold.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTMITT"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                }
+            }
+        ]
     },
     {
         "patrol_id": "mtn_med_gatheringburdock_leaf-bare2",
-        "biome": "mountainous",
-        "season": "leaf-bare",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "cold_injury",
-            "scar",
-            "FROSTMITT",
-            "herb",
-            "burdock",
-            "big_change",
-            "platonic",
-            "dislike",
-            "comfort",
-            "respect",
-            "trust",
-            "apprentice"
-        ],
+        "biome": ["mountainous"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "medicine cat": [1, 6],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "As the snows of leaf-bare blow around camp, p_l eyes their herb stores. They should still be able to dig up burdock. p_l heads out to replenish the Clan's stocks, bringing app1 along.",
         "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
         "chance_of_success": 20,
-        "exp": 30,
-        "success_text": {
-            "unscathed_common": "p_l's and app1's pawpads are nearly frozen, trying to dig up burdock in the cold, but somehow they manage it, and it's worth all the effort and misery to know how crucial these fresh herbs could be for the Clan.",
-            "unscathed_rare": "It's very difficult, especially with the plant's leafy top-half gone until newleaf, but p_l somehow manages to find a burdock plant and bring its roots home. Laying the thin roots out in a neat pile in the herb stores makes p_l's entire body thrum with a contented purr, as does seeing how hard app1 is working to learn herbcraft.",
-            "stat_skill": "s_c remembers exactly where the burdock plant grew in greenleaf, even if it's buried under snow now. After all, s_c is after the roots, and those are still perfectly harvestable in leaf-bare."
-        },
-        "fail_text": {
-            "unscathed_common": "Maybe they're just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon. They avoid snapping at app1, who seems unable to identify the common herb, but they definitely come close.",
-            "injury": "r_c digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. The cold has leached all the heat from their pelt, and they arrive back at camp miserable and cold."
-        },
-        "win_skills": [
-            "SENSE,2"
+        "success_outcomes": [
+            {
+                "text": "p_l's and app1's pawpads are nearly frozen, trying to dig up burdock in the cold, but somehow they manage it, and it's worth all the effort and misery to know how crucial these fresh herbs could be for the Clan.",
+                "exp": 30,
+                "weight": 20,
+                "herbs": ["burdock"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "It's very difficult, especially with the plant's leafy top-half gone until newleaf, but p_l somehow manages to find a burdock plant and bring its roots home. Laying the thin roots out in a neat pile in the herb stores makes p_l's entire body thrum with a contented purr, as does seeing how hard app1 is working to learn herbcraft.",
+                "exp": 30,
+                "weight": 5,
+                "herbs": ["burdock"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "s_c remembers exactly where the burdock plant grew in greenleaf, even if it's buried under snow now. After all, s_c is after the roots, and those are still perfectly harvestable in leaf-bare.",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["burdock"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            }
         ],
-        "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
-        }
+        "fail_outcomes": [
+            {
+                "text": "Maybe they're just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon. They avoid snapping at app1, who seems unable to identify the common herb, but they definitely come close.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "r_c digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. The cold has leached all the heat from their pelt, and they arrive back at camp miserable and cold.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTMITT"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "mtn_med_gatheringburdock_leaf-bare3",
-        "biome": "mountainous",
-        "season": "leaf-bare",
-        "tags": [
-            "herb_gathering",
-            "warrior",
-            "cold_injury",
-            "scar",
-            "FROSTMITT",
-            "herb",
-            "burdock",
-            "big_change",
-            "patrol_to_p_l",
-            "platonic",
-            "dislike",
-            "respect"
-        ],
+        "biome": ["mountainous"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "As the snows of leaf-bare blow around camp, p_l eyes their herb stores. They should still be able to dig up burdock. p_l heads out to replenish the Clan's stocks, bringing along anyone who isn't busy with other work.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 20,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "p_l's paw-pads nearly freeze from trying to dig up burdock in the cold, but somehow they manage it. It's worth all the effort and misery since they know how crucial these fresh herbs could be for the Clan, their Clanmates purring at the sight of the dirty roots.",
-            "unscathed_rare": "It's very difficult, especially with the plant's leafy top-half gone until newleaf, but p_l somehow manages to find a burdock plant and bring its roots home. Laying the thin roots out in a neat pile in the herb stores makes p_l's entire body thrum with a contented purr, and their Clanmates smile, appreciating their hard-working medicine cat.",
-            "stat_skill": "s_c remembers exactly where the burdock plant grew in greenleaf, even if it's buried under snow now. After all, s_c is after the roots, and those are still perfectly harvestable in leaf-bare."
-        },
-        "fail_text": {
-            "unscathed_common": "Maybe they're just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and no one else on the patrol is very helpful either. They return to camp without any burdock, prickling with frustration.",
-            "injury": "r_c digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. The cold has leached all the heat from their pelt, and they arrive back at camp miserable and cold."
-        },
-        "win_skills": [
-            "SENSE,2"
+        "success_outcomes": [
+            {
+                "text": "p_l's paw-pads nearly freeze from trying to dig up burdock in the cold, but somehow they manage it. It's worth all the effort and misery since they know how crucial these fresh herbs could be for the Clan, their Clanmates purring at the sight of the dirty roots.",
+                "exp": 10,
+                "weight": 20,
+                "herbs": ["burdock"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "It's very difficult, especially with the plant's leafy top-half gone until newleaf, but p_l somehow manages to find a burdock plant and bring its roots home. Laying the thin roots out in a neat pile in the herb stores makes p_l's entire body thrum with a contented purr, and their Clanmates smile, appreciating their hard-working medicine cat.",
+                "exp": 10,
+                "weight": 5,
+                "herbs": ["burdock"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "s_c remembers exactly where the burdock plant grew in greenleaf, even if it's buried under snow now. After all, s_c is after the roots, and those are still perfectly harvestable in leaf-bare.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["burdock"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            }
         ],
-        "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
-        }
+        "fail_outcomes": [
+            {
+                "text": "Maybe they're just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and no one else on the patrol is very helpful either. They return to camp without any burdock, prickling with frustration.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "r_c digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. The cold has leached all the heat from their pelt, and they arrive back at camp miserable and cold.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTMITT"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "mtn_med_gatheringdaisy_leaf-bare1",
-        "biome": "mountainous",
-        "season": "leaf-bare",
-        "tags": [
-            "herb_gathering",
-            "cold_injury",
-            "scar",
-            "FROSTTAIL",
-            "herb",
-            "daisy"
-        ],
+        "biome": ["mountainous"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "healer cats": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "In the leaf-bare snow, the chances of finding any usable daisies seem slim. p_l hesitates - should they even try to look?",
         "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
         "chance_of_success": 20,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "It's miserable work, scraping away snowy pawful by awful, cold pawful. However, p_l manages to find a patch of wilted, soggy, but still green daisies to harvest leaves from.",
-            "unscathed_rare": "It feels nearly impossible, but the glimpse of soggy green stuff at the end of their cold search makes it all worth it! Or... kind of worth it. p_l is <i>sure</i> it'll seem worth it once they're back in their nice warm nest.",
-            "stat_skill": "It's not just spotting things that s_c is talented at - finding daisies in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that they manage it."
-        },
-        "fail_text": {
-            "unscathed_common": "Not only does p_l end up soaked to the skin, but they can't even find any daisies under the snow. A wasted and horribly chilly day.",
-            "injury": "Not only does r_c end up soaked to the skin, they can't even find any daisies under the snow, and they're left shivering violently by the time they return to camp."
-        },
-        "win_skills": [
-            "SENSE,2"
+        "success_outcomes": [
+            {
+                "text": "It's miserable work, scraping away snowy pawful by awful, cold pawful. However, p_l manages to find a patch of wilted, soggy, but still green daisies to harvest leaves from.",
+                "exp": 10,
+                "weight": 20,
+                "herbs": ["daisy"]
+            },
+            {
+                "text": "It feels nearly impossible, but the glimpse of soggy green stuff at the end of their cold search makes it all worth it! Or... kind of worth it. p_l is <i>sure</i> it'll seem worth it once they're back in their nice warm nest.",
+                "exp": 10,
+                "weight": 5,
+                "herbs": ["daisy"]
+            },
+            {
+                "text": "It's not just spotting things that s_c is talented at - finding daisies in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that they manage it.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["daisy"]
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
-        }
+        "fail_outcomes": [
+            {
+                "text": "Not only does p_l end up soaked to the skin, but they can't even find any daisies under the snow. A wasted and horribly chilly day.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "Not only does r_c end up soaked to the skin, they can't even find any daisies under the snow, and they're left shivering violently by the time they return to camp.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTTAIL"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                }
+            }
+        ]
     },
     {
         "patrol_id": "mtn_med_gatheringdaisy_leaf-bare2",
-        "biome": "mountainous",
-        "season": "leaf-bare",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "cold_injury",
-            "scar",
-            "FROSTTAIL",
-            "herb",
-            "daisy",
-            "big_change",
-            "platonic",
-            "dislike",
-            "comfort",
-            "respect",
-            "trust",
-            "apprentice"
-        ],
+        "biome": ["mountainous"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "medicine cat": [1, 6],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "In the leaf-bare snow, the chances of finding any usable daisies seem slim. p_l hesitates - should they even try to look? And is bringing app1 a good idea?",
         "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
         "chance_of_success": 20,
-        "exp": 40,
-        "success_text": {
-            "unscathed_common": "It's miserable work, scraping away snowy pawful by awful, cold pawful. However, p_l manages to find a patch of wilted, soggy, but still green daisies to harvest leaves from. They share an exhausted look of commiseration with app1.",
-            "unscathed_rare": "It feels nearly impossible, but the glimpse of soggy green stuff at the end of their cold search makes it all worth it! Or... kind of worth it. p_l is <i>sure</i> it'll seem worth it once they're back in their nice warm nests, and app1 has been a real trooper today.",
-            "stat_skill": "It's not just spotting things that s_c is talented at - finding daisies in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that they manage it. app1 trails in their wake, wide eyed and impressed."
-        },
-        "fail_text": {
-            "unscathed_common": "Not only does p_l end up soaked to the skin, but they can't even find any daisies under the snow. A wasted and horribly chilly day.",
-            "injury": "Not only does r_c end up soaked to the skin, they can't even find any daisies under the snow, and they're left shivering violently by the time they return to camp."
-        },
-        "win_skills": [
-            "SENSE,2"
+        "success_outcomes": [
+            {
+                "text": "It's miserable work, scraping away snowy pawful by awful, cold pawful. However, p_l manages to find a patch of wilted, soggy, but still green daisies to harvest leaves from. They share an exhausted look of commiseration with app1.",
+                "exp": 40,
+                "weight": 20,
+                "herbs": ["daisy"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "It feels nearly impossible, but the glimpse of soggy green stuff at the end of their cold search makes it all worth it! Or... kind of worth it. p_l is <i>sure</i> it'll seem worth it once they're back in their nice warm nests, and app1 has been a real trooper today.",
+                "exp": 40,
+                "weight": 5,
+                "herbs": ["daisy"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "It's not just spotting things that s_c is talented at - finding daisies in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that they manage it. app1 trails in their wake, wide eyed and impressed.",
+                "exp": 40,
+                "weight": 20,
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["daisy"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            }
         ],
-        "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
-        }
+        "fail_outcomes": [
+            {
+                "text": "Not only does p_l end up soaked to the skin, but they can't even find any daisies under the snow. A wasted and horribly chilly day.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "Not only does r_c end up soaked to the skin, they can't even find any daisies under the snow, and they're left shivering violently by the time they return to camp.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTTAIL"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "mtn_med_gatheringdaisy_leaf-bare3",
-        "biome": "mountainous",
-        "season": "leaf-bare",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "warrior",
-            "cold_injury",
-            "scar",
-            "FROSTTAIL",
-            "herb",
-            "daisy",
-            "big_change",
-            "patrol_to_p_l",
-            "platonic",
-            "dislike",
-            "respect"
-        ],
+        "biome": ["mountainous"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "In the leaf-bare snow, the chances of finding any usable daisies seem slim. p_l hesitates - should they even try to look?",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 20,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "It's miserable work, scraping away snowy pawful by awful, cold pawful. However, p_l manages to find a patch of wilted, soggy, but still green daisies to harvest leaves from Their Clanmates purr at the sight of the mushy green leaves, having spent just as much energy digging for them as p_l.",
-            "unscathed_rare": "It feels nearly impossible, but the glimpse of soggy green stuff at the end of their cold search makes it all worth it! Or... kind of worth it. p_l is <i>sure</i> it'll seem worth it once they're all back in their nice, warm nests.",
-            "stat_skill": "It's not just spotting things that s_c is talented at - finding daisies in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that they manage it. It reminds everyone on the patrol just how lucky c_n is to have s_c as a medicine cat."
-        },
-        "fail_text": {
-            "unscathed_common": "Not only does p_l end up soaked to the skin, but they can't even find any daisies under the snow. A wasted and horribly chilly day.",
-            "injury": "Not only does r_c end up soaked to the skin, they can't even find any daisies under the snow, and they're left shivering violently by the time they return to camp."
-        },
-        "win_skills": [
-            "SENSE,2"
+        "success_outcomes": [
+            {
+                "text": "It's miserable work, scraping away snowy pawful by awful, cold pawful. However, p_l manages to find a patch of wilted, soggy, but still green daisies to harvest leaves from Their Clanmates purr at the sight of the mushy green leaves, having spent just as much energy digging for them as p_l.",
+                "exp": 10,
+                "weight": 20,
+                "herbs": ["daisy"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "It feels nearly impossible, but the glimpse of soggy green stuff at the end of their cold search makes it all worth it! Or... kind of worth it. p_l is <i>sure</i> it'll seem worth it once they're all back in their nice, warm nests.",
+                "exp": 10,
+                "weight": 5,
+                "herbs": ["daisy"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "It's not just spotting things that s_c is talented at - finding daisies in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that they manage it. It reminds everyone on the patrol just how lucky c_n is to have s_c as a medicine cat.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["daisy"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            }
         ],
-        "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
-        }
+        "fail_outcomes": [
+            {
+                "text": "Not only does p_l end up soaked to the skin, but they can't even find any daisies under the snow. A wasted and horribly chilly day.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "Not only does r_c end up soaked to the skin, they can't even find any daisies under the snow, and they're left shivering violently by the time they return to camp.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTTAIL"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "mtn_med_gatheringdandelion_leaf-bare1",
-        "biome": "mountainous",
-        "season": "leaf-bare",
-        "tags": [
-            "herb_gathering",
-            "cold_injury",
-            "scar",
-            "FROSTTAIL",
-            "herb",
-            "dandelion",
-            "wild_garlic"
-        ],
+        "biome": ["mountainous"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "healer cats": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "The cold of leaf-bare might have killed off a lot of greenery, but p_l knows that the dandelions are only playing dead. If they can get their paws on a plant, the roots will still hold fresh, milky-white sap. Maybe there's some wild garlic out there as well...",
         "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
         "chance_of_success": 40,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "p_l can't say it's <i>fun,</i> swiping away snow to scrounge for the stems and roots of wilted dandelions below, but what matters currently is that it's <i>possible.</i> At least the wild garlic bulbs they sniffed out nearby were in much better shape, and as stinky as ever.",
-            "unscathed_rare": "It's a truly miserable, gray day, but even the colds of leaf-bare can't dampen p_l's joy when they manage to uncover a couple good dandelion plants and a single surviving wild garlic bulb.",
-            "stat_skill": "It's not just spotting things that s_c is talented at - finding dandelions in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that they manage it. It's hard not to preen when they discover wild garlic not far away, too, though that was much easier with its strong scent."
-        },
-        "fail_text": {
-            "unscathed_common": "Not only does p_l end up soaked to the skin, but they can't even find any dandelions under the snow. A wasted and horribly chilly day.",
-            "injury": "Not only does r_c end up soaked to the skin, they can't even find any dandelions under the snow, and they're left shivering violently by the time they return to camp."
-        },
-        "win_skills": [
-            "SENSE,2"
+        "success_outcomes": [
+            {
+                "text": "p_l can't say it's <i>fun,</i> swiping away snow to scrounge for the stems and roots of wilted dandelions below, but what matters currently is that it's <i>possible.</i> At least the wild garlic bulbs they sniffed out nearby were in much better shape, and as stinky as ever.",
+                "exp": 10,
+                "weight": 20,
+                "herbs": ["wild_garlic", "dandelion"]
+            },
+            {
+                "text": "It's a truly miserable, gray day, but even the colds of leaf-bare can't dampen p_l's joy when they manage to uncover a couple good dandelion plants and a single surviving wild garlic bulb.",
+                "exp": 10,
+                "weight": 5,
+                "herbs": ["wild_garlic", "dandelion"]
+            },
+            {
+                "text": "It's not just spotting things that s_c is talented at - finding dandelions in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that they manage it. It's hard not to preen when they discover wild garlic not far away, too, though that was much easier with its strong scent.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["wild_garlic", "dandelion"]
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
-        }
+        "fail_outcomes": [
+            {
+                "text": "Not only does p_l end up soaked to the skin, but they can't even find any dandelions under the snow. A wasted and horribly chilly day.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "Not only does r_c end up soaked to the skin, they can't even find any dandelions under the snow, and they're left shivering violently by the time they return to camp.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTTAIL"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                }
+            }
+        ]
     },
     {
         "patrol_id": "mtn_med_gatheringdandelion_leaf-bare2",
-        "biome": "mountainous",
-        "season": "leaf-bare",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "cold_injury",
-            "scar",
-            "FROSTTAIL",
-            "herb",
-            "dandelion",
-            "wild_garlic",
-            "big_change",
-            "platonic",
-            "dislike",
-            "comfort",
-            "respect",
-            "trust",
-            "apprentice"
-        ],
+        "biome": ["mountainous"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "medicine cat": [1, 6],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "The cold of leaf-bare might have killed off a lot of greenery, but p_l knows that the plants like dandelions and wild garlic are only playing dead, and if they can get their paws on a plant the roots will still hold white, milky sap, or stinky bulbs. Seems it's time for app1 to learn about what resources are still around to gather during leaf-bare.",
         "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
         "chance_of_success": 40,
-        "exp": 40,
-        "success_text": {
-            "unscathed_common": "p_l can't say it's <i>fun,</i> swiping away snow to scrounge for the stems and roots of wilted dandelions below, but what matters currently is that it's <i>possible.</i> Still, they heavily praise app1 as they head back home with their harvest - {PRONOUN/app1/subject} {VERB/app1/haven't/hasn't} uttered a single word of complaint about the miserable conditions, and was even the one to find the wild garlic on the way back home. p_l couldn't be prouder.",
-            "unscathed_rare": "It's a truly miserable, gray day, but the colds of leaf-bare can't dampen app1's happiness when they uncover a few good dandelions. Watching them find joy in safeguarding the Clan, p_l feels a flash of affection for the apprentice. Their instincts are sharp, too - it's app1 who notices the single, unwithered wild garlic bulb a little distance away.",
-            "stat_skill": "It's not just spotting things that s_c is talented at - finding any plants in leaf-bare is hard enough, but finding good, non-wilted leaves of dandelions and an intact wild garlic bulb is next to impossible, and it's a mark of s_c's unique skills that {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} it. app1 trails in their wake, wide eyed and impressed."
-        },
-        "fail_text": {
-            "unscathed_common": "Not only does p_l end up soaked to the skin, but {PRONOUN/p_l/subject} can't even find any dandelions under the snow. A wasted and horribly chilly day.",
-            "injury": "Not only does r_c end up soaked to the skin, {PRONOUN/p_l/subject} can't even find any dandelions under the snow, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} left shivering violently by the time {PRONOUN/p_l/subject} {VERB/p_l/return/returns} to camp."
-        },
-        "win_skills": [
-            "SENSE,2"
+        "success_outcomes": [
+            {
+                "text": "p_l can't say it's <i>fun,</i> swiping away snow to scrounge for the stems and roots of wilted dandelions below, but what matters currently is that it's <i>possible.</i> Still, they heavily praise app1 as they head back home with their harvest - {PRONOUN/app1/subject} {VERB/app1/haven't/hasn't} uttered a single word of complaint about the miserable conditions, and was even the one to find the wild garlic on the way back home. p_l couldn't be prouder.",
+                "exp": 40,
+                "weight": 20,
+                "herbs": ["wild_garlic", "dandelion"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "It's a truly miserable, gray day, but the colds of leaf-bare can't dampen app1's happiness when they uncover a few good dandelions. Watching them find joy in safeguarding the Clan, p_l feels a flash of affection for the apprentice. Their instincts are sharp, too - it's app1 who notices the single, unwithered wild garlic bulb a little distance away.",
+                "exp": 40,
+                "weight": 5,
+                "herbs": ["wild_garlic", "dandelion"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "It's not just spotting things that s_c is talented at - finding any plants in leaf-bare is hard enough, but finding good, non-wilted leaves of dandelions and an intact wild garlic bulb is next to impossible, and it's a mark of s_c's unique skills that {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} it. app1 trails in their wake, wide eyed and impressed.",
+                "exp": 40,
+                "weight": 20,
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["wild_garlic", "dandelion"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            }
         ],
-        "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
-        }
+        "fail_outcomes": [
+            {
+                "text": "Not only does p_l end up soaked to the skin, but {PRONOUN/p_l/subject} can't even find any dandelions under the snow. A wasted and horribly chilly day.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "Not only does r_c end up soaked to the skin, {PRONOUN/p_l/subject} can't even find any dandelions under the snow, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} left shivering violently by the time {PRONOUN/p_l/subject} {VERB/p_l/return/returns} to camp.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTTAIL"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "mtn_med_gatheringdandelion_leaf-bare3",
-        "biome": "mountainous",
-        "season": "leaf-bare",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "warrior",
-            "cold_injury",
-            "scar",
-            "FROSTFACE",
-            "herb",
-            "dandelion",
-            "wild_garlic",
-            "big_change",
-            "no_leader",
-            "platonic",
-            "dislike",
-            "respect"
-        ],
+        "biome": ["mountainous"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "leader": [-1, -1],
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "The cold of leaf-bare might have killed off a lot of greenery, but p_l knows that the dandelions are only playing dead. If they can get their paws on a plant, the roots will still hold fresh, milky-white sap, or even stinky bulbs. They bring along a patrol of shivering Clanmates - more paws will make light work of digging through the snow.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 20,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "p_l can't say it's fun, swiping away snow to scrounge for the bodies and roots of wilted dandelions beneath, and then the wild garlic bulbs almost immediately after, but what matters currently is that it's possible. They specifically ensure that, when they return to camp with the additions to the herb stores, the whole camp sees them praising their long-suffering patrol to the leader.",
-            "unscathed_rare": "It's a truly miserable, gray day, but even the colds of leaf-bare can't dampen p_l's joy when they manage to uncover a couple good dandelion plants. and a pawful of wild garlic bulbs. They make sure to check up on the pawpads of the warriors who helped them once everyone is back in camp, wanting to make sure everyone is alright and not too chilled.",
-            "stat_skill": "It's not just spotting things that s_c is talented at - finding dandelions in leaf-bare is hard enough, but finding good, non-wilted leaves of dandelions and an intact wild garlic bulb is next to impossible, and it's a mark of s_c's unique skills that they manage it. It reminds everyone just how lucky c_n is to have s_c as a medicine cat."
-        },
-        "fail_text": {
-            "unscathed_common": "Not only does p_l end up soaked to the skin, but they can't even find any dandelions under the snow. A wasted and horribly chilly day.",
-            "injury": "Not only does r_c end up soaked to the skin, they can't even find any dandelions under the snow, and they're left shivering violently by the time they return to camp."
-        },
-        "win_skills": [
-            "SENSE,2"
+        "success_outcomes": [
+            {
+                "text": "p_l can't say it's fun, swiping away snow to scrounge for the bodies and roots of wilted dandelions beneath, and then the wild garlic bulbs almost immediately after, but what matters currently is that it's possible. They specifically ensure that, when they return to camp with the additions to the herb stores, the whole camp sees them praising their long-suffering patrol to the leader.",
+                "exp": 10,
+                "weight": 20,
+                "herbs": ["wild_garlic", "dandelion"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "It's a truly miserable, gray day, but even the colds of leaf-bare can't dampen p_l's joy when they manage to uncover a couple good dandelion plants. and a pawful of wild garlic bulbs. They make sure to check up on the pawpads of the warriors who helped them once everyone is back in camp, wanting to make sure everyone is alright and not too chilled.",
+                "exp": 10,
+                "weight": 5,
+                "herbs": ["wild_garlic", "dandelion"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "It's not just spotting things that s_c is talented at - finding dandelions in leaf-bare is hard enough, but finding good, non-wilted leaves of dandelions and an intact wild garlic bulb is next to impossible, and it's a mark of s_c's unique skills that they manage it. It reminds everyone just how lucky c_n is to have s_c as a medicine cat.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["wild_garlic", "dandelion"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            }
         ],
-        "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
-        }
+        "fail_outcomes": [
+            {
+                "text": "Not only does p_l end up soaked to the skin, but they can't even find any dandelions under the snow. A wasted and horribly chilly day.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "Not only does r_c end up soaked to the skin, they can't even find any dandelions under the snow, and they're left shivering violently by the time they return to camp.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTFACE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "mtn_med_gatheringjuniper_leaf-bare1",
-        "biome": "mountainous",
-        "season": "leaf-bare",
-        "tags": [
-            "herb_gathering",
-            "cold_injury",
-            "blunt_force_injury",
-            "scar",
-            "SIDE",
-            "herb",
-            "juniper"
-        ],
+        "biome": ["mountainous"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "healer cats": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "It's not finding fresh juniper that's the problem. An evergreen plant, they reliably grow through the cold - but they're large shrubs, sometimes large enough to be trees, and climbing in these slippery conditions might be dangerous.",
         "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
         "chance_of_success": 40,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "At least they don't have to dig through the snow for these leaves. p_l sighs, slowly and carefully snipping off juniper among the tree's branches.",
-            "unscathed_rare": "Sometimes, p_l finds themselves near giddy with gratitude for evergreens, plants that scoff at leaf-bare and grow in spite of it. It's not an effect of the plant - juniper calms, not induces euphoria - just the relief of still having a fresh herb source in leaf-bare.",
-            "stat_skill": "Sometimes, its not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without needing to risk themselves climbing in leaf-bare."
-        },
-        "fail_text": {
-            "unscathed_common": "p_l finds a couple of juniper trees with their evergreen leaves shocking against the scarcity of leaf-bare, but none have any branches that are low enough to harvest from safely.",
-            "injury": "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
-        },
-        "win_skills": [
-            "SENSE,2"
+        "success_outcomes": [
+            {
+                "text": "At least they don't have to dig through the snow for these leaves. p_l sighs, slowly and carefully snipping off juniper among the tree's branches.",
+                "exp": 10,
+                "weight": 20,
+                "herbs": ["juniper"]
+            },
+            {
+                "text": "Sometimes, p_l finds themselves near giddy with gratitude for evergreens, plants that scoff at leaf-bare and grow in spite of it. It's not an effect of the plant - juniper calms, not induces euphoria - just the relief of still having a fresh herb source in leaf-bare.",
+                "exp": 10,
+                "weight": 5,
+                "herbs": ["juniper"]
+            },
+            {
+                "text": "Sometimes, its not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without needing to risk themselves climbing in leaf-bare.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["juniper"]
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
-        }
+        "fail_outcomes": [
+            {
+                "text": "p_l finds a couple of juniper trees with their evergreen leaves shocking against the scarcity of leaf-bare, but none have any branches that are low enough to harvest from safely.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["blunt_force_injury", "cold_injury"],
+                        "scars": ["SIDE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
+                }
+            }
+        ]
     },
     {
         "patrol_id": "mtn_med_gatheringjuniper_leaf-bare2",
-        "biome": "mountainous",
-        "season": "leaf-bare",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "cold_injury",
-            "blunt_force_injury",
-            "scar",
-            "SIDE",
-            "herb",
-            "juniper",
-            "big_change",
-            "platonic",
-            "dislike",
-            "comfort",
-            "respect",
-            "trust",
-            "apprentice"
-        ],
+        "biome": ["mountainous"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "medicine cat": [1, 6],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "It's not finding fresh juniper that's the problem. An evergreen plant, they reliably grow through the cold - but they're large shrubs, sometimes large enough to be trees, and climbing in these slippery conditions might be dangerous. p_l hesitates in bringing app1 along under these conditions, but tells themself it's a learning opportunity.",
         "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
         "chance_of_success": 40,
-        "exp": 40,
-        "success_text": {
-            "unscathed_common": "At least they don't have to dig through the snow for these leaves. p_l sighs, slowly and carefully snipping off juniper among the tree's branches. app1 is very hesitant to join them up there, but eventually overcomes their fear to leaf gather on a lower branch... <i>very</i> carefully.",
-            "unscathed_rare": "Sometimes, p_l finds themselves near giddy with gratitude for evergreens, plants that scoff at leaf-bare and grow in spite of it. It's not an effect of the plant - juniper calms, not induces euphoria - just the relief of still having a fresh herb source in leaf-bare. app1 gives them a weird look, though, prompting p_l to explain their wide smile.",
-            "stat_skill": "Sometimes, its not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without s_c or app1 needing to risk themselves climbing in leaf-bare."
-        },
-        "fail_text": {
-            "unscathed_common": "p_l finds a couple of juniper trees with their evergreen leaves shocking against the scarcity of leaf-bare, but none have any branches that are low enough to harvest from safely.",
-            "injury": "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
-        },
-        "win_skills": [
-            "SENSE,2"
+        "success_outcomes": [
+            {
+                "text": "At least they don't have to dig through the snow for these leaves. p_l sighs, slowly and carefully snipping off juniper among the tree's branches. app1 is very hesitant to join them up there, but eventually overcomes their fear to leaf gather on a lower branch... <i>very</i> carefully.",
+                "exp": 40,
+                "weight": 20,
+                "herbs": ["juniper"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "Sometimes, p_l finds themselves near giddy with gratitude for evergreens, plants that scoff at leaf-bare and grow in spite of it. It's not an effect of the plant - juniper calms, not induces euphoria - just the relief of still having a fresh herb source in leaf-bare. app1 gives them a weird look, though, prompting p_l to explain their wide smile.",
+                "exp": 40,
+                "weight": 5,
+                "herbs": ["juniper"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "Sometimes, its not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without s_c or app1 needing to risk themselves climbing in leaf-bare.",
+                "exp": 40,
+                "weight": 20,
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["juniper"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            }
         ],
-        "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
-        }
+        "fail_outcomes": [
+            {
+                "text": "p_l finds a couple of juniper trees with their evergreen leaves shocking against the scarcity of leaf-bare, but none have any branches that are low enough to harvest from safely.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["blunt_force_injury", "cold_injury"],
+                        "scars": ["SIDE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "mtn_med_gatheringjuniper_leaf-bare3",
-        "biome": "mountainous",
-        "season": "leaf-bare",
-        "tags": [
-            "herb_gathering",
-            "warrior",
-            "cold_injury",
-            "blunt_force_injury",
-            "scar",
-            "SIDE",
-            "herb",
-            "juniper",
-            "big_change",
-            "no_leader",
-            "platonic",
-            "dislike",
-            "respect"
-        ],
+        "biome": ["mountainous"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "leader": [-1, -1],
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "It's not finding fresh juniper that's the problem. An everygreen plant, they reliably grow through the cold - but they're large shrubs, sometimes large enough to be trees, and climbing in these slippery conditions might be dangerous. Hopefully the warriors accompanying p_l will be able to help.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 20,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "At least they don't have to dig through the snow for these leaves. p_l sighs, slowly and carefully snipping off juniper among the tree's branches. The patrol joins them, tense and focused, and it's an exhausted group that returns back to camp as the sun dips toward the horizon. Exhausted - but successful.",
-            "unscathed_rare": "Sometimes, p_l finds themselves near giddy with gratitude for evergreens, plants that scoff at leaf-bare and grow in spite of it. It's not an effect of the plant - juniper calms, not induces euphoria - just the relief of still having a fresh herb source in leaf-bare, and the warmth of having their Clanmates there to help them gather it.",
-            "stat_skill": "Sometimes, its not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without any cat needing to risk themselves climbing in leaf-bare."
-        },
-        "fail_text": {
-            "unscathed_common": "p_l finds a couple of juniper trees with their evergreen leaves shocking against the scarcity of leaf-bare, but none have any branches that are low enough to harvest from safely.",
-            "injury": "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
-        },
-        "win_skills": [
-            "SENSE,2"
+        "success_outcomes": [
+            {
+                "text": "At least they don't have to dig through the snow for these leaves. p_l sighs, slowly and carefully snipping off juniper among the tree's branches. The patrol joins them, tense and focused, and it's an exhausted group that returns back to camp as the sun dips toward the horizon. Exhausted - but successful.",
+                "exp": 10,
+                "weight": 20,
+                "herbs": ["juniper"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "Sometimes, p_l finds themselves near giddy with gratitude for evergreens, plants that scoff at leaf-bare and grow in spite of it. It's not an effect of the plant - juniper calms, not induces euphoria - just the relief of still having a fresh herb source in leaf-bare, and the warmth of having their Clanmates there to help them gather it.",
+                "exp": 10,
+                "weight": 5,
+                "herbs": ["juniper"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "Sometimes, its not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without any cat needing to risk themselves climbing in leaf-bare.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["juniper"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            }
         ],
-        "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
-        }
+        "fail_outcomes": [
+            {
+                "text": "p_l finds a couple of juniper trees with their evergreen leaves shocking against the scarcity of leaf-bare, but none have any branches that are low enough to harvest from safely.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["blunt_force_injury", "cold_injury"],
+                        "scars": ["SIDE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "mtn_med_gatheringwildgarlic_leaf-bare1",
-        "biome": "mountainous",
-        "season": "leaf-bare",
-        "tags": [
-            "herb_gathering",
-            "cold_injury",
-            "scar",
-            "FROSTMITT",
-            "herb",
-            "wild_garlic",
-            "many_herbs1",
-            "many_herbs2"
-        ],
+        "biome": ["mountainous"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "healer cats": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "There's a limited selection of herbs p_l can even look for in leaf-bare, but if they can remember where the wild garlic grew in greenleaf, it's theirs for the taking.",
         "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
         "chance_of_success": 30,
-        "exp": 30,
-        "success_text": {
-            "unscathed_common": "p_l returns to camp with stone-cold paws and a new hatred for digging, but carrying bulbs of garlic.",
-            "unscathed_rare": "One of the things you really don't want in leaf-bare is an infection, and that's garlic's stinky speciality for treating. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores.",
-            "stat_skill": "s_c knows exactly where to go - there was a thick patch of wild garlic that grew in an exposed area. They prove themself right, and it's only an utter and complete pain to dig out the bulbs. Well, at least they've got them now."
-        },
-        "fail_text": {
-            "unscathed_common": "p_l searches and searches, but eventually they have to admit defeat. They can't remember where the garlic grew when the world was warm.",
-            "injury": "When p_l arrives back at camp, they're shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless."
-        },
-        "win_skills": [
-            "SENSE,2"
+        "success_outcomes": [
+            {
+                "text": "p_l returns to camp with stone-cold paws and a new hatred for digging, but carrying bulbs of garlic.",
+                "exp": 30,
+                "weight": 20,
+                "herbs": ["wild_garlic"]
+            },
+            {
+                "text": "One of the things you really don't want in leaf-bare is an infection, and that's garlic's stinky speciality for treating. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores.",
+                "exp": 30,
+                "weight": 5,
+                "herbs": ["many_herbs", "wild_garlic"]
+            },
+            {
+                "text": "s_c knows exactly where to go - there was a thick patch of wild garlic that grew in an exposed area. They prove themself right, and it's only an utter and complete pain to dig out the bulbs. Well, at least they've got them now.",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["many_herbs", "wild_garlic"]
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
-        }
+        "fail_outcomes": [
+            {
+                "text": "p_l searches and searches, but eventually they have to admit defeat. They can't remember where the garlic grew when the world was warm.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "When p_l arrives back at camp, they're shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTMITT"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                }
+            }
+        ]
     },
     {
         "patrol_id": "mtn_med_gatheringwildgarlic_leaf-bare2",
-        "biome": "mountainous",
-        "season": "leaf-bare",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "cold_injury",
-            "scar",
-            "FROSTMITT",
-            "herb",
-            "wild_garlic",
-            "many_herbs1",
-            "many_herbs2",
-            "big_change",
-            "platonic",
-            "dislike",
-            "comfort",
-            "respect",
-            "trust",
-            "apprentice"
-        ],
+        "biome": ["mountainous"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "medicine cat": [1, 6],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "There's a limited selection of herbs p_l can even look for in leaf-bare, but if they or app1 can only remember where the wild garlic grew in greenleaf it's theirs for the taking.",
         "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
         "chance_of_success": 30,
-        "exp": 40,
-        "success_text": {
-            "unscathed_common": "p_l and app1 return to camp with stone-cold paws and a new hatred for digging, but carrying bulbs of garlic.",
-            "unscathed_rare": "One of the things you really don't want in leaf-bare is an infection, and that's garlic's stinky speciality for treating. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores with app1.",
-            "stat_skill": "s_c knows exactly where to go - there was a thick patch of wild garlic that grew in an exposed area. They prove themself right, and it's only an utter and complete pain to dig out the bulbs. Well, at least they've got them now."
-        },
-        "fail_text": {
-            "unscathed_common": "p_l searches and searches, but eventually they have to admit defeat. They can't remember where the garlic grew when the world was warm.",
-            "injury": "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless."
-        },
-        "win_skills": [
-            "SENSE,2"
+        "success_outcomes": [
+            {
+                "text": "p_l and app1 return to camp with stone-cold paws and a new hatred for digging, but carrying bulbs of garlic.",
+                "exp": 40,
+                "weight": 20,
+                "herbs": ["wild_garlic"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "One of the things you really don't want in leaf-bare is an infection, and that's garlic's stinky speciality for treating. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores with app1.",
+                "exp": 40,
+                "weight": 5,
+                "herbs": ["many_herbs", "wild_garlic"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "s_c knows exactly where to go - there was a thick patch of wild garlic that grew in an exposed area. They prove themself right, and it's only an utter and complete pain to dig out the bulbs. Well, at least they've got them now.",
+                "exp": 40,
+                "weight": 20,
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["many_herbs", "wild_garlic"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            }
         ],
-        "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
-        }
+        "fail_outcomes": [
+            {
+                "text": "p_l searches and searches, but eventually they have to admit defeat. They can't remember where the garlic grew when the world was warm.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTMITT"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "mtn_med_gatheringwildgarlic_leaf-bare3",
-        "biome": "mountainous",
-        "season": "leaf-bare",
-        "tags": [
-            "herb_gathering",
-            "med_cat",
-            "warrior",
-            "cold_injury",
-            "scar",
-            "FROSTMITT",
-            "herb",
-            "wild_garlic",
-            "many_herbs1",
-            "many_herbs2",
-            "big_change",
-            "platonic",
-            "dislike",
-            "respect"
-        ],
+        "biome": ["mountainous"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "There's a limited selection of herbs p_l can even look for in leaf-bare, even with a patrol helping them, but if they can remember where the wild garlic grew in greenleaf, it's theirs for the taking.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 20,
-        "exp": 30,
-        "success_text": {
-            "unscathed_common": "p_l and the patrol return to camp with stone-cold paws and a new hatred for digging, but carrying bulbs of garlic.",
-            "unscathed_rare": "One of the things you really don't want in leaf-bare is an infection, and that's garlic's stinky speciality for treating. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores with the patrol.",
-            "stat_skill": "s_c knows exactly where to go - there was a thick patch of wild garlic that grew in an exposed area. They prove themself right, and it's only an utter and complete pain to dig out the bulbs. Well, at least they've got them now."
-        },
-        "fail_text": {
-            "unscathed_common": "p_l searches and searches, but eventually they have to admit defeat. They can't remember where the garlic grew when the world was warm.",
-            "injury": "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless."
-        },
-        "win_skills": [
-            "SENSE,2"
+        "success_outcomes": [
+            {
+                "text": "p_l and the patrol return to camp with stone-cold paws and a new hatred for digging, but carrying bulbs of garlic.",
+                "exp": 30,
+                "weight": 20,
+                "herbs": ["wild_garlic"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "One of the things you really don't want in leaf-bare is an infection, and that's garlic's stinky speciality for treating. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores with the patrol.",
+                "exp": 30,
+                "weight": 5,
+                "herbs": ["many_herbs", "wild_garlic"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "s_c knows exactly where to go - there was a thick patch of wild garlic that grew in an exposed area. They prove themself right, and it's only an utter and complete pain to dig out the bulbs. Well, at least they've got them now.",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["many_herbs", "wild_garlic"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            }
         ],
-        "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
-        }
+        "fail_outcomes": [
+            {
+                "text": "p_l searches and searches, but eventually they have to admit defeat. They can't remember where the garlic grew when the world was warm.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTMITT"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            }
+        ]
     }
 ]
