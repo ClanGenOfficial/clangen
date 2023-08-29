@@ -54,12 +54,12 @@ class Screens():
             visible=False,
             manager=MANAGER,
             object_id="#allegiances_button"),
-        "stats": UIImageButton(
-            scale(pygame.Rect((1388, 120), (162, 60))),
+        "clan_settings": UIImageButton(
+            scale(pygame.Rect((1380, 120), (170, 60))),
             "",
             visible=False,
             manager=MANAGER,
-            object_id="#stats_button"),
+            object_id="#clan_settings_button"),
         "name_background": pygame_gui.elements.UIImage(
             scale(pygame.Rect((610, 50), (380, 70))),
             pygame.transform.scale(
@@ -134,10 +134,10 @@ class Screens():
         exp = None
         try:
             target(*args)
-            self.work_done[current_thread().name] = True
         except Exception as e:
             exp = e
-
+        
+        self.work_done[current_thread().name] = True
         if exp:
             raise exp
         
@@ -207,25 +207,25 @@ class Screens():
     def hide_menu_buttons(self):
         """This hides the menu buttons, so they are no longer visible
             or interact-able. It does not delete the buttons from memory."""
-        for button in self.menu_buttons:
-            self.menu_buttons[button].hide()
+        for button in self.menu_buttons.values():
+            button.hide()
 
     def show_menu_buttons(self):
         """This shows all menu buttons, and makes them interact-able. """
         # Check if the setting for moons and seasons UI is on so stats button can be moved
         self.update_mns()
-        for button in self.menu_buttons:
-            if button in ['moons_n_seasons', 'moons_n_seasons_arrow']:
+        for name, button in self.menu_buttons.items():
+            if name in ['moons_n_seasons', 'moons_n_seasons_arrow']:
                 continue
             else:
-                self.menu_buttons[button].show()
+                button.show()
 
     # Enables all menu buttons but the ones passed in.
     # Sloppy, but works. Consider making it nicer.
     def set_disabled_menu_buttons(self, disabled_buttons=()):
         """This sets all menu buttons as interact-able, except buttons listed in disabled_buttons.  """
-        for button in self.menu_buttons:
-            self.menu_buttons[button].enable()
+        for button in self.menu_buttons.values():
+            button.enable()
 
         for button_id in disabled_buttons:
             if button_id in self.menu_buttons:
@@ -248,8 +248,8 @@ class Screens():
             SaveCheck(game.switches['cur_screen'], True, self.menu_buttons["main_menu"])
         elif event.ui_element == self.menu_buttons["allegiances"]:
             self.change_screen('allegiances screen')
-        elif event.ui_element == self.menu_buttons["stats"]:
-            self.change_screen('stats screen')
+        elif event.ui_element == self.menu_buttons["clan_settings"]:
+            self.change_screen('clan settings screen')
         elif event.ui_element == self.menu_buttons["moons_n_seasons_arrow"]:
             if game.settings['mns open']:
                 game.settings['mns open'] = False
@@ -263,7 +263,7 @@ class Screens():
     
     # Update if moons and seasons UI is on
     def update_mns(self):
-        if game.settings["moons and seasons"]:
+        if game.clan.clan_settings["moons and seasons"]:
             self.menu_buttons['moons_n_seasons_arrow'].kill()
             self.menu_buttons['moons_n_seasons'].kill()
             if game.settings['mns open']:
