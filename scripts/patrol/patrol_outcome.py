@@ -898,7 +898,7 @@ class PatrolOutcome():
             gender = "male"
         elif "female" in attribute_list:
             gender = "female"
-        elif "can_birth" in attribute_list and not game.settings["same sex birth"]:
+        elif "can_birth" in attribute_list and not game.clan.settings["same sex birth"]:
             gender = "female"
         else:
             gender = None
