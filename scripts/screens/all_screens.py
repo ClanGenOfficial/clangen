@@ -17,7 +17,6 @@ from .SettingsScreen import SettingsScreen
 from .SwitchClanScreen import SwitchClanScreen
 from .ClanScreen import ClanScreen
 from .ListScreen import ListScreen
-from .StatsScreen import StatsScreen
 from .EventsScreen import EventsScreen
 from .ChooseMateScreen import ChooseMateScreen
 from .ChooseMentorScreen import ChooseMentorScreen
@@ -74,7 +73,6 @@ events_screen = EventsScreen('events screen')
 
 settings_screen = SettingsScreen('settings screen')
 clan_settings_screen = ClanSettingsScreen('clan settings screen')
-stats_screen = StatsScreen('stats screen')
 start_screen = StartScreen('start screen')
 switch_clan_screen = SwitchClanScreen('switch clan screen')
 

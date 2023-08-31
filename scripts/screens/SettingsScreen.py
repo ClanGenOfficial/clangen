@@ -121,16 +121,12 @@ class SettingsScreen(Screens):
                 self.change_screen('start screen')
             elif event.key == pygame.K_RIGHT:
                 if self.sub_menu == 'general':
-                    self.open_relation_settings()
-                elif self.sub_menu == 'relation':
                     self.open_info_screen()
                 elif self.sub_menu == 'info':
                     self.open_lang_settings()
             elif event.key == pygame.K_LEFT:
-                if self.sub_menu == 'relation':
+                if self.sub_menu == 'info':
                     self.open_general_settings()
-                elif self.sub_menu == 'info':
-                    self.open_relation_settings()
                 elif self.sub_menu == 'language':
                     self.open_info_screen()
 

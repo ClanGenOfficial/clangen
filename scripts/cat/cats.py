@@ -3,6 +3,7 @@ from random import choice, randint, sample, random, choices, getrandbits, randra
 from typing import Dict, List, Any
 import os.path
 import itertools
+import sys
 
 from .history import History
 from .skills import CatSkills
@@ -2035,11 +2036,20 @@ class Cat():
     def is_potential_mate(self,
                           other_cat: Cat,
                           for_love_interest: bool = False,
-                          age_restriction: bool = True):
+                          age_restriction: bool = True,
+                          first_cousin_mates:bool = False):
         """
             Checks if this cat is potential mate for the other cat.
             There are no restrictions if the current cat already has a mate or not (this allows poly-mates).
         """
+        
+        try:
+            first_cousin_mates = game.clan.clan_settings["first cousin mates"]
+        except:
+            if 'unittest' not in sys.modules:
+                raise
+                
+        
         # just to be sure, check if it is not the same cat
         if self.ID == other_cat.ID:
             return False
@@ -2049,7 +2059,7 @@ class Cat():
             return False
 
         # Inheritance check
-        if self.is_related(other_cat, game.clan.clan_settings["first cousin mates"]):
+        if self.is_related(other_cat, first_cousin_mates):
             return False
 
         # check exiled, outside, and dead cats
