@@ -205,11 +205,13 @@ class Patrol():
         print("Random Cat:", str(self.patrol_random_cat.name))
 
     def get_possible_patrols(self, current_season:str, biome:str, patrol_type:str,
-                             game_setting_disaster=game.settings['disasters']) -> Tuple[List[PatrolEvent]]:
+                             game_setting_disaster=None) -> Tuple[List[PatrolEvent]]:
         # ---------------------------------------------------------------------------- #
         #                                LOAD RESOURCES                                #
         # ---------------------------------------------------------------------------- #
         biome = biome.lower()
+        game_setting_disaster = game_setting_disaster if game_setting_disaster is not None else \
+                                game.clan.clan_settings['disasters']
         season = current_season.lower()
         biome_dir = f"{biome}/"
         leaf = f"{season}"

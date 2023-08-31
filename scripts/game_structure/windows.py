@@ -577,7 +577,7 @@ class KillCat(UIWindow):
             self.prompt = process_text(
                 'This cat died when {PRONOUN/m_c/subject}...', cat_dict)
             self.initial = process_text(
-                '{VERB/m_c/were/was} killed by something unknowable to even StarClan', cat_dict)
+                '{VERB/m_c/were/was} killed by a higher power.', cat_dict)
 
             self.all_lives_check.hide()
             self.life_text = pygame_gui.elements.UITextBox('Take all the leader\'s lives',
@@ -627,7 +627,7 @@ class KillCat(UIWindow):
                                              manager=MANAGER,
                                              container=self)
         else:
-            self.initial = 'It was the will of something even mightier than StarClan that this cat died.'
+            self.initial = 'This cat was killed by a higher power.'
             self.prompt = None
             self.all_lives_check.hide()
             self.one_life_check.hide()
@@ -1249,7 +1249,6 @@ class EventLoading(UIWindow):
                          resizable=False)
 
         self.set_blocking(True)
-        game.switches['window_open'] = True
 
         self.frames = self.load_images()
         self.end_animation = False
@@ -1286,7 +1285,6 @@ class EventLoading(UIWindow):
 
     def kill(self):
         self.end_animation = True
-        game.switches['window_open'] = False
         super().kill()
 
 class ChangeCatToggles(UIWindow):

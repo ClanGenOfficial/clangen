@@ -104,18 +104,12 @@ class RelationshipScreen(Screens):
                      self.show_dead_text, self.show_empty_text]
                 )
             elif event.ui_element == self.checkboxes["show_dead"]:
-                if game.settings['show dead relation']:
-                    game.settings['show dead relation'] = False
-                else:
-                    game.settings['show dead relation'] = True
+                game.clan.clan_settings['show dead relation'] = not game.clan.clan_settings['show dead relation']
                 self.update_checkboxes()
                 self.apply_cat_filter()
                 self.update_cat_page()
             elif event.ui_element == self.checkboxes["show_empty"]:
-                if game.settings['show empty relation']:
-                    game.settings['show empty relation'] = False
-                else:
-                    game.settings['show empty relation'] = True
+                game.clan.clan_settings['show empty relation'] = not game.clan.clan_settings['show empty relation'] 
                 self.update_checkboxes()
                 self.apply_cat_filter()
                 self.update_cat_page()
@@ -262,7 +256,7 @@ class RelationshipScreen(Screens):
             self.checkboxes[ele].kill()
         self.checkboxes = {}
 
-        if game.settings['show dead relation']:
+        if game.clan.clan_settings['show dead relation']:
             checkbox_type = "#checked_checkbox"
         else:
             checkbox_type = "#unchecked_checkbox"
@@ -270,7 +264,7 @@ class RelationshipScreen(Screens):
         self.checkboxes["show_dead"] = UIImageButton(scale(pygame.Rect((156, 1010), (68, 68))), "",
                                                      object_id=checkbox_type)
 
-        if game.settings['show empty relation']:
+        if game.clan.clan_settings['show empty relation']:
             checkbox_type = "#checked_checkbox"
         else:
             checkbox_type = "#unchecked_checkbox"
@@ -355,7 +349,7 @@ class RelationshipScreen(Screens):
                                                                                     (44, 40)))
             else:
                 # Family Dot
-                related = self.the_cat.is_related(self.inspect_cat, game.settings["first cousin mates"])
+                related = self.the_cat.is_related(self.inspect_cat, game.clan.clan_settings["first cousin mates"])
                 if related:
                     self.inspect_cat_elements['family'] = pygame_gui.elements.UIImage(
                         scale(pygame.Rect((90, 300), (36, 36))),
@@ -437,7 +431,7 @@ class RelationshipScreen(Screens):
                         col2 += "related: sibling (littermate)"
                     else:
                         col2 += "related: sibling"
-                elif not game.settings["first cousin mates"] and self.inspect_cat.is_cousin(self.the_cat):
+                elif not game.clan.clan_settings["first cousin mates"] and self.inspect_cat.is_cousin(self.the_cat):
                     col2 += "related: cousin"
 
             self.inspect_cat_elements["col2"] = pygame_gui.elements.UITextBox(col2,
@@ -461,11 +455,11 @@ class RelationshipScreen(Screens):
     def apply_cat_filter(self, search_text=""):
         # Filter for dead or empty cats
         self.filtered_cats = self.all_relations.copy()
-        if not game.settings["show dead relation"]:
+        if not game.clan.clan_settings["show dead relation"]:
             self.filtered_cats = list(
                 filter(lambda rel: not rel.cat_to.dead, self.filtered_cats))
 
-        if not game.settings["show empty relation"]:
+        if not game.clan.clan_settings["show empty relation"]:
             self.filtered_cats = list(
                 filter(
                     lambda rel: (rel.romantic_love + rel.platonic_like + rel.
@@ -580,7 +574,7 @@ class RelationshipScreen(Screens):
         else:
             # FAMILY DOT
             # Only show family dot on cousins if first cousin mates are disabled.
-            if game.settings['first cousin mates']:
+            if game.clan.clan_settings['first cousin mates']:
                 check_cousins = False
             else:
                 check_cousins = the_relationship.cat_to.is_cousin(self.the_cat)
@@ -1059,7 +1053,7 @@ class MediationScreen(Screens):
         x = 130
         y = 970
         for cat in self.all_cats[self.page - 1]:
-            if game.clan.clan_settings["show_fav"] and cat.favourite:
+            if game.clan.clan_settings["show fav"] and cat.favourite:
                 _temp = pygame.transform.scale(
                             pygame.image.load(
                                 f"resources/images/fav_marker.png").convert_alpha(),
@@ -1147,7 +1141,7 @@ class MediationScreen(Screens):
         elif other_cat:
             # FAMILY DOT
             # Only show family dot on cousins if first cousin mates are disabled.
-            if game.settings['first cousin mates']:
+            if game.clan.clan_settings['first cousin mates']:
                 check_cousins = False
             else:
                 check_cousins = other_cat.is_cousin(cat)
@@ -1221,7 +1215,7 @@ class MediationScreen(Screens):
                 col2 += "child"
             elif cat.is_sibling(other_cat) or other_cat.is_sibling(cat):
                 col2 += "sibling"
-            elif not game.settings["first cousin mates"] and other_cat.is_cousin(cat):
+            elif not game.clan.clan_settings["first cousin mates"] and other_cat.is_cousin(cat):
                 col2 += "cousin"
 
         self.selected_cat_elements["col2" + tag] = pygame_gui.elements.UITextBox(col2,

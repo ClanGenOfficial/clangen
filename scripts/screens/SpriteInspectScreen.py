@@ -166,7 +166,7 @@ class SpriteInspectScreen(Screens):
                                                                  starting_height=2)
         
         
-        if game.settings['backgrounds']:
+        if game.clan.clan_settings['backgrounds']:
             self.platform_shown = True
         else:
             self.platform_shown = False

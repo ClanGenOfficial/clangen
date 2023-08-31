@@ -510,7 +510,7 @@ class ProfileScreen(Screens):
                                                                      line_spacing=0.95, manager=MANAGER)
 
         # Set the cat backgrounds.
-        if game.settings['backgrounds']:
+        if game.clan.clan_settings['backgrounds']:
             self.profile_elements["background"] = pygame_gui.elements.UIImage(
                 scale(pygame.Rect((110, 400), (480, 420))),
                 pygame.transform.scale(self.get_platform(), scale_dimentions((480, 420))), 
@@ -843,7 +843,7 @@ class ProfileScreen(Screens):
         # EXPERIENCE
         output += 'experience: ' + str(the_cat.experience_level)
 
-        if game.settings['showxp']:
+        if game.clan.clan_settings['showxp']:
             output += ' (' + str(the_cat.experience) + ')'
         # NEWLINE ----------
         output += "\n"
