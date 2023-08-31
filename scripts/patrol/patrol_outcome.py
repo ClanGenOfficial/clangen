@@ -722,10 +722,12 @@ class PatrolOutcome():
                 game.clan.herbs[_herb] += amount_gotten
             else:
                 game.clan.herbs[_herb] = amount_gotten
+
+        plural_herbs_list = ['cobwebs', 'oak leaves']
         
-        if len(specfic_herbs) == 1 and specfic_herbs[0] != 'cobwebs':
+        if len(specfic_herbs) == 1 and specfic_herbs[0] not in plural_herbs_list:
             insert = f"{specfic_herbs[0]} was"
-        elif len(specfic_herbs) == 1 and specfic_herbs[0] == 'cobwebs':
+        elif len(specfic_herbs) == 1 and specfic_herbs[0] in plural_herbs_list:
             insert = f"{specfic_herbs[0]} were"
         elif len(specfic_herbs) == 2:
             if str(specfic_herbs[0]) == str(specfic_herbs[1]):
@@ -734,9 +736,11 @@ class PatrolOutcome():
                 insert = f"{specfic_herbs[0]} and {specfic_herbs[1]} were"
         else:
             insert = f"{', '.join(specfic_herbs[:-1])}, and {specfic_herbs[-1]} were"
+
+        insert = re.sub("[_]", " ", insert)
         
         game.herb_events_list.append(f"{insert.capitalize()} gathered on a patrol.")
-        return f"{insert.capitalize()} gathered"
+        return f"{insert.capitalize()} gathered."
         
     def _handle_prey(self, patrol:'Patrol') -> str:
         """ Handle giving prey """
