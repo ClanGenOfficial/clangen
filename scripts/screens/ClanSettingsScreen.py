@@ -140,7 +140,7 @@ class ClanSettingsScreen(Screens):
         self.role_settings_button = UIImageButton(
             scale(pygame.Rect((800, 280), (300, 60))),
             "",
-            object_id="#relation_settings_button",
+            object_id="#role_settings_button",
             manager=MANAGER)
         self.clan_stats_button = UIImageButton(
             scale(pygame.Rect((1100, 280), (300, 60))),
