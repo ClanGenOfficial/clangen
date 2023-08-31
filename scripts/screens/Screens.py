@@ -108,8 +108,8 @@ class Screens():
         if name is not None:
             game.all_screens[name] = self
         
-        # Place to store the loading window
-        self.loading_window = None
+        # Place to store the loading window(s)
+        self.loading_window = {}
         
         # Dictionary of work done, keyed by the target function name
         self.work_done = {}
@@ -151,18 +151,15 @@ class Screens():
          """
         
         if not isinstance(work_thread, PropagatingThread):
-            if self.loading_window:
-                self.loading_window.kill()
-                self.loading_window = None
             return
         
         # Handled the loading animation, both creating and killing it. 
-        if not self.loading_window and work_thread.is_alive() \
+        if not self.loading_window.get(work_thread.name) and work_thread.is_alive() \
                 and work_thread.get_time_from_start() > delay:
-            self.loading_window = EventLoading(loading_screen_pos)
-        elif self.loading_window and not work_thread.is_alive():
-            self.loading_window.kill()
-            self.loading_window = None
+            self.loading_window[work_thread.name] = EventLoading(loading_screen_pos)
+        elif self.loading_window.get(work_thread.name) and not work_thread.is_alive():
+            self.loading_window[work_thread.name].kill()
+            self.loading_window.pop(work_thread.name)
         
         # Handles displaying the events once timeskip is done. 
         if self.work_done.get(work_thread.name, False):

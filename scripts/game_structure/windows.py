@@ -1249,7 +1249,6 @@ class EventLoading(UIWindow):
                          resizable=False)
 
         self.set_blocking(True)
-        game.switches['window_open'] = True
 
         self.frames = self.load_images()
         self.end_animation = False
@@ -1286,7 +1285,6 @@ class EventLoading(UIWindow):
 
     def kill(self):
         self.end_animation = True
-        game.switches['window_open'] = False
         super().kill()
 
 class ChangeCatToggles(UIWindow):
