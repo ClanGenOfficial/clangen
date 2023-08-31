@@ -299,8 +299,8 @@ class ClanSettingsScreen(Screens):
         self.sub_menu = 'stats'
         
         # Stats determination time. 
-        faded_cats = 0
-        living_cats = len(game.clan.faded_ids)
+        faded_cats = len(game.clan.faded_ids)
+        living_cats = 0
         med_cats = 0
         warriors = 0
         warrior_apprentices = 0

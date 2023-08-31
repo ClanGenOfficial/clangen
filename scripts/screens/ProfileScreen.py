@@ -1190,10 +1190,7 @@ class ProfileScreen(Screens):
             
             # Second, do the facet/personality effect
             trait_influence = []
-            if "trait" in mentor_influence and mentor_influence["trait"] != None:
-                if ("Benevolent" or "Abrasive" or "Reserved" or "Outgoing") in mentor_influence["trait"]:
-                    mentor_influence["trait"] = {}
-                    return
+            if "trait" in mentor_influence and isinstance(mentor_influence["trait"], dict):
                 for _mentor in mentor_influence["trait"]:
                     #If the strings are not set (empty list), continue. 
                     if not mentor_influence["trait"][_mentor].get("strings"):
@@ -1220,7 +1217,7 @@ class ProfileScreen(Screens):
             
             
             skill_influence = []
-            if "skill" in mentor_influence and mentor_influence["skill"] != None:
+            if "skill" in mentor_influence and isinstance(mentor_influence["skill"], dict):
                 for _mentor in mentor_influence["skill"]:
                     #If the strings are not set (empty list), continue. 
                     if not mentor_influence["skill"][_mentor].get("strings"):
