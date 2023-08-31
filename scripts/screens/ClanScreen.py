@@ -33,7 +33,7 @@ class ClanScreen(Screens):
         self.layout = None
 
     def on_use(self):
-        if game.settings['backgrounds']:
+        if game.clan.clan_settings['backgrounds']:
             if game.clan.current_season == 'Newleaf':
                 screen.blit(self.newleaf_bg, (0, 0))
             elif game.clan.current_season == 'Greenleaf':
@@ -65,10 +65,10 @@ class ClanScreen(Screens):
                 game.switches["cat"] = event.ui_element.return_cat_id()
                 self.change_screen('profile screen')
             if event.ui_element == self.label_toggle:
-                if game.settings['den labels']:
-                    game.settings['den labels'] = False
+                if game.clan.clan_settings['den labels']:
+                    game.clan.clan_settings['den labels'] = False
                 else:
-                    game.settings['den labels'] = True
+                    game.clan.clan_settings['den labels'] = True
                 self.update_buttons_and_text()
             if event.ui_element == self.med_den_label:
                 self.change_screen('med den screen')
@@ -368,7 +368,7 @@ class ClanScreen(Screens):
             self.save_button.enable()
 
         self.label_toggle.kill()
-        if game.settings['den labels']:
+        if game.clan.clan_settings['den labels']:
             self.label_toggle = UIImageButton(scale(pygame.Rect((50, 1282), (68, 68))), "",
                                               object_id="#checked_checkbox")
             self.warrior_den_label.show()

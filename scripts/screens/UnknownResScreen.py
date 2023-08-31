@@ -16,11 +16,6 @@ class UnknownResScreen(Screens):
     cat_names = []
     previous_search_text = ""
     
-    if game.settings['moons and seasons']:
-        move_for_mns = 50
-    else:
-        move_for_mns = 0
-
     def __init__(self, name=None):
         super().__init__(name)
         self.filter_id = None
@@ -188,6 +183,12 @@ class UnknownResScreen(Screens):
         # Determine the dead, non-exiled cats.
         self.get_dead_cats()
 
+        if game.clan.clan_settings['moons and seasons']:
+            self.move_for_mns = 50
+        else:
+            self.move_for_mns = 0
+
+        
         self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 278), (294, 55))),
                                                               object_id="#search_entry_box", manager=MANAGER)
 
@@ -325,7 +326,7 @@ class UnknownResScreen(Screens):
             for cat in self.chunks(self.current_listed_cats, 20)[self.list_page - 1]:
                 # update_sprite(cat)
                 
-                if game.clan.clan_settings["show_fav"] and cat.favourite:
+                if game.clan.clan_settings["show fav"] and cat.favourite:
                     
                     _temp = pygame.transform.scale(
                             pygame.image.load(

@@ -151,6 +151,7 @@ class Game():
         "showfps": False
     }
 
+    # Init Settings
     with open("resources/gamesettings.json", 'r') as read_file:
         _settings = ujson.loads(read_file.read())
 
@@ -159,13 +160,15 @@ class Game():
         setting_lists[setting] = values
 
     _ = []
-    _.append(_settings['relation'])
     _.append(_settings['general'])
 
     for cat in _:  # Add all the settings to the settings dictionary
         for setting_name, inf in cat.items():
             settings[setting_name] = inf[2]
             setting_lists[setting_name] = [inf[2], not inf[2]]
+    del _settings
+    del _
+    #End init settings
 
     settings_changed = False
 
@@ -333,42 +336,26 @@ class Game():
 
     def save_settings(self):
         """ Save user settings for later use """
-        data = ''.join(f"{s}:{self.settings[s]}" + "\n"
-                       for s in self.settings.keys())
-
+        if os.path.exists(get_save_dir() + "/settings.txt"):
+            os.remove(get_save_dir() + "/settings.txt")
+        
         self.settings_changed = False
-        game.safe_save(get_save_dir() + '/settings.txt', data)
+        game.safe_save(get_save_dir() + '/settings.json', self.settings)
 
     def load_settings(self):
         """ Load settings that user has saved from previous use """
-        with open(get_save_dir() + '/settings.txt', 'r') as read_file:
-            settings_data = read_file.read()
+        
+        try:
+            with open(get_save_dir() + '/settings.json', 'r') as read_file:
+                settings_data = ujson.loads(read_file.read())
+        except FileNotFoundError:
+            return
 
-        lines = settings_data.split(
-            "\n"
-        )  # Splits text file into singular lines, each line containing one setting
-        # and value
-
-        for x in lines:
-            if len(x) > 0:  # If line isn't empty
-                parts = x.split(
-                    ":")  # first part is setting name, second is value
-                # Turn value into right type (int types stay string and will be turned into int when needed)
-                # And put it into game settings
-                try:
-                    if parts[1] in ['True', 'True ', 'true', ' True']:
-                        self.settings[parts[0]] = True
-                    elif parts[1] in ['False', 'False ', 'false', ' False']:
-                        self.settings[parts[0]] = False
-                    elif parts[1] in ['None', 'None ', 'none', ' None']:
-                        self.settings[parts[0]] = None
-                    else:
-                        self.settings[parts[0]] = parts[1]
-                except IndexError:
-                    print("error loading setting:", parts)
+        for key, value in settings_data.items():
+            if key in self.settings:
+                self.settings[key] = value
 
         self.switches['language'] = self.settings['language']
-        self.switches['game_mode'] = self.settings['game_mode']
         if self.settings['language'] != 'english':
             self.switch_language()
 
@@ -473,7 +460,7 @@ class Game():
                         print(f"WARNING: Can't find parent {x} of {cat.name}")
 
             # Get a copy of info
-            if game.settings["save_faded_copy"]:
+            if game.clan.clan_settings["save_faded_copy"]:
                 copy_of_info += ujson.dumps(inter_cat.get_save_dict(), indent=4) + \
                     "\n--------------------------------------------------------------------------\n"
 
@@ -489,7 +476,7 @@ class Game():
         game.cat_to_fade = []
 
         # Save the copies, flush the file.
-        if game.settings["save_faded_copy"]:
+        if game.clan.clan_settings["save_faded_copy"]:
             with open(get_save_dir() + '/' + clanname + '/faded_cats_info_copy.txt', 'a') as write_file:
 
                 if not os.path.exists(get_save_dir() + '/' + clanname + '/faded_cats_info_copy.txt'):
@@ -602,7 +589,7 @@ else:
 def load_manager(res: tuple):
     # initialize pygame_gui manager, and load themes
     manager = pygame_gui.ui_manager.UIManager(
-        res, 'resources/defaults.json', enable_live_theme_updates=False)
+        res, 'resources/theme/defaults.json', enable_live_theme_updates=False)
     manager.add_font_paths(
         font_name='notosans',
         regular_path='resources/fonts/NotoSans-Medium.ttf',
@@ -610,15 +597,16 @@ def load_manager(res: tuple):
         italic_path='resources/fonts/NotoSans-MediumItalic.ttf',
         bold_italic_path='resources/fonts/NotoSans-ExtraBoldItalic.ttf'
     )
+    
 
     if res[0] > 800:
-        manager.get_theme().load_theme('resources/defaults.json')
-        manager.get_theme().load_theme('resources/buttons.json')
-        manager.get_theme().load_theme('resources/text_boxes.json')
-        manager.get_theme().load_theme('resources/text_boxes_dark.json')
-        manager.get_theme().load_theme('resources/vertical_scroll_bar.json')
-        manager.get_theme().load_theme('resources/windows.json')
-        manager.get_theme().load_theme('resources/tool_tips.json')
+        manager.get_theme().load_theme('resources/theme/defaults.json')
+        manager.get_theme().load_theme('resources/theme/buttons.json')
+        manager.get_theme().load_theme('resources/theme/text_boxes.json')
+        manager.get_theme().load_theme('resources/theme/text_boxes_dark.json')
+        manager.get_theme().load_theme('resources/theme/vertical_scroll_bar.json')
+        manager.get_theme().load_theme('resources/theme/window_base.json')
+        manager.get_theme().load_theme('resources/theme/tool_tips.json')
 
         manager.preload_fonts([
             {'name': 'notosans', 'point_size': 30, 'style': 'italic'},
@@ -629,13 +617,13 @@ def load_manager(res: tuple):
         ])
 
     else:
-        manager.get_theme().load_theme('resources/defaults_small.json')
-        manager.get_theme().load_theme('resources/buttons_small.json')
-        manager.get_theme().load_theme('resources/text_boxes_small.json')
-        manager.get_theme().load_theme('resources/text_boxes_dark_small.json')
-        manager.get_theme().load_theme('resources/vertical_scroll_bar.json')
-        manager.get_theme().load_theme('resources/windows_small.json')
-        manager.get_theme().load_theme('resources/tool_tips_small.json')
+        manager.get_theme().load_theme('resources/theme/defaults_small.json')
+        manager.get_theme().load_theme('resources/theme/buttons_small.json')
+        manager.get_theme().load_theme('resources/theme/text_boxes_small.json')
+        manager.get_theme().load_theme('resources/theme/text_boxes_dark_small.json')
+        manager.get_theme().load_theme('resources/theme/vertical_scroll_bar.json')
+        manager.get_theme().load_theme('resources/theme/window_base_small.json')
+        manager.get_theme().load_theme('resources/theme/tool_tips_small.json')
 
         manager.preload_fonts([
             {'name': 'notosans', 'point_size': 11, 'style': 'bold'},
@@ -644,6 +632,9 @@ def load_manager(res: tuple):
             {'name': 'notosans', 'point_size': 13, 'style': 'italic'},
             {'name': 'notosans', 'point_size': 15, 'style': 'italic'}
         ])
+        
+    manager.get_theme().load_theme('resources/theme/windows.json')
+    manager.get_theme().load_theme('resources/theme/image_buttons.json')
 
     return manager
 

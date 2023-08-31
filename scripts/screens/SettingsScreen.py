@@ -105,9 +105,6 @@ class SettingsScreen(Screens):
                 self.settings_changed = False
                 self.update_save_button()
                 return
-            elif event.ui_element == self.relation_settings_button:
-                self.open_relation_settings()
-                return
             elif event.ui_element == self.general_settings_button:
                 self.open_general_settings()
                 return
@@ -124,16 +121,12 @@ class SettingsScreen(Screens):
                 self.change_screen('start screen')
             elif event.key == pygame.K_RIGHT:
                 if self.sub_menu == 'general':
-                    self.open_relation_settings()
-                elif self.sub_menu == 'relation':
                     self.open_info_screen()
                 elif self.sub_menu == 'info':
                     self.open_lang_settings()
             elif event.key == pygame.K_LEFT:
-                if self.sub_menu == 'relation':
+                if self.sub_menu == 'info':
                     self.open_general_settings()
-                elif self.sub_menu == 'info':
-                    self.open_relation_settings()
                 elif self.sub_menu == 'language':
                     self.open_info_screen()
 
@@ -163,8 +156,7 @@ class SettingsScreen(Screens):
 
                     opens = {
                         "general": self.open_general_settings,
-                        "language": self.open_lang_settings,
-                        "relation": self.open_relation_settings
+                        "language": self.open_lang_settings
                     }
 
                     scroll_pos = None
@@ -188,22 +180,17 @@ class SettingsScreen(Screens):
         self.settings_changed = False
 
         self.general_settings_button = UIImageButton(
-            scale(pygame.Rect((200, 200), (300, 60))),
+            scale(pygame.Rect((350, 200), (300, 60))),
             "",
             object_id="#general_settings_button",
             manager=MANAGER)
-        self.relation_settings_button = UIImageButton(
-            scale(pygame.Rect((500, 200), (300, 60))),
-            "",
-            object_id="#relation_settings_button",
-            manager=MANAGER)
         self.info_button = UIImageButton(scale(
-            pygame.Rect((800, 200), (300, 60))),
+            pygame.Rect((650, 200), (300, 60))),
             "",
             object_id="#info_settings_button",
             manager=MANAGER)
         self.language_button = UIImageButton(scale(
-            pygame.Rect((1100, 200), (300, 60))),
+            pygame.Rect((950, 200), (300, 60))),
             "",
             object_id="#lang_settings_button",
             manager=MANAGER)
@@ -273,8 +260,6 @@ class SettingsScreen(Screens):
         self.clear_sub_settings_buttons_and_text()
         self.general_settings_button.kill()
         del self.general_settings_button
-        self.relation_settings_button.kill()
-        del self.relation_settings_button
         self.info_button.kill()
         del self.info_button
         self.language_button.kill()
@@ -333,36 +318,6 @@ class SettingsScreen(Screens):
         #   Fix if you want. - keyraven
         self.refresh_checkboxes()
 
-    def open_relation_settings(self):
-        """Opens and draws relation_settings"""
-        self.enable_all_menu_buttons()
-        self.relation_settings_button.disable()
-        self.clear_sub_settings_buttons_and_text()
-        self.sub_menu = 'relation'
-        self.save_settings_button.show()
-
-        self.checkboxes_text[
-            "container_relation"] = pygame_gui.elements.UIScrollingContainer(
-            scale(pygame.Rect((0, 440), (1400, 600))), manager=MANAGER)
-
-        n = 0
-        for code, desc in settings_dict['relation'].items():
-            self.checkboxes_text[code] = pygame_gui.elements.UITextBox(
-                desc[0],
-                scale(pygame.Rect((450, n * 78), (1000, 78))),
-                container=self.checkboxes_text["container_relation"],
-                object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
-                manager=MANAGER)
-            self.checkboxes_text[code].disable()
-            n += 1
-
-        self.checkboxes_text['instr'] = pygame_gui.elements.UITextBox(
-            "Change the relationship settings of your game here",
-            scale(pygame.Rect((200, 320), (1200, 100))),
-            object_id=get_text_box_theme("#text_box_30_horizcenter"),
-            manager=MANAGER)
-
-        self.refresh_checkboxes()
 
     def open_info_screen(self):
         """Open's info screen"""
@@ -495,7 +450,6 @@ class SettingsScreen(Screens):
         TODO: DOCS
         """
         self.general_settings_button.enable()
-        self.relation_settings_button.enable()
         self.info_button.enable()
         self.language_button.enable()
 

@@ -87,7 +87,7 @@ class PatrolScreen(Screens):
             self.update_button()
         elif event.ui_element == self.elements['add_one']:
             if len(self.current_patrol) < 6:
-                if not game.settings['random med cat']:
+                if not game.clan.clan_settings['random med cat']:
                     able_no_med = [cat for cat in self.able_cats if
                                 cat.status not in ['medicine cat', 'medicine cat apprentice']]
                     if len(able_no_med) == 0:
@@ -101,7 +101,7 @@ class PatrolScreen(Screens):
             self.update_button()
         elif event.ui_element == self.elements['add_three']:
             if len(self.current_patrol) <= 3:
-                if not game.settings['random med cat']:
+                if not game.clan.clan_settings['random med cat']:
                     able_no_med = [cat for cat in self.able_cats if
                                 cat.status not in ['medicine cat', 'medicine cat apprentice']]
                     if len(able_no_med) < 3:
@@ -113,7 +113,7 @@ class PatrolScreen(Screens):
             self.update_button()
         elif event.ui_element == self.elements['add_six']:
             if len(self.current_patrol) == 0:
-                if not game.settings['random med cat']:
+                if not game.clan.clan_settings['random med cat']:
                     able_no_med = [cat for cat in self.able_cats if
                                 cat.status not in ['medicine cat', 'medicine cat apprentice']]
                     if len(able_no_med) < 6:
@@ -306,7 +306,7 @@ class PatrolScreen(Screens):
 
             able_no_med = [cat for cat in self.able_cats if
                            cat.status not in ['medicine cat', 'medicine cat apprentice']]
-            if game.settings['random med cat']:
+            if game.clan.clan_settings['random med cat']:
                 able_no_med = self.able_cats
             if len(able_no_med) == 0:
                 able_no_med = self.able_cats
@@ -671,7 +671,7 @@ class PatrolScreen(Screens):
         pos_x = 100
         i = 0
         for cat in display_cats:
-            if game.clan.clan_settings["show_fav"] and cat.favourite:
+            if game.clan.clan_settings["show fav"] and cat.favourite:
                 self.fav[str(i)] = pygame_gui.elements.UIImage(
                     scale(pygame.Rect((pos_x, pos_y), (100, 100))),
                     pygame.transform.scale(
@@ -810,7 +810,7 @@ class PatrolScreen(Screens):
                                                                           "\n" + str(
                 self.selected_cat.experience_level) +
                                                                           (f' ({str(self.selected_cat.experience)})' if
-                                                                           game.settings['showxp'] else ''),
+                                                                           game.clan.clan_settings['showxp'] else ''),
                                                                           scale(pygame.Rect((600, 700), (400, 150))),
                                                                           object_id=get_text_box_theme(
                                                                               "#text_box_22_horizcenter_spacing_95"),
