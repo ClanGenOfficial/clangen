@@ -3321,21 +3321,6 @@
                 "text": "The cats search and search until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but {PRONOUN/p_l/subject} just can't find lungwort anywhere. p_l returns to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "The cats search and search until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but {PRONOUN/p_l/subject} just can't find lungwort anywhere. p_l returns to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of.",
-                "exp": 0,
-                "weight": 10,
                 "injury": [
                     {
                         "cats": ["patrol"],
@@ -5563,7 +5548,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l heads out to find tansy, scenting the air for its sharp smell and eyes on the lookout for tansy's strange, orb-like yellow flowers that greenleaf has brought out in abundance. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} brought some of {PRONOUN/p_l/poss} Clanmates with {PRONOUN/p_l/object} to hopefully help {PRONOUN/p_l/subject} carry a good harvest home.",
+        "intro_text": "p_l heads out to find tansy, scenting the air for its sharp smell and eyes on the lookout for tansy's strange, orb-like yellow flowers that greenleaf has brought out in abundance. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} brought some of {PRONOUN/p_l/poss} Clanmates with {PRONOUN/p_l/object} to hopefully help {PRONOUN/p_l/object} carry a good harvest home.",
         "decline_text": "{PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} stopped before {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -5637,7 +5622,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the tansy leaves, and {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}'nt confidently identified. Better safe than sorry, as they say.",
+                "text": "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the tansy leaves, and {PRONOUN/p_l/subject} {VERB/p_l/aren't/isn't} going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/haven't/hasn't} confidently identified. Better safe than sorry, as they say.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
