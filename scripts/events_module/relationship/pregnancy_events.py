@@ -942,7 +942,7 @@ class Pregnancy_Events():
             inverse_chance = int(inverse_chance * 0.7)
 
         # - decrease inverse chance single parents if settings allow an biggest family is huge
-        settings_allow = not second_parent and not clan.settings['single parentage']
+        settings_allow = not second_parent and not clan.clan_settings['single parentage']
         if settings_allow and Pregnancy_Events.biggest_family_is_big():
             inverse_chance = int(inverse_chance * 0.9)
 
