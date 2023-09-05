@@ -83,7 +83,8 @@
         "camp": "any",
         "tags": [
             "Leaf-bare",
-            "Leaf-fall"
+            "Leaf-fall",
+            "no_body"
         ],
         "death_text": "m_c wasn't found after wandering away.",
         "history_text": {
@@ -98,7 +99,8 @@
         "camp": "any",
         "tags": [
             "Leaf-bare",
-            "Leaf-fall"
+            "Leaf-fall",
+            "no_body"
         ],
         "death_text": "All that's left of m_c is some blood.",
         "history_text": {
@@ -128,7 +130,8 @@
         "camp": "any",
         "tags": [
             "Leaf-bare",
-            "Leaf-fall"
+            "Leaf-fall",
+            "no_body"
         ],
         "death_text": "m_c dissapeared during the night. In the morning, the nursery is infested with foul-smelling bones.",
         "history_text": {
