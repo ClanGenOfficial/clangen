@@ -1,8 +1,11 @@
 {
-    
     "dep_321": [
-        ["Any"],
-        ["There's too much to do right now. Let's talk later."]
+        [
+            "Any"
+        ],
+        [
+            "There's too much to do right now. Let's talk later."
+        ]
     ],
     "medapp_1s5s": [
         [
@@ -11,6 +14,673 @@
         ],
         [
             "You're full of spirit, aren't you? I can't wait to see the cat you'll become."
+        ]
+    ],
+    "assertive_jealous1": [
+        [
+            "Any",
+            "sibling",
+            "half sibling",
+            "kit",
+            "adopted_sibling",
+            "half sibling",
+            "dislike",
+            "assertive"
+        ],
+        [
+            "What did I do in a past life to wind up related to you, y_c?",
+            "Must've been really terrible."
+        ]
+    ],
+    "assertive_4": [
+        [
+            "kitten",
+            "assertive"
+        ],
+        [
+            "Whoa! Watch where you're going there, little pal! One wrong move, and you might get stepped on!",
+            "Ah, quit that, you don't need to apologize. Just be a bit more careful from now on, is all.",
+            "Or else, when you get bigger, it'll really become a problem. Hehe!"
+        ]
+    ],
+    "assertive_tonewborn": [
+        [
+            "newborn",
+            "assertive"
+        ],
+        [
+            "Whoa! Hey there, little guy! Shouldn't you be in the nursery?",
+            "Hehe. You've got an adventurous spirit. I like that about you.",
+            "But for now, you gotta stay where it's safe! C'mon. Let's go back to your parents."
+        ]
+    ],
+    "assertive_tonewborn": [
+        [
+            "newborn",
+            "assertive"
+        ],
+        [
+            "Little guy seems to be in good condition!",
+            "And spirited, too ...",
+            "Welcome to the world, little y_c!"
+        ]
+    ],
+    "assertive_tonewborn1": [
+        [
+            "newborn",
+            "assertive"
+        ],
+        [
+            "Aw ... little guy hasn't even gotten their eyes open yet!",
+            "They're gonna be a killer, though. I can already tell. See those little paws? This kit's got fight in 'em!"
+        ]
+    ],
+    "assertive_tonewborn3": [
+        [
+            "newborn",
+            "assertive",
+            "introspective",
+            "neurotic"
+        ],
+        [
+            "Whoa ... this is them? They're so small!",
+            "Hard to believe I was that small once ...",
+            "Hm ..."
+        ]
+    ],
+    "assertive_apprentice7": [
+        [
+            "no_kit",
+            "platonic_like",
+            "assertive",
+            "silly",
+            "random_cat"
+        ],
+        [
+            "y_c. Buddy. Best friend. We've GOTTA TRY this. r_c told me that if you eat three mice, one rabbit, and howl at the moon you get magic powers!",
+            "What? It's totally real, they wouldn't lie to me like that! I prommissseee."
+        ]
+    ],
+    "assertive_1": [
+        [
+            "Any",
+            "assertive",
+            "cool",
+            "they_clanfounder",
+            "they_clanborn",
+            "they_outsiderroots",
+            "they_half-Clan",
+            "they_orphaned",
+            "they_abandoned",
+            "newleaf",
+            "greenleaf",
+            "leaffall"
+        ],
+        [
+            "Hey there, y_c! Not bad weather today, hm?",
+            "Sun on my pelt, wind in my fur ... Could you imagine being a kittypet and having to be cooped up in a twoleg nest all day? I think I would go crazy!",
+            "Just another reason why it's great to be a clan cat."
+        ]
+    ],
+    "assertive_6": [
+        [
+            "Any",
+            "dislike",
+            "you_brooding",
+            "you_sweet",
+            "you_upstanding",
+            "you_introspective",
+            "you_neurotic",
+            "you_stable",
+            "assertive",
+            "cool",
+            "unlawful",
+            "silly"
+        ],
+        [
+            "*Sigh*. Hey, y_c. Come to ruin the fun again?",
+            "Whatever. I'm going to go do something actually exciting. Don't wait up."
+        ]
+    ],
+    "assertiveapp_leader": [
+        [
+            "leader",
+            "assertive",
+            "upstanding"
+        ],
+        [
+            "I'll make you proud, y_c!",
+            "I'll make all of c_nClan proud!"
+        ]
+    ],
+    "assertiveapp_6": [
+        [
+            "Any",
+            "assertive",
+            "silly",
+            "unlawful",
+            "kit",
+            "adopted kit",
+            "your apprentice"
+        ],
+        [
+            "[t_c stumbles across camp to you, soaking wet and covered in mud.]",
+            "y_c! Before you get mad, I didn't do it!",
+            "[The very peeved-off looking deputy locks eyes with you and storms in your direction. What mischief did t_c get into this time?]"
+        ]
+    ],
+    "assertive_elder": [
+        [
+            "Any",
+            "assertive",
+            "neutral",
+            "platonic_like"
+        ],
+        [
+            "y_c, can you believe it? I actually got to dress a real wound today! Eeee, so cool!!!",
+            "I mean, uh, definitely not cool. I'm definitely very serious and respectful towards my sacred duty to clan.",
+            "... Is tm_n still there?"
+        ]
+    ],
+    "assertive_elder": [
+        [
+            "Any",
+            "assertive",
+            "platonic_like"
+        ],
+        [
+            "Er, sorry, y_c. I can't chat right now ...",
+            "tm_n really needs me to sort the herb stores right now, and I kinda actually have to focus.",
+            "I'll come and find you as soon as I'm free, though, okay?"
+        ]
+    ],
+    "assertive_elder": [
+        [
+            "medicine cat",
+            "medicine cat apprentice",
+            "assertive"
+        ],
+        [
+            "Ahh! There's this new treatment I learned from this wandering healder that we've just gotta try ...",
+            "[t_c's eyes flash as they explain the method. They're always wanting to try out new and experimental herb combinations and procedures.]",
+            "[You try to entertain their crazy ideas because, more often than not, they actually end up working!]"
+        ]
+    ],
+    "assertive_elder": [
+        [
+            "medicine cat",
+            "medicine cat apprentice",
+            "assertive",
+            "platonic_like",
+            "neutral"
+        ],
+        [
+            "Eeek! The half-moon meeting is coming up! Aren't you excited?",
+            "Is it just me, or is it high time the o_cClan apprentice earns their full name? I hope their name ends in -cloud ... that would really suit them.",
+            "And the o_cClan medicine cat has been totally eyeing you at every gathering ... C'mon, don't tell me you haven't noticed!",
+            "Though, I suppose whatever she feels is between her and StarClan, teehee!"
+        ]
+    ],
+    "assertive_elder": [
+        [
+            "medicine cat",
+            "assertive",
+            "platonic_like",
+            "neutral"
+        ],
+        [
+            "Is it just me, or has r_w been coming into the medicine den an awful lot lately?",
+            "What? I'm just saying! I've seen the way they look at you!",
+            "Not like they're exactly bad looking either ... You could certainly do much worse!",
+            "Okay, okay, I'll stop now. Hehe!"
+        ]
+    ],
+    "assertive_elder": [
+        [
+            "Any",
+            "assertive",
+            "random_cat"
+        ],
+        [
+            "Did you see r_c earlier today, y_c? Oh, StarClan, it was the funniest thing ever!",
+            "They mistook a twig for a snake and flew, like, five fox-lengths into the air! Hahahaha!"
+        ]
+    ],
+    "assertive_app29": [
+        [
+            "mediator",
+            "mediator apprentice",
+            "assertive",
+            "random_cat",
+            "platonic_like",
+            "comfort",
+            "trust",
+            "from_parent",
+            "from_mate",
+            "sibling",
+            "adoptive sibling"
+        ],
+        [
+            "Tch. Did you see what a snake-heart r_c was acting like earlier? And over a piece of prey, no less!",
+            "Cat's so mouse-brained, probably can't even tell their own tail from a willow branch ...",
+            "... Whoa, what? Wait, you want me to apologize to them?",
+            "But they were in the wrong, not me! Why even entertain their behavior with an apology?",
+            "If they're mad, who cares! Let 'em stay mad! They can stay mad forever, for all I care!",
+            "Look, I know you're the mediator, and it's your job to resolve conflicts, or whatever, but ... you love me. Shouldn't you be on my side?",
+            "You'd really choose them over me?"
+        ]
+    ],
+    "assertive_app29": [
+        [
+            "mediator",
+            "mediator apprentice",
+            "assertive",
+            "random_cat"
+        ],
+        [
+            "Let me guess. You've come to patch things up between me and r_c, 'cause of the fight we had earlier. That right?",
+            "I'll save you a few words - it's not gonna happen. Why's it always me that's gotta be in the wrong, huh? Why not force them to apologize?",
+            "Go find somebody else's problem to fix."
+        ]
+    ],
+    "assertive_apprentice8": [
+        [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "queen's apprentice",
+            "platonic_like",
+            "assertive",
+            "silly",
+            "sibling",
+            "adopted_sibling"
+        ],
+        [
+            "Hey, when do you think we'll be getting our full names?",
+            "D'you think, if we ask, the leader would give us matching suffixes? That happens sometimes with siblings, y'know!",
+            "How about ... -could for me, and -sneeze for you?",
+            "Or, -mouse for me, and -dung for you!",
+            "[You and t_c dissolve into a fit of giggles.]"
+        ]
+    ],
+    "assertive_elder": [
+        [
+            "elder",
+            "assertive",
+            "cool",
+            "silly",
+            "unlawful",
+            "platonic_like",
+            "romantic_like",
+            "from_mate"
+        ],
+        [
+            "Hey, furbag. I brought you something!",
+            "[r_c lays a colorful feather at your paws.",
+            "I know this is your favorite color, and you miss exploring the territory. So I knew I just had to bring it to you.",
+            "Yeah, yeah, don't get all soft on me, hehe. Wanna grab a meal together?"
+        ]
+    ],
+    "assertivewarrior_deputy2": [
+        [
+            "deputy",
+            "leader",
+            "assertive",
+            "unlawful",
+            "brooding",
+            "unabashed",
+            "dislike"
+        ],
+        [
+            "Yeah, right. Like I have to take orders from you!",
+            "You may think you're a warrior, but all you do is sit on your haunches and boss everyone around all day. That's no warrior. That's a coward.",
+            "Go find some other cat to impose on."
+        ]
+    ],
+    "assertivemedcat_queen": [
+        [
+            "queen's apprentice",
+            "queen",
+            "assertive",
+            "cool",
+            "silly"
+        ],
+        [
+            "y_c! Just the cat I was looking for.",
+            "You'll be happy to know that I just gathered up some more borage this morning. Which, pop quiz, should help the queens with ... what?",
+            "Hehe, you got it! I should've known you'dve studied up.",
+            "If you ever need anything, don't hesitate! I'll be here in the den for ya any time."
+        ]
+    ],
+    "assertivemedcat_queen1": [
+        [
+            "queen's apprentice",
+            "queen",
+            "assertive",
+            "cool",
+            "silly"
+        ],
+        [
+            "y_c! Just the cat I was looking for.",
+            "You'll be happy to know that I just gathered up some more borage this morning. Which, pop quiz, should help the queens with ... what?",
+            "Er ... no, that's not right. Like, at all.",
+            "Hm ... maybe now'd be a good time to start your herbal training again ..."
+        ]
+    ],
+    "assertivemedcat_queen2": [
+        [
+            "queen's apprentice",
+            "queen",
+            "assertive",
+            "silly",
+            "stable"
+        ],
+        [
+            "y_c, could you possibly go out and collect some more kitting sticks sometime? I keep forgetting to.",
+            "They'll need to be thick, hearty, and strong enough to withstand the wrath of a kitting queen! And you and I both know we don't want to face that wrath ourselves, hehe.",
+            "So get out there! Probably some good ones out at the edge of the territory."
+        ]
+    ],
+    "assertivemedcat_queensapp3": [
+        [
+            "queen's apprentice",
+            "assertive",
+            "silly"
+        ],
+        [
+            "How goes it, y_c? Ready for another herb lesson?",
+            "This leafy one here's called chervil. It's pretty common around the territory, and can be used for bellyaches and infected wounds. It's useful for kitting, too - that'll be good for you to remember.",
+            "Watch out for the juice, though! It carries, er, a less than desirable scent.",
+            "Come back when you're ready for your next training session!"
+        ]
+    ],
+    "assertivemedcat_queensapp3": [
+        [
+            "queen's apprentice",
+            "assertive",
+            "silly"
+        ],
+        [
+            "How goes it, y_c? Ready for another herb lesson?",
+            "This one over here is called borage, and it helps nursing queens bring up their milk supply after they've kitted.",
+            "Hey, don't ask me how it works! I'm just the messenger.",
+            "Come back when you're ready for your next training session!"
+        ]
+    ],
+    "assertivemedcat_queensapp4": [
+        [
+            "queen's apprentice",
+            "assertive",
+            "silly"
+        ],
+        [
+            "How goes it, y_c? Ready for another herb lesson?",
+            "These spiky leaves over here are raspberry leaves. They help ease a queen's pain while she's kitting.",
+            "And, trust me, when you're bringing a new life into the world, you'll need all the help you can get! Hehehe!",
+            "Come back when you're ready for your next training session!"
+        ]
+    ],
+    "assertive_tokit": [
+        [
+            "kitten",
+            "platonic_like",
+            "assertive"
+        ],
+        [
+            "Hey, y_c! I brought you back something from my last patrol. Take a look!",
+            "[t_c drops a colorful feather at your paws.]",
+            "You wanna know how I found it? Oh, it's a crazy story. I was on an herb gathering patrol, when I found this huge bird, and ...",
+            "[t_c regales you with a daring story full of thrills, twists, and turns.]",
+            "... And then I got the feather! Quite the adventure, no?",
+            "Just wait until you're old enough. You'll be having plenty of adventures of your own before you know it!"
+        ]
+    ],
+    "assertive_medapp": [
+        [
+            "Any",
+            "assertive",
+            "silly",
+            "neurotic",
+            "sweet",
+            "stable"
+        ],
+        [
+            "Tansy, chervil ...",
+            "StarClan, these herbs are hard to memorize! I don't know how my mentor does it all!",
+            "No way am I passing my assessment tomorrow ..."
+        ]
+    ],
+    "assertivemedapp_tokit": [
+        [
+            "kitten",
+            "neutral",
+            "non-related",
+            "assertive",
+            "silly",
+            "stable"
+        ],
+        [
+            "Whoa! Watch it, little guy, or you'll trample my whole herb supply!",
+            "Hehe, no worries. Say, maybe this is a sign from StarClan. You're destined to be in the medicine den!",
+            "Or, maybe you're just clumsy, heh ... whatever the case, you might have a future as a medicine cat! It's definitely a unique and important path.",
+            "Just think about it, okay?"
+        ]
+    ],
+    "assertivemedapp_2": [
+        [
+            "Any",
+            "platonic_like",
+            "assertive",
+            "silly",
+            "unlawful",
+            "sibling",
+            "adopted_sibling",
+            "half sibling"
+        ],
+        [
+            "Ah, StarClan ... I totally tripped and fell into the wild garlic supply today.",
+            "Do I stink? Be honest.",
+            "[You tell t_c that their stench is probably strong enough to stir the dead from their graves.]",
+            "Oh, really? Well, in that case ...",
+            "[t_c presses their pelt into yours, laughing like a maniac. You shriek and run away, but they quickly pursue, giving chase all around camp.]",
+            "Come back, y_c!!! I just want to share tongues! Hahaha!"
+        ]
+    ],
+    "assertivemedapp_3": [
+        [
+            "kit",
+            "apprentice",
+            "warrior",
+            "elder",
+            "deputy",
+            "leader",
+            "mediator",
+            "mediator apprentice",
+            "queen",
+            "queen's apprentice",
+            "assertive"
+        ],
+        [
+            "[You ask t_c why they chose to become a medicine cat, given their adventurous personality.]",
+            "Ah, well, that's easy ... The medicine den is full of adventure!",
+            "I get to explore far and wide gathering all sorts of different herbs, collaborate with medicine cats across territories, and literally commune with the dead! That's plenty of excitement, no?",
+            "You might think you know life-or-death situations on the battlefield, but here in the medicine den is where the stakes are really high. My decisions could be the difference between a clanmate surviving, or joining our warrior ancestors. It's terrifying ... but thrilling, too!",
+            "There's lots of different paths a cat can take in this world, but I know this is the path for me. Can you say the same?"
+        ]
+    ],
+    "assertivemedapp_4": [
+        [
+            "Any",
+            "assertive",
+            "romantic_like"
+        ],
+        [
+            "*Shudder* I gotta get out of this den, y_c. Come gather herbs with me later?",
+            "Sweet! It's a date! Hehe!",
+            "[r_c's eyes flash a little too intently for it to just be a joke.]"
+        ]
+    ],
+    "assertivemedapp_5": [
+        [
+            "Any",
+            "assertive",
+            "injured",
+            "ill"
+        ],
+        [
+            "Don't worry, pal. I'll get you patched up in no time ..."
+        ]
+    ],
+    "assertivemedapp_6": [
+        [
+            "Any",
+            "assertive",
+            "silly",
+            "cool",
+            "injured",
+            "ill"
+        ],
+        [
+            "Heyy, there's my favorite patient! Doing better today, pal?",
+            "That's good. Hey, get this. Today, when I was gathering herbs, I saw this huge hawk ...",
+            "[t_c's silly jokes and good nature put you at ease, but their lashing tail betrays that they may be more stressed than they let on ...]"
+        ]
+    ],
+    "assertivemedapp_7": [
+        [
+            "Any",
+            "assertive",
+            "sibling",
+            "half sibling",
+            "adopted_sibling",
+            "platonic_like"
+        ],
+        [
+            "Hey. Bet I could beat ya in a fight!",
+            "Sure, I have no formal training, but once I let my inner demons out ...",
+            "[t_c does an exaggerated growl and you both explode with laughter.]",
+            "Y-You're lucky I'm a lover, not a fighter! *Wheeze*"
+        ]
+    ],
+    "assertivemedapp_8": [
+        [
+            "Any",
+            "assertive",
+            "introspective",
+            "unabashed",
+            "brooding",
+            "romantic_like"
+        ],
+        [
+            "Hm? This herb? Oh, it's lavender.",
+            "Its soothing scent is used to mask the smell of death ... kinda nice, huh?",
+            "You kinda smell like lavender sometimes, y_c. Has anyone ever told you that?",
+            "Well ... now you know, I guess. Heh.",
+            "[t_c grins shyly.]"
+        ]
+    ],
+    "assertivemedapp_9": [
+        [
+            "Any",
+            "assertive",
+            "neurotic",
+            "upstanding",
+            "sweet",
+            "introspective",
+            "stable",
+            "silly",
+            "dead_close",
+            "platonic_like",
+            "trust",
+            "comfort"
+        ],
+        [
+            "I ... I couldn't save d_c ...",
+            "Maybe if I'd just been a little faster, or used a different combination of herbs, then ...",
+            "Is it too late to switch to a warrior apprentice? I ... I don't know if I'm fit to be a medicine cat.",
+            "Not anymore."
+        ]
+    ],
+    "assertivemedapp_10": [
+        [
+            "Any",
+            "assertive",
+            "injured",
+            "ill"
+        ],
+        [
+            "Hey, there you are! What do you need today? Something to cure your ills? I got everything you need, hehe ...",
+            "[t_c is still cracking jokes, but their voice is strained, clearly tainted with the memory of d_c ... They don't seem to be taking the loss well.]"
+        ]
+    ],
+    "assertivemedapp_11": [
+        [
+            "Any",
+            "assertive",
+            "your apprentice"
+        ],
+        [
+            "Hello ...? StarClan ...?",
+            "Ugh. Why can't I hear them, y_c? It's not fair!",
+            "I haven't received any omens or dreams in ages! When's it finally gonna happen? Has StarClan given up on me?",
+            "[You do your best to assure t_c that it will happen in time. They huff and lash their tail irritability. It seems 'patient' isn't exactly their style.]"
+        ]
+    ],
+    "assertivemedapp_12": [
+        [
+            "Any",
+            "assertive",
+            "silly",
+            "neurotic",
+            "introspective",
+            "upstanding",
+            "stable",
+            "your apprentice",
+            "dead_close"
+        ],
+        [
+            "y_c?",
+            "d_c isn't really gone, right? We - We can still save them?",
+            "We can still save them, right, y_c? Just - Just let me save them. Please. If you'll just let me, I - I can - Oh, StarClan -",
+            "[t_c breaks, completely inconsolable. Their sobs ... you never knew a sound so empty and heartbreaking could come from a cat so young. You press them into your shoulder, hoping to guide them through the heartbreak of losing a patient, a heartbreak you've felt yourself too many times.]"
+        ]
+    ],
+    "assertivemedapp_13": [
+        [
+            "medicine cat",
+            "assertive",
+            "your apprentice"
+        ],
+        [
+            "Okay, so horsetail is for infections, and so is comfrey ... wait. Um ... is that right?",
+            "Ugh, I'm never gonna get this! It's one leaf versus another leaf, how am I supposed to tell them apart?!",
+            "[t_c storms out of the medicine den, obviously frustrated. You really need to talk to them about their temper ...]"
+        ]
+    ],
+    "assertivemedapp_13": [
+        [
+            "medicine cat",
+            "assertive",
+            "your apprentice"
+        ],
+        [
+            "Hey, y_c! What are we doing today?",
+            "Learning how to staunch wounds? Ahh, that's so cool!!! *Ahem* Sorry. I mean, not cool. I mean, very serious.",
+            "Um, when can we get started?"
+        ]
+    ],
+    "assertivemedapp_13": [
+        [
+            "medicine cat",
+            "assertive",
+            "your apprentice"
+        ],
+        [
+            "y_c! y_c!!!",
+            "Look ath thith huuuuge patch oth comfthy I got!",
+            "[t_c spits out their wad of comfrey. It seems, in their excitement, they accidentally bit through some of the leaves and destroyed them.]",
+            "Uh, hehe ...",
+            "Lesson learned. Don't talk with herbs in the mouth."
         ]
     ]
 }

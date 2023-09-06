@@ -3962,11 +3962,11 @@ class TalkScreen(Screens):
                 ts = you_skill_list
                 for j in range(len(ts)):
                     ts[j] = ts[j][3:]
-                if (you.skill.primary.path not in ts) or (you.skill.secondary.path not in ts):
+                if (you.skills.primary.path not in ts) or (you.skills.secondary.path not in ts):
                     continue
             if any(i in skill_list for i in tags):
                 ts = you_skill_list
-                if (cat.skill.primary.path not in ts) or (cat.skill.secondary.path not in ts):
+                if (cat.skills.primary.path not in ts) or (cat.skills.secondary.path not in ts):
                     continue
                 
             # Season tags
@@ -4017,10 +4017,13 @@ class TalkScreen(Screens):
                 if cat.ID not in you.inheritance.get_blood_kits():
                     continue
             if "from_adopted_kit" in tags:
-                if cat.ID not in you.inheritance.not_blood_kits():
+                if cat.ID not in you.inheritance.get_not_blood_kits():
                     continue
             if "sibling" in tags:
                 if cat.ID not in you.inheritance.get_siblings():
+                    continue
+            if "half sibling" in tags:
+                if (cat.parent1 == you.parent1 and cat.parent2 == you.parent2) or (cat.parent1 != you.parent1 and cat.parent2 != you.parent2):
                     continue
             if "adopted_sibling" in tags:
                 if cat.ID not in you.inheritance.get_no_blood_siblings():
@@ -4035,12 +4038,25 @@ class TalkScreen(Screens):
                 if cat.ID not in you.inheritance.get_siblings_mates():
                     continue
             if "non-related" in tags:
-                if cat.ID not in you.inheritance.get_blood_relatives():
+                if cat.ID in you.inheritance.all_inheritances:
                     continue
                 
             # If you have murdered someone and have been revealed
-            if ("murder" in talk[0] and you.revealed and you.history and "is_murderer" in you.history.murder and (len(you.history.murder["is_murderer"]) == 0 or ('accomplices' in game.switches and cat.ID in game.switches['accomplices']))):
-                continue
+            if "murder" in talk[0]:
+                if game.clan.your_cat.revealed:
+                    if game.clan.your_cat.history:
+                        if "is_murderer" in game.clan.your_cat.history.murder:
+                            if len(game.clan.your_cat.history.murder["is_murderer"]) == 0:
+                                continue
+                            elif 'accomplices' in game.switches:
+                                if cat.ID in game.switches['accomplices']:
+                                    continue
+                        else:
+                            continue
+                    else:
+                        continue
+                else:
+                    continue
             
             if "war" in tags:
                 if game.clan.war.get("at_war", False):
@@ -4100,7 +4116,7 @@ class TalkScreen(Screens):
             with open(f"{resource_dir}general.json", 'r') as read_file:
                 possible_texts = ujson.loads(read_file.read())
             texts_list.append(possible_texts['general'][1])
-    
+
         text = choice(texts_list)
         text = [t1.replace("c_n", game.clan.name) for t1 in text]
         text = [t1.replace("y_c", str(you.name)) for t1 in text]

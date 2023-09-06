@@ -99,17 +99,6 @@
             "I'll make sure to do something amazing. Then the elders will tell stories about me!"
         ]
     ],
-    "kit_17": [
-        [
-            "Any"
-        ],
-        [
-            "Have you ever tried climbing trees? It's so much fun!",
-            "I like to pretend I'm a bird, looking at the world from up high.",
-            "Of course, it's a little scary. But that's what makes it exciting!",
-            "Maybe when I'm a warrior, I'll sleep in a tree. Then I could watch the stars all night!"
-        ]
-    ],
     "kit_18": [
         [
             "Any"
@@ -118,8 +107,7 @@
             "Do you know how to swim? I heard some other cats do it all the time!",
             "I tried it once in a puddle. It was... um... a little wet.",
             "But I bet it's fun when you get the hang of it. Like being a fish!",
-            "Maybe I could learn to swim properly when I'm a warrior. I'd be the first cat who can swim super fast!",
-            "Just imagine! Swimming up to a Gathering. Everyone would be so surprised!"
+            "Maybe I could learn to swim properly when I'm a warrior. I'd be the first cat who can swim super fast."
         ]
     ],
     "kit_183": [
@@ -542,6 +530,7 @@
     "assertivekit_19": [
         [
             "kitten",
+            "assertive",
             "queen",
             "queen's apprentice"
         ],
