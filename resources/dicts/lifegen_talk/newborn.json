@@ -1,4 +1,3 @@
-
 {
     "newborn_1": [
         [
@@ -50,10 +49,41 @@
     ],
     "newborn_7": [
         [
-            "Any", "insult"
+            "Any",
+            "insult"
         ],
         [
             "Grr..."
+        ]
+    ],
+    "assertive_newborn1": [
+        [
+            "Any",
+            "assertive"
+        ],
+        [
+            "Mroww...",
+            "[t_c seems to already be trying to squirm their way out of the nest!]"
+        ]
+    ],
+    "assertive_newborn2": [
+        [
+            "Any",
+            "assertive"
+        ],
+        [
+            "Meowmeowmeowmeowmeow!",
+            "[t_c is the loudest kitten in the nursery!]"
+        ]
+    ],
+    "assertive_newborn3": [
+        [
+            "Any",
+            "assertive"
+        ],
+        [
+            "Prrr...",
+            "[t_c noses their siblings out of the way to nurse.]"
         ]
     ]
 }
