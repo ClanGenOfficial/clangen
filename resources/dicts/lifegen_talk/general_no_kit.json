@@ -762,7 +762,8 @@
             "assertive",
             "sweet",
             "stable",
-            "they_grieving"
+            "they_grieving",
+            "dead_close"
         ],
         [
             "... I can't believe d_c is really gone ...",
@@ -785,7 +786,8 @@
             "silly",
             "unlawful",
             "introspective",
-            "they_grieving"
+            "they_grieving",
+            "dead_close"
         ],
         [
             "It's clear out tonight ... lotta stars up there, huh?",
@@ -804,7 +806,8 @@
             "from_parent",
             "assertive",
             "silly",
-            "they_grieving"
+            "they_grieving",
+            "dead_close"
         ],
         [
             "Uh ... hey, y_c ... How's it going ...",
@@ -913,7 +916,8 @@
             "kitten",
             "assertive",
             "cool",
-            "brooding"
+            "brooding",
+            "dead_close"
         ],
         [
             "[When you ask t_c what happened to d_c, and if you'll ever see them again, something on their face breaks.]",
@@ -931,7 +935,8 @@
             "stable",
             "upstanding",
             "neutral",
-            "you_grieving"
+            "you_grieving",
+            "dead_close"
         ],
         [
             "Hey, uh ... I'll say an extra prayer for d_c tonight.",
@@ -945,7 +950,8 @@
             "assertive",
             "unabashed",
             "stable",
-            "you_grieving"
+            "you_grieving",
+            "dead_close"
         ],
         [
             "I'm so sorry for your loss, y_c ...",
@@ -958,7 +964,8 @@
             "assertive",
             "upstanding",
             "neutral",
-            "you_grieving"
+            "you_grieving",
+            "dead_close"
         ],
         [
             "You and d_c were close, right? Man, it's so terrible ...",
@@ -1002,12 +1009,13 @@
             "Any",
             "assertive",
             "you_grieving",
-            "platonic_like"
+            "platonic_like",
+            "dead_close"
         ],
         [
             "It wasn't your fault, y_c. You know that, don't you?",
             "Dwelling on it won't make it any better.",
-            "No matter how hard you try, your guild won't bring d_c back. They wouldn't want this to keep you from living."
+            "No matter how hard you try, your guilt won't bring d_c back. They wouldn't want this to keep you from living."
         ]
     ],
     "assertive_insult": [

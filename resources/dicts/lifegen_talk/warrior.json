@@ -642,7 +642,8 @@
             "no_kit",
             "assertive",
             "comfort",
-            "random_cat"
+            "random_cat",
+            "no_kit"
         ],
         [
             "Huh? Oh, nothing's wrong ...",
@@ -659,7 +660,8 @@
         [
             "Any",
             "assertive",
-            "comfort"
+            "comfort",
+            "no_kit"
         ],
         [
             "Huh? Oh, nothing's wrong ...",
@@ -676,7 +678,8 @@
         [
             "Any",
             "assertive",
-            "comfort"
+            "comfort",
+            "no_kit"
         ],
         [
             "Huh? Oh, nothing's wrong ...",
@@ -766,7 +769,8 @@
             "platonic_like",
             "sweet",
             "introspective",
-            "neurotic"
+            "neurotic",
+            "no_kit"
         ],
         [
             "Oh, hey, y_c ... Can I talk to you about something?",

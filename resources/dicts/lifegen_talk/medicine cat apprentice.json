@@ -777,7 +777,8 @@
             "dead_close",
             "platonic_like",
             "trust",
-            "comfort"
+            "comfort",
+            "dead_close"
         ],
         [
             "I ... I couldn't save d_c ...",
@@ -791,7 +792,8 @@
             "Any",
             "assertive",
             "you_injured",
-            "you_ill"
+            "you_ill",
+            "dead_close"
         ],
         [
             "Hey, there you are! What do you need today? Something to cure your ills? I got everything you need, hehe ...",

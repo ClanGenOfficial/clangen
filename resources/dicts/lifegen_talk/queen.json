@@ -1039,7 +1039,8 @@
             "no_kit",
             "assertive",
             "comfort",
-            "random_cat"
+            "random_cat",
+            "no_kit"
         ],
         [
             "Huh? Oh, nothing's wrong ...",
@@ -1056,7 +1057,8 @@
         [
             "Any",
             "assertive",
-            "comfort"
+            "comfort",
+            "no_kit"
         ],
         [
             "Huh? Oh, nothing's wrong ...",
@@ -1073,7 +1075,8 @@
         [
             "Any",
             "assertive",
-            "comfort"
+            "comfort",
+            "no_kit"
         ],
         [
             "Huh? Oh, nothing's wrong ...",

@@ -777,5 +777,13 @@
             "Aw, c'mon, don't look all nervous. It'll be fun! What's life without a little danger, right?",
             "Ready? Let's go!"
         ]
+    ],
+    "queens_app_general_newborn": [
+        [
+            "newborn"
+        ],
+        [
+            "Hi there, sweet kit. You're so precious."
+        ]
     ]
 }

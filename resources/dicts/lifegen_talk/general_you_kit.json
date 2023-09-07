@@ -4,7 +4,8 @@
             "newborn",
             "sweet",
             "stable",
-            "introspective"
+            "introspective",
+            "brooding"
         ],
         [
             "Rest now, little one. Dream of the great warrior you'll become one day."
@@ -25,6 +26,7 @@
     ],
     "you_kitten_3": [
         [
+            "kitten",
             "unabashed",
             "silly",
             "unlawful",
@@ -38,6 +40,7 @@
     ],
     "you_kitten_4": [
         [
+            "kitten",
             "stable",
             "upstanding"
         ],
@@ -47,6 +50,7 @@
     ],
     "you_kitten_5": [
         [
+            "kitten",
             "neurotic",
             "stable",
             "sweet",
@@ -58,6 +62,7 @@
     ],
     "you_kitten_6": [
         [
+            "kitten",
             "neurotic",
             "stable",
             "sweet",
@@ -67,5 +72,110 @@
             "Stay close to your mentor, once you're an apprentice.",
             "c_nClan's territory spans thousands of tail-lengths. It's easy to get lost if you wander too far."
         ]
+    ],
+    "you_newborn": [
+        [
+            "newborn",
+            "from_parent",
+            "adopted_parent"
+        ],
+        [
+            "Oh, my precious kit.",
+            "I love you so much."
+        ]
+    ],
+    "you_newborn2": [
+        [
+            "newborn",
+            "silly",
+            "random_cat"
+        ],
+        [
+            "Peek-a-boo!",
+            "Oh! Oh! Look, r_c. y_c is purring!"
+        ]
+    ],
+    "you_kitten_7": [
+        [
+            "kitten",
+            "cool",
+            "unabashed",
+            "unlawful"
+        ],
+        [
+            "Hey there, little y_c. You've got quite the spark in those eyes.",
+            "You remind me of me when I was your age. Destined for greatness, I can tell."
+        ]
+    ],
+    "you_kitten_8": [
+        [
+            "kitten",
+            "brooding",
+            "unlawful"
+        ],
+        [
+            "The forest hides many secrets, y_c.",
+            "You might think it's all fun and games now, but there's a darkness out there.",
+            "Just... be careful. Not everything is as it seems."
+        ]
+    ],
+    "you_kitten_9": [
+        [
+            "kitten",
+            "silly",
+            "unabashed"
+        ],
+        [
+            "Wanna see me sneak past the elder's den without them noticing?",
+            "It's all in the paws, watch and learn!",
+            "Haha, did you see that? They didn't even blink!"
+        ]
+    ],
+    "you_kitten_10": [
+        [
+            "kitten",
+            "introspective"
+        ],
+        [
+            "The stars seem so distant, yet I feel like our ancestors are right here, watching over us.",
+            "Do you ever wonder, y_c, about our purpose in this vast clan?",
+            "Ah... you're too young to be thinking of this."
+        ]
+    ],
+    "you_kitten_11": [
+        [
+            "kitten",
+            "neurotic",
+            "unlawful"
+        ],
+        [
+            "Rules are there for a reason, y_c.",
+            "But sometimes, I can't help but wonder if they're truly for our own good.",
+            "Still, we must respect them. That's what being a part of c_nClan means."
+        ]
+    ],
+    "you_kitten_12": [
+        [
+            "kitten",
+            "unabashed",
+            "cool",
+            "stable"
+        ],
+        [
+            "You worried about your first hunt, y_c?",
+            "Ah, don't sweat it. Just be yourself and trust your instincts.",
+            "Remember, every cat started somewhere. You got this."
+        ]
+    ],
+    "you_kitten_13": [
+        [
+            "kitten",
+            "silly"
+        ],
+        [
+            "Hey y_c, bet I can catch that butterfly before you!",
+            "Ready... set... go!"
+        ]
     ]
+    
 }

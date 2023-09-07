@@ -4080,6 +4080,9 @@ class TalkScreen(Screens):
                     continue
                 elif not Cat.all_cats.get(you.parent1).dead or Cat.all_cats.get(you.parent1).outside:
                     continue
+                
+                dead_cat = str(Cat.all_cats.get(game.clan.starclan_cats[-1]).name)
+                text = [t1.replace("d_c", dead_cat) for t1 in talk[1]]
             
             # Relationship conditions
             if you.ID in cat.relationships:
