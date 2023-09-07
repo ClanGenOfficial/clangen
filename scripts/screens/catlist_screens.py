@@ -1697,7 +1697,8 @@ class AllegiancesScreen(Screens):
                 all_entries.append(self.generate_one_entry(queen, kittens))
 
             for k in living_queens:
-                all_entries.append(f"{str(k.name).upper()} - {k.describe_cat(short=True)}")
+                if k.ID not in queen_dict.keys():
+                    all_entries.append(self.generate_one_entry(k))
             #Now kittens without carers
             for k in living_kits:
                 all_entries.append(f"{str(k.name).upper()} - {k.describe_cat(short=True)}")
