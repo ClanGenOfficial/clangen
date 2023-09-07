@@ -47,7 +47,7 @@
         ],
         [
             "AH-CHOO!",
-            "What? Allergies? Please, y_c. I'm a fearsome warrior of c_n, I'm made of tougher stuff than thah ... AH ...",
+            "What? Allergies? Please, y_c. I'm a fearsome warrior of c_nClan, I'm made of tougher stuff than thah ... AH ...",
             "AH-CHOO!"
         ]
     ],
@@ -73,7 +73,7 @@
         [
             "Hey, mouse-brain. I saved your favorite piece of prey for you.",
             "Yeah yeah, go on, shower me with praise! I already know you think I'm sooo great.",
-            "[You and r_c laugh as you cross camp to share a meal together.]"
+            "[You and t_c laugh as you cross camp to share a meal together.]"
         ]
     ],
     "assertive_mate1": [
@@ -105,7 +105,7 @@
             "*Sigh*. C'mere, y_c. I can tell you've been having a hard day.",
             "[t_c sits down beside you and presses their pelt into yours.]",
             "I don't know what's been getting you down, but just know that, to me, you're the strongest cat in this clan by a long shot. And if any cat's been bothering you, just tell me and I'll send 'em straight to the Dark Forest!",
-            "[r_c licks your ear reassuringly, and sits with you until all the anxiety you felt is completely gone.]"
+            "[t_c licks your ear reassuringly, and sits with you until all the anxiety you felt is completely gone.]"
         ]
     ],
     "assertive_mate3": [
@@ -118,7 +118,7 @@
         [
             "I love you, y_c.",
             "StarClan, that feels good to say ... what if I said it louder?",
-            "I LOVE YOU, M_C!!!!!",
+            "I LOVE YOU, Y_C!!!!!",
             "What, am I embarrassing you, or something? Hahaha!"
         ]
     ],
