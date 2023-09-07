@@ -3945,10 +3945,10 @@ class TalkScreen(Screens):
                 ts = you_trait_list
                 for j in range(len(ts)):
                     ts[j] = ts[j][3:]
-                if you.trait not in ts:
+                if you.personality.trait not in ts:
                     continue
             if any(i in their_trait_list for i in tags):
-                if cat.trait not in tags:
+                if cat.personality.trait not in tags:
                     continue
                 
             # Backstory tags
@@ -4132,7 +4132,7 @@ class TalkScreen(Screens):
          
         other_clan = choice(game.clan.all_clans)
         if other_clan:
-            text = [t1.replace("o_n", str(other_clan.name)) for t1 in text]
+            text = [t1.replace("o_c", str(other_clan.name)) for t1 in text]
         lead = game.clan.leader.name
         text = [t1.replace("l_n", str(lead)) for t1 in text]
         dep = game.clan.deputy.name

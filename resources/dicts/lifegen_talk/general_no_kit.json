@@ -1252,7 +1252,7 @@
             "Good morning, y_c. How are you today?",
             "Did you hear that rain on the den roof last night?",
             "It was really loud, it sounded like hundreds of tiny paws slamming on the roof up there.",
-            "I wonder if starclan came to visit us, in the form of the rain?"
+            "I wonder if StarClan came to visit us, in the form of the rain?"
         ]
     ],
     "introspective_6": [
@@ -1934,6 +1934,246 @@
             "No, I just don't want anyone overhearing. I don't want to be bothered by them asking me to sing more.",
             "Why did I start humming when you were in earshot then? Well, I know you. I know that you respect my boundaries, and won't force me to do something I'm comfortable with.",
             "So you get to hear me sing. On occasion. If you're listening out for it."
+        ]
+    ],
+    "cool_1": [
+        [
+            "Any",
+            "cool",
+            "unabashed",
+            "silly"
+        ],
+        [
+            "Wow, wow, wow!",
+            "Ever look at yourself in a puddle, y_c?",
+            "I haven't seen my reflection in a while... and I just wanna say... I look GOOD!"
+        ]
+    ],
+    "cool_2": [
+        [
+            "Any",
+            "cool",
+            "introspective"
+        ],
+        [
+            "Ya know... I wish there was a new type of patrol.",
+            "I know there's hunting... border... herb gathering...",
+            "But wouldn't it be cool if we were able to explore the area outside of the Clan territories?",
+            "Like, I would be so down to just... wander!",
+            "What if there was territory that had so much more prey! Or super cool new healing herbs?",
+            "I guess we won't know."
+        ]
+    ],
+    "cool_3": [
+        [
+            "Any",
+            "cool",
+            "silly",
+            "unabashed"
+        ],
+        [
+            "The other day, by the Twolegplace, I saw a Twoleg BURNING their prey!",
+            "They straight up tossed it into a fire!",
+            "Horrible, right? I'll never understand them."
+        ]
+    ],
+    "cool_4": [
+        [
+            "Any",
+            "cool"
+        ],
+        [
+            "[t_c hums a catchy tune.]",
+            "Oh, hey y_c! I was coming up with a song.",
+            "Wanna hear it?",
+            "No? Oh come on!"
+        ]
+    ],
+    "cool_5": [
+        [
+            "Any",
+            "cool",
+            "introspective"
+        ],
+        [
+            "Think there are other Clans out there?",
+            "Like way far away. Not the Clans that we know.",
+            "Maybe there's even some Clans on the sun! Or the moon!"
+        ]
+    ],
+    "brooding_1": [
+        [
+            "Any",
+            "brooding"
+        ],
+        [
+            "Hmph... Do you need something?",
+            "Or are you just going to stand there gawking like a lost kit?"
+        ]
+    ],
+    "upstanding_1": [
+        [
+            "Any",
+            "upstanding"
+        ],
+        [
+            "StarClan... I just can't sleep.",
+            "My mind's telling me to keep working!",
+            "Ever feel this way, y_c?"
+        ]
+    ],
+    "neurotic_1": [
+        [
+            "Any",
+            "neurotic"
+        ],
+        [
+            "Oh. Hello, y_c.",
+            "Um, do you need something from me?"
+        ]
+    ],
+    "neurotic_2": [
+        [
+            "Any",
+            "neurotic"
+        ],
+        [
+            "Hi, y_c. I thought I heard someone talking about me earlier.",
+            "Was it you? Did I do something wrong?"
+        ]
+    ],
+    "neurotic_3": [
+        [
+            "Any",
+            "neurotic"
+        ],
+        [
+            "I keep reliving that moment when I made a fool of myself at last Gathering!",
+            "Do you think the other Clans are still laughing at me?",
+            "[You reassure t_c that no one probably remembers.]",
+            "Oh you think so? I guess that's a little reassuring."
+        ]
+    ],
+    "silly_1": [
+        [
+            "Any",
+            "silly"
+        ],
+        [
+            "y_c! y_c! Ever try balancing a pinecone on your nose?",
+            "Watch the master at work.",
+            "[t_c takes a pinecone, leaning left and right to make sure it stays on their nose without falling.",
+            "Now you try!"
+        ]
+    ],
+    "silly_2": [
+        [
+            "Any",
+            "silly"
+        ],
+        [
+            "y_c! y_c! Ever try balancing a pinecone on your nose?",
+            "Watch the master at work.",
+            "[t_c takes a pinecone, leaning left and right to make sure it stays on their nose without falling.",
+            "Now you try!"
+        ]
+    ],
+    "silly_3": [
+        [
+            "Any",
+            "silly"
+        ],
+        [
+            "Bet I can make you laugh without even saying a word. Ready?",
+            "[t_c makes a funny face and falls over dramatically.]",
+            "Not laughing? Hah, tough crowd."
+        ]
+    ],
+    "silly_4": [
+        [
+            "Any",
+            "silly"
+        ],
+        [
+            "Shh... I'm sneaking up on a leaf.",
+            "[t_c crouches, stepping lightly in the direction of a fallen leaf.]",
+            "It hasn't spotted me yet, hehe."
+        ]
+    ],
+    "stable_1": [
+        [
+            "Any",
+            "stable"
+        ],
+        [
+            "Morning, y_c.",
+            "Ready for the day's task?",
+            "Let's tackle them together."
+        ]
+    ],
+    "stable_2": [
+        [
+            "Any",
+            "stable"
+        ],
+        [
+            "Don't fret about the Gathering tomorrow.",
+            "We'll represent our Clan well, just like we always do."
+        ]
+    ],
+    "stable_3": [
+        [
+            "Any",
+            "stable",
+            "from_mate"
+        ],
+        [
+            "Take things one step at a time, y_c.",
+            "I've got your back, no matter what."
+        ]
+    ],
+    "sweet_1": [
+        [
+            "Any",
+            "sweet"
+        ],
+        [
+            "Oh, y_c, I noticed you seemed a bit tired.",
+            "Do you want some of my fresh-kill? It might help."
+        ]
+    ],
+    "sweet_2": [
+        [
+            "Any",
+            "sweet"
+        ],
+        [
+            "I made a super soft moss bed for the elders den.",
+            "I hope it helps them rest easier.",
+            "I gathered some down from the bird I ate earlier, and moss from the farther parts of the territory.",
+            "Want to help me make more?"
+        ]
+    ],
+    "sweet_3": [
+        [
+            "queen",
+            "queen's apprentice",
+            "sweet"
+        ],
+        [
+            "I've been keeping an eye on the kits lately, y_c. They really look up to you, you know.",
+            "You're making a positive impact."
+        ]
+    ],
+    "sweet_4": [
+        [
+            "Any",
+            "sweet"
+        ],
+        [
+            "Whenever you're feeling overwhelmed, find me.",
+            "We can sit under the stars and watch Silverpelt.",
+            "I always find it helps. It's calming, knowing all of our ancestors are watching over us."
         ]
     ]
 }

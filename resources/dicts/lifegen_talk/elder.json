@@ -929,10 +929,11 @@
     "assertive_elder_5": [
         [
             "Any",
-            "assertive"
+            "assertive",
+            "silly"
         ],
         [
-            "I saw d_w show off a belly rake to some apprentices earlier. Took me back to my glory days!",
+            "I saw d_n show off a belly rake to some apprentices earlier. Took me back to my glory days!",
             "I wonder if I could still ...",
             "[With a grunt and a whole load of popping joints, t_c rears performs a creaky, but still stunningly precise belly rake. They plop back into their nest, panting with exertion.]",
             "Still got it! Hehehe!"
