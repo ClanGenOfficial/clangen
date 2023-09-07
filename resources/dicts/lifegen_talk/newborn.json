@@ -159,5 +159,23 @@
             "[A newborn kitten yells at you from the nursery, you walk over and flick your tail over their face]",
             "Meow!"
         ]
+    ],
+    "sweet_newborn_1": [
+        [
+            "Any",
+            "sweet"
+        ],
+        [
+            "[t_c seems to cuddle closer to you, purring]"
+        ]
+    ],
+    "sweet_newborn_2": [
+        [
+            "Any",
+            "sweet"
+        ],
+        [
+            "[t_c seems to reach their tiny little paw up, placing it on your nose with what you could swear is an itty bitty smile]"
+        ]
     ]
 }

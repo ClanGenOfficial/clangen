@@ -545,8 +545,10 @@
             "stable",
             "kitten",
             "from_adopted_kit",
+"from_kit",
             "sibling",
             "adopted_sibling",
+            "from_kit",
             "half sibling",
             "from_parent"
         ],

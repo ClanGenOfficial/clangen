@@ -640,7 +640,8 @@
         [
             "Any",
             "kitten",
-            "from_adopted_kit"
+            "from_adopted_kit",
+            "from_kit"
         ],
         [
             "[You spot t_c talking with the elders across camp, their little eyes shining with excitement.]",
@@ -652,7 +653,8 @@
             "Any",
             "kitten",
             "assertive",
-            "from_adopted_kit"
+            "from_adopted_kit",
+            "from_kit"
         ],
         [
             "y_c, when I'm a warrior, you'll never have to worry again!",
@@ -669,7 +671,8 @@
             "unlawful",
             "sweet",
             "platonic_like",
-            "from_adopted_kit"
+            "from_adopted_kit",
+            "from_kit"
         ],
         [
             "y_c!!!!",
@@ -686,7 +689,8 @@
             "unlawful",
             "sweet",
             "platonic_like",
-            "from_adopted_kit"
+            "from_adopted_kit",
+            "from_kit"
         ],
         [
             "y_c! y_c! I had the most funnest day ever today!",
@@ -702,7 +706,8 @@
             "silly",
             "unlawful",
             "platonic_like",
-            "from_adopted_kit"
+            "from_adopted_kit",
+            "from_kit"
         ],
         [
             "[t_c stumbles across camp to you, soaking wet and covered in mud.]",
@@ -720,6 +725,7 @@
             "upstanding",
             "platonic_like",
             "from_adopted_kit",
+            "from_kit",
             "random_cat"
         ],
         [
@@ -738,6 +744,7 @@
             "upstanding",
             "platonic_like",
             "from_adopted_kit",
+            "from_kit",
             "random_cat"
         ],
         [
@@ -842,6 +849,318 @@
         [
             "Please, y_c, leave me alone.",
             "As far as I'm concerned, I'm on my own. I don't need you."
+        ]
+    ],
+    "sweet_kit_1": [
+        [
+            "Any",
+            "sweet",
+            "random_cat"
+        ],
+        [
+            "y_c!! Hiii!! I have a question for you, if you don't mind answering?",
+            "I worked really hard and weaved flowers into r_c's nest, but I'm worried they won't like it! I don't wanna make them sad...",
+            "Can you take a look at it?? I don't mind undoing it all if it makes them happier!"
+        ]
+    ],
+    "sweet_kit_2": [
+        [
+            "Any",
+            "sweet",
+            "random_cat"
+        ],
+        [
+            "-They don't seem to notice you at first, sniffling quietly-",
+            "O-Oh! y_c! Um... I didn't want you to see me like this..",
+            "I'm sorry- I just... r_c stepped on a poor little bug, and I feel so bad for it!! And then I burst out into tears in front of everyone and now I'm super embarrassed..",
+            "I hope they apologize to the poor little guy."
+        ]
+    ],
+    "sweet_kit_3": [
+        [
+            "Any",
+            "sweet"
+        ],
+        [
+            "Hey y_c! Can I tell you a story?",
+            "I promise you'll like it! I heard it and I just knew I had to tell you too!!",
+            "One day, there was this super big mama deer. The mama deer protected her babies from wolves and bears and even snakes!! Cause she loved her babies!! And then they all made it to a huge field of flowers and were super duper happy!",
+            "Hehe, do you like it?"
+        ]
+    ],
+    "sweet_kit_4": [
+        [
+            "kitten",
+            "sweet",
+            "greenleaf"
+        ],
+        [
+            "y_c!!! Wake up wake up wake up!!",
+            "Cmon, you gotta come outside, I big paw promise that I won't tell anyone!",
+            "Look at all the fireflies!! I thought the stars had come to say hi to us at first, but then I saw them and I knew you had to see too!",
+            "They're so wonderful.. Just like you! Hehe."
+        ]
+    ],
+    "sweet_kit_5": [
+        [
+            "kitten",
+            "sweet"
+        ],
+        [
+            "Hiya, y_c! I brought you these flowers, I really really hope you like them! They were really hard to get, hehe.",
+            "I wanted to give everyone flowers, and of course I couldn't forget you!",
+            "Do you wanna help me?"
+        ]
+    ],
+    "sweet_kit_6": [
+        [
+            "kitten",
+            "sweet"
+        ],
+        [
+            "y_c!! y_c!! Hi! Do you wanna race with me?",
+            "What do you mean I don't like this game..? I mean, I don't, but...",
+            "I like spending time with you way more!"
+        ]
+    ],
+    "sweet_kit_7": [
+        [
+            "apprentice",
+            "queen's apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "sweet"
+        ],
+        [
+            "Whoa!! That was super cool, y_c!! Can you show me that move again?",
+            "You can make gifts like that ... ? Oh that's super awedsome!! Can we make gifts together sometime?",
+            "Oh, its awesome, not awedsome? .. Hehe, oops."
+        ]
+    ],
+    "sweet_kit_8": [
+        [
+            "apprentice",
+            "queen's apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "sweet"
+        ],
+        [
+            "Hiya y_c!! What's it like having a mentor?",
+            "I see!! Must be pretty fun having someone like that! I wish I had an apprentice, I'd be a super good mentor!",
+            "Or um... I'd hope so... Can I be your mentor to practice, pretty please?"
+        ]
+    ],
+    "sweet_kit_9": [
+        [
+            "apprentice",
+            "sweet",
+            "random_cat"
+        ],
+        [
+            "y_c!! y_c!! Are you okay??",
+            "r_c told me you had a minor accident in training, I heard you fell and hurt your paw!!",
+            "Oh thank goodness you're okay, please please go visit the Meddy Cat just in case!!"
+        ]
+    ],
+    "sweet_kit_101": [
+        [
+            "medicine cat apprentice",
+            "sweet",
+            "random_cat"
+        ],
+        [
+            "Hey y_c! r_c has a bellyache so I told them I'd come and get you!",
+            "How come plants can do all this super cool stuff? Can you teach me about what some of it does, just in case?",
+            "Oh right, I gotta take this- I'll be back in a moment then!!"
+        ]
+    ],
+    "sweet_kit_102": [
+        [
+            "mediator apprentice",
+            "sweet"
+        ],
+        [
+            "y_c, how do you get people to stop fighting all the time? I see it a lot and it makes me very sad.",
+            "I wanna make sure everyone is happy and safe, just like you!",
+            "Can you teach me sometime? I can bring gifts!!"
+        ]
+    ],
+    "sweet_kit_103": [
+        [
+            "queen's apprentice",
+            "sweet"
+        ],
+        [
+            "Hiya y_c!! I made sure to clean up my nest just for you!",
+            "Like you said, gotta keep the place clean to keep smelly badgers away!",
+            "I can't wait for you to get your full name, y_c. It's gonna be super cool, just like you! I'll bring flowers to the ceremony and everything, I promise!"
+        ]
+    ],
+    "sweet_kit_11": [
+        [
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "queen",
+            "sweet"
+        ],
+        [
+            "Whoaaaa!! y_c, come and see this!",
+            "I'm not normally allowed out of the Nursery so late, what's that in the sky?",
+            "A sunset? I get to see this every single day?",
+            "That's so cool!!! Thank you so much for showing me this! I gotta go tell everyone!"
+        ]
+    ],
+    "sweet_kit_12": [
+        [
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "queen",
+            "sweet",
+            "random_cat"
+        ],
+        [
+            "Hey y_c! I made you this little thingy, r_c says it's called a trinket.",
+            "I hope you like it! I made sure to get your favorite flowers and everything!",
+            "I just had seen you were feeling sad today, and I said 'no more sad'!"
+        ]
+    ],
+    "sweet_kit_13": [
+        [
+            "warrior",
+            "sweet"
+        ],
+        [
+            "y_c!! Hi!! Can you teach me how to do a hunting pounce, pretty please??",
+            "So I just... focus on those feathers over there? Mnnn... Rawr!",
+            "I got it I got it!!! Thank you so much!! When I become an apprentice, I'm gonna make sure the whole clan has plenty of food! And imma give you my very first catch, okay?"
+        ]
+    ],
+    "sweet_kit_14": [
+        [
+            "medicine cat",
+            "sweet"
+        ],
+        [
+            "Oh y_c!! The other kits came in here and kept messing up your herbs! I tried to stop them but they wouldn't listen...",
+            "I tried to help clean up but I just made it worse! I'm so sorry! Please don't be upset...",
+            "Can you show me where everything goes, pretty please? I dunno if they'll do this again... but I don't want you to have a messy den!"
+        ]
+    ],
+    "sweet_kit_15": [
+        [
+            "mediator",
+            "sweet",
+            "random_cat"
+        ],
+        [
+            "Hey y_c! Cats keep telling me you're the cat to go to if I have issues!",
+            "Um... I wanna give r_c a gift, but I'm really worried that they won't like it! I dunno, I want it to be perfect for them.",
+            "What should I say...? Thank you!! You're super cool!"
+        ]
+    ],
+    "sweet_kit_16": [
+        [
+            "queen",
+            "sweet"
+        ],
+        [
+            "Hey um... y_c?",
+            "I uh... had a spooky dream... can I snuggle with you?",
+            "Um... do you think cats find me annoying...? Because I.. care a lot. I just wanna be a good kit, y'know, and become the best cat I can be... like you said!!",
+            "-They seem to sniffle after hearing your answer, but give a pleased smile, closing their eyes and eventually falling back asleep.-"
+        ]
+    ],
+    "sweet_kit_17": [
+        [
+            "deputy",
+            "sweet"
+        ],
+        [
+            "y_c! Can you put me on a patrol, pretty please? I wanna go and get some flowers for the Nursery!",
+            "No? Why not? I'll be good! ... Because I'm a kit? Oh... I forgot about that, hehe.",
+            "Well uh... Could you please get me some flowers for the Nursery? One of my denmates was feeling down and I wanna make them feel better, hehe.",
+            "Thanks a bunch!"
+        ]
+    ],
+    "sweet_kit_18": [
+        [
+            "deputy",
+            "sweet"
+        ],
+        [
+            "Hey y_c? What's being a deputy like?",
+            "Oh wow! That sounds like a lot of work for one cat! That's super amazing!!",
+            "But um... please remember to eat n all that!! I keep being told it's super important to make you grow into a big strong warrior... a- and I know you're not growing but!! Still!!"
+        ]
+    ],
+    "sweet_kit_19": [
+        [
+            "deputy",
+            "sweet"
+        ],
+        [
+            "Hiya y_c!! Another day of deputying? Whaddya gotta do today?",
+            "Deputying isn't a word? Oh, hehe.",
+            "When I become an apprentice, I'll make you super proud! I'm even excited to replace bedding and help with ticks! .. Is that weird?"
+        ]
+    ],
+    "sweet_kit_20": [
+        [
+            "leader",
+            "sweet"
+        ],
+        [
+            "Ah ah- I'm not following you around- I'm just walking in the same direction.. Um... not purposefully!!",
+            "... Okay okay, I was.",
+            "I wanna be just like you when I grow up! You're so mature and cool and everyone likes you, you make sure the clan is safe and happy and I wanna do that too!!",
+            "Could you maybe teach me a thing or two...?"
+        ]
+    ],
+    "sweet_kit_21": [
+        [
+            "leader",
+            "sweet"
+        ],
+        [
+            "y_c!! y_c!! Look at what I caught!! It's a little bug!",
+            "Does this mean I'll be a really good hunter? I wanna make sure the clan is nice and happy no matter what!!"
+        ]
+    ],
+    "sweet_kit_22": [
+        [
+            "leader",
+            "sweet"
+        ],
+        [
+            "Hey um... y_c? Um... are you okay?",
+            "I know it's weird to ask! But uh... well... I heard r_c talking about how hard being a leader is and um...",
+            "I brought you this flower! To make it all feel better. You're a super awesome leader and you don't deserve to be stressed!"
+        ]
+    ],
+    "sweet_kit_23": [
+        [
+            "elder",
+            "sweet"
+        ],
+        [
+            "y_c!! y_c!! Good morning!!",
+            "Can I hear a story, pretty pretty please? You always have the best stories! I've got you a snack, and I can get other stuff too if you want me to!",
+            "-They plop down into a loaf-like position, their paws tucked under their belly as they look intently at you-"
+        ]
+    ],
+    "sweet_kit_24": [
+        [
+            "elder",
+            "sweet"
+        ],
+        [
+            "Heya y_c! ... I have a small question.",
+            "I hear other cats complain about the thought of being stuck in the Elder's Den, and that they wouldn't retire until their legs couldn't move anymore.. But... Am I weird for not agreeing?",
+            "I just really like the idea of telling everyone stories and giving them guidance and flowers! That's pretty much what I do anyway, hehe.",
+            "Plus, then I'd be denmates with you, and you're the coolest elder ever!"
         ]
     ]
 }

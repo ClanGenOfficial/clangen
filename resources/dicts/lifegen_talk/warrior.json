@@ -617,7 +617,8 @@
             "brooding",
             "neurotic",
             "kitten",
-            "from_adopted_kit"
+            "from_adopted_kit",
+"from_kit"
         ],
         [
             "Ugh, StarClan, would you leave me alone?",
@@ -774,7 +775,7 @@
             "Eventually, I realized what I was doing, and I let her go. But I couldn't stop thinking about those things she said ...",
             "Sorry. What am I doing? I'm being such a downer today ...",
             "Thanks for being here for me, y_c.",
-            "[r_c presses their head into your shoulder, sighing into your fur.]"
+            "[t_c presses their head into your shoulder, sighing into your fur.]"
         ]
     ],
     "assertive_trust_2": [
@@ -839,6 +840,7 @@
             "stable",
             "kitten",
             "from_adopted_kit",
+"from_kit",
             "sibling",
             "adopted_sibling",
             "half sibling",
@@ -895,6 +897,7 @@
     "assertive_parent4_6": [
         [
             "from_adopted_kit",
+"from_kit",
             "kitten",
             "assertive"
         ],
@@ -906,6 +909,7 @@
     "assertive_parent4_7": [
         [
             "from_adopted_kit",
+"from_kit",
             "kitten",
             "warrior",
             "deputy",
@@ -932,6 +936,7 @@
         [
             "kitten",
             "from_adopted_kit",
+"from_kit",
             "platonic_like",
             "assertive"
         ],

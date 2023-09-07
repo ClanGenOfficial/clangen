@@ -1743,7 +1743,6 @@
             "Thank you for being with me. I love you."
         ]
     ],
-    
     "introspective_comf_3": [
         [
             "any",
@@ -1751,9 +1750,9 @@
             "comfort"
         ],
         [
-            "y_c? Is everything okay, you were just staring off into space…?",
-            "... Huh. Is that what I sound like when I give advice to others? Wow I sound so…",
-            "Huh, knowledgeable? I was going to say stuck-up. But heh…",
+            "y_c? Is everything okay, you were just staring off into space...?",
+            "... Huh. Is that what I sound like when I give advice to others? Wow I sound so...",
+            "Huh, knowledgeable? I was going to say stuck-up. But heh...",
             "I guess it's not that bad if someone like you is giving the advice."
         ]
     ],
@@ -1775,10 +1774,10 @@
             "comfort"
         ],
         [
-            "Hey… y_c? Can I ask you something?",
+            "Hey... y_c? Can I ask you something?",
             "Listen, can you check my back for me?",
             "[You look at t_c's back, and see some lost fur, but nothing major.]",
-            "Yeah, my fur is falling out. It… doesn't look bad, does it? I don't look scary…?",
+            "Yeah, my fur is falling out. It... doesn't look bad, does it? I don't look scary...?",
             "Oh, it looks fine, you barely saw it? Oh that's a relief.",
             "Hm? You think I should go to the medicine den and ask if something can be given for it? That's a fair point, I don't want it to get worse.",
             "I'll go do that now, thank you y_c."
@@ -1832,7 +1831,7 @@
         ],
         [
             "Oh, good morning, it's lovely to see you.",
-            "I'm fine, it's just… Well you must have had a very eventful sleep. Would you like to share tongues before you go?",
+            "I'm fine, it's just... Well you must have had a very eventful sleep. Would you like to share tongues before you go?",
             "I wouldn't want you walking around looking any less than your best, it's what you deserve after all."
         ]
     ],
@@ -1843,7 +1842,7 @@
             "respect"
         ],
         [
-            "y_c? Listen, I know it's late, but…",
+            "y_c? Listen, I know it's late, but...",
             "Are you awake enough to come with me?",
             "I wanted to go for a walk around the territory. It's a lovely night, and I wanted someone to share it with. You're one of the cats who I know would appreciate it. Getting out for a while.",
             "So, do you want to, or are you going to bed?",
@@ -1859,7 +1858,7 @@
         [
             "Uh. y_c! Over here!",
             "[You look up to see t_c up in a tree.]",
-            "I was watching the birds, and I got up here and… it's really high. I don't know how to get down.",
+            "I was watching the birds, and I got up here and... it's really high. I don't know how to get down.",
             "[You quickly got into the tree to walk them down it]",
             "Oh thank you, y_c! I have no idea what I was thinking, getting up there. I'm happy you were there, or who knows how long I would have been stuck."
         ]
@@ -1875,7 +1874,7 @@
             "Hey, y_c. How are you?",
             "I'm absolutely okay, I'm not up to much here, just catwatching, as usual.",
             "Huh? You think I should get to know the other cats, instead of watching?",
-            "Oh, I'm just fine here, I don't talk to the others, it's just how it is…!",
+            "Oh, I'm just fine here, I don't talk to the others, it's just how it is...!",
             "You think I'd get on with r_c? You think?",
             "... Hm. I suppose I'll have to go and talk to them then, at some point.",
             "You've never guided me wrong."
@@ -1889,8 +1888,8 @@
             "random_cat"
         ],
         [
-            "Hey… y_c? Can I ask for your advice on something?",
-            "I was having an argument with r_c a couple of days ago. I was giving them some advice on something, and they told me that I talk like I'm better than everyone. Do you think…?",
+            "Hey... y_c? Can I ask for your advice on something?",
+            "I was having an argument with r_c a couple of days ago. I was giving them some advice on something, and they told me that I talk like I'm better than everyone. Do you think...?",
             "No? That's good. That's absolutely not my intention. I want to help, but not to be more important than any other cat.",
             "Thank you, y_c. I know that no matter what, you'll always tell me what I need to hear."
         ]
@@ -2232,6 +2231,101 @@
         ],
         [
             "Authority? Please, they're just cats with louder voices. Doesn't mean they're right."
+        ]
+    ],
+    "sweet_01": [
+        [
+            "Any",
+            "sweet"
+        ],
+        [
+            "Oh, good evening, y_c! It's very nice to see you, have you been remembering to take care of yourself?",
+            "Haha, I know, I know~! I worry too much, but I just wanna make sure you're alright, the season's been quite.. ah- interesting.",
+            "Well, I'll be off then. If you need anything, you can always let me know!"
+        ]
+    ],
+    "sweet_02": [
+        [
+            "no_kit",
+            "sweet"
+        ],
+        [
+            "Ah, y_c! It's so nice to see you today, I've been thinking about you!",
+            "I just wanted to say that I thought your fur was absolutely stunning today, you've done a real good job taking care of it! You've gotta tell me your secret sometime, hehe~.",
+            "Oh! One last thing before you go- would you be interested in searching for feathers with me later? I need them to spruce up the nursery, I think it'd be a fun touch.. Plus, most kits would love to play with them!"
+        ]
+    ],
+    "sweet_03": [
+        [
+            "Any",
+            "sweet",
+            "stable"
+        ],
+        [
+            "Hm? Oh, y_c!",
+            "I wasn't expecting to see you today! How are you feeling?",
+            "Ah- would you like to share this prey with me? I don't mind, you've worked really hard lately and you deserve it!",
+            "Here, you can sit next to me! Now tell me, how was your day?"
+        ]
+    ],
+    "sweet_04": [
+        [
+            "Any",
+            "sweet",
+            "random_cat",
+            "ill"
+        ],
+        [
+            "y_c!! There you are, I've been looking everywhere for you!",
+            "r_c told me you weren't feeling well, and I wanted to make sure you were okay. I brought a mouse and some extra comfy moss.",
+            "If you need anything else, please do let me know! I'm way more than happy to help in any way I can."
+        ]
+    ],
+    "sweet_5": [
+        [
+            "Any",
+            "sweet",
+            "injured"
+        ],
+        [
+            "y_c! I heard about what happened, are you alright?",
+            "Is there anything I can do that you'd like, or that might help out a little bit?",
+            "I mean it, even if you just want a flower or two. You deserve it."
+        ]
+    ],
+    "sweet_6": [
+        [
+            "newborn",
+            "sweet"
+        ],
+        [
+            "Ohh, look at you! You're so tiny!! Ah- that's so precious.",
+            "Oh my, and you have a ferocious mew too! Ah, you'll make a wonderful warrior someday, I just know it.",
+            "You're so little, yet I know you're going to make everyone proud.. Just by being yourself."
+        ]
+    ],
+    "sweet_7": [
+        [
+            "newborn",
+            "sweet",
+            "stable"
+        ],
+        [
+            "Oh my- you're so precious!",
+            "Hello, little one! Welcome to c_n! What a cute lil fella, you are.",
+            "Here we go, let me take you back to your nest. Little ones like you need plenty of rest to become big strong warriors!"
+        ]
+    ],
+    "sweet_8": [
+        [
+            "newborn",
+            "sweet",
+            "stable"
+        ],
+        [
+            "Why hello there, little flower!",
+            "Now now, you've gotta stay near your nest. Those big stinky cats might not see you there!",
+            "There we are! Ah- I've been meaning to bring this to you anyway. It's a little bundle of moss you can cuddle with!"
         ]
     ]
 }

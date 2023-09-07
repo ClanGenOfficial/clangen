@@ -254,6 +254,7 @@
             "stable",
             "kitten",
             "from_adopted_kit",
+"from_kit",
             "sibling",
             "adopted_sibling",
             "half sibling",
@@ -276,7 +277,8 @@
             "brooding",
             "neurotic",
             "kitten",
-            "from_adopted_kit"
+            "from_adopted_kit",
+"from_kit"
         ],
         [
             "Ugh, StarClan, would you leave me alone?",
@@ -287,6 +289,7 @@
         [
             "kitten",
             "from_adopted_kit",
+"from_kit",
             "platonic_like"
         ],
         [
@@ -297,6 +300,7 @@
     "assertive_parent4_3": [
         [
             "from_adopted_kit",
+"from_kit",
             "kitten",
             "assertive"
         ],

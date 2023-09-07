@@ -729,6 +729,7 @@
             "unlawful",
             "kitten",
             "from_adopted_kit",
+            "from_kit",
             "from_your_apprentice"
         ],
         [
@@ -1301,7 +1302,9 @@
             "unlawful",
             "neurotic",
             "kitten",
-            "from_adopted_kit"
+            "from_adopted_kit",
+            "from_kit",
+            "from_kit"
         ],
         [
             "Ugh, y_c, quit embarrassing me! I'm not a little kit Anymore!",
@@ -1341,7 +1344,9 @@
             "assertive",
             "unlawful",
             "kitten",
-            "from_adopted_kit"
+            "from_kit",
+            "from_adopted_kit",
+            "from_kit"
         ],
         [
             "Yes, y_c, I've been behaving. You don't even need to ask.",
@@ -1659,6 +1664,333 @@
             "Hey, y_c.",
             "'Boutta drag me off to training again, are you?",
             "I better become the best warrior this clan's ever seen."
+        ]
+    ],
+    "sweet_apprentice_1": [
+        [
+            "Any",
+            "sweet"
+        ],
+        [
+            "Heya y_c! Can I ask for a little bit of advice?",
+            "I've been trying my best to continue training the best I can... but I'm really tired after staying up all night trying to help gather herbs for the Medicine Cat...",
+            "I wanna be a warrior, I really do, but do you think I'm... not cut out of it?",
+            "... Thanks, it means a lot."
+        ]
+    ],
+    "sweet_apprentice_2": [
+        [
+            "Any",
+            "sweet"
+        ],
+        [
+            "Heya y_c! Can I ask for a little bit of advice?",
+            "I've been trying my best to continue training the best I can... but I'm really tired after staying up all night trying to help gather herbs for the Medicine Cat...",
+            "I wanna be a warrior, I really do, but do you think I'm... not cut out of it?",
+            "... Thanks, it means a lot."
+        ]
+    ],
+    "sweet_apprentice_3": [
+        [
+            "no_kit",
+            "sweet"
+        ],
+        [
+            "Howdy y_c! Are you ready to go out and do super cool warrior stuff?",
+            "Hehehe- me neither, and I'm not even a warrior!. But we've gotta, I noticed my mentor was super excited so hopefully it's something neat today!",
+            "I've been thinking of surprising them with something, do you have any ideas?",
+            "Mm.. that's a great idea! Thanks a bunch, I'll bring you something back as a thanks!"
+        ]
+    ],
+    "sweet_apprentice_4": [
+        [
+            "newborn",
+            "sweet"
+        ],
+        [
+            "Aww, look at you! You're so little!",
+            "I wonder if my mentor would be okay if I left training early to bring you some feathers, hehe.",
+            "You're gonna be big in no time, don't you worry! I hope I can be your mentor, but we'll see!"
+        ]
+    ],
+    "sweet_apprentice_5": [
+        [
+            "kitten",
+            "sweet"
+        ],
+        [
+            "Hehe, it looks like I've got a little buddy!",
+            "Hey little fella! How much longer is it until you grow out of the Nursery? ... Oh, I see!",
+            "Well, a little tip from me, I'd recommend taking the nest near the back of the den. The front is leaky, and I don't want you catching a cold!"
+        ]
+    ],
+    "sweet_apprentice_6": [
+        [
+            "kitten",
+            "sweet"
+        ],
+        [
+            "Hey there, y_c! What are you doing so far from the Nursery?",
+            "Heyyy, I'm not uptight, silly fella! It's just dangerous outside, even for a big cat like me!",
+            "How about this, you go back there, and I'll come with and show you how to do a front paw swipe?"
+        ]
+    ],
+    "sweet_apprentice_7": [
+        [
+            "kitten",
+            "sweet"
+        ],
+        [
+            "Oh, y_c! What's it like having a mentor? Mm.. well..",
+            "It's nice having someone caring for me instead of the other way around! I tend to be a bit of a worry wart, hehe. It's nice having someone I can ask for advice n' all that.",
+            "But that's nothing for you to worry about just yet. Let's getcha back to bed, alrighty little fella?"
+        ]
+    ],
+    "sweet_apprentice_8": [
+        [
+            "apprentice",
+            "queen's apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "sweet"
+        ],
+        [
+            "Ah- y_c! Um- I wasn't crying- I was.. mmn...",
+            "Okay... you caught me. I saw a kittypet when out on patrol earlier, and they seemed hurt and scared! So, of course, I helped them out there... but then an o_c cat started making fun of me.",
+            "They said I was soft-hearted, and that I should be a Medicine Cat or a Queen instead... Do you think so too..?",
+            "Thank you for listening to the ramblings of silly ol' me... It really means a lot, you know?"
+        ]
+    ],
+    "sweet_apprentice_9": [
+        [
+            "apprentice",
+            "queen's apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "sweet"
+        ],
+        [
+            "Hey, y_c! Have you been to the gathering, yet?",
+            "It's so intense... How many cats are there... It could be its own clan, if it wanted to be! Imagine for caring for so many cats...",
+            "I think I'd just be driven in circles trying to make sure everyone's okay, haha!"
+        ]
+    ],
+    "sweet_apprentice_10": [
+        [
+            "apprentice",
+            "sweet"
+        ],
+        [
+            "y_c! Did you hear?",
+            "Some of the others were talking about how cold it's gonna be tonight. Your nest seems to be further from everyone else's.",
+            "If you'd like, I can move my nest by yours tonight, just to make sure you stay warm! I couldn't forgive myself if you caught a chill and I could do something."
+        ]
+    ],
+    "sweet_apprentice_11": [
+        [
+            "queen's apprentice",
+            "sweet"
+        ],
+        [
+            "Wow... How do you do that..?",
+            "Ah- sorry! I know that was sudden. I'm just so... impressed! We're around the same age, yet you corral the kits and care for the Nursery like it's an instinct! Surely you get overwhelmed sometimes?",
+            "If you ever need any help, please let me know! I'd be happy to take a day off from training to lend a paw."
+        ]
+    ],
+    "sweet_apprentice_12": [
+        [
+            "medicine cat apprentice",
+            "sweet"
+        ],
+        [
+            "Hey there y_c! How's everything today, is everyone doing okay?",
+            "Do you need any help gathering herbs today? I'm open right now, so I can lend a paw! Come on, let's go! Don't wanna leave cats without their medicine! Hehe."
+        ]
+    ],
+    "sweet_apprentice_13": [
+        [
+            "mediator apprentice",
+            "sweet"
+        ],
+        [
+            "Hey y_c!! I've got a couple questions, if you don't mind I ask? If you're busy, I can leave!",
+            "Ah- I'm super curious. How do you convince cats to stop fighting? I try and it just... tends to blow up in my face.",
+            "I see, I see! I understand, thank you so much for sharing! Ah- I'll leave you to your job now, hehe. Let me know if you wanna share some prey later!"
+        ]
+    ],
+    "sweet_apprentice_14": [
+        [
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "queen",
+            "random_cat",
+            "sweet"
+        ],
+        [
+            "Oh hey y_c! ... What am I doing in the bushes? Hehe- funny story.",
+            "So, r_c was supposed to be kitsitting, but I offered to help out since I'm done with my chores! And now I've got pretty much every cat younger than a warrior trying to find me in a game of hide and seek... despite me trying to get everyone to settle down.",
+            "Would you like to hang out with us too? I wouldn't mind giving up this game so you can join in. We could even take a break and have some lunch, if you'd like to do that first!"
+        ]
+    ],
+    "sweet_apprentice_15": [
+        [
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "queen",
+            "random_cat",
+            "sweet"
+        ],
+        [
+            "-As you mew out their name, they seem to jolt, startled.-",
+            "Oh, hello there, y_c! I didn't see you.",
+            "I was given today off, so I'm using it to help decorate the camp with r_c. Would you like to help me?"
+        ]
+    ],
+    "sweet_apprentice_16": [
+        [
+            "warrior",
+            "sweet"
+        ],
+        [
+            "y_c...? May I ask you a question?",
+            "I'm gonna become a Warrior soon... yeah? I um... I'm just worried, I guess.",
+            "Am I gonna have to... hurt... other cats? I'd much rather hunt and patrol, but... I guess if I have to... I could...",
+            "... I understand. Thank you for listening to me!"
+        ]
+    ],
+    "sweet_apprentice_17": [
+        [
+            "medicine cat",
+            "sweet"
+        ],
+        [
+            "y_c!! y_c!! You've gotta help me!",
+            "Please don't laugh.. But I found this little bug a- and it's wing was crushed! Is there anything you can do to help it?",
+            "I know you're only supposed to heal cats but... this bug is my friend. I feed it sometimes... Please help me...",
+            "-Despite having teary eyes, they hold out the bug on their paw, watching as you do your best to very tenderly care for it. Ultimately, you know there's nothing you can do, but denying them would just crush their spirit-",
+            "I'll take very good care of it while it heals, thank you! Thank you so much!!!"
+        ]
+    ],
+    "sweet_apprentice_18": [
+        [
+            "mediator",
+            "random_cat",
+            "sweet"
+        ],
+        [
+            "y_c!! Ah- erm- uh- I'm not- I'm not upset-",
+            "Mmmnmnnnn- Fine, you caught me... I just... I didn't wanna worry you...",
+            "See... r_c said something that I really... really don't agree with, you know? And I don't know how to tell them... every time I go to, it feels like the words die in my throat, and I wonder if I'm the one in the wrong.",
+            "... Can you help me, please? It um.. It really hurt my feelings, and I don't wanna be rude at all... but I need to tell them."
+        ]
+    ],
+    "sweet_apprentice_19": [
+        [
+            "queen",
+            "sweet"
+        ],
+        [
+            "Hehe, hey y_c!! Look at how much I've grown! I used to be barely bigger than that thing over there, now look at me!",
+            "Are you proud of me y_c? I'm trying to keep everything you taught me in mind! And it's a bit stressful and scary sometimes, but it's so worth it! I love being a warrior!"
+        ]
+    ],
+    "sweet_apprentice_20": [
+        [
+            "deputy",
+            "random_cat",
+            "sweet"
+        ],
+        [
+            "y_c!! You looked so cool at the gathering!! The way you stopped the fight between the o_c warrior and r_c was so amazing! I wish it never had happened in the first place though...",
+            "I know everyone was pretty spooked after what happened though... Are you feeling okay after it? I'd be happy to hunt for you if not!",
+            "Oh right- I have training today- uhmmm- I'll do it for you after training!! Hehe, oops."
+        ]
+    ],
+    "sweet_apprentice_21": [
+        [
+            "deputy",
+            "sweet"
+        ],
+        [
+            "Hey y_c! I've got a test coming up, do you have any advice...?",
+            "I know I'm not particularly competitive or anything but... I just really wanna make everyone proud, you know? And I gotta do my best to do that!"
+        ]
+    ],
+    "sweet_apprentice_22": [
+        [
+            "deputy",
+            "sweet"
+        ],
+        [
+            "y_c! A deputy is supposed to have trained an apprentice before- well- becoming a deputy, right?",
+            "How many apprentices have you had? ... Would you like to talk about them? If that's okay?"
+        ]
+    ],
+    "sweet_apprentice_23": [
+        [
+            "leader",
+            "sweet"
+        ],
+        [
+            "-They seem distracted, weaving flowers and sticks in your den whilst humming-",
+            "Oh! y_c! Ah- I'm sorry for not asking but... I saw how hard you've been working for the clan... and um.",
+            "I really wish the others told you how much they appreciated what you did more... You work so hard as our leader!",
+            "So I did this for you! I really hope you like it."
+        ]
+    ],
+    "sweet_apprentice_24": [
+        [
+            "leader",
+            "sweet"
+        ],
+        [
+            "Oh, you're back from the gathering, hi y_c! How was it, there wasn't anything serious, right?",
+            "Do you know how o_c's doing? Me and some of the other apprentices saw one of their apprentices and they seemed to be really struggling, I hope they're doing okay."
+        ]
+    ],
+    "sweet_apprentice_25": [
+        [
+            "leader",
+            "sweet"
+        ],
+        [
+            "Hey, y_c... I know it's a sudden question, but do you think I'd ever be a good deputy or a good leader?",
+            "I know I'm just an apprentice... and I've never been particularly ambitious... but...",
+            "I keep being told that I'm soft-hearted, and shouldn't even be a warrior. Would anyone even respect me? You're a leader, you know what it takes, do you think I could ever... maybe...?"
+        ]
+    ],
+    "sweet_apprentice_26": [
+        [
+            "elder",
+            "sweet"
+        ],
+        [
+            "-They bound into the Elder's Den, their eyes bright with excitement-",
+            "y_c!! y_c!! I got tick duty today! I'm so happy. Do you need your nest changed, or should I do that after this?",
+            "Ticks and storytime is always the best... Ah- would you like anything to eat? You can think of a story whilst I go and get it!"
+        ]
+    ],
+    "sweet_apprentice_27": [
+        [
+            "elder",
+            "sweet"
+        ],
+        [
+            "Hey y_c? What was it like when you were my age?",
+            "Were you... also scared of not being good enough? ... Did you ever... find out... how to get rid of those worries?",
+            "I wish I could be as wise as you are, maybe then I'd know what to do... thank you for listening to me, though. I just wanna be the best for the clan, but I don't think I'm quite there yet."
+        ]
+    ],
+    "sweet_apprentice_28": [
+        [
+            "elder",
+            "sweet"
+        ],
+        [
+            "y_c, come outside and look! There are so many stars out! Didn't you mention something like this in one of your stories?",
+            "I wonder if it's StarClan, smiling down at us? If it is... then I'm glad I'm someone that they're proud of! And I'm sure they're proud of you too!"
         ]
     ]
 }
