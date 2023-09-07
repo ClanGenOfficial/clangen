@@ -4078,21 +4078,21 @@ class TalkScreen(Screens):
             
             # Relationship conditions
             if you.ID in cat.relationships:
-                if cat.relationships[you.ID].dislike < 50 and 'hate' in tags:
+                if cat.relationships[you.ID].dislike < 30 and 'hate' in tags:
                     continue
-                if cat.relationships[you.ID].romantic_love < 20 and 'romantic_like' in tags:
+                if cat.relationships[you.ID].romantic_love < 10 and 'romantic_like' in tags:
                     continue
-                if cat.relationships[you.ID].platonic_like < 20 and 'platonic_like' in tags:
+                if cat.relationships[you.ID].platonic_like < 10 and 'platonic_like' in tags:
                     continue
-                if cat.relationships[you.ID].jealousy < 20 and 'jealousy' in tags:
+                if cat.relationships[you.ID].jealousy < 5 and 'jealousy' in tags:
                     continue
-                if cat.relationships[you.ID].dislike < 20 and 'dislike' in tags:
+                if cat.relationships[you.ID].dislike < 10 and 'dislike' in tags:
                     continue
-                if cat.relationships[you.ID].comfortable < 20 and 'comfort' in tags:
+                if cat.relationships[you.ID].comfortable < 5 and 'comfort' in tags:
                     continue
-                if cat.relationships[you.ID].admiration < 20 and 'respect' in tags:
+                if cat.relationships[you.ID].admiration < 5 and 'respect' in tags:
                     continue         
-                if cat.relationships[you.ID].trust < 20 and 'trust' in tags:
+                if cat.relationships[you.ID].trust < 5 and 'trust' in tags:
                     continue
                 if cat.relationships[you.ID].platonic_like < 10 and cat.relationships[you.ID].dislike < 10 and "neutral" in tags:
                     continue

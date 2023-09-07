@@ -2175,5 +2175,62 @@
             "We can sit under the stars and watch Silverpelt.",
             "I always find it helps. It's calming, knowing all of our ancestors are watching over us."
         ]
+    ],
+    "unabashed_1": [
+        [
+            "Any",
+            "unabashed"
+        ],
+        [
+            "Hey, y_c. I overheard you talking earlier.",
+            "Can't say I agree with you, but that's just me being me."
+        ]
+    ],
+    "unabashed_2": [
+        [
+            "Any",
+            "unabashed"
+        ],
+        [
+            "Some cats whisper behind my back, but honestly?",
+            "I'd rather them just come and say it to my face."
+        ]
+    ],
+    "unabashed_3": [
+        [
+            "Any",
+            "unabashed"
+        ],
+        [
+            "I've been told I lack tact. Honestly? I see it as a service. At least you know where you stand with me.",
+            "I just believe in being straightforward. Saves time and energy."
+        ]
+    ],
+    "unlawful_1": [
+        [
+            "Any",
+            "unlawful"
+        ],
+        [
+            "They say crossing the border's off-limits. But what they don't know won't hurt them, right y_c?"
+        ]
+    ],
+    "unlawful_2": [
+        [
+            "Any",
+            "unlawful"
+        ],
+        [
+            "If you're tired of always being the 'good' cat, come find me. There's another way."
+        ]
+    ],
+    "unlawful_3": [
+        [
+            "Any",
+            "unlawful"
+        ],
+        [
+            "Authority? Please, they're just cats with louder voices. Doesn't mean they're right."
+        ]
     ]
 }

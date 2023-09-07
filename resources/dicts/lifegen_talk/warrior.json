@@ -77,6 +77,7 @@
     "introspective_warrior_1": [
         [
             "Any",
+            "no_kit",
             "introspective"
         ],
         [
@@ -90,12 +91,13 @@
     "introspective_warrior_2": [
         [
             "Any",
+            "no_kit",
             "introspective"
         ],
         [
             "Oh, y_c, are you busy?",
             "I... was going to go on a hunting patrol, and I was wondering if you wanted to come with me?",
-            "Huh? No, I don't mean \u00e2\u20ac\u02dcpretend to go hunt, so I can go birdwatching'! ... well. Not for the whole hunt.",
+            "Huh? No, I don't mean 'pretend to go hunt, so I can go birdwatching'! ... well. Not for the whole hunt.",
             "Hehe, okay then, we'll go actual hunting then, I'll only do a little bit of birdwatching."
         ]
     ],

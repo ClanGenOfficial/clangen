@@ -697,8 +697,6 @@
             "assertive",
             "random_cat",
             "platonic_like",
-            "comfort",
-            "trust",
             "from_parent",
             "from_mate",
             "sibling",
@@ -1534,9 +1532,6 @@
         [
             "assertive",
             "silly",
-            "respect",
-            "trust",
-            "comfort",
             "platonic_like",
             "romantic_like",
             "from_mate",
