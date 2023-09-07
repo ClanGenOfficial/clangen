@@ -3879,6 +3879,11 @@ class TalkScreen(Screens):
         with open(f"{resource_dir}{cat.status}.json", 'r') as read_file:
             possible_texts = ujson.loads(read_file.read())
             
+        if cat.status not in ['kitten', "newborn"]:
+            with open(f"{resource_dir}general_no_kit.json", 'r') as read_file:
+                possible_texts2 = ujson.loads(read_file.read())
+                possible_texts.extend(possible_texts2)
+            
         cluster1, cluster2 = self.get_cluster(cat.personality.trait)
         cluster3, cluster4 = self.get_cluster(you.personality.trait)
         
@@ -3917,11 +3922,11 @@ class TalkScreen(Screens):
                 continue
 
             # Status tags
-            if you.status not in tags and "Any" not in tags and "young elder" not in tags:
+            if you.status not in tags and "Any" not in tags and "young elder" not in tags and "no_kit" not in tags:
                 continue
             elif "young elder" in tags and cat.status == 'elder' and cat.moons >= 100:
                 continue
-            if "no_kit" in tags and you.status in ['kitten', 'newborn']:
+            elif "no_kit" in tags and you.status in ['kitten', 'newborn']:
                 continue
             
             # Cluster tags
@@ -4334,7 +4339,7 @@ class InsultScreen(Screens):
             if "from_mentor" in talk[0]:
                 if game.clan.your_cat.mentor != cat.ID:
                     continue
-            if "parent" in talk[0]:
+            if "from_parent" in talk[0]:
                 if game.clan.your_cat.parent1:
                     if game.clan.your_cat.parent1 != cat.ID:
                         continue
@@ -4574,7 +4579,7 @@ class FlirtScreen(Screens):
         for talk in possible_texts.values():
             if game.clan.your_cat.status not in talk[0] and "Any" not in talk[0]:
                 continue
-            if "heartbroken" in cat.illnesses.keys() and "heartbroken" not in talk[0]:
+            if "heartbroken" not in cat.illnesses.keys() and "heartbroken" in talk[0]:
                 continue
             elif not success and "reject" not in talk[0]:
                 continue

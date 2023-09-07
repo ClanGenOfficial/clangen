@@ -134,7 +134,7 @@
     ],
     "assertive_elder": [
         [
-            "any",
+            "Any",
             "assertive",
             "unlawful",
             "young elder"
@@ -149,7 +149,7 @@
     ],
     "assertive_elder2": [
         [
-            "any",
+            "Any",
             "assertive",
             "unlawful",
             "unabashed",
@@ -164,7 +164,7 @@
     ],
     "assertive_elder3": [
         [
-            "any",
+            "Any",
             "assertive",
             "unlawful",
             "unabashed",
@@ -212,7 +212,7 @@
     ],
     "assertive_elder4": [
         [
-            "any",
+            "Any",
             "assertive",
             "unlawful",
             "unabashed",
@@ -227,7 +227,7 @@
     ],
     "cool_elder": [
         [
-            "any",
+            "Any",
             "cool",
             "from_mate",
             "young elder"
@@ -241,7 +241,7 @@
     ],
     "cool_elder1": [
         [
-            "any",
+            "Any",
             "cool",
             "assertive",
             "unlawful",
@@ -257,7 +257,7 @@
     ],
     "introspective_elder": [
         [
-            "any",
+            "Any",
             "introspective",
             "young elder"
         ],
@@ -270,7 +270,7 @@
     ],
     "assertive_elder5": [
         [
-            "any",
+            "Any",
             "assertive",
             "silly",
             "unlawful",
@@ -286,7 +286,7 @@
     
     "assertive_elder6": [
         [
-            "any",
+            "Any",
             "assertive",
             "silly",
             "unlawful",
@@ -301,7 +301,7 @@
     ],
     "introspective_elder2": [
         [
-            "any",
+            "Any",
             "brooding",
             "introspective",
             "stable",
@@ -319,7 +319,7 @@
     ],
     "introspective_elder3": [
         [
-            "any",
+            "Any",
             "brooding",
             "introspective",
             "stable",
@@ -337,7 +337,7 @@
     ],
     "sweet_elder1": [
         [
-            "any",
+            "Any",
             "sweet",
             "upstanding",
             "silly",
@@ -353,7 +353,7 @@
     ],
     "sweet_elder2": [
         [
-            "any",
+            "Any",
             "sweet",
             "from_mate",
             "young elder"
@@ -367,7 +367,7 @@
     ],
     "young_eldergen": [
         [
-            "any",
+            "Any",
             "assertive",
             "unlawful",
             "silly",
@@ -386,7 +386,7 @@
     ],
     "young_eldergen1": [
         [
-            "any",
+            "Any",
             "assertive",
             "unlawful",
             "silly",
@@ -407,7 +407,7 @@
     ],
     "young_eldergen1": [
         [
-            "any",
+            "Any",
             "assertive",
             "sweet",
             "silly",
@@ -422,7 +422,7 @@
     ],
     "silly_elder": [
         [
-            "kit",
+            "kitten",
             "silly",
             "cool",
             "unlawful",
@@ -437,7 +437,7 @@
     ],
     "silly_elder": [
         [
-            "kit",
+            "kitten",
             "silly",
             "young elder"
         ],
@@ -450,7 +450,7 @@
     ],
     "upstanding_elder": [
         [
-            "any",
+            "Any",
             "upstanding",
             "young elder"
         ],
@@ -463,7 +463,7 @@
     ],
     "sweet_elder3": [
         [
-            "any",
+            "Any",
             "sweet",
             "introspective",
             "upstanding",
@@ -482,7 +482,7 @@
     ],
     "sweet_elder4": [
         [
-            "any",
+            "Any",
             "sweet",
             "introspective",
             "upstanding",
@@ -499,7 +499,7 @@
     ],
     "brooding_elder": [
         [
-            "any",
+            "Any",
             "brooding",
             "young elder"
         ],
@@ -511,7 +511,7 @@
     ],
     "neurotic_elder": [
         [
-            "any",
+            "Any",
             "neurotic",
             "young elder"
         ],
@@ -523,7 +523,7 @@
     ],
     "introspective_elder1": [
         [
-            "any",
+            "Any",
             "introspective",
             "sweet",
             "stable",
@@ -538,7 +538,7 @@
     ],
     "silly_elder_15": [
         [
-            "any",
+            "Any",
             "silly",
             "unlawful",
             "young elder"
@@ -555,5 +555,523 @@
         [
             "Hi there, y_c!"
         ]
-    ]
-}
+    ],
+    "assertive_parent4":	[[
+		"assertive",
+		"dislike",
+		"neutral",
+		"cool",
+		"upstanding",
+		"brooding",
+		"stable",
+		"kitten",
+		"from_adopted_kit",
+		"sibling",
+		"adopted_sibling",
+		"half sibling",
+		"from_parent"
+	],
+	[
+ "What do you want? Do you need something?",
+"... You just want to talk? Why?",
+"... Because we're family?",
+"Do we still even count as family anymore?"
+	]],
+
+"assertive_medapp1": [
+	[
+		"medicine cat apprentice",
+		"medicine cat",
+		"assertive",
+		"unlawful",
+		"silly"
+	],
+	[
+		"Hey, what does this herb do? Can I eat it?",
+		"Haha, don't look so stressed! I was just joking."
+	]],
+
+"assertiveapp_medapp3": [
+	[
+		"medicine cat apprentice",
+		"medicine cat",
+		"assertive",
+		"silly",
+		"upstanding"
+	],
+	[
+		"Hey, y_c ... is it really true that you can talk to StarClan?",
+		"Whoa! That's so cool! What does StarClan say that I'm gonna do? Am I gonna be strong? Am I destined for greatness?",
+		"... It doesn't work like that? Awh. That's no fun.",
+		"Well, if StarClan ever mentions me, you'll let me know, won't you?"
+	]],
+
+"assertive_5": [
+	[
+		"kitten",
+		"dislike",
+		"assertive",
+		"cool",
+		"unlawful",
+		"neutral",
+		"non-related"
+	],
+	[
+		"Hey, mouse-brain! Watch where you're going!",
+		"Wait, I recognize you. You're one of the new kits, right? Shouldn't you be in the nursery?",
+		"Hmph. Whatever. Just stay outta the real warriors' way, before someone squishes you."
+		
+	]],
+
+"assertive_4": [
+	[
+		"kitten",
+		"assertive"
+	],
+	[
+		"Whoa! Watch where you're going there, little pal! One wrong move, and you might get stepped on!",
+		"Ah, quit that, you don't need to apologize. Just be a bit more careful from now on, is all.",
+		"Or else, when you get bigger, it'll really become a problem. Hehe!"
+		
+	]],
+
+"assertive_tokit": [
+	[
+		"kitten",
+		"assertive",
+		"unlawful"
+	],
+	[
+		"Ah, y_c! There's the little bruiser! How're you doing? Growing up big and strong?",
+		"Y'know, at your age, I used to get into all sorts of trouble. Sneaking out of the nursery, following around the apprentices ... not to give you any ideas, or anything. Ahaha!",
+		"[r_c's laugh is so loud that it almost shakes your whole body.]"
+	]],
+
+"assertive_tonewborn": [
+	[
+		"newborn",
+		"assertive"
+	],
+	[
+		"Whoa! Hey there, little guy! Shouldn't you be in the nursery?",
+		"Hehe. You've got an adventurous spirit. I like that about you.",
+		"But for now, you gotta stay where it's safe! C'mon. Let's go back to your parents."
+	]],
+
+"assertive_tonewborn1": [
+	[
+		"newborn",
+		"assertive"
+	],
+	[
+		"Aw ... little guy hasn't even gotten their eyes open yet!",
+		"They're gonna be a killer, though. I can already tell. See those little paws? This kit's got fight in 'em!"
+	]],
+
+"assertive_tonewborn3": [
+	[
+		"newborn",
+		"assertive",
+		"introspective",
+		"neurotic"
+	],
+	[
+		"Whoa ... this is them? They're so small!",
+		"Hard to believe I was that small once ...",
+		"Hm ..."
+	]],
+
+"assertive_1": [
+	[
+		"Any",
+		"assertive",
+		"stable",
+		"upstanding",
+		"unabashed"
+	],
+	[
+		"HEY!!! You leave them alone!",
+		"Ugh. Can you believe how cruel some cats are, y_c? A bunch of apprentices were trying to convince these two kits to sneak into a badger den ... what a bunch of mouse-brains.",
+		"No matter what, don't let anyone try to pressure you into doing something you don't think is right. Go with your gut, and stick to your own values. That's what's really important."
+	]],
+
+"assertive_1": [
+	[
+		"Any",
+		"assertive",
+		"cool",
+		"they_clanfounder",
+		"they_clanborn",
+		"they_outsiderroots",
+		"they_half-Clan",
+		"they_orphaned",
+		"they_abandoned",
+		"newleaf",
+		"greenleaf",
+		"leaffall"
+	],
+	[
+		"Hey there, y_c! Not bad weather today, hm?",
+		"Sun on my pelt, wind in my fur ... Could you imagine being a kittypet and having to be cooped up in a twoleg nest all day? I think I would go crazy!",
+		"Just another reason why it's great to be a clan cat."
+	]],
+
+"assertive_6": [
+	[
+		"Any",
+		"dislike",
+		"you_brooding",
+		"you_sweet",
+		"you_upstanding",
+		"you_introspective",
+		"you_neurotic",
+		"you_stable",
+		"assertive",
+		"cool",
+		"unlawful",
+		"silly"
+	],
+	[
+		"*Sigh*. Hey, y_c. Come to ruin the fun again?",
+		"Whatever. I'm going to go do something actually exciting. Don't wait up."
+		
+	]],
+
+"assertive_elder":  [
+	[
+		"Any",
+		"assertive",
+		"random_cat"
+	],
+	[
+		"Did you see r_c earlier today, y_c? Oh, StarClan, it was the funniest thing ever!",
+		"They mistook a twig for a snake and flew, like, five fox-lengths into the air! Hahahaha!"
+	]],
+
+"assertive_app29": [
+	[
+		"mediator",
+		"mediator apprentice",
+		"assertive",
+		"random_cat",
+		"platonic_like",
+		"comfort",
+		"trust",
+		"from_parent",
+		"from_mate",
+		"sibling",
+		"adopted_sibling"
+	],
+	[
+		"Tch. Did you see what a snake-heart r_c was acting like earlier? And over a piece of prey, no less!",
+		"Cat's so mouse-brained, probably can't even tell their own tail from a willow branch ...",
+		"... Whoa, what? Wait, you want me to apologize to them?",
+		"But they were in the wrong, not me! Why even entertain their behavior with an apology?",
+		"If they're mad, who cares! Let 'em stay mad! They can stay mad forever, for all I care!",
+		"Look, I know you're the mediator, and it's your job to resolve conflicts, or whatever, but ... you love me. Shouldn't you be on my side?",
+		"You'd really choose them over me?"
+	]],
+
+"assertive_app29": [
+	[
+		"mediator",
+		"mediator apprentice",
+		"assertive",
+		"random_cat"
+	],
+	[
+		"Let me guess. You've come to patch things up between me and r_c, 'cause of the fight we had earlier. That right?",
+		"I'll save you a few words - it's not gonna happen. Why's it always me that's gotta be in the wrong, huh? Why not force them to apologize?",
+		"Go find somebody else's problem to fix."
+	]],
+
+"assertivewarrior_leader2":  [
+	[
+		"leader",
+		"assertive"
+	],
+	[
+		"Oh, what I'd give for nine lives!",
+		"I already try to throw myself into whatever challenge I'm given, but you're on a whole other level! With nine lives, you could be really ... truly ... FEARLESS!"
+	]],
+
+"assertivewarrior_deputy2":  [
+	[
+		"deputy",
+		"leader",
+		"assertive",
+		"unlawful",
+		"brooding",
+		"unabashed",
+		"dislike"
+	],
+	[
+		"Yeah, right. Like I have to take orders from you!",
+		"You may think you're a warrior, but all you do is sit on your haunches and boss everyone around all day. That's no warrior. That's a coward.",
+		"Go find some other cat to impose on."
+	]],
+
+"assertive_queen":  [
+	[
+		"queen's apprentice",
+		"queen",
+		"assertive",
+		"cool",
+		"sweet",
+		"silly"
+	],
+	[
+		"Heya, y_c! How are the little ones today?",
+		"If you ever need any help at all, just give me a shout. I know they can be a pawful! Heh."
+	]],
+
+"assertive_queensapp2":  [
+	[
+		"queen's apprentice",
+		"queen",
+		"assertive",
+		"upstanding"
+	],
+	[
+		"Hey, y_c! How are the kits today?",
+		"Ahhhh! StarClan, they're so cute! Can I help groom them?",
+		"Or - how about this? Maybe, every once in a while, I can hold a little kit-training session! Help them get a head start on their apprenticeships! It'll be like having a den of little warriors, hehehe!",
+		"Though, I guess I can see how that wouldn't be the best for you ...",
+		"Oh, what the heck. Let the kits be kits for now! They'll start their training when they're ready.",
+		"Seeya, y_c! I'll definitely have to come and visit more often."
+	]],
+
+"assertive_queensapp1":  [
+	[
+		"queen's apprentice",
+		"assertive",
+		"cool",
+		"brooding",
+		"unabashed",
+		"unlawful",
+		"dislike"
+	],
+	[
+		"Hehe. Of course you'd never leave the nursery, y_c.",
+		"You don't have what it takes to be a real warrior. Not in a million moons!",
+		"But, uh, this is ... okay too, I guess! If you think becoming a full-time kitsitter is comparable to, y'know ... finding food and protecting the clan from danger.",
+		"Have fun hanging out with the queens, y_c. *Snrk*"
+	]],
+
+"assertivewarrior_mediatorapp":  [
+	[
+		"mediator apprentice",
+		"assertive"
+	],
+	[
+		"Man, you're insightful for an apprentice, y_c!",
+		"When I was your age, all I thought about was smashing stuff and chasing after my crushes. But now, here you are! Sorting out problems with cats who've been around ten times longer than you!",
+		"That must take a lot of discipline. The whole clan is proud of you!"
+	]],
+
+"assertivewarrior_mediatorapp":  [
+	[
+		"mediator apprentice",
+		"assertive",
+		"cool",
+		"upstanding",
+		"brooding",
+		"dislike"
+	],
+	[
+		"Oh, absolutely not. No way a little apprentice is going to tell me what's right and what's wrong.",
+		"Could you at least get your mentor over here, or something? Needing a so-called 'mediator' is already humiliating enough as it is.",
+		"Let alone when they're barely out of the nursery."
+	]],
+
+"assertive_medapp": [
+	[
+		"medicine cat apprentice",
+		"assertive",
+		"unlawful",
+		"unabashed"
+	],
+	[
+		"How's it going, mini-medicine cat? Herbal life treating you well?",
+		"Don't worry, I'm not going to run headfirst into trouble and injure myself today.",
+		"As for tomorrow? Who knows!"
+	]],
+
+"assertive_warrior_or_elder": [
+	[
+		"apprentice",
+		"assertive",
+		"cool",
+		"silly"
+	],
+	[
+		"Working hard, y_c? Or, is it more like hardly working? Hehe.",
+		"Y'know, it's good to contribute to the clan, but make sure you take some time to grow up, too. Working isn't everything. Now's the time for you to get out and explore!",
+		"*Sigh* I sorta miss those days myself ..."
+		
+	]],
+
+"assertive_elder": [
+	[
+		"kitten",
+		"apprentice",
+		"assertive"
+	],
+	[
+		"Hey there, y_c! Stop by for a story? StarClan knows I got plenty to go around!",
+		"There was this one time in my apprenticeship when I was cornered by a whole pack of dogs! They were huge ones, too. I just barely escaped by the tip of my tail!",
+		"Ah, I can't deny I miss those days ... but I'm making plenty of memories right here in camp, too.",
+		"Thanks for coming to visit!"
+	]],
+
+"assertive_elder": [
+	[
+		"assertive",
+		"Any"
+	],
+	[
+		"*Cough* *Cough* ... Oh, hey, young'un! What brings you by the elders' den?",
+		"Just want to chat? Hehe, can't say I mind! It's so boring in here nowadays ...",
+		"Say, how's about we take this conversation outside? I'm dyin' to stretch my legs, they feel like they're about to snap off!",
+		"See if you can keep up, hehehe!"
+	]],
+
+"assertive_elder": [
+	[
+		"Any",
+		"assertive"
+	],
+	[
+		"I saw d_w show off a belly rake to some apprentices earlier. Took me back to my glory days!",
+		"I wonder if I could still ...",
+		"[With a grunt and a whole load of popping joints, t_c rears performs a creaky, but still stunningly precise belly rake. They plop back into their nest, panting with exertion.]",
+		"Still got it! Hehehe!"
+	]],
+
+"assertive_elder": [
+	[
+		"elder",
+		"assertive"
+	],
+	[
+		"Look at us, huh? Old bags of fur.",
+		"Hard to believe our golden years are over ...",
+		"Though, on the other paw, who says they have to be? I'm just getting started!"
+	]],
+
+"assertive_elder":  [
+	[
+		"elder",
+		"assertive",
+		"you_brooding",
+		"you_neurotic",
+		"you_unlawful",
+		"you_assertive"
+	],
+	[
+		"Ah, no need to look so grumpy, you old bag of bones, we got plenty to smile about!",
+		"We got a roof over our heads, plenty to eat ... StarClan knows that wasn't true all our lives.",
+		"So, just try to relax and enjoy it! I know I will."
+	]],
+
+"assertive_elder":  [
+	[
+		"Any",
+		"assertive"
+	],
+	[
+		"Hey, y_c, come walk some laps with me!",
+		"Shouldn't I be resting ...?",
+		"Psh, badger droppings! I'll rest plenty when I'm dead!"
+	]],
+
+"assertive_elder":  [
+	[
+		"kitten",
+		"apprentice",
+		"medicine cat apprentice",
+		"medicine cat",
+		"mediator apprentice",
+		"mediator",
+		"queen's apprentice",
+		"queen",
+		"deputy",
+		"leader",
+		"assertive"
+	],
+	[
+		"So, you've stopped by the elders' den for a bit of wisdom, ah?",
+		"My philosophy is this: always work hard, fight hard, and play hard, too!",
+		"Do everything with courage. After all, you'll never catch anything if you never pounce!",
+		"And don't be afraid to make mouse-brained mistakes. StarClan knows I have, and I've lived this long!",
+		"Do this, and you'll have success, no matter what you're going after. Life's too short to live with regrets!"
+	]],
+
+"assertive_elder":  [
+	[
+		"apprentice",
+		"medicine cat apprentice",
+		"mediator apprentice",
+		"queen's apprentice",
+		"warrior",
+		"assertive"
+	],
+	[
+		"Hey, kit, come change my moss, will ya? I'm chafing something unreal.",
+		"After that, head to the medicine den and get some mouse bile. I'm lousy with ticks!"
+	]],
+
+"assertive_elder":  [
+	[
+		"kitten",
+		"apprentice",
+		"medicine cat apprentice",
+		"mediator apprentice",
+		"queen's apprentice",
+		"assertive",
+		"platonic_like",
+		"respect"
+	],
+	[
+		"Tell ya what, kid, you're much smarter than I ever was at your age.",
+		"Maybe you'll go far ... If you see me in StarClan at your leader's ceremony, don't be surprised! Hehe!"
+	]],
+
+"assertive_elder":  [
+	[
+		"medicine cat apprentice",
+		"medicine cat",
+		"assertive"
+	],
+	[
+		"Hey, y_c, you got anything to make my joints less stiff?",
+		"I'm not as spry as I used to be, heh ... But I'm not planning on slowing down any time soon!"
+	]],
+
+"assertive_elder":  [
+	[
+		"Any",
+		"platonic_like"
+	],
+	[
+		"Don't let anybody tell ya that we elders can't defend ourselves. In my prime, I could take down a whole o_cClan patrol ... With my leg broken!",
+		"I'm serious! Ask anybody, they'll tell you!"
+	]
+],
+"assertive_misc":  [
+	[
+		"warrior",
+		"apprentice",
+		"assertive",
+		"unlawful",
+		"unabashed",
+		"you_neurotic",
+		"you_introspective",
+		"you_sweet"
+	],
+	[
+		"Yaknow, y_c, I never really found you all that convincing as a warrior.",
+"Real warriors are strong! We're fearless! We never back down from a fight!",
+"But in you, I sense ... uncertainty.",
+"Maybe you should see the medicine cat about it."
+	]]}

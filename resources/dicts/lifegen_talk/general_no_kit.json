@@ -1,0 +1,1109 @@
+{
+    "assertive_leafbare": [
+        [
+            "Any",
+            "assertive",
+            "unlawful",
+            "leafbare"
+        ],
+        [
+            "Brrr ... this cold is driving me stir-crazy!",
+            "Must ... escape ... camp ..."
+        ]
+    ],
+    "assertive_leafbare1": [
+        [
+            "Any",
+            "assertive",
+            "leafbare"
+        ],
+        [
+            "Hey, it's snowing! Pretty neat, huh?",
+            "What makes it snow? That's easy! When it gets cold, and the rain freezes to ice in the sky, then, uh ...",
+            "StarClan ... uh, our warrior ancestors, they ...",
+            "... Pretend I didn't say anything. I'm not the best with this think-y stuff."
+        ]
+    ],
+    "assertive_newleaf": [
+        [
+            "Any",
+            "assertive",
+            "newleaf",
+            "stable",
+            "upstanding",
+            "sweet"
+        ],
+        [
+            "Thank StarClan the weather's finally starting to turn around!",
+            "Pretty soon, we'll be blessed with clear skies, sunny days, and all the prey we can eat! Haha!"
+        ]
+    ],
+    "assertive_newleaf1": [
+        [
+            "Any",
+            "assertive",
+            "newleaf",
+            "brooding"
+        ],
+        [
+            "AH-CHOO!",
+            "What? Allergies? Please, y_c. I'm a fearsome warrior of c_n, I'm made of tougher stuff than thah ... AH ...",
+            "AH-CHOO!"
+        ]
+    ],
+    "assertive_greenleaf": [
+        [
+            "Any",
+            "assertive",
+            "greenleaf"
+        ],
+        [
+            "FINALLY, it's nice outside again!",
+            "Now, I can really get out and stretch my legs! Look out, world! t_c is back! Not a single piece of prey in the forest will escape my grasp!"
+        ]
+    ],
+    "assertive_mate": [
+        [
+            "Any",
+            "assertive",
+            "cool",
+            "silly",
+            "from_mate"
+        ],
+        [
+            "Hey, mouse-brain. I saved your favorite piece of prey for you.",
+            "Yeah yeah, go on, shower me with praise! I already know you think I'm sooo great.",
+            "[You and r_c laugh as you cross camp to share a meal together.]"
+        ]
+    ],
+    "assertive_mate1": [
+        [
+            "Any",
+            "assertive",
+            "silly",
+            "from_mate"
+        ],
+        [
+            "Hey, y_c, here's a good one!",
+            "What did the rabbit say to its mate?",
+            "There's no bunny else like you! Heehee!",
+            "Ah, c'mon. You know you love my terrible jokes!"
+        ]
+    ],
+    "assertive_mate2": [
+        [
+            "Any",
+            "assertive",
+            "unabashed",
+            "from_mate",
+            "romantic_like",
+            "platonic_like",
+            "from_parent"
+        ],
+        [
+            "... y_c? Is everything okay?",
+            "*Sigh*. C'mere, y_c. I can tell you've been having a hard day.",
+            "[t_c sits down beside you and presses their pelt into yours.]",
+            "I don't know what's been getting you down, but just know that, to me, you're the strongest cat in this clan by a long shot. And if any cat's been bothering you, just tell me and I'll send 'em straight to the Dark Forest!",
+            "[r_c licks your ear reassuringly, and sits with you until all the anxiety you felt is completely gone.]"
+        ]
+    ],
+    "assertive_mate3": [
+        [
+            "Any",
+            "assertive",
+            "unabashed",
+            "from_mate"
+        ],
+        [
+            "I love you, y_c.",
+            "StarClan, that feels good to say ... what if I said it louder?",
+            "I LOVE YOU, M_C!!!!!",
+            "What, am I embarrassing you, or something? Hahaha!"
+        ]
+    ],
+    "assertive_mate4": [
+        [
+            "Any",
+            "assertive",
+            "from_mate"
+        ],
+        [
+            "I know you doubt yourself sometimes, y_c, but if there's one thing I hope you never doubt, it's that I love you.",
+            "I'm always gonna have your back, alright? No matter what, that's never gonna change.",
+            "So loosen up a little! Wanna come on a walk with me tonight? There's this really cool place I found ..."
+        ]
+    ],
+    "assertive_mate4": [
+        [
+            "elder",
+            "assertive",
+            "cool",
+            "from_mate"
+        ],
+        [
+            "What's going on, you old furbag? You're aging terribly.",
+            "[t_c bumps you on the nose with a purr, and it gives you the strength to carry you through the day.]"
+        ]
+    ],
+    "assertive_eldermate4": [
+        [
+            "elder",
+            "assertive",
+            "sweet",
+            "stable",
+            "unabashed",
+            "from_mate"
+        ],
+        [
+            "Ack ... my creaking bones ...",
+            "Not as young as we used to be, huh, y_c?",
+            "But, when I'm with you, I still feel like a little apprentice all over again!",
+            "We still got plenty of good moons left in us, I'm sure of it."
+        ]
+    ],
+    "assertive_mentor10": [
+        [
+            "apprentice",
+            "mediator apprentice",
+            "medicine cat apprentice",
+            "queen's apprentice",
+            "assertive",
+            "silly",
+            "from_mentor",
+            "you_upstanding",
+            "you_stable"
+        ],
+        [
+            "I swear, y_c, you must be the hardest working apprentice this clan has ever seen ...",
+            "I'm proud of you and all, but try to take some time for yourself, alright? Loosen up! That's a mentor's order!"
+        ]
+    ],
+    "assertive_parent": [
+        [
+            "mediator apprentice",
+            "medicine cat apprentice",
+            "queen's apprentice",
+            "dislike",
+            "assertive",
+            "brooding",
+            "from_parent"
+        ],
+        [
+            "Hmph ... I would've thought my own kit would've chosen to become a real warrior apprentice, but if this is what you want, then I suppose I'll just have to deal with it.",
+            "... But, maybe, if you just gave being a warrior a chance?"
+        ]
+    ],
+    "assertive_parent1": [
+        [
+            "kitten",
+            "assertive",
+            "from_parent"
+        ],
+        [
+            "Hey, y_c, play nice! Be careful with your playmates!",
+            "*Whisper* Even though, between you and me, we both know you could totally destroy them. Hehehe!"
+        ]
+    ],
+    "assertive_parent2": [
+        [
+            "kitten",
+            "assertive",
+            "silly",
+            "stable",
+            "sweet",
+            "unabashed",
+            "platonic_like",
+            "from_parent"
+        ],
+        [
+            "Ready for a badger ride, y_c? Hurry up and climb on!",
+            "[You clamber onto t_c's shoulders, laughing and squealing with glee.]",
+            "Rrragh, I'm the big scary badger! Hahaha!"
+        ]
+    ],
+    "assertive_parent3": [
+        [
+            "kitten",
+            "assertive",
+            "platonic_like",
+            "from_parent",
+            "silly",
+            "sweet",
+            "stable",
+            "unabashed"
+        ],
+        [
+            "What's that, y_c? You wanna play? Sure! You can be the leader, and I'll be the rogue.",
+            "Ahem ...",
+            "Stop right there, clan cat! Where do you think you're going? I, leader of the rogues, will stop you! Muahahaha!",
+            "Wait, stop! What are you doing? AHHH!!!!",
+            "Too ... powerful ... bleeegh!",
+            "[t_c flops over on the ground dramatically. You clamber up onto their body and tug on their ears, giggling hysterically.]"
+        ]
+    ],
+    "assertive_parent4": [
+        [
+            "no_kit",
+            "assertive",
+            "platonic_like",
+            "from_parent",
+            "sweet",
+            "introspective"
+        ],
+        [
+            "StarClan, y_c, you're growing up so fast! I remember when you were just in the nursery, the size of my paw ... now, you're already looking like a big, strong warrior!",
+            "*Sniffle* Ah, now look at me. I'm getting all sentimental!",
+            "I'm more proud of you than anything, y_c. Don't you ever forget that!"
+        ]
+    ],
+    "assertive_parent4": [
+        [
+            "no_kit",
+            "assertive",
+            "platonic_like",
+            "from_parent"
+        ],
+        [
+            "y_c, your fur's standing up in the back, let me get it for ya ...",
+            "Haha, okay, okay, I'll stop!",
+            "You may be grown now, but you'll always be a kit in my eyes."
+        ]
+    ],
+    "assertive_parent5": [
+        [
+            "no_kit",
+            "assertive",
+            "platonic_like",
+            "from_parent",
+            "random_cat",
+            "silly"
+        ],
+        [
+            "Y'know, r_c was gushing to me earlier about what a good job you're doing. The whole time, I was just going, 'Yep, that's my kit!' Hehe!",
+            "Keep up the good work, kiddo. I think everybody else is starting to notice, too!"
+        ]
+    ],
+    "assertive_parent6": [
+        [
+            "no_kit",
+            "assertive",
+            "platonic_like",
+            "from_parent",
+            "unabashed"
+        ],
+        [
+            "Hey, there's my big guy. What's the matter, kiddo? Something bothering you?",
+            "I know growing up isn't easy. But just know that no matter what, I'm always here to support you. And if anyone gives you a hard time, just tell them to go to the Dark Forest!",
+            "Don't worry, kiddo. I know you're the toughest cat in the clan! Even if those other mouse-brains can't see it yet ..."
+        ]
+    ],
+    "assertive_parent7": [
+        [
+            "no_kit",
+            "assertive",
+            "dislike",
+            "from_parent",
+            "upstanding",
+            "brooding",
+            "unabashed"
+        ],
+        [
+            "I don't even know where you get off, calling yourself my kit. No kit of mine is as mouse-brained as you are!",
+            "Come back when you've actually done something noteworthy."
+        ]
+    ],
+    "assertive_parent8": [
+        [
+            "no_kit",
+            "assertive",
+            "dislike",
+            "from_parent",
+            "cool",
+            "upstanding",
+            "stable",
+            "sweet"
+        ],
+        [
+            "y_c, do you really have to act so ... well ... you all the time?",
+            "I've raised you better than this! You were supposed to be the strongest warrior in the clan! Not ... well ... you know.",
+            "This."
+        ]
+    ],
+    "assertive_parent9": [
+        [
+            "no_kit",
+            "assertive",
+            "dislike",
+            "from_parent"
+        ],
+        [
+            "What's that, y_c? You've been feeling stressed?",
+            "Hmph. Stress is what makes a warrior. And I didn't raise a complainer.",
+            "Now, quit whining and go do something useful!"
+        ]
+    ],
+    "assertive_1": [
+        [
+            "newborn",
+            "assertive",
+            "from_parent"
+        ],
+        [
+            "*Sigh* My perfect little y_c ...",
+            "You're gonna do great things someday, kiddo, I just know it."
+        ]
+    ],
+    "assertive_parent10": [
+        [
+            "no_kit",
+            "assertive",
+            "dislike",
+            "from_parent",
+            "cool",
+            "neurotic",
+            "stable",
+            "upstanding"
+        ],
+        [
+            "Huh? What's that, y_c? You want me to apologize for the way I raised you?",
+            "Oh, big deal. So I tried to toughen you up, so what? I'm just so horrible and evil now because I tried to make you the best you could be? I got nothing to be sorry for.",
+            "Go try peddling your sob stories somewhere else. I really don't want to hear it."
+        ]
+    ],
+    "assertive_murder": [
+        [
+            "murder",
+            "assertive",
+            "no_kit"
+        ],
+        [
+            "You! You worthless piece of fox-dung, I'll kill you!",
+            "[Several clanmates have to hold r_c back as they attempt to claw your eyes out.]"
+        ]
+    ],
+    "assertive_murder1": [
+        [
+            "murder",
+            "assertive",
+            "no_kit",
+            "dislike"
+        ],
+        [
+            "You! I knew there was something wrong with you, I just knew it! But did anyone listen?"
+        ]
+    ],
+    "assertive_murder2": [
+        [
+            "murder",
+            "assertive",
+            "no_kit",
+            "brooding",
+            "unlawful"
+        ],
+        [
+            "Get out of my sight, before I make you!"
+        ]
+    ],
+    "assertive_murder3": [
+        [
+            "murder",
+            "assertive",
+            "from_mate",
+            "platonic_like",
+            "romantic_like",
+            "trust",
+            "comfort",
+            "from_parent",
+            "no_kit",
+            "stable",
+            "upstanding",
+            "brooding",
+            "sweet"
+        ],
+        [
+            "How ... How could you?",
+            "I trusted you, how could you just ...?",
+            "[t_c turns away, their whole body literally shaking with anger.]"
+        ]
+    ],
+    "assertive_murder4": [
+        [
+            "murder",
+            "assertive",
+            "from_mate",
+            "platonic_like",
+            "romantic_like",
+            "from_parent",
+            "trust",
+            "comfort",
+            "no_kit"
+        ],
+        [
+            "Heh ... you're a real snake, you know that?",
+            "That you could do something like this ... and lie to my face about it.",
+            "I can't believe I ever fell for it. But you can't trick me any longer.",
+            "Never speak to me again."
+        ]
+    ],
+    "assertive_murder4": [
+        [
+            "murder",
+            "kitten",
+            "assertive",
+            "from_parent"
+        ],
+        [
+            "y_c, I ... why wouldn't you tell me?",
+            "To send another cat to StarClan ... and then lie about it ...",
+            "I know I taught you to take risks, but this isn't what I meant!"
+        ]
+    ],
+    "assertive_you_ill": [
+        [
+            "Any",
+            "platonic_like",
+            "romantic_like",
+            "from_mate",
+            "from_parent",
+            "assertive",
+            "silly",
+            "unlawful",
+            "you_ill",
+            "you_injured"
+        ],
+        [
+            "Hey, y_c ...",
+            "The medicine cat said I shouldn't visit you, but who cares what that mouse-brain thinks? If they think they can keep me away from you ... they must be dumber than I thought!",
+            "Everyone around camp is missing you ... hoping you get better soon ...",
+            "Hey, that reminds me, the funniest thing happened today ...",
+            "[r_c sits by your side, talking to you until the medicine cat literally forces them to leave. Their company makes you feel better than any herbs ever could.]"
+        ]
+    ],
+    "assertive_ill1": [
+        [
+            "Any",
+            "platonic_like",
+            "romantic_like",
+            "from_mate",
+            "from_parent",
+            "assertive",
+            "you_ill"
+        ],
+        [
+            "I swear to StarClan, y_c, you better fight this thing off! You're too strong to lose to a stupid sickness! I know that you are!",
+            "If you don't get better soon, I ... I ...",
+            "I'll fight off the sickness for you myself!"
+        ]
+    ],
+    "assertive_ill2": [
+        [
+            "Any",
+            "platonic_like",
+            "romantic_like",
+            "from_mate",
+            "from_parent",
+            "assertive",
+            "silly",
+            "cool",
+            "unlawful",
+            "you_ill",
+            "you_injured"
+        ],
+        [
+            "Hey, how's my favorite patient?",
+            "I brought you some prey, and some fresh moss. I know the moss in here is sorta crusty ...",
+            "Hey, here's an idea. What if I stayed in here with you tonight? We could stay up until moonhigh telling stories, and I could sneak some of your nesting materials to make it more comfortable!",
+            "Don't tell the medicine cat, though ... hehe!"
+        ]
+    ],
+    "assertive_ill3": [
+        [
+            "Any",
+            "platonic_like",
+            "romantic_like",
+            "from_mate",
+            "from_parent",
+            "assertive",
+            "silly",
+            "cool",
+            "you_ill",
+            "you_injured"
+        ],
+        [
+            "Hey, y_c! You're looking a lot better than yesterday! If I didn't know any better, I'd say you're healing up pretty nice!",
+            "The medicine cat says you should be outta here in no time, which is good, since I'm starting to go crazy without you around ...",
+            "If you don't get better soon, then ...",
+            "Hehe. Let's not even talk about that. Bad luck."
+        ]
+    ],
+    "assertive_ill4": [
+        [
+            "Any",
+            "platonic_like",
+            "romantic_like",
+            "from_mate",
+            "from_parent",
+            "assertive",
+            "silly",
+            "neurotic",
+            "upstanding",
+            "you_ill",
+            "you_injured"
+        ],
+        [
+            "[t_c bursts into the medicine den, frantic and wide-eyed.]",
+            "*Pant* *Pant* Where's y_c?! Are they alive? Are they breathing?",
+            "Oh ... hey, y_c. Guess it was just a false alarm. Hehe.",
+            "[t_c is laughing, but they look like they're about to faint with worry.]"
+        ]
+    ],
+    "assertive_ill5": [
+        [
+            "Any",
+            "platonic_like",
+            "romantic_like",
+            "from_mate",
+            "from_parent",
+            "assertive",
+            "you_injured"
+        ],
+        [
+            "What'd you do to yourself this time, mouse-brain? Don't worry - I've done worse plenty of times, and I'm still kicking. Hehe.",
+            "[t_c's voice is strained and tinged with darkness. It seems they're more worried than they're letting on.]"
+        ]
+    ],
+    "assertive_ill6": [
+        [
+            "Any",
+            "platonic_like",
+            "romantic_like",
+            "from_mate",
+            "from_parent",
+            "you_injured",
+            "you_ill"
+        ],
+        [
+            "[Late at night, when they think you're sleeping, t_c sneaks into the medicine den and sits beside your nest.]",
+            "Please, StarClan ... please, help y_c get better. They have to get better.",
+            "I was supposed to protect them ... I was supposed to keep them safe ... without them, I ...",
+            "[Overcome with emotion, t_c races out of the medicine den.]"
+        ]
+    ],
+    "assertive_ill7": [
+        [
+            "Any",
+            "assertive",
+            "silly",
+            "cool",
+            "you_ill",
+            "you_injured"
+        ],
+        [
+            "Yeesh ... you don't look too hot, y_c.",
+            "Make sure to get plenty of rest! You'll be back on your paws before you know it."
+        ]
+    ],
+    "assertive_theyyou_ill": [
+        [
+            "Any",
+            "platonic_like",
+            "romantic_like",
+            "from_mate",
+            "from_parent",
+            "assertive",
+            "silly",
+            "they_injured",
+            "they_ill"
+        ],
+        [
+            "Heh ... no need to look so worried, y_c. I've come back from worse, plenty of times! I'll be annoying you again before you - AH!",
+            "[t_c winces in pain, then tries to brush it off as just a laugh.]"
+        ]
+    ],
+    "assertive_theyill1": [
+        [
+            "Any",
+            "assertive",
+            "brooding",
+            "you_injured",
+            "they_ill"
+        ],
+        [
+            "M'fine ... f-fine ... I'm ...",
+            "[t_c mumbles some weak gibberish about how totally okay they are.]"
+        ]
+    ],
+    "assertive_theyill2": [
+        [
+            "Any",
+            "platonic_like",
+            "romantic_like",
+            "from_mate",
+            "from_parent",
+            "assertive",
+            "cool",
+            "you_injured",
+            "they_ill",
+            "they_injured"
+        ],
+        [
+            "Oh, hey, it's you ...",
+            "... Do me a favor, y_c, and don't look too hard, m'kay? I don't like you seeing me like this.",
+            "You can stare for five more seconds, and that's it!"
+        ]
+    ],
+    "assertive_theyill3": [
+        [
+            "Any",
+            "assertive",
+            "unlawful",
+            "they_injured",
+            "they_ill"
+        ],
+        [
+            "Psh, this mouse-brained medicine cat, trying to imprison me in this den over something that's not even a problem.",
+            "I am completely fine! More than fine! I could run laps around camp! I could take on three rogues at once!",
+            "If only the medicine cat would listen ..."
+        ]
+    ],
+    "assertive_theyill4": [
+        [
+            "Any",
+            "platonic_like",
+            "romantic_like",
+            "from_mate",
+            "from_parent",
+            "assertive",
+            "silly",
+            "you_injured",
+            "they_ill",
+            "they_injured"
+        ],
+        [
+            "Hey, y_c! How about a joke? What did the tree say to its mate?",
+            "I wood never leaf - augh ... ahahah ... ow ...",
+            "Laughing hurts ... imagine that. Hehe ...",
+            "Ow. Again."
+        ]
+    ],
+    "assertive_theyill5": [
+        [
+            "Any",
+            "platonic_like",
+            "romantic_like",
+            "from_mate",
+            "from_parent",
+            "assertive",
+            "silly",
+            "cool",
+            "neurotic",
+            "introspective",
+            "brooding",
+            "you_injured",
+            "they_ill",
+            "they_injured"
+        ],
+        [
+            "Oh, y_c, it's you! Everything is fine! I'm fine! I'm - I'm - augh ...",
+            "StarClan, it hurts so bad ...",
+            "Everything hurts ...",
+            "y_c, I ... I'm scared.",
+            "I don't want to die.",
+            "Will you stay with me?",
+            "I feel braver when you're here."
+        ]
+    ],
+    "assertive_deadclose": [
+        [
+            "Any",
+            "assertive",
+            "brooding",
+            "unlawful",
+            "they_grieving",
+            "neutral",
+            "dislike"
+        ],
+        [
+            "[r_c paces back and forth in front of the warrior's den, muttering to themselves and flexing their claws.]",
+            "They're gone, they're gone, they're gone ...",
+            "... Hey, what are you looking at, huh?",
+            "I don't have to take this fox-dung from you! Leave! Go find someone else to gawk at!",
+            "[As you leave, you hear t_c resume their muttering.]",
+            "... d_c, where are you?"
+        ]
+    ],
+    "assertive_deadclose1": [
+        [
+            "Any",
+            "medicine cat",
+            "medicine cat apprentice",
+            "assertive",
+            "cool",
+            "they_grieving"
+        ],
+        [
+            "Hey, uh ...",
+            "You can talk to StarClan cats, right?",
+            "Have you, uh ... heard anything from d_c?",
+            "Sorry. That's probably a mouse-brained question. I know it doesn't work like that.",
+            "But, if you ever do hear from them ... tell them that, uh ...",
+            "I'm sorry. And I'll keep their nest warm. And they better be saving a spot for me up in StarClan, or else I'll have to come up there myself and teach them a lesson!",
+            "... Thanks."
+        ]
+    ],
+    "assertive_deadclose3": [
+        [
+            "Any",
+            "platonic_like",
+            "romantic_like",
+            "from_mate",
+            "from_parent",
+            "assertive",
+            "sweet",
+            "stable",
+            "they_grieving"
+        ],
+        [
+            "... I can't believe d_c is really gone ...",
+            "I was supposed to keep them safe, I ...",
+            "I failed them. Don't even try to talk me out of it. I know I failed them.",
+            "StarClan, they must hate me ...",
+            "I need to go on a walk. Clear my head.",
+            "Don't follow after me, either, y_c, I ... I need to be alone."
+        ]
+    ],
+    "assertive_deadclose5": [
+        [
+            "Any",
+            "platonic_like",
+            "romantic_like",
+            "from_mate",
+            "from_parent",
+            "assertive",
+            "cool",
+            "silly",
+            "unlawful",
+            "introspective",
+            "they_grieving"
+        ],
+        [
+            "It's clear out tonight ... lotta stars up there, huh?",
+            "D'you ... d'you think d_c might be up there?",
+            "I know it's mouse-brained, but ... sometimes, I can still feel them right next to me.",
+            "Which star do you think d_c is?",
+            "I think it's that one, over there. The brightest star in the whole sky."
+        ]
+    ],
+    "assertive_deadclose6": [
+        [
+            "Any",
+            "platonic_like",
+            "romantic_like",
+            "from_mate",
+            "from_parent",
+            "assertive",
+            "silly",
+            "they_grieving"
+        ],
+        [
+            "Uh ... hey, y_c ... How's it going ...",
+            "I'm, uh ... I'm not, uh ... I ...",
+            "[t_c suddenly collapses into you, sobbing into your fur.]",
+            "I just miss d_c so much ..."
+        ]
+    ],
+    "assertive_deadclose": [
+        [
+            "Any",
+            "assertive",
+            "brooding",
+            "unlawful",
+            "they_grieving",
+            "neutral",
+            "dislike"
+        ],
+        [
+            "[You hear quiet sobbing coming from t_c's nest.]",
+            "*Sniffle* *Sob*",
+            "... AH! y_c! W-What are you -",
+            "Get out! Leave me alone!",
+            "Yes, I'm okay! I'm perfectly fine! Now leave, before I rake you a big, ugly scar!"
+        ]
+    ],
+    "assertivekitten_deadclose": [
+        [
+            "Any",
+            "assertive",
+            "they_grieving"
+        ],
+        [
+            "*Sniffle* What happened to d_c? I miss them ...",
+            "They're gone?",
+            "Well, when are they coming back?"
+        ]
+    ],
+    "assertivekitten_deadclose": [
+        [
+            "Any",
+            "assertive",
+            "they_grieving"
+        ],
+        [
+            "[You tell t_c that you like their pretty feather.]",
+            "Thanks!!! It's for d_c!",
+            "Could you help me put it in their nest?",
+            "I'm hoping that, when they see it in StarClan, they'll like it so much that they'll come back down to c_nClan, and we can play together again!"
+        ]
+    ],
+    "assertivekitten_deadclose": [
+        [
+            "Any",
+            "assertive",
+            "they_grieving"
+        ],
+        [
+            "*Sniffle* What happened to d_c? I miss them ...",
+            "They're gone?",
+            "Well, when are they coming back?"
+        ]
+    ],
+    "assertivekitten_deadclose": [
+        [
+            "Any",
+            "assertive",
+            "they_grieving"
+        ],
+        [
+            "[You tell t_c that you like their pretty feather.]",
+            "Thanks!!! It's for d_c!",
+            "Could you help me put it in their nest?",
+            "I'm hoping that, when they see it in StarClan, they'll like it so much that they'll come back down to c_nClan, and we can play together again!"
+        ]
+    ],
+    "assertivekitten_deadclose": [
+        [
+            "Any",
+            "assertive",
+            "they_grieving"
+        ],
+        [
+            "Hmph. Everyone always tells me they're sorry, just so sorry for my loss. Next time someone says that to me, I'll claw their throat out.",
+            "I don't need anybody's pity, can't they see that?",
+            "I need ... I need, uh ...",
+            "... Honestly, I'm not really sure what I need.",
+            "I think I just need to hear d_c's laugh again.",
+            "That would set everything right."
+        ]
+    ],
+    "assertivekitten_deadclose": [
+        [
+            "Any",
+            "assertive",
+            "they_grieving"
+        ],
+        [
+            "I'm strong. I can handle this, I - I should be able to handle this.",
+            "So why does it hurt so much?",
+            "Who knew that the worst pain I'd ever feel would be inflicted by d_c."
+        ]
+    ],
+    "assertive_yougrief1": [
+        [
+            "kitten",
+            "assertive",
+            "cool",
+            "brooding"
+        ],
+        [
+            "[When you ask t_c what happened to d_c, and if you'll ever see them again, something on their face breaks.]",
+            "Ah ... Ah, kid, I'm so sorry ...",
+            "It ain't right, what happened to d_c ...",
+            "But, mark my words, you haven't seen the last of them. Though, it may be a while. They're up in StarClan now, with our warrior ancestors.",
+            "One day, you'll reunite again. But until then, just know they're up there watching over you, helping you grow strong and healthy.",
+            "Can you try to grow up strong and healthy for them?"
+        ]
+    ],
+    "assertive_yougrief2": [
+        [
+            "Any",
+            "assertive",
+            "stable",
+            "upstanding",
+            "neutral",
+            "you_grieving"
+        ],
+        [
+            "Hey, uh ... I'll say an extra prayer for d_c tonight.",
+            "Try to take it easy, m'kay? They wouldn't want their death to keep you from living.",
+            "I'll bring you back some prey later from the hunting patrol."
+        ]
+    ],
+    "assertive_yougrief3": [
+        [
+            "Any",
+            "assertive",
+            "unabashed",
+            "stable",
+            "you_grieving"
+        ],
+        [
+            "I'm so sorry for your loss, y_c ...",
+            "d_c was a really special cat."
+        ]
+    ],
+    "assertive_jealous1": [
+        [
+            "Any",
+            "assertive",
+            "upstanding",
+            "neutral",
+            "you_grieving"
+        ],
+        [
+            "You and d_c were close, right? Man, it's so terrible ...",
+            "This is why c_nClan needs better defenses. To keep anything like this from happening again."
+        ]
+    ],
+    "assertive_jealous1": [
+        [
+            "Any",
+            "assertive",
+            "you_grieving",
+            "they_grieving",
+            "stable",
+            "unabashed",
+            "brooding",
+            "introspective"
+        ],
+        [
+            "I've braved all sorts of terrifying, ridiculous things, but grief is just another beast entirely ...",
+            "Though, I guess you'd know that, wouldn't you, y_c?",
+            "You're grieving, too.",
+            "Tell me, how have you gotten through the days without going completely insane?"
+        ]
+    ],
+    "assertive_jealous1": [
+        [
+            "Any",
+            "assertive",
+            "you_grieving",
+            "platonic_like",
+            "romantic_like"
+        ],
+        [
+            "C'mon, y_c, you gotta eat something.",
+            "You're the strongest cat I know!",
+            "You can't let this take you out. I won't let you."
+        ]
+    ],
+    "assertive_jealous1": [
+        [
+            "Any",
+            "assertive",
+            "you_grieving",
+            "platonic_like"
+        ],
+        [
+            "It wasn't your fault, y_c. You know that, don't you?",
+            "Dwelling on it won't make it any better.",
+            "No matter how hard you try, your guild won't bring d_c back. They wouldn't want this to keep you from living."
+        ]
+    ],
+    "assertive_insult": [
+        [
+            "kitten",
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "queen's apprentice",
+            "assertive",
+            "unlawful",
+            "unabashed",
+            "silly",
+            "insult",
+            "random_cat",
+            "platonic_like",
+            "neutral"
+        ],
+        [
+            "Hehehe! Little guy's got a mouth on 'em! That's hilarious!",
+            "Wait, stay right there!",
+            "r_c! Guess what y_c just called me! Ahahaha!"
+        ]
+    ],
+    "assertive_insult1": [
+        [
+            "kitten",
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "queen's apprentice",
+            "assertive",
+            "insult",
+            "unlawful",
+            "dislike"
+        ],
+        [
+            "Try that again, and see what happens, pipsqueak.",
+            "I could chew you up and spit you out again without thinking twice about it."
+        ]
+    ],
+    "assertive_jealous1": [
+        [
+            "Any",
+            "assertive",
+            "silly",
+            "cool",
+            "insult"
+        ],
+        [
+            "Ahahahaaa! Good one!"
+        ]
+    ],
+    "assertive_jealous1": [
+        [
+            "Any",
+            "assertive",
+            "unabashed",
+            "cool",
+            "insult"
+        ],
+        [
+            "Bold of you to assume that I care."
+        ]
+    ],
+    "assertive_jealous1": [
+        [
+            "Any",
+            "assertive",
+            "brooding",
+            "insult",
+            "dislike"
+        ],
+        [
+            "Go dig a hole and bury yourself in it, snake-heart."
+        ]
+    ],
+    "assertive_jealous1": [
+        [
+            "Any",
+            "assertive",
+            "insult"
+        ],
+        [
+            "You looking for a fight? I'm always ready!"
+        ]
+    ],
+    "assertive_jealous1": [
+        [
+            "Any",
+            "assertive",
+            "cool",
+            "insult"
+        ],
+        [
+            "Tch. That the best you can do?"
+        ]
+    ]
+}

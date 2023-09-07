@@ -21,7 +21,7 @@
             "Any",
             "sibling",
             "half sibling",
-            "kit",
+            "kitten",
             "adopted_sibling",
             "half sibling",
             "dislike",
@@ -159,9 +159,9 @@
             "assertive",
             "silly",
             "unlawful",
-            "kit",
-            "adopted kit",
-            "your apprentice"
+            "kitten",
+            "from_adopted_kit",
+            "from_your_apprentice"
         ],
         [
             "[t_c stumbles across camp to you, soaking wet and covered in mud.]",
@@ -258,7 +258,7 @@
             "from_parent",
             "from_mate",
             "sibling",
-            "adoptive sibling"
+            "adopted_sibling"
         ],
         [
             "Tch. Did you see what a snake-heart r_c was acting like earlier? And over a piece of prey, no less!",
@@ -488,7 +488,7 @@
     ],
     "assertivemedapp_3": [
         [
-            "kit",
+            "kitten",
             "apprentice",
             "warrior",
             "elder",
@@ -524,8 +524,8 @@
         [
             "Any",
             "assertive",
-            "injured",
-            "ill"
+            "you_injured",
+            "you_ill"
         ],
         [
             "Don't worry, pal. I'll get you patched up in no time ..."
@@ -537,8 +537,8 @@
             "assertive",
             "silly",
             "cool",
-            "injured",
-            "ill"
+            "you_injured",
+            "you_ill"
         ],
         [
             "Heyy, there's my favorite patient! Doing better today, pal?",
@@ -561,7 +561,104 @@
             "[t_c does an exaggerated growl and you both explode with laughter.]",
             "Y-You're lucky I'm a lover, not a fighter! *Wheeze*"
         ]
-    ],
+    ],"assertive_dislike":  [
+        [
+            "Any",
+            "assertive",
+            "cool",
+            "silly",
+            "hate"
+        ],
+        [
+            "Hey y_c. Why don't you jump off a cliff? It's a new thing every cat in the Clan is trying.",
+    "[r_c is staring at you resentfully.]"
+        ]],
+    
+     "assertive_dislike1":  [
+        [
+            "Any",
+            "assertive",
+            "silly",
+            "unlawful",
+            "dislike"
+        ],
+        [
+            "Sorry, is someone talking to me right now?"
+        ]],
+    
+     "assertive_dislike1":  [
+        [
+            "Any",
+            "assertive",
+            "unabashed",
+            "brooding",
+            "dislike"
+        ],
+        [
+            "Can't you see I'm busy, mousebrain? Go bother someone else!"
+        ]],
+    
+     "assertive_dislike1":  [
+        [
+            "Any",
+            "assertive",
+            "dislike"
+        ],
+        [
+            "Go away!!!"
+        ]],
+    
+     "assertive_dislike1":  [
+        [
+            "Any",
+            "assertive",
+            "cool",
+            "dislike",
+            "no_kit"
+        ],
+        [
+            "Hey, y_c. You're looking smaller than usual. Maybe it's time to catch up on your training.",
+            "*Snrk.*"
+        ]],
+        "assertive_jealous1":	[[
+            "no_kit",
+    "assertive",
+    "cool",
+            "jealousy"
+        ],
+        [
+     "Hey, so, remember when you cracked that joke today, and everybody laughed, and then I tried to be funny, and no one laughed?",
+    "... What was the deal with that?"
+            
+        ]],
+    
+    "assertive_elder":  [
+        [
+            "Any",
+            "assertive",
+            "upstanding",
+            "stable",
+            "dislike",
+            "neutral",
+            "no_kit"
+        ],
+        [
+            "*Sigh* Can't you see I have more important things to do, y_c?",
+            "Go back to catching mice, or whatever."
+        ]],
+    "assertive_apprentice4": [
+        [
+            "no_kit",
+            "platonic_like",
+            "assertive"
+        ],
+        [
+            "y_c! y_c! You gotta come check out this new part of the territory I found! It's, like, the coolest place ever!",
+            "Okay, first, we have to scale up these rocks, and they're sort of slippery, but it's okay, cuz I only fell, like, twice. Next, we have to cross a river, and I'm pretty sure there's snakes in there, so watch out! Then, we have to ...",
+            "Aw, c'mon, don't look all nervous. It'll be fun! What's life without a little danger, right?",
+            "Ready? Let's go!"
+            
+        ]],
     "assertivemedapp_8": [
         [
             "Any",
@@ -605,8 +702,8 @@
         [
             "Any",
             "assertive",
-            "injured",
-            "ill"
+            "you_injured",
+            "you_ill"
         ],
         [
             "Hey, there you are! What do you need today? Something to cure your ills? I got everything you need, hehe ...",
@@ -617,7 +714,7 @@
         [
             "Any",
             "assertive",
-            "your apprentice"
+            "from_your_apprentice"
         ],
         [
             "Hello ...? StarClan ...?",
@@ -635,7 +732,7 @@
             "introspective",
             "upstanding",
             "stable",
-            "your apprentice",
+            "from_your_apprentice",
             "dead_close"
         ],
         [
@@ -649,7 +746,7 @@
         [
             "medicine cat",
             "assertive",
-            "your apprentice"
+            "from_your_apprentice"
         ],
         [
             "Okay, so horsetail is for infections, and so is comfrey ... wait. Um ... is that right?",
@@ -661,7 +758,7 @@
         [
             "medicine cat",
             "assertive",
-            "your apprentice"
+            "from_your_apprentice"
         ],
         [
             "Hey, y_c! What are we doing today?",
@@ -673,7 +770,7 @@
         [
             "medicine cat",
             "assertive",
-            "your apprentice"
+            "from_your_apprentice"
         ],
         [
             "y_c! y_c!!!",

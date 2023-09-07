@@ -1,6 +1,7 @@
 {
     "warrior_14": [
         [
+            "Any",
             "hate"
         ],
         [
@@ -9,6 +10,7 @@
     ],
     "warrior_15": [
         [
+            "Any",
             "hate"
         ],
         [
@@ -17,6 +19,7 @@
     ],
     "warrior_16": [
         [
+            "Any",
             "hate"
         ],
         [
@@ -25,6 +28,7 @@
     ],
     "warrior_17": [
         [
+            "Any",
             "hate"
         ],
         [
@@ -33,6 +37,7 @@
     ],
     "warrior_18": [
         [
+            "Any",
             "hate"
         ],
         [
@@ -41,6 +46,7 @@
     ],
     "warrior_19": [
         [
+            "Any",
             "hate"
         ],
         [
@@ -106,7 +112,7 @@
     "warrior32132": [
         [
             "newborn",
-            "parent"
+            "from_parent"
         ],
         [
             "I can't wait for you to open your eyes; you'll have a lot of fun out here, I'm sure.",
@@ -346,6 +352,185 @@
             "Must've been really terrible."
         ]
     ],
+    "assertive_dislike": [
+        [
+            "Any",
+            "assertive",
+            "cool",
+            "silly",
+            "hate"
+        ],
+        [
+            "Hey y_c. Why don't you jump off a cliff? It's a new thing every cat in the Clan is trying.",
+            "[r_c is staring at you resentfully.]"
+        ]
+    ],
+    "assertive_dislike1": [
+        [
+            "Any",
+            "assertive",
+            "silly",
+            "unlawful",
+            "dislike"
+        ],
+        [
+            "Sorry, is someone talking to me right now?"
+        ]
+    ],
+    "assertive_dislike1": [
+        [
+            "Any",
+            "assertive",
+            "unabashed",
+            "brooding",
+            "dislike"
+        ],
+        [
+            "Can't you see I'm busy, mousebrain? Go bother someone else!"
+        ]
+    ],
+    "assertive_dislike1": [
+        [
+            "Any",
+            "assertive",
+            "dislike"
+        ],
+        [
+            "Go away!!!"
+        ]
+    ],
+    "assertive_dislike1": [
+        [
+            "Any",
+            "assertive",
+            "cool",
+            "dislike",
+            "no_kit"
+        ],
+        [
+            "Hey, y_c. You're looking smaller than usual. Maybe it's time to catch up on your training.",
+            "*Snrk.*"
+        ]
+    ],
+    "assertive_rom": [
+        [
+            "Any",
+            "assertive",
+            "romantic_like"
+        ],
+        [
+            "Hey, y_c! I just got a new scar today! Wanna come take a look?",
+            "Yeah, I ran into a little dog out at the edge of a territory. Wasn't too hard to chase off, but it gave me a little nick. Medicine cat says it's probably never going away.",
+            "[You brush your tail over t_c's scar, and they seem a little too thrilled by the gesture for it to just be friendly.]"
+        ]
+    ],
+    "assertive_rom1": [
+        [
+            "Any",
+            "assertive",
+            "cool",
+            "romantic_like",
+            "from_mate"
+        ],
+        [
+            "StarClan, y_c, it's ... it's like you don't even know how beautiful you are.",
+            "... Augh. Look what you've done! Now I'm getting all sappy!",
+            "Just don't let it get to your head, furbag. I'm hot stuff, too.",
+            "[t_c winks at you, and you laugh together.]"
+        ]
+    ],
+    "assertive_rom2": [
+        [
+            "no_kit",
+            "assertive",
+            "silly",
+            "romantic_like"
+        ],
+        [
+            "Hey, y_c! I just finished visiting the kits in the nursery. StarClan, they're cute!",
+            "I wouldn't mind being a parent ... having a few mini-me's running around, terrorizing the clan.",
+            "How about you? Do you ever see yourself having kits someday? Not in, like, a weird way, of course! Just curious, hehe.",
+            "[t_c swishes their tail nervously.]"
+        ]
+    ],
+    "assertive_rom3": [
+        [
+            "Any",
+            "assertive",
+            "unabashed",
+            "romantic_like",
+            "from_mate"
+        ],
+        [
+            "Hey, y_c, what are your thoughts on feathers as a nesting material?",
+            "Why? Psh, don't play coy! We're basically sharing a nest at this point, with how often you sneak into mine. Haha!",
+            "Tell you what ... how about we ditch the formalities altogether and just make one, giant, super-nest!",
+            "Better start gathering moss! I know it's your favorite."
+        ]
+    ],
+    "assertive_rom4": [
+        [
+            "Any",
+            "assertive",
+            "unabashed",
+            "romantic_like"
+        ],
+        [
+            "What's that? One of the kits told you your ears are too big?",
+            "What a load of fox-dung! Those kits don't have functioning brains. Besides, I like your ears! I think it's cute, how big they are!",
+            "Er ... not cute in that way, mind you. Just, y'know ... ahem ...",
+            "[The blush on r_c's cheeks confirms that, yes, they did mean it in that way. And they're doing a terrible job of hiding it.]"
+        ]
+    ],
+    "assertive_elder": [
+        [
+            "Any",
+            "assertive",
+            "upstanding",
+            "stable",
+            "dislike",
+            "neutral",
+            "no_kit"
+        ],
+        [
+            "*Sigh* Can't you see I have more important things to do, y_c?",
+            "Go back to catching mice, or whatever."
+        ]
+    ],
+    "assertive_misc": [
+        [
+            "warrior",
+            "apprentice",
+            "assertive",
+            "unlawful",
+            "unabashed",
+            "you_neurotic",
+            "you_introspective",
+            "you_sweet"
+        ],
+        [
+            "Yaknow, y_c, I never really found you all that convincing as a warrior.",
+            "Real warriors are strong! We're fearless! We never back down from a fight!",
+            "But in you, I sense ... uncertainty.",
+            "Maybe you should see the medicine cat about it."
+        ]
+    ],
+    "assertive_like": [
+        [
+            "Any",
+            "assertive",
+            "silly",
+            "platonic_like",
+            "romantic_like",
+            "from_mate"
+        ],
+        [
+            "Hey, flea-brain! I've been eyeing this huge thrush on the freshkill pile all day - wanna share it?",
+            "What the - the thrush is totally missing! But I was saving it for us!",
+            "That's it! I will not rest until the cat who did this is hunted down ... AND BROUGHT TO JUSTICE!!!",
+            "[You and t_c dissolve into a fit of giggles.]"
+        ]
+    ],
     "assertive_parent4": [
         [
             "assertive",
@@ -363,6 +548,210 @@
             "Seriously, I don't know any other parent who bothers their grown kit this much!"
         ]
     ],
+    "assertive_jealous1": [
+        [
+            "no_kit",
+            "assertive",
+            "cool",
+            "jealousy"
+        ],
+        [
+            "Hey, so, remember when you cracked that joke today, and everybody laughed, and then I tried to be funny, and no one laughed?",
+            "... What was the deal with that?"
+        ]
+    ],
+    "assertivewarriorapp_comfort": [
+        [
+            "Any",
+            "assertive",
+            "comfort",
+            "random_cat"
+        ],
+        [
+            "Huh? Oh, nothing's wrong ...",
+            "Just ... had a bad day, is all ...",
+            "*Sigh* y_c, have you ever felt like you're not enough for anyone?",
+            "Usually, when it comes to making a decision, I never hesitate. Whatever the obstacle, I'll run headfirst into it, no questions asked.",
+            "But, today, on patrol, I didn't listen to the leader, and accidentally ran straight into an enemy trap. Luckily, r_c was there to keep everyone safe, but because of me, my clanmates could've been hurt, or worse.",
+            "I just feel like such a failure. A liability. I can't help the way I am, but what if everyone's better off without me?",
+            "[You offer t_c words of reassurance, but they seem troubled beyond comforting.]",
+            "[Still, you sit with them through the night, hoping to stabilize them through whatever storm they might be weathering right now.]"
+        ]
+    ],
+    "assertivemed_comfort": [
+        [
+            "Any",
+            "assertive",
+            "comfort"
+        ],
+        [
+            "Huh? Oh, nothing's wrong ...",
+            "Just ... had a bad day, is all ...",
+            "*Sigh* y_c, have you ever felt like you're not enough for anyone?",
+            "Usually, when it comes to making a decision, I never hesitate. Whatever the obstacle, I'll run headfirst into it, no questions asked.",
+            "But, today, in the medicine den, I took a risk on an experimental new procedure, and it completely backfired. Luckily, it didn't do much damage, but because of me, my patient could've been hurt, or worse.",
+            "I just feel like such a failure. A liability. Everyone in the clan is depending on me to keep them safe, but what if I keep falling short?",
+            "[You offer t_c words of reassurance, but they seem troubled beyond comforting.",
+            "[Still, you sit with them through the night, hoping to stabilize them through whatever storm they might be weathering right now.]"
+        ]
+    ],
+    "assertivemediator_comfort": [
+        [
+            "Any",
+            "assertive",
+            "comfort"
+        ],
+        [
+            "Huh? Oh, nothing's wrong ...",
+            "Just ... had a bad day, is all ...",
+            "*Sigh* y_c, have you ever felt like you're not enough for anyone?",
+            "Usually, when it comes to making a decision, I never hesitate. Whatever the obstacle, I'll run headfirst into it, no questions asked.",
+            "But, today, when negotiating with an enemy clan, I said something risky and it completely backfired. Luckily, I was able to smooth things over, but because of me, the clan could've been hurt, or worse.",
+            "I just feel like such a failure. A liability. Everyone in the clan is depending on me, but what if I keep falling short?",
+            "[You offer t_c words of reassurance, but they seem troubled beyond comforting.",
+            "[Still, you sit with them through the night, hoping to stabilize them through whatever storm they might be weathering right now.]"
+        ]
+    ],
+    "assertive_comfort": [
+        [
+            "Any",
+            "assertive",
+            "cool",
+            "unlawful",
+            "silly",
+            "stable",
+            "brooding",
+            "neurotic",
+            "comfort",
+            "trust",
+            "romantic_like",
+            "platonic_like",
+            "from_mate"
+        ],
+        [
+            "[t_c shakes you from your sleep in the night.]",
+            "Psst ... y_c?",
+            "Sorry to wake you ... this will sound really embarrassing, but I, uh ... had a nightmare. Heh.",
+            "Can I ... stay with you?",
+            "[You and t_c curl up together in your nest. Their pelt is warm, but their body is still trembling a little.]",
+            "... Can I tell you about my nightmare?",
+            "In my nightmare, you were drowning. You were screaming for help, and I kept trying to swim out to save you, but you just kept getting further and further away.",
+            "Imagine that. I've faced rogues and dogs and foxes and monsters, but out of everything, the thing that scares me the most is ...",
+            "... Losing you.",
+            "[You both eventually drift off to sleep, and it takes a long time for anyone to rouse you in the morning.]"
+        ]
+    ],
+    "assertive_respect": [
+        [
+            "no_kit",
+            "assertive",
+            "cool",
+            "silly",
+            "upstanding",
+            "respect"
+        ],
+        [
+            "Get up, y_c! We gotta go on a special patrol to check the o_cClan border!",
+            "Of course I'm serious, mouse-brain! Are you really gonna make me break it down for you?",
+            "The leader gave me this assignment, and told me to pick the cat in the clan I trust the most to accompany me on it. Lo and behold, that's you!",
+            "Now, c'mon, lazybones! We've got a long walk ahead of us!"
+        ]
+    ],
+    "assertive_respect1": [
+        [
+            "assertive",
+            "silly",
+            "respect",
+            "trust",
+            "comfort",
+            "platonic_like",
+            "romantic_like",
+            "from_mate",
+            "warrior",
+            "apprentice",
+            "deputy",
+            "leader"
+        ],
+        [
+            "y_c, if something happens to the clan, if we go into battle ...",
+            "You're the one cat in the clan that I want to be by my side.",
+            "So we better practice, mousebrain! If we coordinate our battle moves, we'll really be able to give our enemies a scare!",
+            "We could go by the trouble twins ... or the deadly duo.",
+            "Hahaha!"
+        ]
+    ],
+    "assertive_trust": [
+        [
+            "Any",
+            "assertive",
+            "trust",
+            "comfort",
+            "platonic_like",
+            "sweet",
+            "introspective",
+            "neurotic"
+        ],
+        [
+            "Oh, hey, y_c ... Can I talk to you about something?",
+            "I saw a rogue out on patrol today. I managed to chase her off the territory, but then I got carried away, and ... well, I kept following after her.",
+            "I don't know what I was trying to do. She just kept making me so angry! Calling me weak ... calling me a failure ... saying I was a disappointment to my clan.",
+            "Eventually, I realized what I was doing, and I let her go. But I couldn't stop thinking about those things she said ...",
+            "Sorry. What am I doing? I'm being such a downer today ...",
+            "Thanks for being here for me, y_c.",
+            "[r_c presses their head into your shoulder, sighing into your fur.]"
+        ]
+    ],
+    "assertive_trust": [
+        [
+            "Any",
+            "assertive",
+            "trust",
+            "silly",
+            "unlawful",
+            "unabashed",
+            "introspective"
+        ],
+        [
+            "y_c, I swear, sometimes it's like we're trapped here.",
+            "We never chose to be c_nClan cats, it's just something we were born into ... what if we would've been happier as loners? Or rogues?",
+            "No one to tell us what to do or where to go or what to think ... just free to be ourselves, and do whatever we please.",
+            "It's a great, big world out there, and I want to experience everything it has to offer! But instead, we're stuck here inside the territory, not allowed to venture out, not allowed to question.",
+            "Sometimes I think I'm the only one in the whole clan that's like this ... Do you ever feel the same way?"
+        ]
+    ],
+    "assertive_comfort": [
+        [
+            "Any",
+            "assertive",
+            "neurotic",
+            "comfort",
+            "trust",
+            "romantic_like",
+            "platonic_like",
+            "from_mate"
+        ],
+        [
+            "Hey, y_c? Have you ever thought about, uh ...",
+            "What if something happens to you? Or something happens to me? Or something happens to the clan, and we're both demolished in a fiery pit of nothingness!",
+            "Phew ... sorry, I know I'm not usually so grim. But I guess I'm just really worried.",
+            "What if something goes wrong, and I'm not there to protect you?",
+            "I won't let that happen ... I just won't!"
+        ]
+    ],
+    "assertive_jealous1": [
+        [
+            "Any",
+            "assertive",
+            "brooding",
+            "upstanding",
+            "jealousy",
+            "dislike"
+        ],
+        [
+            "Hmph. What makes you so great?",
+            "Fight me one-on-one, and then we'll see who comes out on top!"
+        ]
+    ],
     "assertive_parent4": [
         [
             "assertive",
@@ -377,7 +766,7 @@
             "sibling",
             "adopted_sibling",
             "half sibling",
-            "parent"
+            "from_parent"
         ],
         [
             "What do you want? Do you need something?",
@@ -450,7 +839,7 @@
             "sibling",
             "adopted_sibling",
             "half sibling",
-            "parent",
+            "from_parent",
             "adopted_parent",
             "platonic_like"
         ],
@@ -827,7 +1216,7 @@
             "from_parent",
             "from_mate",
             "sibling",
-            "adoptive sibling"
+            "adopted_sibling"
         ],
         [
             "Tch. Did you see what a snake-heart r_c was acting like earlier? And over a piece of prey, no less!",

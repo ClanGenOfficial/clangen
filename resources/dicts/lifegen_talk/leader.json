@@ -139,5 +139,1149 @@
         [
             "Calm yourself, little one."
         ]
-    ]
+    ],
+    "assertive_mentor7":	[[
+		"apprentice",
+		"dislike",
+		"assertive",
+		"from_mentor",
+		"silly",
+		"cool"
+	],
+	[
+ "Surprise assessment, y_c! What's the best way to catch a squirrel?",
+"... What? That's not ... even remotely close.",
+"*Sigh*. I was just doing this as a joke, but I guess I really have to show you again now ..."
+	]],
+
+"assertive_mentor71":	[[
+		"apprentice",
+		"platonic_like",
+		"assertive",
+		"from_mentor",
+		"silly",
+		"cool"
+	],
+	[
+ "Surprise assessment, y_c! What's the best way to catch a squirrel?",
+"... Whoa. You got it right!",
+"I was just doing this as a joke, but turns out you're a lot smarter than you let on! Nice work, y_c."
+	]],
+
+"assertive_mentor3":	[[
+		"apprentice",
+		"assertive",
+		"from_mentor"
+	],
+	[
+ "Something I've noticed about you, y_c, is that you think too much.",
+"That's not exactly a bad thing, plenty of apprentices are hesitant, but in the heat of battle, there's no time for thinking. You just have to see the target in front of you, and go for it!",
+"Then again, I can't even remember how many times I've been chewed out by the deputy for acting too rashly ...",
+"I guess it's all about balance. You can't doubt yourself too much, but you can't be blinded by confidence, either.",
+"It's a tough thing to master, but I know you can do it!"
+	]],
+
+"assertive_mentor":	[[
+		"apprentice",
+		"medicine cat apprentice",
+		"mediator apprentice",
+		"assertive",
+		"unlawful",
+		"from_mentor"
+	],
+	[
+ "Hey, y_c! Ready to start the day? I was thinking we could ditch the training grounds today and, instead, practice more real-world applied stuff.",
+"Ah, don't look so worried. We don't have to do everything totally by the rules all the time! Sometimes, it's better to go off the beaten path.",
+"I'll meet you by the camp entrance, m'kay?"
+	]],
+
+"assertive_mentor1":	[[
+		"apprentice",
+		"medicine cat apprentice",
+		"mediator apprentice",
+		"assertive",
+		"upstanding",
+		"unabashed",
+		"from_mentor",
+		"dislike"
+	],
+	[
+ "What's going on, y_c? ... Hey, don't give me that nasty look! I can see you, you know!",
+"For an apprentice, you sure have a lot of attitude. I get you've got spirit, but if this is gonna work out, the two of us have to work together.",
+"So drop it. And I'd better not catch you looking at me like that again!"
+	]],
+
+
+"assertive_mentor2":	[[
+		"apprentice",
+		"medicine cat apprentice",
+		"mediator apprentice",
+		"queen's apprentice",
+		"assertive",
+		"sweet",
+		"stable",
+		"unabashed",
+		"unlawful",
+		"from_mentor",
+		"platonic_like",
+		"respect"
+	],
+	[
+ "Alright, y_c! You're totally mastering that skill I taught you the other day ... you're improving so fast, pretty soon, you're gonna be outperforming me! Haha!",
+"I have nothing to say, except for, I guess ... I'm proud of you.",
+"You're turning into a fine member of c_nClan already."
+	]],
+
+ "assertive_jealous1":	[[
+		"Any",
+		"sibling",
+		"half sibling",
+		"kitten",
+		"adopted_sibling",
+		"half sibling",
+		"dislike",
+		"assertive"
+	],
+	[
+"What did I do in a past life to wind up related to you, y_c?",
+"Must've been really terrible."
+	]],
+
+"assertive_parent4":	[[
+		"assertive",
+		"dislike",
+		"neutral",
+		"cool",
+		"upstanding",
+		"brooding",
+		"stable",
+		"kitten",
+		"from_adopted_kit",
+		"sibling",
+		"adopted_sibling",
+		"half sibling",
+		"from_parent"
+	],
+	[
+ "What do you want? Do you need something?",
+"... You just want to talk? Why?",
+"... Because we're family?",
+"Do we still even count as family anymore?"
+	]],
+
+"assertive_parent4":	[[
+		"assertive",
+		"dislike",
+		"neutral",
+		"cool",
+		"upstanding",
+		"brooding",
+		"neurotic",
+"kitten",
+		"from_adopted_kit"
+	],
+	[
+ "Ugh, StarClan, would you leave me alone?",
+	"Seriously, I don't know any other parent who bothers their grown kit this much!"
+	]],
+
+"assertivewarrior_mediatorapp1":  [
+	[
+		"kitten",
+		"from_adopted_kit",
+		"platonic_like"
+	],
+	[
+		"[It's hard to believe your own kit is in charge of you now ...]",
+		"[The sight of them in the leader's den fills your heart with pride!]"
+	]],
+
+"assertive_parent4":	[[
+		"from_adopted_kit",
+		"kitten",
+		"assertive"
+	],
+	[
+"Hehe, quit trying to fix my fur, y_c!",
+"I'm not a kit anymore, I know how to do it myself!"
+	]],
+
+"assertivewarrior_mediatorapp1":  [
+	[
+		"mediator apprentice",
+		"mediator",
+		"random_cat",
+		"assertive",
+		"unabashed"
+	],
+	[
+		"Oh no you don't, y_c. Don't even try to convince me to make nice with r_c - it's not gonna happen. They totally stole the last fish from the freshkill pile! Don't they know that it's my favorite?",
+		"Okay, okay ... if you insist, I guess I can try talking to them again.",
+		"But don't try to get me to watch my tongue. If someone's acting like a stupid piece of fox-dung, I'm gonna call them a stupid piece of fox-dung!!!"
+	]],
+
+"assertivewarrior_mediatorapp2":  [
+	[
+		"mediator apprentice",
+		"mediator",
+		"assertive",
+		"random_cat",
+		"silly",
+		"unlawful",
+		"cool"
+	],
+	[
+		"Look, I know I can be reckless and headstrong and foolish and stubborn ...",
+		"But I didn't mean to steal r_c's catch! Seriously! And now they're acting all huffy about it ...",
+		"Any chance you could help me talk it out with them?"
+	]],
+
+"assertive_5": [
+	[
+		"kitten",
+		"dislike",
+		"assertive",
+		"cool",
+		"unlawful",
+		"neutral",
+		"non-related"
+	],
+	[
+		"Hey, mouse-brain! Watch where you're going!",
+		"Wait, I recognize you. You're one of the new kits, right? Shouldn't you be in the nursery?",
+		"Hmph. Whatever. Just stay outta the real warriors' way, before someone squishes you."
+		
+	]],
+
+"assertive_4": [
+	[
+		"kitten",
+		"assertive"
+	],
+	[
+		"Whoa! Watch where you're going there, little pal! One wrong move, and you might get stepped on!",
+		"Ah, quit that, you don't need to apologize. Just be a bit more careful from now on, is all.",
+		"Or else, when you get bigger, it'll really become a problem. Hehe!"
+		
+	]],
+
+"assertive_tokit": [
+	[
+		"kitten",
+		"assertive",
+		"unlawful"
+	],
+	[
+		"Ah, y_c! There's the little bruiser! How're you doing? Growing up big and strong?",
+		"Y'know, at your age, I used to get into all sorts of trouble. Sneaking out of the nursery, following around the apprentices ... not to give you any ideas, or anything. Ahaha!",
+		"[t_c's laugh is so loud that it almost shakes your whole body.]"
+	]],
+
+"assertive_tonewborn": [
+	[
+		"newborn",
+		"assertive"
+	],
+	[
+		"Whoa! Hey there, little guy! Shouldn't you be in the nursery?",
+		"Hehe. You've got an adventurous spirit. I like that about you.",
+		"But for now, you gotta stay where it's safe! C'mon. Let's go back to your parents."
+	]],
+
+"assertive_tonewborn1": [
+	[
+		"newborn",
+		"assertive"
+	],
+	[
+		"Aw ... little guy hasn't even gotten their eyes open yet!",
+		"They're gonna be a killer, though. I can already tell. See those little paws? This kit's got fight in 'em!"
+	]],
+
+"assertive_tonewborn3": [
+	[
+		"newborn",
+		"assertive",
+		"introspective",
+		"neurotic"
+	],
+	[
+		"Whoa ... this is them? They're so small!",
+		"Hard to believe I was that small once ...",
+		"Hm ..."
+	]],
+
+"assertive_1": [
+	[
+		"Any",
+		"assertive",
+		"stable",
+		"upstanding",
+		"unabashed"
+	],
+	[
+		"HEY!!! You leave them alone!",
+		"Ugh. Can you believe how cruel some cats are, y_c? A bunch of apprentices were trying to convince these two kits to sneak into a badger den ... what a bunch of mouse-brains.",
+		"No matter what, don't let anyone try to pressure you into doing something you don't think is right. Go with your gut, and stick to your own values. That's what's really important."
+	]],
+
+"assertive_elder":  [
+	[
+		"Any",
+		"assertive",
+		"random_cat"
+	],
+	[
+		"Did you see r_c earlier today, y_c? Oh, StarClan, it was the funniest thing ever!",
+		"They mistook a twig for a snake and flew, like, five fox-lengths into the air! Hahahaha!"
+	]],
+
+"assertive_elder":  [
+	[
+		"deputy",
+		"assertive",
+		"dislike"
+	],
+	[
+		"Yeah, I sent out a border patrol today. What about it?",
+		"You ... already sent one out earlier?",
+		"Well, why in StarClan's name would you not tell me that?!",
+		"Now I gotta ... Just ... Ugh!",
+		"[t_c stalks away muttering curses. You can't tell if you resent their disrespectful attitude, or respect it.]"
+	]],
+
+"assertive_app29": [
+	[
+		"mediator",
+		"mediator apprentice",
+		"assertive",
+		"random_cat",
+		"platonic_like",
+		"comfort",
+		"trust",
+		"from_parent",
+		"from_mate",
+		"sibling",
+		"adopted_sibling"
+	],
+	[
+		"Tch. Did you see what a snake-heart r_c was acting like earlier? And over a piece of prey, no less!",
+		"Cat's so mouse-brained, probably can't even tell their own tail from a willow branch ...",
+		"... Whoa, what? Wait, you want me to apologize to them?",
+		"But they were in the wrong, not me! Why even entertain their behavior with an apology?",
+		"If they're mad, who cares! Let 'em stay mad! They can stay mad forever, for all I care!",
+		"Look, I know you're the mediator, and it's your job to resolve conflicts, or whatever, but ... you love me. Shouldn't you be on my side?",
+		"You'd really choose them over me?"
+	]],
+
+"assertive_app29": [
+	[
+		"mediator",
+		"mediator apprentice",
+		"assertive",
+		"random_cat"
+	],
+	[
+		"Let me guess. You've come to patch things up between me and r_c, 'cause of the fight we had earlier. That right?",
+		"I'll save you a few words - it's not gonna happen. Why's it always me that's gotta be in the wrong, huh? Why not force them to apologize?",
+		"Go find somebody else's problem to fix."
+	]],
+
+"assertive_elder":  [
+	[
+		"elder",
+		"assertive",
+		"cool",
+		"silly",
+		"unlawful",
+		"platonic_like",
+		"romantic_like",
+		"from_mate"
+	],
+	[
+		"Hey, furbag. I brought you something!",
+		"[t_c lays a colorful feather at your paws.",
+		"I know this is your favorite color, and you miss exploring the territory. So I knew I just had to bring it to you.",
+		"Yeah, yeah, don't get all soft on me, hehe. Wanna grab a meal together?"
+	]],
+
+"assertive_elder":  [
+	[
+		"apprentice",
+		"warrior",
+		"deputy",
+		"assertive"
+	],
+	[
+		"Hey, y_c! Wanna spar?",
+		"Don't worry about being too rough, either ... I got nine whole lives to waste! Hehe!"
+	]],
+
+"assertive_elder":  [
+	[
+		"deputy",
+		"assertive"
+	],
+	[
+		"All the patrols out? Good!",
+		"I gotta admit, it sure is nice to have a deputy as smart as you to deal with all the nitty gritty parts of clan management.",
+		"Just wait until you're leader! You'll see exactly what I mean."
+	]],
+
+
+
+"assertive_elder":  [
+	[
+		"deputy",
+		"assertive",
+		"random_cat"
+	],
+	[
+		"We're getting close to the gathering ... Better start thinking about who should go.",
+		"What do you think of r_c ...? Mm, maybe next moon.",
+		"Obviously not r_c, or r_c, for that matter ... r_c is probably a safe pick.",
+		"Hmm. How about you keep brainstorming, and get back to me."
+	]],
+
+"assertive_elder":  [
+	[
+		"deputy",
+		"assertive",
+		"random_cat",
+		"platonic_like"
+	],
+	[
+		"What do you think of r_c's leadership skills? Do you think they have potential?",
+		"[You explain to t_c your observations and intuitions about the cat's behavior, citing specific examples and instances of times when you feel they've exhibited leadership.]",
+		"Oh ... I see.",
+"[t_c nods, eyes glinting with pride. Was ... Was that just a test all along?]"
+	]],
+
+"assertive_elder":  [
+	[
+		"deputy",
+		"assertive",
+		"random_cat",
+		"dislike"
+	],
+	[
+		"What do you think of r_c's leadership skills? Do you think they have potential?",
+		"[In all honesty, you hadn't thought about it that much. You've been so busy with other things ... you mumble through a half-baked explanation about how the cat is probably suited for leadership, in certain situations.]",
+		"Oh ... I see.",
+"[t_c arches a brow. If that was meant to be a test, you clearly didn't do too well.]"
+	]],
+
+"assertive_elder":  [
+	[
+		"deputy",
+		"assertive",
+		"dislike"
+	],
+	[
+		"Hey, uh, I already sent out all the patrols for today. You can just go do ... I dunno. Whatever it is you do.",
+		"[You tense. Does t_c not trust you to do your job?]"
+	]],
+
+"assertive_elder":  [
+	[
+		"warrior",
+		"mediator",
+		"queen",
+		"medicine cat",
+		"deputy",
+		"assertive",
+		"trust",
+		"comfort",
+		"platonic_like"
+	],
+	[
+		"*Sigh* Y'know, y_c, sometimes I wonder if I'm really cut out for this ...",
+		"I'm supposed to be out on the battlefield fighting alongside my clanmates! Not ... organizing patrols and negotiating territory!",
+		"On the worst nights, I wonder why my leader even chose me to succeed them ... This responsibility was never something I signed up for!",
+		"If I could do it all over again, would I even have accepted my nine lives at all?"
+	]],
+
+
+"assertive_elder":  [
+	[
+		"warrior",
+		"mediator",
+		"queen",
+		"medicine cat",
+		"deputy",
+		"assertive",
+		"trust",
+		"comfort",
+		"platonic_like"
+	],
+	[
+		"Everyone in the whole clan is counting on me ... Do they know I have no idea what I'm doing?",
+		"Never in a million moons did I ever dream I'd actually be leader ...",
+		"I know I'm strong, but this position takes a whole new type of strength. I'm just not sure if I can ...",
+		"[You assure t_c that StarClan chose them for a reason and there's no better cat in the Clan for the job. They seem to relax a little, but their gaze is still tinged with uncertainty ...]"
+	]],
+
+
+"assertive_elder":  [
+	[
+		"kitten",
+		"assertive",
+		"non-related",
+		"cool",
+		"silly"
+	],
+	[
+		"Hey there, little guy!",
+		"Hehe, no need to look so scared. I don't bite!",
+		"... Aren't I important?",
+		"Well, sure, I'm important, but never too important to spend time with my clan's great future warriors!",
+		"Now, tell me, how are you liking life in c_nClan? You growing up okay? Everybody treating you well?",
+		"If anything's ever bothering you, or there's something on your mind, never hesitate to speak up. This clan is full of cats who want to help you grow up to be the best version of yourself you can be, myself included. Okay?",
+		"Now, go play! And make sure you save a game for me later! Hehe!"
+	]],
+
+
+"assertive_elder":  [
+	[
+		"apprentice",
+		"medicine cat apprentice",
+		"queen's apprentice",
+		"mediator apprentice",
+		"assertive",
+		"respect",
+		"platonic_like"
+	],
+	[
+		"y_c, look at you! You are just growing up way too fast for your own good. Pretty soon, you'll be outpacing even me!",
+		"I better look out, or else c_nClan may have a new leader soon! Hehehe!"
+	]],
+
+
+"assertive_elder":  [
+	[
+		"kitten",
+		"assertive"
+	],
+	[
+		"Hey, y_c! Sure, I'll play a game! Who do you want to play as?",
+		"... Leader?",
+		"[One of the queens quickly intervenes, apologizing to t_c for your transgression, but they quickly brush it off.]",
+		"Ah, don't worry about it. I'm happy to give up my position to y_c for a time. They'll probably do a better job at it than I do, heh!",
+		"So, fearless leader, what are we going to do today?",
+		"[You spend a few minutes delightfully ordering t_c around until the deputy comes and steals them away.]"
+	]],
+
+"assertive_elder":  [
+	[
+		"apprentice",
+		"warrior",
+		"medicine cat apprentice",
+		"medicine cat",
+		"assertive",
+		"dislike"
+	],
+	[
+		"y_c, today I'm assigning you to a solo patrol to the thunderpath.",
+		"... Yes, I know it's dangerous. That's the whole point. We are warriors, in case you've forgotten, not cowardly kittypets.",
+		"Now, hurry up, and get out there already!"
+	]],
+
+"assertive_elder":  [
+	[
+		"Any",
+		"assertive",
+		"dislike"
+	],
+	[
+		"y_c, what's the problem? I'm very busy!",
+		"... You just want to 'chat' with me?",
+		"Hmph. If I were you, I'd smarten up and know better than to come to me with stuff like that. Especially now.",
+		"Got it?"
+	]],
+
+"assertive_elder":  [
+	[
+		"Any",
+		"assertive",
+		"greenleaf"
+	],
+	[
+		"Ahh ... plentiful prey, good health, greenleaf is when c_nClan is at its best!",
+		"It's also, coincidentally, when my job's easiest! Hehe!"
+	]],
+
+"assertive_elder":  [
+	[
+		"Any",
+		"assertive",
+		"from_mate",
+		"from_parent",
+		"sibling",
+		"adopted_sibling",
+		"half sibling",
+		"adoptive parent"
+	],
+	[
+		"What's going on, y_c? I feel like you've been avoiding me lately.",
+		"You're ... worried I'm too busy for you?",
+		"Psh. Crazy talk!",
+		"Even though I'm leader, I'll always make time for you. You're important to me! The rest of the clan can wait.",
+		"You don't know if StarClan would approve of that?",
+		"Ah, who cares what those old, dead cats think? This is the land of the living!",
+		"And if I'm not allowed to spend time with you, then may they strike me down where I stand."
+	]],
+
+"assertive_elder":  [
+	[
+		"apprentice",
+		"medicine cat apprentice",
+		"mediator apprentice",
+		"queen's apprentice",
+		"platonic_like",
+		"respect"
+	],
+	[
+		"Hey, young y_c. Training hard?",
+		"We're all proud of you, kiddo. Don't think all your progress has gone unnoticed! I've been hearing great things!",
+		"It may be too soon to say, but there may be a new suffix coming your way ... If you have any requests, just let me know! *Wink*"
+	]],
+
+
+"assertive_elder":  [
+	[
+		"assertive",
+		"deputy",
+		"warrior",
+		"medicine cat",
+		"queen",
+		"trust",
+		"comfort",
+		"respect"
+	],
+	[
+		"Some cats criticize me for being too reckless in my decision making ... fox-dung, I say!",
+		"Of course I value the lives of all my clanmates, but if there's one thing I value more, it's the principles and virtues that make this clan what it is.",
+		"Strength, courage, honor, skill ... These are all things that are too precious to forsake. And if something comes by to threaten those things, you bet I'm gonna fight back with everything I've got to protect them!",
+		"That's what being a warrior is all about. Not cowering like a kittypet and letting others take what's rightfully ours, just to save a few drops of blood from being spilled."
+	]],
+
+
+"assertive_elder":  [
+	[
+		"medicine cat apprentice",
+		"medicine cat"
+	],
+	[
+		"Heard anything from StarClan lately?",
+		"Great! If we're all about to die, just do me a favor and let me know. You know where to find me! *wink*"
+	]],
+
+"assertive_queen":  [
+	[
+		"queen's apprentice",
+		"queen",
+		"assertive",
+		"cool",
+		"sweet",
+		"silly"
+	],
+	[
+		"Heya, y_c! How are the little ones today?",
+		"If you ever need any help at all, just give me a shout. I know they can be a pawful! Heh."
+	]],
+
+"assertive_queensapp2":  [
+	[
+		"queen's apprentice",
+		"queen",
+		"assertive",
+		"upstanding"
+	],
+	[
+		"Hey, y_c! How are the kits today?",
+		"Ahhhh! StarClan, they're so cute! Can I help groom them?",
+		"Or - how about this? Maybe, every once in a while, I can hold a little kit-training session! Help them get a head start on their apprenticeships! It'll be like having a den of little warriors, hehehe!",
+		"Though, I guess I can see how that wouldn't be the best for you ...",
+		"Oh, what the heck. Let the kits be kits for now! They'll start their training when they're ready.",
+		"Seeya, y_c! I'll definitely have to come and visit more often."
+	]],
+
+"assertive_queensapp1":  [
+	[
+		"queen's apprentice",
+		"assertive",
+		"cool",
+		"brooding",
+		"unabashed",
+		"unlawful",
+		"dislike"
+	],
+	[
+		"Hehe. Of course you'd never leave the nursery, y_c.",
+		"You don't have what it takes to be a real warrior. Not in a million moons!",
+		"But, uh, this is ... okay too, I guess! If you think becoming a full-time kitsitter is comparable to, y'know ... finding food and protecting the clan from danger.",
+		"Have fun hanging out with the queens, y_c. *Snrk*"
+	]],
+
+"assertivewarrior_mediatorapp":  [
+	[
+		"mediator apprentice",
+		"assertive"
+	],
+	[
+		"Man, you're insightful for an apprentice, y_c!",
+		"When I was your age, all I thought about was smashing stuff and chasing after my crushes. But now, here you are! Sorting out problems with cats who've been around ten times longer than you!",
+		"That must take a lot of discipline. The whole clan is proud of you!"
+	]],
+
+"assertivewarrior_mediatorapp":  [
+	[
+		"mediator apprentice",
+		"assertive",
+		"cool",
+		"upstanding",
+		"brooding",
+		"dislike"
+	],
+	[
+		"Oh, absolutely not. No way a little apprentice is going to tell me what's right and what's wrong.",
+		"Could you at least get your mentor over here, or something? Needing a so-called 'mediator' is already humiliating enough as it is.",
+		"Let alone when they're barely out of the nursery."
+	]],
+
+"assertive_mediatorapp3":  [
+	[
+		"mediator apprentice",
+		"assertive",
+		"unabashed",
+		"brooding"
+	],
+	[
+		"y_c, I think that peace is a noble pursuit, and all, but don't you think that there's some cases where conflict is necessary?",
+		"What about standing up for what's right? What about fighting for justice and fairness? You're still just an apprentice. You have a lot to learn about clan life. And, from what I've learned, sometimes the true only way to settle a dispute is with teeth and claws.",
+		"No matter what your mentor might tell you."
+	]],
+
+"assertivewarrior_med7":  [
+	[
+		"medicine cat",
+		"medicine cat apprentice",
+		"platonic_like",
+		"assertive",
+		"cool",
+		"unabashed",
+		"unlawful"
+	],
+	[
+		"Y'know, sometimes I worry about you, y_c. If anything ever tries to hurt you, then how will you defend yourself?",
+		"Though, I guess if I were caught out in the cold, I wouldn't be able to patch myself up, either ...",
+		"Tell you what. How about, when you have a little down time, I can teach you some basic battle moves? And, likewise, you can teach me some stuff about healing!",
+		"That way, we can both make each other stronger.",
+		"See you soon!"
+	]],
+
+"assertive_med6":  [
+	[
+		"medicine cat",
+		"medicine cat apprentice",
+		"assertive"
+	],
+	[
+		"Hey, y_c! I got into a bit of trouble again. No big deal, just a scratch!",
+		"[It is not, in fact, just a scratch. In fact, t_c is bleeding all over the medicine den. They chat loudly as you hurry to help them.]",
+		"Man, I must be using up, like, half your herb stores, huh? But where's the fun in being careful? Besides, I know you could use some company in here.",
+		"Oh man, what type of herbs are those? They look cool. Are you talking to StarClan? Can you hear them right now?",
+		"[You finish helping r_c with their injury.]",
+		"Hey, thanks! I owe you a bunch! What? You want me to stay and rest? Sorry, y_c. That's not really my style. I gotta get back out there!",
+		"But, ah, maybe I'll try to go a little easier. Just for you. *Wink*"
+	]],
+
+"assertivewarrior_med5":  [
+	[
+		"medicine cat",
+		"medicine cat apprentice",
+		"mediator apprentice",
+		"mediator",
+		"queen's apprentice",
+		"queen",
+		"elder",
+		"assertive"
+	],
+	[
+		"Doesn't it drive you insane, being cooped up inside camp all day?",
+		"What about the thrill of adventure? The wind in your fur? The satisfaction of killing a hard-earned piece of prey?",
+		"Respect to you, y_c. I could never do what you do. Though, I suppose the clan needs all types of cats to function."
+	]],
+
+"assertiveapp_medapp1": [
+	[
+		"medicine cat apprentice",
+		"medicine cat",
+		"platonic_like",
+		"assertive",
+		"unabashed",
+		"silly"
+	],
+	[
+		"y_c, if you ever need a warrior escort while gathering herbs, you'll come to me, right?",
+		"I'll keep you safe from any danger that comes your way! Yah! Hiyah!",
+		"[t_c mimes battle moves against imaginary enemies.]"
+	]],
+
+"assertive_medapp": [
+	[
+		"medicine cat apprentice",
+		"assertive",
+		"unlawful",
+		"unabashed"
+	],
+	[
+		"How's it going, mini-medicine cat? Herbal life treating you well?",
+		"Don't worry, I'm not going to run headfirst into trouble and injure myself today.",
+		"As for tomorrow? Who knows!"
+	]],
+
+"assertive_warrior_or_elder_2": [
+	[
+		"apprentice",
+		"platonic_like",
+		"assertive",
+		"unabashed",
+		"silly"
+	],
+	[
+		"Not always easy in the apprentice's den, huh? I remember those days. Sometimes cats can be so cliquey, especially the young ones ...",
+		"But, no matter what, you can never let fear hold you back from being who you are! Work hard, be friendly, and forget anyone who tries to get you down!",
+		"That's real bravery. Not just rushing into battle, but also standing up for what you believe in. And bravery is what makes a warrior who they are.",
+		"Heh, look at me, getting all wise ... Just my opinion, is all."
+		
+	]],
+
+"assertive_warrior": [
+	[
+		"apprentice",
+		"assertive",
+		"unlawful"
+	],
+	[
+		"Heads up, y_c! Moss in the elder's den needs changing!",
+		"Guess being a warrior's not always fighting battles and scaring off kittypets, huh?",
+		"But there's still plenty of that, too, if you're lucky. Hehehe."
+	]],
+
+"assertive_tokit": [
+	[
+		"kitten",
+		"platonic_like",
+		"assertive"
+	],
+	[
+		"Hey, y_c! I brought you back something from my last patrol. Take a look!",
+		"[t_c drops a colorful feather at your paws.]",
+		"You wanna know how I found it? Oh, it's a crazy story. I was on a hunting patrol, when I found this huge bird, and ...",
+		"[t_c regales you with a daring story full of thrills, twists, and turns.]",
+		"... And then I got the feather! Quite the adventure, no?",
+		"Just wait until you're old enough. You'll be having plenty of adventures of your own before you know it!"
+	]],"assertive_misc":  [
+        [
+            "warrior",
+            "apprentice",
+            "assertive",
+            "unlawful",
+            "unabashed",
+            "you_neurotic",
+            "you_introspective",
+            "you_sweet"
+        ],
+        [
+            "Yaknow, y_c, I never really found you all that convincing as a warrior.",
+    "Real warriors are strong! We're fearless! We never back down from a fight!",
+    "But in you, I sense ... uncertainty.",
+    "Maybe you should see the medicine cat about it."
+        ]],    "assertive_rom":  [
+            [
+                "Any",
+                "assertive",
+                "romantic_like"
+            ],
+            [
+         "Hey, y_c! I just got a new scar today! Wanna come take a look?",
+        "Yeah, I ran into a little dog out at the edge of a territory. Wasn't too hard to chase off, but it gave me a little nick. Medicine cat says it's probably never going away.",
+        "[You brush your tail over t_c's scar, and they seem a little too thrilled by the gesture for it to just be friendly.]"
+                
+            ]
+        ],
+        
+         "assertive_rom1":  [
+            [
+                "Any",
+                "assertive",
+                "cool",
+                "romantic_like",
+                "from_mate"
+            ],
+            [
+         "StarClan, y_c, it's ... it's like you don't even know how beautiful you are.",
+        "... Augh. Look what you've done! Now I'm getting all sappy!",
+        "Just don't let it get to your head, furbag. I'm hot stuff, too.",
+        "[t_c winks at you, and you laugh together.]"
+                
+            ]],
+        
+         "assertive_rom2":  [
+            [
+                "no_kit",
+                "assertive",
+                "silly",
+                "romantic_like"
+            ],
+            [
+         "Hey, y_c! I just finished visiting the kits in the nursery. StarClan, they're cute!",
+        "I wouldn't mind being a parent ... having a few mini-me's running around, terrorizing the clan.",
+        "How about you? Do you ever see yourself having kits someday? Not in, like, a weird way, of course! Just curious, hehe.",
+        "[t_c swishes their tail nervously.]"		
+            ]],"assertivewarriorapp_comfort": [
+                [
+                    "Any","assertive",
+                    "comfort",
+                    "random_cat"
+                ],
+                [
+                    "Huh? Oh, nothing's wrong ...",
+                    "Just ... had a bad day, is all ...",
+                    "*Sigh* y_c, have you ever felt like you're not enough for anyone?",
+                    "Usually, when it comes to making a decision, I never hesitate. Whatever the obstacle, I'll run headfirst into it, no questions asked.",
+                    "But, today, on patrol, I didn't listen to the leader, and accidentally ran straight into an enemy trap. Luckily, r_c was there to keep everyone safe, but because of me, my clanmates could've been hurt, or worse.",
+                    "I just feel like such a failure. A liability. I can't help the way I am, but what if everyone's better off without me?",
+                    "[You offer t_c words of reassurance, but they seem troubled beyond comforting.]",
+                    "[Still, you sit with them through the night, hoping to stabilize them through whatever storm they might be weathering right now.]"
+                ]
+            ],
+            "assertivemed_comfort": [
+                [
+                    "Any",
+                    "assertive",
+                    "comfort"
+                ],
+                [
+                    "Huh? Oh, nothing's wrong ...",
+                    "Just ... had a bad day, is all ...",
+                    "*Sigh* y_c, have you ever felt like you're not enough for anyone?",
+                    "Usually, when it comes to making a decision, I never hesitate. Whatever the obstacle, I'll run headfirst into it, no questions asked.",
+                    "But, today, in the medicine den, I took a risk on an experimental new procedure, and it completely backfired. Luckily, it didn't do much damage, but because of me, my patient could've been hurt, or worse.",
+                    "I just feel like such a failure. A liability. Everyone in the clan is depending on me to keep them safe, but what if I keep falling short?",
+                    "[You offer t_c words of reassurance, but they seem troubled beyond comforting.",
+                    "[Still, you sit with them through the night, hoping to stabilize them through whatever storm they might be weathering right now.]"
+                ]
+            ],
+            "assertivemediator_comfort": [
+                [
+                    "Any",
+                    "assertive",
+                    "comfort"
+                ],
+                [
+                    "Huh? Oh, nothing's wrong ...",
+                    "Just ... had a bad day, is all ...",
+                    "*Sigh* y_c, have you ever felt like you're not enough for anyone?",
+                    "Usually, when it comes to making a decision, I never hesitate. Whatever the obstacle, I'll run headfirst into it, no questions asked.",
+                    "But, today, when negotiating with an enemy clan, I said something risky and it completely backfired. Luckily, I was able to smooth things over, but because of me, the clan could've been hurt, or worse.",
+                    "I just feel like such a failure. A liability. Everyone in the clan is depending on me, but what if I keep falling short?",
+                    "[You offer t_c words of reassurance, but they seem troubled beyond comforting.",
+                    "[Still, you sit with them through the night, hoping to stabilize them through whatever storm they might be weathering right now.]"
+                ]
+            ],
+            "assertive_comfort": [
+                [
+                    "Any",
+                    "assertive",
+                    "cool",
+                    "unlawful",
+                    "silly",
+                    "stable",
+                    "brooding",
+                    "neurotic",
+                    "comfort",
+                    "trust",
+                    "romantic_like",
+                    "platonic_like",
+                    "from_mate"
+                ],
+                [
+                    "[t_c shakes you from your sleep in the night.]",
+                    "Psst ... y_c?",
+                    "Sorry to wake you ... this will sound really embarrassing, but I, uh ... had a nightmare. Heh.",
+                    "Can I ... stay with you?",
+                    "[You and t_c curl up together in your nest. Their pelt is warm, but their body is still trembling a little.]",
+                    "... Can I tell you about my nightmare?",
+                    "In my nightmare, you were drowning. You were screaming for help, and I kept trying to swim out to save you, but you just kept getting further and further away.",
+                    "Imagine that. I've faced rogues and dogs and foxes and monsters, but out of everything, the thing that scares me the most is ...",
+                    "... Losing you.",
+                    "[You both eventually drift off to sleep, and it takes a long time for anyone to rouse you in the morning.]"
+                ]
+            ],
+            "assertive_comfort": [
+                [
+                    "Any","assertive",
+                    "neurotic",
+                    "comfort",
+                    "trust",
+                    "romantic_like",
+                    "platonic_like",
+                    "from_mate"
+                ],
+                [
+                    "Hey, y_c? Have you ever thought about, uh ...",
+                    "What if something happens to you? Or something happens to me? Or something happens to the clan, and we're both demolished in a fiery pit of nothingness!",
+                    "Phew ... sorry, I know I'm not usually so grim. But I guess I'm just really worried.",
+                    "What if something goes wrong, and I'm not there to protect you?",
+                    "I won't let that happen ... I just won't!"
+                ]
+            ],
+            
+        
+         "assertive_rom3":	[[
+                "Any",
+                "assertive",
+                "unabashed",
+                "romantic_like",
+                "from_mate"
+            ],
+            [
+         "Hey, y_c, what are your thoughts on feathers as a nesting material?",
+        "Why? Psh, don't play coy! We're basically sharing a nest at this point, with how often you sneak into mine. Haha!",
+        "Tell you what ... how about we ditch the formalities altogether and just make one, giant, super-nest!",
+        "Better start gathering moss! I know it's your favorite."
+            ]],
+        
+        "assertive_rom4":	[[
+                "Any",
+                "assertive",
+                "unabashed",
+                "romantic_like"
+            ],
+            [
+         "What's that? One of the kits told you your ears are too big?",
+        "What a load of fox-dung! Those kits don't have functioning brains. Besides, I like your ears! I think it's cute, how big they are!",
+        "Er ... not cute in that way, mind you. Just, y'know ... ahem ...",
+        "[The blush on r_c's cheeks confirms that, yes, they did mean it in that way. And they're doing a terrible job of hiding it.]"
+            ]],
+        "assertive_dislike":  [
+            [
+                "Any",
+                "assertive",
+                "cool",
+                "silly",
+                "hate"
+            ],
+            [
+                "Hey y_c. Why don't you jump off a cliff? It's a new thing every cat in the Clan is trying.",
+        "[r_c is staring at you resentfully.]"
+            ]],
+        
+         "assertive_dislike1":  [
+            [
+                "Any",
+                "assertive",
+                "silly",
+                "unlawful",
+                "dislike"
+            ],
+            [
+                "Sorry, is someone talking to me right now?"
+            ]],
+        
+         "assertive_dislike1":  [
+            [
+                "Any",
+                "assertive",
+                "unabashed",
+                "brooding",
+                "dislike"
+            ],
+            [
+                "Can't you see I'm busy, mousebrain? Go bother someone else!"
+            ]],
+        
+         "assertive_dislike1":  [
+            [
+                "Any",
+                "assertive",
+                "dislike"
+            ],
+            [
+                "Go away!!!"
+            ]],
+        
+         "assertive_dislike1":  [
+            [
+                "Any",
+                "assertive",
+                "cool",
+                "dislike",
+                "no_kit"
+            ],
+            [
+                "Hey, y_c. You're looking smaller than usual. Maybe it's time to catch up on your training.",
+                "*Snrk.*"
+            ]],
+        
+        
+        "assertive_elder":  [
+            [
+                "Any",
+                "assertive",
+                "upstanding",
+                "stable",
+                "dislike",
+                "neutral",
+                "no_kit"
+            ],
+            [
+                "*Sigh* Can't you see I have more important things to do, y_c?",
+                "Go back to catching mice, or whatever."
+            ]],
+    "assertive_like":  [
+        [
+            "Any",
+            "assertive",
+            "silly",
+            "platonic_like",
+            "romantic_like",
+            "from_mate"
+        ],
+        [
+            "Hey, flea-brain! I've been eyeing this huge thrush on the freshkill pile all day - wanna share it?",
+            "What the - the thrush is totally missing! But I was saving it for us!",
+            "That's it! I will not rest until the cat who did this is hunted down ... AND BROUGHT TO JUSTICE!!!",
+            "[You and t_c dissolve into a fit of giggles.]"
+        ]],
+"assertive_warrior_or_elder": [
+	[
+		"apprentice",
+		"assertive",
+		"cool",
+		"silly"
+	],
+	[
+		"Working hard, y_c? Or, is it more like hardly working? Hehe.",
+		"Y'know, it's good to contribute to the clan, but make sure you take some time to grow up, too. Working isn't everything. Now's the time for you to get out and explore!",
+		"*Sigh* I sorta miss those days myself ..."
+		
+	]],
+
+"assertivewarrior_leader4":  [
+	[
+		"leader",
+		"assertive"
+	],
+	[
+		"If you want my advice, y_c, you should never be afraid of conflict.",
+		"Conflict is a natural part of life! And if another clan or some mouse-brained rogues want to take what's rightfully ours, then it's our job to teach them a lesson. Remember that next time we run into trouble.",
+		"I don't know a single self-respecting warrior who'd follow a leader that runs rather than fights."
+
+	]
+
+]
+
 }

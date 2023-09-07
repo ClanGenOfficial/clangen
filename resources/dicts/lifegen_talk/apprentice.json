@@ -610,7 +610,7 @@
             "from_parent",
             "from_mate",
             "sibling",
-            "adoptive sibling"
+            "adopted_sibling"
         ],
         [
             "Tch. Did you see what a snake-heart r_c was acting like earlier? And over a piece of prey, no less!",
@@ -962,7 +962,7 @@
             "medicine cat apprentice",
             "mediator apprentice",
             "queen's apprentice",
-            "platonic like",
+            "platonic_like",
             "assertive"
         ],
         [
@@ -1184,7 +1184,7 @@
             "unabashed",
             "unlawful",
             "sibling",
-            "half-sibling",
+            "half sibling",
             "adopted_sibling"
         ],
         [
@@ -1370,5 +1370,169 @@
             "Hmph. Come to boss me around again?",
             "I don't know how the leader thought it was smart to put us together. At least once I get my warrior name, we never have to speak to each other again."
         ]
+    ],
+    "assertive_dislike":  [
+        [
+            "Any",
+            "assertive",
+            "cool",
+            "silly",
+            "hate"
+        ],
+        [
+            "Hey y_c. Why don't you jump off a cliff? It's a new thing every cat in the Clan is trying.",
+    "[r_c is staring at you resentfully.]"
+        ]],
+    
+     "assertive_dislike1":  [
+        [
+            "Any",
+            "assertive",
+            "silly",
+            "unlawful",
+            "dislike"
+        ],
+        [
+            "Sorry, is someone talking to me right now?"
+        ]],
+    
+     "assertive_dislike1":  [
+        [
+            "Any",
+            "assertive",
+            "unabashed",
+            "brooding",
+            "dislike"
+        ],
+        [
+            "Can't you see I'm busy, mousebrain? Go bother someone else!"
+        ]],
+    
+ "assertive_jealous1":	[[
+    "Any",
+"assertive",
+"brooding",
+"upstanding",
+    "jealousy",
+    "dislike"
+],
+[
+"Hmph. What makes you so great?",
+"Fight me one-on-one, and then we'll see who comes out on top!"
+    
+]],
+"assertive_respect": [
+    [
+        "no_kit",
+        "assertive",
+        "cool",
+        "silly",
+        "upstanding",
+        "respect"
+    ],
+    [
+        "Get up, y_c! We gotta go on a special patrol to check the o_cClan border!",
+        "Of course I'm serious, mouse-brain! Are you really gonna make me break it down for you?",
+        "The leader gave me this assignment, and told me to pick the cat in the clan I trust the most to accompany me on it. Lo and behold, that's you!",
+        "Now, c'mon, lazybones! We've got a long walk ahead of us!"
     ]
+],
+"assertive_respect1": [
+    [
+        "assertive",
+        "silly",
+        "respect",
+        "trust",
+        "comfort",
+        "platonic_like",
+        "romantic_like",
+        "from_mate",
+        "warrior",
+        "apprentice",
+        "deputy",
+        "leader"
+    ],
+    [
+        "y_c, if something happens to the clan, if we go into battle ...",
+        "You're the one cat in the clan that I want to be by my side.",
+        "So we better practice, mousebrain! If we coordinate our battle moves, we'll really be able to give our enemies a scare!",
+        "We could go by the trouble twins ... or the deadly duo.",
+        "Hahaha!"
+    ]
+],
+     "assertive_dislike1":  [
+        [
+            "Any",
+            "assertive",
+            "dislike"
+        ],
+        [
+            "Go away!!!"
+        ]],"assertive_jealous":  [
+            [
+                "warrior",
+                "apprentice",
+                "deputy",
+                "leader",
+                "assertive",
+                "unlawful",
+                "upstanding",
+                "jealousy"
+            ],
+            [
+         "Hey, you, uh, did pretty good out there today at fighting practice ...",
+        "Almost ... a little too good, heh ...",
+        "... Teach me your ways!"
+                
+            ]], "assertive_jealous1":	[[
+                "no_kit",
+        "assertive",
+        "cool",
+                "jealousy"
+            ],
+            [
+         "Hey, so, remember when you cracked that joke today, and everybody laughed, and then I tried to be funny, and no one laughed?",
+        "... What was the deal with that?"
+                
+            ]],
+    
+     "assertive_dislike1":  [
+        [
+            "Any",
+            "assertive",
+            "cool",
+            "dislike"
+        ],
+        [
+            "Hey, y_c. You're looking smaller than usual. Maybe it's time to catch up on your training.",
+            "*Snrk.*"
+        ]],
+    
+    
+    "assertive_elder":  [
+        [
+            "Any",
+            "assertive",
+            "upstanding",
+            "stable",
+            "dislike",
+            "neutral"
+        ],
+        [
+            "*Sigh* Can't you see I have more important things to do, y_c?",
+            "Go back to catching mice, or whatever."
+        ]],
+    "assertive_apprentice4": [
+        [
+            "no_kit",
+            "platonic_like",
+            "assertive"
+        ],
+        [
+            "y_c! y_c! You gotta come check out this new part of the territory I found! It's, like, the coolest place ever!",
+            "Okay, first, we have to scale up these rocks, and they're sort of slippery, but it's okay, cuz I only fell, like, twice. Next, we have to cross a river, and I'm pretty sure there's snakes in there, so watch out! Then, we have to ...",
+            "Aw, c'mon, don't look all nervous. It'll be fun! What's life without a little danger, right?",
+            "Ready? Let's go!"
+            
+        ]]
 }

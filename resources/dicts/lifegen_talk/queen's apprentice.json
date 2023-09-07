@@ -6,10 +6,12 @@
         ],
         [
             "Being a queen... it's a role filled with both joy and heartache. Every kit that's born, I feel an overwhelming surge of love and protectiveness. I watch them take their first breath, open their eyes, and explore the world.",
-            "Yet, with that love comes immense responsibility. I am not just nurturing the next generation of warriors, but the very future of our Clan. Their every scrape, every cry, keeps me awake at night. Have I done enough?","Am I teaching them the right lessons?",
+            "Yet, with that love comes immense responsibility. I am not just nurturing the next generation of warriors, but the very future of our Clan. Their every scrape, every cry, keeps me awake at night. Have I done enough?",
+            "Am I teaching them the right lessons?",
             "The nursery can sometimes feel like a bubble, separated from the rest of the Clan. But every whisper, every decision made by the leaders, affects us deeply. For one day, these kits will face those very challenges outside.",
             "Seeing them grow, becoming apprentices, and then warriors, fills my heart with pride. But it's also tinged with fear. Will they remember what they learned in the nursery? Will the world be kind to them?",
-            "It's a life of countless emotions, challenges, and rewards. But when I see them succeed, when I see them find their place in the Clan, all the sleepless nights and worries fade away.","For I know, I've played a part in shaping the Clan's future, one kit at a time."
+            "It's a life of countless emotions, challenges, and rewards. But when I see them succeed, when I see them find their place in the Clan, all the sleepless nights and worries fade away.",
+            "For I know, I've played a part in shaping the Clan's future, one kit at a time."
         ]
     ],
     "queen_2": [
@@ -40,7 +42,6 @@
             "Where are your manners?"
         ]
     ],
-    
     "elder3213": [
         [
             "Any"
@@ -48,5 +49,608 @@
         [
             "Hello there, y_c!"
         ]
-    ]
+    ],
+    "assertive_jealous1": [
+        [
+            "Any",
+            "sibling",
+            "half sibling",
+            "kitten",
+            "adopted_sibling",
+            "half sibling",
+            "dislike",
+            "assertive"
+        ],
+        [
+            "What did I do in a past life to wind up related to you, y_c?",
+            "Must've been really terrible."
+        ]
+    ],
+    "assertive_medapp2": [
+        [
+            "medicine cat apprentice",
+            "platonic_like",
+            "romantic_like",
+            "assertive",
+            "sweet",
+            "unlawful",
+            "cool",
+            "unabashed"
+        ],
+        [
+            "Hey, y_c ... do you ever get lonely sleeping here in the medicine den all by yourself? I know I would ...",
+            "Tell you what, if you ever get scared or cold in the night, just come over to my den. You can sleep in my nest, with me. Okay?"
+        ]
+    ],
+    "assertive_4": [
+        [
+            "kitten",
+            "assertive"
+        ],
+        [
+            "Whoa! Watch where you're going there, little pal! One wrong move, and you might get stepped on!",
+            "Ah, quit that, you don't need to apologize. Just be a bit more careful from now on, is all.",
+            "Or else, when you get bigger, it'll really become a problem. Hehe!"
+        ]
+    ],
+    "assertive_tonewborn": [
+        [
+            "newborn",
+            "assertive"
+        ],
+        [
+            "Whoa! Hey there, little guy! Shouldn't you be in the nursery?",
+            "Hehe. You've got an adventurous spirit. I like that about you.",
+            "But for now, you gotta stay where it's safe! C'mon. Let's go back to your parents."
+        ]
+    ],
+    "assertive_tonewborn1": [
+        [
+            "newborn",
+            "assertive"
+        ],
+        [
+            "Aw ... little guy hasn't even gotten their eyes open yet!",
+            "They're gonna be a killer, though. I can already tell. See those little paws? This kit's got fight in 'em!"
+        ]
+    ],
+    "assertive_tonewborn3": [
+        [
+            "newborn",
+            "assertive",
+            "introspective",
+            "neurotic"
+        ],
+        [
+            "Whoa ... this is them? They're so small!",
+            "Hard to believe I was that small once ...",
+            "Hm ..."
+        ]
+    ],
+    "assertive_tonewborn": [
+        [
+            "newborn",
+            "assertive"
+        ],
+        [
+            "Whoa! Hey there, little guy! Shouldn't you be in the nursery?",
+            "Hehe. You've got an adventurous spirit. I like that about you.",
+            "But for now, you gotta stay where it's safe! C'mon. Let's go back to your parents."
+        ]
+    ],
+    "assertive_tonewborn1": [
+        [
+            "newborn",
+            "assertive"
+        ],
+        [
+            "Aw ... little guy hasn't even gotten their eyes open yet!",
+            "They're gonna be a killer, though. I can already tell. See those little paws? This kit's got fight in 'em!"
+        ]
+    ],
+    "assertive_tonewborn3": [
+        [
+            "newborn",
+            "assertive",
+            "introspective",
+            "neurotic"
+        ],
+        [
+            "Whoa ... this is them? They're so small!",
+            "Hard to believe I was that small once ...",
+            "Hm ..."
+        ]
+    ],
+    "assertive_apprentice7": [
+        [
+            "no_kit",
+            "platonic_like",
+            "assertive",
+            "silly",
+            "random_cat"
+        ],
+        [
+            "y_c. Buddy. Best friend. We've GOTTA TRY this. r_c told me that if you eat three mice, one rabbit, and howl at the moon you get magic powers!",
+            "What? It's totally real, they wouldn't lie to me like that! I prommissseee."
+        ]
+    ],
+    "assertive_1": [
+        [
+            "Any",
+            "assertive",
+            "stable",
+            "upstanding",
+            "unabashed"
+        ],
+        [
+            "HEY!!! You leave them alone!",
+            "Ugh. Can you believe how cruel some cats are, y_c? A bunch of apprentices were trying to convince these two kits to sneak into a badger den ... what a bunch of mouse-brains.",
+            "No matter what, don't let anyone try to pressure you into doing something you don't think is right. Go with your gut, and stick to your own values. That's what's really important."
+        ]
+    ],
+    "assertive_6": [
+        [
+            "Any",
+            "dislike",
+            "you_brooding",
+            "you_sweet",
+            "you_upstanding",
+            "you_introspective",
+            "you_neurotic",
+            "you_stable",
+            "assertive",
+            "cool",
+            "unlawful",
+            "silly"
+        ],
+        [
+            "*Sigh*. Hey, y_c. Come to ruin the fun again?",
+            "Whatever. I'm going to go do something actually exciting. Don't wait up."
+        ]
+    ],
+    "assertiveapp_leader": [
+        [
+            "leader",
+            "assertive",
+            "upstanding"
+        ],
+        [
+            "I'll make you proud, y_c!",
+            "I'll make all of c_nClan proud!"
+        ]
+    ],
+    "assertive_elder": [
+        [
+            "Any",
+            "assertive",
+            "neutral",
+            "platonic_like"
+        ],
+        [
+            "y_c, can you believe it? I actually got to advise a real queen today! Eeee, so cool!!!",
+            "I mean, uh, definitely not cool. I'm definitely very serious and respectful towards my sacred duty to my clan.",
+            "... Is tm_n still there?"
+        ]
+    ],
+    "assertive_elder": [
+        [
+            "Any",
+            "assertive",
+            "platonic_like"
+        ],
+        [
+            "Er, sorry, y_c. I can't chat right now ...",
+            "tm_n really needs me to give the kits a lesson right now, and I kinda actually have to focus.",
+            "I'll come and find you as soon as I'm free, though, okay?"
+        ]
+    ],
+    "assertive_elder": [
+        [
+            "Any",
+            "assertive",
+            "random_cat"
+        ],
+        [
+            "Did you see r_c earlier today, y_c? Oh, StarClan, it was the funniest thing ever!",
+            "They mistook a twig for a snake and flew, like, five fox-lengths into the air! Hahahaha!"
+        ]
+    ],
+    "assertive_elder": [
+        [
+            "queen",
+            "assertive",
+            "from_your_apprentice"
+        ],
+        [
+            "Ugh, do I really have to hold all these dumb rule-teaching sessions all the time?",
+            "It's so stuffy and boring ... It's like we're brainwashing them into thinking the same way we do!",
+            "What if, instead of holding lessons, we organized a gauntlet of games to help teach the kits warrior code! Or - Or maybe we could have, like, interactive storytelling sessions, where we ask the kits what they think is right and wrong?",
+            "I dunno! But anything beats sitting around and memorizing!"
+        ]
+    ],
+    "assertive_queensapp": [
+        [
+            "queen",
+            "assertive",
+            "from_your_apprentice"
+        ],
+        [
+            "r_k's crying again. They've been having such a hard time lately ...",
+            "Why haven't I comforted them?",
+            "I dunno, I was waiting for you.",
+            "I ... guess I was worried I'd mess it up somehow.",
+            "You want me to try? Uh, are you positive? I'm pretty good at the 'playing' and 'telling stories' parts of this. The emotional part ... uh, not so much, hehe.",
+            "But, if you insist.",
+            "[t_c goes across the nursery and sits near the wailing kit. They start off stiff and awkward, attempting to crack jokes to play off the mood, but slowly, their cadence grows more natural, more confident.]",
+            "[They tentatively lay a tail across the kit's shoulders. To your surprise, the kit buries themself in t_c's fur with a purr.]",
+            "[t_c glances back to you with an elated look.]",
+            "[They don't say anything, but their eyes tell you all you need to know.]"
+        ]
+    ],
+    "assertive_queensapp": [
+        [
+            "queen",
+            "assertive",
+            "unabashed"
+        ],
+        [
+            "Happy to report everything's been going good today, y_c!",
+            "I did some exercises with an expecting queen, I got the kits down for a nap, and - Oh, fox-dung! I completely forgot I have training with the medicine cat today!!!",
+            "[t_c rushes out of the nursery, leaving a trail of dust behind them. You hope the medicine cat isn't upset with them.]"
+        ]
+    ],
+    "assertive_queensapp": [
+        [
+            "queen",
+            "assertive"
+        ],
+        [
+            "You want me to stop roughhousing with the kits?",
+            "Psh, c'mon, y_c, loosen up! You worry too much!",
+            "These are the fearsome future warriors of c_nClan. They can withstand a little -",
+            "[One of the kits smacks facefirst into the nursery wall and starts crying.]",
+            "... Okay, that's the first time that's happened."
+        ]
+    ],
+    "assertive_queensapp": [
+        [
+            "kitten",
+            "assertive"
+        ],
+        [
+            "Hey! I'll race ya to the other side of the nursery!",
+            "[You and t_c line up at the wall, and at the signal, you break into a full sprint! t_c gets a head start and you're worried you won't make it ... Until, miraculously, you start gaining on them!]",
+            "Ahh, you beat me!!",
+            "Hehe, you'll be a great warrior yet!"
+        ]
+    ],
+    "assertive_app29": [
+        [
+            "mediator",
+            "mediator apprentice",
+            "assertive",
+            "random_cat",
+            "platonic_like",
+            "comfort",
+            "trust",
+            "from_parent",
+            "from_mate",
+            "sibling",
+            "adopted_sibling"
+        ],
+        [
+            "Tch. Did you see what a snake-heart r_c was acting like earlier? And over a piece of prey, no less!",
+            "Cat's so mouse-brained, probably can't even tell their own tail from a willow branch ...",
+            "... Whoa, what? Wait, you want me to apologize to them?",
+            "But they were in the wrong, not me! Why even entertain their behavior with an apology?",
+            "If they're mad, who cares! Let 'em stay mad! They can stay mad forever, for all I care!",
+            "Look, I know you're the mediator, and it's your job to resolve conflicts, or whatever, but ... you love me. Shouldn't you be on my side?",
+            "You'd really choose them over me?"
+        ]
+    ],
+    "assertive_app29": [
+        [
+            "mediator",
+            "mediator apprentice",
+            "assertive",
+            "random_cat"
+        ],
+        [
+            "Let me guess. You've come to patch things up between me and r_c, 'cause of the fight we had earlier. That right?",
+            "I'll save you a few words - it's not gonna happen. Why's it always me that's gotta be in the wrong, huh? Why not force them to apologize?",
+            "Go find somebody else's problem to fix."
+        ]
+    ],
+    "assertive_elder": [
+        [
+            "elder",
+            "assertive",
+            "cool",
+            "silly",
+            "unlawful",
+            "platonic_like",
+            "romantic_like",
+            "from_mate"
+        ],
+        [
+            "Hey, furbag. I brought you something!",
+            "[t_c lays a colorful feather at your paws.",
+            "I know this is your favorite color, and you miss exploring the territory. So I knew I just had to bring it to you.",
+            "Yeah, yeah, don't get all soft on me, hehe. Wanna grab a meal together?"
+        ]
+    ],
+    "assertivewarrior_deputy2": [
+        [
+            "deputy",
+            "leader",
+            "assertive",
+            "unlawful",
+            "brooding",
+            "unabashed",
+            "dislike"
+        ],
+        [
+            "Yeah, right. Like I have to take orders from you!",
+            "You may think you're a warrior, but all you do is sit on your haunches and boss everyone around all day. That's no warrior. That's a coward.",
+            "Go find some other cat to impose on."
+        ]
+    ],
+    "assertive_mediatorapp": [
+        [
+            "mediator apprentice",
+            "mediator",
+            "assertive",
+            "upstanding"
+        ],
+        [
+            "Is it really true that you're allowed to just ... travel between the clans as you please?",
+            "Whoa! That's so cool!!! I've always wanted to explore the other territories, but I've never been allowed.",
+            "Is it true that o_cClan cats can swim like fish? Or that their territory is full of snakes?",
+            "[You and r_c have a long conversation about the other clans. With each detail you share, their eyes grow bigger and bigger.]"
+        ]
+    ],
+    "assertive_queensapp": [
+        [
+            "kitten",
+            "assertive",
+            "dislike"
+        ],
+        [
+            "What's the matter, kid? You hungry? Need somebody to take you to the dirtplace?",
+            "Well? Spit it out, we ain't got all day!"
+        ]
+    ],
+    "assertive_queensapp": [
+        [
+            "queen",
+            "assertive"
+        ],
+        [
+            "[t_c is barreling through the nursery, pretending to be a monster in one of the kits' games.]",
+            "Raaahhh! I'm gonna get you!",
+            "[Before they reach the kit, you stop them in their tracks and gently explain to them how it's generally better to let the kits win.]",
+            "Oh ... Wait, does this mean all those battles I won against the warriors in the nursery were fake all along?",
+            "I, uh ... I have some thinking to do."
+        ]
+    ],
+    "assertive_queensapp": [
+        [
+            "queen",
+            "assertive"
+        ],
+        [
+            "Hey! I just finished giving the kits their lesson for the day!",
+            "This one was about safety around brambles ... I came up with it myself! Did I do good?"
+        ]
+    ],
+    "assertive_queensapp": [
+        [
+            "kitten",
+            "queen's apprentice"
+        ],
+        [
+            "It's so quiet while the kits are sleeping ...",
+            "I almost wanna wake them up again! The nursery doesn't feel alive without them!",
+            "[You truly cannot fathom how t_c never seems to run out of energy.]"
+        ]
+    ],
+    "assertive_queensapp": [
+        [
+            "queen",
+            "assertive"
+        ],
+        [
+            "r_w was in here earlier asking about kits ... I didn't know what to tell them. Sorta weird that they were asking, no?",
+            "What do you think it means?",
+            "Ooh! Maybe they're in a forbidden relationship! A star-crossed love that can never be, with a rugged yet good-looking rogue who would do anything to protect them!",
+            "*Sigh* ... Sorry, what was I talking about?"
+        ]
+    ],
+    "assertive_queensapp": [
+        [
+            "kitten",
+            "assertive",
+            "sweet",
+            "platonic_like"
+        ],
+        [
+            "y_c! I found something I think you're really gonna love!",
+            "[t_c drops a perfectly smooth, shiny pebble at your paws.]",
+            "Pretty, huh? Plus, it's perfect to play with! No sharp corners, see, so you can't get hurt.",
+            "Come find me later, and maybe we can play a game with it!"
+        ]
+    ],
+    "assertive_queensapp1": [
+        [
+            "no_kit",
+            "assertive"
+        ],
+        [
+            "[As you watch t_c move around the nursery, it's easy to tell why they chose to become a queen.]",
+            "[They have so much energy, it's almost like they're still a kit themself!]"
+        ]
+    ],
+    "assertive_queensapp2": [
+        [
+            "kitten",
+            "assertive"
+        ],
+        [
+            "Hey, y_c! Wanna play a game? Let's do 'Leader of StoneClan!'",
+            "... What? Never heard of it?! Unbelievable! We used to play it all the time when I was young!",
+            "Kits these days, *tsk* so uneducated. Luckily, you have me to teach you!",
+            "Okay, so here's how it works ...",
+            "[t_c explains the game to you, eyes flashing with excitement. As you play together, it almost seems like they're enjoying it more than you are!]"
+        ]
+    ],
+    "assertive_queensapp3": [
+        [
+            "kitten",
+            "assertive",
+            "cool"
+        ],
+        [
+            "Hey, guess what time it is?",
+            "... Do you reeeaally wanna know?",
+            "Do you REALLY, REALLY, REALLY wanna know?!",
+            "... It's time to take the herbs the medicine cat gave you for your tummy! Yaaaayyy!",
+            "[Grinning, t_c pushes the herbs towards you, and you find yourself feeling a little tricked.]"
+        ]
+    ],
+    "assertive_queensapp4": [
+        [
+            "no_kit",
+            "assertive"
+        ],
+        [
+            "[t_c is currently being used as a climbing rock by all the kits in the nursery.]",
+            "Oh, hey, y_c! How's it - ACK! Hey, not the eyes, not the eyes!",
+            "[You ask if you should maybe come back another time?]",
+            "Oh, nah. This is nothing! Just wait until the hunting patrol gets back - that's when it gets really crazy around here!",
+            "So, is there something you need?"
+        ]
+    ],
+    "assertive_queensapp4": [
+        [
+            "queen",
+            "queen's apprentice",
+            "assertive"
+        ],
+        [
+            "Shh - Not too loud! The kits are sleeping.",
+            "Getting them down was such a nightmare ... Oh, but they're so cute, though.",
+            "Seeing them all curled up together like that ... All the headaches and pain suddenly seem worth it, don'tcha think?"
+        ]
+    ],
+    "assertive_queensapp5": [
+        [
+            "kitten",
+            "assertive"
+        ],
+        [
+            "Alright, alright, settle down! Time for a nap everybody, playtime's over!",
+            "That means you, too, y_c, no exceptions. You don't want Quietkit to get you, do you?",
+            "Who's Quietkit? Well, it's an interesting story ...",
+            "Once upon a time, there was a young kit named Quietkit who always stayed up past her bedtime. She was so tired that, one day, she fell asleep on her paws, and fell into a hole so deep, it went straight into the Dark Forest!",
+            "Now, her spirit haunts the nursery, waiting for more disobedient kits she can take down with her ...",
+            "Now, do you wanna be Quietkit's next playmate? Or do you wanna put the moss-ball down and get in your nest?"
+        ]
+    ],"assertive_dislike":  [
+        [
+            "Any",
+            "assertive",
+            "cool",
+            "silly",
+            "hate"
+        ],
+        [
+            "Hey y_c. Why don't you jump off a cliff? It's a new thing every cat in the Clan is trying.",
+    "[r_c is staring at you resentfully.]"
+        ]],
+    
+     "assertive_dislike1":  [
+        [
+            "Any",
+            "assertive",
+            "silly",
+            "unlawful",
+            "dislike"
+        ],
+        [
+            "Sorry, is someone talking to me right now?"
+        ]],
+    
+     "assertive_dislike1":  [
+        [
+            "Any",
+            "assertive",
+            "unabashed",
+            "brooding",
+            "dislike"
+        ],
+        [
+            "Can't you see I'm busy, mousebrain? Go bother someone else!"
+        ]],
+    
+     "assertive_dislike1":  [
+        [
+            "Any",
+            "assertive",
+            "dislike"
+        ],
+        [
+            "Go away!!!"
+        ]],
+    
+     "assertive_dislike1":  [
+        [
+            "Any",
+            "assertive",
+            "cool",
+            "dislike",
+            "no_kit"
+        ],
+        [
+            "Hey, y_c. You're looking smaller than usual. Maybe it's time to catch up on your training.",
+            "*Snrk.*"
+        ]],
+        "assertive_jealous1":	[[
+            "no_kit",
+    "assertive",
+    "cool",
+            "jealousy"
+        ],
+        [
+     "Hey, so, remember when you cracked that joke today, and everybody laughed, and then I tried to be funny, and no one laughed?",
+    "... What was the deal with that?"
+            
+        ]],
+    
+    "assertive_elder":  [
+        [
+            "Any",
+            "assertive",
+            "upstanding",
+            "stable",
+            "dislike",
+            "neutral",
+            "no_kit"
+        ],
+        [
+            "*Sigh* Can't you see I have more important things to do, y_c?",
+            "Go back to catching mice, or whatever."
+        ]],
+    "assertive_apprentice4": [
+        [
+            "no_kit",
+            "platonic_like",
+            "assertive"
+        ],
+        [
+            "y_c! y_c! You gotta come check out this new part of the territory I found! It's, like, the coolest place ever!",
+            "Okay, first, we have to scale up these rocks, and they're sort of slippery, but it's okay, cuz I only fell, like, twice. Next, we have to cross a river, and I'm pretty sure there's snakes in there, so watch out! Then, we have to ...",
+            "Aw, c'mon, don't look all nervous. It'll be fun! What's life without a little danger, right?",
+            "Ready? Let's go!"
+            
+        ]]
 }

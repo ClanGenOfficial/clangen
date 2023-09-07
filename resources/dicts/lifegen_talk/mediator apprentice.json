@@ -41,10 +41,10 @@
     ],
     "assertive_jealous1": [
         [
-            "any",
+            "Any",
             "sibling",
             "half sibling",
-            "kit",
+            "kitten",
             "adopted_sibling",
             "half sibling",
             "dislike",
@@ -159,7 +159,7 @@
     ],
     "assertive_1": [
         [
-            "any",
+            "Any",
             "assertive",
             "stable",
             "upstanding",
@@ -173,7 +173,7 @@
     ],
     "assertive_1": [
         [
-            "any",
+            "Any",
             "assertive",
             "cool",
             "they_clanfounder",
@@ -194,7 +194,7 @@
     ],
     "assertive_6": [
         [
-            "any",
+            "Any",
             "dislike",
             "you_brooding",
             "you_sweet",
@@ -225,7 +225,7 @@
     ],
     "assertive_elder": [
         [
-            "any",
+            "Any",
             "assertive",
             "neutral",
             "platonic_like"
@@ -238,7 +238,7 @@
     ],
     "assertive_elder": [
         [
-            "any",
+            "Any",
             "assertive",
             "platonic_like"
         ],
@@ -282,13 +282,13 @@
     ],
     "assertiveapp_30": [
         [
-            "any",
+            "Any",
             "assertive",
             "silly",
             "unlawful",
-            "kit",
+            "kitten",
             "from_adopted_kit",
-            "your_apprentice"
+            "from_your_apprentice"
         ],
         [
             "[t_c stumbles across camp to you, soaking wet and covered in mud.]",
@@ -369,7 +369,7 @@
     ],
     "assertivemediatorapp_2": [
         [
-            "any",
+            "Any",
             "assertive"
         ],
         [
@@ -380,7 +380,7 @@
     ],
     "assertivemedapp_3": [
         [
-            "kit",
+            "kitten",
             "apprentice",
             "warrior",
             "elder",
@@ -402,7 +402,7 @@
     ],
     "assertivemediatorapp_4": [
         [
-            "any",
+            "Any",
             "assertive",
             "platonic_like",
             "romantic_like"
@@ -416,7 +416,7 @@
     ],
     "assertivemediatorapp_5": [
         [
-            "any",
+            "Any",
             "assertive"
         ],
         [
@@ -427,9 +427,9 @@
     ],
     "assertivemediatorapp_6": [
         [
-            "any",
+            "Any",
             "assertive",
-            "your_apprentice"
+            "from_your_apprentice"
         ],
         [
             "Hey, y_c! When do we get to visit o_cClan territory? Can we go right now?",
@@ -441,9 +441,9 @@
     ],
     "assertivemediatorapp_7": [
         [
-            "any",
+            "Any",
             "assertive",
-            "your_apprentice",
+            "from_your_apprentice",
             "random_cat"
         ],
         [
@@ -466,10 +466,109 @@
             "Do you wanna handle this one, or should I?"
         ]
     ],
+    "assertive_dislike":  [
+        [
+            "Any",
+            "assertive",
+            "cool",
+            "silly",
+            "hate"
+        ],
+        [
+            "Hey y_c. Why don't you jump off a cliff? It's a new thing every cat in the Clan is trying.",
+    "[r_c is staring at you resentfully.]"
+        ]],
+    
+     "assertive_dislike1":  [
+        [
+            "Any",
+            "assertive",
+            "silly",
+            "unlawful",
+            "dislike"
+        ],
+        [
+            "Sorry, is someone talking to me right now?"
+        ]],
+    
+     "assertive_dislike1":  [
+        [
+            "Any",
+            "assertive",
+            "unabashed",
+            "brooding",
+            "dislike"
+        ],
+        [
+            "Can't you see I'm busy, mousebrain? Go bother someone else!"
+        ]],
+    
+     "assertive_dislike1":  [
+        [
+            "Any",
+            "assertive",
+            "dislike"
+        ],
+        [
+            "Go away!!!"
+        ]],
+    
+     "assertive_dislike1":  [
+        [
+            "Any",
+            "assertive",
+            "cool",
+            "dislike",
+            "no_kit"
+        ],
+        [
+            "Hey, y_c. You're looking smaller than usual. Maybe it's time to catch up on your training.",
+            "*Snrk.*"
+        ]],
+        "assertive_jealous1":	[[
+            "no_kit",
+    "assertive",
+    "cool",
+            "jealousy"
+        ],
+        [
+     "Hey, so, remember when you cracked that joke today, and everybody laughed, and then I tried to be funny, and no one laughed?",
+    "... What was the deal with that?"
+            
+        ]],
+    
+    "assertive_elder":  [
+        [
+            "Any",
+            "assertive",
+            "upstanding",
+            "stable",
+            "dislike",
+            "neutral",
+            "no_kit"
+        ],
+        [
+            "*Sigh* Can't you see I have more important things to do, y_c?",
+            "Go back to catching mice, or whatever."
+        ]],
+    "assertive_apprentice4": [
+        [
+            "no_kit",
+            "platonic_like",
+            "assertive"
+        ],
+        [
+            "y_c! y_c! You gotta come check out this new part of the territory I found! It's, like, the coolest place ever!",
+            "Okay, first, we have to scale up these rocks, and they're sort of slippery, but it's okay, cuz I only fell, like, twice. Next, we have to cross a river, and I'm pretty sure there's snakes in there, so watch out! Then, we have to ...",
+            "Aw, c'mon, don't look all nervous. It'll be fun! What's life without a little danger, right?",
+            "Ready? Let's go!"
+            
+        ]],
     "assertivemediatorapp_9": [
         [
             "platonic_like",
-            "assertive"
+            "assertive",
+            "Any"
         ],
         [
             "Guess who just got told to go to the Dark Forest ... for the third time today.",
@@ -479,7 +578,7 @@
     ],
     "assertivemediatorapp_10": [
         [
-            "any",
+            "Any",
             "assertive"
         ],
         [
