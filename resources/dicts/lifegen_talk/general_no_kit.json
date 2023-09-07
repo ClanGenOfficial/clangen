@@ -134,7 +134,7 @@
             "So loosen up a little! Wanna come on a walk with me tonight? There's this really cool place I found ..."
         ]
     ],
-    "assertive_mate4": [
+    "assertive_mate4_2": [
         [
             "elder",
             "assertive",
@@ -257,7 +257,7 @@
             "I'm more proud of you than anything, y_c. Don't you ever forget that!"
         ]
     ],
-    "assertive_parent4": [
+    "assertive_parent4_2": [
         [
             "no_kit",
             "assertive",
@@ -446,7 +446,7 @@
             "Never speak to me again."
         ]
     ],
-    "assertive_murder4": [
+    "assertive_murder4_2": [
         [
             "murder",
             "kitten",
@@ -813,7 +813,7 @@
             "I just miss d_c so much ..."
         ]
     ],
-    "assertive_deadclose": [
+    "assertive_deadclose_2": [
         [
             "Any",
             "assertive",
@@ -843,7 +843,7 @@
             "Well, when are they coming back?"
         ]
     ],
-    "assertivekitten_deadclose": [
+    "assertivekitten_deadclose_2": [
         [
             "Any",
             "assertive",
@@ -856,7 +856,7 @@
             "I'm hoping that, when they see it in StarClan, they'll like it so much that they'll come back down to c_nClan, and we can play together again!"
         ]
     ],
-    "assertivekitten_deadclose": [
+    "assertivekitten_deadclose_3": [
         [
             "Any",
             "assertive",
@@ -868,7 +868,7 @@
             "Well, when are they coming back?"
         ]
     ],
-    "assertivekitten_deadclose": [
+    "assertivekitten_deadclose_4": [
         [
             "Any",
             "assertive",
@@ -881,7 +881,7 @@
             "I'm hoping that, when they see it in StarClan, they'll like it so much that they'll come back down to c_nClan, and we can play together again!"
         ]
     ],
-    "assertivekitten_deadclose": [
+    "assertivekitten_deadclose_5": [
         [
             "Any",
             "assertive",
@@ -896,7 +896,7 @@
             "That would set everything right."
         ]
     ],
-    "assertivekitten_deadclose": [
+    "assertivekitten_deadclose_6": [
         [
             "Any",
             "assertive",
@@ -965,7 +965,7 @@
             "This is why c_nClan needs better defenses. To keep anything like this from happening again."
         ]
     ],
-    "assertive_jealous1": [
+    "assertive_jealous1_2": [
         [
             "Any",
             "assertive",
@@ -983,7 +983,7 @@
             "Tell me, how have you gotten through the days without going completely insane?"
         ]
     ],
-    "assertive_jealous1": [
+    "assertive_jealous1_3": [
         [
             "Any",
             "assertive",
@@ -997,7 +997,7 @@
             "You can't let this take you out. I won't let you."
         ]
     ],
-    "assertive_jealous1": [
+    "assertive_jealous1_4": [
         [
             "Any",
             "assertive",
@@ -1049,7 +1049,7 @@
             "I could chew you up and spit you out again without thinking twice about it."
         ]
     ],
-    "assertive_jealous1": [
+    "assertive_jealous1_5": [
         [
             "Any",
             "assertive",
@@ -1061,7 +1061,7 @@
             "Ahahahaaa! Good one!"
         ]
     ],
-    "assertive_jealous1": [
+    "assertive_jealous1_6": [
         [
             "Any",
             "assertive",
@@ -1073,7 +1073,7 @@
             "Bold of you to assume that I care."
         ]
     ],
-    "assertive_jealous1": [
+    "assertive_jealous1_7": [
         [
             "Any",
             "assertive",
@@ -1085,7 +1085,7 @@
             "Go dig a hole and bury yourself in it, snake-heart."
         ]
     ],
-    "assertive_jealous1": [
+    "assertive_jealous1_8": [
         [
             "Any",
             "assertive",
@@ -1095,7 +1095,7 @@
             "You looking for a fight? I'm always ready!"
         ]
     ],
-    "assertive_jealous1": [
+    "assertive_jealous1_9": [
         [
             "Any",
             "assertive",
@@ -1104,6 +1104,642 @@
         ],
         [
             "Tch. That the best you can do?"
+        ]
+    ],
+    "introspective_1": [
+        [
+            "Any",
+            "introspective"
+        ],
+        [
+            "Hello, y_c. What do you think of the weather?",
+            "If you want my opinion, I think it's been enjoyable. It's pleasantly warm, but not so hot that it makes today's jobs an unpleasant business. Not to mention, I haven't noticed a hint of rain, so if you're going out you shouldn't get wet.",
+            "Well... unless you fall into a pond.",
+            "But other than that, Starclan has been good to us today."
+        ]
+    ],
+    "introspective_2": [
+        [
+            "Any",
+            "introspective",
+            "random_cat"
+        ],
+        [
+            "Oh, hi, y_c. You wanted to speak to me?",
+            "Sure, I suppose. I'm not busy.",
+            "The clan has been well recently, hasn't it? r_c seemed in a pleasant mood, judging from the slight spring in their step.",
+            "I'm genuinely glad for them, the day is ours for the taking, and I'm glad everyone's ready for it."
+        ]
+    ],
+    "Introspective_to_app": [
+        [
+            "Apprentice",
+            "Introspective"
+        ],
+        [
+            "y_c. Morning.",
+            "I saw that shrew that you brought back. It was a good catch. But I find myself wondering about the other clans in this situation.",
+            "I wonder if they're prey is as nice as ours.",
+            "Not enough to steal any, of course! but... you know. It's interesting to think about."
+        ]
+    ],
+    "introspective_to _mdtor": [
+        [
+            "Mediator",
+            "Mediator apprentice",
+            "Introspective",
+            "Dislike",
+            "Jealousy",
+            "random_cat"
+        ],
+        [
+            "Oh. y_c. What do you want now?",
+            "You heard me and r_c had a fight? And you came to ask me about it?",
+            "... Why do you care? I bet you just want to scold me for 'not playing nice'.",
+            "I'm always going to be the difficult cat. Stop trying to fix me, I'm not broken!"
+        ]
+    ],
+    "introspective_to_Med": [
+        [
+            "Medicine Cat",
+            "Medicine Cat Apprentice",
+            "Introspective"
+        ],
+        [
+            "Oh, y_c.",
+            "... Yeah. I'm fine, I'm just thinking. About Starclan.",
+            "It's just... well. What do you hear from Starclan? I know you get visions and messages. But do they tell you about what's going on? ... Do they tell you if a cat won't make the cut?",
+            "They don't tell you that sort of stuff? Oh. My apologies.",
+            "Oh? You think that I'll get in anyways? That-Thank you."
+        ]
+    ],
+    "introspective_to_MedApp": [
+        [
+            "Medicine Cat Apprentice",
+            "Introspective",
+            "random_cat"
+        ],
+        [
+            "Morning, y_c.",
+            "I hope you're not busy. I was thinking about a conversation we had last week, about the uses of burdock root. You mentioned that they're specifically used on rat bites, right?",
+            "Well, I was listening to  r_c grumbling about a fox bite, and I was wondering why you can't use burdock on other types of bites?",
+            "... You'll ask your mentor? Ah okay. Let me know when you find out, I'm curious."
+        ]
+    ],
+    "introspective_to_NB": [
+        [
+            "newborn",
+            "introspective"
+        ],
+        [
+            "Aw. hello there, little one.",
+            "How did you get so far away from the nursery? Where's your parent?",
+            "Hm... You need to go back there, they'll be worrying about you."
+        ]
+    ],
+    "introspective_to_NB_1": [
+        [
+            "Newborn",
+            "Introspective"
+        ],
+        [
+            "[You, while stumbling around outside the nursery, trip over t_c's tail, and faceplant at their feet.]",
+            "...",
+            "[They didn't seem to notice you, so you blindly stumbled off.]",
+            "... Did a bird just land on my tail?"
+        ]
+    ],
+    "introspective_to_NB_2": [
+        [
+            "Newborn",
+            "Introspective"
+        ],
+        [
+            "Hi, little one. You must be y_c.",
+            "Aren't you a cute little thing?",
+            "Aw, coming to the nursery just makes me want to have kits of my own. I doubt if that'll ever happen though."
+        ]
+    ],
+    "introspective_3": [
+        [
+            "Any",
+            "introspective"
+        ],
+        [
+            "y_c, hello. I didn't think anyone would come over here...",
+            "Want to share this freshkill?",
+            "I always think that freshkill taken from the pile after a long day tastes good. It may just be the hard work, but it always tastes wonderful."
+        ]
+    ],
+    "introspective_4": [
+        [
+            "Any",
+            "introspective"
+        ],
+        [
+            "Oh, uhm, hello...",
+            "Oh, you wish to talk to me?",
+            "Err... sure, can do. I suppose.",
+            "... The wind is lovely, it always waves through our coats when we're wandering through the territory. Maybe that's Starclan's way of telling us we're doing a good job."
+        ]
+    ],
+    "introspective_5": [
+        [
+            "Any",
+            "introspective"
+        ],
+        [
+            "Good morning, y_c. How are you today?",
+            "Did you hear that rain on the den roof last night?",
+            "It was really loud, it sounded like hundreds of tiny paws slamming on the roof up there.",
+            "I wonder if starclan came to visit us, in the form of the rain?"
+        ]
+    ],
+    "introspective_6": [
+        [
+            "Any",
+            "introspective",
+            "you_outsiderroots",
+            "you_formerlykittypet",
+            "you_formerloner",
+            "you_formerrogue",
+            "they_clanfounder",
+            "they_clanborn",
+            "they_half-Clan",
+            "they_originallyfromanotherclan",
+            "they_orphaned",
+            "they_abandoned"
+        ],
+        [
+            "... Hello, y_c. Nice to see you.",
+            "... Yeah. Sorry, just staring at the sky, you've kinda... inspired an odd trail of thought from me.",
+            "You... didn't believe in Starclan before you came here, did you? I assume not.",
+            "Thinking about that made me think about where Starclan actually came from.",
+            "What made Starclan? All the stories I was ever told as a kit speak about starclan as this ever-existing force. But the clans haven't always existed, I think we used to exist in a group called a \u00e2\u20ac\u02dctribe'?",
+            "But then, what made us believe in Starclan? Where did that idea come from?",
+            "Clan Cats are unique in that endeavour. No other group other than the Clans believe in it, they have their own ancestors.",
+            "... I'm thinking too hard about this, aren't I? I need to go to bed.",
+            "Thank you for listening to me, y_c. Good night, may Starclan guide your paws."
+        ]
+    ],
+    "introspective_like": [
+        [
+            "Any",
+            "Introspective",
+            "platonic_like"
+        ],
+        [
+            "Hello there, y_c!",
+            "I, uh, saved us this prey... Would you like to share it?",
+            "You know, I like seeing you, especially to share freshkill with.",
+            "I feel like you get me, and that's such a comforting thing. I'm happy to know you, y_c."
+        ]
+    ],
+    "introspective_like_1": [
+        [
+            "Any",
+            "Introspective",
+            "platonic_like",
+            "romantic_like",
+            "from_mate"
+        ],
+        [
+            "Oh! Hello, y_c.",
+            "I was just watching the birds when you came over. They're very pretty, don't you think?",
+            "I sometimes wonder what it'd be like to be a bird, soaring through that bright sky. No difficulties, no worries.",
+            "But I'll admit, even if it's hard sometimes, being a warrior is ultimately the best life for me. I wouldn't trade it for anything."
+        ]
+    ],
+    "introspective_like_2": [
+        [
+            "Any",
+            "Introspective",
+            "platonic_like"
+        ],
+        [
+            "Hello, y_c.",
+            "I found this feather... isn't it pretty? It's so bright.",
+            "I'm not sure what bird it came from, I just got back to camp and saw it laying here.",
+            "I wish I could have seen it, I love watching birds. It's a shame I missed it."
+        ]
+    ],
+    "introspective_like_3": [
+        [
+            "any",
+            "introspective",
+            "platonic_like",
+            "romantic_like"
+        ],
+        [
+            "y_c? Everything okay? You've been staring at me for a while...?",
+            "... Oh! You're cat watching, aren't you?",
+            "[t_c let out a mrrp of amusement and sat next to you]",
+            "Oh, y_c! Look here!",
+            "[you turned your head to look at them once again]",
+            "Look, it's t_c! They're staring at y_c, and they're staring back at them. I wonder what they're up to?",
+            "[Both of you let out a chuckle at this.]",
+            "Hehe... You're really funny, y_c. I love spending time with you."
+        ]
+    ],
+    "introspective_like_4": [
+        [
+            "any",
+            "introspective",
+            "platonic_like"
+        ],
+        [
+            "y_c. Good morning. How did you sleep?",
+            "I slept very well, thank you. You know, I was going to go on a walk today, maybe grab some mice? Would you like to come with me?",
+            "... It's definitely not an excuse to go birdwatching in the territory. Absolutely not. I'd never do that. It's not like the kits keep scaring the birds away.",
+            "... Yes. Yes it is. Do you still want to come then? I just know that you won't scare them away, you appreciate it too. You get me."
+        ]
+    ],
+    "introspective_like_5": [
+        [
+            "any",
+            "introspective"
+        ],
+        [
+            "...",
+            "[t_c sat next to you, quietly.]",
+            "Prrrr...",
+            "[They make no move to fill the silence, seemingly enjoying it.]"
+        ]
+    ],
+    "introspective_dislike": [
+        [
+            "Any",
+            "Introspective",
+            "dislike"
+        ],
+        [
+            "... what do you want, y_c?",
+            "Can't you see that I'm busy?",
+            "... I don't look like I'm doing anything? hmph.",
+            "That's just like you, to be so unobservant."
+        ]
+    ],
+    "introspective_dislike_1": [
+        [
+            "Any",
+            "Introspective",
+            "Dislike",
+            "jealousy"
+        ],
+        [
+            "Oh, it's y_c.",
+            "I don't get how you get along with everyone so easily.",
+            "Have you come to rub it in my face?",
+            "Save your pity for a cat that wants it."
+        ]
+    ],
+    "introspective_dislike_2": [
+        [
+            "Any",
+            "Introspective",
+            "dislike"
+        ],
+        [
+            "... leave me alone."
+        ]
+    ],
+    "introspective_dislike_3": [
+        [
+            "any",
+            "introspective",
+            "dislike"
+        ],
+        [
+            "...",
+            "[t_c immediately spun around and walked away.]"
+        ]
+    ],
+    "introspective_dislike_4": [
+        [
+            "any",
+            "introspective",
+            "dislike"
+        ],
+        [
+            "I've got some good advice for you, y_c.",
+            "Go. Away."
+        ]
+    ],
+    "introspective_dislike_5": [
+        [
+            "any",
+            "introspective",
+            "dislike"
+        ],
+        [
+            "[t_c fixes you with a glare just as you open your mouth.]",
+            "Is it important, or are you just trying to waste my time?"
+        ]
+    ],
+    "introspective_rom": [
+        [
+            "Any",
+            "Introspective",
+            "romantic_like"
+        ],
+        [
+            "O-Oh! y_c, hi!",
+            "Uhm, uh... I have this-this prey! For us! If you... want to share? Maybe?",
+            "Oh you do? I'm so glad!",
+            "Um... you know, keeping your strength up is an important part of being a warrior. So I'm glad I can be here for you, in that regard anyways."
+        ]
+    ],
+    "introspective_rom_1": [
+        [
+            "Any",
+            "Introspective",
+            "romantic_like"
+        ],
+        [
+            "Oh, hi!",
+            "I uh, found these smooth stones. They remind me of you-of your eyes. Uhm. I mean, they're both, uh... Nevermind!",
+            "How are you, y_c?",
+            "I've been down by the water, where I found the stones. It's also just like you. I mean it's just so... uh. Nevermind!",
+            "[You think you heard them hiss something like 'Come on, t_c. Keep yourself together!' to themself quietly]"
+        ]
+    ],
+    "introspective_rom_2": [
+        [
+            "Any",
+            "Introspective",
+            "romantic_like"
+        ],
+        [
+            "y_c!",
+            "Hi! It's so... so, good to see you...!",
+            "It... makes my day, you know. That I get to see and speak to you. You make my day much brighter.",
+            "Even the most wonderful cloud couldn't distract me from how kind you are to me. Thank you."
+        ]
+    ],
+    "introspective_rom_3": [
+        [
+            "Any",
+            "Introspective",
+            "romantic_like",
+            "random_cat"
+        ],
+        [
+            "Hey y_c! Want to cat-watch together?",
+            "What's cat-watching? Oh, it's quite simple. It's just like birdwatching, but instead of observing wildlife, we're observing our fellow cats in the clan!",
+            "Like... oh! Look over there, at r_c. It seems like they're just enjoying their freshkill, but if you're patient enough...",
+            "...",
+            "Eughh! Did they just down that entire mouse in one bite!? I didn't even know that was possible!",
+            "[You cackle hysterically while t_c wheezes into their paw, while everyone else in the clan wonders what on earth is so funny.]"
+        ]
+    ],
+    "introspective_rom_4": [
+        [
+            "Any",
+            "Introspective",
+            "platonic_like",
+            "romantic_like",
+            "from_mate"
+        ],
+        [
+            "Good morning, y_c...",
+            "Sometimes, I wonder if I'd be happier just living on my own, as a loner. Away from all the groupings and hierarchies of clan life, just free to wander and talk to no one.",
+            "But then, if I was a loner, I wouldn't have you, would I?",
+            "No... no that wouldn't do."
+        ]
+    ],
+    "introspective_rom_5": [
+        [
+            "any",
+            "introspective",
+            "romantic_like"
+        ],
+        [
+            "... y_c?",
+            "What are you doing over here? I assumed you'd want to be in the middle of camp with everyone else. Did you need a break?",
+            "O-Oh! You wanted to spend time with me? That means a whole lot, I appreciate it! But I'm sure sitting in the corner with me isn't going to be entertaining, not in the slightest.",
+            "I'm not anyone important or interesting, especially in comparison to you, you're amazing.",
+            "[They quickly flicked their head away from you, looking in the opposite direction.]"
+        ]
+    ],
+    "introspective_jeal": [
+        [
+            "any",
+            "introspective",
+            "jealousy"
+        ],
+        [
+            "[You can feel t_c's eyes burrow into your back.]",
+            "[You turn around to talk to them, and they quickly turn around and look busy.]"
+        ]
+    ],
+    "introspective_jeal_1": [
+        [
+            "any",
+            "introspective",
+            "jealousy"
+        ],
+        [
+            "... what?",
+            "Don't you have anything more important to do than staring at me?"
+        ]
+    ],
+    "introspective_jeal_2": [
+        [
+            "any",
+            "introspective",
+            "jealousy"
+        ],
+        [
+            "Tch... What do you want? Come to spread your superiority over us little cats, huh?",
+            "Spare us both your boasting. I don't care."
+        ]
+    ],
+    "introspective_jeal_3": [
+        [
+            "any",
+            "introspective",
+            "jealousy"
+        ],
+        [
+            "Here, I've got a bit of advice for you.",
+            "The bird that shows off gets caught first, remember that."
+        ]
+    ],
+    "introspective_jeal_4": [
+        [
+            "any",
+            "introspective",
+            "jealousy"
+        ],
+        [
+            "...",
+            "I was hoping that if I remained still enough, you'd go away.",
+            "[They go back to looking frozen.]"
+        ]
+    ],
+    "introspective_jeal_5": [
+        [
+            "any",
+            "introspective",
+            "jealousy"
+        ],
+        [
+            "[t_c made eye-contact with you and immediately turned and left the camp.]",
+            "..."
+        ]
+    ],
+    "introspective_comf": [
+        [
+            "any",
+            "introspective",
+            "comfort"
+        ],
+        [
+            "... y_c? Hey, are you... busy?",
+            "Listen I... I just needed someone to talk to. And you're the only cat I can talk to.",
+            "I'm... Listen. What do you think happens when we leave the living, and we join Starclan? I wonder what that's like.",
+            "I'm less worried about the pain, and more... Will I be missed by o_cClan after I leave? I'm not the most talkative cat in the world, and that makes me worry that I've never made an impact to anyone.",
+            "... Huh? A mouse-brain? ... You're telling me that I worry too much...? Yeah, I suppose that's true. It's what I'm good at I suppose, getting caught in myself.",
+            "You'd miss me? Oh, y_c... thank you. You have no idea how much that means to me. It sometimes seems like you're the only cat who looks for me in a room.",
+            "... Yeah, I'll be okay. I'm just in a little funk at the moment. Do you want to go hunting? I think that'd be better than me sitting here feeling sorry for myself."
+        ]
+    ],
+    "introspective_comf_1": [
+        [
+            "any",
+            "introspective",
+            "comfort"
+        ],
+        [
+            "Morning, y_c.",
+            "No, I'm fine, I'm just thinking... Do you think I'm irritating?",
+            "I try my best to always have the answer to something, on the off chance that someone asks but... Is that needed? Do people find me a hindrance?",
+            "... Mm. Thank you y_c. It's nice knowing that someone appreciates me."
+        ]
+    ],
+    "introspective_comf_2": [
+        [
+            "any",
+            "introspective",
+            "comfort"
+        ],
+        [
+            "Sigh... hi, y_c.",
+            "Hm? Yeah, I just got back from a hunting patrol... I utterly embarrassed myself. I had a mouse literally walk into my paws and I still failed to grab it.",
+            "... Hm. Yes, that's true. I'm not going to always succeed, the best thing I can do is get back up and get back to it.",
+            "You're right, y_c. You're always right. Thank you."
+        ]
+    ],
+    "introspective_resp": [
+        [
+            "any",
+            "introspective",
+            "respect"
+        ],
+        [
+            "y_c, you looked amazing out there today.",
+            "I saw your leap while you were hunting that bird, it was amazing. There no way that bird was getting away from you.",
+            "I wish I was as talented as you at hunting."
+        ]
+    ],
+    "introspective_mate": [
+        [
+            "warrior",
+            "Introspective",
+            "from_mate"
+        ],
+        [
+            "Good morning, y_c!",
+            "I saw that you were sleeping in, so I just left you to rest.",
+            "After all, you were up so late on that patrol that you barely got any sleep!",
+            "Here. I got you a mouse. I hope you enjoy it!"
+        ]
+    ],
+    "introspective_mate1": [
+        [
+            "mediator",
+            "Introspective",
+            "from_mate"
+        ],
+        [
+            "Good morning, y_c!",
+            "I saw that you were sleeping in, so I just left you to rest.",
+            "After all, you were up so late calming those cats that you barely got any sleep!",
+            "Here. I got you a mouse. I hope you enjoy it!"
+        ]
+    ],
+    "introspective_mate2": [
+        [
+            "medicine cat",
+            "Introspective",
+            "from_mate"
+        ],
+        [
+            "Good morning, y_c!",
+            "I saw that you were sleeping in, so I just left you to rest.",
+            "After all, you were up so late tending to your patients. that you barely got any sleep!",
+            "Here. I got you a mouse. I hope you enjoy it!"
+        ]
+    ],
+    "introspective_mate_3": [
+        [
+            "Any",
+            "Introspective",
+            "from_mate",
+            "random_cat"
+        ],
+        [
+            "Hey, y_c!",
+            "Are you okay? I noticed r_c was chatting your ears off... That's a lot of attention, it's a big deal.",
+            "It isn't? Oh okay..."
+        ]
+    ],
+    "introspective_mate_4": [
+        [
+            "Any",
+            "Introspective",
+            "from_mate"
+        ],
+        [
+            "Oh, hey, y_c.",
+            "Hm? Oh yeah, everything's fine. Why do you ask?",
+            "... you can tell something's wrong?",
+            "*sigh* I don't know. I've just been thinking lately...",
+            "For so much of my life, I've felt like I've always been alone. Now you're here, and, well, I've just been wondering what you see in me.",
+            "You're just so wonderful and talented, and I'm... well, me.",
+            "I just sometimes wonder what I did to deserve you.",
+            "[You assure them that you absolutely cherish them, and no one could take their place in your life.]",
+            "... Thanks, y_c. You always know what to say to make me feel better."
+        ]
+    ],
+    "introspective_mate_5": [
+        [
+            "Any",
+            "Introspective",
+            "from_mate",
+            "random_cat"
+        ],
+        [
+            "Hey, y_c. Would you like to do some cat watching with me?",
+            "Okay so I've got my sights on r_c. Over there. They've been grooming themself all day. It's kinda relaxing to watch, in my opinion.",
+            "And r_c, over there. Looks like they're making repairs to the apprentices' den. It's always getting broken, I've noticed. All of them are really rowdy.",
+            "They seem like they're struggling... Oh? You want to go over and help? Sounds good to me, let's go lend a paw."
+        ]
+    ],
+    "introspective_mate_6": [
+        [
+            "Any",
+            "Introspective",
+            "from_mate"
+        ],
+        [
+            "Hey, y_c. Want to share tongues?",
+            "[You and t_c cuddle up together, pelts brushing, soaking up the bright sunlight coming into camp. Their fur is so soft, and smells wonderful, you bury your face into it. Suddenly, they stopped grooming you, like their attention was stolen by something.",
+            "...",
+            "Huh? Oh! You want to know if something's wrong?",
+            "Oh, no. Nothing's wrong! I was just thinking...",
+            "I never thought this would happen to me. I'm really glad you're here, y_c.",
+            "Thank you for being with me. I love you."
         ]
     ]
 }

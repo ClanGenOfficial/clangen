@@ -54,7 +54,7 @@
             "But for now, you gotta stay where it's safe! C'mon. Let's go back to your parents."
         ]
     ],
-    "assertive_tonewborn": [
+    "assertive_tonewborn_2": [
         [
             "newborn",
             "assertive"
@@ -182,7 +182,7 @@
             "... Is tm_n still there?"
         ]
     ],
-    "assertive_elder": [
+    "assertive_elder_2": [
         [
             "Any",
             "assertive",
@@ -194,7 +194,7 @@
             "I'll come and find you as soon as I'm free, though, okay?"
         ]
     ],
-    "assertive_elder": [
+    "assertive_elder_3": [
         [
             "medicine cat",
             "medicine cat apprentice",
@@ -206,7 +206,7 @@
             "[You try to entertain their crazy ideas because, more often than not, they actually end up working!]"
         ]
     ],
-    "assertive_elder": [
+    "assertive_elder_4": [
         [
             "medicine cat",
             "medicine cat apprentice",
@@ -221,7 +221,7 @@
             "Though, I suppose whatever she feels is between her and StarClan, teehee!"
         ]
     ],
-    "assertive_elder": [
+    "assertive_elder_5": [
         [
             "medicine cat",
             "assertive",
@@ -235,7 +235,7 @@
             "Okay, okay, I'll stop now. Hehe!"
         ]
     ],
-    "assertive_elder": [
+    "assertive_elder_6": [
         [
             "Any",
             "assertive",
@@ -270,7 +270,7 @@
             "You'd really choose them over me?"
         ]
     ],
-    "assertive_app29": [
+    "assertive_app29_2": [
         [
             "mediator",
             "mediator apprentice",
@@ -303,7 +303,7 @@
             "[You and t_c dissolve into a fit of giggles.]"
         ]
     ],
-    "assertive_elder": [
+    "assertive_elder_7": [
         [
             "elder",
             "assertive",
@@ -367,6 +367,89 @@
             "Hm ... maybe now'd be a good time to start your herbal training again ..."
         ]
     ],
+    "introspective_MedApp": [
+        [
+            "any",
+            "introspective"
+        ],
+        [
+            "...",
+            "[t_c is staring off into space, looking between some herbs]",
+            "... Oh! Oh, good morning, y_c. I'm sorry, I was looking at these herbs.",
+            "They're for travelling herbs, I'm trying to memorise what goes into it, since we make them a lot.",
+            "Yeah, staring at them doesn't look productive, but if I memorise them, I'll be able to make them quicker and without asking next time.",
+            "I've got to learn quickly, so I can do my job better."
+        ]
+    ],
+    "introspective_MedApp_1": [
+        [
+            "any",
+            "introspective"
+        ],
+        [
+            "y_c? Afternoon. What's brought you to the medicine den? You don't look injured.",
+            "Oh, are those raspberries? Thank you for looking out for them.",
+            "They're really helpful herbs, but I don't normally ask people to look for them, the risk of them eating deathberries is really high.",
+            "I worry about people risking their lives for something I can do myself."
+        ]
+    ],
+    "introspective_MedApp_2": [
+        [
+            "any",
+            "introspective"
+        ],
+        [
+            "... huh? y_c? What's wrong?",
+            "You look... worried. Is there anything I can help with?",
+            "... I know you're not injured, but my job is to treat you, y_c. That includes your mental wounds. I know, I'm not great at talking, but that doesn't mean my ears don't work.",
+            "I'm still working on being a good future medicine cat, and learning to talk to people is part of that. So if it'll help, you coming to me with your problems is helping me learn.",
+            "So please, y_c, What can I help you with? What's on your mind?"
+        ]
+    ],
+    "introspective_MedApp_3": [
+        [
+            "any",
+            "introspective"
+        ],
+        [
+            "[t_c is sat staring at a chunk of spider web, wrapped around a twig.]",
+            "... y_c? Is everything okay?",
+            "... oh yeah. I'm just looking at this web, I know we use them to clear injuries, but I love staring at them every now and then, they're so intricate.",
+            "Spiders spend such a long time working at these webs, and while they're incredibly helpful, I feel we really don't appreciate them enough.",
+            "Imagine, such tiny creatures making art, I wonder if they truly comprehend how wonderful their work is. I wonder if they know they're utterly irreplaceable.",
+            "Like you, y_c. This clan wouldn't be home without you."
+        ]
+    ],
+    "introspective_MedApp_4": [
+        [
+            "any",
+            "introspective"
+        ],
+        [
+            "Oh, y_c? What's brought you to the medicine den? Is that a shrew?",
+            "Oh, you wanted to share your fresh kill with me? That's sweet, thank you. Let's eat it out in the clearing, so we're out of the way of my mentor looking after the patients.",
+            "... Thank you for sharing with me. It's nice knowing that other cats think about me enough to come out the way to spend time with me.",
+            "I became a medicine cat to heal my clan and to look after them, and... well, you coming to look after me means a whole lot.",
+            "... I've got to go back to the den now, so my mentor can get something to eat. I'll see you later?"
+        ]
+    ],
+    "introspective_MedApp_5": [
+        [
+            "any",
+            "introspective"
+        ],
+        [
+            "y_c? I'm sorry, I'm going to go search for some watermint for my mentor, I'm in a bit of a rush.",
+            "Huh, you want to come with me? You can do, of course, if you're not needed here. Would be nice to have the extra paws.",
+            "...",
+            "You know, I love going out looking for herbs, it's so quiet out here, it's so alive, yet so still. It's nice to get out of the stress of camp to just... breathe. You know?",
+            "Helps keep the soul light.",
+            "I love my duties, I love being a medicine cat apprentice, I'm looking forward to the day where I get to press my nose to the moonstone and get my medicine cat name.",
+            "The camp's always a bit... much. I didn't think I'd need to interact with cats so much, but I suppose there isn't a path you can walk in the clan where you can avoid cats, I suppose that's the point of living together.",
+            "Even though not all of us are related, we're kin under c_nClan, we've all got a path to walk.",
+            "Oh! I think I see some watermint over there. We should get going, or we'll be out all day."
+        ]
+    ],
     "assertivemedcat_queen2": [
         [
             "queen's apprentice",
@@ -394,7 +477,7 @@
             "Come back when you're ready for your next training session!"
         ]
     ],
-    "assertivemedcat_queensapp3": [
+    "assertivemedcat_queensapp3_2": [
         [
             "queen's apprentice",
             "assertive",
@@ -561,7 +644,8 @@
             "[t_c does an exaggerated growl and you both explode with laughter.]",
             "Y-You're lucky I'm a lover, not a fighter! *Wheeze*"
         ]
-    ],"assertive_dislike":  [
+    ],
+    "assertive_dislike": [
         [
             "Any",
             "assertive",
@@ -571,10 +655,10 @@
         ],
         [
             "Hey y_c. Why don't you jump off a cliff? It's a new thing every cat in the Clan is trying.",
-    "[r_c is staring at you resentfully.]"
-        ]],
-    
-     "assertive_dislike1":  [
+            "[r_c is staring at you resentfully.]"
+        ]
+    ],
+    "assertive_dislike1": [
         [
             "Any",
             "assertive",
@@ -584,9 +668,9 @@
         ],
         [
             "Sorry, is someone talking to me right now?"
-        ]],
-    
-     "assertive_dislike1":  [
+        ]
+    ],
+    "assertive_dislike1_2": [
         [
             "Any",
             "assertive",
@@ -596,9 +680,9 @@
         ],
         [
             "Can't you see I'm busy, mousebrain? Go bother someone else!"
-        ]],
-    
-     "assertive_dislike1":  [
+        ]
+    ],
+    "assertive_dislike1_3": [
         [
             "Any",
             "assertive",
@@ -606,9 +690,9 @@
         ],
         [
             "Go away!!!"
-        ]],
-    
-     "assertive_dislike1":  [
+        ]
+    ],
+    "assertive_dislike1_4": [
         [
             "Any",
             "assertive",
@@ -619,20 +703,21 @@
         [
             "Hey, y_c. You're looking smaller than usual. Maybe it's time to catch up on your training.",
             "*Snrk.*"
-        ]],
-        "assertive_jealous1":	[[
+        ]
+    ],
+    "assertive_jealous1_2": [
+        [
             "no_kit",
-    "assertive",
-    "cool",
+            "assertive",
+            "cool",
             "jealousy"
         ],
         [
-     "Hey, so, remember when you cracked that joke today, and everybody laughed, and then I tried to be funny, and no one laughed?",
-    "... What was the deal with that?"
-            
-        ]],
-    
-    "assertive_elder":  [
+            "Hey, so, remember when you cracked that joke today, and everybody laughed, and then I tried to be funny, and no one laughed?",
+            "... What was the deal with that?"
+        ]
+    ],
+    "assertive_elder_8": [
         [
             "Any",
             "assertive",
@@ -645,7 +730,8 @@
         [
             "*Sigh* Can't you see I have more important things to do, y_c?",
             "Go back to catching mice, or whatever."
-        ]],
+        ]
+    ],
     "assertive_apprentice4": [
         [
             "no_kit",
@@ -657,8 +743,8 @@
             "Okay, first, we have to scale up these rocks, and they're sort of slippery, but it's okay, cuz I only fell, like, twice. Next, we have to cross a river, and I'm pretty sure there's snakes in there, so watch out! Then, we have to ...",
             "Aw, c'mon, don't look all nervous. It'll be fun! What's life without a little danger, right?",
             "Ready? Let's go!"
-            
-        ]],
+        ]
+    ],
     "assertivemedapp_8": [
         [
             "Any",
@@ -754,7 +840,7 @@
             "[t_c storms out of the medicine den, obviously frustrated. You really need to talk to them about their temper ...]"
         ]
     ],
-    "assertivemedapp_13": [
+    "assertivemedapp_13_2": [
         [
             "medicine cat",
             "assertive",
@@ -766,7 +852,7 @@
             "Um, when can we get started?"
         ]
     ],
-    "assertivemedapp_13": [
+    "assertivemedapp_13_3": [
         [
             "medicine cat",
             "assertive",

@@ -56,6 +56,98 @@
             "You again? Haven't you done enough?"
         ]
     ],
+    "introspective_app_to_MedApp": [
+        [
+            "Medicine Cat Apprentice",
+            "Introspective"
+        ],
+        [
+            "y_c, it's nice to catch you before I have to go on patrol.",
+            "How are you? How are the herbs?",
+            "You know, I wonder how different our lives would be if we had different jobs. What if you were an apprentice, and I, a medicine cat apprentice?",
+            "An interesting thing to think about, but I think we're in our roles for a reason. It's Starclan's will that you are where you are. I think you should be proud of that."
+        ]
+    ],
+    "Introspective_app": [
+        [
+            "Any",
+            "Introspective"
+        ],
+        [
+            "[you noticed that t_c was poking at a bird next to the fresh kill pile]",
+            "Afternoon, y_c. You want this bird I caught this morning?",
+            "[You agreed to share the bird with them.]",
+            "... What's up? Oh, uh. I caught this during an assessment. Yeah, I'm just worried about whether I did well. My mentor seemed impressed, but... well. I'm unsure.",
+            "At least I caught it though, that's something to be happy about, I guess."
+        ]
+    ],
+    "introspective_app_2": [
+        [
+            "Any",
+            "Introspective",
+            "random_cat"
+        ],
+        [
+            "Hi y_c.",
+            "[You noticed that t_c was sitting, muscles bunched up and tail flicking irritably.]",
+            "What's wrong? Oh I got into a fight with r_c. They're an utter mousebrain. They tried to get me to cross the clan border after a rabbit! It's utterly ridiculous.",
+            "We can't be running across the border, there'd be no point in it being there otherwise! We need to be respectful of our borders, and I can't believe they don't see that.",
+            "... sorry for yelling at you like that, y_c. I appreciate you listening to me. Thank you."
+        ]
+    ],
+    "introspective_app_3": [
+        [
+            "Queen",
+            "Queen's apprentice",
+            "Introspective"
+        ],
+        [
+            "[You look up at where you're playing with the kits to see t_c bringing a rabbit into the nursery.]",
+            "Hey, y_c. You look really busy. Thought I'd bring you some fresh kill.",
+            "... Oh? It's fine, honestly. I... caught it in the hunting training I was just doing, and wanted to give it to you. You do a lot for us, and I don't feel you really get the credit you deserve.",
+            "I'm glad there's cats like you, makes me less worried about the camp when I'm training."
+        ]
+    ],
+    "introspective_app_3_2": [
+        [
+            "Any",
+            "introspective"
+        ],
+        [
+            "[t_c was batting a rock between their paws while sitting in their nest.]",
+            "Oh, y_c? Didn't expect to see you here. I found this rock in the river when I was training.",
+            "... you think I should have been paying attention? I was, don't worry, I wouldn't neglect my training like that.",
+            "We're really not apprentices for that long, so I think I've got to get everything out of it.",
+            "But that doesn't mean I can't find pleasure in it too. Gotta find the little things. Like a nice rock."
+        ]
+    ],
+    "Introspective_app_4": [
+        [
+            "Medicine cat",
+            "Medicine cat apprentice",
+            "introspective"
+        ],
+        [
+            "Uh, y_c? help.",
+            "[You turned around to t_c limping into the den, thorn in their paw.]",
+            "... thank you y_c. I'm sorry about bothering you. Yeah, I know it's your job, but I need to be more careful, not just walking through any trouble I see.",
+            "My mentor keeps telling me that I need to be more careful, keep my head out of the clouds, and I try. I really do. There's so much here to see though, it's beautiful.",
+            "Suppose stepping on a thorn or two is worth it then, as long as you're here to pull them out for me."
+        ]
+    ],
+    "Introspective_app_5": [
+        [
+            "Mediator",
+            "Mediator apprentice",
+            "introspective"
+        ],
+        [
+            "... y_c? Are you busy?",
+            "I just had a conversation with a warrior from o_c near our territory. I assumed you'd want to know.",
+            "Wasn't extreme, they were mostly asking about the kits, but they seem a little more civil than usual, have you been there recently?",
+            "What's their camp like? Is it different from ours? Or similar. I know they're not that far from us, but their lives are so different that I can't begin to imagine what it's like."
+        ]
+    ],
     "app_26": [
         [
             "elder",
@@ -1021,7 +1113,7 @@
             "Hey, everyone! y_c is a total scaredy-cat! Ahahaa!"
         ]
     ],
-    "assertive_apprentice8": [
+    "assertive_apprentice8_2": [
         [
             "apprentice",
             "medicine cat apprentice",
@@ -1208,7 +1300,7 @@
             "You're not even my real sibling, Anyways ..."
         ]
     ],
-    "assertive_apprentice18": [
+    "assertive_apprentice18_2": [
         [
             "Any",
             "dislike",
@@ -1284,7 +1376,7 @@
             "[You aren't sure whether you should chide t_c, or tell them how proud of them you are.]"
         ]
     ],
-    "assertive_apprentice23": [
+    "assertive_apprentice23_2": [
         [
             "Any",
             "assertive",
@@ -1310,7 +1402,7 @@
             "[They have so much energy ... it can be hard to keep up with!]"
         ]
     ],
-    "assertive_apprentice24": [
+    "assertive_apprentice24_2": [
         [
             "Any",
             "assertive",
@@ -1359,7 +1451,7 @@
             "... Thanks. That makes me feel better."
         ]
     ],
-    "assertive_apprentice26": [
+    "assertive_apprentice26_2": [
         [
             "Any",
             "assertive",
@@ -1371,7 +1463,7 @@
             "I don't know how the leader thought it was smart to put us together. At least once I get my warrior name, we never have to speak to each other again."
         ]
     ],
-    "assertive_dislike":  [
+    "assertive_dislike": [
         [
             "Any",
             "assertive",
@@ -1381,10 +1473,10 @@
         ],
         [
             "Hey y_c. Why don't you jump off a cliff? It's a new thing every cat in the Clan is trying.",
-    "[r_c is staring at you resentfully.]"
-        ]],
-    
-     "assertive_dislike1":  [
+            "[r_c is staring at you resentfully.]"
+        ]
+    ],
+    "assertive_dislike1": [
         [
             "Any",
             "assertive",
@@ -1394,9 +1486,9 @@
         ],
         [
             "Sorry, is someone talking to me right now?"
-        ]],
-    
-     "assertive_dislike1":  [
+        ]
+    ],
+    "assertive_dislike1_2": [
         [
             "Any",
             "assertive",
@@ -1406,61 +1498,62 @@
         ],
         [
             "Can't you see I'm busy, mousebrain? Go bother someone else!"
-        ]],
-    
- "assertive_jealous1":	[[
-    "Any",
-"assertive",
-"brooding",
-"upstanding",
-    "jealousy",
-    "dislike"
-],
-[
-"Hmph. What makes you so great?",
-"Fight me one-on-one, and then we'll see who comes out on top!"
-    
-]],
-"assertive_respect": [
-    [
-        "no_kit",
-        "assertive",
-        "cool",
-        "silly",
-        "upstanding",
-        "respect"
+        ]
     ],
-    [
-        "Get up, y_c! We gotta go on a special patrol to check the o_cClan border!",
-        "Of course I'm serious, mouse-brain! Are you really gonna make me break it down for you?",
-        "The leader gave me this assignment, and told me to pick the cat in the clan I trust the most to accompany me on it. Lo and behold, that's you!",
-        "Now, c'mon, lazybones! We've got a long walk ahead of us!"
-    ]
-],
-"assertive_respect1": [
-    [
-        "assertive",
-        "silly",
-        "respect",
-        "trust",
-        "comfort",
-        "platonic_like",
-        "romantic_like",
-        "from_mate",
-        "warrior",
-        "apprentice",
-        "deputy",
-        "leader"
+    "assertive_jealous1": [
+        [
+            "Any",
+            "assertive",
+            "brooding",
+            "upstanding",
+            "jealousy",
+            "dislike"
+        ],
+        [
+            "Hmph. What makes you so great?",
+            "Fight me one-on-one, and then we'll see who comes out on top!"
+        ]
     ],
-    [
-        "y_c, if something happens to the clan, if we go into battle ...",
-        "You're the one cat in the clan that I want to be by my side.",
-        "So we better practice, mousebrain! If we coordinate our battle moves, we'll really be able to give our enemies a scare!",
-        "We could go by the trouble twins ... or the deadly duo.",
-        "Hahaha!"
-    ]
-],
-     "assertive_dislike1":  [
+    "assertive_respect": [
+        [
+            "no_kit",
+            "assertive",
+            "cool",
+            "silly",
+            "upstanding",
+            "respect"
+        ],
+        [
+            "Get up, y_c! We gotta go on a special patrol to check the o_cClan border!",
+            "Of course I'm serious, mouse-brain! Are you really gonna make me break it down for you?",
+            "The leader gave me this assignment, and told me to pick the cat in the clan I trust the most to accompany me on it. Lo and behold, that's you!",
+            "Now, c'mon, lazybones! We've got a long walk ahead of us!"
+        ]
+    ],
+    "assertive_respect1": [
+        [
+            "assertive",
+            "silly",
+            "respect",
+            "trust",
+            "comfort",
+            "platonic_like",
+            "romantic_like",
+            "from_mate",
+            "warrior",
+            "apprentice",
+            "deputy",
+            "leader"
+        ],
+        [
+            "y_c, if something happens to the clan, if we go into battle ...",
+            "You're the one cat in the clan that I want to be by my side.",
+            "So we better practice, mousebrain! If we coordinate our battle moves, we'll really be able to give our enemies a scare!",
+            "We could go by the trouble twins ... or the deadly duo.",
+            "Hahaha!"
+        ]
+    ],
+    "assertive_dislike1_3": [
         [
             "Any",
             "assertive",
@@ -1468,35 +1561,38 @@
         ],
         [
             "Go away!!!"
-        ]],"assertive_jealous":  [
-            [
-                "warrior",
-                "apprentice",
-                "deputy",
-                "leader",
-                "assertive",
-                "unlawful",
-                "upstanding",
-                "jealousy"
-            ],
-            [
-         "Hey, you, uh, did pretty good out there today at fighting practice ...",
-        "Almost ... a little too good, heh ...",
-        "... Teach me your ways!"
-                
-            ]], "assertive_jealous1":	[[
-                "no_kit",
-        "assertive",
-        "cool",
-                "jealousy"
-            ],
-            [
-         "Hey, so, remember when you cracked that joke today, and everybody laughed, and then I tried to be funny, and no one laughed?",
-        "... What was the deal with that?"
-                
-            ]],
-    
-     "assertive_dislike1":  [
+        ]
+    ],
+    "assertive_jealous": [
+        [
+            "warrior",
+            "apprentice",
+            "deputy",
+            "leader",
+            "assertive",
+            "unlawful",
+            "upstanding",
+            "jealousy"
+        ],
+        [
+            "Hey, you, uh, did pretty good out there today at fighting practice ...",
+            "Almost ... a little too good, heh ...",
+            "... Teach me your ways!"
+        ]
+    ],
+    "assertive_jealous1_2": [
+        [
+            "no_kit",
+            "assertive",
+            "cool",
+            "jealousy"
+        ],
+        [
+            "Hey, so, remember when you cracked that joke today, and everybody laughed, and then I tried to be funny, and no one laughed?",
+            "... What was the deal with that?"
+        ]
+    ],
+    "assertive_dislike1_4": [
         [
             "Any",
             "assertive",
@@ -1506,10 +1602,9 @@
         [
             "Hey, y_c. You're looking smaller than usual. Maybe it's time to catch up on your training.",
             "*Snrk.*"
-        ]],
-    
-    
-    "assertive_elder":  [
+        ]
+    ],
+    "assertive_elder": [
         [
             "Any",
             "assertive",
@@ -1521,8 +1616,9 @@
         [
             "*Sigh* Can't you see I have more important things to do, y_c?",
             "Go back to catching mice, or whatever."
-        ]],
-    "assertive_apprentice4": [
+        ]
+    ],
+    "assertive_apprentice4_2": [
         [
             "no_kit",
             "platonic_like",
@@ -1533,6 +1629,6 @@
             "Okay, first, we have to scale up these rocks, and they're sort of slippery, but it's okay, cuz I only fell, like, twice. Next, we have to cross a river, and I'm pretty sure there's snakes in there, so watch out! Then, we have to ...",
             "Aw, c'mon, don't look all nervous. It'll be fun! What's life without a little danger, right?",
             "Ready? Let's go!"
-            
-        ]]
+        ]
+    ]
 }

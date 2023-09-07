@@ -61,3 +61,44 @@
 # if __name__ == "__main__":
 #     folder_path = "resources\dicts\lifegen_talk"
 #     read_json_files_in_folder(folder_path)
+
+import os
+import ujson
+import json
+
+def handle_duplicate_keys(pairs):
+    """
+    Rename duplicate keys by appending a number.
+    """
+    seen = {}
+    result = {}
+    
+    for key, value in pairs:
+        while key in seen:
+            seen[key] += 1
+            key = f"{key}_{seen[key]}"
+        else:
+            seen[key] = 1
+
+        result[key] = value
+
+    return result
+
+def process_json_file(filepath):
+    with open(filepath, 'r') as json_file:
+        data_str = json_file.read()
+
+    # Load JSON with duplicate key handling
+    data = json.loads(data_str, object_pairs_hook=handle_duplicate_keys)
+
+    with open(filepath, 'w') as json_file:
+        ujson.dump(data, json_file, indent=4)
+
+def read_json_files_in_folder(folder_path):
+    for filename in os.listdir(folder_path):
+        if filename.endswith('.json'):
+            process_json_file(os.path.join(folder_path, filename))
+
+if __name__ == "__main__":
+    folder_path = "resources\dicts\lifegen_talk"
+    read_json_files_in_folder(folder_path)

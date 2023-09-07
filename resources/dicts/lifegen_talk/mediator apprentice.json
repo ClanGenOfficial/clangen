@@ -128,7 +128,7 @@
         ],
         [
             "Aw ... little guy hasn't even gotten their eyes open yet!",
-            "They're gonna be a killer, though. I can already tell. See those little paws? This kit's got fight in ‘em!"
+            "They're gonna be a killer, though. I can already tell. See those little paws? This kit's got fight in \u00e2\u20ac\u02dcem!"
         ]
     ],
     "assertive_tonewborn3": [
@@ -171,7 +171,7 @@
             "No matter what, don't let anyone try to pressure you into doing something you don't think is right. Go with your gut, and stick to your own values. That's what's really important."
         ]
     ],
-    "assertive_1": [
+    "assertive_1_2": [
         [
             "Any",
             "assertive",
@@ -190,6 +190,93 @@
             "Hey there, y_c! Not bad weather today, hm?",
             "Sun on my pelt, wind in my fur ... Could you imagine being a kittypet and having to be cooped up in a twoleg nest all day? I think I would go crazy!",
             "Just another reason why it's great to be a clan cat."
+        ]
+    ],
+    "introspective_MdtorApp": [
+        [
+            "any",
+            "introspective"
+        ],
+        [
+            "[You heard t_c quietly groan to themself from the other side of the clearing.]",
+            "y_c, I can see you staring at me. If you want to say something, say it.",
+            "... No, I'm not angry at you. I'm sorry for snapping. My training's just going a bit rough.",
+            "I got into an argument with another cat from o_cClan about their current plans. They refused to listen to me when I had a better solution to their problem.",
+            "Makes me almost regret being a mediator. I hate talking to other cats, they're just utterly full of problems they create for themselves, and they refuse to listen to obvious solutions.",
+            "But, I suppose I became a Mediator Apprentice to help other cats with their problems too. I suppose I've caught my mouse and I need to eat it.",
+            "Thank you for listening to me, y_c. I'll keep thinking of another solution they'll like."
+        ]
+    ],
+    "introspective_MdtorApp_1": [
+        [
+            "any",
+            "introspective"
+        ],
+        [
+            "[You were sitting staring at a piece of fresh kill, when you felt something nudge into your shoulder, you turn your head to see t_c.]",
+            "y_c? ... are you okay?",
+            "You look a little... out of it. Are you feeling unwell? Do you want me to take you over to the medicine den?",
+            "... You heard a cat you have a crush on flirting with someone else? Oh, y_c. I'm so, so sorry.",
+            "I think you're a wonderful cat, anyone would be truly lucky to be with you. If they can't see how great you are, that's their loss.",
+            "... I could talk to them, give them a poke into your direction, but I don't want to get too involved in your love life, you're plenty capable on your own.",
+            "I'd give yourself a break, and hold your head high, prove to them the cat you are."
+        ]
+    ],
+    "introspective_MdtorApp_2": [
+        [
+            "any",
+            "introspective"
+        ],
+        [
+            "[t_c is sat in the corner of camp, staring off into space]",
+            "...",
+            "y_c...? How long have you been there for?",
+            "What's wrong? It's nothing. Really.",
+            "I'm just working through some advice my mentor gave to me earlier. It... makes sense in concept, I'm just having difficulty really wrapping my mind around it.",
+            "Huh? Oh, they told me that, in order for me to be able to help cats get along, I need to taste my own medicine and try to get along with people too.",
+            "I didn't think that I really... didn't get along with other cats. I care about the other cats in the clan! It's my job!",
+            "... You think that's my problem? That I view others as people to help, rather than as friends? Is that what my mentor meant?",
+            "I never thought about that. I'll have to try getting to know other cats, try and make some friends. Thank you for your thoughts, y_c."
+        ]
+    ],
+    "introspective_MdtorApp_5": [
+        [
+            "any",
+            "introspective"
+        ],
+        [
+            "... y_c? Is everyone okay? I'm surprised you came out of your way to find me. Is there anything I can help with?",
+            "I'm not busy at all. I'm always here to lend an ear to any member of my clan, from the Leader to the littlest kit, y_c. We can go to the edge of the clearing if you wish to speak privately, pretend we're sharing tongues.",
+            "If it makes you feel any better, you're teaching me as I'm listening. You're allowing me to know what kind of problems everyone has, so I'm more able to help, and so I can suggest things to make everyone's day better.",
+            "\u00e2\u20ac\u02dcThe more I hear, the more I know. The more I know, the further I go.' If I'm making a phrase about it.",
+            "That's advice I can give to you, no matter what. You'll only know if you try it, y_c.",
+            "Unless it's breaking the warrior code. Please don't do that."
+        ]
+    ],
+    "introspective_MdtorApp_3": [
+        [
+            "any",
+            "introspective"
+        ],
+        [
+            "[t_c was pacing back and forth near the camp entrance.]",
+            "... huh? Oh hi there. Sorry, I'll get out of the way.",
+            "... No, no. I'm okay. Just preparing to go to o_cClan, my mentor asked me to go discuss with their mediator about an agreement we've been having about borders.",
+            "I know they sent me, because they know I'm completely capable, and o_cClan is mostly willing to cooperate in this manner, but I'm still worried about it.",
+            "I just need to do it. I need to go do my job as a Mediator, and go solve this problem. Take the sparrow by the wings, so to speak.",
+            "Standing here wearing my paws into the floor is only giving me sore paw pads and a future trip to the medicine den. I'll see you later, y_c."
+        ]
+    ],
+    "introspective_MdtorApp_4": [
+        [
+            "any",
+            "introspective"
+        ],
+        [
+            "[t_c is sat watching two of your clanmates argue with each other, with fascination]",
+            "[One of them calls the other a half-clan foxheart. Quite brutal. Why is t_c not saying anything?]",
+            "[... A giant Jaybird flies out of a tree just behind the arguing cats.]",
+            "[t_c seems to come to awareness of what's going on around them, and they rush over to deal with the yelling cats.]"
         ]
     ],
     "assertive_6": [
@@ -236,7 +323,7 @@
             "... Is tm_n still there?"
         ]
     ],
-    "assertive_elder": [
+    "assertive_elder_2": [
         [
             "Any",
             "assertive",
@@ -248,7 +335,7 @@
             "I'll come and find you as soon as I'm free, though, okay?"
         ]
     ],
-    "assertive_elder": [
+    "assertive_elder_3": [
         [
             "mediator",
             "assertive",
@@ -296,7 +383,7 @@
             "[The very peeved-off looking deputy locks eyes with you and storms in your direction. What mischief did t_c get into this time?]"
         ]
     ],
-    "assertive_elder": [
+    "assertive_elder_4": [
         [
             "elder",
             "assertive",
@@ -349,7 +436,7 @@
             "You got it, y_c!"
         ]
     ],
-    "assertivemediator_toqueen": [
+    "assertivemediator_toqueen_2": [
         [
             "queen's apprentice",
             "queen",
@@ -410,7 +497,7 @@
         [
             "Hey! I brought ya back a little gift from o_cClan's territory.",
             "[t_c brandishes a colorful, exotic flower and lays it at your paws.",
-            "‘Innit cool? I knew you'd like it!",
+            "\u00e2\u20ac\u02dcInnit cool? I knew you'd like it!",
             "I saw this other cool plant, too, but didn't get the chance to snag it ... Next time, I'll make sure to bring it back!"
         ]
     ],
@@ -420,7 +507,7 @@
             "assertive"
         ],
         [
-            "Ugh, it's sooo boring today. Everything's way too calm and peaceful – How am I supposed to do my job?",
+            "Ugh, it's sooo boring today. Everything's way too calm and peaceful \u00e2\u20ac\u201c How am I supposed to do my job?",
             "Hey, maybe we could get into a fight, and then I could mediate it? C'mon, take a jab at me! What's something I do that's always annoyed you?",
             "But don't get too cocky. I'm armed and dangerous with conflict resolution skills! Haha!"
         ]
@@ -466,7 +553,7 @@
             "Do you wanna handle this one, or should I?"
         ]
     ],
-    "assertive_dislike":  [
+    "assertive_dislike": [
         [
             "Any",
             "assertive",
@@ -476,10 +563,10 @@
         ],
         [
             "Hey y_c. Why don't you jump off a cliff? It's a new thing every cat in the Clan is trying.",
-    "[r_c is staring at you resentfully.]"
-        ]],
-    
-     "assertive_dislike1":  [
+            "[r_c is staring at you resentfully.]"
+        ]
+    ],
+    "assertive_dislike1": [
         [
             "Any",
             "assertive",
@@ -489,9 +576,9 @@
         ],
         [
             "Sorry, is someone talking to me right now?"
-        ]],
-    
-     "assertive_dislike1":  [
+        ]
+    ],
+    "assertive_dislike1_2": [
         [
             "Any",
             "assertive",
@@ -501,9 +588,9 @@
         ],
         [
             "Can't you see I'm busy, mousebrain? Go bother someone else!"
-        ]],
-    
-     "assertive_dislike1":  [
+        ]
+    ],
+    "assertive_dislike1_3": [
         [
             "Any",
             "assertive",
@@ -511,9 +598,9 @@
         ],
         [
             "Go away!!!"
-        ]],
-    
-     "assertive_dislike1":  [
+        ]
+    ],
+    "assertive_dislike1_4": [
         [
             "Any",
             "assertive",
@@ -524,20 +611,21 @@
         [
             "Hey, y_c. You're looking smaller than usual. Maybe it's time to catch up on your training.",
             "*Snrk.*"
-        ]],
-        "assertive_jealous1":	[[
+        ]
+    ],
+    "assertive_jealous1_2": [
+        [
             "no_kit",
-    "assertive",
-    "cool",
+            "assertive",
+            "cool",
             "jealousy"
         ],
         [
-     "Hey, so, remember when you cracked that joke today, and everybody laughed, and then I tried to be funny, and no one laughed?",
-    "... What was the deal with that?"
-            
-        ]],
-    
-    "assertive_elder":  [
+            "Hey, so, remember when you cracked that joke today, and everybody laughed, and then I tried to be funny, and no one laughed?",
+            "... What was the deal with that?"
+        ]
+    ],
+    "assertive_elder_5": [
         [
             "Any",
             "assertive",
@@ -550,7 +638,8 @@
         [
             "*Sigh* Can't you see I have more important things to do, y_c?",
             "Go back to catching mice, or whatever."
-        ]],
+        ]
+    ],
     "assertive_apprentice4": [
         [
             "no_kit",
@@ -562,8 +651,8 @@
             "Okay, first, we have to scale up these rocks, and they're sort of slippery, but it's okay, cuz I only fell, like, twice. Next, we have to cross a river, and I'm pretty sure there's snakes in there, so watch out! Then, we have to ...",
             "Aw, c'mon, don't look all nervous. It'll be fun! What's life without a little danger, right?",
             "Ready? Let's go!"
-            
-        ]],
+        ]
+    ],
     "assertivemediatorapp_9": [
         [
             "platonic_like",

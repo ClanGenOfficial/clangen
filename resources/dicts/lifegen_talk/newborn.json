@@ -85,5 +85,79 @@
             "Prrr...",
             "[t_c noses their siblings out of the way to nurse.]"
         ]
+    ],
+    "introspective_NB": [
+        [
+            "any",
+            "introspective"
+        ],
+        [
+            "Mew!",
+            "[You turned to see a newborn crawling around on their own outside the nursery. How on earth did they get here?]",
+            "[You pick them up, and carry them back to the nursery.]",
+            "[You turn around to have a chat with a clanmate for five minutes.]",
+            "Meeewww!",
+            "[The kitten has somehow escaped again.]",
+            "[You need to have a chat with the Queens too.]"
+        ]
+    ],
+    "introspective_NB_1": [
+        [
+            "any",
+            "introspective"
+        ],
+        [
+            "[You walk into the nursery to check on how the kittens were.]",
+            "[A queen smiles and gestures to a Newborn tucked into their side, gently snoring]",
+            "...zzzz...",
+            "[You politely smile at the queen and leave.]"
+        ]
+    ],
+    "introspective_NB_2": [
+        [
+            "any",
+            "introspective"
+        ],
+        [
+            "[You're sat grooming yourself in the clearing]",
+            "[A little newborn stumbles into you]",
+            "Squeak! Meow!",
+            "[They turned around and stumbled away. You were too surprised to grab them before they stumbled back to the nursery. Seems at the minimum that they have a good sense of direction?]"
+        ]
+    ],
+    "introspective_NB_3": [
+        [
+            "any",
+            "introspective"
+        ],
+        [
+            "Mew?",
+            "[t_c had walked into your side when wandering around the nursery.]",
+            "Meow! Prrr...",
+            "[They flopped over and laid against you, seemingly satisfied with where they were.]",
+            "[Guess you're not moving any time soon.]"
+        ]
+    ],
+    "introspective_NB_4": [
+        [
+            "any",
+            "introspective"
+        ],
+        [
+            "[You notice a newborn kitten... t_c? t_c sat in the corner.]",
+            "...",
+            "[They don't look distressed so you decide to leave them there.]"
+        ]
+    ],
+    "introspective_NB_5": [
+        [
+            "any",
+            "introspective"
+        ],
+        [
+            "Mewww???",
+            "[A newborn kitten yells at you from the nursery, you walk over and flick your tail over their face]",
+            "Meow!"
+        ]
     ]
 }

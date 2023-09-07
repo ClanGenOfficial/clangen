@@ -1,3 +1,10 @@
 {
-    "general": [["Any"],["Meow! This should not appear!"]]
+    "general": [
+        [
+            "Any"
+        ],
+        [
+            "Meow! This should not appear!"
+        ]
+    ]
 }

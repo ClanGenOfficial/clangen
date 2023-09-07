@@ -62,6 +62,80 @@
             "You killed them, didn't you?"
         ]
     ],
+    "Introspective_warrior": [
+        [
+            "any",
+            "introspective"
+        ],
+        [
+            "Mmm...? Oh hey y_c. Sorry, I just got back from moonhigh patrol. What are you doing up?",
+            "I saw an owl while we were out, it swooped just over our heads, it was wonderful.",
+            "I love the night sky, imagine being able to fly, you could see silverpelt with so much detail up there!",
+            "It'd be better than nearly anything."
+        ]
+    ],
+    "introspective_warrior_1": [
+        [
+            "Any",
+            "introspective"
+        ],
+        [
+            "Hey, y_c, thank you for meeting me here.",
+            "... Huh? No, it's nothing bad. I just wanted to show you something, look over there!",
+            "[You turned to look at the lake, and saw the sunset flooding over the water, painting it in golden hues.]",
+            "I wanted to show it to you, because I think you'd appreciate it. You seem like the type of cat that would.",
+            "I love being out here, y_c."
+        ]
+    ],
+    "introspective_warrior_2": [
+        [
+            "Any",
+            "introspective"
+        ],
+        [
+            "Oh, y_c, are you busy?",
+            "I... was going to go on a hunting patrol, and I was wondering if you wanted to come with me?",
+            "Huh? No, I don't mean \u00e2\u20ac\u02dcpretend to go hunt, so I can go birdwatching'! ... well. Not for the whole hunt.",
+            "Hehe, okay then, we'll go actual hunting then, I'll only do a little bit of birdwatching."
+        ]
+    ],
+    "introspective_warrior_3": [
+        [
+            "any",
+            "introspective"
+        ],
+        [
+            "Hey, y_c. Are you okay?",
+            "Yeah, I wouldn't normally involve myself in anyone's business, but... you looked a little bit down.",
+            "If you don't want to talk about it, that's fine, of course! But I thought I'd let you know. I'm here for you, if you need me to be."
+        ]
+    ],
+    "introspective_warrior_4": [
+        [
+            "medicine cat",
+            "medicine cat apprentice",
+            "introspective"
+        ],
+        [
+            "... y_c?",
+            "I, um, found this when I was out on patrol this morning, it looks like a herb. I thought I'd bring it to you to see if it's any use to you, or I'll go give it to the kits.",
+            "It caught it out of the corner of my eye, it was so stunning that I nearly missed a mouse.",
+            "... have a good rest of your day."
+        ]
+    ],
+    "introspective_warrior_5": [
+        [
+            "Mediator",
+            "Mediator apprentice",
+            "introspective"
+        ],
+        [
+            "y_c? You're back late, is everything okay?",
+            "... why am I still awake? I was just thinking about your work. Being a mediator's really rough. I couldn't handle all these cats having a screaming match with each other.",
+            "The idea of it stresses me out to no end. That's why I keep myself out of the way.",
+            "But you can, and that's admirable!"
+        ]
+    ],
     "warrior_1d6": [
         [
             "kitten",
@@ -377,7 +451,7 @@
             "Sorry, is someone talking to me right now?"
         ]
     ],
-    "assertive_dislike1": [
+    "assertive_dislike1_2": [
         [
             "Any",
             "assertive",
@@ -389,7 +463,7 @@
             "Can't you see I'm busy, mousebrain? Go bother someone else!"
         ]
     ],
-    "assertive_dislike1": [
+    "assertive_dislike1_3": [
         [
             "Any",
             "assertive",
@@ -399,7 +473,7 @@
             "Go away!!!"
         ]
     ],
-    "assertive_dislike1": [
+    "assertive_dislike1_4": [
         [
             "Any",
             "assertive",
@@ -548,7 +622,7 @@
             "Seriously, I don't know any other parent who bothers their grown kit this much!"
         ]
     ],
-    "assertive_jealous1": [
+    "assertive_jealous1_2": [
         [
             "no_kit",
             "assertive",
@@ -701,7 +775,7 @@
             "[r_c presses their head into your shoulder, sighing into your fur.]"
         ]
     ],
-    "assertive_trust": [
+    "assertive_trust_2": [
         [
             "Any",
             "assertive",
@@ -719,7 +793,7 @@
             "Sometimes I think I'm the only one in the whole clan that's like this ... Do you ever feel the same way?"
         ]
     ],
-    "assertive_comfort": [
+    "assertive_comfort_2": [
         [
             "Any",
             "assertive",
@@ -738,7 +812,7 @@
             "I won't let that happen ... I just won't!"
         ]
     ],
-    "assertive_jealous1": [
+    "assertive_jealous1_3": [
         [
             "Any",
             "assertive",
@@ -752,7 +826,7 @@
             "Fight me one-on-one, and then we'll see who comes out on top!"
         ]
     ],
-    "assertive_parent4": [
+    "assertive_parent4_2": [
         [
             "assertive",
             "dislike",
@@ -775,7 +849,7 @@
             "Do we still even count as family anymore?"
         ]
     ],
-    "assertive_parent4": [
+    "assertive_parent4_3": [
         [
             "assertive",
             "dislike",
@@ -790,7 +864,7 @@
             "Seriously, I don't know any other parent who bothers their kits this much!"
         ]
     ],
-    "assertive_parent4": [
+    "assertive_parent4_4": [
         [
             "assertive",
             "platonic_like",
@@ -803,7 +877,7 @@
             "I'll be sure to catch up with you some other time, though!"
         ]
     ],
-    "assertive_parent4": [
+    "assertive_parent4_5": [
         [
             "assertive",
             "platonic_like",
@@ -816,7 +890,7 @@
             "I'll be sure to catch up with you some other time, though!"
         ]
     ],
-    "assertive_parent4": [
+    "assertive_parent4_6": [
         [
             "from_adopted_kit",
             "kitten",
@@ -827,7 +901,7 @@
             "I'm not a kit anymore, I know how to do it myself!"
         ]
     ],
-    "assertive_parent4": [
+    "assertive_parent4_7": [
         [
             "from_adopted_kit",
             "kitten",
@@ -864,7 +938,7 @@
             "[Could they really have been your kit in the nursery a few moons ago?]"
         ]
     ],
-    "assertivewarrior_mediatorapp1": [
+    "assertivewarrior_mediatorapp1_2": [
         [
             "mediator apprentice",
             "mediator",
@@ -1473,7 +1547,7 @@
             "That must take a lot of discipline. The whole clan is proud of you!"
         ]
     ],
-    "assertivewarrior_mediatorapp1": [
+    "assertivewarrior_mediatorapp1_3": [
         [
             "mediator apprentice",
             "assertive",

@@ -3882,7 +3882,7 @@ class TalkScreen(Screens):
         if cat.status not in ['kitten', "newborn"]:
             with open(f"{resource_dir}general_no_kit.json", 'r') as read_file:
                 possible_texts2 = ujson.loads(read_file.read())
-                possible_texts.extend(possible_texts2)
+                possible_texts.update(possible_texts2)
             
         cluster1, cluster2 = self.get_cluster(cat.personality.trait)
         cluster3, cluster4 = self.get_cluster(you.personality.trait)
@@ -3918,6 +3918,9 @@ class TalkScreen(Screens):
         you_skill_list = ['you_teacher', 'you_hunter', 'you_fighter', 'you_runner', 'you_climber', 'you_swimmer', 'you_speaker', 'you_mediator', 'you_clever', 'you_insightful', 'you_sense', 'you_kit', 'you_story', 'you_lore', 'you_camp', 'you_healer', 'you_star', 'you_omen', 'you_dream', 'you_clairvoyant', 'you_prophet', 'you_ghost', 'you_explorer', 'you_tracker', 'you_artistan', 'you_guardian', 'you_tunneler', 'you_navigator', 'you_song', 'you_grace', 'you_clean', 'you_innovator', 'you_comforter', 'you_matchmaker', 'you_thinker', 'you_cooperative', 'you_scholar', 'you_time', 'you_treasure', 'you_fisher', 'you_language', 'you_sleeper']
         for talk in possible_texts.values():
             tags = talk[0]
+            for i in range(len(tags)):
+                tags[i] = tags[i].lower()
+                
             if "insult" in tags:
                 continue
 

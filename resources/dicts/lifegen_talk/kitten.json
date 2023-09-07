@@ -753,5 +753,103 @@
             "It went like - heehee - how did the *snrk* - how did the - AHAHAHA!!!",
             "[Your kit can't even seem to get through their own joke without dissolving into a fit of giggles!"
         ]
+    ],
+    "introspective_kit": [
+        [
+            "Any",
+            "introspective"
+        ],
+        [
+            "Huh? You think I should ask some of the other cats if they want to play?",
+            "Why would I? I have lots of fun all by myself!"
+        ]
+    ],
+    "introspective_kit_1": [
+        [
+            "any",
+            "introspective"
+        ],
+        [
+            "Hey, y_c?",
+            "How come everyone else seems to have so many more friends than me?",
+            "What? I have to go out of my way to talk to people, to get them to become my friend?",
+            "... Is that seriously how it works?"
+        ]
+    ],
+    "introspective_kit_2": [
+        [
+            "kitten",
+            "introspective"
+        ],
+        [
+            "[You decide to eavesdrop onto one of t_c's games.]",
+            "Hey, stop right there! You're trespassing on clan territory!",
+            "No! Please don't hurt me!",
+            "Too late! Get ready to join your ancestors in Starclan!",
+            "NOOOOOOoooo...",
+            "[t_c seems to be playing both roles in their pretend war.]"
+        ]
+    ],
+    "introspective_kit_or_app": [
+        [
+            "any",
+            "introspective"
+        ],
+        [
+            "Oh, hey, y_c. What's wrong?",
+            "... You're worried about how much time I spend by myself?",
+            "Pfft. Don't you worry about it. I keep myself plenty of company.",
+            "You are your own best friend, after all!",
+            "Hehehe... heh...",
+            "[t_c stares wistfully off into the distance at all the other cats around camp sharing tongues.]"
+        ]
+    ],
+    "introspective_kit_3": [
+        [
+            "kitten",
+            "Introspective",
+            "Negative"
+        ],
+        [
+            "[t_c seems to be pretending that you aren't there.]"
+        ]
+    ],
+    "introspective_kit_4": [
+        [
+            "kitten",
+            "Introspective",
+            "Negative"
+        ],
+        [
+            "What are you doing here?",
+            "Don't you have more important things to be doing?",
+            "...",
+            "Will you leave if I say it more bluntly? Go away."
+        ]
+    ],
+    "introspective_kit_5": [
+        [
+            "Any",
+            "Introspective",
+            "Negative"
+        ],
+        [
+            "What do you want?",
+            "You thought I looked lonely, and could use someone to talk to?",
+            "Hmph... In case you haven't noticed it by now, I actually Prefer being alone.",
+            "Not that you even know me at all.",
+            "Now how about you leave, and go find someone else to annoy that actually cares?"
+        ]
+    ],
+    "introspective_to_kit_6": [
+        [
+            "kitten",
+            "Introspective",
+            "Negative"
+        ],
+        [
+            "Please, y_c, leave me alone.",
+            "As far as I'm concerned, I'm on my own. I don't need you."
+        ]
     ]
 }

@@ -127,7 +127,7 @@
             "Hm ..."
         ]
     ],
-    "assertive_tonewborn": [
+    "assertive_tonewborn_2": [
         [
             "newborn",
             "assertive"
@@ -138,7 +138,7 @@
             "But for now, you gotta stay where it's safe! C'mon. Let's go back to your parents."
         ]
     ],
-    "assertive_tonewborn1": [
+    "assertive_tonewborn1_2": [
         [
             "newborn",
             "assertive"
@@ -148,7 +148,7 @@
             "They're gonna be a killer, though. I can already tell. See those little paws? This kit's got fight in 'em!"
         ]
     ],
-    "assertive_tonewborn3": [
+    "assertive_tonewborn3_2": [
         [
             "newborn",
             "assertive",
@@ -172,6 +172,113 @@
         [
             "y_c. Buddy. Best friend. We've GOTTA TRY this. r_c told me that if you eat three mice, one rabbit, and howl at the moon you get magic powers!",
             "What? It's totally real, they wouldn't lie to me like that! I prommissseee."
+        ]
+    ],
+    "Introspective_queenapp_to_NB": [
+        [
+            "Newborn",
+            "Introspective"
+        ],
+        [
+            "Oh, that's y_c! They've grown so quickly.",
+            "I remember you being born, you know, even if it wasn't that long ago. It'll be amazing watching you grow to provide for the clan. I wonder what you'll grow up to do.",
+            "A big strong warrior, a gentle medicine cat, a wise mediator... or you could become a queen like I'm learning to right now.",
+            "But that doesn't matter right now. Just focus on enjoying your life. That's what I think."
+        ]
+    ],
+    "introspective_queenapp_to_Queen": [
+        [
+            "queen",
+            "introspective"
+        ],
+        [
+            "Oh morning, y_c. Is there anything you need me to get you while I'm up?",
+            "You're good, oh that's good- Huh? I seem fidget-y? No, I'm absolutely fine!",
+            "Why am I running all over the place? It's uh... Well I want to help you. You're amazing, you know that, right?",
+            "You're the reason I decided to train to become a queen. You were always there for me when I was a kit. Always making sure I was okay, and had someone to talk to.",
+            "You made me want to help other kits, just like you. You genuinely made a difference to me. I could never see myself becoming a warrior now.",
+            "Okay. Now is there anything I can get you?"
+        ]
+    ],
+    "introspective_queenapp": [
+        [
+            "any",
+            "introspective"
+        ],
+        [
+            "y_c? Oh hello. Are you lost?",
+            "You're in the Nursery. Cats don't generally go out of their way to come here.",
+            "Huh? You've come to see me? Oh that's lovely, thank you.",
+            "It makes me happy that you've come to see me. I don't... often get to see cats who aren't kits, you know? Or my mentor.",
+            "I love being a Queen, it's the reason I chose to train to be one permanently, but it does make you feel a little...",
+            "Disconnected. You know?",
+            "Thank you for coming out of your way. Want to play with the kits? They love seeing different faces!"
+        ]
+    ],
+    "introspective_queenapp_1": [
+        [
+            "any",
+            "introspective"
+        ],
+        [
+            "Oh y_c! Quick, grab them!",
+            "[A small kitten was rushing towards you, away from the nursery. You quickly grabbed them by the scruff to stop them from escaping any further.",
+            "Oh Starclan's grace. Thank you, y_c. I owe you my next freshkill for that. I had my eyes off them for a second and they made a wild rush out the nursery!",
+            "I promise I won't make a habit out of this. Have a nice rest of your day.",
+            "[t_c gently picked up the kitten and walked back into the nursery.]"
+        ]
+    ],
+    "introspective_queenapp_2": [
+        [
+            "any",
+            "introspective"
+        ],
+        [
+            "Hm? Oh hello, y_c. What's wrong?",
+            "Why am I out of the nursery? You know I'm not stuck in there, right? I can actually leave.",
+            "I needed a break from all the action in there. There's lots going on, I needed a breather.",
+            "Me getting irritated at all the noise, and then snapping at the kits seriously doesn't seem like a good idea, does it? It's not their fault that they're excited.",
+            "So out here, I am. It's much much quieter, since most are out of camp at this time."
+        ]
+    ],
+    "introspective_queenapp_3": [
+        [
+            "any",
+            "introspective"
+        ],
+        [
+            "[You heard a soft hum coming from the nursery.]",
+            "... and pollen will spring from wilted flowers, and the day will rise again...",
+            "[You looked into the medicine den, watching t_c singing a lullaby to the sleeping kits.]",
+            "y_c? It's nice to see you. Sorry, the kits wanted to be sung to, and my mentor suggested that I get some practice in. There'll be lots of future kits wanting songs.",
+            "You can stay to listen if you want. But don't feel like you're forced to.",
+            "[t_c returned to humming the same tune.]"
+        ]
+    ],
+    "introspective_queenapp_4": [
+        [
+            "any",
+            "introspective"
+        ],
+        [
+            "Oh no... I've been defeated!",
+            "[t_c is playing dead on the floor, covered in kittens, seems like they're playing along with their game.]",
+            "I will be back! Starclan cannot hold my spirit forever! I will take over the Clans, mark my words!",
+            "[You decide to leave them to it. They look really busy being dead.]"
+        ]
+    ],
+    "introspective_queenapp_5": [
+        [
+            "any",
+            "introspective"
+        ],
+        [
+            "It'll be okay. I promise.",
+            "[t_c is talking to a upset kit curled up against their side.]",
+            "You don't need to try and force yourself to be something you're not. I get tired of talking to others too.",
+            "You're still a wonderful part of this clan. Even if you need space sometimes... You'll always have cats who want to be around you, and see you.",
+            "[You noticed t_c was looking at you. They smiled pleasantly and turned their full attention back to the kit.]",
+            "You'll never be forgotten, no matter what path your paws will lead you."
         ]
     ],
     "assertive_1": [
@@ -232,7 +339,7 @@
             "... Is tm_n still there?"
         ]
     ],
-    "assertive_elder": [
+    "assertive_elder_2": [
         [
             "Any",
             "assertive",
@@ -244,7 +351,7 @@
             "I'll come and find you as soon as I'm free, though, okay?"
         ]
     ],
-    "assertive_elder": [
+    "assertive_elder_3": [
         [
             "Any",
             "assertive",
@@ -255,7 +362,7 @@
             "They mistook a twig for a snake and flew, like, five fox-lengths into the air! Hahahaha!"
         ]
     ],
-    "assertive_elder": [
+    "assertive_elder_4": [
         [
             "queen",
             "assertive",
@@ -287,7 +394,7 @@
             "[They don't say anything, but their eyes tell you all you need to know.]"
         ]
     ],
-    "assertive_queensapp": [
+    "assertive_queensapp_2": [
         [
             "queen",
             "assertive",
@@ -299,7 +406,7 @@
             "[t_c rushes out of the nursery, leaving a trail of dust behind them. You hope the medicine cat isn't upset with them.]"
         ]
     ],
-    "assertive_queensapp": [
+    "assertive_queensapp_3": [
         [
             "queen",
             "assertive"
@@ -312,7 +419,7 @@
             "... Okay, that's the first time that's happened."
         ]
     ],
-    "assertive_queensapp": [
+    "assertive_queensapp_4": [
         [
             "kitten",
             "assertive"
@@ -348,7 +455,7 @@
             "You'd really choose them over me?"
         ]
     ],
-    "assertive_app29": [
+    "assertive_app29_2": [
         [
             "mediator",
             "mediator apprentice",
@@ -361,7 +468,7 @@
             "Go find somebody else's problem to fix."
         ]
     ],
-    "assertive_elder": [
+    "assertive_elder_5": [
         [
             "elder",
             "assertive",
@@ -409,7 +516,7 @@
             "[You and r_c have a long conversation about the other clans. With each detail you share, their eyes grow bigger and bigger.]"
         ]
     ],
-    "assertive_queensapp": [
+    "assertive_queensapp_5": [
         [
             "kitten",
             "assertive",
@@ -420,7 +527,7 @@
             "Well? Spit it out, we ain't got all day!"
         ]
     ],
-    "assertive_queensapp": [
+    "assertive_queensapp_6": [
         [
             "queen",
             "assertive"
@@ -433,7 +540,7 @@
             "I, uh ... I have some thinking to do."
         ]
     ],
-    "assertive_queensapp": [
+    "assertive_queensapp_7": [
         [
             "queen",
             "assertive"
@@ -443,7 +550,7 @@
             "This one was about safety around brambles ... I came up with it myself! Did I do good?"
         ]
     ],
-    "assertive_queensapp": [
+    "assertive_queensapp_8": [
         [
             "kitten",
             "queen's apprentice"
@@ -454,7 +561,7 @@
             "[You truly cannot fathom how t_c never seems to run out of energy.]"
         ]
     ],
-    "assertive_queensapp": [
+    "assertive_queensapp_9": [
         [
             "queen",
             "assertive"
@@ -466,7 +573,7 @@
             "*Sigh* ... Sorry, what was I talking about?"
         ]
     ],
-    "assertive_queensapp": [
+    "assertive_queensapp_10": [
         [
             "kitten",
             "assertive",
@@ -530,7 +637,7 @@
             "So, is there something you need?"
         ]
     ],
-    "assertive_queensapp4": [
+    "assertive_queensapp4_2": [
         [
             "queen",
             "queen's apprentice",
@@ -555,7 +662,8 @@
             "Now, her spirit haunts the nursery, waiting for more disobedient kits she can take down with her ...",
             "Now, do you wanna be Quietkit's next playmate? Or do you wanna put the moss-ball down and get in your nest?"
         ]
-    ],"assertive_dislike":  [
+    ],
+    "assertive_dislike": [
         [
             "Any",
             "assertive",
@@ -565,10 +673,10 @@
         ],
         [
             "Hey y_c. Why don't you jump off a cliff? It's a new thing every cat in the Clan is trying.",
-    "[r_c is staring at you resentfully.]"
-        ]],
-    
-     "assertive_dislike1":  [
+            "[r_c is staring at you resentfully.]"
+        ]
+    ],
+    "assertive_dislike1": [
         [
             "Any",
             "assertive",
@@ -578,9 +686,9 @@
         ],
         [
             "Sorry, is someone talking to me right now?"
-        ]],
-    
-     "assertive_dislike1":  [
+        ]
+    ],
+    "assertive_dislike1_2": [
         [
             "Any",
             "assertive",
@@ -590,9 +698,9 @@
         ],
         [
             "Can't you see I'm busy, mousebrain? Go bother someone else!"
-        ]],
-    
-     "assertive_dislike1":  [
+        ]
+    ],
+    "assertive_dislike1_3": [
         [
             "Any",
             "assertive",
@@ -600,9 +708,9 @@
         ],
         [
             "Go away!!!"
-        ]],
-    
-     "assertive_dislike1":  [
+        ]
+    ],
+    "assertive_dislike1_4": [
         [
             "Any",
             "assertive",
@@ -613,20 +721,21 @@
         [
             "Hey, y_c. You're looking smaller than usual. Maybe it's time to catch up on your training.",
             "*Snrk.*"
-        ]],
-        "assertive_jealous1":	[[
+        ]
+    ],
+    "assertive_jealous1_2": [
+        [
             "no_kit",
-    "assertive",
-    "cool",
+            "assertive",
+            "cool",
             "jealousy"
         ],
         [
-     "Hey, so, remember when you cracked that joke today, and everybody laughed, and then I tried to be funny, and no one laughed?",
-    "... What was the deal with that?"
-            
-        ]],
-    
-    "assertive_elder":  [
+            "Hey, so, remember when you cracked that joke today, and everybody laughed, and then I tried to be funny, and no one laughed?",
+            "... What was the deal with that?"
+        ]
+    ],
+    "assertive_elder_6": [
         [
             "Any",
             "assertive",
@@ -639,7 +748,8 @@
         [
             "*Sigh* Can't you see I have more important things to do, y_c?",
             "Go back to catching mice, or whatever."
-        ]],
+        ]
+    ],
     "assertive_apprentice4": [
         [
             "no_kit",
@@ -651,6 +761,6 @@
             "Okay, first, we have to scale up these rocks, and they're sort of slippery, but it's okay, cuz I only fell, like, twice. Next, we have to cross a river, and I'm pretty sure there's snakes in there, so watch out! Then, we have to ...",
             "Aw, c'mon, don't look all nervous. It'll be fun! What's life without a little danger, right?",
             "Ready? Let's go!"
-            
-        ]]
+        ]
+    ]
 }
