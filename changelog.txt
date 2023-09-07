@@ -1,3 +1,9 @@
+<strong>v0.6.0: </strong>
+- Overhauled dialogue system!
+- Revive if you die early
+- Bug fixes
+- New menus
+
 <strong>v0.5.5: </strong>
 - Affair expansion 
 - Expanded Info on selection page 
