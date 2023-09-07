@@ -119,6 +119,37 @@
             "Just... be careful. Not everything is as it seems."
         ]
     ],
+    "you_kitten_brooding": [
+        [
+            "kitten",
+            "brooding",
+            "unlawful"
+        ],
+        [
+            "Never take things at face value, little kit. That's a lesson I'd had to learn."
+        ]
+    ],
+    "you_kitten_brooding2": [
+        [
+            "kitten",
+            "brooding",
+            "unlawful"
+        ],
+        [
+            "Hmph... I have no time to speak with you, kit. Go back to the nursery."
+        ]
+    ],
+    "you_kitten_brooding3": [
+        [
+            "kitten",
+            "brooding",
+            "unlawful"
+        ],
+        [
+            "When you grow up, y_c, you'll see that sometimes breaking the rules can lead you to greater truths.",
+            "The Warrior Code isn't everything. Keep an open mind, okay?"
+        ]
+    ],
     "you_kitten_9": [
         [
             "kitten",
