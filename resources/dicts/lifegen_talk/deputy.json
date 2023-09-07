@@ -249,7 +249,7 @@
             "stable",
             "kitten",
             "from_adopted_kit",
-"from_kit",
+            "from_kit",
             "from_kit",
             "sibling",
             "adopted_sibling",
@@ -275,7 +275,7 @@
             "kitten",
             "from_kit",
             "from_adopted_kit",
-"from_kit"
+            "from_kit"
         ],
         [
             "Ugh, StarClan, would you leave me alone?",
@@ -299,7 +299,7 @@
         [
             "kitten",
             "from_adopted_kit",
-"from_kit",
+            "from_kit",
             "platonic_like"
         ],
         [
@@ -311,7 +311,7 @@
         [
             "kitten",
             "from_adopted_kit",
-"from_kit",
+            "from_kit",
             "platonic_like",
             "assertive"
         ],
@@ -323,7 +323,7 @@
     "assertive_parent4_4": [
         [
             "from_adopted_kit",
-"from_kit",
+            "from_kit",
             "from_kit",
             "kitten",
             "assertive"

@@ -618,7 +618,7 @@
             "neurotic",
             "kitten",
             "from_adopted_kit",
-"from_kit"
+            "from_kit"
         ],
         [
             "Ugh, StarClan, would you leave me alone?",
@@ -840,7 +840,7 @@
             "stable",
             "kitten",
             "from_adopted_kit",
-"from_kit",
+            "from_kit",
             "sibling",
             "adopted_sibling",
             "half sibling",
@@ -897,7 +897,7 @@
     "assertive_parent4_6": [
         [
             "from_adopted_kit",
-"from_kit",
+            "from_kit",
             "kitten",
             "assertive"
         ],
@@ -909,7 +909,7 @@
     "assertive_parent4_7": [
         [
             "from_adopted_kit",
-"from_kit",
+            "from_kit",
             "kitten",
             "warrior",
             "deputy",
@@ -936,7 +936,7 @@
         [
             "kitten",
             "from_adopted_kit",
-"from_kit",
+            "from_kit",
             "platonic_like",
             "assertive"
         ],
