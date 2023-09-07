@@ -1393,5 +1393,18 @@
             "... And then I got the feather! Quite the adventure, no?",
             "Just wait until you're old enough. You'll be having plenty of adventures of your own before you know it!"
         ]
+    ],
+    "cool_": [
+        [
+            "Any",
+            "cool",
+            "silly"
+        ],
+        [
+            "Hey, y_c.",
+            "Oh, what's that behind your ear?",
+            "[t_c leans over and grabs a sprig of marigold from behind your head.]",
+            "Hehe. I'm magic!"
+        ]
     ]
 }

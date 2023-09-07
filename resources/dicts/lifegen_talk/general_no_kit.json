@@ -1741,5 +1741,199 @@
             "I never thought this would happen to me. I'm really glad you're here, y_c.",
             "Thank you for being with me. I love you."
         ]
+    ],
+    
+    "introspective_comf_3": [
+        [
+            "any",
+            "introspective",
+            "comfort"
+        ],
+        [
+            "y_c? Is everything okay, you were just staring off into space…?",
+            "... Huh. Is that what I sound like when I give advice to others? Wow I sound so…",
+            "Huh, knowledgeable? I was going to say stuck-up. But heh…",
+            "I guess it's not that bad if someone like you is giving the advice."
+        ]
+    ],
+    "introspective_comf_4": [
+        [
+            "any",
+            "introspective",
+            "comfort"
+        ],
+        [
+            "[t_c walked over to you and rested their head on your shoulder.]",
+            "..."
+        ]
+    ],
+    "introspective_comf_5": [
+        [
+            "any",
+            "introspective",
+            "comfort"
+        ],
+        [
+            "Hey… y_c? Can I ask you something?",
+            "Listen, can you check my back for me?",
+            "[You look at t_c's back, and see some lost fur, but nothing major.]",
+            "Yeah, my fur is falling out. It… doesn't look bad, does it? I don't look scary…?",
+            "Oh, it looks fine, you barely saw it? Oh that's a relief.",
+            "Hm? You think I should go to the medicine den and ask if something can be given for it? That's a fair point, I don't want it to get worse.",
+            "I'll go do that now, thank you y_c."
+        ]
+    ],
+    "introspective_resp_1": [
+        [
+            "any",
+            "introspective",
+            "respect"
+        ],
+        [
+            "Morning, y_c.",
+            "You know, I saw you interject in that clan meeting before. I admire your courage, I'd never have the strength to directly call someone out like that.",
+            "Not only that, they listened to what you had to say.",
+            "You're one of a kind, y_c."
+        ]
+    ],
+    "introspective_resp_2": [
+        [
+            "any",
+            "introspective",
+            "respect",
+            "random_cat"
+        ],
+        [
+            "[You were having a conversation with r_c when you felt eyes on your back.]",
+            "[You flicked your head around and saw that it was t_c.]",
+            "[t_c flicked their ear at you and gave you a smile.]",
+            "[You smiled back and turned back to your conversation.]"
+        ]
+    ],
+    "introspective_resp_3": [
+        [
+            "any",
+            "introspective",
+            "respect"
+        ],
+        [
+            "Hey, y_c?",
+            "You know, I heard you telling a story to the kits, a short while ago, and it was amazing. You're so talented at it!",
+            "... And I was wondering if you'd be able to finish the story? Just for me? I was caught by your every word like a mouse in claws!",
+            "You'll finish it later? That's good, just let me know, so I'm not out when you finish."
+        ]
+    ],
+    "introspective_resp_4": [
+        [
+            "any",
+            "introspective",
+            "respect"
+        ],
+        [
+            "Oh, good morning, it's lovely to see you.",
+            "I'm fine, it's just… Well you must have had a very eventful sleep. Would you like to share tongues before you go?",
+            "I wouldn't want you walking around looking any less than your best, it's what you deserve after all."
+        ]
+    ],
+    "introspective_resp_5": [
+        [
+            "any",
+            "introspective",
+            "respect"
+        ],
+        [
+            "y_c? Listen, I know it's late, but…",
+            "Are you awake enough to come with me?",
+            "I wanted to go for a walk around the territory. It's a lovely night, and I wanted someone to share it with. You're one of the cats who I know would appreciate it. Getting out for a while.",
+            "So, do you want to, or are you going to bed?",
+            "You'll come with? That's wonderful, thank you, y_c."
+        ]
+    ],
+    "introspective_trust": [
+        [
+            "any",
+            "introspective",
+            "trust"
+        ],
+        [
+            "Uh. y_c! Over here!",
+            "[You look up to see t_c up in a tree.]",
+            "I was watching the birds, and I got up here and… it's really high. I don't know how to get down.",
+            "[You quickly got into the tree to walk them down it]",
+            "Oh thank you, y_c! I have no idea what I was thinking, getting up there. I'm happy you were there, or who knows how long I would have been stuck."
+        ]
+    ],
+    "introspective_trust_1": [
+        [
+            "any",
+            "introspective",
+            "trust",
+            "random_cat"
+        ],
+        [
+            "Hey, y_c. How are you?",
+            "I'm absolutely okay, I'm not up to much here, just catwatching, as usual.",
+            "Huh? You think I should get to know the other cats, instead of watching?",
+            "Oh, I'm just fine here, I don't talk to the others, it's just how it is…!",
+            "You think I'd get on with r_c? You think?",
+            "... Hm. I suppose I'll have to go and talk to them then, at some point.",
+            "You've never guided me wrong."
+        ]
+    ],
+    "introspective_trust_2": [
+        [
+            "any",
+            "introspective",
+            "trust",
+            "random_cat"
+        ],
+        [
+            "Hey… y_c? Can I ask for your advice on something?",
+            "I was having an argument with r_c a couple of days ago. I was giving them some advice on something, and they told me that I talk like I'm better than everyone. Do you think…?",
+            "No? That's good. That's absolutely not my intention. I want to help, but not to be more important than any other cat.",
+            "Thank you, y_c. I know that no matter what, you'll always tell me what I need to hear."
+        ]
+    ],
+    "introspective_trust_3": [
+        [
+            "any",
+            "introspective",
+            "trust"
+        ],
+        [
+            "Hm, Good morning, y_c.",
+            "You know, I was going to go out for a swim today. The weather's decent swimming weather, and I wanted to stretch my legs. I was wondering if you wanted to come with me?",
+            "Oh that's wonderful, thank you! I don't feel comfortable swimming completely on my own, in case something happens. But I know that with you there, I'll always be okay.",
+            "Hm. We should catch some fish while we're out. Got to bring something back for the fresh kill pile."
+        ]
+    ],
+    "introspective_trust_4": [
+        [
+            "any",
+            "introspective",
+            "trust",
+            "random_cat"
+        ],
+        [
+            "Huh, m_c? You were looking for me?",
+            "Yes, I got into an argument with r_c this morning. I'm not sure what the issue is. They always keep telling me that I need to speak up more, and then get angry at me when I do.",
+            "I swear. This is the reason why you're one of the only cats I talk to. You make sense, you're reasonable.",
+            "I'm going to bed, y_c. I'll speak to you in the morning."
+        ]
+    ],
+    "introspective_trust_5": [
+        [
+            "any",
+            "introspective",
+            "trust"
+        ],
+        [
+            "[You overheard quiet humming coming from the fresh kill pile.]",
+            "Mm? Nice to see you.",
+            "Yeah, I was humming, I like to every now and then. When no one's around, of course.",
+            "No, I just don't want anyone overhearing. I don't want to be bothered by them asking me to sing more.",
+            "Why did I start humming when you were in earshot then? Well, I know you. I know that you respect my boundaries, and won't force me to do something I'm comfortable with.",
+            "So you get to hear me sing. On occasion. If you're listening out for it."
+        ]
     ]
 }

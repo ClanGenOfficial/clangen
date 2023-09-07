@@ -808,7 +808,7 @@
         [
             "kitten",
             "Introspective",
-            "Negative"
+            "dislike"
         ],
         [
             "[t_c seems to be pretending that you aren't there.]"
@@ -818,7 +818,7 @@
         [
             "kitten",
             "Introspective",
-            "Negative"
+            "dislike"
         ],
         [
             "What are you doing here?",
@@ -831,7 +831,7 @@
         [
             "Any",
             "Introspective",
-            "Negative"
+            "dislike"
         ],
         [
             "What do you want?",
@@ -845,7 +845,7 @@
         [
             "kitten",
             "Introspective",
-            "Negative"
+            "dislike"
         ],
         [
             "Please, y_c, leave me alone.",
