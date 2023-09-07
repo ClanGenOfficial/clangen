@@ -1630,5 +1630,46 @@
             "Aw, c'mon, don't look all nervous. It'll be fun! What's life without a little danger, right?",
             "Ready? Let's go!"
         ]
+    ],
+    "cool_apprentice_1": [
+        [
+            "apprentice",
+            "medicine cat apprentice",
+            "queen's apprentice",
+            "mediator apprentice",
+            "kitten",
+            "cool"
+        ],
+        [
+            "[t_c bats at a falling leaf with precision, clearly showing off.]",
+            "Ah, you saw that? Just a little move I picked up. Nothing too fancy.",
+            "I can show it to you some time, if you want."
+        ]
+    ],
+    "cool_apprentice_2": [
+        [
+            "apprentice",
+            "medicine cat apprentice",
+            "queen's apprentice",
+            "mediator apprentice",
+            "kitten",
+            "cool"
+        ],
+        [
+            "You ever wonder why the other cats listen to me so much?",
+            "Maybe it's because I have this... charm, y'know? Not that I'm bragging."
+        ]
+    ],
+    "cool_apprentice_3": [
+        [
+            "warrior",
+            "cool",
+            "from_your_apprentice"
+        ],
+        [
+            "Hey, y_c.",
+            "'Boutta drag me off to training again, are you?",
+            "I better become the best warrior this clan's ever seen."
+        ]
     ]
 }

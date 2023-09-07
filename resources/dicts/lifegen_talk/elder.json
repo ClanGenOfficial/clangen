@@ -1147,5 +1147,32 @@
             "But in you, I sense ... uncertainty.",
             "Maybe you should see the medicine cat about it."
         ]
+    ],
+    "cool_1": [
+        [
+            "Any",
+            "cool",
+            "introspective",
+            "unabashed"
+        ],
+        [
+            "[You find t_c stacking pebbles near the elder's den.]",
+            "Oh hey, y_c. I'm trying to recreate a Twoleg den. Pretty neat, huh?",
+            "Just one more...",
+            "[They place one last rock on top of the pile.]",
+            "Perfect!"
+        ]
+    ],
+    "cool_2": [
+        [
+            "Any",
+            "cool",
+            "introspective"
+        ],
+        [
+            "Just an average day in c_nClan!",
+            "But that doesn't mean we should take it for granted.",
+            "Let's make it a good day."
+        ]
     ]
 }

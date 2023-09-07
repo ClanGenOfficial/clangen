@@ -3925,7 +3925,7 @@ class TalkScreen(Screens):
                 continue
 
             # Status tags
-            if you.status not in tags and "Any" not in tags and "young elder" not in tags and "no_kit" not in tags:
+            if you.status not in tags and "any" not in tags and "young elder" not in tags and "no_kit" not in tags:
                 continue
             elif "young elder" in tags and cat.status == 'elder' and cat.moons >= 100:
                 continue
@@ -4080,19 +4080,19 @@ class TalkScreen(Screens):
             if you.ID in cat.relationships:
                 if cat.relationships[you.ID].dislike < 50 and 'hate' in tags:
                     continue
-                if cat.relationships[you.ID].romantic_love < 30 and 'romantic_like' in tags:
+                if cat.relationships[you.ID].romantic_love < 20 and 'romantic_like' in tags:
                     continue
-                if cat.relationships[you.ID].platonic_like < 30 and 'platonic_like' in tags:
+                if cat.relationships[you.ID].platonic_like < 20 and 'platonic_like' in tags:
                     continue
-                if cat.relationships[you.ID].jealousy < 30 and 'jealousy' in tags:
+                if cat.relationships[you.ID].jealousy < 20 and 'jealousy' in tags:
                     continue
-                if cat.relationships[you.ID].dislike < 30 and 'dislike' in tags:
+                if cat.relationships[you.ID].dislike < 20 and 'dislike' in tags:
                     continue
-                if cat.relationships[you.ID].comfortable < 30 and 'comfort' in tags:
+                if cat.relationships[you.ID].comfortable < 20 and 'comfort' in tags:
                     continue
-                if cat.relationships[you.ID].admiration < 30 and 'respect' in tags:
+                if cat.relationships[you.ID].admiration < 20 and 'respect' in tags:
                     continue         
-                if cat.relationships[you.ID].trust < 30 and 'trust' in tags:
+                if cat.relationships[you.ID].trust < 20 and 'trust' in tags:
                     continue
                 if cat.relationships[you.ID].platonic_like < 10 and cat.relationships[you.ID].dislike < 10 and "neutral" in tags:
                     continue

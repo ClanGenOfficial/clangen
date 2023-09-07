@@ -1486,5 +1486,42 @@
             "Now, c'mon. Let's go for a little stroll by the water. I know you need it!",
             "The clan will still be here when we get back."
         ]
+    ],
+    "cool_deputy_1": [
+        [
+            "Any",
+            "random_cat",
+            "cool"
+        ],
+        [
+            "Need something, y_c? Or just coming by to chat?",
+            "Wow, I'm totally in demand! r_c just came by earlier too.",
+            "Everyone wants to say hi to the ol' deputy. Appreciate it."
+        ]
+    ],
+    "cool_deputy_2": [
+        [
+            "Any",
+            "cool",
+            "silly"
+        ],
+        [
+            "Well, y_c, sometimes you just gotta let out a big roar straight from your gut!",
+            "That's what I do whenever I mess up patrols, heh.",
+            "Okay, let's roar together!",
+            "Ready... MROOOOOOOOOOW!!!"
+        ]
+    ],
+    "cool_deputy_3": [
+        [
+            "Any",
+            "cool",
+            "random_cat"
+        ],
+        [
+            "Recently I've been thinking about the best way to talk to r_c.",
+            "We'll say hi to each other now and then, but I can never say anything to get the conversation going.",
+            "Hmm... Maybe I'll ask em to try climbing the big oak with me!"
+        ]
     ]
 }
