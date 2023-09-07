@@ -180,6 +180,7 @@ def json_load():
             new_cat.joined_df = cat["joined_df"] if "joined_df" in cat else False
             new_cat.revealed = cat["revealed"] if "revealed" in cat else 0
             new_cat.inventory = cat["inventory"] if "inventory" in cat else []
+            new_cat.revives = cat["revives"] if "revives" in cat else 0
             
             if "died_by" in cat or "scar_event" in cat or "mentor_influence" in cat:
                 new_cat.convert_history(

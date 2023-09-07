@@ -217,6 +217,7 @@ class Cat():
         self.joined_df = False
         self.revealed = 0
         self.inventory = []
+        self.revives = 0
 
         
         self.prevent_fading = False  # Prevents a cat from fading.
@@ -2997,7 +2998,8 @@ class Cat():
                 "flirted": self.flirted if self.flirted else False,
                 "joined_df": self.joined_df if self.joined_df else False,
                 "revealed": self.revealed if self.revealed and isinstance(self.revealed, int) else 0,
-                "inventory": self.inventory if self.inventory else []
+                "inventory": self.inventory if self.inventory else [],
+                "revives": self.revives if self.revives else 0
             }
 
 
