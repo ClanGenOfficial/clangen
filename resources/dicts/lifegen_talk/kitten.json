@@ -1099,7 +1099,8 @@
     "sweet_kit_19": [
         [
             "deputy",
-            "sweet"
+            "sweet",
+            "cool"
         ],
         [
             "Hiya y_c!! Another day of deputying? Whaddya gotta do today?",
@@ -1110,7 +1111,8 @@
     "sweet_kit_20": [
         [
             "leader",
-            "sweet"
+            "sweet",
+            "neurotic"
         ],
         [
             "Ah ah- I'm not following you around- I'm just walking in the same direction.. Um... not purposefully!!",
@@ -1122,7 +1124,8 @@
     "sweet_kit_21": [
         [
             "leader",
-            "sweet"
+            "sweet",
+            "silly"
         ],
         [
             "y_c!! y_c!! Look at what I caught!! It's a little bug!",
@@ -1143,12 +1146,13 @@
     "sweet_kit_23": [
         [
             "elder",
-            "sweet"
+            "sweet",
+            "silly"
         ],
         [
             "y_c!! y_c!! Good morning!!",
             "Can I hear a story, pretty pretty please? You always have the best stories! I've got you a snack, and I can get other stuff too if you want me to!",
-            "-They plop down into a loaf-like position, their paws tucked under their belly as they look intently at you-"
+            "[They plop down into a loaf-like position, their paws tucked under their belly as they look intently at you.]"
         ]
     ],
     "sweet_kit_24": [

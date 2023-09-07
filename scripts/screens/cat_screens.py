@@ -3883,6 +3883,11 @@ class TalkScreen(Screens):
             with open(f"{resource_dir}general_no_kit.json", 'r') as read_file:
                 possible_texts2 = ujson.loads(read_file.read())
                 possible_texts.update(possible_texts2)
+        
+        if cat.status not in ['kitten', "newborn"] and you.status in ['kitten', 'newborn']:
+            with open(f"{resource_dir}general_you_kit.json", 'r') as read_file:
+                possible_texts3 = ujson.loads(read_file.read())
+                possible_texts.update(possible_texts3)
             
         cluster1, cluster2 = self.get_cluster(cat.personality.trait)
         cluster3, cluster4 = self.get_cluster(you.personality.trait)
@@ -4137,12 +4142,12 @@ class TalkScreen(Screens):
         text = [t1.replace("l_n", str(lead)) for t1 in text]
         dep = game.clan.deputy.name
         text = [t1.replace("d_n", str(dep)) for t1 in text]
-        if you.mentor:
-            mentor = Cat.all_cats.get(you.mentor).name
-            text = [t1.replace("m_n", str(mentor)) for t1 in text]
         if cat.mentor:
             mentor = Cat.all_cats.get(cat.mentor).name
             text = [t1.replace("tm_n", str(mentor)) for t1 in text]
+        if you.mentor:
+            mentor = Cat.all_cats.get(you.mentor).name
+            text = [t1.replace("m_n", str(mentor)) for t1 in text]
         return text
         
         

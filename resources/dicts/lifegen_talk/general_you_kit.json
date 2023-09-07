@@ -1,26 +1,71 @@
 {
-    "abc": [
-        [],
-        []
+    "you_kitten_1": [
+        [
+            "newborn",
+            "sweet",
+            "stable",
+            "introspective"
+        ],
+        [
+            "Rest now, little one. Dream of the great warrior you'll become one day."
+        ]
     ],
-    "abc": [
-        [],
-        []
+    "you_kitten_2": [
+        [
+            "kitten",
+            "unlawful",
+            "assertive",
+            "unabashed"
+        ],
+        [
+            "Hey, kit! Let's practice the hunting crouch.",
+            "[t_c inspects you as you get into position.]",
+            "Hmm, not bad! You'll be a great hunter one day."
+        ]
     ],
-    "abc": [
-        [],
-        []
+    "you_kitten_3": [
+        [
+            "unabashed",
+            "silly",
+            "unlawful",
+            "cool"
+        ],
+        [
+            "Boo! Gotcha!",
+            "Heh, you didn't see me coming, did you, little one?",
+            "One day you'll be as sneaky as me."
+        ]
     ],
-    "abc": [
-        [],
-        []
+    "you_kitten_4": [
+        [
+            "stable",
+            "upstanding"
+        ],
+        [
+            "It's important to listen and learn, little y_c. This clan relies on each of us doing our part."
+        ]
     ],
-    "abc": [
-        [],
-        []
+    "you_kitten_5": [
+        [
+            "neurotic",
+            "stable",
+            "sweet",
+            "upstanding"
+        ],
+        [
+            "Oh! Be careful near the brambles, dear kit. It's easy to get hurt."
+        ]
     ],
-    "abc": [
-        [],
-        []
+    "you_kitten_6": [
+        [
+            "neurotic",
+            "stable",
+            "sweet",
+            "upstanding"
+        ],
+        [
+            "Stay close to your mentor, once you're an apprentice.",
+            "c_nClan's territory spans thousands of tail-lengths. It's easy to get lost if you wander too far."
+        ]
     ]
 }
