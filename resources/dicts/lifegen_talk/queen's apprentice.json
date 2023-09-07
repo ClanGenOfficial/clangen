@@ -2,7 +2,11 @@
     "queen_1": [
         [
             "Any",
-            "no_kit"
+            "no_kit",
+            "trust",
+            "introspective",
+            "stable",
+            "sweet"
         ],
         [
             "Being a queen... it's a role filled with both joy and heartache. Every kit that's born, I feel an overwhelming surge of love and protectiveness. I watch them take their first breath, open their eyes, and explore the world.",
@@ -16,7 +20,12 @@
     ],
     "queen_2": [
         [
-            "kitten"
+            "kitten",
+            "neurotic",
+            "sweet",
+            "assertive",
+            "stable",
+            "silly"
         ],
         [
             "Come here, little one. Your fur is so spiky!",
@@ -25,7 +34,9 @@
     ],
     "queen_3": [
         [
-            "kitten"
+            "kitten",
+            "sweet",
+            "introspective"
         ],
         [
             "My dear kit, being a queen is a role woven from strands of love, sacrifice, and hope. When I look at you, so tiny and curious, my heart swells with dreams and wishes for your future.",
@@ -543,7 +554,9 @@
     "assertive_queensapp_7": [
         [
             "queen",
-            "assertive"
+            "assertive",
+            "sweet",
+            "upstanding"
         ],
         [
             "Hey! I just finished giving the kits their lesson for the day!",
@@ -552,8 +565,12 @@
     ],
     "assertive_queensapp_8": [
         [
-            "kitten",
-            "queen's apprentice"
+            "no_kit",
+            "assertive",
+            "sweet",
+            "upstanding",
+            "cool",
+            "unabashed"
         ],
         [
             "It's so quiet while the kits are sleeping ...",
@@ -564,7 +581,9 @@
     "assertive_queensapp_9": [
         [
             "queen",
-            "assertive"
+            "queen's apprentice",
+            "assertive",
+            "sweet"
         ],
         [
             "r_w was in here earlier asking about kits ... I didn't know what to tell them. Sorta weird that they were asking, no?",
@@ -600,7 +619,8 @@
     "assertive_queensapp2": [
         [
             "kitten",
-            "assertive"
+            "assertive",
+            "cool"
         ],
         [
             "Hey, y_c! Wanna play a game? Let's do 'Leader of StoneClan!'",
@@ -627,7 +647,8 @@
     "assertive_queensapp4": [
         [
             "no_kit",
-            "assertive"
+            "assertive",
+            "silly"
         ],
         [
             "[t_c is currently being used as a climbing rock by all the kits in the nursery.]",
@@ -652,7 +673,9 @@
     "assertive_queensapp5": [
         [
             "kitten",
-            "assertive"
+            "assertive",
+            "cool",
+            "unabashed"
         ],
         [
             "Alright, alright, settle down! Time for a nap everybody, playtime's over!",
