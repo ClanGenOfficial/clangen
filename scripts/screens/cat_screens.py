@@ -3994,22 +3994,36 @@ class TalkScreen(Screens):
                     continue
                 
             # Injuries, grieving and illnesses tags
-            if not you.is_ill() and "you_ill" in tags:
-                continue
-            if not you.is_injured() and "you_injured" in tags:
-                continue
-            if "grief stricken" not in you.illnesses and "you_grieving" in tags:
-                continue
-            if not cat.is_ill() and "they_ill" in tags:
-                continue
-            if not cat.is_injured() and "they_injured" in tags:
-                continue
-            if "grief stricken" not in cat.illnesses and "they_grieving" in tags:
-                continue
+            
+            if any(i in ["you_ill", "you_injured", "you_grieving"] for i in tags):
+                ill_injured = False
+
+                if you.is_ill() and "you_ill" in tags:
+                    ill_injured = True
+                if you.is_injured() and "you_injured" in tags:
+                    ill_injured = True
+                if "grief stricken" in you.illnesses and "you_grieving" in tags:
+                    ill_injured = True
+                
+                if not ill_injured:
+                    continue 
+            
+            if any(i in ["they_ill", "they_injured", "they_grieving"] for i in tags):
+                ill_injured = False
+                
+                if cat.is_ill() and "they_ill" in tags:
+                    ill_injured = True
+                if cat.is_injured() and "they_injured" in tags:
+                    ill_injured = True
+                if "grief stricken" in cat.illnesses and "they_grieving" in tags:
+                    ill_injured = True
+                    
+                if not ill_injured:
+                    continue 
             
             # Relationships
             # Family tags:
-            if any(i in ["half sibling", "siblings_mate" "cousin", "adopted_sibling", "parents_siblings", "from_mentor", "from_your_apprentice", "from_mate", "from_parent", "adopted_parent", "from_kit", "sibling","from_adopted_kit"] for i in tags):
+            if any(i in ["half sibling", "siblings_mate", "cousin", "adopted_sibling", "parents_siblings", "from_mentor", "from_your_apprentice", "from_mate", "from_parent", "adopted_parent", "from_kit", "sibling","from_adopted_kit"] for i in tags):
                 
                 fam = False
                 if "from_mentor" in tags:
@@ -4042,7 +4056,7 @@ class TalkScreen(Screens):
                     if cat.ID in you.inheritance.get_siblings():
                         fam = True
                 if "half sibling" in tags:
-                    if ((cat.parent1 == you.parent1 or cat.parent1 == you.parent2) or (cat.parent2 == you.parent1 or cat.parent2 == you.parent2)) and not (cat.parent1 == you.parent1 and cat.parent2 == you.parent2):
+                    if ((cat.parent1 == you.parent1 or cat.parent1 == you.parent2) or (cat.parent2 == you.parent1 or cat.parent2 == you.parent2)) and not (cat.parent1 == you.parent1 and cat.parent2 == you.parent2) and not (cat.parent2 == you.parent1 and cat.parent1 == you.parent2) and not (cat.parent1 == you.parent2 and cat.parent2 == you.parent1):
                         fam = True
                 if "adopted_sibling" in tags:
                     if cat.ID in you.inheritance.get_no_blood_siblings():
@@ -4144,6 +4158,38 @@ class TalkScreen(Screens):
             texts_list.append(possible_texts['general'][1])
 
         text = choice(texts_list)
+        
+        if any(i in ["r_k", "r_a", "r_w", "r_m", "r_d", "r_q", "r_e", "r_s", "r_i"] for i in text):
+            living_meds = []
+            living_mediators = []
+            living_warriors = []
+            living_apprentices = []
+            living_queens = []
+            living_kits = []
+            living_elders = []
+            for cat in Cat.all_cats.values():
+                if cat.status == "medicine cat":
+                    living_meds.append(cat)
+                elif cat.status == "warrior":
+                    living_warriors.append(cat)
+                elif cat.status == "mediator":
+                    living_mediators.append(cat)
+                elif cat.status == 'queen':
+                    living_queens.append(cat)
+                elif cat.status in ["apprentice", "medicine cat apprentice", "mediator apprentice", "queen's apprentice"]:
+                    living_apprentices.append(cat)
+                elif cat.status in ["kitten", "newborn"]:
+                    living_kits.append(cat)
+                elif cat.status == "elder":
+                    living_elders.append(cat)
+            text = [t1.replace("r_k", str(choice(living_kits).name)) for t1 in text]
+            text = [t1.replace("r_a", str(choice(living_apprentices).name)) for t1 in text]
+            text = [t1.replace("r_w", str(choice(living_warriors).name)) for t1 in text]
+            text = [t1.replace("r_m", str(choice(living_meds).name)) for t1 in text]
+            text = [t1.replace("r_d", str(choice(living_mediators).name)) for t1 in text]
+            text = [t1.replace("r_q", str(choice(living_queens).name)) for t1 in text]
+            text = [t1.replace("r_e", str(choice(living_elders).name)) for t1 in text]
+
         text = [t1.replace("c_n", game.clan.name) for t1 in text]
         text = [t1.replace("y_c", str(you.name)) for t1 in text]
         text = [t1.replace("t_c", str(cat.name)) for t1 in text]   
@@ -4161,6 +4207,9 @@ class TalkScreen(Screens):
         if you.mentor:
             mentor = Cat.all_cats.get(you.mentor).name
             text = [t1.replace("m_n", str(mentor)) for t1 in text]
+    
+            
+            
         return text
         
         
