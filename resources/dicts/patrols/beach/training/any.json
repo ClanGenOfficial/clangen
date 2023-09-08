@@ -5,7 +5,7 @@
         "season": ["Any"],
         "types": ["training"],
         "tags": [],
-        "patrol_art": "train_general_intro",
+        "patrol_art": "bch_train_session1",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
