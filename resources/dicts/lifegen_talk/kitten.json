@@ -1,7 +1,13 @@
 {
     "kit_6": [
         [
-            "kitten"
+            "kitten",
+            "assertive",
+            "upstanding",
+            "silly",
+            "sweet",
+            "cool",
+            "introspective"
         ],
         [
             "Hey, do you want to play warriors?",
@@ -30,15 +36,17 @@
             "r_c says you have a secret... Can you tell me? Please?"
         ]
     ],
-    "KIT32132": [
+   "KIT32132": [
         [
-            "newborn"
+            "newborn",
+            "sweet",
+            "introspective"
         ],
         [
             "Oops-! Careful there y_c! I don't think you're supposed to leave the nursery just yet, your just a bit too young",
-            "The older cats wouldn't be too happy if they found out I let you out into the camp, but hey! There are tons of things to do here! We could play moss ball, Hunt the Feather, Invasion, Anything!",
+            "The older cats wouldn't be too happy if they found out I let you out into the camp, but hey! There are tons of things to do here! We could play moss ball, Hunt the Feather, Invasion, anything!",
             "You might be a little shaky on your paws, but that's alright! You're still getting used to them. Don't worry, I was like that too once. You'll find your balance soon enough, maybe you can go outside by then!",
-            "There's a lot that I want to show you, but in the meanwhile, what do you want to play first?"
+            "There's a lot that I want to show you. What do you want to play first?"
         ]
     ],
     "kit2314": [
@@ -57,23 +65,30 @@
     ],
     "kit21": [
         [
-            "elder"
+            "no_kit",
+            "unlawful",
+            "assertive",
+            "brooding"
         ],
         [
             "y_c, help! I'm playing hide and seek with my den mates, and I need to hide, quick!",
             "Yes, I know that there are some really good hiding spots over by the medicine den, but, erm, I'm kind of not allowed over there after the incident a few days ago.",
             "Hey, don't you get started on me as well! I didn't know that those brightly colored plants that I used for hunting practice were marigolds! And how would I know that the cobwebs were supposed to be stacked up like that?",
-            "If you tell me, I actually did the medicine cat a favor! That den looked like it needed to be reorganized Anyways, so I gave them a reason to! They didn't seem to appreciate my work though..",
+            "If you tell me, I actually did the medicine cat a favor! That den looked like it needed to be reorganized anyways, so I gave them a reason to! They didn't seem to appreciate my work though..",
             "Uh oh. I think I'm running out of time to hide. I gotta go! I'll see you later y_c, maybe you can tell me another story later!"
         ]
     ],
-    "kit_15": [
+  "kit_15": [
         [
-            "Any"
+            "Any",
+            "sweet",
+            "introspective",
+            "platonic_like",
+            "trust"
         ],
         [
             "Did you ever notice how pretty the stars are? They're like shiny bugs in the sky!",
-            "Elders say those are our ancestors looking down at us. I hope when I join StarClan, I'll be a shiny star too!",
+            "The elders say those are our ancestors looking down at us. I hope when I join StarClan, I'll be a shiny star too!",
             "Do you think the stars play with each other? Like how we play with moss-balls?",
             "I like to imagine they do. It makes the night feel less scary. Like we're never really alone.",
             "Next time you look at the stars, wave at them! I bet they'll wave back!"
@@ -81,30 +96,39 @@
     ],
     "kit_16": [
         [
-            "Any"
+            "Any",
+            "assertive",
+            "sweet",
+            "upstanding",
+            "cool"
         ],
         [
             "I love listening to the elders' stories. They're so exciting!",
-            "There are big battles, heroic warriors, mysterious places... It's like a dream!",
-            "Sometimes I pretend I'm in those stories. Like I'm the hero who saves the day!",
             "Do you think I could be in a story someday? Like a real hero?",
             "I'll make sure to do something amazing. Then the elders will tell stories about me!"
         ]
     ],
     "kit_18": [
         [
-            "Any"
+            "Any",
+            "platonic_like",
+            "assertive",
+            "silly",
+            "cool",
+            "sweet",
+            "unabashed"
         ],
         [
-            "Do you know how to swim? I heard some other cats do it all the time!",
-            "I tried it once in a puddle. It was... um... a little wet.",
+            "y_c, we should go swimming! I heard some other cats do it all the time!",
             "But I bet it's fun when you get the hang of it. Like being a fish!",
-            "Maybe I could learn to swim properly when I'm a warrior. I'd be the first cat who can swim super fast."
+            "When I'm a warrior, I'll be the first cat who can swim super fast!",
+            "Just imagine! Swimming up to a Gathering. Everyone would be so surprised!"
         ]
     ],
     "kit_183": [
         [
-            "elder"
+            "elder",
+            "unabashed"
         ],
         [
             "Wow, you're so old... Are you going to join StarClan soon?"
@@ -112,20 +136,25 @@
     ],
     "kit_182": [
         [
-            "elder"
+            "elder",
+            "unabashed"
         ],
         [
             "Wow, you're so old... Are you going to join the Dark Forest soon? The queens say that's where grumpy cats go!"
         ]
     ],
-    "kit13123": [
+   "kit13123": [
         [
-            "newborn"
+            "newborn",
+            "silly",
+            "unabashed",
+            "unlawful",
+            "assertive"
         ],
         [
             "Hurry and open your eyes! It's getting really, really boring!",
             "The queens keep getting annoyed at me, 'cuz you're still sleeping. So get up already so we can play!",
-            "Ugh, you're so stubborn... maybe I don't want to play with you Anyways! Hmph!"
+            "Ugh, you're so stubborn... maybe I don't want to play with you anyways! Hmph!"
         ]
     ],
     "app_321": [
@@ -167,27 +196,7 @@
             "Can I help take care of them? Pleeease?"
         ]
     ],
-    "assertive_tonewborn2": [
-        [
-            "newborn",
-            "assertive"
-        ],
-        [
-            "Whoa! Hey there, little guy! Shouldn't you be in the nursery?",
-            "Hehe. You've got an adventurous spirit. I like that about you.",
-            "But for now, you gotta stay where it's safe! C'mon. Let's go back to your parents."
-        ]
-    ],
-    "assertive_tonewborn1": [
-        [
-            "newborn",
-            "assertive"
-        ],
-        [
-            "Aw... little guy hasn't even gotten their eyes open yet!",
-            "They're gonna be a killer, though. I can already tell. See those little paws? This kit's got fight in 'em!"
-        ]
-    ],
+
     "assertive_tonewborn3": [
         [
             "newborn",
@@ -201,7 +210,7 @@
     ],
     "assertive_apprentice7": [
         [
-            "Any",
+            "kitten",
             "platonic_like",
             "assertive",
             "silly",
@@ -350,7 +359,7 @@
     ],
     "assertivekit_6": [
         [
-            "kitten",
+            "any",
             "assertive"
         ],
         [
@@ -385,7 +394,7 @@
         ],
         [
             "y_c, can you show me some battle moves? I want to be big and strong when I grow up, just like you!!!",
-            "What? You mean you ... don't know Any battle moves?",
+            "What? You mean you ... don't know any battle moves?",
             "Hmph. You're no fun! I'll go find someone else to play with, then!"
         ]
     ],
@@ -522,7 +531,6 @@
     ],
     "assertivekit_19": [
         [
-            "kitten",
             "assertive",
             "queen",
             "queen's apprentice"
@@ -743,14 +751,12 @@
             "unlawful",
             "upstanding",
             "platonic_like",
-            "from_adopted_kit",
-            "from_kit",
             "random_cat"
         ],
         [
             "r_c just told me the funniest joke ever!",
             "It went like - heehee - how did the *snrk* - how did the - AHAHAHA!!!",
-            "[Your kit can't even seem to get through their own joke without dissolving into a fit of giggles!"
+            "[t_c can't even seem to get through their own joke without dissolving into a fit of giggles!"
         ]
     ],
     "introspective_kit": [
