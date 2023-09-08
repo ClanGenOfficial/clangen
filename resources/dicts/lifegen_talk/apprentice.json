@@ -74,9 +74,9 @@
             "Introspective"
         ],
         [
-            "[you noticed that t_c was poking at a bird next to the fresh kill pile]",
+            "[You notice that t_c is poking at a bird next to the fresh kill pile]",
             "Afternoon, y_c. You want this bird I caught this morning?",
-            "[You agreed to share the bird with them.]",
+            "[You agree to share the bird with them.]",
             "... What's up? Oh, uh. I caught this during an assessment. Yeah, I'm just worried about whether I did well. My mentor seemed impressed, but... well. I'm unsure.",
             "At least I caught it though, that's something to be happy about, I guess."
         ]
@@ -89,7 +89,7 @@
         ],
         [
             "Hi y_c.",
-            "[You noticed that t_c was sitting, muscles bunched up and tail flicking irritably.]",
+            "[You notice that t_c is sitting, muscles bunched up and tail flicking irritably.]",
             "What's wrong? Oh I got into a fight with r_c. They're an utter mousebrain. They tried to get me to cross the clan border after a rabbit! It's utterly ridiculous.",
             "We can't be running across the border, there'd be no point in it being there otherwise! We need to be respectful of our borders, and I can't believe they don't see that.",
             "... sorry for yelling at you like that, y_c. I appreciate you listening to me. Thank you."
@@ -114,7 +114,7 @@
             "introspective"
         ],
         [
-            "[t_c was batting a rock between their paws while sitting in their nest.]",
+            "[t_c is batting a rock between their paws while sitting in their nest.]",
             "Oh, y_c? Didn't expect to see you here. I found this rock in the river when I was training.",
             "... you think I should have been paying attention? I was, don't worry, I wouldn't neglect my training like that.",
             "We're really not apprentices for that long, so I think I've got to get everything out of it.",
@@ -128,9 +128,9 @@
             "introspective"
         ],
         [
-            "Uh, y_c? help.",
-            "[You turned around to t_c limping into the den, thorn in their paw.]",
-            "... thank you y_c. I'm sorry about bothering you. Yeah, I know it's your job, but I need to be more careful, not just walking through any trouble I see.",
+            "Uh, y_c? Help.",
+            "[You turn around to t_c limping into the den, thorn in their paw.]",
+            "... Thank you y_c. I'm sorry about bothering you. Yeah, I know it's your job, but I need to be more careful, not just walking through any trouble I see.",
             "My mentor keeps telling me that I need to be more careful, keep my head out of the clouds, and I try. I really do. There's so much here to see though, it's beautiful.",
             "Suppose stepping on a thorn or two is worth it then, as long as you're here to pull them out for me."
         ]
@@ -143,7 +143,7 @@
         ],
         [
             "... y_c? Are you busy?",
-            "I just had a conversation with a warrior from o_c near our territory. I assumed you'd want to know.",
+            "I just had a conversation with a warrior from o_cClan near our territory. I assumed you'd want to know.",
             "Wasn't extreme, they were mostly asking about the kits, but they seem a little more civil than usual, have you been there recently?",
             "What's their camp like? Is it different from ours? Or similar. I know they're not that far from us, but their lives are so different that I can't begin to imagine what it's like."
         ]
@@ -242,6 +242,7 @@
             "Any",
             "neurotic",
             "brooding",
+            "introspective",
             "platonic_like"
         ],
         [
@@ -266,7 +267,11 @@
     ],
     "app31232": [
         [
-            "kitten"
+            "kitten",
+            "sweet",
+            "upstanding",
+            "stable",
+            "introspective"
         ],
         [
             "Oh hello there! What are you doing? Play-fighting? So, who are you pretending to be, y_c?",
