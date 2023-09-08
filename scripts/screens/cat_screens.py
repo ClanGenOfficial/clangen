@@ -3888,7 +3888,7 @@ class TalkScreen(Screens):
             with open(f"{resource_dir}general_you_kit.json", 'r') as read_file:
                 possible_texts3 = ujson.loads(read_file.read())
                 possible_texts.update(possible_texts3)
-            
+        
         cluster1, cluster2 = self.get_cluster(cat.personality.trait)
         cluster3, cluster4 = self.get_cluster(you.personality.trait)
         
@@ -3930,11 +3930,13 @@ class TalkScreen(Screens):
                 continue
 
             # Status tags
-            if you.status not in tags and "any" not in tags and "young elder" not in tags and "no_kit" not in tags:
+            if you.status not in tags and "any" not in tags and "young elder" not in tags and "no_kit" not in tags and "newborn" not in tags:
                 continue
             elif "young elder" in tags and cat.status == 'elder' and cat.moons >= 100:
                 continue
             elif "no_kit" in tags and you.status in ['kitten', 'newborn']:
+                continue
+            elif "newborn" in tags and you.moons != 0:
                 continue
             
             # Cluster tags
@@ -4006,50 +4008,58 @@ class TalkScreen(Screens):
                 continue
             
             # Relationships
-            
-            if "from_parent" in tags:
-                if you.parent1:
-                    if you.parent1 != cat.ID:
-                        continue
-                if you.parent2:
-                    if you.parent2 != cat.ID:
-                        continue
-            if "adopted_parent" in tags:
-                if cat.ID not in you.inheritance.get_no_blood_parents():
+            # Family tags:
+            if any(i in ["half sibling", "siblings_mate" "cousin", "adopted_sibling", "parents_siblings", "from_mentor", "from_your_apprentice", "from_mate", "from_parent", "adopted_parent", "from_kit", "sibling","from_adopted_kit"] for i in tags):
+                
+                fam = False
+                if "from_mentor" in tags:
+                    if you.mentor == cat.ID:
+                        fam = True
+                if "from_your_apprentice" in tags:
+                    if cat.mentor != you.ID:
+                        fam = True
+                if "from_mate" in tags:
+                    if cat.ID not in you.mate:
+                        fam = True   
+                if "from_parent" in tags:
+                    if you.parent1:
+                        if you.parent1 == cat.ID:
+                            fam = True
+                    if you.parent2:
+                        if you.parent2 == cat.ID:
+                            fam = True
+                if "adopted_parent" in tags:
+                    if cat.ID in you.inheritance.get_no_blood_parents():
+                        fam = True
+                if "from_kit" in tags:
+                    if cat.ID in you.inheritance.get_blood_kits():
+                        fam = True
+                if "from_adopted_kit" in tags:
+                    if cat.ID in you.inheritance.get_not_blood_kits():
+                        fam = True
+
+                if "sibling" in tags:
+                    if cat.ID in you.inheritance.get_siblings():
+                        fam = True
+                if "half sibling" in tags:
+                    if ((cat.parent1 == you.parent1 or cat.parent1 == you.parent2) or (cat.parent2 == you.parent1 or cat.parent2 == you.parent2)) and not (cat.parent1 == you.parent1 and cat.parent2 == you.parent2):
+                        fam = True
+                if "adopted_sibling" in tags:
+                    if cat.ID in you.inheritance.get_no_blood_siblings():
+                        fam = True
+                if "parents_siblings" in tags:
+                    if cat.ID in you.inheritance.get_parents_siblings():
+                        fam = True
+                if "cousin" in tags:
+                    if cat.ID in you.inheritance.get_cousins():
+                        fam = True
+                if "siblings_mate" in tags:
+                    if cat.ID in you.inheritance.get_siblings_mates():
+                        fam = True
+                if not fam:
                     continue
-            if "from_mentor" in tags:
-                if you.mentor != cat.ID:
-                    continue
-            if "from_your_apprentice" in tags:
-                if cat.mentor != you.ID:
-                    continue
-            if "from_mate" in tags:
-                if cat.ID not in you.mate:
-                    continue   
-            if "from_kit" in tags:
-                if cat.ID not in you.inheritance.get_blood_kits():
-                    continue
-            if "from_adopted_kit" in tags:
-                if cat.ID not in you.inheritance.get_not_blood_kits():
-                    continue
-            if "sibling" in tags:
-                if cat.ID not in you.inheritance.get_siblings():
-                    continue
-            if "half sibling" in tags:
-                if (cat.parent1 == you.parent1 and cat.parent2 == you.parent2) or (cat.parent1 != you.parent1 and cat.parent2 != you.parent2):
-                    continue
-            if "adopted_sibling" in tags:
-                if cat.ID not in you.inheritance.get_no_blood_siblings():
-                    continue
-            if "parents_siblings" in tags:
-                if cat.ID not in you.inheritance.get_parents_siblings():
-                    continue
-            if "cousin" in tags:
-                if cat.ID not in you.inheritance.get_cousins():
-                    continue
-            if "siblings_mate" in tags:
-                if cat.ID not in you.inheritance.get_siblings_mates():
-                    continue
+                
+
             if "non-related" in tags:
                 if cat.ID in you.inheritance.all_inheritances:
                     continue

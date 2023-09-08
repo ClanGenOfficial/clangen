@@ -260,7 +260,6 @@ class Romantic_Events():
             if cat_to.ID not in cat_from.mate:
                 cat_to.set_mate(cat_from)
             return
-            
         relationship_to = relationship.opposite_relationship
         become_mates, mate_string = Romantic_Events.check_if_new_mate(relationship, relationship_to, cat_from, cat_to)
 
