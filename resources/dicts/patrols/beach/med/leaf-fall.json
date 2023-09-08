@@ -2782,7 +2782,7 @@
         "season": ["leaf-fall"],
         "types": ["herb_gathering"],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_gatheringlungwort_app",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -2920,7 +2920,7 @@
         "season": ["leaf-fall"],
         "types": ["herb_gathering"],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_gatheringlungwort",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -3053,7 +3053,7 @@
         "season": ["leaf-fall"],
         "types": ["herb_gathering"],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_gatheringlungwort",
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {
