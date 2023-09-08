@@ -626,7 +626,6 @@ class Events:
         game.cur_events_list.append(Single_Event(birth_txt))
         self.w_done = False
         game.clan.your_cat.age = "newborn"
-        
             
     def generate_kit_events(self):
         for i in range(random.randint(0,2)):
