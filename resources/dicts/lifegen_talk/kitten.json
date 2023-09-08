@@ -1167,5 +1167,56 @@
             "I just really like the idea of telling everyone stories and giving them guidance and flowers! That's pretty much what I do anyway, hehe.",
             "Plus, then I'd be denmates with you, and you're the coolest elder ever!"
         ]
+    ],
+        "assertivekitten_deadclose": [
+        [
+            "Any",
+            "assertive",
+            "they_grieving",
+            "dead_close"
+        ],
+        [
+            "*Sniffle* What happened to d_c? I miss them ...",
+            "They're gone?",
+            "Well, when are they coming back?"
+        ]
+    ],
+    "assertivekitten_deadclose_2": [
+        [
+            "Any",
+            "assertive",
+            "they_grieving"
+        ],
+        [
+            "[You tell t_c that you like their pretty feather.]",
+            "Thanks!!! It's for d_c!",
+            "Could you help me put it in their nest?",
+            "I'm hoping that, when they see it in StarClan, they'll like it so much that they'll come back down to c_nClan, and we can play together again!"
+        ]
+    ],
+    "assertivekitten_deadclose_3": [
+        [
+            "Any",
+            "assertive",
+            "they_grieving"
+        ],
+        [
+            "*Sniffle* What happened to d_c? I miss them ...",
+            "They're gone?",
+            "Well, when are they coming back?"
+        ]
+    ],
+    "assertivekitten_deadclose_4": [
+        [
+            "Any",
+            "assertive",
+            "they_grieving"
+        ],
+        [
+            "[You tell t_c that you like their pretty feather.]",
+            "Thanks!!! It's for d_c!",
+            "Could you help me put it in their nest?",
+            "I'm hoping that, when they see it in StarClan, they'll like it so much that they'll come back down to c_nClan, and we can play together again!"
+        ]
     ]
 }
