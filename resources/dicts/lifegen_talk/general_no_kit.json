@@ -106,6 +106,21 @@
             "[t_c licks your ear reassuringly, and sits with you until all the anxiety you felt is completely gone.]"
         ]
     ],
+       "assertivekit_31": [
+        [
+            "Any",
+            "assertive",
+            "silly",
+            "unlawful",
+            "platonic_like",
+            "random_cat"
+        ],
+        [
+            "r_c just told me the funniest joke ever!",
+            "It went like - heehee - how did the *snrk* - how did the - AHAHAHA!!!",
+            "[t_c can't even seem to get through their own joke without dissolving into a fit of giggles!"
+        ]
+    ],
     "assertive_mate3": [
         [
             "Any",
