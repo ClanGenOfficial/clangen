@@ -690,7 +690,6 @@ class PatrolScreen(Screens):
                 pos_x = 100
                 pos_y += 100
             i += 1
-            print(f"Button Index: {i}, Cat: {cat.name}, X-pos: {pos_x}, Y-pos: {pos_y}")
 
         if self.patrol_screen == 'patrol_cats':
             # Hide Skills Info
