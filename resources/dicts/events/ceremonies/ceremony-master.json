@@ -834,7 +834,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(mentor) calls a meeting. {PRONOUN/(mentor)/subject} {VERB/(mentor)/have/has} been watching (old_name) for a while now, and have decided to mentor {PRONOUN/m_c/object} personally. m_c's eyes shine with pride. "
+    "(mentor) calls a meeting. {PRONOUN/(mentor)/subject/CAP} {VERB/(mentor)/have/has} been watching (old_name) for a while now, and {VERB/(mentor)/have/has} decided to mentor {PRONOUN/m_c/object} personally. m_c's eyes shine with pride. "
   ],
   "app_54":[
     [
@@ -2128,7 +2128,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(previous_mentor) gives (old_name) a friendly nudge when the leader calls the young cat's name. {PRONOUN/(previous_mentor)/subject/CAP} {VERB/(previous_mentor)/watch/watches} with pride as (old_name) steps forward to receive {PRONOUN/m_c/poss} new name, m_c, and are honored for {PRONOUN/m_c/poss} r_h."
+    "(previous_mentor) gives (old_name) a friendly nudge when the leader calls the young cat's name. {PRONOUN/(previous_mentor)/subject/CAP} {VERB/(previous_mentor)/watch/watches} with pride as (old_name) steps forward to receive {PRONOUN/m_c/poss} new name, m_c, and {VERB/m_c/are/is} honored for {PRONOUN/m_c/poss} r_h."
   ],
   "warrior_8": [
     [
@@ -2191,7 +2191,7 @@
       "arrogant",
       "cunning"
     ],
-    "(old_name) stands tall and puffs out {PRONOUN/m_c/poss} chest as l_n announces {PRONOUN/m_c/subject} {VERB/m_c/are/is} ready for {PRONOUN/m_c/subject} warrior name. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} given the name m_c after {PRONOUN/m_c/poss} r_h."
+    "(old_name) stands tall and puffs out {PRONOUN/m_c/poss} chest as l_n announces {PRONOUN/m_c/subject} {VERB/m_c/are/is} ready for {PRONOUN/m_c/poss} warrior name. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} given the name m_c after {PRONOUN/m_c/poss} r_h."
   ],
   "warrior_13": [
     [
@@ -2739,7 +2739,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "p1 and p2's eyes meet, and they purr with pride as (old_name) steps forward to receive {PRONOUN/m_c/poss} new name, m_c, and are honored for {PRONOUN/m_c/poss} r_h."
+    "p1 and p2's eyes meet, and they purr with pride as (old_name) steps forward to receive {PRONOUN/m_c/poss} new name, m_c, and {VERB/m_c/are/is} honored for {PRONOUN/m_c/poss} r_h."
   ],
   "warrior_57": [
     [

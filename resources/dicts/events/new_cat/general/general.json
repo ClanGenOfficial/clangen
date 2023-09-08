@@ -531,7 +531,7 @@
         "reputation": [
             "welcoming"
         ],
-        "event_text": "A o_c queen decides to leave their litter with you. m_c takes them as {PRONOUN/m_c/subject} own.",
+        "event_text": "A o_c queen decides to leave their litter with you. m_c takes them as {PRONOUN/m_c/poss} own.",
         "other_clan": true,
         "litter": true,
         "backstory": [
