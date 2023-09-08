@@ -138,9 +138,11 @@ class PatrolScreen(Screens):
         elif event.ui_element == self.elements["next_page"]:
             self.current_page += 1
             self.update_cat_images_buttons()
+            self.update_button()
         elif event.ui_element == self.elements["last_page"]:
             self.current_page -= 1
             self.update_cat_images_buttons()
+            self.update_button()
         elif event.ui_element == self.elements["paw"]:
             if self.patrol_type == 'training':
                 self.patrol_type = 'general'
@@ -688,6 +690,7 @@ class PatrolScreen(Screens):
                 pos_x = 100
                 pos_y += 100
             i += 1
+            print(f"Button Index: {i}, Cat: {cat.name}, X-pos: {pos_x}, Y-pos: {pos_y}")
 
         if self.patrol_screen == 'patrol_cats':
             # Hide Skills Info
