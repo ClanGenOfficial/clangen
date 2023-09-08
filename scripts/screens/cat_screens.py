@@ -4016,10 +4016,10 @@ class TalkScreen(Screens):
                     if you.mentor == cat.ID:
                         fam = True
                 if "from_your_apprentice" in tags:
-                    if cat.mentor != you.ID:
+                    if cat.mentor == you.ID:
                         fam = True
                 if "from_mate" in tags:
-                    if cat.ID not in you.mate:
+                    if cat.ID in you.mate:
                         fam = True   
                 if "from_parent" in tags:
                     if you.parent1:
