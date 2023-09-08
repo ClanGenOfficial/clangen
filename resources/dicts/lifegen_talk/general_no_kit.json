@@ -95,10 +95,8 @@
             "Any",
             "assertive",
             "unabashed",
-            "from_mate",
             "romantic_like",
-            "platonic_like",
-            "from_parent"
+            "platonic_like"
         ],
         [
             "... y_c? Is everything okay?",
@@ -118,7 +116,7 @@
         [
             "I love you, y_c.",
             "StarClan, that feels good to say ... what if I said it louder?",
-            "I LOVE YOU, Y_C!!!!!",
+            "I LOVE YOU!!!!!",
             "What, am I embarrassing you, or something? Hahaha!"
         ]
     ],
@@ -431,10 +429,8 @@
         [
             "murder",
             "assertive",
-            "from_mate",
-            "platonic_like",
-            "romantic_like",
-            "from_parent",
+            "platonic_love",
+            "romantic_love",
             "trust",
             "comfort",
             "no_kit"
@@ -485,8 +481,6 @@
             "Any",
             "platonic_like",
             "romantic_like",
-            "from_mate",
-            "from_parent",
             "assertive",
             "you_ill"
         ],
@@ -722,10 +716,11 @@
             "unlawful",
             "they_grieving",
             "neutral",
-            "dislike"
+            "dislike",
+            "dead_close"
         ],
         [
-            "[r_c paces back and forth in front of the warrior's den, muttering to themselves and flexing their claws.]",
+            "[t_c paces back and forth in front of the warrior's den, muttering to themselves and flexing their claws.]",
             "They're gone, they're gone, they're gone ...",
             "... Hey, what are you looking at, huh?",
             "I don't have to take this fox-dung from you! Leave! Go find someone else to gawk at!",
@@ -740,7 +735,8 @@
             "medicine cat apprentice",
             "assertive",
             "cool",
-            "they_grieving"
+            "they_grieving",
+            "dead_close"
         ],
         [
             "Hey, uh ...",
@@ -834,61 +830,12 @@
             "Yes, I'm okay! I'm perfectly fine! Now leave, before I rake you a big, ugly scar!"
         ]
     ],
-    "assertivekitten_deadclose": [
-        [
-            "Any",
-            "assertive",
-            "they_grieving"
-        ],
-        [
-            "*Sniffle* What happened to d_c? I miss them ...",
-            "They're gone?",
-            "Well, when are they coming back?"
-        ]
-    ],
-    "assertivekitten_deadclose_2": [
-        [
-            "Any",
-            "assertive",
-            "they_grieving"
-        ],
-        [
-            "[You tell t_c that you like their pretty feather.]",
-            "Thanks!!! It's for d_c!",
-            "Could you help me put it in their nest?",
-            "I'm hoping that, when they see it in StarClan, they'll like it so much that they'll come back down to c_nClan, and we can play together again!"
-        ]
-    ],
-    "assertivekitten_deadclose_3": [
-        [
-            "Any",
-            "assertive",
-            "they_grieving"
-        ],
-        [
-            "*Sniffle* What happened to d_c? I miss them ...",
-            "They're gone?",
-            "Well, when are they coming back?"
-        ]
-    ],
-    "assertivekitten_deadclose_4": [
-        [
-            "Any",
-            "assertive",
-            "they_grieving"
-        ],
-        [
-            "[You tell t_c that you like their pretty feather.]",
-            "Thanks!!! It's for d_c!",
-            "Could you help me put it in their nest?",
-            "I'm hoping that, when they see it in StarClan, they'll like it so much that they'll come back down to c_nClan, and we can play together again!"
-        ]
-    ],
     "assertivekitten_deadclose_5": [
         [
             "Any",
             "assertive",
-            "they_grieving"
+            "they_grieving",
+            "dead_close"
         ],
         [
             "Hmph. Everyone always tells me they're sorry, just so sorry for my loss. Next time someone says that to me, I'll claw their throat out.",
@@ -903,7 +850,8 @@
         [
             "Any",
             "assertive",
-            "they_grieving"
+            "they_grieving",
+            "dead_close"
         ],
         [
             "I'm strong. I can handle this, I - I should be able to handle this.",
