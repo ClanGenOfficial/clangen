@@ -1332,8 +1332,6 @@
     "assertive_apprentice20": [
         [
             "Any",
-            "dislike",
-            "neutral",
             "assertive",
             "platonic_like"
         ],
@@ -1473,7 +1471,7 @@
         ],
         [
             "Hey y_c. Why don't you jump off a cliff? It's a new thing every cat in the Clan is trying.",
-            "[r_c is staring at you resentfully.]"
+            "[t_c is staring at you resentfully.]"
         ]
     ],
     "assertive_dislike1": [
@@ -1521,7 +1519,7 @@
             "cool",
             "silly",
             "upstanding",
-            "respect"
+            "platonic_love"
         ],
         [
             "Get up, y_c! We gotta go on a special patrol to check the o_cClan border!",
