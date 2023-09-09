@@ -280,7 +280,7 @@ class MediationScreen(Screens):
         x = 130
         y = 970
         for cat in self.all_cats[self.page - 1]:
-            if game.clan.clan_settings["show_fav"] and cat.favourite:
+            if game.clan.clan_settings["show fav"] and cat.favourite:
                 _temp = pygame.transform.scale(
                             pygame.image.load(
                                 f"resources/images/fav_marker.png").convert_alpha(),
@@ -368,7 +368,7 @@ class MediationScreen(Screens):
         elif other_cat:
             # FAMILY DOT
             # Only show family dot on cousins if first cousin mates are disabled.
-            if game.settings['first cousin mates']:
+            if game.clan.clan_settings['first cousin mates']:
                 check_cousins = False
             else:
                 check_cousins = other_cat.is_cousin(cat)
@@ -442,7 +442,7 @@ class MediationScreen(Screens):
                 col2 += "child"
             elif cat.is_sibling(other_cat) or other_cat.is_sibling(cat):
                 col2 += "sibling"
-            elif not game.settings["first cousin mates"] and other_cat.is_cousin(cat):
+            elif not game.clan.clan_settings["first cousin mates"] and other_cat.is_cousin(cat):
                 col2 += "cousin"
 
         self.selected_cat_elements["col2" + tag] = pygame_gui.elements.UITextBox(col2,

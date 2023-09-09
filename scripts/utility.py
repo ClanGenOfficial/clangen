@@ -476,11 +476,6 @@ def create_outside_cat(Cat, status, backstory, alive=True, thought=None):
 #                             Cat Relationships                                #
 # ---------------------------------------------------------------------------- #
 
-resource_directory = "resources/dicts/"
-PERSONALITY_COMPATIBILITY = None
-with open(f"{resource_directory}personality_compatibility.json", 'r') as read_file:
-    PERSONALITY_COMPATIBILITY = ujson.loads(read_file.read())
-
 
 def get_highest_romantic_relation(relationships, exclude_mate=False, potential_mate=False):
     """Returns the relationship with the highest romantic value."""
@@ -1321,7 +1316,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                 new_sprite.blit(sprites.sprites['collars' + cat.pelt.accessory + cat_sprite], (0, 0))
 
         # Apply fading fog
-        if cat.pelt.opacity <= 97 and not cat.prevent_fading and game.settings["fading"] and dead:
+        if cat.pelt.opacity <= 97 and not cat.prevent_fading and game.clan.clan_settings["fading"] and dead:
 
             stage = "0"
             if 80 >= cat.pelt.opacity > 45:

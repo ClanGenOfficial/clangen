@@ -510,7 +510,7 @@ class ProfileScreen(Screens):
                                                                      line_spacing=0.95, manager=MANAGER)
 
         # Set the cat backgrounds.
-        if game.settings['backgrounds']:
+        if game.clan.clan_settings['backgrounds']:
             self.profile_elements["background"] = pygame_gui.elements.UIImage(
                 scale(pygame.Rect((110, 400), (480, 420))),
                 pygame.transform.scale(self.get_platform(), scale_dimentions((480, 420))), 
@@ -843,7 +843,7 @@ class ProfileScreen(Screens):
         # EXPERIENCE
         output += 'experience: ' + str(the_cat.experience_level)
 
-        if game.settings['showxp']:
+        if game.clan.clan_settings['showxp']:
             output += ' (' + str(the_cat.experience) + ')'
         # NEWLINE ----------
         output += "\n"
@@ -1190,10 +1190,7 @@ class ProfileScreen(Screens):
             
             # Second, do the facet/personality effect
             trait_influence = []
-            if "trait" in mentor_influence and mentor_influence["trait"] != None:
-                if ("Benevolent" or "Abrasive" or "Reserved" or "Outgoing") in mentor_influence["trait"]:
-                    mentor_influence["trait"] = {}
-                    return
+            if "trait" in mentor_influence and isinstance(mentor_influence["trait"], dict):
                 for _mentor in mentor_influence["trait"]:
                     #If the strings are not set (empty list), continue. 
                     if not mentor_influence["trait"][_mentor].get("strings"):
@@ -1220,7 +1217,7 @@ class ProfileScreen(Screens):
             
             
             skill_influence = []
-            if "skill" in mentor_influence and mentor_influence["skill"] != None:
+            if "skill" in mentor_influence and isinstance(mentor_influence["skill"], dict):
                 for _mentor in mentor_influence["skill"]:
                     #If the strings are not set (empty list), continue. 
                     if not mentor_influence["skill"][_mentor].get("strings"):

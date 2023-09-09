@@ -351,5 +351,148 @@
                 ]
             }
         ]
+    },
+    {
+  "patrol_id": "mnt_bord_waterfall",
+  "biome": ["mountainous"],
+  "season": ["Any"],
+  "types": ["border"],
+  "tags": [],
+  "patrol_art": "gen_hunt_fish",
+  "min_cats": 3,
+  "max_cats": 6,
+  "min_max_status": {},
+  "weight": 10,
+  "intro_text": "The patrol reaches a river that must be crossed to ensure the borders are thoroughly checked.",
+  "decline_text": "p_l makes the decision to lead the patrol home instead, it's too risky today.",
+  "chance_of_success": 20,
+  "success_outcomes": [
+    {
+      "text": "With careful determination the patrol crosses the river stepping from stone to stone. Wet paws don't slow the patrol down and the border is secured without issue.",
+      "exp": 30,
+      "weight": 20
+    },
+    {
+      "text": "The patrol finds a shallow part of the river that is mostly clear of any large rocks. They wade through the river safely, each cat staying close to each other to prevent any of them from being swept away.",
+      "exp": 20,
+      "weight": 5
+    },
+    {
+      "text": "As the patrol attempts to cross, a particularly nasty current rushes towards them. Acting quickly, s_c navigates the current like a fish, assisting {PRONOUN/s_c/poss} Clanmates to safety. The patrol quickly finishes securing the border and returns to camp a little shaken, but okay, thanks to s_c.",
+      "exp": 20,
+      "weight": 20,
+      "stat_skill": ["SWIMMER,3"],
+      "relationships": [
+        {
+          "cats_to": ["s_c"],
+          "cats_from": ["patrol"],
+          "mutual": false,
+          "values": ["respect", "trust"],
+          "amount": 15
+        }
+      ]
+    },
+    {
+      "text": "While attempting to cross, the patrol is overcome by a strong rush of water. Without thinking of {PRONOUN/s_c/poss} own safety, s_c focuses on {PRONOUN/s_c/poss} struggling Clanmates. s_c valiantly rescues the entire patrol and collapses from exhaustion on the riverbed. In awe of s_c's selflessness the patrol helps {PRONOUN/s_c/object} back to camp, and thanks to {PRONOUN/s_c/object} each one of them is alive.",
+      "exp": 20,
+      "weight": 20,
+      "stat_trait": ["daring", "bold", "righteous"],
+      "relationships": [
+        {
+          "cats_to": ["s_c"],
+          "cats_from": ["patrol"],
+          "mutual": false,
+          "values": ["respect", "trust"],
+          "amount": 15
+        }
+      ]
     }
+  ],
+  "fail_outcomes": [
+    {
+      "text": "Just as the patrol begins to cross, p_l yowls out a warning! The cats scramble out of the water just in time to see a large rush of water crash past them. Shaken by the close call, p_l instructs the patrol to head home early. The border will just have to stay unsecured and open to trespassers for now.",
+      "exp": 0,
+      "weight": 20
+    },
+    {
+      "text": "As the patrol sets out to cross, s_c stops them. {PRONOUN/s_c/subject/CAP} {VERB/s_c/see/sees} what the other cats miss, a dark current ready to pull any cat that dares to cross under. The patrol members cast uneasy glances at each other and unanimously decide to head home without crossing.",
+      "exp": 0,
+      "weight": 20,
+      "stat_skill": ["SWIMMER,3"]
+    },
+    {
+      "text": "As the patrol sets out to cross, s_c feels a chill run down {PRONOUN/s_c/poss} spine and whispers fill {PRONOUN/s_c/poss} mind. s_c yells out a warning to the patrol to stop and the cats jump back, startled. Suddenly a large branch is throttled down the river right where the patrol was crossing. s_c shakily whispers thanks to StarClan for their warning.",
+      "exp": 0,
+      "weight": 20,
+      "stat_skill": ["STAR,1", "OMEN,1", "CLAIRVOYANT,1"]
+    },
+    {
+      "text": "After some consideration the patrol finds a place to cross. As they reach about halfway across, a strong rush of water crashes over them. The current pulls them from safety and churns with no mercy. The cats are dashed against the sharp river rocks as they feebly try to cling to whatever they can. A mountain river is no place for a cat to be, and despite their best efforts, the cold water wins a battle that was over before it started.",
+      "exp": 0,
+      "weight": 5,
+      "dead_cats": ["patrol"],
+      "history_text": {
+        "reg_death": "This cat died trying to cross a dangerous river.",
+        "lead_death": "died trying to cross a dangerous river"
+      }
+    },
+    {
+      "text": "After some consideration the patrol finds a place to cross. As they reach about halfway across, a strong rush of water crashes over them. The current pulls them from safety and churns with no mercy. The cats are dashed against the sharp river rocks as they feebly try to cling to whatever they can. A mountain river is no place for a cat to be, and despite their best efforts, the cold water wins a battle that was over before it started.",
+      "exp": 0,
+      "weight": 5,
+      "dead_cats": ["multi"],
+      "history_text": {
+        "reg_death": "This cat died trying to cross a dangerous river.",
+        "lead_death": "died trying to cross a dangerous river"
+      }
+    },
+    {
+      "text": "After some consideration the patrol finds a place to cross. As they reach about halfway across, a strong rush of water crashes over them. The current pulls them from safety and churns with no mercy. The cats are dashed against the sharp river rocks as they feebly try to cling to whatever they can. A mountain river is no place for a cat to be, and despite their best efforts, the cold water wins a battle that was over before it started.",
+      "exp": 0,
+      "weight": 5,
+      "lost_cats": ["patrol"]
+    },
+    {
+      "text": "After some consideration the patrol finds a place to cross. As they reach about halfway across a strong rush of water crashes over them. The water mercilessly crashes them against the river's sharp boulders and violently sends them careening over a small waterfall. Thankfully, at the bottom of the waterfall the water is more calm and they wash up on the riverbed, but not without consequence from trying to fight one of natures strongest forces.",
+      "exp": 0,
+      "weight": 10,
+      "injury": [
+        {
+          "cats": ["patrol"],
+          "injuries": ["running nose", "water in their lungs", "shivering", "minor_injury", "blunt_force_injury"]
+        }
+      ]
+    },
+    {
+      "text": "The patrol begins to cross with s_c trailing nervously behind. Just as the patrol is almost clear, s_c notices a swell in the river rushing towards the patrol. {PRONOUN/s_c/subject/CAP} almost let out a warning yowl, but {PRONOUN/s_c/subject} {VERB/s_c/hesitate/hesitates}, unsure if it's really rushing water. Unfortunately this costs the patrol the few seconds they had to react and the water crashes them against the river stones.",
+      "exp": 0,
+      "weight": 5,
+      "stat_trait": ["nervous", "insecure"],
+      "dead_cats": ["multi"],
+      "history_text": {
+        "reg_death": "This cat died trying to cross a dangerous river.",
+        "lead_death": "died trying to cross a dangerous river"
+      }
+    },
+    {
+      "text": "The patrol begins to cross with s_c trailing nervously behind. Just as the patrol is almost clear, s_c notices a swell in the river rushing towards the patrol. {PRONOUN/s_c/subject/CAP} almost let out a warning yowl, but {PRONOUN/s_c/subject} {VERB/s_c/hesitate/hesitates}, unsure if it's really rushing water. Unfortunately this costs the patrol the few seconds they had to react and the water crashes them against the river stones.",
+      "exp": 0,
+      "weight": 5,
+      "stat_trait": ["nervous", "insecure"],
+      "lost_cats": ["multi"]
+    },
+    {
+      "text": "The patrol begins to cross with s_c trailing nervously behind. Just as the patrol is almost clear, s_c notices a swell in the river rushing towards the patrol. {PRONOUN/s_c/subject/CAP} almost let out a warning yowl, but {PRONOUN/s_c/subject} {VERB/s_c/hesitate/hesitates}, unsure if it's really rushing water. Unfortunately this costs the patrol the few seconds they had to react and the water crashes them against the river stones.",
+      "exp": 0,
+      "weight": 10,
+      "stat_trait": ["nervous", "insecure"],
+      "injury": [
+        {
+          "cats": ["patrol"],
+          "injuries": ["running nose", "water in their lungs", "shivering", "minor_injury", "blunt_force_injury"]
+        }
+      ]
+    }
+  ]
+}
 ]

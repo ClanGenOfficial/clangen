@@ -77,6 +77,10 @@
         "m_c tells {PRONOUN/m_c/self} that {PRONOUN/m_c/subject} can't let these feelings consume {PRONOUN/m_c/object}, instead {PRONOUN/m_c/subject} {VERB/m_c/have/has} to learn to live with it.",
         "m_c picks {PRONOUN/m_c/self} up out of {PRONOUN/m_c/poss} nest and begins the day anew, a fresh conviction in {PRONOUN/m_c/poss} heart."
     ],
+    "carrionplace disease": [
+        "The stench coming from m_c is finally fading, {PRONOUN/m_c/subject} recovered from carrionplace disease.",
+        "Against all odds, m_c has recovered from carrionplace disease."
+    ],
 	"malnourished": ["WARNING: this string should never appear, nutrition are handled only in freshkill events."],
 	"starving": ["WARNING: this string should never appear, nutrition are handled only in freshkill events."]
 }

@@ -351,7 +351,7 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["some_clan"],
+                        "cats": ["r_c", "some_clan"],
                         "injuries": ["poisoned"],
                         "scars": []
                     }
@@ -1043,5 +1043,116 @@
                 ]
             }
         ]
-    }
+    },
+    {
+    "patrol_id": "gen_hunt_stinkyrat",
+    "biome": ["Any"],
+    "season": ["leaf-bare"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "gen_hunt_leafbaresnowstorm",
+    "min_cats": 3,
+    "max_cats": 6,
+    "min_max_status": {},
+    "weight": 10,
+    "intro_text": "The patrol comes across a large rat. It's too busy digging around in a frozen pile of foul Twoleg crowfood to notice the approaching patrol.",
+    "decline_text": "p_l decides to look for other prey, leaving the patrol as desperate for food as the rat.",
+    "chance_of_success": 40,
+    "success_outcomes": [
+      {
+        "text": "The patrol easily catches the distracted rat. p_l meows triumphantly, this is a great catch during leaf-bare.",
+        "exp": 30,
+        "weight": 20,
+        "prey": ["medium"]
+      },
+      {
+        "text": "r_c drops into a hunter's crouch and silently moves closer to make a clean kill. Strangely, the rat turns to r_c and makes a series of pained squeaks. p_l orders a retreat after r_c smells the disgusting scent of crowfood from the rat's breath.",
+        "exp": 30,
+        "weight": 10
+      },
+      {
+        "text": "s_c drops into the perfect hunter's crouch and slowly creeps closer. {PRONOUN/s_c/subject/CAP} suddenly {VERB/s_c/hiss/hisses} loudly, scaring the rat away and startling {PRONOUN/s_c/poss} Clanmates. s_c explains crossly that the rat was carrying a foul, sickly-sweet scent on it's breath. It would have poisoned any cat that bit it.",
+        "exp": 30,
+        "weight": 20,
+        "stat_skill": ["CLEVER,3", "HUNTER,2", "SENSE,1"]
+      },
+      {
+        "text": "Before any cat makes a move, s_c stops the patrol. {PRONOUN/s_c/subject/CAP} {VERB/s_c/explain/explains} that rogues and loners are taught at a young age to stay away from rats that touch Twoleg crowfood to avoid the deadly sickness they carry.",
+        "exp": 30,
+        "weight": 20,
+        "stat_skill": ["ROGUE,0", "LONER,0"]
+      },
+      {
+        "text": "Before any cat makes a move, s_c stops the patrol. {PRONOUN/s_c/subject/CAP} {VERB/s_c/explain/explains} that rats found in Twoleg crowfood often carry a deadly disease found in carrion. It's not worth the risk of catching, no matter how hungry the Clan is this leaf-bare.",
+        "exp": 30,
+        "weight": 20,
+        "stat_trait": ["wise", "thoughtful", "careful"]
+      }
+    ],
+    "fail_outcomes": [
+      {
+        "text": "Just as r_c is about to pounce the rat scurries away with an angry squeak. Both the patrol and the rat go home with empty paws.",
+        "exp": 30,
+        "weight": 20
+      },
+      {
+        "text": "Without thinking, s_c pounces at the rat. The patrol watches completely stunned as s_c misses the rat by several tail lengths and scares it off. The disgruntled patrol heads home and s_c has explain why {PRONOUN/s_c/subject} missed an easy catch in the middle of leaf-bare.",
+        "exp": 30,
+        "weight": 20,
+        "stat_trait": ["oblivious", "arrogant", "confident", "shameless"]
+      },
+      {
+        "text": "r_c easily catches the distracted rat. p_l meows triumphantly, this is a great catch during leaf-bare. Unfortunately, while carrying the fresh-kill home, r_c's mouth begins to sour. {PRONOUN/r_c/subject/CAP} {VERB/r_c/bury/buries} the sickly rat away from camp, but it's too late. Over the next few days r_c falls violently ill and never recovers.",
+        "exp": 30,
+        "weight": 5,
+        "dead_cats": ["r_c"],
+        "history_text": {
+          "reg_death": "m_c died after tasting a tainted rat.",
+          "lead_death": "died after tasting a tainted rat"
+        }
+      },
+      {
+        "text": "r_c easily catches the distracted rat. p_l meows triumphantly, this is a great catch during leaf-bare. Unfortunately, while carrying the fresh-kill home, r_c's mouth begins to sour. {PRONOUN/r_c/subject/CAP} {VERB/r_c/bury/buries} the sickly rat away from camp, but it's too late. Over the next few days r_c falls violently ill.",
+        "exp": 30,
+        "weight": 10,
+        "injury": [
+          {
+            "cats": ["r_c"],
+            "injuries": ["carrionplace disease", "diarrhea", "poisoned"]
+          }
+        ],
+        "history_text": {
+          "reg_death": "m_c died after tasting a tainted rat.",
+          "lead_death": "died after tasting a tainted rat"
+        }
+      },
+      {
+        "text": "Without thinking, s_c recklessly pounces at the rat. The patrol watches completely stunned as s_c actually catches the rat. While s_c is smugly carrying the fresh-kill home, s_c's mouth begins to sour. {PRONOUN/s_c/subject/CAP} {VERB/s_c/bury/buries} the sickly rat away from camp, but it's too late. Over the next few days s_c falls violently ill and never recovers.",
+        "exp": 30,
+        "weight": 20,
+        "stat_trait": ["oblivious", "arrogant", "confident", "shameless"],
+        "dead_cats": ["s_c"],
+        "history_text": {
+          "reg_death": "m_c died after tasting a tainted rat.",
+          "lead_death": "died after tasting a tainted rat"
+        }
+      },
+      {
+        "text": "Without thinking, s_c recklessly pounces at the rat. The patrol watches completely stunned as s_c actually catches the rat. While s_c is smugly carrying the fresh-kill home, s_c's mouth begins to sour. {PRONOUN/s_c/subject/CAP} {VERB/s_c/bury/buries} the sickly rat away from camp, but it's too late. Over the next few days s_c falls violently ill.",
+        "exp": 30,
+        "weight": 20,
+        "stat_trait": ["oblivious", "arrogant", "confident", "shameless"],
+        "injury": [
+          {
+            "cats": ["s_c"],
+            "injuries": ["carrionplace disease", "diarrhea", "poisoned"]
+          }
+        ],
+        "history_text": {
+          "reg_death": "m_c died after tasting a tainted rat.",
+          "lead_death": "died after tasting a tainted rat"
+        }
+      }
+    ]
+  }
 ]

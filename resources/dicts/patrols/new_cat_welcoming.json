@@ -2150,7 +2150,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "The patrol brings the apprentice back to camp, where {PRONOUN/n_c:0/subject} {VERB/n_c:0/are/is} accepted into the clan. Although, this doesn't help relations with o_c_n.",
+                "text": "The patrol brings the apprentice back to camp, where {PRONOUN/n_c:0/subject} {VERB/n_c:0/are/is} accepted into the Clan. Although, this doesn't help relations with o_c_n.",
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
@@ -2167,7 +2167,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "The patrol brings the apprentice back to camp. At first, the clan wants to send {PRONOUN/n_c:0/object} home, but {PRONOUN/n_c:0/subject} {VERB/n_c:0/refuse/refuses} to leave. Reluctantly, c_n lets {PRONOUN/n_c:0/subject} stay. o_c_n is not pleased.",
+                "text": "The patrol brings the apprentice back to camp. At first, the Clan wants to send {PRONOUN/n_c:0/object} home, but {PRONOUN/n_c:0/subject} {VERB/n_c:0/refuse/refuses} to leave. Reluctantly, c_n lets {PRONOUN/n_c:0/object} stay. o_c_n is not pleased.",
                 "exp": 10,
                 "weight": 10,
                 "new_cat": [
@@ -2184,7 +2184,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "s_c is eager to steal an o_c_n's apprentice right out from under their noses. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stick/sticks} close to the apprentice on their way back to camp. At first, the clan is unsure, but s_c vouches for n_c:0, and {PRONOUN/n_c:0/subject} are allowed to join the clan.",
+                "text": "s_c is eager to steal a o_c_n's apprentice right out from under their noses. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stick/sticks} close to the apprentice on their way back to camp. At first, the Clan is unsure, but s_c vouches for n_c:0, and {PRONOUN/n_c:0/subject} {VERB/n_c:0/are/is} allowed to join the clan.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": ["ambitious", "daring", "bold", "fierce", "bloodthirsty", "troublesome"],
@@ -2218,7 +2218,7 @@
                 "other_clan_rep": 0
             },
             {
-                "text": "The patrol brings the apprentice, back to camp. However, the clan is unwelcoming, and the apprentice slips out in the middle of the night, dejected.",
+                "text": "The patrol brings the apprentice, back to camp. However, the Clan is unwelcoming, and the apprentice slips out in the middle of the night, dejected.",
                 "exp": 0,
                 "weight": 5,
                 "other_clan_rep": 0

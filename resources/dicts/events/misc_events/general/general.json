@@ -331,6 +331,7 @@
             "Greenleaf",
             "Leaf-bare",
             "Leaf-fall",
+            "other_cat",
             "other_cat_mate"
         ],
         "event_text": "m_c watches r_c give an elder the best piece of prey on the pile. {PRONOUN/m_c/subject/CAP} {VERB/m_c/feel/feels} lucky to have such a kind cat as {PRONOUN/m_c/poss} mate."

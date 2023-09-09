@@ -1788,7 +1788,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "p_l, leading the search for s_c, spots tracks headed away form the path. Confused, {PRONOUN/p_l/subject} hesitates, only for s_c to pop out of a bush - there's a rabbit here, frosty and cold but edible. Well worth investigating, and a good (albeit chilly) addition to the fresh-kill pile.",
+                "text": "p_l, leading the search for s_c, spots tracks headed away form the path. Confused, {PRONOUN/p_l/subject} {VERB/p_l/hesitate/hesitates}, only for s_c to pop out of a bush - there's a rabbit here, frosty and cold but edible. Well worth investigating, and a good (albeit chilly) addition to the fresh-kill pile.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1998,7 +1998,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
+                        "injuries": ["rat_bite"],
                         "scars": []
                     }
                 ],
@@ -2142,7 +2142,8 @@
                 "text": "s_c knows they are one of the Clan's greatest hunters. They spot the rat king and charge into its lair. But the King proves too great a foe for a single cat, and it kills the would-be kingslayer.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["multi", "some_lives"],
+                "stat_skill": ["HUNTER,2"],
+                "dead_cats": ["s_c"],
                 "history_text": {
                     "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after battling the rat king."
                 }
