@@ -2806,7 +2806,7 @@
         "season": ["Any"],
         "types": ["hunting"],
         "tags": ["romantic"],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_hunt_fun4",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {

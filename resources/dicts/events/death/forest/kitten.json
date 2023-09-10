@@ -78,5 +78,68 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Leaf-bare",
+            "Leaf-fall",
+            "no_body"
+        ],
+        "death_text": "m_c wasn't found after wandering away.",
+        "history_text": {
+            "reg_death": "m_c was eaten by a predator."
+        },
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Leaf-bare",
+            "Leaf-fall",
+            "no_body"
+        ],
+        "death_text": "All that's left of m_c is some blood.",
+        "history_text": {
+            "reg_death": "m_c was eaten by a predator."
+        },
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Leaf-bare",
+            "Leaf-fall"
+        ],
+        "death_text": "m_c's body is covered in bites.",
+        "history_text": {
+            "reg_death": "m_c was murdered by a fiesty mouse."
+        },
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Leaf-bare",
+            "Leaf-fall",
+            "no_body"
+        ],
+        "death_text": "m_c dissapeared during the night. In the morning, the nursery is infested with foul-smelling bones.",
+        "history_text": {
+            "reg_death": "m_c was eaten by a shrew."
+        },
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
     }
 ]
