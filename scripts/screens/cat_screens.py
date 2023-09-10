@@ -4099,12 +4099,7 @@ class TalkScreen(Screens):
                 if game.clan.war.get("at_war", False):
                     continue
             
-            if "dead_close" in talk[0]:
-                if not you.parent1:
-                    continue
-                elif not Cat.all_cats.get(you.parent1).dead or Cat.all_cats.get(you.parent1).outside:
-                    continue
-                
+            if "dead_close" in talk[0]:                
                 dead_cat = str(Cat.all_cats.get(game.clan.starclan_cats[-1]).name)
                 text = [t1.replace("d_c", dead_cat) for t1 in talk[1]]
             
