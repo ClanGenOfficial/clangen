@@ -159,10 +159,11 @@ class PatrolScreen(Screens):
         elif event.ui_element == self.elements["next_page"]:
             self.current_page += 1
             self.update_cat_images_buttons()
+            self.update_button()
         elif event.ui_element == self.elements["last_page"]:
             self.current_page -= 1
             self.update_cat_images_buttons()
-        
+            self.update_button()
         elif event.ui_element == self.elements['patrol_start']:
             self.selected_cat = None
             self.start_patrol_thread = self.loading_screen_start_work(self.run_patrol_start)
@@ -1117,9 +1118,11 @@ class PatrolScreen2(Screens):
         elif event.ui_element == self.elements["next_page"]:
             self.current_page += 1
             self.update_cat_images_buttons()
+            self.update_button()
         elif event.ui_element == self.elements["last_page"]:
             self.current_page -= 1
             self.update_cat_images_buttons()
+            self.update_button()
         elif event.ui_element == self.elements["paw"]:
             if self.patrol_type == 'training':
                 self.patrol_type = 'general'
@@ -2117,10 +2120,11 @@ class PatrolScreen3(Screens):
         elif event.ui_element == self.elements["next_page"]:
             self.current_page += 1
             self.update_cat_images_buttons()
+            self.update_button()
         elif event.ui_element == self.elements["last_page"]:
             self.current_page -= 1
             self.update_cat_images_buttons()
-        
+            self.update_button()
         elif event.ui_element == self.elements['patrol_start']:
             self.selected_cat = None
             self.start_patrol_thread = self.loading_screen_start_work(self.run_patrol_start)
@@ -3073,10 +3077,11 @@ class PatrolScreen4(Screens):
         elif event.ui_element == self.elements["next_page"]:
             self.current_page += 1
             self.update_cat_images_buttons()
+            self.update_button()
         elif event.ui_element == self.elements["last_page"]:
             self.current_page -= 1
             self.update_cat_images_buttons()
-        
+            self.update_button()
         elif event.ui_element == self.elements['patrol_start'] and len(self.current_patrol) == 2:
             self.selected_cat = None
             self.start_patrol_thread = self.loading_screen_start_work(self.run_patrol_start)
