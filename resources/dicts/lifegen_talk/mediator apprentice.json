@@ -208,7 +208,7 @@
             "introspective"
         ],
         [
-            "[You heard t_c quietly groan to themself from the other side of the clearing.]",
+            "[You hear t_c quietly groan to themself from the other side of the clearing.]",
             "y_c, I can see you staring at me. If you want to say something, say it.",
             "... No, I'm not angry at you. I'm sorry for snapping. My training's just going a bit rough.",
             "I got into an argument with another cat from o_cClan about their current plans. They refused to listen to me when I had a better solution to their problem.",
@@ -223,7 +223,7 @@
             "introspective"
         ],
         [
-            "[You were sitting staring at a piece of fresh kill, when you felt something nudge into your shoulder, you turn your head to see t_c.]",
+            "[You're sitting staring at a piece of fresh kill, when you feel something nudge into your shoulder, you turn your head to see t_c.]",
             "y_c? ... are you okay?",
             "You look a little... out of it. Are you feeling unwell? Do you want me to take you over to the medicine den?",
             "... You heard a cat you have a crush on flirting with someone else? Oh, y_c. I'm so, so sorry.",
@@ -238,7 +238,7 @@
             "introspective"
         ],
         [
-            "[t_c is sat in the corner of camp, staring off into space]",
+            "[t_c is sitting in the corner of camp, staring off into space]",
             "...",
             "y_c...? How long have you been there for?",
             "What's wrong? It's nothing. Really.",
@@ -269,8 +269,8 @@
             "introspective"
         ],
         [
-            "[t_c was pacing back and forth near the camp entrance.]",
-            "... huh? Oh hi there. Sorry, I'll get out of the way.",
+            "[t_c is pacing back and forth near the camp entrance.]",
+            "... Huh? Oh hi there. Sorry, I'll get out of the way.",
             "... No, no. I'm okay. Just preparing to go to o_cClan, my mentor asked me to go discuss with their mediator about an agreement we've been having about borders.",
             "I know they sent me, because they know I'm completely capable, and o_cClan is mostly willing to cooperate in this manner, but I'm still worried about it.",
             "I just need to do it. I need to go do my job as a Mediator, and go solve this problem. Take the sparrow by the wings, so to speak.",
