@@ -111,9 +111,49 @@
             "elder"
         ],
         "main_backstory_constraint": [
-            "clan_founder", "clanborn", "halfclan1", "halfclan2", "outsider_roots1", "outsider_roots2","loner1", "loner2", "rogue1", "rogue2", "rogue3", "abandoned1", "abandoned2", "abandoned3", "abandoned4",
-            "otherclan1", "otherclan2", "otherclan3", "otherclan4","disgraced1", "disgraced2", "disgraced3", "retired_leader", "medicine_cat", "ostracized_warrior", "refugee1", "refugee2", "refugee4", "refugee5",
-            "tragedy_survivor1", "tragedy_survivor2", "tragedy_survivor4","wandering_healer1", "wandering_healer2", "guided2", "guided3", "guided4", "orphaned1", "orphaned2", "orphaned3", "orphaned4", "orphaned5", "orphaned6"
+            "clan_founder",
+            "clanborn",
+            "halfclan1",
+            "halfclan2",
+            "outsider_roots1",
+            "outsider_roots2",
+            "loner1",
+            "loner2",
+            "rogue1",
+            "rogue2",
+            "rogue3",
+            "abandoned1",
+            "abandoned2",
+            "abandoned3",
+            "abandoned4",
+            "otherclan1",
+            "otherclan2",
+            "otherclan3",
+            "otherclan4",
+            "disgraced1",
+            "disgraced2",
+            "disgraced3",
+            "retired_leader",
+            "medicine_cat",
+            "ostracized_warrior",
+            "refugee1",
+            "refugee2",
+            "refugee4",
+            "refugee5",
+            "tragedy_survivor1",
+            "tragedy_survivor2",
+            "tragedy_survivor4",
+            "wandering_healer1",
+            "wandering_healer2",
+            "guided2",
+            "guided3",
+            "guided4",
+            "orphaned1",
+            "orphaned2",
+            "orphaned3",
+            "orphaned4",
+            "orphaned5",
+            "orphaned6"
         ]
     },
     {
@@ -136,7 +176,7 @@
             "leader",
             "elder"
         ],
-        "random_status_constraint":[
+        "random_status_constraint": [
             "any"
         ],
         "random_living_status": [
@@ -564,7 +604,12 @@
             "leader",
             "elder"
         ],
-        "main_backstory_constraint": ["otherclan1", "otherclan2", "otherclan3", "otherclan4"]
+        "main_backstory_constraint": [
+            "otherclan1",
+            "otherclan2",
+            "otherclan3",
+            "otherclan4"
+        ]
     },
     {
         "id": "gen_wandering_healer",
@@ -582,7 +627,10 @@
             "leader",
             "elder"
         ],
-        "main_backstory_constraint": ["wandering_healer1", "wandering_healer2"]
+        "main_backstory_constraint": [
+            "wandering_healer1",
+            "wandering_healer2"
+        ]
     },
     {
         "id": "gen_refugee_to_alive_leader",
@@ -601,8 +649,11 @@
             "deputy",
             "elder"
         ],
-        "main_backstory_constraint": ["refugee1", "refugee4"],
-        "random_status_constraint":[
+        "main_backstory_constraint": [
+            "refugee1",
+            "refugee4"
+        ],
+        "random_status_constraint": [
             "leader"
         ],
         "random_living_status": [
@@ -626,7 +677,13 @@
             "leader",
             "elder"
         ],
-        "main_backstory_constraint": ["refugee5", "tragedy_survivor1", "tragedy_survivor2", "tragedy_survivor3", "tragedy_survivor4"]
+        "main_backstory_constraint": [
+            "refugee5",
+            "tragedy_survivor1",
+            "tragedy_survivor2",
+            "tragedy_survivor3",
+            "tragedy_survivor4"
+        ]
     },
     {
         "id": "gen_tragedy_survivor_to_alive_gen",
@@ -649,8 +706,14 @@
             "leader",
             "elder"
         ],
-        "main_backstory_constraint": ["refugee5", "tragedy_survivor1", "tragedy_survivor2", "tragedy_survivor3", "tragedy_survivor4"],
-        "random_status_constraint":[
+        "main_backstory_constraint": [
+            "refugee5",
+            "tragedy_survivor1",
+            "tragedy_survivor2",
+            "tragedy_survivor3",
+            "tragedy_survivor4"
+        ],
+        "random_status_constraint": [
             "any"
         ],
         "random_living_status": [
@@ -672,8 +735,14 @@
             "deputy",
             "elder"
         ],
-        "main_backstory_constraint": ["refugee5", "tragedy_survivor1", "tragedy_survivor2", "tragedy_survivor3", "tragedy_survivor4"],
-        "random_status_constraint":[
+        "main_backstory_constraint": [
+            "refugee5",
+            "tragedy_survivor1",
+            "tragedy_survivor2",
+            "tragedy_survivor3",
+            "tragedy_survivor4"
+        ],
+        "random_status_constraint": [
             "leader"
         ],
         "random_living_status": [
@@ -690,7 +759,7 @@
         "main_status_constraint": [
             "medicine cat",
             "medicine cat apprentice"
-        ],  
+        ],
         "random_status_constraint": [
             "kitten"
         ]
@@ -748,7 +817,7 @@
             "medicine cat apprentice",
             "mediator apprentice"
         ],
-        "random_status_constraint":[
+        "random_status_constraint": [
             "any"
         ],
         "random_living_status": [
@@ -772,7 +841,7 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
-        "relationship_constraint":[
+        "relationship_constraint": [
             "app/mentor"
         ]
     },
@@ -985,7 +1054,14 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
-        "main_backstory_constraint": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2"]
+        "main_backstory_constraint": [
+            "rogue1",
+            "rogue2",
+            "rogue3",
+            "refugee4",
+            "tragedy_survivor2",
+            "guided2"
+        ]
     },
     {
         "id": "gen_formerly_a_rogue_apprentice_to_mentor",
@@ -998,7 +1074,14 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
-        "main_backstory_constraint": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2"],
+        "main_backstory_constraint": [
+            "rogue1",
+            "rogue2",
+            "rogue3",
+            "refugee4",
+            "tragedy_survivor2",
+            "guided2"
+        ],
         "relationship_constraint": [
             "app/mentor"
         ]
@@ -1018,7 +1101,14 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
-        "main_backstory_constraint": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2"],
+        "main_backstory_constraint": [
+            "rogue1",
+            "rogue2",
+            "rogue3",
+            "refugee4",
+            "tragedy_survivor2",
+            "guided2"
+        ],
         "random_status_constraint": [
             "apprentice"
         ]
@@ -1056,10 +1146,10 @@
         "main_trait_constraint": [
             "vengeful"
         ],
-        "random_living_status":[
+        "random_living_status": [
             "living"
         ],
-        "random_status_constraint":[
+        "random_status_constraint": [
             "apprentice"
         ]
     },
@@ -1213,7 +1303,7 @@
         "main_trait_constraint": [
             "loving"
         ],
-        "random_status_constraint":[
+        "random_status_constraint": [
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice"
@@ -1278,7 +1368,7 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
-        "random_status_constraint":[
+        "random_status_constraint": [
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice"
@@ -1657,7 +1747,6 @@
             "mediator apprentice"
         ]
     },
-
     {
         "id": "one_bad_eye_gen_to_alive_gen",
         "thoughts": [
@@ -1932,7 +2021,6 @@
             "any"
         ]
     },
-
     {
         "id": "missing_leg_gen_to_alive_gen",
         "thoughts": [
@@ -1956,9 +2044,11 @@
             "Is exaggerating the tale of how {PRONOUN/m_c/subject} lost {PRONOUN/m_c/poss} leg to the kits"
         ],
         "perm_conditions": {
-            "m_c": ["lost a leg"]
+            "m_c": [
+                "lost a leg"
+            ]
         },
-        "main_age_constraint":[
+        "main_age_constraint": [
             "adolescent",
             "young adult",
             "adult",
@@ -2016,6 +2106,681 @@
         "random_age_constraint": [
             "newborn",
             "kitten"
+        ]
+    },
+    {
+        "id": "explorer",
+        "thoughts": [
+            "Found a new tunnel in the Clan's territory",
+            "Is exploring a hidden trail",
+            "Discovers a series of shortcuts out in the territory",
+            "Wants to find each and every secret in the territory",
+            "Has a longing to explore",
+            "Climbed the tallest tree in the territory",
+            "Is being scolded for straying too far from camp",
+            "Wonders what lies just beyond the horizon",
+            "Thinks about what it'd be like to explore underwater",
+            "Wishes they could travel far and wide",
+            "Longs to find out what's beyond the clans",
+            "Has found an unknown stream",
+            "Considers trespassing on another clan's territory to see what it's like",
+            "Listens to a Loner discuss land outside their borders",
+            "Listens to a kittypet talk about the Twolegplace",
+            "Searches under every tree root",
+            "Looks for hidden tunnels",
+            "Fell into an unknown river while exploring and got wet!",
+            "Scraped up their paws while exploring the wilderness",
+            "Snuck outside clan territory to explore",
+            "Found an abandoned twoleg den"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_skill_constraint": [
+            "EXPLORER,1"
+        ]
+    },
+    {
+        "id": "tracker",
+        "thoughts": [
+            "Is following a mouse's scent back to their den",
+            "Manages to track down r_c in a game of hide 'n seek",
+            "Was able to pinpoint a faint scent trail",
+            "Finds a trinket that one of the kits had lost",
+            "Knows that nothing will go missing on their watch",
+            "Tracked a dog all across the territory",
+            "Sniff, sniff, sniff",
+            "Tracks r_c across the entire territory",
+            "Thought they smelled o_cClan in the territory ",
+            "Enjoys the familiar smell of their territory",
+            "Thinks that r_c smells nice",
+            "Wonders what the trees smell like in the other clan's territories",
+            "Takes a deep breath before they start their day",
+            "Tracks a fox all the way back to its den"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_skill_constraint": [
+            "TRACKER,1"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "random_age_constraint": [
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ]
+    },
+    {
+        "id": "ARTISTAN",
+        "thoughts": [
+            "Is collecting shells to decorate the camp",
+            "Is weaving feathers into the den walls",
+            "Wants to weave some flowers into the branches of the dens",
+            "Wants to add a splash of color to the camp",
+            "Is curating their flower collection",
+            "Is sprucing up the elders den",
+            "Is chasing kits away from their pebble stash",
+            "Is foraging for new decorations",
+            "Brightens up the camp walls with colorful feathers ",
+            "Sighs as a kit messes up their decorations",
+            "Asks about weaving some leaves into the den walls",
+            "Asks r_c to look out for some nice pebbles",
+            "Places some pebbles at camp entrance to look like a path",
+            "Is jealous of some glowy little suns that twolegs have attached to string",
+            "Thinks the camp looks pretty!"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_skill_constraint": [
+            "ARTISTAN,1"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "guardian",
+        "thoughts": [
+            "Stares intensely at the entrance of camp",
+            "Is standing guard just outside of camp",
+            "Ears curling at every moment outside of camp",
+            "Arched their back at the sight of a wobbling badger inching too close",
+            "Trying not to doze off guarding the entrance of the camp",
+            "Is glaring at a crow just beyond the camp walls",
+            "Catches a pair of apprentices trying to sneak out",
+            "Wave a tail at r_c and watch them head out for a patrol",
+            "Is trying to stay awake while on guard",
+            "Stands so still they look like they've frozen",
+            "Shoos a kit back into the nursery",
+            "Doesn't believe a story an apprentice told for why they need to be out of camp",
+            "Enjoys the silence outside of camp",
+            "Thought they saw a cat, only for it to be a leaf",
+            "Takes the time to pray to StarClan while doing their duty"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_skill_constraint": [
+            "GUARDIAN,1"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "random_status_constraint": [
+            "warrior"
+        ]
+    },
+    {
+        "id": "tunneler",
+        "thoughts": [
+            "Is letting their eyes adjust to the darkness in the tunnels",
+            "Doesn't mind the constant dirt their pelt gathers underground",
+            "Has a tiny fright when they lose their way through the tunnels",
+            "Prefers the dense burrows to the open space",
+            "Managed to get lost in a maze of tunnels",
+            "Doesn't bother to clean the dirt from their paws",
+            "Reinforces the walls of the tunnels",
+            "Is gathering stones to support a tunnel roof",
+            "Is digging a new tunnel to nowhere",
+            "Feels at home in the darkness",
+            "Is building a nest underground",
+            "Is digging out a rabbit's burrow",
+            "Can hear muffled footsteps while in a tunnel",
+            "Enjoys the smell of the tunnel",
+            "Perfectly maps a portion of the tunnels",
+            "Wonders what it would be like if the whole clan lived in the tunnels",
+            "Thought they heard footsteps",
+            "Hears the faint rushing of groundwater",
+            "Gets tangled in some roots"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_skill_constraint": [
+            "TUNNELER,1"
+        ]
+    },
+    {
+        "id": "navigator",
+        "thoughts": [
+            "Knows the perfect location to gather prey",
+            "Tries to find the quickest routes to each border",
+            "Attempts to map out a dense part of the territory",
+            "Runs through the entire territory in their mind",
+            "Helps a lost apprentice back to camp",
+            "Could find their way home with their eyes closed",
+            "Is teaching an apprentice the fastest way to the border",
+            "Uses the shadows on the trees to orient themself",
+            "Knows that moss grows on all sides of the trees",
+            "Goes to update their mental map of the territory ",
+            "Is confirming the most abundant places for prey",
+            "Walks along the river to see where it goes",
+            "Eagerly joins the border patrol",
+            "Climbs into the trees to get a different perspective"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_skill_constraint": [
+            "NAVIGATOR,1"
+        ]
+    },
+    {
+        "id": "SONG",
+        "thoughts": [
+            "Is humming a catchy tune",
+            "Is singing a lullaby to the kits",
+            "Is captivating an audience with their voice",
+            "Is singing along with the birds in the trees",
+            "Is delighting the warriors with a concert",
+            "Is singing sweetly to the sick cats in the medicine den",
+            "Mews along to the sound coming from a twoleg metal sound box",
+            "Sings a lullaby that they remember from the nursery to themself",
+            "Comes up with a new song",
+            "Sings a tune to remind themself what they're doing",
+            "Tries to convince a songbird to come to the ground, by recommendation of r_c",
+            "Teaches the kits how to sing their favourite song"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_skill_constraint": [
+            "SONG,1"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "GRACE",
+        "thoughts": [
+            "Is light on their paws",
+            "Is barely touching the ground as they skip across the camp",
+            "Keeps their gaze on the ground to watch for any debris",
+            "Is mesmerizing r_c with their movement",
+            "Is slipping through an impossibly small crevice to reach camp",
+            "Just tripped, but caught themself and made it look intentional",
+            "Flutters up a tree like a bird",
+            "Walks across the camp like they're dancing",
+            "Waves their tail like a leaf in the wind",
+            "Practices their walk",
+            "Manages to climb a tree without even moving the branches"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_skill_constraint": [
+            "GRACE,1"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "CLEAN",
+        "thoughts": [
+            "Fervently grooms between each of their toes",
+            "Is triple checking their pelt before exiting the den",
+            "Cleans their paws off in the river",
+            "Spends a considerable amount of time cleaning out their fur",
+            "Is changing their bedding for the third time today",
+            "Is organizing the freshkill pile",
+            "Is sorting pebbles by size, for fun",
+            "Shrieks after being splashed with mud",
+            "Cleans out the den",
+            "Notices r_c has a very messy patch of fur",
+            "Teaches the kits how to clean themselves properly",
+            "Helps the medicine cat properly clean a patient's wounds",
+            "Nearly faints upon seeing r_c tracking mud in the den",
+            "Is feeling nice and clean!"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_skill_constraint": [
+            "CLEAN,1"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "INNOVATOR",
+        "thoughts": [
+            "Fixes a leak in the den using a large ball of moss",
+            "Invents a new game to keep the kits entertained",
+            "Comes up with a solution no one else thought of",
+            "Is looking for a problem to solve",
+            "Is considering using sticks to help mend broken bones",
+            "Wonders if hunting from trees would be more efficient than hunting on the ground",
+            "Has found too many problems",
+            "Studies a border for ways to gain the upper hand should a fight break out",
+            "Tries a new way of weaving walls for the dens",
+            "Follows a fox to find out what it's looking for",
+            "Asks the deputy to consider a new way of organising patrols"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_skill_constraint": [
+            "INNOVATOR,1"
+        ]
+    },
+    {
+        "id": "COMFORTER",
+        "thoughts": [
+            "Is reassuring a clanmate after a missed catch",
+            "Gently bumps their head on a Clanmate's shoulder after a heated argument",
+            "Validates another clanmates worries ",
+            "Comforts r_c after a nightmare",
+            "Voices their support for r_c",
+            "Comforts a clanmate after a hard loss",
+            "Visits the sick in the medicine den",
+            "Seems to put everyone at ease",
+            "Wraps r_c in a comforting hug",
+            "Offers silent support",
+            "Listens to r_c as they voice their troubles",
+            "Checks in on r_c",
+            "Comforts the kits during a storm",
+            "Licks r_c's ear after they see that they're sad",
+            "Tells r_c about a time that they struggled in a hunt",
+            "Quietly listens while r_c vents ",
+            "Offers to move their nest closer to r_c's nest so they don't have to be alone",
+            "Tells r_w to get some rest, and that they'll replace them on the patrol"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_skill_constraint": [
+            "COMFORTER,1"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "MATCHMAKER",
+        "thoughts": [
+            "Is teasing r_w about their love interest",
+            "Gives advice to r_c on how to share their interests",
+            "Is silently pairing cats together",
+            "Feels second-hand embarrassment after thinking about something r_w said to their crush",
+            "Thinks r_w and r_a would make a great pair",
+            "Wishes r_w and r_w would hurry up and get together already",
+            "Gives an apprentice advice about their crush",
+            "Purrs watching r_w talk to their crush",
+            "Gossips to r_w about who should end up together",
+            "Teases r_w about who they like",
+            "Asks the deputy to set up two warriors on a patrol together",
+            "Makes the medicine cat feel glad they aren't supposed to have a mate",
+            "Has to remind r_w for the tenth time to just be honest with the cat they like",
+            "Winks at r_w when they're talking to their crush",
+            "Tries to convince r_w to ask their crush on a date",
+            "Silently cheers when their favourite couple gets together",
+            "Is pairing up cats in other clans, fully aware that it is a bad idea",
+            "Jokes about pushing r_w into a river so a pretty cat can save them",
+            "Sighs when they realise that this clan is full of mousebrains refusing to admit their feelings",
+            "Is certain they know who r_w likes"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_skill_constraint": [
+            "MATCHMAKER,1"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "random_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ]
+    },
+    {
+        "id": "THINKER",
+        "thoughts": [
+            "Thinks to clear away growing foliage at the root so they're less likely to grow",
+            "Gathers a few seeds to pile in the territory to attract prey",
+            "Finds a new approach to a battle move they had been struggling with",
+            "Comes up with a solution no one else thought of",
+            "Pitches a new method of catching prey to the leader",
+            "Is thinking so far out the box, that they've forgotten there was a box in the first place",
+            "Considers the power of Starclan",
+            "Wonders where the dark forest came from",
+            "Thinks about the warrior code",
+            "Wonders what their favourite fresh kill is",
+            "Tries to figure out the fastest way to get from one border to another",
+            "Is questioning everything"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_skill_constraint": [
+            "THINKER,1"
+        ]
+    },
+    {
+        "id": "COOPERATIVE",
+        "thoughts": [
+            "Congratulates r_c on successfully cornering the prey for them to catch",
+            "Is content to bring fresh-kill to the elders den",
+            "Wants to help their clanmates",
+            "Happily agrees to patrol with r_c",
+            "Volunteers to guard the camp during a Gathering",
+            "Purposely loses a prey for r_c to catch instead",
+            "Offers to grab some herbs for the medicine den while they're hunting",
+            "Practices a fighting move with r_c",
+            "Creates a new two-cat fighting move",
+            "Helps r_c up a tree so they can grab a bird",
+            "Shares their favourite hunting spot with a sad apprentice",
+            "Is made of friend material"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_skill_constraint": [
+            "COOPERATIVE,1"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "random_status_constraint": [
+            "warrior"
+        ]
+    },
+    {
+        "id": "SCHOLAR",
+        "thoughts": [
+            "Is taking time to master a particularly difficult skill",
+            "Is trying to learn a few basic herb remedies",
+            "Wants to learn more battle moves",
+            "Wants to expand their skill set",
+            "Asks r_c to teach them how to swim",
+            "Debates trying to climb a tree",
+            "Runs down to the lake to get more swimming practice in",
+            "Performs a big brain maneuver ",
+            "Practices their speech in the reflection of a lake",
+            "Wishes to be all-knowing, like Starclan!"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_skill_constraint": [
+            "SCHOLAR,1"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+        
+    },
+    {
+        "id": "TIME",
+        "thoughts": [
+            "Prepares their schedule for the day, starting with grooming their pelt",
+            "Is eyeing at the fading sun, hoping they've completed everything today",
+            "Sorted out the type of prey they're planning to eat",
+            "Is planning out their entire week",
+            "Makes a list of what they have to get done before sunhigh",
+            "Plans a morning hunt before spending time with r_c",
+            "Uses pebbles to visualize all the tasks they want to complete",
+            "Sorts their ambitions by how many moons it would take to complete them",
+            "Counts each second",
+            "Figures out if they can go on border patrol and a hunting patrol in the same day",
+            "Helps another cat manage their schedule",
+            "Double checks their schedule before they go on a hunting patrol with r_c",
+            "Teaches the kits how to manage their time",
+            "Warns an apprentice about wasting their time"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_skill_constraint": [
+            "TIME,1"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "random_status_constraint": [
+            "warrior"
+        ]
+    },
+    {
+        "id": "TREASURE",
+        "thoughts": [
+            "Is showing off their finds",
+            "Is giving out pebbles to their clanmates",
+            "Spends the whole day collecting small trinkets",
+            "Parades around their favorite trinket all day",
+            "Stores their treasures in a super secret place",
+            "Proudly presents a shiny new trinket",
+            "Gifts a shiny pebble to the kits",
+            "Carefully organizes their trinkets",
+            "Finds a really shiny little stone",
+            "Dives into a river after a nice rock",
+            "Debates bringing a very shiny piece of twoleg trash back for their collection",
+            "Finds two new trinkets and can't carry them both home",
+            "Double checks their treasure hiding spots to make sure they're not tampered with",
+            "Finds a new treasure hiding spot"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_skill_constraint": [
+            "TREASURE,1"
+        ]
+    },
+    {
+        "id": "FISHER",
+        "thoughts": [
+            "Stands still in the shallow river and watches for fish",
+            "Tries to find the perfect fishing spot",
+            "Accidentally knocks their fish back into the river",
+            "Decides to fish at a different river rather than their usual one",
+            "Is sitting at their usual fishing spot",
+            "Was seen wrestling a fish out of a stream",
+            "Was given a sharp fin to their face from a failed hunt",
+            "Almost slips into the river after missing an unexpectedly quick fish",
+            "Fell face-first into the river",
+            "Wonders what it'd be like to breathe underwater",
+            "Overestimated their fishing expertise after taking a fish to the face",
+            "Strutting off with pride with a massive fish in their maw",
+            "Laughs heartily as they splashed water at r_c",
+            "Debating with r_c which fish taste best",
+            "Was mistaken for an otter  ",
+            "Perfectly identifies fish before they're even out the water",
+            "Is so focused that they nearly mistake their tail for a fish",
+            "No fish can escape their paws!",
+            "Floats in the water to fake being debris",
+            "Fimshin'",
+            "Fish fear them, she-cats love them"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_skill_constraint": [
+            "FISHER,1"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "LANGUAGE",
+        "thoughts": [
+            "Doesn't say more than they absolutely need to",
+            "Figures out a way to tell a good story about the battle with o_cClan, without admitting their fear",
+            "Wondering how to break the news to r_c about r_c",
+            "Recites a dramatic monologue",
+            "Thinks through their every word before they say it",
+            "Reenacts an encounter with an enemy patrol",
+            "Shares a rumor with r_c",
+            "Is deep in conversation with r_c",
+            "Isn't afraid to voice their opinions",
+            "Is giving an encouraging speech ",
+            "Politely asks a bird to stop singing over their head when they're trying to sleep",
+            "Complains that dogs have zero manners!",
+            "Is glaring at a piece of fresh kill like it personally insulted their parents",
+            "Asks a lark where the nearest patch of marigold is",
+            "Convinces a bee colony to not make their nest in the clan clearing",
+            "Huffs into a badger's den, hoping for an answer"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_skill_constraint": [
+            "LANGUAGE,1"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "SLEEPER",
+        "thoughts": [
+            "Takes time to relax",
+            "Is getting a nap in before their patrol",
+            "Invites clanmates to rest with them in the center of camp",
+            "Tells the elders the best place to take a nap",
+            "Is dozing off",
+            "Falls asleep on top of their prey!",
+            "Is trying to stay awake",
+            "Zzzzzzz ...",
+            "Wishes they were still in their nest right now",
+            "Lounges around out in the territory, soaking in the scenery",
+            "Is relaxing in the sun",
+            "Bbbiiiigggg stretch!",
+            "Doesn't want to leave the comfort of their nest",
+            "Almost fell asleep while on patrol",
+            "Is a sleepy little guy",
+            "Takes on the very important task of trying out the camps napping spots",
+            "Has reached maximum coziness",
+            "Just found the perfect position in their nest",
+            "Is snoring loudly",
+            "Snuggles deeper into their nest",
+            "Looks for materials to make a better nest",
+            "Hides in a tree to sleep unbothered",
+            "Sleeps in other clanmate's nests to find the comfiest one",
+            "Has discovered r_c has a soft nest!",
+            "Wonders if r_c would be nice to sleep on",
+            "Finds a bug in their nest! But continues to sleep anyways",
+            "Feels like a frog on log in a bog"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_skill_constraint": [
+            "SLEEPER,1"
+        ],
+        "random_living_status": [
+            "living"
         ]
     }
 ]

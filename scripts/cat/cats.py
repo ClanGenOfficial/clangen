@@ -17,7 +17,7 @@ from scripts.conditions import Illness, Injury, PermanentCondition, get_amount_c
     medical_cats_condition_fulfilled
 import bisect
 
-from scripts.utility import get_med_cats, get_personality_compatibility, event_text_adjust, update_sprite, \
+from scripts.utility import get_med_cats, get_personality_compatibility, event_text_adjust, event_text_adjust2, update_sprite, \
     leader_ceremony_text_adjust
 from scripts.game_structure.game_essentials import game, screen
 from scripts.cat_relations.relationship import Relationship
@@ -1392,6 +1392,7 @@ class Cat():
         chosen_thought = Thoughts.get_chosen_thought(self, other_cat, game_mode, biome, season, camp)
 
         chosen_thought = event_text_adjust(Cat, chosen_thought, self, other_cat)
+        chosen_thought = event_text_adjust2(Cat, chosen_thought, self, other_cat)
 
         # insert thought
         self.thought = str(chosen_thought)
