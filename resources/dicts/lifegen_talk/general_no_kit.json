@@ -1176,7 +1176,7 @@
         [
             "[You, while stumbling around outside the nursery, trip over t_c's tail, and faceplant at their feet.]",
             "...",
-            "[They didn't seem to notice you, so you blindly stumbled off.]",
+            "[They don't seem to notice you, so you blindly stumble off.]",
             "... Did a bird just land on my tail?"
         ]
     ],
@@ -1305,9 +1305,9 @@
         [
             "y_c? Everything okay? You've been staring at me for a while...?",
             "... Oh! You're cat watching, aren't you?",
-            "[t_c let out a mrrp of amusement and sat next to you]",
+            "[t_c lets out a mrrp of amusement and sits next to you]",
             "Oh, y_c! Look here!",
-            "[you turned your head to look at them once again]",
+            "[You turn your head to look at them once again]",
             "Look, it's t_c! They're staring at y_c, and they're staring back at them. I wonder what they're up to?",
             "[Both of you let out a chuckle at this.]",
             "Hehe... You're really funny, y_c. I love spending time with you."
@@ -1372,7 +1372,7 @@
             "dislike"
         ],
         [
-            "... leave me alone."
+            "... Leave me alone."
         ]
     ],
     "introspective_dislike_3": [
@@ -1383,7 +1383,7 @@
         ],
         [
             "...",
-            "[t_c immediately spun around and walked away.]"
+            "[t_c immediately spins around and walks away.]"
         ]
     ],
     "introspective_dislike_4": [
@@ -1432,7 +1432,7 @@
             "I uh, found these smooth stones. They remind me of you-of your eyes. Uhm. I mean, they're both, uh... Nevermind!",
             "How are you, y_c?",
             "I've been down by the water, where I found the stones. It's also just like you. I mean it's just so... uh. Nevermind!",
-            "[You think you heard them hiss something like 'Come on, t_c. Keep yourself together!' to themself quietly]"
+            "[You think you hear them hiss something like 'Come on, t_c. Keep yourself together!' to themself quietly]"
         ]
     ],
     "introspective_rom_2": [
@@ -1461,7 +1461,7 @@
             "Like... oh! Look over there, at r_c. It seems like they're just enjoying their freshkill, but if you're patient enough...",
             "...",
             "Eughh! Did they just down that entire mouse in one bite!? I didn't even know that was possible!",
-            "[You cackle hysterically while t_c wheezes into their paw, while everyone else in the clan wonders what on earth is so funny.]"
+            "[You cackle hysterically while t_c wheezes into their paw, as everyone else in the clan wonders what on earth is so funny.]"
         ]
     ],
     "introspective_rom_4": [
@@ -1490,7 +1490,7 @@
             "What are you doing over here? I assumed you'd want to be in the middle of camp with everyone else. Did you need a break?",
             "O-Oh! You wanted to spend time with me? That means a whole lot, I appreciate it! But I'm sure sitting in the corner with me isn't going to be entertaining, not in the slightest.",
             "I'm not anyone important or interesting, especially in comparison to you, you're amazing.",
-            "[They quickly flicked their head away from you, looking in the opposite direction.]"
+            "[They quickly flick their head away from you, looking in the opposite direction.]"
         ]
     ],
     "introspective_jeal": [
@@ -1511,7 +1511,7 @@
             "jealousy"
         ],
         [
-            "... what?",
+            "... What?",
             "Don't you have anything more important to do than staring at me?"
         ]
     ],
@@ -1556,7 +1556,7 @@
             "jealousy"
         ],
         [
-            "[t_c made eye-contact with you and immediately turned and left the camp.]",
+            "[t_c makes eye-contact with you, then immediately turns and leaves the camp.]",
             "..."
         ]
     ],
@@ -1680,7 +1680,7 @@
             "For so much of my life, I've felt like I've always been alone. Now you're here, and, well, I've just been wondering what you see in me.",
             "You're just so wonderful and talented, and I'm... well, me.",
             "I just sometimes wonder what I did to deserve you.",
-            "[You assure them that you absolutely cherish them, and no one could take their place in your life.]",
+            "[You assure t_c that you absolutely cherish them, and no one could take their place in your life.]",
             "... Thanks, y_c. You always know what to say to make me feel better."
         ]
     ],
@@ -1734,7 +1734,7 @@
             "comfort"
         ],
         [
-            "[t_c walked over to you and rested their head on your shoulder.]",
+            "[t_c walks over to you and rests their head on your shoulder.]",
             "..."
         ]
     ],
@@ -1775,10 +1775,10 @@
             "random_cat"
         ],
         [
-            "[You were having a conversation with r_c when you felt eyes on your back.]",
-            "[You flicked your head around and saw that it was t_c.]",
-            "[t_c flicked their ear at you and gave you a smile.]",
-            "[You smiled back and turned back to your conversation.]"
+            "[You're having a conversation with r_c when you feel eyes on your back.]",
+            "[You flick your head around and see that it's t_c!]",
+            "[t_c flicks their ear at you and gives you a smile.]",
+            "[You smile back and turn back to your conversation.]"
         ]
     ],
     "introspective_resp_3": [
@@ -1830,7 +1830,7 @@
             "Uh. y_c! Over here!",
             "[You look up to see t_c up in a tree.]",
             "I was watching the birds, and I got up here and... it's really high. I don't know how to get down.",
-            "[You quickly got into the tree to walk them down it]",
+            "[You quickly climb into the tree to walk them through it.]",
             "Oh thank you, y_c! I have no idea what I was thinking, getting up there. I'm happy you were there, or who knows how long I would have been stuck."
         ]
     ],
@@ -1899,7 +1899,7 @@
             "trust"
         ],
         [
-            "[You overheard quiet humming coming from the fresh kill pile.]",
+            "[You overhear quiet humming coming from the fresh kill pile.]",
             "Mm? Nice to see you.",
             "Yeah, I was humming, I like to every now and then. When no one's around, of course.",
             "No, I just don't want anyone overhearing. I don't want to be bothered by them asking me to sing more.",
@@ -2033,7 +2033,7 @@
         [
             "y_c! y_c! Ever try balancing a pinecone on your nose?",
             "Watch the master at work.",
-            "[t_c takes a pinecone, leaning left and right to make sure it stays on their nose without falling.",
+            "[t_c takes a pinecone, leaning left and right to make sure it stays on their nose without falling.]",
             "Now you try!"
         ]
     ],
@@ -2078,7 +2078,7 @@
         ],
         [
             "Morning, y_c.",
-            "Ready for the day's task?",
+            "Ready for the day's tasks?",
             "Let's tackle them together."
         ]
     ],
