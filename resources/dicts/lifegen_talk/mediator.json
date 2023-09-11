@@ -318,7 +318,7 @@
             "y_c? Do you have a moment to spare?",
             "I heard you got into an argument with your mentor, the other day. They've told me that you trespassed into another clan's territory, but I wanted to hear what happened from your perspective.",
             "... Okay. Thank you for your time, y_c.",
-            "[They trotted off quickly, not allowing you another word. They must be busy then.]"
+            "[They trot off quickly, not allowing you another word. They must be busy!]"
         ]
     ],
     "introspective_mdtor_to_med": [
@@ -351,10 +351,10 @@
         ],
         [
             "r_c, please. I know you're upset, but I can't help if you don't tell me what's wrong.",
-            "[t_c is walking after r_c quickly, huffing out their conversation.]",
-            "[r_c eventually sighed and planted their paws on the ground.]",
+            "[t_c is walking after r_c, huffing out their conversation.]",
+            "[r_c eventually sighs and plants their paws on the ground.]",
             "I'm not going to chase you around camp. I'll be here for when you want my help.",
-            "[t_c trotted towards you.]",
+            "[t_c trots towards you.]",
             "Oh hi, y_c. Sorry about that. r_c's clearly upset about something, but refuses to tell me what...",
             "Just need to let them come back to me. They will, I think they need space. Have you eaten today? We can share some freshkill while I'm here?"
         ]
@@ -391,7 +391,7 @@
         ],
         [
             "...",
-            "[t_c was sat staring up at the sky.]",
+            "[t_c is sat staring up at the sky.]",
             "y_c, hello. Is there a problem? Anything you need help with?",
             "Hm? No, I'm fine. I'm just resting for a minute. It's not a big deal.",
             "Sometimes you've got to stop and take a breath to smell the flowers. I can't help anyone if I'm running myself into the floor.",

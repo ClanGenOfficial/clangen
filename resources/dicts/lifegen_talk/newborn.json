@@ -93,12 +93,12 @@
         ],
         [
             "Mew!",
-            "[You turned to see a newborn crawling around on their own outside the nursery. How on earth did they get here?]",
+            "[You turn to see a newborn crawling around on their own outside the nursery. How on earth did they get here?]",
             "[You pick them up, and carry them back to the nursery.]",
             "[You turn around to have a chat with a clanmate for five minutes.]",
             "Meeewww!",
             "[The kitten has somehow escaped again.]",
-            "[You need to have a chat with the Queens too.]"
+            "[You need to have a chat with the Queens.]"
         ]
     ],
     "introspective_NB_1": [
@@ -122,7 +122,7 @@
             "[You're sat grooming yourself in the clearing]",
             "[A little newborn stumbles into you]",
             "Squeak! Meow!",
-            "[They turned around and stumbled away. You were too surprised to grab them before they stumbled back to the nursery. Seems at the minimum that they have a good sense of direction?]"
+            "[They turn around and stumble away. You're too surprised to grab them before they crawl back to the nursery. Seems at the minimum that they have a good sense of direction?]"
         ]
     ],
     "introspective_NB_3": [
@@ -132,9 +132,9 @@
         ],
         [
             "Mew?",
-            "[t_c had walked into your side when wandering around the nursery.]",
+            "[t_c walks into your side when wandering around the nursery.]",
             "Meow! Prrr...",
-            "[They flopped over and laid against you, seemingly satisfied with where they were.]",
+            "[They flopp over and lay against you, seemingly satisfied with where they are.]",
             "[Guess you're not moving any time soon.]"
         ]
     ],
@@ -144,7 +144,7 @@
             "introspective"
         ],
         [
-            "[You notice a newborn kitten... t_c? t_c sat in the corner.]",
+            "[You notice a newborn kitten... t_c? t_c sits in the corner.]",
             "...",
             "[They don't look distressed so you decide to leave them there.]"
         ]
@@ -156,7 +156,7 @@
         ],
         [
             "Mewww???",
-            "[A newborn kitten yells at you from the nursery, you walk over and flick your tail over their face]",
+            "[A newborn kitten yells at you from the nursery. You walk over and flick your tail over their face]",
             "Meow!"
         ]
     ],
