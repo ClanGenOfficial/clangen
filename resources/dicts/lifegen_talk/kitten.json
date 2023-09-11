@@ -819,44 +819,6 @@
             "[t_c seems to be pretending that you aren't there.]"
         ]
     ],
-    "introspective_kit_4": [
-        [
-            "kitten",
-            "Introspective",
-            "dislike"
-        ],
-        [
-            "What are you doing here?",
-            "Don't you have more important things to be doing?",
-            "...",
-            "Will you leave if I say it more bluntly? Go away."
-        ]
-    ],
-    "introspective_kit_5": [
-        [
-            "Any",
-            "introspective",
-            "dislike"
-        ],
-        [
-            "What do you want?",
-            "You thought I looked lonely, and could use someone to talk to?",
-            "Hmph... In case you haven't noticed it by now, I actually Prefer being alone.",
-            "Not that you even know me at all.",
-            "Now how about you leave, and go find someone else to annoy that actually cares?"
-        ]
-    ],
-    "introspective_to_kit_6": [
-        [
-            "kitten",
-            "introspective",
-            "dislike"
-        ],
-        [
-            "Please, y_c, leave me alone.",
-            "As far as I'm concerned, I'm on my own. I don't need you."
-        ]
-    ],
     "sweet_kit_1": [
         [
             "Any",
@@ -876,7 +838,7 @@
             "random_cat"
         ],
         [
-            "-They don't seem to notice you at first, sniffling quietly-",
+            "[t_c dooes't seem to notice you at first, sniffling quietly]",
             "O-Oh! y_c! Um... I didn't want you to see me like this..",
             "I'm sorry- I just... r_c stepped on a poor little bug, and I feel so bad for it!! And then I burst out into tears in front of everyone and now I'm super embarrassed..",
             "I hope they apologize to the poor little guy."
@@ -1076,7 +1038,7 @@
             "Hey um... y_c?",
             "I uh... had a spooky dream... can I snuggle with you?",
             "Um... do you think cats find me annoying...? Because I.. care a lot. I just wanna be a good kit, y'know, and become the best cat I can be... like you said!!",
-            "-They seem to sniffle after hearing your answer, but give a pleased smile, closing their eyes and eventually falling back asleep.-"
+            "[They seem to sniffle after hearing your answer, but give a pleased smile, closing their eyes and eventually falling back asleep.]"
         ]
     ],
     "sweet_kit_17": [

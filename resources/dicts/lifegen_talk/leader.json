@@ -538,7 +538,6 @@
         [
             "We're getting close to the gathering ... Better start thinking about who should go.",
             "What do you think of r_c ...? Mm, maybe next moon.",
-            "Obviously not r_c, or r_c, for that matter ... r_c is probably a safe pick.",
             "Hmm. How about you keep brainstorming, and get back to me."
         ]
     ],
@@ -1138,7 +1137,7 @@
             "introspective"
         ],
         [
-            "... good morning, y_c.",
+            "... Good morning, y_c.",
             "Yes, yes. I'm fine. I've just... been thinking.",
             "Is starclan and the dark forest all that's out there? Is there something beyond that? Maybe beyond our own perceptions.",
             "Maybe all of our actions are being controlled by a being even stronger than starclan, using some sort of magic to view us to see what we're up to.",
@@ -1155,7 +1154,7 @@
         [
             "y_c. Good afternoon.",
             "Yes. I'm perfectly okay. Just sitting and watching...",
-            "[They gestured over to a lake, where the moon echoed in the water.]",
+            "[They gesture over to a lake, where the moon echoes in the water.]",
             "The moon is an interesting force. It's bright and lights the way, so we can see our paws when the individual lights cannot show us.",
             "I wonder if it's the whole of starclan, concentrated. StarClan's eyes. Or maybe it's our ancestors' love for us. The moon's always there for us, it's... everlasting.",
             "... that's a nice thought. That we're not doing everything for nothing. Those before us think about us just as much as we think about them. It guides us like I try to do for our clan.",
@@ -1183,7 +1182,7 @@
         ],
         [
             "...",
-            "[t_c was resting in the leader's den.]",
+            "[t_c is resting in the leader's den.]",
             "... y_c. Is something the matter?",
             "I'm fine, mostly. Just taking a break from clan affairs. I'm not needed out there at this moment, therefore I can just... relax. You know?",
             "I'll be out later, don't worry about me."

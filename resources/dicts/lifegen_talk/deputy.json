@@ -1161,7 +1161,7 @@
         ],
         [
             "...",
-            "[t_c was staring off into space, eyes placed on the leader's den.]",
+            "[t_c is staring off into space, eyes placed on the leader's den.]",
             "... hi, y_c. Is there something you need from me?",
             "Yes. I'm fine. I'm just thinking...",
             "Part of being a deputy means preparing to potentially become leader. I don't know whether that will ever happen, and I'm not wishing for anything to happen!",
@@ -1175,10 +1175,10 @@
             "introspective"
         ],
         [
-            "[t_c was sitting next to a river outside camp, flicking their paws in the water.]",
+            "[t_c is sitting next to a river outside camp, flicking their paws in the water.]",
             "y_c. What brings you here? Are you wanting to fish?",
             "... Yeah. I like the river, I don't get to come down here much anymore, since I became deputy, but I like having the opportunity to have some quiet.",
-            "River's are steadfast, you know. They only bend by their own volition, no cat can stop them on their own.",
+            "Rivers are steadfast, you know. They only bend by their own volition, no cat can stop them on their own.",
             "I wish to be more like that. Like less... malleable. More willing to stand up to what I believe in.",
             "There'll be lots of trials and tribulations in the future, and I may need to fight for my future. I won't know until it comes, but still..."
         ]
@@ -1203,7 +1203,7 @@
             "introspective"
         ],
         [
-            "[You noticed t_c wandering away from the leader's den calmly.]",
+            "[You notice t_c calmly wandering away from the leader's den.]",
             "Hm, y_c? Is something the matter?",
             "No, it's fine. Was just having a discussion with l_n about an issue we're having with o_cClan. It's nothing massively important.",
             "Just had a suggestion as to our next move when it comes to them. It's my duty to advise them just as much as organising patrols.",
