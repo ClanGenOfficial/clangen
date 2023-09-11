@@ -182,6 +182,9 @@ class ProfileScreen(Screens):
             elif event.ui_element == self.inspect_button:
                 self.close_current_tab()
                 self.change_screen("sprite inspect screen")
+            elif self.the_cat.ID == game.clan.your_cat.ID and event.ui_element == self.profile_elements["change_cat"]:
+                self.close_current_tab()
+                self.change_screen("choose reborn screen")
             elif event.ui_element == self.relations_tab_button:
                 self.toggle_relations_tab()
             elif event.ui_element == self.roles_tab_button:
@@ -670,6 +673,12 @@ class ProfileScreen(Screens):
                 counter+=1
                 
             print("Chose " + str(game.clan.your_cat.name))
+            
+        if self.the_cat.ID == game.clan.your_cat.ID:
+            self.profile_elements["change_cat"] = UIImageButton(scale(pygame.Rect((1400, 120),(68,68))), "", 
+                                            object_id="#random_dice_button",
+                                            tool_tip_text='Switch MC',
+                                            manager=MANAGER)
         
         if self.the_cat.ID != game.clan.your_cat.ID and not self.the_cat.dead and not self.the_cat.outside and not game.clan.your_cat.dead and not game.clan.your_cat.outside and not game.clan.your_cat.moons < 0:    
             if not self.the_cat.dead and not self.the_cat.outside and self.the_cat.status not in ['leader', 'mediator', 'mediator apprentice']:
