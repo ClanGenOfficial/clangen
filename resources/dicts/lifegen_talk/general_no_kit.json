@@ -106,6 +106,62 @@
             "[t_c licks your ear reassuringly, and sits with you until all the anxiety you felt is completely gone.]"
         ]
     ],
+    "introspective_kit_or_app": [
+        [
+            "no_kit",
+            "introspective",
+            "platonic_like",
+            "comfort",
+            "trust"
+        ],
+        [
+            "Oh, hey, y_c. What's wrong?",
+            "... You're worried about how much time I spend by myself?",
+            "Pfft. Don't you worry about it. I keep myself plenty of company.",
+            "You are your own best friend, after all!",
+            "Hehehe... heh...",
+            "[t_c stares wistfully off into the distance at all the other cats around camp sharing tongues.]"
+        ]
+    ],
+        "introspective_kit_4": [
+        [
+            "kitten",
+            "Introspective",
+            "dislike"
+        ],
+        [
+            "What are you doing here?",
+            "Don't you have more important things to be doing?",
+            "...",
+            "Will you leave if I say it more bluntly? Go away."
+        ]
+    ],
+    "introspective_kit_5": [
+        [
+            "Any",
+            "introspective",
+            "brooding",
+            "dislike"
+        ],
+        [
+            "What do you want?",
+            "You thought I looked lonely, and could use someone to talk to?",
+            "Hmph... In case you haven't noticed it by now, I actually prefer being alone.",
+            "Not that you even know me at all.",
+            "Now how about you leave, and go find someone else to annoy that actually cares?"
+        ]
+    ],
+    "introspective_to_kit_6": [
+        [
+            "any",
+            "introspective",
+            "dislike"
+        ],
+        [
+            "Please, y_c, leave me alone.",
+            "As far as I'm concerned, I'm on my own. I don't need you."
+        ]
+    ],
        "assertivekit_31": [
         [
             "Any",
