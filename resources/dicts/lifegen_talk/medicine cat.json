@@ -1116,7 +1116,7 @@
         ],
         [
             "...",
-            "[t_c was sorting through herbs, mumbling to themself so quietly that you couldn't make out their words.]",
+            "[t_c is sorting through herbs, mumbling to themself so quietly that you can't make out their words.]",
             "Huh? Oh, y_c. What's wrong?",
             "What am I up to? Nothing really. Working on a new potential herb set for treating pain. Not only just dosing poppy seeds, but actually working to treat the underlying problem that is causing it.",
             "I need to focus though, I need to get it right. I appreciate you coming to see me, though."
@@ -1164,7 +1164,7 @@
             "Oh!",
             "[You make eye contact with t_c.]",
             "Huh? I didn't do anything! I absolutely was not doing an impression of the birds! ... You've got a patrol soon, don't you? Go prepare for that!",
-            "[They gestured you away with their tail, hiding their face in mild embarrassment.]"
+            "[They gesture you away with their tail, hiding their face in mild embarrassment.]"
         ]
     ],
     "introspective_Med_4": [
@@ -1186,11 +1186,11 @@
             "introspective"
         ],
         [
-            "[You were wandering on a solo hunting patrol when the soft scent of herbs fluttered into your nose. Is that t_c?]",
+            "[You're wandering on a solo hunting patrol when the soft scent of herbs flutters into your nose. Is that t_c?]",
             "...",
-            "[They're gently biting the flowers off of some golden plant, and don't seem to have seen you.]",
+            "[They're gently biting the flowers off of some golden plant, and don't seem to have noticed you.]",
             "... Huh? Oh, y_c. I didn't think I'd see you here today. Are you on a hunting patrol?",
-            "Huh? What's this? It's Marigold, I use it to help heal general wounds. It's a wonderfully helpful herb.",
+            "Huh? What's this? It's marigold, I use it to help heal general wounds. It's a wonderfully helpful herb.",
             "And it looks beautiful too. I... almost hate having to grab it, because they're so beautiful to watch grow. But the clan needs them too.",
             "Imagine how bad wounds can get without Marigold to help. You could lose a leg by infection at worst.",
             "So getting it is far more essential than my desire to watch it. Plus I'm not grabbing all of it, there will be enough for it to grow back",
