@@ -36,7 +36,7 @@ from scripts.utility import get_alive_kits, get_med_cats, ceremony_text_adjust, 
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
 from scripts.game_structure.windows import SaveError
-from scripts.game_structure.windows import RetireScreen
+from scripts.game_structure.windows import RetireScreen, DeputyScreen
 
 class Events:
     """
@@ -61,9 +61,9 @@ class Events:
         TODO: DOCS
         """
         if self.checks == [-1,-1,-1] and game.clan.your_cat and game.clan.your_cat.inheritance:
-            self.checks = [len(game.clan.your_cat.apprentice), len(game.clan.your_cat.mate), len(game.clan.your_cat.inheritance.get_blood_kits())]
+            self.checks = [len(game.clan.your_cat.apprentice), len(game.clan.your_cat.mate), len(game.clan.your_cat.inheritance.get_blood_kits()), game.clan.leader.ID]
         else:
-            self.checks = [len(game.clan.your_cat.apprentice), len(game.clan.your_cat.mate), 0]
+            self.checks = [len(game.clan.your_cat.apprentice), len(game.clan.your_cat.mate), 0, game.clan.leader.ID]
         game.cur_events_list = []
         game.herb_events_list = []
         game.mediated = []
@@ -275,6 +275,7 @@ class Events:
                 self.check_gain_app(self.checks)
                 self.check_gain_mate(self.checks)
                 # self.check_gain_kits(self.checks)
+                self.check_leader(self.checks)
                 self.generate_mate_events()
                 self.check_retire()
 
@@ -290,7 +291,7 @@ class Events:
         game.clan.murdered = False
         
         self.check_achievements()
-        self.checks = [len(game.clan.your_cat.apprentice), len(game.clan.your_cat.mate), len(game.clan.your_cat.inheritance.get_blood_kits())]
+        self.checks = [len(game.clan.your_cat.apprentice), len(game.clan.your_cat.mate), len(game.clan.your_cat.inheritance.get_blood_kits()), game.clan.leader.ID]
 
             
         # Resort
@@ -801,6 +802,10 @@ class Events:
                 game.switches['reject'] = False
             except:
                 print("You rejected a cat but an event could not be shown")
+    
+    def check_leader(self, checks):
+        if checks[3] != game.clan.leader.ID and game.clan.your_cat.status == 'leader':
+            DeputyScreen('events screen')
             
     def check_gain_kits(self, checks):
         if len(game.clan.your_cat.inheritance.get_blood_kits()) > checks[2]:
