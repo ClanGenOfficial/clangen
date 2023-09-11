@@ -245,10 +245,10 @@
         ],
         [
             "Oh y_c! Quick, grab them!",
-            "[A small kitten was rushing towards you, away from the nursery. You quickly grabbed them by the scruff to stop them from escaping any further.",
+            "[A small kitten rushes towards you, away from the nursery. You quickly grab them by the scruff to stop them from escaping any further.",
             "Oh StarClan's grace. Thank you, y_c. I owe you my next freshkill for that. I had my eyes off them for a second and they made a wild rush out the nursery!",
             "I promise I won't make a habit out of this. Have a nice rest of your day.",
-            "[t_c gently picked up the kitten and walked back into the nursery.]"
+            "[t_c gently picks up the kitten and walks back into the nursery.]"
         ]
     ],
     "introspective_queenapp_2": [
@@ -270,12 +270,12 @@
             "introspective"
         ],
         [
-            "[You heard a soft hum coming from the nursery.]",
+            "[You hear a soft hum coming from the nursery.]",
             "... and pollen will spring from wilted flowers, and the day will rise again...",
-            "[You looked into the medicine den, watching t_c singing a lullaby to the sleeping kits.]",
+            "[You look into the medicine den, watching t_c singing a lullaby to the sleeping kits.]",
             "y_c? It's nice to see you. Sorry, the kits wanted to be sung to, and my mentor suggested that I get some practice in. There'll be lots of future kits wanting songs.",
             "You can stay to listen if you want. But don't feel like you're forced to.",
-            "[t_c returned to humming the same tune.]"
+            "[t_c returns to humming the same tune.]"
         ]
     ],
     "introspective_queenapp_4": [
@@ -285,7 +285,7 @@
         ],
         [
             "Oh no... I've been defeated!",
-            "[t_c is playing dead on the floor, covered in kittens, seems like they're playing along with their game.]",
+            "[t_c is playing dead on the floor, covered in kittens. Seems like they're playing along with their game.]",
             "I will be back! StarClan cannot hold my spirit forever! I will take over the Clans, mark my words!",
             "[You decide to leave them to it. They look really busy being dead.]"
         ]
@@ -300,7 +300,7 @@
             "[t_c is talking to a upset kit curled up against their side.]",
             "You don't need to try and force yourself to be something you're not. I get tired of talking to others too.",
             "You're still a wonderful part of this clan. Even if you need space sometimes... You'll always have cats who want to be around you, and see you.",
-            "[You noticed t_c was looking at you. They smiled pleasantly and turned their full attention back to the kit.]",
+            "[You notice t_c is looking at you. They smile pleasantly, then return their full attention to the kit.]",
             "You'll never be forgotten, no matter what path your paws will lead you."
         ]
     ],
