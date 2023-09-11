@@ -18,6 +18,26 @@
             "For I know, I've played a part in shaping the Clan's future, one kit at a time."
         ]
     ],
+    "assertive_apprentice8": [
+        [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "queen's apprentice",
+            "platonic_like",
+            "assertive",
+            "silly",
+            "sibling",
+            "adopted_sibling"
+        ],
+        [
+            "Hey, when do you think we'll be getting our full names?",
+            "D'you think, if we ask, the leader would give us matching suffixes? That happens sometimes with siblings, y'know!",
+            "How about ... -cloud for me, and -sneeze for you?",
+            "Or, -mouse for me, and -dung for you!",
+            "[You and t_c dissolve into a fit of giggles.]"
+        ]
+    ],
     "queen_2": [
         [
             "kitten",
