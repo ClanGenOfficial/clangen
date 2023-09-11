@@ -1129,7 +1129,7 @@
         "season": ["greenleaf"],
         "types": ["herb_gathering"],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_gatheringcatmint_greenleaf1",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1177,7 +1177,7 @@
         "season": ["greenleaf"],
         "types": ["herb_gathering"],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_gatheringcatmint_greenleaf2",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -1291,7 +1291,7 @@
         "season": ["greenleaf"],
         "types": ["herb_gathering"],
         "tags": ["jealousy"],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_gatheringcatmint_greenleaf3",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -2380,7 +2380,7 @@
         "season": ["greenleaf"],
         "types": ["herb_gathering"],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_gatheringgoldenrod_greenleaf1",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
