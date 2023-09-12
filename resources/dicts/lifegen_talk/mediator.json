@@ -328,8 +328,8 @@
             "introspective"
         ],
         [
-            "ugh... y_c? Are you here?",
-            "Yeah... I've hurt my paws with all this moving around recently, is there anything you can give me for it?",
+            "Ugh... y_c? Are you here?",
+            "Yeah... I've hurt my paws with all this moving around recently. Is there anything you can give me for it?",
             "Hm? Yeah, my paws are normally stronger than this, I've just been rushing all over the place.",
             "Thank you, y_c. It's nice to know that no matter how far I run, I've always got someone on my tail."
         ]
@@ -356,7 +356,7 @@
             "I'm not going to chase you around camp. I'll be here for when you want my help.",
             "[t_c trots towards you.]",
             "Oh hi, y_c. Sorry about that. r_c's clearly upset about something, but refuses to tell me what...",
-            "Just need to let them come back to me. They will, I think they need space. Have you eaten today? We can share some freshkill while I'm here?"
+            "Just need to let them come back to me. They will, I think they need space. Have you eaten today? We can share some freshkill while I'm here."
         ]
     ],
     "introspective_mdtor_2": [
@@ -411,19 +411,18 @@
             "I've got to get back to it. Thank you for listening, y_c."
         ]
     ],
-    "assertive_apprentice7": [
+    "introspective_MdtorApp_4": [
         [
-            "no_kit",
-            "platonic_like",
-            "assertive",
-            "silly",
-            "random_cat"
+            "any",
+            "introspective"
         ],
         [
-            "y_c. Buddy. Best friend. We've GOTTA TRY this. r_c told me that if you eat three mice, one rabbit, and howl at the moon you get magic powers!",
-            "What? It's totally real, they wouldn't lie to me like that! I prommissseee."
+            "[t_c is sat watching two of your clanmates argue with each other, with fascination]",
+            "[One of them calls the other a half-clan foxheart. Quite brutal. Why is t_c not saying anything?]",
+            "[... A giant jaybird flies out of a tree just behind the arguing cats.]",
+            "[t_c seems to come to awareness of what's going on around them, and they rush over to deal with the yelling cats.]"
         ]
-    ],
+    ], 
     "assertive_1": [
         [
             "Any",
