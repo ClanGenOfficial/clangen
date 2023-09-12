@@ -475,7 +475,8 @@
         [
             "medicine cat",
             "medicine cat apprentice",
-            "assertive"
+            "assertive",
+            "random_cat"
         ],
         [
             "s_c seems to be doing well, don'tcha think?",
@@ -485,7 +486,8 @@
     "assertive_elder_7": [
         [
             "medicine cat",
-            "assertive"
+            "assertive",
+            "random_cat"
         ],
         [
             "Be sure to bring s_c the herbs they need."
@@ -579,7 +581,8 @@
             "medicine cat",
             "assertive",
             "platonic_like",
-            "neutral"
+            "neutral",
+            "random_cat"
         ],
         [
             "Is it just me, or has r_w been coming into the medicine den an awful lot lately?",
@@ -614,7 +617,7 @@
         ],
         [
             "Hey y_c. Why don't you jump off a cliff? It's a new thing every cat in the Clan is trying.",
-            "[r_c is staring at you resentfully.]"
+            "[t_c is staring at you resentfully.]"
         ]
     ],
     "assertive_dislike1": [
@@ -799,7 +802,7 @@
             "What's that? One of the kits told you your ears are too big?",
             "What a load of fox-dung! Those kits don't have functioning brains. Besides, I like your ears! I think it's cute, how big they are!",
             "Er ... not cute in that way, mind you. Just, y'know ... ahem ...",
-            "[The blush on r_c's cheeks confirms that, yes, they did mean it in that way. And they're doing a terrible job of hiding it.]"
+            "[The blush on t_c's cheeks confirms that, yes, they did mean it in that way. And they're doing a terrible job of hiding it.]"
         ]
     ],
     "assertive_elder_14": [
@@ -889,7 +892,7 @@
             "assertive"
         ],
         [
-            "[You ask r_c why they chose to become a medicine cat, given their adventurous personality.]",
+            "[You ask t_c why they chose to become a medicine cat, given their adventurous personality.]",
             "Ah, well, that's easy ... The medicine den is full of adventure!",
             "I get to explore far and wide gathering all sorts of different herbs, collaborate with medicine cats across territories, and literally commune with the dead! That's plenty of excitement, no?",
             "You might think you know life-or-death situations on the battlefield, but here in the medicine den is where the stakes are really high. My decisions could be the difference between a clanmate surviving, or joining our warrior ancestors.",
@@ -1009,7 +1012,7 @@
         ],
         [
             "Hey, furbag. I brought you something!",
-            "[r_c lays a colorful feather at your paws.",
+            "[t_c lays a colorful feather at your paws.",
             "I know this is your favorite color, and you miss exploring the territory. So I knew I just had to bring it to you.",
             "Yeah, yeah, don't get all soft on me, hehe. Wanna grab a meal together?"
         ]
