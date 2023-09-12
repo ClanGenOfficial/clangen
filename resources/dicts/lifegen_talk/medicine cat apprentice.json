@@ -665,19 +665,6 @@
             "Y-You're lucky I'm a lover, not a fighter! *Wheeze*"
         ]
     ],
-    "assertive_dislike": [
-        [
-            "Any",
-            "assertive",
-            "cool",
-            "silly",
-            "hate"
-        ],
-        [
-            "Hey y_c. Why don't you jump off a cliff? It's a new thing every cat in the Clan is trying.",
-            "[r_c is staring at you resentfully.]"
-        ]
-    ],
     "assertive_dislike1": [
         [
             "Any",
