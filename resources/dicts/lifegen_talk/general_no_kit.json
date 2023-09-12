@@ -11,6 +11,19 @@
             "Must ... escape ... camp ..."
         ]
     ],
+    "assertive_dislike": [
+        [
+            "Any",
+            "assertive",
+            "cool",
+            "silly",
+            "hate"
+        ],
+        [
+            "Hey y_c. Why don't you jump off a cliff? It's a new thing every cat in the Clan is trying.",
+            "[t_c is staring at you resentfully.]"
+        ]
+    ],
     "assertive_leafbare1": [
         [
             "Any",
@@ -29,9 +42,7 @@
             "Any",
             "assertive",
             "newleaf",
-            "stable",
-            "upstanding",
-            "sweet"
+            "stable"
         ],
         [
             "Thank StarClan the weather's finally starting to turn around!",
@@ -49,17 +60,6 @@
             "AH-CHOO!",
             "What? Allergies? Please, y_c. I'm a fearsome warrior of c_nClan, I'm made of tougher stuff than thah ... AH ...",
             "AH-CHOO!"
-        ]
-    ],
-    "assertive_greenleaf": [
-        [
-            "Any",
-            "assertive",
-            "greenleaf"
-        ],
-        [
-            "FINALLY, it's nice outside again!",
-            "Now, I can really get out and stretch my legs! Look out, world! t_c is back! Not a single piece of prey in the forest will escape my grasp!"
         ]
     ],
     "assertive_mate": [
@@ -448,7 +448,7 @@
         ],
         [
             "You! You worthless piece of fox-dung, I'll kill you!",
-            "[Several clanmates have to hold r_c back as they attempt to claw your eyes out.]"
+            "[Several clanmates have to hold t_c back as they attempt to claw your eyes out.]"
         ]
     ],
     "assertive_murder1": [
@@ -1418,19 +1418,6 @@
             "No, I'm fine, I'm just thinking... Do you think I'm irritating?",
             "I try my best to always have the answer to something, on the off chance that someone asks but... Is that needed? Do people find me a hindrance?",
             "... Mm. Thank you y_c. It's nice knowing that someone appreciates me."
-        ]
-    ],
-    "introspective_comf_2": [
-        [
-            "any",
-            "introspective",
-            "comfort"
-        ],
-        [
-            "Sigh... hi, y_c.",
-            "Hm? Yeah, I just got back from a hunting patrol... I utterly embarrassed myself. I had a mouse literally walk into my paws and I still failed to grab it.",
-            "... Hm. Yes, that's true. I'm not going to always succeed, the best thing I can do is get back up and get back to it.",
-            "You're right, y_c. You're always right. Thank you."
         ]
     ],
     "introspective_resp": [

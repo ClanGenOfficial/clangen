@@ -8,6 +8,19 @@
             "..."
         ]
     ],
+    "introspective_comf_2": [
+        [
+            "any",
+            "introspective",
+            "comfort"
+        ],
+        [
+            "Sigh... hi, y_c.",
+            "Hm? Yeah, I just got back from a hunting patrol... I utterly embarrassed myself. I had a mouse literally walk into my paws and I still failed to grab it.",
+            "... Hm. Yes, that's true. I'm not going to always succeed, the best thing I can do is get back up and get back to it.",
+            "You're right, y_c. You're always right. Thank you."
+        ]
+    ],
     "warrior_15": [
         [
             "Any",
@@ -426,19 +439,6 @@
         [
             "What did I do in a past life to wind up related to you, y_c?",
             "Must've been really terrible."
-        ]
-    ],
-    "assertive_dislike": [
-        [
-            "Any",
-            "assertive",
-            "cool",
-            "silly",
-            "hate"
-        ],
-        [
-            "Hey y_c. Why don't you jump off a cliff? It's a new thing every cat in the Clan is trying.",
-            "[r_c is staring at you resentfully.]"
         ]
     ],
     "assertive_dislike1": [
@@ -1249,7 +1249,7 @@
         ],
         [
             "Hey, who d'ya think's gonna be deputy once d_n is leader?",
-            "I guess probably r_c ... they'd probably be good for the job.",
+            "I guess probably r_w ... they'd be good for the job.",
             "But, who knows? It could be anyone! It could even be you or me!"
         ]
     ],

@@ -18,6 +18,23 @@
             "For I know, I've played a part in shaping the Clan's future, one kit at a time."
         ]
     ],
+    "assertivewarriorapp_comfort": [
+        [
+            "no_kit",
+            "assertive",
+            "comfort"
+        ],
+        [
+            "Huh? Oh, nothing's wrong ...",
+            "Just ... had a bad day, is all ...",
+            "*Sigh* y_c, have you ever felt like you're not enough for anyone?",
+            "Usually, when it comes to making a decision, I never hesitate. Whatever the obstacle, I'll run headfirst into it, no questions asked.",
+            "But, today, in the nursery, I was playing with one of the kits, and they accidentally got hurt ...",
+            "I just feel like such a failure. A liability. I can't help the way I am, but what if everyone's better off without me?",
+            "[You offer t_c words of reassurance, but they seem troubled beyond comforting.]",
+            "[Still, you sit with them through the night, hoping to stabilize them through whatever storm they might be weathering right now.]"
+        ]
+    ],
     "assertive_apprentice8": [
         [
             "apprentice",
@@ -402,7 +419,8 @@
         [
             "queen",
             "assertive",
-            "from_your_apprentice"
+            "from_your_apprentice",
+            "random_cat"
         ],
         [
             "r_k's crying again. They've been having such a hard time lately ...",
@@ -696,19 +714,6 @@
             "Once upon a time, there was a young kit named Quietkit who always stayed up past her bedtime. She was so tired that, one day, she fell asleep on her paws, and fell into a hole so deep, it went straight into the Dark Forest!",
             "Now, her spirit haunts the nursery, waiting for more disobedient kits she can take down with her ...",
             "Now, do you wanna be Quietkit's next playmate? Or do you wanna put the moss-ball down and get in your nest?"
-        ]
-    ],
-    "assertive_dislike": [
-        [
-            "Any",
-            "assertive",
-            "cool",
-            "silly",
-            "hate"
-        ],
-        [
-            "Hey y_c. Why don't you jump off a cliff? It's a new thing every cat in the Clan is trying.",
-            "[r_c is staring at you resentfully.]"
         ]
     ],
     "assertive_dislike1": [

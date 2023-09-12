@@ -21,7 +21,7 @@
             "Usually, when it comes to making a decision, I never hesitate. Whatever the obstacle, I'll run headfirst into it, no questions asked.",
             "But, today, in the medicine den, I took a risk on an experimental new procedure, and it completely backfired. Luckily, it didn't do much damage, but because of me, my patient could've been hurt, or worse.",
             "I just feel like such a failure. A liability. Everyone in the clan is depending on me to keep them safe, but what if I keep falling short?",
-            "[You offer t_c words of reassurance, but they seem troubled beyond comforting.",
+            "[You offer t_c words of reassurance, but they seem troubled beyond comforting.]",
             "[Still, you sit with them through the night, hoping to stabilize them through whatever storm they might be weathering right now.]"
         ]
     ],
@@ -663,19 +663,6 @@
             "Sure, I have no formal training, but once I let my inner demons out ...",
             "[t_c does an exaggerated growl and you both explode with laughter.]",
             "Y-You're lucky I'm a lover, not a fighter! *Wheeze*"
-        ]
-    ],
-    "assertive_dislike": [
-        [
-            "Any",
-            "assertive",
-            "cool",
-            "silly",
-            "hate"
-        ],
-        [
-            "Hey y_c. Why don't you jump off a cliff? It's a new thing every cat in the Clan is trying.",
-            "[r_c is staring at you resentfully.]"
         ]
     ],
     "assertive_dislike1": [
