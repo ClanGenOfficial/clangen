@@ -2575,5 +2575,157 @@
         [
             "Hmph... expecting kits I see? Better keep those rascals under control."
         ]
+    ],
+    "they_pregnant1": [
+        [
+            "any",
+            "they_pregnant",
+            "assertive"
+        ],
+        [
+            
+        ]
+    ],
+    "they_pregnant2": [
+        [
+            "any",
+            "they_pregnant",
+            "brooding"
+        ],
+        [
+            "[t_c sits in the shade, their growing belly prominent.]",
+            "Hey, y_c. It's not news anymore... but I'm expecting kits.",
+            "Well, I suppose it was bound to happen eventually. It's... a responsibility, I guess. We'll see how it goes."
+        ]
+    ],
+    "they_pregnant3": [
+        [
+            "any",
+            "they_pregnant",
+            "cool",
+            "from_mate"
+        ],
+        [
+            "I've been thinking about what kind of parents we'll be. I suppose we'll figure it out as we go along. No need to overthink it, right?"
+        ]
+    ],
+    "they_pregnant3_1": [
+        [
+            "any",
+            "they_pregnant",
+            "cool"
+        ],
+        [
+            "You know, I never thought I'd see the day when I become a parent. But hey, life is full of surprises. I'll make sure the kits have everything they need and more."
+        ]
+    ],
+    "they_pregnant4": [
+        [
+            "any",
+            "they_pregnant",
+            "upstanding"
+        ],
+        [
+            "I've been talking to every queen and former queen I can find, making sure I'm totally prepared to have these kits.",
+            "Nothing will go wrong, I'll ensure it."
+        ]
+    ],
+    "they_pregnant5": [
+        [
+            "any",
+            "they_pregnant",
+            "upstanding",
+            "dislike"
+        ],
+        [
+            "[You find t_c laying in the shade, their growing belly prominent. You offer them a squirrel from the freshkill pile.]",
+            "Thanks, y_c, but I heard squirrel is not good for expecting queens. Fetch me a bird, will you?"
+        ]
+    ],
+    "they_pregnant6": [
+        [
+            "any",
+            "they_pregnant",
+            "introspective"
+        ],
+        [
+            "[You find t_c staring down at their growing belly.]",
+            "Bringing new life into the world is a profound experience. I really never thought I'd be a parent.",
+            "It makes you think about the circle of life, the generations that came before us, and the legacy we leave behind.",
+            "I hope I do well, y_c."
+        ]
+    ],
+    "they_pregnant7": [
+        [
+            "any",
+            "they_pregnant",
+            "neurotic"
+        ],
+        [
+            "[t_c paces back and forth in front of the nursery.]",
+            "I'm so worried about being a good parent, y_c. What if I mess it up? What if something goes wrong? I can't stop thinking about all the things that could go horribly, horribly wrong."
+        ]
+    ],
+    "they_pregnant7_1": [
+        [
+            "any",
+            "they_pregnant",
+            "neurotic"
+        ],
+        [
+            "I keep having nightmares about something happening to the kits. I know it's irrational, but I can't help it. I just want them to be safe."
+        ]
+    ],
+    "they_pregnant8": [
+        [
+            "any",
+            "they_pregnant",
+            "silly"
+        ],
+        [
+            "Kits are on the way! Kits are on the way!",
+            "It's pawsitively purrfect! I can't wait to play with them and show them all the fun things the world has to offer. It's gonna be a blast!"
+        ]
+    ],
+    "they_pregnant9": [
+        [
+            "any",
+            "they_pregnant",
+            "stable",
+            "from_mate"
+        ],
+        [
+            "I wonder how this will change me, how it will change us. It's a new chapter in our lives, and I hope it brings us peace and happiness."
+        ]
+    ],
+    "they_pregnant10": [
+        [
+            "any",
+            "they_pregnant",
+            "sweet"
+        ],
+        [
+            "I can't wait to cuddle with my kits and show them all the love in the world. They'll be the sweetest, most cherished little ones in the whole clan."
+        ]
+    ],
+    "they_pregnant11": [
+        [
+            "any",
+            "they_pregnant",
+            "unabashed"
+        ],
+        [
+            "You know, I'm gonna be the coolest parent around. Our kits will grow up knowing that they can always be themselves, no matter what."
+        ]
+    ],
+    "they_pregnant12": [
+        [
+            "any",
+            "they_pregnant",
+            "unlwaful"
+        ],
+        [
+            
+        ]
     ]
 }
