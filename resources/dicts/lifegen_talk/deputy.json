@@ -8,6 +8,19 @@
             "Your courage is commendable, but your manners could use some work."
         ]
     ],
+    "introspective_comf_2": [
+        [
+            "any",
+            "introspective",
+            "comfort"
+        ],
+        [
+            "Sigh... hi, y_c.",
+            "Hm? Yeah, I just got back from a hunting patrol... I utterly embarrassed myself. I had a mouse literally walk into my paws and I still failed to grab it.",
+            "... Hm. Yes, that's true. I'm not going to always succeed, the best thing I can do is get back up and get back to it.",
+            "You're right, y_c. You're always right. Thank you."
+        ]
+    ],
     "dep_321": [
         [
             "Any"
