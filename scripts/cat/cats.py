@@ -849,17 +849,17 @@ class Cat():
     def get_cluster(self, trait):
         # Mapping traits to their respective clusters
         trait_to_clusters = {
-            "assertive": ["troublesome", "fierce", "bold", "daring", "confident", "adventurous", "arrogant", "competitive", "rebellious"],
-            "brooding": ["bloodthirsty", "cold", "strict", "vengeful", "grumpy"],
-            "cool": ["charismatic", "sneaky", "cunning", "arrogant"],
-            "upstanding": ["righteous", "ambitious", "strict", "competitive", "responsible"],
-            "introspective": ["lonesome", "righteous", "calm", "gloomy", "wise", "thoughtful"],
-            "neurotic": ["nervous", "insecure", "lonesome"],
-            "silly": ["troublesome", "childish", "playful", "strange"],
+            "assertive": ["troublesome", "fierce", "bold", "daring", "confident", "adventurous", "arrogant", "competitive", "rebellious", "impulsive", "noisy"],
+            "brooding": ["bloodthirsty", "cold", "strict", "vengeful", "grumpy", "bullying"],
+            "cool": ["charismatic", "sneaky", "cunning", "arrogant", "charming"],
+            "upstanding": ["righteous", "ambitious", "strict", "competitive", "responsible", "bossy", "know-it-all"],
+            "introspective": ["lonesome", "righteous", "calm", "gloomy", "wise", "thoughtful", "quiet", "daydreamer"],
+            "neurotic": ["nervous", "insecure", "lonesome", "quiet"],
+            "silly": ["troublesome", "childish", "playful", "careful", "strange", "noisy", "attention-seeking"],
             "stable": ["loyal", "responsible", "wise", "faithful"],
-            "sweet": ["compassionate", "faithful", "loving", "oblivious", "sincere"],
-            "unabashed": ["childish", "confident", "bold", "shameless", "strange", "oblivious", "flamboyant"],
-            "unlawful": ["troublesome", "bloodthirsty", "sneaky", "rebellious"]
+            "sweet": ["compassionate", "faithful", "loving", "oblivious", "sincere", "sweet", "polite", "daydreamer"],
+            "unabashed": ["childish", "confident", "bold", "shameless", "strange", "oblivious", "flamboyant", "impulsive", "noisy"],
+            "unlawful": ["troublesome", "bloodthirsty", "sneaky", "rebellious", "troublesome"]
         }
 
         clusters = [key for key, values in trait_to_clusters.items() if trait in values]

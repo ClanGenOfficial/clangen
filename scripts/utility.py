@@ -1045,8 +1045,9 @@ def event_text_adjust2(Cat, text, cat, other_cat=None,
                 counter += 1
                 if counter == 30:
                     break
+            text = text.replace("r_a", str(random_warrior2.name))
         text = text.replace("r_w", str(random_warrior.name))
-        text = text.replace("r_a", str(random_warrior2.name))
+        
         
     return text
 

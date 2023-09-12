@@ -3829,7 +3829,7 @@ class TalkScreen(Screens):
             "upstanding": ["righteous", "ambitious", "strict", "competitive", "responsible", "bossy", "know-it-all"],
             "introspective": ["lonesome", "righteous", "calm", "gloomy", "wise", "thoughtful", "quiet", "daydreamer"],
             "neurotic": ["nervous", "insecure", "lonesome", "quiet"],
-            "silly": ["troublesome", "childish", "playful", "strange", "noisy", "attention-seeking"],
+            "silly": ["troublesome", "childish", "playful", "careful", "strange", "noisy", "attention-seeking"],
             "stable": ["loyal", "responsible", "wise", "faithful"],
             "sweet": ["compassionate", "faithful", "loving", "oblivious", "sincere", "sweet", "polite", "daydreamer"],
             "unabashed": ["childish", "confident", "bold", "shameless", "strange", "oblivious", "flamboyant", "impulsive", "noisy"],
@@ -4004,6 +4004,11 @@ class TalkScreen(Screens):
                 
             # Injuries, grieving and illnesses tags
             
+            if "you_pregnant" in tags and "pregnant" not in you.injuries:
+                continue
+            if "they_pregnant" in tags and "pregnant" not in cat.injuries:
+                continue
+            
             if any(i in ["you_ill", "you_injured", "you_grieving"] for i in tags):
                 ill_injured = False
 
@@ -4111,6 +4116,7 @@ class TalkScreen(Screens):
             if "dead_close" in talk[0]:                
                 dead_cat = str(Cat.all_cats.get(game.clan.starclan_cats[-1]).name)
                 text = [t1.replace("d_c", dead_cat) for t1 in talk[1]]
+                print(text)
             
             # Relationship conditions
             if you.ID in cat.relationships:
@@ -4139,8 +4145,7 @@ class TalkScreen(Screens):
             if "talk_dead" in talk[0]:
                 dead_cat = str(Cat.all_cats.get(choice(game.clan.starclan_cats)).name)
                 text = [t1.replace("d_c", dead_cat) for t1 in talk[1]]
-                texts_list.append(text)
-                continue
+            
             if "random_cat" in talk[0]:
                 random_cat = Cat.all_cats.get(choice(game.clan.clan_cats))
                 counter = 0
@@ -4154,6 +4159,7 @@ class TalkScreen(Screens):
                 continue
            
             texts_list.append(talk[1])
+            
         if not texts_list:
             resource_dir = "resources/dicts/lifegen_talk/"
             possible_texts = None
@@ -4201,10 +4207,12 @@ class TalkScreen(Screens):
         other_clan = choice(game.clan.all_clans)
         if other_clan:
             text = [t1.replace("o_c", str(other_clan.name)) for t1 in text]
-        lead = game.clan.leader.name
-        text = [t1.replace("l_n", str(lead)) for t1 in text]
-        dep = game.clan.deputy.name
-        text = [t1.replace("d_n", str(dep)) for t1 in text]
+        if game.clan.leader:
+            lead = game.clan.leader.name
+            text = [t1.replace("l_n", str(lead)) for t1 in text]
+        if game.clan.deputy:
+            dep = game.clan.deputy.name
+            text = [t1.replace("d_n", str(dep)) for t1 in text]
         if cat.mentor:
             mentor = Cat.all_cats.get(cat.mentor).name
             text = [t1.replace("tm_n", str(mentor)) for t1 in text]

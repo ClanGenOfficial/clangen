@@ -123,7 +123,7 @@
             "[t_c stares wistfully off into the distance at all the other cats around camp sharing tongues.]"
         ]
     ],
-        "introspective_kit_4": [
+    "introspective_kit_4": [
         [
             "kitten",
             "Introspective",
@@ -162,7 +162,7 @@
             "As far as I'm concerned, I'm on my own. I don't need you."
         ]
     ],
-       "assertivekit_31": [
+    "assertivekit_31": [
         [
             "Any",
             "assertive",
@@ -779,218 +779,7 @@
             "I feel braver when you're here."
         ]
     ],
-    "assertive_deadclose": [
-        [
-            "Any",
-            "assertive",
-            "brooding",
-            "unlawful",
-            "they_grieving",
-            "neutral",
-            "dislike",
-            "dead_close"
-        ],
-        [
-            "[t_c paces back and forth in front of the warrior's den, muttering to themselves and flexing their claws.]",
-            "They're gone, they're gone, they're gone ...",
-            "... Hey, what are you looking at, huh?",
-            "I don't have to take this fox-dung from you! Leave! Go find someone else to gawk at!",
-            "[As you leave, you hear t_c resume their muttering.]",
-            "... d_c, where are you?"
-        ]
-    ],
-    "assertive_deadclose1": [
-        [
-            "Any",
-            "medicine cat",
-            "medicine cat apprentice",
-            "assertive",
-            "cool",
-            "they_grieving",
-            "dead_close"
-        ],
-        [
-            "Hey, uh ...",
-            "You can talk to StarClan cats, right?",
-            "Have you, uh ... heard anything from d_c?",
-            "Sorry. That's probably a mouse-brained question. I know it doesn't work like that.",
-            "But, if you ever do hear from them ... tell them that, uh ...",
-            "I'm sorry. And I'll keep their nest warm. And they better be saving a spot for me up in StarClan, or else I'll have to come up there myself and teach them a lesson!",
-            "... Thanks."
-        ]
-    ],
-    "assertive_deadclose3": [
-        [
-            "Any",
-            "platonic_like",
-            "romantic_like",
-            "from_mate",
-            "from_parent",
-            "assertive",
-            "sweet",
-            "stable",
-            "they_grieving",
-            "dead_close"
-        ],
-        [
-            "... I can't believe d_c is really gone ...",
-            "I was supposed to keep them safe, I ...",
-            "I failed them. Don't even try to talk me out of it. I know I failed them.",
-            "StarClan, they must hate me ...",
-            "I need to go on a walk. Clear my head.",
-            "Don't follow after me, either, y_c, I ... I need to be alone."
-        ]
-    ],
-    "assertive_deadclose5": [
-        [
-            "Any",
-            "platonic_like",
-            "romantic_like",
-            "from_mate",
-            "from_parent",
-            "assertive",
-            "cool",
-            "silly",
-            "unlawful",
-            "introspective",
-            "they_grieving",
-            "dead_close"
-        ],
-        [
-            "It's clear out tonight ... lotta stars up there, huh?",
-            "D'you ... d'you think d_c might be up there?",
-            "I know it's mouse-brained, but ... sometimes, I can still feel them right next to me.",
-            "Which star do you think d_c is?",
-            "I think it's that one, over there. The brightest star in the whole sky."
-        ]
-    ],
-    "assertive_deadclose6": [
-        [
-            "Any",
-            "platonic_like",
-            "romantic_like",
-            "from_mate",
-            "from_parent",
-            "assertive",
-            "silly",
-            "they_grieving",
-            "dead_close"
-        ],
-        [
-            "Uh ... hey, y_c ... How's it going ...",
-            "I'm, uh ... I'm not, uh ... I ...",
-            "[t_c suddenly collapses into you, sobbing into your fur.]",
-            "I just miss d_c so much ..."
-        ]
-    ],
-    "assertive_deadclose_2": [
-        [
-            "Any",
-            "assertive",
-            "brooding",
-            "unlawful",
-            "they_grieving",
-            "neutral",
-            "dislike"
-        ],
-        [
-            "[You hear quiet sobbing coming from t_c's nest.]",
-            "*Sniffle* *Sob*",
-            "... AH! y_c! W-What are you -",
-            "Get out! Leave me alone!",
-            "Yes, I'm okay! I'm perfectly fine! Now leave, before I rake you a big, ugly scar!"
-        ]
-    ],
-    "assertivekitten_deadclose_5": [
-        [
-            "Any",
-            "assertive",
-            "they_grieving",
-            "dead_close"
-        ],
-        [
-            "Hmph. Everyone always tells me they're sorry, just so sorry for my loss. Next time someone says that to me, I'll claw their throat out.",
-            "I don't need anybody's pity, can't they see that?",
-            "I need ... I need, uh ...",
-            "... Honestly, I'm not really sure what I need.",
-            "I think I just need to hear d_c's laugh again.",
-            "That would set everything right."
-        ]
-    ],
-    "assertivekitten_deadclose_6": [
-        [
-            "Any",
-            "assertive",
-            "they_grieving",
-            "dead_close"
-        ],
-        [
-            "I'm strong. I can handle this, I - I should be able to handle this.",
-            "So why does it hurt so much?",
-            "Who knew that the worst pain I'd ever feel would be inflicted by d_c."
-        ]
-    ],
-    "assertive_yougrief1": [
-        [
-            "kitten",
-            "assertive",
-            "cool",
-            "brooding",
-            "dead_close"
-        ],
-        [
-            "[When you ask t_c what happened to d_c, and if you'll ever see them again, something on their face breaks.]",
-            "Ah ... Ah, kid, I'm so sorry ...",
-            "It ain't right, what happened to d_c ...",
-            "But, mark my words, you haven't seen the last of them. Though, it may be a while. They're up in StarClan now, with our warrior ancestors.",
-            "One day, you'll reunite again. But until then, just know they're up there watching over you, helping you grow strong and healthy.",
-            "Can you try to grow up strong and healthy for them?"
-        ]
-    ],
-    "assertive_yougrief2": [
-        [
-            "Any",
-            "assertive",
-            "stable",
-            "upstanding",
-            "neutral",
-            "you_grieving",
-            "dead_close"
-        ],
-        [
-            "Hey, uh ... I'll say an extra prayer for d_c tonight.",
-            "Try to take it easy, m'kay? They wouldn't want their death to keep you from living.",
-            "I'll bring you back some prey later from the hunting patrol."
-        ]
-    ],
-    "assertive_yougrief3": [
-        [
-            "Any",
-            "assertive",
-            "unabashed",
-            "stable",
-            "you_grieving",
-            "dead_close"
-        ],
-        [
-            "I'm so sorry for your loss, y_c ...",
-            "d_c was a really special cat."
-        ]
-    ],
-    "assertive_jealous1": [
-        [
-            "Any",
-            "assertive",
-            "upstanding",
-            "neutral",
-            "you_grieving",
-            "dead_close"
-        ],
-        [
-            "You and d_c were close, right? Man, it's so terrible ...",
-            "This is why c_nClan needs better defenses. To keep anything like this from happening again."
-        ]
-    ],
+    
     "assertive_jealous1_2": [
         [
             "Any",
@@ -1021,20 +810,6 @@
             "C'mon, y_c, you gotta eat something.",
             "You're the strongest cat I know!",
             "You can't let this take you out. I won't let you."
-        ]
-    ],
-    "assertive_jealous1_4": [
-        [
-            "Any",
-            "assertive",
-            "you_grieving",
-            "platonic_like",
-            "dead_close"
-        ],
-        [
-            "It wasn't your fault, y_c. You know that, don't you?",
-            "Dwelling on it won't make it any better.",
-            "No matter how hard you try, your guilt won't bring d_c back. They wouldn't want this to keep you from living."
         ]
     ],
     "assertive_insult": [
@@ -2353,6 +2128,296 @@
             "Why hello there, little flower!",
             "Now now, you've gotta stay near your nest. Those big stinky cats might not see you there!",
             "There we are! Ah- I've been meaning to bring this to you anyway. It's a little bundle of moss you can cuddle with!"
+        ]
+    ],
+    "you_pregnant1": [
+        [
+            "any",
+            "sweet",
+            "stable",
+            "you_pregnant"
+        ],
+        [
+            "Your kits are gonna be the cutest, I already know it! I can't help but be excited for the tiny little paws running around the camp soon.",
+            "You'll let me visit, won't you?"
+        ]
+    ],
+    "you_pregnant2": [
+        [
+            "any",
+            "you_pregnant",
+            "sweet",
+            "stable"
+        ],
+        [
+            "I can't express how overjoyed I am for you!",
+            "If your kits turn out to be anything like you, they will be a blessing to the Clan."
+        ]
+    ],
+    "you_pregnant3": [
+        [
+            "any",
+            "you_pregnant",
+            "sweet",
+            "stable"
+        ],
+        [
+            "I've noticed you've been resting a lot more lately. And rightfully so!",
+            "Remember to take care of yourself. If you need anything at all, let me know, okay?"
+        ]
+    ],
+    "you_pregnant4": [
+        [
+            "any",
+            "you_pregnant",
+            "sweet",
+            "stable"
+        ],
+        [
+            "It warms my heart to see the glow in your eyes. I know you'll be an amazing parent. And if ever the nights get long or you feel weary, remember I'm just a tail-length away."
+        ]
+    ],
+    "you_pregnant5": [
+        [
+            "any",
+            "you_pregnant",
+            "assertive",
+            "cool"
+        ],
+        [
+            "Can I just say, y_c, you are rocking this whole pregnancy thing!",
+            "Seriously, I have never seen a cat handle it with as much grace and courage as you.",
+            "You just wait, I can already tell your kits are going to be something special, and if they're anything like their parent, they're going to take the world by storm! You remember that, alright?"
+        ]
+    ],
+    "you_pregnant6": [
+        [
+            "any",
+            "you_pregnant",
+            "assertive",
+            "cool",
+            "platonic_like"
+        ],
+        [
+            "Listen here, y_c, I can tell you one thing for sure; those kits are going to grow up in a clan where they are LOVED!",
+            "You're going to be phenomenal, and I'll be right here cheering you on, loud and proud! You got this, and never let anyone tell you otherwise!"
+        ]
+    ],
+    "you_pregnant7": [
+        [
+            "any",
+            "you_pregnant",
+            "assertive",
+            "cool",
+            "platonic_like"
+        ],
+        [
+            "Oh, y_c, you won't believe how thrilled I am to meet those little furballs!",
+            "You're going to be absolutely fantastic, no question about it. You just watch, those kits will grow up to be the fiercest warriors this clan has ever seen!"
+        ]
+    ],
+    "you_pregnant8": [
+        [
+            "any",
+            "you_pregnant",
+            "brooding"
+        ],
+        [
+            "So I heard about your situation. Kits... they change everything.",
+            "It's not going to be easy, y_c."
+        ]
+    ],
+    "you_pregnant9": [
+        [
+            "any",
+            "you_pregnant",
+            "brooding",
+            "introspective"
+        ],
+        [
+            "Hmm... So you're expecting. I... well, I guess it means more mouths to feed, more noise in the camp.",
+            "But maybe, just maybe, they might bring... something. I don't know, a kind of fresh perspective to the clan, maybe."
+        ]
+    ],
+    "you_pregnant10": [
+        [
+            "any",
+            "you_pregnant",
+            "brooding"
+        ],
+        [
+            "You're going to be a parent... I can't say I envy you. The world is full of dangers, uncertainties.",
+            "Protecting them, teaching them... it's a heavy burden to carry. Best of luck, y_c."
+        ]
+    ],
+    "you_pregnant11": [
+        [
+            "any",
+            "you_pregnant",
+            "upstanding",
+            "dislike",
+            "introspective"
+        ],
+        [
+            "Well, it's quite the news, y_c. I hope for the clan's sake that your kits will grow up to be more responsible than their parent."
+        ]
+    ],
+    "you_pregnant12": [
+        [
+            "any",
+            "you_pregnant",
+            "upstanding",
+            "introspective"
+        ],
+        [
+            "I trust you are aware of the responsibilities of becoming a parent, y_c. It's more than just mossball and games.",
+            "However, I trust you will rise to the occasion."
+        ]
+    ],
+    "you_pregnant13": [
+        [
+            "any",
+            "you_pregnant",
+            "upstanding",
+            "introspective"
+        ],
+        [
+            "So, y_c, I see the clan is set to welcome new kits soon. I must admit, it's always a blessing when new life joins the clan.",
+            "Though I've had my reservations about you in the past, I sincerely hope you understand the gravity of the responsibility that lies ahead.",
+            "Raising kits in the traditions of our clan is important, and I'll be watching to ensure you uphold those values. This is about more than just you now."
+        ]
+    ],
+    "you_pregnant14": [
+        [
+            "any",
+            "you_pregnant",
+            "neurotic"
+        ],
+        [
+            "Oh, y_c, I just heard the news about your pregnancy. That's such a big responsibility, isn't it? I mean, I hope everything goes well for you.",
+            "I'd be a mess in your paws, but I'm sure StarClan will watch over you."
+        ]
+    ],
+    "you_pregnant15": [
+        [
+            "any",
+            "you_pregnant",
+            "neurotic"
+        ],
+        [
+            "y_c, every time I think about the challenges of raising kits, it sends chills down my spine. The worries, the dangers, the what-ifs... but you seem so strong and capable. I hope I can learn from your courage.",
+            "If you ever need anything, um, I'll try my best."
+        ]
+    ],
+    "you_pregnant16": [
+        [
+            "any",
+            "you_pregnant",
+            "neurotic"
+        ],
+        [
+            "Oh, y_c, I heard the news about your upcoming litter. That's... that's really exciting, isn't it? I mean, kits are such a huge responsibility. Are you... are you feeling okay about it? I'd be so nervous. If you need someone to talk to or, you know, share your worries with, I'm here."
+        ]
+    ],
+    "you_pregnant17": [
+        [
+            "any",
+            "you_pregnant",
+            "neurotic"
+        ],
+        [
+            "I can't even imagine what it's like to be expecting kits. It's such a big change. Do you think the clan will be supportive? I mean, of course, they will, but sometimes, you know, cats can talk. But you're strong and wonderful. I just hope everything goes smoothly for you."
+        ]
+    ],
+    "you_pregnant18": [
+        [
+            "any",
+            "you_pregnant",
+            "neurotic",
+            "from_parent"
+        ],
+        [
+            "StarClan, y_c, you must be feeling so many emotions right now!",
+            "The world feels so vast, and there's so much to consider. I was a bundle of nerves before you were born. But you have a strong spirit, and you're surrounded by a loving clan. I just hope you're taking care of yourself."
+        ]
+    ],
+    "you_pregnant19": [
+        [
+            "any",
+            "you_pregnant",
+            "silly",
+            "unabashed"
+        ],
+        [
+            "Oh my goodness! Have you eaten too much freshkill or something? Your belly is huge!",
+            "Hehe, just kidding. But seriously, how exciting! Soon you'll have your own mini-yous running around."
+        ]
+    ],
+    "you_pregnant20": [
+        [
+            "any",
+            "you_pregnant",
+            "silly",
+            "random_cat"
+        ],
+        [
+            "I bet the first pick of the freshkill pile that you'll have three kits!",
+            "r_c thinks there'll be more though. Hehe, what do you think?"
+        ]
+    ],
+    "you_pregnant21": [
+        [
+            "any",
+            "you_pregnant",
+            "silly"
+        ],
+        [
+            "Oh, wowie whiskers, y_c! You're about to be a parent, can you believe it?",
+            "I bet your kits will have your... uh, your incredibly dazzling... whiskers! Yeah!",
+            "I can already imagine the little bundle of joy bouncing around, causing mayhem, and... inheriting my title as the funniest cat around, of course!"
+        ]
+    ],
+    "you_pregnant22": [
+        [
+            "any",
+            "you_pregnant",
+            "silly",
+            "unabashed"
+        ],
+        [
+            "I heard that when you're expecting, you have weird cravings. Have you ever felt like eating... say, a fish dipped in honey? No? Just a silly thought! But if you do, let me know. We can make it a new clan delicacy!"
+        ]
+    ],
+    "you_pregnant23": [
+        [
+            "any",
+            "you_pregnant",
+            "silly"
+        ],
+        [
+            "Alright, y_c, serious question time! Do you think your kits will prefer playing with moss-balls or feathers? I'm placing bets. Either way, I'm crafting the ultimate play-kit with all the fun stuff. Just wait and see!"
+        ]
+    ],
+    "you_pregnant24": [
+        [
+            "any",
+            "you_pregnant",
+            "unlawful"
+        ],
+        [
+            "Oh, look at you, settling down to have kits.",
+            "I bet the leadership is pleased, huh? But let me tell you something, y_c, bringing new life into this twisted world of hierarchical nonsense isn't as rosy as they make it out to be. Don't let them control you or your kits.",
+            "Raise them to think for themselves, to question the so-called 'rules' that bind us."
+        ]
+    ],
+    "you_pregnant25": [
+        [
+            "any",
+            "you_pregnant",
+            "unlawful"
+        ],
+        [
+            "Hmph... expecting kits I see? Better keep those rascals under control."
         ]
     ]
 }

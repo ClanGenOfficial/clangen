@@ -1,0 +1,228 @@
+{
+    "assertive_deadclose": [
+        [
+            "Any",
+            "assertive",
+            "brooding",
+            "unlawful",
+            "they_grieving",
+            "neutral",
+            "dislike",
+            "dead_close"
+        ],
+        [
+            "[t_c paces back and forth in front of the warrior's den, muttering to themselves and flexing their claws.]",
+            "They're gone, they're gone, they're gone ...",
+            "... Hey, what are you looking at, huh?",
+            "I don't have to take this fox-dung from you! Leave! Go find someone else to gawk at!",
+            "[As you leave, you hear t_c resume their muttering.]",
+            "... d_c, where are you?"
+        ]
+    ],
+    "assertive_deadclose1": [
+        [
+            "Any",
+            "medicine cat",
+            "medicine cat apprentice",
+            "assertive",
+            "cool",
+            "they_grieving",
+            "dead_close"
+        ],
+        [
+            "Hey, uh ...",
+            "You can talk to StarClan cats, right?",
+            "Have you, uh ... heard anything from d_c?",
+            "Sorry. That's probably a mouse-brained question. I know it doesn't work like that.",
+            "But, if you ever do hear from them ... tell them that, uh ...",
+            "I'm sorry. And I'll keep their nest warm. And they better be saving a spot for me up in StarClan, or else I'll have to come up there myself and teach them a lesson!",
+            "... Thanks."
+        ]
+    ],
+    "assertive_deadclose3": [
+        [
+            "Any",
+            "platonic_like",
+            "romantic_like",
+            "from_mate",
+            "from_parent",
+            "assertive",
+            "sweet",
+            "stable",
+            "they_grieving",
+            "dead_close"
+        ],
+        [
+            "... I can't believe d_c is really gone ...",
+            "I was supposed to keep them safe, I ...",
+            "I failed them. Don't even try to talk me out of it. I know I failed them.",
+            "StarClan, they must hate me ...",
+            "I need to go on a walk. Clear my head.",
+            "Don't follow after me, either, y_c, I ... I need to be alone."
+        ]
+    ],
+    "assertive_deadclose5": [
+        [
+            "Any",
+            "platonic_like",
+            "romantic_like",
+            "from_mate",
+            "from_parent",
+            "assertive",
+            "cool",
+            "silly",
+            "unlawful",
+            "introspective",
+            "they_grieving",
+            "dead_close"
+        ],
+        [
+            "It's clear out tonight ... lotta stars up there, huh?",
+            "D'you ... d'you think d_c might be up there?",
+            "I know it's mouse-brained, but ... sometimes, I can still feel them right next to me.",
+            "Which star do you think d_c is?",
+            "I think it's that one, over there. The brightest star in the whole sky."
+        ]
+    ],
+    "assertive_deadclose6": [
+        [
+            "Any",
+            "platonic_like",
+            "romantic_like",
+            "from_mate",
+            "from_parent",
+            "assertive",
+            "silly",
+            "they_grieving",
+            "dead_close"
+        ],
+        [
+            "Uh ... hey, y_c ... How's it going ...",
+            "I'm, uh ... I'm not, uh ... I ...",
+            "[t_c suddenly collapses into you, sobbing into your fur.]",
+            "I just miss d_c so much ..."
+        ]
+    ],
+    "assertive_deadclose_2": [
+        [
+            "Any",
+            "assertive",
+            "brooding",
+            "unlawful",
+            "they_grieving",
+            "neutral",
+            "dislike"
+        ],
+        [
+            "[You hear quiet sobbing coming from t_c's nest.]",
+            "*Sniffle* *Sob*",
+            "... AH! y_c! W-What are you -",
+            "Get out! Leave me alone!",
+            "Yes, I'm okay! I'm perfectly fine! Now leave, before I rake you a big, ugly scar!"
+        ]
+    ],
+    "assertivekitten_deadclose_5": [
+        [
+            "Any",
+            "assertive",
+            "they_grieving",
+            "dead_close"
+        ],
+        [
+            "Hmph. Everyone always tells me they're sorry, just so sorry for my loss. Next time someone says that to me, I'll claw their throat out.",
+            "I don't need anybody's pity, can't they see that?",
+            "I need ... I need, uh ...",
+            "... Honestly, I'm not really sure what I need.",
+            "I think I just need to hear d_c's laugh again.",
+            "That would set everything right."
+        ]
+    ],
+    "assertivekitten_deadclose_6": [
+        [
+            "Any",
+            "assertive",
+            "they_grieving",
+            "dead_close"
+        ],
+        [
+            "I'm strong. I can handle this, I - I should be able to handle this.",
+            "So why does it hurt so much?",
+            "Who knew that the worst pain I'd ever feel would be inflicted by d_c."
+        ]
+    ],
+    "assertive_yougrief1": [
+        [
+            "kitten",
+            "assertive",
+            "cool",
+            "brooding",
+            "dead_close"
+        ],
+        [
+            "[When you ask t_c what happened to d_c, and if you'll ever see them again, something on their face breaks.]",
+            "Ah ... Ah, kid, I'm so sorry ...",
+            "It ain't right, what happened to d_c ...",
+            "But, mark my words, you haven't seen the last of them. Though, it may be a while. They're up in StarClan now, with our warrior ancestors.",
+            "One day, you'll reunite again. But until then, just know they're up there watching over you, helping you grow strong and healthy.",
+            "Can you try to grow up strong and healthy for them?"
+        ]
+    ],
+    "assertive_yougrief2": [
+        [
+            "Any",
+            "assertive",
+            "stable",
+            "upstanding",
+            "neutral",
+            "you_grieving",
+            "dead_close"
+        ],
+        [
+            "Hey, uh ... I'll say an extra prayer for d_c tonight.",
+            "Try to take it easy, m'kay? They wouldn't want their death to keep you from living.",
+            "I'll bring you back some prey later from the hunting patrol."
+        ]
+    ],
+    "assertive_yougrief3": [
+        [
+            "Any",
+            "assertive",
+            "unabashed",
+            "stable",
+            "you_grieving",
+            "dead_close"
+        ],
+        [
+            "I'm so sorry for your loss, y_c ...",
+            "d_c was a really special cat."
+        ]
+    ],
+    "assertive_jealous1": [
+        [
+            "Any",
+            "assertive",
+            "upstanding",
+            "neutral",
+            "you_grieving",
+            "dead_close"
+        ],
+        [
+            "You and d_c were close, right? Man, it's so terrible ...",
+            "This is why c_nClan needs better defenses. To keep anything like this from happening again."
+        ]
+    ],
+    "assertive_jealous1_4": [
+        [
+            "Any",
+            "assertive",
+            "you_grieving",
+            "platonic_like",
+            "dead_close"
+        ],
+        [
+            "It wasn't your fault, y_c. You know that, don't you?",
+            "Dwelling on it won't make it any better.",
+            "No matter how hard you try, your guilt won't bring d_c back. They wouldn't want this to keep you from living."
+        ]
+    ]
+}
