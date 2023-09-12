@@ -73,6 +73,23 @@
             "c_nClan's territory spans thousands of tail-lengths. It's easy to get lost if you wander too far."
         ]
     ],
+    "assertive_yougrief1": [
+        [
+            "kitten",
+            "assertive",
+            "cool",
+            "brooding",
+            "dead_close"
+        ],
+        [
+            "[When you ask t_c what happened to d_c, and if you'll ever see them again, something on their face breaks.]",
+            "Ah ... Ah, kid, I'm so sorry ...",
+            "It ain't right, what happened to d_c ...",
+            "But, mark my words, you haven't seen the last of them. Though, it may be a while. They're up in StarClan now, with our warrior ancestors.",
+            "One day, you'll reunite again. But until then, just know they're up there watching over you, helping you grow strong and healthy.",
+            "Can you try to grow up strong and healthy for them?"
+        ]
+    ],
     "you_newborn": [
         [
             "newborn",

@@ -151,6 +151,46 @@
             "But you can, and that's admirable!"
         ]
     ],
+    "assertive_deadclose": [
+        [
+            "Any",
+            "assertive",
+            "brooding",
+            "unlawful",
+            "they_grieving",
+            "neutral",
+            "dislike",
+            "dead_close"
+        ],
+        [
+            "[t_c paces back and forth in front of the warrior's den, muttering to themselves and flexing their claws.]",
+            "They're gone, they're gone, they're gone ...",
+            "... Hey, what are you looking at, huh?",
+            "I don't have to take this fox-dung from you! Leave! Go find someone else to gawk at!",
+            "[As you leave, you hear t_c resume their muttering.]",
+            "... d_c, where are you?"
+        ]
+    ],
+    "assertive_deadclose1": [
+        [
+            "Any",
+            "medicine cat",
+            "medicine cat apprentice",
+            "assertive",
+            "cool",
+            "they_grieving",
+            "dead_close"
+        ],
+        [
+            "Hey, uh ...",
+            "You can talk to StarClan cats, right?",
+            "Have you, uh ... heard anything from d_c?",
+            "Sorry. That's probably a mouse-brained question. I know it doesn't work like that.",
+            "But, if you ever do hear from them ... tell them that, uh ...",
+            "I'm sorry. And I'll keep their nest warm. And they better be saving a spot for me up in StarClan, or else I'll have to come up there myself and teach them a lesson!",
+            "... Thanks."
+        ]
+    ],
     "warrior_1d6": [
         [
             "kitten",
