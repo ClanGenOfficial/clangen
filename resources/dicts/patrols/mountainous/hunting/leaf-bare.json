@@ -1952,7 +1952,7 @@
                 "history_text": {
                     "scar": "m_c mistook a buzzard for a vulture and got pecked",
                     "reg_death": "m_c was scared off a cliff by a large bird.",
-                    "lead_death": "after a run in with a large bird of prey, falling to their death off of a high cliff"
+                    "lead_death": "fell to {PRONOUN/m_c/poss} death off of a high cliff after a run in with a large bird of prey"
                 }
             },
             {
@@ -1969,7 +1969,7 @@
                 "history_text": {
                     "scar": "m_c mistook a buzzard for a vulture and got pecked",
                     "reg_death": "m_c was scared off a cliff by a large bird.",
-                    "lead_death": "after a run in with a large bird of prey, falling to their death off of a high cliff"
+                    "lead_death": "fell to {PRONOUN/m_c/poss} death off of a high cliff after a run in with a large bird of prey"
                 }
             },
             {
@@ -1982,7 +1982,7 @@
                 "history_text": {
                     "scar": "m_c mistook a buzzard for a vulture and got pecked",
                     "reg_death": "m_c was scared off a cliff by a large bird.",
-                    "lead_death": "after a run in with a large bird of prey, falling to their death off of a high cliff"
+                    "lead_death": "fell to {PRONOUN/m_c/poss} death off of a high cliff after a run in with a large bird of prey"
                 }
             },
             {
@@ -2001,7 +2001,7 @@
                 "history_text": {
                     "scar": "m_c mistook a buzzard for a vulture and got pecked",
                     "reg_death": "m_c was scared off a cliff by a large bird.",
-                    "lead_death": "after a run in with a large bird of prey, falling to their death off of a high cliff"
+                    "lead_death": "fell to {PRONOUN/m_c/poss} death off of a high cliff after a run in with a large bird of prey"
                 }
             }
         ]
