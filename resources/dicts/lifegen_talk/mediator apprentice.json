@@ -224,7 +224,7 @@
         ],
         [
             "[You're sitting staring at a piece of fresh kill, when you feel something nudge into your shoulder, you turn your head to see t_c.]",
-            "y_c? ... are you okay?",
+            "y_c? ... Are you okay?",
             "You look a little... out of it. Are you feeling unwell? Do you want me to take you over to the medicine den?",
             "... You heard a cat you have a crush on flirting with someone else? Oh, y_c. I'm so, so sorry.",
             "I think you're a wonderful cat, anyone would be truly lucky to be with you. If they can't see how great you are, that's their loss.",
@@ -256,7 +256,7 @@
         ],
         [
             "... y_c? Is everyone okay? I'm surprised you came out of your way to find me. Is there anything I can help with?",
-            "I'm not busy at all. I'm always here to lend an ear to any member of my clan, from the Leader to the littlest kit, y_c. We can go to the edge of the clearing if you wish to speak privately, pretend we're sharing tongues.",
+            "I'm not busy at all. I'm always here to lend an ear to any member of my clan, from the leader to the littlest kit. We can go to the edge of the clearing if you wish to speak privately, pretend we're sharing tongues.",
             "If it makes you feel any better, you're teaching me as I'm listening. You're allowing me to know what kind of problems everyone has, so I'm more able to help, and so I can suggest things to make everyone's day better.",
             "'The more I hear, the more I know. The more I know, the further I go.' If I'm making a phrase about it.",
             "That's advice I can give to you, no matter what. You'll only know if you try it, y_c.",
@@ -271,7 +271,7 @@
         [
             "[t_c is pacing back and forth near the camp entrance.]",
             "... Huh? Oh hi there. Sorry, I'll get out of the way.",
-            "... No, no. I'm okay. Just preparing to go to o_cClan, my mentor asked me to go discuss with their mediator about an agreement we've been having about borders.",
+            "... No, no. I'm okay. Just preparing to go to o_cClan. My mentor asked me to go discuss with their mediator about an agreement we've been having about borders.",
             "I know they sent me, because they know I'm completely capable, and o_cClan is mostly willing to cooperate in this manner, but I'm still worried about it.",
             "I just need to do it. I need to go do my job as a Mediator, and go solve this problem. Take the sparrow by the wings, so to speak.",
             "Standing here wearing my paws into the floor is only giving me sore paw pads and a future trip to the medicine den. I'll see you later, y_c."
@@ -285,7 +285,7 @@
         [
             "[t_c is sat watching two of your clanmates argue with each other, with fascination]",
             "[One of them calls the other a half-clan foxheart. Quite brutal. Why is t_c not saying anything?]",
-            "[... A giant Jaybird flies out of a tree just behind the arguing cats.]",
+            "[... A giant jaybird flies out of a tree just behind the arguing cats.]",
             "[t_c seems to come to awareness of what's going on around them, and they rush over to deal with the yelling cats.]"
         ]
     ],
@@ -341,7 +341,7 @@
         ],
         [
             "Er, sorry, y_c. I can't chat right now ...",
-            "tm_n really needs me to mediate this argument right now, and I kinda actually have to focus.",
+            "tm_n really needs me to mediate this argument, and I kinda actually have to focus.",
             "I'll come and find you as soon as I'm free, though, okay?"
         ]
     ],
@@ -519,7 +519,7 @@
             "assertive"
         ],
         [
-            "Ugh, it's sooo boring today. Everything's way too calm and peaceful \u00e2\u20ac\u201c How am I supposed to do my job?",
+            "Ugh, it's sooo boring today. Everything's way too calm and peaceful. How am I supposed to do my job?",
             "Hey, maybe we could get into a fight, and then I could mediate it? C'mon, take a jab at me! What's something I do that's always annoyed you?",
             "But don't get too cocky. I'm armed and dangerous with conflict resolution skills! Haha!"
         ]
@@ -674,7 +674,7 @@
         [
             "Guess who just got told to go to the Dark Forest ... for the third time today.",
             "Tell me you're having an easier time than me, y_c. Helping others all day can be the best thing in the world, but other times, it's just awful.",
-            "Still, the feeling I get when I successfully patch things up between two siblings, or help an elder reconnect with their kits ... it makes it all worth it."
+            "Still, the feeling I get when I successfully patch things up between two siblings, or help an elder reconnect with their kits ... it makes it all worth it!"
         ]
     ],
     "assertivemediatorapp_10": [
