@@ -584,20 +584,7 @@
             "Better start gathering moss! I know it's your favorite."
         ]
     ],
-    "assertive_rom4": [
-        [
-            "Any",
-            "assertive",
-            "unabashed",
-            "romantic_like"
-        ],
-        [
-            "What's that? One of the kits told you your ears are too big?",
-            "What a load of fox-dung! Those kits don't have functioning brains. Besides, I like your ears! I think it's cute, how big they are!",
-            "Er ... not cute in that way, mind you. Just, y'know ... ahem ...",
-            "[The blush on t_c's cheeks confirms that, yes, they did mean it in that way. And they're doing a terrible job of hiding it.]"
-        ]
-    ],
+    
     "assertive_elder": [
         [
             "Any",
