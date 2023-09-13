@@ -557,7 +557,7 @@
             "welcoming",
             "neutral"
         ],
-        "event_text": "m_c finds an abandoned litter, and decides to adopt them as {PRONOUN/m_c/subject} own.",
+        "event_text": "m_c finds an abandoned litter, and decides to adopt them as {PRONOUN/m_c/poss} own.",
         "loner": true,
         "litter": true,
         "backstory": [
