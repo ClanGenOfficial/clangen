@@ -21,6 +21,23 @@
             "You're right, y_c. You're always right. Thank you."
         ]
     ],
+    "assertive_respect": [
+         [
+            "no_kit",
+            "assertive",
+            "cool",
+            "silly",
+            "upstanding",
+            "respect",
+            "platonic_love"
+        ],
+        [
+            "Get up, y_c! We gotta go on a special patrol to check the o_cClan border!",
+            "Of course I'm serious, mouse-brain! Are you really gonna make me break it down for you?",
+            "The leader gave me this assignment, and told me to pick the cat in the clan I trust the most to accompany me on it. Lo and behold, that's you!",
+            "Now, c'mon, lazybones! We've got a long walk ahead of us!"
+        ]
+    ],
     "dep_321": [
         [
             "Any"
