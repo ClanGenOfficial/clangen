@@ -1028,7 +1028,7 @@ def event_text_adjust2(Cat, text, cat, other_cat=None,
                       clan=None,
                       murder_reveal=None,
                       victim=None):
-    if "r_w" in text:
+    if "r_w" in text and game.clan:
         random_warrior = Cat.fetch_cat(choice(game.clan.clan_cats))
         random_warrior2 = None
         counter = 0

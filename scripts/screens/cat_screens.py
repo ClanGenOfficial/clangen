@@ -4222,12 +4222,20 @@ class TalkScreen(Screens):
         if you.mentor:
             mentor = Cat.all_cats.get(you.mentor).name
             text = [t1.replace("m_n", str(mentor)) for t1 in text]
-        try:
-            dead_cat = Cat.all_cats.get(cat.illnesses['grief stricken'].get("grief_cat"))
-            text = [t1.replace("d_c", str(dead_cat.name)) for t1 in text]  
-        except:
-            dead_cat = str(Cat.all_cats.get(game.clan.starclan_cats[-1]).name)
-            text = [t1.replace("d_c", dead_cat) for t1 in text]      
+        if "grief stricken" in cat.illnesses:
+            try:
+                dead_cat = Cat.all_cats.get(cat.illnesses['grief stricken'].get("grief_cat"))
+                text = [t1.replace("d_c", str(dead_cat.name)) for t1 in text]  
+            except:
+                dead_cat = str(Cat.all_cats.get(game.clan.starclan_cats[-1]).name)
+                text = [t1.replace("d_c", dead_cat) for t1 in text]    
+        elif "grief stricken" in you.illnesses:
+            try:
+                dead_cat = Cat.all_cats.get(you.illnesses['grief stricken'].get("grief_cat"))
+                text = [t1.replace("d_c", str(dead_cat.name)) for t1 in text]  
+            except:
+                dead_cat = str(Cat.all_cats.get(game.clan.starclan_cats[-1]).name)
+                text = [t1.replace("d_c", dead_cat) for t1 in text]    
     
         return text
         
