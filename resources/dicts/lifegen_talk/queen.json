@@ -246,7 +246,8 @@
             "neurotic",
             "kitten",
             "from_adopted_kit",
-            "from_kit"
+            "from_kit",
+            "any"
         ],
         [
             "Ugh, StarClan, would you leave me alone?",
@@ -259,7 +260,8 @@
             "platonic_like",
             "sweet",
             "upstanding",
-            "stable"
+            "stable",
+            "any"
         ],
         [
             "Sorry, y_c! No time to talk right now, I just got a task from d_n.",

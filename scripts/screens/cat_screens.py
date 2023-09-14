@@ -4012,29 +4012,28 @@ class TalkScreen(Screens):
             if "they_pregnant" in tags and "pregnant" not in cat.injuries:
                 continue
             
-            if any(i in ["you_ill", "you_injured", "you_grieving"] for i in tags):
+            if "grief stricken" not in you.illnesses and "you_grieving" in tags:
+                continue
+            
+            if any(i in ["you_ill", "you_injured"] for i in tags):
                 ill_injured = False
 
                 if you.is_ill() and "you_ill" in tags:
                     ill_injured = True
                 if you.is_injured() and "you_injured" in tags:
                     ill_injured = True
-                if "grief stricken" in you.illnesses and "you_grieving" in tags:
-                    ill_injured = True
                 
                 if not ill_injured:
                     continue 
             
-            if any(i in ["they_ill", "they_injured", "they_grieving"] for i in tags):
+            if any(i in ["they_ill", "they_injured"] for i in tags):
                 ill_injured = False
                 
                 if cat.is_ill() and "they_ill" in tags:
                     ill_injured = True
                 if cat.is_injured() and "they_injured" in tags:
                     ill_injured = True
-                if "grief stricken" in cat.illnesses and "they_grieving" in tags:
-                    ill_injured = True
-                    
+
                 if not ill_injured:
                     continue 
             
@@ -4115,11 +4114,7 @@ class TalkScreen(Screens):
             if "war" in tags:
                 if game.clan.war.get("at_war", False):
                     continue
-            
-            if "dead_close" in talk[0]:                
-                dead_cat = str(Cat.all_cats.get(game.clan.starclan_cats[-1]).name)
-                text = [t1.replace("d_c", dead_cat) for t1 in talk[1]]
-                print(text)
+        
             
             # Relationship conditions
             if you.ID in cat.relationships:
@@ -4222,9 +4217,9 @@ class TalkScreen(Screens):
         if you.mentor:
             mentor = Cat.all_cats.get(you.mentor).name
             text = [t1.replace("m_n", str(mentor)) for t1 in text]
-    
-            
-            
+        if "dead_close" in talk[0]:                
+            dead_cat = str(Cat.all_cats.get(game.clan.starclan_cats[-1]).name)
+            text = [t1.replace("d_c", dead_cat) for t1 in text]           
         return text
         
         
@@ -4433,11 +4428,6 @@ class InsultScreen(Screens):
                         continue
             if "newborn" in talk[0]:
                 if game.clan.your_cat.moons != 0:
-                    continue
-            if "dead_close" in talk[0]:
-                if not game.clan.your_cat.parent1:
-                    continue
-                elif not Cat.all_cats.get(game.clan.your_cat.parent1).dead or Cat.all_cats.get(game.clan.your_cat.parent1).outside:
                     continue
             if game.clan.your_cat.ID in cat.relationships:
                 if cat.relationships[game.clan.your_cat.ID].dislike < 50 and 'hate' in talk[0]:
