@@ -26,6 +26,19 @@
         "[The blush on t_c's cheeks confirms that, yes, they did mean it in that way. And they're doing a terrible job of hiding it.]"
     ]
     ],
+"assertive_love": [
+    [
+        "Any",
+        "assertive",
+        "brooding",
+        "platonic_love"
+    ],
+    [
+        "I love you, y_c.",
+        "And ... I'm sorry if I don't say it enough, either.",
+        "Without you, I don't know what I'd do."
+    ]
+    ],
     "assertive_dislike": [
         [
             "Any",
