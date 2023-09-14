@@ -3950,7 +3950,9 @@ class TalkScreen(Screens):
             
             if "they_grieving" not in tags and "grief stricken" in cat.illnesses:
                 continue
-        
+            if "they_grieving" in tags and "grief stricken" not in cat.illnesses:
+                continue
+            
             # Cluster tags
             if any(i in self.get_cluster_list() for i in tags):
                 if cluster1 not in tags and cluster2 not in tags:

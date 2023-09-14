@@ -193,8 +193,8 @@ class Events:
             if not med_fullfilled:
                 string = f"{game.clan.name}Clan does not have enough healthy medicine cats! Cats will be sick/hurt " \
                          f"for longer and have a higher chance of dying. "
-                game.cur_events_list.insert(0, Single_Event(string, "health"))                
-        
+                game.cur_events_list.insert(0, Single_Event(string, "health"))
+                
         new_list = []
         other_list = []
         for i in game.cur_events_list:
