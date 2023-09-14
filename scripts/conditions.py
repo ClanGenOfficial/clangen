@@ -91,7 +91,8 @@ class Illness:
                  medicine_mortality,
                  risks,
                  herbs=None,
-                 event_triggered=False):
+                 event_triggered=False,
+                 grief_cat=None):
         self.name = name
         self.severity = severity
         self.mortality = int(mortality)
@@ -105,6 +106,7 @@ class Illness:
 
         self.current_duration = duration
         self.current_mortality = mortality
+        self.grief_cat = grief_cat
 
         amount_per_med = get_amount_cat_for_one_medic(game.clan)
         if medical_cats_condition_fulfilled(game.cat_class.all_cats.values(),

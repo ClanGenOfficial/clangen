@@ -688,10 +688,11 @@ class ProfileScreen(Screens):
                     object_id="#talk_button",
                     tool_tip_text="Talk to this Cat", manager=MANAGER
                 )
-                if self.the_cat.talked_to:
-                    self.profile_elements["talk"].disable()
-                else:
-                    self.profile_elements["talk"].enable()
+                self.profile_elements["talk"].enable()
+                # if self.the_cat.talked_to:
+                #     self.profile_elements["talk"].disable()
+                # else:
+                #     self.profile_elements["talk"].enable()
             elif not self.the_cat.dead and not self.the_cat.outside and self.the_cat.status in ['leader', 'mediator', 'mediator apprentice']:
                 self.profile_elements["talk"] = UIImageButton(scale(pygame.Rect(
                     (662, 220), (68, 68))),
@@ -699,10 +700,12 @@ class ProfileScreen(Screens):
                     object_id="#talk_button",
                     tool_tip_text="Talk to this Cat", manager=MANAGER
                 )
-                if self.the_cat.talked_to:
-                    self.profile_elements["talk"].disable()
-                else:
-                    self.profile_elements["talk"].enable()
+                self.profile_elements["talk"].enable()
+
+                # if self.the_cat.talked_to:
+                #     self.profile_elements["talk"].disable()
+                # else:
+                #     self.profile_elements["talk"].enable()
         if self.the_cat.ID != game.clan.your_cat.ID and not self.the_cat.dead and not self.the_cat.outside and not game.clan.your_cat.dead and not game.clan.your_cat.outside and not game.clan.your_cat.moons < 0:    
             if not self.the_cat.dead and not self.the_cat.outside and self.the_cat.status not in ['leader', 'mediator', 'mediator apprentice']:
                 self.profile_elements["insult"] = UIImageButton(scale(pygame.Rect(
@@ -4219,9 +4222,13 @@ class TalkScreen(Screens):
         if you.mentor:
             mentor = Cat.all_cats.get(you.mentor).name
             text = [t1.replace("m_n", str(mentor)) for t1 in text]
-        if "dead_close" in talk[0]:                
+        try:
+            dead_cat = Cat.all_cats.get(cat.illnesses['grief stricken'].get("grief_cat"))
+            text = [t1.replace("d_c", str(dead_cat.name)) for t1 in text]  
+        except:
             dead_cat = str(Cat.all_cats.get(game.clan.starclan_cats[-1]).name)
-            text = [t1.replace("d_c", dead_cat) for t1 in text]           
+            text = [t1.replace("d_c", dead_cat) for t1 in text]      
+    
         return text
         
         
