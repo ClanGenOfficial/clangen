@@ -422,9 +422,8 @@ class PatrolOutcome():
         
         results = []
         for _cat in cats_to_lose:
-            results.append("f{_cat.name} has been lost.")
+            results.append(f"{_cat.name} has been lost.")
             _cat.gone()
-            #_cat.greif(body=False)
             
         return " ".join(results)
     

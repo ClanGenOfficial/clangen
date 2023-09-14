@@ -1468,7 +1468,7 @@ class DeathScreen(UIWindow):
                 
 class DeputyScreen(UIWindow):
     def __init__(self, last_screen):
-        super().__init__(scale(pygame.Rect((500, 400), (750, 500))),
+        super().__init__(scale(pygame.Rect((500, 400), (600, 500))),
                          window_display_title='Choose your deputy',
                          object_id='#game_over_window',
                          resizable=False)
@@ -1478,7 +1478,7 @@ class DeputyScreen(UIWindow):
         self.last_screen = last_screen
         self.pick_path_message = UITextBoxTweaked(
             f"Choose your deputy",
-            scale(pygame.Rect((40, 40), (600, -1))),
+            scale(pygame.Rect((40, 40), (500, -1))),
             line_spacing=1,
             object_id="text_box_30_horizcenter",
             container=self

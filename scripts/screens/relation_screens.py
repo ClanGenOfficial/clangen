@@ -5020,8 +5020,11 @@ class ChooseMurderCatScreen(Screens):
         with open(f"{self.RESOURCE_DIR}murder_unsuccessful.json",
                 encoding="ascii") as read_file:
             self.mu_txt = ujson.loads(read_file.read())
+            
         try:
-            ceremony_txt = choice(self.m_txt["murder " + game.clan.your_cat.status.replace(" ", "") + " " + cat_to_murder.status.replace(" ", "")])
+            ceremony_txt = self.m_txt["murder " + game.clan.your_cat.status.replace(" ", "") + " " + cat_to_murder.status.replace(" ", "")]
+            ceremony_txt.extend(self.m_txt["murder general"])
+            ceremony_txt = choice(ceremony_txt)
         except:
             ceremony_txt = choice(self.m_txt["murder general"])
 

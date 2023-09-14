@@ -2155,7 +2155,6 @@
             "Tracked a dog all across the territory",
             "Sniff, sniff, sniff",
             "Tracks r_c across the entire territory",
-            "Thought they smelled o_cClan in the territory ",
             "Enjoys the familiar smell of their territory",
             "Thinks that r_c smells nice",
             "Wonders what the trees smell like in the other clan's territories",
@@ -2708,7 +2707,6 @@
         "id": "LANGUAGE",
         "thoughts": [
             "Doesn't say more than they absolutely need to",
-            "Figures out a way to tell a good story about the battle with o_cClan, without admitting their fear",
             "Wondering how to break the news to r_c about r_c",
             "Recites a dramatic monologue",
             "Thinks through their every word before they say it",
