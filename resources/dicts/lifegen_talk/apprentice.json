@@ -689,6 +689,18 @@
             "They mistook a twig for a snake and flew, like, five fox-lengths into the air! Hahahaha!"
         ]
     ],
+
+        "assertive_app01": [
+        [
+            "warrior",
+            "assertive",
+            "silly"
+        ],
+        [
+            "Is it really true that, once I get my warrior name, I have to sit vigil all night?",
+            "I can't stay quiet for that long!"
+        ]
+    ],
     "assertive_app2": [
         [
             "Any",
