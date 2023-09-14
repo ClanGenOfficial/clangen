@@ -138,9 +138,11 @@ class PatrolScreen(Screens):
         elif event.ui_element == self.elements["next_page"]:
             self.current_page += 1
             self.update_cat_images_buttons()
+            self.update_button()
         elif event.ui_element == self.elements["last_page"]:
             self.current_page -= 1
             self.update_cat_images_buttons()
+            self.update_button()
         elif event.ui_element == self.elements["paw"]:
             if self.patrol_type == 'training':
                 self.patrol_type = 'general'
