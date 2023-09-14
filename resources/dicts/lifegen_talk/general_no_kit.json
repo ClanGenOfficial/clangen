@@ -11,33 +11,33 @@
             "Must ... escape ... camp ..."
         ]
     ],
-"assertive_rom4": [
-    [
-        "Any",
-        "assertive",
-        "unabashed",
-        "romantic_like",
-        "random_cat"
+    "assertive_rom4": [
+        [
+            "Any",
+            "assertive",
+            "unabashed",
+            "romantic_like",
+            "random_cat"
+        ],
+        [
+            "What's that? One of the kits told you your ears are too big?",
+            "What a load of fox-dung! Those kits don't have functioning brains. Besides, I like your ears! I think it's cute, how big they are!",
+            "Er ... not cute in that way, mind you. Just, y'know ... ahem ...",
+            "[The blush on t_c's cheeks confirms that, yes, they did mean it in that way. And they're doing a terrible job of hiding it.]"
+        ]
     ],
-    [
-        "What's that? One of the kits told you your ears are too big?",
-        "What a load of fox-dung! Those kits don't have functioning brains. Besides, I like your ears! I think it's cute, how big they are!",
-        "Er ... not cute in that way, mind you. Just, y'know ... ahem ...",
-        "[The blush on t_c's cheeks confirms that, yes, they did mean it in that way. And they're doing a terrible job of hiding it.]"
-    ]
-    ],
-"assertive_love": [
-    [
-        "Any",
-        "assertive",
-        "brooding",
-        "platonic_love"
-    ],
-    [
-        "I love you, y_c.",
-        "And ... I'm sorry if I don't say it enough, either.",
-        "Without you, I don't know what I'd do."
-    ]
+    "assertive_love": [
+        [
+            "Any",
+            "assertive",
+            "brooding",
+            "platonic_love"
+        ],
+        [
+            "I love you, y_c.",
+            "And ... I'm sorry if I don't say it enough, either.",
+            "Without you, I don't know what I'd do."
+        ]
     ],
     "assertive_dislike": [
         [
@@ -3146,6 +3146,235 @@
             "I'm sorry for your loss, y_c. Losing cats is... hard.",
             "Here... I had an idea. Give me three random words, and I'll come up with a story for you. Then, we can go out and try and recreate it, if you'd like.",
             "Like putting on a show for d_c."
+        ]
+    ],
+    "introspective_grief": [
+        [
+            "any",
+            "introspective",
+            "dead_close",
+            "they_grieving"
+        ],
+        [
+            "[t_c stares off into the distance, an oddly blank look on their face.]",
+            "[You decide it's best to leave them be, they don't look up to conversation right now.]"
+        ]
+    ],
+    "introspective_grief_1": [
+        [
+            "any",
+            "introspective",
+            "dead_close",
+            "they_grieving"
+        ],
+        [
+            "... I'm sorry, y_c. Can I ask that you leave me alone for a while?"
+        ]
+    ],
+    "introspective_grief_2": [
+        [
+            "any",
+            "introspective",
+            "dead_close",
+            "they_grieving"
+        ],
+        [
+            "...",
+            "[You look over at t_c wandering around, desperately looking for something.]",
+            "[... Are they looking for d_c?]",
+            "[You decide to lay down with them, to provide some comfort in the only way you can.]",
+            "...",
+            "[They curl up next to you, but don't fall asleep.]"
+        ]
+    ],
+    "theygrief_6": [
+        [
+            "any",
+            "dead_close",
+            "they_grieving"
+        ],
+        [
+            "Leave me alone ..."
+        ]
+    ],
+    "theygrief_7": [
+        [
+            "any",
+            "dead_close",
+            "they_grieving"
+        ],
+        [
+            "...",
+            "I don't know how I'm supposed to live like this ...",
+            "A world without d_c is like a sky without stars."
+        ]
+    ],
+    "theygrief_8": [
+        [
+            "any",
+            "dead_close",
+            "they_grieving"
+        ],
+        [
+            "[t_c clutches one of d_c's trinkets close to their chest.]",
+            "[They're gonna have to throw it out eventually ... it's starting to get a little concerning.]"
+        ]
+    ],
+    "theygrief_9": [
+        [
+            "any",
+            "dead_close",
+            "they_grieving"
+        ],
+        [
+            "Oh, hey, y_c.",
+            "Wanna come visit d_c's grave with me?",
+            "I've been leaving their favorite prey by it every day ... Just so they know I haven't forgotten."
+        ]
+    ],
+    "theygrief_10": [
+        [
+            "any",
+            "dead_close",
+            "they_grieving"
+        ],
+        [
+            "[t_c seems to be whispering to themself in their nest.]",
+            "Please, d_c, if you can hear this, send me a sign ...",
+            "Something. Anything. I don't care.",
+            "[For a moment, the den is completely silent and still. The air is thick with anticipation.]",
+            "[... t_c chokes back a sob and curls deeper into their nest.]"
+        ]
+    ],
+    "theygrief_11": [
+        [
+            "any",
+            "dead_close",
+            "they_grieving"
+        ],
+        [
+            "How can I get a StarClan cat to appear in my dreams? Do you know?",
+            "Why do I ask?",
+            "Uhm ...",
+            "[t_c's gaze flicks towards d_c's former favorite part of camp.]"
+        ]
+    ],
+    "theygrief_12": [
+        [
+            "any",
+            "dead_close",
+            "they_grieving"
+        ],
+        [
+            "[t_c tucks their nose under their paw, completely dead to the world.]",
+            "[Do they even know you're here right now ...?]"
+        ]
+    ],
+    "theygrief_13": [
+        [
+            "any",
+            "dead_close",
+            "they_grieving"
+        ],
+        [
+            "[While taking a nap, t_c instinctually reaches for d_c's nest with their paw.]",
+            "[Or, at least, where d_c's nest used to be ...]",
+            "[You decide not to wake them, hoping their dream takes place in a kinder reality than this one.]"
+        ]
+    ],
+    "theygrief_14_1": [
+        [
+            "any",
+            "dead_close",
+            "they_grieving"
+        ],
+        [
+            "[In the middle of the night, t_c wakes all of c_nClan with a fur-raising screech.]",
+            "d_c!!!",
+            "Where ... What ...",
+            "Uh ...",
+            "[They look around at their clanmates guiltily. There's no need to explain. Everyone knows what happened.]",
+            "[Still, this is the third time this week they've woken up screaming, and if it happens again, they just might scare off all the prey left on the territory!]"
+        ]
+    ],
+    "theygrief_14": [
+        [
+            "any",
+            "dead_close",
+            "they_grieving"
+        ],
+        [
+            "[You think t_c is actually taking d_c's death pretty well, all things considered ...]",
+            "[... Until they start sobbing uncontrollably in the middle of the bird they were eating.]",
+            "This used to be d_c's fuh - favorite - *Gasp*"
+        ]
+    ],
+    "grief_brooding2": [
+        ["any",
+            "brooding",
+            "dead_close",
+            "they_grieving"
+        ],
+        [
+            "[t_c coldly brushes past you. It seems like they've been crying ...]",
+            "[You didn't think it was possible for them to get any less personable, but here we are.]"
+        ]
+    ],
+    "grief_brooding3": [
+        ["any",
+            "brooding",
+            "dead_close",
+            "they_grieving"
+        ],
+        [
+            "[You catch t_c cruelly destroying a flower that was sprouting in camp.]",
+            "... Beauty like this doesn't deserve to exist anymore.",
+            "Not without d_c."
+        ]
+    ],
+    "grief_upstanding": [
+        ["any",
+            "upstanding",
+            "assertive",
+            "dead_close",
+            "they_grieving"
+        ],
+        [
+            "Not a problem, hehehe! A real warrior never cries! I can get right back to work!",
+            "I can get right back to work, right? Maybe, if I just get back to work ...",
+            "Please, just ... Just let me ...",
+            "*Sob*"
+        ]
+    ],
+    "grief_upstanding1": [
+        [
+            "any",
+            "upstanding",
+            "dead_close",
+            "they_grieving"
+        ],
+        [
+            "I've been looking into reincarnation. Did you know that there are real stories of cats being born, moons later, with the spirits of StarClan cats inside them?",
+            "It's rumored that cats who went before their time are more likely to be reincarnated ... which fits d_c perfectly!",
+            "Maybe, if I just work really hard, and I learn up enough ...",
+            "... I can bring them back."
+        ]
+    ],
+    "grief_assertive01": [
+        ["any",
+            "assertive",
+            "silly",
+            "cool",
+            "dead_close",
+            "they_grieving"
+        ],
+        [
+            "Ah, StarClan, y_c, the funniest thing ever happened to me today!",
+            "Wait right there! I have to tell d_c about it first -",
+            "Ah ...",
+            "...",
+            "It's so easy to forget, sometimes ...",
+            "[And just like that, t_c's enthusiastic mood has slipped away.]"
         ]
     ]
 }

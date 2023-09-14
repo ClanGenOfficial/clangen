@@ -1175,5 +1175,251 @@
             "They're gone?",
             "Well, when are they coming back?"
         ]
+    ],
+    "theygrief_1": [
+        [
+            "dead_close",
+            "they_grieving",
+            "no_kit",
+            "assertive",
+            "silly",
+            "cool"
+        ],
+        [
+            "d_c's not really gone, right?",
+            "Any second now, they'll come bounding in here, ready to make me laugh ...",
+            "Any second ..."
+        ]
+    ],
+    "theygrief_1_1": [
+        [
+            "dead_close",
+            "they_grieving",
+            "any"
+        ],
+        [
+            "[t_c is curled up in their nest, clinging to a scrap of fur that d_c left behind ...]",
+            "[Clearly they don't wanna talk, so you decide to give them some privacy.]"
+        ]
+    ],
+    "theygrief_2": [
+        [
+            "dead_close",
+            "they_grieving",
+            "any"
+        ],
+        [
+            "[t_c's gaze is fixed on the corner of camp where d_c used to spend the most time.]",
+            "[You wonder what they think is gonna happen ...]"
+        ]
+    ],
+    "theygrief_3": [
+        [
+            "they_grieving",
+            "any"
+        ],
+        [
+            "No, no, no ...",
+            "[The way t_c writhes and sobs in their nest, it seems like they're in agony.]",
+            "[Almost like they're the one that's dying ...]"
+        ]
+    ],
+    "theygrief_4": [
+        [
+            "they_grieving",
+            "any"
+        ],
+        [
+            "[t_c shifts and twitches restlessly in their sleep. They must be having a nightmare.]",
+            "Mmf ... What are you ... No ...",
+            "d_c ... Where are you going? Come back!",
+            "I won't let them take you -",
+            "AH!",
+            "[t_c sits up, panting in their nest.]",
+            "Oh ... y_c ... It's you ...",
+            "How long have you been watching me?"
+        ]
+    ],
+    "sweetgrieving_2": [
+        [
+            "dead_close",
+            "they_grieving",
+            "trust",
+            "comfort",
+            "romantic_like",
+            "sweet",
+            "any"
+        ],
+        [
+            "[t_c walks into your den, staring at you as tears brim from their eyes.]",
+            "[They rest their head across your shoulders, closing their eyes and sinking their weight into you, their voice quivering from pain and grief,]",
+            "Why did d_c have to go..."
+        ]
+    ],
+    "sweetgrieving_3": [
+        [
+            "dead_close",
+            "they_grieving",
+            "trust",
+            "comfort",
+            "sweet",
+            "stable",
+            "any"
+        ],
+        [
+            "[Silently, t_c is staring at the stars, their gaze swirling with beauty, yet pain]",
+            "I hope d_c is happy up there...",
+            "[That is the only thing t_c says for a long time, just staring up at the sky]"
+        ]
+    ],
+    "sweetgrieving_4": [
+        [
+            "dead_close",
+            "they_grieving",
+            "dislike",
+            "sweet",
+            "any"
+        ],
+        [
+            "[Out of seemingly nowhere, t_c breaks down crying. They press their head into your shoulder, mumbling out a soft mew.]",
+            "I-I'm sorry... I know we... don't get along... I just.. I- I need this.. I... I miss d_c..."
+        ]
+    ],
+    "sweetgrieving_6": [
+        [
+            "dead_close",
+            "they_grieving",
+            "any"
+        ],
+        [
+            "[t_c seems to be cleaning out a nest... d_c's nest...]",
+            "[You think it's best to leave them to it.]"
+        ]
+    ],
+    "introspective_grief": [
+        [
+            "any",
+            "introspective",
+            "dead_close",
+            "they_grieving"
+        ],
+        [
+            "[t_c stares off into the distance, an oddly blank look on their face.]",
+            "[You decide it's best to leave them be, they don't look up to conversation right now.]"
+        ]
+    ],
+    "introspective_grief_2": [
+        [
+            "any",
+            "introspective",
+            "dead_close",
+            "they_grieving"
+        ],
+        [
+            "...",
+            "[You look over at t_c wandering around, desperately looking for something.]",
+            "[... Are they looking for d_c?]",
+            "[You decide to lay down with them, to provide some comfort in the only way you can.]",
+            "...",
+            "[They curl up next to you, but don't fall asleep.]"
+        ]
+    ],
+    "theygrief_6": [
+        [
+            "any",
+            "dead_close",
+            "they_grieving"
+        ],
+        [
+            "Leave me alone ..."
+        ]
+    ],
+    "theygrief_8": [
+        [
+            "any",
+            "dead_close",
+            "they_grieving"
+        ],
+        [
+            "[t_c clutches one of d_c's trinkets close to their chest.]",
+            "[They're gonna have to throw it out eventually ... it's starting to get a little concerning.]"
+        ]
+    ],
+    "theygrief_10": [
+        [
+            "any",
+            "dead_close",
+            "they_grieving"
+        ],
+        [
+            "[t_c seems to be whispering to themself in their nest.]",
+            "Please, d_c, if you can hear this, send me a sign ...",
+            "Something. Anything. I don't care.",
+            "[For a moment, the den is completely silent and still. The air is thick with anticipation.]",
+            "[... t_c chokes back a sob and curls deeper into their nest.]"
+        ]
+    ],
+    "theygrief_11": [
+        [
+            "any",
+            "dead_close",
+            "they_grieving"
+        ],
+        [
+            "How can I get a StarClan cat to appear in my dreams? Do you know?",
+            "Why do I ask?",
+            "Uhm ...",
+            "[t_c's gaze flicks towards d_c's former favorite part of camp.]"
+        ]
+    ],
+    "theygrief_12": [
+        [
+            "any",
+            "dead_close",
+            "they_grieving"
+        ],
+        [
+            "[t_c tucks their nose under their paw, completely dead to the world.]",
+            "[Do they even know you're here right now ...?]"
+        ]
+    ],
+    "theygrief_13": [
+        [
+            "any",
+            "dead_close",
+            "they_grieving"
+        ],
+        [
+            "[While taking a nap, t_c instinctually reaches for d_c's nest with their paw.]",
+            "[Or, at least, where d_c's nest used to be ...]",
+            "[You decide not to wake them, hoping their dream takes place in a kinder reality than this one.]"
+        ]
+    ],
+    "theygrief_14_1": [
+        [
+            "any",
+            "dead_close",
+            "they_grieving"
+        ],
+        [
+            "[In the middle of the night, t_c wakes all of c_nClan with a fur-raising screech.]",
+            "d_c!!!",
+            "Where ... What ...",
+            "Uh ...",
+            "[They look around at their clanmates guiltily. There's no need to explain. Everyone knows what happened.]",
+            "[Still, this is the third time this week they've woken up screaming, and if it happens again, they just might scare off all the prey left on the territory!]"
+        ]
+    ],
+    "theygrief_14": [
+        [
+            "any",
+            "dead_close",
+            "they_grieving"
+        ],
+        [
+            "[You think t_c is actually taking d_c's death pretty well, all things considered ...]",
+            "[... Until they start sobbing uncontrollably in the middle of the bird they were eating.]",
+            "This used to be d_c's fuh - favorite - *Gasp*"
+        ]
     ]
 }
