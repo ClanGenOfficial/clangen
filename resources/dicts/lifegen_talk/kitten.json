@@ -1511,5 +1511,281 @@
             "Maybe it's that thing that turns cats into leaders, like the founder c_nClan cat found when they bested that tyrannical old cat!",
             "You know that one? I think it's the same one l_n used. Maybe I'll ask them about it."
         ]
+    ],
+    "broodingnewborn": [
+        [
+            "any",
+            "brooding",
+            "unlawful",
+            "from_kit"
+        ],
+        [
+            "[You catch t_c in the middle of a plot to prank the newborns.]",
+            "[How could you have raised such a little menace?]"
+        ]
+    ],
+    "broodingnewborn_2": [
+        [
+            "any",
+            "brooding",
+            "unlawful",
+            "from_kit"
+        ],
+        [
+            "[You finish chiding t_c for their latest bit of mischief.]",
+            "Yes, y_c. Understood, y_c.",
+            "[They stalk off to the other side of the nursery, seemingly having learned their lesson.]",
+            "[But an evil glint in their eye betrays that they're already planning their next trick.]"
+        ]
+    ],
+    "broodingnewborn_3": [
+        [
+            "any",
+            "brooding",
+            "comfort",
+            "trust",
+            "from_kit"
+        ],
+        [
+            "[t_c trudges over from the opposite side of the nursery and slumps over at your side.]",
+            "y_c ...?",
+            "Why do I get so sad sometimes?",
+            "Is there something wrong with me? Why can't I stay happy, like the other kits?",
+            "[You press your nose into t_c's little head. It's easy to forget, sometimes, that kithood isn't easy for everyone.]"
+        ]
+    ],
+    "broodingnewborn_4": [
+        [
+            "any",
+            "brooding",
+            "platonic_love"
+        ],
+        [
+            "Hmph. I swear, y_c, you're the only cat in all of c_nClan who I like to play with at all.",
+            "We'll be together forever, then ...",
+            "... Won't we?"
+        ]
+    ],
+    "broodingnewborn_5": [
+        [
+            "any",
+            "brooding",
+            "unlawful"
+        ],
+        [
+            "Hey, y_c! Wanna play?",
+            "[You ask t_c if they plan on cheating, pulling your tail, or otherwise abusing you this time.]",
+            "...",
+            "... Hmph. You're no fun, anyway."
+        ]
+    ],
+    "broodingnewborn_6": [
+        [
+            "any",
+            "brooding",
+            "upstanding",
+            "platonic_like"
+        ],
+        [
+            "Wake up, y_c! Wake up, wake up, wake up!!!",
+            "Why do I keep ordering you around?",
+            "Um, because it's fun, dummy!",
+            "Of all the cats in c_nClan, you're the one I like spending time with best of all. So, I've decided to make you my second in command!",
+            "Together, we'll take over the world ...",
+            "Now, c'mon! Lots to do today!"
+        ]
+    ],
+    "broodingnewborn_7": [
+        [
+            "apprentice",
+            "warrior",
+            "mediator apprentice",
+            "mediator",
+            "deputy",
+            "brooding",
+            "neutral",
+            "assertive"
+        ],
+        [
+            "Who are you? What are you doing in the nursery?",
+            "r_q! There's a strange cat in here!"
+        ]
+    ],
+    "broodingnewborn_8": [
+        [
+            "any",
+            "brooding",
+            "neutral",
+            "dislike"
+        ],
+        [
+            "You smell like crowfood! Hahahaha!"
+        ]
+    ],
+    "broodingnewborn_9": [
+        [
+            "medicine cat",
+            "medicine cat apprentice",
+            "brooding",
+            "neutral",
+            "dislike"
+        ],
+        [
+            "Eughh ... What's that weird smell?",
+            "You're a medicine cat?",
+            "Way to say you're useless!"
+        ]
+    ],
+    "broodingnewborn_10": [
+        [
+            "any",
+            "brooding",
+            "platonic_like"
+        ],
+        [
+            "Hey, y_c! Come squish bugs with me!",
+            "Whoever can squish 'em the fastest, wins!",
+            "Readysetgo!"
+        ]
+    ],
+    "broodingnewborn_11": [
+        [
+            "any",
+            "brooding",
+            "platonic_like"
+        ],
+        [
+            "Hey, d'you think if we told r_k to go call l_n a mange-ridden fuzz-brain, they'd do it?",
+            "Hehehehe ... Guess there's only one way to find out!",
+            "Let's go!"
+        ]
+    ],
+    "broodingnewborn_12": [
+        [
+            "any",
+            "brooding"
+        ],
+        [
+            "Hey, y_c, why are your eyes so far apart? You look like a fish! Hahaha!",
+            "What's that? I hurt your ... feelings?",
+            "Hmph. Feelings are for weak, useless kittypets!",
+            "I'm never going to feel anything! Not ever!"
+        ]
+    ],
+    "broodingnewborn_13": [
+        [
+            "any",
+            "brooding",
+            "platonic_like"
+        ],
+        [
+            "y_c? What's wrong? Are you sad?",
+            "Who do I need to beat up???"
+        ]
+    ],
+    "broodingnewborn_14": [
+        [
+            "kitten",
+            "brooding",
+            "cool",
+            "neutral",
+            "dislike"
+        ],
+        [
+            "Tch. Moss-ball? That babyish game?",
+            "I stopped playing moss-ball moons ago!",
+            "Find something cooler to play. Like feather-catch."
+        ]
+    ],
+    "broodingnewborn_15": [
+        [
+            "any",
+            "brooding",
+            "neutral",
+            "dislike"
+        ],
+        [
+            "Hey, y_c, did your ears get bigger? Hahahaha!",
+            "Big ears! Big ears!"
+        ]
+    ],
+    "broodingnewborn_16": [
+        [
+            "kitten",
+            "brooding",
+            "neutral",
+            "dislike"
+        ],
+        [
+            "What's the matter, y_c? Missing something?",
+            "[t_c holds your favorite moss-ball high above your head.]",
+            "What are you gonna do about it? Come take it from me?",
+            "Hahahaha!"
+        ]
+    ],
+    "broodingnewborn_17": [
+        [
+            "kitten",
+            "brooding",
+            "neutral",
+            "dislike"
+        ],
+        [
+            "No, mouse-brain, you can't play with me!",
+            "And you're an even bigger mouse-brain for even asking!"
+        ]
+    ],
+    "broodingnewborn_18": [
+        [
+            "kitten",
+            "brooding"
+        ],
+        [
+            "*Sniffle* *Sob*",
+            "... W-What? No, I wasn't crying!",
+            "G-Get away from me, mouse-brain, before I tear a new hole in your face!"
+        ]
+    ],
+    "broodingnewborn_19": [
+        [
+            "any",
+            "brooding"
+        ],
+        [
+            "[t_c is running around squishing all the bugs around the nursery.]",
+            "Hehehehehe ..."
+        ]
+    ],
+    "broodingnewborn_20": [
+        [
+            "no_kit",
+            "brooding",
+            "random_cat",
+            "unlawful"
+        ],
+        [
+            "[t_c is tearing all the moss in r_q's nest to shreds.]",
+            "[Should ... Should you try and stop them?]"
+        ]
+    ],
+    "broodingnewborn_21": [
+        [
+            "any",
+            "brooding"
+        ],
+        [
+            "[You spot t_c sharpening their little claws in the corner.]",
+            "[Should you be concerned ...?]"
+        ]
+    ],
+    "broodingnewborn_22": [
+        [
+            "any",
+            "brooding"
+        ],
+        [
+            "...",
+            "[While the rest of the kits play and have fun together, little t_c sits all by themself ...]"
+        ]
     ]
 }

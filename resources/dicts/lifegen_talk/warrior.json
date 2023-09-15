@@ -2032,5 +2032,155 @@
             "Oh, y_c! It rained this morning so it's super slippery outside, I can help you walk around if you want!",
             "Here, stay by my side, and I'll catch you if you fall!"
         ]
+    ],
+    "broodingapp_toapp": [
+        [
+            "warrior",
+            "brooding",
+            "platonic_like",
+            "romantic_like"
+        ],
+        [
+            "We have training together today?",
+            "Yes, I know ... I requested it.",
+            "Why?",
+            "Uh. I dunno.",
+            "I ... like spending time with you. I guess.",
+            "And, um, also, you're a good sparring partner, too. Mostly that.",
+            "Ahem ..."
+        ]
+    ],
+    "broodingapp_toapp_2": [
+        [
+            "apprentice",
+            "warrior",
+            "brooding"
+        ],
+        [
+            "Hm? What's that?",
+            "You want to know if we can train together?",
+            "... I work best alone.",
+            "But ... thank you for asking."
+        ]
+    ],
+    "broodingapp_toqueenapp": [
+        [
+            "queen's apprentice",
+            "queen",
+            "brooding",
+            "neutral",
+            "platonic_like"
+        ],
+        [
+            "Do you know how to defend yourself?",
+            "If something were to try to harm these kits, how would you protect them?",
+            "Hm ... I suppose that's a ... decent strategy. But your form is sloppy, and your technique needs work.",
+            "Come and find me sometime, and I'll show you."
+        ]
+    ],
+    "brooding_tomedapp": [
+        [
+            "medicine cat apprentice",
+            "medicine cat",
+            "brooding"
+        ],
+        [
+            "Have you heard anything from StarClan lately?",
+            "Hmph. Of course not. How typical.",
+            "Any longer and I'll start to believe our ancestors have given up on us."
+        ]
+    ],
+    "broodingadult_toapp": [
+        [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "queen's apprentice",
+            "brooding",
+            "platonic_like",
+            "romantic_like",
+            "trust",
+            "comfort",
+            "from_parent"
+        ],
+        [
+            "Oh, hello, y_c. Is your training going well?",
+            "Just don't worry about the other apprentices. Focus on your studies, and serving your clan. That's all that matters.",
+            "You're turning into a fine young cat ...",
+            "... and the whole clan is proud."
+        ]
+    ],
+    "broodingadult_toapp1": [
+        [
+            "apprentice",
+            "brooding",
+            "dislike",
+            "neutral"
+        ],
+        [
+            "Hm? You ... want my advice on catching birds?",
+            "Tch. Give me a break.",
+            "Go find someone who actually has the time."
+        ]
+    ],
+    "broodingadult_toapp2": [
+        [
+            "apprentice",
+            "brooding",
+            "platonic_like",
+            "respect",
+            "comfort",
+            "trust",
+            "from_parent",
+            "from_mentor"
+        ],
+        [
+            "Hm? You ... want my advice on catching birds?",
+            "Heh ... I remember being an apprentice. It's not easy. It's something that takes a lot of time and discipline to figure out.",
+            "I could talk you through all the steps ... but, it might be better if I just show you myself.",
+            "How about I take you out on the territory tonight and we can have a lesson ... does that sound good to you?"
+        ]
+    ],
+    "broodingadult_toapp3": [
+        [
+            "apprentice",
+            "brooding",
+            "platonic_like",
+            "respect",
+            "comfort",
+            "trust",
+            "from_parent"
+        ],
+        [
+            "I overheard a few of the warriors talking. They think you're doing well in your training.",
+            "And, as much as I hate banal gossip, I'm ... inclined to agree with them.",
+            "Not bad, y_c."
+        ]
+    ],
+    "broodingadult_toapp4": [
+        [
+            "apprentice",
+            "mediator apprentice",
+            "medicine cat apprentice",
+            "queen's apprentice",
+            "brooding"
+        ],
+        [
+            "[After a long, grueling day of training, t_c catches you crying alone in your nest.]",
+            "Oh ... y_c.",
+            "You seem upset.",
+            "Erm ... Do you want me to get someone else, or ...?",
+            "*Siiiigh.* ... Okay, if I tell you a story from my apprenticeship, will you stop your whining and let me leave?",
+            "Okay ... Um ... Well, I guess my apprenticeship was anything but easy.",
+            "All my denmates seemed moons ahead of me at everything I did. Everything I ever tried, I screwed it up. And, on the outside, I acted like I didn't care, but on the inside ... Well.",
+            "I used to sneak out of my nest at night and take these long walks. It was freezing, but I never minded.",
+            "I just climbed the tallest tree I could find, sat on a branch, and stared up at the stars, sometimes until the sun came up.",
+            "I wondered how StarClan could let me suffer like this. How they could just sit up there and watch as I sank deeper and deeper, how they never sent anyone to save me.",
+            "I was completely, utterly, suffocatingly alone. Never in a million moons did I ever dream that I'd actually get my full name.",
+            "But, y'know ... Here I am.",
+            "I know it's hard. But the way you're feeling right now isn't going to last forever. It may sound impossible, but ... things do get better. It's something I learned the hard way. So, y'know ... don't give up.",
+            "Good luck out there, y_c. I ... I'll be rooting for you.",
+            "[t_c turns and exits the den without another word.]"
+        ]
     ]
 }

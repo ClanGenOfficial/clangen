@@ -529,7 +529,7 @@
             "murder",
             "assertive",
             "platonic_love",
-            "romantic_love",
+            "romantic_like",
             "trust",
             "comfort",
             "no_kit"
@@ -2751,7 +2751,7 @@
         [
             "any",
             "they_pregnant",
-            "unlwaful"
+            "unlawful"
         ],
         [
             "The first thing I'll teach my kits is that the world isn't always fair.",
@@ -3757,8 +3757,8 @@
             "assertive",
             "silly",
             "cool",
-            "ill",
-            "injured",
+            "you_ill",
+            "you_injured",
             "neutral"
         ],
         [
@@ -4306,6 +4306,603 @@
             "With t_c in the lead with a whopping 147 catches, we're looking at the most exciting mouse-hunt game of the season!",
             "[Then, t_c stops, looking you directly in the eye. You can't tell if they're embarrassed or waiting for a response, so you give them a yelp of encouragement. That seems to be what they wanted.]",
             "And the crowd goes WILD!"
+        ]
+    ],
+    "brooding_tomed": [
+        [
+            "medicine cat apprentice",
+            "medicine cat",
+            "brooding",
+            "random_cat"
+        ],
+        [
+            "Erm ... Hi.",
+            "Maybe you should check in on r_c sometime. Do you do check-ins? I don't actually know.",
+            "Um, anyways, they're worrying me a little lately ... sort of walking with a limp. I don't know if it's just in my head, or if they're really hurt.",
+            "Either way, you should check.",
+            "Uh ... Okay. Goodbye, then."
+        ]
+    ],
+    "broodingapp_toqueenapp11": [
+        [
+            "queen's apprentice",
+            "queen",
+            "brooding",
+            "neutral",
+            "platonic_like"
+        ],
+        [
+            "Are the kits doing well?",
+            "Ah. Good.",
+            "Thank you for protecting them."
+        ]
+    ],
+    "broodingapp_toqueenapp12": [
+        [
+            "queen's apprentice",
+            "brooding",
+            "neutral",
+            "dislike"
+        ],
+        [
+            "Anything happens to these kits, and I end you.",
+            "I'm serious. This job isn't a free pass. It isn't supposed to be fun",
+            "Take your duty seriously."
+        ]
+    ],
+    "broodingapp_toqueenapp13": [
+        [
+            "queen's apprentice",
+            "queen",
+            "brooding",
+            "comfort",
+            "platonic_like"
+        ],
+        [
+            "Hm. I guess the kits are sorta cute ...",
+            "What are you supposed to do with them?",
+            "Play games ...?",
+            "Heh. That actually sounds kinda fun.",
+            "Maybe I'll join in sometime.",
+            "Seeya around, y_c."
+        ]
+    ],
+    "brooding_tomedapp": [
+        [
+            "medicine cat apprentice",
+            "medicine cat",
+            "brooding"
+        ],
+        [
+            "Have you heard anything from StarClan lately?",
+            "Hmph. Of course not. How typical.",
+            "Any longer and I'll start to believe our ancestors have given up on us."
+        ]
+    ],
+    "broodingapp_toqueenapp1": [
+        [
+            "mediator apprentice",
+            "mediator",
+            "brooding"
+        ],
+        [
+            "y_c, I ... need your help.",
+            "[t_c's whole face scrunches up on the word 'help', as if they tasted something bad.]",
+            "I have a feeling l_n is upset with me, but I don't know why.",
+            "Is it related to my performance? Is it something I said?",
+            "I was hoping you'd ... help me talk things out with them.",
+            "[There's that foul look again! t_c must really not be used to asking for help.]"
+        ]
+    ],
+    "broodingapp_toqueenapp2": [
+        [
+            "mediator apprentice",
+            "mediator",
+            "brooding",
+            "random_cat",
+            "unabashed"
+        ],
+        [
+            "Yes, I know r_c is mad at me.",
+            "And no, I do not care.",
+            "Move along, please."
+        ]
+    ],
+    "broodingapp_toqueenapp3": [
+        [
+            "mediator apprentice",
+            "mediator",
+            "brooding"
+        ],
+        [
+            "So you mean your whole entire job is just ... helping cats talk about their feelings?",
+            "*Shudder*",
+            "That sounds like my worst nightmare."
+        ]
+    ],
+    "brooding_tomediator": [
+        [
+            "mediator apprentice",
+            "mediator",
+            "brooding",
+            "neutral",
+            "dislike"
+        ],
+        [
+            "Don't even try it, y_c.",
+            "I already know what you're gonna say to me. I need to open up more and be more emotionally available to solve my problems in a healthy way. I've heard it a million times before. Not possible for me.",
+            "You think your whole job is to fix people, when really all you do is prance around acting like you're smarter than us and bossing everyone around.",
+            "Go try your stupid tricks on somebody else."
+        ]
+    ],
+    "brooding_tomedapp5": [
+        [
+            "medicine cat apprentice",
+            "medicine cat",
+            "brooding",
+            "unabashed",
+            "introspective",
+            "dislike",
+            "they_ill",
+            "they_injured"
+        ],
+        [
+            "You may think you have power over me because you're the medicine cat, but you should think again.",
+            "If it's between dying and you saving my life, well ... that's a choice I'll have to consider carefully."
+        ]
+    ],
+    "brooding_tomedapp4": [
+        [
+            "medicine cat apprentice",
+            "medicine cat",
+            "brooding",
+            "upstanding",
+            "platonic_like",
+            "romantic_like",
+            "trust",
+            "comfort",
+            "from_parent"
+        ],
+        [
+            "Hello, y_c. I thought I'd come pay you a visit here.",
+            "What? No, I'm not sick. Just ... wanted to see you, I suppose.",
+            "Here. I brought you food. I figured you'd be hungry.",
+            "[t_c drops a bird at your paws and gently noses it towards you.]",
+            "Eat."
+        ]
+    ],
+    "brooding_tomedapp3": [
+        [
+            "medicine cat apprentice",
+            "medicine cat",
+            "brooding",
+            "neutral"
+        ],
+        [
+            "[t_c comes to see you about a thorn in their paw.]",
+            "[The whole time they're in the medicine den, they barely say a word to you, glancing down at the floor instead of making eye contact. They don't even wince when you pull the thorn out!]",
+            "... Thanks.",
+            "[t_c stalks away. Not the friendliest, are they?]"
+        ]
+    ],
+    "brooding_tomedapp2": [
+        [
+            "medicine cat apprentice",
+            "medicine cat",
+            "brooding"
+        ],
+        [
+            "Um, is there something you need?",
+            "To examine my health ... what for?",
+            "A routine check-up ...",
+            "Uh, I'll pass. Thanks."
+        ]
+    ],
+    "brooding_tomedapp1": [
+        [
+            "medicine cat apprentice",
+            "medicine cat",
+            "brooding",
+            "unlawful"
+        ],
+        [
+            "Poppy seeds, please.",
+            "... You don't need to know what they're for."
+        ]
+    ],
+    "brooding_general": [
+        [
+            "any",
+            "brooding"
+        ],
+        [
+            "[t_c glowers off into the distance, seemingly deep in thought.]",
+            "[Clearly, they don't want to chat right now, and you decide to leave it alone.]"
+        ]
+    ],
+    "brooding_general1": [
+        [
+            "any",
+            "brooding",
+            "neutral"
+        ],
+        [
+            "What's that? You want to ... talk to me? About what? Did I do something wrong?",
+            "Um. Okay. I guess, weather's ... nice today. There's clouds out, and, uh ...",
+            "[You can tell how hard it is for t_c to make small talk and decide to leave it alone.]"
+        ]
+    ],
+    "brooding_general2": [
+        [
+            "any",
+            "brooding",
+            "neutral",
+            "dislike"
+        ],
+        [
+            "What's that? You want to know how I'm ... feeling?",
+            "Hmph. Why in StarClan's name do you care?"
+        ]
+    ],
+    "brooding_general3": [
+        [
+            "any",
+            "brooding"
+        ],
+        [
+            "..."
+        ]
+    ],
+    "brooding_general3_2": [
+        [
+            "any",
+            "brooding",
+            "neutral"
+        ],
+        [
+            "[You accidentally trod on t_c's tail, but they don't yelp in pain. In fact, their brooding glare remains entirely unchanged.]",
+            "... Watch it."
+        ]
+    ],
+    "brooding_gen4": [
+        [
+            "any",
+            "brooding",
+            "neutral",
+            "dislike"
+        ],
+        [
+            "... Leave it."
+        ]
+    ],
+    "brooding_gen5": [
+        [
+            "any",
+            "brooding"
+        ],
+        [
+            "Not now."
+        ]
+    ],
+    "brooding_gen5_2": [
+        [
+            "deputy",
+            "leader",
+            "brooding",
+            "neutral",
+            "dislike"
+        ],
+        [
+            "Uh. Hey.",
+            "... Did I do something wrong?",
+            "Um. Okay.",
+            "I'm gonna go now."
+        ]
+    ],
+    "brooding_gen5_3": [
+        [
+            "deputy",
+            "leader",
+            "brooding"
+        ],
+        [
+            "Hey. There's a snake on the territory.",
+            "Might wanna check it out later.",
+            "Wouldn't want it hurting any of the kits."
+        ]
+    ],
+    "brooding_gen5_4": [
+        [
+            "deputy",
+            "leader",
+            "brooding",
+            "random_cat"
+        ],
+        [
+            "Hi. Um.",
+            "I'd like to patrol with r_w today, if that's alright.",
+            "Thanks."
+        ]
+    ],
+    "brooding_gen5_5": [
+        [
+            "deputy",
+            "brooding",
+            "dislike"
+        ],
+        [
+            "Oh, great. Here comes the so-called deputy.",
+            "How in StarClan's name did you delude l_n into giving you that position?",
+            "Whatever tricks you used, I see right through them."
+        ]
+    ],
+    "brooding_gen5_6": [
+        [
+            "deputy",
+            "brooding",
+            "dislike"
+        ],
+        [
+            "Tch. What a fake.",
+            "I'll die nine times over myself before you actually become leader, y_c."
+        ]
+    ],
+    "brooding_gen5_7": [
+        [
+            "deputy",
+            "brooding",
+            "neurotic",
+            "neutral"
+        ],
+        [
+            "Ah! y_c ...",
+            "You scared me.",
+            "Sorry, it's just ...",
+            "You don't get to talk to the deputy every day, I guess."
+        ]
+    ],
+    "brooding_gen5_8": [
+        [
+            "leader",
+            "brooding",
+            "neurotic",
+            "neutral"
+        ],
+        [
+            "Ah! y_c ...",
+            "You scared me.",
+            "Sorry, it's just ...",
+            "You don't get to talk to the leader every day, I guess."
+        ]
+    ],
+    "brooding_gen5_9": [
+        [
+            "no_kit",
+            "brooding",
+            "introspective"
+        ],
+        [
+            "l_n ... What do you think of them?",
+            "Their leadership style, the choices they've made ... Would you have done it differently, if you were in that position?",
+            "I'm just curious. What you think of who's in charge could reveal a lot about your character."
+        ]
+    ],
+    "brooding_like": [
+        [
+            "any",
+            "brooding",
+            "platonic_like",
+            "comfort",
+            "trust",
+            "romantic_like",
+            "from_mate",
+            "random_cat"
+        ],
+        [
+            "Hey, y_c. You wanna do this whole 'chatting' thing? Oh, okay, uh ...",
+            "My training's been going okay. I've been getting better at some skills, still need improvement in others.",
+            "I had a thorn in my paw the other day. r_m helped me pull it out.",
+            "Also, I'm probably going to get some new bedding later today.",
+            "... Was that enough? Or, do you want me to say more?"
+        ]
+    ],
+    "brooding_like_2": [
+        [
+            "any",
+            "brooding",
+            "platonic_like",
+            "comfort",
+            "trust",
+            "romantic_like",
+            "from_mate",
+            "random_cat",
+            "leaffall",
+            "leafbare"
+        ],
+        [
+            "Chilly out today. Make sure you keep warm, y_c. Otherwise, you might fall ill. The medicine den is already crowded enough as it is.",
+            "Me? Hmph. I don't get sick. Haven't since I was a ... ah .... ah-CHOO!",
+            "... That was completely unrelated."
+        ]
+    ],
+    "brooding_like_3": [
+        [
+            "any",
+            "brooding",
+            "platonic_like",
+            "comfort",
+            "trust",
+            "romantic_like",
+            "from_mate",
+            "random_cat"
+        ],
+        [
+            "I overheard this so-called 'joke' the other day, but I didn't find it very funny. Maybe you can help me figure it out, y_c.",
+            "It went like, 'Why did the tree break up with the lake? Because he wasn't deep enough.'",
+            "Or - wait, no. That doesn't make any sense.",
+            "Maybe it was, 'Why did the lake break up with the tree?' Or, no, wait ...",
+            "... Whatever. Humor is for mouse-brains, anyways."
+        ]
+    ],
+    "brooding_like_4": [
+        [
+            "any",
+            "brooding",
+            "platonic_like",
+            "comfort",
+            "trust",
+            "romantic_like",
+            "from_mate",
+            "random_cat"
+        ],
+        [
+            "What's that? You want to know how I'm ... feeling?",
+            "Hmph. You should know by now that I don't do the whole 'feelings' thing. But, if you want to know so badly, I guess I'm feeling ...",
+            "Worried. And tired. But also on edge. And hungry. But, I'm sort of full, too ... hm ...",
+            "See, this is why I don't talk about my feelings. I'm not very good at it."
+        ]
+    ],
+    "brooding_like_5": [
+        [
+            "any",
+            "brooding",
+            "platonic_like",
+            "comfort",
+            "trust",
+            "romantic_like",
+            "from_mate",
+            "random_cat"
+        ],
+        [
+            "Mm.",
+            "[It may not sound like much, but that grunt of acknowledgement is about as warm of a greeting as you could expect from t_c.]"
+        ]
+    ],
+    "brooding_like_6": [
+        [
+            "any",
+            "brooding",
+            "platonic_like",
+            "comfort",
+            "trust",
+            "romantic_like",
+            "from_mate",
+            "random_cat"
+        ],
+        [
+            "I encountered a rather large bird out on patrol today. It would've made a great meal for the clan.",
+            "I stalked it all day, and even though I know it detected me, it didn't fly away. It kept swooping down, then darting just out of my reach, as if it were taunting me.",
+            "[You make a silly pun about how it must be a mocking-bird.]",
+            "...",
+            "... *snrk*.,",
+            "[Did ... Did you just make t_c laugh?]"
+        ]
+    ],
+    "brooding_like_7": [
+        [
+            "any",
+            "brooding",
+            "platonic_like",
+            "comfort",
+            "trust",
+            "romantic_like",
+            "from_mate",
+            "random_cat"
+        ],
+        [
+            "[You watch r_a try again and again to make t_c laugh.]",
+            "[They tell all sorts of jokes, make funny faces, fall over on their paws ...]",
+            "[Nothing can break that stony glare.]",
+            "[But one look at you and t_c breaks out into a huge smile!]",
+            "[They trot over to greet you as the defeated apprentice slinks away.]"
+        ]
+    ],
+    "brooding_dislike": [
+        [
+            "any",
+            "brooding",
+            "dislike"
+        ],
+        [
+            "...",
+            "[t_c seems to be pretending you aren't here.]"
+        ]
+    ],
+    "brooding_dislike_1": [
+        [
+            "any",
+            "brooding",
+            "dislike"
+        ],
+        [
+            "Hmph. Hello, y_c. Your ears are looking even bigger than usual today.",
+            "No need to take it personally, of course. Just an observation.",
+            "Hehehe."
+        ]
+    ],
+    "brooding_dislike_2": [
+        [
+            "any",
+            "brooding",
+            "dislike"
+        ],
+        [
+            "What's that? It's a little chilly out today?",
+            "y_c, I am continually impressed by the sheer banality of the things you find interesting."
+        ]
+    ],
+    "brooding_dislike_2_2": [
+        [
+            "any",
+            "brooding",
+            "romantic_like"
+        ],
+        [
+            "Hey, y_c. I was out collecting moss today, and I saved some for you. I know you like to use it to line your nest.",
+            "And don't read into it too much, either. It's just, you know. From one clanmate to another. It's not like I ... uh. Ahem.",
+            "[t_c looks away, ears glowing red.]"
+        ]
+    ],
+    "brooding_dislike_2_3": [
+        [
+            "any",
+            "brooding",
+            "romantic_like"
+        ],
+        [
+            "Here. Have this. I saved it from the freshkill pile for you.",
+            "... What's wrong? Aren't thrushes your favorite? Or, am I misremembering?",
+            "Hm ... interesting.",
+            "[t_c tenses their jaw, as if they're determined to burn your favorite prey into their head forever.]"
+        ]
+    ],
+    "brooding_dislike_2_4": [
+        [
+            "any",
+            "brooding",
+            "romantic_like"
+        ],
+        [
+            "[You decide to strike up a conversation with t_c by telling them about a particularly pretty flower grove you saw today.]",
+            "Hmph ... sounds ... interesting, I suppose.",
+            "Any particular reason you're telling me this?",
+            "Unless you're suggesting that you'd like to ... visit it together sometime ...?",
+            "Of course, that might not have been what you were suggesting at all.",
+            "Um ... I've been talking for too long."
+        ]
+    ],
+    "brooding_dislike_2_5": [
+        [
+            "any",
+            "brooding",
+            "romantic_like"
+        ],
+        [
+            "I saw this pretty flower out on the edge of the territory. It reminded me of you.",
+            "Uh, not that I'm saying you're pretty, or anything like that.",
+            "N-Not that I'm saying you're not pretty either!",
+            "It just looked like the color of your eyes, is all. Uh, not that I really care.",
+            "Ahem ..."
         ]
     ]
 }

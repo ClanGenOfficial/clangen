@@ -35,17 +35,17 @@ cluster_list = ["assertive", "brooding", "cool", "upstanding", "introspective", 
 you_cluster_list = ["you_assertive", "you_brooding", "you_cool", "you_upstanding", "you_introspective", "you_neurotic", "you_silly", "you_stable", "you_sweet", "you_unabashed", "you_unlawful"]
 
 def process_json_data(data):
-    list_of_tags = ["reject","accept","heartbroken","from_parent","siblings_mate","non-related","murder","war","dead_close","talk_dead","hate","romantic_like","platonic_like","jealousy","dislike","comfort","respect","trust","random_cat","neutral","insult", "flirt", "leafbare", "newleaf", "greenleaf", "leaffall", 'beach', 'forest', 'plains', 'mountainous', 'wetlands', 'desert', "you_ill", "you_injured", "they_ill","you_grieving", "they_injured", "they_grieving","adopted_parent","from_mentor","from_your_apprentice","from_kit","from_mate","from_adopted_kit",
-"from_kit","sibling", "half sibling", "adopted_sibling", "parents_siblings", "cousin"]
+    list_of_tags = ["has_mate","reject","accept","heartbroken","from_parent","siblings_mate","non-related","murder","war","dead_close","talk_dead","hate","romantic_like","platonic_like","jealousy","dislike","comfort","respect","trust","random_cat","neutral","insult", "flirt", "leafbare", "newleaf", "greenleaf", "leaffall", 'beach', 'forest', 'plains', 'mountainous', 'wetlands', 'desert', "you_ill", "you_injured", "they_ill","you_grieving", "they_injured", "they_grieving","adopted_parent","from_mentor","from_your_apprentice","from_kit","from_mate","from_adopted_kit",
+"from_kit","sibling", "half sibling", "adopted_sibling", "parents_siblings", "cousin", "you_pregnant","they_pregnant"]
     list_of_tags.extend(cluster_list + you_cluster_list + roles + their_trait_list + you_trait_list + you_backstory_list + they_backstory_list + skill_list + you_skill_list)
     no_tags = set()
     for key, value in data.items():
         l = value[0]
         for i in range(len(l)):
             l[i] = l[i].lower()
-        if not any(i in roles for i in l):
-            print(value[1])
-            print('\n')
+        for i in l:
+            if i not in list_of_tags:
+                no_tags.add(i)
                 
     return no_tags
         
@@ -60,48 +60,48 @@ def read_json_files_in_folder(folder_path):
                     nono_tags.update(process_json_data(data))
                 except ValueError:
                     print(f"Error reading JSON data from {filename}")
-    # print(nono_tags)
+    print(nono_tags)
 if __name__ == "__main__":
     folder_path = "resources\dicts\lifegen_talk"
     read_json_files_in_folder(folder_path)
 
-# # import os
-# # import ujson
-# # import json
+# import os
+# import ujson
+# import json
 
-# # def handle_duplicate_keys(pairs):
-# #     """
-# #     Rename duplicate keys by appending a number.
-# #     """
-# #     seen = {}
-# #     result = {}
+# def handle_duplicate_keys(pairs):
+#     """
+#     Rename duplicate keys by appending a number.
+#     """
+#     seen = {}
+#     result = {}
     
-# #     for key, value in pairs:
-# #         while key in seen:
-# #             seen[key] += 1
-# #             key = f"{key}_{seen[key]}"
-# #         else:
-# #             seen[key] = 1
+#     for key, value in pairs:
+#         while key in seen:
+#             seen[key] += 1
+#             key = f"{key}_{seen[key]}"
+#         else:
+#             seen[key] = 1
 
-# #         result[key] = value
+#         result[key] = value
 
-# #     return result
+#     return result
 
-# # def process_json_file(filepath):
-# #     with open(filepath, 'r') as json_file:
-# #         data_str = json_file.read()
+# def process_json_file(filepath):
+#     with open(filepath, 'r') as json_file:
+#         data_str = json_file.read()
 
-# #     Load JSON with duplicate key handling
-# #     data = json.loads(data_str, object_pairs_hook=handle_duplicate_keys)
+#     # Load JSON with duplicate key handling
+#     data = json.loads(data_str, object_pairs_hook=handle_duplicate_keys)
 
-# #     with open(filepath, 'w') as json_file:
-# #         ujson.dump(data, json_file, indent=4)
+#     with open(filepath, 'w') as json_file:
+#         ujson.dump(data, json_file, indent=4)
 
-# # def read_json_files_in_folder(folder_path):
-# #     for filename in os.listdir(folder_path):
-# #         if filename.endswith('.json'):
-# #             process_json_file(os.path.join(folder_path, filename))
+# def read_json_files_in_folder(folder_path):
+#     for filename in os.listdir(folder_path):
+#         if filename.endswith('.json'):
+#             process_json_file(os.path.join(folder_path, filename))
 
-# # if __name__ == "__main__":
-# #     folder_path = "resources\dicts\lifegen_talk"
-# #     read_json_files_in_folder(folder_path)
+# if __name__ == "__main__":
+#     folder_path = "resources\dicts\lifegen_talk"
+#     read_json_files_in_folder(folder_path)

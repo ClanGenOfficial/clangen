@@ -2107,5 +2107,292 @@
             "I think I just need some time to myself. I came up with a bunch of projects I want to complete in my spare time, and so far have had the energy for none!",
             "Here, y_c, want to help me gather water and dirt for my latest one? Let's make a family of mud rabbits!"
         ]
+    ],
+    "broodingapp_toqueenapp": [
+        [
+            "queen's apprentice",
+            "brooding",
+            "platonic_love",
+            "trust",
+            "comfort",
+            "respect",
+            "romantic_like"
+        ],
+        [
+            "Hmph. Hi, y_c ...",
+            "... What's that? You think I've been acting cold towards you lately?",
+            "Heh. I'm that way to everyone. If you haven't noticed ...",
+            "... But, no. I'm totally proud of you for choosing to become a queen.",
+            "Totally not resentful, or anything. Totally don't feel betrayed because I thought we'd be training together. Totally not jealous of all your new friends. Nope, none of that here ...",
+            "*Sigh* ... I guess I just ... miss waking up in the same den as you, is all.",
+            "N-Not that I actually care, or anything.",
+            "Ugh, whatever. Goodbye, y_c. Have fun kitsitting, or whatever it is you do here."
+        ]
+    ],
+    "broodingapp_toqueenapp14": [
+        [
+            "mediator apprentice",
+            "brooding",
+            "platonic_love",
+            "trust",
+            "comfort",
+            "respect",
+            "romantic_like"
+        ],
+        [
+            "Hmph. Hi, y_c ...",
+            "... What's that? You think I've been acting cold towards you lately?",
+            "Heh. I'm that way to everyone. If you haven't noticed ...",
+            "... But, no. I'm totally proud of you for choosing to become a mediator.",
+            "Totally not resentful, or anything. Totally don't feel betrayed because I thought we'd be training together. Totally not jealous of all your new friends. Nope, none of that here ...",
+            "*Sigh* ... I guess I just ... miss waking up in the same den as you, is all.",
+            "N-Not that I actually care, or anything.",
+            "Ugh, whatever. Goodbye, y_c. Have fun fixing other cats' problems, or whatever it is you do here."
+        ]
+    ],
+    "broodingapp_tomedapp": [
+        [
+            "medicine cat apprentice",
+            "brooding",
+            "platonic_love",
+            "trust",
+            "comfort",
+            "respect",
+            "romantic_like"
+        ],
+        [
+            "Hmph. Hi, y_c ...",
+            "... What's that? You think I've been acting cold towards you lately?",
+            "Heh. I'm that way to everyone. If you haven't noticed ...",
+            "... But, no. I'm totally proud of you for choosing to become a medicine cat.",
+            "Totally not resentful, or anything. Totally don't feel betrayed because I thought we'd be training together. Totally not jealous of all your new friends. Nope, none of that here ...",
+            "*Sigh*... I guess I just ... miss waking up in the same den as you, is all.",
+            "N-Not that I actually care, or anything.",
+            "Ugh, whatever. Goodbye, y_c. Have fun sorting herbs, or whatever it is you do here."
+        ]
+    ],
+    "broodingapp_gen": [
+        [
+            "any",
+            "brooding",
+            "upstanding",
+            "random_cat"
+        ],
+        [
+            "One of the other apprentices just went to go play a prank on r_c. Can you believe it?",
+            "How can anyone participate in such idiocy and still call themselves a self respecting member of c_nClan?",
+            "... Yes, I know I'm still an apprentice. But I'm mature for my age!",
+            "Hmph. Whatever. Clearly, I was mistaken in thinking that you would understand."
+        ]
+    ],
+    "broodingapp_toapp1": [
+        [
+            "apprentice",
+            "brooding"
+        ],
+        [
+            "Hm? What's that?",
+            "You want to know if we can train together?",
+            "... I work best alone.",
+            "But ... thank you for asking."
+        ]
+    ],
+    "broodingapp_toapp": [
+        [
+            "apprentice",
+            "brooding",
+            "platonic_like",
+            "romantic_like"
+        ],
+        [
+            "We have training together today?",
+            "Yes, I know ... I requested it.",
+            "Why?",
+            "Uh. I dunno.",
+            "I ... like spending time with you. I guess.",
+            "And, um, also, you're a good sparring partner, too. Mostly that.",
+            "Ahem ..."
+        ]
+    ],
+    "broodingapp_toapp2": [
+        [
+            "no_kit",
+            "brooding"
+        ],
+        [
+            "My mouse-brained mentor ... always trying to get me to 'participate more' in training and 'work together' with my clanmates ...",
+            "Working together is for the weak! If you want something done right, you have to get it done yourself. Clearly, tm_n is too stupid to see it, though!",
+            "I'll show them I can do everything myself ... that I don't need anybody ...",
+            "... Have you been standing there this whole time?"
+        ]
+    ],
+    "broodingapp_toapp3": [
+        [
+            "apprentice",
+            "brooding",
+            "you_loving",
+            "you_cool",
+            "you_stable",
+            "you_assertive"
+        ],
+        [
+            "So ... you're pretty popular around the apprentice's den, huh?",
+            "If I were you, I'd ditch your friends now. They're only a liability.",
+            "What about my friends ...?",
+            "Hmph. Don't need any. I work alone.",
+            "Do I ever get lonely ...?",
+            "...",
+            "...",
+            "... I don't have to answer that."
+        ]
+    ],
+    "broodingapp_toapp41": [
+        [
+            "apprentice",
+            "brooding"
+        ],
+        [
+            "y_c. We're training together tomorrow. d_n just told me to tell you.",
+            "[You open your mouth to ask t_c more details, but they just stalk off without another word. So cold!]"
+        ]
+    ],
+    "broodingapp_toapp42": [
+        [
+            "any",
+            "brooding"
+        ],
+        [
+            "Augh ... oof ...",
+            "What are you looking at, y_c?",
+            "What? I'm not hurt! I just overdid it a little today in training, is all ...",
+            "And I definitely do not need to see the medicine cat!",
+            "... Go on, then! Don't you have your own problems to worry about?"
+        ]
+    ],
+    "broodingapp_toapp43": [
+        [
+            "any",
+            "brooding"
+        ],
+        [
+            "[You see t_c practicing their upright lock.]",
+            "[After a few tries, finally, they get it right, and erupt into a huge smile.]",
+            "Hahahaaaaa! Yes! I did it!",
+            "Haha ... Ahem ...",
+            "[They compose themself, regaining their signature scowl.]",
+            "I hope no one saw that ..."
+        ]
+    ],
+    "broodingapp_toapp5": [
+        [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "queen's apprentice",
+            "brooding",
+            "platonic_like",
+            "romantic_like",
+            "trust",
+            "comfort",
+            "non-related"
+        ],
+        [
+            "What's the deal, y_c? Why do you keep ... following me around everywhere? Acting like you're my friend?",
+            "I don't have any friends! I'm a brooding loner! That's, like, my whole deal!",
+            "*Huff* *Huff*",
+            "I guess I just ... don't get what you see in me, is all.",
+            "What do you think you stand to gain by being close to me?",
+            "Because I guarantee you that, once you see who I really am, you're just going to be disappointed.",
+            "Just ... I don't know. You're better off without me.",
+            "... Didn't you hear me? Go away!"
+        ]
+    ],
+    "broodingapp_toapp45": [
+        [
+            "any",
+            "brooding",
+            "from_your_apprentice"
+        ],
+        [
+            "y_c. I'm ready to start today's training.",
+            "What's that? You ... want me to take the day off?",
+            "Um ... Okay.",
+            "Thanks, I guess."
+        ]
+    ],
+    "broodingapp_toapp46": [
+        [
+            "any",
+            "brooding",
+            "upstanding",
+            "from_your_apprentice"
+        ],
+        [
+            "[You catch t_c practicing a technique you taught them earlier, the back kick.]",
+            "[They can't quite master it. Every time they lash out with their legs, they trip and fall in the dirt.]",
+            "C'mon ... ugh ... AUGH!",
+            "[Frustrated, t_c starts shredding a nearby tree. You quickly intercept and insist that they take a break before trying again tomorrow.]",
+            "*Pant* *Pant* ... Okay, y_c.",
+            "[But the fire in their eyes shows that they aren't done yet ... Not by a long shot.]",
+            "[You fear any warrior who might have to cross t_c's path in battle one day. It won't be pretty.]"
+        ]
+    ],
+    "broodingapp_toapp47": [
+        [
+            "any",
+            "brooding",
+            "from_your_apprentice"
+        ],
+        [
+            "Hm? What's that, y_c?",
+            "You ... want us to do a bonding exercise, to get to know each other better as mentor and apprentice?",
+            "Hmph. Please.",
+            "[t_c stalks off before you can even finish explaining the exercise. Clearly, you'll need to find another way of getting through to them ...]"
+        ]
+    ],
+    "broodingapp_toapp48": [
+        [
+            "any",
+            "brooding",
+            "from_your_apprentice"
+        ],
+        [
+            "[You notice your apprentice is looking a little stressed, and ask them how they're feeling.]",
+            "Hmph. Let me get one thing straight to you, y_c.",
+            "I'm your apprentice, you're my mentor, that's it. That's all this has to be.",
+            "We don't need to get into any of the 'feelings' stuff, because it really isn't necessary. Got it?",
+            "[They storm off, lashing their tail. If that isn't the most brutal little cat you've ever met in your life ...]"
+        ]
+    ],
+    "broodingapp_toapp49": [
+        [
+            "any",
+            "brooding",
+            "platonic_like",
+            "from_your_apprentice",
+            "from_kit"
+        ],
+        [
+            "y_c. I caught this mouse today.",
+            "No big deal, or anything, I just thought you might wanna know ...",
+            "[You shower t_c with praise, letting them know how proud you are, and they allow the littlest smile to crack over their face.]",
+            "Heh ... I guess it is pretty cool ..."
+        ]
+    ],
+    "broodingapp_toapp4": [
+        [
+            "any",
+            "brooding",
+            "platonic_like",
+            "from_your_apprentice"
+        ],
+        [
+            "[t_c coldly drops a bird at your paws.]",
+            "Before you ask, yes, I did go onto the territory without your permission.",
+            "It was early morning. This bird was perching in camp and I chased after it. There was no time to wake you.",
+            "If you have a problem with it, I'd recommend taking it up with d_n.",
+            "But I'm not gonna apologize, because I'm not sorry.",
+            "[t_c turns around and drops the bird on the freshkill pile. You don't know if you should congratulate them for the catch, or claw their ears off.]"
+        ]
     ]
 }

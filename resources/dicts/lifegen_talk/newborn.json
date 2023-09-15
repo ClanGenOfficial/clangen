@@ -215,5 +215,44 @@
             "MEOW! MEOW MEOW MEOW MEOW!",
             "Mew!"
         ]
+    ],
+    "broodingnewborn": [
+        [
+            "newborn",
+            "brooding"
+        ],
+        [
+            "Mrow!",
+            "[Did ... Did t_c just try to bat you away?]"
+        ]
+    ],
+    "broodingnewborn_2": [
+        [
+            "newborn",
+            "brooding"
+        ],
+        [
+            "Grrr ...",
+            "[t_c squirms away from your touch.]"
+        ]
+    ],
+    "broodingnewborn_3": [
+        [
+            "newborn",
+            "brooding"
+        ],
+        [
+            "Hisssss ..."
+        ]
+    ],
+    "broodingnewborn_4": [
+        [
+            "newborn",
+            "brooding"
+        ],
+        [
+            "...",
+            "[t_c must be the quietest kit you've ever met!]"
+        ]
     ]
 }

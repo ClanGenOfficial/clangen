@@ -237,5 +237,174 @@
             "Hey y_c, bet I can catch that butterfly before you!",
             "Ready... set... go!"
         ]
+    ],
+    "brooding_newborn": [
+        [
+            "newborn",
+            "brooding"
+        ],
+        [
+            "Who is that ...?",
+            "Hmph. Nice-looking kit, I suppose ...",
+            "It looks like you."
+        ]
+    ],
+    "brooding_newborn1": [
+        [
+            "newborn",
+            "brooding"
+        ],
+        [
+            "... Uh. Hello.",
+            "Can it even hear what I'm saying right now?"
+        ]
+    ],
+    "brooding_newborn2": [
+        [
+            "newborn",
+            "brooding",
+            "neutral"
+        ],
+        [
+            "Not interested."
+        ]
+    ],
+    "brooding_newborn3": [
+        [
+            "newborn",
+            "brooding",
+            "from_parent"
+        ],
+        [
+            "...",
+            "You're so ... perfect."
+        ]
+    ],
+    "brooding_kitten": [
+        [
+            "kitten",
+            "brooding",
+            "neutral",
+            "dislike"
+        ],
+        [
+            "Not interested."
+        ]
+    ],
+    "brooding_kitten1": [
+        [
+            "kitten",
+            "brooding"
+        ],
+        [
+            "Uh. I don't really know how to talk to kits ...",
+            "Hi, I guess?"
+        ]
+    ],
+    "brooding_kitten2": [
+        [
+            "kitten",
+            "brooding",
+            "neutral",
+            "dislike"
+        ],
+        [
+            "Don't you have something better to be doing?",
+            "Stop bothering me, and go find someone else to annoy."
+        ]
+    ],
+    "brooding_kitten3": [
+        [
+            "kitten",
+            "brooding",
+            "random_cat",
+            "neutral",
+            "dislike"
+        ],
+        [
+            "What is it? Can't you see that I'm busy?",
+            "You want to ... play a game with me?",
+            "Hmph. I haven't 'played' since I was in the nursery. Do yourself a favor and find someone who has nothing better to do.",
+            "Like r_c."
+        ]
+    ],
+    "brooding_kitten4": [
+        [
+            "kitten",
+            "brooding",
+            "random_cat",
+            "platonic_like",
+            "from_parent"
+        ],
+        [
+            "y_c. I have something for you.",
+            "[t_c drops a smooth pebble at your paws.]",
+            "I ... saw it on patrol, and thought you might like it to play with.",
+            "Do you like it?"
+        ]
+    ],
+    "brooding_kitten5": [
+        [
+            "kitten",
+            "brooding",
+            "platonic_like"
+        ],
+        [
+            "Hm? Why are you crying, y_c?",
+            "One of the other kits called you ugly?",
+            "[t_c's gaze suddenly darkens.]",
+            "... Where are they?"
+        ]
+    ],
+    "brooding_kitten5_2": [
+        [
+            "kitten",
+            "brooding",
+            "introspective",
+            "platonic_like"
+        ],
+        [
+            "Hey, y_c. Look up there.",
+            "[t_c points out a bird perching on a tree in camp.]",
+            "That's called a robin. Pretty, huh?",
+            "[t_c spends the rest of the morning quietly pointing out all the birds around camp, and telling you their names.]"
+        ]
+    ],
+    "brooding_kitten6": [
+        [
+            "kitten",
+            "brooding"
+        ],
+        [
+            "Please, y_c, not now ...",
+            "StarClan, I have the worst headache ..."
+        ]
+    ],
+    "brooding_kitten7": [
+        [
+            "kitten",
+            "brooding"
+        ],
+        [
+            "What is it? What do you need?",
+            "You just want to talk?",
+            "...",
+            "How about, for the future, we set up a policy where you only come and find me if you really, really need something. Okay?"
+        ]
+    ],
+    "brooding_kitten8": [
+        [
+            "kitten",
+            "brooding",
+            "platonic_like"
+        ],
+        [
+            "Tch. Not now, y_c. I'm not interested in kit games.",
+            "Wait ... is that a moss-ball?",
+            "Heh. I used to love that game.",
+            "Hmm ...",
+            "Okay. I'll play one round.",
+            "And you speak of this to anyone, I'll never play with you again. Got it?"
+        ]
     ]
 }

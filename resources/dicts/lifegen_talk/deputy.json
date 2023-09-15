@@ -1067,7 +1067,7 @@
             "sibling",
             "adopted_sibling",
             "half sibling",
-            "adoptive parent"
+            "adopted_parent"
         ],
         [
             "What's going on, y_c? I feel like you've been avoiding me lately.",
@@ -1377,7 +1377,7 @@
         [
             "Any",
             "assertive",
-            "platonic love",
+            "platonic_love",
             "random_cat",
             "no_kit"
         ],
