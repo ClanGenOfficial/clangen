@@ -194,7 +194,7 @@
                 "exp": 10,
                 "weight": 5,
                 "new_cat": [
-                    ["kittypet"],
+                    ["kittypet", "status:warrior"],
                     ["litter", "parent:0", "status:kitten"]
                 ],
                 "relationships": [
@@ -273,7 +273,7 @@
                 "exp": 10,
                 "weight": 5,
                 "new_cat": [
-                    ["kittypet"],
+                    ["status:warrior", "kittypet"],
                     ["litter", "parent:0", "status:kitten"]
                 ],
                 "relationships": [

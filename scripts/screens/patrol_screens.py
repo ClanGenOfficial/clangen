@@ -1626,6 +1626,19 @@ class PatrolScreen2(Screens):
         self.clear_cat_buttons()  # Clear all the cat buttons
 
         self.able_cats = []
+        
+        if not game.clan.your_cat:
+            print("Are you playing a normal ClanGen save? Switch to a LifeGen save or create a new cat!")
+            print("Choosing random cat to play...")
+            game.clan.your_cat = Cat.all_cats[choice(game.clan.clan_cats)]
+            counter = 0
+            while game.clan.your_cat.dead or game.clan.your_cat.outside:
+                if counter == 25:
+                    break
+                game.clan.your_cat = Cat.all_cats[choice(game.clan.clan_cats)]
+                counter+=1
+                
+            print("Chose " + str(game.clan.your_cat.name))
 
         # ASSIGN TO ABLE CATS
         for the_cat in Cat.all_cats_list:
