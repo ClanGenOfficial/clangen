@@ -3401,7 +3401,8 @@
             "assertive",
             "silly",
             "they_injured",
-            "they_ill"
+            "they_ill",
+            "any"
         ],
         [
             "Heh ... no need to look so worried, y_c. I've come back from worse, plenty of times! I'll be annoying you again before you - AH!",
@@ -3413,7 +3414,8 @@
             "assertive",
             "brooding",
             "injured",
-            "they_ill"
+            "they_ill",
+            "any"
         ],
         [
             "M'fine ... f-fine ... I'm ...",
@@ -3428,7 +3430,8 @@
             "cool",
             "injured",
             "they_ill",
-            "they_injured"
+            "they_injured",
+            "any"
         ],
         [
             "Oh, hey, it's you ...",
@@ -3442,7 +3445,8 @@
             "unlawful",
             "upstanding",
             "they_injured",
-            "they_ill"
+            "they_ill",
+            "any"
         ],
         [
             "Psh, mouse-brained r_m, trying to imprison me in my nest over something that's not even a problem.",
@@ -3456,7 +3460,8 @@
             "silly",
             "injured",
             "they_ill",
-            "they_injured"
+            "they_injured",
+            "any"
         ],
         [
             "Hey, y_c! How about a joke? What did the tree say to its mate?",
@@ -3476,7 +3481,8 @@
             "introspective",
             "brooding",
             "they_ill",
-            "they_injured"
+            "they_injured",
+            "any"
         ],
         [
             "Oh, y_c, it's you! Everything is fine! I'm fine! I'm - I'm - augh ...",
@@ -3633,7 +3639,8 @@
             "unlawful",
             "unabashed",
             "you_ill",
-            "you_injured"
+            "you_injured",
+            "any"
         ],
         [
             "Hey, y_c ...",
@@ -3648,7 +3655,8 @@
             "platonic_like",
             "romantic_like",
             "assertive",
-            "ill"
+            "you_ill",
+            "any"
         ],
         [
             "I swear to StarClan, y_c, you better fight this thing off! You're too strong to lose to a stupid sickness! I know that you are!",
@@ -3665,7 +3673,8 @@
             "cool",
             "unlawful",
             "you_ill",
-            "you_injured"
+            "you_injured",
+            "any"
         ],
         [
             "Hey, how's my favorite patient?",
@@ -3682,7 +3691,8 @@
             "silly",
             "cool",
             "you_ill",
-            "you_injured"
+            "you_injured",
+            "any"
         ],
         [
             "Hey, y_c! You're looking a lot better than yesterday! If I didn't know any better, I'd say you're healing up pretty nice!",
@@ -3700,7 +3710,8 @@
             "neurotic",
             "upstanding",
             "you_ill",
-            "you_injured"
+            "you_injured",
+            "any"
         ],
         [
             "[t_c bursts into the medicine den, frantic and wide-eyed.]",
@@ -3714,7 +3725,8 @@
             "platonic_like",
             "romantic_like",
             "assertive",
-            "you_injured"
+            "you_injured",
+            "any"
         ],
         [
             "What'd you do to yourself this time, mouse-brain? Don't worry – I've done worse plenty of times, and I'm still kicking. Hehe.",
@@ -3726,7 +3738,8 @@
             "platonic_love",
             "romantic_like",
             "you_injured",
-            "you_ill"
+            "you_ill",
+            "any"
         ],
         [
             "[Late at night, when they think you're sleeping, t_c sneaks into the medicine den and sits beside your nest.]",
