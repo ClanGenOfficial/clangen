@@ -3623,5 +3623,147 @@
             "How am I supposed to keep up to my clanmates expectations if I'm just cooped up here? What if they think less of me for not being able to help out like I usually do?",
             "Just please, think about it ok? You'd be doing me a favor."
         ]
+    ],
+    "assertive_youill": [
+        [
+            "platonic_like",
+            "romantic_like",
+            "assertive",
+            "silly",
+            "unlawful",
+            "unabashed",
+            "you_ill",
+            "you_injured"
+        ],
+        [
+            "Hey, y_c ...",
+            "r_m said I shouldn't visit you, but who cares what that mouse-brain thinks? If they think they can keep me away from you ... they must be dumber than I thought!",
+            "Everyone around camp is missing you ... hoping you get better soon ...",
+            "Hey, that reminds me, the funniest thing happened today ...",
+            "[t_c sits by your side, talking to you until the medicine cat literally forces them to leave. Their company makes you feel better than any herbs ever could.]"
+        ]
+    ],
+    "assertive_youill1": [
+        [
+            "platonic_like",
+            "romantic_like",
+            "assertive",
+            "ill"
+        ],
+        [
+            "I swear to StarClan, y_c, you better fight this thing off! You're too strong to lose to a stupid sickness! I know that you are!",
+            "If you don't get better soon, I ... I ...",
+            "I'll fight off the sickness for you myself!"
+        ]
+    ],
+    "assertive_youill2": [
+        [
+            "platonic_like",
+            "romantic_like",
+            "assertive",
+            "silly",
+            "cool",
+            "unlawful",
+            "you_ill",
+            "you_injured"
+        ],
+        [
+            "Hey, how's my favorite patient?",
+            "I brought you some prey, and some fresh moss. I know the moss in here is sorta crusty ...",
+            "Hey, here's an idea. What if I stayed in here with you tonight? We could stay up until moonhigh telling stories, and I could sneak some of your nesting materials to make it more comfortable!",
+            "Don't tell r_m, though ... hehe!"
+        ]
+    ],
+    "assertive_youill3": [
+        [
+            "platonic_like",
+            "romantic_like",
+            "assertive",
+            "silly",
+            "cool",
+            "you_ill",
+            "you_injured"
+        ],
+        [
+            "Hey, y_c! You're looking a lot better than yesterday! If I didn't know any better, I'd say you're healing up pretty nice!",
+            "Seems like you should be outta here in no time, which is good, since I'm starting to go crazy without you around ...",
+            "If you don't get better soon, then ...",
+            "Hehe. Let's not even talk about that. Bad luck."
+        ]
+    ],
+    "assertive_youill4": [
+        [
+            "platonic_like",
+            "romantic_like",
+            "assertive",
+            "silly",
+            "neurotic",
+            "upstanding",
+            "you_ill",
+            "you_injured"
+        ],
+        [
+            "[t_c bursts into the medicine den, frantic and wide-eyed.]",
+            "*Pant* *Pant* Where's y_c?! Are they alive? Are they breathing?",
+            "Oh ... hey, y_c. Guess it was just a false alarm. Hehe.",
+            "[t_c is laughing, but they look like they're about to faint with worry.]"
+        ]
+    ],
+    "assertive_youill5": [
+        [
+            "platonic_like",
+            "romantic_like",
+            "assertive",
+            "you_injured"
+        ],
+        [
+            "What'd you do to yourself this time, mouse-brain? Don't worry – I've done worse plenty of times, and I'm still kicking. Hehe.",
+            "[t_c's voice is strained and tinged with darkness. It seems they're more worried than they're letting on.]"
+        ]
+    ],
+    "assertive_youill6": [
+        [
+            "platonic_love",
+            "romantic_like",
+            "you_injured",
+            "you_ill"
+        ],
+        [
+            "[Late at night, when they think you're sleeping, t_c sneaks into the medicine den and sits beside your nest.]",
+            "Please, StarClan ... please, help y_c get better. They have to get better.",
+            "I was supposed to protect them ... I was supposed to keep them safe ... without them, I ...",
+            "[Overcome with emotion, t_c races out of the medicine den.]"
+        ]
+    ],
+    "assertive_youill7": [
+        [
+            "any",
+            "assertive",
+            "silly",
+            "cool",
+            "ill",
+            "injured",
+            "neutral"
+        ],
+        [
+            "Yeesh ... you don't look too hot, y_c.",
+            "Make sure to get plenty of rest! You'll be back on your paws before you know it."
+        ]
+    ],
+    "upstanding_you_injured": [
+        [
+            "upstanding",
+            "you_ill",
+            "you_injured",
+            "warrior",
+            "apprentice",
+            "platonic_like"
+        ],
+        [
+            "Hey! Just got back from a hunting patrol and thought I'd stop by real quick! How are you feeling?",
+            "It does suck that your stuck laying around in here, but hey! It could be worse right?",
+            "Oh, and don't worry about your duties for now, I can take them on for the time being!",
+            "It's fine, I promise! Just focus on resting and getting better ok? You'll be able to help out again once you're up and ready."
+        ]
     ]
 }

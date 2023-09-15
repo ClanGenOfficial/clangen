@@ -194,8 +194,6 @@ def change_clan_relations(other_clan, difference):
     """
     will change the Clan's relation with other clans according to the difference parameter.
     """
-    # grab the clan that has been indicated
-    other_clan = other_clan
     # grab the relation value for that clan
     if other_clan not in game.clan.all_clans:
         return
