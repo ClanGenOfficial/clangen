@@ -73,6 +73,19 @@
             "c_nClan's territory spans thousands of tail-lengths. It's easy to get lost if you wander too far."
         ]
     ],
+    "introspective_leafbare": [
+        [
+            "any",
+            "introspective",
+            "leafbare"
+        ],
+        [
+            "...",
+            "[t_c is sat in the corner, with a clump of snow on their head.]",
+            "[They... haven't noticed?]",
+            "[You decide to leave them to it...?]"
+        ]
+    ],
     "assertive_yougrief1": [
         [
             "kitten",

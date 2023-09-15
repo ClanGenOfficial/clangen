@@ -1629,7 +1629,7 @@
             "I wish I was as talented as you at hunting."
         ]
     ],
-    "introspective_mate": [
+    "introspective_mate12": [
         [
             "warrior",
             "Introspective",
@@ -3732,7 +3732,7 @@
             "any"
         ],
         [
-            "What'd you do to yourself this time, mouse-brain? Don't worry – I've done worse plenty of times, and I'm still kicking. Hehe.",
+            "What'd you do to yourself this time, mouse-brain? Don't worry - I've done worse plenty of times, and I'm still kicking. Hehe.",
             "[t_c's voice is strained and tinged with darkness. It seems they're more worried than they're letting on.]"
         ]
     ],
@@ -3780,6 +3780,202 @@
             "It does suck that your stuck laying around in here, but hey! It could be worse right?",
             "Oh, and don't worry about your duties for now, I can take them on for the time being!",
             "It's fine, I promise! Just focus on resting and getting better ok? You'll be able to help out again once you're up and ready."
+        ]
+    ],
+    "introspective_leafbare": [
+        [
+            "any",
+            "introspective",
+            "leafbare"
+        ],
+        [
+            "...",
+            "[t_c is sat in the corner, with a clump of snow on their head.]",
+            "[They... haven't noticed?]",
+            "[You decide to leave them to it...?]"
+        ]
+    ],
+    "introspective_leafbare_1": [
+        [
+            "any",
+            "introspective",
+            "leafbare"
+        ],
+        [
+            "Brr... Good morning, y_c.",
+            "There's a chilly breeze out in the clan today, please be careful. I wouldn't want you to get frozen paws, or worse.",
+            "If you're able to, try and keep off the snow. It's wonderful, but very cold, and wet. Worst combinations in these temperatures.",
+            "Just... keep yourself safe, y_c."
+        ]
+    ],
+    "introspective_leafbare_2": [
+        [
+            "any",
+            "introspective",
+            "leafbare"
+        ],
+        [
+            "Oh! y_c, come have a look at this.",
+            "[t_c gestures to the river in front of them.]",
+            "It's completely frozen. I could stand on it, if I wanted to. I guess there's no fishing today, huh?",
+            "[They didn't sound particularly saddened by this, still staring in shock at the river.]"
+        ]
+    ],
+    "introspective_leafbare_3": [
+        [
+            "any",
+            "introspective",
+            "leafbare",
+            "platonic_like",
+            "romantic_like"
+        ],
+        [
+            "Hey... y_c? Do you mind- Well can I get into your nest with you?",
+            "It's cold out here, and I think that if we sleep in the same nest, we can keep each other warm?",
+            "Of course, you don't have to, if you don't want to. It's up to-",
+            "Oh, you're okay with it? Oh that's wonderful! Shall we go then?"
+        ]
+    ],
+    "introspective_leafbare_4": [
+        [
+            "any",
+            "introspective",
+            "leafbare"
+        ],
+        [
+            "[t_c pouts up at the sky, mildly irritated.]",
+            "...",
+            "Oh, y_c. Hello, I didn't hear you walk over, despite the snow.",
+            "Hm? No, I'm just looking for birds.",
+            "Yeah, I know it's leafbare, there's not going to be any until newleaf, but...",
+            "*Sigh* I'm still going to keep looking. It's something to look forward to, isn't it?"
+        ]
+    ],
+    "introspective_leafbare_5": [
+        [
+            "any",
+            "introspective",
+            "leafbare"
+        ],
+        [
+            "[t_c is pawing at the snow covered ground, thoughtfully.]",
+            "Oh, y_c. Good morning. It seems like that snowstorm last night left us a gift.",
+            "You know, it's utterly shocking that all of those tiny little snowflakes come together to utterly cover the earth around us. I suppose snowflakes prove there's power in numbers.",
+            "They're... much like Clans in that regard. On our own, we're not that strong; we can be wiped away easily. Together, however, when we work together, we're a force of nature.",
+            "What do you think, y_c?"
+        ]
+    ],
+    "introspective_mate": [
+        [
+            "warrior",
+            "Introspective",
+            "from_mate"
+        ],
+        [
+            "Good morning, y_c!",
+            "I saw that you were sleeping in, so I just left you to rest.",
+            "After all, you were up so late on that patrol that you barely got any sleep!",
+            "Here. I got you a mouse. I hope you enjoy it!"
+        ]
+    ],
+    "introspective_mate_1": [
+        [
+            "mediator",
+            "Introspective",
+            "from_mate"
+        ],
+        [
+            "Good morning, y_c!",
+            "I saw that you were sleeping in, so I just left you to rest.",
+            "After all, you were up so late calming those cats that you barely got any sleep!",
+            "Here. I got you a mouse. I hope you enjoy it!"
+        ]
+    ],
+    "introspective_mate_2": [
+        [
+            "medicine cat",
+            "Introspective",
+            "from_mate"
+        ],
+        [
+            "Good morning, y_c!",
+            "I saw that you were sleeping in, so I just left you to rest.",
+            "After all, you were up so late tending to your patients that you barely got any sleep!",
+            "Here. I got you a mouse. I hope you enjoy it!"
+        ]
+    ],
+    "introspective_mate_31": [
+        [
+            "queen",
+            "Introspective",
+            "from_mate"
+        ],
+        [
+            "Good morning, y_c!",
+            "I saw that you were sleeping in, so I just left you to rest.",
+            "After all, you were up so late looking after that sick kitten that you barely got any sleep!",
+            "Here. I got you a mouse. I hope you enjoy it!"
+        ]
+    ],
+    "introspective_mate_41": [
+        [
+            "Any",
+            "Introspective",
+            "from_mate",
+            "random_cat"
+        ],
+        [
+            "Hey, y_c!",
+            "Are you okay? I noticed r_c was chatting your ears off... That's a lot of attention, it's a big deal.",
+            "It isn't? Oh okay..."
+        ]
+    ],
+    "introspective_mate_51": [
+        [
+            "Any",
+            "Introspective",
+            "from_mate"
+        ],
+        [
+            "Oh, hey, y_c.",
+            "Hm? Oh yeah, everything's fine. Why do you ask?",
+            "... you can tell something's wrong?",
+            "*sigh* I don't know. I've just been thinking lately...",
+            "For so much of my life, I've felt like I've always been alone. Now you're here, and, well, I've just been wondering what you see in me.",
+            "You're just so wonderful and talented, and I'm... well, me.",
+            "I just sometimes wonder what I did to deserve you.",
+            "[You assure them that you absolutely cherish them, and no one could take their place in your life.]",
+            "... Thanks, y_c. You always know what to say to make me feel better."
+        ]
+    ],
+    "introspective_mate_61": [
+        [
+            "Any",
+            "Introspective",
+            "from_mate",
+            "random_cat"
+        ],
+        [
+            "Hey, y_c. Would you like to do some cat watching with me?",
+            "Okay so I've got my sights on r_c. Over there. They've been grooming themself all day. It's kinda relaxing to watch, in my opinion.",
+            "And r_c, over there. Looks like they're making repairs to the apprentices' den. It's always getting broken, I've noticed. All of them are really rowdy.",
+            "They seem like they're struggling... Oh? You want to go over and help? Sounds good to me, let's go lend a paw."
+        ]
+    ],
+    "introspective_mate_71": [
+        [
+            "Any",
+            "Introspective",
+            "from_mate"
+        ],
+        [
+            "Hey, y_c. Want to share tongues?",
+            "[You and t_c cuddle up together, pelts brushing, soaking up the bright sunlight coming into camp. Their fur is so soft, and smells wonderful, you bury your face into it. Suddenly, they stopped grooming you, like their attention was stolen by something.",
+            "...",
+            "Huh? Oh! You want to know if something's wrong?",
+            "Oh, no. Nothing's wrong! I was just thinking...",
+            "I never thought this would happen to me. I'm really glad you're here, y_c.",
+            "Thank you for being with me. I love you."
         ]
     ]
 }
