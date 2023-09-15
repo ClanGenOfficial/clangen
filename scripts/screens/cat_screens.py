@@ -4125,13 +4125,15 @@ class TalkScreen(Screens):
             if you.ID in cat.relationships:
                 if cat.relationships[you.ID].dislike < 30 and 'hate' in tags:
                     continue
-                if cat.relationships[you.ID].romantic_love < 10 and 'romantic_like' in tags:
+                if cat.relationships[you.ID].romantic_love < 20 and 'romantic_like' in tags:
                     continue
-                if cat.relationships[you.ID].platonic_like < 10 and 'platonic_like' in tags:
+                if cat.relationships[you.ID].platonic_like < 20 and 'platonic_like' in tags:
+                    continue
+                if cat.relationships[you.ID].platonic_like < 50 and 'platonic_love' in tags:
                     continue
                 if cat.relationships[you.ID].jealousy < 5 and 'jealousy' in tags:
                     continue
-                if cat.relationships[you.ID].dislike < 10 and 'dislike' in tags:
+                if cat.relationships[you.ID].dislike < 20 and 'dislike' in tags:
                     continue
                 if cat.relationships[you.ID].comfortable < 5 and 'comfort' in tags:
                     continue

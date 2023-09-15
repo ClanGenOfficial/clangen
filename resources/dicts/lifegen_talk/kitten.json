@@ -36,7 +36,7 @@
             "r_c says you have a secret... Can you tell me? Please?"
         ]
     ],
-   "KIT32132": [
+    "KIT32132": [
         [
             "newborn",
             "sweet",
@@ -78,7 +78,7 @@
             "Uh oh. I think I'm running out of time to hide. I gotta go! I'll see you later y_c, maybe you can tell me another story later!"
         ]
     ],
-  "kit_15": [
+    "kit_15": [
         [
             "Any",
             "sweet",
@@ -143,7 +143,7 @@
             "Wow, you're so old... Are you going to join the Dark Forest soon? The queens say that's where grumpy cats go!"
         ]
     ],
-   "kit13123": [
+    "kit13123": [
         [
             "newborn",
             "silly",
@@ -196,7 +196,6 @@
             "Can I help take care of them? Pleeease?"
         ]
     ],
-
     "assertive_tonewborn3": [
         [
             "newborn",
@@ -1136,7 +1135,7 @@
             "Plus, then I'd be denmates with you, and you're the coolest elder ever!"
         ]
     ],
-        "assertivekitten_deadclose": [
+    "assertivekitten_deadclose": [
         [
             "Any",
             "assertive",
@@ -1200,6 +1199,19 @@
         [
             "[t_c is curled up in their nest, clinging to a scrap of fur that d_c left behind ...]",
             "[Clearly they don't wanna talk, so you decide to give them some privacy.]"
+        ]
+    ],
+    "introspective_yougrief": [
+        [
+            "any",
+            "introspective",
+            "dead_close",
+            "you_grieving"
+        ],
+        [
+            "[t_c just quietly sat down next to you.]",
+            "...",
+            "[It's nice to be able to see a cat without them asking you about d_c.]"
         ]
     ],
     "theygrief_2": [

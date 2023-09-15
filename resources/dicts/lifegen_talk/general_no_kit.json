@@ -2770,6 +2770,19 @@
             "Every day that I wake up and d_c's not here, StarClan just continues to confirm my suspicions."
         ]
     ],
+    "introspective_yougrief": [
+        [
+            "any",
+            "introspective",
+            "dead_close",
+            "you_grieving"
+        ],
+        [
+            "[t_c just quietly sat down next to you.]",
+            "...",
+            "[It's nice to be able to see a cat without them asking you about d_c.]"
+        ]
+    ],
     "grief_brooding1": [
         [
             "dead_close",
@@ -3310,7 +3323,8 @@
         ]
     ],
     "grief_brooding2": [
-        ["any",
+        [
+            "any",
             "brooding",
             "dead_close",
             "they_grieving"
@@ -3321,7 +3335,8 @@
         ]
     ],
     "grief_brooding3": [
-        ["any",
+        [
+            "any",
             "brooding",
             "dead_close",
             "they_grieving"
@@ -3333,7 +3348,8 @@
         ]
     ],
     "grief_upstanding": [
-        ["any",
+        [
+            "any",
             "upstanding",
             "assertive",
             "dead_close",
@@ -3361,7 +3377,8 @@
         ]
     ],
     "grief_assertive01": [
-        ["any",
+        [
+            "any",
             "assertive",
             "silly",
             "cool",
@@ -3375,6 +3392,236 @@
             "...",
             "It's so easy to forget, sometimes ...",
             "[And just like that, t_c's enthusiastic mood has slipped away.]"
+        ]
+    ],
+    "assertive_theyill": [
+        [
+            "platonic_like",
+            "romantic_like",
+            "assertive",
+            "silly",
+            "they_injured",
+            "they_ill"
+        ],
+        [
+            "Heh ... no need to look so worried, y_c. I've come back from worse, plenty of times! I'll be annoying you again before you - AH!",
+            "[t_c winces in pain, then tries to brush it off as just a laugh.]"
+        ]
+    ],
+    "assertive_theyill1_1": [
+        [
+            "assertive",
+            "brooding",
+            "injured",
+            "they_ill"
+        ],
+        [
+            "M'fine ... f-fine ... I'm ...",
+            "[t_c mumbles some weak gibberish about how totally okay they are.]"
+        ]
+    ],
+    "assertive_theyill2_1": [
+        [
+            "platonic_like",
+            "romantic_like",
+            "assertive",
+            "cool",
+            "injured",
+            "they_ill",
+            "they_injured"
+        ],
+        [
+            "Oh, hey, it's you ...",
+            "... Do me a favor, y_c, and don't look too hard, m'kay? I don't like you seeing me like this.",
+            "You can stare for five more seconds, and that's it!"
+        ]
+    ],
+    "assertive_theyill3_1": [
+        [
+            "assertive",
+            "unlawful",
+            "upstanding",
+            "they_injured",
+            "they_ill"
+        ],
+        [
+            "Psh, mouse-brained r_m, trying to imprison me in my nest over something that's not even a problem.",
+            "I am completely fine! More than fine! I could run laps around camp! I could triple my workload!",
+            "If only r_m would listen ..."
+        ]
+    ],
+    "assertive_theyill4_1": [
+        [
+            "assertive",
+            "silly",
+            "injured",
+            "they_ill",
+            "they_injured"
+        ],
+        [
+            "Hey, y_c! How about a joke? What did the tree say to its mate?",
+            "I wood never leaf - augh ... ahahah ... ow ...",
+            "Laughing hurts ... imagine that. Hehe ...",
+            "Ow. Again."
+        ]
+    ],
+    "assertive_theyill5_1": [
+        [
+            "platonic_like",
+            "romantic_like",
+            "assertive",
+            "silly",
+            "cool",
+            "neurotic",
+            "introspective",
+            "brooding",
+            "they_ill",
+            "they_injured"
+        ],
+        [
+            "Oh, y_c, it's you! Everything is fine! I'm fine! I'm - I'm - augh ...",
+            "StarClan, it hurts so bad ...",
+            "Everything hurts ...",
+            "y_c, I ... I'm scared.",
+            "I don't want to die.",
+            "Will you stay with me?",
+            "I feel braver when you're here."
+        ]
+    ],
+    "theycondition_gen": [
+        [
+            "any",
+            "they_injured"
+        ],
+        [
+            "Augh ...",
+            "[t_c rolls over in their nest, groaning in pain.]"
+        ]
+    ],
+    "theycondition_gen1": [
+        [
+            "any",
+            "they_ill"
+        ],
+        [
+            "*Cough* *Wheeze*",
+            "[t_c's breathing is short and staggered.]"
+        ]
+    ],
+    "theycondition_gen21": [
+        [
+            "any",
+            "they_ill",
+            "they_injured"
+        ],
+        [
+            "Ah ... Ow ...",
+            "Need ... r_m ...",
+            "Stop ... the pain ..."
+        ]
+    ],
+    "theycondition_gen2": [
+        [
+            "any",
+            "they_ill",
+            "they_injured"
+        ],
+        [
+            "Hurts ..."
+        ]
+    ],
+    "theycondition_gen3": [
+        [
+            "any",
+            "they_ill",
+            "they_injured"
+        ],
+        [
+            "...",
+            "[t_c seems to be drifting in and out of consciousness.]"
+        ]
+    ],
+    "theycondition_gen4": [
+        [
+            "any",
+            "they_ill",
+            "they_injured"
+        ],
+        [
+            "[t_c is sleeping.]",
+            "[Better let them rest up so they can recover well!]"
+        ]
+    ],
+    "silly_theyinjured_1": [
+        [
+            "Any",
+            "silly",
+            "they_injured"
+        ],
+        [
+            "Time to stretch my- ow, nevermind...",
+            "Look, I have stupid ideas, but they aren't usually this stupid. I take pride in them, actually!"
+        ]
+    ],
+    "silly_theyinjured_2": [
+        [
+            "medicine cat",
+            "medicine cat apprentice",
+            "silly",
+            "they_injured"
+        ],
+        [
+            "Ow... y_c, you're the medicine cat here. Is being in pain always supposed to hurt this much...?"
+        ]
+    ],
+    "silly_theyinjured_3": [
+        [
+            "Any",
+            "no_kit",
+            "silly",
+            "they_injured"
+        ],
+        [
+            "Ow. y_c, does pain always hurt this much...?",
+            "Why'd I ask you? Well, I've seen you here often enough..."
+        ]
+    ],
+    "silly_theyinjured_4": [
+        [
+            "Any",
+            "silly",
+            "they_injured"
+        ],
+        [
+            "Ow. Ooh. Eeh. Aah. Geh. Bleh. Raaaah.",
+            "[t_c giggles while they make weird sounds, then the giggling devolves into full-on laughter, and... Oh, nope, that 'ow' was definitely real.]"
+        ]
+    ],
+    "silly_theyill_5": [
+        [
+            "Any",
+            "silly",
+            "they_ill"
+        ],
+        [
+            "Ooh. Eeh. Aah. Geh. Bleh. Raaaah.",
+            "[t_c giggles while they make weird sounds, then the giggling devolves into full-on laughter, and... Yeah, maybe laughing like t_c does while hacking and coughing is going to result in more hacking and coughing.]"
+        ]
+    ],
+    "upstanding_they_injured": [
+        [
+            "upstanding",
+            "medicine cat",
+            "medicine cat apprentice",
+            "they_ill",
+            "they_injured"
+        ],
+        [
+            "y_c, just the cat I was looking for! You know, I've been thinking, and I think I have a proposal for you.",
+            "How about, get this, you let me leave the medicine den just a liiiiitle bit early?",
+            "I know you want me to rest, but just consider it! I can't keep just lying here while everyone else is hard at work, it just feels wrong.",
+            "How am I supposed to keep up to my clanmates expectations if I'm just cooped up here? What if they think less of me for not being able to help out like I usually do?",
+            "Just please, think about it ok? You'd be doing me a favor."
         ]
     ]
 }
