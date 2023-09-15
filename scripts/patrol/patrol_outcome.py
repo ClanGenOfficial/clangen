@@ -1056,7 +1056,7 @@ class PatrolOutcome():
                     continue
                 
                 y = random.randrange(0, 20)
-                start_relation = Relationship(inter_cat, n_c, False, True)
+                start_relation = Relationship(n_c, inter_cat, False, True)
                 start_relation.platonic_like += 30 + y
                 start_relation.comfortable = 10 + y
                 start_relation.admiration = 15 + y
