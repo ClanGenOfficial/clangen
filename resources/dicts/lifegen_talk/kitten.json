@@ -1433,5 +1433,83 @@
             "[... Until they start sobbing uncontrollably in the middle of the bird they were eating.]",
             "This used to be d_c's fuh - favorite - *Gasp*"
         ]
+    ],
+    "silly_kit_sticks": [
+        [
+            "kitten",
+            "silly",
+            "they_injured"
+        ],
+        [
+            "[You butt your tiny little nose into the medicine den, where you see t_c sitting up, completely unbothered, on a broken nest formerly made from intricately woven sticks. It seems as though some of them have been pulled out and laid on the floor to play sticks with the medicine cat.]",
+            "Oh-my-gosh! Hi, y_c! I haven't seen you since, woah.. One, two, three, four hours ago? That's, oh my goodness... That's the first time I ever counted that high! Oh, I wanna go climb stuff with you so bad...",
+            "[The medicine cat gives t_c a tentative but affectionate look, as if to say 'Not again!' They lean down and whisper something in t_c's ear.]",
+            "Oh, they said that's not a good idea. Awh, okay...",
+            "Well, wanna play sticks with us instead?"
+        ]
+    ],
+    "silly_kit_sleepy": [
+        [
+            "Any",
+            "silly"
+        ],
+        [
+            "y_c... I'm so... sleepy... [yawn]",
+            "It's still early... I said I was going to play with someone at sunhigh, but that's so far away, and if I go to sleep now I won't be able to play with them...",
+            "Oh, y_c, what do I do?",
+            "[You promise t_c you'll wake them up just in time to play with their friend.]",
+            "You will? y_c, thank you, thank you, thank you! This is why we're the bestest of friends!",
+            "[t_c dramatically falls into their nest in the nursery. They're out as soon as they hit the moss.]",
+            "...",
+            "[As promised, you slowly nudge t_c awake at sunhigh and remind them of their playdate. They jump up happily and run to their friend with wonder and joy in their eyes - though not without tripping over their own paws.]"
+        ]
+    ],
+    "silly_kit_howling": [
+        [
+            "Any",
+            "silly"
+        ],
+        [
+            "AWOO! AW-AW-AWOOO!",
+            "Oh, hi, y_c!",
+            "What am I doing?",
+            "Uh... uh... uh...",
+            "[t_c scampers away.]"
+        ]
+    ],
+    "silly_kit_bug": [
+        [
+            "Any",
+            "silly"
+        ],
+        [
+            "[t_c ignores you at first. You have to nudge them a little for them to acknowledge you.]",
+            "Oh, y_c! I'm so sorry! It's just that... look at this bug I found!",
+            "I want to give him a name, but I've been thinking all day and I just don't know!",
+            "I was thinking of naming him Dasherbug. Oh, or Dancerbug! Or Prancerbug, or maybe Vixenbug..."
+        ]
+    ],
+    "silly_kit_rule": [
+        [
+            "Any",
+            "silly"
+        ],
+        [
+            "y_c! y_c!",
+            "What do you think of this cool stick I found? I bet I could rule the entirety of c_nClan with it! Or even o_cClan! Or every Clan in the WORLD!",
+            "Woah. What if I could even rule all the Twolegs in the world, so they have to do everything I tell them?"
+        ]
+    ],
+    "silly_kit_stories": [
+        [
+            "Any",
+            "silly"
+        ],
+        [
+            "y_c!",
+            "Do you think I could climb up that big rock wall up there? What do you think is on the other side?",
+            "Maybe it's that thing that turns cats into leaders, like the founder c_nClan cat found when they bested that tyrannical old cat!",
+            "You know that one? I think it's the same one l_n used. Maybe I'll ask them about it."
+        ]
     ]
 }

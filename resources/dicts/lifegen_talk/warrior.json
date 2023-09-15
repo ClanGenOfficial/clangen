@@ -583,7 +583,6 @@
             "Better start gathering moss! I know it's your favorite."
         ]
     ],
-    
     "assertive_elder": [
         [
             "Any",
@@ -1749,7 +1748,7 @@
     "sweet_warrior_1": [
         [
             "newborn",
-             "sweet"
+            "sweet"
         ],
         [
             "Aw, hello there, y_c! Welcome to the world!!",
@@ -1757,20 +1756,20 @@
             "If that happens, then I promise on my role as a Warrior that I'll be the best mentor I can be to you."
         ]
     ],
-"sweet_warrior_2": [
+    "sweet_warrior_2": [
         [
             "kitten",
-             "sweet"
+            "sweet"
         ],
         [
             "I've brought gifts for the Nursery! Would anyone like- oh, hello there y_c!",
             "Would you like any of these things? I've been gathering them for a little while, they're stuff from out in the territory! Little rocks, bits of moss, flowers, all of that."
         ]
     ],
-"sweet_warrior_3": [
+    "sweet_warrior_3": [
         [
             "kitten",
-             "sweet"
+            "sweet"
         ],
         [
             "[They twitch their ear, noticing you following them but not looking at you just yet. Perfect pouncing practice!]",
@@ -1778,36 +1777,36 @@
             "... but maybe hold off on biting your clanmates so hard, hehe. I'll go and get you some moss to practice on instead!"
         ]
     ],
-"sweet_warrior_4": [
+    "sweet_warrior_4": [
         [
             "kitten",
-             "sweet"
+            "sweet"
         ],
         [
             "Oh, y_c! I think you're supposed to be staying in the Nursery right now, little one.",
             "Why? Oh, the o_cClan leader is visiting! It's just a safety precaution. I was sent to guard it for now, so I wouldn't mind carrying you back there."
         ]
     ],
-"sweet_warrior_5": [
+    "sweet_warrior_5": [
         [
             "apprentice",
             "queen's apprentice",
             "medicine cat apprentice",
             "mediator apprentice",
-             "sweet"
+            "sweet"
         ],
         [
             "Good evening, y_c! How was training? Hopefully not too rough... I've got something I'd like to give to you, if you're free!",
             "Here you go, freshest prey on the pile. After all that hard work today, you deserve it! I have a couple things I need to do now, but please let me know if there's anything else I can do!"
         ]
     ],
-"sweet_warrior_6": [
+    "sweet_warrior_6": [
         [
             "apprentice",
             "queen's apprentice",
             "medicine cat apprentice",
             "mediator apprentice",
-             "sweet"
+            "sweet"
         ],
         [
             "Hello y_c! Oh, you seem stressed, what's up?",
@@ -1816,42 +1815,42 @@
             "Let me see if there's anything I can do, alright? You go get something to eat, don't worry about it."
         ]
     ],
-"sweet_warrior_7": [
+    "sweet_warrior_7": [
         [
             "apprentice",
             "random_cat",
-             "sweet"
+            "sweet"
         ],
         [
             "Hey y_c! What's on the schedule today?",
             "m_n is taking you and r_a out to train? Sounds like fun! Make sure you guys take plenty of breaks though!"
         ]
     ],
-"sweet_warrior_8": [
+    "sweet_warrior_8": [
         [
             "queen's apprentice",
-             "sweet"
+            "sweet"
         ],
         [
             "Hey y_c! How has the Nursery been, is everything alright?",
             "Let me know if you need any help with den repairs or kit-sitting, I'm happy to lend a paw if you ever need me to!"
         ]
     ],
-"sweet_warrior_9": [
+    "sweet_warrior_9": [
         [
             "medicine cat apprentice",
-             "sweet"
+            "sweet"
         ],
         [
             "Oh, y_c! How have you been? Do you need someone to help with herb-gathering?",
             "Please let me know if you need anything! I'm always happy to help."
         ]
     ],
-"sweet_warrior_10": [
+    "sweet_warrior_10": [
         [
             "mediator apprentice",
             "random_cat",
-             "sweet"
+            "sweet"
         ],
         [
             "Hmm, y_c? What's up?",
@@ -1859,14 +1858,14 @@
             "It means a lot that you were worried though... Hey, how about you come get something to eat with me, just to make it worth your time?"
         ]
     ],
-"sweet_warrior_11": [
+    "sweet_warrior_11": [
         [
             "warrior",
             "medicine cat",
             "mediator",
             "queen",
             "random_cat",
-             "sweet"
+            "sweet"
         ],
         [
             "Oh, y_c! It's so nice to see you, I've been meaning to talk to you about something!",
@@ -1874,33 +1873,33 @@
             "Which ones would you prefer? The dawn patrol, hunting patrol, dusk patrol or the herb patrol?"
         ]
     ],
-"sweet_warrior_12": [
+    "sweet_warrior_12": [
         [
             "warrior",
             "medicine cat",
             "mediator",
             "queen",
-             "sweet"
+            "sweet"
         ],
         [
             "Hey y_c! Do you need an escort for anything?",
             "I'd love to spend more time with you, and what's a better way than helping you around?"
         ]
     ],
-"sweet_warrior_13": [
+    "sweet_warrior_13": [
         [
             "warrior",
-             "sweet"
+            "sweet"
         ],
         [
             "Oh, y_c! Are you going on a hunting patrol?",
             "Can I come along? I'm more than happy to help if you need me to!"
         ]
     ],
-"sweet_warrior_14": [
+    "sweet_warrior_14": [
         [
             "medicine cat",
-             "sweet"
+            "sweet"
         ],
         [
             "Oh wow y_c... I never realized how many herbs there were.",
@@ -1908,11 +1907,11 @@
             "It couldn't hurt to know, in case someone needs help and you're away!"
         ]
     ],
-"sweet_warrior_15": [
+    "sweet_warrior_15": [
         [
             "mediator",
             "random_cat",
-             "sweet"
+            "sweet"
         ],
         [
             "Um.. y_c?",
@@ -1922,11 +1921,11 @@
             "I'm... really worried. It'd mean a lot."
         ]
     ],
-"sweet_warrior_16": [
+    "sweet_warrior_16": [
         [
             "queen",
             "random_cat",
-             "sweet"
+            "sweet"
         ],
         [
             "[You're looking for r_k when you find them playing with t_c, the warrior playing very gently. They seem to brighten when they see you, and send r_k your way.]",
@@ -1934,11 +1933,11 @@
             "[You play along, running from r_k.. Though you eventually let them catch you. t_c, r_k and you have a fun day of playing pretend, though t_c does get in a bit of trouble for not getting their duties done.]"
         ]
     ],
-"sweet_warrior_17": [
+    "sweet_warrior_17": [
         [
             "deputy",
             "random_cat",
-             "sweet"
+            "sweet"
         ],
         [
             "Hey y_c! What tasks do you have for me today?",
@@ -1946,10 +1945,10 @@
             "Sounds good! Is it alright if I come home a little bit early from the patrol? I promised l_n I'd help decorate around the camp for the kits."
         ]
     ],
-"sweet_warrior_18": [
+    "sweet_warrior_18": [
         [
             "deputy",
-             "sweet"
+            "sweet"
         ],
         [
             "Mm.. y_c? I know it's a bit sudden to ask, but...",
@@ -1959,10 +1958,10 @@
             "If anyone understands what it's like to neglect yourself to take care of others, it's me, and I wouldn't want it to happen to you too."
         ]
     ],
-"sweet_warrior_19": [
+    "sweet_warrior_19": [
         [
             "deputy",
-             "sweet"
+            "sweet"
         ],
         [
             "[t_c seems to look at you with concern, you don't know why until they approach you.]",
@@ -1971,20 +1970,20 @@
             "The deputy of c_nClan needs to be awake, after all!"
         ]
     ],
-"sweet_warrior_20": [
+    "sweet_warrior_20": [
         [
             "leader",
-             "sweet"
+            "sweet"
         ],
         [
             "[t_c bows their head with respect towards you as they approach, smiling as they stand back up.]",
             "y_c!! It's nice to see you out and about! Is there anything you need help with?"
         ]
     ],
-"sweet_warrior_21": [
+    "sweet_warrior_21": [
         [
             "leader",
-             "sweet"
+            "sweet"
         ],
         [
             "y_c...? It didn't hurt when you got your lives, did it?",
@@ -1992,10 +1991,10 @@
             "I can't heal that pain, but I'll be the best warrior I can be for you, I promise."
         ]
     ],
-"sweet_warrior_22": [
+    "sweet_warrior_22": [
         [
             "leader",
-             "sweet"
+            "sweet"
         ],
         [
             "y_c...? I just wanted to say...",
@@ -2003,10 +2002,10 @@
             "Knowing I'm serving the best leader in all of the clans makes it all worth it."
         ]
     ],
-"sweet_warrior_23": [
+    "sweet_warrior_23": [
         [
             "elder",
-             "sweet"
+            "sweet"
         ],
         [
             "[t_c seems to bound in here, almost like an excited kit. They lay down in front of you, tucking their paws under their belly.]",
@@ -2014,25 +2013,24 @@
             "[Perhaps elder stories aren't just for kits and apprentices after all.]"
         ]
     ],
-"sweet_warrior_24": [
+    "sweet_warrior_24": [
         [
             "elder",
-             "sweet"
+            "sweet"
         ],
         [
             "Oh, y_c! I changed your nest earlier, I hope you like it!",
             "I found some super soft moss, and I thought it'd be perfect for you. I also threw in some flowers... there wasn't really a reason for that one, I just like flowers."
         ]
     ],
-"sweet_warrior_25": [
+    "sweet_warrior_25": [
         [
             "elder",
-             "sweet"
+            "sweet"
         ],
         [
             "Oh, y_c! It rained this morning so it's super slippery outside, I can help you walk around if you want!",
             "Here, stay by my side, and I'll catch you if you fall!"
         ]
     ]
-
 }

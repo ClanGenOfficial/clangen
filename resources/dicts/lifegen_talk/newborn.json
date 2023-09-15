@@ -177,5 +177,43 @@
         [
             "[t_c seems to reach their tiny little paw up, placing it on your nose with what you could swear is an itty bitty smile]"
         ]
+    ],
+    "silly_newborn_1": [
+        [
+            "Any",
+            "silly"
+        ],
+        [
+            "[t_c reaches up and tries to touch your nose.]"
+        ]
+    ],
+    "silly_newborn_2": [
+        [
+            "Any",
+            "silly"
+        ],
+        [
+            "[t_c mews even louder than the rest of their litter, as if it were a competition.]"
+        ]
+    ],
+    "silly_newborn_3": [
+        [
+            "Any",
+            "silly"
+        ],
+        [
+            "[t_c is making a sound that sounds vaguely like giggling.]"
+        ]
+    ],
+    "silly_newborn_4": [
+        [
+            "Any",
+            "silly"
+        ],
+        [
+            "MROOW!",
+            "MEOW! MEOW MEOW MEOW MEOW!",
+            "Mew!"
+        ]
     ]
 }

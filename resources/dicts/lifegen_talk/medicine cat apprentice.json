@@ -873,5 +873,75 @@
             "Uh, hehe ...",
             "Lesson learned. Don't talk with herbs in the mouth."
         ]
+    ],
+    "silly_medapp_hysterical": [
+        [
+            "Any",
+            "no_kit",
+            "silly"
+        ],
+        [
+            "[You enter camp after an utterly weird border exhibition and see t_c's horrible attempt at a greeting through what seems like hysterical laughter.]",
+            "y_c! HAH! You just missed- *giggle* You just missed the FUNNIEST thing I've ever seen!",
+            "There was- there was a frog on the medicine den, and- hahaHAHAHA- and then it- and then it- oh Silverpelt, the frog- it did-",
+            "It did a backflip and it landed on r_m's head! You should've seen the look on their- HAHA!",
+            "[You truly can't tell if t_c's mentor, r_m, is upset or amused. Either way, they seem to have already gone back to sorting herbs.]"
+        ]
+    ],
+    "silly_medapp_bush": [
+        [
+            "Any",
+            "silly"
+        ],
+        [
+            "[The medicine cat asked you to meet t_c in the medicine den at sun-high so that they could practice their check-up skills. However, when you enter the den, you notice that the medicine cat is nowhere in sight, and t_c has fashioned a bunch of dark, crumbling plants onto their pelt so thickly that you almost can't see their fur. They're sitting very still in the corner of the den, so you try to greet them, assuming they just didn't see you walk in.]",
+            "Shh! I'm a bush, can't you tell?",
+            "If I'm a bush, then maybe the herbs won't see the cats coming, and they'll grow more!"
+        ]
+    ],
+    "silly_medapp_gathering": [
+        [
+            "Any",
+            "silly"
+        ],
+        [
+            "Hi, y_c! Don't worry, I don't need to be looking at you to hear what you're saying. I understand you perfectly fine, I'm just fixing herb stacks!",
+            "So, what've you been up to? Ooh, wait - you went to the last Gathering, what juicy stuff happened there?",
+            "[Upon their request, you tell t_c all about the last Gathering. It wasn't very eventful, in your honest opinion.]",
+            "Awh, man. Well, maybe it's good that nothing cool happened. I'm already busy, forget what would happen if cats started fighting!",
+            "...Don't let me jinx it. Don't let me jinx it, please!"
+        ]
+    ],
+    "silly_medapp_stomach": [
+        [
+            "Any",
+            "silly",
+            "unlawful"
+        ],
+        [
+            "[Wanting to greet t_c, you walk slowly into the medicine den to see if they're in there. Indeed, they are, but they're shifting around on the floor as if they're trying to subdue pain.]",
+            "Oh, y_c! It sure would suck if someone grabbed some chervil root for my stomach!",
+            "Seriously, I don't know what I would do! y_c!",
+            "[You grab what you think is the right herb, judging by the smell and familiar taste, and give some to t_c, wondering why it has to be you of all cats to do this for them.]",
+            "Thanks!",
+            "[t_c gets up with no issue and walks into the elders' den. They come back a few minutes later with empty jaws.]",
+            "Hah, no, of course I don't need it for myself. I just saw you walk in and wanted to see if you would actually do it."
+        ]
+    ],
+    "silly_medapp_question": [
+        [
+            "Any",
+            "silly"
+        ],
+        [
+            "Oh, hello, y_c! Ya know, I had a question I wanted to ask you earlier.",
+            "If you could go back in time and change the path you went on as an apprentice, would you do that?",
+            "I don't think I would. I'm happy here. It's difficult, and I have my worries, but it's worth it.",
+            "Sometimes I look at all my sick Clanmates and worry I may not be able to help them. But then I look at my mentor, and I know everything will be okay with them guiding me.",
+            "Oh, woah, that's a lot more serious than I thought it would be. I just said things, haha... Uh, marigold's the heather?",
+            "Fox-dung! How's the weather? I mean that.",
+            "Uh, hold on. I think I just heard my mentor calling me!",
+            "[You feel the heat coming from t_c's pelt as they embarrassedly pad away to hide in the medicine den.]"
+        ]
     ]
 }

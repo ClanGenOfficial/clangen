@@ -712,7 +712,6 @@
             "Better start gathering moss! I know it's your favorite."
         ]
     ],
-  
     "assertivemed_comfort": [
         [
             "Any",
@@ -731,7 +730,6 @@
             "[Still, you sit with them through the night, hoping to stabilize them through whatever storm they might be weathering right now.]"
         ]
     ],
-   
     "assertive_comfort": [
         [
             "Any",
@@ -1364,6 +1362,85 @@
             "Oh, what's that behind your ear?",
             "[t_c leans over and grabs a sprig of marigold from behind your head.]",
             "Hehe. I'm magic!"
+        ]
+    ],
+    "silly_med_clones": [
+        [
+            "Any",
+            "silly"
+        ],
+        [
+            "Oh, StarClan. When I first became an apprentice, I thought this role would be so much better than being a warrior! I still do, of course. It's so rewarding. But... it's way more labor intensive than I used to think!",
+            "Gathering herbs, sorting them, tending to those who need tended to, not to mention all the things that aren't part of the job that I want to accomplish. Oh, if only I could clone myself.",
+            "Well, maybe...",
+            "No. Bad idea. What happens if the t_c clones clone themselves, and then those t_c clones clone themselves, until there are Too Many t_cs and we have to round them all up and have the leader force us all to watch the leaves change colors until they find out which one is really me?",
+            "[t_c exhales dramatically after finishing the long sentence, but still seems like they're debating the impossible idea.]"
+        ]
+    ],
+    "silly_med_dream": [
+        [
+            "Any",
+            "silly"
+        ],
+        [
+            "Oh. y_c! How do I phrase this? Well, I saw something last night, and it might've been a sign from StarClan. Uh-",
+            "So, do you-",
+            "Have you ever had a dream, that uh, that you, um, that you had-",
+            "...Ah, forget it!",
+            "[t_c pads off in a fit so dramatically that you don't have the opportunity to respond - but then, a large, familiar butterfly lands on t_c's nose! t_c calls out the butterfly's name happily and chatters away with it while skipping gracefully back to the medicine den. You should know t_c by now, why is this a surprise to you?]"
+        ]
+    ],
+    "silly_med_sleep": [
+        [
+            "Any",
+            "silly"
+        ],
+        [
+            "Awh, why am I so tired all the time?",
+            "It can't be because I'm not sleeping. I got an entire quarter-night last night!",
+            "And I was only awoken, what, three times? That's a massive improvement compared to the usual!"
+        ]
+    ],
+    "silly_med_ideas": [
+        [
+            "Any",
+            "silly",
+            "random_cat"
+        ],
+        [
+            "I love my role as a medicine cat.",
+            "Seriously. I'm not the kind of person to exercise my physical muscles. I much prefer to exercise my mental ones.",
+            "I get to come up with and practice new ideas almost every day. There's a level of innovation with this job that I just adore compared to the monotonous life of a warrior.",
+            "Sure, I could be a mediator or a permanent queen, but even if I still had the option, even if I were still an apprentice, I'd still choose the medicine den life any day.",
+            "...Even though it means I have to explain to r_c that they don't have moons of experience, and the herbs they tried to feed someone are permanent sleep herbs, not temporary sleep herbs. And by \"permanent sleep herbs\" I mean water hemlock.",
+            "But other than a little bit of life-or-death education, I love it!"
+        ]
+    ],
+    "silly_med_spectate": [
+        [
+            "Any",
+            "silly",
+            "unlawful"
+        ],
+        [
+            "y_c, I'm lonely today. Wanna sit in the medicine den with me?",
+            "[You tell t_c that you'd love to, but you have something to do today.]",
+            "What if I taught you how to fake a minor illness so you don't have to? I won't tell!",
+            "[Sure, maybe you could keep that knowledge for later. You allow t_c to teach you, and spend the day spectating in the den. While there, t_c tells you all they know about traveling herbs. This counts as productivity, right?]"
+        ]
+    ],
+    "silly_med_burdock": [
+        [
+            "Any",
+            "silly",
+            "random_cat"
+        ],
+        [
+            "[You walk into the medicine den for something or other and find t_c carefully applying some kind of chewed herb to a fresh wound on r_c's pelt. When t_c notices you, they give you a friendly greeting.]",
+            "Oh, y_c, hello! I'll get you in a second, I'm treating a rat bite right now.",
+            "[After the herb is successfully applied, t_c calls you over, but asks r_c to stay for a bit longer to monitor the wound. You inform t_c of your ailments and the three of you converse while t_c finds herbs for you.]",
+            "So, the herb I applied to r_c's pelt is burdock root, right? It's commonly applied to rat bites and burns because of its soothing and numbing properties. Well, we got curious about something.",
+            "What would happen if you put the burdock root on the rat instead? I mean, what's the rat going to do, bite you? It's already been treated!"
         ]
     ]
 }

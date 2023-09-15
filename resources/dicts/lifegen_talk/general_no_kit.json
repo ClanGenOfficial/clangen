@@ -3977,5 +3977,335 @@
             "I never thought this would happen to me. I'm really glad you're here, y_c.",
             "Thank you for being with me. I love you."
         ]
+    ],
+    "silly_gen_party": [
+        [
+            "Any",
+            "silly",
+            "random_cat"
+        ],
+        [
+            "Greetings, y_c! So, I've been working on this BIG plan of mine, and I need feedback...",
+            "I want to throw a party for r_w! I'll go out of my way to catch as much juicy fresh-kill for them as possible, and then collect some plants to decorate the camp with.",
+            "Oh, and then for GAMES! I'll draw a mouse in the ground and we'll use this twig I found for a tail, and then I'll cover someone's eyes with my tail and we'll play pin the tail on the mouse!",
+            "...",
+            "d_n isn't invited though. They were rude to me yesterday."
+        ]
+    ],
+    "silly_gen_reed": [
+        [
+            "Any",
+            "silly"
+        ],
+        [
+            "[t_c loudly blows into a hollow reed they found near the water, creating a clamoring \"FSHWEE\" sound that almost makes you jump out of your fur.]",
+            "Woah! Hello! I didn't... reed-lise that would scare you so much. Algae-ss you weren't expecting that.",
+            "Hey! Don't give me that look! Can't you sea my genius?"
+        ]
+    ],
+    "silly_gen_prey": [
+        [
+            "Any",
+            "silly",
+            "random_cat"
+        ],
+        [
+            "I went on a hunting patrol with r_c the other day and found THE cutest mouse I think I've ever seen. It had big, innocent eyes and it was snacking on a blackberry!",
+            "It was large, so r_c wanted to catch it for c_nClan, but I couldn't bear to see it killed.",
+            "I, ah, ended up scaring it off to save it from being caught. That... really didn't make r_c happy at all. But it was worth it! You should've seen the little thing!"
+        ]
+    ],
+    "silly_gen_cliff": [
+        [
+            "Any",
+            "silly"
+        ],
+        [
+            "Yanno, I probably shouldn't tell you this one, but...",
+            "Yesterday I went on a lone border patrol and got right up on top of that big cliff on the edge of the territory. You know, the one that overlooks our border with o_cClan?",
+            "Yeah. Then, I think I met someone from o_cClan on the other side of it. They yelled up at me, and I think they might've been trying to greet me? But all I heard was a yelp and it REALLY scared me.",
+            "I almost slipped off! But I'm okay now, obviously.",
+            "...Hey, don't look at me like that! I have, so far, calculated the mortality rate of all my encounters with 100% accuracy.",
+            "[t_c winks at you with a smarty-cat gleam in their eye before turning back to what they were doing.]"
+        ]
+    ],
+    "silly_gen_fkill": [
+        [
+            "Any",
+            "no_kit",
+            "silly"
+        ],
+        [
+            "Ah- hello, y_c!",
+            "[t_c, a cat who usually pulls off such harmless antics, stares at you as though you had just witnessed them commit the ultimate atrocity. You notice the slight mess dripping from their jaw.]",
+            "So, uh, how are you? Have you, uh, eaten... well? No?",
+            "Did I... eat the last of the fresh-kill? Hah, of course not! Why would a tiny, goofy little cat like me ever do that?",
+            "If you really think I ate the last piece, you must think I'm some kind of monster!",
+            "...",
+            "Okay, fine! I'm a terrible liar! I ate the last piece! Please don't tell anyone, I was starving and couldn't help myself! Please don't hate-",
+            "Oh. Wait. You aren't mad?",
+            "Oh. Okay."
+        ]
+    ],
+    "silly_gen_idle": [
+        [
+            "Any",
+            "no_kit",
+            "silly"
+        ],
+        [
+            "[You peer across camp and notice t_c doing some weird dance. They're bouncing slightly and swishing their tail in a repetitive manner. Dumbfounded, and admittedly somewhat intrigued, you just have to wander over and ask them what in StarClan they're up to now.]",
+            "Huh? What am I doing?",
+            "Well, I was on border patrol the other day, and I found this kittypet on the border. I came back around today to see if they were there, and they were!",
+            "So we talked about what life as a kittypet was like for them. Apparently, their Twolegs have these weird living boxes? They're completely stationary, but they have life inside of them that gets really bright at night. Kind of like stars.",
+            "Anyway, apparently sometimes those boxes do what that kittypet's Twolegs call an \"idle animation?\" And they showed me an example. And it looked like this.",
+            "So of course I HAD to replicate it! It's super fun, you should try it too."
+        ]
+    ],
+    "silly_gen_plants": [
+        [
+            "Any",
+            "silly",
+            "random_cat"
+        ],
+        [
+            "You wanna learn something really stupid about plants? No? Well, too bad, y_c!",
+            "When I was a little younger I would sneak out to the Twoleg houses with r_c and investigate all their plants. One house had a bunch of berries, and the kittypet who lives there informed me that most of them were poisonous, but the Twolegs ate them anyway, and nothing happened.",
+            "Which, come on! Why can't I eat the long red berries? They look so tasty!",
+            "And there were some they called \"cacao beans\" that smelled delightful...",
+            "Man, sometimes I wish I were a Twoleg. They have it so easy, and so... weird. I bet they can eat rocks and be just fine.",
+            "Actually, now that I think of it, what's the worst thing that could happen if I ate a rock? Here... y_c, do you want to help me look for rocks?"
+        ]
+    ],
+    "silly_like_mischief": [
+        [
+            "Any",
+            "silly",
+            "platonic_like"
+        ],
+        [
+            "It's y_c! How are you?",
+            "That's good! And me? Well, you know, the usual...",
+            "[t_c gives you a mischievous smile, signifying to your t_c trained eyes that they are indeed not up to anything devious. They probably spent the day playing Twolegs with the kits.]"
+        ]
+    ],
+    "silly_like_theonly": [
+        [
+            "Any",
+            "silly",
+            "platonic_like"
+        ],
+        [
+            "My goodness!",
+            "It's the one!",
+            "The only!",
+            "y_c!",
+            "I've been practicing my loud voice! How do you like it?",
+            "What? What do you mean I was already talking in my loud voice? Hey, that's not fair!"
+        ]
+    ],
+    "silly_like_frogs": [
+        [
+            "Any",
+            "silly",
+            "platonic_like"
+        ],
+        [
+            "y_c! What do frogs do with their feet when they're not using them?",
+            "They don't do anything with them! Because if they were doing something with them, they'd be using them, silly!"
+        ]
+    ],
+    "silly_dislike_busy1": [
+        [
+            "Any",
+            "silly",
+            "dislike"
+        ],
+        [
+            "Uh- sorry, I'm busy today..."
+        ]
+    ],
+    "silly_dislike_busy2": [
+        [
+            "Any",
+            "silly",
+            "dislike"
+        ],
+        [
+            "Is there... uh... I think-",
+            "[t_c quickly turns their head to a noise that you don't hear.]",
+            "Uh, sorry... d_n wants me!",
+            "[And t_c's off.]"
+        ]
+    ],
+    "silly_dislike_greet": [
+        [
+            "Any",
+            "silly",
+            "dislike"
+        ],
+        [
+            "Ah, y_c... hi.",
+            "Is there anything I can do for you?",
+            "[t_c seems particularly uncomfortable around you.]"
+        ]
+    ],
+    "silly_dislike_apology": [
+        [
+            "Any",
+            "silly",
+            "dislike"
+        ],
+        [
+            "I'm sorry for whatever I did to upset you, y_c."
+        ]
+    ],
+    "silly_dislike_working": [
+        [
+            "Any",
+            "silly",
+            "dislike"
+        ],
+        [
+            "y_c, I'm busy... working on something. I'll talk to you later."
+        ]
+    ],
+    "silly_dislike_nty": [
+        [
+            "Any",
+            "silly",
+            "dislike"
+        ],
+        [
+            "...No thanks.",
+            "[You haven't even opened your mouth yet.]"
+        ]
+    ],
+    "silly_hate_whoasked": [
+        [
+            "Any",
+            "silly",
+            "hate"
+        ],
+        [
+            "[You try to make small talk with t_c, telling them about a bird you saw a while ago. They begin looking around frantically, checking under rocks, leaves, and the like.]",
+            "Oh, y_c, sorry. I'm not ignoring you. I'm just looking for something.",
+            "I'm looking for who in StarClan asked... so far, I'm not having any luck!"
+        ]
+    ],
+    "silly_hate_thefunny": [
+        [
+            "Any",
+            "silly",
+            "hate"
+        ],
+        [
+            "[You and t_c are essentially alone in camp right now, and t_c's been observing you almost the whole time. You try to lighten the mood with a joke. It's odd and hard to understand, but so is t_c, so you think they'll get it.]",
+            "Sorry, y_c. Give me a moment, I'm analyzing something in my mind.",
+            "[t_c seems to be lost in thought. After a minute, they snap out of it and look at you.]",
+            "Sorry, hi, y_c. I'm too busy trying to find the funny part of what you just said.",
+            "[You explain the joke, assuming they just didn't get it after all, but they simply nod at you and go back to what they were doing.]"
+        ]
+    ],
+    "silly_hate_ignoring": [
+        [
+            "Any",
+            "silly",
+            "hate"
+        ],
+        [
+            "[t_c doesn't say anything when you try to talk to them. They're just playing with their plants - or whatever they do at this point. You don't care to figure it out.]"
+        ]
+    ],
+    "silly_hate_nemesis": [
+        [
+            "Any",
+            "silly",
+            "hate"
+        ],
+        [
+            "You know, I always wanted a nemesis.",
+            "Thanks for letting me have one nice thing, I guess?"
+        ]
+    ],
+    "silly_hate_list": [
+        [
+            "Any",
+            "silly",
+            "unlawful",
+            "hate",
+            "no_kit"
+        ],
+        [
+            "Took the last piece of fresh-kill.",
+            "Walked too far ahead of everyone else in a border patrol.",
+            "Refused to share the largest piece of fresh-kill during leaf-bare.",
+            "Borrowed and lost something important.",
+            "[You try to walk away from t_c slowly, giving them a \"courteous\" nod, but they walk after you while continuing to talk vaguely about your sins.]",
+            "[As you hasten, they only follow faster and faster, scaring the everliving Dark Forest out of you. Once the two of you leave c_nClan's camp, they laugh and turn back unceremoniously, but you're too confused and fearful to do the same, so you end up hiding in a tree until you fall asleep.]"
+        ]
+    ],
+    "silly_leafbare_warmth": [
+        [
+            "Any",
+            "silly",
+            "leafbare",
+            "from_mate"
+        ],
+        [
+            "Gah, it's freezing out here! It feels like my fur could fall off any minute.",
+            "Good thing for us, though, I have a solution!",
+            "[t_c tackles you playfully, spooking you, but it's not unwelcome. You smile at them and fight back, forever grateful for your personal beacon of warmth and joy.]"
+        ]
+    ],
+    "silly_leafbare_productivity": [
+        [
+            "Any",
+            "silly",
+            "leafbare",
+            "random_cat"
+        ],
+        [
+            "Brr... it's so cold out here, y_c.",
+            "I know I should be \"more productive during leaf-bare\" like r_c always tells me, but come on! How does ANYONE work in this weather, let alone them?"
+        ]
+    ],
+    "silly_leafbare_fish": [
+        [
+            "Any",
+            "leafbare",
+            "silly"
+        ],
+        [
+            "I wonder how the fish feel in this weather...",
+            "I'd ask them, but I haven't quite figured out how to speak fish yet."
+        ]
+    ],
+    "silly_leafbare_nursery": [
+        [
+            "Any",
+            "silly"
+        ],
+        [
+            "y_c, do you remember that old nursery tale about the two sisters?",
+            "You know, the one where one of them had control over the weather? And that sister accidentally cast all four Clans into an eternal leaf-bare?",
+            "...Or was that just a really weird dream I had?"
+        ]
+    ],
+    "silly_leafbare_game": [
+        [
+            "Any",
+            "leafbare",
+            "silly"
+        ],
+        [
+            "[t_c is narrating a grand tale as they chase snowflakes around camp. Instead of interrupting them, you decide to eavesdrop and figure out exactly what adventures they're on today.]",
+            "And t_c gets one!",
+            "And another!",
+            "And they're dropping like flies! The hunt is on, everybody!",
+            "With t_c in the lead with a whopping 147 catches, we're looking at the most exciting mouse-hunt game of the season!",
+            "[Then, t_c stops, looking you directly in the eye. You can't tell if they're embarrassed or waiting for a response, so you give them a yelp of encouragement. That seems to be what they wanted.]",
+            "And the crowd goes WILD!"
+        ]
     ]
 }

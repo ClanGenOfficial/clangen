@@ -689,8 +689,7 @@
             "They mistook a twig for a snake and flew, like, five fox-lengths into the air! Hahahaha!"
         ]
     ],
-
-        "assertive_app01": [
+    "assertive_app01": [
         [
             "warrior",
             "assertive",
@@ -2039,6 +2038,74 @@
         [
             "y_c, come outside and look! There are so many stars out! Didn't you mention something like this in one of your stories?",
             "I wonder if it's StarClan, smiling down at us? If it is... then I'm glad I'm someone that they're proud of! And I'm sure they're proud of you too!"
+        ]
+    ],
+    "silly_app_mean": [
+        [
+            "Any",
+            "silly"
+        ],
+        [
+            "Argh, this Cat Who Shall Not Be Named has been so mean to me lately... I know it's bad to want to get back at cats! Really, I do! But they're just begging to invoke my wrath!",
+            "Like, they stuck their tongue out at me when my mentor had to pick them up for training yesterday because theirs was sick. And they told me my choice of favorite prey was stupid! And I know I can't tell anycat I know because they'll call me a tattle-tail. Seriously, do they WANT to see my villain arc?",
+            "Huuuuurgh. Deep breaths, r_c. Maybe it's because, uh, no... I don't know why they're taunting me, what could I have possibly done to them?",
+            "Well... can you PLEASE confront them about it? Tell them... uh... they have to close their eyes during my warrior ceremony."
+        ]
+    ],
+    "silly_app_philosopher": [
+        [
+            "Any",
+            "silly",
+            "random_cat"
+        ],
+        [
+            "y_c! I've been looking for you! I've been thinking all day about this... I've been begging for a cat to bounce ideas off of.",
+            "So, I think I wanna do something funny to r_c. Like a prank. They've been having a rough time recently and I wanna do something funny to cheer them up. But I don't have the slightest clue what I wanna do... everything I can think of either hasn't worked or would just upset them further.",
+            "I wanted to put a frog pet in their den, since I love looking for cool frogs, but couldn't find one they would like. Then, I tried looking for flowers to give them, but apparently the ones I found were called foxgloves, and they're really dangerous.",
+            "PLEASE tell me if you think of something! I think I've thought so hard about this I could probably consider myself a, uh... what are the thinky cats called again? I know there's a name, come on...",
+            "...Like the ones who come up with really big ideas that fundamentally change how their Clan operates? Like that one cat from o_cClan? Please? It's a real thing, it's on the tip of my jaw, I swear!"
+        ]
+    ],
+    "silly_app_hysterical": [
+        [
+            "Any",
+            "no_kit",
+            "silly",
+            "random_cat"
+        ],
+        [
+            "[You enter camp after an utterly boring border patrol and see this apprentice's mortifying attempt at a greeting through what seems like hysterical laughter.]",
+            "y_c! HAH! You just missed- *giggle* You just missed the FUNNIEST thing I've ever seen!",
+            "There was- there was a frog on the leader's den, and- hahaHAHAHA- and then it- and then it- oh my goodness, the frog- it did-",
+            "IT DID A BACKFLIP AND- It landed on r_c's HEAD!",
+            "[Indeed, r_c is all the way across the camp, refusing to look over at the apprentice laughing over their embarrassing stunt only a few fox-tails away. You can feel the red-hot fur on their pelt even from here.]"
+        ]
+    ],
+    "silly_app_gift": [
+        [
+            "Any",
+            "silly",
+            "random_cat"
+        ],
+        [
+            "y_c! I made something cool, do you think r_c would like it? I made it with a thick water reed and some rocks.",
+            "It's sort of like an, uh... Like, you can tilt it, and it makes a cool noise.",
+            "Here, try it. Just pick it up with your jaws and tilt your head around.",
+            "[You do as t_c orders. When you tilt the reed, you hear many pebbles hitting its walls in a way that sounds like the pitter-patter of rain, then resting against the tightly-shut ends. It's mesmerizing, and you have to force yourself to set it back down when you're done admiring the sound.]",
+            "Hah, I take it you like it then? Here, why don't you have this one? I can always make another, after all!"
+        ]
+    ],
+    "silly_app_time": [
+        [
+            "Any",
+            "silly",
+            "random_cat"
+        ],
+        [
+            "Agh... gotta stretch my limbs!",
+            "I've been working with my mentor all day long, doing this, that, and what have you...",
+            "I think I just need some time to myself. I came up with a bunch of projects I want to complete in my spare time, and so far have had the energy for none!",
+            "Here, y_c, want to help me gather water and dirt for my latest one? Let's make a family of mud rabbits!"
         ]
     ]
 }
