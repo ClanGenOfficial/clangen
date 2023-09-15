@@ -85,6 +85,19 @@
             "line_spacing": "0.95"
         }
     },
+    "#text_box_28_dark": {
+        "prototype": "#text_box",
+        "font": {
+            "name": "notosans",
+            "size": "14"
+        }
+    },
+    "#text_box_28_horizcenter_dark": {
+        "prototype": "#text_box_28",
+        "misc": {
+            "text_horiz_alignment": "center"
+        }
+    },
     "#text_box_30_dark": {
         "prototype": "#default_dark",
         "font": {

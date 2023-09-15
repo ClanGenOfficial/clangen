@@ -177,6 +177,19 @@
             "text_vert_alignment_padding": "10"
         }
     },
+    "#text_box_28": {
+        "prototype": "#text_box",
+        "font": {
+            "name": "notosans",
+            "size": "28"
+        }
+    },
+    "#text_box_28_horizcenter": {
+        "prototype": "#text_box_28",
+        "misc": {
+            "text_horiz_alignment": "center"
+        }
+    },
     "#text_box_30": {
         "prototype": "#text_box",
         "font": {

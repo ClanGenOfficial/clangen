@@ -338,9 +338,9 @@ class ListScreen(Screens):
                                    starting_height=0, manager=MANAGER))
 
                 name = str(cat.name)
-                short_name = shorten_text_to_fit(name, 220, 30)
+                short_name = shorten_text_to_fit(name, 240, 28)
 
-                self.cat_names.append(pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))), short_name, object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER))
+                self.cat_names.append(pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))), short_name, object_id=get_text_box_theme("#text_box_28_horizcenter"), manager=MANAGER))
                 pos_x += 240
                 if pos_x >= 1200:
                     pos_x = 0
