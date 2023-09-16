@@ -1799,5 +1799,362 @@
             "...",
             "[While the rest of the kits play and have fun together, little t_c sits all by themself ...]"
         ]
+    ],
+    "neurotic_kit_": [
+        [
+            "warrior",
+            "neurotic"
+        ],
+        [
+            "Oh, y_c, I have a question.",
+            "There's no test to become an apprentice... right?"
+        ]
+    ],
+    "neurotic_kit__2": [
+        [
+            "any",
+            "neurotic",
+            "non-related"
+        ],
+        [
+            "Oh... I'm really sorry, I think I forgot your name."
+        ]
+    ],
+    "neurotic_kit__3": [
+        [
+            "any",
+            "neurotic",
+            "murder"
+        ],
+        [
+            "[As soon as t_c notices you approach, they squeal in fear and race away.]"
+        ]
+    ],
+    "neurotic_kit__4": [
+        [
+            "leader",
+            "neurotic"
+        ],
+        [
+            "[t_c's eyes widen as you approach.]",
+            "Leader y_c! H-hi!",
+            "[They dip their head respectfully.]"
+        ]
+    ],
+    "neurotic_kit__5": [
+        [
+            "kitten",
+            "neurotic",
+            "sibling",
+            "adopted_sibling"
+        ],
+        [
+            "Oh, y_c, it's you...",
+            "Hey, um. Once you become leader, do you promise to make me deputy?",
+            "[t_c stares at you with a hopeful expression.]"
+        ]
+    ],
+    "neurotic_kit__6": [
+        [
+            "any",
+            "neurotic",
+            "from_your_kit",
+            "from_adopted_kit"
+        ],
+        [
+            "[t_c bounds up to you, a worried look in their eyes.]",
+            "You won't ever leave me, right, y_c? I... ",
+            "I don't know what I would do without you."
+        ]
+    ],
+    "neurotic_kit__7": [
+        [
+            "any",
+            "neurotic",
+            "from_your_kit",
+            "from_adopted_kit",
+            "random_cat"
+        ],
+        [
+            "y_c!",
+            "[You approach t_c, who smiles proudly.]",
+            "I was brave today! Just like how you told me!",
+            "r_a was pretending to be a big scary enemy warrior. But I defeated them!",
+            "[You look to r_a, who grins from across the camp.]"
+        ]
+    ],
+    "neurotic_kit__8": [
+        [
+            "no_kit",
+            "neurotic"
+        ],
+        [
+            "Every time I try to play with the other kits... I just keep thinking... What if I mess up?",
+            "What if they don't want to be my friends anymore?"
+        ]
+    ],
+    "neurotic_kit__9": [
+        [
+            "any",
+            "neurotic"
+        ],
+        [
+            "[t_c sniffles as they curl up underneath their nest, jumping as you grow close.]",
+            "O-Oh! I'm sorry y_c- I- I didn't mean to be in your way...",
+            "[They wipe a few tears from their eyes as they shakily step out of their hiding spot.]",
+            ".. I had a nightmare and um... can I snuggle with you tonight? ... Please? I- I don't want the Dark Forest cat to get me..."
+        ]
+    ],
+    "neurotic_kit__10": [
+        [
+            "any",
+            "neurotic"
+        ],
+        [
+            "[t_c gazes at themself in the reflection of a puddle.]",
+            "Is it normal for my fur to stick out like this?",
+            "I just can't seem to make it stay flat!"
+        ]
+    ],
+    "neurotic_kit__11": [
+        [
+            "any",
+            "neurotic",
+            "random_cat",
+            "from_your_kit",
+            "from_adopted_kit"
+        ],
+        [
+            "r_k said that they were going to sneak into the warrior's den... But I was too scared.",
+            "I don't wanna get exiled!"
+        ]
+    ],
+    "neurotic_kit__12": [
+        [
+            "any",
+            "from_your_kit",
+            "neurotic"
+        ],
+        [
+            "... H- Hey, I'm gonna be a good warrior, right? Like you said?",
+            "[You cuddle close to your kitten, gently reassuring them.]",
+            "...",
+            "If... I'm supposed to be a warrior... Why is it so scary?"
+        ]
+    ],
+    "neurotic_kit__13": [
+        [
+            "any",
+            "trust",
+            "neurotic"
+        ],
+        [
+            "Quick! The scary monster is gonna get me!",
+            "[t_c dives behind you without a thought, quivering nervously with their paws over their face. You don't see anything but the shadow of a small bird.]",
+            "I- Is it gone?"
+        ]
+    ],
+    "neurotic_kit__14": [
+        [
+            "any",
+            "neurotic",
+            "random_cat",
+            "comfort"
+        ],
+        [
+            "[You spot t_c trembling in a one of the corners of the nursery.]",
+            "r_k t-told me a really s-s-scary story about a big monster that c-comes and eats kits who are naughty.",
+            "Eep! There it is now!",
+            "[t_c hides behind your tail from the scary monster ... which is, in fact, just a pile of leaves.]"
+        ]
+    ],
+    "neurotic_kit__15": [
+        [
+            "any",
+            "neurotic",
+            "platonic_like"
+        ],
+        [
+            "Teehee! y_c! Come play with me!",
+            "... Why do I always just wanna play with you, and never any of the other cats?",
+            "Uhm ... Because, being around them makes me feel scared.",
+            "But with you, I don't have to be scared!",
+            "You make me feel braver."
+        ]
+    ],
+    "neurotic_kit__16": [
+        [
+            "kitten",
+            "neurotic",
+            "platonic_like"
+        ],
+        [
+            "Ooh! Are you playing a game? Is it moss-ball?",
+            "It's ... hide and seek?",
+            "Eep! I don't really like that game. It's way too scary!"
+        ]
+    ],
+    "neurotic_kit__17": [
+        [
+            "kitten",
+            "neurotic"
+        ],
+        [
+            "Y- You don't think I'm annoying, do you?"
+        ]
+    ],
+    "neurotic_kit__18": [
+        [
+            "any",
+            "random_cat",
+            "neurotic"
+        ],
+        [
+            "Hey... y_c? W- What if l_n doesn't make me a Warrior because I'm too much of a fraidy cat, like r_c said?",
+            "[t_c starts to tear up, trembling in place.]",
+            "What if- what if I'm not good enough? What if-",
+            "[You gently reassure t_c that they'll be the best warrior ever, and that you'll make them a Warrior yourself if you have to. It seems to make them calm down a bit, and they smile at you.]",
+            "T.. Thanks... It really means a lot, y_n.]"
+        ]
+    ],
+    "neurotic_kit__19": [
+        [
+            "any",
+            "dislike",
+            "neurotic"
+        ],
+        [
+            "[Before you can even get close, t_c tears up and runs away from you.]"
+        ]
+    ],
+    "neurotic_kit__20": [
+        [
+            "any",
+            "neurotic"
+        ],
+        [
+            "Mm..",
+            "[Seems like all they want to do is watch the rain, as if something was going to come out of it and attack them.]",
+            "[You sit down beside them silently, they seem to appreciate that.]"
+        ]
+    ],
+    "neurotic_kit__21": [
+        [
+            "apprentice",
+            "queen's apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "neurotic"
+        ],
+        [
+            "Um, y_c? What are you doing? Can I.. um.. h-... help?",
+            "[You begin to explain something you learnt recently, but t_c seems to get nervous.]",
+            "Are you sure that's... safe?"
+        ]
+    ],
+    "neurotic_kit__22": [
+        [
+            "kitten",
+            "random_cat",
+            "neurotic"
+        ],
+        [
+            "[t_c seems to be crying, curled up in a ball. r_k seems to be picking on them, though it's hard to tell if it's intentional or not. Regardless, you step in and scare them off.]",
+            "y_c..? T- Thank you! Thank you so much!",
+            "[t_c buries their face in your pelt, whilst sobbing, gratefully. You feel like a hero now.]"
+        ]
+    ],
+    "neurotic_kit__23": [
+        [
+            "newborn",
+            "neurotic"
+        ],
+        [
+            "Whoa.. they're so tiny..",
+            "[Their ears pin back as they take a deep breath, a look of determination crossing the timid kit's face.]",
+            "I- I promise! I'll keep you safe!! You won't be scared all the time... like I am... because y- you can count on me!"
+        ]
+    ],
+    "neurotic_kit__24": [
+        [
+            "medicine cat",
+            "medicine cat apprentice",
+            "random_cat",
+            "neurotic"
+        ],
+        [
+            "y_n! y_n! r_k told me I had Deathcough!! Am I gonna die? Please tell me!",
+            "[They start to tear up, but you quickly reassure them that no- they are not going to die.]",
+            "So... they tricked me again?"
+        ]
+    ],
+    "neurotic_kit__25": [
+        [
+            "no_kit",
+            "neurotic"
+        ],
+        [
+            "o_cClan cats!!",
+            "[They hide behind your leg as the leader of the other clan enters your camp. Probably should let them know why they're visiting.]"
+        ]
+    ],
+    "neurotic_kit__26": [
+        [
+            "any",
+            "neurotic",
+            "random_cat"
+        ],
+        [
+            "[t_c slams into you a little too hard while playing.]",
+            "AAAA - oof!",
+            "*Gasp* Oh my StarClan, I'm so sorry!!!",
+            "Did I hurt you? Are you alright?",
+            "You might not seem like you're damaged now, but what if it happens later? What if you have a concussion - or worse, internal bleeding???",
+            "I - I better get r_m! And l_n, too!",
+            "*Gasp* But ... Oh, no - What if they exile me?",
+            "Well ... I guess that's a risk I'll have to take. For your health, y_c, and for the safety of c_nClan.",
+            "Maybe everyone would be better off without a destructive force like me running around ...",
+            "I - I'll be right back! Try not to move!"
+        ]
+    ],
+    "neurotic_kit__27": [
+        [
+            "any",
+            "you_injured",
+            "neurotic"
+        ],
+        [
+            "Um... are you okay, y_c?",
+            "[They waddle over to you, plopping their head down next to you, staring up at you with big eyes.]",
+            "Do you wanna talk to me about it? ... Like how I always talk to you?"
+        ]
+    ],
+    "neurotic_kit__28": [
+        [
+            "queen",
+            "queen's apprentice",
+            "neurotic"
+        ],
+        [
+            "[It's raining outside and, as you watch over the Nursery dutifully, you feel something small press against your side.]",
+            "[It's t_c, quivering quietly and trying to mask their sobbing. It seems the rain is scaring them, but they're too nervous to say anything.]",
+            "[You curl your tail over them to comfort them, and they snuggle closer to you. It seems they appreciate the gesture, and eventually they fall asleep in your safe embrace.]"
+        ]
+    ],
+    "neurotic_kit__29": [
+        [
+            "any",
+            "you_sweet",
+            "you_stable",
+            "you_upstanding",
+            "you_cool",
+            "neurotic"
+        ],
+        [
+            "[You've started to notice how much t_c seems to hang around you, even if you don't usually talk when they do.]",
+            "[Finally, you ask them why, and their answer is quite surprising.]",
+            "Um... you just... you're so... composed! You always know w-what to do and you never worry about it! Y- You work hard and I...",
+            "I wish I was you..."
+        ]
     ]
 }
