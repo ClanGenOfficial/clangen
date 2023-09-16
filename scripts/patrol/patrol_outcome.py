@@ -996,7 +996,7 @@ class PatrolOutcome():
         
         # KITTEN THOUGHT
         if status in ("kitten", "newborn"):
-            thought = "Is snuggled safe in the nursury"
+            thought = "Is snuggled safe in the nursery"
         
         # MEETING - DETERMINE IF THIS IS AN OUTSIDE CAT
         outside = False
@@ -1004,7 +1004,7 @@ class PatrolOutcome():
             outside = True
             status = cat_type
             new_name = False
-            thought = "Is wondering about the new cats they just meet."
+            thought = "Is wondering about the new cats they just met"
             
         # IS THE CAT DEAD?
         alive = True
@@ -1056,7 +1056,7 @@ class PatrolOutcome():
                     continue
                 
                 y = random.randrange(0, 20)
-                start_relation = Relationship(inter_cat, n_c, False, True)
+                start_relation = Relationship(n_c, inter_cat, False, True)
                 start_relation.platonic_like += 30 + y
                 start_relation.comfortable = 10 + y
                 start_relation.admiration = 15 + y
