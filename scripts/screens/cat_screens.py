@@ -4028,7 +4028,7 @@ class TalkScreen(Screens):
 
                 if you.is_ill() and "you_ill" in tags:
                     ill_injured = True
-                if you.is_injured() and "you_injured" in tags:
+                if you.is_injured() and "you_injured" in tags and "pregnant" not in you.injuries:
                     ill_injured = True
                 
                 if not ill_injured:
@@ -4039,7 +4039,7 @@ class TalkScreen(Screens):
                 
                 if cat.is_ill() and "they_ill" in tags:
                     ill_injured = True
-                if cat.is_injured() and "they_injured" in tags:
+                if cat.is_injured() and "they_injured" in tags and "pregnant" not in you.injuries:
                     ill_injured = True
 
                 if not ill_injured:
