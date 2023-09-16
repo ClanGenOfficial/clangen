@@ -855,7 +855,7 @@ class Cat():
             "upstanding": ["righteous", "ambitious", "strict", "competitive", "responsible", "bossy", "know-it-all"],
             "introspective": ["lonesome", "righteous", "calm", "gloomy", "wise", "thoughtful", "quiet", "daydreamer"],
             "neurotic": ["nervous", "insecure", "lonesome", "quiet"],
-            "silly": ["troublesome", "childish", "playful", "careful", "strange", "noisy", "attention-seeking"],
+            "silly": ["troublesome", "childish", "playful", "careful", "strange", "noisy", "attention-seeker"],
             "stable": ["loyal", "responsible", "wise", "faithful"],
             "sweet": ["compassionate", "faithful", "loving", "oblivious", "sincere", "sweet", "polite", "daydreamer"],
             "unabashed": ["childish", "confident", "bold", "shameless", "strange", "oblivious", "flamboyant", "impulsive", "noisy"],
