@@ -4198,20 +4198,21 @@ class TalkScreen(Screens):
             injured_cats = []
             
             for c in Cat.all_cats.values():
-                if c.status == "medicine cat":
-                    living_meds.append(c)
-                elif c.status == "warrior":
-                    living_warriors.append(c)
-                elif c.status == "mediator":
-                    living_mediators.append(c)
-                elif c.status == 'queen':
-                    living_queens.append(c)
-                elif c.status in ["apprentice", "medicine cat apprentice", "mediator apprentice", "queen's apprentice"]:
-                    living_apprentices.append(c)
-                elif c.status in ["kitten", "newborn"]:
-                    living_kits.append(c)
-                elif c.status == "elder":
-                    living_elders.append(c)
+                if not c.dead and not c.outside:
+                    if c.status == "medicine cat":
+                        living_meds.append(c)
+                    elif c.status == "warrior":
+                        living_warriors.append(c)
+                    elif c.status == "mediator":
+                        living_mediators.append(c)
+                    elif c.status == 'queen':
+                        living_queens.append(c)
+                    elif c.status in ["apprentice", "medicine cat apprentice", "mediator apprentice", "queen's apprentice"]:
+                        living_apprentices.append(c)
+                    elif c.status in ["kitten", "newborn"]:
+                        living_kits.append(c)
+                    elif c.status == "elder":
+                        living_elders.append(c)
 
             replace_mappings = {
                 "r_k": living_kits,
