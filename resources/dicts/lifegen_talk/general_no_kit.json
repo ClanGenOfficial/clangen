@@ -4054,7 +4054,8 @@
             "silly"
         ],
         [
-            "[You peer across camp and notice t_c doing some weird dance. They're bouncing slightly and swishing their tail in a repetitive manner. Dumbfounded, and admittedly somewhat intrigued, you just have to wander over and ask them what in StarClan they're up to now.]",
+            "[You peer across camp and notice t_c doing some weird dance. They're bouncing slightly and swishing their tail in a repetitive manner.]",
+            "[Dumbfounded, and admittedly somewhat intrigued, you just have to wander over and ask them what in StarClan they're up to now.]",
             "Huh? What am I doing?",
             "Well, I was on border patrol the other day, and I found this kittypet on the border. I came back around today to see if they were there, and they were!",
             "So we talked about what life as a kittypet was like for them. Apparently, their Twolegs have these weird living boxes? They're completely stationary, but they have life inside of them that gets really bright at night. Kind of like stars.",
@@ -4673,18 +4674,6 @@
             "You scared me.",
             "Sorry, it's just ...",
             "You don't get to talk to the leader every day, I guess."
-        ]
-    ],
-    "brooding_gen5_9": [
-        [
-            "no_kit",
-            "brooding",
-            "introspective"
-        ],
-        [
-            "l_n ... What do you think of them?",
-            "Their leadership style, the choices they've made ... Would you have done it differently, if you were in that position?",
-            "I'm just curious. What you think of who's in charge could reveal a lot about your character."
         ]
     ],
     "brooding_like": [
