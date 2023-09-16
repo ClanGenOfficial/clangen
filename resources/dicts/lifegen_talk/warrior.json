@@ -2182,5 +2182,55 @@
             "Good luck out there, y_c. I ... I'll be rooting for you.",
             "[t_c turns and exits the den without another word.]"
         ]
+    ],
+    "upstanding_warrior1": [
+        [
+            "warrior",
+            "upstanding"
+        ],
+        [
+            "y_c, there you are. I've been meaning to talk to you all day, it's almost like you're trying to avoid me!",
+            "Anyways, now that I've got you here, would you mind telling me what in the name of Starclan crossed your mind when you decided to skip this morning's dawn patrol?",
+            "'Accidentally' sleeping in isn't an excuse and you know that! Do you think the sun will stop rising or the seasons will stop shifting just because of your lack of awareness?",
+            "Honestly y_c, you need to start pulling your weight. We can't afford to have you just lounging around in your den while the rest of us are stuck picking up your slack!",
+            "c_nClan has no room for inadequate warriors who can't handle something as simple as showing up to patrol on time. Work on that, yeah? I don't want to have this conversation with you again."
+        ]
+    ],
+    "upstanding_warrior2": [
+        [
+            "upstanding",
+            "deputy",
+            "dislike"
+        ],
+        [
+            "y_c, if I'm going to be honest with you, I can't help but feel like you've become a bit...lazier with patrols.",
+            "Don't you get all bristly with me now, just think about it! You organize a couple, maybe a few patrols a day, and small ones at that. That leaves majority of us just lounging around camp like sitting ducks waiting for something to happen!",
+            "How are we supposed to provide for our clan if you can't even take your job seriously? I strongly suggest you start pulling your act together and take charge before l_n starts to realize how poor of a choice they made choosing you as deputy."
+        ]
+    ],
+    "upstandingwarrior_warriorapp1": [
+        [
+            "upstanding",
+            "mediator",
+            "mediator apprentice"
+        ],
+        [
+            "What is it now?! After what happened out there I don't want to-",
+            "Oh! Erm...sorry y_c. Thought you were someone else for a moment.",
+            "I don't mean to be so prickly, it's just something that happened on a patrol earlier really bugged me. Do you mind if I talk about it?",
+            "So me and a few others were out on a hunting patrol, and we spotted an o_clan cat cross right over the border! Can you believe that?",
+            "They claimed that they had been stalking some prey before it went over our border, so that made it theirs. And get this, the rest of my patrol agreed with them!",
+            "How could some cat have such little respect for the rules and still get away with it? At this rate, the other clans will be prancing all over our territory faster than you can say 'mouse!'"
+        ]
+    ],
+    "upstanding_warrior3": [
+        [
+            "upstanding",
+            "deputy"
+        ],
+        [
+            "Hey there y_c! I currently have the energy of a kit whose been stuck inside the nursery for a moon, so I was wondering if you could maybe squeeze me into the dawn patrol?",
+            "And maybe a few hunting patrols while your at it and...oh! A border patrol or two?"
+        ]
     ]
 }

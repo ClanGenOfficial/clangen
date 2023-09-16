@@ -4904,5 +4904,82 @@
             "It just looked like the color of your eyes, is all. Uh, not that I really care.",
             "Ahem ..."
         ]
+    ],
+    "romantic_upstanding1": [
+        [
+            "upstanding",
+            "no_kit",
+            "romantic_like"
+        ],
+        [
+            "Oh, y_c!! I've been meaning to ask you- would you like to go on a patrol with me?",
+            "We can walk down by the border- you know, the one with the huge river in it? Maybe we could toss a couple stones- you know, to make sure it's safe?",
+            "Ahahaha- yeah- it sounds like a date, but uh- it's a patrol! Yup. Just- just a patrol."
+        ]
+    ],
+    "romantic_upstanding2": [
+        [
+            "upstanding",
+            "no_kit",
+            "romantic_like"
+        ],
+        [
+            "Hey um- y_c? I caught this extra squirrel whilst I was out hunting and uh-",
+            "I was wondering if you'd like to share it before my next patrol? Y- You can come with me if you want to!"
+        ]
+    ],
+    "romantic_upstanding3": [
+        [
+            "upstanding",
+            "no_kit",
+            "romantic_like"
+        ],
+        [
+            "[t_c seems to relax into your side as they settle down next to you, watching the sun set.]",
+            "You know... I love moments like these, just you and me... and the sunset...",
+            "It's the only time I can really... truly... relax...",
+            "[Looks like t_c fell asleep leaning on your shoulder... Welp, looks like you're stuck there.]"
+        ]
+    ],
+    "romantic_upstanding4": [
+        [
+            "upstanding",
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "queen's apprentice",
+            "romantic_like"
+        ],
+        [
+            "I can't rest now, I've gotta train! You know that, y_c?",
+            "I've gotta do this so I can become a great clan mate... and make this clan the place you deserve to live in.",
+            "[t_c seems to meet your eyes, then they look away as their ears go down shyly.]",
+            "A-And for everyone else to live in!! Y- Yeah."
+        ]
+    ],
+    "romantic_upstanding5": [
+        [
+            "upstanding",
+            "no_kit",
+            "romantic_like"
+        ],
+        [
+            "[t_c blinks at you in the den, looking away for a moment before settling down beside you.]",
+            "I hope you don't mind...",
+            "[Seems they'd rather be with you than go out for patrolling which, knowing t_c, means a thousand unsaid words.]"
+        ]
+    ],
+    "romantic_upstanding6": [
+        [
+            "upstanding",
+            "no_kit",
+            "romantic_like"
+        ],
+        [
+            "[t_c seems to have kits clinging onto them, clearly having wanted to go out on a patrol... Seems these kits had other plans, though.]",
+            "Help-",
+            "[As you pluck each and every kit off of them and send them scurrying back to the Nursery, you can't help but notice them staring at you in wonder out of the corner of your eye. However, when you look towards them, they quickly shake that look off of their face.]",
+            "Thanks, y_c! I thought I'd never make it to the patrol on time."
+        ]
     ]
 }

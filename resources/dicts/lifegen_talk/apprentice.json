@@ -2394,5 +2394,46 @@
             "But I'm not gonna apologize, because I'm not sorry.",
             "[t_c turns around and drops the bird on the freshkill pile. You don't know if you should congratulate them for the catch, or claw their ears off.]"
         ]
+    ],
+    "upstanding_apprentice1": [
+        [
+            "apprentice",
+            "upstanding",
+            "platonic_like",
+            "trust"
+        ],
+        [
+            "Hey! Where are you off to in such a hurry? There's tons of stuff that we gotta get done in camp you know. We can't afford to have every cat running off just 'cause they don't feel like helping out.",
+            "Oh please, you can go hunting later. Right now, we need all the paws we can get. Does d_n even know about this?",
+            "Well... I guess a few extra pieces of prey wouldn't be all that bad, and technically extra prey could help spare a few cats from patrols...",
+            "... fine, but keep it short. If I feel like you're taking your sweet time to get out of a little bit of work, don't expect me to keep my mouth shut."
+        ]
+    ],
+    "upstanding_apprentice2": [
+        [
+            "upstanding",
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "queen's apprentice",
+            "random_cat"
+        ],
+        [
+            "Hey! How's training been going for you?",
+            "Good to hear! Glad to see at least one other apprentice is taking their training seriously. I mean, have you seen r_a lately? They always seem to be goofing off about one thing or another.",
+            "I really feel like they're going to fall behind in their apprenticeship if they don't start shaping up, y'know? I'd hate for them to have to receive their name late.",
+            "Don't get involved in any of their antics, ok? c_nClan needs reliable cats who we can depend on."
+        ]
+    ],
+    "upstanding_apprentice3": [
+        [
+            "upstanding",
+            "apprentice"
+        ],
+        [
+            "Hey, why the grumpy face? It looks like someone just stole your prey right from right under your nose with that frown.",
+            "Seriously? You're moping around camp like the world is about to end because you were chosen for dawn patrol?",
+            "Cmon, at least act like you're happy to help out the clan! You're doing everyone a big favor you know. And trust me, I think you and me both have a lot more dawn patrols coming if we want to make it to warriors!"
+        ]
     ]
 }
