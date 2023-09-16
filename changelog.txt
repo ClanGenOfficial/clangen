@@ -1,3 +1,11 @@
+<strong>v0.6.1: </strong>
+- Many new dialogues!
+- Added murder text
+- Choose deputy prompt when you become leader
+- Move on to another MC without dying first
+- Bug fixes
+- New menus
+
 <strong>v0.6.0: </strong>
 - Overhauled dialogue system!
 - Revive if you die early
