@@ -407,5 +407,14 @@
             "Okay. I'll play one round.",
             "And you speak of this to anyone, I'll never play with you again. Got it?"
         ]
+    ],
+    "they_grieving": [
+        [
+            "any",
+            "they_grieving"
+        ],
+        [
+            "[t_c doesn't seem like they want to talk right now.]"
+        ]
     ]
 }

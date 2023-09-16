@@ -6225,6 +6225,8 @@ class DeputyScreen(Screens):
     def change_cat(self, new_mentor=None):
         self.exit_screen()
         game.cur_events_list.clear()
+        if game.clan.deputy:
+            game.clan.deputy.status_change('warrior')
         new_mentor.status_change('deputy')
         game.switches['cur_screen'] = "events screen"
 

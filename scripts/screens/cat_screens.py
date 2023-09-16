@@ -4198,7 +4198,7 @@ class TalkScreen(Screens):
             injured_cats = []
             
             for c in Cat.all_cats.values():
-                if not c.dead and not c.outside:
+                if not c.dead and not c.outside and c.ID != you.ID and c.ID != cat.ID:
                     if c.status == "medicine cat":
                         living_meds.append(c)
                     elif c.status == "warrior":

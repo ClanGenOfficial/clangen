@@ -1858,7 +1858,7 @@
         [
             "any",
             "neurotic",
-            "from_your_kit",
+            "from_kit",
             "from_adopted_kit"
         ],
         [
@@ -1871,7 +1871,7 @@
         [
             "any",
             "neurotic",
-            "from_your_kit",
+            "from_kit",
             "from_adopted_kit",
             "random_cat"
         ],
@@ -1921,7 +1921,7 @@
             "any",
             "neurotic",
             "random_cat",
-            "from_your_kit",
+            "from_kit",
             "from_adopted_kit"
         ],
         [
@@ -1932,7 +1932,7 @@
     "neurotic_kit__12": [
         [
             "any",
-            "from_your_kit",
+            "from_kit",
             "neurotic"
         ],
         [
