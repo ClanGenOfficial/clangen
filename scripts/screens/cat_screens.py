@@ -4077,7 +4077,19 @@ class TalkScreen(Screens):
                     if cat.ID in you.inheritance.get_siblings():
                         fam = True
                 if "half sibling" in tags:
-                    if ((cat.parent1 == you.parent1 or cat.parent1 == you.parent2) or (cat.parent2 == you.parent1 or cat.parent2 == you.parent2)) and not (cat.parent1 == you.parent1 and cat.parent2 == you.parent2) and not (cat.parent2 == you.parent1 and cat.parent1 == you.parent2) and not (cat.parent1 == you.parent2 and cat.parent2 == you.parent1):
+                    c_p1 = cat.parent1
+                    if not c_p1:
+                        c_p1 = "no_parent1_cat"
+                    c_p2 = cat.parent2
+                    if not c_p2:
+                        c_p2 = "no_parent2_cat"
+                    y_p1 = you.parent1
+                    if not y_p1:
+                        y_p1 = "no_parent1_you"
+                    y_p2 = you.parent2
+                    if not y_p2:
+                        y_p2 = "no_parent2_you"
+                    if ((c_p1 == y_p1 or c_p1 == y_p2) or (c_p2 == y_p1 or c_p2 == y_p2)) and not (c_p1 == y_p1 and c_p2 == y_p2) and not (c_p2 == y_p1 and c_p1 == y_p2) and not (c_p1 == y_p2 and c_p2 == y_p1):
                         fam = True
                 if "adopted_sibling" in tags:
                     if cat.ID in you.inheritance.get_no_blood_siblings():
