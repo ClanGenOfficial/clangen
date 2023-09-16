@@ -4185,8 +4185,8 @@ class TalkScreen(Screens):
             texts_list.append(possible_texts['general'][1])
 
         text = choice(texts_list)
-        
-        if any(i in ["r_k", "r_a", "r_w", "r_m", "r_d", "r_q", "r_e", "r_s", "r_i"] for i in text):
+
+        if any(abbrev in t for abbrev in ["r_k", "r_a", "r_w", "r_m", "r_d", "r_q", "r_e", "r_s", "r_i"] for t in text):
             living_meds = []
             living_mediators = []
             living_warriors = []
@@ -4194,28 +4194,40 @@ class TalkScreen(Screens):
             living_queens = []
             living_kits = []
             living_elders = []
-            for cat in Cat.all_cats.values():
-                if cat.status == "medicine cat":
-                    living_meds.append(cat)
-                elif cat.status == "warrior":
-                    living_warriors.append(cat)
-                elif cat.status == "mediator":
-                    living_mediators.append(cat)
-                elif cat.status == 'queen':
-                    living_queens.append(cat)
-                elif cat.status in ["apprentice", "medicine cat apprentice", "mediator apprentice", "queen's apprentice"]:
-                    living_apprentices.append(cat)
-                elif cat.status in ["kitten", "newborn"]:
-                    living_kits.append(cat)
-                elif cat.status == "elder":
-                    living_elders.append(cat)
-            text = [t1.replace("r_k", str(choice(living_kits).name)) for t1 in text]
-            text = [t1.replace("r_a", str(choice(living_apprentices).name)) for t1 in text]
-            text = [t1.replace("r_w", str(choice(living_warriors).name)) for t1 in text]
-            text = [t1.replace("r_m", str(choice(living_meds).name)) for t1 in text]
-            text = [t1.replace("r_d", str(choice(living_mediators).name)) for t1 in text]
-            text = [t1.replace("r_q", str(choice(living_queens).name)) for t1 in text]
-            text = [t1.replace("r_e", str(choice(living_elders).name)) for t1 in text]
+            sick_cats = []
+            injured_cats = []
+            
+            for c in Cat.all_cats.values():
+                if c.status == "medicine cat":
+                    living_meds.append(c)
+                elif c.status == "warrior":
+                    living_warriors.append(c)
+                elif c.status == "mediator":
+                    living_mediators.append(c)
+                elif c.status == 'queen':
+                    living_queens.append(c)
+                elif c.status in ["apprentice", "medicine cat apprentice", "mediator apprentice", "queen's apprentice"]:
+                    living_apprentices.append(c)
+                elif c.status in ["kitten", "newborn"]:
+                    living_kits.append(c)
+                elif c.status == "elder":
+                    living_elders.append(c)
+
+            replace_mappings = {
+                "r_k": living_kits,
+                "r_a": living_apprentices,
+                "r_w": living_warriors,
+                "r_m": living_meds,
+                "r_d": living_mediators,
+                "r_q": living_queens,
+                "r_e": living_elders
+            }
+            
+            for abbrev, replace_list in replace_mappings.items():
+                for idx, t in enumerate(text):
+                    if abbrev in t:
+                        text[idx] = t.replace(abbrev, str(choice(replace_list).name))
+                        
 
         text = [t1.replace("c_n", game.clan.name) for t1 in text]
         text = [t1.replace("y_c", str(you.name)) for t1 in text]
@@ -4249,8 +4261,14 @@ class TalkScreen(Screens):
                 text = [t1.replace("d_c", str(dead_cat.name)) for t1 in text]  
             except:
                 dead_cat = str(Cat.all_cats.get(game.clan.starclan_cats[-1]).name)
-                text = [t1.replace("d_c", dead_cat) for t1 in text]    
-    
+                text = [t1.replace("d_c", dead_cat) for t1 in text]
+        d_c_found = False
+        for t in text:
+            if "d_c" in t:
+                d_c_found = True
+        if d_c_found:
+            dead_cat = str(Cat.all_cats.get(game.clan.starclan_cats[-1]).name)
+            text = [t1.replace("d_c", dead_cat) for t1 in text]
         return text
         
         
