@@ -62,7 +62,8 @@
         [
             "You've been doing a fine job, y_c! Keep this up and you'll be getting your medicine cat name soon.",
             "But, ah, when you do, I hope you don't just keep following the exact methods and techniques I've taught you here. Take risks! Experiment! Try new things! That's what being a good medicine cat's all about.",
-            "If my mentor saw the methods I was using to treat some of these cats, they'd have me exiled, if not skinned alive ... but I don't believe in that type of thinking. There's not just one way of doing things. You're your own medicine cat! You should do things the way you think is best for the clan. Not just because I told you it was the 'right' way."
+            "If my mentor saw the methods I was using to treat some of these cats, they'd have me exiled, if not skinned alive ... but I don't believe in that type of thinking. There's not just one way of doing things.",
+            "You're your own medicine cat! You should do things the way you think is best for the clan. Not just because I told you it was the 'right' way."
         ]
     ],
     "assertive_mentor3": [
@@ -559,7 +560,8 @@
         ],
         [
             "StarClan, y_c, you're so ... rigid.",
-            "You really gotta loosen up more if you really wanna be of service to your clan. The way I see it, being a good medicine cat's all about motion. Treating a clanmate with your own paws ... that's an experience you won't learn anywhere but when it's right in front of you.",
+            "You really gotta loosen up more if you really wanna be of service to your clan. The way I see it, being a good medicine cat's all about motion.",
+            "Treating a clanmate with your own paws ... that's an experience you won't learn anywhere but when it's right in front of you.",
             "Try to remember that."
         ]
     ],
@@ -1374,7 +1376,8 @@
             "Oh, StarClan. When I first became an apprentice, I thought this role would be so much better than being a warrior! I still do, of course. It's so rewarding. But... it's way more labor intensive than I used to think!",
             "Gathering herbs, sorting them, tending to those who need tended to, not to mention all the things that aren't part of the job that I want to accomplish. Oh, if only I could clone myself.",
             "Well, maybe...",
-            "No. Bad idea. What happens if the t_c clones clone themselves, and then those t_c clones clone themselves, until there are Too Many t_cs and we have to round them all up and have the leader force us all to watch the leaves change colors until they find out which one is really me?",
+            "No. Bad idea. What happens if the t_c clones clone themselves, and then those t_c clones clone themselves, until there are Too Many t_cs and we have to round them all up and have the leader force us all to watch the leaves change colors...",
+            "Until they find out which one is really me?",
             "[t_c exhales dramatically after finishing the long sentence, but still seems like they're debating the impossible idea.]"
         ]
     ],
@@ -1388,7 +1391,8 @@
             "So, do you-",
             "Have you ever had a dream, that uh, that you, um, that you had-",
             "...Ah, forget it!",
-            "[t_c pads off in a fit so dramatically that you don't have the opportunity to respond - but then, a large, familiar butterfly lands on t_c's nose! t_c calls out the butterfly's name happily and chatters away with it while skipping gracefully back to the medicine den. You should know t_c by now, why is this a surprise to you?]"
+            "[t_c pads off in a fit so dramatically that you don't have the opportunity to respond - but then, a large, familiar butterfly lands on t_c's nose!]",
+            "[t_c calls out the butterfly's name happily and chatters away with it while skipping gracefully back to the medicine den. You should know t_c by now, why is this a surprise to you?]"
         ]
     ],
     "silly_med_sleep": [
