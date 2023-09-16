@@ -2608,14 +2608,6 @@
             "Hmph... expecting kits I see? Better keep those rascals under control."
         ]
     ],
-    "they_pregnant1": [
-        [
-            "any",
-            "they_pregnant",
-            "assertive"
-        ],
-        []
-    ],
     "they_pregnant2": [
         [
             "any",
