@@ -242,12 +242,13 @@
     "brooding_newborn": [
         [
             "newborn",
-            "brooding"
+            "brooding",
+            "random_cat"
         ],
         [
             "Who is that ...?",
             "Hmph. Nice-looking kit, I suppose ...",
-            "It looks like you."
+            "It reminds me of r_w."
         ]
     ],
     "brooding_newborn1": [
