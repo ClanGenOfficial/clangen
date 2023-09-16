@@ -1453,6 +1453,7 @@ class DeathScreen(UIWindow):
             elif event.ui_element == self.mediator_button2:
                 game.clan.your_cat.revives +=1
                 game.clan.your_cat.dead = False
+                game.clan.your_cat.df = False
                 game.clan.your_cat.dead_for = 0
                 game.clan.your_cat.moons+=1
                 game.clan.add_to_clan(game.clan.your_cat)

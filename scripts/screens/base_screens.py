@@ -118,19 +118,17 @@ class Screens():
         self._semaphore = Semaphore(1)
         
     def loading_screen_start_work(self,
-                                  target:callable,
-                                  args:tuple=tuple()) -> PropagatingThread:
+                                    target:callable,
+                                    thread_name:str="work_thread",
+                                    args:tuple=tuple()) -> PropagatingThread:
         """Creates and starts the work_thread. 
             Returns the started thread. """
 
-        work_thread = PropagatingThread(target=self._work_target, args=(target,args), daemon=True)
-        game.switches['window_open'] = True
+        work_thread = PropagatingThread(target=self._work_target, args=(target,args), 
+                                        name=thread_name, daemon=True)
         
-        # Semephore prevents race condition on the work_done flag. 
-        self._semaphore.acquire()
+        game.switches['window_open'] = True
         work_thread.start()
-        self.work_done[work_thread.ident] = False
-        self._semaphore.release()
         
         return work_thread
         
