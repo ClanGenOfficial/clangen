@@ -209,7 +209,7 @@ class PatrolScreen(Screens):
             inp = "antagonize"
         
         if inp:
-            self.proceed_patrol_thread = self.loading_screen_start_work(self.run_patrol_proceed, (inp,))
+            self.proceed_patrol_thread = self.loading_screen_start_work(self.run_patrol_proceed, "proceed", (inp,))
 
     def handle_patrol_complete_events(self, event):
         if event.ui_element == self.elements['patrol_again']:
@@ -1192,7 +1192,7 @@ class PatrolScreen2(Screens):
             inp = "antagonize"
         
         if inp:
-            self.proceed_patrol_thread = self.loading_screen_start_work(self.run_patrol_proceed, (inp,))
+            self.proceed_patrol_thread = self.loading_screen_start_work(self.run_patrol_proceed, "proceed", (inp,))
 
     def handle_patrol_complete_events(self, event):
         if event.ui_element == self.elements['patrol_again']:
@@ -2183,7 +2183,7 @@ class PatrolScreen3(Screens):
             inp = "antagonize"
         
         if inp:
-            self.proceed_patrol_thread = self.loading_screen_start_work(self.run_patrol_proceed, (inp,))
+            self.proceed_patrol_thread = self.loading_screen_start_work(self.run_patrol_proceed, "proceed", (inp,))
 
     def handle_patrol_complete_events(self, event):
         if event.ui_element == self.elements['patrol_again']:
@@ -3140,7 +3140,7 @@ class PatrolScreen4(Screens):
             inp = "antagonize"
         
         if inp:
-            self.proceed_patrol_thread = self.loading_screen_start_work(self.run_patrol_proceed, (inp,))
+            self.proceed_patrol_thread = self.loading_screen_start_work(self.run_patrol_proceed, "proceed", (inp,))
 
     def handle_patrol_complete_events(self, event):
         if event.ui_element == self.elements['patrol_again']:
