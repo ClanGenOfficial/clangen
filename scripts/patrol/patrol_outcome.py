@@ -356,7 +356,7 @@ class PatrolOutcome():
         
         cats_to_kill = gather_cat_objects(self.dead_cats, patrol)
         if not cats_to_kill:
-            print(f"Something was indicated in dead_cats, but no acual cats were indicated: {self.dead_cats}")
+            print(f"Something was indicated in dead_cats, but no cats were indicated: {self.dead_cats}")
             return ""
         
         body = True
@@ -371,8 +371,9 @@ class PatrolOutcome():
                     results.append(f"{_cat.name} lost all of their lives.")
                 elif "some_lives" in self.dead_cats:
                     game.clan.leader_lives -= random.randint(1, max(1, game.clan.leader_lives - 1))
-                    results.append(f"{_cat.name} some lives.")
+                    results.append(f"{_cat.name} lost some lives.")
                 else:
+                    game.clan.leader_lives -= 1
                     results.append(f"{_cat.name} lost one life.")
             else:
                 results.append(f"{_cat.name} died.")
@@ -386,8 +387,6 @@ class PatrolOutcome():
         
     def _handle_lost(self, patrol:'Patrol') -> str:
         """ Handle losing cats """
-        
-        """Handle killing cats """
         
         if not self.lost_cats:
             return ""
@@ -416,7 +415,7 @@ class PatrolOutcome():
         
         cats_to_lose = gather_cat_objects(self.lost_cats, patrol)
         if not cats_to_lose:
-            print(f"Something was indicated in lost_cats, but no acual cats were indicated: {self.lost_cats}")
+            print(f"Something was indicated in lost_cats, but no cats were indicated: {self.lost_cats}")
             return ""
         
         
@@ -424,6 +423,7 @@ class PatrolOutcome():
         for _cat in cats_to_lose:
             results.append(f"{_cat.name} has been lost.")
             _cat.gone()
+            #_cat.greif(body=False)
             
         return " ".join(results)
     
@@ -811,52 +811,13 @@ class PatrolOutcome():
                                                                patrol)) 
             
             for cat in patrol.new_cats[-1]:
-                if cat.outside:
-                    results.append(f"The patrol meet {cat.name}.")
+                if cat.dead:
+                    results.append(f"{cat.name}'s ghost now wanders.")
+                elif cat.outside:
+                    results.append(f"The patrol met {cat.name}.")
                 else:
                     results.append(f"{cat.name} joined the clan.")
             
-        
-        in_patrol_cats = {
-            "p_l": patrol.patrol_leader,
-            "r_c": patrol.patrol_random_cat,
-        }
-        if self.stat_cat:
-            in_patrol_cats["s_c"] = self.stat_cat
-        
-        # Now, a second time to establish non-biological relations
-        for i, attribute_list in enumerate(self.new_cat):
-            # Mates
-            for tag in attribute_list:
-                match = re.match(r"mates:([,0-9a-zA-Z]+)", tag)
-                if not match:
-                    continue
-                
-                mate_indexes = match.group(1).split(",")
-                
-                # TODO: make this less ugly
-                for index in mate_indexes:
-                    if index in in_patrol_cats:
-                        if in_patrol_cats[index] in ("apprentice", "medicine cat apprentice"):
-                            print("Can't give apprentices mates")
-                            continue
-                        
-                        for cat in cat.patrol.new_cats[i]:
-                            cat.set_mate(in_patrol_cats[index])
-                            
-                    try:
-                        index = int(index)
-                    except ValueError:
-                        print(f"mate-index not correct: {index}")
-                    
-                    if index >= len(attribute_list):
-                        continue
-                    
-                    for cat in patrol.new_cats[i]:
-                        for other in patrol.new_cats[index]:
-                            if cat.ID not in other.mate:
-                                cat.set_mate(other)
-                                
         # Check to see if any young litters joined with alive parents.
         # If so, see if recovering from birth condition is needed
         # and give the condition
@@ -981,7 +942,13 @@ class PatrolOutcome():
             # Set same as first mate.
             if match.group(1) == "mate" and give_mates:
                 age = randint(Cat.age_moons[give_mates[0].age][0], 
-                              Cat.age_moons[give_mates[0].age][1])  
+                              Cat.age_moons[give_mates[0].age][1])
+                break
+                
+            if match.group(1) == "has_kits":
+                age = randint(14, 120)
+                break
+                
         
         # CAT TYPES AND BACKGROUND
         if "kittypet" in attribute_list:
@@ -1029,7 +996,7 @@ class PatrolOutcome():
         
         # KITTEN THOUGHT
         if status in ("kitten", "newborn"):
-            thought = "Is snuggled safe in the nursury"
+            thought = "Is snuggled safe in the nursery"
         
         # MEETING - DETERMINE IF THIS IS AN OUTSIDE CAT
         outside = False
@@ -1037,7 +1004,7 @@ class PatrolOutcome():
             outside = True
             status = cat_type
             new_name = False
-            thought = "Is wondering about the new cats they just meet."
+            thought = "Is wondering about the new cats they just met"
             
         # IS THE CAT DEAD?
         alive = True
@@ -1089,7 +1056,7 @@ class PatrolOutcome():
                     continue
                 
                 y = random.randrange(0, 20)
-                start_relation = Relationship(inter_cat, n_c, False, True)
+                start_relation = Relationship(n_c, inter_cat, False, True)
                 start_relation.platonic_like += 30 + y
                 start_relation.comfortable = 10 + y
                 start_relation.admiration = 15 + y
