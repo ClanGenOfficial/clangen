@@ -146,7 +146,7 @@ class ChooseMentorScreen(Screens):
             object_id=get_text_box_theme("#text_box_22_horizcenter_red"),
             manager=MANAGER)
         self.no_mentor_warning = pygame_gui.elements.UITextBox("<font color=#FF0000>No mentor selected</font>"
-                                                                    , scale(pygame.Rect((600, 680), (400, 60))),
+                                                                    , scale(pygame.Rect((600, 670), (400, 60))),
                                                                     object_id=get_text_box_theme(
                                                                         "#text_box_22_horizcenter"),
                                                                     manager=MANAGER)
