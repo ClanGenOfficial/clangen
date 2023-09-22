@@ -133,7 +133,7 @@
         "season": ["leaf-bare"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "mtn_hunt_leaf-bare_eagleice",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
@@ -256,7 +256,7 @@
         "season": ["leaf-bare"],
         "types": ["hunting"],
         "tags": ["cruel_season", "huge_prey3"],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "mtn_hunt_leaf-bare_eagleice",
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {
@@ -426,7 +426,7 @@
         "season": ["leaf-bare"],
         "types": ["hunting"],
         "tags": ["cruel_season"],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "mtn_hunt_leaf-bare_eagleice",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
