@@ -117,7 +117,7 @@
             "Leaf-bare",
             "Leaf-fall"
         ],
-        "death_text": "m_c is found within a few fox-lengths of camp, their tiny body cold and covered in bites. The scent of mouse hangs heavy in the air...",
+        "death_text": "m_c is found within a few fox-lengths of camp, {PRONOUN/m_c/poss} tiny body cold and covered in bites. The scent of mouse hangs heavy in the air...",
         "history_text": {
             "reg_death": "m_c was killed by a feisty mouse."
         },
@@ -133,7 +133,7 @@
             "Leaf-fall",
             "no_body"
         ],
-        "death_text": "m_c can be heard boasting that they're ready to be made an apprentice <i>right now</i>, and that they're already one of the best hunters in the Clan. That evening, to prove their point, they sneak out of camp, intending to catch something for the fresh-kill pile. A frantic search party follows their trail, only to find blood and the foul stench of a shrew at the end.",
+        "death_text": "m_c can be heard boasting that {PRONOUN/m_c/subject}'{VERB/m_c/re/s} ready to be made an apprentice <i>right now</i>, and that {PRONOUN/m_c/subject}'{VERB/m_c/re/s} already one of the best hunters in the Clan. That evening, to prove {PRONOUN/m_c/poss} point, {PRONOUN/m_c/subject} sneak out of camp, intending to catch something for the fresh-kill pile. A frantic search party follows {PRONOUN/m_c/poss} trail, only to find blood and the foul stench of a shrew at the end.",
         "history_text": {
             "reg_death": "m_c was eaten by a shrew."
         },
