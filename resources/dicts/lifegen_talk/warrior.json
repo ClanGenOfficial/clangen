@@ -1393,7 +1393,7 @@
     ],
     "assertive_warrior": [
         [
-            "Any",
+            "no_kit",
             "assertive",
             "unabashed",
             "neutral"
