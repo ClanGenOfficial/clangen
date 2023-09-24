@@ -572,7 +572,7 @@
         ],
         [
             "Ah, y_c! There's the little bruiser! How're you doing? Growing up big and strong?",
-            "Y'know, at your age, I used to get into all sorts of trouble. Sneaking out of the nursery, following around the apprentices ... not to give you Any ideas, or Anything. Ahaha!",
+            "Y'know, at your age, I used to get into all sorts of trouble. Sneaking out of the nursery, following around the apprentices ... not to give you any ideas, or anything. Ahaha!",
             "[t_c's laugh is so loud that it almost shakes your whole body.]"
         ]
     ],
@@ -895,7 +895,7 @@
         ],
         [
             "Hmph. You may fight for peace, y_c, but I know it by another word - cowardice.",
-            "I know compromise has its place, but you'd say you'd really forsake your values - the values of this clan - just so all of us can just laze around on our haunches and never have to risk Anything real?",
+            "I know compromise has its place, but you'd say you'd really forsake your values - the values of this clan - just so all of us can just laze around on our haunches and never have to risk anything real?",
             "I don't think so. I fight for what I believe in. No matter what it costs.",
             "Maybe think about that the next time you try to make a compromise with the enemy."
         ]
@@ -953,7 +953,7 @@
             "unlawful"
         ],
         [
-            "Y'know, sometimes I worry about you, y_c. If Anything ever tries to hurt you, then how will you defend yourself?",
+            "Y'know, sometimes I worry about you, y_c. If anything ever tries to hurt you, then how will you defend yourself?",
             "Though, I guess if I were caught out in the cold, I wouldn't be able to patch myself up, either ...",
             "Tell you what. How about, when you have a little down time, I can teach you some basic battle moves? And, likewise, you can teach me some stuff about healing!",
             "That way, we can both make each other stronger.",
@@ -969,7 +969,7 @@
         [
             "Hey, y_c! I got into a bit of trouble again. No big deal, just a scratch!",
             "[It is not, in fact, just a scratch. In fact, t_c is bleeding all over the medicine den. They chat loudly as you hurry to help them.]",
-            "Man, I must be using up, like, half your herb stores, huh? But where's the fun in being careful? Besides, I know you could use some compAny in here.",
+            "Man, I must be using up, like, half your herb stores, huh? But where's the fun in being careful? Besides, I know you could use some company in here.",
             "Oh man, what type of herbs are those? They look cool. Are you talking to StarClan? Can you hear them right now?",
             "[You finish helping t_c with their injury.]",
             "Hey, thanks! I owe you a bunch! What? You want me to stay and rest? Sorry, y_c. That's not really my style. I gotta get back out there!",
@@ -1256,7 +1256,7 @@
         [
             "You're not gonna believe it. I just overheard these two idiots talking about how you're not a 'real' apprentice!",
             "Ooh, I wanted to put them in their places so bad! But my mentor was right there, so I had to leave it ...",
-            "Next time, they won't get away!!! What you do is just as important to the clan as Any of us ... maybe even more so!"
+            "Next time, they won't get away!!! What you do is just as important to the clan as any of us ... maybe even more so!"
         ]
     ],
     "assertive_apprentice14": [
@@ -1320,8 +1320,8 @@
             "adopted_sibling"
         ],
         [
-            "Look, just because we're siblings doesn't mean that we're, like, friends, or Anything.",
-            "We're not in the nursery Anymore. Go find other cats to hang out with."
+            "Look, just because we're siblings doesn't mean that we're, like, friends, or anything.",
+            "We're not in the nursery anymore. Go find other cats to hang out with."
         ]
     ],
     "assertive_apprentice18": [
@@ -1337,7 +1337,7 @@
         ],
         [
             "y_c, would you please stop following me around everywhere?",
-            "You're not even my real sibling, Anyways ..."
+            "You're not even my real sibling, anyways ..."
         ]
     ],
     "assertive_apprentice18_2": [
@@ -1351,12 +1351,10 @@
             "unlawful",
             "neurotic",
             "kitten",
-            "from_adopted_kit",
-            "from_kit",
-            "from_kit"
+            "from_your_kit"
         ],
         [
-            "Ugh, y_c, quit embarrassing me! I'm not a little kit Anymore!",
+            "Ugh, y_c, quit embarrassing me! I'm not a little kit anymore!",
             "Oh, no, my friends are coming! Hide!!!"
         ]
     ],
@@ -1413,7 +1411,7 @@
         [
             "Hey, y_c ... This isn't about the fights I've been getting in, is it?",
             "Yeah, yeah, I know. Violence isn't the answer. But I just can't help myself sometimes!",
-            "Whenever Anyone says something nasty about my kin, or does something that isn't right, I can't just look away. It's not even a choice, really. I have to fight for what I love and believe in!",
+            "Whenever anyone says something nasty about my kin, or does something that isn't right, I can't just look away. It's not even a choice, really. I have to fight for what I love and believe in!",
             "And if that makes me wrong, then maybe I don't wanna be right.",
             "[You aren't sure whether you should chide t_c, or tell them how proud of them you are.]"
         ]
