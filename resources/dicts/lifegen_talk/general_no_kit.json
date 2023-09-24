@@ -26,6 +26,23 @@
             "[The blush on t_c's cheeks confirms that, yes, they did mean it in that way. And they're doing a terrible job of hiding it.]"
         ]
     ],
+     "assertive_elder_25": [
+        [
+            "leader",
+            "deputy",
+            "assertive",
+            "platonic_like",
+            "trust",
+            "comfort"
+        ],
+        [
+            "Hey, you've been looking stressed lately. Want to take a little walk to unwind?",
+            "You don't need to take everything so seriously, y_c. Relax! Sure, you're clan leadership, but that doesn't mean you're not allowed to have a little fun every once in a while.",
+            "Now, c'mon. Let's go for a little stroll by the water. I know you need it!",
+            "The clan will still be here when we get back."
+        ]
+
+    ],
     "assertive_love": [
         [
             "Any",
