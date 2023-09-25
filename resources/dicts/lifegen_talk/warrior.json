@@ -884,7 +884,15 @@
             "sweet",
             "upstanding",
             "stable",
-            "any"
+            "kit",
+            "apprentice",
+            "warrior",
+            "mediator apprentice",
+            "mediator",
+            "medicine cat apprentice",
+            "medicine cat",
+            "queen's apprentice",
+            "queen"
         ],
         [
             "Sorry, y_c! No time to talk right now, I just got a task from d_n.",
@@ -1385,7 +1393,7 @@
     ],
     "assertive_warrior": [
         [
-            "Any",
+            "no_kit",
             "assertive",
             "unabashed",
             "neutral"
@@ -1686,7 +1694,7 @@
         [
             "y_c, if you ever need a warrior escort while gathering herbs, you'll come to me, right?",
             "I'll keep you safe from any danger that comes your way! Yah! Hiyah!",
-            "[r_c mimes battle moves against imaginary enemies.]"
+            "[t_c mimes battle moves against imaginary enemies.]"
         ]
     ],
     "assertive_medapp5": [

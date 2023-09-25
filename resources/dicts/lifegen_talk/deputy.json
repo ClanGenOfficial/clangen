@@ -1471,21 +1471,7 @@
             "r_c, especially, has been a great teacher ... We should keep it in mind for future reference."
         ]
     ],
-    "assertive_elder_25": [
-        [
-            "no_kit",
-            "assertive",
-            "platonic_like",
-            "trust",
-            "comfort"
-        ],
-        [
-            "Hey, you've been looking stressed lately. Want to take a little walk to unwind?",
-            "You don't need to take everything so seriously, y_c. Relax! Sure, you're clan leadership, but that doesn't mean you're not allowed to have a little fun every once in a while.",
-            "Now, c'mon. Let's go for a little stroll by the water. I know you need it!",
-            "The clan will still be here when we get back."
-        ]
-    ],
+   
     "cool_deputy_1": [
         [
             "Any",
