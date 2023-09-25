@@ -182,6 +182,13 @@ class EventsScreen(Screens):
                     self.yc_pressed = False
                 else:
                     self.relation_events = [x for x in (game.cur_events_list) if "relation" in x.types]
+                    for i in self.other_events_list:
+                        for c in game.clan.clan_cats:
+                            if Cat.all_cats.get(c).favourite:
+                                if str(Cat.all_cats.get(c).name) in i:
+                                    self.relation_events.append(c)
+                                    break
+                                  
                     self.display_events = self.relation_events
                     self.update_events_display()
                     self.yc_pressed = True
