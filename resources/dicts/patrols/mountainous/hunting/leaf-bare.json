@@ -1854,7 +1854,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l finds a common buzzard eating crow-food on top of a high cliff. They crouch down to hunt but - Wait! Was it buzzards or vultures that the mountain clans respected?",
+        "intro_text": "p_l finds a common buzzard eating crow-food on top of a high cliff. They crouch down to hunt but - Wait! Was it buzzards or vultures that the mountain Clans respected?",
         "decline_text": "Better not risk it... p_l turns tail and goes home, trying to think of a way to ask the difference between the two birds that doesn't end up confusing them even more.",
         "chance_of_success": 10,
         "success_outcomes": [
