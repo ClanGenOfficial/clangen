@@ -16,7 +16,6 @@ class Sprites():
         self.size = None
         self.spritesheets = {}
         self.images = {}
-        self.groups = {}
         self.sprites = {}
         
         self.load_tints()
@@ -69,8 +68,6 @@ class Sprites():
                                               pos[1] * sprites_y * self.size,
                                               self.size * sprites_x,
                                               self.size * sprites_y)
-
-        self.groups[name] = new_group
 
         # splitting group into singular sprites and storing into self.sprites section
         x_spr = 0
