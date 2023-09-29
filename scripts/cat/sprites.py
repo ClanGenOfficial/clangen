@@ -81,14 +81,11 @@ class Sprites():
         """
 
         # making the group
-        new_group = pygame.Surface(
-            (self.size * sprites_x, self.size * sprites_y),
-            pygame.HWSURFACE | pygame.SRCALPHA)
-        new_group.blit(
-            self.spritesheets[spritesheet], (0, 0),
-            (pos[0] * sprites_x * self.size, pos[1] * sprites_y * self.size,
-             (pos[0] + sprites_x) * self.size,
-             (pos[1] + sprites_y) * self.size))
+        new_group = pygame.Surface.subsurface(self.spritesheets[spritesheet],
+                                              pos[0] * sprites_x * self.size,
+                                              pos[1] * sprites_y * self.size,
+                                              self.size * sprites_x,
+                                              self.size * sprites_y)
 
         self.groups[name] = new_group
 
@@ -96,11 +93,10 @@ class Sprites():
         x_spr = 0
         y_spr = 0
         for x in range(sprites_x * sprites_y):
-            new_sprite = pygame.Surface((self.size, self.size),
-                                        pygame.HWSURFACE | pygame.SRCALPHA)
-            new_sprite.blit(new_group, (0, 0),
-                            (x_spr * self.size, y_spr * self.size,
-                             (x_spr + 1) * self.size, (y_spr + 1) * self.size))
+            new_sprite = pygame.Surface.subsurface(new_group,
+                                                   x_spr * self.size,
+                                                   y_spr * self.size,
+                                                   self.size, self.size)
             self.sprites[name + str(x)] = new_sprite
             x_spr += 1
             if x_spr == sprites_x:
