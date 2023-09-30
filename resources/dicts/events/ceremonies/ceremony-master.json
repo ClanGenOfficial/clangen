@@ -2679,7 +2679,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "They don't care if there's no leader, the Clan knows that (old_name) is deserving of {PRONOUN/m_c/poss} full name. They gather to hold a ceremony for (old_name), and name {PRONOUN/m_c/object} m_c, honoring {PRONOUN/m_c/poss} r_h. m_c is proud of {PRONOUN/m_c/self}, though a part of {PRONOUN/m_c/object} still wishes that (deadmentor) was still there to see {PRONOUN/m_c/object}."
+    "They don't care if there's no leader; the Clan knows that (old_name) is deserving of {PRONOUN/m_c/poss} full name. They gather to hold a ceremony for (old_name), and name {PRONOUN/m_c/object} m_c, honoring {PRONOUN/m_c/poss} r_h. m_c is proud of {PRONOUN/m_c/self}, though a part of {PRONOUN/m_c/object} still wishes that (deadmentor) was still there to see {PRONOUN/m_c/object}."
   ],
   "warrior_52": [
     [
@@ -2703,7 +2703,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "{PRONOUN/(previous_mentor)/subject/CAP} {VERB/(previous_mentor)/don't/doesn't} care if there's no leader, (previous_mentor) knows that (old_name) is deserving of {PRONOUN/m_c/poss} full name. {PRONOUN/(previous_mentor)/subject/CAP} {VERB/(previous_mentor)/gather/gathers} the Clan to hold a ceremony for (old_name), and names {PRONOUN/m_c/object} m_c, honoring {PRONOUN/m_c/poss} r_h."
+    "{PRONOUN/(previous_mentor)/subject/CAP} {VERB/(previous_mentor)/don't/doesn't} care if there's no leader; (previous_mentor) knows that (old_name) is deserving of {PRONOUN/m_c/poss} full name. {PRONOUN/(previous_mentor)/subject/CAP} {VERB/(previous_mentor)/gather/gathers} the Clan to hold a ceremony for (old_name), and names {PRONOUN/m_c/object} m_c, honoring {PRONOUN/m_c/poss} r_h."
   ],
   "warrior_54": [
     [
