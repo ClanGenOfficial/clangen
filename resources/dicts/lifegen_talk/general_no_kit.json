@@ -4644,7 +4644,8 @@
             "deputy",
             "brooding",
             "neurotic",
-            "neutral"
+            "neutral",
+            "non-related"
         ],
         [
             "Ah! y_c ...",
@@ -4658,7 +4659,8 @@
             "leader",
             "brooding",
             "neurotic",
-            "neutral"
+            "neutral",
+            "non-related"
         ],
         [
             "Ah! y_c ...",
@@ -4675,7 +4677,6 @@
             "comfort",
             "trust",
             "romantic_like",
-            "from_mate",
             "random_cat"
         ],
         [
@@ -4694,7 +4695,6 @@
             "comfort",
             "trust",
             "romantic_like",
-            "from_mate",
             "random_cat",
             "leaffall",
             "leafbare"
@@ -4713,7 +4713,6 @@
             "comfort",
             "trust",
             "romantic_like",
-            "from_mate",
             "random_cat"
         ],
         [
@@ -4732,7 +4731,6 @@
             "comfort",
             "trust",
             "romantic_like",
-            "from_mate",
             "random_cat"
         ],
         [
@@ -4750,7 +4748,6 @@
             "comfort",
             "trust",
             "romantic_like",
-            "from_mate",
             "random_cat"
         ],
         [
@@ -4766,7 +4763,6 @@
             "comfort",
             "trust",
             "romantic_like",
-            "from_mate",
             "random_cat"
         ],
         [
@@ -4786,7 +4782,6 @@
             "comfort",
             "trust",
             "romantic_like",
-            "from_mate",
             "random_cat"
         ],
         [
