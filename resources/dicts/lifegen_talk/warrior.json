@@ -873,22 +873,7 @@
             "Do we still even count as family anymore?"
         ]
     ],
-    "assertive_parent4_3": [
-        [
-            "assertive",
-            "dislike",
-            "neutral",
-            "cool",
-            "upstanding",
-            "brooding",
-            "neurotic",
-            "any"
-        ],
-        [
-            "Ugh, StarClan, would you leave me alone?",
-            "Seriously, I don't know any other parent who bothers their kits this much!"
-        ]
-    ],
+
     "assertive_parent4_4": [
         [
             "assertive",
