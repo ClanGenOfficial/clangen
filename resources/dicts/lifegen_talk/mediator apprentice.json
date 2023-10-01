@@ -325,7 +325,8 @@
             "Any",
             "assertive",
             "neutral",
-            "platonic_like"
+            "platonic_like",
+            "random_cat"
         ],
         [
             "y_c, can you believe it? I actually got to mediate a real, serious argument today! Eeee, so cool!!!",
@@ -337,7 +338,8 @@
         [
             "Any",
             "assertive",
-            "platonic_like"
+            "platonic_like",
+            "random_cat"
         ],
         [
             "Er, sorry, y_c. I can't chat right now ...",
