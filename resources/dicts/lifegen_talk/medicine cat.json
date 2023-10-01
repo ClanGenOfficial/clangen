@@ -1434,7 +1434,8 @@
             "y_c, I'm lonely today. Wanna sit in the medicine den with me?",
             "[You tell t_c that you'd love to, but you have something to do today.]",
             "What if I taught you how to fake a minor illness so you don't have to? I won't tell!",
-            "[Sure, maybe you could keep that knowledge for later. You allow t_c to teach you, and spend the day spectating in the den. While there, t_c tells you all they know about traveling herbs. This counts as productivity, right?]"
+            "[Sure, maybe you could keep that knowledge for later. You allow t_c to teach you, and spend the day spectating in the den.]",
+            "[While there, t_c tells you all they know about traveling herbs. This counts as productivity, right?]"
         ]
     ],
     "silly_med_burdock": [
