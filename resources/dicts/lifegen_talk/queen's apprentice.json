@@ -372,7 +372,8 @@
             "Any",
             "assertive",
             "neutral",
-            "platonic_like"
+            "platonic_like",
+            "random_cat"
         ],
         [
             "y_c, can you believe it? I actually got to advise a real queen today! Eeee, so cool!!!",
@@ -384,7 +385,8 @@
         [
             "Any",
             "assertive",
-            "platonic_like"
+            "platonic_like",
+            "random_cat"
         ],
         [
             "Er, sorry, y_c. I can't chat right now ...",
