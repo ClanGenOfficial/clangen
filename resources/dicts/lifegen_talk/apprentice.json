@@ -681,7 +681,8 @@
             "Any",
             "assertive",
             "neutral",
-            "platonic_like"
+            "platonic_like",
+            "random_cat"
         ],
         [
             "y_c, can you believe it? I actually got to learn a real battle move today! Eeee, so cool!!!",
@@ -1080,7 +1081,8 @@
         [
             "apprentice",
             "assertive",
-            "unlawful"
+            "unlawful",
+            "random_cat"
         ],
         [
             "Ugh, I can't believe my mentor gave me tick duty again.",
@@ -1107,7 +1109,8 @@
             "mediator apprentice",
             "queen's apprentice",
             "platonic_like",
-            "assertive"
+            "assertive",
+            "random_cat"
         ],
         [
             "[t_c tackles you from behind.]",
@@ -1139,7 +1142,8 @@
             "cool",
             "unlawful",
             "upstanding",
-            "unabashed"
+            "unabashed",
+            "random_cat"
         ],
         [
             "y_c! I finally got away from tm_n! C'mon, let's go explore!",
@@ -2232,7 +2236,8 @@
     "broodingapp_toapp2": [
         [
             "no_kit",
-            "brooding"
+            "brooding",
+            "random_cat"
         ],
         [
             "My mouse-brained mentor ... always trying to get me to 'participate more' in training and 'work together' with my clanmates ...",
