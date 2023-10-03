@@ -36,7 +36,7 @@ from scripts.utility import get_alive_kits, get_med_cats, ceremony_text_adjust, 
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
 from scripts.game_structure.windows import SaveError
-from scripts.game_structure.windows import RetireScreen, DeputyScreen
+from scripts.game_structure.windows import RetireScreen, DeputyScreen, NameKitsWindow
 
 class Events:
     """
@@ -61,6 +61,8 @@ class Events:
         TODO: DOCS
         """
         if self.checks == [-1,-1,-1] and game.clan.your_cat and game.clan.your_cat.inheritance:
+            self.checks = [len(game.clan.your_cat.apprentice), len(game.clan.your_cat.mate), len(game.clan.your_cat.inheritance.get_blood_kits()), game.clan.leader.ID]
+        elif game.clan.your_cat.inheritance:
             self.checks = [len(game.clan.your_cat.apprentice), len(game.clan.your_cat.mate), len(game.clan.your_cat.inheritance.get_blood_kits()), game.clan.leader.ID]
         else:
             self.checks = [len(game.clan.your_cat.apprentice), len(game.clan.your_cat.mate), 0, game.clan.leader.ID]
@@ -274,7 +276,7 @@ class Events:
             if game.clan.your_cat.moons >= 12:
                 self.check_gain_app(self.checks)
                 self.check_gain_mate(self.checks)
-                # self.check_gain_kits(self.checks)
+                self.check_gain_kits(self.checks)
                 self.check_leader(self.checks)
                 self.generate_mate_events()
                 self.check_retire()
@@ -809,35 +811,37 @@ class Events:
             
     def check_gain_kits(self, checks):
         if len(game.clan.your_cat.inheritance.get_blood_kits()) > checks[2]:
-            insert_kits = []
-            for kit in game.clan.your_cat.inheritance.get_blood_kits():
-                kit_cat = Cat.all_cats.get(kit)
-                if kit_cat.moons == 0:
-                    insert_kits.append(str(kit_cat.name))
-            resource_dir = "resources/dicts/events/lifegen_events/"
-            with open(f"{resource_dir}ceremonies.json",
-                    encoding="ascii") as read_file:
-                self.z_txt = ujson.loads(read_file.read())
-            mate_status = "no mate"
-            if len(game.clan.your_cat.mate) == 1:
-                mate_status = "mate"
-            elif len(game.clan.your_cat.mate) > 1:
-                mate_status = "mates"
+            NameKitsWindow('events screen')
+            # self.checks[2] = len(game.clan.your_cat.inheritance.get_blood_kits())
+            # insert_kits = []
+            # for kit in game.clan.your_cat.inheritance.get_blood_kits():
+            #     kit_cat = Cat.all_cats.get(kit)
+            #     if kit_cat.moons == 0:
+            #         insert_kits.append(str(kit_cat.name))
+            # resource_dir = "resources/dicts/events/lifegen_events/"
+            # with open(f"{resource_dir}ceremonies.json",
+            #         encoding="ascii") as read_file:
+            #     self.z_txt = ujson.loads(read_file.read())
+            # mate_status = "no mate"
+            # if len(game.clan.your_cat.mate) == 1:
+            #     mate_status = "mate"
+            # elif len(game.clan.your_cat.mate) > 1:
+            #     mate_status = "mates"
             
-            ceremony_txt = random.choice(self.z_txt['have_kits ' + mate_status])
-            kit_names = ""
-            if len(insert_kits) == 1:
-                kit_names = insert_kits[0]
-            elif len(insert_kits) == 2:
-                kit_names = insert_kits[0] + " and " + insert_kits[1]
-            else:
-                for i in range(len(insert_kits)):
-                    if i == len(insert_kits) - 1:
-                        kit_names += "and " + insert_kits[i]
-                    else:
-                        kit_names += insert_kits[i] + ", "
-            ceremony_txt = ceremony_txt.replace('insert_kits', kit_names)
-            game.cur_events_list.insert(0, Single_Event(ceremony_txt))
+            # ceremony_txt = random.choice(self.z_txt['have_kits ' + mate_status])
+            # kit_names = ""
+            # if len(insert_kits) == 1:
+            #     kit_names = insert_kits[0]
+            # elif len(insert_kits) == 2:
+            #     kit_names = insert_kits[0] + " and " + insert_kits[1]
+            # else:
+            #     for i in range(len(insert_kits)):
+            #         if i == len(insert_kits) - 1:
+            #             kit_names += "and " + insert_kits[i]
+            #         else:
+            #             kit_names += insert_kits[i] + ", "
+            # ceremony_txt = ceremony_txt.replace('insert_kits', kit_names)
+            # game.cur_events_list.insert(0, Single_Event(ceremony_txt))
 
     def generate_mate_events(self):
         if len(game.clan.your_cat.mate) > 0:

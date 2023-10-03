@@ -1528,6 +1528,67 @@ class DeputyScreen(UIWindow):
                 self.mediator_button.kill()
                 self.kill()
                 game.all_screens['events screen'].exit_screen()
+                
+class NameKitsWindow(UIWindow):
+    def __init__(self, last_screen):
+        super().__init__(scale(pygame.Rect((500, 400), (600, 500))),
+                         window_display_title='Name Kits',
+                         object_id='#game_over_window',
+                         resizable=False)
+        self.set_blocking(True)
+        game.switches['window_open'] = True
+        self.clan_name = str(game.clan.name + 'Clan')
+        self.last_screen = last_screen
+        self.pick_path_message = UITextBoxTweaked(
+            f"Name your kits",
+            scale(pygame.Rect((40, 40), (500, -1))),
+            line_spacing=1,
+            object_id="text_box_30_horizcenter",
+            container=self
+        )
+
+        self.begin_anew_button = UIImageButton(
+            scale(pygame.Rect((130, 190), (150, 150))),
+            "",
+            object_id="#random_dice_button",
+            container=self,
+            tool_tip_text='Randomize names'
+        )
+        
+        self.mediator_button = UIImageButton(
+            scale(pygame.Rect((310, 190), (150, 150))),
+            "",
+            object_id="#unknown_residence_button",
+            container=self,
+            tool_tip_text='Choose names'
+
+        )
+
+        
+        self.begin_anew_button.enable()
+        self.mediator_button.enable()
+
+
+    def process_event(self, event):
+        super().process_event(event)
+
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element == self.begin_anew_button:
+                game.last_screen_forupdate = None
+                game.switches['window_open'] = False
+                self.begin_anew_button.kill()
+                self.pick_path_message.kill()
+                self.mediator_button.kill()
+                self.kill()
+            elif event.ui_element == self.mediator_button:
+                game.last_screen_forupdate = None
+                game.switches['window_open'] = False
+                game.switches['cur_screen'] = "name kits screen"
+                self.begin_anew_button.kill()
+                self.pick_path_message.kill()
+                self.mediator_button.kill()
+                self.kill()
+                game.all_screens['events screen'].exit_screen()
 
                 
 class MateScreen(UIWindow):
