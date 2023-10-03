@@ -5,6 +5,7 @@ from .Screens import Screens
 
 from scripts.utility import get_text_box_theme, scale
 from scripts.cat.cats import Cat
+from scripts.cat.skills import SkillPath
 from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
@@ -41,6 +42,7 @@ class ChooseMentorScreen(Screens):
         self.heading = None
         self.mentor = None
         self.the_cat = None
+        self.show_only_same_skill_mentors = False
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -81,6 +83,10 @@ class ChooseMentorScreen(Screens):
                 self.update_cat_list()
             elif event.ui_element == self.previous_page_button:
                 self.current_page -= 1
+                self.update_cat_list()
+            elif event.ui_element == self.checkbox_show_same_skill:
+                self.show_only_same_skill_mentors = not self.show_only_same_skill_mentors
+                self.update_buttons()  # Added this line
                 self.update_cat_list()
 
     def screen_switches(self):
@@ -150,10 +156,17 @@ class ChooseMentorScreen(Screens):
                                                                     object_id=get_text_box_theme(
                                                                         "#text_box_22_horizcenter"),
                                                                     manager=MANAGER)
-        self.previous_page_button = UIImageButton(scale(pygame.Rect((630, 1160), (68, 68))), "",
+        self.previous_page_button = UIImageButton(scale(pygame.Rect((630, 1158), (68, 68))), "",
                                                   object_id="#relation_list_previous", manager=MANAGER)
-        self.next_page_button = UIImageButton(scale(pygame.Rect((902, 1160), (68, 68))), "",
+        self.next_page_button = UIImageButton(scale(pygame.Rect((902, 1158), (68, 68))), "",
                                               object_id="#relation_list_next", manager=MANAGER)
+        if self.show_only_same_skill_mentors:
+            theme = "#checked_checkbox_smalltooltip"
+        else:
+            theme = "#unchecked_checkbox_smalltooltip"
+            
+        self.checkbox_show_same_skill = UIImageButton(scale(pygame.Rect((1360, 650),(68, 68))), "",
+                                                       object_id=theme, tool_tip_text='only show mentors with matching skills')
 
         self.update_apprentice()  # Draws the current apprentice
         self.update_selected_cat()  # Updates the image and details of selected cat
@@ -203,6 +216,7 @@ class ChooseMentorScreen(Screens):
         del self.next_page_button
         self.app_frame.kill()
         del self.app_frame
+        self.checkbox_show_same_skill.kill()
 
     def update_apprentice(self):
         """ Updates the apprentice focused on. """
@@ -436,24 +450,76 @@ class ChooseMentorScreen(Screens):
             self.confirm_mentor.enable()
             self.current_mentor_warning.hide()
             self.no_mentor_warning.hide()
+                # Remove the old checkbox
+        self.checkbox_show_same_skill.kill()
+        # Create the checkbox again with updated status
+        if self.show_only_same_skill_mentors:
+            theme = "#checked_checkbox"
+        else:
+            theme = "#unchecked_checkbox"
+        self.checkbox_show_same_skill = UIImageButton(scale(pygame.Rect((1360, 650),(68, 68))), "",
+                                                       object_id=theme, tool_tip_text='only show mentors with matching skills')
 
     def get_valid_mentors(self):
         valid_mentors = []
 
         if self.the_cat.status == "apprentice":
             for cat in Cat.all_cats_list:
-                if not cat.dead and not cat.outside and cat.status in [
-                    'warrior', 'deputy', 'leader'
-                ]:
-                    valid_mentors.append(cat)
+                if not cat.dead and not cat.outside and cat.status in ['warrior', 'deputy', 'leader']:
+                    # check if we should filter by the same skills
+                    if self.show_only_same_skill_mentors:
+                        # making sure both cats have primary skills before comparison
+                        if cat.skills.primary and self.the_cat.skills.primary and cat.skills.primary.path == self.the_cat.skills.primary.path:
+                            valid_mentors.append(cat)
+                        # making sure both cats have secondary skills before comparison
+                        elif (cat.skills.secondary and self.the_cat.skills.secondary and 
+                              cat.skills.secondary.path == self.the_cat.skills.secondary.path):
+                            valid_mentors.append(cat)
+                        # making sure both cats have primary and secondary skills before comparison
+                        elif (cat.skills.primary and self.the_cat.skills.secondary and 
+                              cat.skills.primary.path == self.the_cat.skills.secondary.path):
+                            valid_mentors.append(cat)
+                        # making sure both cats have secondary and primary skills before comparison
+                        elif (cat.skills.secondary and self.the_cat.skills.primary and 
+                              cat.skills.secondary.path == self.the_cat.skills.primary.path):
+                            valid_mentors.append(cat)
+                    else:
+                        valid_mentors.append(cat)
+
         elif self.the_cat.status == "medicine cat apprentice":
             for cat in Cat.all_cats_list:
                 if not cat.dead and not cat.outside and cat.status == 'medicine cat':
-                    valid_mentors.append(cat)
+                    if self.show_only_same_skill_mentors:
+                        if cat.skills.primary and self.the_cat.skills.primary and cat.skills.primary.path == self.the_cat.skills.primary.path:
+                            valid_mentors.append(cat)
+                        elif (cat.skills.secondary and self.the_cat.skills.secondary and 
+                              cat.skills.secondary.path == self.the_cat.skills.secondary.path):
+                            valid_mentors.append(cat)
+                        elif (cat.skills.primary and self.the_cat.skills.secondary and 
+                              cat.skills.primary.path == self.the_cat.skills.secondary.path):
+                            valid_mentors.append(cat)
+                        elif (cat.skills.secondary and self.the_cat.skills.primary and 
+                              cat.skills.secondary.path == self.the_cat.skills.primary.path):
+                            valid_mentors.append(cat)
+                    else:
+                        valid_mentors.append(cat)
         elif self.the_cat.status == 'mediator apprentice':
             for cat in Cat.all_cats_list:
                 if not cat.dead and not cat.outside and cat.status == 'mediator':
-                    valid_mentors.append(cat)
+                    if self.show_only_same_skill_mentors:
+                        if cat.skills.primary and self.the_cat.skills.primary and cat.skills.primary.path == self.the_cat.skills.primary.path:
+                            valid_mentors.append(cat)
+                        elif (cat.skills.secondary and self.the_cat.skills.secondary and 
+                              cat.skills.secondary.path == self.the_cat.skills.secondary.path):
+                            valid_mentors.append(cat)
+                        elif (cat.skills.primary and self.the_cat.skills.secondary and 
+                              cat.skills.primary.path == self.the_cat.skills.secondary.path):
+                            valid_mentors.append(cat)
+                        elif (cat.skills.secondary and self.the_cat.skills.primary and 
+                              cat.skills.secondary.path == self.the_cat.skills.primary.path):
+                            valid_mentors.append(cat)
+                    else:
+                        valid_mentors.append(cat)
 
         return valid_mentors
 
