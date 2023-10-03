@@ -262,9 +262,9 @@
             "introspective"
         ],
         [
-            "Oh y_c! Quick, grab them!",
-            "[A small kitten rushes towards you, away from the nursery. You quickly grab them by the scruff to stop them from escaping any further.",
-            "Oh StarClan's grace. Thank you, y_c. I owe you my next freshkill for that. I had my eyes off them for a second and they made a wild rush out the nursery!",
+            "Oh, y_c! Quick, grab them!",
+            "[A small kitten rushes towards you, away from the nursery. You quickly grab them by the scruff to stop them from escaping any further.]",
+            "Oh, StarClan's grace. Thank you, y_c. I owe you my next freshkill for that. I had my eyes off them for a second and they made a wild rush out the nursery!",
             "I promise I won't make a habit out of this. Have a nice rest of your day.",
             "[t_c gently picks up the kitten and walks back into the nursery.]"
         ]
