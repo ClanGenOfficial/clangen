@@ -62,20 +62,13 @@ class Sprites():
         sprites_y -- Number of sprites vertically (default: 3)
         """
 
-        # making the group
-        new_group = pygame.Surface.subsurface(self.spritesheets[spritesheet],
-                                              pos[0] * sprites_x * self.size,
-                                              pos[1] * sprites_y * self.size,
-                                              self.size * sprites_x,
-                                              self.size * sprites_y)
-
         # splitting group into singular sprites and storing into self.sprites section
         x_spr = 0
         y_spr = 0
         for x in range(sprites_x * sprites_y):
-            new_sprite = pygame.Surface.subsurface(new_group,
-                                                   x_spr * self.size,
-                                                   y_spr * self.size,
+            new_sprite = pygame.Surface.subsurface(self.spritesheets[spritesheet],
+                                                   pos[0] * sprites_x * self.size + x_spr * self.size,
+                                                   pos[1] * sprites_y * self.size + y_spr * self.size,
                                                    self.size, self.size)
             self.sprites[name + str(x)] = new_sprite
             x_spr += 1
