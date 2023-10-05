@@ -17,6 +17,9 @@ class Sprites():
         self.spritesheets = {}
         self.images = {}
         self.sprites = {}
+
+        # Shared empty sprite for placeholders
+        self.blank_sprite = None
         
         self.load_tints()
 
@@ -62,26 +65,30 @@ class Sprites():
         sprites_y -- Number of sprites vertically (default: 3)
         """
 
-        # making the group
-        new_group = pygame.Surface.subsurface(self.spritesheets[spritesheet],
-                                              pos[0] * sprites_x * self.size,
-                                              pos[1] * sprites_y * self.size,
-                                              self.size * sprites_x,
-                                              self.size * sprites_y)
+        group_x_ofs = pos[0] * sprites_x * self.size
+        group_y_ofs = pos[1] * sprites_y * self.size
+        i = 0
 
         # splitting group into singular sprites and storing into self.sprites section
-        x_spr = 0
-        y_spr = 0
-        for x in range(sprites_x * sprites_y):
-            new_sprite = pygame.Surface.subsurface(new_group,
-                                                   x_spr * self.size,
-                                                   y_spr * self.size,
-                                                   self.size, self.size)
-            self.sprites[name + str(x)] = new_sprite
-            x_spr += 1
-            if x_spr == sprites_x:
-                x_spr = 0
-                y_spr += 1
+        for y in range(sprites_y):
+            for x in range(sprites_x):
+                try:
+                    new_sprite = pygame.Surface.subsurface(
+                        self.spritesheets[spritesheet],
+                        group_x_ofs + x * self.size,
+                        group_y_ofs + y * self.size,
+                        self.size, self.size
+                    )
+                except ValueError:
+                    # Fallback for non-existent sprites
+                    if not self.blank_sprite:
+                        self.blank_sprite = pygame.Surface(
+                            (self.size, self.size),
+                            pygame.HWSURFACE | pygame.SRCALPHA
+                        )
+                    new_sprite = self.blank_sprite
+                self.sprites[f'{name}{i}'] = new_sprite
+                i += 1
 
     def load_all(self):
         # get the width and height of the spritesheet
