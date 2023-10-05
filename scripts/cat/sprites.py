@@ -17,6 +17,9 @@ class Sprites():
         self.spritesheets = {}
         self.images = {}
         self.sprites = {}
+
+        # Shared empty sprite for placeholders
+        self.blank_sprite = None
         
         self.load_tints()
 
@@ -69,12 +72,21 @@ class Sprites():
         # splitting group into singular sprites and storing into self.sprites section
         for y in range(sprites_y):
             for x in range(sprites_x):
-                new_sprite = pygame.Surface.subsurface(
-                    self.spritesheets[spritesheet],
-                    group_x_ofs + x * self.size,
-                    group_y_ofs + y * self.size,
-                    self.size, self.size
-                )
+                try:
+                    new_sprite = pygame.Surface.subsurface(
+                        self.spritesheets[spritesheet],
+                        group_x_ofs + x * self.size,
+                        group_y_ofs + y * self.size,
+                        self.size, self.size
+                    )
+                except ValueError:
+                    # Fallback for non-existent sprites
+                    if not self.blank_sprite:
+                        self.blank_sprite = pygame.Surface(
+                            (self.size, self.size),
+                            pygame.HWSURFACE | pygame.SRCALPHA
+                        )
+                    new_sprite = self.blank_sprite
                 self.sprites[f'{name}{i}'] = new_sprite
                 i += 1
 
