@@ -1353,7 +1353,7 @@
                 "text": "The patrol decides to take shelter. app1 sees a large tree and makes a run for it, not hearing p_l's scream of warning. {PRONOUN/app1/poss/CAP} mistake dawns on {PRONOUN/app1/object} the moment {PRONOUN/app1/subject} {VERB/app1/take/takes} shelter underneath what {PRONOUN/app1/subject} now {VERB/app1/realize/realizes} is the tree that bleeds poison when it rains. {PRONOUN/app1/subject/CAP} {VERB/app1/are/is} too late to escape the poisoned rain now pouring down on {PRONOUN/app1/poss} body, letting out a scream before falling still in a spasm. The patrol returns to c_n both eyes and fur wet.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": ["app1"],
                 "history_text": {
                     "scar": "This cat was scarred by the poison of the death tree while it was raining.",
                     "reg_death": "This cat died because of the poison of a death tree while it was raining.",
