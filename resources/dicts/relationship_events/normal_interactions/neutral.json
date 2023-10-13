@@ -32,7 +32,8 @@
 		"id": "neutral_interaction3",
 		"interactions": [
 			"m_c is stuttering while speaking to r_c.",
-			"r_c asks m_c to speak up while chatting together."
+			"r_c asks m_c to speak up while chatting together.",
+			"m_c avoids facing r_c directly while talking."
 		],
 		"main_trait_constraint": [
 			"nervous"
@@ -61,7 +62,8 @@
 		"id": "neutral_interaction6",
 		"interactions": [
 			"r_c seems to be oblivious to m_c glaring at {PRONOUN/r_c/object} from across camp.",
-			"m_c is sharpening {PRONOUN/m_c/poss} claws near r_c."
+			"m_c is sharpening {PRONOUN/m_c/poss} claws near r_c.",
+			"m_c asks r_c to compare the size and sharpness of their claws together."
 		],
 		"main_trait_constraint": [
 			"bloodthirsty"
@@ -75,6 +77,30 @@
 		],
 		"main_trait_constraint": [
 			"oblivious"
+		]
+	},
+	{
+		"id": "neutral_interaction8",
+		"interactions": [
+			"r_c notices m_c sulking around camp again.",
+			"r_c meows hello to m_c, but {PRONOUN/m_c/subject} {VERB/m_c/look/looks} pretty glum still."
+		],
+		"main_trait_constraint": [
+			"gloomy",
+			"lonesome"
+		]
+	},
+	{
+		"id": "neutral_interaction9",
+		"interactions": [
+			"m_c always seems to avoid r_c's attempts at small talk.",
+			"r_c is amused at how m_c manages to look so grumpy all the time.",
+			"m_c avoids running into any cat, but r_c interrupts {PRONOUN/m_c/poss} peaceful silence.",
+			"m_c stares at r_c with an unreadable expression."
+		],
+		"main_trait_constraint": [
+			"grumpy",
+			"cold"
 		]
 	}
 ]
