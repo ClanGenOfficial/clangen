@@ -113,7 +113,8 @@ class Sprites():
             'whitepatches', 'eyes', 'eyes2', 'skin', 'scars', 'missingscars',
             'collars', 'bellcollars', 'bowcollars', 'nyloncollars',
             'bengalcolours', 'marbledcolours', 'rosettecolours', 'smokecolours', 'tickedcolours', 
-            'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours', 
+            'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours',
+            'maskedcolours', 
             'shadersnewwhite', 'lineartdead', 'tortiepatchesmasks', 
             'medcatherbs', 'lineartdf', 'lightingnew', 'fademask',
             'fadestarclan', 'fadedarkforest'
@@ -273,6 +274,13 @@ class Sprites():
             self.make_group('singlestripecolours', (a, 1), f'singlestripe{i}')
         for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
             self.make_group('singlestripecolours', (a, 2), f'singlestripe{i}')
+        # masked tabby
+        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
+            self.make_group('maskedcolours', (a, 0), f'masked{i}')
+        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
+            self.make_group('maskedcolours', (a, 1), f'masked{i}')
+        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
+            self.make_group('maskedcolours', (a, 2), f'masked{i}')
             
         # new new torties
         for a, i in enumerate(['ONE', 'TWO', 'THREE', 'FOUR', 'REDTAIL', 'DELILAH', 'HALF', 'STREAK', 'MASK', 'SMOKE']):
