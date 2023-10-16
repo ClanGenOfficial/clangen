@@ -60,7 +60,7 @@
          "other_cat",
          "other_cat_parent"
         ],
-        "death_text": "r_c is frantic with worry; m_c, {PRONOUN/r_c/poss} child, hadn't been seen around camp, no matter who {PRONOUN/r_c/subject} asked and where {PRONOUN/r_c/subject} searched. It's not until r_c stumbles across m_c’s body, withered under the sun and being feasted on by black and orange butterflies, with a despairing sound, that {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/poss} greatest fears have come true.",
+        "death_text": "r_c is frantic with worry; m_c, {PRONOUN/r_c/poss} child, hadn't been seen around camp, no matter who {PRONOUN/r_c/subject} asked and where {PRONOUN/r_c/subject} searched. It's not until r_c stumbles across m_c's body, withered under the sun and being feasted on by black and orange butterflies, with a despairing sound, that {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/poss} greatest fears have come true.",
         "history_text": {
                      "reg_death": "m_c shriveled up under the sun because of heat exhaustion and dehydration."
                  },
