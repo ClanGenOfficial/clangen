@@ -104,7 +104,7 @@ class Freshkill_Pile():
         for key in order:
             amount = self.take_from_pile(key, amount)
         
-    def time_skip(self, living_cats: list) -> None:
+    def time_skip(self, living_cats: list, event_list: list) -> None:
         """
         Handle the time skip for the freshkill pile, 'age' the prey and feeding the cats.
 
@@ -118,11 +118,14 @@ class Freshkill_Pile():
         for key, value in self.pile.items():
             self.pile[key] = previous_amount
             previous_amount = value
-            if key == "expires_in_1" and FRESHKILL_ACTIVE:
+            if key == "expires_in_1" and FRESHKILL_ACTIVE and value > 0:
+                event_list.append(f"Some prey expired, {value} pieces where removed from the pile.")
                 print(f" -- FRESHKILL: {value} expired prey is removed")
         self.total_amount = sum(self.pile.values())
-
+        value_diff = self.total_amount
         self.feed_cats(living_cats)
+        value_diff -= sum(self.pile.values())
+        event_list.append(f"{value_diff} pieces of prey where consumed.")
 
     def feed_cats(self, living_cats: list) -> None:
         """

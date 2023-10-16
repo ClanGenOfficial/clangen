@@ -56,6 +56,7 @@ class Events:
         """
         game.cur_events_list = []
         game.herb_events_list = []
+        game.freshkill_events_list = []
         game.mediated = []
         game.switches['saved_clan'] = False
         self.new_cat_invited = False
@@ -89,10 +90,9 @@ class Events:
                 print(f" -- FRESHKILL: Clan needs {needed_amount} prey")
             # feed the cats and update the nutrient status
             relevant_cats = list(
-                filter(
-                    lambda _cat: _cat.is_alive() and not _cat.exiled and
+                filter(lambda _cat: _cat.is_alive() and not _cat.exiled and
                                  not _cat.outside, Cat.all_cats.values()))
-            game.clan.freshkill_pile.time_skip(relevant_cats)
+            game.clan.freshkill_pile.time_skip(relevant_cats, game.freshkill_event_list)
             self.get_moon_freshkill()
             # handle freshkill pile events, after feeding
             # first 5 moons there will not be any freshkill pile event
@@ -102,11 +102,9 @@ class Events:
             # make a notification if the Clan has not enough prey
             if not game.clan.freshkill_pile.clan_has_enough_food(
             ) and FRESHKILL_EVENT_ACTIVE:
-                game.cur_events_list.insert(
-                    0,
-                    Single_Event(
-                        f"{game.clan.name}Clan doesn't have enough prey for next moon!"
-                    ))
+                event_string = f"{game.clan.name}Clan doesn't have enough prey for next moon!"
+                game.cur_events_list.insert(0, Single_Event(event_string))
+                game.freshkill_event_list.append(event_string)
             if FRESHKILL_ACTIVE:
                 print(f" -- FRESHKILL: prey amount after feeding {game.clan.freshkill_pile.total_amount}")
         
@@ -309,6 +307,7 @@ class Events:
             prey_amount += random.randint(lower_value, upper_value)
         if FRESHKILL_ACTIVE:
             print(f" -- FRESHKILL: added {prey_amount} monthly prey")
+        game.freshkill_event_list.append(f"The clan managed to catch {prey_amount} pieces of prey.")
         game.clan.freshkill_pile.add_freshkill(prey_amount)
 
     def herb_gather(self):

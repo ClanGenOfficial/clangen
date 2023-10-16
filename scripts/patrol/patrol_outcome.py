@@ -795,6 +795,7 @@ class PatrolOutcome():
                 amount_text = "good"
             
             print(f"PREY ADDED: {total_amount}")
+            game.freshkill_event_list.append(f"{total_amount} pieces of prey where caught on a patrol.")
             game.clan.freshkill_pile.add_freshkill(total_amount)
             results = f"A {amount_text} amount of prey is brought to camp"
             

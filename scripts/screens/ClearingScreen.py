@@ -138,7 +138,7 @@ class ClearingScreen(Screens):
                 object_id=get_text_box_theme("#text_box_40_horizcenter"), manager=MANAGER
             )
             self.log_title = pygame_gui.elements.UITextBox(
-                "Medicine Den Log",
+                "Freshkill Pile Log",
                 scale(pygame.Rect((281, 820), (400, 60))),
                 object_id=get_text_box_theme("#text_box_40_horizcenter"), manager=MANAGER
             )
@@ -149,7 +149,7 @@ class ClearingScreen(Screens):
                                                           "resources/images/sick_hurt_bg.png").convert_alpha()
                                                       , manager=MANAGER)
             self.cat_bg.disable()
-            log_text = game.herb_events_list.copy()
+            log_text = game.freshkill_event_list.copy()
             """if game.settings["fullscreen"]:
                 img_path = "resources/images/spacer.png"
             else:

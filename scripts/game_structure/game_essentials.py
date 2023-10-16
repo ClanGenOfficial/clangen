@@ -34,6 +34,7 @@ class Game():
     other_clans_events_list = []
     misc_events_list = []
     herb_events_list = []
+    freshkill_event_list = []
 
     allegiance_list = []
     language = {}
