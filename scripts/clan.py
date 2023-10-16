@@ -976,6 +976,9 @@ class Clan():
                             nutrition.max_score = nutr['max_score']
                             nutrition.current_score = nutr['current_score']
                             clan.freshkill_pile.nutrition_info[k] = nutrition
+                        if len(nutritions) <= 0:
+                            for cat in Cat.all_cats_list:
+                                clan.freshkill_pile.add_cat_to_nutrition(cat)
             else:
                 clan.freshkill_pile = Freshkill_Pile()
         except:

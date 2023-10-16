@@ -4,9 +4,8 @@ import pygame_gui
 from .Screens import Screens
 from scripts.cat.cats import Cat
 from scripts.game_structure.image_button import UISpriteButton, UIImageButton, UITextBoxTweaked
-from scripts.utility import get_text_box_theme, scale, get_med_cats, shorten_text_to_fit
+from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
 from scripts.game_structure.game_essentials import game, MANAGER
-from ..conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
 
 
 class ClearingScreen(Screens):
@@ -21,34 +20,26 @@ class ClearingScreen(Screens):
         self.log_title = None
         self.log_tab = None
         self.cats_tab = None
-        self.hurt_sick_title = None
-        self.display_med = None
-        self.med_cat = None
-        self.minor_tab = None
-        self.out_den_tab = None
-        self.in_den_tab = None
-        self.injured_and_sick_cats = None
-        self.minor_cats = None
-        self.out_den_cats = None
-        self.in_den_cats = None
-        self.meds_messages = None
-        self.current_med = None
+        self.nutrition_title = None
+        self.satisfied_tab = None
+        self.satisfied_cats = None
+        self.hungry_tab = None
+        self.hungry_cats = None
+        self.info_messages = None
         self.cat_bg = None
         self.last_page = None
         self.next_page = None
-        self.last_med = None
-        self.next_med = None
-        self.den_base = None
-        self.med_info = None
-        self.med_name = None
+        self.feed_button = None
+        self.pile_base = None
+        self.focus_cat = None
+        self.focus_cat_object = None
+        self.focus_info = None
+        self.focus_name = None
         self.current_page = None
-        self.meds = None
         self.back_button = None
 
-        self.tab_showing = self.in_den_tab
-        self.tab_list = self.in_den_cats
-
-        self.herbs = {}
+        self.tab_showing = self.hungry_tab
+        self.tab_list = self.hungry_cats
 
         self.open_tab = None
 
@@ -56,44 +47,30 @@ class ClearingScreen(Screens):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
                 self.change_screen('camp screen')
-            elif event.ui_element == self.next_med:
-                self.current_med += 1
-                self.update_med_cat()
-            elif event.ui_element == self.last_med:
-                self.current_med -= 1
-                self.update_med_cat()
+            elif event.ui_element == self.feed_button:
+                # TODO: feed the current cat
+                print("TODO")
             elif event.ui_element == self.next_page:
                 self.current_page += 1
-                self.update_sick_cats()
+                self.update_nutrition_cats()
             elif event.ui_element == self.last_page:
                 self.current_page -= 1
-                self.update_sick_cats()
-            elif event.ui_element == self.in_den_tab:
-                self.in_den_tab.disable()
+                self.update_nutrition_cats()
+            elif event.ui_element == self.hungry_tab:
                 self.tab_showing.enable()
-                self.tab_list = self.in_den_cats
-                self.tab_showing = self.in_den_tab
-                self.update_sick_cats()
-            elif event.ui_element == self.out_den_tab:
+                self.tab_list = self.hungry_cats
+                self.tab_showing = self.hungry_tab
+                self.hungry_tab.disable()
+                self.update_nutrition_cats()
+            elif event.ui_element == self.satisfied_tab:
                 self.tab_showing.enable()
-                self.tab_list = self.out_den_cats
-                self.tab_showing = self.out_den_tab
-                self.out_den_tab.disable()
-                self.update_sick_cats()
-            elif event.ui_element == self.minor_tab:
-                self.tab_showing.enable()
-                self.tab_list = self.minor_cats
-                self.tab_showing = self.minor_tab
-                self.minor_tab.disable()
-                self.update_sick_cats()
-            elif event.ui_element in self.cat_buttons.values():
-                cat = event.ui_element.return_cat_object()
-                game.switches["cat"] = cat.ID
-                self.change_screen('profile screen')
-            elif event.ui_element == self.med_cat:
-                cat = event.ui_element.return_cat_object()
-                game.switches["cat"] = cat.ID
-                self.change_screen('profile screen')
+                self.tab_list = self.satisfied_cats
+                self.tab_showing = self.satisfied_tab
+                self.satisfied_tab.disable()
+                self.update_nutrition_cats()
+            elif event.ui_element in self.cat_buttons.values() and event.ui_element != self.focus_cat:
+                self.focus_cat_object = event.ui_element.return_cat_object()
+                self.update_focus_cat()
             elif event.ui_element == self.cats_tab:
                 self.open_tab = "cats"
                 self.cats_tab.disable()
@@ -109,21 +86,20 @@ class ClearingScreen(Screens):
         self.hide_menu_buttons()
         self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))), "", object_id="#back_button"
                                          , manager=MANAGER)
-        self.next_med = UIImageButton(scale(pygame.Rect((1290, 556), (68, 68))), "", object_id="#arrow_right_button"
+        self.feed_button = UIImageButton(scale(pygame.Rect((1300, 600), (68, 68))), "", object_id="#arrow_right_button"
                                       , manager=MANAGER)
-        self.last_med = UIImageButton(scale(pygame.Rect((1200, 556), (68, 68))), "", object_id="#arrow_left_button"
-                                      , manager=MANAGER)
+        self.feed_button.hide()
 
         if game.clan.game_mode != 'classic':
             self.help_button = UIImageButton(scale(pygame.Rect(
                 (1450, 50), (68, 68))),
                 "",
                 object_id="#help_button", manager=MANAGER,
-                tool_tip_text="Your medicine cats will gather herbs over each timeskip and during any patrols you send "
-                              "them on. You can see what was gathered in the Log below! Your medicine cats will give"
-                              " these to any hurt or sick cats that need them, helping those cats to heal quicker."
+                tool_tip_text="Your clan will catch some amount of prey over each timeskip, but successful hunting patrols are the most "
+                              "important source of freshkill. You can see what was consumed and catched in the Log below! "
+                              "Freshkill can't be stored endlessly, after four moths prey will rot and will be thrown away."
                               "<br><br>"
-                              "Hover your mouse over the medicine den image to see what herbs your Clan has!",
+                              "Hover your mouse over the pile to see the current amount and the needed amount of prey of your Clan!",
 
             )
             self.last_page = UIImageButton(scale(pygame.Rect((660, 1272), (68, 68))), "", object_id="#arrow_left_button"
@@ -132,8 +108,8 @@ class ClearingScreen(Screens):
                                            object_id="#arrow_right_button"
                                            , manager=MANAGER)
 
-            self.hurt_sick_title = pygame_gui.elements.UITextBox(
-                "Hurt & Sick Cats",
+            self.nutrition_title = pygame_gui.elements.UITextBox(
+                "Nutrition Overview",
                 scale(pygame.Rect((281, 820), (400, 60))),
                 object_id=get_text_box_theme("#text_box_40_horizcenter"), manager=MANAGER
             )
@@ -150,10 +126,6 @@ class ClearingScreen(Screens):
                                                       , manager=MANAGER)
             self.cat_bg.disable()
             log_text = game.freshkill_event_list.copy()
-            """if game.settings["fullscreen"]:
-                img_path = "resources/images/spacer.png"
-            else:
-                img_path = "resources/images/spacer_small.png"""
             self.log_box = pygame_gui.elements.UITextBox(
                 f"{f'<br>-------------------------------<br>'.join(log_text)}<br>",
                 scale(pygame.Rect
@@ -172,146 +144,78 @@ class ClearingScreen(Screens):
                                          "",
                                          object_id="#med_den_log_button", manager=MANAGER
                                          )
-            self.in_den_tab = UIImageButton(scale(pygame.Rect
-                                                  ((740, 818), (150, 70))),
-                                            "",
-                                            object_id="#in_den_tab", manager=MANAGER)
-            self.in_den_tab.disable()
-            self.out_den_tab = UIImageButton(scale(pygame.Rect
+            self.hungry_tab = UIImageButton(scale(pygame.Rect
                                                    ((920, 818), (224, 70))),
                                              "",
                                              object_id="#out_den_tab", manager=MANAGER)
-            self.minor_tab = UIImageButton(scale(pygame.Rect
+            self.satisfied_tab = UIImageButton(scale(pygame.Rect
                                                  ((1174, 818), (140, 70))),
                                            "",
                                            object_id="#minor_tab", manager=MANAGER)
-            self.tab_showing = self.in_den_tab
+            self.tab_showing = self.hungry_tab
 
-            self.in_den_cats = []
-            self.out_den_cats = []
-            self.minor_cats = []
-            self.injured_and_sick_cats = []
+
+            self.satisfied_cats = []
+            self.hungry_cats = []
             for the_cat in Cat.all_cats_list:
-                if not the_cat.dead and not the_cat.outside and (the_cat.injuries or the_cat.illnesses):
-                    self.injured_and_sick_cats.append(the_cat)
-            for cat in self.injured_and_sick_cats:
-                if cat.injuries:
-                    for injury in cat.injuries:
-                        if cat.injuries[injury]["severity"] != 'minor' and injury not in ["pregnant", 'recovering from birth',
-                                                                                          "sprain", "lingering shock"]:
-                            if cat not in self.in_den_cats:
-                                self.in_den_cats.append(cat)
-                            if cat in self.out_den_cats:
-                                self.out_den_cats.remove(cat)
-                            elif cat in self.minor_cats:
-                                self.minor_cats.remove(cat)
-                            break
-                        elif injury in ['recovering from birth', "sprain", "lingering shock", "pregnant"] and cat not in self.in_den_cats:
-                            if cat not in self.out_den_cats:
-                                self.out_den_cats.append(cat)
-                            if cat in self.minor_cats:
-                                self.minor_cats.remove(cat)
-                            break
-                        elif cat not in (self.in_den_cats or self.out_den_cats):
-                            if cat not in self.minor_cats:
-                                self.minor_cats.append(cat)
-                if cat.illnesses:
-                    for illness in cat.illnesses:
-                        if cat.illnesses[illness]["severity"] != 'minor' and illness != 'grief stricken':
-                            if cat not in self.in_den_cats:
-                                self.in_den_cats.append(cat)
-                            if cat in self.out_den_cats:
-                                self.out_den_cats.remove(cat)
-                            elif cat in self.minor_cats:
-                                self.minor_cats.remove(cat)
-                            break
-                        elif illness == 'grief stricken':
-                            if cat not in self.in_den_cats:
-                                if cat not in self.out_den_cats:
-                                    self.out_den_cats.append(cat)
-                            if cat in self.minor_cats:
-                                self.minor_cats.remove(cat)
-                            break
-                        else:
-                            if cat not in (self.in_den_cats and self.out_den_cats and self.minor_cats):
-                                self.minor_cats.append(cat)
-            self.tab_list = self.in_den_cats
+                if not the_cat.dead and not the_cat.outside:
+                    if (the_cat.injuries or the_cat.illnesses):
+                        if "starving" in the_cat.illnesses.keys() or "malnourished" in the_cat.illnesses.keys():
+                            self.hungry_cats.append(the_cat)
+                    else:
+                        self.satisfied_cats.append(the_cat)
+            self.tab_list = self.hungry_cats
             self.current_page = 1
-            self.update_sick_cats()
+            self.update_nutrition_cats()
 
-        self.current_med = 1
+        self.draw_pile()
+        self.update_focus_cat()
 
-        self.draw_med_den()
-        self.update_med_cat()
-
-        self.meds_messages = UITextBoxTweaked(
+        self.info_messages = UITextBoxTweaked(
             "",
             scale(pygame.Rect((216, 620), (1200, 160))),
             object_id=get_text_box_theme("#text_box_30_horizcenter_vertcenter"),
             line_spacing=1
         )
 
-        if self.meds:
-            med_messages = []
 
-            amount_per_med = get_amount_cat_for_one_medic(game.clan)
-            number = medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med,
-                                                      give_clanmembers_covered=True)
-            if len(self.meds) == 1:
-                insert = 'medicine cat'
-            else:
-                insert = 'medicine cats'
-            meds_cover = f"Your {insert} can care for a Clan of up to {number} members, including themselves."
+        information_display = []
 
-            if len(self.meds) >= 1 and number == 0:
-                meds_cover = f"You have no medicine cats who are able to work. Your Clan will be at a higher risk of death and disease."
+        current_prey_amount = game.clan.freshkill_pile.total_amount
+        needed_amount = game.clan.freshkill_pile.amount_food_needed()
+        warrior_need = game.config["freshkill"]["prey_requirement"]["warrior"]
+        warrior_amount = int(current_prey_amount / warrior_need) 
+        general_text = f"Up to {warrior_amount} warriors can be feed with this amount of prey."
 
-            herb_amount = sum(game.clan.herbs.values())
-            med_concern = f"This should not appear."
-            if herb_amount == 0:
-                med_concern = f"The herb stores are empty and bare, this does not bode well."
-            elif 0 < herb_amount <= 8:
-                if len(self.meds) == 1:
-                    med_concern = f"The medicine cat worries over the herb stores, they don't have nearly enough for the Clan."
-                else:
-                    med_concern = f"The medicine cats worry over the herb stores, they don't have nearly enough for the Clan."
-            elif 8 < herb_amount <= 20:
-                med_concern = f"The herb stores are small, but it's enough for now."
-            elif 20 < herb_amount <= 30:
-                if len(self.meds) == 1:
-                    med_concern = f"The medicine cat is content with how many herbs they have stocked up."
-                else:
-                    med_concern = f"The medicine cats are content with how many herbs they have stocked up."
-            elif 30 < herb_amount <= 50:
-                if len(self.meds) == 1:
-                    med_concern = f"The herb stores are overflowing and the medicine cat has little worry."
-                else:
-                    med_concern = f"The herb stores are overflowing and the medicine cats have little worry."
-            elif 50 < herb_amount:
-                if len(self.meds) == 1:
-                    med_concern = f"StarClan has blessed them with plentiful herbs and the medicine cat sends their thanks to Silverpelt."
-                else:
-                    med_concern = f"StarClan has blessed them with plentiful herbs and the medicine cats send their thanks to Silverpelt."
+        concern_text = "This should not appear."
+        if current_prey_amount == 0:
+            concern_text = "The freshkill pile is empty, the Clan desperately needs prey!"
+        elif 0 < current_prey_amount <= needed_amount / 2:
+            concern_text = "The freshkill pile can't even feed half of the Clan. Hunting patrols should be organized imitatively."
+        elif needed_amount / 2 < current_prey_amount <= needed_amount:
+            concern_text = "Only half of the Clan can be feed currently. Hunting patrols should be organized."
+        elif needed_amount < current_prey_amount <= needed_amount * 1.5:
+            concern_text = "Every mouth of the Clan can be fed, but some more prey would not harm."
+        elif needed_amount * 1.5 < current_prey_amount <= needed_amount * 2.5:
+            concern_text = "The freshkill pile is overflowing and the Clan can feast!"
+        elif needed_amount * 2.5 < current_prey_amount:
+            concern_text = "StarClan has blessed the Clan with plentiful prey and the leader sends their thanks to Silverpelt."
 
-            med_messages.append(meds_cover)
-            med_messages.append(med_concern)
-            self.meds_messages.set_text("<br>".join(med_messages))
+        information_display.append(general_text)
+        information_display.append(concern_text)
+        self.info_messages.set_text("<br>".join(information_display))
 
-        else:
-            meds_cover = f"You have no medicine cats, your clan will be at higher risk of death and sickness."
-            self.meds_messages.set_text(meds_cover)
 
     def handle_tab_toggles(self):
         if self.open_tab == "cats":
             self.log_title.hide()
             self.log_box.hide()
 
-            self.hurt_sick_title.show()
+            self.nutrition_title.show()
             self.last_page.show()
             self.next_page.show()
-            self.in_den_tab.show()
-            self.out_den_tab.show()
-            self.minor_tab.show()
+            self.hungry_tab.show()
+            self.satisfied_tab.show()
             for cat in self.cat_buttons:
                 self.cat_buttons[cat].show()
             for x in range(len(self.cat_names)):
@@ -319,12 +223,11 @@ class ClearingScreen(Screens):
             for button in self.conditions_hover:
                 self.conditions_hover[button].show()
         elif self.open_tab == "log":
-            self.hurt_sick_title.hide()
+            self.nutrition_title.hide()
             self.last_page.hide()
             self.next_page.hide()
-            self.in_den_tab.hide()
-            self.out_den_tab.hide()
-            self.minor_tab.hide()
+            self.hungry_tab.hide()
+            self.satisfied_tab.hide()
             for cat in self.cat_buttons:
                 self.cat_buttons[cat].hide()
             for x in range(len(self.cat_names)):
@@ -335,80 +238,62 @@ class ClearingScreen(Screens):
             self.log_title.show()
             self.log_box.show()
 
-    def update_med_cat(self):
-        if self.med_cat:
-            self.med_cat.kill()
-        if self.med_info:
-            self.med_info.kill()
-        if self.med_name:
-            self.med_name.kill()
+    def update_focus_cat(self):
+        if not self.focus_cat_object:
+            return
+        if self.focus_cat:
+            self.focus_cat.kill()
+        if self.focus_info:
+            self.focus_info.kill()
+        if self.focus_name:
+            self.focus_name.kill()
 
-        # get the med cats
-        self.meds = get_med_cats(Cat, working=False)
-
-        if not self.meds:
-            all_pages = []
+        # if the nutrition is full grey the feed button out
+        self.feed_button.show()
+        nutrition_info = game.clan.freshkill_pile.nutrition_info
+        p = 100
+        if self.focus_cat_object.ID in nutrition_info:
+            p = int(nutrition_info[self.focus_cat_object.ID].percentage)
+        if p >= 100:
+            self.feed_button.disable()
         else:
-            all_pages = self.chunks(self.meds, 1)
+            self.feed_button.enable()
 
-        if self.current_med > len(all_pages):
-            if len(all_pages) == 0:
-                self.current_med = 1
-            else:
-                self.current_med = len(all_pages)
 
-        if all_pages:
-            self.display_med = all_pages[self.current_med - 1]
-        else:
-            self.display_med = []
+        name = str(self.focus_cat_object.name)
+        short_name = shorten_text_to_fit(name, 275, 30)
+        self.focus_name = pygame_gui.elements.ui_label.UILabel(
+            scale(pygame.Rect ((1100, 150), (450, 60))),
+            short_name,
+            object_id=get_text_box_theme("#text_box_30_horizcenter"), 
+            manager=MANAGER
+        )
+        self.focus_info = UITextBoxTweaked(
+            "",
+            scale(pygame.Rect((1180, 190), (300, 240))),
+            object_id=get_text_box_theme("#text_box_22_horizcenter"),
+            line_spacing=1, manager=MANAGER
+        )
+        self.focus_cat = UISpriteButton(
+            scale(pygame.Rect((1180, 290), (300, 300))),
+            self.focus_cat_object.sprite,
+            cat_object=self.focus_cat_object,
+            manager=MANAGER
+        )
+        info_list = [self.focus_cat_object.skills.skill_string(short=True)]
+        nutrition_info = game.clan.freshkill_pile.nutrition_info
+        if self.focus_cat_object.ID in nutrition_info:
+            info_list.append("nutrition: " + str(int(nutrition_info[self.focus_cat_object.ID].percentage)) + "%")
+        work_status = "This cat can work"
+        if self.focus_cat_object.not_working():
+            work_status = "This cat isn't able to work"
+        info_list.append(work_status)
 
-        if len(all_pages) <= 1:
-            self.next_med.disable()
-            self.last_med.disable()
-        else:
-            if self.current_med >= len(all_pages):
-                self.next_med.disable()
-            else:
-                self.next_med.enable()
+        self.focus_info.set_text("<br>".join(info_list))
 
-            if self.current_med <= 1:
-                self.last_med.disable()
-            else:
-                self.last_med.enable()
-
-        for cat in self.display_med:
-            self.med_cat = UISpriteButton(scale(pygame.Rect
-                                                ((870, 330), (300, 300))),
-                                          cat.sprite,
-                                          cat_object=cat, manager=MANAGER)
-            name = str(cat.name)
-            short_name = shorten_text_to_fit(name, 275, 30)
-            self.med_name = pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect
-                                                                       ((1050, 310), (450, 60))),
-                                                                 short_name,
-                                                                 object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER
-                                                                 )
-            self.med_info = UITextBoxTweaked(
-                "",
-                scale(pygame.Rect((1160, 370), (240, 240))),
-                object_id=get_text_box_theme("#text_box_22_horizcenter"),
-                line_spacing=1, manager=MANAGER
-            )
-            med_skill = cat.skills.skill_string(short=True)
-            med_exp = f"exp: {cat.experience_level}"
-            med_working = True
-            if cat.not_working():
-                med_working = False
-            if med_working is True:
-                work_status = "This cat can work"
-            else:
-                work_status = "This cat isn't able to work"
-            info_list = [med_skill, med_exp, work_status]
-            self.med_info.set_text("<br>".join(info_list))
-
-    def update_sick_cats(self):
+    def update_nutrition_cats(self):
         """
-        set tab showing as either self.in_den_cats, self.out_den_cats, or self.minor_cats; whichever one you want to
+        set tab showing as either self.hungry_cats or self.satisfied_cats; whichever one you want to
         display and update
         """
         self.clear_cat_buttons()
@@ -452,15 +337,20 @@ class ClearingScreen(Screens):
         i = 0
         for cat in self.display_cats:
             condition_list = []
-            if cat.injuries:
-                condition_list.extend(cat.injuries.keys())
             if cat.illnesses:
-                condition_list.extend(cat.illnesses.keys())
-            if cat.permanent_condition:
-                for condition in cat.permanent_condition:
-                    if cat.permanent_condition[condition]["moons_until"] == -2:
-                        condition_list.extend(cat.permanent_condition.keys())
-            conditions = ",<br>".join(condition_list)
+                if "starving" in cat.illnesses.keys():
+                    condition_list.append("starving")
+                    nutrition_info = game.clan.freshkill_pile.nutrition_info
+                    if cat.ID in nutrition_info:
+                        p = int(nutrition_info[cat.ID].percentage)
+                        condition_list.append(f" nutrition: {p}%")
+                elif "malnourished" in cat.illnesses.keys():
+                    condition_list.append("malnourished")
+                    nutrition_info = game.clan.freshkill_pile.nutrition_info
+                    if cat.ID in nutrition_info:
+                        p = int(nutrition_info[cat.ID].percentage)
+                        condition_list.append(f" nutrition: {p}%")
+            conditions = ",<br>".join(condition_list) if len(condition_list) > 0 else None
 
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(scale(pygame.Rect
                                                                          ((pos_x, pos_y), (100, 100))),
@@ -484,109 +374,44 @@ class ClearingScreen(Screens):
                 pos_y += 160
             i += 1
 
-    def draw_med_den(self):
-        sorted_dict = dict(sorted(game.clan.herbs.items()))
-        herbs_stored = sorted_dict.items()
-        herb_list = []
-        for herb in herbs_stored:
-            amount = str(herb[1])
-            type = str(herb[0].replace("_", " "))
-            herb_list.append(f"{amount} {type}")
-        if not herbs_stored:
-            herb_list.append("Empty")
-        if len(herb_list) <= 10:
-            herb_display = "<br>".join(sorted(herb_list))
+    def draw_pile(self):
+        current_prey_amount = game.clan.freshkill_pile.total_amount
+        needed_amount = game.clan.freshkill_pile.amount_food_needed()
+        hover_display = f"<b>Current amount:</b> {current_prey_amount}<br><b>Needed amount:</b> {needed_amount}"
+        self.pile_base = UIImageButton(scale(pygame.Rect
+                                            ((216, 190), (792, 448))),
+                                      "",
+                                      object_id="#med_cat_den_hover",
+                                      tool_tip_text=hover_display, manager=MANAGER
+                                      )
 
-            self.den_base = UIImageButton(scale(pygame.Rect
-                                                ((216, 190), (792, 448))),
-                                          "",
-                                          object_id="#med_cat_den_hover",
-                                          tool_tip_text=herb_display, manager=MANAGER
-                                          )
-        else:
-            count = 1
-            holding_pairs = []
-            pair = []
-            added = False
-            for y in range(len(herb_list)):
-                if (count % 2) == 0:  # checking if count is an even number
-                    count += 1
-                    pair.append(herb_list[y])
-                    holding_pairs.append("   -   ".join(pair))
-                    pair.clear()
-                    added = True
-                    continue
-                else:
-                    pair.append(herb_list[y])
-                    count += 1
-                    added = False
-            if added is False:
-                holding_pairs.extend(pair)
-
-            herb_display = "<br>".join(holding_pairs)
-            self.den_base = UIImageButton(scale(pygame.Rect
-                                                ((216, 190), (792, 448))),
-                                          "",
-                                          object_id="#med_cat_den_hover_big",
-                                          tool_tip_text=herb_display, manager=MANAGER
-                                          )
-
-        herbs = game.clan.herbs
-        for herb in herbs:
-            if herb == 'cobwebs':
-                self.herbs["cobweb1"] = pygame_gui.elements.UIImage(scale(pygame.Rect
-                                                                          ((216, 190), (792, 448))),
-                                                                    pygame.transform.scale(
-                                                                        pygame.image.load(
-                                                                            "resources/images/med_cat_den/cobweb1.png").convert_alpha(),
-                                                                        (792, 448)
-                                                                    ), manager=MANAGER)
-                if herbs["cobwebs"] > 1:
-                    self.herbs["cobweb2"] = pygame_gui.elements.UIImage(scale(pygame.Rect
-                                                                              ((216, 190), (792, 448))),
-                                                                        pygame.transform.scale(
-                                                                            pygame.image.load(
-                                                                                "resources/images/med_cat_den/cobweb2.png").convert_alpha(),
-                                                                            (792, 448)
-                                                                        ), manager=MANAGER)
-                continue
-            self.herbs[herb] = pygame_gui.elements.UIImage(scale(pygame.Rect
-                                                                 ((216, 190), (792, 448))),
-                                                           pygame.transform.scale(
-                                                               pygame.image.load(
-                                                                   f"resources/images/med_cat_den/{herb}.png").convert_alpha(),
-                                                               (792, 448)
-                                                           ), manager=MANAGER)
+        # TODO: change pile drawing based on size
 
     def exit_screen(self):
-        self.meds_messages.kill()
-        self.last_med.kill()
-        self.next_med.kill()
-        self.den_base.kill()
-        for herb in self.herbs:
-            self.herbs[herb].kill()
-        self.herbs = {}
-        if self.med_info:
-            self.med_info.kill()
-        if self.med_name:
-            self.med_name.kill()
+        self.info_messages.kill()
+        self.feed_button.kill()
+        self.pile_base.kill()
+        self.focus_cat_object = None
+        if self.focus_info:
+            self.focus_info.kill()
+        if self.focus_name:
+            self.focus_name.kill()
         self.back_button.kill()
         if game.clan.game_mode != 'classic':
             self.help_button.kill()
             self.cat_bg.kill()
             self.last_page.kill()
             self.next_page.kill()
-            self.in_den_tab.kill()
-            self.out_den_tab.kill()
-            self.minor_tab.kill()
+            self.hungry_tab.kill()
+            self.satisfied_tab.kill()
             self.clear_cat_buttons()
-            self.hurt_sick_title.kill()
+            self.nutrition_title.kill()
             self.cats_tab.kill()
             self.log_tab.kill()
             self.log_title.kill()
             self.log_box.kill()
-        if self.med_cat:
-            self.med_cat.kill()
+        if self.focus_cat:
+            self.focus_cat.kill()
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]

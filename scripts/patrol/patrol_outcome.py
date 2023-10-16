@@ -787,7 +787,7 @@ class PatrolOutcome():
                 amount_text = "small"
             elif total_amount < game.clan.freshkill_pile.amount_food_needed():
                 amount_text = "decent"
-            elif total_amount >= game.clasn.freshkill_pile.amount_food_needed() * 2:
+            elif total_amount >= game.clan.freshkill_pile.amount_food_needed() * 2:
                 amount_text = "huge"
             elif total_amount >= game.clan.freshkill_pile.amount_food_needed() * 1.5:
                 amount_text = "large"

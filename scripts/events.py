@@ -299,15 +299,13 @@ class Events:
             lower_value = game.config["freshkill"]["auto_warrior_prey"][0]
             upper_value = game.config["freshkill"]["auto_warrior_prey"][1]
             if cat.status == "apprentice":
-                lower_value = game.config["freshkill"]["auto_apprentice_prey"][
-                    0]
-                upper_value = game.config["freshkill"]["auto_apprentice_prey"][
-                    1]
+                lower_value = game.config["freshkill"]["auto_apprentice_prey"][0]
+                upper_value = game.config["freshkill"]["auto_apprentice_prey"][1]
 
             prey_amount += random.randint(lower_value, upper_value)
         if FRESHKILL_ACTIVE:
             print(f" -- FRESHKILL: added {prey_amount} monthly prey")
-        game.freshkill_event_list.append(f"The clan managed to catch {prey_amount} pieces of prey.")
+        game.freshkill_event_list.append(f"The clan managed to catch {prey_amount} pieces of prey in this moons.")
         game.clan.freshkill_pile.add_freshkill(prey_amount)
 
     def herb_gather(self):
