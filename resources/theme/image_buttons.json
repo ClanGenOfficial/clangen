@@ -1227,6 +1227,23 @@
             }
         }
     },
+    "#clearing_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/clearing.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/clearing.png"
+            },
+            "selected_image": {
+                "path": "resources/images/clearing.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/clearing.png"
+            }
+        }
+    },
     "#in_den_tab": {
         "prototype": "#image_button",
         "images": {
