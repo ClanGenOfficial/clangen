@@ -746,11 +746,11 @@ class PatrolOutcome():
         """ Handle giving prey """
         
         if not FRESHKILL_ACTIVE:
-            return
+            return ""
         
         if not self.prey or game.clan.game_mode == "classic":
             return ""
-        
+
         basic_amount = PREY_REQUIREMENT["warrior"]
         if game.clan.game_mode == 'expanded':
             basic_amount += ADDITIONAL_PREY
@@ -763,37 +763,39 @@ class PatrolOutcome():
         }
         
         for tag in self.prey:
-            amount = prey_types.get(tag)
-            if amount is not None:
+            basic_amount = prey_types.get(tag)
+            if basic_amount is not None:
                 break
         else:
             print(f"{self.prey} - no prey amount tags in prey property")
             return ""
         
-        # TODO - Hunting skill bonus
-        """for cat in self.patrol_cats:
-            if cat.skills.primary.path == SkillPath.HUNTER and cat.skills.primary.tier > 0:
-                amount += int((HUNTER_EXP_BONUS[cat.experience_level] * HUNTER_BONUS[str(cat.skills.primary.tier)]) / 10 + 1)
+        total_amount = 0
+        for cat in patrol.patrol_cats:
+            total_amount += basic_amount
+            if cat.skills.primary.path == SkillPath.HUNTER and cat.skills.primary.tier > 0: 
+                total_amount += int(HUNTER_EXP_BONUS[cat.experience_level] * (HUNTER_BONUS[str(cat.skills.primary.tier)] / 10 + 1))
             elif cat.skills.secondary and cat.skills.secondary.path == SkillPath.HUNTER and cat.skills.secondary.tier > 0:
-                amount += int((HUNTER_EXP_BONUS[cat.experience_level] * HUNTER_BONUS[str(cat.skills.secondary.tier)]) / 10 + 1)"""
-        
+                total_amount += int(HUNTER_EXP_BONUS[cat.experience_level] * (HUNTER_BONUS[str(cat.skills.primary.tier)] / 10 + 1))
         
         results = ""
-        if amount > 0:
+        if total_amount > 0:
             amount_text = "medium"
-            if amount < game.clan.freshkill_pile.amount_food_needed() / 7:
+            if total_amount < game.clan.freshkill_pile.amount_food_needed() / 5:
                 amount_text = "very small"
-            elif amount < game.clan.freshkill_pile.amount_food_needed() / 2.5:
+            elif total_amount < game.clan.freshkill_pile.amount_food_needed() / 2.5:
                 amount_text = "small"
-            elif amount < game.clan.freshkill_pile.amount_food_needed():
+            elif total_amount < game.clan.freshkill_pile.amount_food_needed():
                 amount_text = "decent"
-            elif amount >= game.clan.freshkill_pile.amount_food_needed() * 2:
+            elif total_amount >= game.clasn.freshkill_pile.amount_food_needed() * 2:
                 amount_text = "huge"
-            elif amount >= game.clan.freshkill_pile.amount_food_needed() * 1.5:
+            elif total_amount >= game.clan.freshkill_pile.amount_food_needed() * 1.5:
                 amount_text = "large"
-            elif amount >= game.clan.freshkill_pile.amount_food_needed():
+            elif total_amount >= game.clan.freshkill_pile.amount_food_needed():
                 amount_text = "good"
-                
+            
+            print(f"PREY ADDED: {total_amount}")
+            game.clan.freshkill_pile.add_freshkill(total_amount)
             results = f"A {amount_text} amount of prey is brought to camp"
             
         return results
