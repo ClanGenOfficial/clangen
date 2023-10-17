@@ -459,7 +459,7 @@ class Pelt():
             else:
                 add_weight = (0, 0, 0, 0)
 
-            for x in enumerate(weights):
+            for x in range(0, len(weights)):
                 weights[x] += add_weight[x]
 
             # A quick check to make sure all the weights aren't 0
@@ -487,7 +487,7 @@ class Pelt():
             else:
                 add_weight = (0, 0, 0)
 
-            for x in enumerate(weights):
+            for x in range(0, len(weights)):
                 weights[x] += add_weight[x]
 
         # A quick check to make sure all the weights aren't 0
@@ -798,7 +798,7 @@ class Pelt():
             else:
                 add_weights = (0, 0, 0, 0, 0)
 
-            for x in enumerate(weights):
+            for x in range(0, len(weights)):
                 weights[x] += add_weights[x]
 
 
