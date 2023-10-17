@@ -40,6 +40,7 @@ class ClearingScreen(Screens):
 
         self.tab_showing = self.hungry_tab
         self.tab_list = self.hungry_cats
+        self.pile_size = "#freshkill_pile_average"
 
         self.open_tab = None
 
@@ -168,7 +169,6 @@ class ClearingScreen(Screens):
             self.current_page = 1
             self.update_nutrition_cats()
 
-        self.draw_pile()
         self.update_focus_cat()
 
         self.info_messages = UITextBoxTweaked(
@@ -190,21 +190,27 @@ class ClearingScreen(Screens):
         concern_text = "This should not appear."
         if current_prey_amount == 0:
             concern_text = "The freshkill pile is empty, the Clan desperately needs prey!"
+            self.pile_size = "#freshkill_pile_empty"
         elif 0 < current_prey_amount <= needed_amount / 2:
             concern_text = "The freshkill pile can't even fed half of the Clan. Hunting patrols should be organized imitatively."
+            self.pile_size = "#freshkill_pile_verylow"
         elif needed_amount / 2 < current_prey_amount <= needed_amount:
             concern_text = "Only half of the Clan can be fed currently. Hunting patrols should be organized."
+            self.pile_size = "#freshkill_pile_low"
         elif needed_amount < current_prey_amount <= needed_amount * 1.5:
             concern_text = "Every mouth of the Clan can be fed, but some more prey would not harm."
+            self.pile_size = "#freshkill_pile_average"
         elif needed_amount * 1.5 < current_prey_amount <= needed_amount * 2.5:
             concern_text = "The freshkill pile is overflowing and the Clan can feast!"
+            self.pile_size = "#freshkill_pile_good"
         elif needed_amount * 2.5 < current_prey_amount:
             concern_text = "StarClan has blessed the Clan with plentiful prey and the leader sends their thanks to Silverpelt."
+            self.pile_size = "#freshkill_pile_full"
 
         information_display.append(general_text)
         information_display.append(concern_text)
         self.info_messages.set_text("<br>".join(information_display))
-
+        self.draw_pile()
 
     def handle_tab_toggles(self):
         if self.open_tab == "cats":
@@ -379,9 +385,9 @@ class ClearingScreen(Screens):
         needed_amount = game.clan.freshkill_pile.amount_food_needed()
         hover_display = f"<b>Current amount:</b> {current_prey_amount}<br><b>Needed amount:</b> {needed_amount}"
         self.pile_base = UIImageButton(scale(pygame.Rect
-                                            ((216, 190), (792, 448))),
+                                            ((400, 50), (600, 600))),
                                       "",
-                                      object_id="#med_cat_den_hover",
+                                      object_id=self.pile_size,
                                       tool_tip_text=hover_display, manager=MANAGER
                                       )
 
