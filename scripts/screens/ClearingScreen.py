@@ -97,7 +97,7 @@ class ClearingScreen(Screens):
                 object_id="#help_button", manager=MANAGER,
                 tool_tip_text="Your clan will catch some amount of prey over each timeskip, but successful hunting patrols are the most "
                               "important source of freshkill. You can see what was consumed and catched in the Log below! "
-                              "Freshkill can't be stored endlessly, after four moths prey will rot and will be thrown away."
+                              "Freshkill can't be stored endlessly, after four moons prey will rot and will be thrown away."
                               "<br><br>"
                               "Hover your mouse over the pile to see the current amount and the needed amount of prey of your Clan!",
 
@@ -185,15 +185,15 @@ class ClearingScreen(Screens):
         needed_amount = game.clan.freshkill_pile.amount_food_needed()
         warrior_need = game.config["freshkill"]["prey_requirement"]["warrior"]
         warrior_amount = int(current_prey_amount / warrior_need) 
-        general_text = f"Up to {warrior_amount} warriors can be feed with this amount of prey."
+        general_text = f"Up to {warrior_amount} warriors can be fed with this amount of prey."
 
         concern_text = "This should not appear."
         if current_prey_amount == 0:
             concern_text = "The freshkill pile is empty, the Clan desperately needs prey!"
         elif 0 < current_prey_amount <= needed_amount / 2:
-            concern_text = "The freshkill pile can't even feed half of the Clan. Hunting patrols should be organized imitatively."
+            concern_text = "The freshkill pile can't even fed half of the Clan. Hunting patrols should be organized imitatively."
         elif needed_amount / 2 < current_prey_amount <= needed_amount:
-            concern_text = "Only half of the Clan can be feed currently. Hunting patrols should be organized."
+            concern_text = "Only half of the Clan can be fed currently. Hunting patrols should be organized."
         elif needed_amount < current_prey_amount <= needed_amount * 1.5:
             concern_text = "Every mouth of the Clan can be fed, but some more prey would not harm."
         elif needed_amount * 1.5 < current_prey_amount <= needed_amount * 2.5:

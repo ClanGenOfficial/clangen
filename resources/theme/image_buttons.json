@@ -1231,16 +1231,16 @@
         "prototype": "#image_button",
         "images": {
             "normal_image": {
-                "path": "resources/images/clearing.png"
+                "path": "resources/images/buttons/clearing.png"
             },
             "hovered_image": {
-                "path": "resources/images/clearing.png"
+                "path": "resources/images/buttons/clearing_hover.png"
             },
             "selected_image": {
-                "path": "resources/images/clearing.png"
+                "path": "resources/images/buttons/clearing_hover.png"
             },
             "disabled_image": {
-                "path": "resources/images/clearing.png"
+                "path": "resources/images/buttons/clearing.png"
             }
         }
     },
