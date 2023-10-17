@@ -100,6 +100,7 @@ class ClearingScreen(Screens):
                               "important source of freshkill. You can see what was consumed and catched in the Log below! "
                               "Freshkill can't be stored endlessly, after four moons prey will rot and will be thrown away."
                               "<br><br>"
+                              "Feeding the Clan is very important, therefore cats will be fed before any changes to rank. "
                               "Hover your mouse over the pile to see the current amount and the needed amount of prey of your Clan!",
 
             )
@@ -385,7 +386,7 @@ class ClearingScreen(Screens):
         needed_amount = game.clan.freshkill_pile.amount_food_needed()
         hover_display = f"<b>Current amount:</b> {current_prey_amount}<br><b>Needed amount:</b> {needed_amount}"
         self.pile_base = UIImageButton(scale(pygame.Rect
-                                            ((400, 50), (600, 600))),
+                                            ((500, 50), (600, 600))),
                                       "",
                                       object_id=self.pile_size,
                                       tool_tip_text=hover_display, manager=MANAGER
