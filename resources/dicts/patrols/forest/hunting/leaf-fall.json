@@ -1877,6 +1877,18 @@
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
+                "history_text": {
+                    "scar": "m_c carries a scar from a fox fight.",
+                    "reg_death": "m_c fell in battle with a fox.",
+                    "lead_death": "died while fighting a vixen"
+                },
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["big_bite_injury"],
+                        "scars": ["NECKBITE"]
+                    }
+                ],
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -1909,32 +1921,6 @@
             },
             {
                 "text": "The mother red fox's snapping jaws leave r_c dripping blood onto the leaf litter, forcing the patrol to back off.",
-                "exp": 0,
-                "weight": 10,
-                "injury": [
-                    {
-                        "cats": ["r_c"],
-                        "injuries": ["big_bite_injury"],
-                        "scars": ["NECKBITE"]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c carries a scar from a fox fight.",
-                    "reg_death": "m_c fell in battle with a fox.",
-                    "lead_death": "died while fighting a vixen"
-                },
-                "relationships": [
-                    {
-                        "cats_to": ["r_c", "patrol", "r_c"],
-                        "cats_from": ["clan", "clan", "patrol"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": -5
-                    }
-                ]
-            },
-            {
-                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up on the fight.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -2067,6 +2053,19 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up the fight.",
                 "exp": 0,
                 "weight": 20,
+                "stat_skill": ["FIGHTER,1"],
+                "history_text": {
+                    "scar": "m_c carries a scar from a fox fight.",
+                    "reg_death": "m_c fell in battle with a fox.",
+                    "lead_death": "died while fighting a vixen"
+                },
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["big_bite_injury"],
+                        "scars": ["NECKBITE"]
+                    }
+                ],
                 "relationships": [
                     {
                         "cats_to": ["r_c", "patrol", "r_c"],
@@ -2225,6 +2224,7 @@
                 "text": "s_c is determined to win, but the red vixen is determined to live, and that makes all the difference. s_c ends up pinned in a defensible hiding spot, bleeding and terrified, until the vixen judges them no longer a threat and continues on her way.",
                 "exp": 0,
                 "weight": 10,
+                "stat_skill": ["FIGHTER,1"],
                 "injury": [
                     {
                         "cats": ["r_c"],
