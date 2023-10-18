@@ -2530,7 +2530,7 @@
                 "herbs": ["juniper"]
             },
             {
-                "text": "s_c follows not {PRONOUN/s_c/poss} eyes, but {PRONOUN/s_c/poss} nose, tracking the juniper trees by the scent of {PRONOUN/s_c/poss} fragrant berries to find an excellent crop.",
+                "text": "p_l follows not {PRONOUN/p_l/poss} eyes, but {PRONOUN/p_l/poss} nose, tracking the juniper trees by the scent of {PRONOUN/p_l/poss} fragrant berries to find an excellent crop.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "juniper"]
@@ -2707,7 +2707,7 @@
                 ]
             },
             {
-                "text": "s_c follows not {PRONOUN/s_c/poss} eyes, but {PRONOUN/s_c/poss} nose, tracking the juniper trees by the scent of {PRONOUN/s_c/poss} fragrant berries to find an excellent crop. {PRONOUN/s_c/poss/CAP} patrol follows {PRONOUN/s_c/poss} lead, pulling berries off, although a couple times s_c does need to gently scold {PRONOUN/s_c/object} for trying to hide away the berries for {PRONOUN/s_c/poss} dens.",
+                "text": "p_l follows not {PRONOUN/p_l/poss} eyes, but {PRONOUN/p_l/poss} nose, tracking the juniper trees by the scent of {PRONOUN/p_l/poss} fragrant berries to find an excellent crop. {PRONOUN/p_l/poss/CAP} patrol follows {PRONOUN/p_l/poss} lead, pulling berries off, although a couple times p_l does need to gently scold {PRONOUN/p_l/object} for trying to hide away the berries for {PRONOUN/p_l/poss} dens.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "juniper"],
@@ -5307,7 +5307,7 @@
                 ]
             },
             {
-                "text": "Thyme, thyme, thyme, there's never enough thyme. s_c snorts at {PRONOUN/s_c/poss} little joke, putting down the herbs {PRONOUN/s_c/subject} {VERB/s_c/carry/carries} to explain it to app1.",
+                "text": "Thyme, thyme, thyme, there's never enough thyme. p_l snorts at {PRONOUN/p_l/poss} little joke, putting down the herbs {PRONOUN/p_l/subject} {VERB/p_l/carry/carries} to explain it to app1.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "thyme"],
@@ -5418,7 +5418,7 @@
                 ]
             },
             {
-                "text": "Thyme, thyme, thyme, there's never enough thyme. s_c snorts at {PRONOUN/s_c/poss} little joke, putting down the herbs {PRONOUN/s_c/subject} {VERB/s_c/carry/carries} to explain it to the rest of the patrol.",
+                "text": "Thyme, thyme, thyme, there's never enough thyme. p_l snorts at {PRONOUN/p_l/poss} little joke, putting down the herbs {PRONOUN/p_l/subject} {VERB/p_l/carry/carries} to explain it to the rest of the patrol.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "thyme"],

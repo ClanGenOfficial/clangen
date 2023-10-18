@@ -2076,6 +2076,7 @@
                 "text": "s_c knows they are one of the Clan's greatest hunters. They spot the rat king and charge into its lair. But the King proves too great a foe for a single cat, and it sends s_c back with wounds to tell their tale.",
                 "exp": 0,
                 "weight": 10,
+                "stat_skill": ["HUNTER,2"],
                 "injury": [
                     {
                         "cats": ["patrol"],

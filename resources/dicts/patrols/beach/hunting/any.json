@@ -2305,6 +2305,10 @@
                 "text": "s_c dances around nervously, but the patrol wants to give this hunt a try. {PRONOUN/s_c/poss/CAP} anxiety doesn't help, and the deflated octopus manages to grab and bite {PRONOUN/s_c/object} with its hooked beak, proving that maybe s_c was right to be cautious.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": [
+                    "nervous",
+                    "insecure"
+                ],
                 "injury": [
                     {
                         "cats": ["r_c"],
