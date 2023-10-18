@@ -205,19 +205,18 @@ class Freshkill_Pile():
             status_ : str
                 the status of each cat of the group
         """
-        tactic = None # TODO: handle with a setting
-        if tactic == "younger_first":
+        if game.clan.clan_settings["younger first"]:
             sorted_group = sorted(group, key=lambda x: x.moons)
             self.feed_group(sorted_group, status_)
 
-        elif tactic == "less_nutrition_first":
+        elif game.clan.clan_settings["less nutrition first"]:
             self.tactic_less_nutrition(group, status_)
 
-        elif tactic == "more_experience_first":
+        elif game.clan.clan_settings["more experience first"]:
             sorted_group = sorted(group, key=lambda x: x.experience, reverse=True)
             self.feed_group(sorted_group, status_)
 
-        elif tactic == "hunter_first":
+        elif game.clan.clan_settings["hunter first"]:
             ranking = {
                 3: 0, # Tier 3 hunters get rank 0
                 2: 1, # Tier 2 hunters get rank 1
@@ -241,7 +240,7 @@ class Freshkill_Pile():
                 the status of each cat of the group
         """
         # ration_prey < healthy warrior will only eat half of the food they need
-        ration_prey = False # TODO: handled with a setting
+        ration_prey = game.clan.clan_settings["ration prey"] # TODO: handled with a setting
 
         for cat in group:
             feeding_amount = PREY_REQUIREMENT[status_]
@@ -359,6 +358,8 @@ class Freshkill_Pile():
         self.nutrition_info = {}
 
         for cat in living_cats:
+            if str(cat.status) not in PREY_REQUIREMENT:
+                continue
             # update the nutrition_info
             if cat.ID in old_nutrition_info:
                 self.nutrition_info[cat.ID] = old_nutrition_info[cat.ID]

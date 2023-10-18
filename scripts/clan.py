@@ -138,13 +138,14 @@ class Clan():
             self.clan_settings[setting] = values[0]
             self.setting_lists[setting] = values
 
-        _ = []
-        _.append(_settings['general'])
-        _.append(_settings['role'])
-        _.append(_settings['relation'])
+        all_settings = []
+        all_settings.append(_settings['general'])
+        all_settings.append(_settings['role'])
+        all_settings.append(_settings['relation'])
+        all_settings.append(_settings['freshkill_tactics'])
 
-        for cat in _:  # Add all the settings to the settings dictionary
-            for setting_name, inf in cat.items():
+        for setting in all_settings:  # Add all the settings to the settings dictionary
+            for setting_name, inf in setting.items():
                 self.clan_settings[setting_name] = inf[2]
                 self.setting_lists[setting_name] = [inf[2], not inf[2]]
         

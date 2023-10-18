@@ -119,6 +119,38 @@
             false
         ]
     },
+    "freshkill_tactics":{
+        "younger first":[
+            "younger first",
+            "First the youngest of the Clan will be fed",
+            false
+        ],
+        "less nutrition first":[
+            "less nutrition first",
+            "First the cats with the lowest nutrient will be fed",
+            false
+        ],
+        "more experience first":[
+            "more experience first",
+            "First the cats with the most experience will be fed",
+            false
+        ],
+        "hunter first":[
+            "hunter first",
+            "First the best hunter of the Clan will be fed",
+            false
+        ],
+        "status wise":[
+            "status wise",
+            "The cats will be fed depending on the status they have",
+            true
+        ],
+        "ration prey":[
+            "ration prey",
+            "Healthy warriors will only eat half of the food they need",
+            false
+        ]
+    },
     "..": "these are special. they do not have a display name or a tooltip",
     "__other": {
         "show dead relation": [

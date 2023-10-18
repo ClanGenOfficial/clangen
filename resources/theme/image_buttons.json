@@ -3957,5 +3957,73 @@
                 "path": "resources/images/freshkillpile_full.png"
             }
         }
+    },
+    "#freshkill_hungry": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/freshkill_pile_hungry.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/freshkill_pile_hungry_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/freshkill_pile_hungry_select.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/freshkill_pile_hungry_select.png"
+            }
+        }
+    },
+    "#freshkill_satisfied": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/freshkill_pile_satisfied.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/freshkill_pile_satisfied_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/freshkill_pile_satisfied_select.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/freshkill_pile_satisfied_select.png"
+            }
+        }
+    },
+    "#tactic": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/freshkill_pile_tactic.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/freshkill_pile_tactic_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/freshkill_pile_tactic.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/freshkill_pile_tactic_select.png"
+            }
+        }
+    },
+    "#freshkill_feed": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/freshkill_pile_feed.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/freshkill_pile_feed_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/freshkill_pile_feed.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/freshkill_pile_feed_unavailable.png"
+            }
+        }
     }
 }

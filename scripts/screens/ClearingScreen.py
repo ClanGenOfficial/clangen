@@ -1,8 +1,10 @@
 import pygame
 import pygame_gui
+import ujson
 
 from .Screens import Screens
 from scripts.cat.cats import Cat
+from scripts.events_module.freshkill_pile_events import Freshkill_Events
 from scripts.game_structure.image_button import UISpriteButton, UIImageButton, UITextBoxTweaked
 from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
 from scripts.game_structure.game_essentials import game, MANAGER
@@ -20,6 +22,7 @@ class ClearingScreen(Screens):
         self.log_title = None
         self.log_tab = None
         self.cats_tab = None
+        self.tactic_tab = None
         self.nutrition_title = None
         self.satisfied_tab = None
         self.satisfied_cats = None
@@ -37,6 +40,8 @@ class ClearingScreen(Screens):
         self.focus_name = None
         self.current_page = None
         self.back_button = None
+        self.checkboxes_text = {}
+        self.checkboxes = {}
 
         self.tab_showing = self.hungry_tab
         self.tab_list = self.hungry_cats
@@ -49,8 +54,13 @@ class ClearingScreen(Screens):
             if event.ui_element == self.back_button:
                 self.change_screen('camp screen')
             elif event.ui_element == self.feed_button:
-                # TODO: feed the current cat
-                print("TODO")
+                game.clan.freshkill_pile.feed_cat(self.focus_cat_object, 1, 0)
+                game.clan.freshkill_pile.update_nutrition(Cat.all_cats_list)
+                Freshkill_Events.handle_nutrient(self.focus_cat_object, game.clan.freshkill_pile.nutrition_info)
+                self.update_cats_list()
+                self.update_nutrition_cats()
+                self.update_focus_cat()
+                self.draw_pile()
             elif event.ui_element == self.next_page:
                 self.current_page += 1
                 self.update_nutrition_cats()
@@ -76,18 +86,43 @@ class ClearingScreen(Screens):
                 self.open_tab = "cats"
                 self.cats_tab.disable()
                 self.log_tab.enable()
+                self.tactic_tab.enable()
                 self.handle_tab_toggles()
             elif event.ui_element == self.log_tab:
                 self.open_tab = "log"
                 self.log_tab.disable()
                 self.cats_tab.enable()
+                self.tactic_tab.enable()
                 self.handle_tab_toggles()
+            elif event.ui_element == self.tactic_tab:
+                self.open_tab = "tactic"
+                self.log_tab.enable()
+                self.cats_tab.enable()
+                self.tactic_tab.disable()
+                self.handle_tab_toggles()
+            self.handle_checkbox_events(event)
+
+    def update_cats_list(self):
+        self.satisfied_cats = []
+        self.hungry_cats = []
+        nutrition_info = game.clan.freshkill_pile.nutrition_info
+        low_nutrition_cats = [cat_id for cat_id, nutrient in nutrition_info.items() if nutrient.percentage < 100]
+        for the_cat in Cat.all_cats_list:
+            if not the_cat.dead and not the_cat.outside:
+                if the_cat.ID in low_nutrition_cats:
+                    self.hungry_cats.append(the_cat)
+                else:
+                    self.satisfied_cats.append(the_cat)
+        if self.tab_showing == self.satisfied_tab:
+            self.tab_list = self.satisfied_cats
+        else:
+            self.tab_list = self.hungry_cats
 
     def screen_switches(self):
         self.hide_menu_buttons()
         self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))), "", object_id="#back_button"
                                          , manager=MANAGER)
-        self.feed_button = UIImageButton(scale(pygame.Rect((1300, 600), (68, 68))), "", object_id="#arrow_right_button"
+        self.feed_button = UIImageButton(scale(pygame.Rect((1250, 600), (160, 60))), "", object_id="#freshkill_feed"
                                       , manager=MANAGER)
         self.feed_button.hide()
 
@@ -120,7 +155,13 @@ class ClearingScreen(Screens):
                 scale(pygame.Rect((281, 820), (400, 60))),
                 object_id=get_text_box_theme("#text_box_40_horizcenter"), manager=MANAGER
             )
+            self.tactic_title = pygame_gui.elements.UITextBox(
+                "Feeding Tactic",
+                scale(pygame.Rect((281, 820), (400, 60))),
+                object_id=get_text_box_theme("#text_box_40_horizcenter"), manager=MANAGER
+            )
             self.log_title.hide()
+            self.tactic_title.hide()
             self.cat_bg = pygame_gui.elements.UIImage(scale(pygame.Rect
                                                             ((280, 880), (1120, 400))),
                                                       pygame.image.load(
@@ -135,6 +176,7 @@ class ClearingScreen(Screens):
                 object_id="#text_box_26_horizleft_verttop_pad_14_0_10", manager=MANAGER
             )
             self.log_box.hide()
+
             self.cats_tab = UIImageButton(scale(pygame.Rect
                                                 ((218, 924), (68, 150))),
                                           "",
@@ -146,27 +188,22 @@ class ClearingScreen(Screens):
                                          "",
                                          object_id="#med_den_log_button", manager=MANAGER
                                          )
+            self.tactic_tab = UIImageButton(scale(pygame.Rect
+                                               ((1394, 924), (70, 128))),
+                                         "",
+                                         object_id="#tactic", manager=MANAGER
+                                         )
             self.hungry_tab = UIImageButton(scale(pygame.Rect
-                                                   ((920, 818), (224, 70))),
+                                                   ((980, 818), (150, 70))),
                                              "",
-                                             object_id="#out_den_tab", manager=MANAGER)
+                                             object_id="#freshkill_hungry", manager=MANAGER)
             self.satisfied_tab = UIImageButton(scale(pygame.Rect
-                                                 ((1174, 818), (140, 70))),
+                                                 ((1174, 818), (170, 70))),
                                            "",
-                                           object_id="#minor_tab", manager=MANAGER)
+                                           object_id="#freshkill_satisfied", manager=MANAGER)
             self.tab_showing = self.hungry_tab
 
-
-            self.satisfied_cats = []
-            self.hungry_cats = []
-            for the_cat in Cat.all_cats_list:
-                if not the_cat.dead and not the_cat.outside:
-                    if (the_cat.injuries or the_cat.illnesses):
-                        if "starving" in the_cat.illnesses.keys() or "malnourished" in the_cat.illnesses.keys():
-                            self.hungry_cats.append(the_cat)
-                    else:
-                        self.satisfied_cats.append(the_cat)
-            self.tab_list = self.hungry_cats
+            self.update_cats_list()
             self.current_page = 1
             self.update_nutrition_cats()
 
@@ -213,8 +250,68 @@ class ClearingScreen(Screens):
         self.info_messages.set_text("<br>".join(information_display))
         self.draw_pile()
 
+    def create_checkboxes(self):
+        self.delete_checkboxes()
+
+        self.checkboxes_text["container_role"] = pygame_gui.elements.UIScrollingContainer(
+            scale(pygame.Rect((0, 900), (1300, 350))), manager=MANAGER
+        )
+
+        with open('resources/clansettings.json', 'r', encoding='utf-8') as f:
+            settings_dict = ujson.load(f)
+
+        n = 0
+        for code, desc in settings_dict['freshkill_tactics'].items():
+            if game.clan.clan_settings[code]:
+                box_type = "#checked_checkbox"
+            else:
+                box_type = "#unchecked_checkbox"
+                
+            # Handle nested
+            disabled = False
+            x_val = 340
+            if len(desc) == 4 and isinstance(desc[3], list):
+                x_val += 40
+                disabled = game.clan.clan_settings.get(desc[3][0], not desc[3][1]) != desc[3][1]
+                
+            self.checkboxes[code] = UIImageButton(
+                scale(pygame.Rect((x_val, n * 78 + 900), (68, 68))),
+                "",
+                object_id=box_type,
+                tool_tip_text=desc[1])
+            
+            if disabled:
+                self.checkboxes[code].disable()
+ 
+            n += 1
+
+        n = 0
+        for code, desc in settings_dict['freshkill_tactics'].items():
+            # Handle nested
+            x_val = 450
+            if len(desc) == 4 and isinstance(desc[3], list):
+                x_val += 40
+            
+            self.checkboxes_text[code] = pygame_gui.elements.UITextBox(
+                desc[0],
+                scale(pygame.Rect((x_val, n * 78), (1000, 78))),
+                container=self.checkboxes_text["container_role"],
+                object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
+                manager=MANAGER)
+            self.checkboxes_text[code].disable()
+            n += 1
+
+    def delete_checkboxes(self):
+        for checkbox in self.checkboxes.values():
+            checkbox.kill()
+        self.checkboxes = {}
+        for text in self.checkboxes_text.values():
+            text.kill()
+        self.checkboxes_text = {}
+
     def handle_tab_toggles(self):
         if self.open_tab == "cats":
+            self.tactic_title.hide()
             self.log_title.hide()
             self.log_box.hide()
 
@@ -229,7 +326,9 @@ class ClearingScreen(Screens):
                 self.cat_names[x].show()
             for button in self.conditions_hover:
                 self.conditions_hover[button].show()
+            self.delete_checkboxes()
         elif self.open_tab == "log":
+            self.tactic_title.hide()
             self.nutrition_title.hide()
             self.last_page.hide()
             self.next_page.hide()
@@ -241,9 +340,26 @@ class ClearingScreen(Screens):
                 self.cat_names[x].hide()
             for button in self.conditions_hover:
                 self.conditions_hover[button].hide()
-
+            self.delete_checkboxes()
             self.log_title.show()
             self.log_box.show()
+        elif self.open_tab == "tactic":
+            self.nutrition_title.hide()
+            self.log_title.hide()
+            self.log_box.hide()
+            self.last_page.hide()
+            self.next_page.hide()
+            self.hungry_tab.hide()
+            self.satisfied_tab.hide()
+            for cat in self.cat_buttons:
+                self.cat_buttons[cat].hide()
+            for x in range(len(self.cat_names)):
+                self.cat_names[x].hide()
+            for button in self.conditions_hover:
+                self.conditions_hover[button].hide()
+
+            self.tactic_title.show()
+            self.create_checkboxes()
 
     def update_focus_cat(self):
         if not self.focus_cat_object:
@@ -347,16 +463,13 @@ class ClearingScreen(Screens):
             if cat.illnesses:
                 if "starving" in cat.illnesses.keys():
                     condition_list.append("starving")
-                    nutrition_info = game.clan.freshkill_pile.nutrition_info
-                    if cat.ID in nutrition_info:
-                        p = int(nutrition_info[cat.ID].percentage)
-                        condition_list.append(f" nutrition: {p}%")
                 elif "malnourished" in cat.illnesses.keys():
                     condition_list.append("malnourished")
-                    nutrition_info = game.clan.freshkill_pile.nutrition_info
-                    if cat.ID in nutrition_info:
-                        p = int(nutrition_info[cat.ID].percentage)
-                        condition_list.append(f" nutrition: {p}%")
+            if self.tab_showing == self.hungry_tab:
+                nutrition_info = game.clan.freshkill_pile.nutrition_info
+                if cat.ID in nutrition_info:
+                    p = int(nutrition_info[cat.ID].percentage)
+                    condition_list.append(f" nutrition: {p}%")
             conditions = ",<br>".join(condition_list) if len(condition_list) > 0 else None
 
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(scale(pygame.Rect
@@ -382,6 +495,8 @@ class ClearingScreen(Screens):
             i += 1
 
     def draw_pile(self):
+        if self.pile_base:
+            self.pile_base.kill()
         current_prey_amount = game.clan.freshkill_pile.total_amount
         needed_amount = game.clan.freshkill_pile.amount_food_needed()
         hover_display = f"<b>Current amount:</b> {current_prey_amount}<br><b>Needed amount:</b> {needed_amount}"
@@ -417,6 +532,8 @@ class ClearingScreen(Screens):
             self.log_tab.kill()
             self.log_title.kill()
             self.log_box.kill()
+            self.tactic_tab.kill()
+            self.tactic_title.kill()
         if self.focus_cat:
             self.focus_cat.kill()
 
@@ -433,3 +550,35 @@ class ClearingScreen(Screens):
 
         self.cat_names = []
         self.cat_buttons = {}
+
+    def handle_checkbox_events(self, event):
+        """
+        TODO: DOCS
+        """
+        if event.ui_element in self.checkboxes.values():
+            for key, value in self.checkboxes.items():
+                if value == event.ui_element:
+                    game.clan.switch_setting(key)
+                    self.settings_changed = True
+                    #self.update_save_button()
+                           
+                    opens = {
+                        "general": self.open_general_settings,
+                        "relation": self.open_relation_settings,
+                        "role": self.open_roles_settings,
+                        'stats': self.open_clan_stats
+                    }
+
+                    scroll_pos = None
+                    if "container_general" in self.checkboxes_text and \
+                            self.checkboxes_text["container_general"].vert_scroll_bar:
+                        scroll_pos = self.checkboxes_text["container_general"].vert_scroll_bar.start_percentage
+
+                    if self.sub_menu in opens:
+                        opens[self.sub_menu]()
+
+                    if scroll_pos is not None:
+                        self.checkboxes_text["container_general"].vert_scroll_bar.set_scroll_from_start_percentage(
+                            scroll_pos)
+
+                    break
