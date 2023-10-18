@@ -3786,7 +3786,7 @@
                 "text": "Surprising everyone, r_c begins stalking. As they guessed, the squirrel notices something amiss and hops onto the tree for safety. r_c, not willing to let the prey go, climbs right after it! Everyone is rather impressed when {PRONOUN/r_c/subject} {VERB/r_c/return/returns}, the squirrel firmly clutched in {PRONOUN/r_c/poss} jaws.",
                 "exp": 25,
                 "weight": 20,
-                "stat_skill": ["CLIMB,1"],
+                "stat_skill": ["CLIMBER,1"],
                 "can_have_stat": ["r_c"],
                 "prey": ["medium"]
             }
@@ -3803,20 +3803,7 @@
                         "scars": []
                     }
                 ],
-                "history_text": { "scar": "m_c was injured while hunting." }
-            },
-            {
-                "text": "When the squirrel scurries up the tree as expected, r_c clambers after it. Unfortunately, {PRONOUN/r_c/subject} {VERB/r_c/return/returns} empty-pawed, and looking a bit worse for wear.",
-                "exp": 0,
-                "weight": 10,
-                "injury": [
-                    {
-                        "cats": ["r_c"],
-                        "injuries": ["minor_injury"],
-                        "scars": []
-                    }
-                ],
-                "history_text": { "scar": "m_c was injured while hunting." }
+                "history_text": { "scar": "m_c was injured while chasing a squirrel." }
             }
         ]
     }
