@@ -737,7 +737,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c is suddenly struck by a sharp pain in their chest. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} found later that day, cold.",
+        "death_text": "m_c is suddenly struck by a sharp pain in {PRONOUN/m_c/poss} chest. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} found later that day, cold.",
         "history_text": {
             "reg_death": "m_c died of a heart attack."
         },

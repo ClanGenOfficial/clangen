@@ -50,7 +50,7 @@
 				"injury_names": ["claw-wound"],
 				"scar_text": "m_c got a scar after r_c2 challenged {PRONOUN/m_c/object}.",
 				"death_text": "Died after r_c2 challenged {PRONOUN/m_c/object}.",
-				"death_leader_text": "after r_c2 challenged {PRONOUN/m_c/object}"
+				"death_leader_text": "were challenged by r_c2"
 			},
 			"r_c1": {
 				"injury_names": ["claw-wound"],

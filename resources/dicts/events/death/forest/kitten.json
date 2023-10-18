@@ -86,7 +86,7 @@
             "Leaf-fall",
             "no_body"
         ],
-        "death_text": "m_c wasn't found after wandering away.",
+        "death_text": "m_c wandered away from camp in the night, never to be seen again.",
         "history_text": {
             "reg_death": "m_c was eaten by a predator."
         },
@@ -102,7 +102,7 @@
             "Leaf-fall",
             "no_body"
         ],
-        "death_text": "All that's left of m_c is some blood.",
+        "death_text": "m_c vanished from camp after sneaking out, and the search parties find nothing but blood.",
         "history_text": {
             "reg_death": "m_c was eaten by a predator."
         },
@@ -117,9 +117,9 @@
             "Leaf-bare",
             "Leaf-fall"
         ],
-        "death_text": "m_c's body is covered in bites.",
+        "death_text": "m_c is found within a few fox-lengths of camp, {PRONOUN/m_c/poss} tiny body cold and covered in bites. The scent of mouse hangs heavy in the air...",
         "history_text": {
-            "reg_death": "m_c was murdered by a fiesty mouse."
+            "reg_death": "m_c was killed by a feisty mouse."
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -133,7 +133,7 @@
             "Leaf-fall",
             "no_body"
         ],
-        "death_text": "m_c dissapeared during the night. In the morning, the nursery is infested with foul-smelling bones.",
+        "death_text": "m_c can be heard boasting that {PRONOUN/m_c/subject}'{VERB/m_c/re/s} ready to be made an apprentice <i>right now</i>, and that {PRONOUN/m_c/subject}'{VERB/m_c/re/s} already one of the best hunters in the Clan. That evening, to prove {PRONOUN/m_c/poss} point, {PRONOUN/m_c/subject} sneak out of camp, intending to catch something for the fresh-kill pile. A frantic search party follows {PRONOUN/m_c/poss} trail, only to find blood and the foul stench of a shrew at the end.",
         "history_text": {
             "reg_death": "m_c was eaten by a shrew."
         },

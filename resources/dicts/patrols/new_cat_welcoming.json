@@ -2145,7 +2145,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "The patrol comes across a o_c_n apprentice, waiting quietly at the border. When the apprentices notices the patrol, they press themselves to the ground, begging to join c_n.",
+        "intro_text": "The patrol comes across a o_c_n apprentice, waiting quietly at the border. When the apprentice notices the patrol, they press themselves to the ground, begging to join c_n.",
         "decline_text": "This seems like a o_c_n problem. They order the apprentice to go back home and continue the patrol.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -2184,7 +2184,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "s_c is eager to steal a o_c_n's apprentice right out from under their noses. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stick/sticks} close to the apprentice on their way back to camp. At first, the Clan is unsure, but s_c vouches for n_c:0, and {PRONOUN/n_c:0/subject} {VERB/n_c:0/are/is} allowed to join the clan.",
+                "text": "s_c is eager to steal a o_c_n's apprentice right out from under their noses. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stick/sticks} close to the apprentice on their way back to camp. At first, the Clan is unsure, but s_c vouches for n_c:0, and {PRONOUN/n_c:0/subject} {VERB/n_c:0/are/is} allowed to join the Clan.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": ["ambitious", "daring", "bold", "fierce", "bloodthirsty", "troublesome"],

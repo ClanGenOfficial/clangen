@@ -16,8 +16,10 @@ class Sprites():
         self.size = None
         self.spritesheets = {}
         self.images = {}
-        self.groups = {}
         self.sprites = {}
+
+        # Shared empty sprite for placeholders
+        self.blank_sprite = None
         
         self.load_tints()
 
@@ -44,23 +46,6 @@ class Sprites():
         """
         self.spritesheets[name] = pygame.image.load(a_file).convert_alpha()
 
-    def find_sprite(self, group_name, x, y):
-        """
-        Find singular sprite from a group.
-
-        Parameters:
-        group_name -- Name of Pygame group to find sprite from.
-        x -- X-offset of the sprite to get. NOT pixel offset, but offset of other sprites.
-        y -- Y-offset of the sprite to get. NOT pixel offset, but offset of other sprites.
-        """
-        # pixels will be calculated automatically, so for x and y, just use 0, 1, 2, 3 etc.
-        new_sprite = pygame.Surface((self.size, self.size),
-                                    pygame.HWSURFACE | pygame.SRCALPHA)
-        new_sprite.blit(self.groups[group_name], (0, 0),
-                        (x * self.size, y * self.size, (x + 1) * self.size,
-                         (y + 1) * self.size))
-        return new_sprite
-
     def make_group(self,
                    spritesheet,
                    pos,
@@ -80,32 +65,30 @@ class Sprites():
         sprites_y -- Number of sprites vertically (default: 3)
         """
 
-        # making the group
-        new_group = pygame.Surface(
-            (self.size * sprites_x, self.size * sprites_y),
-            pygame.HWSURFACE | pygame.SRCALPHA)
-        new_group.blit(
-            self.spritesheets[spritesheet], (0, 0),
-            (pos[0] * sprites_x * self.size, pos[1] * sprites_y * self.size,
-             (pos[0] + sprites_x) * self.size,
-             (pos[1] + sprites_y) * self.size))
-
-        self.groups[name] = new_group
+        group_x_ofs = pos[0] * sprites_x * self.size
+        group_y_ofs = pos[1] * sprites_y * self.size
+        i = 0
 
         # splitting group into singular sprites and storing into self.sprites section
-        x_spr = 0
-        y_spr = 0
-        for x in range(sprites_x * sprites_y):
-            new_sprite = pygame.Surface((self.size, self.size),
-                                        pygame.HWSURFACE | pygame.SRCALPHA)
-            new_sprite.blit(new_group, (0, 0),
-                            (x_spr * self.size, y_spr * self.size,
-                             (x_spr + 1) * self.size, (y_spr + 1) * self.size))
-            self.sprites[name + str(x)] = new_sprite
-            x_spr += 1
-            if x_spr == sprites_x:
-                x_spr = 0
-                y_spr += 1
+        for y in range(sprites_y):
+            for x in range(sprites_x):
+                try:
+                    new_sprite = pygame.Surface.subsurface(
+                        self.spritesheets[spritesheet],
+                        group_x_ofs + x * self.size,
+                        group_y_ofs + y * self.size,
+                        self.size, self.size
+                    )
+                except ValueError:
+                    # Fallback for non-existent sprites
+                    if not self.blank_sprite:
+                        self.blank_sprite = pygame.Surface(
+                            (self.size, self.size),
+                            pygame.HWSURFACE | pygame.SRCALPHA
+                        )
+                    new_sprite = self.blank_sprite
+                self.sprites[f'{name}{i}'] = new_sprite
+                i += 1
 
     def load_all(self):
         # get the width and height of the spritesheet
@@ -130,7 +113,8 @@ class Sprites():
             'whitepatches', 'eyes', 'eyes2', 'skin', 'scars', 'missingscars',
             'collars', 'bellcollars', 'bowcollars', 'nyloncollars',
             'bengalcolours', 'marbledcolours', 'rosettecolours', 'smokecolours', 'tickedcolours', 
-            'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours', 
+            'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours',
+            'maskedcolours', 
             'shadersnewwhite', 'lineartdead', 'tortiepatchesmasks', 
             'medcatherbs', 'lineartdf', 'lightingnew', 'fademask',
             'fadestarclan', 'fadedarkforest'
@@ -196,8 +180,11 @@ class Sprites():
         for a, i in enumerate(['RIGHTEAR', 'LEFTEAR', 'ESTRELLA', 'SHOOTINGSTAR', 'EYESPOT', 'REVERSEEYE',
             'FADEBELLY', 'FRONT', 'BLOSSOMSTEP', 'PEBBLE', 'TAILTWO', 'BUDDY', 'BACKSPOT', 'EYEBAGS']):
             self.make_group('whitepatches', (a, 7), f'white{i}')
-        for a, i in enumerate(['BULLSEYE']):
-            self.make_group('whitepatches', (a, 8), 'white' + i)
+        for a, i in enumerate(['BULLSEYE', 'FINN', 'DIGIT', 'KROPKA', 'FCTWO', 'FCONE', 'MIA', 'SCAR',
+            'BUSTER', 'SMOKEY', 'HAWKBLAZE', 'CAKE', 'ROSINA', 'PRINCESS']):
+            self.make_group('whitepatches', (a, 8), f'white{i}')
+        for a, i in enumerate(['LOCKET']):
+            self.make_group('whitepatches', (a, 9), 'white' + i)
 
         # single (solid)
         for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
@@ -290,6 +277,13 @@ class Sprites():
             self.make_group('singlestripecolours', (a, 1), f'singlestripe{i}')
         for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
             self.make_group('singlestripecolours', (a, 2), f'singlestripe{i}')
+        # masked tabby
+        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
+            self.make_group('maskedcolours', (a, 0), f'masked{i}')
+        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
+            self.make_group('maskedcolours', (a, 1), f'masked{i}')
+        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
+            self.make_group('maskedcolours', (a, 2), f'masked{i}')
             
         # new new torties
         for a, i in enumerate(['ONE', 'TWO', 'THREE', 'FOUR', 'REDTAIL', 'DELILAH', 'HALF', 'STREAK', 'MASK', 'SMOKE']):
@@ -298,8 +292,10 @@ class Sprites():
             self.make_group('tortiepatchesmasks', (a, 1), f"tortiemask{i}")
         for a, i in enumerate(['MOTTLED', 'SIDEMASK', 'EYEDOT', 'BANDANA', 'PACMAN', 'STREAMSTRIKE', 'SMUDGED', 'DAUB', 'EMBER', 'BRIE']):
             self.make_group('tortiepatchesmasks', (a, 2), f"tortiemask{i}")
-        for a, i in enumerate(['ORIOLE', 'ROBIN', 'BRINDLE', 'PAIGE', 'ROSETAIL', 'SAFI', 'DAPPLENIGHT', 'BLANKET', 'BELOVED']):
+        for a, i in enumerate(['ORIOLE', 'ROBIN', 'BRINDLE', 'PAIGE', 'ROSETAIL', 'SAFI', 'DAPPLENIGHT', 'BLANKET', 'BELOVED', 'BODY']):
             self.make_group('tortiepatchesmasks', (a, 3), f"tortiemask{i}")
+        for a, i in enumerate(['SHILOH']):
+            self.make_group('tortiepatchesmasks', (a, 4), f"tortiemask{i}")
 
         # SKINS
         for a, i in enumerate(['BLACK', "RED", 'PINK', 'DARKBROWN', 'BROWN', 'LIGHTBROWN']):
