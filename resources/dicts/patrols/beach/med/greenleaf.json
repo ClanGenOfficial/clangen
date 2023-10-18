@@ -5655,7 +5655,7 @@
                 "herbs": ["thyme"]
             },
             {
-                "text": "Thyme, thyme, thyme, there's never enough thyme. s_c snorts at {PRONOUN/s_c/poss} little joke, mouth crammed full of the herb, as {PRONOUN/s_c/subject} {VERB/s_c/make/makes} {PRONOUN/s_c/poss} way home.",
+                "text": "Thyme, thyme, thyme, there's never enough thyme. p_l snorts at {PRONOUN/s_c/poss} little joke, mouth crammed full of the herb, as {PRONOUN/p_l/subject} {VERB/p_l/make/makes} {PRONOUN/p_l/poss} way home.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "thyme"]
@@ -5831,7 +5831,7 @@
                 ]
             },
             {
-                "text": "Thyme, thyme, thyme, there's never enough thyme. s_c snorts at {PRONOUN/s_c/poss} little joke, putting down the herbs {PRONOUN/s_c/subject} {VERB/s_c/carry/carries} to explain it to the rest of the patrol.",
+                "text": "Thyme, thyme, thyme, there's never enough thyme. p_l snorts at {PRONOUN/p_l/poss} little joke, putting down the herbs {PRONOUN/p_l/subject} {VERB/p_l/carry/carries} to explain it to the rest of the patrol.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "thyme"],
