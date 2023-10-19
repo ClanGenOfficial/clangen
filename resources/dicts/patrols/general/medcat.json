@@ -2797,7 +2797,7 @@
         "patrol_id": "gen_med_discussnews1",
         "biome": ["Any"],
         "season": ["Any"],
-        "types": [],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
@@ -2865,7 +2865,7 @@
         "patrol_id": "gen_med_herbsgathering1",
         "biome": ["Any"],
         "season": ["Any"],
-        "types": [],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
@@ -2913,7 +2913,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Both p_l and r_c are tense, and it shows. Even though it shouldn't be this hard to find any herbs, they fail to find even a    single one. They return to camp frustrated and irritated with each other.",
+                "text": "Both p_l and r_c are tense, and it shows. Even though it shouldn't be this hard to find any herbs, they fail to find even a single one. They return to camp frustrated and irritated with each other.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [

@@ -1321,7 +1321,7 @@ class ChangeCatToggles(UIWindow):
                                                     object_id="#text_box_30_horizleft_pad_0_8",
                                                     container=self)
         
-        self.text_4 = pygame_gui.elements.UITextBox("Limit romantic interations and mate changes",
+        self.text_4 = pygame_gui.elements.UITextBox("Limit romantic interactions and mate changes",
                                                     scale(pygame.Rect(110, 210, -1, 50)), 
                                                     object_id="#text_box_30_horizleft_pad_0_8",
                                                     container=self)

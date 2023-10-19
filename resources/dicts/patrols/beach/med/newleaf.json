@@ -468,12 +468,6 @@
             {
                 "text": "s_c falls into the meditative state that herb-gathering brings, and {PRONOUN/s_c/subject} hum to {PRONOUN/s_c/self} as {PRONOUN/s_c/subject} {VERB/s_c/work/works}, crisply plucking from the blackberry brambles.",
                 "exp": 10,
-                "weight": 5,
-                "herbs": ["many_herbs", "blackberry"]
-            },
-            {
-                "text": "s_c falls into the meditative state that herb-gathering brings, and {PRONOUN/s_c/subject} hum to {PRONOUN/s_c/self} as {PRONOUN/s_c/subject} {VERB/s_c/work/works}, crisply plucking from the blackberry brambles.",
-                "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
                 "herbs": ["many_herbs", "blackberry"]
@@ -1003,13 +997,13 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "s_c has a few favourite catmint plants, and goes to check whether they've regrown this newleaf. Two haven't, but another two have, and they're enough for a great harvest to take back to camp.",
+                "text": "The medicine cat carefully picks out catmint from its known hiding places, carting it back to camp where it will protect the Clan.",
                 "exp": 30,
                 "weight": 20,
                 "herbs": ["catmint"]
             },
             {
-                "text": "s_c has a few favourite catmint plants, and goes to check whether they've regrown this newleaf. Two haven't, but another two have, and they're enough for a great harvest to take back to camp.",
+                "text": "Fortunately, catmint starts trying to take over as much ground as possible as soon as it possibly can, and it's already enough of the way through newleaf to go harvest from its young leaves.",
                 "exp": 30,
                 "weight": 5,
                 "herbs": ["catmint"]
@@ -1283,12 +1277,6 @@
             {
                 "text": "Daisies aren't hard to find in the warmer seasons, and s_c collects enough that {PRONOUN/s_c/subject} {VERB/s_c/have/haves} trouble not dropping any on the way back to camp.",
                 "exp": 10,
-                "weight": 5,
-                "herbs": ["many_herbs", "daisy"]
-            },
-            {
-                "text": "Daisies aren't hard to find in the warmer seasons, and s_c collects enough that {PRONOUN/s_c/subject} {VERB/s_c/have/haves} trouble not dropping any on the way back to camp.",
-                "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
                 "herbs": ["many_herbs", "daisy"]
@@ -1546,13 +1534,13 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "It's a successful gathering mission, with p_l striding back to camp with a great haul of whole, intact dandelion plants. Later, {PRONOUN/p_l/subject}'ll sort the leaves and roots to be stored separately - the leaves remain fresh for a far shorter time.",
+                "text": "Truly, dandelions are an essential herb to keep in stock, crucial for poison and stings. The white milk in their roots and stems keeps for a long time, and is a potent cure for poison - their leaves are weaker, but fast-acting, and can be chewed into poultices. Even the fluffy dandelion heads are useful as a c_n kitten's favourite, short-lived toy.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["dandelion"]
             },
             {
-                "text": "With warmth in the air and ground, s_c doesn't need to try very hard to find an excellent haul of dandelions to bring back to camp.",
+                "text": "It's a successful gathering mission, with p_l striding back to camp with a great haul of whole, intact dandelion plants. Later, they'll sort the leaves and roots to be stored separately - the leaves remain fresh for a far shorter time.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "dandelion"]
@@ -1706,10 +1694,32 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "It's a successful gathering mission, with p_l striding back to camp with a great haul of whole, intact dandelion plants. Later, {PRONOUN/p_l/subject}'ll sort the leaves and roots to be stored separately - the leaves remain fresh for a far shorter time, but for now {PRONOUN/p_l/subject} {VERB/p_l/make/makes} sure to thank the warriors that have helped {PRONOUN/p_l/subject} bring home so many.",
+                "text": "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. Both the potent milk in their roots and stems, and the fast-acting leaves... even the fluffy dandelion heads are useful as a c_n kitten's favourite, short lived toy. The warriors smile at the sight, sharing fond nursery memories about them as they gather.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["dandelion"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "It's a successful gathering mission, with p_l striding back to camp with a great haul of whole, intact dandelion plants. Later, they'll sort the leaves and roots to be stored separately - the leaves remain fresh for a far shorter time, but for now they make sure to thank the warriors that have helped them bring home so many.",
+                "exp": 10,
+                "weight": 5,
+                "herbs": ["many_herbs", "dandelion"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -3476,13 +3486,13 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "It stops infection, bleeding, <i>and</i> sore joints - why would any medicine cat ever want to risk running out of it? p_l brings back as much marigold as {PRONOUN/p_l/subject} can stuff into {PRONOUN/p_l/poss} mouth.",
+                "text": "The low-growing marigold creeps across the ground, recognizable by its strange leaves that look like they're pretending to be small fern fronds from a distance.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["marigold"]
             },
             {
-                "text": "s_c finds a patch of marigold, harvests its best leaves, and pads home, unaware of how much of {PRONOUN/s_c/poss} success rests on {PRONOUN/s_c/poss} talent for herb gathering.",
+                "text": "It stops infection, bleeding, <i>and</i> sore joints - why would any medicine cat ever want to risk running out of it? p_l brings back as much marigold as they can stuff into their mouth.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "marigold"]
@@ -3748,13 +3758,13 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "It's hard to identify mullein while it's small, but p_l finds a plant or two and rips down {PRONOUN/p_l/poss} central stalks, carrying {PRONOUN/p_l/object} back to camp to trim the leaves off later.",
+                "text": "It's hard to identify mullein while it's small, but p_l finds a plant or two and rips down their central stalks, carrying them back to camp to trim the leaves off later.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["mullein"]
             },
             {
-                "text": "The always-reliable s_c spots mullein plants growing plenty of leaves on {PRONOUN/s_c/poss} strange central stems, and knocks {PRONOUN/s_c/object} over so that the entire bundle can be carried home.",
+                "text": "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, <i>and</i> being used to treat unhappy guts - mullein is a good herb to keep in stock, even if it doesn't have the glamour of catmint or the rarity of lungwort.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "mullein"]
@@ -4361,7 +4371,7 @@
                 ]
             },
             {
-                "text": "Go to where other animals wander through c_n's territory on little, beaten paths, wander around until you bump nose first into a plantain plant, harvest. Simple, s_c teaches app1.",
+                "text": "Suitable for soothing throat and pelt irritation, and with a welcome - albeit weird - habit of consistently sprouting up on well-trodden paths, plantain is a basic but valuable herb to keep stocks of, and always taught early in the herbal lore each medicine cat must memorise.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "plantain"],
@@ -4832,13 +4842,13 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Ragwort brings strength to cats who need it, and eases aching joints, but StarClan it tastes absolutely <i>foul.</i> p_l's pleased with {PRONOUN/p_l/poss} harvest, but really wishes {PRONOUN/p_l/subject} had a way to bring it back to camp that didn't need {PRONOUN/p_l/subject} to carry it in {PRONOUN/p_l/poss} mouth.",
+                "text": "In newleaf, with most ragwort plants still flowerless, they're a little more bearable to harvest, the foul scent of their petals not yet muddying the air.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["ragwort"]
             },
             {
-                "text": "s_c has discovered a trick to harvesting the bountiful, but foul, ragwort - using {PRONOUN/s_c/poss} claws to tear leaves from the plant, then carefully carrying {PRONOUN/s_c/object} back to camp without chewing or salivating. It's difficult, but doable, if only just.",
+                "text": "Ragwort brings strength to cats who need it, and eases aching joints, but StarClan it tastes absolutely <i>foul.</i> p_l's pleased with their harvest, but really wishes they had a way to bring it back to camp that didn't need them to carry it in their mouth.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "ragwort"]
@@ -5110,7 +5120,7 @@
                 "herbs": ["tansy"]
             },
             {
-                "text": "Tansy might smell sharp enough to be enjoyed freshening up dens, but it sure tastes... interesting. s_c isn't sure {PRONOUN/s_c/subject}'ll ever get used to it, but at least it's a reminder to be careful around the potentially poisonous herb.",
+                "text": "Good for all coughs, all wounds, and all poisons - but it would be dangerous to assume tansy has no downsides. In small doses, it does help with nearly any ailment... but in <i>large</i> doses, it poisons the body, even to the point of causing death.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "tansy"]
