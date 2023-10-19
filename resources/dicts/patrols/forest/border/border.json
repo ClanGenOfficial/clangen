@@ -1,9 +1,15 @@
 [
     {
         "patrol_id": "fst_bord_dog1",
-        "biome": ["Any"],
-        "season": ["Any"],
-        "types": ["border"],
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
@@ -20,10 +26,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["trust", "respect"],
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
                         "amount": 15
                     }
                 ]
@@ -32,19 +45,28 @@
                 "text": "s_c sets up an ambush for the wandering dog, bloodying its snout and leading it on a wild chasing dance across the border and out of c_n territory.",
                 "exp": 40,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,3"],
+                "stat_skill": [
+                    "FIGHTER,3"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["trust", "respect"],
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
                         "amount": 15
                     }
                 ]
             },
             {
-                "text": "They don't feel like they have anything like the skill or power, but s_c would give their life for c_n, charging in to courageously lead the dog away from c_n territory. Each booming bark has to be the herald of their doom, each rancid breath the last thing they'll ever smell, but somehow, eventually, limbs and lungs burning, they leap to refuge.",
+                "text": "{PRONOUN/s_c/subject/CAP} {VERB/s_c/don't/doesn't} feel like {PRONOUN/s_c/subject} {VERB/s_c/have/has} anything like the skill or power, but s_c would give {PRONOUN/s_c/poss} life for c_n, charging in to courageously lead the dog away from c_n territory. Each booming bark has to be the herald of {PRONOUN/s_c/poss} doom, each rancid breath the last thing {PRONOUN/s_c/subject}'ll ever smell, but somehow, eventually, limbs and lungs burning, {PRONOUN/s_c/subject} {VERB/s_c/leap/leaps} to refuge.",
                 "exp": 40,
                 "weight": 20,
                 "stat_trait": [
@@ -62,10 +84,17 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["trust", "respect"],
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
                         "amount": 15
                     }
                 ]
@@ -73,10 +102,12 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c would give their life to protect c_n, and as they lead the huge dog away from the Clan, in their heart, they accept that's what they're doing. As darkness closes in around them and the dog's jaws descend again, r_c tries to sink their claws into its face, and hopes desperately that they led it far enough.",
+                "text": "r_c would give {PRONOUN/r_c/poss} life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/lead/leads} the huge dog away from the Clan, in {PRONOUN/r_c/poss} heart, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} that's what {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing. As darkness closes in around {PRONOUN/r_c/object} and the dog's jaws descend again, r_c tries to sink {PRONOUN/r_c/poss} claws into its face, and hopes desperately that {PRONOUN/r_c/subject} led it far enough.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": [
+                    "r_c"
+                ],
                 "history_text": {
                     "scar": "This cat is scarred from bravely defending the Clan against a dog.",
                     "reg_death": "This cat died to keep c_n safe from a large dog.",
@@ -84,23 +115,36 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["trust", "respect"],
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
                         "amount": -15
                     }
                 ]
             },
             {
-                "text": "r_c would give their life to protect c_n, and as they charge past the huge dog to lead it far, far from c_n, they accept it. Fear gives them speed, but it only takes one successful hit. Miraculously they fly out of the dog's jaws while it shakes them, landing in a refuge. r_c is injured, desperate, and terrified - but they're alive.",
+                "text": "r_c would give {PRONOUN/r_c/poss} life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/charge/charges} past the huge dog to lead it far, far from c_n, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} it. Fear gives them speed, but it only takes one successful hit. Miraculously {PRONOUN/r_c/subject} {VERB/r_c/fly/flies} out of the dog's jaws while it shakes {PRONOUN/r_c/object}, landing in a refuge. r_c is injured, desperate, and terrified - but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alive.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["big_bite_injury"],
-                        "scars": ["BRIGHTHEART"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "big_bite_injury"
+                        ],
+                        "scars": [
+                            "BRIGHTHEART"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -110,10 +154,17 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["trust", "respect"],
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
                         "amount": 15
                     }
                 ]
@@ -122,10 +173,19 @@
     },
     {
         "patrol_id": "fst_bord_dog2",
-        "biome": ["Any"],
-        "season": ["Any"],
-        "types": ["border"],
-        "tags": ["patrol_rel", "pos_fail"],
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "border"
+        ],
+        "tags": [
+            "patrol_rel",
+            "pos_fail"
+        ],
         "patrol_art": "bord_general_intro",
         "min_cats": 2,
         "max_cats": 3,
@@ -141,10 +201,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -155,10 +222,17 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -167,19 +241,28 @@
                 "text": "s_c sets up a careful ambush ahead of the dog, and the surprising, darting attack bloodies the dog's flank, dissuading it from heading further into c_n territory.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,3"],
+                "stat_skill": [
+                    "FIGHTER,3"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
             },
             {
-                "text": "s_c selflessly takes the lion's share of the run the patrol leads the dog on, exhausting themselves almost to the point of danger, but leading the dog far away from c_n borders. Their Clanmates support them on the long walk home once it's all over, their purrs mixing with s_c exhausted pants.",
+                "text": "s_c selflessly takes the lion's share of the run the patrol leads the dog on, exhausting {PRONOUN/s_c/object} almost to the point of danger, but leading the dog far away from c_n borders. {PRONOUN/s_c/poss/CAP} Clanmates support {PRONOUN/s_c/object} on the long walk home once it's all over, {PRONOUN/s_c/poss} purrs mixing with s_c exhausted pants.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -196,10 +279,17 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -212,25 +302,44 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
             },
             {
-                "text": "s_c tries to take the lion's share of the effort to lead the dog away, but their strength fails them and the rest of the patrol needs to rescue them, cutting short the results of the patrol. Instead, everyone knows the dog could still be lurking on their borders.",
+                "text": "s_c tries to take the lion's share of the effort to lead the dog away, but {PRONOUN/s_c/poss} strength fails {PRONOUN/s_c/object} and the rest of the patrol needs to rescue {PRONOUN/s_c/object}, cutting short the results of the patrol. Instead, everyone knows the dog could still be lurking on {PRONOUN/s_c/poss} borders.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["ambitious", "bloodthirsty", "troublesome", "vengeful"],
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "troublesome",
+                    "vengeful"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -239,7 +348,9 @@
                 "text": "The patrol tries to lead the dog away from the Clan's borders, but with so few cats it's impossible to cover each other's backs. r_c falls to the dog as the rest of the patrol runs for their lives back to camp, terrified out of their pelts and mourning their Clanmate.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": [
+                    "r_c"
+                ],
                 "history_text": {
                     "scar": "This cat is scarred from bravely defending the Clan against a dog.",
                     "reg_death": "This cat died to keep the Clan safe from a large dog.",
@@ -247,10 +358,17 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -261,9 +379,15 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["big_bite_injury"],
-                        "scars": ["MANLEG"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "big_bite_injury"
+                        ],
+                        "scars": [
+                            "MANLEG"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -273,10 +397,17 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -285,10 +416,19 @@
     },
     {
         "patrol_id": "fst_bord_dog3",
-        "biome": ["Any"],
-        "season": ["Any"],
-        "types": ["border"],
-        "tags": ["patrol_rel", "pos_fail"],
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "border"
+        ],
+        "tags": [
+            "patrol_rel",
+            "pos_fail"
+        ],
         "patrol_art": "bord_general_intro",
         "min_cats": 4,
         "max_cats": 6,
@@ -304,10 +444,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -318,10 +465,17 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -330,19 +484,28 @@
                 "text": "s_c has just enough time to yell out a plan, leading the whole large patrol in a skillful battle plan against the dog that protects the cats from the chance of injury. The dog tucks tail, and runs for more friendly lands.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,3"],
+                "stat_skill": [
+                    "FIGHTER,3"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
             },
             {
-                "text": "s_c selflessly throw themselves into the fight, and every time the dog tries to grab at their Clanmates, they're there with claws, fur puffed out to twice their normal size. With s_c defending them, the patrol drives the dog off, yowling triumphantly.",
+                "text": "s_c selflessly {VERB/s_c/throw/throws} {PRONOUN/s_c/object} into the fight, and every time the dog tries to grab at {PRONOUN/s_c/poss} Clanmates, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} there with claws, fur puffed out to twice {PRONOUN/s_c/poss} normal size. With s_c defending {PRONOUN/s_c/object}, the patrol drives the dog off, yowling triumphantly.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -359,10 +522,17 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -375,34 +545,55 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
             },
             {
-                "text": "s_c tries to protect their Clanmates, but it gets in the way of the attack. Without everyone committed to driving the dog off, the patrol has to fall back, but they do so in good order.",
+                "text": "s_c tries to protect {PRONOUN/s_c/poss} Clanmates, but it gets in the way of the attack. Without everyone committed to driving the dog off, the patrol has to fall back, but {PRONOUN/s_c/subject} do so in good order.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["ambitious", "bloodthirsty", "troublesome", "vengeful"],
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "troublesome",
+                    "vengeful"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
             },
             {
-                "text": "With so many cats all working as one, the dog started to get beaten back. But just as the tide of the fight seems about to turn, one lucky strike hits r_c, and those vicious jaws take them to StarClan.",
+                "text": "With so many cats all working as one, the dog started to get beaten back. But just as the tide of the fight seems about to turn, one lucky strike hits r_c, and those vicious jaws take {PRONOUN/r_c/object} to StarClan.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": [
+                    "r_c"
+                ],
                 "history_text": {
                     "scar": "This cat is scarred from bravely defending the Clan against a dog.",
                     "reg_death": "This cat died to keep the Clan safe from a large dog.",
@@ -410,23 +601,36 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
             },
             {
-                "text": "The patrol fights bravely, but you only need to be unlucky once. r_c gets taken out of the fight with one snap of the beast's huge jaws. The rest of the patrol rallies to defend them, and r_c is safely helped back to camp, where the medicine den awaits.",
+                "text": "The patrol fights bravely, but you only need to be unlucky once. r_c gets taken out of the fight with one snap of the beast's huge jaws. The rest of the patrol rallies to defend {PRONOUN/r_c/object}, and r_c is safely helped back to camp, where the medicine den awaits.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["big_bite_injury"],
-                        "scars": ["BRIGHTHEART"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "big_bite_injury"
+                        ],
+                        "scars": [
+                            "BRIGHTHEART"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -436,10 +640,17 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -448,9 +659,15 @@
     },
     {
         "patrol_id": "fst_bord_smalldog1",
-        "biome": ["Any"],
-        "season": ["Any"],
-        "types": ["border"],
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
@@ -462,44 +679,67 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "r_c hisses at the dog, warning it off. It skitters back, yapping loudly but headed in the right direction. Maybe they should add dog herding to their list of accomplishments?",
+                "text": "r_c hisses at the dog, warning it off. It skitters back, yapping loudly but headed in the right direction. Maybe {PRONOUN/r_c/subject} should add dog herding to {PRONOUN/r_c/poss} list of accomplishments?",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
             },
             {
-                "text": "r_c unsheathes their claws, puffs their fur out to as far as it'll go, gathers their courage, and drives the small dog from the border.",
+                "text": "r_c unsheathes {PRONOUN/r_c/poss} claws, puffs {PRONOUN/r_c/poss} fur out to as far as it'll go, gathers {PRONOUN/r_c/poss} courage, and drives the small dog from the border.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
             },
             {
-                "text": "s_c unleashes all their battle experience, darting this way and that, ripping chunks of dog fur out as they drive it into the distance.",
+                "text": "s_c unleashes all {PRONOUN/s_c/poss} battle experience, darting this way and that, ripping chunks of dog fur out as {PRONOUN/s_c/subject} {VERB/s_c/drive/drives} it into the distance.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,1"],
+                "stat_skill": [
+                    "FIGHTER,1"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -512,19 +752,28 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
             },
             {
-                "text": "The animal is far more tenacious than r_c ever expected, and once the fight starts, there's no escaping from it. As r_c's world goes dark, they have their fangs sunk in the dog's throat. At least they'll take the beast with them.",
+                "text": "The animal is far more tenacious than r_c ever expected, and once the fight starts, there's no escaping from it. As r_c's world goes dark, {PRONOUN/r_c/subject} {VERB/r_c/have/has} {PRONOUN/r_c/poss} fangs sunk in the dog's throat. At least {PRONOUN/r_c/subject}'ll take the beast with {PRONOUN/r_c/object}.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": [
+                    "r_c"
+                ],
                 "history_text": {
                     "scar": "This cat got a scar from a fight with a small dog, but they always say it was a huge dog.",
                     "reg_death": "This cat was killed in a fight with a small dog, but they took the dog out with them.",
@@ -532,23 +781,36 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
             },
             {
-                "text": "Small, yappy, but. . . still a dog. r_c peers down from the tree where the animal has pinned them, wincing in pain. They won't underestimate these ugly creatures again.",
+                "text": "Small, yappy, but. . . still a dog. r_c peers down from the tree where the animal has pinned {PRONOUN/r_c/object}, wincing in pain. {PRONOUN/r_c/subject/CAP} won't underestimate these ugly creatures again.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["small_bite_injury"],
-                        "scars": ["LEGBITE"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "small_bite_injury"
+                        ],
+                        "scars": [
+                            "LEGBITE"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -558,10 +820,17 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -570,9 +839,15 @@
     },
     {
         "patrol_id": "fst_bord_smalldog2",
-        "biome": ["Any"],
-        "season": ["Any"],
-        "types": ["border"],
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 2,
@@ -584,15 +859,23 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "p_l hisses at the small dog, and the rest of their small team back them up. The dog skitters back, yapping loudly, apparently shocked by the display, and the patrol breaks out into yowls and caterwauls, screaming until the small beast's nerve breaks, and it runs from the c_n border into the distance.",
+                "text": "p_l hisses at the small dog, and the rest of {PRONOUN/p_l/poss} small team back {PRONOUN/p_l/object} up. The dog skitters back, yapping loudly, apparently shocked by the display, and the patrol breaks out into yowls and caterwauls, screaming until the small beast's nerve breaks, and it runs from the c_n border into the distance.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -603,10 +886,18 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -615,13 +906,23 @@
                 "text": "s_c calls out a battle plan, and the cats flow into it, carefully covering each other and driving the dog backwards until its nerve breaks, it tucks tail, and it runs from c_n territory headed deep into the wilderness.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,1"],
+                "stat_skill": [
+                    "FIGHTER,1"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -639,9 +940,15 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["small_bite_injury"],
-                        "scars": ["LEGBITE"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "small_bite_injury"
+                        ],
+                        "scars": [
+                            "LEGBITE"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -652,9 +959,15 @@
     },
     {
         "patrol_id": "fst_bord_smalldog3",
-        "biome": ["Any"],
-        "season": ["Any"],
-        "types": ["border"],
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "Any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 4,
@@ -671,10 +984,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -685,10 +1006,18 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -697,13 +1026,23 @@
                 "text": "s_c calls out a battle plan, and the cats flow into it, carefully covering each other and driving the dog backwards until its nerve breaks, it tucks tail, and it runs from c_n territory headed deep into the wilderness.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,1"],
+                "stat_skill": [
+                    "FIGHTER,1"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -721,9 +1060,15 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["small_bite_injury"],
-                        "scars": ["LEGBITE"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "small_bite_injury"
+                        ],
+                        "scars": [
+                            "LEGBITE"
+                        ]
                     }
                 ],
                 "history_text": {
