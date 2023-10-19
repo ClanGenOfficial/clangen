@@ -161,7 +161,7 @@
         "biome": ["desert"],
         "season": ["Any"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
         "max_cats": 1,

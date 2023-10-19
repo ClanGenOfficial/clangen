@@ -140,6 +140,7 @@ class Freshkill_Pile():
         relevant_group = []
         queens = get_alive_clan_queens(Cat)
         relevant_queens = []
+        # kits under 3 months are feed by the queen
         for queen in queens:
             kits = queen.get_children()
             kits = [cat for cat in living_cats if cat.ID in kits]
@@ -147,24 +148,24 @@ class Freshkill_Pile():
             if len(young_kits) > 0:
                 relevant_queens.append(queen)
 
-        for status_ in FEEDING_ORDER:
-            if status_ == "queen":
+        for feeding_status in FEEDING_ORDER:
+            if feeding_status == "queen":
                 relevant_group = relevant_queens
-            elif status_ == "kitten":
-                relevant_group = [cat for cat in living_cats if str(cat.status) == status_ and cat.moons >= 2]
+            elif feeding_status == "kitten":
+                relevant_group = [cat for cat in living_cats if str(cat.status) == feeding_status and cat.moons >= 2]
             else:
-                relevant_group = [cat for cat in living_cats if str(cat.status) == status_]
+                relevant_group = [cat for cat in living_cats if str(cat.status) == feeding_status]
                 # remove all cats, which are also queens
                 relevant_group = [cat for cat in relevant_group if cat not in relevant_queens]
 
             sick_cats = [cat for cat in relevant_group if cat.is_injured() or cat.is_ill()]
-            needed_prey = len(relevant_group) * PREY_REQUIREMENT[status_] + len(sick_cats) * CONDITION_INCREASE
+            needed_prey = len(relevant_group) * PREY_REQUIREMENT[feeding_status] + len(sick_cats) * CONDITION_INCREASE
             enough_prey = needed_prey <= self.total_amount
 
             if not enough_prey:
-                self.handle_not_enough_food(relevant_group, status_)
+                self.handle_not_enough_food(relevant_group, feeding_status)
             else:
-                self.feed_group(relevant_group, status_)
+                self.feed_group(relevant_group, feeding_status)
 
     def amount_food_needed(self):
         """
@@ -240,7 +241,7 @@ class Freshkill_Pile():
                 the status of each cat of the group
         """
         # ration_prey < healthy warrior will only eat half of the food they need
-        ration_prey = game.clan.clan_settings["ration prey"] # TODO: handled with a setting
+        ration_prey = game.clan.clan_settings["ration prey"]
 
         for cat in group:
             feeding_amount = PREY_REQUIREMENT[status_]
@@ -251,6 +252,7 @@ class Freshkill_Pile():
             else:
                 if ration_prey and status_ == "warrior":
                     feeding_amount = feeding_amount/2
+            # if there is enough prey, and nutrients are low, fill the nutrients up
             lot_more_prey = self.amount_food_needed() < self.total_amount * 1.5
             if lot_more_prey and self.nutrition_info[cat.ID].percentage < 100:
                 feeding_amount += 1
@@ -267,9 +269,9 @@ class Freshkill_Pile():
             status_ : str
                 the status of each cat of the group
         """
-        group_ids = [cat.id for cat in group]
+        group_ids = [cat.ID for cat in group]
         sorted_nutrition = sorted(self.nutrition_info.items(), key=lambda x: x[1].percentage)
-        ration_prey = False # TODO: handled with a setting
+        ration_prey = game.clan.clan_settings["ration prey"]
 
         for k, v in sorted_nutrition:
             if k not in group_ids:
@@ -307,7 +309,11 @@ class Freshkill_Pile():
             self.nutrition_info[cat.ID].current_score += previous_amount - remaining_amount
             previous_amount = remaining_amount
 
-        if remaining_amount > 0:
+        if remaining_amount > 0 or game.clan.clan_settings["ration prey"]:
+            if cat.status == "warrior":
+                feeding_amount = PREY_REQUIREMENT[cat.status]
+                feeding_amount = feeding_amount/2
+                self.nutrition_info[cat.ID].current_score -= feeding_amount
             self.nutrition_info[cat.ID].current_score -= (remaining_amount + amount_difference)
 
     def take_from_pile(self, pile_group: str, given_amount):

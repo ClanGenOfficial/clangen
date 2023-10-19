@@ -791,6 +791,7 @@ class Patrol():
             filtered_patrols : list
                 list of patrols which is filtered
         """
+        # TODO: update according to new patrol structure
         filtered_patrols = []
 
         # get first what kind of hunting type which will be chosen

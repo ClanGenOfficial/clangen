@@ -73,8 +73,13 @@ class Freshkill_Events():
 
             if cat.status == "leader":
                 game.clan.leader_lives -= 1
+                
             cat.die()
             History.add_death(cat, history_text)
+            
+            # if the cat is the leader, the illness "starving" needs to be added again
+            if cat.status == "leader":
+                cat.get_ill("starving")
 
             types = ["birth_death"]
             game.cur_events_list.append(Single_Event(death_text, types, [cat.ID]))

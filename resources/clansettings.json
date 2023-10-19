@@ -147,7 +147,7 @@
         ],
         "ration prey":[
             "ration prey",
-            "Healthy warriors will only eat half of the food they need",
+            "Healthy warriors will only eat half of the food they need, even if there is enough for the Clan",
             false
         ]
     },

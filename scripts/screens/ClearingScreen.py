@@ -7,8 +7,10 @@ from scripts.cat.cats import Cat
 from scripts.events_module.freshkill_pile_events import Freshkill_Events
 from scripts.game_structure.image_button import UISpriteButton, UIImageButton, UITextBoxTweaked
 from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
-from scripts.game_structure.game_essentials import game, MANAGER
+from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
 
+with open('resources/clansettings.json', 'r', encoding='utf-8') as f:
+    settings_dict = ujson.load(f)
 
 class ClearingScreen(Screens):
     cat_buttons = {}
@@ -40,7 +42,9 @@ class ClearingScreen(Screens):
         self.focus_name = None
         self.current_page = None
         self.back_button = None
-        self.checkboxes_text = {}
+        self.tactic_text = {}
+        self.tactic_boxes = {}
+        self.additional_text = {}
         self.checkboxes = {}
 
         self.tab_showing = self.hungry_tab
@@ -249,65 +253,6 @@ class ClearingScreen(Screens):
         information_display.append(concern_text)
         self.info_messages.set_text("<br>".join(information_display))
         self.draw_pile()
-
-    def create_checkboxes(self):
-        self.delete_checkboxes()
-
-        self.checkboxes_text["container_role"] = pygame_gui.elements.UIScrollingContainer(
-            scale(pygame.Rect((0, 900), (1300, 350))), manager=MANAGER
-        )
-
-        with open('resources/clansettings.json', 'r', encoding='utf-8') as f:
-            settings_dict = ujson.load(f)
-
-        n = 0
-        for code, desc in settings_dict['freshkill_tactics'].items():
-            if game.clan.clan_settings[code]:
-                box_type = "#checked_checkbox"
-            else:
-                box_type = "#unchecked_checkbox"
-                
-            # Handle nested
-            disabled = False
-            x_val = 340
-            if len(desc) == 4 and isinstance(desc[3], list):
-                x_val += 40
-                disabled = game.clan.clan_settings.get(desc[3][0], not desc[3][1]) != desc[3][1]
-                
-            self.checkboxes[code] = UIImageButton(
-                scale(pygame.Rect((x_val, n * 78 + 900), (68, 68))),
-                "",
-                object_id=box_type,
-                tool_tip_text=desc[1])
-            
-            if disabled:
-                self.checkboxes[code].disable()
- 
-            n += 1
-
-        n = 0
-        for code, desc in settings_dict['freshkill_tactics'].items():
-            # Handle nested
-            x_val = 450
-            if len(desc) == 4 and isinstance(desc[3], list):
-                x_val += 40
-            
-            self.checkboxes_text[code] = pygame_gui.elements.UITextBox(
-                desc[0],
-                scale(pygame.Rect((x_val, n * 78), (1000, 78))),
-                container=self.checkboxes_text["container_role"],
-                object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
-                manager=MANAGER)
-            self.checkboxes_text[code].disable()
-            n += 1
-
-    def delete_checkboxes(self):
-        for checkbox in self.checkboxes.values():
-            checkbox.kill()
-        self.checkboxes = {}
-        for text in self.checkboxes_text.values():
-            text.kill()
-        self.checkboxes_text = {}
 
     def handle_tab_toggles(self):
         if self.open_tab == "cats":
@@ -534,6 +479,7 @@ class ClearingScreen(Screens):
             self.log_box.kill()
             self.tactic_tab.kill()
             self.tactic_title.kill()
+            self.delete_checkboxes()
         if self.focus_cat:
             self.focus_cat.kill()
 
@@ -551,34 +497,186 @@ class ClearingScreen(Screens):
         self.cat_names = []
         self.cat_buttons = {}
 
-    def handle_checkbox_events(self, event):
+    def create_checkboxes(self):
+        self.delete_checkboxes()
+
+        self.tactic_text["container_general"] = pygame_gui.elements.UIScrollingContainer(
+            scale(pygame.Rect((300, 900), (420, 350))), manager=MANAGER
+        )
+
+        n = 0
+        for code, desc in settings_dict['freshkill_tactics'].items():
+            if code == "ration prey":
+                continue
+            # Handle nested
+            x_val = 110
+            if len(desc) == 4 and isinstance(desc[3], list):
+                x_val += 40
+            
+            self.tactic_text[code] = pygame_gui.elements.UITextBox(
+                desc[0],
+                scale(pygame.Rect((x_val, n * 70), (1000, 78))),
+                container=self.tactic_text["container_general"],
+                object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
+                manager=MANAGER)
+            n += 1
+
+        self.additional_text["container_general"] = pygame_gui.elements.UIScrollingContainer(
+            scale(pygame.Rect((720, 900), (655, 350))), manager=MANAGER
+        )
+
+        n = 0
+        for code, desc in settings_dict['freshkill_tactics'].items():
+            if code == "ration prey":
+                # Handle nested
+                x_val = 110
+                if len(desc) == 4 and isinstance(desc[3], list):
+                    x_val += 40
+
+                self.additional_text[code] = pygame_gui.elements.UITextBox(
+                    desc[0],
+                    scale(pygame.Rect((x_val, n * 60), (1000, 78))),
+                    container=self.additional_text["container_general"],
+                    object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
+                    manager=MANAGER)
+                n += 1
+
+        x_val = 45
+        self.additional_text["condition_increase"] = pygame_gui.elements.UITextBox(
+            "<b>Status-order + needed amount:</b>",
+            scale(pygame.Rect((x_val, n * 50 + 10), (1000, 78))),
+            container=self.additional_text["container_general"],
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
+            manager=MANAGER
+        )
+
+        prey_requirement = game.config["freshkill"]["prey_requirement"]
+        feeding_order = game.config["freshkill"]["feeding_order"]
+        for status in feeding_order:
+            amount = prey_requirement[status]
+            self.additional_text["condition_increase"] = pygame_gui.elements.UITextBox(
+                f"{n}. {status}: {amount} prey",
+                scale(pygame.Rect((x_val, n * 45 + 55), (1000, 78))),
+                container=self.additional_text["container_general"],
+                object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
+                manager=MANAGER)
+            n += 1
+
+        self.additional_text["container_general"].set_scrollable_area_dimensions(
+            (610 / 1600 * screen_x, (n * 60) / 1600 * screen_y)
+        )
+
+
+        self.refresh_checkboxes("general")
+
+    def delete_checkboxes(self):
+        for checkbox in self.tactic_boxes.values():
+            checkbox.kill()
+        self.tactic_boxes = {}
+        for text in self.tactic_text.values():
+            text.kill()
+        self.tactic_text = {}
+        for checkbox in self.checkboxes.values():
+            checkbox.kill()
+        self.checkboxes = {}
+        for text in self.additional_text.values():
+            text.kill()
+        self.additional_text = {}
+
+    def refresh_checkboxes(self, sub_menu):
         """
         TODO: DOCS
         """
+        # Kill the checkboxes. No mercy here.
+        for checkbox in self.tactic_boxes.values():
+            checkbox.kill()
+        self.tactic_boxes = {}
+
+        n = 0
+        for code, desc in settings_dict["freshkill_tactics"].items():
+            if code == "ration prey":
+                continue
+            if game.clan.clan_settings[code]:
+                box_type = "#checked_checkbox"
+            else:
+                box_type = "#unchecked_checkbox"
+                
+            # Handle nested
+            disabled = False
+            x_val = 20
+            if len(desc) == 4 and isinstance(desc[3], list):
+                x_val += 50
+                disabled = game.clan.clan_settings.get(desc[3][0], not desc[3][1]) != desc[3][1]
+                
+            self.tactic_boxes[code] = UIImageButton(
+                scale(pygame.Rect((x_val, n * 70), (68, 68))),
+                "",
+                object_id=box_type,
+                container=self.tactic_text["container_" + sub_menu],
+                tool_tip_text=desc[1])
+            
+            if disabled:
+                self.tactic_boxes[code].disable()
+
+            n += 1
+
+        for checkbox in self.checkboxes.values():
+            checkbox.kill()
+        self.checkboxes = {}
+
+        n = 0
+        for code, desc in settings_dict["freshkill_tactics"].items():
+            if code == "ration prey":
+                if game.clan.clan_settings[code]:
+                    box_type = "#checked_checkbox"
+                else:
+                    box_type = "#unchecked_checkbox"
+
+                # Handle nested
+                disabled = False
+                x_val = 20
+                if len(desc) == 4 and isinstance(desc[3], list):
+                    x_val += 50
+                    disabled = game.clan.clan_settings.get(desc[3][0], not desc[3][1]) != desc[3][1]
+
+                self.checkboxes[code] = UIImageButton(
+                    scale(pygame.Rect((x_val, n * 50), (68, 68))),
+                    "",
+                    object_id=box_type,
+                    container=self.additional_text["container_" + sub_menu],
+                    tool_tip_text=desc[1])
+
+                if disabled:
+                    self.checkboxes[code].disable()
+                n += 1
+
+    def handle_checkbox_events(self, event):
+        """
+        Switch on or off, only allow one checkbox to be selected.
+        """
+        active_key = None
+        if event.ui_element in self.tactic_boxes.values():
+            for key, value in self.tactic_boxes.items():
+                if value == event.ui_element and value.object_ids[1] == "#unchecked_checkbox":
+                    game.clan.switch_setting(key)
+                    active_key = key
+                    self.settings_changed = True
+                    self.create_checkboxes()
+                    break
+
+            # un-switch all other keys
+            for key, value in self.tactic_boxes.items():
+                if active_key and key != active_key and value.object_ids[1] == "#checked_checkbox":
+                    game.clan.switch_setting(key)
+                    self.settings_changed = True
+                    self.create_checkboxes()
+                    break
+
         if event.ui_element in self.checkboxes.values():
             for key, value in self.checkboxes.items():
                 if value == event.ui_element:
                     game.clan.switch_setting(key)
+                    active_key = key
                     self.settings_changed = True
-                    #self.update_save_button()
-                           
-                    opens = {
-                        "general": self.open_general_settings,
-                        "relation": self.open_relation_settings,
-                        "role": self.open_roles_settings,
-                        'stats': self.open_clan_stats
-                    }
-
-                    scroll_pos = None
-                    if "container_general" in self.checkboxes_text and \
-                            self.checkboxes_text["container_general"].vert_scroll_bar:
-                        scroll_pos = self.checkboxes_text["container_general"].vert_scroll_bar.start_percentage
-
-                    if self.sub_menu in opens:
-                        opens[self.sub_menu]()
-
-                    if scroll_pos is not None:
-                        self.checkboxes_text["container_general"].vert_scroll_bar.set_scroll_from_start_percentage(
-                            scroll_pos)
-
+                    self.create_checkboxes()
                     break
