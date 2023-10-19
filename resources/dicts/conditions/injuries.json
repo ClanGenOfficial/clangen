@@ -813,15 +813,13 @@
         "cause_permanent": [
             "lost a leg",
             "lost their tail",
-            "moss",
-            "dandelion",
-            "poppy"
         ],
         "herbs": [
             "juniper",
             "ragwort",
             "poppy",
-            "moss"
+            "moss",
+            "dandelion"
         ]
     },
 
@@ -849,12 +847,12 @@
             "blood loss"
         ],
         "cause_permanent": [
+        ],
+        "herbs": [
             "oak_leaves",
             "juniper",
             "ragwort",
-            "moss"
-        ],
-        "herbs": []
+            "moss"]
     },
 
     "water in their lungs":{
