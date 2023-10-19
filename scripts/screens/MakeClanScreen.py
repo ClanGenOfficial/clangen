@@ -49,7 +49,7 @@ class MakeClanScreen(Screens):
                       "you'd like a challenge with a bit of brutality, then this mode is for you.<br><br>" \
                       "You heard the warnings... a Cruel Season is coming. Will you survive?" \
                       "<br> <br>" \
-                      "-COMING SOON-"
+                      "-WORK ON CRUEL SEASON WILL BEGIN ONCE DEVELOPMENT ON EXPANDED MODE IS FINISHED-"
 
     # This section holds all the information needed
     game_mode = 'classic'  # To save the users selection before conformation.
