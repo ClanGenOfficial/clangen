@@ -5253,6 +5253,43 @@
                 "weight": 20
             }
         ]
+    },
+    {
+        "patrol_id": "bch_hunt_bishopfish1",
+        "biome": ["beach"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": ["halloween"],
+        "patrol_art": ["bch_bishopfish"],
+        "min_cats": 1,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 15,
+        "intro_text": "As r_c skids down the sand dunes, {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} a distant heap being washed ashore by the waves.",
+        "decline_text": "Sniffing the heap, r_c decides that this is just too disgusting to be considered food.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+            "text": "r_c sniffs the still struggling prey - and jerks backwards when it crosses its Twoleg-like forefins. No, this isn't something {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} comfortable bringing back to camp.",
+            "exp": 0,
+            "weight": 20
+            }
+        ],
+        "fail_outcomes": [{
+            "text": "r_c brings back the ocean's bounty to camp. A wonderful and easy catch!",
+            "exp": 0,
+            "weight": 20,
+            "injury": {
+                "cats": ["some_clan"],
+                "injuries": ["poisoned"],
+                "scar": []
+            },
+            "history_text": {
+                "reg_death": "m_c was killed by the poison in the Bishop-fish's flesh.",
+                "lead_death": "poisoned by consuming Bishop-fish's flesh."
+            }
+        }]
     }
+    
     
 ]
