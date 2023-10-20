@@ -414,9 +414,7 @@ class Cat():
         """
         if self.status == 'leader' and 'pregnant' in self.injuries and game.clan.leader_lives > 0:
             self.illnesses.clear()
-            for injury in self.injuries:
-                if injury != 'pregnant':
-                    del self.injuries[injury]
+            self.injuries = { key : value for (key, value) in self.injuries.items() if key == 'pregnant'}
         else:
             self.injuries.clear()
             self.illnesses.clear()
