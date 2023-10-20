@@ -950,12 +950,6 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "app1 watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun, but their pounce is too soon, and their prey lives to see another day.",
-                "exp": 15,
-                "weight": 20,
-                "prey": ["small"]
-            },
-            {
                 "text": "app1 considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except their burrow is occupied, and app1 instead has to wait out the heat in the uncortable shade of a cactus.",
                 "exp": 15,
                 "weight": 5,
@@ -986,7 +980,7 @@
                 "weight": 20
             },
             {
-                "text": "Refusing to stop hunting, app1 bodly decides to go into a canyon where it'll be cooler. They don't find any prey, but don't overheat either.",
+                "text": "Refusing to stop hunting, s_c boldly decides to go into a canyon where it'll be cooler. They don't find any prey, but don't overheat either.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -997,13 +991,13 @@
                     "shameless",
                     "troublesome"
                 ],
-                "can_have_stat": ["app"]
+                "can_have_stat": ["app1"]
             },
             {
                 "text": "app1 doesn't make it back to camp. A patrol sent out for them find their body, collapsed in a shadeless part of the territory and already starting to dry out and mummify.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": ["app1"],
                 "history_text": {
                     "scar": "This cat got heatstroke while on a patrol.",
                     "reg_death": "This cat died from heat stroke.",
@@ -1011,7 +1005,7 @@
                 }
             },
             {
-                "text": "When s_c doesn't return to camp that evening, a search party goes out for them. They find app1 collapsed and badly affected by heat stroke, and carry them back to camp where their might be a way to help them. However, app1's breathing stops on the journey home, and they slip to StarClan.",
+                "text": "When app1 doesn't return to camp that evening, a search party goes out for them. They find app1 collapsed and badly affected by heat stroke, and carry them back to camp where their might be a way to help them. However, app1's breathing stops on the journey home, and they slip to StarClan.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1129,12 +1123,6 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "app1 watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun, but their pounce is too soon, and their prey lives to see another day.",
-                "exp": 15,
-                "weight": 20,
-                "prey": ["small"]
-            },
-            {
                 "text": "app1 considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except their burrow is occupied, and app1 instead has to wait out the heat in the uncortable shade of a cactus.",
                 "exp": 15,
                 "weight": 5,
@@ -1168,7 +1156,7 @@
                 "text": "app1 doesn't make it back to camp. A patrol sent out for them find their body, collapsed in a shadeless part of the territory and already starting to dry out and mummify.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": ["app1"],
                 "history_text": {
                     "scar": "This cat got heatstroke while on a patrol.",
                     "reg_death": "This cat died from heat stroke.",
@@ -1212,12 +1200,6 @@
         "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
         "chance_of_success": 50,
         "success_outcomes": [
-            {
-                "text": "r_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun, but their pounce is too soon, and their prey lives to see another day.",
-                "exp": 15,
-                "weight": 20,
-                "prey": ["small"]
-            },
             {
                 "text": "r_c considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except this burrow seems occupied. The tortoise inside puts up a fight, but r_c manages to flip their positions and drive it out into the heat, which slowly kills it.",
                 "exp": 15,
@@ -1270,15 +1252,9 @@
         },
         "weight": 20,
         "intro_text": "The sun beats down on the desert, driving every creature away from it's gaze with blinding heat.",
-        "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
+        "decline_text": "Giving up on the hunt, app1 finds a burrow to wait out the heat of the day until they can return back to camp.",
         "chance_of_success": 50,
         "success_outcomes": [
-            {
-                "text": "app1 watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun, but their pounce is too soon, and their prey lives to see another day.",
-                "exp": 15,
-                "weight": 20,
-                "prey": ["small"]
-            },
             {
                 "text": "app1 considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except their burrow is occupied, and app1 instead has to wait out the heat in the uncortable shade of a cactus.",
                 "exp": 15,
@@ -1313,7 +1289,7 @@
                 "text": "app1 doesn't make it back to camp. A patrol sent out for them find their body, collapsed in a shadeless part of the territory and already starting to dry out and mummify.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": ["app1"],
                 "history_text": {
                     "scar": "This cat got heatstroke while on a patrol.",
                     "reg_death": "This cat died from heat stroke.",
