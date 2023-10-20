@@ -477,7 +477,7 @@
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
-                    ["status:kitten"]
+                    ["status:kitten", "backstory:abandoned1"]
                 ],
                 "relationships": [
                     {
@@ -541,7 +541,7 @@
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
-                    ["status:kitten"]
+                    ["status:kitten", "backstory:abandoned1"]
                 ],
                 "relationships": [
                     {
