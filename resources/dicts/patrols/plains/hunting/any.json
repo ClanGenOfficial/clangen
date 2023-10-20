@@ -2748,7 +2748,37 @@
                 "lost_cats": ["r_c"]
             }
         ]
+    },
+    {
+        "patrol_id": "pln_hunt_gef1",
+        "biome": ["plains"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": ["halloween"],
+        "patrol_art": ["pln_hunt_gef"],
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 15,
+        "intro_text": "As the patrol spreads out to hunt, they've got the perfect ambush set up - or they <i>did</i> until someone started talking loudly!",
+        "decline_text": "Well, this hunt is ruined. Greeeeaaaaat.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "The patrol switches to tracking down that annoying voice instead. It takes the rest of the entire afternoon, and the damn voice tricks p_l into pouncing on r_c, but finally they pin down the talking mongoose and make it <i>quite</i> clear how irritating he's been.",
+                "exp": 0,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The voice is coming from behind that bush! No, that one! No, that one over there, p_l's got them, except who p_l actually has is an irritated r_c's tail, and absolutely no one manages any hunting today. Fox dung!",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     }
+    
     
     
 ]
