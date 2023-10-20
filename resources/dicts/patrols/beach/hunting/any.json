@@ -1992,7 +1992,7 @@
                         "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["platonic", "admiration"],
+                        "values": ["platonic", "respect"],
                         "amount": 5
                     }
                 ]
@@ -2016,7 +2016,7 @@
                         "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["platonic", "admiration"],
+                        "values": ["platonic", "respect"],
                         "amount": 5
                     }
                 ]
@@ -2128,7 +2128,7 @@
                         "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["platonic", "admiration"],
+                        "values": ["platonic", "respect"],
                         "amount": 5
                     }
                 ]
@@ -2296,7 +2296,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["clan"],
                         "mutual": false,
-                        "values": ["admiration"],
+                        "values": ["respect"],
                         "amount": 5
                     }
                 ]
@@ -2326,7 +2326,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["clan"],
                         "mutual": false,
-                        "values": ["admiration"],
+                        "values": ["respect"],
                         "amount": 5
                     }
                 ]
@@ -2484,7 +2484,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["admiration"],
+                        "values": ["respect"],
                         "amount": 5
                     }
                 ]
@@ -2507,7 +2507,7 @@
                         "cats_to": ["s_c"],
                         "cats_from": ["clan"],
                         "mutual": false,
-                        "values": ["admiration"],
+                        "values": ["respect"],
                         "amount": 5
                     }
                 ]
@@ -2537,7 +2537,7 @@
                         "cats_to": ["s_c"],
                         "cats_from": ["clan"],
                         "mutual": false,
-                        "values": ["admiration"],
+                        "values": ["respect"],
                         "amount": 5
                     }
                 ]
@@ -2637,7 +2637,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["admiration"],
+                        "values": ["respect"],
                         "amount": 5
                     }
                 ]
@@ -2660,7 +2660,7 @@
                         "cats_to": ["s_c"],
                         "cats_from": ["clan"],
                         "mutual": false,
-                        "values": ["admiration"],
+                        "values": ["respect"],
                         "amount": 5
                     }
                 ]
@@ -2690,7 +2690,7 @@
                         "cats_to": ["s_c"],
                         "cats_from": ["clan"],
                         "mutual": false,
-                        "values": ["admiration"],
+                        "values": ["respect"],
                         "amount": 5
                     }
                 ]
@@ -2775,7 +2775,7 @@
                         "cats_to": ["patrol", "patrol"],
                         "cats_from": ["clan", "patrol"],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": ["respect", "trust"],
                         "amount": 5
                     }
                 ]
