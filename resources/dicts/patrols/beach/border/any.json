@@ -1700,5 +1700,36 @@
                 "can_have_stat": ["app"]
             }
         ]
+    },
+    {
+        "patrol_id": "bch_bord_nessie1",
+        "biome": ["beach"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["halloween"],
+        "patrol_art": ["nessie"],
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 15,
+        "intro_text": "As the cats move along the shoreline, they spot something massive moving beneath the water.",
+        "decline_text": "The cats are feeling remarkably incurious today.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "It's Nessie! The patrol trots up, exchanging a nice mouse for a nice deep water fish, both creatures trading the respective delicacies that're hard for the other to obtain.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["small"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol is so wrapped up trying to work out what the creature is that r_c topples into the water. It solves the mystery though, as Nessie propels r_c back onto the shoreline with one gentle, immense flipper.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     }
+    
 ]
