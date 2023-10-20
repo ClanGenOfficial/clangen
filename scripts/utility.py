@@ -266,7 +266,7 @@ def create_new_cat(Cat,
         if status == "newborn":
             age = 0
         elif litter or kit:
-            age = randint(0, 5)
+            age = randint(1, 5)
         elif status in ('apprentice', 'medicine cat apprentice', 'mediator apprentice'):
             age = randint(6, 11)
         elif status == 'warrior':
