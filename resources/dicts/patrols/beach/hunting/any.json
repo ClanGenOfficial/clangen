@@ -2825,7 +2825,7 @@
                 "prey": ["large"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol",],
+                        "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["trust"],
@@ -3367,7 +3367,7 @@
                 "prey": ["large"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol",],
+                        "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["trust"],
@@ -3559,7 +3559,7 @@
                 "prey": ["large"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol",],
+                        "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["trust"],
