@@ -1937,7 +1937,7 @@
                 "weight": 10,
                 "dead_cats": ["p_l"],
                 "history_text": {
-                    "reg_death": "p_l died when they fell out of an elder tree."
+                    "reg_death": "m_c died when {PRONOUN/m_c/subject} fell out of an elder tree."
                 }
             },
             {
@@ -2072,7 +2072,7 @@
                 "weight": 10,
                 "dead_cats": ["app1"],
                 "history_text": {
-                    "reg_death": "app1 died before completing their medicine training when they fell out of an elder tree."
+                    "reg_death": "m_c died before completing {PRONOUN/m_c/poss} medicine cat training when {PRONOUN/m_c/subject} fell out of an elder tree."
                 }
             },
             {
@@ -2181,7 +2181,8 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "reg_death": "r_c died when they fell out of an elder tree."
+                    "reg_death": "m_c died when {PRONOUN/m_c/subject} fell out of an elder tree.",
+                    "lead_death": "died when {PRONOUN/m_c/subject} fell out of an elder tree"
                 }
             },
             {
@@ -4995,9 +4996,9 @@
                 "text": "While plucking them from the bush, p_l feels one of the berries split in {PRONOUN/p_l/poss} mouth, and a deceptively good taste coats {PRONOUN/p_l/poss} tongue. These aren't raspberries. {PRONOUN/p_l/subject/CAP} {VERB/p_l/rush/rushes} to force {PRONOUN/p_l/self} to throw up, but it's too late. {PRONOUN/p_l/subject/CAP} {VERB/p_l/do/does}n't make it back to camp.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": ["p_l"],
                 "history_text": {
-                    "reg_death": "r_c died from accidentally eating deathberries."
+                    "reg_death": "m_c died from accidentally eating deathberries."
                 }
             },
             {
@@ -5006,13 +5007,13 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["p_l"],
                         "injuries": ["poisoned"],
                         "scars": []
                     }
                 ],
                 "history_text": {
-                    "reg_death": "r_c died from accidentally eating deathberries."
+                    "reg_death": "m_c died from accidentally eating deathberries."
                 }
             }
         ]
@@ -5058,9 +5059,9 @@
                 "text": "app1 plucks the berries, several splitting in {PRONOUN/app1/poss} mouth, and is surprised at how good they taste - after all, every herb {PRONOUN/app1/subject}{VERB/app1/'re/'s} trying to learn tastes awful, so it's surprising that one tastes good. As {PRONOUN/app1/subject} {VERB/app1/start/starts} back to camp, however, {PRONOUN/app1/subject} {VERB/app1/wobble/wobbles} a bit, and the world goes dark. {PRONOUN/app1/poss/CAP} body is found soon after, but it's already too late to help.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": ["app1"],
                 "history_text": {
-                    "reg_death": "m_c died before completing their medicine cat training, having accidentally eaten deathberries."
+                    "reg_death": "m_c died before completing {PRONOUN/m_c/poss} medicine cat training, having accidentally eaten deathberries."
                 }
             },
             {
@@ -5075,7 +5076,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c died before completing their medicine cat training, having accidentally eaten deathberries."
+                    "reg_death": "app1 died before completing {PRONOUN/app1/poss} medicine cat training, having accidentally eaten deathberries."
                 }
             }
         ]
