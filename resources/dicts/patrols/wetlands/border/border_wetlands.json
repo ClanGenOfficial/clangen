@@ -1141,7 +1141,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c doesn't come back to camp. Their body is found along the border, and o_c_n boasts about it at the next Gathering.",
+                "text": "r_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and r_c doesn't come back to camp. Their body is found along the border, and o_c_n boasts about it at the next Gathering.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -1215,7 +1215,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c loses a life in a vicious fight. o_c_n boasts about it at the next Gathering.",
+                "text": "r_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and r_c loses a life in a vicious fight. o_c_n boasts about it at the next Gathering.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
