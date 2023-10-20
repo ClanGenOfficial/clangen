@@ -239,7 +239,11 @@
                         "scars": ["SNAKE"]
                     }
                 ],
-                "history_text": { "scar": "m_c was scarred by a rattlesnake." },
+                "history_text": { 
+                    "scar": "m_c was scarred by a rattlesnake.",
+                    "reg_death": "m_c succumbed to a rattlesnake bite.",
+                    "lead_death": "succumbed to a rattlesnake bite"
+                 },
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -274,7 +278,7 @@
                 "prey": ["medium"],
                 "relationships": [
                     {
-                        "cats_to": ["r_c"],
+                        "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect"],
@@ -396,7 +400,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "bloodthirsty",
                     "bold",
@@ -438,9 +441,20 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply, the rest of the patrol has to rescue {PRONOUN/s_c/object} from the red vixen.",
                 "exp": 0,
                 "weight": 20,
+                "stat_trait": [
+                    "arrogant",
+                    "ambitious",
+                    "bloodthirsty",
+                    "competitive",
+                    "insecure",
+                    "rebellious",
+                    "troublesome",
+                    "vengeful"
+
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol", "r_c"],
+                        "cats_to": ["s_c", "patrol", "s_c"],
                         "cats_from": ["clan", "clan", "patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
@@ -454,7 +468,6 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "m_c carries a scar from a fight with a red vixen.",
                     "reg_death": "m_c fell in battle with a red fox.",
                     "lead_death": "died while fighting a red vixen"
                 },
@@ -481,8 +494,8 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from a fight with a red vixen.",
-                    "reg_death": "m_c fell in battle with a red fox.",
-                    "lead_death": "died while fighting a red vixen"
+                    "reg_death": "m_c died from a red fox bite.",
+                    "lead_death": "died from a red fox bite"
                 },
                 "relationships": [
                     {
@@ -498,21 +511,32 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up on the fight.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": [
+                    "arrogant",
+                    "ambitious",
+                    "bloodthirsty",
+                    "competitive",
+                    "insecure",
+                    "rebellious",
+                    "troublesome",
+                    "vengeful"
+
+                ],
                 "injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["s_c"],
                         "injuries": ["big_bite_injury"],
                         "scars": ["THREE"]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from a fight with a red vixen.",
-                    "reg_death": "m_c fell in battle with a red fox.",
-                    "lead_death": "died while fighting a red vixen"
+                    "reg_death": "m_c died from a red fox bite.",
+                    "lead_death": "died from a red fox bite"
                 },
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol", "r_c"],
+                        "cats_to": ["s_c", "patrol", "s_c"],
                         "cats_from": ["clan", "clan", "patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
@@ -543,7 +567,7 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol", "r_c"],
+                        "cats_to": ["p_l", "patrol", "p_l"],
                         "cats_from": ["clan", "clan", "patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
@@ -586,7 +610,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "bloodthirsty",
                     "bold",
@@ -628,9 +651,20 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up the fight.",
                 "exp": 0,
                 "weight": 20,
+                "stat_trait": [
+                    "arrogant",
+                    "ambitious",
+                    "bloodthirsty",
+                    "competitive",
+                    "insecure",
+                    "rebellious",
+                    "troublesome",
+                    "vengeful"
+
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol", "r_c"],
+                        "cats_to": ["s_c", "patrol", "s_c"],
                         "cats_from": ["clan", "clan", "patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
@@ -649,7 +683,11 @@
                         "scars": ["NECKBITE"]
                     }
                 ],
-                "history_text": { "scar": "m_c carries a scar from a red fox fight." },
+                "history_text": { 
+                    "scar": "m_c carries a scar from a red fox fight.",
+                    "reg_death": "m_c died from a red fox bite.",
+                    "lead_death": "died from a red fox bite"
+                },
                 "relationships": [
                     {
                         "cats_to": ["r_c", "patrol", "r_c"],
@@ -712,7 +750,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "bloodthirsty",
                     "bold",
@@ -742,7 +779,6 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "m_c carries a scar from a solo fight with a red vixen.",
                     "reg_death": "m_c fell in a solo battle with a red vixen.",
                     "lead_death": "died while fighting a red vixen"
                 },
@@ -769,8 +805,8 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from a solo fight with a red vixen.",
-                    "reg_death": "m_c fell in a solo battle with a red vixen.",
-                    "lead_death": "died while fighting a red vixen"
+                    "reg_death": "m_c died from a red fox bite.",
+                    "lead_death": "died from a red fox bite"
                 },
                 "relationships": [
                     {
@@ -786,17 +822,28 @@
                 "text": "s_c is determined to win, but the red vixen is determined to live, and that makes all the difference. s_c ends up pinned in a defensible hiding spot, bleeding and terrified, until the vixen judges {PRONOUN/s_c/object} no longer a threat and continues on her way.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": [
+                    "arrogant",
+                    "ambitious",
+                    "bloodthirsty",
+                    "competitive",
+                    "insecure",
+                    "rebellious",
+                    "troublesome",
+                    "vengeful"
+
+                ],
                 "injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["s_c"],
                         "injuries": ["big_bite_injury", "shock"],
                         "scars": ["THREE"]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from a solo fight with a red vixen.",
-                    "reg_death": "m_c fell in a solo battle with a red vixen.",
-                    "lead_death": "died while fighting a red vixen"
+                    "reg_death": "m_c died from a red fox bite.",
+                    "lead_death": "died from a red fox bite"
                 },
                 "relationships": [
                     {
@@ -874,7 +921,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "bloodthirsty",
                     "bold",
@@ -916,9 +962,20 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply, the gray vixen slips past {PRONOUN/s_c/object} and flees into the maze of the sand dunes.",
                 "exp": 0,
                 "weight": 20,
+                "stat_trait": [
+                    "arrogant",
+                    "ambitious",
+                    "bloodthirsty",
+                    "competitive",
+                    "insecure",
+                    "rebellious",
+                    "troublesome",
+                    "vengeful"
+
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol"],
+                        "cats_to": ["s_c", "patrol"],
                         "cats_from": ["patrol", "patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
@@ -937,7 +994,11 @@
                         "scars": ["NECKBITE"]
                     }
                 ],
-                "history_text": { "scar": "m_c carries a scar from a fight with a gray vixen." },
+                "history_text": { 
+                    "scar": "m_c carries a scar from a fight with a gray vixen.",
+                    "reg_death": "m_c died from a gray fox bite.",
+                    "lead_death": "died from a gray fox bite"
+                },
                 "relationships": [
                     {
                         "cats_to": ["r_c", "patrol"],
@@ -949,20 +1010,35 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking {PRONOUN/s_c/object} ass over paws as she flees from the patrol.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking {PRONOUN/s_c/object} rump over paws as she flees from the patrol.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": [
+                    "arrogant",
+                    "ambitious",
+                    "bloodthirsty",
+                    "competitive",
+                    "insecure",
+                    "rebellious",
+                    "troublesome",
+                    "vengeful"
+
+                ],
                 "injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["s_c"],
                         "injuries": ["minor_injury"],
                         "scars": ["NECKBITE"]
                     }
                 ],
-                "history_text": { "scar": "m_c carries a scar from a fight with a gray vixen." },
+                "history_text": { 
+                    "scar": "m_c carries a scar from a fight with a gray vixen.",
+                    "reg_death":"m_c died from a gray fox bite.",
+                    "lead_death":"died from a gray fox bite"
+                },
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol"],
+                        "cats_to": ["s_c", "patrol"],
                         "cats_from": ["patrol", "patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
@@ -993,7 +1069,7 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol"],
+                        "cats_to": ["p_l", "patrol"],
                         "cats_from": ["patrol", "patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
@@ -1036,7 +1112,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "bloodthirsty",
                     "bold",
@@ -1078,9 +1153,20 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply, the gray vixen slips past {PRONOUN/s_c/object} and flees into the maze of the sand dunes.",
                 "exp": 0,
                 "weight": 20,
+                "stat_trait": [
+                    "arrogant",
+                    "ambitious",
+                    "bloodthirsty",
+                    "competitive",
+                    "insecure",
+                    "rebellious",
+                    "troublesome",
+                    "vengeful"
+
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol"],
+                        "cats_to": ["s_c", "patrol"],
                         "cats_from": ["patrol", "patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
@@ -1099,7 +1185,11 @@
                         "scars": ["LEGBITE"]
                     }
                 ],
-                "history_text": { "scar": "m_c carries a scar from a fight with a gray vixen." },
+                "history_text": { 
+                    "scar": "m_c carries a scar from a fight with a gray vixen.",
+                    "reg_death": "m_c died from a gray fox bite.",
+                    "lead_death": "died from a gray fox bite"
+                },
                 "relationships": [
                     {
                         "cats_to": ["r_c", "patrol"],
@@ -1111,20 +1201,35 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking them ass over paws as she flees from the patrol.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking {PRONOUN/s_c/object} rump over paws as she flees from the patrol.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": [
+                    "arrogant",
+                    "ambitious",
+                    "bloodthirsty",
+                    "competitive",
+                    "insecure",
+                    "rebellious",
+                    "troublesome",
+                    "vengeful"
+
+                ],
                 "injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["s_c"],
                         "injuries": ["minor_injury"],
                         "scars": ["LEGBITE"]
                     }
                 ],
-                "history_text": { "scar": "m_c carries a scar from a fight with a gray vixen." },
+                "history_text": { 
+                    "scar": "m_c carries a scar from a fight with a gray vixen.",
+                    "reg_death": "m_c died from a gray fox bite.",
+                    "lead_death": "died from a gray fox bite"
+                },
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol"],
+                        "cats_to": ["s_c", "patrol"],
                         "cats_from": ["patrol", "patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
@@ -1198,7 +1303,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "bloodthirsty",
                     "bold",
@@ -1240,6 +1344,17 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply, the gray vixen slips past {PRONOUN/s_c/object} and flees into the maze of the sand dunes.",
                 "exp": 0,
                 "weight": 20,
+                "stat_trait": [
+                    "arrogant",
+                    "ambitious",
+                    "bloodthirsty",
+                    "competitive",
+                    "insecure",
+                    "rebellious",
+                    "troublesome",
+                    "vengeful"
+
+                ],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1261,7 +1376,11 @@
                         "scars": ["ONE"]
                     }
                 ],
-                "history_text": { "scar": "m_c carries a scar from a solo fight with a gray vixen." },
+                "history_text": { 
+                    "scar": "m_c carries a scar from a solo fight with a gray vixen.",
+                    "reg_death": "m_c died from a gray fox bite.",
+                    "lead_death": "died from a gray fox bite"
+                },
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1276,14 +1395,29 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the stocky gray vixen is cunning, sinking her teeth into s_c to distract {PRONOUN/s_c/object} as she flees.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": [
+                    "arrogant",
+                    "ambitious",
+                    "bloodthirsty",
+                    "competitive",
+                    "insecure",
+                    "rebellious",
+                    "troublesome",
+                    "vengeful"
+
+                ],
                 "injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["s_c"],
                         "injuries": ["big_bite_injury"],
                         "scars": ["ONE"]
                     }
                 ],
-                "history_text": { "scar": "m_c carries a scar from a solo fight with a gray vixen." },
+                "history_text": { 
+                    "scar": "m_c carries a scar from a solo fight with a gray vixen.",
+                    "reg_death": "m_c died from a gray fox bite.",
+                    "lead_death": "died from a gray fox bite"
+                },
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1334,14 +1468,14 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["p_l", "r_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
                     },
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["p_l", "r_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["dislike"],
@@ -1355,9 +1489,8 @@
                 "weight": 10,
                 "dead_cats": ["app1"],
                 "history_text": {
-                    "scar": "This cat was scarred by the poison of the death tree while it was raining.",
-                    "reg_death": "This cat died because of the poison of a death tree while it was raining.",
-                    "lead_death": "This cat lost a life because of the poison of a death tree while it was raining."
+                    "reg_death": "m_c was killed by the poison of a death tree raining down on {PRONOUN/m_c/object}.",
+                    "lead_death": "{VERB/m_c/were/was} killed by the poison of a death tree raining down on {PRONOUN/m_c/object"
                 },
                 "relationships": [
                     {
@@ -1384,13 +1517,13 @@
                     {
                         "cats": ["app1"],
                         "injuries": ["burn"],
-                        "scars": ["BURNRUMP"]
+                        "scars": ["BURNRUMP", "BURNPAWS"]
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat was scarred by the poison of the death tree while it was raining.",
-                    "reg_death": "This cat died because of the poison of a death tree while it was raining.",
-                    "lead_death": "This cat lost a life because of the poison of a death tree while it was raining."
+                    "scar": "This cat was scarred by the poison of the death tree.",
+                    "reg_death": "m_c died from burns caused by the poison of the death tree.",
+                    "lead_death": "died from burns caused by the poison of the death tree"
                 },
                 "relationships": [
                     {
