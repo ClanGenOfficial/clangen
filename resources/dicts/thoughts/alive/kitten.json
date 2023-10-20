@@ -383,7 +383,7 @@
             "Wakes r_c in the middle of the night to ask a question about snails",
             "Wakes up early to say hello to the dawn patrol",
             "Follows r_c around so closely that {PRONOUN/m_c/subject} step on {PRONOUN/r_c/poss} paw",
-            "Says hello to r_c at least 10 times in a row, until {PRONOUN/r_c/subject} finally says hello back",
+            "Says hello to r_c at least 10 times in a row, until {PRONOUN/r_c/subject} finally {VERB/r_c/say/says} hello back",
             "Is showing everycat the bug {PRONOUN/m_c/subject} caught earlier",
             "Is in r_c's way... again",
             "Yowls loudly in the middle of the clearing for absolutely no reason",
