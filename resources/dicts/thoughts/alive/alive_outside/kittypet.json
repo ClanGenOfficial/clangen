@@ -22,7 +22,7 @@
             "Is tangled up in a large ball of yarn",
             "Is stretching on {PRONOUN/m_c/poss} scratching post",
             "Wishes {PRONOUN/m_c/poss} housefolk cared more about {PRONOUN/m_c/object}",
-            "Saw warriors pass {PRONOUN/m_c/poss} housefolk den",
+            "Saw warriors pass {PRONOUN/m_c/poss} housefolk's den",
             "Is hanging with {PRONOUN/m_c/poss} housefolk",
             "Is playing with the housefolk's kits",
             "Is enjoying a nice meal",
@@ -97,7 +97,7 @@
             "Chatters at the birds outside",
             "Wonders if {PRONOUN/m_c/subject} could survive in the wild",
             "Tries to look cute for the housefolk's kits",
-            "Mumble at annoyance when {PRONOUN/m_c/poss} housefolk won't let {PRONOUN/m_c/object} go outside",
+            "Mumbles in annoyance when {PRONOUN/m_c/poss} housefolk won't let {PRONOUN/m_c/object} go outside",
             "Wonders if {PRONOUN/m_c/poss} littermates are nearby"
         ],
         "main_age_constraint": [
@@ -123,7 +123,7 @@
             "Was wandering in the backyard when a strange noise scared {PRONOUN/m_c/object} back inside",
             "Left {PRONOUN/m_c/poss} den to go scratch up that tree {PRONOUN/m_c/subject} {VERB/m_c/have/had} been eyeing",
             "Is glad {PRONOUN/m_c/poss} housefolk collar {PRONOUN/m_c/object} on a leash to walk {PRONOUN/m_c/object} outside",
-            "Heard the yowls of a recent battle in the distances",
+            "Heard the yowls of a recent battle in the distance",
             "Is wandering in {PRONOUN/m_c/poss} neighborhood",
             "Breathes in a sigh of relief when {PRONOUN/m_c/subject} {VERB/m_c/escape/escapes} some dogs"
         ],

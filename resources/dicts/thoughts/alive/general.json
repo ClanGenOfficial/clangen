@@ -684,12 +684,12 @@
         "id": "gen_former_kittypet",
         "thoughts": [
             "Is reflecting on how different {PRONOUN/m_c/poss} life is now",
-            "Is trying to remember the taste of the food {PRONOUN/m_c/poss} twolegs used to give {PRONOUN/m_c/poss}",
+            "Is trying to remember the taste of the food {PRONOUN/m_c/poss} Twolegs used to give {PRONOUN/m_c/object}",
             "Is ignoring gossip about {PRONOUN/m_c/poss} kittypet past",
-            "Works twice as hard to prove {PRONOUN/m_c/poss} worth to the clanborn cats",
+            "Works twice as hard to prove {PRONOUN/m_c/poss} worth to the Clanborn cats",
             "Wishes others would stop thinking that {PRONOUN/m_c/subject}{verb/m_c/'re/'s} soft because of {PRONOUN/m_c/poss} kittypet past",
             "Wistfully thinks of {PRONOUN/m_c/poss} soft kittypet nest while trying to nap",
-            "Wonders what became of {PRONOUN/m_c/poss} twolegs",
+            "Wonders what became of {PRONOUN/m_c/poss} Twolegs",
             "Is doing {PRONOUN/m_c/poss} best to learn Clan customs",
             "Isn't ashamed of {PRONOUN/m_c/poss} past",
             "Isn't living with a paw in each world"
@@ -704,7 +704,7 @@
             "Is worried {PRONOUN/m_c/subject} will never fit in",
             "Refuses to let {PRONOUN/m_c/poss} past kittypet life hold {PRONOUN/m_c/object} back",
             "Wants to play with {PRONOUN/r_c/poss} old kittypet toys",
-            "Avoids the twoleg place to prove {PRONOUN/m_c/poss} loyalty"
+            "Avoids the Twoleg place to prove {PRONOUN/m_c/poss} loyalty"
         ],
         "main_backstory_constraint": ["kittypet1", "kittypet2", "kittypet3", "kittypet4", "refugee3", "tragedy_survivor3", "guided1"],
         "main_status_constraint": ["apprentice"]
@@ -713,10 +713,10 @@
         "id": "gen_former_kittypet_apprentice_to_apprentice",
         "thoughts": [
             "Wishes r_c would stop teasing {PRONOUN/m_c/object} about being a kittypet",
-            "Tells r_c about twoleg behaviour",
+            "Tells r_c about Twoleg behaviour",
             "Is asking r_c about certain clan customs",
             "Wonders if r_c thinks less of {PRONOUN/m_c/object} because of {PRONOUN/m_c/poss} past",
-            "Spends all day trying to outshine r_c and prove former kittypets are just as good as clanborn apprentices",
+            "Spends all day trying to outshine r_c and prove former kittypets are just as good as Clanborn apprentices",
             "Is jealous of how well r_c fits in, just because of {PRONOUN/r_c/poss} clan roots",
             "Patiently answers r_c's slightly rude questions about kittypet life"
         ],
@@ -728,10 +728,10 @@
     {
         "id": "gen_former_kittypet_medcat",
         "thoughts": [
-            "Uses knowledge from {PRONOUN/r_c/poss} time with twolegs to improve a healing method",
+            "Uses knowledge from {PRONOUN/r_c/poss} time with Twolegs to improve a healing method",
             "Wonders what {PRONOUN/r_c/poss} old vet would do for greencough",
             "Is annoyed by Clan gossip surrounding {PRONOUN/m_c/poss} past and {PRONOUN/m_c/poss} connection to StarClan",
-            "Knows a great garden in the twoleg place for gathering catmint",
+            "Knows a great garden in the Twoleg place for gathering catmint",
             "Wishes {PRONOUN/m_c/subject} could get {PRONOUN/m_c/poss} paws on the wrappings the vet uses"
         ],
         "main_backstory_constraint": ["kittypet1", "kittypet2", "kittypet3", "kittypet4", "refugee3", "tragedy_survivor3", "guided1"],
