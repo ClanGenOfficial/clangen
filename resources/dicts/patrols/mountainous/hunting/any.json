@@ -1114,8 +1114,7 @@
                 "weight": 20,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "reg_death": "m_c {VERB/m_c/were/was} taken as the Mothman's snack.",
-                    "lead_death": "{VERB/m_c/were/was} taken as the Mothman's snack."
+                    "reg_death": "m_c {VERB/m_c/were/was} taken as the Mothman's snack."
                 },
                 "art": "mothman_OUTCOME"
             },
@@ -1125,8 +1124,7 @@
                 "weight": 20,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "reg_death": "m_c {VERB/m_c/were/was} killed by the collapsing mountain slopes, an event predicted by the appearance of the Mothman.",
-                    "lead_death": "{VERB/m_c/were/was} killed by the collapsing mountain slopes, an event predicted by the appearance of the Mothman."
+                    "reg_death": "m_c {VERB/m_c/were/was} killed by the collapsing mountain slopes, an event predicted by the appearance of the Mothman."
                 },
                 "art": "mothman_OUTCOME"
             }
