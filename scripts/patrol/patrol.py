@@ -98,9 +98,9 @@ class Patrol():
         
         if path == "decline":
             if self.patrol_event:
-                return self.process_text(self.patrol_event.decline_text, None), ""
+                return self.process_text(self.patrol_event.decline_text, None), "", None
             else:
-                return "Error - no event chosen", ""
+                return "Error - no event chosen", "", None
         
         return self.determine_outcome(antagonize=(path == "antag"))
         
