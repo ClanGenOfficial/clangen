@@ -24,7 +24,7 @@
             "other_cat",
             "other_cat_mentor"
         ],
-        "death_text": "r_c noticed m_c hadn't shown up for training again, yet after further prodding realized {PRONOUN/m_c/subject} hadn't been at camp for a few days. However, r_c never expected to find m_c like this: dead and dried out, round black beetles crawling in, out, and across {PRONOUN/m_c/poss} once lively pelt.",
+        "death_text": "r_c noticed m_c hadn't shown up for training again, yet after further prodding realized {PRONOUN/m_c/subject} hadn't been at camp for a few days. However, r_c never expected to find m_c like this: dead and dried out, their tattered pelt lifeless and dull.",
         "history_text": {
                         "reg_death": "m_c died due to dehydration and overheating."
                         },
@@ -60,7 +60,7 @@
          "other_cat",
          "other_cat_parent"
         ],
-        "death_text": "r_c is frantic with worry; m_c, {PRONOUN/r_c/poss} child, hadn't been seen around camp, no matter who {PRONOUN/r_c/subject} asked and where {PRONOUN/r_c/subject} searched. It's not until r_c stumbles across m_c's body, withered under the sun and being feasted on by black and orange butterflies, with a despairing sound, that {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/poss} greatest fears have come true.",
+        "death_text": "r_c is frantic with worry; m_c, {PRONOUN/r_c/poss} child, hadn't been seen around camp, no matter who {PRONOUN/r_c/subject} asked and where {PRONOUN/r_c/subject} searched. It's not until r_c stumbles across m_c's body, withered under the sun, that, with a despairing sound, {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/poss} greatest fears have come true.",
         "history_text": {
                      "reg_death": "m_c shriveled up under the sun because of heat exhaustion and dehydration."
                  },
@@ -94,7 +94,7 @@
             "other_cat",
             "other_cat_mentor"
         ],
-        "death_text": "m_c knew {PRONOUN/m_c/subject} made a mistake, as {PRONOUN/m_c/subject} felt {PRONOUN/m_c/poss} last bits of strength slip away from {PRONOUN/m_c/object} and {PRONOUN/m_c/poss} heart stopped beating. {PRONOUN/m_c/poss/CAP} body only discovered days later, r_c wailing at the shriveled body of {PRONOUN/r_c/poss} apprentice, who succumbed to heat and dehydration, covered in beetles.",
+        "death_text": "m_c knew {PRONOUN/m_c/subject} made a mistake, as {PRONOUN/m_c/subject} felt {PRONOUN/m_c/poss} last bits of strength slip away from {PRONOUN/m_c/object} and {PRONOUN/m_c/poss} heart stopped beating. {PRONOUN/m_c/poss/CAP} body only discovered days later, r_c wailing at the shriveled body of {PRONOUN/r_c/poss} apprentice, who succumbed to heat and dehydration.",
         "history_text": {
                         "reg_death": "m_c succumbed to dehydration and heat exhaustion."
                         },
@@ -130,7 +130,7 @@
          "other_cat",
          "other_cat_parent"
         ],
-        "death_text": "m_c  never meant to meet StarClan this way, rotting away under the sun after fainting from dehydration, heat exhaustion, and overexertion. r_c tragically discovers {PRONOUN/m_c/poss} body, unable to stop {PRONOUN/r_c/poss} desperate wails at the site of {PRONOUN/r_c/poss} child's decaying corpse, being feasted on by butterflies and other scavengers.",
+        "death_text": "m_c  never meant to meet StarClan this way, rotting away under the sun after fainting from dehydration, heat exhaustion, and overexertion. r_c tragically discovers {PRONOUN/m_c/poss} body, unable to stop {PRONOUN/r_c/poss} desperate wails at the site of {PRONOUN/r_c/poss} child's body.",
         "history_text": {
                      "reg_death": "m_c tragically died due to dehydration and overheating."
                  },
@@ -148,7 +148,7 @@
          "other_cat",
          "other_cat_adult"
         ],
-        "death_text": "r_c's mournful sounds pierced through c_n's territory as {PRONOUN/r_c/subject} stumble on the lifeless, decaying corpse of m_c. m_chad disappeared from camp days ago, having not returned, but only now did r_c understand why  {PRONOUN/r_c/poss} child didn't come back home; Rose was caught out in the treacherous sun, ill-prepared, succumbing to dehydration and exhaustion.",
+        "death_text": "r_c's mournful sounds pierced through c_n's territory as {PRONOUN/r_c/subject} stumble on the lifeless, decaying corpse of m_c. m_c had disappeared from camp days ago, having not returned, but only now did r_c understand why  {PRONOUN/r_c/poss} child didn't come back home; Rose was caught out in the treacherous sun, ill-prepared, succumbing to dehydration and exhaustion.",
         "history_text": {
                      "reg_death": "m_c died because of overheating and dehydration."
                  },
