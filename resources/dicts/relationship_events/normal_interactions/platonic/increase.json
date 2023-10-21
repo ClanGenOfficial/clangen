@@ -431,7 +431,7 @@
 		"interactions": [
 			"m_c greets r_c as {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} exiting the warriors' den.",
 			"m_c chats quietly with r_c while they're both on camp guard duty.",
-			"m_c thanks r_c for covering for {PRONOUN/m_c/subject} during a patrol earlier."
+			"m_c thanks r_c for covering for {PRONOUN/m_c/object} during a patrol earlier."
 		],
 		"main_status_constraint": [
 			"warrior"
