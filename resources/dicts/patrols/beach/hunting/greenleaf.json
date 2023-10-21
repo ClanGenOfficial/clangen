@@ -1055,7 +1055,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking {PRONOUN/s_c/object} ass over paws as she flees from the patrol.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking {PRONOUN/s_c/object} rump over paws as she flees from the patrol.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -1245,7 +1245,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking {PRONOUN/s_c/object} ass over paws as she flees from the patrol.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking {PRONOUN/s_c/object} rump over paws as she flees from the patrol.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
