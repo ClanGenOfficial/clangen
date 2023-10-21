@@ -2015,5 +2015,51 @@
                 "prey": ["very_small"]
             }
         ]
-    }
+    },
+    {
+    	"patrol_id": "pln_hunt_pipistrellebats1",
+    	"biome": ["plains"],
+    	"season": ["leaf-fall"],
+    	"types": ["hunting"],
+    	"tags": ["halloween", "romance"],
+    	"patrol_art": "pipbats_INTRO",
+    	"min_cats": 3,
+    	"max_cats": 6,
+    	"min_max_status": {},
+    	"weight": 20,
+    	"intro_text": "As the wind scatters the orange leaf-pelts of the lonely trees on the grasslands, pipistrelle bats arrive en masse to court, males belting out their high pitched songs of love.",
+    	"decline_text": "How very... squeaky.",
+    	"chance_of_success": 50,
+    	"success_outcomes": [
+        	{
+            	"text": "Distracted by love and the competition of performances to win it, the males make easy hunting for their delighted audience of c_n cats.",
+            	"exp": 25,
+            	"weight": 20,
+            	"prey": ["medium"]
+        	},
+        	{
+            	"text": "p_l watches r_c leap with the thrill of the hunt, quite literally snatching victory from thin air. {PRONOUN/p_l/subject}'d feel sorry for the lover bats - but r_c is just showing who the best potential mates are. Showing the pipistrelles, of course. No one else.",
+            	"exp": 20,
+            	"weight": 20,
+            	"relationships": [
+                	{
+                    	"cats_to": ["r_c"],
+                    	"cats_from": ["p_l"],
+                    	"mutual": false,
+                    	"values": ["romantic", "respect"],
+                    	"amount": 10
+                	}
+            	],
+            	"prey": ["medium"]
+        	}
+    	],
+    	"fail_outcomes": [
+        	{
+            	"text": "How is anyone supposed to hunt with all this ringing in their ears?!",
+            	"exp": 0,
+            	"weight": 20
+        	}
+    	]
+	}
+
 ]

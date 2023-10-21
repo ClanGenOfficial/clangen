@@ -1,1 +1,161 @@
-[]
+[
+    {
+    "patrol_id": "fst_train_playinginleaves1",
+    "biome": ["forest"],
+    "season": ["leaf-fall"],
+    "types": ["training"],
+    "tags": [],
+    "patrol_art": "train_general_intro",
+    "min_cats": 4,
+    "max_cats": 6,
+    "min_max_status": {
+        "apprentice": [2, 4],
+        "normal adult": [2,4]
+    },
+    "weight": 20,
+    "intro_text": "The leaves drift high in sunset piles beneath the shedding trees, and as the patrol wanders familiar forest paths, app1 gets swallowed up.",
+    "decline_text": "app1 reappears soon enough, a bright red leaf plastered to {PRONOUN/app1/poss} forehead.",
+    "chance_of_success": 60,
+    "success_outcomes": [
+        {
+            "text": "app1 explodes out of the leaf drift, bowling over app2! Laughing, p_l bats at r_c, claws sheathed, and skids off the path into the leaves as the patrol devolves into rustling, raucous, riotous fun.",
+            "exp": 10,
+            "weight": 20,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic", "trust"],
+                    "amount": 10
+                },
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["dislike"],
+                    "amount": -5
+                }
+            ]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "app1? app1?! It takes a good while to recover the apprentice from the far-deeper-than-expected leaf drift. No one is hurt, but it certainly derails the training they were intending on doing.",
+            "exp": 0,
+            "weight": 20
+        }
+    ]
+},
+{
+    "patrol_id": "fst_train_playinginleaves2",
+    "biome": ["forest"],
+    "season": ["leaf-fall"],
+    "types": ["training"],
+    "tags": ["romantic"],
+    "patrol_art": "train_general_intro",
+    "min_cats": 4,
+    "max_cats": 6,
+    "min_max_status": {
+        "apprentice": [2, 4],
+        "normal adult": [2,2]
+    },
+    "weight": 20,
+    "intro_text": "The leaves drift high in sunset piles beneath the shedding trees, and as the patrol wanders familiar forest paths, app1 gets swallowed up.",
+    "decline_text": "app1 reappears soon enough, a bright red leaf plastered to {PRONOUN/app1/poss} forehead.",
+    "chance_of_success": 60,
+    "success_outcomes": [
+        {
+            "text": "app1 leaps out of the leaf drift, sending p_l falling into r_c as {PRONOUN/app1/subject} {VERB/app1/leap/leaps} onwards to bowl app2 into yet more leaves. The two apprentices descend into furious mock combat, yowling with excitement, as p_l gazes up at r_c in bewilderment.",
+            "exp": 10,
+            "weight": 20,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic", "trust"],
+                    "amount": 10
+                },
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["dislike"],
+                    "amount": -5
+                },
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["r_c"],
+                    "mutual": true,
+                    "values": ["romantic"],
+                    "amount": 10
+                }
+            ]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "app1? app1?! It takes a good while to recover the apprentice from the far-deeper-than-expected leaf drift. No one is hurt, but it certainly derails the training they were intending on doing.",
+            "exp": 0,
+            "weight": 20
+        }
+    ]
+},
+{
+    "patrol_id": "fst_train_playinginleaves3",
+    "biome": ["forest"],
+    "season": ["leaf-fall"],
+    "types": ["training"],
+    "tags": ["romantic", "rom_two_apps"],
+    "patrol_art": "train_general_intro",
+    "min_cats": 4,
+    "max_cats": 6,
+    "min_max_status": {
+        "apprentice": [2, 2],
+        "normal adult": [2,4]
+    },
+    "weight": 20,
+    "intro_text": "The leaves drift high in sunset piles beneath the shedding trees, and as the patrol wanders familiar forest paths, app1 gets swallowed up.",
+    "decline_text": "app1 reappears soon enough, a bright red leaf plastered to {PRONOUN/app1/poss} forehead.",
+    "chance_of_success": 60,
+    "success_outcomes": [
+        {
+            "text": "app1 leaps out of the leaf drift, bowling app2 head over paws and batting at {PRONOUN/app2/subject} furiously. p_l and r_c share a long, exasperated look, rolling their eyes as the apprentices flicker between yelling insults and flirting while they spar. p_l's sure the apprentices think they're <i>very</i> subtle.",
+            "exp": 10,
+            "weight": 20,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic", "trust"],
+                    "amount": 10
+                },
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["dislike"],
+                    "amount": -5
+                },
+                {
+                    "cats_to": ["app1"],
+                    "cats_from": ["app2"],
+                    "mutual": true,
+                    "values": ["romantic"],
+                    "amount": 10
+                }
+            ]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "app1? app1?! It takes a good while to recover the apprentice from the far-deeper-than-expected leaf drift. No one is hurt, but it certainly derails the training they were intending on doing.",
+            "exp": 0,
+            "weight": 20
+        }
+    ]
+}
+
+]

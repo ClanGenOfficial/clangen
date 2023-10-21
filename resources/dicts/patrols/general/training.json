@@ -4315,6 +4315,54 @@
                 "stat_trait": ["troublesome", "childish", "playful", "shameless"]
             }
         ]
-    }
+    },
+    {
+    	"patrol_id": "gen_train_deathsheadmoth1",
+    	"biome": ["Any"],
+    	"season": ["Any"],
+    	"types": ["training"],
+    	"tags": [],
+    	"patrol_art": "deathsheadmoth_INTRO",
+    	"min_cats": 4,
+    	"max_cats": 6,
+    	"min_max_status": {
+        	"normal adult": [1, 6]
+    	},
+    	"weight": 40,
+    	"intro_text": "p_l is out alone in c_n's territory when a shiver runs down {PRONOUN/p_l/poss} spine. {PRONOUN/p_l/subject/CAP} {VERB/p_l/stop/stops}. {PRONOUN/p_l/subject/CAP} slowly {VERB/p_l/turn/turns} {PRONOUN/p_l/poss} head. On the rosemary bush next to {PRONOUN/p_l/object}, the moth lazily stretches its wings, the Twoleg skull on its back grinning.",
+    	"decline_text": "It's just a moth, p_l tells {PRONOUN/p_l/self}, and continues on {PRONOUN/p_l/poss} way.",
+    	"chance_of_success": 70,
+    	"pl_skill_constraint": ["OMEN,3"],
+    	"success_outcomes": [
+        	{
+            	"text": "That- that's a Death's Head Moth, and suddenly p_l is running, charging, pelting forward towards the training grounds where r_c and the others said they'd be training today. {PRONOUN/p_l/subject/CAP} {VERB/p_l/skid/skids} forward, bursting into the area, barging into the training group and knocking cats aside - stop the exercise, stop training, STOP EVERYTHING!",
+            	"exp": 50,
+            	"weight": 20,
+            	"relationships": [
+                	{
+                    	"cats_to": ["p_l"],
+                    	"cats_from": ["patrol"],
+                    	"mutual": false,
+                    	"values": ["comfort", "trust", "respect"],
+                    	"amount": 15
+                	}
+            	]
+        	}
+    	],
+    	"fail_outcomes": [
+        	{
+            	"text": "Surely, surely it's nothing - but p_l can't deny {PRONOUN/p_l/poss} instincts. This Death's Head Moth is an omen, and {PRONOUN/p_l/subject} {VERB/p_l/take/takes} off running, sprinting towards the training arena where {PRONOUN/p_l/poss} Clanmates said they'd be. But it's too late. By the time p_l arrives, r_c is choking on {PRONOUN/r_c/poss} last breaths, victim of a terrible accident.",
+            	"exp": 0,
+            	"weight": 20,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "reg_death": "m_c died in a terrible training accident, foretold by a Death's Head Moth.",
+                    "leader_death": "died in a terrible training accident, foretold by a Death's Head Moth"
+   		        }
+            	
+        	}
+    	]
+	}
+
     
 ]

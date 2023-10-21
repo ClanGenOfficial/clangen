@@ -1060,7 +1060,7 @@
         "season": ["Any"],
         "types": ["hunting"],
         "tags": ["halloween"],
-        "patrol_art": "mtn_mothman_INTRO",
+        "patrol_art": "mothman_INTRO",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1074,7 +1074,8 @@
             {
                 "text": "r_c turns tail and runs, feeling air ruffle their fur as <i>something</i> passes overhead while they pelt for home, without even the breath to waste on wailing.",
                 "exp": 35,
-                "weight": 20
+                "weight": 20,
+                "outcome_art": "mothman_OUTCOME"
             },
             {
                 "text": "r_c returns home from their uneventful patrol.",
@@ -1104,7 +1105,8 @@
                         "cats": ["r_c"],
                         "injuries": ["seizure prone"]
                     }
-                ]
+                ],
+                "outcome_art": "mothman_OUTCOME"
             },
             {
                 "text": "r_c doesn't return home.",
@@ -1113,7 +1115,8 @@
                 "dead_cats": ["r_c"],
                 "history_text": {
                     "reg_death": "m_c was taken as the mothman's snack."
-                }
+                },
+                "outcome_art": "mothman_OUTCOME"
             },
             {
                 "text": "The vast moth-Twoleg flies off, and r_c tries to shake off the encounter - but the mountain itself seems to be against them tonight, collapsing beneath their feet.",
@@ -1122,7 +1125,8 @@
                 "dead_cats": ["r_c"],
                 "history_text": {
                     "reg_death": "This cat was killed by the mountain slopes collapsing beneath them, an event predicted by the appearance of the mothman."
-                }
+                },
+                "outcome_art": "mothman_OUTCOME"
             }
         ]
     },
@@ -1132,7 +1136,7 @@
         "season": ["Any"],
         "types": ["hunting"],
         "tags": ["halloween"],
-        "patrol_art": "mtn_hunt_belledbuzzard_INTRO",
+        "patrol_art": "belledbuzzard_INTRO",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -1145,7 +1149,8 @@
                 "text": "The ringing intrigues your cats, leading them to where a buzzard circles, bell tolling the death of the stag wedged by his antlers between a rocky outcrop. An ominous sign for the stag - a bounty for the Clan.",
                 "exp": 35,
                 "weight": 20,
-                "prey": ["huge"]
+                "prey": ["huge"],
+                "outcome_art": "belledbuzzard_OUTCOME"
             }
         ],
         "fail_outcomes": [
@@ -1162,7 +1167,8 @@
                 "history_text": {
                     "reg_death": "m_c died from the yellowcough brought to the Clan by the Belled Buzzard.",
                     "leader_death": "died from the yellowcough brought by the Belled Buzzard"
-                }
+                },
+                "outcome_art": "belledbuzzard_OUTCOME"
             }
         ]
     }

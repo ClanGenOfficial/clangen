@@ -1404,7 +1404,108 @@
                 "stat_trait": ["troublesome", "childish", "playful", "shameless"]
             }
         ]
+    },
+    {
+        "patrol_id": "gen_bord_trickortreat",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "leaf-fall"
+        ],
+        "types": [
+            "border"
+        ],
+        "tags": [
+            "halloween"
+        ],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "The patrol stumbles upon a strange scene near a Twolegplace: Twoleg kits traveling from den to den in colorful pelts.",
+        "decline_text": "The patrol decides it's best not to interfere with this peculiar ritual.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "r_c, being ever so curious, decides to see if {PRONOUN/r_c/subject} can decipher the meaning behind this Twoleg ritual. After some time, {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} it's some kind of friendly exchange. Each time the Twoleg kits go to the den, they receive a bit of prey from the older Twolegs. The patrol takes note and continues on their way, amused by the strange Twoleg customs.",
+                "exp": 10,
+                "weight": 20
+            },
+            {
+                "text": "r_c cautiously approaches the Twoleg kits, intrigued by their colorful pelts. To r_c's surprise, one of the tiny Twolegs offers {PRONOUN/r_c/object} a strange, shiny object. It doesn't smell exactly like prey, but r_c decides to take it back to the camp for further investigation.",
+                "exp": 10,
+                "weight": 20
+            },
+            {
+                "text": "r_c decides to mimic the small Twolegs. Approaching a larger Twoleg den, {PRONOUN/r_c/subject} {VERB/r_c/meow/meows) softly at the entrance. The Twoleg that opens the entrance seems amused and hands r_c a morsel of food. The patrol decides to inspect it further once they return to camp.",
+                "exp": 10,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c, being ever so curious, decides to see if {PRONOUN/r_c/subject} can decipher the meaning behind this Twoleg ritual. However, after some time, {PRONOUN/r_c/subject} {VERB/r_c/give/gives} up, concluding that it's just another strange Twoleg custom that Clan cats will never understand.",
+                "exp": 0,
+                "weight": 10
+            },
+            {
+                "text": "The patrol attempts to get closer to the Twoleg kits, but their presence causes panic among the little creatures. The larger Twolegs nearby seem agitated, waving their paws and stomping around. The cats quickly retreat to avoid causing further disruption.",
+                "exp": 0,
+                "weight": 10
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_bord_scarecrow",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["halloween"],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "On the outskirts of the territory, the patrol comes across a tall, motionless Twoleg rooted in the middle of a field.",
+        "decline_text": "The patrol doesn't want to risk going near this strange Twoleg and quickly heads back to camp to report the odd sighting.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "r_c hesitantly approaches the Twoleg, fur bristling and on guard. It doesn't appear to notice {PRONOUN/r_c/object} yet. Paw by paw, r_c inches forward, but realizes something seems off. Is this Twoleg... even alive? With some more investigation, r_c finds hay sticking out of the Twoleg's pelt. How odd. r_c reports back with {PRONOUN/r_c/poss} findings.",
+                "exp": 10,
+                "weight": 20
+            },
+            {
+                "text": "s_c sneaks up behind the Twoleg. With a mighty roar, s_c leaps onto its back and {PRONOUN/s_c/poss} momentum sends the Twoleg falling to the ground with a giant thump.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,0"]
+            },
+            {
+                "text": "s_c stops the patrol, narrowing {PRONOUN/s_c/poss} eyes. That isn't a Twoleg! {PRONOUN/s_c/subject} came across one before during {PRONOUN/s_c/object} time outside the Clan. It's a 'scarecrow', {PRONOUN/s_c/subject} {VERB/s_c/explain/explains}, meant to protect the Twoleg fields from harm. The patrol continues on their way, giving the scarecrow a wide berth.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["ROGUE,0", "LONER,0"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol decides to take no chances and sets up an ambush around the Twoleg. They wait... and wait... but the Twoleg makes no movements to attack. Finally, r_c notices that the Twoleg isn't even a Twoleg at all! They wasted all of that time for nothing.",
+                "exp": 0,
+                "weight": 10
+            },
+            {
+                "text": "s_c sneaks up behind the Twoleg. With a mighty roar, s_c leaps onto its back and {PRONOUN/s_c/poss} momentum sends both of them to the ground. s_c ends up covered in hay, {PRONOUN/s_c/poss} claws sunk into a harmless scarecrow.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,0"]
+            }
+        ]
     }
+
+
     
 
 ]
