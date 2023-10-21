@@ -4,6 +4,8 @@ import random
 from random import choice, randint, choices
 from typing import List, Dict, Union, Tuple, TYPE_CHECKING
 import re
+import pygame
+from os.path import exists as path_exists
 
 if TYPE_CHECKING:
     from scripts.patrol.patrol import Patrol
@@ -57,6 +59,8 @@ class PatrolOutcome():
             other_clan_rep: Union[int, None] = None,
             relationship_effects: List[dict] = None,
             relationship_constaints: List[str] = None,
+            outcome_art: Union[str, None] = None,
+            outcome_art_clean: Union[str, None] = None,
             stat_cat: Cat = None):
         
         self.success = success
@@ -82,6 +86,8 @@ class PatrolOutcome():
         self.other_clan_rep = other_clan_rep
         self.relationship_effects = relationship_effects if relationship_effects is not None else []
         self.relationship_constaints = relationship_constaints if relationship_constaints is not None else []
+        self.outcome_art = outcome_art
+        self.outcome_art_clean = outcome_art_clean
         
         # This will hold the stat cat, for filtering purposes
         self.stat_cat = stat_cat 
@@ -163,14 +169,18 @@ class PatrolOutcome():
                     outsider_rep=_d.get("outsider_rep"),
                     other_clan_rep=_d.get("other_clan_rep"),
                     relationship_effects=_d.get("relationships"),
-                    relationship_constaints=_d.get("relationship_constraint") 
+                    relationship_constaints=_d.get("relationship_constraint"),
+                    outcome_art=_d.get("art"),
+                    outcome_art_clean=_d.get("art_clean")
                 )
             )
         
         return outcome_list
 
     def execute_outcome(self, patrol:'Patrol') -> tuple:
-        """ Excutes the outcome. Returns a tuple with the final outcome text, and the results text. """
+        """ Excutes the outcome. Returns a tuple with the final outcome text, the results text, and any outcome art
+        format: (Outcome text, results text, outcome art (might be None))
+        """
         
         results = []
         
@@ -194,7 +204,7 @@ class PatrolOutcome():
         
         print("PATROL END -----------------------------------------------------")
         
-        return (processed_text, " ".join(results))
+        return (processed_text, " ".join(results), self.get_outcome_art())
     
     def _allowed_stat_cat_specfic(self, kitty:Cat, patrol:'Patrol', allowed_specfic) -> bool:
         """Helper that handled specfic stat cat requriments. """
@@ -282,6 +292,20 @@ class PatrolOutcome():
         
         return
 
+    def get_outcome_art(self):
+        """Return outcome art, if not None. Return's None if there is no outcome art, or if outcome art can't be found.  """
+        root_dir = "resources/images/patrol_art/"
+        
+        if game.settings.get("gore") and self.outcome_art_clean:
+            file_name = self.outcome_art_clean
+        else:
+            file_name = self.outcome_art
+
+        if not isinstance(file_name, str) or not path_exists(f"{root_dir}{file_name}.png"):
+            return None
+            
+        return pygame.image.load(f"{root_dir}{file_name}.png")
+        
     # ---------------------------------------------------------------------------- #
     #                                   HANDLERS                                   #
     # ---------------------------------------------------------------------------- #

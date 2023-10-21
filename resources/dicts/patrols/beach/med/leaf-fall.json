@@ -1164,7 +1164,7 @@
         "chance_of_success": 20,
         "success_outcomes": [
             {
-                "text": "The warriors keep {PRONOUN/p_l/poss} heads, with the more experienced of p_l's helpers making {PRONOUN/p_l/subject} useful keeping those that are young or more impulsive focused on {PRONOUN/p_l/poss} task. The medicine cat and {PRONOUN/p_l/poss} team carefully pick out catmint from its known hiding places, carting it back to camp where it will protect the Clan.",
+                "text": "The warriors keep {PRONOUN/p_l/poss} heads, with the more experienced of p_l's helpers making themselves useful keeping those that are young or more impulsive focused on {PRONOUN/p_l/poss} task. The medicine cat and {PRONOUN/p_l/poss} team carefully pick out catmint from its known hiding places, carting it back to camp where it will protect the Clan.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["catmint"],
