@@ -894,7 +894,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "r_c leads the patrol towards the nest, pushing past the rotting wood blocking the entrance. The patrol gets to work rounding up and piling up the rats, and by nightfall they have so much it takes two trips to bring them back! r_c is congratulated for {PRONOUN/r_C/poss} ingenious plan.",
+                "text": "r_c leads the patrol towards the nest, pushing past the rotting wood blocking the entrance. The patrol gets to work rounding up and piling up the rats, and by nightfall they have so much it takes two trips to bring them back! r_c is congratulated for {PRONOUN/r_c/poss} ingenious plan.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["medium"],
@@ -1474,7 +1474,7 @@
                 "weight": 20
             },
             {
-                "text": "As r_c pokes around the strange smelling whatever-it-is, {PRONOUN/r_c/subject} {VERB/r_c/poke/pokes} a piece of metal still holding the heat of fire in it, and {PRONOUN/r_c/skitter/skitters} backwards with a yelp.",
+                "text": "As r_c pokes around the strange smelling whatever-it-is, {PRONOUN/r_c/subject} {VERB/r_c/poke/pokes} a piece of metal still holding the heat of fire in it, and {VERB/r_c/skitter/skitters} backwards with a yelp.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -3805,7 +3805,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "{PRONOUN/r_c/CAP}{VERB/r_c/'re/'s} not the only creature taking advantage of the light rain to find food - though for the f_tp_p and the single f_tp_s {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} bringing back to camp, that decision was a mistake.",
+                "text": "{PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} not the only creature taking advantage of the light rain to find food - though for the f_tp_p and the single f_tp_s {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} bringing back to camp, that decision was a mistake.",
                 "exp": 15,
                 "weight": 20,
                 "prey": ["medium"]
