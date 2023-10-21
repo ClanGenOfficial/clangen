@@ -2666,5 +2666,117 @@
                 "prey": ["very_small"]
             }
         ]
+    },
+    {
+        "patrol_id": "pln_hunt_frnight1",
+        "biome": ["plains"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": ["halloween"],
+        "patrol_art": "pln_fresno",
+        "min_cats": 1,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "healer cats": [-1, -1],
+            "normal adult": [-1, -1]
+        },
+        "weight": 20,
+        "chance_of_success": 50,
+        "relationship_constraint": [],
+        "pl_skill_constraint": [],
+        "intro_text": "This is just weird - what's made the grass here grow to such a uniform low height? Why is it so green? Why has it grown in such a neat circle?",
+        "decline_text": "Look, app1 knows grass, and this is too weird to want to spend time in. {PRONOUN/app1/subject/CAP} {VERB/app1/head/heads} home without ever seeing the Fresno Nightcrawler.",
+        "success_outcomes": [
+            {
+                "text": "Okay, app1 knows that Twolegs have, well, two legs, but that is just <i>excessive</i>, the Twoleg that owns this weird green circle is almost nothing but leg! Friendly though, and they don't try to invade app1's space.",
+                "exp": 0,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "AH! app1 gets run over by an <i>enormously</i> tall Twoleg running in random circles around the green grass.",
+                "exp": 0,
+                "weight": 20,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["shock", "minor_injury", "non_lethal"]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "pln_hunt_ufo1",
+        "biome": ["plains"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": ["halloween"],
+        "patrol_art":"pln_UFO",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "chance_of_success": 50,
+        "relationship_constraint": [],
+        "pl_skill_constraint": [],
+        "intro_text": "As the patrol moves through the grass just after sunset, two moons rise in the sky...",
+        "decline_text": "One of those moons has the same metal as a monster, the same glowing eyes that glare from the creatures that kill on the thunderpaths. The cats hide from its sight, trembling.",
+        "success_outcomes": [
+            {
+                "text": "Two whole moons! That's got to be lucky, the cats decide, sitting on a little rock still warm from the sun to stargaze.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cat_to": ["patrol"],
+                        "cat_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["platonic, comfort"],
+                        "amount": 5
+                    }
+                    
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "One of those moons is getting awfully... close... r_c gets caught in a strange wind that picks {PRONOUN/r_c/object} up, claws scrabbling wildly, sucked towards the frightening foreign moon as it takes {PRONOUN/r_c/object} away from c_n.",
+                "exp": 0,
+                "weight": 20,
+                "lost_cats": ["r_c"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "pln_hunt_gef1",
+        "biome": ["plains"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": ["halloween"],
+        "patrol_art": "pln_hunt_gef",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 15,
+        "intro_text": "As the patrol spreads out to hunt, they've got the perfect ambush set up - or they <i>did</i> until someone started talking loudly!",
+        "decline_text": "Well, this hunt is ruined. Greeeeaaaaat.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "The patrol switches to tracking down that annoying voice instead. It takes the rest of the entire afternoon, and the damn voice tricks p_l into pouncing on r_c, but finally they pin down the talking mongoose and make it <i>quite</i> clear how irritating he's been.",
+                "exp": 0,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The voice is coming from behind that bush! No, that one! No, that one over there, p_l's got them, except who p_l actually has is an irritated r_c's tail, and absolutely no one manages any hunting today. Fox dung!",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     }
 ]

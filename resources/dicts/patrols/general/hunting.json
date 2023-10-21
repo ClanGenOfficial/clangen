@@ -1154,5 +1154,127 @@
         }
       }
     ]
-  }
+  },
+  {
+    "patrol_id": "gen_hunt_kittylion",
+    "biome": ["Any"],
+    "season": ["Any"],
+    "types": ["hunting"],
+    "tags": ["halloween"],
+    "patrol_art": "kittylion_INTRO",
+    "min_cats": 1,
+    "max_cats": 1,
+    "min_max_status": {
+      "apprentice": [1,1]
+    },
+    "weight": 20,
+    "intro_text": "app1 huffs in frustration when all scents of prey are drowned out by kittypet scent. {PRONOUN/app1/subject/CAP} {VERB/app1/follow/follows} the scent to discover a... lion? But are lions this small? And why does it smell like a kittypet?",
+    "decline_text": "One can never be too cautious around strange creatures; who knows whether it could be deadly? {PRONOUN/app1/subject/CAP} {VERB/app1/are/is} just an apprentice after all! app1 backs away from the cat-sized lion, praying that StarClan understands {PRONOUN/app1/poss} empty-pawed return.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "app1 cautiously greets the small lion, who reassures {PRONOUN/app1/object} that it is not actually a lion, but rather a kittypet in accessories. Whew! Now app1 can return to {PRONOUN/app1/poss} hunting in peace, knowing the silly kittypet poses no harm.",
+            "exp": 20,
+            "weight": 20,
+            "prey": ["small"],
+            "art": ["kittylion_OUTCOME"]
+        },
+        {
+            "text": "Boldly, s_c steps forward to interrogate the small lion, who explains that it is a kittypet that must put up with its Twolegs' insistence on something called \"costumes\". It even offers to let s_c try its accessory!",
+            "exp": 20,
+            "weight": 20,
+            "stat_trait": ["bold", "confident", "daring", "adventurous", "shameless", "playful"],
+            "art": ["kittylion_OUTCOME"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "While attempting to stalk up to the small lion, app1 trips and falls flat on {PRONOUN/app1/poss} face. The creature startles and flees directly into a burrow of prey. Sullen, app1 trots home empty-pawed and full of questions about what {PRONOUN/app1/subject} even encountered. ",
+            "exp": 0,
+            "weight": 20
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_jumpscare",
+    "biome": ["Any"],
+    "season": ["Any"],
+    "types": ["hunting"],
+    "tags": ["halloween"],
+    "patrol_art": "jumpscare_INTRO",
+    "min_cats": 2,
+    "max_cats": 6,
+    "min_max_status": {},
+    "weight": 20,
+    "intro_text": "The patrol splits up to hunt, but after a while r_c is nowhere to be found.",
+    "decline_text": "p_l heads home without r_c, annoyed that r_c would abandon the patrol.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+   	    {
+   		 "text": "p_l decides to continue on without r_c and manages to make a few good catches. Although things are going well, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} something watching {PRONOUN/p_l/object}... and getting closer! p_l turns around, ready to strike, only to find r_c sneaking up on {PRONOUN/p_l/object}! The pair of cats have a good laugh over the failed prank and carry the prey back to camp together.",
+   		 "exp": 20,
+   		 "weight": 20,
+   		 "prey": ["medium"]
+   	    },
+   	    {
+   		 "text": "After making some good catches, p_l picks up on r_c's scent. Whiskers twitching with mischief, p_l decides to give r_c a good scare and drops into a sneaking crouch. p_l creeps closer and closer until r_c is in range, but suddenly r_c turns around with a startled hiss! Both r_c and p_l jump with fright, fur puffed out and claws ready! It takes a moment but both cats have a good laugh at the scare they gave each other, and promise not to tell any cat about how easily startled they were.",
+   		 "exp": 5,
+   		 "weight": 20,
+   		 "prey": ["medium"]
+   	    }
+    ],
+    "fail_outcomes": [
+   	 {
+   		 "text": "p_l decides to continue on without r_c and manages to make a few catches. Although things are going well, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} something is watching {PRONOUN/p_l/object}... and getting closer! p_l lets out a terrified screech as something leaps out of the shadows and knocks {PRONOUN/p_l/object} over! p_l hops up, ready to strike, only to come face to face with {PRONOUN/p_l/poss} attacker... r_c, purring with laughter!",
+   		 "exp": 0,
+   		 "weight": 20,
+   		 "prey": ["small"]
+   	 },
+   	 {
+   		 "text": "p_l heads off without r_c and manages to make a few catches, when something nips {PRONOUN/p_l/poss} paw! Unable to catch a scent from whatever it was, p_l assumes it to be some kind of prank and furiously looks for r_c. Upon finding {PRONOUN/r_c/object}, p_l begins to complain but r_c cuts {PRONOUN/p_l/object} off, accusing p_l of nipping {PRONOUN/r_c/poss} paw instead! Both cats fall silent with unease when they realize something else was the culprit, likely watching them both from the shadows... The patrol quickly heads back to camp.",
+   		 "exp": 0,
+   		 "weight": 5,
+   		 "prey": ["small"]
+   	 }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_scary_ghost1",
+    "biome": [ "Any"],
+    "season": [ "Any"],
+    "types": [ "hunting"],
+    "tags": [ "halloween"],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 1,
+    "max_cats": 6,
+    "min_max_status": {
+        "apprentice": [0, 6],
+        "healer cats": [-1, -1],
+        "normal adult": [0, 6]
+    },
+    "weight": 20,
+    "intro_text": "As the patrol follows a trail into a darkly shadowed part of the territory, night shadows begin to play with their vision, was that movement up ahead? r_c spots the undisguisable silhouette of a cat ahead. Malicious eyes and bristled fur meet the patrol as they walk amongst the shadows, the stranger's fur is translucent and it moves as though made from a strange dark mist.",
+    "decline_text": "r_c 's tail bristles with fear, a cold shiver creeping along {PRONOUN/r_c/poss} back, this is definitely not a normal cat, and {PRONOUN/r_c/subject} quickly {VERB/r_c/turn/turns} the patrol back to camp.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "Your patrol confronts the strange cat - they are obviously an intruder on c_n territory and they don't look like the friendly type. The dark silhouette seems to flicker in an out of few as the patrol runs toward it, gradually reappearing further and further away. The patrol stops watching the stranger in the distance, white glowing haunted eyes watch them from the shadows. The patrol returns home, mesmerized by the strangeness of what they had just witnessed.",
+            "exp": 10,
+            "weight": 20
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "Your patrol confronts the strange cat - they are obviously an intruder on c_n territory and they don't look like the friendly type. The strange cat shrieks an awful blood curdling scream that makes r_c 's fur stand on end, overcome by terror the patrol flee back to camp.",
+            "exp": 0,
+            "weight": 10,
+            "injury": [
+                {
+                    "cats": ["patrol"],
+                    "injuries": ["shock", "non_lethal"]
+                }
+            ]
+        }
+    ]
+}
 ]
