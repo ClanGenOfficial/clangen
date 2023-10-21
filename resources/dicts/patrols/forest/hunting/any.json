@@ -3142,7 +3142,7 @@
                 ],
                 "history_text": {
                     "reg_death": "m_c died of shock after {PRONOUN/r_c/poss} encounter with the Dover Demon.",
-                    "lead_death": "{VERB/m_c/were/was} died of shock from an encounter with the Dover Demon"
+                    "lead_death": "died of shock from an encounter with the Dover Demon"
                 }
             }
         ]

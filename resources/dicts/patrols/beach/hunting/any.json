@@ -5279,14 +5279,15 @@
             "text": "r_c brings back the ocean's bounty to camp. A wonderful and easy catch!",
             "exp": 0,
             "weight": 20,
-            "injury": {
-                "cats": ["some_clan"],
-                "injuries": ["poisoned"],
-                "scar": []
-            },
+            "injury": [
+                {
+                    "cats": ["some_clan"],
+                    "injuries": ["poisoned"]
+                }
+            ],
             "history_text": {
-                "reg_death": "m_c was killed by the poison in the Bishop-fish's flesh.",
-                "lead_death": "poisoned by consuming Bishop-fish's flesh."
+                "reg_death": "m_c {VERB/m_c/were/was} killed by the poison in the Bishop-fish's flesh.",
+                "lead_death": "{VERB/m_c/were/was} poisoned by consuming Bishop-fish's flesh."
             }
         }]
     },

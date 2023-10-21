@@ -516,7 +516,7 @@
    		 "text": "r_c turns tail and runs, feeling air ruffle their fur as <i>something</i> passes overhead while they pelt for home, without even the breath to waste on wailing.",
    		 "exp": 35,
    		 "weight": 20,
-            "art": "mothman_OUTCOME"
+         "art": "mothman_OUTCOME"
    	 },
    	 {
    		 "text": "r_c returns home from their uneventful patrol.",
@@ -528,14 +528,14 @@
    				 "injuries": ["persistent headache"]
    			 }
    		 ],
-            "art": "mothman_OUTCOME"
+         "art": "mothman_OUTCOME"
    	 },
    	 {
    		 "text": "Caution has always been in {PRONOUN/s_c/poss} blood, and this, this has to be why. Frozen to the ground so completely that the frost grows over {PRONOUN/s_c/poss} fur as {PRONOUN/s_c/subject} {VERB/s_c/wait/waits}, s_c refuses to twitch so much as a whisker until the moth-Twoleg leaves.",
    		 "exp": 40,
    		 "weight": 20,
    		 "stat_trait": ["lonesome", "nervous", "insecure", "calm", "careful", "sneaky", "strange", "wise", "cunning", "gloomy"],
-            "art": "mothman_OUTCOME"
+         "art": "mothman_OUTCOME"
    	 }
     ],
     "fail_outcomes": [
@@ -549,7 +549,7 @@
    				 "injuries": ["seizure prone"]
    			 }
    		 ],
-            "art": "mothman_OUTCOME"
+         "art": "mothman_OUTCOME"
    	 },
    	 {
    		 "text": "r_c doesn't return home.",
@@ -557,9 +557,10 @@
    		 "weight": 20,
    		 "dead_cats": ["r_c"],
    		 "history_text": {
-   			 "reg_death": "m_c was taken as the Mothman's snack."
+   			 "reg_death": "m_c was taken as the Mothman's snack.",
+             "lead_death": "was taken as the Mothman's snack."
    		 },
-            "art": "mothman_OUTCOME"
+         "art": "mothman_OUTCOME"
    	 },
    	 {
    		 "text": "The vast moth-Twoleg flies off, and r_c tries to shake off the encounter - but the mountain itself seems to be against them tonight, collapsing beneath their feet.",
@@ -567,9 +568,10 @@
    		 "weight": 20,
    		 "dead_cats": ["r_c"],
    		 "history_text": {
-   			 "reg_death": "m_c was killed by the mountain slopes collapsing beneath them, an event predicted by the appearance of the Mothman."
+   			 "reg_death": "m_c {VERB/m_c/were/was} killed by the collapsing mountain slopes, an event predicted by the appearance of the Mothman.",
+             "lead_death": "{VERB/m_c/were/was} killed by the collapsing mountain slopes, an event predicted by the appearance of the Mothman."
    		 },
-            "art": "mothman_OUTCOME"
+         "art": "mothman_OUTCOME"
    	 }
     ]
 },
@@ -581,7 +583,7 @@
 	"tags": ["halloween"],
 	"patrol_art": "jerseydevil_INTRO",
 	"min_cats": 1,
-	"max_cats": 2,
+	"max_cats": 1,
 	"min_max_status": {},
 	"weight": 15,
 	"intro_text": "As p_l ducks through the overhanging branches of an evergreen, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} two deer, lying intertwined. Are they sleeping? Curious, p_l creeps closer.",
@@ -595,8 +597,7 @@
    	    "injury": [
             {
                 "cats": ["p_l"],
-                "injuries": ["shock", "non_lethal"],
-                "scars": []
+                "injuries": ["shock", "non_lethal"]
             }
      	]
   	  }
@@ -609,8 +610,7 @@
         "injury": [
             {
                 "cats": ["p_l"],
-                "injuries": ["torn pelt", "scrapes", "shock"],
-                "scars": []
+                "injuries": ["torn pelt", "scrapes", "shock"]
             }
      	],
    	    "history_text": {
@@ -621,6 +621,4 @@
    	  }
 	]
 }
-
-
 ]

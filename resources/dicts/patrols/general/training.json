@@ -4321,7 +4321,7 @@
     	"biome": ["Any"],
     	"season": ["Any"],
     	"types": ["training"],
-    	"tags": [],
+    	"tags": ["halloween"],
     	"patrol_art": "deathsheadmoth_INTRO",
     	"min_cats": 4,
     	"max_cats": 6,
@@ -4357,7 +4357,7 @@
                 "dead_cats": ["r_c"],
                 "history_text": {
                     "reg_death": "m_c died in a terrible training accident, foretold by a Death's Head Moth.",
-                    "leader_death": "died in a terrible training accident, foretold by a Death's Head Moth"
+                    "lead_death": "died in a terrible training accident, foretold by a Death's Head Moth"
    		        }
             	
         	}

@@ -1672,6 +1672,7 @@
                     {
                         "cat_to": ["patrol"],
                         "cat_from": ["patrol"],
+                        "mutual": true,
                         "values": ["platonic, comfort"],
                         "amount": 5
                     }

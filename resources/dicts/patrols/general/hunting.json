@@ -1237,5 +1237,44 @@
    		 "prey": ["small"]
    	 }
     ]
+},
+{
+    "patrol_id": "gen_hunt_scary_ghost1",
+    "biome": [ "Any"],
+    "season": [ "Any"],
+    "types": [ "hunting"],
+    "tags": [ "halloween"],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 1,
+    "max_cats": 6,
+    "min_max_status": {
+        "apprentice": [0, 6],
+        "healer cats": [-1, -1],
+        "normal adult": [0, 6]
+    },
+    "weight": 20,
+    "intro_text": "As the patrol follows a trail into a darkly shadowed part of the territory, night shadows begin to play with their vision, was that movement up ahead? r_c spots the undisguisable silhouette of a cat ahead. Malicious eyes and bristled fur meet the patrol as they walk amongst the shadows, the stranger's fur is translucent and it moves as though made from a strange dark mist.",
+    "decline_text": "r_c 's tail bristles with fear, a cold shiver creeping along {PRONOUN/r_c/poss} back, this is definitely not a normal cat, and {PRONOUN/r_c/subject} quickly {VERB/r_c/turn/turns} the patrol back to camp.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "Your patrol confronts the strange cat - they are obviously an intruder on c_n territory and they don't look like the friendly type. The dark silhouette seems to flicker in an out of few as the patrol runs toward it, gradually reappearing further and further away. The patrol stops watching the stranger in the distance, white glowing haunted eyes watch them from the shadows. The patrol returns home, mesmerized by the strangeness of what they had just witnessed.",
+            "exp": 10,
+            "weight": 20
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "Your patrol confronts the strange cat - they are obviously an intruder on c_n territory and they don't look like the friendly type. The strange cat shrieks an awful blood curdling scream that makes r_c 's fur stand on end, overcome by terror the patrol flee back to camp.",
+            "exp": 0,
+            "weight": 10,
+            "injury": [
+                {
+                    "cats": ["patrol"],
+                    "injuries": ["shock", "non_lethal"]
+                }
+            ]
+        }
+    ]
 }
 ]
