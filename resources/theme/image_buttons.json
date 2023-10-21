@@ -3826,16 +3826,16 @@
         "prototype": "#image_button",
         "images": {
             "normal_image": {
-                "path": "resources/images/buttons/shipwreck_camp.png"
+                "path": "resources/images/buttons/wastelands_camp.png"
             },
             "hovered_image": {
-                "path": "resources/images/buttons/shipwreck_camp_hover.png"
+                "path": "resources/images/buttons/wastelands_camp_hover.png"
             },
             "selected_image": {
-                "path": "resources/images/buttons/shipwreck_camp_hover.png"
+                "path": "resources/images/buttons/wastelands_camp_hover.png"
             },
             "disabled_image": {
-                "path": "resources/images/buttons/shipwreck_camp_unavailable.png"
+                "path": "resources/images/buttons/wastelands_camp_unavailable.png"
             }
         }
     },
