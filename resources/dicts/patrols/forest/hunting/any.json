@@ -3107,6 +3107,46 @@
                 "weight": 20
             }
         ]
+    },
+    {
+        "patrol_id": "fst_hunt_doverdemon",
+        "biome": ["forest"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": ["halloween"],
+        "patrol_art": ["doverdemon_INTRO"],
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "As r_c is out alone, {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} something out of the corner of {PRONOUN/r_c/poss} eye; spindly, long, and partially hidden by the undergrowth of the forest.",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/hurry/hurries} back to camp, a little freaked out.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "It leaps up onto a fallen log - whatever it is, bulbous head, long, spindly limbs, pale, hairless skin like a skink. r_c hisses, and it echoes in a whisper, skittering off into the woods.",
+                "exp": 20,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c doesn't want to talk about it when they come back to camp. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} want to talk about anything.",
+                "exp": 0,
+                "weight": 20,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["shock"]
+                    }
+                ],
+                "history_text": {
+                    "reg_death": "m_c died of shock after {PRONOUN/r_c/poss} encounter with the Dover Demon.",
+                    "lead_death": "{VERB/m_c/were/was} died of shock from an encounter with the Dover Demon"
+                }
+            }
+        ]
     }
+    
     
 ]
