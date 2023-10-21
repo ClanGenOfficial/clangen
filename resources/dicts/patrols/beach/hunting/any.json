@@ -3134,7 +3134,7 @@
                 ]
             },
             {
-                "text": "s_c uses every trick in {PRONOUN/s_c/poss} talented fighting skill set to attack the fox with no one to watch {PRONOUN/s_c/poss} flank, until the perfect opportunity opens up and {PRONOUN/s_c/subject} {VERB/s_c/pounce/pounces} onto the fox's back, digging in {PRONOUN/s_c/poss} claws. It's a wild ride through the forest until the fox bucks {PRONOUN/s_c/object} off, but it wins {PRONOUN/s_c/object} the shark carcass.",
+                "text": "s_c uses every trick in {PRONOUN/s_c/poss} talented fighting skillset to attack the fox with no one to watch {PRONOUN/s_c/poss} flank, until the perfect opportunity opens up and {PRONOUN/s_c/subject} {VERB/s_c/pounce/pounces} onto the fox's back, digging in {PRONOUN/s_c/poss} claws. It's a wild ride through the forest until the fox bucks {PRONOUN/s_c/object} off, but it wins {PRONOUN/s_c/object} the shark carcass.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,2"],
@@ -3201,8 +3201,8 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "reg_death": "m_c fell in a solo battle with a fox.",
-                    "lead_death": "died fighting a fox"
+                    "reg_death": "m_c fell in a solo battle with a red fox.",
+                    "lead_death": "died fighting a red fox"
                 }
             },
             {
@@ -3719,7 +3719,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the gray fox, which keeps possession of the food. However there were no injuries.",
+                "text": "r_c fails to drive away the fox, which keeps possession of the food. However, {PRONOUN/r_c/subject} managed to escape injury.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -3808,7 +3808,8 @@
                     "scar": "m_c carries a scar from a solo fight with a gray fox.",
                     "reg_death": "m_c died from a gray fox bite.",
                     "lead_death": "died from a gray fox bite"
-                }
+                },
+                "prey": ["very_small"]
             }
         ]
     },
@@ -5223,5 +5224,112 @@
                 "prey": ["very_small"]
             }
         ]
+    },
+    {
+        "patrol_id": "bch_hunt_nessie1",
+        "biome": ["beach"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": ["halloween"],
+        "patrol_art": "nessie_INTRO",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 15,
+        "intro_text": "As the cats move along the shoreline, they spot something massive moving beneath the water.",
+        "decline_text": "The cats are feeling remarkably incurious today.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "It's Nessie! The patrol trots up, exchanging a nice mouse for a nice deep water fish, both creatures trading the respective delicacies that're hard for the other to obtain.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["small"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol is so wrapped up trying to work out what the creature is that r_c topples into the water. It solves the mystery though, as Nessie propels r_c back onto the shoreline with one gentle, immense flipper.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_hunt_bishopfish1",
+        "biome": ["beach"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": ["halloween"],
+        "patrol_art": "bch_bishopfish",
+        "min_cats": 1,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 15,
+        "intro_text": "As r_c skids down the sand dunes, {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} a distant heap being washed ashore by the waves.",
+        "decline_text": "Sniffing the heap, r_c decides that this is just too disgusting to be considered food.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+            "text": "r_c sniffs the still struggling prey - and jerks backwards when it crosses its Twoleg-like forefins. No, this isn't something {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} comfortable bringing back to camp.",
+            "exp": 0,
+            "weight": 20
+            }
+        ],
+        "fail_outcomes": [{
+            "text": "r_c brings back the ocean's bounty to camp. A wonderful and easy catch!",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                    "cats": ["some_clan"],
+                    "injuries": ["poisoned"]
+                }
+            ],
+            "history_text": {
+                "reg_death": "m_c {VERB/m_c/were/was} killed by the poison in the Bishop-fish's flesh.",
+                "lead_death": "{VERB/m_c/were/was} poisoned by consuming Bishop-fish's flesh."
+            }
+        }]
+    },
+    {
+        "patrol_id": "bch_hunt_frogman1",
+        "biome": ["beach"],
+        "season": ["Any"],
+        "types": ["hunt"],
+        "tags": ["halloween"],
+        "patrol_art": "loveland_frog_INTRO",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "chance_of_success": 50,
+        "relationship_constraint": [],
+        "pl_skill_constraint": [],
+        "intro_text": "p_l waves r_c over with {PRONOUN/p_l/poss} tail. What's <i>that</i>?!",
+        "decline_text": "r_c isn't interested, and the patrol continues on their way.",
+        "success_outcomes": [
+            {
+                "text": "The massive frog-Twoleg creeps up the rocks, slow and unnatural. The patrol watches, breathless, until it's out of sight. Well, p_l huffs. Maybe toads grow bigger than {PRONOUN/p_l/subject} thought. Terrifying.",
+                "exp": 0,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Frozen, the cats watch the massive lumbering frog, the size of a Twoleg and just as bipedal. It pauses, and like the rumble of thunder, issues a massive croak that creaks like cracking wood. All r_c can do is shiver.",
+                "exp": 0,
+                "weight": 20,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["shock", "non_lethal"]
+                    }
+                ]
+            }
+        ]
     }
+    
+    
+    
 ]

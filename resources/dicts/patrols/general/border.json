@@ -1281,5 +1281,227 @@
                 "other_clan_rep": -2
             }
         ]
+    },
+    {
+        "patrol_id": "gen_bord_kittybat",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["halloween"],
+        "patrol_art": "kittybat_INTRO",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "On border patrol, the patrol finds kittypet scent. Following the (extremely) obvious sounds of distress, p_l leads the patrol down to a kittypet, who has haplessly managed to get themself wedged between a couple rocks. Wailing pathetically, they cry that their wing is stuck!",
+        "decline_text": "It's beyond c_n's border, it's not c_n's problem.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "Cats don't normally come with wings, much less bat ones, and the patrol flinches back from the foreign stranger. But unnatural or not, the stranger's still stuck, and with a deep breath, p_l orders them forward to free a fellow cat... ish... thing.",
+                "exp": 15,
+                "weight": 20,
+                "outsider_rep": 1
+            },
+            {
+                "text": "Frankly, extra limbs or not (bat wings, at that, this'll make a great story back at camp), the patrol needs to get this plump crying ball of fur back to their Twolegs - the world will eat this kittypet alive if they don't help them.",
+                "exp": 15,
+                "weight": 10,
+                "outsider_rep": 1
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Falling over, paws waving helplessly in the air and somehow making the situation <i>even worse</i>, the patrol passes the idiotic kittypet by, leaving them to their stupidity while they focus on their actual task.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "Swaggering up, p_l tries to intimidate the kittypet. But while the cat is easily successfully frightened, that doesn't make them any less stuck in place, and eventually the patrol is forced to help set them free, if only so they can leave c_n's borders.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "Hissing, p_l bowls the kittypet over, and with a ripping sound, the bat wing detaches from their back. The plump cat's crying increases in volume as they flee. p_l brings the trophy back to camp to boast.",
+                "exp": 15,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_border_pumpkineyes",
+        "biome": ["Any"],
+        "season": ["leaf-fall"],
+        "types": ["border"],
+        "tags": ["halloween"],
+        "patrol_art": "pumpkineyes_INTRO",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "The patrol heads out to check the borders when p_l says {PRONOUN/p_l/subject} {VERB/p_l/see/sees} strange glowing eyes in the distance.",
+        "decline_text": "r_c sighs and tells p_l that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} just seeing things, there's nothing out there... right?",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "The patrol cautiously heads in the direction of the strange, unmoving eyes. The cats see a strange face with glowing eyes in the distance, baring its fangs and smelling of smoke. p_l creeps up to the face to find it that it belongs to a pumpkin! Startled and somewhat scared, r_c suggests heading back to camp to report this bizarre finding to the Clan. p_l agrees, not wanting to be near this... thing... any longer.",
+                "exp": 10,
+                "weight": 20
+            },
+            {
+                "text": "The patrol cautiously heads in the direction of the strange, unmoving eyes. When p_l gets closer {PRONOUN/p_l/subject} {VERB/p_l/are/is} overwhelmed with the scent of Twolegs and smoke. Upon closer inspection it seems that these foolish Twoleg kits are trying to set fire to a pumpkin with an unsettling hollow face! p_l and r_c charge the Twoleg kits, hissing, spitting, and doing their best to scare them off. Thankfully the kits scatter before they set the pumpkin ablaze.",
+                "exp": 10,
+                "weight": 5
+            },
+            {
+                "text": "As the patrol heads in the direction of the sinister glare of strange, unmoving eyes, the scent of smoke creeps up on the patrol. s_c darts forward, finding the smoke scent coming from an odd pumpkin with some sort of... face? Thinking quickly {PRONOUN/s_c/subject} {VERB/s_c/scratch/scratches} dirt into the holes on the pumpkin, extinguishing the small flames, but leaving the patrol wondering what in the name of StarClan they're looking at.",
+                "exp": 15,
+                "weight": 10,
+                "stat_trait": ["thoughtful", "careful", "responsible", "wise"]
+            },
+            {
+                "text": "As the patrol heads in the direction of the sinister glare of strange, unmoving eyes, the scent of smoke creeps up on the patrol. s_c darts forward, finding the smoke scent coming from an odd pumpkin with some sort of... face? Thinking quickly {PRONOUN/s_c/subject} {VERB/s_c/scratch/scratches} dirt into the holes on the pumpkin, extinguishing the small flames, but leaving the patrol wondering what in the name of StarClan they're looking at.",
+                "exp": 15,
+                "weight": 10,
+                "skill_trait": ["CLEVER,1", "INSIGHTFUL,1", "SENSE,1"]
+            },
+            {
+                "text": "The patrol nervously heads towards the unblinking eyes, unsure of what lies ahead. As the strange object comes into view, s_c lets out a mrrow of laughter! {PRONOUN/s_c/subject/CAP} {VERB/s_c/explain/explains} that this is a Twoleg ritual performed around the start of leaf-bare. p_l is glad to have a cat with s_c's understanding of Twolegs on this patrol. With this knowledge, unneeded panic was surely avoided!",
+                "exp": 15,
+                "weight": 10,
+                "skill_trait": ["KITTYPET,0", "LONER,0"]
+            },
+            {
+                "text": "The patrol nervously heads towards the unblinking eyes, unsure of what lies ahead. As the strange object comes into view, s_c begins to bristle with unease. {PRONOUN/s_c/subject/CAP} can see strange, mist-like Twolegs floating around the glowing, unblinking face of a... pumpkin? The figures approach s_c, and run their cold, fur-less paws through {PRONOUN/s_c/subject} fur. s_c can hardly hear r_c asking {PRONOUN/s_c/object} why {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} frozen in place.",
+                "exp": 20,
+                "weight": 10,
+                "skill_trait": ["GHOST,1"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol cautiously heads in the direction of the strange, unmoving eyes. As they get closer to what seems to be some sort of pumpkin, a group of Twoleg kits springs out of nowhere and chases the frightened cats off! The patrol runs until the Twolegs stop following. Panting and defeated, they return to camp with not much information about the strange face.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "As r_c slowly creeps towards the disturbing face, s_c huffs with frustration. Tail lashing, s_c calls r_c a mouse-heart and stomps in the direction of the unblinking eyes without a shred of fear. s_c rolls {PRONOUN/s_c/poss} eyes and knocks over the harmless pumpkin, ignoring the strange face and the smell of smoke wafting around it.",
+                "exp": 5,
+                "weight": 20,
+                "stat_trait": ["bloodthirsty", "cold", "strict", "grumpy", "fierce"]
+            },
+            {
+                "text": "As r_c slowly creeps towards the disturbing face, s_c recklessly darts forward to get a closer look! {PRONOUN/s_c/subject/CAP} {VERB/s_c/crash/crashes} into some strange pumpkin, knocking it over and obscuring the strange face. The patrol heads home without much left to investigate thanks to s_c's antics.",
+                "exp": 5,
+                "weight": 20,
+                "stat_trait": ["troublesome", "childish", "playful", "shameless"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_bord_trickortreat",
+        "biome": [
+            "Any"
+        ],
+        "season": [
+            "leaf-fall"
+        ],
+        "types": [
+            "border"
+        ],
+        "tags": [
+            "halloween"
+        ],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "The patrol stumbles upon a strange scene near a Twolegplace: Twoleg kits traveling from den to den in colorful pelts.",
+        "decline_text": "The patrol decides it's best not to interfere with this peculiar ritual.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "r_c, being ever so curious, decides to see if {PRONOUN/r_c/subject} can decipher the meaning behind this Twoleg ritual. After some time, {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} it's some kind of friendly exchange. Each time the Twoleg kits go to the den, they receive a bit of prey from the older Twolegs. The patrol takes note and continues on their way, amused by the strange Twoleg customs.",
+                "exp": 10,
+                "weight": 20
+            },
+            {
+                "text": "r_c cautiously approaches the Twoleg kits, intrigued by their colorful pelts. To r_c's surprise, one of the tiny Twolegs offers {PRONOUN/r_c/object} a strange, shiny object. It doesn't smell exactly like prey, but r_c decides to take it back to the camp for further investigation.",
+                "exp": 10,
+                "weight": 20
+            },
+            {
+                "text": "r_c decides to mimic the small Twolegs. Approaching a larger Twoleg den, {PRONOUN/r_c/subject} {VERB/r_c/meow/meows} softly at the entrance. The Twoleg that opens the entrance seems amused and hands r_c a morsel of food. The patrol decides to inspect it further once they return to camp.",
+                "exp": 10,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c, being ever so curious, decides to see if {PRONOUN/r_c/subject} can decipher the meaning behind this Twoleg ritual. However, after some time, {PRONOUN/r_c/subject} {VERB/r_c/give/gives} up, concluding that it's just another strange Twoleg custom that Clan cats will never understand.",
+                "exp": 0,
+                "weight": 10
+            },
+            {
+                "text": "The patrol attempts to get closer to the Twoleg kits, but their presence causes panic among the little creatures. The larger Twolegs nearby seem agitated, waving their paws and stomping around. The cats quickly retreat to avoid causing further disruption.",
+                "exp": 0,
+                "weight": 10
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_bord_scarecrow",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["halloween"],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "On the outskirts of the territory, the patrol comes across a tall, motionless Twoleg rooted in the middle of a field.",
+        "decline_text": "The patrol doesn't want to risk going near this strange Twoleg and quickly heads back to camp to report the odd sighting.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "r_c hesitantly approaches the Twoleg, fur bristling and on guard. It doesn't appear to notice {PRONOUN/r_c/object} yet. Paw by paw, r_c inches forward, but realizes something seems off. Is this Twoleg... even alive? With some more investigation, r_c finds hay sticking out of the Twoleg's pelt. How odd. r_c reports back with {PRONOUN/r_c/poss} findings.",
+                "exp": 10,
+                "weight": 20
+            },
+            {
+                "text": "s_c sneaks up behind the Twoleg. With a mighty roar, s_c leaps onto its back and {PRONOUN/s_c/poss} momentum sends the Twoleg falling to the ground with a giant thump.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,0"]
+            },
+            {
+                "text": "s_c stops the patrol, narrowing {PRONOUN/s_c/poss} eyes. That isn't a Twoleg! {PRONOUN/s_c/subject} came across one before during {PRONOUN/s_c/object} time outside the Clan. It's a 'scarecrow', {PRONOUN/s_c/subject} {VERB/s_c/explain/explains}, meant to protect the Twoleg fields from harm. The patrol continues on their way, giving the scarecrow a wide berth.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["ROGUE,0", "LONER,0"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol decides to take no chances and sets up an ambush around the Twoleg. They wait... and wait... but the Twoleg makes no movements to attack. Finally, r_c notices that the Twoleg isn't even a Twoleg at all! They wasted all of that time for nothing.",
+                "exp": 0,
+                "weight": 10
+            },
+            {
+                "text": "s_c sneaks up behind the Twoleg. With a mighty roar, s_c leaps onto its back and {PRONOUN/s_c/poss} momentum sends both of them to the ground. s_c ends up covered in hay, {PRONOUN/s_c/poss} claws sunk into a harmless scarecrow.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,0"]
+            }
+        ]
     }
 ]

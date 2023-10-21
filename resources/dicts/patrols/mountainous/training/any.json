@@ -1982,5 +1982,39 @@
                 "weight": 20
             }
         ]
+    },
+    {
+        "patrol_id": "mtn_train_crows1",
+        "biome": ["mountainous"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": ["halloween"],
+        "patrol_art": "crows_mocking_INTRO",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice": [1, 1]
+        },
+        "weight": 20,
+        "chance_of_success": 50,
+        "relationship_constraint": [],
+        "pl_skill_constraint": [],
+        "intro_text": "app1 gathers their strength, butt wiggling with excitement, legs tense, and throws themself upward, twisting in the air in a massive pounce that surely would bring down the mightiest prey! <i>OoOooo,</i> a voice says mockingly.",
+        "decline_text": "What was that?! StarClan?! app1 is going home, {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} like this!",
+        "success_outcomes": [
+            {
+                "text": "Well it's not like they can do better, app1 shouts back at the crows! Humph. Birdbrains.",
+                "exp": 0,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Who said that?! How dare they insult c_n's mightiest hunter! app1 yowls threats at the bushes as {PRONOUN/app1/subject} {VERB/app1/search/searches} for {PRONOUN/app1/poss} foe, as above, the crows laugh quietly to each other.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     }
+    
 ]
