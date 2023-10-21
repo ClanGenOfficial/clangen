@@ -3079,7 +3079,7 @@
         "season": ["Any"],
         "types": ["hunting"],
         "tags": ["halloween"],
-        "patrol_art": ["flatwoods_INTRO"],
+        "patrol_art": "flatwoods_INTRO",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -3114,7 +3114,7 @@
         "season": ["Any"],
         "types": ["hunting"],
         "tags": ["halloween"],
-        "patrol_art": ["doverdemon_INTRO"],
+        "patrol_art": "doverdemon_INTRO",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},

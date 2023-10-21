@@ -2688,7 +2688,7 @@
         "season": ["Any"],
         "types": ["training"],
         "tags": ["halloween"],
-        "patrol_art": ["pln_fresno"],
+        "patrol_art": "pln_fresno",
         "min_cats": 1,
         "max_cats": 6,
         "min_max_status": {
@@ -2729,7 +2729,7 @@
         "season": ["Any"],
         "types": ["training"],
         "tags": ["halloween"],
-        "patrol_art": ["pln_UFO"],
+        "patrol_art": "pln_UFO",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
