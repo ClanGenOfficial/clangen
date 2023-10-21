@@ -148,7 +148,7 @@
          "other_cat",
          "other_cat_adult"
         ],
-        "death_text": "r_c's mournful sounds pierced through c_n's territory as {PRONOUN/r_c/subject} stumble on the lifeless, decaying corpse of m_c. m_c had disappeared from camp days ago, having not returned, but only now did r_c understand why  {PRONOUN/r_c/poss} child didn't come back home; Rose was caught out in the treacherous sun, ill-prepared, succumbing to dehydration and exhaustion.",
+        "death_text": "r_c's mournful sounds pierced through c_n's territory as {PRONOUN/r_c/subject} stumble on the lifeless, decaying corpse of m_c. m_c had disappeared from camp days ago, having not returned, but only now did r_c understand why  {PRONOUN/r_c/poss} child didn't come back home; m_c was caught out in the treacherous sun, ill-prepared, succumbing to dehydration and exhaustion.",
         "history_text": {
                      "reg_death": "m_c died because of overheating and dehydration."
                  },
