@@ -1065,7 +1065,7 @@
         "chance_of_success": 65,
         "success_outcomes": [
             {
-                "text": "p_l is super proud of the apprentices, they are all attentive and are asking some great questions about c_n their relations to the other Clans.",
+                "text": "p_l is super proud of the apprentices, they are all attentive and are asking some great questions about c_n and their relations to the other Clans.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
