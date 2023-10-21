@@ -1168,7 +1168,7 @@
       "apprentice": [1,1]
     },
     "weight": 20,
-    "intro_text": "app1 huffs in frustration when all scents of prey are drowned out by kittypet scent. {PRONOUN/app1/subject/CAP} {VERB/app1/follow/follows} the scent to discover a… lion? But are lions this small? And why does it smell like a kittypet?",
+    "intro_text": "app1 huffs in frustration when all scents of prey are drowned out by kittypet scent. {PRONOUN/app1/subject/CAP} {VERB/app1/follow/follows} the scent to discover a... lion? But are lions this small? And why does it smell like a kittypet?",
     "decline_text": "One can never be too cautious around strange creatures; who knows whether it could be deadly? {PRONOUN/app1/subject/CAP} {VERB/app1/are/is} just an apprentice after all! app1 backs away from the cat-sized lion, praying that StarClan understands {PRONOUN/app1/poss} empty-pawed return.",
     "chance_of_success": 50,
     "success_outcomes": [
@@ -1177,14 +1177,14 @@
             "exp": 20,
             "weight": 20,
             "prey": ["small"],
-            "outcome_art": ["kittylion_OUTCOME"]
+            "art": ["kittylion_OUTCOME"]
         },
         {
-            "text": "Boldly, s_c steps forward to interrogate the small lion, who explains that it is a kittypet that must put up with its Twolegs' insistence on something called “costumes.” It even offers to let s_c try its accessory!",
+            "text": "Boldly, s_c steps forward to interrogate the small lion, who explains that it is a kittypet that must put up with its Twolegs' insistence on something called \"costumes\". It even offers to let s_c try its accessory!",
             "exp": 20,
             "weight": 20,
             "stat_trait": ["bold", "confident", "daring", "adventurous", "shameless", "playful"],
-            "outcome_art": ["kittylion_OUTCOME"]
+            "art": ["kittylion_OUTCOME"]
         }
     ],
     "fail_outcomes": [
@@ -1210,18 +1210,18 @@
     "decline_text": "p_l heads home without r_c, annoyed that r_c would abandon the patrol.",
     "chance_of_success": 50,
     "success_outcomes": [
-   	 {
+   	    {
    		 "text": "p_l decides to continue on without r_c and manages to make a few good catches. Although things are going well, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} something watching {PRONOUN/p_l/object}... and getting closer! p_l turns around, ready to strike, only to find r_c sneaking up on {PRONOUN/p_l/object}! The pair of cats have a good laugh over the failed prank and carry the prey back to camp together.",
    		 "exp": 20,
    		 "weight": 20,
    		 "prey": ["medium"]
-   	 },
-   	 {
+   	    },
+   	    {
    		 "text": "After making some good catches, p_l picks up on r_c's scent. Whiskers twitching with mischief, p_l decides to give r_c a good scare and drops into a sneaking crouch. p_l creeps closer and closer until r_c is in range, but suddenly r_c turns around with a startled hiss! Both r_c and p_l jump with fright, fur puffed out and claws ready! It takes a moment but both cats have a good laugh at the scare they gave each other, and promise not to tell any cat about how easily startled they were.",
    		 "exp": 5,
    		 "weight": 20,
    		 "prey": ["medium"]
-   	 }
+   	    }
     ],
     "fail_outcomes": [
    	 {

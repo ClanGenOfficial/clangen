@@ -17,7 +17,7 @@
    		 "text": "p_l follows the scent and nearly treads on the sticky thing in the grass. Definitely a weird Twoleg thing. {PRONOUN/p_l/subject/CAP} carefully {VERB/p_l/walk/walks} around it, unwilling to get the sticky stuff in {PRONOUN/p_l/poss} fur.",
    		 "exp": 5,
    		 "weight": 20,
-         "outcome_art": "tryingcandy_OUTCOME"
+         "art": "tryingcandy_OUTCOME"
 
    	 },
    	 {
@@ -25,7 +25,7 @@
    		 "exp": 10,
    		 "weight": 20,
    		 "stat_trait": ["childish", "adventurous", "bold", "shameless"],
-        "outcome_art": "tryingcandy_OUTCOME"
+        "art": "tryingcandy_OUTCOME"
    	 }
     ],
     "fail_outcomes": [
@@ -33,7 +33,7 @@
    		 "text": "As p_l creeps closer to get a better look, a sudden crashing and loud chattering fills the air. p_l freezes as a pack of Twolegs stumbles through the trees. The cats quickly scatter, leaving behind whatever that weird thing was in the grass.",
    		 "exp": 0,
    		 "weight": 20,
-        "outcome_art": "tryingcandy_OUTCOME"
+        "art": "tryingcandy_OUTCOME"
    	 }
     ]
 }
