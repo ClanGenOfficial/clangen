@@ -1382,7 +1382,7 @@
                 "dead_cats": ["app1"],
                 "history_text": {
                     "reg_death": "m_c was killed by the poison of a death tree raining down on {PRONOUN/m_c/object}.",
-                    "lead_death": "{VERB/m_c/were/was} killed by the poison of a death tree raining down on {PRONOUN/m_c/object"
+                    "lead_death": "{VERB/m_c/were/was} killed by the poison of a death tree raining down on {PRONOUN/m_c/object}"
                 },
                 "relationships": [
                     {
