@@ -1439,7 +1439,7 @@
                 "weight": 20
             },
             {
-                "text": "r_c decides to mimic the small Twolegs. Approaching a larger Twoleg den, {PRONOUN/r_c/subject} {VERB/r_c/meow/meows) softly at the entrance. The Twoleg that opens the entrance seems amused and hands r_c a morsel of food. The patrol decides to inspect it further once they return to camp.",
+                "text": "r_c decides to mimic the small Twolegs. Approaching a larger Twoleg den, {PRONOUN/r_c/subject} {VERB/r_c/meow/meows} softly at the entrance. The Twoleg that opens the entrance seems amused and hands r_c a morsel of food. The patrol decides to inspect it further once they return to camp.",
                 "exp": 10,
                 "weight": 20
             }

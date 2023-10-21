@@ -9,7 +9,7 @@
     "max_cats": 6,
     "min_max_status": {},
     "weight": 20,
-    "intro_text": "The patrol is on edge after scenting Twolegs in the area. p_l is taking point, cautiously keeping watch for any Twolegs that may be on the hunt for cats. Their scent is everywhere, even as the cats carefully remark the area. What's that smell? It's almost like pumpkin, but strange…",
+    "intro_text": "The patrol is on edge after scenting Twolegs in the area. p_l is taking point, cautiously keeping watch for any Twolegs that may be on the hunt for cats. Their scent is everywhere, even as the cats carefully remark the area. What's that smell? It's almost like pumpkin, but strange...",
     "decline_text": "p_l knows better than to mess with anything that smells like Twolegs. {PRONOUN/p_l/subject/CAP} carefully {VERB/p_l/skirt/skirts} the area.",
     "chance_of_success": 40,
     "success_outcomes": [
