@@ -75,7 +75,7 @@
         "pl_skill_constraint": ["CLAIRVOYANT,1"],
         "success_outcomes": [
             {
-                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/stop/stops} and {VERB/p_l/consider/considers} the feeling for a moment, allowing {PRONOUN/p_l/self} to linger. This might be important for the future, or it could simply be the left-over feelings of an event long past... either way, p_l doesn't stay too long before returning to herb collecting.",
+                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/stop/stops} and {VERB/p_l/consider/considers} the feeling for a moment, allowing {PRONOUN/p_l/self} to linger. This might be important for the future, or it could simply be the left-over feelings of an event long past... Either way, p_l doesn't stay too long before returning to herb collecting.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["random_herbs"]
