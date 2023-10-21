@@ -47,6 +47,7 @@ class PatrolScreen(Screens):
         self.results_text = ""
         self.start_patrol_thread = None
         self.proceed_patrol_thread = None
+        self.outcome_art = None
 
     def handle_event(self, event):
         if game.switches["window_open"]:
@@ -515,6 +516,7 @@ class PatrolScreen(Screens):
                         pygame.transform.scale(
                             self.patrol_obj.get_patrol_art(), (600, 600))
                     )
+        
 
         # Prepare Intro Text
         # adjusting text for solo patrols
@@ -583,11 +585,11 @@ class PatrolScreen(Screens):
         """Proceeds the patrol - to be run in the seperate thread. """
         
         if user_input in ["nopro", "notproceed"]:
-            self.display_text, self.results_text = self.patrol_obj.proceed_patrol("decline")
+            self.display_text, self.results_text, self.outcome_art = self.patrol_obj.proceed_patrol("decline")
         elif user_input in ["antag", "antagonize"]:
-            self.display_text, self.results_text = self.patrol_obj.proceed_patrol("antag")
+            self.display_text, self.results_text, self.outcome_art = self.patrol_obj.proceed_patrol("antag")
         else:
-            self.display_text, self.results_text = self.patrol_obj.proceed_patrol("proceed")
+            self.display_text, self.results_text, self.outcome_art = self.patrol_obj.proceed_patrol("proceed")
 
     def open_patrol_complete_screen(self):
         """Deals with the next stage of the patrol, including antagonize, proceed, and do not proceed.
@@ -602,8 +604,9 @@ class PatrolScreen(Screens):
         self.elements['patrol_again'] = UIImageButton(scale(pygame.Rect((1120, 274), (324, 60))), "",
                                                       object_id="#patrol_again", manager=MANAGER)
                 
-        # Adjust text for solo patrols
-        #display_text = adjust_patrol_text(display_text, self.patrol_obj)
+        # Update patrol art, if needed.
+        if self.outcome_art is not None and self.elements.get('intro_image') is not None:
+            self.elements['intro_image'].set_image(self.outcome_art)
 
         self.elements["patrol_results"] = pygame_gui.elements.UITextBox("",
                                                                         scale(pygame.Rect((1100, 1000), (344, 300))),

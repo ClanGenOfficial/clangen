@@ -3072,5 +3072,81 @@
                 "prey": ["very_small"]
             }
         ]
+    },
+    {
+        "patrol_id": "fst_hunt_flatwoods1",
+        "biome": ["forest"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": ["halloween"],
+        "patrol_art": "flatwoods_INTRO",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [2, 6],
+            "healer cats": [-1, -1],
+            "normal adult": [-1, -1]
+        },
+        "weight": 20,
+        "chance_of_success": 50,
+        "relationship_constraint": [],
+        "pl_skill_constraint": [],
+        "intro_text": "Padding through the forest at night on a dare, the apprentices gasp as light streaks across the sky. A StarClan cat has fallen!",
+        "decline_text": "Before the apprentices can pursue the fallen StarClan cat, the worst of all possibilities happens - a warrior discovers them, sending them back to camp with a loud scolding.",
+        "success_outcomes": [
+            {
+                "text": "Scrambling up the hill, app1 shoves app2 up a slightly too big step, both of them panting eagerly as they run. The mist swirls around them, stinking strangely as they search for the StarClan cat, until app2 bumps into a huge, tall pillar, one that blinks down with slow, glowing red eyes.",
+                "exp": 0,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "app2 gets stuck on a big stone step as the apprentices try to scramble uphill - and by the time they climb up, only the dissipating, strangely scented mist says that anything magical passed through here at all.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
+    },
+    {
+        "patrol_id": "fst_hunt_doverdemon",
+        "biome": ["forest"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": ["halloween"],
+        "patrol_art": "doverdemon_INTRO",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "As r_c is out alone, {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} something out of the corner of {PRONOUN/r_c/poss} eye; spindly, long, and partially hidden by the undergrowth of the forest.",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/hurry/hurries} back to camp, a little freaked out.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "It leaps up onto a fallen log - whatever it is, bulbous head, long, spindly limbs, pale, hairless skin like a skink. r_c hisses, and it echoes in a whisper, skittering off into the woods.",
+                "exp": 20,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c doesn't want to talk about it when they come back to camp. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} want to talk about anything.",
+                "exp": 0,
+                "weight": 20,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["shock"]
+                    }
+                ],
+                "history_text": {
+                    "reg_death": "m_c died of shock after {PRONOUN/r_c/poss} encounter with the Dover Demon.",
+                    "lead_death": "died of shock from an encounter with the Dover Demon"
+                }
+            }
+        ]
     }
+    
+    
 ]
