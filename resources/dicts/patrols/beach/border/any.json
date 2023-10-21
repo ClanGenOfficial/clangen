@@ -1700,5 +1700,73 @@
                 "can_have_stat": ["app"]
             }
         ]
-    }
+    },
+    {
+        "patrol_id": "bch_bord_nessie1",
+        "biome": ["beach"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["halloween"],
+        "patrol_art": "nessie_INTRO",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 15,
+        "intro_text": "As the cats move along the shoreline, they spot something massive moving beneath the water.",
+        "decline_text": "The cats are feeling remarkably incurious today.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "It's Nessie! The patrol trots up, exchanging a nice mouse for a nice deep water fish, both creatures trading the respective delicacies that're hard for the other to obtain.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["small"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol is so wrapped up trying to work out what the creature is that r_c topples into the water. It solves the mystery though, as Nessie propels r_c back onto the shoreline with one gentle, immense flipper.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_bord_frogman1",
+        "biome": ["beach"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["halloween"],
+        "patrol_art": "loveland_frog_INTRO",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "chance_of_success": 50,
+        "relationship_constraint": [],
+        "pl_skill_constraint": [],
+        "intro_text": "p_l waves r_c over with {PRONOUN/p_l/poss} tail. What's <i>that</i>?!",
+        "decline_text": "r_c isn't interested, and the patrol continues on their way.",
+        "success_outcomes": [
+            {
+                "text": "The massive frog-Twoleg creeps up the rocks, slow and unnatural. The patrol watches, breathless, until it's out of sight. Well, p_l huffs. Maybe toads grow bigger than {PRONOUN/p_l/subject} thought. Terrifying.",
+                "exp": 0,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Frozen, the cats watch the massive lumbering frog, the size of a Twoleg and just as bipedal. It pauses, and like the rumble of thunder, issues a massive croak that creaks like cracking wood. All r_c can do is shiver.",
+                "exp": 0,
+                "weight": 20,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["shock", "non_lethal"]
+                    }
+                ]
+            }
+        ]
+    }    
+    
 ]

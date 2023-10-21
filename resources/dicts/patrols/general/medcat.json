@@ -2942,5 +2942,271 @@
                 ]
             }
         ]
+    },
+    {
+    	"patrol_id": "gen_med_deathsheadmoth1",
+    	"biome": ["Any"],
+    	"season": ["Any"],
+    	"types": ["herb_gathering"],
+    	"tags": ["halloween"],
+    	"patrol_art": "deathsheadmoth_INTRO",
+    	"min_cats": 4,
+    	"max_cats": 6,
+    	"min_max_status": {
+        	"normal adult": [1, 5],
+	        "medicine cat": [1, 1]
+    	},
+    	"weight": 40,
+    	"intro_text": "p_l is out alone in c_n's territory when a shiver runs down {PRONOUN/p_l/poss} spine. {PRONOUN/p_l/subject/CAP} {VERB/p_l/stop/stops}. {PRONOUN/p_l/subject/CAP} slowly {VERB/p_l/turn/turns} {PRONOUN/p_l/poss} head. On the rosemary bush next to {PRONOUN/p_l/object}, the moth lazily stretches its wings, the Twoleg skull on its back grinning.",
+    	"decline_text": "It's just a moth, p_l tells {PRONOUN/p_l/self}, and continues on {PRONOUN/p_l/poss} way.",
+    	"chance_of_success": 70,
+    	"pl_skill_constraint": ["OMEN,3"],
+    	"success_outcomes": [
+        	{
+            	"text": "That- that's a Death's Head Moth, and suddenly p_l is running, charging, pelting forward towards the training grounds where r_c and the others said they'd be training today. {PRONOUN/p_l/subject/CAP} {VERB/p_l/skid/skids} forward, bursting into the area, barging into the training group and knocking cats aside - stop the exercise, stop training, STOP EVERYTHING!",
+            	"exp": 50,
+            	"weight": 20,
+            	"relationships": [
+                	{
+                    	"cats_to": ["p_l"],
+                    	"cats_from": ["patrol"],
+                    	"mutual": false,
+                    	"values": ["comfort", "trust", "respect"],
+                    	"amount": 15
+                	}
+            	]
+        	}
+    	],
+    	"fail_outcomes": [
+        	{
+            	"text": "Surely, surely it's nothing - but p_l can't deny {PRONOUN/p_l/poss} instincts. This Death's Head Moth is an omen, and {PRONOUN/p_l/subject} {VERB/p_l/take/takes} off running, sprinting towards the training arena where {PRONOUN/p_l/poss} Clanmates said they'd be. But it's too late. By the time p_l arrives, r_c is choking on {PRONOUN/r_c/poss} last breaths, victim of a terrible accident.",
+            	"exp": 0,
+            	"weight": 20,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "reg_death": "m_c died in a terrible training accident, foretold by a Death's Head Moth.",
+                    "lead_death": "died in a terrible training accident, foretold by a Death's Head Moth"
+   		            }
+        	}
+    	]
+	},
+    {
+        "patrol_id": "gen_med_pumpkinpatch1",
+        "biome": ["Any"],
+        "season": ["leaf-fall"],
+        "types": ["herb_gathering"],
+        "tags": ["romantic", "halloween"],
+        "patrol_art": "gen_med_pumpkinpatch1",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "all apprentices": [-1, -1],
+            "medicine cat": [1, 1],
+            "normal adult": [1, 1]
+        },
+        "weight": 20,
+        "intro_text": "p_l is hoping to find some herbs growing in defiance of the weather, which is becoming increasingly cold. r_c offered to come along to help search. After some back and forth, they decide to see what's growing among the fields near a Twoleg farm.",
+        "decline_text": "The distant call of a Twoleg makes the cats think better of the whole idea.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "The two cats come upon a field of pumpkins, luckily empty of Twolegs. As p_l pokes around to see if any herbs are about, r_c gleefully sinks {PRONOUN/r_c/poss} claws into a pumpkin. {PRONOUN/r_c/subject} {VERB/r_c/scratch/scratches} some crude shapes into the pumpkin before declaring that it's a cat! p_l snickers and replies that it's the most beautiful cat they've ever seen. r_c slyly shoots back, yes, only second to p_l.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": ["rosemary"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The two trot towards the field, tails raised nonchalantly. Suddenly, p_l hears a shriek and manages to duck out of the way as a crow swoops close. Angry caws ring across the field.  r_c calls for retreat as more crows converge on them. The two cats run away from the field, fur fluffed in both terror and embarrassment.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_med_pumpkinpatch2",
+        "biome": ["Any"],
+        "season": ["leaf-fall"],
+        "types": ["herb_gathering"],
+        "tags": ["romantic", "halloween"],
+        "patrol_art": "gen_med_pumpkinpatch2",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "medicine cat": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "p_l is hoping to find some herbs growing in defiance of the weather, which is becoming increasingly cold. r_c offered to come along to help search. After some back and forth, they decide to see what's growing among the fields near a Twoleg farm.",
+        "decline_text": "The distant call of a Twoleg makes the cats think better of the whole idea.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "The two cats come upon a field of pumpkins, luckily empty of Twolegs. As p_l pokes around to see if any herbs are about, r_c instead gleefully sinks {PRONOUN/r_c/poss} claws into a pumpkin. {PRONOUN/r_c/subject} {VERB/r_c/scratch/scratches} some crude shapes into the pumpkin before declaring that it's a cat! p_l snickers and replies that it's the most beautiful cat they've ever seen. r_c slyly shoots back, yes, only second to p_l.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": ["rosemary"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The two trot towards the field, tails raised nonchalantly. Suddenly, p_l hears a shriek and manages to duck out of the way as a crow swoops close. Angry caws ring across the field.  r_c calls for retreat as more crows converge on them. The two cats run away from the field, fur fluffed in both terror and embarrassment.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_med_friendly_ghost",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["herb_gathering"],
+        "tags": ["halloween"],
+        "patrol_art": "med_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "While out gathering herbs alone at night, r_c notices a faint glow coming from deeper within the Clan's territory. As {PRONOUN/r_c/subject} {VERB/r_c/peer/peers} into the gloom, {PRONOUN/r_c/subject} {VERB/r_c/see/sees} that it slightly resembles a cat.",
+        "decline_text": "r_c decides herbs are more important than chasing random glowing figures through the territory.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "Despite being alone, r_c decides to follow the figure. Perhaps it's a StarClan cat. As {PRONOUN/r_c/subject} {VERB/r_c/get/gets} closer, {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} that no, this cat doesn't have stars in its fur. But it doesn't seem malicious either. The ghostly cat beckons r_c closer and to {PRONOUN/r_c/poss} surprise, the ghost has led {PRONOUN/r_c/object} to a giant patch of herbs! r_c thanks the spirit and it seems to smile as r_c begins to collect the herbs.",
+                "exp": 10,
+                "weight": 20,
+                "herbs": ["many_herbs"]
+            },
+            {
+                "text": "Despite being alone, r_c decides to follow the figure. Perhaps it's a StarClan cat. As {PRONOUN/r_c/subject} {VERB/r_c/get/gets} closer, {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} that no, this cat doesn't have stars in {PRONOUN/r_c/poss} fur. But it doesn't seem malicious either. The ghost waves its tail as if to say 'hello'. r_c nods back at it, and continues {PRONOUN/r_c/poss} herb gathering with the friendly ghost flitting about.",
+                "exp": 10,
+                "weight": 20,
+                "herbs": ["random_herbs"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The ghostly cat suddenly moves towards r_c, and r_c's fur spikes in fear. {PRONOUN/r_c/subject/CAP} {VERB/r_c/race/races} back to camp, shouting about a spirit that's haunting the territory.",
+                "exp": 0,
+                "weight": 10
+            },
+            {
+                "text": "The ghostly cat suddenly moves towards r_c, and the fur on r_c's back spikes. r_c backs away, terrified, trying {PRONOUN/r_c/poss} best to remember {PRONOUN/r_c/poss} battle training. The ghost seems to notice {PRONOUN/r_c/poss} fear and frowns, drifting back away into the territory with its head down and tail dragging.",
+                "exp": 0,
+                "weight": 10
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_med_scary_ghost1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["herb_gathering"],
+        "tags": ["halloween"],
+        "patrol_art": "med_general_intro",
+        "min_cats": 1,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [-1, -1],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "As r_c follows a trail into a darkly shadowed part of the territory on the hunt for herbs, night shadows begin to play with {PRONOUN/r_c/poss} vision, was that movement up ahead? r_c spots an undisguisable silhouette of a cat ahead. Malicious eyes and bristled fur meets {PRONOUN/r_c/object} as {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} amongst the shadows, the strangers fur is translucent and it moves as though made from a strange dark mist.",
+        "decline_text": "r_c 's tail bristles with fear, a cold shiver creeping along {PRONOUN/r_c/poss} back. This is definitely not a Starclan cat, and {PRONOUN/r_c/subject} quickly {VERB/r_c/turn/turns} the back to camp - herbs can wait until morning.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "r_c approaches the strange cat, they might be a wandering spirit in need of help. The dark silhouette seems to flicker in an out of few as {PRONOUN/r_c/subject} {VERB/r_c/move/moves} toward it, gradually reappearing further and further away. r_c stops, watching the stranger in the distance with confusion, white glowing haunted eyes watch them from the shadows. r_c shivers, and decides to hunt for herbs someplace else.",
+                "exp": 10,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c approaches the strange cat, they might be a wandering spirit in need of help. But as r_c gets closer, the strange cat shrieks an awful blood curdling scream that makes {PRONOUN/r_c/subject} fur stand on end, overcome by terror {PRONOUN/r_c/subject} {VERB/r_c/flee/flees} back to camp, dropping the little herbs {PRONOUN/r_c/subject} had gathered.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["shock", "non_lethal"]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_med_witch_cat",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["herb_gathering"],
+        "tags": ["halloween", "random_herbs"],
+        "patrol_art": "gen_hunt_strange",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+          "healer cats": [1,6],
+          "normal adult": [0,5],
+          "all apprentices": [0,5]
+        },
+        "weight": 20,
+        "intro_text": "The patrol stops by at their usual herb patch, only to be greeted by a mysterious black cat that stares them down, unblinking.",
+        "decline_text": "This cat seems a bit too strange and even a touch antagonistic... Purrhaps it would be wise to come back another day, when the raven-furred stranger isn't guarding the herb patch.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "Gathering courage, r_c stares back until the black cat backs off and leaves the patrol to their herb-gathering in peace. What a strange cat!",
+                "exp": 20,
+                "weight": 20,
+                "herbs": ["random_herbs"]
+            },
+            {
+                "text": "Calling on StarClan's guidance, p_l instructs the patrol to bow to the black cat. It bows back in return and shows them an abundant patch of rare herbs.",
+                "exp": 30,
+                "weight": 10,
+                "herbs": ["catmint"]
+            },
+            {
+                "text": "Sensing the black cat's strong aura, s_c urges it to speak, and listens carefully as it imparts a bone-chilling omen, omen_list.",
+                "exp": 30,
+                "weight": 20,
+                "herbs": ["many_herbs"],
+                "stat_skill": ["INSIGHTFUL,2", "SENSE,2", "OMEN,2", "STAR,2", "LORE,2"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Gathering courage, r_c decides to return the black cat's stare... Big mistake. The black cat hisses and mutters, strange and undecipherable, leaving r_c and the rest of the patrol frozen in dread.",
+                "exp": 0,
+                "weight": 20,
+                "injury": [
+                	{
+                    	"cats": ["patrol"],
+                    	"injuries": ["shock", "non_lethal"],
+                    	"scars": []
+                	}
+                  ]
+            }
+        ]
     }
+
 ]

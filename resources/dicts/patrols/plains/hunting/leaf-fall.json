@@ -542,10 +542,22 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply, the rest of the patrol have to rescue them from the red vixen.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up the fight.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
+                "history_text": {
+                    "scar": "m_c carries a scar from a fox fight.",
+                    "reg_death": "m_c fell in battle with a fox.",
+                    "lead_death": "died while fighting a vixen"
+                },
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["big_bite_injury"],
+                        "scars": ["NECKBITE"]
+                    }
+                ],
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -606,6 +618,7 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up on the fight.",
                 "exp": 0,
                 "weight": 10,
+                "stat_skill": ["FIGHTER,1"],
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -752,6 +765,7 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up the fight.",
                 "exp": 0,
                 "weight": 10,
+                "stat_skill": ["FIGHTER,1"],
                 "dead_cats": ["r_c"],
                 "history_text": { "scar": "m_c carries a scar from a fox fight." },
                 "relationships": [
@@ -887,9 +901,10 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but the vixen is determined to live, and that makes all the difference. s_c ends up pinned in a defensible hiding spot, bleeding and terrified, until the vixen judges them no longer a threat and continues on her way.",
+                "text": "s_c is determined to win, but the vixen is determined to live, and that makes all the difference. s_c ends up pinned in a defensible hiding spot, bleeding and terrified, until the vixen judges {PRONOUN/s_c/object} no longer a threat and continues on her way.",
                 "exp": 0,
                 "weight": 10,
+                "stat_skill": ["FIGHTER,1"],
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -2000,5 +2015,51 @@
                 "prey": ["very_small"]
             }
         ]
-    }
+    },
+    {
+    	"patrol_id": "pln_hunt_pipistrellebats1",
+    	"biome": ["plains"],
+    	"season": ["leaf-fall"],
+    	"types": ["hunting"],
+    	"tags": ["halloween", "romance"],
+    	"patrol_art": "pipbats_INTRO",
+    	"min_cats": 3,
+    	"max_cats": 6,
+    	"min_max_status": {},
+    	"weight": 20,
+    	"intro_text": "As the wind scatters the orange leaf-pelts of the lonely trees on the grasslands, pipistrelle bats arrive en masse to court, males belting out their high pitched songs of love.",
+    	"decline_text": "How very... squeaky.",
+    	"chance_of_success": 50,
+    	"success_outcomes": [
+        	{
+            	"text": "Distracted by love and the competition of performances to win it, the males make easy hunting for their delighted audience of c_n cats.",
+            	"exp": 25,
+            	"weight": 20,
+            	"prey": ["medium"]
+        	},
+        	{
+            	"text": "p_l watches r_c leap with the thrill of the hunt, quite literally snatching victory from thin air. {PRONOUN/p_l/subject}'d feel sorry for the lover bats - but r_c is just showing who the best potential mates are. Showing the pipistrelles, of course. No one else.",
+            	"exp": 20,
+            	"weight": 20,
+            	"relationships": [
+                	{
+                    	"cats_to": ["r_c"],
+                    	"cats_from": ["p_l"],
+                    	"mutual": false,
+                    	"values": ["romantic", "respect"],
+                    	"amount": 10
+                	}
+            	],
+            	"prey": ["medium"]
+        	}
+    	],
+    	"fail_outcomes": [
+        	{
+            	"text": "How is anyone supposed to hunt with all this ringing in their ears?!",
+            	"exp": 0,
+            	"weight": 20
+        	}
+    	]
+	}
+
 ]

@@ -412,8 +412,12 @@ class Cat():
 
         May return some additional text to add to the death event.
         """
-        self.injuries.clear()
-        self.illnesses.clear()
+        if self.status == 'leader' and 'pregnant' in self.injuries and game.clan.leader_lives > 0:
+            self.illnesses.clear()
+            self.injuries = { key : value for (key, value) in self.injuries.items() if key == 'pregnant'}
+        else:
+            self.injuries.clear()
+            self.illnesses.clear()
         
         # Deal with leader death
         text = ""

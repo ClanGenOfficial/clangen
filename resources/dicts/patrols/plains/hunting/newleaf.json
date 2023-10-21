@@ -542,21 +542,6 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply. the rest of the patrol have to rescue them from the red vixen.",
-                "exp": 0,
-                "weight": 20,
-                "stat_skill": ["FIGHTER,1"],
-                "relationships": [
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": -5
-                    }
-                ]
-            },
-            {
                 "text": "Never threaten a mother's young - the red vixen kills r_c in the skirmish.",
                 "exp": 0,
                 "weight": 10,
@@ -606,9 +591,10 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up on the fight.",
                 "exp": 0,
                 "weight": 10,
+                "stat_skill": ["FIGHTER,1"],
                 "injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["s_c"],
                         "injuries": ["big_bite_injury"],
                         "scars": ["NECKBITE"]
                     }
@@ -620,7 +606,7 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol", "r_c"],
+                        "cats_to": ["s_c", "patrol"],
                         "cats_from": ["clan", "clan", "patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
@@ -733,21 +719,6 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the rest of the patrol have to rescue them from the red vixen.",
-                "exp": 0,
-                "weight": 20,
-                "stat_skill": ["FIGHTER,1"],
-                "relationships": [
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": -5
-                    }
-                ]
-            },
-            {
                 "text": "r_c is left wounded as the patrol and the mother red vixen fight to a stalemate. Hopefully they've given the fox mother a reason not to return to this part of the forest.",
                 "exp": 0,
                 "weight": 10,
@@ -773,9 +744,10 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up on the fight.",
                 "exp": 0,
                 "weight": 10,
+                "stat_skill": ["FIGHTER,1"],
                 "injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["s_c"],
                         "injuries": ["big_bite_injury"],
                         "scars": ["NECKBITE"]
                     }
@@ -783,7 +755,7 @@
                 "history_text": { "scar": "m_c carries a scar from a fox fight." },
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol", "r_c"],
+                        "cats_to": ["s_c", "patrol"],
                         "cats_from": ["clan", "clan", "patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
@@ -914,12 +886,13 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but the vixen is determined to live, and that makes all the difference. s_c ends up pinned in a defensible hiding spot, bleeding and terrified, until the vixen judges them no longer a threat and continues on her way.",
+                "text": "s_c is determined to win, but the vixen is determined to live, and that makes all the difference. s_c ends up pinned in a defensible hiding spot, bleeding and terrified, until the vixen judges {PRONOUN/s_c/object} no longer a threat and continues on her way.",
                 "exp": 0,
                 "weight": 10,
+                "stat_skill": ["FIGHTER,1"],
                 "injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["s_c"],
                         "injuries": ["big_bite_injury"],
                         "scars": ["FACE"]
                     }

@@ -494,5 +494,129 @@
       ]
     }
   ]
+},
+{
+    "patrol_id": "mtn_bord_mothman1",
+    "biome": ["mountainous"],
+    "season": ["Any"],
+    "types": ["border"],
+    "tags": ["halloween"],
+    "patrol_art": "mothman_INTRO",
+    "min_cats": 1,
+    "max_cats": 1,
+    "min_max_status": {
+   	 "leader": [-1, -1]
+    },
+    "weight": 15,
+    "intro_text": "As r_c pads through the shadowy trees, the sun already hidden by the mountain slopes, {PRONOUN/r_c/subject} {VERB/r_c/freeze/freezes}. Up ahead, a Twoleg peers down from above, black wings a huge backdrop to hypnotic, glowing red eyes...",
+    "decline_text": "This is no creature for mortal eyes. r_c screws {PRONOUN/r_c/poss} eyelids shut, muttering prayer after prayer after prayer to StarClan itself - and when {PRONOUN/r_c/subject} {VERB/r_c/open/opens} them again, the moth-Twoleg is gone.",
+    "chance_of_success": 25,
+    "success_outcomes": [
+   	 {
+   		 "text": "r_c turns tail and runs, feeling air ruffle their fur as <i>something</i> passes overhead while they pelt for home, without even the breath to waste on wailing.",
+   		 "exp": 35,
+   		 "weight": 20,
+         "art": "mothman_OUTCOME"
+   	 },
+   	 {
+   		 "text": "r_c returns home from their uneventful patrol.",
+   		 "exp": 35,
+   		 "weight": 10,
+   		 "injury": [
+   			 {
+   				 "cats": ["r_c"],
+   				 "injuries": ["persistent headache"]
+   			 }
+   		 ],
+         "art": "mothman_OUTCOME"
+   	 },
+   	 {
+   		 "text": "Caution has always been in {PRONOUN/s_c/poss} blood, and this, this has to be why. Frozen to the ground so completely that the frost grows over {PRONOUN/s_c/poss} fur as {PRONOUN/s_c/subject} {VERB/s_c/wait/waits}, s_c refuses to twitch so much as a whisker until the moth-Twoleg leaves.",
+   		 "exp": 40,
+   		 "weight": 20,
+   		 "stat_trait": ["lonesome", "nervous", "insecure", "calm", "careful", "sneaky", "strange", "wise", "cunning", "gloomy"],
+         "art": "mothman_OUTCOME"
+   	 }
+    ],
+    "fail_outcomes": [
+   	 {
+   		 "text": "All r_c remembers from then is the eyes... the glowing red eyes...",
+   		 "exp": 10,
+   		 "weight": 10,
+   		 "injury": [
+   			 {
+   				 "cats": ["r_c"],
+   				 "injuries": ["seizure prone"]
+   			 }
+   		 ],
+         "art": "mothman_OUTCOME"
+   	 },
+   	 {
+   		 "text": "r_c doesn't return home.",
+   		 "exp": 0,
+   		 "weight": 20,
+   		 "dead_cats": ["r_c"],
+   		 "history_text": {
+   			 "reg_death": "m_c was taken as the Mothman's snack."
+   		 },
+         "art": "mothman_OUTCOME"
+   	 },
+   	 {
+   		 "text": "The vast moth-Twoleg flies off, and r_c tries to shake off the encounter - but the mountain itself seems to be against them tonight, collapsing beneath their feet.",
+   		 "exp": 0,
+   		 "weight": 20,
+   		 "dead_cats": ["r_c"],
+   		 "history_text": {
+   			 "reg_death": "m_c {VERB/m_c/were/was} killed by the collapsing mountain slopes, an event predicted by the appearance of the Mothman."
+   		 },
+         "art": "mothman_OUTCOME"
+   	 }
+    ]
+},
+{
+	"patrol_id": "mtn_bord_jerseydevil1",
+	"biome": ["mountainous"],
+	"season": ["Any"],
+	"types": ["border"],
+	"tags": ["halloween"],
+	"patrol_art": "jerseydevil_INTRO",
+	"min_cats": 1,
+	"max_cats": 1,
+	"min_max_status": {},
+	"weight": 15,
+	"intro_text": "As p_l ducks through the overhanging branches of an evergreen, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} two deer, lying intertwined. Are they sleeping? Curious, p_l creeps closer.",
+	"decline_text": "Two deer are incomprehensibly huge targets for cats. p_l moves on.",
+	"chance_of_success": 30,
+	"success_outcomes": [
+  	{
+  		"text": "The bigger deer raises its head, blood dripping from its lips, head lifting higher and higher and higher as it rears backwards, jaws dropping open in a blood curdling scream, one mirrored by p_l as p_l shrieks and runs.",
+  		"exp": 0,
+  		"weight": 20,
+   	    "injury": [
+            {
+                "cats": ["p_l"],
+                "injuries": ["shock", "non_lethal"]
+            }
+     	]
+  	  }
+	],
+	"fail_outcomes": [
+  	  {
+        "text": "The bigger deer raises its head, blood dripping from its lips, head lifting higher and higher and higher. p_l shrieks and runs, branches tearing through {PRONOUN/p_l/poss} pelt as, horrifyingly, something crashes after {PRONOUN/p_l/object}, chasing {PRONOUN/p_l/object} for a pawful of frantic heartbeats.",
+        "exp": 0,
+        "weight": 20,
+        "injury": [
+            {
+                "cats": ["p_l"],
+                "injuries": ["torn pelt", "scrapes", "shock"]
+            }
+     	],
+   	    "history_text": {
+            "scar": "m_c was scarred from their frantic escape from a Jersey Devil.",
+            "reg_death": "m_c died from the shock of meeting a Jersey devil.",
+            "lead_death": "shocked from meeting a Jersey devil"
+        }
+   	  }
+	]
 }
 ]
