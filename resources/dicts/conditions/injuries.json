@@ -812,7 +812,7 @@
         "also_got": [],
         "cause_permanent": [
             "lost a leg",
-            "lost their tail",
+            "lost their tail"
         ],
         "herbs": [
             "juniper",
@@ -852,7 +852,8 @@
             "oak_leaves",
             "juniper",
             "ragwort",
-            "moss"]
+            "moss"
+        ]
     },
 
     "water in their lungs":{
