@@ -75,10 +75,10 @@ class PatrolOutcome():
         self.lost_cats = lost_cats if lost_cats is not None else []
         self.injury = injury if injury is not None else []
         self.history_reg_death = history_reg_death if history_reg_death is not None else \
-                                 "m_c died on patrol"
+                                 "m_c died on patrol."
         self.history_leader_death = history_leader_death if history_leader_death is not None else \
-                                    "died on patrol"
-        self.history_scar = history_scar if history_scar is not None else "m_c was scarred on patrol"
+                                    "died on patrol."
+        self.history_scar = history_scar if history_scar is not None else "m_c was scarred on patrol."
         self.new_cat = new_cat if new_cat is not None else []
         self.herbs = herbs if herbs is not None else []
         self.prey = prey if prey is not None else []
