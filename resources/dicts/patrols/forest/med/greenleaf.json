@@ -43,23 +43,61 @@
     },
     {
         "patrol_id": "fst_med_herbsrandom_greenleafbutterfly_tigerswallowtail1",
-        "biome": "forest",
-        "season": "greenleaf",
-        "tags": ["herb_gathering", "med_cat", "warrior", "rc_has_stat", "herb", "random_herbs", "rel_patrol", "romantic", "comfort", "no_change_fail"
-        ],
+        "biome": ["forest"],
+        "season": ["greenleaf"],
+        "types": ["herb_gathering"],
+        "tags": ["romantic"],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
         "intro_text": "The sun is hot on r_c's pelt as {PRONOUN/r_c/subject} follow p_l to what's apparently a 'really good spot' for herbs. r_c doesn't know what makes one spot better than any other, but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} just happy to have the chance to help p_l. As p_l dives into the greenery, as enthusastic as any proud hunter, a brilliant yellow and black butterfly lands right on {PRONOUN/p_l/poss} raised butt.",
         "decline_text": "It's not meant to be - a yowl interrupts their herbal hunt, the Clan needs p_l.",
         "chance_of_success": 60,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "Uh. Is that where p_l thinks it is? r_c stiffles a laugh, choking it into a purr as {PRONOUN/r_c/subject} help p_l escape {PRONOUN/p_l/poss} inappropriately placed unwanted passenger, gently batting the butterfly off {PRONOUN/p_l/object}. p_l should take it as a compliment, {PRONOUN/r_c/subject} {VERB/r_c/suggest/suggests}. {PRONOUN/r_c/subject/CAP} can't blame the butterfly for mistaking p_l for a beautiful flower.",
-            "unscathed_rare": "Err... A little help? p_l asks, and r_c pads closer, helplessly aware that there's absolutely no dignified way to remove an insect from another cat's arse. If p_l could just- no maybe if r_c moves around - whoops, no, and they both fall instead, butterfly fluttering smugly off as r_c tries not to die of embarassment on {PRONOUN/r_c/poss} back in the flowers with p_l smilings so prettily."
-        },
-        "fail_text": {
-            "unscathed_common": "Try as {PRONOUN/r_c/subject} might, r_c is more of a hinderance than a help for herb hunting, and {PRONOUN/r_c/subject} {VERB/r_c/know/knows} it, apologizing profusely. p_l waves it off with a shrug, but it's not what either cat was hoping for from the afternoon."
-        },
-        "min_cats": 2,
-        "max_cats": 2
+        "success_outcomes": [
+            {
+                "text": "Uh. Is that where p_l thinks it is? r_c stiffles a laugh, choking it into a purr as {PRONOUN/r_c/subject} help p_l escape {PRONOUN/p_l/poss} inappropriately placed unwanted passenger, gently batting the butterfly off {PRONOUN/p_l/object}. p_l should take it as a compliment, {PRONOUN/r_c/subject} {VERB/r_c/suggest/suggests}. {PRONOUN/r_c/subject/CAP} can't blame the butterfly for mistaking p_l for a beautiful flower.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Err... A little help? p_l asks, and r_c pads closer, helplessly aware that there's absolutely no dignified way to remove an insect from another cat's arse. If p_l could just- no maybe if r_c moves around - whoops, no, and they both fall instead, butterfly fluttering smugly off as r_c tries not to die of embarassment on {PRONOUN/r_c/poss} back in the flowers with p_l smilings so prettily.",
+                "exp": 20,
+                "weight": 5,
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Try as {PRONOUN/r_c/subject} might, r_c is more of a hinderance than a help for herb hunting, and {PRONOUN/r_c/subject} {VERB/r_c/know/knows} it, apologizing profusely. p_l waves it off with a shrug, but it's not what either cat was hoping for from the afternoon.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "fst_med_herbsmeadow_greenleaf1",
@@ -6098,7 +6136,7 @@
         "decline_text": "Still, they're lilies - poisonous and deadly. p_l decides to not risk both their lives.",
         "chance_of_success": 70,
         "weight": 20,
-        "success_outcomes" : [
+        "success_outcomes": [
             {
                 "text": "p_l finds a cluster of corpse lilies, wilting. The flowers, red and spindly, droop towards the floor. p_l steers clear, but has a productive session telling app1 about their memory enhancing effects.",
                 "exp": 20,
@@ -6121,18 +6159,14 @@
                         "injuries": ["poisoned"]
                     }
                 ],
-                "history_text": {
-                    "reg_death": "This cat was poisoned by a corpse lily."
-                }
+                "history_text": { "reg_death": "This cat was poisoned by a corpse lily." }
             },
             {
                 "text": "p_l moves at the wrong time, pollen whipped up by the warm wind. Still, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} {PRONOUN/p_l/self} trudging on - only to collapse a few heartbeats later.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["p_l"],
-                "history_text": {
-                    "reg_death": "This cat was poisoned by a corpse lily."
-                }
+                "history_text": { "reg_death": "This cat was poisoned by a corpse lily." }
             }
         ]
     }

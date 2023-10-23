@@ -2300,12 +2300,7 @@
                 "text": "Terror freezes s_c as the massive fox sees {PRONOUN/s_c/object}, and comes to investigate, its distorted stretched legs carrying it smoothly through the grass. As the massive nose, as big as app1's entire head, wuffles closer, app1 desperately swipes {PRONOUN/s_c/poss} claws. {PRONOUN/s_c/poss/CAP} screw {PRONOUN/s_c/poss} eyes shut at the outraged yelp, and feel {PRONOUN/s_c/self} being taken up and tossed by those gaping jaws. {PRONOUN/s_c/subject/CAP} {VERB/s_c/tense/tenses}, waiting for death to descend, and wait, and... waiting?",
                 "exp": 0,
                 "weight": 10,
-                "stat_trait": [
-                    "nervious",
-                    "insecure",
-                    "grumpy",
-                    "calm"
-                ],
+                "stat_trait": ["nervious", "insecure", "grumpy", "calm"],
                 "injury": [
                     {
                         "cats": ["app1"],

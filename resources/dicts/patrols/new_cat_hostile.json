@@ -860,7 +860,7 @@
                 "text": "p_l takes the lead in checking the source of the noise and comes face to face with a rogue hiding in the bush! The rogue takes a swipe at p_l, but doesn't get much damage in before p_l retaliates and chases the intruder out of c_n territory.",
                 "exp": 0,
                 "weight": 10,
-                "injury":  [
+                "injury": [
                     {
                         "cats": ["p_l"],
                         "injuries": ["battle_injury"],
@@ -927,8 +927,13 @@
                 "exp": 30,
                 "weight": 20,
                 "new_cat": [
-                    ["kittypet", "female", "dead",  "age:has_kits"],
-                    ["litter", "parent:0", "status:kitten", "backstory:abandoned1,abandoned4"]
+                    ["kittypet", "female", "dead", "age:has_kits"],
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:kitten",
+                        "backstory:abandoned1,abandoned4"
+                    ]
                 ],
                 "relationships": [
                     {
@@ -946,7 +951,12 @@
                 "weight": 5,
                 "new_cat": [
                     ["kittypet", "female", "dead", "age:has_kits"],
-                    ["litter", "parent:0", "status:kitten", "backstory:abandoned1,abandoned4"]
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:kitten",
+                        "backstory:abandoned1,abandoned4"
+                    ]
                 ],
                 "relationships": [
                     {
@@ -965,7 +975,12 @@
                 "stat_trait": ["careful", "thoughtful"],
                 "new_cat": [
                     ["kittypet", "female", "dead", "age:has_kits"],
-                    ["litter", "parent:0", "status:kitten", "backstory:abandoned1,abandoned4"]
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:kitten",
+                        "backstory:abandoned1,abandoned4"
+                    ]
                 ],
                 "relationships": [
                     {
@@ -1109,7 +1124,12 @@
                 "weight": 20,
                 "new_cat": [
                     ["age:has_kits", "dead", "meeting", "can_birth"],
-                    ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:newborn",
+                        "backstory:orphaned1,orphaned2"
+                    ]
                 ],
                 "relationships": [
                     {
@@ -1127,7 +1147,12 @@
                 "weight": 5,
                 "new_cat": [
                     ["age:has_kits", "dead", "meeting", "can_birth"],
-                    ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:newborn",
+                        "backstory:orphaned1,orphaned2"
+                    ]
                 ],
                 "relationships": [
                     {
@@ -1275,7 +1300,12 @@
                 "weight": 20,
                 "new_cat": [
                     ["age:has_kits", "dead", "meeting", "can_birth"],
-                    ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:newborn",
+                        "backstory:orphaned1,orphaned2"
+                    ]
                 ],
                 "relationships": [
                     {
@@ -1293,7 +1323,12 @@
                 "weight": 5,
                 "new_cat": [
                     ["age:has_kits", "dead", "meeting", "can_birth"],
-                    ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:newborn",
+                        "backstory:orphaned1,orphaned2"
+                    ]
                 ],
                 "relationships": [
                     {
@@ -1439,7 +1474,12 @@
                 "weight": 20,
                 "new_cat": [
                     ["age:has_kits", "dead", "meeting", "can_birth"],
-                    ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:newborn",
+                        "backstory:orphaned1,orphaned2"
+                    ]
                 ],
                 "relationships": [
                     {
@@ -1457,7 +1497,12 @@
                 "weight": 5,
                 "new_cat": [
                     ["age:has_kits", "dead", "meeting", "can_birth"],
-                    ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:newborn",
+                        "backstory:orphaned1,orphaned2"
+                    ]
                 ],
                 "relationships": [
                     {

@@ -916,7 +916,7 @@
                 "text": "p_l takes the lead in checking the source of the noise and comes face to face with a rogue hiding in the bush! The rogue takes a swipe at p_l, but doesn't get much damage in before p_l retaliates and chases the intruder out c_n territory.",
                 "exp": 0,
                 "weight": 10,
-                "injury":  [
+                "injury": [
                     {
                         "cats": ["p_l"],
                         "injuries": ["battle_injury"],
@@ -1050,7 +1050,12 @@
                 "weight": 20,
                 "new_cat": [
                     ["age:has_kits", "dead", "meeting", "can_birth"],
-                    ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:newborn",
+                        "backstory:orphaned1,orphaned2"
+                    ]
                 ],
                 "relationships": [
                     {
@@ -1068,7 +1073,12 @@
                 "weight": 5,
                 "new_cat": [
                     ["age:has_kits", "dead", "meeting", "can_birth"],
-                    ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:newborn",
+                        "backstory:orphaned1,orphaned2"
+                    ]
                 ],
                 "relationships": [
                     {
@@ -1216,7 +1226,12 @@
                 "weight": 20,
                 "new_cat": [
                     ["age:has_kits", "dead", "meeting", "can_birth"],
-                    ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:newborn",
+                        "backstory:orphaned1,orphaned2"
+                    ]
                 ],
                 "relationships": [
                     {
@@ -1234,7 +1249,12 @@
                 "weight": 5,
                 "new_cat": [
                     ["age:has_kits", "dead", "meeting", "can_birth"],
-                    ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:newborn",
+                        "backstory:orphaned1,orphaned2"
+                    ]
                 ],
                 "relationships": [
                     {
@@ -1387,7 +1407,12 @@
                 "weight": 20,
                 "new_cat": [
                     ["age:has_kits", "dead", "meeting", "can_birth"],
-                    ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:newborn",
+                        "backstory:orphaned1,orphaned2"
+                    ]
                 ],
                 "relationships": [
                     {
@@ -1405,7 +1430,12 @@
                 "weight": 5,
                 "new_cat": [
                     ["age:has_kits", "dead", "meeting", "can_birth"],
-                    ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:newborn",
+                        "backstory:orphaned1,orphaned2"
+                    ]
                 ],
                 "relationships": [
                     {
@@ -1472,7 +1502,12 @@
                 "weight": 20,
                 "new_cat": [
                     ["kittypet", "can_birth", "dead", "age:has_kits"],
-                    ["litter", "parent:0", "status:kitten", "backstory:abandoned1,abandoned4"]
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:kitten",
+                        "backstory:abandoned1,abandoned4"
+                    ]
                 ],
                 "relationships": [
                     {
@@ -1490,7 +1525,12 @@
                 "weight": 5,
                 "new_cat": [
                     ["kittypet", "can_birth", "dead", "age:has_kits"],
-                    ["litter", "parent:0", "status:kitten", "backstory:abandoned1,abandoned4"]
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:kitten",
+                        "backstory:abandoned1,abandoned4"
+                    ]
                 ],
                 "relationships": [
                     {
@@ -1509,7 +1549,12 @@
                 "stat_trait": ["careful", "thoughtful"],
                 "new_cat": [
                     ["kittypet", "can_birth", "dead", "age:has_kits"],
-                    ["litter", "parent:0", "status:kitten", "backstory:abandoned1,abandoned4"]
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:kitten",
+                        "backstory:abandoned1,abandoned4"
+                    ]
                 ],
                 "relationships": [
                     {
@@ -2187,7 +2232,14 @@
                 "text": "s_c is eager to steal a o_c_n's apprentice right out from under their noses. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stick/sticks} close to the apprentice on their way back to camp. At first, the Clan is unsure, but s_c vouches for n_c:0, and {PRONOUN/n_c:0/subject} {VERB/n_c:0/are/is} allowed to join the clan.",
                 "exp": 10,
                 "weight": 20,
-                "stat_trait": ["ambitious", "daring", "bold", "fierce", "bloodthirsty", "troublesome"],
+                "stat_trait": [
+                    "ambitious",
+                    "daring",
+                    "bold",
+                    "fierce",
+                    "bloodthirsty",
+                    "troublesome"
+                ],
                 "can_have_stat": ["any"],
                 "new_cat": [
                     ["status:apprentice", "backstory:otherclan2"]
