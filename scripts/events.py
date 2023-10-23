@@ -1744,23 +1744,24 @@ class Events:
         if targets:
             chosen_target = random.choice(targets)
             
-            #print(cat.name, 'TARGET CHOSEN', Cat.fetch_cat(chosen_target.cat_to).name)
+            print(cat.name, 'TARGET CHOSEN', Cat.fetch_cat(chosen_target.cat_to).name)
 
             kill_chance = game.config["death_related"]["base_murder_kill_chance"]
             
             # chance to murder grows with the dislike and jealousy value
-            kill_chance -= chosen_target.dislike
-            #print('DISLIKE MODIFIER', kill_chance)
-            kill_chance -= chosen_target.jealousy
-            #print('JEALOUS MODIFIER', kill_chance)
+            kill_chance -= (chosen_target.dislike / 2)
+            print('DISLIKE MODIFIER', kill_chance)
+            kill_chance -= (chosen_target.jealousy / 2)
+            print('JEALOUS MODIFIER', kill_chance)
 
             facet_modifiers = cat.personality.aggression + \
                 (16 - cat.personality.stability) + (16 - cat.personality.lawfulness)
+            print(str(facet_modifiers))
             
             kill_chance = kill_chance - facet_modifiers
             kill_chance = max(15, kill_chance)
              
-            #print("Final kill chance: " + str(kill_chance))
+            print("Final kill chance: " + str(kill_chance))
             
             if not int(random.random() * kill_chance):
                 print(cat.name, 'TARGET CHOSEN', Cat.fetch_cat(chosen_target.cat_to).name)
