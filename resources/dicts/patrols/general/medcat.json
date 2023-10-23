@@ -3010,7 +3010,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "The two cats come upon a field of pumpkins, luckily empty of Twolegs. As p_l pokes around to see if any herbs are about, r_c gleefully sinks {PRONOUN/r_c/poss} claws into a pumpkin. {PRONOUN/r_c/subject} {VERB/r_c/scratch/scratches} some crude shapes into the pumpkin before declaring that it's a cat! p_l snickers and replies that it's the most beautiful cat they've ever seen. r_c slyly shoots back, yes, only second to p_l.",
+                "text": "The two cats come upon a field of pumpkins, luckily empty of Twolegs. As p_l pokes around to see if any herbs are about, r_c gleefully sinks {PRONOUN/r_c/poss} claws into a pumpkin. {PRONOUN/r_c/subject/CAP} {VERB/r_c/scratch/scratches} some crude shapes into the pumpkin before declaring that it's a cat! p_l snickers and replies that it's the most beautiful cat they've ever seen. r_c slyly shoots back, yes, only second to p_l.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["rosemary"],
@@ -3051,7 +3051,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "The two cats come upon a field of pumpkins, luckily empty of Twolegs. As p_l pokes around to see if any herbs are about, r_c instead gleefully sinks {PRONOUN/r_c/poss} claws into a pumpkin. {PRONOUN/r_c/subject} {VERB/r_c/scratch/scratches} some crude shapes into the pumpkin before declaring that it's a cat! p_l snickers and replies that it's the most beautiful cat they've ever seen. r_c slyly shoots back, yes, only second to p_l.",
+                "text": "The two cats come upon a field of pumpkins, luckily empty of Twolegs. As p_l pokes around to see if any herbs are about, r_c instead gleefully sinks {PRONOUN/r_c/poss} claws into a pumpkin. {PRONOUN/r_c/subject/CAP} {VERB/r_c/scratch/scratches} some crude shapes into the pumpkin before declaring that it's a cat! p_l snickers and replies that it's the most beautiful cat they've ever seen. r_c slyly shoots back, yes, only second to p_l.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["rosemary"],
