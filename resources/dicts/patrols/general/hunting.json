@@ -1244,7 +1244,7 @@
     "season": [ "Any"],
     "types": [ "hunting"],
     "tags": [ "halloween"],
-    "patrol_art": "hunt_general_intro",
+    "patrol_art": "scaryghost_intro",
     "min_cats": 1,
     "max_cats": 6,
     "min_max_status": {
