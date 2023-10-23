@@ -1258,14 +1258,14 @@
     "chance_of_success": 50,
     "success_outcomes": [
         {
-            "text": "Your patrol confronts the strange cat - they are obviously an intruder on c_n territory and they don't look like the friendly type. The dark silhouette seems to flicker in and out of view as the patrol runs toward it, gradually reappearing further and further away. The patrol stops watching the stranger in the distance, white glowing haunted eyes watch them from the shadows. The patrol returns home, mesmerized by the strangeness of what they had just witnessed.",
+            "text": "Your patrol confronts the strange cat - they are obviously an intruder on c_n territory and they don't look like the friendly type. The dark silhouette seems to flicker in and out of view as the patrol runs toward it, gradually reappearing further and further away. The patrol stops watching the stranger in the distance, white glowing haunted eyes watch them from the shadows. The patrol returns home, mesmerized by the strangeness of what they just witnessed.",
             "exp": 10,
             "weight": 20
         }
     ],
     "fail_outcomes": [
         {
-            "text": "Your patrol confronts the strange cat - they are obviously an intruder on c_n territory and they don't look like the friendly type. The strange cat shrieks an awful blood curdling scream that makes r_c 's fur stand on end, overcome by terror the patrol flee back to camp.",
+            "text": "Your patrol confronts the strange cat - they are obviously an intruder on c_n territory and they don't look like the friendly type. The strange cat shrieks an awful blood curdling scream that makes r_c 's fur stand on end. Overcome by terror, the patrol flees back to camp.",
             "exp": 0,
             "weight": 10,
             "injury": [

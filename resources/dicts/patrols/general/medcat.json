@@ -3142,7 +3142,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c approaches the strange cat, they might be a wandering spirit in need of help. But as r_c gets closer, the strange cat shrieks an awful blood curdling scream that makes {PRONOUN/r_c/subject} fur stand on end, overcome by terror {PRONOUN/r_c/subject} {VERB/r_c/flee/flees} back to camp, dropping the little herbs {PRONOUN/r_c/subject} had gathered.",
+                "text": "r_c approaches the strange cat, they might be a wandering spirit in need of help. But as r_c gets closer, the strange cat shrieks an awful blood curdling scream that makes {PRONOUN/r_c/poss} fur stand on end, overcome by terror {PRONOUN/r_c/subject} {VERB/r_c/flee/flees} back to camp, dropping the little herbs {PRONOUN/r_c/subject} had gathered.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
