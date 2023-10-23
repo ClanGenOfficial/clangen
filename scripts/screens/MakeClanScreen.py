@@ -387,10 +387,7 @@ class MakeClanScreen(Screens):
             if old_biome is not None:
                 possible_biomes.remove(old_biome)
             self.biome_selected = choice(possible_biomes)
-            if self.biome_selected != 'Plains':
-                self.selected_camp_tab = randrange(1, 4)
-            else:
-                self.selected_camp_tab = randrange(1, 3)
+            self.selected_camp_tab = randrange(1, 4)
             self.refresh_selected_camp()
             self.refresh_text_and_buttons()
         elif event.ui_element == self.elements['done_button']:
@@ -425,10 +422,7 @@ class MakeClanScreen(Screens):
                 self.selected_camp_tab -= 1
                 self.refresh_selected_camp()
         elif event.key == pygame.K_DOWN and self.biome_selected is not None:
-            if self.biome_selected != 'Plains' and self.selected_camp_tab < 3:
-                self.selected_camp_tab += 1
-                self.refresh_selected_camp()
-            elif self.biome_selected == 'Plains' and self.selected_camp_tab < 2:
+            if self.selected_camp_tab < 3:
                 self.selected_camp_tab += 1
                 self.refresh_selected_camp()
         elif event.key == pygame.K_RETURN:
@@ -648,6 +642,8 @@ class MakeClanScreen(Screens):
             self.tabs["tab1"] = UIImageButton(scale(pygame.Rect((128, 360), (308, 60))), "", object_id="#grasslands_tab"
                                               , manager=MANAGER, )
             self.tabs["tab2"] = UIImageButton(scale(pygame.Rect((178, 430), (308, 60))), "", object_id="#tunnel_tab"
+                                              , manager=MANAGER)
+            self.tabs["tab3"] = UIImageButton(scale(pygame.Rect((128, 500), (308, 60))), "", object_id="#wasteland_tab"
                                               , manager=MANAGER)
         elif self.biome_selected == 'Beach':
             self.tabs["tab1"] = UIImageButton(scale(pygame.Rect((152, 360), (308, 60))), "", object_id="#tidepool_tab"
