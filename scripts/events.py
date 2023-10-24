@@ -1703,12 +1703,12 @@ class Events:
         relationships = cat.relationships.values()
         targets = []
         
-        # if this cat is unstable and aggressive, we lower the random murder chance. 
+        # if this cat is unstable and aggressive, we lower the random murder chance
         random_murder_chance = int(game.config["death_related"]["base_random_murder_chance"])
         random_murder_chance -= 0.5 * ((cat.personality.aggression) + (16 - cat.personality.stability))
 
-        # Check to see if random murder is triggered. If so, we allow targets to be anyone they have even the smallest amount 
-        # of dislike for. 
+        # Check to see if random murder is triggered. If so, we allow targets to be anyone they have even the smallest amount
+        # of dislike for
         if random.getrandbits(max(1, int(random_murder_chance))) == 1:
             targets = [i for i in relationships if i.dislike > 1 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
             if not targets:
@@ -1730,9 +1730,8 @@ class Events:
                                             enemy_clan, alive_kits=get_alive_kits(Cat), murder=True)
             
             return
-            
-   
-        # If random murder is not triggered, targets can only be those they have high dislike for. 
+
+        # If random murder is not triggered, targets can only be those they have high dislike for
         hate_relation = [i for i in relationships if
                         i.dislike > 50 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
         targets.extend(hate_relation)
@@ -1743,27 +1742,39 @@ class Events:
         # if we have some, then we need to decide if this cat will kill
         if targets:
             chosen_target = random.choice(targets)
-            
-            print(cat.name, 'TARGET CHOSEN', Cat.fetch_cat(chosen_target.cat_to).name)
+            #print(cat.name, 'TARGET CHOSEN', Cat.fetch_cat(chosen_target.cat_to).name)
+
+            # will this cat actually murder? this takes into account stability and lawfulness
+            murder_decision = 5
+            if cat.personality.stability < 6:
+                murder_decision -= 1
+            if cat.personality.lawfulness < 6:
+                murder_decision -= 1
+            elif cat.personality.lawfulness < 10 and chosen_target.dislike > 75:
+                murder_decision -= 1
+            elif cat.personality.lawfulness < 10 and chosen_target.jealousy > 75:
+                murder_decision -= 1
+            #print(str(chosen_target.log[-1]))
+            if "(high negative effect)" in chosen_target.log[-1]:
+                murder_decision -= 2
+
+            #print("Murder Decision: " + str(murder_decision))
+            if random.getrandbits(murder_decision) != 1:
+                #print(f'{cat.name} decided not to murder')
+                return
 
             kill_chance = game.config["death_related"]["base_murder_kill_chance"]
-            
-            # chance to murder grows with the dislike and jealousy value
-            kill_chance -= (chosen_target.dislike / 2)
-            print('DISLIKE MODIFIER', kill_chance)
-            kill_chance -= (chosen_target.jealousy / 2)
-            print('JEALOUS MODIFIER', kill_chance)
 
             facet_modifiers = cat.personality.aggression + \
                 (16 - cat.personality.stability) + (16 - cat.personality.lawfulness)
-            print(str(facet_modifiers))
+            #print("Facet modifiers: " + str(facet_modifiers))
             
             kill_chance = kill_chance - facet_modifiers
-            kill_chance = max(15, kill_chance)
+            kill_chance = max(1, kill_chance)
              
-            print("Final kill chance: " + str(kill_chance))
+            #print("Final kill chance: " + str(kill_chance))
             
-            if not int(random.random() * kill_chance):
+            if random.getrandbits(kill_chance) == 1:
                 print(cat.name, 'TARGET CHOSEN', Cat.fetch_cat(chosen_target.cat_to).name)
                 print("KILL KILL KILL")
                 
