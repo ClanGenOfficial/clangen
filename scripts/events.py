@@ -721,6 +721,7 @@ class Events:
         cat.one_moon()
         cat.manage_outside_trait()
             
+       self.handle_outside_EX(cat)
         cat.skills.progress_skill(cat)
         Pregnancy_Events.handle_having_kits(cat, clan=game.clan)
         
@@ -1518,6 +1519,30 @@ class Events:
                 exp += random.randint(0, 3)
 
             cat.experience += max(exp * mentor_modifier, 1)
+
+
+    def handle_outside_EX(self, cat):
+        if cat.status in ["loner", "rogue", "exiled", "kittypet", "lost"] and cat.age != 'kitten':
+            if cat.age == 'adolescent':
+                if cat.status == "kittypet":
+                    exp = random.randint(0, 6)
+                else:
+                    exp = random.randint(2, 8)
+            elif cat.age == 'senior':
+                if cat.status == "kittypet":
+                    exp = random.randint(0, 3)
+                else:
+                    exp = random.randint(1, 4)
+            else:
+                if cat.status == "kittypet":
+                    exp = random.randint(1, 5)
+                else:
+                    exp = random.randint(3, 7)
+
+            if game.clan.game_mode == "classic":
+                exp += random.randint(0, 3)
+                
+            cat.experience += exp
 
     def invite_new_cats(self, cat):
         """
