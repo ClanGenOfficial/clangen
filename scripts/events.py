@@ -1732,15 +1732,17 @@ class Events:
             return
         
         # will this cat actually murder? this takes into account stability and lawfulness
-        murder_capable = 5
+        murder_capable = 7
         if cat.personality.stability < 6:
-            murder_capable -= 1
+            murder_capable -= 3
         if cat.personality.lawfulness < 6:
-            murder_capable -= 1
+            murder_capable -= 2
         if cat.personality.aggression > 10:
             murder_capable -= 1
         elif cat.personality.aggression > 12:
-            murder_capable -= 2
+            murder_capable -= 3
+        
+        murder_capable = max(1, murder_capable)
 
         if random.getrandbits(murder_capable) != 1:
             #print(f'{cat.name} is currently not capable of murder')
