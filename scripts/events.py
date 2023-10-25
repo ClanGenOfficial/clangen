@@ -1755,7 +1755,7 @@ class Events:
             elif cat.personality.lawfulness < 10 and chosen_target.jealousy > 75:
                 murder_decision -= 1
             #print(str(chosen_target.log[-1]))
-            if "(high negative effect)" in chosen_target.log[-1]:
+            if len(chosen_target.log) > 0 and "(high negative effect)" in chosen_target.log[-1]:
                 murder_decision -= 2
 
             #print("Murder Decision: " + str(murder_decision))
