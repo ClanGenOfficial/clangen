@@ -3972,13 +3972,25 @@
         "weight": 20,
         "intro_text": "The greenleaf air is warm on {PRONOUN/p_l/poss} whiskers as p_l leads {PRONOUN/p_l/poss} patrol out. p_l suddenly motions for a halt. The cats can see a squirrel chewing on a nut beneath a tree. Surely if they try to catch it, it'll just retreat up into the branches. But r_c seems to want to try.",
         "decline_text": "They decide it's not worth the effort and look for other prey.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "success_outcomes": [
             {
                 "text": "The entire time r_c stalks towards the squirrel, the rest of the patrol holds their breath, sure that it will notice {PRONOUN/r_c/object}. The squirrel is too engrossed in its meal, however, and r_c kills it with little trouble.",
                 "exp": 20,
-                "weight": 30,
+                "weight": 20,
                 "prey": ["medium"]
+            },
+            {
+                "text": "r_c cautiously begins stalking the squirrel. To no one's surprise, the squirrel notices {PRONOUN/r_c/object} before {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} close enough and scurries up the tree. r_c takes off after it, scaling the tree quickly. {PRONOUN/r_c/subject/CAP} {VERB/r_c/manage/manages} to catch the squirrel, but the slippery bark under-paw causes them to fall. r_c hits the ground with a thud, the breath knocked out of {PRONOUN/r_c/subject}, but the squirrel still in {PRONOUN/r_c/poss} grasp.",
+                "exp": 15,
+                "weight": 25,
+                "prey": ["medium"],
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["minor_injury"]
+                    }
+                ]
             },
             {
                 "text": "Surprising everyone, s_c begins stalking. As they guessed, the squirrel notices something amiss and hops onto the tree for safety. s_c, not willing to let the prey go, climbs right after it! Everyone is rather impressed when {PRONOUN/s_c/subject} {VERB/s_c/return/returns}, the squirrel firmly clutched in {PRONOUN/s_c/poss} jaws.",
