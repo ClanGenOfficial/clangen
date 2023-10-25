@@ -1742,11 +1742,12 @@ class Events:
         elif cat.personality.aggression > 12:
             murder_capable -= 2
 
-        #print("Murder Decision: " + str(murder_decision))
         if random.getrandbits(murder_capable) != 1:
-            #print(f'{cat.name} decided not to murder')
+            #print(f'{cat.name} is currently not capable of murder')
             return
-
+        
+        print("Murder Capable: " + str(murder_capable))
+        print(f'{cat.name} is feeling murderous')
         # If random murder is not triggered, targets can only be those they have high dislike for
         hate_relation = [i for i in relationships if
                         i.dislike > 50 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
@@ -1758,24 +1759,27 @@ class Events:
         # if we have some, then we need to decide if this cat will kill
         if targets:
             chosen_target = random.choice(targets)
-            #print(cat.name, 'TARGET CHOSEN', Cat.fetch_cat(chosen_target.cat_to).name)
+            print(cat.name, 'TARGET CHOSEN', Cat.fetch_cat(chosen_target.cat_to).name)
 
             kill_chance = game.config["death_related"]["base_murder_kill_chance"]
 
-            #print(str(chosen_target.log[-1]))
+            relation_modifier = (0.5 * int(chosen_target.dislike + chosen_target.jealousy)) - \
+                (0.5 * int(chosen_target.platonic_like + chosen_target.trust + chosen_target.comfortable))
+            print("Relation Modifier: ", relation_modifier)
+            kill_chance -= relation_modifier
+
+            print(str(chosen_target.log[-1]))
             if len(chosen_target.log) > 0 and "(high negative effect)" in chosen_target.log[-1]:
-                kill_chance -= 5
+                kill_chance -= 50
 
-            facet_modifiers = cat.personality.aggression + \
-                (16 - cat.personality.stability) + (16 - cat.personality.lawfulness)
-            #print("Facet modifiers: " + str(facet_modifiers))
+            if len(chosen_target.log) > 0 and "(medium negative effect)" in chosen_target.log[-1]:
+                kill_chance -= 20
 
-            kill_chance = kill_chance - facet_modifiers
-            kill_chance = max(1, kill_chance)
+            kill_chance = max(1, int(kill_chance))
              
-            #print("Final kill chance: " + str(kill_chance))
+            print("Final kill chance: " + str(kill_chance))
             
-            if random.getrandbits(kill_chance) == 1:
+            if not int(random.random() * kill_chance):
                 print(cat.name, 'TARGET CHOSEN', Cat.fetch_cat(chosen_target.cat_to).name)
                 print("KILL KILL KILL")
                 
