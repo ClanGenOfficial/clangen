@@ -1775,6 +1775,10 @@ class Events:
             if len(chosen_target.log) > 0 and "(medium negative effect)" in chosen_target.log[-1]:
                 kill_chance -= 20
 
+            # little easter egg just for fun
+            if cat.personality.trait == "ambitious" and Cat.fetch_cat(chosen_target.cat_to).status == 'leader':
+                kill_chance -= 10
+
             kill_chance = max(1, int(kill_chance))
              
             print("Final kill chance: " + str(kill_chance))
