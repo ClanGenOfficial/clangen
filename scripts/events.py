@@ -1730,6 +1730,22 @@ class Events:
                                             enemy_clan, alive_kits=get_alive_kits(Cat), murder=True)
             
             return
+        
+        # will this cat actually murder? this takes into account stability and lawfulness
+        murder_capable = 5
+        if cat.personality.stability < 6:
+            murder_capable -= 1
+        if cat.personality.lawfulness < 6:
+            murder_capable -= 1
+        if cat.personality.aggression > 10:
+            murder_capable -= 1
+        elif cat.personality.aggression > 12:
+            murder_capable -= 2
+
+        #print("Murder Decision: " + str(murder_decision))
+        if random.getrandbits(murder_capable) != 1:
+            #print(f'{cat.name} decided not to murder')
+            return
 
         # If random murder is not triggered, targets can only be those they have high dislike for
         hate_relation = [i for i in relationships if
@@ -1744,31 +1760,16 @@ class Events:
             chosen_target = random.choice(targets)
             #print(cat.name, 'TARGET CHOSEN', Cat.fetch_cat(chosen_target.cat_to).name)
 
-            # will this cat actually murder? this takes into account stability and lawfulness
-            murder_decision = 5
-            if cat.personality.stability < 6:
-                murder_decision -= 1
-            if cat.personality.lawfulness < 6:
-                murder_decision -= 1
-            elif cat.personality.lawfulness < 10 and chosen_target.dislike > 75:
-                murder_decision -= 1
-            elif cat.personality.lawfulness < 10 and chosen_target.jealousy > 75:
-                murder_decision -= 1
+            kill_chance = game.config["death_related"]["base_murder_kill_chance"]
+
             #print(str(chosen_target.log[-1]))
             if len(chosen_target.log) > 0 and "(high negative effect)" in chosen_target.log[-1]:
-                murder_decision -= 2
-
-            #print("Murder Decision: " + str(murder_decision))
-            if random.getrandbits(murder_decision) != 1:
-                #print(f'{cat.name} decided not to murder')
-                return
-
-            kill_chance = game.config["death_related"]["base_murder_kill_chance"]
+                kill_chance -= 5
 
             facet_modifiers = cat.personality.aggression + \
                 (16 - cat.personality.stability) + (16 - cat.personality.lawfulness)
             #print("Facet modifiers: " + str(facet_modifiers))
-            
+
             kill_chance = kill_chance - facet_modifiers
             kill_chance = max(1, kill_chance)
              
