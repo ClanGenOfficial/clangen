@@ -5287,8 +5287,8 @@
                 }
             ],
             "history_text": {
-                "reg_death": "m_c {VERB/m_c/were/was} killed by the poison in the Bishop-fish's flesh.",
-                "lead_death": "{VERB/m_c/were/was} poisoned by consuming Bishop-fish's flesh."
+                "reg_death": "m_c was killed by the poison in the Bishop-fish's flesh.",
+                "lead_death": "{VERB/m_c/were/was} poisoned by consuming Bishop-fish's flesh"
             }
         }]
     },

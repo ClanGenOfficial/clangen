@@ -23,7 +23,12 @@
    		 "text": "p_l finds the sticky thing in the grass and looks at it curiously. s_c suddenly appears beside {PRONOUN/p_l/object} and, before p_l can tell {PRONOUN/s_c/object} to be careful, s_c bends down and takes a lick. This proves to be a bad idea. s_c wrinkles {PRONOUN/s_c/poss} nose and gags, trying to spit the disgusting taste out of {PRONOUN/s_c/poss} mouth.",
    		 "exp": 10,
    		 "weight": 20,
-   		 "stat_trait": ["childish", "adventurous", "bold", "shameless"],
+   		 "stat_trait": [
+            "childish", 
+            "adventurous", 
+            "bold", 
+            "shameless"
+        ],
         "can_have_stat": ["r_c"]
    	 }
     ],
