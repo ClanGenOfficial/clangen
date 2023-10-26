@@ -453,8 +453,6 @@ class ClearingScreen(Screens):
                                       tool_tip_text=hover_display, manager=MANAGER
                                       )
 
-        # TODO: change pile drawing based on size
-
     def exit_screen(self):
         self.info_messages.kill()
         self.feed_button.kill()

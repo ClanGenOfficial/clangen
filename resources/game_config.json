@@ -58,7 +58,45 @@
 			"event_trigger_factor - this number will be used to multiply with the amount of prey the Clan needs, if the pile is bigger than this number, prey events will be triggered",
 			"hunter_bonus is the factor which is be used to multiply on a hunting patrol.",
 			"hunter_exp_bonus is the additional prey which will be added on a hunting patrol."
-		]
+		],    
+		"patrol_weight_adaption": {
+			"1_class_bigger_prey_allowed": [15,19],
+			"2_class_bigger_prey_allowed": [10,14],
+			"3_class_bigger_prey_allowed": [5,9],
+			"4_class_bigger_prey_allowed": [0,4]
+		},	
+		"patrol_balance": {
+			"comment": [
+				"A season array consist of ['very_small', 'small', 'medium', 'large', 'huge']",
+				"Numbers are the ratio how likely such a patrol will be used when hunting in this season.",
+				"The sum of all ratio should be between 15 or 16.",
+				"One common (weight:20) success outcome (ignoring skill + traits) must have these prey type types."
+			],
+			"Forest": {
+				"Newleaf": [2,5,5,2,1],
+				"Greenleaf": [1,3,6,4,2],
+				"Leaf-fall": [2,4,5,3,1],
+				"Leaf-bare": [3,6,4,2,0]
+			},
+			"Mountainous": {
+				"Newleaf": [2,5,5,2,1],
+				"Greenleaf": [1,3,6,4,2],
+				"Leaf-fall": [2,4,5,3,1],
+				"Leaf-bare": [3,6,4,2,0]
+			},
+			"Plains": {
+				"Newleaf": [2,5,5,2,1],
+				"Greenleaf": [1,3,6,4,2],
+				"Leaf-fall": [2,4,5,3,1],
+				"Leaf-bare": [3,6,4,2,0]
+			},
+			"Beach": {
+				"Newleaf": [2,5,5,2,1],
+				"Greenleaf": [1,3,6,4,2],
+				"Leaf-fall": [2,4,5,3,1],
+				"Leaf-bare": [3,6,4,2,0]
+			}
+		}
 	},
 	"relationship":{
 		"in_decrease_value":{
