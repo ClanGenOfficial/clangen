@@ -1728,9 +1728,9 @@ class Events:
             
             Death_Events.handle_deaths(Cat.fetch_cat(chosen_target.cat_to), cat, game.clan.war.get("at_war", False),
                                             enemy_clan, alive_kits=get_alive_kits(Cat), murder=True)
-            
+
             return
-        
+
         # will this cat actually murder? this takes into account stability and lawfulness
         murder_capable = 7
         if cat.personality.stability < 6:
@@ -1741,13 +1741,13 @@ class Events:
             murder_capable -= 1
         elif cat.personality.aggression > 12:
             murder_capable -= 3
-        
+
         murder_capable = max(1, murder_capable)
 
         if random.getrandbits(murder_capable) != 1:
             #print(f'{cat.name} is currently not capable of murder')
             return
-        
+
         print("Murder Capable: " + str(murder_capable))
         print(f'{cat.name} is feeling murderous')
         # If random murder is not triggered, targets can only be those they have high dislike for
