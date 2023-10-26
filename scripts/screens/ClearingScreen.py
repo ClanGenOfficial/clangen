@@ -137,10 +137,11 @@ class ClearingScreen(Screens):
                 object_id="#help_button", manager=MANAGER,
                 tool_tip_text="Your clan will catch some amount of prey over each timeskip, but successful hunting patrols are the most "
                               "important source of freshkill. You can see what was consumed and catched in the Log below! "
-                              "Freshkill can't be stored endlessly, after four moons prey will rot and will be thrown away."
+                              "Freshkill can't be stored endlessly, after four moons prey will rot and will be thrown away. "
+                              "Cats under 3 moons with a parent(queen) taking care of them, don't need food. "
                               "<br><br>"
                               "Feeding the Clan is very important, therefore cats will be fed before any changes to rank. "
-                              "Hover your mouse over the pile to see the current amount and the needed amount of prey of your Clan!",
+                              "Hover your mouse over the pile to see the current amount and the needed amount of prey of your Clan! ",
 
             )
             self.last_page = UIImageButton(scale(pygame.Rect((660, 1272), (68, 68))), "", object_id="#arrow_left_button"

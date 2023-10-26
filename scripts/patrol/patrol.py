@@ -792,6 +792,7 @@ class Patrol():
                 list of patrols which is filtered
         """
         # TODO: update according to new patrol structure
+		# TODO: how to handle biome differences ?
         filtered_patrols = []
 
         # get first what kind of hunting type which will be chosen
