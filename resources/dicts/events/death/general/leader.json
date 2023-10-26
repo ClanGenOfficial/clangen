@@ -1066,8 +1066,33 @@
             "sneaky"
         ],
         "other_cat_negate_skill": [
-            "extremely smart",
-            "very smart"
+            "CLEVER,2",
+            "CLEVER,3"
+        ]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "all_lives",
+            "murder",
+            "revealed",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "rc_to_mc",
+            "neg_platonic",
+            "neg_respect",
+            "neg_trust",
+            "dislike"
+        ],
+        "death_text": "m_c and r_c were on a walk together when a pack of dogs caught them off guard. m_c prepared to fight, but when {PRONOUN/m_c/subject} looked to r_c for backup, the other cat was nowhere to be found. r_c watched quietly as the dogs took life after life from m_c.",
+        "history_text": {
+            "lead_death": "{VERB/m_c/were/was} indirectly murdered by r_c in a fatal dog attack",
+            "lead_murder_unrevealed": "were murdered by a suspicious dog attack"
+        },
+        "cat_negate_skill": [
+            "FIGHTER,3"
         ]
     },
     {
