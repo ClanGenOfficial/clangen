@@ -673,7 +673,7 @@
         "season": ["Any"],
         "types": ["training"],
         "tags": [],
-        "patrol_art": "gen_train_sunny",
+        "patrol_art": "gen_train_sunny6",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -4275,25 +4275,33 @@
                 "text": "As the patrol heads in the direction of the sinister glare of strange, unmoving eyes, the scent of smoke creeps up on the patrol. s_c darts forward, finding the smoke scent coming from an odd pumpkin with some sort of... face? Thinking quickly {PRONOUN/s_c/subject} {VERB/s_c/scratch/scratches} dirt into the holes on the pumpkin, extinguishing the small flames, but leaving the patrol wondering what in the name of StarClan they're looking at.",
                 "exp": 15,
                 "weight": 10,
-                "stat_trait": ["thoughtful", "careful", "responsible", "wise"]
-            },
-            {
-                "text": "As the patrol heads in the direction of the sinister glare of strange, unmoving eyes, the scent of smoke creeps up on the patrol. s_c darts forward, finding the smoke scent coming from an odd pumpkin with some sort of... face? Thinking quickly {PRONOUN/s_c/subject} {VERB/s_c/scratch/scratches} dirt into the holes on the pumpkin, extinguishing the small flames, but leaving the patrol wondering what in the name of StarClan they're looking at.",
-                "exp": 15,
-                "weight": 10,
-                "skill_trait": ["CLEVER,1", "INSIGHTFUL,1", "SENSE,1"]
+                "stat_trait": [
+                    "thoughtful", 
+                    "careful",
+                    "cunning",
+                    "responsible", 
+                    "wise"
+                ],
+                "stat_skill": [
+                    "CLEVER,1", 
+                    "INSIGHTFUL,1",
+                    "SENSE,1"
+                ]
             },
             {
                 "text": "The patrol nervously heads towards the unblinking eyes, unsure of what lies ahead. As the strange object comes into view, s_c lets out a mrrow of laughter! {PRONOUN/s_c/subject/CAP} {VERB/s_c/explain/explains} that this is a Twoleg ritual performed around the start of leaf-bare. p_l is glad to have a cat with s_c's understanding of Twolegs on this patrol. With this knowledge, unneeded panic was surely avoided!",
                 "exp": 15,
                 "weight": 10,
-                "skill_trait": ["KITTYPET,0", "LONER,0"]
+                "stat_skill": [
+                    "KITTYPET,0", 
+                    "LONER,0"
+                ]
             },
             {
                 "text": "The patrol nervously heads towards the unblinking eyes, unsure of what lies ahead. As the strange object comes into view, s_c begins to bristle with unease. {PRONOUN/s_c/subject/CAP} can see strange, mist-like Twolegs floating around the glowing, unblinking face of a... pumpkin? The figures approach s_c and run their cold, fur-less paws through {PRONOUN/s_c/subject} fur. s_c can hardly hear r_c asking {PRONOUN/s_c/object} why {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} frozen in place.",
                 "exp": 20,
                 "weight": 10,
-                "skill_trait": ["GHOST,1"]
+                "stat_skill": ["GHOST,1"]
             }
         ],
         "fail_outcomes": [
@@ -4306,13 +4314,24 @@
                 "text": "As r_c slowly creeps towards the disturbing face, s_c huffs with frustration. Tail lashing, s_c calls r_c a mouse-heart and stomps in the direction of the unblinking eyes without a shred of fear. s_c rolls {PRONOUN/s_c/poss} eyes and knocks over the harmless pumpkin, ignoring the strange face and the smell of smoke wafting around it.",
                 "exp": 5,
                 "weight": 20,
-                "stat_trait": ["bloodthirsty", "cold", "strict", "grumpy", "fierce"]
+                "stat_trait": [
+                    "bloodthirsty", 
+                    "cold", 
+                    "strict", 
+                    "grumpy", 
+                    "fierce"
+                ]
             },
             {
                 "text": "As r_c slowly creeps towards the disturbing face, s_c recklessly darts forward to get a closer look! {PRONOUN/s_c/subject/CAP} {VERB/s_c/crash/crashes} into some strange pumpkin, knocking it over and obscuring the strange face. The patrol heads home without much left to investigate thanks to s_c's antics.",
                 "exp": 5,
                 "weight": 20,
-                "stat_trait": ["troublesome", "childish", "playful", "shameless"]
+                "stat_trait": [
+                    "troublesome", 
+                    "childish", 
+                    "playful", 
+                    "shameless"
+                ]
             }
         ]
     },

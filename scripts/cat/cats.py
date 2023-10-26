@@ -2041,7 +2041,8 @@ class Cat():
                           other_cat: Cat,
                           for_love_interest: bool = False,
                           age_restriction: bool = True,
-                          first_cousin_mates:bool = False):
+                          first_cousin_mates:bool = False,
+                          ignore_no_mates:bool=False):
         """
             Checks if this cat is potential mate for the other cat.
             There are no restrictions if the current cat already has a mate or not (this allows poly-mates).
@@ -2059,7 +2060,7 @@ class Cat():
             return False
         
         #No Mates Check
-        if self.no_mates or other_cat.no_mates:
+        if not ignore_no_mates and (self.no_mates or other_cat.no_mates):
             return False
 
         # Inheritance check
@@ -2079,7 +2080,7 @@ class Cat():
             # if only one is aged up at this point, later they are more moons apart than the setting defined
             # game_config boolian "override_same_age_group" disables the same-age group check.
             if game.config["mates"].get("override_same_age_group", False) or self.age != other_cat.age:
-                if abs(self.moons - other_cat.moons) > game.config["mates"]["age_range"] + 1:
+                if abs(self.moons - other_cat.moons)> game.config["mates"]["age_range"] + 1:
                     return False
 
         age_restricted_ages = ["newborn", "kitten", "adolescent"]
@@ -2394,33 +2395,6 @@ class Cat():
         else:
             rel2 = cat2.create_one_relationship(cat1)
 
-        # Are they mates?
-        if rel1.cat_from.ID in rel1.cat_to.mate:
-            mates = True
-        else:
-            mates = False
-
-        # Relation Checking
-        direct_related = cat1.is_sibling(cat2) or cat1.is_parent(cat2) or cat2.is_parent(cat1)
-        indirect_related = cat1.is_uncle_aunt(cat2) or \
-                           cat2.is_uncle_aunt(cat1)
-        if not game.clan.clan_settings["first cousin mates"]:
-            indirect_related = indirect_related or cat1.is_cousin(cat2)
-        related = direct_related or indirect_related
-
-        # Check for both adults, or same age type:
-        if cat1.age == cat2.age or (cat1.age not in ['newborn', 'kitten', 'adolescent'] and
-                                    cat2.age not in ['newborn', 'kitten', 'adolescent']):
-            valid_age = True
-        else:
-            valid_age = False
-
-        # Small check to prevent huge age gaps. Will be bypassed if the cats are already mates.
-        if abs(cat1.moons - cat2.moons) > 85:
-            age_diff = False
-        else:
-            age_diff = True
-
         # Output string.
         output = ""
 
@@ -2488,14 +2462,15 @@ class Cat():
         if mediator.status == "mediator apprentice":
             mediator.experience += max(randint(1, 6), 1)
 
-        no_romantic_mentor = False
-        if not game.clan.clan_settings['romantic with former mentor']:
-            if cat2.ID in cat1.former_apprentices or cat1.ID in cat2.former_apprentices:
-                no_romantic_mentor = True
-
         # determine the traits to effect
+        # Are they mates?
+        if rel1.cat_from.ID in rel1.cat_to.mate:
+            mates = True
+        else:
+            mates = False
+        
         pos_traits = ["platonic", "respect", "comfortable", "trust"]
-        if allow_romantic and (mates or (valid_age and not related and age_diff and not no_romantic_mentor)):
+        if allow_romantic and (mates or cat1.is_potential_mate(cat2)):
             pos_traits.append("romantic")
 
         neg_traits = ["dislike", "jealousy"]
@@ -2545,13 +2520,13 @@ class Cat():
                                                              personality_bonus)
                     rel2.romantic_love = Cat.effect_relation(rel1.romantic_love, -(randint(ran[0], ran[1]) + bonus) +
                                                              personality_bonus)
-                    output += f"Romantic interest decreased. "
+                    output += "Romantic interest decreased. "
                 else:
                     rel1.romantic_love = Cat.effect_relation(rel1.romantic_love, (randint(ran[0], ran[1]) + bonus) +
                                                              personality_bonus)
                     rel2.romantic_love = Cat.effect_relation(rel2.romantic_love, (randint(ran[0], ran[1]) + bonus) +
                                                              personality_bonus)
-                    output += f"Romantic interest increased. "
+                    output += "Romantic interest increased. "
 
             elif trait == "platonic":
                 ran = (4, 6)
@@ -2561,13 +2536,13 @@ class Cat():
                                                              personality_bonus)
                     rel2.platonic_like = Cat.effect_relation(rel2.platonic_like, -(randint(ran[0], ran[1]) + bonus) +
                                                              personality_bonus)
-                    output += f"Platonic like decreased. "
+                    output += "Platonic like decreased. "
                 else:
                     rel1.platonic_like = Cat.effect_relation(rel1.platonic_like, (randint(ran[0], ran[1]) + bonus) +
                                                              personality_bonus)
                     rel2.platonic_like = Cat.effect_relation(rel2.platonic_like, (randint(ran[0], ran[1]) + bonus) +
                                                              personality_bonus)
-                    output += f"Platonic like increased. "
+                    output += "Platonic like increased. "
 
             elif trait == "respect":
                 ran = (4, 6)
@@ -2577,13 +2552,13 @@ class Cat():
                                                           personality_bonus)
                     rel2.admiration = Cat.effect_relation(rel2.admiration, -(randint(ran[0], ran[1]) + bonus) +
                                                           personality_bonus)
-                    output += f"Respect decreased. "
+                    output += "Respect decreased. "
                 else:
                     rel1.admiration = Cat.effect_relation(rel1.admiration, (randint(ran[0], ran[1]) + bonus) +
                                                           personality_bonus)
                     rel2.admiration = Cat.effect_relation(rel2.admiration, (randint(ran[0], ran[1]) + bonus) +
                                                           personality_bonus)
-                    output += f"Respect increased. "
+                    output += "Respect increased. "
 
             elif trait == "comfortable":
                 ran = (4, 6)
@@ -2593,13 +2568,13 @@ class Cat():
                                                            personality_bonus)
                     rel2.comfortable = Cat.effect_relation(rel2.comfortable, -(randint(ran[0], ran[1]) + bonus) +
                                                            personality_bonus)
-                    output += f"Comfort decreased. "
+                    output += "Comfort decreased. "
                 else:
                     rel1.comfortable = Cat.effect_relation(rel1.comfortable, (randint(ran[0], ran[1]) + bonus) +
                                                            personality_bonus)
                     rel2.comfortable = Cat.effect_relation(rel2.comfortable, (randint(ran[0], ran[1]) + bonus) +
                                                            personality_bonus)
-                    output += f"Comfort increased. "
+                    output += "Comfort increased. "
 
             elif trait == "trust":
                 ran = (4, 6)
@@ -2609,13 +2584,13 @@ class Cat():
                                                      personality_bonus)
                     rel2.trust = Cat.effect_relation(rel2.trust, -(randint(ran[0], ran[1]) + bonus) +
                                                      personality_bonus)
-                    output += f"Trust decreased. "
+                    output += "Trust decreased. "
                 else:
                     rel1.trust = Cat.effect_relation(rel1.trust, (randint(ran[0], ran[1]) + bonus) +
                                                      personality_bonus)
                     rel2.trust = Cat.effect_relation(rel2.trust, (randint(ran[0], ran[1]) + bonus) +
                                                      personality_bonus)
-                    output += f"Trust increased. "
+                    output += "Trust increased. "
 
             elif trait == "dislike":
                 ran = (4, 9)
@@ -2624,13 +2599,13 @@ class Cat():
                                                        personality_bonus)
                     rel2.dislike = Cat.effect_relation(rel2.dislike, (randint(ran[0], ran[1]) + bonus) -
                                                        personality_bonus)
-                    output += f"Dislike increased. "
+                    output += "Dislike increased. "
                 else:
                     rel1.dislike = Cat.effect_relation(rel1.dislike, -(randint(ran[0], ran[1]) + bonus) -
                                                        personality_bonus)
                     rel2.dislike = Cat.effect_relation(rel2.dislike, -(randint(ran[0], ran[1]) + bonus) -
                                                        personality_bonus)
-                    output += f"Dislike decreased. "
+                    output += "Dislike decreased. "
 
             elif trait == "jealousy":
                 ran = (4, 6)
@@ -2640,13 +2615,13 @@ class Cat():
                                                         personality_bonus)
                     rel2.jealousy = Cat.effect_relation(rel2.jealousy, (randint(ran[0], ran[1]) + bonus) -
                                                         personality_bonus)
-                    output += f"Jealousy increased. "
+                    output += "Jealousy increased. "
                 else:
                     rel1.jealousy = Cat.effect_relation(rel1.jealousy, -(randint(ran[0], ran[1]) + bonus) -
                                                         personality_bonus)
                     rel2.jealousy = Cat.effect_relation(rel2.jealousy, -(randint(ran[0], ran[1]) + bonus) -
                                                         personality_bonus)
-                    output += f"Jealousy decreased . "
+                    output += "Jealousy decreased . "
 
         return output
 

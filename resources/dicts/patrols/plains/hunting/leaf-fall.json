@@ -2038,7 +2038,7 @@
             	"prey": ["medium"]
         	},
         	{
-            	"text": "p_l watches r_c leap with the thrill of the hunt, quite literally snatching victory from thin air. {PRONOUN/p_l/subject}'d feel sorry for the lover bats - but r_c is just showing who the best potential mates are. Showing the pipistrelles, of course. No one else.",
+            	"text": "p_l watches r_c leap with the thrill of the hunt, quite literally snatching victory from thin air. {PRONOUN/p_l/subject/CAP}'d feel sorry for the lover bats - but r_c is just showing who the best potential mates are. Showing the pipistrelles, of course. No one else.",
             	"exp": 20,
             	"weight": 20,
             	"relationships": [

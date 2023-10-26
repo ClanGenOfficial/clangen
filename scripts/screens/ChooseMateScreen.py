@@ -965,8 +965,8 @@ class ChooseMateScreen(Screens):
         valid_mates = [i for i in Cat.all_cats_list if
                        not i.faded
                        and self.the_cat.is_potential_mate(
-                           i, for_love_interest=False, 
-                           age_restriction=False) 
+                           i, for_love_interest=False,
+                           age_restriction=False, ignore_no_mates=True)
                        and i.ID not in self.the_cat.mate
                        and (not self.single_only or not i.mate)
                        and (not self.have_kits_only 

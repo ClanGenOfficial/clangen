@@ -1067,18 +1067,18 @@
             "leader": [-1, -1]
         },
         "weight": 15,
-        "intro_text": "As r_c pads through the shadowy trees, the sun already hidden by the mountain slopes, {PRONOUN/r_c/subject} {VERB/r_c/freeze/freezes}. Up ahead, a Twoleg peers down from above, black wings a huge backdrop to hypnotic, glowing red eyes...",
+        "intro_text": "As r_c pads through the shadowy trees, the sun already hidden by the mountain slopes, {PRONOUN/r_c/subject} {VERB/r_c/freeze/freezes}. Up ahead, a Twoleg peers down from above, its black wings a huge backdrop to hypnotic, glowing red eyes...",
         "decline_text": "This is no creature for mortal eyes. r_c screws {PRONOUN/r_c/poss} eyelids shut, muttering prayer after prayer after prayer to StarClan itself - and when {PRONOUN/r_c/subject} {VERB/r_c/open/opens} them again, the moth-Twoleg is gone.",
         "chance_of_success": 25,
         "success_outcomes": [
             {
-                "text": "r_c turns tail and runs, feeling air ruffle their fur as <i>something</i> passes overhead while they pelt for home, without even the breath to waste on wailing.",
+                "text": "r_c turns tail and runs, feeling air ruffle {PRONOUN/r_c/poss} fur as <i>something</i> passes overhead while {PRONOUN/r_c/subject} {VERB/r_c/pelt/pelts} for home, without even the breath to waste on wailing.",
                 "exp": 35,
                 "weight": 20,
                 "art": "mothman_OUTCOME"
             },
             {
-                "text": "r_c returns home from their uneventful patrol.",
+                "text": "r_c returns home from {PRONOUN/r_c/poss} uneventful patrol.",
                 "exp": 35,
                 "weight": 20,
                 "injury": [
@@ -1092,7 +1092,18 @@
                 "text": "Caution has always been in {PRONOUN/s_c/poss} blood, and this, this has to be why. Frozen to the ground so completely that the frost grows over {PRONOUN/s_c/poss} fur as {PRONOUN/s_c/subject} {VERB/s_c/wait/waits}, s_c refuses to twitch so much as a whisker until the moth-Twoleg leaves.",
                 "exp": 40,
                 "weight": 20,
-                "stat_trait": ["lonesome", "nervous", "insecure", "calm", "careful", "sneaky", "strange", "wise", "cunning", "gloomy"]
+                "stat_trait": [
+                    "lonesome", 
+                    "nervous", 
+                    "insecure", 
+                    "calm", 
+                    "careful", 
+                    "sneaky", 
+                    "strange", 
+                    "wise", 
+                    "cunning", 
+                    "gloomy"
+                ]
             }
         ],
         "fail_outcomes": [
@@ -1114,17 +1125,19 @@
                 "weight": 20,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "reg_death": "m_c {VERB/m_c/were/was} taken as the Mothman's snack."
+                    "reg_death": "m_c was taken as the Mothman's snack.",
+                 "lead_death": "{VERB/m_c/were/was} taken as the Mothman's snack"
                 },
                 "art": "mothman_OUTCOME"
             },
             {
-                "text": "The vast moth-Twoleg flies off, and r_c tries to shake off the encounter - but the mountain itself seems to be against them tonight, collapsing beneath their feet.",
+                "text": "The vast moth-Twoleg flies off, and r_c tries to shake off the encounter - but the mountain itself seems to be against {PRONOUN/r_c/object} tonight, collapsing beneath {PRONOUN/r_c/poss} feet.",
                 "exp": 0,
                 "weight": 20,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "reg_death": "m_c {VERB/m_c/were/was} killed by the collapsing mountain slopes, an event predicted by the appearance of the Mothman."
+                    "reg_death": "m_c was killed by the collapsing mountain slopes, an event predicted by the appearance of the Mothman",
+                    "lead_death": "{VERB/m_c/were/was} killed by the collapsing mountain slopes after {PRONOUN/m_c/subject} saw the Mothman"
                 },
                 "art": "mothman_OUTCOME"
             }
@@ -1142,7 +1155,7 @@
         "min_max_status": {},
         "weight": 15,
         "intro_text": "As the patrol heads out across the mountains, a bell tolls from above...",
-        "decline_text": "It's a buzzard, one of the birds the Clan hesitates to hunt, so the patrol ignores the queer bell it wears and moves on with their lives. ",
+        "decline_text": "It's a buzzard, one of the birds the Clan hesitates to hunt, so the patrol ignores the queer bell it wears and moves on with their lives.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
