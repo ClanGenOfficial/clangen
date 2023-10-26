@@ -81,7 +81,7 @@
 	},
 	"mates":{
 		"age_range": 40,
-		"overide_same_age_group": false,
+		"override_same_age_group": false,
 		"chance_fulfilled_condition": 5,
 		"chance_friends_to_lovers": 170,
 		"confession": {

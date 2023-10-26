@@ -2080,7 +2080,7 @@ class Cat():
             # if only one is aged up at this point, later they are more moons apart than the setting defined
             # game_config boolian "override_same_age_group" disables the same-age group check.
             if game.config["mates"].get("override_same_age_group", False) or self.age != other_cat.age:
-                if abs(self.moons - other_cat.moons) > game.config["mates"]["age_range"] + 1:
+                if abs(self.moons - other_cat.moons)> game.config["mates"]["age_range"] + 1:
                     return False
 
         age_restricted_ages = ["newborn", "kitten", "adolescent"]
