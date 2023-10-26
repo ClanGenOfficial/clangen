@@ -508,7 +508,7 @@
    	 "leader": [-1, -1]
     },
     "weight": 15,
-    "intro_text": "As r_c pads through the shadowy trees, the sun already hidden by the mountain slopes, {PRONOUN/r_c/subject} {VERB/r_c/freeze/freezes}. Up ahead, a Twoleg peers down from above, black wings a huge backdrop to hypnotic, glowing red eyes...",
+    "intro_text": "As r_c pads through the shadowy trees, the sun already hidden by the mountain slopes, {PRONOUN/r_c/subject} {VERB/r_c/freeze/freezes}. Up ahead, a Twoleg peers down from above, its black wings a huge backdrop to hypnotic, glowing red eyes...",
     "decline_text": "This is no creature for mortal eyes. r_c screws {PRONOUN/r_c/poss} eyelids shut, muttering prayer after prayer after prayer to StarClan itself - and when {PRONOUN/r_c/subject} {VERB/r_c/open/opens} them again, the moth-Twoleg is gone.",
     "chance_of_success": 25,
     "success_outcomes": [
@@ -613,8 +613,8 @@
      	],
    	    "history_text": {
             "scar": "m_c was scarred from their frantic escape from a Jersey Devil.",
-            "reg_death": "m_c died from the shock of meeting a Jersey devil.",
-            "lead_death": "shocked from meeting a Jersey devil"
+            "reg_death": "m_c died from the shock of meeting a Jersey Devil.",
+            "lead_death": "shocked from meeting a Jersey Devil"
         }
    	  }
 	]

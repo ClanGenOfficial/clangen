@@ -673,7 +673,7 @@
         "season": ["Any"],
         "types": ["training"],
         "tags": [],
-        "patrol_art": "gen_train_sunny",
+        "patrol_art": "gen_train_sunny6",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {

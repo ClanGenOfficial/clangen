@@ -3010,7 +3010,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "The two cats come upon a field of pumpkins, luckily empty of Twolegs. As p_l pokes around to see if any herbs are about, r_c gleefully sinks {PRONOUN/r_c/poss} claws into a pumpkin. {PRONOUN/r_c/subject} {VERB/r_c/scratch/scratches} some crude shapes into the pumpkin before declaring that it's a cat! p_l snickers and replies that it's the most beautiful cat they've ever seen. r_c slyly shoots back, yes, only second to p_l.",
+                "text": "The two cats come upon a field of pumpkins, luckily empty of Twolegs. As p_l pokes around to see if any herbs are about, r_c gleefully sinks {PRONOUN/r_c/poss} claws into a pumpkin. {PRONOUN/r_c/subject/CAP} {VERB/r_c/scratch/scratches} some crude shapes into the pumpkin before declaring that it's a cat! p_l snickers and replies that it's the most beautiful cat they've ever seen. r_c slyly shoots back, yes, only second to p_l.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["rosemary"],
@@ -3051,7 +3051,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "The two cats come upon a field of pumpkins, luckily empty of Twolegs. As p_l pokes around to see if any herbs are about, r_c instead gleefully sinks {PRONOUN/r_c/poss} claws into a pumpkin. {PRONOUN/r_c/subject} {VERB/r_c/scratch/scratches} some crude shapes into the pumpkin before declaring that it's a cat! p_l snickers and replies that it's the most beautiful cat they've ever seen. r_c slyly shoots back, yes, only second to p_l.",
+                "text": "The two cats come upon a field of pumpkins, luckily empty of Twolegs. As p_l pokes around to see if any herbs are about, r_c instead gleefully sinks {PRONOUN/r_c/poss} claws into a pumpkin. {PRONOUN/r_c/subject/CAP} {VERB/r_c/scratch/scratches} some crude shapes into the pumpkin before declaring that it's a cat! p_l snickers and replies that it's the most beautiful cat they've ever seen. r_c slyly shoots back, yes, only second to p_l.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["rosemary"],
@@ -3080,7 +3080,7 @@
         "season": ["Any"],
         "types": ["herb_gathering"],
         "tags": ["halloween"],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "friendlyghost_INTRO",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -3131,18 +3131,18 @@
         },
         "weight": 20,
         "intro_text": "As r_c follows a trail into a darkly shadowed part of the territory on the hunt for herbs, night shadows begin to play with {PRONOUN/r_c/poss} vision, was that movement up ahead? r_c spots an undisguisable silhouette of a cat ahead. Malicious eyes and bristled fur meets {PRONOUN/r_c/object} as {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} amongst the shadows, the strangers fur is translucent and it moves as though made from a strange dark mist.",
-        "decline_text": "r_c 's tail bristles with fear, a cold shiver creeping along {PRONOUN/r_c/poss} back. This is definitely not a Starclan cat, and {PRONOUN/r_c/subject} quickly {VERB/r_c/turn/turns} the back to camp - herbs can wait until morning.",
+        "decline_text": "r_c's tail bristles with fear, a cold shiver creeping along {PRONOUN/r_c/poss} back. This is definitely not a Starclan cat, and {PRONOUN/r_c/subject} quickly {VERB/r_c/turn/turns} the back to camp - herbs can wait until morning.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "r_c approaches the strange cat, they might be a wandering spirit in need of help. The dark silhouette seems to flicker in an out of few as {PRONOUN/r_c/subject} {VERB/r_c/move/moves} toward it, gradually reappearing further and further away. r_c stops, watching the stranger in the distance with confusion, white glowing haunted eyes watch them from the shadows. r_c shivers, and decides to hunt for herbs someplace else.",
+                "text": "r_c approaches the strange cat, they might be a wandering spirit in need of help. The dark silhouette seems to flicker in and out of view as {PRONOUN/r_c/subject} {VERB/r_c/move/moves} toward it, gradually reappearing further and further away. r_c stops, watching the stranger in the distance with confusion, white glowing haunted eyes watch them from the shadows. r_c shivers, and decides to hunt for herbs someplace else.",
                 "exp": 10,
                 "weight": 20
             }
         ],
         "fail_outcomes": [
             {
-                "text": "r_c approaches the strange cat, they might be a wandering spirit in need of help. But as r_c gets closer, the strange cat shrieks an awful blood curdling scream that makes {PRONOUN/r_c/subject} fur stand on end, overcome by terror {PRONOUN/r_c/subject} {VERB/r_c/flee/flees} back to camp, dropping the little herbs {PRONOUN/r_c/subject} had gathered.",
+                "text": "r_c approaches the strange cat, they might be a wandering spirit in need of help. But as r_c gets closer, the strange cat shrieks an awful blood curdling scream that makes {PRONOUN/r_c/poss} fur stand on end, overcome by terror {PRONOUN/r_c/subject} {VERB/r_c/flee/flees} back to camp, dropping the little herbs {PRONOUN/r_c/subject} had gathered.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [

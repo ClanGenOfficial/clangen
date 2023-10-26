@@ -1463,7 +1463,7 @@
         "season": ["Any"],
         "types": ["border"],
         "tags": ["halloween"],
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "scarecrow_INTRO",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
