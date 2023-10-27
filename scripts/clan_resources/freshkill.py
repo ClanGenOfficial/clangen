@@ -344,7 +344,7 @@ class Freshkill_Pile():
         """
         group_ids = [cat.ID for cat in group]
         sorted_nutrition = sorted(self.nutrition_info.items(), key=lambda x: x[1].percentage)
-        ration_prey = game.clan.clan_settings["ration prey"]
+        ration_prey = game.clan.clan_settings["ration prey"] if game.clan else False
 
         for k, v in sorted_nutrition:
             if k not in group_ids:
