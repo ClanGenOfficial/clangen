@@ -535,6 +535,7 @@
                 "text": "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to stock up on before the withering heat of greenleaf. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
                 "exp": 20,
                 "weight": 20,
+                "herbs": ["lungwort"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -549,7 +550,7 @@
                 "text": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l loads up {PRONOUN/p_l/poss} mostly-obliging escort and carries the extensive harvest home, tail waving jovially with {PRONOUN/p_l/poss} good mood.",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["many_herbs"],
+                "herbs": ["many_herbs", "lungwort", "plantain"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -564,6 +565,7 @@
                 "text": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
                 "exp": 20,
                 "weight": 20,
+                "herbs": ["many_herbs", "lungwort"],
                 "stat_skill": ["SENSE,2", "CLEVER,3"],
                 "relationships": [
                     {
@@ -579,6 +581,7 @@
                 "text": "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves.",
                 "exp": 20,
                 "weight": 20,
+                "herbs": ["many_herbs", "lungwort"],
                 "stat_trait": ["patient"],
                 "relationships": [
                     {
@@ -887,6 +890,7 @@
                 "text": "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
                 "exp": 20,
                 "weight": 20,
+                "herbs": ["lungwort"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -901,7 +905,7 @@
                 "text": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l loads up {PRONOUN/p_l/poss} mostly-obliging escort and carries the extensive harvest home, tail waving jovially with {PRONOUN/p_l/poss} good mood.",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["many_herbs"],
+                "herbs": ["many_herbs", "lungwort", "plantain"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -916,6 +920,7 @@
                 "text": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
                 "exp": 20,
                 "weight": 20,
+                "herbs": ["many_herbs", "lungwort"],
                 "stat_skill": ["SENSE,2", "CLEVER,3"],
                 "relationships": [
                     {
@@ -931,6 +936,7 @@
                 "text": "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves.",
                 "exp": 20,
                 "weight": 20,
+                "herbs": ["many_herbs", "lungwort"],
                 "stat_trait": ["patient"],
                 "relationships": [
                     {
@@ -1239,6 +1245,7 @@
                 "text": "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to replenishing the Clan's stores after the long greenleaf. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/subject} off guard.",
                 "exp": 20,
                 "weight": 20,
+                "herbs": ["lungwort"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1253,7 +1260,7 @@
                 "text": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l loads up {PRONOUN/p_l/poss} mostly-obliging escort and carries the extensive harvest home, tail waving jovially with {PRONOUN/p_l/poss} good mood.",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["many_herbs"],
+                "herbs": ["many_herbs", "lungwort", "plantain"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1268,6 +1275,7 @@
                 "text": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
                 "exp": 20,
                 "weight": 20,
+                "herbs": ["many_herbs", "lungwort"],
                 "stat_skill": ["SENSE,2", "CLEVER,3"],
                 "relationships": [
                     {
@@ -1283,6 +1291,7 @@
                 "text": "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves.",
                 "exp": 20,
                 "weight": 20,
+                "herbs": ["many_herbs", "lungwort"],
                 "stat_trait": ["patient"],
                 "relationships": [
                     {
