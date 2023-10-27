@@ -950,8 +950,8 @@ class PatrolScreen(Screens):
 
     def on_use(self):
         
-        self.loading_screen_on_use(self.start_patrol_thread, self.open_patrol_event_screen)
-        self.loading_screen_on_use(self.proceed_patrol_thread, self.open_patrol_complete_screen)
+        self.loading_screen_on_use(self.start_patrol_thread, self.open_patrol_event_screen, (700, 500))
+        self.loading_screen_on_use(self.proceed_patrol_thread, self.open_patrol_complete_screen, (350, 500))
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
