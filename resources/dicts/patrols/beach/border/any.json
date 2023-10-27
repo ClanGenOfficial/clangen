@@ -920,6 +920,13 @@
                 "text": "Nose to the ground following the trail, r_c doesn't see the blow coming. {PRONOUN/s_c/subject/CAP} {VERB/s_c/haul/hauls} {PRONOUN/s_c/self} to {PRONOUN/s_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": [
+                    "vengeful",
+                    "bloodthirsty",
+                    "bold",
+                    "daring",
+                    "confident"
+                ],
                 "injury": [
                     {
                         "cats": ["r_c"],
