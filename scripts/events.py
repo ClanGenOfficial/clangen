@@ -290,11 +290,11 @@ class Events:
 
         prey_amount = 0
         for cat in healthy_hunter:
-            lower_value = game.config["freshkill"]["auto_warrior_prey"][0]
-            upper_value = game.config["freshkill"]["auto_warrior_prey"][1]
+            lower_value = game.prey_config["auto_warrior_prey"][0]
+            upper_value = game.prey_config["auto_warrior_prey"][1]
             if cat.status == "apprentice":
-                lower_value = game.config["freshkill"]["auto_apprentice_prey"][0]
-                upper_value = game.config["freshkill"]["auto_apprentice_prey"][1]
+                lower_value = game.prey_config["auto_apprentice_prey"][0]
+                upper_value = game.prey_config["auto_apprentice_prey"][1]
 
             prey_amount += random.randint(lower_value, upper_value)
         game.freshkill_event_list.append(f"The clan managed to catch {prey_amount} pieces of prey in this moons.")

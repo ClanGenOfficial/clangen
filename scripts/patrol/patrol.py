@@ -804,7 +804,7 @@ class Patrol():
             possible_prey_size.extend(repeat(prey_size[idx],amount))
             idx += 1
         chosen_prey_size = choice(possible_prey_size)
-        print(f"CHOSEN TYPE: {chosen_prey_size}")
+        print(f"chosen filter prey size: {chosen_prey_size}")
 
         # filter all possible patrol depending on the needed prey size
         for patrol in possible_patrols:
@@ -821,6 +821,9 @@ class Patrol():
             # now count the outcomes + prey size
             prey_types = {}
             for outcome in patrol.success_outcomes:
+                # ignore skill or trait outcomes
+                if outcome.stat_trait or outcome.stat_skill:
+                    continue
                 if outcome.prey:
                     if outcome.prey[0] in prey_types:
                         prey_types[outcome.prey[0]] += 1
@@ -837,10 +840,9 @@ class Patrol():
             if chosen_prey_size == most_prey_size:
                 filtered_patrols.append(patrol)
 
-        print("FILTERED LENGTH ", len(filtered_patrols))
         # if the filtering results in an empty list, don't filter and return whole possible patrols
         if len(filtered_patrols) <= 0:
-            print("WARNING: filtering to balance out the hunting, didn't work.")
+            print("----WARNING: filtering to balance out the hunting, didn't work.")
             filtered_patrols = possible_patrols
         return filtered_patrols
 
@@ -1053,8 +1055,8 @@ class Patrol():
 #                               PATROL CLASS END                               #
 # ---------------------------------------------------------------------------- #
 
-PATROL_WEIGHT_ADAPTION = game.config["freshkill"]["patrol_weight_adaption"]
-PATROL_BALANCE = game.config["freshkill"]["patrol_balance"]
+PATROL_WEIGHT_ADAPTION = game.prey_config["patrol_weight_adaption"]
+PATROL_BALANCE = game.prey_config["patrol_balance"]
 
 # ---------------------------------------------------------------------------- #
 #                              GENERAL INFORMATION                             #

@@ -226,7 +226,7 @@ class ClearingScreen(Screens):
 
         current_prey_amount = game.clan.freshkill_pile.total_amount
         needed_amount = game.clan.freshkill_pile.amount_food_needed()
-        warrior_need = game.config["freshkill"]["prey_requirement"]["warrior"]
+        warrior_need = game.prey_config["prey_requirement"]["warrior"]
         warrior_amount = int(current_prey_amount / warrior_need) 
         general_text = f"Up to {warrior_amount} warriors can be fed with this amount of prey."
 
@@ -549,8 +549,8 @@ class ClearingScreen(Screens):
             manager=MANAGER
         )
 
-        prey_requirement = game.config["freshkill"]["prey_requirement"]
-        feeding_order = game.config["freshkill"]["feeding_order"]
+        prey_requirement = game.prey_config["prey_requirement"]
+        feeding_order = game.prey_config["feeding_order"]
         for status in feeding_order:
             amount = prey_requirement[status]
             self.additional_text["condition_increase"] = pygame_gui.elements.UITextBox(

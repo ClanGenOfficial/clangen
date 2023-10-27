@@ -2,33 +2,26 @@
 # -*- coding: ascii -*-
 import random
 from random import choice, randint, choices
-from typing import List, Dict, Union, Tuple, TYPE_CHECKING
+from typing import List, Dict, Union, TYPE_CHECKING
 import re
 
 if TYPE_CHECKING:
     from scripts.patrol.patrol import Patrol
 
 from scripts.cat.history import History
-from scripts.clan import HERBS, Clan
+from scripts.clan import HERBS
 from scripts.utility import (
-    event_text_adjust,
     change_clan_relations,
     change_clan_reputation,
     change_relationship_values, create_new_cat,
-    create_outside_cat,
-    get_personality_compatibility,
-    check_relationship_value
 )
 from scripts.game_structure.game_essentials import game
-from itertools import combinations
-from scripts.cat.names import names
 from scripts.cat.skills import SkillPath
 from scripts.cat.cats import Cat, ILLNESSES, INJURIES, PERMANENT, BACKSTORIES
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_resources.freshkill import ADDITIONAL_PREY, PREY_REQUIREMENT, HUNTER_EXP_BONUS, HUNTER_BONUS, \
     FRESHKILL_ACTIVE
-from os.path import exists as file_exists
 
 
 

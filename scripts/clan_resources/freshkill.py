@@ -65,12 +65,12 @@ class Freshkill_Pile():
             self.total_amount = total
         else:
             self.pile = {
-                "expires_in_4": game.config["freshkill"]["start_amount"],
+                "expires_in_4": game.prey_config["start_amount"],
                 "expires_in_3": 0,
                 "expires_in_2": 0,
                 "expires_in_1": 0,
             }
-            self.total_amount = game.config["freshkill"]["start_amount"]
+            self.total_amount = game.prey_config["start_amount"]
         self.nutrition_info = {}
 
     def add_freshkill(self, amount) -> None:
@@ -407,15 +407,15 @@ class Freshkill_Pile():
 # ---------------------------------------------------------------------------- #
 
 
-ADDITIONAL_PREY = game.config["freshkill"]["additional_prey"]
-PREY_REQUIREMENT = game.config["freshkill"]["prey_requirement"]
-CONDITION_INCREASE = game.config["freshkill"]["condition_increase"]
-FEEDING_ORDER = game.config["freshkill"]["feeding_order"]
-HUNTER_BONUS = game.config["freshkill"]["hunter_bonus"]
-HUNTER_EXP_BONUS = game.config["freshkill"]["hunter_exp_bonus"]
-FRESHKILL_EVENT_TRIGGER_FACTOR = game.config["freshkill"]["event_trigger_factor"]
-MAL_PERCENTAGE = game.config["freshkill"]["nutrition_malnourished_percentage"]
-STARV_PERCENTAGE = game.config["freshkill"]["nutrition_starving_percentage"]
+ADDITIONAL_PREY = game.prey_config["additional_prey"]
+PREY_REQUIREMENT = game.prey_config["prey_requirement"]
+CONDITION_INCREASE = game.prey_config["condition_increase"]
+FEEDING_ORDER = game.prey_config["feeding_order"]
+HUNTER_BONUS = game.prey_config["hunter_bonus"]
+HUNTER_EXP_BONUS = game.prey_config["hunter_exp_bonus"]
+FRESHKILL_EVENT_TRIGGER_FACTOR = game.prey_config["event_trigger_factor"]
+MAL_PERCENTAGE = game.prey_config["nutrition_malnourished_percentage"]
+STARV_PERCENTAGE = game.prey_config["nutrition_starving_percentage"]
 
-FRESHKILL_ACTIVE = game.config["freshkill"]["activate_death"]
-FRESHKILL_EVENT_ACTIVE = game.config["freshkill"]["activate_events"]
+FRESHKILL_ACTIVE = game.prey_config["activate_death"]
+FRESHKILL_EVENT_ACTIVE = game.prey_config["activate_events"]
