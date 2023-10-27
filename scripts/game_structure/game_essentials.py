@@ -7,7 +7,6 @@ import ujson
 import os
 from shutil import move as shutil_move
 from ast import literal_eval
-import traceback
 from scripts.event_class import Single_Event
 
 pygame.init()
