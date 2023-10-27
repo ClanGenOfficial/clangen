@@ -326,7 +326,7 @@
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
-                "herbs": ["many_herbs"],
+                "herbs": ["many_herbs", "random_herbs"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],

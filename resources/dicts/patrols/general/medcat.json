@@ -1085,7 +1085,7 @@
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["SENSE,2", "CLEVER,2"],
-                "herbs": ["many_herbs"],
+                "herbs": ["many_herbs", "random_herbs"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1160,7 +1160,7 @@
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["SENSE,2", "CLEVER,2"],
-                "herbs": ["many_herbs"],
+                "herbs": ["many_herbs", "random_herbs"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1220,7 +1220,7 @@
                 "text": "app1 is the first to find some herbs, and smugly waves them in the faces of app2 and app3 - after that it's a bit of a competition, with each cat trying to out-compete the others. It's great for the Clan - in the end, they come back to camp with a sizeable haul!",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["many_herbs"],
+                "herbs": ["many_herbs", "random_herbs"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1280,7 +1280,7 @@
                 "text": "app1 is the first to find some herbs, and smugly waves them in the faces of the other three - after that it's a bit of a competition, with each cat trying to out-compete the others. It's great for the Clan - in the end, they come back to camp with a sizeable haul!",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["many_herbs"],
+                "herbs": ["many_herbs", "random_herbs"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1340,7 +1340,7 @@
                 "text": "app1 is the first to find some herbs, and smugly waves them in the faces of the other four - after that it's a bit of a competition, with each cat trying to out-compete the others. It's great for the Clan - in the end, they come back to camp with a sizeable haul!",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["many_herbs"],
+                "herbs": ["many_herbs", "random_herbs"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1399,7 +1399,7 @@
                 "text": "app1 is the first to find some herbs, and smugly waves them in the faces of the other five - after that it's a bit of a competition, with each cat trying to out-compete the others. It's great for the Clan - in the end, they come back to camp with a sizeable haul!",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["many_herbs"],
+                "herbs": ["many_herbs", "random_herbs"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -2664,7 +2664,7 @@
                 "text": "The game is afoot! p_l and app2 return to camp, happily spent, with plenty of herbs.",
                 "exp": 10,
                 "weight": 5,
-                "herbs": ["many_herbs"],
+                "herbs": ["many_herbs", "random_herbs"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -2782,7 +2782,7 @@
                 "text": "Driven by the competition, p_l and app2 work extra hard and return to camp with a <i>lot</i> of herbs, to the surprise of their mentors.",
                 "exp": 10,
                 "weight": 5,
-                "herbs": ["many_herbs"]
+                "herbs": ["many_herbs", "random_herbs"]
             }
         ],
         "fail_outcomes": [
@@ -3093,7 +3093,7 @@
                 "text": "Despite being alone, r_c decides to follow the figure. Perhaps it's a StarClan cat. As {PRONOUN/r_c/subject} {VERB/r_c/get/gets} closer, {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} that no, this cat doesn't have stars in its fur. But it doesn't seem malicious either. The ghostly cat beckons r_c closer and, to {PRONOUN/r_c/poss} surprise, the ghost has led {PRONOUN/r_c/object} to a giant patch of herbs! r_c thanks the spirit and it seems to smile as r_c begins to collect the herbs.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": ["many_herbs"]
+                "herbs": ["many_herbs", "random_herbs"]
             },
             {
                 "text": "Despite being alone, r_c decides to follow the figure. Perhaps it's a StarClan cat. As {PRONOUN/r_c/subject} {VERB/r_c/get/gets} closer, {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} that no, this cat doesn't have stars in {PRONOUN/r_c/poss} fur. But it doesn't seem malicious either. The ghost waves its tail as if to say 'hello'. r_c nods back at it, and continues {PRONOUN/r_c/poss} herb gathering with the friendly ghost flitting about.",
@@ -3183,13 +3183,12 @@
                 "text": "Calling on StarClan's guidance, p_l instructs the patrol to bow to the black cat. It bows back in return and shows them an abundant patch of rare herbs.",
                 "exp": 30,
                 "weight": 10,
-                "herbs": ["catmint"]
+                "herbs": ["many_herbs", "catmint"]
             },
             {
                 "text": "Sensing the black cat's strong aura, s_c urges it to speak, and listens carefully as it imparts a bone-chilling omen, omen_list.",
                 "exp": 30,
                 "weight": 20,
-                "herbs": ["many_herbs"],
                 "stat_skill": [
                     "INSIGHTFUL,2", 
                     "SENSE,2", 
