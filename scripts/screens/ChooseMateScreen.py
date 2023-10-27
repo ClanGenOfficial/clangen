@@ -956,7 +956,7 @@ class ChooseMateScreen(Screens):
         # Due to a bug in pygame, any image with buttons over it must be blited
         screen.blit(self.list_frame, (150 / 1600 * screen_x, 782 / 1400 * screen_y))
         
-        self.loading_screen_on_use(self.work_thread, self.update_both)
+        self.loading_screen_on_use(self.work_thread, self.update_both, (700, 600))
 
     def get_valid_mates(self):
         """Get a list of valid mates for the current cat"""

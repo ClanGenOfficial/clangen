@@ -1262,7 +1262,7 @@ class EventLoading(UIWindow):
     @staticmethod
     def load_images():
         frames = []
-        for i in range(1, 9):
+        for i in range(0, 16):
             frames.append(pygame.image.load(
                 f"resources/images/loading_animate/timeskip/{i}.png"))
 
@@ -1281,7 +1281,7 @@ class EventLoading(UIWindow):
 
             self.animated_image.set_image(self.frames[i])
 
-            time.sleep(0.3)
+            time.sleep(0.125)
 
     def kill(self):
         self.end_animation = True
