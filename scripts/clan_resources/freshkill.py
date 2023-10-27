@@ -72,7 +72,6 @@ class Freshkill_Pile():
                 "expires_in_1": 0,
             }
             self.total_amount = game.prey_config["start_amount"]
-        print(self.pile["expires_in_4"])
         self.nutrition_info = {}
 
     def add_freshkill(self, amount) -> None:

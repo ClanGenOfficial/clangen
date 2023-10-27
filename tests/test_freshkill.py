@@ -30,8 +30,19 @@ class FreshkillPile(unittest.TestCase):
         self.assertEqual(freshkill_pile.pile["expires_in_1"], 0)
 
     def test_remove_freshkill(self) -> None:
-        # check with and without random
-        pass
+        # given
+        freshkill_pile1 = Freshkill_Pile()
+        freshkill_pile1.pile["expires_in_1"] = 10
+        self.assertEqual(freshkill_pile1.pile["expires_in_1"], 10)
+        freshkill_pile1.remove_freshkill(5)
+
+        freshkill_pile2 = Freshkill_Pile()
+        freshkill_pile2.remove_freshkill(5,True)
+
+        # then
+        self.assertEqual(freshkill_pile1.pile["expires_in_4"], self.amount)
+        self.assertEqual(freshkill_pile1.pile["expires_in_1"], 5)
+        self.assertEqual(freshkill_pile2.total_amount, self.amount -5)
 
     def test_time_skip(self) -> None:
         # given
@@ -94,7 +105,13 @@ class FreshkillPile(unittest.TestCase):
         self.assertEqual(freshkill_pile.amount_food_needed(), self.prey_requirement["warrior"])
 
     def test_clan_has_enough_food(self) -> None:
-        pass
+        # given
+        freshkill_pile = Freshkill_Pile()
+        test_warrior = Cat()
+        test_warrior.status = "warrior"
+
+        # then
+        self.assertTrue(freshkill_pile.clan_has_enough_food())
 
     def test_tactic_younger_first(self) -> None:
         pass
