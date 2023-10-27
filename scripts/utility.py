@@ -266,7 +266,7 @@ def create_new_cat(Cat,
         if status == "newborn":
             age = 0
         elif litter or kit:
-            age = randint(0, 5)
+            age = randint(1, 5)
         elif status in ('apprentice', 'medicine cat apprentice', 'mediator apprentice'):
             age = randint(6, 11)
         elif status == 'warrior':
@@ -752,8 +752,7 @@ def process_text(text, cat_dict, raise_exception=False):
     adjust_text = re.sub(r"\{(.*?)\}", lambda x: pronoun_repl(x, cat_dict, raise_exception),
                                                               text)
 
-    name_patterns = [re.escape(l) for l in cat_dict]
-
+    name_patterns = [r'(?<!\{)' + re.escape(l) + r'(?!\})' for l in cat_dict]
     adjust_text = re.sub("|".join(name_patterns), lambda x: name_repl(x, cat_dict), adjust_text)
     return adjust_text
 
@@ -906,9 +905,24 @@ def history_text_adjust(text,
     if "c_n" in text:
         text = text.replace("c_n", clan.name)
     if "r_c" in text and other_cat_rc:
-        text = text.replace("r_c", str(other_cat_rc.name))
+        text = selective_replace(text, "r_c", str(other_cat_rc.name))
     return text
 
+def selective_replace(text, pattern, replacement):
+    i = 0
+    while i < len(text):
+        index = text.find(pattern, i)
+        if index == -1:
+            break
+        start_brace = text.rfind('{', 0, index)
+        end_brace = text.find('}', index)
+        if start_brace != -1 and end_brace != -1 and start_brace < index < end_brace:
+            i = index + len(pattern)
+        else:
+            text = text[:index] + replacement + text[index + len(pattern):]
+            i = index + len(replacement)
+
+    return text
 
 def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
     """
