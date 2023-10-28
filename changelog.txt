@@ -1,3 +1,6 @@
+<strong>v0.10.6</strong>
+- Fixed the constantly dizzy condition
+
 <strong>v0.10.5</strong>
 - Added a small notice in the settings page outlining that some settings are now clan-specific
 
