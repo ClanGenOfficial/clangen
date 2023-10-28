@@ -1,3 +1,6 @@
+<strong>v0.10.5</strong>
+- Added a small notice in the settings page outlining that some settings are now clan-specific
+
 <strong>v0.10.1 - v0.10.4</strong>
 - Properly fixed a bug causing the game to crash when the changelog contains text. Now you can once again bask in the glory of those super long change notes! Yay!
 - All praise Archanyhm for spending the past hour trying to fix this. Poor Arch. (I am actually the one writing this)
