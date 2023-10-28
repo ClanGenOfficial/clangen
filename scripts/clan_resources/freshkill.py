@@ -1,5 +1,5 @@
 from typing import List
-from scripts.utility import get_alive_clan_queens
+from scripts.utility import get_alive_clan_queens_dict
 from scripts.cat.cats import Cat
 from scripts.cat.skills import SkillPath
 from scripts.game_structure.game_essentials import game
@@ -139,10 +139,11 @@ class Freshkill_Pile():
         self.update_nutrition(living_cats)
 
         relevant_group = []
-        queens = get_alive_clan_queens(Cat)
+        queen_ids, alive_kits = get_alive_clan_queens_dict(Cat)
         relevant_queens = []
         # kits under 3 months are feed by the queen
-        for queen in queens:
+        for queen_id in queen_ids.keys():
+            queen = Cat.fetch_cat(queen_id)
             kits = queen.get_children()
             kits = [cat for cat in living_cats if cat.ID in kits]
             young_kits = [kit for kit in kits if kit.moons < 3]
@@ -177,10 +178,10 @@ class Freshkill_Pile():
         """
         living_cats = [i for i in Cat.all_cats.values() if not (i.dead or i.outside or i.exiled)]
         sick_cats = [cat for cat in living_cats if cat.is_injured() or cat.is_ill()]
-        queens = get_alive_clan_queens(Cat)
+        queen_ids, living_kits = get_alive_clan_queens_dict(Cat)
 
         needed_prey = [PREY_REQUIREMENT[cat.status] for cat in living_cats]
-        needed_prey = sum(needed_prey) + len(sick_cats) * CONDITION_INCREASE + len(queens) * (PREY_REQUIREMENT["queen"] - PREY_REQUIREMENT["warrior"])
+        needed_prey = sum(needed_prey) + len(sick_cats) * CONDITION_INCREASE + len(queen_ids) * (PREY_REQUIREMENT["queen"] - PREY_REQUIREMENT["warrior"])
         return needed_prey
 
     def clan_has_enough_food(self) -> bool:
