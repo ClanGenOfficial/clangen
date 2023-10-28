@@ -59,7 +59,6 @@ class ClearingScreen(Screens):
                 self.change_screen('camp screen')
             elif event.ui_element == self.feed_button:
                 game.clan.freshkill_pile.feed_cat(self.focus_cat_object, 1, 0)
-                game.clan.freshkill_pile.update_nutrition(Cat.all_cats_list)
                 Freshkill_Events.handle_nutrient(self.focus_cat_object, game.clan.freshkill_pile.nutrition_info)
                 self.update_cats_list()
                 self.update_nutrition_cats()

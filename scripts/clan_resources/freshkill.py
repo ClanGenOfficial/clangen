@@ -299,8 +299,11 @@ class Freshkill_Pile():
 
         if remaining_amount > 0 and amount_difference == 0:
             self.nutrition_info[cat.ID].current_score -= remaining_amount
-        elif remaining_amount > 0 and amount_difference != 0:
-            print("TODO")
+        elif actual_needed == 0:
+            if remaining_amount == 0:
+                self.nutrition_info[cat.ID].current_score += amount
+            elif amount > remaining_amount:
+                self.nutrition_info[cat.ID].current_score += (amount - remaining_amount)
         elif ration and cat.status == "warrior":
             feeding_amount = PREY_REQUIREMENT[cat.status]
             feeding_amount = feeding_amount/2
@@ -489,7 +492,8 @@ class Freshkill_Pile():
                 
                 # adapt sickness (increase needed amount)
                 injured_not_pregnant = (cat.is_injured() and "pregnant" not in cat.injuries) or len(cat.injuries) > 1
-                if cat.is_ill() or injured_not_pregnant:
+                ill_not_starving = (cat.is_ill() and "malnourished" not in cat.illnesses and "starving" not in cat.illnesses)
+                if ill_not_starving or injured_not_pregnant:
                     self.nutrition_info[cat.ID].max_score += CONDITION_INCREASE * factor
                     curr_score = self.nutrition_info[cat.ID].current_score
                     if curr_score == PREY_REQUIREMENT[str(cat.status)] * factor:
