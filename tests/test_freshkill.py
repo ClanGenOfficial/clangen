@@ -15,6 +15,7 @@ class FreshkillPile(unittest.TestCase):
             self.prey_config = ujson.loads(read_file.read())
         self.amount = self.prey_config["start_amount"]
         self.prey_requirement = self.prey_config["prey_requirement"]
+        self.condition_increase = self.prey_config["condition_increase"]
         return super().setUp()
 
     def test_add_freshkill(self) -> None:
@@ -207,6 +208,40 @@ class FreshkillPile(unittest.TestCase):
         self.assertLess(
             freshkill_pile.nutrition_info[highest_warrior.ID].percentage, 100)
 
+    def test_tactic_sick_injured_first(self) -> None:
+        # given
+        # young enough kid
+        injured_cat = Cat()
+        injured_cat.status = "warrior"
+        injured_cat.injuries["test_injury"] = {}
+        sick_cat = Cat()
+        sick_cat.status = "warrior"
+        sick_cat.illnesses["test_illness"] = {}
+        healthy_cat = Cat()
+        healthy_cat.status = "warrior"
+
+
+        freshkill_pile = Freshkill_Pile()
+        # be able to feed one queen and some of the warrior
+        current_amount = self.prey_requirement["warrior"] * 2 + self.condition_increase * 2
+        freshkill_pile.pile["expires_in_4"] = current_amount
+        freshkill_pile.total_amount = current_amount
+
+        freshkill_pile.add_cat_to_nutrition(injured_cat)
+        freshkill_pile.add_cat_to_nutrition(sick_cat)
+        freshkill_pile.add_cat_to_nutrition(healthy_cat)
+        self.assertEqual(freshkill_pile.nutrition_info[injured_cat.ID].percentage, 100)
+        self.assertEqual(freshkill_pile.nutrition_info[sick_cat.ID].percentage, 100)
+        self.assertEqual(freshkill_pile.nutrition_info[healthy_cat.ID].percentage, 100)
+
+        # when
+        freshkill_pile.tactic_sick_injured_first([healthy_cat, sick_cat, injured_cat], "warrior")
+
+        # then
+        self.assertEqual(freshkill_pile.nutrition_info[injured_cat.ID].percentage, 100)
+        self.assertEqual(freshkill_pile.nutrition_info[sick_cat.ID].percentage, 100)
+        self.assertLess(freshkill_pile.nutrition_info[healthy_cat.ID].percentage, 70)
+
     def test_more_experience_first(self) -> None:
         # given
         freshkill_pile = Freshkill_Pile()
@@ -337,13 +372,68 @@ class FreshkillPile(unittest.TestCase):
         self.assertLess(freshkill_pile.nutrition_info[father.ID].percentage, 70)
 
     def test_pregnant_handling(self) -> None:
-        pass
+        # given
+        # young enough kid
+        pregnant_cat = Cat()
+        pregnant_cat.status = "warrior"
+        pregnant_cat.injuries["pregnant"] = {}
+        cat2 = Cat()
+        cat2.status = "warrior"
+        cat3 = Cat()
+        cat3.status = "warrior"
+
+
+        freshkill_pile = Freshkill_Pile()
+        # be able to feed one queen and some of the warrior
+        current_amount = self.prey_requirement["queen/pregnant"]
+        freshkill_pile.pile["expires_in_4"] = current_amount
+        freshkill_pile.total_amount = current_amount
+
+        freshkill_pile.add_cat_to_nutrition(pregnant_cat)
+        freshkill_pile.add_cat_to_nutrition(cat2)
+        freshkill_pile.add_cat_to_nutrition(cat3)
+        self.assertEqual(freshkill_pile.nutrition_info[pregnant_cat.ID].percentage, 100)
+        self.assertEqual(freshkill_pile.nutrition_info[cat2.ID].percentage, 100)
+        self.assertEqual(freshkill_pile.nutrition_info[cat3.ID].percentage, 100)
+
+        # when
+        freshkill_pile.feed_cats([cat2, cat3, pregnant_cat])
+
+        # then
+        self.assertEqual(freshkill_pile.nutrition_info[pregnant_cat.ID].percentage, 100)
+        self.assertLess(freshkill_pile.nutrition_info[cat2.ID].percentage, 70)
+        self.assertLess(freshkill_pile.nutrition_info[cat3.ID].percentage, 70)
 
     def test_sick_handling(self) -> None:
-        pass
+        # given
+        # young enough kid
+        injured_cat = Cat()
+        injured_cat.status = "warrior"
+        injured_cat.injuries["test_injury"] = {}
+        sick_cat = Cat()
+        sick_cat.status = "warrior"
+        sick_cat.illnesses["test_illness"] = {}
+        healthy_cat = Cat()
+        healthy_cat.status = "warrior"
 
-    def test_update_nutrition(self) -> None:
-        pass
 
-    def test_add_cat_to_nutrition(self) -> None:
-        pass
+        freshkill_pile = Freshkill_Pile()
+        # be able to feed one queen and some of the warrior
+        current_amount = self.prey_requirement["warrior"] * 2 + self.condition_increase * 2
+        freshkill_pile.pile["expires_in_4"] = current_amount
+        freshkill_pile.total_amount = current_amount
+
+        freshkill_pile.add_cat_to_nutrition(injured_cat)
+        freshkill_pile.add_cat_to_nutrition(sick_cat)
+        freshkill_pile.add_cat_to_nutrition(healthy_cat)
+        self.assertEqual(freshkill_pile.nutrition_info[injured_cat.ID].percentage, 100)
+        self.assertEqual(freshkill_pile.nutrition_info[sick_cat.ID].percentage, 100)
+        self.assertEqual(freshkill_pile.nutrition_info[healthy_cat.ID].percentage, 100)
+
+        # when
+        freshkill_pile.feed_cats([sick_cat, injured_cat, healthy_cat])
+
+        # then
+        self.assertEqual(freshkill_pile.nutrition_info[injured_cat.ID].percentage, 100)
+        self.assertEqual(freshkill_pile.nutrition_info[sick_cat.ID].percentage, 100)
+        self.assertLess(freshkill_pile.nutrition_info[healthy_cat.ID].percentage, 70)

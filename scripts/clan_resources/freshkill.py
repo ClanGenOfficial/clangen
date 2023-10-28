@@ -234,15 +234,14 @@ class Freshkill_Pile():
         # NOTE: the tactics should have a own function for testing purposes
         if game.clan.clan_settings["younger first"]:
             self.tactic_younger_first(group, status_)
-
         elif game.clan.clan_settings["less nutrition first"]:
             self.tactic_less_nutrition_first(group, status_)
-
         elif game.clan.clan_settings["more experience first"]:
             self.tactic_more_experience_first(group, status_)
-
         elif game.clan.clan_settings["hunter first"]:
             self.tactic_hunter_first(group, status_)
+        elif game.clan.clan_settings["sick/injured first"]:
+            self.tactic_sick_injured_first(group, status_)
         else:
             self.feed_group(group, status_)
 
@@ -304,7 +303,6 @@ class Freshkill_Pile():
             feeding_amount = PREY_REQUIREMENT[cat.status]
             feeding_amount = feeding_amount/2
             self.nutrition_info[cat.ID].current_score -= feeding_amount
-            
 
     def take_from_pile(self, pile_group: str, given_amount):
         """
@@ -421,6 +419,22 @@ class Freshkill_Pile():
                 ranking[x.skills.secondary.tier] if x.skills.secondary and\
                 x.skills.secondary.path == SkillPath.HUNTER else 3
         )
+        self.feed_group(sorted_group, status_)
+
+    def tactic_sick_injured_first(self, group: list, status_: str) -> None:
+        """
+        With this tactic, the sick or injured cats will be fed first.
+
+        Parameters
+        ----------
+            group : list
+                the list of cats which should be feed
+            status_ : str
+                the status of each cat of the group
+        """
+        sick_cats = [cat for cat in group if cat.is_ill() or cat.is_injured()]
+        healthy_cats = [cat for cat in group if not cat.is_ill() and not cat.is_injured()]
+        sorted_group = sick_cats + healthy_cats
         self.feed_group(sorted_group, status_)
 
 

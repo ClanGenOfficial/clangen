@@ -127,17 +127,22 @@
         ],
         "less nutrition first":[
             "less nutrition first",
-			"The Clan will always be fed according their status, within a status group the cats with the lowest nutrient will be fed first.",
+            "The Clan will always be fed according their status, within a status group the cats with the lowest nutrient will be fed first.",
             false
         ],
         "more experience first":[
             "more experience first",
-			"The Clan will always be fed according their status, within a status group the cats with the most experience will be fed first.",
+            "The Clan will always be fed according their status, within a status group the cats with the most experience will be fed first.",
             false
         ],
         "hunter first":[
             "hunter first",
-			"The Clan will always be fed according their status, within a status group the best Hunter will be fed first.",
+            "The Clan will always be fed according their status, within a status group the best Hunter will be fed first.",
+            false
+        ],
+        "sick/injured first":[
+            "sick/injured first",
+            "The Clan will always be fed according their status, within a status group sick or injured cats will be fed first.",
             false
         ],
         "ration prey":[
