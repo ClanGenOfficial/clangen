@@ -920,15 +920,15 @@ class ChangelogPopup(UIWindow):
             manager=MANAGER)
 
         dynamic_changelog = False
-        if get_version_info().is_dev and get_version_info().is_source_build and get_version_info().git_installed:
+        if get_version_info().is_dev() and get_version_info().is_source_build and get_version_info().git_installed:
             file_cont = subprocess.check_output(
                 ["git", "log", r"--pretty=format:%H|||%cd|||%b|||%s", "-15", "--no-decorate", "--merges", "--grep=Merge pull request", "--date=short"]).decode("utf-8")
             dynamic_changelog = True
         else:
             with open("changelog.txt", "r") as read_file:
                 file_cont = read_file.read()
-        
-        if get_version_info().is_dev and not get_version_info().is_source_build:
+
+        if get_version_info().is_dev() and not get_version_info().is_source_build:
             dynamic_changelog = True
 
         if dynamic_changelog:
