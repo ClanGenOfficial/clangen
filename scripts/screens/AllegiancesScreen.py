@@ -108,7 +108,7 @@ class AllegiancesScreen(Screens):
                 living_elders.append(cat)
 
         # Find Queens:
-        queen_dict, living_kits = get_alive_clan_queens(Cat)
+        queen_dict, living_kits = get_alive_clan_queens(living_cats)
 
         # Remove queens from warrior or elder lists, if they are there.  Let them stay on any other lists. 
         for q in queen_dict:

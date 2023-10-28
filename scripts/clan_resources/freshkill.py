@@ -73,6 +73,7 @@ class Freshkill_Pile():
             }
             self.total_amount = game.prey_config["start_amount"]
         self.nutrition_info = {}
+        self.living_cats = []
 
     def add_freshkill(self, amount) -> None:
         """
@@ -114,6 +115,7 @@ class Freshkill_Pile():
             living_cats : list
                 list of living cats which should be feed
         """
+        self.living_cats = living_cats
         previous_amount = 0
         # update the freshkill pile
         for key, value in self.pile.items():
@@ -139,7 +141,7 @@ class Freshkill_Pile():
         self.update_nutrition(living_cats)
 
         relevant_group = []
-        queen_dict, kits = get_alive_clan_queens(Cat)
+        queen_dict, kits = get_alive_clan_queens(living_cats)
         relevant_queens = []
         # kits under 3 months are feed by the queen
         for queen_id, their_kits in queen_dict.items():
@@ -196,7 +198,7 @@ class Freshkill_Pile():
         """
         living_cats = [i for i in Cat.all_cats.values() if not (i.dead or i.outside or i.exiled)]
         sick_cats = [cat for cat in living_cats if cat.is_injured() or cat.is_ill()]
-        queen_dict, living_kits = get_alive_clan_queens(Cat)
+        queen_dict, living_kits = get_alive_clan_queens(self.living_cats)
 
         needed_prey = [PREY_REQUIREMENT[cat.status] for cat in living_cats]
         needed_prey = sum(needed_prey) + len(sick_cats) * CONDITION_INCREASE + len(queen_dict) * (PREY_REQUIREMENT["queen/pregnant"] - PREY_REQUIREMENT["warrior"])
@@ -408,17 +410,20 @@ class Freshkill_Pile():
             status_ : str
                 the status of each cat of the group
         """
-        ranking = {
-            3: 0, # Tier 3 hunters get rank 0
-            2: 1, # Tier 2 hunters get rank 1
-            1: 2, # Tier 1 hunters get rank 2
-        }
-        sorted_group = sorted(
-            group, 
-            key=lambda x: ranking[x.skills.primary.tier] if x.skills.primary.path == SkillPath.HUNTER else\
-                ranking[x.skills.secondary.tier] if x.skills.secondary and\
-                x.skills.secondary.path == SkillPath.HUNTER else 3
-        )
+        best_hunter = []
+        search_rank = 3
+        for search_rank in range(1,4):
+            for cat in group.copy():
+                if not cat.skills:
+                    continue
+                if cat.skills.primary and cat.skills.primary.path == SkillPath.HUNTER and cat.skills.primary.tier == search_rank:
+                    best_hunter.insert(0,cat)
+                    group.remove(cat)
+                elif cat.skills.secondary and cat.skills.secondary.path == SkillPath.HUNTER and cat.skills.secondary.tier == search_rank:
+                    best_hunter.insert(0,cat)
+                    group.remove(cat)
+
+        sorted_group = best_hunter + group
         self.feed_group(sorted_group, status_)
 
     def tactic_sick_injured_first(self, group: list, status_: str) -> None:
@@ -453,7 +458,7 @@ class Freshkill_Pile():
         """
         old_nutrition_info = deepcopy(self.nutrition_info)
         self.nutrition_info = {}
-        queen_dict, kits = get_alive_clan_queens(Cat)
+        queen_dict, kits = get_alive_clan_queens(self.living_cats)
 
         for cat in living_cats:
             if str(cat.status) not in PREY_REQUIREMENT:
@@ -508,7 +513,7 @@ class Freshkill_Pile():
         if str(cat.status) in ["newborn", "kitten", "elder"]:
             factor = 2
         
-        queen_dict, kits = get_alive_clan_queens(Cat)
+        queen_dict, kits = get_alive_clan_queens(self.living_cats)
         prey_status = str(cat.status)
         if cat.ID in queen_dict.keys() or "pregnant" in cat.injuries:
             prey_status = "queen/pregnant"

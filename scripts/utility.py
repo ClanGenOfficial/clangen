@@ -28,14 +28,14 @@ from scripts.game_structure.game_essentials import game, screen_x, screen_y
 #                              Counting Cats                                   #
 # ---------------------------------------------------------------------------- #
 
-def get_alive_clan_queens(cat_class):
-    living_kits = [cat for cat in cat_class.all_cats.values() if not (cat.dead or cat.outside) and cat.status in ["kitten", "newborn"]]
+def get_alive_clan_queens(living_cats):
+    living_kits = [cat for cat in living_cats if not (cat.dead or cat.outside) and cat.status in ["kitten", "newborn"]]
 
     queen_dict = {}
     for cat in living_kits.copy():
         parents = cat.get_parents()
         #Fetch parent object, only alive and not outside. 
-        parents = [cat_class.fetch_cat(i) for i in parents if cat_class.fetch_cat(i) and not(cat_class.fetch_cat(i).dead or cat_class.fetch_cat(i).outside)]
+        parents = [cat.fetch_cat(i) for i in parents if cat.fetch_cat(i) and not(cat.fetch_cat(i).dead or cat.fetch_cat(i).outside)]
         if not parents:
             continue
         
