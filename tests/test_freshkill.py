@@ -333,6 +333,7 @@ class FreshkillPile(unittest.TestCase):
         self.assertEqual(freshkill_pile.nutrition_info[kid.ID].percentage, 100)
         self.assertEqual(freshkill_pile.nutrition_info[mother.ID].percentage, 100)
         self.assertLess(freshkill_pile.nutrition_info[no_parent.ID].percentage, 90)
+        self.assertGreater(freshkill_pile.nutrition_info[no_parent.ID].percentage, 70)
         self.assertLess(freshkill_pile.nutrition_info[father.ID].percentage, 70)
 
     def test_pregnant_handling(self) -> None:

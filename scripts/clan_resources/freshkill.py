@@ -290,21 +290,21 @@ class Freshkill_Pile():
                 the amount the cat actually needs for the moon
         """
         ration = game.clan.clan_settings["ration prey"] if game.clan else False
-        previous_amount = amount
         remaining_amount = amount
         amount_difference = actual_needed - amount
         order = ["expires_in_1", "expires_in_2", "expires_in_3", "expires_in_4"]
         for key in order:
             remaining_amount = self.take_from_pile(key, remaining_amount)
-            self.nutrition_info[cat.ID].current_score += previous_amount - remaining_amount
-            previous_amount = remaining_amount
 
-        if remaining_amount > 0 or ration:
-            if cat.status == "warrior":
-                feeding_amount = PREY_REQUIREMENT[cat.status]
-                feeding_amount = feeding_amount/2
-                self.nutrition_info[cat.ID].current_score -= feeding_amount
-            self.nutrition_info[cat.ID].current_score -= (remaining_amount + amount_difference)
+        if remaining_amount > 0 and amount_difference == 0:
+            self.nutrition_info[cat.ID].current_score -= remaining_amount
+        elif remaining_amount > 0 and amount_difference != 0:
+            print("TODO")
+        elif ration and cat.status == "warrior":
+            feeding_amount = PREY_REQUIREMENT[cat.status]
+            feeding_amount = feeding_amount/2
+            self.nutrition_info[cat.ID].current_score -= feeding_amount
+            
 
     def take_from_pile(self, pile_group: str, given_amount):
         """
@@ -447,22 +447,37 @@ class Freshkill_Pile():
             # update the nutrition_info
             if cat.ID in old_nutrition_info:
                 self.nutrition_info[cat.ID] = old_nutrition_info[cat.ID]
+                factor = 3
+                if str(cat.status) in ["newborn", "kitten", "elder"]:
+                    factor = 2
                 # check if the max_score is correct, otherwise update
                 if cat.moons == 6:
-                    self.nutrition_info[cat.ID].max_score = PREY_REQUIREMENT[str(cat.status)] * 3
+                    self.nutrition_info[cat.ID].max_score = PREY_REQUIREMENT[str(cat.status)] * factor
                     self.nutrition_info[cat.ID].current_score += PREY_REQUIREMENT[str(cat.status)]
                 elif cat.moons == 12:
-                    self.nutrition_info[cat.ID].max_score = PREY_REQUIREMENT[str(cat.status)] * 3
+                    self.nutrition_info[cat.ID].max_score = PREY_REQUIREMENT[str(cat.status)] * factor
                     self.nutrition_info[cat.ID].current_score += PREY_REQUIREMENT[str(cat.status)]
                 elif cat.moons >= 120 and str(cat.status) == "elder":
-                    self.nutrition_info[cat.ID].max_score = PREY_REQUIREMENT[str(cat.status)] * 2
+                    self.nutrition_info[cat.ID].max_score = PREY_REQUIREMENT[str(cat.status)] * factor
                 elif cat.ID in queen_dict.keys() or "pregnant" in cat.injuries:
-                    if old_nutrition_info[cat.ID].current_score == PREY_REQUIREMENT[str(cat.status)] * 3:
-                        self.nutrition_info[cat.ID].max_score = PREY_REQUIREMENT["queen/pregnant"] * 3
-                        old_nutrition_info[cat.ID].current_score= PREY_REQUIREMENT["queen/pregnant"] * 3
+                    if old_nutrition_info[cat.ID].current_score == PREY_REQUIREMENT[str(cat.status)] * factor:
+                        self.nutrition_info[cat.ID].max_score = PREY_REQUIREMENT["queen/pregnant"] * factor
+                        old_nutrition_info[cat.ID].current_score= PREY_REQUIREMENT["queen/pregnant"] * factor
                     else:
-                        self.nutrition_info[cat.ID].max_score = PREY_REQUIREMENT["queen/pregnant"] * 3
+                        self.nutrition_info[cat.ID].max_score = PREY_REQUIREMENT["queen/pregnant"] * factor
                         new_score = old_nutrition_info[cat.ID].current_score / PREY_REQUIREMENT[str(cat.status)] * PREY_REQUIREMENT["queen/pregnant"]
+                        self.nutrition_info[cat.ID].current_score = new_score
+                
+                # adapt sickness (increase needed amount)
+                injured_not_pregnant = (cat.is_injured() and "pregnant" not in cat.injuries) or len(cat.injuries) > 1
+                if cat.is_ill() or injured_not_pregnant:
+                    self.nutrition_info[cat.ID].max_score += CONDITION_INCREASE * factor
+                    curr_score = self.nutrition_info[cat.ID].current_score
+                    if curr_score == PREY_REQUIREMENT[str(cat.status)] * factor:
+                        self.nutrition_info[cat.ID].current_score = self.nutrition_info[cat.ID].max_score
+                    else: 
+                        # increase the current score relevant to the existing one
+                        new_score = curr_score / PREY_REQUIREMENT[str(cat.status)] * (PREY_REQUIREMENT[str(cat.status)] + CONDITION_INCREASE * factor)
                         self.nutrition_info[cat.ID].current_score = new_score
             else:
                 self.add_cat_to_nutrition(cat)
@@ -487,6 +502,12 @@ class Freshkill_Pile():
         nutrition.max_score = max_score
         nutrition.current_score = max_score
         nutrition.percentage = 100
+
+        # adapt sickness (increase needed amount)
+        injured_not_pregnant = (cat.is_injured() and "pregnant" not in cat.injuries) or len(cat.injuries) > 1
+        if cat.is_ill() or injured_not_pregnant:
+            nutrition.max_score += CONDITION_INCREASE * factor
+            nutrition.current_score = nutrition.max_score
 
         self.nutrition_info[cat.ID] = nutrition
 
