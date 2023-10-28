@@ -2633,6 +2633,20 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up on the fight.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": [
+                    "adventurous",
+                    "altruistic",
+                    "ambitious",
+                    "bloodthirsty",
+                    "bold",
+                    "confident",
+                    "daring",
+                    "fierce",
+                    "responsible",
+                    "righteous",
+                    "troublesome",
+                    "vengeful"
+                ],
                 "injury": [
                     {
                         "cats": ["s_c"],
@@ -3840,7 +3854,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The skies clear, and though r_c keeps hunting, the heat of the sun makes {PRONOUN/s_c/object} sluggish and slow to react",
+                "text": "The skies clear, and though r_c keeps hunting, the heat of the sun makes {PRONOUN/r_c/object} sluggish and slow to react",
                 "exp": 0,
                 "weight": 20
             },

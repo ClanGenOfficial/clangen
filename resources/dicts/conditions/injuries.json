@@ -812,16 +812,14 @@
         "also_got": [],
         "cause_permanent": [
             "lost a leg",
-            "lost their tail",
-            "moss",
-            "dandelion",
-            "poppy"
+            "lost their tail"
         ],
         "herbs": [
             "juniper",
             "ragwort",
             "poppy",
-            "moss"
+            "moss",
+            "dandelion"
         ]
     },
 
@@ -849,12 +847,13 @@
             "blood loss"
         ],
         "cause_permanent": [
+        ],
+        "herbs": [
             "oak_leaves",
             "juniper",
             "ragwort",
             "moss"
-        ],
-        "herbs": []
+        ]
     },
 
     "water in their lungs":{
@@ -1142,7 +1141,7 @@
             "failing eyesight",
             "one bad eye",
             "blind",
-            "loss of balance",
+            "constantly dizzy",
             "partial hearing loss",
             "persistent headaches"
         ],
