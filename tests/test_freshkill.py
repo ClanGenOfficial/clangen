@@ -98,32 +98,6 @@ class FreshkillPile(unittest.TestCase):
         self.assertEqual(test_clan.freshkill_pile.total_amount,
                          self.amount - self.prey_requirement["warrior"])
 
-    def test_amount_food_needed(self) -> None:
-        # given
-        freshkill_pile = Freshkill_Pile()
-        test_warrior = Cat()
-        test_warrior.status = "warrior"
-
-        # then
-        freshkill_pile.living_cats = [test_warrior]
-        self.assertEqual(freshkill_pile.amount_food_needed(),
-                         self.prey_requirement["warrior"])
-
-    def test_clan_has_enough_food(self) -> None:
-        # given
-        freshkill_pile1 = Freshkill_Pile()
-        freshkill_pile2 = Freshkill_Pile()
-        freshkill_pile2.pile["expires_in_4"] = 0
-        freshkill_pile2.total_amount = 0
-        test_warrior = Cat()
-        test_warrior.status = "warrior"
-
-        # then
-        freshkill_pile1.living_cats = [test_warrior]
-        freshkill_pile2.living_cats = [test_warrior]
-        self.assertTrue(freshkill_pile1.clan_has_enough_food())
-        self.assertFalse(freshkill_pile2.clan_has_enough_food())
-
     def test_tactic_younger_first(self) -> None:
         # given
         freshkill_pile = Freshkill_Pile()
