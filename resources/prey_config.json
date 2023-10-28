@@ -19,14 +19,14 @@
         "warrior": 3,
         "apprentice": 1.5,
         "elder": 1.5,
-        "queen": 4,
+        "queen/pregnant": 4,
         "kitten": 0.5,
         "newborn": 0.2
     },
     "feeding_order":[
         "newborn",
         "kitten",
-        "queen",
+        "queen/pregnant",
         "elder",
         "medicine cat",
         "medicine cat apprentice",

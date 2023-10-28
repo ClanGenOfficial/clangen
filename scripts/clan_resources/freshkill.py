@@ -1,5 +1,5 @@
 from typing import List
-from scripts.utility import get_alive_clan_queens_dict
+from scripts.utility import get_alive_clan_queens
 from scripts.cat.cats import Cat
 from scripts.cat.skills import SkillPath
 from scripts.game_structure.game_essentials import game
@@ -139,31 +139,49 @@ class Freshkill_Pile():
         self.update_nutrition(living_cats)
 
         relevant_group = []
-        queen_ids, alive_kits = get_alive_clan_queens_dict(Cat)
+        queen_dict, kits = get_alive_clan_queens(Cat)
         relevant_queens = []
         # kits under 3 months are feed by the queen
-        for queen_id in queen_ids.keys():
+        for queen_id, their_kits in queen_dict.items():
             queen = Cat.fetch_cat(queen_id)
-            kits = queen.get_children()
-            kits = [cat for cat in living_cats if cat.ID in kits]
-            young_kits = [kit for kit in kits if kit.moons < 3]
+            young_kits = [kit for kit in their_kits if kit.moons < 3]
             if len(young_kits) > 0:
                 relevant_queens.append(queen)
+        
+        pregnant_cats = [cat for cat in living_cats if "pregnant" in cat.injuries and cat.ID not in queen_dict.keys()]
 
         for feeding_status in FEEDING_ORDER:
-            if feeding_status == "queen":
-                relevant_group = relevant_queens
+            if feeding_status == "newborn":
+                relevant_group = [
+                    cat for cat in living_cats if cat.status == "newborn" and  cat.moons > 2 and\
+                    not any(parent_id in queen_dict.keys() for parent_id in cat.get_parents())
+                ]
             elif feeding_status == "kitten":
-                relevant_group = [cat for cat in living_cats if str(cat.status) == feeding_status and cat.moons >= 2]
+                # kits under 3 months are feed by the queen
+                all_kits = [
+                    cat for cat in living_cats if cat.status == "kitten" and cat.moons > 2 and\
+                    not any(parent_id in queen_dict.keys() for parent_id in cat.get_parents())
+                ]
+                relevant_group = all_kits
+            elif feeding_status == "queen/pregnant":
+                relevant_group = relevant_queens + pregnant_cats
             else:
                 relevant_group = [cat for cat in living_cats if str(cat.status) == feeding_status]
-                # remove all cats, which are also queens
-                relevant_group = [cat for cat in relevant_group if cat not in relevant_queens]
+                # remove all cats, which are also queens / pregnant
+                relevant_group = [cat for cat in relevant_group if cat not in relevant_queens and cat not in pregnant_cats]
 
-            sick_cats = [cat for cat in relevant_group if cat.is_injured() or cat.is_ill()]
+            if len(relevant_group) == 0:
+                continue
+
+            sick_cats = []
+            for cat in relevant_group:
+                injured_not_pregnant = (cat.is_injured() and "pregnant" not in cat.injuries) or len(cat.injuries) > 1
+                if cat.is_ill() or injured_not_pregnant:
+                    sick_cats.append(cat)
+            
+            # check if there is enough food for this group
             needed_prey = len(relevant_group) * PREY_REQUIREMENT[feeding_status] + len(sick_cats) * CONDITION_INCREASE
             enough_prey = needed_prey <= self.total_amount
-
             if not enough_prey:
                 self.handle_not_enough_food(relevant_group, feeding_status)
             else:
@@ -178,10 +196,10 @@ class Freshkill_Pile():
         """
         living_cats = [i for i in Cat.all_cats.values() if not (i.dead or i.outside or i.exiled)]
         sick_cats = [cat for cat in living_cats if cat.is_injured() or cat.is_ill()]
-        queen_ids, living_kits = get_alive_clan_queens_dict(Cat)
+        queen_dict, living_kits = get_alive_clan_queens(Cat)
 
         needed_prey = [PREY_REQUIREMENT[cat.status] for cat in living_cats]
-        needed_prey = sum(needed_prey) + len(sick_cats) * CONDITION_INCREASE + len(queen_ids) * (PREY_REQUIREMENT["queen"] - PREY_REQUIREMENT["warrior"])
+        needed_prey = sum(needed_prey) + len(sick_cats) * CONDITION_INCREASE + len(queen_dict) * (PREY_REQUIREMENT["queen/pregnant"] - PREY_REQUIREMENT["warrior"])
         return needed_prey
 
     def clan_has_enough_food(self) -> bool:
@@ -208,6 +226,11 @@ class Freshkill_Pile():
             status_ : str
                 the status of each cat of the group
         """
+        # NOTE: this is for testing purposes
+        if not game.clan:
+            self.feed_group(group, status_)
+            return
+
         # NOTE: the tactics should have a own function for testing purposes
         if game.clan.clan_settings["younger first"]:
             self.tactic_younger_first(group, status_)
@@ -220,7 +243,6 @@ class Freshkill_Pile():
 
         elif game.clan.clan_settings["hunter first"]:
             self.tactic_hunter_first(group, status_)
-
         else:
             self.feed_group(group, status_)
 
@@ -241,14 +263,15 @@ class Freshkill_Pile():
         for cat in group:
             feeding_amount = PREY_REQUIREMENT[status_]
             needed_amount = feeding_amount
-            if cat.is_ill() or cat.is_injured():
+            injured_not_pregnant = (cat.is_injured() and "pregnant" not in cat.injuries) or len(cat.injuries) > 1
+            if cat.is_ill() or injured_not_pregnant:
                 feeding_amount += CONDITION_INCREASE
                 needed_amount = feeding_amount
             else:
                 if ration_prey and status_ == "warrior":
                     feeding_amount = feeding_amount/2
             # if there is enough prey, and nutrients are low, fill the nutrients up
-            lot_more_prey = self.amount_food_needed() < self.total_amount * 1.5
+            lot_more_prey = self.amount_food_needed() < self.total_amount * 1.2
             if lot_more_prey and self.nutrition_info[cat.ID].percentage < 100:
                 feeding_amount += 1
             self.feed_cat(cat, feeding_amount, needed_amount)
@@ -353,7 +376,8 @@ class Freshkill_Pile():
             cat = Cat.all_cats[k]
             feeding_amount = PREY_REQUIREMENT[status_]
             needed_amount = feeding_amount
-            if cat.is_ill() or cat.is_injured():
+            injured_not_pregnant = (cat.is_injured() and "pregnant" not in cat.injuries) or len(cat.injuries) > 1
+            if cat.is_ill() or injured_not_pregnant:
                 feeding_amount += CONDITION_INCREASE
                 needed_amount = feeding_amount
             else:
@@ -415,6 +439,7 @@ class Freshkill_Pile():
         """
         old_nutrition_info = deepcopy(self.nutrition_info)
         self.nutrition_info = {}
+        queen_dict, kits = get_alive_clan_queens(Cat)
 
         for cat in living_cats:
             if str(cat.status) not in PREY_REQUIREMENT:
@@ -431,6 +456,14 @@ class Freshkill_Pile():
                     self.nutrition_info[cat.ID].current_score += PREY_REQUIREMENT[str(cat.status)]
                 elif cat.moons >= 120 and str(cat.status) == "elder":
                     self.nutrition_info[cat.ID].max_score = PREY_REQUIREMENT[str(cat.status)] * 2
+                elif cat.ID in queen_dict.keys() or "pregnant" in cat.injuries:
+                    if old_nutrition_info[cat.ID].current_score == PREY_REQUIREMENT[str(cat.status)] * 3:
+                        self.nutrition_info[cat.ID].max_score = PREY_REQUIREMENT["queen/pregnant"] * 3
+                        old_nutrition_info[cat.ID].current_score= PREY_REQUIREMENT["queen/pregnant"] * 3
+                    else:
+                        self.nutrition_info[cat.ID].max_score = PREY_REQUIREMENT["queen/pregnant"] * 3
+                        new_score = old_nutrition_info[cat.ID].current_score / PREY_REQUIREMENT[str(cat.status)] * PREY_REQUIREMENT["queen/pregnant"]
+                        self.nutrition_info[cat.ID].current_score = new_score
             else:
                 self.add_cat_to_nutrition(cat)
 
@@ -443,10 +476,14 @@ class Freshkill_Pile():
         """
         nutrition = Nutrition()
         factor = 3
-        if str(cat.status) in ["kitten", "elder"]:
+        if str(cat.status) in ["newborn", "kitten", "elder"]:
             factor = 2
-
-        max_score = PREY_REQUIREMENT[str(cat.status)] * factor
+        
+        queen_dict, kits = get_alive_clan_queens(Cat)
+        prey_status = str(cat.status)
+        if cat.ID in queen_dict.keys() or "pregnant" in cat.injuries:
+            prey_status = "queen/pregnant"
+        max_score = PREY_REQUIREMENT[prey_status] * factor
         nutrition.max_score = max_score
         nutrition.current_score = max_score
         nutrition.percentage = 100

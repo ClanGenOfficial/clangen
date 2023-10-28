@@ -4,6 +4,7 @@ from scripts.cat.cats import Cat
 from scripts.cat.skills import Skill, SkillPath
 from scripts.clan import Clan
 from scripts.clan_resources.freshkill import Freshkill_Pile
+from scripts.utility import get_alive_clan_queens
 
 
 class FreshkillPile(unittest.TestCase):
@@ -292,6 +293,49 @@ class FreshkillPile(unittest.TestCase):
             freshkill_pile.nutrition_info[no_hunter_warrior.ID].percentage, 70) # this cat should not be fed
 
     def test_queen_handling(self) -> None:
+        # given
+        # young enough kid
+        mother = Cat()
+        mother.gender = "female"
+        mother.status = "warrior"
+        father = Cat()
+        father.gender = "male"
+        father.status = "warrior"
+        kid = Cat()
+        kid.status = "kitten"
+        kid.moons = 2
+        kid.parent1 = father
+        kid.parent2 = mother
+
+        no_parent = Cat()
+        no_parent.status = "warrior"
+
+        freshkill_pile = Freshkill_Pile()
+        # be able to feed one queen and some of the warrior
+        current_amount = self.prey_requirement["queen/pregnant"] + (self.prey_requirement["warrior"] / 2)
+        freshkill_pile.pile["expires_in_4"] = current_amount
+        freshkill_pile.total_amount = current_amount
+
+        freshkill_pile.add_cat_to_nutrition(mother)
+        freshkill_pile.add_cat_to_nutrition(father)
+        freshkill_pile.add_cat_to_nutrition(kid)
+        freshkill_pile.add_cat_to_nutrition(no_parent)
+        self.assertEqual(freshkill_pile.nutrition_info[kid.ID].percentage, 100)
+        self.assertEqual(freshkill_pile.nutrition_info[mother.ID].percentage, 100)
+        self.assertEqual(freshkill_pile.nutrition_info[father.ID].percentage, 100)
+        self.assertEqual(freshkill_pile.nutrition_info[no_parent.ID].percentage, 100)
+
+        # when
+        self.assertEqual([mother.ID], list(get_alive_clan_queens(Cat)[0].keys()))
+        freshkill_pile.feed_cats([no_parent, father, kid, mother])
+
+        # then
+        self.assertEqual(freshkill_pile.nutrition_info[kid.ID].percentage, 100)
+        self.assertEqual(freshkill_pile.nutrition_info[mother.ID].percentage, 100)
+        self.assertLess(freshkill_pile.nutrition_info[no_parent.ID].percentage, 90)
+        self.assertLess(freshkill_pile.nutrition_info[father.ID].percentage, 70)
+
+    def test_pregnant_handling(self) -> None:
         pass
 
     def test_sick_handling(self) -> None:

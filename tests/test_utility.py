@@ -10,7 +10,7 @@ from scripts.utility import (
 	get_highest_romantic_relation, 
 	get_personality_compatibility, 
 	get_amount_of_cats_with_relation_value_towards,
-    get_alive_clan_queens_dict
+    get_alive_clan_queens
 )
 
 class TestPersonalityCompatibility(unittest.TestCase):
@@ -198,7 +198,7 @@ class TestgetQueens(unittest.TestCase):
         kid2.parent1 = mother2
 
         # then
-        self.assertEqual([mother1.ID], list(get_alive_clan_queens_dict(Cat)[0].keys()))
+        self.assertEqual([mother1.ID], list(get_alive_clan_queens(Cat)[0].keys()))
 
     def test_single_father(self):
         # given
@@ -219,7 +219,7 @@ class TestgetQueens(unittest.TestCase):
         kid2.parent1 = father2
 
         # then
-        self.assertEqual([father1.ID], list(get_alive_clan_queens_dict(Cat)[0].keys()))
+        self.assertEqual([father1.ID], list(get_alive_clan_queens(Cat)[0].keys()))
 
     def tests_hetero_pair(self):
         # given
@@ -248,7 +248,7 @@ class TestgetQueens(unittest.TestCase):
         kid2.parent2 = mother2
 
         # then
-        self.assertEqual([mother1.ID], list(get_alive_clan_queens_dict(Cat)[0].keys()))
+        self.assertEqual([mother1.ID], list(get_alive_clan_queens(Cat)[0].keys()))
 
     def test_gay_pair(self):
         # given
@@ -278,7 +278,7 @@ class TestgetQueens(unittest.TestCase):
 
         # then
         self.assertTrue(
-            [father11.ID] == list(get_alive_clan_queens_dict(Cat)[0].keys()) or [father12.ID] == list(get_alive_clan_queens_dict(Cat)[0].keys())
+            [father11.ID] == list(get_alive_clan_queens(Cat)[0].keys()) or [father12.ID] == list(get_alive_clan_queens(Cat)[0].keys())
         )
 
     def test_lesbian_pair(self):
@@ -309,7 +309,7 @@ class TestgetQueens(unittest.TestCase):
 
         # then
         self.assertTrue(
-            [mother11.ID] == list(get_alive_clan_queens_dict(Cat)[0].keys()) or [mother12.ID] == list(get_alive_clan_queens_dict(Cat)[0].keys())
+            [mother11.ID] == list(get_alive_clan_queens(Cat)[0].keys()) or [mother12.ID] == list(get_alive_clan_queens(Cat)[0].keys())
         )
 
     def test_poly_pair(self):
@@ -347,4 +347,4 @@ class TestgetQueens(unittest.TestCase):
         kid2.adoptive_parents.append(parent23)
 
         # then
-        self.assertEqual([parent12.ID], list(get_alive_clan_queens_dict(Cat)[0].keys()))
+        self.assertEqual([parent12.ID], list(get_alive_clan_queens(Cat)[0].keys()))

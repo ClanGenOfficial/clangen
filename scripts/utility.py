@@ -28,34 +28,7 @@ from scripts.game_structure.game_essentials import game, screen_x, screen_y
 #                              Counting Cats                                   #
 # ---------------------------------------------------------------------------- #
 
-def get_alive_clan_queens(cat_class) -> Dict:
-    """
-    Returns a list with all cats with the 'status' queen.
-    """
-    queens = []
-    for inter_cat in cat_class.all_cats.values():
-        if inter_cat.dead or inter_cat.outside:
-            continue
-        if str(inter_cat.status) != 'kitten' or inter_cat.parent1 is None:
-            continue
-
-        alive_parents = [cat_class.fetch_cat(i) for i in inter_cat.get_parents() if 
-                   isinstance(cat_class.fetch_cat(i), cat_class) and not 
-                   (cat_class.fetch_cat(i).dead or cat_class.fetch_cat(i).outside)]
-
-        if len(alive_parents) == 1:
-            queens.append(alive_parents[0])
-        elif len(alive_parents) == 2:
-            if alive_parents[0].gender == "female":
-                queens.append(alive_parents[0])
-            elif alive_parents[1].gender == "female":
-                queens.append(alive_parents[1])
-            else:
-                queens.append(alive_parents[0])
-                
-    return queens
-
-def get_alive_clan_queens_dict(cat_class):
+def get_alive_clan_queens(cat_class):
     living_kits = [cat for cat in cat_class.all_cats.values() if not (cat.dead or cat.outside) and cat.status in ["kitten", "newborn"]]
 
     queen_dict = {}
