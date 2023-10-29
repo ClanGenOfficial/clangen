@@ -1347,6 +1347,17 @@
     ],
     "(old_name) always dreamed of becoming a mediator: Now that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} m_c, an apprentice being mentored by (mentor), it feels like a wish come true."
   ],
+  "caretaker_app_0": [
+    [
+      "caretaker apprentice",
+      "general_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "m_c decides to serve {PRONOUN/m_c/poss} Clan as a caretaker. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} delighted to begin training. "
+  ],
   "med_0": [
     [
       "medicine cat",
@@ -2859,6 +2870,30 @@
       "all_traits"
     ],
     "(previous_mentor) tells l_n that (old_name) has completed {PRONOUN/m_c/poss} mediator training, and l_n gives {PRONOUN/m_c/object} the name m_c after {PRONOUN/m_c/poss} r_h, welcoming {PRONOUN/m_c/object} as the Clan's new mediator."
+  ],
+  "caretaker_0": [
+    [
+      "caretaker",
+      "prepared",
+      "general_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "m_c is welcomed as a fully trained caretaker of the Clan."
+  ],
+  "caretaker_1": [
+    [
+      "caretaker",
+      "unprepared",
+      "general_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "Although (old_name) is still not ready to become a full caretaker, {PRONOUN/m_c/subject} {VERB/m_c/are/is} too old to remain in the apprentices den. A meeting is called, and {PRONOUN/m_c/subject} {VERB/m_c/are/is} given the name m_c. The mood is tense and pitying. "
   ],
   "elder_0": [
     [

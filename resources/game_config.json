@@ -17,6 +17,8 @@
 			"medicine cat apprentice": 1.5,
 			"mediator apprentice": 1.5,
 			"mediator": 2,
+			"caretaker apprentice": 1.5,
+			"caretaker": 2,
 			"warrior": 3,
 			"apprentice": 1.5,
 			"elder": 1.5,
@@ -33,8 +35,10 @@
 			"medicine cat apprentice",
 			"apprentice",
 			"mediator apprentice",
+			"caretaker apprentice",
 			"warrior",
 			"mediator",
+			"caretaker",
 			"deputy",
 			"leader"
 		],
@@ -274,6 +278,7 @@
 	},
 	"roles": {
 		"mediator_app_chance": 50,
+		"caretaker_app_chance": 50,
 		"base_medicine_app_chance": 41,
 		"become_mediator_chances": {
 			"warrior": 5000,
@@ -346,7 +351,8 @@
 		"max_apprentice_age": {
 			"medicine cat apprentice": 30,
 			"apprentice": 25,
-			"mediator apprentice": 25
+			"mediator apprentice": 25,
+			"caretaker apprentice": 25
 		},
 		"min_graduating_age": 10
 	},

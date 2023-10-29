@@ -158,6 +158,8 @@
 			"warrior",
 			"mediator apprentice",
 			"mediator",
+			"caretaker apprentice",
+			"caretaker",
 			"medicine cat apprentice",
 			"medicine cat",
 			"deputy",
@@ -169,6 +171,8 @@
 			"warrior",
 			"mediator apprentice",
 			"mediator",
+			"caretaker apprentice",
+			"caretaker",
 			"medicine cat apprentice",
 			"medicine cat",
 			"deputy",
@@ -242,6 +246,8 @@
 			"warrior",
 			"mediator apprentice",
 			"mediator",
+			"caretaker apprentice",
+			"caretaker",
 			"medicine cat apprentice",
 			"medicine cat",
 			"deputy",
@@ -262,7 +268,8 @@
 		"random_status_constraint": [
 			"apprentice",
 			"mediator apprentice",
-			"medicine cat apprentice"
+			"medicine cat apprentice",
+			"caretaker apprentice"
 		],
 		"reaction_random_cat": {
 			"platonic": "increase"
@@ -291,6 +298,8 @@
 			"warrior",
 			"mediator apprentice",
 			"mediator",
+			"caretaker apprentice",
+			"caretaker",
 			"medicine cat apprentice",
 			"medicine cat",
 			"deputy",
@@ -320,6 +329,8 @@
 			"warrior",
 			"mediator apprentice",
 			"mediator",
+			"caretaker apprentice",
+			"caretaker",
 			"medicine cat apprentice",
 			"medicine cat",
 			"deputy",

@@ -36,6 +36,9 @@ class Welcoming_Events():
         if status == "mediator apprentice":
             status = "mediator"
 
+        if status == 'caretaker apprentice':
+            status = "caretaker"
+
         # collect all events
         possible_events = deepcopy(GENERAL_WELCOMING)
         if status not in WELCOMING_MASTER_DICT:

@@ -948,7 +948,7 @@ class PatrolOutcome():
             
             if match.group(1) in ("newborn", "kitten", "elder", "apprentice", "warrior", 
                                   "mediator apprentice", "mediator", "medicine cat apprentice", 
-                                  "medicine cat"):
+                                  "medicine cat", "caretaker", "caretaker apprentice"):
                 status = match.group(1)
                 break
         

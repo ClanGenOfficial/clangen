@@ -14,6 +14,11 @@
         "major": 2,
         "severe": 1
     },
+    "caretaker apprentice": {
+        "minor": 5,
+        "major": 2,
+        "severe": 1
+    },
     "warrior": {
         "minor": 2,
         "major": 3,
@@ -25,6 +30,11 @@
         "severe": 1
     },
     "medicine cat": {
+        "minor": 4,
+        "major": 2,
+        "severe": 1
+    },
+    "caretaker": {
         "minor": 4,
         "major": 2,
         "severe": 1

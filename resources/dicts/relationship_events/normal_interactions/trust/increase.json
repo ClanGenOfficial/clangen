@@ -109,6 +109,7 @@
 			"warrior",
 			"mediator",
 			"medicine cat",
+			"caretaker",
 			"deputy",
 			"leader"
 		],
@@ -116,7 +117,8 @@
 			"kitten",
 			"apprentice",
 			"mediator apprentice",
-			"medicine cat apprentice"
+			"medicine cat apprentice",
+			"caretaker apprentice"
 		],
 		"reaction_random_cat": {
 			"trust": "increase"
@@ -136,6 +138,8 @@
 			"warrior",
 			"mediator apprentice",
 			"mediator",
+			"caretaker apprentice",
+			"caretaker",
 			"medicine cat apprentice",
 			"medicine cat",
 			"deputy",
@@ -145,6 +149,7 @@
 			"elder",
 			"mediator",
 			"medicine cat",
+			"caretaker",
 			"leader"
 		],
 		"reaction_random_cat": {

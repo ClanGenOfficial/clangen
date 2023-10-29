@@ -71,7 +71,7 @@
       "tags": [],
       "lead_trait": [],
       "star_trait": ["faithful", "loving", "responsible", "thoughtful", "wise", "charismatic"],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "r_c pads up to the new leader, softly touching {PRONOUN/r_c/poss} nose to m_c's head. {PRONOUN/r_c/subject/CAP} {VERB/r_c/give/gives} a life for [virtue].",
@@ -84,7 +84,7 @@
       "tags": ["leader_parent"],
       "lead_trait": [],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice", "caretaker apprentice"],
       "life_giving": [
         {
           "text": "m_c is breathless when {PRONOUN/m_c/subject} {VERB/m_c/see/sees} r_c approach. Fierce pride burns in r_c's eyes as {PRONOUN/r_c/subject} {VERB/r_c/greet/greets} {PRONOUN/r_c/poss} child, pressing {PRONOUN/r_c/poss} nose to m_c's forehead and giving {PRONOUN/m_c/object} a life for [virtue].",
@@ -110,7 +110,7 @@
       "tags": ["leader_child"],
       "lead_trait": [],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice", "caretaker apprentice"],
       "life_giving": [
         {
           "text": "It feels like a dream when r_c emerges from the star-filled crowd. m_c can barely stand {PRONOUN/m_c/poss} ground, resisting the temptation to run forward and press into {PRONOUN/m_c/poss} kit's fur. Love shines in r_c's eyes as {PRONOUN/r_c/subject} {VERB/r_c/give/gives} a life for [virtue].",
@@ -123,7 +123,7 @@
       "tags": [],
       "lead_trait": ["bloodthirsty"],
       "star_trait": ["faithful", "loving", "responsible", "thoughtful", "wise", "charismatic"],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice", "caretaker apprentice"],
       "life_giving": [
         {
           "text": "r_c stalks up to the new leader, eyes burning with unexpected ferocity. {PRONOUN/r_c/subject/CAP} {VERB/r_c/touch/touches} {PRONOUN/r_c/poss} nose to m_c's head, giving {PRONOUN/m_c/object} a life for [virtue]. m_c reels back with the emotion of the life that courses through {PRONOUN/m_c/object}.",
@@ -177,7 +177,7 @@
       "tags": [],
       "lead_trait": ["adventurous"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice", "caretaker apprentice"],
       "life_giving": [
         {
           "text": "r_c waltzes up to m_c's side like a whirlwind, {PRONOUN/r_c/poss} fur sticking up in all angles. {PRONOUN/r_c/subject/CAP} {VERB/r_c/give/gives} the new leader a life for [virtue] before dashing off into the crowd of starlight.",
@@ -198,7 +198,7 @@
       "tags": [],
       "lead_trait": ["ambitious"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice", "caretaker apprentice"],
       "life_giving": [
         {
           "text": "r_c steps in front of m_c, a worried look crossing {PRONOUN/r_c/poss} features for a moment before {PRONOUN/r_c/subject} {VERB/r_c/shake/shakes} {PRONOUN/r_c/poss} head. {PRONOUN/r_c/subject/CAP} {VERB/r_c/press/presses} {PRONOUN/r_c/poss} muzzle against m_c's and give a life for [virtue].",
@@ -215,7 +215,7 @@
       "tags": [],
       "lead_trait": ["bold"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice", "caretaker apprentice"],
       "life_giving": [
         {
           "text": "Knowing that c_n may tread upon new ground under m_c's leadership, r_c carefully gives a life for [virtue] and urges caution before being so bold.",
@@ -236,7 +236,7 @@
       "tags": [],
       "lead_trait": ["calm"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice", "caretaker apprentice"],
       "life_giving": [
         {
           "text": "With a graceful gait, r_c treads forward, {PRONOUN/r_c/poss} serene presence washing over m_c like one would be put under a spell. In the moment of peace, r_c tenderly extends an offer; a life infused with the essence of [virtue].",
@@ -253,7 +253,7 @@
       "tags": [],
       "lead_trait": ["careful"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice", "caretaker apprentice"],
       "life_giving": [
         {
           "text": "r_c steps forward to m_c, holding {PRONOUN/m_c/poss} gaze. Pressing {PRONOUN/r_c/poss} muzzle against m_c's, {PRONOUN/r_c/subject} {VERB/r_c/nod/nods} and {VERB/r_c/grant/grants} {PRONOUN/m_c/object} a life of [virtue].",
@@ -270,7 +270,7 @@
       "tags": [],
       "lead_trait": ["charismatic"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice", "caretaker apprentice"],
       "life_giving": [
         {
           "text": "r_c can only hope that m_c uses {PRONOUN/m_c/poss} honeyed words and silver tongue well as {PRONOUN/r_c/subject} {VERB/r_c/give/gives} a life for [virtue].",
@@ -287,7 +287,7 @@
       "tags": [],
       "lead_trait": ["childish"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice", "caretaker apprentice"],
       "life_giving": [
         {
           "text": "There is some doubt in r_c's eyes as {PRONOUN/r_c/subject} {VERB/r_c/consider/considers} the cat before {PRONOUN/r_c/object}. Eventually, attempting to stress the importance of leadership, {PRONOUN/r_c/subject} {VERB/r_c/give/gives} a life for [virtue].",
@@ -308,7 +308,7 @@
       "tags": [],
       "lead_trait": ["cold"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "The air grows crisp and brittle as r_c, a feline known for {PRONOUN/r_c/poss} cold demeanor, draws near. Gaze, as piercing as the winter moon, examines m_c with caution, gifting a life for [virtue].",
@@ -325,7 +325,7 @@
       "tags": [],
       "lead_trait": ["compassionate"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "The cats of StarClan were well aware of m_c's compassionate nature. r_c prances forward and gives the new leader a life for [virtue], whispering to keep {PRONOUN/m_c/poss} heart pure and open to others.",
@@ -346,7 +346,7 @@
       "tags": [],
       "lead_trait": ["confident"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "With a warning of overconfidence being a slow and insidious killer on {PRONOUN/r_c/poss} maw, r_c gives m_c a life for [virtue].",
@@ -363,7 +363,7 @@
       "tags": [],
       "lead_trait": ["daring"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "Urging caution and care upon the path {PRONOUN/m_c/subject} {VERB/m_c/tread/treads}, r_c gives the new leader a life for [virtue].",
@@ -380,7 +380,7 @@
       "tags": [],
       "lead_trait": ["faithful"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "There is no doubt in r_c's eyes that StarClan made a good choice in leader. m_c had demonstrated {PRONOUN/m_c/poss} faith in StarClan time and time again, and it is {PRONOUN/r_c/poss} honor to give {PRONOUN/m_c/object} a life for [virtue].",
@@ -397,7 +397,7 @@
       "tags": [],
       "lead_trait": ["fierce"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "Not all battles must end in death. Not all problems can be dealt with claws alone. r_c hopes that m_c will remember this as the life of [virtue] is given.",
@@ -414,7 +414,7 @@
       "tags": [],
       "lead_trait": ["insecure"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "r_c walks up to m_c, offering a life for [virtue]. {PRONOUN/r_c/subject/CAP} {VERB/r_c/smile/smiles}, and {VERB/r_c/state/states} that the Clan will do well under m_c's leadership.",
@@ -435,7 +435,7 @@
       "tags": [],
       "lead_trait": ["lonesome"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "r_c walks up to m_c, offering a life for [virtue]. {PRONOUN/r_c/subject/CAP} {VERB/r_c/smile/smiles}, and {VERB/r_c/state/states} that the Clan will do well under m_c's leadership.",
@@ -456,7 +456,7 @@
       "tags": [],
       "lead_trait": ["loving"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "r_c walks up to m_c, offering a life for [virtue]. {PRONOUN/r_c/subject/CAP} {VERB/r_c/smile/smiles}, and {VERB/r_c/state/states} that the Clan will do well under m_c's leadership.",
@@ -477,7 +477,7 @@
       "tags": [],
       "lead_trait": ["loyal"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "m_c squares {PRONOUN/m_c/poss} shoulders, standing up as straight as {PRONOUN/m_c/subject} can, as r_c approaches. r_c's whiskers twitch in amusement as {PRONOUN/r_c/subject} {VERB/r_c/give/gives} a life for [virtue].",
@@ -494,7 +494,7 @@
       "tags": [],
       "lead_trait": ["nervous"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "m_c tries to keep {PRONOUN/m_c/poss} whiskers from trembling as r_c pads forward. r_c looks at {PRONOUN/m_c/object} sympathetically before pressing {PRONOUN/r_c/poss} nose to m_c's head, giving a life for [virtue], and telling {PRONOUN/m_c/object} that {PRONOUN/m_c/poss} Clan needs {PRONOUN/m_c/object} now.",
@@ -515,7 +515,7 @@
       "tags": [],
       "lead_trait": ["playful"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "Endeared by m_c's playful nature and kit-like wonder at the world, r_c happily gives the new leader a life for [virtue].",
@@ -532,7 +532,7 @@
       "tags": [],
       "lead_trait": ["responsible"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "A cool breeze buffets m_c's fur as {PRONOUN/m_c/subject} {VERB/m_c/watch/watches} r_c approach. r_c gives a life for [virtue]. {PRONOUN/r_c/subject/CAP} add that it may seem easy to follow the Warrior Code, but the Code doesn't always have the answers.",
@@ -570,7 +570,7 @@
       "tags": [],
       "lead_trait": ["shameless"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy"],
       "life_giving": [
         {
           "text":  "r_c winces at a question m_c asks, tail low with second-claw embarrassment. Nonetheless, {PRONOUN/r_c/subject} {VERB/r_c/give/gives} a life for [virtue].",
@@ -591,7 +591,7 @@
       "tags": [],
       "lead_trait": ["sneaky"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "Eyes aglow with mischievous gleam, r_c stealthily closes the distance, carrying a precious offering for m_c; a life imbued with the virtue of [virtue]. Like a fleeting wisp of smoke, r_c departs, leaving behind no trace of {PRONOUN/r_c/poss} enigmatic presence.",
@@ -608,7 +608,7 @@
       "tags": [],
       "lead_trait": ["strange"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "r_c had to get m_c's attention once or twice during the ceremony, but eventually gives the new c_n leader a life for [virtue].",
@@ -638,7 +638,7 @@
       "tags": [],
       "lead_trait": ["thoughtful"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "Valuing m_c's thoughtful nature, r_c hopes that {PRONOUN/m_c/subject} will not let the stress of leadership get to {PRONOUN/m_c/object} as the StarClan cat gives a life for [virtue].",
@@ -655,7 +655,7 @@
       "tags": [],
       "lead_trait": ["troublesome"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "r_c grits {PRONOUN/r_c/poss} teeth to not chide m_c like a kitten once more about {PRONOUN/m_c/poss} troublesome ways, and gives {PRONOUN/m_c/object} a life for [virtue].",
@@ -672,7 +672,7 @@
       "tags": [],
       "lead_trait": ["vengeful"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "r_c walks up to m_c, offering a life for [virtue]. {PRONOUN/r_c/subject/CAP} {VERB/r_c/smile/smiles}, and {VERB/r_c/state/states} that the Clan will do well under m_c's leadership.",
@@ -693,7 +693,7 @@
       "tags": [],
       "lead_trait": ["wise"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "caretaker", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "There was no doubt in r_c's mind that m_c would be a wise leader of legend one day. It was {PRONOUN/r_c/poss} pleasure to give the new leader a life for [virtue].",
@@ -847,7 +847,7 @@
       "tags": [],
       "lead_trait": [],
       "star_trait": [],
-      "rank": ["apprentice", "medicine cat apprentice", "mediator apprentice"],
+      "rank": ["apprentice", "medicine cat apprentice", "mediator apprentice", "caretaker apprentice"],
       "life_giving": [
         {
           "text": "A young cat emerges from the starry ranks to give a life. Starlight reflects off {PRONOUN/r_c/poss} youthful eyes. r_c stretches up to give a life for [virtue].",
@@ -859,7 +859,7 @@
       "tags": [],
       "lead_trait": ["bloodthirsty"],
       "star_trait": [],
-      "rank": ["apprentice", "medicine cat apprentice", "mediator apprentice"],
+      "rank": ["apprentice", "medicine cat apprentice", "mediator apprentice", "caretaker apprentice"],
       "life_giving": [
         {
           "text": "A young cat emerges from the starry ranks to give a life. {PRONOUN/r_c/subject/CAP} {VERB/r_c/hesitate/hesitates}, before an older cat nudges {PRONOUN/r_c/object} forward, whispering something in {PRONOUN/r_c/poss} ear. r_c stretches up to give a life for [virtue].",
@@ -872,7 +872,7 @@
       "tags": ["leader_child"],
       "lead_trait": [],
       "star_trait": [],
-      "rank": ["apprentice", "medicine cat apprentice", "mediator apprentice"],
+      "rank": ["apprentice", "medicine cat apprentice", "mediator apprentice", "caretaker apprentice"],
       "life_giving": [
         {
           "text": "r_c bounds out of the crowd, <i>mrrp</i>-ing as {PRONOUN/r_c/subject} {VERB/r_c/press/presses} {PRONOUN/r_c/self} into m_c's fur. m_c chokes back a startled laugh before returning the affection as r_c offers a life for [virtue].",

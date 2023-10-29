@@ -89,6 +89,7 @@ class AllegiancesScreen(Screens):
         living_cats = [i for i in Cat.all_cats.values() if not (i.dead or i.outside)]
         living_meds = []
         living_mediators = []
+        living_caretakers = []
         living_warriors = []
         living_apprentices = []
         living_kits = []
@@ -100,7 +101,9 @@ class AllegiancesScreen(Screens):
                 living_warriors.append(cat)
             elif cat.status == "mediator":
                 living_mediators.append(cat)
-            elif cat.status in ["apprentice", "medicine cat apprentice", "mediator apprentice"]:
+            elif cat.status == 'caretaker':
+                living_caretakers.append(cat)
+            elif cat.status in ["apprentice", "medicine cat apprentice", "mediator apprentice", "caretaker apprentice"]:
                 living_apprentices.append(cat)
             elif cat.status in ["kitten", "newborn"]:
                 living_kits.append(cat)
@@ -177,6 +180,17 @@ class AllegiancesScreen(Screens):
                 _box[0] = '<b><u>MEDIATORS</u></b>'
             
             _box[1] = "\n".join([self.generate_one_entry(i) for i in living_mediators])
+            outputs.append(_box)
+        
+        # Caretaker Box:
+        if living_caretakers:
+            _box = ["", ""]
+            if len(living_caretakers) == 1:
+                _box[0] = '<b><u>CARETAKER</u></b>'
+            else:
+                _box[0] = '<b><u>CARETAKERS</u></b>'
+            
+            _box[1] = "\n".join([self.generate_one_entry(i) for i in living_caretakers])
             outputs.append(_box)
 
          # Warrior Box:

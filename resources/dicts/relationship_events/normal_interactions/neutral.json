@@ -24,8 +24,10 @@
 			"apprentice",
 			"mediator apprentice",
 			"medicine cat apprentice",
+			"caretaker apprentice",
 			"warrior",
-			"mediator"
+			"mediator",
+			"caretaker"
 		]
 	},
 	{

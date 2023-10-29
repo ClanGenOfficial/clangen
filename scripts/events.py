@@ -69,7 +69,7 @@ class Events:
                 str(cat.status) in {
                     'leader', 'deputy', 'warrior', 'medicine cat',
                     'medicine cat apprentice', 'apprentice', 'mediator',
-                    'mediator apprentice'
+                    'mediator apprentice', "caretaker", "caretaker apprentice"
                 } and not cat.dead and not cat.outside
                 for cat in Cat.all_cats.values()):
             game.switches['no_able_left'] = False
@@ -638,16 +638,18 @@ class Events:
         # Proform a ceremony if needed
         for x in [lost_cat] + [Cat.fetch_cat(i) for i in additional_cats]:             
            
-            if x.status in ["apprentice", "medicine cat apprentice", "mediator apprentice", "kitten", "newborn"]: 
+            if x.status in ["apprentice", "medicine cat apprentice", "mediator apprentice", "kitten", "newborn", "caretaker apprentice"]: 
                 if x.moons >= 15:
                     if x.status == "medicine cat apprentice":
                         self.ceremony(x, "medicine cat")
                     elif x.status == "mediator apprentice":
                         self.ceremony(x, "mediator")
+                    elif x.status == "caretaker apprentice":
+                        self.ceremony(x, "caretaker")
                     else:
                         self.ceremony(x, "warrior")
                 elif x.status in ["kitten", "newborn"] and x.moons >= 6:
-                    self.ceremony(x, "apprentice") 
+                    self.ceremony(x, "apprentice")
             else:
                 if x.moons == 0:
                     x.status = 'newborn'
@@ -1116,14 +1118,45 @@ class Events:
                             self.ceremony_accessory = True
                             self.gain_accessories(cat)
                         else:
-                            self.ceremony(cat, 'apprentice')
-                            self.ceremony_accessory = True
-                            self.gain_accessories(cat)
+                            # Chance for caretaker apprentice
+                            caretaker_list = list(
+                                filter(
+                                    lambda x: x.status == "caretaker" and not x.dead
+                                            and not x.outside, Cat.all_cats_list))
+
+                            # This checks if at least one caretaker already has an apprentice.
+                            has_caretaker_apprentice = False
+                            for c in caretaker_list:
+                                if c.apprentice:
+                                    has_caretaker_apprentice = True
+                                    break
+
+                            chance = game.config["roles"]["caretaker_app_chance"]
+                            if cat.personality.trait in [
+                                "playful", "compassionate", "loving", "strict", "calm", "careful"
+                            ]:
+                                chance = int(chance / 1.5)
+                            if cat.is_disabled():
+                                chance = int(chance / 2)
+
+                            if chance == 0:
+                                chance = 1
+
+                            # Only become a caretaker if there is already one in the clan.
+                            if caretaker_list and not has_caretaker_apprentice and \
+                                    not int(random.random() * chance):
+                                self.ceremony(cat, 'caretaker apprentice')
+                                self.ceremony_accessory = True
+                                self.gain_accessories(cat)
+                            else:
+                                self.ceremony(cat, 'apprentice')
+                                self.ceremony_accessory = True
+                                self.gain_accessories(cat)
 
             # graduate
             if cat.status in [
                 "apprentice", "mediator apprentice",
-                "medicine cat apprentice"
+                "medicine cat apprentice", "caretaker apprentice"
             ]:
 
                 if game.clan.clan_settings["12_moon_graduation"]:
@@ -1157,6 +1190,11 @@ class Events:
 
                     elif cat.status == 'mediator apprentice':
                         self.ceremony(cat, 'mediator', preparedness)
+                        self.ceremony_accessory = True
+                        self.gain_accessories(cat)
+
+                    elif cat.status == 'caretaker apprentice':
+                        self.ceremony(cat, 'caretaker', preparedness)
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
 
@@ -1206,7 +1244,8 @@ class Events:
         mentor_type = {
             "medicine cat": ["medicine cat"],
             "warrior": ["warrior", "deputy", "leader", "elder"],
-            "mediator": ["mediator"]
+            "mediator": ["mediator"],
+            "caretaker": ["caretaker"],
         }
 
         try:
@@ -1214,7 +1253,7 @@ class Events:
             possible_ceremonies.update(self.ceremony_id_by_tag[promoted_to])
 
             # Get ones for prepared status ----------------------------------------------
-            if promoted_to in ["warrior", "medicine cat", "mediator"]:
+            if promoted_to in ["warrior", "medicine cat", "mediator", "caretaker"]:
                 possible_ceremonies = possible_ceremonies.intersection(
                     self.ceremony_id_by_tag[preparedness])
 
@@ -1357,7 +1396,7 @@ class Events:
 
         # getting the random honor if it's needed
         random_honor = None
-        if promoted_to in ['warrior', 'mediator', 'medicine cat']:
+        if promoted_to in ['warrior', 'mediator', 'medicine cat', "caretaker"]:
             resource_dir = "resources/dicts/events/ceremonies/"
             with open(f"{resource_dir}ceremony_traits.json",
                       encoding="ascii") as read_file:
@@ -1367,7 +1406,7 @@ class Events:
             except KeyError:
                 random_honor = "hard work"
 
-        if cat.status in ["warrior", "medicine cat", "mediator"]:
+        if cat.status in ["warrior", "medicine cat", "mediator", "caretaker"]:
             History.add_app_ceremony(cat, random_honor)
 
         ceremony_tags, ceremony_text = self.CEREMONY_TXT[random.choice(
@@ -1492,7 +1531,7 @@ class Events:
         TODO: DOCS
         """
         if cat.status in [
-            "apprentice", "medicine cat apprentice", "mediator apprentice"
+            "apprentice", "medicine cat apprentice", "mediator apprentice", "caretaker apprentice"
         ]:
 
             if cat.not_working() and int(random.random() * 3):

@@ -278,13 +278,13 @@ class ChooseMentorScreen(Screens):
 
             if self.next_cat == 0 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
                     check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and check_cat.status in \
-                    ["apprentice", "medicine cat apprentice", "mediator apprentice"] \
+                    ["apprentice", "medicine cat apprentice", "mediator apprentice", "caretaker apprentice"] \
                     and check_cat.df == self.the_cat.df:
                 self.previous_cat = check_cat.ID
 
             elif self.next_cat == 1 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
                     check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and check_cat.status in \
-                    ["apprentice", "medicine cat apprentice", "mediator apprentice"] \
+                    ["apprentice", "medicine cat apprentice", "mediator apprentice", "caretaker apprentice"] \
                     and check_cat.df == self.the_cat.df:
                 self.next_cat = check_cat.ID
 
@@ -453,6 +453,10 @@ class ChooseMentorScreen(Screens):
         elif self.the_cat.status == 'mediator apprentice':
             for cat in Cat.all_cats_list:
                 if not cat.dead and not cat.outside and cat.status == 'mediator':
+                    valid_mentors.append(cat)
+        elif self.the_cat.status == 'caretaker apprentice':
+            for cat in Cat.all_cats_list:
+                if not cat.dead and not cat.outside and cat.status == 'caretaker':
                     valid_mentors.append(cat)
 
         return valid_mentors

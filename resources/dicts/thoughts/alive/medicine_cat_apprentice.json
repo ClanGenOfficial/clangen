@@ -62,7 +62,8 @@
         "random_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "caretaker apprentice"
         ],
         "random_living_status": [
             "starclan"
@@ -119,7 +120,8 @@
         "random_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "caretaker apprentice"
         ]
     },
     {

@@ -74,12 +74,14 @@
 		"main_status_constraint": [
 			"apprentice",
 			"mediator apprentice",
-			"medicine cat apprentice"
+			"medicine cat apprentice",
+			"caretaker apprentice"
 		],
 		"random_status_constraint": [
 			"medicine cat apprentice",
 			"apprentice",
-			"mediator apprentice"
+			"mediator apprentice",
+			"caretaker apprentice"
 		]
 	},
 	{
@@ -113,12 +115,14 @@
 		"main_status_constraint": [
 			"apprentice",
 			"mediator apprentice",
-			"medicine cat apprentice"
+			"medicine cat apprentice",
+			"caretaker apprentice"
 		],
 		"random_status_constraint": [
 			"medicine cat apprentice",
 			"apprentice",
-			"mediator apprentice"
+			"mediator apprentice",
+			"caretaker apprentice"
 		],
 		"reaction_random_cat": {
 			"dislike": "increase"

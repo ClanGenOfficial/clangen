@@ -1173,7 +1173,7 @@ class ProfileScreen(Screens):
         #First, just list the mentors:
         if self.the_cat.status in ['kitten', 'newborn']:
                 influence_history = 'This cat has not begun training.'
-        elif self.the_cat.status in ['apprentice', 'medicine cat apprentice', 'mediator apprentice']:
+        elif self.the_cat.status in ['apprentice', 'medicine cat apprentice', 'mediator apprentice', "caretaker apprentice"]:
             influence_history = 'This cat has not finished training.'
         else:
             valid_formor_mentors = [Cat.fetch_cat(i) for i in self.the_cat.former_mentor if 
@@ -1759,7 +1759,7 @@ class ProfileScreen(Screens):
                 self.manage_roles.disable()
             else:
                 self.manage_roles.enable()
-            if self.the_cat.status not in ['apprentice', 'medicine cat apprentice', 'mediator apprentice'] \
+            if self.the_cat.status not in ['apprentice', 'medicine cat apprentice', 'mediator apprentice', "caretaker apprentice"] \
                                             or self.the_cat.dead or self.the_cat.outside:
                 self.change_mentor_button.disable()
             else:
