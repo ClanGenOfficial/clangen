@@ -1085,7 +1085,7 @@
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["SENSE,2", "CLEVER,2"],
-                "herbs": ["many_herbs"],
+                "herbs": ["many_herbs", "random_herbs"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1160,7 +1160,7 @@
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["SENSE,2", "CLEVER,2"],
-                "herbs": ["many_herbs"],
+                "herbs": ["many_herbs", "random_herbs"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1220,7 +1220,7 @@
                 "text": "app1 is the first to find some herbs, and smugly waves them in the faces of app2 and app3 - after that it's a bit of a competition, with each cat trying to out-compete the others. It's great for the Clan - in the end, they come back to camp with a sizeable haul!",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["many_herbs"],
+                "herbs": ["many_herbs", "random_herbs"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1280,7 +1280,7 @@
                 "text": "app1 is the first to find some herbs, and smugly waves them in the faces of the other three - after that it's a bit of a competition, with each cat trying to out-compete the others. It's great for the Clan - in the end, they come back to camp with a sizeable haul!",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["many_herbs"],
+                "herbs": ["many_herbs", "random_herbs"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1340,7 +1340,7 @@
                 "text": "app1 is the first to find some herbs, and smugly waves them in the faces of the other four - after that it's a bit of a competition, with each cat trying to out-compete the others. It's great for the Clan - in the end, they come back to camp with a sizeable haul!",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["many_herbs"],
+                "herbs": ["many_herbs", "random_herbs"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1399,7 +1399,7 @@
                 "text": "app1 is the first to find some herbs, and smugly waves them in the faces of the other five - after that it's a bit of a competition, with each cat trying to out-compete the others. It's great for the Clan - in the end, they come back to camp with a sizeable haul!",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["many_herbs"],
+                "herbs": ["many_herbs", "random_herbs"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -2664,7 +2664,7 @@
                 "text": "The game is afoot! p_l and app2 return to camp, happily spent, with plenty of herbs.",
                 "exp": 10,
                 "weight": 5,
-                "herbs": ["many_herbs"],
+                "herbs": ["many_herbs", "random_herbs"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -2782,7 +2782,7 @@
                 "text": "Driven by the competition, p_l and app2 work extra hard and return to camp with a <i>lot</i> of herbs, to the surprise of their mentors.",
                 "exp": 10,
                 "weight": 5,
-                "herbs": ["many_herbs"]
+                "herbs": ["many_herbs", "random_herbs"]
             }
         ],
         "fail_outcomes": [
@@ -3027,7 +3027,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The two trot towards the field, tails raised nonchalantly. Suddenly, p_l hears a shriek and manages to duck out of the way as a crow swoops close. Angry caws ring across the field.  r_c calls for retreat as more crows converge on them. The two cats run away from the field, fur fluffed in both terror and embarrassment.",
+                "text": "The two trot towards the field, tails raised nonchalantly. Suddenly, p_l hears a shriek and manages to duck out of the way as a crow swoops close. Angry caws ring across the field. r_c calls for retreat as more crows converge on them. The two cats run away from the field, fur fluffed in both terror and embarrassment.",
                 "exp": 0,
                 "weight": 20
             }
@@ -3068,7 +3068,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The two trot towards the field, tails raised nonchalantly. Suddenly, p_l hears a shriek and manages to duck out of the way as a crow swoops close. Angry caws ring across the field.  r_c calls for retreat as more crows converge on them. The two cats run away from the field, fur fluffed in both terror and embarrassment.",
+                "text": "The two trot towards the field, tails raised nonchalantly. Suddenly, p_l hears a shriek and manages to duck out of the way as a crow swoops close. Angry caws ring across the field. r_c calls for retreat as more crows converge on them. The two cats run away from the field, fur fluffed in both terror and embarrassment.",
                 "exp": 0,
                 "weight": 20
             }
@@ -3090,10 +3090,10 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Despite being alone, r_c decides to follow the figure. Perhaps it's a StarClan cat. As {PRONOUN/r_c/subject} {VERB/r_c/get/gets} closer, {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} that no, this cat doesn't have stars in its fur. But it doesn't seem malicious either. The ghostly cat beckons r_c closer and to {PRONOUN/r_c/poss} surprise, the ghost has led {PRONOUN/r_c/object} to a giant patch of herbs! r_c thanks the spirit and it seems to smile as r_c begins to collect the herbs.",
+                "text": "Despite being alone, r_c decides to follow the figure. Perhaps it's a StarClan cat. As {PRONOUN/r_c/subject} {VERB/r_c/get/gets} closer, {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} that no, this cat doesn't have stars in its fur. But it doesn't seem malicious either. The ghostly cat beckons r_c closer and, to {PRONOUN/r_c/poss} surprise, the ghost has led {PRONOUN/r_c/object} to a giant patch of herbs! r_c thanks the spirit and it seems to smile as r_c begins to collect the herbs.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": ["many_herbs"]
+                "herbs": ["many_herbs", "random_herbs"]
             },
             {
                 "text": "Despite being alone, r_c decides to follow the figure. Perhaps it's a StarClan cat. As {PRONOUN/r_c/subject} {VERB/r_c/get/gets} closer, {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} that no, this cat doesn't have stars in {PRONOUN/r_c/poss} fur. But it doesn't seem malicious either. The ghost waves its tail as if to say 'hello'. r_c nods back at it, and continues {PRONOUN/r_c/poss} herb gathering with the friendly ghost flitting about.",
@@ -3130,19 +3130,19 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "As r_c follows a trail into a darkly shadowed part of the territory on the hunt for herbs, night shadows begin to play with {PRONOUN/r_c/poss} vision, was that movement up ahead? r_c spots an undisguisable silhouette of a cat ahead. Malicious eyes and bristled fur meets {PRONOUN/r_c/object} as {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} amongst the shadows, the strangers fur is translucent and it moves as though made from a strange dark mist.",
+        "intro_text": "As r_c follows a trail into a darkly shadowed part of the territory on the hunt for herbs, night shadows begin to play with {PRONOUN/r_c/poss} vision. Was that movement up ahead? r_c spots the undisguisable silhouette of a cat ahead. Malicious eyes and bristled fur meet {PRONOUN/r_c/object} as {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} amongst the shadows. The stranger's fur is translucent, and it moves as though made from a strange dark mist.",
         "decline_text": "r_c's tail bristles with fear, a cold shiver creeping along {PRONOUN/r_c/poss} back. This is definitely not a Starclan cat, and {PRONOUN/r_c/subject} quickly {VERB/r_c/turn/turns} the back to camp - herbs can wait until morning.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "r_c approaches the strange cat, they might be a wandering spirit in need of help. The dark silhouette seems to flicker in and out of view as {PRONOUN/r_c/subject} {VERB/r_c/move/moves} toward it, gradually reappearing further and further away. r_c stops, watching the stranger in the distance with confusion, white glowing haunted eyes watch them from the shadows. r_c shivers, and decides to hunt for herbs someplace else.",
+                "text": "r_c approaches the strange cat, thinking that they might be a wandering spirit in need of help. The dark silhouette seems to flicker in and out of view as {PRONOUN/r_c/subject} {VERB/r_c/move/moves} toward it, gradually reappearing further and further away. r_c stops, watching the stranger in the distance with confusion. Glowing, haunted eyes watch {PRONOUN/r_c/object} back from the shadows. r_c shivers, and decides to hunt for herbs someplace else.",
                 "exp": 10,
                 "weight": 20
             }
         ],
         "fail_outcomes": [
             {
-                "text": "r_c approaches the strange cat, they might be a wandering spirit in need of help. But as r_c gets closer, the strange cat shrieks an awful blood curdling scream that makes {PRONOUN/r_c/poss} fur stand on end, overcome by terror {PRONOUN/r_c/subject} {VERB/r_c/flee/flees} back to camp, dropping the little herbs {PRONOUN/r_c/subject} had gathered.",
+                "text": "r_c approaches the strange cat, thinking that they might be a wandering spirit in need of help. But as r_c gets closer, the strange cat shrieks, an awful, blood curdling scream that makes {PRONOUN/r_c/poss} fur stand on end. Overcome by terror, {PRONOUN/r_c/subject} {VERB/r_c/flee/flees} back to camp, dropping what little herbs {PRONOUN/r_c/subject} had gathered.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -3183,19 +3183,24 @@
                 "text": "Calling on StarClan's guidance, p_l instructs the patrol to bow to the black cat. It bows back in return and shows them an abundant patch of rare herbs.",
                 "exp": 30,
                 "weight": 10,
-                "herbs": ["catmint"]
+                "herbs": ["many_herbs", "catmint"]
             },
             {
                 "text": "Sensing the black cat's strong aura, s_c urges it to speak, and listens carefully as it imparts a bone-chilling omen, omen_list.",
                 "exp": 30,
                 "weight": 20,
-                "herbs": ["many_herbs"],
-                "stat_skill": ["INSIGHTFUL,2", "SENSE,2", "OMEN,2", "STAR,2", "LORE,2"]
+                "stat_skill": [
+                    "INSIGHTFUL,2", 
+                    "SENSE,2", 
+                    "OMEN,2", 
+                    "STAR,2", 
+                    "LORE,2"
+                ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "Gathering courage, r_c decides to return the black cat's stare... Big mistake. The black cat hisses and mutters, strange and undecipherable, leaving r_c and the rest of the patrol frozen in dread.",
+                "text": "Gathering {PRONOUN/r_c/poss} courage, r_c decides to return the black cat's stare... Big mistake. The black cat hisses and mutters, strange and undecipherable, leaving r_c and the rest of the patrol frozen in dread.",
                 "exp": 0,
                 "weight": 20,
                 "injury": [

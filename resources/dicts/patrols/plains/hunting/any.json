@@ -2766,14 +2766,14 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The patrol switches to tracking down that annoying voice instead. It takes the rest of the entire afternoon, and the damn voice tricks p_l into pouncing on r_c, but finally they pin down the talking mongoose and make it <i>quite</i> clear how irritating he's been.",
+                "text": "The patrol switches to tracking down that annoying voice instead. It takes the rest of the afternoon, and the damn voice tricks p_l into pouncing on r_c, but finally they pin down the talking mongoose and make it <i>quite</i> clear how irritating he's been.",
                 "exp": 0,
                 "weight": 20
             }
         ],
         "fail_outcomes": [
             {
-                "text": "The voice is coming from behind that bush! No, that one! No, that one over there, p_l's got them, except who p_l actually has is an irritated r_c's tail, and absolutely no one manages any hunting today. Fox dung!",
+                "text": "The voice is coming from behind that bush! No, that one! No, that one over there, p_l's got them, except what p_l actually has is an irritated r_c's tail, and absolutely no one manages any hunting today. Fox dung!",
                 "exp": 0,
                 "weight": 20
             }

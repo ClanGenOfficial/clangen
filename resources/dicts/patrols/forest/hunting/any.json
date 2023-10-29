@@ -3131,7 +3131,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c doesn't want to talk about it when they come back to camp. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} want to talk about anything.",
+                "text": "r_c doesn't want to talk about it when {PRONOUN/r_c/subject} {VERB/r_c/come/comes} back to camp. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} want to talk about anything..",
                 "exp": 0,
                 "weight": 20,
                 "injury": [
@@ -3141,7 +3141,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c died of shock after {PRONOUN/r_c/poss} encounter with the Dover Demon.",
+                    "reg_death": "m_c died of shock after {PRONOUN/m_c/poss} encounter with the Dover Demon.",
                     "lead_death": "died of shock from an encounter with the Dover Demon"
                 }
             }
