@@ -666,7 +666,7 @@
                 "weight": 20,
                 "stat_skill": ["HUNTER,2"],
                 "can_have_stat": ["r_c"],
-                "prey": ["large"],
+                "prey": ["huge"],
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -688,6 +688,7 @@
                     "troublesome",
                     "bloodthirsty"
                 ],
+                "prey": ["huge"],
                 "relationships": [
                     {
                         "cats_to": ["r_c"],

@@ -78,7 +78,7 @@ class Freshkill_Events():
             History.add_death(cat, history_text)
             
             # if the cat is the leader, the illness "starving" needs to be added again
-            if cat.status == "leader":
+            if cat.status == "leader" and game.clan.leader_lives > 0:
                 cat.get_ill("starving")
 
             types = ["birth_death"]

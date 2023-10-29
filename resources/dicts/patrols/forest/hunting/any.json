@@ -1790,7 +1790,8 @@
                     "responsible",
                     "thoughtful",
                     "wise"
-                ]
+                ],
+                "prey": ["small"]
             },
             {
                 "text": "Carelessly, r_c is seen by Twolegs, and taken from c_n.",
@@ -2012,7 +2013,8 @@
                         "values": ["romantic", "platonic"],
                         "amount": -5
                     }
-                ]
+                ],
+                "prey": ["small"]
             },
             {
                 "text": "Carelessly, r_c is seen by Twolegs, and taken from c_n.",

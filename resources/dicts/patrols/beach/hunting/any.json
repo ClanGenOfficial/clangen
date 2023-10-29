@@ -1105,7 +1105,8 @@
                     "daring",
                     "shameless",
                     "rebellious"
-                ]
+                ],
+                "prey": ["small"]
             },
             {
                 "text": "Carelessly, r_c is seen by Twolegs, and taken from c_n.",
