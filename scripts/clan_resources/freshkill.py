@@ -272,7 +272,7 @@ class Freshkill_Pile():
                 if ration_prey and status_ == "warrior":
                     feeding_amount = feeding_amount/2
             # if there is enough prey, and nutrients are low, fill the nutrients up
-            lot_more_prey = self.amount_food_needed() < self.total_amount * 1.2
+            lot_more_prey = self.amount_food_needed() < self.total_amount
             if lot_more_prey and self.nutrition_info[cat.ID].percentage < 100:
                 feeding_amount += 1
             self.feed_cat(cat, feeding_amount, needed_amount)

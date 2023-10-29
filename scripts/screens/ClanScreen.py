@@ -162,17 +162,19 @@ class ClanScreen(Screens):
                                                          pygame.transform.scale(
                                                              image_cache.load_image('resources/images/nursery_den.png'),
                                                              (160, 56)))
-        #self.clearing_label = pygame_gui.elements.UIImage(
-        #    scale(pygame.Rect(self.layout['clearing'], (162, 56))),
-        #    pygame.transform.scale(
-        #        image_cache.load_image('resources/images/clearing.png'),
-        #        (162, 56)))
-        self.clearing_label = UIImageButton(scale(pygame.Rect(
-            self.layout['clearing'], (162, 56))),
-            "",
-            object_id="#clearing_button",
-            starting_height=2
-        )
+        if game.clan.game_mode == 'classic':
+            self.clearing_label = pygame_gui.elements.UIImage(
+                scale(pygame.Rect(self.layout['clearing'], (162, 56))),
+                pygame.transform.scale(
+                    image_cache.load_image('resources/images/buttons/clearing.png'),
+                    (162, 56)))
+        else:
+            self.clearing_label = UIImageButton(scale(pygame.Rect(
+                self.layout['clearing'], (162, 56))),
+                "",
+                object_id="#clearing_button",
+                starting_height=2
+            )
         self.app_den_label = pygame_gui.elements.UIImage(
             scale(pygame.Rect(self.layout['apprentice den'], (294, 56))),
             pygame.transform.scale(
