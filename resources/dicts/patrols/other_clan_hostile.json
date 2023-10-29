@@ -241,7 +241,7 @@
                     "sneaky",
                     "responsible"
                 ],
-                "prey": ["medium"]
+                "prey": ["small"]
             }
         ],
         "fail_outcomes": [
@@ -249,7 +249,8 @@
                 "text": "r_c leaps for the rabbit! And promptly trips over a rock. The rabbit hops away and r_c sheepishly picks {PRONOUN/r_c/self} up before noticing the o_c_n cat watching {PRONOUN/r_c/object} from the other side of the border. The other cat knows exactly what r_c was intending to do and hisses crossly before turning away, presumably to report the incident to their own leader.",
                 "exp": 0,
                 "weight": 20,
-                "other_clan_rep": -1
+                "other_clan_rep": -1,
+				"prey": ["medium"]
             },
             {
                 "text": "s_c pounces with no hesitation! {PRONOUN/s_c/subject/CAP} easily {VERB/s_c/kill/kills} the rabbit before glancing up and coming face to face with a o_c_n cat. s_c is promptly chased back over the border and the other cat glares, hissing and spitting, until your patrol leaves the area.",
