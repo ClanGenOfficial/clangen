@@ -530,6 +530,10 @@ class Patrol():
         filtered_patrols = []
         romantic_patrols = []
         special_date = get_special_date()
+        # This make sure general only gets hunting, border, or training patrols
+		# chose fix type will make it not depending on the content amount
+        if patrol_type == "general":
+            patrol_type = random.choice(["hunting", "border", "training"])
 
         # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
         for patrol in possible_patrols:
@@ -566,20 +570,14 @@ class Patrol():
             if current_season not in patrol.season and "Any" not in patrol.season:
                 continue
 
-            #  correct button check
-            if patrol_type == "general":
-                if not set(patrol.types).intersection({"hunting", "border", "training"}):
-                    # This make sure general only gets hunting, border, or training patrols.
-                    continue
-            else:
-                if 'hunting' not in patrol.types and patrol_type == 'hunting':
-                    continue
-                elif 'border' not in patrol.types and patrol_type == 'border':
-                    continue
-                elif 'training' not in patrol.types and patrol_type == 'training':
-                    continue
-                elif 'herb_gathering' not in patrol.types and patrol_type == 'med':
-                    continue
+            if 'hunting' not in patrol.types and patrol_type == 'hunting':
+                continue
+            elif 'border' not in patrol.types and patrol_type == 'border':
+                continue
+            elif 'training' not in patrol.types and patrol_type == 'training':
+                continue
+            elif 'herb_gathering' not in patrol.types and patrol_type == 'med':
+                continue
 
             # cruel season tag check
             if "cruel_season" in patrol.tags:

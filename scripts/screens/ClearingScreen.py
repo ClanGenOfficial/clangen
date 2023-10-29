@@ -443,7 +443,7 @@ class ClearingScreen(Screens):
         if self.pile_base:
             self.pile_base.kill()
         current_prey_amount = game.clan.freshkill_pile.total_amount
-        needed_amount = game.clan.freshkill_pile.amount_food_needed()
+        needed_amount = round(game.clan.freshkill_pile.amount_food_needed(), 2)
         hover_display = f"<b>Current amount:</b> {current_prey_amount}<br><b>Needed amount:</b> {needed_amount}"
         self.pile_base = UIImageButton(scale(pygame.Rect
                                             ((500, 50), (600, 600))),
