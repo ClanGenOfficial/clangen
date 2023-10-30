@@ -278,7 +278,7 @@ class Freshkill_Events():
         for event in possible_events:
             if any(x in event.tags for x in needed_tags):
                 if event.other_cat_trait and other_cat and \
-                   other_cat.personality.personality.trait in event.other_cat_trait:
+                   other_cat.personality.trait in event.other_cat_trait:
                     final_events.append(event)
                     continue
 

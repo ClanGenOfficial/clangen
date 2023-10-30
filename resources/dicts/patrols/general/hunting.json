@@ -115,7 +115,8 @@
             {
                 "text": "Your patrol misses the rat, and their confidence is shaken.",
                 "exp": 0,
-                "weight": 20
+                "weight": 20,
+				"prey": ["very_small"]
             }
         ]
     },
@@ -343,7 +344,8 @@
             {
                 "text": "r_c leaps for the rabbit but it still manages to slip away, despite its obvious illness.",
                 "exp": 0,
-                "weight": 20
+                "weight": 20,
+				"prey": ["small"]
             },
             {
                 "text": "r_c catches the rabbit, but later {PRONOUN/r_c/subject} and the cats who eat it become violently ill.",
