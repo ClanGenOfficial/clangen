@@ -135,11 +135,6 @@
             "First the cats with the lowest nutrition will be fed, afterwards the Clan will be fed according to their status.",
             false
         ],
-        "more experience first":[
-            "more experience first",
-            "The Clan will be fed according their experience, highest one first.",
-            false
-        ],
         "hunter first":[
             "hunter first",
             "Firstly the hunter will be fed, afterwards the Clan will be fed according to their status.",
@@ -148,6 +143,11 @@
         "sick/injured first":[
             "sick/injured first",
             "Firstly the sick and injured cats will be fed, afterwards the Clan will be fed according to their status.",
+            false
+        ],
+        "more experience first":[
+            "more experience first",
+            "The Clan will be fed according their experience, highest one first.",
             false
         ],
         "ration prey":[
