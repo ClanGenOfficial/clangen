@@ -774,9 +774,9 @@ class PatrolOutcome():
         prey_types = {
             "very_small": basic_amount / 2,
             "small": basic_amount,
-            "medium": basic_amount * 1.5,
-            "large": basic_amount * 2,
-            "huge": basic_amount * 3
+            "medium": basic_amount * 1.8,
+            "large": basic_amount * 2.4,
+            "huge": basic_amount * 3.2
         }
         
         for tag in self.prey:
@@ -791,10 +791,22 @@ class PatrolOutcome():
         for cat in patrol.patrol_cats:
             total_amount += basic_amount
             if cat.skills.primary.path == SkillPath.HUNTER and cat.skills.primary.tier > 0: 
-                total_amount += int(HUNTER_EXP_BONUS[cat.experience_level] * (HUNTER_BONUS[str(cat.skills.primary.tier)] / 10 + 1))
+                level = cat.experience_level
+                tier = str(cat.skills.primary.tier)
+                hunter_boni = int(HUNTER_EXP_BONUS[level] * (HUNTER_BONUS[tier] / 10 + 1))
+                print("-------- ", hunter_boni)
+                total_amount += int(HUNTER_EXP_BONUS[level] * (HUNTER_BONUS[tier] / 10 + 1))
             elif cat.skills.secondary and cat.skills.secondary.path == SkillPath.HUNTER and cat.skills.secondary.tier > 0:
-                total_amount += int(HUNTER_EXP_BONUS[cat.experience_level] * (HUNTER_BONUS[str(cat.skills.primary.tier)] / 10 + 1))
+                level = cat.experience_level
+                tier = cat.skills.secondary.tier
+                hunter_boni = int(HUNTER_EXP_BONUS[level] * (HUNTER_BONUS[tier] / 10 + 1))
+                print("-------- ", hunter_boni)
+                total_amount += int(HUNTER_EXP_BONUS[level] * (HUNTER_BONUS[tier] / 10 + 1))
         
+        # additional hunter buff for expanded mode
+        if game.clan.game_mode == "expanded":
+            total_amount = total_amount * (HUNTER_BONUS[tier] / 20 + 1)
+
         results = ""
         if total_amount > 0:
             amount_text = "medium"
