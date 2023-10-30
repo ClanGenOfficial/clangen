@@ -127,7 +127,7 @@ class FreshkillPile(unittest.TestCase):
 
         # when
         freshkill_pile.tactic_younger_first(
-            [oldest_warrior, middle_warrior, youngest_warrior], "warrior")
+            [oldest_warrior, middle_warrior, youngest_warrior])
 
         # then
         self.assertEqual(
@@ -174,7 +174,7 @@ class FreshkillPile(unittest.TestCase):
         # when
         living_cats = [highest_warrior, middle_warrior, lowest_warrior]
         freshkill_pile.living_cats = living_cats
-        freshkill_pile.tactic_less_nutrition_first(living_cats, "warrior")
+        freshkill_pile.tactic_less_nutrition_first(living_cats)
 
         # then
         self.assertEqual(freshkill_pile.total_amount,0)
@@ -212,7 +212,7 @@ class FreshkillPile(unittest.TestCase):
         self.assertEqual(freshkill_pile.nutrition_info[healthy_cat.ID].percentage, 100)
 
         # when
-        freshkill_pile.tactic_sick_injured_first([healthy_cat, sick_cat, injured_cat], "warrior")
+        freshkill_pile.tactic_sick_injured_first([healthy_cat, sick_cat, injured_cat])
 
         # then
         self.assertEqual(freshkill_pile.nutrition_info[injured_cat.ID].percentage, 100)
@@ -248,7 +248,7 @@ class FreshkillPile(unittest.TestCase):
 
         # when
         freshkill_pile.tactic_more_experience_first(
-            [lowest_warrior, middle_warrior, highest_warrior], "warrior")
+            [lowest_warrior, middle_warrior, highest_warrior])
 
         # then
         #self.assertEqual(freshkill_pile.total_amount,0)
@@ -288,7 +288,7 @@ class FreshkillPile(unittest.TestCase):
 
         # when
         living_cats = [hunter_warrior, no_hunter_warrior, best_hunter_warrior]
-        freshkill_pile.tactic_hunter_first(living_cats,"warrior")
+        freshkill_pile.tactic_hunter_first(living_cats)
 
         # then
         # this hunter should be fed completely
@@ -335,7 +335,7 @@ class FreshkillPile(unittest.TestCase):
         # when
         living_cats = [no_parent, father, kid, mother]
         self.assertEqual([mother.ID], list(get_alive_clan_queens(living_cats)[0].keys()))
-        freshkill_pile.feed_cats(living_cats)
+        freshkill_pile.tactic_status(living_cats)
 
         # then
         self.assertEqual(freshkill_pile.nutrition_info[kid.ID].percentage, 100)

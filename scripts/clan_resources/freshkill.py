@@ -139,55 +139,26 @@ class Freshkill_Pile():
                 list of living cats which should be feed
         """
         self.update_nutrition(living_cats)
+        # NOTE: this is for testing purposes
+        if not game.clan:
+            self.tactic_status(living_cats)
+            return
 
-        relevant_group = []
-        queen_dict, kits = get_alive_clan_queens(living_cats)
-        relevant_queens = []
-        # kits under 3 months are feed by the queen
-        for queen_id, their_kits in queen_dict.items():
-            queen = Cat.fetch_cat(queen_id)
-            young_kits = [kit for kit in their_kits if kit.moons < 3]
-            if len(young_kits) > 0:
-                relevant_queens.append(queen)
-        
-        pregnant_cats = [cat for cat in living_cats if "pregnant" in cat.injuries and cat.ID not in queen_dict.keys()]
-
-        for feeding_status in FEEDING_ORDER:
-            if feeding_status == "newborn":
-                relevant_group = [
-                    cat for cat in living_cats if cat.status == "newborn" and  cat.moons > 2 and\
-                    not any(parent_id in queen_dict.keys() for parent_id in cat.get_parents())
-                ]
-            elif feeding_status == "kitten":
-                # kits under 3 months are feed by the queen
-                all_kits = [
-                    cat for cat in living_cats if cat.status == "kitten" and cat.moons > 2 and\
-                    not any(parent_id in queen_dict.keys() for parent_id in cat.get_parents())
-                ]
-                relevant_group = all_kits
-            elif feeding_status == "queen/pregnant":
-                relevant_group = relevant_queens + pregnant_cats
-            else:
-                relevant_group = [cat for cat in living_cats if str(cat.status) == feeding_status]
-                # remove all cats, which are also queens / pregnant
-                relevant_group = [cat for cat in relevant_group if cat not in relevant_queens and cat not in pregnant_cats]
-
-            if len(relevant_group) == 0:
-                continue
-
-            sick_cats = []
-            for cat in relevant_group:
-                injured_not_pregnant = (cat.is_injured() and "pregnant" not in cat.injuries) or len(cat.injuries) > 1
-                if cat.is_ill() or injured_not_pregnant:
-                    sick_cats.append(cat)
-            
-            # check if there is enough food for this group
-            needed_prey = len(relevant_group) * PREY_REQUIREMENT[feeding_status] + len(sick_cats) * CONDITION_INCREASE
-            enough_prey = needed_prey <= self.total_amount
-            if not enough_prey:
-                self.handle_not_enough_food(relevant_group, feeding_status)
-            else:
-                self.feed_group(relevant_group, feeding_status)
+        # NOTE: the tactics should have a own function for testing purposes
+        if game.clan.clan_settings["younger first"]:
+            self.tactic_younger_first(living_cats)
+        elif game.clan.clan_settings["less nutrition first"]:
+            self.tactic_less_nutrition_first(living_cats)
+        elif game.clan.clan_settings["more experience first"]:
+            self.tactic_more_experience_first(living_cats)
+        elif game.clan.clan_settings["hunter first"]:
+            self.tactic_hunter_first(living_cats)
+        elif game.clan.clan_settings["sick/injured first"]:
+            self.tactic_sick_injured_first(living_cats)
+        elif game.clan.clan_settings["status wise"]:
+            self.tactic_status(living_cats)
+        else:
+            self.tactic_status(living_cats)
 
     def amount_food_needed(self):
         """
@@ -213,68 +184,237 @@ class Freshkill_Pile():
         """
         return self.amount_food_needed() <= self.total_amount
 
+
     # ---------------------------------------------------------------------------- #
-    #                               helper functions                               #
+    #                                    tactics                                   #
     # ---------------------------------------------------------------------------- #
 
-    def handle_not_enough_food(self, group: list, status_ : str) -> None:
+    def tactic_status(self, living_cats: List[Cat]) -> None:
         """
-        Handle the situation where there is not enough food for this group.
+        With this tactic, the cats will be fed after status + age.
 
-            Parameters
-            ----------
-            group : list
+        Parameters
+        ----------
+            living_cats : list
                 the list of cats which should be feed
-            status_ : str
-                the status of each cat of the group
         """
-        # NOTE: this is for testing purposes
-        if not game.clan:
-            self.feed_group(group, status_)
+        relevant_group = []
+        queen_dict, kits = get_alive_clan_queens(living_cats)
+        fed_kits = []
+        relevant_queens = []
+        # kits under 3 months are feed by the queen
+        for queen_id, their_kits in queen_dict.items():
+            queen = Cat.fetch_cat(queen_id)
+            young_kits = [kit for kit in their_kits if kit.moons < 3]
+            if len(young_kits) > 0:
+                fed_kits.extend(young_kits)
+                relevant_queens.append(queen)
+        
+        pregnant_cats = [cat for cat in living_cats if "pregnant" in cat.injuries and cat.ID not in queen_dict.keys()]
+
+        for feeding_status in FEEDING_ORDER:
+            if feeding_status == "newborn":
+                relevant_group = [
+                    cat for cat in living_cats if cat.status == "newborn" and cat not in fed_kits
+                ]
+            elif feeding_status == "kitten":
+                relevant_group = [
+                    cat for cat in living_cats if cat.status == "kitten" and cat not in fed_kits
+                ]
+            elif feeding_status == "queen/pregnant":
+                relevant_group = relevant_queens + pregnant_cats
+            else:
+                relevant_group = [cat for cat in living_cats if str(cat.status) == feeding_status]
+                # remove all cats, which are also queens / pregnant
+                relevant_group = [cat for cat in relevant_group if cat not in relevant_queens and cat not in pregnant_cats]
+
+            if len(relevant_group) == 0:
+                continue
+        
+            sorted_group = sorted(relevant_group, key=lambda x: x.moons)
+            if feeding_status == "queen/pregnant":
+                self.feed_group(sorted_group, True)
+            elif feeding_status in ["newborn", "kitten"]:
+                self.feed_group(sorted_group, False, fed_kits)
+            else:
+                self.feed_group(sorted_group)
+
+    def tactic_younger_first(self, living_cats: List[Cat]) -> None:
+        """
+        With this tactic, the youngest cats will be fed first.
+
+        Parameters
+        ----------
+            living_cats : list
+                the list of cats which should be feed
+        """
+        sorted_cats = sorted(living_cats, key=lambda x: x.moons)
+        self.feed_group(sorted_cats)
+
+    def tactic_less_nutrition_first(self, living_cats: List[Cat]) -> None:
+        """
+        With this tactic, the cats with the lowest nutrition will be feed first.
+
+        Parameters
+        ----------
+            living_cats : list
+                the list of cats which should be feed
+        """
+        if len(living_cats) == 0:
             return
+        
+        # first get special groups, which need to be looked out for, when feeding
+        queen_dict, kits = get_alive_clan_queens(living_cats)
+        fed_kits = []
+        relevant_queens = []
+        # kits under 3 months are feed by the queen
+        for queen_id, their_kits in queen_dict.items():
+            queen = Cat.fetch_cat(queen_id)
+            young_kits = [kit for kit in their_kits if kit.moons < 3]
+            if len(young_kits) > 0:
+                fed_kits.extend(young_kits)
+                relevant_queens.append(queen)
+        pregnant_cats = [cat for cat in living_cats if "pregnant" in cat.injuries and cat.ID not in queen_dict.keys()]
 
-        # NOTE: the tactics should have a own function for testing purposes
-        if game.clan.clan_settings["younger first"]:
-            self.tactic_younger_first(group, status_)
-        elif game.clan.clan_settings["less nutrition first"]:
-            self.tactic_less_nutrition_first(group, status_)
-        elif game.clan.clan_settings["more experience first"]:
-            self.tactic_more_experience_first(group, status_)
-        elif game.clan.clan_settings["hunter first"]:
-            self.tactic_hunter_first(group, status_)
-        elif game.clan.clan_settings["sick/injured first"]:
-            self.tactic_sick_injured_first(group, status_)
-        else:
-            self.feed_group(group, status_)
-
-    def feed_group(self, group: list, status_: str) -> None:
-        """
-        Handle the feeding of a specific group of cats, the order is already set.
-
-            Parameters
-            ----------
-            group : list
-                the list of cats which should be feed
-            status_ : str
-                the status of each cat of the group
-        """
-        # ration_prey < healthy warrior will only eat half of the food they need
+        # first split nutrition information into low nutrition and satisfied
         ration_prey = game.clan.clan_settings["ration prey"] if game.clan else False
 
-        for cat in group:
-            feeding_amount = PREY_REQUIREMENT[status_]
+        low_nutrition = {}
+        satisfied = {}
+        for cat in living_cats:
+            if self.nutrition_info[cat.ID].percentage < 100:
+                low_nutrition[cat.ID] = self.nutrition_info[cat.ID]
+            else:
+                satisfied[cat.ID] = self.nutrition_info[cat.ID]
+
+        # if there are no low nutrition cats, go back to status tactic
+        if len(low_nutrition) == 0:
+            self.tactic_status(living_cats)
+
+        # sort the nutrition after amount
+        sorted_nutrition = dict(sorted(low_nutrition.items(), key=lambda x: x[1].percentage))
+        
+        # use living_cats to fetch cat for testing
+        fetch_cat = living_cats[0]
+
+        # first feed the cats with the lowest nutrition
+        for cat_id, v in sorted_nutrition.items():
+            cat = Cat.all_cats[cat_id]
+            status = str(cat.status)
+            # check if this is a kit, if so check if they are fed by the mother
+            if status in ["newborn", "kitten"] and cat in fed_kits:
+                continue
+
+            # check for queens / pregnant
+            if cat.ID in queen_dict.keys() or cat in pregnant_cats:
+                status = "queen/pregnant"
+            feeding_amount = PREY_REQUIREMENT[status]
             needed_amount = feeding_amount
+
+            # check for condition
             injured_not_pregnant = (cat.is_injured() and "pregnant" not in cat.injuries) or len(cat.injuries) > 1
             if cat.is_ill() or injured_not_pregnant:
                 feeding_amount += CONDITION_INCREASE
                 needed_amount = feeding_amount
             else:
-                if ration_prey and status_ == "warrior":
+                if ration_prey and status == "warrior":
                     feeding_amount = feeding_amount/2
-            # if there is enough prey, and nutrients are low, fill the nutrients up
-            lot_more_prey = self.amount_food_needed() < self.total_amount
-            if lot_more_prey and self.nutrition_info[cat.ID].percentage < 100:
-                feeding_amount += 1
+            self.feed_cat(cat, feeding_amount, needed_amount)
+
+        # feed the rest according to their status
+        remaining_cats = [fetch_cat.fetch_cat(info[0]) for info in satisfied.items()]
+        self.tactic_status(remaining_cats)
+
+    def tactic_more_experience_first(self, living_cats: List[Cat]) -> None:
+        """
+        With this tactic, the cats with the most experience will be fed first.
+
+        Parameters
+        ----------
+            living_cats : list
+                the list of cats which should be feed
+        """
+        sorted_cats = sorted(living_cats, key=lambda x: x.experience, reverse=True)
+        self.feed_group(sorted_cats)
+
+    def tactic_hunter_first(self, living_cats: List[Cat]) -> None:
+        """
+        With this tactic, the cats with the skill hunter (depending on rank) will be fed first.
+
+        Parameters
+        ----------
+            living_cats : list
+                the list of cats which should be feed
+        """
+        best_hunter = []
+        for search_rank in range(1,4):
+            for cat in living_cats.copy():
+                if not cat.skills:
+                    continue
+                if cat.skills.primary and cat.skills.primary.path == SkillPath.HUNTER and cat.skills.primary.tier == search_rank:
+                    best_hunter.insert(0,cat)
+                    living_cats.remove(cat)
+                elif cat.skills.secondary and cat.skills.secondary.path == SkillPath.HUNTER and cat.skills.secondary.tier == search_rank:
+                    best_hunter.insert(0,cat)
+                    living_cats.remove(cat)
+
+        sorted_group = best_hunter + living_cats
+        self.feed_group(sorted_group)
+
+    def tactic_sick_injured_first(self, living_cats: List[Cat]) -> None:
+        """
+        With this tactic, the sick or injured cats will be fed first.
+
+        Parameters
+        ----------
+            living_cats : list
+                the list of cats which should be feed
+        """
+        sick_cats = [cat for cat in living_cats if cat.is_ill() or cat.is_injured()]
+        healthy_cats = [cat for cat in living_cats if not cat.is_ill() and not cat.is_injured()]
+        sorted_cats = sick_cats + healthy_cats
+        self.feed_group(sorted_cats)
+
+    # ---------------------------------------------------------------------------- #
+    #                               helper functions                               #
+    # ---------------------------------------------------------------------------- #
+
+    def feed_group(self, group: list, queens = False, fed_kits = None) -> None:
+        """
+        Handle the feeding giving cats.
+
+            Parameters
+            ----------
+            group : list
+                the list of cats which should be feed
+        """
+        if len(group) == 0:
+            return
+
+        # first split nutrition information into low nutrition and satisfied
+        ration_prey = game.clan.clan_settings["ration prey"] if game.clan else False
+
+        # first feed the cats with the lowest nutrition
+        for cat in group:
+            status = str(cat.status)
+            # check if this is a kit, if so check if they are fed by the mother
+            if status in ["newborn", "kitten"] and fed_kits and cat in fed_kits:
+                continue
+
+            # check for queens / pregnant
+            if queens:
+                status = "queen/pregnant"
+            feeding_amount = PREY_REQUIREMENT[status]
+            needed_amount = feeding_amount
+
+            # check for condition
+            injured_not_pregnant = (cat.is_injured() and "pregnant" not in cat.injuries) or len(cat.injuries) > 1
+            if cat.is_ill() or injured_not_pregnant:
+                feeding_amount += CONDITION_INCREASE
+                needed_amount = feeding_amount
+            else:
+                if ration_prey and status == "warrior":
+                    feeding_amount = feeding_amount/2
             self.feed_cat(cat, feeding_amount, needed_amount)
 
     def feed_cat(self, cat: Cat, amount, actual_needed) -> None:
@@ -302,7 +442,7 @@ class Freshkill_Pile():
         elif actual_needed == 0:
             if remaining_amount == 0:
                 self.nutrition_info[cat.ID].current_score += amount
-            elif amount > remaining_amount:
+            elif amount > actual_needed:
                 self.nutrition_info[cat.ID].current_score += (amount - remaining_amount)
         elif ration and cat.status == "warrior":
             feeding_amount = PREY_REQUIREMENT[cat.status]
@@ -339,112 +479,6 @@ class Freshkill_Pile():
             self.pile[pile_group] = 0
 
         return remaining_amount
-
-    # ---------------------------------------------------------------------------- #
-    #                                    tactics                                   #
-    # ---------------------------------------------------------------------------- #
-
-    def tactic_younger_first(self, group: List[Cat], status_: str) -> None:
-        """
-        With this tactic, the youngest cats will be fed first.
-
-        Parameters
-        ----------
-            group : list
-                the list of cats which should be feed
-            status_ : str
-                the status of each cat of the group
-        """
-        sorted_group = sorted(group, key=lambda x: x.moons)
-        self.feed_group(sorted_group, status_)
-
-    def tactic_less_nutrition_first(self, group: list, status_: str) -> None:
-        """
-        With this tactic, the cats with the lowest nutrition will be feed first.
-
-        Parameters
-        ----------
-            group : list
-                the list of cats which should be feed
-            status_ : str
-                the status of each cat of the group
-        """
-        group_ids = [cat.ID for cat in group]
-        sorted_nutrition = sorted(self.nutrition_info.items(), key=lambda x: x[1].percentage)
-        ration_prey = game.clan.clan_settings["ration prey"] if game.clan else False
-
-        for k, v in sorted_nutrition:
-            if k not in group_ids:
-                continue
-            cat = Cat.all_cats[k]
-            feeding_amount = PREY_REQUIREMENT[status_]
-            needed_amount = feeding_amount
-            injured_not_pregnant = (cat.is_injured() and "pregnant" not in cat.injuries) or len(cat.injuries) > 1
-            if cat.is_ill() or injured_not_pregnant:
-                feeding_amount += CONDITION_INCREASE
-                needed_amount = feeding_amount
-            else:
-                if ration_prey and status_ == "warrior":
-                    feeding_amount = feeding_amount/2
-            self.feed_cat(cat, feeding_amount, needed_amount)
-
-    def tactic_more_experience_first(self, group: list, status_: str) -> None:
-        """
-        With this tactic, the cats with the most experience will be fed first.
-
-        Parameters
-        ----------
-            group : list
-                the list of cats which should be feed
-            status_ : str
-                the status of each cat of the group
-        """
-        sorted_group = sorted(group, key=lambda x: x.experience, reverse=True)
-        self.feed_group(sorted_group, status_)
-
-    def tactic_hunter_first(self, group: list, status_: str) -> None:
-        """
-        With this tactic, the cats with the skill hunter (depending on rank) will be fed first.
-
-        Parameters
-        ----------
-            group : list
-                the list of cats which should be feed
-            status_ : str
-                the status of each cat of the group
-        """
-        best_hunter = []
-        search_rank = 3
-        for search_rank in range(1,4):
-            for cat in group.copy():
-                if not cat.skills:
-                    continue
-                if cat.skills.primary and cat.skills.primary.path == SkillPath.HUNTER and cat.skills.primary.tier == search_rank:
-                    best_hunter.insert(0,cat)
-                    group.remove(cat)
-                elif cat.skills.secondary and cat.skills.secondary.path == SkillPath.HUNTER and cat.skills.secondary.tier == search_rank:
-                    best_hunter.insert(0,cat)
-                    group.remove(cat)
-
-        sorted_group = best_hunter + group
-        self.feed_group(sorted_group, status_)
-
-    def tactic_sick_injured_first(self, group: list, status_: str) -> None:
-        """
-        With this tactic, the sick or injured cats will be fed first.
-
-        Parameters
-        ----------
-            group : list
-                the list of cats which should be feed
-            status_ : str
-                the status of each cat of the group
-        """
-        sick_cats = [cat for cat in group if cat.is_ill() or cat.is_injured()]
-        healthy_cats = [cat for cat in group if not cat.is_ill() and not cat.is_injured()]
-        sorted_group = sick_cats + healthy_cats
-        self.feed_group(sorted_group, status_)
-
 
     # ---------------------------------------------------------------------------- #
     #                              nutrition relevant                              #

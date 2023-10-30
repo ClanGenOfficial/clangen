@@ -120,29 +120,34 @@
         ]
     },
     "freshkill_tactics":{
+        "status wise":[
+            "status wise",
+            "The Clan will be fed according their status and within the status with age.",
+            true
+        ],
         "younger first":[
             "younger first",
-            "The Clan will always be fed according their status, within a status group the Youngest will be fed first.",
-            true
+            "The Clan will be fed according to their age only.",
+            false
         ],
         "less nutrition first":[
             "less nutrition first",
-            "The Clan will always be fed according their status, within a status group the cats with the lowest nutrient will be fed first.",
+            "First the cats with the lowest nutrition will be fed, afterwards the Clan will be fed according to their status.",
             false
         ],
         "more experience first":[
             "more experience first",
-            "The Clan will always be fed according their status, within a status group the cats with the most experience will be fed first.",
+            "The Clan will be fed according their experience, highest one first.",
             false
         ],
         "hunter first":[
             "hunter first",
-            "The Clan will always be fed according their status, within a status group the best Hunter will be fed first.",
+            "Firstly the hunter will be fed, afterwards the Clan will be fed according to their status.",
             false
         ],
         "sick/injured first":[
             "sick/injured first",
-            "The Clan will always be fed according their status, within a status group sick or injured cats will be fed first.",
+            "Firstly the sick and injured cats will be fed, afterwards the Clan will be fed according to their status.",
             false
         ],
         "ration prey":[

@@ -499,15 +499,14 @@ class ClearingScreen(Screens):
         self.delete_checkboxes()
 
         self.tactic_text["container_general"] = pygame_gui.elements.UIScrollingContainer(
-            scale(pygame.Rect((300, 900), (420, 350))), manager=MANAGER
+            scale(pygame.Rect((280, 900), (460, 350))), manager=MANAGER
         )
 
         n = 0
+        x_val = 110
         for code, desc in settings_dict['freshkill_tactics'].items():
             if code == "ration prey":
                 continue
-            # Handle nested
-            x_val = 110
             if len(desc) == 4 and isinstance(desc[3], list):
                 x_val += 40
             
@@ -519,15 +518,19 @@ class ClearingScreen(Screens):
                 manager=MANAGER)
             n += 1
 
+        self.tactic_text["container_general"].set_scrollable_area_dimensions(
+            (400 / 1600 * screen_x, (n * 60 + x_val + 40) / 1600 * screen_y)
+        )
+
         self.additional_text["container_general"] = pygame_gui.elements.UIScrollingContainer(
             scale(pygame.Rect((720, 900), (655, 350))), manager=MANAGER
         )
 
         n = 0
+        x_val = 110
         for code, desc in settings_dict['freshkill_tactics'].items():
             if code == "ration prey":
                 # Handle nested
-                x_val = 110
                 if len(desc) == 4 and isinstance(desc[3], list):
                     x_val += 40
 
