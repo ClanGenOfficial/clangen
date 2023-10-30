@@ -6,12 +6,15 @@ jobs:
   # Run unittest tests.
   unittest:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.8', '3.11']
     steps:
       - uses: actions/checkout@v3
-      - name: Setup Python 3.11 x64
+      - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: ${{ matrix.python-version }}
           architecture: 'x64'
       - name: Download the test saves
         run: wget https://github.com/ImLvna/clangen-unittest-saves/archive/refs/heads/main.zip -O tests/saves.zip
