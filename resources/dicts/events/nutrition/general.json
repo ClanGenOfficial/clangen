@@ -27,7 +27,7 @@
             "Leaf-bare",
             "death"
         ],
-		"death_text": "m_c {VERB/m_c/have/has} been feeling progressively weaker over the past few days, unable to stand. Finally, {PRONOUN/m_c/poss} strength fails, and the Clan can only hope they'll find better hunting in the stars.",
+		"death_text": "m_c has been feeling progressively weaker over the past few days, the lack of prey taking its toll on {PRONOUN/m_c/poss} body. When {PRONOUN/m_c/poss} strength finally fails, the Clan can only hope they'll find better hunting in the stars.",
         "history_text": [
             "m_c died from starvation.",
             null
