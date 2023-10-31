@@ -7,7 +7,15 @@ from scripts.game_structure.game_essentials import game
 from scripts.utility import event_text_adjust
 from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
-from scripts.clan_resources.freshkill import Freshkill_Pile, MAL_PERCENTAGE , STARV_PERCENTAGE, FRESHKILL_ACTIVE, FRESHKILL_EVENT_TRIGGER_FACTOR, FRESHKILL_EVENT_ACTIVE
+from scripts.clan_resources.freshkill import (
+    Freshkill_Pile, 
+    MAL_PERCENTAGE , 
+    STARV_PERCENTAGE, 
+    FRESHKILL_ACTIVE, 
+    FRESHKILL_EVENT_TRIGGER_FACTOR, 
+    FRESHKILL_EVENT_ACTIVE, 
+    EVENT_WEIGHT_TYPE
+)
 
 class Freshkill_Events():
     """All events with a connection to freshkill pile or the nutrition of cats."""
@@ -147,7 +155,7 @@ class Freshkill_Events():
                 a list of cats which have to be feed
         """
 
-        if not living_cats:
+        if not living_cats or len(living_cats) == 0:
             # End if there are no living cats left.
             return
 
@@ -155,9 +163,17 @@ class Freshkill_Events():
         if not FRESHKILL_EVENT_ACTIVE:
             return
 
+        # change the trigger factor according to the size of the clan
+        trigger_factor = FRESHKILL_EVENT_TRIGGER_FACTOR
+        trigger_factor = trigger_factor - ((len(living_cats)) / 20)
+        if len(living_cats) > 30:
+            trigger_factor = trigger_factor - ((len(living_cats)) / 10)
+        if trigger_factor < 1.1:
+            trigger_factor = 1.1
+
         # check if amount of the freshkill pile is too big and a event will be triggered
         needed_amount = freshkill_pile.amount_food_needed()
-        trigger_value = FRESHKILL_EVENT_TRIGGER_FACTOR * needed_amount
+        trigger_value = trigger_factor * needed_amount
         print(f" -- FRESHKILL: amount {trigger_value} to trigger freshkill event. current amount {freshkill_pile.total_amount}")
         if freshkill_pile.total_amount < trigger_value:
             return
@@ -173,7 +189,7 @@ class Freshkill_Events():
 
         # check if there is much more prey than needed, to filter the events
         much_prey = False
-        if freshkill_pile.total_amount >= (trigger_value + needed_amount):
+        if freshkill_pile.total_amount >= (trigger_value + needed_amount) and len(living_cats) > 10:
             much_prey = True
 
         # get different resources, which are later needed
@@ -185,12 +201,14 @@ class Freshkill_Events():
                 other_cat = random.choice(living_cats)
 
         possible_events = GenerateEvents.possible_short_events(cat.status, cat.age, "freshkill_pile")
-        possible_tasks = ["death", "reduce", "reduce", "reduce", "reduce", "injury", "injury", "injury"]
-        needed_tags = []
+        possible_tasks = []
+        for tag_type in EVENT_WEIGHT_TYPE:
+            possible_tasks.extend(tag_type * EVENT_WEIGHT_TYPE[tag_type])
 
         # randomly choose which tags are used for the event
         choice = random.choice(possible_tasks)
         double_event = random.choice([True, False])
+        needed_tags = []
         if choice == "death":
             needed_tags.append("death")
             needed_tags.append("multi_death")
