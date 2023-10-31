@@ -840,7 +840,7 @@ class Patrol():
 
         # if the filtering results in an empty list, don't filter and return whole possible patrols
         if len(filtered_patrols) <= 0:
-            print("----WARNING: filtering to balance out the hunting, didn't work.")
+            print("---- WARNING ---- filtering to balance out the hunting, didn't work.")
             filtered_patrols = possible_patrols
         return filtered_patrols
 
