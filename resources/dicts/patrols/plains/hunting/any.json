@@ -1087,7 +1087,8 @@
                 "text": "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["CLEVER,3"]
+                "stat_skill": ["CLEVER,3"],
+                "prey": ["medium"]
             },
             {
                 "text": "A Twoleg spots s_c and crouches down, clicking softly. s_c hisses and flees.",
@@ -1102,7 +1103,8 @@
                     "strict",
                     "troublesome",
                     "vengeful"
-                ]
+                ],
+                "prey": ["small"]
             }
         ],
         "fail_outcomes": [
@@ -1750,7 +1752,8 @@
             {
                 "text": "r_c hears a monster thundering towards {PRONOUN/r_c/object}, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
                 "exp": 0,
-                "weight": 20
+                "weight": 20,
+				"prey": ["very_small"]
             },
             {
                 "text": "r_c is hit by a monster while crossing and dies instantly.",

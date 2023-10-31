@@ -788,24 +788,25 @@ class PatrolOutcome():
             return ""
         
         total_amount = 0
+        highest_hunter_tier = 0
         for cat in patrol.patrol_cats:
             total_amount += basic_amount
             if cat.skills.primary.path == SkillPath.HUNTER and cat.skills.primary.tier > 0: 
                 level = cat.experience_level
-                tier = str(cat.skills.primary.tier)
-                hunter_boni = int(HUNTER_EXP_BONUS[level] * (HUNTER_BONUS[tier] / 10 + 1))
-                print("-------- ", hunter_boni)
-                total_amount += int(HUNTER_EXP_BONUS[level] * (HUNTER_BONUS[tier] / 10 + 1))
+                tier = cat.skills.primary.tier
+                if tier > highest_hunter_tier:
+                    highest_hunter_tier = tier
+                total_amount += int(HUNTER_EXP_BONUS[level] * (HUNTER_BONUS[str(tier)] / 10 + 1))
             elif cat.skills.secondary and cat.skills.secondary.path == SkillPath.HUNTER and cat.skills.secondary.tier > 0:
                 level = cat.experience_level
                 tier = cat.skills.secondary.tier
-                hunter_boni = int(HUNTER_EXP_BONUS[level] * (HUNTER_BONUS[tier] / 10 + 1))
-                print("-------- ", hunter_boni)
-                total_amount += int(HUNTER_EXP_BONUS[level] * (HUNTER_BONUS[tier] / 10 + 1))
+                if tier > highest_hunter_tier:
+                    highest_hunter_tier = tier
+                total_amount += int(HUNTER_EXP_BONUS[level] * (HUNTER_BONUS[str(tier)] / 10 + 1))
         
         # additional hunter buff for expanded mode
-        if game.clan.game_mode == "expanded":
-            total_amount = total_amount * (HUNTER_BONUS[tier] / 20 + 1)
+        if game.clan.game_mode == "expanded" and highest_hunter_tier:
+            total_amount = int(total_amount * (HUNTER_BONUS[str(highest_hunter_tier)] / 50 + 1))
 
         results = ""
         if total_amount > 0:
