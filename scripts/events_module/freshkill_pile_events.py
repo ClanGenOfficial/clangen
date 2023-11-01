@@ -165,9 +165,9 @@ class Freshkill_Events():
 
         # change the trigger factor according to the size of the clan
         trigger_factor = FRESHKILL_EVENT_TRIGGER_FACTOR
-        trigger_factor = trigger_factor - ((len(living_cats)) / 20)
+        trigger_factor = trigger_factor - ((len(living_cats)) / 50)
         if len(living_cats) > 30:
-            trigger_factor = trigger_factor - ((len(living_cats)) / 10)
+            trigger_factor = trigger_factor - ((len(living_cats)) / 50)
         if trigger_factor < 1.1:
             trigger_factor = 1.1
 
