@@ -1,11 +1,11 @@
-[{
+[
+    {
     "patrol_id": "mtn_bord_leaf-fall_goatfight1",
     "biome": "mountainous",
-    "season": "leaf-fall",
+    "season": ["leaf-fall"],
     "types": ["border"],
     "tags": [],
-    "patrol_art": null,
-    "patrol_art_clean": null,
+    "patrol_art": "bord_general_intro",
     "min_cats": 2,
     "max_cats": 6,
     "weight": 15,
@@ -79,4 +79,5 @@
             ]
         }
     ]
-}]
+}
+]
