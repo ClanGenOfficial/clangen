@@ -7,6 +7,14 @@ from typing import List
 # Command is an abstract class
 
 
+class ClearCommand(Command):
+    name = "clear"
+    description = "Clear the console"
+    aliases = ["cls"]
+
+    def callback(self, args: List[str]):
+        pass
+
 class HelpCommand(Command):
     name = "help"
     description = "Shows help for commands"
@@ -16,7 +24,7 @@ class HelpCommand(Command):
     commandList: List[Command] = []
 
     def __init__(self, commandList: List[Command]):
-        self.commandList = commandList + [self]
+        self.commandList = commandList + [self, ClearCommand()]
 
     def callback(self, args: List[str]):
         if len(args) == 0:

@@ -1,5 +1,4 @@
 from typing import List
-from ast import literal_eval
 
 from scripts.debugCommands.command import Command
 from scripts.debugCommands.utils import add_output_line_to_log
@@ -45,14 +44,23 @@ class SetCommand(Command):
             add_output_line_to_log(f"Usage: {self.name} {self.usage}")
             return
 
+        value = args[2]
+
+        if value in ["true", "True", "1"]:
+            value = True
+        elif value in ["false", "False", "0"]:
+            value = False
+        elif value.isnumeric():
+            value = int(value)
+
         if args[0] == "game":
-            game.settings[args[1]] = literal_eval(args[2])
+            game.settings[args[1]] = value
             output = game.settings[args[1]]
         elif args[0] == "switch":
-            game.switches[args[1]] = literal_eval(args[2])
+            game.switches[args[1]] = value
             output = game.switches[args[1]]
         elif args[0] == "debug":
-            game.debug_settings[args[1]] = literal_eval(args[2])
+            game.debug_settings[args[1]] = value
             output = game.debug_settings[args[1]]
         else:
             add_output_line_to_log(f"Unknown setting type {args[0]}")

@@ -70,7 +70,9 @@ class debugConsole(pygame_gui.windows.UIConsoleWindow):
                             f"Error while executing command {command}: {e}")
                         raise e
                     break
-            if not commandFound:
+            if command in ["cls", "clear"]:
+                self._clear()
+            elif not commandFound:
                 self.add_output_line_to_log(f"Command {command} not found")
 
         elif event.type == pygame.KEYDOWN and event.key == pygame.K_TAB:
@@ -83,6 +85,8 @@ class debugConsole(pygame_gui.windows.UIConsoleWindow):
 
         return super().process_event(event)
 
+    def _clear(self):
+        self.clear_log()
 
 class debugMode:
     def __init__(self):
