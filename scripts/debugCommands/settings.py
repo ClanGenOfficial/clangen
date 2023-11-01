@@ -18,19 +18,22 @@ class ToggleCommand(Command):
             add_output_line_to_log(f"Usage: {self.name} {self.usage}")
             return
 
-        if args[0] == "game":
-            game.settings[args[1]] = not game.settings[args[1]]
-            output = game.settings[args[1]]
-        elif args[0] == "switch":
-            game.switches[args[1]] = not game.switches[args[1]]
-            output = game.switches[args[1]]
-        elif args[0] == "debug":
-            game.debug_settings[args[1]] = not game.debug_settings[args[1]]
-            output = game.debug_settings[args[1]]
-        else:
-            add_output_line_to_log(f"Unknown setting type {args[0]}")
-            return
-        add_output_line_to_log(f"Set {args[1]} to {output}")
+        try:
+            if args[0] == "game":
+                game.settings[args[1]] = not game.settings[args[1]]
+                output = game.settings[args[1]]
+            elif args[0] == "switch":
+                game.switches[args[1]] = not game.switches[args[1]]
+                output = game.switches[args[1]]
+            elif args[0] == "debug":
+                game.debug_settings[args[1]] = not game.debug_settings[args[1]]
+                output = game.debug_settings[args[1]]
+            else:
+                add_output_line_to_log(f"Unknown setting type {args[0]}")
+                return
+            add_output_line_to_log(f"Set {args[1]} to {output}")
+        except KeyError:
+            add_output_line_to_log(f"Unknown setting {args[1]}")
 
 
 class SetCommand(Command):
@@ -78,32 +81,35 @@ class GetCommand(Command):
         if len(args) == 0 or args[0] not in ["game", "switch", "debug"]:
             add_output_line_to_log(f"Usage: {self.name} {self.usage}")
             return
-
-        if args[0] == "game":
-            if len(args) == 1:
-                add_output_line_to_log("Avaliable settings:")
-                for setting, val in game.settings.items():
-                    add_output_line_to_log(
-                        f"  {setting} - {val}")
+        
+        try:
+            if args[0] == "game":
+                if len(args) == 1:
+                    add_output_line_to_log("Avaliable settings:")
+                    for setting, val in game.settings.items():
+                        add_output_line_to_log(
+                            f"  {setting} - {val}")
+                    return
+                output = game.settings[args[1]]
+            elif args[0] == "switch":
+                if len(args) == 1:
+                    add_output_line_to_log("Avaliable settings:")
+                    for setting, val in game.switches.items():
+                        add_output_line_to_log(
+                            f"  {setting} - {val}")
+                    return
+                output = game.switches[args[1]]
+            elif args[0] == "debug":
+                if len(args) == 1:
+                    add_output_line_to_log("Avaliable settings:")
+                    for setting, val in game.debug_settings.items():
+                        add_output_line_to_log(
+                            f"  {setting} - {val}")
+                    return
+                output = game.debug_settings[args[1]]
+            else:
+                add_output_line_to_log(f"Unknown setting type {args[0]}")
                 return
-            output = game.settings[args[1]]
-        elif args[0] == "switch":
-            if len(args) == 1:
-                add_output_line_to_log("Avaliable settings:")
-                for setting, val in game.switches.items():
-                    add_output_line_to_log(
-                        f"  {setting} - {val}")
-                return
-            output = game.switches[args[1]]
-        elif args[0] == "debug":
-            if len(args) == 1:
-                add_output_line_to_log("Avaliable settings:")
-                for setting, val in game.debug_settings.items():
-                    add_output_line_to_log(
-                        f"  {setting} - {val}")
-                return
-            output = game.debug_settings[args[1]]
-        else:
-            add_output_line_to_log(f"Unknown setting type {args[0]}")
-            return
-        add_output_line_to_log(f"{args[1]} is {output}")
+            add_output_line_to_log(f"{args[1]} is {output}")
+        except KeyError:
+            add_output_line_to_log(f"Unknown setting {args[1]}")
