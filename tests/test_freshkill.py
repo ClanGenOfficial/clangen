@@ -190,10 +190,14 @@ class FreshkillPile(unittest.TestCase):
         # young enough kid
         injured_cat = Cat()
         injured_cat.status = "warrior"
-        injured_cat.injuries["test_injury"] = {}
+        injured_cat.injuries["test_injury"] = {
+            "severity": "major"
+        }
         sick_cat = Cat()
         sick_cat.status = "warrior"
-        sick_cat.illnesses["test_illness"] = {}
+        sick_cat.illnesses["test_illness"] = {
+            "severity": "major"
+        }
         healthy_cat = Cat()
         healthy_cat.status = "warrior"
 
@@ -349,7 +353,9 @@ class FreshkillPile(unittest.TestCase):
         # young enough kid
         pregnant_cat = Cat()
         pregnant_cat.status = "warrior"
-        pregnant_cat.injuries["pregnant"] = {}
+        pregnant_cat.injuries["pregnant"] = {
+            "severity": "minor"
+        }
         cat2 = Cat()
         cat2.status = "warrior"
         cat3 = Cat()
@@ -382,10 +388,14 @@ class FreshkillPile(unittest.TestCase):
         # young enough kid
         injured_cat = Cat()
         injured_cat.status = "warrior"
-        injured_cat.injuries["test_injury"] = {}
+        injured_cat.injuries["claw-wound"] = {
+            "severity": "major"
+        }
         sick_cat = Cat()
         sick_cat.status = "warrior"
-        sick_cat.illnesses["test_illness"] = {}
+        sick_cat.illnesses["diarrhea"] = {
+            "severity": "major"
+        }
         healthy_cat = Cat()
         healthy_cat.status = "warrior"
 

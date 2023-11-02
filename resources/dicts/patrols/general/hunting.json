@@ -784,7 +784,7 @@
                 "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/resist/resists} the temptation, going on to make a couple of great catches to make sure the elders are fed.",
                 "exp": 20,
                 "weight": 20,
-                "prey": ["large"],
+                "prey": ["medium"],
                 "relationships": [
                     {
                         "cats_to": ["r_c", "r_c"],
@@ -806,7 +806,7 @@
                 "text": "After all, the patrol has caught enough on this hunt that {PRONOUN/r_c/subject}'ll have trouble carrying it all back to camp. {PRONOUN/r_c/subject/CAP} {VERB/r_c/stop/stops} for a quick snack and {VERB/r_c/return/returns} to camp laden with prey for the fresh-kill pile.",
                 "exp": 20,
                 "weight": 5,
-                "prey": ["huge"],
+                "prey": ["large"],
                 "relationships": [
                     {
                         "cats_to": ["r_c", "r_c"],

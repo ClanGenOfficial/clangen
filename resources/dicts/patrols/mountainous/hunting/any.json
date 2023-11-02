@@ -1185,7 +1185,8 @@
                     "reg_death": "m_c died from the yellowcough brought to the Clan by the Belled Buzzard.",
                     "lead_death": "died from the yellowcough brought by the Belled Buzzard"
                 },
-                "art": "belledbuzzard_OUTCOME"
+                "art": "belledbuzzard_OUTCOME",
+				"prey": ["very_small"]
             }
         ]
     }

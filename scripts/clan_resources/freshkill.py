@@ -74,6 +74,7 @@ class Freshkill_Pile():
             self.total_amount = game.prey_config["start_amount"]
         self.nutrition_info = {}
         self.living_cats = []
+        self.needed_prey = 0
 
     def add_freshkill(self, amount) -> None:
         """
@@ -106,6 +107,29 @@ class Freshkill_Pile():
         for key in order:
             amount = self.take_from_pile(key, amount)
 
+    def _update_needed_food(self, living_cats: List[Cat]) -> None:
+        sick_cats = [cat for cat in living_cats if cat.not_working() and "pregnant" not in cat.injuries]
+        queen_dict, living_kits = get_alive_clan_queens(self.living_cats)
+        relevant_queens = []
+        # kits under 3 months are feed by the queen
+        for queen_id, their_kits in queen_dict.items():
+            queen = Cat.fetch_cat(queen_id)
+            young_kits = [kit for kit in their_kits if kit.moons < 3]
+            if len(young_kits) > 0:
+                relevant_queens.append(queen)
+        pregnant_cats = [cat for cat in living_cats if "pregnant" in cat.injuries and cat.ID not in queen_dict.keys()]
+
+        # all normal status cats calculation
+        needed_prey = sum([PREY_REQUIREMENT[cat.status] for cat in living_cats if cat.status not in ["newborn", "kitten"]])
+        # increase the number for sick cats
+        needed_prey += len(sick_cats) * CONDITION_INCREASE
+        # increase the number of prey which are missing for relevant queens an pregnant cats
+        needed_prey += (len(relevant_queens) + len(pregnant_cats)) * (PREY_REQUIREMENT["queen/pregnant"] - PREY_REQUIREMENT["warrior"])
+        # increase the number of prey for kits, which are not taken care by a queen
+        needed_prey += sum([PREY_REQUIREMENT[cat.status] for cat in living_kits])
+        
+        self.needed_prey = needed_prey
+
     def time_skip(self, living_cats: list, event_list: list) -> None:
         """
         Handle the time skip for the freshkill pile, 'age' the prey and feeding the cats.
@@ -128,6 +152,7 @@ class Freshkill_Pile():
         self.feed_cats(living_cats)
         value_diff -= sum(self.pile.values())
         event_list.append(f"{value_diff} pieces of prey where consumed.")
+        self._update_needed_food(living_cats)
 
     def feed_cats(self, living_cats: list) -> None:
         """
@@ -168,12 +193,9 @@ class Freshkill_Pile():
                 the amount of prey the Clan needs
         """
         living_cats = [i for i in Cat.all_cats.values() if not (i.dead or i.outside or i.exiled)]
-        sick_cats = [cat for cat in living_cats if cat.is_injured() or cat.is_ill()]
-        queen_dict, living_kits = get_alive_clan_queens(self.living_cats)
-
-        needed_prey = [PREY_REQUIREMENT[cat.status] for cat in living_cats]
-        needed_prey = sum(needed_prey) + len(sick_cats) * CONDITION_INCREASE + len(queen_dict) * (PREY_REQUIREMENT["queen/pregnant"] - PREY_REQUIREMENT["warrior"])
-        return needed_prey
+        if len(living_cats) > 0 and self.needed_prey == 0:
+            self._update_needed_food(living_cats)
+        return self.needed_prey
 
     def clan_has_enough_food(self) -> bool:
         """
@@ -311,8 +333,7 @@ class Freshkill_Pile():
             needed_amount = feeding_amount
 
             # check for condition
-            injured_not_pregnant = (cat.is_injured() and "pregnant" not in cat.injuries) or len(cat.injuries) > 1
-            if cat.is_ill() or injured_not_pregnant:
+            if "pregnant" not in cat.injuries and cat.not_working():
                 feeding_amount += CONDITION_INCREASE
                 needed_amount = feeding_amount
             else:
@@ -412,8 +433,7 @@ class Freshkill_Pile():
             needed_amount = feeding_amount
 
             # check for condition
-            injured_not_pregnant = (cat.is_injured() and "pregnant" not in cat.injuries) or len(cat.injuries) > 1
-            if cat.is_ill() or injured_not_pregnant:
+            if "pregnant" not in cat.injuries and cat.not_working():
                 feeding_amount += CONDITION_INCREASE
                 needed_amount = feeding_amount
             else:
@@ -551,8 +571,7 @@ class Freshkill_Pile():
         nutrition.percentage = 100
 
         # adapt sickness (increase needed amount)
-        injured_not_pregnant = (cat.is_injured() and "pregnant" not in cat.injuries) or len(cat.injuries) > 1
-        if cat.is_ill() or injured_not_pregnant:
+        if "pregnant" not in cat.injuries and cat.not_working():
             nutrition.max_score += CONDITION_INCREASE * factor
             nutrition.current_score = nutrition.max_score
 

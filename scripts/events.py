@@ -89,7 +89,6 @@ class Events:
                 filter(lambda _cat: _cat.is_alive() and not _cat.exiled and
                                  not _cat.outside, Cat.all_cats.values()))
             game.clan.freshkill_pile.time_skip(relevant_cats, game.freshkill_event_list)
-            self.get_moon_freshkill()
             # handle freshkill pile events, after feeding
             # first 5 moons there will not be any freshkill pile event
             if game.clan.age >= 5:
@@ -101,6 +100,7 @@ class Events:
                 event_string = f"{game.clan.name}Clan doesn't have enough prey for next moon!"
                 game.cur_events_list.insert(0, Single_Event(event_string))
                 game.freshkill_event_list.append(event_string)
+            self.get_moon_freshkill()
 
         rejoin_upperbound = game.config["lost_cat"]["rejoin_chance"]
         if random.randint(1, rejoin_upperbound) == 1:
@@ -297,7 +297,7 @@ class Events:
                 upper_value = game.prey_config["auto_apprentice_prey"][1]
 
             prey_amount += random.randint(lower_value, upper_value)
-        game.freshkill_event_list.append(f"The clan managed to catch {prey_amount} pieces of prey in this moons.")
+        game.freshkill_event_list.append(f"The clan managed to catch {prey_amount} pieces of prey in this moon.")
         game.clan.freshkill_pile.add_freshkill(prey_amount)
 
     def herb_gather(self):

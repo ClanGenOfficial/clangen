@@ -806,7 +806,7 @@ class PatrolOutcome():
         
         # additional hunter buff for expanded mode
         if game.clan.game_mode == "expanded" and highest_hunter_tier:
-            total_amount = int(total_amount * (HUNTER_BONUS[str(highest_hunter_tier)] / 50 + 1))
+            total_amount = int(total_amount * (HUNTER_BONUS[str(highest_hunter_tier)] / 20 + 1))
 
         results = ""
         if total_amount > 0:
