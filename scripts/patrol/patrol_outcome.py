@@ -4,6 +4,8 @@ import random
 from random import choice, randint, choices
 from typing import List, Dict, Union, Tuple, TYPE_CHECKING
 import re
+import pygame
+from os.path import exists as path_exists
 
 if TYPE_CHECKING:
     from scripts.patrol.patrol import Patrol
@@ -57,6 +59,8 @@ class PatrolOutcome():
             other_clan_rep: Union[int, None] = None,
             relationship_effects: List[dict] = None,
             relationship_constaints: List[str] = None,
+            outcome_art: Union[str, None] = None,
+            outcome_art_clean: Union[str, None] = None,
             stat_cat: Cat = None):
         
         self.success = success
@@ -71,10 +75,10 @@ class PatrolOutcome():
         self.lost_cats = lost_cats if lost_cats is not None else []
         self.injury = injury if injury is not None else []
         self.history_reg_death = history_reg_death if history_reg_death is not None else \
-                                 "m_c died on patrol"
+                                 "m_c died on patrol."
         self.history_leader_death = history_leader_death if history_leader_death is not None else \
-                                    "died on patrol"
-        self.history_scar = history_scar if history_scar is not None else "m_c was scarred on patrol"
+                                    "died on patrol."
+        self.history_scar = history_scar if history_scar is not None else "m_c was scarred on patrol."
         self.new_cat = new_cat if new_cat is not None else []
         self.herbs = herbs if herbs is not None else []
         self.prey = prey if prey is not None else []
@@ -82,6 +86,8 @@ class PatrolOutcome():
         self.other_clan_rep = other_clan_rep
         self.relationship_effects = relationship_effects if relationship_effects is not None else []
         self.relationship_constaints = relationship_constaints if relationship_constaints is not None else []
+        self.outcome_art = outcome_art
+        self.outcome_art_clean = outcome_art_clean
         
         # This will hold the stat cat, for filtering purposes
         self.stat_cat = stat_cat 
@@ -163,14 +169,18 @@ class PatrolOutcome():
                     outsider_rep=_d.get("outsider_rep"),
                     other_clan_rep=_d.get("other_clan_rep"),
                     relationship_effects=_d.get("relationships"),
-                    relationship_constaints=_d.get("relationship_constraint") 
+                    relationship_constaints=_d.get("relationship_constraint"),
+                    outcome_art=_d.get("art"),
+                    outcome_art_clean=_d.get("art_clean")
                 )
             )
         
         return outcome_list
 
     def execute_outcome(self, patrol:'Patrol') -> tuple:
-        """ Excutes the outcome. Returns a tuple with the final outcome text, and the results text. """
+        """ Excutes the outcome. Returns a tuple with the final outcome text, the results text, and any outcome art
+        format: (Outcome text, results text, outcome art (might be None))
+        """
         
         results = []
         
@@ -194,7 +204,7 @@ class PatrolOutcome():
         
         print("PATROL END -----------------------------------------------------")
         
-        return (processed_text, " ".join(results))
+        return (processed_text, " ".join(results), self.get_outcome_art())
     
     def _allowed_stat_cat_specfic(self, kitty:Cat, patrol:'Patrol', allowed_specfic) -> bool:
         """Helper that handled specfic stat cat requriments. """
@@ -282,6 +292,20 @@ class PatrolOutcome():
         
         return
 
+    def get_outcome_art(self):
+        """Return outcome art, if not None. Return's None if there is no outcome art, or if outcome art can't be found.  """
+        root_dir = "resources/images/patrol_art/"
+        
+        if game.settings.get("gore") and self.outcome_art_clean:
+            file_name = self.outcome_art_clean
+        else:
+            file_name = self.outcome_art
+
+        if not isinstance(file_name, str) or not path_exists(f"{root_dir}{file_name}.png"):
+            return None
+            
+        return pygame.image.load(f"{root_dir}{file_name}.png")
+        
     # ---------------------------------------------------------------------------- #
     #                                   HANDLERS                                   #
     # ---------------------------------------------------------------------------- #
@@ -722,10 +746,12 @@ class PatrolOutcome():
                 game.clan.herbs[_herb] += amount_gotten
             else:
                 game.clan.herbs[_herb] = amount_gotten
+
+        plural_herbs_list = ['cobwebs', 'oak leaves']
         
-        if len(specfic_herbs) == 1 and specfic_herbs[0] != 'cobwebs':
+        if len(specfic_herbs) == 1 and specfic_herbs[0] not in plural_herbs_list:
             insert = f"{specfic_herbs[0]} was"
-        elif len(specfic_herbs) == 1 and specfic_herbs[0] == 'cobwebs':
+        elif len(specfic_herbs) == 1 and specfic_herbs[0] in plural_herbs_list:
             insert = f"{specfic_herbs[0]} were"
         elif len(specfic_herbs) == 2:
             if str(specfic_herbs[0]) == str(specfic_herbs[1]):
@@ -734,9 +760,11 @@ class PatrolOutcome():
                 insert = f"{specfic_herbs[0]} and {specfic_herbs[1]} were"
         else:
             insert = f"{', '.join(specfic_herbs[:-1])}, and {specfic_herbs[-1]} were"
+
+        insert = re.sub("[_]", " ", insert)
         
         game.herb_events_list.append(f"{insert.capitalize()} gathered on a patrol.")
-        return f"{insert.capitalize()} gathered"
+        return f"{insert.capitalize()} gathered."
         
     def _handle_prey(self, patrol:'Patrol') -> str:
         """ Handle giving prey """
@@ -821,7 +849,7 @@ class PatrolOutcome():
             if sub[0].moons < 3:
                 # Search for parent
                 for sub_sub in patrol.new_cats:
-                    if sub_sub[0] != sub[0] and (sub_sub[0].gender == "female" or game.settings['same sex birth']) \
+                    if sub_sub[0] != sub[0] and (sub_sub[0].gender == "female" or game.clan.clan_settings['same sex birth']) \
                             and sub_sub[0].ID in (sub[0].parent1, sub[0].parent2) and not (sub_sub[0].dead or sub_sub[0].outside):
                         sub_sub[0].get_injured("recovering from birth")
                         break # Break - only one parent ever gives birth
@@ -898,7 +926,7 @@ class PatrolOutcome():
             gender = "male"
         elif "female" in attribute_list:
             gender = "female"
-        elif "can_birth" in attribute_list and not game.settings["same sex birth"]:
+        elif "can_birth" in attribute_list and not game.clan.clan_settings["same sex birth"]:
             gender = "female"
         else:
             gender = None
@@ -992,7 +1020,7 @@ class PatrolOutcome():
         
         # KITTEN THOUGHT
         if status in ("kitten", "newborn"):
-            thought = "Is snuggled safe in the nursury"
+            thought = "Is snuggled safe in the nursery"
         
         # MEETING - DETERMINE IF THIS IS AN OUTSIDE CAT
         outside = False
@@ -1000,7 +1028,7 @@ class PatrolOutcome():
             outside = True
             status = cat_type
             new_name = False
-            thought = "Is wondering about the new cats they just meet."
+            thought = "Is wondering about the new cats they just met"
             
         # IS THE CAT DEAD?
         alive = True
@@ -1052,7 +1080,7 @@ class PatrolOutcome():
                     continue
                 
                 y = random.randrange(0, 20)
-                start_relation = Relationship(inter_cat, n_c, False, True)
+                start_relation = Relationship(n_c, inter_cat, False, True)
                 start_relation.platonic_like += 30 + y
                 start_relation.comfortable = 10 + y
                 start_relation.admiration = 15 + y

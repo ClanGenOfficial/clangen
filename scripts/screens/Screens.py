@@ -54,12 +54,12 @@ class Screens():
             visible=False,
             manager=MANAGER,
             object_id="#allegiances_button"),
-        "stats": UIImageButton(
-            scale(pygame.Rect((1388, 120), (162, 60))),
+        "clan_settings": UIImageButton(
+            scale(pygame.Rect((1380, 120), (170, 60))),
             "",
             visible=False,
             manager=MANAGER,
-            object_id="#stats_button"),
+            object_id="#clan_settings_button"),
         "name_background": pygame_gui.elements.UIImage(
             scale(pygame.Rect((610, 50), (380, 70))),
             pygame.transform.scale(
@@ -108,8 +108,8 @@ class Screens():
         if name is not None:
             game.all_screens[name] = self
         
-        # Place to store the loading window
-        self.loading_window = None
+        # Place to store the loading window(s)
+        self.loading_window = {}
         
         # Dictionary of work done, keyed by the target function name
         self.work_done = {}
@@ -134,10 +134,10 @@ class Screens():
         exp = None
         try:
             target(*args)
-            self.work_done[current_thread().name] = True
         except Exception as e:
             exp = e
-
+        
+        self.work_done[current_thread().name] = True
         if exp:
             raise exp
         
@@ -151,18 +151,15 @@ class Screens():
          """
         
         if not isinstance(work_thread, PropagatingThread):
-            if self.loading_window:
-                self.loading_window.kill()
-                self.loading_window = None
             return
         
         # Handled the loading animation, both creating and killing it. 
-        if not self.loading_window and work_thread.is_alive() \
+        if not self.loading_window.get(work_thread.name) and work_thread.is_alive() \
                 and work_thread.get_time_from_start() > delay:
-            self.loading_window = EventLoading(loading_screen_pos)
-        elif self.loading_window and not work_thread.is_alive():
-            self.loading_window.kill()
-            self.loading_window = None
+            self.loading_window[work_thread.name] = EventLoading(loading_screen_pos)
+        elif self.loading_window.get(work_thread.name) and not work_thread.is_alive():
+            self.loading_window[work_thread.name].kill()
+            self.loading_window.pop(work_thread.name)
         
         # Handles displaying the events once timeskip is done. 
         if self.work_done.get(work_thread.name, False):
@@ -207,25 +204,25 @@ class Screens():
     def hide_menu_buttons(self):
         """This hides the menu buttons, so they are no longer visible
             or interact-able. It does not delete the buttons from memory."""
-        for button in self.menu_buttons:
-            self.menu_buttons[button].hide()
+        for button in self.menu_buttons.values():
+            button.hide()
 
     def show_menu_buttons(self):
         """This shows all menu buttons, and makes them interact-able. """
         # Check if the setting for moons and seasons UI is on so stats button can be moved
         self.update_mns()
-        for button in self.menu_buttons:
-            if button in ['moons_n_seasons', 'moons_n_seasons_arrow']:
+        for name, button in self.menu_buttons.items():
+            if name in ['moons_n_seasons', 'moons_n_seasons_arrow']:
                 continue
             else:
-                self.menu_buttons[button].show()
+                button.show()
 
     # Enables all menu buttons but the ones passed in.
     # Sloppy, but works. Consider making it nicer.
     def set_disabled_menu_buttons(self, disabled_buttons=()):
         """This sets all menu buttons as interact-able, except buttons listed in disabled_buttons.  """
-        for button in self.menu_buttons:
-            self.menu_buttons[button].enable()
+        for button in self.menu_buttons.values():
+            button.enable()
 
         for button_id in disabled_buttons:
             if button_id in self.menu_buttons:
@@ -248,8 +245,8 @@ class Screens():
             SaveCheck(game.switches['cur_screen'], True, self.menu_buttons["main_menu"])
         elif event.ui_element == self.menu_buttons["allegiances"]:
             self.change_screen('allegiances screen')
-        elif event.ui_element == self.menu_buttons["stats"]:
-            self.change_screen('stats screen')
+        elif event.ui_element == self.menu_buttons["clan_settings"]:
+            self.change_screen('clan settings screen')
         elif event.ui_element == self.menu_buttons["moons_n_seasons_arrow"]:
             if game.settings['mns open']:
                 game.settings['mns open'] = False
@@ -263,7 +260,7 @@ class Screens():
     
     # Update if moons and seasons UI is on
     def update_mns(self):
-        if game.settings["moons and seasons"]:
+        if game.clan.clan_settings["moons and seasons"]:
             self.menu_buttons['moons_n_seasons_arrow'].kill()
             self.menu_buttons['moons_n_seasons'].kill()
             if game.settings['mns open']:

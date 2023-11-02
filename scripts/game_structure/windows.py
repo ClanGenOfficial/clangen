@@ -577,7 +577,7 @@ class KillCat(UIWindow):
             self.prompt = process_text(
                 'This cat died when {PRONOUN/m_c/subject}...', cat_dict)
             self.initial = process_text(
-                '{VERB/m_c/were/was} killed by something unknowable to even StarClan', cat_dict)
+                '{VERB/m_c/were/was} killed by a higher power.', cat_dict)
 
             self.all_lives_check.hide()
             self.life_text = pygame_gui.elements.UITextBox('Take all the leader\'s lives',
@@ -627,7 +627,7 @@ class KillCat(UIWindow):
                                              manager=MANAGER,
                                              container=self)
         else:
-            self.initial = 'It was the will of something even mightier than StarClan that this cat died.'
+            self.initial = 'This cat was killed by a higher power.'
             self.prompt = None
             self.all_lives_check.hide()
             self.one_life_check.hide()
@@ -920,15 +920,15 @@ class ChangelogPopup(UIWindow):
             manager=MANAGER)
 
         dynamic_changelog = False
-        if get_version_info().is_dev and get_version_info().is_source_build and get_version_info().git_installed:
+        if get_version_info().is_dev() and get_version_info().is_source_build and get_version_info().git_installed:
             file_cont = subprocess.check_output(
                 ["git", "log", r"--pretty=format:%H|||%cd|||%b|||%s", "-15", "--no-decorate", "--merges", "--grep=Merge pull request", "--date=short"]).decode("utf-8")
             dynamic_changelog = True
         else:
             with open("changelog.txt", "r") as read_file:
                 file_cont = read_file.read()
-        
-        if get_version_info().is_dev and not get_version_info().is_source_build:
+
+        if get_version_info().is_dev() and not get_version_info().is_source_build:
             dynamic_changelog = True
 
         if dynamic_changelog:
@@ -1249,7 +1249,6 @@ class EventLoading(UIWindow):
                          resizable=False)
 
         self.set_blocking(True)
-        game.switches['window_open'] = True
 
         self.frames = self.load_images()
         self.end_animation = False
@@ -1263,7 +1262,7 @@ class EventLoading(UIWindow):
     @staticmethod
     def load_images():
         frames = []
-        for i in range(1, 9):
+        for i in range(0, 16):
             frames.append(pygame.image.load(
                 f"resources/images/loading_animate/timeskip/{i}.png"))
 
@@ -1282,11 +1281,10 @@ class EventLoading(UIWindow):
 
             self.animated_image.set_image(self.frames[i])
 
-            time.sleep(0.3)
+            time.sleep(0.125)
 
     def kill(self):
         self.end_animation = True
-        game.switches['window_open'] = False
         super().kill()
 
 class ChangeCatToggles(UIWindow):
@@ -1323,7 +1321,7 @@ class ChangeCatToggles(UIWindow):
                                                     object_id="#text_box_30_horizleft_pad_0_8",
                                                     container=self)
         
-        self.text_4 = pygame_gui.elements.UITextBox("Limit romantic interations and mate changes",
+        self.text_4 = pygame_gui.elements.UITextBox("Limit romantic interactions and mate changes",
                                                     scale(pygame.Rect(110, 210, -1, 50)), 
                                                     object_id="#text_box_30_horizleft_pad_0_8",
                                                     container=self)

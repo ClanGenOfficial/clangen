@@ -133,7 +133,7 @@
         "season": ["leaf-bare"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "mtn_hunt_leaf-bare_eagleice",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
@@ -256,7 +256,7 @@
         "season": ["leaf-bare"],
         "types": ["hunting"],
         "tags": ["cruel_season", "huge_prey3"],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "mtn_hunt_leaf-bare_eagleice",
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {
@@ -426,7 +426,7 @@
         "season": ["leaf-bare"],
         "types": ["hunting"],
         "tags": ["cruel_season"],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "mtn_hunt_leaf-bare_eagleice",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
@@ -4418,7 +4418,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l finds a common buzzard eating crow-food on top of a high cliff. They crouch down to hunt but - Wait! Was it buzzards or vultures that the mountain clans respected?",
+        "intro_text": "p_l finds a common buzzard eating crow-food on top of a high cliff. They crouch down to hunt but - Wait! Was it buzzards or vultures that the mountain Clans respected?",
         "decline_text": "Better not risk it... p_l turns tail and goes home, trying to think of a way to ask the difference between the two birds that doesn't end up confusing them even more.",
         "chance_of_success": 10,
         "success_outcomes": [
@@ -4514,9 +4514,9 @@
                 "weight": 10,
                 "dead_cats": ["r_c", "all_lives"],
                 "history_text": {
-                    "scar": "mistook a buzzard for a vulture and got pecked",
-                    "reg_death": "was scared off a cliff by a large bird.",
-                    "lead_death": "after a run in with a large bird of prey, fell to their final death off of a high cliff"
+                    "scar": "m_c mistook a buzzard for a vulture and got pecked",
+                    "reg_death": "m_c was scared off a cliff by a large bird.",
+                    "lead_death": "fell to {PRONOUN/m_c/poss} death off of a high cliff after a run in with a large bird of prey"
                 }
             },
             {
@@ -4531,9 +4531,9 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "mistook a buzzard for a vulture and got pecked",
-                    "reg_death": "was scared off a cliff by a large bird.",
-                    "lead_death": "after a run in with a large bird of prey, fell to their final death off of a high cliff"
+                    "scar": "m_c mistook a buzzard for a vulture and got pecked",
+                    "reg_death": "m_c was scared off a cliff by a large bird.",
+                    "lead_death": "fell to {PRONOUN/m_c/poss} death off of a high cliff after a run in with a large bird of prey"
                 }
             },
             {
@@ -4544,9 +4544,9 @@
                 "can_have_stat": ["adult"],
                 "dead_cats": ["s_c", "all_lives"],
                 "history_text": {
-                    "scar": "mistook a buzzard for a vulture and got pecked",
-                    "reg_death": "was scared off a cliff by a large bird.",
-                    "lead_death": "after a run in with a large bird of prey, fell to their final death off of a high cliff"
+                    "scar": "m_c mistook a buzzard for a vulture and got pecked",
+                    "reg_death": "m_c was scared off a cliff by a large bird.",
+                    "lead_death": "fell to {PRONOUN/m_c/poss} death off of a high cliff after a run in with a large bird of prey"
                 }
             },
             {
@@ -4563,9 +4563,9 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "mistook a buzzard for a vulture and got pecked",
-                    "reg_death": "was scared off a cliff by a large bird.",
-                    "lead_death": "after a run in with a large bird of prey, fell to their final death off of a high cliff"
+                    "scar": "m_c mistook a buzzard for a vulture and got pecked",
+                    "reg_death": "m_c was scared off a cliff by a large bird.",
+                    "lead_death": "fell to {PRONOUN/m_c/poss} death off of a high cliff after a run in with a large bird of prey"
                 }
             }
         ]

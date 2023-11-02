@@ -1,0 +1,146 @@
+{
+    ".": [
+        "WARNING: This file is NOT where your settings are stored.",
+        "This file is only used to display the settings in the game.",
+        "The file you are looking for is 'settings.txt' in your saves folder.",
+        "If you want to change your settings, edit that file instead.",
+        "FORMAT:",
+        {
+            "group": {
+                "setting name": [
+                    "display name",
+                    "tooltip",
+                    "default",
+                    [
+                        "nested setting",
+                        "enabled value"
+                    ]
+                ]
+            }
+        }
+    ],
+    "general": {
+        "autosave": [
+            "Automatically save every five moons",
+            "Automatically save every five moons.",
+            false
+        ],
+        "disasters": [
+            "Allow mass extinction events",
+            "This may result in up to 1/3rd of your Clan dying in one moon.",
+            false
+        ],
+        "showxp": [
+            "Show exact XP",
+            "Will turn experience: proficient into experience: proficient (151)",
+            false
+        ],
+        "random med cat": [
+            "Allow medicine cats to be randomly selected on patrol",
+            "Medicine cats can be selected with the patrol buttons +1, +3,+6",
+            true
+        ],
+        "fading": [
+            "Allow dead cats to fade away",
+            "After 202 moons, dead cats will be unloaded, and saved separately. No family relations will be lost.",
+            true
+        ],
+        "save_faded_copy": [
+            "Save a complete copy of faded cats information",
+            "A complete copy of faded cat save info will be saved in plain-text.",
+            false
+        ],
+        "backgrounds": [
+            "Enable Clan page background",
+            "Even with this off, the camp you choose will still affect the events you encounter.",
+            true
+        ],
+        "moons and seasons": [
+            "Show moons and seasons widget",
+            "Displays Clan age and current Clan season on several pages",
+            false
+        ]
+    },
+    "role": {
+        "deputy": [
+            "Allow leaders to automatically choose a new deputy",
+            "The warrior code rules will be taken into account when choosing a deputy.",
+            false
+        ],
+        "12_moon_graduation": [
+            "Disable experience-based apprentice graduation",
+            "All apprentices will graduate at 12 moons.",
+            false
+        ],
+        "retirement": [
+            "Cats will never retire due to a permanent condition",
+            "When this setting is off, cats with permanent conditions will choose whether or not they want to retire.",
+            false
+        ],
+        "become_mediator": [
+            "Allow warriors and elders to choose to become mediators",
+            "Warriors and elders will have a chance to become mediators upon timeskip.",
+            false
+        ]
+    },
+    "relation": {
+        "affair": [
+            "Allow cats to breed with cats that aren't their mates.",
+            "This will allow mated and unmated cats to have kits with other cats they are not mated with. This includes, but is not limited to, affairs/cheating.",
+            false
+        ],
+        "same sex birth": [
+            "Allow same-sex breeding",
+            "Allow couples to birth kittens despite same-sex status.",
+            false
+        ],
+        "same sex adoption": [
+            "Increase same-sex adoption",
+            "If same-sex birth is disabled, this option greatly increases the chances of same-sex couples adopting.",
+            true,
+            [
+                "same sex birth",
+                false
+            ]
+        ],
+        "single parentage": [
+            "Allow cats to have kittens with an unknown second parent",
+            "Allow cats to have kittens with an unknown second biological parent. The cat will be listed as the only biological parent.",
+            false
+        ],
+        "romantic with former mentor": [
+            "Allow romantic interactions with former mentors",
+            "Allows mentors and the cats they trained to be romantic after they become warriors",
+            true
+        ],
+        "first cousin mates": [
+            "Allow first cousins to be mates and have romantic interactions",
+            "Allows cats with the same grandparents but different parents to become mates",
+            false
+        ]
+    },
+    "..": "these are special. they do not have a display name or a tooltip",
+    "__other": {
+        "show dead relation": [
+            false,
+            true
+        ],
+        "show empty relation": [
+            false,
+            true
+        ],
+        "favourite sub tab": [
+            null,
+            "life events",
+            "user notes"
+        ],
+        "den labels": [
+            true,
+            false
+        ],
+        "show fav": [
+            false,
+            true
+        ]
+    }
+}

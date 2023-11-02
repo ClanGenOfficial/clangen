@@ -397,7 +397,10 @@
 		"id": "platonic_app_med4",
 		"interactions": [
 			"m_c listens closely as r_c tells {PRONOUN/m_c/object} about the new herb {PRONOUN/r_c/subject} learned to recognize today.",
-			"m_c playfully teases r_c for having herbs stuck in {PRONOUN/r_c/poss} fur."
+			"m_c playfully teases r_c for having herbs stuck in {PRONOUN/r_c/poss} fur.",
+			"m_c offers to teach r_c some fighting stances if r_c will teach {PRONOUN/m_c/object} about more herbs.",
+			"m_c and r_c spend time together despite their different training schedules.",
+			"m_c begs {PRONOUN/m_c/poss} mentor to let r_c come with for some hunting practice."
 		],
 		"main_status_constraint": [
 			"apprentice"
@@ -409,8 +412,9 @@
 	{
 		"id": "platonic_app_med5",
 		"interactions": [
-			"m_c gently grooms some cobwebs off  r_c's fur.",
-			"m_c tells r_c that {PRONOUN/r_c/subject}'ll be an amazing medicine cat someday."
+			"m_c gently grooms some cobwebs off r_c's fur.",
+			"m_c tells r_c that {PRONOUN/r_c/subject}'ll be an amazing medicine cat someday.",
+			"m_c believes in r_c, and reassures r_c that {PRONOUN/r_c/subject} made the right choice by becoming a medicine cat apprentice."
 		],
 		"relationship_constraint": [
 			"platonic_40"
@@ -427,7 +431,7 @@
 		"interactions": [
 			"m_c greets r_c as {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} exiting the warriors' den.",
 			"m_c chats quietly with r_c while they're both on camp guard duty.",
-			"m_c thanks r_c for covering for {PRONOUN/m_c/subject} during a patrol earlier."
+			"m_c thanks r_c for covering for {PRONOUN/m_c/object} during a patrol earlier."
 		],
 		"main_status_constraint": [
 			"warrior"
@@ -443,7 +447,9 @@
 		"id": "platonic_inc_high1",
 		"intensity": "high",
 		"interactions": [
-			"m_c wants to spend more time with r_c!"
+			"m_c wants to spend more time with r_c!",
+			"m_c is always happy to be around r_c.",
+			"m_c is glad to have a Clanmate like r_c."
 		]
 	},
 	{
@@ -451,7 +457,8 @@
 		"interactions": [
 			"m_c is pestering r_c for a story.",
 			"m_c settles down next to r_c to listen to {PRONOUN/r_c/poss} stories.",
-			"m_c tells r_c that {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} an amazing storyteller."
+			"m_c tells r_c that {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} an amazing storyteller.",
+			"m_c always makes time to listen to one of r_c's stories."
 		],
 		"random_status_constraint": [
 			"elder"
@@ -464,7 +471,9 @@
 		"id": "platonic_inc_high2",
 		"intensity": "high",
 		"interactions": [
-			"m_c is having a wonderful time discussing recent Clan news with r_c."
+			"m_c is having a wonderful time discussing recent Clan news with r_c.",
+			"m_c and r_c enjoy each other's company.",
+			"m_c is happy to run into r_c today."
 		],
 		"reaction_random_cat": {
 			"platonic": "increase"
@@ -474,7 +483,9 @@
 		"id": "platonic_inc_high3",
 		"intensity": "high",
 		"interactions": [
-			"m_c thinks about how lucky {PRONOUN/m_c/subject} {VERB/m_c/are/is} to have someone like r_c as a friend."
+			"m_c thinks about how lucky {PRONOUN/m_c/subject} {VERB/m_c/are/is} to have someone like r_c as a friend.",
+			"m_c considers r_c to be one of {PRONOUN/m_c/poss} close friends.",
+			"m_c couldn't imagine how boring things would be without a friend like r_c."
 		],
 		"relationship_constraint": [
 			"platonic_40"
@@ -500,7 +511,8 @@
 		"intensity": "high",
 		"interactions": [
 			"m_c can't imagine {PRONOUN/m_c/poss} life if {PRONOUN/m_c/subject} never met r_c.",
-			"m_c thinks of r_c as {PRONOUN/m_c/poss} best friend."
+			"m_c thinks of r_c as {PRONOUN/m_c/poss} best friend.",
+			"m_c and r_c are inseparable, and can almost always be found with each other."
 		],
 		"relationship_constraint": [
 			"platonic_60"
@@ -511,7 +523,8 @@
 		"intensity": "high",
 		"interactions": [
 			"m_c thinks r_c tells the best stories.",
-			"m_c listens to r_c talk about what life was like when {PRONOUN/r_c/subject} {VERB/r_c/were/was} young."
+			"m_c listens to r_c talk about what life was like when {PRONOUN/r_c/subject} {VERB/r_c/were/was} young.",
+			"m_c values r_c's insights on life."
 		],
 		"random_status_constraint": [
 			"elder"
@@ -521,5 +534,23 @@
 			"comfortable": "increase",
 			"trust": "increase"
 		}
+	},
+	{
+		"id": "platonic_inc_high_grumpymedcat1",
+		"intensity": "high",
+		"interactions": [
+			"m_c grumbles while checking on r_c, but r_c appreciates the care and hard work m_c does anyways.",
+			"m_c complains when treating a very minor wound r_c has, but obviously cares very much even if {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} show it.",
+			"m_c rolls {PRONOUN/m_c/poss} eyes while listening to r_c's most recent complaint, but makes sure to thoroughly check them for any ailments.",
+			"r_c is a little hesitant to ask m_c to check on something minor, but knows that even though m_c can be grumpy sometimes, {PRONOUN/m_c/subject} always takes care of {PRONOUN/r_c/object}."
+		],
+		"main_status_constraint": [
+			"medicine cat",
+			"medicine cat apprentice"
+		],
+		"main_trait_constraint": [
+			"cold",
+			"grumpy"
+		]
 	}
 ]

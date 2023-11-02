@@ -252,7 +252,7 @@ class Condition_Events():
 
                             if possible_scar or possible_death:
                                 History.add_possible_history(cat, injury_event.injury, scar_text=possible_scar, 
-                                                             death_text=possible_death)
+                                                             death_text=possible_death, other_cat=other_cat)
                             
                         cat.get_injured(injury_event.injury)
 
@@ -727,7 +727,7 @@ class Condition_Events():
     @staticmethod
     def determine_retirement(cat, triggered):
         
-        if game.settings['retirement'] or cat.no_retire:
+        if game.clan.clan_settings['retirement'] or cat.no_retire:
             return
 
         if not triggered and not cat.dead and cat.status not in \

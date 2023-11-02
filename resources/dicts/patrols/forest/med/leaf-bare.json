@@ -907,17 +907,17 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Not only does p_l end up soaked to the skin, but they can't even find any daisies under the snow. A wasted and horribly chilly day.",
+                "text": "Not only does p_l end up soaked to the skin, but {PRONOUN/p_l/subject} can't even find any daisies under the snow. A wasted and horribly chilly day.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "Not only does r_c end up soaked to the skin, they can't even find any daisies under the snow, and they're left shivering violently by the time they return to camp.",
+                "text": "Not only does p_l end up soaked to the skin, {PRONOUN/p_l/subject} can't even find any daisies under the snow, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} left shivering violently by the time {PRONOUN/p_l/subject} {VERB/p_l/returns/return} to camp.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["p_l"],
                         "injuries": ["cold_injury"],
                         "scars": ["FROSTFACE"]
                     }

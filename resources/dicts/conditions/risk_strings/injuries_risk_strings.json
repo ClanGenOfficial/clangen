@@ -1,7 +1,7 @@
 {
     "claw-wound": {
         "an infected wound": [
-            "r_c fusses over {PRONOUN/m_c/poss} wound with a foul smelling herbal poultice, and m_c hopes it'll fight off the infection growing in {PRONOUN/m_c/poss} claw wound.",
+            "r_c fusses over {PRONOUN/m_c/poss} wound with a foul smelling herbal poultice, and m_c hopes it'll fight off the infection growing in {PRONOUN/m_c/poss} claw-wound.",
             "m_c itches uncomfortably, wishing {PRONOUN/m_c/poss} wound would close up and heal already. Instead it seems to be getting worse."
 
         ]

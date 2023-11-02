@@ -23,7 +23,7 @@
 	{
 		"id": "dislike_de_med1",
 		"interactions": [
-			"m_c realized that {PRONOUN/m_c/subject} {VERB/m_c/were/was} too harsh in {PRONOUN/m_c/poss} judgment of r_c.",
+			"m_c realized that {PRONOUN/m_c/subject} {VERB/m_c/were/was} too harsh in {PRONOUN/m_c/poss} judgement of r_c.",
 			"m_c spends some time with r_c and they both end up understanding each other a little better.",
 			"m_c is rethinking how {PRONOUN/m_c/subject} feel about r_c and gives {PRONOUN/r_c/object} another chance."
 		]

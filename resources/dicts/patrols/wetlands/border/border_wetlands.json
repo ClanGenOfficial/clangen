@@ -1141,7 +1141,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c doesn't come back to camp. Their body is found along the border, and o_c_n boasts about it at the next Gathering.",
+                "text": "r_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and r_c doesn't come back to camp. Their body is found along the border, and o_c_n boasts about it at the next Gathering.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -1215,7 +1215,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c loses a life in a vicious fight. o_c_n boasts about it at the next Gathering.",
+                "text": "r_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and r_c loses a life in a vicious fight. o_c_n boasts about it at the next Gathering.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -1371,7 +1371,7 @@
                 ]
             },
             {
-                "text": "s_c makes a careful judgment, and the patrol keeps going. They stick to solid ground, sometimes routing themselves through the trees as the rain begins to pour around them.",
+                "text": "s_c makes a careful judgement, and the patrol keeps going. They stick to solid ground, sometimes routing themselves through the trees as the rain begins to pour around them.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"],
@@ -1464,7 +1464,7 @@
                 ]
             },
             {
-                "text": "s_c makes a careful judgment, and the patrol keeps going. They stick to solid ground, sometimes routing themselves through the trees as the rain begins to pour around them.",
+                "text": "s_c makes a careful judgement, and the patrol keeps going. They stick to solid ground, sometimes routing themselves through the trees as the rain begins to pour around them.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"],
@@ -1539,7 +1539,7 @@
                 "weight": 5
             },
             {
-                "text": "s_c makes a careful judgment, and keeps going. They stick to solid ground, sometimes routing themselves through the trees as the rain begins to pour around them.",
+                "text": "s_c makes a careful judgement, and keeps going. They stick to solid ground, sometimes routing themselves through the trees as the rain begins to pour around them.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"]
@@ -1587,7 +1587,7 @@
                 "weight": 5
             },
             {
-                "text": "s_c makes a careful judgment, and keeps going. They stick to solid ground, sometimes routing themselves through the trees as the rain begins to pour around them.",
+                "text": "s_c makes a careful judgement, and keeps going. They stick to solid ground, sometimes routing themselves through the trees as the rain begins to pour around them.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"]

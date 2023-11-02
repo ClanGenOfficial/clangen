@@ -56,7 +56,7 @@
         "season": ["greenleaf"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "pln_hunt_twolegsobject1",
         "min_cats": 1,
         "max_cats": 6,
         "min_max_status": {},
