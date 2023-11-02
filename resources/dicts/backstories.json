@@ -14,7 +14,7 @@
 
         "kittypet1": "This cat joined the Clan by choice after living life with Twolegs as a kittypet.",
         "kittypet2": "This cat used to live on something called a 'boat' with Twolegs, but decided to join the Clan.",
-        "kittypet3": "This cat used be a kittypet. {PRONOUN/m_c/subject/CAP} got lost after wandering away, and when {PRONOUN/m_c/subject} returned home, {PRONOUN/m_c/subject} found {PRONOUN/m_c/poss} Twolegs were gone. {PRONOUN/m_c/subject/CAP} eventually found {PRONOUN/m_c/poss} way to the Clan.",
+        "kittypet3": "This cat used to be a kittypet. {PRONOUN/m_c/subject/CAP} got lost after wandering away, and when {PRONOUN/m_c/subject} returned home, {PRONOUN/m_c/subject} found {PRONOUN/m_c/poss} Twolegs were gone. {PRONOUN/m_c/subject/CAP} eventually found {PRONOUN/m_c/poss} way to the Clan.",
         "kittypet4": "This cat used to be a kittypet. One day, {PRONOUN/m_c/subject} got sick, and {PRONOUN/m_c/poss} Twolegs brought {PRONOUN/m_c/object} into the belly of a monster. The Twolegs then left {PRONOUN/m_c/object} to fend for {PRONOUN/m_c/self}.",
 
         "rogue1": "This cat joined the Clan by choice after living life as a rogue.",

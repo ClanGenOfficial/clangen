@@ -324,7 +324,7 @@ class StarClanScreen(Screens):
             for cat in self.chunks(self.current_listed_cats, 20)[self.list_page - 1]:
                 #update_sprite(cat)
                 
-                if game.clan.clan_settings["show_fav"] and cat.favourite:
+                if game.clan.clan_settings["show fav"] and cat.favourite:
                     
                     _temp = pygame.transform.scale(
                             pygame.image.load(

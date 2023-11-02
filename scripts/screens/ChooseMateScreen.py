@@ -815,7 +815,7 @@ class ChooseMateScreen(Screens):
                                                                    )
         
         
-        if not game.settings["same sex birth"] and self.the_cat.gender == self.selected_cat.gender:
+        if not game.clan.clan_settings["same sex birth"] and self.the_cat.gender == self.selected_cat.gender:
             self.selected_cat_elements["no kit warning"] = pygame_gui.elements.UITextBox(
                 f"<font pixel_size={int(22 / 1400 * screen_y)}> This pair can't have biological kittens </font>", 
                 scale(pygame.Rect((550, 250), (498, 50))),
@@ -956,7 +956,7 @@ class ChooseMateScreen(Screens):
         # Due to a bug in pygame, any image with buttons over it must be blited
         screen.blit(self.list_frame, (150 / 1600 * screen_x, 782 / 1400 * screen_y))
         
-        self.loading_screen_on_use(self.work_thread, self.update_both)
+        self.loading_screen_on_use(self.work_thread, self.update_both, (700, 600))
 
     def get_valid_mates(self):
         """Get a list of valid mates for the current cat"""
@@ -965,12 +965,12 @@ class ChooseMateScreen(Screens):
         valid_mates = [i for i in Cat.all_cats_list if
                        not i.faded
                        and self.the_cat.is_potential_mate(
-                           i, for_love_interest=False, 
-                           age_restriction=False) 
+                           i, for_love_interest=False,
+                           age_restriction=False, ignore_no_mates=True)
                        and i.ID not in self.the_cat.mate
                        and (not self.single_only or not i.mate)
                        and (not self.have_kits_only 
-                            or game.settings["same sex birth"]
+                            or game.clan.clan_settings["same sex birth"]
                             or i.gender != self.the_cat.gender)]
         
         return valid_mates

@@ -1,1 +1,42 @@
-[]
+[
+{
+    "patrol_id": "forest_bord_candy",
+    "biome": ["forest"],
+    "season": ["leaf-fall"],
+    "types": ["border"],
+    "tags": ["halloween"],
+    "patrol_art": "tryingcandy_INTRO",
+    "min_cats": 2,
+    "max_cats": 6,
+    "min_max_status": {},
+    "weight": 20,
+    "intro_text": "The patrol is on edge after scenting Twolegs in the area. p_l is taking point, cautiously keeping watch for any Twolegs that may be on the hunt for cats. Their scent is everywhere, even as the cats carefully remark the area. What's that smell? It's almost like pumpkin, but strange...",
+    "decline_text": "p_l knows better than to mess with anything that smells like Twolegs. {PRONOUN/p_l/subject/CAP} carefully {VERB/p_l/skirt/skirts} the area.",
+    "chance_of_success": 40,
+    "success_outcomes": [
+        {
+            "text": "p_l follows the scent and nearly treads on the sticky thing in the grass. Definitely a weird Twoleg thing. {PRONOUN/p_l/subject/CAP} carefully {VERB/p_l/walk/walks} around it, unwilling to get the sticky stuff in {PRONOUN/p_l/poss} fur.",
+            "exp": 5,
+            "weight": 20
+        },
+        {
+            "text": "p_l finds the sticky thing in the grass and looks at it curiously. s_c suddenly appears beside {PRONOUN/p_l/object} and, before p_l can tell {PRONOUN/s_c/object} to be careful, s_c bends down and takes a lick. This proves to be a bad idea. s_c wrinkles {PRONOUN/s_c/poss} nose and gags, trying to spit the disgusting taste out of {PRONOUN/s_c/poss} mouth.",
+            "exp": 10,
+            "weight": 20,
+            "stat_trait": [
+                "childish", 
+                "adventurous", 
+                "bold", 
+                "shameless"
+            ],
+            "can_have_stat": ["r_c"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "As p_l creeps closer to get a better look, a sudden crashing and loud chattering fills the air. p_l freezes as a pack of Twolegs stumbles through the trees. The cats quickly scatter, leaving behind whatever that weird thing was in the grass.",
+            "exp": 0,
+            "weight": 20
+        }
+    ]
+}]

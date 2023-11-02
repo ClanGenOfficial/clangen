@@ -123,5 +123,29 @@
 		"reaction_random_cat": {
 			"dislike": "increase"
 		}
+	},
+	{
+		"id": "platonic_de_high_grumpymedcat1",
+		"intensity": "high",
+		"interactions": [
+			"m_c snarls at r_c for coming too close to the herbs.",
+			"m_c shoos r_c away, not having time for curious little kits.",
+			"m_c tells r_c if {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} stay away from the medicine den {PRONOUN/m_c/subject} will feed them nasty tasting herbs!"
+		],
+		"main_status_constraint": [
+			"medicine cat",
+			"medicine cat apprentice"
+		],
+		"main_trait_constraint": [
+			"cold",
+			"grumpy",
+			"fierce"
+		],
+		"random_status_constraint": [
+			"kitten"
+		],
+		"reaction_random_cat": {
+			"platonic": "decrease"
+		}
 	}
 ]

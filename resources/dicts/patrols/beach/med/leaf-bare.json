@@ -1473,9 +1473,15 @@
                 ]
             },
             {
-                "text": "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
+                "text": "Not only does p_l end up soaked to the skin, {PRONOUN/p_l/subject} can't even find any daisies under the snow, and {PRONOUN/p_l/subject}'re left shivering violently by the time {PRONOUN/p_l/subject} {VERB/p_l/return/returns} to camp.",
                 "exp": 0,
                 "weight": 20,
+                "injury": [
+                    {
+                        "cats": ["multi"],
+                        "injuries": ["shivering"]
+                    }
+                ],
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -1494,39 +1500,14 @@
                 ]
             },
             {
-                "text": "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
-                "exp": 0,
-                "weight": 10,
-                "dead_cats": ["r_c"],
-                "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
-                },
-                "relationships": [
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": -10
-                    },
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 10
-                    }
-                ]
-            },
-            {
-                "text": "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
+                "text": "Not only does p_l end up soaked to the skin, {PRONOUN/p_l/subject} can't even find any daisies under the snow, and {PRONOUN/p_l/subject}'re left shivering violently by the time {PRONOUN/p_l/subject} {VERB/p_l/return/returns} to camp.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["p_l"],
                         "injuries": ["cold_injury"],
-                        "scars": ["FROSTTAIL"]
+                        "scars": ["FROSTTAIL", "FROSTFACE"]
                     }
                 ],
                 "history_text": {
