@@ -71,7 +71,7 @@ jobs:
       - name: Upload artifact to API
         if: ${{ env.update_api_push_token != '' }}
         run: |
-          gpg --output ClanGen_Linux64_glibc2.31+.tar.xz.sig --detach-sig -a ClanGen_Linux64_glibc2.31+.tar.xz
+          gpg --output Clangen_Linux64_glibc2.31+.tar.xz.sig --detach-sig -a Clangen_Linux64_glibc2.31+.tar.xz
           curl -X 'POST' \
             'https://clangen.io/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Appoint' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
