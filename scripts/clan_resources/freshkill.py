@@ -192,9 +192,8 @@ class Freshkill_Pile():
             needed_prey : int|float
                 the amount of prey the Clan needs
         """
-        living_cats = [i for i in Cat.all_cats.values() if not (i.dead or i.outside or i.exiled)]
-        if len(living_cats) > 0 and self.needed_prey == 0:
-            self._update_needed_food(living_cats)
+        living_cats = [cat for cat in Cat.all_cats.values() if not (cat.dead or cat.outside or cat.exiled)]
+        self._update_needed_food(living_cats)
         return self.needed_prey
 
     def clan_has_enough_food(self) -> bool:
