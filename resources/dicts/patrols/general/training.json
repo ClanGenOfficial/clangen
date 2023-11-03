@@ -114,7 +114,7 @@
             "apprentice": [1, 6]
         },
         "weight": 20,
-        "intro_text": "While helping gathering herbs, r_c stumbles upon a bush of red berries.",
+        "intro_text": "While helping gathering herbs, app1 stumbles upon a bush of red berries.",
         "decline_text": "r_c decides not to touch the berries.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -137,10 +137,10 @@
                 "weight": 20
             },
             {
-                "text": "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasant taste, and swallows a few. {PRONOUN/r_c/subject/CAP} {VERB/r_c/collapse/collapses} on the way back to camp, and there's nothing any cat can do for {PRONOUN/r_c/object}, having not identified deathberries before eating them.",
+                "text": "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasant taste, and swallows a few. {PRONOUN/app1/subject/CAP} {VERB/app1/collapse/collapses} on the way back to camp, and there's nothing any cat can do for {PRONOUN/app1/object}, having not identified deathberries before eating them.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": ["app1"],
                 "history_text": {
                     "reg_death": "m_c mistook deathberries for something edible.",
                     "lead_death": "after eating deathberries"
@@ -351,6 +351,54 @@
                         "amount": 5
                     }
                 ]
+            },
+            {
+                "text": "s_c can see that no one wants to get up again for training, not with the peace lingering around the patrol. Instead, {PRONOUN/s_c/subject} {VERB/s_c/tuck/tucks} {PRONOUN/s_c/self} into a loaf and begins talking. Everyone can bask <i>and</i> learn from the past.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": [
+                    "LORE,2"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "With the patrol ranged around {PRONOUN/s_c/subject} in a loose circle, s_c teases that maybe they don't want to tell a story! But no, no, they're happy to entertain and teach their Clanmates - has anyone heard of story_list?",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": [
+                    "STORY,2"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 10
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -365,6 +413,20 @@
                         "mutual": false,
                         "values": ["platonic"],
                         "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "No one means to, but... well... p_l is the first to wake up from the group nap. It's not exactly productive for training, though it's difficult to regret warm pelts and sleep-slow blinking eyes.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": 5
                     }
                 ]
             }
@@ -680,7 +742,7 @@
             "apprentice": [1, 6],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "The pair find a nice spot to sun themselves.",
         "decline_text": "They decide to stay focused instead.",
         "chance_of_success": 60,
@@ -2313,11 +2375,13 @@
         "patrol_art": "train_general_intro",
         "min_cats": 3,
         "max_cats": 6,
-        "min_max_status": {},
+        "min_max_status": {
+            "all apprentices":[-1, -1]
+        },
         "weight": 20,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice teamwork.",
         "decline_text": "They decide to focus on working on a different skill instead.",
-        "chance_of_success": 20,
+        "chance_of_success": 25,
         "success_outcomes": [
             {
                 "text": "Everyone has a nice practice session and their coordination and trust in their Clanmates grows stronger.",
@@ -2330,6 +2394,48 @@
                         "mutual": false,
                         "values": ["platonic", "trust"],
                         "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Maybe the exercises they practise aren't revolutionary or new to any cat, but also, maybe that doesn't matter! Sometimes it's just nice to be reminded of the shared knowledge and competence of your fellow warriors.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "trust"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "It's always nice to get to stretch their legs and catch up with Clanmates.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
                     }
                 ]
             },
@@ -2345,6 +2451,158 @@
                         "mutual": false,
                         "values": ["platonic", "trust"],
                         "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "p_l puts s_c in charge of calling out the instructions for the imaginary camp-defense they're all practising, and somehow s_c manages to not only do a wonderful job, but invent a couple surprises in the training senario that have the cats cursing in surprise at the time and purring in appreciation afterwards.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "s_c spots p_l and r_c - both of them in the middle of exchanging meows that might as well be barks to the other, and halfway to an argument - and slips between them, explaining to both what the other intends.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["MEDIATOR,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "s_c suggests they form two teams to fight each other - claws shealthed, of course. p_l takes {PRONOUN/s_c/subject} up on the good idea!",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLEVER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "Quietly, s_c takes p_l aside and suggests how best to group cats who don't normally work together. It's a valuable perspective to consider, and one p_l takes into consideration for the team exercises.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["INSIGHTFUL,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "Just as they're starting, p_l puts a paw wrong and goes down, hard. s_c rushes in and checks {PRONOUN/p_l/subject} over, firmly instructing p_l to stay on the sidelines for the rest of training, where p_l sits and avoids further injury, yowling encouragement and intructions to {PRONOUN/p_l/poss} Clanmates.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["HEALER,1"],
+                "injury": [
+                    {
+                        "cats": ["p_l"],
+                        "injuries": ["sprain"],
+                        "scars": []
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 10
                     }
                 ]
             }
@@ -2354,6 +2612,48 @@
                 "text": "Unfortunately, no one steps up to teach. It's a little awkward, but the patrol disbands to attend to other duties.",
                 "exp": 0,
                 "weight": 20
+            },
+            {
+                "text": "Well, p_l decides. At least {PRONOUN/p_l/subject} now {VERB/p_l/know/knows} how much c_n needs to work on their coorperation? StarClan, that was a terrible performance.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "Everything seems to be going well - then r_c trips over {PRONOUN/r_c/poss} paws and introduces {PRONOUN/r_c/poss} muzzle to the ground at speed. Maybe they all need to go back to basics.",
+                "exp": 0,
+                "weight": 20,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["bruises", "scrapes"],
+                        "scars": []
+                    }
+                ]
+            },
+            {
+                "text": "s_c immediately tries to take over, ordering the other cats around. It's not well received, and p_l has to bring a surly looking{PRONOUN/s_c/object} back in line and end the training session early.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "arrogant",
+                    "ambitious"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": ["jealousy"],
+                        "amount": 15
+                    }
+                ]
             }
         ]
     },
@@ -2385,6 +2685,206 @@
                         "mutual": false,
                         "values": ["platonic", "trust"],
                         "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "It's really nice to just get out of camp and train, to have the space to focus and a good training partner to work on things with.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c screws up a move and mutters about mouse-dung, but r_c helps {PRONOUN/s_c/subject} back onto {PRONOUN/s_c/poss} paws with an easy smile.",
+                "exp": 20,
+                "weight": 40,
+                "stat_trait": [
+                    "grumpy"
+                ],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "platonic"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c isn't a confident cat - but that's why training with r_c is so nice, there's no pressure.",
+                "exp": 20,
+                "weight": 40,
+                "stat_trait": [
+                    "nervous",
+                    "insecure"
+                ],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "platonic"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "They don't need to be so serious about it! s_c baps r_c, claws sheathed, and runs off cackling to avoid getting tagged back.",
+                "exp": 20,
+                "weight": 40,
+                "stat_trait": [
+                    "playful",
+                    "childish"
+                ],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "platonic"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "And by 'teamwork', s_c means 'working together to find the ideal place to nap the afternoon away', who wants to do work when instead they can just cover for each other and find a glorious spot to waste time?",
+                "exp": 20,
+                "weight": 40,
+                "stat_trait": [
+                    "shameless",
+                    "rebellious",
+                    "troublesome"
+                ],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "platonic"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "As they train, s_c compliments r_c on the height of {PRONOUN/r_c/poss} jumps - s_c can really see where r_c has been putting in effort to improve.",
+                "exp": 20,
+                "weight": 40,
+                "stat_trait": [
+                    "sincere"
+                ],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "platonic"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c manages to reign in {PRONOUN/s_c/poss} competitiveness for the teamwork exercises. Afterwards r_c indulges {PRONOUN/s_c/object} with a race. Which s_c wins of course {PRONOUN/s_c/subject} {VERB/s_c/win/wins} yes brilliant amazing yeah!",
+                "exp": 20,
+                "weight": 40,
+                "stat_trait": [
+                    "competitive"
+                ],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Sometimes s_c feels alone, even in a crowd of other cats, but not here and now, not with r_c.",
+                "exp": 20,
+                "weight": 40,
+                "stat_trait": [
+                    "lonesome"
+                ],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "platonic"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
                     }
                 ]
             },
@@ -2409,6 +2909,23 @@
                 "text": "Unfortunately, neither cat steps up to teach. It's a little awkward, but they wander back to camp to attend to other duties.",
                 "exp": 0,
                 "weight": 20
+            },
+            {
+                "text": "Well, p_l decides. At least {PRONOUN/p_l/subject} now {VERB/p_l/know/knows} how much c_n needs to work on their coorperation? StarClan, that was a terrible performance.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "Everything seems to be going well - then r_c trips over {PRONOUN/r_c/poss} paws and introduces {PRONOUN/r_c/poss} muzzle to the ground at speed. Maybe they all need to go back to basics.",
+                "exp": 0,
+                "weight": 20,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["bruises", "scrapes"],
+                        "scars": []
+                    }
+                ]
             }
         ]
     },
@@ -2423,15 +2940,71 @@
         "max_cats": 6,
         "min_max_status": {
             "apprentice": [1, 6],
-            "all apprentices": [1, 1]
+            "normal adult": [1, 6]
         },
         "weight": 20,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice teamwork, particularly with app1.",
         "decline_text": "They decide to focus on working on a different skill instead.",
-        "chance_of_success": 60,
+        "chance_of_success": 40,
         "success_outcomes": [
             {
                 "text": "Everyone has a nice practice session and their coordination with their Clanmates grows stronger. app1 really gets into it, and is praised for {PRONOUN/app1/poss} focus and enthusiasm.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "trust"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "p_l leads the group in a mock-battle exercise, deliberately giving app1 a starring role that has {PRONOUN/app1/object} vibrating with excitement and pride.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Sometimes, the best thing of all is to just help an apprentice get the chance to feel equal to the warriors {PRONOUN/app1/subject}{VERB/app1/'re/'s} trying to become. p_l treats app1 exactly like everyone else, and watches {PRONOUN/app1/poss} confidence grow and eyes light up as the cats work together.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "It's good the see the progress app1 is making with {PRONOUN/app1/poss} training, and p_l makes sure to tell {PRONOUN/app1/object} so as the patrol work on their ambushing strategies.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -2457,6 +3030,13 @@
                         "mutual": false,
                         "values": ["platonic", "trust"],
                         "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
                     }
                 ]
             }
@@ -2466,6 +3046,75 @@
                 "text": "Unfortunately, no one steps up to teach. It's a little awkward, but the patrol disbands to attend to other duties.",
                 "exp": 0,
                 "weight": 20
+            },
+            {
+                "text": "Well, p_l decides. At least {PRONOUN/p_l/subject} now {VERB/p_l/know/knows} how much c_n needs to work on their coorperation? StarClan, that was a terrible performance.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "app1 does a terrible job, but p_l isn't willing to call {PRONOUN/app1/object} out on it. It's the wrong move for a patrol leader to make, and no cat learns anything from the experience.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "app1 screws up the teamwork exercise, making a decision that betrays {PRONOUN/app1/poss} lack of experience, and while p_l smoothes everything over between everyone, the exercise is concluded early.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "app1 doesn't enjoy being singled out for attention, and doesn't engage with the learning opportunity. Nothing goes drastically wrong, but p_l doubts anyone learnt anything from this afternoon.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "Everything seems to be going well - then r_c trips over {PRONOUN/r_c/poss} paws and introduces {PRONOUN/r_c/poss} muzzle to the ground at speed. Maybe they all need to go back to basics.",
+                "exp": 0,
+                "weight": 20,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["bruises", "scrapes"],
+                        "scars": []
+                    }
+                ]
+            },
+            {
+                "text": "app1, trying to show off, is too busy checking to see if p_l is watching to check where {PRONOUN/app1/poss} own paws are, and falls over with a comical thump and cloud of dust.",
+                "exp": 0,
+                "weight": 20,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["bruises", "scrapes"],
+                        "scars": []
+                    }
+                ]
+            },
+            {
+                "text": "s_c immediately tries to take over, ordering the other cats around. It's not well received, and p_l has to bring a surly looking{PRONOUN/s_c/object} back in line and end the training session early.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "arrogant",
+                    "ambitious"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": ["jealousy"],
+                        "amount": 15
+                    }
+                ]
             }
         ]
     },
@@ -2502,6 +3151,90 @@
                 ]
             },
             {
+                "text": "Sometimes, the best thing of all is to just help an apprentice get the chance to feel equal to the warrior {PRONOUN/app1/subject}{VERB/app1/'re/'s} trying to become. p_l treats app1 exactly like everyone else, and watches {PRONOUN/app1/poss} confidence grow and eyes light up as the cats work together.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "It's good the see the progress app1 is making with {PRONOUN/app1/poss} training, and p_l makes sure to tell {PRONOUN/app1/object} so as they work on their ambushing strategies.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "trust"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "s_c actually has a suggestion, one {PRONOUN/s_c/subject} {VERB/s_c/bring/brings} up to p_l respectfully. It's a good idea too, and p_l makes sure to paise {PRONOUN/s_c/object} as they switch to s_c's training idea.",
+                "exp": 20,
+                "weight": 40,
+                "stat_trait": [
+                    "thoughtful",
+                    "careful",
+                    "wise"
+                ],
+                "can_have_stat": ["app1"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c wants to challenge {PRONOUN/s_c/self}, {PRONOUN/s_c/subject} {VERB/s_c/announce/announces} confidently. {PRONOUN/s_c/subject/CAP} {VERB/s_c/play-bow/play-bows} in front of p_l, tail lashing as {PRONOUN/s_c/subject} {VERB/s_c/dare/dares} p_l to make it diificult, and p_l purrs with amused approval, deciding on a tricky set of exercises.",
+                "exp": 20,
+                "weight": 40,
+                "stat_trait": [
+                    "competitive",
+                    "confident",
+                    "daring",
+                    "bold",
+                    "adventurous"
+                ],
+                "can_have_stat": ["app1"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "respect"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
                 "text": "s_c takes charge and coordinates exercises for the duo. They practice mirroring each other, until by the end of the afternoon they can almost act as one cat. The warrior praises how quickly app1 picks it up, and the apprentice comes back to camp fluffed up with pride.",
                 "exp": 20,
                 "weight": 20,
@@ -2514,6 +3247,13 @@
                         "mutual": false,
                         "values": ["platonic", "trust"],
                         "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
                     }
                 ]
             }
@@ -2530,6 +3270,23 @@
                         "mutual": false,
                         "values": ["platonic", "trust"],
                         "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "app1 does a terrible job, but p_l isn't willing to call {PRONOUN/app1/object} out on it. It's the wrong move for a teacher to make, and no cat learns anything from the experience.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "app1, trying to show off, is too busy checking to see if p_l is watching to check where {PRONOUN/app1/poss} own paws are, and falls over with a comical thump and cloud of dust.",
+                "exp": 0,
+                "weight": 20,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["bruises", "scrapes"],
+                        "scars": []
                     }
                 ]
             }
@@ -2569,9 +3326,14 @@
                 ]
             },
             {
+                "text": "Sadly, app1 and app2 end up too absorbed in the training to enact their mischievous plot. Thought they do end up performing well in the teamwork exercise the patrol is working on!",
+                "exp": 30,
+                "weight": 10
+            },
+            {
                 "text": "This isn't what teamwork is supposed to be used for, p_l admonishes them, but neither apprentice can take them seriously while {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} upside down.",
                 "exp": 20,
-                "weight": 5,
+                "weight": 20,
                 "relationships": [
                     {
                         "cats_to": ["app1"],
@@ -2585,7 +3347,7 @@
             {
                 "text": "s_c notices the apprentices', err, enthusiasm, and gently redirects them. They end up having a marvelous afternoon, feeling mature and just as skilled as the warriors around them.",
                 "exp": 20,
-                "weight": 20,
+                "weight": 30,
                 "stat_skill": ["TEACHER,2"],
                 "can_have_stat": ["adult"],
                 "relationships": [
@@ -2595,6 +3357,13 @@
                         "mutual": true,
                         "values": ["romantic", "platonic"],
                         "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
                     }
                 ]
             }
@@ -2602,6 +3371,11 @@
         "fail_outcomes": [
             {
                 "text": "Unfortunately, p_l sees their whispers and separates the two apprentices, preventing their plot.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "Not only do the apprentices get too caught up in the training to enact their plans, training goes poorly anyway.",
                 "exp": 0,
                 "weight": 20
             }
@@ -2639,6 +3413,20 @@
                 ]
             },
             {
+                "text": "As they practise, conversation turns to prey, and which animal tastes best. p_l might completely disagree with r_c on {PRONOUN/r_c/poss} (frankly terrible) taste in prey, but both cats learn a lot from each other regardless.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
                 "text": "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing their stalking on each other, sharing tips about different terrain types, and discussing prey selection.",
                 "exp": 20,
                 "weight": 20,
@@ -2650,6 +3438,35 @@
                         "mutual": false,
                         "values": ["platonic", "trust"],
                         "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "As one of the undisputed best hunters in c_n, possibly in generations, s_c is definitely the cat to come to for hunting advice. {PRONOUN/s_c/subject/CAP} don't mind sharing either, talking about some of {PRONOUN/s_c/poss} more useful little tricks that any Clanmate could use to flesh out the fresh-kill pile.",
+                "exp": 40,
+                "weight": 40,
+                "stat_skill": ["HUNTER,3"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 15
                     }
                 ]
             }
@@ -2668,6 +3485,11 @@
                         "amount": -5
                     }
                 ]
+            },
+            {
+                "text": "Dutifully the cats practise their hunting, but no one has anything new to show anyone.",
+                "exp": 0,
+                "weight": 20
             }
         ]
     },
@@ -2680,7 +3502,9 @@
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 2,
-        "min_max_status": {},
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
         "weight": 20,
         "intro_text": "p_l suggests this might be a good chance to practice new hunting techniques with r_c.",
         "decline_text": "They decide to focus on working on a different skill instead.",
@@ -2689,7 +3513,7 @@
             {
                 "text": "Both cats have a nice practice session, swapping their best tips and tricks with each other.",
                 "exp": 20,
-                "weight": 20,
+                "weight": 10,
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -2701,10 +3525,9 @@
                 ]
             },
             {
-                "text": "s_c takes charge and coordinates exercises for the duo. They practice how to bring down prey together, their confidence in each other growing.",
+                "text": "p_l shows r_c a slightly different pouncing variant {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} fond of.",
                 "exp": 20,
-                "weight": 20,
-                "stat_skill": ["TEACHER,1", "HUNTER,1"],
+                "weight": 10,
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -2712,6 +3535,151 @@
                         "mutual": false,
                         "values": ["platonic", "trust"],
                         "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "r_c shows off a technique {PRONOUN/r_c/subject}{VERB/p_l/'ve/'s} been practising, but {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} quite pull it off. s_c reassures {PRONOUN/r_c/object} that {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} need to worry, practise will make perfect and s_c is sure {PRONOUN/r_c/subject}'ll meet {PRONOUN/r_c/poss} own admirably high standards soon enough.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "loyal",
+                    "faithful",
+                    "sincere"
+                ],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "platonic"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Check this out! s_c launches into a flashy, impressive backflip, landing smoothly and revelling in r_c approving laughter. Acrobatics might not be practical, but no one specified <i>practical</i> hunting techniques!",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "flamboyant",
+                    "shameless",
+                    "playful"
+                ],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "platonic"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "For s_c, {PRONOUN/s_c/subject} {VERB/s_c/explain/explains}, it's less about how {PRONOUN/s_c/subject} {VERB/s_c/kill/kills}  the prey, and more about <i>getting</i> to the prey. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} happy to share {PRONOUN/s_c/poss} interest in stalking with r_c, and it turns into a little game.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "cunning",
+                    "sneaky"
+                ],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "platonic"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c watches r_c demonstrate {PRONOUN/r_c/poss} favorite methods intently - of course {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} always after more techniques to add to {PRONOUN/s_c/poss} own repotoire, but it's also flattering for r_c to be taken so seriously.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "fierce",
+                    "bloodthirsty",
+                    "competitive"
+                ],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "platonic"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c takes charge and coordinates exercises for the duo. They practice how to bring down prey together, their confidence in each other growing.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["TEACHER,1", "HUNTER,1"],
+                "can_have_stat":["any"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "As one of the undisputed best hunters in c_n, possibly in generations, s_c is definitely the cat to come to for hunting advice. {PRONOUN/s_c/subject/CAP} don't mind sharing either, talking about some of {PRONOUN/s_c/poss} more useful little tricks that could be used to flesh out the fresh-kill pile.",
+                "exp": 40,
+                "weight": 40,
+                "stat_skill": ["HUNTER,3"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 15
                     }
                 ]
             }
@@ -2730,6 +3698,25 @@
                         "amount": -5
                     }
                 ]
+            },
+            {
+                "text": "p_l makes a stupid comment about r_c's favorite technique, and it sours the rest of the training session.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Dutifully the cats practise their hunting, but no one has anything new to show each other.",
+                "exp": 0,
+                "weight": 20
             }
         ]
     },
@@ -4335,7 +5322,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "r_c finds p_l out training in r_c's favourite spot - and not only does r_c have to share the spot, the pounce p_l is practising looks all wrong.",
         "decline_text": "Nope, nopidity nope, r_c isn't hanging around that idiot!",
         "chance_of_success": 60,
@@ -4390,7 +5377,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "p_l is working on {PRONOUN/p_l/poss} battle moves when r_c sticks {PRONOUN/r_c/poss} head around the corner. Perfect - not only will p_l get a training partner, but battering r_c (sheathed claws, <i>sheathed</i>, {PRONOUN/p_l/subject} {VERB/p_l/promise/promises}!) will be just a little more sasifying than putting a paw in any other Clanmate's face.",
         "decline_text": "A sudden rain shower puts a damper on any thoughts of battle training.",
         "chance_of_success": 60,
@@ -4452,7 +5439,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "p_l and r_c find themselves hanging out together. Without any other Clanmates. This is, uh, sure to go well. p_l tries to start up a conversation about prey types, that seems safe.",
         "decline_text": "You know what's safer? Not talking.",
         "chance_of_success": 60,
@@ -4493,7 +5480,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "p_l is an annoying furbag of a Clanmate, but there's no one else currently available to train with. Someone makes a <i>comment</i> about romantic sunset walks as the two cats head out of camp, and r_c leads the way, burning under {PRONOUN/r_c/poss} fur. Certainly not!",
         "decline_text": "Actually, nope, r_c is headed straight back to camp to find whoever said that and claw their ears off!",
         "chance_of_success": 60,
@@ -4548,7 +5535,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "p_l spots r_c padding out of camp and makes a beeline to follow {PRONOUN/r_c/object}. Because, you see, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} simply that dedicated to taking every opportunity to train, even with a tick like r_c.",
         "decline_text": "p_l gets waylaid by a Clanmate with an actual need for help, disrupting {PRONOUN/p_l/poss} cunning plans.",
         "chance_of_success": 60,
@@ -4610,7 +5597,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "Maybe it's a little immature to be so invested in an <s>argument</s> refined conversation about battle strategies.",
         "decline_text": "Yeah, time to take a breather from this conversation, p_l and r_c decide.",
         "chance_of_success": 60,
@@ -4675,7 +5662,7 @@
             "leader": [-1, -1],
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "p_l can't believe that r_c is <i>so Stars-damned annoying</i> that the leader of c_n sent them both out together to work out their problems. Like, what?",
         "decline_text": "Maybe this rivalry has gotten a little... excessive.",
         "chance_of_success": 60,
@@ -4726,7 +5713,7 @@
             "leader": [1, 6],
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "Out for training with r_c, p_l is reaching the limit of {PRONOUN/p_l/poss} patience.",
         "decline_text": "Time for training to end. Now.",
         "chance_of_success": 60,
@@ -4776,7 +5763,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "Everyone agrees that p_l and r_c get along like a forest fire, but surely they can hold it together for one afternoon's worth of training.",
         "decline_text": "...let's not try it.",
         "chance_of_success": 60,
@@ -4840,7 +5827,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "Everyone agrees that p_l and r_c get along like a forest fire, but surely they can hold it together for one afternoon's worth of training.",
         "decline_text": "...let's not try it.",
         "chance_of_success": 60,
@@ -4905,7 +5892,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "r_c, sick of hearing other cats gossip about how much p_l hates {PRONOUN/r_c/object}, pulls p_l aside to confront {PRONOUN/p_l/object}.",
         "decline_text": "r_c's nerves make {PRONOUN/r_c/object} think better of the idea.",
         "chance_of_success": 60,
@@ -4960,7 +5947,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 30,
         "intro_text": "r_c wants to push {PRONOUN/r_c/poss} limits in training today, to really improve on {PRONOUN/r_c/poss} stealth skills, p_l {PRONOUN/r_c/poss} (semi) willing victim. {PRONOUN/r_c/subject/CAP} swear that it's going to be the difference between prey on the fresh-kill pile and the Clan eating crowfood.",
         "decline_text": "r_c's nerves make {PRONOUN/r_c/object} think better of the idea.",
         "chance_of_success": 60,
@@ -5741,7 +6728,7 @@
         "pl_skill_constraint": ["STORY,1"],
         "success_outcomes": [
             {
-                "text": "The patrol quietens down immediately, p_l's reputation as a storyteller proceeding {PRONOUN/p_l/object}. Into the attentive silence, p_l spins the picture of a cat who slipped through time's claws to immortality, always young, forever strong. But {PRONOUN/p_l/subject} {VERB/p_l/whisper/whispers} of the costs; never learning, never growing, left behind by friends and family who lived and died. In the end, the cat became a hollow shell, unteathered by the world - for it's time's scarcity that gives life its value.",
+                "text": "p_l's reputation as a storyteller proceeds {PRONOUN/p_l/object}. Into the attentive silence, p_l spins the picture of a cat who slipped through time's claws to immortality, always young, forever strong. But {PRONOUN/p_l/subject} {VERB/p_l/whisper/whispers} of the costs; never learning, never growing, left behind by friends and family who lived and died. In the end, the cat became a hollow shell, untethered by the world - for it's time's scarcity that gives life its value.",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
@@ -5757,7 +6744,7 @@
             {
                 "text": "Once upon a time, there was a kittypet so stealthy - yes, a kittypet - that time itself didn't know they existed. When after many long years the cat should have been taken in their sleep, time forgot to. Instead, the cat just aged and aged and aged, their fur becoming thin and falling out until none was left, bald and hairless and wrinkled. It's said they're still out there, living with their Twolegs, and every so often you'll find a warrior who swears they've met them.",
                 "exp": 30,
-                "weight": 5,
+                "weight": 10,
                 "relationships": [
                     {
                         "cats_to": ["p_l", "patrol"],
