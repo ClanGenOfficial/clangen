@@ -5233,7 +5233,7 @@
             "apprentice": [1, 6],
             "all apprentices": [1, 1]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "p_l heads out for training with app1, and notes with concern that the apprentice is stiff and nervous following {PRONOUN/p_l/object}. Surely {PRONOUN/app1/poss} kittenhood can't be so far from app1's memory - how in the stars name could {PRONOUN/app1/subject} ever feel stressed on a simple training patrol with {PRONOUN/app1/poss} own parent?",
         "decline_text": "p_l calls off the patrol, instead going out in a bigger group of cats, hoping app1 will be more comfortable that way.",
         "chance_of_success": 60,
@@ -5419,7 +5419,7 @@
             "apprentice": [1, 6],
             "all apprentices": [1, 1]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "p_l heads out for training with app1, and notes with concern that the apprentice is stiff and nervous following {PRONOUN/p_l/object}. Surely {PRONOUN/app1/poss} kittenhood can't be so far from app1's memory - how in the stars name could {PRONOUN/app1/subject} ever feel stressed on a simple training patrol with {PRONOUN/app1/poss} own parent?",
         "decline_text": "p_l calls off the patrol, instead going out in a bigger group of cats, hoping app1 will be more comfortable that way.",
         "chance_of_success": 60,
@@ -5670,7 +5670,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l is the leader of the training group today - always a good choice for the role, skilled at explaining things, especially beneficial for apprentices. If {PRONOUN/p_l/subject} can get teenagers to listen, that is.",
+        "intro_text": "p_l is the leader of the training group today - always a good choice for the role, skilled at explaining things, especially beneficial for apprentices. If {PRONOUN/p_l/subject} can get them to listen, that is.",
         "decline_text": "But today isn't the day for this lesson.",
         "chance_of_success": 60,
         "pl_skill_constraint": ["TEACHER,1", "INSIGHTFUL,1"],
