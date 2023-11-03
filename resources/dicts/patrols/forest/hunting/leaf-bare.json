@@ -4056,7 +4056,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["medium_prey2"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 2,
@@ -4064,7 +4064,7 @@
             "apprentice": [1, 6],
             "all apprentices": [2, 2]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "The two siblings head out together, declaring a friendly competition to stock the fresh-kill pile. With the frosts making the forest wilt, it's more important than ever that c_n gets fed.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
@@ -4090,6 +4090,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["HUNTER,0"],
+                "prey": ["medium"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -4146,7 +4147,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["medium_prey2"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 2,
@@ -4154,7 +4155,7 @@
             "apprentice": [1, 6],
             "all apprentices": [2, 2]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "It's nice to get the chance to go out hunting with app2. app1 knows they're still in the apprentice den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery as littermates. Even the cold crunch of frost on the grass beneath their paws can't dampen their enthusiasm.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
@@ -4180,6 +4181,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["HUNTER,0"],
+                "prey": ["medium"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -4205,7 +4207,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["medium_prey2"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 2,
@@ -4213,7 +4215,7 @@
             "apprentice": [1, 6],
             "all apprentices": [2, 2]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "The clouds hog the sky, weakly trying to threaten snow the way they've done constantly the last few days. And just like the clouds, app1 and {PRONOUN/app1/poss} littermate are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
@@ -4239,6 +4241,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,0"],
+                "prey": ["medium"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -4264,7 +4267,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["medium_prey2"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 3,
         "max_cats": 3,
@@ -4272,7 +4275,7 @@
             "apprentice": [1, 6],
             "all apprentices": [3, 3]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "The three siblings head out together, declaring a friendly competition to stock the fresh-kill pile. With the frosts making the forest wilt, it's more important than ever that c_n gets fed.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
@@ -4298,6 +4301,7 @@
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["HUNTER,0"],
+                "prey": ["medium"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -4354,7 +4358,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["medium_prey2"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 3,
         "max_cats": 3,
@@ -4362,7 +4366,7 @@
             "apprentice": [1, 6],
             "all apprentices": [3, 3]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. Even the cold crunch of frost on the grass beneath their paws can't dampen their enthusiasm.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
@@ -4388,6 +4392,7 @@
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["HUNTER,0"],
+                "prey": ["medium"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -4413,7 +4418,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["medium_prey2"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 3,
         "max_cats": 3,
@@ -4421,7 +4426,7 @@
             "apprentice": [1, 6],
             "all apprentices": [3, 3]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "The clouds hog the sky, weakly trying to threaten snow the way they've done constantly the last few days. And just like the clouds, app1 and {PRONOUN/app1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
@@ -4447,6 +4452,7 @@
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,0"],
+                "prey": ["medium"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -4472,7 +4478,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["medium_prey2"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 4,
         "max_cats": 4,
@@ -4480,7 +4486,7 @@
             "apprentice": [1, 6],
             "all apprentices": [4, 4]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "The four siblings head out together, declaring a friendly competition to stock the fresh-kill pile. With the frosts making the forest wilt, it's more important than ever that c_n gets fed.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
@@ -4506,6 +4512,7 @@
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["HUNTER,0"],
+                "prey": ["medium"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -4562,7 +4569,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["medium_prey2"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 4,
         "max_cats": 4,
@@ -4570,7 +4577,7 @@
             "apprentice": [1, 6],
             "all apprentices": [4, 4]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. Even the cold crunch of frost on the grass beneath their paws can't dampen their enthusiasm.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
@@ -4596,6 +4603,7 @@
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["HUNTER,0"],
+                "prey": ["medium"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -4621,7 +4629,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["medium_prey2"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 4,
         "max_cats": 4,
@@ -4629,7 +4637,7 @@
             "apprentice": [1, 6],
             "all apprentices": [4, 4]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "The clouds hog the sky, weakly trying to threaten snow the way they've done constantly the last few days. And just like the clouds, app1 and {PRONOUN/app1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
@@ -4655,6 +4663,7 @@
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,0"],
+                "prey": ["medium"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -4680,7 +4689,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["medium_prey2"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 5,
         "max_cats": 5,
@@ -4688,7 +4697,7 @@
             "apprentice": [1, 6],
             "all apprentices": [5, 5]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "The five siblings head out together, declaring a friendly competition to stock the fresh-kill pile. With the frosts making the forest wilt, it's more important than ever that c_n gets fed.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
@@ -4714,6 +4723,7 @@
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["HUNTER,0"],
+                "prey": ["medium"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -4770,7 +4780,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["medium_prey2"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 5,
         "max_cats": 5,
@@ -4778,7 +4788,7 @@
             "apprentice": [1, 6],
             "all apprentices": [5, 5]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. Even the cold crunch of frost on the grass beneath their paws can't dampen their enthusiasm.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
@@ -4804,6 +4814,7 @@
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["HUNTER,0"],
+                "prey": ["medium"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -4829,7 +4840,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["medium_prey2"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 5,
         "max_cats": 5,
@@ -4837,7 +4848,7 @@
             "apprentice": [1, 6],
             "all apprentices": [5, 5]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "The clouds hog the sky, weakly trying to threaten snow the way they've done constantly the last few days. And just like the clouds, app1 and {PRONOUN/app1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
@@ -4863,6 +4874,7 @@
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,0"],
+                "prey": ["medium"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -4888,14 +4900,16 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["medium_prey2", "six_apprentices"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 6,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [1, 6]
+            "apprentice": [1, 6],
+            "all apprentices": [6, 6]
+
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "The six siblings head out together, declaring a friendly competition to stock the fresh-kill pile. With the frosts making the forest wilt, it's more important than ever that c_n gets fed.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
@@ -4921,6 +4935,7 @@
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["HUNTER,0"],
+                "prey": ["medium"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -4977,14 +4992,15 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["medium_prey2", "six_apprentices"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 6,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [1, 6]
+            "apprentice": [1, 6],
+            "all apprentices": [6, 6]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. Even the cold crunch of frost on the grass beneath their paws can't dampen their enthusiasm.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
@@ -5010,6 +5026,7 @@
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["HUNTER,0"],
+                "prey": ["medium"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -5035,14 +5052,15 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["medium_prey2", "six_apprentices"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 6,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [1, 6]
+            "apprentice": [1, 6],
+            "all apprentices": [6, 6]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "The clouds hog the sky, weakly trying to threaten snow the way they've done constantly the last few days. And just like the clouds, app1 and {PRONOUN/app1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
@@ -5068,6 +5086,7 @@
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,0"],
+                "prey": ["medium"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -5102,7 +5121,7 @@
             "all apprentices": [1, 1],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "app1 suppresses a yawn, trying not to make a weird expression in front of p_l as {PRONOUN/app1/subject} do. p_l suggested this as sibling bonding time, but did they <i>really</i> have to get up at dawn? Leaf-bare is already too cold, no one needs to make it worse with dawn patrols.",
         "decline_text": "Actually, {PRONOUN/app1/subject}'d really rather be back in their nest.",
         "chance_of_success": 30,
@@ -5164,7 +5183,7 @@
             "all apprentices": [1, 1],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "As they wander through the leaf-bare forest, the trees shorn of their green pelts, p_l awkwardly asks app1 how {PRONOUN/app1/subject} think {PRONOUN/app1/poss} training is going.",
         "decline_text": "app1 carefully talks around the subject, telling p_l nothing of importance.",
         "chance_of_success": 30,
@@ -5235,7 +5254,7 @@
             "all apprentices": [1, 1],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "app1 bounds out of camp, determined to show off to p_l!",
         "decline_text": "And both are immediately recalled - the camp needs new nesting materials, not more prey.",
         "chance_of_success": 30,
@@ -5306,7 +5325,7 @@
             "all apprentices": [1, 1],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "app1 suppresses a yawn, trying not to make a weird expression in front of p_l as {PRONOUN/app1/subject} do. p_l suggested this as sibling bonding time, but did they <i>really</i> have to get up at dawn? Leaf-bare is already too cold, no one needs to make it worse with dawn patrols.",
         "decline_text": "Actually, {PRONOUN/app1/subject}'d really rather be back in their nest.",
         "chance_of_success": 30,
@@ -5368,7 +5387,7 @@
             "all apprentices": [1, 1],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "app1 bounds out of camp, determined to show off to {PRONOUN/app1/poss} older siblings!",
         "decline_text": "And everyone is immediately recalled - the camp needs new nesting materials, not more prey.",
         "chance_of_success": 30,
@@ -5437,7 +5456,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "As the frosts compete with sludgey, half-melted snow for the title of Most Unpleasent Ground Surface, p_l is out on a hunting patrol with r_c.",
         "decline_text": "Actually, {PRONOUN/p_l/subject}'d rather try fishing for prey. {PRONOUN/p_l/subject/CAP} wave {PRONOUN/p_l/poss} sibling off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/settle/settles} down at the riverbank.",
         "chance_of_success": 50,
@@ -5511,7 +5530,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "Sometimes, it's just nice to hang out with {PRONOUN/r_c/poss} sibling. Especially when the weather has kept them in camp too often recently!",
         "decline_text": "But sometimes, you get called back to camp instead. Ah well, another time!",
         "chance_of_success": 50,
@@ -5566,7 +5585,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1"],
-                "prey": ["small"],
+                "prey": ["medium"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -5606,7 +5625,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "Sun's out, weakly shining, and r_c has been assigned a moderately tolerable hunting partner - {PRONOUN/r_c/poss} sibling!",
         "decline_text": "Cancel that - a border patrol needs backup.",
         "chance_of_success": 50,
@@ -5693,7 +5712,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "The hunting patrol heads out early, coats fluffed up against the cold.",
         "decline_text": "They encounter a dawn patrol on their way back to camp and join up with them instead.",
         "chance_of_success": 50,
@@ -5782,7 +5801,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "The siblings head out to one of the further hunting grounds of the forest, where mature trees protect their prey from the worse of leaf-bare.",
         "decline_text": "They decide to bask for a bit instead of making the long walk.",
         "chance_of_success": 50,
@@ -5853,7 +5872,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "As the frosts compete with sludgey, half-melted snow for the title of Most Unpleasent Ground Surface, p_l is out on a hunting patrol with their siblings.",
         "decline_text": "Actually, {PRONOUN/p_l/subject}'d rather try fishing for prey. {PRONOUN/p_l/subject/CAP} wave {PRONOUN/p_l/poss} siblings off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/settle/settles} down at the riverbank.",
         "chance_of_success": 50,
@@ -5927,7 +5946,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "Sometimes, it's just nice to hang out with {PRONOUN/r_c/poss} siblings. Especially when the weather has kept them in camp too often recently!",
         "decline_text": "But sometimes, you get called back to camp instead. Ah well, another time!",
         "chance_of_success": 50,
@@ -6022,7 +6041,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "Sun's out, weakly shining, and r_c has been assigned a moderately tolerable hunting patrol - {PRONOUN/r_c/poss} siblings!",
         "decline_text": "Cancel that - a border patrol needs backup.",
         "chance_of_success": 50,
@@ -6109,7 +6128,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "The hunting patrol heads out early, coats fluffed up against the cold.",
         "decline_text": "They encounter a dawn patrol on their way back to camp and join up with them instead.",
         "chance_of_success": 50,
@@ -6198,7 +6217,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "The siblings head out to one of the further hunting grounds of the forest, where mature trees protect their prey from the worse of leaf-bare.",
         "decline_text": "They decide to bask for a bit instead of making the long walk.",
         "chance_of_success": 50,
@@ -6270,7 +6289,7 @@
             "apprentice": [1, 6],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 40,
         "intro_text": "app1 has been acting weird all day, full of too quick answers and furtive glances. A parent usually knows, p_l having seen that look too often in app1's nursery days. So, when {PRONOUN/app1/subject} {VERB/app1/creep/creeps} out of camp and into the frosty chilled shadows of the forest at night, p_l is there waiting for {PRONOUN/app1/object}. app1 freezes, staring up with wide eyes.",
         "decline_text": "A stern glance and wide swish of {PRONOUN/p_l/poss} tail is all that's needed to turn app1's nighttime wanderings around and head {PRONOUN/app1/object} back to the apprentice's den. p_l will have a talk with {PRONOUN/app1/subject} in the morning - leaf-bare isn't the season to take risks like this.",
         "chance_of_success": 40,
