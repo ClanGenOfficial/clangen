@@ -671,9 +671,7 @@ jobs:
 
   confirm_release_ubuntu_22_04:
     runs-on: ubuntu-22.04
-    env:
-      update_api_push_token: ${{ secrets.UPDATE_API_DEPLOY_KEY }}
-    if: ${{ env.update_api_push_token != '' }}
+    if: ${{ vars.USE_UPDATE_API != '' }}
     needs:
       - build_ubuntu_20_04
       - build_ubuntu_22_04
