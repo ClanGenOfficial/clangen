@@ -5611,7 +5611,7 @@
         "pl_skill_constraint": ["TEACHER,1", "INSIGHTFUL,1", "KIT,1", "CAMP,1"],
         "success_outcomes": [
             {
-                "text": "When the topic is clawing the arse of an enemy warrior, anyone can get a young hothead's attention, but catching and holding it when the lesson is about gathering materials to reinforce camp? That takes real skill, though p_l doesn't get acknowledged for it often.",
+                "text": "When the topic is clawing the rump of an enemy warrior, anyone can get a young hothead's attention, but catching and holding it when the lesson is about gathering materials to reinforce camp? That takes real skill, though p_l doesn't get acknowledged for it often.",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
