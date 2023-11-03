@@ -367,6 +367,9 @@ class MakeClanScreen(Screens):
         elif event.ui_element == self.tabs["tab3"]:
             self.selected_camp_tab = 3
             self.refresh_selected_camp()
+        elif event.ui_element == self.tabs["tab4"]:
+            self.selected_camp_tab = 4
+            self.refresh_selected_camp()
         elif event.ui_element == self.tabs["newleaf_tab"]:
             self.selected_season = "Newleaf"
             self.refresh_text_and_buttons()
@@ -633,7 +636,7 @@ class MakeClanScreen(Screens):
                                               , manager=MANAGER)
             self.tabs["tab3"] = UIImageButton(scale(pygame.Rect((190, 500), (308, 60))), "", object_id="#grotto_tab"
                                               , manager=MANAGER)
-            self.tabs["tab4"] = UIImageButton(scale(pygame.Rect((190, 630), (308, 60))), "", object_id="#lakeside_tab"
+            self.tabs["tab4"] = UIImageButton(scale(pygame.Rect((170, 570), (308, 60))), "", object_id="#lakeside_tab"
                                               , manager=MANAGER)
         elif self.biome_selected == 'Mountainous':
             self.tabs["tab1"] = UIImageButton(scale(pygame.Rect((222, 360), (308, 60))), "", object_id="#cliff_tab"
@@ -1180,7 +1183,7 @@ class MakeClanScreen(Screens):
         game.cat_to_fade.clear()
         Cat.outside_cats.clear()
         Patrol.used_patrols.clear()
-        convert_camp = {1: 'camp1', 2: 'camp2', 3: 'camp3'}
+        convert_camp = {1: 'camp1', 2: 'camp2', 3: 'camp3', 4: 'camp4'}
         game.clan = Clan(self.clan_name,
                          self.leader,
                          self.deputy,
