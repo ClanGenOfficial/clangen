@@ -285,6 +285,334 @@
         ]
     },
     {
+        "patrol_id": "gen_train_soloreflect1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "While alone, {PRONOUN/r_c/subject} {VERB/r_c/think/thinks} about life. Is r_c really headed where {PRONOUN/r_c/subject} {VERB/r_c/want/wants} to go? Is r_c doing a good job of pursuing what's important to {PRONOUN/r_c/object}?",
+        "decline_text": "{PRONOUN/r_c/subject} {VERB/r_c/decide/decides} to stay focused on training instead.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/find/finds} peace within {PRONOUN/r_c/self} and {VERB/r_c/enjoy/enjoys} {PRONOUN/r_c/poss} solitude. r_c may not be flawless, but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} trying hard and {VERB/r_c/believe/believes} in the path {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} taking.",
+                "exp": 15,
+                "weight": 20
+            },
+            {
+                "text": "{PRONOUN/r_c/poss/CAP} thoughts are plagued with bad memories. r_c decides that means what {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing currently is clearly not working. {PRONOUN/r_c/subject/CAP} {VERB/r_c/spend/spends} {PRONOUN/r_c/poss} time coming up with new solutions, and {VERB/r_c/return/returns} to camp a little saddened, but also reinvigorated and ready to do better.",
+                "exp": 15,
+                "weight": 20
+            },
+            {
+                "text": "Blissfully avoiding any self-reflection, r_c decides {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing a fantastic job and it's worthless to ever consider otherwise.",
+                "stat_trait": [
+                    "oblivious",
+                    "confident"
+                ],
+                "exp": 15,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "{PRONOUN/r_c/poss/CAP} thoughts are plagued with bad memories, and {PRONOUN/r_c/subject} {VERB/r_c/end/ends} up spiraling, unable to reflect on anything constructively, driving {PRONOUN/r_c/self} to misery and despair.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "r_c just really isn't good at this 'self refection' thing.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_train_solonerv1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "r_c feels a little overwhelmed trying to train by {PRONOUN/r_c/self}.",
+        "decline_text": "Instead {PRONOUN/r_c/subject} {VERB/r_c/join/joins} up with an outgoing hunting patrol.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/take/takes} a moment to collect {PRONOUN/r_c/poss} thoughts, then {VERB/r_c/continue/continues} on successfully.",
+                "exp": 15,
+                "weight": 20
+            },
+            {
+                "text": "Independance is a skill that needs practise, just like everything else, and this is the work r_c needs to put in to get better, {PRONOUN/r_c/subject} {VERB/r_c/acknowledge/acknowledges}.",
+                "exp": 15,
+                "weight": 20
+            },
+            {
+                "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} let {PRONOUN/r_c/poss} nerves get to {PRONOUN/r_c/object}, and successfully go out to train on {PRONOUN/r_c/poss} own.",
+                "exp": 15,
+                "weight": 20,
+                "stat_trait": [
+                    "gloomy",
+                    "nervous",
+                    "insecure"
+                ]
+            },
+            {
+                "text": "No - this is exactly what {PRONOUN/s_c/subject} {VERB/s_c/need/needs} to work on. s_c acknowledges the feeling, letting it pass around {PRONOUN/s_c/object} like water flowing over a stone, not letting it pull {PRONOUN/s_c/object} in or consume {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} determined to be more independent.",
+                "stat_trait": [
+                    "gloomy",
+                    "nervous",
+                    "insecure"
+                ],
+                "exp": 15,
+                "weight": 20
+            },
+            {
+                "text": "With a shake of {PRONOUN/s_c/poss} pelt, {PRONOUN/s_c/subject} {VERB/s_c/knock/knocks} the feeling away. s_c isn't going to let a few nerves get in the way of a good solo training session.",
+                "stat_trait": [
+                    "confident",
+                    "strict",
+                    "fierce",
+                    "righteous",
+                    "cold"
+                ],
+                "exp": 15,
+                "weight": 20
+            },
+            {
+                "text": "No - this is exactly what {PRONOUN/s_c/subject} {VERB/s_c/need/needs} to work on. s_c acknowledges the feeling, letting it pass around {PRONOUN/r_c/object} like water flowing over a stone, not letting it pull {PRONOUN/s_c/object} in or consume {PRONOUN/s_c/subject}. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} determined to be more independent.",
+                "stat_skill": ["CLEVER,1"],
+                "exp": 15,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/force/forces} {PRONOUN/r_c/self} to go out, but {VERB/r_c/don't/doesn't} manage to accomplish anything.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "s_c tries to shake it off and force {PRONOUN/s_c/self} to go out anyway, but ignoring {PRONOUN/s_c/poss} unease doesn't help {PRONOUN/s_c/object} focus on training, and {PRONOUN/s_c/subject} {VERB/s_c/don't/doesn't} get anything done.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "bold",
+                    "daring",
+                    "arrogant",
+                    "troublesome"
+                ]
+            },
+            {
+                "text": "s_c tries to calm {PRONOUN/s_c/self} and center {PRONOUN/s_c/poss} emotions, but {PRONOUN/s_c/poss} nerves overwhelm {PRONOUN/s_c/object}, and {PRONOUN/s_c/subject} {VERB/s_c/don't/doesn't} get anything done with {PRONOUN/s_c/poss} solo training session.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "lonesome",
+                    "childish"
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_train_deputydoubt1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "deputy": [1, 1]
+        },
+        "weight": 20,
+        "intro_text": "While training, p_l admits that {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} think that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} a good deputy.",
+        "decline_text": "The rest of the patrol awkwardly ignores this statement.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "The patrol tells p_l that the Clan wouldn't be the same without {PRONOUN/p_l/object}, visibly relieving their deputy.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["trust", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "r_c reminds p_l of all the advice {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} given r_c that has made such a difference in {PRONOUN/r_c/poss} life. Every cat has their skills, and p_l is vital to the clan.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["trust", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c blinks at p_l compassionately - that sounds like a hard burden to bear alone. With an empathetic ear, {PRONOUN/s_c/subject} {VERB/s_c/listen/listens} to p_l's current struggles filling the deputy position, and by the end of their training patrol p_l feels a huge weight off {PRONOUN/p_l/poss} shoulders.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "altruistic",
+                    "compassionate",
+                    "empathetic",
+                    "faithful",
+                    "loving",
+                    "patient",
+                    "responsible",
+                    "thoughtful",
+                    "wise",
+                    "sincere",
+                    "loyal"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["trust", "comfort"],
+                        "amount": 10
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol secretly agrees with p_l. It's a very awkward training session.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust", "comfort", "respect"],
+                        "amount": -15
+                    }
+                ]
+            },
+            {
+                "text": "Well if that's how p_l feels, s_c suggests {PRONOUN/p_l/subject} give up the deputy position, and let another cat take over.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "grumpy"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust", "comfort", "respect"],
+                        "amount": -15
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": ["jealousy"],
+                        "amount": 15
+                    }
+                ]
+            },
+            {
+                "text": "Deputies shouldn't show weakness, s_c meows unsympathetically.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "cold"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust", "comfort", "respect"],
+                        "amount": -15
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": ["jealousy"],
+                        "amount": 15
+                    }
+                ]
+            },
+            {
+                "text": "Yes, s_c <i>has</i> always thought that {PRONOUN/s_c/subject}'d do a better job, {PRONOUN/s_c/subject} {VERB/s_c/comment/comments} smugly.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "arrogant"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust", "comfort", "respect"],
+                        "amount": -15
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": ["jealousy"],
+                        "amount": 15
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "patrol_id": "gen_train_sunny1",
         "biome": ["Any"],
         "season": ["Any"],
@@ -355,7 +683,7 @@
             {
                 "text": "s_c can see that no one wants to get up again for training, not with the peace lingering around the patrol. Instead, {PRONOUN/s_c/subject} {VERB/s_c/tuck/tucks} {PRONOUN/s_c/self} into a loaf and begins talking. Everyone can bask <i>and</i> learn from the past.",
                 "exp": 20,
-                "weight": 20,
+                "weight": 40,
                 "stat_skill": [
                     "LORE,2"
                 ],
@@ -379,7 +707,7 @@
             {
                 "text": "With the patrol ranged around {PRONOUN/s_c/subject} in a loose circle, s_c teases that maybe they don't want to tell a story! But no, no, they're happy to entertain and teach their Clanmates - has anyone heard of story_list?",
                 "exp": 20,
-                "weight": 20,
+                "weight": 40,
                 "stat_skill": [
                     "STORY,2"
                 ],
@@ -441,21 +769,38 @@
         "patrol_art": "gen_train_sunny",
         "min_cats": 1,
         "max_cats": 1,
-        "min_max_status": {},
+        "min_max_status": {
+            "all apprentices":[-1, -1]
+        },
         "weight": 20,
-        "intro_text": "r_c finds a nice spot to sun themselves.",
+        "intro_text": "r_c finds a nice spot to sun {PRONOUN/r_c/self}.",
         "decline_text": "{PRONOUN/r_c/subject} {VERB/r_c/decide/decides} to stay focused instead.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "The sunlight energizes r_c for a solo training session. They know just what to work on!",
-                "exp": 20,
+                "text": "The sunlight energizes r_c for a solo training session. {PRONOUN/r_c/subject/CAP} know just what to work on!",
+                "exp": 15,
+                "weight": 20
+            },
+            {
+                "text": "r_c ignores the dangerously tempting napping opportunity, trotting off to sharpen {PRONOUN/r_c/poss} claws.",
+                "exp": 15,
+                "weight": 20
+            },
+            {
+                "text": "Just the place to warm up! r_c stretches, claws digging into the ground as {PRONOUN/r_c/subject} {VERB/r_c/soak/soaks} up the warmth into {PRONOUN/r_c/poss} muscles.",
+                "exp": 15,
                 "weight": 20
             }
         ],
         "fail_outcomes": [
             {
-                "text": "r_c doesn't get much done, soaking up the heat. They did mean to do some training, but... it's so nice to stop for a bit.",
+                "text": "r_c doesn't get much done, soaking up the heat. {PRONOUN/r_c/subject/CAP} did mean to do some training, but... it's so nice to stop for a bit.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "Wait... weren't {PRONOUN/r_c/subject} supposed to be training?",
                 "exp": 0,
                 "weight": 20
             }
@@ -2140,7 +2485,66 @@
                     "confident",
                     "daring",
                     "playful",
-                    "righteous"
+                    "righteous",
+                    "arrogant",
+                    "oblivious"
+                ],
+                "can_have_stat": ["app"]
+            },
+            {
+                "text": "s_c freezes in indecision. But the moment of peace allows {PRONOUN/s_c/object} to collect {PRONOUN/s_c/poss} thoughts, and decide that the warrior code matters more to {PRONOUN/s_c/object} than a silly afternoon snack.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["small"],
+                "stat_trait": [
+                    "calm",
+                    "careful",
+                    "insecure",
+                    "lonesome",
+                    "loyal",
+                    "nervous",
+                    "sneaky",
+                    "strange",
+                    "sincere"
+                ],
+                "can_have_stat": ["app"]
+            },
+            {
+                "text": "It definitely doesn't count as a proper hunting patrol. But just to be safe, s_c chooses to eat {PRONOUN/s_c/poss} afternoon snack under cover.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful",
+                    "bossy",
+                    "bullying",
+                    "impulsive",
+                    "cunning",
+                    "grumpy"
+                ],
+                "can_have_stat": ["app"]
+            },
+            {
+                "text": "s_c ignores {PRONOUN/s_c/poss} rumbling belly, and dutifully brings the prey back to camp. {PRONOUN/s_c/poss/CAP} mentor congratulates {PRONOUN/s_c/object} on the catch, and {PRONOUN/s_c/subject} {VERB/s_c/get/gets} to share it with all {PRONOUN/s_c/poss} friends, feeling a warm glow in {PRONOUN/s_c/poss} heart at feeding {PRONOUN/s_c/poss} Clan.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["small"],
+                "stat_trait": [
+                    "altruistic",
+                    "compassionate",
+                    "empathetic",
+                    "faithful",
+                    "loving",
+                    "patient",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
                 ],
                 "can_have_stat": ["app"]
             }
@@ -2166,53 +2570,6 @@
                     "strange"
                 ],
                 "can_have_stat": ["app"]
-            }
-        ]
-    },
-    {
-        "patrol_id": "gen_train_sneakprey2",
-        "biome": ["Any"],
-        "season": ["Any"],
-        "types": ["training"],
-        "tags": ["disrespect", "distrust"],
-        "patrol_art": "gen_train_sneakprey",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {
-            "apprentice": [1, 6]
-        },
-        "weight": 20,
-        "intro_text": "app1 is tempted to eat the prey {PRONOUN/app1/subject} just caught. After all, {PRONOUN/app1/subject}{VERB/app1/'re/'s} only practicing hunting, right? So this is {PRONOUN/app1/inposs}, it doesn't count as a true hunting patrol?",
-        "decline_text": "app1 decides against breaking the warrior code, resisting the temptation.",
-        "chance_of_success": 60,
-        "success_outcomes": [
-            {
-                "text": "{PRONOUN/app1/subject/CAP} {VERB/app1/eat/eats} the prey without anyone noticing, and {VERB/app1/return/returns} to camp, thrilled with {PRONOUN/app1/poss} little transgression.",
-                "exp": 20,
-                "weight": 20
-            },
-            {
-                "text": "s_c freezes in indecision. But the moment of peace allows {PRONOUN/s_c/object} to collect {PRONOUN/s_c/poss} thoughts, and decide that the warrior code matters more to {PRONOUN/s_c/object} than a silly afternoon snack.",
-                "exp": 20,
-                "weight": 20,
-                "stat_trait": [
-                    "calm",
-                    "careful",
-                    "insecure",
-                    "lonesome",
-                    "loyal",
-                    "nervous",
-                    "sneaky",
-                    "strange"
-                ],
-                "can_have_stat": ["app"]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "app1 eats the prey, but later {PRONOUN/app1/subject} {VERB/app1/feel/feels} terrible about it, slinking around guilty and ashamed for the rest of the day..",
-                "exp": 0,
-                "weight": 20
             },
             {
                 "text": "Whatever, it's not a big deal, and s_c's hungry. But as {PRONOUN/s_c/subject} {VERB/s_c/eat/eats}, a passing warrior spots them, and begins an outraged lecture on the values of the warrior code.",
@@ -2229,56 +2586,6 @@
                     "righteous"
                 ],
                 "can_have_stat": ["app"]
-            }
-        ]
-    },
-    {
-        "patrol_id": "gen_train_sneakprey3",
-        "biome": ["Any"],
-        "season": ["Any"],
-        "types": ["training"],
-        "tags": ["disrespect", "distrust"],
-        "patrol_art": "gen_train_sneakprey",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {
-            "apprentice": [1, 6]
-        },
-        "weight": 20,
-        "intro_text": "app1 is tempted to eat the prey {PRONOUN/app1/subject} just caught. After all, {PRONOUN/app1/subject}{VERB/app1/'re/'s} only practicing hunting, right? So this is {PRONOUN/app1/inposs}, it doesn't count as a true hunting patrol?",
-        "decline_text": "app1 decides against breaking the warrior code, resisting the temptation.",
-        "chance_of_success": 60,
-        "success_outcomes": [
-            {
-                "text": "{PRONOUN/app1/subject/CAP} {VERB/app1/eat/eats} the prey without anyone noticing, and {VERB/app1/return/returns} to camp, thrilled with {PRONOUN/app1/poss} little transgression.",
-                "exp": 20,
-                "weight": 20
-            },
-            {
-                "text": "It definitely doesn't count as a proper hunting patrol. But just to be safe, s_c chooses to eat {PRONOUN/s_c/poss} afternoon snack under cover.",
-                "exp": 20,
-                "weight": 20,
-                "stat_trait": [
-                    "ambitious",
-                    "bloodthirsty",
-                    "cold",
-                    "fierce",
-                    "shameless",
-                    "strict",
-                    "troublesome",
-                    "vengeful",
-                    "bossy",
-                    "bullying",
-                    "impulsive"
-                ],
-                "can_have_stat": ["app"]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "app1 eats the prey, but later {PRONOUN/app1/subject} {VERB/app1/feel/feels} terrible about it, slinking around guilty and ashamed for the rest of the day.",
-                "exp": 0,
-                "weight": 20
             },
             {
                 "text": "s_c ignores {PRONOUN/s_c/poss} rumbling belly, and dutifully brings the prey back to camp, only for {PRONOUN/s_c/poss} mentor to tell {PRONOUN/s_c/object} to pick out a bite to eat before {PRONOUN/s_c/poss} stomach wakes every cat in camp. This would've all been much quicker if {PRONOUN/s_c/subject}'d eaten it when {PRONOUN/s_c/subject} first caught it.",
@@ -2296,54 +2603,6 @@
                     "wise"
                 ],
                 "can_have_stat": ["app"]
-            }
-        ]
-    },
-    {
-        "patrol_id": "gen_train_sneakprey4",
-        "biome": ["Any"],
-        "season": ["Any"],
-        "types": ["training"],
-        "tags": ["disrespect", "distrust"],
-        "patrol_art": "gen_train_sneakprey",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {
-            "apprentice": [1, 6]
-        },
-        "weight": 20,
-        "intro_text": "app1 is tempted to eat the prey {PRONOUN/app1/subject} just caught. After all, {PRONOUN/app1/subject}{VERB/app1/'re/'s} only practicing hunting, right? So this is {PRONOUN/app1/inposs}, it doesn't count as a true hunting patrol?",
-        "decline_text": "app1 decides against breaking the warrior code, resisting the temptation.",
-        "chance_of_success": 60,
-        "success_outcomes": [
-            {
-                "text": "{PRONOUN/app1/subject/CAP} {VERB/app1/eat/eats} the prey without anyone noticing, and {VERB/app1/return/returns} to camp, thrilled with {PRONOUN/app1/poss} little transgression.",
-                "exp": 20,
-                "weight": 20
-            },
-            {
-                "text": "s_c ignores {PRONOUN/s_c/poss} rumbling belly, and dutifully brings the prey back to camp. {PRONOUN/s_c/poss/CAP} mentor congratulates {PRONOUN/s_c/object} on the catch, and {PRONOUN/s_c/subject} {VERB/s_c/get/gets} to share it with all {PRONOUN/s_c/poss} friends, feeling a warm glow in {PRONOUN/s_c/poss} heart at feeding {PRONOUN/s_c/poss} Clan.",
-                "exp": 20,
-                "weight": 20,
-                "stat_trait": [
-                    "altruistic",
-                    "compassionate",
-                    "empathetic",
-                    "faithful",
-                    "loving",
-                    "patient",
-                    "responsible",
-                    "thoughtful",
-                    "wise"
-                ],
-                "can_have_stat": ["app"]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "app1 eats the prey, but later {PRONOUN/app1/subject} {VERB/app1/feel/feels} terrible about it, slinking around guilty and ashamed for the rest of the day.",
-                "exp": 0,
-                "weight": 20
             },
             {
                 "text": "It definitely doesn't count as a proper hunting patrol. But irritatingly the warrior that comes past and spots s_c eating doesn't seem to agree, and a surly s_c is brought back to camp for a lecture.",
