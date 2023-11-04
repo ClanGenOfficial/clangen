@@ -3473,6 +3473,7 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up on the fight.",
                 "exp": 0,
                 "weight": 10,
+                "stat_skill": ["FIGHTER,1"],
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -3640,6 +3641,7 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up on the fight.",
                 "exp": 0,
                 "weight": 10,
+                "stat_skill": ["FIGHTER,1"],
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -3784,6 +3786,7 @@
                 "text": "s_c is determined to win, but the red vixen is determined to live, and that makes all the difference. s_c ends up pinned in a defensible hiding spot, bleeding and terrified, until the vixen judges them no longer a threat and continues on her way.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": ["adventurous", "confident", "daring"],
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -3975,6 +3978,7 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up on the fight.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": ["adventurous", "confident", "daring"],
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -4142,6 +4146,7 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up on the fight.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": ["adventurous", "confident", "daring"],
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -4286,6 +4291,7 @@
                 "text": "s_c is determined to win, but the red vixen is determined to live, and that makes all the difference. s_c ends up pinned in a defensible hiding spot, bleeding and terrified, until the vixen judges them no longer a threat and continues on her way.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": ["adventurous", "confident", "daring"],
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -4477,6 +4483,7 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up on the fight.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": ["adventurous", "confident", "daring"],
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -4607,6 +4614,7 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up the fight.",
                 "exp": 0,
                 "weight": 20,
+                "stat_skill": ["FIGHTER,1"],
                 "relationships": [
                     {
                         "cats_to": ["r_c", "patrol", "r_c"],
@@ -4765,6 +4773,7 @@
                 "text": "s_c is determined to win, but the red vixen is determined to live, and that makes all the difference. s_c ends up pinned in a defensible hiding spot, bleeding and terrified, until the vixen judges them no longer a threat and continues on her way.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": ["adventurous", "bold", "daring", "confident"],
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -9479,6 +9488,7 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up on the fight.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": ["adventurous", "bold", "daring", "confident"],
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -9646,6 +9656,7 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up on the fight.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": ["adventurous", "bold", "daring", "confident"],
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -9790,6 +9801,7 @@
                 "text": "s_c is determined to win, but the red vixen is determined to live, and that makes all the difference. s_c ends up pinned in a defensible hiding spot, bleeding and terrified, until the vixen judges them no longer a threat and continues on her way.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": ["adventurous", "bold", "daring", "confident"],
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -9981,6 +9993,7 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up on the fight.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": ["adventurous", "bold", "daring", "confident"],
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -10148,6 +10161,7 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up on the fight.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": ["adventurous", "bold", "daring", "confident"],
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -10292,6 +10306,7 @@
                 "text": "s_c is determined to win, but the red vixen is determined to live, and that makes all the difference. s_c ends up pinned in a defensible hiding spot, bleeding and terrified, until the vixen judges them no longer a threat and continues on her way.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": ["adventurous", "bold", "daring", "confident"],
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -10483,6 +10498,7 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up on the fight.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": ["adventurous", "bold", "daring", "confident"],
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -10613,6 +10629,7 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up the fight.",
                 "exp": 0,
                 "weight": 20,
+                "stat_trait": ["adventurous", "bold", "daring", "confident"],
                 "relationships": [
                     {
                         "cats_to": ["r_c", "patrol", "r_c"],
@@ -10771,6 +10788,7 @@
                 "text": "s_c is determined to win, but the red vixen is determined to live, and that makes all the difference. s_c ends up pinned in a defensible hiding spot, bleeding and terrified, until the vixen judges them no longer a threat and continues on her way.",
                 "exp": 0,
                 "weight": 10,
+                "stat_trait": ["adventurous", "bold", "daring", "confident"],
                 "injury": [
                     {
                         "cats": ["r_c"],
