@@ -115,7 +115,7 @@
     "clearing": [700, 789],
     "apprentice den": [150, 960],
     "warrior den": [1280, 450],
-    "elder den": [675, 1150],
+    "elder den": [600, 1150],
     "leader place": [[[550, 350], "xy"], [[820, 290], "xy"],
                      [[570, 500], "xy"], [[700, 510], "xy"]],
     "medicine place": [[[150, 600], "xy"], [[130, 700], "xy"],
