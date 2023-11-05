@@ -943,7 +943,7 @@ class ChangelogPopup(UIWindow):
                     
                     # For some reason, multi-line links on pygame_gui's text boxes don't work very well. 
                     # So, to work around that, just add a little "link" at the end
-                    info[2] += f" <a href='https://github.com/Thlumyn/clangen/pull/{pr_number.group(1)}'>(link)</a>"
+                    info[2] += f" <a href='https://github.com/ClanGenOfficial/clangen/pull/{pr_number.group(1)}'>(link)</a>"
                 
                 # Format: DATE- \n PR Title (link)
                 file_cont += f"<b>{info[1]}</b>\n- {info[2]}\n"
