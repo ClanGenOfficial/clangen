@@ -147,7 +147,7 @@
                 }
             },
             {
-                "text": "Whatever. Identifying them is a medicine cat problem. app1 plucks the tasty berries, swallowing a few, and takes the rest back to camp where the medicine cat immediately starts work trying to save {PRONOUN/r_c/object} from deathberry poisoning.",
+                "text": "Whatever. Identifying them is a medicine cat problem. app1 plucks the tasty berries, swallowing a few, and takes the rest back to camp where the medicine cat immediately starts work trying to save {PRONOUN/app1/object} from deathberry poisoning.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -234,7 +234,7 @@
             "apprentice": [1, 6]
         },
         "weight": 20,
-        "intro_text": "While helping gathering herbs, r_c stumbles upon a bush of red berries.",
+        "intro_text": "While helping gathering herbs, app1 stumbles upon a bush of red berries.",
         "decline_text": "r_c decides not to touch the berries.",
         "chance_of_success": 20,
         "success_outcomes": [
@@ -257,17 +257,17 @@
                 "weight": 20
             },
             {
-                "text": "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasant taste, and swallow a few. {PRONOUN/r_c/subject/CAP} {VERB/r_c/collapse/collapses} on the way back to camp, and there's nothing any cat can do for {PRONOUN/r_c/object}, having not identified deathberries before eating them.",
+                "text": "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasant taste, and swallow a few. {PRONOUN/app1/subject/CAP} {VERB/app1/collapse/collapses} on the way back to camp, and there's nothing any cat can do for {PRONOUN/r_c/object}, having not identified deathberries before eating them.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": ["app1"],
                 "history_text": {
                     "reg_death": "m_c mistook deathberries for something edible.",
                     "lead_death": "after eating deathberries"
                 }
             },
             {
-                "text": "Whatever. Identifying them is a medicine cat problem. app1 plucks the tasty berries, swallowing a few, and takes the rest back to camp where the medicine cat immediately starts work trying to save {PRONOUN/r_c/object} from deathberry poisoning.",
+                "text": "Whatever. Identifying them is a medicine cat problem. app1 plucks the tasty berries, swallowing a few, and takes the rest back to camp where the medicine cat immediately starts work trying to save {PRONOUN/app1/object} from deathberry poisoning.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1227,7 +1227,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol has a disagreement and look to p_l to settle the dispute.",
+        "intro_text": "The patrol has a disagreement and looks to p_l to settle the dispute.",
         "decline_text": "Your patrol decides to head home.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -2091,7 +2091,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "p_l listens sympathetically, gently nodding as app1 pours out {PRONOUN/app1/poss} troubles, until the apprentice eventually runs out of words. {PRONOUN/app1/subject}{VERB/app1/'ve/'s} been dealing with a lot, apparently, and while p_l isn't too sure what to do, {PRONOUN/p_l/subject} can offer support, and time away from app1's troubles, and just that is already enough to make app1's ears stop drooping.",
+                "text": "p_l listens sympathetically, gently nodding as app1 pours out {PRONOUN/app1/poss} troubles, until the apprentice eventually runs out of words. {PRONOUN/app1/subject/CAP}{VERB/app1/'ve/'s} been dealing with a lot, apparently, and while p_l isn't too sure what to do, {PRONOUN/p_l/subject} can offer support, and time away from app1's troubles, and just that is already enough to make app1's ears stop drooping.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -3728,6 +3728,32 @@
                         "amount": 15
                     }
                 ]
+            },
+            {
+                "text": "s_c interprets the instructions as an invitation to practise that most primal and innate cat instinct, pouncing on {PRONOUN/s_c/poss} Clanmates' twitching tails with murrps of glee that spread contagiously through the patrol as the game catches on.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "childish",
+                    "playful"
+                ],
+                "can_have_stat": ["r_c"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "platonic"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -3989,8 +4015,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [1, 6],
-            "all apprentices": [1, 1],
+            "apprentice": [1, 5],
+            "all apprentices": [1, 5],
             "normal adult": [1, 6]
         },
         "weight": 20,
@@ -4025,6 +4051,29 @@
                         "mutual": false,
                         "values": ["platonic", "trust"],
                         "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "As one of the undisputed best hunters in c_n, possibly in generations, s_c is definitely the cat to come to for hunting advice. {PRONOUN/s_c/subject/CAP} don't mind sharing either, talking about some of {PRONOUN/s_c/poss} more useful little tricks that could be used to flesh out the fresh-kill pile.",
+                "exp": 40,
+                "weight": 40,
+                "stat_skill": ["HUNTER,3"],
+                "can_have_stat": ["adult"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 15
                     }
                 ]
             }

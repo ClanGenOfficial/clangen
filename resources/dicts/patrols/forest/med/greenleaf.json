@@ -61,7 +61,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Uh. Is that where p_l thinks it is? r_c stiffles a laugh, choking it into a purr as {PRONOUN/r_c/subject} help p_l escape {PRONOUN/p_l/poss} inappropriately placed unwanted passenger, gently batting the butterfly off {PRONOUN/p_l/object}. p_l should take it as a compliment, {PRONOUN/r_c/subject} {VERB/r_c/suggest/suggests}. {PRONOUN/r_c/subject/CAP} can't blame the butterfly for mistaking p_l for a beautiful flower.",
+                "text": "Uh. Is that where p_l thinks it is? r_c stifles a laugh, choking it into a purr as {PRONOUN/r_c/subject} help p_l escape {PRONOUN/p_l/poss} inappropriately placed unwanted passenger, gently batting the butterfly off {PRONOUN/p_l/object}. p_l should take it as a compliment, {PRONOUN/r_c/subject} {VERB/r_c/suggest/suggests}. {PRONOUN/r_c/subject/CAP} can't blame the butterfly for mistaking p_l for a beautiful flower.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
