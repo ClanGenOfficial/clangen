@@ -9,7 +9,7 @@ authors = [
 ]
 readme = "README.md"
 homepage = "https://sablesteel.itch.io/clan-gen-fan-edit"
-repository = "https://github.com/Thlumyn/clangen/"
+repository = "https://github.com/ClanGenOfficial/clangen/"
 keywords = ["warriorcats", "fanedit", "game", "pygame"]
 
 [tool.poetry.dependencies]

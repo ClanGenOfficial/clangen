@@ -367,7 +367,8 @@
 		"april_fools": false,
 		"all_cats_are_newborn": false,
 		"newborns_can_roam": false,
-		"newborns_can_patrol": false
+		"newborns_can_patrol": false,
+		"always_halloween": false
 	},
 	"theme": {
 		"dark_mode_background": [57, 50, 36],

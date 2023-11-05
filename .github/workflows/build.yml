@@ -5,6 +5,11 @@ on: [push]
 jobs:
   build_ubuntu_20_04:
     runs-on: ubuntu-20.04
+    if: ${{ !startsWith(github.ref, 'ref/heads/release') }}
+    env:
+      gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
+      gpg_private_key_passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
+      update_api_push_token: ${{ secrets.UPDATE_API_DEPLOY_KEY }}
     steps:
       - uses: actions/checkout@v3
       - name: Install poetry
@@ -23,12 +28,12 @@ jobs:
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: |
           echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=development" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=${{ vars.DEVELOPMENT_RELEASE_CHANNEL }}" >> $GITHUB_ENV
       - name: Configure release
         if: startsWith(github.ref, 'refs/tags/')
         run: |
           echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=stable" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=${{ vars.STABLE_RELEASE_CHANNEL }}" >> $GITHUB_ENV
       - name: Write version file
         run: |
           echo "[DEFAULT]" > version.ini
@@ -59,20 +64,20 @@ jobs:
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
-        if: github.repository == 'Thlumyn/clangen'
+        if: ${{ env.gpg_private_key != '' && env.gpg_private_key_passphrase != '' }}
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
       - name: Upload artifact to API
-        if: github.repository == 'Thlumyn/clangen'
+        if: ${{ env.update_api_push_token != '' }}
         run: |
           gpg --output Clangen_Linux64_glibc2.31+.tar.xz.sig --detach-sig -a Clangen_Linux64_glibc2.31+.tar.xz
           curl -X 'POST' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Appoint' \
+            'https://clangen.io/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Appoint' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*'
           curl -X 'PUT' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Artifacts/linux2.31' \
+            'https://clangen.io/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Artifacts/linux2.31' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
@@ -94,6 +99,11 @@ jobs:
 
   build_ubuntu_22_04:
     runs-on: ubuntu-22.04
+    if: ${{ !startsWith(github.ref, 'ref/heads/release') }}
+    env:
+      gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
+      gpg_private_key_passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
+      update_api_push_token: ${{ secrets.UPDATE_API_DEPLOY_KEY }}
     steps:
       - uses: actions/checkout@v3
       - name: Install poetry
@@ -112,12 +122,12 @@ jobs:
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: |
           echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=development" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=${{ vars.DEVELOPMENT_RELEASE_CHANNEL }}" >> $GITHUB_ENV
       - name: Configure release
         if: startsWith(github.ref, 'refs/tags/')
         run: |
           echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=stable" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=${{ vars.STABLE_RELEASE_CHANNEL }}" >> $GITHUB_ENV
       - name: Write version file
         run: |
           echo "[DEFAULT]" > version.ini
@@ -148,20 +158,20 @@ jobs:
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
-        if: github.repository == 'Thlumyn/clangen'
+        if: ${{ env.gpg_private_key != '' && env.gpg_private_key_passphrase != '' }}
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
       - name: Upload artifact to API
-        if: github.repository == 'Thlumyn/clangen'
+        if: ${{ env.update_api_push_token != '' }}
         run: |
           gpg --output Clangen_Linux64_glibc2.35+.tar.xz.sig --detach-sig -a Clangen_Linux64_glibc2.35+.tar.xz
           curl -X 'POST' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Appoint' \
+            'https://clangen.io/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Appoint' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*'
           curl -X 'PUT' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Artifacts/linux2.35' \
+            'https://clangen.io/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Artifacts/linux2.35' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
@@ -183,6 +193,11 @@ jobs:
 
   build_win32:
     runs-on: windows-2019
+    if: ${{ !startsWith(github.ref, 'ref/heads/release') }}
+    env:
+      gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
+      gpg_private_key_passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
+      update_api_push_token: ${{ secrets.UPDATE_API_DEPLOY_KEY }}
     steps:
       - uses: actions/checkout@v3
       - name: Setup Python 3.8 x86
@@ -213,13 +228,13 @@ jobs:
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: |
           echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=development" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=${{ vars.DEVELOPMENT_RELEASE_CHANNEL }}" >> $GITHUB_ENV
       - name: Configure release
         shell: bash
         if: startsWith(github.ref, 'refs/tags/')
         run: |
           echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=stable" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=${{ vars.STABLE_RELEASE_CHANNEL }}" >> $GITHUB_ENV
       - name: Write version file
         shell: bash
         run: |
@@ -260,21 +275,21 @@ jobs:
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
-        if: github.repository == 'Thlumyn/clangen'
+        if: ${{ env.gpg_private_key != '' && env.gpg_private_key_passphrase != '' }}
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
       - name: Upload artifact to API
-        if: github.repository == 'Thlumyn/clangen'
+        if: ${{ env.update_api_push_token != '' }}
         shell: bash
         run: |
           gpg --output Clangen_Win32.zip.sig --detach-sig -a Clangen_Win32.zip
           curl -X 'POST' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Appoint' \
+            'https://clangen.io/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Appoint' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*'
           curl -X 'PUT' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Artifacts/win32' \
+            'https://clangen.io/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Artifacts/win32' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
@@ -296,6 +311,11 @@ jobs:
 
   build_win64:
     runs-on: windows-latest
+    if: ${{ !startsWith(github.ref, 'ref/heads/release') }}
+    env:
+      gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
+      gpg_private_key_passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
+      update_api_push_token: ${{ secrets.UPDATE_API_DEPLOY_KEY }}
     steps:
       - uses: actions/checkout@v3
       - name: Install poetry
@@ -327,13 +347,13 @@ jobs:
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: |
           echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=development" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=${{ vars.DEVELOPMENT_RELEASE_CHANNEL }}" >> $GITHUB_ENV
       - name: Configure release
         shell: bash
         if: startsWith(github.ref, 'refs/tags/')
         run: |
           echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=stable" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=${{ vars.STABLE_RELEASE_CHANNEL }}" >> $GITHUB_ENV
       - name: Write version file
         shell: bash
         run: |
@@ -379,21 +399,21 @@ jobs:
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
-        if: github.repository == 'Thlumyn/clangen'
+        if: ${{ env.gpg_private_key != '' && env.gpg_private_key_passphrase != '' }}
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
       - name: Upload artifact to API
-        if: github.repository == 'Thlumyn/clangen'
+        if: ${{ env.update_api_push_token != '' }}
         shell: bash
         run: |
           gpg --output Clangen_Win64.zip.sig --detach-sig -a Clangen_Win64.zip
           curl -X 'POST' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Appoint' \
+            'https://clangen.io/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Appoint' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*'
           curl -X 'PUT' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Artifacts/win64' \
+            'https://clangen.io/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Artifacts/win64' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
@@ -415,6 +435,11 @@ jobs:
 
   build_win64_py311:
     runs-on: windows-latest
+    if: ${{ !startsWith(github.ref, 'ref/heads/release') }}
+    env:
+      gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
+      gpg_private_key_passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
+      update_api_push_token: ${{ secrets.UPDATE_API_DEPLOY_KEY }}
     steps:
       - uses: actions/checkout@v3
       - name: Install poetry
@@ -446,13 +471,13 @@ jobs:
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: |
           echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=development" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=${{ vars.DEVELOPMENT_RELEASE_CHANNEL }}" >> $GITHUB_ENV
       - name: Configure release
         shell: bash
         if: startsWith(github.ref, 'refs/tags/')
         run: |
           echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=stable" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=${{ vars.STABLE_RELEASE_CHANNEL }}" >> $GITHUB_ENV
       - name: Write version file
         shell: bash
         run: |
@@ -498,21 +523,21 @@ jobs:
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
-        if: github.repository == 'Thlumyn/clangen'
+        if: ${{ env.gpg_private_key != '' && env.gpg_private_key_passphrase != '' }}
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
       - name: Upload artifact to API
-        if: github.repository == 'Thlumyn/clangen'
+        if: ${{ env.update_api_push_token != '' }}
         shell: bash
         run: |
           gpg --output Clangen_Win64_Windows10+.zip.sig --detach-sig -a Clangen_Win64_Windows10+.zip
           curl -X 'POST' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Appoint' \
+            'https://clangen.io/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Appoint' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*'
           curl -X 'PUT' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Artifacts/win10+' \
+            'https://clangen.io/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Artifacts/win10+' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
@@ -534,8 +559,13 @@ jobs:
 
   build_macos64:
     # For commits to the original mac build action see:
-    # https://github.com/Thlumyn/clangen/blob/29c9e39fed9a09b8de906f5c3b91dc044fe9b9a5/.github/workflows/main.yml
+    # https://github.com/ClanGenOfficial/clangen/blob/29c9e39fed9a09b8de906f5c3b91dc044fe9b9a5/.github/workflows/main.yml
     runs-on: macos-latest
+    if: ${{ !startsWith(github.ref, 'ref/heads/release') }}
+    env:
+      gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
+      gpg_private_key_passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
+      update_api_push_token: ${{ secrets.UPDATE_API_DEPLOY_KEY }}
     defaults:
       run:
         shell: bash -l {0}
@@ -565,12 +595,12 @@ jobs:
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: |
           echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=development" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=${{ vars.DEVELOPMENT_RELEASE_CHANNEL }}" >> $GITHUB_ENV
       - name: Configure release
         if: startsWith(github.ref, 'refs/tags/')
         run: |
           echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=stable" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=${{ vars.STABLE_RELEASE_CHANNEL }}" >> $GITHUB_ENV
       - name: Write version file
         run: |
           echo "[DEFAULT]" > version.ini
@@ -605,21 +635,21 @@ jobs:
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
-        if: github.repository == 'Thlumyn/clangen'
+        if: ${{ env.gpg_private_key != '' && env.gpg_private_key_passphrase != '' }}
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
       - name: Upload artifact to API
-        if: github.repository == 'Thlumyn/clangen'
+        if: ${{ env.update_api_push_token != '' }}
         run: |
           zip Clangen_macOS64.dmg.zip ./Clangen_macOS64.dmg
           gpg --output Clangen_macOS64.dmg.zip.sig --detach-sig -a Clangen_macOS64.dmg.zip
           curl -X 'POST' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Appoint' \
+            'https://clangen.io/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Appoint' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*'
           curl -X 'PUT' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Artifacts/macOS' \
+            'https://clangen.io/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Artifacts/macOS' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
@@ -638,8 +668,10 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: Clangen_macOS64.dmg
+
   confirm_release_ubuntu_22_04:
     runs-on: ubuntu-22.04
+    if: ${{ vars.USE_UPDATE_API != '' }}
     needs:
       - build_ubuntu_20_04
       - build_ubuntu_22_04
@@ -652,15 +684,15 @@ jobs:
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: |
           echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=development" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=${{ vars.DEVELOPMENT_RELEASE_CHANNEL }}" >> $GITHUB_ENV
       - name: Configure release
         if: startsWith(github.ref, 'refs/tags/')
         run: |
           echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=stable" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=${{ vars.STABLE_RELEASE_CHANNEL }}" >> $GITHUB_ENV
       - name: Confirm release
         run: |
           curl -X 'POST' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Confirm' \
+            'https://clangen.io/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Confirm' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*'
