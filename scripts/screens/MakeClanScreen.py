@@ -390,7 +390,10 @@ class MakeClanScreen(Screens):
             if old_biome is not None:
                 possible_biomes.remove(old_biome)
             self.biome_selected = choice(possible_biomes)
-            self.selected_camp_tab = randrange(1, 5)
+            if self.biome_selected == 'Forest':
+                self.selected_camp_tab = randrange (1, 5)
+            else:
+                self.selected_camp_tab = randrange(1, 4)
             self.refresh_selected_camp()
             self.refresh_text_and_buttons()
         elif event.ui_element == self.elements['done_button']:
