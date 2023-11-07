@@ -1676,17 +1676,16 @@ class Events:
         death_curve_setting = game.config["death_related"]["old_age_death_curve"]
         death_curve_multipliers = {
             1: 0.001,
-            2: 0.0025,
-            3: 0.005,
-            4: 0.0075,
-            5: 0.01,
-            6: 0.02,
-            7: 0.03
+            2: 0.002,
+            3: 0.003,
+            4: 0.0045,
+            5: 0.008,
+            6: 0.02
         }
         death_curve_value = death_curve_multipliers[death_curve_setting]
 
         # made oldage_death_chance into a separate value to make testing with print statements easier
-        oldage_death_chance = 1 - (1 - death_curve_value) ** (cat.moons - age_start)
+        oldage_death_chance = ((1 + death_curve_value) ** (cat.moons - age_start)) - 1
         if random.random() <= oldage_death_chance:
             Death_Events.handle_deaths(cat, other_cat, game.clan.war.get("at_war", False), enemy_clan, alive_kits)
             return True
