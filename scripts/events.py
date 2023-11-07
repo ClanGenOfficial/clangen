@@ -1671,13 +1671,28 @@ class Events:
             return True
 
         # chance to die of old age
-        age_chance = game.config["death_related"]["old_age_death_chance"]
         age_start = game.config["death_related"]["old_age_death_start"]
-        if cat.moons > int(
-                random.random() * age_chance) + age_start:  # cat.moons > 150 <--> 200
-            
-            Death_Events.handle_deaths(cat, other_cat, game.clan.war.get("at_war", False),
-                                            enemy_clan, alive_kits)
+        # map game_config values to the multipliers to make the config values more user-friendly
+        death_curve_setting = game.config["death_related"]["old_age_death_curve"]
+        death_curve_multipliers = {
+            1: 0.001,
+            2: 0.0025,
+            3: 0.005,
+            4: 0.0075,
+            5: 0.01,
+            6: 0.02,
+            7: 0.03
+        }
+        death_curve_value = death_curve_multipliers[death_curve_setting]
+
+        # made oldage_death_chance into a separate value to make testing with print statements easier
+        oldage_death_chance = 1 - (1 - death_curve_value) ** (cat.moons - age_start)
+        if random.random() <= oldage_death_chance:
+            Death_Events.handle_deaths(cat, other_cat, game.clan.war.get("at_war", False), enemy_clan, alive_kits)
+            return True
+        # max age has been indicated to be 300, so if a cat reaches that age, they die of old age
+        elif cat.moons >= 300:
+            Death_Events.handle_deaths(cat, other_cat, game.clan.war.get("at_war", False), enemy_clan, alive_kits)
             return True
 
         # disaster death chance
