@@ -317,15 +317,20 @@
 	},
 	"death_related": {
 		"leader_death_chance": 125,
-		"old_age_death_start": 150,
-		"old_age_death_chance": 51,
 		"classic_death_chance": 500,
 		"expanded_death_chance": 350,
 		"cruel season_death_chance": 300,
 		"war_death_modifier_leader": 95,
 		"war_death_modifier": 250,
 		"base_random_murder_chance": 25,
-		"base_murder_kill_chance": 170
+		"base_murder_kill_chance": 170,
+		"old_age_death_start": 150,
+		"old_age_death_curve": 4.5,
+		"comment": [
+			"old_age_death_curve is a multiplier that affects the chances of cats dying once they are over old_age_death_start moons.",
+			"Average life expectancy with default old_age_death_start of 150 moons:",
+			"1 = 189 moons, 2 = 178, 3 = 172, 4.5 (default) = 168, 8 = 163, 20 = 158"
+		]
 	},
 	"condition_related": {
 		"expanded_illness_chance": 250,
