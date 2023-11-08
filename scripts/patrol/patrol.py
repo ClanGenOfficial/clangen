@@ -98,6 +98,7 @@ class Patrol():
         
         if path == "decline":
             if self.patrol_event:
+                print(f"PATROL ID: {self.patrol_event.patrol_id} | SUCCESS: N/A (did not proceed)")        
                 return self.process_text(self.patrol_event.decline_text, None), "", None
             else:
                 return "Error - no event chosen", "", None
