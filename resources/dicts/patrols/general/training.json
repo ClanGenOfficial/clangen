@@ -492,7 +492,6 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -660,7 +659,6 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -702,6 +700,15 @@
                         "values": ["respect"],
                         "amount": 10
                     }
+                ]
+            },
+            {
+                "text": "No one means to, but... well... the group drifts off into a nap. Untethered by normal limitations, s_c's spirit wanders from mindscape to mindscape, picking up dream_list like burrs on a pelt.",
+                "exp": 30,
+                "weight": 40,
+                "can_have_stat": ["any"],
+                "stat_skill": [
+                    "DREAM,1"
                 ]
             },
             {
@@ -852,11 +859,19 @@
                 ]
             },
             {
+                "text": "No one means to, but... well... the pair drifts off into a nap, lured by the sun. Untethered by normal limitations, s_c's spirit wanders from {PRONOUN/s_c/poss} own mindscape, picking up dream_list from {PRONOUN/s_c/poss} sleeping training partner like burrs on a pelt.",
+                "exp": 30,
+                "weight": 40,
+                "can_have_stat": ["any"],
+                "stat_skill": [
+                    "DREAM,1"
+                ]
+            },
+            {
                 "text": "s_c makes sure r_c gets a good basking spot as the cats pause for a little break before resuming their training.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -941,11 +956,19 @@
                 ]
             },
             {
+                "text": "No one means to, but... well... the pair drifts off into a nap, lured by the sun. Untethered by normal limitations, s_c's spirit wanders from {PRONOUN/s_c/poss} own mindscape, picking up dream_list from {PRONOUN/s_c/poss} sleeping training partner like burrs on a pelt.",
+                "exp": 30,
+                "weight": 40,
+                "can_have_stat": ["any"],
+                "stat_skill": [
+                    "DREAM,1"
+                ]
+            },
+            {
                 "text": "s_c courteously offers app2 the better basking spot, making {PRONOUN/app2/object} blush.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -1035,7 +1058,6 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -1140,7 +1162,6 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -1304,7 +1325,6 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -1312,8 +1332,7 @@
                     "patient",
                     "responsible",
                     "thoughtful",
-                    "wise",
-                    "inquisitive"
+                    "wise"
                 ],
                 "can_have_stat": ["p_l"],
                 "relationships": [
@@ -1368,8 +1387,7 @@
                     "shameless",
                     "strict",
                     "troublesome",
-                    "vengeful",
-                    "bossy"
+                    "vengeful"
                 ],
                 "can_have_stat": ["p_l"],
                 "relationships": [
@@ -1394,7 +1412,6 @@
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -1402,8 +1419,7 @@
                     "patient",
                     "responsible",
                     "thoughtful",
-                    "wise",
-                    "inquisitive"
+                    "wise"
                 ],
                 "can_have_stat": ["p_l"],
                 "relationships": [
@@ -1492,7 +1508,6 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -1500,8 +1515,7 @@
                     "patient",
                     "responsible",
                     "thoughtful",
-                    "wise",
-                    "inquisitive"
+                    "wise"
                 ],
                 "can_have_stat": ["adult"],
                 "relationships": [
@@ -1567,8 +1581,7 @@
                     "shameless",
                     "strict",
                     "troublesome",
-                    "vengeful",
-                    "bossy"
+                    "vengeful"
                 ],
                 "can_have_stat": ["adult"],
                 "relationships": [
@@ -1586,7 +1599,6 @@
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -1594,8 +1606,7 @@
                     "patient",
                     "responsible",
                     "thoughtful",
-                    "wise",
-                    "inquisitive"
+                    "wise"
                 ],
                 "can_have_stat": ["adult"],
                 "relationships": [
@@ -1605,6 +1616,295 @@
                         "mutual": false,
                         "values": ["respect", "dislike"],
                         "amount": -5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_train_argue3",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_train_argue",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "warrior": [1, 6],
+            "deputy": [1, 6],
+            "leader": [-1, -1]
+        },
+        "weight": 10,
+        "intro_text": "The patrol has a disagreement and looks to p_l to settle the dispute.",
+        "decline_text": "Your patrol decides to head home.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "p_l manages to skillfully smooth over any disagreement.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "p_l listens to both sides, then makes a careful judgement. It keeps no one happy, the mark of an excellent compromise.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "c_n's deputy always knows what to say - even if sometimes, that includes laying down the law. p_l convinces the patrol that arguing over something so small is beneath them.",
+                "exp": 20,
+                "weight": 20,
+                "can_have_stat": ["p_l"],
+                "stat_skill": ["SPEAKER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "There's always room to understand one another. p_l helps both sides of the disagreement see what they do agree on, which in turn helps them solve the issues they don't see eye to eye on.",
+                "exp": 20,
+                "weight": 20,
+                "can_have_stat": ["p_l"],
+                "stat_skill": ["MEDIATOR,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c tilts {PRONOUN/s_c/poss} head slightly - has r_c considered an alternative solution instead? And that derails the argument completely, everyone perfectly happy to go with a better, easier idea that no one has to argue over.",
+                "exp": 20,
+                "weight": 20,
+                "can_have_stat": ["p_l"],
+                "stat_skill": ["CLEVER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Well, if the cats want s_c's advice (and they do, or at the very least they want to feel like they're in the right because the deputy is on their side), s_c would advise... compromise. No, no it isn't the most satisfying way to win an argument. Often the best way to find the optimal path forward, though.",
+                "exp": 20,
+                "weight": 20,
+                "can_have_stat": ["p_l"],
+                "stat_skill": ["INSIGHTFUL,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "There's a teachable moment here, s_c announces. What, no, they aren't talking about the argument - they're talking about letting an <i>argument</i> disrupt training. Does the patrol really think that's a wise move?",
+                "exp": 20,
+                "weight": 20,
+                "can_have_stat": ["p_l"],
+                "stat_skill": ["TEACHER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c nods sympathetically, hearing out every side to the argument, and with {PRONOUN/s_c/poss} help the patrol feels comfortable, even with their differences.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                ],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l stutters; {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} think {PRONOUN/p_l/subject} {VERB/p_l/are/is} fit to lead the patrol.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c rudely reminds the patrol cats to focus on their star-damned jobs and stop quarreling like kittens.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful"
+                ],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c spends so much time listening sympathetically to every cat that the patrol gets nothing done, and as they return home, the quarrel continues.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "empathetic",
+                    "faithful",
+                    "loving",
+                    "patient",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
                     }
                 ]
             }
@@ -2309,9 +2609,6 @@
                     "strict",
                     "troublesome",
                     "vengeful",
-                    "bossy",
-                    "bullying",
-                    "impulsive",
                     "cunning",
                     "grumpy"
                 ],
@@ -2323,7 +2620,6 @@
                 "weight": 20,
                 "prey": ["small"],
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -2379,7 +2675,6 @@
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -2403,10 +2698,7 @@
                     "shameless",
                     "strict",
                     "troublesome",
-                    "vengeful",
-                    "bossy",
-                    "bullying",
-                    "impulsive"
+                    "vengeful"
                 ],
                 "can_have_stat": ["app"]
             }
