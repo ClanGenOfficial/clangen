@@ -1326,11 +1326,6 @@ class ChangeCatToggles(UIWindow):
                                                     object_id="#text_box_30_horizleft_pad_0_8",
                                                     container=self)
         
-        self.text_5 = pygame_gui.elements.UITextBox("Remove accessory",
-                                            scale(pygame.Rect(110, 260, -1, 50)), 
-                                            object_id="#text_box_30_horizleft_pad_0_8",
-                                            container=self)
-
         # Text
         
     def refresh_checkboxes(self):
@@ -1399,18 +1394,6 @@ class ChangeCatToggles(UIWindow):
                                                          object_id=box_type,
                                                          tool_tip_text=tool_tip)
 
-        #Remove accessories
-        box_type = "#unchecked_checkbox"
-        tool_tip = "Permanently removes the cat's current accessory."
-    
-        self.checkboxes["remove_accessory"] = UIImageButton(scale(pygame.Rect(45, 250, 68, 68)), "",
-                                                            container=self,
-                                                            object_id=box_type,
-                                                            tool_tip_text=tool_tip)
-        
-        if not self.the_cat.pelt.accessory:
-            self.checkboxes["remove_accessory"].disable()
-
     def process_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
@@ -1429,9 +1412,6 @@ class ChangeCatToggles(UIWindow):
                 self.refresh_checkboxes()
             elif event.ui_element == self.checkboxes["prevent_mates"]:
                 self.the_cat.no_mates = not self.the_cat.no_mates
-                self.refresh_checkboxes()
-            elif event.ui_element == self.checkboxes["remove_accessory"]:
-                self.the_cat.pelt.accessory = None
                 self.refresh_checkboxes()
         
         return super().process_event(event)
