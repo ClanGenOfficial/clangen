@@ -2481,7 +2481,7 @@
                 ]
             },
             {
-                "text": "s_c's stressed nerves can't handle this weird monster, and {PRONOUN/s_c/subject} {VERB/s_c/beg/begs} to go back homeinstead of confronting it.",
+                "text": "s_c's stressed nerves can't handle this weird monster, and {PRONOUN/s_c/subject} {VERB/s_c/beg/begs} to go back home instead of confronting it.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["childish", "nervous"],
