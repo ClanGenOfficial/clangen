@@ -3,7 +3,8 @@ from scripts.cat.sprites import sprites
 import random
 from re import sub
 from scripts.game_structure.game_essentials import game
-
+from .genotype import Genotype
+from .phenotype import Phenotype
 
     
 
@@ -49,7 +50,7 @@ class Pelt():
     tortiepatterns = ['ONE', 'TWO', 'THREE', 'FOUR', 'REDTAIL', 'DELILAH', 'MINIMALONE', 'MINIMALTWO', 'MINIMALTHREE', 'MINIMALFOUR', 'HALF',
                     'OREO', 'SWOOP', 'MOTTLED', 'SIDEMASK', 'EYEDOT', 'BANDANA', 'PACMAN', 'STREAMSTRIKE', 'ORIOLE', 'CHIMERA', 'DAUB', 'EMBER', 'BLANKET',
                     'ROBIN', 'BRINDLE', 'PAIGE', 'ROSETAIL', 'SAFI', 'SMUDGED', 'DAPPLENIGHT', 'STREAK', 'MASK', 'CHEST', 'ARMTAIL', 'SMOKE', 'GRUMPYFACE',
-                    'BRIE', 'BELOVED', 'BODY', 'SHILOH', 'FRECKLED', 'HEARTBEAT']
+                    'BRIE', 'BELOVED', 'BODY', 'SHILOH']
     tortiebases = ['single', 'tabby', 'bengal', 'marbled', 'ticked', 'smoke', 'rosette', 'speckled', 'mackerel',
                 'classic', 'sokoke', 'agouti', 'singlestripe', 'masked']
 
@@ -114,10 +115,10 @@ class Pelt():
     little_white = ['LITTLE', 'LIGHTTUXEDO', 'BUZZARDFANG', 'TIP', 'BLAZE', 'BIB', 'VEE', 'PAWS',
                     'BELLY', 'TAILTIP', 'TOES', 'BROKENBLAZE', 'LILTWO', 'SCOURGE', 'TOESTAIL', 'RAVENPAW', 'HONEY', 'LUNA',
                     'EXTRA', 'MUSTACHE', 'REVERSEHEART', 'SPARKLE', 'RIGHTEAR', 'LEFTEAR', 'ESTRELLA', 'REVERSEEYE', 'BACKSPOT',
-                    'EYEBAGS', 'LOCKET', 'BLAZEMASK', 'TEARS']
+                    'EYEBAGS', 'LOCKET']
     mid_white = ['TUXEDO', 'FANCY', 'UNDERS', 'DAMIEN', 'SKUNK', 'MITAINE', 'SQUEAKS', 'STAR', 'WINGS',
                 'DIVA', 'SAVANNAH', 'FADESPOTS', 'BEARD', 'DAPPLEPAW', 'TOPCOVER', 'WOODPECKER', 'MISS', 'BOWTIE', 'VEST',
-                'FADEBELLY', 'DIGIT', 'FCTWO', 'FCONE', 'MIA', 'ROSINA', 'PRINCESS', 'DOUGIE']
+                'FADEBELLY', 'DIGIT', 'FCTWO', 'FCONE', 'MIA', 'ROSINA', 'PRINCESS']
     high_white = ['ANY', 'ANYTWO', 'BROKEN', 'FRECKLES', 'RINGTAIL', 'HALFFACE', 'PANTSTWO',
                 'GOATEE', 'PRINCE', 'FAROFA', 'MISTER', 'PANTS', 'REVERSEPANTS', 'HALFWHITE', 'APPALOOSA', 'PIEBALD',
                 'CURVED', 'GLASS', 'MASKMANTLE', 'MAO', 'PAINTED', 'SHIBAINU', 'OWL', 'BUB', 'SPARROW', 'TRIXIE',
@@ -135,6 +136,8 @@ class Pelt():
 
     """Holds all appearence information for a cat. """
     def __init__(self,
+                 genotype:Genotype,
+                 phenotype:Phenotype,
                  name:str="SingleColour",
                  length:str="short",
                  colour:str="WHITE",
@@ -161,6 +164,8 @@ class Pelt():
                  para_adult_sprite:int=None,
                  reverse:bool=False,
                  ) -> None:
+        self.genotype = genotype
+        self.phenotype = phenotype
         self.name = name
         self.colour = colour
         self.white_patches = white_patches
@@ -171,7 +176,12 @@ class Pelt():
         self.tortiepattern = tortiepattern
         self.tortiecolour = tortiecolour
         self.vitiligo = vitiligo
-        self.length=length
+        if phenotype.length == "longhaired" and genotype.cornish[0] == "R" and genotype.sedesp[0] != "re":    
+            self.length="long"
+        elif phenotype.length == "shorthaired":
+            self.length="short"
+        else:
+            self.length="hairless"
         self.points = points
         self.accessory = accessory
         self.paralyzed = paralyzed
@@ -197,8 +207,8 @@ class Pelt():
         self.skin = skin
 
     @staticmethod
-    def generate_new_pelt(gender:str, parents:tuple=(), age:str="adult"):
-        new_pelt = Pelt()
+    def generate_new_pelt(genotype, phenotype, gender:str, parents:tuple=(), age:str="adult"):
+        new_pelt = Pelt(genotype, phenotype)
         
         pelt_white = new_pelt.init_pattern_color(parents, gender)
         new_pelt.init_white_patches(pelt_white, parents)
@@ -332,10 +342,10 @@ class Pelt():
                 eye_choice = choice([Pelt.yellow_eyes, Pelt.blue_eyes])
                 self.eye_colour2 = choice(eye_choice)
 
-    def pattern_color_inheritance(self, parents: tuple=(), gender="female"):
+    def pattern_color_inheritance(self, parents: tuple=(), gender="molly"):
         # setting parent pelt categories
         #We are using a set, since we don't need this to be ordered, and sets deal with removing duplicates.
-        par_peltlength = set()
+        #par_peltlength = set()
         par_peltcolours = set()
         par_peltnames = set()
         par_pelts = []
@@ -346,7 +356,7 @@ class Pelt():
                 par_peltcolours.add(p.pelt.colour)
 
                 # Gather pelt length
-                par_peltlength.add(p.pelt.length)
+                #par_peltlength.add(p.pelt.length)
 
                 # Gather pelt name
                 if p.pelt.name in Pelt.torties:
@@ -367,7 +377,7 @@ class Pelt():
                 # Append None
                 # Gather pelt color.
                 par_peltcolours.add(None)
-                par_peltlength.add(None)
+                #par_peltlength.add(None)
                 par_peltnames.add(None)
 
         # If this list is empty, something went wrong.
@@ -379,7 +389,7 @@ class Pelt():
         if not random.randint(0, game.config["cat_generation"]["direct_inheritance"]):  # 1/10 chance
             selected = choice(par_pelts)
             self.name = selected.name
-            self.length = selected.length
+            #self.length = selected.length
             self.colour = selected.colour
             self.tortiebase = selected.tortiebase
             return selected.white
@@ -426,7 +436,7 @@ class Pelt():
                 break
 
         # Determine tortie:
-        if gender == "female":
+        if gender == "molly":
             torbie = random.getrandbits(tortie_chance_f) == 1
         else:
             torbie = random.getrandbits(tortie_chance_m) == 1
@@ -475,26 +485,26 @@ class Pelt():
         # ------------------------------------------------------------------------------------------------------------#
 
         weights = [0, 0, 0]  # Weights for each length. It goes (short, medium, long)
-        for p_ in par_peltlength:
-            if p_ == "short":
-                add_weight = (50, 10, 2)
-            elif p_ == "medium":
-                add_weight = (25, 50, 25)
-            elif p_ == "long":
-                add_weight = (2, 10, 50)
-            elif p_ is None:
-                add_weight = (10, 10, 10)
-            else:
-                add_weight = (0, 0, 0)
+        #for p_ in par_peltlength:
+        #    if p_ == "short":
+        #        add_weight = (50, 10, 2)
+        #    elif p_ == "medium":
+        #        add_weight = (25, 50, 25)
+        #    elif p_ == "long":
+        #        add_weight = (2, 10, 50)
+        #    elif p_ is None:
+        #        add_weight = (10, 10, 10)
+        #    else:
+        #        add_weight = (0, 0, 0)
 
-            for x in range(0, len(weights)):
-                weights[x] += add_weight[x]
+        #    for x in range(0, len(weights)):
+        #        weights[x] += add_weight[x]
 
         # A quick check to make sure all the weights aren't 0
-        if all([x == 0 for x in weights]):
-            weights = [1, 1, 1]
+        #if all([x == 0 for x in weights]):
+        #    weights = [1, 1, 1]
 
-        chosen_pelt_length = random.choices(Pelt.pelt_length, weights=weights, k=1)[0]
+        #chosen_pelt_length = random.choices(Pelt.pelt_length, weights=weights, k=1)[0]
 
         # ------------------------------------------------------------------------------------------------------------#
         #   PELT WHITE
@@ -524,7 +534,7 @@ class Pelt():
         # SET THE PELT
         self.name = chosen_pelt
         self.colour = chosen_pelt_color
-        self.length = chosen_pelt_length
+        #self.length = chosen_pelt_length
         self.tortiebase = chosen_tortie_base   # This will be none if the cat isn't a tortie.
         return chosen_white
 
@@ -542,7 +552,7 @@ class Pelt():
         # There is a default chance for female tortie, slightly increased for completely random generation.
         tortie_chance_f = game.config["cat_generation"]["base_female_tortie"] - 1
         tortie_chance_m = game.config["cat_generation"]["base_male_tortie"]
-        if gender == "female":
+        if gender == "molly":
             torbie = random.getrandbits(tortie_chance_f) == 1
         else:
             torbie = random.getrandbits(tortie_chance_m) == 1
@@ -569,7 +579,7 @@ class Pelt():
         # ------------------------------------------------------------------------------------------------------------#
 
 
-        chosen_pelt_length = random.choice(Pelt.pelt_length)
+        #chosen_pelt_length = random.choice(Pelt.pelt_length)
 
         # ------------------------------------------------------------------------------------------------------------#
         #   PELT WHITE
@@ -590,7 +600,7 @@ class Pelt():
 
         self.name = chosen_pelt
         self.colour = chosen_pelt_color
-        self.length = chosen_pelt_length
+        #self.length = chosen_pelt_length
         self.tortiebase = chosen_tortie_base   # This will be none if the cat isn't a tortie.
         return chosen_white
 
@@ -1035,15 +1045,17 @@ class Pelt():
             color_name = color_name.replace("white and white", "white")
 
         # Now it's time for gender
-        if cat.genderalign in ["female", "trans female"]:
-            color_name = f"{color_name} she-cat"
-        elif cat.genderalign in ["male", "trans male"]:
+        if cat.genderalign in ["molly", "molly"]:
+            color_name = f"{color_name} molly"
+        elif cat.genderalign in ["tom", "tom"]:
             color_name = f"{color_name} tom"
         else:
             color_name = f"{color_name} cat"
 
         # Here is the place where we can add some additional details about the cat, for the full non-short one
         # These include notable missing limbs, vitiligo, long-furred-ness, and 3 or more scars
+        color_name = cat.phenotype.PhenotypeOutput(cat.genderalign, pattern=cat.white_pattern)
+        
         if not short:
 
             scar_details = {
@@ -1067,11 +1079,8 @@ class Pelt():
             elif additional_details:
                 color_name = f"{color_name} with {additional_details[0]}"
         
-        
             if len(cat.pelt.scars) >= 3:
                 color_name = f"scarred {color_name}"
-            if cat.pelt.length == "long":
-                color_name = f"long-furred {color_name}"
 
         return color_name
     

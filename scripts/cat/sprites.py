@@ -1,5 +1,7 @@
 import pygame
 
+import os
+
 import ujson
 
 from scripts.game_structure.game_essentials import game
@@ -125,6 +127,103 @@ class Sprites():
             else:
                 self.spritesheet(f"sprites/{x}.png", x)
 
+        for x in os.listdir("sprites/genemod/borders"):
+            sprites.spritesheet("sprites/genemod/borders/"+x, 'genemod/'+x.removesuffix('.png'))
+        for x in os.listdir("sprites/genemod/Base Colours"):
+            sprites.spritesheet("sprites/genemod/Base Colours/"+x, 'base/'+x.removesuffix('.png'))
+        for x in os.listdir("sprites/genemod/points"):
+            sprites.spritesheet("sprites/genemod/points/"+x, x.removesuffix('.png'))
+        for x in os.listdir("sprites/genemod/Tabby Bases"):
+            sprites.spritesheet("sprites/genemod/Tabby Bases/"+x, 'Tabby/'+x.removesuffix('.png'))
+        for x in os.listdir("sprites/genemod/extra"):
+            sprites.spritesheet("sprites/genemod/extra/"+x, 'Other/'+x.removesuffix('.png'))
+        for x in os.listdir("sprites/genemod/effects"):
+            sprites.spritesheet("sprites/genemod/effects/"+x, 'Other/'+x.removesuffix('.png'))
+        
+        
+        for x in os.listdir("sprites/genemod/white"):
+            sprites.spritesheet("sprites/genemod/white/"+x, 'White/'+x.removesuffix('.png'))
+            self.make_group('White/'+x.removesuffix('.png'), (0, 0), x.removesuffix('.png'))
+
+        # ...idk what to call these
+
+        self.make_group('genemod/normal border', (0, 0), 'normbord')
+        self.make_group('genemod/foldborder', (0, 0), 'foldbord')
+        self.make_group('genemod/curlborder', (0, 0), 'curlbord')
+        self.make_group('genemod/foldlineart', (0, 0), 'foldlines')
+        self.make_group('genemod/fold_curllineart', (0, 0), 'fold_curllines')
+        self.make_group('genemod/curllineart', (0, 0), 'curllines')
+        self.make_group('genemod/foldlineartdf', (0, 0), 'foldlineartdf')
+        self.make_group('genemod/fold_curllineartdf', (0, 0), 'fold_curllineartdf')
+        self.make_group('genemod/foldlineartdead', (0, 0), 'foldlineartdead')
+        self.make_group('genemod/fold_curllineartdead', (0, 0), 'fold_curllineartdead')
+
+        # genemod base colours
+
+        self.make_group('base/bases', (0, 0), 'basecolours', sprites_x=6, sprites_y=4)
+        self.make_group('base/lightbases', (0, 0), 'lightbasecolours', sprites_x=4, sprites_y=1)
+
+        # genemod tabby bases
+
+        for x in ["black", "blue", "dove", "platinum",
+                  "chocolate", "lilac", "champagne", "lavender",
+                  "cinnamon", "fawn", "buff", "beige",
+                  "red", "unders_red", "cream", "unders_cream", "honey", "unders_honey", "ivory", "unders_ivory"]:
+            for a, i in enumerate(['rufousedlow', 'rufousedmedium', 'rufousedhigh', 'rufousedshaded', 'rufousedchinchilla']):
+                self.make_group('Tabby/'+x, (a, 0), f'{x}{i}')
+            for a, i in enumerate(['mediumlow', 'mediummedium', 'mediumhigh', 'mediumshaded', 'mediumchinchilla']):
+                self.make_group('Tabby/'+x, (a, 1), f'{x}{i}')
+            for a, i in enumerate(['lowlow', 'lowmedium', 'lowhigh', 'lowshaded', 'lowchinchilla']):
+                self.make_group('Tabby/'+x, (a, 2), f'{x}{i}')
+            for a, i in enumerate(['silverlow', 'silvermedium', 'silverhigh', 'silvershaded', 'silverchinchilla']):
+                self.make_group('Tabby/'+x, (a, 3), f'{x}{i}')
+
+        # genemod tabby patterns
+
+        for a, i in enumerate(['mackerel', 'brokenmack', 'spotted', 'classic', 'fullbar']):
+            self.make_group('Other/tabbypatterns', (a, 0), f'{i}')
+        for a, i in enumerate(['braided', 'brokenbraid', 'rosetted', 'marbled', 'redbar']):
+            self.make_group('Other/tabbypatterns', (a, 1), f'{i}')
+        for a, i in enumerate(['pinstripe', 'brokenpins', 'servaline', 'fullbarc', 'agouti']):
+            self.make_group('Other/tabbypatterns', (a, 2), f'{i}')
+        for a, i in enumerate(['pinsbraided', 'brokenpinsbraid', 'leopard', 'redbarc', 'charcoal']):
+            self.make_group('Other/tabbypatterns', (a, 3), f'{i}')
+        
+        #genemod point markings
+
+        self.make_group('points_spring', (0, 0), 'pointsm')
+        self.make_group('points_summer', (0, 0), 'pointsl')
+        self.make_group('points_winter', (0, 0), 'pointsd')
+        self.make_group('mocha_spring', (0, 0), 'mocham')
+        self.make_group('mocha_summer', (0, 0), 'mochal')
+        self.make_group('mocha_winter', (0, 0), 'mochad')
+
+        #genemod effects
+        self.make_group('Other/bimetal', (0, 0), 'bimetal')
+        self.make_group('Other/ghosting', (0, 0), 'ghost')
+        self.make_group('Other/grizzle', (0, 0), 'grizzle')
+        self.make_group('Other/smoke', (0, 0), 'smoke')
+        self.make_group('Other/bleach', (0, 0), 'bleach')
+        self.make_group('Other/caramel', (0, 0), 'caramel', 1, 1)
+        self.make_group('Other/satin', (0, 0), 'satin', 1, 1)
+
+
+        #genemod extra
+        self.make_group('Other/ears', (0, 0), 'ears')
+        self.make_group('Other/albino_skin', (0, 0), 'albino')
+        self.make_group('Other/noses', (0, 0), 'nose')
+        self.make_group('Other/nose_colours', (0, 0), 'nosecolours')
+        self.make_group('Other/paw_pads', (0, 0), 'pads')
+
+        #genemod eyes
+
+        for i, x in enumerate(['left', 'right', 'sectoral1', 'sectoral2', 'sectoral3', 'sectoral4', 'sectoral5', 'sectoral6']):
+            self.make_group('Other/eyebase', (i, 0), x, sprites_y=6)
+        
+        for b, x in enumerate(['P11', 'P10', 'P9', 'P8', 'P7', 'P6', 'P5', 'P4', 'P3', 'P2', 'P1', 'blue', 'albino']):
+            for a, y in enumerate(range(1, 11)):
+                self.make_group('Other/eyes_full', (a, b), f'R{y} ; {x}', sprites_y=6)
+
         # Line art
         self.make_group('lineart', (0, 0), 'lines')
         self.make_group('shadersnewwhite', (0, 0), 'shaders')
@@ -153,137 +252,38 @@ class Sprites():
         # white patches
         for a, i in enumerate(['FULLWHITE', 'ANY', 'TUXEDO', 'LITTLE', 'COLOURPOINT', 'VAN', 'ANYTWO',
             'MOON', 'PHANTOM', 'POWDER', 'BLEACHED', 'SAVANNAH', 'FADESPOTS', 'PEBBLESHINE']):
-            self.make_group('whitepatches', (a, 0), f'white{i}')
+            self.make_group('whitepatches', (a, 0), f'{i}')
         for a, i in enumerate(['EXTRA', 'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 
             'LIGHTSONG', 'VITILIGO', 'BLACKSTAR', 'PIEBALD', 'CURVED', 'PETAL', 'SHIBAINU', 'OWL']):
-            self.make_group('whitepatches', (a, 1), f'white{i}')
+            self.make_group('whitepatches', (a, 1), f'{i}')
         # ryos white patches
         for a, i in enumerate(['TIP', 'FANCY', 'FRECKLES', 'RINGTAIL', 'HALFFACE', 'PANTSTWO', 'GOATEE', 'VITILIGOTWO',
             'PAWS', 'MITAINE', 'BROKENBLAZE', 'SCOURGE', 'DIVA', 'BEARD']):
-            self.make_group('whitepatches', (a, 2), f'white{i}')
+            self.make_group('whitepatches', (a, 2), f'{i}')
         for a, i in enumerate(['TAIL', 'BLAZE', 'PRINCE', 'BIB', 'VEE', 'UNDERS', 'HONEY',
             'FAROFA', 'DAMIEN', 'MISTER', 'BELLY', 'TAILTIP', 'TOES', 'TOPCOVER']):
-            self.make_group('whitepatches', (a, 3), f'white{i}')
+            self.make_group('whitepatches', (a, 3), f'{i}')
         for a, i in enumerate(
                 ['APRON', 'CAPSADDLE', 'MASKMANTLE', 'SQUEAKS', 'STAR', 'TOESTAIL', 'RAVENPAW',
                 'PANTS', 'REVERSEPANTS', 'SKUNK', 'KARPATI', 'HALFWHITE', 'APPALOOSA', 'DAPPLEPAW']):
-            self.make_group('whitepatches', (a, 4), f'white{i}')
+            self.make_group('whitepatches', (a, 4), f'{i}')
         # beejeans white patches + perrio's point marks, painted, and heart2 + anju's new marks + key's blackstar
         for a, i in enumerate(['HEART', 'LILTWO', 'GLASS', 'MOORISH', 'SEPIAPOINT', 'MINKPOINT', 'SEALPOINT',
             'MAO', 'LUNA', 'CHESTSPECK', 'WINGS', 'PAINTED', 'HEARTTWO', 'WOODPECKER']):
-            self.make_group('whitepatches', (a, 5), f'white{i}')
+            self.make_group('whitepatches', (a, 5), f'{i}')
         # acorn's white patches + ryos' bub + fable lovebug + frankie trixie
         for a, i in enumerate(['BOOTS', 'MISS', 'COW', 'COWTWO', 'BUB', 'BOWTIE', 'MUSTACHE', 'REVERSEHEART',
             'SPARROW', 'VEST', 'LOVEBUG', 'TRIXIE', 'SAMMY', 'SPARKLE']):
-            self.make_group('whitepatches', (a, 6), f'white{i}')
+            self.make_group('whitepatches', (a, 6), f'{i}')
         # acorn's white patches: the sequel
         for a, i in enumerate(['RIGHTEAR', 'LEFTEAR', 'ESTRELLA', 'SHOOTINGSTAR', 'EYESPOT', 'REVERSEEYE',
             'FADEBELLY', 'FRONT', 'BLOSSOMSTEP', 'PEBBLE', 'TAILTWO', 'BUDDY', 'BACKSPOT', 'EYEBAGS']):
-            self.make_group('whitepatches', (a, 7), f'white{i}')
+            self.make_group('whitepatches', (a, 7), f'{i}')
         for a, i in enumerate(['BULLSEYE', 'FINN', 'DIGIT', 'KROPKA', 'FCTWO', 'FCONE', 'MIA', 'SCAR',
             'BUSTER', 'SMOKEY', 'HAWKBLAZE', 'CAKE', 'ROSINA', 'PRINCESS']):
-            self.make_group('whitepatches', (a, 8), f'white{i}')
-        for a, i in enumerate(['LOCKET', 'BLAZEMASK', 'TEARS', 'DOUGIE']):
-            self.make_group('whitepatches', (a, 9), 'white' + i)
-
-        # single (solid)
-        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
-            self.make_group('singlecolours', (a, 0), f'single{i}')
-        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
-            self.make_group('singlecolours', (a, 1), f'single{i}')
-        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
-            self.make_group('singlecolours', (a, 2), f'single{i}')
-        # tabby
-        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
-            self.make_group('tabbycolours', (a, 0), f'tabby{i}')
-        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
-            self.make_group('tabbycolours', (a, 1), f'tabby{i}')
-        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
-            self.make_group('tabbycolours', (a, 2), f'tabby{i}')
-        # marbled
-        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
-            self.make_group('marbledcolours', (a, 0), f'marbled{i}')
-        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
-            self.make_group('marbledcolours', (a, 1), f'marbled{i}')
-        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
-            self.make_group('marbledcolours', (a, 2), f'marbled{i}')
-        # rosette
-        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
-            self.make_group('rosettecolours', (a, 0), f'rosette{i}')
-        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
-            self.make_group('rosettecolours', (a, 1), f'rosette{i}')
-        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
-            self.make_group('rosettecolours', (a, 2), f'rosette{i}')
-        # smoke
-        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
-            self.make_group('smokecolours', (a, 0), f'smoke{i}')
-        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
-            self.make_group('smokecolours', (a, 1), f'smoke{i}')
-        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
-            self.make_group('smokecolours', (a, 2), f'smoke{i}')
-        # ticked
-        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
-            self.make_group('tickedcolours', (a, 0), f'ticked{i}')
-        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
-            self.make_group('tickedcolours', (a, 1), f'ticked{i}')
-        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
-            self.make_group('tickedcolours', (a, 2), f'ticked{i}')
-        # speckled
-        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
-            self.make_group('speckledcolours', (a, 0), f'speckled{i}')
-        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
-            self.make_group('speckledcolours', (a, 1), f'speckled{i}')
-        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
-            self.make_group('speckledcolours', (a, 2), f'speckled{i}')
-        # bengal
-        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
-            self.make_group('bengalcolours', (a, 0), f'bengal{i}')
-        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
-            self.make_group('bengalcolours', (a, 1), f'bengal{i}')
-        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
-            self.make_group('bengalcolours', (a, 2), f'bengal{i}')
-        # mackerel
-        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
-            self.make_group('mackerelcolours', (a, 0), f'mackerel{i}')
-        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
-            self.make_group('mackerelcolours', (a, 1), f'mackerel{i}')
-        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
-            self.make_group('mackerelcolours', (a, 2), f'mackerel{i}')
-        # classic
-        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
-            self.make_group('classiccolours', (a, 0), f'classic{i}')
-        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
-            self.make_group('classiccolours', (a, 1), f'classic{i}')
-        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
-            self.make_group('classiccolours', (a, 2), f'classic{i}')
-        # sokoke
-        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
-            self.make_group('sokokecolours', (a, 0), f'sokoke{i}')
-        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
-            self.make_group('sokokecolours', (a, 1), f'sokoke{i}')
-        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
-            self.make_group('sokokecolours', (a, 2), f'sokoke{i}')
-        # agouti
-        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
-            self.make_group('agouticolours', (a, 0), f'agouti{i}')
-        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
-            self.make_group('agouticolours', (a, 1), f'agouti{i}')
-        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
-            self.make_group('agouticolours', (a, 2), f'agouti{i}')
-        # singlestripe
-        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
-            self.make_group('singlestripecolours', (a, 0), f'singlestripe{i}')
-        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
-            self.make_group('singlestripecolours', (a, 1), f'singlestripe{i}')
-        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
-            self.make_group('singlestripecolours', (a, 2), f'singlestripe{i}')
-        # masked tabby
-        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
-            self.make_group('maskedcolours', (a, 0), f'masked{i}')
-        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
-            self.make_group('maskedcolours', (a, 1), f'masked{i}')
-        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
-            self.make_group('maskedcolours', (a, 2), f'masked{i}')
+            self.make_group('whitepatches', (a, 8), f'{i}')
+        for a, i in enumerate(['LOCKET']):
+            self.make_group('whitepatches', (a, 9), i)
             
         # new new torties
         for a, i in enumerate(['ONE', 'TWO', 'THREE', 'FOUR', 'REDTAIL', 'DELILAH', 'HALF', 'STREAK', 'MASK', 'SMOKE']):
@@ -294,7 +294,7 @@ class Sprites():
             self.make_group('tortiepatchesmasks', (a, 2), f"tortiemask{i}")
         for a, i in enumerate(['ORIOLE', 'ROBIN', 'BRINDLE', 'PAIGE', 'ROSETAIL', 'SAFI', 'DAPPLENIGHT', 'BLANKET', 'BELOVED', 'BODY']):
             self.make_group('tortiepatchesmasks', (a, 3), f"tortiemask{i}")
-        for a, i in enumerate(['SHILOH', 'FRECKLED', 'HEARTBEAT']):
+        for a, i in enumerate(['SHILOH']):
             self.make_group('tortiepatchesmasks', (a, 4), f"tortiemask{i}")
 
         # SKINS

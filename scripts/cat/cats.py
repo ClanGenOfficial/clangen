@@ -1,9 +1,10 @@
 from __future__ import annotations
-from random import choice, randint, sample, random, choices, getrandbits, randrange
+from random import choice, randint, sample, random, choices, getrandbits, randrange, shuffle
 from typing import Dict, List, Any
 import os.path
 import itertools
 import sys
+import json
 
 from .history import History
 from .skills import CatSkills
@@ -14,6 +15,8 @@ import ujson
 
 from .names import Name
 from .pelts import Pelt
+from .genotype import Genotype
+from .phenotype import Phenotype
 from scripts.conditions import Illness, Injury, PermanentCondition, get_amount_cat_for_one_medic, \
     medical_cats_condition_fulfilled
 import bisect
@@ -50,18 +53,18 @@ class Cat():
     rank_sort_order = [
         "newborn",
         "kitten",
-        "elder",
         "apprentice",
         "warrior",
         "mediator apprentice",
         "mediator",
+        "elder",
         "medicine cat apprentice",
         "medicine cat",
         "deputy",
         "leader"
     ]
 
-    gender_tags = {'female': 'F', 'male': 'M'}
+    gender_tags = {'molly': 'F', 'tom': 'M'}
 
     # EX levels and ranges.
     # Ranges are inclusive to both bounds
@@ -117,6 +120,7 @@ class Cat():
                  backstory="clanborn",
                  parent1=None,
                  parent2=None,
+                 kittypet=False,
                  suffix=None,
                  specsuffix_hidden=False,
                  ID=None,
@@ -125,6 +129,8 @@ class Cat():
                  faded=False,
                  skill_dict=None,
                  pelt:Pelt=None,
+                 genotype:Genotype=None,
+                 white_patterns=None,
                  loading_cat=False,  # Set to true if you are loading a cat at start-up.
                  **kwargs
                  ):
@@ -180,8 +186,24 @@ class Cat():
                                        stable=0, social=0)
         self.parent1 = parent1
         self.parent2 = parent2
+
         self.adoptive_parents = []
-        self.pelt = pelt if pelt else Pelt()
+        self.genotype = Genotype()
+        if genotype:
+            self.genotype.fromJSON(genotype)
+        elif parent1:
+            self.genotype.KitGenerator(Cat.all_cats.get(parent1).genotype, Cat.all_cats.get(parent2, None))
+        elif kittypet:
+            self.genotype.AltGenerator()
+        else:
+            self.genotype.Generator()
+
+        self.phenotype = Phenotype(self.genotype)
+        if self.gender:
+            self.phenotype.PhenotypeOutput(self.gender)
+        else:
+            self.phenotype.PhenotypeOutput(self.genotype.gender)
+        self.pelt = pelt if pelt else Pelt(self.genotype, self.phenotype)
         self.former_mentor = []
         self.patrol_with_mentor = 0
         self.apprentice = []
@@ -207,6 +229,234 @@ class Cat():
         self.permanent_condition = {}
         self.df = False
         self.experience_level = None
+
+        self.white_pattern = white_patterns
+
+        def clean_white():
+            while None in self.white_pattern:
+                self.white_pattern.remove(None)
+
+        maingame_white = {
+            'low':{
+                '1': [None, 'SCOURGE', 'BLAZE', 'TAILTIP', 'TOES', 'LUNA', 'LOCKET'],
+                '2': ['LITTLE', 'LIGHTTUXEDO', 'BUZZARDFANG', 'TIP', 'PAWS', 'BROKENBLAZE', 'BEARD', 'BIB', 'VEE', 'HONEY', 'TOESTAIL',
+                      'RAVENPAW', 'DAPPLEPAW', 'LILTWO', 'MUSTACHE', 'REVERSEHEART', 'SPARKLE', 'REVERSEEYE'],
+                '3': ['TUXEDO', 'SAVANNAH', 'FANCY', 'DIVA', 'BEARD', 'DAMIEN', 'BELLY', 'SQUEAKS', 'STAR', 'WINGS', 'MISS', 'BOWTIE',
+                      'FCTWO', 'FCONE', 'MIA', 'PRINCESS'],
+                '4': ['TUXEDO', 'SAVANNAH', 'OWL', 'RINGTAIL', 'UNDERS', 'FAROFA', 'WINGS', 'VEST', 'FRONT', 'BLOSSOMSTEP', 'DIGIT',
+                      'HAWKBLAZE'],
+                '5': ['ANY', 'SHIBAINU', 'FAROFA', 'MISTER', 'PANTS', 'TRIXIE']
+            },
+            'high':{
+                '1': ['ANY', 'SHIBAINU', 'PANTSTWO', 'MAO', 'TRIXIE'],
+                '2': ['ANY', 'FRECKLES', 'PANTSTWO', 'MASKMANTLE', 'MAO', 'PAINTED', 'BUB', 'SCAR'],
+                '3': ['ANYTWO', 'PEBBLESHINE', 'BROKEN', 'PIEBALD', 'FRECKLES', 'HALFFACE', 'GOATEE', 'PRINCE', 'CAPSADDLE', 
+                      'REVERSEPANTS', 'GLASS', 'PAINTED', 'COWTWO', 'SAMMY', 'FINN', 'BUSTER', 'CAKE'],
+                '4': ['VAN', 'PEBBLESHINE', 'LIGHTSONG', 'CURVED', 'GOATEE', 'TAIL', 'APRON', 'HALFWHITE', 'APPALOOSA', 'HEART',
+                      'MOORISH', 'COW', 'SHOOTINGSTAR', 'PEBBLE', 'TAILTWO', 'BUDDY', 'KROPKA'],
+                '5': ['ONEEAR', 'LIGHTSONG', 'BLACKSTAR', 'PETAL', 'CHESTSPECK', 'HEARTTWO', 'BOOTS', 'SHOOTINGSTAR', 'EYESPOT', 
+                      'KROPKA']
+            }
+        }
+
+        vitiligo = ['PHANTOM', 'POWDER', 'BLEACHED', 'VITILIGO', 'VITILIGOTWO', 'SMOKEY']
+
+        #white patterns
+        if self.white_pattern is None and self.genotype.white[0] != "W" and self.genotype.white[0] != "w":
+            self.white_pattern = []
+            if(self.genotype.vitiligo):
+                self.white_pattern.append(choice(vitiligo))
+            if self.genotype.white[0] == "wg":
+                for mark in ["left front mitten", "left back mitten", "right front mitten", "right back mitten"]:
+                    self.white_pattern.append(mark)
+            elif self.genotype.white[0] in ["ws", "wt"] and self.genotype.white[1] not in ["ws", "wt"]:
+                
+                if(randint(1, 4) == 1):
+                    self.white_pattern.append(choice(maingame_white["low"].get(str(self.genotype.whitegrade))))
+                    clean_white()
+
+                elif self.genotype.whitegrade == 1:
+                    grade1list = ['chest tuft', 'belly tuft', 'chest tuft', 'belly tuft', None]
+                    self.white_pattern.append(choice(grade1list))
+                    clean_white()
+                elif self.genotype.whitegrade == 2:
+                    while len(self.white_pattern) == 0:
+                        self.white_pattern = []
+                        #chest
+                        self.white_pattern.append(choice(['chest tuft', 'locket', None, 'chest tuft', 'locket', None, 'bib']))
+                        #belly
+                        self.white_pattern.append(choice(['belly tuft', 'belly spot', None, 'belly tuft', 'belly spot', None, 'belly']))
+
+                        #toes
+                        nropaws = choice([4, 3, 2, 1, 0, 0])
+                        order = ['right front', 'left front', 'right back', 'left back']
+                        shuffle(order)
+
+                        for i in range(nropaws):
+                            self.white_pattern.append(order[i] + choice([' toes', ' toes', ' toes', ' mitten']))
+                    clean_white()
+                elif self.genotype.whitegrade == 3:
+                    while len(self.white_pattern) < 4:
+                        self.white_pattern = []
+                        #chest
+                        self.white_pattern.append(choice(['chest', 'beard', 'chest', 'bib', None]))
+
+                        #belly
+                        self.white_pattern.append(choice(['belly spot', 'belly', 'belly spot', 'belly', 'belly spot', 'belly', None]))
+
+                        #paws
+                        nropaws = choice([4, 4, 3, 2, 1, 0])
+                        order = ['right front', 'left front', 'right back', 'left back']
+                        shuffle(order)
+                        pawtype = choice(['same', 'mixed'])
+
+                        for i in range(nropaws):
+                            if pawtype == 'same':
+                                pawtype = choice([' toes', ' mitten', ' mitten', ' mitten', ' low sock'])
+                                self.white_pattern.append(order[i] + pawtype)
+                            else:
+                                self.white_pattern.append(order[i] + choice([' toes', ' mitten', ' mitten', ' low sock']))
+
+                        #face
+                        if 'beard' in self.white_pattern:
+                            self.white_pattern.append(choice(['chin', 'mustache', 'chin', 'chin', None, None, None, None]))
+
+                        #tail
+                        self.white_pattern.append(choice(['tail tip', None, None, None, None]))
+
+                        clean_white()
+                elif self.genotype.whitegrade == 4:
+                    while len(self.white_pattern) < 4:
+                        self.white_pattern = []
+                        #chest
+                        self.white_pattern.append(choice(['underbelly1', 'beard', 'chest', 'underbelly1']))
+
+                        #belly
+                        if 'underbelly1' not in self.white_pattern:
+                            self.white_pattern.append('belly')
+
+                        #paws
+                        nropaws = choice([4, 4, 4, 4, 3, 3, 2, 2, 1, 0])
+                        order = ['right front', 'left front', 'right back', 'left back']
+                        shuffle(order)
+                        pawtype = choice(['same', 'mixed'])
+
+                        for i in range(nropaws):
+                            if pawtype == 'same':
+                                pawtype = choice([' mitten', ' low sock', ' low sock', ' high sock'])
+                                self.white_pattern.append(order[i] + pawtype)
+                            else:
+                                self.white_pattern.append(order[i] + choice([' mitten', ' low sock', ' high sock']))
+
+                        #face
+                        if 'beard' or 'underbelly1' in self.white_pattern:
+                            self.white_pattern.append(choice(['chin', 'chin', 'muzzle', 'muzzle', 'blaze', None, None]))
+
+                        #tail
+                        self.white_pattern.append(choice(['tail tip', None, None, None, None]))
+
+                        clean_white()
+                else:
+                    while len(self.white_pattern) < 4:
+                        self.white_pattern = []
+                        #chest
+                        self.white_pattern.append('underbelly1')
+
+                        #paws
+                        nropaws = 4
+                        order = ['right front', 'left front', 'right back', 'left back']
+                        shuffle(order)
+                        pawtype = choice(['same', 'mixed'])
+
+                        for i in range(nropaws):
+                            if pawtype == 'same':
+                                pawtype = choice([' high sock', ' bicolour1', ' bicolour1', ' bicolour2'])
+                                self.white_pattern.append(order[i] + pawtype)
+                            else:
+                                self.white_pattern.append(order[i] + choice([' high sock', ' bicolour1', ' bicolour1', ' bicolour2']))
+
+                        #face
+                        self.white_pattern.append(choice(['chin', 'muzzle', 'muzzle', 'muzzle', 'blaze']))
+
+                        #tail
+                        self.white_pattern.append(choice(['tail tip', None, None, None, None]))
+
+                        clean_white()
+            else:
+                
+                if(randint(1, 4) == 1):
+                    self.white_pattern.append(choice(maingame_white["high"].get(str(self.genotype.whitegrade))))
+
+                elif self.genotype.whitegrade == 1:
+                    while len(self.white_pattern) < 4:
+                        self.white_pattern = []
+                        #chest
+                        self.white_pattern.append('underbelly1')
+
+                        #paws
+                        nropaws = 4
+                        order = ['right front', 'left front', 'right back', 'left back']
+                        shuffle(order)
+                        pawtype = choice(['same', 'mixed'])
+
+                        for i in range(nropaws):
+                            if pawtype == 'same':
+                                pawtype = choice([' bicolour1', ' bicolour2', ' bicolour2'])
+                                self.white_pattern.append(order[i] + pawtype)
+                            else:
+                                self.white_pattern.append(order[i] + choice([' bicolour1', ' bicolour2', ' bicolour2']))
+
+                        #face
+                        self.white_pattern.append(choice(['chin', 'muzzle', 'muzzle', 'muzzle', 'blaze', 'blaze']))
+
+                        #tail
+                        self.white_pattern.append(choice(['tail tip', None, None, None, None]))
+
+                        clean_white()
+                elif self.genotype.whitegrade == 2:
+                    self.white_pattern = []
+                    #chest
+                    self.white_pattern.append(choice(['underbelly1', 'mask n mantle']))
+
+                    #paws
+                    nropaws = 4
+                    order = ['right front', 'left front', 'right back', 'left back']
+                    shuffle(order)
+                    pawtype = choice(['same', 'mixed'])
+
+                    for i in range(nropaws):
+                        self.white_pattern.append(order[i] + ' bicolour2')
+
+                    #face
+                    self.white_pattern.append(choice(['muzzle', 'muzzle', 'blaze', 'blaze']))
+
+                    #tail
+                    self.white_pattern.append(choice(['tail tip', None, None, None, None]))
+                    clean_white()
+                elif self.genotype.whitegrade == 3:
+                    clean_white()
+                elif self.genotype.whitegrade == 4:
+                    self.white_pattern.append(choice(['van1', 'van2']))
+
+                    clean_white()
+                else:
+                    self.white_pattern.append(choice(["full white"]))
+
+                    clean_white()
+            
+            if "wt" in self.genotype.white:
+                if 'ws' not in self.genotype.white and self.genotype.whitegrade < 3:
+                    self.white_pattern.append("dorsal1")
+                elif 'ws' not in self.genotype.white and self.genotype.whitegrade < 5:
+                    self.white_pattern.append(choice(["dorsal1", "dorsal2"]))
+                else:
+                    self.white_pattern.append("dorsal2")
+            
+            if self.white_pattern == []:
+                self.white_pattern = "No"
+
+        elif self.white_pattern == "No":
+            self.white_pattern = None
         
         # Various behavior toggles
         self.no_kits = False
@@ -218,6 +468,9 @@ class Cat():
 
         self.faded = faded  # This is only used to flag cat that are faded, but won't be added to the faded list until
         # the next save.
+        
+        if (self.genotype.munch[1] == "Mk" or self.genotype.fold[1] == "Fd" or (self.genotype.manx[1] == "Ab" or self.genotype.manx[1] == "M")):
+            self.set_faded()
 
         self.favourite = False
 
@@ -277,7 +530,7 @@ class Cat():
 
         # sex!?!??!?!?!??!?!?!?!??
         if self.gender is None:
-            self.gender = choice(["female", "male"])
+            self.gender = self.genotype.gender
         self.g_tag = self.gender_tags[self.gender]
 
         # These things should only run when generating a new cat, rather than loading one in.
@@ -285,16 +538,16 @@ class Cat():
             # trans cat chances
             trans_chance = randint(0, 50)
             nb_chance = randint(0, 75)
-            if self.gender == "female" and not self.status in ['newborn', 'kitten']:
+            if self.gender == "molly" and not self.status in ['newborn', 'kitten']:
                 if trans_chance == 1:
-                    self.genderalign = "trans male"
+                    self.genderalign = "trans tom"
                 elif nb_chance == 1:
                     self.genderalign = "nonbinary"
                 else:
                     self.genderalign = self.gender
-            elif self.gender == "male" and not self.status in ['newborn', 'kitten']:
+            elif self.gender == "tom" and not self.status in ['newborn', 'kitten']:
                 if trans_chance == 1:
-                    self.genderalign = "trans female"
+                    self.genderalign = "trans molly"
                 elif nb_chance == 1:
                     self.genderalign = "nonbinary"
                 else:
@@ -302,13 +555,13 @@ class Cat():
             else:
                 self.genderalign = self.gender
 
-            """if self.genderalign in ["female", "trans female"]:
+            """if self.genderalign in ["molly", "trans molly"]:
                 self.pronouns = [self.default_pronouns[1].copy()]
-            elif self.genderalign in ["male", "trans male"]:
+            elif self.genderalign in ["tom", "trans tom"]:
                 self.pronouns = [self.default_pronouns[2].copy()]"""
 
             # APPEARANCE
-            self.pelt = Pelt.generate_new_pelt(self.gender, [Cat.fetch_cat(i) for i in (self.parent1, self.parent2) if i], self.age)
+            self.pelt = Pelt.generate_new_pelt(self.genotype, self.phenotype, self.gender, [Cat.fetch_cat(i) for i in (self.parent1, self.parent2) if i], self.age)
             
             #Personality
             self.personality = Personality(kit_trait=self.is_baby())
@@ -370,7 +623,7 @@ class Cat():
 
         # SAVE CAT INTO ALL_CATS DICTIONARY IN CATS-CLASS
         self.all_cats[self.ID] = self
-
+        
         if self.ID not in ["0", None]:
             Cat.insert_cat(self)
 
@@ -802,41 +1055,11 @@ class Cat():
         return output
 
     def describe_eyes(self):
-        colour = str(self.pelt.eye_colour).lower()
-        colour2 = str(self.pelt.eye_colour2).lower()
-
-        if colour == 'palegreen':
-            colour = 'pale green'
-        elif colour == 'darkblue':
-            colour = 'dark blue'
-        elif colour == 'paleblue':
-            colour = 'pale blue'
-        elif colour == 'paleyellow':
-            colour = 'pale yellow'
-        elif colour == 'heatherblue':
-            colour = 'heather blue'
-        elif colour == 'blue2':
-            colour = 'blue'
-        elif colour == 'sunlitice':
-            colour = 'sunlit ice'
-        elif colour == 'greenyellow':
-            colour = 'green-yellow'
-        if self.pelt.eye_colour2:
-            if colour2 == 'palegreen':
-                colour2 = 'pale green'
-            if colour2 == 'darkblue':
-                colour2 = 'dark blue'
-            if colour2 == 'paleblue':
-                colour2 = 'pale blue'
-            if colour2 == 'paleyellow':
-                colour2 = 'pale yellow'
-            if colour2 == 'heatherblue':
-                colour2 = 'heather blue'
-            if colour2 == 'sunlitice':
-                colour2 = 'sunlit ice'
-            if colour2 == 'greenyellow':
-                colour2 = 'green-yellow'
-            colour = colour + ' and ' + colour2
+        if(self.genotype.lefteye == self.genotype.righteye):
+            colour = self.genotype.lefteye.lower()
+        else:
+            colour = self.genotype.righteye.lower() + " & " + self.genotype.lefteye.lower()
+        
         return colour
 
     def convert_history(self, died_by, scar_events):
@@ -2878,6 +3101,8 @@ class Cat():
                 "no_retire": self.no_retire,
                 "no_mates": self.no_mates,
                 "exiled": self.exiled,
+                "genotype": self.genotype.toJSON(),
+                "white_pattern" : self.white_pattern,
                 "pelt_name": self.pelt.name,
                 "pelt_color": self.pelt.colour,
                 "pelt_length": self.pelt.length,
@@ -3170,10 +3395,10 @@ def create_example_cats():
                    'NOLEFTEAR', 'NORIGHTEAR', 'MANLEG']
     for a in range(12):
         if a in e:
-            game.choose_cats[a] = Cat(status='warrior', biome=None)
+            game.choose_cats[a] = Cat(status='warrior', biome=None, kittypet=True)
         else:
             game.choose_cats[a] = Cat(status=choice(
-                ['kitten', 'apprentice', 'warrior', 'warrior', 'elder']), biome=None)
+                ['kitten', 'apprentice', 'warrior', 'warrior', 'elder']), biome=None, kittypet=True)
         if game.choose_cats[a].moons >= 160:
             game.choose_cats[a].moons = choice(range(120, 155))
         elif game.choose_cats[a].moons == 0:
@@ -3181,8 +3406,8 @@ def create_example_cats():
         for scar in game.choose_cats[a].pelt.scars:
             if scar in not_allowed:
                 game.choose_cats[a].pelt.scars.remove(scar)
+
     
-        #update_sprite(game.choose_cats[a])
     
 
 # CAT CLASS ITEMS

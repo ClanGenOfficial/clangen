@@ -66,6 +66,8 @@ def json_load():
                         parent2=cat["parent2"],
                         moons=cat["moons"],
                         eye_colour=cat["eye_colour"],
+                        genotype=cat["genotype"],
+                        white_patterns=cat["white_pattern"],
                         loading_cat=True)
             
             if cat["eye_colour"] == "BLUE2":
@@ -81,6 +83,8 @@ def json_load():
                     cat["eye_colour2"] = "COBALT"
                         
             new_cat.pelt = Pelt(
+                new_cat.genotype,
+                new_cat.phenotype,
                 name=cat["pelt_name"],
                 length=cat["pelt_length"],
                 colour=cat["pelt_color"],

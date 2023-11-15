@@ -321,11 +321,6 @@ class ProfileScreen(Screens):
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
-            elif event.ui_element == self.destroy_accessory_button:
-                self.the_cat.pelt.accessory = None
-                self.clear_profile()
-                self.build_profile()
-                self.update_disabled_buttons_and_text()
         # History Tab
         elif self.open_tab == 'history':
             if event.ui_element == self.sub_tab_1:
@@ -456,6 +451,8 @@ class ProfileScreen(Screens):
         """Rebuild builds the cat profile. Run when you switch cats
             or for changes in the profile."""
         self.the_cat = Cat.all_cats.get(game.switches["cat"])
+
+        self.user_notes = str(self.the_cat.genotype.ShowGenes())
 
         # use these attributes to create differing profiles for StarClan cats etc.
         is_sc_instructor = False
@@ -676,9 +673,9 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # PELT TYPE
-        output += 'pelt: ' + the_cat.pelt.name.lower()
+        #output += 'pelt: ' + the_cat.pelt.name.lower()
         # NEWLINE ----------
-        output += "\n"
+        #output += "\n"
 
         # PELT LENGTH
         output += 'fur length: ' + the_cat.pelt.length
@@ -980,6 +977,7 @@ class ProfileScreen(Screens):
         if self.user_notes is None:
             self.user_notes = 'Click the check mark to enter notes about your cat!'
 
+        
         self.notes_entry = pygame_gui.elements.UITextEntryBox(
             scale(pygame.Rect((200, 946), (1200, 298))),
             initial_text=self.user_notes,
@@ -1733,13 +1731,6 @@ class ProfileScreen(Screens):
                 tool_tip_text='This will open a confirmation window and allow you to input a death reason',
                 starting_height=2, manager=MANAGER
             )
-            self.destroy_accessory_button = UIImageButton(
-                scale(pygame.Rect((1156, 1044), (344, 72))),
-                "",
-                object_id="#destroy_accessory_button",
-                tool_tip_text="This will permanently remove this cat's current accessory",
-                starting_height=2, manager=MANAGER
-            )
 
             # These are a placeholders, to be killed and recreated in self.update_disabled_buttons_and_text().
             #   This it due to the image switch depending on the cat's status, and the location switch the close button
@@ -1860,11 +1851,6 @@ class ProfileScreen(Screens):
                 self.kill_cat_button.enable()
             else:
                 self.kill_cat_button.disable()
-
-            if self.the_cat.pelt.accessory:
-                self.destroy_accessory_button.enable()
-            else:
-                self.destroy_accessory_button.disable()
         # History Tab:
         elif self.open_tab == 'history':
             # show/hide fav tab star
@@ -1988,7 +1974,6 @@ class ProfileScreen(Screens):
         elif self.open_tab == 'dangerous':
             self.kill_cat_button.kill()
             self.exile_cat_button.kill()
-            self.destroy_accessory_button.kill()
         elif self.open_tab == 'history':
             self.backstory_background.kill()
             self.sub_tab_1.kill()

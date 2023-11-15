@@ -98,7 +98,6 @@ class Patrol():
         
         if path == "decline":
             if self.patrol_event:
-                print(f"PATROL ID: {self.patrol_event.patrol_id} | SUCCESS: N/A (did not proceed)")        
                 return self.process_text(self.patrol_event.decline_text, None), "", None
             else:
                 return "Error - no event chosen", "", None
@@ -568,8 +567,7 @@ class Patrol():
 
             #  correct button check
             if patrol_type == "general":
-                if not set(patrol.types).intersection({"hunting", "border", "training"}):
-                    # This make sure general only gets hunting, border, or training patrols.
+                if not ("medicine cat" in self.patrol_status_list or "medicine cat apprentice" in self.patrol_status_list) and not set(patrol.types).intersection({"hunting", "border", "training"}):
                     continue
             else:
                 if 'hunting' not in patrol.types and patrol_type == 'hunting':

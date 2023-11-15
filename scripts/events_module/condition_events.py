@@ -257,16 +257,15 @@ class Condition_Events():
                         cat.get_injured(injury_event.injury)
 
         # just double-checking that trigger is only returned True if the cat is dead
-        if cat.status != "leader":
-            # only checks for non-leaders, as leaders will not be dead if they are just losing a life
-            if cat.dead:
-                triggered = True
-            else:
-                triggered = False
+        if cat.dead:
+            triggered = True
+        else:
+            triggered = False
 
         if text is not None:
             types = ["health"]
-            if cat.dead or triggered:
+            # game.health_events_list.append(text)
+            if cat.dead:
                 types.append("birth_death")
             if has_other_clan:
                 types.append("other_clans")
