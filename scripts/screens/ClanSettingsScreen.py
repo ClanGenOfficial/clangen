@@ -25,7 +25,7 @@ with open('resources/clansettings.json', 'r', encoding='utf-8') as f:
 
 class ClanSettingsScreen(Screens):
     """
-    Screen handles all clan-specfic settings
+    Screen handles all Clan-specific settings
     """
     text_size = {
         '0': 'small',
@@ -212,7 +212,7 @@ class ClanSettingsScreen(Screens):
             (1360 / 1600 * screen_x, (n * 78 + 80) / 1400 * screen_y))
 
         self.checkboxes_text['instr'] = pygame_gui.elements.UITextBox(
-            "Change the general clan-specfic settings",
+            "Change the general Clan-specific settings",
             scale(pygame.Rect((200, 370), (1200, 100))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER)
@@ -251,7 +251,7 @@ class ClanSettingsScreen(Screens):
             n += 1
 
         self.checkboxes_text['instr'] = pygame_gui.elements.UITextBox(
-            "Change clan-specfic settings regarding cat roles",
+            "Change Clan-specific settings regarding cat roles",
             scale(pygame.Rect((200, 370), (1200, 100))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER)
@@ -285,7 +285,7 @@ class ClanSettingsScreen(Screens):
             n += 1
 
         self.checkboxes_text['instr'] = pygame_gui.elements.UITextBox(
-            "Change clan-specfic settings regarding cat relationships",
+            "Change Clan-specific settings regarding cat relationships",
             scale(pygame.Rect((200, 370), (1200, 100))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER)
