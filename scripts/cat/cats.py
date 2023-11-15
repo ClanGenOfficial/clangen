@@ -445,9 +445,9 @@ class Cat():
                     clean_white()
             
             if "wt" in self.genotype.white:
-                if 'ws' not in self.genotype.white and self.genotype.whitegrade < 3:
+                if self.genotype.white[1] not in ['ws', 'wt'] and self.genotype.whitegrade < 3:
                     self.white_pattern.append("dorsal1")
-                elif 'ws' not in self.genotype.white and self.genotype.whitegrade < 5:
+                elif self.genotype.white[1] not in ['ws', 'wt'] and self.genotype.whitegrade < 5:
                     self.white_pattern.append(choice(["dorsal1", "dorsal2"]))
                 else:
                     self.white_pattern.append("dorsal2")

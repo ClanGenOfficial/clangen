@@ -152,8 +152,10 @@ class Sprites():
         self.make_group('genemod/curllineart', (0, 0), 'curllines')
         self.make_group('genemod/foldlineartdf', (0, 0), 'foldlineartdf')
         self.make_group('genemod/fold_curllineartdf', (0, 0), 'fold_curllineartdf')
+        self.make_group('genemod/curllineartdf', (0, 0), 'curllineartdf')
         self.make_group('genemod/foldlineartdead', (0, 0), 'foldlineartdead')
         self.make_group('genemod/fold_curllineartdead', (0, 0), 'fold_curllineartdead')
+        self.make_group('genemod/curllineartdf', (0, 0), 'curllineartdf')
 
         # genemod base colours
 
