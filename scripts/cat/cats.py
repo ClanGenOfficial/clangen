@@ -3395,10 +3395,10 @@ def create_example_cats():
                    'NOLEFTEAR', 'NORIGHTEAR', 'MANLEG']
     for a in range(12):
         if a in e:
-            game.choose_cats[a] = Cat(status='warrior', biome=None, kittypet=True)
+            game.choose_cats[a] = Cat(status='warrior', biome=None)
         else:
             game.choose_cats[a] = Cat(status=choice(
-                ['kitten', 'apprentice', 'warrior', 'warrior', 'elder']), biome=None, kittypet=True)
+                ['kitten', 'apprentice', 'warrior', 'warrior', 'elder']), biome=None)
         if game.choose_cats[a].moons >= 160:
             game.choose_cats[a].moons = choice(range(120, 155))
         elif game.choose_cats[a].moons == 0:
