@@ -64,7 +64,7 @@ class MediationScreen(Screens):
                 self.update_selected_cats()
                 self.update_mediator_info()
             elif event.ui_element == self.sabotoge_button:
-                game.mediated.append(f"{self.selected_cat_1.ID}, {self.selected_cat_2.ID}")
+                game.mediated.append([self.selected_cat_1.ID, self.selected_cat_2.ID])
                 game.patrolled.append(self.mediators[self.selected_mediator].ID)
                 output = Cat.mediate_relationship(
                     self.mediators[self.selected_mediator], self.selected_cat_1, self.selected_cat_2,
