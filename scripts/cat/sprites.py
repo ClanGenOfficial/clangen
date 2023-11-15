@@ -238,17 +238,6 @@ class Sprites():
             self.make_group('fadestarclan', (i, 0), f'fadestarclan{i}')
             self.make_group('fadedarkforest', (i, 0), f'fadedf{i}')
 
-        for a, i in enumerate(
-                ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 
-                'DARKBLUE', 'GREY', 'CYAN', 'EMERALD', 'HEATHERBLUE', 'SUNLITICE']):
-            self.make_group('eyes', (a, 0), f'eyes{i}')
-            self.make_group('eyes2', (a, 0), f'eyes2{i}')
-        for a, i in enumerate(
-                ['COPPER', 'SAGE', 'COBALT', 'PALEBLUE', 'BRONZE', 'SILVER',
-                'PALEYELLOW', 'GOLD', 'GREENYELLOW']):
-            self.make_group('eyes', (a, 1), f'eyes{i}')
-            self.make_group('eyes2', (a, 1), f'eyes2{i}')
-
         # white patches
         for a, i in enumerate(['FULLWHITE', 'ANY', 'TUXEDO', 'LITTLE', 'COLOURPOINT', 'VAN', 'ANYTWO',
             'MOON', 'PHANTOM', 'POWDER', 'BLEACHED', 'SAVANNAH', 'FADESPOTS', 'PEBBLESHINE']):
@@ -282,7 +271,7 @@ class Sprites():
         for a, i in enumerate(['BULLSEYE', 'FINN', 'DIGIT', 'KROPKA', 'FCTWO', 'FCONE', 'MIA', 'SCAR',
             'BUSTER', 'SMOKEY', 'HAWKBLAZE', 'CAKE', 'ROSINA', 'PRINCESS']):
             self.make_group('whitepatches', (a, 8), f'{i}')
-        for a, i in enumerate(['LOCKET']):
+        for a, i in enumerate(['LOCKET', 'BLAZEMASK', 'TEARS', 'DOUGIE']):
             self.make_group('whitepatches', (a, 9), i)
             
         # new new torties
@@ -294,7 +283,7 @@ class Sprites():
             self.make_group('tortiepatchesmasks', (a, 2), f"tortiemask{i}")
         for a, i in enumerate(['ORIOLE', 'ROBIN', 'BRINDLE', 'PAIGE', 'ROSETAIL', 'SAFI', 'DAPPLENIGHT', 'BLANKET', 'BELOVED', 'BODY']):
             self.make_group('tortiepatchesmasks', (a, 3), f"tortiemask{i}")
-        for a, i in enumerate(['SHILOH']):
+        for a, i in enumerate(['SHILOH', 'FRECKLED', 'HEARTBEAT']):
             self.make_group('tortiepatchesmasks', (a, 4), f"tortiemask{i}")
 
         # SKINS
