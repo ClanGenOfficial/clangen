@@ -2330,14 +2330,20 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                 new_sprite.blit(sprites.sprites['foldlines' + cat_sprite], (0, 0))
         elif cat.df:
             if(cat.genotype.fold[0] != 'Fd'):
-                new_sprite.blit(sprites.sprites['lineartdf' + cat_sprite], (0, 0))
+                if(cat.genotype.curl[0] == 'Cu'):
+                    new_sprite.blit(sprites.sprites['curllineartdf' + cat_sprite], (0, 0))
+                else:
+                    new_sprite.blit(sprites.sprites['lineartdf' + cat_sprite], (0, 0))
             elif(cat.genotype.curl[0] == 'Cu'):
                 new_sprite.blit(sprites.sprites['fold_curllineartdf' + cat_sprite], (0, 0))
             else:
                 new_sprite.blit(sprites.sprites['foldlineartdf' + cat_sprite], (0, 0))
         elif dead:
             if(cat.genotype.fold[0] != 'Fd'):
-                new_sprite.blit(sprites.sprites['lineartdead' + cat_sprite], (0, 0))
+                if(cat.genotype.curl[0] == 'Cu'):
+                    new_sprite.blit(sprites.sprites['curllineartdead' + cat_sprite], (0, 0))
+                else:
+                    new_sprite.blit(sprites.sprites['lineartdead' + cat_sprite], (0, 0))
             elif(cat.genotype.curl[0] == 'Cu'):
                 new_sprite.blit(sprites.sprites['fold_curllineartdead' + cat_sprite], (0, 0))
             else:
