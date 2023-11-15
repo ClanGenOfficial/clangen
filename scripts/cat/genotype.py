@@ -2064,11 +2064,11 @@ class Genotype:
 
         
 
-        if self.white == ["w","w"] or self.white == ["w","wg"] or self.white == ["wg","wg"]:
+        if 'ws' not in self.white and 'wt' not in self.white:
             hetindex = randint(0, 74)
-        elif self.white == ["ws","w"] or self.white == ["ws","wg"]:
+        elif self.white[0] in ['ws', 'wt'] and self.white[1] not in ['ws', 'wt']:
             hetindex = randint(0, 24)
-        elif self.white == ["ws","ws"]:
+        elif self.white[0] in ['ws', 'wt'] and self.white[1] in ['ws', 'wt']:
             hetindex = randint(0, 14)
         elif self.white[0] == "W":
             hetindex = randint(0, 9)
