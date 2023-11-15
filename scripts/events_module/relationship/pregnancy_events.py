@@ -4,6 +4,7 @@ import random
 from scripts.cat.history import History
 from scripts.utility import (
     create_new_cat,
+    create_outside_cat,
     get_highest_romantic_relation,
     get_med_cats,
     event_text_adjust,
@@ -199,7 +200,19 @@ class Pregnancy_Events():
         # instead, the cat should get the kit instantly
         if not other_cat and cat.gender == 'tom':
             amount = Pregnancy_Events.get_amount_of_kits(cat)
-            kits = Pregnancy_Events.get_kits(amount, cat, None, clan)
+            if(randint(1, 2) == 1):
+                cat_type = choice(['loner', 'rogue', 'kittypet'])
+                backkit = 'outsider_roots2'
+            else:
+                cat_type = 'former Clancat'
+                backkit = 'halfclan2'
+            """outside_parent = create_outside_cat(Cat,
+                                status=cat_type if cat_type in ['loner', 'rogue', 'kittypet'] else 'rogue',
+                                backstory=None,
+                                age=cat.moons + randint(0, 24)-12,
+                                alive=True  
+                                 )"""
+            kits = Pregnancy_Events.get_kits(amount, cat, None, clan, backkit=backkit)
             insert = 'this should not display'
             if amount == 1:
                 insert = 'a single kitten'
@@ -600,7 +613,7 @@ class Pregnancy_Events():
         return None
 
     @staticmethod
-    def get_kits(kits_amount, cat=None, other_cat=None, clan=game.clan, adoptive_parents=None):
+    def get_kits(kits_amount, cat=None, other_cat=None, clan=game.clan, adoptive_parents=None, backkit=None):
         """Create some amount of kits
            No parents are specifed, it will create a blood parents for all the 
            kits to be related to. They may be dead or alive, but will always be outside 
@@ -621,7 +634,9 @@ class Pregnancy_Events():
         blood_parent = None
          
         ##### SELECT BACKSTORY #####
-        if cat and cat.gender == 'molly':
+        if backkit:
+            backstory = backkit
+        elif cat and cat.gender == 'molly':
             backstory = choice(['halfclan1', 'outsider_roots1'])
         elif cat:
             backstory = choice(['halfclan2', 'outsider_roots2'])

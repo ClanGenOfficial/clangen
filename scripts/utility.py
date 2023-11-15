@@ -432,7 +432,7 @@ def create_new_cat(Cat,
     return created_cats
 
 
-def create_outside_cat(Cat, status, backstory, alive=True, thought=None):
+def create_outside_cat(Cat, status, backstory, age=None, alive=True, thought=None):
     """
         TODO: DOCS
         """
@@ -460,6 +460,9 @@ def create_outside_cat(Cat, status, backstory, alive=True, thought=None):
         new_cat.pelt.accessory = choice(Pelt.collars)
     new_cat.outside = True
 
+    if(age):
+        new_cat.moons = age
+
     if not alive:
         new_cat.die()
 
@@ -475,8 +478,8 @@ def create_outside_cat(Cat, status, backstory, alive=True, thought=None):
     game.clan.add_to_outside(new_cat)
     name = str(name + suffix)
 
+    #return new_cat
     return name
-
 
 # ---------------------------------------------------------------------------- #
 #                             Cat Relationships                                #
@@ -2266,20 +2269,6 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
         whitesprite.blit(nose2, (0, 0))
         gensprite.blit(whitesprite, (0, 0))
 
-        # make sure colours are in the lines
-        gensprite.blit(sprites.sprites['normbord'+ cat_sprite], (0, 0))
-        gensprite.blit(sprites.sprites['normbord'+ cat_sprite], (0, 0))
-        if(cat.genotype.fold[0] == 'Fd'):
-            gensprite.blit(sprites.sprites['foldbord'+ cat_sprite], (0, 0))
-            gensprite.blit(sprites.sprites['foldbord'+ cat_sprite], (0, 0))
-        elif(cat.genotype.curl[0] == 'Cu'):
-            gensprite.blit(sprites.sprites['curlbord'+ cat_sprite], (0, 0))
-            gensprite.blit(sprites.sprites['curlbord'+ cat_sprite], (0, 0))
-        
-        gensprite.set_colorkey((0, 0, 255))
-
-        new_sprite.blit(gensprite, (0, 0))
-
         # draw eyes & scars1
         #eyes = sprites.sprites['eyes' + cat.pelt.eye_colour + cat_sprite].copy()
         #if cat.pelt.eye_colour2 != None:
@@ -2297,25 +2286,39 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
             lefteye.blit(sprites.sprites[cat.genotype.lefteyetype + cat_sprite], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
             righteye.blit(sprites.sprites[cat.genotype.righteyetype + cat_sprite], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
 
-            new_sprite.blit(lefteye, (0, 0))
-            new_sprite.blit(righteye, (0, 0))
+            gensprite.blit(lefteye, (0, 0))
+            gensprite.blit(righteye, (0, 0))
 
             if(cat.genotype.extraeye):
                 special.blit(sprites.sprites[cat.genotype.extraeye + cat_sprite], (0, 0))
                 special.blit(sprites.sprites[cat.genotype.extraeyetype + cat_sprite], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
-                new_sprite.blit(special, (0, 0))
+                gensprite.blit(special, (0, 0))
 
         if not scars_hidden:
             for scar in cat.pelt.scars:
                 if scar in cat.pelt.scars1:
-                    new_sprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0))
+                    gensprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0))
                 if scar in cat.pelt.scars3:
-                    new_sprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0))
+                    gensprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0))
         
         # draw line art
         if game.settings['shaders'] and not dead:
-            new_sprite.blit(sprites.sprites['shaders' + cat_sprite], (0, 0), special_flags=pygame.BLEND_RGB_MULT)
-            new_sprite.blit(sprites.sprites['lighting' + cat_sprite], (0, 0))
+            gensprite.blit(sprites.sprites['shaders' + cat_sprite], (0, 0), special_flags=pygame.BLEND_RGB_MULT)
+            gensprite.blit(sprites.sprites['lighting' + cat_sprite], (0, 0))
+
+        # make sure colours are in the lines
+        gensprite.blit(sprites.sprites['normbord'+ cat_sprite], (0, 0))
+        gensprite.blit(sprites.sprites['normbord'+ cat_sprite], (0, 0))
+        if(cat.genotype.fold[0] == 'Fd'):
+            gensprite.blit(sprites.sprites['foldbord'+ cat_sprite], (0, 0))
+            gensprite.blit(sprites.sprites['foldbord'+ cat_sprite], (0, 0))
+        elif(cat.genotype.curl[0] == 'Cu'):
+            gensprite.blit(sprites.sprites['curlbord'+ cat_sprite], (0, 0))
+            gensprite.blit(sprites.sprites['curlbord'+ cat_sprite], (0, 0))
+        
+        gensprite.set_colorkey((0, 0, 255))
+
+        new_sprite.blit(gensprite, (0, 0))
 
 
         if not dead:

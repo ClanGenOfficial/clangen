@@ -2043,20 +2043,20 @@ class Genotype:
 
 
         if self.white == ["w","w"] or self.white == ["w", "wg"] or self.white == ["wg", "wg"]:
-            blueindex = randint(0, 74)
+            blueindex = randint(0, 99)
         elif self.white == ["ws","w"] or self.white == ["ws","wg"] or self.white == ["wt", "w"] or self.white == ["wt", "wg"]:
-            blueindex = randint(0, 19)
+            blueindex = randint(0, 74)
         elif self.white == ["ws","ws"] or self.white == ["wt", "wt"] or self.white == ["ws", "wt"]:
-            blueindex = randint(0, 9)
+            blueindex = randint(0, 24)
         elif self.pointgene == ["cb","cs"]:
             blueindex = randint(0, 7)
         elif self.white[0] == "W":
-            blueindex = randint(0, 4)
-            if randint(1, 4) == 1:
+            blueindex = randint(0, 14)
+            if randint(1, 4) == 1 and blueindex == 0:
                 self.deaf = "Deaf "
         if self.white == ["W","W"]:
             blueindex = randint(0, 2)
-            if randint(1, 4) < 4:
+            if randint(1, 4) < 4 and blueindex == 0:
                 self.deaf = "Deaf "
         
         if self.pointgene[0] == "cs" or ((self.pointgene == ["cb","cm"] or self.pointgene == ["cm","cm"] or self.pointgene == ["cm","c"]) and randint(0, 4)==0) or (self.altai != ["al", "al"] and randint(0, 4) == 0):
@@ -2065,13 +2065,13 @@ class Genotype:
         
 
         if self.white == ["w","w"] or self.white == ["w","wg"] or self.white == ["wg","wg"]:
-            hetindex = randint(0, 49)
+            hetindex = randint(0, 74)
         elif self.white == ["ws","w"] or self.white == ["ws","wg"]:
-            hetindex = randint(0, 14)
+            hetindex = randint(0, 24)
         elif self.white == ["ws","ws"]:
-            hetindex = randint(0, 4)
+            hetindex = randint(0, 14)
         elif self.white[0] == "W":
-            hetindex = randint(0, 4)
+            hetindex = randint(0, 9)
         if self.white == ["W","W"]:
             hetindex = randint(0, 2)
         if self.altai != ["al","al"] and randint(0, 4)!= 0:
