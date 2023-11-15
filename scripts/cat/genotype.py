@@ -1,5 +1,6 @@
 from random import choice, randint
 import json
+from operator import xor
 
 
 class Genotype:
@@ -1375,7 +1376,7 @@ class Genotype:
         self.piggrade = "P" + str(self.piggrade)
 
     def KitGenerator(self, par1, par2=None):
-        if par2 == None:
+        if par2 == None or not xor('Y' in par1.sexgene, 'Y' in par2.genotype.sexgene):
             par2 = Genotype()
             if(par1.sexgene[1] == "Y"):
                 par2.Generator("fem")
