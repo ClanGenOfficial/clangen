@@ -1787,11 +1787,11 @@ class ProfileScreen(Screens):
                 self.cis_trans_button.kill()
             if self.the_cat.gender == "tom" and self.the_cat.genderalign == "tom":
                 self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
-                                                      starting_height=2, object_id="#change_trans_molly_button",
+                                                      starting_height=2, object_id="#change_trans_female_button",
                                                       manager=MANAGER)
             elif self.the_cat.gender == "molly" and self.the_cat.genderalign == "molly":
                 self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
-                                                      starting_height=2, object_id="#change_trans_tom_button",
+                                                      starting_height=2, object_id="#change_trans_male_button",
                                                       manager=MANAGER)
             elif self.the_cat.genderalign in ['trans molly', 'trans tom']:
                 self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
