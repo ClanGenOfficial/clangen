@@ -455,8 +455,8 @@ class Cat():
             if self.white_pattern == []:
                 self.white_pattern = "No"
 
-        elif self.white_pattern == "No":
-            self.white_pattern = None
+        #elif self.white_pattern == "No":
+        #    self.white_pattern = None
         
         # Various behavior toggles
         self.no_kits = False
