@@ -338,13 +338,13 @@ class MediationScreen(Screens):
             object_id="#text_box_30_horizcenter")
 
         # Gender
-        if cat.genderalign == 'female':
+        if cat.genderalign == 'molly':
             gender_icon = image_cache.load_image("resources/images/female_big.png").convert_alpha()
-        elif cat.genderalign == 'male':
+        elif cat.genderalign == 'tom':
             gender_icon = image_cache.load_image("resources/images/male_big.png").convert_alpha()
-        elif cat.genderalign == 'trans female':
+        elif cat.genderalign == 'trans molly':
             gender_icon = image_cache.load_image("resources/images/transfem_big.png").convert_alpha()
-        elif cat.genderalign == 'trans male':
+        elif cat.genderalign == 'trans tom':
             gender_icon = image_cache.load_image("resources/images/transmasc_big.png").convert_alpha()
         else:
             # Everyone else gets the nonbinary icon
@@ -419,16 +419,16 @@ class MediationScreen(Screens):
         if related and other_cat and not mates:
             col2 += "\n"
             if other_cat.is_uncle_aunt(cat):
-                if cat.genderalign in ['female', 'trans female']:
+                if cat.genderalign in ['molly', 'trans molly']:
                     col2 += "niece"
-                elif cat.genderalign in ['male', 'trans male']:
+                elif cat.genderalign in ['tom', 'trans tom']:
                     col2 += "nephew"
                 else:
                     col2 += "sibling's child"
             elif cat.is_uncle_aunt(other_cat):
-                if cat.genderalign in ['female', 'trans female']:
+                if cat.genderalign in ['molly', 'trans molly']:
                     col2 += "aunt"
-                elif cat.genderalign in ['male', 'trans male']:
+                elif cat.genderalign in ['tom', 'trans tom']:
                     col2 += "uncle"
                 else:
                     col2 += "related: parent's sibling"

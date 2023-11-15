@@ -116,7 +116,7 @@ class AllegiancesScreen(Screens):
             if not parents:
                 continue
             
-            if len(parents) == 1 or all(i.gender == "male" for i in parents) or parents[0].gender == "female":
+            if len(parents) == 1 or all(i.gender == "tom" for i in parents) or parents[0].gender == "molly":
                 if parents[0].ID in queen_dict:
                     queen_dict[parents[0].ID].append(cat)
                     living_kits.remove(cat)

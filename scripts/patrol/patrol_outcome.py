@@ -849,7 +849,7 @@ class PatrolOutcome():
             if sub[0].moons < 3:
                 # Search for parent
                 for sub_sub in patrol.new_cats:
-                    if sub_sub[0] != sub[0] and (sub_sub[0].gender == "female" or game.clan.clan_settings['same sex birth']) \
+                    if sub_sub[0] != sub[0] and (sub_sub[0].gender == "molly" or game.clan.clan_settings['same sex birth']) \
                             and sub_sub[0].ID in (sub[0].parent1, sub[0].parent2) and not (sub_sub[0].dead or sub_sub[0].outside):
                         sub_sub[0].get_injured("recovering from birth")
                         break # Break - only one parent ever gives birth
@@ -922,12 +922,12 @@ class PatrolOutcome():
         
         
         # DETERMINE GENDER
-        if "male" in attribute_list:
-            gender = "male"
-        elif "female" in attribute_list:
-            gender = "female"
+        if "tom" in attribute_list:
+            gender = "tom"
+        elif "molly" in attribute_list:
+            gender = "molly"
         elif "can_birth" in attribute_list and not game.clan.clan_settings["same sex birth"]:
-            gender = "female"
+            gender = "molly"
         else:
             gender = None
         
