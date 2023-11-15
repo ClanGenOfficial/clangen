@@ -111,12 +111,9 @@ class Sprites():
         del width, height # unneeded
 
         for x in [
-            'lineart', 'singlecolours', 'speckledcolours', 'tabbycolours',
-            'whitepatches', 'eyes', 'eyes2', 'skin', 'scars', 'missingscars',
+            'lineart',
+            'whitepatches', 'scars', 'missingscars',
             'collars', 'bellcollars', 'bowcollars', 'nyloncollars',
-            'bengalcolours', 'marbledcolours', 'rosettecolours', 'smokecolours', 'tickedcolours', 
-            'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours',
-            'maskedcolours', 
             'shadersnewwhite', 'lineartdead', 'tortiepatchesmasks', 
             'medcatherbs', 'lineartdf', 'lightingnew', 'fademask',
             'fadestarclan', 'fadedarkforest'
@@ -285,14 +282,6 @@ class Sprites():
             self.make_group('tortiepatchesmasks', (a, 3), f"tortiemask{i}")
         for a, i in enumerate(['SHILOH', 'FRECKLED', 'HEARTBEAT']):
             self.make_group('tortiepatchesmasks', (a, 4), f"tortiemask{i}")
-
-        # SKINS
-        for a, i in enumerate(['BLACK', "RED", 'PINK', 'DARKBROWN', 'BROWN', 'LIGHTBROWN']):
-            self.make_group('skin', (a, 0), f"skin{i}")
-        for a, i in enumerate(['DARK', 'DARKGREY', 'GREY', 'DARKSALMON', 'SALMON', 'PEACH']):
-            self.make_group('skin', (a, 1), f"skin{i}")
-        for a, i in enumerate(['DARKMARBLED', 'MARBLED', 'LIGHTMARBLED', 'DARKBLUE', 'BLUE', 'LIGHTBLUE']):
-            self.make_group('skin', (a, 2), f"skin{i}")
 
         self.load_scars()
 
