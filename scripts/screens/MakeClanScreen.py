@@ -372,6 +372,9 @@ class MakeClanScreen(Screens):
         elif event.ui_element == self.tabs["tab3"]:
             self.selected_camp_tab = 3
             self.refresh_selected_camp()
+        elif event.ui_element == self.tabs["tab4"]:
+            self.selected_camp_tab = 4
+            self.refresh_selected_camp()
         elif event.ui_element == self.tabs["newleaf_tab"]:
             self.selected_season = "Newleaf"
             self.refresh_text_and_buttons()
@@ -427,7 +430,7 @@ class MakeClanScreen(Screens):
                 self.selected_camp_tab -= 1
                 self.refresh_selected_camp()
         elif event.key == pygame.K_DOWN and self.biome_selected is not None:
-            if self.selected_camp_tab < 3:
+            if self.selected_camp_tab < 4:
                 self.selected_camp_tab += 1
                 self.refresh_selected_camp()
         elif event.key == pygame.K_RETURN:
@@ -629,12 +632,15 @@ class MakeClanScreen(Screens):
         self.tabs["tab1"].kill()
         self.tabs["tab2"].kill()
         self.tabs["tab3"].kill()
+        self.tabs["tab4"].kill()
         if self.biome_selected == 'Forest':
             self.tabs["tab1"] = UIImageButton(scale(pygame.Rect((190, 360), (308, 60))), "", object_id="#classic_tab"
                                               , manager=MANAGER)
             self.tabs["tab2"] = UIImageButton(scale(pygame.Rect((216, 430), (308, 60))), "", object_id="#gully_tab"
                                               , manager=MANAGER)
             self.tabs["tab3"] = UIImageButton(scale(pygame.Rect((190, 500), (308, 60))), "", object_id="#grotto_tab"
+                                              , manager=MANAGER)
+            self.tabs["tab4"] = UIImageButton(scale(pygame.Rect((170, 570), (308, 60))), "", object_id="#lakeside_tab"
                                               , manager=MANAGER)
         elif self.biome_selected == 'Mountainous':
             self.tabs["tab1"] = UIImageButton(scale(pygame.Rect((222, 360), (308, 60))), "", object_id="#cliff_tab"
@@ -662,18 +668,27 @@ class MakeClanScreen(Screens):
             self.tabs["tab1"].disable()
             self.tabs["tab2"].enable()
             self.tabs["tab3"].enable()
+            self.tabs["tab4"].enable()
         elif self.selected_camp_tab == 2:
             self.tabs["tab1"].enable()
             self.tabs["tab2"].disable()
             self.tabs["tab3"].enable()
+            self.tabs["tab4"].enable()
         elif self.selected_camp_tab == 3:
             self.tabs["tab1"].enable()
             self.tabs["tab2"].enable()
             self.tabs["tab3"].disable()
+            self.tabs["tab4"].enable()
+        elif self.selected_camp_tab == 4:
+            self.tabs["tab1"].enable()
+            self.tabs["tab2"].enable()
+            self.tabs["tab3"].enable()
+            self.tabs["tab4"].disable()
         else:
             self.tabs["tab1"].enable()
             self.tabs["tab2"].enable()
             self.tabs["tab3"].enable()
+            self.tabs["tab4"].enable()
 
         # I have to do this for proper layering.
         if "camp_art" in self.elements:
@@ -1108,6 +1123,8 @@ class MakeClanScreen(Screens):
                                           visible=False, manager=MANAGER)
         self.tabs["tab3"] = UIImageButton(scale(pygame.Rect((0, 0), (0, 0))), "",
                                           visible=False, manager=MANAGER)
+        self.tabs["tab4"] = UIImageButton(scale(pygame.Rect((0, 0), (0, 0))), "",
+                                          visible=False, manager=MANAGER)
 
         y_pos = 550
         self.tabs["newleaf_tab"] = UIImageButton(scale(pygame.Rect((1250, y_pos), (78, 68))), "",
@@ -1170,7 +1187,7 @@ class MakeClanScreen(Screens):
         game.cat_to_fade.clear()
         Cat.outside_cats.clear()
         Patrol.used_patrols.clear()
-        convert_camp = {1: 'camp1', 2: 'camp2', 3: 'camp3'}
+        convert_camp = {1: 'camp1', 2: 'camp2', 3: 'camp3', 4: 'camp4'}
         game.clan = Clan(self.clan_name,
                          self.leader,
                          self.deputy,
