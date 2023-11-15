@@ -1671,17 +1671,13 @@ class Events:
             return True
 
         # chance to die of old age
+        age_chance = game.config["death_related"]["old_age_death_chance"]
         age_start = game.config["death_related"]["old_age_death_start"]
-        death_curve_setting = game.config["death_related"]["old_age_death_curve"]
-        death_curve_value = 0.001 * death_curve_setting
-        # made old_age_death_chance into a separate value to make testing with print statements easier
-        old_age_death_chance = ((1 + death_curve_value) ** (cat.moons - age_start)) - 1
-        if random.random() <= old_age_death_chance:
-            Death_Events.handle_deaths(cat, other_cat, game.clan.war.get("at_war", False), enemy_clan, alive_kits)
-            return True
-        # max age has been indicated to be 300, so if a cat reaches that age, they die of old age
-        elif cat.moons >= 300:
-            Death_Events.handle_deaths(cat, other_cat, game.clan.war.get("at_war", False), enemy_clan, alive_kits)
+        if cat.moons > int(
+                random.random() * age_chance) + age_start:  # cat.moons > 150 <--> 200
+            
+            Death_Events.handle_deaths(cat, other_cat, game.clan.war.get("at_war", False),
+                                            enemy_clan, alive_kits)
             return True
 
         # disaster death chance
@@ -2020,20 +2016,20 @@ class Events:
                 return
 
             if random.getrandbits(1):  # 50/50
-                if cat.gender == "male":
-                    cat.genderalign = "trans female"
+                if cat.gender == "tom":
+                    cat.genderalign = "trans molly"
                     # cat.pronouns = [cat.default_pronouns[1].copy()]
                 else:
-                    cat.genderalign = "trans male"
+                    cat.genderalign = "trans tom"
                     # cat.pronouns = [cat.default_pronouns[2].copy()]
             else:
                 cat.genderalign = "nonbinary"
                 # cat.pronouns = [cat.default_pronouns[0].copy()]
 
-            if cat.gender == 'male':
+            if cat.gender == 'tom':
                 gender = 'tom'
             else:
-                gender = 'she-cat'
+                gender = 'molly'
             text = f"{cat.name} has realized that {gender} doesn't describe how they feel anymore."
             game.cur_events_list.append(
                 Single_Event(text, "misc", involved_cats))
