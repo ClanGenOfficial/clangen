@@ -12,8 +12,8 @@
 			"Misses eating fresh-kill and sharing tongues with {PRONOUN/m_c/poss} Clanmates",
 			"Stands by the StarClan border, hoping a cat will take pity on {PRONOUN/m_c/object}",
 			"Furiously grabs onto a branch so hard one of {PRONOUN/m_c/poss} claws snaps off",
-			"Wonders what they did wrong",
-			"Tries to groom their matted fur only to realize it's too caked with mud to clean"
+			"Wonders what {PRONOUN/m_c/subject} did wrong",
+			"Tries to groom {PRONOUN/m_c/poss} matted fur only to realize it's too caked with mud to clean"
 			]
 	}
 ]
