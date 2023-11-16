@@ -1,5 +1,12 @@
 <strong>v0.10.6</strong>
-- Fixed the constantly dizzy condition
+- Fixed the constantly dizzy condition.
+- Added an entry in the game_config.json to engulf the world in never ending Halloween festivities. Or something like that.
+- Fixed the fail outcomes of some patrols.
+- Fix issue where cat-pairs who were sabotages where not tracked correctly.
+- Removed country based names from the name pools within the game.
+- Fix "Pair has already been mediated" sometimes showing up when a pair had not been mediated that moon.
+- Fix 'retire' button alignment.
+- Minor spelling fixes
 
 <strong>v0.10.5</strong>
 - Added a small notice in the settings page outlining that some settings are now clan-specific
