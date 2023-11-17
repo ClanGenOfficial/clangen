@@ -2290,7 +2290,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
             gensprite.blit(righteye, (0, 0))
 
             if(cat.genotype.extraeye):
-                special.blit(sprites.sprites[cat.genotype.extraeye + "/" + cat_sprite], (0, 0))
+                special.blit(sprites.sprites[cat.genotype.extraeye + cat_sprite], (0, 0))
                 special.blit(sprites.sprites[cat.genotype.extraeyetype + "/" + cat_sprite], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
                 gensprite.blit(special, (0, 0))
 
