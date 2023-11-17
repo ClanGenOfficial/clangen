@@ -6,6 +6,11 @@ from pygame_gui.core.utility import translate
 from scripts.game_structure import image_cache
 import html
 
+class AllegiancesCat(pygame_gui.elements.UIButton):
+    def set_cat_id(self, id):
+        self.cat_id = id
+    def return_cat_id(self):
+        return self.cat_id
 
 class UIImageButton(pygame_gui.elements.UIButton):
     """Subclass of pygame_gui's button class. This allows for auto-scaling of the
