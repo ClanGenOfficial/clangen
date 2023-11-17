@@ -2283,8 +2283,8 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
             lefteye.blit(sprites.sprites['left' + cat_sprite], (0, 0))
             righteye.blit(sprites.sprites['right' + cat_sprite], (0, 0))
 
-            lefteye.blit(sprites.sprites[cat.genotype.lefteyetype + cat_sprite], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
-            righteye.blit(sprites.sprites[cat.genotype.righteyetype + cat_sprite], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
+            lefteye.blit(sprites.sprites[cat.genotype.lefteyetype + "/" + cat_sprite], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
+            righteye.blit(sprites.sprites[cat.genotype.righteyetype + "/" + cat_sprite], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
 
             gensprite.blit(lefteye, (0, 0))
             gensprite.blit(righteye, (0, 0))

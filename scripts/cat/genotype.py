@@ -786,7 +786,7 @@ class Genotype:
             self.refgrade = 8
         elif self.refsum <= 16:
             self.refgrade = 9
-        elif self.refsum <= 18:
+        elif self.refsum < 18:
             self.refgrade = 10
         else:
             self.refgrade = 11
@@ -809,7 +809,7 @@ class Genotype:
             self.piggrade = 8
         elif self.pigsum <= 16:
             self.piggrade = 9
-        elif self.pigsum <= 18:
+        elif self.pigsum < 18:
             self.piggrade = 10
         else:
             self.piggrade = 11
@@ -1340,7 +1340,7 @@ class Genotype:
             self.refgrade = 8
         elif self.refsum <= 16:
             self.refgrade = 9
-        elif self.refsum <= 18:
+        elif self.refsum < 18:
             self.refgrade = 10
         else:
             self.refgrade = 11
@@ -1363,7 +1363,7 @@ class Genotype:
             self.piggrade = 8
         elif self.pigsum <= 16:
             self.piggrade = 9
-        elif self.pigsum <= 18:
+        elif self.pigsum < 18:
             self.piggrade = 10
         else:
             self.piggrade = 11
@@ -1855,7 +1855,7 @@ class Genotype:
             self.refgrade = 8
         elif self.refsum <= 16:
             self.refgrade = 9
-        elif self.refsum <= 18:
+        elif self.refsum < 18:
             self.refgrade = 10
         else:
             self.refgrade = 11
@@ -1878,7 +1878,7 @@ class Genotype:
             self.piggrade = 8
         elif self.pigsum <= 16:
             self.piggrade = 9
-        elif self.pigsum <= 18:
+        elif self.pigsum < 18:
             self.piggrade = 10
         else:
             self.piggrade = 11
