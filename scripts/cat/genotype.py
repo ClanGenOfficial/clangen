@@ -1303,7 +1303,7 @@ class Genotype:
 
         soktypes = ["normal markings", "mild fading", "full sokoke"]
 
-        eyegenes = ["2", "2", "1", "1", "1", "1", "0", "0", "0"]
+        eyegenes = ["2", "2", "2", "2", "1", "1", "1", "1", "0", "0", "0"]
 
         for i in range(0, 4):
             self.sokoke += choice(eyegenes)
@@ -1378,7 +1378,7 @@ class Genotype:
     def KitGenerator(self, par1, par2=None):
         if par2 == None or not xor('Y' in par1.sexgene, 'Y' in par2.genotype.sexgene):
             par2 = Genotype()
-            if(par1.sexgene[1] == "Y"):
+            if('Y' in par1.sexgene):
                 par2.Generator("fem")
             else:
                 par2.Generator("masc")
@@ -1424,7 +1424,7 @@ class Genotype:
             else:
                 self.sexgene = [choice(par1.sexgene), par2.sexgene[0]]
             self.gender = "molly"
-            if self.sexgene[0] != self.sexgene[1] and randint(1, 1000)==1:
+            if self.sexgene[0] != self.sexgene[1] and randint(1, 250)==1:
                 self.brindledbi = True 
         
         self.dilute = [choice(par1.dilute), choice(par2.dilute)]
