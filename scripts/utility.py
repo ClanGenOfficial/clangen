@@ -2444,6 +2444,12 @@ def get_text_box_theme(theme_name=""):
             return "#text_box"
         else:
             return theme_name
+def get_button_theme():
+    """Updates the name of the theme based on dark or light mode"""
+    if game.settings['dark mode']:
+        return "#allegiance_dark"
+    else:
+        return "#allegiance_light"
 
 
 def quit(savesettings=False, clearevents=False):
