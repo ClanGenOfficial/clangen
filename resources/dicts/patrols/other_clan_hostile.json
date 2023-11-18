@@ -961,7 +961,6 @@
                 "text": "r_c encounters a patrol from o_c_n on the border, and greets them politely, but there's something different here. Something dangerous. They return to camp, blood soaked through their fur and a new hardness in their heart.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
                     "reg_death": "m_c lost a life against a hostile Clan.",
@@ -1263,7 +1262,7 @@
                     "confident",
                     "grumpy"
                 ],
-                "dead_cats": ["s_c"],
+                "dead_cats": ["s_c", "some_lives"],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
                     "reg_death": "m_c was killed by a hostile Clan.",
@@ -1688,7 +1687,7 @@
                 "text": "r_c encounters a patrol from o_c_n on the border, and greets them politely, but there's something different here. Something dangerous. They return to camp, blood soaked through their fur and a new hardness in their heart.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": ["r_c", "some_lives"],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
                     "reg_death": "m_c lost a life against a hostile Clan.",
@@ -2414,7 +2413,7 @@
                 "text": "r_c encounters a patrol from o_c_n on the border, and greets them politely, but there's something different here. Something dangerous. They return to camp, blood soaked through their fur and a new hardness in their heart.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": ["r_c", "some_lives"],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
                     "reg_death": "m_c lost a life against a hostile Clan.",
@@ -2454,7 +2453,7 @@
                     "troublesome",
                     "vengeful"
                 ],
-                "dead_cats": ["s_c"],
+                "dead_cats": ["s_c", "some_lives"],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
                     "reg_death": "m_c lost a life against a hostile Clan.",
@@ -3141,7 +3140,7 @@
                 "text": "r_c encounters a patrol from o_c_n on the border, and greets them politely, but there's something different here. Something dangerous. They return to camp, blood soaked through their fur and a new hardness in their heart.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": ["r_c", "some_lives"],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
                     "reg_death": "m_c lost a life against a hostile Clan.",
