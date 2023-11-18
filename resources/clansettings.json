@@ -120,9 +120,9 @@
         ]
     },
     "freshkill_tactics":{
-        "status wise":[
-            "status wise",
-            "The Clan will be fed according their status and within the status with age.",
+        "by-status":[
+            "by-status",
+            "The Clan will be fed according their status and within the status by age.",
             true
         ],
         "younger first":[
@@ -137,7 +137,7 @@
         ],
         "hunter first":[
             "hunter first",
-            "Firstly the hunter will be fed, afterwards the Clan will be fed according to their status.",
+            "Firstly the cats with a hunter skill will be fed, afterwards the Clan will be fed according to their status.",
             false
         ],
         "sick/injured first":[

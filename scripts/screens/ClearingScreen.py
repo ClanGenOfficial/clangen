@@ -193,16 +193,16 @@ class ClearingScreen(Screens):
                                          object_id="#med_den_log_button", manager=MANAGER
                                          )
             self.tactic_tab = UIImageButton(scale(pygame.Rect
-                                               ((1394, 924), (70, 128))),
+                                               ((1394, 924), (70, 140))),
                                          "",
                                          object_id="#tactic", manager=MANAGER
                                          )
             self.hungry_tab = UIImageButton(scale(pygame.Rect
-                                                   ((980, 818), (150, 70))),
+                                                   ((980, 818), (160, 70))),
                                              "",
                                              object_id="#freshkill_hungry", manager=MANAGER)
             self.satisfied_tab = UIImageButton(scale(pygame.Rect
-                                                 ((1174, 818), (170, 70))),
+                                                 ((1174, 818), (190, 70))),
                                            "",
                                            object_id="#freshkill_satisfied", manager=MANAGER)
             self.tab_showing = self.hungry_tab

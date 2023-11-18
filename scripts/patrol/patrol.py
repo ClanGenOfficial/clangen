@@ -807,14 +807,13 @@ class Patrol():
         # filter all possible patrol depending on the needed prey size
         for patrol in possible_patrols:
             for adaption, needed_weight in PATROL_WEIGHT_ADAPTION.items():
-                if patrol.weight in range(needed_weight[0],needed_weight[1]):
+                if needed_weight[0] <= patrol.weight < patrol.needed_weight[1]:
                     # get the amount of class sizes which can be increased
                     increment = int(adaption.split("_")[0])
                     new_idx = prey_size.index(chosen_prey_size) + increment
                     # check that the increment does not lead to a overflow
                     new_idx = new_idx if new_idx <= len(chosen_prey_size) else len(chosen_prey_size)
                     chosen_prey_size = prey_size[new_idx]
-                    break
 
             # now count the outcomes + prey size
             prey_types = {}
