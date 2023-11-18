@@ -323,6 +323,7 @@ class Cat():
 
                         #tail
                         self.white_pattern.append(choice(['tail tip', None, None, None, None]))
+                        self.white_pattern.append(choice([None, None, None, 'break/nose1']))
 
                         clean_white()
                 elif self.genotype.whitegrade == 4:
@@ -354,6 +355,7 @@ class Cat():
 
                         #tail
                         self.white_pattern.append(choice(['tail tip', None, None, None, None]))
+                        self.white_pattern.append(choice([None, None, None, 'break/nose1']))
 
                         clean_white()
                 else:
@@ -380,6 +382,7 @@ class Cat():
 
                         #tail
                         self.white_pattern.append(choice(['tail tip', None, None, None, None]))
+                        self.white_pattern.append(choice([None, None, None, 'break/nose1']))
 
                         clean_white()
             else:
@@ -411,6 +414,7 @@ class Cat():
 
                         #tail
                         self.white_pattern.append(choice(['tail tip', None, None, None, None]))
+                        self.white_pattern.append(choice([None, None, None, 'break/nose1']))
 
                         clean_white()
                 elif self.genotype.whitegrade == 2:
@@ -432,15 +436,23 @@ class Cat():
 
                     #tail
                     self.white_pattern.append(choice(['tail tip', None, None, None, None]))
+                    self.white_pattern.append(choice([None, None, None, 'break/nose1']))
                     clean_white()
                 elif self.genotype.whitegrade == 3:
+                    self.white_pattern.append(choice(['van1', 'van2', 'van3', 'van1', 'van2', 'van3', 'full white']))
+                    self.white_pattern.append(choice(['break/piebald1', 'break/piebald2']))
+                    self.white_pattern.append(choice([None, 'break/left ear', 'break/right ear', 'break/tail tip', 'break/tail band', 'break/tail rings', 'break/left face', 'break/right face']))
                     clean_white()
                 elif self.genotype.whitegrade == 4:
-                    self.white_pattern.append(choice(['van1', 'van2']))
+                    self.white_pattern.append(choice(['van1', 'van2', 'van3']))
+                    self.white_pattern.append(choice([None, None, choice(['break/left ear', 'break/right ear', 'break/tail tip', 'break/tail band', 'break/left face', 'break/right face'])]))
 
                     clean_white()
                 else:
-                    self.white_pattern.append(choice(["full white"]))
+                    self.white_pattern.append(choice(["full white", 'van3']))
+
+                    self.white_pattern.append(choice([None, 'break/left ear', 'break/right ear', 'break/tail tip', 'break/tail band', 'break/left face', 'break/right face']))
+                    self.white_pattern.append(choice([None, choice(['break/left ear', 'break/right ear', 'break/tail tip', 'break/tail band', 'break/left face', 'break/right face'])]))
 
                     clean_white()
             

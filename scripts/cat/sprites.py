@@ -141,6 +141,9 @@ class Sprites():
         for x in os.listdir("sprites/genemod/white"):
             sprites.spritesheet("sprites/genemod/white/"+x, 'White/'+x.removesuffix('.png'))
             self.make_group('White/'+x.removesuffix('.png'), (0, 0), x.removesuffix('.png'))
+        for x in os.listdir("sprites/genemod/break white"):
+            sprites.spritesheet("sprites/genemod/break white/"+x, 'Break/'+x.removesuffix('.png'))
+            self.make_group('Break/'+x.removesuffix('.png'), (0, 0), 'break/'+x.removesuffix('.png'))
 
         # ...idk what to call these
 
