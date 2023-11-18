@@ -286,15 +286,15 @@ class AllegiancesScreen(Screens):
                 for k in queen_dict[q]:
                     kittens += [f"{k.name} - {k.describe_cat(short=True)}"]
                 if len(kittens) == 1:
-                    kittens = f" <i>(caring for {kittens[0]})</i>"
+                    kittens = f" (caring for {kittens[0]})"
                 else:
-                    kittens = f" <i>(caring for {', '.join(kittens[:-1])}, and {kittens[-1]})</i>"
+                    kittens = f" (caring for {', '.join(kittens[:-1])}, and {kittens[-1]})"
 
                 all_entries.append(self.generate_one_entry(queen, kittens))
 
             #Now kittens without carers
             for k in living_kits:
-                all_entries.append([f"{str(k.name).upper()} - {k.describe_cat(short=True)}", k.ID])
+                all_entries.append([f"{str(k.name).upper()} - {k.describe_cat(short=True)}", k.ID, ""])
             
             if all_entries:
                 for i in range(len(all_entries)):
@@ -321,7 +321,7 @@ class AllegiancesScreen(Screens):
                 outputs.append(_box)
             else:
                 for i in range(len(living_elders)):    
-                    _box = ["", "", ""]
+                    _box = ["", "", "", ""]
                     if i == 0:    
                         _box[0] = '<b><u>ELDERS</u></b>'
                     else:

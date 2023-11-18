@@ -458,6 +458,8 @@ class ProfileScreen(Screens):
         self.the_cat = Cat.all_cats.get(game.switches["cat"])
 
         self.user_notes = str(self.the_cat.genotype.ShowGenes())
+        if(self.the_cat.genotype.chimera):
+            self.user_notes += "\n\n" + str(self.the_cat.genotype.chimerageno.ShowGenes())
 
         # use these attributes to create differing profiles for StarClan cats etc.
         is_sc_instructor = False

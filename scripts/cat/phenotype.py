@@ -3,8 +3,6 @@ from .genotype import *
 class Phenotype():
 
     def __init__(self, genotype):
-        self.deaf = ""
-    
         self.length = ""
 
         self.highwhite = ""
@@ -407,6 +405,9 @@ class Phenotype():
         self.TailFinder()
         self.LegFinder()
 
+        if(self.genotype.chimera and not self.genotype.chimerapattern):
+            self.genotype.chimerapattern = self.ChooseTortiePattern('chim')
+
         eyes = ""
 
         furtype = ""
@@ -446,6 +447,9 @@ class Phenotype():
         else:
             gendera = "molly"
 
+        if self.genotype.chimera:
+            gendera = "chimera " + gendera
+        
         return self.length + " " + self.highwhite + self.fade + self.colour + " " + self.silvergold + self.tabtype + self.tabby + self.tortie + self.point + self.lowwhite + self.karpati + gendera + withword
     
     def EyeColourRestore(self):
@@ -557,29 +561,32 @@ class Phenotype():
 
         return pattern
       
-    def ChooseTortiePattern(self):
+    def ChooseTortiePattern(self, spec = None):
         tortie_low_patterns = ['DELILAH', 'MOTTLED', 'EYEDOT', 'BANDANA', 'SMUDGED', 'EMBER', 'BRINDLE', 'SAFI', 'BELOVED', 'BODY', 
                                'SHILOH', 'FRECKLED']
-        tortie_mid_pattenrns = ['ONE', 'TWO', 'SMOKE', 'MINIMALONE', 'MINIMALTWO', 'MINIMALTHREE', 'MINIMALFOUR', 'OREO', 'CHIMERA',
+        tortie_mid_patterns = ['ONE', 'TWO', 'SMOKE', 'MINIMALONE', 'MINIMALTWO', 'MINIMALTHREE', 'MINIMALFOUR', 'OREO', 'CHIMERA',
                                 'CHEST', 'GRUMPYFACE', 'SIDEMASK', 'PACMAN', 'BRIE' ,'ORIOLE', 'ROBIN', 'PAIGE', 'HEARTBEAT']
         tortie_high_patterns = ['THREE', 'FOUR', 'REDTAIL', 'HALF', 'STREAK', 'MASK', 'SWOOP', 'ARMTAIL', 'STREAMSTRIKE', 'DAUB',
                                 'ROSETAIL', 'DAPPLENIGHT', 'BLANKET']
         
         chosen = ""
 
-        if(self.genotype.white[1] == "ws" or self.genotype.white[1] == "wt"):
+        if spec:
+            chosen = choice([choice(tortie_high_patterns), choice(tortie_high_patterns), choice(tortie_mid_patterns), choice(tortie_mid_patterns), choice(tortie_low_patterns)])
+
+        elif(self.genotype.white[1] == "ws" or self.genotype.white[1] == "wt"):
             if self.genotype.whitegrade > 2:
                 if(randint(1, 10) == 1):
                     chosen = choice(tortie_low_patterns)
                 elif(randint(1, 5) == 1):
-                    chosen = choice(tortie_mid_pattenrns)
+                    chosen = choice(tortie_mid_patterns)
                 else:
                     chosen = choice(tortie_high_patterns)
             else:
                 if(randint(1, 7) == 1):
                     chosen = choice(tortie_low_patterns)
                 elif(randint(1, 3) == 1):
-                    chosen = choice(tortie_mid_pattenrns)
+                    chosen = choice(tortie_mid_patterns)
                 else:
                     chosen = choice(tortie_high_patterns)
         elif(self.genotype.white[0] == 'ws' or self.genotype.white[0] == 'wt'):
@@ -587,21 +594,21 @@ class Phenotype():
                 if(randint(1, 7) == 1):
                     chosen = choice(tortie_high_patterns)
                 elif(randint(1, 3) == 1):
-                    chosen = choice(tortie_mid_pattenrns)
+                    chosen = choice(tortie_mid_patterns)
                 else:
                     chosen = choice(tortie_low_patterns)
             else:
                 if(randint(1, 10) == 1):
                     chosen = choice(tortie_high_patterns)
                 elif(randint(1, 5) == 1):
-                    chosen = choice(tortie_mid_pattenrns)
+                    chosen = choice(tortie_mid_patterns)
                 else:
                     chosen = choice(tortie_low_patterns)
         else:
             if(randint(1, 15) == 1):
                 chosen = choice(tortie_high_patterns)
             elif(randint(1, 7) == 1):
-                chosen = choice(tortie_mid_pattenrns)
+                chosen = choice(tortie_mid_patterns)
             else:
                 chosen = choice(tortie_low_patterns)
 

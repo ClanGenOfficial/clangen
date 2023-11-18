@@ -152,6 +152,7 @@ class Condition_Events():
         has_other_clan = False
         triggered = False
         text = None
+        leaddead = False
         random_number = int(random.random() * game.get_config_value("condition_related", f"{game.clan.game_mode}_injury_chance"))
 
         if cat.dead:
@@ -244,6 +245,7 @@ class Condition_Events():
                                 possible_scar = history_text_adjust(injury_event.history_text['scar'],
                                                                    other_clan_name, game.clan, other_cat_rc = other_cat)
                             if cat.status == 'leader' and 'lead_death' in injury_event.history_text:
+                                leaddead = True
                                 possible_death = history_text_adjust(injury_event.history_text['lead_death'],
                                                                     other_clan_name, game.clan, other_cat_rc = other_cat)
                             elif cat.status != 'leader' and 'reg_death' in injury_event.history_text:
@@ -266,7 +268,7 @@ class Condition_Events():
 
         if text is not None:
             types = ["health"]
-            if cat.dead or triggered:
+            if cat.dead or leaddead:
                 types.append("birth_death")
             if has_other_clan:
                 types.append("other_clans")

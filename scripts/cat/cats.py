@@ -20,7 +20,7 @@ from .phenotype import Phenotype
 from scripts.conditions import Illness, Injury, PermanentCondition, get_amount_cat_for_one_medic, \
     medical_cats_condition_fulfilled
 import bisect
-
+#from scripts.events_module.condition_events import Condition_Events
 from scripts.utility import get_med_cats, get_personality_compatibility, event_text_adjust, update_sprite, \
     leader_ceremony_text_adjust
 from scripts.game_structure.game_essentials import game, screen
@@ -199,11 +199,13 @@ class Cat():
             self.genotype.Generator()
 
         self.phenotype = Phenotype(self.genotype)
+
         if self.gender:
             self.phenotype.PhenotypeOutput(self.gender)
         else:
             self.phenotype.PhenotypeOutput(self.genotype.gender)
         self.pelt = pelt if pelt else Pelt(self.genotype, self.phenotype)
+
         self.former_mentor = []
         self.patrol_with_mentor = 0
         self.apprentice = []
@@ -533,6 +535,14 @@ class Cat():
             else:
                 self.age = choice(['young adult', 'adult', 'adult', 'senior adult'])
             self.moons = randint(self.age_moons[self.age][0], self.age_moons[self.age][1])
+
+        
+
+        if self.genotype.deaf:
+            if 'blue' not in self.genotype.lefteyetype or 'blue' not in self.genotype.righteyetype:
+                self.get_permanent_condition('partial hearing loss', born_with=True)
+            else:
+                self.get_permanent_condition(choice(['deaf', 'partial hearing loss']), born_with=True)
 
         # backstory
         if self.backstory is None:
@@ -1980,6 +1990,8 @@ class Cat():
         self.get_permanent_condition(new_condition, born_with=True)
 
     def get_permanent_condition(self, name, born_with=False, event_triggered=False):
+        with open(f"resources/dicts/conditions/permanent_conditions.json", 'r') as read_file:
+            PERMANENT = ujson.loads(read_file.read())
         if name not in PERMANENT:
             print(str(self.name), f"WARNING: {name} is not in the permanent conditions collection.")
             return

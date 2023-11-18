@@ -4,17 +4,32 @@ from operator import xor
 
 
 class Genotype:
-    def __init__(self):
+    def __init__(self, spec=None):
         self.furLength = ""
         self.eumelanin = ["", ""]
         self.sexgene = ["", ""]
         self.tortiepattern = None
         self.brindledbi = False
+        if spec:
+            self.chimera = False
+            self.chimerapattern = None
+        else:
+            a = randint(1, 250)
+            if a == 1:
+                self.chimera = True
+            else:
+                self.chimera = False
+            self.chimerapattern = None
+        if self.chimera:
+            self.chimerageno = Genotype('chimera')
+        else:
+            self.chimerageno = None
         self.gender = ""
         self.dilute = ""
         self.white = ["", ""]
         self.whitegrade = randint(1, 5)
         self.vitiligo = False
+        self.deaf = False
         self.pointgene = ["", ""]
         self.silver = ""
         self.agouti = ["", ""]
@@ -106,6 +121,22 @@ class Genotype:
         self.sexgene = jsonstring["sexgene"]
         self.tortiepattern = jsonstring["tortiepattern"]
         self.brindledbi = jsonstring["brindledbi"]
+
+        try:
+            self.chimera = jsonstring['chimera']
+            self.chimerapattern = jsonstring['chimerapattern']
+            if(jsonstring["chimerageno"]):
+                self.chimerageno = Genotype('chimera')
+                self.chimerageno.fromJSON(jsonstring["chimerageno"])
+            else:
+                self.chimerageno = None    
+            self.deaf = jsonstring['deaf']
+        except:
+            self.chimera = False
+            self.chimerapattern = None
+            self.chimerageno = None
+            self.deaf = False
+
         self.gender = jsonstring["gender"]
         self.dilute = jsonstring["dilute"]
         self.white = jsonstring["white"]
@@ -197,17 +228,28 @@ class Genotype:
         self.PolyEval()
 
     def toJSON(self):
+        chimgen = None
+
+        if self.chimerageno:
+            chimgen = self.chimerageno.toJSON()
+
         return {
             "furLength": self.furLength,
             "eumelanin": self.eumelanin,
             "sexgene" : self.sexgene,
             "tortiepattern" : self.tortiepattern,
             "brindledbi" : self.brindledbi,
+
+            "chimera" : self.chimera,
+            "chimerapattern" : self.chimerapattern,
+            "chimerageno" : chimgen,
+
             "gender": self.gender,
             "dilute": self.dilute,
             "white" : self.white,
             "whitegrade" : self.whitegrade,
             "vitiligo" : self.vitiligo,
+            "deaf" : self.deaf,
             "pointgene" : self.pointgene,
             "silver" : self.silver,
             "agouti" : self.agouti,
@@ -270,6 +312,9 @@ class Genotype:
         }
 
     def Generator(self, special=None):
+        if self.chimera:
+            self.chimerageno.Generator()
+        
         a = randint(1, 100)
         if a == 1:
             self.vitiligo = True
@@ -822,6 +867,8 @@ class Genotype:
         self.piggrade = "P" + str(self.piggrade)
 
     def AltGenerator(self, special=None):
+        if self.chimera:
+            self.chimerageno.AltGenerator()
         a = randint(1, 100)
         if a == 1:
             self.vitiligo = True
@@ -1376,15 +1423,21 @@ class Genotype:
         self.piggrade = "P" + str(self.piggrade)
 
     def KitGenerator(self, par1, par2=None):
-        if par2 == None or not xor('Y' in par1.sexgene, 'Y' in par2.genotype.sexgene):
-            par2 = Genotype()
-            if('Y' in par1.sexgene):
-                par2.Generator("fem")
+        try:
+            if par2 == None or not xor('Y' in par1.sexgene, 'Y' in par2.genotype.sexgene):
+                par2 = Genotype()
+                if('Y' in par1.sexgene):
+                    par2.Generator("fem")
+                else:
+                    par2.Generator("masc")
             else:
-                par2.Generator("masc")
-        else:
-            par2 = par2.genotype
+                par2 = par2.genotype
+        except:
+            par2 = par2
+            
 
+        if self.chimera:
+            self.chimerageno.KitGenerator(par1, par2)
     
         if randint(1, 5) == 1:
             self.whitegrade = par1.whitegrade
