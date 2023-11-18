@@ -15,7 +15,7 @@ class AllegiancesScreen(Screens):
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element in self.names_boxes:
+            if event.ui_element in self.names_buttons:
                 game.switches["cat"] = event.ui_element.return_cat_id()
                 self.change_screen('profile screen')
             else:
@@ -43,6 +43,7 @@ class AllegiancesScreen(Screens):
         
         self.ranks_boxes = []
         self.names_boxes = []
+        self.names_buttons = []
         y_pos = 0
         for x in allegiance_list:
             #print(x)
@@ -53,19 +54,18 @@ class AllegiancesScreen(Screens):
                                    container=self.scroll_container, manager=MANAGER))
                 self.ranks_boxes[-1].disable()
 
-            self.names_boxes.append(AllegiancesCat(scale(pygame.Rect((300, y_pos), (1060, -1))),
+            self.names_buttons.append(AllegiancesCat(scale(pygame.Rect((290, y_pos+10), (1060, -1))),
                                     x[1],
                                     object_id=get_button_theme(),
                                     container=self.scroll_container, manager=MANAGER))
-            self.names_boxes[-1].set_cat_id(x[2])
-            if x[3]:
-                y_pos += 900 * self.names_boxes[-1].get_relative_rect()[3] / screen_y 
-                self.names_boxes.append(pygame_gui.elements.UITextBox(x[3],
-                                    scale(pygame.Rect((300, y_pos), (1060, -1))),
-                                    object_id=get_text_box_theme("#text_box_30_horizleft"),
-                                    container=self.scroll_container, manager=MANAGER))
+            self.names_buttons[-1].set_cat_id(x[2])
+            self.names_boxes.append(pygame_gui.elements.UITextBox(x[3],
+                                scale(pygame.Rect((300, y_pos), (1060, -1))),
+                                object_id=get_text_box_theme("#text_box_30_horizleft"),
+                                container=self.scroll_container, manager=MANAGER))
+            self.names_boxes[-1].disable()
+            
             #self.names_boxes[-1].process_event(pygame_gui.UI_ELEMENT_PRESSED)
-                self.names_boxes[-1].disable()
             
             y_pos += 1400 * self.names_boxes[-1].get_relative_rect()[3] / screen_y 
 
@@ -79,6 +79,9 @@ class AllegiancesScreen(Screens):
         for x in self.names_boxes:
             x.kill()
         del self.names_boxes
+        for x in self.names_buttons:
+            x.kill()
+        del self.names_buttons
         self.scroll_container.kill()
         del self.scroll_container
         self.heading.kill()
@@ -91,12 +94,12 @@ class AllegiancesScreen(Screens):
             apps = ""
             if len(cat.apprentice) > 0:
                 if len(cat.apprentice) == 1:
-                    apps += "\n      APPRENTICE: "
+                    output += "\n      APPRENTICE: "
                 else:
-                    apps += "\n      APPRENTICES: "     
-                apps += ", ".join([str(Cat.fetch_cat(i).name).upper() for i in cat.apprentice if Cat.fetch_cat(i)])
+                    output += "\n      APPRENTICES: "     
+                output += ", ".join([str(Cat.fetch_cat(i).name).upper() for i in cat.apprentice if Cat.fetch_cat(i)])
 
-            return [output, cat.ID, apps]
+            return [str(cat.name).upper(), cat.ID, output]
 
     def get_allegiances_text(self):
         """Determine Text. Ouputs list of tuples. """
@@ -286,9 +289,9 @@ class AllegiancesScreen(Screens):
                 for k in queen_dict[q]:
                     kittens += [f"{k.name} - {k.describe_cat(short=True)}"]
                 if len(kittens) == 1:
-                    kittens = f" (caring for {kittens[0]})"
+                    kittens = f" <i>(caring for {kittens[0]})</i>"
                 else:
-                    kittens = f" (caring for {', '.join(kittens[:-1])}, and {kittens[-1]})"
+                    kittens = f" <i>(caring for {', '.join(kittens[:-1])}, and {kittens[-1]})</i>"
 
                 all_entries.append(self.generate_one_entry(queen, kittens))
 
