@@ -180,7 +180,7 @@ class Freshkill_Pile():
             self.tactic_hunter_first(living_cats)
         elif game.clan.clan_settings["sick/injured first"]:
             self.tactic_sick_injured_first(living_cats)
-        elif game.clan.clan_settings["status wise"]:
+        elif game.clan.clan_settings["by-status"]:
             self.tactic_status(living_cats)
         else:
             self.tactic_status(living_cats)
