@@ -161,7 +161,6 @@ class SkillPath(Enum):
                            i not in exclude and i not in uncommon_paths]
             return random.choice(common_paths)
 
-    
 class HiddenSkillEnum(Enum):
     ROGUE = "rogue's knowledge"
     LONER = "loner's knowledge"

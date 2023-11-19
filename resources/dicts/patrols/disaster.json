@@ -526,10 +526,10 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol walks into an ambush by a group of rogues and everyone is slaughtered.",
+                "text": "r_c walks into an ambush by a group of rogues and is slaughtered.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["patrol"],
+                "dead_cats": ["r_c", "some_lives"],
                 "history_text": {
                     "reg_death": "This cat died from being ambushed by rogues while on a solo patrol.",
                     "lead_death": "{VERB/m_c/were/was} ambushed by rogues while on a solo patrol"
@@ -1502,10 +1502,10 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol walks into an ambush by a group of rogues and everyone is slaughtered.",
+                "text": "r_c walks into an ambush by a group of rogues and is slaughtered.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["patrol"],
+                "dead_cats": ["r_c", "some_lives"],
                 "history_text": {
                     "reg_death": "This cat died from being ambushed by rogues while on a solo patrol.",
                     "lead_death": "{VERB/m_c/were/was} ambushed by rogues while on a solo patrol"

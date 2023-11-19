@@ -56,6 +56,7 @@ class Events:
         """
         game.cur_events_list = []
         game.herb_events_list = []
+        game.freshkill_events_list = []
         game.mediated = []
         game.switches['saved_clan'] = False
         self.new_cat_invited = False
@@ -83,33 +84,22 @@ class Events:
 
         if game.clan.game_mode in ['expanded', 'cruel season'
                                    ] and game.clan.freshkill_pile:
-            needed_amount = game.clan.freshkill_pile.amount_food_needed()
-            if FRESHKILL_ACTIVE:
-                print(f" -- FRESHKILL: prey amount before feeding {game.clan.freshkill_pile.total_amount}") # pylint: disable=line-too-long
-                print(f" -- FRESHKILL: Clan needs {needed_amount} prey")
             # feed the cats and update the nutrient status
             relevant_cats = list(
-                filter(
-                    lambda _cat: _cat.is_alive() and not _cat.exiled and
+                filter(lambda _cat: _cat.is_alive() and not _cat.exiled and
                                  not _cat.outside, Cat.all_cats.values()))
-            game.clan.freshkill_pile.time_skip(relevant_cats)
-            self.get_moon_freshkill()
+            game.clan.freshkill_pile.time_skip(relevant_cats, game.freshkill_event_list)
             # handle freshkill pile events, after feeding
             # first 5 moons there will not be any freshkill pile event
             if game.clan.age >= 5:
-                Freshkill_Events.handle_amount_freshkill_pile(
-                    game.clan.freshkill_pile, relevant_cats)
-            # make a notification if the Clan has not enough prey
-            if not game.clan.freshkill_pile.clan_has_enough_food(
-            ) and FRESHKILL_EVENT_ACTIVE:
-                game.cur_events_list.insert(
-                    0,
-                    Single_Event(
-                        f"{game.clan.name}Clan doesn't have enough prey for next moon!"
-                    ))
-            if FRESHKILL_ACTIVE:
-                print(f" -- FRESHKILL: prey amount after feeding {game.clan.freshkill_pile.total_amount}")
-        
+                Freshkill_Events.handle_amount_freshkill_pile(game.clan.freshkill_pile, relevant_cats)
+            self.get_moon_freshkill()
+			# make a notification if the Clan has not enough prey
+            if FRESHKILL_EVENT_ACTIVE and not game.clan.freshkill_pile.clan_has_enough_food():
+                event_string = f"{game.clan.name}Clan doesn't have enough prey for next moon!"
+                game.cur_events_list.insert(0, Single_Event(event_string))
+                game.freshkill_event_list.append(event_string)
+
         rejoin_upperbound = game.config["lost_cat"]["rejoin_chance"]
         if random.randint(1, rejoin_upperbound) == 1:
             self.handle_lost_cats_return()
@@ -298,17 +288,14 @@ class Events:
 
         prey_amount = 0
         for cat in healthy_hunter:
-            lower_value = game.config["freshkill"]["auto_warrior_prey"][0]
-            upper_value = game.config["freshkill"]["auto_warrior_prey"][1]
+            lower_value = game.prey_config["auto_warrior_prey"][0]
+            upper_value = game.prey_config["auto_warrior_prey"][1]
             if cat.status == "apprentice":
-                lower_value = game.config["freshkill"]["auto_apprentice_prey"][
-                    0]
-                upper_value = game.config["freshkill"]["auto_apprentice_prey"][
-                    1]
+                lower_value = game.prey_config["auto_apprentice_prey"][0]
+                upper_value = game.prey_config["auto_apprentice_prey"][1]
 
             prey_amount += random.randint(lower_value, upper_value)
-        if FRESHKILL_ACTIVE:
-            print(f" -- FRESHKILL: added {prey_amount} monthly prey")
+        game.freshkill_event_list.append(f"The clan managed to catch {prey_amount} pieces of prey in this moon.")
         game.clan.freshkill_pile.add_freshkill(prey_amount)
 
     def herb_gather(self):

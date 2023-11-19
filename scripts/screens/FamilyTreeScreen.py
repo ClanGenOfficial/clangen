@@ -257,7 +257,7 @@ class FamilyTreeScreen(Screens):
 
         self.parents = self.the_cat.inheritance.get_parents()
         self.mates = self.the_cat.inheritance.get_mates()
-        self.kits = self.the_cat.inheritance.get_kits()
+        self.kits = self.the_cat.inheritance.get_children()
         self.kits_mates = self.the_cat.inheritance.get_kits_mates()
         self.siblings = self.the_cat.inheritance.get_siblings()
         self.siblings_mates = self.the_cat.inheritance.get_siblings_mates()
