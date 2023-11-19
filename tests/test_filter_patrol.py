@@ -9,6 +9,9 @@ from scripts.cat_relations.relationship import Relationship
 from scripts.patrol.patrol import PatrolEvent, Patrol
 from scripts.clan import Clan
 
+# TODO: redo them! Filtering is not working like this anymore but it got removed from .github/workflows/test.yml 
+# so they are not failing!
+
 class TestRelationshipConstraintPatrols(unittest.TestCase):
 
     def test_sibling_patrol(self):

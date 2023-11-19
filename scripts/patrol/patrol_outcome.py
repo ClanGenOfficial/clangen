@@ -2,7 +2,7 @@
 # -*- coding: ascii -*-
 import random
 from random import choice, randint, choices
-from typing import List, Dict, Union, Tuple, TYPE_CHECKING
+from typing import List, Dict, Union, TYPE_CHECKING
 import re
 import pygame
 from os.path import exists as path_exists
@@ -11,26 +11,19 @@ if TYPE_CHECKING:
     from scripts.patrol.patrol import Patrol
 
 from scripts.cat.history import History
-from scripts.clan import HERBS, Clan
+from scripts.clan import HERBS
 from scripts.utility import (
-    event_text_adjust,
     change_clan_relations,
     change_clan_reputation,
     change_relationship_values, create_new_cat,
-    create_outside_cat,
-    get_personality_compatibility,
-    check_relationship_value
 )
 from scripts.game_structure.game_essentials import game
-from itertools import combinations
-from scripts.cat.names import names
 from scripts.cat.skills import SkillPath
 from scripts.cat.cats import Cat, ILLNESSES, INJURIES, PERMANENT, BACKSTORIES
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_resources.freshkill import ADDITIONAL_PREY, PREY_REQUIREMENT, HUNTER_EXP_BONUS, HUNTER_BONUS, \
     FRESHKILL_ACTIVE
-from os.path import exists as file_exists
 
 
 
@@ -394,8 +387,12 @@ class PatrolOutcome():
                     game.clan.leader_lives = 0
                     results.append(f"{_cat.name} lost all of their lives.")
                 elif "some_lives" in self.dead_cats:
-                    game.clan.leader_lives -= random.randint(1, max(1, game.clan.leader_lives - 1))
-                    results.append(f"{_cat.name} lost some lives.")
+                    lives_lost = random.randint(1, max(1, game.clan.leader_lives - 1))
+                    game.clan.leader_lives -= lives_lost
+                    if lives_lost == 1:
+                        results.append(f"{_cat.name} lost one life.")
+                    else:
+                        results.append(f"{_cat.name} lost {lives_lost} lives.")
                 else:
                     game.clan.leader_lives -= 1
                     results.append(f"{_cat.name} lost one life.")
@@ -770,54 +767,70 @@ class PatrolOutcome():
         """ Handle giving prey """
         
         if not FRESHKILL_ACTIVE:
-            return
+            return ""
         
         if not self.prey or game.clan.game_mode == "classic":
             return ""
-        
+
         basic_amount = PREY_REQUIREMENT["warrior"]
         if game.clan.game_mode == 'expanded':
             basic_amount += ADDITIONAL_PREY
         prey_types = {
             "very_small": basic_amount / 2,
             "small": basic_amount,
-            "medium": basic_amount * 1.5,
-            "large": basic_amount * 2,
-            "huge": basic_amount * 3
+            "medium": basic_amount * 1.8,
+            "large": basic_amount * 2.4,
+            "huge": basic_amount * 3.2
         }
         
         for tag in self.prey:
-            amount = prey_types.get(tag)
-            if amount is not None:
+            basic_amount = prey_types.get(tag)
+            if basic_amount is not None:
                 break
         else:
             print(f"{self.prey} - no prey amount tags in prey property")
             return ""
         
-        # TODO - Hunting skill bonus
-        """for cat in self.patrol_cats:
-            if cat.skills.primary.path == SkillPath.HUNTER and cat.skills.primary.tier > 0:
-                amount += int((HUNTER_EXP_BONUS[cat.experience_level] * HUNTER_BONUS[str(cat.skills.primary.tier)]) / 10 + 1)
+        total_amount = 0
+        highest_hunter_tier = 0
+        for cat in patrol.patrol_cats:
+            total_amount += basic_amount
+            if cat.skills.primary.path == SkillPath.HUNTER and cat.skills.primary.tier > 0: 
+                level = cat.experience_level
+                tier = cat.skills.primary.tier
+                if tier > highest_hunter_tier:
+                    highest_hunter_tier = tier
+                total_amount += int(HUNTER_EXP_BONUS[level] * (HUNTER_BONUS[str(tier)] / 10 + 1))
             elif cat.skills.secondary and cat.skills.secondary.path == SkillPath.HUNTER and cat.skills.secondary.tier > 0:
-                amount += int((HUNTER_EXP_BONUS[cat.experience_level] * HUNTER_BONUS[str(cat.skills.secondary.tier)]) / 10 + 1)"""
+                level = cat.experience_level
+                tier = cat.skills.secondary.tier
+                if tier > highest_hunter_tier:
+                    highest_hunter_tier = tier
+                total_amount += int(HUNTER_EXP_BONUS[level] * (HUNTER_BONUS[str(tier)] / 10 + 1))
         
-        
+        # additional hunter buff for expanded mode
+        if game.clan.game_mode == "expanded" and highest_hunter_tier:
+            total_amount = int(total_amount * (HUNTER_BONUS[str(highest_hunter_tier)] / 20 + 1))
+
         results = ""
-        if amount > 0:
+        if total_amount > 0:
             amount_text = "medium"
-            if amount < game.clan.freshkill_pile.amount_food_needed() / 7:
+            if total_amount < game.clan.freshkill_pile.amount_food_needed() / 5:
                 amount_text = "very small"
-            elif amount < game.clan.freshkill_pile.amount_food_needed() / 2.5:
+            elif total_amount < game.clan.freshkill_pile.amount_food_needed() / 2.5:
                 amount_text = "small"
-            elif amount < game.clan.freshkill_pile.amount_food_needed():
+            elif total_amount < game.clan.freshkill_pile.amount_food_needed():
                 amount_text = "decent"
-            elif amount >= game.clan.freshkill_pile.amount_food_needed() * 2:
+            elif total_amount >= game.clan.freshkill_pile.amount_food_needed() * 2:
                 amount_text = "huge"
-            elif amount >= game.clan.freshkill_pile.amount_food_needed() * 1.5:
+            elif total_amount >= game.clan.freshkill_pile.amount_food_needed() * 1.5:
                 amount_text = "large"
-            elif amount >= game.clan.freshkill_pile.amount_food_needed():
+            elif total_amount >= game.clan.freshkill_pile.amount_food_needed():
                 amount_text = "good"
-                
+            
+            print(f"PREY ADDED: {total_amount}")
+            game.freshkill_event_list.append(f"{total_amount} pieces of prey where caught on a patrol.")
+            game.clan.freshkill_pile.add_freshkill(total_amount)
             results = f"A {amount_text} amount of prey is brought to camp"
             
         return results
