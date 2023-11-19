@@ -1775,7 +1775,7 @@
                 ]
             },
             {
-                "text": "There's a teachable moment here, s_c announces. What, no, they aren't talking about the argument - they're talking about letting an <i>argument</i> disrupt training. Does the patrol really think that's a wise move?",
+                "text": "There's a teachable moment here, s_c announces. What, no, {PRONOUN/s_c/subject} {VERB/s_c/aren't/isn't} talking about the argument - {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} talking about letting an <i>argument</i> disrupt training. Does the patrol really think that's a wise move?",
                 "exp": 20,
                 "weight": 20,
                 "can_have_stat": ["p_l"],
@@ -1798,10 +1798,38 @@
                 ]
             },
             {
-                "text": "s_c nods sympathetically, hearing out every side to the argument, and with {PRONOUN/s_c/poss} help the patrol feels comfortable, even with their differences.",
+                "text": "Making a cold, factual judgement, s_c logically lays out which side {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} on, and why, convincing the rest of the patrol.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
+                    "calm",
+                    "careful",
+                    "cold"
+                ],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Hey now, there's no need to ruin a fun afternoon of training with harsh words and sharp tongues. s_c brings tempers back down to cooler temperatures, {PRONOUN/s_c/poss} smile leading the way to a more pleasent path.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "charismatic"
                 ],
                 "can_have_stat": ["p_l"],
                 "relationships": [
@@ -1824,7 +1852,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l stutters; {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} think {PRONOUN/p_l/subject} {VERB/p_l/are/is} fit to lead the patrol.",
+                "text": "p_l tries, but both sides are set in their ways, and more interesting in <i>being</i> right than <i>what</i> is right.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
