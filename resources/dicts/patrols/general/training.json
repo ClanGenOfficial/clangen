@@ -8206,194 +8206,6 @@
         ]
     },
     {
-        "patrol_id": "gen_train_assess1",
-        "biome": ["Any"],
-        "season": ["Any"],
-        "types": ["training"],
-        "tags": ["disrespect"],
-        "patrol_art": "train_general_intro",
-        "min_cats": 2,
-        "max_cats": 2,
-        "min_max_status": {
-            "apprentice": [1, 6],
-            "all apprentices": [2, 2]
-        },
-        "weight": 20,
-        "intro_text": "It is time to see the progress of app1's training. {PRONOUN/app1/poss/CAP} mentor sends {PRONOUN/app1/object} out with other apprentices from the clan to test {PRONOUN/app1/poss} hunting skills. {PRONOUN/app1/poss} group is arguing about who should really lead this patrol. app2 wants to be in charge, but {PRONOUN/app2/subject} are not the easiest cat to work with. app1 thinks {PRONOUN/app1/subject} should speak up.",
-        "decline_text": "app1 confesses to {PRONOUN/app1/poss} mentor that {PRONOUN/app1/subject} do not feel ready for {PRONOUN/app1/poss} assessment. {PRONOUN/app1/poss} mentor looks disappointed but seems to understand and offers to postpone the test until next moon. Part of app1 cannot help but wonder if the other apprentices will think poorly of {PRONOUN/app1/object}.",
-        "chance_of_success": 60,
-        "success_outcomes": [
-            {
-                "text": "Before app1 can say anything, app2 gives up on {PRONOUN/app2/poss} bid for leader and decides that they {PRONOUN/app2/subject} would rather hunt on {PRONOUN/app2/poss} own than stick with a group. app2 picks a location aloud and runs off without giving app1 a chance to calm {PRONOUN/app2/object} down. app1 chooses not to dwell on it, and is relieved to hunt alone.",
-                "exp": 15,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
-                    }
-                ]
-            },
-            {
-                "text": "app2 isn't surprised when app1 speaks up and looks annoyed. app1 suggests that it would be a clever idea to split up, so that they don't startle each other's prey and ensure the group's success. Everyone thinks this is a good compromise and splits up with the promise to meet back at camp.",
-                "exp": 15,
-                "weight": 5,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
-                    }
-                ]
-            },
-            {
-                "text": "app1 knows that app2 isn't well-liked in the den for {PRONOUN/app2/poss} attitude. However, they {PRONOUN/app1/subject} {VERB/app1/do/does}n't think app2 is a bad cat. {PRONOUN/app2/subject/CAP} just {VERB/app2/need/needs} someone to believe in {PRONOUN/app2/object}. Well, let app1 be that someone. {PRONOUN/app1/subject/CAP} agrees with app2. app2 is skeptically surprised by app1's vote of confidence but is happy to lead the patrol. When the patrol arrives at the spot app2 suggested, prey scent is everywhere. app1 comes home with enough prey for the queens and elders and is rewarded with a nod from {PRONOUN/app1/poss} mentor.",
-                "exp": 15,
-                "weight": 20,
-                "stat_skill": ["SENSE,0", "MEDIATOR,0"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
-                    }
-                ]
-            },
-            {
-                "text": "app1 can't let app2 have all the glory. {PRONOUN/app1/subject/CAP} {VERB/app1/suggest/suggests} a good place to hunt that can show off the patrol's teamwork. Even app2 says that teamwork in a clan is important. Everyone follows app1 and is shocked when they are instantly greeted with a running hare. Catching it is easy, and the apprentices share amused purrs.",
-                "exp": 15,
-                "weight": 20,
-                "stat_trait": ["ambitious", "competitive"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "Before {PRONOUN/app1/subject} can say anything, app2 gets upset and runs away, leaving app1 without listening to the patrols' calls to return. As acting leader of the patrol, app1 decides to try and locate app2. As the sun is setting, app1 leads the patrol back to camp without prey. app1 is shocked to see app2 talking to {PRONOUN/app1/poss} mentor by the prey pile. Both cats turn to look at app1 when {PRONOUN/app1/subject} {VERB/app1/approach/approaches}, and app1 has an uneasy feeling in {PRONOUN/app1/poss} stomach.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": -5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "At this rate, the patrol is going to impede app1's chances to get {PRONOUN/app1/poss} warrior's name. app1 leaves the patrol to their bickering and goes off on {PRONOUN/app1/poss} own to hunt. {PRONOUN/app1/poss/CAP} thoughts swim with curses toward the others in the patrol. It should have been obvious, this was {PRONOUN/app1/poss} assessment, after all. In frustration, {PRONOUN/app1/subject} go further than intended. The only warning of danger to break {PRONOUN/app1/object} from {PRONOUN/app1/poss} thoughts is the screech of a raging monster before nothingness.",
-                "exp": 0,
-                "weight": 10,
-                "dead_cats": ["r_c"],
-                "history_text": {
-                    "scar": "r_c carries a scar from when they fought with a Clanmate as an apprentice.",
-                    "death": "r_c died when they distractedly ran onto the thunderpath as an apprentice."
-                },
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": -5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "app1 tries hard to resist the urge to scratch app2's confidence away. How dare {PRONOUN/app2/subject} try to show off during {PRONOUN/app1/poss} assessment? Unfortunately, it's a losing battle. app1 just can't hold {PRONOUN/app1/self} back anymore as {PRONOUN/app1/subject} listen to app2 brag about why {PRONOUN/app2/subject} should be leader of the patrol. Before app2 can say anything else, app1 leaps onto {PRONOUN/app2/object} and they tussle over the ground. The mentors rush out of hiding to break up the fight and chide the apprentices for their foolishness.",
-                "exp": 0,
-                "weight": 10,
-                "stat_trait": ["bloodthirsty"],
-                "injury": [
-                    {
-                        "cats": ["patrol"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["CATBITE"]
-                    }
-                ],
-                "history_text": {
-                    "scar": "r_c carries a scar from when they fought with a Clanmate as an apprentice.",
-                    "death": "r_c died when they distractedly ran onto the thunderpath as an apprentice."
-                },
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": -5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 5
-                    }
-                ]
-            }
-        ]
-    },
-    {
         "patrol_id": "gen_train_pumpkineyes",
         "biome": ["Any"],
         "season": ["leaf-fall"],
@@ -8528,7 +8340,369 @@
 
         	}
     	]
-	}
-
-
+	},
+    {
+        "patrol_id": "gen_train_huntassess1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 2,
+        "max_cats": 4,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "normal adult": [-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "{PRONOUN/app1/poss/CAP} mentor sends {PRONOUN/app1/object} out with other apprentices from the clan to assess {PRONOUN/app1/poss} hunting skills. {PRONOUN/app1/poss} group argues about who should really lead this patrol. app2 wants to be in charge, but {PRONOUN/app2/subject} aren't the easiest cat to work with. app1 thinks {PRONOUN/app1/subject} should speak up.",
+        "decline_text": "app1 confesses to {PRONOUN/app1/poss} mentor that {PRONOUN/app1/subject} do not feel ready for {PRONOUN/app1/poss} assessment. {PRONOUN/app1/poss} mentor looks disappointed but seems to understand and offers to postpone the test until next moon. Part of app1 cannot help but wonder if the other apprentices will think poorly of {PRONOUN/app1/object}.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "Before app1 can say anything, app2 gives up on {PRONOUN/app2/poss} bid for leader and decides that {PRONOUN/app2/subject} would rather hunt on {PRONOUN/app2/poss} own than stick with a group. app2 picks a location aloud and runs off without giving app1 a chance to calm {PRONOUN/app2/object} down. app1 chooses not to dwell on it, and is relieved to hunt alone.",
+                "exp": 15,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "app2 isn't surprised when app1 speaks up and looks annoyed. app1 suggests that it would be a clever idea to split up, so that they don't startle each other's prey and ensure the group's success. Everyone thinks this is a good compromise and splits up with the promise to meet back at camp.",
+                "exp": 15,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "app1 knows that app2 isn't well-liked in the den for {PRONOUN/app2/poss} attitude. However, {PRONOUN/app1/subject} {VERB/app1/do/does}n't think app2 is a bad cat. {PRONOUN/app2/subject/CAP} just {VERB/app2/need/needs} someone to believe in {PRONOUN/app2/object}. Well, let app1 be that someone. {PRONOUN/app1/subject/CAP} agrees with app2. app2 is skeptically surprised by app1's vote of confidence but is happy to lead the patrol. app1 comes home with enough prey for the queens and elders and is rewarded with a nod from {PRONOUN/app1/poss} mentor.",
+                "exp": 15,
+                "weight": 20,
+                "stat_skill": ["SENSE,0", "MEDIATOR,0"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "app1 can't let app2 have all the glory. {PRONOUN/app1/subject/CAP} {VERB/app1/suggest/suggests} a good place to hunt that can show off the patrol's teamwork. Even app2 says that teamwork in a Clan is important. Everyone follows app1 and is shocked when they are instantly greeted with a running hare. Catching it is easy, and the apprentices share amused purrs.",
+                "exp": 15,
+                "weight": 20,
+                "stat_trait": ["ambitious", "competitive"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Before {PRONOUN/app1/subject} can say anything, app2 gets upset and runs away, leaving app1 without listening to the patrols' calls to return. As acting leader of the patrol, app1 decides to try and locate app2. As the sun is setting, app1 leads the patrol back to camp without prey, and is shocked to see app2 talking to {PRONOUN/app1/poss} mentor by the prey pile. That flea-bag!",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "At this rate, the patrol is going to impede app1's chances to get {PRONOUN/app1/poss} warrior's name. app1 leaves the patrol to their bickering and goes off on {PRONOUN/app1/poss} own to hunt. {PRONOUN/app1/poss/CAP} thoughts swim with curses toward the others in the patrol. It should have been obvious, this was {PRONOUN/app1/poss} assessment, after all. The only warning of danger to break {PRONOUN/app1/object} from {PRONOUN/app1/poss} thoughts is the screech of a raging monster before nothingness.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["app1"],
+                "history_text": {
+                    "scar": "r_c carries a scar from when they fought with a Clanmate as an apprentice.",
+                    "death": "r_c died when they distractedly ran onto the thunderpath as an apprentice."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "app1 tries hard to resist the urge to scratch app2's confidence away. How dare {PRONOUN/app2/subject} try to show off during {PRONOUN/app1/poss} assessment? Unfortunately, it's a losing battle. app1 just can't hold {PRONOUN/app1/self} back anymore as {PRONOUN/app1/subject} listen to app2 brag about why {PRONOUN/app2/subject} should be leader. app1 leaps onto {PRONOUN/app2/object} and they tussle over the ground. The mentors rush out of hiding to break up the fight and chide the apprentices for their foolishness.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["bloodthirsty"],
+                "injury": [
+                    {
+                        "cats": ["patrol"],
+                        "injuries": ["battle_injury"],
+                        "scars": ["CATBITE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "r_c carries a scar from when they fought with a Clanmate as an apprentice.",
+                    "death": "r_c died from fighting with a Clanmate as an apprentice."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_train_trackassess1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [1, 1],
+            "warrior": [1, 1]
+        },
+        "weight": 20,
+        "intro_text": "It is almost dawn when the deputy rouses app1 for {PRONOUN/app1/poss} assessment. {PRONOUN/app1/subject/CAP} are meant to find r_c posing as an enemy warrior somewhere on the territory and handle the situation. r_c could be anywhere!",
+        "decline_text": "app1 sheepishly looks up at the deputy, a guilty gleam in {PRONOUN/app1/poss} eyes, and says that {PRONOUN/app1/subject} have a stomachache. They {PRONOUN/app1/subject/CAP} hurriedly {VERB/app1/run/runs} to the medicine den, wondering how {PRONOUN/app1/subject} are going to get away with this fake illness at sunhigh when the Clan shares tongues.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "Sluggishly, app1 heads out into the territory to find r_c. By the time the sun starts to set, {PRONOUN/app1/subject} are about to lose hope. However, {PRONOUN/app1/subject} {VERB/app1/spot/spots} r_c nibbling on a pigeon's wing. Imagining an enemy warrior, app1 attacks r_c and catches {PRONOUN/r_c/object} off-guard! After a brief tussle, r_c admits defeat, and guides app1 home.",
+                "exp": 15,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "app1 is nervous upon heading out. However, {PRONOUN/app1/subject} {VERB/app1/manage/manages} to pick up r_c's scent within a few hours, and follow the trail. When {PRONOUN/app1/subject} find r_c, the warrior is drinking from a stream. Yowling, app1 leaps at r_c and sweeps {PRONOUN/r_c/object} off {PRONOUN/r_c/poss} feet into the shallow water. r_c is winded, and after {PRONOUN/r_c/subject} stand up, {PRONOUN/r_c/subject} congratulate app1.",
+                "exp": 15,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "app1 was already awake, and raring to go. {PRONOUN/app1/subject/CAP} run off before the deputy can say anything. It is just a game of hide and seek, after all. When {PRONOUN/app1/subject} {VERB/app1/find/finds} r_c {PRONOUN/app1/subject} have to stifle {PRONOUN/app1/poss} chitters of excited pleasure. r_c must have heard {PRONOUN/app1/object}, because app1 sees {PRONOUN/r_c/poss} whiskers twitch in amusement. Oh, well, {PRONOUN/app1/subject} gleefully charge forward.",
+                "exp": 15,
+                "weight": 20,
+                "stat_skill": ["RUNNER,0", "CLEVER,0"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "app1 has waited for this for moons. {PRONOUN/app1/subject/CAP} disguise {PRONOUN/app1/poss} scent and carefully work {PRONOUN/app1/poss} way through the territory, checking strategic hiding places. Before long, {PRONOUN/app1/subject} pinpoint r_c's hiding spot, and sneak behind the warrior. Without hesitation, app1 pounces on r_c and pins {PRONOUN/r_c/object} to the ground, a paw on {PRONOUN/r_c/poss} throat.",
+                "exp": 15,
+                "weight": 20,
+                "stat_trait": ["sneaky", "cunning", "cold"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Admittedly, {PRONOUN/app1/subject} knew {PRONOUN/app1/subject} weren't ready. app1 can't find r_c, and by the time sundown approaches, {PRONOUN/app1/poss} mentor appears to take {PRONOUN/app1/object} home. app1 cannot help but feel like a failure after this. Back at camp, {PRONOUN/app1/subject} can see r_c's whiskers twitching in amusement at {PRONOUN/app1/poss} predicament.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "app1 is jumping at shadows. Everything around {PRONOUN/app1/object} seems like a predator waiting to pounce. Where could r_c be hiding? {PRONOUN/app1/subject/CAP} wish that r_c would hurry up and come out. Wait, is that . . .? app1 charges toward the bulky shape of another cat in the dark. However, this is not r_c. The smell of a foreign cat washes over app1.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["app1"],
+                "history_text": {
+                    "death": "r_c was killed by another cat while doing {PRONOUN/r_c/poss} assessment as an apprentice."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Why did it have to be this assessment? app1 struggles to make a decision. What if {PRONOUN/app1/subject} cannot find r_c before the time limit? Who decided there should be a time limit? Maybe app1 would be better off as a medicine cat? {PRONOUN/app1/poss/CAP} mentor's arrival startles {PRONOUN/app1/object}, and app1 realizes {PRONOUN/app1/subject} wasted too much time second guessing.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["nervous", "insecure", "oblivious"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ]
+    }
 ]
