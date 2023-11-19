@@ -1,0 +1,211 @@
+[
+    {
+        "id": "gen_hunter_app",
+        "thoughts":[
+            
+        ]
+    },
+    {
+        "id": "apprentice_alive_deputy",
+        "thoughts": [
+           
+        ],
+        "random_status_constraint": [
+            "deputy"
+        ]
+    },
+    {
+        "id": "apprentice_alive_hunter",
+        "thoughts": [
+          
+        ],
+        "random_status_constraint": [
+            "warrior"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "apprentice_alive_mentor",
+        "thoughts": [
+           
+        ],
+        "relationship_constraint": [
+            "app/mentor"
+        ]
+    },
+    {
+        "id": "apprentice_alive_apprentice",
+        "thoughts": [
+           
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ]
+    },
+    {
+        "id": "apprentice_alive_elder",
+        "thoughts":[
+           
+        ],
+        "random_status_constraint":[
+            "elder"
+        ],
+        "random_age_constraint":[
+            "senior"
+        ]
+    },
+    {
+        "id": "apprentice_alive_kits",
+        "thoughts":[
+          
+        ],
+        "random_status_constraint":[
+            "kitten"
+        ]
+    },
+    {
+        "id": "apprentice_dead_hunter",
+        "thoughts": [
+           
+        ],
+        "random_status_constraint": [
+            "warrior"
+        ],
+        "random_living_status": [
+            "starclan"
+        ]
+    },
+    {
+        "id": "formerly_a_rogue_hunter_apprentice",
+        "thoughts": [
+           
+           ],
+        "main_backstory_constraint": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2"]
+    },
+    {
+        "id": "thoughtful_hunter_apprentice",
+        "thoughts": [
+           
+        ],
+        "main_trait_constraint": [
+            "thoughtful"
+        ]
+    },
+    {
+        "id": "patient_hunter_apprentice",
+        "thoughts": [
+           
+        ],
+        "main_trait_constraint": [
+            "patient"
+        ]
+    },
+    {
+        "id": "insecure_hunter_apprentice",
+        "thoughts": [
+            
+        ],
+        "main_trait_constraint": [
+            "insecure"
+        ]
+    },
+    {
+        "id": "fierce_hunter_apprentice",
+        "thoughts": [
+           
+        ],
+        "main_trait_constraint": [
+            "fierce"
+        ]
+    },
+    {
+        "id": "confident_hunter_apprentice",
+        "thoughts": [
+           
+        ],
+        "main_trait_constraint": [
+            "confident"
+        ]
+    },
+    {
+        "id": "bold_hunter_apprentice",
+        "thoughts": [
+           
+        ],
+        "main_status_constraint": [
+            "apprentice"
+        ],
+        "main_trait_constraint": [
+            "bold"
+        ]
+    },
+    {
+        "id": "bold_hunter_apprentice_to_hunter",
+        "th
+        ],
+        "main_status_constraint": [
+            "apprentice"
+        ],
+        "random_status_constraint":[
+            "warrior"
+        ],
+        "main_trait_constraint": [
+            "bold"
+        ]
+    },
+    {
+        "id": "bloodthirsty_hunter_apprentice",
+        "thoughts": [
+           
+
+        ],
+        "main_trait_constraint": [
+            "bloodthirsty"
+        ]
+    },
+    {
+        "id": "ambitious_hunter_apprentice",
+        "thoughts": [
+            
+        ],
+        "main_trait_constraint": [
+            "ambitious"
+        ]
+    },
+    {
+        "id": "ambitious_hunter_apprentice_to_other_apps",
+        "thoughts": [
+           
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ],
+        "main_trait_constraint": [
+            "ambitious"
+        ]
+    }, 
+    {
+        "id": "childish_hunter_apprentice",
+        "thoughts": [
+           
+        ],
+        "main_trait_constraint": [
+            "childish"
+        ]
+    },
+    { "id": "childish_apprentice_elder",
+        "thoughts": [
+            
+        ],
+        "main_trait_constraint":[
+            "childish"
+        ],
+        "random_status_constraint":[
+            "elder"
+        ]
+    }
+           
+    
+]

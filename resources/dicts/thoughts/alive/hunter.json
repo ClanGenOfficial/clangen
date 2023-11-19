@@ -1,0 +1,616 @@
+[
+    {
+        "id": "hunter_gen_alive_kits",
+        "thoughts": [
+           
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "hunter_formerly_a_loner_alive_kits",
+        "thoughts": [
+         
+        ],
+        "main_backstory_constraint": ["loner1", "loner2", "refugee2", "refugee5", "tragedy_survivor4", "guided3"],
+        "random_status_constraint": [
+            "kitten"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "hunter_formerly_a_rogue_alive_kits",
+        "thoughts": [
+            
+        ],
+        "main_backstory_constraint": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2"],
+        "random_status_constraint": [
+            "kitten"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "hunter_gen_dead_sc_kits",
+        "thoughts": [
+            
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ],
+        "random_living_status": [
+            "starclan"
+        ]
+    },
+    {
+        "id": "hunter_gen_dead_df_kits",
+        "thoughts": [
+           
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ],
+        "random_living_status": [
+            "darkforest"
+        ]
+    },
+    {
+        "id": "hunter_parent_alive_kits",
+        "thoughts": [
+           
+        ],
+        "relationship_constraint": [
+            "parent/child"
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "hunter_gen_alive_apprentice",
+        "thoughts": [
+           
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "hunter_gen_deputy",
+        "thoughts": [
+            
+        ],
+        "random_status_constraint": [
+            "deputy"
+        ]
+    },
+    {
+        "id": "gen_older_hunter",
+        "thoughts": [
+            
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "adult"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "hunter_gen_medicine_cat",
+        "thoughts": [
+            
+        ],
+        "random_status_constraint": [
+            "medicine cat"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "hunter_gen_hunter",
+        "thoughts": [
+            
+        ],
+        "random_status_constraint": [
+            "warrior"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "ambitious_forest_hunter",
+        "biome": [
+            "forest"
+        ],
+        "thoughts": [
+            
+        ],
+        "main_trait_constraint": [
+            "ambitious"
+        ]
+    },
+    {
+    "id": "adventurous_hunter",
+    "thoughts": [
+       
+    ],
+    "main_trait_constraint": [
+        "adventurous"
+    ]
+
+    },
+    {
+        "id": "adventurous_hunter_to_alive_kits",
+        "thoughts": [
+            
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ],
+        "main_trait_constraint": [
+            "adventurous"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "ambitious_hunter",
+        "thoughts": [
+           
+        ],
+        "main_trait_constraint": [
+            "ambitious"
+        ]
+    },
+    {
+        "id": "bloodthirsty_hunter",
+        "thoughts": [
+           
+        ],
+        "main_trait_constraint": [
+            "bloodthirsty"
+        ]
+    },
+    {
+        "id": "bold_hunter",
+        "thoughts": [
+            
+        ],
+        "main_trait_constraint": [
+            "bold"
+        ]
+    },
+    {
+        "id": "calm_hunter",
+        "thoughts": [
+           
+        ],
+        "main_trait_constraint": [
+            "calm"
+        ]
+    },
+    {
+        "id": "careful_hunter",
+        "thoughts": [
+            
+        ],
+        "main_trait_constraint": [
+            "careful"
+        ]
+    },
+    {
+        "id": "charismatic_hunter",
+        "thoughts": [
+            
+        ],
+        "main_trait_constraint": [
+            "charismatic"
+        ]
+    },
+    {
+        "id": "childish_hunter",
+        "thoughts": [
+            
+        ],
+        "main_trait_constraint": [
+            "childish"
+        ]
+    },
+    {
+        "id": "cold_hunter",
+        "thoughts": [
+            
+        ],
+        "main_trait_constraint": [
+            "cold"
+        ]
+    },
+    {
+        "id": "cold_hunter_to_alive_apprentice",
+        "thoughts": [
+           
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ],
+        "main_trait_constraint": [
+            "cold"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "compassionate_hunter",
+        "thoughts": [
+            
+        ],
+        "main_trait_constraint": [
+            "compassionate"
+        ]
+    },
+    {
+        "id": "compassionate_hunter_to_living_med_cat",
+        "thoughts": [
+            "Is helping the medicine cat organize herb stores"
+        ],
+        "random_status_constraint": [
+            "medicine cat"
+        ],
+        "main_trait_constraint": [
+            "compassionate"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+
+    },
+    {
+        "id": "compassionate_hunter_to_living_apprentices",
+        "thoughts": [
+          
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ],
+        "main_trait_constraint": [
+            "compassionate"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "confident_hunter",
+        "thoughts": [
+           
+        ],
+        "main_trait_constraint": [
+            "confident"
+        ]
+    },
+    {
+        "id": "daring_hunter",
+        "thoughts": [
+            
+        ],
+        "main_trait_constraint": [
+            "daring"
+        ]
+    },
+    {
+        "id": "faithful_hunter",
+        "thoughts": [
+            
+        ],
+        "main_trait_constraint": [
+            "faithful"
+        ]
+    },
+    {
+        "id": "fierce_hunter",
+        "thoughts": [
+          
+        ],
+        "main_trait_constraint": [
+            "fierce"
+        ]
+    },
+    {
+        "id": "fierce_hunter_to_living_apprentices",
+        "thoughts": [
+            "Is arguing for more battle training for the apprentices"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ],
+        "main_trait_constraint": [
+            "fierce"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "insecure_hunter",
+        "thoughts": [
+           
+        ],
+        "main_trait_constraint": [
+            "insecure"
+        ]
+    },
+    {
+        "id": "lonesome_hunter",
+        "thoughts": [
+            
+        ],
+        "main_trait_constraint": [
+            "lonesome"
+        ]
+    },
+    {
+        "id": "loving_hunter",
+        "thoughts": [
+            
+        ],
+        "main_trait_constraint": [
+            "loving"
+        ]
+    },
+    {
+        "id": "loving_hunter_to_living_apprentices",
+        "thoughts": [
+            
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ],
+        "main_trait_constraint": [
+            "loving"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "loyal_hunter",
+        "thoughts": [
+            
+        ],
+        "main_trait_constraint": [
+            "loyal"
+        ]
+    },
+    {
+        "id": "nervous_hunter",
+        "thoughts": [
+            
+        ],
+        "main_trait_constraint": [
+            "nervous"
+        ]
+    },
+    {
+        "id": "playful_hunter",
+        "thoughts": [
+           
+        ],
+        "main_trait_constraint": [
+            "playful"
+        ]
+    },
+    {
+        "id": "playful_hunter_to_living_kit",
+        "thoughts": [
+            "Plays mossball with a kit"
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ],
+        "main_trait_constraint": [
+            "playful"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "responsible_hunter",
+        "thoughts": [
+            
+        ],
+        "main_trait_constraint": [
+            "responsible"
+        ]
+    },
+    {
+        "id": "responsible_hunter_kits",
+        "thoughts": [
+            
+        ],
+        "main_trait_constraint": [
+            "responsible"
+        ],
+        "random_status_constraint":[
+            "kitten"
+        ],
+        "random_living_status":[
+            "living"
+        ]
+    },
+    {
+        "id": "responsible_hunter_to_living_apprentices",
+        "thoughts": [
+            
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ],
+        "main_trait_constraint": [
+            "responsible"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "righteous_hunter",
+        "thoughts": [
+            
+        ],
+        "main_trait_constraint": [
+            "righteous"
+        ]
+    },
+    {
+        "id": "shameless_hunter",
+        "thoughts": [
+           
+        ],
+        "main_trait_constraint": [
+            "shameless"
+        ]
+    },
+    {
+        "id": "sneaky_hunter",
+        "thoughts": [
+           
+        ],
+        "main_trait_constraint": [
+            "sneaky"
+        ]
+    },
+    {
+        "id": "strange_hunter",
+        "thoughts": [
+            
+        ],
+        "main_trait_constraint": [
+            "strange"
+        ]
+    },
+    {
+        "id": "strict_hunter",
+        "thoughts": [
+            
+        ],
+        "main_trait_constraint": [
+            "strict"
+        ]
+    },
+    {
+        "id": "strict_hunter_to_living_apprentices",
+        "thoughts": [
+            
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ],
+        "main_trait_constraint": [
+            "strict"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "thoughtful_hunter",
+        "thoughts": [
+            
+        ],
+        "main_trait_constraint": [
+            "thoughtful"
+        ]
+    },
+    {
+        "id": "troublesome_hunter",
+        "thoughts": [
+            
+        ],
+        "main_trait_constraint": [
+            "troublesome"
+        ]
+    },
+    {
+        "id": "troublesome_hunter_to_living_apprentices",
+        "thoughts": [
+            
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ],
+        "main_trait_constraint": [
+            "troublesome"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "vengeful_hunter",
+        "thoughts": [
+           
+        ],
+        "main_trait_constraint": [
+            "vengeful"
+        ]
+    },
+    {
+        "id": "wise_hunter",
+        "thoughts": [
+            
+        ],
+        "main_trait_constraint": [
+            "wise"
+        ]
+    },
+    {
+        "id": "wise_hunter_to_living_apprentices",
+        "thoughts": [
+            
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ],
+        "main_trait_constraint": [
+            "wise"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "wise_hunter_to_living_elder",
+        "thoughts": [
+             
+        ],
+        "random_status_constraint": [
+            "elder"
+        ],
+        "main_trait_constraint": [
+            "wise"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    }
+]
