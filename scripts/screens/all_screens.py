@@ -24,6 +24,7 @@ from .FamilyTreeScreen import FamilyTreeScreen
 from .OutsideClanScreen import OutsideClanScreen
 from .MediationScreen import MediationScreen
 from .ClanSettingsScreen import ClanSettingsScreen
+from .ClearingScreen import ClearingScreen
 
 # ---------------------------------------------------------------------------- #
 #                                  UI RULES                                    #
@@ -66,6 +67,7 @@ catlist_screen = ListScreen('list screen')
 starclan_screen = StarClanScreen('starclan screen')
 df_screen = DFScreen('dark forest screen')
 med_den_screen = MedDenScreen('med den screen')
+freshkill_pile_screen = ClearingScreen('clearing screen')
 
 
 events_screen = EventsScreen('events screen')
