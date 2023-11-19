@@ -2106,15 +2106,19 @@ class Genotype:
         elif self.white[0] == "W":
             blueindex = randint(0, 14)
             if randint(1, 4) == 1 and blueindex == 0:
-                self.deaf = "Deaf "
+                self.deaf = True
         if self.white == ["W","W"]:
             blueindex = randint(0, 2)
             if randint(1, 4) < 4 and blueindex == 0:
-                self.deaf = "Deaf "
+                self.deaf = True
         
         if self.pointgene[0] == "cs" or ((self.pointgene == ["cb","cm"] or self.pointgene == ["cm","cm"] or self.pointgene == ["cm","c"]) and randint(0, 4)==0) or (self.altai != ["al", "al"] and randint(0, 4) == 0):
             blueindex = 0
-
+        if self.altai[1] == 'Al':
+            if randint(0, 1) == 0:
+                blueindex = 0
+                if randint(0, 1) == 0:
+                    self.deaf = True
         
 
         if 'ws' not in self.white and 'wt' not in self.white:
@@ -2125,8 +2129,12 @@ class Genotype:
             hetindex = randint(0, 14)
         elif self.white[0] == "W":
             hetindex = randint(0, 9)
+            if randint(1, 10) == 1 and hetindex == 0:
+                self.deaf = True
         if self.white == ["W","W"]:
             hetindex = randint(0, 2)
+            if randint(1, 8) == 1 and hetindex == 0:
+                self.deaf = True
         if self.altai != ["al","al"] and randint(0, 4)!= 0:
             hetindex = 0
 
