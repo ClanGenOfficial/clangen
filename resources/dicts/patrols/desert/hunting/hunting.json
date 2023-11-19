@@ -713,7 +713,7 @@
         ]
     },
     {
-        "patrol_id": "dst_hunt_sneakprey3",
+        "patrol_id": "dst_hunt_sneak",
         "biome": ["Any"],
         "season": ["Any"],
         "types": ["hunting"],

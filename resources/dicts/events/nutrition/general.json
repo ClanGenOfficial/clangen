@@ -8,7 +8,26 @@
             "Leaf-bare",
             "death"
         ],
-        "death_text": "m_c feels that {PRONOUN/m_c/subject} {VERB/m_c/have/has} no energy, unable to stand up and unable to remain here any longer. m_c hunts now with {PRONOUN/m_c/poss} ancestors.",
+		"death_text": "m_c feels that {PRONOUN/m_c/subject} {VERB/m_c/have/has} no energy, unable to stand up and unable to remain here any longer. m_c now hunts with {PRONOUN/m_c/poss} ancestors.",
+        "history_text": [
+            "m_c died from starvation.",
+            null
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+	{
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "death"
+        ],
+		"death_text": "m_c has been feeling progressively weaker over the past few days, the lack of prey taking its toll on {PRONOUN/m_c/poss} body. When {PRONOUN/m_c/poss} strength finally fails, the Clan can only hope they'll find better hunting in the stars.",
         "history_text": [
             "m_c died from starvation.",
             null

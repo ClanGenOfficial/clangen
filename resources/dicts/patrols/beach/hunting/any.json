@@ -595,7 +595,7 @@
         "biome": ["beach"],
         "season": ["Any"],
         "types": ["hunting"],
-        "tags": ["large_prey2"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 5,
         "max_cats": 6,
@@ -666,7 +666,7 @@
         "biome": ["beach"],
         "season": ["Any"],
         "types": ["hunting"],
-        "tags": ["large_prey2"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 4,
@@ -744,7 +744,7 @@
         "biome": ["beach"],
         "season": ["Any"],
         "types": ["hunting"],
-        "tags": ["large_prey2"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
         "max_cats": 1,
@@ -1068,7 +1068,8 @@
             {
                 "text": "A friendly Twoleg makes a psspsspss noise and pours kittypet food on the ground for r_c. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'ve/'s} always wondered what it might taste like... dry, is the answer. Very odd.",
                 "exp": 20,
-                "weight": 5
+                "weight": 5,
+                "prey": ["very_small"]
             },
             {
                 "text": "s_c gets distracted from hunting by strange Twoleg activity around one of their dens. They appear to be hauling all their many, many varieties of nest lining out and into a big monster. s_c takes the opportunity to grab a little soft thing, something that's almost shaped like prey. It'll be good for the nursery.",
@@ -1104,7 +1105,8 @@
                     "daring",
                     "shameless",
                     "rebellious"
-                ]
+                ],
+                "prey": ["small"]
             },
             {
                 "text": "Carelessly, r_c is seen by Twolegs, and taken from c_n.",
@@ -1135,7 +1137,7 @@
         "biome": ["beach"],
         "season": ["Any"],
         "types": ["hunting"],
-        "tags": ["medium_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
         "max_cats": 1,
@@ -1156,7 +1158,8 @@
             {
                 "text": "A friendly Twoleg makes a psspsspss noise and pours kittypet food on the ground for app1. {PRONOUN/app1/subject/CAP}{VERB/app1/'ve/'s} always wondered what it might taste like... dry, is the answer. It's strangely appealing.",
                 "exp": 20,
-                "weight": 5
+                "weight": 5,
+                "prey": ["very_small"]
             },
             {
                 "text": "Tail lashing excitedly, s_c hunts in the strange, forbidden land, ducking around corners and crawling over gardens with {PRONOUN/s_c/poss} belly low to the ground. A successful, sneaky hunt.",
@@ -1253,7 +1256,8 @@
                         "values": ["romantic", "platonic"],
                         "amount": 5
                     }
-                ]
+                ],
+                "prey": ["very_small"]
             },
             {
                 "text": "s_c shows the other cat all around the outskirts of the Twoleg dens, showing off how much {PRONOUN/s_c/subject} {VERB/s_c/know/knows} about the strange animals and their weird behavior, and enjoying getting to feel clever.",
@@ -1386,7 +1390,8 @@
                         "values": ["romantic", "platonic"],
                         "amount": 5
                     }
-                ]
+                ],
+                "prey": ["very_small"]
             },
             {
                 "text": "Tail lashing excitedly, s_c hunts in the strange, forbidden land, ducking around corners and crawling over gardens with {PRONOUN/s_c/poss} belly low to the ground. app2 tries to be even sneakier, and so s_c ups {PRONOUN/s_c/poss} game, until the two are probably the most obvious pair of cats in the neighborhood.",

@@ -138,13 +138,14 @@ class Clan():
             self.clan_settings[setting] = values[0]
             self.setting_lists[setting] = values
 
-        _ = []
-        _.append(_settings['general'])
-        _.append(_settings['role'])
-        _.append(_settings['relation'])
+        all_settings = []
+        all_settings.append(_settings['general'])
+        all_settings.append(_settings['role'])
+        all_settings.append(_settings['relation'])
+        all_settings.append(_settings['freshkill_tactics'])
 
-        for cat in _:  # Add all the settings to the settings dictionary
-            for setting_name, inf in cat.items():
+        for setting in all_settings:  # Add all the settings to the settings dictionary
+            for setting_name, inf in setting.items():
                 self.clan_settings[setting_name] = inf[2]
                 self.setting_lists[setting_name] = [inf[2], not inf[2]]
         
@@ -976,6 +977,9 @@ class Clan():
                             nutrition.max_score = nutr['max_score']
                             nutrition.current_score = nutr['current_score']
                             clan.freshkill_pile.nutrition_info[k] = nutrition
+                        if len(nutritions) <= 0:
+                            for cat in Cat.all_cats_list:
+                                clan.freshkill_pile.add_cat_to_nutrition(cat)
             else:
                 clan.freshkill_pile = Freshkill_Pile()
         except:

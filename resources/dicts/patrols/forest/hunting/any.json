@@ -1030,7 +1030,7 @@
         "biome": ["forest"],
         "season": ["Any"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "gen_hunt_strange",
         "min_cats": 1,
         "max_cats": 1,
@@ -1050,7 +1050,8 @@
                 "text": "s_c finds some deer droppings in the forest - it's not clean, but it's extremely effective, and the hunt goes well.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["CLEVER,2"]
+                "stat_skill": ["CLEVER,2"],
+                "prey": ["medium"]
             },
             {
                 "text": "s_c rolls in a patch of garlic to disguise their scent, which works perfectly. It's a funny taste to wash off their pelt though.",
@@ -1078,7 +1079,7 @@
         "biome": ["forest"],
         "season": ["Any"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "gen_hunt_huntassessment",
         "min_cats": 1,
         "max_cats": 1,
@@ -1119,7 +1120,8 @@
                     "thoughtful",
                     "wise"
                 ],
-                "can_have_stat": ["app"]
+                "can_have_stat": ["app"],
+                "prey": ["large"]
             }
         ],
         "fail_outcomes": [
@@ -1372,7 +1374,7 @@
         "biome": ["forest"],
         "season": ["Any"],
         "types": ["hunting"],
-        "tags": ["medium_prey2"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 5,
         "max_cats": 6,
@@ -1386,13 +1388,14 @@
                 "text": "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise.  They find themselves to be correct when they pounce into the bush and return to the patrol with the tasty morsel dangling from their mouth. One more for the fresh-kill pile!",
                 "exp": 10,
                 "weight": 20,
-                "prey": ["small"]
+                "prey": ["medium"]
             },
             {
                 "text": "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out!  s_c is quick to react and manages to snag the rabbit before it can disappear.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["HUNTER,1"]
+                "stat_skill": ["HUNTER,1"],
+                "prey": ["large"]
             }
         ],
         "fail_outcomes": [
@@ -1430,7 +1433,7 @@
         "biome": ["forest"],
         "season": ["Any"],
         "types": ["hunting"],
-        "tags": ["medium_prey2"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 4,
@@ -1450,20 +1453,23 @@
                 "text": "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out! s_c is quick to react and manages to snag the rabbit before it can disappear.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["HUNTER,1"]
+                "stat_skill": ["HUNTER,1"],
+                "prey": ["large"]
             }
         ],
         "fail_outcomes": [
             {
                 "text": "p_l pads closer to the bush, intent on finding the source of the noise, only to come face to face with a skunk! The poor cat ends up stinking for days after the unfortunate incident.",
                 "exp": 0,
-                "weight": 20
+                "weight": 20,
+                "prey": ["very_small"]
             },
             {
                 "text": "s_c doesn't even hesitate before splitting from the patrol to check on the source of the noise. They quickly regret their impulsivity, however, when an angry raccoon bursts from the bush! s_c gets quite the scare, but thankfully the raccoon only wanted to get away from them and quickly runs off back into the undergrowth.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["daring", "bold", "ambitious"]
+                "stat_trait": ["daring", "bold", "ambitious"],
+                "prey": ["very_small"]
             },
             {
                 "text": "r_c takes the lead in checking the source of the noise and comes face to face with a snarling wolverine! r_c yowls for their patrol but the other cats aren't quick enough to stop the wolverine from killing r_c in one quick and deadly swipe.",
@@ -1785,7 +1791,8 @@
                     "responsible",
                     "thoughtful",
                     "wise"
-                ]
+                ],
+                "prey": ["small"]
             },
             {
                 "text": "Carelessly, r_c is seen by Twolegs, and taken from c_n.",
@@ -1812,7 +1819,7 @@
         "biome": ["forest"],
         "season": ["Any"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
         "max_cats": 1,
@@ -1828,13 +1835,13 @@
                 "text": "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall it works out.",
                 "exp": 20,
                 "weight": 20,
-                "prey": ["small", "medium"]
+                "prey": ["small"]
             },
             {
                 "text": "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for app1. They've always wondered what it might taste like... dry, is the answer. It's strangely appealing.",
                 "exp": 20,
                 "weight": 5,
-                "prey": ["small"]
+                "prey": ["very_small"]
             },
             {
                 "text": "Tail lashing excitedly, app1 hunts in the strange, forbidden land, ducking around corners and crawling over gardens with their belly low to the ground. A successful, sneaky hunt.",
@@ -1851,7 +1858,7 @@
                     "strange"
                 ],
                 "can_have_stat": ["app"],
-                "prey": ["small", "medium"]
+                "prey": ["medium"]
             }
         ],
         "fail_outcomes": [
@@ -1916,7 +1923,7 @@
                 "text": "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for r_c. They fetch p_l, and both cats investigate the food, loudly proclaiming how much better fresh-kill is, but both a little thrilled by the experience.",
                 "exp": 20,
                 "weight": 5,
-                "prey": ["small"],
+                "prey": ["very_small"],
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -2007,7 +2014,8 @@
                         "values": ["romantic", "platonic"],
                         "amount": -5
                     }
-                ]
+                ],
+                "prey": ["small"]
             },
             {
                 "text": "Carelessly, r_c is seen by Twolegs, and taken from c_n.",
@@ -2063,7 +2071,7 @@
                 "text": "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for app2. They fetch app1, and both apprentices loudly proclaim how much better fresh-kill is, but both are also wide eyed and thrilled by the experience.",
                 "exp": 20,
                 "weight": 5,
-                "prey": ["small"],
+                "prey": ["very_small"],
                 "relationships": [
                     {
                         "cats_to": ["app1"],
