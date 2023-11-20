@@ -465,60 +465,6 @@ class Phenotype():
         
         return self.length + " " + self.highwhite + self.fade + self.colour + " " + self.silvergold + self.tabtype + self.tabby + self.tortie + self.point + self.lowwhite + self.karpati + gendera + withword
     
-    def EyeColourRestore(self):
-        Ref1 = ["Citrine", "Golden Beryl", "Yellow", "Pale Golden", "Golden", "Amber", "Light Orange", "Orange", "Cinnabar", "Auburn", "Copper", "Ice Blue", "Albino Pink"]
-        Ref2 = ["Pale Citrine", "Pale Yellow", "Lemon", "Deep Yellow", "Dull Golden", "Honey", "Pale Orange", "Burnt Orange", "Dark Orange", "Russet", "Dark Topaz", "Aquamarine", "Albino Rose"]
-        Ref3 = ["Lemonade Yellow", "Straw Yellow", "Dandelion Yellow", "Banana Yellow", "Sunglow Yellow", "Copal", "Dull Orange", "Rust Orange", "Topaz", "Chocolate", "Burgundy", "Sky Blue", "Albino Magenta"]
-        Ref4 = ["Light Celadon", "Pale Chartreuse", "Pear Green", "Brass Yellow", "Golden Green", "Butterscotch", "Dusty Orange", "Tawny", "Jasper", "Light Brown", "Earth", "Cyan", "Albino Periwinkle"]
-        Ref5 = ["Light Jade", "Pale Lime", "Spring Bud", "Chartreuse", "Pale Hazel", "Yellow Hazel", "Golden Flourite", "Beaver Brown", "Sienna", "Chestnut", "Umber", "Baby Blue", "Albino Violet"]
-        Ref6 = ["Light Flourite", "Mantis Green", "Spring Green", "Lime", "Green Tea", "Hazel", "Golden Brown", "Dark Copal", "Cinnamon", "Raw Umber", "Sepia", "Aqua", "Albino Glass"]
-        Ref7 = ["Pale Emerald", "Apple Green", "Shamrock", "Lemon-Lime", "Peridot", "Antique Brass", "Dark Hazel", "Brown-Green", "Hazel Brown", "Bronze", "Bistre Brown", "Cerulean", "Moonstone"]
-        Ref8 = ["Malachite", "Olivine", "Pastel Green", "Bright Green", "Pistachio", "Dull Olive", "Murky Green", "Jungle Green", "Hemlock Green", "Thatch Green", "Muddy", "Ocean Blue", "Albino Ice Blue"]
-        Ref9 = ["Pale Turquoise", "Mint", "Snake Green", "Dark Lime", "Fern Green", "Dull Green", "Dark Fern Green", "Olive", "Tumbleweed Green", "Bronze Olive", "Deep Bronze", "Teal", "Albino Aquamarine"]
-        Ref10 = ["Turquoise", "Viridian", "Green Onion", "Leaf Green", "Green", "Sap Green", "Dark Leaf Green", "Forest Green", "Dark Peridot", "Seaweed Green", "Dark Olive", "Sapphire", "Albino Sky Blue"]
-        Ref11 = ["Deep Turquoise", "Amazonite", "Pine Green", "Deep Leaf Green", "Jade", "Emerald", "Deep Green", "Deep Forest Green", "Dark Green", "Dark Moss Green", "Black Olive", "Azure", "Albino Azure"]
-
-        def FindEye(Ref, Pig):
-            eye = "Error"
-            if Pig == "lue":
-                Pig = 11
-            elif Pig == "lbino":
-                Pig = 12
-            else:
-                Pig = int(Pig)-1
-
-            if Ref == "R1":
-                eye = Ref1[Pig]
-            elif Ref == "R2":
-                eye = Ref2[Pig]
-            elif Ref == "R3":
-                eye = Ref3[Pig]
-            elif Ref == "R4":
-                eye = Ref4[Pig]
-            elif Ref == "R5":
-                eye = Ref5[Pig]
-            elif Ref == "R6":
-                eye = Ref6[Pig]
-            elif Ref == "R7":
-                eye = Ref7[Pig]
-            elif Ref == "R8":
-                eye = Ref8[Pig]
-            elif Ref == "R9":
-                eye = Ref9[Pig]
-            elif Ref == "R10":
-                eye = Ref10[Pig]
-            elif Ref == "R11":
-                eye = Ref11[Pig]
-            
-            return eye
-        
-        lefttemp = self.lefteyetype.split(" ; ")
-        righttemp = self.righteyetype.split(" ; ")
-
-        self.lefteye = FindEye(lefttemp[0], lefttemp[1][1:])
-        self.righteye = FindEye(righttemp[0], righttemp[1][1:])
-
-
     def GetTabbySprite(self):
         pattern = ""
 

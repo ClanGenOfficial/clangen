@@ -277,6 +277,7 @@ def csv_load(all_cats):
                     'error_message'] = '1There was an error loading cat # ' + str(
                         attr[0])
                 the_pelt = Pelt(
+                    
                     colour=attr[2],
                     name = attr[11],
                     length=attr[9],
