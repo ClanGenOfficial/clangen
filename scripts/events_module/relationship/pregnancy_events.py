@@ -206,12 +206,15 @@ class Pregnancy_Events():
             else:
                 cat_type = 'former Clancat'
                 backkit = 'halfclan2'
+            mate_age = cat.moons + randint(0, 24)-12
             outside_parent = create_outside_cat(Cat,
                                 status=cat_type if cat_type in ['loner', 'rogue', 'kittypet'] else 'rogue',
                                 backstory=None,
-                                age=cat.moons + randint(0, 24)-12,
-                                alive=True  
+                                age=mate_age if mate_age > 14 else 15,
+                                alive=True,
+                                gender='fem' if 'Y' in cat.genotype.sexgene else 'masc'   
                                  )
+                
             kits = Pregnancy_Events.get_kits(amount, cat, outside_parent, clan, backkit=backkit)
             insert = 'this should not display'
             if amount == 1:
@@ -314,7 +317,24 @@ class Pregnancy_Events():
         other_cat_id = clan.pregnancy_data[cat.ID]["second_parent"]
         other_cat = Cat.all_cats.get(other_cat_id)
 
-        kits = Pregnancy_Events.get_kits(kits_amount, cat, other_cat, clan)
+        backkit = None
+        if not other_cat:
+            if(randint(1, 2) == 1):
+                cat_type = choice(['loner', 'rogue', 'kittypet'])
+                backkit = 'outsider_roots2'
+            else:
+                cat_type = 'former Clancat'
+                backkit = 'halfclan2'
+            mate_age = cat.moons + randint(0, 24)-12
+            other_cat = create_outside_cat(Cat,
+                                status=cat_type if cat_type in ['loner', 'rogue', 'kittypet'] else 'rogue',
+                                backstory=None,
+                                age=mate_age if mate_age > 14 else 15,
+                                alive=True,
+                                gender='masc'   
+                                 )
+
+        kits = Pregnancy_Events.get_kits(kits_amount, cat, other_cat, clan, backkit=backkit)
         kits_amount = len(kits)
         Pregnancy_Events.set_biggest_family()
 
@@ -350,7 +370,7 @@ class Pregnancy_Events():
         # change or leaf as it is? 
         events = Pregnancy_Events.PREGNANT_STRINGS
         event_list = []
-        if not cat.outside and other_cat is None:
+        if not cat.outside and backkit:
             event_list.append(choice(events["birth"]["unmated_parent"]))
         elif cat.outside:
             adding_text = choice(events["birth"]["outside_alone"])
@@ -632,6 +652,7 @@ class Pregnancy_Events():
             other_cat = None
         
         blood_parent = None
+        blood_parent2 = None
          
         ##### SELECT BACKSTORY #####
         if backkit:
@@ -679,16 +700,25 @@ class Pregnancy_Events():
                     thought = f"Is glad that {insert} safe"
                     blood_parent = create_new_cat(Cat, Relationship,
                                                 status=random.choice(["loner", "kittypet"]),
+                                                gender='masc',
+                                                alive=False,
+                                                thought=thought,
+                                                age=randint(15,120),
+                                                outside=True)[0]
+                    blood_parent2 = create_new_cat(Cat, Relationship,
+                                                status=random.choice(["loner", "kittypet"]),
+                                                gender='fem',
                                                 alive=False,
                                                 thought=thought,
                                                 age=randint(15,120),
                                                 outside=True)[0]
                     blood_parent.thought = thought
+                    blood_parent2.thought = thought
                 
-                kit = Cat(parent1=blood_parent.ID ,moons=0, backstory=backstory, status='newborn')
+                kit = Cat(parent1=blood_parent2.ID, parent2=blood_parent.ID,moons=0, backstory=backstory, status='newborn')
             elif cat and other_cat:
                 # Two parents provided
-                if backstory:    
+                if backkit:    
                     kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0, backstory=backstory, status='newborn')
                 else:
                     kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0, status='newborn')
@@ -699,10 +729,6 @@ class Pregnancy_Events():
                     kit.thought = f"Snuggles up to the belly of {cat.name}"
                 else:
                     kit.thought = f"Snuggles up to the belly of {other_cat.name}"
-            else:
-                # A one blood parent litter is the only option left. 
-                kit = Cat(parent1=cat.ID, moons=0, backstory=backstory, status='newborn')
-                kit.thought = f"Snuggles up to the belly of {cat.name}"
                 
             kit.adoptive_parents = all_adoptive_parents  # Add the adoptive parents. 
             all_kitten.append(kit)
@@ -771,6 +797,9 @@ class Pregnancy_Events():
         if blood_parent:
             blood_parent.outside = True
             clan.unknown_cats.append(blood_parent.ID)
+        if blood_parent2:
+            blood_parent2.outside = True
+            clan.unknown_cats.append(blood_parent2.ID)
 
         return all_kitten
 

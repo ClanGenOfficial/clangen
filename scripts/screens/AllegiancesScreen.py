@@ -188,7 +188,7 @@ class AllegiancesScreen(Screens):
         # Mediator Box:
         if living_mediators:
             if len(living_mediators) == 1:
-                _box = ["", "", ""]
+                _box = ["", "", "", ""]
                 _box[0] = '<b><u>MEDIATOR</u></b>'
                 x = self.generate_one_entry(living_mediators[0])
                 _box[1] = x[0]

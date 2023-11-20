@@ -114,9 +114,9 @@ class Scar_Events():
             scar_pool = [i for i in Scar_Events.scar_allowed[injury_name] if i not in cat.pelt.scars]
             if 'NOPAW' in cat.pelt.scars:
                 scar_pool = [i for i in scar_pool if i not in ['TOETRAP', 'RATBITE', "FROSTSOCK"]]
-            if 'NOTAIL' in cat.pelt.scars:
+            if 'NOTAIL' in cat.pelt.scars or (cat.phenotype.bobtailnr > 0 and cat.phenotype.bobtailnr < 3):
                 scar_pool = [i for i in scar_pool if i not in ["HALFTAIL", "TAILBASE", "TAILSCAR", "MANTAIL", "BURNTAIL", "FROSTTAIL"]]
-            if 'HALFTAIL' in cat.pelt.scars:
+            if 'HALFTAIL' in cat.pelt.scars or (cat.phenotype.bobtailnr > 0 and cat.phenotype.bobtailnr < 5):
                 scar_pool = [i for i in scar_pool if i not in ["TAILSCAR", "MANTAIL", "FROSTTAIL"]]
             if "BRIGHTHEART" in cat.pelt.scars:
                 scar_pool = [i for i in scar_pool if i not in ["RIGHTBLIND", "BOTHBLIND"]]

@@ -193,17 +193,14 @@ class Cat():
             self.genotype.fromJSON(genotype)
         elif parent1:
             self.genotype.KitGenerator(Cat.all_cats.get(parent1).genotype, Cat.all_cats.get(parent2, None))
-        elif kittypet:
-            self.genotype.AltGenerator()
+        elif kittypet or status == 'kittypet':
+            self.genotype.AltGenerator(special=gender)
         else:
-            self.genotype.Generator()
+            self.genotype.Generator(special=gender)
 
         self.phenotype = Phenotype(self.genotype)
 
-        if self.gender:
-            self.phenotype.PhenotypeOutput(self.gender)
-        else:
-            self.phenotype.PhenotypeOutput(self.genotype.gender)
+        self.phenotype.PhenotypeOutput(self.genotype.gender)
         self.pelt = pelt if pelt else Pelt(self.genotype, self.phenotype)
 
         self.former_mentor = []
@@ -553,8 +550,7 @@ class Cat():
             self.backstory = self.backstory
 
         # sex!?!??!?!?!??!?!?!?!??
-        if self.gender is None:
-            self.gender = self.genotype.gender
+        self.gender = self.genotype.gender
         self.g_tag = self.gender_tags[self.gender]
 
         # These things should only run when generating a new cat, rather than loading one in.

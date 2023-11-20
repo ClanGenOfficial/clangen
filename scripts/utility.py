@@ -432,7 +432,7 @@ def create_new_cat(Cat,
     return created_cats
 
 
-def create_outside_cat(Cat, status, backstory, age=None, alive=True, thought=None):
+def create_outside_cat(Cat, status, backstory, age=None, alive=True, thought=None, gender=None):
     """
         TODO: DOCS
         """
@@ -453,9 +453,10 @@ def create_outside_cat(Cat, status, backstory, age=None, alive=True, thought=Non
         name = choice(names.names_dict["loner_names"])
     new_cat = Cat(prefix=name,
                   suffix=suffix,
+                  gender=gender,
                   status=status,
-                  gender=choice(['molly', 'tom']),
-                  backstory=backstory)
+                  backstory=backstory,
+                  kittypet=True if status == 'kittypet' else False)
     if status == 'kittypet':
         new_cat.pelt.accessory = choice(Pelt.collars)
     new_cat.outside = True
@@ -2006,9 +2007,6 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
 
             if (genotype.bleach[0] == "lb" and cat.moons > 3) or phenotype.silvergold == 'masked silver':
                 gensprite.blit(sprites.sprites['bleach' + cat_sprite], (0, 0))
-
-            if(genotype.fold[0] != 'Fd' or genotype.curl[0] == 'Cu'):
-                gensprite.blit(sprites.sprites['ears' + cat_sprite], (0, 0))
             
 
             nose = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
@@ -2059,6 +2057,9 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
 
             whitesprite.blit(nose2, (0, 0))
             gensprite.blit(whitesprite, (0, 0))
+
+            if(genotype.fold[0] != 'Fd' or genotype.curl[0] == 'Cu'):
+                gensprite.blit(sprites.sprites['ears' + cat_sprite], (0, 0))
 
             # draw eyes & scars1
             #eyes = sprites.sprites['eyes' + cat.pelt.eye_colour + cat_sprite].copy()
