@@ -4,7 +4,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 6,
@@ -106,7 +106,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["large_prey2"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
         "max_cats": 1,
@@ -1763,7 +1763,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["disrespect", "medium_prey3", "distrust"],
+        "tags": ["disrespect", "distrust"],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 6,
@@ -1801,7 +1801,8 @@
                     "playful",
                     "righteous"
                 ],
-                "can_have_stat": ["r_c"]
+                "can_have_stat": ["r_c"],
+                "prey": ["medium"]
             }
         ],
         "fail_outcomes": [
@@ -1934,7 +1935,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["large_prey2"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 3,
         "max_cats": 6,
@@ -2589,7 +2590,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "gen_hunt_leafbaresnowstorm",
         "min_cats": 2,
         "max_cats": 6,
@@ -2899,7 +2900,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 3,
@@ -3036,7 +3037,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 4,
         "max_cats": 6,
@@ -3173,7 +3174,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
         "max_cats": 1,
@@ -3253,7 +3254,8 @@
                         "values": ["respect"],
                         "amount": -5
                     }
-                ]
+                ],
+                "prey": ["very_small"]
             },
             {
                 "text": "Fiercely, r_c throws {PRONOUN/r_c/self} at the fox, determined to win the fawn prize. But the fox values it just as dearly, and manages to get a good grip on r_c, shaking {PRONOUN/r_c/object} to pieces and killing {PRONOUN/r_c/object}.",
@@ -3273,7 +3275,8 @@
                         "values": ["respect"],
                         "amount": -5
                     }
-                ]
+                ],
+                "prey": ["very_small"]
             },
             {
                 "text": "r_c launches into battle, but is caught with a nasty bite, and retreats to limp back home. The fox doesn't follow, happy enough to eat the fawn instead of the foolish cat.",
@@ -3335,7 +3338,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 3,
@@ -3465,7 +3468,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 4,
         "max_cats": 6,
@@ -3571,7 +3574,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
         "max_cats": 1,

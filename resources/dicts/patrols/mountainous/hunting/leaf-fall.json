@@ -476,7 +476,7 @@
         "biome": ["mountainous"],
         "season": ["leaf-fall"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 6,
@@ -578,7 +578,7 @@
         "biome": ["mountainous"],
         "season": ["leaf-fall"],
         "types": ["hunting"],
-        "tags": ["medium_prey2"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
         "max_cats": 1,
@@ -606,7 +606,8 @@
             {
                 "text": "The prey must be hiding; r_c catches nothing. Curled up in a sheltered tunnel, {PRONOUN/r_c/subject} {VERB/r_c/let/lets} the storm pass {PRONOUN/r_c/object} by outside.",
                 "exp": 0,
-                "weight": 20
+                "weight": 20,
+                "prey": ["very_small"]
             },
             {
                 "text": "The prey must be hiding; r_c catches nothing. As a snowstorm descends and visibility drops, {PRONOUN/r_c/subject} {VERB/r_c/hide/hides} in a mountain cave, shivering and tightly tucked up against the cold. When {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp r_c is cold and chilled, {PRONOUN/r_c/poss} paws and tail prickling with the danger of frostbite.",
