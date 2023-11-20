@@ -543,6 +543,8 @@ class Cat():
                 self.get_permanent_condition('partial hearing loss', born_with=True)
             else:
                 self.get_permanent_condition(choice(['deaf', 'partial hearing loss']), born_with=True)
+        if self.genotype.manx[0] == 'M' and self.genotype.manxtype == 'rumpy':
+            self.get_permanent_condition('born without a tail', born_with=True)
 
         # backstory
         if self.backstory is None:

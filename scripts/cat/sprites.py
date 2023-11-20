@@ -160,6 +160,9 @@ class Sprites():
         self.make_group('genemod/fold_curllineartdead', (0, 0), 'fold_curllineartdead')
         self.make_group('genemod/curllineartdead', (0, 0), 'curllineartdead')
 
+        for a, x in enumerate(range(1, 6)):
+            self.make_group('genemod/bobtail'+str(x), (a, 0), f'bobtail{x}')
+
         # genemod base colours
 
         self.make_group('base/bases', (0, 0), 'basecolours', sprites_x=6, sprites_y=4)

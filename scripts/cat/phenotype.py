@@ -19,6 +19,7 @@ class Phenotype():
 
         self.eartype = ""
         self.tailtype = ""
+        self.bobtailnr = 0
         self.pawtype = ""
         self.furtype = []
 
@@ -366,25 +367,37 @@ class Phenotype():
     def TailFinder(self):
         self.tailtype = ""
 
-        if(self.genotype.manx[0] != 'M' or (self.genotype.manxtype != 'none' and self.genotype.manxtype != 'stub')):
+        if(self.genotype.manx[0] != 'M' or (self.genotype.manxtype != 'rumpy' and self.genotype.manxtype != 'stumpy' and self.genotype.manxtype != 'riser')):
             if(self.genotype.kab[0] == 'kab' or self.genotype.toybob[1] == 'Tb' or self.genotype.kub[0] == 'Kub' or self.genotype.jbob[0] == 'jb'):
                 self.tailtype = 'stubby, pom-pom '
+                self.bobtailnr = 2
             else:
                 if(self.genotype.jbob[1] == 'jb' or self.genotype.toybob[0] == 'Tb'):
                     self.tailtype = 'kinked, '
-                if(self.genotype.manx[0] == 'Ab' or self.genotype.toybob[0] == 'Tb' or self.genotype.jbob[1] == 'jb' or (self.genotype.manx[0] == 'M' and self.genotype.manxtype == 'short')):
+                if(self.genotype.manx[0] == 'Ab' or self.genotype.toybob[0] == 'Tb' or self.genotype.jbob[1] == 'jb' or (self.genotype.manx[0] == 'M' and self.genotype.manxtype == 'stubby')):
                     self.tailtype += "short "
+                    self.bobtailnr = 3
+                    if self.genotype.manx[0] == 'Ab' and (self.genotype.manxtype == 'rumpy' or self.genotype.manxtype == 'riser'):
+                        self.bobtailnr = 2
+                    elif not(self.genotype.toybob[0] == 'Tb' or self.genotype.jbob[1] == 'jb') and ((self.genotype.manx[0] == 'Ab' and (self.genotype.manxtype == 'long' or self.genotype.manxtype == 'most')) or (self.genotype.manx[0] == 'M' and self.genotype.manxtype == 'stubby')):
+                        self.bobtailnr = 4
                 elif(self.genotype.manx[0] == 'M' and self.genotype.manxtype == 'most'):
                     self.tailtype += 'somewhat shortened '
+                    self.bobtailnr = 5
                 
                 if(self.genotype.ring[0] == 'rt'):
                     self.tailtype = 'curled ' + self.tailtype
         elif(self.genotype.manx[0] == 'M'):
-            if(self.genotype.manxtype == 'stub'):
+            if(self.genotype.manxtype == 'stumpy'):
                 self.tailtype = 'stubby '
-            elif(self.genotype.manxtype == 'none'):
+                self.tailtype = 3
+            elif(self.genotype.manxtype == 'riser'):
+                self.tailtype = 'stubby, barely visible '
+                self.tailtype = 1
+            elif(self.genotype.manxtype == 'rumpy'):
                 self.tailtype = 'no '
-            
+                self.tailtype = 1
+
         if(self.tailtype != ''):
             self.tailtype += "tail"
 

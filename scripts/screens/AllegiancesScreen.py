@@ -276,7 +276,7 @@ class AllegiancesScreen(Screens):
 
             #Now kittens without carers
             for k in living_kits:
-                all_entries.append([f"{str(k.name).upper()} - {k.describe_cat(short=True)}", k.ID, ""])
+                all_entries.append([str(k.name).upper(), k.ID, f"{str(k.name).upper()} - {k.describe_cat(short=True)}"])
             
             if all_entries:
                 for i in range(len(all_entries)):
