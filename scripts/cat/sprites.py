@@ -125,25 +125,25 @@ class Sprites():
                 self.spritesheet(f"sprites/{x}.png", x)
 
         for x in os.listdir("sprites/genemod/borders"):
-            sprites.spritesheet("sprites/genemod/borders/"+x, 'genemod/'+x.removesuffix('.png'))
+            sprites.spritesheet("sprites/genemod/borders/"+x, 'genemod/'+x.replace('.png', ""))
         for x in os.listdir("sprites/genemod/Base Colours"):
-            sprites.spritesheet("sprites/genemod/Base Colours/"+x, 'base/'+x.removesuffix('.png'))
+            sprites.spritesheet("sprites/genemod/Base Colours/"+x, 'base/'+x.replace('.png', ""))
         for x in os.listdir("sprites/genemod/points"):
-            sprites.spritesheet("sprites/genemod/points/"+x, x.removesuffix('.png'))
+            sprites.spritesheet("sprites/genemod/points/"+x, x.replace('.png', ""))
         for x in os.listdir("sprites/genemod/Tabby Bases"):
-            sprites.spritesheet("sprites/genemod/Tabby Bases/"+x, 'Tabby/'+x.removesuffix('.png'))
+            sprites.spritesheet("sprites/genemod/Tabby Bases/"+x, 'Tabby/'+x.replace('.png', ""))
         for x in os.listdir("sprites/genemod/extra"):
-            sprites.spritesheet("sprites/genemod/extra/"+x, 'Other/'+x.removesuffix('.png'))
+            sprites.spritesheet("sprites/genemod/extra/"+x, 'Other/'+x.replace('.png', ""))
         for x in os.listdir("sprites/genemod/effects"):
-            sprites.spritesheet("sprites/genemod/effects/"+x, 'Other/'+x.removesuffix('.png'))
+            sprites.spritesheet("sprites/genemod/effects/"+x, 'Other/'+x.replace('.png', ""))
         
         
         for x in os.listdir("sprites/genemod/white"):
-            sprites.spritesheet("sprites/genemod/white/"+x, 'White/'+x.removesuffix('.png'))
-            self.make_group('White/'+x.removesuffix('.png'), (0, 0), x.removesuffix('.png'))
+            sprites.spritesheet("sprites/genemod/white/"+x, 'White/'+x.replace('.png', ""))
+            self.make_group('White/'+x.replace('.png', ""), (0, 0), x.replace('.png', ""))
         for x in os.listdir("sprites/genemod/break white"):
-            sprites.spritesheet("sprites/genemod/break white/"+x, 'Break/'+x.removesuffix('.png'))
-            self.make_group('Break/'+x.removesuffix('.png'), (0, 0), 'break/'+x.removesuffix('.png'))
+            sprites.spritesheet("sprites/genemod/break white/"+x, 'Break/'+x.replace('.png', ""))
+            self.make_group('Break/'+x.replace('.png', ""), (0, 0), 'break/'+x.replace('.png', ""))
 
         # ...idk what to call these
 
