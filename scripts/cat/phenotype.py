@@ -390,13 +390,13 @@ class Phenotype():
         elif(self.genotype.manx[0] == 'M'):
             if(self.genotype.manxtype == 'stumpy'):
                 self.tailtype = 'stubby '
-                self.tailtype = 3
+                self.bobtailnr = 3
             elif(self.genotype.manxtype == 'riser'):
                 self.tailtype = 'stubby, barely visible '
-                self.tailtype = 1
+                self.bobtailnr = 1
             elif(self.genotype.manxtype == 'rumpy'):
                 self.tailtype = 'no '
-                self.tailtype = 1
+                self.bobtailnr = 1
 
         if(self.tailtype != ''):
             self.tailtype += "tail"
