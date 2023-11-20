@@ -479,7 +479,7 @@ def create_outside_cat(Cat, status, backstory, age=None, alive=True, thought=Non
     name = str(name + suffix)
 
     #return new_cat
-    return name
+    return new_cat
 
 # ---------------------------------------------------------------------------- #
 #                             Cat Relationships                                #
@@ -1389,7 +1389,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                                     whichmain.blit(sprites.sprites["unders_" + whichbase + cat_sprite], (0, 0))
 
                             if((genotype.pointgene == ["cb", "cb"] and cat.moons > 0) or (((("cb" in genotype.pointgene or genotype.pointgene[0] == "cm") and cat.moons > 0) or genotype.pointgene == ["cb", "cb"]) and get_current_season() == 'Leaf-bare')):
-                                colourbase.set_alpha(204)
+                                colourbase.set_alpha(180)
                             elif((("cb" in genotype.pointgene or genotype.pointgene[0] == "cm") and cat.moons > 0) or genotype.pointgene == ["cb", "cb"] or ((cat.moons > 0 or ("cb" in genotype.pointgene or genotype.pointgene[0] == "cm")) and get_current_season() == 'Leaf-bare')):
                                 colourbase.set_alpha(100)
                             elif(cat.moons > 0 or ("cb" in genotype.pointgene or genotype.pointgene[0] == "cm")):

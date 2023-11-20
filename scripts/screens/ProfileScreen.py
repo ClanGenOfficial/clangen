@@ -772,6 +772,18 @@ class ProfileScreen(Screens):
             # NEWLINE ----------
             output += "\n"
 
+        # NUTRITION INFO (if the game is in the correct mode)
+        if game.clan.game_mode in ["expanded", "cruel season"] and the_cat.is_alive() and FRESHKILL_ACTIVE:
+            nutr = None
+            if the_cat.ID in game.clan.freshkill_pile.nutrition_info:
+                nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
+            if nutr:
+                output += f"nutrition status: {round(nutr.percentage, 1)}%\n"
+            else:
+                output += f"nutrition status: 100%\n"
+
+        
+
         return output
 
     def generate_column2(self, the_cat):
@@ -873,16 +885,6 @@ class ProfileScreen(Screens):
         output += f"backstory: {bs_text}"
         # NEWLINE ----------
         output += "\n"
-
-        # NUTRITION INFO (if the game is in the correct mode)
-        if game.clan.game_mode in ["expanded", "cruel season"] and the_cat.is_alive() and FRESHKILL_ACTIVE:
-            nutr = None
-            if the_cat.ID in game.clan.freshkill_pile.nutrition_info:
-                nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
-            if nutr:
-                output += f"nutrition status: {round(nutr.percentage, 1)}%\n"
-            else:
-                output += f"nutrition status: 100%\n"
 
         if the_cat.is_disabled():
             for condition in the_cat.permanent_condition:
