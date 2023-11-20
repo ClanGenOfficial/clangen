@@ -115,8 +115,7 @@
             {
                 "text": "Your patrol misses the rat, and their confidence is shaken.",
                 "exp": 0,
-                "weight": 20,
-				"prey": ["very_small"]
+                "weight": 20
             }
         ]
     },
@@ -344,8 +343,7 @@
             {
                 "text": "r_c leaps for the rabbit but it still manages to slip away, despite its obvious illness.",
                 "exp": 0,
-                "weight": 20,
-				"prey": ["small"]
+                "weight": 20
             },
             {
                 "text": "r_c catches the rabbit, but later {PRONOUN/r_c/subject} and the cats who eat it become violently ill.",
@@ -820,7 +818,7 @@
                 "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/resist/resists} the temptation, going on to make a couple of great catches to make sure the elders are fed.",
                 "exp": 20,
                 "weight": 20,
-                "prey": ["medium"],
+                "prey": ["large"],
                 "relationships": [
                     {
                         "cats_to": ["r_c", "r_c"],
@@ -842,7 +840,7 @@
                 "text": "After all, the patrol has caught enough on this hunt that {PRONOUN/r_c/subject}'ll have trouble carrying it all back to camp. {PRONOUN/r_c/subject/CAP} {VERB/r_c/stop/stops} for a quick snack and {VERB/r_c/return/returns} to camp laden with prey for the fresh-kill pile.",
                 "exp": 20,
                 "weight": 5,
-                "prey": ["large"],
+                "prey": ["huge"],
                 "relationships": [
                     {
                         "cats_to": ["r_c", "r_c"],
@@ -1193,6 +1191,392 @@
       }
     ]
   },
+{
+    "patrol_id": "gen_hunt_verysmallprey_balancing_solowarriorhunt1",
+    "biome": ["Any"],
+    "season": ["Any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 1,
+    "max_cats": 1,
+    "min_max_status": {
+        "normal adult": [1, 1]
+    },
+    "weight": 1,
+    "intro_text": "p_l puts {PRONOUN/p_l/poss} nose to the ground, checking for prey scent as {PRONOUN/p_l/subject} {VERB/p_l/hunt/hunts}.",
+    "decline_text": "It's not a great day for hunting, p_l decides, and calls it off before {PRONOUN/p_l/subject} even {VERB/p_l/start/starts}.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "There's barely anything out there, and p_l is strangely proud {PRONOUN/p_l/subject} {VERB/p_l/manage/manages} to bring anything back to camp at all.",
+            "exp": 20,
+            "weight": 10,
+            "prey": ["very_small"]
+        },
+        {
+            "text": "It's bitterly disappointing, to bring back so little for the fresh-kill pile, and p_l retreats to curl up into a ball in {PRONOUN/p_l/poss} nest.",
+            "exp": 10,
+            "weight": 10,
+            "prey": ["very_small"]
+        },
+        {
+            "text": "Even s_c, for all {PRONOUN/s_c/poss} talents, can't bring back prey for the fresh-kill pile if there's only scraps to catch.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["p_l"],
+            "prey": ["very_small"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "p_l misses {PRONOUN/p_l/poss} pounces, and brings nothing home.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "It's not p_l's lucky day - the prey just doesn't seem to be running.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "While out in the hunting grounds, p_l's nose begins to run. {PRONOUN/p_l/subject/CAP} try to ignore it at first, but soon it ruins {PRONOUN/p_l/poss} ability to track scent, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} forced back to camp early.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["p_l"],
+                  "injuries": ["running nose"]
+                }
+              ],
+              "history_text": {
+                "reg_death": "m_c died after a running nose progressed to something worse.",
+                "lead_death": "died after a running nose progressed to something worse"
+              }
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_smallprey_balancing_solowarriorhunt1",
+    "biome": ["Any"],
+    "season": ["Any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 1,
+    "max_cats": 1,
+    "min_max_status": {
+        "normal adult": [1, 1]
+    },
+    "weight": 1,
+    "intro_text": "p_l stretches, digging {PRONOUN/p_l/poss} claws into the ground as {PRONOUN/p_l/subject} {VERB/p_l/warm/warms} up. Without needing to coordinate a group, this hunting patrol can proceed entirely at their own schedule.",
+    "decline_text": "Actually, p_l wants to do something with company. {PRONOUN/p_l/subject/CAP} {VERB/p_l/join/joins} up with a bigger patrol instead of going out on {PRONOUN/p_l/poss} own.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "p_l finds a decent sized carcass to scavenge, though {PRONOUN/p_l/subject} {VERB/p_l/have/has} to throw away a significant amount of meat least {PRONOUN/p_l/subject} bring crow-food back to camp.",
+            "exp": 20,
+            "weight": 10,
+            "prey": ["small"]
+        },
+        {
+            "text": "p_l doesn't manage to catch much - but {PRONOUN/p_l/poss} hunt brings {PRONOUN/p_l/object} near one of c_n's borders, and {PRONOUN/p_l/subject} {VERB/p_l/stop/stops} to do a little remarking before {PRONOUN/p_l/subject} {VERB/p_l/head/heads} home.",
+            "exp": 10,
+            "weight": 10,
+            "prey": ["small"]
+        },
+        {
+            "text": "The prey just does <i>not</i> want to cooperate today, and it takes all of s_c's talents to bring what feels like not nearly enough fresh-kill back to camp.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["p_l"],
+            "prey": ["small"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "p_l misses {PRONOUN/p_l/poss} pounces, and brings nothing home.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "It's not p_l's lucky day - the prey just doesn't seem to be running.",
+            "exp": 0,
+            "weight": 20,
+            "prey": ["very_small"]
+        },
+        {
+            "text": "While out in the hunting grounds, p_l's nose begins to run. {PRONOUN/p_l/subject/CAP} try to ignore it at first, but soon it ruins {PRONOUN/p_l/poss} ability to track scent, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} forced back to camp early.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["p_l"],
+                  "injuries": ["running nose"]
+                }
+              ],
+              "history_text": {
+                "reg_death": "m_c died after a running nose progressed to something worse.",
+                "lead_death": "died after a running nose progressed to something worse"
+              }
+        }
+    ]
+},
+  {
+    "patrol_id": "gen_hunt_mediumprey_balancing_solowarriorhunt1",
+    "biome": ["Any"],
+    "season": ["Any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 1,
+    "max_cats": 1,
+    "min_max_status": {
+        "normal adult": [1, 1]
+    },
+    "weight": 1,
+    "intro_text": "Sometimes it's nice to go out alone - there's nothing to distract p_l from the hunt.",
+    "decline_text": "It's not a great day for hunting, p_l decides, and calls it off before {PRONOUN/p_l/subject} even {VERB/p_l/start/starts}.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "A nice bundle of mice will do nicely, and p_l feels perfectly happy with {PRONOUN/p_l/poss} contributions to the fresh-kill pile when they trot home.",
+            "exp": 20,
+            "weight": 10,
+            "prey": ["medium"]
+        },
+        {
+            "text": "It's good, getting to focus on nothing but {PRONOUN/p_l/self} on a solo hunt. That {PRONOUN/p_l/poss} hunt is successful also helps p_l's mood, and by the time {PRONOUN/p_l/subject} {VERB/p_l/pad/pads} home {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} relaxed and content.",
+            "exp": 20,
+            "weight": 10,
+            "prey": ["medium"]
+        },
+        {
+            "text": "Mulling over how to best teach the best hunting grounds for the season, p_l realises {PRONOUN/p_l/subject} nearly overlooked the perfect spot. Sure enough, {PRONOUN/p_l/subject} {VERB/p_l/pick/picks} up a good catch for the fresh-kill pile there.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["TEACHER,0"],
+            "can_have_stat": ["p_l"],
+            "prey": ["medium"]
+        },
+        {
+            "text": "Maybe no one else is here to show off to - but that pounce was <i>still</i> beautiful, audience appreciation or not. p_l certainly doesn't think the prey appreciated it.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["p_l"],
+            "prey": ["medium"]
+        },
+        {
+            "text": "The prey tries to take a swipe at p_l as it goes down, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} more than prepared to scrap, and if {PRONOUN/p_l/poss} prey wants to go, then p_l's raring for a fight!",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["FIGHTER,0"],
+            "can_have_stat": ["p_l"],
+            "prey": ["medium"]
+        },
+        {
+            "text": "The prey takes off running, but it choose the wrong cat to race against, and p_l cuts corners to skid into a beautiful takedown, winning race and meal all at once.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["RUNNER,0"],
+            "can_have_stat": ["p_l"],
+            "prey": ["medium"]
+        },
+        {
+            "text": "The effort p_l puts in to climbing up to the outlook pays off when {PRONOUN/p_l/poss} ascent reveals an old animal on its last breaths. The end of its life will feed c_n well.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["CLIMBER,0"],
+            "can_have_stat": ["p_l"],
+            "prey": ["medium"]
+        },
+        {
+            "text": "Occasionally, water hunts for you, or for anyone knowledgeable enough to safely fish drowned prey from where it washes up. p_l has a healthy respect for the element, but certainly won't turn down a gift.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["SWIMMER,0"],
+            "can_have_stat": ["p_l"],
+            "prey": ["medium"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "p_l misses {PRONOUN/p_l/poss} pounces, and brings nothing home.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "It's not p_l's lucky day - the prey just doesn't seem to be running.",
+            "exp": 0,
+            "weight": 20,
+            "prey": ["very_small"]
+        },
+        {
+            "text": "While out in the hunting grounds, p_l's nose begins to run. {PRONOUN/p_l/subject/CAP} try to ignore it at first, but soon it ruins {PRONOUN/p_l/poss} ability to track scent, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} forced back to camp early.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["p_l"],
+                  "injuries": ["running nose"]
+                }
+              ],
+              "history_text": {
+                "reg_death": "m_c died after a running nose progressed to something worse.",
+                "lead_death": "died after a running nose progressed to something worse"
+              }
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_largeprey_balancing_solowarriorhunt1",
+    "biome": ["Any"],
+    "season": ["Any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 1,
+    "max_cats": 1,
+    "min_max_status": {
+        "normal adult": [1, 1]
+    },
+    "weight": 1,
+    "intro_text": "p_l thinks {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} found a promising hunting spot to focus on for {PRONOUN/p_l/poss} solo patrol.",
+    "decline_text": "{PRONOUN/p_l/subject/CAP} decide to move on instead.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "{PRONOUN/p_l/poss/CAP} judgement is accurate - these hunting grounds are excellent, p_l will have to bring {PRONOUN/p_l/poss} Clanmates back here another day.",
+            "exp": 25,
+            "weight": 10,
+            "prey": ["large"]
+        },
+        {
+            "text": "Forget struggling to hunt, p_l has a new problem, struggling to bring everything back to camp! Still, {PRONOUN/p_l/subject} {VERB/p_l/aren't/isn't} going to complain about the problems of abundant prey and easy cover to pounce from.",
+            "exp": 25,
+            "weight": 10,
+            "prey": ["large"]
+        },
+        {
+            "text": "This is the life, p_l hums, trying to balance the heavy load {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} carrying back to camp.",
+            "exp": 25,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["p_l"],
+            "prey": ["large"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "p_l misses {PRONOUN/p_l/poss} pounces, and brings nothing home.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "It's not p_l's lucky day - the prey just doesn't seem to be running.",
+            "exp": 0,
+            "weight": 20,
+            "prey": ["very_small"]
+        },
+        {
+            "text": "A gaggle of younger cats run through, ruining everything before p_l can properly get started.",
+            "exp": 0,
+            "weight": 20,
+            "prey": ["very_small"]
+        },
+        {
+            "text": "While out in the hunting grounds, p_l's nose begins to run. {PRONOUN/p_l/subject/CAP} try to ignore it at first, but soon it ruins {PRONOUN/p_l/poss} ability to track scent, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} forced back to camp early.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["p_l"],
+                  "injuries": ["running nose"]
+                }
+              ],
+              "history_text": {
+                "reg_death": "m_c died after a running nose progressed to something worse.",
+                "lead_death": "died after a running nose progressed to something worse"
+              }
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_hugeprey_balancing_solowarriorhunt1",
+    "biome": ["Any"],
+    "season": ["Any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 1,
+    "max_cats": 1,
+    "min_max_status": {
+        "normal adult": [1, 1]
+    },
+    "weight": 1,
+    "intro_text": "p_l's glad to go out on a solo hunting patrol - there's an ambush spot {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been itching to try out on {PRONOUN/p_l/poss} own.",
+    "decline_text": "{PRONOUN/p_l/subject/CAP} encounter a herb gathering patrol on the way there and get swept up into it.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "p_l succeeds beyond {PRONOUN/p_l/poss} wildest hopes, coming home with prey so large {PRONOUN/p_l/subject} {VERB/p_l/have/has} to drag rather than carry it.",
+            "exp": 25,
+            "weight": 10,
+            "prey": ["huge"]
+        },
+        {
+            "text": "It takes a long time waiting, crouched in hiding, but it's all worth it to burst out, claws and teeth ready, prey completely unsuspecting.",
+            "exp": 25,
+            "weight": 10,
+            "prey": ["huge"]
+        },
+        {
+            "text": "With a hunter's keen attention, p_l waits, letting smaller targets pass whisker close in front of {PRONOUN/p_l/object}, waiting for the perfect prey to appear. When it does {PRONOUN/p_l/subject} leap from {PRONOUN/p_l/poss} cover to slam it down to the ground, triumphant in victory.",
+            "exp": 25,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["p_l"],
+            "prey": ["huge"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "p_l misses {PRONOUN/p_l/poss} pounces, and brings nothing home.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "It's not p_l's lucky day - the prey just doesn't seem to be running.",
+            "exp": 0,
+            "weight": 20,
+            "prey": ["very_small"]
+        },
+        {
+            "text": "A gaggle of younger cats run through, ruining everything before p_l can properly get started.",
+            "exp": 0,
+            "weight": 20,
+            "prey": ["very_small"]
+        },
+        {
+            "text": "While out in the hunting grounds, p_l's nose begins to run. {PRONOUN/p_l/subject/CAP} try to ignore it at first, but soon it ruins {PRONOUN/p_l/poss} ability to track scent, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} forced back to camp early.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["p_l"],
+                  "injuries": ["running nose"]
+                }
+              ],
+              "history_text": {
+                "reg_death": "m_c died after a running nose progressed to something worse.",
+                "lead_death": "died after a running nose progressed to something worse"
+              }
+        }
+    ]
+},
   {
     "patrol_id": "gen_hunt_kittylion",
     "biome": ["Any"],
