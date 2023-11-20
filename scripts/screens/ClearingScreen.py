@@ -182,18 +182,18 @@ class ClearingScreen(Screens):
             self.log_box.hide()
 
             self.cats_tab = UIImageButton(scale(pygame.Rect
-                                                ((218, 924), (68, 150))),
+                                                ((218, 924), (70, 150))),
                                           "",
                                           object_id="#hurt_sick_cats_button", manager=MANAGER
                                           )
             self.cats_tab.disable()
             self.log_tab = UIImageButton(scale(pygame.Rect
-                                               ((218, 1104), (68, 128))),
+                                               ((218, 1104), (70, 128))),
                                          "",
                                          object_id="#med_den_log_button", manager=MANAGER
                                          )
             self.tactic_tab = UIImageButton(scale(pygame.Rect
-                                               ((1394, 924), (70, 140))),
+                                               ((1392, 924), (70, 140))),
                                          "",
                                          object_id="#tactic", manager=MANAGER
                                          )
