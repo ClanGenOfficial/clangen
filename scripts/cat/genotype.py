@@ -2175,6 +2175,7 @@ class Genotype:
                 self.righteyetype = SecondaryRefTypeFind(self.refgrade, 13)
 
                 if het2index == 0:
+                    tempref = randint(1, 11)
                     if randint(0, 1)==0:
                         self.lefteye = RefTypeFind(tempref, 13)
                         self.lefteyetype = SecondaryRefTypeFind(tempref, 13)
@@ -2192,6 +2193,7 @@ class Genotype:
                 self.righteyetype = SecondaryRefTypeFind(self.refgrade, 12)
 
                 if het2index == 0:
+                    tempref = randint(1, 11)
                     if(randint(0,1)==0):
                         self.lefteye = RefTypeFind(tempref, 12)
                         self.lefteyetype = SecondaryRefTypeFind(tempref, 12)
