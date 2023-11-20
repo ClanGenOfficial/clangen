@@ -202,14 +202,14 @@
                 "can_have_stat": ["p_l"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["r_c"],
                         "cats_from": ["patrol"],
                         "mutual": true,
                         "values": ["jealousy"],
@@ -247,18 +247,18 @@
                 "stat_trait": ["ambitious", "insecure"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
-                        "mutual": true,
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
-                        "mutual": true,
+                        "cats_to": ["r_c"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
                         "values": ["jealousy"],
-                        "amount": 5
+                        "amount": 15
                     }
                 ]
             }
@@ -289,15 +289,15 @@
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "p_l"],
-                        "cats_from": ["patrol", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": 5
                     },
                     {
                         "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["jealousy"],
                         "amount": -5
@@ -311,8 +311,8 @@
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "p_l"],
-                        "cats_from": ["patrol", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": 5
@@ -334,15 +334,15 @@
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "p_l"],
-                        "cats_from": ["patrol", "r_c"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["jealousy"],
                         "amount": -5
@@ -357,16 +357,16 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "p_l"],
-                        "cats_from": ["patrol", "r_c"],
-                        "mutual": true,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
                     },
                     {
                         "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
-                        "mutual": true,
+                        "cats_from": ["r_c"],
+                        "mutual": false,
                         "values": ["jealousy"],
                         "amount": 5
                     }
@@ -379,18 +379,18 @@
                 "stat_trait": ["ambitious", "insecure"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "p_l"],
-                        "cats_from": ["patrol", "r_c"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": -5
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["r_c"],
+                        "cats_from": ["s_c"],
                         "mutual": true,
                         "values": ["jealousy"],
-                        "amount": 5
+                        "amount": 15
                     }
                 ]
             }
@@ -463,15 +463,22 @@
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "p_l"],
-                        "cats_from": ["patrol", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["p_l", "p_l"],
-                        "cats_from": ["patrol", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["jealousy"],
                         "amount": -5
@@ -485,15 +492,15 @@
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "p_l"],
-                        "cats_from": ["patrol", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["p_l", "p_l"],
-                        "cats_from": ["patrol", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["jealousy"],
                         "amount": -5
@@ -508,15 +515,22 @@
                 "stat_skill": ["DREAM,1", "STAR,2"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "p_l"],
-                        "cats_from": ["patrol", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["p_l", "p_l"],
-                        "cats_from": ["patrol", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["jealousy"],
                         "amount": -5
@@ -531,16 +545,16 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "p_l"],
-                        "cats_from": ["patrol", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": -5
                     },
                     {
-                        "cats_to": ["p_l", "p_l"],
-                        "cats_from": ["patrol", "r_c"],
-                        "mutual": true,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
                         "values": ["jealousy"],
                         "amount": 5
                     }
