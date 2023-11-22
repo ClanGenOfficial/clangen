@@ -7875,7 +7875,7 @@
         "relationship_constraint": ["platonic_40"],
         "success_outcomes": [
             {
-                "text": "{PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} all close here, literally, and it's only that fact that gives p_l the confidence to open up, pelt prickling with vulerability as {PRONOUN/p_l/subject} {VERB/p_l/murmur/murmurs} of the omen_list {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} seen recently, how {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been struggling to piece together what it could all mean. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} help, {PRONOUN/p_l/subject} {VERB/p_l/need/needs} advice.",
+                "text": "{PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} all close here, literally, and it's only that fact that gives p_l the confidence to open up, pelt prickling with vulerability as {PRONOUN/p_l/subject} {VERB/p_l/murmur/murmurs} of omen_list {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt recently, how {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been struggling to piece together what it could all mean. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} help, {PRONOUN/p_l/subject} {VERB/p_l/need/needs} advice.",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
@@ -7889,7 +7889,7 @@
                 ]
             },
             {
-                "text": "It's not something they <i>want</i> to talk about, but p_l gives in, knowing {PRONOUN/p_l/subject} should share {PRONOUN/p_l/poss} burden and gift. Recently, {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} seen omen_list, though {PRONOUN/p_l/subject} can't yet tell what it means for c_n, or {PRONOUN/p_l/poss} friends.",
+                "text": "It's not something they <i>want</i> to talk about, but p_l gives in, knowing {PRONOUN/p_l/subject} should share {PRONOUN/p_l/poss} burden and gift. Recently, {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt omen_list, though {PRONOUN/p_l/subject} can't yet tell what it means for c_n, or {PRONOUN/p_l/poss} friends.",
                 "exp": 30,
                 "weight": 5,
                 "relationships": [
