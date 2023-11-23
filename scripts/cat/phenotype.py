@@ -1,4 +1,5 @@
 from .genotype import *
+import random
 
 class Phenotype():
 
