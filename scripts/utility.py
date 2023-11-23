@@ -2110,6 +2110,10 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
             gensprite.blit(sprites.sprites['lighting' + cat_sprite], (0, 0))
 
         # make sure colours are in the lines
+        #if('rexed' in cat.phenotype.furtype or 'frizzy' in cat.phenotype.furtype):
+        #    gensprite.blit(sprites.sprites['rexbord'+ cat_sprite], (0, 0))
+        #    gensprite.blit(sprites.sprites['rexbord'+ cat_sprite], (0, 0))
+        #else:
         gensprite.blit(sprites.sprites['normbord'+ cat_sprite], (0, 0))
         gensprite.blit(sprites.sprites['normbord'+ cat_sprite], (0, 0))
         if(cat.genotype.fold[0] == 'Fd'):

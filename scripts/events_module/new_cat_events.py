@@ -106,7 +106,7 @@ class NewCatEvents:
         elif "new_med" in new_cat_event.tags:
             status = "medicine cat"
 
-        
+        cat_type = ""
         blood_parent = None
         blood_parent2 = None
         if new_cat_event.litter or new_cat_event.kit:

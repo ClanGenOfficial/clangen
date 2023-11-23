@@ -159,6 +159,9 @@ class Sprites():
         self.make_group('genemod/foldlineartdead', (0, 0), 'foldlineartdead')
         self.make_group('genemod/fold_curllineartdead', (0, 0), 'fold_curllineartdead')
         self.make_group('genemod/curllineartdead', (0, 0), 'curllineartdead')
+        
+        self.make_group('genemod/rexlines', (0, 0), 'rexlineart')
+        self.make_group('genemod/rexborder', (0, 0), 'rexbord')
 
         for a, x in enumerate(range(1, 6)):
             self.make_group('genemod/bobtail'+str(x), (a, 0), f'bobtail{x}')

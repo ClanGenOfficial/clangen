@@ -726,7 +726,7 @@ class Pregnancy_Events():
                 else:
                     kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0, status='newborn')
 
-                if cat.gender == 'molly':
+                if 'Y' not in cat.genotype.sexgene or other_cat.outside:
                     kit.thought = f"Snuggles up to the belly of {cat.name}"
                 elif cat.gender == 'tom' and other_cat.gender == 'tom':
                     kit.thought = f"Snuggles up to the belly of {cat.name}"
