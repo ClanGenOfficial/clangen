@@ -1465,7 +1465,7 @@ class Genotype:
         
         self.eumelanin = [choice(par1.eumelanin), choice(par2.eumelanin)]
 
-        if xor('Y' in par1.sexgene, 'Y' in par2.sexgene):
+        if not xor('Y' in par1.sexgene, 'Y' in par2.sexgene):
             if('Y' in par1.sexgene):
                 if(randint(1, 2) == 1):
                     par1.sexgene[1] = par1.sexgene[0]
