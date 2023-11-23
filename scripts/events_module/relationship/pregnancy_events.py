@@ -1,5 +1,6 @@
 from random import choice, randint
 import random
+from operator import xor
 
 from scripts.cat.history import History
 from scripts.utility import (
@@ -507,7 +508,7 @@ class Pregnancy_Events():
             return False, False
 
         # Check to see if the pair can have kits.
-        if cat.gender == second_parent.gender:
+        if xor('Y' in cat.genotype.sexgene, 'Y' in second_parent.genotype.sexgene):
             if same_sex_birth:
                 return True, False
             elif not same_sex_adoption:
