@@ -508,7 +508,7 @@ class Pregnancy_Events():
             return False, False
 
         # Check to see if the pair can have kits.
-        if xor('Y' in cat.genotype.sexgene, 'Y' in second_parent.genotype.sexgene):
+        if not xor('Y' in cat.genotype.sexgene, 'Y' in second_parent.genotype.sexgene):
             if same_sex_birth:
                 return True, False
             elif not same_sex_adoption:
