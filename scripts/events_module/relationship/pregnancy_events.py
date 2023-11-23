@@ -803,6 +803,12 @@ class Pregnancy_Events():
         if blood_parent2:
             blood_parent2.outside = True
             clan.unknown_cats.append(blood_parent2.ID)
+        
+        if(backkit and 'halfclan' in backkit):
+            Cat.all_cats[other_cat.ID].set_faded()
+            for kitten in all_kitten:
+                kitten.parent2 = None
+                kitten.inheritance.update_inheritance()
 
         return all_kitten
 

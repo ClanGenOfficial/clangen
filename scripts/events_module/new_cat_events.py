@@ -123,17 +123,19 @@ class NewCatEvents:
                 cat_type = 'loner'
             elif('kittypet' in new_cat_event.event_text):
                 cat_type = 'kittypet'
+            else:
+                cat_type = 'del'
             
             blood_parent = create_new_cat(Cat, Relationship,
                                           status=random.choice(["loner", "rogue", "kittypet"]),
-                                          alive=False,
+                                          alive=True,
                                           thought=thought,
                                           age=ages[0],
                                           gender='masc',
                                           outside=True)[0]
             blood_parent2 = create_new_cat(Cat, Relationship,
-                                          status=cat_type,
-                                          alive=False,
+                                          status=cat_type if cat_type != 'del' else 'rogue',
+                                          alive=True,
                                           thought=thought,
                                           age=ages[1] if ages[1] > 14 else 15,
                                           gender='fem',
@@ -168,6 +170,8 @@ class NewCatEvents:
                             new_cat.adoptive_parents.extend(cat.mate)
             
             # All parents have been added now, we now create the inheritance. 
+            if cat_type == 'del':
+                new_cat.parent2 = None
             new_cat.create_inheritance_new_cat()
 
             if "m_c" in new_cat_event.tags:

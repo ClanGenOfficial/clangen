@@ -74,7 +74,6 @@ class MiscEvents():
             return
 
         if misc_event.accessories:
-            print(misc_event.accessories)
             MiscEvents.handle_accessories(cat, misc_event.accessories)
 
         # let's change some relationship values \o/ check if another cat is mentioned and if they live
