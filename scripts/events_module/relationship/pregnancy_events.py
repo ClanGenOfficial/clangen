@@ -698,19 +698,21 @@ class Pregnancy_Events():
                     if kits_amount == 1:
                         insert = "their kit is"
                     thought = f"Is glad that {insert} safe"
+                    parage = randint(15,120)
                     blood_parent = create_new_cat(Cat, Relationship,
                                                 status=random.choice(["loner", "kittypet"]),
                                                 gender='masc',
                                                 alive=False,
                                                 thought=thought,
-                                                age=randint(15,120),
+                                                age=parage,
                                                 outside=True)[0]
+                    parage = parage + randint(0, 24) - 12
                     blood_parent2 = create_new_cat(Cat, Relationship,
                                                 status=random.choice(["loner", "kittypet"]),
                                                 gender='fem',
                                                 alive=False,
                                                 thought=thought,
-                                                age=randint(15,120),
+                                                age=parage if parage > 14 else 15,
                                                 outside=True)[0]
                     blood_parent.thought = thought
                     blood_parent2.thought = thought

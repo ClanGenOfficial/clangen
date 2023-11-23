@@ -71,7 +71,7 @@ class SameSexAdoptions(unittest.TestCase):
 
 class Pregnancy(unittest.TestCase):
     @patch('scripts.events_module.relationship.pregnancy_events.Pregnancy_Events.check_if_can_have_kits')
-    def test_single_cat_molly(self, check_if_can_have_kits):
+    def test_single_cat_female(self, check_if_can_have_kits):
         # given
         clan = Clan(name="clan")
         cat = Cat(gender = 'molly')
