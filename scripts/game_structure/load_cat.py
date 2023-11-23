@@ -497,5 +497,7 @@ def version_convert(version_info):
                     c.permanent_condition[con].pop("moons_with")
                 c.permanent_condition[con]["moon_start"] = game.clan.age - moons_with
             
-        
-            
+    if version < 3 and game.clan.freshkill_pile:
+        # freshkill start for older clans
+        add_prey = game.clan.freshkill_pile.amount_food_needed() * 2
+        game.clan.freshkill_pile.add_freshkill(add_prey)

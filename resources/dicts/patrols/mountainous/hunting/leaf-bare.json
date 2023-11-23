@@ -4,7 +4,7 @@
         "biome": ["mountainous"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["huge_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 3,
@@ -77,7 +77,8 @@
                         "values": ["respect", "trust"],
                         "amount": -5
                     }
-                ]
+                ],
+                "prey": ["very_small"]
             },
             {
                 "text": "The patrol decides to fight the eagle for possession of the prey, but the massive aerial predator is too much for the starving c_n cats, and it kills r_c in the battle.",
@@ -255,7 +256,7 @@
         "biome": ["mountainous"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["cruel_season", "huge_prey3"],
+        "tags": ["cruel_season"],
         "patrol_art": "mtn_hunt_leaf-bare_eagleice",
         "min_cats": 2,
         "max_cats": 3,
@@ -328,7 +329,8 @@
                         "values": ["respect", "trust"],
                         "amount": -5
                     }
-                ]
+                ],
+                "prey": ["very_small"]
             },
             {
                 "text": "Far too keen to try and prove themselves against the king of the skies, s_c leaps for the eagle and startles it into flight with it's massive catch, and the opportunity is lost.",
@@ -610,7 +612,7 @@
         "biome": ["mountainous"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 6,
@@ -712,7 +714,7 @@
         "biome": ["mountainous"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["medium_prey2"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
         "max_cats": 1,
@@ -733,7 +735,7 @@
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["HUNTER,2"],
-                "prey": ["small", "medium"]
+                "prey": ["medium"]
             }
         ],
         "fail_outcomes": [
@@ -2011,7 +2013,7 @@
         "biome": ["mountainous"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
         "max_cats": 1,
@@ -2027,13 +2029,13 @@
                 "text": "It's a raven! While p_l only managed to chase it off, they find some mice on the way home.",
                 "exp": 10,
                 "weight": 20,
-                "prey": ["medium"]
+                "prey": ["small"]
             },
             {
                 "text": "Following the sound to its source, p_l finds a raven and catches it! Who knew they could mimic cats? It feels good to eat one for once, though r_c hurries to avoid any wolves.",
                 "exp": 10,
                 "weight": 5,
-                "prey": ["large"]
+                "prey": ["medium"]
             },
             {
                 "text": "s_c follows the sound to its source and finds a raven. s_c tries chattering at it, though they don't seem to understand each other. However, they find a rabbit with talon marks and dark feathers on their path home, wondering if they should tell anyone. s_c feels like they're marked for death.",
@@ -2047,7 +2049,8 @@
             {
                 "text": "The cat seems to be moving all over the place, and finally, p_l gives up and goes home, too tired to catch more than a mouthful.",
                 "exp": 0,
-                "weight": 20
+                "weight": 20,
+                "prey": ["very_small"]
             },
             {
                 "text": "s_c calls out to the cat, only to be met with raucous cawing. Are they being laughed at? They decide to slink off, leaving it be.",
