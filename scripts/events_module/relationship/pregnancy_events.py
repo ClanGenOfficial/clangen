@@ -112,7 +112,7 @@ class Pregnancy_Events():
 
         if not int(random.random() * chance):
             # If you've reached here - congrats, kits!
-            if kits_are_adopted:
+            if kits_are_adopted or 'infertility' in cat.permanent_condition.keys() or (second_parent and 'infertility' in second_parent.permanent_condition.keys()):
                 Pregnancy_Events.handle_adoption(cat, second_parent, clan)
             else:
                 Pregnancy_Events.handle_zero_moon_pregnant(cat, second_parent, clan)
@@ -657,7 +657,7 @@ class Pregnancy_Events():
         ##### SELECT BACKSTORY #####
         if backkit:
             backstory = backkit
-        elif cat and cat.gender == 'molly':
+        elif cat and (cat.gender == 'molly' or (cat.gender == 'intersex' and 'Y' not in cat.genotype.sexgene)):
             backstory = choice(['halfclan1', 'outsider_roots1'])
         elif cat:
             backstory = choice(['halfclan2', 'outsider_roots2'])

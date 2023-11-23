@@ -342,7 +342,7 @@ class GenerateEvents:
             # check that injury is possible
             if event.injury in GenerateEvents.INJURIES:
 
-                if event.injury == 'mangled tail' and ('NOTAIL' in cat.pelt.scars or 'HALFTAIL' in cat.pelt.scars):
+                if event.injury == 'mangled tail' and ('NOTAIL' in cat.pelt.scars or 'HALFTAIL' in cat.pelt.scars or (cat.phenotype.bobtailnr > 0 and cat.phenotype.bobtailnr < 5)):
                     continue
 
                 if event.injury == 'torn ear' and 'NOEAR' in cat.pelt.scars:
@@ -477,6 +477,10 @@ class GenerateEvents:
 
             # check for mate if the event requires one
             if "mate" in event.tags and len(cat.mate) < 1:
+                continue
+
+            #check if tail accessories + no tail
+            if event.accessories == ['RED FEATHERS', 'BLUE FEATHERS', 'JAY FEATHERS'] and ("NOTAIL" in cat.pelt.scars or "HALFTAIL" in cat.pelt.scars or (cat.phenotype.bobtailnr > 0 and cat.phenotype.bobtailnr < 5)):
                 continue
 
 

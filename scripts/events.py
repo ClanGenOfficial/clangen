@@ -1989,7 +1989,7 @@ class Events:
 
     def coming_out(self, cat):
         """turnin' the kitties trans..."""
-        if cat.genderalign == cat.gender:
+        if cat.genderalign == cat.gender and not (cat.genderalign.replace("intersex ", "") == 'tom' and 'Y' in cat.genotype.sexgene) and not (cat.genderalign.replace("intersex ", "") == 'molly' and 'Y' not in cat.genotype.sexgene):
             if cat.moons < 6:
                 return
 
@@ -2007,17 +2007,23 @@ class Events:
                 return
 
             if random.getrandbits(1):  # 50/50
-                if cat.gender == "tom":
-                    cat.genderalign = "trans molly"
+                if "tom" in cat.gender:
+                    if(cat.gender == 'intersex'):
+                        cat.genderalign = 'intersex trans molly'
+                    else:    
+                        cat.genderalign = "trans molly"
                     # cat.pronouns = [cat.default_pronouns[1].copy()]
                 else:
-                    cat.genderalign = "trans tom"
+                    if(cat.gender == 'intersex'):
+                        cat.genderalign = 'intersex trans tom'
+                    else:    
+                        cat.genderalign = "trans tom"
                     # cat.pronouns = [cat.default_pronouns[2].copy()]
             else:
-                cat.genderalign = "nonbinary"
+                cat.genderalign = "sam"
                 # cat.pronouns = [cat.default_pronouns[0].copy()]
 
-            if cat.gender == 'tom':
+            if "tom" in cat.gender:
                 gender = 'tom'
             else:
                 gender = 'molly'

@@ -1286,7 +1286,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
 
             def CreateStripes(stripecolour, coloursurface=None, pattern=None):
                 stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                        
+                
                 if pattern:
                     stripebase.blit(sprites.sprites[pattern + cat_sprite], (0, 0))
                 else:    
@@ -1428,7 +1428,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                                         pointbase2 = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                                         pointbase2.blit(sprites.sprites['lightbasecolours0'], (0, 0))
                                         pointbase2.blit(pointbase, (0, 0))
-                                        stripebase.blit(CreateStripes(None, coloursurface=pointbase2), (0, 0))
+                                        stripebase.blit(CreateStripes(whichcolour, coloursurface=pointbase2), (0, 0))
                                         coloursurface = pointbase2
                                 else:
                                     if(whichcolour == "black" and cat.moons > 0):
@@ -1451,16 +1451,16 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
 
                             elif(genotype.pointgene == ["cb", "cb"]):
                                 pointbase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                                pointbase.blit(sprites.sprites['basecolours'+ str(solidcolours.get(whichcolour))], (0, 0))
+                                pointbase.blit(sprites.sprites['basecolours'+ str(solidcolours.get(stripecolourdict.get(whichcolour, whichcolour)))], (0, 0))
                                 pointbase.set_alpha(204)
                                 pointbase2 = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                                 pointbase2.blit(sprites.sprites['lightbasecolours0'], (0, 0))
                                 pointbase2.blit(pointbase, (0, 0))
-                                stripebase.blit(CreateStripes(None, coloursurface=pointbase2), (0, 0))
+                                stripebase.blit(CreateStripes(whichcolour, coloursurface=pointbase2), (0, 0))
                                 coloursurface = pointbase2
                             elif("cb" in genotype.pointgene):
                                 pointbase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                                pointbase.blit(sprites.sprites['basecolours'+ str(solidcolours.get(whichcolour))], (0, 0))
+                                pointbase.blit(sprites.sprites['basecolours'+ str(solidcolours.get(stripecolourdict.get(whichcolour, whichcolour)))], (0, 0))
                                 if(genotype.eumelanin[0] == "bl"):
                                     pointbase.set_alpha(25)
                                 else:
@@ -1468,7 +1468,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                                 pointbase2 = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                                 pointbase2.blit(sprites.sprites['lightbasecolours0'], (0, 0))
                                 pointbase2.blit(pointbase, (0, 0))
-                                stripebase.blit(CreateStripes(None, coloursurface=pointbase2), (0, 0))
+                                stripebase.blit(CreateStripes(whichcolour, coloursurface=pointbase2), (0, 0))
                                 coloursurface = pointbase2
                             else:
                                 stripebase.blit(CreateStripes('lightbasecolours0'), (0, 0))
@@ -1996,7 +1996,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
 
                     sunshine.set_alpha(200)
                     tortpatches.blit(sunshine, (0, 0))
-
+                
                 tortpatches2 = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                 tortpatches2.blit(sprites.sprites['tortiemask' + phenotype.tortpattern.replace('rev', "") + cat_sprite], (0, 0))
                 tortpatches2.blit(tortpatches, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)

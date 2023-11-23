@@ -64,7 +64,7 @@ class Cat():
         "leader"
     ]
 
-    gender_tags = {'molly': 'F', 'tom': 'M'}
+    gender_tags = {'molly': 'F', 'tom': 'M', 'intersex': 'I'}
 
     # EX levels and ranges.
     # Ranges are inclusive to both bounds
@@ -178,6 +178,10 @@ class Cat():
 
         # Public attributes
         self.gender = gender
+        if self.gender == 'female':
+            self.gender = 'fem'
+        elif self.gender == 'male':
+            self.gender = 'masc'
         self.status = status
         self.backstory = backstory
         self.age = None
@@ -193,10 +197,23 @@ class Cat():
             self.genotype.fromJSON(genotype)
         elif parent1:
             self.genotype.KitGenerator(Cat.all_cats.get(parent1).genotype, Cat.all_cats.get(parent2, None))
+            
+            if(randint(1, 100) == 1):
+                self.genotype.gender = "intersex"
+                if(randint(1, 3) == 1 and 'Y' in self.genotype.sexgene):
+                    self.genotype.gender = 'molly'
         elif kittypet or status == 'kittypet':
             self.genotype.AltGenerator(special=gender)
+            if(randint(1, 100) == 1):
+                self.genotype.gender = "intersex"
+                if(randint(1, 3) == 1 and 'Y' in self.genotype.sexgene):
+                    self.genotype.gender = 'molly'
         else:
             self.genotype.Generator(special=gender)
+            if(randint(1, 100) == 1):
+                self.genotype.gender = "intersex"
+                if(randint(1, 3) == 1 and 'Y' in self.genotype.sexgene):
+                    self.genotype.gender = 'molly'
 
         self.phenotype = Phenotype(self.genotype)
 
@@ -263,6 +280,14 @@ class Cat():
         #white patterns
         if self.white_pattern is None and self.genotype.white[0] != "W" and self.genotype.white[0] != "w":
             self.white_pattern = []
+            if "wt" in self.genotype.white:
+                if self.genotype.white[1] not in ['ws', 'wt'] and self.genotype.whitegrade < 3:
+                    self.white_pattern.append("dorsal1")
+                elif self.genotype.white[1] not in ['ws', 'wt'] and self.genotype.whitegrade < 5:
+                    self.white_pattern.append(choice(["dorsal1", "dorsal2"]))
+                else:
+                    self.white_pattern.append("dorsal2")
+            
             if(self.genotype.vitiligo):
                 self.white_pattern.append(choice(vitiligo))
             if self.genotype.white[0] == "wg":
@@ -455,14 +480,6 @@ class Cat():
 
                     clean_white()
             
-            if "wt" in self.genotype.white:
-                if self.genotype.white[1] not in ['ws', 'wt'] and self.genotype.whitegrade < 3:
-                    self.white_pattern.append("dorsal1")
-                elif self.genotype.white[1] not in ['ws', 'wt'] and self.genotype.whitegrade < 5:
-                    self.white_pattern.append(choice(["dorsal1", "dorsal2"]))
-                else:
-                    self.white_pattern.append("dorsal2")
-            
             if self.white_pattern == []:
                 self.white_pattern = "No"
 
@@ -481,7 +498,7 @@ class Cat():
         # the next save.
         
         if (self.genotype.munch[1] == "Mk" or self.genotype.fold[1] == "Fd" or (self.genotype.manx[1] == "Ab" or self.genotype.manx[1] == "M")):
-            self.set_faded()
+            self.dead = True
 
         self.favourite = False
 
@@ -542,6 +559,8 @@ class Cat():
                 self.get_permanent_condition(choice(['deaf', 'partial hearing loss']), born_with=True)
         if self.genotype.manx[0] == 'M' and self.genotype.manxtype == 'rumpy':
             self.get_permanent_condition('born without a tail', born_with=True)
+        if len(self.genotype.sexgene) > 2 and 'Y' in self.genotype.sexgene:
+            self.get_permanent_condition('infertility', born_with=True)
 
         # backstory
         if self.backstory is None:
@@ -550,30 +569,53 @@ class Cat():
             self.backstory = self.backstory
 
         # sex!?!??!?!?!??!?!?!?!??
+
         self.gender = self.genotype.gender
         self.g_tag = self.gender_tags[self.gender]
+            
 
         # These things should only run when generating a new cat, rather than loading one in.
         if not loading_cat:
             # trans cat chances
             trans_chance = randint(0, 50)
             nb_chance = randint(0, 75)
-            if self.gender == "molly" and not self.status in ['newborn', 'kitten']:
+            self.genderalign = ""
+            if(self.gender == 'intersex'):
+                self.genderalign = 'intersex '
+            if (self.gender == "molly" or (self.gender == 'intersex' and 'Y' not in self.genotype.sexgene)) and not self.status in ['newborn', 'kitten']:
                 if trans_chance == 1:
-                    self.genderalign = "trans tom"
+                    self.genderalign += "trans tom"
                 elif nb_chance == 1:
-                    self.genderalign = "nonbinary"
+                    self.genderalign += "sam"
                 else:
-                    self.genderalign = self.gender
-            elif self.gender == "tom" and not self.status in ['newborn', 'kitten']:
+                    if(self.gender == 'intersex'):
+                        if('Y' in self.genotype.sexgene):
+                            self.genderalign += 'tom'
+                        else:
+                            self.genderalign += 'molly'
+                    else:
+                        self.genderalign += self.gender
+            elif (self.gender == "tom" or (self.gender == 'intersex' and 'Y' in self.genotype.sexgene)) and not self.status in ['newborn', 'kitten']:
                 if trans_chance == 1:
-                    self.genderalign = "trans molly"
+                    self.genderalign += "trans molly"
                 elif nb_chance == 1:
-                    self.genderalign = "nonbinary"
+                    self.genderalign += "sam"
                 else:
-                    self.genderalign = self.gender
+                    if(self.gender == 'intersex'):
+                        if('Y' in self.genotype.sexgene):
+                            self.genderalign += 'tom'
+                        else:
+                            self.genderalign += 'molly'
+                    else:
+                        self.genderalign += self.gender
             else:
-                self.genderalign = self.gender
+                if(self.gender == 'intersex'):
+                    if('Y' in self.genotype.sexgene):
+                        self.genderalign += 'tom'
+                    else:
+                        self.genderalign += 'molly'
+                else:
+                    self.genderalign += self.gender
 
             """if self.genderalign in ["molly", "trans molly"]:
                 self.pronouns = [self.default_pronouns[1].copy()]
@@ -637,7 +679,7 @@ class Cat():
         else:
             self.name = Name(status, prefix, suffix, eyes=self.pelt.eye_colour, specsuffix_hidden=self.specsuffix_hidden,
                              load_existing_name = loading_cat)
-
+        
         # Private Sprite
         self._sprite = None
 
@@ -1995,7 +2037,7 @@ class Cat():
             return
 
         # remove accessories if need be
-        if 'NOTAIL' in self.pelt.scars and self.pelt.accessory in ['RED FEATHERS', 'BLUE FEATHERS', 'JAY FEATHERS']:
+        if ('NOTAIL' in self.pelt.scars or (self.phenotype.bobtailnr > 0 and self.phenotype.bobtailnr < 5)) and self.pelt.accessory in ['RED FEATHERS', 'BLUE FEATHERS', 'JAY FEATHERS']:
             self.pelt.accessory = None
         if 'HALFTAIL' in self.pelt.scars and self.pelt.accessory in ['RED FEATHERS', 'BLUE FEATHERS', 'JAY FEATHERS']:
             self.pelt.accessory = None

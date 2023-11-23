@@ -371,7 +371,7 @@ class Condition_Events():
         scarless_conditions = [
             "weak leg", "paralyzed", "raspy lungs", "wasting disease", "blind", "failing eyesight", "one bad eye",
             "partial hearing loss", "deaf", "constant joint pain", "constantly dizzy", "recurring shock",
-            "lasting grief"
+            "lasting grief", "infertility"
         ]
 
         got_condition = False
@@ -662,7 +662,7 @@ class Condition_Events():
                 continue
 
             # revealing perm condition
-            if status == 'reveal':
+            if status == 'reveal' and condition != 'infertility':
                 # gather potential event strings for gotten risk
                 possible_string_list = Condition_Events.CONGENITAL_CONDITION_GOT_STRINGS[condition]
 

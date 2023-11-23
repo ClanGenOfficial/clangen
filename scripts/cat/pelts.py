@@ -680,6 +680,10 @@ class Pelt():
         else:
             self.accessory = None
 
+        if self.phenotype.bobtailnr > 0 and self.phenotype.bobtailnr < 5 and self.accessory in ['RED FEATHERS', 'BLUE FEATHERS', 'JAY FEATHERS']:
+            self.accessory = None
+        
+
     def init_pattern(self):
         if self.name in Pelt.torties:
             if not self.tortiebase:

@@ -197,7 +197,7 @@ class AllegiancesScreen(Screens):
                 outputs.append(_box)
             else:
                 for i in range(len(living_mediators)): 
-                    _box = ["", "", ""]   
+                    _box = ["", "", "", ""]   
                     if i == 0:    
                         _box[0] = '<b><u>MEDIATORS</u></b>'
                     else:

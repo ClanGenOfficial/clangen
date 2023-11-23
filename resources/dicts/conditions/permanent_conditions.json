@@ -605,5 +605,26 @@
             "poppy",
             "juniper"
         ]
+    },
+    "infertility": {
+        "severity": "minor",
+        "congenital": "sometimes",
+        "moons_until": 12,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+
+        ],
+        "herbs": [
+        ]
     }
 }

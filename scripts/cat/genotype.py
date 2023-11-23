@@ -344,36 +344,37 @@ class Genotype:
 
         if (randint(1, 2) == 1 and special != "fem") or special == "masc":
             self.sexgene = ["", "Y"]
-            #if randint(1, 1000) == 1:
-            #    self.sexgene = ["", "", "Y"]
-            #
-            #    for i in range(2):
-            #        if randint(1, 2) == 1:
-            #            self.sexgene[i] = "O"
-            #        else:
-            #            self.sexgene[i] = "o"
-            if randint(1, 2) == 1:
-                self.sexgene[0] = "O"
+            if randint(1, 1000) == 1:
+                self.sexgene = ["", "", "Y"]
+            
+                for i in range(2):
+                    if randint(1, 2) == 1:
+                        self.sexgene[i] = "O"
+                    else:
+                        self.sexgene[i] = "o"
             else:
-                self.sexgene[0] = "o"
-            self.gender = "tom" #choice(["tom", "tom", "tom", "tom", "AMAB sam", "tom", "tom", "tom", "tom", "molly"])
-        else:
-            #if randint(1, 1000) == 1:
-            #    self.sexgene = ["", "", ""]
-            #    for i in range(3):
-            #        if randint(1, 2) == 1:
-            #            self.sexgene[i] = "O"
-            #        else:
-            #            self.sexgene[i] = "o"
-            #else:
-            for i in range(2):
                 if randint(1, 2) == 1:
-                    self.sexgene[i] = "O"
+                    self.sexgene[0] = "O"
                 else:
-                    self.sexgene[i] = "o"
-            self.gender = "molly" #choice(["molly", "molly", "molly", "molly", "AFAB sam", "molly", "molly", "molly", "molly", "tom"])
-            if self.sexgene[0] != self.sexgene[1] and randint(1, 1000)==1:
-                self.brindledbi = True 
+                    self.sexgene[0] = "o"
+            self.gender = "tom"
+        else:
+            if randint(1, 1000) == 1:
+                self.sexgene = ["", "", ""]
+                for i in range(3):
+                    if randint(1, 2) == 1:
+                        self.sexgene[i] = "O"
+                    else:
+                        self.sexgene[i] = "o"
+            else:
+                for i in range(2):
+                    if randint(1, 2) == 1:
+                        self.sexgene[i] = "O"
+                    else:
+                        self.sexgene[i] = "o"
+            self.gender = "molly"
+        if 'o' in self.sexgene and 'O' in self.sexgene and randint(1, 250)==1:
+            self.brindledbi = True 
 
         # DILUTE
 
@@ -897,36 +898,36 @@ class Genotype:
 
         if (randint(1, 2) == 1 and special != "fem") or special == "masc":
             self.sexgene = ["", "Y"]
-            #if randint(1, 1000) == 1:
-            #    self.sexgene = ["", "", "Y"]
-            #
-            #    for i in range(2):
-            #        if randint(1, 2) == 1:
-            #            self.sexgene[i] = "O"
-            #        else:
-            #            self.sexgene[i] = "o"
-            if randint(1, 3) == 1:
+            if randint(1, 1000) == 1:
+                self.sexgene = ["", "", "Y"]
+            
+                for i in range(2):
+                    if randint(1, 2) == 1:
+                        self.sexgene[i] = "O"
+                    else:
+                        self.sexgene[i] = "o"
+            elif randint(1, 2) == 1:
                 self.sexgene[0] = "O"
             else:
                 self.sexgene[0] = "o"
-            self.gender = 'tom' #choice(["tom", "tom", "tom", "tom", "AMAB sam", "tom", "tom", "tom", "tom", "molly"])
+            self.gender = "tom"
         else:
-            #if randint(1, 1000) == 1:
-            #    self.sexgene = ["", "", ""]
-            #    for i in range(3):
-            #        if randint(1, 2) == 1:
-            #            self.sexgene[i] = "O"
-            #        else:
-            #            self.sexgene[i] = "o"
-            #else:
-            for i in range(2):
-                if randint(1, 3) == 1:
-                    self.sexgene[i] = "O"
-                else:
-                    self.sexgene[i] = "o"
-            self.gender = 'molly' #choice(["molly", "molly", "molly", "molly", "AFAB sam", "molly", "molly", "molly", "molly", "tom"])
-            if self.sexgene[0] != self.sexgene[1] and randint(1, 1000)==1:
-                self.brindledbi = True 
+            if randint(1, 1000) == 1:
+                self.sexgene = ["", "", ""]
+                for i in range(3):
+                    if randint(1, 2) == 1:
+                        self.sexgene[i] = "O"
+                    else:
+                        self.sexgene[i] = "o"
+            else:
+                for i in range(2):
+                    if randint(1, 3) == 1:
+                        self.sexgene[i] = "O"
+                    else:
+                        self.sexgene[i] = "o"
+            self.gender = "molly"
+        if 'o' in self.sexgene and 'O' in self.sexgene and randint(1, 250)==1:
+            self.brindledbi = True 
 
         # DILUTE
 
@@ -1424,7 +1425,7 @@ class Genotype:
 
     def KitGenerator(self, par1, par2=None):
         try:
-            if par2 == None or not xor('Y' in par1.sexgene, 'Y' in par2.genotype.sexgene):
+            if par2 == None:
                 par2 = Genotype()
                 if('Y' in par1.sexgene):
                     par2.Generator("fem")
@@ -1464,21 +1465,89 @@ class Genotype:
         
         self.eumelanin = [choice(par1.eumelanin), choice(par2.eumelanin)]
 
-        if(randint(1, 2) == 1):
-            self.sexgene[1] = "Y"
-            if(par1.sexgene[1] == "Y"):
-                self.sexgene[0] = choice(par2.sexgene)
+        if xor('Y' in par1.sexgene, 'Y' in par2.sexgene):
+            if('Y' in par1.sexgene):
+                if(randint(1, 2) == 1):
+                    par1.sexgene[1] = par1.sexgene[0]
+                else:
+                    par2.sexgene[1] = par2.sexgene[0]
             else:
-                self.sexgene[0] = choice(par1.sexgene)
-            self.gender = "tom"
+                if len(par1.sexgene) > 2:
+                    par2.sexgene[1] = 'Y'
+                elif len(par2.sexgene) > 2:
+                    par1.sexgene[1] = 'Y'
+                else:
+                    if('O' in par1.sexgene and 'o' in par1.sexgene):
+                        par2.sexgene[1] = 'Y'
+                    elif ('O' in par2.sexgene and 'o' in par2.sexgene):
+                        par1.sexgene[1] = 'Y'
+                    else:
+                        if(randint(1, 2) == 1):
+                            par1.sexgene[1] = 'Y'
+                        else:
+                            par2.sexgene[1] = 'Y'
+
+        if('Y' in par1.sexgene):
+            mum = par2.sexgene
+            pap = par1.sexgene
         else:
-            if(par1.sexgene[1] == "Y"):
-                self.sexgene = [choice(par2.sexgene), par1.sexgene[0]]
+            mum = par1.sexgene
+            pap = par2.sexgene
+
+        if randint(1, 1000) == 1:
+            self.sexgene = ["", "", ""]
+            if randint(1, 2) == 1:
+                self.gender = 'tom'
+                if randint(1, 2) == 1:
+                    self.sexgene[0] = choice(mum)
+                    self.sexgene[1] = pap[0]
+                    self.sexgene[2] = 'Y'
+                else:
+                    self.sexgene[2] = 'Y'
+                    if len(mum) < 3:
+                        self.sexgene[0] = mum[0]
+                        self.sexgene[1] = mum[1]
+                    else:
+                        a = randint(0, 2)
+                        b = randint(0, 2)
+                        while b == a:
+                            b = randint(0, 2)
+                        
+                        self.sexgene[0] = mum[a]
+                        self.sexgene[1] = mum[b]
             else:
-                self.sexgene = [choice(par1.sexgene), par2.sexgene[0]]
-            self.gender = "molly"
-            if self.sexgene[0] != self.sexgene[1] and randint(1, 250)==1:
-                self.brindledbi = True 
+                self.gender = 'molly'
+                if len(mum) < 3:
+                    self.sexgene[0] = mum[0]
+                    self.sexgene[1] = mum[1]
+                else:
+                    a = randint(0, 2)
+                    b = randint(0, 2)
+                    while b == a:
+                        b = randint(0, 2)
+                    
+                    self.sexgene[0] = mum[a]
+                    self.sexgene[1] = mum[b]
+                self.sexgene[2] = pap[0]
+
+        else:
+            if(randint(1, 2) == 1):
+                self.sexgene[1] = "Y"
+                if(par1.sexgene[1] == "Y"):
+                    self.sexgene[0] = choice(par2.sexgene)
+                else:
+                    self.sexgene[0] = choice(par1.sexgene)
+                self.gender = "tom"
+            else:
+                if(par1.sexgene[1] == "Y"):
+                    self.sexgene = [choice(par2.sexgene), par1.sexgene[0]]
+                else:
+                    self.sexgene = [choice(par1.sexgene), par2.sexgene[0]]
+                self.gender = "molly"
+        
+        
+        if 'o' in self.sexgene and 'O' in self.sexgene and randint(1, 250)==1:
+            self.brindledbi = True 
         
         self.dilute = [choice(par1.dilute), choice(par2.dilute)]
 

@@ -109,23 +109,34 @@ class NewCatEvents:
         
         blood_parent = None
         blood_parent2 = None
-        if new_cat_event.litter:
+        if new_cat_event.litter or new_cat_event.kit:
             # If we have a litter joining, assign them a blood parent for
             # relation-tracking purposes
             thought = "Is happy their kits are safe"
             ages = [random.randint(15,120), 0]
             ages[1] = ages[0] + random.randint(0, 24) - 12
+            
+            cat_type = random.choice(["loner", "rogue", "kittypet"])
+            if('rogue' in new_cat_event.event_text):
+                cat_type = 'rogue'
+            elif('loner' in new_cat_event.event_text):
+                cat_type = 'loner'
+            elif('kittypet' in new_cat_event.event_text):
+                cat_type = 'kittypet'
+            
             blood_parent = create_new_cat(Cat, Relationship,
-                                          status=random.choice(["loner", "kittypet"]),
+                                          status=random.choice(["loner", "rogue", "kittypet"]),
                                           alive=False,
                                           thought=thought,
                                           age=ages[0],
+                                          gender='masc',
                                           outside=True)[0]
             blood_parent2 = create_new_cat(Cat, Relationship,
-                                          status=random.choice(["loner", "kittypet"]),
+                                          status=cat_type,
                                           alive=False,
                                           thought=thought,
                                           age=ages[1] if ages[1] > 14 else 15,
+                                          gender='fem',
                                           outside=True)[0]
 
         created_cats = create_new_cat(Cat,
