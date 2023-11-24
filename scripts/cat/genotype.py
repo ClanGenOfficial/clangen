@@ -1468,33 +1468,49 @@ class Genotype:
         if not xor('Y' in par1.sexgene, 'Y' in par2.sexgene):
             if('Y' in par1.sexgene):
                 if(randint(1, 2) == 1):
-                    par1.sexgene[1] = par1.sexgene[0]
+                    mum = par1.sexgene
+                    mum[1] = mum[0]
+                    pap = par2.sexgene
                 else:
-                    par2.sexgene[1] = par2.sexgene[0]
+                    mum = par2.sexgene
+                    mum[1] = mum[0]
+                    pap = par1.sexgene
             else:
                 if len(par1.sexgene) > 2:
-                    par2.sexgene[1] = 'Y'
+                    mum = par1.sexgene
+                    pap = par2.sexgene
+                    pap[1] = 'Y'
                 elif len(par2.sexgene) > 2:
-                    par1.sexgene[1] = 'Y'
+                    mum = par2.sexgene
+                    pap = par1.sexgene
+                    pap[1] = 'Y'
                 else:
                     if('O' in par1.sexgene and 'o' in par1.sexgene):
-                        par2.sexgene[1] = 'Y'
+                        mum = par1.sexgene
+                        pap = par2.sexgene
+                        pap[1] = 'Y'
                     elif ('O' in par2.sexgene and 'o' in par2.sexgene):
-                        par1.sexgene[1] = 'Y'
+                        mum = par2.sexgene
+                        pap = par1.sexgene
+                        pap[1] = 'Y'
                     else:
                         if(randint(1, 2) == 1):
-                            par1.sexgene[1] = 'Y'
+                            mum = par2.sexgene
+                            pap = par1.sexgene
+                            pap[1] = 'Y'
                         else:
-                            par2.sexgene[1] = 'Y'
+                            mum = par1.sexgene
+                            pap = par2.sexgene
+                            pap[1] = 'Y'
 
-        if('Y' in par1.sexgene):
+        elif('Y' in par1.sexgene):
             mum = par2.sexgene
             pap = par1.sexgene
         else:
             mum = par1.sexgene
             pap = par2.sexgene
 
-        if randint(1, 1000) == 1:
+        if randint(1, 250) == 1:
             self.sexgene = ["", "", ""]
             if randint(1, 2) == 1:
                 self.gender = 'tom'
@@ -1533,16 +1549,10 @@ class Genotype:
         else:
             if(randint(1, 2) == 1):
                 self.sexgene[1] = "Y"
-                if(par1.sexgene[1] == "Y"):
-                    self.sexgene[0] = choice(par2.sexgene)
-                else:
-                    self.sexgene[0] = choice(par1.sexgene)
+                self.sexgene[0] = choice(mum)
                 self.gender = "tom"
             else:
-                if(par1.sexgene[1] == "Y"):
-                    self.sexgene = [choice(par2.sexgene), par1.sexgene[0]]
-                else:
-                    self.sexgene = [choice(par1.sexgene), par2.sexgene[0]]
+                self.sexgene = [choice(mum), pap[0]]
                 self.gender = "molly"
         
         

@@ -3,6 +3,7 @@ import random
 from operator import xor
 
 from scripts.cat.history import History
+from scripts.cat.genotype import Genotype
 from scripts.utility import (
     create_new_cat,
     create_outside_cat,
@@ -655,9 +656,13 @@ class Pregnancy_Events():
         blood_parent = None
         blood_parent2 = None
          
+        par2geno = Genotype()
+        par2geno.Generator()
         ##### SELECT BACKSTORY #####
         if backkit:
             backstory = backkit
+            if 'halfclan' in backkit:
+                other_cat = None
         elif cat and (cat.gender == 'molly' or (cat.gender == 'intersex' and 'Y' not in cat.genotype.sexgene)):
             backstory = choice(['halfclan1', 'outsider_roots1'])
         elif cat:
@@ -719,16 +724,16 @@ class Pregnancy_Events():
                     blood_parent2.thought = thought
                 
                 kit = Cat(parent1=blood_parent2.ID, parent2=blood_parent.ID,moons=0, backstory=backstory, status='newborn')
-            elif cat and other_cat:
+            else:
                 # Two parents provided
                 if backkit:    
-                    kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0, backstory=backstory, status='newborn')
+                    kit = Cat(parent1=cat.ID, parent2=other_cat.ID if other_cat else None, moons=0, backstory=backstory, status='newborn', extrapar = par2geno)
                 else:
                     kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0, status='newborn')
 
-                if 'Y' not in cat.genotype.sexgene or other_cat.outside:
+                if 'Y' not in cat.genotype.sexgene or not other_cat or other_cat.outside:
                     kit.thought = f"Snuggles up to the belly of {cat.name}"
-                elif cat.gender == 'tom' and other_cat.gender == 'tom':
+                elif 'Y' in cat.genotype.sexgene and 'Y' in cat.genotype.sexgene:
                     kit.thought = f"Snuggles up to the belly of {cat.name}"
                 else:
                     kit.thought = f"Snuggles up to the belly of {other_cat.name}"
@@ -803,12 +808,6 @@ class Pregnancy_Events():
         if blood_parent2:
             blood_parent2.outside = True
             clan.unknown_cats.append(blood_parent2.ID)
-        
-        if(backkit and 'halfclan' in backkit):
-            Cat.all_cats[other_cat.ID].set_faded()
-            for kitten in all_kitten:
-                kitten.parent2 = None
-                kitten.inheritance.update_inheritance()
 
         return all_kitten
 

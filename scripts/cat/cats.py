@@ -120,6 +120,7 @@ class Cat():
                  backstory="clanborn",
                  parent1=None,
                  parent2=None,
+                 extrapar=None,
                  kittypet=False,
                  suffix=None,
                  specsuffix_hidden=False,
@@ -195,8 +196,11 @@ class Cat():
         self.genotype = Genotype()
         if genotype:
             self.genotype.fromJSON(genotype)
-        elif parent1:
-            self.genotype.KitGenerator(Cat.all_cats.get(parent1).genotype, Cat.all_cats.get(parent2, None))
+        elif parent1 or parent2:
+            if not parent1:
+                self.genotype.KitGenerator(Cat.all_cats.get(parent2).genotype, extrapar)
+            else:
+                self.genotype.KitGenerator(Cat.all_cats.get(parent1).genotype, Cat.all_cats.get(parent2, extrapar))
             
             if(randint(1, 100) == 1):
                 self.genotype.gender = "intersex"

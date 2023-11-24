@@ -11,6 +11,7 @@ import re
 import pygame
 
 from scripts.cat.phenotype import Phenotype
+from scripts.cat.genotype import Genotype
 
 import ujson
 import logging
@@ -227,7 +228,8 @@ def create_new_cat(Cat,
                    alive:bool=True,
                    outside:bool=False,
                    parent1:str=None,
-                   parent2:str=None
+                   parent2:str=None,
+                   extrapar:Genotype=None
     ) -> list:
     """
     This function creates new cats and then returns a list of those cats
@@ -309,7 +311,8 @@ def create_new_cat(Cat,
                           gender=_gender,
                           backstory=backstory,
                           parent1=parent1,
-                          parent2=parent2)
+                          parent2=parent2,
+                          extrapar=extrapar)
         else:
             # grab starting names and accs for loners/kittypets
             if kittypet:
@@ -1389,11 +1392,11 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                                 elif(not (genotype.ext[0] == "ec" and genotype.agouti[0] == "a" and 'o' in genotype.sexgene)):
                                     whichmain.blit(sprites.sprites["unders_" + whichbase + cat_sprite], (0, 0))
 
-                            if((genotype.pointgene == ["cb", "cb"] and cat.moons > 0) or (((("cb" in genotype.pointgene or genotype.pointgene[0] == "cm") and cat.moons > 0) or genotype.pointgene == ["cb", "cb"]) and get_current_season() == 'Leaf-bare')):
+                            if((genotype.pointgene == ["cb", "cb"] and cat_sprite != "20") or (((("cb" in genotype.pointgene or genotype.pointgene[0] == "cm") and cat_sprite != "20") or genotype.pointgene == ["cb", "cb"]) and get_current_season() == 'Leaf-bare')):
                                 colourbase.set_alpha(180)
-                            elif((("cb" in genotype.pointgene or genotype.pointgene[0] == "cm") and cat.moons > 0) or genotype.pointgene == ["cb", "cb"] or ((cat.moons > 0 or ("cb" in genotype.pointgene or genotype.pointgene[0] == "cm")) and get_current_season() == 'Leaf-bare')):
+                            elif((("cb" in genotype.pointgene or genotype.pointgene[0] == "cm") and cat_sprite != "20") or genotype.pointgene == ["cb", "cb"] or ((cat_sprite != "20" or ("cb" in genotype.pointgene or genotype.pointgene[0] == "cm")) and get_current_season() == 'Leaf-bare')):
                                 colourbase.set_alpha(100)
-                            elif(cat.moons > 0 or ("cb" in genotype.pointgene or genotype.pointgene[0] == "cm")):
+                            elif(cat_sprite != "20" or ("cb" in genotype.pointgene or genotype.pointgene[0] == "cm")):
                                 colourbase.set_alpha(25)
                             else:
                                 colourbase.set_alpha(0)
@@ -1412,10 +1415,10 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                                 colour = 'lightbasecolours2'
                             else:
                                 if("cb" in genotype.pointgene or genotype.pointgene[0] == "cm"):
-                                    if(whichcolour == "black" and cat.moons > 0):
+                                    if(whichcolour == "black" and cat_sprite != "20"):
                                         stripebase.blit(CreateStripes('lightbasecolours2'), (0, 0))
                                         colour = 'lightbasecolours2'
-                                    elif((whichcolour == "chocolate" and cat.moons > 0) or whichcolour == "black"):
+                                    elif((whichcolour == "chocolate" and cat_sprite != "20") or whichcolour == "black"):
                                         stripebase.blit(CreateStripes('lightbasecolours1'), (0, 0))
                                         colour = 'lightbasecolours1'
                                     elif(whichcolour == "cinnamon" or whichcolour == "chocolate"):
@@ -1431,7 +1434,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                                         stripebase.blit(CreateStripes(whichcolour, coloursurface=pointbase2), (0, 0))
                                         coloursurface = pointbase2
                                 else:
-                                    if(whichcolour == "black" and cat.moons > 0):
+                                    if(whichcolour == "black" and cat_sprite != "20"):
                                         stripebase.blit(CreateStripes('lightbasecolours1'), (0, 0))
                                         colour = 'lightbasecolours1'
                                     else:
@@ -1439,13 +1442,13 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                                         colour = 'lightbasecolours0'
                         
                         else:
-                            if(whichcolour == "black" and genotype.pointgene == ["cb", "cb"] and cat.moons > 0):
+                            if(whichcolour == "black" and genotype.pointgene == ["cb", "cb"] and cat_sprite != "20"):
                                 stripebase.blit(CreateStripes('lightbasecolours3'), (0, 0))
                                 colour = 'lightbasecolours3'
-                            elif(((whichcolour == "chocolate" and genotype.pointgene == ["cb", "cb"]) or (whichcolour == "black" and "cb" in genotype.pointgene)) and cat.moons > 0 or (whichcolour == "black" and genotype.pointgene == ["cb", "cb"])):
+                            elif(((whichcolour == "chocolate" and genotype.pointgene == ["cb", "cb"]) or (whichcolour == "black" and "cb" in genotype.pointgene)) and cat_sprite != "20" or (whichcolour == "black" and genotype.pointgene == ["cb", "cb"])):
                                 stripebase.blit(CreateStripes('lightbasecolours2'), (0, 0))
                                 colour = 'lightbasecolours2'
-                            elif(((whichcolour == "cinnamon" and genotype.pointgene == ["cb", "cb"]) or (whichcolour == "chocolate" and "cb" in genotype.pointgene) or (whichcolour == "black" and genotype.pointgene == ["cs", "cs"])) and cat.moons > 0 or ((whichcolour == "chocolate" and genotype.pointgene == ["cb", "cb"]) or (whichcolour == "black" and "cb" in genotype.pointgene))):
+                            elif(((whichcolour == "cinnamon" and genotype.pointgene == ["cb", "cb"]) or (whichcolour == "chocolate" and "cb" in genotype.pointgene) or (whichcolour == "black" and genotype.pointgene == ["cs", "cs"])) and cat_sprite != "20" or ((whichcolour == "chocolate" and genotype.pointgene == ["cb", "cb"]) or (whichcolour == "black" and "cb" in genotype.pointgene))):
                                 stripebase.blit(CreateStripes('lightbasecolours1'), (0, 0))
                                 colour = 'lightbasecolours1'
 
@@ -1518,9 +1521,9 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                             if(whichcolour == "black" and genotype.pointgene[0] == "cm"):
                                 pointbase.blit(colourbase, (0, 0))
                             else:
-                                if((("cb" in genotype.pointgene or genotype.pointgene[0] == "cm") and cat.moons > 0) or ((cat.moons > 0 or ("cb" in genotype.pointgene or genotype.pointgene[0] == "cm")) and get_current_season() == "Leaf-bare")):
+                                if((("cb" in genotype.pointgene or genotype.pointgene[0] == "cm") and cat_sprite != "20") or ((cat_sprite != "20" or ("cb" in genotype.pointgene or genotype.pointgene[0] == "cm")) and get_current_season() == "Leaf-bare")):
                                     colourbase.set_alpha(204)
-                                elif(cat.moons > 0 or ("cb" in genotype.pointgene or genotype.pointgene[0] == "cm")):
+                                elif(cat_sprite != "20" or ("cb" in genotype.pointgene or genotype.pointgene[0] == "cm")):
                                     colourbase.set_alpha(125)
                                 else:
                                     colourbase.set_alpha(0)
@@ -1542,11 +1545,11 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                             
                                 
                         else:
-                            if((genotype.pointgene == ["cb", "cb"] and cat.moons > 0) or ("cb" in genotype.pointgene and cat.moons > 0 and get_current_season() == 'Leaf-bare')):
+                            if((genotype.pointgene == ["cb", "cb"] and cat_sprite != "20") or ("cb" in genotype.pointgene and cat_sprite != "20" and get_current_season() == 'Leaf-bare')):
                                 colourbase.set_alpha(255)
-                            elif(("cb" in genotype.pointgene and cat.moons > 0) or genotype.pointgene == ["cb", "cb"] or ((cat.moons > 0 or "cb" in genotype.pointgene) and get_current_season() == 'Leaf-bare')):
+                            elif(("cb" in genotype.pointgene and cat_sprite != "20") or genotype.pointgene == ["cb", "cb"] or ((cat_sprite != "20" or "cb" in genotype.pointgene) and get_current_season() == 'Leaf-bare')):
                                 colourbase.set_alpha(204)
-                            elif(cat.moons > 0 or "cb" in genotype.pointgene):
+                            elif(cat_sprite != "20" or "cb" in genotype.pointgene):
                                 colourbase.set_alpha(125)
                             else:
                                 colourbase.set_alpha(25)
@@ -1647,7 +1650,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                             stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                                 
                             if("cb" in genotype.pointgene or genotype.pointgene[0] == "cm"):
-                                if(whichcolour == "black" and cat.moons > 0):
+                                if(whichcolour == "black" and cat_sprite != "20"):
                                     whichmain.blit(sprites.sprites['lightbasecolours2'], (0, 0))
                                     colour = 'lightbasecolours2'
                                     if(genotype.ext[0] == 'Eg' and genotype.agouti[0] != 'a'):
@@ -1662,7 +1665,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                                     if (genotype.silver[0] == 'I' and cat.pelt.length != 'long'):
                                         whichmain.blit(sprites.sprites['smoke' + cat_sprite], (0, 0))
 
-                                elif((whichcolour == "chocolate" and cat.moons > 0) or whichcolour == "black"):
+                                elif((whichcolour == "chocolate" and cat_sprite != "20") or whichcolour == "black"):
                                     whichmain.blit(sprites.sprites['lightbasecolours1'], (0, 0))
                                     colour = 'lightbasecolours1'
 
@@ -1701,7 +1704,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                                     if (genotype.silver[0] == 'I' and cat.pelt.length != 'long'):
                                         whichmain.blit(sprites.sprites['smoke' + cat_sprite], (0, 0))
                             else:
-                                if(whichcolour == "black" and cat.moons > 0):
+                                if(whichcolour == "black" and cat_sprite != "20"):
                                     whichmain.blit(sprites.sprites['lightbasecolours1'], (0, 0))
                                     colour = 'lightbasecolours1'
 
@@ -1765,7 +1768,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                         colour = None
                         coloursurface = None
                         stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                        if(whichcolour == "black" and genotype.pointgene == ["cb", "cb"] and cat.moons > 0):
+                        if(whichcolour == "black" and genotype.pointgene == ["cb", "cb"] and cat_sprite != "20"):
                             whichmain.blit(sprites.sprites['lightbasecolours3'], (0, 0)) 
                             colour = 'lightbasecolours3'
 
@@ -1782,7 +1785,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                                 whichmain.blit(sprites.sprites['smoke' + cat_sprite], (0, 0))
 
 
-                        elif(((whichcolour == "chocolate" and genotype.pointgene == ["cb", "cb"]) or (whichcolour == "black" and "cb" in genotype.pointgene)) and cat.moons > 0 or (whichcolour == "black" and genotype.pointgene == ["cb", "cb"])):
+                        elif(((whichcolour == "chocolate" and genotype.pointgene == ["cb", "cb"]) or (whichcolour == "black" and "cb" in genotype.pointgene)) and cat_sprite != "20" or (whichcolour == "black" and genotype.pointgene == ["cb", "cb"])):
                             whichmain.blit(sprites.sprites['lightbasecolours2'], (0, 0)) 
                             colour = 'lightbasecolours2'
 
@@ -1798,7 +1801,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                             if (genotype.silver[0] == 'I' and cat.pelt.length != 'long'):
                                 whichmain.blit(sprites.sprites['smoke' + cat_sprite], (0, 0))
 
-                        elif(((whichcolour == "cinnamon" and genotype.pointgene == ["cb", "cb"]) or (whichcolour == "chocolate" and "cb" in genotype.pointgene) or (whichcolour == "black" and genotype.pointgene == ["cs", "cs"])) and cat.moons > 0 or ((whichcolour == "chocolate" and genotype.pointgene == ["cb", "cb"]) or (whichcolour == "black" and "cb" in genotype.pointgene))):
+                        elif(((whichcolour == "cinnamon" and genotype.pointgene == ["cb", "cb"]) or (whichcolour == "chocolate" and "cb" in genotype.pointgene) or (whichcolour == "black" and genotype.pointgene == ["cs", "cs"])) and cat_sprite != "20" or ((whichcolour == "chocolate" and genotype.pointgene == ["cb", "cb"]) or (whichcolour == "black" and "cb" in genotype.pointgene))):
                             whichmain.blit(sprites.sprites['lightbasecolours1'], (0, 0))  
                             colour = 'lightbasecolours1'
 
@@ -2161,12 +2164,13 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
         # draw skin and scars2
         blendmode = pygame.BLEND_RGBA_MIN
 
+        gensprite = new_sprite
         if cat.phenotype.bobtailnr > 0:
-            new_sprite.blit(sprites.sprites['bobtail' + str(cat.phenotype.bobtailnr) + cat_sprite], (0, 0))
-        new_sprite.set_colorkey((0, 0, 255))
+            gensprite.blit(sprites.sprites['bobtail' + str(cat.phenotype.bobtailnr) + cat_sprite], (0, 0))
+        gensprite.set_colorkey((0, 0, 255))
+        new_sprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+        new_sprite.blit(gensprite, (0, 0))
 
-
-        
         if not scars_hidden:
             for scar in cat.pelt.scars:
                 if scar in cat.pelt.scars2:

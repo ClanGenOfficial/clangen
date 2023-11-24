@@ -1,5 +1,6 @@
 from scripts.cat.names import names
 from scripts.cat_relations.relationship import Relationship
+from scripts.cat.genotype import Genotype
 
 import random
 
@@ -109,6 +110,7 @@ class NewCatEvents:
         cat_type = ""
         blood_parent = None
         blood_parent2 = None
+        par2geno = None
         if new_cat_event.litter or new_cat_event.kit:
             # If we have a litter joining, assign them a blood parent for
             # relation-tracking purposes
@@ -116,7 +118,6 @@ class NewCatEvents:
             ages = [random.randint(15,120), 0]
             ages[1] = ages[0] + random.randint(0, 24) - 12
             
-            cat_type = random.choice(["loner", "rogue", "kittypet"])
             if('rogue' in new_cat_event.event_text):
                 cat_type = 'rogue'
             elif('loner' in new_cat_event.event_text):
@@ -133,13 +134,17 @@ class NewCatEvents:
                                           age=ages[0],
                                           gender='masc',
                                           outside=True)[0]
-            blood_parent2 = create_new_cat(Cat, Relationship,
+            if cat_type != 'del':
+                blood_parent2 = create_new_cat(Cat, Relationship,
                                           status=cat_type if cat_type != 'del' else 'rogue',
                                           alive=True,
                                           thought=thought,
                                           age=ages[1] if ages[1] > 14 else 15,
                                           gender='fem',
                                           outside=True)[0]
+            else:
+                par2geno = Genotype()
+                par2geno.Generator()
 
         created_cats = create_new_cat(Cat,
                                       Relationship,
@@ -152,7 +157,8 @@ class NewCatEvents:
                                       new_cat_event.backstory,
                                       status,
                                       parent1=blood_parent2.ID if blood_parent2 else None,
-                                      parent2=blood_parent.ID if blood_parent else None
+                                      parent2=blood_parent.ID if blood_parent else None,
+                                      extrapar = par2geno
                                       )
             
             
@@ -170,8 +176,6 @@ class NewCatEvents:
                             new_cat.adoptive_parents.extend(cat.mate)
             
             # All parents have been added now, we now create the inheritance. 
-            if cat_type == 'del':
-                new_cat.parent2 = None
             new_cat.create_inheritance_new_cat()
 
             if "m_c" in new_cat_event.tags:
