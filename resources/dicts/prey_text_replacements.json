@@ -1,4 +1,23 @@
 {
+  "comment": [
+    "add new prey species to the relevant biome lists:",
+    "prey species should be added to both the singular and the plural lists e.g mouse, mice",
+    "prey species need to be completely non-seasonal, e.g no eggs, no chicks",
+    "prey species need to have names that make sense for cats",
+    "e.g yellow mouse (great), New York rat (no)",
+
+    "wet biomes (beach and wetlands) have both dry land and aquatic lists",
+    "some animals e.g crabs are appropriate for both dry land and aquatic lists",
+    "these lists allow writers to describe a fishing patrol and not fish up a squirrel",
+
+    "be sure to put your snippet in the relevant 'size' category",
+    "do not count tail lengths in these size categories - this is about how much edible meat the cat has hunted",
+    "tiny prey species are an inch to a 3 inches big, could be held in a cat's mouth, e.g a mouse",
+    "medium prey species are 3 inches to 6 inches long, easily carried by a cat e.g a blackbird",
+    "big prey species are 6-12 inches long, eavy enough to be hard to carry by a cat e.g a rabbit",
+    "prey species bigger than this are too large for the randomised prey lists",
+    "instead, make them the focus of their own patrol"
+  ],
   "abbreviations": {
     "b_tp_dl_s": "beach_tinyprey_dryland_singular",
     "b_tp_dl_p": "beach_tinyprey_dryland_plural",
