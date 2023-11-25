@@ -34,7 +34,7 @@
                 ]
             },
             {
-                "text": "s_c catches a great w_mp_a_s, and two w_tp_l_p! But {PRONOUN/s_c/poss} sibling comes up empty pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument.",
+                "text": "s_c catches a great w_mp_a_s, and two w_tp_dl_p! But {PRONOUN/s_c/poss} sibling comes up empty pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["HUNTER,0"],
@@ -109,7 +109,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "Yeah, it's a relatively okay hunt, with a couple w_tp_a_p and a dirty w_tp_l_s. But what app1 is actually going to remember about today is that app2 thinks that {PRONOUN/app2/poss} mentor and app1's would make a cute couple!",
+                "text": "Yeah, it's a relatively okay hunt, with a couple w_tp_a_p and a dirty w_tp_dl_s. But what app1 is actually going to remember about today is that app2 thinks that {PRONOUN/app2/poss} mentor and app1's would make a cute couple!",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"],
@@ -141,7 +141,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Together they manage a grand haul of one w_tp_l_s, and not even a very big w_tp_l_s at that. They have a lot more to learn before they'll all be ready to take on the responsibility of providing for c_n.",
+                "text": "Together they manage a grand haul of one w_tp_dl_s, and not even a very big w_tp_dl_s at that. They have a lot more to learn before they'll all be ready to take on the responsibility of providing for c_n.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -168,7 +168,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "app1 thinks app2's w_tp_l_s looks infinitely more delicous than {PRONOUN/app1/poss} own contributions of two w_tp_a_p, while app2 insists that {PRONOUN/app2/subject}'d much rather bring back w_tp_a_p.",
+                "text": "app1 thinks app2's w_tp_dl_s looks infinitely more delicous than {PRONOUN/app1/poss} own contributions of two w_tp_a_p, while app2 insists that {PRONOUN/app2/subject}'d much rather bring back w_tp_a_p.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"],
@@ -242,7 +242,7 @@
                 ]
             },
             {
-                "text": "s_c catches a great w_mp_a_s, and two w_tp_l_p! But {PRONOUN/s_c/poss} siblings come up empty pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument.",
+                "text": "s_c catches a great w_mp_a_s, and two w_tp_dl_p! But {PRONOUN/s_c/poss} siblings come up empty pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["HUNTER,0"],
@@ -317,7 +317,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "Yeah, it's a relatively okay hunt, with a couple w_tp_a_p and a dirty w_tp_l_s. But what app1 is actually going to remember about today is that app2 thinks that {PRONOUN/app2/poss} mentor and app3's would make a cute couple!",
+                "text": "Yeah, it's a relatively okay hunt, with a couple w_tp_a_p and a dirty w_tp_dl_s. But what app1 is actually going to remember about today is that app2 thinks that {PRONOUN/app2/poss} mentor and app3's would make a cute couple!",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["small"],
@@ -349,7 +349,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Together they manage a grand haul of one w_tp_l_s, and not even a very big w_tp_l_s at that. They have a lot more to learn before they'll all be ready to take on the responsibility of providing for c_n.",
+                "text": "Together they manage a grand haul of one w_tp_dl_s, and not even a very big w_tp_dl_s at that. They have a lot more to learn before they'll all be ready to take on the responsibility of providing for c_n.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -376,7 +376,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "app1 thinks app2's w_tp_l_s looks infinitely more delicous than {PRONOUN/app1/poss} own contributions of two w_tp_a_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back w_tp_a_p than the w_mp_a_s {PRONOUN/app3/subject} caught.",
+                "text": "app1 thinks app2's w_tp_dl_s looks infinitely more delicous than {PRONOUN/app1/poss} own contributions of two w_tp_a_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back w_tp_a_p than the w_mp_a_s {PRONOUN/app3/subject} caught.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["small"],
@@ -450,7 +450,7 @@
                 ]
             },
             {
-                "text": "s_c catches a great w_mp_a_s, and two w_tp_l_p! But {PRONOUN/s_c/poss} siblings come up empty pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument.",
+                "text": "s_c catches a great w_mp_a_s, and two w_tp_dl_p! But {PRONOUN/s_c/poss} siblings come up empty pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["HUNTER,0"],
@@ -525,7 +525,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "Yeah, it's a relatively okay hunt, with a couple w_tp_a_p and a dirty w_tp_l_s. But what app1 is actually going to remember about today is that app2 thinks that {PRONOUN/app2/poss} mentor and app3's would make a cute couple!",
+                "text": "Yeah, it's a relatively okay hunt, with a couple w_tp_a_p and a dirty w_tp_dl_s. But what app1 is actually going to remember about today is that app2 thinks that {PRONOUN/app2/poss} mentor and app3's would make a cute couple!",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["small"],
@@ -557,7 +557,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Together they manage a grand haul of one w_tp_l_s, and not even a very big w_tp_l_s at that. They have a lot more to learn before they'll all be ready to take on the responsibility of providing for c_n.",
+                "text": "Together they manage a grand haul of one w_tp_dl_s, and not even a very big w_tp_dl_s at that. They have a lot more to learn before they'll all be ready to take on the responsibility of providing for c_n.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -584,7 +584,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "app1 thinks app2's w_tp_l_s looks infinitely more delicous than {PRONOUN/app1/poss} own contributions of two w_tp_a_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back w_tp_a_p than the w_mp_a_s {PRONOUN/app3/subject} caught.",
+                "text": "app1 thinks app2's w_tp_dl_s looks infinitely more delicous than {PRONOUN/app1/poss} own contributions of two w_tp_a_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back w_tp_a_p than the w_mp_a_s {PRONOUN/app3/subject} caught.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["small"],
@@ -658,7 +658,7 @@
                 ]
             },
             {
-                "text": "s_c catches a great w_mp_a_s, and two w_tp_l_p! But {PRONOUN/s_c/poss} siblings come up empty pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument.",
+                "text": "s_c catches a great w_mp_a_s, and two w_tp_dl_p! But {PRONOUN/s_c/poss} siblings come up empty pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["HUNTER,0"],
@@ -733,7 +733,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "Yeah, it's a relatively okay hunt, with a couple w_tp_a_p and a dirty w_tp_l_s. But what app1 is actually going to remember about today is that app2 thinks that {PRONOUN/app2/poss} mentor and app3's would make a cute couple!",
+                "text": "Yeah, it's a relatively okay hunt, with a couple w_tp_a_p and a dirty w_tp_dl_s. But what app1 is actually going to remember about today is that app2 thinks that {PRONOUN/app2/poss} mentor and app3's would make a cute couple!",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["small"],
@@ -765,7 +765,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Together they manage a grand haul of one w_tp_l_s, and not even a very big w_tp_l_s at that. They have a lot more to learn before they'll all be ready to take on the responsibility of providing for c_n.",
+                "text": "Together they manage a grand haul of one w_tp_dl_s, and not even a very big w_tp_dl_s at that. They have a lot more to learn before they'll all be ready to take on the responsibility of providing for c_n.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -792,7 +792,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "app1 thinks app2's w_tp_l_s looks infinitely more delicous than {PRONOUN/app1/poss} own contributions of two w_tp_a_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back w_tp_a_p than the w_mp_a_s {PRONOUN/app3/subject} caught.",
+                "text": "app1 thinks app2's w_tp_dl_s looks infinitely more delicous than {PRONOUN/app1/poss} own contributions of two w_tp_a_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back w_tp_a_p than the w_mp_a_s {PRONOUN/app3/subject} caught.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["small"],
@@ -865,7 +865,7 @@
                 ]
             },
             {
-                "text": "s_c catches a great w_mp_a_s, and two w_tp_l_p! But {PRONOUN/s_c/poss} siblings come up empty pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument.",
+                "text": "s_c catches a great w_mp_a_s, and two w_tp_dl_p! But {PRONOUN/s_c/poss} siblings come up empty pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["HUNTER,0"],
@@ -939,7 +939,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "Yeah, it's a relatively okay hunt, with a couple w_tp_a_p and a dirty w_tp_l_s. But what app1 is actually going to remember about today is that app2 thinks that {PRONOUN/app2/poss} mentor and app3's would make a cute couple!",
+                "text": "Yeah, it's a relatively okay hunt, with a couple w_tp_a_p and a dirty w_tp_dl_s. But what app1 is actually going to remember about today is that app2 thinks that {PRONOUN/app2/poss} mentor and app3's would make a cute couple!",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["small"],
@@ -971,7 +971,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Together they manage a grand haul of one w_tp_l_s, and not even a very big w_tp_l_s at that. They have a lot more to learn before they'll all be ready to take on the responsibility of providing for c_n.",
+                "text": "Together they manage a grand haul of one w_tp_dl_s, and not even a very big w_tp_dl_s at that. They have a lot more to learn before they'll all be ready to take on the responsibility of providing for c_n.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -997,7 +997,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "app1 thinks app2's w_tp_l_s looks infinitely more delicous than {PRONOUN/app1/poss} own contributions of two w_tp_a_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back w_tp_a_p than the w_mp_a_s {PRONOUN/app3/subject} caught.",
+                "text": "app1 thinks app2's w_tp_dl_s looks infinitely more delicous than {PRONOUN/app1/poss} own contributions of two w_tp_a_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back w_tp_a_p than the w_mp_a_s {PRONOUN/app3/subject} caught.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["small"],
@@ -1057,7 +1057,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "app1 collects two w_tp_l_p, and watches p_l take down a w_mp_a_s in a astonishing pounce. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's w_tp_l_p, making app1 grimace at what's got to be fake praise.",
+                "text": "app1 collects two w_tp_dl_p, and watches p_l take down a w_mp_a_s in a astonishing pounce. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's w_tp_dl_p, making app1 grimace at what's got to be fake praise.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"],
@@ -1190,7 +1190,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "Taking down a w_mp_l_s all by {PRONOUN/app1/self}, app1 feels twice {PRONOUN/app1/poss} actual size showing it to p_l.",
+                "text": "Taking down a w_mp_dl_s all by {PRONOUN/app1/self}, app1 feels twice {PRONOUN/app1/poss} actual size showing it to p_l.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"],
@@ -1205,7 +1205,7 @@
                 ]
             },
             {
-                "text": "s_c, so physically strong and impressive, shows app1 exactly how to pull off one of {PRONOUN/s_c/poss} moves, and app1 trots back to camp with a w_mp_l_s to prove it!",
+                "text": "s_c, so physically strong and impressive, shows app1 exactly how to pull off one of {PRONOUN/s_c/poss} moves, and app1 trots back to camp with a w_mp_dl_s to prove it!",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
@@ -1261,7 +1261,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "app1 collects two w_tp_l_p, and watches p_l take down a w_mp_a_s in a astonishing pounce and the rest of {PRONOUN/app1/poss} older siblings bring down two w_mp_l_p. {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's w_tp_l_p, making app1 grimace at what's got to be fake praise.",
+                "text": "app1 collects two w_tp_dl_p, and watches p_l take down a w_mp_a_s in a astonishing pounce and the rest of {PRONOUN/app1/poss} older siblings bring down two w_mp_dl_p. {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's w_tp_dl_p, making app1 grimace at what's got to be fake praise.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["medium"],
@@ -1323,7 +1323,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "Taking down a w_mp_l_s all by {PRONOUN/app1/self}, app1 feels twice {PRONOUN/app1/poss} actual size showing it to {PRONOUN/app1/poss} older, fully named warrior siblings.",
+                "text": "Taking down a w_mp_dl_s all by {PRONOUN/app1/self}, app1 feels twice {PRONOUN/app1/poss} actual size showing it to {PRONOUN/app1/poss} older, fully named warrior siblings.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["medium"],
@@ -1338,7 +1338,7 @@
                 ]
             },
             {
-                "text": "s_c, so physically strong and impressive, shows app1 exactly how to pull off one of {PRONOUN/s_c/poss} moves, and app1 trots back to camp with a w_mp_l_s to prove it!",
+                "text": "s_c, so physically strong and impressive, shows app1 exactly how to pull off one of {PRONOUN/s_c/poss} moves, and app1 trots back to camp with a w_mp_dl_s to prove it!",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
@@ -1488,7 +1488,7 @@
                 ]
             },
             {
-                "text": "There's just something nice about hanging out with another warrior who'll always be there for {PRONOUN/r_c/object}, regardless of their similarities and differences. And they also bring back a good sized w_mp_a_s with some w_tp_l_p on the side for the fresh-kill pile.",
+                "text": "There's just something nice about hanging out with another warrior who'll always be there for {PRONOUN/r_c/object}, regardless of their similarities and differences. And they also bring back a good sized w_mp_a_s with some w_tp_dl_p on the side for the fresh-kill pile.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"],
@@ -1737,7 +1737,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "Together, they collect an old w_mp_l_s and two w_tp_l_p. It should be a great patrol, returning with so much prey - but r_c is acting obnoxious and {PRONOUN/r_c/poss} sibling has little time or patience for it.",
+                "text": "Together, they collect an old w_mp_dl_s and two w_tp_dl_p. It should be a great patrol, returning with so much prey - but r_c is acting obnoxious and {PRONOUN/r_c/poss} sibling has little time or patience for it.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"],
@@ -1904,7 +1904,7 @@
                 ]
             },
             {
-                "text": "There's just something nice about hanging out with other warriors who'll always be there for {PRONOUN/r_c/object}, regardless of their similarities and differences. And they also bring back a good sized w_mp_a_s with some w_tp_l_p on the side for the fresh-kill pile.",
+                "text": "There's just something nice about hanging out with other warriors who'll always be there for {PRONOUN/r_c/object}, regardless of their similarities and differences. And they also bring back a good sized w_mp_a_s with some w_tp_dl_p on the side for the fresh-kill pile.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"],
@@ -1992,7 +1992,7 @@
                 ]
             },
             {
-                "text": "It's been a while since they've been on a patrol alone together, and after they catch a couple w_tp_l_p and a w_mp_l_s for the fresh-kill pile r_c spends a bit just chasing their siblings along the coast, batting at each other in a moment of silliness.",
+                "text": "It's been a while since they've been on a patrol alone together, and after they catch a couple w_tp_dl_p and a w_mp_dl_s for the fresh-kill pile r_c spends a bit just chasing their siblings along the coast, batting at each other in a moment of silliness.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"],
@@ -2153,7 +2153,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "Together, they collect an old w_mp_l_s and four w_tp_l_p. It should be a great patrol, returning with decent prey - but r_c is acting obnoxious and {PRONOUN/r_c/poss} siblings have little time or patience for it.",
+                "text": "Together, they collect an old w_mp_dl_s and four w_tp_dl_p. It should be a great patrol, returning with decent prey - but r_c is acting obnoxious and {PRONOUN/r_c/poss} siblings have little time or patience for it.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"],

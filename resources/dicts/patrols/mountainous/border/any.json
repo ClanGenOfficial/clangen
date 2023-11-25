@@ -461,7 +461,12 @@
           "cats": ["patrol"],
           "injuries": ["running nose", "water in their lungs", "shivering", "minor_injury", "blunt_force_injury"]
         }
-      ]
+      ],
+      "history_text": {
+        "scar": "m_c was scarred from the injuries obtained by trying to cross a dangerous river.",
+        "reg_death": "This cat died from injuries obtained by trying to cross a dangerous river.",
+        "lead_death": "died from injuries obtained by trying to cross a dangerous river"
+      }
     },
     {
       "text": "The patrol begins to cross with s_c trailing nervously behind. Just as the patrol is almost clear, s_c notices a swell in the river rushing towards the patrol. {PRONOUN/s_c/subject/CAP} almost let out a warning yowl, but {PRONOUN/s_c/subject} {VERB/s_c/hesitate/hesitates}, unsure if it's really rushing water. Unfortunately this costs the patrol the few seconds they had to react and the water crashes them against the river stones.",
@@ -491,7 +496,12 @@
           "cats": ["patrol"],
           "injuries": ["running nose", "water in their lungs", "shivering", "minor_injury", "blunt_force_injury"]
         }
-      ]
+      ],
+      "history_text": {
+        "scar": "m_c was scarred from the injuries obtained by trying to cross a dangerous river.",
+        "reg_death": "This cat died from injuries obtained by trying to cross a dangerous river.",
+        "lead_death": "died from injuries obtained by trying to cross a dangerous river"
+      }
     }
   ]
 },
