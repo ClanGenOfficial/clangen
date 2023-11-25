@@ -98,8 +98,8 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l instructs app1 to scent the air, and nods in approval when app1 says {PRONOUN/app1/subject} smell squirrel. Early newleaf squirrels are always a good target - p_l softly murmurs tips to app1, and asks what {PRONOUN/app1/subject} want to do.",
-        "decline_text": "app1 looks apprehensive, and quietly says {PRONOUN/app1/subject} want to look for something easier.",
+        "intro_text": "p_l instructs app1 to scent the air, and nods in approval when app1 says {PRONOUN/app1/subject} smell squirrel. Early newleaf squirrels are always a good target - p_l softly murmurs tips to app1, and asks what {PRONOUN/app1/subject} {VERB/app1/want/wants} to do.",
+        "decline_text": "app1 looks apprehensive, and quietly says {PRONOUN/app1/subject} {VERB/app1/want/wants} to look for something easier.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -4015,7 +4015,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Step one, find nests, has conclusively failed. At least {PRONOUN/app1/subject}{VERB/app1/'re/'s} alone though - app1 trips over a branch on the forest floor as {PRONOUN/app1/subject} walk with {PRONOUN/app1/poss} eyes pinned skyward, and {PRONOUN/app1/subject}{VERB/app1/'re/'s} grateful no one was here to see it.",
+                "text": "Step one, find nests, has conclusively failed. At least {PRONOUN/app1/subject}{VERB/app1/'re/'s} alone though - app1 trips over a branch on the forest floor as {PRONOUN/app1/subject} {VERB/app1/walk/walks} with {PRONOUN/app1/poss} eyes pinned skyward, and {PRONOUN/app1/subject}{VERB/app1/'re/'s} grateful no one was here to see it.",
                 "exp": 0,
                 "weight": 20
             },
