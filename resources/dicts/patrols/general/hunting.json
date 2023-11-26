@@ -2986,6 +2986,575 @@
         }
     ]
 },
+{
+    "patrol_id": "gen_hunt_verysmallprey_balancing_appgrouphunt1",
+    "biome": ["Any"],
+    "season": ["Any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 2,
+    "max_cats": 6,
+    "min_max_status": {
+        "apprentice": [2, 6]
+    },
+    "weight": 1,
+    "intro_text": "A hunting patrol of just apprentices! This is going to go great!",
+    "decline_text": "It's not a great day for hunting, p_l decides, and calls it off before {PRONOUN/p_l/subject} even {VERB/p_l/start/starts}.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "It doesn't!",
+            "exp": 20,
+            "weight": 10,
+            "prey": ["very_small"]
+        },
+        {
+            "text": "Okay, so, maybe <i>someone</i> should've brought their mentor. The apprentices argue about who should've.",
+            "exp": 10,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["dislike"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["very_small"]
+        },
+        {
+            "text": "The only apprentice to catch anything is s_c. Who makes sure everyone else knows it. Extensively.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["any"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["dislike", "jealous"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["very_small"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "The patrol heads out, finding an excellent hunting ground! A hunting ground on the wrong side of the border! They quickly all decide that no one caught anything, <i>definitely</i> not anything on any other Clan's territory, and swear each other to secrecy.",
+            "exp": 0,
+            "weight": 20,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["trust", "comfort"],
+                    "amount": 10
+                }
+            ]
+        },
+        {
+            "text": "app1 had no idea they had so much in common with app2, the apprentices exchanging complaints about training and gossip. It's a wonderful time - a wonderful time where they completely neglect to do any hunting.",
+            "exp": 0,
+            "weight": 20,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic", "comfort"],
+                    "amount": 5
+                }
+            ]
+        },
+        {
+            "text": "Not only does app1 find a particularly vicious prey animal who tears up their ear, but in the process, app1 squawks with surprise and lets go. Well. Thus runs off the only prey they've all managed to find. Fox dung.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["app1"],
+                  "injuries": ["torn ear"],
+                  "scars": ["RIGHTEAR"],
+                  "no_results": false
+             
+                }
+              ],
+              "history_text": {
+                "scar": "m_c got a bit torn up on a solo hunt as an apprentice.",
+                "reg_death": "m_c died after a small injury progressed to something worse.",
+                "lead_death": "died after a small injury progressed to something worse"
+              }
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_smallprey_balancing_appgrouphunt1",
+    "biome": ["Any"],
+    "season": ["Any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 2,
+    "max_cats": 6,
+    "min_max_status": {
+        "apprentice": [2, 6]
+    },
+    "weight": 1,
+    "intro_text": "Maybe they <i>should</i> bring along one of their mentors, but they don't <i>want</i> to. There's no reason to always need an adult around, they aren't <i>kits</i>.",
+    "decline_text": "dep_name spots the group of apprentices definitely-not-sneaking-out and orders them back to camp.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "The apprentices demonstrate their independence by independently finding a good hunting ground, independently taking down prey, and independently getting lost on the way home. But they do independently get themselves unlost!",
+            "exp": 20,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["small"]
+        },
+        {
+            "text": "Okay, so, maybe <i>someone</i> should've brought their mentor. The apprentices argue about who should've.",
+            "exp": 10,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["dislike"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["small"]
+        },
+        {
+            "text": "Who needs a warrior to tell them what to do when they have s_c, who will tell them what to do just as extensively and annoyingly. Even more irritatingly, s_c gets the most prey by far.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["any"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect", "jealous"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["small"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "The patrol heads out, finding an excellent hunting ground! A hunting ground on the wrong side of the border! They quickly all decide that no one caught anything, <i>definitely</i> not anything on any other Clan's territory, and swear each other to secrecy.",
+            "exp": 0,
+            "weight": 20,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["trust", "comfort"],
+                    "amount": 10
+                }
+            ]
+        },
+        {
+            "text": "app1 had no idea they had so much in common with app2, the apprentices exchanging complaints about training and gossip. It's a wonderful time - a wonderful time where they completely neglect to do any hunting.",
+            "exp": 0,
+            "weight": 20,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic", "comfort"],
+                    "amount": 5
+                }
+            ]
+        },
+        {
+            "text": "Not only does app1 find a particularly vicious prey animal who tears up their ear, but in the process, app1 squawks with surprise and lets go. Well. Thus runs off the only prey they've all managed to find. Fox dung.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["app1"],
+                  "injuries": ["torn ear"],
+                  "scars": ["RIGHTEAR"],
+                  "no_results": false
+             
+                }
+              ],
+              "history_text": {
+                "scar": "m_c got a bit torn up on a solo hunt as an apprentice.",
+                "reg_death": "m_c died after a small injury progressed to something worse.",
+                "lead_death": "died after a small injury progressed to something worse"
+              }
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_mediumprey_balancing_appgrouphunt1",
+    "biome": ["Any"],
+    "season": ["Any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 2,
+    "max_cats": 6,
+    "min_max_status": {
+        "apprentice": [2, 6]
+    },
+    "weight": 1,
+    "intro_text": "On a dare, the apprentices sneak out in the middle of the night. They're going to prove who's the best hunter!",
+    "decline_text": "dep_name spots the group of apprentices definitely-not-sneaking-out and orders them back to camp.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "The world shimmers in a shadowy palette, full of new sounds, the familiar make novel and thrilling by the cloack of darkness. The teenagers tear around c_n's territory, fishing prey from unexpected places, shivering with pride at their own daring - and not noticing the camp guard who silently stalks the group, keeping them safe.",
+            "exp": 20,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic", "respect", "comfort"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["medium"]
+        },
+        {
+            "text": "Their competition is forgotten in the thrill of adventure, c_n's territory at night a new and foreign land. The next morning, the apprentice smirk as they watch the adults puzzle over the extra prey in the fresh-kill pile, a secret shared in smug smiles and lashing tails.",
+            "exp": 20,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic", "respect", "trust"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["medium"]
+        },
+        {
+            "text": "s_c wins the competition, easily. But they're magnanimous in victory, managing to not completely look like a buttface. Maybe that's the more impressive achivement.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["any"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect", "jealous"],
+                    "amount": 5
+                },
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": true,
+                    "values": ["platonic"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["medium"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "The night is dark and not full of prey. Even worse, app1 gets scared and starts calling for their mentor. They're far enough out of camp to not be heard, and app1 to shuts up quickly, but what should've been a fun cool adventure is ruined.",
+            "exp": 0,
+            "weight": 20,
+            "relationships": [
+                {
+                    "cats_to": ["app1"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["dislike"],
+                    "amount": 5
+                }
+            ]
+        },
+        {
+            "text": "Their competition is forgotten in the thrill of adventure, c_n's territory at night a new and foreign land. Sure, they don't get any hunting done - but that doesn't seem to matter.",
+            "exp": 20,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic", "comfort"],
+                    "amount": 5
+                }
+            ]
+        },
+        {
+            "text": "Not only does app1 find a particularly vicious prey animal who tears up their ear, but in the process, app1 squawks with surprise and lets go. Well. Thus runs off the only prey they've all managed to find. Fox dung.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["app1"],
+                  "injuries": ["torn ear"],
+                  "scars": ["RIGHTEAR"],
+                  "no_results": false
+             
+                }
+              ],
+              "history_text": {
+                "scar": "m_c got a bit torn up on a solo hunt as an apprentice.",
+                "reg_death": "m_c died after a small injury progressed to something worse.",
+                "lead_death": "died after a small injury progressed to something worse"
+              }
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_largeprey_balancing_appgrouphunt1",
+    "biome": ["Any"],
+    "season": ["Any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 2,
+    "max_cats": 6,
+    "min_max_status": {
+        "apprentice": [2, 6]
+    },
+    "weight": 1,
+    "intro_text": "Sometimes, it's a lot easier to work on their hunting techniques without a warrior around. Not that there's anything wrong with the warriors! Just... sometimes there less pressure, hunting as an apprentice-only patrol.",
+    "decline_text": "dep_name spots the group of apprentices definitely-not-sneaking-out and orders them back to camp.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "The lack of pressure lets them try things, fail, and try again, not worrying too hard about the results. And that experimentation, it nets them some <i>really good results</i>.",
+            "exp": 20,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic", "respect", "comfort"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["large"]
+        },
+        {
+            "text": "They try, and try, and try again, without any success. It's only when they all give up on their independant attempts and combine to drive prey out as a team that the apprentices see results - and learn an important lesson in the process.",
+            "exp": 20,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic", "respect", "trust"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["large"]
+        },
+        {
+            "text": "s_c, who actually really likes hunting, is open about offering {PRONOUN/app1/poss} help.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["any"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect", "trust"],
+                    "amount": 5
+                },
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": true,
+                    "values": ["platonic"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["large"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "But then sometimes, they realise it's difficult to learn if the only cats to learn from <i>also</i> don't know what they're doing.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "Maybe they don't manage to catch anything, but just getting the chance to try without any pressure is pretty good on it's own, and only an apprentice really understands the struggles of another apprentice.",
+            "exp": 20,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic", "comfort"],
+                    "amount": 5
+                }
+            ]
+        },
+        {
+            "text": "Not only does app1 find a particularly vicious prey animal who tears up their ear, but in the process, app1 squawks with surprise and lets go. Well. Thus runs off the only prey they've all managed to find. Fox dung.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["app1"],
+                  "injuries": ["torn ear"],
+                  "scars": ["RIGHTEAR"],
+                  "no_results": false
+             
+                }
+              ],
+              "history_text": {
+                "scar": "m_c got a bit torn up on a solo hunt as an apprentice.",
+                "reg_death": "m_c died after a small injury progressed to something worse.",
+                "lead_death": "died after a small injury progressed to something worse"
+              }
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_hugeprey_balancing_appgrouphunt1",
+    "biome": ["Any"],
+    "season": ["Any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 2,
+    "max_cats": 6,
+    "min_max_status": {
+        "apprentice": [2, 6]
+    },
+    "weight": 1,
+    "intro_text": "A hunting patrol of just apprentices! This is going to go great!",
+    "decline_text": "dep_name spots the group of apprentices definitely-not-sneaking-out and orders them back to camp.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "Determined, the apprentices work hard and long, coordinating with each other to drive prey to each other's claws. Maybe it'll take twice as long without a warrior to guide them - but they're still going to do it, all by themselves!",
+            "exp": 20,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic", "respect", "comfort"],
+                    "amount": 10
+                }
+            ],
+            "prey": ["huge"]
+        },
+        {
+            "text": "They try, and try, and try again, without any success. It's only when they all give up on their independant attempts and combine to drive prey out as a team that the apprentices see results - and learn an important lesson in the process.",
+            "exp": 20,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic", "respect", "trust"],
+                    "amount": 10
+                }
+            ],
+            "prey": ["huge"]
+        },
+        {
+            "text": "s_c, swearing the patrol to secrecy, leads them to their absolute favourite hunting spot, where the apprentices catch so much prey they need two separate trips to carry it all home.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["any"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect", "trust"],
+                    "amount": 5
+                },
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": true,
+                    "values": ["platonic"],
+                    "amount": 10
+                }
+            ],
+            "prey": ["huge"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "They realise it's difficult to learn if the only cats to learn from <i>also</i> don't know what they're doing.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "Maybe they don't manage to catch anything, but just getting the chance to try without any pressure is pretty good on it's own, and only an apprentice really understands the struggles of another apprentice.",
+            "exp": 20,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic", "comfort"],
+                    "amount": 5
+                }
+            ]
+        },
+        {
+            "text": "Not only does app1 find a particularly vicious prey animal who tears up their ear, but in the process, app1 squawks with surprise and lets go. Well. Thus runs off the only prey they've all managed to find. Fox dung.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["app1"],
+                  "injuries": ["torn ear"],
+                  "scars": ["RIGHTEAR"],
+                  "no_results": false
+             
+                }
+              ],
+              "history_text": {
+                "scar": "m_c got a bit torn up on a solo hunt as an apprentice.",
+                "reg_death": "m_c died after a small injury progressed to something worse.",
+                "lead_death": "died after a small injury progressed to something worse"
+              }
+        }
+    ]
+},
   {
     "patrol_id": "gen_hunt_kittylion",
     "biome": ["Any"],
