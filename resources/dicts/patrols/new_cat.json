@@ -479,7 +479,7 @@
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
-                    ["age:{senior}", "backstory:{refugee6}"]
+                    ["age:senior", "backstory:refugee6"]
                 ],
                 "relationships": [
                     {
@@ -505,7 +505,7 @@
                 "stat_skill": ["LORE,1", "STORY,1"],
                 "can_have_stat": ["any"],
                 "new_cat": [
-                    ["age:{senior}", "backstory:refugee6"]
+                    ["age:senior", "backstory:refugee6"]
                 ],
                 "relationships": [
                     {
@@ -531,7 +531,7 @@
                 "new_cat": [
                     ["female", "loner", "age:has_kits", "meeting"],
                     ["litter", "parent:0", "status:newborn", "backstory:abandoned2"],
-                    ["age:{newborn}", "loner", "meeting", "parent:0"]
+                    ["age:newborn", "loner", "meeting", "parent:0"]
                 ],
                 "relationships": [
                     {
@@ -574,7 +574,7 @@
                 "weight": 20,
                 "outsider_rep": -4,
                 "new_cat": [
-                    ["age:{senior}", "backstory:refugee6", "meeting", "dead"]
+                    ["age:senior", "backstory:refugee6", "meeting", "dead"]
                 ]
             }
         ],
@@ -585,7 +585,7 @@
                 "weight": 20,
                 "outsider_rep": -2,
                 "new_cat": [
-                    ["age:{senior}", "backstory:refugee6", "meeting", "dead"]
+                    ["age:senior", "backstory:refugee6", "meeting", "dead"]
                 ]
             }
         ]
