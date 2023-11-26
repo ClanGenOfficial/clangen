@@ -2547,6 +2547,445 @@
         }
     ]
 },
+{
+    "patrol_id": "gen_hunt_verysmallprey_balancing_largewarriorhunt1",
+    "biome": ["Any"],
+    "season": ["Any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 4,
+    "max_cats": 6,
+    "min_max_status": {
+        "normal adult": [1, 6]
+    },
+    "weight": 1,
+    "intro_text": "A large hunting patrol is formed and sent out to see what they can find.",
+    "decline_text": "The patrol can't agree on a hunting ground, and breaks up into smaller groups instead.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "Worryingly, the answer is 'very little'. The patrol shares uneasy glances as they take what few prey they've managed to acquire back to camp.",
+            "exp": 30,
+            "weight": 10,
+            "prey": ["very_small"]
+        },
+        {
+            "text": "They don't bring back nothing. But they don't bring back a lot, either. No one feels any kind of accomplishment or pride, not with this barely qualifying as a success, if it does at all.",
+            "exp": 30,
+            "weight": 10,
+            "prey": ["very_small"]
+        },
+        {
+            "text": "With so many hunters out together, you'd think they'd manage to find more. But no cat can control the luck of the hunt, not even a skilled hunter like s_c.",
+            "exp": 30,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["any"],
+            "prey": ["very_small"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "They find nothing. Actually nothing. This isn't just bad luck - this is something spooking the local prey away from this area of the territory, and it needs to be reported back to camp straight away.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "Even in the worst conditions, there's normally <i>something</i> to hunt. But none of the cats manages even a single kill, and tails are tucked sadly when the patrol pads back into camp.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "p_l choose a completely stupid hunting spot to lead them all to, and by the time the patrol gives up and heads back to camp, more than one cat is throwing surly glares in {PRONOUN/p_l/poss} direction.",
+            "exp": 0,
+            "weight": 20,
+              "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": -10
+                },
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["dislike"],
+                    "amount": 5
+                }
+            ]
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_smallprey_balancing_largewarriorhunt1",
+    "biome": ["Any"],
+    "season": ["Any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 4,
+    "max_cats": 6,
+    "min_max_status": {
+        "normal adult": [1, 6]
+    },
+    "weight": 1,
+    "intro_text": "Honestly, it looks like a scat day to try to hunt, so the cats team up into a bigger hunting patrol, hoping that will help.",
+    "decline_text": "The patrol can't agree on a hunting ground, and breaks up into smaller groups instead.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "Does it somehow make the conditions ideal? No. Does having their Clanmates there to coordinate with absolutely net them more prey than they'd have been able to do in smaller patrols? Yes.",
+            "exp": 30,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["trust"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["small"]
+        },
+        {
+            "text": "It feels like their teamwork didn't do again, with each cat not bringing home much prey. But collectively, the patrol still had some success, and if it could've been better, well, it could've also been much worse.",
+            "exp": 30,
+            "weight": 10,
+            "prey": ["small"]
+        },
+        {
+            "text": "Talent can't make up for a dung day. Teamwork can't either. But together? It sort of makes up for it. s_c would be better pleased if {PRONOUN/s_c/subject}'d had more success, but that's life sometimes, not every hunt can be fruitful.",
+            "exp": 30,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["any"],
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["s_c"],
+                    "mutual": false,
+                    "values": ["trust"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["small"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "They find nothing. Actually nothing. This isn't just bad luck - this is something spooking the local prey away from this area of the territory, and it needs to be reported back to camp straight away.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "Even in the worst conditions, there's normally <i>something</i> to hunt. But none of the cats manages even a single kill, and tails are tucked sadly when the patrol pads back into camp.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "p_l choose a completely stupid hunting spot to lead them all to, and by the time the patrol gives up and heads back to camp, more than one cat is throwing surly glares in {PRONOUN/p_l/poss} direction.",
+            "exp": 0,
+            "weight": 20,
+              "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": -10
+                },
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["dislike"],
+                    "amount": 5
+                }
+            ]
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_mediumprey_balancing_largewarriorhunt1",
+    "biome": ["Any"],
+    "season": ["Any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 4,
+    "max_cats": 6,
+    "min_max_status": {
+        "normal adult": [1, 6]
+    },
+    "weight": 1,
+    "intro_text": "The cats chat as they head out to hunt.",
+    "decline_text": "The patrol can't agree on a hunting ground, and breaks up into smaller groups instead.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "It's nice, catching up with Clanmates they might not see everyday as they all hunt. Nothing earth-shattering. Just nice.",
+            "exp": 30,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["medium"]
+        },
+        {
+            "text": "Sometimes, the nicest thing is to have a completely unremarkable hunt.",
+            "exp": 30,
+            "weight": 10,
+            "prey": ["medium"]
+        },
+        {
+            "text": "s_c is complimented on {PRONOUN/s_c/poss} hunting talents. {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} humble about it, but that doesn't make it less true.",
+            "exp": 30,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["any"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["medium"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "They find nothing. Actually nothing. This isn't just bad luck - this is something spooking the local prey away from this area of the territory, and it needs to be reported back to camp straight away.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "The area the patrol chooses has been the subject of several recent hunts, and these hunting grounds are now sparsely populated with fearful, cautious prey. The patrol doesn't have any success.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "p_l choose a completely stupid hunting spot to lead them all to, and by the time the patrol gives up and heads back to camp, more than one cat is throwing surly glares in {PRONOUN/p_l/poss} direction.",
+            "exp": 0,
+            "weight": 20,
+              "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": -10
+                },
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["dislike"],
+                    "amount": 5
+                }
+            ]
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_largeprey_balancing_largewarriorhunt1",
+    "biome": ["Any"],
+    "season": ["Any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 4,
+    "max_cats": 6,
+    "min_max_status": {
+        "normal adult": [1, 6]
+    },
+    "weight": 1,
+    "intro_text": "The bigger the hunting party, the bigger the expectations for what they'll bring home to the fresh-kill pile.",
+    "decline_text": "The patrol can't agree on a hunting ground, and breaks up into smaller groups instead.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "The patrol will more than satisfy those expectation with this haul of prey, and they bump shoulders companionably as they pad home.",
+            "exp": 30,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["large"]
+        },
+        {
+            "text": "They don't disappoint.",
+            "exp": 30,
+            "weight": 10,
+            "prey": ["large"]
+        },
+        {
+            "text": "s_c has a good idea that takes advantage of the number of cats in the patrol, one that nets them all a very successful haul of prey.",
+            "exp": 30,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["any"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["large"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "They find nothing. Actually nothing. This isn't just bad luck - this is something spooking the local prey away from this area of the territory, and it needs to be reported back to camp straight away.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "The area the patrol chooses has been the subject of several recent hunts, and these hunting grounds are now sparsely populated with fearful, cautious prey. The patrol doesn't have any success.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "p_l choose a completely stupid hunting spot to lead them all to, and by the time the patrol gives up and heads back to camp, more than one cat is throwing surly glares in {PRONOUN/p_l/poss} direction.",
+            "exp": 0,
+            "weight": 20,
+              "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": -10
+                },
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["dislike"],
+                    "amount": 5
+                }
+            ]
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_hugeprey_balancing_largewarriorhunt1",
+    "biome": ["Any"],
+    "season": ["Any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 4,
+    "max_cats": 6,
+    "min_max_status": {
+        "normal adult": [1, 6]
+    },
+    "weight": 1,
+    "intro_text": "There's a spring in their steps as the cats head out - today looks like a good day for hunting.",
+    "decline_text": "The patrol can't agree on a hunting ground, and breaks up into smaller groups instead.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "The hunting is easy and the company is good, and that spring is still just as present as the patrol heads back to camp, though perhaps the amount of prey they're all carrying makes it harder to see.",
+            "exp": 30,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["huge"]
+        },
+        {
+            "text": "The conditions don't disappoint - it's going to be tough carrying all their fresh-kill home, but that's the kind of problem the cats are happy to have.",
+            "exp": 30,
+            "weight": 10,
+            "prey": ["huge"]
+        },
+        {
+            "text": "Not only does s_c personally catch a terrifying amount of prey, but they offer up support to everyone else to do the same, and the patrol brings a truly awe-inspiring haul home.",
+            "exp": 30,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["any"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": 5
+                },
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": true,
+                    "values": ["platonic"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["huge"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "They find nothing. Actually nothing. This isn't just bad luck - this is something spooking the local prey away from this area of the territory, and it needs to be reported back to camp straight away.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "The area the patrol chooses has been the subject of several recent hunts, and these hunting grounds are now sparsely populated with fearful, cautious prey. The patrol doesn't have any success.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "p_l choose a completely stupid hunting spot to lead them all to, and by the time the patrol gives up and heads back to camp, more than one cat is throwing surly glares in {PRONOUN/p_l/poss} direction.",
+            "exp": 0,
+            "weight": 20,
+              "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": -10
+                },
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["dislike"],
+                    "amount": 5
+                }
+            ]
+        }
+    ]
+},
   {
     "patrol_id": "gen_hunt_kittylion",
     "biome": ["Any"],
