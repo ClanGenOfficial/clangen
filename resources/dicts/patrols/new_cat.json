@@ -475,7 +475,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trial they find an old kittypet, wheezing {PRONOUN/n_c/poss} Twoleg's name. p_l doesn't care if this kittypet wants {PRONOUN/n_c/poss} Twoleg - {PRONOUN/n_c/subject} {VERB/n_c/smell/smells} sick, and needs medicine cat attention.",
+                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trial they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. p_l doesn't care if this kittypet wants {PRONOUN/n_c:0/poss} Twoleg - {PRONOUN/n_c:0/subject} {VERB/n_c:0/smell/smells} sick, and needs medicine cat attention.",
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
@@ -499,7 +499,7 @@
                 ]
             },
             {
-                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trial they find an old kittypet, wheezing {PRONOUN/n_c/poss} Twoleg's name. s_c steps up, and tells the patrol they'll be taking this kittypet back to camp for healing. In Tigger's name. {PRONOUN/s_c/subject}'ll tell the story later.",
+                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trial they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. s_c steps up, and tells the patrol they'll be taking this kittypet back to camp for healing. In Tigger's name. {PRONOUN/s_c/subject}'ll tell the story later.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["LORE,1", "STORY,1"],
@@ -569,7 +569,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trial they find an old kittypet, wheezing {PRONOUN/n_c/poss} Twoleg's name. They try to drive the kittypet off - but {PRONOUN/n_c/poss} too weak, and the warriors too practised at unnecessarily strong battle moves.",
+                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trial they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. They try to drive the kittypet off - but {PRONOUN/n_c:0/poss} too weak, and the warriors too practised at unnecessarily strong battle moves.",
                 "exp": 0,
                 "weight": 20,
                 "outsider_rep": -4,
@@ -580,7 +580,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trial they find an old kittypet, wheezing {PRONOUN/n_c/poss} Twoleg's name. They drive the struggling kittypet off c_n territory, protecting the Clan from a source of sickness - no matter the cost.",
+                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trial they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. They drive the struggling kittypet off c_n territory, protecting the Clan from a source of sickness - no matter the cost.",
                 "exp": 10,
                 "weight": 20,
                 "outsider_rep": -2,
