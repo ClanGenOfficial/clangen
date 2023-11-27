@@ -9,21 +9,18 @@ TODO: Docs
 from random import choice, choices, randint, random, sample
 import re
 import pygame
-
-from scripts.cat.history import History
-from scripts.cat.names import names
-from scripts.cat.pelts import Pelt
-
 import ujson
 import logging
+from sys import exit as sys_exit
+from typing import Dict
+
 
 logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache
-
-from sys import exit as sys_exit
-
+from scripts.cat.history import History
+from scripts.cat.names import names
+from scripts.cat.pelts import Pelt
 from scripts.cat.sprites import sprites
-
 from scripts.game_structure.game_essentials import game, screen_x, screen_y
 
 
@@ -31,34 +28,34 @@ from scripts.game_structure.game_essentials import game, screen_x, screen_y
 #                              Counting Cats                                   #
 # ---------------------------------------------------------------------------- #
 
-def get_alive_clan_queens(cat_cls):
-    """
-    Returns a list with all cats with the 'status' queen.
-    """
-    queens = []
-    for inter_cat in cat_cls.all_cats.values():
-        if inter_cat.dead or inter_cat.outside:
-            continue
-        if str(inter_cat.status) != 'kitten' or inter_cat.parent1 is None:
-            continue
+def get_alive_clan_queens(living_cats):
+    living_kits = [cat for cat in living_cats if not (cat.dead or cat.outside) and cat.status in ["kitten", "newborn"]]
 
+    queen_dict = {}
+    for cat in living_kits.copy():
+        parents = cat.get_parents()
+        #Fetch parent object, only alive and not outside. 
+        parents = [cat.fetch_cat(i) for i in parents if cat.fetch_cat(i) and not(cat.fetch_cat(i).dead or cat.fetch_cat(i).outside)]
+        if not parents:
+            continue
         
-        alive_parents = [cat_cls.fetch_cat(i) for i in inter_cat.get_parents() if 
-                   isinstance(cat_cls.fetch_cat(i), cat_cls) and not 
-                   (cat_cls.fetch_cat(i).dead or cat_cls.fetch_cat(i).outside)]
-
-        if len(alive_parents) == 1:
-            queens.append(alive_parents[0])
-        elif len(alive_parents) == 2:
-            if alive_parents[0].gender == "female":
-                queens.append(alive_parents[0])
-            elif alive_parents[1].gender == "female":
-                queens.append(alive_parents[1])
+        if len(parents) == 1 or len(parents) > 2 or\
+            all(i.gender == "male" for i in parents) or\
+            parents[0].gender == "female":
+            if parents[0].ID in queen_dict:
+                queen_dict[parents[0].ID].append(cat)
+                living_kits.remove(cat)
             else:
-                queens.append(alive_parents[0])
-                
-    return queens
-
+                queen_dict[parents[0].ID] = [cat]
+                living_kits.remove(cat)
+        elif len(parents) == 2:
+            if parents[1].ID in queen_dict:
+                queen_dict[parents[1].ID].append(cat)
+                living_kits.remove(cat)
+            else:
+                queen_dict[parents[1].ID] = [cat]
+                living_kits.remove(cat)
+    return queen_dict, living_kits
 
 def get_alive_kits(Cat):
     """
@@ -225,7 +222,7 @@ def create_new_cat(Cat,
                    outside:bool=False,
                    parent1:str=None,
                    parent2:str=None
-	) -> list:
+    ) -> list:
     """
     This function creates new cats and then returns a list of those cats
     :param Cat: pass the Cat class
@@ -994,7 +991,10 @@ def event_text_adjust(Cat,
         text = text.replace("acc_singular", str(ACC_DISPLAY[cat.pelt.accessory]["singular"]))
 
     if other_cat:
-        cat_dict["r_c"] = (str(other_cat.name), choice(other_cat.pronouns))
+        if other_cat.pronouns:
+            cat_dict["r_c"] = (str(other_cat.name), choice(other_cat.pronouns))
+        else:
+            cat_dict["r_c"] = (str(other_cat.name))
 
     if new_cat:
         cat_dict["n_c_pre"] = (str(new_cat.name.prefix), None)

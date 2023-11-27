@@ -1227,6 +1227,23 @@
             }
         }
     },
+    "#clearing_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/clearing.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/clearing_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/clearing_hover.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/clearing.png"
+            }
+        }
+    },
     "#in_den_tab": {
         "prototype": "#image_button",
         "images": {
@@ -3005,6 +3022,23 @@
             }
         }
     },
+    "#destroy_accessory_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/destroy_accessory.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/destroy_accessory_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/destroy_accessory_hover.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/destroy_accessory_unavailable.png"
+            }
+        }
+    },
     "#exile_df_button": {
         "prototype": "#image_button",
         "images": {
@@ -3839,6 +3873,23 @@
             }
         }
     },
+	"#lakeside_tab": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/lakeside_camp.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/lakeside_camp_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/lakeside_camp_hover.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/lakeside_camp_unavailable.png"
+            }
+        }
+    },
     "#continue_button_small": {
         "prototype": "#image_button",
         "images": {
@@ -3853,6 +3904,176 @@
             },
             "disabled_image": {
                 "path": "resources/images/buttons/continue_small_unavailable.png"
+            }
+        }
+    },
+    "#freshkill_pile_empty": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/freshkillpile_empty.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/freshkillpile_empty.png"
+            },
+            "selected_image": {
+                "path": "resources/images/freshkillpile_empty.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/freshkillpile_empty.png"
+            }
+        }
+    },
+    "#freshkill_pile_verylow": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/freshkillpile_verylow.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/freshkillpile_verylow.png"
+            },
+            "selected_image": {
+                "path": "resources/images/freshkillpile_verylow.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/freshkillpile_verylow.png"
+            }
+        }
+    },
+    "#freshkill_pile_low": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/freshkillpile_low.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/freshkillpile_low.png"
+            },
+            "selected_image": {
+                "path": "resources/images/freshkillpile_low.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/freshkillpile_low.png"
+            }
+        }
+    },
+    "#freshkill_pile_average": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/freshkillpile_average.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/freshkillpile_average.png"
+            },
+            "selected_image": {
+                "path": "resources/images/freshkillpile_average.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/freshkillpile_average.png"
+            }
+        }
+    },
+    "#freshkill_pile_good": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/freshkillpile_good.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/freshkillpile_good.png"
+            },
+            "selected_image": {
+                "path": "resources/images/freshkillpile_good.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/freshkillpile_good.png"
+            }
+        }
+    },
+    "#freshkill_pile_full": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/freshkillpile_full.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/freshkillpile_full.png"
+            },
+            "selected_image": {
+                "path": "resources/images/freshkillpile_full.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/freshkillpile_full.png"
+            }
+        }
+    },
+    "#freshkill_hungry": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/freshkill_pile_hungry.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/freshkill_pile_hungry_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/freshkill_pile_hungry_select.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/freshkill_pile_hungry_select.png"
+            }
+        }
+    },
+    "#freshkill_satisfied": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/freshkill_pile_satisfied.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/freshkill_pile_satisfied_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/freshkill_pile_satisfied_select.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/freshkill_pile_satisfied_select.png"
+            }
+        }
+    },
+    "#tactic": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/freshkill_pile_tactic.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/freshkill_pile_tactic_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/freshkill_pile_tactic.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/freshkill_pile_tactic_select.png"
+            }
+        }
+    },
+    "#freshkill_feed": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/freshkill_pile_feed.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/freshkill_pile_feed_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/freshkill_pile_feed.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/freshkill_pile_feed_unavailable.png"
             }
         }
     }

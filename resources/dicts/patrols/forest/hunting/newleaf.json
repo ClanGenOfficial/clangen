@@ -98,8 +98,8 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l instructs app1 to scent the air, and nods in approval when app1 says {PRONOUN/app1/subject} smell squirrel. Early newleaf squirrels are always a good target - p_l softly murmurs tips to app1, and asks what {PRONOUN/app1/subject} want to do.",
-        "decline_text": "app1 looks apprehensive, and quietly says {PRONOUN/app1/subject} want to look for something easier.",
+        "intro_text": "p_l instructs app1 to scent the air, and nods in approval when app1 says {PRONOUN/app1/subject} smell squirrel. Early newleaf squirrels are always a good target - p_l softly murmurs tips to app1, and asks what {PRONOUN/app1/subject} {VERB/app1/want/wants} to do.",
+        "decline_text": "app1 looks apprehensive, and quietly says {PRONOUN/app1/subject} {VERB/app1/want/wants} to look for something easier.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -380,7 +380,7 @@
         "biome": ["forest"],
         "season": ["newleaf"],
         "types": ["hunting"],
-        "tags": ["disrespect", "large_prey3", "distrust"],
+        "tags": ["disrespect", "distrust"],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 6,
@@ -666,7 +666,7 @@
                 "weight": 20,
                 "stat_skill": ["HUNTER,2"],
                 "can_have_stat": ["r_c"],
-                "prey": ["large"],
+                "prey": ["huge"],
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -688,6 +688,7 @@
                     "troublesome",
                     "bloodthirsty"
                 ],
+                "prey": ["huge"],
                 "relationships": [
                     {
                         "cats_to": ["r_c"],
@@ -1147,7 +1148,7 @@
         "biome": ["forest"],
         "season": ["newleaf"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 3,
@@ -1284,7 +1285,7 @@
         "biome": ["forest"],
         "season": ["newleaf"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 4,
         "max_cats": 6,
@@ -1421,7 +1422,7 @@
         "biome": ["forest"],
         "season": ["newleaf"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
         "max_cats": 1,
@@ -1583,7 +1584,7 @@
         "biome": ["forest"],
         "season": ["newleaf"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 3,
@@ -1713,7 +1714,7 @@
         "biome": ["forest"],
         "season": ["newleaf"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 4,
         "max_cats": 6,
@@ -1819,7 +1820,7 @@
         "biome": ["forest"],
         "season": ["newleaf"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
         "max_cats": 1,
@@ -3633,7 +3634,7 @@
         "biome": ["forest"],
         "season": ["newleaf"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
         "max_cats": 1,
@@ -3690,7 +3691,7 @@
         "biome": ["forest"],
         "season": ["newleaf"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
         "max_cats": 1,
@@ -4014,7 +4015,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Step one, find nests, has conclusively failed. At least {PRONOUN/app1/subject}{VERB/app1/'re/'s} alone though - app1 trips over a branch on the forest floor as {PRONOUN/app1/subject} walk with {PRONOUN/app1/poss} eyes pinned skyward, and {PRONOUN/app1/subject}{VERB/app1/'re/'s} grateful no one was here to see it.",
+                "text": "Step one, find nests, has conclusively failed. At least {PRONOUN/app1/subject}{VERB/app1/'re/'s} alone though - app1 trips over a branch on the forest floor as {PRONOUN/app1/subject} {VERB/app1/walk/walks} with {PRONOUN/app1/poss} eyes pinned skyward, and {PRONOUN/app1/subject}{VERB/app1/'re/'s} grateful no one was here to see it.",
                 "exp": 0,
                 "weight": 20
             },

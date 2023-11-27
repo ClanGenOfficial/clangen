@@ -321,6 +321,11 @@ class ProfileScreen(Screens):
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
+            elif event.ui_element == self.destroy_accessory_button:
+                self.the_cat.pelt.accessory = None
+                self.clear_profile()
+                self.build_profile()
+                self.update_disabled_buttons_and_text()
         # History Tab
         elif self.open_tab == 'history':
             if event.ui_element == self.sub_tab_1:
@@ -1728,6 +1733,13 @@ class ProfileScreen(Screens):
                 tool_tip_text='This will open a confirmation window and allow you to input a death reason',
                 starting_height=2, manager=MANAGER
             )
+            self.destroy_accessory_button = UIImageButton(
+                scale(pygame.Rect((1156, 1044), (344, 72))),
+                "",
+                object_id="#destroy_accessory_button",
+                tool_tip_text="This will permanently remove this cat's current accessory",
+                starting_height=2, manager=MANAGER
+            )
 
             # These are a placeholders, to be killed and recreated in self.update_disabled_buttons_and_text().
             #   This it due to the image switch depending on the cat's status, and the location switch the close button
@@ -1848,6 +1860,11 @@ class ProfileScreen(Screens):
                 self.kill_cat_button.enable()
             else:
                 self.kill_cat_button.disable()
+
+            if self.the_cat.pelt.accessory:
+                self.destroy_accessory_button.enable()
+            else:
+                self.destroy_accessory_button.disable()
         # History Tab:
         elif self.open_tab == 'history':
             # show/hide fav tab star
@@ -1971,6 +1988,7 @@ class ProfileScreen(Screens):
         elif self.open_tab == 'dangerous':
             self.kill_cat_button.kill()
             self.exile_cat_button.kill()
+            self.destroy_accessory_button.kill()
         elif self.open_tab == 'history':
             self.backstory_background.kill()
             self.sub_tab_1.kill()

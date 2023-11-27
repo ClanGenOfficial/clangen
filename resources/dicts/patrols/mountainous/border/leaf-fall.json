@@ -1,1 +1,83 @@
-[]
+[
+    {
+    "patrol_id": "mtn_bord_leaf-fall_goatfight1",
+    "biome": "mountainous",
+    "season": ["leaf-fall"],
+    "types": ["border"],
+    "tags": [],
+    "patrol_art": "bord_general_intro",
+    "min_cats": 2,
+    "max_cats": 6,
+    "weight": 15,
+    "chance_of_success": 70,
+    "intro_text": "A strange thwacking sound can be heard from the other side of a boulder. After initial confusion, the patrol realizes that it is courting season for the goats that live on the mountain. The sound must be two buck goats engaged in a fight. It must be quite the spectacle...",
+    "decline_text": "It may be fun to watch... but it could also end in disaster. The patrol decides it's not worth the risk and continues on its way.",
+    "success_outcomes": [
+        {
+            "text": "Quite the spectacle indeed! The patrol watches in awe from the top of the boulder as the two bucks viciously butt heads. It turns into a fun game for the patrol as they playfully argue over which buck they expect to win.",
+            "exp": 10,
+            "weight": 20,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic"],
+                    "amount": 5
+                }
+            ]
+        },
+        {
+            "text": "While the rest of the patrol is hesitant, r_c leaps to the top of the boulder to watch the show. {PRONOUN/r_c/subject} watch with wonder as the two bucks fight. At the urging of r_c, the rest of the patrol joins {PRONOUN/r_c/object} in gawking at the battle.",
+            "exp": 10,
+            "weight": 20,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic"],
+                    "amount": 3
+                }
+            ]
+        },
+        {
+            "text": "How is it even possible for the bucks to fight like that without getting massive head-damage or breaking their horns? The patrol watches until one of the bucks gives up and retreats. As the patrol walks back to camp, they all playfully headbutt each other, thankfully not as hard as the two buck goats were.",
+            "exp": 20,
+            "weight": 15,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic"],
+                    "amount": 7
+                }
+            ]
+        }
+    ],
+"fail_outcomes": [
+        {
+            "text": "r_c creeps closer, wanting to watch the show. Unfortunately, {PRONOUN/r_c/subject} accidentally steps on a dead leaf, the crunch alerting the two bucks. The patrol watches sadly as the two bucks bleat and run from sight.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "How is it even possible for the bucks to fight like that without getting massive head-damage or breaking their horns? The patrol watches until one of the bucks gives up and retreats. As the patrol walks back to camp, they all playfully headbutt each other, thankfully not as hard as the two buck goats were.",
+            "exp": 0,
+            "weight": 15
+        },
+        {
+            "text": "The patrol watches with glee, too distracted by the show to realize that the fighting bucks are getting dangerously close. It's too late to react when the two goats are upon them, pushing their fight right into the group of cats. The patrol tries to scramble back, but not everyone gets away unharmed.",
+            "exp": 0,
+            "weight": 10,
+            "injury": [
+                {
+                    "cats": ["r_c"],
+                    "injuries": ["blunt_force_injury"]
+                }
+            ]
+        }
+    ]
+}
+]

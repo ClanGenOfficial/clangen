@@ -1,65 +1,4 @@
 {
-	"freshkill":{
-		"activate_death": false,
-		"activate_events": false,
-		"start_amount": 60,
-		"auto_warrior_prey": [1,3],
-		"auto_apprentice_prey": [1,2],
-		"condition_increase": 1,
-		"event_trigger_factor": 3.5,
-		"additional_prey": 0.5,
-		"nutrition_malnourished_percentage" : 70,
-		"nutrition_starving_percentage" : 25,
-		"prey_requirement":{
-			"leader": 3,
-			"deputy": 3,
-			"medicine cat": 2,
-			"medicine cat apprentice": 1.5,
-			"mediator apprentice": 1.5,
-			"mediator": 2,
-			"warrior": 3,
-			"apprentice": 1.5,
-			"elder": 1.5,
-			"queen": 4,
-			"kitten": 0.5,
-			"newborn": 0.2
-		},
-		"feeding_order":[
-			"newborn",
-			"kitten",
-			"queen",
-			"elder",
-			"medicine cat",
-			"medicine cat apprentice",
-			"apprentice",
-			"mediator apprentice",
-			"warrior",
-			"mediator",
-			"deputy",
-			"leader"
-		],
-		"hunter_bonus": {"1": 1, "2": 2, "3": 3},
-		"hunter_exp_bonus": {
-			"untrained": 0.1,
-			"trainee": 1,
-			"prepared": 2,
-			"competent": 3,
-			"proficient": 4,
-			"skilled": 5,
-			"expert": 6,
-			"master": 7
-		},
-		"comment": [
-			"activate_deaths - activates the whole system, otherwise nutrition status of the cats doesn't have an effect",
-			"activate_events - activates if events for freshkill pile are triggered or not",
-			"start_amount defines the amount of prey when a new freshkill-pile is made",
-			"The auto parameters are for the prey each moon, each healthy warrior/apprentice will catch an amount of between these two values of prey.",
-			"additional_prey - added amount for hunting patrol, to make it easier",
-			"event_trigger_factor - this number will be used to multiply with the amount of prey the Clan needs, if the pile is bigger than this number, prey events will be triggered",
-			"hunter_bonus is the factor which is be used to multiply on a hunting patrol.",
-			"hunter_exp_bonus is the additional prey which will be added on a hunting patrol."
-		]
-	},
 	"relationship":{
 		"in_decrease_value":{
 			"low": 8,
@@ -317,15 +256,20 @@
 	},
 	"death_related": {
 		"leader_death_chance": 125,
-		"old_age_death_start": 150,
-		"old_age_death_chance": 51,
 		"classic_death_chance": 500,
 		"expanded_death_chance": 350,
 		"cruel season_death_chance": 300,
 		"war_death_modifier_leader": 95,
 		"war_death_modifier": 250,
 		"base_random_murder_chance": 25,
-		"base_murder_kill_chance": 80
+		"base_murder_kill_chance": 80,
+		"old_age_death_start": 150,
+		"old_age_death_curve": 4.5,
+		"comment": [
+			"old_age_death_curve is a multiplier that affects the chances of cats dying once they are over old_age_death_start moons.",
+			"Average life expectancy with default old_age_death_start of 150 moons:",
+			"1 = 189 moons, 2 = 178, 3 = 172, 4.5 (default) = 168, 8 = 163, 20 = 158"
+		]
 	},
 	"condition_related": {
 		"expanded_illness_chance": 250,
@@ -367,7 +311,8 @@
 		"april_fools": false,
 		"all_cats_are_newborn": false,
 		"newborns_can_roam": false,
-		"newborns_can_patrol": false
+		"newborns_can_patrol": false,
+		"always_halloween": false
 	},
 	"theme": {
 		"dark_mode_background": [57, 50, 36],
