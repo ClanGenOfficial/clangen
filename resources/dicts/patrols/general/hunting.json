@@ -2996,7 +2996,8 @@
     "min_cats": 2,
     "max_cats": 6,
     "min_max_status": {
-        "apprentice": [2, 6]
+        "apprentice": [2, 6],
+        "normal adult": [-1, -1]
     },
     "weight": 1,
     "intro_text": "A hunting patrol of just apprentices! This is going to go great!",
@@ -3072,7 +3073,7 @@
             ]
         },
         {
-            "text": "Not only does app1 find a particularly vicious prey animal who tears up their ear, but in the process, app1 squawks with surprise and lets go. Well. Thus runs off the only prey they've all managed to find. Fox dung.",
+            "text": "Not only does app1 find a particularly vicious prey animal who tears up their ear, but in the process, app1 squawks with surprise and lets go. Well. So ends the hunt for the only prey they've managed to find. Fox dung.",
             "exp": 0,
             "weight": 20,
             "injury": [
@@ -3102,7 +3103,8 @@
     "min_cats": 2,
     "max_cats": 6,
     "min_max_status": {
-        "apprentice": [2, 6]
+        "apprentice": [2, 6],
+        "normal adult": [-1, -1]
     },
     "weight": 1,
     "intro_text": "Maybe they <i>should</i> bring along one of their mentors, but they don't <i>want</i> to. There's no reason to always need an adult around, they aren't <i>kits</i>.",
@@ -3187,7 +3189,7 @@
             ]
         },
         {
-            "text": "Not only does app1 find a particularly vicious prey animal who tears up their ear, but in the process, app1 squawks with surprise and lets go. Well. Thus runs off the only prey they've all managed to find. Fox dung.",
+            "text": "Not only does app1 find a particularly vicious prey animal who tears up their ear, but in the process, app1 squawks with surprise and lets go. Well. So ends the hunt for the only prey they've managed to find. Fox dung.",
             "exp": 0,
             "weight": 20,
             "injury": [
@@ -3217,7 +3219,8 @@
     "min_cats": 2,
     "max_cats": 6,
     "min_max_status": {
-        "apprentice": [2, 6]
+        "apprentice": [2, 6],
+        "normal adult": [-1, -1]
     },
     "weight": 1,
     "intro_text": "On a dare, the apprentices sneak out in the middle of the night. They're going to prove who's the best hunter!",
@@ -3309,7 +3312,7 @@
             ]
         },
         {
-            "text": "Not only does app1 find a particularly vicious prey animal who tears up their ear, but in the process, app1 squawks with surprise and lets go. Well. Thus runs off the only prey they've all managed to find. Fox dung.",
+            "text": "Not only does app1 find a particularly vicious prey animal who tears up their ear, but in the process, app1 squawks with surprise and lets go. Well. So ends the hunt for the only prey they've managed to find. Fox dung.",
             "exp": 0,
             "weight": 20,
             "injury": [
@@ -3339,7 +3342,8 @@
     "min_cats": 2,
     "max_cats": 6,
     "min_max_status": {
-        "apprentice": [2, 6]
+        "apprentice": [2, 6],
+        "normal adult": [-1, -1]
     },
     "weight": 1,
     "intro_text": "Sometimes, it's a lot easier to work on their hunting techniques without a warrior around. Not that there's anything wrong with the warriors! Just... sometimes there less pressure, hunting as an apprentice-only patrol.",
@@ -3422,7 +3426,7 @@
             ]
         },
         {
-            "text": "Not only does app1 find a particularly vicious prey animal who tears up their ear, but in the process, app1 squawks with surprise and lets go. Well. Thus runs off the only prey they've all managed to find. Fox dung.",
+            "text": "Not only does app1 find a particularly vicious prey animal who tears up their ear, but in the process, app1 squawks with surprise and lets go. Well. So ends the hunt for the only prey they've managed to find. Fox dung.",
             "exp": 0,
             "weight": 20,
             "injury": [
@@ -3452,7 +3456,8 @@
     "min_cats": 2,
     "max_cats": 6,
     "min_max_status": {
-        "apprentice": [2, 6]
+        "apprentice": [2, 6],
+        "normal adult": [-1, -1]
     },
     "weight": 1,
     "intro_text": "A hunting patrol of just apprentices! This is going to go great!",
@@ -3535,7 +3540,7 @@
             ]
         },
         {
-            "text": "Not only does app1 find a particularly vicious prey animal who tears up their ear, but in the process, app1 squawks with surprise and lets go. Well. Thus runs off the only prey they've all managed to find. Fox dung.",
+            "text": "Not only does app1 find a particularly vicious prey animal who tears up their ear, but in the process, app1 squawks with surprise and lets go. Well. So ends the hunt for the only prey they've managed to find. Fox dung.",
             "exp": 0,
             "weight": 20,
             "injury": [

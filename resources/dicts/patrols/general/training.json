@@ -6364,7 +6364,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "{PRONOUN/p_l/subject} {VERB/p_l/breath/breathes}, reminding {PRONOUN/p_l/self} of {PRONOUN/p_l/poss} responsibilities as leader of the clan. How would it look if {PRONOUN/p_l/subject} just exploded at r_c, no matter how justified?",
+                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/breathe/breathes}, reminding {PRONOUN/p_l/self} of {PRONOUN/p_l/poss} responsibilities as leader of the clan. How would it look if {PRONOUN/p_l/subject} just exploded at r_c, no matter how justified?",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [

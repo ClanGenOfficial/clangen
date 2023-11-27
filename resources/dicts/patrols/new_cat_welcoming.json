@@ -522,7 +522,13 @@
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
                         "values": ["dislike", "jealous"],
-                        "amount": 15
+                        "amount": 50
+                    },
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["n_c:0"],
+                        "values": ["dislike"],
+                        "amount": 5
                     }
                 ],
                 "outsider_rep": -2
