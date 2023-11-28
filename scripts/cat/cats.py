@@ -2099,6 +2099,10 @@ class Cat():
         if is_former_mentor and not game.clan.clan_settings['romantic with former mentor']:
             return False
 
+		#current mentor
+        if other_cat.ID in self.apprentice or self.ID in other_cat.apprentice:
+            return False
+
         return True
 
     def unset_mate(self, other_cat: Cat, breakup: bool = False, fight: bool = False):
