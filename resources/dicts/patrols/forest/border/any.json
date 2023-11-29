@@ -176,7 +176,7 @@
                 "dead_cats": ["r_c"],
                 "history_text": {
                     "reg_death": "This cat was killed when rogues ambushed {PRONOUN/m_c/object} while on a solo patrol.",
-                    "lead_death": "rogues ambushed their patrol"
+                    "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
                 },
                 "relationships": [
                     {
