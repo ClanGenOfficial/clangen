@@ -961,7 +961,7 @@
         },
         "weight": 20,
         "intro_text": "The patrol spots a badger making a den on o_c_n territory.",
-        "decline_text": "It's not c_n's problem, but {PRONOUN/p_l/subject}  {VERB/p_l/make/makes} a mental note to mention the badger to {PRONOUN/p_l/poss} leader later.",
+        "decline_text": "It's not c_n's problem, but {PRONOUN/p_l/subject} {VERB/p_l/make/makes} a mental note to mention the badger to {PRONOUN/p_l/poss} leader later.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -1038,7 +1038,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/continue/continues} {PRONOUN/p_l/object} patrol and sometime later an o_c_n patrol calls out to their patrol and asks if they have seen anything suspicious. p_l tells them coldly that {PRONOUN/p_l/poss} Clan doesn't owe them anything and continues {PRONOUN/p_l/poss} patrol.",
+                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/continue/continues} {PRONOUN/p_l/poss} patrol and sometime later a patrol from o_c_n calls out and asks if they have seen anything suspicious. p_l tells them coldly that {PRONOUN/p_l/poss} Clan doesn't owe them anything and continues {PRONOUN/p_l/poss} patrol.",
                 "exp": 10,
                 "weight": 20,
                 "other_clan_rep": -2

@@ -229,7 +229,7 @@ class Inheritance():
     def init_faded_grandkits(self):
         """This must occur after all kits, faded and otherwise, have been gathered. """
         
-        for inter_id in self.get_kits():
+        for inter_id in self.get_children():
             inter_cat = self.cat.fetch_cat(inter_id)
             for inter_grandkit_id in inter_cat.faded_offspring:
                 inter_grandkit = self.cat.fetch_cat(inter_grandkit_id)
@@ -550,7 +550,7 @@ class Inheritance():
         """Returns a list of id's of kits, which are not related by blood to the cat."""
         return self.get_no_blood_relatives(self.kits)
 
-    def get_kits(self) -> list:
+    def get_children(self) -> list:
         """Returns a list of id's which are kits to the cat, according to the inheritance hierarchy."""
         return self.get_blood_relatives(self.kits) + self.get_no_blood_relatives(self.kits)
 
