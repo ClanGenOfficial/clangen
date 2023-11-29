@@ -92,7 +92,7 @@
         "death_text": "m_c was pushed off a cliff into the rock-filled waves below. r_c stood at the edge, eyes narrowed and unblinking till the body slid beneath the waves.",
         "history_text": {
             "lead_death": "{VERB/m_c/were/was} shoved off a cliff by r_c",
-            "lead_murder_unrevealed": "were shoved off a cliff by an unknown killer"
+            "lead_murder_unrevealed": "{VERB/m_c/were/was} shoved off a cliff by an unknown killer"
         },
         "cat_trait": [
             "adventurous",
@@ -155,7 +155,7 @@
         "death_text": "m_c was pushed off a cliff into the rock-filled waves below. r_c insists it was an accident, that m_c slipped on loose shale.",
         "history_text": {
             "lead_death": "{VERB/m_c/were/was} shoved off a cliff by r_c",
-            "lead_murder_unrevealed": "were shoved off a cliff by an unknown killer"
+            "lead_murder_unrevealed": "{VERB/m_c/were/was} shoved off a cliff by an unknown killer"
         },
         "cat_trait": [
             "adventurous",
