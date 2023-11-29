@@ -272,8 +272,8 @@ class Condition_Events():
                 types.append("other_clans")
             # Add event text to the relationship log if two cats are involved
             if other_cat:
-                pos_rel_event = ["romantic", "platonic", "neg_dislike", "respect", "comfort", "jealousy", "trust"]
-                neg_rel_event = ["neg_romantic", "neg_platonic", "dislike", "neg_respect", "neg_comfort", "neg_jealousy", "neg_trust"]
+                pos_rel_event = ["romantic", "platonic", "neg_dislike", "respect", "comfort", "neg_jealousy", "trust"]
+                neg_rel_event = ["neg_romantic", "neg_platonic", "dislike", "neg_respect", "neg_comfort", "jealousy", "neg_trust"]
                 effect = ""
                 if any(tag in injury_event.tags for tag in pos_rel_event):
                     effect = " (positive effect)"
