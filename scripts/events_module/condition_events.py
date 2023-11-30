@@ -270,6 +270,22 @@ class Condition_Events():
                 types.append("birth_death")
             if has_other_clan:
                 types.append("other_clans")
+            # Add event text to the relationship log if two cats are involved
+            if other_cat:
+                pos_rel_event = ["romantic", "platonic", "neg_dislike", "respect", "comfort", "neg_jealousy", "trust"]
+                neg_rel_event = ["neg_romantic", "neg_platonic", "dislike", "neg_respect", "neg_comfort", "jealousy", "neg_trust"]
+                effect = ""
+                if any(tag in injury_event.tags for tag in pos_rel_event):
+                    effect = " (positive effect)"
+                elif any(tag in injury_event.tags for tag in neg_rel_event):
+                    effect = " (negative effect)"
+
+                log_text = text + effect
+
+                if cat.moons == 1:
+                    cat.relationships[other_cat.ID].log.append(log_text + f" - {cat.name} was {cat.moons} moon old")
+                else:
+                    cat.relationships[other_cat.ID].log.append(log_text + f" - {cat.name} was {cat.moons} moons old")
             game.cur_events_list.append(Single_Event(text, types, involved_cats))
 
         return triggered

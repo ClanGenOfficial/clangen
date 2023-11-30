@@ -870,7 +870,7 @@
                 ]
             },
             {
-                "text": "s_c had seen before how connected p_l was to StarClan, and began telling {PRONOUN/p_l/object} more than they would have told any other Clan cat about their ancestors. p_l and s_c spend much of their patrol gathering herbs and discussing the hard-hitting questions on prophecies and StarClan's gifts.",
+                "text": "p_l had seen before how connected r_c was to StarClan, and began telling {PRONOUN/p_l/object} more than they would have told any other Clan cat about their ancestors. p_l and r_c spend much of their patrol gathering herbs and discussing the hard-hitting questions on prophecies and StarClan's gifts.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["LORE,1", "STAR,1"],

@@ -88,7 +88,6 @@ class ChooseAdoptiveParentScreen(Screens):
                 self.selected_mate_index = 0
                 self.change_screen('profile screen')
             elif event.ui_element == self.toggle_adoptive_parent:
-                
                 self.work_thread = self.loading_screen_start_work(self.change_adoptive_parent)
                 
             elif event.ui_element == self.previous_cat_button:
