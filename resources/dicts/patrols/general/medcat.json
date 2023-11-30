@@ -35,6 +35,21 @@
                 ]
             },
             {
+                "text": "The sunlight feels great and the cats have a lovely discussion, talking about what herbs need to be gathered, and the best locations to gather them.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
                 "text": "The sunlight energizes the cats for their herb-gathering.",
                 "exp": 20,
                 "weight": 5,
@@ -46,6 +61,109 @@
                         "mutual": false,
                         "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The sunlight feels great and s_c leads the cats in conversation, bringing them closer together.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": [
+                    "SPEAKER,10",
+                    "MEDIATOR,1",
+                    "COMFORT,1"
+                ],
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 15
+                    }
+                ]
+            },
+            {
+                "text": "The sunlight feels great and s_c tells a story to the patrol as they relax.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": [
+                    "SPEAKER,10",
+                    "STORY,1",
+                    "LORE,1"
+                ],
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 15
+                    }
+                ]
+            },
+            {
+                "text": "The sunlight energizes the cats for their herb-gathering. s_c in particular points out a bunch of herb locations that weren't common knowledge.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": ["many_herbs"],
+                "stat_skill": [
+                    "TEACHER,10",
+                    "CLEVER,10",
+                    "INSIGHTFUL,10",
+                    "SENSE,10",
+                    "HEALER,1"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The sunlight energizes the cats for their herb-gathering. s_c is particularly lucky, and finds a large amount of herbs.",
+                "exp": 20,
+                "weight": 5,
+                "stat_trait": [
+                    "lucky"
+                ],
+                "herbs": ["many_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The sunlight energizes the cats for their herb-gathering. s_c is extra bright, and {PRONOUN/s_c/poss} jokes make the whole patrol pass by in a good mood.",
+                "exp": 20,
+                "weight": 5,
+                "stat_trait": [
+                    "childish",
+                    "playful",
+                    "charismatic",
+                    "sweetheart",
+                    "cheerful",
+                    "carefree"
+                ],
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 10
                     }
                 ]
             },
@@ -62,12 +180,94 @@
                     "patient",
                     "responsible",
                     "thoughtful",
-                    "wise"
+                    "wise",
+                    "sweetheart",
+                    "generous",
+                    "calm",
+                    "cheerful"
                 ],
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c decides not to rest, and instead goes to gather herbs while the rest of the patrol relaxes. {PRONOUN/s_c/subject/CAP} soon returns with some daisys, and by the time {PRONOUN/s_c/subject} come back the patrol is refreshed and ready to gather more herbs.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bold",
+                    "daring",
+                    "strict",
+                    "confident",
+                    "adventurous",
+                    "competitive"
+                ],
+                "herbs": ["random_herbs", "daisy"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The patrol is ambushed while they were napping by a gang of rogues. Luckily, r_c wasn't fully asleep and yowls a warning, the medicine cats are able to escape unharmed.",
+                "exp": 10,
+                "weight": 5,
+                "art": "gen_med_sunny_rogue",
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "s_c had just laid down when {PRONOUN/s_c/subject} got the feeling of danger, letting the rest of the patrol know they decide to head back to camp early. As the patrol head back, they catch the fresh scents of rouges in the area.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait":[
+                    "mysterious",
+                    "ominous",
+                    "strange"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c had just laid down when {PRONOUN/s_c/subject} got the feeling of danger, letting the rest of the patrol know they decide to head back to camp early. As the patrol head back, they catch the fresh scents of rouges in the area.",
+                "exp": 0,
+                "weight": 20,
+                "stat_skill": [
+                    "PROPHET,1",
+                    "OMEN,2",
+                    "STAR,1",
+                    "CLAIRVOYANT,2"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["platonic", "respect", "comfort", "trust"],
@@ -88,6 +288,178 @@
                         "mutual": false,
                         "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "The patrol gets into an argument and return home angry at each other.",
+                "exp": 0,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "s_c wasn't able to relax and kept the rest of the patrol from relaxing with all {PRONOUN/s_c/poss} movement, making the patrol grumpy and return to camp with no herbs.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait":[
+                    "anxious",
+                    "nervous",
+                    "insecure"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c was deep asleep, and by the time {PRONOUN/s_c/subject} awaken, night has fallen, and no herbs have been gathered. r_c was particularly annoyed at s_c as the patrol couldn't leave {PRONOUN/s_c/object} alone.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "unlucky",
+                    "lazy"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "The patrol is ambushed while they were napping by a gang of rogues. Luckily, p_l wasn't fully asleep and yowls a warning, the medicine cats are able to escape, though not without injury.",
+                "exp": 0,
+                "weight": 10,
+                "art": "gen_med_sunny_rogue",
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["battle_injury"],
+                        "scars": ["ONE"]
+                    }
+                         ],                    
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "The patrol is ambushed while they were napping by a gang of rogues. r_c is killed before {PRONOUN/r_c/subject} was even aware of the danger.",
+                "exp": 0,
+                "weight": 5,
+                "art": "gen_med_sunny_rogue",
+                "dead_cats": ["r_c"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "s_c takes the best spot for {PRONOUN/s_c/self} and ignores all attempts at conversation, souring the mood of the patrol.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "troublesome",
+                    "lonesome",
+                    "bloodthirsty",
+                    "cold",
+                    "gloomy",
+                    "shameless",
+                    "arrogant",
+                    "grumpy",
+                    "oblivous",
+                    "cruel",
+                    "selfish",
+                    "rude",
+                    "apathetic"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c had just laid down when {PRONOUN/s_c/subject} got the feeling of danger, letting the rest of the patrol know the feeling is dismissed as s_c's imagination, and the patrol rests. However not long after they are attacked by a group of rogues.",
+                "exp": 0,
+                "weight": 20,
+                "art": "gen_med_sunny_rogue",
+                "stat_trait":[
+                    "mysterious",
+                    "ominous",
+                    "strange"
+                ],
+                "injury":[
+                    {
+                        "cats":["multi"],
+                        "injuries":["battle_injury"]
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "s_c had just laid down when {PRONOUN/s_c/subject} got the feeling of danger, letting the rest of the patrol know the feeling is dismissed as s_c's imagination, and the patrol rests. However not long after they are attacked by a group of rogues.",
+                "exp": 0,
+                "weight": 20,
+                "stat_skill": [
+                    "PROPHET,1",
+                    "OMEN,2",
+                    "STAR,1",
+                    "CLAIRVOYANT,2"
+                ],
+                "art": "gen_med_sunny_rogue",
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -10
                     }
                 ]
             }
