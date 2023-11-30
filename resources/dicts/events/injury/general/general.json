@@ -354,6 +354,28 @@
         "other_cat_skill": null
     },
     {
+        "injury": "claw-wound",
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "scar",
+            "SIDE"
+        ],
+        "event_text": "m_c fought a rogue, and while {PRONOUN/m_c/subject} drove the trespasser away, {PRONOUN/m_c/subject} needed to be rushed to the medicine den afterwards.",
+        "history_text": {
+            "scar": "m_c was scarred when {PRONOUN/m_c/subject} fought a trespassing rogue.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/subject} fought a trespassing rogue.",
+            "lead_death": "couldn't survive {PRONOUN/m_c/poss} injuries after {PRONOUN/m_c/subject} fought a trespassing rogue"
+        },
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
         "injury": "mangled leg",
         "tags": [
             "Newleaf",
@@ -624,6 +646,68 @@
         "negate_other_cat_trait": null,
         "negate_other_cat_skill": null,
         "backstory_constraint": null
+    },
+    {
+        "injury": "torn ear",
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "scar",
+            "LEFTEAR"
+        ],
+        "event_text": "m_c accidentally crossed the border on patrol and got {PRONOUN/m_c/poss} ear torn by an enemy warrior.",
+        "history_text": {
+            "scar": "m_c's ear was torn when {PRONOUN/m_c/subject} accidentally crossed the border and was caught by an enemy warrior."
+        },
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "torn ear",
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "scar",
+            "RIGHTEAR"
+        ],
+        "event_text": "m_c caught a cat from another Clan trespassing on their territory and {PRONOUN/m_c/poss} ear was torn in the ensuing scuffle.",
+        "history_text": {
+            "scar": "m_c's ear was torn in a scuffle when {PRONOUN/m_c/subject} chased off an enemy warrior."
+        },
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "rat bite",
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "scar",
+            "RATBITE"
+        ],
+        "event_text": "m_c was attacked by a group of rats! {PRONOUN/m_c/subject/CAP} managed to fight them off, but didn't escape unscathed.",
+        "history_text": {
+            "scar": "m_c was scarred when {PRONOUN/m_c/subject} {VERB/m_c/were/was} attacked by a group of rats.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/subject} {VERB/m_c/were/was} attacked by a group of rats.",
+            "lead_death": "couldn't survive {PRONOUN/m_c/poss} injuries after {PRONOUN/m_c/subject} {VERB/m_c/were/was} attacked by a group of rats"
+        },
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
     },
     {
         "injury": "bee sting",
