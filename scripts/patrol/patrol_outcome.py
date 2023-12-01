@@ -522,8 +522,7 @@ class PatrolOutcome():
             # Injury or scar the cats
             results = []
             for _cat in cats:
-                
-                if game.clan.game_mode == "classic":
+                if game.clan and game.clan.game_mode == "classic":
                     if self.__handle_scarring(_cat, scars, patrol):
                         results.append(f"{_cat.name} was scarred.")
                     continue
@@ -532,6 +531,9 @@ class PatrolOutcome():
                 if not possible_injuries:
                     continue
                 
+                old_injuries = list(_cat.injuries.keys())
+                old_illnesses = list(_cat.illnesses.keys())
+                old_perm_cond = list(_cat.permanent_condition.keys())
                 give_injury = choice(possible_injuries)
                 if give_injury in INJURIES:
                     _cat.get_injured(give_injury, lethal=lethal)
@@ -543,10 +545,16 @@ class PatrolOutcome():
                     print("WARNING: No Conditions to Give")
                     continue
                 
+                given_conditions = []
+                given_conditions.extend([x for x in _cat.injuries.keys() if x not in old_injuries])
+                given_conditions.extend([x for x in _cat.illnesses.keys() if x not in old_illnesses])
+                given_conditions.extend([x for x in _cat.permanent_condition.keys() if x not in old_perm_cond])
                 # History is also ties to "no_results"  
                 if not block.get("no_results"):
-                    self.__handle_condition_history(_cat, give_injury, patrol)
-                    results.append(f"{_cat.name} got: {give_injury}.")
+                    for given_condition in given_conditions:
+                        self.__handle_condition_history(_cat, given_condition, patrol)
+                    combined_conditions = ", ".join(given_conditions)
+                    results.append(f"{_cat.name} got: {combined_conditions}.")
                 else:
                     # If no results are shown, assume the cat didn't get the patrol history. Default override. 
                     self.__handle_condition_history(_cat, give_injury, patrol, default_overide=True)
@@ -1169,9 +1177,9 @@ class PatrolOutcome():
         history_text = self.history_scar
         if history_text and isinstance(history_text, str):
             # I'm not 100% sure which one is supposed to be which...
-            history_text = history_text.replace("m_c", str(cat.name))
-            history_text = history_text.replace("r_c", str(cat.name))
-            history_text = history_text.replace("o_c_n", str(patrol.other_clan.name))
+            history_text = history_text if "m_c" not in history_text else history_text.replace("m_c", str(cat.name))
+            history_text = history_text if "r_c" not in history_text else history_text.replace("r_c", str(patrol.patrol_random_cat.name))
+            history_text = history_text if "o_c_n" not in history_text else history_text.replace("o_c_n", str(patrol.other_clan.name))
             
             History.add_scar(cat, history_text)
         else:
@@ -1199,10 +1207,10 @@ class PatrolOutcome():
             history_scar = None
         
         if final_death_history and isinstance(final_death_history, str):
-            final_death_history = final_death_history.replace("o_c_n", str(patrol.other_clan.name))
+            final_death_history = final_death_history if "o_c_n" not in final_death_history else final_death_history.replace("o_c_n", str(patrol.other_clan.name))
         
         if history_scar and isinstance(history_scar, str):
-            history_scar = history_scar.replace("o_c_n", str(patrol.other_clan.name))
+            history_scar = history_scar if "o_c_n" not in history_scar else history_scar.replace("o_c_n", str(patrol.other_clan.name))
         
         
         History.add_possible_history(cat, condition=condition, death_text=final_death_history, scar_text=history_scar)

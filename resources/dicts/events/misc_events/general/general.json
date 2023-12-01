@@ -293,6 +293,7 @@
             "Greenleaf",
             "Leaf-fall",
             "Leaf-bare",
+            "other_clan",
             "war"
         ],
         "event_text": "The tension between c_n and o_c is palpable, with even the smallest actions potentially leading to violence."
@@ -304,6 +305,7 @@
             "Greenleaf",
             "Leaf-fall",
             "Leaf-bare",
+            "other_clan",
             "war"
         ],
         "event_text": "The war with o_c is beginning to disrupt the daily lives of c_n, forcing them to adapt to new routines and living situations in order to better defend themselves."
