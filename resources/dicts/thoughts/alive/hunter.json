@@ -2,7 +2,7 @@
     {
         "id": "hunter_gen_alive_kits",
         "thoughts": [
-           
+           "Wonders if r_c wants to become a hunter."
         ],
         "random_status_constraint": [
             "kitten"
@@ -14,7 +14,7 @@
     {
         "id": "hunter_formerly_a_loner_alive_kits",
         "thoughts": [
-         
+         "Tells r_c of their hunting adventures while {PRONOUN/m_c/subject} were a loner."
         ],
         "main_backstory_constraint": ["loner1", "loner2", "refugee2", "refugee5", "tragedy_survivor4", "guided3"],
         "random_status_constraint": [
@@ -27,7 +27,7 @@
     {
         "id": "hunter_formerly_a_rogue_alive_kits",
         "thoughts": [
-            
+            "Tells r_c of their hunting advestures while {PRONOUN/m_c/subject} were a rogue."
         ],
         "main_backstory_constraint": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2"],
         "random_status_constraint": [
@@ -40,7 +40,7 @@
     {
         "id": "hunter_gen_dead_sc_kits",
         "thoughts": [
-            
+            "Wonders if r_c would have decided to become a hunter apprentice."
         ],
         "random_status_constraint": [
             "kitten"
@@ -52,7 +52,7 @@
     {
         "id": "hunter_gen_dead_df_kits",
         "thoughts": [
-           
+           "Hopes r_c is following theirdreams of becoming a hunter, even if they are in such a horrible place."
         ],
         "random_status_constraint": [
             "kitten"
@@ -64,7 +64,7 @@
     {
         "id": "hunter_parent_alive_kits",
         "thoughts": [
-           
+           "Glows with pride as r_c performs a (nearly) perfect hunting crouch."
         ],
         "relationship_constraint": [
             "parent/child"
@@ -79,7 +79,7 @@
     {
         "id": "hunter_gen_alive_apprentice",
         "thoughts": [
-           
+           "Talks with r_c and remembers when {PRONOUN/m_c/subject} were a hunter apprentice {PRONOUN/m_c/self}."
         ],
         "random_status_constraint": [
             "apprentice"
@@ -91,7 +91,7 @@
     {
         "id": "hunter_gen_deputy",
         "thoughts": [
-            
+            "Wonders if r_c knows how to hunt. After all, they are the deputy, right?"
         ],
         "random_status_constraint": [
             "deputy"
@@ -100,7 +100,7 @@
     {
         "id": "gen_older_hunter",
         "thoughts": [
-            
+            "Scoffs at the younger hunters."
         ],
         "main_age_constraint": [
             "senior adult",
@@ -113,7 +113,7 @@
     {
         "id": "hunter_gen_medicine_cat",
         "thoughts": [
-            
+            "Is hunting for herbs with r_c."
         ],
         "random_status_constraint": [
             "medicine cat"
@@ -125,7 +125,7 @@
     {
         "id": "hunter_gen_hunter",
         "thoughts": [
-            
+            "Is comparing hunting techniques with r_c."
         ],
         "random_status_constraint": [
             "warrior"
@@ -140,7 +140,7 @@
             "forest"
         ],
         "thoughts": [
-            
+            "Is determined to catch all the birds in the trees and all the mice in the shrubs."
         ],
         "main_trait_constraint": [
             "ambitious"
@@ -149,17 +149,16 @@
     {
     "id": "adventurous_hunter",
     "thoughts": [
-       
+       "Wants to catch all the prey there is."
     ],
     "main_trait_constraint": [
         "adventurous"
-    ]
-
+        ]
     },
     {
         "id": "adventurous_hunter_to_alive_kits",
         "thoughts": [
-            
+            "Tells the kits of the prey {PRONOUN/m_c/subject} caught in faraway lands."
         ],
         "random_status_constraint": [
             "kitten"
@@ -174,7 +173,7 @@
     {
         "id": "ambitious_hunter",
         "thoughts": [
-           
+         "Is determined to catch the most prey of all {PRONOUN/m_c/poss} Clanmates."  
         ],
         "main_trait_constraint": [
             "ambitious"
@@ -183,7 +182,7 @@
     {
         "id": "bloodthirsty_hunter",
         "thoughts": [
-           
+           "Likes to make the prey flail."
         ],
         "main_trait_constraint": [
             "bloodthirsty"
@@ -192,7 +191,7 @@
     {
         "id": "bold_hunter",
         "thoughts": [
-            
+            "Never hesitates if challenged to hunder dangerous prey."
         ],
         "main_trait_constraint": [
             "bold"
@@ -201,7 +200,7 @@
     {
         "id": "calm_hunter",
         "thoughts": [
-           
+           "Doesn't get frusterated if {PRONOUN/m_c/subject} miss a catch."
         ],
         "main_trait_constraint": [
             "calm"
@@ -210,7 +209,7 @@
     {
         "id": "careful_hunter",
         "thoughts": [
-            
+            "Is too careful to miss a catch."
         ],
         "main_trait_constraint": [
             "careful"
@@ -219,7 +218,7 @@
     {
         "id": "charismatic_hunter",
         "thoughts": [
-            
+            "Always gets to eat first because of {PRONOUN/m_c/poss} charm."
         ],
         "main_trait_constraint": [
             "charismatic"
@@ -228,7 +227,7 @@
     {
         "id": "childish_hunter",
         "thoughts": [
-            
+            "Has the other hunters wonder how {PRONOUN/m_c/subject} graduated."
         ],
         "main_trait_constraint": [
             "childish"
@@ -237,7 +236,7 @@
     {
         "id": "cold_hunter",
         "thoughts": [
-            
+            "Doesn't even blink when ordered to kill kit prey."
         ],
         "main_trait_constraint": [
             "cold"
@@ -246,7 +245,7 @@
     {
         "id": "cold_hunter_to_alive_apprentice",
         "thoughts": [
-           
+          "Doesn't understands why r_c cried when {PRONOUN/m_c/subject} killed a baby bird." 
         ],
         "random_status_constraint": [
             "apprentice"
@@ -270,7 +269,8 @@
     {
         "id": "compassionate_hunter_to_living_med_cat",
         "thoughts": [
-            "Is helping the medicine cat organize herb stores"
+            "Is helping the medicine cat organize herb stores.",
+            "Is hunting for herbs with r_c while getting to know them better."
         ],
         "random_status_constraint": [
             "medicine cat"
@@ -286,7 +286,7 @@
     {
         "id": "compassionate_hunter_to_living_apprentices",
         "thoughts": [
-          
+          "Feels for the hunter apprentices working so hard."
         ],
         "random_status_constraint": [
             "apprentice"
@@ -301,7 +301,7 @@
     {
         "id": "confident_hunter",
         "thoughts": [
-           
+           "Makes sure each kit gets prey."
         ],
         "main_trait_constraint": [
             "confident"
@@ -310,7 +310,7 @@
     {
         "id": "daring_hunter",
         "thoughts": [
-            
+           "Claims that {PRONOUN/m_c/subject} fought an eagle, badger, and snake all at once and wasn't even scared." 
         ],
         "main_trait_constraint": [
             "daring"
@@ -319,7 +319,7 @@
     {
         "id": "faithful_hunter",
         "thoughts": [
-            
+           "Always thabks StarClan whenever {PRONOUN/m_c/subject} catch something." 
         ],
         "main_trait_constraint": [
             "faithful"
@@ -328,7 +328,7 @@
     {
         "id": "fierce_hunter",
         "thoughts": [
-          
+          "Has been accused of 'over killing' {PRONOUN/m_c/poss} prey."
         ],
         "main_trait_constraint": [
             "fierce"
@@ -337,7 +337,7 @@
     {
         "id": "fierce_hunter_to_living_apprentices",
         "thoughts": [
-            "Is arguing for more battle training for the apprentices"
+            "Is arguing for more battle training for the apprentices."
         ],
         "random_status_constraint": [
             "apprentice"
@@ -352,7 +352,8 @@
     {
         "id": "insecure_hunter",
         "thoughts": [
-           
+           "Isn't sure of {PRONOUN/m_c/poss} hunting abilities.",
+           "Wants to hunt alone so no one emakes fun of {PRONOUN/m_c/subject}."
         ],
         "main_trait_constraint": [
             "insecure"
@@ -361,7 +362,7 @@
     {
         "id": "lonesome_hunter",
         "thoughts": [
-            
+            "Sometimes talks to {PRONOUN/m_c/poss} prey to cure {PRONOUN/m_c/poss} lonliness."
         ],
         "main_trait_constraint": [
             "lonesome"
@@ -370,7 +371,7 @@
     {
         "id": "loving_hunter",
         "thoughts": [
-            
+            "Tried to bting a duckling to camp to raise."
         ],
         "main_trait_constraint": [
             "loving"
@@ -379,7 +380,7 @@
     {
         "id": "loving_hunter_to_living_apprentices",
         "thoughts": [
-            
+            "Is giving r_c some extra training."
         ],
         "random_status_constraint": [
             "apprentice"
@@ -394,7 +395,7 @@
     {
         "id": "loyal_hunter",
         "thoughts": [
-            
+            "Is horrified at the thought of eating prey on a patrol."
         ],
         "main_trait_constraint": [
             "loyal"
@@ -403,7 +404,7 @@
     {
         "id": "nervous_hunter",
         "thoughts": [
-            
+             "Wisehs that {PRONOUN/m_c/subject} were brave enought to boast about a huge mouse {PRONOUN/m_c/subject} caught."   
         ],
         "main_trait_constraint": [
             "nervous"
@@ -412,7 +413,7 @@
     {
         "id": "playful_hunter",
         "thoughts": [
-           
+           "Prefers hunting bugs with the kits then hunting real mice."
         ],
         "main_trait_constraint": [
             "playful"
@@ -421,7 +422,8 @@
     {
         "id": "playful_hunter_to_living_kit",
         "thoughts": [
-            "Plays mossball with a kit"
+            "Plays mossball with a kit.",
+            "Is hunting a bug with r_c."
         ],
         "random_status_constraint": [
             "kitten"
@@ -436,7 +438,7 @@
     {
         "id": "responsible_hunter",
         "thoughts": [
-            
+            "Makes sure all the cats are fed before {PRONOUN/m_c/subject} eat."
         ],
         "main_trait_constraint": [
             "responsible"
@@ -445,7 +447,7 @@
     {
         "id": "responsible_hunter_kits",
         "thoughts": [
-            
+            "Makes sure r_c has enough to eat."
         ],
         "main_trait_constraint": [
             "responsible"
@@ -460,7 +462,7 @@
     {
         "id": "responsible_hunter_to_living_apprentices",
         "thoughts": [
-            
+            "Scolds r_c after they missed a pretty easy catch."
         ],
         "random_status_constraint": [
             "apprentice"
@@ -475,7 +477,7 @@
     {
         "id": "righteous_hunter",
         "thoughts": [
-            
+            "Refuses to hunt if they think the prey shouldn't be killed."
         ],
         "main_trait_constraint": [
             "righteous"
@@ -493,7 +495,7 @@
     {
         "id": "sneaky_hunter",
         "thoughts": [
-           
+           "The prey never saw {PRONOUN/m_c/subject} coming.."
         ],
         "main_trait_constraint": [
             "sneaky"
@@ -502,7 +504,9 @@
     {
         "id": "strange_hunter",
         "thoughts": [
-            
+            "Was doing some sort of ritual with a frog, claiming it as a 'sacrifice'.",
+            "Has a pile of flailing lizard tails.",
+            "Claims that {PRONOUN/m_c/subject} say a silver duck that had risen from the ground."
         ],
         "main_trait_constraint": [
             "strange"
@@ -511,7 +515,7 @@
     {
         "id": "strict_hunter",
         "thoughts": [
-            
+            "Snaps at apprentices and warriors if they don't catch anything."
         ],
         "main_trait_constraint": [
             "strict"
@@ -520,7 +524,7 @@
     {
         "id": "strict_hunter_to_living_apprentices",
         "thoughts": [
-            
+            "Scold r_c after they don't catch anything."
         ],
         "random_status_constraint": [
             "apprentice"
@@ -535,7 +539,7 @@
     {
         "id": "thoughtful_hunter",
         "thoughts": [
-            
+            "Brings prey to hardworking Clanmates before eating."
         ],
         "main_trait_constraint": [
             "thoughtful"
@@ -544,7 +548,7 @@
     {
         "id": "troublesome_hunter",
         "thoughts": [
-            
+            "Constantly boats about that one huge mouse {PRONOUN/m_c/subject} caught as an apprentice."
         ],
         "main_trait_constraint": [
             "troublesome"
@@ -553,7 +557,7 @@
     {
         "id": "troublesome_hunter_to_living_apprentices",
         "thoughts": [
-            
+            "Devises a prank with r_c involving crow-food."
         ],
         "random_status_constraint": [
             "apprentice"
@@ -568,7 +572,7 @@
     {
         "id": "vengeful_hunter",
         "thoughts": [
-           
+           "Gives crow-food to r_c on purpose a prank." 
         ],
         "main_trait_constraint": [
             "vengeful"
@@ -577,7 +581,7 @@
     {
         "id": "wise_hunter",
         "thoughts": [
-            
+            "Teaches others or over hunting."
         ],
         "main_trait_constraint": [
             "wise"
@@ -586,7 +590,7 @@
     {
         "id": "wise_hunter_to_living_apprentices",
         "thoughts": [
-            
+            "Is sharing {PRONOUN/m_c/poss} hunting wisdom with r_c."
         ],
         "random_status_constraint": [
             "apprentice"
@@ -601,7 +605,7 @@
     {
         "id": "wise_hunter_to_living_elder",
         "thoughts": [
-             
+             "Is discussing probably very wise things with r_c."
         ],
         "random_status_constraint": [
             "elder"

@@ -75,6 +75,7 @@ class Cat():
         "master": (321, 321)
     }
 
+
     default_pronouns = [
         {
             "subject": "they",
@@ -139,7 +140,7 @@ class Cat():
             self.adoptive_parents = []
             self.mate = []
             self.status = status
-            self.pronouns = [self.default_pronouns[0].copy()]
+            self.pronouns = []
             self.moons = moons
             self.dead_for = 0
             self.dead = True
@@ -189,7 +190,7 @@ class Cat():
         self.relationships = {}
         self.mate = []
         self.previous_mates = []
-        self.pronouns = [self.default_pronouns[0].copy()]
+        self.pronouns = []
         self.placement = None
         self.example = example
         self.dead = False
@@ -288,28 +289,39 @@ class Cat():
             if self.gender == "female" and not self.status in ['newborn', 'kitten']:
                 if trans_chance == 1:
                     self.genderalign = "trans male"
+                    self.pronouns = [self.default_pronouns[2].copy()]
                 elif nb_chance == 1:
                     self.genderalign = "nonbinary"
                 else:
                     self.genderalign = self.gender
+                    self.pronouns = [self.default_pronouns[1].copy()]
             elif self.gender == "male" and not self.status in ['newborn', 'kitten']:
                 if trans_chance == 1:
                     self.genderalign = "trans female"
+                    self.pronouns = [self.default_pronouns[1].copy()]
                 elif nb_chance == 1:
                     self.genderalign = "nonbinary"
                 else:
                     self.genderalign = self.gender
+                    self.pronouns = [self.default_pronouns[2].copy()]
             else:
                 self.genderalign = self.gender
 
-            """if self.genderalign in ["female", "trans female"]:
+          
+        #Pronouns
+        if self.pronouns != self.genderalign:
+            if self.genderalign in ["female", "trans female"]:
                 self.pronouns = [self.default_pronouns[1].copy()]
             elif self.genderalign in ["male", "trans male"]:
-                self.pronouns = [self.default_pronouns[2].copy()]"""
+                self.pronouns = [self.default_pronouns[2].copy()]
+            else:
+                self.pronouns = [self.default_pronouns[0].copy()]
+
 
             # APPEARANCE
             self.pelt = Pelt.generate_new_pelt(self.gender, [Cat.fetch_cat(i) for i in (self.parent1, self.parent2) if i], self.age)
             
+           
             #Personality
             self.personality = Personality(kit_trait=self.is_baby())
 
@@ -2861,7 +2873,7 @@ class Cat():
                 "specsuffix_hidden": self.name.specsuffix_hidden,
                 "gender": self.gender,
                 "gender_align": self.genderalign,
-                #"pronouns": self.pronouns,
+                "pronouns": self.pronouns,
                 "birth_cooldown": self.birth_cooldown,
                 "status": self.status,
                 "backstory": self.backstory if self.backstory else None,

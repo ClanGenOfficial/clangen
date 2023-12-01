@@ -121,6 +121,7 @@ def json_load():
             new_cat.adoptive_parents = cat["adoptive_parents"] if "adoptive_parents" in cat else []
             
             new_cat.genderalign = cat["gender_align"]
+            new_cat.pronouns = cat["pronouns"]
             new_cat.backstory = cat["backstory"] if "backstory" in cat else None
             if new_cat.backstory in BACKSTORIES["conversion"]:
                 new_cat.backstory = BACKSTORIES["conversion"][new_cat.backstory]

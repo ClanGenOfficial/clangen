@@ -198,7 +198,7 @@
                 ]
             },
             {
-                "text": "s_c decides not to rest, and instead goes to gather herbs while the rest of the patrol relaxes. {PRONOUN/s_c/subject/CAP} soon returns with some daisys, and by the time {PRONOUN/s_c/subject} come back the patrol is refreshed and ready to gather more herbs.",
+                "text": "s_c decides not to rest, and instead goes to gather herbs while the rest of the patrol relaxes. {PRONOUN/s_c/subject/CAP} soon returns with some daisys, and by the time {PRONOUN/s_c/subject} {VERB/s_c/come/comes} back the patrol is refreshed and ready to gather more herbs.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -306,7 +306,7 @@
                 ]
             },
             {
-                "text": "s_c wasn't able to relax and kept the rest of the patrol from relaxing with all {PRONOUN/s_c/poss} movement, making the patrol grumpy and return to camp with no herbs.",
+                "text": "s_c wasn't able to relax and kept the rest of the patrol from relaxing with all {PRONOUN/s_c/poss} {VERB/r_c/movement/movements}, making the patrol grumpy and return to camp with no herbs.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait":[
@@ -325,7 +325,7 @@
                 ]
             },
             {
-                "text": "s_c was deep asleep, and by the time {PRONOUN/s_c/subject} awaken, night has fallen, and no herbs have been gathered. r_c was particularly annoyed at s_c as the patrol couldn't leave {PRONOUN/s_c/object} alone.",
+                "text": "s_c was deep asleep, and by the time {PRONOUN/s_c/subject} {VERB/r_c/awaken/awakens}, night has fallen, and no herbs have been gathered. r_c was particularly annoyed at s_c as the patrol couldn't leave {PRONOUN/s_c/object} alone.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -489,9 +489,68 @@
                 "herbs": ["random_herbs"]
             },
             {
+                "text": "The sunlight feels great and r_c has a successful patrol, gathering up many herbs.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": [
+                    "HEALER,1",
+                    "CLEVER,10",
+                    "SENSE,10",
+                    "INSIGHTFUL,10"
+                ],
+                "herbs": ["many_herbs"]
+            },
+            {
+                "text": "The sunlight feels great and s_c has a successful patrol, gathering up many herbs.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "lucky"
+                ],
+                "herbs": ["many_herbs"]
+            },
+            {
+                "text": "r_c has a nice rest, and soon is sucessful in gathering some herbs.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": ["random_herbs"]
+            },
+            {
+                "text": "Despite falling asleep, r_c still wakes up with some time to gather herbs.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": ["random_herbs"]
+            },
+            {
                 "text": "The sunlight energizes r_c for the rest of {PRONOUN/r_c/poss} herb-gathering.",
                 "exp": 20,
                 "weight": 5,
+                "herbs": ["random_herbs"]
+            },
+            {
+                "text": "r_c is ambushed while {PRONOUN/r_c/subject} {VERB/r_c/were/was} napping by a gang of rogues. Luckily, r_c wasn't fully asleep and manages to escape unharmed.",
+                "exp": 10,
+                "weight": 5,
+                "art": "gen_med_sunny_rogue"
+            },
+            {
+                "text": "The sunlight feels great, however r_c presses on, wanting to be able to take care of {PRONOUN/r_c/poss} clanmates.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait":[
+                    "compassionate",
+                    "thoughtful",
+                    "faithful",
+                    "loving",
+                    "loyal",
+                    "responsible",
+                    "wise",
+                    "sincere",
+                    "sweetheart",
+                    "generous",
+                    "empathetic",
+                    "altruistic"
+                ],
                 "herbs": ["random_herbs"]
             }
         ],
@@ -500,6 +559,59 @@
                 "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} get much done because of that.",
                 "exp": 0,
                 "weight": 20
+            },
+            {
+                "text": "Due to r_c falling asleep, {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} wake up in time to gather herbs.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "r_c is ambushed while {PRONOUN/r_c/subject} {VERB/r_c/were/was} napping by a gang of rogues.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["r_c"],
+                "art": "gen_med_sunny_rogue"
+            },
+            {
+                "text": "s_c is ambushed while {PRONOUN/s_c/subject} {VERB/s_c/were/was} napping by a gang of rogues.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait":[
+                    "unlucky"
+                ],
+                "dead_cats": ["r_c"],
+                "art": "gen_med_sunny_rogue"
+            },
+            {
+                "text": "s_c was enjoying the sunlight and didn't pay attention as {PRONOUN/s_c/subject} {VERB/s_c/roll/rolls} around in the grass, destroying a patch of herbs.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait":[
+                    "childish",
+                    "playful",
+                    "strange",
+                    "carefree"
+                ]
+            },
+            {
+                "text": "s_c laid in the patch of sun, huffing, {PRONOUN/s_c/subject} deserved a nice break, away from all {PRONOUN/s_c/poss} clanmates. {PRONOUN/s_c/subject/CAP} could always just say {PRONOUN/s_c/subject} failed to find any herbs after all.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait":[
+                    "lonesome",
+                    "cold",
+                    "daring",
+                    "gloomy",
+                    "shameless",
+                    "sneaky",
+                    "grumpy",
+                    "cunning",
+                    "oblivous",
+                    "selfish",
+                    "rude",
+                    "apathetic",
+                    "lazy"
+                ]
             }
         ]
     },
@@ -522,7 +634,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "They have an in-depth conversation about r_c's vision as they walk. By the time they head back to camp, they have a good idea of what they should do with the information.",
+                "text": "p_l and r_c have an in-depth conversation about r_c's vision as they walk. By the time the patrol heads back to camp, they have a good idea of what they should do with the information.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -556,7 +668,45 @@
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
-                "stat_trait": ["loving", "wise"],
+                "stat_trait": [
+                    "loving",
+                    "wise",
+                    "compassionate",
+                    "thoughtful",
+                    "sweetheart",
+                    "cheerful",
+                    "altruistic",
+                    "empathetic"
+                ],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c chooses to pad pelt-to-pelt with r_c, the spiritual medicine cat gently guiding the conversation. r_c feels deeply privileged, and far more at peace, after confiding in {PRONOUN/s_c/object}, and {PRONOUN/r_c/subject} {VERB/r_c/know/knows} that c_n is in safe paws.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": ["random_herbs"],
+                "stat_skill": [
+                    "CLAIRVOYANT,2",
+                    "OMEN,2",
+                    "STAR,2",
+                    "COMFORT,20",
+                    "INSIGHTFUL,10",
+                    "CLEVER,10",
+                    "SENSE,10",
+                    "HEALER,2",
+                    "PROPHET,2",
+                    "DREAM,2"
+
+                ],
                 "can_have_stat": ["p_l"],
                 "relationships": [
                     {
