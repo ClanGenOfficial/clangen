@@ -267,7 +267,7 @@ class History:
                     if cat.history.mentor_influence["skill"][_ment][_path] > 0:
                         cat.history.mentor_influence["skill"][_ment]["strings"].append(random.choice(skill_influence_text[SkillPath[_path]]))
                 except KeyError:
-                    print("issue", _path)
+                    print("Mentor History Influnece issue", _path)
 
     @staticmethod
     def add_facet_mentor_influence(cat, mentor_id, facet, amount):
