@@ -485,7 +485,7 @@ class SpecifyCatGender(UIWindow):
 
         self.gender_changed = pygame_gui.elements.UITextBox("Gender Changed!",
                                                             scale(pygame.Rect(
-                                                                (490,300), (800, 80))),
+                                                                (488,350), (800, 80))),
                                                             visible=False,
                                                             object_id="#text_box_30_horizleft",
                                                             manager=MANAGER,
@@ -537,33 +537,31 @@ class SpecifyCatGender(UIWindow):
                 if sub(r'[^A-Za-z0-9 ]+', "", self.gender_entry_box.get_text()) != "":
                     self.the_cat.genderalign = sub(
                         r'[^A-Za-z0-9 ]+', "", self.gender_entry_box.get_text())
-                    if self.the_cat.genderalign in ["female", "trans female"]:
-                        self.the_cat.pronouns = [self.the_cat.default_pronouns[1].copy()]
-                    elif self.the_cat.genderalign in ["male", "trans male"]:
-                        self.the_cat.pronouns = [self.the_cat.default_pronouns[2].copy()]
-                    else: 
-                        if sub(r'[^A-Za-z0-9 ]+', "", self.subject_entry_box.get_text()) != "":
-                            self.the_cat.pronouns[0]["subject"] = sub(
-                                r'[^A-Za-z0-9 ]+', "", self.subject_entry_box.get_text())
-                        if sub(r'[^A-Za-z0-9 ]+', "", self.object_entry_box.get_text()) != "":
-                            self.the_cat.pronouns[0]["object"] = sub(
-                                r'[^A-Za-z0-9 ]+', "", self.object_entry_box.get_text())
-                        if sub(r'[^A-Za-z0-9 ]+', "", self.poss_entry_box.get_text()) != "":
-                            self.the_cat.pronouns[0]["poss"] = sub(
-                                r'[^A-Za-z0-9 ]+', "", self.poss_entry_box.get_text())
-                        if sub(r'[^A-Za-z0-9 ]+', "", self.inposs_entry_box.get_text()) != "":
-                            self.the_cat.pronouns[0]["inposs"] = sub(
-                                r'[^A-Za-z0-9 ]+', "", self.inposs_entry_box.get_text())
-                        if sub(r'[^A-Za-z0-9 ]+', "", self.self_entry_box.get_text()) != "":
-                                self.the_cat.pronouns[0]["self"] = sub(
-                                    r'[^A-Za-z0-9 ]+', "", self.self_entry_box.get_text())
+                if sub(r'[^A-Za-z0-9 ]+', "", self.subject_entry_box.get_text()) != "":
+                    self.the_cat.pronouns[0]["subject"] = sub(
+                        r'[^A-Za-z0-9 ]+', "", self.subject_entry_box.get_text())
+                if sub(r'[^A-Za-z0-9 ]+', "", self.object_entry_box.get_text()) != "":
+                    self.the_cat.pronouns[0]["object"] = sub(
+                        r'[^A-Za-z0-9 ]+', "", self.object_entry_box.get_text())
+                if sub(r'[^A-Za-z0-9 ]+', "", self.poss_entry_box.get_text()) != "":
+                    self.the_cat.pronouns[0]["poss"] = sub(
+                        r'[^A-Za-z0-9 ]+', "", self.poss_entry_box.get_text())
+                if sub(r'[^A-Za-z0-9 ]+', "", self.inposs_entry_box.get_text()) != "":
+                    self.the_cat.pronouns[0]["inposs"] = sub(
+                        r'[^A-Za-z0-9 ]+', "", self.inposs_entry_box.get_text())
+                if sub(r'[^A-Za-z0-9 ]+', "", self.self_entry_box.get_text()) != "":
+                    self.the_cat.pronouns[0]["self"] = sub(
+                        r'[^A-Za-z0-9 ]+', "", self.self_entry_box.get_text())
+                if self.the_cat.genderalign in ["female", "trans female"]:
+                    self.the_cat.pronouns = [self.the_cat.default_pronouns[1].copy()]
+                if self.the_cat.genderalign in ["male", "trans male"]:
+                    self.the_cat.pronouns = [self.the_cat.default_pronouns[2].copy()]
                 self.gender_changed.show()
             elif event.ui_element == self.back_button:
                 game.switches['window_open'] = False
                 game.all_screens['profile screen'].exit_screen()
                 game.all_screens['profile screen'].screen_switches()
                 self.kill()
-
 
 class KillCat(UIWindow):
     """This window allows the user to specify the cat's gender"""
