@@ -485,7 +485,7 @@ class SpecifyCatGender(UIWindow):
 
         self.gender_changed = pygame_gui.elements.UITextBox("Gender Changed!",
                                                             scale(pygame.Rect(
-                                                                (490, 260), (800, 80))),
+                                                                (490,300), (800, 80))),
                                                             visible=False,
                                                             object_id="#text_box_30_horizleft",
                                                             manager=MANAGER,
@@ -501,28 +501,28 @@ class SpecifyCatGender(UIWindow):
                                                                     manager=MANAGER,
                                                                     container=self)
         
-        self.gender_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((20, 270), (150, 60))),
-                                                                    placeholder_text=self.the_cat.genderalign,
+        self.subject_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((20, 270), (150, 60))),
+                                                                    placeholder_text=self.the_cat.pronouns[0]["subject"],
                                                                     manager=MANAGER,
                                                                     container=self)
         
-        self.gender_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((180, 270), (150, 60))),
-                                                                    placeholder_text=self.the_cat.genderalign,
+        self.object_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((180, 270), (150, 60))),
+                                                                    placeholder_text=self.the_cat.pronouns[0]["object"],
                                                                     manager=MANAGER,
                                                                     container=self)
               
-        self.gender_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((340, 270), (150, 60))),
-                                                                    placeholder_text=self.the_cat.genderalign,
+        self.poss_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((340, 270), (150, 60))),
+                                                                    placeholder_text=self.the_cat.pronouns[0]["poss"],
                                                                     manager=MANAGER,
                                                                     container=self)
         
-        self.gender_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((500, 270), (150, 60))),
-                                                                    placeholder_text=self.the_cat.genderalign,
+        self.inposs_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((500, 270), (150, 60))),
+                                                                    placeholder_text=self.the_cat.pronouns[0]["inposs"],
                                                                     manager=MANAGER,
                                                                     container=self)
         
-        self.gender_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((660, 270), (150, 60))),
-                                                                    placeholder_text=self.the_cat.genderalign,
+        self.self_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((660, 270), (150, 60))),
+                                                                    placeholder_text=self.the_cat.pronouns[0]["self"],
                                                                     manager=MANAGER,
                                                                     container=self)
         
@@ -537,7 +537,27 @@ class SpecifyCatGender(UIWindow):
                 if sub(r'[^A-Za-z0-9 ]+', "", self.gender_entry_box.get_text()) != "":
                     self.the_cat.genderalign = sub(
                         r'[^A-Za-z0-9 ]+', "", self.gender_entry_box.get_text())
-                    self.gender_changed.show()
+                    if self.the_cat.genderalign in ["female", "trans female"]:
+                        self.the_cat.pronouns = [self.the_cat.default_pronouns[1].copy()]
+                    elif self.the_cat.genderalign in ["male", "trans male"]:
+                        self.the_cat.pronouns = [self.the_cat.default_pronouns[2].copy()]
+                    else: 
+                        if sub(r'[^A-Za-z0-9 ]+', "", self.subject_entry_box.get_text()) != "":
+                            self.the_cat.pronouns[0]["subject"] = sub(
+                                r'[^A-Za-z0-9 ]+', "", self.subject_entry_box.get_text())
+                        if sub(r'[^A-Za-z0-9 ]+', "", self.object_entry_box.get_text()) != "":
+                            self.the_cat.pronouns[0]["object"] = sub(
+                                r'[^A-Za-z0-9 ]+', "", self.object_entry_box.get_text())
+                        if sub(r'[^A-Za-z0-9 ]+', "", self.poss_entry_box.get_text()) != "":
+                            self.the_cat.pronouns[0]["poss"] = sub(
+                                r'[^A-Za-z0-9 ]+', "", self.poss_entry_box.get_text())
+                        if sub(r'[^A-Za-z0-9 ]+', "", self.inposs_entry_box.get_text()) != "":
+                            self.the_cat.pronouns[0]["inposs"] = sub(
+                                r'[^A-Za-z0-9 ]+', "", self.inposs_entry_box.get_text())
+                        if sub(r'[^A-Za-z0-9 ]+', "", self.self_entry_box.get_text()) != "":
+                                self.the_cat.pronouns[0]["self"] = sub(
+                                    r'[^A-Za-z0-9 ]+', "", self.self_entry_box.get_text())
+                self.gender_changed.show()
             elif event.ui_element == self.back_button:
                 game.switches['window_open'] = False
                 game.all_screens['profile screen'].exit_screen()
