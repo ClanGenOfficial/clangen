@@ -99,9 +99,10 @@ class Relationship():
         all_interactions = NEUTRAL_INTERACTIONS.copy()
         if in_de_crease != "neutral":
             all_interactions = INTERACTION_MASTER_DICT[rel_type][in_de_crease].copy()
-            possible_interactions = self.get_relevant_interactions(all_interactions, intensity, biome, season, game_mode, False)
+            possible_interactions = self.get_relevant_interactions(all_interactions, intensity, biome, season, game_mode)
         else:
-            possible_interactions = self.get_relevant_interactions(all_interactions, intensity, biome, season, game_mode, True)
+	    intensity = None
+            possible_interactions = self.get_relevant_interactions(all_interactions, intensity, biome, season, game_mode)
 
         if len(possible_interactions) <= 0:
             print("ERROR: No interaction with this conditions. ", rel_type, in_de_crease, intensity)
@@ -375,7 +376,7 @@ class Relationship():
         rel_type = choice(types)
         return rel_type
 
-    def get_relevant_interactions(self, interactions : list, intensity : str, biome : str, season : str, game_mode : str, neutrality : bool) -> list:
+    def get_relevant_interactions(self, interactions : list, intensity : str, biome : str, season : str, game_mode : str) -> list:
         """
         Filter interactions based on the status and other constraints.
             
@@ -413,9 +414,7 @@ class Relationship():
             if len(in_tags) > 0:
                 continue
 
-            if neutrality:
-                pass
-            elif interact.intensity != intensity:
+            if intensity is not None and interact.intensity != intensity:
                 continue
 
             cats_fulfill_conditions = cats_fulfill_single_interaction_constraints(self.cat_from, self.cat_to, interact, game_mode)
