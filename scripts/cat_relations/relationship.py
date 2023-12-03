@@ -101,7 +101,7 @@ class Relationship():
             all_interactions = INTERACTION_MASTER_DICT[rel_type][in_de_crease].copy()
             possible_interactions = self.get_relevant_interactions(all_interactions, intensity, biome, season, game_mode)
         else:
-	    intensity = None
+			intensity = None
             possible_interactions = self.get_relevant_interactions(all_interactions, intensity, biome, season, game_mode)
 
         if len(possible_interactions) <= 0:
