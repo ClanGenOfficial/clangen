@@ -189,7 +189,7 @@ class Cat():
         self.relationships = {}
         self.mate = []
         self.previous_mates = []
-        self.pronouns = []
+        self.pronouns = [self.default_pronouns[0].copy()]
         self.placement = None
         self.example = example
         self.dead = False
@@ -291,6 +291,7 @@ class Cat():
                     self.pronouns = [self.default_pronouns[2].copy()]
                 elif nb_chance == 1:
                     self.genderalign = "nonbinary"
+                    self.pronouns = [self.default_pronouns[1].copy()]
                 else:
                     self.genderalign = self.gender
                     self.pronouns = [self.default_pronouns[1].copy()]
@@ -300,6 +301,7 @@ class Cat():
                     self.pronouns = [self.default_pronouns[1].copy()]
                 elif nb_chance == 1:
                     self.genderalign = "nonbinary"
+                    self.pronouns = [self.default_pronouns[1].copy()]
                 else:
                     self.genderalign = self.gender
                     self.pronouns = [self.default_pronouns[2].copy()]
@@ -310,11 +312,11 @@ class Cat():
         #Pronouns
         if self.pronouns != self.genderalign:
             if self.genderalign in ["female", "trans female"]:
-                self.pronouns = [self.default_pronouns[1].copy()]
+                self.pronouns = [self.default_pronouns[2].copy()]
             elif self.genderalign in ["male", "trans male"]:
                 self.pronouns = [self.default_pronouns[2].copy()]
             else:
-                self.pronouns = [self.default_pronouns[0].copy()]
+                self.pronouns = [self.default_pronouns[1].copy()]
 
             # APPEARANCE
             self.pelt = Pelt.generate_new_pelt(self.gender, [Cat.fetch_cat(i) for i in (self.parent1, self.parent2) if i], self.age)
