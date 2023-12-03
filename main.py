@@ -54,7 +54,7 @@ if not getattr(sys, 'frozen', False):
                   
                   python3 -m pip install -r requirements.txt
                   """)
-        
+
         print("If you are still having issues, please ask for help in the clangen discord server: https://discord.gg/clangen")
         sys.exit(1)
 
