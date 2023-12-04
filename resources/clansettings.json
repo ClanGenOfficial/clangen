@@ -67,7 +67,7 @@
         ],
         "they them default": [
             "Use they/them as default pronouns",
-            "If turned on new cats will generate with they/them pronouns, regardless of gender.",
+            "If this setting is on new cats will generate with they/them pronouns, regardless of gender.",
             true
         ]
     },
