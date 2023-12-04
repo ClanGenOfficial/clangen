@@ -1656,7 +1656,7 @@
                 ]
             },
             {
-                "text": "It's a long but satisfying training session, with both cats having an in depth chance to test {PRONOUN/r_c/object} and work on {PRONOUN/r_c/poss} skills. It ends with {PRONOUN/r_c/object} both sitting on a little outlook, watching the sun go down and catching the last of its rays on {PRONOUN/r_c/poss} pelts. r_c sees p_l watching {PRONOUN/r_c/object} instead of the sun, and smiles.",
+                "text": "It's a long but satisfying training session, with both cats having an in-depth chance to test {PRONOUN/r_c/object} and work on {PRONOUN/r_c/poss} skills. It ends with {PRONOUN/r_c/object} both sitting on a little outlook, watching the sun go down and catching the last of its rays on {PRONOUN/r_c/poss} pelts. r_c sees p_l watching {PRONOUN/r_c/object} instead of the sun, and smiles.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -1761,7 +1761,7 @@
                 ]
             },
             {
-                "text": "It's a long but satisfying training session, with both cats having an in depth chance to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching {PRONOUN/r_c/object} instead of the sun, and smiles.",
+                "text": "It's a long but satisfying training session, with both cats having an in-depth chance to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching {PRONOUN/r_c/object} instead of the sun, and smiles.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -2051,7 +2051,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "It's Nessie! The patrol trots up, exchanging a nice mouse for a nice deep water fish, both creatures trading the respective delicacies that're hard for the other to obtain.",
+                "text": "It's Nessie! The patrol trots up, exchanging a nice mouse for a nice deep-water fish, both creatures trading the respective delicacies that're hard for the other to obtain.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["small"]
