@@ -256,29 +256,8 @@
         ],
         "death_text": "m_c excitedly follows r_c a short distance from camp to begin the promised battle training. r_c says something about how real warriors don't hold back, even in a spar. m_c nods eagerly. {PRONOUN/m_c/subject/CAP} barely {VERB/m_c/have/has} time to duck as r_c's paw whistles past {PRONOUN/m_c/poss} head. The kit stumbles backwards, tripping over {PRONOUN/m_c/poss} paws, {PRONOUN/m_c/poss} head landing squarely on a rock.",
         "history_text": {
-            "reg_death": "m_c was killed in battle training with r_c."
-        },
-        "other_cat_skill": [
-            "FIGHTER,1"
-        ]
-    },
-    {
-        "camp": "any",
-        "tags": [
-            "other_cat",
-            "other_cat_warrior",
-            "murder",
-            "Newleaf",
-            "Greenleaf",
-            "Leaf-fall",
-            "Leaf-bare",
-            "rc_to_mc",
-            "neg_platonic",
-            "dislike"
-        ],
-        "death_text": "m_c excitedly follows r_c a short distance from camp to begin the promised battle training. r_c says something about how real warriors don't hold back, even in a spar. m_c nods eagerly. {PRONOUN/m_c/subject/CAP} barely {VERB/m_c/have/has} time to duck as r_c's paw whistles past {PRONOUN/m_c/poss} head. The kit stumbles backwards, tripping over {PRONOUN/m_c/poss} paws, {PRONOUN/m_c/poss} head landing squarely on a rock.",
-        "history_text": {
-            "reg_death": "m_c was killed in battle training with r_c."
+            "reg_death": "m_c was killed in battle training with r_c.",
+            "reg_murder_unrevealed": "m_c was killed in battle training with r_c."
         },
         "other_cat_skill": [
             "FIGHTER,1"
