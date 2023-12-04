@@ -1693,6 +1693,9 @@ class Events:
         ''' Handles murder '''
         relationships = cat.relationships.values()
         targets = []
+
+        if cat.age in ["kitten", "newborn"]:
+            return
         
         # if this cat is unstable and aggressive, we lower the random murder chance
         random_murder_chance = int(game.config["death_related"]["base_random_murder_chance"])
