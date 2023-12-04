@@ -62,12 +62,12 @@
         ],
         "gendered pronouns": [
             "Allow customized pronouns",
-            "When this setting is off, all cats will be referred to with they/them pronouns.",
+            "Allows you to input custom pronouns using the specify gender button.",
             false
         ],
         "they them default": [
             "Use they/them as default pronouns",
-            "New cats will begin by using they/them pronouns, regardless of gender.",
+            "If turned on new cats will generate with they/them pronouns, regardless of gender.",
             true
         ]
     },
