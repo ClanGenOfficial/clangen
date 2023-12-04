@@ -44,5 +44,42 @@
             "OMEN,3",
             "SWIMMER,3"
         ]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "other_cat",
+            "Newleaf",
+            "Leaf-bare"
+        ],
+        "death_text": "m_c and r_c talked each other into walking onto the ice of the frozen pond that lay not far from camp. It was a dare at first, but when m_c didn't immediately fall in, r_c joined {PRONOUN/m_c/object}. The two cats playfully slipped around for a bit before the minute cracks reached their ears. By then, it was too late to move.",
+        "history_text": {
+            "reg_death": "m_c and r_c went to play on the ice of a frozen pond, not knowing it was too thin."
+        },
+        "cat_trait": [
+            "daring",
+            "adventurous",
+            "oblivious",
+            "bold",
+            "childish"
+        ],
+        "other_cat_trait": [
+            "daring",
+            "adventurous",
+            "oblivious",
+            "bold",
+            "childish"
+        ],
+        "cat_skill": null,
+        "cat_negate_skill": [
+            "PROPHET,3",
+            "OMEN,3",
+            "SWIMMER,3"
+        ],
+        "other_cat_negate_skill": [
+            "PROPHET,3",
+            "OMEN,3",
+            "SWIMMER,3"
+        ]
     }
 ]
