@@ -1764,12 +1764,13 @@ class Events:
             print("Relation Modifier: ", relation_modifier)
             kill_chance -= relation_modifier
 
-            print(str(chosen_target.log[-1]))
             if len(chosen_target.log) > 0 and "(high negative effect)" in chosen_target.log[-1]:
                 kill_chance -= 50
+                print(str(chosen_target.log[-1]))
 
             if len(chosen_target.log) > 0 and "(medium negative effect)" in chosen_target.log[-1]:
                 kill_chance -= 20
+                print(str(chosen_target.log[-1]))
 
             # little easter egg just for fun
             if cat.personality.trait == "ambitious" and Cat.fetch_cat(chosen_target.cat_to).status == 'leader':
