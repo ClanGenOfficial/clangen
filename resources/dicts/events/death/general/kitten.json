@@ -322,7 +322,11 @@
             "reg_murder_unrevealed": "m_c drowned in a stream."
         },
         "cat_trait":[
-
+            "daring",
+            "troublesome",
+            "attention-seeker",
+            "impulsive",
+            "inquisitive"
         ]
     }
 ]
