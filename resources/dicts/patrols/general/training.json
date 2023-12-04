@@ -6638,7 +6638,7 @@
         "max_cats": 6,
         "min_max_status": {
             "leader": [-1, -1],
-            "apprentice": [1, 6],
+            "apprentice": [2, 6],
             "all apprentices": [2, 2],
             "normal adult": [1, 6]
         },
@@ -6662,7 +6662,7 @@
                 ]
             },
             {
-                "text": "p_l, p_l! app1 keeps tugging on {PRONOUN/app2/poss} fur, app2 whines! Exhausted by their childish actions, p_l tells the apprentices to sort it out between themselves. They've back on the path for a grand total of two seconds before there's a much louder yelp, a startling crash, and app2 trots past p_l, merrily reporting that {PRONOUN/app2/subject}{VERB/app2/'ve/'s} dealt with the problem.",
+                "text": "p_l, p_l! app1 keeps tugging on {PRONOUN/app2/poss} fur, app2 whines! Exhausted by their childish actions, p_l tells the apprentices to sort it out between themselves. They're back on the path for a grand total of two seconds before there's a much louder yelp, a startling crash, and app2 trots past p_l, merrily reporting that {PRONOUN/app2/subject}{VERB/app2/'ve/'s} dealt with the problem.",
                 "exp": 25,
                 "weight": 5,
                 "relationships": [

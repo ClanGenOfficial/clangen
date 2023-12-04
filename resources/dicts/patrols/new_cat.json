@@ -614,7 +614,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "There's no guarentee that {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} still in the area - so p_l's ears perk up to pick up {PRONOUN/n_c:0/poss} scent. n_c0 is basking on some Twoleg rubbish, but when {PRONOUN/n_c:0/subject} spot p_l, {PRONOUN/n_c:0/subject} jump down, trotting over with tail up, happily touching noses with p_l.",
+                "text": "There's no guarentee that {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} still in the area - so p_l's ears perk up to pick up {PRONOUN/n_c:0/poss} scent. n_c:0 is basking on some Twoleg rubbish, but when {PRONOUN/n_c:0/subject} spot p_l, {PRONOUN/n_c:0/subject} jump down, trotting over with tail up, happily touching noses with p_l.",
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
@@ -632,7 +632,7 @@
                 "outsider_rep": 1
             },
             {
-                "text": "Since n_c0 stumbled into {PRONOUN/p_l/poss} life, everything's changed. p_l knows how this ends, knows n_c0 has refused the chance to meet c_n, but {PRONOUN/p_l/subject}'d never trade the flutter in {PRONOUN/p_l/poss} whiskers, the thrill in {PRONOUN/p_l/poss} heart at these stolen moments. This isn't going to last, but that isn't going to stop {PRONOUN/p_l/object}.",
+                "text": "Since n_c:0 stumbled into {PRONOUN/p_l/poss} life, everything's changed. p_l knows how this ends, knows n_c:0 has refused the chance to meet c_n, but {PRONOUN/p_l/subject}'d never trade the flutter in {PRONOUN/p_l/poss} whiskers, the thrill in {PRONOUN/p_l/poss} heart at these stolen moments. This isn't going to last, but that isn't going to stop {PRONOUN/p_l/object}.",
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
@@ -657,7 +657,7 @@
                 "outsider_rep": 1
             },
             {
-                "text": "The sweetest times last the least long. Every heartbeat spent with n_c0 is uncertain, new, exciting, and as temporary as a flower's bloom. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/aren't/isn't} coming home with p_l, p_l's accepted that. But they can still see each other, for as long as n_c0 lingers near c_n's borders.",
+                "text": "The sweetest times last the least long. Every heartbeat spent with n_c:0 is uncertain, new, exciting, and as temporary as a flower's bloom. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/aren't/isn't} coming home with p_l, p_l's accepted that. But they can still see each other, for as long as n_c:0 lingers near c_n's borders.",
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
@@ -682,7 +682,7 @@
                 "outsider_rep": 1
             },
             {
-                "text": "n_c0 is still here - p_l's heart leaps and drops with every single visit, each time a gamble on if {PRONOUN/p_l/poss} hidden love will still be there for the next stolen moment. {PRONOUN/p_l/subject/CAP} can't take the uncertainty for much longer - but {PRONOUN/p_l/subject} can't let go of this connection {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} either. Please, <i>please</i> n_c0, come back to c_n. Stay.",
+                "text": "n_c:0 is still here - p_l's heart leaps and drops with every single visit, each time a gamble on if {PRONOUN/p_l/poss} hidden love will still be there for the next stolen moment. {PRONOUN/p_l/subject/CAP} can't take the uncertainty for much longer - but {PRONOUN/p_l/subject} can't let go of this connection {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} either. Please, <i>please</i> n_c:0, come back to c_n. Stay.",
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
@@ -716,7 +716,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The sweetest times last the least long. Every heartbeat spent with n_c0 is uncertain, new, exciting, and as temporary as a flower's bloom. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/aren't/isn't} coming home with p_l, p_l's accepted that. But the thing is - p_l can go with {PRONOUN/n_c:0/object}.",
+                "text": "The sweetest times last the least long. Every heartbeat spent with n_c:0 is uncertain, new, exciting, and as temporary as a flower's bloom. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/aren't/isn't} coming home with p_l, p_l's accepted that. But the thing is - p_l can go with {PRONOUN/n_c:0/object}.",
                 "exp": 0,
                 "weight": 20,
                 "new_cat": [
@@ -742,7 +742,7 @@
                 "outsider_rep": 0
             },
             {
-                "text": "{PRONOUN/n_c:0/subject/CAP}{VERB/n_c:0/'re/'s} gone. p_l swallows, pulling scent over the roof of {PRONOUN/p_l/poss} mouth, depserately searching - but n_c0 has moved on from the lands just outside c_n's borders. It's not like p_l wasn't warned, by the Clan, by their traditions, by n_c0 {PRONOUN/n_c:0/self} who said {PRONOUN/n_c:0/subject} could only stay for so long, but...",
+                "text": "{PRONOUN/n_c:0/subject/CAP}{VERB/n_c:0/'re/'s} gone. p_l swallows, pulling scent over the roof of {PRONOUN/p_l/poss} mouth, depserately searching - but n_c:0 has moved on from the lands just outside c_n's borders. It's not like p_l wasn't warned, by the Clan, by their traditions, by n_c:0 {PRONOUN/n_c:0/self} who said {PRONOUN/n_c:0/subject} could only stay for so long, but...",
                 "exp": 0,
                 "weight": 20,
                 "new_cat": [
@@ -769,7 +769,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "Come back to c_n, p_l urges when {PRONOUN/p_l/subject} {VERB/p_l/find/finds} n_c0, resuming the argument they've been having. It's useless. In response to p_l urging {PRONOUN/n_c:0/object}, hounding {PRONOUN/n_c:0/object}, demanding things n_c0 isn't prepared to give, the loner simply turns {PRONOUN/n_c:0/poss} back, walking away for the last time.",
+                "text": "Come back to c_n, p_l urges when {PRONOUN/p_l/subject} {VERB/p_l/find/finds} n_c:0, resuming the argument they've been having. It's useless. In response to p_l urging {PRONOUN/n_c:0/object}, hounding {PRONOUN/n_c:0/object}, demanding things n_c:0 isn't prepared to give, the loner simply turns {PRONOUN/n_c:0/poss} back, walking away for the last time.",
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
@@ -796,7 +796,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Come back to c_n, p_l urges when {PRONOUN/p_l/subject} {VERB/p_l/find/finds} n_c0, resuming the argument they've been having. Come back, join c_n, be p_l's mate for real. But n_c0 shakes {PRONOUN/n_c:0/poss} head. Freedom isn't given up so lightly. <br>Then leave. Leave, and if p_l ever sees n_c0 again, well, p_l will <i>not</i> forgive this.",
+                "text": "Come back to c_n, p_l urges when {PRONOUN/p_l/subject} {VERB/p_l/find/finds} n_c:0, resuming the argument they've been having. Come back, join c_n, be p_l's mate for real. But n_c:0 shakes {PRONOUN/n_c:0/poss} head. Freedom isn't given up so lightly. <br>Then leave. Leave, and if p_l ever sees n_c:0 again, well, p_l will <i>not</i> forgive this.",
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [

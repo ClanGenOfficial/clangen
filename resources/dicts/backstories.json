@@ -11,6 +11,8 @@
 
         "loner1": "This cat joined the Clan by choice after living life as a loner.",
         "loner2": "This cat used to live in a barn, but mostly stayed away from Twolegs. {PRONOUN/m_c/subject/CAP} decided Clan life might be an interesting change of pace.",
+        "loner3": "m_c wandered the world, aimless and free, but always alone.",
+        "loner4": "m_c wandered the world, aimless and free, but always alone - until {PRONOUN/m_c/subject} found someone worth staying for.",
 
         "kittypet1": "This cat joined the Clan by choice after living life with Twolegs as a kittypet.",
         "kittypet2": "This cat used to live on something called a 'boat' with Twolegs, but decided to join the Clan.",
@@ -100,7 +102,7 @@
       "halfclan1", "halfclan2"
     ],
     "loner_backstories": [
-      "loner1", "loner2", "refugee2", "tragedy_survivor4", "guided3", "refugee5", "wandering_healer2"
+      "loner1", "loner2", "loner3", "loner4", "refugee2", "tragedy_survivor4", "guided3", "refugee5", "wandering_healer2"
     ],
     "rogue_backstories": [
       "rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2", "refugee5", "wandering_healer1"
