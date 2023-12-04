@@ -462,19 +462,95 @@ class SpecifyCatGender(UIWindow):
     """This window allows the user to specify the cat's gender"""
 
     def __init__(self, cat):
-        super().__init__(scale(pygame.Rect((560, 360), (845, 470))),
+        if game.clan.clan_settings["gendered pronouns"]:
+            super().__init__(scale(pygame.Rect((560, 360), (845, 470))),
+                             window_display_title='Change Cat Gender',
+                             object_id='#change_cat_gender_window',
+                             resizable=False)
+        else:
+            super().__init__(scale(pygame.Rect((600, 430), (800, 370))),
                          window_display_title='Change Cat Gender',
                          object_id='#change_cat_gender_window',
                          resizable=False)
         game.switches['window_open'] = True
         self.the_cat = cat
-        self.back_button = UIImageButton(
-            scale(pygame.Rect((770, 20), (44, 44))),
+        if game.clan.clan_settings["gendered pronouns"]:
+            self.back_button = UIImageButton(
+                scale(pygame.Rect((770, 20), (44, 44))),
+                "",
+                object_id="#exit_window_button",
+                container=self
+            )
+        else:
+            self.back_button = UIImageButton(
+            scale(pygame.Rect((740, 10), (44, 44))),
             "",
             object_id="#exit_window_button",
             container=self
         )
-        self.heading = pygame_gui.elements.UITextBox(f"-Change {self.the_cat.name}'s Gender-"
+        if game.clan.clan_settings["gendered pronouns"]:
+            self.heading = pygame_gui.elements.UITextBox(f"-Change {self.the_cat.name}'s Gender-"
+                                                         f"<br> You can set this to anything! "
+                                                         f"Gender alignment does not affect gameplay.",
+                                                         scale(pygame.Rect(
+                                                             (20, 20), (760, 150))),
+                                                         object_id="#text_box_30_horizcenter_spacing_95",
+                                                         manager=MANAGER,
+                                                         container=self)
+
+            self.gender_changed = pygame_gui.elements.UITextBox("Gender Changed!",
+                                                                scale(pygame.Rect(
+                                                                    (490,300), (800, 80))),
+                                                                visible=False,
+                                                                object_id="#text_box_30_horizleft",
+                                                                manager=MANAGER,
+                                                                container=self)
+
+            self.done_button = UIImageButton(scale(pygame.Rect((323, 370), (154, 60))), "",
+                                             object_id="#done_button",
+                                             manager=MANAGER,
+                                             container=self)
+            
+            self.show_example_button = UIImageButton(scale(pygame.Rect(
+                (500, 180), (215, 60))),
+                "",
+                object_id="#show_examples_button",
+                tool_tip_text='Subject: She ran.<br>Object: Others saw her.<br>Possessive: Her paw slipped.<br>Inpossessive: The den is hers.<br>Reflexive: Hunting by herself',
+                manager=MANAGER,
+                container=self
+            )
+
+            self.gender_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((50, 180), (400, 60))),
+                                                                        placeholder_text=self.the_cat.genderalign,
+                                                                        manager=MANAGER,
+                                                                        container=self)
+            
+            self.subject_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((20, 270), (150, 60))),
+                                                                        placeholder_text=self.the_cat.pronouns[0]["subject"],
+                                                                        manager=MANAGER,
+                                                                        container=self)
+            
+            self.object_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((180, 270), (150, 60))),
+                                                                        placeholder_text=self.the_cat.pronouns[0]["object"],
+                                                                        manager=MANAGER,
+                                                                        container=self)
+                  
+            self.poss_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((340, 270), (150, 60))),
+                                                                        placeholder_text=self.the_cat.pronouns[0]["poss"],
+                                                                        manager=MANAGER,
+                                                                        container=self)
+            
+            self.inposs_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((500, 270), (150, 60))),
+                                                                        placeholder_text=self.the_cat.pronouns[0]["inposs"],
+                                                                        manager=MANAGER,
+                                                                        container=self)
+            
+            self.self_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((660, 270), (150, 60))),
+                                                                        placeholder_text=self.the_cat.pronouns[0]["self"],
+                                                                        manager=MANAGER,
+                                                                        container=self)
+        else:
+            self.heading = pygame_gui.elements.UITextBox(f"-Change {self.the_cat.name}'s Gender-"
                                                      f"<br> You can set this to anything! "
                                                      f"Gender alignment does not affect gameplay.",
                                                      scale(pygame.Rect(
@@ -483,49 +559,23 @@ class SpecifyCatGender(UIWindow):
                                                      manager=MANAGER,
                                                      container=self)
 
-        self.gender_changed = pygame_gui.elements.UITextBox("Gender Changed!",
-                                                            scale(pygame.Rect(
-                                                                (488,350), (800, 80))),
-                                                            visible=False,
-                                                            object_id="#text_box_30_horizleft",
-                                                            manager=MANAGER,
-                                                            container=self)
+            self.gender_changed = pygame_gui.elements.UITextBox("Gender Changed!",
+                                                                scale(pygame.Rect(
+                                                                    (490, 260), (800, 80))),
+                                                                visible=False,
+                                                                object_id="#text_box_30_horizleft",
+                                                                manager=MANAGER,
+                                                                container=self)
 
-        self.done_button = UIImageButton(scale(pygame.Rect((323, 370), (154, 60))), "",
-                                         object_id="#done_button",
-                                         manager=MANAGER,
-                                         container=self)
+            self.done_button = UIImageButton(scale(pygame.Rect((323, 270), (154, 60))), "",
+                                             object_id="#done_button",
+                                             manager=MANAGER,
+                                             container=self)
 
-        self.gender_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((200, 180), (400, 60))),
-                                                                    placeholder_text=self.the_cat.genderalign,
-                                                                    manager=MANAGER,
-                                                                    container=self)
-        
-        self.subject_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((20, 270), (150, 60))),
-                                                                    placeholder_text=self.the_cat.pronouns[0]["subject"],
-                                                                    manager=MANAGER,
-                                                                    container=self)
-        
-        self.object_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((180, 270), (150, 60))),
-                                                                    placeholder_text=self.the_cat.pronouns[0]["object"],
-                                                                    manager=MANAGER,
-                                                                    container=self)
-              
-        self.poss_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((340, 270), (150, 60))),
-                                                                    placeholder_text=self.the_cat.pronouns[0]["poss"],
-                                                                    manager=MANAGER,
-                                                                    container=self)
-        
-        self.inposs_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((500, 270), (150, 60))),
-                                                                    placeholder_text=self.the_cat.pronouns[0]["inposs"],
-                                                                    manager=MANAGER,
-                                                                    container=self)
-        
-        self.self_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((660, 270), (150, 60))),
-                                                                    placeholder_text=self.the_cat.pronouns[0]["self"],
-                                                                    manager=MANAGER,
-                                                                    container=self)
-        
+            self.gender_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((200, 180), (400, 60))),
+                                                                        placeholder_text=self.the_cat.genderalign,
+                                                                        manager=MANAGER,
+                                                                        container=self)
 
         self.set_blocking(True)
 

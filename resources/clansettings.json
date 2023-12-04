@@ -59,6 +59,16 @@
             "Show moons and seasons widget",
             "Displays Clan age and current Clan season on several pages",
             false
+        ],
+        "custom pronouns": [
+            "Allow customized pronouns",
+            "Allows you to input custom pronouns in the specify gender button.",
+            false
+        ],
+        "they them default": [
+            "Use they/them as default pronouns",
+            "All cats use they/them pronouns in the text, regardless of gender or pronouns.",
+            true
         ]
     },
     "role": {

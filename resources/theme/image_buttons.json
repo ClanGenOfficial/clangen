@@ -4076,5 +4076,13 @@
                 "path": "resources/images/buttons/freshkill_pile_feed_unavailable.png"
             }
         }
+    },
+    "#show_examples_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/Show_Examples.png"
+            }
+        }
     }
 }
