@@ -970,7 +970,7 @@
         "death_text": "m_c was pushed under a monster, and lost a life.",
         "history_text": {
             "lead_death": "{VERB/m_c/were/was} pushed under a monster by r_c",
-            "lead_murder_unrevealed": "were pushed under a monster"
+            "lead_murder_unrevealed": "{VERB/m_c/were/was} pushed under a monster"
         },
         "cat_trait": [
             "altruistic",
@@ -1012,7 +1012,7 @@
         "death_text": "m_c was murdered by r_c in cold blood, with the intention of taking {PRONOUN/m_c/poss} place.",
         "history_text": {
             "lead_death": "{VERB/m_c/were/was} murdered by r_c",
-            "lead_murder_unrevealed": "were murdered by an unknown killer"
+            "lead_murder_unrevealed": "{VERB/m_c/were/was} murdered by an unknown killer"
         },
         "other_cat_trait": [
             "vengeful",
@@ -1051,7 +1051,7 @@
         "history_text": {
             "reg_death": "m_c was killed by r_c in self-defense.",
             "lead_death": "{VERB/m_c/were/was} murdered by r_c in an attempt to usurp {PRONOUN/m_c/poss} lead",
-            "lead_murder_unrevealed": "were murdered by an unknown killer"
+            "lead_murder_unrevealed": "{VERB/m_c/were/was} murdered by an unknown killer"
         },
         "cat_skill": [
             "FIGHTER,2"

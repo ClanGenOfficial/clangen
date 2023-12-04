@@ -88,6 +88,9 @@
         "random_status_constraint": [
             "any"
         ],
+        "random_living_status": [
+            "living"
+        ],
         "random_outside_status":[
             "clancat"
         ]

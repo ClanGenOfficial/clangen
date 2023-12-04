@@ -101,7 +101,8 @@ class Relationship():
             all_interactions = INTERACTION_MASTER_DICT[rel_type][in_de_crease].copy()
             possible_interactions = self.get_relevant_interactions(all_interactions, intensity, biome, season, game_mode)
         else:
-            possible_interactions = all_interactions
+            intensity = None
+            possible_interactions = self.get_relevant_interactions(all_interactions, intensity, biome, season, game_mode)
 
         if len(possible_interactions) <= 0:
             print("ERROR: No interaction with this conditions. ", rel_type, in_de_crease, intensity)
@@ -413,7 +414,7 @@ class Relationship():
             if len(in_tags) > 0:
                 continue
 
-            if interact.intensity != intensity:
+            if intensity is not None and interact.intensity != intensity:
                 continue
 
             cats_fulfill_conditions = cats_fulfill_single_interaction_constraints(self.cat_from, self.cat_to, interact, game_mode)

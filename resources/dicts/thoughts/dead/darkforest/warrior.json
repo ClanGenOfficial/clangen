@@ -1,3 +1,11 @@
 [
-    
+	{
+		"id": "warrior_dark_forest_thoughts",
+		"thoughts": [
+			"Misses patrolling with {PRONOUN/m_c/poss} Clanmates",
+			"Feels the days start to blur",
+			"Cleans a wound after an arguement turned into bloodshed",
+			"Ends up trying to eat bark after days of scenting no prey"
+			]
+	}
 ]
