@@ -50,7 +50,8 @@
         "tags": [
             "other_cat",
             "Newleaf",
-            "Leaf-bare"
+            "Leaf-bare",
+            "multi_death"
         ],
         "death_text": "m_c and r_c talked each other into walking onto the ice of the frozen pond that lay not far from camp. It was a dare at first, but when m_c didn't immediately fall in, r_c joined {PRONOUN/m_c/object}. The two cats playfully slipped around for a bit before the minute cracks reached their ears. By then, it was too late to move.",
         "history_text": {
