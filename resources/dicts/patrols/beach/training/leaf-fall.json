@@ -89,7 +89,7 @@
                 ]
             },
             {
-                "text": "The whole patrol agrees this beach is abandoned by StarClan. There's no way so many broken ginger cat statues are here naturally, and well, s_c has always been a little odd...",
+                "text": "The whole patrol agrees this beach is abandoned by StarClan. There's no way so many broken, ginger cat statues are here naturally, and well, s_c has always been a little odd...",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["sneaky", "strange"],
@@ -126,19 +126,19 @@
                 "weight": 20
             },
             {
-                "text": "Green and black lizards are everywhere! p_l freezes up, only to notice that they're not moving, some of them sticking striaght up. They're not real! {PRONOUN/p_l/subject/CAP} {VERB/p_l/take/takes} a fake lizard home to show the others.",
+                "text": "Green and black lizards are everywhere! p_l freezes up, only to notice that they're not moving, some of them sticking straight up. They're not real! {PRONOUN/p_l/subject/CAP} {VERB/p_l/take/takes} a fake lizard home to show the others.",
                 "exp": 5,
                 "weight": 5
             },
             {
-                "text": "There are green and black lizards! s_c realizes they're not real immediatelty and decided to come back to this loaction to collect fake lizards for future pranks on Clanmates.",
+                "text": "There are green and black lizards! s_c realizes they're not real immediately and decided to come back to this location to collect fake lizards for future pranks on Clanmates.",
                 "stat_trait": [
                     "adventurous",
                     "shameless",
                     "sneaky",
                     "strange",
                     "troublesome",
-                    "chilish",
+                    "childish",
                     "troublesome"
                 ],
                 "exp": 5,
@@ -178,7 +178,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Wait, like, eagle apprentices? Intrigued, app1 sticks {PRONOUN/app1/poss} head out. Down below, two dappled feathered juveniles squabble, beating their wings frantically, clearly gearing up for something. app2 bets on the lighter coloured one, but app1 thinks that the smaller dark patterned one has the heart for it, and {PRONOUN/app1/subject} {VERB/app1/leap/leaps} to {PRONOUN/app1/poss} paws when the darker chick takes to the wing first, throwing {PRONOUN/app1/poss} head back and yowling cheers to the sky as the little eagle makes it to the next tree over.",
+                "text": "Wait, like, eagle apprentices? Intrigued, app1 sticks {PRONOUN/app1/poss} head out. Down below, two dappled feathered juveniles squabble, beating their wings frantically, clearly gearing up for something. app2 bets on the lighter colored one, but app1 thinks that the smaller dark patterned one has the heart for it, and {PRONOUN/app1/subject} {VERB/app1/leap/leaps} to {PRONOUN/app1/poss} paws when the darker chick takes to the wing first, throwing {PRONOUN/app1/poss} head back and yowling cheers to the sky as the little eagle makes it to the next tree over.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -271,7 +271,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Wait, like, eagle apprentices? Intrigued, app1 sticks {PRONOUN/app1/poss} head out. Down below, two dappled feathered juveniles squabble, beating their wings frantically, clearly gearing up for something. app2 bets on the lighter coloured one, but app1 thinks that the smaller dark patterned one has the heart for it, and {PRONOUN/app1/subject} {VERB/app1/leap/leaps} to {PRONOUN/app1/poss} paws when the darker chick takes to the wing first, throwing {PRONOUN/app1/poss} head back and yowling cheers to the sky as the little eagle makes it to the next tree over.",
+                "text": "Wait, like, eagle apprentices? Intrigued, app1 sticks {PRONOUN/app1/poss} head out. Down below, two dappled feathered juveniles squabble, beating their wings frantically, clearly gearing up for something. app2 bets on the lighter colored one, but app1 thinks that the smaller dark patterned one has the heart for it, and {PRONOUN/app1/subject} {VERB/app1/leap/leaps} to {PRONOUN/app1/poss} paws when the darker chick takes to the wing first, throwing {PRONOUN/app1/poss} head back and yowling cheers to the sky as the little eagle makes it to the next tree over.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
