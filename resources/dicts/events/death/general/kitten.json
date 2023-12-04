@@ -302,5 +302,27 @@
             "reg_death": "m_c ate deathberries and succumbed to the poison.",
             "reg_murder_unrevealed": "m_c was fed deathberries by r_c."
         }
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "other_cat",
+            "murder",
+            "revealed",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "rc_to_mc",
+            "neg_platonic",
+            "dislike"
+        ],
+        "death_text": "m_c sneaks out of camp, wondering what all is out there. {PRONOUN/m_c/subject/CAP} come to a small stream and attempt to leap across. {PRONOUN/m_c/subject/CAP} misjudged the distance and {PRONOUN/m_c/poss} paws scrabble on the bank for purchase. m_c is losing {PRONOUN/m_c/poss} grip when {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} {PRONOUN/m_c/subject} {VERB/m_c/catch/catches} a glimpse of r_c's pelt. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} about to call for help when {PRONOUN/m_c/poss} grip fails.",
+        "history_text": {
+            "reg_death": "m_c drowned in a stream while r_c watched.",
+            "reg_murder_unrevealed": "m_c drowned in a stream."
+        },
+        "cat_trait":[
+
+        ]
     }
 ]
