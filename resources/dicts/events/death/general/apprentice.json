@@ -127,5 +127,26 @@
             "great fighter",
             "excellent fighter"
         ]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "other_cat",
+            "murder",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "rc_to_mc",
+            "neg_platonic",
+            "dislike"
+        ],
+        "death_text": "m_c enters {PRONOUN/m_c/poss} battle stance, staring down r_c, who wanted to assess the apprentice's skills. m_c dashes forward, getting in some hits on r_c's side, before scampering out of range. Feeling bolder, the apprentice goes in for another attack from the other side. r_c spins around at the last second, {PRONOUN/r_c/poss} claws catching m_c across the throat.",
+        "history_text": {
+            "reg_death": "m_c was killed in battle training with r_c."
+        },
+        "other_cat_skill": [
+            "FIGHTER,1"
+        ]
     }
 ]
