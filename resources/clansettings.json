@@ -60,14 +60,14 @@
             "Displays Clan age and current Clan season on several pages",
             false
         ],
-        "custom pronouns": [
+        "gendered pronouns": [
             "Allow customized pronouns",
-            "Allows you to input custom pronouns in the specify gender button.",
+            "When this setting is off, all cats will be referred to with they/them pronouns.",
             false
         ],
         "they them default": [
             "Use they/them as default pronouns",
-            "All cats use they/them pronouns in the text, regardless of gender or pronouns.",
+            "New cats will begin by using they/them pronouns, regardless of gender.",
             true
         ]
     },
