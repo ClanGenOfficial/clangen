@@ -967,7 +967,7 @@
             "dislike",
             "neg_respect"
         ],
-        "death_text": "m_c was pushed under a monster, and lost a life.",
+        "death_text": "m_c {VERB/m_c/were/was} pushed under a monster, and lost a life.",
         "history_text": {
             "lead_death": "{VERB/m_c/were/was} pushed under a monster by r_c",
             "lead_murder_unrevealed": "{VERB/m_c/were/was} pushed under a monster"
@@ -986,12 +986,6 @@
             "responsible",
             "righteous",
             "vengeful"
-        ],
-        "other_cat_trait": [
-            "bloodthirsty",
-            "vengeful",
-            "ambitious",
-            "sneaky"
         ]
     },
     {
@@ -1047,7 +1041,7 @@
             "neg_trust",
             "dislike"
         ],
-        "death_text": "m_c was murdered by r_c, with the intention of taking {PRONOUN/m_c/poss} place, but r_c miscalculated how many lives m_c had left!  m_c retaliated, killing r_c in self defense.",
+        "death_text": "m_c was murdered by r_c, with the intention of taking {PRONOUN/m_c/poss} place, but r_c miscalculated how many lives m_c had left! m_c retaliated, killing r_c in self defense.",
         "history_text": {
             "reg_death": "m_c was killed by r_c in self-defense.",
             "lead_death": "{VERB/m_c/were/was} murdered by r_c in an attempt to usurp {PRONOUN/m_c/poss} lead",
