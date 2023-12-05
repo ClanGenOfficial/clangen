@@ -22,7 +22,7 @@
                 "weight": 20
             },
             {
-                "text": "r_c picks up the instruction quickly and the patrol soon plays a small game of leap frog within the shallow pools to test the apprentice's abilities.",
+                "text": "r_c picks up the instruction quickly and the patrol soon plays a small game of leapfrog within the shallow pools to test the apprentice's abilities.",
                 "exp": 20,
                 "weight": 5
             },
@@ -660,7 +660,7 @@
                 ]
             },
             {
-                "text": "app2 emerges from the dark, trotting up to app1 and asking why they wanted to meet there. app1 looks away with a purr, making up some nonsense about trying to catch the fireflies that makes no sense. Instead both apprentices hang out under the swarm of light, awkward and thrilled.",
+                "text": "app2 emerges from the dark, trotting up to app1 and asking why they wanted to meet there. app1 looks away with a purr, making up some nonsense about trying to catch the fireflies that makes no sense. Instead, both apprentices hang out under the swarm of light, awkward and thrilled.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -827,7 +827,7 @@
                 ]
             },
             {
-                "text": "It's a long but satisfying training session, with both cats having an in depth chance to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching them instead of the sun, and smiles.",
+                "text": "It's a long but satisfying training session, with both cats having an in-depth chance to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching them instead of the sun, and smiles.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -936,7 +936,7 @@
                 "weight": 20
             },
             {
-                "text": "HAH! app1 leaps, tail lashing furiously as the beetle buzzes under {PRONOUN/app1/poss} forepaws, claws sheathed. {PRONOUN/app1/subject/CAP} {VERB/app1/bat/bats} the bug off the rock and onto the ground, pouncing after it, jumping and twisting as {PRONOUN/app1/poss} colourful prey flits around {PRONOUN/app1/poss} head in confused-concussed beetle-behaviour, unused to being an apprentice's new favourite toy.",
+                "text": "HAH! app1 leaps, tail lashing furiously as the beetle buzzes under {PRONOUN/app1/poss} forepaws, claws sheathed. {PRONOUN/app1/subject/CAP} {VERB/app1/bat/bats} the bug off the rock and onto the ground, pouncing after it, jumping and twisting as {PRONOUN/app1/poss} colorful prey flits around {PRONOUN/app1/poss} head in confused-concussed beetle-behavior, unused to being an apprentice's new favorite toy.",
                 "exp": 20,
                 "weight": 5
             },
@@ -954,7 +954,7 @@
                 "weight": 20
             },
             {
-                "text": "Slimey, yet satisfying! Curiousity completed, app1 wanders off - but has to report to the medicine den later, when {PRONOUN/app1/poss} stomach reminds {PRONOUN/app1/object} why cats don't eat random bugs.",
+                "text": "Slimy, yet satisfying! Curiosity completed, app1 wanders off - but has to report to the medicine den later, when {PRONOUN/app1/poss} stomach reminds {PRONOUN/app1/object} why cats don't eat random bugs.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
