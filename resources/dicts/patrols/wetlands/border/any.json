@@ -34,7 +34,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "As s_c marks the border, they encounter a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! s_c plays along, acting very impressed with the hard working apprentice, and the apprentice's mentor purrs gratefully.",
+                "text": "As s_c marks the border, they encounter a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! s_c plays along, acting very impressed with the hard-working apprentice, and the apprentice's mentor purrs gratefully.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -113,7 +113,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "As s_c marks the border, they encounter a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they tuck their paws together neatly, sitting pretty for inspection. s_c plays along, acting very impressed with the hard working apprentice, and the apprentice's mentor purrs gratefully at the c_n deputy's kindness.",
+                "text": "As s_c marks the border, they encounter a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they tuck their paws together neatly, sitting pretty for inspection. s_c plays along, acting very impressed with the hard-working apprentice, and the apprentice's mentor purrs gratefully at the c_n deputy's kindness.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -419,7 +419,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "As s_c marks the border, they encounter a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! s_c plays along, acting very impressed with the hard working apprentice, and the apprentice's mentor purrs gratefully.",
+                "text": "As s_c marks the border, they encounter a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! s_c plays along, acting very impressed with the hard-working apprentice, and the apprentice's mentor purrs gratefully.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -498,7 +498,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "As s_c marks the border, they encounter a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they tuck their paws together neatly, sitting pretty for inspection. s_c plays along, acting very impressed with the hard working apprentice, and the apprentice's mentor purrs gratefully at the c_n deputy's kindness.",
+                "text": "As s_c marks the border, they encounter a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they tuck their paws together neatly, sitting pretty for inspection. s_c plays along, acting very impressed with the hard-working apprentice, and the apprentice's mentor purrs gratefully at the c_n deputy's kindness.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1109,7 +1109,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them and being led by their deputy. One of the patrol yowls an insult, and s_c squares up, coldly sneering at the warrior that thinks they can take them. The other deputy calls their warrior back, begrudgingly impressed.",
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them and being led by their deputy. One of the patrol members yowls an insult, and s_c squares up, coldly sneering at the warrior that thinks they can take them. The other deputy calls their warrior back, begrudgingly impressed.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -1183,7 +1183,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them and being led by their Clan leader. One of the patrol yowls an insult, and s_c squares up, coldly sneering at the warrior that thinks they can take them. The other leader calls their warrior back, begrudgingly impressed.",
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them and being led by their Clan leader. One of the patrol members yowls an insult, and s_c squares up, coldly sneering at the warrior that thinks they can take them. The other leader calls their warrior back, begrudgingly impressed.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -1639,7 +1639,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c is in the middle of the bog when the flood hits them, freezing water rushing past and sweeping them straight out into the churning river, under it's ice.",
+                "text": "r_c is in the middle of the bog when the flood hits them, freezing water rushing past and sweeping them straight out into the churning river, under its ice.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -1828,7 +1828,7 @@
                 "weight": 20
             },
             {
-                "text": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact. . . they're pretty sure this is their mentor's scent. And their mentor has been hinting there'll be a test soon.",
+                "text": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... they're pretty sure this is their mentor's scent. And their mentor has been hinting there'll be a test soon.",
                 "exp": 10,
                 "weight": 5
             }
@@ -2036,7 +2036,7 @@
                 "weight": 20
             },
             {
-                "text": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact. . . they're pretty sure this is their mentor's scent. And their mentor has been hinting there'll be a test soon.",
+                "text": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... they're pretty sure this is their mentor's scent. And their mentor has been hinting there'll be a test soon.",
                 "exp": 10,
                 "weight": 5
             }
@@ -2234,7 +2234,7 @@
                 "weight": 20
             },
             {
-                "text": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact. . . they're pretty sure this is their mentor's scent. And their mentor has been hinting there'll be a test soon.",
+                "text": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... they're pretty sure this is their mentor's scent. And their mentor has been hinting there'll be a test soon.",
                 "exp": 10,
                 "weight": 5
             }
@@ -2301,7 +2301,7 @@
                 ]
             },
             {
-                "text": "s_c spins a story, vivid and engaging, telling the tale of a massive war their ancestors fought over the border the patrol is headed to mark. Not only does it keep every cat entertained, it really emphasizes the importance of the patrol and motivates everyone.",
+                "text": "s_c spins a story, vivid and engaging, telling the tale of a massive war their ancestors fought over the border the patrol is headed to mark. Not only does it keep every cat entertained, but it also emphasizes the importance of the patrol and motivates everyone.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
