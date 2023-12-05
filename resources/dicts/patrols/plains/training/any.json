@@ -14,7 +14,7 @@
         },
         "weight": 20,
         "intro_text": "The patrol wants to hold a training session for app1. They decide to focus on how best to hide within the tall grass.",
-        "decline_text": "They decide to focus on the patrolling the territory instead. Training can wait for another day.",
+        "decline_text": "They decide to focus on patrolling the territory instead. Training can wait for another day.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -364,7 +364,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The cats try to find enough bits of grass to block the opening to the sett, but it won't clump together and hold a shape. Before they know it they're tired, thirsty, and returning home with nothing to show for it.",
+                "text": "The cats try to find enough bits of grass to block the opening to the sett, but it won't clump together and hold a shape. Before they know it, they're tired, thirsty, and returning home with nothing to show for it.",
                 "exp": 0,
                 "weight": 20
             },
@@ -388,7 +388,7 @@
                 ]
             },
             {
-                "text": "As the patrol is sniffing around the burrow entrance there's a rustle from the grass. It's difficult to say who's more surprised - cats or badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process but everyone gets home safe in the end. . . including the badger.",
+                "text": "As the patrol is sniffing around the burrow entrance there's a rustle from the grass. It's difficult to say who's more surprised - the cats or the badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process but everyone gets home safe in the end. . . including the badger.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1374,7 +1374,7 @@
                 ]
             },
             {
-                "text": "As the herd moves slowly and invisibly around them in the grass, felt only by the thump-thud of their hoofsteps, s_c brings app1 in close and tells them the story of how the great thunderbeasts protect the plains, channeling thunder in their horns and earthquakes in their hooves, so that neither may come to hurt c_n while they are near.",
+                "text": "As the herd moves slowly and invisibly around them in the grass, felt only by the thump-thud of their hoof steps, s_c brings app1 in close and tells them the story of how the great thunderbeasts protect the plains, channeling thunder in their horns and earthquakes in their hooves, so that neither may come to hurt c_n while they are near.",
                 "exp": 15,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -1633,7 +1633,7 @@
                 ]
             },
             {
-                "text": "As the herd moves slowly and invisibly around them in the grass, felt only by the thump-thud of their hoofsteps, s_c brings app1 and app2 in close and tells them the story of how the great thunderbeasts protect the plains, channeling thunder in their horns and earthquakes in their hooves, so that neither may come to hurt c_n while they are near.",
+                "text": "As the herd moves slowly and invisibly around them in the grass, felt only by the thump-thud of their hoof steps, s_c brings app1 and app2 in close and tells them the story of how the great thunderbeasts protect the plains, channeling thunder in their horns and earthquakes in their hooves, so that neither may come to hurt c_n while they are near.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -1845,7 +1845,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "On this dry morning, the patrol heads out to practice tunnel navigation. There's an old, long abandoned badger sett that's perfect for apprentices, big enough to not be claustrophobic, but with plenty of criss-crossed, overlapping tunnels.",
+        "intro_text": "On this dry morning, the patrol heads out to practice tunnel navigation. There's an old, long abandoned badger sett that's perfect for apprentices, big enough to not be claustrophobic, but with plenty of crisscrossed, overlapping tunnels.",
         "decline_text": "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -1974,7 +1974,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "On this dry morning, the patrol heads out to practice tunnel navigation. There's an old, long abandoned badger sett that's perfect for apprentices, big enough to not be claustrophobic, but with plenty of criss-crossed, overlapping tunnels.",
+        "intro_text": "On this dry morning, the patrol heads out to practice tunnel navigation. There's an old, long abandoned badger sett that's perfect for apprentices, big enough to not be claustrophobic, but with plenty of crisscrossed, overlapping tunnels.",
         "decline_text": "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -2104,7 +2104,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "On this dry morning, the patrol heads out to practice tunnel navigation. There's an old, long abandoned badger sett that's perfect for apprentices, big enough to not be claustrophobic, but with plenty of criss-crossed, overlapping tunnels.",
+        "intro_text": "On this dry morning, the patrol heads out to practice tunnel navigation. There's an old, long abandoned badger sett that's perfect for apprentices, big enough to not be claustrophobic, but with plenty of crisscrossed, overlapping tunnels.",
         "decline_text": "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -2234,7 +2234,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "On this dry morning, the patrol heads out to practice tunnel navigation. There's an old, long abandoned badger sett that's perfect for apprentices, big enough to not be claustrophobic but with plenty of criss-crossed overlapping tunnels.",
+        "intro_text": "On this dry morning, the patrol heads out to practice tunnel navigation. There's an old, long abandoned badger sett that's perfect for apprentices, big enough to not be claustrophobic but with plenty of crisscrossed overlapping tunnels.",
         "decline_text": "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -2382,7 +2382,7 @@
                 ]
             },
             {
-                "text": "app2 emerges from the dark, trotting up to app1 and asking why they wanted to meet there. app1 looks away with a purr, making up some nonsense about fight training that makes no sense. Instead both apprentices hang out under the stars, awkward and thrilled.",
+                "text": "app2 emerges from the dark, trotting up to app1 and asking why they wanted to meet there. app1 looks away with a purr, making up some nonsense about fight training that makes no sense. Instead, both apprentices hang out under the stars, awkward and thrilled.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -2471,7 +2471,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "The cats go out together in the late of the day, as the shadows stretch long over the flat plains. r_c goes through their tricks, showing p_l how they shift their balance to make less noise slipping through the grass, as p_l watches with eyes that r_c notices are a bit too admiring for what's just a little trick. They smirk, showing off a little.",
+                "text": "The cats go out together later in the day, as the shadows stretch long over the flat plains. r_c goes through their tricks, showing p_l how they shift their balance to make less noise slipping through the grass, as p_l watches with eyes that r_c notices are a bit too admiring for what's just a little trick. They smirk, showing off a little.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
@@ -2485,7 +2485,7 @@
                 ]
             },
             {
-                "text": "It's a long but satisfying training session, with both cats having an in depth chance to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching them instead of the sun, and smiles.",
+                "text": "It's a long but satisfying training session, with both cats having an in-depth chance to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching them instead of the sun, and smiles.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
