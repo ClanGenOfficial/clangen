@@ -1404,7 +1404,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "The patrol cautiously heads in the direction of the strange, unmoving eyes. The cats see a strange face with glowing eyes in the distance, baring its fangs and smelling of smoke. p_l creeps up to the face to find it that it belongs to a pumpkin! Startled and somewhat scared, r_c suggests heading back to camp to report this bizarre finding to the Clan. p_l agrees, not wanting to be near this... thing... any longer.",
+                "text": "The patrol cautiously heads in the direction of the strange, unmoving eyes. The cats see a strange face with glowing eyes in the distance, baring its fangs and smelling of smoke. p_l creeps up to the face to find that it belongs to a pumpkin! Startled and somewhat scared, r_c suggests heading back to camp to report this bizarre finding to the Clan. p_l agrees, not wanting to be near this... thing... any longer.",
                 "exp": 10,
                 "weight": 20
             },
@@ -1536,7 +1536,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "r_c hesitantly approaches the Twoleg, fur bristling and on guard. It doesn't appear to notice {PRONOUN/r_c/object} yet. Paw by paw, r_c inches forward, but realizes something seems off. Is this Twoleg... even alive? With some more investigation, r_c finds hay sticking out of the Twoleg's pelt. How odd. r_c reports back with {PRONOUN/r_c/poss} findings.",
+                "text": "r_c hesitantly approaches the Twoleg, fur bristling and on guard. It doesn't appear to notice {PRONOUN/r_c/object} yet. Paw by paw, r_c inches forward, but realizes something seems off. Is this Twoleg... even alive? After a quick investigation, r_c finds hay sticking out of the Twoleg's pelt. How odd. r_c reports back with {PRONOUN/r_c/poss} findings.",
                 "exp": 10,
                 "weight": 20
             },
