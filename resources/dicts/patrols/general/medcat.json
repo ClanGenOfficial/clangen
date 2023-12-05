@@ -283,7 +283,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "They have an in depth conversation about r_c's vision as they walk. By the time they head back to camp, they have a good idea of what they should do with the information.",
+                "text": "They have an in-depth conversation about r_c's vision as they walk. By the time they head back to camp, they have a good idea of what they should do with the information.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -457,7 +457,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "They have an in depth conversation about r_c's vision as they walk. By the time they head back to camp, they have a good idea of what they should do with the information.",
+                "text": "They have an in-depth conversation about r_c's vision as they walk. By the time they head back to camp, they have a good idea of what they should do with the information.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -1693,7 +1693,7 @@
                 ]
             },
             {
-                "text": "s_c seems a little distracted, deep in thought about something. When app2 asks what's up, s_c blinks slowly at {PRONOUN/app2/object} before confessing how much {PRONOUN/s_c/subject} {VERB/s_c/miss/misses} spending time together. They burrow their noses into each others pelts and purr, soaking in the moment and their love for each other before continuing on, and promise to spend more time together. ",
+                "text": "s_c seems a little distracted, deep in thought about something. When app2 asks what's up, s_c blinks slowly at {PRONOUN/app2/object} before confessing how much {PRONOUN/s_c/subject} {VERB/s_c/miss/misses} spending time together. They burrow their noses into each other's pelts and purr, soaking in the moment and their love for each other before continuing on, and promise to spend more time together. ",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": ["loving"],
@@ -1808,7 +1808,7 @@
                 ]
             },
             {
-                "text": "s_c seems a little distracted, deep in thought about something. When r_c asks what's up, s_c blinks slowly at {PRONOUN/r_c/object} before confessing how much {PRONOUN/s_c/subject} {VERB/s_c/miss/misses} spending time together. They burrow their noses into each others pelts and purr, soaking in the moment and their love for each other before continuing on, and promise to spend more time together. ",
+                "text": "s_c seems a little distracted, deep in thought about something. When r_c asks what's up, s_c blinks slowly at {PRONOUN/r_c/object} before confessing how much {PRONOUN/s_c/subject} {VERB/s_c/miss/misses} spending time together. They burrow their noses into each other's pelts and purr, soaking in the moment and their love for each other before continuing on, and promise to spend more time together. ",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": ["loving"],
@@ -2426,7 +2426,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The two medicine cats walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since its been so long. How embarrassing!",
+                "text": "The two medicine cats walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since it's been so long. How embarrassing!",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2511,7 +2511,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The two medicine cats walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since its been so long. How embarrassing!",
+                "text": "The two medicine cats walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since it's been so long. How embarrassing!",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2649,7 +2649,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The two medicine cats walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since its been so long. How embarrassing!",
+                "text": "The two medicine cats walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since it's been so long. How embarrassing!",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2718,7 +2718,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The two medicine cats walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since its been so long. How embarrassing!",
+                "text": "The two medicine cats walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since it's been so long. How embarrassing!",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2749,7 +2749,7 @@
             "all apprentices": [2, 2]
         },
         "weight": 20,
-        "intro_text": "In order to spice up their patrol, p_l challenges app2 to a herb-gathering competition.",
+        "intro_text": "In order to spice up their patrol, p_l challenges app2 to an herb-gathering competition.",
         "decline_text": "app2 scoffs at p_l's silliness and stalks off, leaving p_l alone in {PRONOUN/p_l/poss} dismay.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -2996,7 +2996,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "p_l and r_c search and harvest any herbs they can get their paws on. Later that day they reunite in front of the camp, just as the sun is setting, both their mouths stuffed full with herbs.",
+                "text": "p_l and r_c search and harvest any herbs they can get their paws on. Later that day they reunite in front of the camp, just as the sun is setting, both their mouths stuffed full of herbs.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -3075,7 +3075,7 @@
         },
         "weight": 20,
         "intro_text": "p_l thinks r_c is a bit of a feather-brain, so when {PRONOUN/r_c/subject} come up to p_l while p_l is gathering herbs and suggest replenishing the Clan's catmint supply with a gleam in {PRONOUN/r_c/poss} eye, p_l hesitates.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} aren't going to go after a herb renowned for the silliness it can cause with a cat {PRONOUN/p_l/subject} dislike. It's simply a bad idea.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} aren't going to go after an herb renowned for the silliness it can cause with a cat {PRONOUN/p_l/subject} dislike. It's simply a bad idea.",
         "chance_of_success": 40,
         "relationship_constraint": ["dislike_20"],
         "success_outcomes": [
