@@ -15,7 +15,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
+                "text": "Your cats are smaller, but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["large"],
@@ -73,7 +73,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
+                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -210,7 +210,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However with so many cats to protect each other, there were no injuries.",
+                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -347,7 +347,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
+                "text": "r_c fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -959,7 +959,7 @@
                 ]
             },
             {
-                "text": "The patrol sneaks closer, until p_l realises that the swift vixen is approaching her den. Her cubs, nearly full grown on prey stolen from c_n's territory, poke their heads out, and the cats yowl in outrage. They charge the den, killing two of the cubs before the vixen runs with her third.",
+                "text": "The patrol sneaks closer, until p_l realizes that the swift vixen is approaching her den. Her cubs, nearly full grown on prey stolen from c_n's territory, poke their heads out, and the cats yowl in outrage. They charge the den, killing two of the cubs before the vixen runs with her third.",
                 "exp": 30,
                 "weight": 5,
                 "prey": ["large"],
@@ -992,7 +992,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small canivore gets its name.",
+                "text": "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small carnivore gets its name.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1007,7 +1007,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "As the patrol descends on the swift vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, and use the patrol switching to r_c's defence as their signal to flee.",
+                "text": "As the patrol descends on the swift vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, and use the patrol switching to r_c's defense as their signal to flee.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1047,7 +1047,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "Sneaking closer, r_c realises that the wind carries the scent of milk from the vixen. It's a swift fox - and she has cubs. Eventually she leaves the area, and r_c begins the hunt, checking every burrow, every crevice, every hole until they stumble over the den. Two of the cubs flee into the grasslands, while the third falls to r_c's claws.",
+                "text": "Sneaking closer, r_c realizes that the wind carries the scent of milk from the vixen. It's a swift fox - and she has cubs. Eventually she leaves the area, and r_c begins the hunt, checking every burrow, every crevice, every hole until they stumble over the den. Two of the cubs flee into the grasslands, while the third falls to r_c's claws.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["medium"],
@@ -1062,7 +1062,7 @@
                 ]
             },
             {
-                "text": "This swift vixen has a den, r_c realises, one perched just under a lone tree. Once the vixen leaves, r_c digs around it to bury the den and its contents. No swift cubs will be raised within c_n's borders.",
+                "text": "This swift vixen has a den, r_c realizes, one perched just under a lone tree. Once the vixen leaves, r_c digs around it to bury the den and its contents. No swift cubs will be raised within c_n's borders.",
                 "exp": 30,
                 "weight": 5,
                 "relationships": [
@@ -1383,7 +1383,7 @@
         },
         "weight": 20,
         "intro_text": "p_l walks low to the ground, paws soft and light so as not to make a sound. Their jaws hang open to taste at the air, and a tingle of satisfaction shoots through them as they scent a nearby ground squirrel, fat in preparation for leaf-bare.",
-        "decline_text": "p_l watches it for a moment, then turns away and leaves. There's still time before leaf-bare, and if they wait just a bit they're sure to catch something even bigger.",
+        "decline_text": "p_l watches it for a moment, then turns away and leaves. There's still time before leaf-bare, and if they wait just a little bit longer, they're sure to catch something even bigger.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -1433,7 +1433,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The wind blows a scent towards them, and app1 immediately drops into a crouch. It's hard to locate between the swaying stalks of grass, and they're pretty sure at one point it's long gone, but in the end they find and catch it!",
+                "text": "The wind blows a scent towards them, and app1 immediately drops into a crouch. It's hard to locate between the swaying stalks of grass, and they're pretty sure at one point it's long gone, but in the end, they find and catch it!",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"]
@@ -1722,7 +1722,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "s_c immediately drops into a practised crouch, shimmying flawlessly along the ground and taking the perfectly plump mouse completely by surprise.",
+                "text": "s_c immediately drops into a practiced crouch, shimmying flawlessly along the ground and taking the perfectly plump mouse completely by surprise.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1"],
@@ -2185,7 +2185,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "app1 thinks app2's p_tp_s looks infinitly more delicous than {PRONOUN/app1/poss} own contributions of two p_tp_p, while app2 insists that {PRONOUN/app2/subject}'d much rather bring back p_tp_p.",
+                "text": "app1 thinks app2's p_tp_s looks infinitely more delicious than {PRONOUN/app1/poss} own contributions of two p_tp_p, while app2 insists that {PRONOUN/app2/subject}'d much rather bring back p_tp_p.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"],
@@ -2393,7 +2393,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "app1 thinks app2's p_tp_s looks infinitly more delicous than {PRONOUN/app1/poss} own contributions of two p_tp_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back p_tp_p than the p_mp_s {PRONOUN/app3/subject} caught.",
+                "text": "app1 thinks app2's p_tp_s looks infinitely more delicious than {PRONOUN/app1/poss} own contributions of two p_tp_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back p_tp_p than the p_mp_s {PRONOUN/app3/subject} caught.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["small"],
@@ -2601,7 +2601,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "app1 thinks app2's p_tp_s looks infinitly more delicous than {PRONOUN/app1/poss} own contributions of two p_tp_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back p_tp_p than the p_mp_s {PRONOUN/app3/subject} caught.",
+                "text": "app1 thinks app2's p_tp_s looks infinitely more delicious than {PRONOUN/app1/poss} own contributions of two p_tp_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back p_tp_p than the p_mp_s {PRONOUN/app3/subject} caught.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["small"],
@@ -2809,7 +2809,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "app1 thinks app2's p_tp_s looks infinitly more delicous than {PRONOUN/app1/poss} own contributions of two p_tp_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back p_tp_p than the p_mp_s {PRONOUN/app3/subject} caught.",
+                "text": "app1 thinks app2's p_tp_s looks infinitely more delicious than {PRONOUN/app1/poss} own contributions of two p_tp_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back p_tp_p than the p_mp_s {PRONOUN/app3/subject} caught.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["small"],
@@ -3014,7 +3014,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "app1 thinks app2's p_tp_s looks infinitly more delicous than {PRONOUN/app1/poss} own contributions of two p_tp_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back p_tp_p than the p_mp_s {PRONOUN/app3/subject} caught.",
+                "text": "app1 thinks app2's p_tp_s looks infinitely more delicious than {PRONOUN/app1/poss} own contributions of two p_tp_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back p_tp_p than the p_mp_s {PRONOUN/app3/subject} caught.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["small"],
@@ -3074,7 +3074,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "app1 collects two p_tp_p, and watches p_l take down a p_mp_s in a astonishing pounce. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's p_tp_p, making app1 grimace at what's got to be fake praise.",
+                "text": "app1 collects two p_tp_p, and watches p_l take down a p_mp_s in an astonishing pounce. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's p_tp_p, making app1 grimace at what's got to be fake praise.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"],
@@ -3278,7 +3278,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "app1 collects two p_tp_p, and watches p_l take down a p_mp_s in a astonishing pounce and the rest of {PRONOUN/app1/poss} older siblings bring down two p_mp_p. {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's p_tp_p, making app1 grimace at what's got to be fake praise.",
+                "text": "app1 collects two p_tp_p, and watches p_l take down a p_mp_s in an astonishing pounce and the rest of {PRONOUN/app1/poss} older siblings bring down two p_mp_p. {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's p_tp_p, making app1 grimace at what's got to be fake praise.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["medium"],
@@ -3424,7 +3424,7 @@
                 ]
             },
             {
-                "text": "The hunting patrol is perfectly successful and it matters not a wit to either of the warriors, because p_l makes a joke that {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} is funny but that's always gotten on r_c's nerves and suddenly they're both acting like apprentices again, snippy, immature, and irritable.",
+                "text": "The hunting patrol is perfectly successful and it matters not a whit to either of the warriors, because p_l makes a joke that {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} is funny but that's always gotten on r_c's nerves and suddenly they're both acting like apprentices again, snippy, immature, and irritable.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"],
@@ -3439,7 +3439,7 @@
                 ]
             },
             {
-                "text": "s_c nets them two healthy p_mp_p to take back to camp, but it only irritates {PRONOUN/s_c/poss} sibling. r_c never even got the chance to to even try for a pounce, {VERB/r_c/are/is} {PRONOUN/r_c/subject} only there to carry around s_c's prey?",
+                "text": "s_c nets them two healthy p_mp_p to take back to camp, but it only irritates {PRONOUN/s_c/poss} sibling. r_c never even got the chance to even try for a pounce, {VERB/r_c/are/is} {PRONOUN/r_c/subject} only there to carry around s_c's prey?",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
@@ -3505,7 +3505,7 @@
                 ]
             },
             {
-                "text": "There's just something nice about hanging out with another warrior who'll always be there for {PRONOUN/r_c/object}, regardless of their similarities and differences. And they also bring back a good sized p_mp_s with some p_tp_p on the side for the fresh-kill pile.",
+                "text": "There's just something nice about hanging out with another warrior who'll always be there for {PRONOUN/r_c/object}, regardless of their similarities and differences. And they also bring back a good-sized p_mp_s with some p_tp_p on the side for the fresh-kill pile.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"],
@@ -3840,7 +3840,7 @@
                 ]
             },
             {
-                "text": "The hunting patrol is perfectly successful and it matters not a wit to any of the warriors, because p_l makes a joke that {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} is funny but that's always gotten on r_c's nerves and suddenly everyone's acting like apprentices again, snippy, immature, and irritable.",
+                "text": "The hunting patrol is perfectly successful and it matters not a whit to any of the warriors, because p_l makes a joke that {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} is funny but that's always gotten on r_c's nerves and suddenly everyone's acting like apprentices again, snippy, immature, and irritable.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"],
@@ -3855,7 +3855,7 @@
                 ]
             },
             {
-                "text": "s_c nets them four healthy p_mp_p to take back to camp, but it only irritates {PRONOUN/s_c/poss} siblings. r_c never even got the chance to to even try for a pounce, {VERB/r_c/are/is} {PRONOUN/r_c/subject} only there to carry around s_c's prey?",
+                "text": "s_c nets them four healthy p_mp_p to take back to camp, but it only irritates {PRONOUN/s_c/poss} siblings. r_c never even got the chance to even try for a pounce, {VERB/r_c/are/is} {PRONOUN/r_c/subject} only there to carry around s_c's prey?",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
@@ -3921,7 +3921,7 @@
                 ]
             },
             {
-                "text": "There's just something nice about hanging out with other warriors who'll always be there for {PRONOUN/r_c/object}, regardless of their similarities and differences. And they also bring back a good sized p_mp_s with some p_tp_p on the side for the fresh-kill pile.",
+                "text": "There's just something nice about hanging out with other warriors who'll always be there for {PRONOUN/r_c/object}, regardless of their similarities and differences. And they also bring back a good-sized p_mp_s with some p_tp_p on the side for the fresh-kill pile.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"],
@@ -4253,7 +4253,7 @@
                 ]
             },
             {
-                "text": "s_c carefully plucks some of the herbs and takes them back to the camp to be identified before the patrol goes to the trouble of collecting them, smartly decideding to get an informed opinion before committing the patrol.",
+                "text": "s_c carefully plucks some of the herbs and takes them back to the camp to be identified before the patrol goes to the trouble of collecting them, smartly deciding to get an informed opinion before committing the patrol.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": [
@@ -4304,7 +4304,7 @@
     	"max_cats": 6,
     	"min_max_status": {},
     	"weight": 20,
-    	"intro_text": "As the wind scatters the orange leaf-pelts of the lonely trees on the grasslands, pipistrelle bats arrive en masse to court, males belting out their high pitched songs of love.",
+    	"intro_text": "As the wind scatters the orange leaf-pelts of the lonely trees on the grasslands, pipistrelle bats arrive en masse to court, males belting out their high-pitched songs of love.",
     	"decline_text": "How very... squeaky.",
     	"chance_of_success": 50,
     	"success_outcomes": [
