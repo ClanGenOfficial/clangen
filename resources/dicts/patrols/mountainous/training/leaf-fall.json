@@ -74,7 +74,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The apprentices find a promising looking patch of fresh snow, only to find it conceals an old dirtplace trench underneath. Not only does it stink, they have to clean it up and try hid that they disturbed it, and it leaves them both irritated and stressed.",
+                "text": "The apprentices find a promising looking patch of fresh snow, only to find it conceals an old dirtplace trench underneath. Not only does it stink, but now they have to clean it up <i> and <i/> hide the fact that they disturbed it in the first place! It leaves them both irritated and stressed.",
                 "exp": 0,
                 "weight": 20
             },
@@ -132,7 +132,7 @@
                 ]
             },
             {
-                "text": "On a scrub by the bog, a small towhee opens its beak and calls like a cat. app1 pokes s_c for an explanation. You see, an ancient cat, running from wolves, begged StarClan for help. StarClan gave her voice to the bird in the tree she hid under, and while the wolves were distracted she got away, but she never managed to catch that bird and get her voice back.",
+                "text": "On a scrub by the bog, a small towhee opens its beak and calls like a cat. app1 pokes s_c for an explanation. You see, an ancient cat, running from wolves, begged StarClan for help. StarClan gave her voice to the bird in the tree she hid under, and while the wolves were distracted, she got away, but she never managed to catch that bird and get her voice back.",
                 "exp": 15,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -275,7 +275,7 @@
                 ]
             },
             {
-                "text": "On a scrub by the bog, a small towhee opens its beak and calls like a cat. The apprentices poke s_c for an explanation. You see, an ancient cat, running from wolves, begged StarClan for help. StarClan gave her voice to the bird in the tree she hid under, and while the wolves were distracted she got away, but she never managed to catch that bird and get her voice back.",
+                "text": "On a scrub by the bog, a small towhee opens its beak and calls like a cat. The apprentices poke s_c for an explanation. You see, an ancient cat, running from wolves, begged StarClan for help. StarClan gave her voice to the bird in the tree she hid under, and while the wolves were distracted, she got away, but she never managed to catch that bird and get her voice back.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -390,7 +390,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Wait, like, eagle apprentices? Intrigued, app1 sticks {PRONOUN/app1/poss} head out. Down below, two dappled feathered juveniles squabble, beating their wings frantically, clearly gearing up for something. app2 bets on the lighter coloured one, but app1 thinks that the smaller dark patterned one has the heart for it, and {PRONOUN/app1/subject} {VERB/app1/leap/leaps} to {PRONOUN/app1/poss} paws when the darker chick takes to the wing first, throwing {PRONOUN/app1/poss} head back and yowling cheers to the sky as the little eagle makes it to the next tree over.",
+                "text": "Wait, like, eagle apprentices? Intrigued, app1 sticks {PRONOUN/app1/poss} head out. Down below, two dappled feathered juveniles squabble, beating their wings frantically, clearly gearing up for something. app2 bets on the lighter colored one, but app1 thinks that the smaller dark patterned one has the heart for it, and {PRONOUN/app1/subject} {VERB/app1/leap/leaps} to {PRONOUN/app1/poss} paws when the darker chick takes to the wing first, throwing {PRONOUN/app1/poss} head back and yowling cheers to the sky as the little eagle makes it to the next tree over.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -483,7 +483,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Wait, like, eagle apprentices? Intrigued, app1 sticks {PRONOUN/app1/poss} head out. Down below, two dappled feathered juveniles squabble, beating their wings frantically, clearly gearing up for something. app2 bets on the lighter coloured one, but app1 thinks that the smaller dark patterned one has the heart for it, and {PRONOUN/app1/subject} {VERB/app1/leap/leaps} to {PRONOUN/app1/poss} paws when the darker chick takes to the wing first, throwing {PRONOUN/app1/poss} head back and yowling cheers to the sky as the little eagle makes it to the next tree over.",
+                "text": "Wait, like, eagle apprentices? Intrigued, app1 sticks {PRONOUN/app1/poss} head out. Down below, two dappled feathered juveniles squabble, beating their wings frantically, clearly gearing up for something. app2 bets on the lighter colored one, but app1 thinks that the smaller dark patterned one has the heart for it, and {PRONOUN/app1/subject} {VERB/app1/leap/leaps} to {PRONOUN/app1/poss} paws when the darker chick takes to the wing first, throwing {PRONOUN/app1/poss} head back and yowling cheers to the sky as the little eagle makes it to the next tree over.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
