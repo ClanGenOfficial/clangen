@@ -14,7 +14,7 @@
         },
         "weight": 20,
         "intro_text": "The patrol wants to hold a training session for app1. They decide to focus on tree climbing!",
-        "decline_text": "They decide to focus on the patrolling the territory instead. Training can wait for another day.",
+        "decline_text": "They decide to focus on patrolling the territory instead. Training can wait for another day.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -310,7 +310,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The cats try to find enough bits of undergrowth in the nearby forest to block the opening to the sett, but the area is pretty bare. Before they know it they're tired, thirsty, and returning home with nothing to show for it.",
+                "text": "The cats try to find enough bits of undergrowth in the nearby forest to block the opening to the sett, but the area is pretty bare. Before they know it, they're tired, thirsty, and returning home with nothing to show for it.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -352,7 +352,7 @@
                 ]
             },
             {
-                "text": "As the patrol is sniffing around the burrow entrance there's a rustle from the woods. It's difficult to say who's more surprised - cats or badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process but everyone gets home safe in the end... including the badger.",
+                "text": "As the patrol is sniffing around the burrow entrance there's a rustle from the woods. It's difficult to say who's more surprised - the cats or the badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process but everyone gets home safe in the end... including the badger.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -979,7 +979,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c takes a breath and tries to remain calm. Looking around to try to find a way out, they spot a place where all the branches are seemingly resting on one. With a surge of energy they crash their way out through the weak point, twig-covered but free.",
+                "text": "s_c takes a breath and tries to remain calm. Looking around to try to find a way out, they spot a place where all the branches are seemingly resting on one. With a surge of energy, they crash their way out through the weak point, twig-covered but free.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"]
@@ -1749,7 +1749,7 @@
                 ]
             },
             {
-                "text": "app2 emerges into the hidden soft light under the willow tree. Seeing app1, they trot up, asking why app1 wanted to meet there. app1 looks away with a purr, making up some nonsense about fight training that makes no sense. Instead both apprentices hang out there all afternoon, awkward and thrilled.",
+                "text": "app2 emerges into the hidden soft light under the willow tree. Seeing app1, they trot up, asking why app1 wanted to meet there. app1 looks away with a purr, making up some nonsense about fight training that makes no sense. Instead, both apprentices hang out there all afternoon, awkward and thrilled.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -1852,7 +1852,7 @@
                 ]
             },
             {
-                "text": "It's a long but satisfying training session, with both cats having an in depth chance to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching them instead of the sun, and smiles.",
+                "text": "It's a long but satisfying training session, with both cats having an in-depth chance to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching them instead of the sun, and smiles.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [

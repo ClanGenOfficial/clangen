@@ -13,7 +13,7 @@
             "all apprentices": [2, 2]
         },
         "weight": 40,
-        "intro_text": "The two siblings head out together, declaring a friendly competition to stock the fresh-kill pile. Newleaf, with all vegetation flush with growth after teh wet season, should still have tons of prey to find!",
+        "intro_text": "The two siblings head out together, declaring a friendly competition to stock the fresh-kill pile. Newleaf, with all vegetation flush with growth after the wet season, should still have tons of prey to find!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
         "relationship_constraint": ["siblings"],
@@ -170,7 +170,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "app1 thinks app2's d_tp_s looks infinitly more delicous than {PRONOUN/app1/poss} own contributions of two d_tp_p, while app2 insists that {PRONOUN/app2/subject}'d much rather bring back d_tp_p.",
+                "text": "app1 thinks app2's d_tp_s looks infinitely more delicious than {PRONOUN/app1/poss} own contributions of two d_tp_p, while app2 insists that {PRONOUN/app2/subject}'d much rather bring back d_tp_p.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"],
@@ -224,7 +224,7 @@
             "all apprentices": [3, 3]
         },
         "weight": 40,
-        "intro_text": "The three siblings head out together, declaring a friendly competition to stock the fresh-kill pile. Newleaf, with all vegetation flush with growth after teh wet season, should still have tons of prey to find!",
+        "intro_text": "The three siblings head out together, declaring a friendly competition to stock the fresh-kill pile. Newleaf, with all vegetation flush with growth after the wet season, should still have tons of prey to find!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
         "relationship_constraint": ["siblings"],
@@ -381,7 +381,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "app1 thinks app2's d_tp_s looks infinitly more delicous than {PRONOUN/app1/poss} own contributions of two d_tp_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back d_tp_p than the d_mp_s {PRONOUN/app3/subject} caught.",
+                "text": "app1 thinks app2's d_tp_s looks infinitely more delicious than {PRONOUN/app1/poss} own contributions of two d_tp_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back d_tp_p than the d_mp_s {PRONOUN/app3/subject} caught.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["small"],
@@ -435,7 +435,7 @@
             "all apprentices": [4, 4]
         },
         "weight": 40,
-        "intro_text": "The four siblings head out together, declaring a friendly competition to stock the fresh-kill pile. Newleaf, with all vegetation flush with growth after teh wet season, should still have tons of prey to find!",
+        "intro_text": "The four siblings head out together, declaring a friendly competition to stock the fresh-kill pile. Newleaf, with all vegetation flush with growth after the wet season, should still have tons of prey to find!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
         "relationship_constraint": ["siblings"],
@@ -592,7 +592,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "app1 thinks app2's d_tp_s looks infinitly more delicous than {PRONOUN/app1/poss} own contributions of two d_tp_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back d_tp_p than the d_mp_s {PRONOUN/app3/subject} caught.",
+                "text": "app1 thinks app2's d_tp_s looks infinitely more delicious than {PRONOUN/app1/poss} own contributions of two d_tp_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back d_tp_p than the d_mp_s {PRONOUN/app3/subject} caught.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["small"],
@@ -646,7 +646,7 @@
             "all apprentices": [5, 5]
         },
         "weight": 40,
-        "intro_text": "The five siblings head out together, declaring a friendly competition to stock the fresh-kill pile. Newleaf, with all vegetation flush with growth after teh wet season, should still have tons of prey to find!",
+        "intro_text": "The five siblings head out together, declaring a friendly competition to stock the fresh-kill pile. Newleaf, with all vegetation flush with growth after the wet season, should still have tons of prey to find!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
         "relationship_constraint": ["siblings"],
@@ -803,7 +803,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "app1 thinks app2's d_tp_s looks infinitly more delicous than {PRONOUN/app1/poss} own contributions of two d_tp_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back d_tp_p than the d_mp_s {PRONOUN/app3/subject} caught.",
+                "text": "app1 thinks app2's d_tp_s looks infinitely more delicious than {PRONOUN/app1/poss} own contributions of two d_tp_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back d_tp_p than the d_mp_s {PRONOUN/app3/subject} caught.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["small"],
@@ -857,7 +857,7 @@
             "all apprentices": [6, 6]
         },
         "weight": 40,
-        "intro_text": "The six siblings head out together, declaring a friendly competition to stock the fresh-kill pile. Newleaf, with all vegetation flush with growth after teh wet season, should still have tons of prey to find!",
+        "intro_text": "The six siblings head out together, declaring a friendly competition to stock the fresh-kill pile. Newleaf, with all vegetation flush with growth after the wet season, should still have tons of prey to find!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
         "relationship_constraint": ["siblings"],
@@ -1014,7 +1014,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "app1 thinks app2's d_tp_s looks infinitly more delicous than {PRONOUN/app1/poss} own contributions of two d_tp_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back d_tp_p than the d_mp_s {PRONOUN/app3/subject} caught.",
+                "text": "app1 thinks app2's d_tp_s looks infinitely more delicious than {PRONOUN/app1/poss} own contributions of two d_tp_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back d_tp_p than the d_mp_s {PRONOUN/app3/subject} caught.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["small"],
@@ -1069,13 +1069,13 @@
             "normal adult": [1, 6]
         },
         "weight": 40,
-        "intro_text": "app1 suppresses a yawn, trying not to make a weird expression in front of p_l as {PRONOUN/app1/subject} do. p_l suggested this as sibling bonding time, but did they <i>really</i> have to get up at dawn? {PRONOUN/app1/subject/CAP} know the sun is beginning to rise, an ever stronger promise of the threat of greenleaf on the horizon, but getting out of a nice warm nest in the morning is still hard!",
+        "intro_text": "app1 suppresses a yawn, trying not to make a weird expression in front of p_l as {PRONOUN/app1/subject} do. p_l suggested this as sibling bonding time, but did they <i>really</i> have to get up at dawn? {PRONOUN/app1/subject/CAP} know the sun is beginning to rise, an ever-stronger promise of the threat of greenleaf on the horizon, but getting out of a nice warm nest in the morning is still hard!",
         "decline_text": "Actually, {PRONOUN/app1/subject}'d really rather be back in their nest.",
         "chance_of_success": 50,
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "app1 collects two d_tp_p, and watches p_l take down a d_mp_s in a astonishing pounce. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's d_tp_p, making app1 grimace at what's got to be fake praise.",
+                "text": "app1 collects two d_tp_p, and watches p_l take down a d_mp_s in an astonishing pounce. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's d_tp_p, making app1 grimace at what's got to be fake praise.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"],
@@ -1273,13 +1273,13 @@
             "normal adult": [1, 6]
         },
         "weight": 40,
-        "intro_text": "app1 suppresses a yawn, trying not to make a weird expression in front of p_l as {PRONOUN/app1/subject} do. p_l suggested this as sibling bonding time, but did they <i>really</i> have to get up at dawn? {PRONOUN/app1/subject/CAP} know the sun is beginning to rise, an ever stronger promise of the threat of greenleaf on the horizon, but getting out of a nice warm nest in the morning is still hard!",
+        "intro_text": "app1 suppresses a yawn, trying not to make a weird expression in front of p_l as {PRONOUN/app1/subject} do. p_l suggested this as sibling bonding time, but did they <i>really</i> have to get up at dawn? {PRONOUN/app1/subject/CAP} know the sun is beginning to rise, an ever-stronger promise of the threat of greenleaf on the horizon, but getting out of a nice warm nest in the morning is still hard!",
         "decline_text": "Actually, {PRONOUN/app1/subject}'d really rather be back in their nest.",
         "chance_of_success": 50,
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "app1 collects two d_tp_p, and watches p_l take down a d_mp_s in a astonishing pounce and the rest of {PRONOUN/app1/poss} older siblings bring down two d_mp_p. {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's d_tp_p, making app1 grimace at what's got to be fake praise.",
+                "text": "app1 collects two d_tp_p, and watches p_l take down a d_mp_s in an astonishing pounce and the rest of {PRONOUN/app1/poss} older siblings bring down two d_mp_p. {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's d_tp_p, making app1 grimace at what's got to be fake praise.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["medium"],
@@ -1404,7 +1404,7 @@
             "all apprentices": [-1, -1]
         },
         "weight": 40,
-        "intro_text": "A lone cactus flower, one of the stragglers leftover after leaf-bare, falls on p_l's head as p_l pads on {PRONOUN/p_l/poss} hunting patrol with r_c.",
+        "intro_text": "A lone cactus flower, one of the stragglers left over after leaf-bare, falls on p_l's head as p_l pads on {PRONOUN/p_l/poss} hunting patrol with r_c.",
         "decline_text": "Actually, {PRONOUN/p_l/subject}'d rather try fishing for prey. {PRONOUN/p_l/subject/CAP} wave {PRONOUN/p_l/poss} sibling off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/settle/settles} down at the riverbank.",
         "chance_of_success": 50,
         "relationship_constraint": ["siblings"],
@@ -1425,7 +1425,7 @@
                 ]
             },
             {
-                "text": "The hunting patrol is perfectly successful and it matters not a wit to either of the warriors, because p_l makes a joke that {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} is funny but that's always gotten on r_c's nerves and suddenly they're both acting like apprentices again, snippy, immature, and irritable.",
+                "text": "The hunting patrol is perfectly successful and it matters not a whit to either of the warriors, because p_l makes a joke that {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} is funny but that's always gotten on r_c's nerves and suddenly they're both acting like apprentices again, snippy, immature, and irritable.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"],
@@ -1440,7 +1440,7 @@
                 ]
             },
             {
-                "text": "s_c nets them two healthy d_mp_p to take back to camp, but it only irritates {PRONOUN/s_c/poss} sibling. r_c never even got the chance to to even try for a pounce, {VERB/r_c/are/is} {PRONOUN/r_c/subject} only there to carry around s_c's prey?",
+                "text": "s_c nets them two healthy d_mp_p to take back to camp, but it only irritates {PRONOUN/s_c/poss} sibling. r_c never even got the chance to even try for a pounce, {VERB/r_c/are/is} {PRONOUN/r_c/subject} only there to carry around s_c's prey?",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
@@ -1506,7 +1506,7 @@
                 ]
             },
             {
-                "text": "There's just something nice about hanging out with another warrior who'll always be there for {PRONOUN/r_c/object}, regardless of their similarities and differences. And they also bring back a good sized d_mp_s with some d_tp_p on the side for the fresh-kill pile.",
+                "text": "There's just something nice about hanging out with another warrior who'll always be there for {PRONOUN/r_c/object}, regardless of their similarities and differences. And they also bring back a good-sized d_mp_s with some d_tp_p on the side for the fresh-kill pile.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"],
@@ -1820,7 +1820,7 @@
             "all apprentices": [-1, -1]
         },
         "weight": 40,
-        "intro_text": "A lone cactus flower, one of the stragglers leftover after leaf-bare, falls on p_l's head as p_l pads on {PRONOUN/p_l/poss} hunting patrol with {PRONOUN/p_l/poss} siblings.",
+        "intro_text": "A lone cactus flower, one of the stragglers left over after leaf-bare, falls on p_l's head as p_l pads on {PRONOUN/p_l/poss} hunting patrol with {PRONOUN/p_l/poss} siblings.",
         "decline_text": "Actually, {PRONOUN/p_l/subject}'d rather try fishing for prey. {PRONOUN/p_l/subject/CAP} wave {PRONOUN/p_l/poss} siblings off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/settle/settles} down at the riverbank.",
         "chance_of_success": 50,
         "relationship_constraint": ["siblings"],
@@ -1841,7 +1841,7 @@
                 ]
             },
             {
-                "text": "The hunting patrol is perfectly successful and it matters not a wit to any of the warriors, because p_l makes a joke that {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} is funny but that's always gotten on r_c's nerves and suddenly everyone's acting like apprentices again, snippy, immature, and irritable.",
+                "text": "The hunting patrol is perfectly successful and it matters not a whit to any of the warriors, because p_l makes a joke that {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} is funny but that's always gotten on r_c's nerves and suddenly everyone's acting like apprentices again, snippy, immature, and irritable.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"],
@@ -1856,7 +1856,7 @@
                 ]
             },
             {
-                "text": "s_c nets them four healthy d_mp_p to take back to camp, but it only irritates {PRONOUN/s_c/poss} siblings. r_c never even got the chance to to even try for a pounce, {VERB/r_c/are/is} {PRONOUN/r_c/subject} only there to carry around s_c's prey?",
+                "text": "s_c nets them four healthy d_mp_p to take back to camp, but it only irritates {PRONOUN/s_c/poss} siblings. r_c never even got the chance to even try for a pounce, {VERB/r_c/are/is} {PRONOUN/r_c/subject} only there to carry around s_c's prey?",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
@@ -1922,7 +1922,7 @@
                 ]
             },
             {
-                "text": "There's just something nice about hanging out with other warriors who'll always be there for {PRONOUN/r_c/object}, regardless of their similarities and differences. And they also bring back a good sized d_mp_s with some d_tp_p on the side for the fresh-kill pile.",
+                "text": "There's just something nice about hanging out with other warriors who'll always be there for {PRONOUN/r_c/object}, regardless of their similarities and differences. And they also bring back a good-sized d_mp_s with some d_tp_p on the side for the fresh-kill pile.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"],
