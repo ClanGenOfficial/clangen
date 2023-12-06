@@ -1099,5 +1099,44 @@
         "random_living_status": [
             "living"
         ]
-    }
+    },
+    {
+        "id": "lasting_grief_warrior",
+        "thoughts": [
+            "Cannot find the energy to get out of {PRONOUN/m_c/poss} nest today",
+			"Is the first cat awake at dawn",
+			"Scolds {PRONOUN/m_c/self} for oversleeping",
+			"Doesn't eat as much fresh-kill as {PRONOUN/m_c/subject} used to",
+			"Is found sobbing outside of camp",
+			"Ignores {PRONOUN/m_c/poss} Clanmates' attempts to comfort {PRONOUN/m_c/object}",
+			"Is twitching in {PRONOUN/m_c/poss} sleep",
+			"Stares at the fresh-kill in front of {PRONOUN/m_c/object} without eating",
+			"Wonders why StarClan is punishing {PRONOUN/m_c/object}"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "lasting grief"
+            ]
+        }
+	},
+    {
+        "id": "recurring shock",
+        "thoughts": [
+            "Visits the medicine cat den for thyme",
+			"Wakes up screaming after a nightmare",
+			"Panics after hearing a noise",
+			"Is seen trembling and looking around nervously",
+			"Snaps at r_c before profusely apologizing",
+			"Is comforted by r_c after a flashback",
+			"Is the only cat awake at moonhigh",
+			"Doesn't seem to enjoy hunting anymore",
+			"Is avoiding {PRONOUN/m_c/poss} Clanmates",
+			"Is startled after r_c snuck up behind {PRONOUN/m_c/object}"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "recurring shock"
+            ]
+        }
+	}
 ]
