@@ -691,43 +691,43 @@ class SpecifyCatPronouns(UIWindow):
                                                          container=self)
             self.name_label = pygame_gui.elements.UITextBox(f"Name",
                                                          scale(pygame.Rect(
-                                                             (55, 270), (200, 45))),
+                                                             (55, 270), (200, 60))),
                                                          object_id="#text_box_30_horizcenter_spacing_95",
                                                          manager=MANAGER,
                                                          container=self)
             self.subject_label = pygame_gui.elements.UITextBox(f"Subject",
                                                          scale(pygame.Rect(
-                                                             (305, 270), (200, 45))),
+                                                             (305, 270), (200, 60))),
                                                          object_id="#text_box_30_horizcenter_spacing_95",
                                                          manager=MANAGER,
                                                          container=self)
             self.object_label = pygame_gui.elements.UITextBox(f"Object",
                                                          scale(pygame.Rect(
-                                                             (555, 270), (200, 45))),
+                                                             (555, 270), (200, 60))),
                                                          object_id="#text_box_30_horizcenter_spacing_95",
                                                          manager=MANAGER,
                                                          container=self)
             self.poss_label = pygame_gui.elements.UITextBox(f"Poss",
                                                          scale(pygame.Rect(
-                                                             (55, 430), (200, 45))),
+                                                             (55, 430), (200, 60))),
                                                          object_id="#text_box_30_horizcenter_spacing_95",
                                                          manager=MANAGER,
                                                          container=self)
             self.inposs_label = pygame_gui.elements.UITextBox(f"Inposs",
                                                          scale(pygame.Rect(
-                                                             (305, 430), (200, 45))),
+                                                             (305, 430), (200, 60))),
                                                          object_id="#text_box_30_horizcenter_spacing_95",
                                                          manager=MANAGER,
                                                          container=self)
             self.self_label = pygame_gui.elements.UITextBox(f"Self",
                                                          scale(pygame.Rect(
-                                                             (555, 430), (200, 45))),
+                                                             (555, 430), (200, 60))),
                                                          object_id="#text_box_30_horizcenter_spacing_95",
                                                          manager=MANAGER,
                                                          container=self)
-            self.gender_changed = pygame_gui.elements.UITextBox("Gender Changed!",
+            self.gender_changed = pygame_gui.elements.UITextBox("Gender Alignment Changed!",
                                                                 scale(pygame.Rect(
-                                                                    (490,300), (800, 80))),
+                                                                    (170,220), (800, 80))),
                                                                 visible=False,
                                                                 object_id="#text_box_30_horizleft",
                                                                 manager=MANAGER,
