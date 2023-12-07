@@ -336,7 +336,7 @@
           "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         },
         {
-          "text": "r_c gently presses {PRONOUN/r_c/poss} nose against m_c and gives a life for [virtue]. {PRONOUN/r_c/subject/CAP} {VERB/r_c/wrap/wraps} {PRONOUN/r_c/poss} tail around m_c and keeps a warm gaze around the new leader until {PRONOUN/r_c/subject} finally stepped away.",
+          "text": "r_c gently presses {PRONOUN/r_c/poss} nose against m_c and gives a life for [virtue]. {PRONOUN/r_c/subject/CAP} {VERB/r_c/wrap/wraps} {PRONOUN/r_c/poss} tail around m_c and {VERB/r_c/keep/keeps} a warm gaze around the new leader until {PRONOUN/r_c/subject} finally {VERB/r_c/step/steps} away.",
           "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         }
       ]
