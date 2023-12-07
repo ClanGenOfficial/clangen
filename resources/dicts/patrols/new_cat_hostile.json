@@ -37,7 +37,7 @@
                 "weight": 5,
                 "new_cat": [
                     ["age:has_kits", "loner"],
-                    ["litter", "parent:0", "status:kitten"]
+                    ["litter", "parent:0", "status:kitten", "backstory:outsider_roots2"]
                 ],
                 "relationships": [
                     {
@@ -116,7 +116,7 @@
                 "weight": 5,
                 "new_cat": [
                     ["age:has_kits", "loner"],
-                    ["litter", "parent:0", "status:kitten"]
+                    ["litter", "parent:0", "status:kitten", "backstory:outsider_roots2"]
                 ],
                 "relationships": [
                     {
@@ -195,7 +195,7 @@
                 "weight": 5,
                 "new_cat": [
                     ["age:has_kits", "kittypet"],
-                    ["litter", "parent:0", "status:kitten"]
+                    ["litter", "parent:0", "status:kitten", "backstory:outsider_roots2"]
                 ],
                 "relationships": [
                     {
@@ -599,7 +599,7 @@
                 "weight": 5,
                 "new_cat": [
                     ["status:medicine cat", "age:has_kits", "loner"],
-                    ["litter", "parent:0", "status:kitten"]
+                    ["litter", "parent:0", "status:kitten", "backstory:outsider_roots2"]
                 ],
                 "relationships": [
                     {
@@ -678,7 +678,7 @@
                 "weight": 5,
                 "new_cat": [
                     ["status:medicine cat", "age:has_kits", "loner"],
-                    ["litter", "parent:0", "status:kitten"]
+                    ["litter", "parent:0", "status:kitten", "backstory:outsider_roots2"]
                 ],
                 "relationships": [
                     {
@@ -1028,7 +1028,7 @@
                 "weight": 20,
                 "new_cat": [
                     ["status:warrior", "can_birth", "age:has_kits"],
-                    ["litter", "parent:0", "status:newborn"]
+                    ["litter", "parent:0", "status:newborn", "backstory:outsider_roots2"]
                 ],
                 "relationships": [
                     {
@@ -1046,7 +1046,7 @@
                 "weight": 5,
                 "new_cat": [
                     ["age:has_kits", "can_birth"],
-                    ["litter", "parent:0", "status:newborn"]
+                    ["litter", "parent:0", "status:newborn", "backstory:outsider_roots2"]
                 ],
                 "relationships": [
                     {
@@ -1192,7 +1192,7 @@
                 "weight": 20,
                 "new_cat": [
                     ["age:has_kits", "can_birth"],
-                    ["litter", "parent:0", "status:newborn"]
+                    ["litter", "parent:0", "status:newborn", "backstory:outsider_roots2"]
                 ],
                 "relationships": [
                     {
@@ -1210,7 +1210,7 @@
                 "weight": 5,
                 "new_cat": [
                     ["age:has_kits", "can_birth"],
-                    ["litter", "parent:0", "status:newborn"]
+                    ["litter", "parent:0", "status:newborn", "backstory:outsider_roots2"]
                 ],
                 "relationships": [
                     {
@@ -1357,7 +1357,7 @@
                 "weight": 20,
                 "new_cat": [
                     ["age:has_kits", "can_birth"],
-                    ["litter", "parent:0", "status:newborn"]
+                    ["litter", "parent:0", "status:newborn", "backstory:outsider_roots2"]
                 ],
                 "relationships": [
                     {
@@ -1375,7 +1375,7 @@
                 "weight": 5,
                 "new_cat": [
                     ["age:has_kits", "can_birth"],
-                    ["litter", "parent:0", "status:newborn"]
+                    ["litter", "parent:0", "status:newborn", "backstory:outsider_roots2"]
                 ],
                 "relationships": [
                     {
