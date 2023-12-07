@@ -203,49 +203,54 @@ class Inheritance():
     # ---------------------------------------------------------------------------- #
 
     def init_faded_kits(self):
-        
         for inter_id in self.cat.faded_offspring:
             inter_cat = self.cat.fetch_cat(inter_id)
+            if not inter_cat:
+                continue
             self.init_kits(inter_id, inter_cat)
 
     def init_faded_siblings(self):
-      
         for inter_id in self.get_blood_parents() + self.cat.adoptive_parents:
             inter_cat = self.cat.fetch_cat(inter_id)
+            if not inter_cat:
+                continue
             for inter_sibling_id in inter_cat.faded_offspring:
                 inter_sibling = self.cat.fetch_cat(inter_sibling_id)
                 self.init_siblings(inter_sibling_id, inter_sibling)
-             
+
     def init_faded_parents_siblings(self):
-        
         for inter_id in self.get_blood_parents() + self.cat.adoptive_parents:
             inter_parent = self.cat.fetch_cat(inter_id)
+            if not inter_parent:
+                continue
             for inter_grand_id in self.get_blood_parents(inter_parent) + inter_parent.adoptive_parents:
                 inter_grand = self.cat.fetch_cat(inter_grand_id)
+                if not inter_grand:
+                    continue
                 for inter_parent_sibling_id in inter_grand.faded_offspring:
                     inter_parent_sibling = self.cat.fetch_cat(inter_parent_sibling_id)
                     self.init_parents_siblings(inter_parent_sibling_id, inter_parent_sibling)
-    
+
     def init_faded_grandkits(self):
         """This must occur after all kits, faded and otherwise, have been gathered. """
-        
         for inter_id in self.get_children():
             inter_cat = self.cat.fetch_cat(inter_id)
+            if not inter_cat:
+                continue
             for inter_grandkit_id in inter_cat.faded_offspring:
                 inter_grandkit = self.cat.fetch_cat(inter_grandkit_id)
                 self.init_grand_kits(inter_grandkit_id, inter_grandkit)
-        
+
     def init_faded_cousins(self):
         """This must occur after all parent's siblings, faded and otherwise, have been gathered."""
-        
         for inter_id in self.get_parents_siblings():
             inter_cat = self.cat.fetch_cat(inter_id)
+            if not inter_cat:
+                continue
             for inter_cousin_id in inter_cat.faded_offspring:
                 inter_cousin = self.cat.fetch_cat(inter_cousin_id)
                 self.init_cousins(inter_cousin_id, inter_cousin)
-            
-        
-        
+
     def init_parents(self):
         """Initial the class, with the focus of the parent relation."""
         # by blood
@@ -311,6 +316,8 @@ class Inheritance():
 
     def init_kits(self, inter_id, inter_cat):
         """Initial the class, with the focus of the kits relation."""
+        if not inter_cat:
+            return
         # kits - blood
         inter_blood_parents = self.get_blood_parents(inter_cat)
         if self.cat.ID in inter_blood_parents:
@@ -357,6 +364,8 @@ class Inheritance():
 
     def init_siblings(self, inter_id, inter_cat):
         """Initial the class, with the focus of the siblings relation."""
+        if not inter_cat:
+            return
         # blood / half-blood
         current_parent_ids = self.get_blood_parents()
         inter_parent_ids = self.get_blood_parents(inter_cat)
@@ -424,6 +433,8 @@ class Inheritance():
 
     def init_parents_siblings(self, inter_id, inter_cat):
         """Initial the class, with the focus of the parents siblings relation."""
+        if not inter_cat:
+            return
         inter_parent_ids = self.get_parents(inter_cat)
         for inter_parent_id in inter_parent_ids:
             # check if the parent of the inter cat is the grand parent of the relevant cat
@@ -453,6 +464,8 @@ class Inheritance():
         """Initial the class, with the focus of the cousin relation."""
         # the parent siblings already set
         # so it is only needed to check if the inter cat has a parent which is also in the parents_siblings dict
+        if not inter_cat:
+            return
         inter_parent_ids = self.get_parents(inter_cat)
         parents_cats = [self.cat.fetch_cat(c_id) for c_id in inter_parent_ids]
         parent_cats_names = [str(c.name) for c in parents_cats]
@@ -476,6 +489,8 @@ class Inheritance():
         """Initial the class, with the focus of the grand kits relation."""
         # the kits of this cat are already set
         # so it we only need to check if the inter cat has a parent which is in the kits dict
+        if not inter_cat:
+            return
         inter_parent_ids = self.get_parents(inter_cat)
         parents_cats = [self.cat.fetch_cat(c_id) for c_id in inter_parent_ids]
         parent_cats_names = [str(c.name) for c in parents_cats if c]
