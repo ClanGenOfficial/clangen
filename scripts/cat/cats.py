@@ -291,6 +291,9 @@ class Cat():
         if self.gender is None:
             self.gender = choice(["female", "male"])
         self.g_tag = self.gender_tags[self.gender]
+        
+        if self.genderalign == "":
+            self.genderalign = self.gender
 
          # These things should only run when generating a new cat, rather than loading one in.
         if not loading_cat:

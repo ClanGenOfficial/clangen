@@ -257,7 +257,10 @@ class ProfileScreen(Screens):
             if event.ui_element == self.change_name_button:
                 ChangeCatName(self.the_cat)
             elif event.ui_element == self.specify_gender_button:
-                SpecifyCatGender(self.the_cat)
+                if not game.clan.clan_settings["gendered pronouns"]:
+                    SpecifyCatGender(self.the_cat)
+                else:
+                    self.change_screen("change gender screen")
                 '''if self.the_cat.genderalign in ["female", "trans female"]:
                     self.the_cat.pronouns = [self.the_cat.default_pronouns[1].copy()]
                 elif self.the_cat.genderalign in ["male", "trans male"]:

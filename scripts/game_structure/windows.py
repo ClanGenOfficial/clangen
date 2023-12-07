@@ -612,8 +612,233 @@ class SpecifyCatGender(UIWindow):
                 game.all_screens['profile screen'].exit_screen()
                 game.all_screens['profile screen'].screen_switches()
                 self.kill()
+                
+class PronounTester(UIWindow):
+    
+    def __init__(self, cat):
+        super().__init__(scale(pygame.Rect((1040, 750), (400, 405))),
+                             window_display_title='Change Cat Gender',
+                             object_id='#test_pronouns_window',
+                             resizable=False)
+        game.switches['window_open'] = True
+        self.the_cat = cat
+        
+        #setting the initial example
+        # copy paste ref {self.the_cat.pronouns[n]['name']}
+        
+        pronouns=""
+        pronouns = self.get_sample_text(self.the_cat.pronouns[0])
+        
+        self.name_label = pygame_gui.elements.UITextBox(pronouns,
+                                                         scale(pygame.Rect(
+                                                             (0, 25), (400, 405))),
+                                                         object_id="#text_box_30_horizcenter_spacing_95",
+                                                         manager=MANAGER,
+                                                         container=self)
+    
+        
+    def process_event(self, event):
+        super().process_event(event)
+
+        if game.switch_screens:
+                game.switches['window_open'] = False
+                self.kill()
+    
+    def get_sample_text(self, pronouns):
+        text = ""
+        text += f"Demo: {pronouns['name']} <br><br>"
+        subject = f"{pronouns['subject']} are quick. <br>"
+        if pronouns["conju"] == 2:
+            subject = f"{pronouns['subject']} is quick. <br>"
+        text += subject.capitalize()
+        text += f"Everyone saw {pronouns['object']}. <br>"
+        poss = f"{pronouns['poss']} paw slipped.<br>"
+        text += poss.capitalize()
+        text += f"That den is {pronouns['inposs']}. <br>"
+        text += f"This cat hunts by {pronouns['self']}."
+        return text
+    
+    def update_sample(self, new_pronouns):
+        pronouns = ""
+        pronouns = self.get_sample_text(new_pronouns)
+        self.name_label.kill()
+        self.name_label = pygame_gui.elements.UITextBox(pronouns,
+                                                         scale(pygame.Rect(
+                                                             (0, 25), (400, 405))),
+                                                         object_id="#text_box_30_horizcenter_spacing_95",
+                                                         manager=MANAGER,
+                                                         container=self)
 
 
+class SpecifyCatPronouns(UIWindow):
+    """This window allows the user to specify the cat's pronouns"""
+
+    def __init__(self, cat):
+        super().__init__(scale(pygame.Rect((120, 750), (845, 600))),
+                             window_display_title='Change Cat Gender',
+                             object_id='#change_cat_pronouns_window',
+                             resizable=False)
+        game.switches['window_open'] = True
+        self.the_cat = cat
+        if game.clan.clan_settings["gendered pronouns"]:
+            self.heading = pygame_gui.elements.UITextBox(f"-Change {self.the_cat.name}'s Gender-"
+                                                         f"<br> You can set this to anything! "
+                                                         f"Gender alignment does not affect gameplay.",
+                                                         scale(pygame.Rect(
+                                                             (20, 20), (760, 150))),
+                                                         object_id="#text_box_30_horizcenter_spacing_95",
+                                                         manager=MANAGER,
+                                                         container=self)
+            self.name_label = pygame_gui.elements.UITextBox(f"Name",
+                                                         scale(pygame.Rect(
+                                                             (55, 270), (200, 45))),
+                                                         object_id="#text_box_30_horizcenter_spacing_95",
+                                                         manager=MANAGER,
+                                                         container=self)
+            self.subject_label = pygame_gui.elements.UITextBox(f"Subject",
+                                                         scale(pygame.Rect(
+                                                             (305, 270), (200, 45))),
+                                                         object_id="#text_box_30_horizcenter_spacing_95",
+                                                         manager=MANAGER,
+                                                         container=self)
+            self.object_label = pygame_gui.elements.UITextBox(f"Object",
+                                                         scale(pygame.Rect(
+                                                             (555, 270), (200, 45))),
+                                                         object_id="#text_box_30_horizcenter_spacing_95",
+                                                         manager=MANAGER,
+                                                         container=self)
+            self.poss_label = pygame_gui.elements.UITextBox(f"Poss",
+                                                         scale(pygame.Rect(
+                                                             (55, 430), (200, 45))),
+                                                         object_id="#text_box_30_horizcenter_spacing_95",
+                                                         manager=MANAGER,
+                                                         container=self)
+            self.inposs_label = pygame_gui.elements.UITextBox(f"Inposs",
+                                                         scale(pygame.Rect(
+                                                             (305, 430), (200, 45))),
+                                                         object_id="#text_box_30_horizcenter_spacing_95",
+                                                         manager=MANAGER,
+                                                         container=self)
+            self.self_label = pygame_gui.elements.UITextBox(f"Self",
+                                                         scale(pygame.Rect(
+                                                             (555, 430), (200, 45))),
+                                                         object_id="#text_box_30_horizcenter_spacing_95",
+                                                         manager=MANAGER,
+                                                         container=self)
+            self.gender_changed = pygame_gui.elements.UITextBox("Gender Changed!",
+                                                                scale(pygame.Rect(
+                                                                    (490,300), (800, 80))),
+                                                                visible=False,
+                                                                object_id="#text_box_30_horizleft",
+                                                                manager=MANAGER,
+                                                                container=self)
+
+            self.done_button = UIImageButton(scale(pygame.Rect((540, 180), (154, 60))), "",
+                                             object_id="#done_button",
+                                             manager=MANAGER,
+                                             container=self)
+
+            self.gender_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((80, 180), (400, 60))),
+                                                                        placeholder_text=self.the_cat.genderalign,
+                                                                        manager=MANAGER,
+                                                                        container=self)
+            
+            self.name_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((90, 330), (150, 60))),
+                                                                        placeholder_text=self.the_cat.pronouns[0]["name"],
+                                                                        manager=MANAGER,
+                                                                        container=self)
+            
+            self.subject_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((335, 330), (150, 60))),
+                                                                        placeholder_text=self.the_cat.pronouns[0]["subject"],
+                                                                        manager=MANAGER,
+                                                                        container=self)
+            
+            self.object_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((590, 330), (150, 60))),
+                                                                        placeholder_text=self.the_cat.pronouns[0]["object"],
+                                                                        manager=MANAGER,
+                                                                        container=self)
+                  
+            self.poss_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((90, 490), (150, 60))),
+                                                                        placeholder_text=self.the_cat.pronouns[0]["poss"],
+                                                                        manager=MANAGER,
+                                                                        container=self)
+            
+            self.inposs_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((335, 490), (150, 60))),
+                                                                        placeholder_text=self.the_cat.pronouns[0]["inposs"],
+                                                                        manager=MANAGER,
+                                                                        container=self)
+            
+            self.self_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((590, 490), (150, 60))),
+                                                                        placeholder_text=self.the_cat.pronouns[0]["self"],
+                                                                        manager=MANAGER,
+                                                                        container=self)
+        
+        self.set_blocking(True)
+
+    def process_event(self, event):
+        super().process_event(event)
+
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element == self.done_button:
+                if sub(r'[^A-Za-z0-9 ]+', "", self.gender_entry_box.get_text()) != "":
+                    self.the_cat.genderalign = sub(
+                        r'[^A-Za-z0-9 ]+', "", self.gender_entry_box.get_text())
+                if self.the_cat.genderalign in ["female", "trans female"]:
+                    self.the_cat.pronouns = [self.the_cat.default_pronouns[1].copy()]
+                if self.the_cat.genderalign in ["male", "trans male"]:
+                    self.the_cat.pronouns = [self.the_cat.default_pronouns[2].copy()]
+                if sub(r'[^A-Za-z0-9 ]+', "", self.subject_entry_box.get_text()) != "":
+                    self.the_cat.pronouns[0]["subject"] = sub(
+                        r'[^A-Za-z0-9 ]+', "", self.subject_entry_box.get_text())
+                if sub(r'[^A-Za-z0-9 ]+', "", self.object_entry_box.get_text()) != "":
+                    self.the_cat.pronouns[0]["object"] = sub(
+                        r'[^A-Za-z0-9 ]+', "", self.object_entry_box.get_text())
+                if sub(r'[^A-Za-z0-9 ]+', "", self.poss_entry_box.get_text()) != "":
+                    self.the_cat.pronouns[0]["poss"] = sub(
+                        r'[^A-Za-z0-9 ]+', "", self.poss_entry_box.get_text())
+                if sub(r'[^A-Za-z0-9 ]+', "", self.inposs_entry_box.get_text()) != "":
+                    self.the_cat.pronouns[0]["inposs"] = sub(
+                        r'[^A-Za-z0-9 ]+', "", self.inposs_entry_box.get_text())
+                if sub(r'[^A-Za-z0-9 ]+', "", self.self_entry_box.get_text()) != "":
+                    self.the_cat.pronouns[0]["self"] = sub(
+                        r'[^A-Za-z0-9 ]+', "", self.self_entry_box.get_text())
+                self.gender_changed.show()
+            else:
+                if game.switch_screens:
+                    game.switches['window_open'] = False
+                    self.kill()
+    def get_new_pronouns(self):
+        pronoun_template = [
+            {
+                "name": "",
+                "subject": "",
+                "object": "",
+                "poss": "",
+                "inposs": "",
+                "self": "",
+                "conju": 1
+            }
+        ]
+        if sub(r'[^A-Za-z0-9 ]+', "", self.name_entry_box.get_text()) != "":
+            pronoun_template[0]["name"] = sub(
+                r'[^A-Za-z0-9 ]+', "", self.name_entry_box.get_text())
+        if sub(r'[^A-Za-z0-9 ]+', "", self.subject_entry_box.get_text()) != "":
+            pronoun_template[0]["subject"] = sub(
+                r'[^A-Za-z0-9 ]+', "", self.subject_entry_box.get_text())
+        if sub(r'[^A-Za-z0-9 ]+', "", self.object_entry_box.get_text()) != "":
+            pronoun_template[0]["object"] = sub(
+                r'[^A-Za-z0-9 ]+', "", self.object_entry_box.get_text())
+        if sub(r'[^A-Za-z0-9 ]+', "", self.poss_entry_box.get_text()) != "":
+            pronoun_template[0]["poss"] = sub(
+                r'[^A-Za-z0-9 ]+', "", self.poss_entry_box.get_text())
+        if sub(r'[^A-Za-z0-9 ]+', "", self.inposs_entry_box.get_text()) != "":
+            pronoun_template[0]["inposs"] = sub(
+                r'[^A-Za-z0-9 ]+', "", self.inposs_entry_box.get_text())
+        if sub(r'[^A-Za-z0-9 ]+', "", self.self_entry_box.get_text()) != "":
+            pronoun_template[0]["self"] = sub(
+                r'[^A-Za-z0-9 ]+', "", self.self_entry_box.get_text())
+        
+        return pronoun_template
 
 class KillCat(UIWindow):
     """This window allows the user to specify the cat's gender"""

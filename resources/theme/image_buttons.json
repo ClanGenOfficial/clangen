@@ -2597,6 +2597,40 @@
             }
         }
     },
+    "#test_pronouns_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/test_pronouns.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/test_pronouns_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/test_pronouns_hover.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/next_cat_unavailable.png"
+            }
+        }
+    },
+    "#add_pronouns_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/add_pronouns.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/test_pronouns_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/test_pronouns_hover.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/next_cat_unavailable.png"
+            }
+        }
+    },
     "#relations_tab_button": {
         "prototype": "#image_button",
         "images": {

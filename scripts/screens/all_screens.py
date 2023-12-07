@@ -25,6 +25,7 @@ from .OutsideClanScreen import OutsideClanScreen
 from .MediationScreen import MediationScreen
 from .ClanSettingsScreen import ClanSettingsScreen
 from .ClearingScreen import ClearingScreen
+from .ChangeGenderScreen import ChangeGenderScreen
 
 # ---------------------------------------------------------------------------- #
 #                                  UI RULES                                    #
@@ -69,7 +70,6 @@ df_screen = DFScreen('dark forest screen')
 med_den_screen = MedDenScreen('med den screen')
 freshkill_pile_screen = ClearingScreen('clearing screen')
 
-
 events_screen = EventsScreen('events screen')
 
 
@@ -88,6 +88,7 @@ choose_adoptive_parent_screen = ChooseAdoptiveParentScreen('choose adoptive pare
 relationship_screen = RelationshipScreen('relationship screen')
 view_children_screen = FamilyTreeScreen('see kits screen')
 mediation_screen = MediationScreen("mediation screen")
+change_gender_screen = ChangeGenderScreen("change gender screen")
 
 
 outside_clan_screen = OutsideClanScreen('other screen')
