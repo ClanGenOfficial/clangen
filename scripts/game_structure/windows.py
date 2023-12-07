@@ -636,39 +636,39 @@ class SpecifyCatPronouns(UIWindow):
                                                          object_id="#text_box_30_horizcenter_spacing_95",
                                                          manager=MANAGER,
                                                          container=self)
-            self.name_label = pygame_gui.elements.UITextBox(f"Name",
+            self.name_label = pygame_gui.elements.UITextBox("Name",
                                                          scale(pygame.Rect(
-                                                             (55, 270), (200, 60))),
+                                                             (15, 270), (200, 60))),
                                                          object_id="#text_box_30_horizcenter_spacing_95",
                                                          manager=MANAGER,
                                                          container=self)
-            self.subject_label = pygame_gui.elements.UITextBox(f"Subject",
+            self.subject_label = pygame_gui.elements.UITextBox("Subject",
                                                          scale(pygame.Rect(
-                                                             (305, 270), (200, 60))),
+                                                             (275, 270), (200, 60))),
                                                          object_id="#text_box_30_horizcenter_spacing_95",
                                                          manager=MANAGER,
                                                          container=self)
-            self.object_label = pygame_gui.elements.UITextBox(f"Object",
+            self.object_label = pygame_gui.elements.UITextBox("Object",
                                                          scale(pygame.Rect(
-                                                             (555, 270), (200, 60))),
+                                                             (515, 270), (200, 60))),
                                                          object_id="#text_box_30_horizcenter_spacing_95",
                                                          manager=MANAGER,
                                                          container=self)
-            self.poss_label = pygame_gui.elements.UITextBox(f"Poss",
+            self.poss_label = pygame_gui.elements.UITextBox("Poss",
                                                          scale(pygame.Rect(
-                                                             (55, 430), (200, 60))),
+                                                             (12, 430), (200, 60))),
                                                          object_id="#text_box_30_horizcenter_spacing_95",
                                                          manager=MANAGER,
                                                          container=self)
-            self.inposs_label = pygame_gui.elements.UITextBox(f"Inposs",
+            self.inposs_label = pygame_gui.elements.UITextBox("Inposs",
                                                          scale(pygame.Rect(
-                                                             (305, 430), (200, 60))),
+                                                             (275, 430), (200, 60))),
                                                          object_id="#text_box_30_horizcenter_spacing_95",
                                                          manager=MANAGER,
                                                          container=self)
-            self.self_label = pygame_gui.elements.UITextBox(f"Self",
+            self.self_label = pygame_gui.elements.UITextBox("Self",
                                                          scale(pygame.Rect(
-                                                             (555, 430), (200, 60))),
+                                                             (512, 430), (200, 60))),
                                                          object_id="#text_box_30_horizcenter_spacing_95",
                                                          manager=MANAGER,
                                                          container=self)
@@ -690,32 +690,32 @@ class SpecifyCatPronouns(UIWindow):
                                                                         manager=MANAGER,
                                                                         container=self)
             
-            self.name_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((90, 330), (150, 60))),
+            self.name_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((30, 330), (150, 60))),
                                                                         placeholder_text=self.the_cat.pronouns[0]["name"],
                                                                         manager=MANAGER,
                                                                         container=self)
             
-            self.subject_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((335, 330), (150, 60))),
+            self.subject_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((285, 330), (150, 60))),
                                                                         placeholder_text=self.the_cat.pronouns[0]["subject"],
                                                                         manager=MANAGER,
                                                                         container=self)
             
-            self.object_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((590, 330), (150, 60))),
+            self.object_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((530, 330), (150, 60))),
                                                                         placeholder_text=self.the_cat.pronouns[0]["object"],
                                                                         manager=MANAGER,
                                                                         container=self)
                   
-            self.poss_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((90, 490), (150, 60))),
+            self.poss_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((30, 490), (150, 60))),
                                                                         placeholder_text=self.the_cat.pronouns[0]["poss"],
                                                                         manager=MANAGER,
                                                                         container=self)
             
-            self.inposs_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((335, 490), (150, 60))),
+            self.inposs_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((285, 490), (150, 60))),
                                                                         placeholder_text=self.the_cat.pronouns[0]["inposs"],
                                                                         manager=MANAGER,
                                                                         container=self)
             
-            self.self_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((590, 490), (150, 60))),
+            self.self_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((530, 490), (150, 60))),
                                                                         placeholder_text=self.the_cat.pronouns[0]["self"],
                                                                         manager=MANAGER,
                                                                         container=self)
