@@ -17,29 +17,32 @@ from scripts.game_structure.game_essentials import game, screen_x, screen_y, MAN
 from ..game_structure.windows import SpecifyCatPronouns, PronounTester
 
 class ChangeGenderScreen(Screens):
-    the_cat = None
-    selected_cat_elements = {}
-    buttons = {}
-    next_cat = None
-    previous_cat = None
-    elements = {}
-    windows = None
-    checkboxes_text = {}
-    new_pronouns = None
-    sample = None
-    pronoun_template = [
-        {
-            "name": "Custom",
-            "subject": "",
-            "object": "",
-            "poss": "",
-            "inposs": "",
-            "self": "",
-            "conju": 1
-        }
-    ]
-    remove_button = {}
-    checkboxes_text = {}
+
+    def __init__(self, name=None):
+        super().__init__(name)
+        self.the_cat = None
+        self.selected_cat_elements = {}
+        self.buttons = {}
+        self.next_cat = None
+        self.previous_cat = None
+        self.elements = {}
+        self.windows = None
+        self.checkboxes_text = {}
+        self.new_pronouns = None
+        self.sample = None
+        self.pronoun_template = [
+            {
+                "name": "Custom",
+                "subject": "",
+                "object": "",
+                "poss": "",
+                "inposs": "",
+                "self": "",
+                "conju": 1
+            }
+        ]
+        self.remove_button = {}
+        self.checkboxes_text = {}
 
     def handle_event(self, event):
 
