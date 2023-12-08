@@ -563,7 +563,7 @@ class SpecifyCatGender(UIWindow):
 class PronounTester(UIWindow):
     
     def __init__(self, cat):
-        super().__init__(scale(pygame.Rect((1040, 750), (400, 405))),
+        super().__init__(scale(pygame.Rect((1040, 750), (425, 325))),
                              window_display_title='Change Cat Gender',
                              object_id='#test_pronouns_window',
                              resizable=False)
@@ -578,7 +578,7 @@ class PronounTester(UIWindow):
         
         self.name_label = pygame_gui.elements.UITextBox(pronouns,
                                                          scale(pygame.Rect(
-                                                             (0, 25), (400, 405))),
+                                                             (0, 25), (425, 405))),
                                                          object_id="#text_box_30_horizcenter_spacing_95",
                                                          manager=MANAGER,
                                                          container=self)
@@ -593,7 +593,7 @@ class PronounTester(UIWindow):
     
     def get_sample_text(self, pronouns):
         text = ""
-        text += f"Demo: {pronouns['name']} <br><br>"
+        text += f"Demo: {pronouns['name']} <br>"
         subject = f"{pronouns['subject']} are quick. <br>"
         if pronouns["conju"] == 2:
             subject = f"{pronouns['subject']} is quick. <br>"

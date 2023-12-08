@@ -2614,6 +2614,23 @@
             }
         }
     },
+    "#load_presets_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/load_presets.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/load_presets_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/load_presets_hover.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/load_presets_unavailable.png"
+            }
+        }
+    },
     "#add_pronouns_button": {
         "prototype": "#image_button",
         "images": {
