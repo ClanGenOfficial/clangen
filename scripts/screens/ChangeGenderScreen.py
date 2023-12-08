@@ -47,6 +47,7 @@ class ChangeGenderScreen(Screens):
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
                     game.switches["cat"] = self.next_cat
                     self.update_selected_cat()
+                    self.new_pronouns.are_boxes_full()
                 else:
                     print("invalid next cat", self.next_cat)
             elif event.ui_element == self.previous_cat_button:
@@ -57,15 +58,17 @@ class ChangeGenderScreen(Screens):
                     print("invalid previous cat", self.previous_cat)
             elif event.ui_element == self.buttons["test_pronouns"]:
                 print("update pronoun window")
-                temp = self.new_pronouns.get_new_pronouns()
-                new_dict = temp[0]
-                self.sample.update_sample(new_dict)
+                if self.new_pronouns.are_boxes_full():
+                    temp = self.new_pronouns.get_new_pronouns()
+                    new_dict = temp[0]
+                    self.sample.update_sample(new_dict)
             elif event.ui_element == self.buttons["add_pronouns"]:
                 print("add new pronouns dict")
-                temp = self.new_pronouns.get_new_pronouns()
-                new_dict = temp[0]
-                self.the_cat.pronouns.append(new_dict)
-                self.update_selected_cat()
+                if self.new_pronouns.are_boxes_full():
+                    temp = self.new_pronouns.get_new_pronouns()
+                    new_dict = temp[0]
+                    self.the_cat.pronouns.append(new_dict)
+                    self.update_selected_cat()
                 
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
             if event.key == pygame.K_ESCAPE:
@@ -108,7 +111,7 @@ class ChangeGenderScreen(Screens):
             return
 
         self.selected_cat_elements["cat_image"] = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((1090, 300), (300, 300))),
+            scale(pygame.Rect((1090, 320), (300, 300))),
             pygame.transform.scale(
                 self.the_cat.sprite, (300, 300)),
             manager=MANAGER
@@ -120,7 +123,7 @@ class ChangeGenderScreen(Screens):
                                                                              short_name,
                                                                              object_id=get_text_box_theme())
 
-        text = f"<b>{self.the_cat.gender}</b>\n{self.the_cat.genderalign}\n"
+        text = f"<b>{self.the_cat.genderalign}</b>\n{self.the_cat.gender}\n"
 
         self.selected_cat_elements["cat_details"] = UITextBoxTweaked(text, scale(pygame.Rect((1090, 630), (320, 288))),
                                                                      object_id=get_text_box_theme(
@@ -152,7 +155,7 @@ class ChangeGenderScreen(Screens):
         )
         
         self.determine_previous_and_next_cat()
-        
+        self.update_disabled_buttons()
         self.checkboxes_text[
             "container_general"] = pygame_gui.elements.UIScrollingContainer(
             scale(pygame.Rect((120,160), (845, 525))), manager=MANAGER)
@@ -183,7 +186,19 @@ class ChangeGenderScreen(Screens):
             
         self.checkboxes_text[
             "container_general"].set_scrollable_area_dimensions(
-            (400, n*100))
+            (400, n*75))
+        
+    def update_disabled_buttons(self):
+        # Previous and next cat button
+        if self.next_cat == 0:
+            self.next_cat_button.disable()
+        else:
+            self.next_cat_button.enable()
+
+        if self.previous_cat == 0:
+            self.previous_cat_button.disable()
+        else:
+            self.previous_cat_button.enable()
 
     def determine_previous_and_next_cat(self):
         """Determines where the next and previous buttons point to."""

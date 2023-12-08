@@ -627,6 +627,7 @@ class SpecifyCatPronouns(UIWindow):
                              resizable=False)
         game.switches['window_open'] = True
         self.the_cat = cat
+        self.conju = 1
         if game.clan.clan_settings["gendered pronouns"]:
             self.heading = pygame_gui.elements.UITextBox(f"-Change {self.the_cat.name}'s Gender-"
                                                          f"<br> You can set this to anything! "
@@ -638,37 +639,37 @@ class SpecifyCatPronouns(UIWindow):
                                                          container=self)
             self.name_label = pygame_gui.elements.UITextBox("Name",
                                                          scale(pygame.Rect(
-                                                             (15, 270), (200, 60))),
+                                                             (5, 280), (200, 60))),
                                                          object_id="#text_box_30_horizcenter_spacing_95",
                                                          manager=MANAGER,
                                                          container=self)
             self.subject_label = pygame_gui.elements.UITextBox("Subject",
                                                          scale(pygame.Rect(
-                                                             (275, 270), (200, 60))),
+                                                             (185, 280), (200, 60))),
                                                          object_id="#text_box_30_horizcenter_spacing_95",
                                                          manager=MANAGER,
                                                          container=self)
             self.object_label = pygame_gui.elements.UITextBox("Object",
                                                          scale(pygame.Rect(
-                                                             (515, 270), (200, 60))),
+                                                             (365, 280), (200, 60))),
                                                          object_id="#text_box_30_horizcenter_spacing_95",
                                                          manager=MANAGER,
                                                          container=self)
             self.poss_label = pygame_gui.elements.UITextBox("Poss",
                                                          scale(pygame.Rect(
-                                                             (12, 430), (200, 60))),
+                                                             (5, 430), (200, 60))),
                                                          object_id="#text_box_30_horizcenter_spacing_95",
                                                          manager=MANAGER,
                                                          container=self)
             self.inposs_label = pygame_gui.elements.UITextBox("Inposs",
                                                          scale(pygame.Rect(
-                                                             (275, 430), (200, 60))),
+                                                             (185, 430), (200, 60))),
                                                          object_id="#text_box_30_horizcenter_spacing_95",
                                                          manager=MANAGER,
                                                          container=self)
             self.self_label = pygame_gui.elements.UITextBox("Self",
                                                          scale(pygame.Rect(
-                                                             (512, 430), (200, 60))),
+                                                             (365, 430), (200, 60))),
                                                          object_id="#text_box_30_horizcenter_spacing_95",
                                                          manager=MANAGER,
                                                          container=self)
@@ -684,38 +685,55 @@ class SpecifyCatPronouns(UIWindow):
                                              object_id="#done_button",
                                              manager=MANAGER,
                                              container=self)
-
+            
+            self.singular_button = UIImageButton(scale(pygame.Rect((600, 340), (189, 60))), "",
+                                             object_id="#singular_button",
+                                             manager=MANAGER,
+                                             container=self)
+            
+            self.plural_button = UIImageButton(scale(pygame.Rect((600, 490), (189, 60))), "",
+                                             object_id="#plural_button",
+                                             manager=MANAGER,
+                                             container=self)
+            
+            if self.the_cat.pronouns[0]["conju"] == 2:
+                self.singular_button.disable()
+                self.conju = 2
+            else:
+                self.plural_button.disable()
+                self.conju = 1
+                
             self.gender_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((80, 180), (400, 60))),
                                                                         placeholder_text=self.the_cat.genderalign,
                                                                         manager=MANAGER,
                                                                         container=self)
             
-            self.name_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((30, 330), (150, 60))),
+            self.name_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((25, 340), (150, 60))),
                                                                         placeholder_text=self.the_cat.pronouns[0]["name"],
                                                                         manager=MANAGER,
                                                                         container=self)
             
-            self.subject_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((285, 330), (150, 60))),
+            self.subject_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((215, 340), (150, 60))),
                                                                         placeholder_text=self.the_cat.pronouns[0]["subject"],
                                                                         manager=MANAGER,
                                                                         container=self)
             
-            self.object_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((530, 330), (150, 60))),
+            self.object_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((405, 340), (150, 60))),
                                                                         placeholder_text=self.the_cat.pronouns[0]["object"],
                                                                         manager=MANAGER,
                                                                         container=self)
                   
-            self.poss_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((30, 490), (150, 60))),
+            self.poss_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((25, 490), (150, 60))),
                                                                         placeholder_text=self.the_cat.pronouns[0]["poss"],
                                                                         manager=MANAGER,
                                                                         container=self)
             
-            self.inposs_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((285, 490), (150, 60))),
+            self.inposs_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((215, 490), (150, 60))),
                                                                         placeholder_text=self.the_cat.pronouns[0]["inposs"],
                                                                         manager=MANAGER,
                                                                         container=self)
             
-            self.self_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((530, 490), (150, 60))),
+            self.self_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((405, 490), (150, 60))),
                                                                         placeholder_text=self.the_cat.pronouns[0]["self"],
                                                                         manager=MANAGER,
                                                                         container=self)
@@ -750,6 +768,14 @@ class SpecifyCatPronouns(UIWindow):
                     self.the_cat.pronouns[0]["self"] = sub(
                         r'[^A-Za-z0-9 ]+', "", self.self_entry_box.get_text())
                 self.gender_changed.show()
+            elif event.ui_element == self.singular_button:
+                self.plural_button.enable()
+                self.singular_button.disable()
+                self.conju = 2
+            elif event.ui_element == self.plural_button:
+                self.singular_button.enable()
+                self.plural_button.disable()
+                self.conju = 1
             else:
                 if game.switch_screens:
                     game.switches['window_open'] = False
@@ -784,8 +810,30 @@ class SpecifyCatPronouns(UIWindow):
         if sub(r'[^A-Za-z0-9 ]+', "", self.self_entry_box.get_text()) != "":
             pronoun_template[0]["self"] = sub(
                 r'[^A-Za-z0-9 ]+', "", self.self_entry_box.get_text())
+        if self.conju == 2:
+            pronoun_template[0]["conju"] = 2
         
         return pronoun_template
+    
+    def is_box_full(self, entry):
+        if entry.get_text() == "":
+            print("box is empty")
+            return False
+        else:
+            return True
+        
+    def are_boxes_full(self):
+        values = []
+        values.append(self.is_box_full(self.name_entry_box))
+        values.append(self.is_box_full(self.subject_entry_box))
+        values.append(self.is_box_full(self.object_entry_box))
+        values.append(self.is_box_full(self.poss_entry_box))
+        values.append(self.is_box_full(self.inposs_entry_box))
+        values.append(self.is_box_full(self.self_entry_box))
+        for value in values:
+            if value is False:
+                return False
+        return True
 
 class KillCat(UIWindow):
     """This window allows the user to specify the cat's gender"""
