@@ -2118,6 +2118,9 @@
             },
             "selected_image": {
                 "path": "resources/images/buttons/exit_window_button_hover.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/exit_window_button_unavailable.png"
             }
         }
     },
