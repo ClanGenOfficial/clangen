@@ -14,7 +14,7 @@ import pygame_gui
 from pygame_gui.elements import UIWindow
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
-from ..game_structure.windows import SpecifyCatPronouns, PronounTester
+from ..game_structure.windows import SpecifyCatPronouns
 
 class ChangeGenderScreen(Screens):
 
@@ -29,7 +29,7 @@ class ChangeGenderScreen(Screens):
         self.windows = None
         self.checkboxes_text = {}
         self.new_pronouns = None
-        self.sample = None
+        self.pronounWindowOpen = False
         self.pronoun_template = [
             {
                 "name": "Custom",
@@ -66,15 +66,25 @@ class ChangeGenderScreen(Screens):
                 print("update pronoun window")
                 if self.new_pronouns.are_boxes_full():
                     temp = self.new_pronouns.get_new_pronouns()
-                    new_dict = temp[0]
-                    self.sample.update_sample(new_dict)
+                    self.selected_cat_elements["pronoun_sample"].kill()
+                    pronouns=""
+                    pronouns = self.get_sample_text(temp[0])
+                    
+                    self.selected_cat_elements["pronoun_sample"] = UITextBoxTweaked(pronouns, scale(pygame.Rect((1040, 755), (425, 350))),
+                                                                                 object_id=get_text_box_theme(
+                                                                                     "#text_box_22_horizcenter"),
+                                                                       manager=MANAGER, line_spacing=0.95)
             elif event.ui_element == self.buttons["add_pronouns"]:
                 print("add new pronouns dict")
-                if self.new_pronouns.are_boxes_full():
-                    temp = self.new_pronouns.get_new_pronouns()
-                    new_dict = temp[0]
-                    self.the_cat.pronouns.append(new_dict)
-                    self.update_selected_cat()
+                if self.new_pronouns:
+                    if self.new_pronouns.are_boxes_full():
+                        temp = self.new_pronouns.get_new_pronouns()
+                        new_dict = temp[0]
+                        self.the_cat.pronouns.append(new_dict)
+                        self.update_selected_cat()
+                else:
+                    self.pronounWindowOpen = True
+                    self.new_pronouns = SpecifyCatPronouns(self.the_cat)
 
             for pronounset in self.the_cat.pronouns:
                 remove_button_id = f"remove_button_{pronounset['name']}"
@@ -105,6 +115,20 @@ class ChangeGenderScreen(Screens):
     
     def on_remove_button_click(self, pronoun_name):
         print(f"Remove button clicked for pronoun: {pronoun_name}")
+        
+    def get_sample_text(self, pronouns):
+        text = ""
+        text += f"Demo: {pronouns['name']} <br>"
+        subject = f"{pronouns['subject']} are quick. <br>"
+        if pronouns["conju"] == 2:
+            subject = f"{pronouns['subject']} is quick. <br>"
+        text += subject.capitalize()
+        text += f"Everyone saw {pronouns['object']}. <br>"
+        poss = f"{pronouns['poss']} paw slipped.<br>"
+        text += poss.capitalize()
+        text += f"That den is {pronouns['inposs']}. <br>"
+        text += f"This cat hunts by {pronouns['self']}."
+        return text
 
     def update_selected_cat(self):
         for ele in self.selected_cat_elements:
@@ -160,9 +184,19 @@ class ChangeGenderScreen(Screens):
                                              , manager=MANAGER)
         self.buttons["load_presets"] = UIImageButton(scale(pygame.Rect((1090, 1100), (306, 60))), "", object_id="#load_presets_button"
                                              , manager=MANAGER)
-            
-        #self.new_pronouns = SpecifyCatPronouns(self.the_cat)
-        self.sample = PronounTester(self.the_cat)
+        self.selected_cat_elements["sample_pronouns_blurb"] = pygame_gui.elements.UIImage(scale(pygame.Rect
+                                                                  ((1040, 725), (425, 300))),
+                                                            pygame.transform.scale(
+                                                                pygame.image.load(
+                                                                    "resources/images/sample_pronouns_bg.png").convert_alpha(),
+                                                                (1400, 300))
+                                                            )
+        pronouns=""
+        pronouns = self.get_sample_text(self.the_cat.pronouns[0])
+        
+        self.selected_cat_elements["pronoun_sample"] = UITextBoxTweaked(pronouns, scale(pygame.Rect((1040, 740), (425, 350))),
+                                                                     object_id=("#text_box_30_horizcenter"),
+                                                                     manager=MANAGER, line_spacing=0.95)
         
         cat_frame_pronoun = "resources/images/patrol_cat_frame.png"
         self.elements["cat_frame"] = pygame_gui.elements.UIImage(
