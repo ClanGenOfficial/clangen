@@ -1,0 +1,105 @@
+{
+  "default_pronouns": [
+    {
+      "name": "Neutral",
+      "subject": "they",
+      "object": "them",
+      "poss": "their",
+      "inposs": "theirs",
+      "self": "themself",
+      "conju": 1
+    },
+    {
+      "name": "Feminine",
+      "subject": "she",
+      "object": "her",
+      "poss": "her",
+      "inposs": "hers",
+      "self": "herself",
+      "conju": 2
+    },
+    {
+      "name": "Masculine",
+      "subject": "he",
+      "object": "him",
+      "poss": "his",
+      "inposs": "his",
+      "self": "himself",
+      "conju": 2
+    }
+  ],
+  "custom_presets": [
+    {
+      "name": "tee",
+      "subject": "hee",
+      "object": "fee",
+      "poss": "fii",
+      "inposs": "daa",
+      "self": "maa",
+      "conju": 1
+    },
+    {
+      "name": "Masculine",
+      "subject": "he",
+      "object": "him",
+      "poss": "his",
+      "inposs": "his",
+      "self": "himself",
+      "conju": 2
+    },
+    {
+      "name": "tets",
+      "subject": "test",
+      "object": "test",
+      "poss": "test",
+      "inposs": "tset",
+      "self": "test",
+      "conju": 2
+    },
+    {
+      "name": "test",
+      "subject": "te",
+      "object": "et",
+      "poss": "ssa",
+      "inposs": "tts",
+      "self": "tt",
+      "conju": 2
+    },
+    {
+      "name": "4161346",
+      "subject": "461",
+      "object": "16364",
+      "poss": "1364",
+      "inposs": "643",
+      "self": "16436",
+      "conju": 2
+    },
+    {
+      "name": "4161346",
+      "subject": "461",
+      "object": "16364",
+      "poss": "1364",
+      "inposs": "643",
+      "self": "16436",
+      "conju": 2
+    },
+    {
+      "name": "4161346",
+      "subject": "461",
+      "object": "16364",
+      "poss": "1364",
+      "inposs": "643",
+      "self": "16436",
+      "conju": 2
+    },
+    {
+      "name": "5335",
+      "subject": "435",
+      "object": "345",
+      "poss": "353",
+      "inposs": "354",
+      "self": "3454",
+      "conju": 2
+    }
+  ]
+}

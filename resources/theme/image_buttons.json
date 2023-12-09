@@ -2634,6 +2634,23 @@
             }
         }
     },
+    "#save_as_preset_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/save_as_preset.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/save_as_preset_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/save_as_preset_hover.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/save_as_preset_unavailable.png"
+            }
+        }
+    },
     "#add_pronouns_button": {
         "prototype": "#image_button",
         "images": {
@@ -2648,6 +2665,23 @@
             },
             "disabled_image": {
                 "path": "resources/images/buttons/add_pronouns_unavailable.png"
+            }
+        }
+    },
+    "#customize_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/customize.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/customize_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/customize_hover.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/customize_unavailable.png"
             }
         }
     },
@@ -4162,6 +4196,23 @@
             },
             "disabled_image": {
                 "path": "resources/images/buttons/freshkill_pile_feed_unavailable.png"
+            }
+        }
+    },
+    "#default_checkmark": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/default_checkmark.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/default_checkmark_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/default_checkmark_hover.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/default_checkmark_unavailable.png"
             }
         }
     }
