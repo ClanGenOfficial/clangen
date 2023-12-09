@@ -74,7 +74,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The apprentices find a promising looking patch of fresh snow, only to find it conceals an old dirtplace trench underneath. Not only does it stink, but now they have to clean it up <i> and <i/> hide the fact that they disturbed it in the first place! It leaves them both irritated and stressed.",
+                "text": "The apprentices find a promising looking patch of fresh snow, only to find it conceals an old dirtplace trench underneath. Not only does it stink, but now they have to clean it up <i>and</i> hide the fact that they disturbed it in the first place! It leaves them both irritated and stressed.",
                 "exp": 0,
                 "weight": 20
             },
