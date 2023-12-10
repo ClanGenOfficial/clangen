@@ -201,7 +201,7 @@ class ListScreen(Screens):
         y_pos += 68
 
         self.filter_rank = UIImageButton(
-            scale(pygame.Rect((x_pos - 2, y_pos), (204, 58))),
+            scale(pygame.Rect((x_pos - 4, y_pos), (204, 58))),
             "",
             object_id="#filter_rank_button",
             starting_height=2, manager=MANAGER
@@ -209,7 +209,7 @@ class ListScreen(Screens):
         self.filter_rank.hide()
         y_pos += 58
         self.filter_age = UIImageButton(
-            scale(pygame.Rect((x_pos - 2, y_pos), (204, 58))),
+            scale(pygame.Rect((x_pos - 4, y_pos), (204, 58))),
             "",
             object_id="#filter_age_button",
             starting_height=2, manager=MANAGER
@@ -217,7 +217,7 @@ class ListScreen(Screens):
         self.filter_age.hide()
         y_pos += 58
         self.filter_id = UIImageButton(
-            scale(pygame.Rect((x_pos - 2, y_pos), (204, 58))),
+            scale(pygame.Rect((x_pos - 4, y_pos), (204, 58))),
             "",
             object_id="#filter_ID_button",
             starting_height=2, manager=MANAGER
@@ -225,7 +225,7 @@ class ListScreen(Screens):
         self.filter_id.hide()
         y_pos += 58
         self.filter_exp = UIImageButton(
-            scale(pygame.Rect((x_pos - 2, y_pos), (204, 58))),
+            scale(pygame.Rect((x_pos - 4, y_pos), (204, 58))),
             "",
             object_id="#filter_exp_button",
             starting_height=2, manager=MANAGER

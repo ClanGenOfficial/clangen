@@ -13,7 +13,7 @@ from scripts.game_structure.game_essentials import game
 class RelationType(Enum):
     """An enum representing the possible age groups of a cat"""
 
-    BLOOD = ''                  	# direct blood related - do not need a special print
+    BLOOD = ''                      # direct blood related - do not need a special print
     ADOPTIVE = 'adoptive'       	# not blood related but close (parents, kits, siblings)
     HALF_BLOOD = 'half sibling'   	# only one blood parent is the same (siblings only)
     NOT_BLOOD = 'not blood related'	# not blood related for parent siblings
@@ -124,8 +124,8 @@ class Inheritance():
         """Update all the inheritances of the cats, which are related to the current cat."""
         # only adding/removing parents or kits will use this function, because all inheritances are based on parents
         for cat_id in self.all_involved:
-             # Don't update the inheritance of faded cats - they are not viewable by the player and won't be used in any checks. 
-            if cat_id in self.all_inheritances and not self.cat.fetch_cat(cat_id).faded:
+            # Don't update the inheritance of faded cats - they are not viewable by the player and won't be used in any checks. 
+            if cat_id in self.all_inheritances and self.cat.fetch_cat(cat_id) and not self.cat.fetch_cat(cat_id).faded:
                 self.all_inheritances[cat_id].update_inheritance()
 
     def update_all_mates(self):
@@ -283,7 +283,10 @@ class Inheritance():
     def init_mates(self):
         """Initial the class, with the focus of the mates relation."""
         for relevant_id in self.cat.mate:
-            mate_rel = RelationType.NOT_BLOOD if relevant_id not in self.all_involved else RelationType.RELATED
+            mate_rel = RelationType.NOT_BLOOD
+            # they might be related, but only if it is not an adoption
+            if relevant_id in self.all_involved:
+                mate_rel = self.get_exact_rel_type(relevant_id)
             self.mates[relevant_id] = {
                 "type": mate_rel,
                 "additional": ["current mate"]
@@ -291,7 +294,10 @@ class Inheritance():
             self.other_mates.append(relevant_id)
 
         for relevant_id in self.cat.previous_mates:
-            mate_rel = RelationType.NOT_BLOOD if relevant_id not in self.all_involved else RelationType.RELATED
+            mate_rel = RelationType.NOT_BLOOD
+            # they might be related, but only if it is not an adoption
+            if relevant_id in self.all_involved:
+                mate_rel = self.get_exact_rel_type(relevant_id)
             self.mates[relevant_id] = {
                 "type": mate_rel,
                 "additional": ["previous mate"]
@@ -304,6 +310,8 @@ class Inheritance():
             parent_cat = self.cat.fetch_cat(parent_id)
             grandparents = self.get_parents(parent_cat)
             for grand_id in grandparents:
+                if grand_id in self.parents.keys():
+                    continue
                 grand_type = RelationType.BLOOD if value["type"] == RelationType.BLOOD else RelationType.NOT_BLOOD
                 if grand_id not in self.grand_parents:
                     self.grand_parents[grand_id] = {
@@ -357,8 +365,15 @@ class Inheritance():
         # check for mates
         if inter_id in self.kits:
             for mate_id in inter_cat.mate:
+                rel_type = RelationType.NOT_BLOOD
+                # they might be related, but only if it is not an adoption
+                if mate_id in self.all_involved:
+                    if mate_id in self.parents.keys():
+                        rel_type = self.parents[mate_id]["type"]
+                    else:
+                        rel_type = self.get_exact_rel_type(mate_id)
                 self.kits_mates[mate_id] = {
-                    "type": RelationType.NOT_BLOOD if mate_id not in self.all_involved else RelationType.RELATED,
+                    "type": rel_type,
                     "additional": [f"mate of {str(inter_cat.name)}"]
                 }
 
@@ -366,6 +381,11 @@ class Inheritance():
         """Initial the class, with the focus of the siblings relation."""
         if not inter_cat:
             return
+
+        # if the cat is in the parents, dont continue
+        if inter_id in self.parents.keys():
+            return
+
         # blood / half-blood
         current_parent_ids = self.get_blood_parents()
         inter_parent_ids = self.get_blood_parents(inter_cat)
@@ -403,7 +423,13 @@ class Inheritance():
             self.all_but_cousins.append(inter_id)
 
             for mate_id in inter_cat.mate:
-                mate_rel = RelationType.NOT_BLOOD if mate_id not in self.all_involved else RelationType.RELATED
+                mate_rel = RelationType.NOT_BLOOD
+                # they might be related, but only if it is not an adoption
+                if mate_id in self.all_involved:
+                    if mate_id in self.parents.keys():
+                        mate_rel = self.parents[mate_id]["type"]
+                    else:
+                        mate_rel = self.get_exact_rel_type(mate_id)
                 self.siblings_mates[mate_id] = {
                     "type": mate_rel,
                     "additional": [f"mate of {str(inter_cat.name)}"]
@@ -669,3 +695,34 @@ class Inheritance():
     def get_mates(self) -> list:
         """Returns a list of id's which are kits of a sibling, according to the inheritance hierarchy."""
         return [key for key in self.mates.keys()]
+
+
+    def get_exact_rel_type(self, cat_id):
+        all_relations = []
+        if cat_id in self.parents:
+            all_relations.append(self.parents[cat_id])
+        if cat_id in self.mates:
+            all_relations.append(self.mates[cat_id])
+        if cat_id in self.kits:
+            all_relations.append(self.kits[cat_id])
+        if cat_id in self.kits_mates:
+            all_relations.append(self.kits_mates[cat_id])
+        if cat_id in self.siblings:
+            all_relations.append(self.siblings[cat_id])
+        if cat_id in self.siblings_mates:
+            all_relations.append(self.siblings_mates[cat_id])
+        if cat_id in self.siblings_kits:
+            all_relations.append(self.siblings_kits[cat_id])
+        if cat_id in self.parents_siblings:
+            all_relations.append(self.parents_siblings[cat_id])
+        if cat_id in self.cousins:
+            all_relations.append(self.cousins[cat_id])
+        if cat_id in self.grand_parents:
+            all_relations.append(self.grand_parents[cat_id])
+        if cat_id in self.grand_kits:
+            all_relations.append(self.grand_kits[cat_id])
+
+        if any(relation["type"] in BLOOD_RELATIVE_TYPES for relation in all_relations):
+            return RelationType.RELATED
+        else:
+            return RelationType.NOT_BLOOD
