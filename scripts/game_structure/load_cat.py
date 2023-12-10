@@ -48,7 +48,7 @@ def json_load():
             cat_data = get_validated_clan_cat_data(cat_data)
         except SchemaError as e:
             error_message = vars(e)['autos'][1]
-            if len(vars(e)['autos'])>1:
+            if len(vars(e)['autos'])>2:
                 error_message = f"{error_message} {vars(e)['autos'][2]}"
             game.switches['error_message'] = f'Incorrect data format in {clan_cats_json_path}:\n\n{error_message} in clan_cats.json\n'
             game.switches['traceback'] = e
