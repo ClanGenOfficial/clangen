@@ -573,7 +573,7 @@ class PronounPresets(UIWindow):
         game.switches['window_open'] = True
         self.the_cat = cat
         self.back_button = UIImageButton(
-            scale(pygame.Rect((330, 25), (44, 44))),
+            scale(pygame.Rect((430, 25), (44, 44))),
             "",
             object_id="#exit_window_button",
             container=self
@@ -581,7 +581,7 @@ class PronounPresets(UIWindow):
         with open('resources/dicts/pronouns.json', 'r', encoding='utf-8') as file:
                         pronouns_dict = ujson.load(file)
                         
-        self.done_button = UIImageButton(scale(pygame.Rect((125, 280), (154, 60))), "",
+        self.done_button = UIImageButton(scale(pygame.Rect((175, 480), (154, 60))), "",
                                              object_id="#done_button",
                                              manager=MANAGER,
                                              container=self)
@@ -589,35 +589,35 @@ class PronounPresets(UIWindow):
         self.checkboxes_text = {}
         presets = pronouns_dict["custom_presets"]
         self.checkboxes_text["container_general"] = pygame_gui.elements.UIScrollingContainer(
-            scale(pygame.Rect((20, 10), (335, 125))),
+            scale(pygame.Rect((20, 10), (400, 465))),
             object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"), manager=MANAGER, container=self)
-        n=20
+        
         for n, preset in enumerate(presets):
             text = preset["name"]
             self.checkboxes_text[text] = pygame_gui.elements.UITextBox(
                 self.get_pronoun_text(preset),
-                scale(pygame.Rect((80, n * 70 + 20), (1000, 78))),  # Adjusted y-coordinate
+                scale(pygame.Rect((80, n * 80 + 20), (1000, 78))),  # Adjusted y-coordinate
                 container=self.checkboxes_text["container_general"],
                 object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
                 manager=MANAGER
             )
             self.checkboxes_text[text].disable()
-
         for n, preset in enumerate(presets):
             text = preset["name"]
             self.checkboxes[text] = UIImageButton(
-                scale(pygame.Rect((10, n * 70 + 20), (68, 68))),  # Adjusted y-coordinate
+                scale(pygame.Rect((10, n * 80 + 20), (68, 68))),  # Adjusted y-coordinate
                 "",
                 object_id="#default_checkmark",
                 container=self.checkboxes_text["container_general"],
                 tool_tip_text=None
             )
-
-            n += 70
-        min_scrollable_height = max(100, n + 20)
+            if self.is_duplicate(preset):
+                self.checkboxes[text].disable()
+        length = len(presets)
+        min_scrollable_height = max(300, 35*length)
 
         self.checkboxes_text["container_general"].set_scrollable_area_dimensions(
-            (300, min_scrollable_height))
+            (180, min_scrollable_height))
 
     def process_event(self, event):
         super().process_event(event)
@@ -636,12 +636,16 @@ class PronounPresets(UIWindow):
                 game.all_screens['change gender screen'].screen_switches()
                 self.kill()
             else:
+                if game.switch_screens:
+                    game.switches['window_open'] = False
+                    self.kill()
                 for check in self.checkboxes:
                     if event.ui_element == self.checkboxes[check]:
                         print(check)
                         for x in range(len(custom_dict)):
                             if check == custom_dict[x]['name']:
                                 self.the_cat.pronouns.append(custom_dict[x])
+                                self.checkboxes[check].disable()
     
     def get_pronoun_text(self,pronouns):
         text = ""
@@ -649,6 +653,13 @@ class PronounPresets(UIWindow):
         text += " / "
         text += f"{pronouns['object']}"
         return text
+    
+    def is_duplicate(self,preset):
+        #checks to see if a preset with the same name is already in the cats pronouns
+        for pronounset in self.the_cat.pronouns:
+            if preset["name"] == pronounset["name"]:
+                return True
+        return False
                 
 class SpecifyCatPronouns(UIWindow):
     """This window allows the user to specify the cat's pronouns"""
@@ -821,6 +832,12 @@ class SpecifyCatPronouns(UIWindow):
                 if game.switch_screens:
                     game.switches['window_open'] = False
                     self.kill()
+    def is_duplicate(self,preset):
+        #checks to see if a preset with the same name is already in the cats pronouns
+        for pronounset in self.the_cat.pronouns:
+            if preset["name"] == pronounset["name"]:
+                return True
+        return False
     def get_new_pronouns(self):
         pronoun_template = [
             {
