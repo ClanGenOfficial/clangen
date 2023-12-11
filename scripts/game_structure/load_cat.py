@@ -45,12 +45,18 @@ def json_load():
         with open(clan_cats_json_path, 'r') as read_file:
             cat_data = ujson.loads(read_file.read())
         try:
-            cat_data = get_validated_clan_cat_data(cat_data)
+            cats = cat_data
+            cat_data = []
+            for cat in cats:
+                cat_data.append(get_validated_clan_cat_data(cat))
         except SchemaError as e:
-            error_message = vars(e)['autos'][1]
-            if len(vars(e)['autos'])>2:
-                error_message = f"{error_message} {vars(e)['autos'][2]}"
-            game.switches['error_message'] = f'Incorrect data format in {clan_cats_json_path}:\n\n{error_message} in clan_cats.json\n'
+            if len(vars(e)['autos'])>1:
+                error_message = vars(e)['autos'][1]
+                if len(vars(e)['autos'])>2:
+                    error_message = f"{error_message} {vars(e)['autos'][2]}"
+            elif len(vars(e)['autos'])==1:
+                error_message = vars(e)['autos'][0]
+            game.switches['error_message'] = f'Incorrect data format in {clan_cats_json_path}:\n\n{error_message} in clan_cats.json\nClan cat ID: {cat["ID"]}'
             game.switches['traceback'] = e
             raise
     except PermissionError as e:
