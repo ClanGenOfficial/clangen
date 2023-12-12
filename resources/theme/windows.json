@@ -14,6 +14,12 @@
     "#change_cat_gender_window": {
         "prototype": "#window_base_theme"
     },
+    "#change_cat_pronouns_window": {
+        "prototype": "#window_base_theme"
+    },
+    "#test_pronouns_window": {
+        "prototype": "#window_base_theme"
+    },
 	"#relationship_log_window": {
         "prototype": "#window_base_theme"
 	},
