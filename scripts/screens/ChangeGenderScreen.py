@@ -103,14 +103,14 @@ class ChangeGenderScreen(Screens):
                     new_dict = temp[0]
                     with open('resources/dicts/pronouns.json', 'r', encoding='utf-8') as file:
                         pronouns_dict = ujson.load(file)
-                    print("Before update:", pronouns_dict["custom_presets"])
+                    #print("Before update:", pronouns_dict["custom_presets"])
                     # Add the new pronouns to the "custom_presets" array
                     pronouns_dict["custom_presets"].append(new_dict)
                     # Write the updated data back to 'resources/dicts/pronouns.json'
                     with open('resources/dicts/pronouns.json', 'w', encoding='utf-8') as file:
                         ujson.dump(pronouns_dict, file, indent=2)
                     self.update_custom_preset_removal()
-                    print("After update:", pronouns_dict["custom_presets"])
+                    #print("After update:", pronouns_dict["custom_presets"])
 
             else:
                 if len(self.removalbuttons) == len(self.the_cat.pronouns):
@@ -313,8 +313,13 @@ class ChangeGenderScreen(Screens):
 
         self.checkboxes_text["container_general"].set_scrollable_area_dimensions((250, min_scrollable_height))
 
-    def update_pronoun_removal(self):
-        self.update_pronoun_removal()
+    #unused but here if needed.
+    '''def update_pronoun_removal(self):
+        self.checkboxes_text["container_general"].kill()
+            del self.checkboxes_text["container_general"]
+            self.checkboxes_text['instr'].kill()
+            del self.checkboxes_text['instr']
+        self.pronoun_removal()'''
 
     def custom_preset_removal(self):
         # List the various pronouns
