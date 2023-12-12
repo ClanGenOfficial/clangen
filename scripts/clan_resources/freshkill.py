@@ -107,6 +107,12 @@ class Freshkill_Pile():
         for key in order:
             amount = self.take_from_pile(key, amount)
 
+    def update_total_amount(self):
+        """
+        Update the total amount of the prey pile
+        """
+        self.total_amount = sum(self.pile.values())
+
     def _update_needed_food(self, living_cats: List[Cat]) -> None:
         sick_cats = [cat for cat in living_cats if cat.not_working() and "pregnant" not in cat.injuries]
         queen_dict, living_kits = get_alive_clan_queens(self.living_cats)
@@ -153,6 +159,7 @@ class Freshkill_Pile():
         value_diff -= sum(self.pile.values())
         event_list.append(f"{value_diff} pieces of prey where consumed.")
         self._update_needed_food(living_cats)
+        self.update_total_amount()
 
     def feed_cats(self, living_cats: list) -> None:
         """
