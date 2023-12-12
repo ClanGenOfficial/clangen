@@ -121,7 +121,8 @@ def json_load():
             new_cat.adoptive_parents = cat["adoptive_parents"] if "adoptive_parents" in cat else []
             
             new_cat.genderalign = cat["gender_align"]
-            new_cat.pronouns = cat["pronouns"]
+            # new_cat.pronouns = cat["pronouns"]
+            new_cat.pronouns = cat["pronouns"] if "pronouns" in cat else [new_cat.default_pronouns[0].copy()]
             new_cat.backstory = cat["backstory"] if "backstory" in cat else None
             if new_cat.backstory in BACKSTORIES["conversion"]:
                 new_cat.backstory = BACKSTORIES["conversion"][new_cat.backstory]
@@ -183,6 +184,7 @@ def json_load():
                 )
 
             # new_cat.pronouns = cat["pronouns"] if "pronouns" in cat else [new_cat.default_pronouns[0].copy()]
+            # new_cat.pronouns = cat.get("pronouns", new_cat.default_pronouns[0].copy())
             all_cats.append(new_cat)
 
         except KeyError as e:
