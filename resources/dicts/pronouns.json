@@ -1,60 +1,42 @@
 {
-  "default_pronouns": [
-    {
-      "name": "Neutral",
-      "subject": "they",
-      "object": "them",
-      "poss": "their",
-      "inposs": "theirs",
-      "self": "themself",
-      "conju": 1
-    },
-    {
-      "name": "Feminine",
-      "subject": "she",
-      "object": "her",
-      "poss": "her",
-      "inposs": "hers",
-      "self": "herself",
-      "conju": 2
-    },
-    {
-      "name": "Masculine",
-      "subject": "he",
-      "object": "him",
-      "poss": "his",
-      "inposs": "his",
-      "self": "himself",
-      "conju": 2
-    }
-  ],
-  "custom_presets": [
-    {
-      "name": "tee",
-      "subject": "hee",
-      "object": "fee",
-      "poss": "fii",
-      "inposs": "daa",
-      "self": "maa",
-      "conju": 1
-    },
-    {
-      "name": "break",
-      "subject": "aetga",
-      "object": "adg",
-      "poss": "gaerg",
-      "inposs": "gerga",
-      "self": "agea",
-      "conju": 1
-    },
-    {
-      "name": "Add",
-      "subject": "gag",
-      "object": "agraea",
-      "poss": "gra",
-      "inposs": "aerg",
-      "self": "ga",
-      "conju": 1
-    }
-  ]
+    "default_pronouns": [
+        {
+            "name": "Neutral",
+            "subject": "they",
+            "object": "them",
+            "poss": "their",
+            "inposs": "theirs",
+            "self": "themself",
+            "conju": 1
+        },
+        {
+            "name": "Feminine",
+            "subject": "she",
+            "object": "her",
+            "poss": "her",
+            "inposs": "hers",
+            "self": "herself",
+            "conju": 2
+        },
+        {
+            "name": "Masculine",
+            "subject": "he",
+            "object": "him",
+            "poss": "his",
+            "inposs": "his",
+            "self": "himself",
+            "conju": 2
+        }
+    ],
+    "custom_presets": [
+        {
+            "name": "Xhe",
+            "subject": "xhe",
+            "object": "xer",
+            "poss": "xis",
+            "inposs": "xers",
+            "self": "xisself",
+            "conju": 2
+        }
+    ]
 }

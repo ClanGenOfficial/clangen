@@ -588,11 +588,12 @@ class PronounPresets(UIWindow):
         self.checkboxes = {}
         self.checkboxes_text = {}
         presets = pronouns_dict["custom_presets"]
+        defaults = pronouns_dict["default_pronouns"]
         self.checkboxes_text["container_general"] = pygame_gui.elements.UIScrollingContainer(
             scale(pygame.Rect((20, 10), (400, 465))),
             object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"), manager=MANAGER, container=self)
         
-        for n, preset in enumerate(presets):
+        for n, preset in enumerate(defaults):
             text = preset["name"]
             self.checkboxes_text[text] = pygame_gui.elements.UITextBox(
                 self.get_pronoun_text(preset),
@@ -602,7 +603,7 @@ class PronounPresets(UIWindow):
                 manager=MANAGER
             )
             self.checkboxes_text[text].disable()
-        for n, preset in enumerate(presets):
+        for n, preset in enumerate(defaults):
             text = preset["name"]
             self.checkboxes[text] = UIImageButton(
                 scale(pygame.Rect((10, n * 80 + 20), (68, 68))),  # Adjusted y-coordinate
@@ -613,8 +614,29 @@ class PronounPresets(UIWindow):
             )
             if self.is_duplicate(preset):
                 self.checkboxes[text].disable()
-        length = len(presets)
-        min_scrollable_height = max(300, 35*length)
+        for n, preset in enumerate(presets):
+            text = preset["name"]
+            self.checkboxes_text[text] = pygame_gui.elements.UITextBox(
+                self.get_pronoun_text(preset),
+                scale(pygame.Rect((80, n * 80 + 260), (1000, 78))),  # Adjusted y-coordinate
+                container=self.checkboxes_text["container_general"],
+                object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
+                manager=MANAGER
+            )
+            self.checkboxes_text[text].disable()
+        for n, preset in enumerate(presets):
+            text = preset["name"]
+            self.checkboxes[text] = UIImageButton(
+                scale(pygame.Rect((10, n * 80 + 260), (68, 68))),  # Adjusted y-coordinate
+                "",
+                object_id="#default_checkmark",
+                container=self.checkboxes_text["container_general"],
+                tool_tip_text=None
+            )
+            if self.is_duplicate(preset):
+                self.checkboxes[text].disable()
+        length = len(presets) + len(defaults)
+        min_scrollable_height = max(300, 42*length)
 
         self.checkboxes_text["container_general"].set_scrollable_area_dimensions(
             (180, min_scrollable_height))
@@ -623,6 +645,7 @@ class PronounPresets(UIWindow):
         super().process_event(event)
         with open('resources/dicts/pronouns.json', 'r', encoding='utf-8') as file:
                         pronouns_dict = ujson.load(file)
+        default_dict = pronouns_dict["default_pronouns"]
         custom_dict = pronouns_dict["custom_presets"]
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
@@ -641,16 +664,21 @@ class PronounPresets(UIWindow):
                     self.kill()
                 for check in self.checkboxes:
                     if event.ui_element == self.checkboxes[check]:
-                        print(check)
+                        #print(check)
                         for x in range(len(custom_dict)):
                             if check == custom_dict[x]['name']:
                                 self.the_cat.pronouns.append(custom_dict[x])
                                 self.checkboxes[check].disable()
+                        for x in range(len(default_dict)):
+                            if check == default_dict[x]['name']:
+                                self.the_cat.pronouns.append(default_dict[x])
+                                self.checkboxes[check].disable()
     
     def get_pronoun_text(self,pronouns):
         text = ""
+        text += f"{pronouns['name']}: "
         text += f"{pronouns['subject']}"
-        text += " / "
+        text += "/"
         text += f"{pronouns['object']}"
         return text
     
