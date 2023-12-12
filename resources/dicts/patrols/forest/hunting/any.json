@@ -230,7 +230,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "A Twoleg kit approaches the patrol, and they send it away squawking with it's blood on their claws.",
+                "text": "A Twoleg kit approaches the patrol, and they send it away squawking with its blood on their claws.",
                 "exp": 10,
                 "weight": 20
             }
@@ -281,7 +281,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Finding a Twoleg kit wandering alone, the cats harass it until it flees squawking, it's blood on their claws.",
+                "text": "Finding a Twoleg kit wandering alone, the cats harass it until it flees squawking, its blood on their claws.",
                 "exp": 10,
                 "weight": 20
             }
