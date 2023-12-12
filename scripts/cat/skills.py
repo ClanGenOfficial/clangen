@@ -142,6 +142,30 @@ class SkillPath(Enum):
         "ghost sight",
         "ghost speaker"
     )
+    COMFORT = (
+        "good at listening",
+        "gives good advice",
+        "good at comforting",
+        "great at comforting"
+    )
+    TRACKER = (
+        "keen nose for scents",
+        "skilled tracker",
+        "good tracker",
+        "great tracker"
+    )
+    STEALTH = (
+        "always hidden",
+        "silent as a shadow",
+        "great at sneaking",
+        "phantom in the night"
+    )
+    JUMPER = (
+        "always bouncing",
+        "agile jumper",
+        "great at jumping",
+        "gravity defying jumper"
+    )
     
     @staticmethod
     def get_random(exclude:list=()):
@@ -203,7 +227,11 @@ class Skill():
         SkillPath.CLAIRVOYANT: "predicting",
         SkillPath.PROPHET: "prophesying",
         SkillPath.GHOST: "ghosts",
-        SkillPath.DARK: "dark forest"
+        SkillPath.DARK: "dark forest",
+        SkillPath.COMFORT: "comforting",
+        SkillPath.TRACKER: "tracking",
+        SkillPath.STEALTH: "stealthy",
+        SkillPath.JUMPER: "jumping"
     }
     
     
@@ -333,14 +361,18 @@ class CatSkills:
         SkillPath.STORY: SkillTypeFlag.SMART | SkillTypeFlag.SOCIAL,
         SkillPath.LORE: SkillTypeFlag.SMART | SkillTypeFlag.SOCIAL,
         SkillPath.CAMP: SkillTypeFlag.OBSERVANT | SkillTypeFlag.SOCIAL,
-        SkillPath.HEALER: SkillTypeFlag.SMART | SkillTypeFlag.OBSERVANT | SkillTypeFlag.SOCIAL,
+        SkillPath.HEALER: SkillTypeFlag.SMART | SkillTypeFlag.OBSERVANT | SkillTypeFlag.SOCIAL | SkillTypeFlag.SUPERNATURAL,
         SkillPath.STAR: SkillTypeFlag.SUPERNATURAL,
         SkillPath.OMEN: SkillTypeFlag.SUPERNATURAL | SkillTypeFlag.OBSERVANT,
         SkillPath.DREAM: SkillTypeFlag.SUPERNATURAL,
         SkillPath.CLAIRVOYANT: SkillTypeFlag.SUPERNATURAL | SkillTypeFlag.OBSERVANT,
         SkillPath.PROPHET: SkillTypeFlag.SUPERNATURAL,
         SkillPath.GHOST: SkillTypeFlag.SUPERNATURAL,
-        SkillPath.DARK: SkillTypeFlag.SUPERNATURAL
+        SkillPath.DARK: SkillTypeFlag.SUPERNATURAL,
+        SkillPath.COMFORT: SkillTypeFlag.SOCIAL | SkillTypeFlag.SMART | SkillTypeFlag.OBSERVANT,
+        SkillPath.TRACKER: SkillTypeFlag.AGILE | SkillTypeFlag.OBSERVANT | SkillTypeFlag.SMART,
+        SkillPath.STEALTH: SkillTypeFlag.AGILE | SkillTypeFlag.OBSERVANT | SkillTypeFlag.SMART,
+        SkillPath.JUMPER: SkillTypeFlag.AGILE | SkillTypeFlag.STRONG,
     }
     # pylint: enable=unsupported-binary-operation
     

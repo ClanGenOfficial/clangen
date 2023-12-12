@@ -920,6 +920,7 @@ class SpecifyCatPronouns(UIWindow):
                 return False
         return True
 
+
 class KillCat(UIWindow):
     """This window allows the user to specify the cat's gender"""
 

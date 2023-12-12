@@ -75,6 +75,7 @@ class Cat():
         "master": (321, 321)
     }
 
+
     default_pronouns = [
         {
             "name": "Neutral",
@@ -201,7 +202,7 @@ class Cat():
         self.relationships = {}
         self.mate = []
         self.previous_mates = []
-        self.pronouns = [self.default_pronouns[0].copy()]
+        self.pronouns = []
         self.placement = None
         self.example = example
         self.dead = False
@@ -300,6 +301,7 @@ class Cat():
             # trans cat chances
             trans_chance = randint(0, 50)
             nb_chance = randint(0, 75)
+
             if game and game.clan and game.clan.clan_settings:
                 if game.clan.clan_settings["they them default"] is True:
                     they_them_default_setting = True
@@ -355,6 +357,7 @@ class Cat():
                     self.pronouns = [self.default_pronouns[2].copy()]
                 else:
                     self.pronouns = [self.default_pronouns[0].copy()]'''
+
 
         # APPEARANCE
         self.pelt = Pelt.generate_new_pelt(self.gender, [Cat.fetch_cat(i) for i in (self.parent1, self.parent2) if i], self.age)

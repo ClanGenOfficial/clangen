@@ -593,5 +593,23 @@
         "prudence",
         "judgement",
         "foresight"
+    ],
+    "cruel": [
+        "ferocity",
+        "strength",
+        "skill",
+        "courage",
+        "vigor",
+        "boldness",
+        "drive",
+        "determination",
+        "dignity",
+        "cunning",
+        "justice",
+        "power",
+        "strong will",
+        "fortitude",
+        "responsibility",
+        "valor"
     ]
 }
