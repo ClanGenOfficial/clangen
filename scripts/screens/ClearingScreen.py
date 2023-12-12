@@ -64,6 +64,16 @@ class ClearingScreen(Screens):
                 self.update_nutrition_cats()
                 self.update_focus_cat()
                 self.draw_pile()
+                if self.open_tab == "tactic":
+                    self.log_tab.enable()
+                    self.cats_tab.enable()
+                    self.tactic_tab.disable()
+                    self.handle_tab_toggles()
+                if self.open_tab == "log":
+                    self.log_tab.disable()
+                    self.cats_tab.enable()
+                    self.tactic_tab.enable()
+                    self.handle_tab_toggles()
             elif event.ui_element == self.next_page:
                 self.current_page += 1
                 self.update_nutrition_cats()
