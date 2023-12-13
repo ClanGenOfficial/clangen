@@ -49,6 +49,8 @@ class ChangeGenderScreen(Screens):
         ]
         self.remove_button = {}
         self.checkboxes_text = {}
+        self.boxes = {}
+        self.box_labels = {}
 
     def handle_event(self, event):
 
@@ -86,12 +88,6 @@ class ChangeGenderScreen(Screens):
                         if not self.new_pronouns.is_duplicate(new_dict):
                             self.the_cat.pronouns.append(new_dict)
                             self.update_selected_cat()
-                    
-            elif event.ui_element == self.buttons["customize"]:
-                self.new_pronouns = SpecifyCatPronouns(self.the_cat)
-                self.buttons["save_as_preset"].enable()
-                self.buttons["add_pronouns"].enable()
-                self.buttons["test_pronouns"].enable()
             
             elif event.ui_element == self.buttons["load_presets"]:
                 self.presets = PronounPresets(self.the_cat)
@@ -103,14 +99,14 @@ class ChangeGenderScreen(Screens):
                     new_dict = temp[0]
                     with open('resources/dicts/pronouns.json', 'r', encoding='utf-8') as file:
                         pronouns_dict = ujson.load(file)
-                    #print("Before update:", pronouns_dict["custom_presets"])
+                    print("Before update:", pronouns_dict["custom_presets"])
                     # Add the new pronouns to the "custom_presets" array
                     pronouns_dict["custom_presets"].append(new_dict)
                     # Write the updated data back to 'resources/dicts/pronouns.json'
                     with open('resources/dicts/pronouns.json', 'w', encoding='utf-8') as file:
                         ujson.dump(pronouns_dict, file, indent=2)
                     self.update_custom_preset_removal()
-                    #print("After update:", pronouns_dict["custom_presets"])
+                    print("After update:", pronouns_dict["custom_presets"])
 
             else:
                 if len(self.removalbuttons) == len(self.the_cat.pronouns):
@@ -170,8 +166,9 @@ class ChangeGenderScreen(Screens):
         text += f"That den is {pronouns['inposs']}. <br>"
         text += f"This cat hunts by {pronouns['self']}."
         return text
-
-    def update_selected_cat(self):
+    
+    def reset_buttons_and_boxes(self):
+        #kills everything when switching cats
         for ele in self.selected_cat_elements:
             self.selected_cat_elements[ele].kill()
         for ele in self.elements:
@@ -182,11 +179,17 @@ class ChangeGenderScreen(Screens):
             self.buttons[ele].kill()
         for ele in self.removalbuttons:
             self.removalbuttons[ele].kill()
+        for ele in self.box_labels:
+            self.box_labels[ele].kill()
+        for ele in self.boxes:
+            self.boxes[ele].kill()
         if not self.presets == None:
             self.presets.kill()
         if not self.new_pronouns == None:
-            self.new_pronouns.kill()
-        
+            self.new_pronouns.kill()\
+
+    def update_selected_cat(self):
+        self.reset_buttons_and_boxes()
         self.selected_cat_elements = {}
         self.checkboxes_text = {}
         self.buttons ={}
@@ -203,7 +206,13 @@ class ChangeGenderScreen(Screens):
                 self.the_cat.sprite, (300, 300)),
             manager=MANAGER
         )
-
+        self.selected_cat_elements["sample_pronouns_blurb"] = pygame_gui.elements.UIImage(scale(pygame.Rect
+                                                                  ((1040, 685), (425, 310))),
+                                                            pygame.transform.scale(
+                                                                pygame.image.load(
+                                                                    "resources/images/sample_pronouns_bg.png").convert_alpha(),
+                                                                (1400, 300))
+                                                            )
         name = str(self.the_cat.name)
         short_name = shorten_text_to_fit(name, 300, 26)
         self.selected_cat_elements["cat_name"] = pygame_gui.elements.UILabel(scale(pygame.Rect((1065, 205), (350, 64))),
@@ -218,27 +227,111 @@ class ChangeGenderScreen(Screens):
                                                                          "#text_box_30_horizcenter"),
                                                                      manager=MANAGER, line_spacing=0.95)
         
-        self.buttons["customize"] = UIImageButton(scale(pygame.Rect((350, 750), (256, 60))), "", object_id="#customize_button"
+        self.buttons["test_pronouns"] = UIImageButton(scale(pygame.Rect((1100, 1200), (306, 60))), "", object_id="#test_pronouns_button"
                                              , manager=MANAGER)
+        self.buttons["add_pronouns"] = UIImageButton(scale(pygame.Rect((1100, 1290), (306, 60))), "", object_id="#add_pronouns_button"
+                                             , manager=MANAGER)
+        self.buttons["load_presets"] = UIImageButton(scale(pygame.Rect((1100, 1110), (306, 60))), "", object_id="#load_presets_button"
+                                             , manager=MANAGER)
+        self.buttons["save_as_preset"] = UIImageButton(scale(pygame.Rect((1100, 1020), (306, 60))), "", object_id="#save_as_preset_button"
+                                             , manager=MANAGER)
+        self.selected_cat_elements["header"] = pygame_gui.elements.UITextBox(f"-Change {self.the_cat.name}'s Gender-"
+                                                         f"<br> You can set this to anything! "
+                                                         f"Gender alignment does not affect gameplay.",
+                                                         scale(pygame.Rect(
+                                                             (120, 750), (760, 150))),
+                                                         object_id="#text_box_30_horizcenter_spacing_95",
+                                                         manager=MANAGER)
+        self.box_labels["name"] = pygame_gui.elements.UITextBox("Name",
+                                                         scale(pygame.Rect(
+                                                             (105, 1030), (200, 60))),
+                                                         object_id="#text_box_30_horizcenter_spacing_95",
+                                                         manager=MANAGER)
+        self.box_labels["subject"] = pygame_gui.elements.UITextBox("Subject",
+                                                         scale(pygame.Rect(
+                                                             (285, 1030), (200, 60))),
+                                                         object_id="#text_box_30_horizcenter_spacing_95",
+                                                         manager=MANAGER)
+        self.box_labels["object"] = pygame_gui.elements.UITextBox("Object",
+                                                         scale(pygame.Rect(
+                                                             (465, 1030), (200, 60))),
+                                                         object_id="#text_box_30_horizcenter_spacing_95",
+                                                         manager=MANAGER)
+        self.box_labels["poss"] = pygame_gui.elements.UITextBox("Poss",
+                                                         scale(pygame.Rect(
+                                                             (105, 1180), (200, 60))),
+                                                         object_id="#text_box_30_horizcenter_spacing_95",
+                                                         manager=MANAGER)
+        self.box_labels["inposs"] = pygame_gui.elements.UITextBox("Inposs",
+                                                         scale(pygame.Rect(
+                                                             (285, 1180), (200, 60))),
+                                                         object_id="#text_box_30_horizcenter_spacing_95",
+                                                         manager=MANAGER)
+        self.box_labels["self"] = pygame_gui.elements.UITextBox("Self",
+                                                         scale(pygame.Rect(
+                                                             (445, 1180), (200, 60))),
+                                                         object_id="#text_box_30_horizcenter_spacing_95",
+                                                         manager=MANAGER)
+        self.gender_changed = pygame_gui.elements.UITextBox("Gender Alignment Changed!",
+                                                                scale(pygame.Rect(
+                                                                    (270,970), (800, 80))),
+                                                                visible=False,
+                                                                object_id="#text_box_30_horizleft",
+                                                                manager=MANAGER)
+            
+        self.buttons["singular"] = UIImageButton(scale(pygame.Rect((700, 1090), (189, 60))), "",
+                                             object_id="#singular_button",
+                                             manager=MANAGER)
+            
+        self.buttons["plural"] = UIImageButton(scale(pygame.Rect((700, 1240), (189, 60))), "",
+                                             object_id="#plural_button",
+                                             manager=MANAGER)
         
-        self.buttons["test_pronouns"] = UIImageButton(scale(pygame.Rect((1090, 1200), (306, 60))), "", object_id="#test_pronouns_button"
-                                             , manager=MANAGER)
-        self.buttons["add_pronouns"] = UIImageButton(scale(pygame.Rect((1090, 1290), (306, 60))), "", object_id="#add_pronouns_button"
-                                             , manager=MANAGER)
-        self.buttons["load_presets"] = UIImageButton(scale(pygame.Rect((1090, 1110), (306, 60))), "", object_id="#load_presets_button"
-                                             , manager=MANAGER)
-        self.buttons["save_as_preset"] = UIImageButton(scale(pygame.Rect((1090, 1020), (306, 60))), "", object_id="#save_as_preset_button"
-                                             , manager=MANAGER)
-        self.buttons["save_as_preset"].disable()
-        self.buttons["add_pronouns"].disable()
-        self.buttons["test_pronouns"].disable()
-        self.selected_cat_elements["sample_pronouns_blurb"] = pygame_gui.elements.UIImage(scale(pygame.Rect
-                                                                  ((1040, 685), (425, 310))),
+        self.boxes["gender"] = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((300, 930), (400, 60))),
+                                                                        placeholder_text=self.the_cat.genderalign,
+                                                                        manager=MANAGER)
+            
+        self.boxes["name"] = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((125, 1090), (150, 60))),
+                                                                        placeholder_text=self.the_cat.pronouns[0]["name"],
+                                                                        manager=MANAGER)
+            
+        self.boxes["subject"] = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((315, 1090), (150, 60))),
+                                                                        placeholder_text=self.the_cat.pronouns[0]["subject"],
+                                                                        manager=MANAGER)
+            
+        self.boxes["object"] = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((505, 1090), (150, 60))),
+                                                                        placeholder_text=self.the_cat.pronouns[0]["object"],
+                                                                        manager=MANAGER)
+                  
+        self.boxes["poss"] = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((125, 1240), (150, 60))),
+                                                                        placeholder_text=self.the_cat.pronouns[0]["poss"],
+                                                                        manager=MANAGER)
+            
+        self.boxes["inposs"] = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((315, 1240), (150, 60))),
+                                                                        placeholder_text=self.the_cat.pronouns[0]["inposs"],
+                                                                        manager=MANAGER)
+            
+        self.boxes["self"] = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((505, 1240), (150, 60))),
+                                                                        placeholder_text=self.the_cat.pronouns[0]["self"],
+                                                                        manager=MANAGER)
+            
+        if self.the_cat.pronouns[0]["conju"] == 2:
+            self.buttons["singular"].disable()
+            self.conju = 2
+        else:
+            self.buttons["plural"].disable()
+            self.conju = 1
+        
+        
+        
+        self.selected_cat_elements["customize_blurb"] = pygame_gui.elements.UIImage(scale(pygame.Rect
+                                                                  ((120, 750), (845, 600))),
                                                             pygame.transform.scale(
                                                                 pygame.image.load(
-                                                                    "resources/images/sample_pronouns_bg.png").convert_alpha(),
+                                                                    "resources/images/add_pronouns_bg.png").convert_alpha(),
                                                                 (1400, 300))
                                                             )
+        
         pronouns=""
         pronouns = self.get_sample_text(self.the_cat.pronouns[0])
         
@@ -261,7 +354,7 @@ class ChangeGenderScreen(Screens):
     def pronoun_removal(self):
         # List the various pronouns
         self.checkboxes_text["container_general"] = pygame_gui.elements.UIScrollingContainer(
-            relative_rect=scale(pygame.Rect((20, 240), (540, 500))),
+            relative_rect=scale(pygame.Rect((20, 240), (540, 480))),
             object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
             manager=MANAGER)
        
@@ -313,20 +406,13 @@ class ChangeGenderScreen(Screens):
 
         self.checkboxes_text["container_general"].set_scrollable_area_dimensions((250, min_scrollable_height))
 
-    #unused but here if needed.
-    '''def update_pronoun_removal(self):
-        self.checkboxes_text["container_general"].kill()
-            del self.checkboxes_text["container_general"]
-            self.checkboxes_text['instr'].kill()
-            del self.checkboxes_text['instr']
-        self.pronoun_removal()'''
+    def update_pronoun_removal(self):
+        self.update_pronoun_removal()
 
     def custom_preset_removal(self):
         # List the various pronouns
-        with open('resources/dicts/pronouns.json', 'r', encoding='utf-8') as file:
-            pronouns_dict = ujson.load(file)
         self.checkboxes_text["container_general2"] = pygame_gui.elements.UIScrollingContainer(
-            relative_rect=scale(pygame.Rect((350, 240), (680, 500))),
+            relative_rect=scale(pygame.Rect((350, 240), (680, 480))),
             object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
             manager=MANAGER)
         
@@ -380,14 +466,10 @@ class ChangeGenderScreen(Screens):
         self.checkboxes_text["container_general2"].set_scrollable_area_dimensions((300, min_scrollable_height))
 
     def update_custom_preset_removal(self):
-        #print("Updating custom preset removal...")
-        #print("Pronouns data:", pronouns_dict["custom_presets"])
-        self.checkboxes_text["container_general2"].kill()
-        del self.checkboxes_text["container_general2"]
-        self.checkboxes_text['instr2'].kill()
-        del self.checkboxes_text['instr2']
-        self.custom_preset_removal()
-        #print("Update complete.")'''
+        print("Updating custom preset removal...")
+        print("Pronouns data:", pronouns_dict["custom_presets"])
+        self.update_custom_preset_removal
+        print("Update complete.")
 
     def remove_pronounset(self, pronoun_name):
         # Remove the pronoun set from the list
@@ -459,16 +541,21 @@ class ChangeGenderScreen(Screens):
         self.previous_cat = previous_cat
 
     def exit_screen(self):
+        #kill everything
         self.back_button.kill()
         del self.back_button
         self.next_cat_button.kill()
         del self.next_cat_button
         self.previous_cat_button.kill()
         del self.previous_cat_button
-        
         for ele in self.buttons:
             self.buttons[ele].kill()
-        
+        for ele in self.box_labels:
+            self.box_labels[ele].kill()
+        for ele in self.boxes:
+            self.boxes[ele].kill()
+        for ele in self.selected_cat_elements:
+            self.selected_cat_elements[ele].kill()
         self.elements["cat_frame"].kill()
         del self.elements["cat_frame"]
         self.checkboxes_text["container_general"].kill()
@@ -479,7 +566,3 @@ class ChangeGenderScreen(Screens):
         del self.checkboxes_text["container_general2"]
         self.checkboxes_text['instr2'].kill()
         del self.checkboxes_text['instr2']
-
-        for ele in self.selected_cat_elements:
-            self.selected_cat_elements[ele].kill()
-        self.selected_cat_elements = {}
