@@ -4076,5 +4076,22 @@
                 "path": "resources/images/buttons/freshkill_pile_feed_unavailable.png"
             }
         }
+    },
+	"#freshkill_pile_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/freshkill_pile.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/freshkill_pile_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/freshkill_pile.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/freshkill_pile_unavailable.png"
+            }
+        }
     }
 }

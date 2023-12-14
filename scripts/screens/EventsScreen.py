@@ -42,6 +42,7 @@ class EventsScreen(Screens):
         self.events_list_box = None
         self.toggle_borders_button = None
         self.timeskip_button = None
+        self.freshkill_pile_button = None
         self.events_frame = None
         self.clan_age = None
         self.season = None
@@ -80,9 +81,11 @@ class EventsScreen(Screens):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             
             if event.ui_element == self.timeskip_button:
-                
                 self.events_thread = self.loading_screen_start_work(events_class.one_moon)
             
+            if event.ui_element == self.freshkill_pile_button:
+                self.change_screen('clearing screen')
+
             # Change the type of events displayed
             elif event.ui_element == self.all_events_button:
                 if self.event_container.vert_scroll_bar:
@@ -267,6 +270,8 @@ class EventsScreen(Screens):
 
         self.timeskip_button = UIImageButton(scale(pygame.Rect((620, 436), (360, 60))), "", object_id="#timeskip_button"
                                              , manager=MANAGER)
+        self.freshkill_pile_button =  UIImageButton(scale(pygame.Rect((1185, 436), (282, 60))), "", object_id="#freshkill_pile_button"
+                                             , manager=MANAGER)
 
         # commenting out for now as there seems to be a consensus that it isn't needed anymore?
         #if game.clan.closed_borders:
@@ -346,6 +351,8 @@ class EventsScreen(Screens):
 
         self.timeskip_button.kill()
         del self.timeskip_button
+        self.freshkill_pile_button.kill()
+        del self.freshkill_pile_button
         self.all_events_button.kill()
         del self.all_events_button
         self.ceremonies_events_button.kill()
