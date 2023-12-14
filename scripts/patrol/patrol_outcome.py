@@ -791,9 +791,11 @@ class PatrolOutcome():
             "huge": basic_amount * 3.2
         }
         
+        used_tag = None
         for tag in self.prey:
             basic_amount = prey_types.get(tag)
             if basic_amount is not None:
+                used_tag = tag
                 break
         else:
             print(f"{self.prey} - no prey amount tags in prey property")
@@ -822,20 +824,10 @@ class PatrolOutcome():
 
         results = ""
         if total_amount > 0:
-            amount_text = "medium"
-            if total_amount < game.clan.freshkill_pile.amount_food_needed() / 5:
-                amount_text = "very small"
-            elif total_amount < game.clan.freshkill_pile.amount_food_needed() / 2.5:
-                amount_text = "small"
-            elif total_amount < game.clan.freshkill_pile.amount_food_needed():
-                amount_text = "decent"
-            elif total_amount >= game.clan.freshkill_pile.amount_food_needed() * 2:
-                amount_text = "huge"
-            elif total_amount >= game.clan.freshkill_pile.amount_food_needed() * 1.5:
-                amount_text = "large"
-            elif total_amount >= game.clan.freshkill_pile.amount_food_needed():
-                amount_text = "good"
-            
+            amount_text = used_tag
+            if "_" in amount_text:
+                amount_text = amount_text.replace("_", " ")
+
             print(f"PREY ADDED: {total_amount}")
             game.freshkill_event_list.append(f"{total_amount} pieces of prey where caught on a patrol.")
             game.clan.freshkill_pile.add_freshkill(total_amount)
