@@ -8543,12 +8543,12 @@
             "warrior": [1, 1]
         },
         "weight": 20,
-        "intro_text": "It is almost dawn when the deputy rouses app1 for {PRONOUN/app1/poss} assessment. {PRONOUN/app1/subject/CAP} are meant to find r_c posing as an enemy warrior somewhere on the territory and handle the situation. r_c could be anywhere!",
+        "intro_text": "It is almost dawn when the deputy rouses app1 for {PRONOUN/app1/poss} assessment. {PRONOUN/app1/subject/CAP} are meant to find p_l posing as an enemy warrior somewhere on the territory and handle the situation. p_l could be anywhere!",
         "decline_text": "app1 sheepishly looks up at the deputy, a guilty gleam in {PRONOUN/app1/poss} eyes, and says that {PRONOUN/app1/subject} have a stomachache. They {PRONOUN/app1/subject/CAP} hurriedly {VERB/app1/run/runs} to the medicine den, wondering how {PRONOUN/app1/subject} are going to get away with this fake illness at sunhigh when the Clan shares tongues.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Sluggishly, app1 heads out into the territory to find r_c. By the time the sun starts to set, {PRONOUN/app1/subject} are about to lose hope. However, {PRONOUN/app1/subject} {VERB/app1/spot/spots} r_c nibbling on a pigeon's wing. Imagining an enemy warrior, app1 attacks r_c and catches {PRONOUN/r_c/object} off-guard! After a brief tussle, r_c admits defeat, and guides app1 home.",
+                "text": "Sluggishly, app1 heads out into the territory to find p_l. By the time the sun starts to set, {PRONOUN/app1/subject} are about to lose hope. However, {PRONOUN/app1/subject} {VERB/app1/spot/spots} p_l nibbling on a pigeon's wing. Imagining an enemy warrior, app1 attacks p_l and catches {PRONOUN/p_l/object} off-guard! After a brief tussle, p_l admits defeat, and guides app1 home.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -8569,7 +8569,7 @@
                 ]
             },
             {
-                "text": "app1 is nervous upon heading out. However, {PRONOUN/app1/subject} {VERB/app1/manage/manages} to pick up r_c's scent within a few hours, and follow the trail. When {PRONOUN/app1/subject} find r_c, the warrior is drinking from a stream. Yowling, app1 leaps at r_c and sweeps {PRONOUN/r_c/object} off {PRONOUN/r_c/poss} feet into the shallow water. r_c is winded, and after {PRONOUN/r_c/subject} stand up, {PRONOUN/r_c/subject} congratulate app1.",
+                "text": "app1 is nervous upon heading out. However, {PRONOUN/app1/subject} {VERB/app1/manage/manages} to pick up p_l's scent within a few hours, and follow the trail. When {PRONOUN/app1/subject} find p_l, the warrior is drinking from a stream. Yowling, app1 leaps at p_l and sweeps {PRONOUN/p_l/object} off {PRONOUN/p_l/poss} feet into the shallow water. p_l is winded, and after {PRONOUN/p_l/subject} stand up, {PRONOUN/p_l/subject} {VERB/p_l/congratulate/congratulates} app1.",
                 "exp": 15,
                 "weight": 5,
                 "relationships": [
@@ -8590,7 +8590,7 @@
                 ]
             },
             {
-                "text": "app1 was already awake, and raring to go. {PRONOUN/app1/subject/CAP} run off before the deputy can say anything. It is just a game of hide and seek, after all. When {PRONOUN/app1/subject} {VERB/app1/find/finds} r_c {PRONOUN/app1/subject} have to stifle {PRONOUN/app1/poss} chitters of excited pleasure. r_c must have heard {PRONOUN/app1/object}, because app1 sees {PRONOUN/r_c/poss} whiskers twitch in amusement. Oh, well, {PRONOUN/app1/subject} gleefully charge forward.",
+                "text": "app1 was already awake, and raring to go. {PRONOUN/app1/subject/CAP} run off before the deputy can say anything. It is just a game of hide and seek, after all. When {PRONOUN/app1/subject} {VERB/app1/find/finds} p_l {PRONOUN/app1/subject} {VERB/app1/have/has} to stifle {PRONOUN/app1/poss} chitters of excited pleasure. p_l must have heard {PRONOUN/app1/object}, because app1 sees {PRONOUN/p_l/poss} whiskers twitch in amusement. Oh well, {PRONOUN/app1/subject} gleefully {VERB/app1/charge/charges} forward.",
                 "exp": 15,
                 "weight": 20,
                 "stat_skill": ["RUNNER,0", "CLEVER,0"],
@@ -8612,7 +8612,7 @@
                 ]
             },
             {
-                "text": "app1 has waited for this for moons. {PRONOUN/app1/subject/CAP} disguise {PRONOUN/app1/poss} scent and carefully work {PRONOUN/app1/poss} way through the territory, checking strategic hiding places. Before long, {PRONOUN/app1/subject} pinpoint r_c's hiding spot, and sneak behind the warrior. Without hesitation, app1 pounces on r_c and pins {PRONOUN/r_c/object} to the ground, a paw on {PRONOUN/r_c/poss} throat.",
+                "text": "app1 has waited for this for moons. {PRONOUN/app1/subject/CAP} disguise {PRONOUN/app1/poss} scent and carefully work {PRONOUN/app1/poss} way through the territory, checking strategic hiding places. Before long, {PRONOUN/app1/subject} pinpoint p_l's hiding spot, and sneak behind the warrior. Without hesitation, app1 pounces on p_l and pins {PRONOUN/p_l/object} to the ground, a paw on {PRONOUN/p_l/poss} throat.",
                 "exp": 15,
                 "weight": 20,
                 "stat_trait": ["sneaky", "cunning", "cold"],
@@ -8636,7 +8636,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Admittedly, {PRONOUN/app1/subject} knew {PRONOUN/app1/subject} weren't ready. app1 can't find r_c, and by the time sundown approaches, {PRONOUN/app1/poss} mentor appears to take {PRONOUN/app1/object} home. app1 cannot help but feel like a failure after this. Back at camp, {PRONOUN/app1/subject} can see r_c's whiskers twitching in amusement at {PRONOUN/app1/poss} predicament.",
+                "text": "Admittedly, {PRONOUN/app1/subject} knew {PRONOUN/app1/subject} weren't ready. app1 can't find p_l, and by the time sundown approaches, {PRONOUN/app1/poss} mentor appears to take {PRONOUN/app1/object} home. app1 cannot help but feel like a failure after this. Back at camp, {PRONOUN/app1/subject} can see p_l's whiskers twitching in amusement at {PRONOUN/app1/poss} predicament.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -8657,7 +8657,7 @@
                 ]
             },
             {
-                "text": "app1 is jumping at shadows. Everything around {PRONOUN/app1/object} seems like a predator waiting to pounce. Where could r_c be hiding? {PRONOUN/app1/subject/CAP} wish that r_c would hurry up and come out. Wait, is that . . .? app1 charges toward the bulky shape of another cat in the dark. However, this is not r_c. The smell of a foreign cat washes over app1.",
+                "text": "app1 is jumping at shadows. Everything around {PRONOUN/app1/object} seems like a predator waiting to pounce. Where could p_l be hiding? {PRONOUN/app1/subject/CAP} wish that p_l would hurry up and come out. Wait, is that . . .? app1 charges toward the bulky shape of another cat in the dark. However, this is not p_l. The smell of a foreign cat washes over app1.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["app1"],
@@ -8682,7 +8682,7 @@
                 ]
             },
             {
-                "text": "Why did it have to be this assessment? app1 struggles to make a decision. What if {PRONOUN/app1/subject} cannot find r_c before the time limit? Who decided there should be a time limit? Maybe app1 would be better off as a medicine cat? {PRONOUN/app1/poss/CAP} mentor's arrival startles {PRONOUN/app1/object}, and app1 realizes {PRONOUN/app1/subject} wasted too much time second guessing.",
+                "text": "Why did it have to be this assessment? app1 struggles to make a decision. What if {PRONOUN/app1/subject} cannot find p_l before the time limit? Who decided there should be a time limit? Maybe app1 would be better off as a medicine cat? {PRONOUN/app1/poss/CAP} mentor's arrival startles {PRONOUN/app1/object}, and app1 realizes {PRONOUN/app1/subject} wasted too much time second guessing.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["nervous", "insecure", "oblivious"],
