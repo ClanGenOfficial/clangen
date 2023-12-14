@@ -2771,7 +2771,7 @@
                 ]
             },
             {
-                "text": "Maybe the exercises they practice aren't revolutionary or new to any cat, but also, maybe that doesn't matter! Sometimes it's just nice to be reminded of the shared knowledge and competence of your fellow warriors.",
+                "text": "Maybe the exercises they practice aren't revolutionary or new to any cat, but maybe that doesn't matter! Sometimes it's just nice to be reminded of the shared knowledge and competence of your fellow warriors.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -2985,7 +2985,7 @@
                 "weight": 20
             },
             {
-                "text": "Everything seems to be going well - then r_c trips over {PRONOUN/r_c/poss} paws and introduces {PRONOUN/r_c/poss} muzzle to the ground at speed. Maybe they all need to go back to basics.",
+                "text": "Everything seems to be going well - then r_c trips over {PRONOUN/r_c/poss} paws and introduces {PRONOUN/r_c/poss} muzzle to the ground at high speed. Maybe they all need to go back to basics.",
                 "exp": 0,
                 "weight": 20,
                 "injury": [
@@ -2997,7 +2997,7 @@
                 ]
             },
             {
-                "text": "s_c immediately tries to take over, ordering the other cats around. It's not well received, and p_l has to bring a surly looking{PRONOUN/s_c/object} back in line and end the training session early.",
+                "text": "s_c immediately tries to take over, ordering the other cats around. It's not well received, and p_l has to bring a surly-looking {PRONOUN/s_c/object} back in line and end the training session early.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -3434,7 +3434,7 @@
                 "weight": 20
             },
             {
-                "text": "Everything seems to be going well - then r_c trips over {PRONOUN/r_c/poss} paws and introduces {PRONOUN/r_c/poss} muzzle to the ground at speed. Maybe they all need to go back to basics.",
+                "text": "Everything seems to be going well - then r_c trips over {PRONOUN/r_c/poss} paws and introduces {PRONOUN/r_c/poss} muzzle to the ground at high speed. Maybe they all need to go back to basics.",
                 "exp": 0,
                 "weight": 20,
                 "injury": [
@@ -6348,7 +6348,7 @@
         "relationship_constraint": ["dislike_30", "romantic_30"],
         "success_outcomes": [
             {
-                "text": "p_l snaps. Oh, by StarClan, is r_c incapable of shutting up for ONE SECOND?! Falling onto {PRONOUN/p_l/poss} rump, horrified at {PRONOUN/p_l/self}, p_l has a fantastic view of r_c, ears up with shock, twisting round to gape at {PRONOUN/p_l/object}. Which lasts for a split second before r_c is calling p_l mouse-brained and about as helpful as Twolegs in leafbare, {PRONOUN/r_c/poss} tirade barely interrupted by p_l's outburst. Maybe there are some cats in the Clan p_l is still just another cat to. The thought is strangely comforting.",
+                "text": "p_l snaps. Oh, by StarClan, is r_c incapable of shutting up for ONE SECOND?! Falling onto {PRONOUN/p_l/poss} rump, horrified at {PRONOUN/p_l/self}, p_l has a fantastic view of r_c, ears up with shock, twisting round to gape at {PRONOUN/p_l/object}. Which lasts for a split second before r_c is calling p_l mouse-brained and about as helpful as Twolegs in leaf-bare, {PRONOUN/r_c/poss} tirade barely interrupted by p_l's outburst. Maybe there are some cats in the Clan p_l is still just another cat to. The thought is strangely comforting.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -6364,7 +6364,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/breathe/breathes}, reminding {PRONOUN/p_l/self} of {PRONOUN/p_l/poss} responsibilities as leader of the clan. How would it look if {PRONOUN/p_l/subject} just exploded at r_c, no matter how justified?",
+                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/breathe/breathes}, reminding {PRONOUN/p_l/self} of {PRONOUN/p_l/poss} responsibilities as leader of the Clan. How would it look if {PRONOUN/p_l/subject} just exploded at r_c, no matter how justified?",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -6392,7 +6392,7 @@
             "all apprentices": [-1, -1]
         },
         "weight": 60,
-        "intro_text": "Everyone agrees that p_l and r_c get along like a forest fire, but surely they can hold it together for one afternoon's worth of training.",
+        "intro_text": "Everyone agrees that p_l and r_c get along like a forest fire, but surely they can hold it together for one afternoon's worth of training?",
         "decline_text": "...let's not try it.",
         "chance_of_success": 60,
         "relationship_constraint": ["dislike_40", "romantic_40"],
@@ -6428,7 +6428,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Carefully and very politely, p_l and r_c manage to bore each other to death. Or, as other members of the clan describe it; have a productive afternoon.",
+                "text": "Carefully and very politely, p_l and r_c manage to bore each other to death. Or, as other members of the Clan describe it - have a productive afternoon.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -6456,13 +6456,13 @@
             "all apprentices": [-1, -1]
         },
         "weight": 60,
-        "intro_text": "Everyone agrees that p_l and r_c get along like a forest fire, but surely they can hold it together for one afternoon's worth of training.",
+        "intro_text": "Everyone agrees that p_l and r_c get along like a forest fire, but surely they can hold it together for one afternoon's worth of training?",
         "decline_text": "...let's not try it.",
         "chance_of_success": 60,
         "relationship_constraint": ["dislike_40", "romantic_40"],
         "success_outcomes": [
             {
-                "text": "It <i>almost</i> devolves into the normal arguments, but... not quite. While insulting p_l, r_c accidentally lets slip that {PRONOUN/r_c/subject} think p_l has an astonishing skill. Neither cat knows what to do with this information, shifting their paws and blushing awkwardly under their fur.",
+                "text": "It <i>almost</i> devolves into the normal arguments, but... not quite. While insulting p_l, r_c accidentally lets it slip that {PRONOUN/r_c/subject} think p_l has an astonishing skill. Neither cat knows what to do with this information, shifting their paws and blushing awkwardly under their fur.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -7285,7 +7285,7 @@
             "normal adult": [1, 6]
         },
         "weight": 30,
-        "intro_text": "p_l is the leader of the training group today - always a good choice for the role, skilled at explaining things, especially beneficial for apprentices. If {PRONOUN/p_l/subject} can get them to listen, that is.",
+        "intro_text": "p_l is the leader of the training group today - always a good choice for the role, skilled at explaining things, which is especially beneficial for apprentices - if {PRONOUN/p_l/subject} can get them to listen, that is.",
         "decline_text": "But today isn't the day for this lesson.",
         "chance_of_success": 60,
         "pl_skill_constraint": ["TEACHER,1", "INSIGHTFUL,1"],
@@ -7321,7 +7321,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 starts making trouble at the back of the patrol as soon as it's clear that p_l is here to impact a philosophical lesson instead of teaching them <i>something actually useful stars damn it!</i>",
+                "text": "app1 starts making trouble at the back of the patrol as soon as it's clear that p_l is here to impact a philosophical lesson instead of teaching them <i>something actually useful, stars damn it!</i>",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -7350,8 +7350,8 @@
             "normal adult": [1, 6]
         },
         "weight": 30,
-        "intro_text": "Leading the group of cats around them to a good vantage point, p_l settles down. Has anyone heard the tale of the Cat Who Time Forgot?",
-        "decline_text": "The patrol has heard this tale before - better to go for a short hunt instead, and the cats disperse.",
+        "intro_text": "Leading the group of cats around them to a good vantage point, p_l settles down. Has anyone heard the tale of <i>The Cat Who Time Forgot?</i>",
+        "decline_text": "The patrol has heard this tale before - better to go for a short hunt instead, and the cats disperse, much to p_l's disappointment.",
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1"],
         "success_outcomes": [
@@ -7386,7 +7386,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol refuses to quieten down and pay attention, and it's not worth p_l's effort to entertain such an ungrateful audience.",
+                "text": "The patrol refuses to quiet down and pay attention, and it's not worth p_l's effort to entertain such an ungrateful audience.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -7415,13 +7415,13 @@
             "normal adult": [1, 6]
         },
         "weight": 30,
-        "intro_text": "Leading the group of cats around {PRONOUN/p_l/object} to a good vantage point, p_l settles down. As the patrol chats among themselves, something sparks p_l's attention. It reminds {PRONOUN/p_l/object} of charming Casanova, and it occurs to {PRONOUN/p_l/object} that maybe not every cat here knows that history.",
+        "intro_text": "Leading the group of cats around {PRONOUN/p_l/object} to a good vantage point, p_l settles down. As the patrol chats among themselves, something sparks p_l's attention. It reminds {PRONOUN/p_l/object} of charming <i>Casanova</i>, and it occurs to {PRONOUN/p_l/object} that maybe not every cat here knows that history.",
         "decline_text": "It's a lovely day - too lovely to be ruined by mentions of that ancient furball.",
         "chance_of_success": 60,
         "pl_skill_constraint": ["LORE,1"],
         "success_outcomes": [
             {
-                "text": "Casanova was a kittypet, coat long and beautiful and always combed just-so by his Twolegs, charming and sly and full of love and attention for any she-cat who'd stand still long enough to accept it. Generations ago, he fathered litters across half a dozen dens, full of promises of help and support before he moved on to the next molly without a backward glance. It's not a nice tale. But it's one important to remember.",
+                "text": "Casanova was a kittypet, coat long and beautiful and always combed just-so by his Twolegs, charming, sly, and full of love and attention for any she-cat who'd stand still long enough to accept it. Generations ago, he fathered litters across half a dozen dens, full of promises of help and support before he moved on to the next she-cat without a backward glance. It's not a nice tale, but it's one important to remember.",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
@@ -7435,7 +7435,7 @@
                 ]
             },
             {
-                "text": "Ah, Casanova, famous for his charm trying to get the attention of a she-cat he liked, infamous for his vanishing acts afterwards. What p_l tries to emphasize about the history lesson isn't the infamous cad, it's that the Clans took care of the litters he fathered anyway, something where the strength of the Clan saved tiny lives that would've been lost to single motherhood.",
+                "text": "Ah, Casanova, famous for his charm in trying to get the attention of a she-cat he liked, and of course his vanishing act afterwards. What p_l tries to emphasize about the history lesson isn't about the infamous cad, but rather that the Clans took care of the litters he fathered anyway - something where the strength of the Clan saved tiny lives that would've been lost to single motherhood.",
                 "exp": 30,
                 "weight": 5,
                 "relationships": [
@@ -7451,7 +7451,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol refuses to quieten down and pay attention, and it's not worth p_l's effort to educate such an ungrateful audience.",
+                "text": "The patrol refuses to quiet down and pay attention, and it's not worth p_l's effort to educate such an ungrateful audience.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -7499,7 +7499,7 @@
                 ]
             },
             {
-                "text": "It's hard to describe, but eventually p_l manages to communicate {PRONOUN/p_l/poss} idea, a type of kicking-off maneuver where a warrior simultaneously gets distance from an opponent and can also wind them if they kick right in the diaphragm. The patrol practices until they've got it, everyone takes a turn getting winded by sheathed claws.",
+                "text": "It's hard to describe, but eventually p_l manages to communicate {PRONOUN/p_l/poss} idea, a type of kicking-off maneuver where a warrior simultaneously gets distance from an opponent and can also wind them if they kick them right in the diaphragm. The patrol practices until they've got it, everyone takes a turn getting winded by sheathed claws.",
                 "exp": 30,
                 "weight": 5,
                 "relationships": [
@@ -7544,7 +7544,7 @@
             "normal adult": [1, 6]
         },
         "weight": 30,
-        "intro_text": "As the patrol heads out, p_l spots a set of tracks and calls the other cats over to give them a demonstration.",
+        "intro_text": "As the patrol heads out, p_l spots a set of animal tracks and calls the other cats over to give them a tracking demonstration.",
         "decline_text": "Today isn't the day for this lesson.",
         "chance_of_success": 60,
         "pl_skill_constraint": ["HUNTER,1", "SENSE,1"],
@@ -7615,7 +7615,7 @@
         "pl_skill_constraint": ["RUNNER,1", "SWIMMER,1", "CLIMBER,1"],
         "success_outcomes": [
             {
-                "text": "p_l, athletic and not an idiot about it, redirects the training session to both a theoretical and practical demonstration of stretching - how to target one muscle group over another, what's a good pain that indicates you're increasing your flexibility and what's a bad pain that signals STOP NOW.",
+                "text": "p_l, athletic and not an idiot about it, redirects the training session to both a theoretical and practical demonstration of stretching - how to target one muscle group over another, what's a good pain that indicates you're increasing your flexibility, and what's a bad pain that signals STOP <i>NOW.</i>",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
@@ -7629,7 +7629,7 @@
                 ]
             },
             {
-                "text": "app1 argues back at {PRONOUN/p_l/object} - is p_l really going to turn this into a lesson on stretching??? But yes, absolutely {PRONOUN/p_l/subject} {VERB/p_l/are/is}, training without limbering up beforehand can result in dumb injuries and stupid mistakes, p_l isn't letting that happen on {PRONOUN/p_l/poss} watch.",
+                "text": "app1 argues back at {PRONOUN/p_l/object} - is p_l really going to turn this into a lesson on <i>stretching?</i> But yes, absolutely {PRONOUN/p_l/subject} {VERB/p_l/are/is}, training without limbering up beforehand can result in dumb injuries and stupid mistakes, p_l isn't letting that happen on {PRONOUN/p_l/poss} watch.",
                 "exp": 30,
                 "weight": 5,
                 "relationships": [
@@ -7645,7 +7645,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol doesn't listen to p_l, and continues on. p_l huffs, stalking off. Don't come crying to {PRONOUN/p_l/object} when someone gets hurt in a simple training exercise then!",
+                "text": "The patrol doesn't listen to p_l and continues on. p_l huffs, storming away. Fine, don't come crying to {PRONOUN/p_l/object} when someone gets hurt in a simple training exercise then!",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -7674,13 +7674,13 @@
             "normal adult": [1, 6]
         },
         "weight": 30,
-        "intro_text": "As the training patrol gossips about the last gathering while they bask, app1 turns and asks p_l how to talk to cats from other Clans without giving away any of c_n's secrets.",
+        "intro_text": "As the training patrol gossips about the last Gathering while they bask, app1 turns and asks p_l how to talk to cats from other Clans without giving away any of c_n's secrets.",
         "decline_text": "Simple - just don't talk to them.",
         "chance_of_success": 60,
         "pl_skill_constraint": ["SPEAKER,1", "MEDIATOR,1"],
         "success_outcomes": [
             {
-                "text": "There's a difference between being careful and being rude, p_l instructs. Some things are always safe to talk about, app1's favorite prey, the health of the elders, the birth of new kits, but always remember, if the cat {PRONOUN/app1/subject}{VERB/app1/'re/'s} talking to is worth anything, they'll accept that app1 can't talk about something with grace and understanding, not snippishness and mean comments.",
+                "text": "There's a difference between being careful and being rude, p_l instructs. Some things are always safe to talk about, like app1's favorite prey, the health of the elders, or the birth of new kits. But they caution to always remember that if the cat {PRONOUN/app1/subject}{VERB/app1/'re/'s} talking to is worth anything, they'll accept that app1 can't talk about something with grace and understanding, not snappiness and mean comments.",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
@@ -7694,7 +7694,7 @@
                 ]
             },
             {
-                "text": "Think about the universal experiences you have in comment, p_l suggests. Every apprentice {PRONOUN/app1/subject} {VERB/app1/talk/talks} to is also going through life in the apprentice den, they should have plenty in common that isn't Clan secrets.",
+                "text": "Think about the universal experiences you have in common, p_l suggests. Every apprentice {PRONOUN/app1/subject} {VERB/app1/talk/talks} to is also going through their apprenticehood, they should have plenty in common that aren't Clan secrets.",
                 "exp": 30,
                 "weight": 5,
                 "relationships": [
@@ -7745,7 +7745,7 @@
         "pl_skill_constraint": ["STAR,1", "GHOST,1", "DARK,1"],
         "success_outcomes": [
             {
-                "text": "The spirit beside {PRONOUN/p_l/object} calls to app1, a murmur that drifts in and out of p_l's hearing, making {PRONOUN/p_l/poss} ears twitch. It isn't bad advice though. After another fall p_l pads forward to pass on the message - while it can be difficult to interpret the words of those who've gone beyond, seeing as they've been sitting there yelling the same advice over and over again p_l will manage.",
+                "text": "The spirit beside {PRONOUN/p_l/object} calls to app1, a murmur that drifts in and out of p_l's hearing, making {PRONOUN/p_l/poss} ears twitch. It isn't bad advice though. After another fall p_l pads forward to pass on the message - while it can be difficult to interpret the words of those who've gone beyond, seeing as they've been sitting there yelling the same advice over and over again, p_l will manage.",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
@@ -7759,7 +7759,7 @@
                 ]
             },
             {
-                "text": "p_l is confused. Why manifest here, now, during this training? But when the ghostly presence's temper snaps and they charge in, incorporeally trying to show app1 how it's done (to app1's complete and ongoing ignorance of the spiritual situation), p_l understands. This cat was an apprentice too, though they never grew older.",
+                "text": "p_l is confused. Why manifest here, now, during this training session? But when the ghostly presence's temper snaps and they charge in, incorporeally trying to show app1 how it's done (to app1's complete and ongoing ignorance of the spiritual situation), p_l understands. This cat was an apprentice too, though they never grew older.",
                 "exp": 30,
                 "weight": 5,
                 "relationships": [
@@ -7824,7 +7824,7 @@
                 ]
             },
             {
-                "text": "The leader of the patrol, p_l, is a cat experienced at battlefield medicine duties. {PRONOUN/p_l/subject/CAP} have app1 cautiously stretch out the injured paw, first one way, then another, asking questions of app1 the entire time, until p_l is satisfied that this was an almost torn claw. Almost is the key word here though, and app1 will be perfectly fine.",
+                "text": "The leader of the patrol, p_l is a cat experienced at battlefield medicine duties. {PRONOUN/p_l/subject/CAP} have app1 cautiously stretch out the injured paw, first one way, then another, probing questions out of app1 the entire time until p_l is satisfied that this was an almost torn claw. <i>Almost</i> is the key word here though, and app1 will be perfectly fine.",
                 "exp": 30,
                 "weight": 5,
                 "relationships": [
@@ -7934,7 +7934,7 @@
         },
         "weight": 30,
         "intro_text": "Despite theoretically leading this training patrol, p_l hangs back, watching the other cats.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} just overtired - p_l hasn't been sleeping great recently.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} just fatigued - p_l hasn't been sleeping great recently.",
         "chance_of_success": 60,
         "pl_skill_constraint": ["DREAM,1"],
         "success_outcomes": [
@@ -7953,7 +7953,7 @@
                 ]
             },
             {
-                "text": "The gift of dreamwalking is no gift, not when all it causes is this vague confusion. p_l recalls the dream_list_emotional {PRONOUN/p_l/subject} felt in sleep, and tries to match the feelings {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} picked up on with any of {PRONOUN/p_l/poss} training companions.",
+                "text": "The gift of dreamwalking is no gift at all, not when all it causes is this vague confusion. p_l recalls the dream_list_emotional {PRONOUN/p_l/subject} felt in sleep, and tries to match the feelings {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} picked up on with any of {PRONOUN/p_l/poss} training companions.",
                 "exp": 30,
                 "weight": 5,
                 "relationships": [
@@ -7988,7 +7988,7 @@
             "normal adult": [1, 6]
         },
         "weight": 30,
-        "intro_text": "Ask p_l heads out with a group of clanmates, {PRONOUN/p_l/subject} {VERB/p_l/put/puts} a paw wrong, slipping on to {PRONOUN/p_l/poss} side, {PRONOUN/p_l/poss} breath whooshing from {PRONOUN/p_l/poss} lungs as {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} suddenly hit with flashes of clair_list.",
+        "intro_text": "Ask p_l heads out with a group of Clanmates, {PRONOUN/p_l/subject} {VERB/p_l/put/puts} a paw wrong, slipping on to {PRONOUN/p_l/poss} side, {PRONOUN/p_l/poss} breath whooshing from {PRONOUN/p_l/poss} lungs as {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} suddenly hit with flashes of clair_list.",
         "decline_text": "It's nothing, not a vision, it means NOTHING, p_l tells {PRONOUN/p_l/self}, and gets up.",
         "chance_of_success": 60,
         "pl_skill_constraint": ["CLAIRVOYANT,1"],
@@ -8090,13 +8090,13 @@
             "normal adult": [1, 6]
         },
         "weight": 30,
-        "intro_text": "While the cats are out training, the subject of Twolegs comes up. r_c tells everyone to just not get caught by them. o_c1 suggests clawing their faces off, or their ankles, if any cat has trouble reaching up that high. p_l laughs, and the patrol turns to {PRONOUN/p_l/object}.",
+        "intro_text": "While the cats are out training, the subject of Twolegs comes up. r_c tells everyone to just not get caught by them. o_c1 suggests clawing their faces off, or their ankles if any cat has trouble reaching up that high. p_l laughs, and the patrol turns to {PRONOUN/p_l/object}.",
         "decline_text": "Oh, nothing, don't worry about it.",
         "chance_of_success": 60,
         "pl_skill_constraint": ["KITTYPET,0"],
         "success_outcomes": [
             {
-                "text": "Look, the Clanborn cats are welcome to claw as many Twolegs as they like - but if what they actually want is for a Twolegs to leave them alone, it's simple. Take it from a former kittypet - if you hiss at a Twolegs, they'll hiss right back, you take a swipe, they'll want to swipe at you. Just chill out and duck away.",
+                "text": "Look, the Clanborn cats are welcome to claw as many Twolegs as they like, but if what they actually want is for a Twoleg to leave them alone, it's simple. Take it from a former kittypet - if you hiss at a Twoleg, they'll hiss right back; you take a swipe, they'll want to swipe at you. Just chill out, and duck away.",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
@@ -8126,7 +8126,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l starts to give advice based on {PRONOUN/p_l/poss} own experiences as a kittypet - but none of the rest of the patrol is interested in hearing it.",
+                "text": "p_l starts to give advice based on {PRONOUN/p_l/poss} own experiences as a kittypet - but none of the rest of the patrol are interested in hearing it.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -8174,7 +8174,7 @@
                 ]
             },
             {
-                "text": "p_l tells the group of how it's not that all rogues are aggressive - but all rogues are so much more alone than the Clan cats, so much more vulnerable, so much more scared of showing that soft underbelly. It's worth remembering, the next time one turns up on the border.",
+                "text": "p_l tells the group of how it's not that all rogues are aggressive - but all rogues are so much more alone than Clan cats, so much more vulnerable, and so much more scared of showing that soft underbelly. It's worth remembering, the next time one turns up on the border.",
                 "exp": 30,
                 "weight": 5,
                 "relationships": [

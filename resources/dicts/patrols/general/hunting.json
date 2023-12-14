@@ -1342,7 +1342,7 @@
     "chance_of_success": 50,
     "success_outcomes": [
         {
-            "text": "A nice bundle of mice will do nicely, and p_l feels perfectly happy with {PRONOUN/p_l/poss} contributions to the fresh-kill pile when they trot home.",
+            "text": "A nice bundle of mice will do splendidly, and p_l feels perfectly happy with {PRONOUN/p_l/poss} contributions to the fresh-kill pile when they trot home.",
             "exp": 20,
             "weight": 10,
             "prey": ["medium"]
@@ -1386,7 +1386,7 @@
             "prey": ["medium"]
         },
         {
-            "text": "The effort p_l puts in to climbing up to the outlook pays off when {PRONOUN/p_l/poss} ascent reveals an old animal on its last breaths. The end of its life will feed c_n well.",
+            "text": "The effort p_l puts in to climbing up to the outlook pays off when {PRONOUN/p_l/poss} ascent reveals an old animal on its last legs. The end of its life will feed c_n well.",
             "exp": 20,
             "weight": 20,
             "stat_skill": ["CLIMBER,0"],
@@ -2426,7 +2426,7 @@
     "chance_of_success": 50,
     "success_outcomes": [
         {
-            "text": "It's the perfect time of day, the cats melting in and out of their territory's shadowy cover as their successes begin to pile up, at first only a couple piece of prey, then more, and more, more until finally p_l calls off the patrol not because the prey has escaped them, but because they're going to have trouble carrying it all home.",
+            "text": "It's the perfect time of day, the cats melting in and out of their territory's shadowy cover as their successes begin to pile up, at first only a couple pieces of prey, then more, and more, more until finally p_l calls off the patrol not because the prey has escaped them, but because they're going to have trouble carrying it all home.",
             "exp": 30,
             "weight": 10,
             "relationships": [
@@ -2441,7 +2441,7 @@
             "prey": ["huge"]
         },
         {
-            "text": "With their diurnal prey tired and headed to their homes, their crepuscular counterparts come out in full force! With their nocturnal prey still blinking away the sleep in their eyes, the cats have a truly premium number of opportunities to catch food, enough so that the entire Clan comes to comment on the patrol's success.",
+            "text": "With their diurnal prey tired and headed to their homes, their crepuscular counterparts come out in full force! As their nocturnal prey still blinks away the sleep in their eyes, the patrol has a truly premium number of opportunities to catch food, enough so that the entire Clan comes to comment on the patrol's success when they return.",
             "exp": 30,
             "weight": 10,
             "relationships": [
@@ -2456,7 +2456,7 @@
             "prey": ["huge"]
         },
         {
-            "text": "s_c knows <i>exactly</i> how to take advantage of the growing gloom, giving the rest of the patrol a couple ideas that tip the balance from a successful patrol, to an astonishingly successful one.",
+            "text": "s_c knows <i>exactly</i> how to take advantage of the growing gloom, giving the rest of the patrol a couple of ideas that tip the balance from a successful patrol, to an astonishingly outstanding one.",
             "exp": 30,
             "weight": 20,
             "stat_skill": ["HUNTER,0"],
@@ -2482,7 +2482,7 @@
     ],
     "fail_outcomes": [
         {
-            "text": "s_c tries to show off, and it screws up the coordination of the entire patrol. Wonderful. Great job s_c.",
+            "text": "s_c tries to show off, but it screws up the coordination of the entire patrol. Wonderful. Great job, s_c.",
             "exp": 0,
             "weight": 20,
             "stat_trait": [
@@ -2512,7 +2512,7 @@
             ]
         },
         {
-            "text": "Sometimes, hunts just go bad. It's no one's fault, but today is one of those times. The cats commiserate with each other as they walk home.",
+            "text": "Sometimes, hunts just go bad. It's no one's fault, but today is one of those times. The cats console one another as they walk home.",
             "exp": 0,
             "weight": 20,
             "relationships": [
@@ -3228,7 +3228,7 @@
     "chance_of_success": 50,
     "success_outcomes": [
         {
-            "text": "The world takes on an almost shadowy hue, brought to life by the night ambience; the familiar made novel and thrilling underneath the cloak of darkness. The teenagers tear around c_n territory, fishing prey from unexpected places, shivering with pride at their own daringness — and not noticing the camp guard silently shadowing them, keeping them safe."
+            "text": "The world takes on an almost shadowy hue, brought to life by the night ambience; the once familiar now made novel and thrilling under the cloak of darkness. The apprentices tear around c_n territory, fishing prey from unexpected places, shivering with pride at their own daringness - and not noticing the camp guard silently shadowing them, keeping them safe.",
             "exp": 20,
             "weight": 10,
             "relationships": [
@@ -3243,7 +3243,7 @@
             "prey": ["medium"]
         },
         {
-            "text": "Their competition is forgotten in the thrill of adventure, c_n's territory at night a new and foreign land. The next morning, the apprentice smirk as they watch the adults puzzle over the extra prey in the fresh-kill pile, a secret shared in smug smiles and lashing tails.",
+            "text": "Their competition is forgotten in the thrill of adventure, c_n's territory at night a strange and foreign land. The next morning, the apprentices smirk as they watch the adults puzzle over the extra prey in the fresh-kill pile, a secret shared in smug smiles and lashing tails.",
             "exp": 20,
             "weight": 10,
             "relationships": [
@@ -3284,7 +3284,7 @@
     ],
     "fail_outcomes": [
         {
-            "text": "The night is dark and not full of prey. Even worse, app1 gets scared and starts calling for their mentor. They're far enough out of camp to not be heard, and app1 to shuts up quickly, but what should've been a fun cool adventure is ruined.",
+            "text": "The night is dark and void of prey. Even worse, app1 gets scared and starts calling out for their mentor. But they're too far away from camp to be heard and app1 shuts up quickly. What should've been a fun, cool adventure has been ruined.",
             "exp": 0,
             "weight": 20,
             "relationships": [
@@ -3298,7 +3298,7 @@
             ]
         },
         {
-            "text": "Their competition is forgotten in the thrill of adventure, c_n's territory at night a new and foreign land. Sure, they don't get any hunting done - but that doesn't seem to matter.",
+            "text": "Their competition is forgotten in the thrill of adventure, c_n's territory at night a strange and foreign land. Sure, they don't get any hunting done - but that doesn't seem to matter to the adventurous apprentices.",
             "exp": 20,
             "weight": 10,
             "relationships": [
@@ -3312,7 +3312,7 @@
             ]
         },
         {
-            "text": "Not only does app1 find a particularly vicious prey animal who tears up their ear, but in the process, app1 squawks with surprise and lets go. Well. So ends the hunt for the only prey they've managed to find. Fox dung.",
+            "text": "Not only does app1 find a particularly vicious prey animal who tears up their ear, but in the process, app1 squawks with surprise and lets go, causing the critter to scamper away. Well. So ends the hunt for the only prey they've managed to find tonight. Fox-dung.",
             "exp": 0,
             "weight": 20,
             "injury": [
