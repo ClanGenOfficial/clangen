@@ -899,7 +899,7 @@
                 "weight": 20
             },
             {
-                "text": "Not only does r_c end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any daisies under the snow! By the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} back to camp, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} left cold, wet, and shivering violently. What a terrible, horrible, no good, very bad day."
+                "text": "Not only does r_c end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any daisies under the snow! By the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} back to camp, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} left cold, wet, and shivering violently. What a terrible, horrible, no good, very bad day.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1004,7 +1004,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Not only does p_l end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any daisies under the snow either! What a wasted and horribly chilly day."
+                "text": "Not only does p_l end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any daisies under the snow either! What a wasted and horribly chilly day.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1025,7 +1025,7 @@
                 ]
             },
             {
-                "text": "Not only does r_c end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any daisies under the snow! By the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} back to camp, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} left cold, wet, and shivering violently. What a terrible, horrible, no good, very bad day."
+                "text": "Not only does r_c end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any daisies under the snow! By the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} back to camp, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} left cold, wet, and shivering violently. What a terrible, horrible, no good, very bad day.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1146,7 +1146,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Not only does p_l end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any daisies under the snow either! What a wasted and horribly chilly day."
+                "text": "Not only does p_l end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any daisies under the snow either! What a wasted and horribly chilly day.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1167,7 +1167,7 @@
                 ]
             },
             {
-                "text": "Not only does r_c end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any daisies under the snow! By the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} back to camp, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} left cold, wet, and shivering violently. What a terrible, horrible, no good, very bad day."
+                "text": "Not only does r_c end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any daisies under the snow! By the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} back to camp, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} left cold, wet, and shivering violently. What a terrible, horrible, no good, very bad day.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1238,12 +1238,12 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Not only does p_l end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any dandelions under the snow either! What a wasted and horribly chilly day."
+                "text": "Not only does p_l end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any dandelions under the snow either! What a wasted and horribly chilly day.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "Not only does r_c end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any dandelions under the snow! By the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} back to camp, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} left cold, wet, and shivering violently. What a terrible, horrible, no good, very bad day."
+                "text": "Not only does r_c end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any dandelions under the snow! By the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} back to camp, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} left cold, wet, and shivering violently. What a terrible, horrible, no good, very bad day.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1348,7 +1348,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Not only does p_l end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any dandelions under the snow either! What a wasted and horribly chilly day."
+                "text": "Not only does p_l end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any dandelions under the snow either! What a wasted and horribly chilly day.",
                 "exp": 0,
                 "exp": 0,
                 "weight": 20,
@@ -1370,7 +1370,7 @@
                 ]
             },
             {
-                "text": "Not only does r_c end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any dandelions under the snow! By the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} back to camp, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} left cold, wet, and shivering violently. What a terrible, horrible, no good, very bad day."
+                "text": "Not only does r_c end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any dandelions under the snow! By the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} back to camp, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} left cold, wet, and shivering violently. What a terrible, horrible, no good, very bad day.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1492,7 +1492,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Not only does p_l end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any dandelions under the snow either! What a wasted and horribly chilly day."
+                "text": "Not only does p_l end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any dandelions under the snow either! What a wasted and horribly chilly day.",
                 "exp": 0,
                 "exp": 0,
                 "weight": 20,
@@ -1514,7 +1514,7 @@
                 ]
             },
             {
-                "text": "Not only does r_c end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any dandelions under the snow! By the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} back to camp, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} left cold, wet, and shivering violently. What a terrible, horrible, no good, very bad day."
+                "text": "Not only does r_c end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any dandelions under the snow! By the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} back to camp, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} left cold, wet, and shivering violently. What a terrible, horrible, no good, very bad day.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1621,7 +1621,7 @@
             "healer cats": [1, 6]
         },
         "weight": 20,
-        "intro_text": "It's not finding fresh juniper that's the problem. As an evergreen plant, juniper is known to grow reliably even in the cold seasons. The <i> problem </i> is that juniper grows in large shrubs; shrubs sometimes large enough to be literal trees! Climbing in these slippery conditions might be dangerous and p_l hesitates in bringing app1 along, but tells {PRONOUN/p_l/self} it's a learning opportunity."
+        "intro_text": "It's not finding fresh juniper that's the problem. As an evergreen plant, juniper is known to grow reliably even in the cold seasons. The <i> problem </i> is that juniper grows in large shrubs; shrubs sometimes large enough to be literal trees! Climbing in these slippery conditions might be dangerous and p_l hesitates in bringing app1 along, but tells {PRONOUN/p_l/self} it's a learning opportunity.",
         "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
         "chance_of_success": 40,
         "success_outcomes": [
