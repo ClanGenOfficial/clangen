@@ -1,34 +1,17 @@
 [
     {
         "patrol_id": "pln_med_romance_leaf-bare1",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
-        "tags": [
-            "romantic"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
+        "tags": ["romantic"],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
         },
         "weight": 20,
         "intro_text": "p_l goes out with a warrior escort, both for safety as they look for sorely needed fresh supplies that have survived leaf-bare so far, and for carrying capacity should they find anything.",
@@ -39,23 +22,13 @@
                 "text": "Surprisingly, r_c actually starts up a conversation with them about the herbs they're looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes their heart feel lighter getting to share their knowledge and skills with someone who respects them.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": [
-                    "random_herbs"
-                ],
+                "herbs": ["random_herbs"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "romantic",
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["romantic", "platonic", "respect"],
                         "amount": 5
                     }
                 ]
@@ -64,29 +37,15 @@
                 "text": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with them. It's just an herb gathering patrol, but p_l feels more relaxed than they've felt in moons when they come back to camp, smiling softly.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": [
-                    "SPEAKER,1"
-                ],
-                "can_have_stat": [
-                    "r_c"
-                ],
-                "herbs": [
-                    "random_herbs"
-                ],
+                "stat_skill": ["SPEAKER,1"],
+                "can_have_stat": ["r_c"],
+                "herbs": ["random_herbs"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "romantic",
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["romantic", "platonic", "respect"],
                         "amount": 5
                     }
                 ]
@@ -99,47 +58,26 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "romantic",
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["romantic", "platonic", "respect"],
                         "amount": -5
                     }
                 ]
             },
             {
-                "text": "Not only do they not find anything, but p_l is <i>this</i> close to murdering s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with.",
+                "text": "Not only do they not find anything, but p_l is <i> this <i/> close to murdering s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": [
-                    "troublesome",
-                    "childish"
-                ],
-                "can_have_stat": [
-                    "r_c"
-                ],
+                "stat_trait": ["troublesome", "childish"],
+                "can_have_stat": ["r_c"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "romantic",
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["romantic", "platonic", "respect"],
                         "amount": -5
                     }
                 ]
@@ -148,38 +86,18 @@
     },
     {
         "patrol_id": "pln_med_romance_leaf-bare2",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
-        "tags": [
-            "romantic"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
+        "tags": ["romantic"],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "weight": 20,
         "intro_text": "p_l heads out, leading a patrol of medicine cats to go find any fresh herbs that have survived leaf-bare so far.",
@@ -190,23 +108,13 @@
                 "text": "The ground is slippery with frost, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": [
-                    "random_herbs"
-                ],
+                "herbs": ["random_herbs"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "romantic",
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["romantic", "platonic", "respect"],
                         "amount": 5
                     }
                 ]
@@ -215,30 +123,15 @@
                 "text": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with them. It's just an herb gathering patrol, but p_l feels more relaxed than they've felt in moons when they come back to camp, smiling softly.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": [
-                    "SPEAKER,1",
-                    "MEDIATOR,1"
-                ],
-                "can_have_stat": [
-                    "r_c"
-                ],
-                "herbs": [
-                    "random_herbs"
-                ],
+                "stat_skill": ["SPEAKER,1", "MEDIATOR,1"],
+                "can_have_stat": ["r_c"],
+                "herbs": ["random_herbs"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "romantic",
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["romantic", "platonic", "respect"],
                         "amount": 5
                     }
                 ]
@@ -251,47 +144,26 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "romantic",
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["romantic", "platonic", "respect"],
                         "amount": -5
                     }
                 ]
             },
             {
-                "text": "Not only do they not find anything, but p_l is <i>this</i> close to murdering s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with.",
+                "text": "Not only do they not find anything, but p_l is <i> this <i/> close to murdering s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": [
-                    "troublesome",
-                    "childish"
-                ],
-                "can_have_stat": [
-                    "r_c"
-                ],
+                "stat_trait": ["troublesome", "childish"],
+                "can_have_stat": ["r_c"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "romantic",
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["romantic", "platonic", "respect"],
                         "amount": -5
                     }
                 ]
@@ -300,32 +172,17 @@
     },
     {
         "patrol_id": "pln_med_gatheringblackberry_leaf-bare1",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "weight": 20,
         "intro_text": "Hmm. p_l heads out, deciding that c_n needs more blackberry leaves in their stores.",
@@ -336,28 +193,20 @@
                 "text": "While blackberries don't lose their leaves completely, leaf-bare is hard on any plant. p_l has to balance the plant's needs, the Clan's needs, and their own frozen paws, as they try to gather what they can.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": [
-                    "blackberry"
-                ]
+                "herbs": ["blackberry"]
             },
             {
                 "text": "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still living leaves from the blackberry plant.",
                 "exp": 10,
                 "weight": 5,
-                "herbs": [
-                    "blackberry"
-                ]
+                "herbs": ["blackberry"]
             },
             {
                 "text": "s_c spots a sheltered corner that has protected a branch of blackberry from the cold, and expertly maneuvers in to pluck the leaves for c_n.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": [
-                    "SENSE,2"
-                ],
-                "herbs": [
-                    "blackberry"
-                ]
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["blackberry"]
             }
         ],
         "fail_outcomes": [
@@ -372,15 +221,9 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTFACE"
-                        ]
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTFACE"]
                     }
                 ],
                 "history_text": {
@@ -391,40 +234,19 @@
     },
     {
         "patrol_id": "pln_med_gatheringblackberry_leaf-bare2",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "medicine cat apprentice": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "weight": 20,
         "intro_text": "Hmm. p_l heads out with app1, deciding that c_n needs more blackberry leaves in their stores.",
@@ -435,37 +257,20 @@
                 "text": "While blackberries don't lose their leaves completely, leaf-bare is hard on any plant. p_l has to balance the plant's needs, the Clan's needs, and their own frozen paws, as they try to gather what they can. It's a great help having app1 with them, though they stay cognizant that the younger cat can't be out in the cold as long as them.",
                 "exp": 30,
                 "weight": 20,
-                "herbs": [
-                    "blackberry"
-                ],
+                "herbs": ["blackberry"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -474,37 +279,20 @@
                 "text": "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still living leaves from the blackberry plant. app1 holds their breath, hoping their mentor comes down unscathed.",
                 "exp": 30,
                 "weight": 5,
-                "herbs": [
-                    "blackberry"
-                ],
+                "herbs": ["blackberry"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -513,40 +301,21 @@
                 "text": "s_c spots a sheltered corner that has protected a branch of blackberry from the cold, and expertly maneuvers in to pluck the leaves for c_n. They leave app1 outside, not wanting to risk their apprentice in the snow and thorns.",
                 "exp": 30,
                 "weight": 20,
-                "stat_skill": [
-                    "SENSE,2"
-                ],
-                "herbs": [
-                    "blackberry"
-                ],
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["blackberry"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -559,32 +328,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": -10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": 10
                     }
                 ]
@@ -595,15 +349,9 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": [
-                            "app1"
-                        ],
-                        "injuries": [
-                            "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTTAIL"
-                        ]
+                        "cats": ["app1"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTTAIL"]
                     }
                 ],
                 "history_text": {
@@ -611,32 +359,17 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": -10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": 10
                     }
                 ]
@@ -645,28 +378,16 @@
     },
     {
         "patrol_id": "pln_med_gatheringblackberry_leaf-bare3",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
         },
         "weight": 20,
         "intro_text": "Hmm. p_l heads out, deciding that c_n needs more blackberry leaves in their stores, bringing along anyone who isn't busy with other work.",
@@ -677,35 +398,20 @@
                 "text": "While blackberries don't lose their leaves completely, leaf-bare is hard on any plant. p_l has to balance the plant's needs, the Clan's needs, and their own frozen paws, as they try to gather what they can. The patrol sees their stress, and gathers around to support them.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": [
-                    "blackberry"
-                ],
+                "herbs": ["blackberry"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -714,35 +420,20 @@
                 "text": "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still living leaves from the blackberry plant. The rest of the patrol gingerly follows their lead, and together they manage as decent a harvest as anyone can expect from leaf-bare.",
                 "exp": 10,
                 "weight": 5,
-                "herbs": [
-                    "blackberry"
-                ],
+                "herbs": ["blackberry"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -751,38 +442,21 @@
                 "text": "s_c spots a sheltered corner that has protected a branch of blackberry from the cold, and expertly maneuvers in to pluck the leaves for c_n. They pass them out to the members of the patrol from within the thicket, and their entourage ensures that p_l is able to bring a huge quantity of fresh blackberry leaves home.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": [
-                    "SENSE,2"
-                ],
-                "herbs": [
-                    "blackberry"
-                ],
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["blackberry"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -795,30 +469,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": -10
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": 10
                     }
                 ]
@@ -829,15 +490,9 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTFACE"
-                        ]
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTFACE"]
                     }
                 ],
                 "history_text": {
@@ -845,30 +500,17 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": -10
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": 10
                     }
                 ]
@@ -877,32 +519,17 @@
     },
     {
         "patrol_id": "pln_med_gatheringburdock_leaf-bare1",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "weight": 20,
         "intro_text": "As the snows of leaf-bare blow around camp, p_l eyes their herb stores. They should still be able to dig up burdock. p_l heads out to replenish the Clan's stocks.",
@@ -913,28 +540,20 @@
                 "text": "p_l's pawpads are nearly frozen, trying to dig up burdock in the cold, but somehow they manage it, and it's worth all the effort and misery to know how crucial these fresh herbs could be for the Clan.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": [
-                    "burdock"
-                ]
+                "herbs": ["burdock"]
             },
             {
                 "text": "It's very difficult, especially with the plant's leafy top-half gone until newleaf, but p_l somehow manages to find a burdock plant and bring its roots home.",
                 "exp": 10,
                 "weight": 5,
-                "herbs": [
-                    "burdock"
-                ]
+                "herbs": ["burdock"]
             },
             {
                 "text": "s_c remembers exactly where the burdock plant grew in greenleaf, even if it's buried under snow now. After all, s_c is after the roots, and those are still perfectly harvestable in leaf-bare.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": [
-                    "SENSE,2"
-                ],
-                "herbs": [
-                    "burdock"
-                ]
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["burdock"]
             }
         ],
         "fail_outcomes": [
@@ -949,15 +568,9 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTMITT"
-                        ]
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTMITT"]
                     }
                 ],
                 "history_text": {
@@ -968,40 +581,19 @@
     },
     {
         "patrol_id": "pln_med_gatheringburdock_leaf-bare2",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "medicine cat apprentice": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "weight": 20,
         "intro_text": "As the snows of leaf-bare blow around camp, p_l eyes their herb stores. They should still be able to dig up burdock. p_l heads out to replenish the Clan's stocks, bringing app1 along.",
@@ -1012,37 +604,20 @@
                 "text": "p_l's and app1's pawpads are nearly frozen, trying to dig up burdock in the cold, but somehow they manage it, and it's worth all the effort and misery to know how crucial these fresh herbs could be for the Clan.",
                 "exp": 30,
                 "weight": 20,
-                "herbs": [
-                    "burdock"
-                ],
+                "herbs": ["burdock"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -1051,37 +626,20 @@
                 "text": "It's very difficult, especially with the plant's leafy top-half gone until newleaf, but p_l somehow manages to find a burdock plant and bring its roots home. Laying the thin roots out in a neat pile in the herb stores makes p_l's entire body thrum with a contented purr, as does seeing how hard app1 is working to learn herbcraft.",
                 "exp": 30,
                 "weight": 5,
-                "herbs": [
-                    "burdock"
-                ],
+                "herbs": ["burdock"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -1090,40 +648,21 @@
                 "text": "s_c remembers exactly where the burdock plant grew in greenleaf, even if it's buried under snow now. After all, s_c is after the roots, and those are still perfectly harvestable in leaf-bare.",
                 "exp": 30,
                 "weight": 20,
-                "stat_skill": [
-                    "SENSE,2"
-                ],
-                "herbs": [
-                    "burdock"
-                ],
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["burdock"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -1136,32 +675,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": -10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": 10
                     }
                 ]
@@ -1172,15 +696,9 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": [
-                            "app1"
-                        ],
-                        "injuries": [
-                            "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTMITT"
-                        ]
+                        "cats": ["app1"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTMITT"]
                     }
                 ],
                 "history_text": {
@@ -1188,32 +706,17 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": -10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": 10
                     }
                 ]
@@ -1222,28 +725,16 @@
     },
     {
         "patrol_id": "pln_med_gatheringburdock_leaf-bare3",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
         },
         "weight": 20,
         "intro_text": "As the snows of leaf-bare blow around camp, p_l eyes their herb stores. They should still be able to dig up burdock. p_l heads out to replenish the Clan's stocks, bringing along anyone who isn't busy with other work.",
@@ -1254,35 +745,20 @@
                 "text": "p_l's pawpads are nearly frozen, trying to dig up burdock in the cold, but somehow they manage it, and it's worth all the effort and misery to know how crucial these fresh herbs could be for the Clan. Their Clanmates purr at the sight of the dirty roots.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": [
-                    "burdock"
-                ],
+                "herbs": ["burdock"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -1291,35 +767,20 @@
                 "text": "It's very difficult, especially with the plant's leafy top-half gone until newleaf, but p_l somehow manages to find a burdock plant and bring its roots home. Laying the thin roots out in a neat pile in the herb stores makes p_l's entire body thrum with a contented purr, and their Clanmates smile, appreciating their hard-working medicine cat.",
                 "exp": 10,
                 "weight": 5,
-                "herbs": [
-                    "burdock"
-                ],
+                "herbs": ["burdock"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -1328,38 +789,21 @@
                 "text": "s_c remembers exactly where the burdock plant grew in greenleaf, even if it's buried under snow now. After all, s_c is after the roots, and those are still perfectly harvestable in leaf-bare.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": [
-                    "SENSE,2"
-                ],
-                "herbs": [
-                    "burdock"
-                ],
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["burdock"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -1372,30 +816,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": -10
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": 10
                     }
                 ]
@@ -1406,15 +837,9 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTMITT"
-                        ]
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTMITT"]
                     }
                 ],
                 "history_text": {
@@ -1422,30 +847,17 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": -10
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": 10
                     }
                 ]
@@ -1454,32 +866,17 @@
     },
     {
         "patrol_id": "pln_med_gatheringdaisy_leaf-bare1",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "weight": 20,
         "intro_text": "In the leaf-bare snow, the chances of finding any usable daisies seem slim. p_l hesitates - should they even try to look?",
@@ -1490,28 +887,20 @@
                 "text": "It's miserable work, scraping away snowy pawful by awful, cold pawful. However, p_l manages to find a patch of wilted, soggy, but still green daisies to harvest leaves from.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": [
-                    "daisy"
-                ]
+                "herbs": ["daisy"]
             },
             {
                 "text": "It feels nearly impossible, but the glimpse of soggy green stuff at the end of their cold search makes it all worth it! Or... kind of worth it. p_l is <i>sure</i> it'll seem worth it once they're back in their nice warm nest.",
                 "exp": 10,
                 "weight": 5,
-                "herbs": [
-                    "daisy"
-                ]
+                "herbs": ["daisy"]
             },
             {
                 "text": "It's not just spotting things that s_c is talented at - finding daisies in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that they manage it.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": [
-                    "SENSE,2"
-                ],
-                "herbs": [
-                    "daisy"
-                ]
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["daisy"]
             }
         ],
         "fail_outcomes": [
@@ -1526,15 +915,9 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTTAIL"
-                        ]
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTTAIL"]
                     }
                 ],
                 "history_text": {
@@ -1545,40 +928,19 @@
     },
     {
         "patrol_id": "pln_med_gatheringdaisy_leaf-bare2",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "medicine cat apprentice": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "weight": 20,
         "intro_text": "In the leaf-bare snow, the chances of finding any usable daisies seem slim. p_l hesitates - should they even try to look? And is bringing app1 a good idea?",
@@ -1589,37 +951,20 @@
                 "text": "It's miserable work, scraping away snowy pawful by awful, cold pawful. However, p_l manages to find a patch of wilted, soggy, but still green daisies to harvest leaves from. They share an exhausted look of commiseration with app1.",
                 "exp": 40,
                 "weight": 20,
-                "herbs": [
-                    "daisy"
-                ],
+                "herbs": ["daisy"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -1628,37 +973,20 @@
                 "text": "It feels nearly impossible, but the glimpse of soggy green stuff at the end of their cold search makes it all worth it! Or... kind of worth it. p_l is <i>sure</i> it'll seem worth it once they're back in their nice warm nests, and app1 has been a real trooper today.",
                 "exp": 40,
                 "weight": 5,
-                "herbs": [
-                    "daisy"
-                ],
+                "herbs": ["daisy"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -1667,40 +995,21 @@
                 "text": "It's not just spotting things that s_c is talented at - finding daisies in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that they manage it. app1 trails in their wake, wide eyed and impressed.",
                 "exp": 40,
                 "weight": 20,
-                "stat_skill": [
-                    "SENSE,2"
-                ],
-                "herbs": [
-                    "daisy"
-                ],
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["daisy"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -1713,32 +1022,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": -10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": 10
                     }
                 ]
@@ -1749,15 +1043,9 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": [
-                            "app1"
-                        ],
-                        "injuries": [
-                            "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTTAIL"
-                        ]
+                        "cats": ["app1"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTTAIL"]
                     }
                 ],
                 "history_text": {
@@ -1765,32 +1053,17 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": -10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": 10
                     }
                 ]
@@ -1799,28 +1072,16 @@
     },
     {
         "patrol_id": "pln_med_gatheringdaisy_leaf-bare3",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
         },
         "weight": 20,
         "intro_text": "In the leaf-bare snow, the chances of finding any usable daisies seem slim. p_l hesitates - should they even try to look?",
@@ -1831,35 +1092,20 @@
                 "text": "It's miserable work, scraping away snowy pawful by awful, cold pawful. However, p_l manages to find a patch of wilted, soggy, but still green daisies to harvest leaves from Their Clanmates purr at the sight of the mushy green leaves, having spent just as much energy digging for them as p_l.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": [
-                    "daisy"
-                ],
+                "herbs": ["daisy"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -1868,35 +1114,20 @@
                 "text": "It feels nearly impossible, but the glimpse of soggy green stuff at the end of their cold search makes it all worth it! Or... kind of worth it. p_l is <i>sure</i> it'll seem worth it once they're all back in their nice, warm nests.",
                 "exp": 10,
                 "weight": 5,
-                "herbs": [
-                    "daisy"
-                ],
+                "herbs": ["daisy"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -1905,38 +1136,21 @@
                 "text": "It's not just spotting things that s_c is talented at - finding daisies in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that they manage it. It reminds everyone on the patrol just how lucky c_n is to have s_c as a medicine cat.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": [
-                    "SENSE,2"
-                ],
-                "herbs": [
-                    "daisy"
-                ],
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["daisy"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -1949,30 +1163,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": -10
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": 10
                     }
                 ]
@@ -1983,15 +1184,9 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTTAIL"
-                        ]
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTTAIL"]
                     }
                 ],
                 "history_text": {
@@ -1999,30 +1194,17 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": -10
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": 10
                     }
                 ]
@@ -2031,32 +1213,17 @@
     },
     {
         "patrol_id": "pln_med_gatheringdandelion_leaf-bare1",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "weight": 20,
         "intro_text": "The cold of leaf-bare might have killed off a lot of greenery, but p_l knows that the dandelions are only playing dead. If they can get their paws on a plant, the roots will still hold fresh, milky-white sap.",
@@ -2067,28 +1234,20 @@
                 "text": "p_l can't say it's <i>fun,</i> swiping away snow to scrounge for the stems and roots of wilted dandelions below, but what matters currently is that it's <i>possible.</i>",
                 "exp": 10,
                 "weight": 20,
-                "herbs": [
-                    "dandelion"
-                ]
+                "herbs": ["dandelion"]
             },
             {
                 "text": "It's a truly miserable, gray day, but even the colds of leaf-bare can't dampen p_l's joy when they manage to uncover a couple good dandelion plants.",
                 "exp": 10,
                 "weight": 5,
-                "herbs": [
-                    "dandelion"
-                ]
+                "herbs": ["dandelion"]
             },
             {
                 "text": "It's not just spotting things that s_c is talented at - finding dandelions in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that they manage it.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": [
-                    "SENSE,2"
-                ],
-                "herbs": [
-                    "dandelion"
-                ]
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["dandelion"]
             }
         ],
         "fail_outcomes": [
@@ -2103,15 +1262,9 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTTAIL"
-                        ]
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTTAIL"]
                     }
                 ],
                 "history_text": {
@@ -2122,40 +1275,19 @@
     },
     {
         "patrol_id": "pln_med_gatheringdandelion_leaf-bare2",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "medicine cat apprentice": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "weight": 20,
         "intro_text": "The cold of leaf-bare might have killed off a lot of greenery, but p_l knows that the dandelions are only playing dead. If they can get their paws on a plant, the roots will still hold fresh, milky-white sap. Seems it's time for app1 to learn about what resources are still available to gather during leaf-bare.",
@@ -2166,37 +1298,20 @@
                 "text": "p_l can't say it's <i>fun,</i> swiping away snow to scrounge for the stems and roots of wilted dandelions below, but what matters currently is that it's <i>possible.</i> Still, they heavily praise app1 as they head back home with their harvest - they haven't uttered a single word of complaint about the miserable conditions, and p_l couldn't be prouder.",
                 "exp": 40,
                 "weight": 20,
-                "herbs": [
-                    "dandelion"
-                ],
+                "herbs": ["dandelion"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -2205,37 +1320,20 @@
                 "text": "It's a truly miserable, gray day, but even the colds of leaf-bare can't dampen app1's happiness when they manage to uncover a couple good dandelion plants. Watching them find joy in safeguarding the Clan gives p_l a swoop of pride and affection for the apprentice. The path of a medicine cat suits the young cat well.",
                 "exp": 40,
                 "weight": 5,
-                "herbs": [
-                    "dandelion"
-                ],
+                "herbs": ["dandelion"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -2244,40 +1342,21 @@
                 "text": "It's not just spotting things that s_c is talented at - finding dandelions in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that they manage it. app1 trails in their wake, wide eyed and impressed.",
                 "exp": 40,
                 "weight": 20,
-                "stat_skill": [
-                    "SENSE,2"
-                ],
-                "herbs": [
-                    "dandelion"
-                ],
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["dandelion"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -2290,32 +1369,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": -10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": 10
                     }
                 ]
@@ -2326,15 +1390,9 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": [
-                            "app1"
-                        ],
-                        "injuries": [
-                            "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTTAIL"
-                        ]
+                        "cats": ["app1"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTTAIL"]
                     }
                 ],
                 "history_text": {
@@ -2342,32 +1400,17 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": -10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": 10
                     }
                 ]
@@ -2376,32 +1419,17 @@
     },
     {
         "patrol_id": "pln_med_gatheringdandelion_leaf-bare3",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "leader": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "leader": [-1, -1],
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
         },
         "weight": 20,
         "intro_text": "The cold of leaf-bare might have killed off a lot of greenery, but p_l knows that the dandelions are only playing dead. If they can get their paws on a plant, the roots will still hold fresh, milky-white sap. They bring along a patrol of shivering Clanmates - more paws will make light work of digging through the snow.",
@@ -2412,35 +1440,20 @@
                 "text": "p_l can't say it's <i>fun,</i> swiping away snow to scrounge for the stems and roots of wilted dandelions below, but what matters currently is that it's <i>possible.</i> They specifically ensure that, when they return to camp with the additions to the herb stores, the whole camp sees them praising their long-suffering patrol to the leader.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": [
-                    "dandelion"
-                ],
+                "herbs": ["dandelion"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -2449,35 +1462,20 @@
                 "text": "It's a truly miserable, gray day, but even the colds of leaf-bare can't dampen p_l's joy when they manage to uncover a couple good dandelion plants. They make sure to check up on the pawpads of the warriors who helped them once everyone is back in camp, wanting to make sure everyone is alright and not too chilled.",
                 "exp": 10,
                 "weight": 5,
-                "herbs": [
-                    "dandelion"
-                ],
+                "herbs": ["dandelion"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -2486,38 +1484,21 @@
                 "text": "It's not just spotting things that s_c is talented at - finding dandelions in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that they manage it. It reminds everyone on the patrol just how lucky c_n is to have s_c as a medicine cat.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": [
-                    "SENSE,2"
-                ],
-                "herbs": [
-                    "dandelion"
-                ],
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["dandelion"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -2530,30 +1511,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": -10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": 10
                     }
                 ]
@@ -2564,15 +1532,9 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTTAIL"
-                        ]
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTTAIL"]
                     }
                 ],
                 "history_text": {
@@ -2580,30 +1542,17 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": -10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": 10
                     }
                 ]
@@ -2612,32 +1561,17 @@
     },
     {
         "patrol_id": "pln_med_gatheringjuniper_leaf-bare1",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "weight": 20,
         "intro_text": "It's not finding fresh juniper that's the problem. An evergreen plant, they reliably grow through the cold - but they're large shrubs, sometimes large enough to be trees, and climbing in these slippery conditions might be dangerous.",
@@ -2648,28 +1582,20 @@
                 "text": "At least they don't have to dig through the snow for these leaves. p_l sighs, slowly and carefully snipping off juniper among the tree's branches.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": [
-                    "juniper"
-                ]
+                "herbs": ["juniper"]
             },
             {
                 "text": "Sometimes, p_l finds themselves near giddy with gratitude for evergreens, plants that scoff at leaf-bare and grow in spite of it. It's not an effect of the plant - juniper calms, not induces euphoria - just the relief of still having a fresh herb source in leaf-bare.",
                 "exp": 10,
                 "weight": 5,
-                "herbs": [
-                    "juniper"
-                ]
+                "herbs": ["juniper"]
             },
             {
                 "text": "Sometimes, it's not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without needing to risk themselves climbing in leaf-bare.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": [
-                    "SENSE,2"
-                ],
-                "herbs": [
-                    "juniper"
-                ]
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["juniper"]
             }
         ],
         "fail_outcomes": [
@@ -2684,16 +1610,9 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "blunt_force_injury",
-                            "cold_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
-                        ]
+                        "cats": ["r_c"],
+                        "injuries": ["blunt_force_injury", "cold_injury"],
+                        "scars": ["SIDE"]
                     }
                 ],
                 "history_text": {
@@ -2704,40 +1623,19 @@
     },
     {
         "patrol_id": "pln_med_gatheringjuniper_leaf-bare2",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "medicine cat apprentice": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "weight": 20,
         "intro_text": "It's not finding fresh juniper that's the problem. An evergreen plant, they reliably grow through the cold - but they're large shrubs, sometimes large enough to be trees, and climbing in these slippery conditions might be dangerous. p_l hesitates in bringing app1 along under these conditions, but tells themself it's a learning opportunity.",
@@ -2748,37 +1646,20 @@
                 "text": "At least they don't have to dig through the snow for these leaves. p_l sighs, slowly and carefully snipping off juniper among the tree's branches. app1 is very hesitant to join them up there, but eventually overcomes their fear to leaf gather on a lower branch... <i>very</i> carefully.",
                 "exp": 40,
                 "weight": 20,
-                "herbs": [
-                    "juniper"
-                ],
+                "herbs": ["juniper"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -2787,37 +1668,20 @@
                 "text": "Sometimes, p_l finds themselves near giddy with gratitude for evergreens, plants that scoff at leaf-bare and grow in spite of it. It's not an effect of the plant - juniper calms, not induces euphoria - just the relief of still having a fresh herb source in leaf-bare. app1 gives them a weird look, though, prompting p_l to explain their wide smile.",
                 "exp": 40,
                 "weight": 5,
-                "herbs": [
-                    "juniper"
-                ],
+                "herbs": ["juniper"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -2826,40 +1690,21 @@
                 "text": "Sometimes, it's not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without s_c or app1 needing to risk themselves climbing in leaf-bare.",
                 "exp": 40,
                 "weight": 20,
-                "stat_skill": [
-                    "SENSE,2"
-                ],
-                "herbs": [
-                    "juniper"
-                ],
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["juniper"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -2872,32 +1717,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": -10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": 10
                     }
                 ]
@@ -2908,16 +1738,9 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": [
-                            "app1"
-                        ],
-                        "injuries": [
-                            "blunt_force_injury",
-                            "cold_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
-                        ]
+                        "cats": ["app1"],
+                        "injuries": ["blunt_force_injury", "cold_injury"],
+                        "scars": ["SIDE"]
                     }
                 ],
                 "history_text": {
@@ -2925,32 +1748,17 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": -10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": 10
                     }
                 ]
@@ -2959,32 +1767,17 @@
     },
     {
         "patrol_id": "pln_med_gatheringjuniper_leaf-bare3",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "leader": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "leader": [-1, -1],
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
         },
         "weight": 20,
         "intro_text": "It's not finding fresh juniper that's the problem. An evergreen plant, they reliably grow through the cold - but they're large shrubs, sometimes large enough to be trees, and climbing in these slippery conditions might be dangerous. Hopefully the warriors accompanying p_l will be able to help.",
@@ -2995,35 +1788,20 @@
                 "text": "At least they don't have to dig through the snow for these leaves. p_l sighs, slowly and carefully snipping off juniper among the tree's branches. The patrol joins them, tense and focused, and it's a weary group that returns back to camp as the sun dips toward the horizon, exhausted - but successful.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": [
-                    "juniper"
-                ],
+                "herbs": ["juniper"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -3032,35 +1810,20 @@
                 "text": "Sometimes, p_l finds themselves near giddy with gratitude for evergreens, plants that scoff at leaf-bare and grow in spite of it. It's not an effect of the plant - juniper calms, not induces euphoria - just the relief of still having a fresh herb source in leaf-bare, and the warmth of having their Clanmates there to help them gather it.",
                 "exp": 10,
                 "weight": 5,
-                "herbs": [
-                    "juniper"
-                ],
+                "herbs": ["juniper"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -3069,38 +1832,21 @@
                 "text": "Sometimes, it's not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without any cat needing to risk themselves climbing in leaf-bare.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": [
-                    "SENSE,2"
-                ],
-                "herbs": [
-                    "juniper"
-                ],
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["juniper"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -3113,30 +1859,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": -10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": 10
                     }
                 ]
@@ -3147,16 +1880,9 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "blunt_force_injury",
-                            "cold_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
-                        ]
+                        "cats": ["r_c"],
+                        "injuries": ["blunt_force_injury", "cold_injury"],
+                        "scars": ["SIDE"]
                     }
                 ],
                 "history_text": {
@@ -3164,30 +1890,17 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": -10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": 10
                     }
                 ]
@@ -3196,36 +1909,18 @@
     },
     {
         "patrol_id": "pln_med_gatheringwildgarlic_leaf-bare1",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "weight": 20,
         "intro_text": "There's a limited selection of herbs p_l can even look for in leaf-bare, but if they can remember where the wild garlic grew in greenleaf, it's theirs for the taking.",
@@ -3236,30 +1931,20 @@
                 "text": "p_l returns to camp with stone-cold paws and a new hatred for digging, but carrying bulbs of garlic.",
                 "exp": 30,
                 "weight": 20,
-                "herbs": [
-                    "wild_garlic"
-                ]
+                "herbs": ["wild_garlic"]
             },
             {
                 "text": "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky specialty is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores.",
                 "exp": 30,
                 "weight": 5,
-                "herbs": [
-                    "many_herbs",
-                    "wild_garlic"
-                ]
+                "herbs": ["many_herbs", "wild_garlic"]
             },
             {
                 "text": "s_c knows exactly where to go - there was a thick patch of wild garlic that grew in an exposed area. They prove themself right, and it's only an utter and complete pain to dig out the bulbs. Well, at least they've got them now.",
                 "exp": 30,
                 "weight": 20,
-                "stat_skill": [
-                    "SENSE,2"
-                ],
-                "herbs": [
-                    "many_herbs",
-                    "wild_garlic"
-                ]
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["many_herbs", "wild_garlic"]
             }
         ],
         "fail_outcomes": [
@@ -3274,15 +1959,9 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTMITT"
-                        ]
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTMITT"]
                     }
                 ],
                 "history_text": {
@@ -3293,40 +1972,19 @@
     },
     {
         "patrol_id": "pln_med_gatheringwildgarlic_leaf-bare2",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "medicine cat apprentice": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "weight": 20,
         "intro_text": "There's a limited selection of herbs p_l can even look for in leaf-bare, but if they or app1 can only remember where the wild garlic grew in greenleaf it's theirs for the taking.",
@@ -3337,37 +1995,20 @@
                 "text": "p_l and app1 return to camp with stone-cold paws and a new hatred for digging, but carrying bulbs of garlic.",
                 "exp": 40,
                 "weight": 20,
-                "herbs": [
-                    "wild_garlic"
-                ],
+                "herbs": ["wild_garlic"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -3376,38 +2017,20 @@
                 "text": "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky specialty is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores with app1.",
                 "exp": 40,
                 "weight": 5,
-                "herbs": [
-                    "many_herbs",
-                    "wild_garlic"
-                ],
+                "herbs": ["many_herbs", "wild_garlic"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -3416,41 +2039,21 @@
                 "text": "s_c knows exactly where to go - there was a thick patch of wild garlic that grew in an exposed area. They prove themself right, and it's only an utter and complete pain to dig out the bulbs. Well, at least they've got them now.",
                 "exp": 40,
                 "weight": 20,
-                "stat_skill": [
-                    "SENSE,2"
-                ],
-                "herbs": [
-                    "many_herbs",
-                    "wild_garlic"
-                ],
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["many_herbs", "wild_garlic"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -3463,32 +2066,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": -10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": 10
                     }
                 ]
@@ -3499,15 +2087,9 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": [
-                            "app1"
-                        ],
-                        "injuries": [
-                            "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTMITT"
-                        ]
+                        "cats": ["app1"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTMITT"]
                     }
                 ],
                 "history_text": {
@@ -3515,32 +2097,17 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": -10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": 10
                     }
                 ]
@@ -3549,32 +2116,17 @@
     },
     {
         "patrol_id": "pln_med_gatheringwildgarlic_leaf-bare3",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
         },
         "weight": 20,
         "intro_text": "There's a limited selection of herbs p_l can even look for in leaf-bare, even with a patrol helping them, but if they can remember where the wild garlic grew in greenleaf, it's theirs for the taking.",
@@ -3585,35 +2137,20 @@
                 "text": "p_l and the patrol return to camp with stone-cold paws and a new hatred for digging, but carrying bulbs of garlic.",
                 "exp": 30,
                 "weight": 20,
-                "herbs": [
-                    "wild_garlic"
-                ],
+                "herbs": ["wild_garlic"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -3622,36 +2159,20 @@
                 "text": "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky specialty is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores with the patrol.",
                 "exp": 30,
                 "weight": 5,
-                "herbs": [
-                    "many_herbs",
-                    "wild_garlic"
-                ],
+                "herbs": ["many_herbs", "wild_garlic"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -3660,39 +2181,21 @@
                 "text": "s_c knows exactly where to go - there was a thick patch of wild garlic that grew in an exposed area. They prove themself right, and it's only an utter and complete pain to dig out the bulbs. Well, at least they've got them now.",
                 "exp": 30,
                 "weight": 20,
-                "stat_skill": [
-                    "SENSE,2"
-                ],
-                "herbs": [
-                    "many_herbs",
-                    "wild_garlic"
-                ],
+                "stat_skill": ["SENSE,2"],
+                "herbs": ["many_herbs", "wild_garlic"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": -10
                     }
                 ]
@@ -3705,30 +2208,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": -10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": 10
                     }
                 ]
@@ -3739,15 +2229,9 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTMITT"
-                        ]
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTMITT"]
                     }
                 ],
                 "history_text": {
@@ -3755,30 +2239,17 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["platonic", "respect"],
                         "amount": -10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
+                        "values": ["dislike"],
                         "amount": 10
                     }
                 ]
