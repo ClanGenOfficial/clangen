@@ -1291,7 +1291,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
         # draw eyes & scars1
         eyes = sprites.sprites['eyes' + cat.pelt.eye_colour + cat_sprite].copy()
         if cat.pelt.eye_colour2 != None:
-            eyes.blit(sprites.sprites['eyes2' + cat.pelt.eye_colour2 + cat_sprite], (0, 0))
+            eyes.blit(sprites.sprites["eyes2" + cat.pelt.eye_colour2 + cat_sprite], (0, 0))
         new_sprite.blit(eyes, (0, 0))
 
         if not scars_hidden:

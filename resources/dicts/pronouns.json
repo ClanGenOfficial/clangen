@@ -1,42 +1,42 @@
 {
-    "default_pronouns": [
-        {
-            "name": "Neutral",
-            "subject": "they",
-            "object": "them",
-            "poss": "their",
-            "inposs": "theirs",
-            "self": "themself",
-            "conju": 1
-        },
-        {
-            "name": "Feminine",
-            "subject": "she",
-            "object": "her",
-            "poss": "her",
-            "inposs": "hers",
-            "self": "herself",
-            "conju": 2
-        },
-        {
-            "name": "Masculine",
-            "subject": "he",
-            "object": "him",
-            "poss": "his",
-            "inposs": "his",
-            "self": "himself",
-            "conju": 2
-        }
-    ],
-    "custom_presets": [
-        {
-            "name": "Xhe",
-            "subject": "xhe",
-            "object": "xer",
-            "poss": "xis",
-            "inposs": "xers",
-            "self": "xisself",
-            "conju": 2
-        }
-    ]
+  "default_pronouns": [
+    {
+      "name": "Neutral",
+      "subject": "they",
+      "object": "them",
+      "poss": "their",
+      "inposs": "theirs",
+      "self": "themself",
+      "conju": 1
+    },
+    {
+      "name": "Feminine",
+      "subject": "she",
+      "object": "her",
+      "poss": "her",
+      "inposs": "hers",
+      "self": "herself",
+      "conju": 2
+    },
+    {
+      "name": "Masculine",
+      "subject": "he",
+      "object": "him",
+      "poss": "his",
+      "inposs": "his",
+      "self": "himself",
+      "conju": 2
+    }
+  ],
+  "custom_presets": [
+    {
+      "name": "Test",
+      "subject": "test",
+      "object": "etst",
+      "poss": "tset",
+      "inposs": "set",
+      "self": "test",
+      "conju": 2
+    }
+  ]
 }
