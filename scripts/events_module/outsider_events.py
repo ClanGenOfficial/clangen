@@ -29,7 +29,7 @@ class OutsiderEvents:
                            f"but as they drift away, they hope to see " \
                            f"familiar starry fur on the other side."
                 
-                cat.die()
+                cat.die(None) # none is to prevent griefing
                 game.cur_events_list.append(
                     Single_Event(text, "birth_death", cat.ID))
                 

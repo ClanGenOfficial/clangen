@@ -408,7 +408,8 @@ class Cat():
         This is used to kill a cat.
 
         body - defaults to True, use this to mark if the body was recovered so
-        that grief messages will align with body status
+        that grief messages will align with body status 
+        - if it is None, a lost cat died and therefore not trigger grief, since the clan does not know
 
         May return some additional text to add to the death event.
         """
@@ -448,7 +449,7 @@ class Cat():
                 fetched_cat.update_mentor()
         self.update_mentor()
 
-        if game.clan.game_mode != 'classic' and not (self.outside or self.exiled):
+        if game.clan and game.clan.game_mode != 'classic' and not (self.outside or self.exiled) and body != None:
             self.grief(body)
 
         if not self.outside:
@@ -1593,7 +1594,7 @@ class Cat():
         if duration == 0:
             duration = 1
 
-        if game.clan.game_mode == "cruel season":
+        if game.clan and game.clan.game_mode == "cruel season":
             if mortality != 0:
                 mortality = int(mortality * 0.5)
                 med_mortality = int(med_mortality * 0.5)
@@ -1629,7 +1630,7 @@ class Cat():
             }
 
     def get_injured(self, name, event_triggered=False, lethal=True, severity='default'):
-        if game.clan.game_mode == "classic":
+        if game.clan and game.clan.game_mode == "classic":
             return
         
         if name not in INJURIES:
@@ -1660,7 +1661,7 @@ class Cat():
             duration = 1
 
         if mortality != 0:
-            if game.clan.game_mode == "cruel season":
+            if game.clan and game.clan.game_mode == "cruel season":
                 mortality = int(mortality * 0.5)
 
                 if mortality == 0:
@@ -1759,7 +1760,7 @@ class Cat():
         new_condition = False
         mortality = condition["mortality"][self.age]
         if mortality != 0:
-            if game.clan.game_mode == "cruel season":
+            if game.clan and game.clan.game_mode == "cruel season":
                 mortality = int(mortality * 0.65)
 
         if condition['congenital'] == 'always':
@@ -2097,6 +2098,10 @@ class Cat():
         #Former mentor
         is_former_mentor = (other_cat.ID in self.former_apprentices or self.ID in other_cat.former_apprentices)
         if is_former_mentor and not game.clan.clan_settings['romantic with former mentor']:
+            return False
+
+		#current mentor
+        if other_cat.ID in self.apprentice or self.ID in other_cat.apprentice:
             return False
 
         return True
@@ -2444,9 +2449,9 @@ class Cat():
                 EX_gain = randint(10, 24)
 
                 gm_modifier = 1
-                if game.clan.game_mode == 'expanded':
+                if game.clan and game.clan.game_mode == 'expanded':
                     gm_modifier = 3
-                elif game.clan.game_mode == 'cruel season':
+                elif game.clan and game.clan.game_mode == 'cruel season':
                     gm_modifier = 6
 
                 if mediator.experience_level == "average":
