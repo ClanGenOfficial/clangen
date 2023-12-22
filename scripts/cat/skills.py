@@ -5,167 +5,169 @@ from scripts.game_structure.game_essentials import game
 
 class SkillPath(Enum):
     TEACHER = (
-        "quick to help",
-        "good teacher",
-        "great teacher",
-        "excellent teacher"
+        "please help me quickly",
+        "it is cold",
+        "administrator",
+        "the best teacher"
     )
     HUNTER =  (
-        "moss-ball hunter",
-        "good hunter",
-        "great hunter",
-        "renowned hunter"
+        "the great ball hunter",
+        "happy hunting",
+        "hunter",
+        "the famous hunter"
     )
     FIGHTER = (
-        "avid play-fighter",
-        "good fighter",
-        "formidable fighter",
-        "unusually strong fighter"
+        "good",
+        "the good soldier",
+        "bad fighter",
+        "a very strong fighter."
     )
     RUNNER = (
-        "never sits still",
-        "fast runner",
-        "incredible runner",
-        "fast as the wind"
+        "it never settles down.",
+        "run fast",
+        "the great room",
+        "quick as the wind"
     )
     CLIMBER = (
-        "constantly climbing",
-        "good climber",
-        "great climber",
-        "impressive climber"
+        "always upward",
+        "good luck",
+        "the greatest climber",
+        "a good poet"
     )
     SWIMMER = (
-        "splashes in puddles",
-        "good swimmer",
-        "talented swimmer",
-        "fish-like swimmer"
+        "spray in water",
+        "take a good shower",
+        "good bath",
+        "swim like a fish"
     )
     SPEAKER = (
-        "confident with words",
-        "good speaker",
-        "great speaker",
-        "eloquent speaker"
+        "the right word",
+        "good word",
+        "speech",
+        "speak"
     )
     MEDIATOR = (
-        "quick to make peace",
-        "good mediator",
-        "great mediator",
-        "skilled mediator"
+        "hope you get well soon",
+        "good broker",
+        "great middle"
+        "skill moderator"
     )
     CLEVER = (
-        "quick witted",
-        "clever",
-        "very clever",
-        "incredibly clever"
+        "soon",
+        "intelligent",
+        "very intelligent",
+        "wonderful wisdom"
     )
     INSIGHTFUL = (
-        "careful listener",
-        "helpful insight",
-        "valuable insight",
-        "trusted advisor"
+        "pay attention",
+        "good understanding",
+        "true meaning",
+        "the faithful steward"
     )
     SENSE = (
-        "oddly observant",
-        "natural intuition",
-        "keen eye",
-        "unnatural senses"
+        "it's a beautiful sight",
+        "natural instinct",
+        "blind eye",
+        "negative thought"
     )
     KIT = (
-        "active imagination",
-        "good kitsitter",
-        "great kitsitter",
-        "beloved kitsitter"
+        "strong Life",
+        "good cat",
+        "great grandmother",
+        "sweet kiss"
     )
     STORY = (
-        "lover of stories",
-        "good storyteller",
-        "great storyteller",
-        "masterful storyteller"
+        "love story",
+        "good talker",
+        "the great singer",
+        "history teacher"
     )
     LORE = (
-        "interested in Clan history",
-        "learner of lore",
-        "lore keeper",
-        "lore master"
+        "genealogy of love",
+        "students are studying",
+        "guardian of culture",
+        "famous masters"
     )
     CAMP = (
-        "picky nest builder",
-        "steady paws",
-        "den builder",
-        "camp keeper"
+        "the nest builder",
+        "standing wave",
+        "light",
+        "park rangers"
     )
     HEALER = (
-        "interested in herbs",
-        "good healer",
-        "great healer",
-        "fantastic healer"
+        "the wonders of plants",
+        "good deal",
+        "doctor",
+        "a beautiful healer"
     )
     STAR = (
-        "curious about StarClan",
-        "connection to Starclan",
-        "deep StarClan bond",
-        "unshakable StarClan link",
+        "funny about StarClan",
+        "star web link",
+        "deep StarClan bonds",
+        "stern without flies"
     )
     DARK = (
-        "interested in the Dark Forest",
-        "Dark Forest affinity",
-        "deep Dark Forest bond",
-        "unshakable Dark Forest link",
+        "witch of the Dark Forest",
+        "exploring the Dark Forest",
+        "link deep dark forest",
+        "unbreakable link to the Dark One."
     )
     OMEN = (
-        "interested in oddities",
-        "omen seeker",
-        "omen sense",
-        "omen sight"
+        "I like rice",
+        "search",
+        "spring feeling",
+        "signature"
     )
     DREAM = (
-        "restless sleeper",
-        "strange dreamer",
-        "dream walker",
-        "dream shaper"
+        "sleep",
+        "strange dream",
+        "dream manager",
+        "the dreamer"
     )
     CLAIRVOYANT = (
-        "oddly insightful",
-        "somewhat clairvoyant",
-        "fairly clairvoyant",
-        "incredibly clairvoyant"
+        "foreign knowledge",
+        "love",
+        "the little nurse",
+        "it is not surprising"
     )
     PROPHET = (
-        "fascinated by prophecies",
-        "prophecy seeker",
-        "prophecy interpreter",
-        "prophet"
+        "crazy prophecy",
+        "seeker of the prophet",
+        "The interpreter of prophecy",
+        "ATM"
     )
     GHOST = (
-        "morbid curiosity",
-        "ghost sense",
-        "ghost sight",
-        "ghost speaker"
+        "sick love"
+        "conscience",
+        "vision of ghosts",
+        "ghostbuster"
     )
-    
+   
     @staticmethod
     def get_random(exclude:list=()):
         """Get a random path, with more uncommon paths being less common"""
-        
-        uncommon_paths = [i for i in [SkillPath.GHOST, SkillPath.PROPHET, 
+       
+        uncommon_paths = [i for i in [SkillPath.GHOST, SkillPath.PROPHET,
                           SkillPath.CLAIRVOYANT, SkillPath.DREAM,
-                          SkillPath.OMEN, SkillPath.STAR, SkillPath.HEALER, 
+                          SkillPath.OMEN, SkillPath.STAR, SkillPath.HEALER,
                           SkillPath.DARK]
                           if i not in exclude]
-        
-        
+       
+       
         if not int(random.random() * 15):
             return random.choice(uncommon_paths)
         else:
-            common_paths = [i for i in list(SkillPath) if 
+            common_paths = [i for i in list(SkillPath) if
                            i not in exclude and i not in uncommon_paths]
             return random.choice(common_paths)
 
+
+   
 class HiddenSkillEnum(Enum):
     ROGUE = "rogue's knowledge"
     LONER = "loner's knowledge"
     KITTYPET = "kittypet's knowledge"
-    
+   
 class SkillTypeFlag(Flag):
     SUPERNATURAL = auto()
     STRONG = auto()
@@ -173,38 +175,39 @@ class SkillTypeFlag(Flag):
     SMART = auto()
     OBSERVANT = auto()
     SOCIAL = auto()
-    
+   
 class Skill():
     '''Skills handling functions mostly'''
-    
+   
     tier_ranges = ((0, 9), (10, 19), (20, 29))
     point_range = (0, 29)
-    
+   
     short_strings = {
-        SkillPath.TEACHER: "teaching",
-        SkillPath.HUNTER: "hunting",
-        SkillPath.FIGHTER: "fighting",
-        SkillPath.RUNNER: "running",
-        SkillPath.CLIMBER: "climbing",
-        SkillPath.SWIMMER: "swimming",
-        SkillPath.SPEAKER: "speaking",
-        SkillPath.MEDIATOR: "mediating",
-        SkillPath.CLEVER: "clever",
-        SkillPath.INSIGHTFUL: "advising",
-        SkillPath.SENSE: "observing",
-        SkillPath.KIT: "caretaking",
-        SkillPath.STORY: "storytelling",
-        SkillPath.LORE: "lorekeeping",
-        SkillPath.CAMP: "campkeeping",
-        SkillPath.HEALER: "healing",
-        SkillPath.STAR: "StarClan",
-        SkillPath.OMEN: "omen",
-        SkillPath.DREAM: "dreaming",
-        SkillPath.CLAIRVOYANT: "predicting",
-        SkillPath.PROPHET: "prophesying",
-        SkillPath.GHOST: "ghosts",
-        SkillPath.DARK: "dark forest"
+        SkillPath.TEACHER: "training",
+        SkillPath.HUNTER: "chase",
+        SkillPath.FIGHTER: "war",
+        SkillPath.RUNNER: "run me",
+        SkillPath.CLIMBER: "get out",
+        SkillPath.SWIMMER: "bath in water",
+        SkillPath.SPEAKER: "number",
+        SkillPath.MEDIATOR: "center stage",
+        SkillPath.CLEVER: "later",
+        SkillPath.INSIGHTFUL: "interview",
+        SkillPath.SENSE: "apply",
+        SkillPath.KIT: "circle",
+        SkillPath.STORY: "confirm it",
+        SkillPath.LORE: "watchman",
+        SkillPath.CAMP: "camp management",
+        SkillPath.HEALER: "invoice",
+        SkillPath.STAR: "alone",
+        SkillPath.OMEN: "tracking",
+        SkillPath.DREAM: "dream",
+        SkillPath.CLAIRVOYANT: "on standby",
+        SkillPath.PROPHET: "inform them",
+        SkillPath.GHOST: "spirit",
+        SkillPath.DARK: "black forest",
     }
+
     
     
     def __init__(self, path:SkillPath, points:int=0, interest_only:bool=False):
@@ -340,7 +343,7 @@ class CatSkills:
         SkillPath.CLAIRVOYANT: SkillTypeFlag.SUPERNATURAL | SkillTypeFlag.OBSERVANT,
         SkillPath.PROPHET: SkillTypeFlag.SUPERNATURAL,
         SkillPath.GHOST: SkillTypeFlag.SUPERNATURAL,
-        SkillPath.DARK: SkillTypeFlag.SUPERNATURAL
+        SkillPath.DARK: SkillTypeFlag.SUPERNATURAL,
     }
     # pylint: enable=unsupported-binary-operation
     
