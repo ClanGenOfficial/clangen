@@ -161,7 +161,7 @@ class Freshkill_Pile():
         self._update_needed_food(living_cats)
         self.update_total_amount()
 
-    def feed_cats(self, living_cats: list) -> None:
+    def feed_cats(self, living_cats: list, not_moon_feeding = False) -> None:
         """
         Handles to feed all living clan cats. This happens before the aging up.
 
@@ -173,24 +173,24 @@ class Freshkill_Pile():
         self.update_nutrition(living_cats)
         # NOTE: this is for testing purposes
         if not game.clan:
-            self.tactic_status(living_cats)
+            self.tactic_status(living_cats, not_moon_feeding)
             return
 
         # NOTE: the tactics should have a own function for testing purposes
         if game.clan.clan_settings["younger first"]:
-            self.tactic_younger_first(living_cats)
+            self.tactic_younger_first(living_cats, not_moon_feeding)
         elif game.clan.clan_settings["less nutrition first"]:
-            self.tactic_less_nutrition_first(living_cats)
+            self.tactic_less_nutrition_first(living_cats, not_moon_feeding)
         elif game.clan.clan_settings["more experience first"]:
-            self.tactic_more_experience_first(living_cats)
+            self.tactic_more_experience_first(living_cats,not_moon_feeding)
         elif game.clan.clan_settings["hunter first"]:
-            self.tactic_hunter_first(living_cats)
+            self.tactic_hunter_first(living_cats, not_moon_feeding)
         elif game.clan.clan_settings["sick/injured first"]:
-            self.tactic_sick_injured_first(living_cats)
+            self.tactic_sick_injured_first(living_cats,not_moon_feeding)
         elif game.clan.clan_settings["by-status"]:
-            self.tactic_status(living_cats)
+            self.tactic_status(living_cats, not_moon_feeding)
         else:
-            self.tactic_status(living_cats)
+            self.tactic_status(living_cats, not_moon_feeding)
 
     def amount_food_needed(self):
         """
@@ -217,7 +217,7 @@ class Freshkill_Pile():
     #                                    tactics                                   #
     # ---------------------------------------------------------------------------- #
 
-    def tactic_status(self, living_cats: List[Cat]) -> None:
+    def tactic_status(self, living_cats: List[Cat], not_moon_feeding = False) -> None:
         """
         With this tactic, the cats will be fed after status + age.
 
@@ -261,13 +261,13 @@ class Freshkill_Pile():
         
             sorted_group = sorted(relevant_group, key=lambda x: x.moons)
             if feeding_status == "queen/pregnant":
-                self.feed_group(sorted_group, True)
+                self.feed_group(sorted_group, not_moon_feeding, True)
             elif feeding_status in ["newborn", "kitten"]:
-                self.feed_group(sorted_group, False, fed_kits)
+                self.feed_group(sorted_group, not_moon_feeding, False, fed_kits)
             else:
-                self.feed_group(sorted_group)
+                self.feed_group(sorted_group, not_moon_feeding)
 
-    def tactic_younger_first(self, living_cats: List[Cat]) -> None:
+    def tactic_younger_first(self, living_cats: List[Cat], not_moon_feeding = False) -> None:
         """
         With this tactic, the youngest cats will be fed first.
 
@@ -277,9 +277,9 @@ class Freshkill_Pile():
                 the list of cats which should be feed
         """
         sorted_cats = sorted(living_cats, key=lambda x: x.moons)
-        self.feed_group(sorted_cats)
+        self.feed_group(sorted_cats, not_moon_feeding)
 
-    def tactic_less_nutrition_first(self, living_cats: List[Cat]) -> None:
+    def tactic_less_nutrition_first(self, living_cats: List[Cat], not_moon_feeding = False) -> None:
         """
         With this tactic, the cats with the lowest nutrition will be feed first.
 
@@ -354,9 +354,9 @@ class Freshkill_Pile():
 
         # feed the rest according to their status
         remaining_cats = [fetch_cat.fetch_cat(info[0]) for info in satisfied.items()]
-        self.tactic_status(remaining_cats)
+        self.tactic_status(remaining_cats, not_moon_feeding)
 
-    def tactic_more_experience_first(self, living_cats: List[Cat]) -> None:
+    def tactic_more_experience_first(self, living_cats: List[Cat], not_moon_feeding = False) -> None:
         """
         With this tactic, the cats with the most experience will be fed first.
 
@@ -366,9 +366,9 @@ class Freshkill_Pile():
                 the list of cats which should be feed
         """
         sorted_cats = sorted(living_cats, key=lambda x: x.experience, reverse=True)
-        self.feed_group(sorted_cats)
+        self.feed_group(sorted_cats, not_moon_feeding)
 
-    def tactic_hunter_first(self, living_cats: List[Cat]) -> None:
+    def tactic_hunter_first(self, living_cats: List[Cat], not_moon_feeding = False) -> None:
         """
         With this tactic, the cats with the skill hunter (depending on rank) will be fed first.
 
@@ -390,9 +390,9 @@ class Freshkill_Pile():
                     living_cats.remove(cat)
 
         sorted_group = best_hunter + living_cats
-        self.feed_group(sorted_group)
+        self.feed_group(sorted_group, not_moon_feeding)
 
-    def tactic_sick_injured_first(self, living_cats: List[Cat]) -> None:
+    def tactic_sick_injured_first(self, living_cats: List[Cat], not_moon_feeding = False) -> None:
         """
         With this tactic, the sick or injured cats will be fed first.
 
@@ -404,13 +404,13 @@ class Freshkill_Pile():
         sick_cats = [cat for cat in living_cats if cat.is_ill() or cat.is_injured()]
         healthy_cats = [cat for cat in living_cats if not cat.is_ill() and not cat.is_injured()]
         sorted_cats = sick_cats + healthy_cats
-        self.feed_group(sorted_cats)
+        self.feed_group(sorted_cats, not_moon_feeding)
 
     # ---------------------------------------------------------------------------- #
     #                               helper functions                               #
     # ---------------------------------------------------------------------------- #
 
-    def feed_group(self, group: list, queens = False, fed_kits = None) -> None:
+    def feed_group(self, group: list, not_moon_feeding = False, queens = False,fed_kits = None) -> None:
         """
         Handle the feeding giving cats.
 
@@ -450,6 +450,8 @@ class Freshkill_Pile():
                 feeding_amount += 1
             elif self.amount_food_needed() < self.total_amount and self.nutrition_info[cat.ID].percentage < 100:
                 feeding_amount += 0.5
+            if not_moon_feeding:
+                needed_amount = 0
             self.feed_cat(cat, feeding_amount, needed_amount)
 
     def feed_cat(self, cat: Cat, amount, actual_needed) -> None:
@@ -465,6 +467,7 @@ class Freshkill_Pile():
             actual_needed : int|float
                 the amount the cat actually needs for the moon
         """
+        print(cat.name, " will be fed.")
         ration = game.clan.clan_settings["ration prey"] if game.clan else False
         remaining_amount = amount
         amount_difference = actual_needed - amount

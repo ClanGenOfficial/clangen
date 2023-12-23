@@ -36,6 +36,7 @@ class ClearingScreen(Screens):
         self.cat_bg = None
         self.last_page = None
         self.next_page = None
+        self.feed_all_button = None
         self.feed_one_button = None
         self.feed_max_button = None
         self.pile_base = None
@@ -71,6 +72,22 @@ class ClearingScreen(Screens):
                 Freshkill_Events.handle_nutrient(self.focus_cat_object, game.clan.freshkill_pile.nutrition_info)
                 self.update_cats_list()
                 self.update_nutrition_cats()
+                self.update_focus_cat()
+                self.draw_pile()
+                if self.open_tab == "tactic":
+                    self.log_tab.enable()
+                    self.cats_tab.enable()
+                    self.tactic_tab.disable()
+                    self.handle_tab_toggles()
+                if self.open_tab == "log":
+                    self.log_tab.disable()
+                    self.cats_tab.enable()
+                    self.tactic_tab.enable()
+                    self.handle_tab_toggles()
+            elif event.ui_element == self.feed_all_button:
+                game.clan.freshkill_pile.feed_cats(self.hungry_cats, True)
+                self.update_nutrition_cats()
+                self.update_cats_list()
                 self.update_focus_cat()
                 self.draw_pile()
                 if self.open_tab == "tactic":
@@ -144,6 +161,8 @@ class ClearingScreen(Screens):
         self.hide_menu_buttons()
         self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))), "", object_id="#back_button"
                                          , manager=MANAGER)
+        self.feed_all_button = UIImageButton(scale(pygame.Rect((200, 600), (160, 60))), "", object_id="#freshkill_feed"
+                                      , manager=MANAGER)
         self.feed_one_button = UIImageButton(scale(pygame.Rect((1200, 600), (160, 60))), "", object_id="#freshkill_feed"
                                       , manager=MANAGER)
         self.feed_max_button = UIImageButton(scale(pygame.Rect((1400, 600), (160, 60))), "", object_id="#freshkill_feed"
@@ -330,6 +349,7 @@ class ClearingScreen(Screens):
 
     def update_focus_cat(self):
         if not self.focus_cat_object:
+            self.feed_all_button.enable()
             return
         if self.focus_cat:
             self.focus_cat.kill()
@@ -341,6 +361,7 @@ class ClearingScreen(Screens):
         # if the nutrition is full grey the feed button out
         self.feed_one_button.show()
         self.feed_max_button.show()
+        self.feed_all_button.hide()
         nutrition_info = game.clan.freshkill_pile.nutrition_info
         p = 100
         if self.focus_cat_object.ID in nutrition_info:
@@ -479,6 +500,7 @@ class ClearingScreen(Screens):
 
     def exit_screen(self):
         self.info_messages.kill()
+        self.feed_all_button.kill()
         self.feed_one_button.kill()
         self.feed_max_button.kill()
         self.pile_base.kill()
