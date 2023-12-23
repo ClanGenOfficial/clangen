@@ -54,7 +54,7 @@ class SkillPath(Enum):
     )
     CLEVER = (
         "soon",
-        "intelligent",
+        "later",
         "very intelligent",
         "wonderful wisdom"
     )
