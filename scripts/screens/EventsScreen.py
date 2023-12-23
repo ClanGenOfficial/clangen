@@ -245,6 +245,10 @@ class EventsScreen(Screens):
             self.update_display_events_lists()
             self.display_events = self.all_events
 
+        if game.clan.game_mode != "classic":
+            self.freshkill_pile_button =  UIImageButton(scale(pygame.Rect((1270, 210), (282, 60))), "", object_id="#freshkill_pile_button"
+                                             , manager=MANAGER)
+
         self.heading = pygame_gui.elements.UITextBox("See which events are currently happening in the Clan.",
                                                      scale(pygame.Rect((200, 220), (1200, 80))),
                                                      object_id=get_text_box_theme("#text_box_30_horizcenter"),
@@ -269,10 +273,6 @@ class EventsScreen(Screens):
             self.clan_age.set_text(f'Clan age: {game.clan.age} moons')
 
         self.timeskip_button = UIImageButton(scale(pygame.Rect((620, 436), (360, 60))), "", object_id="#timeskip_button"
-                                             , manager=MANAGER)
-        
-        if game.clan.game_mode != "classic":
-            self.freshkill_pile_button =  UIImageButton(scale(pygame.Rect((1270, 210), (282, 60))), "", object_id="#freshkill_pile_button"
                                              , manager=MANAGER)
 
         # commenting out for now as there seems to be a consensus that it isn't needed anymore?

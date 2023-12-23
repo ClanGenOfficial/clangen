@@ -467,7 +467,6 @@ class Freshkill_Pile():
             actual_needed : int|float
                 the amount the cat actually needs for the moon
         """
-        print(cat.name, " will be fed.")
         ration = game.clan.clan_settings["ration prey"] if game.clan else False
         remaining_amount = amount
         amount_difference = actual_needed - amount
