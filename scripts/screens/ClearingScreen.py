@@ -2,6 +2,8 @@ import pygame
 import pygame_gui
 import ujson
 
+from scripts.clan_resources.freshkill import PREY_REQUIREMENT
+
 from .Screens import Screens
 from scripts.cat.cats import Cat
 from scripts.events_module.freshkill_pile_events import Freshkill_Events
@@ -34,7 +36,8 @@ class ClearingScreen(Screens):
         self.cat_bg = None
         self.last_page = None
         self.next_page = None
-        self.feed_button = None
+        self.feed_one_button = None
+        self.feed_max_button = None
         self.pile_base = None
         self.focus_cat = None
         self.focus_cat_object = None
@@ -57,8 +60,14 @@ class ClearingScreen(Screens):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
                 self.change_screen('camp screen')
-            elif event.ui_element == self.feed_button:
-                game.clan.freshkill_pile.feed_cat(self.focus_cat_object, 1, 0)
+            elif event.ui_element in [self.feed_one_button, self.feed_max_button]:
+                amount = 1
+                if event.ui_element == self.feed_max_button:
+                    nutrition_info = game.clan.freshkill_pile.nutrition_info
+                    max_amount = nutrition_info[self.focus_cat_object.ID].max_score
+                    current_amount = nutrition_info[self.focus_cat_object.ID].current_score
+                    amount = max_amount - current_amount
+                game.clan.freshkill_pile.feed_cat(self.focus_cat_object, amount, 0)
                 Freshkill_Events.handle_nutrient(self.focus_cat_object, game.clan.freshkill_pile.nutrition_info)
                 self.update_cats_list()
                 self.update_nutrition_cats()
@@ -135,9 +144,12 @@ class ClearingScreen(Screens):
         self.hide_menu_buttons()
         self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))), "", object_id="#back_button"
                                          , manager=MANAGER)
-        self.feed_button = UIImageButton(scale(pygame.Rect((1250, 600), (160, 60))), "", object_id="#freshkill_feed"
+        self.feed_one_button = UIImageButton(scale(pygame.Rect((1200, 600), (160, 60))), "", object_id="#freshkill_feed"
                                       , manager=MANAGER)
-        self.feed_button.hide()
+        self.feed_max_button = UIImageButton(scale(pygame.Rect((1400, 600), (160, 60))), "", object_id="#freshkill_feed"
+                                      , manager=MANAGER)
+        self.feed_one_button.hide()
+        self.feed_max_button.hide()
 
         if game.clan.game_mode != 'classic':
             self.help_button = UIImageButton(scale(pygame.Rect(
@@ -327,15 +339,18 @@ class ClearingScreen(Screens):
             self.focus_name.kill()
 
         # if the nutrition is full grey the feed button out
-        self.feed_button.show()
+        self.feed_one_button.show()
+        self.feed_max_button.show()
         nutrition_info = game.clan.freshkill_pile.nutrition_info
         p = 100
         if self.focus_cat_object.ID in nutrition_info:
             p = int(nutrition_info[self.focus_cat_object.ID].percentage)
         if p >= 100:
-            self.feed_button.disable()
+            self.feed_one_button.disable()
+            self.feed_max_button.disable()
         else:
-            self.feed_button.enable()
+            self.feed_one_button.enable()
+            self.feed_max_button.enable()
 
 
         name = str(self.focus_cat_object.name)
@@ -464,7 +479,8 @@ class ClearingScreen(Screens):
 
     def exit_screen(self):
         self.info_messages.kill()
-        self.feed_button.kill()
+        self.feed_one_button.kill()
+        self.feed_max_button.kill()
         self.pile_base.kill()
         self.focus_cat_object = None
         if self.focus_info:

@@ -479,7 +479,7 @@ class Freshkill_Pile():
                 self.nutrition_info[cat.ID].current_score += amount
             elif amount > actual_needed:
                 self.nutrition_info[cat.ID].current_score += (amount - actual_needed)
-        elif ration and cat.status == "warrior":
+        elif ration and cat.status == "warrior" and actual_needed != 0:
             feeding_amount = PREY_REQUIREMENT[cat.status]
             feeding_amount = feeding_amount/2
             self.nutrition_info[cat.ID].current_score -= feeding_amount
