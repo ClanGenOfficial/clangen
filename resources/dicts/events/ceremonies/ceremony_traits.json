@@ -1,5 +1,5 @@
 {
-    "adventurous": [
+    "destiny": [
         "fearlessness",
         "valiance",
         "daring",
@@ -17,7 +17,7 @@
         "energy",
         "risk-taking"
     ],
-    "ambitious": [
+    "high reputation": [
         "initiative",
         "loyalty",
         "determination",
@@ -35,7 +35,7 @@
         "intensity",
         "strength"
     ],
-    "altruistic": [
+    "show grace": [
         "selflessness",
         "kindness",
         "compassion",
@@ -53,7 +53,7 @@
         "spirit",
         "grace"
     ],
-    "bloodthirsty": [
+    "thirst": [
         "ferocity",
         "strength",
         "skill",
@@ -71,7 +71,7 @@
         "responsibility",
         "valor"
     ],
-    "bold": [
+    "oil": [
         "boldness",
         "fearlessness",
         "valiance",
@@ -89,7 +89,7 @@
         "exemplar",
         "justice"
     ],
-    "calm": [
+    "silent": [
         "serenity",
         "tranquility",
         "forethought",
@@ -109,8 +109,7 @@
         "endurance",
         "perspective"
     ],
-    "careful": [
-        "mindfulness",
+    "mindfulness": [
         "intelligence",
         "initiative",
         "thoughtfulness",
@@ -127,7 +126,7 @@
         "prudence",
         "wisdom"
     ],
-    "charismatic": [
+    "the master": [
         "warmth",
         "compassion",
         "kindness",
@@ -145,7 +144,7 @@
         "good nature",
         "friendliness"
     ],
-    "childish": [
+    "toddler": [
         "energy",
         "resilience",
         "spirit",
@@ -163,7 +162,7 @@
         "determination",
         "tenacity"
     ],
-    "cold": [
+    "freeze": [
         "honesty",
         "cleverness",
         "skill",
@@ -183,7 +182,7 @@
         "evenness",
         "fortitude"
     ],
-    "compassionate": [
+    "show grace": [
         "compassion",
         "kindness",
         "warmth",
@@ -201,7 +200,7 @@
         "understanding",
         "gentleness"
     ],
-    "confident": [
+    "certainly": [
         "confidence",
         "resilience",
         "boldness",
@@ -217,7 +216,7 @@
         "strong will",
         "daring"
     ],
-    "daring": [
+    "brave": [
         "boldness",
         "fearlessness",
         "valiance",
@@ -235,7 +234,7 @@
         "risk-taking",
         "decisiveness"
     ],
-    "empathetic": [
+    "ignorance": [
         "compassion",
         "kindness",
         "spirit",
@@ -253,7 +252,7 @@
         "warmth",
         "sensitivity"
     ],
-    "faithful": [
+    "they trust": [
         "spirit",
         "wisdom",
         "dedication",
@@ -271,7 +270,7 @@
         "sincerity",
         "honor"
     ],
-    "fierce": [
+    "raw": [
         "bravery",
         "courage",
         "commitment",
@@ -289,7 +288,7 @@
         "dedication",
         "fortitude"
     ],
-    "insecure": [
+    "worry": [
         "loyalty",
         "dedication",
         "forethought",
@@ -307,7 +306,7 @@
         "vigilance",
         "wisdom"
     ],
-    "lonesome": [
+    "just": [
         "independence",
         "wisdom",
         "patience",
@@ -325,7 +324,7 @@
         "integrity",
         "dependability"
     ],
-    "loving": [
+    "beautiful": [
         "compassion",
         "kindness",
         "spirit",
@@ -343,7 +342,7 @@
         "amity",
         "care"
     ],
-    "loyal": [
+    "faith": [
         "loyalty",
         "dedication",
         "enterprise",
@@ -361,7 +360,7 @@
         "sincerity",
         "support"
     ],
-    "nervous": [
+    "confessions": [
         "loyalty",
         "dedication",
         "forethought",
@@ -379,7 +378,7 @@
         "prudence",
         "attention"
     ],
-    "patient": [
+    "let's see": [
         "patience",
         "forethought",
         "serenity",
@@ -397,7 +396,7 @@
         "endurance",
         "perspective"
     ],
-    "playful": [
+    "back": [
         "enthusiasm",
         "spirit",
         "energy",
@@ -415,7 +414,7 @@
         "zeal",
         "perseverance"
     ],
-    "responsible": [
+    "loading": [
         "strength",
         "dedication",
         "initiative",
@@ -432,7 +431,7 @@
         "steadfastness",
         "maturity"
     ],
-    "righteous": [
+    "smooth": [
         "loyalty",
         "commitment",
         "enterprise",
@@ -450,7 +449,7 @@
         "grace",
         "poise"
     ],
-    "shameless": [
+    "fraud": [
         "enthusiasm",
         "spirit",
         "energy",
@@ -468,7 +467,7 @@
         "adaptability",
         "foolhardiness"
     ],
-    "sneaky": [
+    "intelligence": [
         "skill",
         "strategy",
         "intelligence",
@@ -486,7 +485,7 @@
         "shrewdness",
         "sensitivity"
     ],
-    "strange": [
+    "interesting": [
         "enthusiasm",
         "spirit",
         "energy",
@@ -504,7 +503,7 @@
         "integrity",
         "intelligence"
     ],
-    "strict": [
+    "really": [
         "loyalty",
         "commitment",
         "enterprise",
@@ -522,7 +521,7 @@
         "dependability",
         "equanimity"
     ],
-    "thoughtful": [
+    "let's see": [
         "compassion",
         "dedication",
         "initiative",
@@ -540,7 +539,7 @@
         "honor",
         "amity"
     ],
-    "troublesome": [
+    "flexibility": [
         "energy",
         "resilience",
         "spirit",
@@ -558,7 +557,7 @@
         "gallantry",
         "flexibility"
     ],
-    "vengeful": [
+    "revenge": [
         "honesty",
         "cleverness",
         "skill",
@@ -576,7 +575,7 @@
         "strong will",
         "intensity"
     ],
-    "wise": [
+    "clever": [
         "wisdom",
         "intelligence",
         "serenity",
@@ -595,3 +594,4 @@
         "foresight"
     ]
 }
+
