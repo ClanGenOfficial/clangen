@@ -1746,10 +1746,10 @@ class Events:
         #print(f'{cat.name} is feeling murderous')
         # If random murder is not triggered, targets can only be those they have some dislike for
         hate_relation = [i for i in relationships if
-                        i.dislike > 5 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
+                        i.dislike > 15 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
         targets.extend(hate_relation)
         resent_relation = [i for i in relationships if
-                        i.jealousy > 5 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
+                        i.jealousy > 15 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
         targets.extend(resent_relation)
 
         # if we have some, then we need to decide if this cat will kill
@@ -1759,8 +1759,8 @@ class Events:
 
             kill_chance = game.config["death_related"]["base_murder_kill_chance"]
 
-            relation_modifier = (0.5 * int(chosen_target.dislike + chosen_target.jealousy)) - \
-                (0.5 * int(chosen_target.platonic_like + chosen_target.trust + chosen_target.comfortable))
+            relation_modifier = int(0.5 * int(chosen_target.dislike + chosen_target.jealousy)) - \
+            int(0.5 * int(chosen_target.platonic_like + chosen_target.trust + chosen_target.comfortable))
             #print("Relation Modifier: ", relation_modifier)
             kill_chance -= relation_modifier
 
