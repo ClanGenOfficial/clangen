@@ -415,8 +415,9 @@
     "Zendaya", "Zeraora", "Zikomo", "Zim", "Zion", "Zira", "Ziti", "Zoe", "Zoomie", "Zorro", "Zorua", "Zuberi", "Zuko", "Zuma", "Zuna", "Zuva",
     "Olivier", "Kaz", "Kira", "Shira", "Marina", "Nur", "Roy", "Gala", "Bilbo", "Geralt", "Witcher", "Homunculus", "Alchemist", "The Knight", "Inej", "Jesper",
     "Nina", "Matthias", "Wylan", "Dirtyhands", "Wraith", "Monomon", "Lurien", "Herrah", "Shabor", "Pharaoh", "Porki", "Dark", "Radiance", "Yato", "Yatogami", "Hiyori", "Yukine", "Bishamonten", "Viina",
-    "Kazuma", "Kofuku", "Daikoku", "Armstrong", "Hohenheim", "Scar", "Astarion", "Gale", "Lae'zel", "Karlach", "Wyll", "Jaheira", "Minsc", "Minthara", "Halsin", "Zevlor", "Raphael", "Gortash", "Bhaal", "Orin",
-    "Ketheric", "Faerun", "Shar", "Selune", "Mystra", "Balthazar", "Absolute", "Cazador", "Szarr", "Vampire", "Mol", "Balduran", "Kagha", "Orpheus", "Dame Aylin", "Isobel", "Tiamat"
+    "Kazuma", "Kofuku", "Daikoku", "Armstrong", "Hohenheim", "Scar", "Astarion", "Gale", "Laezel", "Karlach", "Wyll", "Jaheira", "Minsc", "Minthara", "Halsin", "Zevlor", "Raphael", "Gortash", "Bhaal", "Orin",
+    "Ketheric", "Faerun", "Shar", "Selune", "Mystra", "Balthazar", "Absolute", "Cazador", "Szarr", "Vampire", "Mol", "Balduran", "Kagha", "Orpheus", "Dame Aylin", "Isobel", "Tiamat", "Zariel", "Mizora",
+    "Withers", "Elminster"
     ],
 	"animal_suffixes": [
 		"badger", "bat", "bear", "bee", "beetle", "bird", "bug", "cricket", "deer", "eagle", "elk", "falcon", "fawn", "fish", "fox", "goose", "hare", "hawk", "horse", 
