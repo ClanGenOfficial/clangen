@@ -165,7 +165,7 @@ class Clan():
             self.post_initialization_functions()
 
 
-    # clan couldn't save it self in in time because for example of this function: if deputy is not None: self.deputy.status_change('deputy') -> game.clan.remove_med_cat(self)
+    # The clan couldn't save itself in time due to issues arising, for example, from this function: "if deputy is not None: self.deputy.status_change('deputy') -> game.clan.remove_med_cat(self)"
     def post_initialization_functions(self):
         if self.deputy is not None:
             self.deputy.status_change('deputy')
