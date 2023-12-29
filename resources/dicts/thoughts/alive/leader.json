@@ -64,7 +64,7 @@
         "id":"leader_alive_deputy",
         "thoughts":[
             "Tries to set a good example for the deputy",
-            "Has been letting  {PRONOUN/m_c/poss} deputy call the shots recently, and is proud of {PRONOUN/m_c/poss} initiative",
+            "Has been letting {PRONOUN/m_c/poss} deputy call the shots recently, and is proud of {PRONOUN/m_c/poss} initiative",
             "Needs to talk to r_c about something",
             "Wants to go on patrol with r_c so they can have a chat",
             "Is grateful for r_c's support",

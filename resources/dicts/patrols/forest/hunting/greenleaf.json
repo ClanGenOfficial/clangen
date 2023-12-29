@@ -3854,7 +3854,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The skies clear, and though r_c keeps hunting, the heat of the sun makes {PRONOUN/r_c/object} sluggish and slow to react",
+                "text": "The skies are clear, and though r_c keeps hunting, the heat of the sun makes {PRONOUN/r_c/object} sluggish and slow to react.",
                 "exp": 0,
                 "weight": 20
             },

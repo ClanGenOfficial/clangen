@@ -519,7 +519,7 @@
                 ]
             },
             {
-                "text": "The patrol brings back a truly massive haul, and return in good humour, laughing as {PRONOUN/p_l/subject} set down {PRONOUN/p_l/poss} sticks of spun-up webbing in the medicine cat den. p_l joins everyone as they sit down to share tongues, ridding their pelts of dust and the odd spider as the cats catch up with each other and enjoy the day.",
+                "text": "The patrol brings back a truly massive haul, and return in good humor, laughing as {PRONOUN/p_l/subject} set down {PRONOUN/p_l/poss} sticks of spun-up webbing in the medicine cat den. p_l joins everyone as they sit down to share tongues, ridding their pelts of dust and the odd spider as the cats catch up with each other and enjoy the day.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "cobwebs"],

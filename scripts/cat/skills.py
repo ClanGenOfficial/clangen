@@ -102,7 +102,7 @@ class SkillPath(Enum):
     )
     STAR = (
         "curious about StarClan",
-        "connection to Starclan",
+        "connection to StarClan",
         "deep StarClan bond",
         "unshakable StarClan link",
     )

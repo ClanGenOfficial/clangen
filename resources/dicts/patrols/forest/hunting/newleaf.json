@@ -3698,7 +3698,7 @@
             "all apprentices": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "As r_c stretches, luxuriantly sharpening {PRONOUN/r_c/poss} claws on a tree root, {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} a pair of birds furiously chattering to each other above them, puffing up their feathers and singing in territorial fury. {PRONOUN/r_c/subject/CAP} could go after the birds, of course - but if the fluffy mouthfuls are being protective,then there's something to protect, and it's the season for nest raiding.",
+        "intro_text": "As r_c stretches, luxuriantly sharpening {PRONOUN/r_c/poss} claws on a tree root, {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} a pair of birds furiously chattering to each other above them, puffing up their feathers and singing in territorial fury. {PRONOUN/r_c/subject/CAP} could go after the birds, of course - but if the fluffy mouthfuls are being protective, then there's something to protect, and it's the season for nest raiding.",
         "decline_text": "But r_c can't be bothered today, not with the newleaf sun so bright and warm. Another time, perhaps.",
         "chance_of_success": 50,
         "success_outcomes": [

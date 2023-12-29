@@ -157,7 +157,7 @@
                 "weight": 20
             },
             {
-                "text": "As s_c rarely has patience for other cats, {PRONOUN/s_c/object} {VERB/s_c/tell/tells} r_c harshly that {PRONOUN/s_c/subject} {VERB/s_c/do/does}n't have time for some idiot who got stuck, making r_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out of the sand.",
+                "text": "As s_c rarely has patience for other cats, {PRONOUN/s_c/subject} {VERB/s_c/tell/tells} r_c harshly that {PRONOUN/s_c/subject} {VERB/s_c/do/does}n't have time for some idiot who got stuck, making r_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out of the sand.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
