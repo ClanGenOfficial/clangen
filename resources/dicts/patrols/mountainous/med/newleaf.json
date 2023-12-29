@@ -2277,7 +2277,7 @@
                 ]
             },
             {
-                "text": "It always amazes p_l how quickly the goldenrod bushes sprout back up and marigold patches bloom after leaf-bare, and they collect more goldenrod than they were anticipating, loading up every cat until the patrol until everyone agrees the medicine cat den can't possibly fit more than this.",
+                "text": "It always amazes p_l how quickly the goldenrod bushes sprout back up and marigold patches bloom after leaf-bare, and they collect more goldenrod than they were anticipating, loading up every cat until the patrol agrees the medicine cat den can't possibly fit more than this.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "goldenrod", "marigold"],
