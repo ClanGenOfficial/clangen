@@ -796,7 +796,7 @@
     {
         "id": "responsible_warrior",
         "thoughts": [
-            "Is making sure {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} done all of their daily duties",
+            "Is making sure {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} done all of {PRONOUN/m_c/poss} daily duties",
             "Is planning to wake up early tomorrow",
             "Was the first to rise this morning",
             "Roused the other cats awake at dawn",

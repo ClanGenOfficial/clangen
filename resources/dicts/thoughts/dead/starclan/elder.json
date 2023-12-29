@@ -7,7 +7,7 @@
             "Is telling the same story to whoever is around to listen",
             "Watches c_n with affection",
             "Is laughing at c_n mishaps",
-            "Hopes c_n won't forget them",
+            "Hopes c_n won't forget {PRONOUN/m_c/object}",
             "Is reminiscing about the days gone by"
         ]
     },
