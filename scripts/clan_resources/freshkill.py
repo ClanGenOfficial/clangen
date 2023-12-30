@@ -14,12 +14,14 @@ class Nutrition():
         self.max_score = 1
         self.current_score = 0
         self.percentage = 0
+        self.nutrition_text = "default text"
 
     def __str__(self):
         this_is_a_dict_not_a_string = {
             "max_score": self.max_score,
             "current_score": self.current_score,
             "percentage": self.percentage,
+            "nutrition_text": self.nutrition_text,
         }
         return str(this_is_a_dict_not_a_string)
 
@@ -43,6 +45,11 @@ class Nutrition():
             value = 0
         self._current_score = value
         self.percentage = self._current_score / self.max_score * 100
+        text_config = game.prey_config["text_nutrition"]
+        self.nutrition_text = text_config["text"][0]
+        for index in range(len(text_config["lower_range"])):
+            if self.percentage >= text_config["lower_range"][index]:
+                self.nutrition_text = text_config["text"][index]
 
 
 class Freshkill_Pile():

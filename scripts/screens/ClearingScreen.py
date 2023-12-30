@@ -416,7 +416,7 @@ class ClearingScreen(Screens):
         info_list = [self.focus_cat_object.skills.skill_string(short=True)]
         nutrition_info = game.clan.freshkill_pile.nutrition_info
         if self.focus_cat_object.ID in nutrition_info:
-            info_list.append("nutrition: " + str(int(nutrition_info[self.focus_cat_object.ID].percentage)) + "%")
+            info_list.append("nutrition: " + nutrition_info[self.focus_cat_object.ID].nutrition_text)
         work_status = "This cat can work"
         if self.focus_cat_object.not_working():
             work_status = "This cat isn't able to work"
@@ -478,8 +478,7 @@ class ClearingScreen(Screens):
             if self.tab_showing == self.hungry_tab:
                 nutrition_info = game.clan.freshkill_pile.nutrition_info
                 if cat.ID in nutrition_info:
-                    p = int(nutrition_info[cat.ID].percentage)
-                    condition_list.append(f" nutrition: {p}%")
+                    condition_list.append(" nutrition: " + nutrition_info[cat.ID].nutrition_text)
             conditions = ",<br>".join(condition_list) if len(condition_list) > 0 else None
 
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(scale(pygame.Rect
