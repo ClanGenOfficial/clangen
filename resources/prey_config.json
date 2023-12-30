@@ -11,9 +11,13 @@
 		"injury": 4,
 		"reduce": 6
 	},
-    "additional_prey": 0.5,
-    "nutrition_malnourished_percentage" : 70,
-    "nutrition_starving_percentage" : 25,
+    "additional_prey": 1,
+    "nutrition_malnourished_percentage" : 45,
+    "nutrition_starving_percentage" : 20,
+	"text_nutrition":{
+		"top_range":[20, 35, 50, 65, 80, 100],
+		"text": ["starving", "very hungry", "hungry", "satiated", "full", "bloated"]
+	},
     "prey_requirement":{
         "leader": 3,
         "deputy": 3,

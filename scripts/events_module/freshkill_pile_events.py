@@ -166,10 +166,10 @@ class Freshkill_Events():
         # change the trigger factor according to the size of the clan
         trigger_factor = FRESHKILL_EVENT_TRIGGER_FACTOR
         trigger_factor = trigger_factor - ((len(living_cats)) / 50)
-        if len(living_cats) > 30:
+        if len(living_cats) > 35:
             trigger_factor = trigger_factor - ((len(living_cats)) / 50)
-        if trigger_factor < 1.1:
-            trigger_factor = 1.1
+        if trigger_factor < 1.2:
+            trigger_factor = 1.2
 
         # check if amount of the freshkill pile is too big and a event will be triggered
         needed_amount = freshkill_pile.amount_food_needed()

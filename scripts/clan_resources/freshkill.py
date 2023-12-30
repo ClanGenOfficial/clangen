@@ -114,7 +114,6 @@ class Freshkill_Pile():
         self.total_amount = sum(self.pile.values())
 
     def _update_needed_food(self, living_cats: List[Cat]) -> None:
-        sick_cats = [cat for cat in living_cats if cat.not_working() and "pregnant" not in cat.injuries]
         queen_dict, living_kits = get_alive_clan_queens(self.living_cats)
         relevant_queens = []
         # kits under 3 months are feed by the queen
@@ -128,7 +127,9 @@ class Freshkill_Pile():
         # all normal status cats calculation
         needed_prey = sum([PREY_REQUIREMENT[cat.status] for cat in living_cats if cat.status not in ["newborn", "kitten"]])
         # increase the number for sick cats
-        needed_prey += len(sick_cats) * CONDITION_INCREASE
+        if game.clan and game.clan.game_mode == "cruel season":
+            sick_cats = [cat for cat in living_cats if cat.not_working() and "pregnant" not in cat.injuries]
+            needed_prey += len(sick_cats) * CONDITION_INCREASE
         # increase the number of prey which are missing for relevant queens an pregnant cats
         needed_prey += (len(relevant_queens) + len(pregnant_cats)) * (PREY_REQUIREMENT["queen/pregnant"] - PREY_REQUIREMENT["warrior"])
         # increase the number of prey for kits, which are not taken care by a queen
@@ -340,7 +341,8 @@ class Freshkill_Pile():
 
             # check for condition
             if "pregnant" not in cat.injuries and cat.not_working():
-                feeding_amount += CONDITION_INCREASE
+                if game.clan.game_mode == "cruel season":
+                    feeding_amount += CONDITION_INCREASE
                 needed_amount = feeding_amount
             else:
                 if ration_prey and status == "warrior":
@@ -410,7 +412,7 @@ class Freshkill_Pile():
     #                               helper functions                               #
     # ---------------------------------------------------------------------------- #
 
-    def feed_group(self, group: list, not_moon_feeding = False, queens = False,fed_kits = None) -> None:
+    def feed_group(self, group: list, not_moon_feeding = False, queens = False, fed_kits = None) -> None:
         """
         Handle the feeding giving cats.
 
@@ -440,7 +442,8 @@ class Freshkill_Pile():
 
             # check for condition
             if "pregnant" not in cat.injuries and cat.not_working():
-                feeding_amount += CONDITION_INCREASE
+                if game.clan.game_mode == "cruel season":
+                    feeding_amount += CONDITION_INCREASE
                 needed_amount = feeding_amount
             else:
                 if ration_prey and status == "warrior":
@@ -542,7 +545,7 @@ class Freshkill_Pile():
                 self.nutrition_info[cat.ID] = old_nutrition_info[cat.ID]
                 factor = 3
                 status_ = str(cat.status)
-                if str(cat.status) in ["newborn", "kitten", "elder"]:
+                if str(cat.status) in ["newborn", "kitten", "elder"] or (cat.moons > 114 and str(cat.status) == "elder"):
                     factor = 2
                 if cat.ID in queen_dict.keys() or "pregnant" in cat.injuries:
                     status_ = "queen/pregnant"
@@ -579,7 +582,7 @@ class Freshkill_Pile():
         nutrition.percentage = 100
 
         # adapt sickness (increase needed amount)
-        if "pregnant" not in cat.injuries and cat.not_working():
+        if "pregnant" not in cat.injuries and cat.not_working() and game.clan.game_mode == "cruel season":
             nutrition.max_score += CONDITION_INCREASE * factor
             nutrition.current_score = nutrition.max_score
 
