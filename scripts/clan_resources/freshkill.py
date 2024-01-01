@@ -552,7 +552,7 @@ class Freshkill_Pile():
                 self.nutrition_info[cat.ID] = old_nutrition_info[cat.ID]
                 factor = 3
                 status_ = str(cat.status)
-                if str(cat.status) in ["newborn", "kitten", "elder"] or (cat.moons > 114 and str(cat.status) == "elder"):
+                if str(cat.status) in ["newborn", "kitten"] or (cat.moons > 114 and str(cat.status) == "elder"):
                     factor = 2
                 if cat.ID in queen_dict.keys() or "pregnant" in cat.injuries:
                     status_ = "queen/pregnant"
