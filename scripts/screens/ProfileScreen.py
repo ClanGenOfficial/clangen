@@ -878,7 +878,10 @@ class ProfileScreen(Screens):
             if not nutr:
                 game.clan.freshkill_pile.add_cat_to_nutrition(the_cat)
                 nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
-            output += "nutrition status: " + nutr.nutrition_text + "\n"
+            output += "nutrition: " + nutr.nutrition_text 
+            if game.clan.clan_settings['showxp']:
+                output += ' (' + str(int(nutr.percentage)) + ')'
+            output += "\n"
 
         if the_cat.is_disabled():
             for condition in the_cat.permanent_condition:
