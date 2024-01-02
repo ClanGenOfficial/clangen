@@ -127,6 +127,8 @@ class Clan():
         self.game_mode = game_mode
         self.pregnancy_data = {}
         self.inheritance = {}
+        self.custom_pronouns = [
+        ]
         
         # Init Settings
         self.clan_settings = {}
@@ -241,6 +243,9 @@ class Clan():
         """ Adds cat into the list of clan cats"""
         if cat.ID in Cat.all_cats and cat.ID not in self.clan_cats:
             self.clan_cats.append(cat.ID)
+    
+    def add_pronouns(self, pronouns): #pronouns is a dict
+        self.custom_pronouns.append(pronouns)
 
     def add_to_starclan(self, cat):  # Same as add_cat
         """
@@ -416,7 +421,8 @@ class Clan():
             "temperament": self.temperament,
             "version_name": SAVE_VERSION_NUMBER,
             "version_commit": get_version_info().version_number,
-            "source_build": get_version_info().is_source_build
+            "source_build": get_version_info().is_source_build,
+            "custom_pronouns": self.custom_pronouns
         }
 
         # LEADER DATA
@@ -443,6 +449,9 @@ class Clan():
             clan_data["med_cat"] = None
         clan_data["med_cat_number"] = self.med_cat_number
         clan_data["med_cat_predecessors"] = self.med_cat_predecessors
+        
+        if self.custom_pronouns:
+            clan_data["custom_pronouns"] = self.custom_pronouns
 
         # LIST OF CLAN CATS
         clan_data['clan_cats'] = ",".join([str(i) for i in self.clan_cats])
@@ -723,6 +732,8 @@ class Clan():
         game.clan.deputy_predecessors = clan_data["deputy_predecessors"]
         game.clan.med_cat_predecessors = clan_data["med_cat_predecessors"]
         game.clan.med_cat_number = clan_data["med_cat_number"]
+        #if clan_data["custom_pronouns"]:
+        #    game.clan.custom_pronouns = clan_data["custom_pronouns"]
 
         # Instructor Info
         if clan_data["instructor"] in Cat.all_cats:

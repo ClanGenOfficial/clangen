@@ -27,16 +27,5 @@
       "self": "himself",
       "conju": 2
     }
-  ],
-  "custom_presets": [
-    {
-      "name": "Test",
-      "subject": "test",
-      "object": "etst",
-      "poss": "tset",
-      "inposs": "set",
-      "self": "test",
-      "conju": 2
-    }
   ]
 }
