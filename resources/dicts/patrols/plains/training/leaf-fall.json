@@ -65,7 +65,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 60,
         "intro_text": "p_l sees {PRONOUN/p_l/poss} mates exchanging curious glances as they all pad through the grass towards p_l's promised surprise. {PRONOUN/p_l/poss/CAP} own tail waves a jaunty flag, twitching a little in {PRONOUN/p_l/poss} excitement, scattering dewdrops whenever it hits the grass.",
         "decline_text": "The warriors get intercepted by a hunting patrol who need extra paws, and the possibility of a romantic afternoon evaporates.",
         "chance_of_success": 60,

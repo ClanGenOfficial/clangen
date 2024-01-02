@@ -2579,7 +2579,7 @@
             "apprentice": [1, 6]
         },
         "weight": 20,
-        "intro_text": "app1 is tempted to eat the prey {PRONOUN/s_c/subject} just caught. After all, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} only practice hunting, right? And since it's  <i>technically</i> not a <i>true</i> hunting patrol, it's <i>technically</i> {PRONOUN/s_c/inposs}, right...?",
+        "intro_text": "app1 is tempted to eat the prey {PRONOUN/s_c/subject} just caught. After all, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} only practice hunting, right? And since it's  <i>technically</i> not a <i>true</i> hunting patrol, it's <i>technically<i/> {PRONOUN/s_c/inposs}, right...?",
         "decline_text": "app1 decides against breaking the warrior code, resisting the temptation.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -5950,7 +5950,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 60,
+        "weight": 100,
         "intro_text": "r_c finds p_l out training in r_c's favorite spot - and not only does r_c have to share the spot, but the pounce p_l is practicing looks all wrong!",
         "decline_text": "Nope, nopidity nope, r_c isn't hanging around that idiot!",
         "chance_of_success": 60,
@@ -6005,7 +6005,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 60,
+        "weight": 100,
         "intro_text": "p_l is working on {PRONOUN/p_l/poss} battle moves when r_c sticks {PRONOUN/r_c/poss} head around the corner. Perfect - not only will p_l get a training partner, but battering r_c (sheathed claws, <i>sheathed</i>, {PRONOUN/p_l/subject} {VERB/p_l/promise/promises}!) will be just a little more satisfying than putting a paw in any other Clanmate's face.",
         "decline_text": "A sudden rain shower puts a damper on any thoughts of battle training.",
         "chance_of_success": 60,
@@ -6067,7 +6067,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 60,
+        "weight": 100,
         "intro_text": "p_l and r_c find themselves hanging out together. Without any other Clanmates. This is, uh, sure to go well. p_l tries to start up a conversation about prey types, yeah, that seems safe.",
         "decline_text": "You know what's safer? Not talking.",
         "chance_of_success": 60,
@@ -6108,7 +6108,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 60,
+        "weight": 100,
         "intro_text": "p_l is an annoying furbag of a Clanmate, but there's no one else currently available to train with. Someone makes a <i>comment</i> about romantic sunset walks as the two cats head out of camp, and r_c leads the way, burning under {PRONOUN/r_c/poss} fur. Certainly not!",
         "decline_text": "Actually, nope, r_c is headed straight back to camp to find whoever said that and claw their ears off!",
         "chance_of_success": 60,
@@ -6163,7 +6163,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 60,
+        "weight": 100,
         "intro_text": "p_l spots r_c padding out of camp and makes a beeline to follow {PRONOUN/r_c/object}. Because, you see, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} simply that dedicated to taking every opportunity to train, even with a tick like r_c.",
         "decline_text": "p_l gets waylaid by a Clanmate with an actual need for help, disrupting {PRONOUN/p_l/poss} cunning plans.",
         "chance_of_success": 60,
@@ -6225,7 +6225,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 60,
+        "weight": 100,
         "intro_text": "Maybe it's a little immature to be so invested in an <s>argument</s> refined conversation about battle strategies.",
         "decline_text": "Yeah, time to take a breather from this conversation, p_l and r_c decide.",
         "chance_of_success": 60,
@@ -6290,7 +6290,7 @@
             "leader": [-1, -1],
             "all apprentices": [-1, -1]
         },
-        "weight": 60,
+        "weight": 100,
         "intro_text": "p_l can't believe that r_c is <i>so Stars-damned annoying</i> that the leader of c_n sent them both out together to work out their problems. Like, what?",
         "decline_text": "Maybe this rivalry has gotten a little... excessive.",
         "chance_of_success": 60,
@@ -6341,7 +6341,7 @@
             "leader": [1, 6],
             "all apprentices": [-1, -1]
         },
-        "weight": 60,
+        "weight": 100,
         "intro_text": "Out for training with r_c, p_l is reaching the limit of {PRONOUN/p_l/poss} patience.",
         "decline_text": "Time for training to end. Now.",
         "chance_of_success": 60,
@@ -6391,7 +6391,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 60,
+        "weight": 100,
         "intro_text": "Everyone agrees that p_l and r_c get along like a forest fire, but surely they can hold it together for one afternoon's worth of training?",
         "decline_text": "...let's not try it.",
         "chance_of_success": 60,
@@ -6455,7 +6455,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 60,
+        "weight": 100,
         "intro_text": "Everyone agrees that p_l and r_c get along like a forest fire, but surely they can hold it together for one afternoon's worth of training?",
         "decline_text": "...let's not try it.",
         "chance_of_success": 60,
@@ -6520,7 +6520,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 60,
+        "weight": 100,
         "intro_text": "r_c, sick of hearing other cats gossip about how much p_l hates {PRONOUN/r_c/object}, pulls p_l aside to confront {PRONOUN/p_l/object}.",
         "decline_text": "r_c's nerves make {PRONOUN/r_c/object} think better of the idea.",
         "chance_of_success": 60,
@@ -7361,9 +7361,9 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
-                        "mutual": false,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
                         "values": ["platonic", "respect"],
                         "amount": 5
                     }
@@ -7401,6 +7401,64 @@
             }
         ]
     },
+    {
+        "patrol_id": "gen_train_silverpeltfable_storylorelocked1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 6],
+        "apprentice": [1, 6]
+        },
+        "weight": 20,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1", "LORE,1"],
+        "intro_text": "Legends tell of the first clan cat that created the stars above and below upon death...",
+        "decline_text": "No one is interested in fables today.",
+        "success_outcomes": [
+            {
+        "text": "The first cat to ever pad through the stars, Silverpelt decorates her fur with the gleaming souls of fallen warriors to keep her company in Starclan.",
+        "exp": 30,
+    "weight": 20,
+        "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic", "respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        }
+    ]
+    }
+        ],
+            "fail_outcomes": [
+                {
+                    "text": "Legends build no muscles and practice no pounces, app1 is uninterested in the lesson.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": false,
+                            "values": ["platonic", "respect"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
+    },    
     {
         "patrol_id": "gen_train_lorelocked1",
         "biome": ["Any"],
