@@ -1360,6 +1360,149 @@
         ]
     },
     {
+        "patrol_id": "mtn_train_songsgift_storylocked1",
+        "biome": ["mountainous"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [1, 5],
+            "normal adult": [1, 5]
+        },
+        "weight": 30,
+        "intro_text": "While scrambling down the mountain slope, app1 is suddenly brought to a halt by p_l's tail swung out in front of {PRONOUN/app1/poss} chest. Not a step further - there's a mushroom circle, right in front of {PRONOUN/app1/object}, and you don't want to tempt the moss cats unless you truly need their help.",
+        "decline_text": "app1 shrugs, and does as {PRONOUN/app1/subject}{VERB/app1/'re/'s} told, without any curiousity.",
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,0"],
+        "success_outcomes": [
+            {
+                "text": "Alright, gather round. p_l is here to tell the cats on the patrol an old story, an ancient, worn thin tale of the loners who come at the call of any who sleep in a circle of mushrooms, cats with metal shards in their eyes and moss growing among their fur, unnatural loners with the power to grant protection - or vengance.",
+                "exp": 30,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["platonic"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "It's old supersition, p_l explains. The moss-pelted cats called by these circles are powerful - but brutal. If their summoner has rogue-thoughts, the moss cats will open their maws, glistening metal teeth ready to take vengence on cats who break their word and hold cowardice in their hearts. Not that app1 would ever earn their ire, of course.",
+                "exp": 30,
+                "weight": 10,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["platonic"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Scoffing, app1 steps straight into the circle of mushroom - these aren't even poisonous, app1 doesn't know what p_l is on about. But something about this place makes {PRONOUN/app1/poss} pelt prickle and stand on end, for all {PRONOUN/app1/poss} bravado.",
+                "exp": 0,
+                "weight": 20,              
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "{PRONOUN/app1/subject/CAP} feel... watched, as {PRONOUN/app1/subject} {VERB/app1/strut/struts} across the mushroom circle, deliberately proving that p_l's full of fox-dung. It's just a <i>circle</i>, it's just a <i>stupid circle</i>. But app1 won't sleep easy - this night, or the nights to come.",
+                "exp": 0,
+                "weight": 20,
+                "injury": [
+                    {
+                                "cats": ["app1"],
+                                "injuries": ["constant nightmares"],
+                                "scars": [],
+                                "no_results": false
+                    }
+                ],                    
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": -10
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "patrol_id": "mtn_train_sunset1",
         "biome": ["mountainous"],
         "season": ["Any"],
