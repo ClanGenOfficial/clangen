@@ -1350,7 +1350,6 @@
             {
                 "text": "Not only does p_l end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any dandelions under the snow either! What a wasted and horribly chilly day.",
                 "exp": 0,
-                "exp": 0,
                 "weight": 20,
                 "relationships": [
                     {
@@ -1493,7 +1492,6 @@
         "fail_outcomes": [
             {
                 "text": "Not only does p_l end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any dandelions under the snow either! What a wasted and horribly chilly day.",
-                "exp": 0,
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
