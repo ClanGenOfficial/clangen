@@ -210,7 +210,7 @@
             "Asks r_c if {PRONOUN/r_c/subject} like to daydream too",
             "Is telling r_c another story, and another, and another, and...",
             "Wonders what it would be like to have a fish for a tail",
-            "Wants to learn everything they can and more",
+            "Wants to learn everything {PRONOUN/m_c/subject} can and more",
             "Tells the best stories"
         ],
         "main_trait_constraint": [
@@ -451,7 +451,7 @@
         "id": "know-it-all_kit",
         "thoughts": [
             "Has already learned the hunter's crouch",
-            "Doesn't need r_c to tell them anything",
+            "Doesn't need r_c to tell {PRONOUN/m_c/object} anything",
             "Tells r_c a fact about snails, and another, and another...",
             "Is able to name 20 kinds of bird",
             "Memorized the Warrior Code ages ago",
