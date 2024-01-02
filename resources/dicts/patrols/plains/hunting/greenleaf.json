@@ -2078,7 +2078,7 @@
         "decline_text": "p_l knows <i>exactly</i> what that sound is. Get away! Now! lead_name will have to be informed of this venoumous threat on their hunting path.",
         "success_outcomes": [
             { 
-        "text": "s_c finds {PRONOUN/s_c/self} face to fang with a rattling snake. It coils and strikes fast as lightning, yet still a whisker slower than s_c. As the snake's teeth sink into empty air s_c's own fangs sink into its head. That night there’s one less threat on c_n territory, and even more bellies full in camp. ",
+        "text": "s_c finds {PRONOUN/s_c/self} face to fang with a rattling snake. It coils and strikes fast as lightning, yet still a whisker slower than s_c. As the snake's teeth sink into empty air s_c's own fangs sink into its head. That night there's one less threat on c_n territory, and even more bellies full in camp. ",
         "exp": 25,
         "weight": 20, 
         "prey": ["medium"],
