@@ -986,12 +986,6 @@
             "responsible",
             "righteous",
             "vengeful"
-        ],
-        "other_cat_trait": [
-            "bloodthirsty",
-            "vengeful",
-            "ambitious",
-            "sneaky"
         ]
     },
     {
@@ -1047,7 +1041,7 @@
             "neg_trust",
             "dislike"
         ],
-        "death_text": "m_c was murdered by r_c, with the intention of taking {PRONOUN/m_c/poss} place, but r_c miscalculated how many lives m_c had left!  m_c retaliated, killing r_c in self defense.",
+        "death_text": "m_c was murdered by r_c, with the intention of taking {PRONOUN/m_c/poss} place, but r_c miscalculated how many lives m_c had left! m_c retaliated, killing r_c in self defense.",
         "history_text": {
             "reg_death": "m_c was killed by r_c in self-defense.",
             "lead_death": "{VERB/m_c/were/was} murdered by r_c in an attempt to usurp {PRONOUN/m_c/poss} lead",
@@ -1066,8 +1060,33 @@
             "sneaky"
         ],
         "other_cat_negate_skill": [
-            "extremely smart",
-            "very smart"
+            "CLEVER,2",
+            "CLEVER,3"
+        ]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "all_lives",
+            "murder",
+            "revealed",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "rc_to_mc",
+            "neg_platonic",
+            "neg_respect",
+            "neg_trust",
+            "dislike"
+        ],
+        "death_text": "m_c and r_c were on a walk together when a pack of dogs caught them off guard. m_c prepared to fight, but when {PRONOUN/m_c/subject} looked to r_c for backup, the other cat was nowhere to be found. r_c watched quietly as the dogs took life after life from m_c.",
+        "history_text": {
+            "lead_death": "{VERB/m_c/were/was} indirectly murdered by r_c in a fatal dog attack",
+            "lead_murder_unrevealed": "{VERB/m_c/were/was} killed in a suspicious dog attack"
+        },
+        "cat_negate_skill": [
+            "FIGHTER,3"
         ]
     },
     {
@@ -1186,6 +1205,27 @@
         "history_text": {
             "reg_death": "This cat died when o_c tried to break into camp.",
             "lead_death": "tried to defend the Clan from o_c"
+        }
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "all_lives",
+            "other_cat_warrior",
+            "murder",
+            "revealed",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "rc_to_mc",
+            "jealousy",
+            "neg_platonic"
+        ],
+        "death_text": "A yowl took m_c by surprise as {PRONOUN/m_c/subject} {VERB/m_c/were/was} patrolling the territory. r_c suddenly crashed into view, meowing about how m_c had to come and see. m_c followed the distressed warrior to a small ravine. {PRONOUN/m_c/subject/CAP} peered over the edge, and noted the sharp rocks at the bottom. Suddenly, {PRONOUN/m_c/subject} felt a sharp shove from behind, letting out a yowl of surprise that was cut short as {PRONOUN/m_c/subject} landed on the rocks.",
+        "history_text": {
+            "lead_death": "{VERB/m_c/were/was} pushed into a ravine by r_c",
+            "lead_murder_unrevealed": "{VERB/m_c/were/was} found at the bottom of a ravine"
         }
     }
 ]

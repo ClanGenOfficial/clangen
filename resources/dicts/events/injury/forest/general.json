@@ -232,5 +232,44 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
+    },
+    {
+        "injury": "shivering",
+        "camp": "any",
+        "tags": [
+            "other_cat",
+            "Newleaf",
+            "Leaf-bare",
+            "rc_to_mc",
+            "respect",
+            "comfort",
+            "trust",
+            "platonic",
+            "neg_dislike",
+            "scar",
+            "FROSTPAWS"
+        ],
+        "death_text": "m_c and r_c talked each other into walking onto the ice of the frozen pond that lay not far from camp. It was a dare at first, but when m_c didn't immediately fall in, r_c joined {PRONOUN/m_c/object}. The two cats playfully slipped around for a bit before the minute cracks reached their ears. r_c fell in first, and, without thinking, m_c leaped in after {PRONOUN/r_c/object}. m_c was able to drag r_c out of the water and the two leaned on each other on the way back to camp.",
+        "history_text": {
+            "scar": "m_c got frostbitten after falling into a frozen pond.",
+            "reg_death": "m_c died from the cold after falling into a frozen pond."
+        },
+        "cat_trait": [
+            "daring",
+            "adventurous",
+            "oblivious",
+            "bold",
+            "childish"
+        ],
+        "other_cat_trait": [
+            "daring",
+            "adventurous",
+            "oblivious",
+            "bold",
+            "childish"
+        ],
+        "cat_skill": [
+            "SWIMMER,3"
+        ]
     }
 ]
