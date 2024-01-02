@@ -382,7 +382,7 @@ class Patrol():
                     return False
         
         # check if all cats are mates with p_l (they do not have to be mates with each other)
-        if "mates_with_p_l" in patrol.relationship_constraints:
+        if "mates_with_pl" in patrol.relationship_constraints:
             # First test if there is more then one cat
             if len(self.patrol_cats) == 1:
                 return False
