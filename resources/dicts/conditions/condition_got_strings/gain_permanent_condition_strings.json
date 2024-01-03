@@ -84,7 +84,7 @@
         "lost their tail": [
             "m_c sighs sadly as r_c suggests that it's time to take {PRONOUN/m_c/poss} tail off. The flesh is blackened from frostbite and is obviously dead - there's no use in leaving it attached. m_c agrees.",
             "m_c's tail can hardly even move and r_c tells {PRONOUN/m_c/object} that the frostbite has progressed too far. If m_c is to survive then the tail will have to be removed.",
-            "m_c's tail is finally gone. It was more of a relief than anything. The frostbitten flesh was already dead and blackened, so {PRONOUN/m_c/object} had no issue with taking it off before it fell off on its own."
+            "m_c's tail is finally gone. It was more of a relief than anything. The frostbitten flesh was already dead and blackened, so {PRONOUN/m_c/subject} had no issue with taking it off before it fell off on its own."
         ],
         "partial hearing loss": [
             "r_c tells m_c that the frostbite had simply progressed too far into {PRONOUN/m_c/poss} ear; {PRONOUN/m_c/poss} hearing is permanently damaged.",
