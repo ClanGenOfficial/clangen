@@ -2579,7 +2579,7 @@
             "apprentice": [1, 6]
         },
         "weight": 20,
-        "intro_text": "app1 is tempted to eat the prey {PRONOUN/s_c/subject} just caught. After all, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} only practice hunting, right? And since it's  <i>technically</i> not a <i>true</i> hunting patrol, it's <i>technically<i/> {PRONOUN/s_c/inposs}, right...?",
+        "intro_text": "app1 is tempted to eat the prey {PRONOUN/app1/subject} just caught. After all, {PRONOUN/app1/subject}{VERB/app1/'re/'s} only practice hunting, right? And since it's  <i>technically</i> not a <i>true</i> hunting patrol, it's <i>technically</i> {PRONOUN/app1/inposs}, right...?",
         "decline_text": "app1 decides against breaking the warrior code, resisting the temptation.",
         "chance_of_success": 60,
         "success_outcomes": [
