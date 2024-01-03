@@ -6280,6 +6280,7 @@
         "intro_text": "Quietly, r_c brings p_l aside as they work on their chores, asking for help with wording something difficult.",
         "decline_text": "Both of them are interrupted by a request from a Clanmate - this conversation will have to wait.",
         "chance_of_success": 70,
+        "relationship_constraint": ["not_mates"],
         "success_outcomes": [
             {
                 "text": "p_l gives them all {PRONOUN/p_l/poss} attention, as r_c talks about how, hypothetically, if {PRONOUN/r_c/subject} {VERB/r_c/were/was} interested in another warrior, how one might possibly maybe go about talking to them about it? Hypothetically. For a friend.",
@@ -6350,6 +6351,7 @@
         "intro_text": "During an odd moment of downtime, r_c asks p_l if {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} a good teacher.",
         "decline_text": "They are interrupted by some Clanmates who need help, and go off to attend to their duties.",
         "chance_of_success": 70,
+        "relationship_constraint": ["not_mates"],
         "success_outcomes": [
             {
                 "text": "Helping {PRONOUN/r_c/poss} Clanmates is so important, and r_c feels like {PRONOUN/r_c/subject} never {VERB/r_c/do/does} a good enough job. p_l interrupts {PRONOUN/r_c/object}, shocked - {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} always thought r_c has done great! r_c looks away with a purr and hides {PRONOUN/r_c/poss} nose in {PRONOUN/r_c/poss} paws.",
@@ -6524,9 +6526,9 @@
                 ]
             },
             {
-                "text": "app1 expected a little hesitation. but app2 defies that expectation and darts right into the tunnels. playfully batting at {PRONOUN/app1/object} as they do so. They play for what seems like forever and they make up a lie to tell their mentors on their way back to camp.",
+                "text": "app1 expected a little hesitation, but app2 defies that expectation and darts right into the tunnels, playfully batting at {PRONOUN/app1/object} as they do so. They play for what seems like forever and they make up a lie to tell their mentors on their way back to camp.",
                 "exp": 10,
-                "weight": 5,
+                "weight": 10,
                 "relationships": [
                     {
                         "cats_to": ["app1"],
@@ -6735,7 +6737,7 @@
         "intro_text": "r_c finds p_l out training in r_c's favorite spot - and not only does r_c have to share the spot, but the pounce p_l is practicing looks all wrong!",
         "decline_text": "Nope, nopidity nope, r_c isn't hanging around that idiot!",
         "chance_of_success": 60,
-        "relationship_constraint": ["dislike_10", "romantic_10"],
+        "relationship_constraint": ["dislike_10", "romantic_10", "not_mates"],
         "success_outcomes": [
             {
                 "text": "p_l calls that a pounce? <i>This</i> is a pounce! r_c flies right over p_l's dumb pretty face, shooting a smirk over {PRONOUN/r_c/poss} shoulder.",
@@ -6852,7 +6854,7 @@
         "intro_text": "p_l and r_c find themselves hanging out together. Without any other Clanmates. This is, uh, sure to go well. p_l tries to start up a conversation about prey types, yeah, that seems safe.",
         "decline_text": "You know what's safer? Not talking.",
         "chance_of_success": 60,
-        "relationship_constraint": ["dislike_10", "romantic_10"],
+        "relationship_constraint": ["dislike_10", "romantic_10", "not_mates"],
         "success_outcomes": [
             {
                 "text": "r_c is dumb and likes dumb food. But then {PRONOUN/r_c/subject} offer to swap said horrible foulness for p_l's favorite the next time both are on the fresh-kill pile, and that's... really sweet actually. But then the argument starts again, and nope, r_c is the worst.",
@@ -6893,7 +6895,7 @@
         "intro_text": "p_l is an annoying furbag of a Clanmate, but there's no one else currently available to train with. Someone makes a <i>comment</i> about romantic sunset walks as the two cats head out of camp, and r_c leads the way, burning under {PRONOUN/r_c/poss} fur. Certainly not!",
         "decline_text": "Actually, nope, r_c is headed straight back to camp to find whoever said that and claw their ears off!",
         "chance_of_success": 60,
-        "relationship_constraint": ["dislike_20", "romantic_20"],
+        "relationship_constraint": ["dislike_20", "romantic_20", "not_mates"],
         "success_outcomes": [
             {
                 "text": "It is sunset. This does <b>not</b> matter. Stupid fox-dung teasing Clanmates! r_c is snippy and snappish with p_l, and {PRONOUN/p_l/subject} {VERB/p_l/snap/snaps} back just as irritably, backlit all golden and beautiful by the sun.",
@@ -7305,7 +7307,7 @@
         "intro_text": "r_c, sick of hearing other cats gossip about how much p_l hates {PRONOUN/r_c/object}, pulls p_l aside to confront {PRONOUN/p_l/object}.",
         "decline_text": "r_c's nerves make {PRONOUN/r_c/object} think better of the idea.",
         "chance_of_success": 60,
-        "relationship_constraint": ["dislike_40", "romantic_40"],
+        "relationship_constraint": ["dislike_40", "romantic_40", "not_mates"],
         "success_outcomes": [
             {
                 "text": "p_l gapes at {PRONOUN/r_c/object}, mouth hanging open like a dumb fish, and r_c glares at {PRONOUN/p_l/object} for making such a dumb expression looks so stupidly pretty. Fine. r_c hates {PRONOUN/p_l/object} too then, just like p_l wants.",
@@ -7427,6 +7429,7 @@
         "intro_text": "p_l leads the patrol towards the borders, wanting to test the apprentices on identifying o_c_n scent. But for some reason the walk seems to be taking longer than usual, and p_l keeps hearing odd yelps and grunts from behind {PRONOUN/p_l/object}.",
         "decline_text": "p_l comments offhandedly that, seeing they seem to have so much energy, both apprentices can help around the camp when they get back instead of resting. The rest of the patrol is spent in sullen silence.",
         "chance_of_success": 60,
+        "relationship_constraint": ["not_mates"],
         "success_outcomes": [
             {
                 "text": "Each time p_l looks the other way app1 makes sure to quickly tug on app2's fur. Next time app1 decides to do it again, app2 makes sure to turn ever so slightly, making {PRONOUN/app1/object} trip and fall into a puddle.",
@@ -7486,7 +7489,7 @@
         "intro_text": "p_l and r_c twine around each other in camp, chirping excitedly with the anticipation of getting to go out training together - it's been forever since they've been able to hang out!",
         "decline_text": "Unfortunately, the cats just don't have time to go out training today. They headbutt softly, promising to catch up another time.",
         "chance_of_success": 60,
-        "relationship_constraint": ["platonic_50"],
+        "relationship_constraint": ["platonic_50", "not_mates"],
         "success_outcomes": [
             {
                 "text": "Like birds into flight the two cats leap into training, bounding in joyful synchronization, the strength of their friendship lending itself to fantastic risks and complete trust, their play-battle as much game as exercise, round and round in wild abandon until they both lie, utterly exhausted, perfectly content. Their purrs mingle quietly as they share tongues, exchanging secrets and dreams.",
