@@ -567,7 +567,7 @@
             "murder_reveal",
             "other_cat"
         ],
-        "event_text": "m_c can't keep this secret anymore. When {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} alone with r_c, {PRONOUN/m_c/subject} tell the story of mur_c's death."
+        "event_text": "m_c can't keep this secret anymore. When {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} alone with r_c, {PRONOUN/m_c/subject} {VERB/m_c/tell/tells} the story of mur_c's death."
     },
     {
         "camp": "any",
@@ -687,6 +687,23 @@
         "event_text": "r_c is stunned when {PRONOUN/r_c/subject} {VERB/r_c/discover/discovers} m_c carelessly bragging about killing mur_c to a wandering loner.",
         "cat_trait": [
             "oblivious"
+        ]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-bare",
+            "Leaf-fall",
+            "murder_reveal",
+            "other_cat"
+        ],
+        "event_text": "m_c can't keep this secret anymore. {PRONOUN/m_c/subject/CAP} {VERB/m_c/request/requests} a Clan meeting, where {PRONOUN/m_c/subject} {VERB/m_c/reveal/reveals} the terrible secret {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} kept.",
+        "cat_trait": [
+            "righteous",
+            "bold",
+            "strict"
         ]
     }
 ]

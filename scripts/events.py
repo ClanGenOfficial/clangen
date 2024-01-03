@@ -1693,20 +1693,23 @@ class Events:
         ''' Handles murder '''
         relationships = cat.relationships.values()
         targets = []
+
+        if cat.age in ["kitten", "newborn"]:
+            return
         
-        # if this cat is unstable and aggressive, we lower the random murder chance. 
+        # if this cat is unstable and aggressive, we lower the random murder chance
         random_murder_chance = int(game.config["death_related"]["base_random_murder_chance"])
         random_murder_chance -= 0.5 * ((cat.personality.aggression) + (16 - cat.personality.stability))
 
-        # Check to see if random murder is triggered. If so, we allow targets to be anyone they have even the smallest amount 
-        # of dislike for. 
+        # Check to see if random murder is triggered. If so, we allow targets to be anyone they have even the smallest amount
+        # of dislike for
         if random.getrandbits(max(1, int(random_murder_chance))) == 1:
             targets = [i for i in relationships if i.dislike > 1 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
             if not targets:
                 return
             
             chosen_target = random.choice(targets)
-            print("Random Murder!", str(cat.name),  str(Cat.fetch_cat(chosen_target.cat_to).name))
+            #print("Random Murder!", str(cat.name),  str(Cat.fetch_cat(chosen_target.cat_to).name))
             
             # If at war, grab enemy clans
             enemy_clan = None
@@ -1719,37 +1722,61 @@ class Events:
             
             Death_Events.handle_deaths(Cat.fetch_cat(chosen_target.cat_to), cat, game.clan.war.get("at_war", False),
                                             enemy_clan, alive_kits=get_alive_kits(Cat), murder=True)
-            
+
             return
-            
-   
-        # If random murder is not triggered, targets can only be those they have high dislike for. 
+
+        # will this cat actually murder? this takes into account stability and lawfulness
+        murder_capable = 7
+        if cat.personality.stability < 6:
+            murder_capable -= 3
+        if cat.personality.lawfulness < 6:
+            murder_capable -= 2
+        if cat.personality.aggression > 10:
+            murder_capable -= 1
+        elif cat.personality.aggression > 12:
+            murder_capable -= 3
+
+        murder_capable = max(1, murder_capable)
+
+        if random.getrandbits(murder_capable) != 1:
+            #print(f'{cat.name} is currently not capable of murder')
+            return
+
+        #print("Murder Capable: " + str(murder_capable))
+        #print(f'{cat.name} is feeling murderous')
+        # If random murder is not triggered, targets can only be those they have some dislike for
         hate_relation = [i for i in relationships if
-                        i.dislike > 50 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
+                        i.dislike > 15 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
         targets.extend(hate_relation)
         resent_relation = [i for i in relationships if
-                        i.jealousy > 50 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
+                        i.jealousy > 15 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
         targets.extend(resent_relation)
 
         # if we have some, then we need to decide if this cat will kill
         if targets:
             chosen_target = random.choice(targets)
-            
             #print(cat.name, 'TARGET CHOSEN', Cat.fetch_cat(chosen_target.cat_to).name)
 
             kill_chance = game.config["death_related"]["base_murder_kill_chance"]
-            
-            # chance to murder grows with the dislike and jealousy value
-            kill_chance -= chosen_target.dislike
-            #print('DISLIKE MODIFIER', kill_chance)
-            kill_chance -= chosen_target.jealousy
-            #print('JEALOUS MODIFIER', kill_chance)
 
-            facet_modifiers = cat.personality.aggression + \
-                (16 - cat.personality.stability) + (16 - cat.personality.lawfulness)
-            
-            kill_chance = kill_chance - facet_modifiers
-            kill_chance = max(15, kill_chance)
+            relation_modifier = int(0.5 * int(chosen_target.dislike + chosen_target.jealousy)) - \
+            int(0.5 * int(chosen_target.platonic_like + chosen_target.trust + chosen_target.comfortable))
+            #print("Relation Modifier: ", relation_modifier)
+            kill_chance -= relation_modifier
+
+            if len(chosen_target.log) > 0 and "(high negative effect)" in chosen_target.log[-1]:
+                kill_chance -= 50
+                #print(str(chosen_target.log[-1]))
+
+            if len(chosen_target.log) > 0 and "(medium negative effect)" in chosen_target.log[-1]:
+                kill_chance -= 20
+                #print(str(chosen_target.log[-1]))
+
+            # little easter egg just for fun
+            if cat.personality.trait == "ambitious" and Cat.fetch_cat(chosen_target.cat_to).status == 'leader':
+                kill_chance -= 10
+
+            kill_chance = max(1, int(kill_chance))
              
             #print("Final kill chance: " + str(kill_chance))
             
