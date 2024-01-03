@@ -394,7 +394,13 @@ class Patrol():
                 
                 if cat.ID not in self.patrol_leader.mate:
                     return False
-                
+
+        # check if all cats are not mates
+        if "not_mates" in patrol.relationship_constraints:
+            # opposite of mate check
+            for x in combinations(self.patrol_cats, 2):
+                if x[0].ID in x[1].mate:
+                    return False
 
         # check if the cats are in a parent/child relationship
         if "parent/child" in patrol.relationship_constraints:
