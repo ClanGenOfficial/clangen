@@ -181,11 +181,11 @@ class ClearingScreen(Screens):
                                          , manager=MANAGER)
         self.stop_focus_button = UIImageButton(scale(pygame.Rect((1510, 310), (44, 44))), "", object_id="#exit_window_button"
                                       , manager=MANAGER)
-        self.feed_all_button = UIImageButton(scale(pygame.Rect((1300, 600), (160, 60))), "", object_id="#freshkill_feed"
+        self.feed_all_button = UIImageButton(scale(pygame.Rect((1250, 600), (320, 60))), "", object_id="#freshkill_feed_hungry"
                                       , manager=MANAGER)
-        self.feed_one_button = UIImageButton(scale(pygame.Rect((1220, 600), (160, 60))), "", object_id="#freshkill_feed"
+        self.feed_one_button = UIImageButton(scale(pygame.Rect((1300, 600), (222, 60))), "", object_id="#freshkill_feed_one"
                                       , manager=MANAGER)
-        self.feed_max_button = UIImageButton(scale(pygame.Rect((1400, 600), (160, 60))), "", object_id="#freshkill_feed"
+        self.feed_max_button = UIImageButton(scale(pygame.Rect((1296, 670), (230, 60))), "", object_id="#freshkill_feed_max"
                                       , manager=MANAGER)
         self.stop_focus_button.hide()
         self.feed_one_button.hide()
@@ -276,7 +276,7 @@ class ClearingScreen(Screens):
 
         self.info_messages = UITextBoxTweaked(
             "",
-            scale(pygame.Rect((216, 620), (1200, 160))),
+            scale(pygame.Rect((216, 620), (1100, 160))),
             object_id=get_text_box_theme("#text_box_30_horizcenter_vertcenter"),
             line_spacing=1
         )
