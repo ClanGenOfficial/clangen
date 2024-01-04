@@ -2048,70 +2048,67 @@
         ]
     },
     {
-        "patrol_id": "pln_hunt_greenleaf_groupmice1",
+        "patrol_id": "pln_hunt_catvsrattler1",
         "biome": ["plains"],
         "season": ["greenleaf"],
         "types": ["hunting"],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "tags": [
+            "hunting",
+            "respect",
+            "trust",
+            "patrol_to_s_c",
+            "patrol_to_r_c"
+        ],
+        "patrol_art": "gen_hunt_burrow",
+        "patrol_art_clean": null,
         "min_cats": 3,
         "max_cats": 6,
-        "min_max_status": {},
-        "weight": 20,
-        "intro_text": "r_c suggests the patrol walk out to one of the more distant, smaller rivers that flow through c_n territory. As far as {PRONOUN/r_c/subject} {VERB/r_c/know/knows}, no one has hunted that area recently, and the prey won't be wary or on guard.",
-        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
-        "chance_of_success": 60,
+        "min_max_status": {
+            "deputy": [3, 6],
+            "warrior": [3, 6],
+            "leader": [0,0],
+            "all apprentices": [3, 6]
+        } 
+    },
+    {"weight": 15,
+        "chance_of_success": 30,
+        "relationship_constraint": null,
+        "pl_skill_constraint": null,
+        "intro_text": "Your patrol hears a strange sound coming from the grass. What is that? It's like... a hiss and rustle at once?",
+        "decline_text": "p_l knows <i>exactly</i> what that sound is. Get away! Now! lead_name will have to be informed of this venoumous threat on their hunting path.",
         "success_outcomes": [
+            { 
+        "text": "s_c finds {PRONOUN/s_c/self} face to fang with a rattling snake. It coils and strikes fast as lightning, yet still a whisker slower than s_c. As the snake's teeth sink into empty air s_c's own fangs sink into its head. That night there's one less threat on c_n territory, and even more bellies full in camp. ",
+        "exp": 25,
+        "weight": 20, 
+        "prey": ["medium"],
+        "stat_skill": ["HUNTER,2","RUNNER,2","SENSE,2","CLEVER,2"],
+        "relationships": [
             {
-                "text": "As they arrive, the patrol startles two mice, and r_c manages to react quick enough to kill one with an inelegant pounce. It's a good omen for the rest of the morning's work, which proves to be a productive and satisfying hunt.",
-                "exp": 20,
-                "weight": 20,
-                "prey": ["medium"],
+                "cats_to": ["s_c"],
+                "cats_from": ["patrol"],
+                "mutual": false,
+                "values": ["respect"],
+                "amount": 15
+            },
+        { 
+        "text": "r_c finds {PRONOUN/r_c/self} face to fang with a rattling snake. {PRONOUN/r_c/subject} {VERB/r_c/flinch/flinches} away just as the snake snaps it's dripping fangs shut a single fur's length from {PRONOUN/r_c/poss} nose. r_c bolts back to the patrol. They'll need to alter their hunting path, that was too close!",
+                "exp": 5,
+                "weight": 20, 
+                "prey": ["very small"],
                 "relationships": [
                     {
                         "cats_to": ["r_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": ["respect,trust"],
                         "amount": 5
                     }
-                ]
-            },
-            {
-                "text": "Your cats sneak into the hunting grounds, ears rotating as different spots catch their interest. r_c's suggestion proves to be a fruitful hunting ground, one that c_n hasn't used for a while and whose creatures (as predicted, nearly all mice) have lost their edge of wariness. It's a good hunt.",
-                "exp": 20,
-                "weight": 5,
-                "prey": ["large"],
-                "relationships": [
-                    {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "These are the times that it really pays to have a hunter of s_c's caliber on the patrol - {PRONOUN/s_c/subject} really go above and beyond, impressing everyone and leaving a trail of terror among the local mice.",
-                "exp": 20,
-                "weight": 20,
-                "stat_skill": ["HUNTER,1"],
-                "prey": ["large"],
-                "relationships": [
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": 5
-                    }
-                ]
-            }
-        ],
+        ]
+        } ],
         "fail_outcomes": [
             {
-                "text": "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames {PRONOUN/r_c/object} for it.",
+                "text": "r_c finds {PRONOUN/r_c/self} face to fang with a rattling snake. {PRONOUN/r_c/subject/CAP} panics, stumbling, and the snake strikes. Its fangs pierce r_c's paw as effortlessly as wind through grass, and every step is like walking on burning thorns as {PRONOUN/r_c/subject} {VERB/r_c/drag/drags} {PRONOUN/r_c/self} into the medicine den.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2119,12 +2116,59 @@
                         "cats_to": ["r_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": ["trust","respect"],
                         "amount": -5
                     }
                 ],
-                "prey": ["very_small"]
+                "injury": 
+    {
+                        "cats": ["r_c"],
+                        "injuries": ["snake bite","poisoned"],
+                        "scars": ["SNAKE"],
+                        "history_text": {
+                            "scar": "This cat was scarred by a rattlesnake while hunting.",
+                            "reg_death": "This cat was killed by a rattlesnake while hunting.",
+                            "lead_death": "a rattlesnake while hunting."
+                        }
+                    }
+                
+            },
+            {
+                "text": "r_c finds {PRONOUN/r_c/self} face to fang with a rattling snake, but {PRONOUN/r_c/subject} barely see it at all. Indescribable pain pierces {PRONOUN/r_c/poss} eye, it fills {PRONOUN/r_c/poss} head, {PRONOUN/r_c/poss} ears, {PRONOUN/r_c/poss} blood. r_c doesn't notice the rest of the patrol rush {PRONOUN/r_c/poss} into the medicine den. Not even as {PRONOUN/r_c/poss} screams echo through camp.",
+                "exp": 0,
+                "weight": 10,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust","respect"],
+                        "amount": -5
+                    }
+                ],
+                "injury": 
+    {
+                        "cats": ["r_c"],
+                        "injuries": ["snake bite","poisoned","damaged eyes"],
+                        "scars": ["RIGHTBLIND","LEFTBLIND","BOTHBLIND"],
+                        "history_text": { 
+                        "scar": "This cat was scarred by a rattlesnake while hunting.",
+                        "condition": "this cat was blinded by a rattlesnake while hunting",
+                        "reg_death": "This cat was killed by a rattlesnake while hunting.",
+                        "lead_death": "a rattlesnake while hunting."}
+                        
+                    }
+    
+            },
+            {
+                "text": "r_c finds {PRONOUN/r_c/self} face to fang with a rattling snake. There is no time to react. Effortlessly, the snake's teeth find r_c's veins. For a horrific moment, every drop of blood in r_c's body burns, and then {PRONOUN/r_c/poss} clan finds {PRONOUN/r_c/poss} cold.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"]
             }
         ]
+    }
+]
+
     }
 ]
