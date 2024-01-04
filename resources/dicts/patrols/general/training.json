@@ -4360,7 +4360,7 @@
         "relationship_constraint": ["mates_with_pl"],
         "success_outcomes": [
             {
-                "text": "It's so lovely to get the chance to go out together in the suneshine, for p_l to feel the wind on {PRONOUN/p_l/poss} face and hear the cats {PRONOUN/p_l/subject} {VERB/p_l/love/loves} chatting behind {PRONOUN/s_c/object}.",
+                "text": "It's so lovely to get the chance to go out together in the suneshine, for p_l to feel the wind on {PRONOUN/p_l/poss} face and hear the cats {PRONOUN/p_l/subject} {VERB/p_l/love/loves} chatting behind {PRONOUN/p_l/object}.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
