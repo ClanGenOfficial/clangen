@@ -251,11 +251,9 @@
             "wise"
         ],
         "negate_cat_skill": [
-            "very smart",
-            "extremely smart",
-            "clairvoyant",
-            "prophet",
-            "omen sight"
+            "CLEVER,2",
+            "SENSE,2",
+            "OMEN,2"
         ]
     },
     {
