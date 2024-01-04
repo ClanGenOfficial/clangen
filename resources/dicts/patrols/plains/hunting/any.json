@@ -2438,7 +2438,7 @@
                 ]
             },
             {
-                "text": "Boldly, s_c jumps down to go check the potential threat out, and unwilling to leave {PRONOUN/s_c/poss} Clanmate in danger, the rest of the patrol follows. s_c refuses to let {PRONOUN/s_c/subject} be intimidated by the huge foxish thing, and bounds up to it, knowing courage can overcome things raw strength cannot. The weird creature skitters away from the incoming patrol, trotting off in a tangle of too long legs.",
+                "text": "Boldly, s_c jumps down to go check the potential threat out, and unwilling to leave {PRONOUN/s_c/poss} Clanmate in danger, the rest of the patrol follows. s_c refuses to let {PRONOUN/s_c/self} be intimidated by the huge foxish thing, and bounds up to it, knowing courage can overcome things raw strength cannot. The weird creature skitters away from the incoming patrol, trotting off in a tangle of too long legs.",
                 "exp": 25,
                 "weight": 20,
                 "stat_trait": [
