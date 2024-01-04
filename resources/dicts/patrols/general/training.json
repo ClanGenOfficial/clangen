@@ -3759,7 +3759,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 2000,
+        "weight": 20,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with r_c.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -3968,7 +3968,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 6000,
+        "weight": 60,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with {PRONOUN/p_l/poss} mate.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -4173,7 +4173,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 6000,
+        "weight": 60,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with {PRONOUN/p_l/poss} mates.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -4353,7 +4353,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 6000,
+        "weight": 60,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with {PRONOUN/p_l/poss} mates.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
