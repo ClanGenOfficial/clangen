@@ -204,7 +204,7 @@ class FreshkillPile(unittest.TestCase):
 
         freshkill_pile = Freshkill_Pile()
         # be able to feed one queen and some of the warrior
-        current_amount = self.prey_requirement["warrior"] * 2 + self.condition_increase * 2
+        current_amount = self.prey_requirement["warrior"] * 2
         freshkill_pile.pile["expires_in_4"] = current_amount
         freshkill_pile.total_amount = current_amount
 
@@ -402,7 +402,7 @@ class FreshkillPile(unittest.TestCase):
 
         freshkill_pile = Freshkill_Pile()
         # be able to feed one queen and some of the warrior
-        current_amount = self.prey_requirement["warrior"] * 2 + self.condition_increase * 2
+        current_amount = self.prey_requirement["warrior"] * 2 
         freshkill_pile.pile["expires_in_4"] = current_amount
         freshkill_pile.total_amount = current_amount
 

@@ -348,7 +348,7 @@ class Freshkill_Pile():
 
             # check for condition
             if "pregnant" not in cat.injuries and cat.not_working():
-                if game.clan.game_mode == "cruel season":
+                if game.clan and game.clan.game_mode == "cruel season":
                     feeding_amount += CONDITION_INCREASE
                 needed_amount = feeding_amount
             else:
@@ -449,7 +449,7 @@ class Freshkill_Pile():
 
             # check for condition
             if "pregnant" not in cat.injuries and cat.not_working():
-                if game.clan.game_mode == "cruel season":
+                if game.clan and game.clan.game_mode == "cruel season":
                     feeding_amount += CONDITION_INCREASE
                 needed_amount = feeding_amount
             else:
@@ -594,7 +594,7 @@ class Freshkill_Pile():
         nutrition.percentage = 100
 
         # adapt sickness (increase needed amount)
-        if "pregnant" not in cat.injuries and cat.not_working() and game.clan.game_mode == "cruel season":
+        if "pregnant" not in cat.injuries and cat.not_working() and game.clan and game.clan.game_mode == "cruel season":
             nutrition.max_score += CONDITION_INCREASE * factor
             nutrition.current_score = nutrition.max_score
 
