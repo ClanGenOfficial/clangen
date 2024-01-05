@@ -47,7 +47,7 @@
         "refugee3": "This cat used to be a kittypet, but joined the Clan after fleeing from {PRONOUN/m_c/poss} cruel Twoleg.",
         "refugee4": "This cat used to be in a rogue group, but joined the Clan after fleeing from the group's tyrannical leader.",
         "refugee5": "This cat got washed away from {PRONOUN/m_c/poss} former territory in a flood that destroyed {PRONOUN/m_c/poss} home but was glad to find a new home in {PRONOUN/m_c/poss} new Clan here.",
-        "refugee6": "This cat used to be a kittypet, but joined the Clan after being found sick and weak after eating something {PRONOUN/m_c/subject} shouldn't have.",
+        "refugee6": "This cat used to be a kittypet, but joined the Clan, sick and weak after eating something {PRONOUN/m_c/subject} shouldn't have.",
 
         "tragedy_survivor1": "Something horrible happened to this cat's previous Clan. {PRONOUN/m_c/subject/CAP} refuse to speak about it.",
         "tragedy_survivor2": "This cat used to be part of a rogue group, but joined the Clan after something terrible happened to it.",

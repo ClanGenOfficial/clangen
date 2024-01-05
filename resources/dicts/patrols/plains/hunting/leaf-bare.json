@@ -1610,10 +1610,12 @@
                 ]
             },
             {
-                "text": "s_c catches a great p_mp_s, and two p_tp_p! But their sibling comes up empty pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument.",
+                "text": "s_c catches a great p_mp_s, and two p_tp_p! But {PRONOUN/s_c/poss} sibling comes up empty pawed. s_c offers to let {PRONOUN/r_c/object} claim the smaller prey as {PRONOUN/r_c/poss} own, but the insulting suggestion just causes a massive argument.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["HUNTER,0"],
+                "prey": ["medium"],
+                "stat_skill": ["HUNTER,0", "RUNNER,0"],
+                "can_have_stat": ["p_l"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
