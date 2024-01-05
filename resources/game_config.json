@@ -277,7 +277,7 @@
 		"classic_injury_chance": 450,
 		"expanded_injury_chance": 250,
 		"cruel season_injury_chance": 150,
-		"permanent_condition_chance": 20,
+		"permanent_condition_chance": 15,
 		"war_injury_modifier": 100
 	},
 	"clan_creation": {
