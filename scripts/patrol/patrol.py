@@ -618,6 +618,7 @@ class Patrol():
                 biome=patrol.get("biome"),
                 season=patrol.get("season"),
                 tags=patrol.get("tags"),
+                weight=patrol.get("weight", 20),
                 types=patrol.get("types"),
                 intro_text=patrol.get("intro_text"),
                 patrol_art=patrol.get("patrol_art"),
