@@ -1150,7 +1150,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "{PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} interrupted by Twolegs wandering through the woods a couple times, so {PRONOUN/app1/subject} {VERB/app1/miss/misses} a couple catches, but overall it works out.",
+                "text": "{PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} interrupted by Twolegs wandering through the woods a couple times, so {PRONOUN/app1/subject} {VERB/app1/miss/misses} a couple catches, but overall, it works out.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"]
@@ -1364,7 +1364,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall it works out.",
+                "text": "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall, it works out.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"],
@@ -2377,7 +2377,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "r_c pounces, trying to end the weird encounter quickly, but a tentacle grabs {PRONOUN/r_c/object} and hauls {PRONOUN/r_c/object} closer, revealing a massive hooked beak. With r_c yowling and wriggling, and a complete lack of bones to hold itself up, the octopus only manages to take a small chunk out of {PRONOUN/r_c/object}, but it's enough to make the patrol back off.",
+                "text": "r_c pounces, trying to end the weird encounter quickly, but a tentacle grabs {PRONOUN/r_c/object} and hauls {PRONOUN/r_c/object} closer, revealing a massive, hooked beak. With r_c yowling and wriggling, and a complete lack of bones to hold itself up, the octopus only manages to take a small chunk out of {PRONOUN/r_c/object}, but it's enough to make the patrol back off.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -2771,7 +2771,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of food and unwilling to lose blood over it, is driven off from the kill.",
+                "text": "Your cats are smaller, but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of food and unwilling to lose blood over it, is driven off from the kill.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["large"],
@@ -2848,7 +2848,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
+                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -3021,7 +3021,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However with so many cats to protect each other, there were no injuries.",
+                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -3912,7 +3912,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The fox's trail vanishes, almost as though the creature has figured out they're tracking it. Grumbling and arguing, the patrol has to head back home disappointed.",
+                "text": "The fox's trail vanishes just as quickly as it had appeared, almost as though the creature had figured out that it was being tracked. Grumbling and arguing, the patrol has to head back home disappointed.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -4068,7 +4068,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump seagull. With careful signals, the cats set up an ambush. While they'd expected having more cats would make it easier, it also makes the patrol far more of a threat to the red fox, and the creature panics when they reveal themselves. They win the bird, but r_c nearly gets injured, and it's only p_l shoving them both out of the way that saves both their pelts.",
+                "text": "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump seagull. With careful signals, the cats set up an ambush. While they'd expected having more cats would make it easier, it also makes the patrol far more of a threat to the red fox, and the creature panics when they reveal themselves. They win the bird, but r_c nearly gets injured in the scuffle. It's only thanks to the quick thinking of p_l shoving them both out of the way that saves their pelts.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"],
@@ -4090,7 +4090,7 @@
                 ]
             },
             {
-                "text": "With such a big patrol, and with s_c there, when they track down the red fox at the end of the scent trail they have more than enough skill and muscle to drive it off from the fish it was gnawing on. The cats gather around it, congratulating each other.",
+                "text": "With such a big patrol, and with s_c there, when they track down the red fox at the end of the scent trail, they have more than enough skill and muscle to drive it off from the fish it was gnawing on. The cats gather around it, congratulating each other.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1", "FIGHTER,1"],
@@ -4146,7 +4146,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The fox's trail vanishes, almost as though the creature has figured out they're tracking it. Grumbling and arguing, the patrol has to head back home disappointed.",
+                "text": "The fox's trail vanishes just as quickly as it had appeared, almost as though the creature had figured out that it was being tracked. Grumbling and arguing, the patrol has to head back home disappointed.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -4263,7 +4263,7 @@
                 "history_text": { 
                     "scar": "m_c carries a scar from a fight with a red fox.",
                     "reg_death": "m_c died from a red fox bite.",
-                    "lead_death":"died from a red fox bite"
+                    "lead_death": "died from a red fox bite"
             },
                 "relationships": [
                     {
@@ -4414,7 +4414,7 @@
                 "history_text": { 
                     "scar": "m_c carries a scar from a solo fight with a red fox.",
                     "reg_death": "m_c died from a red fox bite.",
-                    "lead_death":"died from a red fox bite"
+                    "lead_death": "died from a red fox bite"
                 },
                 "relationships": [
                     {
@@ -4454,7 +4454,7 @@
                 "history_text": { 
                     "scar": "m_c carries a scar from a solo fight with a red fox.",
                     "reg_death": "m_c died from a red fox bite.",
-                    "lead_death":"died from a red fox bite"
+                    "lead_death": "died from a red fox bite"
                 },
                 "relationships": [
                     {
@@ -4587,7 +4587,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The fox's trail vanishes, almost as though the creature has figured out they're tracking it. Grumbling and arguing, the patrol has to head back home disappointed.",
+                "text": "The fox's trail vanishes just as quickly as it had appeared, almost as though the creature had figured out that it was being tracked. Grumbling and arguing, the patrol has to head back home disappointed.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -4657,7 +4657,7 @@
                 "history_text": { 
                     "scar": "m_c carries a scar from a fight with a gray fox.",
                     "reg_death": "m_c died from a gray fox bite.",
-                    "lead_death":"died from a gray fox bite"
+                    "lead_death": "died from a gray fox bite"
                 },
                 "relationships": [
                     {
@@ -4844,7 +4844,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The fox's trail vanishes, almost as though the creature has figured out they're tracking it. Grumbling and arguing, the patrol has to head back home disappointed.",
+                "text": "The fox's trail vanishes just as quickly as it had appeared, almost as though the creature had figured out that it was being tracked. Grumbling and arguing, the patrol has to head back home disappointed.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -5086,7 +5086,7 @@
                 "history_text": { 
                     "scar": "m_c carries a scar from a solo fight with a gray fox.",
                     "reg_death": "m_c died from a gray fox bite.",
-                    "lead_death":"died from a gray fox bite"
+                    "lead_death": "died from a gray fox bite"
                 },
                 "relationships": [
                     {
@@ -5246,7 +5246,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "It's Nessie! The patrol trots up, exchanging a nice mouse for a nice deep water fish, both creatures trading the respective delicacies that're hard for the other to obtain.",
+                "text": "It's Nessie! The patrol trots up, exchanging a nice mouse for a nice deep-water fish, both creatures trading the respective delicacies that're hard for the other to obtain.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["small"]

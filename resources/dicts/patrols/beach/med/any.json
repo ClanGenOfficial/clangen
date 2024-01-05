@@ -300,7 +300,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "It's absolutely miserable weather to gather in, and p_l wishes {PRONOUN/r_c/subject} didn't have to. But, even though r_c falls over at one point, and they all end up drenched, {PRONOUN/r_c/subject} {VERB/r_c/do/does} bring back some herbs.",
+                "text": "It's absolutely miserable weather to gather herbs in, and p_l wishes {PRONOUN/r_c/subject} didn't have to. Despite r_c nearly slipping and falling over on more than one occasion and the rest of the patrol getting absolutely soaked to the bone, {PRONOUN/r_c/subject} {VERB/r_c/do/does} - somehow - still manage to bring back some herbs.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -322,7 +322,7 @@
                 ]
             },
             {
-                "text": "The keen eyed s_c spots herbs quickly, and the cats harvest them and retreat back to the camp, where it's nice and dry. No point in lingering for a second more than {PRONOUN/s_c/subject} {VERB/s_c/need/needs} to with the weather like this!",
+                "text": "The keen-eyed s_c spots herbs quickly, and the cats harvest them and retreat back to the camp, where it's nice and dry. No point in lingering for a second more than {PRONOUN/s_c/subject} {VERB/s_c/need/needs} to with the weather like this!",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -395,7 +395,7 @@
                 "herbs": ["cobwebs"]
             },
             {
-                "text": "p_l visits a few of {PRONOUN/p_l/poss} favourite places to gather cobwebs. When {PRONOUN/p_l/subject} {VERB/p_l/get/gets} back to camp, {PRONOUN/p_l/subject} {VERB/p_l/end/ends} up startling several cats on {PRONOUN/p_l/poss} way back to {PRONOUN/p_l/poss} den - p_l is practically a walking cobweb, impossible to see beneath the sheer mass {PRONOUN/p_l/subject} {VERB/p_l/have/has} gathered.",
+                "text": "p_l visits a few of {PRONOUN/p_l/poss} favorite places to gather cobwebs. When {PRONOUN/p_l/subject} {VERB/p_l/get/gets} back to camp, {PRONOUN/p_l/subject} {VERB/p_l/end/ends} up startling several cats on {PRONOUN/p_l/poss} way back to {PRONOUN/p_l/poss} den - p_l is practically a walking cobweb, impossible to see beneath the sheer mass {PRONOUN/p_l/subject} {VERB/p_l/have/has} gathered.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "cobwebs"]
@@ -446,7 +446,7 @@
                 ]
             },
             {
-                "text": "p_l takes app1 to a few of {PRONOUN/p_l/poss} favourite places to gather cobwebs. When they get back to camp, they end up startling several cats on their way back to their den - p_l and app1 are practically walking cobwebs, impossible to see beneath the sheer mass they have gathered.",
+                "text": "p_l takes app1 to a few of {PRONOUN/p_l/poss} favorite places to gather cobwebs. When they get back to camp, they end up startling several cats on their way back to their den - p_l and app1 are practically walking cobwebs, impossible to see beneath the sheer mass they have gathered.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "cobwebs"],
@@ -519,7 +519,7 @@
                 ]
             },
             {
-                "text": "The patrol brings back a truly massive haul, and return in good humour, laughing as {PRONOUN/p_l/subject} set down {PRONOUN/p_l/poss} sticks of spun-up webbing in the medicine cat den. p_l joins everyone as they sit down to share tongues, ridding their pelts of dust and the odd spider as the cats catch up with each other and enjoy the day.",
+                "text": "The patrol brings back a truly massive haul, and return in good humor, laughing as {PRONOUN/p_l/subject} set down {PRONOUN/p_l/poss} sticks of spun-up webbing in the medicine cat den. p_l joins everyone as they sit down to share tongues, ridding their pelts of dust and the odd spider as the cats catch up with each other and enjoy the day.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "cobwebs"],
@@ -1372,7 +1372,7 @@
                 ]
             },
             {
-                "text": "<i>Murrp</i>ing with laughter, app1 clacks the stick {PRONOUN/app1/subject} {VERB/app1/hold/holds} in {PRONOUN/app1/poss} own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices muffled purrs and laughs.",
+                "text": "<i>Murrp</i>ing with laughter, app1 clacks the stick {PRONOUN/app1/subject} {VERB/app1/hold/holds} in {PRONOUN/app1/poss} own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices' muffled purrs and laughs.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "cobwebs"],
@@ -1462,7 +1462,7 @@
                 ]
             },
             {
-                "text": "<i>Murrp</i>ing with laughter, app1 clacks the stick {PRONOUN/app1/subject} {VERB/app1/hold/holds} in {PRONOUN/app1/poss} own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices muffled purrs and laughs, even though app3 seems solely focused on the chore, content to let the others muck about so long as everything gets done.",
+                "text": "<i>Murrp</i>ing with laughter, app1 clacks the stick {PRONOUN/app1/subject} {VERB/app1/hold/holds} in {PRONOUN/app1/poss} own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices' muffled purrs and laughs, even though app3 seems solely focused on the chore, content to let the others muck about so long as everything gets done.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "cobwebs"],
@@ -1798,7 +1798,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "It's a long, weird, hard day. <i>Yes,</i> they cobwebs. <i>Yes,</i> they bring them back to camp - but by StarClan, none of the warrior apprentices were expecting something as simple as cobweb gathering to be so hard, not when it feels like they run into one every other hunt! They definitely end up with a new appreciation for p_l's skills.",
+                "text": "It's a long, weird, hard day. <i>Yes,</i> the cobwebs. <i>Yes,</i> they bring them back to camp - but by StarClan, none of the warrior apprentices were expecting something as simple as cobweb gathering to be so hard, not when it feels like they run into one every other hunt! They definitely end up with a new appreciation for p_l's skills.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["cobwebs"],
@@ -1820,7 +1820,7 @@
                 ]
             },
             {
-                "text": "... However, once out of camp, the apprentices realise they're out of their depth, and turn to p_l for help. p_l, to {PRONOUN/p_l/poss} credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul there's a new feeling of rapport between everyone, regardless of their role.",
+                "text": "... However, once out of camp, the apprentices realize they're out of their depth, and turn to p_l for help. p_l, to {PRONOUN/p_l/poss} credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul there's a new feeling of rapport between everyone, regardless of their role.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "cobwebs"],
@@ -1909,7 +1909,7 @@
                 ]
             },
             {
-                "text": "... However, once out of camp, the apprentices realise they're out of their depth, and turn to p_l for help. p_l, to {PRONOUN/p_l/poss} credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul there's a new feeling of rapport between everyone, regardless of their role.",
+                "text": "... However, once out of camp, the apprentices realize they're out of their depth, and turn to p_l for help. p_l, to {PRONOUN/p_l/poss} credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul there's a new feeling of rapport between everyone, regardless of their role.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "cobwebs"],
@@ -2087,7 +2087,7 @@
                 ]
             },
             {
-                "text": "... However, once out of camp, the apprentices realise {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} out of {PRONOUN/p_l/poss} depth, and turn to p_l for help. p_l, to {PRONOUN/p_l/poss} credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul there's a new feeling of rapport between everyone, regardless of their role.",
+                "text": "... However, once out of camp, the apprentices realize {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} out of {PRONOUN/p_l/poss} depth, and turn to p_l for help. p_l, to {PRONOUN/p_l/poss} credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul there's a new feeling of rapport between everyone, regardless of their role.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "cobwebs"],
@@ -2151,12 +2151,12 @@
             "medicine cat": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "p_l comes up to meet r_c, quietly apologising about app2 being sent to help p_l collect moss.",
+        "intro_text": "p_l comes up to meet r_c, quietly apologizing about app2 being sent to help p_l collect moss.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "There's nothing to apologize for! r_c bumps p_l's shoulder affectionately, brushing past {PRONOUN/p_l/self} with a smile as {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
+                "text": "There's nothing to apologize for! r_c bumps p_l's shoulder affectionately, brushing past {PRONOUN/p_l/self} with a smile as {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp. It's a fine way to spend the afternoon, and a cool cat to spend it with!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss"],
@@ -2247,7 +2247,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Though the other cat of their group doesn't look thrilled, app2 insists there's nothing to apologize for. app2 bumps app1's shoulder affectionately, brushing past {PRONOUN/app1/object} with a smile as {PRONOUN/app2/subject} {VERB/app2/leave/leaves} camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
+                "text": "Though the other cat of their group doesn't look thrilled, app2 insists there's nothing to apologize for. app2 bumps app1's shoulder affectionately, brushing past {PRONOUN/app1/object} with a smile as {PRONOUN/app2/subject} {VERB/app2/leave/leaves} camp. It's a fine way to spend the afternoon, and a cool cat to spend it with!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss"],
@@ -2336,7 +2336,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "Though the others of {PRONOUN/p_l/poss} group don't look thrilled, app1 insists there's nothing to apologize for. app1 bumps app2's shoulder affectionately, brushing past {PRONOUN/app2/object} with a smile as {PRONOUN/app1/subject} {VERB/app1/leave/leaves} camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
+                "text": "Though the others of {PRONOUN/p_l/poss} group don't look thrilled, app1 insists there's nothing to apologize for. app1 bumps app2's shoulder affectionately, brushing past {PRONOUN/app2/object} with a smile as {PRONOUN/app1/subject} {VERB/app1/leave/leaves} camp. It's a fine way to spend the afternoon, and a cool cat to spend it with!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss"],
@@ -2603,7 +2603,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "Though the others of their group don't look thrilled, app1 insists there's nothing to apologize for. app1 bumps app2's shoulder affectionately, brushing past {PRONOUN/app2/object} with a smile as {PRONOUN/app1/subject} {VERB/app1/leave/leaves} camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
+                "text": "Though the others of their group don't look thrilled, app1 insists there's nothing to apologize for. app1 bumps app2's shoulder affectionately, brushing past {PRONOUN/app2/object} with a smile as {PRONOUN/app1/subject} {VERB/app1/leave/leaves} camp. It's a fine way to spend the afternoon, and a cool cat to spend it with!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss"],
@@ -2781,7 +2781,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "Though the others of their group don't look thrilled, app1 insists there's nothing to apologize for. app1 bumps app2's shoulder affectionately, brushing past {PRONOUN/app2/self} with a smile as {PRONOUN/app1/subject} {VERB/app1/leave/leaves} camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
+                "text": "Though the others of their group don't look thrilled, app1 insists there's nothing to apologize for. app1 bumps app2's shoulder affectionately, brushing past {PRONOUN/app2/self} with a smile as {PRONOUN/app1/subject} {VERB/app1/leave/leaves} camp. It's a fine way to spend the afternoon, and a cool cat to spend it with!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss"],

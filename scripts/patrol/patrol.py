@@ -380,7 +380,27 @@ class Patrol():
             for x in combinations(self.patrol_cats, 2):
                 if x[0].ID not in x[1].mate:
                     return False
+        
+        # check if all cats are mates with p_l (they do not have to be mates with each other)
+        if "mates_with_pl" in patrol.relationship_constraints:
+            # First test if there is more then one cat
+            if len(self.patrol_cats) == 1:
+                return False
+            
+            # Check each patrol cat to see if it is mates with the patrol leader
+            for cat in self.patrol_cats:
+                if cat.ID == self.patrol_leader.ID:
+                    continue
                 
+                if cat.ID not in self.patrol_leader.mate:
+                    return False
+
+        # check if all cats are not mates
+        if "not_mates" in patrol.relationship_constraints:
+            # opposite of mate check
+            for x in combinations(self.patrol_cats, 2):
+                if x[0].ID in x[1].mate:
+                    return False
 
         # check if the cats are in a parent/child relationship
         if "parent/child" in patrol.relationship_constraints:
