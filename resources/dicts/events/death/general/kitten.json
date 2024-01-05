@@ -277,7 +277,7 @@
             "neg_platonic",
             "dislike"
         ],
-        "death_text": "m_c quietly pads after r_c, eyes bright with the promise of exploring the territory. r_c suddenly comes to a stop beside a spiky bush, pointing at it with a claw. \"These berries taste exactly like fresh prey. Wanna try one?\" The kit excitedly nods and grabs a berry with {PRONOUN/m_c/poss} teeth. It's not exactly like prey... the kit's thought trails off as darkness takes over {PRONOUN/m_c/poss} vision.",
+        "death_text": "m_c quietly pads after r_c, eyes bright with the promise of exploring the territory. r_c suddenly comes to a stop beside a spiky bush, pointing at it with a claw. Apparently the shiny red berries taste just like fresh prey, and r_c is offering one to m_c! The kit excitedly nods and grabs a berry with {PRONOUN/m_c/poss} teeth. It's not exactly like prey... the kit's thought trails off as darkness takes over {PRONOUN/m_c/poss} vision.",
         "history_text": {
             "reg_death": "m_c ate deathberries and succumbed to the poison.",
             "reg_murder_unrevealed": "m_c was fed deathberries by r_c."
@@ -296,7 +296,7 @@
             "neg_platonic",
             "dislike"
         ],
-        "death_text": "m_c sneaks out of camp, wondering what all is out there. {PRONOUN/m_c/subject/CAP} come to a small stream and attempt to leap across. {PRONOUN/m_c/subject/CAP} misjudged the distance and {PRONOUN/m_c/poss} paws scrabble on the bank for purchase. m_c is losing {PRONOUN/m_c/poss} grip when {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} {PRONOUN/m_c/subject} {VERB/m_c/catch/catches} a glimpse of r_c's pelt. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} about to call for help when {PRONOUN/m_c/poss} grip fails.",
+        "death_text": "m_c sneaks out of camp, wondering what all is out there. {PRONOUN/m_c/subject/CAP} {VERB/m_c/come/comes} to a small stream and {VERB/m_c/attempt/attempts} to leap across. {PRONOUN/m_c/subject/CAP} misjudged the distance and {PRONOUN/m_c/poss} paws scrabble on the bank for purchase. m_c is losing {PRONOUN/m_c/poss} grip when {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} {PRONOUN/m_c/subject} {VERB/m_c/catch/catches} a glimpse of r_c's pelt. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} about to call for help when {PRONOUN/m_c/poss} grip fails.",
         "history_text": {
             "reg_death": "m_c drowned in a stream while r_c watched.",
             "reg_murder_unrevealed": "m_c drowned in a stream."
