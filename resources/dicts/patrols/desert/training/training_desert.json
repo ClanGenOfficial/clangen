@@ -58,7 +58,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "r_c wanders past an old badger sett overlooking a dried up riverbed, only to freeze. There's new scent here, acrid and sour.",
+        "intro_text": "r_c wanders past an old badger sett overlooking a dried-up riverbed, only to freeze. There's new scent here, acrid and sour.",
         "decline_text": "Surely it must be nothing... uneasily, r_c continues on.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -138,7 +138,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "p_l wanders past an old badger sett overlooking a dried up riverbed, only to freeze. There's new scent here, acrid and sour.",
+        "intro_text": "p_l wanders past an old badger sett overlooking a dried-up riverbed, only to freeze. There's new scent here, acrid and sour.",
         "decline_text": "Surely it must be nothing... uneasily, the patrol continues on.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -177,7 +177,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The cats try to clean the opening to the sett free of tracks, but the ground is slightly too damp and the dirt just ends up clumped oddly to their tails. Before they know it they're tired, thirsty, and going home with nothing to show for it.",
+                "text": "The cats try to clean the opening to the sett free of tracks, but the ground is slightly too damp and the dirt just ends up clumped oddly to their tails. Before they know it, they're tired, thirsty, and going home with nothing to show for it.",
                 "exp": 0,
                 "weight": 20
             },
@@ -801,7 +801,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Rounding a bends in the rocky path, app1 ducks under a thron tree, and through a gap between two rock pillars, and app2 emerges into the alcove beyond with a gasp. A little hidden pool lies perfectly still and quiet in the shade, and both apprentices leap into the water with exclamations of relief.",
+                "text": "Rounding a bend in the rocky path, app1 ducks under a thorn tree, and through a gap between two rock pillars, and app2 emerges into the alcove beyond with a gasp. A little hidden pool lies perfectly still and quiet in the shade, and both apprentices leap into the water with exclamations of relief.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
@@ -898,7 +898,7 @@
             "all apprentices": [2, 2]
         },
         "weight": 20,
-        "intro_text": "Fluffed up against the cold, app1 and app2 walk to a outlook overlooking the sandy scrubland.",
+        "intro_text": "Fluffed up against the cold, app1 and app2 walk to an outlook overlooking the sandy scrubland.",
         "decline_text": "Oh no! They both forgot that they were on elder nest change duty this evening!",
         "chance_of_success": 70,
         "success_outcomes": [
@@ -917,7 +917,7 @@
                 ]
             },
             {
-                "text": "With the full moon and the spread of stars in the night sky being mirrored by the glowing scorpions scurrying around on the ground, app2 realises that this is all very romantic. Excited, they put their paw over app1's, and both of them blush hard enough to see through their fur.",
+                "text": "With the full moon and the spread of stars in the night sky being mirrored by the glowing scorpions scurrying around on the ground, app2 realizes that this is all very romantic. Excited, they put their paw over app1's, and both of them blush hard enough to see through their fur.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -1019,7 +1019,7 @@
                 ]
             },
             {
-                "text": "With the full moon and the spread of stars in the night sky being mirrored by the glowing scorpions scurrying around on the ground, app2 realises that this is all very romantic. Excited, they put their paw over app1's, and both of them blush hard enough to see through their fur.",
+                "text": "With the full moon and the spread of stars in the night sky being mirrored by the glowing scorpions scurrying around on the ground, app2 realizes that this is all very romantic. Excited, they put their paw over app1's, and both of them blush hard enough to see through their fur.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -1089,6 +1089,70 @@
         ]
     },
     {
+        "patrol_id": "dst_train_arguingromance1",
+        "biome": ["desert"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": ["romantic", "pos_jealousy"],
+        "patrol_art": "train_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "As p_l pads through the dunes near camp, looking for a good place for a sand bath before {PRONOUN/p_l/subject} begin {PRONOUN/p_l/poss} training, {PRONOUN/p_l/subject} round a corner and find r_c doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c/object}. While Clanmates will do better training together, r_c just rubs {PRONOUN/p_l/subject} the wrong way.",
+        "decline_text": "...It's fine to train somewhere else, p_l decides. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} really want to interact with r_c.",
+        "chance_of_success": 60,
+        "relationship_constraint": ["dislike_10"],
+        "success_outcomes": [
+            {
+                "text": "r_c shows {PRONOUN/p_l/object} a stunningly successful move {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been working on to rapidly change directions in deep dry sand, and p_l can't let {PRONOUN/p_l/self} look bad in comparison, showing off {PRONOUN/p_l/poss} battle-back-flip with a smug smirk.",
+                "exp": 15,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "r_c shows off how far {PRONOUN/r_c/subject} can pounce, which means p_l shows off how fast {PRONOUN/p_l/subject} can run, which means r_c shows off how sharp {PRONOUN/r_c/poss} claws are, which means p_l shows off how shiny {PRONOUN/p_l/poss} pelt is, which means r_c shows off how long {PRONOUN/r_c/poss} legs are, which means p_l shows off how cool {PRONOUN/p_l/poss} scars are - this goes on all afternoon.",
+                "exp": 15,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "dislike"],
+                        "amount": 10
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Both warriors are stiffly polite with each other, and it's a boring and completely unproductive afternoon, though maybe r_c isn't quite the thorn in {PRONOUN/p_l/poss} paw p_l thought {PRONOUN/r_c/subject} {VERB/r_c/were/was}.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "dislike"],
+                        "amount": -10
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "patrol_id": "dst_train_sunset1",
         "biome": ["desert"],
         "season": ["Any"],
@@ -1107,7 +1171,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "The cats go out together in the late of the day, as the temperature drops to it's best, cool but not cold. r_c goes through their tricks, showing p_l how they use the low slanted light to make tracks more obvious, as p_l watches with eyes that r_c notices are a bit too admiring for what's just a little trick. They smirk, showing off a little.",
+                "text": "The cats go out together later in the day, as the temperature drops to its best, cool but not cold. r_c goes through their tricks, showing p_l how they use the low slanted light to make tracks more obvious, as p_l watches with eyes that r_c notices are a bit too admiring for what's just a little trick. They smirk, showing off a little.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
@@ -1121,7 +1185,7 @@
                 ]
             },
             {
-                "text": "it's a long but satisfying training session, with both cats having an in depth chance to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching them instead of the sun, and smiles.",
+                "text": "it's a long but satisfying training session, with both cats having an in-depth chance to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching them instead of the sun, and smiles.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -1135,7 +1199,7 @@
                 ]
             },
             {
-                "text": "s_c is a fantastic hunter, and p_l isn't shy about telling them so. They blush, but work through it, showing p_l how to use the a sand scrape to blend into the horizon so that prey won't see their silhouette.",
+                "text": "s_c is a fantastic hunter, and p_l isn't shy about telling them so. They blush, but work through it, showing p_l how to use the sandscape to blend into the horizon so that prey won't see their silhouette.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["HUNTER,3"],

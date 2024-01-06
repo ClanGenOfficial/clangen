@@ -122,5 +122,36 @@
             "reg_death": "m_c suffocated underground.",
             "lead_death": "was suffocated underground."
         }
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "other_cat",
+            "murder",
+            "revealed",
+            "Newleaf",
+            "Leaf-bare",
+            "rc_to_mc",
+            "neg_platonic",
+            "dislike"
+        ],
+        "death_text": "m_c agreed to venture with r_c out onto a frozen pond. m_c went first while r_c hung back. m_c slid around playfully, taunting the other cat to chase {PRONOUN/m_c/object}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} about to launch another teasing remark when the ice cracked below {PRONOUN/m_c/poss} paws. r_c lingered to make sure {PRONOUN/m_c/subject} didn't surface before running back to camp with a yowl.",
+        "history_text": {
+            "reg_death": "m_c was lured onto thin ice by r_c, resulting in {PRONOUN/m_c/poss} death.",
+            "reg_murder_unrevealed": "m_c fell through thin ice and never came up."
+        },
+        "cat_trait": [
+            "daring",
+            "adventurous",
+            "oblivious",
+            "bold",
+            "childish"
+        ],
+        "cat_skill": null,
+        "cat_negate_skill": [
+            "PROPHET,3",
+            "OMEN,3",
+            "SWIMMER,3"
+        ]
     }
 ]

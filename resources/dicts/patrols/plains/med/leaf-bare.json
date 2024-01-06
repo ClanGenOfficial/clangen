@@ -34,7 +34,7 @@
                 ]
             },
             {
-                "text": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with them. It's just a herb gathering patrol, but p_l feels more relaxed than they've felt in moons when they come back to camp, smiling softly.",
+                "text": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with them. It's just an herb gathering patrol, but p_l feels more relaxed than they've felt in moons when they come back to camp, smiling softly.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -67,7 +67,7 @@
                 ]
             },
             {
-                "text": "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with.",
+                "text": "Not only do they not find anything, but p_l is <i> this <i/> close to murdering s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["troublesome", "childish"],
@@ -120,7 +120,7 @@
                 ]
             },
             {
-                "text": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with them. It's just a herb gathering patrol, but p_l feels more relaxed than they've felt in moons when they come back to camp, smiling softly.",
+                "text": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with them. It's just an herb gathering patrol, but p_l feels more relaxed than they've felt in moons when they come back to camp, smiling softly.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1", "MEDIATOR,1"],
@@ -153,7 +153,7 @@
                 ]
             },
             {
-                "text": "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with.",
+                "text": "Not only do they not find anything, but p_l is <i> this <i/> close to murdering s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["troublesome", "childish"],
@@ -905,12 +905,12 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Not only does p_l end up soaked to the skin, but they can't even find any daisies under the snow. A wasted and horribly chilly day.",
+                "text": "Not only does p_l end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any daisies under the snow either! What a wasted and horribly chilly day.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "Not only does r_c end up soaked to the skin, they can't even find any daisies under the snow, and they're left shivering violently by the time they return to camp.",
+                "text": "Not only does r_c end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any daisies under the snow! By the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} back to camp, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} left cold, wet, and shivering violently. What a terrible, horrible, no good, very bad day.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1017,7 +1017,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Not only does p_l end up soaked to the skin, but they can't even find any daisies under the snow. A wasted and horribly chilly day.",
+                "text": "Not only does p_l end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any daisies under the snow either! What a wasted and horribly chilly day.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1038,7 +1038,7 @@
                 ]
             },
             {
-                "text": "Not only does r_c end up soaked to the skin, they can't even find any daisies under the snow, and they're left shivering violently by the time they return to camp.",
+                "text": "Not only does r_c end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any daisies under the snow! By the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} back to camp, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} left cold, wet, and shivering violently. What a terrible, horrible, no good, very bad day.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1158,7 +1158,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Not only does p_l end up soaked to the skin, but they can't even find any daisies under the snow. A wasted and horribly chilly day.",
+                "text": "Not only does p_l end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any daisies under the snow either! What a wasted and horribly chilly day.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1179,7 +1179,7 @@
                 ]
             },
             {
-                "text": "Not only does r_c end up soaked to the skin, they can't even find any daisies under the snow, and they're left shivering violently by the time they return to camp.",
+                "text": "Not only does r_c end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any daisies under the snow! By the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} back to camp, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} left cold, wet, and shivering violently. What a terrible, horrible, no good, very bad day.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1252,12 +1252,12 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Not only does p_l end up soaked to the skin, but they can't even find any dandelions under the snow. A wasted and horribly chilly day.",
+                "text": "Not only does p_l end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any dandelions under the snow either! What a wasted and horribly chilly day.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "Not only does r_c end up soaked to the skin, they can't even find any dandelions under the snow, and they're left shivering violently by the time they return to camp.",
+                "text": "Not only does r_c end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any dandelions under the snow! By the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} back to camp, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} left cold, wet, and shivering violently. What a terrible, horrible, no good, very bad day.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1364,7 +1364,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Not only does p_l end up soaked to the skin, but they can't even find any dandelions under the snow. A wasted and horribly chilly day.",
+                "text": "Not only does p_l end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any dandelions under the snow either! What a wasted and horribly chilly day.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1385,7 +1385,7 @@
                 ]
             },
             {
-                "text": "Not only does r_c end up soaked to the skin, they can't even find any dandelions under the snow, and they're left shivering violently by the time they return to camp.",
+                "text": "Not only does r_c end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any dandelions under the snow! By the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} back to camp, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} left cold, wet, and shivering violently. What a terrible, horrible, no good, very bad day.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1506,7 +1506,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Not only does p_l end up soaked to the skin, but they can't even find any dandelions under the snow. A wasted and horribly chilly day.",
+                "text": "Not only does p_l end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any dandelions under the snow either! What a wasted and horribly chilly day.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1527,7 +1527,7 @@
                 ]
             },
             {
-                "text": "Not only does r_c end up soaked to the skin, they can't even find any dandelions under the snow, and they're left shivering violently by the time they return to camp.",
+                "text": "Not only does r_c end up soaked to the skin, but {PRONOUN/r_c/subject} also {VERB/r_c/don't/doesn't} end up finding any dandelions under the snow! By the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} back to camp, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} left cold, wet, and shivering violently. What a terrible, horrible, no good, very bad day.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1591,7 +1591,7 @@
                 "herbs": ["juniper"]
             },
             {
-                "text": "Sometimes, its not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without needing to risk themselves climbing in leaf-bare.",
+                "text": "Sometimes, it's not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without needing to risk themselves climbing in leaf-bare.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -1687,7 +1687,7 @@
                 ]
             },
             {
-                "text": "Sometimes, its not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without s_c or app1 needing to risk themselves climbing in leaf-bare.",
+                "text": "Sometimes, it's not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without s_c or app1 needing to risk themselves climbing in leaf-bare.",
                 "exp": 40,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -1829,7 +1829,7 @@
                 ]
             },
             {
-                "text": "Sometimes, its not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without any cat needing to risk themselves climbing in leaf-bare.",
+                "text": "Sometimes, it's not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without any cat needing to risk themselves climbing in leaf-bare.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -1934,7 +1934,7 @@
                 "herbs": ["wild_garlic"]
             },
             {
-                "text": "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky speciality is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores.",
+                "text": "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky specialty is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores.",
                 "exp": 30,
                 "weight": 5,
                 "herbs": ["many_herbs", "wild_garlic"]
@@ -2014,7 +2014,7 @@
                 ]
             },
             {
-                "text": "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky speciality is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores with app1.",
+                "text": "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky specialty is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores with app1.",
                 "exp": 40,
                 "weight": 5,
                 "herbs": ["many_herbs", "wild_garlic"],
@@ -2156,7 +2156,7 @@
                 ]
             },
             {
-                "text": "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky speciality is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores with the patrol.",
+                "text": "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky specialty is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores with the patrol.",
                 "exp": 30,
                 "weight": 5,
                 "herbs": ["many_herbs", "wild_garlic"],

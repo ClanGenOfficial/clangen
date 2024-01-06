@@ -295,7 +295,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "r_c heads off to one of their favorite spots in the desert, a dry river bed with plenty of trees and bushes providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that hare thought.",
+                "text": "r_c heads off to one of their favorite spots in the desert, a dry riverbed with plenty of trees and bushes providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that hare thought.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"]
@@ -365,7 +365,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "r_c heads off to one of their favorite spots in the desert, a dry river bed with plenty of trees and bushes providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that hare thought. They snicker to themselves as they pad back to camp.",
+                "text": "r_c heads off to one of their favorite spots in the desert, a dry riverbed with plenty of trees and bushes providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that hare thought. They snicker to themselves as they pad back to camp.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"]
@@ -435,7 +435,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "r_c heads off to one of their favorite spots in the desert, a dry river bed with plenty of trees and bushes providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that hare thought. They snicker to themselves as they pad back to camp.",
+                "text": "r_c heads off to one of their favorite spots in the desert, a dry riverbed with plenty of trees and bushes providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that hare thought. They snicker to themselves as they pad back to camp.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"]
@@ -515,7 +515,7 @@
                 "prey": ["small"]
             },
             {
-                "text": "s_c spots the Twolegs unloading metal boxes from their monsters, and recognises that it can't be anything good, leaving immediately.",
+                "text": "s_c spots the Twolegs unloading metal boxes from their monsters, and recognizes that it can't be anything good, leaving immediately.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,3"],
@@ -873,7 +873,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "The sun beats down on the desert, driving every creature away from it's gaze with blinding heat.",
+        "intro_text": "The sun beats down on the desert, driving every creature away from its gaze with blinding heat.",
         "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -920,7 +920,7 @@
                 "weight": 20
             },
             {
-                "text": "r_c starts feeling confused and fuzzy as they walk, but ignore it. It takes them too long to recognise the symptoms of heat exhaustion, and when they do it's too late, with r_c stranded far from shade. Dizzy and retching, they collapse on the desert sands.,",
+                "text": "r_c starts feeling confused and fuzzy as they walk, but ignore it. It takes them too long to recognize the symptoms of heat exhaustion, and when they do it's too late, with r_c stranded far from shade. Dizzy and retching, they collapse on the desert sands.,",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -945,12 +945,12 @@
             "apprentice": [1, 6]
         },
         "weight": 20,
-        "intro_text": "The sun beats down on the desert, driving every creature away from it's gaze with blinding heat.",
+        "intro_text": "The sun beats down on the desert, driving every creature away from its gaze with blinding heat.",
         "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "app1 considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except their burrow is occupied, and app1 instead has to wait out the heat in the uncortable shade of a cactus.",
+                "text": "app1 considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except their burrow is occupied, and app1 instead has to wait out the heat in the uncomfortable shade of a cactus.",
                 "exp": 15,
                 "weight": 5,
                 "prey": ["small"]
@@ -1057,7 +1057,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "The sun beats down on the desert, driving every creature away from it's gaze with blinding heat.",
+        "intro_text": "The sun beats down on the desert, driving every creature away from its gaze with blinding heat.",
         "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -1118,12 +1118,12 @@
             "apprentice": [1, 6]
         },
         "weight": 20,
-        "intro_text": "The sun beats down on the desert, driving every creature away from it's gaze with blinding heat.",
+        "intro_text": "The sun beats down on the desert, driving every creature away from its gaze with blinding heat.",
         "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "app1 considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except their burrow is occupied, and app1 instead has to wait out the heat in the uncortable shade of a cactus.",
+                "text": "app1 considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except their burrow is occupied, and app1 instead has to wait out the heat in the uncomfortable shade of a cactus.",
                 "exp": 15,
                 "weight": 5,
                 "prey": ["small"]
@@ -1196,7 +1196,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "The sun beats down on the desert, driving every creature away from it's gaze with blinding heat.",
+        "intro_text": "The sun beats down on the desert, driving every creature away from its gaze with blinding heat.",
         "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -1251,12 +1251,12 @@
             "apprentice": [1, 6]
         },
         "weight": 20,
-        "intro_text": "The sun beats down on the desert, driving every creature away from it's gaze with blinding heat.",
+        "intro_text": "The sun beats down on the desert, driving every creature away from its gaze with blinding heat.",
         "decline_text": "Giving up on the hunt, app1 finds a burrow to wait out the heat of the day until they can return back to camp.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "app1 considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except their burrow is occupied, and app1 instead has to wait out the heat in the uncortable shade of a cactus.",
+                "text": "app1 considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except their burrow is occupied, and app1 instead has to wait out the heat in the uncomfortable shade of a cactus.",
                 "exp": 15,
                 "weight": 5,
                 "prey": ["small"]
@@ -1331,7 +1331,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "The desert cats turn their faces to the skies, revelling in the life-giving water. It feels like the very world itself joins them in celebration, insects emerging from hiding and chirping, birds flitting across the sandy scrubland, and the patrol returns to camp with a huge bounty of catches.",
+                "text": "The desert cats turn their faces to the skies, reveling in the life-giving water. It feels like the very world itself joins them in celebration, insects emerging from hiding and chirping, birds flitting across the sandy scrubland, and the patrol returns to camp with a huge bounty of catches.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["large"],
@@ -1346,7 +1346,7 @@
                 ]
             },
             {
-                "text": "s_c leads the patrol to one of their favourite hunting spots, a bounce in everyone's steps as the water promises new life for the desert. The cats are unused to hunting the scrubland in wet, let alone in mud, but thanks to s_c they bring home a mighty haul, laughing at eachother's damp and fluffed out fur.",
+                "text": "s_c leads the patrol to one of their favorite hunting spots, a bounce in everyone's steps as the water promises new life for the desert. The cats are unused to hunting the scrubland in wet, let alone in mud, but thanks to s_c they bring home a mighty haul, laughing at each other's damp and fluffed out fur.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["HUNTER,2"],
@@ -1380,7 +1380,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Although the cats rejoice at the rain, after the uptenth time someone slips on the wet rock the hunting trip has to be called off. They'll go out again soon, ready to take advantage of the bounty of Leaf-bare.",
+                "text": "Although the cats rejoice at the rain, after the umpteenth time someone slips on the wet rock the hunting trip has to be called off. They'll go out again soon, ready to take advantage of the bounty of Leaf-bare.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1418,7 +1418,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "s_c really shows their talent, hunting down a mid-sized tortiose that has overturned itself on the newly slippery ground in the rain storm.",
+                "text": "s_c really shows their talent, hunting down a mid-sized tortoise that has overturned itself on the newly slippery ground in the rainstorm.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["HUNTER,2"],
@@ -1427,7 +1427,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Although r_c rejoices at the rain, after the uptenth time they slip on the wet rock the hunting trip has to be called off. They'll go out again soon, ready to take advantage of the bounty of Leaf-bare.",
+                "text": "Although r_c rejoices at the rain, after the umpteenth time they slip on the wet rock the hunting trip has to be called off. They'll go out again soon, ready to take advantage of the bounty of Leaf-bare.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -1466,7 +1466,7 @@
                 ]
             },
             {
-                "text": "A storm descends, sudden and violent enough to drive the c_n cats to shelter. s_c keeps everyone's spirits up as the patrol hides in an abandoned tortoise den where the wind can't get them, until everyone is talking, a little damp but keeping eachother's spirits up.",
+                "text": "A storm descends, sudden and violent enough to drive the c_n cats to shelter. s_c keeps everyone's spirits up as the patrol hides in an abandoned tortoise den where the wind can't get them, until everyone is talking, a little damp but keeping each other's spirits up.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,2"],
@@ -1498,7 +1498,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Although the cats rejoice at the rain, after the uptenth time someone slips on the wet rock the hunting trip has to be called off. They'll go out again soon, ready to take advantage of the bounty of Leaf-bare.",
+                "text": "Although the cats rejoice at the rain, after the umpteenth time someone slips on the wet rock the hunting trip has to be called off. They'll go out again soon, ready to take advantage of the bounty of Leaf-bare.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1529,7 +1529,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Outraged, your cats charge the poacher, determined to rip its pelt off. No one steals from c_n! The fox jumps, starled, and streaks for the horizon, but with a full patrol your cats chase it until it drops the hare and crosses the border. Hrumph! Though it's only a small haul of prey for a hunting patrol, at least they've gotten rid of the prey thief.",
+                "text": "Outraged, your cats charge the poacher, determined to rip its pelt off. No one steals from c_n! The fox jumps, startled, and streaks for the horizon, but with a full patrol your cats chase it until it drops the hare and crosses the border. Hrumph! Though it's only a small haul of prey for a hunting patrol, at least they've gotten rid of the prey thief.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["small"],
@@ -1544,7 +1544,7 @@
                 ]
             },
             {
-                "text": "With many cats, they're able to catch the swift fox, even though it lives up to its name. It might be swift, but its not much else, and your patrol manages to pull it down and kill the intruder, protecting c_n's lands. Oh, and they also win that hare too.",
+                "text": "With many cats, they're able to catch the swift fox, even though it lives up to its name. It might be swift, but it's not much else, and your patrol manages to pull it down and kill the intruder, protecting c_n's lands. Oh, and they also win that hare too.",
                 "exp": 30,
                 "weight": 5,
                 "prey": ["small"],
@@ -1575,7 +1575,7 @@
                 ]
             },
             {
-                "text": "s_c leads the charge! Their boldness sends the swift fox running, and though they lose the fox in a tumble of blouders the cats can at least bring the hare home for the fresh-kill pile.",
+                "text": "s_c leads the charge! Their boldness sends the swift fox running, and though they lose the fox in a tumble of boulders the cats can at least bring the hare home for the fresh-kill pile.",
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": [
@@ -1600,7 +1600,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small canivore gets its name.",
+                "text": "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small carnivore gets its name.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1632,7 +1632,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "r_c charges the fox, puffed up and snarling! The fox turns tail and runs, dropping the hare in the process, and r_c retreives the poached prey for c_n's fresh-kill pile.",
+                "text": "r_c charges the fox, puffed up and snarling! The fox turns tail and runs, dropping the hare in the process, and r_c retrieves the poached prey for c_n's fresh-kill pile.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["large"]
@@ -1644,7 +1644,7 @@
                 "prey": ["large"]
             },
             {
-                "text": "r_c sneaks up on the fox, approaching through the cover of thornbushes. They burst out, snarling with claws extended, and batter the fox as it screams in surprise, dropping it's stolen prey and jumping backwards. Only it flinches back into more thornbushes, and r_c picks up the dropped hare and pads back to camp, leaving the thief to struggle out of the thorns by itself.",
+                "text": "r_c sneaks up on the fox, approaching through the cover of thornbushes. They burst out, snarling with claws extended, and batter the fox as it screams in surprise, dropping its stolen prey and jumping backwards. Only it flinches back into more thornbushes, and r_c picks up the dropped hare and pads back to camp, leaving the thief to struggle out of the thorns by itself.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1", "FIGHTER,1"],
@@ -1667,7 +1667,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The swift fox spots r_c coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small canivore gets its name.",
+                "text": "The swift fox spots r_c coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small carnivore gets its name.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -1751,7 +1751,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small canivore gets its name.",
+                "text": "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small carnivore gets its name.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1783,7 +1783,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "She's scouting out potential dens for leaf-bare, r_c realises, and rushes to warn her off. Forget about hunting, driving off this vixen before she sets up a den within c_n's borders is more important.",
+                "text": "She's scouting out potential dens for leaf-bare, r_c realizes, and rushes to warn her off. Forget about hunting, driving off this vixen before she sets up a den within c_n's borders is more important.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -1797,7 +1797,7 @@
                 ]
             },
             {
-                "text": "She's scouting out potential dens for leaf-bare, r_c realises. This could be bad, and r_c gives up on the hunt, instead following the vixen and using tall rocks to bounce their yowls around her, convicning her this patch of desert contains a  thousand cats and warning her off from try to live in it.",
+                "text": "She's scouting out potential dens for leaf-bare, r_c realizes. This could be bad, and r_c gives up on the hunt, instead following the vixen and using tall rocks to bounce their yowls around her, convincing her this patch of desert contains a  thousand cats and warning her off from try to live in it.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -1829,7 +1829,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The swift fox spots r_c coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small canivore gets its name.",
+                "text": "The swift fox spots r_c coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small carnivore gets its name.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1898,7 +1898,7 @@
                 ]
             },
             {
-                "text": "The patrol sneaks closer, until p_l realises that the vixen is approaching her den - a den when cubs must surely hide. A competitor denning within c_n's borders is an outrage, and the patrol leaps to attack, pinning the vixen in a mess of boulders. Her body, and that of her cubs, will go to the fresh-kill pile tonight.",
+                "text": "The patrol sneaks closer, until p_l realizes that the vixen is approaching her den - a den when cubs must surely hide. A competitor denning within c_n's borders is an outrage, and the patrol leaps to attack, pinning the vixen in a mess of boulders. Her body, and that of her cubs, will go to the fresh-kill pile tonight.",
                 "exp": 30,
                 "weight": 5,
                 "prey": ["large"],
@@ -1913,7 +1913,7 @@
                 ]
             },
             {
-                "text": "s_c holds the patrol back until they spot the vixen's mate, approaching with poached prey in his jaws. Together, the cats ambush the foxes, bursting from cover with claws unshealthed as a vicious fight starts. But warriors fight as a team, and the foxes do not, and one flees, abandoning its mate to the fury of c_n.",
+                "text": "s_c holds the patrol back until they spot the vixen's mate, approaching with poached prey in his jaws. Together, the cats ambush the foxes, bursting from cover with claws unsheathed as a vicious fight starts. But warriors fight as a team, and the foxes do not, and one flees, abandoning its mate to the fury of c_n.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1", "FIGHTER,1"],
@@ -1931,7 +1931,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small canivore gets its name.",
+                "text": "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small carnivore gets its name.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1946,7 +1946,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "As the patrol descends on the vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, both foxes using the patrol switching to r_c's defence as their signal to flee.",
+                "text": "As the patrol descends on the vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, both foxes using the patrol switching to r_c's defense as their signal to flee.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1986,7 +1986,7 @@
         "chance_of_success": 20,
         "success_outcomes": [
             {
-                "text": "Sneaking closer, r_c realises that the wind carries the scent of milk from the vixen. She has cubs. Eventually she leaves the area, and r_c begins the hunt, checking every burrow, every crevice, every hole until they find the tiny fox cubs. Killing them protects the Clan, they remind themselves.",
+                "text": "Sneaking closer, r_c realizes that the wind carries the scent of milk from the vixen. She has cubs. Eventually she leaves the area, and r_c begins the hunt, checking every burrow, every crevice, every hole until they find the tiny fox cubs. Killing them protects the Clan, they remind themselves.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["medium"],
@@ -2001,7 +2001,7 @@
                 ]
             },
             {
-                "text": "She has a den, r_c realises, one perched just under a rocky slope. Once the vixen leaves, r_c uses the rubble around it to bury the den, and it's contents. No swift cubs will be raised within c_n's borders.",
+                "text": "She has a den, r_c realizes, one perched just under a rocky slope. Once the vixen leaves, r_c uses the rubble around it to bury the den, and its contents. No swift cubs will be raised within c_n's borders.",
                 "exp": 30,
                 "weight": 5,
                 "relationships": [
@@ -2033,7 +2033,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The swift fox spots r_c coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small canivore gets its name.",
+                "text": "The swift fox spots r_c coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small carnivore gets its name.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2102,7 +2102,7 @@
                 ]
             },
             {
-                "text": "The patrol sneaks closer, until p_l realises that the vixen is approaching her den. Her cubs, nearly full grown on prey stolen from c_n's territory, poke their heads out, and the cats yowl in outrage. They charge the den, killing two of the cubs before the vixen runs with her third.",
+                "text": "The patrol sneaks closer, until p_l realizes that the vixen is approaching her den. Her cubs, nearly full grown on prey stolen from c_n's territory, poke their heads out, and the cats yowl in outrage. They charge the den, killing two of the cubs before the vixen runs with her third.",
                 "exp": 30,
                 "weight": 5,
                 "prey": ["large"],
@@ -2117,7 +2117,7 @@
                 ]
             },
             {
-                "text": "s_c holds the patrol back until they spot the vixen's mate, approaching with poached prey in his jaws. Together, the cats ambush the foxes, bursting from cover with claws unshealthed as a vicious fight starts. But warriors fight as a team, and the foxes do not, and one flees, abandoning its mate and cubs to the fury of c_n.",
+                "text": "s_c holds the patrol back until they spot the vixen's mate, approaching with poached prey in his jaws. Together, the cats ambush the foxes, bursting from cover with claws unsheathed as a vicious fight starts. But warriors fight as a team, and the foxes do not, and one flees, abandoning its mate and cubs to the fury of c_n.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1", "FIGHTER,1"],
@@ -2135,7 +2135,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small canivore gets its name.",
+                "text": "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small carnivore gets its name.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2150,7 +2150,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "As the patrol descends on the vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, both foxes using the patrol switching to r_c's defence as their signal to flee.",
+                "text": "As the patrol descends on the vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, both foxes using the patrol switching to r_c's defense as their signal to flee.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -2190,7 +2190,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "Sneaking closer, r_c realises that the wind carries the scent of milk from the vixen. She has cubs. Eventually she leaves the area, and r_c begins the hunt, checking every burrow, every crevice, every hole until they stumble over the den. Two of the cubs flee into the desert, while the third falls to r_c's claws.",
+                "text": "Sneaking closer, r_c realizes that the wind carries the scent of milk from the vixen. She has cubs. Eventually she leaves the area, and r_c begins the hunt, checking every burrow, every crevice, every hole until they stumble over the den. Two of the cubs flee into the desert, while the third falls to r_c's claws.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["medium"],
@@ -2205,7 +2205,7 @@
                 ]
             },
             {
-                "text": "She has a den, r_c realises, one perched just under a rocky slope. Once the vixen leaves, r_c uses the rubble around it to bury the den and its contents. No swift cubs will be raised within c_n's borders.",
+                "text": "She has a den, r_c realizes, one perched just under a rocky slope. Once the vixen leaves, r_c uses the rubble around it to bury the den and its contents. No swift cubs will be raised within c_n's borders.",
                 "exp": 30,
                 "weight": 5,
                 "relationships": [
@@ -2237,7 +2237,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The swift fox spots r_c coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small canivore gets its name.",
+                "text": "The swift fox spots r_c coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small carnivore gets its name.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2322,7 +2322,7 @@
                 ]
             },
             {
-                "text": "s_c is smart enough to stop anyone from pursuing the kit fox as it melts away before them. There's no point - the peccary carcass is the real prize here, and the patrol should focused on bringing its meat back for the Clan.",
+                "text": "s_c is smart enough to stop anyone from pursuing the kit fox as it melts away before them. There's no point - the peccary carcass is the real prize here, and the patrol should focus on bringing its meat back for the Clan.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -2338,7 +2338,7 @@
                 ]
             },
             {
-                "text": "The kit fox is irrelevant, and vanishes as soon as it sees the bigger predators coming to claim the carcass. Instead s_c focuses on maintaining a watch for other challengers, and their vigilence means the patrol sees the boar coming to cannibalise its victim from far off, making off with as much of the carcass as they can carry before it spots them.",
+                "text": "The kit fox is irrelevant, and vanishes as soon as it sees the bigger predators coming to claim the carcass. Instead, s_c focuses on maintaining a watch for other challengers, and their vigilance means the patrol sees the boar coming to cannibalize its victim from far off, making off with as much of the carcass as they can carry before it spots them.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -2365,7 +2365,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also no contest, and the patrol wisely backs off as the boar begins to cannibalise its victim.",
+                "text": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also, no contest, and the patrol wisely backs off as the boar begins to cannibalize its victim.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2380,7 +2380,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also no contest, and as the patrol flees, r_c feels something pull painfully in {PRONOUN/r_c/poss} leg.",
+                "text": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also, no contest, and as the patrol flees, r_c feels something pull painfully in {PRONOUN/r_c/poss} leg.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -2449,7 +2449,7 @@
                 ]
             },
             {
-                "text": "s_c is smart enough to stop anyone from pursuing the kit fox as it melts away before them. There's no point - the peccary carcass is the real prize here, and the patrol should focused on bringing its meat back for the Clan.",
+                "text": "s_c is smart enough to stop anyone from pursuing the kit fox as it melts away before them. There's no point - the peccary carcass is the real prize here, and the patrol should focus on bringing its meat back for the Clan.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -2465,7 +2465,7 @@
                 ]
             },
             {
-                "text": "The kit fox is irrelevant, and vanishes as soon as it sees the bigger predators coming to claim the carcass. Instead s_c focuses on maintaining a watch for other challengers, and their vigilence means the patrol sees the boar coming to cannibalise its victim from far off, making off with as much of the carcass as they can carry before it spots them.",
+                "text": "The kit fox is irrelevant, and vanishes as soon as it sees the bigger predators coming to claim the carcass. Instead, s_c focuses on maintaining a watch for other challengers, and their vigilance means the patrol sees the boar coming to cannibalize its victim from far off, making off with as much of the carcass as they can carry before it spots them.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -2492,7 +2492,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also no contest, and the patrol wisely backs off as the boar begins to cannibalise its victim.",
+                "text": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also, no contest, and the patrol wisely backs off as the boar begins to cannibalize its victim.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2507,7 +2507,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also no contest, and as the patrol flees, r_c feels something pull painfully in {PRONOUN/r_c/poss} leg.",
+                "text": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also, no contest, and as the patrol flees, r_c feels something pull painfully in {PRONOUN/r_c/poss} leg.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -2592,7 +2592,7 @@
                 ]
             },
             {
-                "text": "The kit fox is irrelevant, and vanishes as soon as it sees the bigger predators coming to claim the carcass. Instead s_c focuses on maintaining a watch for other challengers, and their vigilence means they see the boar coming to cannibalise its victim from far off, making off with as much of the carcass as they can carry before it spots them.",
+                "text": "The kit fox is irrelevant, and vanishes as soon as it sees the bigger predators coming to claim the carcass. Instead, s_c focuses on maintaining a watch for other challengers, and their vigilance means they see the boar coming to cannibalize its victim from far off, making off with as much of the carcass as they can carry before it spots them.",
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": [
@@ -2619,7 +2619,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
+                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2652,7 +2652,7 @@
                 ]
             },
             {
-                "text": "One tiny kit fox against your cats? No contest. r_c against the boar coming snuffling back? Also no contest, and as the patrol flees, r_c feels something pull painfully in {PRONOUN/r_c/poss} leg.",
+                "text": "One tiny kit fox against your cats? No contest. r_c against the boar coming snuffling back? Also, no contest, and as the patrol flees, r_c feels something pull painfully in {PRONOUN/r_c/poss} leg.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -2709,7 +2709,7 @@
                 ]
             },
             {
-                "text": "The kit fox isn't crazy, and immediately drops the mouse, running for its life from the patrol. But your patrol is fster, though it exhausts them, and together they bring down the small fox for the fresh-kill pile.",
+                "text": "The kit fox isn't crazy, and immediately drops the mouse, running for its life from the patrol. But your patrol is faster, though it exhausts them, and together they bring down the small fox for the fresh-kill pile.",
                 "exp": 15,
                 "weight": 5,
                 "prey": ["medium"],
@@ -2773,7 +2773,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol approaches the kit fox, who spots them and sets off at full speed. It's not worth following them, not with the fox having a headstart.",
+                "text": "The patrol approaches the kit fox, who spots them and sets off at full speed. It's not worth following them, not with the fox having a head start.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2788,7 +2788,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "With a massive yowl, r_c charges the fox. It bares its teeth, unwilling to give up its hard won prey without a fight, and one wrong step puts r_c's pelt in range of those little jaws, as the small kit fox tries to live up to the reputation of its bigger and stronger relatives.",
+                "text": "With a massive yowl, r_c charges the fox. It bares its teeth, unwilling to give up its hard-won prey without a fight, and one wrong step puts r_c's pelt in range of those little jaws, as the small kit fox tries to live up to the reputation of its bigger and stronger relatives.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -2840,7 +2840,7 @@
                 "prey": ["large"]
             },
             {
-                "text": "s_c pounces, snarling, and the fox turns tail with a yelp. But they're prepared for the fox trying to flee, and leap fast and low to the gorund, slamming their teeth into the fox's throat. Kit foxes not only steal prey, for c_n, they are prey.",
+                "text": "s_c pounces, snarling, and the fox turns tail with a yelp. But they're prepared for the fox trying to flee, and leap fast and low to the ground, slamming their teeth into the fox's throat. Kit foxes not only steal prey, for c_n, they are prey.",
                 "exp": 25,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -2871,13 +2871,13 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol approaches the kit fox, who spots them and sets off at full speed. It's not worth following them, not with the fox having a headstart.",
+                "text": "The patrol approaches the kit fox, who spots them and sets off at full speed. It's not worth following them, not with the fox having a head start.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
             },
             {
-                "text": "With a massive yowl, r_c charges the fox. It bares its teeth, unwilling to give up its hard won prey without a fight, and one wrong step puts r_c's pelt in range of those little jaws, as the small kit fox tries to live up to the reputation of its bigger and stronger relatives.",
+                "text": "With a massive yowl, r_c charges the fox. It bares its teeth, unwilling to give up its hard-won prey without a fight, and one wrong step puts r_c's pelt in range of those little jaws, as the small kit fox tries to live up to the reputation of its bigger and stronger relatives.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -2923,7 +2923,7 @@
                 ]
             },
             {
-                "text": "The kit fox isn't crazy, and immediately drops the mouse, running for its life from the patrol. But your patrol is fster, though it exhausts them, and together they bring down the small fox for the fresh-kill pile.",
+                "text": "The kit fox isn't crazy, and immediately drops the mouse, running for its life from the patrol. But your patrol is faster, though it exhausts them, and together they bring down the small fox for the fresh-kill pile.",
                 "exp": 15,
                 "weight": 5,
                 "prey": ["small"],
@@ -2987,7 +2987,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol approaches the kit fox, who spots them and sets off at full speed. It's not worth following them, not with the fox having a headstart.",
+                "text": "The patrol approaches the kit fox, who spots them and sets off at full speed. It's not worth following them, not with the fox having a head start.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
