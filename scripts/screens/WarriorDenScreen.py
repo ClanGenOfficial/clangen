@@ -22,6 +22,8 @@ class WarriorDenScreen(Screens):
         self.focus = {}
         self.back_button = None
         self.save_button = None
+        self.original_focus_code = None
+        self.focus_changed = False
 
     def handle_event(self, event):
         """
@@ -50,6 +52,7 @@ class WarriorDenScreen(Screens):
 
             elif event.ui_element == self.save_button:
                 game.clan.last_focus_change = game.clan.age
+                self.focus_changed = True
                 self.save_button.disable()
                 self.refresh_checkboxes()
 
@@ -72,6 +75,13 @@ class WarriorDenScreen(Screens):
         self.back_button.kill()
         self.save_button.kill()
         self.delete_checkboxes()
+        # if the focus wasn't changed, reset to the previous focus
+        if not self.focus_changed:
+            for code in settings_dict["clan_focus"].keys():
+                if code == self.original_focus_code:
+                    game.clan.clan_settings[code] = True
+                else:
+                    game.clan.clan_settings[code] = False
 
     def delete_checkboxes(self):
         for checkbox in self.focus_boxes.values():
@@ -105,6 +115,7 @@ class WarriorDenScreen(Screens):
             # create the checkboxes itself
             if game.clan.clan_settings[code]:
                 box_type = "#checked_checkbox"
+                self.original_focus_code = code
             else:
                 box_type = "#unchecked_checkbox"
             self.focus_boxes[code] = UIImageButton(scale(pygame.Rect((0, n * 70), (68, 68))),
