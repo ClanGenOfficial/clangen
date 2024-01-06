@@ -24,7 +24,6 @@ class WarriorDenScreen(Screens):
         self.save_button = None
         self.active_code = None
         self.original_focus_code = None
-        self.focus_changed = False
         self.focus_information = {}
 
     def handle_event(self, event):
@@ -39,24 +38,25 @@ class WarriorDenScreen(Screens):
             if event.ui_element in self.focus_boxes.values():
                 for code, value in self.focus_boxes.items():
                     if value == event.ui_element and value.object_ids[1] == "#unchecked_checkbox":
+                        # un-switch the old checkbox
+                        game.clan.switch_setting(self.active_code)
+                        # switch the new checkbox
                         game.clan.switch_setting(code)
                         self.active_code = code
-                        self.save_button.enable()
-                        if self.active_code == self.original_focus_code:
+                        # only enable the save button if a focus switch is possible
+                        if not game.clan.last_focus_change or\
+                            game.clan.last_focus_change + game.config["focus"]["duration"] <= game.clan.age:
+                            self.save_button.enable()
+                        # deactivate save button if the focus didn't change
+                        if self.active_code == self.original_focus_code and self.save_button.enable:
                             self.save_button.disable()
                         self.refresh_checkboxes()
+                        self.create_side_info()
                         break
-                # un-switch all other keys
-                for code, value in self.focus_boxes.items():
-                    if self.active_code and code != self.active_code and value.object_ids[1] == "#checked_checkbox":
-                        game.clan.switch_setting(code)
-                        self.refresh_checkboxes()
-                        break
-                self.create_side_info()
 
             elif event.ui_element == self.save_button:
                 game.clan.last_focus_change = game.clan.age
-                self.focus_changed = True
+                self.original_focus_code = self.active_code
                 self.save_button.disable()
                 self.refresh_checkboxes()
                 self.create_top_info()
@@ -86,7 +86,7 @@ class WarriorDenScreen(Screens):
             self.focus_information[ele].kill()
         self.focus_information = {}
         # if the focus wasn't changed, reset to the previous focus
-        if not self.focus_changed:
+        if self.original_focus_code != self.active_code:
             for code in settings_dict["clan_focus"].keys():
                 if code == self.original_focus_code:
                     game.clan.clan_settings[code] = True
@@ -113,10 +113,6 @@ class WarriorDenScreen(Screens):
             scale(pygame.Rect((150, 520), (600, 800))), manager=MANAGER
         )
 
-        enable = False
-        if not game.clan.last_focus_change or game.clan.last_focus_change + game.config["focus"]["duration"] <= game.clan.age:
-            enable = True
-
         n = 0
         for code, desc in settings_dict["clan_focus"].items():
             # create text next to checkboxes
@@ -140,10 +136,6 @@ class WarriorDenScreen(Screens):
                 object_id=box_type,
                 container=self.focus["checkbox_container"],
                 tool_tip_text=desc[1])
-
-            if not enable:
-                self.focus_boxes[code].disable()
-
             n += 1
 
         # create scrollbar
@@ -160,10 +152,6 @@ class WarriorDenScreen(Screens):
             checkbox.kill()
         self.focus_boxes = {}
 
-        enable = False
-        if not game.clan.last_focus_change or game.clan.last_focus_change + game.config["focus"]["duration"] <= game.clan.age:
-            enable = True
-
         n = 0
         for code, desc in settings_dict["clan_focus"].items():
             if game.clan.clan_settings[code]:
@@ -177,9 +165,6 @@ class WarriorDenScreen(Screens):
                 container=self.focus["checkbox_container"],
                 tool_tip_text=desc[1])
             n += 1
-
-            if not enable:
-                self.focus_boxes[code].disable()
 
     def create_top_info(self):
         """
