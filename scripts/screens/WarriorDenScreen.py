@@ -22,39 +22,44 @@ class WarriorDenScreen(Screens):
         self.focus = {}
         self.back_button = None
         self.save_button = None
+        self.active_code = None
         self.original_focus_code = None
         self.focus_changed = False
+        self.focus_information = {}
 
     def handle_event(self, event):
         """
         Here are button presses / events are handled.
         """
-        active_key = None
         if game.switches['window_open']:
             pass
         elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
                 self.change_screen('camp screen')
             if event.ui_element in self.focus_boxes.values():
-                for key, value in self.focus_boxes.items():
+                for code, value in self.focus_boxes.items():
                     if value == event.ui_element and value.object_ids[1] == "#unchecked_checkbox":
-                        game.clan.switch_setting(key)
-                        active_key = key
+                        game.clan.switch_setting(code)
+                        self.active_code = code
                         self.save_button.enable()
+                        if self.active_code == self.original_focus_code:
+                            self.save_button.disable()
                         self.refresh_checkboxes()
                         break
                 # un-switch all other keys
-                for key, value in self.focus_boxes.items():
-                    if active_key and key != active_key and value.object_ids[1] == "#checked_checkbox":
-                        game.clan.switch_setting(key)
+                for code, value in self.focus_boxes.items():
+                    if self.active_code and code != self.active_code and value.object_ids[1] == "#checked_checkbox":
+                        game.clan.switch_setting(code)
                         self.refresh_checkboxes()
                         break
+                self.create_side_info()
 
             elif event.ui_element == self.save_button:
                 game.clan.last_focus_change = game.clan.age
                 self.focus_changed = True
                 self.save_button.disable()
                 self.refresh_checkboxes()
+                self.create_top_info()
 
     def screen_switches(self):
         """
@@ -63,10 +68,12 @@ class WarriorDenScreen(Screens):
         self.hide_menu_buttons()
         self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))), "", object_id="#back_button"
                                          , manager=MANAGER)
-        self.save_button = UIImageButton(scale(pygame.Rect((150, 1200), (228, 60))), "", object_id="#save_button"
+        self.save_button = UIImageButton(scale(pygame.Rect((150, 1250), (228, 60))), "", object_id="#save_button"
                                          , manager=MANAGER)
         self.save_button.disable()
         self.create_checkboxes()
+        self.create_top_info()
+        self.create_side_info()
 
     def exit_screen(self):
         """
@@ -75,6 +82,9 @@ class WarriorDenScreen(Screens):
         self.back_button.kill()
         self.save_button.kill()
         self.delete_checkboxes()
+        for ele in self.focus_information:
+            self.focus_information[ele].kill()
+        self.focus_information = {}
         # if the focus wasn't changed, reset to the previous focus
         if not self.focus_changed:
             for code in settings_dict["clan_focus"].keys():
@@ -84,6 +94,9 @@ class WarriorDenScreen(Screens):
                     game.clan.clan_settings[code] = False
 
     def delete_checkboxes(self):
+        """
+        Delete all checkboxes and their associated text.
+        """
         for checkbox in self.focus_boxes.values():
             checkbox.kill()
         self.focus_boxes = {}
@@ -92,9 +105,12 @@ class WarriorDenScreen(Screens):
         self.focus = {}
 
     def create_checkboxes(self):
+        """
+        Create the checkboxes for the different focuses.
+        """
         # create container for checkboxes
         self.focus["checkbox_container"] = pygame_gui.elements.UIScrollingContainer(
-            scale(pygame.Rect((150, 450), (600, 800))), manager=MANAGER
+            scale(pygame.Rect((150, 520), (600, 800))), manager=MANAGER
         )
 
         enable = False
@@ -116,6 +132,7 @@ class WarriorDenScreen(Screens):
             if game.clan.clan_settings[code]:
                 box_type = "#checked_checkbox"
                 self.original_focus_code = code
+                self.active_code = code
             else:
                 box_type = "#unchecked_checkbox"
             self.focus_boxes[code] = UIImageButton(scale(pygame.Rect((0, n * 70), (68, 68))),
@@ -163,3 +180,55 @@ class WarriorDenScreen(Screens):
 
             if not enable:
                 self.focus_boxes[code].disable()
+
+    def create_top_info(self):
+        """
+        Create the top display text.
+        """
+        # delete previous created text if possible
+        if "current_focus" in self.focus_information:
+            self.focus_information["current_focus"].kill()
+        if "time" in self.focus_information:
+            self.focus_information["time"].kill()
+
+        # create the new info text
+        self.focus_information["current_focus"] = pygame_gui.elements.UITextBox(
+            f"<b>Current Focus:</b> {self.active_code}<br>" + settings_dict["clan_focus"][self.active_code][1],
+            scale(pygame.Rect((150, 145), (800, 80))),
+            wrap_to_height=True,
+            object_id=get_text_box_theme("#text_box_30"),
+            manager=MANAGER
+        )
+        last_change_text = "unknown"
+        next_change = "0 moons"
+        if game.clan.last_focus_change:
+            last_change_text = "moon " + str(game.clan.last_focus_change)
+            moons = game.clan.last_focus_change + game.config["focus"]["duration"] - game.clan.age
+            if moons == 1:
+                next_change = f"{moons} moon"
+            else:
+                next_change = f"{moons} moons"
+        self.focus_information["time"] = pygame_gui.elements.UITextBox(
+            f"<b>Last Change:</b><br>{last_change_text} (next change in {next_change})",
+            scale(pygame.Rect((150, 375), (600, 80))),
+            wrap_to_height=True,
+            object_id=get_text_box_theme("#text_box_30"),
+            manager=MANAGER
+        )
+
+    def create_side_info(self):
+        """
+        Creates the side information text.
+        """
+        # delete previous created text if possible
+        if "side_text" in self.focus_information:
+            self.focus_information["side_text"].kill()
+        
+        # create the new info text
+        self.focus_information["side_text"] = pygame_gui.elements.UITextBox(
+            f"<b>Selected information:</b><br>" + settings_dict["clan_focus"][self.active_code][1],
+            scale(pygame.Rect((750, 1000), (800, 80))),
+            wrap_to_height=True,
+            object_id=get_text_box_theme("#text_box_30"),
+            manager=MANAGER
+        )
