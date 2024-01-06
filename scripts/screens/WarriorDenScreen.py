@@ -1,6 +1,7 @@
 import pygame
 import pygame_gui
 import ujson
+from scripts.cat.cats import Cat
 
 from scripts.screens.Screens import Screens
 from scripts.game_structure.image_button import UIImageButton
@@ -38,6 +39,17 @@ class WarriorDenScreen(Screens):
             if event.ui_element in self.focus_boxes.values():
                 for code, value in self.focus_boxes.items():
                     if value == event.ui_element and value.object_ids[1] == "#unchecked_checkbox":
+
+                        # prevent to select focuses, which need special role
+                        description = settings_dict["clan_focus"][code][1]
+                        if "mediator" in description: 
+                            # only create the mediator list if needed to check
+                            mediator_list = list(filter(
+                                lambda x: x.status == "mediator" and not x.dead and not x.outside, Cat.all_cats_list
+                            ))
+                            if len(mediator_list) < 1:
+                                break
+
                         # un-switch the old checkbox
                         game.clan.switch_setting(self.active_code)
                         # switch the new checkbox
