@@ -164,12 +164,12 @@
         ],
         "hunting":[
             "hunting",
-            "The Clan will focus on hunting and will gain more prey on moonskip.",
+            "The Clan will focus on hunting, each working warrior (including deputy and leader) and each working apprentice will gather additional prey on moonskip.",
             false
         ],
         "herb gathering":[
             "herb gathering",
-            "The Clan will focus on herb gathering and will gain more herbs on moonskip.",
+            "The Clan will focus on herb gathering, each medicine cat and medicine cat apprentice will gather additional herbs on moonskip.",
             false
         ],
         "threaten outsiders": [

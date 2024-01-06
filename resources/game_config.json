@@ -296,8 +296,16 @@
 	},
 	"focus":{
 		"duration": 3,
-		"hunting":{},
-        "herb gathering" : {},
+		"hunting":{
+            "warrior": 2,
+            "apprentice": 1,
+            "comment": "Defines how much a working warrior(leader/deputy) or apprentice gathers additionally"
+        },
+        "herb gathering" : {
+            "med": 3,
+            "med_apprentice" : 2,
+            "comment": "Defines how much a working warrior(leader/deputy) or (apprentice) medicine cat gathers additionally"
+        },
         "threaten outsiders" : {},
         "seek outsiders" : {},
         "sabotage other clans" : {},

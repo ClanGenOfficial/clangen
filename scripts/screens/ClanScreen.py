@@ -71,11 +71,11 @@ class ClanScreen(Screens):
                     game.clan.clan_settings['den labels'] = True
                 self.update_buttons_and_text()
             if event.ui_element == self.med_den_label:
-                self.change_screen('med den screen')
+                self.change_screen('warrior den screen')
             else:
                 self.menu_button_pressed(event)
             if event.ui_element == self.clearing_label:
-                self.change_screen('warrior den screen')
+                self.change_screen('clearing screen')
             else:
                 self.menu_button_pressed(event)
         

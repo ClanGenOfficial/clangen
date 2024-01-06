@@ -7,6 +7,7 @@ TODO: Docs
 """
 
 # pylint: enable=line-too-long
+from collections import Counter
 import random
 import traceback
 
@@ -198,6 +199,7 @@ class Events:
         self.herb_gather()
 
         if game.clan.game_mode in ["expanded", "cruel season"]:
+            self.handle_focus()
             amount_per_med = get_amount_cat_for_one_medic(game.clan)
             med_fullfilled = medical_cats_condition_fulfilled(
                 Cat.all_cats.values(), amount_per_med)
@@ -205,7 +207,6 @@ class Events:
                 string = f"{game.clan.name}Clan does not have enough healthy medicine cats! Cats will be sick/hurt " \
                          f"for longer and have a higher chance of dying. "
                 game.cur_events_list.insert(0, Single_Event(string, "health"))
-            self.handle_focus()
         else:
             has_med = any(
                 str(cat.status) in {"medicine cat", "medicine cat apprentice"}
@@ -594,12 +595,73 @@ class Events:
         Focus which are not able to be handled here: (rest and recover)
         """
         # if no focus is selected, skip all other
+        focus_text = "This shouldn't show up, report a bug for the focus feature."
         if game.clan.clan_settings.get("business as usual"):
             return
         elif game.clan.clan_settings.get("hunting"):
-            print("do the hunting")
+            # handle warrior
+            healthy_meds = list(filter(
+                lambda c: c.status in ["warrior", "leader", "deputy"] and not c.dead
+                and not c.outside and not c.exiled and not c.not_working(),
+                Cat.all_cats.values()
+            ))
+            warrior_amount = len(healthy_meds) * game.config["focus"]["hunting"]["warrior"]
+
+            # handle apprentices
+            healthy_apprentices = list(filter(
+                lambda c: c.status == "apprentice" and not c.dead
+                and not c.outside and not c.exiled and not c.not_working(),
+                Cat.all_cats.values()
+            ))
+            app_amount = len(healthy_apprentices) * game.config["focus"]["hunting"]["apprentice"]
+            
+            # finish
+            total_amount = warrior_amount + app_amount
+            game.clan.freshkill_pile.add_freshkill(total_amount)
+            focus_text = f"With the additional focus of the Clan, {total_amount} prey was additionally gathered."
+            game.freshkill_event_list.append(focus_text)
+
         elif game.clan.clan_settings.get("herb gathering"):
-            print("do the herb gathering")
+            herbs_found = []
+
+            # handle medicine cats
+            healthy_meds = list(filter(
+                lambda c: c.status == "medicine cat" and not c.dead
+                and not c.outside and not c.exiled and not c.not_working(),
+                Cat.all_cats.values()
+            ))
+            med_amount = game.config["focus"]["herb gathering"]["med"]
+            for med in healthy_meds:
+                herbs_found.extend(random.sample(HERBS, k=med_amount))
+
+            # handle medicine cat apprentices
+            healthy_med_apps = list(filter(
+                lambda c: c.status == "medicine cat apprentice" and not c.dead
+                and not c.outside and not c.exiled and not c.not_working(),
+                Cat.all_cats.values()
+            ))
+            med_amount = game.config["focus"]["herb gathering"]["med_apprentice"]
+            for med in healthy_med_apps:
+                herbs_found.extend(random.sample(HERBS, k=med_amount))
+            
+            # finish
+            herb_amount = len(herbs_found)
+            herb_counter = Counter(herbs_found)
+            game.clan.herbs.update(herb_counter)
+            focus_text = f"With the additional focus of the Clan, the medicine cats gathered {herb_amount} herbs."
+            
+            log_text = "With the additional focus of the Clan, the medicine cats gathered: "
+            idx = 0
+            for herb, amount in herb_counter.items():
+                log_text += str(amount) + " " + herb.replace("_", " ")
+                idx += 1
+                if idx < len(herb_counter) - 1:
+                    log_text += ", "
+                elif idx < len(herb_counter):
+                    log_text += " and "
+            log_text += "."
+            game.herb_events_list.extend(log_text)
+
         elif game.clan.clan_settings.get("threaten outsiders"):
             print("do the threaten outsiders")
         elif game.clan.clan_settings.get("seek outsiders"):
@@ -612,6 +674,8 @@ class Events:
             print("do the raid other clans")
         elif game.clan.clan_settings.get("hoarding"):
             print("do the hoarding")
+
+        game.cur_events_list.insert(0, Single_Event(focus_text, "misc"))
 
     def handle_lost_cats_return(self):
         """
