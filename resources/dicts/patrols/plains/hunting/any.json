@@ -1240,7 +1240,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall it works out.",
+                "text": "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall, it works out.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"]
@@ -1459,7 +1459,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall it works out.",
+                "text": "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall, it works out.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"],
@@ -2178,7 +2178,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "With a massive yowl, r_c charges the fox. It bares its teeth, unwilling to give up its hard won prey without a fight, and one wrong step puts r_c's pelt in range of those little jaws, as the small kit fox tries to live up to the reputation of its bigger and stronger relatives.",
+                "text": "With a massive yowl, r_c charges the fox. It bares its teeth, unwilling to give up its hard-won prey without a fight, and one wrong step puts r_c's pelt in range of those little jaws, as the small kit fox tries to live up to the reputation of its bigger and stronger relatives.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -2260,12 +2260,12 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "Terrified beyond sense, {PRONOUN/app1/subject} {VERB/app1/freeze/freezes} - and the massive fox sees {PRONOUN/app1/object}. It paces closer, giving app1 a heartstopping view of its distorted stretched legs and giant gaping mouth, gathering itself, before in one might spring, it - crashes past app1 and into the grass. Bobbing back up with a mouse, it makes eye contact with the shivering apprentice, before loping off.",
+                "text": "Terrified beyond sense, {PRONOUN/app1/subject} {VERB/app1/freeze/freezes} - and the massive fox sees {PRONOUN/app1/object}. It paces closer, giving app1 a heart-stopping view of its distorted stretched legs and giant gaping mouth, gathering itself, before in one might spring, it - crashes past app1 and into the grass. Bobbing back up with a mouse, it makes eye contact with the shivering apprentice, before loping off.",
                 "exp": 25,
                 "weight": 20
             },
             {
-                "text": "app1 crouches to the rock, but it's too late - the fox has seen {PRONOUN/app1/object}. {PRONOUN/app1/subject/CAP} {VERB/app1/freeze/freezes} in terror, already sure {PRONOUN/app1/subject} can't out run the horrifically lengthened legs, sure that at any moment {PRONOUN/app1/subject}'ll be ripped apart and silently begging StarClan to save {PRONOUN/app1/object}. The closer the fox gets, the more gigantic it's revealed to be, and it stares down at app1 on the rock, it's head bigger than {PRONOUN/app1/poss} entire body. Only to move on, without a sound.",
+                "text": "app1 crouches to the rock, but it's too late - the fox has seen {PRONOUN/app1/object}. {PRONOUN/app1/subject/CAP} {VERB/app1/freeze/freezes} in terror, already sure {PRONOUN/app1/subject} can't outrun the horrifically lengthened legs, sure that at any moment {PRONOUN/app1/subject}'ll be ripped apart and silently begging StarClan to save {PRONOUN/app1/object}. The closer the fox gets, the more gigantic it's revealed to be, and it stares down at app1 on the rock, it's head bigger than {PRONOUN/app1/poss} entire body. Only to move on, without a sound.",
                 "exp": 25,
                 "weight": 5
             },
@@ -2287,7 +2287,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Terror gives app1 strength, and the don't stop running until {PRONOUN/app1/poss} back in camp, gasping about the grassland monster {PRONOUN/app1/subject} saw.",
+                "text": "Terror gives app1 strength, and they don't stop running until {PRONOUN/app1/poss} back in camp, gasping about the grassland monster {PRONOUN/app1/subject} saw.",
                 "exp": 0,
                 "weight": 20
             },
@@ -2311,12 +2311,7 @@
                 "text": "Terror freezes s_c as the massive fox sees {PRONOUN/s_c/object}, and comes to investigate, its distorted stretched legs carrying it smoothly through the grass. As the massive nose, as big as app1's entire head, wuffles closer, app1 desperately swipes {PRONOUN/s_c/poss} claws. {PRONOUN/s_c/poss/CAP} screw {PRONOUN/s_c/poss} eyes shut at the outraged yelp, and feel {PRONOUN/s_c/self} being taken up and tossed by those gaping jaws. {PRONOUN/s_c/subject/CAP} {VERB/s_c/tense/tenses}, waiting for death to descend, and wait, and... waiting?",
                 "exp": 0,
                 "weight": 10,
-                "stat_trait": [
-                    "nervious",
-                    "insecure",
-                    "grumpy",
-                    "calm"
-                ],
+                "stat_trait": ["nervous", "insecure", "grumpy", "calm"],
                 "injury": [
                     {
                         "cats": ["app1"],
@@ -2395,7 +2390,7 @@
                 ]
             },
             {
-                "text": "The rumours are true - it seems to mostly be hunting for tiny mouse prey, not large things, despite it's massive size. This must be a maned wolf, and just being able to name the odd thing makes it feel so much less threatening. The cats remind each other of the tales sometimes shared in the nursery, of the tallest predator on the plains being one of the shyest.",
+                "text": "The rumors are true - it seems to mostly be hunting for tiny mouse prey, not large things, despite its massive size. This must be a maned wolf, and just being able to name the odd thing makes it feel so much less threatening. The cats remind each other of the tales sometimes shared in the nursery, of the tallest predator on the plains being one of the shyest.",
                 "exp": 25,
                 "weight": 5,
                 "relationships": [
@@ -2492,7 +2487,7 @@
                 ]
             },
             {
-                "text": "s_c's stressed nerves can't handle this weird monster, and {PRONOUN/s_c/subject} {VERB/s_c/beg/begs} to go back homeinstead of confronting it.",
+                "text": "s_c's stressed nerves can't handle this weird monster, and {PRONOUN/s_c/subject} {VERB/s_c/beg/begs} to go back home instead of confronting it.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["childish", "nervous"],
@@ -2533,7 +2528,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "Looking out over {PRONOUN/p_l/poss} full six cat patrol, p_l decides it's worth it. The cats fall into battle, decending onto the maned wolf and battering it, using teamwork to pull at its long legs and fox tail, as the wolf turns in skipping circles, yelping. It flees before them, leaving the triumphant cats with a single mouse for all that effort. Great.",
+                "text": "Looking out over {PRONOUN/p_l/poss} full six cat patrol, p_l decides it's worth it. The cats fall into battle, descending onto the maned wolf and battering it, using teamwork to pull at its long legs and fox tail, as the wolf turns in skipping circles, yelping. It flees before them, leaving the triumphant cats with a single mouse for all that effort. Great.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["small"],
@@ -2548,7 +2543,7 @@
                 ]
             },
             {
-                "text": "With a sigh, p_l recognises that having a maned wolf poaching from c_n's hunting grounds will become a problem pretty quickly. {PRONOUN/p_l/poss/CAP} six cat patrol might be the best way to solve the problem before it begins. All the cats, tense and ready, wait to ambush the wolf as it hunts, and manage to drive it out of the territory before it manages to catch more than a mouse. The stolen mouse is returned to c_n's fresh-kill pile, where it belongs.",
+                "text": "With a sigh, p_l recognizes that having a maned wolf poaching from c_n's hunting grounds will become a problem pretty quickly. {PRONOUN/p_l/poss/CAP} six cat patrol might be the best way to solve the problem before it begins. All the cats, tense and ready, wait to ambush the wolf as it hunts, and manage to drive it out of the territory before it manages to catch more than a mouse. The stolen mouse is returned to c_n's fresh-kill pile, where it belongs.",
                 "exp": 30,
                 "weight": 5,
                 "prey": ["small"],
@@ -2563,7 +2558,7 @@
                 ]
             },
             {
-                "text": "While {PRONOUN/s_c/subject}'d hardly expected to need {PRONOUN/s_c/poss} skills on a hunting patrol, s_c is able to set up an excellent battle plan. It's only halfway through ambushing the beast that the patrol realises its a maned wolf, which makes {PRONOUN/s_c/poss} job inifinitely easier, as {PRONOUN/s_c/subject} {VERB/s_c/drive/drives} away the timid predator from c_n territory with enough time left over to bring a mouse or two back for the fresh-kill pile before sundown.",
+                "text": "While {PRONOUN/s_c/subject}'d hardly expected to need {PRONOUN/s_c/poss} skills on a hunting patrol, s_c is able to set up an excellent battle plan. It's only halfway through ambushing the beast that the patrol realizes it's a maned wolf, which makes {PRONOUN/s_c/poss} job infinitely easier, as {PRONOUN/s_c/subject} {VERB/s_c/drive/drives} away the timid predator from c_n territory with enough time left over to bring a mouse or two back for the fresh-kill pile before sundown.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1", "FIGHTER,1"],
@@ -2581,7 +2576,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Looking out over {PRONOUN/p_l/poss} full six cat patrol, p_l decides it's worth it. The cats fall into battle, decending onto the maned wolf and battering it, using teamwork to pull at its long legs and fox tail, as the wolf turns in skipping circles, yelping. It flees before them, leaving the triumphant cats with... a fruit? All that effort for a sodding useless fruit?!",
+                "text": "Looking out over {PRONOUN/p_l/poss} full six cat patrol, p_l decides it's worth it. The cats fall into battle, descending onto the maned wolf and battering it, using teamwork to pull at its long legs and fox tail, as the wolf turns in skipping circles, yelping. It flees before them, leaving the triumphant cats with... a fruit? All that effort for a sodding useless fruit?!",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2596,7 +2591,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "With a full patrol, it's possible to take on something the size of a maned wolf, especially when it has the bravery of a deer fawn - but not when s_c attacks with so little forethought, not when the rest of the patrol has to come save {PRONOUN/s_c/poss} tail. {PRONOUN/s_c/subject/CAP} {VERB/s_c/retreat/retreats}, as the inceased maned wolf snarls and the rest of the patrol tries not to do the same at s_c.",
+                "text": "With a full patrol, it's possible to take on something the size of a maned wolf, especially when it has the bravery of a deer fawn - but not when s_c attacks with so little forethought, not when the rest of the patrol has to come save {PRONOUN/s_c/poss} tail. {PRONOUN/s_c/subject/CAP} {VERB/s_c/retreat/retreats}, as the increased maned wolf snarls and the rest of the patrol tries not to do the same at s_c.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -2621,7 +2616,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "Looking out over {PRONOUN/r_c/poss} full six cat patrol, p_l decides it's worth it. The cats fall into battle, decending onto the maned wolf and battering it, but a kick from a flailing long leg sends cats flying, and the wolf manages to whirl to sink its teeth into r_c.",
+                "text": "Looking out over {PRONOUN/r_c/poss} full six cat patrol, p_l decides it's worth it. The cats fall into battle, descending onto the maned wolf and battering it, but a kick from a flailing long leg sends cats flying, and the wolf manages to whirl to sink its teeth into r_c.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -2644,7 +2639,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "With a full patrol, it's possible to take on something the size of a maned wolf, especially when it has the bravery of a deer fawn - but not when s_c attacks with so little forethought, not when the rest of the patrol has to come save {PRONOUN/s_c/poss} tail. s_c gets grabbed by those dangerous jaws, and while the patrol is able to mob the wolf until it lets {PRONOUN/s_c/subject} go, its a serious wound.",
+                "text": "With a full patrol, it's possible to take on something the size of a maned wolf, especially when it has the bravery of a deer fawn - but not when s_c attacks with so little forethought, not when the rest of the patrol has to come save {PRONOUN/s_c/poss} tail. s_c gets grabbed by those dangerous jaws, and while the patrol is able to mob the wolf until it lets {PRONOUN/s_c/subject} go, it's a serious wound.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [

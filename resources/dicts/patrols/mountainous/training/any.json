@@ -14,7 +14,7 @@
         },
         "weight": 20,
         "intro_text": "The patrol wants to hold a training session for app1. They decide to focus on how best to leap up a rocky cliff.",
-        "decline_text": "They decide to focus on the patrolling the territory instead. Training can wait for another day.",
+        "decline_text": "They decide to focus on patrolling the territory instead. Training can wait for another day.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -311,7 +311,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The cats try to find enough rubble to barricade the opening to the sett, but the area is pretty bare. Before they know it they're tired, thirsty, and returning home with nothing to show for it.",
+                "text": "The cats try to find enough rubble to barricade the opening to the sett, but the area is pretty bare. Before they know it, they're tired, thirsty, and returning home with nothing to show for it.",
                 "exp": 0,
                 "weight": 20
             },
@@ -335,7 +335,7 @@
                 ]
             },
             {
-                "text": "As the patrol is sniffing around the burrow entrance there's a clatter of rocks. It's difficult to say who's more surprised - cats or badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process but everyone gets home safe in the end... including the badger.",
+                "text": "As the patrol is sniffing around the burrow entrance there's a clatter of rocks. It's difficult to say who's more surprised - the cats or the badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process but everyone gets home safe in the end... including the badger.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1289,7 +1289,7 @@
                 ]
             },
             {
-                "text": "app2 emerges from the dark, trotting up to app1 and asking why they wanted to meet there. app1 looks away with a purr, making up some nonsense about fight training that makes no sense. Instead both apprentices hang out under the stars, awkward and thrilled.",
+                "text": "app2 emerges from the dark, trotting up to app1 and asking why they wanted to meet there. app1 looks away with a purr, making up some nonsense about fight training that makes no sense. Instead, both apprentices hang out under the stars, awkward and thrilled.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -1360,6 +1360,149 @@
         ]
     },
     {
+        "patrol_id": "mtn_train_songsgift_storylocked1",
+        "biome": ["mountainous"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [1, 5],
+            "normal adult": [1, 5]
+        },
+        "weight": 30,
+        "intro_text": "While scrambling down the mountain slope, app1 is suddenly brought to a halt by p_l's tail swung out in front of {PRONOUN/app1/poss} chest. Not a step further - there's a mushroom circle, right in front of {PRONOUN/app1/object}, and you don't want to tempt the moss cats unless you truly need their help.",
+        "decline_text": "app1 shrugs, and does as {PRONOUN/app1/subject}{VERB/app1/'re/'s} told, without any curiousity.",
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,0"],
+        "success_outcomes": [
+            {
+                "text": "Alright, gather round. p_l is here to tell the cats on the patrol an old story, an ancient, worn thin tale of the loners who come at the call of any who sleep in a circle of mushrooms, cats with metal shards in their eyes and moss growing among their fur, unnatural loners with the power to grant protection - or vengance.",
+                "exp": 30,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["platonic"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "It's old supersition, p_l explains. The moss-pelted cats called by these circles are powerful - but brutal. If their summoner has rogue-thoughts, the moss cats will open their maws, glistening metal teeth ready to take vengence on cats who break their word and hold cowardice in their hearts. Not that app1 would ever earn their ire, of course.",
+                "exp": 30,
+                "weight": 10,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["platonic"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Scoffing, app1 steps straight into the circle of mushroom - these aren't even poisonous, app1 doesn't know what p_l is on about. But something about this place makes {PRONOUN/app1/poss} pelt prickle and stand on end, for all {PRONOUN/app1/poss} bravado.",
+                "exp": 0,
+                "weight": 20,              
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "{PRONOUN/app1/subject/CAP} feel... watched, as {PRONOUN/app1/subject} {VERB/app1/strut/struts} across the mushroom circle, deliberately proving that p_l's full of fox-dung. It's just a <i>circle</i>, it's just a <i>stupid circle</i>. But app1 won't sleep easy - this night, or the nights to come.",
+                "exp": 0,
+                "weight": 20,
+                "injury": [
+                    {
+                                "cats": ["app1"],
+                                "injuries": ["constant nightmares"],
+                                "scars": [],
+                                "no_results": false
+                    }
+                ],                    
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": -10
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "patrol_id": "mtn_train_sunset1",
         "biome": ["mountainous"],
         "season": ["Any"],
@@ -1378,7 +1521,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "The cats go out together in the late of the day, as the mountains catch the last of the light. r_c goes through their tricks, showing p_l how they shift their balance to make less noise on unstable scree slopes, as p_l watches with eyes that r_c notices are a bit too admiring for what's just a little trick. They smirk, showing off a little.",
+                "text": "The cats go out together later in the day, as the mountains catch the last of the light. r_c goes through their tricks, showing p_l how they shift their balance to make less noise on unstable scree slopes, as p_l watches with eyes that r_c notices are a bit too admiring for what's just a little trick. They smirk, showing off a little.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
@@ -1392,7 +1535,7 @@
                 ]
             },
             {
-                "text": "It's a long but satisfying training session, with both cats having an in depth chance to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching them instead of the sun, and smiles.",
+                "text": "It's a long but satisfying training session, with both cats having an in-depth chance to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching them instead of the sun, and smiles.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -1913,6 +2056,70 @@
         ]
     },
     {
+        "patrol_id": "mtn_train_arguingromance1",
+        "biome": ["mountainous"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": ["romantic", "pos_jealousy"],
+        "patrol_art": "train_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "As p_l hops up on a fallen log to sharpen {PRONOUN/p_l/poss} claws for a training session, {PRONOUN/p_l/subject} find r_c doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c/object}. While Clanmates will do better training together, r_c just rubs {PRONOUN/p_l/subject} the wrong way.",
+        "decline_text": "...It's fine to train somewhere else, p_l decides. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} really want to interact with r_c.",
+        "chance_of_success": 60,
+        "relationship_constraint": ["dislike_10"],
+        "success_outcomes": [
+            {
+                "text": "r_c shows {PRONOUN/p_l/object} a stunningly successful move {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been working on to rapidly change directions on wet rock, and p_l can't let {PRONOUN/p_l/self} look bad in comparison, showing off {PRONOUN/p_l/poss} battle-back-flip with a smug smirk.",
+                "exp": 15,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "r_c shows off how far {PRONOUN/r_c/subject} can pounce, which means p_l shows off how fast {PRONOUN/p_l/subject} can run, which means r_c shows off how sharp {PRONOUN/r_c/poss} claws are, which means p_l shows off how shiny {PRONOUN/p_l/poss} pelt is, which means r_c shows off how long {PRONOUN/r_c/poss} legs are, which means p_l shows off how cool {PRONOUN/p_l/poss} scars are - this goes on all afternoon.",
+                "exp": 15,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "dislike"],
+                        "amount": 10
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Both warriors are stiffly polite with each other, and it's a boring and completely unproductive afternoon, though maybe r_c isn't quite the thorn in {PRONOUN/p_l/poss} paw p_l thought {PRONOUN/r_c/subject} {VERB/r_c/were/was}.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "dislike"],
+                        "amount": -10
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "patrol_id": "mtn_train_kea1",
         "biome": ["mountainous"],
         "season": ["Any"],
@@ -1926,7 +2133,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "As app1 follows p_l on a training patrol to learn the territory, there's a muffled thump behind them. They whirl around, finding a beady black eye and huge beak far far too close to them.",
+        "intro_text": "As app1 follows p_l on a training patrol to learn the territory, there's a muffled thump behind them. They whirl around, finding a beady black eye and huge beak far too close to them.",
         "decline_text": "Thinking better of it, the cats try to hunt instead.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -1977,7 +2184,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 screeches, and the kea shrieks back, an huge explosion of noise and feathers. Later, p_l tells app1 they're lucky the bird was entertained rather than scared or offended. Entertained?!?",
+                "text": "app1 screeches, and the kea shrieks back, a huge explosion of noise and feathers. Later, p_l tells app1 they're lucky the bird was entertained rather than scared or offended. Entertained?!?",
                 "exp": 0,
                 "weight": 20
             }
