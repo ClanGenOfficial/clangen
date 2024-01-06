@@ -21,6 +21,7 @@ class WarriorDenScreen(Screens):
         self.focus_boxes = {}
         self.focus = {}
         self.back_button = None
+        self.save_button = None
 
     def handle_event(self, event):
         """
@@ -37,17 +38,20 @@ class WarriorDenScreen(Screens):
                     if value == event.ui_element and value.object_ids[1] == "#unchecked_checkbox":
                         game.clan.switch_setting(key)
                         active_key = key
-                        self.settings_changed = True
+                        self.save_button.enable()
                         self.refresh_checkboxes()
                         break
-
                 # un-switch all other keys
                 for key, value in self.focus_boxes.items():
                     if active_key and key != active_key and value.object_ids[1] == "#checked_checkbox":
                         game.clan.switch_setting(key)
-                        self.settings_changed = True
                         self.refresh_checkboxes()
                         break
+
+            elif event.ui_element == self.save_button:
+                game.clan.last_focus_change = game.clan.age
+                self.save_button.disable()
+                self.refresh_checkboxes()
 
     def screen_switches(self):
         """
@@ -56,6 +60,9 @@ class WarriorDenScreen(Screens):
         self.hide_menu_buttons()
         self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))), "", object_id="#back_button"
                                          , manager=MANAGER)
+        self.save_button = UIImageButton(scale(pygame.Rect((150, 1200), (228, 60))), "", object_id="#save_button"
+                                         , manager=MANAGER)
+        self.save_button.disable()
         self.create_checkboxes()
 
     def exit_screen(self):
@@ -63,6 +70,7 @@ class WarriorDenScreen(Screens):
         Handles to delete everything when the screen is switched to another one.
         """
         self.back_button.kill()
+        self.save_button.kill()
         self.delete_checkboxes()
 
     def delete_checkboxes(self):
@@ -76,16 +84,20 @@ class WarriorDenScreen(Screens):
     def create_checkboxes(self):
         # create container for checkboxes
         self.focus["checkbox_container"] = pygame_gui.elements.UIScrollingContainer(
-            scale(pygame.Rect((150, 450), (600, 1000))), manager=MANAGER
+            scale(pygame.Rect((150, 450), (600, 800))), manager=MANAGER
         )
-                
+
+        enable = False
+        if not game.clan.last_focus_change or game.clan.last_focus_change + game.config["focus"]["duration"] <= game.clan.age:
+            enable = True
+
         n = 0
         for code, desc in settings_dict["clan_focus"].items():
             # create text next to checkboxes
             x_val = 110
             self.focus[code] = pygame_gui.elements.UITextBox(
                 desc[0],
-                scale(pygame.Rect((x_val, n * 70), (1000, 78))),
+                scale(pygame.Rect((x_val, n * 70), (300, 90))),
                 container=self.focus["checkbox_container"],
                 object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
                 manager=MANAGER)
@@ -95,24 +107,20 @@ class WarriorDenScreen(Screens):
                 box_type = "#checked_checkbox"
             else:
                 box_type = "#unchecked_checkbox"
-                
-            disabled = False
-            x_val = 20
-                
-            self.focus_boxes[code] = UIImageButton(scale(pygame.Rect((x_val, n * 70), (68, 68))),
+            self.focus_boxes[code] = UIImageButton(scale(pygame.Rect((0, n * 70), (68, 68))),
                 "",
                 object_id=box_type,
                 container=self.focus["checkbox_container"],
                 tool_tip_text=desc[1])
-            
-            if disabled:
+
+            if not enable:
                 self.focus_boxes[code].disable()
 
             n += 1
-        
+
         # create scrollbar
         self.focus["checkbox_container"].set_scrollable_area_dimensions(
-            (400 / 1600 * screen_x, (n * 60 + x_val + 40) / 1000 * screen_y)
+            (450 / 1600 * screen_x, (n * 72 + x_val) / 1600 * screen_y)
         )
 
     def refresh_checkboxes(self):
@@ -124,27 +132,23 @@ class WarriorDenScreen(Screens):
             checkbox.kill()
         self.focus_boxes = {}
 
+        enable = False
+        if not game.clan.last_focus_change or game.clan.last_focus_change + game.config["focus"]["duration"] <= game.clan.age:
+            enable = True
+
         n = 0
         for code, desc in settings_dict["clan_focus"].items():
             if game.clan.clan_settings[code]:
                 box_type = "#checked_checkbox"
             else:
                 box_type = "#unchecked_checkbox"
-                
-            # Handle nested
-            disabled = False
-            x_val = 20
-            if len(desc) == 4 and isinstance(desc[3], list):
-                x_val += 50
-                disabled = game.clan.clan_settings.get(desc[3][0], not desc[3][1]) != desc[3][1]
-                
-            self.focus_boxes[code] = UIImageButton(scale(pygame.Rect((x_val, n * 70), (68, 68))),
+
+            self.focus_boxes[code] = UIImageButton(scale(pygame.Rect((0, n * 70), (68, 68))),
                 "",
                 object_id=box_type,
                 container=self.focus["checkbox_container"],
                 tool_tip_text=desc[1])
-            
-            if disabled:
-                self.focus_boxes[code].disable()
-
             n += 1
+
+            if not enable:
+                self.focus_boxes[code].disable()
