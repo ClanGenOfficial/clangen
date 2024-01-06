@@ -156,51 +156,58 @@
             false
         ]
     },
-	"clan_focus":{
+    "clan_focus":{
+        "business as usual":[
+            "business as usual",
+            "The Clan has no specific focus and doesn't get any bonuses.",
+            true
+        ],
         "hunting":[
             "hunting",
             "The Clan will focus on hunting and will gain more prey on moonskip.",
             false
         ],
-        "herbs":[
-            "herbs",
+        "herb gathering":[
+            "herb gathering",
             "The Clan will focus on herb gathering and will gain more herbs on moonskip.",
             false
         ],
-        "clan meditation": [
-            "clan meditation",
-            "The mediator keeps contact with other clans and improves/worsen the relationship with them.",
-            false,
-            [
-                "hostility",
-                false
-            ]
+        "threaten outsiders": [
+            "threaten outsiders",
+            "The relationship with cats outside of the Clan decreases.",
+            false
         ],
-        "outsider meditation": [
-            "outsider meditation",
-            "The mediator keeps contact with the cats outside of the clan and improves/worsen the relationship with them.",
-            false,
-            [
-                "hostility",
-                false
-            ]
+        "seek outsiders": [
+            "seek outsiders",
+            "The relationship with cats outside of the Clan increases.",
+            false
         ],
         "rest and recover":[
             "rest and recover",
             "The Clan will work more safely and therefore the rate of injuries and illnesses will decrease.",
             false
         ],
-        "hording":[
-            "hording",
-            "The Clan will be focusing on prey and herbs, gathering more each moonskip, but injuries and illnesses will increase.",
+        "sabotage other clans": [
+            "sabotage other clans",
+            "The relationship with other Clan decreases, only available with a mediator.",
             false
         ],
-        "no focus":[
-            "no focus",
-            "The Clan has no specific focus and doesn't get any bonus.",
-            true
+        "aid other clans": [
+            "aid other clans",
+            "The relationship with other Clan increases, only available with a mediator.",
+            false
+        ],
+        "raid other clans": [
+            "raid other clans",
+            "Prey and herbs will greatly increase each moonskip, but injuries and illnesses will increase and the relationship with other Clans decrease.",
+            false
+        ],
+        "hording":[
+            "hording",
+            "Prey and herbs will increase each moonskip, but injuries and illnesses will also increase.",
+            false
         ]
-	},
+    },
     "..": "these are special. they do not have a display name or a tooltip",
     "__other": {
         "show dead relation": [

@@ -143,6 +143,7 @@ class Clan():
         all_settings.append(_settings['role'])
         all_settings.append(_settings['relation'])
         all_settings.append(_settings['freshkill_tactics'])
+        all_settings.append(_settings['clan_focus'])
 
         for setting in all_settings:  # Add all the settings to the settings dictionary
             for setting_name, inf in setting.items():

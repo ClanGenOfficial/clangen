@@ -75,7 +75,7 @@ class ClanScreen(Screens):
             else:
                 self.menu_button_pressed(event)
             if event.ui_element == self.clearing_label:
-                self.change_screen('clearing screen')
+                self.change_screen('warrior den screen')
             else:
                 self.menu_button_pressed(event)
         

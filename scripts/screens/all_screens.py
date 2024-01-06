@@ -25,6 +25,7 @@ from .OutsideClanScreen import OutsideClanScreen
 from .MediationScreen import MediationScreen
 from .ClanSettingsScreen import ClanSettingsScreen
 from .ClearingScreen import ClearingScreen
+from .WarriorDenScreen import WarriorDenScreen
 
 # ---------------------------------------------------------------------------- #
 #                                  UI RULES                                    #
@@ -68,7 +69,7 @@ starclan_screen = StarClanScreen('starclan screen')
 df_screen = DFScreen('dark forest screen')
 med_den_screen = MedDenScreen('med den screen')
 freshkill_pile_screen = ClearingScreen('clearing screen')
-
+warrior_den_screen = WarriorDenScreen('warrior den screen')
 
 events_screen = EventsScreen('events screen')
 
