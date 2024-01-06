@@ -52,7 +52,7 @@ class Events:
 
     def one_moon(self):
         """
-        TODO: DOCS
+        Handles the moon skipping of the whole Clan.
         """
         game.cur_events_list = []
         game.herb_events_list = []
@@ -94,7 +94,7 @@ class Events:
             if game.clan.age >= 5:
                 Freshkill_Events.handle_amount_freshkill_pile(game.clan.freshkill_pile, relevant_cats)
             self.get_moon_freshkill()
-			# make a notification if the Clan has not enough prey
+            # make a notification if the Clan has not enough prey
             if FRESHKILL_EVENT_ACTIVE and not game.clan.freshkill_pile.clan_has_enough_food():
                 event_string = f"{game.clan.name}Clan doesn't have enough prey for next moon!"
                 game.cur_events_list.insert(0, Single_Event(event_string))
@@ -205,6 +205,7 @@ class Events:
                 string = f"{game.clan.name}Clan does not have enough healthy medicine cats! Cats will be sick/hurt " \
                          f"for longer and have a higher chance of dying. "
                 game.cur_events_list.insert(0, Single_Event(string, "health"))
+            self.handle_focus()
         else:
             has_med = any(
                 str(cat.status) in {"medicine cat", "medicine cat apprentice"}
@@ -577,6 +578,40 @@ class Events:
             chosen_event = random.choice(possible_events)
             game.cur_events_list.append(Single_Event(chosen_event, "health"))
             game.herb_events_list.append(chosen_event)
+
+    def handle_focus(self):
+        """
+        This function should be called late in the 'one_moon' function and handles all focuses which are possible to handle here:
+            - business as usual
+            - hunting
+            - herb gathering
+            - threaten outsiders
+            - seek outsiders
+            - sabotage other clans
+            - aid other clans
+            - raid other clans
+            - hoarding
+        Focus which are not able to be handled here: (rest and recover)
+        """
+        # if no focus is selected, skip all other
+        if game.clan.clan_settings.get("business as usual"):
+            return
+        elif game.clan.clan_settings.get("hunting"):
+            print("do the hunting")
+        elif game.clan.clan_settings.get("herb gathering"):
+            print("do the herb gathering")
+        elif game.clan.clan_settings.get("threaten outsiders"):
+            print("do the threaten outsiders")
+        elif game.clan.clan_settings.get("seek outsiders"):
+            print("do the seek outsiders")
+        elif game.clan.clan_settings.get("sabotage other clans"):
+            print("do the sabotage other clans")
+        elif game.clan.clan_settings.get("aid other clans"):
+            print("do the aid other clans")
+        elif game.clan.clan_settings.get("raid other clans"):
+            print("do the raid other clans")
+        elif game.clan.clan_settings.get("hoarding"):
+            print("do the hoarding")
 
     def handle_lost_cats_return(self):
         """
@@ -1686,8 +1721,6 @@ class Events:
             triggered_death = Condition_Events.handle_injuries(cat, other_cat, alive_kits, game.clan.war.get("at_war", False),
                                                                     enemy_clan, game.clan.current_season)
             return triggered_death
-
-        
 
     def handle_murder(self, cat):
         ''' Handles murder '''

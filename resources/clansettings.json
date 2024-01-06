@@ -202,8 +202,8 @@
             "Prey and herbs will greatly increase each moonskip, but injuries and illnesses will increase and the relationship with other Clans decrease.",
             false
         ],
-        "hording":[
-            "hording",
+        "hoarding":[
+            "hoarding",
             "Prey and herbs will increase each moonskip, but injuries and illnesses will also increase.",
             false
         ]

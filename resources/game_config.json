@@ -295,7 +295,15 @@
 		"min_graduating_age": 10
 	},
 	"focus":{
-		"duration": 3
+		"duration": 3,
+		"hunting":{},
+        "herb gathering" : {},
+        "threaten outsiders" : {},
+        "seek outsiders" : {},
+        "sabotage other clans" : {},
+        "aid other clans" : {},
+        "raid other clans" : {},
+        "hoarding" : {}
 	},
 	"save_load": {
 		"load_integrity_checks": true

@@ -1,12 +1,11 @@
 import pygame
 import pygame_gui
 import ujson
-from scripts.cat.cats import Cat
 
+from scripts.cat.cats import Cat
 from scripts.screens.Screens import Screens
 from scripts.game_structure.image_button import UIImageButton
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
-
 from scripts.utility import scale, get_text_box_theme
 
 with open('resources/clansettings.json', 'r', encoding='utf-8') as f:
