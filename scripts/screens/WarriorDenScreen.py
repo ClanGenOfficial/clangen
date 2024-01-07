@@ -12,6 +12,7 @@ from scripts.utility import get_med_cats, scale, get_text_box_theme
 with open('resources/clansettings.json', 'r', encoding='utf-8') as f:
     settings_dict = ujson.load(f)
 
+
 class WarriorDenScreen(Screens):
     """
     The screen to change the focus of the Clan, which gives bonuses.
@@ -56,7 +57,7 @@ class WarriorDenScreen(Screens):
                     if value == event.ui_element and value.object_ids[1] == "#unchecked_checkbox":
                         # prevent to select focuses, which need special role
                         description = settings_dict["clan_focus"][code][1]
-                        if "mediator" in description: 
+                        if "mediator" in description:
                             # only create the mediator list if needed to check
                             mediator_list = list(filter(
                                 lambda x: x.status == "mediator" and not x.dead and not x.outside, Cat.all_cats_list
@@ -74,8 +75,8 @@ class WarriorDenScreen(Screens):
                         game.clan.switch_setting(code)
                         self.active_code = code
                         # only enable the save button if a focus switch is possible
-                        if not game.clan.last_focus_change or\
-                            game.clan.last_focus_change + game.config["focus"]["duration"] <= game.clan.age:
+                        if not game.clan.last_focus_change or \
+                                game.clan.last_focus_change + game.config["focus"]["duration"] <= game.clan.age:
                             self.save_button.enable()
                         # deactivate save button if the focus didn't change
                         if self.active_code == self.original_focus_code and self.save_button.is_enabled:
@@ -101,12 +102,40 @@ class WarriorDenScreen(Screens):
         self.hide_menu_buttons()
         self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))), "", object_id="#back_button"
                                          , manager=MANAGER)
+        self.help_button = UIImageButton(scale(pygame.Rect(
+            (1450, 50), (68, 68))),
+            "",
+            object_id="#help_button", manager=MANAGER,
+            tool_tip_text="This screen allows you to manage your warriors more effectively! You can give them a "
+                          "specific focus, which will provide some benefits (and possibly some negatives) to your "
+                          "clan.  Click on each focus to see a description of what they will do.  Focuses that target "
+                          "other clans will allow you to choose which clans you target.  Your focus can only be "
+                          "changed every 3 moons, so choose carefully.",
+
+        )
+
+        self.focus_frame = pygame_gui.elements.UIImage(scale(pygame.Rect
+                                                             ((100, 380), (1400, 920))),
+                                                       pygame.image.load(
+                                                           "resources/images/warrior_den_frame.png").convert_alpha(),
+                                                       manager=MANAGER)
+
         self.save_button = UIImageButton(scale(pygame.Rect((150, 1250), (228, 60))), "", object_id="#save_button"
                                          , manager=MANAGER)
         self.save_button.disable()
         self.create_checkboxes()
         self.create_top_info()
         self.create_side_info()
+        self.update_visual()
+
+    def update_visual(self):
+        if not self.base_image:
+            self.focus_frame = pygame_gui.elements.UIImage(scale(pygame.Rect
+                                                                 ((886, 170), (524, 692))),
+                                                           pygame.image.load(
+                                                               "resources/images/warrior_den/base_image.png").convert_alpha(),
+                                                           manager=MANAGER)
+
 
     def exit_screen(self):
         """
@@ -165,10 +194,10 @@ class WarriorDenScreen(Screens):
             else:
                 box_type = "#unchecked_checkbox"
             self.focus_boxes[code] = UIImageButton(scale(pygame.Rect((0, n * 70), (68, 68))),
-                "",
-                object_id=box_type,
-                container=self.focus["checkbox_container"],
-                tool_tip_text=desc[1])
+                                                   "",
+                                                   object_id=box_type,
+                                                   container=self.focus["checkbox_container"],
+                                                   tool_tip_text=desc[1])
             n += 1
 
         # create scrollbar
@@ -193,10 +222,10 @@ class WarriorDenScreen(Screens):
                 box_type = "#unchecked_checkbox"
 
             self.focus_boxes[code] = UIImageButton(scale(pygame.Rect((0, n * 70), (68, 68))),
-                "",
-                object_id=box_type,
-                container=self.focus["checkbox_container"],
-                tool_tip_text=desc[1])
+                                                   "",
+                                                   object_id=box_type,
+                                                   container=self.focus["checkbox_container"],
+                                                   tool_tip_text=desc[1])
             n += 1
 
     def create_top_info(self):
@@ -218,7 +247,7 @@ class WarriorDenScreen(Screens):
             if len(game.clan.clans_in_focus) == 2:
                 desc += f"{game.clan.clans_in_focus[0]}clan and {game.clan.clans_in_focus[1]}clan"
             elif len(game.clan.clans_in_focus) > 2:
-                desc += "clan, ".join(game.clan.clans_in_focus[:-1]) 
+                desc += "clan, ".join(game.clan.clans_in_focus[:-1])
                 desc += f"clan and {game.clan.clans_in_focus[-1]}clan"
         self.focus_information["current_focus"] = pygame_gui.elements.UITextBox(
             f"<b>Current Focus:</b> {self.original_focus_code}<br>" + desc,

@@ -4183,16 +4183,16 @@
         "prototype": "#image_button",
         "images": {
             "normal_image": {
-                "path": "resources/images/buttons/raid_focus_button.png"
+                "path": "resources/images/buttons/raid_focus.png"
             },
             "hovered_image": {
-                "path": "resources/images/buttons/raid_focus_button_hover.png"
+                "path": "resources/images/buttons/raid_focus_hover.png"
             },
             "selected_image": {
-                "path": "resources/images/buttons/raid_focus_button.png"
+                "path": "resources/images/buttons/raid_focus.png"
             },
             "disabled_image": {
-                "path": "resources/images/buttons/raid_focus_button_unavailable.png"
+                "path": "resources/images/buttons/raid_focus_unavailable.png"
             }
         }
     },
