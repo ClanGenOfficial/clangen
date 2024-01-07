@@ -11,6 +11,8 @@
 
         "loner1": "This cat joined the Clan by choice after living life as a loner.",
         "loner2": "This cat used to live in a barn, but mostly stayed away from Twolegs. {PRONOUN/m_c/subject/CAP} decided Clan life might be an interesting change of pace.",
+        "loner3": "m_c wandered the world, aimless and free, but always alone.",
+        "loner4": "m_c wandered the world, aimless and free, but always alone - until {PRONOUN/m_c/subject} found someone worth staying for.",
 
         "kittypet1": "This cat joined the Clan by choice after living life with Twolegs as a kittypet.",
         "kittypet2": "This cat used to live on something called a 'boat' with Twolegs, but decided to join the Clan.",
@@ -45,6 +47,7 @@
         "refugee3": "This cat used to be a kittypet, but joined the Clan after fleeing from {PRONOUN/m_c/poss} cruel Twoleg.",
         "refugee4": "This cat used to be in a rogue group, but joined the Clan after fleeing from the group's tyrannical leader.",
         "refugee5": "This cat got washed away from {PRONOUN/m_c/poss} former territory in a flood that destroyed {PRONOUN/m_c/poss} home but was glad to find a new home in {PRONOUN/m_c/poss} new Clan here.",
+        "refugee6": "This cat used to be a kittypet, but joined the Clan, sick and weak after eating something {PRONOUN/m_c/subject} shouldn't have.",
 
         "tragedy_survivor1": "Something horrible happened to this cat's previous Clan. {PRONOUN/m_c/subject/CAP} refuse to speak about it.",
         "tragedy_survivor2": "This cat used to be part of a rogue group, but joined the Clan after something terrible happened to it.",
@@ -99,13 +102,13 @@
       "halfclan1", "halfclan2"
     ],
     "loner_backstories": [
-      "loner1", "loner2", "refugee2", "tragedy_survivor4", "guided3", "refugee5", "wandering_healer2"
+      "loner1", "loner2", "loner3", "loner4", "refugee2", "tragedy_survivor4", "guided3", "refugee5", "wandering_healer2"
     ],
     "rogue_backstories": [
       "rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2", "refugee5", "wandering_healer1"
     ],
     "kittypet_backstories": [
-      "kittypet1", "kittypet2", "kittypet3", "kittypet4", "refugee3", "tragedy_survivor3", "guided1"
+      "kittypet1", "kittypet2", "kittypet3", "kittypet4", "refugee3", "tragedy_survivor3", "guided1", "refugee6"
     ],
     "former_clancat_backstories": [
       "otherclan1", "otherclan2", "otherclan3", "ostracized_warrior", "disgraced1", "disgraced2", "disgraced3", "retired_leader", "refugee1", "tragedy_survivor1", "medicine_cat", "guided4", "refugee5"

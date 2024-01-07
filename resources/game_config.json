@@ -262,7 +262,7 @@
 		"war_death_modifier_leader": 95,
 		"war_death_modifier": 250,
 		"base_random_murder_chance": 25,
-		"base_murder_kill_chance": 170,
+		"base_murder_kill_chance": 80,
 		"old_age_death_start": 150,
 		"old_age_death_curve": 4.5,
 		"comment": [
@@ -277,7 +277,7 @@
 		"classic_injury_chance": 450,
 		"expanded_injury_chance": 250,
 		"cruel season_injury_chance": 150,
-		"permanent_condition_chance": 20,
+		"permanent_condition_chance": 15,
 		"war_injury_modifier": 100
 	},
 	"clan_creation": {

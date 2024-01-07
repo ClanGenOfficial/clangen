@@ -1,66 +1,85 @@
 {
+  "comment": [
+    "add new prey species to the relevant biome lists:",
+    "prey species should be added to both the singular and the plural lists e.g mouse, mice",
+    "prey species need to be completely non-seasonal, e.g no eggs, no chicks",
+    "prey species need to have names that make sense for cats",
+    "e.g yellow mouse (great), New York rat (no)",
+
+    "wet biomes (beach and wetlands) have both dry land and aquatic lists",
+    "some animals e.g crabs are appropriate for both dry land and aquatic lists",
+    "these lists allow writers to describe a fishing patrol and not fish up a squirrel",
+
+    "be sure to put your snippet in the relevant 'size' category",
+    "do not count tail lengths in these size categories - this is about how much edible meat the cat has hunted",
+    "tiny prey species are an inch to a 3 inches big, could be held in a cat's mouth, e.g a mouse",
+    "medium prey species are 3 inches to 6 inches long, easily carried by a cat e.g a blackbird",
+    "big prey species are 6-12 inches long, heavy enough to be hard to carry by a cat e.g a rabbit",
+    "prey species bigger than this are too large for the randomised prey lists",
+    "instead, make them the focus of their own patrol"
+  ],
   "abbreviations": {
-    "b_tp_l_s": "beach_tinyprey_land_singular",
-    "b_tp_l_p": "beach_tinyprey_land_plural",
+    "b_tp_dl_s": "beach_tinyprey_dryland_singular",
+    "b_tp_dl_p": "beach_tinyprey_dryland_plural",
     "b_tp_a_s": "beach_tinyprey_aquatic_singular",
     "b_tp_a_p": "beach_tinyprey_aquatic_plural",
-    "b_mp_l_s": "beach_midprey_land_singular",
-    "b_mp_l_p": "beach_midprey_land_singular",
+    "b_mp_dl_s": "beach_midprey_dryland_singular",
+    "b_mp_dl_p": "beach_midprey_dryland_singular",
     "b_mp_a_s": "beach_midprey_aquatic_singular",
     "b_mp_a_p": "beach_midprey_aquatic_plural",
-    "b_lp_l_s": "beach_largeprey_land_singular",
-    "b_lp_l_p": "beach_largeprey_land_plural",
-    "b_lp_a_s": "beach_largeprey_aquatic_singular",
-    "b_lp_a_p": "beach_largeprey_aquatic_plural",
+    "b_bp_dl_s": "beach_bigprey_dryland_singular",
+    "b_bp_dl_p": "beach_bigprey_dryland_plural",
+    "b_bp_a_s": "beach_bigprey_aquatic_singular",
+    "b_bp_a_p": "beach_bigprey_aquatic_plural",
 
     "d_tp_s": "desert_tinyprey_singular",
     "d_tp_p": "desert_tinyprey_plural",
     "d_mp_s": "desert_midprey_singular",
     "d_mp_p": "desert_midprey_plural",
-    "d_lp_s": "desert_largeprey_singular",
-    "d_lp_p": "desert_largeprey_plural",
+    "d_bp_s": "desert_bigprey_singular",
+    "d_bp_p": "desert_bigprey_plural",
 
     "f_tp_s": "forest_tinyprey_singular",
     "f_tp_p": "forest_tinyprey_plural",
     "f_mp_s": "forest_midprey_singular",
     "f_mp_p": "forest_midprey_plural",
-    "f_lp_s": "forest_midprey_singular",
-    "f_lp_p": "forest_midprey_plural",
+    "f_bp_s": "forest_bigprey_singular",
+    "f_bp_p": "forest_bigprey_plural",
 
     "m_tp_s": "mountain_tinyprey_singular",
     "m_tp_p": "mountain_tinyprey_plural",
     "m_mp_s": "mountain_midprey_singular",
     "m_mp_p": "mountain_midprey_plural",
-    "m_lp_s": "mountain_largeprey_singular",
-    "m_lp_p": "mountain_largeprey_plural",
+    "m_bp_s": "mountain_bigprey_singular",
+    "m_bp_p": "mountain_bigprey_plural",
 
     "p_tp_s": "plains_tinyprey_singular",
     "p_tp_p": "plains_tinyprey_plural",
     "p_mp_s": "plains_midprey_singular",
     "p_mp_p": "plains_midprey_plural",
-    "p_lp_s": "plains_largeprey_singular",
-    "p_lp_p": "plains_largeprey_plural",
+    "p_bp_s": "plains_bigprey_singular",
+    "p_bp_p": "plains_bigprey_plural",
 
-    "w_tp_l_s": "wetlands_tinyprey_land_singular",
-    "w_tp_l_p": "wetlands_tinyprey_land_plural",
+    "w_tp_dl_s": "wetlands_tinyprey_dryland_singular",
+    "w_tp_dl_p": "wetlands_tinyprey_dryland_plural",
     "w_tp_a_s": "wetlands_tinyprey_aquatic_singular",
     "w_tp_a_p": "wetlands_tinyprey_aquatic_plural",
-    "w_mp_l_s": "wetlands_midprey_land_singular",
-    "w_mp_l_p": "wetlands_midprey_land_singular",
+    "w_mp_dl_s": "wetlands_midprey_dryland_singular",
+    "w_mp_dl_p": "wetlands_midprey_dryland_singular",
     "w_mp_a_s": "wetlands_midprey_aquatic_singular",
     "w_mp_a_p": "wetlands_midprey_aquatic_plural",
-    "w_lp_l_s": "wetlands_largeprey_land_singular",
-    "w_lp_l_p": "wetlands_largeprey_land_plural",
-    "w_lp_a_s": "wetlands_largeprey_aquatic_singular",
-    "w_lp_a_p": "wetlands_largeprey_aquatic_plural"
+    "w_bp_dl_s": "wetlands_bigprey_dryland_singular",
+    "w_bp_dl_p": "wetlands_bigprey_dryland_plural",
+    "w_bp_a_s": "wetlands_bigprey_aquatic_singular",
+    "w_bp_a_p": "wetlands_bigprey_aquatic_plural"
   },
 
-  "beach_tinyprey_land_singular": [
+  "beach_tinyprey_dryland_singular": [
     "fiddler crab", "hermit crab", "beach vole", "fog shrew", "beach mouse",
     "yellow-cheeked chipmunk", "ornate shrew", "pocket mouse", "marsh shrew", "crab", "non-toxic jellyfish",
     "clam cluster", "sandpiper", "crawdad", "jackdaw", "cockle shell", "plover", "finch", "thrush"
   ],
-  "beach_tinyprey_land_plural": [
+  "beach_tinyprey_dryland_plural": [
     "fiddler crabs", "hermit crabs", "beach voles", "fog shrews", "beach mice",
     "yellow-cheeked chipmunks", "ornate shrews", "pocket mice", "marsh shrews", "crabs", "non-toxic jellyfish",
     "clam clusters", "sandpipers", "crawdads", "jackdaws", "cockle shells", "plovers", "finches", "thrush"
@@ -75,11 +94,11 @@
     "flat head fish", "small brine fish", "prawns", "little seahorses", "seahorses", "cherubfish", "fairy basslets", 
     "sailfin blenny", "yellowhead jawfish", "pinkeye gobies", "tetras"
   ],
-  "beach_midprey_land_singular": [
+  "beach_midprey_dryland_singular": [
     "dusky-footed woodrat", "auklet", "gannet", "skua", "loon", "herring gull", "ring-billed gull", "common tern",
     "squirrel"
   ],
-  "beach_midprey_land_plural": [
+  "beach_midprey_dryland_plural": [
     "dusky-footed woodrats", "auklets", "gannets", "skua", "loons", "herring gulls", "ring-billed gulls", "common terns",
     "squirrels"
   ],
@@ -91,16 +110,16 @@
     "eels", "needlenoses", "seagulls", "blowfish", "sea bass", "young squids", "lionfish", "lobsters", "sea snakes",
     "clown triggerfish", "angel fish", "powder blue tangs", "yellow tangs", "powder brown tangs", "butterfly fish"
   ],
-  "beach_largeprey_land_singular": [
+  "beach_bigprey_dryland_singular": [
     
   ],
-  "beach_largeprey_land_plural": [
+  "beach_bigprey_dryland_plural": [
     
   ],
-  "beach_largeprey_aquatic_singular": [
+  "beach_bigprey_aquatic_singular": [
     
   ],
-  "beach_largeprey_aquatic_plural": [
+  "beach_bigprey_aquatic_plural": [
     
   ],
   
@@ -138,11 +157,11 @@
     "armadillos", "desert iguanas", "bilbies", "meerkats", "sandgrouse", "three-banded armadillos", "nine-banded armadillos",
     "mourning doves", "curve-billed thrashers", "great gerbils"
   ],
-  "desert_largeprey_singular": [
+  "desert_bigprey_singular": [
     "chaparral bird", "roadrunner", "hawk", "jackrabbit", "antelope jackrabbit", "ringtail", "hare", "desert hare",
     "crow", "vulture", "eagle"
   ],
-  "desert_largeprey_plural": [
+  "desert_bigprey_plural": [
     "chaparral birds", "roadrunners", "hawks", "jackrabbits", "antelope jackrabbits", "ringtails", "hares", "desert hares",
     "crows", "vultures", "eagles"
   ],
@@ -179,10 +198,10 @@
     "dusky-footed woodrats", "big-eared woodrats", "stoats", "ermines", "ruffed grouse", "cardinals", "ptarmigan",
     "chukars", "quail", "pheasants", "starlings", "blue jays", "stellar jays"
   ],
-  "forest_largeprey_singular": [
+  "forest_bigprey_singular": [
 
   ],
-  "forest_largeprey_plural": [
+  "forest_bigprey_plural": [
 
   ],
 
@@ -204,10 +223,10 @@
     "plump shrews", "woodpeckers", "blackbirds", "golden-mantled ground squirrels", "half-grown rabbits", "fox squirrels", 
     "yellow-nosed rats", "red squirrels", "grey squirrels", "rats", "flying squirrels", "pikas", "collared pikas", "pygmy rabbits"
   ],
-  "mountain_largeprey_singular": [
+  "mountain_bigprey_singular": [
     
   ],
-  "mountain_largeprey_plural": [
+  "mountain_bigprey_plural": [
     
   ],
   
@@ -231,53 +250,52 @@
     "prairie dogs", "white-tailed prairie dogs", "black-tailed prairie dogs", "packrats", "woodrats", "cotton rats",
     "tawny-bellied cotton rats"
   ],
-  "plains_largeprey_singular": [
+  "plains_bigprey_singular": [
 
   ],
-  "plains_largeprey_plural": [
+  "plains_bigprey_plural": [
 
   ],
 
 
-  "wetlands_tinyprey_land_singular": [
+  "wetlands_tinyprey_dryland_singular": [
     "salt-marsh vole", "long-tailed vole", "golden mouse", "salt-marsh harvest mouse", "short-tailed shrew", 
     "least shrew", "marsh shrew"
   ],
-  "wetlands_tinyprey_land_plural": [
+  "wetlands_tinyprey_dryland_plural": [
     "salt-marsh voles", "long-tailed voles", "golden mice", "salt-marsh harvest mice", "short-tailed shrews", 
     "least shrews", "marsh shrews"
   ],
   "wetlands_tinyprey_aquatic_singular": [
-    
+    "common frog", "boreal chorus frog", "spring peeper frog"
   ],
   "wetlands_tinyprey_aquatic_plural": [
-    
+    "common frogs", "boreal chorus frogs", "spring peeper frogs"
   ],
-  "wetlands_midprey_land_singular": [
+  "wetlands_midprey_dryland_singular": [
     "blackbird", "round-tailed muskrat", "muskrat", "big lizard", "grass snake", "marsh rice rat", "rice rat",
-    "kingfisher", "star-nosed mole"
+    "kingfisher", "star-nosed mole", "bullfrog"
   ],
-  "wetlands_midprey_land_plural": [
+  "wetlands_midprey_dryland_plural": [
     "blackbirds", "round-tailed muskrats", "muskrats", "big lizards", "grass snakes", "marsh rice rats", "rice rats",
-    "kingfishers", "star-nosed moles"
+    "kingfishers", "star-nosed moles", "bullfrogs"
   ],
   "wetlands_midprey_aquatic_singular": [
-    "eel", "needlenose", "seagull", "blowfish", "sea bass", "young squid", "lionfish", "lobster", "sea snake",
-    "clown triggerfish", "angel fish", "powder blue tang", "yellow tang", "powder brown tang", "butterfly fish"
+    "eel", "crayfish", "bullfrog"
   ],
   "wetlands_midprey_aquatic_plural": [
+    "eels", "crayfish", "bullfrogs"
+  ],
+  "wetlands_bigprey_dryland_singular": [
 
   ],
-  "wetlands_largeprey_land_singular": [
+  "wetlands_bigprey_dryland_plural": [
 
   ],
-  "wetlands_largeprey_land_plural": [
+  "wetlands_bigprey_aquatic_singular": [
 
   ],
-  "wetlands_largeprey_aquatic_singular": [
-
-  ],
-  "wetlands_largeprey_aquatic_plural": [
+  "wetlands_bigprey_aquatic_plural": [
 
   ]
 }
