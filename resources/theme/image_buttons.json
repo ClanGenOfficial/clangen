@@ -4280,5 +4280,22 @@
                 "path": "resources/images/buttons/change_focus_unavailable.png"
             }
         }
+    },
+    "#dens_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/dens.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/dens_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/dens.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/dens_unavailable.png"
+            }
+        }
     }
 }

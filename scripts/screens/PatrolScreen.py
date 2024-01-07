@@ -959,6 +959,7 @@ class PatrolScreen(Screens):
     def exit_screen(self):
         self.clear_page()
         self.clear_cat_buttons()
+        self.hide_menu_buttons()
 
     def on_use(self):
         

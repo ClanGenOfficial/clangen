@@ -42,7 +42,7 @@ class WarriorDenScreen(Screens):
             pass
         elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
-                self.change_screen('camp screen')
+                self.change_screen(game.last_screen_forupdate)
             if event.ui_element in self.focus_buttons.values():
                 for code, value in self.focus_buttons.items():
                     if value == event.ui_element:
