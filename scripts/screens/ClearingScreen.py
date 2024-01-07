@@ -132,6 +132,10 @@ class ClearingScreen(Screens):
             self.tab_list = self.hungry_cats
 
     def screen_switches(self):
+        if game.clan.game_mode == "classic":
+            self.change_screen(game.last_screen_forupdate)
+            return
+
         self.hide_menu_buttons()
         self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))), "", object_id="#back_button"
                                          , manager=MANAGER)
@@ -139,87 +143,86 @@ class ClearingScreen(Screens):
                                       , manager=MANAGER)
         self.feed_button.hide()
 
-        if game.clan.game_mode != 'classic':
-            self.help_button = UIImageButton(scale(pygame.Rect(
-                (1450, 50), (68, 68))),
-                "",
-                object_id="#help_button", manager=MANAGER,
-                tool_tip_text="Your clan will catch some amount of prey over each timeskip, but successful hunting patrols are the most "
-                              "important source of freshkill. You can see what was consumed and catched in the Log below! "
-                              "Freshkill can't be stored endlessly, after four moons prey will rot and will be thrown away. "
-                              "Cats under 3 moons with a parent(queen) taking care of them, don't need food. "
-                              "<br><br>"
-                              "Feeding the Clan is very important, therefore cats will be fed before any changes to rank. "
-                              "Hover your mouse over the pile to see the current amount and the needed amount of prey of your Clan! ",
+        self.help_button = UIImageButton(scale(pygame.Rect(
+            (1450, 50), (68, 68))),
+            "",
+            object_id="#help_button", manager=MANAGER,
+            tool_tip_text="Your clan will catch some amount of prey over each timeskip, but successful hunting patrols are the most "
+                          "important source of freshkill. You can see what was consumed and catched in the Log below! "
+                          "Freshkill can't be stored endlessly, after four moons prey will rot and will be thrown away. "
+                          "Cats under 3 moons with a parent(queen) taking care of them, don't need food. "
+                          "<br><br>"
+                          "Feeding the Clan is very important, therefore cats will be fed before any changes to rank. "
+                          "Hover your mouse over the pile to see the current amount and the needed amount of prey of your Clan! ",
+        )
 
-            )
-            self.last_page = UIImageButton(scale(pygame.Rect((660, 1272), (68, 68))), "", object_id="#arrow_left_button"
-                                           , manager=MANAGER)
-            self.next_page = UIImageButton(scale(pygame.Rect((952, 1272), (68, 68))), "",
-                                           object_id="#arrow_right_button"
-                                           , manager=MANAGER)
+        self.last_page = UIImageButton(scale(pygame.Rect((660, 1272), (68, 68))), "", object_id="#arrow_left_button"
+                                       , manager=MANAGER)
+        self.next_page = UIImageButton(scale(pygame.Rect((952, 1272), (68, 68))), "",
+                                       object_id="#arrow_right_button"
+                                       , manager=MANAGER)
 
-            self.nutrition_title = pygame_gui.elements.UITextBox(
-                "Nutrition Overview",
-                scale(pygame.Rect((281, 820), (400, 60))),
-                object_id=get_text_box_theme("#text_box_40_horizcenter"), manager=MANAGER
-            )
-            self.log_title = pygame_gui.elements.UITextBox(
-                "Freshkill Pile Log",
-                scale(pygame.Rect((281, 820), (400, 60))),
-                object_id=get_text_box_theme("#text_box_40_horizcenter"), manager=MANAGER
-            )
-            self.tactic_title = pygame_gui.elements.UITextBox(
-                "Feeding Tactic",
-                scale(pygame.Rect((281, 820), (400, 60))),
-                object_id=get_text_box_theme("#text_box_40_horizcenter"), manager=MANAGER
-            )
-            self.log_title.hide()
-            self.tactic_title.hide()
-            self.cat_bg = pygame_gui.elements.UIImage(scale(pygame.Rect
-                                                            ((280, 880), (1120, 400))),
-                                                      pygame.image.load(
-                                                          "resources/images/sick_hurt_bg.png").convert_alpha()
-                                                      , manager=MANAGER)
-            self.cat_bg.disable()
-            log_text = game.freshkill_event_list.copy()
-            self.log_box = pygame_gui.elements.UITextBox(
-                f"{f'<br>-------------------------------<br>'.join(log_text)}<br>",
-                scale(pygame.Rect
-                      ((300, 900), (1080, 360))),
-                object_id="#text_box_26_horizleft_verttop_pad_14_0_10", manager=MANAGER
-            )
-            self.log_box.hide()
+        self.nutrition_title = pygame_gui.elements.UITextBox(
+            "Nutrition Overview",
+            scale(pygame.Rect((281, 820), (400, 60))),
+            object_id=get_text_box_theme("#text_box_40_horizcenter"), manager=MANAGER
+        )
+        self.log_title = pygame_gui.elements.UITextBox(
+            "Freshkill Pile Log",
+            scale(pygame.Rect((281, 820), (400, 60))),
+            object_id=get_text_box_theme("#text_box_40_horizcenter"), manager=MANAGER
+        )
+        self.tactic_title = pygame_gui.elements.UITextBox(
+            "Feeding Tactic",
+            scale(pygame.Rect((281, 820), (400, 60))),
+            object_id=get_text_box_theme("#text_box_40_horizcenter"), manager=MANAGER
+        )
+        self.log_title.hide()
+        self.tactic_title.hide()
+        self.cat_bg = pygame_gui.elements.UIImage(scale(pygame.Rect
+                                                        ((280, 880), (1120, 400))),
+                                                  pygame.image.load(
+                                                      "resources/images/sick_hurt_bg.png").convert_alpha()
+                                                  , manager=MANAGER)
+        self.cat_bg.disable()
+        log_text = game.freshkill_event_list.copy()
+        self.log_box = pygame_gui.elements.UITextBox(
+            f"{f'<br>-------------------------------<br>'.join(log_text)}<br>",
+            scale(pygame.Rect
+                  ((300, 900), (1080, 360))),
+            object_id="#text_box_26_horizleft_verttop_pad_14_0_10", manager=MANAGER
+        )
+        self.log_box.hide()
 
-            self.cats_tab = UIImageButton(scale(pygame.Rect
-                                                ((218, 924), (70, 150))),
-                                          "",
-                                          object_id="#hurt_sick_cats_button", manager=MANAGER
-                                          )
-            self.cats_tab.disable()
-            self.log_tab = UIImageButton(scale(pygame.Rect
-                                               ((218, 1104), (70, 128))),
+        self.cats_tab = UIImageButton(scale(pygame.Rect
+                                            ((218, 924), (70, 150))),
+                                      "",
+                                      object_id="#hurt_sick_cats_button", manager=MANAGER
+                                      )
+        self.cats_tab.disable()
+        self.log_tab = UIImageButton(scale(pygame.Rect
+                                           ((218, 1104), (70, 128))),
+                                     "",
+                                     object_id="#med_den_log_button", manager=MANAGER
+                                     )
+        self.tactic_tab = UIImageButton(scale(pygame.Rect
+                                           ((1392, 924), (70, 140))),
+                                     "",
+                                     object_id="#tactic", manager=MANAGER
+                                     )
+        self.hungry_tab = UIImageButton(scale(pygame.Rect
+                                               ((980, 818), (160, 70))),
                                          "",
-                                         object_id="#med_den_log_button", manager=MANAGER
-                                         )
-            self.tactic_tab = UIImageButton(scale(pygame.Rect
-                                               ((1392, 924), (70, 140))),
-                                         "",
-                                         object_id="#tactic", manager=MANAGER
-                                         )
-            self.hungry_tab = UIImageButton(scale(pygame.Rect
-                                                   ((980, 818), (160, 70))),
-                                             "",
-                                             object_id="#freshkill_hungry", manager=MANAGER)
-            self.satisfied_tab = UIImageButton(scale(pygame.Rect
-                                                 ((1174, 818), (190, 70))),
-                                           "",
-                                           object_id="#freshkill_satisfied", manager=MANAGER)
-            self.tab_showing = self.hungry_tab
+                                         object_id="#freshkill_hungry", manager=MANAGER)
+        self.satisfied_tab = UIImageButton(scale(pygame.Rect
+                                             ((1174, 818), (190, 70))),
+                                       "",
+                                       object_id="#freshkill_satisfied", manager=MANAGER)
+        self.tab_showing = self.hungry_tab
 
-            self.update_cats_list()
-            self.current_page = 1
-            self.update_nutrition_cats()
+        self.update_cats_list()
+        self.current_page = 1
+        self.update_nutrition_cats()
 
         self.update_focus_cat()
 
@@ -463,6 +466,8 @@ class ClearingScreen(Screens):
                                       )
 
     def exit_screen(self):
+        if game.clan.game_mode == "classic":
+            return
         self.info_messages.kill()
         self.feed_button.kill()
         self.pile_base.kill()
@@ -472,22 +477,21 @@ class ClearingScreen(Screens):
         if self.focus_name:
             self.focus_name.kill()
         self.back_button.kill()
-        if game.clan.game_mode != 'classic':
-            self.help_button.kill()
-            self.cat_bg.kill()
-            self.last_page.kill()
-            self.next_page.kill()
-            self.hungry_tab.kill()
-            self.satisfied_tab.kill()
-            self.clear_cat_buttons()
-            self.nutrition_title.kill()
-            self.cats_tab.kill()
-            self.log_tab.kill()
-            self.log_title.kill()
-            self.log_box.kill()
-            self.tactic_tab.kill()
-            self.tactic_title.kill()
-            self.delete_checkboxes()
+        self.help_button.kill()
+        self.cat_bg.kill()
+        self.last_page.kill()
+        self.next_page.kill()
+        self.hungry_tab.kill()
+        self.satisfied_tab.kill()
+        self.clear_cat_buttons()
+        self.nutrition_title.kill()
+        self.cats_tab.kill()
+        self.log_tab.kill()
+        self.log_title.kill()
+        self.log_box.kill()
+        self.tactic_tab.kill()
+        self.tactic_title.kill()
+        self.delete_checkboxes()
         if self.focus_cat:
             self.focus_cat.kill()
 

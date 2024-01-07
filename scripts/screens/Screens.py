@@ -303,6 +303,8 @@ class Screens():
                     self.menu_buttons[den].show()
                 else:
                     self.menu_buttons[den].hide()
+                if game.clan.game_mode == "classic" and den == "clearing":
+                    self.menu_buttons[den].disable()
         elif event.ui_element == self.menu_buttons["clearing"]:
             self.change_screen('clearing screen')
         elif event.ui_element == self.menu_buttons["med_cat_den"]:

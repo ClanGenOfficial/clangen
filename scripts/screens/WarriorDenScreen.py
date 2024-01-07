@@ -33,6 +33,7 @@ class WarriorDenScreen(Screens):
         self.active_code = None
         self.original_focus_code = None
         self.other_clan_settings = ["sabotage other clans", "aid other clans", "raid other clans"]
+        self.not_classic_codes = ["hunting", "raid other clans", "hoarding"]
 
     def handle_event(self, event):
         """
@@ -61,6 +62,7 @@ class WarriorDenScreen(Screens):
                         if not game.clan.last_focus_change or \
                                 game.clan.last_focus_change + game.config["focus"]["duration"] <= game.clan.age:
                             self.save_button.enable()
+
                         # deactivate save button if the focus didn't change or if rank prevents it
                         if self.active_code == self.original_focus_code and self.save_button.is_enabled:
                             self.save_button.disable()
@@ -75,8 +77,7 @@ class WarriorDenScreen(Screens):
                             meds = get_med_cats(Cat, working=False)
                             if len(meds) < 1:
                                 self.save_button.disable()
-                        else:
-                            self.save_button.enable()
+
                         self.update_buttons()
                         self.update_visual()
                         self.create_side_info()
@@ -193,12 +194,13 @@ class WarriorDenScreen(Screens):
                     game.clan.clan_settings[code] = False
 
     def update_buttons(self):
-
         for code, button in self.focus_buttons.items():
             if self.active_code == code:
                 button.disable()
             else:
                 button.enable()
+            if game.clan.game_mode == "classic" and code in self.not_classic_codes:
+                button.disable()
 
     def create_buttons(self):
         """
@@ -226,6 +228,8 @@ class WarriorDenScreen(Screens):
                 self.active_code = code
             else:
                 self.focus_buttons[code].enable()
+            if game.clan.game_mode == "classic" and code in self.not_classic_codes:
+                self.focus_buttons[code].disable()
 
             n += 1
 
@@ -243,6 +247,8 @@ class WarriorDenScreen(Screens):
             self.focus_information["current_focus"].kill()
         if "time" in self.focus_information:
             self.focus_information["time"].kill()
+        if self.focus_text:
+            self.focus_text.kill()
 
         # create the new info text
         desc = " "
