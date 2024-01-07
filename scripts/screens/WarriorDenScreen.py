@@ -106,9 +106,9 @@ class WarriorDenScreen(Screens):
             object_id="#help_button", manager=MANAGER,
             tool_tip_text="This screen allows you to manage your warriors more effectively! You can give them a "
                           "specific focus, which will provide some benefits (and possibly some negatives) to your "
-                          "clan.  Some focuses are not available in classic mode.  Click on each focus to see a "
-                          "description of what they will do.  Focuses that target other clans will allow you to "
-                          "choose which clans you target.  Your focus can only be changed every 3 moons, "
+                          "Clan.  Some focuses are not available in classic mode.  Click on each focus to see a "
+                          "description of what they will do.  Focuses that target other Clans will allow you to "
+                          "choose which Clans you target.  Your focus can only be changed every 3 moons, "
                           "so choose carefully.",
 
         )
