@@ -19,6 +19,20 @@ class WarriorDenScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
+        # BG image assets - not interactable
+        self.focus_frame = None
+        self.focus_text = None
+        self.base_image = None
+        self.hunt_image = None
+        self.herb_image = None
+        self.threaten_image = None
+        self.entreat_image = None
+        self.rest_image = None
+        self.sabotage_image = None
+        self.help_image = None
+        self.raid_image = None
+        self.hoard_image = None
+
         self.focus_boxes = {}
         self.focus = {}
         self.back_button = None
