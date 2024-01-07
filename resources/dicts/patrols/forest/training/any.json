@@ -14,7 +14,7 @@
         },
         "weight": 20,
         "intro_text": "The patrol wants to hold a training session for app1. They decide to focus on tree climbing!",
-        "decline_text": "They decide to focus on the patrolling the territory instead. Training can wait for another day.",
+        "decline_text": "They decide to focus on patrolling the territory instead. Training can wait for another day.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -310,7 +310,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The cats try to find enough bits of undergrowth in the nearby forest to block the opening to the sett, but the area is pretty bare. Before they know it they're tired, thirsty, and returning home with nothing to show for it.",
+                "text": "The cats try to find enough bits of undergrowth in the nearby forest to block the opening to the sett, but the area is pretty bare. Before they know it, they're tired, thirsty, and returning home with nothing to show for it.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -352,7 +352,7 @@
                 ]
             },
             {
-                "text": "As the patrol is sniffing around the burrow entrance there's a rustle from the woods. It's difficult to say who's more surprised - cats or badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process but everyone gets home safe in the end... including the badger.",
+                "text": "As the patrol is sniffing around the burrow entrance there's a rustle from the woods. It's difficult to say who's more surprised - the cats or the badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process but everyone gets home safe in the end... including the badger.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -787,7 +787,7 @@
     },
     {
         "patrol_id": "fst_train_stuck3",
-        "biome": ["plains"],
+        "biome": ["forest"],
         "season": ["Any"],
         "types": ["training"],
         "tags": ["romantic"],
@@ -979,7 +979,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c takes a breath and tries to remain calm. Looking around to try to find a way out, they spot a place where all the branches are seemingly resting on one. With a surge of energy they crash their way out through the weak point, twig-covered but free.",
+                "text": "s_c takes a breath and tries to remain calm. Looking around to try to find a way out, they spot a place where all the branches are seemingly resting on one. With a surge of energy, they crash their way out through the weak point, twig-covered but free.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"]
@@ -1749,7 +1749,7 @@
                 ]
             },
             {
-                "text": "app2 emerges into the hidden soft light under the willow tree. Seeing app1, they trot up, asking why app1 wanted to meet there. app1 looks away with a purr, making up some nonsense about fight training that makes no sense. Instead both apprentices hang out there all afternoon, awkward and thrilled.",
+                "text": "app2 emerges into the hidden soft light under the willow tree. Seeing app1, they trot up, asking why app1 wanted to meet there. app1 looks away with a purr, making up some nonsense about fight training that makes no sense. Instead, both apprentices hang out there all afternoon, awkward and thrilled.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -1836,6 +1836,7 @@
         "intro_text": "r_c approaches p_l, asking if they wouldn't mind showing r_c their hunting techniques, and perhaps doing some training with them?",
         "decline_text": "r_c declines gently, explaining that they have too much work to do.",
         "chance_of_success": 60,
+        "relationship_constraint": ["not_mates"],
         "success_outcomes": [
             {
                 "text": "The cats go out together in the late of the day, as the shadows stretch long under the trees. p_l goes through their tricks, showing r_c how they shift their balance to make less noise on leaf litter, as r_c watches with eyes that p_l notices are a bit too admiring for what's just a little trick. They smirk, showing off a little.",
@@ -1852,7 +1853,7 @@
                 ]
             },
             {
-                "text": "It's a long but satisfying training session, with both cats having an in depth chance to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching them instead of the sun, and smiles.",
+                "text": "It's a long but satisfying training session, with both cats having an in-depth chance to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching them instead of the sun, and smiles.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -1931,6 +1932,70 @@
                         "mutual": true,
                         "values": ["romantic", "platonic", "comfort"],
                         "amount": -5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "fst_train_arguingromance1",
+        "biome": ["forest"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": ["romantic", "pos_jealousy"],
+        "patrol_art": "train_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "As p_l pads through the woods near camp, looking for a good tree to sharpen {PRONOUN/p_l/poss} claws on before {PRONOUN/p_l/subject} begin {PRONOUN/p_l/poss} training, {PRONOUN/p_l/subject} round a corner and find r_c doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c/object}. While Clanmates will do better training together, r_c just rubs {PRONOUN/p_l/subject} the wrong way.",
+        "decline_text": "...It's fine to train somewhere else, p_l decides. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} really want to interact with r_c.",
+        "chance_of_success": 60,
+        "relationship_constraint": ["dislike_10", "not_mates"],
+        "success_outcomes": [
+            {
+                "text": "r_c shows {PRONOUN/p_l/object} a stunningly successful move {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been working on to rapidly change directions in a hunt by clawing tree trunks to skid to a halt, and p_l can't let {PRONOUN/p_l/self} look bad in comparison, showing off {PRONOUN/p_l/poss} battle-back-flip with a smug smirk.",
+                "exp": 15,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "r_c shows off how far {PRONOUN/r_c/subject} can pounce, which means p_l shows off how fast {PRONOUN/p_l/subject} can run, which means r_c shows off how sharp {PRONOUN/r_c/poss} claws are, which means p_l shows off how shiny {PRONOUN/p_l/poss} pelt is, which means r_c shows off how long {PRONOUN/r_c/poss} legs are, which means p_l shows off how cool {PRONOUN/p_l/poss} scars are - this goes on all afternoon.",
+                "exp": 15,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "dislike"],
+                        "amount": 10
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Both warriors are stiffly polite with each other, and it's a boring and completely unproductive afternoon, though maybe r_c isn't quite the thorn in {PRONOUN/p_l/poss} paw p_l thought {PRONOUN/r_c/subject} {VERB/r_c/were/was}.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "dislike"],
+                        "amount": -10
                     }
                 ]
             }

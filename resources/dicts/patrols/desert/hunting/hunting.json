@@ -317,12 +317,12 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "r_c spots a rabbit up ahead but it seems to be acting strange. The patrol can see its tremors from a few fox-lengths away.",
+        "intro_text": "r_c spots a rabbit up ahead, but it seems to be acting strange. The patrol can see its tremors from a few fox-lengths away.",
         "decline_text": "r_c avoids catching the rabbit and looks for other prey.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "r_c catches the rabbit and it is eaten as normal.",
+                "text": "r_c catches the rabbit, and it is eaten as normal.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["large"]
@@ -423,7 +423,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c is quicker than anyone else, tearing after the rabbit, but in their haste they put a paw wrong and stop as a sharp twinge of pain shoots up {PRONOUN/s_c/poss} leg.",
+                "text": "s_c is quicker than anyone else, tearing after the rabbit, but in their haste, they put a paw wrong and stop as a sharp twinge of pain shoots up {PRONOUN/s_c/poss} leg.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["RUNNER,2"],
@@ -445,7 +445,7 @@
         "biome": ["Any"],
         "season": ["Any"],
         "types": ["hunting"],
-        "tags": ["jealousy"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 6,
@@ -467,6 +467,13 @@
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealousy"],
+                        "amount": -5
                     }
                 ]
             },
@@ -482,6 +489,13 @@
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealousy"],
+                        "amount": -5
                     }
                 ]
             },
@@ -499,6 +513,13 @@
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealousy"],
+                        "amount": -5
                     }
                 ]
             }
@@ -515,6 +536,13 @@
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealousy"],
+                        "amount": 5
                     }
                 ],
                 "prey": ["very_small"]
@@ -530,6 +558,13 @@
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealousy"],
+                        "amount": 5
                     }
                 ],
                 "prey": ["very_small"]
