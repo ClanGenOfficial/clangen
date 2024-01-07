@@ -15,7 +15,7 @@
     "nutrition_malnourished_percentage" : 45,
     "nutrition_starving_percentage" : 20,
 	"text_nutrition":{
-		"lower_range":[0, 21, 36, 51, 66, 81],
+		"lower_range":[0, 21, 41, 61, 81, 91],
 		"text": ["starving", "very hungry", "hungry", "satiated", "full", "bloated"]
 	},
     "prey_requirement":{

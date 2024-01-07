@@ -160,7 +160,8 @@ class Freshkill_Pile():
             self.pile[key] = previous_amount
             previous_amount = value
             if key == "expires_in_1" and FRESHKILL_ACTIVE and value > 0:
-                event_list.append(f"Some prey expired, {value} pieces where removed from the pile.")
+                amount = round(value, 2)
+                event_list.append(f"Some prey expired, {amount} pieces were removed from the pile.")
         self.total_amount = sum(self.pile.values())
         value_diff = self.total_amount
         self.feed_cats(living_cats)
