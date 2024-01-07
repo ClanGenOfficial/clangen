@@ -621,8 +621,10 @@ class Events:
             game.clan.freshkill_pile.add_freshkill(total_amount)
             if total_amount > 1:
                 focus_text = f"With the heightened focus of the Clan, {total_amount} additional pieces of prey were gathered."
-            else:
+            if total_amount == 1:
                 focus_text = f"With the heightened focus of the Clan, {total_amount} additional piece of prey was gathered."
+            else:
+                focus_text = "Despite the additional focus of the Clan, no prey could be gathered."
             game.freshkill_event_list.append(focus_text)
 
         elif game.clan.clan_settings.get("herb gathering"):
@@ -654,8 +656,10 @@ class Events:
             game.clan.herbs.update(herb_counter)
             if herb_amount > 1:
                 focus_text = f"With the additional focus of the Clan, {herb_amount} herbs were gathered."
-            else:
+            elif herb_amount == 1:
                 focus_text = f"With the additional focus of the Clan, {herb_amount} herb was gathered."
+            else:
+                focus_text = f"Despite the additional focus of the clan, no herbs could be gathered."
 
             log_text = "With the additional focus of the Clan, following herbs were gathered: "
             idx = 0
@@ -772,7 +776,7 @@ class Events:
             # finish
             focus_text = "the additional work of hording herbs and prey."
             if game.clan.clan_settings.get("raid other clans"):
-                focus_text = "the raiding of other clans to get additional prey."
+                focus_text = "the raiding of other Clans to get additional prey."
             for condition_type, value in involved_cats.items():
                 if len(value) == 1:
                     game.cur_events_list.append(
@@ -796,7 +800,7 @@ class Events:
             elif warrior_amount == 1 and herb_amount == 1:
                 focus_text = f"With the additional focus of the Clan, {warrior_amount} piece of prey and {herb_amount} herb were gathered."
             elif warrior_amount <= 0 and herb_amount <= 0:
-                focus_text = "Despite the additional focus of the clan, neither prey nor herbs could be gathered."
+                focus_text = "Despite the additional focus of the Clan, neither prey nor herbs could be gathered."
 
         if focus_text:
             game.cur_events_list.insert(0, Single_Event(focus_text, "misc"))
