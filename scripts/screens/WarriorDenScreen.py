@@ -59,7 +59,7 @@ class WarriorDenScreen(Screens):
                         game.clan.switch_setting(code)
                         self.active_code = code
                         # only enable the save button if a focus switch is possible
-                        if not game.clan.last_focus_change or \
+                        if game.clan.last_focus_change is None or \
                                 game.clan.last_focus_change + game.config["focus"]["duration"] <= game.clan.age:
                             self.save_button.enable()
 
