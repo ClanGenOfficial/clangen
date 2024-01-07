@@ -78,6 +78,44 @@ class Screens():
             visible = False,
             manager=MANAGER,
             object_id="#arrow_mns_button"),
+        "dens_bar": pygame_gui.elements.UIImage(
+            scale(pygame.Rect((80, 120), (20, 280))),
+            pygame.transform.scale(
+                image_cache.load_image(
+                    "resources/images/vertical_bar.png").convert_alpha(),
+                (380, 70)),
+            visible=False,
+            manager=MANAGER),
+        "dens": UIImageButton(
+            scale(pygame.Rect((50, 120), (142, 60))),
+            "",
+            visible = False,
+            manager=MANAGER,
+            object_id="#dens_button",
+            starting_height=4),
+        "med_cat_den": UIImageButton(
+            scale(pygame.Rect((50, 200), (302, 56))),
+            "",
+            visible=False,
+            manager=MANAGER,
+            object_id="#med_den_button",
+            starting_height=4),
+        "warrior_den": UIImageButton(
+            scale(pygame.Rect((50, 280), (242, 56))),
+            "",
+            visible=False,
+            manager=MANAGER,
+            object_id="#warrior_den_button",
+            starting_height=4),
+        "clearing": UIImageButton(
+            scale(pygame.Rect((50, 360), (162, 56))),
+            "",
+            visible=False,
+            manager=MANAGER,
+            object_id="#clearing_button",
+            starting_height=4
+        ),
+
         "heading": pygame_gui.elements.UITextBox(
             "",
             scale(pygame.Rect((620, 54), (360, 70))),
@@ -212,7 +250,12 @@ class Screens():
         # Check if the setting for moons and seasons UI is on so stats button can be moved
         self.update_mns()
         for name, button in self.menu_buttons.items():
-            if name in ['moons_n_seasons', 'moons_n_seasons_arrow']:
+            if name == 'dens':
+                if game.clan.clan_settings["moons and seasons"] and game.switches['cur_screen'] == 'events screen':
+                    button.show()
+                elif not game.clan.clan_settings["moons and seasons"] and game.switches['cur_screen'] != 'camp screen':
+                    button.show()
+            if name in ['moons_n_seasons', 'moons_n_seasons_arrow', 'dens', 'med_cat_den', 'clearing', 'warrior_den', 'dens_bar']:
                 continue
             else:
                 button.show()
@@ -253,6 +296,19 @@ class Screens():
             else:
                 game.settings['mns open'] = True
             self.update_mns()
+        elif event.ui_element == self.menu_buttons["dens"]:
+            dens = ["clearing", "med_cat_den", "warrior_den", "dens_bar"]
+            for den in dens:
+                if not self.menu_buttons[den].visible:
+                    self.menu_buttons[den].show()
+                else:
+                    self.menu_buttons[den].hide()
+        elif event.ui_element == self.menu_buttons["clearing"]:
+            self.change_screen('clearing screen')
+        elif event.ui_element == self.menu_buttons["med_cat_den"]:
+            self.change_screen('med den screen')
+        elif event.ui_element == self.menu_buttons["warrior_den"]:
+            self.change_screen('warrior den screen')
 
     def update_heading_text(self, text):
         """Updates the menu heading text"""
@@ -260,7 +316,7 @@ class Screens():
     
     # Update if moons and seasons UI is on
     def update_mns(self):
-        if game.clan.clan_settings["moons and seasons"]:
+        if game.clan.clan_settings["moons and seasons"] and game.switches['cur_screen'] != 'events screen':
             self.menu_buttons['moons_n_seasons_arrow'].kill()
             self.menu_buttons['moons_n_seasons'].kill()
             if game.settings['mns open']:
@@ -273,7 +329,7 @@ class Screens():
         else:
             self.menu_buttons['moons_n_seasons'].hide()
             self.menu_buttons['moons_n_seasons_arrow'].hide()
-    
+
     # open moons and seasons UI (AKA wide version)    
     def mns_open(self):
         self.menu_buttons['moons_n_seasons_arrow'] = UIImageButton(

@@ -180,6 +180,7 @@ class ClanSettingsScreen(Screens):
         del self.open_data_directory_button
         self.clan_stats_button.kill()
         del self.clan_stats_button
+        self.hide_menu_buttons()
 
     def open_general_settings(self):
         """Opens and draws general_settings"""

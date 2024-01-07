@@ -56,7 +56,7 @@ class ClearingScreen(Screens):
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
-                self.change_screen('camp screen')
+                self.change_screen(game.last_screen_forupdate)
             elif event.ui_element == self.feed_button:
                 game.clan.freshkill_pile.feed_cat(self.focus_cat_object, 1, 0)
                 Freshkill_Events.handle_nutrient(self.focus_cat_object, game.clan.freshkill_pile.nutrition_info)
