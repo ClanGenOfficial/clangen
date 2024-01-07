@@ -310,7 +310,6 @@ class Screens():
         dens = ["dens_bar", "med_cat_den", "warrior_den", "clearing", ]
         # this feels convoluted but its all i got, feel free to streamline
         for den in dens:
-            print(den, self.menu_buttons[den].visible)
             # if the dropdown isn't visible, make it visible
             if not self.menu_buttons[den].visible:
                 # if it's classic mode, don't show the clearing button and shorten the dens_bar
