@@ -276,7 +276,7 @@
                 ]
             },
             {
-                "text": "s_c spins a story, vivid and engaging, telling the tale of a massive war their ancestors fought over the border the patrol is headed to mark. Not only does it keep every cat entertained, it really emphasizes the importance of the patrol and motivates everyone.",
+                "text": "s_c spins a story, vivid and engaging, telling the tale of a massive war their ancestors fought over the border the patrol is headed to mark. Not only does it keep every cat entertained, but it also emphasizes the importance of the patrol and motivates everyone.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -427,7 +427,7 @@
       "stat_skill": ["STAR,1", "OMEN,1", "CLAIRVOYANT,1"]
     },
     {
-      "text": "After some consideration the patrol finds a place to cross. As they reach about halfway across, a strong rush of water crashes over them. The current pulls them from safety and churns with no mercy. The cats are dashed against the sharp river rocks as they feebly try to cling to whatever they can. A mountain river is no place for a cat to be, and despite their best efforts, the cold water wins a battle that was over before it started.",
+      "text": "After some consideration the patrol finds a place to cross. As they reach about halfway across, a strong rush of water crashes over them. The current pulls them from safety and churns them with no mercy. The cats are dashed against the sharp river rocks as they feebly try to cling to whatever they can. A mountain river is no place for a cat to be, and despite their best efforts, the cold water wins a battle that was over before it started.",
       "exp": 0,
       "weight": 5,
       "dead_cats": ["patrol"],
@@ -437,7 +437,7 @@
       }
     },
     {
-      "text": "After some consideration the patrol finds a place to cross. As they reach about halfway across, a strong rush of water crashes over them. The current pulls them from safety and churns with no mercy. The cats are dashed against the sharp river rocks as they feebly try to cling to whatever they can. A mountain river is no place for a cat to be, and despite their best efforts, the cold water wins a battle that was over before it started.",
+      "text": "After some consideration the patrol finds a place to cross. As they reach about halfway across, a strong rush of water crashes over them. The current pulls them from safety and churns them with no mercy. The cats are dashed against the sharp river rocks as they feebly try to cling to whatever they can. A mountain river is no place for a cat to be, and despite their best efforts, the cold water wins a battle that was over before it started.",
       "exp": 0,
       "weight": 5,
       "dead_cats": ["multi"],
@@ -447,13 +447,13 @@
       }
     },
     {
-      "text": "After some consideration the patrol finds a place to cross. As they reach about halfway across, a strong rush of water crashes over them. The current pulls them from safety and churns with no mercy. The cats are dashed against the sharp river rocks as they feebly try to cling to whatever they can. A mountain river is no place for a cat to be, and despite their best efforts, the cold water wins a battle that was over before it started.",
+      "text": "After some consideration the patrol finds a place to cross. As they reach about halfway across, a strong rush of water crashes over them. The current pulls them from safety and churns them with no mercy. The cats are dashed against the sharp river rocks as they feebly try to cling to whatever they can. A mountain river is no place for a cat to be, and despite their best efforts, the cold water wins a battle that was over before it started.",
       "exp": 0,
       "weight": 5,
       "lost_cats": ["patrol"]
     },
     {
-      "text": "After some consideration the patrol finds a place to cross. As they reach about halfway across a strong rush of water crashes over them. The water mercilessly crashes them against the river's sharp boulders and violently sends them careening over a small waterfall. Thankfully, at the bottom of the waterfall the water is more calm and they wash up on the riverbed, but not without consequence from trying to fight one of natures strongest forces.",
+      "text": "After some consideration the patrol finds a place to cross. As they reach about halfway across a strong rush of water crashes over them. The water mercilessly crashes them against the river's sharp boulders and violently sends them careening over a small waterfall. Thankfully, at the bottom of the waterfall the water is calmer and they wash up on the riverbed, but not without consequence from trying to fight one of nature's strongest forces.",
       "exp": 0,
       "weight": 10,
       "injury": [
@@ -461,10 +461,15 @@
           "cats": ["patrol"],
           "injuries": ["running nose", "water in their lungs", "shivering", "minor_injury", "blunt_force_injury"]
         }
-      ]
+      ],
+      "history_text": {
+        "scar": "m_c was scarred from the injuries obtained by trying to cross a dangerous river.",
+        "reg_death": "This cat died from injuries obtained by trying to cross a dangerous river.",
+        "lead_death": "died from injuries obtained by trying to cross a dangerous river"
+      }
     },
     {
-      "text": "The patrol begins to cross with s_c trailing nervously behind. Just as the patrol is almost clear, s_c notices a swell in the river rushing towards the patrol. {PRONOUN/s_c/subject/CAP} almost let out a warning yowl, but {PRONOUN/s_c/subject} {VERB/s_c/hesitate/hesitates}, unsure if it's really rushing water. Unfortunately this costs the patrol the few seconds they had to react and the water crashes them against the river stones.",
+      "text": "The patrol begins to cross with s_c trailing nervously behind. Just as the patrol is almost clear, s_c notices a swell in the river rushing towards the patrol. {PRONOUN/s_c/subject/CAP} almost let out a warning yowl, but {PRONOUN/s_c/subject} {VERB/s_c/hesitate/hesitates}, unsure if it's really rushing water. Unfortunately, this costs the patrol the few seconds they had to react and the water crashes them against the river stones.",
       "exp": 0,
       "weight": 5,
       "stat_trait": ["nervous", "insecure"],
@@ -475,14 +480,14 @@
       }
     },
     {
-      "text": "The patrol begins to cross with s_c trailing nervously behind. Just as the patrol is almost clear, s_c notices a swell in the river rushing towards the patrol. {PRONOUN/s_c/subject/CAP} almost let out a warning yowl, but {PRONOUN/s_c/subject} {VERB/s_c/hesitate/hesitates}, unsure if it's really rushing water. Unfortunately this costs the patrol the few seconds they had to react and the water crashes them against the river stones.",
+      "text": "The patrol begins to cross with s_c trailing nervously behind. Just as the patrol is almost clear, s_c notices a swell in the river rushing towards the patrol. {PRONOUN/s_c/subject/CAP} almost let out a warning yowl, but {PRONOUN/s_c/subject} {VERB/s_c/hesitate/hesitates}, unsure if it's really rushing water. Unfortunately, this costs the patrol the few seconds they had to react and the water crashes them against the river stones.",
       "exp": 0,
       "weight": 5,
       "stat_trait": ["nervous", "insecure"],
       "lost_cats": ["multi"]
     },
     {
-      "text": "The patrol begins to cross with s_c trailing nervously behind. Just as the patrol is almost clear, s_c notices a swell in the river rushing towards the patrol. {PRONOUN/s_c/subject/CAP} almost let out a warning yowl, but {PRONOUN/s_c/subject} {VERB/s_c/hesitate/hesitates}, unsure if it's really rushing water. Unfortunately this costs the patrol the few seconds they had to react and the water crashes them against the river stones.",
+      "text": "The patrol begins to cross with s_c trailing nervously behind. Just as the patrol is almost clear, s_c notices a swell in the river rushing towards the patrol. {PRONOUN/s_c/subject/CAP} almost let out a warning yowl, but {PRONOUN/s_c/subject} {VERB/s_c/hesitate/hesitates}, unsure if it's really rushing water. Unfortunately, this costs the patrol the few seconds they had to react and the water crashes them against the river stones.",
       "exp": 0,
       "weight": 10,
       "stat_trait": ["nervous", "insecure"],
@@ -491,7 +496,12 @@
           "cats": ["patrol"],
           "injuries": ["running nose", "water in their lungs", "shivering", "minor_injury", "blunt_force_injury"]
         }
-      ]
+      ],
+      "history_text": {
+        "scar": "m_c was scarred from the injuries obtained by trying to cross a dangerous river.",
+        "reg_death": "This cat died from injuries obtained by trying to cross a dangerous river.",
+        "lead_death": "died from injuries obtained by trying to cross a dangerous river"
+      }
     }
   ]
 },

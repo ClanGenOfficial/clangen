@@ -1,1 +1,2210 @@
-[]
+[
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings2applocked1",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": ["medium_prey2"],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [2, 2]
+        },
+        "weight": 20,
+        "intro_text": "The two siblings head out together, declaring a friendly competition to stock the fresh-kill pile. Leaf-fall has finally brought an end to the chokingly intense humidity of greenleaf, and they're keen to take advantage of the better weather.",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "app1 misses a w_tp_a_s, and app2 startles a pair of w_tp_a_p. They don't let it get them down, instead capturing a plump rabbit with a beautiful team ambush! But when they bring it back to camp, app1 tries to take sole credit for the prey, and instead of familial talent, it's familial discord that's displayed, as the apprentices get into a massive argument in the middle of camp.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["small"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous", "dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "s_c catches a great w_mp_a_s, and two w_tp_dl_p! But {PRONOUN/s_c/poss} sibling comes up empty pawed. s_c offers to let {PRONOUN/r_c/object} claim the smaller prey as {PRONOUN/r_c/poss} own, but the insulting suggestion just causes a massive argument.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"],
+                "stat_skill": ["HUNTER,0", "SWIMMER,0"],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous", "dislike"],
+                        "amount": 10
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The littermates end up dirty, exhausted, and without much more than a w_tp_a_s to show for it. Fox-dung! But at least out here, even if they didn't get much prey, they can complain about how stupidly hard hunting is to a sympathetic audience.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous", "dislike"],
+                        "amount": -10
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "app1 takes a hard fall while swiping at a w_mp_a_s from a precarious perch, and the afternoon's hunt is called off as {PRONOUN/app1/poss} sibling helps {PRONOUN/app1/object} back to camp, chatting reassuringly about how hard their hunting lessons are.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["minor_injury"],
+                        "scars": []
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous", "dislike"],
+                        "amount": -10
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings2applocked2",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": ["medium_prey2"],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [2, 2]
+        },
+        "weight": 20,
+        "intro_text": "It's nice to get the chance to go out hunting with app2. app1 knows they're still in the apprentice den together, but with different mentors and focuses and skills - it's not the same as it was back in the nursery as littermates. And with so much rain, there'll be all sorts of critters spooked out for them to hunt!",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "Yeah, it's a relatively okay hunt, with a couple w_tp_a_p and a dirty w_tp_dl_s. But what app1 is actually going to remember about today is that app2 thinks that {PRONOUN/app2/poss} mentor and app1's would make a cute couple!",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["small"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "It turns out s_c has really been listening to {PRONOUN/s_c/poss} mentor's tips for hunting - and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} willing to pass it on!",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["HUNTER,0"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Together they manage a grand haul of one w_tp_dl_s, and not even a very big w_tp_dl_s at that. They have a lot more to learn before they'll all be ready to take on the responsibility of providing for c_n.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings2applocked3",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": ["medium_prey2"],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [2, 2]
+        },
+        "weight": 20,
+        "intro_text": "The clouds are out, foretelling more rain, but they aren't here yet! And just like the clouds, app1 and {PRONOUN/app1/poss} littermate are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "app1 thinks app2's w_tp_dl_s looks infinitely more delicious than {PRONOUN/app1/poss} own contributions of two w_tp_a_p, while app2 insists that {PRONOUN/app2/subject}'d much rather bring back w_tp_a_p.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["small"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "jealous"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c spends half the patrol flashing in and out of the water, zipping from one riverbank to another, both impressing and frustrating the sibling trying to keep up with {PRONOUN/s_c/object}.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SWIMMER,0"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "jealous"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Well, they have a lot of fun exploring, even if it's not that productive of a hunting patrol.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings3applocked1",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": ["medium_prey2"],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 3,
+        "max_cats": 3,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [3, 3]
+        },
+        "weight": 20,
+        "intro_text": "The three siblings head out together, declaring a friendly competition to stock the fresh-kill pile. Leaf-fall has finally brought an end to the chokingly intense humidity of greenleaf, and they're keen to take advantage of the better weather.",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "app1 misses a w_tp_a_s, and {PRONOUN/app1/poss} siblings startle a pair of w_tp_a_p. They don't let it get them down, instead capturing a plump rabbit with a beautiful team ambush! But when they bring it back to camp, app1 tries to take sole credit for the prey, and instead of familial talent, it's familial discord that's displayed, as the apprentices get into a massive argument in the middle of camp.",
+                "exp": 30,
+                "weight": 20,
+                "prey": ["small"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous", "dislike"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c catches a great w_mp_a_s, and two w_tp_dl_p! But {PRONOUN/s_c/poss} siblings come up empty pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument.",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["HUNTER,0"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous", "dislike"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The littermates end up dirty, exhausted, and without much more than a w_tp_a_s to show for it. Fox-dung! But at least out here, even if they didn't get much prey, they can complain about how stupidly hard hunting is to a sympathetic audience.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous", "dislike"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "app1 takes a hard fall while swiping at a w_mp_a_s from a precarious perch, and the afternoon's hunt is called off as {PRONOUN/app1/poss} siblings help {PRONOUN/app1/object} back to camp, chatting reassuringly about how hard their hunting lessons are.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["minor_injury"],
+                        "scars": []
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous", "dislike"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings3applocked2",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": ["medium_prey2"],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 3,
+        "max_cats": 3,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [3, 3]
+        },
+        "weight": 20,
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den, but with different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And with so much rain, there'll be all sorts of critters spooked out for them to hunt!",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "Yeah, it's a relatively okay hunt, with a couple w_tp_a_p and a dirty w_tp_dl_s. But what app1 is actually going to remember about today is that app2 thinks that {PRONOUN/app2/poss} mentor and app3's would make a cute couple!",
+                "exp": 30,
+                "weight": 20,
+                "prey": ["small"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "It turns out s_c has really been listening to {PRONOUN/s_c/poss} mentor's tips for hunting - and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} willing to pass it on!",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["HUNTER,0"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Together they manage a grand haul of one w_tp_dl_s, and not even a very big w_tp_dl_s at that. They have a lot more to learn before they'll all be ready to take on the responsibility of providing for c_n.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings3applocked3",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": ["medium_prey2"],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 3,
+        "max_cats": 3,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [3, 3]
+        },
+        "weight": 20,
+        "intro_text": "The clouds are out, foretelling more rain, but they aren't here yet! And just like the clouds, app1 and {PRONOUN/app1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "app1 thinks app2's w_tp_dl_s looks infinitely more delicious than {PRONOUN/app1/poss} own contributions of two w_tp_a_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back w_tp_a_p than the w_mp_a_s {PRONOUN/app3/subject} caught.",
+                "exp": 30,
+                "weight": 20,
+                "prey": ["small"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "jealous"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c spends half the patrol flashing in and out of the water, zipping from one riverbank to another, both impressing and frustrating the siblings trying to keep up with {PRONOUN/s_c/object}.",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["SWIMMER,0"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "jealous"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Well, they have a lot of fun exploring, even if it's not that productive of a hunting patrol.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings4applocked1",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": ["medium_prey2"],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 4,
+        "max_cats": 4,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [4, 4]
+        },
+        "weight": 20,
+        "intro_text": "The four siblings head out together, declaring a friendly competition to stock the fresh-kill pile. Leaf-fall has finally brought an end to the chokingly intense humidity of greenleaf, and they're keen to take advantage of the better weather.",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "app1 misses a w_tp_a_s, and {PRONOUN/app1/poss} siblings startle a pair of w_tp_a_p. They don't let it get them down, instead capturing a plump rabbit with a beautiful team ambush! But when they bring it back to camp, app1 tries to take sole credit for the prey, and instead of familial talent, it's familial discord that's displayed, as the apprentices get into a massive argument in the middle of camp.",
+                "exp": 30,
+                "weight": 20,
+                "prey": ["small"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous", "dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "s_c catches a great w_mp_a_s, and two w_tp_dl_p! But {PRONOUN/s_c/poss} siblings come up empty pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument.",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["HUNTER,0"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous", "dislike"],
+                        "amount": 10
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The littermates end up dirty, exhausted, and without much more than a w_tp_a_s to show for it. Fox-dung! But at least out here, even if they didn't get much prey, they can complain about how stupidly hard hunting is to a sympathetic audience.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous", "dislike"],
+                        "amount": -10
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "app1 takes a hard fall while swiping at a w_mp_a_s from a precarious perch, and the afternoon's hunt is called off as {PRONOUN/app1/poss} siblings help {PRONOUN/app1/object} back to camp, chatting reassuringly about how hard their hunting lessons are.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["minor_injury"],
+                        "scars": []
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous", "dislike"],
+                        "amount": -10
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings4applocked2",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": ["medium_prey2"],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 4,
+        "max_cats": 4,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [4, 4]
+        },
+        "weight": 20,
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den, but with different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And with so much rain, there'll be all sorts of critters spooked out for them to hunt!",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "Yeah, it's a relatively okay hunt, with a couple w_tp_a_p and a dirty w_tp_dl_s. But what app1 is actually going to remember about today is that app2 thinks that {PRONOUN/app2/poss} mentor and app3's would make a cute couple!",
+                "exp": 30,
+                "weight": 20,
+                "prey": ["small"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "It turns out s_c has really been listening to {PRONOUN/s_c/poss} mentor's tips for hunting - and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} willing to pass it on!",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["HUNTER,0"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Together they manage a grand haul of one w_tp_dl_s, and not even a very big w_tp_dl_s at that. They have a lot more to learn before they'll all be ready to take on the responsibility of providing for c_n.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings4applocked3",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": ["medium_prey2"],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 4,
+        "max_cats": 4,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [4, 4]
+        },
+        "weight": 20,
+        "intro_text": "The clouds are out, foretelling more rain, but they aren't here yet! And just like the clouds, app1 and {PRONOUN/app1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "app1 thinks app2's w_tp_dl_s looks infinitely more delicious than {PRONOUN/app1/poss} own contributions of two w_tp_a_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back w_tp_a_p than the w_mp_a_s {PRONOUN/app3/subject} caught.",
+                "exp": 30,
+                "weight": 20,
+                "prey": ["small"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "jealous"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c spends half the patrol flashing in and out of the water, zipping from one riverbank to another, both impressing and frustrating the siblings trying to keep up with {PRONOUN/s_c/object}.",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["SWIMMER,0"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "jealous"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Well, they have a lot of fun exploring, even if it's not that productive of a hunting patrol.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings5applocked1",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": ["medium_prey2"],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 5,
+        "max_cats": 5,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [5, 5]
+        },
+        "weight": 20,
+        "intro_text": "The five siblings head out together, declaring a friendly competition to stock the fresh-kill pile. Leaf-fall has finally brought an end to the chokingly intense humidity of greenleaf, and they're keen to take advantage of the better weather.",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "app1 misses a w_tp_a_s, and {PRONOUN/app1/poss} siblings startle a pair of w_tp_a_p. They don't let it get them down, instead capturing a plump rabbit with a beautiful team ambush! But when they bring it back to camp, app1 tries to take sole credit for the prey, and instead of familial talent, it's familial discord that's displayed, as the apprentices get into a massive argument in the middle of camp.",
+                "exp": 30,
+                "weight": 20,
+                "prey": ["small"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous", "dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "s_c catches a great w_mp_a_s, and two w_tp_dl_p! But {PRONOUN/s_c/poss} siblings come up empty pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument.",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["HUNTER,0"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous", "dislike"],
+                        "amount": 10
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The littermates end up dirty, exhausted, and without much more than a w_tp_a_s to show for it. Fox-dung! But at least out here, even if they didn't get much prey, they can complain about how stupidly hard hunting is to a sympathetic audience.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous", "dislike"],
+                        "amount": -10
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "app1 takes a hard fall while swiping at a w_mp_a_s from a precarious perch, and the afternoon's hunt is called off as {PRONOUN/app1/poss} siblings help {PRONOUN/app1/object} back to camp, chatting reassuringly about how hard their hunting lessons are.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["minor_injury"],
+                        "scars": []
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous", "dislike"],
+                        "amount": -10
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings5applocked2",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": ["medium_prey2"],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 5,
+        "max_cats": 5,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [5, 5]
+        },
+        "weight": 20,
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den, but with different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And with so much rain, there'll be all sorts of critters spooked out for them to hunt!",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "Yeah, it's a relatively okay hunt, with a couple w_tp_a_p and a dirty w_tp_dl_s. But what app1 is actually going to remember about today is that app2 thinks that {PRONOUN/app2/poss} mentor and app3's would make a cute couple!",
+                "exp": 30,
+                "weight": 20,
+                "prey": ["small"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "It turns out s_c has really been listening to {PRONOUN/s_c/poss} mentor's tips for hunting - and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} willing to pass it on!",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["HUNTER,0"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Together they manage a grand haul of one w_tp_dl_s, and not even a very big w_tp_dl_s at that. They have a lot more to learn before they'll all be ready to take on the responsibility of providing for c_n.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings5applocked3",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": ["medium_prey2"],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 5,
+        "max_cats": 5,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [5, 5]
+        },
+        "weight": 20,
+        "intro_text": "The clouds are out, foretelling more rain, but they aren't here yet! And just like the clouds, app1 and {PRONOUN/app1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "app1 thinks app2's w_tp_dl_s looks infinitely more delicious than {PRONOUN/app1/poss} own contributions of two w_tp_a_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back w_tp_a_p than the w_mp_a_s {PRONOUN/app3/subject} caught.",
+                "exp": 30,
+                "weight": 20,
+                "prey": ["small"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "jealous"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c spends half the patrol flashing in and out of the water, zipping from one riverbank to another, both impressing and frustrating the siblings trying to keep up with {PRONOUN/s_c/object}.",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["SWIMMER,0"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "jealous"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Well, they have a lot of fun exploring, even if it's not that productive of a hunting patrol.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings6applocked1",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": ["medium_prey2", "six_apprentices"],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 6,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "The six siblings head out together, declaring a friendly competition to stock the fresh-kill pile. Leaf-fall has finally brought an end to the chokingly intense humidity of greenleaf, and they're keen to take advantage of the better weather.",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "app1 misses a w_tp_a_s, and {PRONOUN/app1/poss} siblings startle a pair of w_tp_a_p. They don't let it get them down, instead capturing a plump rabbit with a beautiful team ambush! But when they bring it back to camp, app1 tries to take sole credit for the prey, and instead of familial talent, it's familial discord that's displayed, as the apprentices get into a massive argument in the middle of camp.",
+                "exp": 30,
+                "weight": 20,
+                "prey": ["small"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous", "dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "s_c catches a great w_mp_a_s, and two w_tp_dl_p! But {PRONOUN/s_c/poss} siblings come up empty pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument.",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["HUNTER,0"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous", "dislike"],
+                        "amount": 10
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The littermates end up dirty, exhausted, and without much more than a w_tp_a_s to show for it. Fox-dung! But at least out here, even if they didn't get much prey, they can complain about how stupidly hard hunting is to a sympathetic audience.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous", "dislike"],
+                        "amount": -10
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "app1 takes a hard fall while swiping at a w_mp_a_s from a precarious perch, and the afternoon's hunt is called off as {PRONOUN/app1/poss} siblings help {PRONOUN/app1/object} back to camp, chatting reassuringly about how hard their hunting lessons are.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["minor_injury"],
+                        "scars": []
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous", "dislike"],
+                        "amount": -10
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings6applocked2",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": ["medium_prey2", "six_apprentices"],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 6,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den, but with different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And with so much rain, there'll be all sorts of critters spooked out for them to hunt!",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "Yeah, it's a relatively okay hunt, with a couple w_tp_a_p and a dirty w_tp_dl_s. But what app1 is actually going to remember about today is that app2 thinks that {PRONOUN/app2/poss} mentor and app3's would make a cute couple!",
+                "exp": 30,
+                "weight": 20,
+                "prey": ["small"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "It turns out s_c has really been listening to {PRONOUN/s_c/poss} mentor's tips for hunting - and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} willing to pass it on!",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["HUNTER,0"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Together they manage a grand haul of one w_tp_dl_s, and not even a very big w_tp_dl_s at that. They have a lot more to learn before they'll all be ready to take on the responsibility of providing for c_n.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings6applocked3",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": ["medium_prey2", "six_apprentices"],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 6,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "The clouds are out, foretelling more rain, but they aren't here yet! And just like the clouds, app1 and {PRONOUN/app1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "app1 thinks app2's w_tp_dl_s looks infinitely more delicious than {PRONOUN/app1/poss} own contributions of two w_tp_a_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back w_tp_a_p than the w_mp_a_s {PRONOUN/app3/subject} caught.",
+                "exp": 30,
+                "weight": 20,
+                "prey": ["small"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "jealous"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c spends half the patrol flashing in and out of the water, zipping from one riverbank to another, both impressing and frustrating the siblings trying to keep up with {PRONOUN/s_c/object}.",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["SWIMMER,0"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "jealous"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Well, they have a lot of fun exploring, even if it's not that productive of a hunting patrol.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings1warrior1applocked1",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [1, 1],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "app1 suppresses a yawn, trying not to make a weird expression in front of p_l as {PRONOUN/app1/subject} do. p_l suggested this as sibling bonding time, but did they <i>really</i> have to get up at dawn? The mornings are really starting to bite with cold now, as the Clan pads its way through time ever closer to the first frosts.",
+        "decline_text": "Actually, {PRONOUN/app1/subject}'d really rather be back in their nest.",
+        "chance_of_success": 50,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "app1 collects two w_tp_dl_p, and watches p_l take down a w_mp_a_s in an astonishing pounce. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's w_tp_dl_p, making app1 grimace at what's got to be fake praise.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "jealous"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Watching s_c's displays of atheticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
+                "can_have_stat": ["adult"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "jealous"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "app1 yawns {PRONOUN/app1/poss} way through the not overly successful hunting patrol.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings1warrior1applocked2",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [1, 1],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "As they wander through the swamps, hearing the world thrum with the last frog-calls before the cold, p_l awkwardly asks app1 how {PRONOUN/app1/subject} think {PRONOUN/app1/poss} training is going.",
+        "decline_text": "app1 carefully talks around the subject, telling p_l nothing of importance.",
+        "chance_of_success": 50,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "Giving in and accepting that {PRONOUN/app1/subject}{VERB/app1/'re/'s} just going to look stupid in front of {PRONOUN/app1/poss} cool older sibling, app1 tells p_l about the trouble {PRONOUN/app1/subject}{VERB/app1/'ve/'s} been having with {PRONOUN/app1/poss} pounce. It's such a simple thing - {PRONOUN/app1/subject} should have it by now! But p_l is actually super helpful and reassuring about it, it's nice.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Because, you see, if app1 ever wanted help - s_c knows they're not littermates, but they're still siblings, s_c is totally here for {PRONOUN/app1/object} if app1 ever wants extra training. It's still an awkward offer. But it's nice.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
+                "can_have_stat": ["adult"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "app1 doesn't want to talk about it. Like. At all. {PRONOUN/app1/subject/CAP} stalk off in a huff.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings1warrior1applocked3",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [1, 1],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "app1 bounds out of camp, determined to show off to p_l!",
+        "decline_text": "And both are immediately recalled - the camp needs new nesting materials, not more prey.",
+        "chance_of_success": 50,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "Taking down a w_mp_dl_s all by {PRONOUN/app1/self}, app1 feels twice {PRONOUN/app1/poss} actual size showing it to p_l.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c, so physically strong and impressive, shows app1 exactly how to pull off one of {PRONOUN/s_c/poss} moves, and app1 trots back to camp with a w_mp_dl_s to prove it!",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
+                "can_have_stat": ["adult"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "app1 knows {PRONOUN/app1/poss} patrol is still bringing back a little prey for the fresh-kill pile, but... it's so disappointing. {PRONOUN/app1/subject/CAP} really wanted to prove how much {PRONOUN/app1/subject}{VERB/app1/'ve/'s} grown to p_l.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings2to5warrior1applocked1",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [1, 1],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "app1 suppresses a yawn, trying not to make a weird expression in front of p_l as {PRONOUN/app1/subject} do. p_l suggested this as sibling bonding time, but did they <i>really</i> have to get up at dawn? The mornings are really starting to bite with cold now, as the Clan pads its way through time ever closer to the first frosts.",
+        "decline_text": "Actually, {PRONOUN/app1/subject}'d really rather be back in their nest.",
+        "chance_of_success": 50,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "app1 collects two w_tp_dl_p, and watches p_l take down a w_mp_a_s in an astonishing pounce and the rest of {PRONOUN/app1/poss} older siblings bring down two w_mp_dl_p. {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's w_tp_dl_p, making app1 grimace at what's got to be fake praise.",
+                "exp": 30,
+                "weight": 20,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "jealous"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Watching s_c's displays of atheticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
+                "can_have_stat": ["adult"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "jealous"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "app1 yawns {PRONOUN/app1/poss} way through the not overly successful hunting patrol.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings2to5warrior1applocked2",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [1, 1],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "app1 bounds out of camp, determined to show off to {PRONOUN/app1/poss} older siblings!",
+        "decline_text": "And everyone is immediately recalled - the camp needs new nesting materials, not more prey.",
+        "chance_of_success": 50,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "Taking down a w_mp_dl_s all by {PRONOUN/app1/self}, app1 feels twice {PRONOUN/app1/poss} actual size showing it to {PRONOUN/app1/poss} older, fully named warrior siblings.",
+                "exp": 30,
+                "weight": 20,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c, so physically strong and impressive, shows app1 exactly how to pull off one of {PRONOUN/s_c/poss} moves, and app1 trots back to camp with a w_mp_dl_s to prove it!",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
+                "can_have_stat": ["adult"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "app1 knows {PRONOUN/app1/poss} patrol is still bringing back a little prey for the fresh-kill pile, but... it's so disappointing. {PRONOUN/app1/subject/CAP} really wanted to prove how much {PRONOUN/app1/subject}{VERB/app1/'ve/'s} grown to their family.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings2warriorslocked1",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "As rain patters on the canopy that overhangs the main channel of the river, p_l is out on a hunting patrol with r_c.",
+        "decline_text": "Actually, {PRONOUN/p_l/subject}'d rather try a land hunt. {PRONOUN/p_l/subject/CAP} wave {PRONOUN/p_l/poss} sibling off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/disappear/disappears} into the inland undergrowth.",
+        "chance_of_success": 50,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "A w_mp_a_s and two w_mp_a_p is nothing to sniff at, as a hunting success, but stars above being alone with r_c makes p_l feel like a kitten again. And not in the cute way either, in the chewing on tails, whiny, petty, immature way. Ugh.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The hunting patrol is perfectly successful and it matters not a whit to either of the warriors, because p_l makes a joke that {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} is funny but that's always gotten on r_c's nerves and suddenly they're both acting like apprentices again, snippy, immature, and irritable.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c nets them two healthy w_mp_a_p to take back to camp, but it only irritates {PRONOUN/s_c/poss} sibling. r_c never even got the chance to even try for a pounce, {VERB/r_c/are/is} {PRONOUN/r_c/subject} only there to carry around s_c's prey?",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "It isn't a very successful hunt - they'll have to head out again for more soon.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings2warriorslocked2",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "Sometimes, it's just nice to hang out with {PRONOUN/r_c/poss} sibling. Especially on a crisp leaf-fall afternoon, the sun still strong enough to provide warmth while they fish.",
+        "decline_text": "But sometimes, you get called back to camp instead. Ah well, another time!",
+        "chance_of_success": 50,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "A scruffy w_mp_a_s, a bundle of w_tp_a_p, and a patrol spent retreading all their favorite in-jokes, it's a good day.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "There's just something nice about hanging out with another warrior who'll always be there for {PRONOUN/r_c/object}, regardless of their similarities and differences. And they also bring back a good-sized w_mp_a_s with some w_tp_dl_p on the side for the fresh-kill pile.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "r_c is proud of s_c, watching {PRONOUN/s_c/object} dart among the waves, foam bubbling along {PRONOUN/s_c/poss} pelt.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SWIMMER,1", "HUNTER,1"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "They don't manage anything like the number of catches they were both expecting to get - a bit disappointing, even if they're not entirely empty-pawed.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings2warriorslocked3",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "The leaf-fall rains are back, but r_c has been assigned a moderately tolerable hunting partner - {PRONOUN/r_c/poss} sibling!",
+        "decline_text": "Cancel that - a border patrol needs backup.",
+        "chance_of_success": 50,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "Watching r_c execute a fantastic fishing swipe to snatch a w_mp_a_s, p_l smiles. Does r_c remember the time {PRONOUN/r_c/subject} tried to do that as a kitten, and stood on {PRONOUN/r_c/poss} own tail? The siblings laugh about it as they move on to the next hunting ground.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "It's been a while since they've been on a patrol alone together, and after they catch a w_mp_a_s for the fresh-kill pile r_c spends a bit just chasing p_l along the coast, batting at each other in a moment of silliness.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "r_c jokes that {PRONOUN/r_c/subject} can't possibly be related to s_c - clearly s_c was born from reef sharks, not cats, with the way {PRONOUN/s_c/subject} {VERB/s_c/glide/glides} through the water.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SWIMMER,1"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Sometimes, the prey just doesn't run, and today is one of those times.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            },
+            {
+                "text": "r_c sees a fish {PRONOUN/r_c/subject}'d like for the fresh-kill pile, but while perched on a rock setting up a good pounce, {PRONOUN/r_c/subject} {VERB/r_c/slip/slips} - {PRONOUN/r_c/subject} {VERB/r_c/bob/bobs} to the surface and splutter {PRONOUN/r_c/poss} way to shore, but {PRONOUN/r_c/poss} breath comes short and wheezing after the dunking. Fleas and ticks!",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["water in their lungs"],
+                        "scars": []
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings2warriorslocked4",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "The hunting patrol heads out early, before the rains can make good on their dark-clouded threat.",
+        "decline_text": "They encounter a dawn patrol on their way back to camp and join up with them instead.",
+        "chance_of_success": 50,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "p_l grabs a massive w_mp_a_s that {PRONOUN/p_l/subject} can barely carry, and r_c congratulates {PRONOUN/p_l/object}, secretly wondering if {PRONOUN/r_c/subject}'ll ever manage to surpass {PRONOUN/r_c/poss} sibling's achievements.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "r_c always feels like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} padding in p_l's footsteps, especially today, watching {PRONOUN/p_l/object} haul back such a good catch of prey for the clan, a contribution that more than makes up for r_c's meagre offerings.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous"],
+                        "amount": 10
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Sometimes, the prey just doesn't run, and today is one of those times.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous"],
+                        "amount": -10
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "r_c comes down with a crippling headache, making {PRONOUN/r_c/object} stagger, dizzy and weak, as {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} helped back to camp.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["severe headache"],
+                        "scars": []
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous"],
+                        "amount": -10
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings2warriorslocked5",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "The siblings head out to one of the further hunting grounds, down where a collection of fruit trees drop their harvest into a stagnant pool that rarely washes the stinking bait away.",
+        "decline_text": "They decide to bask for a bit instead of making the long walk.",
+        "chance_of_success": 50,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "Together, they collect an old w_mp_dl_s and two w_tp_dl_p. It should be a great patrol, returning with so much prey - but r_c is acting obnoxious and {PRONOUN/r_c/poss} sibling has little time or patience for it.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "r_c makes a dumb comment that accidentally cuts deep. {PRONOUN/r_c/poss/CAP} sibling works with {PRONOUN/r_c/object} long enough to bring back a good haul of prey - but no longer.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Today is just not their day.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            },
+            {
+                "text": "The patrol tries to hunt, but r_c keeps stopping to duck behind bushes, until it's obvious that something is actually wrong. Eww.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["diarrhea"],
+                        "scars": []
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings3to6warriorslocked1",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "As rain patters on the canopy that overhangs the main channel of the river, p_l is out on a hunting patrol with their siblings.",
+        "decline_text": "Actually, {PRONOUN/p_l/subject}'d rather try a land hunt. {PRONOUN/p_l/subject/CAP} wave {PRONOUN/p_l/poss} siblings off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/disappear/disappears} into the inland undergrowth.",
+        "chance_of_success": 50,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "A w_mp_a_s and a couple w_mp_a_p are nothing to sniff at, as a hunting success, but stars above being alone with {PRONOUN/p_l/poss} siblings makes p_l feel like a kitten again. And not in the cute way either, in the chewing on tails, whiny, petty, immature way. Ugh.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The hunting patrol is perfectly successful and it matters not a whit to any of the warriors, because p_l makes a joke that {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} is funny but that's always gotten on r_c's nerves and suddenly everyone's acting like apprentices again, snippy, immature, and irritable.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c nets them four healthy w_mp_a_p to take back to camp, but it only irritates {PRONOUN/s_c/poss} siblings. r_c never even got the chance to even try for a pounce, {VERB/r_c/are/is} {PRONOUN/r_c/subject} only there to carry around s_c's prey?",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "It isn't a very successful hunt - they'll have to head out again for more soon.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings3to6warriorslocked2",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "Sometimes, it's just nice to hang out with {PRONOUN/r_c/poss} siblings. Especially on a crisp leaf-fall afternoon, the sun still strong enough to provide warmth while they fish.",
+        "decline_text": "But sometimes, you get called back to camp instead. Ah well, another time!",
+        "chance_of_success": 50,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "A scruffy w_mp_a_s, a bundle of w_tp_a_p, and a patrol spent retreading all their favorite in-jokes, it's a good day.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "There's just something nice about hanging out with other warriors who'll always be there for {PRONOUN/r_c/object}, regardless of their similarities and differences. And they also bring back a good-sized w_mp_a_s with some w_tp_dl_p on the side for the fresh-kill pile.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "The siblings are proud of s_c, watching {PRONOUN/s_c/object} dart among the waves, foam bubbling along {PRONOUN/s_c/poss} pelt.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SWIMMER,1", "HUNTER,1"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "They don't manage anything like the number of catches they were all expecting to get - a bit disappointing, even if they're not entirely empty-pawed.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings3to6warriorslocked3",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "The leaf-fall rains are back, but r_c has been assigned a moderately tolerable hunting patrol - {PRONOUN/r_c/poss} siblings!",
+        "decline_text": "Cancel that - a border patrol needs backup.",
+        "chance_of_success": 50,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "Watching r_c execute a fantastic fishing swipe to snatch a w_mp_a_s, p_l smiles. Does r_c remember the time {PRONOUN/r_c/subject} tried to do that as a kitten, and stood on {PRONOUN/r_c/poss} own tail? The siblings laugh about it together as they move on to the next hunting ground.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "It's been a while since they've been on a patrol alone together, and after they catch a couple w_tp_dl_p and a w_mp_dl_s for the fresh-kill pile r_c spends a bit just chasing their siblings along the coast, batting at each other in a moment of silliness.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "r_c jokes that {PRONOUN/r_c/subject} can't possibly be related to s_c - clearly s_c was born from reef sharks, not cats, with the way {PRONOUN/s_c/subject} {VERB/s_c/glide/glides} through the water.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SWIMMER,1"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Sometimes, the prey just doesn't run, and today is one of those times.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            },
+            {
+                "text": "r_c sees a fish {PRONOUN/r_c/subject}'d like for the fresh-kill pile, but while perched on a rock setting up a good pounce, {PRONOUN/r_c/subject} {VERB/r_c/slip/slips} - {PRONOUN/r_c/subject} {VERB/r_c/bob/bobs} to the surface and splutter {PRONOUN/r_c/poss} way to shore, but {PRONOUN/r_c/poss} breath comes short and wheezing after the dunking. Fleas and ticks!",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["water in their lungs"],
+                        "scars": []
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings3to6warriorslocked4",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "The hunting patrol heads out early, before the rains can make good on their dark-clouded threat.",
+        "decline_text": "They encounter a dawn patrol on their way back to camp and join up with them instead.",
+        "chance_of_success": 50,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "p_l grabs a massive w_mp_a_s that {PRONOUN/p_l/subject} can barely carry, and r_c congratulates {PRONOUN/p_l/object}, secretly wondering if {PRONOUN/r_c/subject}'ll ever manage to surpass {PRONOUN/r_c/poss} sibling's achievements.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "r_c always feels like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} padding in p_l's footsteps, especially today, watching {PRONOUN/p_l/object} haul back such a good catch of prey for the clan, a contribution that more than makes up for r_c's meagre offerings.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous"],
+                        "amount": 10
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Sometimes, the prey just doesn't run, and today is one of those times.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous"],
+                        "amount": -10
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "r_c comes down with a crippling headache, making {PRONOUN/r_c/object} stagger, dizzy and weak, as {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} helped back to camp.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["severe headache"],
+                        "scars": []
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous"],
+                        "amount": -10
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_random_leaffall_siblings3to6warriorslocked5",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "The siblings head out to one of the further hunting grounds, down where a collection of fruit trees drop their harvest into a stagnant pool that rarely washes the stinking bait away.",
+        "decline_text": "They decide to bask for a bit instead of making the long walk.",
+        "chance_of_success": 50,
+        "relationship_constraint": ["siblings"],
+        "success_outcomes": [
+            {
+                "text": "Together, they collect an old w_mp_dl_s and four w_tp_dl_p. It should be a great patrol, returning with decent prey - but r_c is acting obnoxious and {PRONOUN/r_c/poss} siblings have little time or patience for it.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "r_c makes a dumb comment that accidentally cuts deep. {PRONOUN/r_c/poss/CAP} siblings work with {PRONOUN/r_c/object} long enough to bring back a good haul of prey - but no longer.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Today is just not their day.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            },
+            {
+                "text": "The patrol tries to hunt, but r_c keeps stopping to duck behind bushes, until it's obvious that something is actually wrong. Eww.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["diarrhea"],
+                        "scars": []
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
+    }
+]

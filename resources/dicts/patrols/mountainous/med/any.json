@@ -100,7 +100,7 @@
                 ]
             },
             {
-                "text": "As p_l is explaining why and where the herbs are growing app1 lets out a shout. To p_l's surprise they have found a previously unknown patch of a uncommon herb. Stunned and filled with pride that they found and recognized the herb, p_l promises them the first pick of fresh-kill.",
+                "text": "As p_l is explaining why and where the herbs are growing app1 lets out a shout. To p_l's surprise they have found a previously unknown patch of an uncommon herb. Stunned and filled with pride that they found and recognized the herb, p_l promises them the first pick of fresh-kill.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["random_herbs"],
@@ -280,7 +280,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "It's absolutely miserable weather to gather in, and p_l wishes they didn't have to. But, even though r_c slips in the mud and they all end up drenched, they do bring back herbs.",
+                "text": "It's absolutely miserable weather to be gathering herbs in, and p_l wishes {PRONOUN/p_l/subject} didn't have to. Despite r_c nearly slipping and falling over multiple times during the patrol and them all getting drenched to the bone, they do, miraculously, still manage to bring back herbs.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -324,7 +324,7 @@
                 ]
             },
             {
-                "text": "The sharp eyed s_c spots herbs quickly, and the cats harvest them and retreat back to the dry camp, not lingering for a second more than they need to.",
+                "text": "The keen-eyed s_c spots herbs quickly, and the cats harvest them and retreat back to the dry camp, not lingering for a second more than they need to.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -397,7 +397,7 @@
                 "herbs": ["cobwebs"]
             },
             {
-                "text": "p_l visits a few of their favourite places to gather cobwebs. When they get back to camp, they end up startling several cats on their way back to their den - p_l is practically a walking cobweb, impossible to see beneath the sheer mass they have gathered.",
+                "text": "p_l visits a few of their favorite places to gather cobwebs. When they get back to camp, they end up startling several cats on their way back to their den - p_l is practically a walking cobweb, impossible to see beneath the sheer mass they have gathered.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "cobwebs"]
@@ -522,7 +522,7 @@
                 ]
             },
             {
-                "text": "The patrol brings back a truly massive haul, and return in good humour, laughing as they set down their sticks of spun-up webbing in the medicine cat den. p_l joins everyone as they sit down to share tongues, ridding their pelts of dust and the odd spider as the cats catch up with each other and enjoy the day.",
+                "text": "The patrol brings back a truly massive haul, and return in good humor, laughing as they set down their sticks of spun-up webbing in the medicine cat den. p_l joins everyone as they sit down to share tongues, ridding their pelts of dust and the odd spider as the cats catch up with each other and enjoy the day.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "cobwebs"],
@@ -633,7 +633,7 @@
                 ]
             },
             {
-                "text": "<i>Murrp</i>ing with laughter, app1 clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices muffled purrs and laughs.",
+                "text": "<i>Murrp</i>ing with laughter, app1 clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices' muffled purrs and laughs.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "cobwebs"],
@@ -721,7 +721,7 @@
                 ]
             },
             {
-                "text": "<i>Murrp</i>ing with laughter, app1 clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices muffled purrs and laughs, even though app3 seems solely focused on the chore, content to let the others muck about so long as everything gets done.",
+                "text": "<i>Murrp</i>ing with laughter, app1 clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices' muffled purrs and laughs, even though app3 seems solely focused on the chore, content to let the others muck about so long as everything gets done.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "cobwebs"],
@@ -1074,7 +1074,7 @@
                 ]
             },
             {
-                "text": "... However, once out of camp, the apprentices realise they're out of their depth, and turn to p_l for help. p_l, to their credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul there's a new feeling of rapport between everyone, regardless of their role.",
+                "text": "... However, once out of camp, the apprentices realize they're out of their depth, and turn to p_l for help. p_l, to their credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul there's a new feeling of rapport between everyone, regardless of their role.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "cobwebs"],
@@ -1163,7 +1163,7 @@
                 ]
             },
             {
-                "text": "... However, once out of camp, the apprentices realise they're out of their depth, and turn to p_l for help. p_l, to their credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul there's a new feeling of rapport between everyone, regardless of their role.",
+                "text": "... However, once out of camp, the apprentices realize they're out of their depth, and turn to p_l for help. p_l, to their credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul there's a new feeling of rapport between everyone, regardless of their role.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "cobwebs"],
@@ -1252,7 +1252,7 @@
                 ]
             },
             {
-                "text": "... However, once out of camp, the apprentices realise they're out of their depth, and turn to p_l for help. p_l, to their credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul there's a new feeling of rapport between everyone, regardless of their role.",
+                "text": "... However, once out of camp, the apprentices realize they're out of their depth, and turn to p_l for help. p_l, to their credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul there's a new feeling of rapport between everyone, regardless of their role.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "cobwebs"],
@@ -1341,7 +1341,7 @@
                 ]
             },
             {
-                "text": "... However, once out of camp, the apprentices realise they're out of their depth, and turn to p_l for help. p_l, to their credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul there's a new feeling of rapport between everyone, regardless of their role.",
+                "text": "... However, once out of camp, the apprentices realize they're out of their depth, and turn to p_l for help. p_l, to their credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul there's a new feeling of rapport between everyone, regardless of their role.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "cobwebs"],
@@ -1889,12 +1889,12 @@
             "all apprentices": [2, 2]
         },
         "weight": 20,
-        "intro_text": "p_l comes up to meet r_c, quietly apologising about r_c being sent to help p_l collect moss.",
+        "intro_text": "p_l comes up to meet r_c, quietly apologizing about r_c being sent to help p_l collect moss.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "There's nothing to apologize for! r_c bumps p_l's shoulder affectionately, brushing past them with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
+                "text": "There's nothing to apologize for! r_c bumps p_l's shoulder affectionately, brushing past them with a smile as they leave camp. It's a fine way to spend the afternoon, and a cool cat to spend it with!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss"],
@@ -1983,7 +1983,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Though the other cat of their group doesn't look thrilled, app1 insists there's nothing to apologize for. app1 bumps app2's shoulder affectionately, brushing past them with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
+                "text": "Though the other cat of their group doesn't look thrilled, app1 insists there's nothing to apologize for. app1 bumps app2's shoulder affectionately, brushing past them with a smile as they leave camp. It's a fine way to spend the afternoon, and a cool cat to spend it with!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss"],
@@ -2072,7 +2072,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Though the others of their group don't look thrilled, app2 insists there's nothing to apologize for. app2 bumps app1's shoulder affectionately, brushing past them with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
+                "text": "Though the others of their group don't look thrilled, app2 insists there's nothing to apologize for. app2 bumps app1's shoulder affectionately, brushing past them with a smile as they leave camp. It's a fine way to spend the afternoon, and a cool cat to spend it with!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss"],
@@ -2339,7 +2339,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Though the others of their group don't look thrilled, app2 insists there's nothing to apologize for. app2 bumps app1's shoulder affectionately, brushing past them with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
+                "text": "Though the others of their group don't look thrilled, app2 insists there's nothing to apologize for. app2 bumps app1's shoulder affectionately, brushing past them with a smile as they leave camp. It's a fine way to spend the afternoon, and a cool cat to spend it with!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss"],
@@ -2517,7 +2517,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Though the others of their group don't look thrilled, app2 insists there's nothing to apologize for. app2 bumps app1's shoulder affectionately, brushing past them with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
+                "text": "Though the others of their group don't look thrilled, app2 insists there's nothing to apologize for. app2 bumps app1's shoulder affectionately, brushing past them with a smile as they leave camp. It's a fine way to spend the afternoon, and a cool cat to spend it with!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss"],
