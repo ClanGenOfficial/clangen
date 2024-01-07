@@ -74,7 +74,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The apprentices find a promising looking patch of fresh snow, only to find it conceals an old dirtplace trench underneath. Not only does it stink, they have to clean it up and try hid that they disturbed it, and it leaves them both irritated and stressed.",
+                "text": "The apprentices find a promising looking patch of fresh snow, only to find it conceals an old dirtplace trench underneath. Not only does it stink, but now they have to clean it up <i>and</i> hide the fact that they disturbed it in the first place! It leaves them both irritated and stressed.",
                 "exp": 0,
                 "weight": 20
             },
@@ -132,7 +132,7 @@
                 ]
             },
             {
-                "text": "On a scrub by the bog, a small towhee opens its beak and calls like a cat. app1 pokes s_c for an explanation. You see, an ancient cat, running from wolves, begged StarClan for help. StarClan gave her voice to the bird in the tree she hid under, and while the wolves were distracted she got away, but she never managed to catch that bird and get her voice back.",
+                "text": "On a scrub by the bog, a small towhee opens its beak and calls like a cat. app1 pokes s_c for an explanation. You see, an ancient cat, running from wolves, begged StarClan for help. StarClan gave her voice to the bird in the tree she hid under, and while the wolves were distracted, she got away, but she never managed to catch that bird and get her voice back.",
                 "exp": 15,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -275,7 +275,7 @@
                 ]
             },
             {
-                "text": "On a scrub by the bog, a small towhee opens its beak and calls like a cat. The apprentices poke s_c for an explanation. You see, an ancient cat, running from wolves, begged StarClan for help. StarClan gave her voice to the bird in the tree she hid under, and while the wolves were distracted she got away, but she never managed to catch that bird and get her voice back.",
+                "text": "On a scrub by the bog, a small towhee opens its beak and calls like a cat. The apprentices poke s_c for an explanation. You see, an ancient cat, running from wolves, begged StarClan for help. StarClan gave her voice to the bird in the tree she hid under, and while the wolves were distracted, she got away, but she never managed to catch that bird and get her voice back.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -368,6 +368,212 @@
                 "text": "app1 refuses to believe that the cat cry they hear from the bog comes from a little towhee bird, and argues with p_l and app2 all the way back to camp.",
                 "exp": 0,
                 "weight": 20
+            }
+        ]
+    },
+    {
+        "patrol_id": "mtn_train_eagle_leaffalldappledfeather1",
+        "biome": ["mountainous"],
+        "season": ["leaf-fall"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [2, 2]
+        },
+        "weight": 20,
+        "intro_text": "app1 notices app2's absence, and follows {PRONOUN/app2/poss} unobscured trail to the cliff's edge. What on all the ranges is app2 doing out here? There's an eagle nest, app2 explains, {PRONOUN/app2/poss} tail swooping up over {PRONOUN/app2/poss} back to point, here, look. The chicks are trying to fly!",
+        "decline_text": "That's lovely, but, like, can app2 watch from a place that isn't a damned cliff edge?",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "Wait, like, eagle apprentices? Intrigued, app1 sticks {PRONOUN/app1/poss} head out. Down below, two dappled feathered juveniles squabble, beating their wings frantically, clearly gearing up for something. app2 bets on the lighter colored one, but app1 thinks that the smaller dark patterned one has the heart for it, and {PRONOUN/app1/subject} {VERB/app1/leap/leaps} to {PRONOUN/app1/poss} paws when the darker chick takes to the wing first, throwing {PRONOUN/app1/poss} head back and yowling cheers to the sky as the little eagle makes it to the next tree over.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} edge over beside app2, both apprentices staring down at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!!",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "It's not app1's thing, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} happy to bask a couple tail lengths away until app2 is done eagle watching.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices flinch backwards with yelps and yowls, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} {PRONOUN/s_c/self} losing {PRONOUN/s_c/poss} grip, {PRONOUN/s_c/poss} heart jumping with terror as sudden pain sparks down {PRONOUN/s_c/poss} flank. The other apprentice digs fangs into s_c's side, saving {PRONOUN/s_c/poss} life, if not {PRONOUN/s_c/poss} pelt.",
+                "exp": 0,
+                "weight": 10,
+                "stat_trait": [
+                    "bold",
+                    "daring",
+                    "confident",
+                    "adventurous",
+                    "arrogant",
+                    "competitive"
+                ],
+                "can_have_stat": ["app"],
+                "injury": [
+                    {
+                        "cats": ["s_c"],
+                        "injuries": ["cat bite"],
+                        "scars": ["TAILBASE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "r_c was scarred when another apprentice (violently) saved {PRONOUN/r_c/poss} life from a cliff fall during a youthful adventure."
+                }
+            }
+        ]
+    },
+    {
+        "patrol_id": "mtn_train_eagle_leaffalldappledfeather_cruelseason1",
+        "biome": ["mountainous"],
+        "season": ["leaf-fall"],
+        "types": ["training"],
+        "tags": ["cruel_season"],
+        "patrol_art": "train_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [2, 2]
+        },
+        "weight": 20,
+        "intro_text": "app1 notices app2's absence, and follows {PRONOUN/app2/poss} unobscured trail to the cliff's edge. What on all the ranges is app2 doing out here? There's an eagle nest, app2 explains, {PRONOUN/app2/poss} tail swooping up over {PRONOUN/app2/poss} back to point, here, look. The chicks are trying to fly!",
+        "decline_text": "That's lovely, but, like, can app2 watch from a place that isn't a damned cliff edge?",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "Wait, like, eagle apprentices? Intrigued, app1 sticks {PRONOUN/app1/poss} head out. Down below, two dappled feathered juveniles squabble, beating their wings frantically, clearly gearing up for something. app2 bets on the lighter colored one, but app1 thinks that the smaller dark patterned one has the heart for it, and {PRONOUN/app1/subject} {VERB/app1/leap/leaps} to {PRONOUN/app1/poss} paws when the darker chick takes to the wing first, throwing {PRONOUN/app1/poss} head back and yowling cheers to the sky as the little eagle makes it to the next tree over.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} edge over beside app2, both apprentices staring down at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!!",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "It's not app1's thing, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} happy to bask a couple tail lengths away until app2 is done eagle watching.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices flinch backwards with yelps and yowls, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} {PRONOUN/s_c/self} losing {PRONOUN/s_c/poss} grip, {PRONOUN/s_c/poss} heart jumping with terror as sudden pain sparks down {PRONOUN/s_c/poss} flank. The other apprentice digs fangs into s_c's side, saving {PRONOUN/s_c/poss} life, if not {PRONOUN/s_c/poss} pelt.",
+                "exp": 0,
+                "weight": 10,
+                "stat_trait": [
+                    "bold",
+                    "daring",
+                    "confident",
+                    "adventurous",
+                    "arrogant",
+                    "competitive"
+                ],
+                "can_have_stat": ["app"],
+                "injury": [
+                    {
+                        "cats": ["s_c"],
+                        "injuries": ["cat bite"],
+                        "scars": ["TAILBASE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "r_c was scarred when another apprentice (violently) saved {PRONOUN/r_c/poss} life from a cliff fall during a youthful adventure.",
+                    "death": "r_c fell from a cliff as an apprentice when {PRONOUN/r_c/subject} took a stupid risk, cutting {PRONOUN/r_c/poss} life short."
+                }
+            },
+            {
+                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices flinch backwards with yelps and yowls, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} {PRONOUN/s_c/self} losing {PRONOUN/s_c/poss} grip, {PRONOUN/s_c/poss} claws gripping on nothing as {PRONOUN/s_c/subject} {VERB/s_c/tumble/tumbles}, spinning end over end, yowling with terror, until {PRONOUN/s_c/poss} flight comes to an abrupt and terrible end.",
+                "exp": 0,
+                "weight": 10,
+                "stat_trait": [
+                    "bold",
+                    "daring",
+                    "confident",
+                    "adventurous",
+                    "arrogant",
+                    "competitive"
+                ],
+                "can_have_stat": ["app"],
+                "dead_cats": ["s_c"],
+                "history_text": {
+                    "scar": "r_c was scarred when another apprentice (violently) saved {PRONOUN/r_c/poss} life from a cliff fall during a youthful adventure.",
+                    "death": "r_c fell from a cliff as an apprentice when {PRONOUN/r_c/subject} took a stupid risk, cutting {PRONOUN/r_c/poss} life short."
+                }
             }
         ]
     }

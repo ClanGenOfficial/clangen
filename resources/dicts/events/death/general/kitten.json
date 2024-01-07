@@ -240,5 +240,73 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "other_cat",
+            "murder",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "rc_to_mc",
+            "neg_platonic",
+            "dislike"
+        ],
+        "death_text": "m_c excitedly follows r_c a short distance from camp to begin the promised battle training. r_c says something about how real warriors don't hold back, even in a spar. m_c nods eagerly. {PRONOUN/m_c/subject/CAP} barely {VERB/m_c/have/has} time to duck as r_c's paw whistles past {PRONOUN/m_c/poss} head. The kit stumbles backwards, tripping over {PRONOUN/m_c/poss} paws, {PRONOUN/m_c/poss} head landing squarely on a rock.",
+        "history_text": {
+            "reg_death": "m_c was killed in battle training with r_c.",
+            "reg_murder_unrevealed": "m_c was killed in battle training with r_c."
+        },
+        "other_cat_skill": [
+            "FIGHTER,1"
+        ]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "other_cat",
+            "murder",
+            "revealed",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "rc_to_mc",
+            "neg_platonic",
+            "dislike"
+        ],
+        "death_text": "m_c quietly pads after r_c, eyes bright with the promise of exploring the territory. r_c suddenly comes to a stop beside a spiky bush, pointing at it with a claw. Apparently the shiny red berries taste just like fresh prey, and r_c is offering one to m_c! The kit excitedly nods and grabs a berry with {PRONOUN/m_c/poss} teeth. It's not exactly like prey... the kit's thought trails off as darkness takes over {PRONOUN/m_c/poss} vision.",
+        "history_text": {
+            "reg_death": "m_c ate deathberries and succumbed to the poison.",
+            "reg_murder_unrevealed": "m_c was fed deathberries by r_c."
+        }
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "other_cat",
+            "murder",
+            "revealed",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "rc_to_mc",
+            "neg_platonic",
+            "dislike"
+        ],
+        "death_text": "m_c sneaks out of camp, wondering what all is out there. {PRONOUN/m_c/subject/CAP} {VERB/m_c/come/comes} to a small stream and {VERB/m_c/attempt/attempts} to leap across. {PRONOUN/m_c/subject/CAP} misjudged the distance and {PRONOUN/m_c/poss} paws scrabble on the bank for purchase. m_c is losing {PRONOUN/m_c/poss} grip when {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} {PRONOUN/m_c/subject} {VERB/m_c/catch/catches} a glimpse of r_c's pelt. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} about to call for help when {PRONOUN/m_c/poss} grip fails.",
+        "history_text": {
+            "reg_death": "m_c drowned in a stream while r_c watched.",
+            "reg_murder_unrevealed": "m_c drowned in a stream."
+        },
+        "cat_trait":[
+            "daring",
+            "troublesome",
+            "attention-seeker",
+            "impulsive",
+            "inquisitive"
+        ]
     }
 ]

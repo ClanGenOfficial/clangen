@@ -150,7 +150,7 @@ class PatrolOutcome():
                     dead_cats=_d.get("dead_cats"),
                     injury=_d.get("injury"),
                     lost_cats=_d.get("lost_cats"),
-                    history_leader_death=_d["history_text"].get("leader_death") if \
+                    history_leader_death=_d["history_text"].get("lead_death") if \
                                         isinstance(_d.get("history_text"), dict) else None,
                     history_reg_death=_d["history_text"].get("reg_death") if  
                                     isinstance(_d.get("history_text"), dict) else None,

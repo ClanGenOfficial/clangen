@@ -136,7 +136,7 @@
         "biome": ["Any"],
         "season": ["Any"],
         "types": ["herb_gathering"],
-        "tags": ["jealousy"],
+        "tags": [],
         "patrol_art": "gen_med_vision",
         "min_cats": 2,
         "max_cats": 6,
@@ -161,6 +161,13 @@
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["jealousy"],
+                        "amount": -5
                     }
                 ]
             },
@@ -176,6 +183,13 @@
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["jealousy"],
+                        "amount": -5
                     }
                 ]
             },
@@ -188,11 +202,18 @@
                 "can_have_stat": ["p_l"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": 5
+                    },
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["jealousy"],
+                        "amount": -5
                     }
                 ]
             }
@@ -209,6 +230,13 @@
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": -5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["jealousy"],
+                        "amount": 5
                     }
                 ]
             },
@@ -219,11 +247,18 @@
                 "stat_trait": ["ambitious", "insecure"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
-                        "mutual": true,
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
+                    },
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": ["jealousy"],
+                        "amount": 15
                     }
                 ]
             }
@@ -234,7 +269,7 @@
         "biome": ["Any"],
         "season": ["Any"],
         "types": ["herb_gathering"],
-        "tags": ["jealousy"],
+        "tags": [],
         "patrol_art": "gen_med_vision",
         "min_cats": 2,
         "max_cats": 6,
@@ -248,17 +283,24 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "They have an in depth conversation about r_c's vision as they walk. By the time they head back to camp, they have a good idea of what they should do with the information.",
+                "text": "They have an in-depth conversation about r_c's vision as they walk. By the time they head back to camp, they have a good idea of what they should do with the information.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "p_l"],
-                        "cats_from": ["patrol", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["jealousy"],
+                        "amount": -5
                     }
                 ]
             },
@@ -269,11 +311,18 @@
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "p_l"],
-                        "cats_from": ["patrol", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["jealousy"],
+                        "amount": -5
                     }
                 ]
             },
@@ -285,11 +334,18 @@
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "p_l"],
-                        "cats_from": ["patrol", "r_c"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["jealousy"],
+                        "amount": -5
                     }
                 ]
             }
@@ -301,11 +357,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "p_l"],
-                        "cats_from": ["patrol", "r_c"],
-                        "mutual": true,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["jealousy"],
+                        "amount": 5
                     }
                 ]
             },
@@ -316,11 +379,18 @@
                 "stat_trait": ["ambitious", "insecure"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "p_l"],
-                        "cats_from": ["patrol", "r_c"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": -5
+                    },
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["s_c"],
+                        "mutual": true,
+                        "values": ["jealousy"],
+                        "amount": 15
                     }
                 ]
             }
@@ -373,7 +443,7 @@
         "biome": ["Any"],
         "season": ["Any"],
         "types": ["herb_gathering"],
-        "tags": ["jealousy"],
+        "tags": [],
         "patrol_art": "gen_med_vision",
         "min_cats": 2,
         "max_cats": 6,
@@ -387,17 +457,31 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "They have an in depth conversation about r_c's vision as they walk. By the time they head back to camp, they have a good idea of what they should do with the information.",
+                "text": "They have an in-depth conversation about r_c's vision as they walk. By the time they head back to camp, they have a good idea of what they should do with the information.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "p_l"],
-                        "cats_from": ["patrol", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["jealousy"],
+                        "amount": -5
                     }
                 ]
             },
@@ -408,11 +492,18 @@
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "p_l"],
-                        "cats_from": ["patrol", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["jealousy"],
+                        "amount": -5
                     }
                 ]
             },
@@ -424,11 +515,25 @@
                 "stat_skill": ["DREAM,1", "STAR,2"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "p_l"],
-                        "cats_from": ["patrol", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["jealousy"],
+                        "amount": -5
                     }
                 ]
             }
@@ -440,11 +545,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "p_l"],
-                        "cats_from": ["patrol", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": -5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["jealousy"],
+                        "amount": 5
                     }
                 ]
             },
@@ -460,6 +572,13 @@
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": -5
+                    },
+                    {
+                        "cats_to": ["p_l", "p_l"],
+                        "cats_from": ["patrol", "r_c"],
+                        "mutual": true,
+                        "values": ["jealousy"],
+                        "amount": 5
                     }
                 ]
             }
@@ -942,11 +1061,7 @@
                 "text": "p_l knows why this bothers s_c so much. A powerful connection to StarClan allows them to understand how their legacy would be told again and again to kits in the future. But p_l does {PRONOUN/p_l/poss} best to ease s_c's worries. To c_n, s_c would be a legend worth remembering one day. s_c brightens up at that remark, and the two go back to their herb hunt.",
                 "exp": 10,
                 "weight": 20,
-                "stat_trait": [
-                    "ambitious",
-                    "bloodthirsty",
-                    "insecure"
-                ],
+                "stat_trait": ["ambitious", "bloodthirsty", "insecure"],
                 "herbs": ["random_herbs"],
                 "can_have_stat": ["r_c"],
                 "relationships": [
@@ -1578,7 +1693,7 @@
                 ]
             },
             {
-                "text": "s_c seems a little distracted, deep in thought about something. When app2 asks what's up, s_c blinks slowly at {PRONOUN/app2/object} before confessing how much {PRONOUN/s_c/subject} {VERB/s_c/miss/misses} spending time together. They burrow their noses into each others pelts and purr, soaking in the moment and their love for each other before continuing on, and promise to spend more time together. ",
+                "text": "s_c seems a little distracted, deep in thought about something. When app2 asks what's up, s_c blinks slowly at {PRONOUN/app2/object} before confessing how much {PRONOUN/s_c/subject} {VERB/s_c/miss/misses} spending time together. They burrow their noses into each other's pelts and purr, soaking in the moment and their love for each other before continuing on, and promise to spend more time together. ",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": ["loving"],
@@ -1693,7 +1808,7 @@
                 ]
             },
             {
-                "text": "s_c seems a little distracted, deep in thought about something. When r_c asks what's up, s_c blinks slowly at {PRONOUN/r_c/object} before confessing how much {PRONOUN/s_c/subject} {VERB/s_c/miss/misses} spending time together. They burrow their noses into each others pelts and purr, soaking in the moment and their love for each other before continuing on, and promise to spend more time together. ",
+                "text": "s_c seems a little distracted, deep in thought about something. When r_c asks what's up, s_c blinks slowly at {PRONOUN/r_c/object} before confessing how much {PRONOUN/s_c/subject} {VERB/s_c/miss/misses} spending time together. They burrow their noses into each other's pelts and purr, soaking in the moment and their love for each other before continuing on, and promise to spend more time together. ",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": ["loving"],
@@ -2311,7 +2426,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The two medicine cats walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since its been so long. How embarrassing!",
+                "text": "The two medicine cats walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since it's been so long. How embarrassing!",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2396,7 +2511,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The two medicine cats walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since its been so long. How embarrassing!",
+                "text": "The two medicine cats walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since it's been so long. How embarrassing!",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2534,7 +2649,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The two medicine cats walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since its been so long. How embarrassing!",
+                "text": "The two medicine cats walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since it's been so long. How embarrassing!",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2603,7 +2718,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The two medicine cats walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since its been so long. How embarrassing!",
+                "text": "The two medicine cats walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since it's been so long. How embarrassing!",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2623,7 +2738,7 @@
         "biome": ["Any"],
         "season": ["Any"],
         "types": ["herb_gathering"],
-        "tags": ["jealousy"],
+        "tags": [],
         "patrol_art": "gen_med_warappmedapp_herbcontest",
         "min_cats": 2,
         "max_cats": 2,
@@ -2634,7 +2749,7 @@
             "all apprentices": [2, 2]
         },
         "weight": 20,
-        "intro_text": "In order to spice up their patrol, p_l challenges app2 to a herb-gathering competition.",
+        "intro_text": "In order to spice up their patrol, p_l challenges app2 to an herb-gathering competition.",
         "decline_text": "app2 scoffs at p_l's silliness and stalks off, leaving p_l alone in {PRONOUN/p_l/poss} dismay.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -2655,7 +2770,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": ["dislike", "jealousy"],
                         "amount": -5
                     }
                 ]
@@ -2677,7 +2792,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": ["dislike", "jealousy"],
                         "amount": -5
                     }
                 ]
@@ -2700,7 +2815,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": ["dislike", "jealousy"],
                         "amount": -5
                     }
                 ]
@@ -2723,7 +2838,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": ["dislike", "jealousy"],
                         "amount": 5
                     }
                 ]
@@ -2745,7 +2860,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": ["dislike", "jealousy"],
                         "amount": 5
                     }
                 ]
@@ -2881,7 +2996,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "p_l and r_c search and harvest any herbs they can get their paws on. Later that day they reunite in front of the camp, just as the sun is setting, both their mouths stuffed full with herbs.",
+                "text": "p_l and r_c search and harvest any herbs they can get their paws on. Later that day they reunite in front of the camp, just as the sun is setting, both their mouths stuffed full of herbs.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -2938,6 +3053,95 @@
                         "mutual": false,
                         "values": ["platonic", "respect"],
                         "amount": -5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_med_catminthunt_20locked1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["herb_gathering"],
+        "tags": ["romantic"],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "all apprentices": [-1, -1],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "p_l thinks r_c is a bit of a feather-brain, so when {PRONOUN/r_c/subject} come up to p_l while p_l is gathering herbs and suggest replenishing the Clan's catmint supply with a gleam in {PRONOUN/r_c/poss} eye, p_l hesitates.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} aren't going to go after an herb renowned for the silliness it can cause with a cat {PRONOUN/p_l/subject} dislike. It's simply a bad idea.",
+        "chance_of_success": 40,
+        "relationship_constraint": ["dislike_20"],
+        "success_outcomes": [
+            {
+                "text": "They find absolutely no catmint together, but strangely, r_c seems okay with that, just interested in chatting with p_l. So maybe {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} a <i>nice</i> feather-brain.",
+                "exp": 30,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "Fine. c_n does need more catmint. When they come across the bush, sheltered and thriving, p_l watches r_c carefully take the stalks off the leaves. p_l only needs the leaves, so {PRONOUN/p_l/subject} don't mind watching r_c getting silly with the stalks. It's even a little thrilling, to be invited to join {PRONOUN/r_c/object}.",
+                "exp": 30,
+                "weight": 5,
+                "herbs": ["many_herbs", "catmint"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l politely declines. r_c insists. p_l <i>far less politely declines</i>.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 10
                     }
                 ]
             }
@@ -3190,10 +3394,10 @@
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": [
-                    "INSIGHTFUL,2", 
-                    "SENSE,2", 
-                    "OMEN,2", 
-                    "STAR,2", 
+                    "INSIGHTFUL,2",
+                    "SENSE,2",
+                    "OMEN,2",
+                    "STAR,2",
                     "LORE,2"
                 ]
             }

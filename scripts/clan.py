@@ -169,6 +169,7 @@ class Clan():
             "duration": 0,
         }
         self.last_focus_change = None
+        self.clans_in_focus = []
 
         self.faded_ids = [
         ]  # Stores ID's of faded cats, to ensure these IDs aren't reused.
@@ -411,7 +412,8 @@ class Clan():
             "biome": self.biome,
             "camp_bg": self.camp_bg,
             "gamemode": self.game_mode,
-            "last_focus_cange": self.last_focus_change,
+            "last_focus_change": self.last_focus_change,
+            "clans_in_focus": self.clans_in_focus,
             "instructor": self.instructor.ID,
             "reputation": self.reputation,
             "mediated": game.mediated,
@@ -761,6 +763,7 @@ class Clan():
                     game.clan.faded_ids.append(cat)
 
         game.clan.last_focus_change = clan_data.get("last_focus_change")
+        game.clan.clans_in_focus = clan_data.get("clans_in_focus", [])
 
         # Patrolled cats
         if "patrolled_cats" in clan_data:
