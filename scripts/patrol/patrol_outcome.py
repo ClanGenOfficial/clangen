@@ -828,6 +828,7 @@ class PatrolOutcome():
             if "_" in amount_text:
                 amount_text = amount_text.replace("_", " ")
 
+            total_amount = round(total_amount, 2)
             print(f"PREY ADDED: {total_amount}")
             game.freshkill_event_list.append(f"{total_amount} pieces of prey where caught on a patrol.")
             game.clan.freshkill_pile.add_freshkill(total_amount)
