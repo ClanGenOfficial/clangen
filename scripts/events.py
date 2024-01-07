@@ -671,14 +671,12 @@ class Events:
             amount = game.config["focus"]["outsiders"]["reputation"]
             change_clan_reputation(amount)
 
-        elif game.clan.clan_settings.get("sabotage other clans"):
+        elif game.clan.clan_settings.get("sabotage other clans") or game.clan.clan_settings.get("aid other clans"):
             amount = game.config["focus"]["other clans"]["relation"]
-            for clan in game.clan.all_clans:
-                change_clan_relations(clan, -amount)
-
-        elif game.clan.clan_settings.get("aid other clans"):
-            amount = game.config["focus"]["other clans"]["relation"]
-            for clan in game.clan.all_clans:
+            if game.clan.clan_settings.get("sabotage other clans"):
+                amount = amount * -1
+            for name in game.clan.clans_in_focus:
+                clan = [clan for clan in game.clan.all_clans if clan.name  == name][0]
                 change_clan_relations(clan, amount)
 
         elif game.clan.clan_settings.get("hoarding") or game.clan.clan_settings.get("raid other clans"):
@@ -752,8 +750,9 @@ class Events:
 
             # if it is raiding, lower the relation to other clans
             if game.clan.clan_settings.get("raid other clans"):
-                for clan in game.clan.all_clans:
-                    change_clan_relations(clan, -amount)
+                for name in game.clan.clans_in_focus:
+                    clan = [clan for clan in game.clan.all_clans if clan.name  == name][0]
+                    change_clan_relations(clan, amount)
 
             # finish
             focus_text = "the additional work of hording herbs and prey."

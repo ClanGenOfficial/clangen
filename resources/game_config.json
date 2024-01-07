@@ -311,7 +311,7 @@
             "comment": "Defines how much increase or decrease the reputation is."
         },
         "other clans" : {
-            "relation": 5,
+            "relation": 2,
             "comment": "Defines how much increase or decrease the relation with other clans."
         },
         "raid other clans" : {

@@ -3,6 +3,7 @@ import pygame_gui
 import ujson
 
 from scripts.cat.cats import Cat
+from scripts.game_structure.windows import SelectFocusClans
 from scripts.screens.Screens import Screens
 from scripts.game_structure.image_button import UIImageButton
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
@@ -25,6 +26,7 @@ class WarriorDenScreen(Screens):
         self.active_code = None
         self.original_focus_code = None
         self.focus_information = {}
+        self.other_clan_settings = ["sabotage other clans", "aid other clans", "raid other clans"]
 
     def handle_event(self, event):
         """
@@ -38,7 +40,6 @@ class WarriorDenScreen(Screens):
             if event.ui_element in self.focus_boxes.values():
                 for code, value in self.focus_boxes.items():
                     if value == event.ui_element and value.object_ids[1] == "#unchecked_checkbox":
-
                         # prevent to select focuses, which need special role
                         description = settings_dict["clan_focus"][code][1]
                         if "mediator" in description: 
@@ -63,18 +64,21 @@ class WarriorDenScreen(Screens):
                             game.clan.last_focus_change + game.config["focus"]["duration"] <= game.clan.age:
                             self.save_button.enable()
                         # deactivate save button if the focus didn't change
-                        if self.active_code == self.original_focus_code and self.save_button.enable:
+                        if self.active_code == self.original_focus_code and self.save_button.is_enabled:
                             self.save_button.disable()
                         self.refresh_checkboxes()
                         self.create_side_info()
                         break
 
             elif event.ui_element == self.save_button:
-                game.clan.last_focus_change = game.clan.age
-                self.original_focus_code = self.active_code
-                self.save_button.disable()
-                self.refresh_checkboxes()
-                self.create_top_info()
+                if self.active_code in self.other_clan_settings:
+                    SelectFocusClans()
+                else:
+                    game.clan.last_focus_change = game.clan.age
+                    self.original_focus_code = self.active_code
+                    self.save_button.disable()
+                    self.refresh_checkboxes()
+                    self.create_top_info()
 
     def screen_switches(self):
         """
@@ -192,8 +196,18 @@ class WarriorDenScreen(Screens):
             self.focus_information["time"].kill()
 
         # create the new info text
+        desc = settings_dict["clan_focus"][self.original_focus_code][1]
+        if self.original_focus_code in self.other_clan_settings:
+            desc += " Involved Clans: "
+            if len(game.clan.clans_in_focus) == 1:
+                desc += f"{game.clan.clans_in_focus[0]}clan"
+            if len(game.clan.clans_in_focus) == 2:
+                desc += f"{game.clan.clans_in_focus[0]}clan and {game.clan.clans_in_focus[1]}clan"
+            elif len(game.clan.clans_in_focus) > 2:
+                desc += "clan, ".join(game.clan.clans_in_focus[:-1]) 
+                desc += f"clan and {game.clan.clans_in_focus[-1]}clan"
         self.focus_information["current_focus"] = pygame_gui.elements.UITextBox(
-            f"<b>Current Focus:</b> {self.active_code}<br>" + settings_dict["clan_focus"][self.active_code][1],
+            f"<b>Current Focus:</b> {self.original_focus_code}<br>" + desc,
             scale(pygame.Rect((150, 145), (800, 80))),
             wrap_to_height=True,
             object_id=get_text_box_theme("#text_box_30"),
@@ -223,7 +237,7 @@ class WarriorDenScreen(Screens):
         # delete previous created text if possible
         if "side_text" in self.focus_information:
             self.focus_information["side_text"].kill()
-        
+
         # create the new info text
         self.focus_information["side_text"] = pygame_gui.elements.UITextBox(
             f"<b>Selected information:</b><br>" + settings_dict["clan_focus"][self.active_code][1],
@@ -232,3 +246,11 @@ class WarriorDenScreen(Screens):
             object_id=get_text_box_theme("#text_box_30"),
             manager=MANAGER
         )
+
+    def save_focus(self):
+        """
+        Saves the focus when the clan to focus on in screen 'SelectFocusClan' are selected.
+        """
+        if len(game.clan.clans_in_focus) > 0:
+            game.clan.last_focus_change = game.clan.age
+            self.original_focus_code = self.active_code
