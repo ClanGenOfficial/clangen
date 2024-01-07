@@ -271,8 +271,10 @@ class WarriorDenScreen(Screens):
             moons = game.clan.last_focus_change + game.config["focus"]["duration"] - game.clan.age
             if moons == 1:
                 next_change = f"{moons} moon"
-            else:
+            elif moons > 0:
                 next_change = f"{moons} moons"
+            else:
+                next_change = f"0 moons"
 
         self.focus_information["current_focus"] = pygame_gui.elements.UITextBox(
             f"<b>Current Focus:</b> {name}{desc}<br><b>Focus Last Changed:</b> {last_change_text}<br>(next change in {next_change})",

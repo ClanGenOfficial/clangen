@@ -197,9 +197,9 @@ class Events:
 
         self.herb_destruction()
         self.herb_gather()
+        self.handle_focus()
 
         if game.clan.game_mode in ["expanded", "cruel season"]:
-            self.handle_focus()
             amount_per_med = get_amount_cat_for_one_medic(game.clan)
             med_fullfilled = medical_cats_condition_fulfilled(
                 Cat.all_cats.values(), amount_per_med)
@@ -659,7 +659,7 @@ class Events:
             elif herb_amount == 1:
                 focus_text = f"With the additional focus of the Clan, {herb_amount} herb was gathered."
             else:
-                focus_text = f"Despite the additional focus of the clan, no herbs could be gathered."
+                focus_text = f"Despite the additional focus of the Clan, no herbs could be gathered."
 
             log_text = "With the additional focus of the Clan, following herbs were gathered: "
             idx = 0
@@ -742,7 +742,7 @@ class Events:
             # handle injuries / illness
             relevant_cats = healthy_warriors + healthy_meds
             for cat in relevant_cats:
-                # if the raid setting or 50/50 for hording to get to the injury part
+                # if the raid setting or 50/50 for hoarding to get to the injury part
                 if game.clan.clan_settings.get("raid other clans") or random.getrandbits(1):
                     status_use = cat.status
                     if status_use in ["deputy", "leader"]:
@@ -764,27 +764,28 @@ class Events:
                         for illness, amount in injury_dict.items():
                             possible_illnesses.extend([illness] * amount)
                         chosen_illness = random.choice(possible_illnesses)
-                        cat.get_injured(chosen_illness)
+                        cat.get_ill(chosen_illness)
                         involved_cats["sick"].append(cat.ID)
 
             # if it is raiding, lower the relation to other clans
             if game.clan.clan_settings.get("raid other clans"):
                 for name in game.clan.clans_in_focus:
                     clan = [clan for clan in game.clan.all_clans if clan.name  == name][0]
+                    amount = game.config["focus"]["raid other clans"]["relation"]
                     change_clan_relations(clan, amount)
 
             # finish
-            focus_text = "the additional work of hording herbs and prey."
+            text_snippet = "the additional work of hoarding herbs and prey."
             if game.clan.clan_settings.get("raid other clans"):
-                focus_text = "the raiding of other Clans to get additional prey."
+                text_snippet = "the raiding of other Clans to get additional prey."
             for condition_type, value in involved_cats.items():
                 if len(value) == 1:
                     game.cur_events_list.append(
-                        Single_Event(f"One cat got {condition_type} during {focus_text}", "health", value)
+                        Single_Event(f"One cat got {condition_type} during {text_snippet}", "health", value)
                     )
                 elif len(value) > 1:
                     game.cur_events_list.append(
-                        Single_Event(f"Multiple cats got {condition_type} {focus_text}", "health", value)
+                        Single_Event(f"Multiple cats got {condition_type} {text_snippet}", "health", value)
                     )
 
             if warrior_amount > 1 and herb_amount > 1:
@@ -801,6 +802,8 @@ class Events:
                 focus_text = f"With the additional focus of the Clan, {warrior_amount} piece of prey and {herb_amount} herb were gathered."
             elif warrior_amount <= 0 and herb_amount <= 0:
                 focus_text = "Despite the additional focus of the Clan, neither prey nor herbs could be gathered."
+            else:
+                focus_text = "This is a bug, report it - focus feature"
 
         if focus_text:
             game.cur_events_list.insert(0, Single_Event(focus_text, "misc"))
