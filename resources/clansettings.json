@@ -161,56 +161,71 @@
             "Business As Usual",
             "The Clan has no specific focus and doesn't get any bonuses.",
             true,
+            "usual_focus",
             "#usual_focus_button"
         ],
         "hunting":[
             "Feeding the Clan",
             "The Clan will focus on hunting, each working warrior (including deputy and leader) and each working apprentice will gather additional prey on moonskip.",
             false,
+            "hunting_focus",
             "#hunting_focus_button"
         ],
         "herb gathering":[
             "Assisting with Herb Gathering",
             "The Clan will focus on herb gathering, each medicine cat and medicine cat apprentice will gather additional herbs on moonskip.",
             false,
+            "herb_focus",
             "#herb_focus_button"
         ],
         "threaten outsiders": [
             "Threatening Outsiders",
             "The relationship with cats outside of the Clan decreases.",
             false,
+            "threaten_focus",
             "#threaten_focus_button"
         ],
         "seek outsiders": [
             "Entreating with Outsiders",
             "The relationship with cats outside of the Clan increases.",
             false,
-            ""
+            "entreat_focus",
+            "#entreat_focus_button"
         ],
         "rest and recover":[
             "Resting and Recovering",
             "The Clan will work more safely and therefore the rate of injuries, illnesses and outbreaks will be reduced.",
-            false
+            false,
+            "rest_focus",
+            "#rest_focus_button"
         ],
         "sabotage other clans": [
             "Sabotaging Other Clans",
             "The relationship with other Clan decreases, only available with a mediator.",
-            false
+            false,
+            "sabotage_focus",
+            "#sabotage_focus_button"
         ],
         "aid other clans": [
             "Helping Other Clans",
             "The relationship with other Clan increases, only available with a mediator.",
-            false
+            false,
+            "help_focus",
+            "#help_focus_button"
         ],
         "raid other clans": [
             "Raiding Other Clans",
             "Prey and herbs will greatly increase each moonskip, but injuries and illnesses will increase and the relationship with other Clans decrease.",
-            false
+            false,
+            "raid_focus",
+            "#raid_focus_button"
         ],
         "hoarding":[
             "Hoarding Resources",
             "Prey and herbs will increase each moonskip, but injuries and illnesses will also increase.",
-            false
+            false,
+            "hoard_focus",
+            "#hoard_focus_button"
         ]
     },
     "..": "these are special. they do not have a display name or a tooltip",
