@@ -356,13 +356,13 @@
         }
     },
     "kit_traits": {
-        "troublesome": {
+        "unruly": {
             "lawfulness": [0, 8],
             "sociability": [0, 8],
             "aggression": [0, 8],
             "stability": [0, 8]
         },
-        "lonesome": {
+        "shy": {
             "lawfulness": [0, 8],
             "sociability": [0, 8],
             "aggression": [0, 8],
@@ -392,7 +392,7 @@
             "aggression": [0, 8],
             "stability": [8, 16]
         },
-        "daring": {
+        "fearless": {
             "lawfulness": [0, 8],
             "sociability": [8, 16],
             "aggression": [8, 16],
@@ -404,7 +404,7 @@
             "aggression": [8, 16],
             "stability": [8, 16]
         },
-        "nervous": {
+        "skittish": {
             "lawfulness": [8, 16],
             "sociability": [0, 8],
             "aggression": [0, 8],
@@ -416,7 +416,7 @@
             "aggression": [0, 8],
             "stability": [8, 16]
         },
-        "insecure": {
+        "self-conscious": {
             "lawfulness": [8, 16],
             "sociability": [0, 8],
             "aggression": [8, 16],

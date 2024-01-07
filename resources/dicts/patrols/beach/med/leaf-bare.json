@@ -34,7 +34,7 @@
                 ]
             },
             {
-                "text": "p_l and r_c have a pleasant conversation, swapping knowlege and insight from their unique prespectives. They return to camp with a growing foundness of each other - and mouths full of herbs.",
+                "text": "p_l and r_c have a pleasant conversation, swapping knowledge and insight from their unique perspectives. They return to camp with a growing fondness of each other - and mouths full of herbs.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["random_herbs", "many_herbs"],
@@ -49,7 +49,7 @@
                 ]
             },
             {
-                "text": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/s_c/object}. It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly.",
+                "text": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/s_c/object}. It's just an herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -135,7 +135,7 @@
                 ]
             },
             {
-                "text": "p_l and r_c have a pleasant conversation, sharing possible new treatments and messages from StarClan. They return to camp with a growing foundness of each other - and mouths full of herbs.",
+                "text": "p_l and r_c have a pleasant conversation, sharing possible new treatments and messages from StarClan. They return to camp with a growing fondness of each other - and mouths full of herbs.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["random_herbs", "many_herbs"],
@@ -150,7 +150,7 @@
                 ]
             },
             {
-                "text": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/s_c/object}. It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly.",
+                "text": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/s_c/object}. It's just an herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1", "MEDIATOR,1"],
@@ -2002,7 +2002,7 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "It's not finding fresh juniper that's the problem. An evergreen plant, they reliably grow through the cold - but they're large shrubs, sometimes large enough to be trees, and climbing in these slippery conditions might be dangerous.",
+        "intro_text": "It's not finding fresh juniper that's the problem. As an evergreen plant,  juniper is known to grow reliably even during the cold seasons - the problem is that juniper grows in large shrubs sometimes large enough to be trees, and trying to climb in these slippery conditions is a disaster just waiting to happen. p_l hesitates in bringing app1 along under these conditions, but tells themself it's a learning opportunity.",
         "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -2019,7 +2019,7 @@
                 "herbs": ["juniper"]
             },
             {
-                "text": "Sometimes, its not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without needing to risk {PRONOUN/s_c/object} climbing in leaf-bare.",
+                "text": "Sometimes, it's not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without needing to risk {PRONOUN/s_c/object} climbing in leaf-bare.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -2080,7 +2080,7 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "It's not finding fresh juniper that's the problem. An evergreen plant, {PRONOUN/p_l/subject} reliably grow through the cold - but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} large shrubs, sometimes large enough to be trees, and climbing in these slippery conditions might be dangerous. p_l hesitates in bringing app1 along under these conditions, but tells themself it's a learning opportunity.",
+        "intro_text": "It's not finding fresh juniper that's the problem. As an evergreen plant,  juniper is known to grow reliably even during the cold seasons - the problem is that juniper grows in large shrubs sometimes large enough to be trees, and trying to climb in these slippery conditions is a disaster just waiting to happen. p_l hesitates in bringing app1 along under these conditions, but tells themself it's a learning opportunity.",
         "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -2129,7 +2129,7 @@
                 ]
             },
             {
-                "text": "Sometimes, its not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without s_c or app1 needing to risk {PRONOUN/s_c/object} climbing in leaf-bare.",
+                "text": "Sometimes, it's not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without s_c or app1 needing to risk {PRONOUN/s_c/object} climbing in leaf-bare.",
                 "exp": 40,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -2269,7 +2269,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "It's not finding fresh juniper that's the problem. An evergreen plant, {PRONOUN/p_l/subject} reliably grow through the cold - but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} large shrubs, sometimes large enough to be trees, and climbing in these slippery conditions might be dangerous. Hopefully the warriors accompanying p_l will be able to help.",
+        "intro_text": "It's not finding fresh juniper that's the problem. As an evergreen plant,  juniper is known to grow reliably even during the cold seasons - the problem is that juniper grows in large shrubs sometimes large enough to be trees, and trying to climb in these slippery conditions is a disaster just waiting to happen. Hopefully the warriors accompanying p_l will be able to help.",
         "decline_text": "{PRONOUN/p_l/subject/CAP}'re stopped before {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 20,
         "success_outcomes": [
@@ -2318,7 +2318,7 @@
                 ]
             },
             {
-                "text": "Sometimes, its not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without any cat needing to risk {PRONOUN/s_c/object} climbing in leaf-bare.",
+                "text": "Sometimes, it's not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without any cat needing to risk {PRONOUN/s_c/object} climbing in leaf-bare.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -2468,7 +2468,7 @@
                 "herbs": ["wild_garlic"]
             },
             {
-                "text": "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky speciality is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores.",
+                "text": "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky specialty is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores.",
                 "exp": 30,
                 "weight": 5,
                 "herbs": ["many_herbs", "wild_garlic"]
@@ -2562,7 +2562,7 @@
                 ]
             },
             {
-                "text": "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky speciality is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores with app1.",
+                "text": "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky specialty is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores with app1.",
                 "exp": 40,
                 "weight": 5,
                 "herbs": ["many_herbs", "wild_garlic"],
@@ -2751,7 +2751,7 @@
                 ]
             },
             {
-                "text": "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky speciality is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores with the patrol.",
+                "text": "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky specialty is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores with the patrol.",
                 "exp": 30,
                 "weight": 5,
                 "herbs": ["many_herbs", "wild_garlic"],
