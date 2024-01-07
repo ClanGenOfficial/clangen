@@ -22,18 +22,16 @@ class WarriorDenScreen(Screens):
         super().__init__(name)
         # BG image assets - not interactable
         self.focus_frame = None
-        self.focus_text = None
         self.base_image = None
+        self.focus_text = None
 
-
-        self.focus_boxes = {}
         self.focus = {}
         self.focus_buttons = {}
+        self.focus_information = {}
         self.back_button = None
         self.save_button = None
         self.active_code = None
         self.original_focus_code = None
-        self.focus_information = {}
         self.other_clan_settings = ["sabotage other clans", "aid other clans", "raid other clans"]
 
     def handle_event(self, event):
@@ -118,11 +116,7 @@ class WarriorDenScreen(Screens):
                                                        pygame.image.load(
                                                            "resources/images/warrior_den_frame.png").convert_alpha(),
                                                        manager=MANAGER)
-        self.focus_text = pygame_gui.elements.UIImage(scale(pygame.Rect
-                                                             ((184, 448), (544, 30))),
-                                                       pygame.image.load(
-                                                           "resources/images/warrior_den_frame_text.png").convert_alpha(),
-                                                       manager=MANAGER)
+
 
         self.save_button = UIImageButton(scale(pygame.Rect((300, 1184), (278, 60))),
                                          "",
@@ -279,6 +273,14 @@ class WarriorDenScreen(Screens):
             object_id=get_text_box_theme("#text_box_30_horizcenter_vertcenter_spacing_95"),
             manager=MANAGER
         )
+        self.focus_text = pygame_gui.elements.UITextBox(
+            f"What should your warriors focus on?",
+            scale(pygame.Rect((184, 428), (544, 30))),
+            wrap_to_height=True,
+            object_id="#text_box_30_horizcenter_vertcenter_spacing_95",
+            manager=MANAGER
+        )
+
     def create_side_info(self):
         """
         Creates the side information text.

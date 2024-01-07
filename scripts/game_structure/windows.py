@@ -1420,36 +1420,42 @@ class SelectFocusClans(UIWindow):
     """This window allows the user to select the clans to be sabotaged, aided or raided in the focus setting."""
 
     def __init__(self):
-        super().__init__(scale(pygame.Rect((600, 430), (800, 370))),
+        super().__init__(scale(pygame.Rect((500, 420), (600, 450))),
                          window_display_title='Change Cat Name',
                          object_id='#change_cat_name_window',
                          resizable=False)
         game.switches['window_open'] = True
         self.set_blocking(True)
         self.back_button = UIImageButton(
-            scale(pygame.Rect((740, 10), (44, 44))),
+            scale(pygame.Rect((540, 10), (44, 44))),
             "",
             object_id="#exit_window_button",
             container=self
         )
         self.save_button = UIImageButton(
-            scale(pygame.Rect((300, 300),(228, 60))),
+            scale(pygame.Rect((161, 360),(278, 60))),
             "",
-            object_id="#save_button",
+            object_id="#change_focus_button",
             container=self
         )
         self.save_button.disable()
 
         self.checkboxes = {}
         self.refresh_checkboxes()
-        
+
         # Text
         self.texts = {}
+        self.texts["prompt"] = pygame_gui.elements.UITextBox(
+            "<b>Which Clans will you target?</b>",
+            scale(pygame.Rect((0, 10), (600, 60))),
+            object_id="#text_box_30_horizcenter",
+            container=self
+        )
         n = 0
         for clan in game.clan.all_clans:
             self.texts[clan.name] = pygame_gui.elements.UITextBox(
                 clan.name + "clan",
-                scale(pygame.Rect(110, n * 55 + 30, -1, 50)),
+                scale(pygame.Rect(215, n * 55 + 77, -1, 50)),
                 object_id="#text_box_30_horizleft_pad_0_8",
                 container=self
             )
@@ -1467,7 +1473,7 @@ class SelectFocusClans(UIWindow):
                 box_type = "#checked_checkbox"
 
             self.checkboxes[clan.name] = UIImageButton(
-                scale(pygame.Rect(45, n * 55 + 30, 68, 68)),
+                scale(pygame.Rect(150, n * 55 + 70, 68, 68)),
                 "",
                 container=self,
                 object_id=box_type
