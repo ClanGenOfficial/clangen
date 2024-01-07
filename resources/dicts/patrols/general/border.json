@@ -1212,13 +1212,13 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["p_l"],
                         "injuries": ["claw-wound"],
                         "scars": ["ONE"]
                     }
                 ],
                 "history_text": {
-                    "scar": "r_c was scarred when {PRONOUN/r_c/subject} tried to sneak across the o_c_n border."
+                    "scar": "p_l was scarred when {PRONOUN/p_l/subject} tried to sneak across the o_c_n border."
                 },
                 "relationships": [
                     {
@@ -1245,13 +1245,13 @@
                 ],
                 "injury": [
                     {
-                        "cats": ["s_c"],
+                        "cats": ["p_l"],
                         "injuries": ["claw-wound"],
                         "scars": ["ONE"]
                     }
                 ],
                 "history_text": {
-                    "scar": "r_c was scarred when {PRONOUN/r_c/subject} tried to sneak across the o_c_n border."
+                    "scar": "p_l was scarred when {PRONOUN/p_l/subject} tried to sneak across the o_c_n border."
                 },
                 "relationships": [
                     {

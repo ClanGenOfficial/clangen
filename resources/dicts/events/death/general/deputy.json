@@ -75,5 +75,25 @@
         "cat_negate_skill": [
             "FIGHTER,2"
         ]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "other_cat_warrior",
+            "murder",
+            "revealed",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "rc_to_mc",
+            "jealousy",
+            "neg_platonic"
+        ],
+        "death_text": "A yowl took m_c by surprise as {PRONOUN/m_c/subject} {VERB/m_c/were/was} patrolling the territory. r_c suddenly crashed into view, meowing about how m_c had to come and see. m_c followed the distressed warrior to a small ravine. {PRONOUN/m_c/subject/CAP} peered over the edge, and noted the sharp rocks at the bottom. Suddenly, {PRONOUN/m_c/subject} felt a sharp shove from behind, letting out a yowl of surprise that was cut short as {PRONOUN/m_c/subject} landed on the rocks.",
+        "history_text": {
+            "reg_death": "m_c {VERB/m_c/were/was} pushed into a ravine by r_c.",
+            "reg_murder_unrevealed": "m_c {VERB/m_c/were/was} found mangled at the bottom of a ravine."
+        }
     }
 ]
