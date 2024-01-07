@@ -14,7 +14,7 @@
         },
         "weight": 20,
         "intro_text": "The cats head out into the crisp clear newleaf sun, p_l leading them towards a massive messy eagle nest.",
-        "decline_text": "When they get there they discover that this nest isn't being used this newleaf. Disappointing.",
+        "decline_text": "When they get there, they discover that this nest isn't being used this newleaf. Disappointing.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -60,7 +60,7 @@
                 ]
             },
             {
-                "text": "As they hide, watching the eagles feed their chicks, s_c tells app1 the story of an eagle chick that once fell from its nest and was abandoned by its parents. c_n took it in, and when it fledged over it's first winter it turned into a fierce she-cat whose claws could stand up to even the mightiest predator.",
+                "text": "As they hide, watching the eagles feed their chicks, s_c tells app1 the story of an eagle chick that once fell from its nest and was abandoned by its parents. c_n took it in, and when it fledged over its first winter, it turned into a fierce, she-cat whose claws could stand up to even the mightiest predator.",
                 "exp": 15,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -319,7 +319,7 @@
                 ]
             },
             {
-                "text": "As they hide, watching the eagles feed their chicks, s_c tells the apprentices the story of an eagle chick that once fell from its nest and was abandoned by its parents. c_n took it in, and when it fledged over it's first winter it turned into a fierce she-cat whose claws could stand up to even the mightiest predator.",
+                "text": "As they hide, watching the eagles feed their chicks, s_c tells the apprentices the story of an eagle chick that once fell from its nest and was abandoned by its parents. c_n took it in, and when it fledged over its first winter, it turned into a fierce, she-cat whose claws could stand up to even the mightiest predator.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -592,7 +592,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The apprentices find a promising looking patch of fresh snow, only to find it conceals an old dirtplace trench underneath. Not only does it stink, they have to clean it up and try hid that they disturbed it, and it leaves them both irritated and stressed.",
+                "text": "The apprentices find a promising looking patch of fresh snow, only to find it conceals an old dirtplace trench underneath. Not only does it stink, but now they have to clean it up too, all while trying to hide the fact that they disturbed it in the first place! It leaves them both irritated and stressed.",
                 "exp": 0,
                 "weight": 20
             },

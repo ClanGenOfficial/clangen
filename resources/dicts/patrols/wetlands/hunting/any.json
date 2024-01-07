@@ -41,7 +41,7 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "The patrol approaches a Twoleg nest perched on the edge of a swamp, with smoke rising from it's corner.",
+        "intro_text": "The patrol approaches a Twoleg nest perched on the edge of a swamp, with smoke rising from its corner.",
         "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -75,7 +75,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "A Twoleg kit approaches the patrol, and they send it away squawking with it's blood on their claws.",
+                "text": "A Twoleg kit approaches the patrol, and they send it away squawking with its blood on their claws.",
                 "exp": 20,
                 "weight": 20
             }
@@ -92,7 +92,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "The patrol approaches a Twoleg nest perched on the edge of a swamp, with smoke rising from it's corner.",
+        "intro_text": "The patrol approaches a Twoleg nest perched on the edge of a swamp, with smoke rising from its corner.",
         "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 10,
         "success_outcomes": [
@@ -263,7 +263,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "It's a terrible day for hunting, the prey running sparse and alert. But s_c takes their time and doesn't let the conditions discourage them, until eventually the perfect opportunity falls into place and they pull off a perfect catch!",
+                "text": "It's a terrible day for hunting, the prey running sparse and alert. But s_c takes their time and doesn't let the conditions discourage them, until eventually the perfect opportunity falls into place, and they pull off a perfect catch!",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -582,7 +582,7 @@
                 ]
             },
             {
-                "text": "The patrol mostly ignores the Twolegs. As they hunt they hear a yelp from r_c. They've crawled into a metal Twolegs box, and there's nothing they or the rest of the patrol can do to get them out - eventually the Twolegs notice, and r_c is taken by them.",
+                "text": "The patrol mostly ignores the Twolegs. As they hunt, they hear a yelp from r_c. They've crawled into a metal Twolegs box, and there's nothing they or the rest of the patrol can do to get them out - eventually the Twolegs notice, and r_c is taken by them.",
                 "exp": 0,
                 "weight": 10,
                 "lost_cats": ["r_c"]
@@ -656,7 +656,7 @@
                 ]
             },
             {
-                "text": "The patrol mostly ignores the Twolegs. As they hunt they hear a yelp from r_c. They've crawled into a metal Twolegs box, and there's nothing they or the rest of the patrol can do to get them out - eventually the Twolegs notice, and r_c is taken by them.",
+                "text": "The patrol mostly ignores the Twolegs. As they hunt, they hear a yelp from r_c. They've crawled into a metal Twolegs box, and there's nothing they or the rest of the patrol can do to get them out - eventually the Twolegs notice, and r_c is taken by them.",
                 "exp": 0,
                 "weight": 10,
                 "lost_cats": ["r_c"]
@@ -906,7 +906,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall it works out.",
+                "text": "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall, it works out.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"]
@@ -1123,7 +1123,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall it works out.",
+                "text": "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall, it works out.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small", "medium"],
@@ -2025,7 +2025,7 @@
                 ]
             },
             {
-                "text": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. As the cats hide from the wind, s_c keeps an eye out for everyone. It's a long couple of hours, but with gentle understanding and compassion the cats make it though safely, closer than ever afterwards.",
+                "text": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. As the cats hide from the wind, s_c keeps an eye out for everyone. It's a long couple of hours, but with gentle understanding and compassion the cats make it through safely, closer than ever afterwards.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving"],
@@ -2058,7 +2058,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of food and unwilling to lose blood over it, is driven off from the kill.",
+                "text": "Your cats are smaller, but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of food and unwilling to lose blood over it, is driven off from the kill.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"],
@@ -2116,7 +2116,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
+                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2206,7 +2206,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However with so many cats to protect each other, there were no injuries.",
+                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2343,7 +2343,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
+                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2448,7 +2448,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of food and unwilling to lose blood over it, is driven off from the kill.",
+                "text": "Your cats are smaller, but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of food and unwilling to lose blood over it, is driven off from the kill.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"],
@@ -2506,7 +2506,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
+                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2643,7 +2643,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However with so many cats to protect each other, there were no injuries.",
+                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2780,7 +2780,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
+                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2961,7 +2961,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
+                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -3106,7 +3106,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However with so many cats to protect each other, there were no injuries.",
+                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -3154,7 +3154,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "While a gray fox is bigger and far stockier than r_c, the delicious stench of whatever it is makes their eyes go wide and silly, and they leap to claim some of it for themselves and c_n. It's only a little lump, but the fox is apparently not too keen to face a fight over it, and gives up with a prefunctory snarl.",
+                "text": "While a gray fox is bigger and far stockier than r_c, the delicious stench of whatever it is makes their eyes go wide and silly, and they leap to claim some of it for themselves and c_n. It's only a little lump, but the fox is apparently not too keen to face a fight over it, and gives up with a perfunctory snarl.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["medium"],
@@ -3227,7 +3227,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the gray fox, which keeps possession of the food. However there were no injuries.",
+                "text": "Your patrol fails to drive away the gray fox, which keeps possession of the food. However, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -5171,7 +5171,7 @@
                 ]
             },
             {
-                "text": "They're nearly of equal height, with s_c's bold aggression making up for the weight that the gray vixen has on them, and the stand off is resolved when s_c charges the gray fox and she chooses flight over fight.",
+                "text": "They're nearly of equal height, with s_c's bold aggression making up for the weight that the gray vixen has on them, and the standoff is resolved when s_c charges the gray fox and she chooses flight over fight.",
                 "exp": 50,
                 "weight": 20,
                 "stat_trait": [
@@ -5649,7 +5649,7 @@
                 ]
             },
             {
-                "text": "They're nearly of equal height, with s_c's bold aggression making up for the weight that the gray vixen has on them, and the stand off is resolved when s_c charges the gray fox and she chooses flight over fight.",
+                "text": "They're nearly of equal height, with s_c's bold aggression making up for the weight that the gray vixen has on them, and the standoff is resolved when s_c charges the gray fox and she chooses flight over fight.",
                 "exp": 50,
                 "weight": 20,
                 "stat_trait": [
@@ -6141,7 +6141,7 @@
                 ]
             },
             {
-                "text": "They're nearly of equal height, with s_c's bold aggression making up for the weight that the gray vixen has on them, and the stand off is resolved when s_c charges the gray fox and she chooses flight over fight.",
+                "text": "They're nearly of equal height, with s_c's bold aggression making up for the weight that the gray vixen has on them, and the standoff is resolved when s_c charges the gray fox and she chooses flight over fight.",
                 "exp": 50,
                 "weight": 20,
                 "stat_trait": [
@@ -6284,7 +6284,7 @@
                 ]
             },
             {
-                "text": "They're a small patrol, but a skilled one, and when they track down the red fox at the end of the scent trail they have enough skill and muscle to drive it off from the fish it was gnawing on. The cats gather around it, congratulating each other.",
+                "text": "They're a small patrol, but a skilled one, and when they track down the red fox at the end of the scent trail, they have enough skill and muscle to drive it off from the fish it was gnawing on. The cats gather around it, congratulating each other.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1", "FIGHTER,1"],
@@ -6345,7 +6345,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The fox's trail vanishes, almost as though the creature has figured out they're tracking it. Grumbling and arguing, the patrol has to head back home disappointed.",
+                "text": "The fox's trail vanishes just as quickly as it had appeared, almost as though the creature has figured out that it was being tracked. Grumbling and arguing, the patrol has to head back home disappointed.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -6490,7 +6490,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump duck. With careful signals, the cats set up an ambush. While they'd expected having more cats would make it easier, it also makes the patrol far more of a threat to the red fox, and the creature panicks when they reveal themselves. They win the bird, but r_c nearly gets injured, and it's only p_l shoving them both out of the way that saves both their pelts.",
+                "text": "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump duck. With careful signals, the cats set up an ambush. While they'd expected having more cats would make it easier, it also makes the patrol far more of a threat to the red fox, and the creature panics when they reveal themselves. They win the bird, but r_c nearly gets injured, and it's only p_l shoving them both out of the way that saves both their pelts.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"],
@@ -6505,7 +6505,7 @@
                 ]
             },
             {
-                "text": "With such a big patrol, and with s_c there, when they track down the red fox at the end of the scent trail they have more than enough skill and muscle to drive it off from the fish it was gnawing on. The cats gather around it, congratulating each other.",
+                "text": "With such a big patrol, and with s_c there, when they track down the red fox at the end of the scent trail, they have more than enough skill and muscle to drive it off from the fish it was gnawing on. The cats gather around it, congratulating each other.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1", "FIGHTER,1"],
@@ -6552,7 +6552,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The fox's trail vanishes, almost as though the creature has figured out they're tracking it. Grumbling and arguing, the patrol has to head back home disappointed.",
+                "text": "The fox's trail vanishes just as quickly as it had appeared, almost as though the creature has figured out that it was being tracked. Grumbling and arguing, the patrol has to head back home disappointed.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -6700,7 +6700,7 @@
                 ]
             },
             {
-                "text": "It's a situation that calls for careful calm, not implusive action. s_c tracks down a red fox at the end of the scent trail, holding a young duck, and waits carefully. Eventually, as the fox starts to hunt at a different river, it drops its fresh-kill to try win more. s_c carefully snatches it while the fox is distracted, and trots back to camp having successfully outwitted the competing predator.",
+                "text": "It's a situation that calls for careful calm, not impulsive action. s_c tracks down a red fox at the end of the scent trail, holding a young duck, and waits carefully. Eventually, as the fox starts to hunt at a different river, it drops its fresh-kill to try win more. s_c carefully snatches it while the fox is distracted, and trots back to camp having successfully outwitted the competing predator.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -6746,7 +6746,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c hones in on the scent, and as soon as they spot the red fox with a dead fish hanging from its jaws, throwes themselves to the attack. The fox hears them coming, and with insulting nonchalance trots off, unwilling to get into a fight.",
+                "text": "s_c hones in on the scent, and as soon as they spot the red fox with a dead fish hanging from its jaws, throws themselves to the attack. The fox hears them coming, and with insulting nonchalance trots off, unwilling to get into a fight.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -6796,7 +6796,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c hones in on the scent, and as soon as they spot the red fox with a dead fish hanging from its jaws, recklessly throwes themselves to the attack. But the fox is as desperate to keep its meal as s_c is to win it from them, and s_c has to retreat bleeding, as the fox trots off with its dinner.",
+                "text": "s_c hones in on the scent, and as soon as they spot the red fox with a dead fish hanging from its jaws, recklessly throws themselves to the attack. But the fox is as desperate to keep its meal as s_c is to win it from them, and s_c has to retreat bleeding, as the fox trots off with its dinner.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -6848,7 +6848,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Its a gray fox, which as far as the cats are concerned, means free food. They leap after it, and after a short chase the fox drops the mouse it was holding. That's not enough to satisfy the c_n cats, who drive it out of their territory before collecting the mouse and continuing the afternoon's hunt.",
+                "text": "It's a gray fox, which as far as the cats are concerned, means free food. They leap after it, and after a short chase the fox drops the mouse it was holding. That's not enough to satisfy the c_n cats, who drive it out of their territory before collecting the mouse and continuing the afternoon's hunt.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"],
@@ -6925,7 +6925,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The fox's trail vanishes, almost as though the creature has figured out they're tracking it. Grumbling and arguing, the patrol has to head back home disappointed.",
+                "text": "The fox's trail vanishes just as quickly as it had appeared, almost as though the creature has figured out that it was being tracked. Grumbling and arguing, the patrol has to head back home disappointed.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -6967,7 +6967,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "p_l leads the patrol to the end of the scent trail, where a gray fox sits grooming it's fur in the sunshine. With careful signals, the cats set up an ambush, but the small gray panics beyond anything any cat expected, and as it flees, convinced its life is in danger, it bites at r_c.",
+                "text": "p_l leads the patrol to the end of the scent trail, where a gray fox sits grooming its fur in the sunshine. With careful signals, the cats set up an ambush, but the small gray panics beyond anything any cat expected, and as it flees, convinced its life is in danger, it bites at r_c.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -7042,7 +7042,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "Its a gray fox, which as far as the cats are concerned, means free food. They leap after it, and after a short chase the fox drops the mouse it was holding. That's not enough to satisfy the c_n cats, who drive it out of their territory before collecting the mouse and continuing the afternoon's hunt.",
+                "text": "It's a gray fox, which as far as the cats are concerned, means free food. They leap after it, and after a short chase the fox drops the mouse it was holding. That's not enough to satisfy the c_n cats, who drive it out of their territory before collecting the mouse and continuing the afternoon's hunt.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"],
@@ -7119,7 +7119,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The fox's trail vanishes, almost as though the creature has figured out they're tracking it. Grumbling and arguing, the patrol has to head back home disappointed.",
+                "text": "The fox's trail vanishes just as quickly as it had appeared, almost as though the creature has figured out that it was being tracked. Grumbling and arguing, the patrol has to head back home disappointed.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -7240,14 +7240,14 @@
                 "prey": ["medium"]
             },
             {
-                "text": "s_c tracks down a gray fox, and carefully cosiders it as an opponent. Stocky, yes, but they finally decide they can take it, and burst from cover, using surprise to get in a couple vicious swipes to the fox's face while its jaws are still full of prey. Yelping, the gray fox retreats from the cat, unwilling to risk more split blood, and s_c picks up the rat it carried with a proud grin.",
+                "text": "s_c tracks down a gray fox, and carefully considers it as an opponent. Stocky, yes, but they finally decide they can take it, and burst from cover, using surprise to get in a couple vicious swipes to the fox's face while its jaws are still full of prey. Yelping, the gray fox retreats from the cat, unwilling to risk more split blood, and s_c picks up the rat it carried with a proud grin.",
                 "exp": 15,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1", "FIGHTER,1"],
                 "prey": ["medium"]
             },
             {
-                "text": "It's a situation that calls for careful calm, not implusive action. s_c tracks down a gray fox at the end of the scent trail, holding a little plump mouse, and waits carefully. Eventually, the fox tries to cache its fresh-kill in a little hole. s_c picks it up once the fox leaves, strolling back to camp having successfully outwitted the competing predator.",
+                "text": "It's a situation that calls for careful calm, not impulsive action. s_c tracks down a gray fox at the end of the scent trail, holding a little plump mouse, and waits carefully. Eventually, the fox tries to cache its fresh-kill in a little hole. s_c picks it up once the fox leaves, strolling back to camp having successfully outwitted the competing predator.",
                 "exp": 15,
                 "weight": 20,
                 "stat_trait": [
@@ -7275,7 +7275,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c hones in on the scent, and as soon as they spot the gray fox with a dead fish hanging from its jaws, throwes themselves to the attack. The fox hears them coming, and makes a hasty retreat before the fight can start, taking its dinner with it.",
+                "text": "s_c hones in on the scent, and as soon as they spot the gray fox with a dead fish hanging from its jaws, throws themselves to the attack. The fox hears them coming, and makes a hasty retreat before the fight can start, taking its dinner with it.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -7307,7 +7307,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c hones in on the scent, and as soon as they spot the gray fox with a dead fish hanging from its jaws, recklessly throwes themselves to the attack. But the fox is a little too desperate to keep itself from harm, and s_c has to retreat bleeding.",
+                "text": "s_c hones in on the scent, and as soon as they spot the gray fox with a dead fish hanging from its jaws, recklessly throws themselves to the attack. But the fox is a little too desperate to keep itself from harm, and s_c has to retreat bleeding.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -7410,7 +7410,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The swift fox gives way easily to the bigger canivores, but the fish carcass is rotten, too rotten for the Clan cats to want to touch.",
+                "text": "The swift fox gives way easily to the bigger carnivores, but the fish carcass is rotten, too rotten for the Clan cats to want to touch.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -7498,7 +7498,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c muscles in as the swft fox gives way to the bigger predator, but the carcass is rotten and worthless.",
+                "text": "r_c muscles in as the swift fox gives way to the bigger predator, but the carcass is rotten and worthless.",
                 "exp": 0,
                 "weight": 20
             },
@@ -7646,7 +7646,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The swift fox gives way easily to the bigger canivores, but the fish carcass is rotten, too rotten for the Clan cats to want to touch.",
+                "text": "The swift fox gives way easily to the bigger carnivores, but the fish carcass is rotten, too rotten for the Clan cats to want to touch.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -7734,7 +7734,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c muscles in as the swft fox gives way to the bigger predator, but the carcass is rotten and worthless.",
+                "text": "r_c muscles in as the swift fox gives way to the bigger predator, but the carcass is rotten and worthless.",
                 "exp": 0,
                 "weight": 20
             },
@@ -7882,7 +7882,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The swift fox gives way easily to the bigger canivores, but the fish carcass is rotten, too rotten for the Clan cats to want to touch.",
+                "text": "The swift fox gives way easily to the bigger carnivores, but the fish carcass is rotten, too rotten for the Clan cats to want to touch.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -7937,7 +7937,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "r_c smaller, alone, and half its weight, but the fox has a prize {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} willing to fight for. With a prayer to StarClan, {PRONOUN/r_c/subject} {VERB/r_c/throw/throws} {PRONOUN/r_c/self} into battle. The fox, already on the look out for other predators and unwilling to lose blood over it, leaves the kill with a grumble.",
+                "text": "r_c smaller, alone, and half its weight, but the fox has a prize {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} willing to fight for. With a prayer to StarClan, {PRONOUN/r_c/subject} {VERB/r_c/throw/throws} {PRONOUN/r_c/self} into battle. The fox, already on the lookout for other predators and unwilling to lose blood over it, leaves the kill with a grumble.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
@@ -7970,7 +7970,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c muscles in as the swft fox gives way to the bigger predator, but the carcass is rotten and worthless.",
+                "text": "r_c muscles in as the swift fox gives way to the bigger predator, but the carcass is rotten and worthless.",
                 "exp": 0,
                 "weight": 20
             },
@@ -8118,7 +8118,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The swift fox gives way easily to the bigger canivores, but the fish carcass is rotten, too rotten for the Clan cats to want to touch.",
+                "text": "The swift fox gives way easily to the bigger carnivores, but the fish carcass is rotten, too rotten for the Clan cats to want to touch.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -8173,7 +8173,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "r_c smaller, alone, and half its weight, but the fox has a prize {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} willing to fight for. With a prayer to StarClan, {PRONOUN/r_c/subject} {VERB/r_c/throw/throws} {PRONOUN/r_c/self} into battle. The fox, already on the look out for other predators and unwilling to lose blood over it, leaves the kill with a grumble.",
+                "text": "r_c smaller, alone, and half its weight, but the fox has a prize {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} willing to fight for. With a prayer to StarClan, {PRONOUN/r_c/subject} {VERB/r_c/throw/throws} {PRONOUN/r_c/self} into battle. The fox, already on the lookout for other predators and unwilling to lose blood over it, leaves the kill with a grumble.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
@@ -8206,7 +8206,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c muscles in as the swft fox gives way to the bigger predator, but the carcass is rotten and worthless.",
+                "text": "r_c muscles in as the swift fox gives way to the bigger predator, but the carcass is rotten and worthless.",
                 "exp": 0,
                 "weight": 20
             },
@@ -8294,7 +8294,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "The cats freeze, and carefully creep back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... they wait until the tiny fox drops down onto a salamandar before they pop out of the bushes. Not only to they scare off a potential competitor, they also get the added reward of a little snack.",
+                "text": "The cats freeze, and carefully creep back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... they wait until the tiny fox drops down onto a salamander before they pop out of the bushes. Not only do they scare off a potential competitor, they also get the added reward of a little snack.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["small"],
@@ -8309,7 +8309,7 @@
                 ]
             },
             {
-                "text": "It's a truely ridiculous power disparity, with even a single member of the patrol outweighing the little fox. The cats drive it out of c_n's swamps no trouble, but it's hardly worth the little fishy morsel they win for their efforts.",
+                "text": "It's a truly ridiculous power disparity, with even a single member of the patrol outweighing the little fox. The cats drive it out of c_n's swamps no trouble, but it's hardly worth the little fishy morsel they win for their efforts.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["small"],
@@ -8324,7 +8324,7 @@
                 ]
             },
             {
-                "text": "A simple display of just how badly the kit fox is outmatched convinces it to run, and s_c carefully seeks out the little food cache the kit fox was workign on, taking the minnows for the camp's fresh-kill pile.",
+                "text": "A simple display of just how badly the kit fox is outmatched convinces it to run, and s_c carefully seeks out the little food cache the kit fox was working on, taking the minnows for the camp's fresh-kill pile.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -8340,7 +8340,7 @@
                 ]
             },
             {
-                "text": "It's frustrating that it only wins them a single minnow, but hte patrol drives out the kit fox, and s_c reminds them that's what matters - that now the fox won't keep poaching from c_n's hunting grounds in the future.",
+                "text": "It's frustrating that it only wins them a single minnow, but the patrol drives out the kit fox, and s_c reminds them that's what matters - that now the fox won't keep poaching from c_n's hunting grounds in the future.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -8369,7 +8369,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The cats freeze, and carefully creep back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... but not, the kit fox has spotted them, and flees from the cats. At least that's one less competitior in c_n's hunting grounds?",
+                "text": "The cats freeze, and carefully creep back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... but not, the kit fox has spotted them, and flees from the cats. At least that's one less competitor in c_n's hunting grounds?",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -8401,7 +8401,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "r_c freezes, and carefully creeps back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... they wait until the tiny fox drops down onto a salamandar before they pop out of the bushes. Not only to they scare off a potential competitor, they also get the added reward of a little snack.",
+                "text": "r_c freezes, and carefully creeps back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... they wait until the tiny fox drops down onto a salamander before they pop out of the bushes. Not only do they scare off a potential competitor, they also get the added reward of a little snack.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
@@ -8440,7 +8440,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c freezes, and carefully creeps back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... but not, the kit fox has spotted them, and flees from the cat. At least that's one less competitior in c_n's hunting grounds?",
+                "text": "r_c freezes, and carefully creeps back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... but not, the kit fox has spotted them, and flees from the cat. At least that's one less competitor in c_n's hunting grounds?",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -8463,7 +8463,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of food and unwilling to lose blood over it, is driven off from the kill.",
+                "text": "Your cats are smaller, but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of food and unwilling to lose blood over it, is driven off from the kill.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"],
@@ -8521,7 +8521,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
+                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -8658,7 +8658,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However with so many cats to protect each other, there were no injuries.",
+                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -8795,7 +8795,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
+                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -8976,7 +8976,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
+                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -9121,7 +9121,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However with so many cats to protect each other, there were no injuries.",
+                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -9169,7 +9169,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "While a gray fox is bigger and far stockier than r_c, the delicious stench of whatever it is makes their eyes go wide and silly, and they leap to claim some of it for themselves and c_n. It's only a little lump, but the fox is apparently not too keen to face a fight over it, and gives up with a prefunctory snarl.",
+                "text": "While a gray fox is bigger and far stockier than r_c, the delicious stench of whatever it is makes their eyes go wide and silly, and they leap to claim some of it for themselves and c_n. It's only a little lump, but the fox is apparently not too keen to face a fight over it, and gives up with a perfunctory snarl.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["medium"],
@@ -9242,7 +9242,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the gray fox, which keeps possession of the food. However there were no injuries.",
+                "text": "Your patrol fails to drive away the gray fox, which keeps possession of the food. However, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -11186,7 +11186,7 @@
                 ]
             },
             {
-                "text": "They're nearly of equal height, with s_c's bold aggression making up for the weight that the gray vixen has on them, and the stand off is resolved when s_c charges the gray fox and she chooses flight over fight.",
+                "text": "They're nearly of equal height, with s_c's bold aggression making up for the weight that the gray vixen has on them, and the standoff is resolved when s_c charges the gray fox and she chooses flight over fight.",
                 "exp": 50,
                 "weight": 20,
                 "stat_trait": [
@@ -11664,7 +11664,7 @@
                 ]
             },
             {
-                "text": "They're nearly of equal height, with s_c's bold aggression making up for the weight that the gray vixen has on them, and the stand off is resolved when s_c charges the gray fox and she chooses flight over fight.",
+                "text": "They're nearly of equal height, with s_c's bold aggression making up for the weight that the gray vixen has on them, and the standoff is resolved when s_c charges the gray fox and she chooses flight over fight.",
                 "exp": 50,
                 "weight": 20,
                 "stat_trait": [
@@ -12156,7 +12156,7 @@
                 ]
             },
             {
-                "text": "They're nearly of equal height, with s_c's bold aggression making up for the weight that the gray vixen has on them, and the stand off is resolved when s_c charges the gray fox and she chooses flight over fight.",
+                "text": "They're nearly of equal height, with s_c's bold aggression making up for the weight that the gray vixen has on them, and the standoff is resolved when s_c charges the gray fox and she chooses flight over fight.",
                 "exp": 50,
                 "weight": 20,
                 "stat_trait": [
@@ -12299,7 +12299,7 @@
                 ]
             },
             {
-                "text": "They're a small patrol, but a skilled one, and when they track down the red fox at the end of the scent trail they have enough skill and muscle to drive it off from the fish it was gnawing on. The cats gather around it, congratulating each other.",
+                "text": "They're a small patrol, but a skilled one, and when they track down the red fox at the end of the scent trail, they have enough skill and muscle to drive it off from the fish it was gnawing on. The cats gather around it, congratulating each other.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1", "FIGHTER,1"],
@@ -12360,7 +12360,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The fox's trail vanishes, almost as though the creature has figured out they're tracking it. Grumbling and arguing, the patrol has to head back home disappointed.",
+                "text": "The fox's trail vanishes just as quickly as it had appeared, almost as though the creature has figured out that it was being tracked. Grumbling and arguing, the patrol has to head back home disappointed.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -12505,7 +12505,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump duck. With careful signals, the cats set up an ambush. While they'd expected having more cats would make it easier, it also makes the patrol far more of a threat to the red fox, and the creature panicks when they reveal themselves. They win the bird, but r_c nearly gets injured, and it's only p_l shoving them both out of the way that saves both their pelts.",
+                "text": "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump duck. With careful signals, the cats set up an ambush. While they'd expected having more cats would make it easier, it also makes the patrol far more of a threat to the red fox, and the creature panics when they reveal themselves. They win the bird, but r_c nearly gets injured, and it's only p_l shoving them both out of the way that saves both their pelts.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"],
@@ -12520,7 +12520,7 @@
                 ]
             },
             {
-                "text": "With such a big patrol, and with s_c there, when they track down the red fox at the end of the scent trail they have more than enough skill and muscle to drive it off from the fish it was gnawing on. The cats gather around it, congratulating each other.",
+                "text": "With such a big patrol, and with s_c there, when they track down the red fox at the end of the scent trail, they have more than enough skill and muscle to drive it off from the fish it was gnawing on. The cats gather around it, congratulating each other.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1", "FIGHTER,1"],
@@ -12567,7 +12567,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The fox's trail vanishes, almost as though the creature has figured out they're tracking it. Grumbling and arguing, the patrol has to head back home disappointed.",
+                "text": "The fox's trail vanishes just as quickly as it had appeared, almost as though the creature has figured out that it was being tracked. Grumbling and arguing, the patrol has to head back home disappointed.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -12715,7 +12715,7 @@
                 ]
             },
             {
-                "text": "It's a situation that calls for careful calm, not implusive action. s_c tracks down a red fox at the end of the scent trail, holding a young duck, and waits carefully. Eventually, as the fox starts to hunt at a different river, it drops its fresh-kill to try win more. s_c carefully snatches it while the fox is distracted, and trots back to camp having successfully outwitted the competing predator.",
+                "text": "It's a situation that calls for careful calm, not impulsive action. s_c tracks down a red fox at the end of the scent trail, holding a young duck, and waits carefully. Eventually, as the fox starts to hunt at a different river, it drops its fresh-kill to try win more. s_c carefully snatches it while the fox is distracted, and trots back to camp having successfully outwitted the competing predator.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -12760,7 +12760,7 @@
                 ]
             },
             {
-                "text": "s_c hones in on the scent, and as soon as they spot the red fox with a dead fish hanging from its jaws, throwes themselves to the attack. The fox hears them coming, and with insulting nonchalance trots off, unwilling to get into a fight.",
+                "text": "s_c hones in on the scent, and as soon as they spot the red fox with a dead fish hanging from its jaws, throws themselves to the attack. The fox hears them coming, and with insulting nonchalance trots off, unwilling to get into a fight.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -12808,7 +12808,7 @@
                 ]
             },
             {
-                "text": "s_c hones in on the scent, and as soon as they spot the red fox with a dead fish hanging from its jaws, recklessly throwes themselves to the attack. But the fox is as desperate to keep its meal as s_c is to win it from them, and s_c has to retreat bleeding, as the fox trots off with its dinner.",
+                "text": "s_c hones in on the scent, and as soon as they spot the red fox with a dead fish hanging from its jaws, recklessly throws themselves to the attack. But the fox is as desperate to keep its meal as s_c is to win it from them, and s_c has to retreat bleeding, as the fox trots off with its dinner.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -12859,7 +12859,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Its a gray fox, which as far as the cats are concerned, means free food. They leap after it, and after a short chase the fox drops the mouse it was holding. That's not enough to satisfy the c_n cats, who drive it out of their territory before collecting the mouse and continuing the afternoon's hunt.",
+                "text": "It's a gray fox, which as far as the cats are concerned, means free food. They leap after it, and after a short chase the fox drops the mouse it was holding. That's not enough to satisfy the c_n cats, who drive it out of their territory before collecting the mouse and continuing the afternoon's hunt.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"],
@@ -12936,7 +12936,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The fox's trail vanishes, almost as though the creature has figured out they're tracking it. Grumbling and arguing, the patrol has to head back home disappointed.",
+                "text": "The fox's trail vanishes just as quickly as it had appeared, almost as though the creature has figured out that it was being tracked. Grumbling and arguing, the patrol has to head back home disappointed.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -12978,7 +12978,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "p_l leads the patrol to the end of the scent trail, where a gray fox sits grooming it's fur in the sunshine. With careful signals, the cats set up an ambush, but the small gray panics beyond anything any cat expected, and as it flees, convinced its life is in danger, it bites at r_c.",
+                "text": "p_l leads the patrol to the end of the scent trail, where a gray fox sits grooming its fur in the sunshine. With careful signals, the cats set up an ambush, but the small gray panics beyond anything any cat expected, and as it flees, convinced its life is in danger, it bites at r_c.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -13053,7 +13053,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "Its a gray fox, which as far as the cats are concerned, means free food. They leap after it, and after a short chase the fox drops the mouse it was holding. That's not enough to satisfy the c_n cats, who drive it out of their territory before collecting the mouse and continuing the afternoon's hunt.",
+                "text": "It's a gray fox, which as far as the cats are concerned, means free food. They leap after it, and after a short chase the fox drops the mouse it was holding. That's not enough to satisfy the c_n cats, who drive it out of their territory before collecting the mouse and continuing the afternoon's hunt.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"],
@@ -13130,7 +13130,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The fox's trail vanishes, almost as though the creature has figured out they're tracking it. Grumbling and arguing, the patrol has to head back home disappointed.",
+                "text": "The fox's trail vanishes just as quickly as it had appeared, almost as though the creature has figured out that it was being tracked. Grumbling and arguing, the patrol has to head back home disappointed.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -13251,14 +13251,14 @@
                 "prey": ["medium"]
             },
             {
-                "text": "s_c tracks down a gray fox, and carefully cosiders it as an opponent. Stocky, yes, but they finally decide they can take it, and burst from cover, using surprise to get in a couple vicious swipes to the fox's face while its jaws are still full of prey. Yelping, the gray fox retreats from the cat, unwilling to risk more split blood, and s_c picks up the rat it carried with a proud grin.",
+                "text": "s_c tracks down a gray fox, and carefully considers it as an opponent. Stocky, yes, but they finally decide they can take it, and burst from cover, using surprise to get in a couple vicious swipes to the fox's face while its jaws are still full of prey. Yelping, the gray fox retreats from the cat, unwilling to risk more split blood, and s_c picks up the rat it carried with a proud grin.",
                 "exp": 15,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1", "FIGHTER,1"],
                 "prey": ["medium"]
             },
             {
-                "text": "It's a situation that calls for careful calm, not implusive action. s_c tracks down a gray fox at the end of the scent trail, holding a little plump mouse, and waits carefully. Eventually, the fox tries to cache its fresh-kill in a little hole. s_c picks it up once the fox leaves, strolling back to camp having successfully outwitted the competing predator.",
+                "text": "It's a situation that calls for careful calm, not impulsive action. s_c tracks down a gray fox at the end of the scent trail, holding a little plump mouse, and waits carefully. Eventually, the fox tries to cache its fresh-kill in a little hole. s_c picks it up once the fox leaves, strolling back to camp having successfully outwitted the competing predator.",
                 "exp": 15,
                 "weight": 20,
                 "stat_trait": [
@@ -13286,7 +13286,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c hones in on the scent, and as soon as they spot the gray fox with a dead fish hanging from its jaws, throwes themselves to the attack. The fox hears them coming, and makes a hasty retreat before the fight can start, taking its dinner with it.",
+                "text": "s_c hones in on the scent, and as soon as they spot the gray fox with a dead fish hanging from its jaws, throws themselves to the attack. The fox hears them coming, and makes a hasty retreat before the fight can start, taking its dinner with it.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -13318,7 +13318,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c hones in on the scent, and as soon as they spot the gray fox with a dead fish hanging from its jaws, recklessly throwes themselves to the attack. But the fox is a little too desperate to keep itself from harm, and s_c has to retreat bleeding.",
+                "text": "s_c hones in on the scent, and as soon as they spot the gray fox with a dead fish hanging from its jaws, recklessly throws themselves to the attack. But the fox is a little too desperate to keep itself from harm, and s_c has to retreat bleeding.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -13421,7 +13421,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The swift fox gives way easily to the bigger canivores, but the fish carcass is rotten, too rotten for the Clan cats to want to touch.",
+                "text": "The swift fox gives way easily to the bigger carnivores, but the fish carcass is rotten, too rotten for the Clan cats to want to touch.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -13509,7 +13509,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c muscles in as the swft fox gives way to the bigger predator, but the carcass is rotten and worthless.",
+                "text": "r_c muscles in as the swift fox gives way to the bigger predator, but the carcass is rotten and worthless.",
                 "exp": 0,
                 "weight": 20
             },
@@ -13657,7 +13657,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The swift fox gives way easily to the bigger canivores, but the fish carcass is rotten, too rotten for the Clan cats to want to touch.",
+                "text": "The swift fox gives way easily to the bigger carnivores, but the fish carcass is rotten, too rotten for the Clan cats to want to touch.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -13745,7 +13745,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c muscles in as the swft fox gives way to the bigger predator, but the carcass is rotten and worthless.",
+                "text": "r_c muscles in as the swift fox gives way to the bigger predator, but the carcass is rotten and worthless.",
                 "exp": 0,
                 "weight": 20
             },
@@ -13893,7 +13893,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The swift fox gives way easily to the bigger canivores, but the fish carcass is rotten, too rotten for the Clan cats to want to touch.",
+                "text": "The swift fox gives way easily to the bigger carnivores, but the fish carcass is rotten, too rotten for the Clan cats to want to touch.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -13948,7 +13948,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "r_c smaller, alone, and half its weight, but the fox has a prize {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} willing to fight for. With a prayer to StarClan, {PRONOUN/r_c/subject} {VERB/r_c/throw/throws} {PRONOUN/r_c/self} into battle. The fox, already on the look out for other predators and unwilling to lose blood over it, leaves the kill with a grumble.",
+                "text": "r_c smaller, alone, and half its weight, but the fox has a prize {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} willing to fight for. With a prayer to StarClan, {PRONOUN/r_c/subject} {VERB/r_c/throw/throws} {PRONOUN/r_c/self} into battle. The fox, already on the lookout for other predators and unwilling to lose blood over it, leaves the kill with a grumble.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
@@ -13981,7 +13981,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c muscles in as the swft fox gives way to the bigger predator, but the carcass is rotten and worthless.",
+                "text": "r_c muscles in as the swift fox gives way to the bigger predator, but the carcass is rotten and worthless.",
                 "exp": 0,
                 "weight": 20
             },
@@ -14129,7 +14129,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The swift fox gives way easily to the bigger canivores, but the fish carcass is rotten, too rotten for the Clan cats to want to touch.",
+                "text": "The swift fox gives way easily to the bigger carnivores, but the fish carcass is rotten, too rotten for the Clan cats to want to touch.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -14184,7 +14184,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "r_c smaller, alone, and half its weight, but the fox has a prize {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} willing to fight for. With a prayer to StarClan, {PRONOUN/r_c/subject} {VERB/r_c/throw/throws} {PRONOUN/r_c/self} into battle. The fox, already on the look out for other predators and unwilling to lose blood over it, leaves the kill with a grumble.",
+                "text": "r_c smaller, alone, and half its weight, but the fox has a prize {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} willing to fight for. With a prayer to StarClan, {PRONOUN/r_c/subject} {VERB/r_c/throw/throws} {PRONOUN/r_c/self} into battle. The fox, already on the lookout for other predators and unwilling to lose blood over it, leaves the kill with a grumble.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
@@ -14217,7 +14217,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c muscles in as the swft fox gives way to the bigger predator, but the carcass is rotten and worthless.",
+                "text": "r_c muscles in as the swift fox gives way to the bigger predator, but the carcass is rotten and worthless.",
                 "exp": 0,
                 "weight": 20
             },
@@ -14305,7 +14305,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "The cats freeze, and carefully creep back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... they wait until the tiny fox drops down onto a salamandar before they pop out of the bushes. Not only to they scare off a potential competitor, they also get the added reward of a little snack.",
+                "text": "The cats freeze, and carefully creep back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... they wait until the tiny fox drops down onto a salamander before they pop out of the bushes. Not only do they scare off a potential competitor, they also get the added reward of a little snack.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["small"],
@@ -14320,7 +14320,7 @@
                 ]
             },
             {
-                "text": "It's a truely ridiculous power disparity, with even a single member of the patrol outweighing the little fox. The cats drive it out of c_n's swamps no trouble, but it's hardly worth the little fishy morsel they win for their efforts.",
+                "text": "It's a truly ridiculous power disparity, with even a single member of the patrol outweighing the little fox. The cats drive it out of c_n's swamps no trouble, but it's hardly worth the little fishy morsel they win for their efforts.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["small"],
@@ -14335,7 +14335,7 @@
                 ]
             },
             {
-                "text": "A simple display of just how badly the kit fox is outmatched convinces it to run, and s_c carefully seeks out the little food cache the kit fox was workign on, taking the minnows for the camp's fresh-kill pile.",
+                "text": "A simple display of just how badly the kit fox is outmatched convinces it to run, and s_c carefully seeks out the little food cache the kit fox was working on, taking the minnows for the camp's fresh-kill pile.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -14351,7 +14351,7 @@
                 ]
             },
             {
-                "text": "It's frustrating that it only wins them a single minnow, but hte patrol drives out the kit fox, and s_c reminds them that's what matters - that now the fox won't keep poaching from c_n's hunting grounds in the future.",
+                "text": "It's frustrating that it only wins them a single minnow, but the patrol drives out the kit fox, and s_c reminds them that's what matters - that now the fox won't keep poaching from c_n's hunting grounds in the future.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -14380,7 +14380,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The cats freeze, and carefully creep back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... but not, the kit fox has spotted them, and flees from the cats. At least that's one less competitior in c_n's hunting grounds?",
+                "text": "The cats freeze, and carefully creep back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... but not, the kit fox has spotted them, and flees from the cats. At least that's one less competitor in c_n's hunting grounds?",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -14412,7 +14412,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "r_c freezes, and carefully creeps back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... they wait until the tiny fox drops down onto a salamandar before they pop out of the bushes. Not only to they scare off a potential competitor, they also get the added reward of a little snack.",
+                "text": "r_c freezes, and carefully creeps back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... they wait until the tiny fox drops down onto a salamander before they pop out of the bushes. Not only do they scare off a potential competitor, they also get the added reward of a little snack.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
@@ -14451,7 +14451,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c freezes, and carefully creeps back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... but not, the kit fox has spotted them, and flees from the cat. At least that's one less competitior in c_n's hunting grounds?",
+                "text": "r_c freezes, and carefully creeps back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... but not, the kit fox has spotted them, and flees from the cat. At least that's one less competitor in c_n's hunting grounds?",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]

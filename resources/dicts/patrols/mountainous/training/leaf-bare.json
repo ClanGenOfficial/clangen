@@ -18,7 +18,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "The snow seems to have melted and refrozen during the night, and app1 darts lightly over the top of the thin crust. app2 follows them, only to immediately hear a crack and sink up to their eartips in the fluffy stuff. Teasingly, app1 runs around near them, and it turns into a game of app2 romping through the snow trying to catch them.",
+                "text": "The snow seems to have melted and refrozen during the night, and app1 darts lightly over the top of the thin crust. app2 follows them, only to immediately hear a crack and sink up to their ear tips in the fluffy stuff. Teasingly, app1 runs around near them, and it turns into a game of app2 romping through the snow trying to catch them.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
@@ -74,7 +74,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The apprentices find a promising looking patch of fresh snow, only to find it conceals an old dirtplace trench underneath. Not only does it stink, they have to clean it up and try hid that they disturbed it, and it leaves them both irritated and stressed.",
+                "text": "The apprentices find a promising looking patch of fresh snow, only to find it conceals an old dirtplace trench underneath. Not only does it stink, but they now have to clean it up <i>and</i> hide the fact that they disturbed it in the first place! It leaves the both of them irritated and stressed.",
                 "exp": 0,
                 "weight": 20
             },

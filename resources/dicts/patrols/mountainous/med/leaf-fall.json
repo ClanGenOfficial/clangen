@@ -33,7 +33,7 @@
                 ]
             },
             {
-                "text": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with them. It's just a herb gathering patrol, but p_l feels more relaxed than they've felt in moons when they come back to camp, smiling softly.",
+                "text": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with them. It's just an herb gathering patrol, but p_l feels more relaxed than they've felt in moons when they come back to camp, smiling softly.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -66,7 +66,7 @@
                 ]
             },
             {
-                "text": "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with.",
+                "text": "Not only do they not find anything, but p_l is <i> this </i> close to murdering s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["troublesome", "childish"],
@@ -119,7 +119,7 @@
                 ]
             },
             {
-                "text": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with them. It's just a herb gathering patrol, but p_l feels more relaxed than they've felt in moons when they come back to camp, smiling softly.",
+                "text": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with them. It's just an herb gathering patrol, but p_l feels more relaxed than they've felt in moons when they come back to camp, smiling softly.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1", "MEDIATOR,1"],
@@ -152,7 +152,7 @@
                 ]
             },
             {
-                "text": "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with.",
+                "text": "Not only do they not find anything, but p_l is <i> this </i> close to murdering s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["troublesome", "childish"],
@@ -201,7 +201,7 @@
                 "herbs": ["many_herbs", "goldenrod", "betony"]
             },
             {
-                "text": "s_c is able to find the sought-after herb quickly, as they can easily pick out the shape of its leaves among the other plants, and they organise the patrol to bring back a great haul of betony for the herb stores. They're even able to pick out a goldenrod bush on their path home.",
+                "text": "s_c is able to find the sought-after herb quickly, as they can easily pick out the shape of its leaves among the other plants, and they organize the patrol to bring back a great haul of betony for the herb stores. They're even able to pick out a goldenrod bush on their path home.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -233,7 +233,7 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "As the betony plants start to dramatically give up on life as leaf-fall progresses, p_l takes the opportunity to go harvest from them, bringing along app1 for a herbcraft lesson.",
+        "intro_text": "As the betony plants start to dramatically give up on life as leaf-fall progresses, p_l takes the opportunity to go harvest from them, bringing along app1 for an herbcraft lesson.",
         "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
@@ -282,7 +282,7 @@
                 ]
             },
             {
-                "text": "s_c is able to find the sought-after herb quickly, as they can easily pick out the shape of its leaves among the other plants. They point it out to app1 and the two cats bring back a great haul of betony for the herb stores. They're even able to pick out a goldenrod bush on their path home.",
+                "text": "s_c is able to find the sought-after herb quickly, as they can easily pick out the shape of its leaves among the other plants. They point it out to app1, and the two cats bring back a great haul of betony for the herb stores. They're even able to pick out a goldenrod bush on their path home.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -393,7 +393,7 @@
                 ]
             },
             {
-                "text": "s_c is able to find the sought-after herb quickly, as they can easily pick out the shape of its leaves among the other plants, and they organise the patrol to bring back a great haul of betony for the herb stores. They're even able to pick out a goldenrod bush on their path home.",
+                "text": "s_c is able to find the sought-after herb quickly, as they can easily pick out the shape of its leaves among the other plants, and they organize the patrol to bring back a great haul of betony for the herb stores. They're even able to pick out a goldenrod bush on their path home.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -460,7 +460,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Careful now. p_l finds the blackberry and raspberry brambles aplenty, utterly coated in berries. This is the season for berry picking, and time to leave the leaves alone in anticipation of the coming leaf-bare. The berries are a poor substitute for the leaves, but a medicine cat has to think of the future.",
+                "text": "Careful now. p_l finds blackberry and raspberry brambles aplenty, utterly coated in berries. This is the season for berry picking, and time to leave the leaves alone in anticipation of the coming leaf-bare. The berries are a poor substitute for the leaves, but a medicine cat has to think of the future.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["blackberry", "raspberry"]
@@ -509,7 +509,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Careful now. p_l finds the blackberry and raspberry brambles aplenty, utterly coated in berries. This is the season for berry picking, and time to leave the leaves alone in anticipation of the coming leaf-bare. The berries are a poor substitute for the leaves, but a medicine cat has to think of the future, p_l teaches app1.",
+                "text": "Careful now. p_l finds blackberry and raspberry brambles aplenty, utterly coated in berries. This is the season for berry picking, and time to leave the leaves alone in anticipation of the coming leaf-bare. The berries are a poor substitute for the leaves, but a medicine cat has to think of the future, p_l teaches app1.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["blackberry", "raspberry"],
@@ -620,7 +620,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Careful now. p_l finds the blackberry and raspberry brambles aplenty, utterly coated in berries. This is the season for berry picking, and time to leave the leaves alone in anticipation of the coming leaf-bare. The berries are a poor substitute for the leaves, but a medicine cat has to think of the future, p_l explains to the warriors.",
+                "text": "Careful now. p_l finds blackberry and raspberry brambles aplenty, utterly coated in berries. This is the season for berry picking, and time to leave the leaves alone in anticipation of the coming leaf-bare. The berries are a poor substitute for the leaves, but a medicine cat has to think of the future, p_l explains to the warriors.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["blackberry", "raspberry"],
@@ -642,7 +642,7 @@
                 ]
             },
             {
-                "text": "Perfect - there's a good crop of blackberries just waiting for them, and the bramble seems to be sending out new exploratory branches too, promising more growth in the future. Their Clanmates send p_l away for a nap in the sunshine, as they organise the blackberry leaves, and p_l smiles appreciatively.",
+                "text": "Perfect - there's a good crop of blackberries just waiting for them, and the bramble seems to be sending out new exploratory branches too, promising more growth in the future. Their Clanmates send p_l away for a nap in the sunshine, as they organize the blackberry leaves, and p_l smiles appreciatively.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "blackberry", "raspberry"],
@@ -664,7 +664,7 @@
                 ]
             },
             {
-                "text": "s_c falls into the meditative state that herb-gathering brings, and they hum to themselves as they work, crisply plucking from the brambles they encounter, both blackberry and raspberry. The patrol follows their lead, and its a relaxed group that wanders back into camp with a massive haul from the blackberry bushes.",
+                "text": "s_c falls into the meditative state that herb-gathering brings, and they hum to themselves as they work, crisply plucking from the brambles they encounter, both blackberry and raspberry. The patrol follows their lead, and it's a relaxed group that wanders back into camp with a massive haul from the blackberry bushes.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -1096,7 +1096,7 @@
                 ]
             },
             {
-                "text": "s_c makes a circuit visiting all the known catmint plants in c_n's territory. While some are already wilting from frost, there's more than enough to harvest and bring back to the herb stores, and showing app1 all the plants will prepare them for trying to refind catmint in newleaf.",
+                "text": "s_c makes a circuit visiting all the known catmint plants in c_n's territory. While some are already wilting from frost, there's more than enough to harvest and bring back to the herb stores, and showing app1 all the plants will prepare {PRONOUN/app1/object} for when {PRONOUN/app1/subject}{VERB/app1/'re/'s} trying to find catmint in newleaf.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -1148,7 +1148,7 @@
         "biome": ["mountainous"],
         "season": ["leaf-fall"],
         "types": ["herb_gathering"],
-        "tags": ["jealousy"],
+        "tags": [],
         "patrol_art": "gen_med_gatheringcatmint_leaf-fall3",
         "min_cats": 3,
         "max_cats": 6,
@@ -1179,7 +1179,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": ["dislike", "jealousy"],
                         "amount": -10
                     }
                 ]
@@ -1201,7 +1201,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": ["dislike", "jealousy"],
                         "amount": -10
                     }
                 ]
@@ -1224,7 +1224,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": ["dislike", "jealousy"],
                         "amount": -10
                     }
                 ]
@@ -1247,7 +1247,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": ["dislike", "jealousy"],
                         "amount": 10
                     }
                 ]
@@ -1539,12 +1539,12 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "Yellow flowers poke out from the leaf litter, signalling that the dandelions haven't given up on growing for the season. If dandelions are around, could there be something else needed for the herb storage, too, like wild garlic?",
+        "intro_text": "Yellow flowers poke out from the leaf litter, signaling that the dandelions haven't given up on growing for the season. If dandelions are around, could there be something else needed for the herb storage, too, like wild garlic?",
         "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Truly, dandelions are an essential herb to keep in stock, crucial for poison and stings. The white milk in their roots and stems keeps for a long time, and is a potent cure for poison - their leaves are weaker, but fast-acting, and can be chewed into poultices. Even the fluffy dandelion heads are useful as a c_n kitten's favourite, short-lived toy. Also as useful - but not a toy - is the wild garlic that p_l tracks down a few fox-lengths away from the dandelion patch they've found.",
+                "text": "Truly, dandelions are an essential herb to keep in stock, crucial for poison and stings. The white milk in their roots and stems keeps for a long time, and is a potent cure for poison - their leaves are weaker, but fast acting, and can be chewed into poultices. Even the fluffy dandelion heads are useful as a c_n kitten's favorite, short-lived toy. Also as useful - but not a toy - is the wild garlic that p_l tracks down a few fox-lengths away from the dandelion patch they've found.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["dandelion", "wild_garlic"]
@@ -1588,12 +1588,12 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "Yellow flowers poke out from the leaf litter, signalling that the dandelions haven't given up on growing for the season. p_l heads out to look for them, taking app1 to learn about one of the most useful common herbs in their arsenal. If they were particularly lucky, p_l explains to app1, perhaps there might be some other plants, like wild garlic, around to collect as well.",
+        "intro_text": "Yellow flowers poke out from the leaf litter, signaling that the dandelions haven't given up on growing for the season. p_l heads out to look for them, taking app1 to learn about one of the most useful common herbs in their arsenal. If they were particularly lucky, p_l explains to app1, perhaps there might be some other plants, like wild garlic, around to collect as well.",
         "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. Both the potent milk in their roots and stems, and the fast-acting leaves... even the fluffy dandelion heads are useful as a c_n kitten's favourite, short lived toy. p_l smiles fondly as they remember watching app1 playing with them just a few short moons ago. Then another scent touches their nose, drawing from them their thoughts, and they soon sniff out the wild garlic that was hidden a short distance away. It would be pretty funny to see how app1 will react to this stinky herb!",
+                "text": "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. Both the potent milk in their roots and stems, and the fast acting leaves... even the fluffy dandelion heads are useful as a c_n kitten's favorite, short lived toy. p_l smiles fondly as they remember watching app1 playing with them just a few short moons ago. Then another scent touches their nose, drawing from them their thoughts, and they soon sniff out the wild garlic that was hidden a short distance away. It would be pretty funny to see how app1 will react to this stinky herb!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["dandelion", "wild_garlic"],
@@ -1699,12 +1699,12 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "Yellow flowers poke out from the leaf litter, signalling that the dandelions haven't given up on growing for the season. p_l heads out to look for them, bringing a group of their Clanmates along for the gathering patrol. With this many cats, they might be able to collect some other herbs along the way, too, such as the wild garlic that p_l knows grows near the dandelion patch they're looking for.",
+        "intro_text": "Yellow flowers poke out from the leaf litter, signaling that the dandelions haven't given up on growing for the season. p_l heads out to look for them, bringing a group of their Clanmates along for the gathering patrol. With this many cats, they might be able to collect some other herbs along the way, too, such as the wild garlic that p_l knows grows near the dandelion patch they're looking for.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. The white milk in their roots and stems keeps for a long time and is a potent cure for poison, while their leaves are weaker but fast-acting and can be chewed into poultices. The warriors are a lot less obliging when p_l points out that they need to gather the wild garlic nearby as well.",
+                "text": "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. The white milk in their roots and stems keeps for a long time and is a potent cure for poison, while their leaves are weaker but fast acting and can be chewed into poultices. The warriors are a lot less obliging when p_l points out that they need to gather the wild garlic nearby as well.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["dandelion", "wild_garlic"],
@@ -2435,7 +2435,7 @@
                 "herbs": ["many_herbs", "oak_leaves", "juniper"]
             },
             {
-                "text": "s_c follows not their eyes, but their nose, tracking the juniper trees by the scent of their fragrant berries to find an excellent crop.s_c climbs into the low-growing tree to better reach the berries. From their vantage point, they are able to reach a low oak branch. They are astounded the branch has a healthy collection of still-green oak leaves. They take the opportunity to gather a pawful.",
+                "text": "s_c follows not their eyes, but their nose, tracking the juniper trees by the scent of their fragrant berries to find an excellent crop. s_c climbs into the low-growing tree to better reach the berries. From their vantage point, they are able to reach a low oak branch. They are astounded the branch has a healthy collection of still-green oak leaves. They take the opportunity to gather a pawful.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -2627,7 +2627,7 @@
                 ]
             },
             {
-                "text": "s_c follows not their eyes, but their nose, tracking the juniper trees by the scent of their fragrant berries to find an excellent crop.s_c climbs into the low-growing tree to better reach the berries. From their vantage point, they are able to reach a low oak branch. They are astounded the branch has a healthy collection of still-green oak leaves. They take the opportunity to gather a pawful, asking the warriors to help carry the precious leaves back to camp.",
+                "text": "s_c follows not their eyes, but their nose, tracking the juniper trees by the scent of their fragrant berries to find an excellent crop. s_c climbs into the low-growing tree to better reach the berries. From their vantage point, they are able to reach a low oak branch. They are astounded the branch has a healthy collection of still-green oak leaves. They take the opportunity to gather a pawful, asking the warriors to help carry the precious leaves back to camp.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -3066,7 +3066,7 @@
                 "herbs": ["mallow", "betony"]
             },
             {
-                "text": "With the leaf-fall mallow starting to die back in the next step in its endless perennial cycle, p_l collects all they can. That, as it turns out, is actually quite a lot, and noticing a whithering betony plant, p_l hurries over to see what can be saved.",
+                "text": "With the leaf-fall mallow starting to die back in the next step in its endless perennial cycle, p_l collects all they can. That, as it turns out, is actually quite a lot, and noticing a withering betony plant, p_l hurries over to see what can be saved.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "mallow", "betony"]
@@ -3131,7 +3131,7 @@
                 ]
             },
             {
-                "text": "With the leaf-fall mallow starting to die back in the next step in its endless perennial cycle, p_l collects all they can. That, as it turns out, is actually quite a lot, and noticing a whithering betony plant, p_l hurries over to see what can be saved. As they head back, both medicine cat and apprentice are barely visible behind the bushy bundles they carry",
+                "text": "With the leaf-fall mallow starting to die back in the next step in its endless perennial cycle, p_l collects all they can. That, as it turns out, is actually quite a lot, and noticing a withering betony plant, p_l hurries over to see what can be saved. As they head back, both medicine cat and apprentice are barely visible behind the bushy bundles they carry",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "mallow", "betony"],
@@ -3241,7 +3241,7 @@
                 ]
             },
             {
-                "text": "With the leaf-fall mallow starting to die back in the next step in its endless perennial cycle, p_l collects all they can. That, as it turns out, is actually quite a lot, particularly with so many willing paws helping them, and - noticing a whithering betony plant - p_l hurries over to see what can be saved.",
+                "text": "With the leaf-fall mallow starting to die back in the next step in its endless perennial cycle, p_l collects all they can. That, as it turns out, is actually quite a lot, particularly with so many willing paws helping them, and - noticing a withering betony plant - p_l hurries over to see what can be saved.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "mallow", "betony"],
@@ -4211,7 +4211,7 @@
                 ]
             },
             {
-                "text": "Suitable for soothing throat and pelt irritation, and with a welcome - albeit weird - habit of consistently sprouting up on well-trodden paths, plantain is a basic but valuable herb to keep stocks of, and always taught early in the herbal lore each medicine cat must memorise. p_l finds today's harvest growing overshadowed by a big mullein plant, and takes that too.",
+                "text": "Suitable for soothing throat and pelt irritation, and with a welcome - albeit weird - habit of consistently sprouting up on well-trodden paths, plantain is a basic but valuable herb to keep stocks of, and always taught early in the herbal lore each medicine cat must memorize. p_l finds today's harvest growing overshadowed by a big mullein plant, and takes that too.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "plantain", "mullein"],
@@ -4454,12 +4454,12 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "As the ragwort plants start to dramatically give up on life as leaf-fall progresses, p_l takes the opportunity to go harvest from them, bringing along app1 for a herbcraft lesson.",
+        "intro_text": "As the ragwort plants start to dramatically give up on life as leaf-fall progresses, p_l takes the opportunity to go harvest from them, bringing along app1 for an herbcraft lesson.",
         "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Ugh. The ragwort p_l finds is flowering, and the yellow flowers of the plant waft out their scent, leaving a foul taste hanging in the air. It's so bad, p_l almost misses the burdock plant ready to be harvested nearby. app1 quietly asks if theres anything they can do to block the scent, but no, it's just better to get harvesting over with quickly.",
+                "text": "Ugh. The ragwort p_l finds is flowering, and the yellow flowers of the plant waft out their scent, leaving a foul taste hanging in the air. It's so bad, p_l almost misses the burdock plant ready to be harvested nearby. app1 quietly asks if there's anything they can do to block the scent, but no, it's just better to get harvesting over with quickly.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["burdock", "ragwort"],
@@ -4591,7 +4591,7 @@
                 ]
             },
             {
-                "text": "Ragwort brings strength to cats who need it, and eases aching joints, but StarClan it tastes absolutely foul. p_l's pleased with their harvest, particulalry the extra burdock, but really wishes they had a way to bring it back to camp that didn't need them to carry it in their mouth, a sentiment that the patrol helping them definitely shares... at length, very descriptively.",
+                "text": "Ragwort brings strength to cats who need it, and eases aching joints, but StarClan it tastes absolutely foul. p_l's pleased with their harvest, particularly the extra burdock, but really wishes they had a way to bring it back to camp that didn't need them to carry it in their mouth, a sentiment that the patrol helping them definitely shares... at length, very descriptively.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "burdock", "ragwort"],
@@ -4689,7 +4689,7 @@
                 "weight": 5
             },
             {
-                "text": "It takes little intelligence to recognise deathberries, but a great deal to collect them anyway. If s_c can dry them out, these berries will be sufficient for c_n for years to come. By using their weight to snap off one of the bush's branches, and then carefully carrying it back to camp, s_c manages to bring them safely home.",
+                "text": "It takes little intelligence to recognize deathberries, but a great deal to collect them anyway. If s_c can dry them out, these berries will be sufficient for c_n for years to come. By using their weight to snap off one of the bush's branches, and then carefully carrying it back to camp, s_c manages to bring them safely home.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"]
@@ -4980,7 +4980,7 @@
                 ]
             },
             {
-                "text": "Perfect - there's a good crop of raspberries just waiting for them, and the bramble seems to be sending out new exploratory branches too, promising more growth in the future. Their Clanmates send p_l away for a nap in the sunshine, as they organise the blackberry leaves, and p_l smiles appreciatively.",
+                "text": "Perfect - there's a good crop of raspberries just waiting for them, and the bramble seems to be sending out new exploratory branches too, promising more growth in the future. Their Clanmates send p_l away for a nap in the sunshine, as they organize the blackberry leaves, and p_l smiles appreciatively.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "blackberry", "raspberry"],
@@ -5002,7 +5002,7 @@
                 ]
             },
             {
-                "text": "s_c falls into the meditative state that herb-gathering brings, and they hum to themselves as they work, crisply plucking from the brambles they encounter, both raspberry and blackberry. The patrol follows their lead, and its a relaxed group that wanders back into camp with a massive haul from the blackberry bushes.",
+                "text": "s_c falls into the meditative state that herb-gathering brings, and they hum to themselves as they work, crisply plucking from the brambles they encounter, both raspberry and blackberry. The patrol follows their lead, and it's a relaxed group that wanders back into camp with a massive haul from the blackberry bushes.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -5339,19 +5339,19 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "The urgency drains out of p_l as they sit amongst the calming thyme, and it's not just the herb stores that'll feel the benefit of this gathering trip, as they have collect a satisfying amount for this type of weather alongside a pawful of goldenrod stems.",
+                "text": "The urgency drains out of p_l as they sit amongst the calming thyme, and it's not just the herb stores that'll feel the benefit of this gathering trip, as they have collected a satisfying amount for this type of weather alongside a pawful of goldenrod stems.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["goldenrod", "thyme"]
             },
             {
-                "text": "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasant to have around, and p_l makes sure to organise the herb stores ensuring they have a healthy amount of goldenrod to go alongside the thyme, which p_l places so that the scent wafts near their nest.",
+                "text": "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasant to have around, and p_l makes sure to organize the herb stores ensuring they have a healthy amount of goldenrod to go alongside the thyme, which p_l places so that the scent wafts near their nest.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "goldenrod", "thyme"]
             },
             {
-                "text": "Thyme, thyme, thyme, there's never enough thyme. s_c snorts at their little joke, mouth crammed full of the herb, as they make their way home. Spotting a small goldenrod plant that looks like its beginning to shrivel up from the frosts, they pause to gather the remaining stems to make good use of it.",
+                "text": "Thyme, thyme, thyme, there's never enough thyme. s_c snorts at their little joke, mouth crammed full of the herb, as they make their way home. Spotting a small goldenrod plant that looks like it's beginning to shrivel up from the frosts, they pause to gather the remaining stems to make good use of it.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -5388,7 +5388,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "The urgency drains out of the medicine cats as they sit amongst the calming thyme, and it's not just the herb stores that'll feel the benefit of this gathering trip, as they have collect a satisfying amount for this type of weather alongside a pawful of goldenrod stems.",
+                "text": "The urgency drains out of the medicine cats as they sit amongst the calming thyme, and it's not just the herb stores that'll feel the benefit of this gathering trip, as they have collected a satisfying amount for this type of weather alongside a pawful of goldenrod stems.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["goldenrod", "thyme"],
@@ -5410,7 +5410,7 @@
                 ]
             },
             {
-                "text": "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasant to have around, and p_l makes sure to organise the herb stores ensuring they have a healthy amount of goldenrod to go alongside the thyme, which p_l places so that the scent wafts near the nests they and app1 curl up in at night.",
+                "text": "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasant to have around, and p_l makes sure to organize the herb stores ensuring they have a healthy amount of goldenrod to go alongside the thyme, which p_l places so that the scent wafts near the nests they and app1 curl up in at night.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "goldenrod", "thyme"],
@@ -5498,7 +5498,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The urgency drains out of the patrol as they sit amongst the calming thyme, and it's not just the herb stores that'll feel the benefit of this gathering trip, as they have collect a satisfying amount for this type of weather alongside a pawful of goldenrod stems.",
+                "text": "The urgency drains out of the patrol as they sit amongst the calming thyme, and it's not just the herb stores that'll feel the benefit of this gathering trip, as they have collected a satisfying amount for this type of weather alongside a pawful of goldenrod stems.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["goldenrod", "thyme"],
@@ -5680,7 +5680,7 @@
                 ]
             },
             {
-                "text": "The leaves and especially the bulbs of wild garlic are the preeminent herb to treat infection, even if using them literally always resulting in either their patient or their loved ones complaining about the smell. p_l teaches app1 that sometimes they need to prioritize treating their patients above listening to them. Thankfully, the mallow that was gathered is a lot more appreciated by members of the Clan suffering from bellyaches.",
+                "text": "The leaves and especially the bulbs of wild garlic are the preeminent herb to treat infection, even if using them literally always resulting in either their patient or their loved ones complaining about the smell. p_l teaches app1 that sometimes they need to prioritize treating their patients over listening to them. Thankfully, the mallow that was gathered is a lot more appreciated by members of the Clan suffering from bellyaches.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "mallow", "wild_garlic"],
