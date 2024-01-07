@@ -64,14 +64,14 @@ class WarriorDenScreen(Screens):
                         # deactivate save button if the focus didn't change or if rank prevents it
                         if self.active_code == self.original_focus_code and self.save_button.is_enabled:
                             self.save_button.disable()
-                        if "mediator" in description:
+                        if "mediator" in description and self.save_button.is_enabled:
                             # only create the mediator list if needed to check
                             mediator_list = list(filter(
                                 lambda x: x.status == "mediator" and not x.dead and not x.outside, Cat.all_cats_list
                             ))
                             if len(mediator_list) < 1:
                                 self.save_button.disable()
-                        elif "medicine cat" in description:
+                        elif "medicine cat" in description and self.save_button.is_enabled:
                             meds = get_med_cats(Cat, working=False)
                             if len(meds) < 1:
                                 self.save_button.disable()
@@ -116,6 +116,7 @@ class WarriorDenScreen(Screens):
                                                        pygame.image.load(
                                                            "resources/images/warrior_den_frame.png").convert_alpha(),
                                                        manager=MANAGER)
+        self.focus_frame.disable()
 
 
         self.save_button = UIImageButton(scale(pygame.Rect((300, 1184), (278, 60))),
