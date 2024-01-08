@@ -1585,9 +1585,9 @@
                 "hunting",
                 "respect",
                 "trust",
-                "platonic",
                 "patrol_to_s_c",
-                "patrol_to_r_c"
+                "patrol_to_r_c",
+                "patrol_to_patrol"
             ],
             "patrol_art": "mtn_hunt_leaffallsnowstorm",
             "patrol_art_clean": null,
@@ -1604,7 +1604,7 @@
             "chance_of_success": 30,
             "relationship_constraint": null,
             "pl_skill_constraint": null,
-            "intro_text": "Leaf-bare is taking its toll. Your patrol is cold, frusterated, and most of all, hungry. r_c notices something odd. Is that a fox in the distance? Why is it jumping into the snow like that?",
+            "intro_text": "Leaf-bare is taking its toll. Your patrol is cold, frustrated, and most of all, hungry. s_c notices something odd. Is that a fox in the distance? Why is it jumping into the snow like that?",
             "decline_text": "First the cold, and the snow, and now a fox? This is too much for one day, p_l decides. Back to camp, another patrol can try again later. ",
             "success_outcomes": [
                 { 
@@ -1622,9 +1622,9 @@
                     "amount": 5
                 },
             { 
-            "text": "The whole patrol stares at the sight of a fox, something cats fear, stuck upside with its whole rump flailing up and undignified. r_c can't stop the unattractive snort that leaves {PRONOUN/r_c/poss}, and then the whole patrol is laughing. For this one moment, your cats forget about the cold in the fur and hunger in their bellies to enjoy a moment with their friends.",
+            "text": "The whole patrol stares at the sight of a fox, something cats fear, stuck upside with its whole rear flailing up and undignified. r_c can't stop (PRONOUN/r_c/self) from snorting at the sight. Then the whole patrol is laughing. For this one moment, your cats forget about the cold in the fur and hunger in their bellies to enjoy a moment with their friends.",
                     "exp": 5,
-                    "weight": 30, 
+                    "weight": 20, 
                     "prey": ["small"],
                     "relationships": [
                         {
