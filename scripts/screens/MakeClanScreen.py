@@ -461,7 +461,6 @@ class MakeClanScreen(Screens):
                 self.elements["error"].set_text("A Clan with that name already exists.")
                 self.elements["error"].show()
                 self.elements['next_step'].disable()
-                return
             else:
                 self.elements["error"].hide()
                 self.elements['next_step'].enable()
