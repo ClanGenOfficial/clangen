@@ -1807,17 +1807,24 @@ class Cat():
 
     def not_working(self):
         """returns True if the cat cannot work, False if the cat can work"""
-        not_working = False
         for illness in self.illnesses:
             if self.illnesses[illness]['severity'] != 'minor':
-                not_working = True
-                break
+                return True
         for injury in self.injuries:
             if self.injuries[injury]['severity'] != 'minor':
-                not_working = True
-                break
-        return not_working
+                return True
+        return False
 
+    def not_work_because_hunger(self):
+        """returns True if the only condition, why the cat cannot work is because of starvation"""
+        non_minor_injuries = [injury for injury in self.injuries if self.injuries[injury]['severity'] != 'minor']
+        if len(non_minor_injuries) > 0:
+            return False
+        non_minor_illnesses = [illness for illness in self.illnesses if self.illnesses[illness]['severity'] != 'minor']
+        if "starving" in non_minor_illnesses and len(non_minor_illnesses) == 1:
+            return True
+        else:
+            return False
     
     def retire_cat(self):
         """This is only for cats that retire due to health condition"""
@@ -2100,7 +2107,7 @@ class Cat():
         if is_former_mentor and not game.clan.clan_settings['romantic with former mentor']:
             return False
 
-		#current mentor
+        #current mentor
         if other_cat.ID in self.apprentice or self.ID in other_cat.apprentice:
             return False
 

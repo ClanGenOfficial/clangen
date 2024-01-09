@@ -147,7 +147,7 @@ class MakeClanScreen(Screens):
             self.game_mode = 'expanded'
             self.refresh_text_and_buttons()
         elif event.ui_element == self.elements['cruel_mode_button']:
-            self.game_mode = 'cruel'
+            self.game_mode = 'cruel season'
             self.refresh_text_and_buttons()
         # When the next_step button is pressed, go to the Clan naming page.
         elif event.ui_element == self.elements['next_step']:
@@ -161,10 +161,10 @@ class MakeClanScreen(Screens):
             if self.game_mode == 'classic':
                 self.game_mode = 'expanded'
             elif self.game_mode == 'expanded':
-                self.game_mode = 'cruel'
+                self.game_mode = 'cruel season'
             self.refresh_text_and_buttons()
         elif event.key == pygame.K_UP:
-            if self.game_mode == 'cruel':
+            if self.game_mode == 'cruel season':
                 self.game_mode = 'expanded'
             elif self.game_mode == 'expanded':
                 self.game_mode = 'classic'
@@ -484,7 +484,7 @@ class MakeClanScreen(Screens):
             elif self.game_mode == 'expanded':
                 display_text = self.expanded_mode_text
                 display_name = "Expanded Mode"
-            elif self.game_mode == 'cruel':
+            elif self.game_mode == 'cruel season':
                 display_text = self.cruel_mode_text
                 display_name = "Cruel Season"
             else:
@@ -504,7 +504,7 @@ class MakeClanScreen(Screens):
                 self.elements['classic_mode_button'].enable()
                 self.elements['expanded_mode_button'].disable()
                 self.elements['cruel_mode_button'].enable()
-            elif self.game_mode == 'cruel':
+            elif self.game_mode == 'cruel season':
                 self.elements['classic_mode_button'].enable()
                 self.elements['expanded_mode_button'].enable()
                 self.elements['cruel_mode_button'].disable()
@@ -514,7 +514,7 @@ class MakeClanScreen(Screens):
                 self.elements['cruel_mode_button'].enable()
 
             # Don't let the player go forwards with cruel mode, it's not done yet.
-            if self.game_mode == 'cruel':
+            if self.game_mode == 'cruel season':
                 self.elements['next_step'].disable()
             else:
                 self.elements['next_step'].enable()
