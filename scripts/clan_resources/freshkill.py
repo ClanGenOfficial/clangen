@@ -166,7 +166,7 @@ class Freshkill_Pile():
         value_diff = self.total_amount
         self.feed_cats(living_cats)
         value_diff -= sum(self.pile.values())
-        event_list.append(f"{value_diff} pieces of prey where consumed.")
+        event_list.append(f"{value_diff} pieces of prey were consumed.")
         self._update_needed_food(living_cats)
         self.update_total_amount()
 
