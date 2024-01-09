@@ -465,7 +465,7 @@ class MakeClanScreen(Screens):
                 self.elements["error"].hide()
                 self.elements['next_step'].enable()
             
-            # Set the background for the name clan page - done to here to avoid GUI layering issues
+            # Set the background for the name clan page - done here to avoid GUI layering issues
             screen.blit(pygame.transform.scale(MakeClanScreen.name_clan_img, (screen_x, screen_y)), (0,0))
 
     def clear_all_page(self):
