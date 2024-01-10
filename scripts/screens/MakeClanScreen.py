@@ -11,7 +11,7 @@ from scripts.cat.names import names
 from re import sub
 from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton
-from scripts.game_structure.game_essentials import game, MANAGER
+from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from scripts.patrol.patrol import Patrol
 
 
@@ -461,10 +461,12 @@ class MakeClanScreen(Screens):
                 self.elements["error"].set_text("A Clan with that name already exists.")
                 self.elements["error"].show()
                 self.elements['next_step'].disable()
-                return
             else:
                 self.elements["error"].hide()
                 self.elements['next_step'].enable()
+            
+            # Set the background for the name clan page - done here to avoid GUI layering issues
+            screen.blit(pygame.transform.scale(MakeClanScreen.name_clan_img, (screen_x, screen_y)), (0,0))
 
     def clear_all_page(self):
         """Clears the entire page, including layout images"""
@@ -833,11 +835,6 @@ class MakeClanScreen(Screens):
         self.sub_screen = 'name clan'
 
         # Create all the elements.
-        self.elements["background"] = pygame_gui.elements.UIImage(scale(pygame.Rect((0, 0), (1600, 1400))),
-                                                                  pygame.transform.scale(MakeClanScreen.name_clan_img,
-                                                                                         (1600, 1400))
-                                                                  , manager=MANAGER)
-        self.elements['background'].disable()
         self.elements["random"] = UIImageButton(scale(pygame.Rect((448, 1190), (68, 68))), "",
                                                 object_id="#random_dice_button"
                                                 , manager=MANAGER)
