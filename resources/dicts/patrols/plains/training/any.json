@@ -2862,7 +2862,7 @@
                 "weight": 20
             },
             {
-                "text": "App1 sniffles alone for a few moments before facing {pronoun/app1/poss} mentor. App1's eyes widen at p_l standing over {pronoun/app1/poss}, claws unsheathed and fur bristled. <i>That</i> is weakness. c_n, and more importantly, p_l will not tolerate weakness. Get back into training, app1, and do not let p_l see you act in this way again.",
+                "text": "App1 sniffles alone for a few moments before facing {PRONOUN/app1/poss} mentor. App1's eyes widen at p_l standing over {PRONOUN/app1/poss}, claws unsheathed and fur bristled. <i>That</i> is weakness. c_n, and more importantly, p_l will not tolerate weakness. Get back into training, app1, and do not let p_l see you act in this way again.",
                 "exp": 10,
                 "stat_trait": ["bloodthirsty","vengeful","arrogant","troublesome"],
                 "relationships": [
