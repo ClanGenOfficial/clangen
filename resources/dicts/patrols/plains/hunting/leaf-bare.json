@@ -1622,7 +1622,7 @@
                     "amount": 5
                 },
             { 
-            "text": "The whole patrol stares at the sight of a fox, something cats fear, stuck upside with its whole rear flailing up and undignified. r_c can't stop (PRONOUN/r_c/self) from snorting at the sight. Then the whole patrol is laughing. For this one moment, your cats forget about the cold in the fur and hunger in their bellies to enjoy a moment with their friends.",
+            "text": "The whole patrol stares at the sight of a fox, something cats fear, stuck upside with its whole rump flailing up and undignified. r_c can't stop {PRONOUN/r_c/self} from snorting at the sight. Then the whole patrol is laughing. For this one moment, your cats forget about the cold in the fur and hunger in their bellies to enjoy a moment with their friends.",
                     "exp": 5,
                     "weight": 20, 
                     "prey": ["small"],
