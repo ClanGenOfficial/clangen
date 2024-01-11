@@ -1,17 +1,73 @@
 [
 	{
+		"id": "neutral_interaction",
+		"interactions": [
+			"m_c blinked slowly at r_c.",
+			"m_c was seen speaking with r_c."
+		]
+	},
+	{
 		"id": "neutral_interaction1",
 		"interactions": [
-			"m_c saw r_c the other day, but didn't get a chance to meow hello.",
-			"m_c bickered about something trivial with r_c.",
-			"m_c nods politely as r_c passes by.",
-			"m_c acknowledges r_c with a twitch of {PRONOUN/m_c/poss} whiskers."
+			"m_c saw r_c and asked {PRONOUN/m_c/object} to organize patrols.",
+			"m_c thanked r_c for {PRONOUN/m_c/subject} hard work."
+		],
+		"main_status_constraint": [
+			"leader"
+		],
+		"random_status_constraint": [
+			"deputy"
 		]
 	},
 	{
 		"id": "neutral_interaction2",
 		"interactions": [
-			"m_c is giving r_c a task.",
+			"m_c saw r_c the other day, but didn't get a chance to meow hello.",
+			"m_c bickered about something trivial with r_c.",
+			"m_c nods politely as r_c passes by.",
+			"m_c acknowledges r_c with a twitch of {PRONOUN/m_c/poss} whiskers."
+		],
+		"main_status_constraint": [
+			"apprentice",
+			"mediator apprentice",
+			"medicine cat apprentice",
+			"warrior",
+			"mediator",
+			"leader",
+			"deputy", 
+			"elder"
+		],
+		"random_status_constraint": [
+			"apprentice",
+			"mediator apprentice",
+			"medicine cat apprentice",
+			"warrior",
+			"mediator",
+			"leader",
+			"deputy", 
+			"elder"
+		]
+	},
+	{
+		"id": "neutral_interaction3",
+		"interactions": [
+			"m_c meowed a greeting to r_c.",
+			"m_c invited r_c to play with {PRONOUN/m_c/object}.",
+			"m_c and r_c exchanged curious glances, looking at each other with wide eyes.",
+			"m_c batted a mossball toward r_c.",
+			"m_c and r_c curled up together for a brief nap.",
+			"Sharing a patch of sunlight, m_c and r_c peacefully dozed off."
+		],
+		"main_status_constraint": [
+			"kitten"
+		],
+		"random_status_constraint": [
+			"kitten"
+		]
+	},
+	{
+		"id": "neutral_interaction4",
+		"interactions": [
 			"m_c is checking on r_c."
 		],
 		"main_status_constraint": [
@@ -25,82 +81,260 @@
 			"mediator apprentice",
 			"medicine cat apprentice",
 			"warrior",
-			"mediator"
-		]
-	},
-	{
-		"id": "neutral_interaction3",
-		"interactions": [
-			"m_c is stuttering while speaking to r_c.",
-			"r_c asks m_c to speak up while chatting together.",
-			"m_c avoids facing r_c directly while talking."
-		],
-		"main_trait_constraint": [
-			"nervous"
-		]
-	},
-	{
-		"id": "neutral_interaction4",
-		"interactions": [
-			"m_c stands tall when r_c walks by.",
-			"m_c lifts {PRONOUN/m_c/poss} chin up while passing by r_c."
-		],
-		"main_trait_constraint": [
-			"confident"
+			"mediator",
+			"elder"
 		]
 	},
 	{
 		"id": "neutral_interaction5",
 		"interactions": [
-			"m_c challenged r_c to spar with {PRONOUN/m_c/object}."
+			"m_c is giving r_c a task."
 		],
-		"main_trait_constraint": [
-			"bold"
+		"main_status_constraint": [
+			"medicine cat",
+			"deputy",
+			"leader"
+		],
+		"random_status_constraint": [
+			"apprentice",
+			"mediator apprentice",
+			"medicine cat apprentice",
+			"warrior",
+			"mediator"
 		]
 	},
 	{
 		"id": "neutral_interaction6",
 		"interactions": [
-			"r_c seems to be oblivious to m_c glaring at {PRONOUN/r_c/object} from across camp.",
-			"m_c is sharpening {PRONOUN/m_c/poss} claws near r_c.",
-			"m_c asks r_c to compare the size and sharpness of their claws together."
+			"m_c is stuttering while speaking to r_c.",
+			"r_c asks m_c to speak up while chatting together."
 		],
 		"main_trait_constraint": [
-			"bloodthirsty"
+			"nervous"
+		],
+		"random_status_constraint": [
+			"apprentice",
+			"medicine cat",
+			"mediator apprentice",
+			"medicine cat apprentice",
+			"warrior",
+			"mediator",
+			"leader",
+			"deputy",
+			"elder"
 		]
 	},
 	{
 		"id": "neutral_interaction7",
 		"interactions": [
-			"m_c doesn't notice r_c leaving camp.",
-			"m_c doesn't notice r_c twitching {PRONOUN/r_c/poss} whiskers at {PRONOUN/m_c/object}."
+			"m_c is stuttering while speaking to r_c.",
+			"r_c gently reminds m_c to speak up while chatting together."
 		],
-		"main_trait_constraint": [
-			"oblivious"
+		"main_status_constraint": [
+			"kitten"
+		],
+		"random_status_constraint": [
+			"apprentice",
+			"medicine cat",
+			"mediator apprentice",
+			"medicine cat apprentice",
+			"warrior",
+			"mediator",
+			"leader",
+			"deputy",
+			"elder"
 		]
 	},
 	{
 		"id": "neutral_interaction8",
 		"interactions": [
-			"r_c notices m_c sulking around camp again.",
-			"r_c meows hello to m_c, but {PRONOUN/m_c/subject} {VERB/m_c/look/looks} pretty glum still."
+			"m_c stands tall when r_c walks by.",
+			"m_c lifts {PRONOUN/m_c/poss} chin up while passing by r_c.",
+			"m_c looks confident in {PRONOUN/m_c/self} as they pass by r_c."
 		],
 		"main_trait_constraint": [
-			"gloomy",
-			"lonesome"
+			"confident"
+		],
+		"random_status_constraint": [
+			"apprentice",
+			"medicine cat",
+			"mediator apprentice",
+			"medicine cat apprentice",
+			"warrior",
+			"mediator",
+			"leader",
+			"deputy",
+			"elder"
 		]
 	},
 	{
 		"id": "neutral_interaction9",
 		"interactions": [
-			"m_c always seems to avoid r_c's attempts at small talk.",
-			"r_c is amused at how m_c manages to look so grumpy all the time.",
-			"m_c avoids running into any cat, but r_c interrupts {PRONOUN/m_c/poss} peaceful silence.",
-			"m_c stares at r_c with an unreadable expression."
+			"m_c challenged r_c to spar with {PRONOUN/m_c/object}."
 		],
 		"main_trait_constraint": [
-			"grumpy",
-			"cold"
+			"bold",
+			"daring",
+			"fierce",
+			"competitive"
+		],
+		"main_status_constraint":[
+			"warrior",
+			"leader",
+			"deputy"
+		],
+		"random_status_constraint": [
+			"warrior",
+			"leader",
+			"deputy"
+		]
+	},
+	{
+		"id": "neutral_interaction10",
+		"interactions": [
+			"m_c challenged r_c to spar with {PRONOUN/m_c/object}."
+		],
+		"main_trait_constraint": [
+			"bold",
+			"daring",
+			"fierce",
+			"competitive"
+		],
+		"main_status_constraint":[
+			"apprentice"
+		],
+		"random_status_constraint": [
+			"apprentice"
+		]
+	},
+	{
+		"id": "neutral_interaction11",
+		"interactions": [
+			"r_c seems to be oblivious to m_c glaring at {PRONOUN/r_c/object} from across camp.",
+			"m_c is sharpening {PRONOUN/m_c/poss} claws near r_c.",
+			"Unnoticed in the shadows, m_c glares at r_c."
+		],
+		"main_trait_constraint": [
+			"bloodthirsty"
+		],
+		"random_status_constraint": [
+			"apprentice",
+			"medicine cat",
+			"mediator apprentice",
+			"medicine cat apprentice",
+			"warrior",
+			"mediator",
+			"leader",
+			"deputy"
+		]
+	},
+	{
+		"id": "neutral_interaction12",
+		"interactions": [
+			"m_c doesn't notice r_c leaving camp.",
+			"m_c doesn't notice r_c twitching {PRONOUN/r_c/poss} whiskers at {PRONOUN/m_c/object}.",
+			"m_c doesn't notice r_c watching {PRONOUN/m_c/object} chase a butterfly."
+		],
+		"main_trait_constraint": [
+			"oblivious"
+		],
+		"random_status_constraint": [
+			"apprentice",
+			"medicine cat",
+			"mediator apprentice",
+			"medicine cat apprentice",
+			"warrior",
+			"mediator",
+			"leader",
+			"deputy"
+		]
+	},
+	{
+		"id": "neutral_interaction13",
+		"interactions": [
+			"m_c hides away from r_c.",
+			"r_c fails to convince m_c to join {PRONOUN/r_c/object} for some sun bathing."
+		],
+		"main_trait_constraint": [
+			"lonesome",
+			"anxious",
+			"insecure",
+			"nervous"
+		],
+		"main_status_constraint": [
+			"apprentice",
+			"medicine cat",
+			"mediator apprentice",
+			"medicine cat apprentice",
+			"warrior",
+			"mediator"
+		],
+		"random_status_constraint": [
+			"medicine cat",
+			"warrior",
+			"mediator",
+			"leader",
+			"deputy",
+			"elder"
+		]
+	},
+	{
+		"id": "neutral_interaction14",
+		"interactions": [
+			"m_c smiles as r_c plays in camp.",
+			"m_c answeres r_c's questions.",
+			"r_c bumps into m_c and apologizes.",
+			"m_c makes sure that r_c has eaten."
+		],
+		"main_status_constraint": [
+			"apprentice",
+			"medicine cat",
+			"mediator apprentice",
+			"medicine cat apprentice",
+			"warrior",
+			"mediator",
+			"leader",
+			"deputy",
+			"elder"
+		],
+		"random_status_constraint":[
+			"kitten"
+		]
+	},
+	{
+		"id": "neutral_interaction15",
+		"interactions": [
+			"m_c showed off what {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} learned as an apprentice to r_c.",
+			"r_c asks m_c to teach {PRONOUN/r_c/subject}."
+		],
+		"main_status_constraint": [
+			"apprentice",
+			"mediator apprentice",
+			"medicine cat apprentice"
+		],
+		"random_status_constraint":[
+			"kitten"
+		]
+	},
+	{
+		"id": "neutral_interaction16",
+		"interactions": [
+			"r_c spotted m_c with some thorns."
+		],
+		"main_trait_constraint": [
+			"troublesome"
+		],
+		"main_status_constraint":[
+			"kitten",
+			"apprentice"
+		],
+		"random_status_constraint":[
+			"apprentice",
+			"warrior",
+			"medicine cat",
+			"mediator",
+			"mediator apprentice",
+			"medicine cat apprentice"
 		]
 	}
 ]

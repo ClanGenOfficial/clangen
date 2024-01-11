@@ -161,12 +161,18 @@
 		"primary_chance_unmated": 130,
 		"random_affair_chance": 50,
 		"unmated_random_affair_chance": 10,
-		"one_kit_possibility": {"young adult": 8, "adult": 9, "senior adult": 10, "senior": 4},
-        "two_kit_possibility": {"young adult": 10, "adult": 13, "senior adult": 15, "senior": 3},
-        "three_kit_possibility": {"young adult": 17, "adult": 15, "senior adult": 5, "senior": 1},
-        "four_kit_possibility": {"young adult": 12, "adult": 8, "senior adult": 2, "senior": 0},
-        "five_kit_possibility": {"young adult": 6, "adult": 2, "senior adult": 0, "senior": 0},
-        "max_kit_possibility": {"young adult": 2, "adult": 0, "senior adult": 0, "senior": 0},
+		"one_kit_possibility": {"young adult": 28, "adult": 24, "senior adult": 17, "senior": 15},
+            "two_kit_possibility": {"young adult": 32, "adult": 28, "senior adult": 10, "senior": 10},
+            "three_kit_possibility": {"young adult": 36, "adult": 32, "senior adult": 5, "senior": 3},
+            "four_kit_possibility": {"young adult": 32, "adult": 28, "senior adult": 4, "senior": 2},
+            "five_kit_possibility": {"young adult": 28, "adult": 24, "senior adult": 3, "senior": 1},
+            "six_kit_possibility": {"young adult": 24, "adult": 20, "senior adult": 2, "senior": 0},
+            "seven_kit_possibility": {"young adult": 20, "adult": 16, "senior adult": 1, "senior": 0},
+            "eight_kit_possibility": {"young adult": 16, "adult": 12, "senior adult": 0, "senior": 0},
+            "nine_kit_possibility": {"young adult": 12, "adult": 8, "senior adult": 0, "senior": 0},
+            "ten_kit_possibility": {"young adult": 8, "adult": 4, "senior adult": 0, "senior": 0},
+            "eleven_kit_possibility": {"young adult": 4, "adult": 2, "senior adult": 0, "senior": 0},
+            "max_kit_possibility": {"young adult": 1, "adult": 1, "senior adult": 0, "senior": 0},
 		"min_kits": 1,
 		"max_kits": 6,
 		"comment": [
@@ -281,7 +287,7 @@
 		"war_injury_modifier": 100
 	},
 	"clan_creation": {
-		"rerolls": 3,
+		"rerolls": -1,
 		"comment": "Set this to -1 for it to be infinite"
 	},
 	"graduation": {

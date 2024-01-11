@@ -35,6 +35,21 @@
                 ]
             },
             {
+                "text": "The sunlight feels great and the cats have a lovely discussion, talking about what herbs need to be gathered, and the best locations to gather them.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
                 "text": "The sunlight energizes the cats for their herb-gathering.",
                 "exp": 20,
                 "weight": 5,
@@ -46,6 +61,109 @@
                         "mutual": false,
                         "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The sunlight feels great and s_c leads the cats in conversation, bringing them closer together.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": [
+                    "SPEAKER,10",
+                    "MEDIATOR,1",
+                    "COMFORT,1"
+                ],
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 15
+                    }
+                ]
+            },
+            {
+                "text": "The sunlight feels great and s_c tells a story to the patrol as they relax.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": [
+                    "SPEAKER,10",
+                    "STORY,1",
+                    "LORE,1"
+                ],
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 15
+                    }
+                ]
+            },
+            {
+                "text": "The sunlight energizes the cats for their herb-gathering. s_c in particular points out a bunch of herb locations that weren't common knowledge.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": ["many_herbs"],
+                "stat_skill": [
+                    "TEACHER,10",
+                    "CLEVER,10",
+                    "INSIGHTFUL,10",
+                    "SENSE,10",
+                    "HEALER,1"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The sunlight energizes the cats for their herb-gathering. s_c is particularly lucky, and finds a large amount of herbs.",
+                "exp": 20,
+                "weight": 5,
+                "stat_trait": [
+                    "lucky"
+                ],
+                "herbs": ["many_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The sunlight energizes the cats for their herb-gathering. s_c is extra bright, and {PRONOUN/s_c/poss} jokes make the whole patrol pass by in a good mood.",
+                "exp": 20,
+                "weight": 5,
+                "stat_trait": [
+                    "childish",
+                    "playful",
+                    "charismatic",
+                    "sweetheart",
+                    "cheerful",
+                    "carefree"
+                ],
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 10
                     }
                 ]
             },
@@ -62,12 +180,94 @@
                     "patient",
                     "responsible",
                     "thoughtful",
-                    "wise"
+                    "wise",
+                    "sweetheart",
+                    "generous",
+                    "calm",
+                    "cheerful"
                 ],
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c decides not to rest, and instead goes to gather herbs while the rest of the patrol relaxes. {PRONOUN/s_c/subject/CAP} soon returns with some daisys, and by the time {PRONOUN/s_c/subject} {VERB/s_c/come/comes} back the patrol is refreshed and ready to gather more herbs.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bold",
+                    "daring",
+                    "strict",
+                    "confident",
+                    "adventurous",
+                    "competitive"
+                ],
+                "herbs": ["random_herbs", "daisy"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The patrol is ambushed while they were napping by a gang of rogues. Luckily, r_c wasn't fully asleep and yowls a warning, the medicine cats are able to escape unharmed.",
+                "exp": 10,
+                "weight": 5,
+                "art": "gen_med_sunny_rogue",
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "s_c had just laid down when {PRONOUN/s_c/subject} got the feeling of danger, letting the rest of the patrol know they decide to head back to camp early. As the patrol head back, they catch the fresh scents of rouges in the area.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait":[
+                    "mysterious",
+                    "ominous",
+                    "strange"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c had just laid down when {PRONOUN/s_c/subject} got the feeling of danger, letting the rest of the patrol know they decide to head back to camp early. As the patrol head back, they catch the fresh scents of rouges in the area.",
+                "exp": 0,
+                "weight": 20,
+                "stat_skill": [
+                    "PROPHET,1",
+                    "OMEN,2",
+                    "STAR,1",
+                    "CLAIRVOYANT,2"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["platonic", "respect", "comfort", "trust"],
@@ -88,6 +288,178 @@
                         "mutual": false,
                         "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "The patrol gets into an argument and return home angry at each other.",
+                "exp": 0,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "s_c wasn't able to relax and kept the rest of the patrol from relaxing with all {PRONOUN/s_c/poss} {VERB/r_c/movement/movements}, making the patrol grumpy and return to camp with no herbs.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait":[
+                    "anxious",
+                    "nervous",
+                    "insecure"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c was deep asleep, and by the time {PRONOUN/s_c/subject} {VERB/r_c/awaken/awakens}, night has fallen, and no herbs have been gathered. r_c was particularly annoyed at s_c as the patrol couldn't leave {PRONOUN/s_c/object} alone.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "unlucky",
+                    "lazy"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "The patrol is ambushed while they were napping by a gang of rogues. Luckily, p_l wasn't fully asleep and yowls a warning, the medicine cats are able to escape, though not without injury.",
+                "exp": 0,
+                "weight": 10,
+                "art": "gen_med_sunny_rogue",
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["battle_injury"],
+                        "scars": ["ONE"]
+                    }
+                         ],                    
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "The patrol is ambushed while they were napping by a gang of rogues. r_c is killed before {PRONOUN/r_c/subject} was even aware of the danger.",
+                "exp": 0,
+                "weight": 5,
+                "art": "gen_med_sunny_rogue",
+                "dead_cats": ["r_c"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "s_c takes the best spot for {PRONOUN/s_c/self} and ignores all attempts at conversation, souring the mood of the patrol.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "troublesome",
+                    "lonesome",
+                    "bloodthirsty",
+                    "cold",
+                    "gloomy",
+                    "shameless",
+                    "arrogant",
+                    "grumpy",
+                    "oblivous",
+                    "cruel",
+                    "selfish",
+                    "rude",
+                    "apathetic"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c had just laid down when {PRONOUN/s_c/subject} got the feeling of danger, letting the rest of the patrol know the feeling is dismissed as s_c's imagination, and the patrol rests. However not long after they are attacked by a group of rogues.",
+                "exp": 0,
+                "weight": 20,
+                "art": "gen_med_sunny_rogue",
+                "stat_trait":[
+                    "mysterious",
+                    "ominous",
+                    "strange"
+                ],
+                "injury":[
+                    {
+                        "cats":["multi"],
+                        "injuries":["battle_injury"]
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "s_c had just laid down when {PRONOUN/s_c/subject} got the feeling of danger, letting the rest of the patrol know the feeling is dismissed as s_c's imagination, and the patrol rests. However not long after they are attacked by a group of rogues.",
+                "exp": 0,
+                "weight": 20,
+                "stat_skill": [
+                    "PROPHET,1",
+                    "OMEN,2",
+                    "STAR,1",
+                    "CLAIRVOYANT,2"
+                ],
+                "art": "gen_med_sunny_rogue",
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -10
                     }
                 ]
             }
@@ -117,9 +489,68 @@
                 "herbs": ["random_herbs"]
             },
             {
+                "text": "The sunlight feels great and r_c has a successful patrol, gathering up many herbs.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": [
+                    "HEALER,1",
+                    "CLEVER,10",
+                    "SENSE,10",
+                    "INSIGHTFUL,10"
+                ],
+                "herbs": ["many_herbs"]
+            },
+            {
+                "text": "The sunlight feels great and s_c has a successful patrol, gathering up many herbs.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "lucky"
+                ],
+                "herbs": ["many_herbs"]
+            },
+            {
+                "text": "r_c has a nice rest, and soon is sucessful in gathering some herbs.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": ["random_herbs"]
+            },
+            {
+                "text": "Despite falling asleep, r_c still wakes up with some time to gather herbs.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": ["random_herbs"]
+            },
+            {
                 "text": "The sunlight energizes r_c for the rest of {PRONOUN/r_c/poss} herb-gathering.",
                 "exp": 20,
                 "weight": 5,
+                "herbs": ["random_herbs"]
+            },
+            {
+                "text": "r_c is ambushed while {PRONOUN/r_c/subject} {VERB/r_c/were/was} napping by a gang of rogues. Luckily, r_c wasn't fully asleep and manages to escape unharmed.",
+                "exp": 10,
+                "weight": 5,
+                "art": "gen_med_sunny_rogue"
+            },
+            {
+                "text": "The sunlight feels great, however r_c presses on, wanting to be able to take care of {PRONOUN/r_c/poss} clanmates.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait":[
+                    "compassionate",
+                    "thoughtful",
+                    "faithful",
+                    "loving",
+                    "loyal",
+                    "responsible",
+                    "wise",
+                    "sincere",
+                    "sweetheart",
+                    "generous",
+                    "empathetic",
+                    "altruistic"
+                ],
                 "herbs": ["random_herbs"]
             }
         ],
@@ -128,6 +559,59 @@
                 "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} get much done because of that.",
                 "exp": 0,
                 "weight": 20
+            },
+            {
+                "text": "Due to r_c falling asleep, {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} wake up in time to gather herbs.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "r_c is ambushed while {PRONOUN/r_c/subject} {VERB/r_c/were/was} napping by a gang of rogues.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["r_c"],
+                "art": "gen_med_sunny_rogue"
+            },
+            {
+                "text": "s_c is ambushed while {PRONOUN/s_c/subject} {VERB/s_c/were/was} napping by a gang of rogues.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait":[
+                    "unlucky"
+                ],
+                "dead_cats": ["r_c"],
+                "art": "gen_med_sunny_rogue"
+            },
+            {
+                "text": "s_c was enjoying the sunlight and didn't pay attention as {PRONOUN/s_c/subject} {VERB/s_c/roll/rolls} around in the grass, destroying a patch of herbs.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait":[
+                    "childish",
+                    "playful",
+                    "strange",
+                    "carefree"
+                ]
+            },
+            {
+                "text": "s_c laid in the patch of sun, huffing, {PRONOUN/s_c/subject} deserved a nice break, away from all {PRONOUN/s_c/poss} clanmates. {PRONOUN/s_c/subject/CAP} could always just say {PRONOUN/s_c/subject} failed to find any herbs after all.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait":[
+                    "lonesome",
+                    "cold",
+                    "daring",
+                    "gloomy",
+                    "shameless",
+                    "sneaky",
+                    "grumpy",
+                    "cunning",
+                    "oblivous",
+                    "selfish",
+                    "rude",
+                    "apathetic",
+                    "lazy"
+                ]
             }
         ]
     },
@@ -150,7 +634,22 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "They have an in-depth conversation about r_c's vision as they walk. By the time they head back to camp, they have a good idea of what they should do with the information.",
+                "text": "p_l and r_c have an in-depth conversation about r_c's vision as they walk. By the time the patrol heads back to camp, they have a good idea of what they should do with the information.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "p_l and r_c have an in-depth conversation about r_c's vision as they walk. p_l listens of r_c's dream of an eeirie landscape, and threatening figures on the horizon. p_l reassures r_c, but inwardly was left worried over what it could mean.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -198,7 +697,16 @@
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
-                "stat_trait": ["loving", "wise"],
+                "stat_trait": [
+                    "loving",
+                    "wise",
+                    "compassionate",
+                    "thoughtful",
+                    "sweetheart",
+                    "cheerful",
+                    "altruistic",
+                    "empathetic"
+                ],
                 "can_have_stat": ["p_l"],
                 "relationships": [
                     {
@@ -216,6 +724,80 @@
                         "amount": -5
                     }
                 ]
+            },
+            {
+                "text": "s_c chooses to pad pelt-to-pelt with r_c, the spiritual medicine cat gently guiding the conversation. r_c feels deeply privileged, and far more at peace, after confiding in {PRONOUN/s_c/object}, and {PRONOUN/r_c/subject} {VERB/r_c/know/knows} that c_n is in safe paws.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": ["random_herbs"],
+                "stat_skill": [
+                    "CLAIRVOYANT,2",
+                    "OMEN,2",
+                    "STAR,2",
+                    "COMFORT,20",
+                    "INSIGHTFUL,10",
+                    "CLEVER,10",
+                    "SENSE,10",
+                    "HEALER,2",
+                    "PROPHET,2",
+                    "DREAM,2"
+
+                ],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c promises r_c that {PRONOUN/s_c/subject}'ll make sure to look deeper into this matter, and that r_c didn't need to worry.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": ["random_herbs"],
+                "stat_trait": [
+                    "fierce",
+                    "bold",
+                    "daring",
+                    "righteous",
+                    "confident",
+                    "responsible",
+                    "altruistic",
+                    "empathetic"
+                ],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c listens intently and tells r_c not to be weirded out, but {PRONOUN/s_c/subject} had seen the dream, too. r_c is alarmed, but s_c soothes {PRONOUN/r_c/object}, explaining that StarClan sometimes shows {PRONOUN/s_c/object} others' dreams. This one, luckily, was nothing but a mild warning.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": [
+                    "DREAM,1",
+                    "STAR,2"
+                ],
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l", "p_l"],
+                        "cats_from": ["patrol", "r_c"],
+                        "mutual": true,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -226,7 +808,7 @@
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": -5
@@ -241,15 +823,130 @@
                 ]
             },
             {
-                "text": "s_c watches r_c with undisguised envy, desperately wishing {PRONOUN/s_c/subject} {VERB/s_c/were/was} the one to receive the vision. Looking back nervously, r_c withdraws from the group, dismissing the dream as unimportant.",
+                "text": "p_l shakes {PRONOUN/p_l/poss} head, telling r_c that {PRONOUN/r_c/poss}'s dream is just a dream.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["ambitious", "insecure"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "p_l eyes go wide, fur puffing up, and tell r_c that {PRONOUN/r_c/poss}'s dream is a warning of death and destruction, thoroughly freaking r_c out and bringing unease to the patrol.",
+                "exp": 0,
+                "weight": 20,
+                "can_have_stat":["p_l"],
+                "stat_trait":[
+                    "anxious",
+                    "ominous",
+                    "unlucky",
+                    "mysterious",
+                    "gloomy",
+                    "sneaky",
+                    "strange",
+                    "insecure"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c", "patrol"],
+                        "mutual": true,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["respect", "trust", "platonic"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["p_l", "r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["comfort", "platonic"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c watches r_c with undisguised envy, desperately wishing {PRONOUN/s_c/subject} {VERB/s_c/were/was} the one to receive the vision. Looking back nervously, r_c withdraws from the group, dismissing the dream as unimportant as p_l frowns, worried.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious", 
+                    "insecure", 
+                    "vengeful", 
+                    "selfish", 
+                    "rude"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["s_c"],
+                        "mutual": true,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c stares at r_c with a cold look, telling {PRONOUN/r_c/object} to figure out {PRONOUN/r_c/poss} dreams {PRONOUN/r_c/self}, and that its doubtful someone like r_c would have a vision.",
+                "exp": 0,
+                "weight": 10,
+                "can_have_stat":["p_l"],
+                "stat_trait": [
+                    "ambitious", 
+                    "vengeful", 
+                    "selfish", 
+                    "rude",
+                    "troublesome",
+                    "bloodthirsty",
+                    "cold",
+                    "strict",
+                    "competitive",
+                    "rebellious",
+                    "cruel",
+                    "arrogant",
+                    "apathetic"
+                ],
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
                         "cats_from": ["r_c"],
                         "mutual": false,
+                        "values": ["respect", "trust", "comfort", "platonic"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "s_c listens intently and tells r_c not to be weirded out, but {PRONOUN/s_c/subject} had seen the dream, too. r_c is alarmed, but s_c soothes {PRONOUN/r_c/object}, explaining that StarClan sometimes shows {PRONOUN/s_c/object} others' dreams. However, s_c confesses this dream is a warning of a lurking danger.",
+                "exp": 0,
+                "weight": 20,
+                "stat_skill": [
+                    "DREAM,1",
+                    "STAR,2"
+                ],
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l", "p_l"],
+                        "cats_from": ["patrol", "r_c"],
+                        "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": -5
                     },
@@ -402,7 +1099,7 @@
         "season": ["Any"],
         "types": ["herb_gathering"],
         "tags": [],
-        "patrol_art": "gen_med_vision",
+        "patrol_art": "gen_med_vision_solo",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -416,55 +1113,201 @@
         "success_outcomes": [
             {
                 "text": "It definitely distracts {PRONOUN/p_l/object} from the hunt for cobwebs, but p_l uses the time by {PRONOUN/p_l/self} to put {PRONOUN/p_l/poss} thoughts in order. The sign from {PRONOUN/p_l/poss} ancestors will need acting upon, and {PRONOUN/p_l/subject} return to camp to assemble the leader and deputy.",
-                "exp": 20,
+                "exp": 10,
                 "weight": 20
             },
             {
                 "text": "Somehow cobweb-gathering brings p_l to an almost-meditative state. Not only {VERB/p_l/are/is} {PRONOUN/p_l/subject} fairly confident of {PRONOUN/p_l/poss} next steps, having been given this vision, but {PRONOUN/p_l/subject} also {VERB/p_l/bring/brings} back a good haul to the medicine den stocks.",
-                "exp": 20,
+                "exp": 10,
                 "weight": 5,
                 "herbs": ["cobwebs"]
             },
             {
                 "text": "s_c often feels like StarClan walks with {PRONOUN/s_c/object}, and this is just another instance on the path. {PRONOUN/s_c/subject/CAP} {VERB/s_c/use/uses} the solo patrol to collect {PRONOUN/s_c/poss} thoughts, and by the time {PRONOUN/s_c/subject} {VERB/s_c/pad/pads} home with a good bundle of cobwebs, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} ready for the next step {PRONOUN/s_c/poss} vision hinted at.",
-                "exp": 20,
+                "exp": 10,
                 "weight": 20,
-                "stat_skill": ["STAR,1"],
-                "stat_trait": ["faithful"],
+                "stat_skill": [
+                    "STAR,1",
+                    "OMEN,6",
+                    "PROPHET,6"
+                ],
+                "herbs": ["cobwebs"]
+            },
+            {
+                "text": "s_c knows what it feels like when StarClan walks with {PRONOUN/s_c/object}, and this is just another instance on the path. {PRONOUN/s_c/subject/CAP} {VERB/s_c/use/uses} the solo patrol to collect {PRONOUN/s_c/poss} thoughts, and by the time {PRONOUN/s_c/subject} {VERB/s_c/pad/pads} home with a good bundle of cobwebs, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} ready for the next step {PRONOUN/s_c/poss} vision hinted at.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": [
+                    "faithful",
+                    "strange",
+                    "wise",
+                    "mysterious",
+                    "lucky"
+                ],
+                "herbs": ["cobwebs"]
+            },
+            {
+                "text": "s_c wasn't particularly connected to StarClan, however, {PRONOUN/s_c/subject} {VERB/s_c/were/was} clever, and after carefully thinking over the vision, {PRONOUN/s_c/subject} {VERB/s_c/decide/decides} what {PRONOUN/s_c/subject} {VERB/s_c/need/needs} to do.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": [
+                    "CLEVER,10",
+                    "INSIGHTFUL,10",
+                    "SENSE,10"
+                ],
+                "herbs": ["cobwebs"]
+            },
+            {
+                "text": "s_c immediatly decides to give up on hunting cobwebs to speak to the leader about {PRONOUN/s_c/object} vision.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait":[
+                    "fierce",
+                    "confident",
+                    "bold",
+                    "daring",
+                    "righteous",
+                    "ambitious",
+                    "responsible"
+                ]
+            },
+            {
+                "text": "s_c had always been better at the healing aspect, rather than communicating with StarClan, and as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} about the dream {PRONOUN/s_c/subject} had last night, {PRONOUN/s_c/subject} {VERB/s_c/find/finds} {PRONOUN/s_c/self} surprised to find {PRONOUN/s_c/subject} could actually realize the warning {PRONOUN/s_c/subject} was being given.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": [
+                    "HEALER,1"
+                ],
+                "herbs": ["cobwebs"]
+            },
+            {
+                "text": "s_c would do anything to help {PRONOUN/s_c/poss} clanmates, and gave {PRONOUN/s_c/subject} full attention to figuring out the vision while {PRONOUN/s_c/object} gather cobwebs.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait":[
+                    "compassionate",
+                    "calm",
+                    "thoughtful",
+                    "faithful",
+                    "loving",
+                    "loyal",
+                    "sincere",
+                    "sweetheart",
+                    "cheerful",
+                    "empathetic",
+                    "altruistic"
+                ],
                 "herbs": ["cobwebs"]
             }
         ],
         "fail_outcomes": [
-            { "text": "r_c can't make sense of the vision.", "exp": 0, "weight": 20 }
+            { 
+                "text": "r_c can't make sense of the vision.", 
+                "exp": 0, 
+                "weight": 20
+            },
+            { 
+                "text": "Despite p_l's attempts, the vision remains cryptic and elusive.", 
+                "exp": 0, 
+                "weight": 20
+            },
+            { 
+                "text": "Despite deep contemplation during the cobweb-gathering, p_l struggles to decipher the dream's meaning. The lack of clarity leaves p_l feeling uncertain, and the potential message from StarClan remains elusive.", 
+                "exp": 0, 
+                "weight": 15,
+                "herbs": ["cobwebs"]
+            },
+            { 
+                "text": "p_l decides it was just a dream, ignoring the signs from StarClan as {PRONOUN/p_l/subject} {VERB/p_l/gather/gathers} cobwebs.", 
+                "exp": 0, 
+                "weight": 15,
+                "herbs": ["cobwebs"]
+            },
+            { 
+                "text": "s_c dismisses the dream, why would starclan send someone like {PRONOUN/s_c/object} a vision?", 
+                "exp": 0, 
+                "weight": 20,
+                "stat_trait":[
+                    "lonesome",
+                    "nervous",
+                    "insecure",
+                    "gloomy",
+                    "oblivous",
+                    "modest",
+                    "anxious",
+                    "lazy"
+                ]
+            },
+            { 
+                "text": "s_c had a vision from starclan... and sure, s_c could warn the clan... yet the whispers in {PRONOUN/s_c/poss} ears told {PRONOUN/s_c/object} to hide it, to watch the chaos descend upon the clan. Soon s_c saw the warned event pass, and saw {PRONOUN/s_c/poss} clanmates gain some distrust for each other.", 
+                "exp": 0, 
+                "weight": 20,
+                "stat_skill":[
+                    "DARK,2"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["clan"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["clan"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["dislike", "jealous"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c often feels like StarClan walks with {PRONOUN/s_c/object}, and this is just another instance on the path. However, as s_c reflects on the vision {PRONOUN/s_c/subject} {VERB/s_c/find/finds} that {PRONOUN/s_c/subject} can't dechiper the meaning.",
+                "exp": 0,
+                "weight": 20,
+                "stat_skill": ["STAR,1"],
+                "stat_trait": ["faithful"]
+            },
+            {
+                "text": "s_c had always been better at the healing aspect, rather than communicating with StarClan, and as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} about the dream {PRONOUN/s_c/subject} had last night, {PRONOUN/s_c/subject} {VERB/s_c/find/finds} {PRONOUN/s_c/self} unable to figure out the meaning.",
+                "exp": 0,
+                "weight": 20,
+                "stat_skill": [
+                    "HEALER,1"
+                ]
+            }
         ]
     },
     {
-        "patrol_id": "gen_med_vision4",
+        "patrol_id": "gen_med_vision_app_to_mentor",
         "biome": ["Any"],
         "season": ["Any"],
         "types": ["herb_gathering"],
-        "tags": [],
-        "patrol_art": "gen_med_vision",
+        "tags": ["jealousy"],
+        "patrol_art": "gen_med_vision_mentor_to_app",
         "min_cats": 2,
-        "max_cats": 6,
+        "max_cats": 2,
         "min_max_status": {
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6]
+            "medicine cat apprentice": [1, 1],
+            "medicine cat": [1, 1],
+            "warrior": [-1, -1],
+            "apprentice":[-1, -1]
         },
         "weight": 20,
-        "intro_text": "As the patrol pads out into c_n territory, r_c tells p_l about the dream {PRONOUN/r_c/subject} had last night, and what the StarClan vision could mean for c_n.",
-        "decline_text": "The cats don't talk about the vision, mouths too full of herbs.",
+        "intro_text": "app1 looks to p_l, wondering if {PRONOUN/app1/subject} should speak to p_l about the dream {PRONOUN/app1/subject} had last night.",
+        "decline_text": "app1 decides it wasn't important, and doesn't bother p_l",
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "They have an in-depth conversation about r_c's vision as they walk. By the time they head back to camp, they have a good idea of what they should do with the information.",
+                "text": "After app1 brings up the dream, the two cats have an in depth conversation about app1's vision as they walk. By the time they head back to camp, p_l has a good idea of what they should do with the information.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_from": ["app1"],
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": 5
@@ -486,14 +1329,14 @@
                 ]
             },
             {
-                "text": "p_l takes r_c aside to discuss r_c's vision. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} take the responsibility lightly, and both of them work together to divine the vision's meaning.",
+                "text": "app1 decides to inform p_l of {PRONOUN/app1/poss} dream. p_l doesn't take {PRONOUN/p_l/poss} responsibility lightly, and both of them work together to divine the vision's meaning as p_l helps app1 to learn how to interpret visions.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_from": ["app1"],
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": 5
@@ -508,7 +1351,7 @@
                 ]
             },
             {
-                "text": "s_c listens intently and tells r_c not to be weirded out, but {PRONOUN/s_c/subject} had seen the dream, too. r_c is alarmed, but s_c soothes {PRONOUN/r_c/object}, explaining that StarClan sometimes shows {PRONOUN/s_c/object} others' dreams. This one, luckily, was nothing but a mild warning.",
+                "text": "s_c listens intently as app1 describes the dream and tells app1 that {PRONOUN/s_c/subject} {PRONOUN/s_c/had/has} seen the dream, too. s_c soothes the apprentice, explaining that this dream was nothing but a mild warning.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -516,7 +1359,117 @@
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "p_l and app1 have an in-depth conversation about app1's vision as they walk. p_l listens of app1's dream of an eeirie landscape, and threatening figures on the horizon. p_l reassures app1, but inwardly was left worried over what it could mean. p_l knew that {PRONOUN/p_l/subject} couldn't shield app1 forever, but for now, p_l would take this burden for {PRONOUN/p_l/self}.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c chooses to pad pelt-to-pelt with app1, the more expeirenced medicine cat gently guiding the conversation. r_c feels deeply privileged, and far more at peace, after confiding in {PRONOUN/s_c/object}, and {PRONOUN/r_c/subject} {VERB/r_c/know/knows} that c_n is in safe paws. It also proves to be a valuable learning experience.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": ["random_herbs"],
+                "stat_trait": [
+                    "loving",
+                    "wise",
+                    "compassionate",
+                    "thoughtful",
+                    "sweetheart",
+                    "cheerful",
+                    "altruistic",
+                    "empathetic"
+                ],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c chooses to pad pelt-to-pelt with app1, the more expeirenced medicine cat gently guiding the conversation. r_c feels deeply privileged, and far more at peace, after confiding in {PRONOUN/s_c/object}, and {PRONOUN/r_c/subject} {VERB/r_c/know/knows} that c_n is in safe paws. It also proves to be a valuable learning experience.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": ["random_herbs"],
+                "stat_skill": [
+                    "CLAIRVOYANT,2",
+                    "OMEN,2",
+                    "STAR,2",
+                    "COMFORT,20",
+                    "INSIGHTFUL,10",
+                    "CLEVER,10",
+                    "SENSE,10",
+                    "HEALER,2",
+                    "PROPHET,2",
+                    "DREAM,2"
+                ],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c promises app1 that {PRONOUN/s_c/subject}'ll make sure to look deeper into this matter, and that {PRONOUN/s_c/subject}'ll teach app1 how to interpret such visions.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": ["random_herbs"],
+                "stat_trait": [
+                    "fierce",
+                    "bold",
+                    "daring",
+                    "righteous",
+                    "confident",
+                    "responsible",
+                    "altruistic",
+                    "empathetic"
+                ],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "At first app1 doesn't speak up, however p_l notices the apprentice being distracted, and gently asked what was wrong. app1 admitted to the vision, and the two had a discussion, leaving app1 feeling relieved.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": 5
@@ -540,13 +1493,13 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l shakes {PRONOUN/p_l/poss} head sadly. {PRONOUN/p_l/subject/CAP} can't make sense of the vision.",
+                "text": "p_l shakes {PRONOUN/p_l/poss} head sadly as app1 describes the dream. p_l can't make sense of the vision.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_from": ["app1"],
                         "mutual": true,
                         "values": ["respect", "trust"],
                         "amount": -5
@@ -561,15 +1514,24 @@
                 ]
             },
             {
-                "text": "s_c watches r_c with undisguised envy, desperately wishing {PRONOUN/s_c/subject} {VERB/s_c/were/was} the one to receive the vision. Looking back nervously, r_c withdraws from the group, dismissing the dream as unimportant.",
+                "text": "app1 doesn't tell p_l about the dream, keeping it to {PRONOUN/appl/self}.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "When app1 tries to tell p_l about the dream, it's dismissed as unimportant without p_l actually listening to what app1 had to say.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "p_l shakes {PRONOUN/p_l/poss} head, telling app1 that {PRONOUN/app1/poss}'s dream is just a dream.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["ambitious", "insecure"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l", "p_l"],
-                        "cats_from": ["patrol", "r_c"],
-                        "mutual": true,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
                     },
@@ -581,16 +1543,114 @@
                         "amount": 5
                     }
                 ]
+            },
+            {
+                "text": "p_l eyes go wide, fur puffing up, and tells the apprentice that {PRONOUN/app1/poss}'s dream is a warning of death and destruction, thoroughly freaking app1 out.",
+                "exp": 0,
+                "weight": 20,
+                "can_have_stat":["p_l"],
+                "stat_trait":[
+                    "anxious",
+                    "ominous",
+                    "unlucky",
+                    "mysterious",
+                    "gloomy",
+                    "sneaky",
+                    "strange",
+                    "insecure"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["comfort", "respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c stares at the apprentice with undisguised envy, desperately wishing {PRONOUN/s_c/subject} {VERB/s_c/were/was} the one to receive the vision. Glancing at the older cat nervously, app1 mumbles that it wasn't important.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious", 
+                    "insecure", 
+                    "vengeful", 
+                    "selfish", 
+                    "rude"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["app1"],
+                        "mutual": true,
+                        "values": ["respect", "trust", "comfort", "platonic"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c stares at the apprentice with a cold look, telling {PRONOUN/app1/object} to figure out {PRONOUN/app1/poss} dreams {PRONOUN/app1/self}, and that its doubtful someone like app1 would have a vision.",
+                "exp": 0,
+                "weight": 10,
+                "can_have_stat":["p_l"],
+                "stat_trait": [
+                    "ambitious", 
+                    "vengeful", 
+                    "selfish", 
+                    "rude",
+                    "troublesome",
+                    "bloodthirsty",
+                    "cold",
+                    "strict",
+                    "competitive",
+                    "rebellious",
+                    "cruel",
+                    "arrogant",
+                    "apathetic"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["respect", "trust", "comfort", "platonic"],
+                        "amount": -15
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["app1"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "At first app1 doesn't speak up, however p_l notices the apprentice being distracted, and gently asked what was wrong. Instead of opening up though, app1 shuts down, refusing to talk about what was bothering {PRONOUN/app1/object} and just says that they should focus on gathering herbs.",
+                "exp": 0,
+                "weight": 20,
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["trust", "comfort"],
+                        "amount": -5
+                    }
+                ]
             }
         ]
     },
     {
-        "patrol_id": "gen_med_ghost_star1",
+        "patrol_id": "gen_med_ghost",
         "biome": ["Any"],
         "season": ["Any"],
         "types": ["herb_gathering"],
         "tags": [],
-        "patrol_art": "gen_med_ghost_star",
+        "patrol_art": "gen_med_ghost",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -607,19 +1667,135 @@
                 "text": "With a respectful nod, p_l pauses, tucks {PRONOUN/p_l/poss} paws together neatly, and sits to converse with the StarClan cat.",
                 "exp": 30,
                 "weight": 20,
+                "art": "gen_med_ghost_star",
                 "herbs": ["random_herbs"]
+                
+            },
+            {
+                "text": "With a friendly nod, p_l sits to converse with the StarClan cat who's fur gleams with an etheral glow.",
+                "exp": 20,
+                "weight": 15,
+                "art": "gen_med_ghost_star",
+                "herbs": ["random_herbs"]
+                
+            },
+            {
+                "text": "Finding a StarClan cat having joined {PRONOUN/s_c/object} on {PRONOUN/s_c/poss} patrol, {PRONOUN/s_c/subject} couldn't help but to ask questions.",
+                "exp": 20,
+                "weight": 15,
+                "art": "gen_med_ghost_star",
+                "stat_skill":[
+                    "CAMP,10",
+                    "LORE,1",
+                    "STORY,1",
+                    "TEACHER,10"
+                ],
+                "herbs": ["random_herbs"]
+                
+            },
+            {
+                "text": "When s_c turns to greet the presence {PRONOUN/s_c/subject} {VERB/s_c/are/is} greeted by the ghost of a kitten, lost and afraid, with gentle words, s_c comforts the lost kitten, until the ghost fades away, back to the stars where can play.",
+                "exp": 30,
+                "weight": 20,
+                "art": "gen_med_ghost_star",
+                "stat_skill":[
+                    "COMFORT,1",
+                    "GHOST,1",
+                    "MEDIATOR,1",
+                    "SPEAKER,1",
+                    "KIT,1",
+                    "CLEVER,10",
+                    "INSIGHTFUL,10"
+                ],
+                "herbs": ["random_herbs"]
+                
+            },
+            {
+                "text": "With a hesitant nod, s_c greets the StarClan cat, nerves slowly fading as the two converse.",
+                "exp": 30,
+                "weight": 20,
+                "art": "gen_med_ghost_star",
+                "herbs": ["random_herbs"],
+                "stat_trait":[
+                    "lonesome",
+                    "nervous",
+                    "anxious",
+                    "insecure"
+                ]                
+            },
+            {
+                "text": "s_c greets the StarClan cat with bright eyes and an easy going smile. The two converse for what feels like only minutes, but much to s_c's surprise, the sun is starting to set. s_c hurriedly gathers some tansy before returning to camp.",
+                "exp": 30,
+                "weight": 20,
+                "art": "gen_med_ghost_star",
+                "herbs": ["tansy"],
+                "stat_trait":[
+                    "childish",
+                    "playful",
+                    "loving",
+                    "sweetheart",
+                    "cheerful"
+                ]                
             },
             {
                 "text": "The scent of a familiar pelt reaches p_l's nose - {PRONOUN/p_l/subject} {VERB/p_l/know/knows} this cat! With a friendly purr, {PRONOUN/p_l/subject} {VERB/p_l/turn/turns} to greet {PRONOUN/p_l/poss} friend from beyond the grave.",
                 "exp": 30,
                 "weight": 5,
+                "art": "gen_med_ghost_star",
                 "herbs": ["random_herbs"]
             },
             {
                 "text": "With the familiarity brought by {PRONOUN/s_c/poss} connection to StarClan, s_c turns to the ghost haunting {PRONOUN/p_l/poss} path, meeting {PRONOUN/s_c/poss} star-walking ancestor with a purr and quiet confidence.",
                 "exp": 30,
                 "weight": 20,
-                "stat_skill": ["CLAIRVOYANT,2"],
+                "art": "gen_med_ghost_star",
+                "stat_skill": [
+                    "CLAIRVOYANT,10",
+                    "STAR,1",
+                    "OMEN,10",
+                    "PROPHET,10"
+                ],
+                "herbs": ["random_herbs"]
+            },
+            {
+                "text": "p_l turns to greet the StarClan cat, only to yowl in surprise hastily scrambling to flee back to c_n's camp as {PRONOUN/p_l/subject} {VERB/p_l/came/comes} face to face with a dark forest spirit.",
+                "exp": 5,
+                "art": "gen_med_ghost_dark",
+                "weight": 20
+            },
+            {
+                "text": "When s_c turned around, {PRONOUN/s_c/subject} expected to see a StarClan cat, however {PRONOUN/s_c/subject} {VERB/s_c/were/was} surprised to see a spirit from the dark forest. The dark cat whispered to {PRONOUN/s_c/object} telling {PRONOUN/s_c/object} lies to spread among the clan to spread distrust, and s_c was eager to cause the chaos within c_n.",
+                "exp": 5,
+                "art": "gen_med_ghost_dark",
+                "herbs": ["random_herbs"],
+                "stat_skill":[
+                    "DARK,1"
+                ],
+                "weight": 20,
+                "relationships":[
+                    {
+                        "cat_to": ["clan"],
+                        "cat_from": ["clan"],
+                        "values": ["trust"],
+                        "amount": -5
+                    }    
+                ]
+            },
+            {
+                "text": "s_c turns to the ghost with a smile, and the dark forest cat meets {PRONOUN/s_c/poss} eyes with a pleased look in their gaze.",
+                "exp": 10,
+                "weight": 20,
+                "art": "gen_med_ghost_dark",
+                "stat_trait": [
+                    "bloodthirsty",
+                    "vengeful", 
+                    "sneaky", 
+                    "cruel", 
+                    "troublesome", 
+                    "cold", 
+                    "selfish", 
+                    "rude"
+                ],
                 "herbs": ["random_herbs"]
             }
         ],
@@ -627,28 +1803,186 @@
             {
                 "text": "The connection wavers, and as quickly as the feeling of company appears, it vanishes.",
                 "exp": 0,
+                "art": "gen_med_ghost_vanish",
                 "weight": 20
+            },
+            {
+                "text": "p_l sits to greet the presence, but it vanishes, leaving the medicine cat to wonder if {PRONOUN/p_l/subject} {VERB/p_l/have/has} done something wrong.",
+                "exp": 0,
+                "art": "gen_med_ghost_vanish",
+                "weight": 20
+            },
+            {
+                "text": "s_c turns to greet the StarClan cat with bright eyes and an easy going smile. Only to find a dark forest cat watching {PRONOUN/s_c/poss} with malicious intent. s_c flees, escaping from the danger.",
+                "exp": 30,
+                "weight": 20,
+                "art": "gen_med_ghost_dark",
+                "herbs": ["tansy"],
+                "stat_trait":[
+                    "childish",
+                    "playful",
+                    "loving",
+                    "sweetheart",
+                    "cheerful"
+                ]                
             },
             {
                 "text": "s_c turns to the ghost with a smile, but the StarClan cat meets {PRONOUN/s_c/poss} eyes with fire in their gaze. StarClan is unhappy with {PRONOUN/s_c/object}, and things must change.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["bloodthirsty", "vengeful", "sneaky"]
+                "art": "gen_med_ghost_star",
+                "stat_trait": [
+                    "bloodthirsty",
+                    "vengeful", 
+                    "sneaky", 
+                    "cruel", 
+                    "troublesome", 
+                    "cold", 
+                    "selfish", 
+                    "rude"
+                ]
+            },
+            {
+                "text": "s_c turns to the ghost with a strained smile, but the StarClan cat meets {PRONOUN/s_c/poss} eyes with fire in their gaze. StarClan is unhappy with {PRONOUN/s_c/object}, they know what s_c is up to.",
+                "exp": 0,
+                "weight": 20,
+                "art": "gen_med_ghost_star",
+                "stat_skill": ["DARK,1"]
+            },
+            {
+                "text": "The connection wavers, and as quickly as the feeling of company appears, it vanishes. p_l let out a small sigh, gaze turning upwards, did StarClan not want to speak with {PRONOUN/p_l/object}?",
+                "exp": 0,
+                "art": "gen_med_ghost_vanish",
+                "weight": 10
+            },
+            {
+                "text": "p_l turns to greet the StarClan cat, only to yowl in surprise hastily scrambling to flee back to c_n's camp as {PRONOUN/p_l/subject} {VERB/p_l/came/comes} face to face with a dark forest spirit, but not before the dark spirit lashed out, injuring the medicine cat.",
+                "exp": 5,
+                "art": "gen_med_ghost_dark",
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["p_l"],
+                        "injuries": ["battle_injury"],
+                        "scars": ["FACE"]
+                    }
+                ],
+                "history_text": {
+                    "reg_death": "m_c died from an encounter with a dark forest cat.",
+                    "scar": "m_c was scarred by a dark forest cat"
+                }                    
+            },
+            {
+                "text": "p_l turns to greet the StarClan cat, only to yowl in surprise as {PRONOUN/p_l/subject} {VERB/p_l/came/comes} face to face with a dark forest spirit, the dark spirit lashed out, leaving the cooling body to be found by p_l's clanmates.",
+                "exp": 5,
+                "art": "gen_med_ghost_dark",
+                "weight": 5,
+                "dead_cats":["p_l"],
+                "history_text": {
+                    "reg_death": "m_c died from an encounter with a dark forest cat."
+                }                       
             }
         ],
         "antag_fail_outcomes": [
             {
-                "text": "r_c feels hounded, never given a moment's peace, and {PRONOUN/r_c/subject} {VERB/r_c/hiss/hisses} at the StarClan cat. But when {PRONOUN/r_c/subject} {VERB/r_c/turn/turns} around, there's only a rather upset looking Clanmate, there to fetch {PRONOUN/r_c/object} to camp to help with an emergency.",
+                "text": "r_c feels hounded, never given a moment's peace, and {PRONOUN/r_c/subject} {VERB/r_c/hiss/hisses} at the unknown cat. But when {PRONOUN/r_c/subject} {VERB/r_c/turn/turns} around, there's only a rather upset looking Clanmate, there to fetch {PRONOUN/r_c/object} to camp to help with an emergency.",
                 "exp": 0,
+                "art": "gen_med_ghost_clanmate",
                 "weight": 20
+            },
+            {
+                "text": "s_c feels hounded, never given a moment's peace, and {PRONOUN/s_c/subject} {VERB/s_c/hiss/hisses} at the unknown cat. But when {PRONOUN/s_c/subject} {VERB/s_c/turn/turns} around, {PRONOUN/s_c/subject} {VERB/s_c/are/is} greeted by the claws of a dark forest cat. {PRONOUN/s_c/subject} {VERB/s_c/return/returns} home injured.",
+                "exp": 0,
+                "weight": 20,
+                "stat_skill": ["STAR,1"],
+                "injury": [
+                    {
+                        "cats": ["s_c"],
+                        "injuries": ["battle_injury"],
+                        "scars": ["RIGHTBLIND"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred by a dark forest cat on patrol."
+                }
+            },
+            {
+                "text": "Without even looking at the presence, s_c asks them to leave {PRONOUN/s_c/subject} alone, {PRONOUN/s_c/poss} tail tucked tightly against {PRONOUN/s_c/poss} body. Hearing a hiss of anger, s_c could barely dodge out of the way before a shadowy ghost attacked {PRONOUN/s_c/object}, dissapearing as s_c yowled in pain.",
+                "exp": 0,
+                "art": "gen_med_ghost_dark",
+                "stat_trait":[
+                    "lonesome",
+                    "nervous",
+                    "anxious",
+                    "insecure"
+                ],
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["s_c"],
+                        "injuries": ["battle_injury"],
+                        "scars": ["FACE"]
+                    }
+                ],
+                "history_text": {
+                    "reg_death": "m_c died from an encounter with a dark forest cat.",
+                    "scar": "m_c was scarred by a dark forest cat"
+                }                    
+            },
+            {
+                "text": "Without even looking at the presence, s_c asks them to leave {PRONOUN/s_c/object} alone, {PRONOUN/s_c/poss} tail tucked tightly against {PRONOUN/s_c/poss} body. The StarClan guide scolds s_c for being so anxious and tells s_c that {PRONOUN/s_c/subject} need to be more confident to better take care of s_c's clanmates.",
+                "exp": 0,
+                "art": "gen_med_ghost_star",
+                "stat_trait":[
+                    "lonesome",
+                    "nervous",
+                    "anxious",
+                    "insecure"
+                ],
+                "weight": 15
+            },
+            {
+                "text": "Without even looking at the presence, s_c asks them to leave {PRONOUN/s_c/object} alone, {PRONOUN/s_c/poss} tail tucked tightly against {PRONOUN/s_c/poss} body. Hearing a hiss of anger, s_c could barely dodge out of the way before a shadowy ghost attacked {PRONOUN/s_c/object}, dissapearing as s_c's body went cold to be discovered the next day.",
+                "exp": 0,
+                "art": "gen_med_ghost_dark",
+                "stat_trait":[
+                    "lonesome",
+                    "nervous",
+                    "anxious",
+                    "insecure"
+                ],
+                "weight": 5,
+                "dead_cats":["s_c"],
+                "history_text": {
+                    "reg_death": "m_c died from an encounter with a dark forest cat."
+                }                    
             }
         ],
         "antag_success_outcomes": [
             {
-                "text": "r_c feels hounded, never given a moment's peace, and {PRONOUN/r_c/subject} {VERB/r_c/hiss/hisses} at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
+                "text": "r_c feels hounded, never given a moment's peace, and {PRONOUN/r_c/subject} {VERB/r_c/hiss/hisses} at the unknown cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
                 "exp": 30,
+                "art": "gen_med_ghost_vanish",
                 "weight": 20
-            }
+            },
+            {
+                "text": "Without even looking at the presence, s_c asks them to leave {PRONOUN/s_c/object} alone, {PRONOUN/s_c/poss} tail tucked tightly against {PRONOUN/s_c/poss} body. The presence leaves without a word.",
+                "exp": 0,
+                "art": "gen_med_ghost_vanish",
+                "stat_trait":[
+                    "lonesome",
+                    "nervous",
+                    "anxious",
+                    "insecure"
+                ],
+                "weight": 20
+            },
+            {
+                "text": "r_c hisses at the unknown cat, fur bristling. The ghost vanishes, leaving r_c alone... for now.",
+                "exp": 30,
+                "art": "gen_med_ghost_vanish",
+                "weight": 20
+            }            
         ]
     },
     {
@@ -3335,7 +4669,7 @@
         },
         "weight": 20,
         "intro_text": "As r_c follows a trail into a darkly shadowed part of the territory on the hunt for herbs, night shadows begin to play with {PRONOUN/r_c/poss} vision. Was that movement up ahead? r_c spots the undisguisable silhouette of a cat ahead. Malicious eyes and bristled fur meet {PRONOUN/r_c/object} as {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} amongst the shadows. The stranger's fur is translucent, and it moves as though made from a strange dark mist.",
-        "decline_text": "r_c's tail bristles with fear, a cold shiver creeping along {PRONOUN/r_c/poss} back. This is definitely not a Starclan cat, and {PRONOUN/r_c/subject} quickly {VERB/r_c/turn/turns} the back to camp - herbs can wait until morning.",
+        "decline_text": "r_c's tail bristles with fear, a cold shiver creeping along {PRONOUN/r_c/poss} back. This is definitely not a StarClan cat, and {PRONOUN/r_c/subject} quickly {VERB/r_c/turn/turns} the back to camp - herbs can wait until morning.",
         "chance_of_success": 50,
         "success_outcomes": [
             {

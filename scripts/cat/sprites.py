@@ -146,7 +146,7 @@ class Sprites():
             self.make_group('eyes2', (a, 0), f'eyes2{i}')
         for a, i in enumerate(
                 ['COPPER', 'SAGE', 'COBALT', 'PALEBLUE', 'BRONZE', 'SILVER',
-                'PALEYELLOW', 'GOLD', 'GREENYELLOW']):
+                'PALEYELLOW', 'GOLD', 'GREENYELLOW', 'PINK', 'LAVENDER', 'BLACK']):
             self.make_group('eyes', (a, 1), f'eyes{i}')
             self.make_group('eyes2', (a, 1), f'eyes2{i}')
 

@@ -1,0 +1,211 @@
+[
+    {
+        "id": "gen_hunter_app",
+        "thoughts":[
+            "Feels a sense of pride after seeing that the fresh-kill pile is stocked."
+        ]
+    },
+    {
+        "id": "apprentice_alive_deputy",
+        "thoughts": [
+           "Hopes r_c have them hunt with another apprentice."
+        ],
+        "random_status_constraint": [
+            "deputy"
+        ]
+    },
+    {
+        "id": "apprentice_alive_hunter",
+        "thoughts": [
+          "Is listening to r_c's stories of when they were a hunter apprentice."
+        ],
+        "random_status_constraint": [
+            "warrior"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "apprentice_alive_mentor",
+        "thoughts": [
+           "Is learning the hunting crouch from r_c."
+        ],
+        "relationship_constraint": [
+            "app/mentor"
+        ]
+    },
+    {
+        "id": "apprentice_alive_apprentice",
+        "thoughts": [
+           "Is exchanging training stories with r_c."
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ]
+    },
+    {
+        "id": "apprentice_alive_elder",
+        "thoughts":[
+           "Is listening to a tall tale by r_c on how they killed a mountain lion."
+        ],
+        "random_status_constraint":[
+            "elder"
+        ],
+        "random_age_constraint":[
+            "senior"
+        ]
+    },
+    {
+        "id": "apprentice_alive_kits",
+        "thoughts":[
+          "Is wondering if r_c will choose to be a hunter like {PRONOUN/m_c/object}."
+        ],
+        "random_status_constraint":[
+            "kitten"
+        ]
+    },
+    {
+        "id": "apprentice_dead_hunter",
+        "thoughts": [
+           
+        ],
+        "random_status_constraint": [
+            "warrior"
+        ],
+        "random_living_status": [
+            "starclan"
+        ]
+    },
+    {
+        "id": "formerly_a_rogue_hunter_apprentice",
+        "thoughts": [
+           "Finds training quite easy as {PRONOUN/m_c/subject} already knew how to hunt as a rogue."
+           ],
+        "main_backstory_constraint": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2"]
+    },
+    {
+        "id": "thoughtful_hunter_apprentice",
+        "thoughts": [
+           "Tried to help a mouse once."
+        ],
+        "main_trait_constraint": [
+            "thoughtful"
+        ]
+    },
+    {
+        "id": "patient_hunter_apprentice",
+        "thoughts": [
+           "Would wait all day to catch a mouse if needed."
+        ],
+        "main_trait_constraint": [
+            "patient"
+        ]
+    },
+    {
+        "id": "insecure_hunter_apprentice",
+        "thoughts": [
+            "Wonders if the other apprentices can hunt better.",
+            "Knows almost for sure r_c can hunt better then {PRONOUN/m_c/object}."
+        ],
+        "main_trait_constraint": [
+            "insecure"
+        ]
+    },
+    {
+        "id": "fierce_hunter_apprentice",
+        "thoughts": [
+           "Is sometimes unnecessarily agressive with {PRONOUN/m_c/poss} prey."
+        ],
+        "main_trait_constraint": [
+            "fierce"
+        ]
+    },
+    {
+        "id": "confident_hunter_apprentice",
+        "thoughts": [
+           "Is confident in {PRONOUN/m_c/poss} hunting abilities."
+        ],
+        "main_trait_constraint": [
+            "confident"
+        ]
+    },
+    {
+        "id": "bold_hunter_apprentice",
+        "thoughts": [
+           "Likes to hunt prey in risky situations."
+        ],
+        "main_status_constraint": [
+            "apprentice"
+        ],
+        "main_trait_constraint": [
+            "bold"
+        ]
+    },
+    {
+        "id": "bold_hunter_apprentice_to_hunter",
+        "thoughts": [
+        "Claims {PRONOUN/m_c/subject} can hunt better then r_c."
+        ],
+        "main_status_constraint": [
+            "apprentice"
+        ],
+        "random_status_constraint":[
+            "warrior"
+        ],
+        "main_trait_constraint": [
+            "bold"
+        ]
+    },
+    {
+        "id": "bloodthirsty_hunter_apprentice",
+        "thoughts": [
+           "Mauls a vole and claims it was an 'accident'."
+
+        ],
+        "main_trait_constraint": [
+            "bloodthirsty"
+        ]
+    },
+    {
+        "id": "ambitious_hunter_apprentice",
+        "thoughts": [
+            "Is determined to be the best huner in the Clan."
+        ],
+        "main_trait_constraint": [
+            "ambitious"
+        ]
+    },
+    {
+        "id": "ambitious_hunter_apprentice_to_other_apps",
+        "thoughts": [
+           "Tells r_c that {PRONOUN/m_c/subject}'ll be the best hunter apprentice ever!"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ],
+        "main_trait_constraint": [
+            "ambitious"
+        ]
+    }, 
+    {
+        "id": "childish_hunter_apprentice",
+        "thoughts": [
+           "Whines that {PRONOUN/m_c/subject} don't wanna catch prey." 
+        ],
+        "main_trait_constraint": [
+            "childish"
+        ]
+    },
+    { "id": "childish_apprentice_elder",
+        "thoughts": [
+            "Listens in awe as r_c tells of their amazing adventures as a hunting apprentice."
+        ],
+        "main_trait_constraint":[
+            "childish"
+        ],
+        "random_status_constraint":[
+            "elder"
+        ]
+    }          
+]
