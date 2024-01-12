@@ -4060,20 +4060,71 @@
             }
         }
     },
-    "#freshkill_feed": {
+    "#freshkill_feed_one": {
         "prototype": "#image_button",
         "images": {
             "normal_image": {
-                "path": "resources/images/buttons/freshkill_pile_feed.png"
+                "path": "resources/images/buttons/feed_one.png"
             },
             "hovered_image": {
-                "path": "resources/images/buttons/freshkill_pile_feed_hover.png"
+                "path": "resources/images/buttons/feed_one_hover.png"
             },
             "selected_image": {
-                "path": "resources/images/buttons/freshkill_pile_feed.png"
+                "path": "resources/images/buttons/feed_one.png"
             },
             "disabled_image": {
-                "path": "resources/images/buttons/freshkill_pile_feed_unavailable.png"
+                "path": "resources/images/buttons/feed_one_unavailable.png"
+            }
+        }
+    },
+    "#freshkill_feed_max": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/feed_max.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/feed_max_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/feed_max.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/feed_max_unavailable.png"
+            }
+        }
+    },
+    "#freshkill_feed_hungry": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/feed_all_hungry.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/feed_all_hungry_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/feed_all_hungry.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/feed_all_hungry_unavailable.png"
+            }
+        }
+    },
+	"#freshkill_pile_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/freshkill_pile.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/freshkill_pile_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/freshkill_pile.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/freshkill_pile_unavailable.png"
             }
         }
     }
