@@ -16,7 +16,7 @@
     "nutrition_starving_percentage" : 20,
 	"text_nutrition":{
 		"lower_range":[0, 21, 41, 61, 81, 91],
-		"text": ["starving", "very hungry", "hungry", "satiated", "full", "bloated"]
+		"text": ["starving", "very hungry", "hungry", "satiated", "full", "stuffed"]
 	},
     "prey_requirement":{
         "leader": 3,
