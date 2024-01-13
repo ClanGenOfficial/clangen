@@ -763,6 +763,39 @@
         "history_text": {
             "reg_death": "This cat died from old age life.",
             "lead_death": "lost all remaining lives from old age."
-        }
+        },
+            {
+    "camp": "any",
+    "tags": [
+        "other_cat",
+        "Newleaf",
+        "Greenleaf",
+        "Leaf-fall",
+        "Leaf-bare"
+    ],
+    "death_text": "In the middle of a conversation, r_c suddenly points out the circling shadow, slowly getting closer to the ground. m_c freezes, looking up at the predator, unable to move from sudden shock. r_c tries to shove them out of the way, but the large bird has already fastened its grip around m_c, and it's too late.",
+    "history_text": {
+        "reg_death": "m_c was grabbed by a hawk, never to be seen again."
+    },
+    "cat_trait": null,
+    "cat_negate_skill": [
+        "RUNNER,2"
+    ],
+    "other_cat_trait": null,
+    "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "death_text": "m_c couldn't take it, cooped up in such a crowded camp with so many cats. The fresh air outside of camp was relaxing.. until m_c detected another scent, a strong one, and a foul one. {PRONOUN/m_c/subject} scrambled away from the area, but not before abnormally long claws slashed across their face.",
+        "history_text": {
+            "reg_death": "m_c was killed by an unspecificed predator."
+        },
+        "cat_trait": null
     }
 ]
