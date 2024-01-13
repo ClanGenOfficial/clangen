@@ -211,12 +211,12 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The scent leads to a trespassing rogue. Weird. app1 runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory. Well they couldn't have been super friendly then, app1 assumes.",
+                "text": "The scent leads to a trespassing rogue. Weird. app1 runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory. Well, they couldn't have been super friendly then, app1 assumes.",
                 "exp": 10,
                 "weight": 20
             },
             {
-                "text": "app1 soon realizes that underneath the strange scent, there are pawprints that smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact. . . {PRONOUN/app1/subject} {VERB/app1/are/is} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting there'll be a test soon.",
+                "text": "app1 soon realizes that underneath the strange scent, there are pawprints that smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/app1/subject} {VERB/app1/are/is} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting there'll be a test soon.",
                 "exp": 10,
                 "weight": 5
             }
@@ -544,7 +544,7 @@
                 ]
             },
             {
-                "text": "app1 soon realizes that underneath the strange scent, there are pawprints that smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact. . . {PRONOUN/app1/subject} {VERB/app1/are/is} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting there'll be a test soon.",
+                "text": "app1 soon realizes that underneath the strange scent, there are pawprints that smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/app1/subject} {VERB/app1/are/is} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting there'll be a test soon.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -607,7 +607,7 @@
                 ]
             },
             {
-                "text": "Nose to the ground following the trail, app1 doesn't see the blow coming. {PRONOUN/app1/subject/CAP} {VERB/app1/haul/hauls} {PRONOUN/app1/self} to {PRONOUN/app1/poss} feet feet, squealing with pain, and run for home.",
+                "text": "Nose to the ground following the trail, app1 doesn't see the blow coming. {PRONOUN/app1/subject/CAP} {VERB/app1/haul/hauls} {PRONOUN/app1/self} to {PRONOUN/app1/poss} feet, squealing with pain, and run for home.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -854,7 +854,7 @@
                 ]
             },
             {
-                "text": "app1 soon realizes that underneath the strange scent, there are pawprints that smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact. . . {PRONOUN/app1/subject} {VERB/app1/are/is} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting there'll be a test soon.",
+                "text": "app1 soon realizes that underneath the strange scent, there are pawprints that smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/app1/subject} {VERB/app1/are/is} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting there'll be a test soon.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [

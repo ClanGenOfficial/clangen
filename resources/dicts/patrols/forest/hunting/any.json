@@ -484,7 +484,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "The patrol tracks the noise and discovers a coyote scavenging off a carcass. This is a predator they cannot fight, the patrol decides to return to camp and report the intruder to the leader. Perhaps they can return later to take what the coyote leaves behind.",
+                "text": "The patrol tracks the noise and discovers a coyote scavenging off a carcass. This is a predator they cannot fight. The patrol decides to return to camp and report the intruder to the leader instead. Perhaps they can return later to take what the coyote leaves behind.",
                 "exp": 30,
                 "weight": 20
             },
@@ -530,7 +530,7 @@
                 "stat_trait": ["nervous", "insecure"]
             },
             {
-                "text": "The patrol finds a coyote at the source of the noise. It seems to be scavenging from an old carcass and upon seeing the cats, proves to be fiercely protective of its meal.  The patrol doesn't move fast enough and r_c is killed before they can run.",
+                "text": "The patrol finds a coyote at the source of the noise. It seems to be scavenging from an old carcass and upon seeing the cats, prove to be fiercely protective of its meal.  The patrol doesn't move fast enough and r_c is killed before they can run.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -577,7 +577,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The patrol tracks the noise and discovers a coyote scavenging off a carcass. This is a predator they cannot fight, the patrol decides to return to camp and report the intruder to the leader. Perhaps they can return later to take what the coyote leaves behind.",
+                "text": "The patrol tracks the noise and discovers a coyote scavenging off a carcass. This is a predator they cannot fight. The patrol decides to return to camp and report the intruder to the leader instead. Perhaps they can return later to take what the coyote leaves behind.",
                 "exp": 30,
                 "weight": 20
             },
@@ -623,7 +623,7 @@
                 "stat_trait": ["nervous", "insecure"]
             },
             {
-                "text": "The patrol finds a coyote at the source of the noise. It seems to be scavenging from an old carcass and upon seeing the cats, proves to be fiercely protective of its meal.  The patrol doesn't move fast enough and r_c is killed before they can run.",
+                "text": "The patrol finds a coyote at the source of the noise. It seems to be scavenging from an old carcass and upon seeing the cats, prove to be fiercely protective of its meal.  The patrol doesn't move fast enough and r_c is killed before they can run.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -670,7 +670,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "r_c tracks the noise and discovers a coyote scavenging off a carcass. This is a predator they cannot fight, they decide to return to camp and report the intruder to the leader, perhaps a patrol can return later to take what the coyote leaves behind.",
+                "text": "r_c tracks the noise and discovers a coyote scavenging off a carcass. This is a predator they cannot fight. They decide to return to camp and report the intruder to the leader, perhaps a patrol can return later to take what the coyote leaves behind.",
                 "exp": 30,
                 "weight": 20
             },
@@ -716,7 +716,7 @@
                 "stat_trait": ["nervous", "insecure"]
             },
             {
-                "text": "r_c finds a coyote at the source of the noise. It seems to be scavenging from an old carcass and upon seeing the cat, proves to be fiercely protective of its meal.  They doesn't move fast enough and with no Clanmates to save them, r_c is quickly killed.",
+                "text": "r_c finds a coyote at the source of the noise. It seems to be scavenging from an old carcass and upon seeing the cat, prove to be fiercely protective of its meal.  They don't move fast enough and with no Clanmates to save them, r_c is quickly killed.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -745,7 +745,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "The patrol tracks the noise and discovers a wolf eating from its kill. This is a predator they cannot fight and more wolves may be nearby, the patrol decides to return to camp and report the intruder to the leader. Perhaps they can return later to take what fresh-kill is left behind.",
+                "text": "The patrol tracks the noise and discovers a wolf eating from its kill. This is a predator they cannot fight and there may be more wolves nearby, so the patrol decides to return to camp and report the intruder to the leader. Perhaps they can return later to take what fresh-kill is left behind.",
                 "exp": 30,
                 "weight": 20
             },
@@ -791,7 +791,7 @@
                 "stat_trait": ["nervous", "insecure"]
             },
             {
-                "text": "The patrol finds a wolf pack at the source of the noise. The wolves are tearing into a dead deer and upon seeing the cats, proves to be fiercely protective of their meal. The patrol doesn't move fast enough and r_c is killed before they can run.",
+                "text": "The patrol finds a wolf pack at the source of the noise. The wolves are tearing into a dead deer and upon seeing the cats, prove to be fiercely protective of their meal. The patrol doesn't move fast enough and r_c is killed before they can run.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -838,7 +838,7 @@
         "chance_of_success": 20,
         "success_outcomes": [
             {
-                "text": "The patrol tracks the noise and discovers a wolf eating from its kill. This is a predator they cannot fight and more wolves may be nearby, the patrol decides to return to camp and report the intruder to the leader. Perhaps they can return later to take what little fresh-kill is left behind.",
+                "text": "The patrol tracks the noise and discovers a wolf eating from its kill. This is a predator they cannot fight and there may be more wolves nearby. The patrol decides to return to camp and report the intruder to the leader. Perhaps they can return later to take what little fresh-kill is left behind.",
                 "exp": 30,
                 "weight": 20
             },
@@ -913,7 +913,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "r_c tracks the noise and discovers a wolf eating from its kill. This is a predator they cannot fight, they decide to return to camp and report the intruder to the leader, perhaps a patrol can return later to take what the wolf leaves behind.",
+                "text": "r_c tracks the noise and discovers a wolf eating from its kill. This is a predator they cannot fight. The patrol decides to return to camp and report the intruder to the leader instead. Perhaps a patrol can return later to take what the wolf leaves behind.",
                 "exp": 40,
                 "weight": 20
             },
@@ -1177,7 +1177,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "r_c heads off to one of their favorite spots in the forest, a grove of spread out trees with thick underbrush providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that squirrel thought.",
+                "text": "r_c heads off to one of their favorite spots in the forest, a grove of spread-out trees with thick underbrush providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that squirrel thought.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"]
@@ -1247,7 +1247,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "r_c heads off to one of their favorite spots in the forest, a grove of spread out trees with thick underbrush providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that squirrel thought. They snicker to themselves as they pad back to camp.",
+                "text": "r_c heads off to one of their favorite spots in the forest, a grove of spread-out trees with thick underbrush providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that squirrel thought. They snicker to themselves as they pad back to camp.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"]
@@ -1317,7 +1317,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "r_c heads off to one of their favorite spots in the forest, a grove of spread out trees with thick underbrush providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that squirrel thought. They snicker to themselves as they pad back to camp.",
+                "text": "r_c heads off to one of their favorite spots in the forest, a grove of spread-out trees with thick underbrush providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that squirrel thought. They snicker to themselves as they pad back to camp.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"]
@@ -1552,7 +1552,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol mostly ignores the Twolegs. As they hunt they hear a yelp from r_c. They've crawled into a metal Twolegs box, and there's nothing they or the rest of the patrol can do to get them out - eventually the Twolegs notice, and r_c is taken by them.",
+                "text": "The patrol mostly ignores the Twolegs. As they hunt, they hear a yelp from r_c. They've crawled into a metal Twolegs box, and there's nothing they or the rest of the patrol can do to get them out - eventually the Twolegs notice, and r_c is taken by them.",
                 "exp": 0,
                 "weight": 10,
                 "lost_cats": ["r_c"]
@@ -1627,7 +1627,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol mostly ignores the Twolegs. As they hunt they hear a yelp from r_c. They've crawled into a metal Twolegs box, and there's nothing they or the rest of the patrol can do to get them out - eventually the Twolegs notice, and r_c is taken by them.",
+                "text": "The patrol mostly ignores the Twolegs. As they hunt, they hear a yelp from r_c. They've crawled into a metal Twolegs box, and there's nothing they or the rest of the patrol can do to get them out - eventually the Twolegs notice, and r_c is taken by them.",
                 "exp": 0,
                 "weight": 10,
                 "lost_cats": ["r_c"]
@@ -1753,7 +1753,7 @@
                 "weight": 5
             },
             {
-                "text": "s_c gets distracted from hunting by strange Twoleg activity around one of their dens. They appear to be hauling all their many, many varieties of nest lining out and into a big monster. s_c take the opportunity to grab a little soft thing, something that's almost shaped like prey. It'll be good for the nursery.",
+                "text": "s_c gets distracted from hunting by strange Twoleg activity around one of their dens. They appear to be hauling all their many, many varieties of nest lining out and into a big monster. s_c takes the opportunity to grab a little soft thing, something that's almost shaped like prey. It'll be good for the nursery.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -1832,7 +1832,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall it works out.",
+                "text": "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall, it works out.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"]
@@ -2053,7 +2053,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall it works out.",
+                "text": "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall, it works out.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small", "medium"],
