@@ -2846,10 +2846,10 @@
         "weight": 20,
         "chance_of_success": 50,
         "intro_text": "p_l is surprised when app1 makes a mistake on a simple move p_l thought {PRONOUN/app1/subject} had mastered. Before p_l can say anything, app1 runs out of the training grounds. When p_l finds {PRONOUN/app1/object} huddled in camp, {PRONOUN/app1/subject} {VERB/app1/sobs/sob} out a confession: {PRONOUN/app1/subject} will never be ready to be a warrior.",
-        "decline_text": "It wouldn't help to talk to app1 while {PRONOUN/app1/subject} {VERB/app1/are/is} in this state. p_l tells {PRONOUN/app1/poss} {PRONOUN/p_l/subject}'ll leave {PRONOUN/app1/object} alone, and to come find {PRONOUN/p_l/object} if {PRONOUN/app1/subject}'d like to keep training today. app1 never does.",
+        "decline_text": "It wouldn't help to talk to app1 while {PRONOUN/app1/subject} {VERB/app1/are/is} in this state. p_l tells {PRONOUN/app1/object} {PRONOUN/p_l/subject}'ll leave {PRONOUN/app1/object} alone, and to come find {PRONOUN/p_l/object} if {PRONOUN/app1/subject}'d like to keep training today. app1 never does.",
         "success_outcomes": [
             {
-                "text": "s_c waits patiently for app1 to calm down. Once {PRONOUN/app1/subject} can listen, s_c tells {PRONOUN/app1/poss} a secret: no warrior has ever felt like a warrior. Not even s_c. You will always feel like you, s_c says, but don't be afraid. You <i>must</i> be you before you are a warrior. That is what c_n truly needs. You. ",
+                "text": "s_c waits patiently for app1 to calm down. Once {PRONOUN/app1/subject} can listen, s_c tells {PRONOUN/app1/object} a secret: no warrior has ever felt like a warrior. Not even s_c. You will always feel like you, s_c says, but don't be afraid. You <i>must</i> be you before you are a warrior. That is what c_n truly needs. You. ",
                 "exp": 10,
                 "can_have_stat": ["p_l"],
                 "stat_trait": ["loving","compassionate","wise","calm","thoughtful","faithful","loyal","sincere","righteous"],
@@ -2925,7 +2925,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c shifts awkwardly at app1's side until {PRONOUN/s_c/subject} can't stand the silence any longer. s_c drops into a crouch and nudges app1 with {PRONOUN/s_c/poss} paw. App1 looks back, confused as s_c keeps bouncing and poking at {PRONOUN/s_c/object} with a goofy expression on {PRONOUN/s_c/poss} face, until app1 gives in. The warrior and apprentice play like kits, and the smile on app1's face says {PRONOUN/app1/subject} {VERB/app1/has/have} forgotten all about {PRONOUN/app1/poss} doubt.",
+                "text": "s_c shifts awkwardly at app1's side until {PRONOUN/s_c/subject} can't stand the silence any longer. s_c drops into a crouch and nudges app1 with {PRONOUN/s_c/poss} paw. App1 looks back, confused as s_c keeps bouncing and poking at {PRONOUN/s_c/object} with a goofy expression on {PRONOUN/s_c/poss} face, until app1 gives in. The warrior and apprentice play like kits, and the smile on app1's face says {PRONOUN/app1/subject}{VERB/app1/'ve/'s} forgotten all about {PRONOUN/app1/poss} doubt.",
                 "exp": 10,
                 "can_have_stat": ["p_l"],
                 "stat_trait": ["charismatic","flamboyant","playful","childish","shameless","strange","sneaky"],
@@ -2941,7 +2941,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "s_c tries to think of something to say or do, anything, but {PRONOUN/s_c/subject} {VERB/s_c/fumbles/fumble} as app1 becomes more and more unconsolable. Finally, s_c gives up. Leaving app1 alone with {PRONOUN/app1/poss} thoughts.",
+                "text": "s_c tries to think of something to say or do, anything, but {PRONOUN/s_c/subject} {VERB/s_c/fumbles/fumble} as app1 becomes more and more unconsolable. Finally, s_c gives up, leaving app1 alone with {PRONOUN/app1/poss} thoughts.",
                 "exp": 0,
                 "can_have_stat": ["p_l"],
                 "relationships": [
