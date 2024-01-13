@@ -761,5 +761,30 @@
             "tragedy_survivor1"
         ],
         "new_name": false
+    },
+        {
+        "camp": "any",
+        "tags": [
+            "m_c",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "reputation": [
+            "welcoming",
+            "neutral",
+            "hostile"
+        ],
+        "event_text": "A member of o_c reveals that they have a litter which m_c is the second parent of, and that {PRONOUN/n_c/subject} now {VERB/n_c/want/wants} to join c_n, much to everycat's surprise.",
+        "litter":true,
+        "backstory": [
+            "otherclan5"
+        ],
+        "new_name": false,
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
     }
 ]
