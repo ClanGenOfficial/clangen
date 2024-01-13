@@ -761,8 +761,7 @@
             "tragedy_survivor1"
         ],
         "new_name": false
-    },
-        {
+    {
         "camp": "any",
         "tags": [
             "m_c",
@@ -776,7 +775,8 @@
             "neutral",
             "hostile"
         ],
-        "event_text": "A member of o_c reveals that they have a litter which m_c is the second parent of, and that {PRONOUN/n_c/subject} now {VERB/n_c/want/wants} to join c_n, much to everycat's surprise.",
+        "event_text": "A member of o_c reveals that they have a litter which m_c is the second parent of, and that {PRONOUN/n_c/subject} now {VERB/n_c/want/wants} to join c_n, much to everycat's surprise. {PRONOUN/n_c/subject} {VERB/n_c/introduce/introduces} {PRONOUN/n_c/self} as n_c.",
+        "other_clan":true,
         "litter":true,
         "backstory": [
             "otherclan4"
