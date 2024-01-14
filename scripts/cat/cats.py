@@ -311,51 +311,35 @@ class Cat():
                 if they_them_default_setting is True:
                     self.pronouns = [self.default_pronouns[0].copy()]
                     print("Game is asigning they/them pronouns")
-                elif self.gender == "female" and not self.status in ['newborn', 'kitten']:
+                elif self.gender == "female":
                     if trans_chance == 1:
                         self.genderalign = "trans male"
                         self.pronouns = [self.default_pronouns[2].copy()]
+                        print("Trans Male: game is asigning he/him pronouns")
                     elif nb_chance == 1:
                         self.genderalign = "nonbinary"
                         self.pronouns = [self.default_pronouns[0].copy()]
+                        print("Nonbinary: game is asigning they/them pronouns")
                     else:
                         self.genderalign = self.gender
                         self.pronouns = [self.default_pronouns[1].copy()]
-                elif self.gender == "male" and not self.status in ['newborn', 'kitten']:
+                        print("Female: game is asigning she/her pronouns")
+                elif self.gender == "male":
                     if trans_chance == 1:
                         self.genderalign = "trans female"
                         self.pronouns = [self.default_pronouns[1].copy()]
+                        print("Trans Female: game is asigning she/her pronouns")
                     elif nb_chance == 1:
                         self.genderalign = "nonbinary"
                         self.pronouns = [self.default_pronouns[0].copy()]
+                        print("Nonbinary: game is asigning they/them pronouns")
                     else:
                         self.genderalign = self.gender
                         self.pronouns = [self.default_pronouns[2].copy()]
+                        print("Male: game is asigning he/him pronouns")
                 else:
                     self.genderalign = self.gender
-
-          
-        #Pronouns (Currently not needed.)
-        '''if game and game.clan and game.clan.clan_settings:
-            if game.clan.clan_settings["they them default"] is True:
-                they_them_default_setting = True
-                print("Game is using they/them pronouns")
-        else:
-            they_them_default_setting = False
-            print("Game is not using they/them pronouns")
-
-        if they_them_default_setting is True:
-            self.pronouns = [self.default_pronouns[0].copy()]
-            print("Game is asigning they/them pronouns")
-        else:
-            if self.pronouns != self.genderalign:
-                if self.genderalign in ["female", "trans female"]:
-                    self.pronouns = [self.default_pronouns[1].copy()]
-                elif self.genderalign in ["male", "trans male"]:
-                    self.pronouns = [self.default_pronouns[2].copy()]
-                else:
-                    self.pronouns = [self.default_pronouns[0].copy()]'''
-
+                    
         # APPEARANCE
         self.pelt = Pelt.generate_new_pelt(self.gender, [Cat.fetch_cat(i) for i in (self.parent1, self.parent2) if i], self.age)
             
