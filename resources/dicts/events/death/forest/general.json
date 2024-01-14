@@ -91,7 +91,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c was found dead underneath an oak tree with dog scent wreathing around them, after going on a solo patrol and not coming back.",
+        "death_text": "m_c was found dead underneath an oak tree with dog scent wreathing around them, after saying they were going to the dirtplace and not coming back.",
         "history_text": {
             "reg_death": "m_c fell out of a tree while trying to escape from a dog."
         },
