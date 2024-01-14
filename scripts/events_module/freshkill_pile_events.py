@@ -1,20 +1,27 @@
 import random
 from typing import Union
 
+from scripts.cat.history import History
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.game_structure.game_essentials import game
 from scripts.utility import event_text_adjust
 from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
-from scripts.clan_resources.freshkill import Freshkill_Pile, MAL_PERCENTAGE , STARV_PERCENTAGE, FRESHKILL_ACTIVE, FRESHKILL_EVENT_TRIGGER_FACTOR, FRESHKILL_EVENT_ACTIVE
+from scripts.clan_resources.freshkill import (
+    Freshkill_Pile, 
+    MAL_PERCENTAGE , 
+    STARV_PERCENTAGE, 
+    FRESHKILL_ACTIVE, 
+    FRESHKILL_EVENT_TRIGGER_FACTOR, 
+    FRESHKILL_EVENT_ACTIVE, 
+    EVENT_WEIGHT_TYPE
+)
 
 class Freshkill_Events():
     """All events with a connection to freshkill pile or the nutrition of cats."""
 
-    def __init__(self) -> None:
-        self.generate_events = GenerateEvents()
-
-    def handle_nutrient(self, cat: Cat, nutrition_info: dict) -> None:
+    @staticmethod
+    def handle_nutrient(cat: Cat, nutrition_info: dict) -> None:
         """
         Handles gaining conditions or death for cats with low nutrient.
         This function should only be called if the game is in 'expanded' or 'cruel season' mode.
@@ -35,7 +42,7 @@ class Freshkill_Events():
 
         # get all events for a certain status of a cat
         cat_nutrition = nutrition_info[cat.ID]
-        possible_events = self.generate_events.possible_short_events(cat.status, cat.age, "nutrition")
+        possible_events = GenerateEvents.possible_short_events(cat.status, cat.age, "nutrition")
 
         # get the other needed information and values to create a event
         possible_other_cats = [i for i in Cat.all_cats.values() if not (i.dead or i.outside) and i.ID != cat.ID]
@@ -57,7 +64,7 @@ class Freshkill_Events():
         # handle death first, if percentage is 0 or lower, the cat will die
         if cat_nutrition.percentage <= 0:
             # this statement above will prevent, that a dead cat will get an illness
-            final_events = self.get_filtered_possibilities(possible_events, ["death"], cat, other_cat)
+            final_events = Freshkill_Events.get_filtered_possibilities(possible_events, ["death"], cat, other_cat)
             if len(final_events) <= 0:
                 return
             chosen_event = (random.choice(final_events))
@@ -74,8 +81,13 @@ class Freshkill_Events():
 
             if cat.status == "leader":
                 game.clan.leader_lives -= 1
+                
             cat.die()
-            cat.died_by.append(history_text)
+            History.add_death(cat, history_text)
+            
+            # if the cat is the leader, the illness "starving" needs to be added again
+            if cat.status == "leader" and game.clan.leader_lives > 0:
+                cat.get_ill("starving")
 
             types = ["birth_death"]
             game.cur_events_list.append(Single_Event(death_text, types, [cat.ID]))
@@ -120,7 +132,7 @@ class Freshkill_Events():
             cat.get_ill(illness)
 
         # filter the events according to the needed tags 
-        final_events = self.get_filtered_possibilities(possible_events, needed_tags, cat, other_cat)        
+        final_events = Freshkill_Events.get_filtered_possibilities(possible_events, needed_tags, cat, other_cat)        
         if len(final_events) <= 0:
             return
 
@@ -129,7 +141,8 @@ class Freshkill_Events():
         types = ["health"]
         game.cur_events_list.append(Single_Event(event_text, types, [cat.ID]))
 
-    def handle_amount_freshkill_pile(self, freshkill_pile: Freshkill_Pile, living_cats: list) -> None:
+    @staticmethod
+    def handle_amount_freshkill_pile(freshkill_pile: Freshkill_Pile, living_cats: list) -> None:
         """
         Handles events (eg. a fox is attacking the camp), which are related to the freshkill pile.
         This function should only be called if the game is in 'expanded' or 'cruel season' mode.
@@ -142,7 +155,7 @@ class Freshkill_Events():
                 a list of cats which have to be feed
         """
 
-        if not living_cats:
+        if not living_cats or len(living_cats) == 0:
             # End if there are no living cats left.
             return
 
@@ -150,10 +163,19 @@ class Freshkill_Events():
         if not FRESHKILL_EVENT_ACTIVE:
             return
 
+        # change the trigger factor according to the size of the clan
+        trigger_factor = FRESHKILL_EVENT_TRIGGER_FACTOR
+        divider = 35 if game.clan.game_mode == "expanded" else 20
+        trigger_factor = trigger_factor - round(pow((len(living_cats)/divider), 2))
+        if trigger_factor < 2 and game.clan.game_mode == "expanded":
+            trigger_factor = 2
+        if trigger_factor < 1.2 and game.clan.game_mode == "cruel season":
+            trigger_factor = 1.2
+
         # check if amount of the freshkill pile is too big and a event will be triggered
         needed_amount = freshkill_pile.amount_food_needed()
-        trigger_value = FRESHKILL_EVENT_TRIGGER_FACTOR * needed_amount
-        #print(f" -- FRESHKILL: amount {trigger_value} to trigger freshkill event. current amount {freshkill_pile.total_amount}")
+        trigger_value = round(trigger_factor * needed_amount, 2)
+        print(f" -- FRESHKILL: trigger amount {trigger_value}. current amount (after feed, before moon gathering) {freshkill_pile.total_amount}")
         if freshkill_pile.total_amount < trigger_value:
             return
 
@@ -161,14 +183,14 @@ class Freshkill_Events():
         chance = 10 - factor
         if chance <= 0:
             chance = 1
-        #print(f" -- FRESHKILL: trigger chance of 1/{chance}")
+        print(f" -- FRESHKILL: trigger chance of 1/{chance}")
         choice = random.randint(1,chance)
         if choice != 1:
             return
 
         # check if there is much more prey than needed, to filter the events
         much_prey = False
-        if freshkill_pile.total_amount >= (trigger_value + needed_amount):
+        if freshkill_pile.total_amount >= (trigger_value + needed_amount) and len(living_cats) > 10:
             much_prey = True
 
         # get different resources, which are later needed
@@ -179,13 +201,15 @@ class Freshkill_Events():
             while other_cat.ID == cat.ID:
                 other_cat = random.choice(living_cats)
 
-        possible_events = self.generate_events.possible_short_events(cat.status, cat.age, "freshkill_pile")
-        possible_tasks = ["death", "reduce", "reduce", "reduce", "reduce", "injury", "injury", "injury"]
-        needed_tags = []
+        possible_events = GenerateEvents.possible_short_events(cat.status, cat.age, "freshkill_pile")
+        possible_tasks = []
+        for tag_type in EVENT_WEIGHT_TYPE:
+            possible_tasks.extend(tag_type * EVENT_WEIGHT_TYPE[tag_type])
 
         # randomly choose which tags are used for the event
         choice = random.choice(possible_tasks)
         double_event = random.choice([True, False])
+        needed_tags = []
         if choice == "death":
             needed_tags.append("death")
             needed_tags.append("multi_death")
@@ -209,7 +233,7 @@ class Freshkill_Events():
             if (not much_prey and "much_prey" not in event.tags) or much_prey:
                 final_events.append(event)
 
-        final_events = self.get_filtered_possibilities(final_events, needed_tags, cat, other_cat)  
+        final_events = Freshkill_Events.get_filtered_possibilities(final_events, needed_tags, cat, other_cat)  
 
         # if there are no events available, return
         if len(final_events) <= 0:
@@ -218,7 +242,7 @@ class Freshkill_Events():
         # get the event and trigger certain things
         chosen_event = (random.choice(final_events))
         event_text = event_text_adjust(Cat, chosen_event.event_text, cat, other_cat)
-        self.handle_history_death(chosen_event,cat,other_cat)
+        Freshkill_Events.handle_history_death(chosen_event,cat,other_cat)
 
         # if a food is stolen, remove the food
         reduce_amount = 0
@@ -248,7 +272,8 @@ class Freshkill_Events():
     #                                helper function                               #
     # ---------------------------------------------------------------------------- #
 
-    def get_filtered_possibilities(self, possible_events: list, needed_tags: list, cat: Cat, other_cat: Union[Cat, None]) -> list:
+    @staticmethod
+    def get_filtered_possibilities(possible_events: list, needed_tags: list, cat: Cat, other_cat: Union[Cat, None]) -> list:
         """
         Returns a filtered list of possible events for a given list of tags.
 
@@ -272,11 +297,11 @@ class Freshkill_Events():
         for event in possible_events:
             if any(x in event.tags for x in needed_tags):
                 if event.other_cat_trait and other_cat and \
-                   other_cat.trait in event.other_cat_trait:
+                   other_cat.personality.trait in event.other_cat_trait:
                     final_events.append(event)
                     continue
 
-                if event.cat_trait and cat.trait in event.cat_trait:
+                if event.cat_trait and cat.personality.trait in event.cat_trait:
                     final_events.append(event)
                     continue
 
@@ -285,9 +310,19 @@ class Freshkill_Events():
                     final_events.append(event)
                     continue
 
-                if event.cat_skill and cat.skill in event.cat_skill:
-                    final_events.append(event)
-                    continue
+                if event.cat_skill:
+                    _flag = False
+                    for _skill in event.cat_skill:
+                        spl = _skill.split(",")
+                        if len(spl) != 2:
+                            continue
+                        
+                        if cat.skills.meets_skill_requirement(spl[0], spl[1]):
+                            _flag = True
+                    
+                    if _flag:
+                        final_events.append(event)
+                        continue
 
                 # if this event has no specification, but one of the needed tags, the event should be considered to be chosen
                 if not event.other_cat_trait and not event.cat_trait and \
@@ -295,7 +330,8 @@ class Freshkill_Events():
                     final_events.append(event)
         return final_events
 
-    def handle_history_death(self, event: Single_Event, cat: Cat, other_cat: Union[Cat, None]) -> None:
+    @staticmethod
+    def handle_history_death(event: Single_Event, cat: Cat, other_cat: Union[Cat, None]) -> None:
         """
         Handles death and history for a given event.
 
@@ -321,20 +357,23 @@ class Freshkill_Events():
                 history_leader = event_text_adjust(Cat, event.history_text[2], cat, other_cat)
             
             if cat.status == "leader":
-                cat.possible_death = str(history_leader)
+                History.add_possible_history(cat, event.injury, death_text=history_leader, scar_text=scar_text,
+                                                  other_cat=other_cat)
             else:
-                cat.possible_scar = str(scar_text)
-                cat.possible_death = str(history_normal)
-        
+                History.add_possible_history(cat, event.injury, death_text=history_normal, scar_text=scar_text,
+                                                  other_cat=other_cat)
+
+
             cat.get_injured(event.injury, event_triggered=True)
             if "multi_injury" in event.tags and other_cat:
                 if other_cat.status == "leader":
-                    other_cat.possible_death = str(history_leader)
+                    History.add_possible_history(other_cat, event.injury, death_text=history_leader, 
+                                                      scar_text=scar_text, other_cat=cat)
                 else:
-                    other_cat.possible_scar = str(scar_text)
-                    other_cat.possible_death = str(history_normal)
+                    History.add_possible_history(other_cat, event.injury, death_text=history_normal, 
+                                                      scar_text=scar_text, other_cat=cat)
+
                 other_cat.get_injured(event.injury, event_triggered=True)
-            
 
         # if the length of the history text is 2, this means the event is a instant death event
         if "death" in event.tags or "multi_death" in event.tags:
@@ -347,17 +386,17 @@ class Freshkill_Events():
 
             if cat.status == "leader":
                 game.clan.leader_lives -= 1
-                cat.died_by.append(history_leader)
+                History.add_death(cat, history_leader, other_cat=other_cat)
             else:
-                cat.died_by.append(history_normal)
+                History.add_death(cat, history_normal, other_cat=other_cat)
 
             cat.die()
             if "multi_death" in event.tags and other_cat:
                 if other_cat.status == "leader":
                     game.clan.leader_lives -= 1
-                    other_cat.died_by.append(history_leader)
+                    History.add_death(other_cat, history_leader, other_cat=cat)
                 else:
-                    other_cat.died_by.append(history_normal)
+                    History.add_death(other_cat, history_normal, other_cat=cat)
                 other_cat.die()
             if "multi_death" in event.tags and not other_cat:
                 print("WARNING: multi_death event in freshkill pile was triggered, but no other cat was given.")

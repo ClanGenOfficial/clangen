@@ -1,0 +1,379 @@
+{
+  "general": {
+    "body": [
+      "r_c watches the vigil being held for m_c from the sidelines, not at all sure how {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} about {PRONOUN/m_c/poss} death.",
+      "r_c resented m_c for what {PRONOUN/r_c/subject} couldn't have, but seeing m_c's body lying in the clearing as the Clan hold vigil for {PRONOUN/m_c/object} makes {PRONOUN/r_c/poss} jealousy feel petty and stupid.",
+      "r_c has always felt jealous of m_c, but could never want to take {PRONOUN/m_c/poss} place now, watching the Clan holding vigil for {PRONOUN/m_c/object}.",
+      "r_c listens to the stories being passed around as the vigil for m_c continues, and stalks off to {PRONOUN/r_c/poss} nest. {PRONOUN/r_c/subject/CAP} can't stand hearing everyone praise such a useless cat.",
+      "m_c really wasn't that great, but it's amazing how many cats want to ignore that now that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} dead, and r_c isn't interested in hearing it.",
+      "r_c knows that, even though m_c's family and friends are present at the vigil, everybody has a right to speak up, and so {PRONOUN/r_c/subject} {VERB/r_c/tell/tells} everyone at the vigil just what {PRONOUN/r_c/subject} {VERB/r_c/think/thinks} of m_c."
+      ],
+    "no_body": [
+      "r_c watches the vigil being held for m_c from the sidelines, not at all sure how {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} about {PRONOUN/m_c/poss} death.",
+      "r_c has always felt jealous of m_c, but could never want to take {PRONOUN/m_c/poss} place now, watching the Clan holding vigil for {PRONOUN/m_c/object}.",
+      "r_c listens to the stories being passed around as the vigil for m_c continues, and stalks off to {PRONOUN/r_c/poss} nest. {PRONOUN/r_c/subject/CAP} can't stand hearing everyone praise such a useless cat.",
+      "m_c really wasn't that great, but it's amazing how many cats want to ignore that now that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} dead, and r_c isn't interested in hearing it.",
+      "r_c knows that, even though m_c's family and friends are present at the vigil, everybody has a right to speak up, and so {PRONOUN/r_c/subject} {VERB/r_c/tell/tells} everyone at the vigil just what {PRONOUN/r_c/subject} {VERB/r_c/think/thinks} of m_c."
+    ]
+  },
+  "adventurous": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "altruistic": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "ambitious": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "bloodthirsty": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "bold": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "calm": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "careful": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "charismatic": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "childish": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "cold": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "compassionate": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "confident": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "daring": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "empathetic": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "faithful": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "fierce": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "insecure": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "lonesome": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "loving": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "loyal": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "nervous": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "patient": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "playful": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "responsible": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "righteous": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "shameless": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "sneaky": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "strange": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "strict": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "thoughtful": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "troublesome": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "vengeful": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "wise": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "attention-seeker": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "bossy": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "bouncy": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "bullying": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "charming": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "daydreamer": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "impulsive": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "inquisitive": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "noisy": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "polite": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "quiet": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "sweet": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  }
+}

@@ -1,0 +1,120 @@
+{
+    "activate_death": true,
+    "activate_events": true,
+    "start_amount": 60,
+    "auto_warrior_prey": [2,4],
+    "auto_apprentice_prey": [1,3],
+    "condition_increase": 1,
+    "base_event_trigger_factor": 4,
+	"events_weights":{
+		"death": 1,
+		"injury": 5,
+		"reduce": 8
+	},
+    "additional_prey": 1,
+    "nutrition_malnourished_percentage" : 45,
+    "nutrition_starving_percentage" : 20,
+	"text_nutrition":{
+		"lower_range":[0, 21, 41, 61, 81, 91],
+		"text": ["starving", "very hungry", "hungry", "satiated", "full", "stuffed"]
+	},
+    "prey_requirement":{
+        "leader": 3,
+        "deputy": 3,
+        "medicine cat": 2,
+        "medicine cat apprentice": 1.5,
+        "mediator apprentice": 1.5,
+        "mediator": 2,
+        "warrior": 3,
+        "apprentice": 1.5,
+        "elder": 1.5,
+        "queen/pregnant": 4,
+        "kitten": 0.5,
+        "newborn": 0.2
+    },
+    "feeding_order":[
+        "newborn",
+        "kitten",
+        "queen/pregnant",
+        "elder",
+        "medicine cat",
+        "medicine cat apprentice",
+        "apprentice",
+        "mediator apprentice",
+        "warrior",
+        "mediator",
+        "deputy",
+        "leader"
+    ],
+    "hunter_bonus": {"1": 1, "2": 2, "3": 3},
+    "hunter_exp_bonus": {
+        "untrained": 0.1,
+        "trainee": 1,
+        "prepared": 2,
+        "competent": 3,
+        "proficient": 4,
+        "skilled": 5,
+        "expert": 6,
+        "master": 7
+    },
+    "patrol_weight_adaption": {
+        "1_class_bigger_prey_allowed": [15,19],
+        "2_class_bigger_prey_allowed": [10,14],
+        "3_class_bigger_prey_allowed": [5,9],
+        "4_class_bigger_prey_allowed": [0,4]
+    },	
+    "patrol_balance": {
+        "comment": [
+        "A season array consist of ['very_small', 'small', 'medium', 'large', 'huge']",
+            "Numbers are the ratio how likely such a patrol will be used when hunting in this season.",
+            "The sum of all ratio should be between 15 or 16.",
+            "One common (weight:20) success outcome (ignoring skill + traits) must have these prey type types."
+        ],
+        "Forest": {
+            "Newleaf": [2,5,5,2,1],
+            "Greenleaf": [1,3,6,4,2],
+            "Leaf-fall": [2,4,5,3,1],
+            "Leaf-bare": [3,6,4,2,0]
+        },
+        "Mountainous": {
+            "Newleaf": [2,5,5,2,1],
+            "Greenleaf": [1,3,6,4,2],
+            "Leaf-fall": [2,6,4,2,1],
+            "Leaf-bare": [3,6,4,2,0]
+        },
+        "Plains": {
+            "Newleaf": [2,5,5,2,1],
+            "Greenleaf": [1,3,6,4,2],
+            "Leaf-fall": [2,4,5,3,1],
+            "Leaf-bare": [3,6,4,2,0]
+        },
+        "Beach": {
+            "Newleaf": [2,5,5,2,1],
+            "Greenleaf": [2,5,5,2,1],
+            "Leaf-fall": [2,5,5,2,1],
+            "Leaf-bare": [2,6,4,2,1]
+        },
+        "Wetlands": {
+            "Newleaf": [2,5,5,2,1],
+            "Greenleaf": [2,5,5,2,1],
+            "Leaf-fall": [2,5,5,2,1],
+            "Leaf-bare": [2,6,4,2,1]
+        },
+        "Desert": {
+            "Newleaf": [2,6,4,2,1],
+            "Greenleaf": [3,6,4,2,0],
+            "Leaf-fall": [2,5,5,2,1],
+            "Leaf-bare": [1,3,6,4,2]
+        }
+    },
+    "comment": [
+        "activate_deaths - activates the whole system, otherwise nutrition status of the cats doesn't have an effect",
+        "activate_events - activates if events for freshkill pile are triggered or not",
+        "start_amount - defines the amount of prey when a new freshkill-pile is made",
+        "The auto parameters are for the prey each moon, each healthy warrior/apprentice will catch an amount of between these two values of prey.",
+        "additional_prey - added amount for hunting patrol, to make it easier",
+        "base_event_trigger_factor - (will be adapted in code based on clan size) this number will be used to multiply with the amount of prey the Clan needs, if the pile is bigger than this number, prey events will be triggered",
+        "hunter_bonus is the factor which is be used to multiply on a hunting patrol.",
+        "hunter_exp_bonus is the additional prey which will be added on a hunting patrol."
+    ]
+}

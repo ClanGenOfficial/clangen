@@ -1,0 +1,31 @@
+[
+    {
+        "id": "gen_newborn",
+        "thoughts": [
+            "Is being nursed by a purring, ghostly queen",
+            "Tries to figure out all of the smells around {PRONOUN/m_c/object}",
+            "Snoozes peacefully",
+            "Tries to open {PRONOUN/m_c/poss} eyes, but it's all blurry"
+        ],
+        "main_age_constraint": [
+            "newborn"
+        ]
+    },
+    {
+        "id": "gen_newborn_to_parent",
+        "thoughts":[
+            "Snuggles closer to r_c",
+            "Smells r_c and immediately perks up",
+            "Mews at r_c as {PRONOUN/r_c/subject} {VERB/r_c/shift/shifts} in the nest"
+        ],
+        "main_age_constraint": [
+            "newborn"
+        ],
+        "relationship_constraint": [
+            "child/parent"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    }
+]

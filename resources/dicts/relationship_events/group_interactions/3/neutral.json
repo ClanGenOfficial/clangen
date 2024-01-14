@@ -4,8 +4,8 @@
 		"cat_amount": 3,
 		"intensity": "low",
 		"interactions": [
-			"m_c confesses to r_c1 that they have feelings for r_c2.",
-			"While m_c and r_c1 where talking, m_c had the feeling they can trust r_c1, and confesses that they like r_c2."
+			"m_c confesses to r_c1 that {PRONOUN/m_c/subject} {VERB/m_c/have/has} feelings for r_c2.",
+			"While m_c and r_c1 where talking, m_c had the feeling {PRONOUN/m_c/subject} can trust r_c1, and confesses that {PRONOUN/m_c/subject} {VERB/m_c/like/likes} r_c2."
 		],
 		"relationship_constraint": {
 			"m_c_to_r_c1": ["trust_30"],

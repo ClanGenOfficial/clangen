@@ -1,0 +1,135 @@
+[
+    {
+        "id": "general_loner_thoughts",
+        "thoughts": [
+            "Is spending the night with a friend",
+            "Wonders about what Clan life would be like",
+            "Is considering finding some housefolk to live with",
+            "Loves {PRONOUN/m_c/poss} life of freedom",
+            "Thinks that Clan cats are stupid",
+            "Debates joining a Clan",
+            "Heard a rumor of rogues in the area",
+            "Feels alone",
+            "Is recovering from an illness",
+            "Is exploring",
+            "Caught a particularly large bird",
+            "Caught a particularly large squirrel",
+            "Caught a particularly large rabbit",
+            "Is humming a tune",
+            "Got chased off by a border patrol recently",
+            "Heard some strange stories about starry ancestors living in the sky",
+            "Shivers in the cold",
+            "Wonders if Clan life is the only way to live with others",
+            "Was chased away from the shelter {PRONOUN/m_c/subject} had been staying in",
+            "Hopes {PRONOUN/m_c/poss} mild cough won't get worse",
+            "Wishes newleaf would come already",
+            "Frowns deeply at the first frost",
+            "Got invited to spend the night with a group of friendly loners",
+            "Saw a helpless cat get taken in a metal box by Twolegs",
+            "Sniffed around a known Clan territory curiously",
+            "Chows down on some food a Twoleg left out for {PRONOUN/m_c/object}",
+            "Envies the strong kinship the Clan cats have",
+            "Took a stroll through the city",
+            "Spies a kittypet through a window, jealous of the protection and food they have",
+            "Spies a kittypet and taunts them that they can't enjoy freedom",
+            "Is taking a nap, hoping something exciting would happen to escape {PRONOUN/m_c/poss} boredom",
+            "Was running carelessly across the Thunderpath and was nearly hit by a monster"
+        ]
+    },
+    {
+        "id": "loner_kitten_/_adolescent_thoughts",
+        "thoughts": [
+            "Is currently trying to figure out how to catch a bird"
+        ],
+        "main_age_constraint": [
+            "kitten",
+            "adolescent"
+        ]
+    },
+    {
+        "id": "loner_adolescent_thoughts",
+        "thoughts": [
+            "Is currently trying to figure out how to catch a squirrel",
+            "Is currently trying to figure out how to catch a rabbit",
+            "Is missing {PRONOUN/m_c/poss} parents",
+            "Regrets missing an easy catch",
+            "Learned how slippery the edge of a river can be the hard way",
+            "Is playing in the fallen leaves",
+            "Has been desperately trying to ignore {PRONOUN/m_c/poss} possibly bleak future",
+            "Is licking {PRONOUN/m_c/poss} bruises after a failed attempt at catching a mouse",
+            "Is asking {PRONOUN/m_c/self} if becoming a kittypet would be an easier life",
+            "Is trying not to feel overwhelmingly lonely",
+            "Is learning about the Clans",
+            "Thinks Clan cats are strange",
+            "Is in awe hearing the stories about the Clans",
+            "Is imagining an epic life where {PRONOUN/m_c/subject} {VERB/m_c/are/is} a legendary wander in these lands",
+            "Is marking random locations with {PRONOUN/m_c/poss} claws to remember as a potential hideout",
+            "Turns up {PRONOUN/m_c/poss} nose when another loner tries to give them directions",
+            "Collects various items {PRONOUN/m_c/subject} {VERB/m_c/find/finds} beautiful and interesting",
+            "Wonders if {PRONOUN/m_c/poss} parents were once renowned explorers",
+            "Laughed at the thought of being a Clan cat and having a warrior name... Maybe..."
+        ],
+        "main_age_constraint": [
+            "adolescent"
+        ]
+    },
+    {
+        "id": "loner_adolescent_to_clanapp_thoughts",
+        "thoughts": [
+            "Has a mock battle with r_c from c_n whenever the apprentice flees from {PRONOUN/r_c/poss} boring chores",
+            "Shows off individual scars and tells r_c in detail how {PRONOUN/m_c/subject} got them all",
+            "Wonders where r_c went"
+        ],
+        "main_age_constraint": [
+            "adolescent"
+        ],
+        "random_age_constraint":[
+            "adolescent"
+        ],
+        "random_outside_status":[
+            "clancat"
+        ]
+    },
+    {
+        "id": "loner_adult_thoughts",
+        "thoughts": [
+            "Is scouting out locations for a new den",
+            "Nearly got caught in a Twoleg trap!",
+            "Got pet by a Twoleg",
+            "Stayed in a Twoleg den for a couple of days for food",
+            "Was almost eaten by a monster",
+            "Is playing with kits"
+        ],
+        "main_age_constraint": [
+            "young adult",
+            "adult",
+            "senior adult"
+        ]
+    },
+    {
+        "id": "loner_senior_or_elder_thoughts",
+        "thoughts": [
+            "Wonders if {PRONOUN/m_c/subject} should have joined a Clan when {PRONOUN/m_c/subject} {VERB/m_c/were/was} younger",
+            "Debates finding housefolk to care for {PRONOUN/m_c/object} in {PRONOUN/m_c/poss} old age",
+            "Is enjoying the sun on {PRONOUN/m_c/poss} back",
+            "Purring as the sun's warmth eases {PRONOUN/m_c/poss} old joints",
+            "Is glad {PRONOUN/m_c/subject} chose this life of freedom",
+            "Thinks about old friends",
+            "Hopes it isn't too late to join a Clan",
+            "Wonders where {PRONOUN/m_c/subject}'ll go when {PRONOUN/m_c/subject} {VERB/m_c/die/dies}",
+            "Is telling stories about {PRONOUN/m_c/poss} younger days",
+            "Licks {PRONOUN/m_c/poss} sore pawpads from travelling too long",
+            "Is admiring the massive territory {PRONOUN/m_c/subject} secured for so long",
+            "Looks back with fondness at the misadventures {PRONOUN/m_c/subject} had with old friends",
+            "Has no shame eating crowfood if that's what it takes to survive",
+            "Easily fought off an overconfident rogue with many moons surviving in this rough life",
+            "Had a vivid nightmare where {PRONOUN/m_c/subject} couldn't save {PRONOUN/m_c/poss} old friend from wild dogs",
+            "Met up with an old kittypet friend, for both the free food and company",
+            "Is gnawing at {PRONOUN/m_c/poss} pelt, irritated at the abundance of fleas",
+            "Coughed heavily"
+        ],
+        "main_age_constraint": [
+            "senior"
+        ]
+    }
+]

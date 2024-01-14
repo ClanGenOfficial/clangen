@@ -1,0 +1,310 @@
+[
+    {
+        "id": "leader_alive_kits",
+        "thoughts": [
+            "Has recently picked up the scent of mischievous kits in {PRONOUN/m_c/poss} den...",
+            "Is pondering the next mentors for the kits of the Clan",
+            "Thinks about who should mentor new apprentices",
+            "Bats a mossball back to r_c when it hits {PRONOUN/m_c/object}, chuckling at the wide-eyed kit",
+            "Is looking over the kits, pleased the Clan is thriving",
+            "Is visiting the nursery to check on the kits, the future of the Clan"
+        ],  
+        "random_status_constraint": [
+            "kitten"
+        ],
+        "random_living_status":[
+            "living"
+        ]
+    },
+    {
+        "id": "gen_leader",
+        "thoughts": [
+            "Is hoping for a sign from StarClan",
+            "Is hoping that {PRONOUN/m_c/subject} {VERB/m_c/are/is} leading {PRONOUN/m_c/poss} Clan well",
+            "Is worried about Clan relations",
+            "Is thinking about battle strategies",
+            "Almost lost a life recently",
+            "Is counting how many lives {PRONOUN/m_c/subject} {VERB/m_c/have/has} left",
+            "Is thinking about what to say at the Gathering",
+            "Is questioning {PRONOUN/m_c/poss} ability to lead",
+            "Is dreading the Clan meeting {PRONOUN/m_c/subject} must call later today",
+            "Is finding the responsibility of leadership to be quite the heavy burden",
+            "Is feeling blessed by StarClan this moon",
+            "Is thinking about forming an alliance",
+            "Is making a solemn vow to protect {PRONOUN/m_c/poss} Clanmates",
+            "Called an important Clan meeting recently",
+            "Thinks {PRONOUN/m_c/subject} {VERB/m_c/have/has} been hearing the voices of StarClan cats...",
+            "Is pondering recent dreams {PRONOUN/m_c/subject} {VERB/m_c/have/has} had... perhaps from StarClan?",
+            "Recently called a Clan meeting, but forgot what to say",
+            "Is thinking about new ways to care for the Clan",
+            "Is wondering what the Clan thinks of {PRONOUN/m_c/poss} leadership",
+            "Is proud of the way the Clan is handling things lately",
+            "Is promising to take care of the Clan with {PRONOUN/m_c/poss} lives",
+            "Is busy planning out priorities for the day"
+        ]
+    },
+    {
+        "id": "leader_alive_apprentices",
+        "thoughts": [
+            "Is assessing some apprentices",
+            "Is satisfied that r_c is doing well in {PRONOUN/r_c/poss} training",
+            "Is personally observing r_c's training today",
+            "Is having a serious discussion with r_c about being a warrior soon",
+            "Is wondering if r_c is ready for the responsibility of being a warrior",
+            "Is asking r_c if {PRONOUN/r_c/subject} {VERB/r_c/are/is} ready for an assessment"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ],
+        "random_living_status":[
+            "living"
+        ]
+    },
+    {
+        "id":"leader_alive_deputy",
+        "thoughts":[
+            "Tries to set a good example for the deputy",
+            "Has been letting  {PRONOUN/m_c/poss} deputy call the shots recently, and is proud of {PRONOUN/m_c/poss} initiative",
+            "Needs to talk to r_c about something",
+            "Wants to go on patrol with r_c so they can have a chat",
+            "Is grateful for r_c's support",
+            "Is wondering if r_c will do a good job after {PRONOUN/m_c/object}",
+            "Is teaching r_c about the small details of being a leader",
+            "Is trusting r_c to take care of something important"
+        ],
+        "random_status_constraint": [
+            "deputy"
+        ],
+        "random_living_status":[
+            "living"
+        ]
+    },
+    {
+        "id": "leader_DF",
+        "thoughts": [
+            "Thinks {PRONOUN/m_c/subject} {VERB/m_c/have/has} been hearing the voices of Dark Forest cats...",
+            "Is pondering recent dreams {PRONOUN/m_c/subject} {VERB/m_c/have/has} had... perhaps from the Dark Forest?"
+        ],
+        "random_living_status": [
+            "darkforest"
+        ]
+    },
+    {
+        "id": "ambitious_leader",
+        "thoughts": [
+            "Considers expanding the borders",
+            "Makes sure all cats are battle ready"
+        ],
+        "main_trait_constraint": [
+            "ambitious"
+        ]
+    },
+    {
+        "id": "bold_leader",
+        "thoughts": [
+            "Considers expanding the borders",
+            "Feels confident that the Clan admires {PRONOUN/m_c/object}"
+        ],
+        "main_trait_constraint": [
+            "bold"
+        ]
+    },
+    {
+        "id": "bloodthirsty_leader",
+        "thoughts": [
+            "Encourages warriors to start fights on border patrols",
+            "Is debating if {PRONOUN/m_c/subject} should declare a war with another Clan",
+            "Is wondering if {PRONOUN/m_c/subject} could hold apprentice ceremonies at 4 moons old instead",
+            "Is hoping to postpone the retirement of {PRONOUN/m_c/poss} Clanmates",
+            "Is asking the medicine cats to have a stock of deathberries at {PRONOUN/m_c/poss} disposal",
+            "Doesn't understand StarClan's resentment towards {PRONOUN/m_c/object}",
+            "Is thinking about taking kits from another Clan",
+            "Encourages warriors to destroy other Clan's herb supplies",
+            "Demands the warriors train with their claws unsheathed",
+            "Is thinking about exiling elders from now on",
+            "Is thinking about driving out an opposing Clan",
+            "Is glaring over the Clan from the leader's den",
+            "Is slashing at a 'disloyal' warrior",
+            "Is swearing the Clan is plotting against {PRONOUN/m_c/object}"
+        ],
+        "main_trait_constraint": [
+            "bloodthirsty"
+        ]
+    },
+    {
+        "id": "calm_leader",
+        "thoughts": [
+            "Stays composed when a cat comes to them in a panic",
+            "Watches over all the cats"
+        ],
+        "main_trait_constraint": [
+            "calm"
+        ]
+    },
+    {
+        "id": "careful_leader",
+        "thoughts": [
+            "Reminds a patrol not to stray over the border"
+        ],
+        "main_trait_constraint": [
+            "careful"
+        ]
+    },
+    {
+        "id": "charismatic_leader",
+        "thoughts": [
+            "Gives a particularly rousing speech at a Clan meeting",
+            "Feels confident that the Clan admires {PRONOUN/m_c/object}"
+        ],
+        "main_trait_constraint": [
+            "charismatic"
+        ]
+    },
+    {
+        "id": "childish_leader",
+        "thoughts": [
+            "Pranks r_c by switching their fresh-kill with crowfood"
+        ],
+        "main_trait_constraint": [
+            "childish"
+        ]
+    },
+    {
+        "id": "cold_leader",
+        "thoughts": [
+            "Rolls {PRONOUN/m_c/poss} eyes as r_c suggests sharing their fresh-kill with other Clans"
+        ],
+        "main_trait_constraint": [
+            "cold"
+        ]
+    },
+    {
+        "id": "insecure_leader",
+        "thoughts": [
+            "Thinks they don't deserve StarClan's blessing of 9 lives",
+            "Wonders if cats like {PRONOUN/m_c/object} as a leader"
+        ],
+        "main_trait_constraint": [
+            "insecure"
+        ]
+    },
+
+    {
+        "id": "strange_leader",
+        "thoughts": [
+            "No thoughts, head empty",
+            "Insists that {PRONOUN/m_c/subject} received ten lives instead of nine",
+            "Has a crazed look in {PRONOUN/m_c/poss} eyes",
+            "Is wondering how many cats would agree to changing the Clan's name..."
+        ],
+        "main_trait_constraint": [
+            "strange"
+        ]
+    },
+    {
+        "id": "charismatic_leader",
+        "thoughts": [
+            "Gives a particularly rousing speech at a Clan meeting",
+            "Feels confident that the Clan admires {PRONOUN/m_c/object}"
+        ],
+        "main_trait_constraint": [
+            "charismatic"
+        ]
+    },
+    {
+        "id":"leader_meanie_deputy_meanie",
+        "thoughts":[
+            "Is pleased with r_c's ruthless treatment of the warriors",
+            "Is sparring violently with r_c, both drawing blood",
+            "Is showing r_c how to lead by fear and not worry about respect",
+            "Is asking r_c to take care of any disloyal warriors",
+            "Trusts r_c to continue to keep the Clan in line",
+            "Is threatening to drag r_c to the dark forest with {PRONOUN/m_c/object}",
+            "Is teaching r_c how to rat out spies and dissenting warriors",
+            "Is showing r_c how to lead by pain and suffering"
+        ],
+        "random_status_constraint": [
+            "deputy"
+        ],
+        "random_living_status":[
+            "living"
+        ],
+        "main_trait_constraint": [
+            "bloodthirsty",
+            "fierce",
+            "cold",
+            "vengeful"
+        ],
+        "random_trait_constraint": [
+            "bloodthirsty",
+            "fierce",
+            "cold",
+            "vengeful"
+        ]
+    },
+    {
+        "id":"leader_meanie_med_meanie",
+        "thoughts":[
+            "Is pleased that r_c is withholding herbs from the weaker cats",
+            "Is instructing r_c to let a sick cat die",
+            "Is telling r_c to make a poultice with deathberries",
+            "Is asking r_c to fake a sign from StarClan to prepare the Clan for war",
+            "Is pleased with having a like-minded medicine cat like r_c",
+            "Is listening to r_c explain the pointlessness of treating weak or old cats"
+        ],
+        "random_status_constraint": [
+            "medicine cat"
+        ],
+        "random_living_status":[
+            "living"
+        ],
+        "main_trait_constraint": [
+            "bloodthirsty",
+            "fierce",
+            "cold",
+            "vengeful"
+        ],
+        "random_trait_constraint": [
+            "bloodthirsty",
+            "fierce",
+            "cold",
+            "vengeful"
+        ]
+    },
+    {
+        "id":"leader_nice_deputy_meanie",
+        "thoughts":[
+            "Is wondering if {PRONOUN/m_c/subject} made a mistake by appointing r_c",
+            "Is trying to teach r_c to lead with kindness",
+            "Is doing all {PRONOUN/m_c/subject} can to make r_c a better cat",
+            "Is startled by r_c's aggressiveness",
+            "Is arguing with r_c about how to treat 'weaker' members of the Clan",
+            "Is wondering if r_c has been sneaking around",
+            "Is afraid r_c might be plotting against {PRONOUN/m_c/object}",
+            "Is shaken after catching r_c teaching the warriors a killing blow"
+        ],
+        "main_trait_constraint": [
+            "righteous",
+            "compassionate",
+            "wise",
+            "responsible"
+        ],
+        "random_status_constraint": [
+            "deputy"
+        ],
+        "random_living_status":[
+            "living"
+        ],
+        "random_trait_constraint": [
+            "bloodthirsty",
+            "fierce",
+            "cold",
+            "vengeful"
+        ]
+    }
+   
+]
+
+
+
+ 

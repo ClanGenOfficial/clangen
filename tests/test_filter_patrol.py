@@ -6,8 +6,11 @@ os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship
-from scripts.patrol import PatrolEvent, Patrol
+from scripts.patrol.patrol import PatrolEvent, Patrol
 from scripts.clan import Clan
+
+# TODO: redo them! Filtering is not working like this anymore but it got removed from .github/workflows/test.yml 
+# so they are not failing!
 
 class TestRelationshipConstraintPatrols(unittest.TestCase):
 
@@ -16,27 +19,29 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         parent = Cat()
         cat1 = Cat(parent1=parent.ID)
         cat2 = Cat(parent1=parent.ID)
-        cat1.siblings = [cat2.ID]
-        cat2.siblings = [cat1.ID]
+        cat1.create_inheritance_new_cat()
+        cat2.create_inheritance_new_cat()
 
         # when
+        self.assertTrue(cat1.is_sibling(cat2))
+        self.assertTrue(cat2.is_sibling(cat1))
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraint.append("siblings")
+        con_patrol_event.relationship_constraints["relationship"] = ["siblings"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
-        possible_patrols = [con_patrol_event, no_con_patrol_event]
+        no_con_patrol_event.relationship_constraints["relationship"] = []
 
         test_clan = Clan(name="test")
 
         # then
         patrol = Patrol()
         patrol.add_patrol_cats([cat1, cat2], test_clan)
-        filtered = patrol.filter_relationship(possible_patrols)
-        self.assertEqual(len(filtered), len(possible_patrols))
+        self.assertTrue(patrol._filter_relationship(con_patrol_event))
+        self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
         patrol = Patrol()
         patrol.add_patrol_cats([cat1, cat2, parent], test_clan)
-        filtered = patrol.filter_relationship(possible_patrols)
-        self.assertNotEqual(len(filtered), len(possible_patrols))
+        self.assertFalse(patrol._filter_relationship(con_patrol_event))
+        self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
     def test_mates_patrol(self):
         # given
@@ -44,46 +49,44 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         mate2 = Cat()
         cat1 = Cat()
 
-        mate1.mate = mate2.ID
-        mate2.mate =mate1.ID
+        mate1.mate.append(mate2.ID)
+        mate2.mate.append(mate1.ID)
 
         # when
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraint.append("mates")
+        con_patrol_event.relationship_constraints["relationship"] = ["mates"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
-        possible_patrols = [con_patrol_event, no_con_patrol_event]
+        no_con_patrol_event.relationship_constraints["relationship"] = []
 
         test_clan = Clan(name="test")
 
         # then
-        patrol_all_events = Patrol()
-        patrol_all_events.add_patrol_cats([mate1, mate2], test_clan)
-        all_filtered = patrol_all_events.filter_relationship(possible_patrols)
-        self.assertEqual(len(all_filtered), len(possible_patrols))
+        patrol = Patrol()
+        patrol.add_patrol_cats([mate1, mate2], test_clan)
+        self.assertTrue(patrol._filter_relationship(con_patrol_event))
+        self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
-        patrol_not_all_events = Patrol()
-        patrol_not_all_events.add_patrol_cats([mate1, cat1], test_clan)
-        not_all_filtered = patrol_not_all_events.filter_relationship(possible_patrols)
-        self.assertNotEqual(len(not_all_filtered), len(possible_patrols))
+        patrol = Patrol()
+        patrol.add_patrol_cats([mate1, cat1], test_clan)
+        self.assertFalse(patrol._filter_relationship(con_patrol_event))
+        self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
-        patrol_not_all_events2 = Patrol()
-        patrol_not_all_events2.add_patrol_cats([mate1, mate2, cat1], test_clan)
-        not_all_filtered2 = patrol_not_all_events2.filter_relationship(possible_patrols)
-        self.assertNotEqual(len(not_all_filtered2), len(possible_patrols))
+        patrol = Patrol()
+        patrol.add_patrol_cats([mate1, mate2, cat1], test_clan)
+        self.assertFalse(patrol._filter_relationship(con_patrol_event))
+        self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
     def test_parent_child_patrol(self):
         # given
         parent = Cat()
         cat1 = Cat(parent1=parent.ID)
         cat2 = Cat(parent1=parent.ID)
-        cat1.siblings = [cat2.ID]
-        cat2.siblings = [cat1.ID]
 
         # when
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraint.append("parent/child")
+        con_patrol_event.relationship_constraints["relationship"] = ["parent/child"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
-        possible_patrols = [con_patrol_event, no_con_patrol_event]
+        no_con_patrol_event.relationship_constraints["relationship"] = []
 
         test_clan = Clan(name="test")
 
@@ -92,37 +95,35 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         patrol.add_patrol_cats([parent, cat1], test_clan)
         patrol.patrol_leader = parent
         patrol.patrol_random_cat = cat1
-        filtered = patrol.filter_relationship(possible_patrols)
-        self.assertEqual(len(filtered), len(possible_patrols))
+        self.assertTrue(patrol._filter_relationship(con_patrol_event))
+        self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
         patrol = Patrol()
         patrol.add_patrol_cats([parent, cat1], test_clan)
         patrol.patrol_leader = cat1
         patrol.patrol_random_cat = parent
-        filtered = patrol.filter_relationship(possible_patrols)
-        self.assertNotEqual(len(filtered), len(possible_patrols))
+        self.assertFalse(patrol._filter_relationship(con_patrol_event))
+        self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
         patrol = Patrol()
         cat_list = [cat1, cat2, parent]
         patrol.add_patrol_cats(cat_list, test_clan)
         patrol.patrol_leader = parent
         patrol.patrol_random_cat = cat2
-        filtered = patrol.filter_relationship(possible_patrols)
-        self.assertNotEqual(len(filtered), len(possible_patrols))
+        self.assertFalse(patrol._filter_relationship(con_patrol_event))
+        self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
     def test_child_parent_patrol(self):
         # given
         parent = Cat()
         cat1 = Cat(parent1=parent.ID)
         cat2 = Cat(parent1=parent.ID)
-        cat1.siblings = [cat2.ID]
-        cat2.siblings = [cat1.ID]
 
         # when
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraint.append("child/parent")
+        con_patrol_event.relationship_constraints["relationship"] = ["child/parent"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
-        possible_patrols = [con_patrol_event, no_con_patrol_event]
+        no_con_patrol_event.relationship_constraints["relationship"] = []
 
         test_clan = Clan(name="test")
 
@@ -131,23 +132,23 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         patrol.add_patrol_cats([parent, cat1], test_clan)
         patrol.patrol_leader = cat1
         patrol.patrol_random_cat = parent
-        filtered = patrol.filter_relationship(possible_patrols)
-        self.assertEqual(len(filtered), len(possible_patrols))
+        self.assertTrue(patrol._filter_relationship(con_patrol_event))
+        self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
         patrol = Patrol()
         patrol.add_patrol_cats([parent, cat1], test_clan)
         patrol.patrol_leader = parent
         patrol.patrol_random_cat = cat1
-        filtered = patrol.filter_relationship(possible_patrols)
-        self.assertNotEqual(len(filtered), len(possible_patrols))
+        self.assertFalse(patrol._filter_relationship(con_patrol_event))
+        self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
         patrol = Patrol()
         cat_list = [cat1, cat2, parent]
         patrol.add_patrol_cats(cat_list, test_clan)
         patrol.patrol_leader = parent
         patrol.patrol_random_cat = cat2
-        filtered = patrol.filter_relationship(possible_patrols)
-        self.assertNotEqual(len(filtered), len(possible_patrols))
+        self.assertFalse(patrol._filter_relationship(con_patrol_event))
+        self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
     def test_romantic_constraint_patrol(self):
         # given
@@ -169,26 +170,25 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - correct
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraint.append("romantic_10")
+        con_patrol_event.relationship_constraints["relationship"] = ["romantic_10"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
-        possible_patrols = [con_patrol_event, no_con_patrol_event]
+        no_con_patrol_event.relationship_constraints["relationship"] = []
 
         # then
         patrol = Patrol()
         patrol.add_patrol_cats([cat1, cat2], test_clan)
-        filtered = patrol.filter_relationship(possible_patrols)
-        self.assertEqual(len(filtered), len(possible_patrols))
+        self.assertTrue(patrol._filter_relationship(con_patrol_event))
+        self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
         # when - to high
         con_patrol_event = PatrolEvent(patrol_id="test3")
-        con_patrol_event.relationship_constraint.append("romantic_30")
-        possible_patrols = [con_patrol_event, no_con_patrol_event]
+        con_patrol_event.relationship_constraints["relationship"] = ["romantic_30"]
 
         # then
         patrol = Patrol()
         patrol.add_patrol_cats([cat1, cat2], test_clan)
-        filtered = patrol.filter_relationship(possible_patrols)
-        self.assertNotEqual(len(filtered), len(possible_patrols))
+        self.assertFalse(patrol._filter_relationship(con_patrol_event))
+        self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
     def test_platonic_constraint_patrol(self):
         # given
@@ -210,26 +210,24 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - correct
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraint.append("platonic_10")
+        con_patrol_event.relationship_constraints["relationship"] = ["platonic_10"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
-        possible_patrols = [con_patrol_event, no_con_patrol_event]
+        no_con_patrol_event.relationship_constraints["relationship"] = []
 
         # then
         patrol = Patrol()
         patrol.add_patrol_cats([cat1, cat2], test_clan)
-        filtered = patrol.filter_relationship(possible_patrols)
-        self.assertEqual(len(filtered), len(possible_patrols))
+        self.assertTrue(patrol._filter_relationship(con_patrol_event))
+        self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
         # when - to high
         con_patrol_event = PatrolEvent(patrol_id="test3")
-        con_patrol_event.relationship_constraint.append("platonic_30")
-        possible_patrols = [con_patrol_event, no_con_patrol_event]
-
+        con_patrol_event.relationship_constraints["relationship"] = ["platonic_30"]
         # then
         patrol = Patrol()
         patrol.add_patrol_cats([cat1, cat2], test_clan)
-        filtered = patrol.filter_relationship(possible_patrols)
-        self.assertNotEqual(len(filtered), len(possible_patrols))
+        self.assertFalse(patrol._filter_relationship(con_patrol_event))
+        self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
     def test_dislike_constraint_patrol(self):
         # given
@@ -251,26 +249,25 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - correct
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraint.append("dislike_10")
+        con_patrol_event.relationship_constraints["relationship"] = ["dislike_10"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
-        possible_patrols = [con_patrol_event, no_con_patrol_event]
+        no_con_patrol_event.relationship_constraints["relationship"] = []
 
         # then
         patrol = Patrol()
         patrol.add_patrol_cats([cat1, cat2], test_clan)
-        filtered = patrol.filter_relationship(possible_patrols)
-        self.assertEqual(len(filtered), len(possible_patrols))
+        self.assertTrue(patrol._filter_relationship(con_patrol_event))
+        self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
         # when - to high
         con_patrol_event = PatrolEvent(patrol_id="test3")
-        con_patrol_event.relationship_constraint.append("dislike_30")
-        possible_patrols = [con_patrol_event, no_con_patrol_event]
+        con_patrol_event.relationship_constraints["relationship"] = ["dislike_30"]
 
         # then
         patrol = Patrol()
         patrol.add_patrol_cats([cat1, cat2], test_clan)
-        filtered = patrol.filter_relationship(possible_patrols)
-        self.assertNotEqual(len(filtered), len(possible_patrols))
+        self.assertFalse(patrol._filter_relationship(con_patrol_event))
+        self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
     def test_comfortable_constraint_patrol(self):
         # given
@@ -292,26 +289,25 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - correct
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraint.append("comfortable_10")
+        con_patrol_event.relationship_constraints["relationship"] = ["comfortable_10"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
-        possible_patrols = [con_patrol_event, no_con_patrol_event]
+        no_con_patrol_event.relationship_constraints["relationship"] = []
 
         # then
         patrol = Patrol()
         patrol.add_patrol_cats([cat1, cat2], test_clan)
-        filtered = patrol.filter_relationship(possible_patrols)
-        self.assertEqual(len(filtered), len(possible_patrols))
+        self.assertTrue(patrol._filter_relationship(con_patrol_event))
+        self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
         # when - to high
         con_patrol_event = PatrolEvent(patrol_id="test3")
-        con_patrol_event.relationship_constraint.append("comfortable_30")
-        possible_patrols = [con_patrol_event, no_con_patrol_event]
+        con_patrol_event.relationship_constraints["relationship"] = ["comfortable_30"]
 
         # then
         patrol = Patrol()
         patrol.add_patrol_cats([cat1, cat2], test_clan)
-        filtered = patrol.filter_relationship(possible_patrols)
-        self.assertNotEqual(len(filtered), len(possible_patrols))
+        self.assertFalse(patrol._filter_relationship(con_patrol_event))
+        self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
     def test_jealousy_patrol(self):
         # given
@@ -333,26 +329,25 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - correct
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraint.append("jealousy_10")
+        con_patrol_event.relationship_constraints["relationship"] = ["jealousy_10"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
-        possible_patrols = [con_patrol_event, no_con_patrol_event]
+        no_con_patrol_event.relationship_constraints["relationship"] = []
 
         # then
         patrol = Patrol()
         patrol.add_patrol_cats([cat1, cat2], test_clan)
-        filtered = patrol.filter_relationship(possible_patrols)
-        self.assertEqual(len(filtered), len(possible_patrols))
+        self.assertTrue(patrol._filter_relationship(con_patrol_event))
+        self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
         # when - to high
         con_patrol_event = PatrolEvent(patrol_id="test3")
-        con_patrol_event.relationship_constraint.append("jealousy_30")
-        possible_patrols = [con_patrol_event, no_con_patrol_event]
+        con_patrol_event.relationship_constraints["relationship"] = ["jealousy_30"]
 
         # then
         patrol = Patrol()
         patrol.add_patrol_cats([cat1, cat2], test_clan)
-        filtered = patrol.filter_relationship(possible_patrols)
-        self.assertNotEqual(len(filtered), len(possible_patrols))
+        self.assertFalse(patrol._filter_relationship(con_patrol_event))
+        self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
     def test_trust_patrol(self):
         # given
@@ -374,26 +369,25 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - correct
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraint.append("trust_10")
+        con_patrol_event.relationship_constraints["relationship"] = ["trust_10"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
-        possible_patrols = [con_patrol_event, no_con_patrol_event]
+        no_con_patrol_event.relationship_constraints["relationship"] = []
 
         # then
         patrol = Patrol()
         patrol.add_patrol_cats([cat1, cat2], test_clan)
-        filtered = patrol.filter_relationship(possible_patrols)
-        self.assertEqual(len(filtered), len(possible_patrols))
+        self.assertTrue(patrol._filter_relationship(con_patrol_event))
+        self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
         # when - to high
         con_patrol_event = PatrolEvent(patrol_id="test3")
-        con_patrol_event.relationship_constraint.append("trust_30")
-        possible_patrols = [con_patrol_event, no_con_patrol_event]
+        con_patrol_event.relationship_constraints["relationship"] = ["trust_30"]
 
         # then
         patrol = Patrol()
         patrol.add_patrol_cats([cat1, cat2], test_clan)
-        filtered = patrol.filter_relationship(possible_patrols)
-        self.assertNotEqual(len(filtered), len(possible_patrols))
+        self.assertFalse(patrol._filter_relationship(con_patrol_event))
+        self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
     def test_multiple_romantic_patrol(self):
         # given
@@ -433,40 +427,37 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - all is correct
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraint.append("romantic_10")
+        con_patrol_event.relationship_constraints["relationship"] = ["romantic_10"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
-        possible_patrols = [con_patrol_event, no_con_patrol_event]
+        no_con_patrol_event.relationship_constraints["relationship"] = []
 
         # then
         patrol = Patrol()
         patrol.add_patrol_cats([cat1, cat2, cat3], test_clan)
-        filtered = patrol.filter_relationship(possible_patrols)
-        self.assertEqual(len(filtered), len(possible_patrols))
+        self.assertTrue(patrol._filter_relationship(con_patrol_event))
+        self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
         # when - to high limit
         con_patrol_event = PatrolEvent(patrol_id="test3")
-        con_patrol_event.relationship_constraint.append("romantic_30")
-        possible_patrols = [con_patrol_event, no_con_patrol_event]
+        con_patrol_event.relationship_constraints["relationship"] = ["romantic_30"]
 
         # then
         patrol = Patrol()
         patrol.add_patrol_cats([cat1, cat2, cat3], test_clan)
-        filtered = patrol.filter_relationship(possible_patrols)
-        self.assertNotEqual(len(filtered), len(possible_patrols))
+        self.assertFalse(patrol._filter_relationship(con_patrol_event))
+        self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
 
         # when - different relationship values
         cat3.relationships[cat2.ID].romantic_love = 5
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraint.append("romantic_10")
-        no_con_patrol_event = PatrolEvent(patrol_id="test2")
-        possible_patrols = [con_patrol_event, no_con_patrol_event]
+        con_patrol_event.relationship_constraints["relationship"] = ["romantic_10"]
 
         # then
         patrol = Patrol()
         patrol.add_patrol_cats([cat1, cat2, cat3], test_clan)
-        filtered = patrol.filter_relationship(possible_patrols)
-        self.assertNotEqual(len(filtered), len(possible_patrols))
+        self.assertFalse(patrol._filter_relationship(con_patrol_event))
+        self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
     def test_multiple_constraint_patrol(self):
         # given
@@ -490,26 +481,22 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - correct
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraint.append("romantic_10")
+        con_patrol_event.relationship_constraints["relationship"] = ["romantic_10"]
         con_patrol_event2 = PatrolEvent(patrol_id="test2")
-        con_patrol_event2.relationship_constraint.append("platonic_10")
-        possible_patrols = [con_patrol_event, con_patrol_event2]
+        con_patrol_event2.relationship_constraints["relationship"] = ["platonic_10"]
 
         # then
         patrol = Patrol()
         patrol.add_patrol_cats([cat1, cat2], test_clan)
-        filtered = patrol.filter_relationship(possible_patrols)
-        self.assertEqual(len(filtered), len(possible_patrols))
+        self.assertTrue(patrol._filter_relationship(con_patrol_event))
+        self.assertTrue(patrol._filter_relationship(con_patrol_event2))
 
         # when - to high
-        con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraint.append("romantic_10")
         con_patrol_event2 = PatrolEvent(patrol_id="test2")
-        con_patrol_event2.relationship_constraint.append("platonic_30")
-        possible_patrols = [con_patrol_event, con_patrol_event2]
+        con_patrol_event2.relationship_constraints["relationship"] = ["platonic_30"]
 
         # then
         patrol = Patrol()
         patrol.add_patrol_cats([cat1, cat2], test_clan)
-        filtered = patrol.filter_relationship(possible_patrols)
-        self.assertNotEqual(len(filtered), len(possible_patrols))
+        self.assertTrue(patrol._filter_relationship(con_patrol_event))
+        self.assertFalse(patrol._filter_relationship(con_patrol_event2))

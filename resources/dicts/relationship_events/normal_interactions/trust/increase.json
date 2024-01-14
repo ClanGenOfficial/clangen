@@ -3,16 +3,16 @@
 		"id": "trust_inc_low1",
 		"intensity": "low",
 		"interactions": [
-			"m_c appreciates r_c telling them that they had a feather stuck to their face."
+			"m_c appreciates r_c telling {PRONOUN/m_c/object} that {PRONOUN/m_c/subject} had a feather stuck to {PRONOUN/m_c/poss} face."
 		]
 	},
 	{
 		"id": "trust_inc_low2",
 		"intensity": "low",
 		"interactions": [
-			"r_c tells m_c to get their ailment treated as soon as possible.",
+			"r_c tells m_c to get {PRONOUN/m_c/poss} ailment treated as soon as possible.",
 			"r_c is chiding m_c for being so reckless.",
-			"r_c apologized to m_c for possibly hurting their feelings."
+			"r_c apologized to m_c for possibly hurting {PRONOUN/m_c/poss} feelings."
 		],
 		"random_trait_constraint": [
 			"careful"
@@ -35,7 +35,8 @@
 	{
 		"id": "trust_inc_med1",
 		"interactions": [
-			"m_c thinks about how r_c is always reliable."
+			"m_c thinks about how r_c is always reliable.",
+			"m_c notices how r_c is being helpful around camp."
 		]
 	},
 	{
@@ -50,7 +51,7 @@
 	{
 		"id": "trust_inc_med3",
 		"interactions": [
-			"r_c is telling m_c in great detail how they would protect them from any danger."
+			"r_c is telling m_c in great detail how {PRONOUN/r_c/subject} would protect {PRONOUN/m_c/object} from any danger."
 		],
 		"random_trait_constraint": [
 			"fierce"
@@ -68,7 +69,7 @@
 	{
 		"id": "trust_inc_med5",
 		"interactions": [
-			"r_c let m_c lean on their shoulder after a recent injury.",
+			"r_c let m_c lean on {PRONOUN/r_c/poss} shoulder after a recent injury.",
 			"r_c is poised to help train m_c."
 		],
 		"random_trait_constraint": [
@@ -79,8 +80,9 @@
 		"id": "trust_de_med3",
 		"interactions": [
 			"r_c is teaching m_c how to walk without making a sound.",
-			"r_c is showing m_c how to sneak up on their enemies.",
-			"r_c convinces m_c to help them pull a prank on a Clanmate."
+			"r_c is showing m_c how to sneak up on {PRONOUN/m_c/poss} enemies.",
+			"r_c convinces m_c to help {PRONOUN/r_c/object} pull a prank on a Clanmate.",
+			"m_c is whispering quietly with r_c."
 		],
 		"random_trait_constraint": [
 			"sneaky"
@@ -89,7 +91,8 @@
 	{
 		"id": "trust_de_med3",
 		"interactions": [
-			"r_c is giving m_c advice."
+			"r_c is giving m_c advice.",
+			"r_c is teaching m_c something important."
 		],
 		"random_trait_constraint": [
 			"wise"
@@ -98,7 +101,8 @@
 	{
 		"id": "trust_adult_inc_med1",
 		"interactions": [
-			"m_c is giving advice to r_c."
+			"m_c is giving advice to r_c.",
+			"m_c is looking out for r_c's well-being."
 		],
 		"main_status_constraint": [
 			"elder",
@@ -121,8 +125,10 @@
 	{
 		"id": "trust_adult_inc_med2",
 		"interactions": [
-			"m_c goes to r_c to ask for their wisdom.",
-			"m_c is faced with a tough decision and wonders what r_c would do."
+			"m_c goes to r_c to ask for {PRONOUN/r_c/poss} wisdom.",
+			"m_c is faced with a tough decision and wonders what r_c would do.",
+			"m_c turns to r_c in a time of need.",
+			"m_c is feeling lost and asks r_c for advice on what to do."
 		],
 		"main_status_constraint": [
 			"kitten",
@@ -149,14 +155,18 @@
 		"id": "trust_inc_high1",
 		"intensity": "high",
 		"interactions": [
-			"m_c thinks they can tell r_c something important."
+			"m_c thinks {PRONOUN/m_c/subject} can tell r_c something important.",
+			"m_c feels safe with r_c around.",
+			"m_c knows that the advice r_c gave {PRONOUN/m_c/object} will be helpful."
 		]
 	},
 	{
 		"id": "trust_inc_high2",
 		"intensity": "high",
 		"interactions": [
-			"m_c is letting r_c share their troubles with them, hoping they'll feel better afterwards."
+			"m_c is letting r_c share {PRONOUN/r_c/poss} troubles with {PRONOUN/m_c/object}, hoping {PRONOUN/r_c/subject}'ll feel better afterwards.",
+			"m_c promises to always look out for r_c.",
+			"m_c tells r_c to count on {PRONOUN/m_c/object} in a difficult situation."
 		],
 		"reaction_random_cat": {
 			"trust": "increase"
@@ -166,7 +176,9 @@
 		"id": "trust_inc_high3",
 		"intensity": "high",
 		"interactions": [
-			"m_c tells r_c a secret."
+			"m_c tells r_c a secret.",
+			"m_c confesses something minor to r_c.",
+			"m_c and r_c swap secrets with each other."
 		],
 		"relationship_constraint": [
 			"trust_30"
@@ -195,7 +207,7 @@
 		"id": "trust_star_inc_high1",
 		"intensity": "high",
 		"interactions": [
-			"m_c tells r_c about their last encounter with StarClan."
+			"m_c tells r_c about {PRONOUN/m_c/poss} last encounter with StarClan."
 		],
 		"main_status_constraint": [
 			"medicine cat apprentice",
@@ -242,7 +254,8 @@
 		"id": "trust_med_inc_high1",
 		"interactions": [
 			"m_c tells r_c a trick about a certain herb.",
-			"m_c goes to r_c to ask for their wisdom."
+			"m_c goes to r_c to ask for {PRONOUN/r_c/poss} wisdom.",
+			"m_c asks r_c about a specific treatment method."
 		],
 		"main_status_constraint": [
 			"medicine cat apprentice",
@@ -255,5 +268,16 @@
 		"reaction_random_cat": {
 			"trust": "increase"
 		}
+	},
+	{
+		"id": "trust_med_inc_high2",
+		"interactions": [
+			"m_c observes r_c carefully attending to any cat that needs help.",
+			"m_c feels like {PRONOUN/m_c/subject} can count on r_c to give {PRONOUN/m_c/object} the best treatment possible."
+		],
+		"random_status_constraint": [
+			"medicine cat apprentice",
+			"medicine cat"
+		]
 	}
 ]

@@ -1,17 +1,17 @@
 {
   "general": {
     "body": [
-      "It's sad, the vigil. More so because r_c knows they should care and doesn't, than any grief for m_c.",
-      "r_c is called to m_c's vigil, but doesn't speak at it. They're not sure they'd have anything nice to say.",
-      "They know they're supposed to be distraught, but r_c simply isn't. The bad blood between them outweighs any sibling bond they might have had with m_c.",
-      "Maybe r_c would have mourned m_c, once upon a time. Afterall, they are siblings. But not this time, not now."
+      "It's sad, the vigil. More so, however, because r_c knows {PRONOUN/r_c/subject} should care, but {VERB/r_c/don't/doesn't}, rather than any grief for m_c.",
+      "r_c is called to m_c's vigil, but declines to speak. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} not sure {PRONOUN/r_c/subject}'d have anything nice to say.",
+      "{PRONOUN/r_c/subject/CAP} know {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} supposed to be distraught, but r_c simply isn't. The bad blood between them outweighs any sibling bond {PRONOUN/r_c/subject} might have had with m_c.",
+      "Maybe r_c would have mourned m_c, once upon a time. After all, they are siblings. But not this time, not now."
 
    ],
    "no_body": [
-      "It's sad, the vigil. More so because r_c knows they should care and doesn't, than any grief for m_c.",
-      "r_c is called to m_c's vigil, but doesn't speak at it. They're not sure they'd have anything nice to say.",
-      "They know they're supposed to be distraught, but r_c simply isn't. The bad blood between them outweighs any sibling bond they might have had with m_c.",
-      "Maybe r_c would have mourned m_c, once upon a time. Afterall, they are siblings. But not this time, not now."
+      "It's sad, the vigil. More so, however, because r_c knows {PRONOUN/r_c/subject} should care, but {VERB/r_c/don't/doesn't}, rather than any grief for m_c.",
+      "r_c is called to m_c's vigil, but declines to speak. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} not sure {PRONOUN/r_c/subject}'d have anything nice to say.",
+      "{PRONOUN/r_c/subject/CAP} know {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} supposed to be distraught, but r_c simply isn't. The bad blood between them outweighs any sibling bond {PRONOUN/r_c/subject} might have had with m_c.",
+      "Maybe r_c would have mourned m_c, once upon a time. After all, they are siblings. But not this time, not now."
 
    ]
   },

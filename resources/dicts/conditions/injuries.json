@@ -812,16 +812,14 @@
         "also_got": [],
         "cause_permanent": [
             "lost a leg",
-            "lost their tail",
-            "moss",
-            "dandelion",
-            "poppy"
+            "lost their tail"
         ],
         "herbs": [
             "juniper",
             "ragwort",
             "poppy",
-            "moss"
+            "moss",
+            "dandelion"
         ]
     },
 
@@ -849,12 +847,13 @@
             "blood loss"
         ],
         "cause_permanent": [
+        ],
+        "herbs": [
             "oak_leaves",
             "juniper",
             "ragwort",
             "moss"
-        ],
-        "herbs": []
+        ]
     },
 
     "water in their lungs":{
@@ -1142,7 +1141,7 @@
             "failing eyesight",
             "one bad eye",
             "blind",
-            "loss of balance",
+            "constantly dizzy",
             "partial hearing loss",
             "persistent headaches"
         ],
@@ -1241,9 +1240,9 @@
             "newborn": 3,
             "kitten": 5,
             "adolescent": 25,
-            "young adult": 40,
-            "adult": 40,
-            "senior adult": 30,
+            "young adult": 30,
+            "adult": 30,
+            "senior adult": 25,
             "senior": 10
         },
         "illness_infectiousness": [
@@ -1355,6 +1354,7 @@
             "juniper"
         ]
     },
+
     "severe headache": {
         "duration": 1,
         "severity": "major",
@@ -1381,6 +1381,7 @@
             "juniper"
         ]
     },
+    
     "pregnant": {
         "duration": 2,
         "severity": "major",

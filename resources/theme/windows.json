@@ -1,0 +1,34 @@
+{
+    "#game_over_window": {
+        "prototype": "#window_base_theme"
+    },
+    "#save_check_window": {
+        "prototype": "#window_base_theme"
+    },
+    "#delete_check_window": {
+        "prototype": "#window_base_theme"
+    },
+    "#change_cat_name_window": {
+        "prototype": "#window_base_theme"
+    },
+    "#change_cat_gender_window": {
+        "prototype": "#window_base_theme"
+    },
+	"#relationship_log_window": {
+        "prototype": "#window_base_theme"
+	},
+    "#debug_console": {
+        "prototype": "#window_base_theme"
+    },
+    "#loading_window": {
+        "colours": {
+            "normal_border": "#00000000",
+            "dark_bg": "#00000000"
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "enable_title_bar": "0"
+        }
+    }
+}

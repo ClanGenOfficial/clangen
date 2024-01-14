@@ -1,0 +1,9 @@
+[
+    {
+        "id": "general_lost_newborn_thoughts",
+        "thoughts": [
+            "Squirms because {PRONOUN/m_c/subject} can no longer smell the nursery",
+            "Is frightenly mewling because there is no familar scents around {PRONOUN/m_c/object}"
+        ]
+    }
+]

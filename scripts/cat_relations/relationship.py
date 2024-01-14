@@ -1,8 +1,10 @@
 import random
 from random import choice
+
+from scripts.cat.history import History
 from scripts.event_class import Single_Event
 
-from scripts.utility import get_personality_compatibility
+from scripts.utility import get_personality_compatibility, process_text
 from scripts.game_structure.game_essentials import game
 from scripts.cat_relations.interaction import (
     Single_Interaction, 
@@ -22,6 +24,7 @@ class Relationship():
 
     def __init__(self, cat_from, cat_to, mates=False, family=False, romantic_love=0, platonic_like=0, dislike=0,
                  admiration=0, comfortable=0, jealousy=0, trust=0, log=None) -> None:
+        self.history = History()
         self.cat_from = cat_from
         self.cat_to = cat_to
         self.mates = mates
@@ -55,14 +58,14 @@ class Relationship():
 
     def start_interaction(self) -> None:
         """This function handles the simple interaction of this relationship."""
-        # such interactions are only allowed for living clan members
+        # such interactions are only allowed for living Clan members
         if self.cat_from.dead or self.cat_from.outside or self.cat_from.exiled:
             return
         if self.cat_to.dead or self.cat_to.outside or self.cat_to.exiled:
             return
 
         # update relationship
-        if self.cat_from.mate == self.cat_to.ID:
+        if self.cat_to.ID in self.cat_from.mate:
             self.mates = True
 
         # check if opposite_relationship is here, otherwise creates it
@@ -98,7 +101,8 @@ class Relationship():
             all_interactions = INTERACTION_MASTER_DICT[rel_type][in_de_crease].copy()
             possible_interactions = self.get_relevant_interactions(all_interactions, intensity, biome, season, game_mode)
         else:
-            possible_interactions = all_interactions
+            intensity = None
+            possible_interactions = self.get_relevant_interactions(all_interactions, intensity, biome, season, game_mode)
 
         if len(possible_interactions) <= 0:
             print("ERROR: No interaction with this conditions. ", rel_type, in_de_crease, intensity)
@@ -125,7 +129,8 @@ class Relationship():
 
         self.interaction_affect_relationships(in_de_crease, intensity, rel_type)
         # give cats injuries if the game mode is not classic
-        if len(self.chosen_interaction.get_injuries) > 0 and game_mode != 'classic':
+        if self.chosen_interaction.get_injuries and game_mode != 'classic':
+            injuries = []
             for abbreviations, injury_dict in self.chosen_interaction.get_injuries.items():
                 if "injury_names" not in injury_dict:
                     print(f"ERROR: there are no injury names in the chosen interaction {self.chosen_interaction.id}.")
@@ -137,17 +142,22 @@ class Relationship():
                 
                 for inj in injury_dict["injury_names"]:
                     injured_cat.get_injured(inj, True)
+                    injuries.append(inj)
 
-            injured_cat.possible_scar = self.prepare_text(injury_dict["scar_text"]) if "scar_text" in injury_dict else None
-            injured_cat.possible_death = self.prepare_text(injury_dict["death_text"]) if "death_text" in injury_dict else None
-            if injured_cat.status == "leader":
-                injured_cat.possible_death = self.prepare_text(injury_dict["death_leader_text"]) if "death_leader_text" in injury_dict else None
-        
+                possible_scar = self.adjust_interaction_string(injury_dict["scar_text"]) if "scar_text" in injury_dict else None
+                possible_death = self.adjust_interaction_string(injury_dict["death_text"]) if "death_text" in injury_dict else None
+                if injured_cat.status == "leader":
+                    possible_death = self.adjust_interaction_string(injury_dict["death_leader_text"]) if "death_leader_text" in injury_dict else None
+                
+                if possible_scar or possible_death:
+                    for condition in injuries:
+                        self.history.add_possible_history(injured_cat, condition, scar_text=possible_scar, death_text=possible_death)
+                
         # get any possible interaction string out of this interaction
         interaction_str = choice(self.chosen_interaction.interactions)
 
         # prepare string for display
-        interaction_str = self.prepare_text(interaction_str)
+        interaction_str = self.adjust_interaction_string(interaction_str)
 
         effect = " (neutral effect)"
         if in_de_crease != "neutral" and positive:
@@ -156,13 +166,26 @@ class Relationship():
             effect = f" ({intensity} negative effect)"
 
         interaction_str = interaction_str + effect
-        self.log.append(interaction_str)
+        if self.cat_from.moons == 1:
+            self.log.append(interaction_str + f" - {self.cat_from.name} was {self.cat_from.moons} moon old")
+        else:
+            self.log.append(interaction_str + f" - {self.cat_from.name} was {self.cat_from.moons} moons old")
         relevant_event_tabs = ["relation", "interaction"]
-        if len(self.chosen_interaction.get_injuries) > 0:
+        if self.chosen_interaction.get_injuries:
             relevant_event_tabs.append("health")
         game.cur_events_list.append(Single_Event(
-            interaction_str, relevant_event_tabs, [self.cat_to.ID, self.cat_from.ID]
+            interaction_str, ["relation", "interaction"], [self.cat_to.ID, self.cat_from.ID]
         ))
+
+    def adjust_interaction_string(self, string):
+        ''' Adjusts the string text for viewing '''
+
+        cat_dict = {
+            "m_c": (str(self.cat_from.name), choice(self.cat_from.pronouns)),
+            "r_c": (str(self.cat_to.name), choice(self.cat_to.pronouns))
+        }
+
+        return process_text(string, cat_dict)
 
     def get_amount(self, in_de_crease: str, intensity: str) -> int:
         """Calculates the amount of such an interaction.
@@ -193,10 +216,10 @@ class Relationship():
             amount = amount
         elif compatibility:
             # positive compatibility
-            amount += game.config["relationship"]["compatibility_bonus"]
+            amount += game.config["relationship"]["compatibility_effect"]
         else:
             # negative compatibility
-            amount -= game.config["relationship"]["compatibility_bonus"]
+            amount -= game.config["relationship"]["compatibility_effect"]
         return amount
 
     def interaction_affect_relationships(self, in_de_crease: str, intensity: str, rel_type: str) -> None:
@@ -204,7 +227,7 @@ class Relationship():
 
             Parameters
             ----------
-            in_de_crease : str
+            in_de_crease : list
                 if the relationship value is increasing or decreasing the value
             intensity : str
                 the intensity of the affect
@@ -215,22 +238,23 @@ class Relationship():
             -------
         """
         amount = self.get_amount(in_de_crease, intensity)
+        passive_buff = int(abs(amount/game.config["relationship"]["passive_influence_div"]))
 
         # influence the own relationship
         if rel_type == "romantic":
-            self.complex_romantic(amount)
+            self.complex_romantic(amount, passive_buff)
         elif rel_type == "platonic":
-            self.complex_platonic(amount)
+            self.complex_platonic(amount, passive_buff)
         elif rel_type == "dislike":
-            self.complex_dislike(amount)
+            self.complex_dislike(amount, passive_buff)
         elif rel_type == "admiration":
-            self.complex_admiration(amount)
+            self.complex_admiration(amount, passive_buff)
         elif rel_type == "comfortable":
-            self.complex_comfortable(amount)
+            self.complex_comfortable(amount, passive_buff)
         elif rel_type == "jealousy":
-            self.complex_jealousy(amount)
+            self.complex_jealousy(amount, passive_buff)
         elif rel_type == "trust":
-            self.complex_trust(amount)
+            self.complex_trust(amount, passive_buff)
 
         # influence the opposite relationship
         if self.opposite_relationship is None:
@@ -343,8 +367,8 @@ class Relationship():
 
         # if a romantic relationship is not possible, remove this type, mut only if there are no mates
         # if there already mates (set up by the user for example), don't remove this type
-        mate_from_to = self.cat_from.is_potential_mate(self.cat_to, True)
-        mate_to_from = self.cat_to.is_potential_mate(self.cat_from, True)
+        mate_from_to = self.cat_from.is_potential_mate(self.cat_to, for_love_interest=True)
+        mate_to_from = self.cat_to.is_potential_mate(self.cat_from, for_love_interest=True)
         if (not mate_from_to or not mate_to_from) and not self.mates:
             while "romantic" in types:
                 types.remove("romantic")
@@ -367,7 +391,7 @@ class Relationship():
             season : str
                 current season of the clan
             game_mode : str
-                game mode of the clan
+				game mode of the clan
 
             Returns
             -------
@@ -382,15 +406,15 @@ class Relationship():
             return filtered
 
         for interact in interactions:
-            in_tags = [i for i in interact.biome if i not in _biome]
+            in_tags = list(filter(lambda biome: biome not in _biome, interact.biome))
             if len(in_tags) > 0:
                 continue
 
-            in_tags = [i for i in interact.season if i not in _season]
+            in_tags = list(filter(lambda season: season not in _season, interact.season))
             if len(in_tags) > 0:
                 continue
 
-            if interact.intensity != intensity:
+            if intensity is not None and interact.intensity != intensity:
                 continue
 
             cats_fulfill_conditions = cats_fulfill_single_interaction_constraints(self.cat_from, self.cat_to, interact, game_mode)
@@ -406,78 +430,92 @@ class Relationship():
         return filtered
 
 
-    def prepare_text(self, text: str) -> str:
-        """Prep the text based of the amount of cats and the assigned abbreviations."""
-        text = text.replace("m_c", str(self.cat_from.name))
-        text = text.replace("r_c", str(self.cat_to.name))
-        return text
-
     # ---------------------------------------------------------------------------- #
     #                            complex value addition                            #
     # ---------------------------------------------------------------------------- #
 
-    # How increasing one state influences another directly: (an increase of one state doesn't trigger a chain reaction)
+    # How increasing/decreasing one state influences another directly (an increase of one state doesn't trigger a chain reaction)
     # increase romantic_love -> decreases: dislike | increases: like, comfortable
+    # decrease romantic_love -> decreases: comfortable | increases: -
     # increase like -> decreases: dislike | increases: comfortable
+    # decrease like -> increases: dislike | decreases: comfortable
     # increase dislike -> decreases: romantic_love, like | increases: -
-    # increase admiration -> decreases: - | increases: -
+    # decrease dislike -> increases: like, comfortable | decreases: -
+    # increase admiration -> decreases: - | increases: trust
+    # decrease admiration -> increases: dislike | decreases: trust
     # increase comfortable -> decreases: jealousy, dislike | increases: trust, like
+    # decrease comfortable -> increases: jealousy, dislike | decreases: trust, like
     # increase jealousy -> decreases: - | increases: dislike
-    # increase trust -> decreases: dislike | increases: -
+    # decrease jealousy -> increases: comfortable | decreases: -
+    # increase trust -> decreases: dislike | increases: comfortable
+    # decrease trust -> increases: dislike | decreases: comfortable
+    
 
-    # !! DECREASING ONE STATE DOES'T INFLUENCE OTHERS !!
-
-    def complex_romantic(self, value):
+    def complex_romantic(self, value, buff):
         """Add the value to the romantic type and influence other value types as well."""
         self.romantic_love += value
         if value > 0:
-            buff = game.config["relationship"]["passive_influence"]
             self.platonic_like += buff
             self.comfortable += buff
             self.dislike -= buff
+        if value < 0:
+            self.comfortable -= buff
 
-    def complex_platonic(self, value):
+    def complex_platonic(self, value, buff):
         """Add the value to the platonic type and influence other value types as well."""
         self.platonic_like += value
         if value > 0:
-            buff = game.config["relationship"]["passive_influence"]
             self.comfortable += buff
             self.dislike -= buff
+        if value < 0:
+            self.comfortable -= buff
+            self.dislike += buff
 
-    def complex_dislike(self, value):
+    def complex_dislike(self, value, buff):
         """Add the value to the dislike type and influence other value types as well."""
         self.dislike += value
         if value > 0:
-            buff = game.config["relationship"]["passive_influence"]
             self.romantic_love -= buff
             self.platonic_like -= buff
+        if value < 0:
+            self.platonic_like += buff
+            self.comfortable += buff
 
-    def complex_admiration(self, value):
+    def complex_admiration(self, value, buff):
         """Add the value to the admiration type and influence other value types as well."""
         self.admiration += value
+        if value > 0:
+            self.trust += buff
+        if value < 0:
+            self.trust -= buff
+            self.dislike += buff
 
-    def complex_comfortable(self, value):
+    def complex_comfortable(self, value, buff):
         """Add the value to the comfortable type and influence other value types as well."""
         self.comfortable += value
         if value > 0:
-            buff = game.config["relationship"]["passive_influence"]
             self.trust += buff
             self.platonic_like += buff
             self.dislike -= buff
             self.jealousy -= buff
+        if value < 0:
+            self.trust -= buff
+            self.platonic_like -= buff
+            self.dislike += buff
 
-    def complex_jealousy(self, value):
+    def complex_jealousy(self, value, buff):
         """Add the value to the jealousy type and influence other value types as well."""
         self.jealousy += value
         if value > 0:
-            buff = game.config["relationship"]["passive_influence"]
             self.dislike += buff
+        if value < 0:
+            self.comfortable += buff
 
-    def complex_trust(self, value):
+    def complex_trust(self, value, buff):
         """Add the value to the trust type and influence other value types as well."""
         self.trust += value
         if value > 0:
-            buff = game.config["relationship"]["passive_influence"]
+            self.comfortable += buff
             self.dislike -= buff
 
 

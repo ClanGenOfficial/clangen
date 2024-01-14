@@ -9,6 +9,7 @@ TODO: Docs
   # pylint: enable=line-too-long
 
 from scripts.game_structure.game_essentials import game
+from scripts.cat.skills import SkillPath
 
 
 def medical_cats_condition_fulfilled(all_cats,
@@ -19,38 +20,38 @@ def medical_cats_condition_fulfilled(all_cats,
 
     set give_clanmembers_covered to True to return the int of clanmembers that the meds can treat
     """
+    
     fulfilled = False
-
-    medicine_apprentices = list(
-        filter(
-            lambda c: c.status == 'medicine cat apprentice' and not c.dead and
-            not c.outside and not c.not_working(), all_cats))
-    medicine_cats = list(
-        filter(
-            lambda c: c.status == 'medicine cat' and not c.dead and not c.
-            outside and not c.not_working(), all_cats))
-
+    
+    medical_cats = [i for i in all_cats if not i.dead and not i.outside and not
+                                            i.not_working() and i.status in 
+                                            ["medicine cat", 
+                                             "medicine cat apprentice"]]
+    full_med = [i for i in medical_cats if i.status == "medicine cat"]
+    apprentices = [i for i in medical_cats if i.status == "medicine cat apprentice"]
+    
     total_exp = 0
-    for cat in medicine_cats:
-        total_exp += cat.experience * .003
-    for cat in medicine_apprentices:
-        total_exp += cat.experience * .003
-    good_healer = len([i for i in medicine_cats if i.skill == 'good healer']) * 1.5
-    great_healer = len([i for i in medicine_cats if i.skill == 'great healer']) * 1.75
-    fantastic_healer = len([i for i in medicine_cats if i.skill == 'fantastic healer']) * 2
-    normal_meds = float(
-        len(
-            list(
-                filter(
-                    lambda c: c.skill not in
-                    ['good healer', 'great healer', 'fantastic healer'],
-                    medicine_cats))))
+    for cat in medical_cats:
+        total_exp += cat.experience 
+    total_exp = total_exp * 0.003
+    
+    # Determine the total med number. Med cats with certain skill counts 
+    # as "more" of a med cat.  Only full medicine cat can have their skills have effect
+    total_med_number = len(apprentices) / 2
+    for cat in full_med:
+        if cat.skills.meets_skill_requirement(SkillPath.HEALER, 3):
+            total_med_number += 2
+        elif cat.skills.meets_skill_requirement(SkillPath.HEALER, 2):
+            total_med_number += 1.75
+        elif cat.skills.meets_skill_requirement(SkillPath.HEALER, 2):
+            total_med_number += 1.5
+        else:
+            total_med_number += 1
+        
+    
+    adjust_med_number = total_med_number + total_exp
 
-    total_med_number = good_healer + great_healer + fantastic_healer
-    total_med_number += normal_meds + total_exp + (len(medicine_apprentices) /
-                                                   2)
-
-    can_care_for = int(total_med_number * (amount_per_med + 1))
+    can_care_for = int(adjust_med_number * (amount_per_med + 1))
 
     relevant_cats = list(
         filter(lambda c: not c.dead and not c.outside, all_cats))

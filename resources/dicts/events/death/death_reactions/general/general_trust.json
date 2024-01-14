@@ -1,15 +1,15 @@
 {
   "general": {
     "body": [
-      "r_c will miss m_c, truly. There was no other cat they trusted more and they already miss m_c's steady presence at their side.",
-      "How is r_c supposed to keep going? They thought m_c was always going to be there, was supposed to always be by their side, but now. . .",
-      "It's like losing a tail, or a limb, or their shadow. r_c relied on m_c, trusted them, and contemplating trying to move on from their loss seems impossible."
+      "r_c will miss m_c, truly. There was no other cat {PRONOUN/r_c/subject} trusted more and {PRONOUN/r_c/subject} already {VERB/r_c/miss/misses} m_c's steady presence at {PRONOUN/r_c/poss} side.",
+      "How is r_c supposed to keep going? {PRONOUN/r_c/subject/CAP} thought m_c was always going to be there, was supposed to always be by {PRONOUN/r_c/poss} side, but now. . .",
+      "It's like losing a tail, or a limb, or {PRONOUN/r_c/poss} shadow. r_c relied on m_c, trusted {PRONOUN/m_c/object}, and contemplating moving on from the loss seems impossible."
 
     ],
     "no_body": [
-      "r_c will miss m_c, truly. There was no other cat they trusted more and they already miss m_c's steady presence at their side.",
-      "How is r_c supposed to keep going? They thought m_c was always going to be there, was supposed to always be by their side, but now. . .",
-      "It's like losing a tail, or a limb, or their shadow. r_c relied on m_c, trusted them, and contemplating trying to move on from their loss seems impossible."
+      "r_c will miss m_c, truly. There was no other cat {PRONOUN/r_c/subject} trusted more and {PRONOUN/r_c/subject} already {VERB/r_c/miss/misses} m_c's steady presence at {PRONOUN/r_c/poss} side.",
+      "How is r_c supposed to keep going? {PRONOUN/r_c/subject/CAP} thought m_c was always going to be there, was supposed to always be by {PRONOUN/r_c/poss} side, but now. . .",
+      "It's like losing a tail, or a limb, or {PRONOUN/r_c/poss} shadow. r_c relied on m_c, trusted {PRONOUN/m_c/object}, and contemplating moving on from the loss seems impossible."
     ]
   },
   "adventurous": {

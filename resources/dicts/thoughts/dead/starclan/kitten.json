@@ -1,0 +1,116 @@
+[
+    {
+        "id": "gen_dead_kit",
+        "thoughts": [
+            "Wants to find StarClan cats to play with",
+            "Is imagining what it would be like to be a warrior",
+            "Is imagining what it would be like to be a medicine cat",
+            "Is imagining what it would be like to be a mediator",
+            "Is sad {PRONOUN/m_c/subject} couldn't experience being an apprentice",
+            "Doesn't really understand what being in StarClan means"
+        ]
+    },
+    {
+        "id": "dead_kit_to_dead_other_older",
+        "thoughts": [
+            "Is nagging r_c to play with {PRONOUN/m_c/object}",
+            "Is begging r_c to tell {PRONOUN/m_c/object} stories",
+            "Is following r_c around",
+            "Is sticking closely to r_c",
+            "Is asking r_c uncomfortable questions about life and death"
+        ],
+        "random_living_status": [
+            "starclan"
+        ],
+        "random_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ]
+    },
+    {
+        "id": "dead_kit_to_dead_other_kit",
+        "thoughts": [
+            "Is happy to have r_c to play with",
+            "Is playing hide and seek with r_c"
+        ],
+        "random_living_status": [
+            "starclan"
+        ],
+        "random_age_constraint": [
+            "kitten"
+        ]
+    },
+    {
+        "id": "dead_kit_to_dead_other_newborn",
+        "thoughts": [
+            "Can't wait for r_c to grow up, so they can play together"
+        ],
+        "random_living_status": [
+            "starclan"
+        ],
+        "random_age_constraint": [
+            "newborn"
+        ]
+    },
+    {
+        "id": "dead_kit_to_alive_other_kit",
+        "thoughts": [
+            "Is sad because {PRONOUN/m_c/subject} can't play with r_c"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "random_age_constraint": [
+            "kitten"
+        ]
+    },
+    {
+        "id": "dead_kit_to_alive_parent",
+        "thoughts": [
+            "Is missing r_c",
+            "Wonders if r_c is missing {PRONOUN/m_c/object} too",
+            "Is sad about being apart from r_c"
+        ],
+        "relationship_constraint": [
+            "child/parent"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "dead_kit_to_alive_kit_sibling",
+        "thoughts":[
+            "Wishes {PRONOUN/m_c/subject} could become apprentices with r_c",
+            "Misses playing with r_c",
+            "Hopes that r_c doesn't think that {PRONOUN/m_c/subject} {VERB/m_c/is/are} angry with {PRONOUN/r_c/object}"
+        ],
+        "relationship_constraint": [
+            "siblings"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "random_age_constraint": [
+            "kitten"
+        ]
+    },
+    {
+        "id": "dead_kit_to_dead_kit_sibling",
+        "thoughts": [
+            "Is glad that at least {PRONOUN/m_c/subject} {VERB/m_c/have/has} r_c"
+        ],
+        "relationship_constraint": [
+            "siblings"
+        ],
+        "random_living_status": [
+            "starclan"
+        ],
+        "random_age_constraint": [
+            "kitten"
+        ]
+    }
+]

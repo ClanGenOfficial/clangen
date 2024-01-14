@@ -1,8 +1,5 @@
 import os
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 
 class Single_Interaction():
 
@@ -185,10 +182,12 @@ def rel_fulfill_rel_constraints(relationship, constraint, interaction_id) -> boo
     if "siblings" in constraint and not relationship.cat_from.is_sibling(relationship.cat_to):
         return False
 
-    if "mates" in constraint and not relationship.mates:
+    if "mates" in constraint and (relationship.cat_from.ID not in relationship.cat_to.mate or\
+                                  relationship.cat_to.ID not in relationship.cat_from.mate ):
         return False
 
-    if "not_mates" in constraint and relationship.mates:
+    if "not_mates" in constraint and (relationship.cat_from.ID in relationship.cat_to.mate or\
+                                      relationship.cat_to.ID in relationship.cat_from.mate):
         return False
 
     if "parent/child" in constraint and not relationship.cat_from.is_parent(relationship.cat_to):
@@ -271,21 +270,21 @@ def cats_fulfill_single_interaction_constraints(main_cat, random_cat, interactio
             return False
 
     if len(interaction.main_trait_constraint) >= 1:
-        if main_cat.trait not in interaction.main_trait_constraint:
+        if main_cat.personality.trait not in interaction.main_trait_constraint:
             return False
 
     if len(interaction.random_trait_constraint) >= 1:
-        if random_cat.trait not in interaction.random_trait_constraint:
+        if random_cat.personality.trait not in interaction.random_trait_constraint:
             return False
 
     if len(interaction.main_skill_constraint) >= 1:
-        if main_cat.skill not in interaction.main_skill_constraint:
+        if (main_cat.skills.primary.skill or main_cat.skills.secondary.skill) not in interaction.main_skill_constraint:
             return False
 
     if len(interaction.random_skill_constraint) >= 1:
-        if random_cat.skill not in interaction.random_skill_constraint:
+        if (random_cat.skills.primary.skill or random_cat.skills.secondary.skill) not in interaction.random_skill_constraint:
             return False
-
+        
     if len(interaction.backstory_constraint) >= 1:
         if "m_c" in interaction.backstory_constraint:
             if main_cat.backstory not in interaction.backstory_constraint["m_c"]:
@@ -295,7 +294,7 @@ def cats_fulfill_single_interaction_constraints(main_cat, random_cat, interactio
                 return False
 
     if len(interaction.has_injuries) >= 1:
-        # if there is a injury constraint and the clan is in classic mode, this interact can not be used
+        # if there is a injury constraint and the Clan is in classic mode, this interact can not be used
         if game_mode == "classic":
             return False
 

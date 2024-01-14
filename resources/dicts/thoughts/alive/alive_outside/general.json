@@ -1,0 +1,154 @@
+[
+    {
+        "id": "general_lost_thoughts",
+        "thoughts": [
+            "Desperately tries to find {PRONOUN/m_c/poss} way back",
+            "Misses {PRONOUN/m_c/poss} nest",
+            "Is asking a group of loners if know where {PRONOUN/m_c/poss} Clan is",
+            "Dreamed about finding {PRONOUN/m_c/poss} way home only to wake up alone again",
+            "Finds comfort in {PRONOUN/m_c/poss} solitude",
+            "Takes stock of {PRONOUN/m_c/poss} surroundings",
+            "Wonders if {PRONOUN/m_c/subject} will even find {PRONOUN/m_c/poss} way home",
+            "Replays events in {PRONOUN/m_c/poss} mind, wondering what {PRONOUN/m_c/subject} could have done differently",
+            "Questions if {PRONOUN/m_c/subject} will even find {PRONOUN/m_c/poss} way to StarClan when {PRONOUN/m_c/subject} pass",
+            "Thought {PRONOUN/m_c/subject} saw one of {PRONOUN/m_c/poss} Clanmates, but realized it was just a loner",
+            "Worries {PRONOUN/m_c/poss} Clan thinks {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a runaway traitor",
+            "Wonders how {PRONOUN/m_c/subject} will survive without {PRONOUN/m_c/poss} Clanmates",
+            "Wonders if {PRONOUN/m_c/subject} will ever find {PRONOUN/m_c/poss} way back to c_n",
+            "Is calling the names of {PRONOUN/m_c/poss} Clanmates, hoping someone hears {PRONOUN/m_c/object}",
+            "Wonders if StarClan is still watching over {PRONOUN/m_c/subject} {PRONOUN/m_c/object}",
+            "Wonders if c_n has declared {PRONOUN/m_c/object} dead yet",
+            "Wonders if the Clan is searching for {PRONOUN/m_c/object}",
+            "Thanks a loner who gave {PRONOUN/m_c/object} shelter",
+            "Is shaken by a nightmare that {PRONOUN/m_c/subject} couldn't wake up from",
+            "Wishes {PRONOUN/m_c/subject} {VERB/m_c/were/was} back in camp",
+            "Thinks {PRONOUN/m_c/subject} might've been visited by a StarClan cat",
+            "Thinks {PRONOUN/m_c/subject} caught scent of a c_n patrol",
+            "Wonders if {PRONOUN/m_c/subject} can maintain this life",
+            "Wishes {PRONOUN/m_c/subject} {VERB/m_c/weren't/wasn't} as used to this as {PRONOUN/m_c/subject} {VERB/m_c/are/is}",
+            "Got even more lost than {PRONOUN/m_c/subject} {VERB/m_c/were/was} before",
+            "Is scared that {PRONOUN/m_c/subject} will never be found",
+            "Heard a rumor about a large group of cats in the area",
+            "Is considering becoming a kittypet",
+            "Feels abandoned by StarClan",
+            "Is starting to get used to living alone",
+            "Feels homesick",
+            "Is disturbed by sleeping alone",
+            "Daydreams about returning home",
+            "Feels more lonely than ever",
+            "Regrets everything",
+            "Is about to give up...",
+            "Refuses to give up",
+            "Hesitantly made a deal with a rogue",
+            "Is wandering through the forest",
+            "Is trying to get back to c_n as soon as possible",
+            "Stops to sniff a patch of grass",
+            "Watches the clouds roll by",
+            "Bristles at the alert call of a bird",
+            "Is sneezing"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "mediator apprentice",
+            "medicine cat apprentice",
+            "warrior", 
+            "mediator", 
+            "medicine cat", 
+            "deputy", 
+            "leader", 
+            "elder"
+        ]
+    },
+    {
+        "id": "lost_cats_with_family",
+        "thoughts": [
+            "Wonders how {PRONOUN/m_c/poss} family is doing",
+            "Misses {PRONOUN/m_c/poss} family",
+            "Prays to StarClan that {PRONOUN/m_c/poss} loved ones are safe"
+        ],
+        "relationship_constraint": [
+            "siblings",
+            "parent/child",
+            "child/parent"
+        ],
+        "main_status_constraint": [
+            "any"
+        ]
+    },
+    {
+        "id": "lost_cats_with_siblings",
+        "thoughts": [
+            "Hopes {PRONOUN/m_c/poss} littermates are doing ok"
+        ],
+        "relationship_constraint": [
+            "siblings"
+        ],
+        "main_status_constraint": [
+            "any"
+        ]
+    },
+    {
+        "id": "lost_cats_with_kits",
+        "thoughts": [
+            "Sends a prayer to the stars for the safety of {PRONOUN/m_c/poss} kits"
+        ],
+        "relationship_constraint": [
+            "parent/child"
+        ],
+        "main_status_constraint": [
+            "warrior", 
+            "mediator", 
+            "medicine cat", 
+            "deputy", 
+            "leader", 
+            "elder"
+        ]
+    },
+    {
+        "id": "lost_thoughts_to_random_cat",
+        "thoughts": [
+            "Is missing r_c",
+            "Thought {PRONOUN/m_c/subject} spotted r_c while wandering around earlier"
+        ],
+        "main_status_constraint": [
+           "any"
+        ],
+        "random_status_constraint": [
+            "any"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "lost_thoughts_to_apprentices",
+        "thoughts": [
+            "Wonders who is mentoring the c_n kits that must be apprentices by now"
+        ],
+        "main_status_constraint": [
+            "warrior", 
+            "mediator", 
+            "medicine cat", 
+            "deputy", 
+            "leader", 
+            "elder"
+        ],
+        "random_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    }
+]
+
+
+
+
+
+
+
+
+

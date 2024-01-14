@@ -1,29 +1,24 @@
 import os
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 from copy import deepcopy
 from random import choice
 
-from scripts.utility import change_relationship_values
+from scripts.utility import change_relationship_values, event_text_adjust
 from scripts.game_structure.game_essentials import game
 from scripts.event_class import Single_Event
 from scripts.cat.cats import Cat
 
 class Welcoming_Events():
     """All events which are related to welcome a new cat in the clan."""
-
-    def __init__(self) -> None:
-        pass
     
-    def welcome_cat(self, clan_cat: Cat, new_cat: Cat) -> None:
-        """Checks and triggers the welcome event from the clan cat to the new cat.
+    @staticmethod    
+    def welcome_cat(clan_cat: Cat, new_cat: Cat) -> None:
+        """Checks and triggers the welcome event from the Clan cat to the new cat.
 
             Parameters
             ----------
             clan_cat : Cat
-                the cat clan cat which welcome the new cat
+                the Clan cat which welcome the new cat
             new_cat : Cat
                 new cat which will be welcomed
 
@@ -33,7 +28,7 @@ class Welcoming_Events():
         if new_cat.ID == clan_cat.ID:
             return
 
-		# setup the status as "kay" to use it
+        # setup the status as "key" to use it
         status = clan_cat.status
         if status == "medicine cat" or status == "medicine cat apprentice":
             status = "medicine"
@@ -41,21 +36,20 @@ class Welcoming_Events():
         if status == "mediator apprentice":
             status = "mediator"
 
-		# collect all events
+        # collect all events
         possible_events = deepcopy(GENERAL_WELCOMING)
         if status not in WELCOMING_MASTER_DICT:
             print(f"ERROR: there is no welcoming json for the status {status}")
         else:
             possible_events.extend(WELCOMING_MASTER_DICT[status])
-        filtered_events = self.filter_welcome_interactions(possible_events, new_cat)
+        filtered_events = Welcoming_Events.filter_welcome_interactions(possible_events, new_cat)
 
         # choose which interaction will be displayed
         random_interaction = choice(filtered_events)
         interaction_str = choice(random_interaction.interactions)
 
         # prepare string for display
-        interaction_str = interaction_str.replace("m_c", str(clan_cat.name))
-        interaction_str = interaction_str.replace("r_c", str(new_cat.name))
+        interaction_str = event_text_adjust(Cat, interaction_str, clan_cat, new_cat)
 
         # influence the relationship
         new_to_clan_cat = game.config["new_cat"]["rel_buff"]["new_to_clan_cat"]
@@ -85,10 +79,25 @@ class Welcoming_Events():
 
         # add it to the event list
         game.cur_events_list.append(Single_Event(
-            interaction_str, ["relation", "interaction"], [new_cat.ID, clan_cat.ID]
-        ))
+            interaction_str, ["relation", "interaction"], [new_cat.ID, clan_cat.ID]))
 
-    def filter_welcome_interactions(self, welcome_interactions : list, new_cat: Cat) -> list:
+        # add to relationship logs
+        if new_cat.ID in clan_cat.relationships:
+            if clan_cat.age == 1:
+                clan_cat.relationships[new_cat.ID].log.append(interaction_str + f" - {clan_cat.name} was {clan_cat.moons} moons old")
+            else:
+                clan_cat.relationships[new_cat.ID].log.append(interaction_str + f" - {clan_cat.name} was {clan_cat.moons} moons old")
+
+            new_cat.relationships[clan_cat.ID].link_relationship()
+
+        if clan_cat.ID in new_cat.relationships:
+            if new_cat.age == 1:
+                new_cat.relationships[clan_cat.ID].log.append(interaction_str + f" - {new_cat.name} was {new_cat.moons} moon old")
+            else:
+                new_cat.relationships[clan_cat.ID].log.append(interaction_str + f" - {new_cat.name} was {new_cat.moons} moons old")
+
+    @staticmethod
+    def filter_welcome_interactions(welcome_interactions : list, new_cat: Cat) -> list:
         """Filter welcome events based on states.
     
             Parameters

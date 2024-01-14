@@ -1,79 +1,95 @@
 {
-	"freshkill":{
-		"activate_death": false,
-		"activate_events": false,
-		"start_amount": 60,
-		"auto_warrior_prey": [1,3],
-		"auto_apprentice_prey": [1,2],
-		"condition_increase": 0.5,
-		"event_trigger_factor": 3.5,
-		"additional_prey": 1,
-		"nutrition_malnourished_percentage" : 70,
-		"nutrition_starving_percentage" : 25,
-		"prey_requirement":{
-			"leader": 3,
-			"deputy": 3,
-			"medicine cat": 2,
-			"medicine cat apprentice": 1.5,
-			"mediator apprentice": 1.5,
-			"mediator": 2,
-			"warrior": 3,
-			"apprentice": 1.5,
-			"elder": 1.5,
-			"queen": 4,
-			"kitten": 0.5,
-			"newborn": 0.2
-		},
-		"feeding_order":[
-			"newborn",
-			"kitten",
-			"queen",
-			"elder",
-			"medicine cat",
-			"medicine cat apprentice",
-			"apprentice",
-			"mediator apprentice",
-			"warrior",
-			"mediator",
-			"deputy",
-			"leader"
-		],
-		"hunter_bonus": {"fantastic hunter": 3, "great hunter": 2, "good hunter": 1},
-		"hunter_exp_bonus": {
-			"untrained": 0.1,
-			"trainee": 1,
-			"prepared": 2,
-			"competent": 3,
-			"proficient": 4,
-			"skilled": 5,
-			"expert": 6,
-			"master": 7
-		},
-		"comment": [
-			"activate_deaths - activates the whole system, otherwise nutrition status of the cats doesn't have an effect",
-			"activate_events - activates if events for freshkill pile are triggered or not",
-			"start_amount defines the amount of prey when a new freshkill-pile is made",
-			"The auto parameters are for the prey each moon, each healthy warrior/apprentice will catch an amount of between these two values of prey.",
-			"additional_prey - added amount for hunting patrol, to make it easier",
-			"event_trigger_factor - this number will be used to multiply with the amount of prey the clan needs, if the pile is bigger than this number, prey events will be triggered",
-			"hunter_bonus is the factor which is be used to multiply on a hunting patrol.",
-			"hunter_exp_bonus is the additional prey which will be added on a hunting patrol."
-		]
-	},
 	"relationship":{
 		"in_decrease_value":{
-			"low": 5,
-			"medium": 8,
-			"high": 10
+			"low": 8,
+			"medium": 12,
+			"high": 16
 		},
-		"compatibility_bonus": 3,
-		"passive_influence": 4,
-		"chance_for_neutral": 6,
-		"chance_of_special_group": 4,
-		"chance_romantic_not_mate": 10,
+		"max_interaction": 5,
+		"max_interaction_special": 8,
+		"compatibility_effect": 5,
+		"passive_influence_div": 1.5,
+		"chance_for_neutral": 10,
+		"chance_of_special_group": 8,
+		"chance_romantic_not_mate": 15,
 		"comment":[
 			"chance_for_neutral - how high the chance is to make the interaction of the relationship to a 'neutral' instead of negative or positive",
+			"chance_of_special_group - 1/chance often when a group event is happening not all cats are considered, only a special group, which is defined in group_types.json",
 			"chance_romantic_not_mate - the base chance of an romantic interaction with another cat, when a cat has a mate"
+		]
+	},
+	"mates":{
+		"age_range": 40,
+		"override_same_age_group": false,
+		"chance_fulfilled_condition": 5,
+		"chance_friends_to_lovers": 170,
+		"confession": {
+			"make_confession" : {
+				"romantic": 30,
+				"platonic": 15,
+				"dislike": -15,
+				"admiration": 0,
+				"comfortable": 10,
+				"jealousy": 0,
+				"trust": 0
+			},
+			"accept_confession" : {
+				"romantic": 17,
+				"platonic": 15,
+				"dislike": -10,
+				"admiration": 0,
+				"comfortable": 10,
+				"jealousy": 0,
+				"trust": 0
+			}
+		},
+		"mate_condition": {
+			"romantic": 20,
+			"platonic": 30,
+			"dislike": -10,
+			"admiration": 0,
+			"comfortable": 20,
+			"jealousy": 0,
+			"trust": 0
+		},
+		"platonic_to_romantic": {
+			"romantic": 0,
+			"platonic": 30,
+			"dislike": -15,
+			"admiration": 0,
+			"comfortable": 20,
+			"jealousy": 0,
+			"trust": 0
+		},
+		"poly":{
+			"current_mate_condition": {
+				"romantic": 30,
+				"platonic": 0,
+				"dislike": 0,
+				"admiration": 0,
+				"comfortable": 15,
+				"jealousy": -15,
+				"trust": 25
+			},
+			"mates_to_each_other": {
+				"romantic": 0,
+				"platonic": 15,
+				"dislike": -10,
+				"admiration": 0,
+				"comfortable": 15,
+				"jealousy": -15,
+				"trust": 20
+			}
+		},
+		"comment":[
+			"chance_fulfilled_condition - 1/chance of becoming mates when the conditions are fulfilled",
+			"chance_friends_to_lovers - 1/chance of becoming mates, triggers with friends_to_lover (has to be a high number because many relationships are checked each moon)",
+			"VALUES IN RELATIONSHIP DICT - 0: no condition; positive number: value has to be higher than number; negative number: value has to be lower than number",
+			"confession (make_confession) - if one cat has these feelings for another, they confess (if there are more, the highest romantic will be chosen)",
+			"confession (confess_acceptance) - if these conditions are fulfilled by the opposite cat, they accept, otherwise, they reject.",
+			"conditions for mates - both relationships have to fulfill this condition",
+			"poly (current_mate) - which conditions all current mate relationships has to have towards the main cat + vise versa",
+			"poly (each_other) - which conditions all current mate relationships haves to have towards the new possible mate + vise versa"
 		]
 	},
 	"new_cat": {
@@ -140,8 +156,9 @@
 		"cat_amount_welcoming": 3
 	},
 	"pregnancy": {
-		"primary_chance_mated": 50,
-		"primary_chance_unmated": 110,
+		"birth_cooldown": 6,
+		"primary_chance_mated": 80,
+		"primary_chance_unmated": 130,
 		"random_affair_chance": 50,
 		"unmated_random_affair_chance": 10,
 		"one_kit_possibility": {"young adult": 8, "adult": 9, "senior adult": 10, "senior": 4},
@@ -153,6 +170,8 @@
 		"min_kits": 1,
 		"max_kits": 6,
 		"comment": [
+			"primary mated - 1/chance for kits, relationship and other factors will influence this chance",
+			"primary unmated - 1/chance for kits, relationship and other factors will influence this chance",
 			"The kit number is incremental. It is 1-6 as default so if you change these numbers, you should probably keep this in mind.",
 			"As in, your max kits number should probably be 5 more than the min kits number.",
 			"But that's not required - just makes more sense that way with how the litters are generated."
@@ -165,8 +184,18 @@
 		"base_heterochromia": 120,
 		"direct_inheritance": 15,
 		"wildcard_tortie": 9,
-		"vit_chance": 10,
-		"random_point_chance": 6
+		"vit_chance": 8,
+		"random_point_chance": 5
+	},
+	"cat_name_controls": {
+		"always_name_after_appearance": false,
+		"allow_eye_names": true,
+		"comment": [
+			"Set always_name_after_appearance to true if you always want cats named after the color of their pelt.",
+			"This overrides the chances of it otherwise. If cats can't find a pelt color, they will choose from normal_prefixes",
+			"So as not to cause an error - false by default",
+			"allow_eye_names allows cats to be named after the color of their eyes - true by default"
+		]
 	},
 	"accessory_generation": {
 		"base_acc_chance": 150,
@@ -206,6 +235,10 @@
 			"If you DON'T DO THIS, your game WILL break."
 		]
 	},
+    "cat_sprites": {
+        "sick_sprites": true,
+        "comment": "Set this to false to disable sick sprites."
+    },
 	"patrol_generation": {
 		"classic_difficulty_modifier": 1,
 		"expanded_difficulty_modifier": 2.5,
@@ -213,28 +246,39 @@
 		"win_stat_cat_modifier": 10,
 		"better_stat_modifier": 5,
 		"best_stat_modifier": 10,
-		"fail_stat_cat_modifier": -20,
+		"fail_stat_cat_modifier": -15,
 		"chance_of_romance_patrol": 16,
+		"debug_ensure_patrol_id": null,
 		"comment": [
 			"the Cruel Season difficulty modifier needs to have a space rather than an underscore,",
 			"due to how it's written in the save files. So don't try to 'fix' it."
 		]
 	},
 	"death_related": {
-		"leader_death_chance": 100,
-		"old_age_death_start": 150,
-		"old_age_death_chance": 51,
+		"leader_death_chance": 125,
 		"classic_death_chance": 500,
 		"expanded_death_chance": 350,
-		"cruel season_death_chance": 300
+		"cruel season_death_chance": 300,
+		"war_death_modifier_leader": 95,
+		"war_death_modifier": 250,
+		"base_random_murder_chance": 25,
+		"base_murder_kill_chance": 80,
+		"old_age_death_start": 150,
+		"old_age_death_curve": 4.5,
+		"comment": [
+			"old_age_death_curve is a multiplier that affects the chances of cats dying once they are over old_age_death_start moons.",
+			"Average life expectancy with default old_age_death_start of 150 moons:",
+			"1 = 189 moons, 2 = 178, 3 = 172, 4.5 (default) = 168, 8 = 163, 20 = 158"
+		]
 	},
 	"condition_related": {
 		"expanded_illness_chance": 250,
 		"cruel season_illness_chance": 200,
-		"classic_injury_chance": 250,
-		"expanded_injury_chance": 200,
-		"cruel season_death_chance": 150,
-		"permanent_condition_chance": 20
+		"classic_injury_chance": 450,
+		"expanded_injury_chance": 250,
+		"cruel season_injury_chance": 150,
+		"permanent_condition_chance": 15,
+		"war_injury_modifier": 100
 	},
 	"clan_creation": {
 		"rerolls": 3,
@@ -253,16 +297,27 @@
 	"save_load": {
 		"load_integrity_checks": true
 	},
-
-
-	"lock_season": false, 
-	"comment": "Forces the season to be locked at the clan's starting_season",
-
-
-
+	"sorting": {
+		"sort_dead_by_total_age": true,
+		"sort_rank_by_death": true,
+        "sort_by_rel_total": true,
+		"comment": [
+			"sort_dead_by_total_age - true: sort dead cats by total age (in the order they were born); false: sort dead cats by their age at the time of death.",
+            "sort_rank_by_death - true: when filtering dead cats by rank, list them in the order they died; false: when filtering dead cats by rank, sort dead cats by total age (in the order they were born).",
+            "sort_by_rel_total - true: sort a cat's relationships by the sum of their values; false: they will be sorted in the order they were added."
+		]
+	},
 	"fun": {
+		"april_fools": false,
 		"all_cats_are_newborn": false,
 		"newborns_can_roam": false,
-		"newborns_can_patrol": false
-	}
+		"newborns_can_patrol": false,
+		"always_halloween": false
+	},
+	"theme": {
+		"dark_mode_background": [57, 50, 36],
+		"light_mode_background": [206, 194, 168]
+	},
+	"lock_season": false, 
+	"comment": "Forces the season to be locked at the Clan's starting_season"
 }

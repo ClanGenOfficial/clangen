@@ -1,0 +1,82 @@
+[
+    {
+        "id": "gen_mediator_apprentice",
+        "thoughts": [
+            "Is enjoying learning about mediating",
+            "Is learning how to deal with argumentative Clanmates",
+            "Is learning how to gently guide a cat into accepting a truth they don't like",
+            "Wishes {PRONOUN/m_c/subject} had learned to mediate arguments sooner",
+            "Wants {PRONOUN/m_c/poss} training to be completed already",
+            "Is learning guided breathing techniques",
+            "Is learning how to help others see the bigger picture",
+            "Is helping a cat work through complicated emotions",
+            "Is practicing neutrality",
+            "Is learning how to open channels of communication between two cats",
+            "Is clarifying issues"
+        ]
+    },
+    {
+        "id": "mediator_app_alive_mediator_app",
+        "thoughts": [
+            "Had an argument with another mediator apprentice",
+            "Doesn't agree with r_c's style of mediation",
+            "Is planning a group mediation session with r_c and some troubling cats"
+        ],
+        "random_status_constraint": [
+            "mediator apprentice"
+        ]
+    },
+    {
+        "id": "mediator_app_alive_mediator",
+        "thoughts": [
+            "Is amazed at how well r_c mediated a fight between Clanmates",
+            "Is amazed at how well r_c mediated a territory dispute",
+            "Is amazed at how r_c talked {PRONOUN/r_c/poss} way out of a potential war",
+            "Is asking r_c the best way to calm down an angry cat",
+            "Is asking r_c about new ways to work through problems",
+            "Is following in r_c's pawsteps"
+        ],
+        "random_status_constraint": [
+            "mediator"
+        ]
+    },
+    {
+        "id": "mediator_app_alive_apprentice",
+        "thoughts": [
+            "Successfully solved an argument between {PRONOUN/m_c/poss} denmates",
+            "Tried to solve an argument between {PRONOUN/m_c/poss} denmates but only made it worse",
+            "Helped r_c work through some insecurities",
+            "Helped r_c learn to be more receptive to criticism",
+            "Moved nests around to avoid an argument between the other apprentices"
+        ],
+        "random_status_constraint": [
+            "mediator apprentice",
+            "apprentice",
+            "medicine cat apprentice"
+        ]
+    },
+    {
+        "id": "righteous_mediator_apprentice",
+        "thoughts": [
+            "Was scolded for taking sides in mediating arguments recently",
+            "Is being reminded to be neutral in mediation",
+            "Is having trouble remaining neutral when one cat is clearly in the wrong",
+            "Is struggling between doing the right thing and keeping a secret",
+            "Thinks that doing the right thing is more important than staying completely neutral"
+        ],
+        "main_trait_constraint": [
+            "righteous"
+        ]
+    },
+    {
+        "id": "vengeful_mediator_apprentice",
+        "thoughts": [
+            "Takes the opposite side of a cat that was rude to {PRONOUN/m_c/object}",
+            "Considers letting an argument continue after being so rudely blown off"
+        ],
+        "main_trait_constraint": [
+            "vengeful"
+        ]
+    }
+    
+]

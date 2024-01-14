@@ -1,7 +1,8 @@
 import random
 
 from scripts.cat.cats import Cat
-from scripts.cat.pelts import wild_accessories, plant_accessories, collars, tail_accessories
+from scripts.cat.history import History
+from scripts.cat.pelts import Pelt
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values
 from scripts.game_structure.game_essentials import game
@@ -14,21 +15,22 @@ from scripts.event_class import Single_Event
 class MiscEvents():
     """All events that do not fit in a different category."""
 
-    def __init__(self) -> None:
-        self.event_sums = 0
-        self.had_one_event = False
-        self.generate_events = GenerateEvents()
-        pass
-
-    def handle_misc_events(self, cat, other_cat=None, war=False, enemy_clan=None, alive_kits=False, accessory=False, ceremony=False):
+    @staticmethod
+    def handle_misc_events(cat, other_cat=None, war=False, enemy_clan=None, alive_kits=False, accessory=False, ceremony=False):
         """ 
         This function handles the misc events
         """
         involved_cats = [cat.ID]
-        other_clan = random.choice(game.clan.all_clans)
-        other_clan_name = f'{other_clan.name}Clan'
+        if war:
+            other_clan = enemy_clan
+        else:
+            other_clan = random.choice(game.clan.all_clans)
+        
+        other_clan_name = None
+        if other_clan:
+            other_clan_name = f'{other_clan.name}Clan'
 
-        possible_events = self.generate_events.possible_short_events(cat.status, cat.age, "misc_events")
+        possible_events = GenerateEvents.possible_short_events(cat.status, cat.age, "misc_events")
         acc_checked_events = []
         for event in possible_events:
             if (ceremony and "ceremony" not in event.tags) or (not ceremony and "ceremony" in event.tags):
@@ -37,11 +39,30 @@ class MiscEvents():
             if (not accessory and event.accessories) or (accessory and not event.accessories):
                 continue
 
-            acc_checked_events.append(event)
+            if "other_cat" in event.tags and not other_cat:
+                other_cat = Cat.fetch_cat(random.choice(Cat.all_cats_list))
+                if other_cat.dead or other_cat.outside:
+                    other_cat = None
 
-        final_events = self.generate_events.filter_possible_short_events(acc_checked_events, cat, other_cat, war,
-                                                                   enemy_clan, other_clan,
-                                                                   alive_kits)
+            acc_checked_events.append(event)
+            
+        reveal = False
+        victim = None
+        cat_history = History.get_murders(cat)
+        if cat_history:
+            if "is_murderer" in cat_history:
+                murder_history = cat_history["is_murderer"]
+                for murder in murder_history:
+                    murder_index = murder_history.index(murder)
+                    if murder_history[murder_index]["revealed"] is True:
+                        continue
+                    victim = murder_history[murder_index]["victim"]
+                    reveal = True
+                    break
+
+        #print('misc event', cat.ID)
+        final_events = GenerateEvents.filter_possible_short_events(acc_checked_events, cat, other_cat, war, enemy_clan, other_clan,
+                                                                   alive_kits, murder_reveal=reveal)
 
         # ---------------------------------------------------------------------------- #
         #                                    event                                     #
@@ -52,29 +73,43 @@ class MiscEvents():
             print('ERROR: no misc events available for this cat')
             return
 
-        if "war" in misc_event.tags and other_clan is not None and enemy_clan is not None:
-            other_clan = enemy_clan
-            other_clan_name = other_clan.name + "Clan"
-
         if misc_event.accessories:
-            self.handle_accessories(cat, misc_event.accessories)
+            MiscEvents.handle_accessories(cat, misc_event.accessories)
 
         # let's change some relationship values \o/ check if another cat is mentioned and if they live
         if "other_cat" in misc_event.tags:
             involved_cats.append(other_cat.ID)
-            self.handle_relationship_changes(cat, misc_event, other_cat)
+            MiscEvents.handle_relationship_changes(cat, misc_event, other_cat)
         else:
             other_cat = None
 
         if "rel_down" in misc_event.tags:
-            difference = -5
+            difference = -1
             change_clan_relations(other_clan, difference=difference)
 
         elif "rel_up" in misc_event.tags:
-            difference = 5
+            difference = 1
             change_clan_relations(other_clan, difference=difference)
 
-        event_text = event_text_adjust(Cat, misc_event.event_text, cat, other_cat, other_clan_name)
+        event_text = event_text_adjust(Cat, misc_event.event_text, cat, other_cat, other_clan_name, murder_reveal=reveal, victim=victim)
+        
+        if event_text:
+            # Add event text to the relationship log if two cats are involved
+            if other_cat:
+                pos_rel_event = ["romantic", "platonic", "neg_dislike", "respect", "comfort", "neg_jealousy", "trust"]
+                neg_rel_event = ["neg_romantic", "neg_platonic", "dislike", "neg_respect", "neg_comfort", "jealousy", "neg_trust"]
+                effect = ""
+                if any(tag in misc_event.tags for tag in pos_rel_event):
+                    effect = " (positive effect)"
+                elif any(tag in misc_event.tags for tag in neg_rel_event):
+                    effect = " (negative effect)"
+
+                log_text = event_text + effect
+
+                if cat.moons == 1:
+                    cat.relationships[other_cat.ID].log.append(log_text + f" - {cat.name} was {cat.moons} moon old")
+                else:
+                    cat.relationships[other_cat.ID].log.append(log_text + f" - {cat.name} was {cat.moons} moons old")
 
         types = ["misc"]
         if "other_clan" in misc_event.tags:
@@ -83,9 +118,13 @@ class MiscEvents():
             types.append("ceremony")
         game.cur_events_list.append(Single_Event(event_text, types, involved_cats))
 
-    def handle_relationship_changes(self, cat, death_cause, other_cat):
+        if reveal:
+            History.reveal_murder(cat, other_cat, Cat, victim, murder_index)
 
-        n = 10
+    @staticmethod
+    def handle_relationship_changes(cat, misc_event, other_cat):
+
+        n = 5
         romantic = 0
         platonic = 0
         dislike = 0
@@ -93,44 +132,44 @@ class MiscEvents():
         comfortable = 0
         jealousy = 0
         trust = 0
-        if "rc_to_mc" in death_cause.tags:
+        if "rc_to_mc" in misc_event.tags:
             cat_to = [cat.ID]
             cat_from = [other_cat]
-        elif "mc_to_rc" in death_cause.tags:
+        elif "mc_to_rc" in misc_event.tags:
             cat_to = [other_cat.ID]
             cat_from = [cat]
-        elif "to_both" in death_cause.tags:
+        elif "to_both" in misc_event.tags:
             cat_to = [cat.ID, other_cat.ID]
             cat_from = [other_cat, cat]
         else:
             return
-        if "romantic" in death_cause.tags:
+        if "romantic" in misc_event.tags:
             romantic = n
-        elif "neg_romantic" in death_cause.tags:
+        elif "neg_romantic" in misc_event.tags:
             romantic = -n
-        if "platonic" in death_cause.tags:
+        if "platonic" in misc_event.tags:
             platonic = n
-        elif "neg_platonic" in death_cause.tags:
+        elif "neg_platonic" in misc_event.tags:
             platonic = -n
-        if "dislike" in death_cause.tags:
+        if "dislike" in misc_event.tags:
             dislike = n
-        elif "neg_dislike" in death_cause.tags:
+        elif "neg_dislike" in misc_event.tags:
             dislike = -n
-        if "respect" in death_cause.tags:
+        if "respect" in misc_event.tags:
             admiration = n
-        elif "neg_respect" in death_cause.tags:
+        elif "neg_respect" in misc_event.tags:
             admiration = -n
-        if "comfort" in death_cause.tags:
+        if "comfort" in misc_event.tags:
             comfortable = n
-        elif "neg_comfort" in death_cause.tags:
+        elif "neg_comfort" in misc_event.tags:
             comfortable = -n
-        if "jealousy" in death_cause.tags:
+        if "jealousy" in misc_event.tags:
             jealousy = n
-        elif "neg_jealousy" in death_cause.tags:
+        elif "neg_jealousy" in misc_event.tags:
             jealousy = -n
-        if "trust" in death_cause.tags:
+        if "trust" in misc_event.tags:
             trust = n
-        elif "neg_trust" in death_cause.tags:
+        elif "neg_trust" in misc_event.tags:
             trust = -n
         change_relationship_values(
             cat_to,
@@ -143,23 +182,47 @@ class MiscEvents():
             jealousy,
             trust)
 
-    def handle_accessories(self, cat, possible_accs):
+    @staticmethod
+    def handle_accessories(cat, possible_accs):
         acc_list = []
         if "WILD" in possible_accs:
-            acc_list.extend(wild_accessories)
+            acc_list.extend(Pelt.wild_accessories)
         if "PLANT" in possible_accs:
-            acc_list.extend(plant_accessories)
+            acc_list.extend(Pelt.plant_accessories)
         if "COLLAR" in possible_accs:
-            acc_list.extend(collars)
+            acc_list.extend(Pelt.collars)
 
         for acc in possible_accs:
             if acc not in ["WILD", "PLANT", "COLLAR"]:
                 acc_list.append(acc)
 
-        if ("NOTAIL" or "HALFTAIL") in cat.scars:
-            try:
-                acc_list.remove(acc for acc in tail_accessories)
-            except:
-                print('attempted to remove tail accs from possible acc list, but no tail accs were in the list!')
+        if "NOTAIL" in cat.pelt.scars or "HALFTAIL" in cat.pelt.scars:
+            for acc in Pelt.tail_accessories:
+                try:
+                    acc_list.remove(acc)
+                except ValueError:
+                    print(f'attempted to remove {acc} from possible acc list, but it was not in the list!')
 
-        cat.accessory = random.choice(acc_list)
+
+        cat.pelt.accessory = random.choice(acc_list)
+
+    @staticmethod
+    def handle_murder_self_reveals(cat):
+        ''' Handles reveals for murders where the murderer reveals themself '''
+        if cat.personality.lawfulness > 8:
+            murderer_guilty = random.choice([True, False])
+        chance_of_reveal = 120
+        if murderer_guilty:
+            chance_of_reveal = chance_of_reveal - 100
+
+        # testing purposes
+        chance_of_reveal = 1
+
+        chance_roll = random.randint(0, chance_of_reveal)
+        print(chance_roll)
+
+        return bool(chance_roll = 1)
+
+    @staticmethod
+    def handle_murder_witness_reveals(cat, other_cat):
+        ''' Handles reveals where the witness reveals the murderer '''

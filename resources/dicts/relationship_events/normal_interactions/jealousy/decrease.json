@@ -9,7 +9,7 @@
 	{
 		"id": "jel_de_med1",
 		"interactions": [
-			"m_c had r_c surprise them with something nice."
+			"m_c surprises r_c with something nice."
 		]
 	},
 	{
@@ -24,7 +24,7 @@
 	{
 		"id": "jel_de_med3",
 		"interactions": [
-			"m_c always thought r_c had it all figured out, so they're surprised when r_c asks for help."
+			"m_c always thought r_c had it all figured out, so {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} surprised when r_c asks for help."
 		],
 		"main_status_constraint": [
 			"kitten",
@@ -69,7 +69,7 @@
 		"id": "jealousy_app_de_med2",
 		"interactions": [
 			"m_c has been listening to r_c talk about how difficult herb memorization is.",
-			"m_c helps r_c wash mouse bile off of their paws."
+			"m_c helps r_c wash mouse bile off of {PRONOUN/r_c/poss} paws."
 		],
 		"main_status_constraint": [
 			"apprentice",
@@ -90,14 +90,14 @@
 		"id": "jel_de_high1",
 		"intensity": "high",
 		"interactions": [
-			"m_c is really surprised that r_c's life isn't as easy as they thought it was."
+			"m_c is really surprised that r_c's life isn't as easy as {PRONOUN/m_c/subject} thought it was."
 		]
 	},
 	{
 		"id": "jel_de_high2",
 		"intensity": "high",
 		"interactions": [
-			"m_c sees that r_c's piece of prey looks tastier and asks if they'd like to swap. They agree happily, saying they like that one better."
+			"m_c sees that r_c's piece of prey looks tastier and asks if {PRONOUN/r_c/subject}'d like to swap. {PRONOUN/r_c/subject/CAP} {VERB/r_c/agree/agrees} happily, saying {PRONOUN/r_c/subject} {VERB/r_c/like/likes} that one better."
 		],
 		"reaction_random_cat": {
 			"jealousy": "decrease"

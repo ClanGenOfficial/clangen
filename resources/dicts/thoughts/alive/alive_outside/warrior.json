@@ -1,0 +1,23 @@
+[
+    {
+        "id": "lost_warrior_thoughts",
+        "thoughts": [
+            "Hopes that the Clan's kits are doing well",
+            "Misses the warmth of the warriors' den",
+            "Hopes {PRONOUN/m_c/poss} friends from c_n are doing okay",
+            "Dreams about hunting for {PRONOUN/m_c/poss} Clan"
+        ]
+    },
+    {
+        "id": "lost_warrior_to_apprentices",
+        "thoughts": [
+            "Wonders if the apprentices of the Clan are now warriors"
+        ],
+        "random_status_constraint": [
+            "apprentices"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    }
+]
