@@ -5,7 +5,7 @@
 		"interactions": [
 			"m_c overheard a joke from r_c {PRONOUN/m_c/subject} didn't get.",
 			"m_c tries to have a conversation with r_c but it ends up awkward when neither of them speak up.",
-			"m_c caught r_c rolling {PRONOUN/r_c/subject} eyes after m_c asked for help."
+			"m_c caught r_c rolling {PRONOUN/r_c/poss} eyes after m_c asked for help."
 		]
 	},
 	{
