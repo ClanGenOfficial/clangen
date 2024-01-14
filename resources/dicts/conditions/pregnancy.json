@@ -3,19 +3,37 @@
     "m_c announced that {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits."
   ],
   "litter_guess": [
-    "m_c thinks {PRONOUN/m_c/subject}'ll have a small litter.",
-    "m_c thinks {PRONOUN/m_c/subject}'ll have a large litter.",
-    "m_c is unsure how many kits {PRONOUN/m_c/subject}'ll have."
+    "m_c hopes the litter will be small - {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} overwhelmed at the idea of a big litter.",
+    "m_c is hoping for a big litter!",
+    "m_c is unsure how many kits {PRONOUN/m_c/subject}'ll have.",
+    "m_c wonders how much of {PRONOUN/m_c/poss} expanding belly is kits and how much is pregnancy weight.",
+    "m_c has no idea how big {PRONOUN/m_c/subject} should craft the nest in the nursery {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} creating - but it needs the softest materials, the best moss.",
+    "m_c feels heavy and bloated, {PRONOUN/m_c/poss} joints hurting with the extra weight of the litter held snugly between. Very snugly. Uncomfortably snugly.", 
+    "m_c wonders how many names {PRONOUN/m_c/subject} should think about, for {PRONOUN/m_c/poss} kits. {PRONOUN/m_c/subject/CAP} have no idea how many {PRONOUN/m_c/subject}'ll need, and what if {PRONOUN/m_c/subject} meet {PRONOUN/m_c/poss} litter for the first time and one of the names just doesn't fit?!",
+    "m_c feels like {PRONOUN/m_c/poss} entire existence is one long trip between water and the dirtplace, again and again. This pregnancy is so much harder than {PRONOUN/m_c/subject} were expecting.",
+    "m_c curls up, purring at {PRONOUN/m_c/poss} belly, hoping the unknown number of kittens within can hear {PRONOUN/m_c/poss} love for them - {PRONOUN/m_c/subject} can't wait to meet them." 
   ],
 
 
   "major_severity": [
     " {PRONOUN/m_c/subject/CAP} {VERB/m_c/decide/decides} to move into the nursery in preparation for {PRONOUN/m_c/poss} soon-to-come kits.",
-    " {PRONOUN/m_c/subject/CAP} {VERB/m_c/don't/doesn't} believe {PRONOUN/m_c/subject} can efficiently perform {PRONOUN/m_c/poss} duties while expecting kits and {VERB/m_c/decide/decides} to move into the nursery."
+    " {PRONOUN/m_c/subject/CAP} {VERB/m_c/don't/doesn't} believe {PRONOUN/m_c/subject} can efficiently perform {PRONOUN/m_c/poss} duties while expecting kits and {VERB/m_c/decide/decides} to move into the nursery.",
+    " Time to move to the nursery and relax before the new arrivals make their appearance.",
+    " When one waddles more than pads around camp, one has to accept that one should move into the nursery.",
+    " {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} been moved into the nursery, against {PRONOUN/m_c/poss} grumbling protests.",
+    " Pregnancy sucks. m_c gives in, and moves into the nursery.",
+    " It's time to settle into the nursery, and make sure everything is perfectly prepared.",
+    " {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} scolded into taking up a nest in the nursery, despite {PRONOUN/m_c/poss} best protests.",
+    " {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} keen to move into the nursery quickly, as though by doing so {PRONOUN/m_c/poss} litter will get the message and appear sooner."
   ],
   "minor_severity": [
     " {PRONOUN/m_c/subject/CAP} won't be moving into the nursery just yet.",
-    " {PRONOUN/m_c/subject/CAP} {VERB/m_c/choose/chooses} to continue {PRONOUN/m_c/poss} duties as usual for now."
+    " {PRONOUN/m_c/subject/CAP} {VERB/m_c/choose/chooses} to continue {PRONOUN/m_c/poss} duties as usual for now.",
+    " {PRONOUN/m_c/subject/CAP} snap that this doesn't make {PRONOUN/m_c/object} an invalid, and {PRONOUN/m_c/subject} aren't moving {PRONOUN/m_c/poss} nest yet!",
+    " {PRONOUN/m_c/subject/CAP} {VERB/m_c/aren't/isn't} keen on being confined to the nursery just yet.",
+    " Life goes on for now - {PRONOUN/m_c/subject}'ll move into the nursery, but not this moon.",
+    " {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} still full of energy, and moving to the nursery would feel stifling - maybe next moon.",
+    " Surely it's not time to move into the nursery, though."
   ],
   "comment": [
     "both the minor and major severity strings will appear in conjunction with either a litter guess or an announcement. Write them accordingly!",
