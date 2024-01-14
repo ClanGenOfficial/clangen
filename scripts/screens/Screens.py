@@ -23,7 +23,7 @@ class Screens():
             "",
             visible=False,
             manager=MANAGER,
-            object_id="#events_menu_button"
+            object_id="#events_menu_button",
         ),
         "camp_screen": UIImageButton(
             scale(pygame.Rect((656, 120), (116, 60))),
@@ -102,6 +102,84 @@ class Screens():
         game.switch_screens = True
         game.rpc.update_rpc.set()
         
+
+    def recreate_menu(self):
+        """
+        This is being used only in the cat list screen, for the express purpose of ensuring the bg images do not
+        cover up the menu.  if pygame_gui ever gets updated to allow UIImages a starting_height parameter,
+        then this will no longer be needed.
+        """
+        for name, button in self.menu_buttons.items():
+            button.kill()
+
+        self.menu_buttons = {
+            "events_screen": UIImageButton(
+                scale(pygame.Rect((492, 120), (164, 60))),
+                "",
+                visible=False,
+                manager=MANAGER,
+                object_id="#events_menu_button",
+            ),
+            "camp_screen": UIImageButton(
+                scale(pygame.Rect((656, 120), (116, 60))),
+                "",
+                visible=False,
+                manager=MANAGER,
+                object_id="#camp_menu_button"),
+            "catlist_screen": UIImageButton(
+                scale(pygame.Rect((772, 120), (176, 60))),
+                "",
+                visible=False,
+                object_id="#catlist_menu_button"),
+            "patrol_screen": UIImageButton(
+                scale(pygame.Rect((948, 120), (160, 60))),
+                "",
+                visible=False,
+                manager=MANAGER,
+                object_id="#patrol_menu_button"),
+            "main_menu": UIImageButton(
+                scale(pygame.Rect((50, 50), (306, 60))),
+                "",
+                visible=False,
+                manager=MANAGER,
+                object_id="#main_menu_button"),
+            "allegiances": UIImageButton(
+                scale(pygame.Rect((1314, 50), (236, 60))),
+                "",
+                visible=False,
+                manager=MANAGER,
+                object_id="#allegiances_button"),
+            "clan_settings": UIImageButton(
+                scale(pygame.Rect((1380, 120), (170, 60))),
+                "",
+                visible=False,
+                manager=MANAGER,
+                object_id="#clan_settings_button"),
+            "name_background": pygame_gui.elements.UIImage(
+                scale(pygame.Rect((610, 50), (380, 70))),
+                pygame.transform.scale(
+                    image_cache.load_image(
+                        "resources/images/clan_name_bg.png").convert_alpha(),
+                    (380, 70)),
+                visible=False,
+                manager=MANAGER),
+            "moons_n_seasons": pygame_gui.elements.UIScrollingContainer(
+                scale(pygame.Rect((50, 120), (306, 150))),
+                visible=False,
+                manager=MANAGER),
+            "moons_n_seasons_arrow": UIImageButton(
+                scale(pygame.Rect((349, 161), (44, 68))),
+                "",
+                visible=False,
+                manager=MANAGER,
+                object_id="#arrow_mns_button"),
+            "heading": pygame_gui.elements.UITextBox(
+                "",
+                scale(pygame.Rect((620, 54), (360, 70))),
+                visible=False,
+                manager=MANAGER,
+                object_id="#text_box_34_horizcenter_light")
+        }
 
     def __init__(self, name=None):
         self.name = name

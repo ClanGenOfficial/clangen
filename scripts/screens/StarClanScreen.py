@@ -2,7 +2,6 @@ import pygame
 from math import ceil
 import pygame_gui
 
-
 from .Screens import Screens
 from scripts.cat.cats import Cat
 from scripts.game_structure.image_button import UISpriteButton, UIImageButton
@@ -36,10 +35,12 @@ class StarClanScreen(Screens):
         self.starclan_bg = pygame.transform.scale(
             pygame.image.load("resources/images/starclanbg.png").convert(),
             (screen_x, screen_y))
-        self.search_bar_image = pygame.transform.scale(pygame.image.load("resources/images/search_bar.png").convert_alpha(),
-                                        (456 / 1600 * screen_x, 68 / 1400 * screen_y))
+        self.search_bar_image = pygame.transform.scale(
+            pygame.image.load("resources/images/search_bar.png").convert_alpha(),
+            (880, 248))
         self.clan_name_bg = pygame.transform.scale(
-            image_cache.load_image("resources/images/clan_name_bg.png").convert_alpha(), (380, 70))
+            image_cache.load_image("resources/images/clan_name_bg.png").convert_alpha(),
+            (380, 70))
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -136,7 +137,7 @@ class StarClanScreen(Screens):
                 self.change_screen('profile screen')
             else:
                 self.menu_button_pressed(event)
-        
+
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
             if self.search_bar.is_focused:
                 return
@@ -175,7 +176,7 @@ class StarClanScreen(Screens):
     def get_dead_cats(self):
         self.dead_cats = [game.clan.instructor] if not game.clan.instructor.df else []
         for the_cat in Cat.all_cats_list:
-            if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.outside and not the_cat.df and\
+            if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.outside and not the_cat.df and \
                     not the_cat.faded:
                 self.dead_cats.append(the_cat)
 
@@ -196,9 +197,9 @@ class StarClanScreen(Screens):
                                                 object_id="#dark_forest_button"
                                                 , manager=MANAGER)
         self.to_living_button = UIImageButton(scale(pygame.Rect((560, 270), (134, 68))), "",
-                                                object_id="#to_living_button", manager=MANAGER,
-                                                tool_tip_text='view living cats')
-        self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1190), (68, 68))), "", 
+                                              object_id="#to_living_button", manager=MANAGER,
+                                              tool_tip_text='view living cats')
+        self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1190), (68, 68))), "",
                                               object_id="#arrow_right_button", manager=MANAGER)
         self.previous_page_button = UIImageButton(scale(pygame.Rect((620, 1190), (68, 68))), "",
                                                   object_id="#arrow_left_button", manager=MANAGER)
@@ -322,23 +323,22 @@ class StarClanScreen(Screens):
         pos_y = 0
         if self.current_listed_cats:
             for cat in self.chunks(self.current_listed_cats, 20)[self.list_page - 1]:
-                #update_sprite(cat)
-                
+                # update_sprite(cat)
+
                 if game.clan.clan_settings["show fav"] and cat.favourite:
-                    
                     _temp = pygame.transform.scale(
-                            pygame.image.load(
-                                f"resources/images/fav_marker.png").convert_alpha(),
-                            (100, 100))
-                    
+                        pygame.image.load(
+                            f"resources/images/fav_marker.png").convert_alpha(),
+                        (100, 100))
+
                     _temp.set_alpha(150)
-                    
+
                     self.display_cats.append(
                         pygame_gui.elements.UIImage(
                             scale(pygame.Rect((260 + pos_x, 360 + pos_y), (100, 100))),
                             _temp))
                     self.display_cats[-1].disable()
-                
+
                 self.display_cats.append(
                     UISpriteButton(scale(pygame.Rect
                                          ((260 + pos_x, 360 + pos_y), (100, 100))),
@@ -349,7 +349,10 @@ class StarClanScreen(Screens):
                 name = str(cat.name)
                 short_name = shorten_text_to_fit(name, 220, 30)
 
-                self.cat_names.append(pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))), short_name, object_id="#text_box_30_horizcenter_light", manager=MANAGER))
+                self.cat_names.append(
+                    pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))),
+                                                         short_name, object_id="#text_box_30_horizcenter_light",
+                                                         manager=MANAGER))
                 pos_x += 240
                 if pos_x >= 1200:
                     pos_x = 0
@@ -366,7 +369,7 @@ class StarClanScreen(Screens):
 
         screen.blit(bg, (0, 0))
 
-        screen.blit(self.search_bar_image, (696 / 1600 * screen_x, 270/ 1400 * screen_y))
+        screen.blit(self.search_bar_image, (696 / 1600 * screen_x, 270 / 1400 * screen_y))
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
