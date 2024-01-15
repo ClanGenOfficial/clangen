@@ -19,16 +19,18 @@ class ListScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.filter_options_visible = False
+        self.group_options_visible = False
+        self.death_status = "living"
+        self.current_group = "clan"
+        self.full_cat_list = []
+
         self.bg = None
         self.df_button = None
         self.ur_button = None
         self.sc_button = None
         self.show_living_button = None
         self.search_bar_image = None
-        self.filter_options_visible = False
-        self.group_options_visible = False
-        self.death_status = "living"
-        self.current_group = "clan"
         self.cotc_button = None
         self.choose_group_button = None
         self.show_dead_button = None
@@ -48,7 +50,6 @@ class ListScreen(Screens):
         self.your_clan_button = None
         self.to_dead_button = None
         self.filter_container = None
-        self.full_cat_list = []
         self.all_pages = None
         self.current_listed_cats = None
 
@@ -261,6 +262,7 @@ class ListScreen(Screens):
                                               , manager=MANAGER)
         self.previous_page_button = UIImageButton(scale(pygame.Rect((620, 1190), (68, 68))), "",
                                                   object_id="#arrow_left_button", manager=MANAGER)
+
         self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1190), (220, 60))),
                                                          object_id=get_text_box_theme("#text_box_30_horizcenter")
                                                          , manager=MANAGER)  # Text will be filled in later

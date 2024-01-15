@@ -94,8 +94,7 @@ class Screens():
         # self.exit_screen()
         game.last_screen_forupdate = self.name
         # This keeps track of the last list-like screen for the back button on cat profiles
-        if self.name in ['camp screen', 'list screen', 'starclan screen', 'dark forest screen', 'events screen',
-                         'med den screen']:
+        if self.name in ['camp screen', 'list screen', 'events screen', 'med den screen']:
             game.last_screen_forProfile = self.name
 
         if self.name not in ['list screen', 'profile screen']:
