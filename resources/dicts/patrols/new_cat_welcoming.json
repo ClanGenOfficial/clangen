@@ -10,7 +10,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol finds a loner who is interested in joining the Clan. They banter with the cat a bit, making {PRONOUN/n_c:0/object} feel more welcome.",
+        "intro_text": "Your patrol finds a loner who is interested in joining the Clan. They banter with the cat a bit, making them feel more welcome.",
         "decline_text": "Your patrol decides to leave the loner be.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -71,7 +71,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Your patrol approaches the loner and tells {PRONOUN/n_c:0/object} firmly that newcomers aren't being taken in right now. The loner seems disappointed, but leaves anyway.",
+                "text": "Your patrol approaches the loner and tells them firmly that newcomers aren't being taken in right now. The loner seems disappointed, but leaves anyway.",
                 "exp": 10,
                 "weight": 20,
                 "outsider_rep": -2
@@ -89,7 +89,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "p_l finds a loner who is interested in joining the Clan. {PRONOUN/p_l/subject/CAP} {VERB/p_l/banter/banters} with the cat a bit, making {PRONOUN/n_c:0/object} feel more welcome.",
+        "intro_text": "p_l finds a loner who is interested in joining the Clan. {PRONOUN/p_l/subject/CAP} {VERB/p_l/banter/banters} with the cat a bit, making them feel more welcome.",
         "decline_text": "p_l decides to leave the loner be.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -150,7 +150,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "p_l approaches the loner and tells {PRONOUN/n_c:0/object} firmly that newcomers aren't being taken in right now. The loner seems disappointed, but leaves anyway.",
+                "text": "p_l approaches the loner and tells themfirmly that newcomers aren't being taken in right now. The loner seems disappointed, but leaves anyway.",
                 "exp": 10,
                 "weight": 20,
                 "outsider_rep": -2
@@ -168,7 +168,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol finds a kittypet who is interested in joining the Clan. They banter with the cat a bit, making {PRONOUN/n_c:0/object} feel more welcome.",
+        "intro_text": "Your patrol finds a kittypet who is interested in joining the Clan. They banter with the cat a bit, making them feel more welcome.",
         "decline_text": "Your patrol decides to leave the kittypet be.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -229,7 +229,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Your patrol approaches the kittypet and tells {PRONOUN/n_c:0/object} firmly that newcomers aren't being taken in right now. The kittypet seems disappointed, but leaves anyway.",
+                "text": "Your patrol approaches the kittypet and tells them firmly that newcomers aren't being taken in right now. The kittypet seems disappointed, but leaves anyway.",
                 "exp": 10,
                 "weight": 20,
                 "outsider_rep": -2
@@ -247,7 +247,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "p_l finds a kittypet who is interested in joining the Clan. {PRONOUN/p_l/subject/CAP} {VERB/p_l/banter/banters} with the cat a bit, making {PRONOUN/n_c:0/object} feel more welcome.",
+        "intro_text": "p_l finds a kittypet who is interested in joining the Clan. {PRONOUN/p_l/subject/CAP} {VERB/p_l/banter/banters} with the cat a bit, making them feel more welcome.",
         "decline_text": "p_l decides to leave the kittypet be.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -308,7 +308,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "p_l approaches the kittypet and tells {PRONOUN/p_l/object} firmly that newcomers aren't being taken in right now. The kittypet seems disappointed, but leaves anyway.",
+                "text": "p_l approaches the kittypet and tells them firmly that newcomers aren't being taken in right now. The kittypet seems disappointed, but leaves anyway.",
                 "exp": 10,
                 "weight": 20,
                 "outsider_rep": -2
@@ -349,7 +349,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "As r_c inspects the cat, {PRONOUN/r_c/subject} {VERB/r_c/find/finds} that {PRONOUN/n_c:0/subject} are already hunting with {PRONOUN/n_c:0/poss} ancestors. The patrol takes a moment to say a prayer for the cat and bury {PRONOUN/n_c:0/object}.",
+                "text": "As r_c inspects the cat, {PRONOUN/r_c/subject} {VERB/r_c/find/finds} that they are already hunting with their ancestors. The patrol takes a moment to say a prayer for the cat and bury them.",
                 "exp": 0,
                 "weight": 20,
                 "outsider_rep": 0
@@ -412,7 +412,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "As p_l inspects the cat, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} that {PRONOUN/n_c:0/subject} are already hunting with {PRONOUN/n_c:0/poss} ancestors. {PRONOUN/p_l/subject/CAP} {VERB/p_l/take/takes} a moment to say a prayer for the cat and bury {PRONOUN/n_c:0/object}.",
+                "text": "As p_l inspects the cat, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} that they are already hunting with their ancestors. {PRONOUN/p_l/subject/CAP} {VERB/p_l/take/takes} a moment to say a prayer for the cat and bury them.",
                 "exp": 0,
                 "weight": 20,
                 "outsider_rep": 0
@@ -818,7 +818,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "r_c finds an abandoned kit whose parents are nowhere to be found.",
-        "decline_text": "The patrol goes to approach when the missing queen appears, sliding out {PRONOUN/n_c:0/poss} claws in defense of {PRONOUN/n_c:0/poss} baby. Nevermind!",
+        "decline_text": "The patrol goes to approach when the missing queen appears, sliding out their claws in defense of their baby. Nevermind!",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -882,7 +882,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "p_l finds an abandoned kit whose parents are nowhere to be found.",
-        "decline_text": "p_l goes to approach when the missing queen appears, sliding out {PRONOUN/n_c:0/poss} claws in defense of {PRONOUN/n_c:0/poss} baby. Nevermind!",
+        "decline_text": "p_l goes to approach when the missing queen appears, sliding out their claws in defense of their baby. Nevermind!",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -945,8 +945,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "r_c finds a loner who offers {PRONOUN/n_c:0/poss} healing skills in exchange for shelter.",
-        "decline_text": "Your patrol politely declines {PRONOUN/n_c:0/poss} offer.",
+        "intro_text": "r_c finds a loner who offers their healing skills in exchange for shelter.",
+        "decline_text": "Your patrol politely declines their offer.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -998,7 +998,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "The patrol says that they can't take on another cat right now and tries to direct the loner somewhere else, but the loner hisses and says that {PRONOUN/n_c:0/subject} can find their own way.",
+                "text": "The patrol says that they can't take on another cat right now and tries to direct the loner somewhere else, but the loner hisses and says that they can find their own way.",
                 "exp": 0,
                 "weight": 20,
                 "outsider_rep": -1
@@ -1024,8 +1024,8 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "p_l finds a loner who offers {PRONOUN/n_c:0/poss} healing skills in exchange for shelter.",
-        "decline_text": "p_l politely declines {PRONOUN/n_c:0/poss} offer.",
+        "intro_text": "p_l finds a loner who offers their healing skills in exchange for shelter.",
+        "decline_text": "p_l politely declines their offer.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1077,7 +1077,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "p_l says that c_n can't take on another cat right now and tries to direct the loner somewhere else, but the loner hisses and says that {PRONOUN/n_c:0/poss} can find their own way.",
+                "text": "p_l says that c_n can't take on another cat right now and tries to direct the loner somewhere else, but the loner hisses and says that they can find their own way.",
                 "exp": 0,
                 "weight": 20,
                 "outsider_rep": -1
@@ -1154,7 +1154,7 @@
                 ]
             },
             {
-                "text": "The patrol jumps into action and chases the dog off without much difficulty. A group of cats is much different than a single one. However, the distressed loner seems to think that {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} a threat and takes a swipe at r_c before running off.",
+                "text": "The patrol jumps into action and chases the dog off without much difficulty. A group of cats is much different than a single one. However, the distressed loner seems to think that they're a threat and takes a swipe at r_c before running off.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1185,7 +1185,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Your patrol watches as the loner climbs up a spindly tree to escape the dog, and then promptly proceed to chase the dog out of the territory. On their way back, they advise the loner that this is a dangerous area and maybe {PRONOUN/n_c:0/subject} shouldn't return.",
+                "text": "Your patrol watches as the loner climbs up a spindly tree to escape the dog, and then promptly proceed to chase the dog out of the territory. On their way back, they advise the loner that this is a dangerous area and maybe they shouldn't return.",
                 "exp": 10,
                 "weight": 20,
                 "outsider_rep": -2
@@ -1294,7 +1294,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "A loner and {PRONOUN/n_c:0/poss} kits emerge from the bush, but p_l shakes {PRONOUN/p_l/poss} head, and {VERB/p_l/tell/tells} the loner {PRONOUN/p_l/subject} meant it when {PRONOUN/p_l/subject} said {PRONOUN/p_l/subject} didn't want to see them again. The loner hisses and scratches at p_l. Rumors start at camp over what p_l said to the loner.",
+                "text": "A loner and their kits emerge from the bush, but p_l shakes {PRONOUN/p_l/poss} head, and {VERB/p_l/tell/tells} the loner {PRONOUN/p_l/subject} meant it when {PRONOUN/p_l/subject} said {PRONOUN/p_l/subject} didn't want to see them again. The loner hisses and scratches at p_l. Rumors start at camp over what p_l said to the loner.",
                 "exp": 0,
                 "weight": 20,
                 "outsider_rep": -1
@@ -1302,7 +1302,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "A loner and {PRONOUN/n_c:0/poss} kits emerge from the bush, but p_l shakes {PRONOUN/p_l/poss} head, and {VERB/p_l/inform/informs} {PRONOUN/n_c:0/object} there's no room in c_n.",
+                "text": "A loner and their kits emerge from the bush, but p_l shakes {PRONOUN/p_l/poss} head, and {VERB/p_l/inform/informs} them there's no room in c_n.",
                 "exp": 10,
                 "weight": 20,
                 "outsider_rep": -2
@@ -1549,7 +1549,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "p_l begrudgingly follows the sound, only to find the bodies of an unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, {PRONOUN/p_l/subject} {VERB/n_c:0/return/returns} home, {PRONOUN/p_l/poss} mind clouded.",
+                "text": "p_l begrudgingly follows the sound, only to find the bodies of an unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, {PRONOUN/p_l/subject} {VERB/p_l/return/returns} home, {PRONOUN/p_l/poss} mind clouded.",
                 "exp": 0,
                 "weight": 20,
                 "outsider_rep": -1
@@ -2065,7 +2065,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "The patrol follows the noise and comes upon a kittypet that's sniffing around. The kittypet quickly begins a story about how {PRONOUN/n_c:0/subject}{VERB/n_c:0/'ve/'s} been training for <i>days</i> now and they're finally ready to join c_n. p_l laughs and gets swatted by the angry kittypet. Embarrassed, the patrol goes home.",
+                "text": "The patrol follows the noise and comes upon a kittypet that's sniffing around. The kittypet quickly begins a story about how they've been training for <i>days</i> now and they're finally ready to join c_n. p_l laughs and gets swatted by the angry kittypet. Embarrassed, the patrol goes home.",
                 "exp": 0,
                 "weight": 20,
                 "outsider_rep": -1
