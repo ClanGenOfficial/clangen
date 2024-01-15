@@ -180,6 +180,8 @@
         "history_text": {
             "reg_death": "m_c was crushed by a falling boulder.",
             "lead_death": "{VERB/m_c/were/was} crushed by a falling boulder."
+        }
+    },
     {
         "camp": "any",
         "tags": [
@@ -218,5 +220,4 @@
             "warrior"
         ]
         }
-    }
 ]
