@@ -301,7 +301,7 @@ class Cat():
             trans_chance = randint(0, 50)
             nb_chance = randint(0, 75)
             if game and game.clan and game.clan.clan_settings:
-                if game.clan.clan_settings["they them default"] is True:
+                if game.settings["they them default"] is True:
                     they_them_default_setting = True
                     print("Game is using they/them pronouns")
                 else:

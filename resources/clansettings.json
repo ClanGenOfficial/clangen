@@ -59,11 +59,6 @@
             "Show moons and seasons widget",
             "Displays Clan age and current Clan season on several pages",
             false
-        ],
-        "they them default": [
-            "Use they/them as default pronouns",
-            "If this setting is on new cats will generate with they/them pronouns, regardless of gender.",
-            true
         ]
     },
     "role": {
