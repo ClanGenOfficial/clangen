@@ -19,7 +19,7 @@ class ListScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
-        self.filter_options_visible = False
+        self.filter_options_visible = True
         self.group_options_visible = False
         self.death_status = "living"
         self.current_group = "clan"
@@ -34,12 +34,18 @@ class ListScreen(Screens):
         self.cotc_button = None
         self.choose_group_button = None
         self.show_dead_button = None
+        self.filter_by_rank = None
+        self.filter_by_ID = None
+        self.filter_by_death = None
+        self.filter_by_age = None
+        self.filter_by_age_reverse = None
+        self.filter_by_exp = None
         self.filter_age = None
+        self.filter_age_reverse = None
         self.filter_id = None
         self.filter_rank = None
+        self.filter_death = None
         self.filter_exp = None
-        self.filter_by = None
-        self.show_filter = False
         self.filter_fav = None
         self.filter_not_fav = None
         self.search_bar = None
@@ -92,15 +98,21 @@ class ListScreen(Screens):
             elif event.ui_element == self.show_dead_button:
                 self.death_status = 'dead'
                 self.group_options_visible = True
+                self.filter_options_visible = True
                 self.update_view_buttons()
+                self.update_filter_buttons()
                 self.show_dead_button.hide()
                 self.show_living_button.show()
                 self.get_sc_cats()
                 self.update_search_cats(self.search_bar.get_text())
             elif event.ui_element == self.show_living_button:
+                if game.sort_type == 'death':
+                    game.sort_type = 'rank'
                 self.death_status = 'living'
                 self.group_options_visible = True
+                self.filter_options_visible = True
                 self.update_view_buttons()
+                self.update_filter_buttons()
                 self.update_bg()
                 self.show_dead_button.show()
                 self.show_living_button.hide()
@@ -122,26 +134,35 @@ class ListScreen(Screens):
                 self.filter_fav.show()
                 game.clan.clan_settings["show fav"] = True
                 self.update_page()
-            elif event.ui_element == self.filter_by:
+            elif event.ui_element in [self.filter_by_death,
+                                      self.filter_by_ID,
+                                      self.filter_by_exp,
+                                      self.filter_by_age,
+                                      self.filter_by_age_reverse,
+                                      self.filter_by_rank]:
                 self.update_filter_buttons()
             elif event.ui_element == self.filter_age:
+                game.sort_type = "age"
+                self.update_filter_buttons()
+                self.update_search_cats(self.search_bar.get_text())
+            elif event.ui_element == self.filter_age_reverse:
                 game.sort_type = "reverse_age"
-                self.show_filter = True
                 self.update_filter_buttons()
                 self.update_search_cats(self.search_bar.get_text())
             elif event.ui_element == self.filter_rank:
                 game.sort_type = "rank"
-                self.show_filter = True
                 self.update_filter_buttons()
                 self.update_search_cats(self.search_bar.get_text())
             elif event.ui_element == self.filter_id:
                 game.sort_type = "id"
-                self.show_filter = True
                 self.update_filter_buttons()
                 self.update_search_cats(self.search_bar.get_text())
             elif event.ui_element == self.filter_exp:
                 game.sort_type = "exp"
-                self.show_filter = True
+                self.update_filter_buttons()
+                self.update_search_cats(self.search_bar.get_text())
+            elif event.ui_element == self.filter_death:
+                game.sort_type = "death"
                 self.update_filter_buttons()
                 self.update_search_cats(self.search_bar.get_text())
             elif event.ui_element in self.display_cats:
@@ -174,27 +195,30 @@ class ListScreen(Screens):
                 self.get_your_clan_cats()
         else:
             self.get_your_clan_cats()
+
         self.set_disabled_menu_buttons(["catlist_screen"])
-        self.update_heading_text(f'{game.clan.name}Clan')
+
         self.show_menu_buttons()
 
+        y_pos = 248  # controls y_pos of cat list bar
+
         # search bar
-        self.search_bar_image = pygame_gui.elements.UIImage(scale(pygame.Rect((878, 248), (324, 68))),
+        self.search_bar_image = pygame_gui.elements.UIImage(scale(pygame.Rect((275, y_pos), (236, 68))),
                                                             pygame.image.load(
                                                                 "resources/images/search_bar.png").convert_alpha(),
                                                             manager=MANAGER)
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((892, 257), (316, 55))),
+        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((290, 257), (230, 55))),
                                                               object_id="#search_entry_box",
-                                                              initial_text="search via name",
+                                                              initial_text="name search",
                                                               manager=MANAGER)
 
         # buttons for choosing which group you are currently viewing
-        self.show_dead_button = UIImageButton(scale(pygame.Rect((277, 248), (210, 68))), "",
+        self.show_dead_button = UIImageButton(scale(pygame.Rect((512, y_pos), (210, 68))), "",
                                               object_id="#show_dead_button", manager=MANAGER,
                                               tool_tip_text='view cats in the afterlife',
                                               starting_height=2)
-        self.show_living_button = UIImageButton(scale(pygame.Rect((277, 248), (210, 68))), "",
+        self.show_living_button = UIImageButton(scale(pygame.Rect((512, y_pos), (210, 68))), "",
                                                 object_id="#show_living_button", manager=MANAGER,
                                                 tool_tip_text='view cats currently alive')
         if self.death_status == 'dead':
@@ -202,52 +226,52 @@ class ListScreen(Screens):
         else:
             self.show_living_button.hide()
 
-        y_pos = 248
-        self.choose_group_button = UIImageButton(scale(pygame.Rect((486, y_pos), (392, 68))), "",
+        self.choose_group_button = UIImageButton(scale(pygame.Rect((721, y_pos), (380, 68))), "",
                                                  object_id="#choose_group_button",
                                                  manager=MANAGER,
                                                  )
         y_pos += 64
-        self.your_clan_button = UIImageButton(scale(pygame.Rect((486, y_pos), (392, 68))), "",
+        self.your_clan_button = UIImageButton(scale(pygame.Rect((721, y_pos), (380, 68))), "",
                                               object_id="#view_your_clan_button",
                                               starting_height=2,
                                               manager=MANAGER
                                               )
         self.your_clan_button.hide()
-        self.sc_button = UIImageButton(scale(pygame.Rect((486, y_pos), (392, 68))), "",
+        self.sc_button = UIImageButton(scale(pygame.Rect((721, y_pos), (380, 68))), "",
                                        object_id="#view_starclan_button",
                                        starting_height=2,
                                        manager=MANAGER
                                        )
         self.sc_button.hide()
         y_pos += 64
-        self.cotc_button = UIImageButton(scale(pygame.Rect((486, y_pos), (392, 68))), "",
+        self.cotc_button = UIImageButton(scale(pygame.Rect((721, y_pos), (380, 68))), "",
                                          object_id="#view_cotc_button",
                                          starting_height=2,
                                          manager=MANAGER
                                          )
         self.cotc_button.hide()
-        self.ur_button = UIImageButton(scale(pygame.Rect((486, y_pos), (392, 68))), "",
+        self.ur_button = UIImageButton(scale(pygame.Rect((721, y_pos), (380, 68))), "",
                                        object_id="#view_unknown_residence_button",
                                        starting_height=2,
                                        manager=MANAGER
                                        )
         self.ur_button.hide()
         y_pos += 64
-        self.df_button = UIImageButton(scale(pygame.Rect((486, y_pos), (392, 68))), "",
+        self.df_button = UIImageButton(scale(pygame.Rect((721, y_pos), (380, 68))), "",
                                        object_id="#view_dark_forest_button",
                                        starting_height=2,
                                        manager=MANAGER
                                        )
         self.df_button.hide()
 
+        y_pos = 248
         # favorite cat view
-        self.filter_fav = UIImageButton(scale(pygame.Rect((201, 248), (76, 68))), "",
+        self.filter_fav = UIImageButton(scale(pygame.Rect((201, y_pos), (76, 68))), "",
                                         object_id="#fav_cat",
                                         manager=MANAGER,
                                         tool_tip_text='hide favourite cat indicators')
 
-        self.filter_not_fav = UIImageButton(scale(pygame.Rect((201, 248), (76, 68))), "",
+        self.filter_not_fav = UIImageButton(scale(pygame.Rect((201, y_pos), (76, 68))), "",
                                             object_id="#not_fav_cat", manager=MANAGER,
                                             tool_tip_text='show favourite cat indicators')
 
@@ -267,52 +291,91 @@ class ListScreen(Screens):
                                                          object_id=get_text_box_theme("#text_box_30_horizcenter")
                                                          , manager=MANAGER)  # Text will be filled in later
 
-        x_pos = 1202
+        x_pos = 1101
         y_pos = 247
 
-        # filter buttons
-        self.filter_by = UIImageButton(
-            scale(pygame.Rect((x_pos, y_pos), (196, 68))),
+        # filter buttons ... there's a lot of them
+        self.filter_by_rank = UIImageButton(
+            scale(pygame.Rect((x_pos, y_pos), (296, 68))),
             "",
-            object_id="#filter_by_button", manager=MANAGER
+            object_id="#filter_by_rank_button", manager=MANAGER
         )
-        y_pos += 68
+        self.filter_by_exp = UIImageButton(
+            scale(pygame.Rect((x_pos, y_pos), (296, 68))),
+            "",
+            object_id="#filter_by_exp_button", manager=MANAGER
+        )
+        self.filter_by_ID = UIImageButton(
+            scale(pygame.Rect((x_pos, y_pos), (296, 68))),
+            "",
+            object_id="#filter_by_ID_button", manager=MANAGER
+        )
+        self.filter_by_death = UIImageButton(
+            scale(pygame.Rect((x_pos, y_pos), (296, 68))),
+            "",
+            object_id="#filter_by_death_button", manager=MANAGER
+        )
+        self.filter_by_age = UIImageButton(
+            scale(pygame.Rect((x_pos, y_pos), (296, 68))),
+            "",
+            object_id="#filter_by_age_button", manager=MANAGER
+        )
+        self.filter_by_age_reverse = UIImageButton(
+            scale(pygame.Rect((x_pos, y_pos), (296, 68))),
+            "",
+            object_id="#filter_by_age_reverse_button", manager=MANAGER
+        )
+        y_pos += 64
+        x_pos = 1282
 
         self.filter_rank = UIImageButton(
-            scale(pygame.Rect((x_pos - 4, y_pos), (204, 58))),
+            scale(pygame.Rect((x_pos, y_pos), (114, 68))),
             "",
             object_id="#filter_rank_button",
             starting_height=2, manager=MANAGER
         )
         self.filter_rank.hide()
-        y_pos += 58
+        y_pos += 64
         self.filter_age = UIImageButton(
-            scale(pygame.Rect((x_pos - 4, y_pos + 1), (204, 58))),
+            scale(pygame.Rect((x_pos, y_pos + 1), (114, 68))),
             "",
             object_id="#filter_age_button",
             starting_height=2, manager=MANAGER
         )
         self.filter_age.hide()
-        y_pos += 58
+        y_pos += 64
+        self.filter_age_reverse = UIImageButton(
+            scale(pygame.Rect((x_pos, y_pos + 1), (114, 68))),
+            "",
+            object_id="#filter_age_reverse_button",
+            starting_height=2, manager=MANAGER
+        )
+        self.filter_age.hide()
+        y_pos += 64
         self.filter_id = UIImageButton(
-            scale(pygame.Rect((x_pos - 4, y_pos), (204, 58))),
+            scale(pygame.Rect((x_pos, y_pos), (114, 68))),
             "",
             object_id="#filter_ID_button",
             starting_height=2, manager=MANAGER
         )
         self.filter_id.hide()
-        y_pos += 58
+        y_pos += 62
         self.filter_exp = UIImageButton(
-            scale(pygame.Rect((x_pos - 4, y_pos), (204, 58))),
+            scale(pygame.Rect((x_pos, y_pos), (114, 68))),
             "",
             object_id="#filter_exp_button",
             starting_height=2, manager=MANAGER
         )
         self.filter_exp.hide()
-        self.show_filter = False
-        if game.last_screen_forupdate == 'profile screen':
-            self.filter_options_visible = True
-            self.update_filter_buttons()
+        y_pos += 60
+        self.filter_death = UIImageButton(
+            scale(pygame.Rect((x_pos, y_pos), (114, 68))),
+            "",
+            object_id="#filter_death_button",
+            starting_height=2, manager=MANAGER
+        )
+        self.filter_death.hide()
+        self.update_filter_buttons()
 
         self.update_search_cats("")  # This will list all the cats, and create the button objects.
 
@@ -325,99 +388,47 @@ class ListScreen(Screens):
             screen.blit(self.ur_bg, (0, 0))
 
     def update_filter_buttons(self):
+        print(game.sort_type)
+        # hide them all now
+        self.filter_by_rank.hide()
+        self.filter_by_ID.hide()
+        self.filter_by_age.hide()
+        self.filter_by_age_reverse.hide()
+        self.filter_by_death.hide()
+        self.filter_by_exp.hide()
 
-        if not self.show_filter:
-            if self.filter_options_visible:
-                self.filter_options_visible = False
-                self.filter_id.hide()
-                self.filter_age.hide()
-                self.filter_rank.hide()
-                self.filter_exp.hide()
-            elif not self.filter_options_visible:
-                self.filter_options_visible = True
-                self.filter_id.show()
-                self.filter_age.show()
-                self.filter_rank.show()
-                self.filter_exp.show()
+        # find which one should be shown
+        if game.sort_type == 'rank':
+            self.filter_by_rank.show()
+        elif game.sort_type == 'id':
+            self.filter_by_ID.show()
+        elif game.sort_type == 'age':
+            self.filter_by_age.show()
+        elif game.sort_type == 'reverse_age':
+            self.filter_by_age_reverse.show()
+        elif game.sort_type == 'exp':
+            self.filter_by_exp.show()
+        elif game.sort_type == 'death':
+            self.filter_by_death.show()
 
-        elif self.filter_options_visible:
+        if self.filter_options_visible:  # closing filter dropdown
             self.filter_options_visible = False
-            self.filter_id.kill()
-            self.filter_age.kill()
-            self.filter_rank.kill()
-            self.filter_exp.kill()
+            self.filter_id.hide()
+            self.filter_age.hide()
+            self.filter_age_reverse.hide()
+            self.filter_rank.hide()
+            self.filter_exp.hide()
+            self.filter_death.hide()
 
-            if game.sort_type == 'rank':
-                self.filter_rank = UIImageButton(
-                    scale(pygame.Rect((1202 - 4, 315), (204, 58))),
-                    "",
-                    object_id="#filter_rank_button",
-                    starting_height=2, manager=MANAGER
-                )
-                self.filter_rank.disable()
-
-            elif game.sort_type == 'reverse_age':
-                self.filter_age = UIImageButton(
-                    scale(pygame.Rect((1202 - 4, 315), (204, 58))),
-                    "",
-                    object_id="#filter_age_button",
-                    starting_height=2, manager=MANAGER
-                )
-                self.filter_age.disable()
-            elif game.sort_type == 'id':
-                self.filter_id = UIImageButton(
-                    scale(pygame.Rect((1202 - 4, 315), (204, 58))),
-                    "",
-                    object_id="#filter_ID_button",
-                    starting_height=2, manager=MANAGER
-                )
-                self.filter_id.disable()
-            elif game.sort_type == 'exp':
-                self.filter_exp = UIImageButton(
-                    scale(pygame.Rect((1202 - 4, 315), (204, 58))),
-                    "",
-                    object_id="#filter_exp_button",
-                    starting_height=2, manager=MANAGER
-                )
-                self.filter_exp.disable()
-
-        else:
+        else:  # opening filter dropdown
             self.filter_options_visible = True
-            self.filter_rank.kill()
-            self.filter_id.kill()
-            self.filter_age.kill()
-            self.filter_exp.kill()
-
-            # filter buttons
-            x_pos = 1202
-            y_pos = 315
-            self.filter_rank = UIImageButton(
-                scale(pygame.Rect((x_pos - 4, y_pos), (204, 58))),
-                "",
-                object_id="#filter_rank_button",
-                starting_height=2, manager=MANAGER
-            )
-            y_pos += 58
-            self.filter_age = UIImageButton(
-                scale(pygame.Rect((x_pos - 4, y_pos + 1), (204, 58))),
-                "",
-                object_id="#filter_age_button",
-                starting_height=2, manager=MANAGER
-            )
-            y_pos += 58
-            self.filter_id = UIImageButton(
-                scale(pygame.Rect((x_pos - 4, y_pos), (204, 58))),
-                "",
-                object_id="#filter_ID_button",
-                starting_height=2, manager=MANAGER
-            )
-            y_pos += 58
-            self.filter_exp = UIImageButton(
-                scale(pygame.Rect((x_pos - 4, y_pos), (204, 58))),
-                "",
-                object_id="#filter_exp_button",
-                starting_height=2, manager=MANAGER
-            )
+            self.filter_rank.show()
+            self.filter_id.show()
+            self.filter_age.show()
+            self.filter_age_reverse.show()
+            self.filter_exp.show()
+            if self.death_status == "dead":
+                self.filter_death.show()
 
     def update_view_buttons(self):
         if self.group_options_visible:
@@ -517,7 +528,7 @@ class ListScreen(Screens):
         self.current_listed_cats = []
         Cat.sort_cats(self.full_cat_list)
         search_text = search_text.strip()
-        if search_text not in ['', 'search via name']:
+        if search_text not in ['', 'name search']:
             for cat in self.full_cat_list:
                 if search_text.lower() in str(cat.name).lower():
                     self.current_listed_cats.append(cat)
@@ -531,6 +542,19 @@ class ListScreen(Screens):
 
     def update_page(self):
         """Run this function when page changes."""
+
+        # update title
+        if self.current_group == 'clan':
+            self.update_heading_text(f'{game.clan.name}Clan')
+        elif self.current_group == 'cotc':
+            self.update_heading_text(f'Cats Outside the Clan')
+        elif self.current_group == 'sc':
+            self.update_heading_text(f'StarClan')
+        elif self.current_group == 'ur':
+            self.update_heading_text(f'Unknown Residence')
+        elif self.current_group == 'df':
+            self.update_heading_text(f'Dark Forest')
+
         # If the number of pages becomes smaller than the number of our current page, set
         #   the current page to the last page
         if self.list_page > self.all_pages:

@@ -81,7 +81,7 @@ class Screens():
             object_id="#arrow_mns_button"),
         "heading": pygame_gui.elements.UITextBox(
             "",
-            scale(pygame.Rect((620, 54), (360, 70))),
+            scale(pygame.Rect((610, 54), (380, 70))),
             visible=False,
             manager=MANAGER,
             object_id="#text_box_34_horizcenter_light")

@@ -1091,20 +1091,105 @@
             }
         }
     },
-    "#filter_by_button": {
+    "#filter_by_rank_button": {
         "prototype": "#image_button",
         "images": {
             "normal_image": {
-                "path": "resources/images/buttons/filter_by.png"
+                "path": "resources/images/buttons/filtered_by_rank.png"
             },
             "hovered_image": {
-                "path": "resources/images/buttons/filter_by_hover.png"
+                "path": "resources/images/buttons/filtered_by_rank_hover.png"
             },
             "selected_image": {
-                "path": "resources/images/buttons/filter_by.png"
+                "path": "resources/images/buttons/filtered_by_rank.png"
             },
             "disabled_image": {
-                "path": "resources/images/buttons/filter_by_unavailable.png"
+                "path": "resources/images/buttons/filtered_by_rank_unavailable.png"
+            }
+        }
+    },
+    "#filter_by_exp_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/filtered_by_exp.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/filtered_by_exp_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/filtered_by_exp.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/filtered_by_exp_unavailable.png"
+            }
+        }
+    },
+    "#filter_by_ID_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/filtered_by_ID.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/filtered_by_ID_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/filtered_by_ID.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/filtered_by_ID_unavailable.png"
+            }
+        }
+    },
+    "#filter_by_death_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/filtered_by_death.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/filtered_by_death_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/filtered_by_death.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/filtered_by_death_unavailable.png"
+            }
+        }
+    },
+    "#filter_by_age_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/filtered_by_age.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/filtered_by_age_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/filtered_by_age.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/filtered_by_age_unavailable.png"
+            }
+        }
+    },
+    "#filter_by_age_reverse_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/filtered_by_age_reverse.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/filtered_by_age_reverse_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/filtered_by_age_reverse.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/filtered_by_age_reverse_unavailable.png"
             }
         }
     },
@@ -1139,6 +1224,23 @@
             },
             "disabled_image": {
                 "path": "resources/images/buttons/filter_age_unavailable.png"
+            }
+        }
+    },
+    "#filter_age_reverse_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/filter_age_reverse.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/filter_age_reverse_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/filter_age_reverse.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/filter_age_reverse_unavailable.png"
             }
         }
     },
