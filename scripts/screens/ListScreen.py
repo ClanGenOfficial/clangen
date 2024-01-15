@@ -202,13 +202,28 @@ class ListScreen(Screens):
 
         y_pos = 248  # controls y_pos of cat list bar
 
+        # favorite cat view
+        self.filter_fav = UIImageButton(scale(pygame.Rect((209, y_pos), (76, 68))), "",
+                                        object_id="#fav_cat",
+                                        manager=MANAGER,
+                                        tool_tip_text='hide favourite cat indicators')
+
+        self.filter_not_fav = UIImageButton(scale(pygame.Rect((209, y_pos), (76, 68))), "",
+                                            object_id="#not_fav_cat", manager=MANAGER,
+                                            tool_tip_text='show favourite cat indicators')
+
+        if game.clan.clan_settings["show fav"]:
+            self.filter_not_fav.hide()
+        else:
+            self.filter_fav.hide()
+
         # search bar
-        self.search_bar_image = pygame_gui.elements.UIImage(scale(pygame.Rect((275, y_pos), (236, 68))),
+        self.search_bar_image = pygame_gui.elements.UIImage(scale(pygame.Rect((279, y_pos), (236, 68))),
                                                             pygame.image.load(
                                                                 "resources/images/search_bar.png").convert_alpha(),
                                                             manager=MANAGER)
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((290, 257), (230, 55))),
+        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((299, 257), (230, 55))),
                                                               object_id="#search_entry_box",
                                                               initial_text="name search",
                                                               manager=MANAGER)
@@ -226,59 +241,44 @@ class ListScreen(Screens):
         else:
             self.show_living_button.hide()
 
-        self.choose_group_button = UIImageButton(scale(pygame.Rect((721, y_pos), (380, 68))), "",
+        x_pos = 717
+        self.choose_group_button = UIImageButton(scale(pygame.Rect((x_pos, y_pos), (380, 68))), "",
                                                  object_id="#choose_group_button",
                                                  manager=MANAGER,
                                                  )
         y_pos += 64
-        self.your_clan_button = UIImageButton(scale(pygame.Rect((721, y_pos), (380, 68))), "",
+        self.your_clan_button = UIImageButton(scale(pygame.Rect((x_pos, y_pos), (380, 68))), "",
                                               object_id="#view_your_clan_button",
                                               starting_height=2,
                                               manager=MANAGER
                                               )
         self.your_clan_button.hide()
-        self.sc_button = UIImageButton(scale(pygame.Rect((721, y_pos), (380, 68))), "",
+        self.sc_button = UIImageButton(scale(pygame.Rect((x_pos, y_pos), (380, 68))), "",
                                        object_id="#view_starclan_button",
                                        starting_height=2,
                                        manager=MANAGER
                                        )
         self.sc_button.hide()
         y_pos += 64
-        self.cotc_button = UIImageButton(scale(pygame.Rect((721, y_pos), (380, 68))), "",
+        self.cotc_button = UIImageButton(scale(pygame.Rect((x_pos, y_pos), (380, 68))), "",
                                          object_id="#view_cotc_button",
                                          starting_height=2,
                                          manager=MANAGER
                                          )
         self.cotc_button.hide()
-        self.ur_button = UIImageButton(scale(pygame.Rect((721, y_pos), (380, 68))), "",
+        self.ur_button = UIImageButton(scale(pygame.Rect((x_pos, y_pos), (380, 68))), "",
                                        object_id="#view_unknown_residence_button",
                                        starting_height=2,
                                        manager=MANAGER
                                        )
         self.ur_button.hide()
         y_pos += 64
-        self.df_button = UIImageButton(scale(pygame.Rect((721, y_pos), (380, 68))), "",
+        self.df_button = UIImageButton(scale(pygame.Rect((x_pos, y_pos), (380, 68))), "",
                                        object_id="#view_dark_forest_button",
                                        starting_height=2,
                                        manager=MANAGER
                                        )
         self.df_button.hide()
-
-        y_pos = 248
-        # favorite cat view
-        self.filter_fav = UIImageButton(scale(pygame.Rect((201, y_pos), (76, 68))), "",
-                                        object_id="#fav_cat",
-                                        manager=MANAGER,
-                                        tool_tip_text='hide favourite cat indicators')
-
-        self.filter_not_fav = UIImageButton(scale(pygame.Rect((201, y_pos), (76, 68))), "",
-                                            object_id="#not_fav_cat", manager=MANAGER,
-                                            tool_tip_text='show favourite cat indicators')
-
-        if game.clan.clan_settings["show fav"]:
-            self.filter_not_fav.hide()
-        else:
-            self.filter_fav.hide()
 
         # next/prev page
         self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1190), (68, 68))), "",
@@ -291,7 +291,7 @@ class ListScreen(Screens):
                                                          object_id=get_text_box_theme("#text_box_30_horizcenter")
                                                          , manager=MANAGER)  # Text will be filled in later
 
-        x_pos = 1101
+        x_pos = 1093
         y_pos = 247
 
         # filter buttons ... there's a lot of them
@@ -326,7 +326,8 @@ class ListScreen(Screens):
             object_id="#filter_by_age_reverse_button", manager=MANAGER
         )
         y_pos += 64
-        x_pos = 1282
+
+        x_pos = 1274
 
         self.filter_rank = UIImageButton(
             scale(pygame.Rect((x_pos, y_pos), (114, 68))),
@@ -375,6 +376,9 @@ class ListScreen(Screens):
             starting_height=2, manager=MANAGER
         )
         self.filter_death.hide()
+        self.filter_options_visible = True
+        self.group_options_visible = False
+
         self.update_filter_buttons()
 
         self.update_search_cats("")  # This will list all the cats, and create the button objects.
@@ -463,11 +467,18 @@ class ListScreen(Screens):
         self.page_number.kill()
         self.search_bar.kill()
         self.search_bar_image.kill()
-        self.filter_by.kill()
+        self.filter_by_age.kill()
+        self.filter_by_age_reverse.kill()
+        self.filter_by_exp.kill()
+        self.filter_by_death.kill()
+        self.filter_by_ID.kill()
+        self.filter_by_rank.kill()
         self.filter_rank.kill()
         self.filter_age.kill()
+        self.filter_age_reverse.kill()
         self.filter_id.kill()
         self.filter_exp.kill()
+        self.filter_death.kill()
         self.filter_fav.kill()
         self.filter_not_fav.kill()
 
