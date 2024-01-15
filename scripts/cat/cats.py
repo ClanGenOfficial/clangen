@@ -292,8 +292,8 @@ class Cat():
             self.gender = choice(["female", "male"])
         self.g_tag = self.gender_tags[self.gender]
         
-        if self.genderalign == "":
-            self.genderalign = self.gender
+        '''if self.genderalign == "":
+            self.genderalign = self.gender'''
 
          # These things should only run when generating a new cat, rather than loading one in.
         if not loading_cat:
@@ -311,6 +311,7 @@ class Cat():
                 if they_them_default_setting is True:
                     self.pronouns = [self.default_pronouns[0].copy()]
                     print("Game is asigning they/them pronouns")
+                    self.genderalign = self.gender
                 elif self.gender == "female":
                     if trans_chance == 1:
                         self.genderalign = "trans male"

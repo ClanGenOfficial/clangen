@@ -290,7 +290,7 @@ class ChangeGenderScreen(Screens):
         self.checkboxes_text['instr'] = pygame_gui.elements.UITextBox(
             "Current Pronouns",
             scale(pygame.Rect((280, 595), (350, 65))),
-            object_id=get_text_box_theme("#text_box_34_horizleft"),
+            object_id="#text_box_34_horizleft_dark",
             manager=MANAGER)
         
         n = 0
@@ -329,7 +329,7 @@ class ChangeGenderScreen(Screens):
                 short_name,
                 text_box_rect,
                 container=self.checkboxes_text["container_general"],
-                object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
+                object_id="#text_box_30_horizleft_pad_0_8",
                 manager=MANAGER)
 
             n += 1
@@ -354,9 +354,9 @@ class ChangeGenderScreen(Screens):
             manager=MANAGER)
        
         self.checkboxes_text['instr2'] = pygame_gui.elements.UITextBox(
-            "Current Pronouns",
-            scale(pygame.Rect((280, 595), (350, 65))),
-            object_id=get_text_box_theme("#text_box_34_horizleft"),
+            "Saved Pronouns",
+            scale(pygame.Rect((1000, 595), (350, 65))),
+            object_id="#text_box_34_horizleft_dark",
             manager=MANAGER)
         
         n = 0
@@ -394,7 +394,7 @@ class ChangeGenderScreen(Screens):
                 short_name,
                 text_box_rect,
                 container=self.checkboxes_text["container_general2"],
-                object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
+                object_id="#text_box_30_horizleft_pad_0_8",
                 manager=MANAGER)
 
             self.checkboxes_text[checkname].disable()
@@ -445,7 +445,7 @@ class ChangeGenderScreen(Screens):
                 short_name,
                 text_box_rect,
                 container=self.checkboxes_text["container_general2"],
-                object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
+                object_id="#text_box_30_horizleft_pad_0_8",
                 manager=MANAGER)
             
             self.checkboxes_text[checkname].disable()
