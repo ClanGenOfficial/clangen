@@ -74,8 +74,8 @@ class ChangeGenderScreen(Screens):
                     print("New Gender Identity Unlocked!")
                     self.selected_cat_elements["identity_changed"].show()
                     self.selected_cat_elements["cat_gender"].kill()
-                    self.selected_cat_elements["cat_gender"] =  pygame_gui.elements.UITextBox(f"Gender Identity:<br> {self.the_cat.genderalign}",
-                                    scale(pygame.Rect((250, 479), (500, 500))),
+                    self.selected_cat_elements["cat_gender"] =  pygame_gui.elements.UITextBox(f"{self.the_cat.genderalign}",
+                                    scale(pygame.Rect((252, 500), (500, 500))),
                                     object_id=get_text_box_theme("#text_box_30_horizcenter_spacing_95"),
                                     manager=MANAGER
                                 )
@@ -199,13 +199,13 @@ class ChangeGenderScreen(Screens):
             manager=MANAGER
         )
         self.selected_cat_elements["cat_image"] = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((360, 204), (300, 300))),
+            scale(pygame.Rect((360, 210), (300, 300))),
             pygame.transform.scale(
                 self.the_cat.sprite, (300, 300)),
             manager=MANAGER
         )
-        self.selected_cat_elements["cat_gender"] =  pygame_gui.elements.UITextBox(f"Gender Identity:<br> {self.the_cat.genderalign}",
-            scale(pygame.Rect((250, 479), (500, 500))),
+        self.selected_cat_elements["cat_gender"] =  pygame_gui.elements.UITextBox(f"{self.the_cat.genderalign}",
+            scale(pygame.Rect((252, 500), (500, 500))),
             object_id=get_text_box_theme("#text_box_30_horizcenter_spacing_95"),
             manager=MANAGER
         )
