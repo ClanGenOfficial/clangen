@@ -2721,7 +2721,7 @@ class Cat():
     # ---------------------------------------------------------------------------- #
 
     @staticmethod
-    def sort_cats(given_list=list):
+    def sort_cats(given_list=[]):
         if not given_list:
             given_list = Cat.all_cats_list
         if game.sort_type == "age":
