@@ -576,5 +576,72 @@
                 }
             }
         ]
+    },
+    {
+        "patrol_id": "mtn_train_leaffall_darkforestfable_storylorelocked1",
+        "biome": ["mountainous"],
+        "season": ["leaf-fall"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1", "LORE,1"],
+        "intro_text": "Once, before myth and magic, there was only StarClan, and no Dark Forest. p_l gathers the patrol, talking in hushed meows of the birth of that place.",
+        "decline_text": "A happier story, the cats ask, please. No one wants difficulty sleeping tonight.",
+        "success_outcomes": [
+            {
+        "text": "A dead warrior woke in StarClan, business unfinished and hate for the living in their heart. They brought ruin and destruction upon the living Clan - but c_n was not without allies. The other cats of StarClan leapt to battle and tore a hole in Silverpelt, casting out the traitor, condemning them to walk a path of decay and cruelty.",
+        "exp": 30,
+        "weight": 20,
+        "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["trust", "respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort"],
+                            "amount": 3
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "r_c listens, shivering, as p_l describes the birth of the Dark Forest, the ancient, barely won battle between the good cats of the stars and the traitor amidst. {PRONOUN/r_c/subject/CAP} can't stop thinking about it in {PRONOUN/r_c/poss} nest that night, {PRONOUN/r_c/poss} sleep broken and uneasy.",
+                    "exp": 0,
+                    "weight": 20,
+                  "injury": [
+                                {
+                        "cats": ["r_c"],
+                        "injuries": ["constant nightmares"],
+                        "scars": [],
+                        "no_results": false
+                                }
+                            ],
+                        "history_text": {
+                        "reg_death": "r_c died from lack of sleep, {PRONOUN/r_c/poss} vision haunted by dark shadows.",
+                        "lead_death": "from lack of sleep, {PRONOUN/r_c/poss} vision haunted by dark shadows"
+                       }
+                }
+            ]
     }
 ]

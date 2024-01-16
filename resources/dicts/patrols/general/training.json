@@ -9048,6 +9048,178 @@
         ]
     },
     {
+        "patrol_id": "gen_train_silverpeltfable_storylorelocked1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 6]
+                    },
+        "weight": 20,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1", "LORE,1"],
+        "intro_text": "Legends tell of the first clan cat that created the stars above and below upon death...",
+        "decline_text": "No one is interested in fables today.",
+        "success_outcomes": [
+            {
+                "text": "The first cat to ever pad through the stars, Silverpelt decorates her fur with the gleaming souls of fallen warriors to keep her company in Starclan.",
+                "exp": 30,
+                "weight": 20,
+                "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic", "respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        }
+                     ]
+            }
+        ],
+            "fail_outcomes": [
+                {
+                    "text": "Legends build no muscles and practice no pounces, app1 is uninterested in the lesson.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": false,
+                            "values": ["platonic", "respect"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "gen_train_firestarfable_storylorelocked1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 6]
+            },
+        "weight": 20,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1", "LORE,1"],
+        "intro_text": "Many seasons ago, before even c_n itself, stood five ancient clans, each the spike on a single great star. They padded into danger, where hills of bones seeped blood into the soil.",
+        "decline_text": "r_c isn't interested in hearing p_l's tale.",
+        "success_outcomes": [
+            {
+                    "text": "Fire alone could save the Clans. It swept through their lands, scorching evil to ash, driving out those with cowardice in their hearts, until the good and strong could reclaim their places and peace ruled among the elements.",
+                    "exp": 30,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic", "respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        }
+                        ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "Not this old nursery tale again. r_c is bored of it.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["r_c"],
+                            "mutual": false,
+                            "values": ["platonic", "respect"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "gen_train_powerofthreefable_storylorelocked1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 6],
+           "apprentice": [2, 6]
+            },
+        "weight": 20,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1", "LORE,1"],
+        "intro_text": "p_l gathers the apprentices for a lesson. Long ago, before even c_n's ancestors padded the world, there were three, the kin of fire, who held the power of the stars in their paws.",
+        "decline_text": "There's not enough time to continue the tale before bed - another night, perhaps.",
+        "success_outcomes": [
+            {
+                    "text": "And while these three cats were more powerful than any before them, with even the Stars and the Darkness forced to bow to their will, this is the lesson: That even the three did not succeed alone. That their power was helpful, but their <i>Clan</i> was critical, to fulfill their destined greatness.",
+                    "exp": 30,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic", "comfort"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        }
+                        ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "The apprentices ask questions, more confused than ever. What was the fighter's power, even? What even <i>was</i> their great destiny, it doesn't sound like their powers were even necessary to achieve it at all!",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1", "app2"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
+    },
+    {
         "patrol_id": "gen_train_pumpkineyes",
         "biome": ["Any"],
         "season": ["leaf-fall"],
