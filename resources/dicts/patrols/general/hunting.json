@@ -1203,7 +1203,7 @@
     "min_max_status": {
         "normal adult": [1, 1]
     },
-    "weight": 20,
+    "weight": 1,
     "intro_text": "p_l puts {PRONOUN/p_l/poss} nose to the ground, checking for prey scent as {PRONOUN/p_l/subject} {VERB/p_l/hunt/hunts}.",
     "decline_text": "It's not a great day for hunting, p_l decides, and calls it off before {PRONOUN/p_l/subject} even {VERB/p_l/start/starts}.",
     "chance_of_success": 50,
@@ -1269,7 +1269,7 @@
     "min_max_status": {
         "normal adult": [1, 1]
     },
-    "weight": 20,
+    "weight": 1,
     "intro_text": "p_l stretches, digging {PRONOUN/p_l/poss} claws into the ground as {PRONOUN/p_l/subject} {VERB/p_l/warm/warms} up. Without needing to coordinate a group, this hunting patrol can proceed entirely at their own schedule.",
     "decline_text": "Actually, p_l wants to do something with company. {PRONOUN/p_l/subject/CAP} {VERB/p_l/join/joins} up with a bigger patrol instead of going out on {PRONOUN/p_l/poss} own.",
     "chance_of_success": 50,
@@ -1336,7 +1336,7 @@
     "min_max_status": {
         "normal adult": [1, 1]
     },
-    "weight": 20,
+    "weight": 1,
     "intro_text": "Sometimes it's nice to go out alone - there's nothing to distract p_l from the hunt.",
     "decline_text": "It's not a great day for hunting, p_l decides, and calls it off before {PRONOUN/p_l/subject} even {VERB/p_l/start/starts}.",
     "chance_of_success": 50,
@@ -1443,7 +1443,7 @@
     "min_max_status": {
         "normal adult": [1, 1]
     },
-    "weight": 20,
+    "weight": 1,
     "intro_text": "p_l thinks {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} found a promising hunting spot to focus on for {PRONOUN/p_l/poss} solo patrol.",
     "decline_text": "{PRONOUN/p_l/subject/CAP} decide to move on instead.",
     "chance_of_success": 50,
@@ -1516,7 +1516,7 @@
     "min_max_status": {
         "normal adult": [1, 1]
     },
-    "weight": 20,
+    "weight": 1,
     "intro_text": "p_l's glad to go out on a solo hunting patrol - there's an ambush spot {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been itching to try out on {PRONOUN/p_l/poss} own.",
     "decline_text": "{PRONOUN/p_l/subject/CAP} encounter an herb gathering patrol on the way there and get swept up into it.",
     "chance_of_success": 50,
@@ -1589,7 +1589,7 @@
     "min_max_status": {
         "apprentice": [1, 1]
     },
-    "weight": 20,
+    "weight": 1,
     "intro_text": "app1 has snuck out late, timed with the last flares of the sunset, to try to hunt alone.",
     "decline_text": "It's not a great day for hunting, app1 decides, and calls it off before someone figures out {PRONOUN/app1/subject}{VERB/app1/'ve/'s} snuck out of camp.",
     "chance_of_success": 50,
@@ -1659,7 +1659,7 @@
     "min_max_status": {
         "apprentice": [1, 1]
     },
-    "weight": 20,
+    "weight": 1,
     "intro_text": "Look, {PRONOUN/app1/subject}{VERB/app1/'re/'s} so close to perfecting {PRONOUN/app1/poss} pounce, app1 can <i>feel</i> it. {PRONOUN/app1/subject/CAP} head out to prove so.",
     "decline_text": "Just as {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to leave camp, someone calls out and offers to share something from the fresh-kill pile with {PRONOUN/app1/object}. app1 can't refuse, even if {PRONOUN/app1/subject}'d like to, and {PRONOUN/app1/poss} clandestine hunt is cancelled.",
     "chance_of_success": 50,
@@ -1729,7 +1729,7 @@
     "min_max_status": {
         "apprentice": [1, 1]
     },
-    "weight": 20,
+    "weight": 1,
     "intro_text": "app1 is tired of being treated like {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} know anything - {PRONOUN/app1/subject} {VERB/app1/stalk/stalks} off to hunt alone.",
     "decline_text": "Just as {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to leave camp, someone calls out and offers to share something from the fresh-kill pile with {PRONOUN/app1/object}. app1 can't refuse, even if {PRONOUN/app1/subject}'d like to, and {PRONOUN/app1/poss} clandestine hunt is cancelled.",
     "chance_of_success": 50,
@@ -1799,7 +1799,7 @@
     "min_max_status": {
         "apprentice": [1, 1]
     },
-    "weight": 20,
+    "weight": 1,
     "intro_text": "app1 doesn't want to be in the apprentice's den until {PRONOUN/app1/poss} muzzle grays - {PRONOUN/app1/subject} {VERB/app1/need/needs} to prove lead_name should pay attention to {PRONOUN/app1/object}.",
     "decline_text": "Just as {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to leave camp, someone calls out and offers to share something from the fresh-kill pile with {PRONOUN/app1/object}. app1 can't refuse, even if {PRONOUN/app1/subject}'d like to, and {PRONOUN/app1/poss} clandestine hunt is cancelled.",
     "chance_of_success": 50,
@@ -1869,7 +1869,7 @@
     "min_max_status": {
         "apprentice": [1, 1]
     },
-    "weight": 20,
+    "weight": 1,
     "intro_text": "app1 nervously creeps out towards c_n's dirtplace, profile low to the ground as {PRONOUN/app1/subject} {VERB/app1/sneak/sneaks} out of camp. Let's see what a night hunt feels like.",
     "decline_text": "app1 thinks better of the plan, and returns to {PRONOUN/app1/poss} nest.",
     "chance_of_success": 50,
@@ -1939,7 +1939,7 @@
     "min_max_status": {
         "normal adult": [1, 6]
     },
-    "weight": 20,
+    "weight": 1,
     "intro_text": "As they head out into c_n's territory, p_l suggests a high cover hunting ground, perfect for ambushing.",
     "decline_text": "The cats encounter a border patrol that needs more paws, and volunteer their time for that instead.",
     "chance_of_success": 50,
@@ -2019,7 +2019,7 @@
     "min_max_status": {
         "normal adult": [1, 6]
     },
-    "weight": 20,
+    "weight": 1,
     "intro_text": "The small hunting patrol heads out together.",
     "decline_text": "The cats encounter a border patrol that needs more paws, and volunteer their time for that instead.",
     "chance_of_success": 50,
@@ -2142,7 +2142,7 @@
     "min_max_status": {
         "normal adult": [1, 6]
     },
-    "weight": 20,
+    "weight": 1,
     "intro_text": "This hunting patrol might be small, but p_l thinks {PRONOUN/p_l/subject} {VERB/p_l/know/knows} the perfect spot to take advantage of that.",
     "decline_text": "The cats encounter a border patrol that needs more paws, and volunteer their time for that instead.",
     "chance_of_success": 50,
@@ -2274,7 +2274,7 @@
     "min_max_status": {
         "normal adult": [1, 6]
     },
-    "weight": 20,
+    "weight": 1,
     "intro_text": "With a smaller hunting party, the cats are going to need to coordinate together well to succeed.",
     "decline_text": "The cats encounter a border patrol that needs more paws, and volunteer their time for that instead.",
     "chance_of_success": 50,
@@ -2420,7 +2420,7 @@
     "min_max_status": {
         "normal adult": [1, 6]
     },
-    "weight": 20,
+    "weight": 1,
     "intro_text": "Eyes glowing with the last rays of the sunset, the small hunting party heads out into the gathering dusk.",
     "decline_text": "The cats encounter a border patrol that needs more paws, and volunteer their time for that instead.",
     "chance_of_success": 50,
@@ -2559,7 +2559,7 @@
     "min_max_status": {
         "normal adult": [1, 6]
     },
-    "weight": 20,
+    "weight": 1,
     "intro_text": "A large hunting patrol is formed and sent out to see what they can find.",
     "decline_text": "The patrol can't agree on a hunting ground, and breaks up into smaller groups instead.",
     "chance_of_success": 50,
@@ -2631,7 +2631,7 @@
     "min_max_status": {
         "normal adult": [1, 6]
     },
-    "weight": 20,
+    "weight": 1,
     "intro_text": "Honestly, it looks like a scat day to try to hunt, so the cats team up into a bigger hunting patrol, hoping that will help.",
     "decline_text": "The patrol can't agree on a hunting ground, and breaks up into smaller groups instead.",
     "chance_of_success": 50,
@@ -2721,7 +2721,7 @@
     "min_max_status": {
         "normal adult": [1, 6]
     },
-    "weight": 20,
+    "weight": 1,
     "intro_text": "The cats chat as they head out to hunt.",
     "decline_text": "The patrol can't agree on a hunting ground, and breaks up into smaller groups instead.",
     "chance_of_success": 50,
@@ -2811,7 +2811,7 @@
     "min_max_status": {
         "normal adult": [1, 6]
     },
-    "weight": 20,
+    "weight": 1,
     "intro_text": "The bigger the hunting party, the bigger the expectations for what they'll bring home to the fresh-kill pile.",
     "decline_text": "The patrol can't agree on a hunting ground, and breaks up into smaller groups instead.",
     "chance_of_success": 50,
@@ -2901,7 +2901,7 @@
     "min_max_status": {
         "normal adult": [1, 6]
     },
-    "weight": 20,
+    "weight": 1,
     "intro_text": "There's a spring in their steps as the cats head out - today looks like a good day for hunting.",
     "decline_text": "The patrol can't agree on a hunting ground, and breaks up into smaller groups instead.",
     "chance_of_success": 50,
@@ -2999,7 +2999,7 @@
         "apprentice": [2, 6],
         "normal adult": [-1, -1]
     },
-    "weight": 20,
+    "weight": 1,
     "intro_text": "A hunting patrol of just apprentices! This is going to go great!",
     "decline_text": "It's not a great day for hunting, p_l decides, and calls it off before {PRONOUN/p_l/subject} even {VERB/p_l/start/starts}.",
     "chance_of_success": 50,
@@ -3106,7 +3106,7 @@
         "apprentice": [2, 6],
         "normal adult": [-1, -1]
     },
-    "weight": 20,
+    "weight": 1,
     "intro_text": "Maybe they <i>should</i> bring along one of their mentors, but they don't <i>want</i> to. There's no reason to always need an adult around, they aren't <i>kits</i>.",
     "decline_text": "dep_name spots the group of apprentices definitely-not-sneaking-out and orders them back to camp.",
     "chance_of_success": 50,
@@ -3222,7 +3222,7 @@
         "apprentice": [2, 6],
         "normal adult": [-1, -1]
     },
-    "weight": 20,
+    "weight": 1,
     "intro_text": "On a dare, the apprentices sneak out in the middle of the night. They're going to prove who's the best hunter!",
     "decline_text": "dep_name spots the group of apprentices definitely-not-sneaking-out and orders them back to camp.",
     "chance_of_success": 50,
@@ -3345,7 +3345,7 @@
         "apprentice": [2, 6],
         "normal adult": [-1, -1]
     },
-    "weight": 20,
+    "weight": 1,
     "intro_text": "Sometimes, it's a lot easier to work on their hunting techniques without a warrior around. Not that there's anything wrong with the warriors! Just... sometimes there less pressure, hunting as an apprentice-only patrol.",
     "decline_text": "dep_name spots the group of apprentices definitely-not-sneaking-out and orders them back to camp.",
     "chance_of_success": 50,
@@ -3459,7 +3459,7 @@
         "apprentice": [2, 6],
         "normal adult": [-1, -1]
     },
-    "weight": 20,
+    "weight": 1,
     "intro_text": "A hunting patrol of just apprentices! This is going to go great!",
     "decline_text": "dep_name spots the group of apprentices definitely-not-sneaking-out and orders them back to camp.",
     "chance_of_success": 50,

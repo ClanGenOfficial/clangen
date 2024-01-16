@@ -872,13 +872,18 @@ class ProfileScreen(Screens):
 
         # NUTRITION INFO (if the game is in the correct mode)
         if game.clan.game_mode in ["expanded", "cruel season"] and the_cat.is_alive() and FRESHKILL_ACTIVE:
-            nutr = None
-            if the_cat.ID in game.clan.freshkill_pile.nutrition_info:
-                nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
-            if nutr:
-                output += f"nutrition status: {round(nutr.percentage, 1)}%\n"
-            else:
-                output += f"nutrition status: 100%\n"
+            # Check to only show nutrition for clan cats
+            if str(the_cat.status) not in ["loner", "kittypet", "rogue", "former Clancat", "exiled"]:
+                nutr = None
+                if the_cat.ID in game.clan.freshkill_pile.nutrition_info:
+                    nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
+                if not nutr:
+                    game.clan.freshkill_pile.add_cat_to_nutrition(the_cat)
+                    nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
+                output += "nutrition: " + nutr.nutrition_text 
+                if game.clan.clan_settings['showxp']:
+                    output += ' (' + str(int(nutr.percentage)) + ')'
+                output += "\n"
 
         if the_cat.is_disabled():
             for condition in the_cat.permanent_condition:
