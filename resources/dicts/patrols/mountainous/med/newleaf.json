@@ -2990,7 +2990,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "By the time they give up and return to camp, p_l is approaching the explosion point with s_c. They've gotten in the way, questioned the use of the gathering mission, and in general has been utterly obnoxious today.",
+                "text": "By the time they give up and return to camp, p_l is approaching the explosion point with s_c. They've gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["troublesome", "childish"],
@@ -3870,7 +3870,7 @@
                 "herbs": ["many_herbs", "elder_leaves", "oak_leaves"]
             },
             {
-                "text": "s_c spots an oak tree that's valiantly trying to sprout leaves from a half-fallen branch, one of the casualties of last leaf-bare, and heads to harvest from that, taking the safe option of plucking leaves from the ground. s_c notices an elder tree standing nearby, debating whether to risk climbing it for the precious leaves. Suddenly a sharp brisk wind rattles the leaves off the trees, sending a shower of them onto the forest floor, s_c takes the opportunity to gather a decent collection.",
+                "text": "s_c spots an oak tree that's valiantly trying to sprout leaves from a half-fallen branch, one of the casualties of last leaf-bare, and heads to harvest from that, taking the safe option of plucking leaves from the ground. s_c notices an elder tree standing nearby, debating whether to risk climbing it for the precious leaves. Suddenly a sharp brisk wind rattles the leaves off the trees, sending a shower of them onto the forest floor s_c takes the opportunity to gather a decent collection.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -5103,7 +5103,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The sharp scent of tansy calls p_l in to harvest its newleaf shoots. And there's ragwort growinb nearby. By StarClan, this gathering patrol will taste <i>awful</i>. There's enough of the common herb to let the warriors gather sprigs of it to freshen the dens, letting the rest of the patrol at least get a small reward for the abuse of their tastebuds.",
+                "text": "The sharp scent of tansy calls p_l in to harvest its newleaf shoots. And there's ragwort growing nearby. By StarClan, this gathering patrol will taste <i>awful</i>. There's enough of the common herb to let the warriors gather sprigs of it to freshen the dens, letting the rest of the patrol at least get a small reward for the abuse of their tastebuds.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["tansy", "ragwort"],
