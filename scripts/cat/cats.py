@@ -298,13 +298,13 @@ class Cat():
          # These things should only run when generating a new cat, rather than loading one in.
         if not loading_cat:
             # trans cat chances
+            self.genderalign = self.gender
             trans_chance = randint(0, 50)
             nb_chance = randint(0, 75)
             if game and game.clan and game.clan.clan_settings:
                 if game.settings["they them default"] is True:
                     they_them_default_setting = True
                     print("Game is using they/them pronouns")
-                    self.genderalign = self.gender
                 else:
                     they_them_default_setting = False
                     print("Game is not using they/them pronouns")
@@ -312,7 +312,14 @@ class Cat():
                 if they_them_default_setting is True:
                     self.pronouns = [self.default_pronouns[0].copy()]
                     print("Game is asigning they/them pronouns")
-                    self.genderalign = self.gender
+                    if nb_chance == 1:
+                        self.genderalign = "nonbinary"
+                    elif trans_chance == 1:
+                        if self.gender == "female":
+                            self.genderalign = "trans male"
+                        else:
+                            self.genderalign = "trans female"
+                            
                 elif self.gender == "female":
                     if trans_chance == 1:
                         self.genderalign = "trans male"
@@ -323,7 +330,6 @@ class Cat():
                         self.pronouns = [self.default_pronouns[0].copy()]
                         print("Nonbinary: game is asigning they/them pronouns")
                     else:
-                        self.genderalign = self.gender
                         self.pronouns = [self.default_pronouns[1].copy()]
                         print("Female: game is asigning she/her pronouns")
                 elif self.gender == "male":
