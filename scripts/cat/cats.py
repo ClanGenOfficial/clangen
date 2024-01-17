@@ -304,6 +304,7 @@ class Cat():
                 if game.settings["they them default"] is True:
                     they_them_default_setting = True
                     print("Game is using they/them pronouns")
+                    self.genderalign = self.gender
                 else:
                     they_them_default_setting = False
                     print("Game is not using they/them pronouns")
