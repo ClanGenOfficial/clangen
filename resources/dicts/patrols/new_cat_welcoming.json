@@ -150,7 +150,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "p_l approaches the loner and tells themfirmly that newcomers aren't being taken in right now. The loner seems disappointed, but leaves anyway.",
+                "text": "p_l approaches the loner and tells them firmly that newcomers aren't being taken in right now. The loner seems disappointed, but leaves anyway.",
                 "exp": 10,
                 "weight": 20,
                 "outsider_rep": -2
