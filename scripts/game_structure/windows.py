@@ -498,12 +498,11 @@ class SpecifyCatGender(UIWindow):
         
         # Add the Demo frame to the sub-container
         self.elements["demo_frame"] = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((0, 0), demo_container_rect.size)),
-            pygame.transform.scale(pygame.image.load(Demo_frame).convert_alpha(), (230, 320)),
+            scale(pygame.Rect((0, 0), (414, 576))),
+            pygame.transform.scale(pygame.image.load(Demo_frame).convert_alpha(), (699, 520)),
             manager=MANAGER,
             container=self.demo_container
-            )
-        
+        )
         # Tittle of Demo Box
         self.elements['demo title'] = pygame_gui.elements.UITextBox(
             "<b>Demo",

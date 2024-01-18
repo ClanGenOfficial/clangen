@@ -83,6 +83,9 @@ class ChangeGenderScreen(Screens):
 
             elif event.ui_element == self.buttons["add_pronouns"]:
                 SpecifyCatGender(self.the_cat)
+                self.previous_cat_button.disable()
+                self.next_cat_button.disable()
+                self.back_button.disable()
             
             else:    
                 with open('resources/dicts/pronouns.json', 'r', encoding='utf-8') as file:
@@ -343,7 +346,10 @@ class ChangeGenderScreen(Screens):
         
         min_scrollable_height = max(100, n * 65) 
 
-        self.checkboxes_text["container_general"].set_scrollable_area_dimensions((310, min_scrollable_height))
+        if game.settings['fullscreen']:
+            self.checkboxes_text["container_general"].set_scrollable_area_dimensions((310*2, min_scrollable_height*2))
+        else:
+            self.checkboxes_text["container_general"].set_scrollable_area_dimensions((310, min_scrollable_height))
     
     def preset_removal(self):
         # List the various pronouns
@@ -423,7 +429,7 @@ class ChangeGenderScreen(Screens):
             # Create remove button for each pronounset with dynamic ycoor
             button_rect = scale(pygame.Rect((550, ycoor+18), (48, 48)))
             self.removalbuttons[f"remove_button_{checkname}"] = UIImageButton(
-                button_rect, 
+                button_rect,
                 "",
                 container=self.checkboxes_text["container_general2"],
                 object_id="#exit_window_button",
@@ -452,7 +458,10 @@ class ChangeGenderScreen(Screens):
             ycoor += 104
         min_scrollable_height = max(100, (n + 3) * 65) 
 
-        self.checkboxes_text["container_general2"].set_scrollable_area_dimensions((310, min_scrollable_height))
+        if game.settings['fullscreen']:
+            self.checkboxes_text["container_general2"].set_scrollable_area_dimensions((310*2, min_scrollable_height*2))
+        else:
+            self.checkboxes_text["container_general2"].set_scrollable_area_dimensions((310, min_scrollable_height))
     
     def is_duplicate(self,preset):
         #checks to see if a preset with the same name is already in the cats pronouns
