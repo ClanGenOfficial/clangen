@@ -211,8 +211,7 @@ class ChangeGenderScreen(Screens):
         )
         
         name = str(self.the_cat.name)
-        short_name = shorten_text_to_fit(name, 300, 26)
-        header = "Change " + short_name + "'s Gender"
+        header = "Change " + name + "'s Gender"
         self.selected_cat_elements["header"] = pygame_gui.elements.UILabel(scale(pygame.Rect((490, 125), (650, 64))),
                                                                              header,
                                                                              object_id=get_text_box_theme("#text_box_40_horizcenter")
