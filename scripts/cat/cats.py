@@ -312,9 +312,12 @@ class Cat():
                 if they_them_default_setting is True:
                     self.pronouns = [self.default_pronouns[0].copy()]
                     print("Game is asigning they/them pronouns")
-                    if nb_chance == 1:
+                    if self.age in ['young', 'newborn']:
+                        self.genderalign = self.gender
+                    elif nb_chance == 1:
                         self.genderalign = "nonbinary"
-                    elif trans_chance == 1:
+                    else:
+                        trans_chance == 1
                         if self.gender == "female":
                             self.genderalign = "trans male"
                         else:
