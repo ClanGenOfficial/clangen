@@ -777,6 +777,7 @@
         "history_text": {
             "reg_death": "m_c was killed by an unknown predator."
         },
-        "cat_trait": null
+          "cat_trait": null
+        }
     }
 ]
