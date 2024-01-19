@@ -216,7 +216,7 @@ class ChangeGenderScreen(Screens):
             text = f"{self.the_cat.genderalign}"
 
         self.selected_cat_elements["cat_gender"] = pygame_gui.elements.UITextBox(text,
-                                                                                 scale(pygame.Rect((252, 500),
+                                                                                 scale(pygame.Rect((260, 500),
                                                                                                    (500, 500))),
                                                                                  object_id=get_text_box_theme(
                                                                                      "#text_box_30_horizcenter_spacing_95"),
@@ -251,7 +251,7 @@ class ChangeGenderScreen(Screens):
                 (625, 265), (660, 150))),
             object_id="#text_box_30_horizcenter_spacing_95",
             manager=MANAGER)
-        self.buttons["add_pronouns"] = UIImageButton(scale(pygame.Rect((640, 1290), (306, 60))), "",
+        self.buttons["add_pronouns"] = UIImageButton(scale(pygame.Rect((640, 1290), (324, 56))), "",
                                                      object_id="#add_pronouns_button"
                                                      , manager=MANAGER)
         self.selected_cat_elements["gender"] = pygame_gui.elements.UITextEntryLine(
@@ -336,13 +336,35 @@ class ChangeGenderScreen(Screens):
                 manager=MANAGER)
 
             # Create UITextBox for pronoun display with clickable remove button
-            text_box_rect = scale(pygame.Rect((100, ycoor + 2), (400, 78)))
+            text_box_rect = scale(pygame.Rect((100, ycoor + 4), (400, 78)))
             self.checkboxes_text[checkname] = pygame_gui.elements.UITextBox(
                 short_name,
                 text_box_rect,
                 container=self.checkboxes_text["container_general"],
                 object_id="#text_box_30_horizleft_pad_0_8",
                 manager=MANAGER)
+
+            # check if the pronoun set text had to be shortened, if it did then create a tooltip containing full
+            # pronoun set text
+            if short_name != displayname:
+                self.buttons[f"{checkname}_tooltip"] = UIImageButton(
+                    text_box_rect,
+                    "",
+                    object_id="#blank_button_small",
+                    container=self.checkboxes_text["container_general"],
+                    tool_tip_text=displayname,
+                    manager=MANAGER,
+                    starting_height=2
+                )
+            else:
+                self.buttons[f"{checkname}_tooltip"] = UIImageButton(
+                    text_box_rect,
+                    "",
+                    object_id="#blank_button_small",
+                    container=self.checkboxes_text["container_general"],
+                    manager=MANAGER,
+                    starting_height=2
+                )
 
             n += 1
             ycoor += 104
@@ -404,14 +426,49 @@ class ChangeGenderScreen(Screens):
                 starting_height=2,
                 manager=MANAGER)
 
-            # Create UITextBox for pronoun display with clickable remove button
-            text_box_rect = scale(pygame.Rect((100, ycoor + 2), (400, 78)))
+            # Create UITextBox for pronoun display and create tooltip for full pronoun display
+            button_rect = scale(pygame.Rect((550, ycoor + 18), (48, 48)))
+            text_box_rect = scale(pygame.Rect((100, ycoor + 4), (400, 78)))
             self.checkboxes_text[checkname] = pygame_gui.elements.UITextBox(
                 short_name,
                 text_box_rect,
                 container=self.checkboxes_text["container_general2"],
                 object_id="#text_box_30_horizleft_pad_0_8",
                 manager=MANAGER)
+
+            # check if the pronoun set text had to be shortened, if it did then create a tooltip containing full
+            # pronoun set text
+            if short_name != displayname:
+                self.buttons[f"{checkname}_tooltip"] = UIImageButton(
+                    text_box_rect,
+                    "",
+                    object_id="#blank_button_small",
+                    container=self.checkboxes_text["container_general2"],
+                    tool_tip_text=displayname,
+                    manager=MANAGER,
+                    starting_height=2
+                )
+            else:
+                self.buttons[f"{checkname}_tooltip"] = UIImageButton(
+                    text_box_rect,
+                    "",
+                    object_id="#blank_button_small",
+                    container=self.checkboxes_text["container_general2"],
+                    manager=MANAGER,
+                    starting_height=2
+                )
+
+            # Create remove button for each pronounset with dynamic ycoor
+            self.removalbuttons[f"remove_button_{checkname}"] = UIImageButton(
+                button_rect,
+                "",
+                container=self.checkboxes_text["container_general2"],
+                object_id="#exit_window_button",
+                starting_height=2,
+                manager=MANAGER)
+            # though we've made the remove button visible, it needs to be disabled so that the user cannnot remove
+            # the defaults.  button is only visible here for UI consistency
+            self.removalbuttons[f"remove_button_{checkname}"].disable()
 
             self.checkboxes_text[checkname].disable()
             n += 1
@@ -454,13 +511,35 @@ class ChangeGenderScreen(Screens):
                 starting_height=2,
                 manager=MANAGER)
 
-            text_box_rect = scale(pygame.Rect((100, ycoor + 2), (400, 78)))
+            text_box_rect = scale(pygame.Rect((100, ycoor + 4), (400, 78)))
             self.checkboxes_text[checkname] = pygame_gui.elements.UITextBox(
                 short_name,
                 text_box_rect,
                 container=self.checkboxes_text["container_general2"],
                 object_id="#text_box_30_horizleft_pad_0_8",
                 manager=MANAGER)
+
+            # check if the pronoun set text had to be shortened, if it did then create a tooltip containing full
+            # pronoun set text
+            if short_name != displayname:
+                self.buttons[f"{checkname}_tooltip"] = UIImageButton(
+                    text_box_rect,
+                    "",
+                    object_id="#blank_button_small",
+                    container=self.checkboxes_text["container_general2"],
+                    tool_tip_text=displayname,
+                    manager=MANAGER,
+                    starting_height=2
+                )
+            else:
+                self.buttons[f"{checkname}_tooltip"] = UIImageButton(
+                    text_box_rect,
+                    "",
+                    object_id="#blank_button_small",
+                    container=self.checkboxes_text["container_general2"],
+                    manager=MANAGER,
+                    starting_height=2
+                )
 
             self.checkboxes_text[checkname].disable()
             n += 1
