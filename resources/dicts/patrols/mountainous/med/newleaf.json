@@ -3870,7 +3870,7 @@
                 "herbs": ["many_herbs", "elder_leaves", "oak_leaves"]
             },
             {
-                "text": "s_c spots an oak tree that's valiantly trying to sprout leaves from a half-fallen branch, one of the casualties of last leaf-bare, and heads to harvest from that, taking the safe option of plucking leaves from the ground. s_c notices an elder tree standing nearby, debating whether to risk climbing it for the precious leaves. Suddenly a sharp brisk wind rattles the leaves off the trees, sending a shower of them onto the forest floor s_c takes the opportunity to gather a decent collection.",
+                "text": "s_c spots an oak tree that's valiantly trying to sprout leaves from a half-fallen branch, one of the casualties of last leaf-bare, and heads to harvest from that, taking the safe option of plucking leaves from the ground. s_c notices an elder tree standing nearby, debating whether to risk climbing it for the precious leaves. Suddenly a sharp brisk wind rattles the leaves off the trees, sending a shower of them onto the forest floor. s_c takes the opportunity to gather a decent collection.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
