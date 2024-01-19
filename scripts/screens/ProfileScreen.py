@@ -7,7 +7,7 @@ import pygame
 
 from ..cat.history import History
 from ..housekeeping.datadir import get_save_dir
-from ..game_structure.windows import ChangeCatName, SpecifyCatGender, KillCat, ChangeCatToggles
+from ..game_structure.windows import ChangeCatName, KillCat, ChangeCatToggles
 
 import ujson
 

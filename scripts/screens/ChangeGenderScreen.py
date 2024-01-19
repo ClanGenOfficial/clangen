@@ -13,7 +13,7 @@ from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
 import pygame_gui
 from pygame_gui.elements import UIWindow
-from ..game_structure.windows import SpecifyCatGender
+from ..game_structure.windows import PronounCreation
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
 from ..housekeeping.datadir import get_data_dir
@@ -86,7 +86,7 @@ class ChangeGenderScreen(Screens):
                     )
 
             elif event.ui_element == self.buttons["add_pronouns"]:
-                SpecifyCatGender(self.the_cat)
+                PronounCreation(self.the_cat)
                 self.previous_cat_button.disable()
                 self.next_cat_button.disable()
                 self.back_button.disable()
@@ -262,8 +262,8 @@ class ChangeGenderScreen(Screens):
                                              object_id="#save_button_pronoun",
                                              starting_height=2, manager=MANAGER)
         self.determine_previous_and_next_cat()
-        self.pronoun_removal()
-        self.preset_removal()
+        self.pronoun_update()
+        self.preset_update()
         self.update_disabled_buttons()
 
     def update_disabled_buttons(self):
@@ -292,7 +292,7 @@ class ChangeGenderScreen(Screens):
             else:
                 self.buttons.get(add_button_id).enable()
 
-    def pronoun_removal(self):
+    def pronoun_update(self):
         # List the various pronouns
         self.checkboxes_text["container_general"] = pygame_gui.elements.UIScrollingContainer(
             relative_rect=scale(pygame.Rect((100, 660), (675, 540))),
@@ -384,7 +384,7 @@ class ChangeGenderScreen(Screens):
         else:
             self.checkboxes_text["container_general"].set_scrollable_area_dimensions((310, min_scrollable_height))
 
-    def preset_removal(self):
+    def preset_update(self):
         # List the various pronouns
         self.checkboxes_text["container_general2"] = pygame_gui.elements.UIScrollingContainer(
             relative_rect=scale(pygame.Rect((795, 660), (675, 540))),
