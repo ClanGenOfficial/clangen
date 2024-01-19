@@ -764,8 +764,8 @@
             "reg_death": "This cat died from old age life.",
             "lead_death": "lost all remaining lives from old age."
             }
-        },
-        {
+    },
+    {
         "camp": "any",
         "tags": [
             "Newleaf",
@@ -778,6 +778,5 @@
             "reg_death": "m_c was killed by an unknown predator."
         },
           "cat_trait": null
-        }
     }
 ]
