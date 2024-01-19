@@ -2828,5 +2828,132 @@
                 "lost_cats": ["r_c"]
             }
         ]
+    },
+    {
+        "patrol_id": "gen_train_amentorswisdom",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": ["platonic","trust","respect","dislike","comfort"],
+        "patrol_art": "train_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "normal adult": [1, 1],
+            "all apprentices": [1, 1]
+        },
+    
+        "weight": 20,
+        "chance_of_success": 50,
+        "intro_text": "p_l is surprised when app1 makes a mistake on a simple move p_l thought {PRONOUN/app1/subject} had mastered. Before p_l can say anything, app1 runs out of the training grounds. When p_l finds {PRONOUN/app1/object} huddled in camp, {PRONOUN/app1/subject} {VERB/app1/sobs/sob} out a confession: {PRONOUN/app1/subject} will never be ready to be a warrior.",
+        "decline_text": "It wouldn't help to talk to app1 while {PRONOUN/app1/subject} {VERB/app1/are/is} in this state. p_l tells {PRONOUN/app1/object} {PRONOUN/p_l/subject}'ll leave {PRONOUN/app1/object} alone, and to come find {PRONOUN/p_l/object} if {PRONOUN/app1/subject}'d like to keep training today. app1 never does.",
+        "success_outcomes": [
+            {
+                "text": "s_c waits patiently for app1 to calm down. Once {PRONOUN/app1/subject} can listen, s_c tells {PRONOUN/app1/object} a secret: no warrior has ever felt like a warrior. Not even s_c. You will always feel like you, s_c says, but don't be afraid. You <i>must</i> be you before you are a warrior. That is what c_n truly needs. You. ",
+                "exp": 10,
+                "can_have_stat": ["p_l"],
+                "stat_trait": ["loving","compassionate","wise","calm","thoughtful","faithful","loyal","sincere","righteous"],
+                "relationships": [
+                    {
+                        "cat_to": ["p_l"],
+                        "cat_from": ["app1"],
+                        "values": ["platonic", "comfort", "respect", "trust"],
+                        "amount": 10
+                    } ],
+                "weight": 20
+            },
+            {
+                "text": "app1 sniffles alone for a few moments before facing {PRONOUN/app1/poss} mentor. app1's eyes widen at s_c standing over {PRONOUN/app1/object} with flattened ears and bristling fur. <i>That</i> is weakness. c_n, and more importantly, s_c will not tolerate weakness. Get back into training, app1, and do not let s_c see you act in this way again.",
+                "exp": 10,
+                "can_have_stat": ["p_l"],
+                "stat_trait": ["bloodthirsty","vengeful","arrogant","troublesome"],
+                "relationships": [
+                    {
+                        "cat_to": ["p_l"],
+                        "cat_from": ["app1"],
+                        "values": ["dislike","respect"],
+                        "amount": 10
+                    },
+                    {
+                        "cat_to": ["p_l"],
+                        "cat_from": ["app1"],
+                        "values": ["trust","platonic","comfort"],
+                        "amount": -10
+                    } ],
+                "weight": 20
+            },
+            {
+                "text": "s_c's whiskers twitch in annoyance at this childish outburst. If app1 doesn't <i>want</i> to be a warrior, that's fine by s_c. {PRONOUN/p_l/subject}'ll be in the training grounds, waiting to train the greatest warrior c_n's ever seen. {PRONOUN/s_c/subject} {VERB/s_c/walks/walk} away from app1, and a hidden smile dashes across {PRONOUN/s_c/poss} muzzle as {PRONOUN/s_c/subject} {VERB/s_c/hears/hear} app1 start to chase after {PRONOUN/s_c/object}.",
+                "exp": 10,
+                "can_have_stat": ["p_l"],
+                "stat_trait": ["cold","strict","grumpy","lonesome","gloomy"],
+                "relationships": [
+                    {
+                        "cat_to": ["p_l"],
+                        "cat_from": ["app1"],
+                        "values": ["platonic", "comfort", "respect", "trust"],
+                        "amount": 10
+                    } ],
+                "weight": 20
+            },
+            {
+                "text": "s_c lashes {PRONOUN/s_c/poss} tail. Of course app1 will never be a warrior if {PRONOUN/app1/subject} {VERB/app1/thinks/think} like <i>that.</i> c_n doesn't want warriors who think like <i>that.</i> Half of glory, {PRONOUN/s_c/subject} {VERB/p_l/explains/explain}, is believing you deserve it. s_c challenges app1: focus on <i>that</i>. When s_c and app1 return to the training grounds, the other trainees notice app1 fighting with a newfound vigor.",
+                "exp": 10,
+                "can_have_stat": ["p_l"],
+                "stat_trait": ["fierce","bold","confident","competitive","ambitious","rebellious","daring","adventurous","cunning"],
+                "relationships": [
+                    {
+                        "cat_to": ["p_l"],
+                        "cat_from": ["app1"],
+                        "values": ["platonic", "comfort", "respect", "trust"],
+                        "amount": 10
+                    } ],
+                "weight": 20
+            },
+            {
+                "text": "s_c's heart lurches seeing the apprentice so low. Could s_c have done something to make app1 feel this way? Not having any words s_c sits close to app1, wrapping {PRONOUN/p_l/poss} tail around {PRONOUN/app1/object}. s_c purrs softly, reassuringly. Until app1 purrs back, gratefully. ",
+                "exp": 10,
+                "can_have_stat": ["p_l"],
+                "stat_trait": ["insecure","nervous","oblivious","careful","responsible"],
+                "relationships": [
+                    {
+                        "cat_to": ["p_l"],
+                        "cat_from": ["app1"],
+                        "values": ["platonic", "comfort", "respect", "trust"],
+                        "amount": 10
+                    } ],
+                "weight": 20
+            },
+            {
+                "text": "s_c shifts awkwardly at app1's side until {PRONOUN/s_c/subject} can't stand the silence any longer. s_c drops into a crouch and nudges app1 with {PRONOUN/s_c/poss} paw. App1 looks back, confused as s_c keeps bouncing and poking at {PRONOUN/s_c/object} with a goofy expression on {PRONOUN/s_c/poss} face, until app1 gives in. The warrior and apprentice play like kits, and the smile on app1's face says {PRONOUN/app1/subject}{VERB/app1/'ve/'s} forgotten all about {PRONOUN/app1/poss} doubt.",
+                "exp": 10,
+                "can_have_stat": ["p_l"],
+                "stat_trait": ["charismatic","flamboyant","playful","childish","shameless","strange","sneaky"],
+                "relationships": [
+                    {
+                        "cat_to": ["p_l"],
+                        "cat_from": ["app1"],
+                        "values": ["platonic", "comfort", "respect", "trust"],
+                        "amount": 10
+                    } ],
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "s_c tries to think of something to say or do, anything, but {PRONOUN/s_c/subject} {VERB/s_c/fumbles/fumble} as app1 becomes more and more unconsolable. Finally, s_c gives up, leaving app1 alone with {PRONOUN/app1/poss} thoughts.",
+                "exp": 0,
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cat_to": ["p_l"],
+                        "cat_from": ["app1"],
+                        "values": ["platonic", "comfort", "respect", "trust"],
+                        "amount": -10
+                    } ],
+                "weight": 10
+            }
+        ]
     }
+    
 ]

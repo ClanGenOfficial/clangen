@@ -47,6 +47,7 @@ class Game():
     # Keeping track of various last screen for various purposes
     last_screen_forupdate = 'start screen'
     last_screen_forProfile = 'list screen'
+    last_list_forProfile = None
 
     # down = pygame.image.load("resources/images/buttons/arrow_down.png").convert_alpha()
     # up = pygame.image.load("resources/images/buttons/arrow_up.png").convert_alpha()
