@@ -1493,7 +1493,23 @@
                 ]
             }
         ],
-        "fail_outcomes": []
+        "fail_outcomes": [
+            {
+                "text": "app1 is so busy watching if app2 is watching <i>them</i> that they forget to watch their own paws - and falling into the cold river impressed nobody.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": true,
+                        "values": ["romantic", "respect"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
     },
     {
         "patrol_id": "pln_hunt_leaf-bare_groupmice1",

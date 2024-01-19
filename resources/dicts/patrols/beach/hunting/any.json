@@ -770,7 +770,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l pads towards the grass to check on the noise when a rabbit suddenly bursts out! {PRONOUN/p_l/subject/CAP}{VERB/p_l/aren't/isn't} quick enough to catch it, but at least the noise was nothing dangerous.",
+                "text": "p_l pads towards the grass to check on the noise when a rabbit suddenly bursts out! {PRONOUN/p_l/subject/CAP} {VERB/p_l/aren't/isn't} quick enough to catch it, but at least the noise was nothing dangerous.",
                 "exp": 0,
                 "weight": 20
             },
@@ -4901,7 +4901,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "p_l leads the patrol to the end of the scent trail, where a gray fox sits grooming its fur in the sunshine. With careful signals, the cats set up an ambush, but the small gray panics beyond anything any cat expected, and as it flees, convinced its life is in danger, it bites at r_c.",
+                "text": "p_l leads the patrol to the end of the scent trail, where a gray fox sits grooming its fur in the sunshine. With careful signals, the cats set up an ambush, but the small gray fox panics beyond anything any cat expected, and as it flees, convinced its life is in danger, it bites at r_c.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -5207,7 +5207,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "As p_l offers the dolphin some of their fishes, {PRONOUN/p_l/subject} accidentally {VERB/p_l/slip/slips} and {VERB/p_l/fall/falls} into the water. Both the patrol and the dolphins seem to be laughing at {PRONOUN/p_l/object}. The dolphins try to give some herbs for the good laugh {PRONOUN/p_l/subject} gave them, but p_l just walks away, embarrassed and soaked.",
+                "text": "As p_l offers the dolphins some of their fishes, {PRONOUN/p_l/subject} accidentally {VERB/p_l/slip/slips} and {VERB/p_l/fall/falls} into the water. Both the patrol and the dolphins seem to be laughing at {PRONOUN/p_l/object}. The dolphins try to give some herbs for the good laugh {PRONOUN/p_l/subject} gave them, but p_l just walks away, embarrassed and soaked.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [

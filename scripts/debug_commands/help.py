@@ -1,11 +1,19 @@
 from typing import List
 
-from scripts.debugCommands.command import Command
-from scripts.debugCommands.utils import add_output_line_to_log
+from scripts.debug_commands.command import Command
+from scripts.debug_commands.utils import add_output_line_to_log
 from typing import List
 
 # Command is an abstract class
 
+
+class ClearCommand(Command):
+    name = "clear"
+    description = "Clear the console"
+    aliases = ["cls"]
+
+    def callback(self, args: List[str]):
+        pass
 
 class HelpCommand(Command):
     name = "help"
@@ -16,7 +24,7 @@ class HelpCommand(Command):
     commandList: List[Command] = []
 
     def __init__(self, commandList: List[Command]):
-        self.commandList = commandList + [self]
+        self.commandList = commandList + [self, ClearCommand()]
 
     def callback(self, args: List[str]):
         if len(args) == 0:

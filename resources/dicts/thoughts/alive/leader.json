@@ -64,7 +64,7 @@
         "id":"leader_alive_deputy",
         "thoughts":[
             "Tries to set a good example for the deputy",
-            "Has been letting  {PRONOUN/m_c/poss} deputy call the shots recently, and is proud of {PRONOUN/m_c/poss} initiative",
+            "Has been letting {PRONOUN/m_c/poss} deputy call the shots recently, and is proud of {PRONOUN/m_c/poss} initiative",
             "Needs to talk to r_c about something",
             "Wants to go on patrol with r_c so they can have a chat",
             "Is grateful for r_c's support",
@@ -134,7 +134,7 @@
     {
         "id": "calm_leader",
         "thoughts": [
-            "Stays composed when a cat comes to them in a panic",
+            "Stays composed when a cat comes to {PRONOUN/m_c/object} in a panic",
             "Watches over all the cats"
         ],
         "main_trait_constraint": [
@@ -181,7 +181,7 @@
     {
         "id": "insecure_leader",
         "thoughts": [
-            "Thinks they don't deserve StarClan's blessing of 9 lives",
+            "Thinks {PRONOUN/m_c/subject} don't deserve StarClan's blessing of 9 lives",
             "Wonders if cats like {PRONOUN/m_c/object} as a leader"
         ],
         "main_trait_constraint": [
