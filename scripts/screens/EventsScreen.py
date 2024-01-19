@@ -83,7 +83,7 @@ class EventsScreen(Screens):
             if event.ui_element == self.timeskip_button:
                 self.events_thread = self.loading_screen_start_work(events_class.one_moon)
             
-            if event.ui_element == self.freshkill_pile_button and game.clan.game_mode != "classic":
+            if game.clan.game_mode != "classic" and event.ui_element == self.freshkill_pile_button:
                 self.change_screen('clearing screen')
 
             # Change the type of events displayed
