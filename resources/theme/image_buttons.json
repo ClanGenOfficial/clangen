@@ -43,6 +43,23 @@
             }
         }
     },
+    "#blank_button_small": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/blank.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/blank.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/blank.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/blank.png"
+            }
+        }
+    },
     "#retire_button": {
         "prototype": "#image_button",
         "images": {
