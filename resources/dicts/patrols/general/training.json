@@ -8508,7 +8508,7 @@
         "season": ["Any"],
         "types": ["training"],
         "tags": ["distrust", "disrespect"],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_train_sunny",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
