@@ -459,7 +459,7 @@ class ChangeCatName(UIWindow):
                 self.kill()
 
 
-class SpecifyCatGender(UIWindow):
+class PronounCreation(UIWindow):
     #This window allows the user to create a pronoun set
 
     def __init__(self, cat):
