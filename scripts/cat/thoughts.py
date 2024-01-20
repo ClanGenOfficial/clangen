@@ -321,7 +321,7 @@ class Thoughts():
 
         return chosen_thought
     
-    def create_death_thoughts(inter_list) -> list:
+    def create_death_thoughts(self, inter_list) -> list:
         created_list = []
         for inter in inter_list:
             created_list.append(inter)
@@ -340,14 +340,14 @@ class Thoughts():
                 with open(f"{base_path}death{spec_dir}/leader_life.json", 'r') as read_file:
                     THOUGHTS = ujson.loads(read_file.read())
                 loaded_thoughts = THOUGHTS
-                thought_group = choice(Thoughts.create_death_thoughts(loaded_thoughts))
+                thought_group = choice(Thoughts.create_death_thoughts(self, loaded_thoughts))
                 chosen_thought = choice(thought_group["thoughts"])
                 return chosen_thought
             else:
                 with open(f"{base_path}death{spec_dir}/leader_death.json", 'r') as read_file:
                     THOUGHTS = ujson.loads(read_file.read())
                 loaded_thoughts = THOUGHTS
-                thought_group = choice(Thoughts.create_death_thoughts(loaded_thoughts))
+                thought_group = choice(Thoughts.create_death_thoughts(self, loaded_thoughts))
                 chosen_thought = choice(thought_group["thoughts"])
                 return chosen_thought
         except Exception:
@@ -368,7 +368,7 @@ class Thoughts():
             with open(f"{base_path}death{spec_dir}/general.json", 'r') as read_file:
                 THOUGHTS = ujson.loads(read_file.read())
             loaded_thoughts = THOUGHTS
-            thought_group = choice(Thoughts.create_death_thoughts(loaded_thoughts))
+            thought_group = choice(Thoughts.create_death_thoughts(self, loaded_thoughts))
             chosen_thought = choice(thought_group["thoughts"])
             return chosen_thought
         except Exception:
