@@ -67,7 +67,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was running over the hills, when they tripped over {PRONOUN/m_c/poss} own legs and hit the ground hard.",
+        "event_text": "m_c was running over the hills, when {PRONOUN/m_c/subject} tripped over {PRONOUN/m_c/poss} own legs and hit the ground hard.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
