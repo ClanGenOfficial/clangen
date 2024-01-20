@@ -328,7 +328,7 @@ class Thoughts():
     
     def leader_death_thought(self, lives_left, darkforest):
         #loading the special leader death thoughts, since they function differently than regular ones
-        base_path = f"resources/dicts/thoughts/death/"
+        base_path = f"resources/dicts/thoughts/death"
         if darkforest is False:
             spec_dir = "/starclan"
         elif darkforest:
@@ -355,7 +355,7 @@ class Thoughts():
 
     def new_death_thought(self, darkforest, isoutside):
         #loading the special death thoughts, since they function differently than regular ones
-        base_path = f"resources/dicts/thoughts/death/"
+        base_path = f"resources/dicts/thoughts/death"
         if isoutside:
             spec_dir = "/unknownresidence"
         elif darkforest is False:
