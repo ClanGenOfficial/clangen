@@ -3,6 +3,7 @@ import traceback
 from random import choice
 
 import ujson
+from scripts.game_structure.game_essentials import game
 
 class Thoughts():
     @staticmethod
@@ -320,12 +321,39 @@ class Thoughts():
 
         return chosen_thought
     
+    def create_leader_death_thoughts(inter_list) -> list:
+        created_list = []
+        for inter in inter_list:
+            created_list.append(inter)
+        return created_list
+    
     def leader_death_thought(self, lives_left):
+        #loading the special leader death thoughts, since they function differently than regular ones
+        base_path = f"resources/dicts/thoughts/"
+        if game.clan.instructor.df is False:
+            print("heaven")
+            spec_dir = "/starclan"
+        elif game.clan.instructor.df:
+            print("hell")
+            spec_dir = "/darkforest"
+        else:
+            spec_dir = ""
+        THOUGHTS: []
         try:
             if lives_left > 0:
-                self.thought = 'Was startled to find themselves in Silverpelt for a moment... did they lose a life?'
+                with open(f"{base_path}dead{spec_dir}/leader_life.json", 'r') as read_file:
+                    THOUGHTS = ujson.loads(read_file.read())
+                loaded_thoughts = THOUGHTS
+                thought_group = choice(Thoughts.create_leader_death_thoughts(loaded_thoughts))
+                chosen_thought = choice(thought_group["thoughts"])
+                self.thought = chosen_thought
             else:
-                self.thought = 'Is surprised to find themselves walking the stars of Silverpelt'
+                with open(f"{base_path}dead{spec_dir}/leader_death.json", 'r') as read_file:
+                    THOUGHTS = ujson.loads(read_file.read())
+                loaded_thoughts = THOUGHTS
+                thought_group = choice(Thoughts.create_leader_death_thoughts(loaded_thoughts))
+                chosen_thought = choice(thought_group["thoughts"])
+                self.thought = chosen_thought
         except Exception:
             traceback.print_exc()
             chosen_thought = "Prrrp! You shouldn't see this! Report as a bug."
