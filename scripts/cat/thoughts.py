@@ -334,8 +334,6 @@ class Thoughts():
             spec_dir = "/starclan"
         elif darkforest:
             spec_dir = "/darkforest"
-        else:
-            spec_dir = ""
         THOUGHTS: []
         try:
             if lives_left > 0:
@@ -365,8 +363,6 @@ class Thoughts():
             spec_dir = "/starclan"
         elif darkforest:
             spec_dir = "/darkforest"
-        else:
-            spec_dir = ""
         THOUGHTS: []
         try:
             with open(f"{base_path}death{spec_dir}/general.json", 'r') as read_file:
