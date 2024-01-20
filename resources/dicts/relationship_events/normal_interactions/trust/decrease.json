@@ -101,7 +101,7 @@
 		"intensity": "high",
 		"interactions": [
 			"m_c is dissatisfied that r_c can't seem to get rid of {PRONOUN/m_c/poss} chronic pain.",
-			"m_c is upset that r_c seems to ignore them more than the other cats.",
+			"m_c is upset that r_c seems to ignore {PRONOUN/r_c/object} more than the other cats.",
 			"m_c thinks that r_c prioritizes other cat's issues instead of m_c's chronic ones."
 		],
 		"main_status_constraint": [

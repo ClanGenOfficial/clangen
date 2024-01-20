@@ -137,7 +137,7 @@
         "id": "kittypet_senior_thoughts",
         "thoughts": [
             "Is enjoying the sun on {PRONOUN/m_c/poss} back",
-            "Is glad that {PRONOUN/m_c/poss} housefolk have taken care of them for so long",
+            "Is glad that {PRONOUN/m_c/poss} housefolk have taken care of {PRONOUN/m_c/object} for so long",
             "Wishes {PRONOUN/m_c/subject} had as much energy as the younger house cats",
             "Smiled at the new younger kit {PRONOUN/m_c/poss} housefolk got",
             "Is worried if {PRONOUN/m_c/poss} housefolk would be sad when {PRONOUN/m_c/subject} {VERB/m_c/are/is} gone",

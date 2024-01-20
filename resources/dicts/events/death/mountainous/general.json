@@ -181,5 +181,43 @@
             "reg_death": "m_c was crushed by a falling boulder.",
             "lead_death": "{VERB/m_c/were/was} crushed by a falling boulder."
         }
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "other_cat",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "death_text": "r_c, guarding camp, yowls a warning as they spot a circling shadow, right below m_c. r_c starts sprinting to m_c's position, but couldn't get there in time, not before m_c was carried high into the sky.",
+        "history_text": {
+            "reg_death": "m_c was grabbed by a hawk, never to be seen again."
+        },
+        "cat_trait": null,
+        "cat_negate_skill": [
+            "RUNNER,2"
+        ],
+        "other_cat_trait": null,
+        "other_cat_skill": null,
+        "other_cat_injury": [
+            "mangled leg",
+            "claw-wound",
+            "bite-wound",
+            "cat bite",
+            "beak bite",
+            "snake bite",
+            "broken bone",
+            "dislocated joint",
+            "sprain",
+            "recovering from birth",
+            "broken back",
+            "damaged eyes",
+            "head damage"
+        ],
+        "other_cat_status": [
+            "warrior"
+        ]
     }
 ]

@@ -6460,7 +6460,7 @@
                 ]
             },
             {
-                "text": "s_c knows how hard it is, feeling the pull of the ancestors watching over {PRONOUN/s_c/object}. With r_c, {PRONOUN/s_c/subject} {VERB/s_c/go/goes} to a quiet area near camp and show {PRONOUN/r_c/object} how to breath, to feel connected to the world around {PRONOUN/r_c/object}, and let {PRONOUN/r_c/poss} worries evaporate from {PRONOUN/r_c/poss} pelt.",
+                "text": "s_c knows how hard it is, feeling the pull of the ancestors watching over {PRONOUN/s_c/object}. With r_c, {PRONOUN/s_c/subject} {VERB/s_c/go/goes} to a quiet area near camp and show {PRONOUN/r_c/object} how to breathe, to feel connected to the world around {PRONOUN/r_c/object}, and let {PRONOUN/r_c/poss} worries evaporate from {PRONOUN/r_c/poss} pelt.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": ["faithful", "wise"],
