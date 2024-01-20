@@ -292,55 +292,48 @@ class Cat():
             self.genderalign = self.gender
             trans_chance = randint(0, 50)
             nb_chance = randint(0, 75)
+            #newborns can't be trans, sorry babies
+            if self.age in ['kitten', 'newborn']:
+                trans_chance = 0
+                nb_chance = 0
             if game:
-                if game.settings["they them default"] is True:
-                    they_them_default_setting = True
-                    print("Game is using they/them pronouns")
-                else:
-                    they_them_default_setting = False
-                    print("Game is not using they/them pronouns")
-
                 if they_them_default_setting is True:
                     self.pronouns = [self.default_pronouns[0].copy()]
-                    print("Game is asigning they/them pronouns")
-                    if self.age in ['young', 'newborn']:
-                        self.genderalign = self.gender
-                    elif nb_chance == 1:
+                    #print("Game is asigning they/them pronouns")
+                    if nb_chance == 1:
                         self.genderalign = "nonbinary"
-                    else:
-                        trans_chance == 1
+                    elif trans_chance == 1
                         if self.gender == "female":
                             self.genderalign = "trans male"
                         else:
                             self.genderalign = "trans female"
-                            
+                #assigning pronouns to afab cats            
                 elif self.gender == "female":
                     if trans_chance == 1:
                         self.genderalign = "trans male"
                         self.pronouns = [self.default_pronouns[2].copy()]
-                        print("Trans Male: game is asigning he/him pronouns")
+                        #print("Trans Male: game is asigning he/him pronouns")
                     elif nb_chance == 1:
                         self.genderalign = "nonbinary"
                         self.pronouns = [self.default_pronouns[0].copy()]
-                        print("Nonbinary: game is asigning they/them pronouns")
+                        #print("Nonbinary: game is asigning they/them pronouns")
                     else:
                         self.pronouns = [self.default_pronouns[1].copy()]
-                        print("Female: game is asigning she/her pronouns")
+                        #print("Female: game is asigning she/her pronouns")
+                        
+                #assigning pronouns to amab cats            
                 elif self.gender == "male":
                     if trans_chance == 1:
                         self.genderalign = "trans female"
                         self.pronouns = [self.default_pronouns[1].copy()]
-                        print("Trans Female: game is asigning she/her pronouns")
+                        #print("Trans Female: game is asigning she/her pronouns")
                     elif nb_chance == 1:
                         self.genderalign = "nonbinary"
                         self.pronouns = [self.default_pronouns[0].copy()]
-                        print("Nonbinary: game is asigning they/them pronouns")
+                        #print("Nonbinary: game is asigning they/them pronouns")
                     else:
-                        self.genderalign = self.gender
                         self.pronouns = [self.default_pronouns[2].copy()]
-                        print("Male: game is asigning he/him pronouns")
-                else:
-                    self.genderalign = self.gender
+                        #print("Male: game is asigning he/him pronouns")
                     
         # APPEARANCE
         self.pelt = Pelt.generate_new_pelt(self.gender, [Cat.fetch_cat(i) for i in (self.parent1, self.parent2) if i], self.age)
