@@ -3,7 +3,6 @@ import traceback
 from random import choice
 
 import ujson
-from scripts.game_structure.game_essentials import game
 
 class Thoughts():
     @staticmethod
