@@ -716,7 +716,7 @@
                 "stat_trait": ["nervous", "insecure"]
             },
             {
-                "text": "r_c finds a coyote at the source of the noise. It seems to be scavenging from an old carcass and upon seeing the cat, prove to be fiercely protective of its meal. {PRONOUN/r_c/subject/CAP} don't move fast enough and with no Clanmates to save them, r_c is quickly killed.",
+                "text": "r_c finds a coyote at the source of the noise. It seems to be scavenging from an old carcass and upon seeing the cat, prove to be fiercely protective of its meal. {PRONOUN/r_c/subject/CAP} {VERB/r_c/do/does}n't move fast enough and with no Clanmates to save them, r_c is quickly killed.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
