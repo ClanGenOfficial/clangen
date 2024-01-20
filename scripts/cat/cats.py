@@ -102,15 +102,6 @@ class Cat():
             "inposs": "his",
             "self": "himself",
             "conju": 2
-        },
-        {
-            "name": "Custom",
-            "subject": "",
-            "object": "",
-            "poss": "",
-            "inposs": "",
-            "self": "",
-            "conju": 1
         }
     ]
 
