@@ -297,12 +297,12 @@ class Cat():
                 trans_chance = 0
                 nb_chance = 0
             if game:
-                if they_them_default_setting is True:
+                if game.settings["they them default"] is True:
                     self.pronouns = [self.default_pronouns[0].copy()]
                     #print("Game is asigning they/them pronouns")
                     if nb_chance == 1:
                         self.genderalign = "nonbinary"
-                    elif trans_chance == 1
+                    elif trans_chance == 1:
                         if self.gender == "female":
                             self.genderalign = "trans male"
                         else:
