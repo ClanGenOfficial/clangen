@@ -328,7 +328,7 @@ class Thoughts():
     
     def leader_death_thought(self, lives_left, darkforest):
         #loading the special leader death thoughts, since they function differently than regular ones
-        base_path = f"resources/dicts/thoughts/"
+        base_path = f"resources/dicts/thoughts/death/"
         if darkforest is False:
             spec_dir = "/starclan"
         elif darkforest:
@@ -336,7 +336,7 @@ class Thoughts():
         THOUGHTS: []
         try:
             if lives_left > 0:
-                with open(f"{base_path}death{spec_dir}/leader_life.json", 'r') as read_file:
+                with open(f"{base_path}{spec_dir}/leader_life.json", 'r') as read_file:
                     THOUGHTS = ujson.loads(read_file.read())
                 loaded_thoughts = THOUGHTS
                 thought_group = choice(Thoughts.create_death_thoughts(self, loaded_thoughts))
@@ -355,7 +355,7 @@ class Thoughts():
 
     def new_death_thought(self, darkforest, isoutside):
         #loading the special death thoughts, since they function differently than regular ones
-        base_path = f"resources/dicts/thoughts/"
+        base_path = f"resources/dicts/thoughts/death/"
         if isoutside:
             spec_dir = "/unknownresidence"
         elif darkforest is False:
@@ -364,7 +364,7 @@ class Thoughts():
             spec_dir = "/darkforest"
         THOUGHTS: []
         try:
-            with open(f"{base_path}death{spec_dir}/general.json", 'r') as read_file:
+            with open(f"{base_path}{spec_dir}/general.json", 'r') as read_file:
                 THOUGHTS = ujson.loads(read_file.read())
             loaded_thoughts = THOUGHTS
             thought_group = choice(Thoughts.create_death_thoughts(self, loaded_thoughts))
