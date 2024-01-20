@@ -2529,7 +2529,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "The patrol quickly turn away once they realize that a Twoleg and a kittypet are involved, not their problem. Still, when they hear a loud splash everyone goes quiet and the rest of the patrol is spend in silence and shame.",
+                "text": "The patrol quickly turns away once they realize that a Twoleg and a kittypet are involved, not their problem. Still, when they hear a loud splash everyone goes quiet and the rest of the patrol is spent in silence and shame.",
                 "exp": 0,
                 "weight": 20,
                 "outsider_rep": -1
@@ -2555,7 +2555,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "The patrol comes across a o_c_n apprentice, waiting quietly at the border. When the apprentice notices the patrol, they press themselves to the ground, begging to join c_n.",
+        "intro_text": "The patrol comes across a o_c_n apprentice, waiting quietly at the border. When the apprentice notices the patrol, they press themself to the ground, begging to join c_n.",
         "decline_text": "This seems like a o_c_n problem. They order the apprentice to go back home and continue the patrol.",
         "chance_of_success": 60,
         "success_outcomes": [

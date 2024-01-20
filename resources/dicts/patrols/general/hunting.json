@@ -3677,7 +3677,7 @@
     ],
     "fail_outcomes": [
         {
-            "text": "Your patrol confronts the strange cat - they are obviously an intruder on c_n territory, and they don't look like the friendly type. The strange cat shrieks, an awful, blood curdling scream that makes r_c 's fur stand on end. Overcome by terror, the patrol flees back to camp.",
+            "text": "Your patrol confronts the strange cat - they are obviously an intruder on c_n territory, and they don't look like the friendly type. The strange cat shrieks, an awful, blood-curdling scream that makes r_c's fur stand on end. Overcome by terror, the patrol flees back to camp.",
             "exp": 0,
             "weight": 10,
             "injury": [

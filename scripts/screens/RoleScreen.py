@@ -120,7 +120,7 @@ class RoleScreen(Screens):
         self.switch_warrior = UIImageButton(scale(pygame.Rect((451, 720), (344, 72))), "",
                                             object_id="#switch_warrior_button",
                                             manager=MANAGER)
-        self.retire = UIImageButton(scale(pygame.Rect((451, 792), (334, 72))), "",
+        self.retire = UIImageButton(scale(pygame.Rect((451, 792), (344, 72))), "",
                                     object_id="#retire_button",
                                     manager=MANAGER)
         self.switch_med_cat = UIImageButton(scale(pygame.Rect((805, 720), (344, 104))), "",
