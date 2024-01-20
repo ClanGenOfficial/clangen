@@ -319,3 +319,13 @@ class Thoughts():
             chosen_thought = "Prrrp! You shouldn't see this! Report as a bug."
 
         return chosen_thought
+    
+    def leader_death_thought(self, lives_left):
+        try:
+            if lives_left > 0:
+                self.thought = 'Was startled to find themselves in Silverpelt for a moment... did they lose a life?'
+            else:
+                self.thought = 'Is surprised to find themselves walking the stars of Silverpelt'
+        except Exception:
+            traceback.print_exc()
+            chosen_thought = "Prrrp! You shouldn't see this! Report as a bug."
