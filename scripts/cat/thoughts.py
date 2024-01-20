@@ -354,7 +354,7 @@ class Thoughts():
             chosen_thought = "Prrrp! You shouldn't see this! Report as a bug."
 
     def new_death_thought(self, darkforest, isoutside):
-        #loading the special leader death thoughts, since they function differently than regular ones
+        #loading the special death thoughts, since they function differently than regular ones
         base_path = f"resources/dicts/thoughts/"
         if isoutside:
             spec_dir = "/unknownresidence"
