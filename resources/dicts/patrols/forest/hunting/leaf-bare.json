@@ -6402,5 +6402,64 @@
                 "prey": ["very_small"]
             }
         ]
+    },
+    {
+        "patrol_id": "fst_hunt_leafbare_dewclangift_storylorelocked1",
+        "biome": ["forest"],
+        "season": ["leaf-bare"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "gen_hunt_leafbaresnowstorm",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 35,
+        "pl_skill_constraint": ["STORY,1", "LORE,1"],
+        "intro_text": "Shivering among the snow as they hunt for signs of prey, p_l overhears r_c worrying that c_n will wither away if things don't improve soon.",
+        "decline_text": "Well, in that case they should focus on the hunt then.",
+        "success_outcomes": [
+                {
+                    "text": "c_n will be fine, p_l tells r_c firmly. Why, once, long ago, there was a Clan who went through so much suffering they were reduced down to two single dewdrops. They managed to hold on and rise again - and c_n will too, just as soon as newleaf arrives.",
+                    "exp": 30,
+                    "weight": 20,
+                    "prey": ["medium"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["r_c"],
+                            "mutual": false,
+                            "values": ["comfort", "trust"],
+                            "amount": 10
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "r_c's anxiety doesn't help anyone's stress levels. It's hard to catch prey in leaf-bare, harder still to do so distracted - so the patrol doesn't bring much home, further heightening their worries.",
+                    "exp": 0,
+                    "weight": 20,
+                    "prey": ["very_small"],
+                    "relationships": [
+                        {
+                            "cats_to": ["r_c"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
     }
 ]
