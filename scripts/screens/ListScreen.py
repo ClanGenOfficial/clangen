@@ -200,7 +200,7 @@ class ListScreen(Screens):
 
         self.show_menu_buttons()
 
-        y_pos = 248  # controls y_pos of cat list bar
+        y_pos = 268  # controls y_pos of cat list bar
 
         # favorite cat view
         self.filter_fav = UIImageButton(scale(pygame.Rect((209, y_pos), (76, 68))), "",
@@ -223,7 +223,7 @@ class ListScreen(Screens):
                                                                 "resources/images/search_bar.png").convert_alpha(),
                                                             manager=MANAGER)
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((299, 257), (230, 55))),
+        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((299, 277), (230, 55))),
                                                               object_id="#search_entry_box",
                                                               initial_text="name search",
                                                               manager=MANAGER)
@@ -292,7 +292,7 @@ class ListScreen(Screens):
                                                          , manager=MANAGER)  # Text will be filled in later
 
         x_pos = 1093
-        y_pos = 247
+        y_pos = 267
 
         # filter buttons ... there's a lot of them
         self.filter_by_rank = UIImageButton(
@@ -647,6 +647,8 @@ class ListScreen(Screens):
 
     def on_use(self):
         # Only update the positions if the search text changes
+        if self.search_bar.is_focused and self.search_bar.get_text() == "name search":
+            self.search_bar.set_text("")
         if self.search_bar.get_text() != self.previous_search_text:
             self.update_search_cats(self.search_bar.get_text())
         self.previous_search_text = self.search_bar.get_text()

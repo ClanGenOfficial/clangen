@@ -67,7 +67,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was running over the hills, when they tripped over {PRONOUN/m_c/poss} own legs and hit the ground hard.",
+        "event_text": "m_c was running over the hills, when {PRONOUN/m_c/subject} tripped over {PRONOUN/m_c/poss} own legs and hit the ground hard.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -140,5 +140,32 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
+    },
+    {
+        "injury": "mangled leg",
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "Playfully following a butterfly outside the camp, m_c accidentally steps into a rabbit burrow severely injuring {PRONOUN/m_c/poss} leg and letting out a yelp of pain.",
+        "history_text": {
+            "scar": "m_c was scarred when they accidentally ran their leg into a rabbit burrow.",
+            "reg_death": "m_c died from wounds caused by when they accidentally ran into a rabbit burrow."
+        },
+        "cat_trait": [
+            "childish",
+            "playful"
+        ],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null,
+        "negate_cat_trait": null,
+        "negate_cat_skill": null,
+        "negate_other_cat_trait": null,
+        "negate_other_cat_skill": null,
+        "backstory_constraint": null
     }
 ]

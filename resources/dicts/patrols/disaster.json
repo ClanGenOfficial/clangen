@@ -1849,8 +1849,8 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "There are dark clouds on the horizon and r_c wonders if they should continue.",
-        "decline_text": "Your patrol decides to head back early.",
+        "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/p_l/subject} should continue.",
+        "decline_text": "p_l decides to head back early.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1864,7 +1864,7 @@
                 "weight": 5
             },
             {
-                "text": "s_c makes a careful judgement, and keeps going. They stick to solid ground, sometimes routing themselves through the trees as the rain begins to pour around them.",
+                "text": "s_c makes a careful judgement, and keeps going. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stick/sticks} to solid ground, sometimes routing {PRONOUN/s_c/self} through the trees as the rain begins to pour around {PRONOUN/s_c/object}.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"]

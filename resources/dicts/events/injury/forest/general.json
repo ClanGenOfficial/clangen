@@ -271,5 +271,31 @@
         "cat_skill": [
             "SWIMMER,3"
         ]
+    },
+    {
+        "injury": "headache",
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "Chasing a mouse through a dense area, m_c accidentally collides with a low-hanging branch, leaving them to return to camp empty-pawed and with splitting head pain.",
+        "history_text": null,
+        "cat_trait": [
+            "ambitious",
+            "childish",
+            "playful",
+            "bold",
+            "daring",
+            "confident",
+            "adventurous",
+            "competitive",
+            "oblivious"
+        ],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
     }
 ]
