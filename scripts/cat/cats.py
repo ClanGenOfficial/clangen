@@ -423,16 +423,20 @@ class Cat():
         
         # Deal with leader death
         text = ""
+        darkforest = game.clan.instructor.df
+        isoutside = self.outside
         if self.status == 'leader':
             if game.clan.leader_lives > 0:
                 lives_left = game.clan.leader_lives
-                Thoughts.leader_death_thought(self, lives_left)
+                death_thought = Thoughts.leader_death_thought(self, lives_left, darkforest)
+                final_thought = event_text_adjust(Cat, death_thought, self)
+                self.thought = final_thought
                 return ""
             elif game.clan.leader_lives <= 0:
                 self.dead = True
                 game.just_died.append(self.ID)
                 game.clan.leader_lives = 0
-                Thoughts.leader_death_thought(self, 0)
+                Thoughts.leader_death_thought(self, 0, darkforest)
                 if game.clan.instructor.df is False:
                     text = 'They\'ve lost their last life and have travelled to StarClan.'
                 else:
@@ -440,7 +444,9 @@ class Cat():
         else:
             self.dead = True
             game.just_died.append(self.ID)
-            self.thought = 'Is surprised to find themselves walking the stars of Silverpelt'
+            death_thought = Thoughts.new_death_thought(self, darkforest, isoutside)
+            final_thought = event_text_adjust(Cat, death_thought, self)
+            self.thought = final_thought
 
         # Clear Relationships. 
         self.relationships = {}
@@ -461,10 +467,8 @@ class Cat():
                 game.clan.add_to_starclan(self)
             elif game.clan.instructor.df is True:
                 self.df = True
-                self.thought = "Is startled to find themselves wading in the muck of a shadowed forest"
                 game.clan.add_to_darkforest(self)
         else:
-            self.thought = "Is fascinated by the new ghostly world they've stumbled into"
             game.clan.add_to_unknown(self)
 
         return text
