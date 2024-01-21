@@ -2330,7 +2330,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "s_c can't contain {PRONOUN/s_c/poss} hatred for o_c_n, not even meeting a patrol of theirs at the border as a lone cat. {PRONOUN/s_c/CAP} come back to camp bleeding.",
+                "text": "s_c can't contain {PRONOUN/s_c/poss} hatred for o_c_n, not even meeting a patrol of theirs at the border as a lone cat. {PRONOUN/s_c/subject/CAP} come back to camp bleeding.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
