@@ -9601,7 +9601,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c's whiskers twitch in annoyance at this childish outburst. If app1 doesn't <i>want</i> to be a warrior, that's fine by s_c. {PRONOUN/p_l/subject/CAP}'ll be in the training grounds, waiting to train the greatest warrior c_n's ever seen. {PRONOUN/s_c/subject} {VERB/s_c/walk/walks} away from app1, and a hidden smile dashes across {PRONOUN/s_c/poss} muzzle as {PRONOUN/s_c/subject} {VERB/s_c/hear/hears} app1 start to chase after {PRONOUN/s_c/object}.",
+                "text": "s_c's whiskers twitch in annoyance at this childish outburst. If app1 doesn't <i>want</i> to be a warrior, that's fine by s_c. {PRONOUN/p_l/subject/CAP}'ll be in the training grounds, waiting to train the greatest warrior c_n's ever seen. {PRONOUN/s_c/subject/CAP} {VERB/s_c/walk/walks} away from app1, and a hidden smile dashes across {PRONOUN/s_c/poss} muzzle as {PRONOUN/s_c/subject} {VERB/s_c/hear/hears} app1 start to chase after {PRONOUN/s_c/object}.",
                 "exp": 10,
                 "can_have_stat": ["p_l"],
                 "stat_trait": ["cold","strict","grumpy","lonesome","gloomy"],
