@@ -8508,7 +8508,7 @@
         "season": ["Any"],
         "types": ["training"],
         "tags": ["distrust", "disrespect"],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_train_sunny",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -9563,7 +9563,7 @@
     
         "weight": 20,
         "chance_of_success": 50,
-        "intro_text": "p_l is surprised when app1 makes a mistake on a simple move p_l thought {PRONOUN/app1/subject} had mastered. Before p_l can say anything, app1 runs out of the training grounds. When p_l finds {PRONOUN/app1/object} huddled in camp, {PRONOUN/app1/subject} {VERB/app1/sobs/sob} out a confession: {PRONOUN/app1/subject} will never be ready to be a warrior.",
+        "intro_text": "p_l is surprised when app1 makes a mistake on a simple move p_l thought {PRONOUN/app1/subject} had mastered. Before p_l can say anything, app1 runs out of the training grounds. When p_l finds {PRONOUN/app1/object} huddled in camp, {PRONOUN/app1/subject} {VERB/app1/sob/sobs} out a confession: {PRONOUN/app1/subject} will never be ready to be a warrior.",
         "decline_text": "It wouldn't help to talk to app1 while {PRONOUN/app1/subject} {VERB/app1/are/is} in this state. p_l tells {PRONOUN/app1/object} {PRONOUN/p_l/subject}'ll leave {PRONOUN/app1/object} alone, and to come find {PRONOUN/p_l/object} if {PRONOUN/app1/subject}'d like to keep training today. app1 never does.",
         "success_outcomes": [
             {
@@ -9601,7 +9601,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c's whiskers twitch in annoyance at this childish outburst. If app1 doesn't <i>want</i> to be a warrior, that's fine by s_c. {PRONOUN/p_l/subject}'ll be in the training grounds, waiting to train the greatest warrior c_n's ever seen. {PRONOUN/s_c/subject} {VERB/s_c/walks/walk} away from app1, and a hidden smile dashes across {PRONOUN/s_c/poss} muzzle as {PRONOUN/s_c/subject} {VERB/s_c/hears/hear} app1 start to chase after {PRONOUN/s_c/object}.",
+                "text": "s_c's whiskers twitch in annoyance at this childish outburst. If app1 doesn't <i>want</i> to be a warrior, that's fine by s_c. {PRONOUN/p_l/subject/CAP}'ll be in the training grounds, waiting to train the greatest warrior c_n's ever seen. {PRONOUN/s_c/subject/CAP} {VERB/s_c/walk/walks} away from app1, and a hidden smile dashes across {PRONOUN/s_c/poss} muzzle as {PRONOUN/s_c/subject} {VERB/s_c/hear/hears} app1 start to chase after {PRONOUN/s_c/object}.",
                 "exp": 10,
                 "can_have_stat": ["p_l"],
                 "stat_trait": ["cold","strict","grumpy","lonesome","gloomy"],
@@ -9615,7 +9615,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c lashes {PRONOUN/s_c/poss} tail. Of course app1 will never be a warrior if {PRONOUN/app1/subject} {VERB/app1/thinks/think} like <i>that.</i> c_n doesn't want warriors who think like <i>that.</i> Half of glory, {PRONOUN/s_c/subject} {VERB/p_l/explains/explain}, is believing you deserve it. s_c challenges app1: focus on <i>that</i>. When s_c and app1 return to the training grounds, the other trainees notice app1 fighting with a newfound vigor.",
+                "text": "s_c lashes {PRONOUN/s_c/poss} tail. Of course app1 will never be a warrior if {PRONOUN/app1/subject} {VERB/app1/think/thinks} like <i>that.</i> c_n doesn't want warriors who think like <i>that.</i> Half of glory, {PRONOUN/s_c/subject} {VERB/p_l/explain/explains}, is believing you deserve it. s_c challenges app1: focus on <i>that</i>. When s_c and app1 return to the training grounds, the other trainees notice app1 fighting with a newfound vigor.",
                 "exp": 10,
                 "can_have_stat": ["p_l"],
                 "stat_trait": ["fierce","bold","confident","competitive","ambitious","rebellious","daring","adventurous","cunning"],
@@ -9659,7 +9659,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "s_c tries to think of something to say or do, anything, but {PRONOUN/s_c/subject} {VERB/s_c/fumbles/fumble} as app1 becomes more and more unconsolable. Finally, s_c gives up, leaving app1 alone with {PRONOUN/app1/poss} thoughts.",
+                "text": "s_c tries to think of something to say or do, anything, but {PRONOUN/s_c/subject} {VERB/s_c/fumble/fumbles} as app1 becomes more and more unconsolable. Finally, s_c gives up, leaving app1 alone with {PRONOUN/app1/poss} thoughts.",
                 "exp": 0,
                 "can_have_stat": ["p_l"],
                 "relationships": [
