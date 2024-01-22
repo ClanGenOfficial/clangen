@@ -607,7 +607,7 @@ class PronounCreation(UIWindow):
             container=self)
         
         # Save Confirmation
-        self.pronoun_added = pygame_gui.elements.UITextBox(f"Pronoun saved and added to {self.the_cat.name}!",
+        self.pronoun_added = pygame_gui.elements.UITextBox(f"Pronoun saved and added to presets!",
                                                                 scale(pygame.Rect(
                                                                     (550,700), (800, 80))),
                                                                 visible=False,
@@ -720,7 +720,7 @@ class PronounCreation(UIWindow):
             elif event.ui_element == self.buttons["save_pronouns"]:
                 if self.are_boxes_full():
                     new_pronouns = self.get_new_pronouns()
-                    self.the_cat.pronouns.append(new_pronouns)
+                    #self.the_cat.pronouns.append(new_pronouns)
                     game.clan.custom_pronouns.append(new_pronouns)
                     print("Pronouns saved")
                     self.pronoun_added.show()

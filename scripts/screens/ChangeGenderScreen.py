@@ -36,7 +36,7 @@ class ChangeGenderScreen(Screens):
         self.previous_cat = None
         self.elements = {}
         self.windows = None
-        self.checkboxes_text = {}
+        self.removalboxes_text = {}
         self.removalbuttons = {}
         self.pronoun_template = [
             {
@@ -50,7 +50,7 @@ class ChangeGenderScreen(Screens):
             }
         ]
         self.remove_button = {}
-        self.checkboxes_text = {}
+        self.removalboxes_text = {}
         self.boxes = {}
         self.box_labels = {}
         self.conju = 2
@@ -189,7 +189,7 @@ class ChangeGenderScreen(Screens):
     def update_selected_cat(self):
         self.reset_buttons_and_boxes()
         self.selected_cat_elements = {}
-        self.checkboxes_text = {}
+        self.removalboxes_text = {}
         self.buttons = {}
         self.elements = {}
         self.removalbuttons = {}
@@ -294,12 +294,12 @@ class ChangeGenderScreen(Screens):
 
     def pronoun_update(self):
         # List the various pronouns
-        self.checkboxes_text["container_general"] = pygame_gui.elements.UIScrollingContainer(
+        self.removalboxes_text["container_general"] = pygame_gui.elements.UIScrollingContainer(
             relative_rect=scale(pygame.Rect((100, 660), (675, 540))),
             object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
             manager=MANAGER)
 
-        self.checkboxes_text['instr'] = pygame_gui.elements.UITextBox(
+        self.removalboxes_text['instr'] = pygame_gui.elements.UITextBox(
             "Current Pronouns",
             scale(pygame.Rect((280, 595), (350, 65))),
             object_id="#text_box_34_horizleft_dark",
@@ -322,7 +322,7 @@ class ChangeGenderScreen(Screens):
             self.elements[checkname] = pygame_gui.elements.UIImage(
                 block_rect,
                 pygame.transform.scale(pygame.image.load(pronoun_frame).convert_alpha(), (272, 44)),
-                container=self.checkboxes_text["container_general"], manager=MANAGER
+                container=self.removalboxes_text["container_general"], manager=MANAGER
             )
 
             # Create remove button for each pronounset with dynamic ycoor
@@ -330,17 +330,17 @@ class ChangeGenderScreen(Screens):
             self.removalbuttons[f"remove_button_{checkname}"] = UIImageButton(
                 button_rect,
                 "",
-                container=self.checkboxes_text["container_general"],
+                container=self.removalboxes_text["container_general"],
                 object_id="#exit_window_button",
                 starting_height=2,
                 manager=MANAGER)
 
             # Create UITextBox for pronoun display with clickable remove button
             text_box_rect = scale(pygame.Rect((100, ycoor + 4), (400, 78)))
-            self.checkboxes_text[checkname] = pygame_gui.elements.UITextBox(
+            self.removalboxes_text[checkname] = pygame_gui.elements.UITextBox(
                 short_name,
                 text_box_rect,
-                container=self.checkboxes_text["container_general"],
+                container=self.removalboxes_text["container_general"],
                 object_id="#text_box_30_horizleft_pad_0_8",
                 manager=MANAGER)
 
@@ -351,7 +351,7 @@ class ChangeGenderScreen(Screens):
                     text_box_rect,
                     "",
                     object_id="#blank_button_small",
-                    container=self.checkboxes_text["container_general"],
+                    container=self.removalboxes_text["container_general"],
                     tool_tip_text=displayname,
                     manager=MANAGER,
                     starting_height=2
@@ -361,7 +361,7 @@ class ChangeGenderScreen(Screens):
                     text_box_rect,
                     "",
                     object_id="#blank_button_small",
-                    container=self.checkboxes_text["container_general"],
+                    container=self.removalboxes_text["container_general"],
                     manager=MANAGER,
                     starting_height=2
                 )
@@ -379,19 +379,19 @@ class ChangeGenderScreen(Screens):
         min_scrollable_height = max(100, n * 65)
 
         if game.settings['fullscreen']:
-            self.checkboxes_text["container_general"].set_scrollable_area_dimensions(
+            self.removalboxes_text["container_general"].set_scrollable_area_dimensions(
                 (310 * 2, min_scrollable_height * 2))
         else:
-            self.checkboxes_text["container_general"].set_scrollable_area_dimensions((310, min_scrollable_height))
+            self.removalboxes_text["container_general"].set_scrollable_area_dimensions((310, min_scrollable_height))
 
     def preset_update(self):
         # List the various pronouns
-        self.checkboxes_text["container_general2"] = pygame_gui.elements.UIScrollingContainer(
+        self.removalboxes_text["container_general2"] = pygame_gui.elements.UIScrollingContainer(
             relative_rect=scale(pygame.Rect((795, 660), (675, 540))),
             object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
             manager=MANAGER)
 
-        self.checkboxes_text['instr2'] = pygame_gui.elements.UITextBox(
+        self.removalboxes_text['instr2'] = pygame_gui.elements.UITextBox(
             "Saved Pronouns",
             scale(pygame.Rect((1000, 595), (350, 65))),
             object_id="#text_box_34_horizleft_dark",
@@ -414,14 +414,14 @@ class ChangeGenderScreen(Screens):
             self.elements[checkname] = pygame_gui.elements.UIImage(
                 block_rect,
                 pygame.transform.scale(pygame.image.load(pronoun_frame).convert_alpha(), (272, 44)),
-                container=self.checkboxes_text["container_general2"], manager=MANAGER
+                container=self.removalboxes_text["container_general2"], manager=MANAGER
             )
 
             button_rect = scale(pygame.Rect((425, ycoor + 14), (112, 56)))
             self.buttons[f"add_button_{checkname}"] = UIImageButton(
                 button_rect,
                 "",
-                container=self.checkboxes_text["container_general2"],
+                container=self.removalboxes_text["container_general2"],
                 object_id="#add_button",
                 starting_height=2,
                 manager=MANAGER)
@@ -429,10 +429,10 @@ class ChangeGenderScreen(Screens):
             # Create UITextBox for pronoun display and create tooltip for full pronoun display
             button_rect = scale(pygame.Rect((550, ycoor + 18), (48, 48)))
             text_box_rect = scale(pygame.Rect((100, ycoor + 4), (400, 78)))
-            self.checkboxes_text[checkname] = pygame_gui.elements.UITextBox(
+            self.removalboxes_text[checkname] = pygame_gui.elements.UITextBox(
                 short_name,
                 text_box_rect,
-                container=self.checkboxes_text["container_general2"],
+                container=self.removalboxes_text["container_general2"],
                 object_id="#text_box_30_horizleft_pad_0_8",
                 manager=MANAGER)
 
@@ -443,7 +443,7 @@ class ChangeGenderScreen(Screens):
                     text_box_rect,
                     "",
                     object_id="#blank_button_small",
-                    container=self.checkboxes_text["container_general2"],
+                    container=self.removalboxes_text["container_general2"],
                     tool_tip_text=displayname,
                     manager=MANAGER,
                     starting_height=2
@@ -453,7 +453,7 @@ class ChangeGenderScreen(Screens):
                     text_box_rect,
                     "",
                     object_id="#blank_button_small",
-                    container=self.checkboxes_text["container_general2"],
+                    container=self.removalboxes_text["container_general2"],
                     manager=MANAGER,
                     starting_height=2
                 )
@@ -462,7 +462,7 @@ class ChangeGenderScreen(Screens):
             self.removalbuttons[f"remove_button_{checkname}"] = UIImageButton(
                 button_rect,
                 "",
-                container=self.checkboxes_text["container_general2"],
+                container=self.removalboxes_text["container_general2"],
                 object_id="#exit_window_button",
                 starting_height=2,
                 manager=MANAGER)
@@ -470,7 +470,7 @@ class ChangeGenderScreen(Screens):
             # the defaults.  button is only visible here for UI consistency
             self.removalbuttons[f"remove_button_{checkname}"].disable()
 
-            self.checkboxes_text[checkname].disable()
+            self.removalboxes_text[checkname].disable()
             n += 1
             ycoor += 104
         n = 0
@@ -487,7 +487,7 @@ class ChangeGenderScreen(Screens):
             self.elements[checkname] = pygame_gui.elements.UIImage(
                 block_rect,
                 pygame.transform.scale(pygame.image.load(pronoun_frame).convert_alpha(), (272, 44)),
-                container=self.checkboxes_text["container_general2"], manager=MANAGER
+                container=self.removalboxes_text["container_general2"], manager=MANAGER
             )
 
             # Create UITextBox for pronoun display with clickable remove button
@@ -497,7 +497,7 @@ class ChangeGenderScreen(Screens):
             self.removalbuttons[f"remove_button_{checkname}"] = UIImageButton(
                 button_rect,
                 "",
-                container=self.checkboxes_text["container_general2"],
+                container=self.removalboxes_text["container_general2"],
                 object_id="#exit_window_button",
                 starting_height=2,
                 manager=MANAGER)
@@ -506,16 +506,16 @@ class ChangeGenderScreen(Screens):
             self.buttons[f"add_button_{checkname}"] = UIImageButton(
                 button_rect,
                 "",
-                container=self.checkboxes_text["container_general2"],
+                container=self.removalboxes_text["container_general2"],
                 object_id="#add_button",
                 starting_height=2,
                 manager=MANAGER)
 
             text_box_rect = scale(pygame.Rect((100, ycoor + 4), (400, 78)))
-            self.checkboxes_text[checkname] = pygame_gui.elements.UITextBox(
+            self.removalboxes_text[checkname] = pygame_gui.elements.UITextBox(
                 short_name,
                 text_box_rect,
-                container=self.checkboxes_text["container_general2"],
+                container=self.removalboxes_text["container_general2"],
                 object_id="#text_box_30_horizleft_pad_0_8",
                 manager=MANAGER)
 
@@ -526,7 +526,7 @@ class ChangeGenderScreen(Screens):
                     text_box_rect,
                     "",
                     object_id="#blank_button_small",
-                    container=self.checkboxes_text["container_general2"],
+                    container=self.removalboxes_text["container_general2"],
                     tool_tip_text=displayname,
                     manager=MANAGER,
                     starting_height=2
@@ -536,21 +536,21 @@ class ChangeGenderScreen(Screens):
                     text_box_rect,
                     "",
                     object_id="#blank_button_small",
-                    container=self.checkboxes_text["container_general2"],
+                    container=self.removalboxes_text["container_general2"],
                     manager=MANAGER,
                     starting_height=2
                 )
 
-            self.checkboxes_text[checkname].disable()
+            self.removalboxes_text[checkname].disable()
             n += 1
             ycoor += 104
         min_scrollable_height = max(100, (n + 3) * 65)
 
         if game.settings['fullscreen']:
-            self.checkboxes_text["container_general2"].set_scrollable_area_dimensions(
+            self.removalboxes_text["container_general2"].set_scrollable_area_dimensions(
                 (310 * 2, min_scrollable_height * 2))
         else:
-            self.checkboxes_text["container_general2"].set_scrollable_area_dimensions((310, min_scrollable_height))
+            self.removalboxes_text["container_general2"].set_scrollable_area_dimensions((310, min_scrollable_height))
 
     def is_duplicate(self, preset):
         # checks to see if a preset with the same name is already in the cats pronouns
@@ -567,8 +567,8 @@ class ChangeGenderScreen(Screens):
             self.selected_cat_elements[ele].kill()
         for ele in self.buttons:
             self.buttons[ele].kill()
-        for ele in self.checkboxes_text:
-            self.checkboxes_text[ele].kill()
+        for ele in self.removalboxes_text:
+            self.removalboxes_text[ele].kill()
         for ele in self.removalbuttons:
             self.removalbuttons[ele].kill()
 
@@ -625,7 +625,7 @@ class ChangeGenderScreen(Screens):
             self.selected_cat_elements[ele].kill()
         for ele in self.buttons:
             self.buttons[ele].kill()
-        for ele in self.checkboxes_text:
-            self.checkboxes_text[ele].kill()
+        for ele in self.removalboxes_text:
+            self.removalboxes_text[ele].kill()
         for ele in self.removalbuttons:
             self.removalbuttons[ele].kill()
