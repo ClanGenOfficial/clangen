@@ -93,7 +93,7 @@
             "scar",
             "MANLEG"
         ],
-        "event_text": "A horrible battle between c_n and o_c patrols after the two patrols traded insults at the border. m_c is left badly injured.",
+        "event_text": "A horrible battle occurred between c_n and o_c patrols after the two patrols traded insults at the border. m_c is left badly injured.",
         "history_text": {
             "scar": "m_c was scarred after a fight with o_c cats.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after fighting with o_c cats."
@@ -248,8 +248,8 @@
         ],
         "event_text": "m_c was injured recklessly fighting a fox that {PRONOUN/m_c/poss} mentor, r_c, encouraged {PRONOUN/m_c/object} to attack.",
         "history_text": {
-            "scar": "m_c was scarred fighting a dog that {PRONOUN/m_c/poss} mentor, r_c, encouraged {PRONOUN/m_c/object} to attack.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/poss} mentor encouraged {PRONOUN/m_c/object} to fight a dog."
+            "scar": "m_c was scarred fighting a fox that {PRONOUN/m_c/poss} mentor, r_c, encouraged {PRONOUN/m_c/object} to attack.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/poss} mentor encouraged {PRONOUN/m_c/object} to fight a fox."
         },
         "cat_trait": null,
         "cat_skill": null,
