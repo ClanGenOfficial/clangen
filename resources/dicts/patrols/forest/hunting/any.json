@@ -1465,7 +1465,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": ""s_c doesn't even hesitate before splitting from the patrol to check on the source of the noise. {PRONOUN/s_c/subject/CAP} quickly {VERB/s_c/regret/regrets} {PRONOUN/s_c/poss} impulsivity, however, when an angry raccoon bursts from the bush! s_c gets quite the scare, but thankfully the raccoon only wanted to get away from {PRONOUN/s_c/object} and quickly runs off back into the undergrowth.",
+                "text": "s_c doesn't even hesitate before splitting from the patrol to check on the source of the noise. {PRONOUN/s_c/subject/CAP} quickly {VERB/s_c/regret/regrets} {PRONOUN/s_c/poss} impulsivity, however, when an angry raccoon bursts from the bush! s_c gets quite the scare, but thankfully the raccoon only wanted to get away from {PRONOUN/s_c/object} and quickly runs off back into the undergrowth.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["daring", "bold", "ambitious"],
