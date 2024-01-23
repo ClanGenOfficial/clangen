@@ -213,6 +213,7 @@ class Cat():
         self.no_mates = False
         self.no_retire = False
         self.prevent_fading = False  # Prevents a cat from fading.
+        self.alternate_residence = False
         
         self.faded_offspring = []  # Stores of a list of faded offspring, for relation tracking purposes
 
@@ -455,13 +456,22 @@ class Cat():
 
         if not self.outside:
             Cat.dead_cats.append(self)
-            if game.clan.instructor.df is False:
-                self.df = False
-                game.clan.add_to_starclan(self)
-            elif game.clan.instructor.df is True:
-                self.df = True
-                self.thought = "Is startled to find themselves wading in the muck of a shadowed forest"
-                game.clan.add_to_darkforest(self)
+            if self.alternate_residence is True:
+                if game.clan.instructor.df is False:
+                    self.df = True
+                    self.thought = "Is startled to find themselves wading in the muck of a shadowed forest"
+                    game.clan.add_to_darkforest(self)
+                elif game.clan.instructor.df is True:
+                    self.df = False
+                    game.clan.add_to_starclan(self)
+            else:
+                if game.clan.instructor.df is False:
+                    self.df = False
+                    game.clan.add_to_starclan(self)
+                elif game.clan.instructor.df is True:
+                    self.df = True
+                    self.thought = "Is startled to find themselves wading in the muck of a shadowed forest"
+                    game.clan.add_to_darkforest(self)
         else:
             self.thought = "Is fascinated by the new ghostly world they've stumbled into"
             game.clan.add_to_unknown(self)
@@ -2892,6 +2902,7 @@ class Cat():
                 "no_kits": self.no_kits,
                 "no_retire": self.no_retire,
                 "no_mates": self.no_mates,
+                "alternate_residence": self.alternate_residence,
                 "exiled": self.exiled,
                 "pelt_name": self.pelt.name,
                 "pelt_color": self.pelt.colour,

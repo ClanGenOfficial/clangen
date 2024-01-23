@@ -2061,7 +2061,7 @@ class ProfileScreen(Screens):
         if light_dark == "light":
             offset = 80
                 
-        if the_cat.df:
+        if the_cat.df and the_cat.dead:
             biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index('SC/DF') * 70, 640, 70))
             return pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70)), (240, 210))
         elif the_cat.dead or game.clan.instructor.ID == the_cat.ID:

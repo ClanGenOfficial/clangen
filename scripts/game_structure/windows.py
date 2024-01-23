@@ -1307,6 +1307,11 @@ class ChangeCatToggles(UIWindow):
 
         self.checkboxes = {}
         self.refresh_checkboxes()
+
+        if game.clan.instructor.df:
+            residencetext = "StarClan"
+        else:
+            residencetext = "Dark Forest"
         
         # Text
         self.text_1 = pygame_gui.elements.UITextBox("Prevent fading", scale(pygame.Rect(110, 60, -1, 50)), 
@@ -1323,6 +1328,11 @@ class ChangeCatToggles(UIWindow):
         
         self.text_4 = pygame_gui.elements.UITextBox("Limit romantic interactions and mate changes",
                                                     scale(pygame.Rect(110, 210, -1, 50)), 
+                                                    object_id="#text_box_30_horizleft_pad_0_8",
+                                                    container=self)
+        
+        self.text_5 = pygame_gui.elements.UITextBox(f"Send to {residencetext} upon death",
+                                                    scale(pygame.Rect(110, 260, -1, 50)), 
                                                     object_id="#text_box_30_horizleft_pad_0_8",
                                                     container=self)
         
@@ -1393,6 +1403,23 @@ class ChangeCatToggles(UIWindow):
                                                          container=self,
                                                          object_id=box_type,
                                                          tool_tip_text=tool_tip)
+        #Alternate Residence
+        if game.clan.instructor.df:
+            residencetext = "StarClan"
+        else:
+            residencetext = "Dark Forest"
+
+        if self.the_cat.alternate_residence:
+            box_type = "#checked_checkbox"
+            tool_tip = f"Sends this cat to the {residencetext} upon death."
+        else:
+            box_type = "#unchecked_checkbox"
+            tool_tip = f"Sends this cat to the {residencetext} upon death."
+        
+        self.checkboxes["alt_residence"] = UIImageButton(scale(pygame.Rect(45, 250, 68, 68)), "",
+                                                         container=self,
+                                                         object_id=box_type,
+                                                         tool_tip_text=tool_tip)
 
     def process_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -1412,6 +1439,9 @@ class ChangeCatToggles(UIWindow):
                 self.refresh_checkboxes()
             elif event.ui_element == self.checkboxes["prevent_mates"]:
                 self.the_cat.no_mates = not self.the_cat.no_mates
+                self.refresh_checkboxes()
+            elif event.ui_element == self.checkboxes["alt_residence"]:
+                self.the_cat.alternate_residence = not self.the_cat.alternate_residence
                 self.refresh_checkboxes()
         
         return super().process_event(event)
