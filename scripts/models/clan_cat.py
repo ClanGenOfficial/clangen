@@ -42,7 +42,7 @@ clan_cat_schema = Schema(
     "reverse": bool,
     "white_patches": Or(str, None),
     Optional("vitiligo", default=None): Or(str, None),
-    Optional("points", default=None): Or(int, None),
+    Optional("points", default=None): Or(str, None),
     "white_patches_tint": str,
     Optional("pattern", default=None): Or(str, None),
     Optional("tortie_base", default=None): Or(str, None),
