@@ -760,6 +760,13 @@
                 ],
                 "history_text": { "scar": "m_c got injured patrolling on the border." },
                 "other_clan_rep": -1
+            },
+            {
+                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c looses a life.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["r_c"],
+                "other_clan_rep": -4
             }
         ]
     },
@@ -898,6 +905,13 @@
                 "exp": 0,
                 "weight": 20,
                 "other_clan_rep": -1
+            },
+            {
+                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c looses a life.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["r_c"],
+                "other_clan_rep": -4
             }
         ]
     },
@@ -1163,6 +1177,13 @@
                 ],
                 "history_text": { "scar": "m_c got injured patrolling on the border." },
                 "other_clan_rep": -1
+            },
+            {
+                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c looses a life.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["r_c"],
+                "other_clan_rep": -4
             }
         ]
     },
@@ -1301,6 +1322,13 @@
                 "exp": 0,
                 "weight": 20,
                 "other_clan_rep": -1
+            },
+            {
+                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c looses a life.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["r_c"],
+                "other_clan_rep": -4
             }
         ]
     },
@@ -1566,6 +1594,13 @@
                 ],
                 "history_text": { "scar": "m_c got injured patrolling on the border." },
                 "other_clan_rep": -1
+            },
+            {
+                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c looses a life.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["r_c"],
+                "other_clan_rep": -4
             }
         ]
     },
@@ -1704,6 +1739,13 @@
                 "exp": 0,
                 "weight": 20,
                 "other_clan_rep": -1
+            },
+            {
+                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c looses a life.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["r_c"],
+                "other_clan_rep": -4
             }
         ]
     },
@@ -1969,6 +2011,13 @@
                 ],
                 "history_text": { "scar": "m_c got injured patrolling on the border." },
                 "other_clan_rep": -1
+            },
+            {
+                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c looses a life.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["r_c"],
+                "other_clan_rep": -4
             }
         ]
     },
@@ -2107,6 +2156,13 @@
                 "exp": 0,
                 "weight": 20,
                 "other_clan_rep": -1
+            },
+            {
+                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c looses a life.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["r_c"],
+                "other_clan_rep": -4
             }
         ]
     }
