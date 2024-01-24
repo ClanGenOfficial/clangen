@@ -1552,7 +1552,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol mostly ignores the Twolegs. As they hunt, they hear a yelp from r_c. {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} crawled into a metal Twolegs box, and there's nothing {PRONOUN/r_c/subject} or the rest of the patrol can do to get {PRONOUN/r_c/object} out - eventually the Twolegs notice, and r_c is taken by {PRONOUN/r_c/object}.",
+                "text": "The patrol mostly ignores the Twolegs. As they hunt, they hear a yelp from r_c. {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} crawled into a metal Twolegs box, and there's nothing {PRONOUN/r_c/subject} or the rest of the patrol can do to get {PRONOUN/r_c/object} out - eventually the Twolegs notice, and r_c is taken by them.",
                 "exp": 0,
                 "weight": 10,
                 "lost_cats": ["r_c"]
@@ -1627,7 +1627,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol mostly ignores the Twolegs. As they hunt, they hear a yelp from r_c. {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} crawled into a metal Twolegs box, and there's nothing {PRONOUN/r_c/subject} or the rest of the patrol can do to get {PRONOUN/r_c/object} out - eventually the Twolegs notice, and r_c is taken by {PRONOUN/r_c/object}.",
+                "text": "The patrol mostly ignores the Twolegs. As they hunt, they hear a yelp from r_c. {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} crawled into a metal Twolegs box, and there's nothing {PRONOUN/r_c/subject} or the rest of the patrol can do to get {PRONOUN/r_c/object} out - eventually the Twolegs notice, and r_c is taken by them.",
                 "exp": 0,
                 "weight": 10,
                 "lost_cats": ["r_c"]
@@ -1702,7 +1702,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol mostly ignores the Twolegs. As they hunt, they hear a yelp from r_c. {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} crawled into a metal Twolegs box, and there's nothing {PRONOUN/r_c/subject} or the rest of the patrol can do to get {PRONOUN/r_c/object} out - eventually the Twolegs notice, and r_c is taken by {PRONOUN/r_c/object}.",
+                "text": "The patrol mostly ignores the Twolegs. As they hunt, they hear a yelp from r_c. {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} crawled into a metal Twolegs box, and there's nothing {PRONOUN/r_c/subject} or the rest of the patrol can do to get {PRONOUN/r_c/object} out - eventually the Twolegs notice, and r_c is taken by them.",
                 "exp": 0,
                 "weight": 10,
                 "lost_cats": ["multi"]
@@ -2652,7 +2652,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "With a huge leap, {PRONOUN/r_c/subject} {VERB/r_c/dart/darts} sideways and pull a blackbird out of the air. What a great catch!",
+                "text": "With a huge leap, {PRONOUN/r_c/subject} {VERB/r_c/dart/darts} sideways and {VERB/r_c/pull/pulls} a blackbird out of the air. What a great catch!",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
@@ -2697,7 +2697,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "With a huge leap, {PRONOUN/app1/subject} {VERB/app1/dart/darts} sideways and pull the tail off a taking flight into blackbird the air. A missed catch, but new nest lining?",
+                "text": "With a huge leap, {PRONOUN/app1/subject} {VERB/app1/dart/darts} sideways and {VERB/app1/pull/pulls} the tail feathers off a blackbird taking flight. A missed catch, but new nest lining?",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
@@ -2766,7 +2766,7 @@
                 ]
             },
             {
-                "text": "Nothing's going to escape {PRONOUN/r_c/poss} claws! s_c skids to a halt and then leaps into action, claw just barely catching in the tail of the squirrel {PRONOUN/r_c/subject} saw and bringing it down. {PRONOUN/r_c/subject/CAP} {VERB/r_c/purr/purrs} with satisfaction and pad back to r_c, sharing in the excitement of the hunt with them.",
+                "text": "Nothing's going to escape {PRONOUN/s_c/poss} claws! s_c skids to a halt and then leaps into action, claw just barely catching in the tail of the squirrel {PRONOUN/s_c/subject} saw and bringing it down. {PRONOUN/s_c/subject/CAP} {VERB/s_c/purr/purrs} with satisfaction and {VERB/s_c/pad/pads} back to r_c, sharing in the excitement of the hunt with them.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1"],
@@ -2820,7 +2820,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "With a huge leap, app1 darts sideways and pulls the tail off a blackbird taking flight into the air. A missed catch, but new nest lining? {PRONOUN/app1/subject/CAP} {VERB/app1/toss/tosses} some of the feathers at app2, and the two apprentices end up scuffling like kits.",
+                "text": "With a huge leap, app1 darts sideways and pulls the tail feathers off a blackbird taking flight. A missed catch, but new nest lining? {PRONOUN/app1/subject/CAP} {VERB/app1/toss/tosses} some of the feathers at app2, and the two apprentices end up scuffling like kits.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"],
@@ -2852,7 +2852,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 skids to a halt and tries to sprint after it, but the bird {PRONOUN/app1/subject} saw escapes {PRONOUN/app1/poss} paws. They chatter angrily at it, and it tries to poop on them. Such is life. app2 snickers at {PRONOUN/app1/object} too, but in a lighthearted way, and soon both apprentices are giggling about it as they continue their run.",
+                "text": "app1 skids to a halt and tries to sprint after it, but the bird {PRONOUN/app1/subject} saw escapes {PRONOUN/app1/poss} paws. {PRONOUN/app1/subject} {VERB/app1/chatter/chatters} angrily at it, and it tries to poop on {PRONOUN/app1/object}. Such is life. app2 snickers at {PRONOUN/app1/object} too, but in a lighthearted way, and soon both apprentices are giggling about it as they continue their run.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -3046,7 +3046,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "r_c drops into a crouch and lightly stalks towards the vole. {PRONOUN/r_c/subject/CAP} {VERB/r_c/pause/pauses}, waggling {PRONOUN/r_c/poss} haunches before pouncing. {PRONOUN/r_c/subject/CAP} {VERB/r_c/catch/catches} the vole easily and deliver a killing bite to the back of its head.",
+                "text": "r_c drops into a crouch and lightly stalks towards the vole. {PRONOUN/r_c/subject/CAP} {VERB/r_c/pause/pauses}, waggling {PRONOUN/r_c/poss} haunches before pouncing. {PRONOUN/r_c/subject/CAP} {VERB/r_c/catch/catches} the vole easily and {VERB/r_c/deliver/delivers} a killing bite to the back of its head.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
@@ -3058,7 +3058,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "s_c drops into a crouch and has to consciously stop {PRONOUN/s_c/poss} tail from swaying in excitement as {PRONOUN/s_c/subject} {VERB/s_c/stalk/stalks} the prey. Once {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/'re/'s} close enough, {PRONOUN/s_c/subject} {VERB/s_c/give/gives} {PRONOUN/s_c/poss} haunches a little wiggle and leap. {PRONOUN/s_c/subject/CAP} {VERB/s_c/catch/catches} the vole squarely between {PRONOUN/s_c/poss} paws and kill it quickly.",
+                "text": "s_c drops into a crouch and has to consciously stop {PRONOUN/s_c/poss} tail from swaying in excitement as {PRONOUN/s_c/subject} {VERB/s_c/stalk/stalks} the prey. Once {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} close enough, {PRONOUN/s_c/subject} {VERB/s_c/give/gives} {PRONOUN/s_c/poss} haunches a little wiggle and {VERB/s_c/leap/leaps}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/catch/catches} the vole squarely between {PRONOUN/s_c/poss} paws and {VERB/s_c/kill/kills} it quickly.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["HUNTER,2"],
@@ -3067,7 +3067,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c drops into a crouch and begins to stalk forward. {PRONOUN/s_c/subject/cap} {VERB/s_c/'re/'s} preparing to pounce when {PRONOUN/s_c/poss} paw lightly brushes a twig and the vole immediately takes off. {PRONOUN/s_c/subject/CAP} {VERB/s_c/give/gives} chase, but the critter disappears into a burrow. Mousedung!",
+                "text": "r_c drops into a crouch and begins to stalk forward. {PRONOUN/s_c/subject/cap}{VERB/s_c/'re/'s} preparing to pounce when {PRONOUN/s_c/poss} paw lightly brushes a twig and the vole immediately takes off. {PRONOUN/s_c/subject/CAP} {VERB/s_c/give/gives} chase, but the critter disappears into a burrow. Mousedung!",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
