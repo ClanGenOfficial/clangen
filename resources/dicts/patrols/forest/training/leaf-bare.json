@@ -33,7 +33,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": -5
                     }
                 ]
@@ -54,7 +54,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": -5
                     }
                 ]
@@ -76,7 +76,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": -5
                     }
                 ]
@@ -99,11 +99,115 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": 5
                     }
                 ]
             }
         ]
+    },
+    {
+        "patrol_id": "fst_train_leafbare_snowmyth_storylocked1",
+        "biome": ["forest"],
+        "season": ["leaf-bare"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_med_vision",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "normal adult": [2, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1"],
+        "intro_text": "As snow swirls around c_n's camp, unusually deep, p_l gathers some apprentices to {PRONOUN/p_l/object}.",
+        "decline_text": "Trying to get apprentices to do anything is like, well, herding cats.",
+        "success_outcomes": [
+                {
+                    "text": "See those bright, pure white drifts? That's stardust, swept down from StarClan as they clean out their nests in deep leafbare.",
+                    "exp": 30,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "One of the apprentices starts a snowball fight instead, and p_l becomes a soaked, shivering casualty of the conflict.",
+                    "exp": 0,
+                    "weight": 20,
+                    "injury": [
+                        {
+                            "cats": ["p_l"],
+                            "injuries": ["shivering"]
+                        }
+                    ],
+                    "history_text": {
+                        "scar": "m_c was soaked in leaf-bare, and it progressed to scarring frostbite.",
+                        "reg_death": "m_c was soaked in leaf-bare, eventually killing {PRONOUN/m_c/object}.",
+                        "lead_death": "soaked in leaf-bare, eventually killing {PRONOUN/m_c/object}"
+                    },
+                    "relationships": [
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": -10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["app1"],
+                            "cats_from": ["app2"],
+                            "mutual": true,
+                            "values": ["platonic"],
+                            "amount": 10
+                        }
+                    ]
+                },
+                {
+                    "text": "s_c, wary of any more work, stalks off before p_l can assign {PRONOUN/s_c/object} more chores - and misses out on p_l's excellent storytelling as a result.",
+                    "exp": 0,
+                    "weight": 20,
+                    "can_have_stat": ["any", "app"],
+                    "stat_trait": [
+                        "shameless",
+                        "arrogant",
+                        "bold",
+                        "cold"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["s_c"],
+                            "mutual": false,
+                            "values": ["jealous", "respect"],
+                            "amount": 10
+                        }
+                    ]
+                }
+            ]
     }
 ]

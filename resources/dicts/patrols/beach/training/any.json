@@ -2101,6 +2101,74 @@
                 ]
             }
         ]
-    }    
-    
+    },
+    {
+        "patrol_id": "bch_train_ottercreationmyth_storylocked1",
+        "biome": ["beach"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1"],
+        "intro_text": "As the patrol takes a long moment to bask, p_l begins a story. Once upon a time, many seasons ago, there was a great warrior, sleek furred and strong, for whom swimming was easier than walking...",
+        "decline_text": "A story is nice, but the patrol has to get back to their training, the rest will wait for another time.",
+        "success_outcomes": [
+            {
+                    "text": "They slipped into the ocean to feed their clan, again and again, and each time they had to leave the water their heart broke a little more. Eventually, they didn't leave at all, their fur grown fluffy and buoyant, and now the sea otter floats, happy and fulfilled with the oceanic world.",
+                    "exp": 40,
+                    "weight": 20,
+                    "art": "gen_hunt_fish",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic", "comfort"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        }
+                        ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "r_c, settling down eagerly for the tale, feels a spike of pain in {PRONOUN/r_c/poss} paw pad and yelps. {PRONOUN/r_c/subject/CAP} {VERB/r_c/have/has} to report to the medicine den, but p_l reassures {PRONOUN/r_c/object} that {PRONOUN/p_l/subject}'ll wait to tell this tale until r_c can hear it.",
+                    "exp": 0,
+                    "weight": 20,
+                    "injury": [
+                        {
+                            "cats": ["r_c"],
+                            "injuries": ["small cut"]
+                        }
+                    ],
+                    "history_text": {
+                        "scar": "m_c got a small cut while out training, which has left a scar.",
+                        "reg_death": "m_c died from complications from a small cut.",
+                        "lead_death": "from complications from a small cut"
+                    },
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["r_c"],
+                            "mutual": true,
+                            "values": ["platonic", "comfort"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ]
+    }
 ]

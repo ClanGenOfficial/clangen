@@ -9220,6 +9220,64 @@
             ]
     },
     {
+        "patrol_id": "gen_train_constellations_storylocked1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 5,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [2, 6],
+           "apprentice": [2, 6]
+            },
+        "weight": 20,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1"],
+        "intro_text": "It's been a long day, and a hard training session as dusk slowly settles into night. The cats lie in the training grounds, warriors satisfied, apprentices utterly exhausted, and p_l tilts {PRONOUN/p_l/poss} head back to stare up at the stars.",
+        "decline_text": "Time to head home for a bite to eat and a well deserved rest.",
+        "success_outcomes": [
+            {
+                    "text": "Do you see them, p_l asks, hush and reverent? All those who've gone before, the great silver pelt of StarClan spread before our eyes, thousands of cats who lived and loved and laughed, bright sparks one after another in succession from generation to generation to, well, <i>us</i>.",
+                    "exp": 40,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic", "comfort"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 15
+                        }
+                        ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "Do you see them, p_l asks, hush and reverent? app1 doesn't see <i>anything</i>, app1 is face down in the dust asleep. p_l murrps in amusement, and goes to carry the tired apprentice home.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": true,
+                            "values": ["platonic", "comfort"],
+                            "amount": 10
+                        }
+                    ]
+                }
+            ]
+    },
+    {
         "patrol_id": "gen_train_pumpkineyes",
         "biome": ["Any"],
         "season": ["leaf-fall"],
