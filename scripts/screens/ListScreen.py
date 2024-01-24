@@ -180,8 +180,6 @@ class ListScreen(Screens):
 
     def screen_switches(self):
         # Determine the starting list of cats.
-        print(self.current_group)
-        print(game.last_list_forProfile)
         if game.last_list_forProfile:
             if game.last_list_forProfile == 'sc':
                 self.get_sc_cats()
@@ -392,7 +390,6 @@ class ListScreen(Screens):
             screen.blit(self.ur_bg, (0, 0))
 
     def update_filter_buttons(self):
-        print(game.sort_type)
         # hide them all now
         self.filter_by_rank.hide()
         self.filter_by_ID.hide()
