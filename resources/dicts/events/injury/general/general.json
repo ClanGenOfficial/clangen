@@ -808,7 +808,7 @@
             "rel_down",
             "war"
         ],
-        "event_text": "While patrolling the o_c borders, m_c stepped on a concealed pit trap set by what seemed to be o_c warriors. m_c freezes with shock as {PRONOUN/m_c/subject} {VERB/m_c/plunge/plunges) into the depths of the trap, causing m_c to limp back to camp, flanked by other cats on the patrol.",
+        "event_text": "While patrolling the o_c borders, m_c stepped on a concealed pit trap set by what seemed to be o_c warriors. m_c freezes with shock as {PRONOUN/m_c/subject} {VERB/m_c/plunge/plunges} into the depths of the trap, causing m_c to limp back to camp, flanked by other cats on the patrol.",
         "cat_negate_trait": "careful",
         "cat_skill": null,
         "other_cat_trait": null,
