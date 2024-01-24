@@ -1562,46 +1562,6 @@
         ]
     },
     {
-        "patrol_id": "wtlnd_bord_flashflood4",
-        "biome": ["wetlands"],
-        "season": ["Any"],
-        "types": ["border"],
-        "tags": [],
-        "patrol_art": "bord_general_intro",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {},
-        "weight": 20,
-        "intro_text": "There are dark clouds on the horizon and r_c wonders if they should continue.",
-        "decline_text": "Your patrol decides to head back early.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "While it's pretty gray up there, the promised rain never comes.",
-                "exp": 20,
-                "weight": 20
-            },
-            {
-                "text": "r_c becomes wet from the rain but otherwise the patrol is successful.",
-                "exp": 20,
-                "weight": 5
-            },
-            {
-                "text": "s_c makes a careful judgement, and keeps going. They stick to solid ground, sometimes routing themselves through the trees as the rain begins to pour around them.",
-                "exp": 20,
-                "weight": 20,
-                "stat_skill": ["CLEVER,2"]
-            },
-            {
-                "text": "It's not worth the risk - s_c heads for home.",
-                "exp": 20,
-                "weight": 20,
-                "stat_trait": ["careful", "insecure", "nervous"]
-            }
-        ],
-        "fail_outcomes": []
-    },
-    {
         "patrol_id": "wtlnd_bord_flashflood5",
         "biome": ["wetlands"],
         "season": ["leaf-bare"],
