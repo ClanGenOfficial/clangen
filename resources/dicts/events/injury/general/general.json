@@ -808,7 +808,7 @@
             "rel_down",
             "war"
         ],
-        "event_text": "While patrolling the o_c borders, m_c stepped on a concealed trap set by what seemed to be o_c warriors. The snare inflicts a deep wound, causing m_c to limp back to camp, flanked by other cats on the patrol.",
+        "event_text": "While patrolling the o_c borders, m_c stepped on a concealed pit trap set by what seemed to be o_c warriors. m_c freezes with shock as {PRONOUN/m_c/subject} {VERB/m_c/plunge/plunges) into the depths of the trap, causing m_c to limp back to camp, flanked by other cats on the patrol.",
         "cat_negate_trait": "careful",
         "cat_skill": null,
         "other_cat_trait": null,
@@ -830,7 +830,7 @@
             "respect",
             "trust"
         ],
-        "event_text": "During a skirmish, m_c bounds into battle against an o_c warrior, protecting r_c from a powerful blow. The aftermath turns up with m_c wincing in pain from the strike r_c was about to take.",
+        "event_text": "During a skirmish, m_c bounds into battle against an o_c warrior, protecting r_c from a powerful blow. m_c bears the brunt of the strike, and r_c helps them back to camp.",
         "cat_negate_trait":null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -864,7 +864,7 @@
             "other_cat",
             "other_cat_kit"
         ],
-        "event_text": "As o_c attempted a surprise attack on the c_n camp, m_c fiercely guarded the nursery, although it didn't end with {PRONOUN/m_c/object} unscathed, a gushing wound in {PRONOUN/m_c/poss} flank.",
+        "event_text": "While o_c attempted a surprise attack on the c_n camp, m_c fiercely guarded the nursery. However, it didn't end with m_c unscathed, and {PRONOUN/m_c/subject} walked away with a gushing wound in {PRONOUN/m_c/poss} flank.",
         "cat_negate_trait":null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -882,7 +882,7 @@
             "rel_down",
             "war"
         ],
-        "event_text": "On a border patrol near the o_c border, m_c couldn't take it with all of o_c's jeers and smirks- lashing out at the first cat {PRONOUN/m_c/subject} saw jeering at the c_n cats. The hotheaded move didn't seem quite smart, though, as m_c didn't escape the skirmish without drawing blood.",
+        "event_text": "On a border patrol near the o_c border, m_c could no longer take o_c's jeers and smirks. {PRONOUN/m_c/subject/CAP} lashed out at the first jeering cat {PRONOUN/m_c/subject} saw, although the hotheaded move wasn't smart as m_c couldn't escape the skirmish without injury.",
         "cat_negate_trait":null,
         "cat_skill": null,
         "cat_trait": [
