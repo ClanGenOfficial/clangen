@@ -2825,7 +2825,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The stocky gray vixen they track down smells of milk, and though she's near double r_c's weight and all of it muscle, {PRONOUN/r_c/subject} {VERB/r_c/meet/meets} her eyes squarely, and leap to attack. c_n does not tolerate sharing {PRONOUN/r_c/poss} territory with foxes.",
+                "text": "The stocky gray vixen they track down smells of milk, and though she's near double r_c's weight and all of it muscle, {PRONOUN/r_c/subject} {VERB/r_c/meet/meets} her eyes squarely, and {VERB/r_c/leap/leaps} to attack. c_n does not tolerate sharing {PRONOUN/r_c/poss} territory with foxes.",
                 "exp": 50,
                 "weight": 20,
                 "relationships": [
@@ -3159,7 +3159,7 @@
                 ]
             },
             {
-                "text": "As the patrol settles in, tracking mouse scent mostly, s_c wanders back, and as {PRONOUN/s_c/subject} {VERB/s_c/put/puts} a paw down the ground squeaks. {PRONOUN/s_c/subject/CAP} {VERB/s_c/lean/leans} down, jaws snapping, and meet the eyes of the rest of the patrol with an insolent smirk.",
+                "text": "As the patrol settles in, tracking mouse scent mostly, s_c wanders back, and as {PRONOUN/s_c/subject} {VERB/s_c/put/puts} a paw down the ground squeaks. {PRONOUN/s_c/subject/CAP} {VERB/s_c/lean/leans} down, jaws snapping, and {VERB/s_c/meet/meets} the eyes of the rest of the patrol with an insolent smirk.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -3334,7 +3334,7 @@
                 "weight": 20
             },
             {
-                "text": "When {PRONOUN/r_c/subject} {VERB/r_c/round/rounds} a bend in the path, r_c hears a bird call. Jerking {PRONOUN/r_c/poss} head up, {PRONOUN/r_c/subject} {VERB/r_c/lose/loses} {PRONOUN/r_c/poss} footing and skid down a slope more mud than grass. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} not that badly hurt, but r_c is tender enough after that fall to give up and go home.",
+                "text": "When {PRONOUN/r_c/subject} {VERB/r_c/round/rounds} a bend in the path, r_c hears a bird call. Jerking {PRONOUN/r_c/poss} head up, {PRONOUN/r_c/subject} {VERB/r_c/lose/loses} {PRONOUN/r_c/poss} footing and {VERB/r_c/skid/skids} down a slope more mud than grass. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} not that badly hurt, but r_c is tender enough after that fall to give up and go home.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -3399,7 +3399,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "While rounds a bend in the path, app1 hears a bird call. Jerking {PRONOUN/app1/poss} head up, {PRONOUN/app1/subject} {VERB/app1/lose/loses} {PRONOUN/app1/poss} footing and skid down a slope that's more mud than grass. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} not that badly hurt, but app1 is tender enough after that fall to give up and go home.",
+                "text": "While rounds a bend in the path, app1 hears a bird call. Jerking {PRONOUN/app1/poss} head up, {PRONOUN/app1/subject} {VERB/app1/lose/loses} {PRONOUN/app1/poss} footing and {VERB/app1/skid/skids} down a slope that's more mud than grass. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} not that badly hurt, but app1 is tender enough after that fall to give up and go home.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
