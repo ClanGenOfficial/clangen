@@ -2831,7 +2831,7 @@
       "prepared",
       "general_mentor",
       "general_parents",
-      "general_leader",
+      "yes_leader",
       "general_backstory",
       "all_traits"
     ],
@@ -2843,7 +2843,7 @@
       "prepared",
       "general_mentor",
       "general_parents",
-      "general_leader",
+      "yes_leader",
       "general_backstory",
       "all_traits"
     ],
@@ -2854,7 +2854,7 @@
       "mediator",
       "alive_mentor",
       "general_parents",
-      "general_leader",
+      "yes_leader",
       "general_backstory",
       "all_traits"
     ],
