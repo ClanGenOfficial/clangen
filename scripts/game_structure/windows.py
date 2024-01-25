@@ -1307,11 +1307,6 @@ class ChangeCatToggles(UIWindow):
 
         self.checkboxes = {}
         self.refresh_checkboxes()
-
-        if game.clan.instructor.df:
-            residencetext = "StarClan"
-        else:
-            residencetext = "Dark Forest"
         
         # Text
         self.text_1 = pygame_gui.elements.UITextBox("Prevent fading", scale(pygame.Rect(110, 60, -1, 50)), 
@@ -1331,7 +1326,7 @@ class ChangeCatToggles(UIWindow):
                                                     object_id="#text_box_30_horizleft_pad_0_8",
                                                     container=self)
         
-        self.text_5 = pygame_gui.elements.UITextBox(f"Send to {residencetext} upon death",
+        self.text_5 = pygame_gui.elements.UITextBox(f"Send to opposite afterlife on death",
                                                     scale(pygame.Rect(110, 260, -1, 50)), 
                                                     object_id="#text_box_30_horizleft_pad_0_8",
                                                     container=self)
