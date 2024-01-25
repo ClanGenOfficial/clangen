@@ -659,16 +659,21 @@ def change_relationship_values(cats_to: list,
         changed = True"""
 
     # pick out the correct cats
-    for kitty in cats_from:
-        relationships = [i for i in kitty.relationships.values() if i.cat_to.ID in cats_to]
+    for single_cat_from in cats_from:
+        print(single_cat_from.relationships.keys())
+        for single_cat_to_ID in cats_to:
+            single_cat_to = single_cat_from.fetch_cat(single_cat_to_ID)
 
-        # make sure that cats don't gain rel with themselves
-        for rel in relationships:
-            if kitty.ID == rel.cat_to.ID:
+            if single_cat_from == single_cat_to:
                 continue
+            
+            if single_cat_to_ID not in single_cat_from.relationships:
+                single_cat_from.create_one_relationship(single_cat_to)
+
+            rel = single_cat_from.relationships[single_cat_to_ID]
 
             # here we just double-check that the cats are allowed to be romantic with each other
-            if kitty.is_potential_mate(rel.cat_to, for_love_interest=True) or rel.cat_to.ID in kitty.mate:
+            if single_cat_from.is_potential_mate(single_cat_to, for_love_interest=True) or single_cat_to.ID in single_cat_from.mate:
                 # if cat already has romantic feelings then automatically increase romantic feelings
                 # when platonic feelings would increase
                 if rel.romantic_love > 0 and auto_romance:
