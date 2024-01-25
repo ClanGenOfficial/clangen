@@ -1399,17 +1399,12 @@ class ChangeCatToggles(UIWindow):
                                                          object_id=box_type,
                                                          tool_tip_text=tool_tip)
         #Alternate Residence
-        if game.clan.instructor.df:
-            residencetext = "StarClan"
-        else:
-            residencetext = "Dark Forest"
-
         if self.the_cat.alternate_residence:
             box_type = "#checked_checkbox"
-            tool_tip = f"Sends this cat to the {residencetext} upon death."
+            tool_tip = "Send to opposite afterlife on death."
         else:
             box_type = "#unchecked_checkbox"
-            tool_tip = f"Sends this cat to the {residencetext} upon death."
+            tool_tip = "Send to opposite afterlife on death."
         
         self.checkboxes["alt_residence"] = UIImageButton(scale(pygame.Rect(45, 250, 68, 68)), "",
                                                          container=self,
