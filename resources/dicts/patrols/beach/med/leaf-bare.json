@@ -709,7 +709,13 @@
                 "text": "r_c digs and digs and digs, but eventually {PRONOUN/r_c/subject} {VERB/r_c/have/haves} to admit failure and give up the search for burdock root. The cold has leached all the heat from {PRONOUN/r_c/poss} pelt, and {PRONOUN/r_c/subject} {VERB/r_c/arrive/arrives} back at camp miserable and cold.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+				"injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTMITT"]
+                    }
+                ],
                 "history_text": {
                     "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
                 }
