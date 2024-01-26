@@ -9659,7 +9659,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "s_c tries to think of something to say or do, anything, but {PRONOUN/s_c/subject} {VERB/s_c/fumble/fumbles} as app1 becomes more and more unconsolable. Finally, s_c gives up, leaving app1 alone with {PRONOUN/app1/poss} thoughts.",
+                "text": "s_c tries to think of something to say or do, anything, but {PRONOUN/s_c/subject} {VERB/s_c/fumble/fumbles} as app1 becomes more and more inconsolable. Finally, s_c gives up, leaving app1 alone with {PRONOUN/app1/poss} thoughts.",
                 "exp": 0,
                 "can_have_stat": ["p_l"],
                 "relationships": [
