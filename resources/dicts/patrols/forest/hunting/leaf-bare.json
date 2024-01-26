@@ -1454,7 +1454,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c breaks a twig as {PRONOUN/r_c/subject} {VERB/r_c/ready/readies} {PRONOUN/r_c/self} to pounce, and the resulting crack alerts the squirrel. It doesn't even spare {VERB/r_c/object} a glance as it scurries up the tree and out of sight.",
+                "text": "r_c breaks a twig as {PRONOUN/r_c/subject} {VERB/r_c/ready/readies} {PRONOUN/r_c/self} to pounce, and the resulting crack alerts the squirrel. It doesn't even spare {PRONOUN/r_c/object} a glance as it scurries up the tree and out of sight.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
