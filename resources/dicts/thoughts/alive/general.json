@@ -93,7 +93,7 @@
             "Saw a Twoleg kit playing with a dog",
             "Saw a Twoleg kit playing with a kittypet",
             "Saw a kittypet rolling around a Twoleg garden",
-            "Is thinking about a strange Twoleg object they saw recently",
+            "Is thinking about a strange Twoleg object {PRONOUN/m_c/subject} saw recently",
             "Is wondering what the inside of a Twoleg den looks like",
             "Is complaining about being sent on dawn patrol",
             "Is wondering if kittypet life is really so bad",
@@ -550,8 +550,8 @@
     {
         "id": "gen_otherclan",
         "thoughts": [
-            "Is wondering how their old Clan is doing",
-            "Is thinking about their old Clanmates"
+            "Is wondering how {PRONOUN/m_c/poss} old Clan is doing",
+            "Is thinking about {PRONOUN/m_c/poss} old Clanmates"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -713,11 +713,11 @@
         "id": "gen_former_kittypet_apprentice_to_apprentice",
         "thoughts": [
             "Wishes r_c would stop teasing {PRONOUN/m_c/object} about being a kittypet",
-            "Tells r_c about Twoleg behavior",
-            "Is asking r_c about certain clan customs",
+            "Tells r_c about Twoleg behaviour",
+            "Is asking r_c about certain Clan customs",
             "Wonders if r_c thinks less of {PRONOUN/m_c/object} because of {PRONOUN/m_c/poss} past",
             "Spends all day trying to outshine r_c and prove former kittypets are just as good as Clanborn apprentices",
-            "Is jealous of how well r_c fits in, just because of {PRONOUN/r_c/poss} clan roots",
+            "Is jealous of how well r_c fits in, just because of {PRONOUN/r_c/poss} Clan roots",
             "Patiently answers r_c's slightly rude questions about kittypet life"
         ],
         "main_backstory_constraint": ["kittypet1", "kittypet2", "kittypet3", "kittypet4", "refugee3", "tragedy_survivor3", "guided1"],

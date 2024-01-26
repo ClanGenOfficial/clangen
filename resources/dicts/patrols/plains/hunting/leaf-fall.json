@@ -284,7 +284,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "r_c catches the scent of a red fox. Tracking it, {PRONOUN/r_c/self} {VERB/r_c/find/finds} the animal feeding on a pronghorn fawn carcass. It's impossible to say whether the fox killed it or found it.",
+        "intro_text": "r_c catches the scent of a red fox. Tracking it, {PRONOUN/r_c/subject} {VERB/r_c/find/finds} the animal feeding on a pronghorn fawn carcass. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -1791,7 +1791,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "app1 catches scent of a mouse nearby. p_l how more mice will be attracted to this area, drawn in by the grass that has gone to seed under the leaf-fall sun.",
+        "intro_text": "app1 catches scent of a mouse nearby. p_l knows how more mice will be attracted to this area, drawn in by the grass that has gone to seed under the leaf-fall sun.",
         "decline_text": "Your patrol ignores the mouse.",
         "chance_of_success": 60,
         "success_outcomes": [

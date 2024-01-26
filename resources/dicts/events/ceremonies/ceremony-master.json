@@ -644,7 +644,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "p1 is watching with pride as m_c is named and given to (mentor) to apprentice under. {PRONOUN/p1/subject/CAP} know that (mentor) was a good choice."
+    "p1 is watching with pride as m_c is named and given to (mentor) to apprentice under. {PRONOUN/p1/subject/CAP} {VERB/p1/know/knows} that (mentor) was a good choice."
   ],
   "app_38": [
     [
@@ -2370,7 +2370,7 @@
       "general_backstory",
       "faithful"
     ],
-    "(old_name)'s eyes glimmer while l_n talks about {PRONOUN/m_c/poss} accomplishments. {PRONOUN/m_c/poss} gaze isn't focused on the leader, however, but the stars shining behind {PRONOUN/l_n/object}. As {PRONOUN/m_c/subject} {VERB/m_c/are/is} given the name m_c, {PRONOUN/m_c/object} {VERB/m_c/wonder/wonders} if StarClan honors {PRONOUN/m_c/poss} r_h, too."
+    "(old_name)'s eyes glimmer while l_n talks about {PRONOUN/m_c/poss} accomplishments. {PRONOUN/m_c/poss/CAP} gaze isn't focused on the leader, however, but the stars shining behind {PRONOUN/l_n/object}. As {PRONOUN/m_c/subject} {VERB/m_c/are/is} given the name m_c, {PRONOUN/m_c/subject} {VERB/m_c/wonder/wonders} if StarClan honors {PRONOUN/m_c/poss} r_h, too."
   ],
   "warrior_27": [
     [
@@ -2831,7 +2831,7 @@
       "prepared",
       "general_mentor",
       "general_parents",
-      "general_leader",
+      "yes_leader",
       "general_backstory",
       "all_traits"
     ],
@@ -2843,7 +2843,7 @@
       "prepared",
       "general_mentor",
       "general_parents",
-      "general_leader",
+      "yes_leader",
       "general_backstory",
       "all_traits"
     ],
@@ -2854,7 +2854,7 @@
       "mediator",
       "alive_mentor",
       "general_parents",
-      "general_leader",
+      "yes_leader",
       "general_backstory",
       "all_traits"
     ],

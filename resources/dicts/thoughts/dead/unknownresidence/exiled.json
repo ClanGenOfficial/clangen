@@ -1,3 +1,16 @@
 [
-    
+    {
+        "id": "gen_dead_exiled",
+        "thoughts": [
+            "Wishes {PRONOUN/m_c/subject} had the chance to fix {PRONOUN/m_c/poss} mistakes while alive",
+            "Curses c_n for making {PRONOUN/m_c/object} die alone",
+            "Wonders what is happening in StarClan",
+            "Regrets not trying to join a different Clan before {PRONOUN/m_c/subject} died",
+            "Is wondering if {PRONOUN/m_c/subject} {VERB/m_c/have/has} a purpose anymore",
+            "Is thinking bitterly about {PRONOUN/m_c/poss} former Clanmates"
+        ],
+        "main_status_constraint": [
+            "exiled"
+        ]
+    }
 ]
