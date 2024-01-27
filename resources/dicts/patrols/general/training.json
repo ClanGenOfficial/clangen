@@ -8205,7 +8205,7 @@
         "decline_text": "No one is interested in fables today.",
         "success_outcomes": [
             {
-        "text": "The first cat to ever pad through the stars, Silverpelt decorates her fur with the gleaming souls of fallen warriors to keep her company in Starclan.",
+        "text": "The first cat to ever pad through the stars, Silverpelt decorates her fur with the gleaming souls of fallen warriors to keep her company in StarClan.",
         "exp": 30,
     "weight": 20,
         "relationships": [
@@ -9643,7 +9643,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c shifts awkwardly at app1's side until {PRONOUN/s_c/subject} can't stand the silence any longer. s_c drops into a crouch and nudges app1 with {PRONOUN/s_c/poss} paw. App1 looks back, confused as s_c keeps bouncing and poking at {PRONOUN/s_c/object} with a goofy expression on {PRONOUN/s_c/poss} face, until app1 gives in. The warrior and apprentice play like kits, and the smile on app1's face says {PRONOUN/app1/subject}{VERB/app1/'ve/'s} forgotten all about {PRONOUN/app1/poss} doubt.",
+                "text": "s_c shifts awkwardly at app1's side until {PRONOUN/s_c/subject} can't stand the silence any longer. s_c drops into a crouch and nudges app1 with {PRONOUN/s_c/poss} paw. app1 looks back, confused as s_c keeps bouncing and poking at {PRONOUN/s_c/object} with a goofy expression on {PRONOUN/s_c/poss} face, until app1 gives in. The warrior and apprentice play like kits, and the smile on app1's face says {PRONOUN/app1/subject}{VERB/app1/'ve/'s} forgotten all about {PRONOUN/app1/poss} doubt.",
                 "exp": 10,
                 "can_have_stat": ["p_l"],
                 "stat_trait": ["charismatic","flamboyant","playful","childish","shameless","strange","sneaky"],
@@ -9659,7 +9659,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "s_c tries to think of something to say or do, anything, but {PRONOUN/s_c/subject} {VERB/s_c/fumble/fumbles} as app1 becomes more and more unconsolable. Finally, s_c gives up, leaving app1 alone with {PRONOUN/app1/poss} thoughts.",
+                "text": "p_l tries to think of something to say or do, anything, but {PRONOUN/p_l/subject} {VERB/p_l/fumble/fumbles} as app1 becomes more and more inconsolable. Finally, p_l gives up, leaving app1 alone with {PRONOUN/app1/poss} thoughts.",
                 "exp": 0,
                 "can_have_stat": ["p_l"],
                 "relationships": [
