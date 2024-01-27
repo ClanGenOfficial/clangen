@@ -8203,12 +8203,12 @@
         "pl_skill_constraint": ["STORY,1", "LORE,1"],
         "intro_text": "Legends tell of the first clan cat that created the stars above and below upon death...",
         "decline_text": "No one is interested in fables today.",
-        "success_outcomes": [
-            {
-        "text": "The first cat to ever pad through the stars, Silverpelt decorates her fur with the gleaming souls of fallen warriors to keep her company in StarClan.",
-        "exp": 30,
-    "weight": 20,
-        "relationships": [
+            "success_outcomes": [
+                {
+                "text": "The first cat to ever pad through the stars, Silverpelt decorates her fur with the gleaming souls of fallen warriors to keep her company in StarClan.",
+                "exp": 30,
+                "weight": 20,
+                "relationships": [
                         {
                             "cats_to": ["p_l"],
                             "cats_from": ["patrol"],
@@ -8223,12 +8223,143 @@
                             "values": ["respect"],
                             "amount": 5
                         }
-    ]
-    }
-        ],
+                    ]
+                },
+                {
+                    "text": "app1 listens as p_l speaks about the first cat to ever pad through the stars. It's with awe that {PRONOUN/app1/subject} {VERB/app1/hear/hears} that Silverpelt decorates her fur with the gleaming souls of fallen warriors to keep her company in StarClan.",
+                    "exp": 30,
+                    "weight": 20,
+                    "relationships": [
+                            {
+                                "cats_to": ["p_l"],
+                                "cats_from": ["patrol"],
+                                "mutual": true,
+                                "values": ["platonic", "respect"],
+                                "amount": 5
+                            },
+                            {
+                                "cats_to": ["p_l"],
+                                "cats_from": ["app1"],
+                                "mutual": false,
+                                "values": ["platonic", "respect"],
+                                "amount": 5
+                            },
+                            {
+                                "cats_to": ["p_l"],
+                                "cats_from": ["patrol"],
+                                "mutual": false,
+                                "values": ["respect"],
+                                "amount": 5
+                            }
+                        ]
+                    },
+                    {
+                        "text": "s_c listens about the first cat to pad through the stars, and wonders how she got up there in the first place.",
+                        "exp": 30,
+                        "weight": 20,
+                        "can_have_stat": ["not_pl_rc"],
+                        "stat_trait": [
+                            "thoughtful",
+                            "wise",
+                            "cunning"
+                        ],
+                        "relationships": [
+                                {
+                                    "cats_to": ["p_l"],
+                                    "cats_from": ["patrol"],
+                                    "mutual": true,
+                                    "values": ["platonic", "respect"],
+                                    "amount": 5
+                                },
+                                {
+                                    "cats_to": ["p_l"],
+                                    "cats_from": ["s_c"],
+                                    "mutual": false,
+                                    "values": ["trust"],
+                                    "amount": 5
+                                },
+                                {
+                                    "cats_to": ["p_l"],
+                                    "cats_from": ["patrol"],
+                                    "mutual": false,
+                                    "values": ["respect"],
+                                    "amount": 5
+                                }
+                            ]
+                        },
+                        {
+                            "text": "s_c can't help but think that Silverpelt must have been lonely, if she decided to decorate her pelt with souls of fallen warriors.",
+                            "exp": 30,
+                            "weight": 20,
+                            "can_have_stat": ["not_pl_rc"],
+                            "stat_trait": [
+                                "lonesome",
+                                "gloomy",
+                                "compassionate",
+                                "sincere"
+                            ],
+                            "relationships": [
+                                    {
+                                        "cats_to": ["p_l"],
+                                        "cats_from": ["patrol"],
+                                        "mutual": true,
+                                        "values": ["platonic", "respect"],
+                                        "amount": 5
+                                    },
+                                    {
+                                        "cats_to": ["p_l"],
+                                        "cats_from": ["s_c"],
+                                        "mutual": false,
+                                        "values": ["trust"],
+                                        "amount": 5
+                                    },
+                                    {
+                                        "cats_to": ["p_l"],
+                                        "cats_from": ["patrol"],
+                                        "mutual": false,
+                                        "values": ["respect"],
+                                        "amount": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "text": "s_c would love to be as strong as silverpelt, to be able to move the souls of dead cats so easily…",
+                                "exp": 30,
+                                "weight": 20,
+                                "can_have_stat": ["not_pl_rc"],
+                                "stat_trait": [
+                                    "troublesome",
+                                    "arrogant",
+                                    "confident"
+                                ],
+                                "relationships": [
+                                        {
+                                            "cats_to": ["p_l"],
+                                            "cats_from": ["patrol"],
+                                            "mutual": true,
+                                            "values": ["platonic", "respect"],
+                                            "amount": 5
+                                        },
+                                        {
+                                            "cats_to": ["p_l"],
+                                            "cats_from": ["s_c"],
+                                            "mutual": false,
+                                            "values": ["trust"],
+                                            "amount": 5
+                                        },
+                                        {
+                                            "cats_to": ["p_l"],
+                                            "cats_from": ["patrol"],
+                                            "mutual": false,
+                                            "values": ["respect"],
+                                            "amount": 5
+                                        }
+                                    ]
+                                }
+            ],
             "fail_outcomes": [
                 {
-                    "text": "Legends build no muscles and practice no pounces, app1 is uninterested in the lesson.",
+                    "text": "Legends build no muscles and practice no pounces. app1 is uninterested in the lesson.",
                     "exp": 0,
                     "weight": 20,
                     "relationships": [
@@ -8237,6 +8368,84 @@
                             "cats_from": ["app1"],
                             "mutual": false,
                             "values": ["platonic", "respect"],
+                            "amount": -5
+                        }
+                    ]
+                },
+                {
+                    "text": "app1 drifts off for a cat nap as p_l speaks.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": -5
+                        },
+                        {
+                            "cats_to": ["app1"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": -5
+                        }
+                    ]
+                },
+                {
+                    "text": "s_c interrupts p_l, saying that {PRONOUN/s_c/subject} already {VERB/s_c/know/knows} this story as well as {PRONOUN/s_c/subject} {VERB/s_c/know/knows} {PRONOUN/s_c/poss} claws.",
+                    "exp": 0,
+                    "weight": 20,
+                    "can_have_stat": ["app"],
+                    "stat_trait": [
+                        "arrogant",
+                        "wise",
+                        "bold",
+                        "confident",
+                        "cold",
+                        "childish",
+                        "shameless"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": -10
+                        },
+                        {
+                            "cats_to": ["app1"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["platonic", "respect", "trust"],
+                            "amount": -5
+                        }
+                    ]
+                },
+                {
+                    "text": "s_c shuffles {PRONOUN/s_c/poss} paws, not liking the idea of such a powerful being to be the one who controls where {PRONOUN/s_c/subject} {VERB/s_c/go/goes} after death.",
+                    "exp": 0,
+                    "weight": 20,
+                    "can_have_stat": ["app"],
+                    "stat_trait": [
+                        "nervous",
+                        "insecure"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": false,
+                            "values": ["comfort"],
+                            "amount": -10
+                        },
+                        {
+                            "cats_to": ["app1"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
                             "amount": -5
                         }
                     ]

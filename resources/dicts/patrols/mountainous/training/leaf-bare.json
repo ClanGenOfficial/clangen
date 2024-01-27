@@ -428,6 +428,103 @@
                             "amount": 3
                         }
                     ]
+                },
+                {
+                    "text": "s_c can't help but be overly fascinated as p_l speaks about how a warrior was so powerful that they needed to tear a hole in silverpelt just to be able to stop them. s_c hopes to one day be that powerful.",
+                    "exp": 30,
+                    "weight": 20,
+                    "can_have_stat": ["not_pl_rc"],
+                    "stat_skill": ["DARK,1"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["trust", "respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["s_c"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 10
+                        }
+                    ]
+                },
+                {
+                    "text": "s_c hears the tale and is inspired. {PRONOUN/s_c/subject/CAP} {VERB/s_c/wish/wishes} {PRONOUN/s_c/subject} {VERB/s_c/were/was} as strong as the cats in the tale.",
+                    "exp": 30,
+                    "weight": 20,
+                    "can_have_stat": ["not_pl_rc"],
+                    "stat_trait": [
+                        "bloodthirsty",
+                        "troublesome",
+                        "arrogant",
+                        "confident"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["trust", "respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["s_c"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 10
+                        }
+                    ]
+                },
+                {
+                    "text": "At the end of the tale, s_c is inspired by how strong the outcast warrior is, but going against StarClan, that seems like a fool's errand. While s_c wouldn't mind being free of some of the rules of the Clan, {PRONOUN/s_c/subject} wouldn't dare go against StarClan.",
+                    "exp": 30,
+                    "weight": 20,
+                    "can_have_stat": ["not_pl_rc"],
+                    "stat_trait": [
+                        "rebellious"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["trust", "respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["s_c"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        }
+                    ]
                 }
             ],
             "fail_outcomes": [
@@ -447,6 +544,54 @@
                         "reg_death": "r_c died from lack of sleep, {PRONOUN/r_c/poss} vision haunted by dark shadows.",
                         "lead_death": "from lack of sleep, {PRONOUN/r_c/poss} vision haunted by dark shadows"
                        }
+                },
+                {
+                    "text": "p_l notices how eager and happy s_c seems to be, and feels a bit uneasy after finishing the tale. No cat should be that pleased to hear this story...",
+                    "exp": 0,
+                    "weight": 20,
+                    "can_have_stat": ["not_pl_rc"],
+                    "stat_skill": ["DARK,1"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["trust", "respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["trust", "respect"],
+                            "amount": -10
+                        }
+                    ]
+                },
+                {
+                    "text": "At the end of the tale, p_l asks s_c what {PRONOUN/s_c/subject} {VERB/s_c/think/thinks}. s_c admits to not paying attention to some nursery story meant to scare kits.",
+                    "exp": 30,
+                    "weight": 20,
+                    "can_have_stat": ["not_pl_rc"],
+                    "stat_trait": [
+                        "rebellious"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["trust", "respect"],
+                            "amount": -10
+                        },
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": 5
+                        }
+                    ]
                 }
             ]
     },

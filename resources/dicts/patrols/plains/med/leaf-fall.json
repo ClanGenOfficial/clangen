@@ -5583,5 +5583,67 @@
                 ]
             }
         ]
+    },
+    {
+        "patrol_id": "pln_med_leaffall_raspberriescolourmyth_storylocked1",
+        "biome": ["plains"],
+        "season": ["leaf-fall"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "gen_med_borderherb",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+           "medicine cat": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1"],
+        "intro_text": "As the patrol pads carefully around the bramble's thorns, p_l tells them how raspberries got their color.",
+        "decline_text": "The cats are too busy trying to avoid thorns to listen to stories",
+        "success_outcomes": [
+            {
+                    "text": "During the time of the first medicine cats when raspberries grew white lived a gentle old tom. It was impossible to get to the berries he found without tearing his coat on the sharp thorns - but he had sick cats who needed the fruit, so he stepped forward regardless, and since then every raspberry has been stained with the blood from his thorn wounds.",
+                    "exp": 40,
+                    "weight": 20,
+                    "herbs": ["many_herbs", "raspberry"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                        ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "Just like the old tom whose thorn wounds give the berry its color, r_c also falls victim to the bramble's prickles.",
+                    "exp": 0,
+                    "weight": 20,
+                    "injury": [
+                        {
+                        "cats": ["r_c"],
+                        "injuries": ["small cut"],
+                        "scars": ["SCRATCHSIDE"],
+                        "no_results": false
+                        }
+                    ],
+                    "history_text": {
+                        "scar": "r_c was permantly marked by raspberry bramble thorns.",
+                        "reg_death": "r_c died from complications from a small cut, proof that even tiny wounds can progress to dangerous levels.",
+                        "lead_death": "from complications from a small cut, proof that even tiny wounds can progress to dangerous levels"
+                        }
+                }
+            ]
     }
 ]
