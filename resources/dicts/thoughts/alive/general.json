@@ -178,7 +178,7 @@
     {
         "id": "gen_to_alive_med_cat_app",
         "thoughts": [
-            "Is grateful to r_c for {PRONOUN/r_c/poss} treatment",
+            "Is grateful for the treatment r_c gave {PRONOUN/m_c/object}",
             "Is in awe of r_c's growth as a medicine cat apprentice",
             "Thinks r_c will make a good medicine cat",
             "Has doubts about r_c's abilities",
