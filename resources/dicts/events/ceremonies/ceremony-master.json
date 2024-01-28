@@ -2056,7 +2056,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "l_n calls the Clan to a meeting and declares (old_name) to be a warrior. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} now called m_c and are celebrated for {PRONOUN/m_c/poss} r_h."
+    "l_n calls the Clan to a meeting and declares (old_name) to be a warrior. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} now called m_c and {VERB/m_c/are/is} celebrated for {PRONOUN/m_c/poss} r_h."
   ],
   "warrior_2": [
     [
