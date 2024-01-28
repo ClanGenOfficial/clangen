@@ -1210,5 +1210,386 @@
                 }
             }
         ]
+    },
+    {
+        "patrol_id": "mtn_train_greenleaf_sunsetmyth_storylocked1",
+        "biome": ["mountainous"],
+        "season": ["greenleaf"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_bord_story",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1"],
+        "intro_text": "As the cats practice hunting in the low-light, golden hued tones of the setting sun, p_l is reminded of the tale of How The Sunset Came To Be.",
+        "decline_text": "The light is too weird to focus on both training <i>and</i> a story. It'll have to wait for another day.",
+        "success_outcomes": [
+                {
+                    "text": "Long ago, the prettiest queen of the mountains ruled a harsh Clan, attacking those deemed unworthy and ugly. Her grandkit was beautiful not just in pelt but in heart and was killed by her treacherous kin for her kindness. She could not stop her grandmother in life, but in death she marked the skies with her pelt, bringing forth the first sunset.",
+                    "exp": 30,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic", "respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        }
+                        ]
+                },
+                {
+                    "text": "s_c listens attentively as p_l tells the patrol about the pretty queen who gave them sunset. s_c can't help but send a silent thanks up to StarClan, evening gives c_n some of the best conditions to gather prey in the mountains.",
+                    "exp": 30,
+                    "weight": 20,
+                    "can_have_stat": ["not_pl_rc"],
+                    "stat_trait": [
+                        "childish",
+                        "playful",
+                        "flamboyant"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic", "respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["s_c"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        }
+                        ]
+                },
+                {
+                    "text": "s_c is sympathetic to the poor she-cat in the story. To have been killed by an evil leader, her last act the gift of the sunset... s_c doesn't know what {PRONOUN/s_c/subject} would do if {PRONOUN/s_c/subject} {VERB/s_c/were/was} in the same situation.",
+                    "exp": 30,
+                    "weight": 20,
+                    "can_have_stat": ["not_pl_rc"],
+                    "stat_trait": [
+                        "compassionate",
+                        "loving",
+                        "sincere"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic", "respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["s_c"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        }
+                        ]
+                },
+                {
+                    "text": "s_c scoffs. Couldn't the she-cat have killed her evil leader, rather than being killed? {PRONOUN/s_c/subject/CAP} might respect {PRONOUN/s_c/poss} leader, but if lead_name ever was so cruel, then s_c would have no issue rebelling.",
+                    "exp": 30,
+                    "weight": 20,
+                    "can_have_stat": ["not_pl_rc"],
+                    "stat_trait": [
+                        "bloodthirsty",
+                        "arrogant",
+                        "rebellious"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic", "respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["s_c"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        }
+                        ]
+                },
+                {
+                    "text": "Despite s_c's protests about wasting time on a nursery tale, {PRONOUN/s_c/subject} {VERB/s_c/find/finds} {PRONOUN/s_c/self} enjoying listening to p_l telling the story. Perhaps it isn't so bad to listen to a fable once in a while.",
+                    "exp": 30,
+                    "weight": 20,
+                    "can_have_stat": ["not_pl_rc"],
+                    "stat_trait": [
+                        "grumpy",
+                        "gloomy"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic", "respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["s_c"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        }
+                        ]
+                },
+                {
+                    "text": "s_c promises that if c_n ever has a terrible leader while <i>{PRONOUN/s_c/subject}{VERB/s_c/'re/'s}</i> alive, {PRONOUN/s_c/subject}'ll make sure to save the clan. Yes, that she-cat gave them the sunset with her death - but her Clan's evil leader lived on.",
+                    "exp": 30,
+                    "weight": 20,
+                    "can_have_stat": ["not_pl_rc"],
+                    "stat_trait": [
+                        "fierce",
+                        "daring",
+                        "righteous"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic", "respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["s_c"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        }
+                        ]
+                },
+                {
+                    "text": "s_c wonders, if that was how they got sunset... then how did they get sunrise... perhaps {PRONOUN/s_c/subject}'ll ask p_l later back at camp.",
+                    "exp": 30,
+                    "weight": 20,
+                    "can_have_stat": ["not_pl_rc"],
+                    "stat_trait": [
+                        "thoughtful",
+                        "strange",
+                        "calm"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic", "respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["s_c"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        }
+                        ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "As p_l starts the story, r_c, practicing {PRONOUN/r_c/poss} moves, pounces straight into a tree trunk. Whoops. Nothing quite like a visit to the medicine den to disrupt the flow of a story.",
+                    "exp": 0,
+                    "weight": 20,
+                    "injury": [
+                        {
+                        "cats": ["r_c"],
+                        "injuries": ["scrapes", "bruises"],
+                        "scars": [],
+                        "no_results": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Right as p_l gets to the good part, s_c interrupts by yawning and walking off. p_l feels disheartened, and doesn't continue.",
+                    "exp": 0,
+                    "weight": 20,
+                    "can_have_stat": ["not_pl_rc"],
+                    "stat_trait": [
+                        "troublesome",
+                        "oblivious",
+                        "shameless"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["platonic", "respect"],
+                            "amount": -10
+                        },
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": 10
+                        }
+                        ]
+                },
+                {
+                    "text": "s_c says that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} not interested in nursery tales, and would rather sink {PRONOUN/s_c/poss} teeth into some good prey. p_l raises an eyebrow, letting {PRONOUN/s_c/object} go without comment.",
+                    "exp": 0,
+                    "weight": 20,
+                    "can_have_stat": ["not_pl_rc"],
+                    "stat_trait": [
+                        "cold",
+                        "bloodthirsty",
+                        "arrogant"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": 10
+                        }
+                        ]
+                },
+                {
+                    "text": "s_c cringes, unable to bear hearing such a sad tale. p_l wraps a tail around {PRONOUN/s_c/object}, and smoothly turns the conversation to happier things.",
+                    "exp": 0,
+                    "weight": 20,
+                    "can_have_stat": ["not_pl_rc"],
+                    "stat_trait": [
+                        "loving",
+                        "faithful",
+                        "sincere",
+                        "nervous",
+                        "insecure"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["s_c"],
+                            "mutual": true,
+                            "values": ["comfort"],
+                            "amount": 10
+                        }
+                        ]
+                },
+                {
+                    "text": "s_c finds this particular tale depressing, and walks away to train by {PRONOUN/s_c/self}.",
+                    "exp": 0,
+                    "weight": 20,
+                    "can_have_stat": ["not_pl_rc"],
+                    "stat_trait": [
+                        "gloomy",
+                        "lonesome"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["platonic", "respect"],
+                            "amount": -5
+                        }
+                        ]
+                },
+                {
+                    "text": "Right as p_l gets to the good part, s_c interrupts, excitedly saying the ending {PRONOUN/s_c/self}, leaving p_l feeling quite put off.",
+                    "exp": 0,
+                    "weight": 20,
+                    "can_have_stat": ["not_pl_rc"],
+                    "stat_trait": [
+                        "flamboyant",
+                        "oblivious",
+                        "shameless"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["platonic", "respect"],
+                            "amount": -5
+                        },
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["s_c"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 10
+                        }
+                        ]
+                }
+            ]
     }
 ]
