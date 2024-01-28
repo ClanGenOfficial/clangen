@@ -379,7 +379,8 @@
             "Stuck {PRONOUN/m_c/poss} tongue out at a mouse that escaped {PRONOUN/m_c/poss} pounce",
             "Makes immature jokes all day, leaving everyone else rolling their eyes",
             "Doesn't want to share a piece of fresh-kill",
-            "Has felt bad all day about stepping on a bug"
+            "Has felt bad all day about stepping on a bug",
+            "Is complaining about being sent on dawn patrol"
         ],
         "main_trait_constraint": [
             "childish"
