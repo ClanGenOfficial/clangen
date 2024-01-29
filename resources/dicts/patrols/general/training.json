@@ -1040,7 +1040,7 @@
                 ]
             },
             {
-                "text": "The pair sit down, app1 a little stiffly, and p_l starts telling them a story of their own apprenticehood, about a time when they made a dumb mistake. They make it sound funny - certainly funnier than it felt like at the time - and slowly, app1 opens up, still respectful, but less wooden in the way they act.",
+                "text": "The pair sit down, app1 a little stiffly, and p_l starts telling {PRONOUN/app1/object} a story of {PRONOUN/p_l/poss} own apprenticehood, about a time when {PRONOUN/p_l/subject} made a dumb mistake. {PRONOUN/p_l/subject/CAP} {VERB/p_l/make/makes} it sound funny - certainly funnier than it felt like at the time - and slowly, app1 opens up, still respectful, but less wooden in the way {PRONOUN/app1/subject} {VERB/app1/act/acts}.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -1054,7 +1054,7 @@
                 ]
             },
             {
-                "text": "It's important to take time to rest, s_c tells app1, trying to hit a middle ground between advice and command. They've seen how hard app1 has been working, and commend them for it, but it'll do the Clan no good if app1 burns themself out. All things in their time.",
+                "text": "It's important to take time to rest, s_c tells app1, trying to hit a middle ground between advice and command. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'ve/'s} seen how hard app1 has been working, and commend {PRONOUN/app1/object} for it, but it'll do the Clan no good if app1 burns {PRONOUN/app1/self} out. All things in their time.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1460,7 +1460,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "With a deep sigh, p_l holds back their temper, and instead sits down to explain their reasoning to the young cat. They can see why app1 thinks differently, but practicing this way will help app1 build muscle better than taking the cheap way out. app1 also sighs, apologizing for their outburst.",
+                "text": "With a deep sigh, p_l holds back {PRONOUN/p_l/poss} temper, and instead sits down to explain {PRONOUN/p_l/poss} reasoning to the young cat. {PRONOUN/p_l/subject/CAP} can see why app1 thinks differently, but practicing this way will help app1 build muscle better than taking the cheap way out. app1 also sighs, apologizing for their outburst.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -1474,7 +1474,7 @@
                 ]
             },
             {
-                "text": "Tired of hearing about how they don't understand, p_l swings around, performing a flawless rendition of the technique. Chastened, app1 lowers their gaze. They'll follow p_l's way of doing things then.",
+                "text": "Tired of hearing about how {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} understand, p_l swings around, performing a flawless rendition of the technique. Chastened, app1 lowers {PRONOUN/app1/poss} gaze. {PRONOUN/app1/subject/CAP}'ll follow p_l's way of doing things then.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -1504,7 +1504,7 @@
                 ]
             },
             {
-                "text": "This is unlike app1. s_c stops in their tracks, sitting their butt down in the middle of the path and refusing to move until app1 tells them what's bothering them. No, what's <i>actually</i> bothering them.",
+                "text": "This is unlike app1. s_c stops in {PRONOUN/s_c/poss} tracks, sitting {PRONOUN/s_c/poss} butt down in the middle of the path and refusing to move until app1 tells {PRONOUN/s_c/object} what's bothering {PRONOUN/app1/object}. No, what's <i>actually</i> bothering them.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1529,7 +1529,7 @@
                 ]
             },
             {
-                "text": "s_c has taken valuable time out of their day to personally help app1 with their studies, and this is completely juvenile behavior. s_c isn't shy about telling app1 so, and by the time they're back in camp the apprentice is cowed, but respectful once more. ",
+                "text": "s_c has taken valuable time out of {PRONOUN/s_c/poss} day to personally help app1 with {PRONOUN/app1/poss} studies, and this is completely juvenile behavior. s_c isn't shy about telling app1 so, and by the time they're back in camp the apprentice is cowed, but respectful once more. ",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1556,7 +1556,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l rolls their eyes, as amused by the apprentice's audacity as they are annoyed.",
+                "text": "p_l rolls {PRONOUN/p_l/poss} eyes, as amused by the apprentice's audacity as {PRONOUN/p_l/subject} {VERB/p_l/are/is} annoyed.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1595,7 +1595,7 @@
                 ]
             },
             {
-                "text": "p_l lets the disrespectful apprentice completely push them around - no one gets any learning done, and certainly no one has any respect for authority installed in them.",
+                "text": "p_l lets the disrespectful apprentice completely push {PRONOUN/p_l/object} around - no one gets any learning done, and certainly no one has any respect for authority installed in them.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -9316,8 +9316,8 @@
                 "weight": 10,
                 "dead_cats": ["app1"],
                 "history_text": {
-                    "scar": "r_c carries a scar from when they fought with a Clanmate as an apprentice.",
-                    "death": "r_c died when they distractedly ran onto the thunderpath as an apprentice."
+                    "scar": "r_c carries a scar from when {PRONOUN/r_c/subject} fought with a Clanmate as an apprentice.",
+                    "death": "r_c died when {PRONOUN/r_c/subject} distractedly ran onto the thunderpath as an apprentice."
                 },
                 "relationships": [
                     {
@@ -9337,7 +9337,7 @@
                 ]
             },
             {
-                "text": "app1 tries hard to resist the urge to scratch app2's confidence away. How dare {PRONOUN/app2/subject} try to show off during {PRONOUN/app1/poss} assessment? Unfortunately, it's a losing battle. app1 just can't hold {PRONOUN/app1/self} back anymore as {PRONOUN/app1/subject} listen to app2 brag about why {PRONOUN/app2/subject} should be leader. app1 leaps onto {PRONOUN/app2/object} and they tussle over the ground. The mentors rush out of hiding to break up the fight and chide the apprentices for their foolishness.",
+                "text": "app1 tries hard to resist the urge to scratch app2's confidence away. How dare {PRONOUN/app2/subject} try to show off during {PRONOUN/app1/poss} assessment? Unfortunately, it's a losing battle. app1 just can't hold {PRONOUN/app1/self} back anymore as {PRONOUN/app1/subject} {VERB/app1/listen/listens} to app2 brag about why {PRONOUN/app2/subject} should be leader. app1 leaps onto {PRONOUN/app2/object} and they tussle over the ground. The mentors rush out of hiding to break up the fight and chide the apprentices for their foolishness.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["bloodthirsty"],
@@ -9349,7 +9349,7 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "r_c carries a scar from when they fought with a Clanmate as an apprentice.",
+                    "scar": "r_c carries a scar from when {PRONOUN/r_c/subject} fought with a Clanmate as an apprentice.",
                     "death": "r_c died from fighting with a Clanmate as an apprentice."
                 },
                 "relationships": [
@@ -9386,11 +9386,11 @@
         },
         "weight": 20,
         "intro_text": "It is almost dawn when the deputy rouses app1 for {PRONOUN/app1/poss} assessment. {PRONOUN/app1/subject/CAP} are meant to find p_l posing as an enemy warrior somewhere on the territory and handle the situation. p_l could be anywhere!",
-        "decline_text": "app1 sheepishly looks up at the deputy, a guilty gleam in {PRONOUN/app1/poss} eyes, and says that {PRONOUN/app1/subject} have a stomachache. They {PRONOUN/app1/subject/CAP} hurriedly {VERB/app1/run/runs} to the medicine den, wondering how {PRONOUN/app1/subject} are going to get away with this fake illness at sunhigh when the Clan shares tongues.",
+        "decline_text": "app1 sheepishly looks up at the deputy, a guilty gleam in {PRONOUN/app1/poss} eyes, and says that {PRONOUN/app1/subject} {VERB/app1/have/has} a stomachache. {PRONOUN/app1/subject/CAP} hurriedly {VERB/app1/run/runs} to the medicine den, wondering how {PRONOUN/app1/subject} {VERB/app1/are/is} going to get away with this fake illness at sunhigh when the Clan shares tongues.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Sluggishly, app1 heads out into the territory to find p_l. By the time the sun starts to set, {PRONOUN/app1/subject} are about to lose hope. However, {PRONOUN/app1/subject} {VERB/app1/spot/spots} p_l nibbling on a pigeon's wing. Imagining an enemy warrior, app1 attacks p_l and catches {PRONOUN/p_l/object} off-guard! After a brief tussle, p_l admits defeat, and guides app1 home.",
+                "text": "Sluggishly, app1 heads out into the territory to find p_l. By the time the sun starts to set, {PRONOUN/app1/subject} {VERB/app1/are/is} about to lose hope. However, {PRONOUN/app1/subject} {VERB/app1/spot/spots} p_l nibbling on a pigeon's wing. Imagining an enemy warrior, app1 attacks p_l and catches {PRONOUN/p_l/object} off-guard! After a brief tussle, p_l admits defeat, and guides app1 home.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -9411,7 +9411,7 @@
                 ]
             },
             {
-                "text": "app1 is nervous upon heading out. However, {PRONOUN/app1/subject} {VERB/app1/manage/manages} to pick up p_l's scent within a few hours, and follow the trail. When {PRONOUN/app1/subject} find p_l, the warrior is drinking from a stream. Yowling, app1 leaps at p_l and sweeps {PRONOUN/p_l/object} off {PRONOUN/p_l/poss} feet into the shallow water. p_l is winded, and after {PRONOUN/p_l/subject} stand up, {PRONOUN/p_l/subject} {VERB/p_l/congratulate/congratulates} app1.",
+                "text": "app1 is nervous upon heading out. However, {PRONOUN/app1/subject} {VERB/app1/manage/manages} to pick up p_l's scent within a few hours, and follow the trail. When {PRONOUN/app1/subject} {VERB/app1/find/finds} p_l, the warrior is drinking from a stream. Yowling, app1 leaps at p_l and sweeps {PRONOUN/p_l/object} off {PRONOUN/p_l/poss} feet into the shallow water. p_l is winded, and after {PRONOUN/p_l/subject} {VERB/p_l/stand/stands} up, {PRONOUN/p_l/subject} {VERB/p_l/congratulate/congratulates} app1.",
                 "exp": 15,
                 "weight": 5,
                 "relationships": [
@@ -9432,7 +9432,7 @@
                 ]
             },
             {
-                "text": "app1 was already awake, and raring to go. {PRONOUN/app1/subject/CAP} run off before the deputy can say anything. It is just a game of hide and seek, after all. When {PRONOUN/app1/subject} {VERB/app1/find/finds} p_l {PRONOUN/app1/subject} {VERB/app1/have/has} to stifle {PRONOUN/app1/poss} chitters of excited pleasure. p_l must have heard {PRONOUN/app1/object}, because app1 sees {PRONOUN/p_l/poss} whiskers twitch in amusement. Oh well, {PRONOUN/app1/subject} gleefully {VERB/app1/charge/charges} forward.",
+                "text": "app1 was already awake, and raring to go. {PRONOUN/app1/subject/CAP} {VERB/app1/run/runs} off before the deputy can say anything. It is just a game of hide and seek, after all. When {PRONOUN/app1/subject} {VERB/app1/find/finds} p_l {PRONOUN/app1/subject} {VERB/app1/have/has} to stifle {PRONOUN/app1/poss} chitters of excited pleasure. p_l must have heard {PRONOUN/app1/object}, because app1 sees {PRONOUN/p_l/poss} whiskers twitch in amusement. Oh well, {PRONOUN/app1/subject} gleefully {VERB/app1/charge/charges} forward.",
                 "exp": 15,
                 "weight": 20,
                 "stat_skill": ["RUNNER,0", "CLEVER,0"],
@@ -9454,7 +9454,7 @@
                 ]
             },
             {
-                "text": "app1 has waited for this for moons. {PRONOUN/app1/subject/CAP} disguise {PRONOUN/app1/poss} scent and carefully work {PRONOUN/app1/poss} way through the territory, checking strategic hiding places. Before long, {PRONOUN/app1/subject} pinpoint p_l's hiding spot, and sneak behind the warrior. Without hesitation, app1 pounces on p_l and pins {PRONOUN/p_l/object} to the ground, a paw on {PRONOUN/p_l/poss} throat.",
+                "text": "app1 has waited for this for moons. {PRONOUN/app1/subject/CAP} {VERB/app1/disguise/disguises} {PRONOUN/app1/poss} scent and carefully {VERB/app1/work/works} {PRONOUN/app1/poss} way through the territory, checking strategic hiding places. Before long, {PRONOUN/app1/subject} {VERB/app1/pinpoint/pinpoints} p_l's hiding spot, and {VERB/app1/sneak/sneaks} behind the warrior. Without hesitation, app1 pounces on p_l and pins {PRONOUN/p_l/object} to the ground, a paw on {PRONOUN/p_l/poss} throat.",
                 "exp": 15,
                 "weight": 20,
                 "stat_trait": ["sneaky", "cunning", "cold"],
@@ -9478,7 +9478,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Admittedly, {PRONOUN/app1/subject} knew {PRONOUN/app1/subject} weren't ready. app1 can't find p_l, and by the time sundown approaches, {PRONOUN/app1/poss} mentor appears to take {PRONOUN/app1/object} home. app1 cannot help but feel like a failure after this. Back at camp, {PRONOUN/app1/subject} can see p_l's whiskers twitching in amusement at {PRONOUN/app1/poss} predicament.",
+                "text": "Admittedly, {PRONOUN/app1/subject} knew {PRONOUN/app1/subject} {VERB/app1/weren't/wasn't} ready. app1 can't find p_l, and by the time sundown approaches, {PRONOUN/app1/poss} mentor appears to take {PRONOUN/app1/object} home. app1 cannot help but feel like a failure after this. Back at camp, {PRONOUN/app1/subject} can see p_l's whiskers twitching in amusement at {PRONOUN/app1/poss} predicament.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -9499,7 +9499,7 @@
                 ]
             },
             {
-                "text": "app1 is jumping at shadows. Everything around {PRONOUN/app1/object} seems like a predator waiting to pounce. Where could p_l be hiding? {PRONOUN/app1/subject/CAP} wish that p_l would hurry up and come out. Wait, is that . . .? app1 charges toward the bulky shape of another cat in the dark. However, this is not p_l. The smell of a foreign cat washes over app1.",
+                "text": "app1 is jumping at shadows. Everything around {PRONOUN/app1/object} seems like a predator waiting to pounce. Where could p_l be hiding? {PRONOUN/app1/subject/CAP} {VERB/app1/wish/wishes} that p_l would hurry up and come out. Wait, is that . . .? app1 charges toward the bulky shape of another cat in the dark. However, this is not p_l. The smell of a foreign cat washes over app1.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["app1"],
