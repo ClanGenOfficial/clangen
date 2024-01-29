@@ -1149,7 +1149,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c shivers a little, thinking of the dangers of solo patrols... No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and {PRONOUN/s_c/slink/slinks} straight back to camp.",
+                "text": "s_c shivers a little, thinking of the dangers of solo patrols... No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and {VERB/s_c/slink/slinks} straight back to camp.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["insecure", "lonesome", "nervous"]
