@@ -208,8 +208,8 @@ class StartScreen(Screens):
             "",
             scale(pygame.Rect((275, 370), (770, 720))),
             object_id="#text_box_22_horizleft",
-            manager=MANAGER,
-            starting_height=3)
+            starting_height=1,
+            manager=MANAGER)
 
         self.error_gethelp = pygame_gui.elements.UITextBox(
             "Please join the Discord server and ask for technical support. "
@@ -222,11 +222,11 @@ class StartScreen(Screens):
         )
 
         self.open_data_directory_button = UIImageButton(
-            scale(pygame.Rect((1040, 1020), (356, 60))),
+            scale(pygame.Rect((1054, 1023), (356, 60))),
             "",
             object_id="#open_data_directory_button",
             manager=MANAGER,
-            starting_height=0,  # Layer 0 so it's behind the error box
+            starting_height=2,  # Layer 2 and repositioned so hover affect works.
             tool_tip_text="Opens the data directory. "
                           "This is where save files "
                           "and logs are stored.")
@@ -234,6 +234,7 @@ class StartScreen(Screens):
         self.closebtn = UIImageButton(
             scale(pygame.Rect((1386, 430), (44, 44))),
             "",
+            starting_height=2, #Hover affect works, and now allows it to be clicked more easily.
             object_id="#exit_window_button",
             manager=MANAGER)
 
