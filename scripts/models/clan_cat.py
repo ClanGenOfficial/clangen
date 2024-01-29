@@ -9,6 +9,7 @@ clan_cat_schema = Schema(
     "specsuffix_hidden": bool,
     "gender": str,
     "gender_align": str,
+    "pronouns": list,
     Optional("birth_cooldown", default=0): int,
     "status": str,
     Optional("backstory", default="clan_founder"): str,
