@@ -5,7 +5,6 @@ from .game_essentials import game
 from ..cat.history import History
 from ..cat.skills import CatSkills
 from ..housekeeping.datadir import get_save_dir
-from ..models.clan_cat import get_validated_clan_cat_data
 
 import ujson
 
@@ -16,8 +15,6 @@ from scripts.housekeeping.version import SAVE_VERSION_NUMBER
 from scripts.utility import update_sprite, is_iterable
 from random import choice
 from scripts.cat_relations.inheritance import Inheritance
-from schema import SchemaError
-import traceback
 
 import logging
 logger = logging.getLogger(__name__)
@@ -44,21 +41,6 @@ def json_load():
     try:
         with open(clan_cats_json_path, 'r') as read_file:
             cat_data = ujson.loads(read_file.read())
-        try:
-            cats = cat_data
-            cat_data = []
-            for cat in cats:
-                cat_data.append(get_validated_clan_cat_data(cat))
-        except SchemaError as e:
-            if len(vars(e)['autos'])>1:
-                error_message = vars(e)['autos'][1]
-                if len(vars(e)['autos'])>2:
-                    error_message = f"{error_message} {vars(e)['autos'][2]}"
-            elif len(vars(e)['autos'])==1:
-                error_message = vars(e)['autos'][0]
-            game.switches['error_message'] = f'Incorrect data format in {clan_cats_json_path}:\n\n{error_message} in clan_cats.json\nClan cat ID: {cat["ID"]}'
-            game.switches['traceback'] = e
-            raise
     except PermissionError as e:
         game.switches['error_message'] = f'Can\t open {clan_cats_json_path}!'
         game.switches['traceback'] = e
