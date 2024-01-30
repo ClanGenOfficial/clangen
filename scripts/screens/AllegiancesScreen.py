@@ -132,7 +132,7 @@ class AllegiancesScreen(Screens):
         # Deputy Box:
         if game.clan.deputy and not (game.clan.deputy.dead or game.clan.deputy.outside):
             outputs.append([
-                '<b><u>DEPUTY</u></b>',
+                '<b><u>HEAD HEALER</u></b>',
                 self.generate_one_entry(game.clan.deputy)
             ])
         

@@ -780,6 +780,8 @@ class ProfileScreen(Screens):
             output += "<font color='#FF0000'>lost</font>"
         elif the_cat.exiled:
             output += "<font color='#FF0000'>exiled</font>"
+        elif the_cat.status in ['deputy']:
+            output += "executive healer"
         else:
             output += the_cat.status
 
