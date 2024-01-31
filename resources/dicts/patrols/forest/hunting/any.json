@@ -1172,31 +1172,31 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "r_c heads out into the forest alone, wanting to sink their teeth into some prey and have some time to themselves.",
+        "intro_text": "r_c heads out into the forest alone, wanting to sink {PRONOUN/r_c/poss} teeth into some prey and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "r_c heads off to one of their favorite spots in the forest, a grove of spread-out trees with thick underbrush providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that squirrel thought.",
+                "text": "r_c heads off to one of {PRONOUN/r_c/poss} favorite spots in the forest, a grove of spread-out trees with thick underbrush providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that squirrel thought.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"]
             },
             {
-                "text": "r_c finds a fat, dumb, slow rabbit, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their Clanmates.",
+                "text": "r_c finds a fat, dumb, slow rabbit, and {PRONOUN/r_c/subject} can barely drag the thing back to camp, but by the stars it's juicy when {PRONOUN/r_c/subject} {VERB/r_c/sit/sits} down to eat it with {PRONOUN/r_c/poss} Clanmates.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["large"]
             },
             {
-                "text": "s_c gets the chance to try out an idea they've been sitting on for a while. There's a rabbit warren that they've spotted that's particularly badly built, and they manage to dig down into one of the dens, fishing baby rabbits out by the pawful.",
+                "text": "s_c gets the chance to try out an idea {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} been sitting on for a while. There's a rabbit warren that {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} spotted that's particularly badly built, and {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} to dig down into one of the dens, fishing baby rabbits out by the pawful.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
                 "prey": ["large"]
             },
             {
-                "text": "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them.",
+                "text": "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. {PRONOUN/s_c/subject/CAP} {VERB/s_c/come/comes} back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with {PRONOUN/s_c/poss} thoughts while waiting for the prey to come to {PRONOUN/s_c/object}.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1222,7 +1222,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. The come back to camp, empty pawed and prickling with frustration.",
+                "text": "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. {PRONOUN/s_c/subject/CAP} {VERB/s_c/come/comes} back to camp, empty pawed and prickling with frustration.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["bold", "childish", "confident", "daring", "playful"]
@@ -1444,7 +1444,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise. They find themselves to be correct when they pounce into the bush and return to the patrol with the tasty morsel dangling from their mouth.",
+                "text": "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise. {PRONOUN/r_c/subject/CAP} {VERB/r_c/find/finds} {PRONOUN/r_c/self} to be correct when {PRONOUN/r_c/subject} {VERB/r_c/pounce/pounces} into the bush and {VERB/r_c/return/returns} to the patrol with the tasty morsel dangling from {PRONOUN/r_c/poss} mouth.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["small"]
@@ -1465,14 +1465,14 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c doesn't even hesitate before splitting from the patrol to check on the source of the noise. They quickly regret their impulsivity, however, when an angry raccoon bursts from the bush! s_c gets quite the scare, but thankfully the raccoon only wanted to get away from them and quickly runs off back into the undergrowth.",
+                "text": "s_c doesn't even hesitate before splitting from the patrol to check on the source of the noise. {PRONOUN/s_c/subject/CAP} quickly {VERB/s_c/regret/regrets} {PRONOUN/s_c/poss} impulsivity, however, when an angry raccoon bursts from the bush! s_c gets quite the scare, but thankfully the raccoon only wanted to get away from {PRONOUN/s_c/object} and quickly runs off back into the undergrowth.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["daring", "bold", "ambitious"],
                 "prey": ["very_small"]
             },
             {
-                "text": "r_c takes the lead in checking the source of the noise and comes face to face with a snarling wolverine! r_c yowls for their patrol but the other cats aren't quick enough to stop the wolverine from killing r_c in one quick and deadly swipe.",
+                "text": "r_c takes the lead in checking the source of the noise and comes face to face with a snarling wolverine! r_c yowls for {PRONOUN/r_c/poss} patrol but the other cats aren't quick enough to stop the wolverine from killing r_c in one quick and deadly swipe.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -1483,7 +1483,7 @@
                 }
             },
             {
-                "text": "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though they backpedal rapidly, the fox still manages to take a bite out of them before the rest of the patrol can back them up.",
+                "text": "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still manages to take a bite out of {PRONOUN/r_c/object} before the rest of the patrol can back {PRONOUN/r_c/object} up.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [

@@ -2015,7 +2015,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "Out in the forest, p_l asks app1 if they know why c_n chooses to live in the woods, under the canopy, rather than any other environment.",
+        "intro_text": "Out in the forest, p_l asks app1 if {PRONOUN/app1/subject} {VERB/app1/know/knows} why c_n chooses to live in the woods, under the canopy, rather than any other environment.",
         "decline_text": "app1 seems distracted. p_l shrugs, and decides to focus on more active training today instead.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -2087,7 +2087,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 launches into a speech about how c_n is awesome because they aren't kittypets, only for p_l to stop them. That wasn't the point of the lesson.",
+                "text": "app1 launches into a speech about how c_n is awesome because they aren't kittypets, only for p_l to stop {PRONOUN/app1/object}. That wasn't the point of the lesson.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2108,7 +2108,7 @@
                 ]
             },
             {
-                "text": "Churlish and grumpy, app1 storms past p_l, not interested in hearing their dumb lesson.",
+                "text": "Churlish and grumpy, app1 storms past p_l, not interested in hearing {PRONOUN/p_l/poss} dumb lesson.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["troublesome"],
