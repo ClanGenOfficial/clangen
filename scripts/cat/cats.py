@@ -1405,7 +1405,9 @@ class Cat():
             self.healed_condition = True
             return False
         # if the focus 'rest and recover' is selected
-        elif game.clan.clan_settings.get("rest and recover") and self.illnesses[illness]["duration"] + moons_prior - moons_with <= 0:
+        elif game.clan.clan_settings.get("rest and recover") and\
+            self.illnesses[illness]["duration"] + moons_prior - moons_with <= 0:
+            print(f"rest and recover - illness {illness} of {self.name} healed earlier")
             self.healed_condition = True
             return False
 
@@ -1443,7 +1445,9 @@ class Cat():
             return False
         # if the focus 'rest and recover' is selected
         elif not self.injuries[injury]["complication"] and \
-            game.clan.clan_settings.get("rest and recover") and self.illnesses[injury]["duration"] + moons_prior - moons_with <= 0:
+            game.clan.clan_settings.get("rest and recover") and\
+            self.injuries[injury]["duration"] + moons_prior - moons_with <= 0:
+            print(f"rest and recover - injury {injury} of {self.name} healed earlier")
             self.healed_condition = True
             return False
 

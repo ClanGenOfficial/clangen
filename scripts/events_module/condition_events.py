@@ -110,6 +110,7 @@ class Condition_Events():
                 if game.clan.clan_settings.get("rest and recover"):
                     stopping_chance = game.config["focus"]["rest and recover"]["illness_prevent"]
                     if not int(random.random() * stopping_chance):
+                        print(f"rest and recover - illness prevented for {cat.name}")
                         return triggered
 
                 season_dict = Condition_Events.ILLNESSES_SEASON_LIST[season]
@@ -197,6 +198,7 @@ class Condition_Events():
                 if game.clan.clan_settings.get("rest and recover"):
                     stopping_chance = game.config["focus"]["rest and recover"]["injury_prevent"]
                     if not int(random.random() * stopping_chance):
+                        print(f"rest and recover - injury prevented for {cat.name}")
                         return False
 
                 if war:

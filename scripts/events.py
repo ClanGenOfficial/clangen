@@ -2215,6 +2215,7 @@ class Events:
                 if game.clan.clan_settings.get("rest and recover"):
                     stopping_chance = game.config["focus"]["rest and recover"]["outbreak_prevention"]
                     if not int(random.random() * stopping_chance):
+                        print(f"rest and recover - outbreak of {illness} prevented")
                         continue
 
                 if illness == 'kittencough':
