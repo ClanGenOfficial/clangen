@@ -593,7 +593,12 @@ class Events:
             - raid other clans
             - hoarding
         Focus which are not able to be handled here: 
-            rest and recover - handled in 'self.handle_outbreaks', 'condition_events.handle_injuries' and 'condition_events.handle_illnesses'
+            rest and recover - handled in:
+                - 'self.handle_outbreaks'
+                - 'condition_events.handle_injuries'
+                - 'condition_events.handle_illnesses'
+                - 'cat.moon_skip_illness'
+                - 'cat.moon_skip_injury'
         """
         # if no focus is selected, skip all other
         focus_text = "This shouldn't show up, report a bug for the focus feature."
