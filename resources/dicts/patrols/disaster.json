@@ -1443,7 +1443,7 @@
                 "stat_skill": ["FIGHTER,3"]
             },
             {
-                "text": "s_c signals for the patrol to stop. Carefully, quietly, {PRONOUN/s_c/subject} {VERB/s_c/explain/explains} their concerns about the unknown situation. And maybe they're being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety.",
+                "text": "s_c signals for the patrol to stop. Carefully, quietly, {PRONOUN/s_c/subject} {VERB/s_c/explain/explains} {PRONOUN/s_c/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety.",
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": ["careful", "insecure", "nervous"]
@@ -1707,7 +1707,7 @@
                 ]
             },
             {
-                "text": "s_c shrieks at the strange sound, paws digging into the sand as {PRONOUN/s_c/subject} turn and run for home. The rest of the patrol yowls at them to stop, running after {PRONOUN/s_c/object}, but s_c is proven right when the beach disappears under a flood of water from inland. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'ve/'s} saved them all.",
+                "text": "s_c shrieks at the strange sound, paws digging into the sand as {PRONOUN/s_c/subject} turn and run for home. The rest of the patrol yowls at {PRONOUN/s_c/object} to stop, running after {PRONOUN/s_c/object}, but s_c is proven right when the beach disappears under a flood of water from inland. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'ve/'s} saved them all.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": ["careful", "insecure", "nervous"],
@@ -1849,8 +1849,8 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "There are dark clouds on the horizon and r_c wonders if they should continue.",
-        "decline_text": "Your patrol decides to head back early.",
+        "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/p_l/subject} should continue.",
+        "decline_text": "p_l decides to head back early.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1864,7 +1864,7 @@
                 "weight": 5
             },
             {
-                "text": "s_c makes a careful judgement, and keeps going. They stick to solid ground, sometimes routing themselves through the trees as the rain begins to pour around them.",
+                "text": "s_c makes a careful judgement, and keeps going. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stick/sticks} to solid ground, sometimes routing {PRONOUN/s_c/self} through the trees as the rain begins to pour around {PRONOUN/s_c/object}.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"]
@@ -1933,7 +1933,7 @@
                 ]
             },
             {
-                "text": "s_c shrieks at the strange sound, paws digging into the mud as {PRONOUN/s_c/subject} turn and run for home. The rest of the patrol yowls at them to stop, running after {PRONOUN/s_c/object}, but s_c is proven right when the swamp disappears under a flood of water from inland. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'ve/'s} saved them all.",
+                "text": "s_c shrieks at the strange sound, paws digging into the mud as {PRONOUN/s_c/subject} turn and run for home. The rest of the patrol yowls at {PRONOUN/s_c/object} to stop, running after {PRONOUN/s_c/object}, but s_c is proven right when the swamp disappears under a flood of water from inland. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'ve/'s} saved them all.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": ["careful", "insecure", "nervous"],

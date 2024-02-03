@@ -379,7 +379,8 @@
             "Stuck {PRONOUN/m_c/poss} tongue out at a mouse that escaped {PRONOUN/m_c/poss} pounce",
             "Makes immature jokes all day, leaving everyone else rolling their eyes",
             "Doesn't want to share a piece of fresh-kill",
-            "Has felt bad all day about stepping on a bug"
+            "Has felt bad all day about stepping on a bug",
+            "Is complaining about being sent on dawn patrol"
         ],
         "main_trait_constraint": [
             "childish"
@@ -796,7 +797,7 @@
     {
         "id": "responsible_warrior",
         "thoughts": [
-            "Is making sure {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} done all of their daily duties",
+            "Is making sure {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} done all of {PRONOUN/m_c/poss} daily duties",
             "Is planning to wake up early tomorrow",
             "Was the first to rise this morning",
             "Roused the other cats awake at dawn",

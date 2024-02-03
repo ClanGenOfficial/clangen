@@ -24,7 +24,7 @@ class Screens():
             "",
             visible=False,
             manager=MANAGER,
-            object_id="#events_menu_button"
+            object_id="#events_menu_button",
         ),
         "camp_screen": UIImageButton(
             scale(pygame.Rect((656, 120), (116, 60))),
@@ -119,7 +119,7 @@ class Screens():
 
         "heading": pygame_gui.elements.UITextBox(
             "",
-            scale(pygame.Rect((620, 54), (360, 70))),
+            scale(pygame.Rect((610, 54), (380, 70))),
             visible=False,
             manager=MANAGER,
             object_id="#text_box_34_horizcenter_light")
@@ -131,11 +131,12 @@ class Screens():
             Last screen must be tracked to ensure a clear transition between screens."""
         # self.exit_screen()
         game.last_screen_forupdate = self.name
-
         # This keeps track of the last list-like screen for the back button on cat profiles
-        if self.name in ['camp screen', 'list screen', 'starclan screen', 'dark forest screen', 'events screen',
-                         'med den screen']:
+        if self.name in ['camp screen', 'list screen', 'events screen', 'med den screen']:
             game.last_screen_forProfile = self.name
+
+        if self.name not in ['list screen', 'profile screen']:
+            game.last_list_forProfile = None
 
         game.switches['cur_screen'] = new_screen
         game.switch_screens = True

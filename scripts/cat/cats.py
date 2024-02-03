@@ -360,7 +360,8 @@ class Cat():
                              self.pelt.tortiepattern,
                              biome=biome,
                              specsuffix_hidden=self.specsuffix_hidden,
-                             load_existing_name=loading_cat)
+                             load_existing_name=loading_cat,
+                             moons=self.moons)
         else:
             self.name = Name(status, prefix, suffix, eyes=self.pelt.eye_colour, specsuffix_hidden=self.specsuffix_hidden,
                              load_existing_name = loading_cat)
@@ -2692,9 +2693,13 @@ class Cat():
     def load_faded_cat(cat: str):
         """Loads a faded cat, returning the cat object. This object is saved nowhere else. """
         try:
-            with open(get_save_dir() + '/' + game.clan.name + '/faded_cats/' + cat + ".json", 'r') as read_file:
+            if game.clan == None: clan = game.switches['clan_list'][0]
+            if game.clan != None: clan = game.clan.name
+
+            with open(get_save_dir() + '/' + clan + '/faded_cats/' + cat + ".json", 'r') as read_file:
                 cat_info = ujson.loads(read_file.read())
-        except AttributeError:  # If loading cats is attempted before the Clan is loaded, we would need to use this.
+                                # If loading cats is attempted before the Clan is loaded, we would need to use this.
+        except AttributeError:  # NOPE, cats are always loaded before the Clan, so doesnt make sense to throw an error
             with open(get_save_dir() + '/' + game.switches['clan_list'][0] + '/faded_cats/' + cat + ".json",
                       'r') as read_file:
                 cat_info = ujson.loads(read_file.read())
@@ -2721,21 +2726,23 @@ class Cat():
     # ---------------------------------------------------------------------------- #
 
     @staticmethod
-    def sort_cats():
+    def sort_cats(given_list=[]):
+        if not given_list:
+            given_list = Cat.all_cats_list
         if game.sort_type == "age":
-            Cat.all_cats_list.sort(key=lambda x: Cat.get_adjusted_age(x))
+            given_list.sort(key=lambda x: Cat.get_adjusted_age(x))
         elif game.sort_type == "reverse_age":
-            Cat.all_cats_list.sort(key=lambda x: Cat.get_adjusted_age(x), reverse=True)
+            given_list.sort(key=lambda x: Cat.get_adjusted_age(x), reverse=True)
         elif game.sort_type == "id":
-            Cat.all_cats_list.sort(key=lambda x: int(x.ID))
+            given_list.sort(key=lambda x: int(x.ID))
         elif game.sort_type == "reverse_id":
-            Cat.all_cats_list.sort(key=lambda x: int(x.ID), reverse=True)
+            given_list.sort(key=lambda x: int(x.ID), reverse=True)
         elif game.sort_type == "rank":
-            Cat.all_cats_list.sort(key=lambda x: (Cat.rank_order(x), Cat.get_adjusted_age(x)), reverse=True)
+            given_list.sort(key=lambda x: (Cat.rank_order(x), Cat.get_adjusted_age(x)), reverse=True)
         elif game.sort_type == "exp":
-            Cat.all_cats_list.sort(key=lambda x: x.experience, reverse=True)
+            given_list.sort(key=lambda x: x.experience, reverse=True)
         elif game.sort_type == "death":
-            Cat.all_cats_list.sort(key=lambda x: -1 * int(x.dead_for))
+            given_list.sort(key=lambda x: -1 * int(x.dead_for))
 
         return
 

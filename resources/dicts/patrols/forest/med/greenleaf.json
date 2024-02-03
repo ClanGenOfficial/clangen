@@ -6124,6 +6124,7 @@
         "biome": ["forest"],
         "season": ["greenleaf"],
         "types": ["herb_gathering"],
+	"patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
