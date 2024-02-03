@@ -317,20 +317,20 @@
         "raid other clans" : {
             "prey_warrior": 3,
             "herb_medicine": 4,
-            "injury_chance_warrior": 23,
+            "injury_chance_warrior": 18,
             "injury_chance_medicine cat": 33,
             "chance_increase_per_clan": 3,
             "injuries": {
                 "claw-wound": 15,
                 "cat bite": 15,
                 "torn pelt": 15,
+                "torn ear": 15,
                 "bite-wound": 10,
                 "sprain": 10,
-                "cracked pads": 10,
-                "torn ear": 10,
-                "bruises": 5,
-                "sore": 5,
-                "small cut": 5
+                "bruises": 7,
+                "sore": 6,
+                "small cut": 4,
+                "cracked pads": 3
             },
             "relation": 3,
             "comments": [
@@ -351,14 +351,14 @@
             "injuries": {
                 "cracked pads": 15,
                 "sore": 15,
-                "claw-wound": 10,
-                "sprain": 10,
-                "bruises": 10,
+                "bruises": 15,
+                "sprain": 12,
                 "small cut": 10,
                 "torn pelt": 10,
                 "torn ear": 10,
-                "cat bite": 5,
-                "bite-wound": 5
+                "claw-wound": 5,
+                "bite-wound": 5,
+                "cat bite": 3
             },
             "illness_chance": 35,
             "illnesses": {

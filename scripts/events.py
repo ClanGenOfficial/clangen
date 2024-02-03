@@ -801,9 +801,9 @@ class Events:
                     print(f"raid - relations with {clan.name} after change: ", clan.relations)
 
             # finish
-            text_snippet = "the additional work of hoarding herbs and prey."
+            text_snippet = "due the additional work of hoarding herbs and prey."
             if game.clan.clan_settings.get("raid other clans"):
-                text_snippet = "the raiding of other Clans to get additional prey."
+                text_snippet = "while raiding other Clans to get additional prey."
             for condition_type, value in involved_cats.items():
                 if len(value) == 1:
                     game.cur_events_list.append(
