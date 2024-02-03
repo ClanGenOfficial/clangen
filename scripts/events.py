@@ -675,12 +675,16 @@ class Events:
 
         elif game.clan.clan_settings.get("threaten outsiders"):
             amount = game.config["focus"]["outsiders"]["reputation"]
+            print(f"seek outsiders - relations before change: ", game.clan.reputation)
             change_clan_reputation(-amount)
+            print(f"seek outsiders - relations after change: ", game.clan.reputation)
             focus_text = None
 
         elif game.clan.clan_settings.get("seek outsiders"):
             amount = game.config["focus"]["outsiders"]["reputation"]
+            print(f"seek outsiders - relations before change: ", game.clan.reputation)
             change_clan_reputation(amount)
+            print(f"seek outsiders - relations after change: ", game.clan.reputation)
             focus_text = None
 
         elif game.clan.clan_settings.get("sabotage other clans") or game.clan.clan_settings.get("aid other clans"):
@@ -689,7 +693,10 @@ class Events:
                 amount = amount * -1
             for name in game.clan.clans_in_focus:
                 clan = [clan for clan in game.clan.all_clans if clan.name  == name][0]
+                sabotage = game.clan.clan_settings.get("sabotage other clans")
+                print(f"other clan; sabotage={sabotage} - relations with {clan.name} before change: ", clan.relations)
                 change_clan_relations(clan, amount)
+                print(f"other clan; sabotage={sabotage} - relations with {clan.name} after change: ", clan.relations)
             focus_text = None
 
         elif game.clan.clan_settings.get("hoarding") or game.clan.clan_settings.get("raid other clans"):
@@ -741,6 +748,13 @@ class Events:
 
             # handle injuries / illness
             relevant_cats = healthy_warriors + healthy_meds
+            if game.clan.clan_settings.get("raid other clans"):
+                chance = info_dict[f"injury_chance_warrior"]
+                # increase the chance of injuries depending on how many clans are raided
+                increase = info_dict["chance_increase_per_clan"]
+                print(f"raid - injury chance warrior before change: 1/{chance}")
+                chance -= increase * len(game.clan.clans_in_focus)
+                print(f"raid - injury chance warrior after change: 1/{chance}")
             for cat in relevant_cats:
                 # if the raid setting or 50/50 for hoarding to get to the injury part
                 if game.clan.clan_settings.get("raid other clans") or random.getrandbits(1):
@@ -748,6 +762,11 @@ class Events:
                     if status_use in ["deputy", "leader"]:
                         status_use = "warrior"
                     chance = info_dict[f"injury_chance_{status_use}"]
+                    if game.clan.clan_settings.get("raid other clans"):
+                        # increase the chance of injuries depending on how many clans are raided
+                        increase = info_dict["chance_increase_per_clan"]
+                        chance -= increase * len(game.clan.clans_in_focus)
+
                     if not int(random.random() * chance): # 1/chance
                         possible_injuries = []
                         injury_dict = info_dict["injuries"]
@@ -771,8 +790,10 @@ class Events:
             if game.clan.clan_settings.get("raid other clans"):
                 for name in game.clan.clans_in_focus:
                     clan = [clan for clan in game.clan.all_clans if clan.name  == name][0]
-                    amount = game.config["focus"]["raid other clans"]["relation"]
+                    amount = -game.config["focus"]["raid other clans"]["relation"]
+                    print(f"raid - relations with {clan.name} before change: ", clan.relations)
                     change_clan_relations(clan, amount)
+                    print(f"raid - relations with {clan.name} after change: ", clan.relations)
 
             # finish
             text_snippet = "the additional work of hoarding herbs and prey."
