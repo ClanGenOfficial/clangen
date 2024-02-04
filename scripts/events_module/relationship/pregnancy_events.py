@@ -426,7 +426,7 @@ class Pregnancy_Events():
                 if cat.status == 'leader':
                     death_event = ("died after a harsh kitting")
                 else:
-                    death_event = (f"{cat.name} after a harsh kitting.")
+                    death_event = (f"{cat.name} died after a harsh kitting.")
                 History.add_possible_history(cat, 'blood loss', death_text=death_event)
                 possible_events = events["birth"]["difficult_birth"]
                 # just makin sure meds aren't mentioned if they aren't around or if they are a parent
