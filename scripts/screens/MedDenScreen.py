@@ -233,7 +233,7 @@ class MedDenScreen(Screens):
                                 self.minor_cats.remove(cat)
                             break
                         else:
-                            if cat not in (self.in_den_cats and self.out_den_cats and self.minor_cats):
+                            if cat not in self.in_den_cats and cat not in self.out_den_cats and cat not in self.minor_cats:
                                 self.minor_cats.append(cat)
             self.tab_list = self.in_den_cats
             self.current_page = 1
