@@ -311,6 +311,7 @@ class Inheritance():
             grandparents = self.get_parents(parent_cat)
             for grand_id in grandparents:
                 if grand_id in self.parents.keys():
+                    print("WARNING - How did this happen? A grandparent is also the parent? Please report this")
                     continue
                 grand_type = RelationType.BLOOD if value["type"] == RelationType.BLOOD else RelationType.NOT_BLOOD
                 if grand_id not in self.grand_parents:
