@@ -690,18 +690,18 @@
         "max_cats": 2,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Trailing behind p_l, the ground trembles beneath r_c's paws. They look around wildly for safe footing - just as the earth caves in beneath them and the world goes dark.",
-        "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
+        "intro_text": "Trailing behind p_l, the ground trembles beneath r_c's paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly for safe footing - just as the earth caves in beneath {PRONOUN/r_c/object} and the world goes dark.",
+        "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on the edge of the obstruction, and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "p_l comes running at their yowls, and r_c is soon freed, shaken but unharmed. The cats settle down as they comfort each other.",
+                "text": "p_l comes running at {PRONOUN/r_c/poss} yowls, and r_c is soon freed, shaken but unharmed. The cats settle down as they comfort each other.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["platonic", "comfort", "trust"],
                         "amount": 5
@@ -714,8 +714,8 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["platonic", "comfort", "trust"],
                         "amount": 5
@@ -723,14 +723,15 @@
                 ]
             },
             {
-                "text": "Without letting themselves panic, s_c looks around for anything that could help. They snap a branch off a nearby scrub and clench it between their teeth, offering it to r_c. Between r_c's scrambling and s_c's determination, they're pulled free of the quagmire unharmed.",
+                "text": "Without letting {PRONOUN/s_c/self} panic, s_c looks around for anything that could help. {PRONOUN/s_c/subject/CAP} {VERB/s_c/snap/snaps} a branch off a nearby scrub and {VERB/s_c/clench/clenches} it between {PRONOUN/s_c/poss} teeth, offering it to r_c. Between r_c's scrambling and s_c's determination, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} pulled free of the quagmire unharmed.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"],
+                "can_have_stat": ["p_l"],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["platonic", "comfort", "trust"],
                         "amount": 5
@@ -738,7 +739,7 @@
                 ]
             },
             {
-                "text": "Creeping in as close as possible, s_c purrs to r_c, keeping them calm as they carefully dig down to them. r_c blinks up at them, holding on to their presence in the scary situation.",
+                "text": "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as they carefully dig down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -753,13 +754,14 @@
                     "wise",
                     "inquisitive"
                 ],
+                "can_have_stat": ["p_l"],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["platonic", "comfort", "trust"],
-                        "amount": 5
+                        "amount": 10
                     }
                 ]
             }
@@ -771,8 +773,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["platonic", "comfort", "trust"],
                         "amount": -5
@@ -780,7 +782,7 @@
                 ]
             },
             {
-                "text": "As s_c rarely has patience for other cats, r_c tells them harshly that they don't have time for some idiot who got stuck, making s_c resentful as they dig themselves out.",
+                "text": "As s_c rarely has patience for other cats, p_l tells {PRONOUN/s_c/object} harshly that {PRONOUN/p_l/subject} {VERB/p_l/don/doesn}'t have time for some idiot who got stuck, making s_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/s_c/self} out.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -794,18 +796,26 @@
                     "vengeful",
                     "bossy"
                 ],
+                "can_have_stat": ["r_c"],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["p_l"],
                         "mutual": true,
                         "values": ["platonic", "comfort", "trust"],
                         "amount": -5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 5
                     }
                 ]
             },
             {
-                "text": "Hurt and wheezing, r_c hears p_l panicking as they drift to StarClan.",
+                "text": "Hurt and wheezing, r_c hears p_l panicking as {PRONOUN/r_c/subject} {VERB/r_c/drift/drifts} to StarClan.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -813,19 +823,10 @@
                     "scar": "m_c carries a scar from being trapped on patrol",
                     "reg_death": "m_c tragically died after being trapped on patrol.",
                     "lead_death": "died after being trapped on patrol"
-                },
-                "relationships": [
-                    {
-                        "cats_to": ["r_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
-                        "mutual": true,
-                        "values": ["platonic", "comfort", "trust"],
-                        "amount": -5
-                    }
-                ]
+                }
             },
             {
-                "text": "p_l eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured.",
+                "text": "p_l eventually manages to rescue r_c, but {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to be helped back to camp, battered and injured.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -842,8 +843,8 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["platonic", "comfort", "trust"],
                         "amount": -5
