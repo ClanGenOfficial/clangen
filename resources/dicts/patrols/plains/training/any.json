@@ -546,7 +546,7 @@
                         "mutual": true,
                         "values": ["platonic", "comfort", "trust", "respect"],
                         "amount": -5
-                    }
+                    },
                     {
                         "cats_to": ["s_c"],
                         "cats_from": ["o_c1"],
