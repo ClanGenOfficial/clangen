@@ -1036,17 +1036,17 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "r_c is training alone out on the plains when suddenly, the ground trembles beneath their paws. They look around wildly for safe footing - just as the earth caves in beneath them and the world goes dark.",
-        "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
+        "intro_text": "r_c is training alone out on the plains when suddenly, the ground trembles beneath {PRONOUN/r_c/poss} paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly for safe footing - just as the earth caves in beneath {PRONOUN/r_c/object} and the world goes dark.",
+        "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on the edge of the obstruction, and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "r_c spends the entire day carefully working their way free and gets nothing else done, but at least they're unharmed.",
+                "text": "r_c spends the entire day carefully working {PRONOUN/r_c/poss} way free and gets nothing else done, but at least {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} unharmed.",
                 "exp": 20,
                 "weight": 20
             },
             {
-                "text": "s_c tries to remain calm, clawing soil away from their muzzle so they can breathe. As the shock wears off, they realize the earth seems looser in one place. With a surge of energy, they burst through the weak point, terrified and covered in dirt. They may have a new nightmare to take back with them, but at least they're alive.",
+                "text": "s_c tries to remain calm, clawing soil away from {PRONOUN/s_c/poss} muzzle so {PRONOUN/s_c/subject} can breathe. As the shock wears off, {PRONOUN/s_c/subject} {VERB/s_c/realize/realizes} the earth seems looser in one place. With a surge of energy, {PRONOUN/s_c/subject} {VERB/s_c/burst/bursts} through the weak point, terrified and covered in dirt. {PRONOUN/s_c/subject/CAP} may have a new nightmare to take back with {PRONOUN/s_c/object}, but at least {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} alive.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"]
@@ -1054,12 +1054,12 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c tries their best, but unfortunately, they're only able to work their head free. They yowl until their voice is hoarse and their throat is sore, and thankfully, a patrol passes by after a few hours and frees their hapless Clanmate.",
+                "text": "r_c tries {PRONOUN/r_c/poss} best, but unfortunately, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} only able to work {PRONOUN/r_c/poss} head free. {PRONOUN/r_c/subject/CAP} {VERB/r_c/yowl/yowls} until {PRONOUN/r_c/poss} voice is hoarse and {PRONOUN/r_c/poss} throat is sore, and thankfully, a patrol passes by after a few hours and frees their hapless Clanmate.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "Hurt and wheezing, r_c does their best to hang on and wait for a patrol, but they succumb to their injuries and drift to StarClan alone.",
+                "text": "Hurt and wheezing, r_c does {PRONOUN/r_c/poss} best to hang on and wait for a patrol, but {PRONOUN/r_c/subject} succumb to {PRONOUN/r_c/poss} injuries and drift to StarClan alone.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -1070,7 +1070,7 @@
                 }
             },
             {
-                "text": "r_c eventually manages to pull themselves free, but they're wheezing and injured. It's all they can do to find some tall grass to shelter in through the night out on the plains until a patrol finds them the next morning and helps them to the medicine den.",
+                "text": "r_c eventually manages to pull {PRONOUN/r_c/self} free, but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} wheezing and injured. It's all {PRONOUN/r_c/subject} can do to find some tall grass to shelter in through the night out on the plains until a patrol finds {PRONOUN/r_c/object} the next morning and helps {PRONOUN/r_c/object} to the medicine den.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
