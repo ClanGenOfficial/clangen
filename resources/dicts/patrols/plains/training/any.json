@@ -46,7 +46,7 @@
                 ]
             },
             {
-                "text": "By the end of the patrol s_c is able to hide stealthily within the grass, their movements barely noticeable.",
+                "text": "By the end of the patrol s_c is able to hide stealthily within the grass, {PRONOUN/s_c/poss} movements barely noticeable.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": ["calm", "careful", "sneaky", "quiet", "patient"],
@@ -64,7 +64,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 tries to hide within the grass, but they can't quite manage to make themselves still and quiet enough to avoid detection.",
+                "text": "app1 tries to hide within the grass, but {PRONOUN/app1/subject} can't quite manage to make {PRONOUN/app1/self} still and quiet enough to avoid detection.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -94,7 +94,7 @@
                 ]
             },
             {
-                "text": "app1 makes their way into the tall grass to try out the advice p_l has given them, but they go crashing down into a hole, where whatever lives there gives them a sharp bite! It seems the grass was hiding more than just cats. r_c ends up limping back to camp.",
+                "text": "app1 makes {PRONOUN/app1/poss} way into the tall grass to try out the advice p_l has given {PRONOUN/app1/object}, but {PRONOUN/app1/subject} {VERB/app1/go/goes} crashing down into a hole, where whatever lives there gives {PRONOUN/app1/object} a sharp bite! It seems the grass was hiding more than just cats. r_c ends up limping back to camp.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1173,12 +1173,12 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "r_c heads out into the grasslands alone, wanting to explore and have some time to themselves.",
-        "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
+        "intro_text": "r_c heads out into the grasslands alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out a thick field of tall grass they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date.",
+                "text": "r_c heads off to map out a thick field of tall grass {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure {PRONOUN/r_c/poss} mental map is up to date.",
                 "exp": 20,
                 "weight": 20
             },
@@ -1194,7 +1194,7 @@
                 "stat_skill": ["CLEVER,1"]
             },
             {
-                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way.",
+                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} last passed this way.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1216,7 +1216,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c shivers a little, thinking of the dangers of solo patrols. . . No, definitely not. They turn around and slink straight back to camp.",
+                "text": "s_c shivers a little, thinking of the dangers of solo patrols. . . No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and {VERB/s_c/slink/slinks} straight back to camp.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["insecure", "lonesome", "nervous"]
@@ -1236,17 +1236,17 @@
             "deputy": [1, 6]
         },
         "weight": 20,
-        "intro_text": "r_c heads out into the grasslands alone, wanting to explore and have some time to themselves.",
-        "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
+        "intro_text": "r_c heads out into the grasslands alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out a thick field of tall grass they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
+                "text": "r_c heads off to map out a thick field of tall grass {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
                 "exp": 20,
                 "weight": 20
             },
             {
-                "text": "r_c rounds a corner and stumbles across a tiny, perfect pond! Purring, they take the opportunity for a small moment of peace, relaxing and enjoying the view.",
+                "text": "r_c rounds a corner and stumbles across a tiny, perfect pond! Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a small moment of peace, relaxing and enjoying the view.",
                 "exp": 20,
                 "weight": 5
             },
@@ -1257,7 +1257,7 @@
                 "stat_skill": ["CLEVER,1"]
             },
             {
-                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way.",
+                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} last passed this way.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1274,12 +1274,12 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c gets lost in the territory. Somehow. Their pelt is burning with shame by the time they finally return, sneaking back to their den to avoid any embarrassing questions.",
+                "text": "r_c gets lost in the territory. Somehow. {PRONOUN/r_c/poss/CAP} pelt is burning with shame by the time {PRONOUN/r_c/subject} finally {VERB/r_c/return/returns}, sneaking back to {PRONOUN/r_c/poss} den to avoid any embarrassing questions.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "s_c wavers in their decision. They have so much work to do, so many other things demanding their time. . . No, definitely not. They turn around and march straight back to camp.",
+                "text": "s_c wavers in {PRONOUN/s_c/poss} decision. {PRONOUN/s_c/subject/CAP} {VERB/s_c/have/has} so much work to do, so many other things demanding {PRONOUN/s_c/poss} time. . . No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and {VERB/s_c/march/marches} straight back to camp.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["insecure", "lonesome", "nervous"]
@@ -1299,17 +1299,17 @@
             "leader": [1, 6]
         },
         "weight": 20,
-        "intro_text": "r_c heads out into the grasslands alone, wanting to explore and have some time to themselves.",
-        "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
+        "intro_text": "r_c heads out into the grasslands alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out a thick field of tall grass they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
+                "text": "r_c heads off to map out a thick field of tall grass {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
                 "exp": 20,
                 "weight": 20
             },
             {
-                "text": "r_c rounds a corner and stumbles across a tiny, perfect pond! Purring, they take the opportunity for a small moment of peace, relaxing and enjoying the view.",
+                "text": "r_c rounds a corner and stumbles across a tiny, perfect pond! Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a small moment of peace, relaxing and enjoying the view.",
                 "exp": 20,
                 "weight": 5
             },
@@ -1320,7 +1320,7 @@
                 "stat_skill": ["CLEVER,1"]
             },
             {
-                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way.",
+                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} last passed this way.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1337,12 +1337,12 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c gets lost in the territory. Somehow. Their pelt is burning with shame by the time they finally return, sneaking back to their den to avoid any embarrassing questions.",
+                "text": "r_c gets lost in the territory. Somehow. {PRONOUN/r_c/poss/CAP} pelt is burning with shame by the time {PRONOUN/r_c/subject} finally {VERB/r_c/return/returns}, sneaking back to {PRONOUN/r_c/poss} den to avoid any embarrassing questions.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "s_c wavers in their decision. They have so much work to do, so many other things demanding their time. . . No, definitely not. They turn around and march straight back to camp.",
+                "text": "s_c wavers in {PRONOUN/s_c/poss} decision. {PRONOUN/s_c/subject/CAP} {VERB/s_c/have/has} so much work to do, so many other things demanding {PRONOUN/s_c/poss} time. . . No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and {VERB/s_c/march/marches} straight back to camp.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["insecure", "lonesome", "nervous"]
