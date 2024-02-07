@@ -94,7 +94,7 @@
                 ]
             },
             {
-                "text": "app1 makes {PRONOUN/app1/poss} way into the tall grass to try out the advice p_l has given {PRONOUN/app1/object}, but {PRONOUN/app1/subject} {VERB/app1/go/goes} crashing down into a hole, where whatever lives there gives {PRONOUN/app1/object} a sharp bite! It seems the grass was hiding more than just cats. r_c ends up limping back to camp.",
+                "text": "app1 makes {PRONOUN/app1/poss} way into the tall grass to try out the advice p_l has given {PRONOUN/app1/object}, but {PRONOUN/app1/subject} {VERB/app1/go/goes} crashing down into a hole, where whatever lives there gives {PRONOUN/app1/object} a sharp bite! It seems the grass was hiding more than just cats. app1 ends up limping back to camp.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
