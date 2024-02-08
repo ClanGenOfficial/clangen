@@ -524,7 +524,7 @@
                 ]
             },
             {
-                "text": "As s_c rarely has patience for other cats, o_c1 tells {PRONOUN/s_c/object} harshly that they don't have time for some idiot who got stuck, making s_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/s_c/self} out.",
+                "text": "As s_c rarely has patience for other cats, p_l tells {PRONOUN/s_c/object} harshly that they don't have time for some idiot who got stuck, making s_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/s_c/self} out.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -542,14 +542,14 @@
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
-                        "cats_from": ["o_c1"],
+                        "cats_from": ["p_l"],
                         "mutual": true,
                         "values": ["platonic", "comfort", "trust", "respect"],
                         "amount": -5
                     },
                     {
                         "cats_to": ["s_c"],
-                        "cats_from": ["o_c1"],
+                        "cats_from": ["p_l"],
                         "mutual": true,
                         "values": ["dislike"],
                         "amount": 5
