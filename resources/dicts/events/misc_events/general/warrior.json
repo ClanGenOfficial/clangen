@@ -7,7 +7,11 @@
             "Greenleaf",
             "Leaf-fall",
             "other_cat",
-            "other_cat_warrior"
+            "other_cat_warrior",
+            "platonic",
+            "comfort",
+            "romantic",
+            "to_both"
         ],
         "event_text": "m_c and r_c take a late night patrol out of camp to watch the sun rise.",
         "cat_trait": null,
@@ -23,7 +27,11 @@
             "Greenleaf",
             "Leaf-fall",
             "other_cat",
-            "other_cat_warrior"
+            "other_cat_warrior",
+            "platonic",
+            "comfort",
+            "romantic",
+            "to_both"
         ],
         "event_text": "m_c and r_c take an early evening patrol out of camp to watch the moon rise.",
         "cat_trait": null,
@@ -36,7 +44,8 @@
         "tags": [
             "Leaf-bare",
             "other_cat",
-            "other_cat_warrior"
+            "other_cat_warrior",
+            "comfort"
         ],
         "event_text": "m_c encourages r_c to play in the snow with {PRONOUN/m_c/object} during a patrol.",
         "cat_trait": "playful",
