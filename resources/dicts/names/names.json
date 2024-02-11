@@ -38,7 +38,7 @@
     "trot", "tumble", "twist", "valley", "watcher", "water", "wave", "web", "whisper", "whistle", "willow", "wind", "wing", "wish", "wisp", 
     "zoom",
     "dragon", "earth", "ghost", "magic", "ground", "guardian", "knight", "mind", "seeker", "soul", "god", "emperor", "day", "life",
-    "lurker", "hunter", "vessel", "forest", "air", "energy", "time", "eternity", "instinct", "vampire", "wizard", "barbarian", "death"
+    "lurker", "hunter", "vessel", "forest", "air", "energy", "time", "eternity", "instinct", "vampire", "wizard", "barbarian", "death", "silence"
   ],
   "pelt_suffixes": {
     "TwoColour": ["patch", "spot", "splash", "patch", "spots", "swan"],
