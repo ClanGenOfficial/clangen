@@ -1035,12 +1035,12 @@
             "Remembers fondly when r_c would beg to be taught a new fighting move",
             "Goes to teach r_c a new move {PRONOUN/m_c/subject} learned, but remembered r_c is among the stars now",
             "Misses r_c nagging {PRONOUN/m_c/object} about apprentice duties",
-            "Is tearing up after finding r_c's old mossball",
+            "Is tearing up after finding r_c's old moss-ball",
             "Hopes that somehow, someway, the kits in StarClan are learning the hunting crouch",
-            "Wonders if the kits get mossballs in StarClan",
+            "Wonders if the kits get moss-balls in StarClan",
             "Hopes that the kits in StarClan get time to play games",
             "Looks up at the night sky, and wonders which stars are long-gone kits",
-            "Thought {PRONOUN/m_c/subject} saw a stray kit infront of the nursery, but it vanished",
+            "Thought {PRONOUN/m_c/subject} saw a stray kit in front of the nursery, but it vanished",
             "Walks in the nursery, hoping to see r_c again, but then realizes that r_c isn't coming back"
         ],
         "main_status_constraint": [
@@ -1409,7 +1409,7 @@
     {
         "id": "childish_apprentice_to_apprentice",
         "thoughts": [
-            "Managed to convince another apprentice to play mossball instead of finishing their duties"
+            "Managed to convince another apprentice to play moss-ball instead of finishing their duties"
         ],
         "main_status_constraint": [
             "apprentice",
