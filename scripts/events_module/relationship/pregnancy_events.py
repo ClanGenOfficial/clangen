@@ -704,14 +704,9 @@ class Pregnancy_Events():
                 kit = Cat(parent1=blood_parent.ID ,moons=0, backstory=backstory, status='newborn')
             elif cat and other_cat:
                 # Two parents provided
+                # The cat that gave birth is always parent1 so there is no need to check gender
                 kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0, status='newborn')
-                
-                if cat.gender == 'female':
-                    kit.thought = f"Snuggles up to the belly of {cat.name}"
-                elif cat.gender == 'male' and other_cat.gender == 'male':
-                    kit.thought = f"Snuggles up to the belly of {cat.name}"
-                else:
-                    kit.thought = f"Snuggles up to the belly of {other_cat.name}"
+                kit.thought = f"Snuggles up to the belly of {cat.name}"
             else:
                 # A one blood parent litter is the only option left. 
                 kit = Cat(parent1=cat.ID, moons=0, backstory=backstory, status='newborn')
