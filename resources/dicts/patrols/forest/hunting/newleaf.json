@@ -3766,12 +3766,12 @@
             "all apprentices": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "r_c wakes from a dream of rich yolk, tongue sticking out ready to lap from an eggshell. However, when {PRONOUN/r_c/subject} {VERB/r_c/poke/pokes} {PRONOUN/r_c/poss} head out of {PRONOUN/r_c/poss} den to go nest raiding, there's rain pouring down outside. But... {PRONOUN/r_c/subject} can still taste egg on {PRONOUN/r_c/poss} tongue...",
-        "decline_text": "Nope, nope going out in this weather is a bad idea.",
+        "intro_text": "r_c wakes from a dream of rich yolk, tongue sticking out ready to lap from an eggshell. However, when {PRONOUN/r_c/subject} {VERB/r_c/poke/pokes} {PRONOUn/r_c/poss} head out of {PRONOUN/r_c/poss} den to go nest raiding, there's rain pouring down outside. But... {PRONOUN/r_c/subject} can still taste egg on {PRONOUN/r_c/poss} tongue...",
+        "decline_text": "Nope, nope, going out in this weather is a bad idea.",
         "chance_of_success": 25,
         "success_outcomes": [
             {
-                "text": "The branches of the pine are slippery with rain, but the bark is rough and steady under r_c's paws. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} only able to pick up two eggs, with a third smashing in {PRONOUN/r_c/poss} jaws as {PRONOUN/r_c/subject} almost {VERB/r_c/fall/falls}, just barely recovering {PRONOUN/r_c/poss} balance with {PRONOUN/r_c/poss} tail swinging wildly. Still, that's two more than the Clan started the day with.",
+                "text": "The branches of the pine are slippery with rain, but the bark is rough and steady under r_c's paws. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} only able to pick up two eggs, with a third smashing in {PRONOUN/r_c/poss} jaws as {PRONOUN/r_c/subject} almost {VERB/r_c/fall/falls} and {VERB/r_c/recover/recovers} {PRONOUN/r_c/poss} balance with {PRONOUN/r_c/poss} tail swinging wildly. Still, that's two more than the Clan started the day with.",
                 "exp": 25,
                 "weight": 20,
                 "prey": ["small"]
@@ -3803,7 +3803,7 @@
                 "weight": 20
             },
             {
-                "text": "The branch r_c pads out on is more than strong enough to bear {PRONOUN/r_c/poss} weight - but in the wind and rain, trembling and slippery, {PRONOUN/r_c/subject} {VERB/r_c/lose/loses} {PRONOUN/r_c/poss} grip. The last thing they see is the ground approaching.",
+                "text": "The branch r_c pads out on is more than strong enough to bear {PRONOUN/r_c/poss} weight - but in the wind and rain, trembling and slippery, {PRONOUN/r_c/subject} {VERB/r_c/lose/loses} {PRONOUN/r_c/poss} grip. The last thing {PRONOUN/r_c/subject} {VERB/r_c/see/sees} is the ground approaching.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c", "some_lives"],
