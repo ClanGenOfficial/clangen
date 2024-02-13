@@ -795,5 +795,114 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
+    },
+        {
+        "injury": "mangled leg",
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_clan",
+            "rel_down",
+            "war"
+        ],
+        "event_text": "While patrolling the o_c borders, m_c stepped on a concealed pit trap set by what seemed to be o_c warriors. m_c freezes with shock as {PRONOUN/m_c/subject} {VERB/m_c/plunge/plunges} into the depths of the trap, causing m_c to limp back to camp, flanked by other cats on the patrol.",
+        "cat_negate_trait": "careful",
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "claw-wound",
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_clan",
+            "rel_down",
+            "war",
+            "other_cat",
+            "rc_to_mc",
+            "respect",
+            "trust"
+        ],
+        "event_text": "During a skirmish, m_c bounds into battle against an o_c warrior, protecting r_c from a powerful blow. m_c bears the brunt of the strike, and r_c helps them back to camp.",
+        "cat_negate_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null,
+        "cat_trait": [
+            "fierce",
+            "bloodthirsty",
+            "charismatic",
+            "bold",
+            "daring",
+            "ambitious",
+            "confident",
+            "adventurous",
+            "vengeful",
+            "competitive",
+            "rebellious",
+            "flamboyant"
+        ]
+    },
+    {
+        "injury": "claw-wound",
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_clan",
+            "rel_down",
+            "war",
+            "other_cat",
+            "other_cat_kit"
+        ],
+        "event_text": "While o_c attempted a surprise attack on the c_n camp, m_c fiercely guarded the nursery. However, it didn't end with m_c unscathed, and {PRONOUN/m_c/subject} walked away with a gushing wound in {PRONOUN/m_c/poss} flank.",
+        "cat_negate_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "cat bite",
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_clan",
+            "rel_down",
+            "war"
+        ],
+        "event_text": "On a border patrol near the o_c border, m_c could no longer take o_c's jeers and smirks. {PRONOUN/m_c/subject/CAP} lashed out at the first jeering cat {PRONOUN/m_c/subject} saw, although the hotheaded move wasn't smart as m_c couldn't escape the skirmish without injury.",
+        "cat_negate_trait": null,
+        "cat_skill": null,
+        "cat_trait": [
+            "troublesome",
+            "fierce",
+            "bloodthirsty",
+            "cold",
+            "bold",
+            "daring",
+            "righteous",
+            "ambitious",
+            "confident",
+            "adventurous",
+            "shameless",
+            "vengeful",
+            "arrogant",
+            "competitive",
+            "flamboyant",
+            "rebellious"
+        ],
+        "other_cat_skill": null
     }
 ]
