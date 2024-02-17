@@ -23,7 +23,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "Though it tries to escape, r_c is faster and smarter - {PRONOUN/r_c/subject} {VERB/m_c/slam/slams} a paw down on the squirrel's tail before it can go very far, and kills it with ease.",
+                "text": "Though it tries to escape, r_c is faster and smarter - {PRONOUN/r_c/subject} {VERB/r_c/slam/slams} a paw down on the squirrel's tail before it can go very far, and kills it with ease.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["medium"]

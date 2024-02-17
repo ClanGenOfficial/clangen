@@ -353,7 +353,7 @@
             "Spends all day chatting and laughing with some other warriors",
             "Forgot where {PRONOUN/m_c/subject} put something, and every other warrior offers to help {PRONOUN/m_c/object} find it",
             "Is a little exhausted from how many cats come to {PRONOUN/m_c/object} for things",
-            "Feels happy knowing {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} someone other's can talk to",
+            "Feels happy knowing {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} someone others can talk to",
             "Carefully curates {PRONOUN/m_c/poss} appearance to be dazzling, but not too dazzling"
         ],
         "main_trait_constraint": [
