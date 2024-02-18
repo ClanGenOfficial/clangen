@@ -143,6 +143,7 @@
 			}
 		},
 		"comment":[
+            "override_same_age_group - when set to false, cats will ignore age_range for potential mates in the same age group as themself",
 			"chance_fulfilled_condition - 1/chance of becoming mates when the conditions are fulfilled",
 			"chance_friends_to_lovers - 1/chance of becoming mates, triggers with friends_to_lover (has to be a high number because many relationships are checked each moon)",
 			"VALUES IN RELATIONSHIP DICT - 0: no condition; positive number: value has to be higher than number; negative number: value has to be lower than number",
