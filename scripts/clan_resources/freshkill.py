@@ -428,6 +428,8 @@ class Freshkill_Pile():
             ----------
             group : list
                 the list of cats which should be feed
+            not_moon_feeding: boolean
+				defines if this is an additional feeding round
         """
         if len(group) == 0:
             return
@@ -494,7 +496,9 @@ class Freshkill_Pile():
             self.nutrition_info[cat.ID].current_score -= remaining_amount
         elif remaining_amount == 0:
             if actual_needed == 0:
+                print(cat.name , " ", self.nutrition_info[cat.ID].current_score)
                 self.nutrition_info[cat.ID].current_score += amount
+                print(cat.name , " after; ", self.nutrition_info[cat.ID].current_score)
             elif amount > actual_needed:
                 self.nutrition_info[cat.ID].current_score += (amount - actual_needed)
         elif ration and cat.status == "warrior" and actual_needed != 0:
