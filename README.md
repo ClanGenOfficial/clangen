@@ -34,6 +34,10 @@ Open a PowerShell window (Windows key and then enter `PowerShell`) and paste thi
 ```
 (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
 ```
+or in case you installed Python from the Windows Store:
+```
+(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -
+```
 
 ### Running the game via the helper scripts
 #### Linux, macOS
