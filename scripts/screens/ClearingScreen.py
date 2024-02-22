@@ -96,13 +96,11 @@ class ClearingScreen(Screens):
                     self.tactic_tab.enable()
                     self.handle_tab_toggles()
             elif event.ui_element == self.feed_all_button:
-                print("FEED: ", game.clan.freshkill_pile.total_amount)
                 game.clan.freshkill_pile.feed_cats(self.hungry_cats, True)
                 self.update_cats_list()
                 self.update_nutrition_cats()
                 self.update_focus_cat()
                 self.draw_pile()
-                print("AFTER FEED: ", game.clan.freshkill_pile.total_amount)
                 if self.open_tab == "tactic":
                     self.log_tab.enable()
                     self.cats_tab.enable()
