@@ -319,3 +319,57 @@ class Thoughts():
             chosen_thought = "Prrrp! You shouldn't see this! Report as a bug."
 
         return chosen_thought
+    
+    def create_death_thoughts(self, inter_list) -> list:
+        created_list = []
+        for inter in inter_list:
+            created_list.append(inter)
+        return created_list
+    
+    def leader_death_thought(self, lives_left, darkforest):
+        #loading the special leader death thoughts, since they function differently than regular ones
+        base_path = f"resources/dicts/thoughts/death"
+        if darkforest is False:
+            spec_dir = "/starclan"
+        elif darkforest:
+            spec_dir = "/darkforest"
+        THOUGHTS: []
+        try:
+            if lives_left > 0:
+                with open(f"{base_path}{spec_dir}/leader_life.json", 'r') as read_file:
+                    THOUGHTS = ujson.loads(read_file.read())
+                loaded_thoughts = THOUGHTS
+                thought_group = choice(Thoughts.create_death_thoughts(self, loaded_thoughts))
+                chosen_thought = choice(thought_group["thoughts"])
+                return chosen_thought
+            else:
+                with open(f"{base_path}death{spec_dir}/leader_death.json", 'r') as read_file:
+                    THOUGHTS = ujson.loads(read_file.read())
+                loaded_thoughts = THOUGHTS
+                thought_group = choice(Thoughts.create_death_thoughts(self, loaded_thoughts))
+                chosen_thought = choice(thought_group["thoughts"])
+                return chosen_thought
+        except Exception:
+            traceback.print_exc()
+            chosen_thought = "Prrrp! You shouldn't see this! Report as a bug."
+
+    def new_death_thought(self, darkforest, isoutside):
+        #loading the special death thoughts, since they function differently than regular ones
+        base_path = f"resources/dicts/thoughts/death"
+        if isoutside:
+            spec_dir = "/unknownresidence"
+        elif darkforest is False:
+            spec_dir = "/starclan"
+        elif darkforest:
+            spec_dir = "/darkforest"
+        THOUGHTS: []
+        try:
+            with open(f"{base_path}{spec_dir}/general.json", 'r') as read_file:
+                THOUGHTS = ujson.loads(read_file.read())
+            loaded_thoughts = THOUGHTS
+            thought_group = choice(Thoughts.create_death_thoughts(self, loaded_thoughts))
+            chosen_thought = choice(thought_group["thoughts"])
+            return chosen_thought
+        except Exception:
+            traceback.print_exc()
+            return "Prrrp! You shouldn't see this! Report as a bug."
