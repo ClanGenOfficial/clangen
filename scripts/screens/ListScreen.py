@@ -507,7 +507,7 @@ class ListScreen(Screens):
     def get_sc_cats(self):
         self.current_group = 'sc'
         self.death_status = 'dead'
-        self.full_cat_list = [game.clan.instructor] if not game.clan.instructor.df else []
+        self.full_cat_list = []
         for the_cat in Cat.all_cats_list:
             if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.outside and not the_cat.df and \
                     not the_cat.faded:
@@ -516,7 +516,7 @@ class ListScreen(Screens):
     def get_df_cats(self):
         self.current_group = 'df'
         self.death_status = 'dead'
-        self.full_cat_list = [game.clan.instructor] if game.clan.instructor.df else []
+        self.full_cat_list = []
 
         for the_cat in Cat.all_cats_list:
             if the_cat.dead and the_cat.ID != game.clan.instructor.ID and the_cat.df and \
@@ -535,6 +535,19 @@ class ListScreen(Screens):
         """Run this function when the search text changes, or when the screen is switched to."""
         self.current_listed_cats = []
         Cat.sort_cats(self.full_cat_list)
+
+        # adding in the guide if necessary, this ensures the guide isn't affected by sorting as we always want them to
+        # be the first cat on the list
+        if self.current_group == 'df' and game.clan.instructor.df:
+            if game.clan.instructor in self.full_cat_list:
+                self.full_cat_list.remove(game.clan.instructor)
+            self.full_cat_list.insert(0, game.clan.instructor)
+        elif self.current_group == 'sc' and not game.clan.instructor.df:
+            if game.clan.instructor in self.full_cat_list:
+                self.full_cat_list.remove(game.clan.instructor)
+            self.full_cat_list.insert(0, game.clan.instructor)
+
+
         search_text = search_text.strip()
         if search_text not in ['', 'name search']:
             for cat in self.full_cat_list:
