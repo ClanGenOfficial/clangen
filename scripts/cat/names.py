@@ -64,13 +64,12 @@ class Name():
                  tortiepattern=None,
                  biome=None,
                  specsuffix_hidden=False,
-                 load_existing_name=False,
-                 moons = None):
+                 load_existing_name=False
+                 ):
         self.status = status
         self.prefix = prefix
         self.suffix = suffix
         self.specsuffix_hidden = specsuffix_hidden
-        self.moons = moons
 
         name_fixpref = False
         # Set prefix
