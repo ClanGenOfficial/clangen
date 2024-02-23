@@ -700,7 +700,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "p_l finds a kittypet collapsed by the Thunderpath, wailing for their housefolk. p_l comforts them, asking why they were left here. The only explanation they have is that they're sick.. perhaps they were too much of a burden? p_l offers them a place in c_n, at least until they're better. They tentatively accept, looking longingly at the Thunderpath as they're led away.",
+                "text": "p_l finds a kittypet collapsed by the Thunderpath, wailing for their housefolk. p_l comforts them, asking why they were left here. The only explanation they have is that they're sick... perhaps they were too much of a burden? p_l offers them a place in c_n, at least until they're better. They tentatively accept, looking longingly at the Thunderpath as they're led away.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [

@@ -835,7 +835,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The pawprints lead to a trespassing rogue. r_c quickly hides themselves behind a bush and sets up an ambush that sends the rogue fleeing off c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. r_c quickly hides themself behind a bush and sets up an ambush that sends the rogue fleeing off c_n territory.",
                 "exp": 10,
                 "weight": 20
             },
@@ -881,7 +881,7 @@
                 "weight": 20
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle-hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"]
@@ -898,7 +898,7 @@
                 }
             },
             {
-                "text": "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run.",
+                "text": "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themself to their feet, spitting with outrage, but the rogue that did it has already turned and run.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [

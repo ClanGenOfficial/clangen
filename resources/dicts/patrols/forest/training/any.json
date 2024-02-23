@@ -1106,7 +1106,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "r_c heads out into the forest alone, wanting to explore and have some time to themselves.",
+        "intro_text": "r_c heads out into the forest alone, wanting to explore and have some time to themself.",
         "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -1169,7 +1169,7 @@
             "deputy": [1, 6]
         },
         "weight": 20,
-        "intro_text": "r_c heads out into the forest alone, wanting to explore and have some time to themselves.",
+        "intro_text": "r_c heads out into the forest alone, wanting to explore and have some time to themself.",
         "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -1232,7 +1232,7 @@
             "leader": [1, 6]
         },
         "weight": 20,
-        "intro_text": "r_c heads out into the forest alone, wanting to explore and have some time to themselves.",
+        "intro_text": "r_c heads out into the forest alone, wanting to explore and have some time to themself.",
         "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
         "chance_of_success": 60,
         "success_outcomes": [

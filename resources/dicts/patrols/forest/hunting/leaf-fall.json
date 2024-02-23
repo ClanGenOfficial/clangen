@@ -657,19 +657,19 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The rat king's lair is defended heavily by smaller rats. While the patrol doesn't find any sign of the rat king, they manage to defeat and being back a feast of small rats.",
+                "text": "The Rat King's lair is heavily defended by smaller rats. While the patrol doesn't find any sign of the Rat King, they manage to defeat and bring back a feast of small rats.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["medium"]
             },
             {
-                "text": "The rats defending the rat king's lair are more numerous than they thought. The patrol catches whatever rats they can, but p_l swears that they saw it - multiple eyes glowing in the dark, watching them.",
+                "text": "The rats defending the Rat King's lair are more numerous than they thought. The patrol catches whatever rats they can, but p_l swears that {PRONOUN/p_l/subject} saw it - multiple eyes glowing in the dark, watching {PRONOUN/p_l/object}.",
                 "exp": 30,
                 "weight": 5,
                 "prey": ["large"]
             },
             {
-                "text": "The waves of rats overwhelm the rest of the patrol, but s_c can see the rat king writhing within its nest. They bolt away from the others, trusting their claws to take on the legend. It dies with a horrible shriek, as the rest of the patrol watch in awe.",
+                "text": "The waves of rats overwhelm the rest of the patrol, but s_c can see the Rat King writhing within its nest. They bolt away from the others, trusting their claws to take on the legend. It dies with a horrible shriek, as the rest of the patrol watch in awe.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["HUNTER,3"],
@@ -678,13 +678,13 @@
         ],
         "fail_outcomes": [
             {
-                "text": "There are more rats defending the rat king's lair than they thought. Fighting off waves of them, the patrol retreats back to the Clan with empty paws.",
+                "text": "There are more rats defending the Rat King's lair than they thought. Fighting off waves of them, the patrol retreats back to the Clan with empty paws.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
             },
             {
-                "text": "The rat king and their minions overwhelm the patrol, biting into fur and limbs. p_l orders a retreat, and they hope the Clan can heal so many wounded.",
+                "text": "The Rat King and their minions overwhelm the patrol, biting into fur and limbs. p_l orders a retreat, and they hope the Clan can heal so many wounded.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -694,11 +694,11 @@
                         "scars": []
                     }
                 ],
-                "history_text": { "scar": "m_c was scarred fighting a rat king." },
+                "history_text": { "scar": "m_c was scarred fighting a Rat King."},
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c knows they are one of the Clan's greatest hunters. They spot the rat king and charge into its lair. But the King proves too great a foe for a single cat, and it sends s_c back with wounds to tell their tale.",
+                "text": "s_c knows they are one of the Clan's greatest hunters. They spot the Rat King and charge into its lair. But the King proves too great a foe for a single cat, and it sends s_c back with wounds to tell their tale.",
                 "exp": 0,
                 "weight": 10,
                 "stat_skill": ["HUNTER,1"],
@@ -709,7 +709,7 @@
                         "scars": []
                     }
                 ],
-                "history_text": { "scar": "m_c was scarred fighting a rat king." },
+                "history_text": { "scar": "m_c was scarred fighting a Rat King."},
                 "prey": ["very_small"]
             }
         ]
@@ -730,19 +730,19 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The rat king's lair is defended heavily by smaller rats. While the patrol doesn't find any sign of the rat king, they manage to defeat and bring back a feast of small rats.",
+                "text": "The Rat King's lair is heavily by smaller rats. While the patrol doesn't find any sign of the Rat King, they manage to defeat and bring back a feast of small rats.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["medium"]
             },
             {
-                "text": "The rats defending the rat king's lair are more numerous than they thought. The patrol catches whatever rats they can, but p_l swears that they saw it - multiple eyes glowing in the dark, watching them.",
+                "text": "The rats defending the Rat King's lair are more numerous than they thought. The patrol catches whatever rats they can, but p_l swears that they saw it - multiple eyes glowing in the dark, watching them.",
                 "exp": 30,
                 "weight": 5,
                 "prey": ["large"]
             },
             {
-                "text": "The waves of rats overwhelm the rest of the patrol, but s_c can see the rat king writhing within its nest. They bolt away from the others, trusting their claws to take on the legend. It dies with a horrible shriek, as the rest of the patrol watch in awe.",
+                "text": "The waves of rats overwhelm the rest of the patrol, but s_c can see the Rat King writhing within its nest. They bolt away from the others, trusting their claws to take on the legend. It dies with a horrible shriek, as the rest of the patrol watch in awe.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["HUNTER,3"],
@@ -751,27 +751,27 @@
         ],
         "fail_outcomes": [
             {
-                "text": "There are more rats defending the rat king's lair than they thought. Fighting off waves of them, the patrol retreats back to the Clan with empty paws.",
+                "text": "There are more rats defending the Rat King's lair than they thought. Fighting off waves of them, the patrol retreats back to the Clan with empty paws.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "The rat king's defenses are too powerful, and as wave upon wave of rats poured down onto the patrol, most of them manage to escape.. but not everyone makes it out.",
+                "text": "The Rat King's defenses are too powerful, and as wave upon wave of rats poured down onto the patrol, most of them manage to escape... but not everyone makes it out.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["multi", "some_lives"],
                 "history_text": {
-                    "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after battling the rat king."
+                    "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after battling a Rat King."
                 }
             },
             {
-                "text": "s_c knows they are one of the Clan's greatest hunters. They spot the rat king and charge into its lair. But the King proves too great a foe for a single cat, and it kills the would-be kingslayer.",
+                "text": "s_c knows they are one of the Clan's greatest hunters. They spot the Rat King and charge into its lair. But the King proves too great a foe for a single cat, and it kills the would-be kingslayer.",
                 "exp": 0,
                 "weight": 10,
                 "stat_skill": ["HUNTER,2"],
                 "dead_cats": ["s_c"],
                 "history_text": {
-                    "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after battling the rat king."
+                    "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after battling a Rat King."
                 }
             }
         ]
