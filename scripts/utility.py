@@ -660,7 +660,6 @@ def change_relationship_values(cats_to: list,
 
     # pick out the correct cats
     for single_cat_from in cats_from:
-        print(single_cat_from.relationships.keys())
         for single_cat_to_ID in cats_to:
             single_cat_to = single_cat_from.fetch_cat(single_cat_to_ID)
 

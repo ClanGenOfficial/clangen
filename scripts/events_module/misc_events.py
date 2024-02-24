@@ -116,6 +116,13 @@ class MiscEvents():
             types.append("other_clans")
         if ceremony:
             types.append("ceremony")
+
+        # to remove double the event
+        # (example which might happen would be: "The tension between c_n and o_c is palpable, with even the smallest actions potentially leading to violence.")
+        same_text_events = [event for event in game.cur_events_list if event.text == event_text]
+        if len(same_text_events) > 0:
+            return
+
         game.cur_events_list.append(Single_Event(event_text, types, involved_cats))
 
         if reveal:

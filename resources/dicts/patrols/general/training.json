@@ -438,7 +438,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "deputy": [1, 1]
+            "deputy": [1, 1],
+	    "leader": [-1, -1]
         },
         "weight": 20,
         "intro_text": "While training, p_l admits that {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} think that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} a good deputy.",
@@ -9893,7 +9894,7 @@
                 ]
             },
             {
-                "text": "app1 has waited for this for moons. {PRONOUN/app1/subject/CAP} disguise {PRONOUN/app1/poss} scent and carefully work {PRONOUN/app1/poss} way through the territory, checking strategic hiding places. Before long, {PRONOUN/app1/subject} pinpoint p_l's hiding spot, and sneak behind the warrior. Without hesitation, app1 pounces on p_l and pins {PRONOUN/p_l/object} to the ground, a paw on {PRONOUN/p_l/poss} throat.",
+                "text": "app1 has waited for this for moons. {PRONOUN/app1/subject/CAP} {VERB/app1/disguise/disguises} {PRONOUN/app1/poss} scent and carefully {VERB/app1/work/works} {PRONOUN/app1/poss} way through the territory, checking strategic hiding places. Before long, {PRONOUN/app1/subject} {VERB/app1/pinpoint/pinpoints} p_l's hiding spot, and {VERB/app1/sneak/sneaks} behind the warrior. Without hesitation, app1 pounces on p_l and pins {PRONOUN/p_l/object} to the ground, a paw on {PRONOUN/p_l/poss} throat.",
                 "exp": 15,
                 "weight": 20,
                 "stat_trait": ["sneaky", "cunning", "cold"],

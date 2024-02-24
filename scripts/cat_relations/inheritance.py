@@ -311,6 +311,7 @@ class Inheritance():
             grandparents = self.get_parents(parent_cat)
             for grand_id in grandparents:
                 if grand_id in self.parents.keys():
+                    print("WARNING - How did this happen? A grandparent is also the parent? Please report this")
                     continue
                 grand_type = RelationType.BLOOD if value["type"] == RelationType.BLOOD else RelationType.NOT_BLOOD
                 if grand_id not in self.grand_parents:
@@ -534,7 +535,7 @@ class Inheritance():
                         "type": rel_type,
                         "additional": [add_info]
                     }
-                    self.all_but_cousins.append(inter_cat)
+                    self.all_but_cousins.append(inter_id)
                     self.all_involved.append(inter_id)
                 
 

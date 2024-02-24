@@ -603,7 +603,7 @@ class Events:
             'After a long journey, m_c has finally returned home to c_n.',
             'm_c was found at the border, tired, but happy to be home.',
             "m_c strides into camp, much to the everyone's surprise. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} home!",
-            "{PRONOUN/m_c/subject/CAP} met so many friends on {PRONOUN/m_c/poss} jouney, but c_n is where m_c truly belongs. With a tearful goodbye, " 
+            "{PRONOUN/m_c/subject/CAP} met so many friends on {PRONOUN/m_c/poss} journey, but c_n is where m_c truly belongs. With a tearful goodbye, " 
                 "{PRONOUN/m_c/subject} {VERB/m_c/return/returns} home."
         ]
         lost_cat.outside = False
