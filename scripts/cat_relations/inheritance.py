@@ -534,7 +534,7 @@ class Inheritance():
                         "type": rel_type,
                         "additional": [add_info]
                     }
-                    self.all_but_cousins.append(inter_cat)
+                    self.all_but_cousins.append(inter_id)
                     self.all_involved.append(inter_id)
                 
 
