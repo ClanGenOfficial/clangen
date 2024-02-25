@@ -778,7 +778,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/discover/discovers} the cooling body of a kittypet; it seems they attempted to run after their Twolegs, but was run over by another monster. p_l silently sends a prayer for the kittypet, and can't help but to curse the Twolegs who abandoned such a loyal cat.",
+                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/discover/discovers} the cooling body of a kittypet; it seems they attempted to run after their Twolegs, but was run over by another monster. p_l silently sends a prayer for the kittypet, and can't help but to curse the Twolegs who abandoned such a loyal cat. After burying them, p_l's patrol crossed paths with a loner who became visibly unsettled seeing the solemn-faced group of cats who stunk of sickness, death, and the Thunderpath. They ran off before any member of the patrol could think to explain the situation.",
                 "exp": 0,
                 "weight": 20,
                 "outsider_rep": -1,

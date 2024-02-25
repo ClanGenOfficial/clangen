@@ -594,7 +594,7 @@
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
-          "text": "Eyes aglow with mischievous gleam, r_c stealthily closes the distance, carrying a precious offering for m_c; a life imbued with the virtue of [virtue]. Like a fleeting wisp of smoke, r_c departs, leaving behind no trace of {PRONOUN/r_c/poss} enigmatic presence.",
+          "text": "Eyes aglow with mischief, r_c stealthily closes the distance, carrying a precious offering for m_c; a life imbued with the virtue of [virtue]. Like a fleeting wisp of smoke, r_c departs, leaving behind no trace of {PRONOUN/r_c/poss} enigmatic presence.",
           "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         },
         {
@@ -617,7 +617,20 @@
         {
           "text": "r_c and m_c seem to only watch one another as the life for [virtue] is given, the two deep in a silent conversation before the two go their separate ways.",
           "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
+        },
+        {
+          "text": "r_c eyes m_c thoughtfully, as if trying to gauge how {PRONOUN/m_c/poss} perculiar disposition will change the Clan as a leader. Finally, {PRONOUN/r_c/subject} respectfully bows {PRONOUN/r_c/poss} head to the leader as {PRONOUN/r_c/subject} give a life for [virtue].",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
+        },
+        {
+          "text": "m_c's expression is unreadable as {PRONOUN/m_c/subject} await r_c's gift, making the StarClan cat wonder how {PRONOUN/r_c/subject} really feel about becoming leader. The deputy doesn't even flinch as r_c betows a life for [virtue], and oddly enough, even giggles when most cats would be gritting their teeth in pain.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
+        },
+        {
+          "text": "r_c is a little taken aback when m_c asks if the stars dancing on {PRONOUN/r_c/poss} pelt ever feel annoying as {PRONOUN/r_c/subject} approach the deputy, blinking owlishly at the odd cat for a few moments before finally recomposing {PRONOUN/r_c/self}. Tactfully ignoring m_c's question, {PRONOUN/r_c/subject} bestow a life for [virtue].",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         }
+        
       ]
     },
   

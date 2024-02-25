@@ -6,8 +6,8 @@
             "Is spending a considerable amount of time grooming",
             "Is looking forward to today",
             "Is feeling down...",
-            "Is feeling excited",
-            "Is feeling nervous",
+            "Is feeling excited!",
+            "Is feeling nervous...",
             "Is feeling content",
             "Is feeling silly",
             "Is feeling a bit ill",
@@ -635,7 +635,7 @@
             "Hisses at r_c when {PRONOUN/r_c/subject} {VERB/r_c/ask/asks} {PRONOUN/m_c/object} about where {PRONOUN/m_c/subject} used to live",
             "Is ignoring the gossip about {PRONOUN/m_c/poss} past",
             "Is comforted by {PRONOUN/m_c/poss} Clanmates' confidence in the safety of c_n",
-            "Is unsure of {PRONOUN/m_c/poss} Clanmates confidence in the safety of c_n"
+            "Is unsure of {PRONOUN/m_c/poss} Clanmates' confidence in the safety of c_n"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -1061,8 +1061,8 @@
             "Discovers that {PRONOUN/m_c/poss} self-taught method is less effective",
             "Wonders what {PRONOUN/m_c/subject} even {VERB/m_c/need/needs} this training method for",
             "Brags about all the prey {PRONOUN/m_c/subject} caught when {PRONOUN/m_c/subject} {VERB/m_c/were/was} a rogue",
-            "Can't help but be intrigued by the Warrior Code",
-            "Is trying to memorize the Warrior Code"
+            "Can't help but be intrigued by the warrior code",
+            "Is trying to memorize the warrior code"
         ],
         "main_status_constraint": [
             "apprentice",

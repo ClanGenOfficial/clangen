@@ -8,7 +8,7 @@
             "Leaf-bare",
             "death"
         ],
-        "death_text": "m_c feels that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} have enough energy to stand up and remain here.",
+        "death_text": "m_c feels that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} have enough energy to stand up and remain here as starvation claws into {PRONOUN/m_c/poss} belly and sends {PRONOUN/m_c/object} to {PRONOUN/m_c/poss} ancestral hunting grounds.",
         "history_text": [
             null,
             "starved"

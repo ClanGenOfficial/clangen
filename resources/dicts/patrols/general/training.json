@@ -8202,7 +8202,7 @@
         "weight": 20,
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1", "LORE,1"],
-        "intro_text": "Legends tell of the first clan cat that created the stars above and below upon death...",
+        "intro_text": "Legends tell of the first Clan cat that created the stars above and below upon death...",
         "decline_text": "No one is interested in fables today.",
         "success_outcomes": [
             {
@@ -9386,8 +9386,8 @@
             "warrior": [1, 1]
         },
         "weight": 20,
-        "intro_text": "It is almost dawn when the deputy rouses app1 for {PRONOUN/app1/poss} assessment. {PRONOUN/app1/subject/CAP} are meant to find p_l posing as an enemy warrior somewhere on the territory and handle the situation. p_l could be anywhere!",
-        "decline_text": "app1 sheepishly looks up at the deputy, a guilty gleam in {PRONOUN/app1/poss} eyes, and says that {PRONOUN/app1/subject} have a stomachache. They {PRONOUN/app1/subject/CAP} hurriedly {VERB/app1/run/runs} to the medicine den, wondering how {PRONOUN/app1/subject} are going to get away with this fake illness at sunhigh when the Clan shares tongues.",
+        "intro_text": "It's almost dawn when the deputy rouses app1 for {PRONOUN/app1/poss} assessment. {PRONOUN/app1/subject/CAP} are meant to find p_l posing as an enemy warrior somewhere on the territory and handle the situation. p_l could be anywhere!",
+        "decline_text": "app1 sheepishly looks up at the deputy, a guilty gleam in {PRONOUN/app1/poss} eyes, and says that {PRONOUN/app1/subject} have a stomachache. {PRONOUN/app1/subject/CAP} hurriedly {VERB/app1/run/runs} to the medicine den, wondering how {PRONOUN/app1/subject}'re going to get away with this fake illness at sunhigh when the Clan shares tongues.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -9433,7 +9433,7 @@
                 ]
             },
             {
-                "text": "app1 was already awake, and raring to go. {PRONOUN/app1/subject/CAP} run off before the deputy can say anything. It is just a game of hide and seek, after all. When {PRONOUN/app1/subject} {VERB/app1/find/finds} p_l {PRONOUN/app1/subject} {VERB/app1/have/has} to stifle {PRONOUN/app1/poss} chitters of excited pleasure. p_l must have heard {PRONOUN/app1/object}, because app1 sees {PRONOUN/p_l/poss} whiskers twitch in amusement. Oh well, {PRONOUN/app1/subject} gleefully {VERB/app1/charge/charges} forward.",
+                "text": "app1 was already awake and raring to go. {PRONOUN/app1/subject/CAP} run off before the deputy can say anything. It's just a game of hide and seek, after all. When {PRONOUN/app1/subject} {VERB/app1/find/finds} p_l {PRONOUN/app1/subject} {VERB/app1/have/has} to stifle {PRONOUN/app1/poss} chitters of excited pleasure. p_l must have heard {PRONOUN/app1/object}, because app1 sees {PRONOUN/p_l/poss} whiskers twitch in amusement. Oh well, {PRONOUN/app1/subject} gleefully {VERB/app1/charge/charges} forward.",
                 "exp": 15,
                 "weight": 20,
                 "stat_skill": ["RUNNER,0", "CLEVER,0"],
@@ -9500,7 +9500,7 @@
                 ]
             },
             {
-                "text": "app1 is jumping at shadows. Everything around {PRONOUN/app1/object} seems like a predator waiting to pounce. Where could p_l be hiding? {PRONOUN/app1/subject/CAP} wish that p_l would hurry up and come out. Wait, is that . . .? app1 charges toward the bulky shape of another cat in the dark. However, this is not p_l. The smell of a foreign cat washes over app1.",
+                "text": "app1 is jumping at shadows. Everything around {PRONOUN/app1/object} seems like a predator waiting to pounce. Where could p_l be hiding? {PRONOUN/app1/subject/CAP} wish that p_l would hurry up and come out. Wait, is that...? app1 charges toward the bulky shape of another cat in the dark. However, this is not p_l. The smell of a foreign cat washes over app1 just before the world quickly fades to black.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["app1"],
@@ -9525,7 +9525,7 @@
                 ]
             },
             {
-                "text": "Why did it have to be this assessment? app1 struggles to make a decision. What if {PRONOUN/app1/subject} cannot find p_l before the time limit? Who decided there should be a time limit? Maybe app1 would be better off as a medicine cat? {PRONOUN/app1/poss/CAP} mentor's arrival startles {PRONOUN/app1/object}, and app1 realizes {PRONOUN/app1/subject} wasted too much time second guessing.",
+                "text": "Why did it have to be this assessment? app1 struggles to make a decision. What if {PRONOUN/app1/subject} cannot find p_l before the time limit? Who decided there should <i>be</i> a time limit? Maybe app1 would be better off as a medicine cat? {PRONOUN/app1/poss/CAP} mentor's arrival startles {PRONOUN/app1/object}, and app1 realizes {PRONOUN/app1/subject} wasted too much time second guessing.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["nervous", "insecure", "oblivious"],
