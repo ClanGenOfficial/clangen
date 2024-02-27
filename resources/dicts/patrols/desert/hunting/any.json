@@ -2391,7 +2391,7 @@
         },
         "weight": 20,
         "intro_text": "r_c is tempted to eat the prey they just caught.",
-        "decline_text": "r_c decides against breaking the warrior code",
+        "decline_text": "r_c decides against breaking the Warrior Code",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -2457,7 +2457,7 @@
         },
         "weight": 20,
         "intro_text": "r_c is tempted to eat the prey they just caught.",
-        "decline_text": "r_c decides against breaking the warrior code",
+        "decline_text": "r_c decides against breaking the Warrior Code",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -2523,7 +2523,7 @@
         },
         "weight": 20,
         "intro_text": "r_c is tempted to eat the prey they just caught.",
-        "decline_text": "r_c decides against breaking the warrior code",
+        "decline_text": "r_c decides against breaking the Warrior Code",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -2632,7 +2632,7 @@
         },
         "weight": 20,
         "intro_text": "r_c is tempted to eat the prey they just caught.",
-        "decline_text": "r_c decides against breaking the warrior code",
+        "decline_text": "r_c decides against breaking the Warrior Code",
         "chance_of_success": 50,
         "success_outcomes": [
             {

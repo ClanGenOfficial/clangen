@@ -2581,7 +2581,7 @@
         },
         "weight": 20,
         "intro_text": "app1 is tempted to eat the prey {PRONOUN/app1/subject} just caught. After all, {PRONOUN/app1/subject}{VERB/app1/'re/'s} only practice hunting, right? And since it's  <i>technically</i> not a <i>true</i> hunting patrol, it's <i>technically</i> {PRONOUN/app1/inposs}, right...?",
-        "decline_text": "app1 decides against breaking the warrior code, resisting the temptation.",
+        "decline_text": "app1 decides against breaking the Warrior Code, resisting the temptation.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -2608,7 +2608,7 @@
                 "can_have_stat": ["app"]
             },
             {
-                "text": "s_c freezes in indecision. But the moment of peace allows {PRONOUN/s_c/object} to collect {PRONOUN/s_c/poss} thoughts, and decide that the warrior code matters more to {PRONOUN/s_c/object} than a silly afternoon snack.",
+                "text": "s_c freezes in indecision. But the moment of peace allows {PRONOUN/s_c/object} to collect {PRONOUN/s_c/poss} thoughts, and decide that the Warrior Code matters more to {PRONOUN/s_c/object} than a silly afternoon snack.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"],
@@ -2684,7 +2684,7 @@
                 "can_have_stat": ["app"]
             },
             {
-                "text": "Whatever, it's not a big deal, and s_c's hungry. But as {PRONOUN/s_c/subject} {VERB/s_c/eat/eats}, a passing warrior spots them, and begins an outraged lecture on the values of the warrior code.",
+                "text": "Whatever, it's not a big deal, and s_c's hungry. But as {PRONOUN/s_c/subject} {VERB/s_c/eat/eats}, a passing warrior spots them, and begins an outraged lecture on the values of the Warrior Code.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -8076,7 +8076,7 @@
         "pl_skill_constraint": ["TEACHER,1", "INSIGHTFUL,1"],
         "success_outcomes": [
             {
-                "text": "Commanding attention, p_l takes the patrol through the familiar steps of the warrior code as they walk the territory - no, but have they considered what that rule truly <i>means</i>? Would they follow it to their own death? To their friend's? To a kit's? Have they truly reflected on their dedication to the code?",
+                "text": "Commanding attention, p_l takes the patrol through the familiar steps of the Warrior Code as they walk the territory - no, but have they considered what that rule truly <i>means</i>? Would they follow it to their own death? To their friend's? To a kit's? Have they truly reflected on their dedication to the code?",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
@@ -8090,7 +8090,7 @@
                 ]
             },
             {
-                "text": "Padding meow by meow through the warrior code, p_l impacts their ultimate lesson - that there is always, <i>always</i> a point where the code must be disregarded. To follow something blindly is not to truly follow it at all, and the code exists to guide their lives, not dictate them.",
+                "text": "Padding meow by meow through the Warrior Code, p_l impacts their ultimate lesson - that there is always, <i>always</i> a point where the code must be disregarded. To follow something blindly is not to truly follow it at all, and the code exists to guide their lives, not dictate them.",
                 "exp": 30,
                 "weight": 5,
                 "relationships": [
