@@ -2223,5 +2223,189 @@
                 "prey": ["very_small"]
             }
         ]
+    },
+    {
+        "patrol_id": "dst_hunt_heat1",
+        "biome": ["desert"],
+        "season": ["greenleaf"],
+        "types": ["hunting"],
+        "tags": ["illness"],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "all apprentices": [-1, -1],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "The sun beats down on the desert, driving every creature away from its gaze with blinding heat.",
+        "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "r_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun, but their pounce is too soon, and their prey lives to see another day.",
+                "exp": 15,
+                "weight": 20,
+                "prey": ["small"]
+            },
+            {
+                "text": "r_c considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except this burrow seems occupied. The tortoise inside puts up a fight, but r_c manages to flip their positions and drive it out into the heat, which slowly kills it.",
+                "exp": 15,
+                "weight": 5,
+                "prey": ["small"]
+            },
+            {
+                "text": "Anticipating the heat of the greenleaf sun, s_c has positioned themselves in the shadowed depths around a shaded tiny pool in the rocks. As predicted, it's not long until the water draws in a Thunderpath-runner, and the bird is dispatched neatly and quietly.",
+                "exp": 15,
+                "weight": 20,
+                "stat_skill": ["CLEVER,2"],
+                "prey": ["small"]
+            },
+            {
+                "text": "s_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun. It finds shelter, but also s_c, and they settle back down to wait until it's cooler to try and bring their catch back to c_n.",
+                "exp": 15,
+                "weight": 20,
+                "stat_trait": [
+                    "patient",
+                    "responsible",
+                    "thoughtful",
+                    "wise",
+                    "calm",
+                    "careful",
+                    "nervous",
+                    "strange"
+                ],
+                "prey": ["small"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Making the smart choice, r_c doesn't move from the shade, taking a good long nap in the heat.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "r_c starts feeling confused and fuzzy as they walk, but ignore it. It takes them too long to recognize the symptoms of heat exhaustion, and when they do it's too late, with r_c stranded far from shade. Dizzy and retching, they collapse on the desert sands.,",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "This cat got heatstroke while on a patrol.",
+                    "reg_death": "m_c died from heatstroke.",
+                    "lead_death": "died from heatstroke"
+                }
+            }
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_heat2",
+        "biome": ["desert"],
+        "season": ["greenleaf"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "The sun beats down on the desert, driving every creature away from its gaze with blinding heat.",
+        "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "app1 considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except their burrow is occupied, and app1 instead has to wait out the heat in the uncomfortable shade of a cactus.",
+                "exp": 15,
+                "weight": 5,
+                "prey": ["small"]
+            },
+            {
+                "text": "s_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun. It finds shelter, but sadly not in the place s_c waits.",
+                "exp": 15,
+                "weight": 20,
+                "stat_trait": [
+                    "patient",
+                    "responsible",
+                    "thoughtful",
+                    "wise",
+                    "calm",
+                    "careful",
+                    "nervous",
+                    "strange"
+                ],
+                "can_have_stat": ["app"],
+                "prey": ["small"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Making the smart choice, app1 doesn't move from the shade, taking a good long nap in the heat.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "Refusing to stop hunting, s_c boldly decides to go into a canyon where it'll be cooler. They don't find any prey, but don't overheat either.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "bold",
+                    "daring",
+                    "ambitious",
+                    "shameless",
+                    "troublesome"
+                ],
+                "can_have_stat": ["app1"]
+            },
+            {
+                "text": "app1 doesn't make it back to camp. A patrol sent out for them find their body, collapsed in a shadeless part of the territory and already starting to dry out and mummify.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["app1"],
+                "history_text": {
+                    "scar": "This cat got heatstroke while on a patrol.",
+                    "reg_death": "This cat died from heat stroke.",
+                    "lead_death": "died from heatstroke"
+                }
+            },
+            {
+                "text": "When app1 doesn't return to camp that evening, a search party goes out for them. They find app1 collapsed and badly affected by heat stroke, and carry them back to camp where their might be a way to help them. However, app1's breathing stops on the journey home, and they slip to StarClan.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["heat exhaustion"],
+                        "scars": []
+                    }
+                ],
+                "history_text": {
+                    "scar": "This cat got heatstroke while on a patrol.",
+                    "reg_death": "This cat died from heat stroke.",
+                    "lead_death": "died from heatstroke"
+                }
+            },
+            {
+                "text": "s_c collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a Clanmate finds them that they're able to totter home shakily.",
+                "exp": 0,
+                "weight": 10,
+                "stat_trait": [
+                    "adventurous",
+                    "bold",
+                    "daring",
+                    "ambitious",
+                    "shameless",
+                    "troublesome"
+                ],
+                "can_have_stat": ["app"],
+                "dead_cats": ["s_c"],
+                "history_text": {
+                    "scar": "This cat got heatstroke while on a patrol.",
+                    "reg_death": "This cat died from heat stroke.",
+                    "lead_death": "died from heatstroke"
+                }
+            }
+        ]
     }
 ]

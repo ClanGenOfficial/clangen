@@ -8,8 +8,8 @@ authors = [
     "Sablesteel <noemail@null.com>"
 ]
 readme = "README.md"
-homepage = "https://sablesteel.itch.io/clan-gen-fan-edit"
-repository = "https://github.com/ClanGenOfficial/clangen/"
+homepage = "https://clangen.io"
+repository = "https://github.com/ClanGenOfficial/clangen"
 keywords = ["warriorcats", "fanedit", "game", "pygame"]
 
 [tool.poetry.dependencies]
@@ -37,7 +37,6 @@ pyinstaller = "^5.10.1"
 pillow = "^9.5.0"
 setuptools = "^67.7.2"
 wheel = "^0.40.0"
-
 
 [tool.poetry.extras]
 discord = ["pypresence"]

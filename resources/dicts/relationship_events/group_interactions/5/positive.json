@@ -19,10 +19,10 @@
         "r_c1_to_r_c3": ["platonic_40"],
         "r_c1_to_r_c4": ["platonic_40"],
         "r_c2_to_r_c3": ["platonic_40"],
-        "r_c2_to_r_c4": ["platonic_40"]
+        "r_c2_to_r_c4": ["platonic_40"],
+		"r_c3_to_r_c4": ["not_mates", "romantic_1"]
 	},
 	"specific_reaction": {
-	
 		"r_c3_to_r_c4": {
 			"romantic": "increase",
 			"dislike": "decrease",
