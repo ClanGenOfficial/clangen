@@ -1886,7 +1886,28 @@ class Events:
             for poor_little_meowmeow in dead_cats:
                 poor_little_meowmeow.die()
                 # this next bit is temporary until we can rework it
-                History.add_death(poor_little_meowmeow, 'This cat died after disaster struck the Clan.')
+                if event_string == f'{names} drown after the camp becomes flooded.':
+                    History.add_death(poor_little_meowmeow, 'This cat died when the camp was flooded.')
+                elif event_string == f'{names} are killed after a fire rages through the camp.':
+                    History.add_death(poor_little_meowmeow, 'This cat died when a fire raged through camp.')
+                elif event_string == f'{names} are killed in an ambush by a group of rogues.':
+                    History.add_death(poor_little_meowmeow, 'This cat died in a rogue ambush.')
+                elif event_string == f'{names} go missing in the night.':
+                    History.add_death(poor_little_meowmeow, 'This cat went missing in the night.')
+                elif event_string == f'{names} are killed after a badger attack.':
+                    History.add_death(poor_little_meowmeow, 'This cat was killed in a badger attack.')
+                elif event_string == f'{names} die to a greencough outbreak.':
+                    History.add_death(poor_little_meowmeow, 'This cat died to a greencough outbreak.')
+                elif event_string == f'{names} eat tainted fresh-kill and die.':
+                    History.add_death(poor_little_meowmeow, 'This cat died after eating tainted fresh-kill.')
+                elif event_string == f'{names} die after freezing from a snowstorm.':
+                    History.add_death(poor_little_meowmeow, 'This cat froze to death in a snowstorm.')
+                elif event_string == f'{names} starve to death when no prey is found.':
+                    History.add_death(poor_little_meowmeow, 'This cat starved to death when no prey was found.')
+                elif event_string == f'{names} die after overheating.':
+                    History.add_death(poor_little_meowmeow, 'This cat died to a heatwave.')
+                elif event_string == f'{names} die after the water dries up from drought.':
+                    History.add_death(poor_little_meowmeow, 'This cat died to dehydration after a drought.')
 
     def handle_illnesses_or_illness_deaths(self, cat):
         """ 

@@ -366,7 +366,7 @@ class History:
             cat.history.possible_history.pop(condition)
     
     @staticmethod
-    def add_death(cat, death_text, condition=None, other_cat=None, extra_text=None):
+    def add_death(cat: object, death_text: object, condition: object = None, other_cat: object = None, extra_text: object = None) -> object:
         """ Adds death to cat's history. If a condition is passed, it will look into
             possible_history to see if anything is saved there, and, if so, use the text and 
             other_cat there (overriding the 

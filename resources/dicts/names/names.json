@@ -37,7 +37,7 @@
     "thistle", "thorn", "thrift", "throat", "thrush", "thud", "thunder", "tiger", "timber", "toe", "tooth", "trail", "tree", 
     "trot", "tumble", "twist", "valley", "watcher", "water", "wave", "web", "whisper", "whistle", "willow", "wind", "wing", "wish", "wisp", 
     "zoom",
-    "dragon", "earth", "ghost", "magic", "ground", "guardian", "knight", "mind", "seeker", "soul", "god", "emperor", "day", "life",
+    "dragon", "earth", "ghost", "magic", "ground", "guardian", "knight", "mind", "seeker", "soul", "emperor", "day", "life",
     "lurker", "hunter", "vessel", "forest", "air", "energy", "time", "eternity", "instinct", "vampire", "wizard", "barbarian", "death", "silence"
   ],
   "pelt_suffixes": {
@@ -112,7 +112,7 @@
     "Weed", "Weevil", "Wet", "Wheat", "Whimsy", "Whirl", "Whisker", "Whisper", "Whispering", "Whistle", "Whorl", "Wild", "Willow", 
     "Wind", "Wing", "Wish", "Wisteria", "Wolf", "Wolverine", "Wood", "Worm", "Wren", "Yarrow", "Yew", 
     "Zinnia",
-    "Dragon", "Wyvern", "Earth", "Eternal", "Time", "Ghost", "God", "Magic", "Mind", "Royal", "Shade", "Spirit", "Soul", "Energy", "Fae", "Wyrm",
+    "Dragon", "Wyvern", "Earth", "Eternal", "Time", "Ghost", "Magic", "Mind", "Royal", "Shade", "Spirit", "Soul", "Energy", "Fae", "Wyrm",
     "Kirin", "Orchid", "Drake", "Hydra", "Sealed", "Pure", "Radiant", "Vampire", "Death", "Life"
   ],
 
@@ -417,7 +417,7 @@
     "Nina", "Matthias", "Wylan", "Dirtyhands", "Wraith", "Monomon", "Lurien", "Herrah", "Shabor", "Pharaoh", "Porki", "Dark", "Radiance", "Yato", "Yatogami", "Hiyori", "Yukine", "Bishamonten", "Viina",
     "Kazuma", "Kofuku", "Daikoku", "Armstrong", "Hohenheim", "Scar", "Astarion", "Gale", "Laezel", "Karlach", "Wyll", "Jaheira", "Minsc", "Minthara", "Halsin", "Zevlor", "Raphael", "Gortash", "Bhaal", "Orin",
     "Ketheric", "Faerun", "Shar", "Selune", "Mystra", "Balthazar", "Absolute", "Cazador", "Szarr", "Vampire", "Mol", "Balduran", "Kagha", "Orpheus", "Dame Aylin", "Isobel", "Tiamat", "Zariel", "Mizora",
-    "Withers", "Elminster"
+    "Withers", "Elminster", "Aasimar"
     ],
 	"animal_suffixes": [
 		"badger", "bat", "bear", "bee", "beetle", "bird", "bug", "cricket", "deer", "eagle", "elk", "falcon", "fawn", "fish", "fox", "goose", "hare", "hawk", "horse", 
