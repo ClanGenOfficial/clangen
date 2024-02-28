@@ -107,6 +107,7 @@ class Cat():
     id_iter = itertools.count()
 
     all_cats_list: List[Cat] = []
+    ordered_cat_list: List[Cat] = []
 
     grief_strings = {}
 
