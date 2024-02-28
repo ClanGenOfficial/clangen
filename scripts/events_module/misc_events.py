@@ -3,6 +3,7 @@ import random
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
 from scripts.cat.pelts import Pelt
+from scripts.cat_relations.relationship import Relationship
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values
 from scripts.game_structure.game_essentials import game
@@ -105,6 +106,12 @@ class MiscEvents():
                     effect = " (negative effect)"
 
                 log_text = event_text + effect
+
+                if other_cat.ID not in cat.relationships:
+                    cat.relationships[other_cat.ID] = Relationship(cat, other_cat)
+
+                if cat.ID not in other_cat.relationships:
+                    other_cat.relationships[cat.ID] = Relationship(other_cat, cat)
 
                 if cat.moons == 1:
                     cat.relationships[other_cat.ID].log.append(log_text + f" - {cat.name} was {cat.moons} moon old")
