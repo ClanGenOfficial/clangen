@@ -711,9 +711,9 @@ class Pregnancy_Events():
                 # A one blood parent litter is the only option left. 
                 kit = Cat(parent1=cat.ID, moons=0, backstory=backstory, status='newborn')
                 kit.thought = f"Snuggles up to the belly of {cat.name}"
-                
-            kit.adoptive_parents = all_adoptive_parents  # Add the adoptive parents. 
+
             all_kitten.append(kit)
+            # adoptive parents are set at the end, when everything else is decided
 
             # remove scars
             kit.pelt.scars.clear()
@@ -755,14 +755,14 @@ class Pregnancy_Events():
                 else:
                     the_cat.relationships[kit.ID] = Relationship(the_cat, kit)
                     kit.relationships[the_cat.ID] = Relationship(kit, the_cat)
-            
+
             #### REMOVE ACCESSORY ###### 
             kit.pelt.accessory = None
             clan.add_cat(kit)
 
             #### GIVE HISTORY ###### 
             History.add_beginning(kit, clan_born=bool(cat))
-        
+
         # check other cats of Clan for siblings
         for kitten in all_kitten:
             # update/buff the relationship towards the siblings
@@ -775,6 +775,18 @@ class Pregnancy_Events():
                 kitten.relationships[second_kitten.ID].trust += 10 + y
             
             kitten.create_inheritance_new_cat() # Calculate inheritance. 
+
+        # check if the possible adoptive cat is not already in the family tree and
+        # add them as adoptive parents if not
+        final_adoptive_parents = []
+        for adoptive_p in all_adoptive_parents:
+            if adoptive_p not in all_kitten[0].inheritance.all_involved:
+                final_adoptive_parents.append(adoptive_p)
+
+        # Add the adoptive parents.
+        for kit in all_kitten:
+            kit.adoptive_parents = final_adoptive_parents
+            kit.inheritance.update_inheritance()
 
         if blood_parent:
             blood_parent.outside = True
