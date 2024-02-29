@@ -12,11 +12,7 @@
 		"interactions":[
 			"m_c offers r_c some feathers as a welcome gift that {PRONOUN/r_c/subject} can use to decorate {PRONOUN/r_c/poss} new nest.",
 			"m_c offers r_c some tips for building a new nest."
-		],
-		"reaction_random_cat": {
-			"platonic": "increase",
-			"trust": "increase"
-    }
+		]
 	},
 	{
 		"id": "gen_wander1",

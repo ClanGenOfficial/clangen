@@ -274,44 +274,7 @@ class ClearingScreen(Screens):
         if len(self.hungry_cats) <= 0 and self.feed_all_button.is_enabled:
             self.feed_all_button.disable()
 
-        self.info_messages = UITextBoxTweaked(
-            "",
-            scale(pygame.Rect((216, 620), (1100, 160))),
-            object_id=get_text_box_theme("#text_box_30_horizcenter_vertcenter"),
-            line_spacing=1
-        )
 
-        information_display = []
-
-        current_prey_amount = game.clan.freshkill_pile.total_amount
-        needed_amount = game.clan.freshkill_pile.amount_food_needed()
-        warrior_need = game.prey_config["prey_requirement"]["warrior"]
-        warrior_amount = int(current_prey_amount / warrior_need) 
-        general_text = f"Up to {warrior_amount} warriors can be fed with this amount of prey."
-
-        concern_text = "This should not appear."
-        if current_prey_amount == 0:
-            concern_text = "The fresh-kill pile is empty, the Clan desperately needs prey!"
-            self.pile_size = "#freshkill_pile_empty"
-        elif 0 < current_prey_amount <= needed_amount / 2:
-            concern_text = "The fresh-kill pile can't even feed half of the Clan. Hunting patrols should be organized immediately."
-            self.pile_size = "#freshkill_pile_verylow"
-        elif needed_amount / 2 < current_prey_amount <= needed_amount:
-            concern_text = "Only half of the Clan can be fed currently. Hunting patrols should be organized."
-            self.pile_size = "#freshkill_pile_low"
-        elif needed_amount < current_prey_amount <= needed_amount * 1.5:
-            concern_text = "Every mouth of the Clan can be fed, but some more prey would not harm."
-            self.pile_size = "#freshkill_pile_average"
-        elif needed_amount * 1.5 < current_prey_amount <= needed_amount * 2.5:
-            concern_text = "The fresh-kill pile is overflowing and the Clan can feast!"
-            self.pile_size = "#freshkill_pile_good"
-        elif needed_amount * 2.5 < current_prey_amount:
-            concern_text = "StarClan has blessed the Clan with plentiful prey and the leader sends their thanks to Silverpelt."
-            self.pile_size = "#freshkill_pile_full"
-
-        information_display.append(general_text)
-        information_display.append(concern_text)
-        self.info_messages.set_text("<br>".join(information_display))
         self.draw_pile()
 
     def handle_tab_toggles(self):
@@ -511,6 +474,47 @@ class ClearingScreen(Screens):
             i += 1
 
     def draw_pile(self):
+        if self.info_messages:
+            self.info_messages.kill()
+        self.info_messages = UITextBoxTweaked(
+            "",
+            scale(pygame.Rect((216, 620), (1100, 160))),
+            object_id=get_text_box_theme("#text_box_30_horizcenter_vertcenter"),
+            line_spacing=1
+        )
+
+        information_display = []
+
+        current_prey_amount = game.clan.freshkill_pile.total_amount
+        needed_amount = game.clan.freshkill_pile.amount_food_needed()
+        warrior_need = game.prey_config["prey_requirement"]["warrior"]
+        warrior_amount = int(current_prey_amount / warrior_need) 
+        general_text = f"Up to {warrior_amount} warriors can be fed with this amount of prey."
+
+        concern_text = "This should not appear."
+        if current_prey_amount == 0:
+            concern_text = "The fresh-kill pile is empty, the Clan desperately needs prey!"
+            self.pile_size = "#freshkill_pile_empty"
+        elif 0 < current_prey_amount <= needed_amount / 2:
+            concern_text = "The fresh-kill pile can't even feed half of the Clan. Hunting patrols should be organized immediately."
+            self.pile_size = "#freshkill_pile_verylow"
+        elif needed_amount / 2 < current_prey_amount <= needed_amount:
+            concern_text = "Only half of the Clan can be fed currently. Hunting patrols should be organized."
+            self.pile_size = "#freshkill_pile_low"
+        elif needed_amount < current_prey_amount <= needed_amount * 1.5:
+            concern_text = "Every mouth of the Clan can be fed, but some more prey would not harm."
+            self.pile_size = "#freshkill_pile_average"
+        elif needed_amount * 1.5 < current_prey_amount <= needed_amount * 2.5:
+            concern_text = "The fresh-kill pile is overflowing and the Clan can feast!"
+            self.pile_size = "#freshkill_pile_good"
+        elif needed_amount * 2.5 < current_prey_amount:
+            concern_text = "StarClan has blessed the Clan with plentiful prey and the leader sends their thanks to Silverpelt."
+            self.pile_size = "#freshkill_pile_full"
+
+        information_display.append(general_text)
+        information_display.append(concern_text)
+        self.info_messages.set_text("<br>".join(information_display))
+
         if self.pile_base:
             self.pile_base.kill()
         current_prey_amount = game.clan.freshkill_pile.total_amount
@@ -522,6 +526,7 @@ class ClearingScreen(Screens):
                                       object_id=self.pile_size,
                                       tool_tip_text=hover_display, manager=MANAGER
                                       )
+
 
     def exit_screen(self):
         self.info_messages.kill()
