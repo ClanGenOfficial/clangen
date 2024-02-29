@@ -21,7 +21,7 @@
             "Misses the warm smells of the nursery",
             "Feels hungrier than {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} ever felt before"
         ],
-        "main_backstory_constraint": ["outsider1", "halfclan1", "outsider_roots1", "halfclan2", "outsider_roots2", "abandoned1". "abandoned2", "abandoned3", "abandoned4", "orphaned1", "orphaned2". "orphaned3". "orphaned4". "orpahned5", "orphaned6". "clanborn", "clan_founder"]
+        "main_backstory_constraint": ["outsider1", "halfclan1", "outsider_roots1", "halfclan2", "outsider_roots2", "abandoned1", "abandoned2", "abandoned3", "abandoned4", "orphaned1", "orphaned2", "orphaned3", "orphaned4", "orpahned5", "orphaned6", "clanborn", "clan_founder"]
     },
     {
         "id": "lost_new_kitten_thoughts",
