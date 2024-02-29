@@ -2,10 +2,37 @@
     {
         "id": "lost_kitten_thoughts",
         "thoughts": [
+            "Is wandering around aimlessly",
+            "Is attempting to catch a bird",
+            "Is feeling exhausted",
+            "Is tired of moving around all the time",
+            "Is hiding from twolegs",
+            "Is hiding from a big dog",
+            "Thought {PRONOUN/m_c/subject} smelled another cat earlier",
+            "Hears distant howling",
+            "Curls up in a makeshift den"
+        ]
+    },
+    {
+        "id": "lost_clan_kitten_thoughts",
+        "thoughts": [
             "Misses playing moss ball",
             "Is looking desperately for {PRONOUN/m_c/poss} parent",
             "Misses the warm smells of the nursery",
             "Feels hungrier than {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} ever felt before"
-        ]
+        ],
+        "main_backstory_constraint": ["outsider1", "halfclan1", "outsider_roots1", "halfclan2", "outsider_roots2", "abandoned1". "abandoned2", "abandoned3", "abandoned4", "orphaned1", "orphaned2". "orphaned3". "orphaned4". "orpahned5", "orphaned6". "clanborn", "clan_founder"]
+    },
+    {
+        "id": "lost_new_kitten_thoughts",
+        "thoughts": [
+            "Wonders about {PRONOUN/m_c/poss} true home",
+            "Doesn't understand why cats live in Clans",
+            "Is learning about the Clans",
+            "Is listening to stories about c_n cats",
+            "Hisses at the smell of other cats",
+            "Doesn't want to go back home"
+        ],
+        "main_backstory_constraint": ["outsider2", "outsider3"]
     }
 ]
