@@ -64,7 +64,7 @@
     "role": {
         "deputy": [
             "Allow leaders to automatically choose a new deputy",
-            "The warrior code rules will be taken into account when choosing a deputy.",
+            "The Warrior Code rules will be taken into account when choosing a deputy.",
             false
         ],
         "12_moon_graduation": [

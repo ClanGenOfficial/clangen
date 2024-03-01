@@ -6,14 +6,14 @@
       "r_c lays next to m_c's body, numb to the world around {PRONOUN/r_c/object}.",
       "r_c feels as though {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} living through a nightmare. m_c, {PRONOUN/r_c/poss} kit, can't really be dead.",
       "When r_c hears the news of m_c's death, {PRONOUN/r_c/subject} {VERB/r_c/collapse/collapses} and {VERB/r_c/wail/wails} as though {PRONOUN/r_c/poss} own life was ending.",
-      "m_c had such a bright future ahead of {PRONOUN/m_c/object}. r_c can still hear {PRONOUN/m_c/object} talking about {PRONOUN/m_c/poss} dreams, can still picture {PRONOUN/m_c/object} running through c_n's territory, and to know that m_c will never get the chance to fulfill that. . .",
+      "m_c had such a bright future ahead of {PRONOUN/m_c/object}. r_c can still hear {PRONOUN/m_c/object} talking about {PRONOUN/m_c/poss} dreams, can still picture {PRONOUN/m_c/object} running through c_n's territory, and to know that m_c will never get the chance to fulfill that...",
       "r_c chokes back wails and tears, trying to get to the end of the story {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been telling about m_c's days in the nursery. {PRONOUN/r_c/subject/CAP} can do this, {PRONOUN/r_c/subject} can make sure m_c is honored at {PRONOUN/m_c/poss} vigil, even if r_c can't do anything else for {PRONOUN/m_c/object}."
 
     ],
     "no_body": [
       "r_c feels as though {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} living through a nightmare. m_c, {PRONOUN/r_c/poss} kit, can't really be dead.",
       "When r_c hears the news of m_c's death, {PRONOUN/r_c/subject} {VERB/r_c/collapse/collapses} and {VERB/r_c/wail/wails} as though {PRONOUN/r_c/poss} own life was ending.",
-      "m_c had such a bright future ahead of {PRONOUN/m_c/object}. r_c can still hear {PRONOUN/m_c/object} talking about {PRONOUN/m_c/poss} dreams, can still picture {PRONOUN/m_c/object} running through c_n's territory, and to know that m_c will never get the chance to fulfill that. . .",
+      "m_c had such a bright future ahead of {PRONOUN/m_c/object}. r_c can still hear {PRONOUN/m_c/object} talking about {PRONOUN/m_c/poss} dreams, can still picture {PRONOUN/m_c/object} running through c_n's territory, and to know that m_c will never get the chance to fulfill that...",
       "r_c chokes back wails and tears, trying to get to the end of the story {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been telling about m_c's days in the nursery. {PRONOUN/r_c/subject/CAP} can do this, {PRONOUN/r_c/subject} can make sure m_c is honored at {PRONOUN/m_c/poss} vigil, even if r_c can't do anything else for {PRONOUN/m_c/object}."
     ]
   },

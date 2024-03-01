@@ -992,7 +992,7 @@
                 "weight": 20,
                 "outsider_rep": 0,
                 "new_cat": [
-                    ["meeting", "loner"]
+                    ["status:medicine cat","meeting", "loner", "backstory:wandering_healer2"]
                 ]
             }
         ],
