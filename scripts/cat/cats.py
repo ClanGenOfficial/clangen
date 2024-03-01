@@ -107,6 +107,7 @@ class Cat():
     id_iter = itertools.count()
 
     all_cats_list: List[Cat] = []
+    ordered_cat_list: List[Cat] = []
 
     grief_strings = {}
 
@@ -361,7 +362,7 @@ class Cat():
                              biome=biome,
                              specsuffix_hidden=self.specsuffix_hidden,
                              load_existing_name=loading_cat,
-                             moons=self.moons)
+                             )
         else:
             self.name = Name(status, prefix, suffix, eyes=self.pelt.eye_colour, specsuffix_hidden=self.specsuffix_hidden,
                              load_existing_name = loading_cat)

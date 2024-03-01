@@ -39,7 +39,7 @@
 	{
 		"id": "platonic_de_med3",
 		"interactions": [
-			"r_c makes sure m_c is following the warrior code.",
+			"r_c makes sure m_c is following the Warrior Code.",
 			"r_c has a fight with m_c about what's right."
 		],
 		"random_trait_constraint": [
