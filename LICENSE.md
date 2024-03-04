@@ -1,6 +1,6 @@
-All CODE in this project falls under the Mozilla Public License Version 2.0 license 
+All CODE, WRITING and Miscellaneous files in this project fall under the Mozilla Public License Version 2.0 license. (This includes any file not covered by the SPRITES/ART/ICON category)
 
-All SPRITES/ART/ICON in this project falls under the Creative Commons Attribution-NonCommercial 4.0 International License (https://creativecommons.org/licenses/by-nc/4.0/)
+All SPRITES/ART/ICON in this project fall under the Creative Commons Attribution-NonCommercial 4.0 International License (https://creativecommons.org/licenses/by-nc/4.0/) with attribution to ClanGen or Clan Generator. (This includes any images, or files with an image filetype such as .png, .gif, .jpeg, .jpg, .pdf, .svg, .ico, .psd, .raw, .tiff, .bmp or any other file type commonly recognized as an image file)
 
 
 
