@@ -46,7 +46,6 @@ class listCatsCommand(Command):
 class ageCatsCommand(Command):
     name = "age"
     description = "Age a cat"
-    aliases = ["a"]
     usage = "<cat name|id> [number]"
 
     def callback(self, args: List[str]):
