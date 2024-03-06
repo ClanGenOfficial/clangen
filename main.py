@@ -44,7 +44,7 @@ if not getattr(sys, 'frozen', False):
     if isMissing:
         print("""You are missing some requirements to run clangen!
                 
-                Please look at the "readme.md" file for instructions on how to install them.
+                Please look at the "README.md" file for instructions on how to install them.
                 """)
         
         print("If you are still having issues, please ask for help in the clangen discord server: https://discord.gg/clangen")
