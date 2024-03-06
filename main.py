@@ -42,18 +42,9 @@ if not getattr(sys, 'frozen', False):
             break
 
     if isMissing:
-        if find_spec("thonny") is not None:
-            print("""You are missing some requirements to run clangen!
-                  Please press "Tools" -> "Manage Packages"
-                  Once the menu opens, click the link below "Install from requirements file".
-                  Then, select the file "requirements.txt" in the clangen folder.
-                  """)
-        else:
-            print("""You are missing some requirements to run clangen!
-                  Please run the following command in your terminal to install them:
-                  
-                  python3 -m pip install -r requirements.txt
-                  """)
+        print("""ERROR: You are missing some requirements to run ClanGen!
+              ClanGen uses poetry to manage virtual environments.  You can find platform-specfic instructions on installing poetry and running ClanGen in README.md.
+              """)
         
         print("If you are still having issues, please ask for help in the clangen discord server: https://discord.gg/clangen")
         sys.exit(1)
