@@ -426,6 +426,7 @@
                 "text": "It's not ideal. s_c apologizes - {PRONOUN/s_c/subject} {VERB/s_c/were/was} too caught up in assessing the prey levels in the sheltered group of aspens, and hadn't realized the patrol moved on. But all is forgiven easily with the discovery of such a great hunting spot.",
                 "exp": 20,
                 "weight": 20,
+                "prey": ["medium"],
                 "stat_trait": [
                     "adventurous",
                     "bold",

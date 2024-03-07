@@ -2278,7 +2278,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l tries to demonstrate the right way to crouch and stalk in the snow, but app1, not wanting to listen, charges forward in a flurry of snow and paws and leaps...onto nothing. The starling has flown away, and app1 is now covered in snow and colder than ever. Embarrassed, {PRONOUN/app1/subject} {VERB/app1/slink/slinks} back to camp with p_l, who stifles a laugh.",
+                "text": "p_l tries to demonstrate the right way to crouch and stalk in the snow, but app1, not wanting to listen, charges forward in a flurry of snow and paws and leaps... onto nothing. The starling has flown away, and app1 is now covered in snow and colder than ever. Embarrassed, {PRONOUN/app1/subject} {VERB/app1/slink/slinks} back to camp with p_l, who stifles a laugh.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [

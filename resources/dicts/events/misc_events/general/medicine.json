@@ -318,7 +318,7 @@
             "Leaf-bare",
             "war"
         ],
-        "event_text": "m_c hopes to find the herbs that c_n needs in the war, and goes to look for them even in this leafbare's harsh weather."
+        "event_text": "m_c hopes to find the herbs that c_n needs in the war, and goes to look for them even in this leaf-bare's harsh weather."
     },
     {
         "camp": "any",
@@ -329,7 +329,7 @@
             "Leaf-bare",
             "war"
         ],
-        "event_text": "c_n is in a badly need of herbs, and m_c knows it, but can't bring {PRONOUN/m_c/self} to leave {PRONOUN/m_c/poss} patients' side."
+        "event_text": "c_n is badly in need of herbs, and m_c knows it, but can't bring {PRONOUN/m_c/self} to leave {PRONOUN/m_c/poss} patients' side."
     },
     {
         "camp": "Any",
