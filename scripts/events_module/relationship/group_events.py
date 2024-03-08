@@ -95,7 +95,7 @@ class Group_Events():
         possibilities = Group_Events.get_main_cat_interactions(possibilities,biome,season,abbreviations_cat_id)
 
         # get possible interactions, considering the possible interacting cats 
-        possibilities = Group_Events.get_filtered_interactions(possibilities, int(cat_amount), interact_cats)
+        possibilities = Group_Events.get_filtered_interactions(possibilities, int(cat_amount), interact_cats, abbreviations_cat_id)
 
         # if there is no possibility return
         if len(possibilities) < 1:
@@ -187,7 +187,7 @@ class Group_Events():
         return filtered_interactions
 
     @staticmethod
-    def get_filtered_interactions(interactions: list, amount: int, interact_cats: list):
+    def get_filtered_interactions(interactions: list, amount: int, interact_cats: list, abbreviations_cat_id: dict):
         """ First assign which cat is which abbreviation, then filtered interaction list based on all constraints, which include the other cats.
 
             Parameters
@@ -208,7 +208,7 @@ class Group_Events():
         # first handle the abbreviations possibilities for the cats
         abbr_per_interaction, cat_abbreviations_counter = Group_Events.get_abbreviations_possibilities(interactions, int(amount), interact_cats)
         abbr_per_interaction = Group_Events.remove_abbreviations_missing_cats(abbr_per_interaction)
-        abbreviations_cat_id = Group_Events.set_abbreviations_cats(interact_cats, {}, cat_abbreviations_counter)
+        abbreviations_cat_id = Group_Events.set_abbreviations_cats(interact_cats, abbreviations_cat_id, cat_abbreviations_counter)
 
         # check if any abbreviations_cat_ids is None, if so return 
         not_none = [abbr != None for abbr in abbreviations_cat_id.values()]
