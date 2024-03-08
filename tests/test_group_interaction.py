@@ -404,7 +404,7 @@ class Abbreviations(unittest.TestCase):
         random2 = Cat()
         random2.status = "warrior"
         random3 = Cat()
-        random3.status = "healer"
+        random3.status = "medicine cat"
 
         # when
         interaction_cats = [random1, random2, random3]
