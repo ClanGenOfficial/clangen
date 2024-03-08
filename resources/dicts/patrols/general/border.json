@@ -1116,7 +1116,7 @@
                 "weight": 5
             },
             {
-                "text": "p_l noses forward, half hidden, only stepping out when n_c0's scent hits {PRONOUN/p_l/object}. They've been planning this for moons - tonight is the night. n_c0 is ready to join c_n, to join p_l, and damn anyone who gossips to the dark forest. Tonight is the first night of the rest of their lives together, nothing is going to stop them.",
+                "text": "p_l noses forward, half hidden, only stepping out when n_c:0's scent hits {PRONOUN/p_l/object}. They've been planning this for moons - tonight is the night. n_c:0 is ready to join c_n, to join p_l, and damn anyone who gossips to the dark forest. Tonight is the first night of the rest of their lives together, nothing is going to stop them.",
                 "exp": 5,
                 "weight": 5,
                 "new_cat": [
