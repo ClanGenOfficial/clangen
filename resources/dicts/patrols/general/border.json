@@ -695,7 +695,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "The patrol hears a cat begging for their housefolk to come back, just barely legible over the sound of a monster speeding away.",
+        "intro_text": "The patrol hears a cat begging for their housefolk to come back, just barely intelligible over the sound of a monster speeding away.",
         "decline_text": "p_l decides it's none of {PRONOUN/p_l/poss} business, and resumes {PRONOUN/p_l/poss} patrol.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -719,7 +719,7 @@
                     }
                 ],
                 "new_cat": [
-                    ["kittypet"]
+                    ["kittypet", "backstory:kittypet4"]
                 ],
                 "outsider_rep": 1,
                 "injury": [
