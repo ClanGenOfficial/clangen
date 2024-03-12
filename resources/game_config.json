@@ -19,7 +19,7 @@
 		]
 	},
 	"mates":{
-		"age_range": 50,
+		"age_range": 42,
 		"chance_fulfilled_condition": 2,
 		"chance_friends_to_lovers": 50,
 		"confession": {
