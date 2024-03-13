@@ -375,7 +375,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "p_l is about to step over the border when a hiss stops {PRONOUN/p_l/object} in {PRONOUN/p_l/poss} tracks. A o_c_n warrior bounds into view, bristling with rage. {PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/explain/explains} that {PRONOUN/p_l/subject}{VERB/r_c/'re/'s} the medicine cat and the warrior code allows {PRONOUN/p_l/object} to cross the border and assure that {PRONOUN/p_l/subject} only need a few berries for some sick Clanmates. The warrior looks torn, but agrees to this.",
+                "text": "p_l is about to step over the border when a hiss stops {PRONOUN/p_l/object} in {PRONOUN/p_l/poss} tracks. A o_c_n warrior bounds into view, bristling with rage. {PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/explain/explains} that {PRONOUN/p_l/subject}{VERB/r_c/'re/'s} the medicine cat and the Warrior Code allows {PRONOUN/p_l/object} to cross the border and assure that {PRONOUN/p_l/subject} only need a few berries for some sick Clanmates. The warrior looks torn, but agrees to this.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["MEDIATOR,3"],
