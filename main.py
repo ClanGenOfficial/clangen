@@ -24,7 +24,7 @@ import threading
 from importlib.util import find_spec
 
 if not getattr(sys, 'frozen', False):
-    requiredModules = [
+    required_modules = [
         "ujson",
         "pygame",
         "pygame_gui",
@@ -34,24 +34,26 @@ if not getattr(sys, 'frozen', False):
         "strenum"
     ]
 
-    isMissing = False
+    is_missing = False
+    failed_modules = []
 
-    for module in requiredModules:
+    for module in required_modules:
         if find_spec(module) is None:
-            isMissing = True
-            break
+            is_missing = True
+            failed_modules.append(module)
 
-    if isMissing:
-        print("""You are missing some requirements to run clangen!
-                
-                Please look at the "README.md" file for instructions on how to install them.
-                """)
-        
+    if is_missing:
+        # prior to 3.12, you can't use \n in f-strings
+        new_line = "\n"
+        print(f"""You are missing some requirements to run clangen!
+{new_line.join([" -{}".format(module) for module in failed_modules])}
+Please look at the "README.md" file for instructions on how to install them.\n""")
         print("If you are still having issues, please ask for help in the clangen discord server: https://discord.gg/clangen")
         sys.exit(1)
 
-    del requiredModules
-    del isMissing
+    del required_modules
+    del is_missing
+    del new_line
 del find_spec
 
 from scripts.housekeeping.log_cleanup import prune_logs
