@@ -53,7 +53,6 @@ Please look at the "README.md" file for instructions on how to install them.\n""
 
     del required_modules
     del is_missing
-    del new_line
 del find_spec
 
 from scripts.housekeeping.log_cleanup import prune_logs
