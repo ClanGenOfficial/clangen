@@ -90,8 +90,8 @@
             false
         ],
         "same sex birth": [
-            "Allow same-sex breeding",
-            "Allow couples to birth kittens despite same-sex status.",
+            "Pregnancy ignores biology",
+            "Allow all cats to get pregnant despise their gender and all couples to birth kittens despite same-sex status.",
             false
         ],
         "same sex adoption": [
