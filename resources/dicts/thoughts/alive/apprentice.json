@@ -268,9 +268,7 @@
     {
         "id": "competitive_warrior_apprentice",
         "thoughts": [
-            "Is busy mastering a fighting technique",
-            "Challenges others to spar with {PRONOUN/m_c/object}",
-            "Brags about winning a race"
+            "Is busy mastering a fighting technique"
         ],
         "main_trait_constraint": [
             "competitive"
