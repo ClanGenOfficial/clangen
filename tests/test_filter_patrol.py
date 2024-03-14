@@ -26,9 +26,9 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         self.assertTrue(cat1.is_sibling(cat2))
         self.assertTrue(cat2.is_sibling(cat1))
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraints["relationship"] = ["siblings"]
+        con_patrol_event.relationship_constraints= ["siblings"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
-        no_con_patrol_event.relationship_constraints["relationship"] = []
+        no_con_patrol_event.relationship_constraints = []
 
         test_clan = Clan(name="test")
 
@@ -54,9 +54,9 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraints["relationship"] = ["mates"]
+        con_patrol_event.relationship_constraints = ["mates"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
-        no_con_patrol_event.relationship_constraints["relationship"] = []
+        no_con_patrol_event.relationship_constraints = []
 
         test_clan = Clan(name="test")
 
@@ -84,9 +84,9 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraints["relationship"] = ["parent/child"]
+        con_patrol_event.relationship_constraints = ["parent/child"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
-        no_con_patrol_event.relationship_constraints["relationship"] = []
+        no_con_patrol_event.relationship_constraints = []
 
         test_clan = Clan(name="test")
 
@@ -121,9 +121,9 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraints["relationship"] = ["child/parent"]
+        con_patrol_event.relationship_constraints = ["child/parent"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
-        no_con_patrol_event.relationship_constraints["relationship"] = []
+        no_con_patrol_event.relationship_constraints = []
 
         test_clan = Clan(name="test")
 
@@ -170,9 +170,9 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - correct
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraints["relationship"] = ["romantic_10"]
+        con_patrol_event.relationship_constraints = ["romantic_10"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
-        no_con_patrol_event.relationship_constraints["relationship"] = []
+        no_con_patrol_event.relationship_constraints = []
 
         # then
         patrol = Patrol()
@@ -182,7 +182,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - to high
         con_patrol_event = PatrolEvent(patrol_id="test3")
-        con_patrol_event.relationship_constraints["relationship"] = ["romantic_30"]
+        con_patrol_event.relationship_constraints = ["romantic_30"]
 
         # then
         patrol = Patrol()
@@ -210,9 +210,9 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - correct
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraints["relationship"] = ["platonic_10"]
+        con_patrol_event.relationship_constraints = ["platonic_10"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
-        no_con_patrol_event.relationship_constraints["relationship"] = []
+        no_con_patrol_event.relationship_constraints = []
 
         # then
         patrol = Patrol()
@@ -222,7 +222,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - to high
         con_patrol_event = PatrolEvent(patrol_id="test3")
-        con_patrol_event.relationship_constraints["relationship"] = ["platonic_30"]
+        con_patrol_event.relationship_constraints = ["platonic_30"]
         # then
         patrol = Patrol()
         patrol.add_patrol_cats([cat1, cat2], test_clan)
@@ -249,9 +249,9 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - correct
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraints["relationship"] = ["dislike_10"]
+        con_patrol_event.relationship_constraints = ["dislike_10"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
-        no_con_patrol_event.relationship_constraints["relationship"] = []
+        no_con_patrol_event.relationship_constraints = []
 
         # then
         patrol = Patrol()
@@ -261,7 +261,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - to high
         con_patrol_event = PatrolEvent(patrol_id="test3")
-        con_patrol_event.relationship_constraints["relationship"] = ["dislike_30"]
+        con_patrol_event.relationship_constraints = ["dislike_30"]
 
         # then
         patrol = Patrol()
@@ -289,9 +289,9 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - correct
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraints["relationship"] = ["comfortable_10"]
+        con_patrol_event.relationship_constraints = ["comfortable_10"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
-        no_con_patrol_event.relationship_constraints["relationship"] = []
+        no_con_patrol_event.relationship_constraints = []
 
         # then
         patrol = Patrol()
@@ -301,7 +301,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - to high
         con_patrol_event = PatrolEvent(patrol_id="test3")
-        con_patrol_event.relationship_constraints["relationship"] = ["comfortable_30"]
+        con_patrol_event.relationship_constraints = ["comfortable_30"]
 
         # then
         patrol = Patrol()
@@ -329,9 +329,9 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - correct
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraints["relationship"] = ["jealousy_10"]
+        con_patrol_event.relationship_constraints = ["jealousy_10"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
-        no_con_patrol_event.relationship_constraints["relationship"] = []
+        no_con_patrol_event.relationship_constraints = []
 
         # then
         patrol = Patrol()
@@ -341,7 +341,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - to high
         con_patrol_event = PatrolEvent(patrol_id="test3")
-        con_patrol_event.relationship_constraints["relationship"] = ["jealousy_30"]
+        con_patrol_event.relationship_constraints = ["jealousy_30"]
 
         # then
         patrol = Patrol()
@@ -369,9 +369,9 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - correct
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraints["relationship"] = ["trust_10"]
+        con_patrol_event.relationship_constraints = ["trust_10"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
-        no_con_patrol_event.relationship_constraints["relationship"] = []
+        no_con_patrol_event.relationship_constraints = []
 
         # then
         patrol = Patrol()
@@ -381,7 +381,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - to high
         con_patrol_event = PatrolEvent(patrol_id="test3")
-        con_patrol_event.relationship_constraints["relationship"] = ["trust_30"]
+        con_patrol_event.relationship_constraints = ["trust_30"]
 
         # then
         patrol = Patrol()
@@ -427,9 +427,9 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - all is correct
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraints["relationship"] = ["romantic_10"]
+        con_patrol_event.relationship_constraints = ["romantic_10"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
-        no_con_patrol_event.relationship_constraints["relationship"] = []
+        no_con_patrol_event.relationship_constraints = []
 
         # then
         patrol = Patrol()
@@ -439,7 +439,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - to high limit
         con_patrol_event = PatrolEvent(patrol_id="test3")
-        con_patrol_event.relationship_constraints["relationship"] = ["romantic_30"]
+        con_patrol_event.relationship_constraints = ["romantic_30"]
 
         # then
         patrol = Patrol()
@@ -451,7 +451,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         # when - different relationship values
         cat3.relationships[cat2.ID].romantic_love = 5
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraints["relationship"] = ["romantic_10"]
+        con_patrol_event.relationship_constraints = ["romantic_10"]
 
         # then
         patrol = Patrol()
@@ -481,9 +481,9 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - correct
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraints["relationship"] = ["romantic_10"]
+        con_patrol_event.relationship_constraints = ["romantic_10"]
         con_patrol_event2 = PatrolEvent(patrol_id="test2")
-        con_patrol_event2.relationship_constraints["relationship"] = ["platonic_10"]
+        con_patrol_event2.relationship_constraints = ["platonic_10"]
 
         # then
         patrol = Patrol()
@@ -493,7 +493,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - to high
         con_patrol_event2 = PatrolEvent(patrol_id="test2")
-        con_patrol_event2.relationship_constraints["relationship"] = ["platonic_30"]
+        con_patrol_event2.relationship_constraints = ["platonic_30"]
 
         # then
         patrol = Patrol()
