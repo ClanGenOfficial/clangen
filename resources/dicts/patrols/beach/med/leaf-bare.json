@@ -1497,6 +1497,9 @@
                         "injuries": ["shivering"]
                     }
                 ],
+                "history_text": {
+                    "reg_death": "This cat froze to death."
+                },
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
