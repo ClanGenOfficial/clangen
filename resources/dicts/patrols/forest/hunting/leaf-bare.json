@@ -2640,7 +2640,7 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred after a brush with frostbite, gotten while hunting in leaf-bare.".
+                    "scar": "m_c was scarred after a brush with frostbite, gotten while hunting in leaf-bare.",
                     "reg_death": "m_c died of frostbite.",
                     "lead_death": "died to frostbite"
                 }
