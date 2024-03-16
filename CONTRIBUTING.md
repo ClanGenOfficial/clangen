@@ -8,27 +8,20 @@ For quality-of-life changes, bug fixes, minor enhancements (such as balance and 
 ## Installation
 The following instructions assume that you have already [installed Python](https://www.python.org/downloads/), and the working directory in your terminal is `clangen`.
 
-### Python
-When using Python, a virtual environment is recommended in order to increase reliability and more closely resemble our build environment. Instructions for setting up a virtual environment can be found [here](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/).
-
-After you have set up and activated your virtual environment, run:
-```sh
-python3 pip install -r requirements.txt
-```
-You may have to replace `python3` in the above command with `python` or `py` depending on your environment.
-
-### With Poetry
-Poetry is a tool used for Python dependency management and packaging. Poetry will automatically set up and manage your virtual environment for you. Installation instructions for Poetry can be found [here](https://python-poetry.org/docs/#installation).
+ClanGen utilises a tool called "Poetry" for Python dependency management and packaging. Poetry will automatically set up and manage your virtual environment for you. Installation instructions for Poetry can be found [here](https://python-poetry.org/docs/#installation).
 
 To install requirements using Poetry:
 ```sh
-poetry install
+poetry install --no-root
 ```
 
 Then run using:
 ```sh
 poetry run python main.py
 ```
+
+For your convenience, a helper script has been included for the major platforms which automatically installs the dependencies and then executes the main script.
+You can find it in the root directory as `run.bat` for Windows or `run.sh` for macOS, Linux and other compatible *nix systems.
 
 ## Issues
 ### Creating an issue

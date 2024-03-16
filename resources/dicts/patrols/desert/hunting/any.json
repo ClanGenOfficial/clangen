@@ -860,660 +860,6 @@
         ]
     },
     {
-        "patrol_id": "dst_hunt_heat1",
-        "biome": ["desert"],
-        "season": ["greenleaf"],
-        "types": ["hunting"],
-        "tags": ["illness"],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {
-            "all apprentices": [-1, -1],
-            "normal adult": [1, 6]
-        },
-        "weight": 20,
-        "intro_text": "The sun beats down on the desert, driving every creature away from its gaze with blinding heat.",
-        "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "r_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun, but their pounce is too soon, and their prey lives to see another day.",
-                "exp": 15,
-                "weight": 20,
-                "prey": ["small"]
-            },
-            {
-                "text": "r_c considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except this burrow seems occupied. The tortoise inside puts up a fight, but r_c manages to flip their positions and drive it out into the heat, which slowly kills it.",
-                "exp": 15,
-                "weight": 5,
-                "prey": ["small"]
-            },
-            {
-                "text": "Anticipating the heat of the greenleaf sun, s_c has positioned themselves in the shadowed depths around a shaded tiny pool in the rocks. As predicted, it's not long until the water draws in a Thunderpath-runner, and the bird is dispatched neatly and quietly.",
-                "exp": 15,
-                "weight": 20,
-                "stat_skill": ["CLEVER,2"],
-                "prey": ["small"]
-            },
-            {
-                "text": "s_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun. It finds shelter, but also s_c, and they settle back down to wait until it's cooler to try and bring their catch back to c_n.",
-                "exp": 15,
-                "weight": 20,
-                "stat_trait": [
-                    "patient",
-                    "responsible",
-                    "thoughtful",
-                    "wise",
-                    "calm",
-                    "careful",
-                    "nervous",
-                    "strange"
-                ],
-                "prey": ["small"]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "Making the smart choice, r_c doesn't move from the shade, taking a good long nap in the heat.",
-                "exp": 0,
-                "weight": 20
-            },
-            {
-                "text": "r_c starts feeling confused and fuzzy as they walk, but ignore it. It takes them too long to recognize the symptoms of heat exhaustion, and when they do it's too late, with r_c stranded far from shade. Dizzy and retching, they collapse on the desert sands.,",
-                "exp": 0,
-                "weight": 10,
-                "dead_cats": ["r_c"],
-                "history_text": {
-                    "scar": "This cat got heatstroke while on a patrol.",
-                    "reg_death": "m_c died from heatstroke.",
-                    "lead_death": "died from heatstroke"
-                }
-            }
-        ]
-    },
-    {
-        "patrol_id": "dst_hunt_heat2",
-        "biome": ["desert"],
-        "season": ["greenleaf"],
-        "types": ["hunting"],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {
-            "apprentice": [1, 6]
-        },
-        "weight": 20,
-        "intro_text": "The sun beats down on the desert, driving every creature away from its gaze with blinding heat.",
-        "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "app1 considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except their burrow is occupied, and app1 instead has to wait out the heat in the uncomfortable shade of a cactus.",
-                "exp": 15,
-                "weight": 5,
-                "prey": ["small"]
-            },
-            {
-                "text": "s_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun. It finds shelter, but sadly not in the place s_c waits.",
-                "exp": 15,
-                "weight": 20,
-                "stat_trait": [
-                    "patient",
-                    "responsible",
-                    "thoughtful",
-                    "wise",
-                    "calm",
-                    "careful",
-                    "nervous",
-                    "strange"
-                ],
-                "can_have_stat": ["app"],
-                "prey": ["small"]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "Making the smart choice, app1 doesn't move from the shade, taking a good long nap in the heat.",
-                "exp": 0,
-                "weight": 20
-            },
-            {
-                "text": "Refusing to stop hunting, s_c boldly decides to go into a canyon where it'll be cooler. They don't find any prey, but don't overheat either.",
-                "exp": 0,
-                "weight": 20,
-                "stat_trait": [
-                    "adventurous",
-                    "bold",
-                    "daring",
-                    "ambitious",
-                    "shameless",
-                    "troublesome"
-                ],
-                "can_have_stat": ["app1"]
-            },
-            {
-                "text": "app1 doesn't make it back to camp. A patrol sent out for them find their body, collapsed in a shadeless part of the territory and already starting to dry out and mummify.",
-                "exp": 0,
-                "weight": 10,
-                "dead_cats": ["app1"],
-                "history_text": {
-                    "scar": "This cat got heatstroke while on a patrol.",
-                    "reg_death": "This cat died from heat stroke.",
-                    "lead_death": "died from heatstroke"
-                }
-            },
-            {
-                "text": "When app1 doesn't return to camp that evening, a search party goes out for them. They find app1 collapsed and badly affected by heat stroke, and carry them back to camp where their might be a way to help them. However, app1's breathing stops on the journey home, and they slip to StarClan.",
-                "exp": 0,
-                "weight": 10,
-                "injury": [
-                    {
-                        "cats": ["app1"],
-                        "injuries": ["heat exhaustion"],
-                        "scars": []
-                    }
-                ],
-                "history_text": {
-                    "scar": "This cat got heatstroke while on a patrol.",
-                    "reg_death": "This cat died from heat stroke.",
-                    "lead_death": "died from heatstroke"
-                }
-            },
-            {
-                "text": "s_c collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a Clanmate finds them that they're able to totter home shakily.",
-                "exp": 0,
-                "weight": 10,
-                "stat_trait": [
-                    "adventurous",
-                    "bold",
-                    "daring",
-                    "ambitious",
-                    "shameless",
-                    "troublesome"
-                ],
-                "can_have_stat": ["app"],
-                "dead_cats": ["s_c"],
-                "history_text": {
-                    "scar": "This cat got heatstroke while on a patrol.",
-                    "reg_death": "This cat died from heat stroke.",
-                    "lead_death": "died from heatstroke"
-                }
-            }
-        ]
-    },
-    {
-        "patrol_id": "dst_hunt_heat3",
-        "biome": ["desert"],
-        "season": ["newleaf"],
-        "types": ["hunting"],
-        "tags": ["illness"],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {
-            "all apprentices": [-1, -1],
-            "normal adult": [1, 6]
-        },
-        "weight": 20,
-        "intro_text": "The sun beats down on the desert, driving every creature away from its gaze with blinding heat.",
-        "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "r_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun, but their pounce is too soon, and their prey lives to see another day.",
-                "exp": 15,
-                "weight": 20,
-                "prey": ["small"]
-            },
-            {
-                "text": "r_c considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except this burrow seems occupied. The tortoise inside puts up a fight, but r_c manages to flip their positions and drive it out into the heat, which slowly kills it.",
-                "exp": 15,
-                "weight": 5,
-                "prey": ["small"]
-            },
-            {
-                "text": "Anticipating the heat of the sun, s_c has positioned themselves in the shadowed depths around a shaded tiny pool in the rocks. As predicted, it's not long until the water draws in a Thunderpath-runner, and the bird is dispatched neatly and quietly.",
-                "exp": 15,
-                "weight": 20,
-                "stat_skill": ["CLEVER,2"],
-                "prey": ["small"]
-            },
-            {
-                "text": "s_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun. It finds shelter, but also s_c, and they settle back down to wait until it's cooler to try and bring their catch back to c_n.",
-                "exp": 15,
-                "weight": 20,
-                "stat_trait": [
-                    "patient",
-                    "responsible",
-                    "thoughtful",
-                    "wise",
-                    "calm",
-                    "careful",
-                    "nervous",
-                    "strange"
-                ],
-                "prey": ["small"]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "Making the smart choice, r_c doesn't move from the shade, taking a good long nap in the heat.",
-                "exp": 0,
-                "weight": 20
-            }
-        ]
-    },
-    {
-        "patrol_id": "dst_hunt_heat4",
-        "biome": ["desert"],
-        "season": ["newleaf"],
-        "types": ["hunting"],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {
-            "apprentice": [1, 6]
-        },
-        "weight": 20,
-        "intro_text": "The sun beats down on the desert, driving every creature away from its gaze with blinding heat.",
-        "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "app1 considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except their burrow is occupied, and app1 instead has to wait out the heat in the uncomfortable shade of a cactus.",
-                "exp": 15,
-                "weight": 5,
-                "prey": ["small"]
-            },
-            {
-                "text": "s_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun. It finds shelter, but sadly not in the place s_c waits.",
-                "exp": 15,
-                "weight": 20,
-                "stat_trait": [
-                    "patient",
-                    "responsible",
-                    "thoughtful",
-                    "wise",
-                    "calm",
-                    "careful",
-                    "nervous",
-                    "strange"
-                ],
-                "can_have_stat": ["app"],
-                "prey": ["small"]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "Making the smart choice, app1 doesn't move from the shade, taking a good long nap in the heat.",
-                "exp": 0,
-                "weight": 20
-            },
-            {
-                "text": "app1 doesn't make it back to camp. A patrol sent out for them find their body, collapsed in a shadeless part of the territory and already starting to dry out and mummify.",
-                "exp": 0,
-                "weight": 10,
-                "dead_cats": ["app1"],
-                "history_text": {
-                    "scar": "This cat got heatstroke while on a patrol.",
-                    "reg_death": "This cat died from heat stroke.",
-                    "lead_death": "died from heatstroke"
-                }
-            },
-            {
-                "text": "app1 collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a Clanmate finds them that they're able to totter home shakily.",
-                "exp": 0,
-                "weight": 10,
-                "injury": [
-                    {
-                        "cats": ["app1"],
-                        "injuries": ["heat exhaustion"],
-                        "scars": []
-                    }
-                ],
-                "history_text": {
-                    "scar": "This cat got heatstroke while on a patrol.",
-                    "reg_death": "This cat died from heat stroke.",
-                    "lead_death": "died from heatstroke"
-                }
-            }
-        ]
-    },
-    {
-        "patrol_id": "dst_hunt_heat5",
-        "biome": ["desert"],
-        "season": ["leaf-fall"],
-        "types": ["hunting"],
-        "tags": ["illness"],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {
-            "all apprentices": [-1, -1],
-            "normal adult": [1, 6]
-        },
-        "weight": 20,
-        "intro_text": "The sun beats down on the desert, driving every creature away from its gaze with blinding heat.",
-        "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "r_c considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except this burrow seems occupied. The tortoise inside puts up a fight, but r_c manages to flip their positions and drive it out into the heat, which slowly kills it.",
-                "exp": 15,
-                "weight": 5,
-                "prey": ["small"]
-            },
-            {
-                "text": "Anticipating the heat of the sun, s_c has positioned themselves in the shadowed depths around a shaded tiny pool in the rocks. As predicted, it's not long until the water draws in a Thunderpath-runner, and the bird is dispatched neatly and quietly.",
-                "exp": 15,
-                "weight": 20,
-                "stat_skill": ["CLEVER,2"],
-                "prey": ["small"]
-            },
-            {
-                "text": "s_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun. It finds shelter, but also s_c, and they settle back down to wait until it's cooler to try and bring their catch back to c_n.",
-                "exp": 15,
-                "weight": 20,
-                "stat_trait": [
-                    "patient",
-                    "responsible",
-                    "thoughtful",
-                    "wise",
-                    "calm",
-                    "careful",
-                    "nervous",
-                    "strange"
-                ],
-                "prey": ["small"]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "Making the smart choice, r_c doesn't move from the shade, taking a good long nap in the heat.",
-                "exp": 0,
-                "weight": 20
-            }
-        ]
-    },
-    {
-        "patrol_id": "dst_hunt_heat6",
-        "biome": ["desert"],
-        "season": ["leaf-fall"],
-        "types": ["hunting"],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {
-            "apprentice": [1, 6]
-        },
-        "weight": 20,
-        "intro_text": "The sun beats down on the desert, driving every creature away from its gaze with blinding heat.",
-        "decline_text": "Giving up on the hunt, app1 finds a burrow to wait out the heat of the day until they can return back to camp.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "app1 considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except their burrow is occupied, and app1 instead has to wait out the heat in the uncomfortable shade of a cactus.",
-                "exp": 15,
-                "weight": 5,
-                "prey": ["small"]
-            },
-            {
-                "text": "s_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun. It finds shelter, but sadly not in the place s_c waits.",
-                "exp": 15,
-                "weight": 20,
-                "stat_trait": [
-                    "patient",
-                    "responsible",
-                    "thoughtful",
-                    "wise",
-                    "calm",
-                    "careful",
-                    "nervous",
-                    "strange"
-                ],
-                "can_have_stat": ["app"],
-                "prey": ["small"]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "Making the smart choice, app1 doesn't move from the shade, taking a good long nap in the heat.",
-                "exp": 0,
-                "weight": 20
-            },
-            {
-                "text": "app1 doesn't make it back to camp. A patrol sent out for them find their body, collapsed in a shadeless part of the territory and already starting to dry out and mummify.",
-                "exp": 0,
-                "weight": 10,
-                "dead_cats": ["app1"],
-                "history_text": {
-                    "scar": "This cat got heatstroke while on a patrol.",
-                    "reg_death": "This cat died from heat stroke.",
-                    "lead_death": "died from heat stroke"
-                }
-            },
-            {
-                "text": "app1 collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a Clanmate finds them that they're able to totter home shakily.",
-                "exp": 0,
-                "weight": 10,
-                "injury": [
-                    {
-                        "cats": ["app1"],
-                        "injuries": ["heat exhaustion"],
-                        "scars": []
-                    }
-                ],
-                "history_text": {
-                    "scar": "This cat got heatstroke while on a patrol.",
-                    "reg_death": "This cat died from heat stroke.",
-                    "lead_death": "died from heat stroke"
-                }
-            }
-        ]
-    },
-    {
-        "patrol_id": "dst_hunt_leafbarerainstorm1",
-        "biome": ["desert"],
-        "season": ["leaf-bare"],
-        "types": ["hunting"],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 2,
-        "max_cats": 6,
-        "min_max_status": {},
-        "weight": 20,
-        "intro_text": "It starts raining soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
-        "decline_text": "They decide to turn back and wait until the rain dies down.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "The desert cats turn their faces to the skies, reveling in the life-giving water. It feels like the very world itself joins them in celebration, insects emerging from hiding and chirping, birds flitting across the sandy scrubland, and the patrol returns to camp with a huge bounty of catches.",
-                "exp": 20,
-                "weight": 20,
-                "prey": ["large"],
-                "relationships": [
-                    {
-                        "cats_to": ["r_c", "p_l", "patrol"],
-                        "cats_from": ["patrol", "patrol", "patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "comfort", "trust"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "s_c leads the patrol to one of their favorite hunting spots, a bounce in everyone's steps as the water promises new life for the desert. The cats are unused to hunting the scrubland in wet, let alone in mud, but thanks to s_c they bring home a mighty haul, laughing at each other's damp and fluffed out fur.",
-                "exp": 20,
-                "weight": 20,
-                "stat_skill": ["HUNTER,2"],
-                "prey": ["large"],
-                "relationships": [
-                    {
-                        "cats_to": ["s_c", "p_l", "patrol"],
-                        "cats_from": ["patrol", "patrol", "patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "comfort", "trust"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "The cats slip and slide in a world suddenly damp and wet in the growing rainstorm, but s_c commiserates with those who fall and encourages every cat on, the patrol not only having fun with each other, but also managing to catch a good haul of desert creatures as confused by the slippery ground as they are.",
-                "exp": 20,
-                "weight": 20,
-                "stat_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving"],
-                "prey": ["large"],
-                "relationships": [
-                    {
-                        "cats_to": ["s_c", "p_l", "patrol"],
-                        "cats_from": ["patrol", "patrol", "patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "comfort", "trust"],
-                        "amount": 5
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "Although the cats rejoice at the rain, after the umpteenth time someone slips on the wet rock the hunting trip has to be called off. They'll go out again soon, ready to take advantage of the bounty of Leaf-bare.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["r_c", "p_l", "patrol"],
-                        "cats_from": ["patrol", "patrol", "patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "comfort", "trust"],
-                        "amount": -5
-                    }
-                ],
-                "prey": ["very_small"]
-            }
-        ]
-    },
-    {
-        "patrol_id": "dst_hunt_leafbarerainstorm2",
-        "biome": ["desert"],
-        "season": ["leaf-bare"],
-        "types": ["hunting"],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {},
-        "weight": 20,
-        "intro_text": "It starts raining soon after r_c sets out, trying to bring back something nice for the fresh-kill pile.",
-        "decline_text": "They decide to turn back and wait until the rain dies down.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "Despite the rain, and how unfamiliar the desert looks in the gray haze, r_c manages to hunt successfully, finding the normal birds hiding from the downpour. It amuses them that their prey hides in the same places from rain as the birds normally do from sun.",
-                "exp": 10,
-                "weight": 20,
-                "prey": ["medium"]
-            },
-            {
-                "text": "s_c really shows their talent, hunting down a mid-sized tortoise that has overturned itself on the newly slippery ground in the rainstorm.",
-                "exp": 10,
-                "weight": 20,
-                "stat_skill": ["HUNTER,2"],
-                "prey": ["medium"]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "Although r_c rejoices at the rain, after the umpteenth time they slip on the wet rock the hunting trip has to be called off. They'll go out again soon, ready to take advantage of the bounty of Leaf-bare.",
-                "exp": 0,
-                "weight": 20,
-                "prey": ["very_small"]
-            }
-        ]
-    },
-    {
-        "patrol_id": "dst_hunt_leafbarerainstorm3",
-        "biome": ["desert"],
-        "season": ["leaf-bare"],
-        "types": ["hunting"],
-        "tags": ["romantic"],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 2,
-        "max_cats": 6,
-        "min_max_status": {
-            "all apprentices": [-1, -1]
-        },
-        "weight": 20,
-        "intro_text": "It starts raining soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
-        "decline_text": "They decide to turn back and wait until the rain dies down.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "A storm descends, sudden and violent enough to drive the c_n cats to shelter. The life-giving water is still a relief to witness, but they aren't interested in being as pummeled like the dry ground. The cats shelter in a rocky alcove, sharing stories and laughing occasionally as everyone shares tongues, licking their pelts dry.",
-                "exp": 10,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": false,
-                        "values": ["romantic", "comfort", "trust"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "A storm descends, sudden and violent enough to drive the c_n cats to shelter. s_c keeps everyone's spirits up as the patrol hides in an abandoned tortoise den where the wind can't get them, until everyone is talking, a little damp but keeping each other's spirits up.",
-                "exp": 10,
-                "weight": 20,
-                "stat_skill": ["SPEAKER,2"],
-                "relationships": [
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": false,
-                        "values": ["romantic", "comfort", "trust"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "A storm descends, sudden and violent enough to drive the c_n cats to shelter. As the cats hide from the wind, s_c keeps an eye out for everyone. There's a lot of restless energy in the shelter as the cats watch Leaf-bare bless c_n, but it's easily redirected to games and friendly debates, perhaps even a little flirting.",
-                "exp": 10,
-                "weight": 20,
-                "stat_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving"],
-                "relationships": [
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": false,
-                        "values": ["romantic", "comfort", "trust"],
-                        "amount": 5
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "Although the cats rejoice at the rain, after the umpteenth time someone slips on the wet rock the hunting trip has to be called off. They'll go out again soon, ready to take advantage of the bounty of Leaf-bare.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": false,
-                        "values": ["romantic", "comfort", "trust"],
-                        "amount": -5
-                    }
-                ]
-            }
-        ]
-    },
-    {
         "patrol_id": "dst_hunt_swiftfox_anysteal1",
         "biome": ["desert"],
         "season": ["Any"],
@@ -1684,594 +1030,6 @@
                     }
                 ],
                 "history_text": { "scar": "m_c carries a scar from fighting with a swift fox." },
-                "prey": ["very_small"]
-            }
-        ]
-    },
-    {
-        "patrol_id": "dst_hunt_swiftfox_leaf-fallvixen1",
-        "biome": ["desert"],
-        "season": ["leaf-fall"],
-        "types": ["hunting"],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 2,
-        "max_cats": 6,
-        "min_max_status": {},
-        "weight": 20,
-        "intro_text": "Your patrol spots a swift fox in the distance, behaving weirdly.",
-        "decline_text": "Best not to risk a fight. The patrol watches it go.",
-        "chance_of_success": 70,
-        "success_outcomes": [
-            {
-                "text": "Anticipating the coming rains, this fox is checking for a suitable burrow for her litter. And that burrow will not be in c_n's territory. The patrol makes that clear, screaming and charging at her until the fox flees beyond their borders, away from where her cubs could threaten the Clan.",
-                "exp": 30,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "comfort"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "She's looking for a place to den, and the patrol sets up an ambush. She crossed their borders, but she won't cross back over them again, and with her life ends the threat her cubs would have posed to c_n's kits.",
-                "exp": 30,
-                "weight": 5,
-                "prey": ["medium"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "comfort"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "s_c holds the patrol back until the swift fox's yips bring her mate, than the patrol strikes. While the vixen flees, her mate fights, and against warriors he doesn't stand a chance.",
-                "exp": 30,
-                "weight": 20,
-                "stat_skill": ["CLEVER,1"],
-                "prey": ["medium"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "comfort"],
-                        "amount": 5
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small carnivore gets its name.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "comfort"],
-                        "amount": -5
-                    }
-                ],
-                "prey": ["very_small"]
-            }
-        ]
-    },
-    {
-        "patrol_id": "dst_hunt_swiftfox_leaf-fallvixen2",
-        "biome": ["desert"],
-        "season": ["leaf-fall"],
-        "types": ["hunting"],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {},
-        "weight": 20,
-        "intro_text": "r_c spots a swift fox in the distance, behaving weirdly. It's the biggest of the foxes in c_n's territory, the size of a cat, and r_c is alone. Should they try and take it on?",
-        "decline_text": "Best not to risk a fight. r_c watches it go.",
-        "chance_of_success": 60,
-        "success_outcomes": [
-            {
-                "text": "She's scouting out potential dens for leaf-bare, r_c realizes, and rushes to warn her off. Forget about hunting, driving off this vixen before she sets up a den within c_n's borders is more important.",
-                "exp": 20,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "She's scouting out potential dens for leaf-bare, r_c realizes. This could be bad, and r_c gives up on the hunt, instead following the vixen and using tall rocks to bounce their yowls around her, convincing her this patch of desert contains a  thousand cats and warning her off from try to live in it.",
-                "exp": 20,
-                "weight": 5,
-                "relationships": [
-                    {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "s_c positions themselves down a burrow in the vixen's path, and as the swift fox approaches s_c bursts from it, pinning her down and using surprise to get in a crucial blow to her throat.",
-                "exp": 20,
-                "weight": 20,
-                "stat_skill": ["CLEVER,1", "FIGHTER,1"],
-                "prey": ["large"],
-                "relationships": [
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": 5
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The swift fox spots r_c coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small carnivore gets its name.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": -5
-                    }
-                ],
-                "prey": ["very_small"]
-            },
-            {
-                "text": "Puffed up, r_c approaches the swift fox. But there's only one of them, and the fox is their equal in size and weight. Instead of running or giving up, it snarls, and attacks. r_c gives just as good as they get, and both animals end up limping away.",
-                "exp": 0,
-                "weight": 10,
-                "injury": [
-                    {
-                        "cats": ["r_c"],
-                        "injuries": ["small_bite_injury"],
-                        "scars": ["LEGBITE"]
-                    }
-                ],
-                "history_text": { "scar": "m_c carries a scar from fighting with a swift fox." },
-                "relationships": [
-                    {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": -5
-                    }
-                ],
-                "prey": ["very_small"]
-            }
-        ]
-    },
-    {
-        "patrol_id": "dst_hunt_swiftfox_leaf-barevixen1",
-        "biome": ["desert"],
-        "season": ["leaf-bare"],
-        "types": ["hunting"],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 2,
-        "max_cats": 6,
-        "min_max_status": {},
-        "weight": 20,
-        "intro_text": "Your patrol spots a swift fox in the distance, behaving weirdly.",
-        "decline_text": "Best not to risk a fight. The patrol watches it go.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "The patrol charges the vixen, and she runs, leaving the scent of milk in the air behind her. Though they don't know where her cubs are hidden, without their mother they won't pose a threat to the Clan.",
-                "exp": 30,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "comfort"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "The patrol sneaks closer, until p_l realizes that the vixen is approaching her den - a den when cubs must surely hide. A competitor denning within c_n's borders is an outrage, and the patrol leaps to attack, pinning the vixen in a mess of boulders. Her body, and that of her cubs, will go to the fresh-kill pile tonight.",
-                "exp": 30,
-                "weight": 5,
-                "prey": ["large"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "comfort"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "s_c holds the patrol back until they spot the vixen's mate, approaching with poached prey in his jaws. Together, the cats ambush the foxes, bursting from cover with claws unsheathed as a vicious fight starts. But warriors fight as a team, and the foxes do not, and one flees, abandoning its mate to the fury of c_n.",
-                "exp": 30,
-                "weight": 20,
-                "stat_skill": ["CLEVER,1", "FIGHTER,1"],
-                "prey": ["large"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "comfort"],
-                        "amount": 5
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small carnivore gets its name.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "comfort"],
-                        "amount": -5
-                    }
-                ],
-                "prey": ["very_small"]
-            },
-            {
-                "text": "As the patrol descends on the vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, both foxes using the patrol switching to r_c's defense as their signal to flee.",
-                "exp": 0,
-                "weight": 10,
-                "injury": [
-                    {
-                        "cats": ["r_c"],
-                        "injuries": ["big_bite_injury"],
-                        "scars": ["NECKBITE"]
-                    }
-                ],
-                "history_text": { "scar": "m_c was marked by a fight with a swift fox vixen." },
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "comfort"],
-                        "amount": -5
-                    }
-                ],
-                "prey": ["very_small"]
-            }
-        ]
-    },
-    {
-        "patrol_id": "dst_hunt_swiftfox_leaf-barevixen2",
-        "biome": ["desert"],
-        "season": ["leaf-bare"],
-        "types": ["hunting"],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {},
-        "weight": 20,
-        "intro_text": "r_c spots a swift fox in the distance, behaving weirdly. It's the biggest of the foxes in c_n's territory, the size of a cat, and r_c is alone. Should they try and take it on?",
-        "decline_text": "Best not to risk a fight. r_c watches it go.",
-        "chance_of_success": 20,
-        "success_outcomes": [
-            {
-                "text": "Sneaking closer, r_c realizes that the wind carries the scent of milk from the vixen. She has cubs. Eventually she leaves the area, and r_c begins the hunt, checking every burrow, every crevice, every hole until they find the tiny fox cubs. Killing them protects the Clan, they remind themselves.",
-                "exp": 30,
-                "weight": 20,
-                "prey": ["medium"],
-                "relationships": [
-                    {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "She has a den, r_c realizes, one perched just under a rocky slope. Once the vixen leaves, r_c uses the rubble around it to bury the den, and its contents. No swift cubs will be raised within c_n's borders.",
-                "exp": 30,
-                "weight": 5,
-                "relationships": [
-                    {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "s_c scents the air, following the milk scent of the mother fox from afar. It means they can position themselves for the perfect ambush, leaping from cover to fasten their teeth in her throat.",
-                "exp": 30,
-                "weight": 20,
-                "stat_skill": ["CLEVER,1", "FIGHTER,1"],
-                "prey": ["large"],
-                "relationships": [
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": 5
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The swift fox spots r_c coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small carnivore gets its name.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": -5
-                    }
-                ],
-                "prey": ["very_small"]
-            },
-            {
-                "text": "As r_c descends on the vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, both foxes using the chance to flee.",
-                "exp": 0,
-                "weight": 10,
-                "injury": [
-                    {
-                        "cats": ["r_c"],
-                        "injuries": ["small_bite_injury"],
-                        "scars": ["NECKBITE"]
-                    }
-                ],
-                "history_text": { "scar": "m_c was marked by a fight with a swift fox vixen." },
-                "relationships": [
-                    {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": -5
-                    }
-                ],
-                "prey": ["very_small"]
-            }
-        ]
-    },
-    {
-        "patrol_id": "dst_hunt_swiftfox_newleafvixen1",
-        "biome": ["desert"],
-        "season": ["newleaf"],
-        "types": ["hunting"],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 2,
-        "max_cats": 6,
-        "min_max_status": {},
-        "weight": 20,
-        "intro_text": "Your patrol spots a swift fox in the distance, behaving weirdly.",
-        "decline_text": "Best not to risk a fight. The patrol watches it go.",
-        "chance_of_success": 70,
-        "success_outcomes": [
-            {
-                "text": "The patrol charges the vixen, and she runs, leaving the scent of milk in the air behind her. But they don't know where her cubs might've been hidden, and they'll be old enough to survive without her - this bodes ill for greenleaf.",
-                "exp": 30,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "comfort"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "The patrol sneaks closer, until p_l realizes that the vixen is approaching her den. Her cubs, nearly full grown on prey stolen from c_n's territory, poke their heads out, and the cats yowl in outrage. They charge the den, killing two of the cubs before the vixen runs with her third.",
-                "exp": 30,
-                "weight": 5,
-                "prey": ["large"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "comfort"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "s_c holds the patrol back until they spot the vixen's mate, approaching with poached prey in his jaws. Together, the cats ambush the foxes, bursting from cover with claws unsheathed as a vicious fight starts. But warriors fight as a team, and the foxes do not, and one flees, abandoning its mate and cubs to the fury of c_n.",
-                "exp": 30,
-                "weight": 20,
-                "stat_skill": ["CLEVER,1", "FIGHTER,1"],
-                "prey": ["huge"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "comfort"],
-                        "amount": 5
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small carnivore gets its name.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "comfort"],
-                        "amount": -5
-                    }
-                ],
-                "prey": ["very_small"]
-            },
-            {
-                "text": "As the patrol descends on the vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, both foxes using the patrol switching to r_c's defense as their signal to flee.",
-                "exp": 0,
-                "weight": 10,
-                "injury": [
-                    {
-                        "cats": ["r_c"],
-                        "injuries": ["big_bite_injury"],
-                        "scars": ["NECKBITE"]
-                    }
-                ],
-                "history_text": { "scar": "m_c was marked by a fight with a swift fox vixen." },
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "comfort"],
-                        "amount": -5
-                    }
-                ],
-                "prey": ["very_small"]
-            }
-        ]
-    },
-    {
-        "patrol_id": "dst_hunt_swiftfox_newleafvixen2",
-        "biome": ["desert"],
-        "season": ["newleaf"],
-        "types": ["hunting"],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {},
-        "weight": 20,
-        "intro_text": "r_c spots a swift fox in the distance, behaving weirdly. It's the biggest of the foxes in c_n's territory, the size of a cat, and r_c is alone. Should they try and take it on?",
-        "decline_text": "Best not to risk a fight. r_c watches it go.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "Sneaking closer, r_c realizes that the wind carries the scent of milk from the vixen. She has cubs. Eventually she leaves the area, and r_c begins the hunt, checking every burrow, every crevice, every hole until they stumble over the den. Two of the cubs flee into the desert, while the third falls to r_c's claws.",
-                "exp": 30,
-                "weight": 20,
-                "prey": ["medium"],
-                "relationships": [
-                    {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "She has a den, r_c realizes, one perched just under a rocky slope. Once the vixen leaves, r_c uses the rubble around it to bury the den and its contents. No swift cubs will be raised within c_n's borders.",
-                "exp": 30,
-                "weight": 5,
-                "relationships": [
-                    {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "s_c scents the air, following the milk scent of the mother fox from afar. It means they can position themselves for the perfect ambush, leaping from cover to fasten their teeth in her throat. Her cubs will be old enough to survive without her, but this vixen will never raise kitten killers again.",
-                "exp": 30,
-                "weight": 20,
-                "stat_skill": ["CLEVER,1", "FIGHTER,1"],
-                "prey": ["large"],
-                "relationships": [
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": 5
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The swift fox spots r_c coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small carnivore gets its name.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": -5
-                    }
-                ],
-                "prey": ["very_small"]
-            },
-            {
-                "text": "As r_c descends on the vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, both foxes using the chance to flee.",
-                "exp": 0,
-                "weight": 10,
-                "injury": [
-                    {
-                        "cats": ["r_c"],
-                        "injuries": ["small_bite_injury"],
-                        "scars": ["NECKBITE"]
-                    }
-                ],
-                "history_text": { "scar": "m_c was marked by a fight with a swift fox vixen." },
-                "relationships": [
-                    {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": -5
-                    }
-                ],
                 "prey": ["very_small"]
             }
         ]
@@ -2997,6 +1755,950 @@
                         "mutual": false,
                         "values": ["trust"],
                         "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
+    },
+	{
+        "patrol_id": "dst_hunt_mouse1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 1,
+        "max_cats": 3,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "Your patrol catches scent of a mouse nearby.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles their haunches and leaps, pinning the mouse beneath a paw as they make the killing bite.",
+                "exp": 10,
+                "weight": 20,
+                "prey": ["small"]
+            },
+            {
+                "text": "r_c pinpoints the location of the prey and begins creeping forward. They're almost within pouncing distance when the mouse suddenly bolts. With a lash of their tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. They purr in satisfaction as prey-blood hits their tongue.",
+                "exp": 10,
+                "weight": 5,
+                "prey": ["small"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Your patrol narrowly misses the mouse.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_mouse2",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 1,
+        "max_cats": 3,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "Your patrol comes across a mouse.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "r_c pounces on the mouse, with a squeak of surprise from both prey and apprentice.",
+                "exp": 10,
+                "weight": 20,
+                "prey": ["small"]
+            },
+            {
+                "text": "app1 leaps onto the mouse, an easy kill! They're really getting the hang of hunting!",
+                "exp": 10,
+                "weight": 5,
+                "prey": ["small"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Your patrol narrowly misses the mouse.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_rat1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "Your patrol comes across a large rat.",
+        "decline_text": "Your patrol ignores the rat.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "Your patrol catches the rat! More fresh-kill!",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"]
+            },
+            {
+                "text": "The rat rears up and hisses at r_c, but while it's distracted, p_l takes it out with a quick strike.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["medium"]
+            },
+            {
+                "text": "The rat is huge and quick, but s_c is quicker, bringing it down just before it scurries out of reach. Everyone gathers around them in congratulations of the skillful kill.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["HUNTER,2"],
+                "prey": ["large"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Your patrol misses the rat, and their confidence is shaken.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_hare1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "Your patrol comes across a large hare.",
+        "decline_text": "Your patrol ignores the hare.",
+        "chance_of_success": 10,
+        "success_outcomes": [
+            {
+                "text": "Your patrol catches the hare!",
+                "exp": 10,
+                "weight": 20,
+                "prey": ["large"]
+            },
+            {
+                "text": "s_c runs the hare down in a huge display of athleticism and skill.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["HUNTER,3"],
+                "prey": ["large"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Your patrol narrowly misses the hare.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_bird1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 1,
+        "max_cats": 3,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "Your patrol comes across a bird that's occupied scratching at the ground for insects.",
+        "decline_text": "Your patrol ignores the bird.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "Your patrol catches the bird before it flies away!",
+                "exp": 15,
+                "weight": 20,
+                "prey": ["small"]
+            },
+            {
+                "text": "r_c creeps towards the bird, setting {PRONOUN/r_c/poss} paws down gently. The bird notices the cat sneaking towards it and attempts to take off. r_c bounds forward and smacks the bird to the ground with an outstretched paw. Outstanding!",
+                "exp": 15,
+                "weight": 5,
+                "prey": ["small"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Your patrol narrowly misses the bird.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_squirrel1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 1,
+        "max_cats": 3,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "Your patrol comes across a squirrel. It's engrossed in nibbling at a morsel beneath a tree.",
+        "decline_text": "Your patrol ignores the squirrel.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "Stealthily, r_c stalks forward. The squirrel has no idea what's coming as the cat pounces on it and breaks its neck. r_c sends a silent thanks to StarClan for this prey.",
+                "exp": 10,
+                "weight": 20,
+                "prey": ["medium"]
+            },
+            {
+                "text": "r_c rapidly pads towards the squirrel, their tailtip twitching in excitement. The squirrel is alerted to their presence with a bird's alarm call, but r_c launches themself forward and cuts off its escape with a bite to the back of the head.",
+                "exp": 10,
+                "weight": 5,
+                "prey": ["medium"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Your patrol narrowly misses the squirrel as it's alerted by a bird's alarm call.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_fish1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 1,
+        "max_cats": 3,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "Your patrol glimpses the shadow of a fish as they pad past a stream.",
+        "decline_text": "Your patrol ignores the fish.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "r_c very carefully walks to the water's edge and waits for their chance. When the fish is near, they hook it out of the water with their claws. More fresh-kill!",
+                "exp": 10,
+                "weight": 20,
+                "prey": ["medium"]
+            },
+            {
+                "text": "r_c pads closer to the water's edge, careful to keep their shadow away from the water. The fish doesn't seem to notice them and darts too close. r_c's paw flashes into the water and the fish flops onto the bank. r_c kills it and happily carries it back to camp.",
+                "exp": 10,
+                "weight": 5,
+                "prey": ["medium"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol moves too suddenly. The flickering shadow causes the fish to quickly vanish into murkier water.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_fish2",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "Your patrol sees the shadow of a school of fish in the river.",
+        "decline_text": "Your patrol ignores the fish.",
+        "chance_of_success": 10,
+        "success_outcomes": [
+            {
+                "text": "p_l leads a successful fishing session, with almost everyone walking home with a fishy mouthful.",
+                "exp": 10,
+                "weight": 20,
+                "prey": ["large"]
+            },
+            {
+                "text": "s_c makes fishing look easy, giving out tips to any interested cats.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["HUNTER,1"],
+                "prey": ["large"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol moves too suddenly. The flickering shadow causes the fish to quickly vanish into murkier water.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_hunt_rabbit1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "gen_hunt_rabbit",
+        "min_cats": 1,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "r_c spots a rabbit up ahead, but it seems to be acting strange. The patrol can see its tremors from a few fox-lengths away.",
+        "decline_text": "r_c avoids catching the rabbit and looks for other prey.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "r_c catches the rabbit, and it is eaten as normal.",
+                "exp": 10,
+                "weight": 20,
+                "prey": ["large"]
+            },
+            {
+                "text": "r_c catches the rabbit, but when they report about the strange incident at camp, the dead rabbit is taken far away and buried.",
+                "exp": 10,
+                "weight": 5
+            },
+            {
+                "text": "s_c stops the patrol from catching the rabbit and takes the opportunity to teach them about illnesses that can pass from prey to cat.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["CLEVER,1"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c leaps for the rabbit but it still manages to slip away, despite its obvious illness.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "r_c catches the rabbit, but later they and the cats who eat it become violently ill.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c", "some_clan"],
+                        "injuries": ["poisoned"],
+                        "scars": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_rabbit2",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 1,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "A rabbit bursts out from cover, startled by the patrol.",
+        "decline_text": "They watch it go, just as startled.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "The patrol rallies almost instantly, and manages to corner and catch the rabbit!",
+                "exp": 10,
+                "weight": 20,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c reacts quickly, tearing off after the rabbit and slamming a paw on its head to bring it down.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["HUNTER,2"],
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Your patrol jumps after it, but the rabbit has too great of a head start.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "s_c is quicker than anyone else, tearing after the rabbit, but in their haste, they put a paw wrong and stop as a sharp twinge of pain shoots up {PRONOUN/s_c/poss} leg.",
+                "exp": 0,
+                "weight": 20,
+                "stat_skill": ["RUNNER,2"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_vision1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "As the patrol spreads out to hunt, r_c admits they think they had a vision from StarClan last night.",
+        "decline_text": "The patrol doesn't talk about the vision.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "The patrol talks to them about whether it was a real vision as they hunt.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealousy"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "p_l takes r_c aside, giving them the full benefits of p_l's seniority and experience as they discuss r_c's vision.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealousy"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c chooses to hunt with r_c, the spiritual warrior gently guiding the conversation. r_c feels deeply privileged and far more at peace after confiding in them.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["STAR,1"],
+                "stat_trait": ["faithful"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealousy"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "No one can make sense of the vision.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealousy"],
+                        "amount": 5
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "r_c notices p_l looking at them enviously, withdraws from the rest of the patrol, and dismisses the dream as unimportant.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealousy"],
+                        "amount": 5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_vision2",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "As {PRONOUN/r_c/subject} head out to hunt, r_c thinks about the dream {PRONOUN/r_c/subject} had last night... was it sent by StarClan?",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} push it from their mind.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "It definitely distracts {PRONOUN/r_c/object} from the hunt, but r_c uses the time by {PRONOUN/r_c/self} to put {PRONOUN/r_c/poss} thoughts in order. It was a sign from {PRONOUN/r_c/poss} ancestors. Now {PRONOUN/r_c/subject} need to figure out what to do next.",
+                "exp": 20,
+                "weight": 20
+            },
+            {
+                "text": "Somehow hunting brings r_c to almost a meditative state, and not only are {PRONOUN/r_c/subject} fairly confident of their next steps having been given this vision, but {PRONOUN/r_c/subject} also bring back a good haul to the prey pile.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["large"]
+            },
+            {
+                "text": "s_c often feels like StarClan walks with them, and this is just another instance on the path. They use the solo patrol to collect their thoughts, and by the time {PRONOUN/s_c/subject} {VERB/s_c/pad/pads} home with a good catch, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} ready for the next step {PRONOUN/s_c/poss} vision hinted at.",
+                "exp": 20,
+                "stat_skill": ["STAR,1"],
+                "stat_trait": ["faithful"],
+                "weight": 20,
+                "prey": ["large"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c can't make sense of the vision.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+	{
+        "patrol_id": "dst_hunt_sneakprey1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": ["disrespect", "distrust"],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "r_c is tempted to eat the prey they just caught.",
+        "decline_text": "r_c decides against breaking the Warrior Code",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "They resist the temptation, going on to make a couple of great catches to make sure the elders are fed.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "After all, they have caught enough on this solo hunt that they won't be able to carry it all back to camp. They stop for a quick snack and return to camp laden with prey for the fresh-kill pile.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["huge"],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c gives in to their grumbling belly, reasoning that no one will notice, but when they arrive back at camp empty-pawed and with blood on their lips they feel the stares of the other warriors on their pelt.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_sneakprey2",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": ["disrespect", "distrust"],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "r_c is tempted to eat the prey they just caught.",
+        "decline_text": "r_c decides against breaking the Warrior Code",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "They resist the temptation, going on to make a couple of great catches to make sure the elders are fed.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "After all, they have caught enough on this solo hunt that they won't be able to carry it all back to camp. They stop for a quick snack and return to camp laden with prey for the fresh-kill pile.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["huge"],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c gives in to their grumbling belly, reasoning that no one will notice, but when they arrive back at camp empty-pawed and with blood on their lips they feel the stares of the warriors on their pelt. r_c slinks back to the apprentice's den, tail and ears low.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_sneak",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": ["disrespect", "distrust"],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "r_c is tempted to eat the prey they just caught.",
+        "decline_text": "r_c decides against breaking the Warrior Code",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "They resist the temptation, going on to make a couple of great catches to make sure the elders are fed.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c", "r_c"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["r_c", "r_c"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "After all, the patrol has caught enough on this hunt that they'll have trouble carrying it all back to camp. They stop for a quick snack and return to camp laden with prey for the fresh-kill pile.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["huge"],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c", "r_c"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["r_c", "r_c"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c gives in to their grumbling belly, reasoning that no one will notice, but when the patrol reforms and r_c arrives back empty-pawed with blood on their lips they feel the suspicious stares of the other warriors on their pelt.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c", "r_c"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["r_c", "r_c"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/think/thinks} {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} gotten away with {PRONOUN/r_c/poss} clandestine snacking, but when r_c arrives back at camp, another patrol member pulls the deputy aside for a quiet word, glaring back at r_c. The deputy assigns {PRONOUN/r_c/object} to dig a new trench for the Clan's dirtplace, and r_c hears snide remarks when {PRONOUN/r_c/subject} slink in to {PRONOUN/r_c/poss} nest that night.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c", "r_c"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["r_c", "r_c"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_sneakprey4",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": ["disrespect", "distrust"],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "r_c is tempted to eat the prey they just caught.",
+        "decline_text": "r_c decides against breaking the Warrior Code",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "They eat the prey without anyone noticing.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["small"],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c", "r_c"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["r_c", "r_c"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "After all, the patrol has caught enough on this hunt that they'll have trouble carrying it all back to camp. They stop for a quick snack and return to camp laden with prey for the fresh-kill pile.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c", "r_c"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["r_c", "r_c"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "They think they've gotten away with their clandestine snacking, but when r_c arrives back at camp, another patrol member pulls the deputy aside for a quiet word, glaring back at r_c. The deputy assigns them to dig a new trench for the Clan's dirtplace; r_c prickles with humiliation and terrible smells.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c", "r_c"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["r_c", "r_c"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
                     }
                 ],
                 "prey": ["very_small"]

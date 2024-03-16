@@ -459,7 +459,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "p_l is about to step over the border when a hiss stops them in {PRONOUN/p_l/poss} tracks. A o_c_n warrior bounds into view, bristling. They quickly explain that they're the medicine cat and the warrior code allows them to cross the border and assure that they won't take many of the berries. The warrior looks torn, but agrees to this.",
+                "text": "p_l is about to step over the border when a hiss stops them in {PRONOUN/p_l/poss} tracks. A o_c_n warrior bounds into view, bristling. They quickly explain that they're the medicine cat and the Warrior Code allows them to cross the border and assure that they won't take many of the berries. The warrior looks torn, but agrees to this.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["MEDIATOR,1"],
@@ -507,7 +507,7 @@
         },
         "weight": 20,
         "intro_text": "As your patrol is checking the border lines, they notice that a o_c_n scent has strayed into their territory.",
-        "decline_text": "p_l decides that it isn't important.  Maybe an apprentice simply lost their way.",
+        "decline_text": "p_l decides that it isn't important. Maybe an apprentice simply lost their way.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
