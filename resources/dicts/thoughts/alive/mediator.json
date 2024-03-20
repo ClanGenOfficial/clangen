@@ -86,15 +86,6 @@
         ]
     },
     {
-        "id": "altruistic_mediator",
-        "thoughts": [
-            "Wonders why everyone can't just get along"
-        ],
-        "main_trait_constraint": [
-            "altruistic"
-        ]
-    },
-    {
         "id": "bloodthirsty_mediator",
         "thoughts": [
             "Is wondering if {PRONOUN/m_c/subject} should sabotage a relationship that is going a bit too well",
@@ -117,13 +108,13 @@
         ]
     },
     {
-        "id": "empathetic_mediator",
+        "id": "compassionate_mediator",
         "thoughts": [
             "Feels bad for a parent who can't seem to get along with their child",
             "Wonders why everyone can't just get along"
         ],
         "main_trait_constraint": [
-            "empathetic"
+            "compassionate"
         ]
     },
     {
