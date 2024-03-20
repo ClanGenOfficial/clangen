@@ -625,6 +625,9 @@ class ProfileScreen(Screens):
         if is_instructor:
             current_cat_found = 1
 
+        if len(Cat.ordered_cat_list) == 0:
+            Cat.ordered_cat_list = Cat.all_cats_list
+
         for check_cat in Cat.ordered_cat_list:
             if check_cat.ID == self.the_cat.ID:
                 current_cat_found = 1

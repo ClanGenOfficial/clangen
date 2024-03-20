@@ -479,7 +479,6 @@ class CatSkills:
         this function should be run every moon for every cat to progress their skills accordingly
         :param the_cat: the cat object for affected cat
         """
-        
         if the_cat.status == 'newborn' or the_cat.moons <= 0:
             return
         
@@ -497,7 +496,6 @@ class CatSkills:
         
         
         if not (the_cat.outside or the_cat.exiled):
-                        
             if the_cat.status == 'kitten':
                 # Check to see if the cat gains a secondary
                 if not self.secondary and not int(random.random() * 22):
@@ -578,7 +576,7 @@ class CatSkills:
                     self.secondary.interest_only = False
     
     def meets_skill_requirement(self, path: Union[str, SkillPath, HiddenSkillEnum], min_tier:int=0) -> bool:
-        """Checks both primary and seconday, to see if cat matches skill restaint"""
+        """Checks both primary and secondary, to see if cat matches skill restraint"""
         
         if isinstance(path, str):
             # Try to conter to Skillpath or HiddenSkillEnum
@@ -606,40 +604,34 @@ class CatSkills:
         return False
     
     def check_skill_requirement_list(self, skill_list:list) -> int:
-        """Takes a whole list of skill requirments in the form 
+        """Takes a whole list of skill requirements in the form 
             [ "SKILL_PATH,MIN_TIER" ... ] and determines how many skill
-            requirments are meet. The list format is used in all patrol and event skill
-            restrictions. Returns an integer value of how many skills requirments are meet.  
+            requirements are meet. The list format is used in all patrol and event skill
+            restrictions. Returns an integer value of how many skills requirements are meet.  
             """
-        
         skills_meet = 0
-        
         min_tier = 0
         for _skill in skill_list:
             spl = _skill.split(",")
-            
+
             if len(spl) != 2:
                 print("Incorrectly formatted skill restriction", _skill)
                 continue
-            
             try:
                 min_tier = int(spl[1])
             except ValueError:
                 print("Min Skill Tier cannot be converted to int", _skill)
                 continue
-            
+
             if self.meets_skill_requirement(spl[0], min_tier):
                 skills_meet += 1
         
         return skills_meet
-                     
-    
+
     @staticmethod
     def get_skills_from_old(old_skill, status, moons):
-        """Generates a CatSkill object"""
-        
+        """Generates a CatSkill object""" 
         new_skill = CatSkills()
-        
         conversion = {
             "strong connection to StarClan": (SkillPath.STAR, 2), 
             "good healer": (SkillPath.HEALER, 1),
