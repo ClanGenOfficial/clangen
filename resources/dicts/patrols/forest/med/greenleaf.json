@@ -5238,7 +5238,10 @@
                         "injuries": ["poisoned"],
                         "scars": []
                     }
-                ]
+                ],
+                "history_text": {
+                    "reg_death": "m_c died from accidentally eating deathberries."
+                }
             }
         ]
     },
@@ -6160,14 +6163,18 @@
                         "injuries": ["poisoned"]
                     }
                 ],
-                "history_text": { "reg_death": "This cat was poisoned by a corpse lily." }
+                "history_text": {
+                    "reg_death": "This cat was poisoned by a corpse lily."
+                }
             },
             {
                 "text": "p_l moves at the wrong time, pollen whipped up by the warm wind. Still, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} {PRONOUN/p_l/self} trudging on - only to collapse a few heartbeats later.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["p_l"],
-                "history_text": { "reg_death": "This cat was poisoned by a corpse lily." }
+                "history_text": {
+                    "reg_death": "This cat was poisoned by a corpse lily."
+                }
             }
         ]
     }
