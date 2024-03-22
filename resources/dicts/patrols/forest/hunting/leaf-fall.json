@@ -761,7 +761,8 @@
                 "weight": 10,
                 "dead_cats": ["multi", "some_lives"],
                 "history_text": {
-                    "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after battling a Rat King."
+                    "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after battling a Rat King.",
+                    "lead_death": "fought a Rat King"
                 }
             },
             {
@@ -771,7 +772,8 @@
                 "stat_skill": ["HUNTER,2"],
                 "dead_cats": ["s_c"],
                 "history_text": {
-                    "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after battling a Rat King."
+                    "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after battling a Rat King.",
+                    "lead_death": "fought a Rat King"
                 }
             }
         ]

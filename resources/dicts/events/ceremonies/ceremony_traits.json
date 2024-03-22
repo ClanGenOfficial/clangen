@@ -35,24 +35,6 @@
         "intensity",
         "strength"
     ],
-    "altruistic": [
-        "selflessness",
-        "kindness",
-        "compassion",
-        "generosity",
-        "thoughtfulness",
-        "sincerity",
-        "benevolence",
-        "heart of gold",
-        "exemplar",
-        "justice",
-        "consideration",
-        "good nature",
-        "dedication",
-        "patience",
-        "spirit",
-        "grace"
-    ],
     "bloodthirsty": [
         "ferocity",
         "strength",
@@ -107,7 +89,13 @@
         "equanimity",
         "diligence",
         "endurance",
-        "perspective"
+        "perspective",
+        "pragmatism",
+        "composure",
+        "adaptability",
+        "understanding",
+        "kindness",
+        "humility"
     ],
     "careful": [
         "mindfulness",
@@ -199,7 +187,20 @@
         "heart",
         "benevolence",
         "understanding",
-        "gentleness"
+        "gentleness",
+        "spirit",
+        "insight",
+        "thoughtfulness",
+        "good nature",
+        "tenderness",
+        "consideration",
+        "sensitivity",
+        "altruistic",
+        "sincerity",
+        "heart of gold",
+        "dedication",
+        "patience",
+        "grace"
     ],
     "confident": [
         "confidence",
@@ -234,24 +235,6 @@
         "fortitude",
         "risk-taking",
         "decisiveness"
-    ],
-    "empathetic": [
-        "compassion",
-        "kindness",
-        "spirit",
-        "generosity",
-        "benevolence",
-        "insight",
-        "thoughtfulness",
-        "emotional maturity",
-        "observance",
-        "understanding",
-        "good nature",
-        "tenderness",
-        "heart",
-        "consideration",
-        "warmth",
-        "sensitivity"
     ],
     "faithful": [
         "spirit",
@@ -378,24 +361,6 @@
         "vigilance",
         "prudence",
         "attention"
-    ],
-    "patient": [
-        "patience",
-        "forethought",
-        "serenity",
-        "tranquility",
-        "pragmatism",
-        "composure",
-        "emotional maturity",
-        "observance",
-        "adaptability",
-        "insight",
-        "understanding",
-        "kindness",
-        "diligence",
-        "humility",
-        "endurance",
-        "perspective"
     ],
     "playful": [
         "enthusiasm",

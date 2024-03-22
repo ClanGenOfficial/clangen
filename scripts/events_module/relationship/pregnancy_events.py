@@ -682,7 +682,6 @@ class Pregnancy_Events():
         
         #### GENERATE THE KITS ######
         for kit in range(kits_amount):
-            
             kit = None
             if not cat: 
                 
@@ -787,6 +786,7 @@ class Pregnancy_Events():
         for kit in all_kitten:
             kit.adoptive_parents = final_adoptive_parents
             kit.inheritance.update_inheritance()
+            kit.inheritance.update_all_related_inheritance()
 
         if blood_parent:
             blood_parent.outside = True
