@@ -558,7 +558,11 @@
                         "scars": ["SIDE"]
                     }
                 ],
-                "history_text": { "scar": "This cat was scarred by a badger." },
+                "history_text": {
+                    "scar": "m_c was scarred by a badger.",
+                    "reg_death": "m_c lost their life to a badger.",
+                    "lead_death": "{VERB/m_c/were/was} killed by a badger"
+                },
                 "relationships": [
                     {
                         "cats_to": ["r_c", "p_l"],
@@ -709,7 +713,11 @@
                         "scars": ["SIDE"]
                     }
                 ],
-                "history_text": { "scar": "This cat was scarred by a badger." },
+                "history_text": {
+                    "scar": "m_c was scarred by a badger.",
+                    "reg_death": "m_c lost their life to a badger.",
+                    "lead_death": "{VERB/m_c/were/was} killed by a badger"
+                },
                 "relationships": [
                     {
                         "cats_to": ["r_c", "p_l"],
@@ -1136,7 +1144,11 @@
                         "scars": ["BRIDGE"]
                     }
                 ],
-                "history_text": { "scar": "m_c was scarred by an invading rogue." },
+                "history_text": { 
+                    "scar": "m_c was scarred by an invading rogue.",
+                    "reg_death": "m_c was killed by an invading rogue.",
+                    "lead_death": "{VERB/m_c/were/was} killed by an invading rogue"
+                },
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1281,7 +1293,11 @@
                         "scars": ["CHEEK"]
                     }
                 ],
-                "history_text": { "scar": "m_c was scarred by an invading rogue." },
+                "history_text": {
+                    "scar": "m_c was scarred by an invading rogue.",
+                    "reg_death": "m_c was killed by an invading rogue.",
+                    "lead_death": "{VERB/m_c/were/was} killed by an invading rogue"
+                },
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1432,7 +1448,11 @@
                         "scars": ["CHEEK"]
                     }
                 ],
-                "history_text": { "scar": "m_c was scarred by an invading rogue." },
+                "history_text": {
+                    "scar": "m_c was scarred by an invading rogue.",
+                    "reg_death": "m_c was killed by an invading rogue.",
+                    "lead_death": "{VERB/m_c/were/was} killed by an invading rogue"
+                },
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
