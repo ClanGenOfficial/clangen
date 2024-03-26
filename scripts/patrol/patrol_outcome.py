@@ -984,7 +984,7 @@ class PatrolOutcome():
                 break
                 
             if match.group(1) == "has_kits":
-                age = randint(14, 120)
+                age = randint(19, 120)
                 break
                 
         
