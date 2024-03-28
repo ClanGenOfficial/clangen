@@ -6,8 +6,8 @@
             "Is spending a considerable amount of time grooming",
             "Is looking forward to today",
             "Is feeling down...",
-            "Is feeling excited",
-            "Is feeling nervous",
+            "Is feeling excited!",
+            "Is feeling nervous...",
             "Is feeling content",
             "Is feeling silly",
             "Is feeling a bit ill",
@@ -635,7 +635,7 @@
             "Hisses at r_c when {PRONOUN/r_c/subject} {VERB/r_c/ask/asks} {PRONOUN/m_c/object} about where {PRONOUN/m_c/subject} used to live",
             "Is ignoring the gossip about {PRONOUN/m_c/poss} past",
             "Is comforted by {PRONOUN/m_c/poss} Clanmates' confidence in the safety of c_n",
-            "Is unsure of {PRONOUN/m_c/poss} Clanmates confidence in the safety of c_n"
+            "Is unsure of {PRONOUN/m_c/poss} Clanmates' confidence in the safety of c_n"
         ],
         "main_status_constraint": [
             "apprentice",

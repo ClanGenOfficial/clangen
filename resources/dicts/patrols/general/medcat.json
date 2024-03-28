@@ -410,7 +410,7 @@
             "healer cats": [1, 6]
         },
         "weight": 20,
-        "intro_text": "As {PRONOUN/p_l/subject} head out to gather cobwebs, p_l thinks about the dream {PRONOUN/p_l/subject} had last night. . . was it sent by StarClan?",
+        "intro_text": "As {PRONOUN/p_l/subject} head out to gather cobwebs, p_l thinks about the dream {PRONOUN/p_l/subject} had last night... was it sent by StarClan?",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/push/pushes} it from {PRONOUN/p_l/poss} mind.",
         "chance_of_success": 40,
         "success_outcomes": [

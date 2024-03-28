@@ -480,7 +480,7 @@
         },
         "weight": 20,
         "intro_text": "The patrol hears distant howling and wonders whether to investigate the noise.",
-        "decline_text": "The patrol decides not to investigate the source of the noise.  Whatever is making it will not be friendly to them.",
+        "decline_text": "The patrol decides not to investigate the source of the noise. Whatever is making it will not be friendly to them.",
         "chance_of_success": 10,
         "success_outcomes": [
             {
@@ -495,7 +495,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "The patrol follows the noise to a coyote who quickly spots them in the brush. A fight ensues and thanks to the skills of s_c, the coyote eventually runs away, deeming the carcass they had been scavenging from to not be worth the hassle.  The patrol brings back what meat had still been left.",
+                "text": "The patrol follows the noise to a coyote who quickly spots them in the brush. A fight ensues and thanks to the skills of s_c, the coyote eventually runs away, deeming the carcass they had been scavenging from to not be worth the hassle. The patrol brings back what meat had still been left.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -524,13 +524,13 @@
                 "weight": 20
             },
             {
-                "text": "They track the noise to a coyote. Before the patrol can investigate further, s_c whimpers in terror at the sight of the beast and dashes away.  The patrol follows anxiously, not wanting to lose sight of their Clanmate while a coyote is about.",
+                "text": "They track the noise to a coyote. Before the patrol can investigate further, s_c whimpers in terror at the sight of the beast and dashes away. The patrol follows anxiously, not wanting to lose sight of their Clanmate while a coyote is about.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["nervous", "insecure"]
             },
             {
-                "text": "The patrol finds a coyote at the source of the noise. It seems to be scavenging from an old carcass and upon seeing the cats, prove to be fiercely protective of its meal.  The patrol doesn't move fast enough and r_c is killed before they can run.",
+                "text": "The patrol finds a coyote at the source of the noise. It seems to be scavenging from an old carcass and upon seeing the cats, prove to be fiercely protective of its meal. The patrol doesn't move fast enough and r_c is killed before they can run.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -541,7 +541,7 @@
                 }
             },
             {
-                "text": "The sound leads them to a coyote, scavenging from a carcass. The coyote notices them before they can hide and lunges, making it clear that this food has been claimed.  r_c is momentarily caught in its jaws before the patrol retaliates and drives it off their Clanmate.",
+                "text": "The sound leads them to a coyote, scavenging from a carcass. The coyote notices them before they can hide and lunges, making it clear that this food has been claimed. r_c is momentarily caught in its jaws before the patrol retaliates and drives it off their Clanmate.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1400,7 +1400,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l pads closer to the bush, intent on finding the source of the noise, only to come face to face with a skunk!  The poor cat ends up stinking for days after the unfortunate incident.",
+                "text": "p_l pads closer to the bush, intent on finding the source of the noise, only to come face to face with a skunk! The poor cat ends up stinking for days after the unfortunate incident.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
