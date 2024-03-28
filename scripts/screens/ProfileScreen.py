@@ -220,15 +220,21 @@ class ProfileScreen(Screens):
                 pass
 
             elif event.key == pygame.K_LEFT:
-                self.clear_profile()
-                game.switches['cat'] = self.previous_cat
-                self.build_profile()
-                self.update_disabled_buttons_and_text()
+                if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
+                    self.clear_profile()
+                    game.switches['cat'] = self.previous_cat
+                    self.build_profile()
+                    self.update_disabled_buttons_and_text()
+                else:
+                    print("invalid previous cat", self.previous_cat)
             elif event.key == pygame.K_RIGHT:
-                self.clear_profile()
-                game.switches['cat'] = self.next_cat
-                self.build_profile()
-                self.update_disabled_buttons_and_text()
+                if isinstance(Cat.fetch_cat(self.next_cat), Cat):
+                    self.clear_profile()
+                    game.switches['cat'] = self.next_cat
+                    self.build_profile()
+                    self.update_disabled_buttons_and_text()
+                else:
+                    print("invalid next cat", self.previous_cat)
             
             elif event.key == pygame.K_ESCAPE:
                 self.close_current_tab()

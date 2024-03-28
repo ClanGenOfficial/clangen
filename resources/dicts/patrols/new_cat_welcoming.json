@@ -2100,7 +2100,7 @@
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
-                    ["loner"]
+                    ["loner", "backstory:loner1"]
                 ],
                 "relationships": [
                     {
@@ -2124,7 +2124,7 @@
                 "exp": 10,
                 "weight": 5,
                 "new_cat": [
-                    ["loner"]
+                    ["loner", "backstory:loner1"]
                 ],
                 "relationships": [
                     {
@@ -2149,7 +2149,7 @@
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
                 "new_cat": [
-                    ["loner"]
+                    ["loner", "backstory:loner1"]
                 ],
                 "relationships": [
                     {
