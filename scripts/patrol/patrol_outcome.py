@@ -208,7 +208,7 @@ class PatrolOutcome():
         
         # With allowed_specfic empty, that means the stat can can be anyone that's not patrol leader
         # or stat cat. This can
-        if not allowed_specfic or "no_pl_rc" in allowed_specfic:
+        if not allowed_specfic or "not_pl_rc" in allowed_specfic:
             if kitty in (patrol.patrol_leader, patrol.patrol_random_cat):
                 return False
             return True
