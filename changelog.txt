@@ -1,6 +1,9 @@
+<strong>v0.11.1</strong>
+- Fix: The changelog. Yep, just the changelog. Yes, it happened again-
+
 <strong>v0.11.0</strong>
 - Feature: Freshkill pile & nutrition system
-- Feature: “Destroy accessory” button
+- Feature: "Destroy accessory" button
 - Content: Lakeside Forest Background
 - Content: Murder for the new year
 - Content: expanded scars: "HINDLEG", "BACK", "QUILLSIDE", "SCRATCHSIDE", "TOE", "BEAKSIDE", "CATBITETWO", "SNAKETWO", "FOUR"
