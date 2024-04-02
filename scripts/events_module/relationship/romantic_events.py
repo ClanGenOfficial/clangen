@@ -550,8 +550,6 @@ class Romantic_Events():
             print("----- POLY-POLY-POLY", cat_from.name, cat_to.name)
             print(cat_from.mate)
             print(cat_to.mate)
-        else:
-            print("BECOME MATES")
 
         mate_string = Romantic_Events.prepare_relationship_string(mate_string, cat_from, cat_to)
 

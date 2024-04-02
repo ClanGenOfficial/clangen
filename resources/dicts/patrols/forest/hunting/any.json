@@ -1705,7 +1705,7 @@
                 "text": "The patrol mostly ignores the Twolegs. As they hunt, they hear a yelp from r_c. {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} crawled into a metal Twolegs box, and there's nothing {PRONOUN/r_c/subject} or the rest of the patrol can do to get {PRONOUN/r_c/object} out - eventually the Twolegs notice, and r_c is taken by them.",
                 "exp": 0,
                 "weight": 10,
-                "lost_cats": ["multi"]
+                "lost_cats": ["r_c"]
             },
             {
                 "text": "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? Before {PRONOUN/s_c/subject} can decide whether to step closer, there's a swoosh, and a net falls around {PRONOUN/r_c/object}. s_c fights desperately, but the Twolegs take {PRONOUN/r_c/object} away in the monster.",
@@ -3067,7 +3067,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c drops into a crouch and begins to stalk forward. {PRONOUN/s_c/subject/cap}{VERB/s_c/'re/'s} preparing to pounce when {PRONOUN/s_c/poss} paw lightly brushes a twig and the vole immediately takes off. {PRONOUN/s_c/subject/CAP} {VERB/s_c/give/gives} chase, but the critter disappears into a burrow. Mousedung!",
+                "text": "r_c drops into a crouch and begins to stalk forward. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} preparing to pounce when {PRONOUN/s_c/poss} paw lightly brushes a twig and the vole immediately takes off. {PRONOUN/s_c/subject/CAP} {VERB/s_c/give/gives} chase, but the critter disappears into a burrow. Mouse-dung!",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]

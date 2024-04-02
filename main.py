@@ -42,18 +42,10 @@ if not getattr(sys, 'frozen', False):
             break
 
     if isMissing:
-        if find_spec("thonny") is not None:
-            print("""You are missing some requirements to run clangen!
-                  Please press "Tools" -> "Manage Packages"
-                  Once the menu opens, click the link below "Install from requirements file".
-                  Then, select the file "requirements.txt" in the clangen folder.
-                  """)
-        else:
-            print("""You are missing some requirements to run clangen!
-                  Please run the following command in your terminal to install them:
-                  
-                  python3 -m pip install -r requirements.txt
-                  """)
+        print("""You are missing some requirements to run clangen!
+                
+                Please look at the "README.md" file for instructions on how to install them.
+                """)
         
         print("If you are still having issues, please ask for help in the clangen discord server: https://discord.gg/clangen")
         sys.exit(1)

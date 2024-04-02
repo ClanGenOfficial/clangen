@@ -473,47 +473,20 @@
             {
                 "text": "r_c unsheathes {PRONOUN/r_c/poss} claws, puffs {PRONOUN/r_c/poss} fur out to as far as it'll go, gathers {PRONOUN/r_c/poss} courage, and drives the small dog from the border.",
                 "exp": 10,
-                "weight": 5,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": 5
-                    }
-                ]
+                "weight": 5
             },
             {
                 "text": "s_c unleashes all {PRONOUN/r_c/poss} battle experience, darting this way and that, ripping chunks of dog fur out as {PRONOUN/r_c/subject} {VERB/r_c/drive/drives} it into the distance.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,1"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": 5
-                    }
-                ]
+                "stat_skill": ["FIGHTER,1"]
             }
         ],
         "fail_outcomes": [
             {
                 "text": "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait miserably and humiliatingly in a safe spot until the beast calms down.",
                 "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": -5
-                    }
-                ]
+                "weight": 20
             },
             {
                 "text": "The animal is far more tenacious than r_c ever expected, and once the fight starts, there's no escaping from it. As r_c's world goes dark, {PRONOUN/r_c/subject} {VERB/r_c/have/has} {PRONOUN/r_c/poss} fangs sunk in the dog's throat. At least {PRONOUN/r_c/subject}'ll take the beast with {PRONOUN/r_c/object}.",
@@ -524,16 +497,7 @@
                     "scar": "This cat got a scar from a fight with a small dog, but {PRONOUN/m_c/subject} always {VERB/m_c/say/says} it was a huge dog.",
                     "reg_death": "This cat was killed in a fight with a small dog, but {PRONOUN/m_c/subject} took the dog out with {PRONOUN/m_c/object}.",
                     "lead_death": "killed in a fight with a small dog"
-                },
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": -5
-                    }
-                ]
+                }
             },
             {
                 "text": "Small, yappy, but... still a dog. r_c peers down from the tree where the animal has pinned {PRONOUN/r_c/object}, wincing in pain. {PRONOUN/r_c/subject/CAP} won't underestimate these ugly creatures again.",
@@ -550,16 +514,7 @@
                     "scar": "This cat got a scar from a fight with a small dog, but {PRONOUN/m_c/subject} always {VERB/m_c/say/says} it was a huge dog.",
                     "reg_death": "This cat was killed in a fight with a small dog, but {PRONOUN/m_c/subject} took the dog out with {PRONOUN/m_c/object}.",
                     "lead_death": "killed in a fight with a small dog"
-                },
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": -5
-                    }
-                ]
+                }
             }
         ]
     },
@@ -740,12 +695,12 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "The patrol hears a cat begging for their housefolk to come back, just barely legible over the sound of a monster speeding away.",
+        "intro_text": "The patrol hears a cat begging for their housefolk to come back, just barely intelligible over the sound of a monster speeding away.",
         "decline_text": "p_l decides it's none of {PRONOUN/p_l/poss} business, and resumes {PRONOUN/p_l/poss} patrol.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "p_l finds a kittypet collapsed by the Thunderpath, wailing for their housefolk. p_l comforts them, asking why they were left here. The only explanation they have is that they're sick.. perhaps they were too much of a burden? p_l offers them a place in c_n, at least until they're better. They tentatively accept, looking longingly at the Thunderpath as they're led away.",
+                "text": "p_l finds a kittypet collapsed by the Thunderpath, wailing for their housefolk. p_l comforts them, asking why they were left here. The only explanation they have is that they're sick... perhaps they were too much of a burden? p_l offers them a place in c_n, at least until they're better. They tentatively accept, looking longingly at the Thunderpath as they're led away.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -764,7 +719,7 @@
                     }
                 ],
                 "new_cat": [
-                    ["kittypet"]
+                    ["kittypet", "backstory:kittypet4"]
                 ],
                 "outsider_rep": 1,
                 "injury": [
@@ -1161,7 +1116,7 @@
                 "weight": 5
             },
             {
-                "text": "p_l noses forward, half hidden, only stepping out when n_c0's scent hits {PRONOUN/p_l/object}. They've been planning this for moons - tonight is the night. n_c0 is ready to join c_n, to join p_l, and damn anyone who gossips to the dark forest. Tonight is the first night of the rest of their lives together, nothing is going to stop them.",
+                "text": "p_l noses forward, half hidden, only stepping out when n_c:0's scent hits {PRONOUN/p_l/object}. They've been planning this for moons - tonight is the night. n_c:0 is ready to join c_n, to join p_l, and damn anyone who gossips to the dark forest. Tonight is the first night of the rest of their lives together, nothing is going to stop them.",
                 "exp": 5,
                 "weight": 5,
                 "new_cat": [

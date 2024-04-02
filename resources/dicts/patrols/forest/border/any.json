@@ -120,11 +120,11 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "As r_c is marking the border lines, a gang of rogues bursts from the bushes! An ambush!",
-        "decline_text": "r_c turns tail and races away! The rogues have {PRONOUN/r_c/object} far outnumbered, warning the Clan is more important than dying needlessly.",
+        "decline_text": "r_c turns tail and races away! The rogues have them far outnumbered, warning the Clan is more important than dying needlessly.",
         "chance_of_success": 20,
         "success_outcomes": [
             {
-                "text": "Stunned for a moment, r_c is nearly caught in the teeth of the first rogue, but {PRONOUN/r_c/subject} {VERB/r_c/manage/manages} to dodge and weave through the onslaught of attacks, eventually escaping the fray and pelting towards camp with yowls of warning bursting from {PRONOUN/r_c/poss} lungs.",
+                "text": "Stunned for a moment, r_c is nearly caught in the teeth of the first rogue, but they manage to dodge and weave through the onslaught of attacks, eventually escaping the fray and pelting towards camp with yowls of warning bursting from their lungs.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -138,7 +138,7 @@
                 ]
             },
             {
-                "text": "s_c snarls at the rogues, outnumbered but not cowed. {PRONOUN/s_c/subject/CAP} {VERB/s_c/throw/throws} {PRONOUN/s_c/self} at the intruders with such ferocity and fury that the rogues are taken aback. Alarmed by the lack of fear and self-preservation from the Clan cat, the rogues freeze. s_c sees {PRONOUN/s_c/poss} opportunity to run and takes it, racing back to the camp to gather more warriors and return.",
+                "text": "s_c snarls at the rogues, outnumbered but not cowed. They throw themselves at the intruders with such ferocity and fury that the rogues are taken aback. Alarmed by the lack of fear and self-preservation from the Clan cat, the rogues freeze. s_c sees their opportunity to run and takes it, racing back to the camp to gather more warriors and return.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,2"],
@@ -155,7 +155,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "s_c snarls at the rogues, outnumbered but not cowed. {PRONOUN/s_c/subject/CAP} {VERB/s_c/throw/throws} {PRONOUN/s_c/self} at the intruders with such ferocity and fury that the rogues are taken aback. For a moment the rogues are stunned by the reaction, but the shock doesn't last long before they descend upon the warrior once more. Eventually, s_c has no choice but to escape before {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} killed.",
+                "text": "s_c snarls at the rogues, outnumbered but not cowed. They throw themselves at the intruders with such ferocity and fury that the rogues are taken aback. For a moment the rogues are stunned by the reaction, but the shock doesn't last long before they descend upon the warrior once more. Eventually, s_c has no choice but to escape before they're killed.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["bloodthirsty", "fierce", "vengeful"],
@@ -170,7 +170,7 @@
                 ]
             },
             {
-                "text": "The rogues greatly outnumber r_c and have no trouble killing the lone cat. {PRONOUN/r_c/poss/CAP} body is discovered the next day, covered in wounds and cold.",
+                "text": "The rogues greatly outnumber r_c and have no trouble killing the lone cat. Their body is discovered the next day, covered in wounds and cold.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -339,22 +339,22 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "r_c has heard rumors that there is a badger denning in a certain part of c_n territory.",
-        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/note/notes} the area as a place to avoid and go on a nice solo hunt instead.",
+        "decline_text": "They note the area as a place to avoid and go on a nice solo hunt instead.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Concerned for the Clan, r_c creeps through the woods, searching for the sett. It's empty when {PRONOUN/r_c/subject} {VERB/r_c/arrive/arrives}, its owner out foraging late. The sunlight blinds the beast as it fumbles its way back, and r_c attacks - but all it gives {PRONOUN/r_c/object} is the opportunity for a lucky hit and an easy retreat, and r_c must give up the idea of saving the Clan single-pawed.",
+                "text": "Concerned for the Clan, r_c creeps through the woods, searching for the sett. It's empty when they arrive, its owner out foraging late. The sunlight blinds the beast as it fumbles its way back, and r_c attacks - but all it gives them is the opportunity for a lucky hit and an easy retreat, and r_c must give up the idea of saving the Clan single-pawed.",
                 "exp": 40,
                 "weight": 20
             },
             {
-                "text": "Worried about {PRONOUN/s_c/poss} Clanmates, s_c sets out to try to solve the problem on {PRONOUN/s_c/poss} own. Once {PRONOUN/s_c/subject} {VERB/s_c/find/finds} the sett, {PRONOUN/s_c/subject} {VERB/s_c/set/sets} to yowling, challenging the beast to come out and fight until it emerges, grumbling and blinking in the sunlight. While s_c manages to get several good swipes in, the badger holds its ground, and {PRONOUN/s_c/subject} {VERB/s_c/return/returns} to camp deflated.",
+                "text": "Worried about their Clanmates, s_c sets out to try to solve the problem on their own. Once they find the sett, they set to yowling, challenging the beast to come out and fight until it emerges, grumbling and blinking in the sunlight. While s_c manages to get several good swipes in, the badger holds its ground, and they return to camp deflated.",
                 "exp": 40,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,2"]
             },
             {
-                "text": "s_c sets out to separate truth from rumor. There are fresh tracks in the mud under the canopy, but they're smaller than s_c expected. To confirm {PRONOUN/s_c/poss} theory, {PRONOUN/s_c/subject} {VERB/s_c/stake/stakes} out the sett itself, and when the beast pokes its head out at night, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to confirm it's a juvenile - young and inexperienced. s_c pads quietly back to camp with the intel.",
+                "text": "s_c sets out to separate truth from rumor. There are fresh tracks in the mud under the canopy, but they're smaller than s_c expected. To confirm their theory, they stake out the sett itself, and when the beast pokes its head out at night, they're able to confirm it's a juvenile - young and inexperienced. s_c pads quietly back to camp with the intel.",
                 "exp": 40,
                 "weight": 20,
                 "stat_trait": [
@@ -372,7 +372,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Well, the only way to know is to check! Once {PRONOUN/s_c/subject} {VERB/s_c/find/finds} the sett, s_c scrambles inside for a look and comes nose to nose with its occupant. It's only by the grace of StarClan that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to redirect that speed to twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows {PRONOUN/s_c/object} up the burrow tunnel.",
+                "text": "Well, the only way to know is to check! Once they find the sett, s_c scrambles inside for a look and comes nose to nose with its occupant. It's only by the grace of StarClan that they're able to redirect that speed to twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows them up the burrow tunnel.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -391,18 +391,18 @@
                 ]
             },
             {
-                "text": "r_c carefully approaches the burrow, trying to figure out if there's anything new inside. It's so dark, and it all smells the same... {PRONOUN/r_c/subject/CAP} {VERB/r_c/try/tries} to creep just a little closer - but the ground drops away steeply beneath {PRONOUN/r_c/poss} paws and {PRONOUN/r_c/subject} {VERB/r_c/lose/loses} {PRONOUN/r_c/poss} footing, skidding right into the disturbed badger's lethal jaws.",
+                "text": "r_c carefully approaches the burrow, trying to figure out if there's anything new inside. It's so dark, and it all smells the same... They try to creep just a little closer - but the ground drops away steeply beneath their paws and they lose their footing, skidding right into the disturbed badger's lethal jaws.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
                     "scar": "m_c was scarred by a badger.",
-                    "reg_death": "m_c lost {PRONOUN/m_c/poss} life to a badger.",
+                    "reg_death": "m_c lost their life to a badger.",
                     "lead_death": "{VERB/m_c/were/was} killed by a badger"
                 }
             },
             {
-                "text": "While r_c is carefully sniffing at the burrow entrance, there's a rustle from the woods behind {PRONOUN/r_c/object}. It's difficult to say who's more surprised - r_c or the badger. It charges for the sett and r_c leaps out of the way, but its claws catch {PRONOUN/r_c/poss} pelt, and it's a bloodied cat that limps back into camp to report the whole sorry adventure.",
+                "text": "While r_c is carefully sniffing at the burrow entrance, there's a rustle from the woods behind them. It's difficult to say who's more surprised - r_c or the badger. It charges for the sett and r_c leaps out of the way, but its claws catch their pelt, and it's a bloodied cat that limps back into camp to report the whole sorry adventure.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -414,7 +414,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a badger.",
-                    "reg_death": "m_c lost {PRONOUN/m_c/poss} life to a badger.",
+                    "reg_death": "m_c lost their life to a badger.",
                     "lead_death": "{VERB/m_c/were/was} killed by a badger"
                 }
             }
@@ -464,7 +464,7 @@
                 ]
             },
             {
-                "text": "s_c decides there has to be an easy way to figure out if a badger has moved in, one that doesn't involve sticking head in front of a predator. {PRONOUN/s_c/subject/CAP} {VERB/s_c/lead/leads} the patrol on a search of the clearing around the sett until they come upon some fresh badger scat - stinky, horrible, and perfect proof of the new occupant of the sett.",
+                "text": "s_c decides there has to be an easy way to figure out if a badger has moved in, one that doesn't involve sticking head in front of a predator. They lead the patrol on a search of the clearing around the sett until they come upon some fresh badger scat - stinky, horrible, and perfect proof of the new occupant of the sett.",
                 "exp": 40,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -520,7 +520,7 @@
                 ]
             },
             {
-                "text": "Well, the only way to know is to check! Once they find the sett, s_c scrambles inside for a look and comes nose to nose with its occupant. It's only by the grace of StarClan that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to redirect that speed to twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows {PRONOUN/s_c/object} up the burrow tunnel.",
+                "text": "Well, the only way to know is to check! Once they find the sett, s_c scrambles inside for a look and comes nose to nose with its occupant. It's only by the grace of StarClan that they're able to redirect that speed to twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows them up the burrow tunnel.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -558,7 +558,11 @@
                         "scars": ["SIDE"]
                     }
                 ],
-                "history_text": { "scar": "This cat was scarred by a badger." },
+                "history_text": {
+                    "scar": "m_c was scarred by a badger.",
+                    "reg_death": "m_c lost their life to a badger.",
+                    "lead_death": "{VERB/m_c/were/was} killed by a badger"
+                },
                 "relationships": [
                     {
                         "cats_to": ["r_c", "p_l"],
@@ -709,7 +713,11 @@
                         "scars": ["SIDE"]
                     }
                 ],
-                "history_text": { "scar": "This cat was scarred by a badger." },
+                "history_text": {
+                    "scar": "m_c was scarred by a badger.",
+                    "reg_death": "m_c lost their life to a badger.",
+                    "lead_death": "{VERB/m_c/were/was} killed by a badger"
+                },
                 "relationships": [
                     {
                         "cats_to": ["r_c", "p_l"],
@@ -831,11 +839,11 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "While on patrol, r_c notices some suspicious pawprints in the mud beneath the canopy.",
-        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} not to investigate.",
+        "decline_text": "They decide not to investigate.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The pawprints lead to a trespassing rogue. r_c quickly hides {PRONOUN/r_c/self} behind a bush and sets up an ambush that sends the rogue fleeing off c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. r_c quickly hides themself behind a bush and sets up an ambush that sends the rogue fleeing off c_n territory.",
                 "exp": 10,
                 "weight": 20
             },
@@ -851,7 +859,7 @@
                 "stat_skill": ["CLEVER,1"]
             },
             {
-                "text": "Boldly, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leaves c_n territory. Intimidated by {PRONOUN/s_c/poss} confidence, the rogue gives in and leaves without a fight.",
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -876,18 +884,18 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alone.",
+                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful they're alone.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject}'d like to think. The rogue manages to escape {PRONOUN/s_c/poss} grasp and run off further into c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle-hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"]
             },
             {
-                "text": "Nose to the ground following the trail, r_c doesn't see the blow that kills {PRONOUN/r_c/object}.",
+                "text": "Nose to the ground following the trail, r_c doesn't see the blow that kills them.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -898,7 +906,7 @@
                 }
             },
             {
-                "text": "Nose to the ground following the trail, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run.",
+                "text": "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themself to their feet, spitting with outrage, but the rogue that did it has already turned and run.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -930,28 +938,28 @@
         },
         "weight": 20,
         "intro_text": "While on patrol, app1 notices some suspicious pawprints in the mud beneath the canopy.",
-        "decline_text": "{PRONOUN/app1/subject/CAP} {VERB/app1/decide/decides} not to investigate.",
+        "decline_text": "They decide not to investigate.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The pawprints lead to a trespassing rogue. app1 quickly hides {PRONOUN/app1/self} behind a bush, and sets up an ambush that lets {PRONOUN/app1/object} pretend to be a far bigger and more impressive fighter, sending the rogue fleeing off c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. app1 quickly hides themselves behind a bush, and sets up an ambush that lets them pretend to be a far bigger and more impressive fighter, sending the rogue fleeing off c_n territory.",
                 "exp": 10,
                 "weight": 20
             },
             {
-                "text": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting there'll be a test soon.",
+                "text": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... they're pretty sure this is their mentor's scent. And their mentor has been hinting there'll be a test soon.",
                 "exp": 10,
                 "weight": 5
             }
         ],
         "fail_outcomes": [
             {
-                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful {PRONOUN/app1/subject}{VERB/app1/'re/'s} alone. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} want to look dumb in front of other cats.",
+                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful they're alone. They don't want to look dumb in front of other cats.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "Boldly, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, {PRONOUN/app1/subject} {VERB/app1/demand/demands} the rogue leaves c_n territory. The rogue is not impressed by this teenager, and ignores {PRONOUN/app1/object} completely.",
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. The rogue is not impressed by this teenager, and ignores them completely.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -975,7 +983,7 @@
                 "can_have_stat": ["app"]
             },
             {
-                "text": "Nose to the ground following the trail, app1 doesn't see the blow that kills {PRONOUN/app1/object}.",
+                "text": "Nose to the ground following the trail, app1 doesn't see the blow that kills them.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -986,7 +994,7 @@
                 }
             },
             {
-                "text": "Nose to the ground following the trail, app1 doesn't see the blow coming. {PRONOUN/app1/subject/CAP} {VERB/app1/haul/hauls} {PRONOUN/app1/self} to {PRONOUN/app1/poss} feet, squealing with pain, and run for home.",
+                "text": "Nose to the ground following the trail, app1 doesn't see the blow coming. They haul themselves to their feet, squealing with pain, and run for home.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1016,7 +1024,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "While on patrol, r_c notices some suspicious pawprints in the mud beneath the canopy.",
-        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} not to investigate.",
+        "decline_text": "They decide not to investigate.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1048,7 +1056,7 @@
                 ]
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, and together with r_c drives them off c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, and together with r_c drives them off c_n territory.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -1097,7 +1105,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that {PRONOUN/r_c/poss} patrol is so small. Less eyes watching that embarrassing moment.",
+                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that their patrol is so small. Less eyes watching that embarrassing moment.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1111,7 +1119,7 @@
                 ]
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap, climbing into the trees and trying to break a branch onto the rogue's head, but {PRONOUN/s_c/subject} {VERB/s_c/aren't/isn't} as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
+                "text": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap, climbing into the trees and trying to break a branch onto the rogue's head, but they aren't as smart as they think they are. The trap fails, and the rogue wanders on.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -1126,7 +1134,7 @@
                 ]
             },
             {
-                "text": "Nose to the ground following the trail, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run from the patrol.",
+                "text": "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run from the patrol.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1136,7 +1144,11 @@
                         "scars": ["BRIDGE"]
                     }
                 ],
-                "history_text": { "scar": "m_c was scarred by an invading rogue." },
+                "history_text": { 
+                    "scar": "m_c was scarred by an invading rogue.",
+                    "reg_death": "m_c was killed by an invading rogue.",
+                    "lead_death": "{VERB/m_c/were/was} killed by an invading rogue"
+                },
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1161,7 +1173,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "While on patrol, r_c notices some suspicious pawprints in the mud beneath the canopy.",
-        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} not to investigate.",
+        "decline_text": "They decide not to investigate.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1242,7 +1254,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that {PRONOUN/r_c/poss} patrol is so small. Less eyes watching that embarrassing moment.",
+                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that their patrol is so small. Less eyes watching that embarrassing moment.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1256,7 +1268,7 @@
                 ]
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject}'d like to think. The rogue manages to escape {PRONOUN/s_c/poss} grasp and runs off further into c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -1271,7 +1283,7 @@
                 ]
             },
             {
-                "text": "Nose to the ground following the trail, r_c doesn't see the blow coming. {PRONOUN/r_c/subject} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run.",
+                "text": "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1281,7 +1293,11 @@
                         "scars": ["CHEEK"]
                     }
                 ],
-                "history_text": { "scar": "m_c was scarred by an invading rogue." },
+                "history_text": {
+                    "scar": "m_c was scarred by an invading rogue.",
+                    "reg_death": "m_c was killed by an invading rogue.",
+                    "lead_death": "{VERB/m_c/were/was} killed by an invading rogue"
+                },
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1340,7 +1356,7 @@
                 ]
             },
             {
-                "text": "Boldly, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leaves c_n territory. The rogue is not impressed by the teenager, but reluctantly leaves c_n territory. r_c is impressed that s_c got the rogue to leave.",
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, {PRONOUN/app1/subject} demand the rogue leaves c_n territory. The rogue is not impressed by the teenager, but reluctantly leaves c_n territory. r_c is impressed that s_c got the rogue to leave.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -1389,7 +1405,7 @@
                 ]
             },
             {
-                "text": "Boldly, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leaves c_n territory. The rogue is not impressed by the teenager, and staring right at the apprentice with claws unsheathed, marks their scent over one of the trees, before wandering off, clearly not listening to s_c.",
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, {PRONOUN/app1/subject} demand the rogue leaves c_n territory. The rogue is not impressed by the teenager, and staring right at the apprentice with claws unsheathed, mark their scent over one of the trees, before wandering off, clearly not listening to s_c.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -1422,7 +1438,7 @@
                 ]
             },
             {
-                "text": "Nose to the ground following the trail, app1 doesn't see the blow coming. {PRONOUN/app1/subject/CAP} {VERB/app1/haul/hauls} {PRONOUN/app1/self} to {PRONOUN/app1/poss} feet, squealing with pain, and run for home.",
+                "text": "Nose to the ground following the trail, app1 doesn't see the blow coming. They haul themselves to their feet, squealing with pain, and run for home.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1432,7 +1448,11 @@
                         "scars": ["CHEEK"]
                     }
                 ],
-                "history_text": { "scar": "m_c was scarred by an invading rogue." },
+                "history_text": {
+                    "scar": "m_c was scarred by an invading rogue.",
+                    "reg_death": "m_c was killed by an invading rogue.",
+                    "lead_death": "{VERB/m_c/were/was} killed by an invading rogue"
+                },
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1457,7 +1477,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "While on patrol, r_c notices some suspicious pawprints in the mud beneath the canopy.",
-        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} not to investigate.",
+        "decline_text": "They decide not to investigate.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1489,7 +1509,7 @@
                 ]
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, and together with r_c drives them off c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, and together with r_c drives them off c_n territory.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -1552,7 +1572,7 @@
                 ]
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap, climbing into the trees and trying to break a branch onto the rogue's head, but {PRONOUN/s_c/subject} {VERB/s_c/aren't/isn't} as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
+                "text": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap, climbing into the trees and trying to break a branch onto the rogue's head, but they aren't as smart as they think they are. The trap fails, and the rogue wanders on.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -1580,7 +1600,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "While on patrol, r_c notices some suspicious pawprints in the mud beneath the canopy.",
-        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} not to investigate.",
+        "decline_text": "They decide not to investigate.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1675,7 +1695,7 @@
                 ]
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject}'d like to think. The rogue manages to escape {PRONOUN/s_c/poss} grasp and runs off further into c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -1705,7 +1725,7 @@
         },
         "weight": 20,
         "intro_text": "While on patrol, app1 notices some suspicious pawprints in the mud beneath the canopy.",
-        "decline_text": "{PRONOUN/app1/subject/CAP} {VERB/app1/decide/decides} not to investigate.",
+        "decline_text": "They decide not to investigate.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1723,7 +1743,7 @@
                 ]
             },
             {
-                "text": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting there'll be a test soon.",
+                "text": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... they're pretty sure this is their mentor's scent. And their mentor has been hinting there'll be a test soon.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -1739,7 +1759,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, and can't meet the eyes of the rest of the patrol. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} want to look dumb in front of other cats.",
+                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, and can't meet the eyes of the rest of the patrol. They don't want to look dumb in front of other cats.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1753,7 +1773,7 @@
                 ]
             },
             {
-                "text": "Boldly, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leaves c_n territory. The rogue is not impressed by the young cat, but with the full patrol backing {PRONOUN/s_c/object} up, leaves c_n territory.",
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. The rogue is not impressed by the young cat, but with the full patrol backing them up, leaves c_n territory.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [

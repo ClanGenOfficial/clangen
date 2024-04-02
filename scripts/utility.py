@@ -297,7 +297,7 @@ def create_new_cat(Cat,
             _gender = gender
 
         # other Clan cats, apps, and kittens (kittens and apps get indoctrinated lmao no old names for them)
-        if other_clan or kit or litter or age < 12:
+        if other_clan or kit or litter or age < 12 and not (loner or kittypet):
             new_cat = Cat(moons=age,
                           status=status,
                           gender=_gender,

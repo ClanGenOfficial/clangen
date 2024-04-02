@@ -44,9 +44,7 @@
     "Marbled": ["stripe", "feather", "leaf", "stripe", "shade"],
     "Speckled": ["dapple", "speckle", "spot", "speck", "freckle", "fleck"],
     "Bengal": ["dapple", "speckle", "spots", "speck", "freckle", "fleck"],
-    "Tortie": ["dapple", "speckle", "spot", "dapple"],
     "Rosette": ["dapple", "speckle", "spots", "dapple", "freckle", "fleck"],
-    "Calico": ["stripe", "dapple", "patch", "patch"],
     "Smoke": ["fade", "dusk", "dawn", "smoke"],
     "Ticked": ["spots", "pelt", "speckle", "freckle"],
     "Mackerel": ["stripe", "feather", "leaf", "stripe", "fern"],
@@ -54,21 +52,24 @@
     "Sokoke": ["stripe", "feather", "leaf", "stripe", "fern"],
     "Agouti": ["back", "pelt", "fur"],
     "Singlestripe": ["stripe", "streak", "back", "shade", "stem", "shadow"],
-    "Masked": ["stripe", "mask", "mask", "shade"]
+    "Masked": ["stripe", "mask", "mask", "shade"],
+    "Tortie": ["dapple", "speckle", "spot", "dapple"],
+    "Calico": ["stripe", "dapple", "patch", "patch"]
   },
   "tortie_pelt_suffixes": {
-    "solid": ["dapple", "speckle", "spots", "splash"],
+    "single": ["dapple", "speckle", "spots", "splash"],
     "tabby": ["stripe", "feather", "leaf", "stripe", "shade", "fern"],
-    "bengal": ["dapple", "speckle", "spots", "speck", "fern", "freckle"],
     "marbled": ["stripe", "feather", "leaf", "stripe", "shade", "fern"],
-    "ticked": ["spots", "pelt", "speckle", "freckle"],
-    "smoke": ["fade", "dusk", "dawn", "smoke"],
-    "rosette": ["dapple", "speckle", "spots", "dapple", "fern", "freckle"],
     "speckled": ["dapple", "speckle", "spot", "speck", "freckle"],
+    "bengal": ["dapple", "speckle", "spots", "speck", "fern", "freckle"],
+    "rosette": ["dapple", "speckle", "spots", "dapple", "fern", "freckle"],
+    "smoke": ["fade", "dusk", "dawn", "smoke"],
+    "ticked": ["spots", "pelt", "speckle", "freckle"],
     "mackerel": ["stripe", "feather", "fern", "shade"],
     "classic": ["stripe", "feather", "fern"],
     "sokoke": ["stripe", "feather", "fern", "shade", "dapple"],
     "agouti": ["back", "pelt", "fur", "dapple", "splash"],
+    "singlestripe": ["stripe", "back", "shade", "stem", "dapple"],
     "masked": ["stripe", "dapple", "mask", "mask", "shade"]
   },
 
@@ -296,7 +297,8 @@
     "SAGE": ["Sage", "Leaf", "Olive", "Bush", "Clove", "Green", "Weed"],
     "COBALT": ["Blue", "Blue", "Ice", "Icy", "Sky", "Lake", "Frost", "Water", "Frosty", "Rime"],
     "SUNLITICE": ["Sun", "Ice", "Icy", "Frost", "Dawn", "Dusk", "Odd", "Glow", "Mouse"],
-    "GREENYELLOW": ["Green", "Yellow", "Tawny", "Hazel", "Gold", "Daisy", "Sand", "Sandy", "Weed"]
+    "GREENYELLOW": ["Green", "Yellow", "Tawny", "Hazel", "Gold", "Daisy", "Sand", "Sandy", "Weed"],
+    "SILVER": ["Gray", "Stone", "Silver", "Silver", "Moon", "Rain", "Storm", "Pale", "Light"]
   },
 
   "loner_names": [

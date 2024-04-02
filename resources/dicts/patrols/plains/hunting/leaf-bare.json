@@ -3817,7 +3817,7 @@
         "chance_of_success": 30,
         "relationship_constraint": null,
         "pl_skill_constraint": null,
-        "intro_text": "Leaf-bare is taking its toll. Your patrol is cold, frustrated, and most of all, hungry. s_c notices something odd. Is that a fox in the distance? Why is it jumping into the snow like that?",
+        "intro_text": "Leaf-bare is taking its toll. Your patrol is cold, frustrated, and most of all, hungry. p_l notices something odd. Is that a fox in the distance? Why is it jumping into the snow like that?",
         "decline_text": "First the cold, and the snow, and now a fox? This is too much for one day, p_l decides. Back to camp, another patrol can try again later.",
         "success_outcomes": [
             { 
@@ -3850,7 +3850,7 @@
         ]  }
     ], 
         "fail_outcomes": [
-            {"text": "r_c snarls. {PRONOUN/r_c/subject/CAP} {VERB/r_c/is/are} too cold and too hungry to watch a stupid fox. This will be a hard hunt and if you can't focus, then go huddle with the kits at camp.",
+            {"text": "r_c snarls. {PRONOUN/r_c/subject/CAP} {VERB/r_c/are/is} too cold and too hungry to watch a stupid fox. This will be a hard hunt and if you can't focus, then go huddle with the kits at camp.",
             "exp": 0,
             "weight": 15, 
             "prey": ["very small"],
