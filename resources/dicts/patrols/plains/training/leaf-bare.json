@@ -90,7 +90,7 @@
                     "relationships": [
                         {
                             "cats_to": ["p_l"],
-                            "cats_from": ["r_c"],
+                            "cats_from": ["s_c"],
                             "mutual": true,
                             "values": ["respect", "platonic", "comfort"],
                             "amount": -5

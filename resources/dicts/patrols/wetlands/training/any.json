@@ -1051,5 +1051,122 @@
                     ]
                 }
             ]
+    },
+    {
+        "patrol_id": "wtlnd_train_thechasedones_lorelocked1",
+        "biome": ["wetlands"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_bord_story",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6],
+            "apprentice":[1, 6]
+            },
+        "weight": 20,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["LORE,1"],
+        "intro_text": "It's been a hard swimming lesson - app1 has just fallen back in, trying to clamber out with {PRONOUN/app1/poss} claws dug into a tree root, and {PRONOUN/app1/subject}{VERB/app1/'re/'s} looking particularly sorry for {PRONOUN/app1/self}. p_l suggests they take a break, {PRONOUN/p_l/subject} {VERB/p_l/have/has} a story to share. Does app1 know why c_n lives in the quagmire?",
+        "decline_text": "No, and though {PRONOUN/app1/subject}{VERB/app1/'re/'s} polite, app1 doesn't want to hear about it, {PRONOUN/app1/subject}'d just like some help getting the water out of {PRONOUN/app1/poss} pelt.",
+        "success_outcomes": [
+                {
+                    "text": "Long ago, rebels were driven from their former Clans, desperately seeking a new life. But the lands were crowded with other cats, vicious and territorial, and the refugees were chased beyond land and familiarity. Only there did they find safety, in water others cringe from. c_n remembers their lessons still, gaining safety from their swamp.",
+                    "exp": 30,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort", "trust", "platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "p_l tries to share the long ago history of the safe refuge the swamps offered - but app1 throws back {PRONOUN/app1/poss} head and yowls. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} <i>care</i> what some ancient cat did, {PRONOUN/app1/subject} <i>hate</i> this, water is awful!",
+                    "exp": 0,
+                    "weight": 20,
+                    "art": "gen_train_argue",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": true,
+                            "values": ["respect", "platonic", "comfort"],
+                            "amount": -5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": true,
+                            "values": ["dislike"],
+                            "amount": 15
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": false,
+                            "values": ["jealous"],
+                            "amount": 5
+                        }
+                    ]
+                },
+                {
+                    "text": "Long ago, rebels were driven from their former Clans, desperately seeking a new life, p_l begins. But app1 interrupts {PRONOUN/p_l/object} - so those cats were too cowardly to fight then? The exiles should've attacked and taken over, not surrendered and run.",
+                    "exp": 0,
+                    "weight": 20,
+                    "art": "gen_train_argue",
+                    "can_have_stat":["not_pl"],
+                    "stat_trait": [
+                        "troublesome",
+                        "rebellious",
+                        "fierce",
+                        "cold",
+                        "grumpy"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["s_c"],
+                            "mutual": true,
+                            "values": ["respect", "platonic", "comfort"],
+                            "amount": -5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["s_c"],
+                            "mutual": true,
+                            "values": ["dislike"],
+                            "amount": 15
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["s_c"],
+                            "mutual": false,
+                            "values": ["jealous"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ]
     }
 ]

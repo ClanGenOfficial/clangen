@@ -9485,7 +9485,73 @@
                     ]
                 }
             ]
-    },    
+    },
+    {
+        "patrol_id": "gen_train_solreference_lorelocked1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_bord_story",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6],
+            "apprentice":[1, 6]
+            },
+        "weight": 20,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["LORE,1"],
+        "intro_text": "Crossing {PRONOUN/p_l/poss} paws, p_l clears {PRONOUN/p_l/poss} throat. Long ago in the deep time, a rogue caught the ear of a ghost, and stole a secret about the sun blinking.",
+        "decline_text": "Today's not a day to learn about the past, apparently.",
+        "success_outcomes": [
+                {
+                    "text": "Through his knowledge, he lured the Clans away from StarClan, throttling their faith until it almost died. But he underestimated the loyalty of the Star's warrior, who sent the loyal Clancats back and proved him a fake, until he slunk from their lands, tail between his legs, never to be seen again.",
+                    "exp": 30,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort", "trust", "platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "He <i>knew</i> that the sun was going to <i>blink</i>?! r_c is impressed - this rogue must've been gifted with magic! Quietly, p_l puts {PRONOUN/p_l/poss} paws over {PRONOUN/p_l/poss} face, groaning in dismay.",
+                    "exp": 0,
+                    "weight": 20,
+                    "art": "gen_train_argue",
+                    "relationships": [
+                        {
+                            "cats_to": ["r_c"],
+                            "cats_from": ["p_l"],
+                            "mutual": true,
+                            "values": ["respect", "platonic", "comfort"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
+    },
     {
         "patrol_id": "gen_train_lorelocked1",
         "biome": ["Any"],
