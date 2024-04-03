@@ -213,19 +213,14 @@
         ]
     },
     {
-        "id": "patient_warrior_apprentice",
+        "id": "calm_warrior_apprentice",
         "thoughts": [
-            "Is busy mastering a fighting technique",
-            "Spent all morning mastering and practicing the hunting crouch",
-            "Wants to train until {PRONOUN/m_c/subject} {VERB/m_c/have/has} learned everything",
-            "Doesn't stop practicing a move until it's done perfectly",
-            "Likes to catch fish",
+            "Likes to catch prey",
             "Is taking extra time to finish {PRONOUN/m_c/poss} task for today",
-            "Is settling for nothing less than perfect",
             "Is calm and focused"
         ],
         "main_trait_constraint": [
-            "patient"
+            "calm"
         ]
     },
     {
@@ -263,10 +258,31 @@
             "Is hoping to be sent to battle",
             "Is picking a fight with r_c",
             "Is bored during a hunting patrol",
+            "Is busy mastering a fighting technique",
             "Is in trouble after scratching r_c during an argument"
         ],
         "main_trait_constraint": [
             "fierce"
+        ]
+    },
+    {
+        "id": "competitive_warrior_apprentice",
+        "thoughts": [
+            "Is busy mastering a fighting technique"
+        ],
+        "main_trait_constraint": [
+            "competitive"
+        ]
+    },
+    {
+        "id": "responsible_warrior_apprentice",
+        "thoughts": [
+            "Spent all morning mastering and practicing the hunting crouch",
+            "Makes sure that everyone else is fed before taking prey from the prey-pile",
+            "Listens to {PRONOUN/m_c/poss} mentor's advice"
+        ],
+        "main_trait_constraint": [
+            "responsible"
         ]
     },
     {
@@ -356,6 +372,9 @@
             "Doesn't like to take breaks",
             "Offers to go on every patrol today",
             "Is always busy with something",
+            "Wants to train until {PRONOUN/m_c/subject} {VERB/m_c/have/has} learned everything",
+            "Doesn't stop practicing a move until it's done perfectly",
+            "Is settling for nothing less than perfect",
             "Is too busy training to help out around camp"
         ],
         "main_trait_constraint": [

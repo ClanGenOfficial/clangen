@@ -555,6 +555,7 @@ class ListScreen(Screens):
         self.all_pages = int(ceil(len(self.current_listed_cats) /
                                   20.0)) if len(self.current_listed_cats) > 20 else 1
 
+        Cat.ordered_cat_list = self.current_listed_cats
         self.update_page()
 
     def update_page(self):

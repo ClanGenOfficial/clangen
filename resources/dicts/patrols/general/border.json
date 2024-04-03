@@ -695,7 +695,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "The patrol hears a cat begging for their housefolk to come back, just barely legible over the sound of a monster speeding away.",
+        "intro_text": "The patrol hears a cat begging for their housefolk to come back, just barely intelligible over the sound of a monster speeding away.",
         "decline_text": "p_l decides it's none of {PRONOUN/p_l/poss} business, and resumes {PRONOUN/p_l/poss} patrol.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -719,7 +719,7 @@
                     }
                 ],
                 "new_cat": [
-                    ["kittypet"]
+                    ["kittypet", "backstory:kittypet4"]
                 ],
                 "outsider_rep": 1,
                 "injury": [
@@ -1116,7 +1116,7 @@
                 "weight": 5
             },
             {
-                "text": "p_l noses forward, half hidden, only stepping out when n_c0's scent hits {PRONOUN/p_l/object}. They've been planning this for moons - tonight is the night. n_c0 is ready to join c_n, to join p_l, and damn anyone who gossips to the dark forest. Tonight is the first night of the rest of their lives together, nothing is going to stop them.",
+                "text": "p_l noses forward, half hidden, only stepping out when n_c:0's scent hits {PRONOUN/p_l/object}. They've been planning this for moons - tonight is the night. n_c:0 is ready to join c_n, to join p_l, and damn anyone who gossips to the dark forest. Tonight is the first night of the rest of their lives together, nothing is going to stop them.",
                 "exp": 5,
                 "weight": 5,
                 "new_cat": [

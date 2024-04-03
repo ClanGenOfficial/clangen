@@ -39,10 +39,10 @@ class MakeClanScreen(Screens):
 
     expanded_mode_text = "A more hands-on experience. " \
                          "This mode has everything in Classic Mode as well as more management-focused features.<br><br>" \
-                         "New features include:<br>" \
+                         "Additional include:<br>" \
                          "- Illnesses, Injuries, and Permanent Conditions<br>" \
                          "- Herb gathering and treatment<br>" \
-                         "- Ability to choose patrol type<br><br>" \
+                         "- Fresh-kill pile and nutrition system<br><br>" \
                          "With this mode you'll be making the important Clan-life decisions."
 
     cruel_mode_text = "This mode has all the features of Expanded mode, but is significantly more difficult. If " \

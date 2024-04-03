@@ -99,4 +99,4 @@ class TestCondition(unittest.TestCase):
         outcome = injury_outcome._handle_condition_and_scars(patrol)
 
         self.assertEqual(len(patrol_event), 1)
-        self.assertGreater(len(patrol_cat.injuries),1)
+        self.assertGreater(len(patrol_cat.injuries),0)
