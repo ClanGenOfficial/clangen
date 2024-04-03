@@ -1,3 +1,6 @@
+<strong>TBD</strong>
+- Fix: ensure that the changelog is read as UTF-8
+
 <strong>v0.11.1</strong>
 - Fix: The changelog. Yep, just the changelog. Yes, it happened again-
 
