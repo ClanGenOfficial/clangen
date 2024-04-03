@@ -6177,8 +6177,8 @@
                         }
                     ],
                     "history_text": {
-                        "reg_death": "r_c died from the water {PRONOUN/r_c /subject} inhaled on a hunt as a foolish apprentice.",
-                        "lead_death": "from the water {PRONOUN/r_c /subject} inhaled on a hunt as a foolish apprentice"
+                        "reg_death": "r_c died from the water {PRONOUN/r_c/subject} inhaled on a hunt as a foolish apprentice.",
+                        "lead_death": "from the water {PRONOUN/r_c/subject} inhaled on a hunt as a foolish apprentice"
                         }
                 }
             ]

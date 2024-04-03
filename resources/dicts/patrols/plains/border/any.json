@@ -1727,6 +1727,98 @@
                             "amount": -5
                         }
                     ]
+                },
+                {
+                    "text": "With a terrifying anger, the tom unsheathed his claws... but luckily for the molly, she was a StarClan cat in disguise, and with a burst of starlight, Starclan judged him, and turned him into a horrifying monster... a <i>coyote</i>.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_train_ghost",
+                    "can_have_stat":["p_l"],
+                    "stat_trait": [
+                        "nervous",
+                        "insecure",
+                        "gloomy"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                },
+                {
+                    "text": "The powerful tom went to chase her off, but StarClan judged him a monster, and cursed him to become a coyote. It is a lesson all can take note of - the Stars will judge you for your actions.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_train_ghost",
+                    "can_have_stat":["p_l"],
+                    "stat_trait": [
+                        "cold",
+                        "arrogant",
+                        "righteous"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                },
+                {
+                    "text": "The tom drove the molly off and was cursed by StarClan for his cruelty. And good thing too, s_c pipes up! Evil like that should always be punished!",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_train_ghost",
+                    "can_have_stat":["not_pl"],
+                    "stat_trait": [
+                        "compassionate",
+                        "faithful",
+                        "loving",
+                        "responsible"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        },
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
                 }
             ],
             "fail_outcomes": [
