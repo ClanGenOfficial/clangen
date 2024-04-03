@@ -34,7 +34,7 @@ jobs:
         env:
           SDL_VIDEODRIVER: "dummy"
           SDL_AUDIODRIVER: "disk"
-        run: poetry run python3 -m unittest tests/test_thoughts.py tests/test_relation_events.py tests/test_conditions.py tests/test_utility.py tests/test_cat.py tests/test_save.py tests/test_freshkill.py
+        run: poetry run python3 -m unittest tests/test_thoughts.py tests/test_relation_events.py tests/test_group_interaction.py tests/test_conditions.py tests/test_utility.py tests/test_cat.py tests/test_save.py tests/test_filter_patrol.py
         
   # Check if file encoding is correct.
   encoding_test:
@@ -105,3 +105,20 @@ jobs:
           run: poetry install
         - name: Check for pronoun tag errors in resources
           run: poetry run python3 -m unittest tests/test_pronouns.py
+  freshkill_test:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - name: Setup Python 3.11 x64
+          uses: actions/setup-python@v4
+          with:
+            python-version: '3.11'
+            architecture: 'x64'
+        - name: Install poetry
+          uses: abatilo/actions-poetry@v2
+          with:
+            poetry-version: 1.4.1
+        - name: install dependencies
+          run: poetry install
+        - name: Check for pronoun tag errors in resources
+          run: poetry run python3 -m unittest tests/test_freshkill.py
