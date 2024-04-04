@@ -32,12 +32,12 @@
         ],
         "showxp": [
             "Show exact XP and nutrition status",
-            "Will turn 'experience: proficient' into 'experience: proficient (151)'; and 'nutrition: full' into 'nutrition: full (70)'",
+            "Will turn 'experience: proficient' into 'experience: proficient (151)'; and 'nutrition: full' into 'nutrition: full (70)'.",
             false
         ],
         "random med cat": [
             "Allow medicine cats to be randomly selected on patrol",
-            "Medicine cats can be selected with the patrol buttons +1, +3,+6",
+            "Medicine cats can be selected with the patrol buttons +1, +3,+6.",
             true
         ],
         "fading": [
@@ -57,7 +57,7 @@
         ],
         "moons and seasons": [
             "Show moons and seasons widget",
-            "Displays Clan age and current Clan season on several pages",
+            "Displays Clan age and current Clan season on several pages.",
             false
         ]
     },
@@ -85,13 +85,13 @@
     },
     "relation": {
         "affair": [
-            "Allow cats to breed with cats that aren't their mates.",
+            "Allow cats to breed with cats that aren't their mates",
             "This will allow mated and unmated cats to have kits with other cats they are not mated with. This includes, but is not limited to, affairs/cheating.",
             false
         ],
         "same sex birth": [
             "Pregnancy ignores biology",
-            "Allow all cats to get pregnant despise their gender and all couples to birth kittens despite same-sex status.",
+            "Allow all cats to get pregnant despite their gender and all couples to birth kittens despite same-sex status.",
             false
         ],
         "same sex adoption": [
@@ -110,12 +110,12 @@
         ],
         "romantic with former mentor": [
             "Allow romantic interactions with former mentors",
-            "Allows mentors and the cats they trained to be romantic after they become warriors",
+            "Allows mentors and the cats they trained to be romantic after they become warriors.",
             true
         ],
         "first cousin mates": [
             "Allow first cousins to be mates and have romantic interactions",
-            "Allows cats with the same grandparents but different parents to become mates",
+            "Allows cats with the same grandparents but different parents to become mates.",
             false
         ]
     },
