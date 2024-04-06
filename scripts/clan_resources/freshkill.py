@@ -366,6 +366,10 @@ class Freshkill_Pile():
                 feeding_amount += 1
             elif self.amount_food_needed() < self.total_amount and self.nutrition_info[cat.ID].percentage < 100:
                 feeding_amount += 0.5
+
+            if not_moon_feeding:
+                needed_amount = 0
+
             self.feed_cat(cat, feeding_amount, needed_amount)
 
         # feed the rest according to their status
