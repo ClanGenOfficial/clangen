@@ -312,7 +312,7 @@
         },
         "other clans" : {
             "relation": 2,
-            "comment": "Defines how much increase or decrease the relation with other clans."
+            "comment": "Defines how much increase or decrease the relation with other clans is."
         },
         "raid other clans" : {
             "prey_warrior": 3,
@@ -383,7 +383,7 @@
 			"moons_earlier_healed": 1,
             "comments": [
                 "injury will be roughly prevented for every fourth cat",
-                "illness will be roughly prevented for every sixt cat - illness is not as easy preventable as injuries",
+                "illness will be roughly prevented for every sixth cat - illness is not as easy preventable as injuries",
                 "Every second outbreak will be prevented",
                 "moons earlier healed - the moon amount where the cats are earlier healed"
             ]
