@@ -138,8 +138,9 @@ class Screens():
         """Use this function when switching screens.
             It will handle keeping track of the last screen and cur screen.
             Last screen must be tracked to ensure a clear transition between screens."""
-        print(pygame.mixer.music.get_busy())
-        print(self.name)
+
+        # check if music should be playing, this will have to be changed once we have more than just menu music
+        # but for now it does the job
         if pygame.mixer.music.get_busy() and new_screen not in ['settings screen', 'start screen', 'switch clan screen']:
             pygame.mixer.music.fadeout(2000)
         # self.exit_screen()
