@@ -553,7 +553,7 @@ class Patrol():
         romantic_patrols = []
         special_date = get_special_date()
         # This make sure general only gets hunting, border, or training patrols
-		# chose fix type will make it not depending on the content amount
+        # chose fix type will make it not depending on the content amount
         if patrol_type == "general":
             patrol_type = random.choice(["hunting", "border", "training"])
 
@@ -1043,8 +1043,8 @@ class Patrol():
                 f"WARNING: No history found for {self.patrol_event.patrol_id}, it may not need one but double check please!")
         if scar and "scar" in self.patrol_event.history_text:
             adjust_text = self.patrol_event.history_text['scar']
-            adjust_text = adjust_text.replace("r_c", str(cat.name))
             adjust_text = adjust_text.replace("o_c_n", str(self.other_clan.name))
+            adjust_text = process_text(adjust_text, {"r_c": (str(cat.name), choice(cat.pronouns))})
             if possible:
                 History.add_possible_history(cat, condition=condition, scar_text=adjust_text)
             else:
@@ -1053,8 +1053,8 @@ class Patrol():
             if cat.status == 'leader':
                 if "lead_death" in self.patrol_event.history_text:
                     adjust_text = self.patrol_event.history_text['lead_death']
-                    adjust_text = adjust_text.replace("r_c", str(cat.name))
                     adjust_text = adjust_text.replace("o_c_n", str(self.other_clan.name))
+                    adjust_text = process_text(adjust_text, {"r_c": (str(cat.name), choice(cat.pronouns))})
                     if possible:
                         History.add_possible_history(cat, condition=condition, death_text=adjust_text)
                     else:
@@ -1062,8 +1062,8 @@ class Patrol():
             else:
                 if "reg_death" in self.patrol_event.history_text:
                     adjust_text = self.patrol_event.history_text['reg_death']
-                    adjust_text = adjust_text.replace("r_c", str(cat.name))
                     adjust_text = adjust_text.replace("o_c_n", str(self.other_clan.name))
+                    adjust_text = process_text(adjust_text, {"r_c": (str(cat.name), choice(cat.pronouns))})
                     if possible:
                         History.add_possible_history(cat, condition=condition, death_text=adjust_text)
                     else:

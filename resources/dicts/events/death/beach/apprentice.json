@@ -6,7 +6,7 @@
             "Greenleaf", 
             "Leaf-fall"
         ],
-        "death_text": "m_c had not realized {PRONOUN/m_c/poss} fatal mistake until {PRONOUN/m_c/subject} felt {PRONOUN/m_c/poss} paws get clammy and {PRONOUN/m_c/poss} blood, once burning hot and dry after being out in the sun with no water nor shade, turned cold. As the world turned right-side up and {PRONOUN/m_c/poss} consciousness faded right before {PRONOUN/m_c/poss} eyes, m_c knew {PRONOUN/m_c/subject} {VERB/m_c/were/was}beyond saving, as dehydration and overheating claimed the last bits of {PRONOUN/m_c/poss} strength.",
+        "death_text": "m_c had not realized {PRONOUN/m_c/poss} fatal mistake until {PRONOUN/m_c/subject} felt {PRONOUN/m_c/poss} paws get clammy and {PRONOUN/m_c/poss} blood, once burning hot and dry after being out in the sun with no water nor shade, turned cold. As the world turned right-side up and {PRONOUN/m_c/poss} consciousness faded right before {PRONOUN/m_c/poss} eyes, m_c knew {PRONOUN/m_c/subject} {VERB/m_c/were/was} beyond saving, as dehydration and overheating claimed the last bits of {PRONOUN/m_c/poss} strength.",
         "history_text": {
                         "reg_death": "m_c succumbed to dehydration and overheating."
                         },
@@ -76,7 +76,7 @@
             "Greenleaf", 
             "Leaf-fall"
         ],
-        "death_text": "m_c couldn't speak, yell for help, or beg StarClan to give {PRONOUN/m_c/subject} a sign they were still with {PRONOUN/m_c/object}, {PRONOUN/m_c/poss}  tongue having swelled up inside {PRONOUN/m_c/poss} dried mouth. As m_c collapses, feeling {PRONOUN/m_c/poss} body internally shut down because of dehydration and heat exhaustion, {PRONOUN/m_c/subject} pray that {PRONOUN/m_c/poss} clanmates locate m_c's body before {PRONOUN/m_c/subject} become unrecognizable under the sun.",
+        "death_text": "m_c couldn't speak, yell for help, or beg StarClan to give {PRONOUN/m_c/subject} a sign they were still with {PRONOUN/m_c/object}, {PRONOUN/m_c/poss} tongue having swelled up inside {PRONOUN/m_c/poss} dried mouth. As m_c collapses, feeling {PRONOUN/m_c/poss} body internally shut down because of dehydration and heat exhaustion, {PRONOUN/m_c/subject} pray that {PRONOUN/m_c/poss} clanmates locate m_c's body before {PRONOUN/m_c/subject} become unrecognizable under the sun.",
         "history_text": {
                         "reg_death": "m_c was claimed by dehydration and heat exhaustion."
                         },
