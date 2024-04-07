@@ -705,7 +705,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The noise leads {PRONOUN/s_c/object} to a coyote that's busy stripping the last of the meat from a carcass. {PRONOUN/s_c/subject/CAP} {VERB/s_c/wait/waits} till the coyote leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned.",
+                "text": "The noise leads {PRONOUN/r_c/object} to a coyote that's busy stripping the last of the meat from a carcass. {PRONOUN/r_c/subject/CAP} {VERB/r_c/wait/waits} till the coyote leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned.",
                 "exp": 0,
                 "weight": 20
             },
