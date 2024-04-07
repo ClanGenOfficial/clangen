@@ -164,6 +164,7 @@ class MakeClanScreen(Screens):
             return
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            self.menu_button_pressed(event)
             if event.ui_element == self.main_menu:
                 self.change_screen("start screen")
             if self.sub_screen == "game mode":

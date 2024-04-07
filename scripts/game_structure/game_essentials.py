@@ -136,6 +136,7 @@ class Game:
         "show_history_moons": False,
         "fps": 30,
         "disallowed_symbol_tags": [],
+        "audio_mute": False,
     }
     all_screens = {}
     cur_events = {}

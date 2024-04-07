@@ -3,7 +3,7 @@ from threading import current_thread
 import pygame
 import pygame_gui
 
-from scripts.screens.Audio import audio
+from scripts.screens.Audio import audio, menu_screens
 from scripts.utility import update_sprite, scale
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
@@ -128,6 +128,18 @@ class Screens():
             object_id="#clearing_button",
             starting_height=10),
 
+        "mute": UIImageButton(
+            scale(pygame.Rect((1482, 1282), (68, 68))),
+            "",
+            visible=False,
+            manager=MANAGER,
+            object_id="#mute_button"),
+        "unmute": UIImageButton(
+            scale(pygame.Rect((1482, 1282), (68, 68))),
+            "",
+            visible=False,
+            manager=MANAGER,
+            object_id="#unmute_button"),
         "heading": pygame_gui.elements.UITextBox(
             "",
             scale(pygame.Rect((610, 54), (390, 70))),
@@ -258,8 +270,11 @@ class Screens():
     def hide_menu_buttons(self):
         """This hides the menu buttons, so they are no longer visible
             or interact-able. It does not delete the buttons from memory."""
-        for button in self.menu_buttons.values():
-            button.hide()
+        for name, button in self.menu_buttons.items():
+            if name in ['mute', 'unmute'] and self.name in menu_screens:
+                pass
+            else:
+                button.hide()
 
     def show_menu_buttons(self):
         """This shows all menu buttons, and makes them interact-able. """
@@ -276,6 +291,11 @@ class Screens():
                 continue
             else:
                 button.show()
+
+            if name == 'mute' and game.switches['audio_mute']:
+                button.hide()
+            elif name == 'unmute' and not game.switches['audio_mute']:
+                button.hide()
 
     # Enables all menu buttons but the ones passed in.
     # Sloppy, but works. Consider making it nicer.
@@ -308,11 +328,21 @@ class Screens():
         elif event.ui_element == self.menu_buttons["clan_settings"]:
             self.change_screen('clan settings screen')
         elif event.ui_element == self.menu_buttons["moons_n_seasons_arrow"]:
-            if game.settings['mns open']:
-                game.settings['mns open'] = False
+            if game.switches['mns open']:
+                game.switches['mns open'] = False
             else:
-                game.settings['mns open'] = True
+                game.switches['mns open'] = True
             self.update_mns()
+        elif event.ui_element == self.menu_buttons["mute"]:
+            game.switches['audio_mute'] = True
+            audio.mute_music()
+            self.menu_buttons["mute"].hide()
+            self.menu_buttons["unmute"].show()
+        elif event.ui_element == self.menu_buttons["unmute"]:
+            audio.unmute_music(self.name)
+            game.switches['audio_mute'] = False
+            self.menu_buttons["unmute"].hide()
+            self.menu_buttons["mute"].show()
         elif event.ui_element == self.menu_buttons["dens"]:
             self.update_dens()
         elif event.ui_element == self.menu_buttons["lead_den"]:
