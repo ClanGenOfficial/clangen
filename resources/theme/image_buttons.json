@@ -4348,5 +4348,39 @@
                 "path": "resources/images/buttons/view_your_clan_unavailable.png"
             }
         }
+    },
+	"#mute_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/mute.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/mute_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/mute.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/mute.png"
+            }
+        }
+    },
+	"#unmute_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/unmute.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/unmute_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/unmute.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/unmute.png"
+            }
+        }
     }
 }

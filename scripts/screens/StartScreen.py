@@ -61,6 +61,7 @@ class StartScreen(Screens):
             elif platform.system() == 'Linux':
                 subprocess.Popen(['xdg-open', event.link_target])
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            self.menu_button_pressed(event)
             screens = {
                 self.continue_button: 'camp screen',
                 self.switch_clan_button: 'switch clan screen',
@@ -155,7 +156,8 @@ class StartScreen(Screens):
         # this is the only screen that has to check its own music, other screens handle that in the screen change
         audio.check_music('start screen')
 
-        # Make those unslightly menu button hide away
+        # Make those unsightly menu button hide away
+        self.show_menu_buttons()
         self.hide_menu_buttons()
         # Create buttons
 

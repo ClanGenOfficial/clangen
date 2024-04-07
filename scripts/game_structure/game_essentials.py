@@ -134,7 +134,8 @@ class Game():
         'window_open': False,
         'skip_conditions': [],
         'show_history_moons': False,
-        'fps': 30
+        'fps': 30,
+        'audio_mute': False
     }
     all_screens = {}
     cur_events = {}

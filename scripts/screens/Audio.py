@@ -16,11 +16,15 @@ class Audio():
     def __init__(self, current_music=None, playlist=None):
         self.current_music = current_music
         self.playlist = playlist
+        self.muted = False
 
     def check_music(self, screen):
         """
         checks if music currently playing is appropriate for the given screen and changes the music if needed
         """
+        if self.muted:
+            return
+        
         # this should only occur when the game has just opened
         if not self.current_music and screen == 'start screen':
             self.play_music(menu_music, -1)
@@ -51,6 +55,21 @@ class Audio():
         fades the music out, by default the fade is 2 seconds
         """
         pygame.mixer.music.fadeout(fadeout)
+
+    def mute_music(self):
+        """
+        stops all music, current and future
+        """
+        pygame.mixer.music.stop()
+        self.muted = True
+
+    def unmute_music(self, screen):
+        """
+        unmutes, allowing current and future music to play
+        must pass current screen name to ensure correct music plays when unmuted
+        """
+        self.muted = False
+        self.check_music(screen)
 
     def get_biome_music(self):
         """
