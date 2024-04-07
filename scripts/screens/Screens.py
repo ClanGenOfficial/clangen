@@ -1,5 +1,6 @@
 import pygame
 
+from scripts.screens.Audio import audio
 from scripts.utility import update_sprite, scale
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
@@ -92,10 +93,8 @@ class Screens():
             It will handle keeping track of the last screen and cur screen.
             Last screen must be tracked to ensure a clear transition between screens."""
 
-        # check if music should be playing, this will have to be changed once we have more than just menu music
-        # but for now it does the job
-        if pygame.mixer.music.get_busy() and new_screen not in ['settings screen', 'start screen', 'switch clan screen']:
-            pygame.mixer.music.fadeout(2000)
+        audio.check_music(new_screen)
+
         # self.exit_screen()
         game.last_screen_forupdate = self.name
         # This keeps track of the last list-like screen for the back button on cat profiles
