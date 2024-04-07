@@ -149,6 +149,12 @@ class StartScreen(Screens):
         """
         TODO: DOCS
         """
+
+        # start menu music if it isn't already playing
+        if not pygame.mixer.music.get_busy():
+            pygame.mixer.music.load("resources/music/Generations.ogg")
+            pygame.mixer.music.play(loops=-1)
+
         # Make those unslightly menu button hide away
         self.hide_menu_buttons()
         # Create buttons

@@ -91,6 +91,10 @@ class Screens():
         """Use this function when switching screens.
             It will handle keeping track of the last screen and cur screen.
             Last screen must be tracked to ensure a clear transition between screens."""
+        print(pygame.mixer.music.get_busy())
+        print(self.name)
+        if pygame.mixer.music.get_busy() and new_screen not in ['settings screen', 'start screen', 'switch clan screen']:
+            pygame.mixer.music.fadeout(2000)
         # self.exit_screen()
         game.last_screen_forupdate = self.name
         # This keeps track of the last list-like screen for the back button on cat profiles
