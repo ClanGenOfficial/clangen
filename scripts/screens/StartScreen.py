@@ -34,6 +34,7 @@ from scripts.game_structure.game_essentials import (
 from scripts.game_structure.image_button import UIImageButton
 from scripts.game_structure.windows import UpdateAvailablePopup, ChangelogPopup
 from scripts.utility import scale, quit  # pylint: disable=redefined-builtin
+from .Audio import audio
 from .Screens import Screens
 from ..housekeeping.datadir import get_data_dir, get_cache_dir
 from ..housekeeping.update import has_update, UpdateChannel, get_latest_version_number
@@ -160,9 +161,8 @@ class StartScreen(Screens):
         """
 
         # start menu music if it isn't already playing
-        if not pygame.mixer.music.get_busy():
-            pygame.mixer.music.load("resources/music/Generations.ogg")
-            pygame.mixer.music.play(loops=-1)
+        # this is the only screen that has to check its own music, other screens handle that in the screen change
+        audio.check_music('start screen')
 
         # Make those unslightly menu button hide away
         self.hide_menu_buttons()

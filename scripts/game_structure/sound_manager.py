@@ -18,7 +18,7 @@ class _SoundManager:
             return
 
         try:
-            with open("resources/audio/sounds.json", "r") as f:
+            with open("resources/audio.py/sounds.json", "r") as f:
                 sound_data = ujson.load(f)
         except:
             logger.exception("Failed to load sound index")

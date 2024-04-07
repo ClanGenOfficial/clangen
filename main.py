@@ -274,6 +274,7 @@ del finished_loading
 del loading_animation
 del load_data
 
+pygame.mixer.init()
 start_screen.screen_switches()
 
 if game.settings["fullscreen"]:
