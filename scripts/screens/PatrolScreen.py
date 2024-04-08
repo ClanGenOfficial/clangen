@@ -62,6 +62,8 @@ class PatrolScreen(Screens):
                 self.handle_patrol_complete_events(event)
 
             self.menu_button_pressed(event)
+            self.mute_button_pressed(event)
+
 
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
             if event.key == pygame.K_LEFT:
@@ -224,6 +226,7 @@ class PatrolScreen(Screens):
     def screen_switches(self):
         self.set_disabled_menu_buttons(["patrol_screen"])
         self.update_heading_text(f'{game.clan.name}Clan')
+        self.show_mute_buttons()
         self.show_menu_buttons()
         self.open_choose_cats_screen()
 

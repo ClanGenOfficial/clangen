@@ -80,18 +80,6 @@ class Screens():
             visible=False,
             manager=MANAGER,
             object_id="#arrow_mns_button"),
-        "mute": UIImageButton(
-            scale(pygame.Rect((1482, 1282), (68, 68))),
-            "",
-            visible=False,
-            manager=MANAGER,
-            object_id="#mute_button"),
-        "unmute": UIImageButton(
-            scale(pygame.Rect((1482, 1282), (68, 68))),
-            "",
-            visible=False,
-            manager=MANAGER,
-            object_id="#unmute_button"),
         "heading": pygame_gui.elements.UITextBox(
             "",
             scale(pygame.Rect((610, 54), (380, 70))),
@@ -99,6 +87,19 @@ class Screens():
             manager=MANAGER,
             object_id="#text_box_34_horizcenter_light")
     }
+    mute_button = UIImageButton(
+            scale(pygame.Rect((1482, 1282), (68, 68))),
+            "",
+            visible=False,
+            manager=MANAGER,
+            object_id="#mute_button")
+
+    unmute_button = UIImageButton(
+            scale(pygame.Rect((1482, 1282), (68, 68))),
+            "",
+            visible=False,
+            manager=MANAGER,
+            object_id="#unmute_button")
 
     def change_screen(self, new_screen):
         """Use this function when switching screens.
@@ -213,9 +214,9 @@ class Screens():
         """Runs when screen exits"""
         pass
 
-    # Functions to deal with the menu.
+    # Functions to deal with the menu and mute button.
     #   The menu is used very often, so I don't want to keep
-    #   recreating and killing it. Lots of changes for bugs there. 
+    #   recreating and killing it. Lots of chances for bugs there.
     #   
 
     def hide_menu_buttons(self):
@@ -241,6 +242,22 @@ class Screens():
                 button.hide()
             elif name == 'unmute' and not game.switches['audio_mute']:
                 button.hide()
+
+    def hide_mute_buttons(self):
+        """ this hides the mute buttons, so they are no longer visible
+            or interact-able. It does not delete the buttons from memory."""
+
+        self.mute_button.hide()
+        self.unmute_button.hide()
+
+    def show_mute_buttons(self):
+        """This shows all mute buttons, and makes them interact-able. """
+        if game.switches["audio_mute"]:
+            self.unmute_button.show()
+            self.mute_button.hide()
+        else:
+            self.unmute_button.hide()
+            self.mute_button.show()
 
     # Enables all menu buttons but the ones passed in.
     # Sloppy, but works. Consider making it nicer.
@@ -278,17 +295,21 @@ class Screens():
             else:
                 game.switches['mns open'] = True
             self.update_mns()
-        elif event.ui_element == self.menu_buttons["mute"]:
+
+    def mute_button_pressed(self, event):
+        """This is a short-up to deal with mute button presses.
+            This will fail if event.type != pygame_gui.UI_BUTTON_START_PRESS"""
+
+        if event.ui_element == self.mute_button:
             game.switches['audio_mute'] = True
             audio.mute_music()
-            self.menu_buttons["mute"].hide()
-            self.menu_buttons["unmute"].show()
-        elif event.ui_element == self.menu_buttons["unmute"]:
+            self.mute_button.hide()
+            self.unmute_button.show()
+        elif event.ui_element == self.unmute_button:
             audio.unmute_music(self.name)
             game.switches['audio_mute'] = False
-            self.menu_buttons["unmute"].hide()
-            self.menu_buttons["mute"].show()
-
+            self.unmute_button.hide()
+            self.mute_button.show()
 
     def update_heading_text(self, text):
         """Updates the menu heading text"""

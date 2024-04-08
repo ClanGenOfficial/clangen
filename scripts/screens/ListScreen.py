@@ -171,6 +171,8 @@ class ListScreen(Screens):
                 self.change_screen('profile screen')
             else:
                 self.menu_button_pressed(event)
+                self.mute_button_pressed(event)
+
 
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
             if self.search_bar.is_focused:
@@ -179,6 +181,7 @@ class ListScreen(Screens):
                 self.change_screen('patrol screen')
 
     def screen_switches(self):
+        self.show_mute_buttons()
         # Determine the starting list of cats.
         if game.last_list_forProfile:
             if game.last_list_forProfile == 'sc':

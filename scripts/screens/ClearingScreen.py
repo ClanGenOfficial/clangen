@@ -58,6 +58,8 @@ class ClearingScreen(Screens):
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            self.mute_button_pressed(event)
+
             if event.ui_element == self.back_button:
                 self.change_screen('camp screen')
             if event.ui_element == self.stop_focus_button:
@@ -178,6 +180,7 @@ class ClearingScreen(Screens):
             self.tab_list = self.hungry_cats
 
     def screen_switches(self):
+        self.show_mute_buttons()
         self.hide_menu_buttons()
         self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))), "", object_id="#back_button"
                                          , manager=MANAGER)

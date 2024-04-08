@@ -4,7 +4,7 @@ from scripts.game_structure.game_essentials import game
 
 menu_screens = ['settings screen', 'start screen', 'switch clan screen', 'make clan screen']
 
-menu_music = "resources/audio/music/Generations.ogg"
+menu_music = "resources/audio/music/Generations.wav"
 forest_music = []
 plains_music = []
 beach_music = []
@@ -13,9 +13,9 @@ mountain_music = []
 
 class Audio():
 
-    def __init__(self, current_music=None, playlist=None):
-        self.current_music = current_music
-        self.playlist = playlist
+    def __init__(self):
+        self.current_music = None
+        self.playlist = None
         self.muted = False
 
     def check_music(self, screen):
@@ -24,10 +24,11 @@ class Audio():
         """
         if self.muted:
             return
-        
+
         # this should only occur when the game has just opened
         if not self.current_music and screen == 'start screen':
             self.play_music(menu_music, -1)
+
         # otherwise we're checking is the screen is or isn't the menu and changing music accordingly
         elif screen in menu_screens:
             if not self.current_music == menu_music:

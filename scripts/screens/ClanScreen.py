@@ -47,6 +47,7 @@ class ClanScreen(Screens):
         if game.switches['window_open']:
             pass
         elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            self.mute_button_pressed(event)
             if event.ui_element == self.save_button:
                 try:
                     self.save_button_saving_state.show()
@@ -97,6 +98,7 @@ class ClanScreen(Screens):
 
 
     def screen_switches(self):
+        self.show_mute_buttons()
         self.update_camp_bg()
         game.switches['cat'] = None
         if game.clan.biome + game.clan.camp_bg in game.clan.layouts:

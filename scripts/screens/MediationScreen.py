@@ -28,6 +28,8 @@ class MediationScreen(Screens):
     def handle_event(self, event):
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            self.mute_button_pressed(event)
+
             if event.ui_element == self.back_button:
                 self.change_screen('profile screen')
             elif event.ui_element == self.last_med:
@@ -92,6 +94,7 @@ class MediationScreen(Screens):
                     self.update_selected_cats()
 
     def screen_switches(self):
+        self.show_mute_buttons()
         # Gather the mediators:
         self.mediators = []
         for cat in Cat.all_cats_list:

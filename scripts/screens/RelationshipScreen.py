@@ -64,6 +64,8 @@ class RelationshipScreen(Screens):
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            self.mute_button_pressed(event)
+
             if event.ui_element in self.sprite_buttons.values():
                 self.inspect_cat = event.ui_element.return_cat_object()
                 self.update_inspected_relation()
@@ -115,6 +117,7 @@ class RelationshipScreen(Screens):
                 self.update_cat_page()
 
     def screen_switches(self):
+        self.show_mute_buttons()
 
         self.previous_cat_button = UIImageButton(scale(pygame.Rect((50, 50), (306, 60))), "",
                                                  object_id="#previous_cat_button")

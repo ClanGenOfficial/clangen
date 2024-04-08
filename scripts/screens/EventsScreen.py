@@ -156,7 +156,9 @@ class EventsScreen(Screens):
                 self.change_screen('profile screen')    
             else:
                 self.menu_button_pressed(event)
-            
+                self.mute_button_pressed(event)
+
+
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
             if event.key == pygame.K_RIGHT:
                 self.change_screen('camp screen')
@@ -240,6 +242,7 @@ class EventsScreen(Screens):
 
     def screen_switches(self):
         # On first open, update display events list
+        self.show_mute_buttons()
         if not self.first_opened:
             self.first_opened = True
             self.update_display_events_lists()

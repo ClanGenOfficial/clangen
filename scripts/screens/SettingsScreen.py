@@ -78,6 +78,8 @@ class SettingsScreen(Screens):
             elif platform.system() == 'Linux':
                 subprocess.Popen(['xdg-open', event.link_target])
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            self.mute_button_pressed(event)
+
             if event.ui_element == self.main_menu_button:
                 self.change_screen('start screen')
                 return
@@ -177,6 +179,7 @@ class SettingsScreen(Screens):
         """
         TODO: DOCS
         """
+        self.show_mute_buttons()
         self.settings_changed = False
 
         self.general_settings_button = UIImageButton(
