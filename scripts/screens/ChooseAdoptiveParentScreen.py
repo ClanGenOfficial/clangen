@@ -90,6 +90,8 @@ class ChooseAdoptiveParentScreen(Screens):
             return
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            self.mute_button_pressed(event)
+
             # Cat buttons list
             if event.ui_element == self.back_button:
                 self.selected_mate_index = 0
@@ -155,6 +157,7 @@ class ChooseAdoptiveParentScreen(Screens):
 
     def screen_switches(self):
         """Sets up the elements that are always on the page"""
+        self.show_mute_buttons()
 
         self.info = pygame_gui.elements.UITextBox(
             "If a cat is added as an adoptive parent, they will be displayed on the family page and considered a full relative. "

@@ -53,6 +53,8 @@ class SpriteInspectScreen(Screens):
             return
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            self.mute_button_pressed(event)
+
             if event.ui_element == self.back_button:
                 self.change_screen("profile screen")
             elif event.ui_element == self.next_cat_button:
@@ -131,6 +133,7 @@ class SpriteInspectScreen(Screens):
         return super().handle_event(event)
 
     def screen_switches(self):
+        self.show_mute_buttons()
         self.next_cat_button = UIImageButton(
             scale(pygame.Rect((1244, 50), (306, 60))),
             "",

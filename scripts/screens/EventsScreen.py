@@ -309,6 +309,7 @@ class EventsScreen(Screens):
 
     def screen_switches(self):
         # On first open, update display events list
+        self.show_mute_buttons()
         if not self.first_opened:
             self.first_opened = True
             self.update_display_events_lists()

@@ -516,6 +516,7 @@ class ProfileScreen(Screens):
 
         self.build_profile()
 
+        self.hide_mute_buttons()  # no space for mute button on this screen
         self.hide_menu_buttons()  # Menu buttons don't appear on the profile screen
         if game.last_screen_forProfile == "med den screen":
             self.toggle_conditions_tab()
