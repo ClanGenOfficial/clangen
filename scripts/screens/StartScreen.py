@@ -28,7 +28,7 @@ from scripts.game_structure.game_essentials import game, screen, screen_x, scree
 from scripts.game_structure.image_button import UIImageButton
 from scripts.game_structure.windows import UpdateAvailablePopup, ChangelogPopup
 from scripts.utility import scale, quit  # pylint: disable=redefined-builtin
-from .Audio import audio
+from scripts.game_structure.audio import music_manager
 from .Screens import Screens
 from ..housekeeping.datadir import get_data_dir, get_cache_dir
 from ..housekeeping.update import has_update, UpdateChannel, get_latest_version_number
@@ -154,7 +154,7 @@ class StartScreen(Screens):
 
         # start menu music if it isn't already playing
         # this is the only screen that has to check its own music, other screens handle that in the screen change
-        audio.check_music('start screen')
+        music_manager.check_music('start screen')
 
         # Make those unsightly menu buttons hide away
         self.hide_menu_buttons()

@@ -1,6 +1,6 @@
 import pygame
 
-from scripts.screens.Audio import audio, menu_screens
+from scripts.game_structure.audio import music_manager, menu_screens
 from scripts.utility import update_sprite, scale
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
@@ -106,7 +106,7 @@ class Screens():
             It will handle keeping track of the last screen and cur screen.
             Last screen must be tracked to ensure a clear transition between screens."""
 
-        audio.check_music(new_screen)
+        music_manager.check_music(new_screen)
 
         # self.exit_screen()
         game.last_screen_forupdate = self.name
@@ -302,11 +302,11 @@ class Screens():
 
         if event.ui_element == self.mute_button:
             game.switches['audio_mute'] = True
-            audio.mute_music()
+            music_manager.mute_music()
             self.mute_button.hide()
             self.unmute_button.show()
         elif event.ui_element == self.unmute_button:
-            audio.unmute_music(self.name)
+            music_manager.unmute_music(self.name)
             game.switches['audio_mute'] = False
             self.unmute_button.hide()
             self.mute_button.show()
