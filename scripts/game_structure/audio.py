@@ -78,17 +78,17 @@ class MusicManager():
         self.muted = False
         self.check_music(screen)
 
-    def change_volume(self, volume):
+    def change_volume(self, new_volume):
         """ changes the volume, int given should be between 0 and 100"""
         # make sure given volume is between 0 and 100
-        if volume > 100:
-            volume = 100
-        if volume < 0:
-            volume = 0
+        if new_volume > 100:
+            new_volume = 100
+        if new_volume < 0:
+            new_volume = 0
 
         # convert to a float and change volume accordingly
-        self.volume = volume / 100
-        game.settings["music_volume"] = volume
+        self.volume = new_volume / 100
+        game.settings["music_volume"] = new_volume
         if pygame.mixer.music.get_busy():
             pygame.mixer.music.set_volume(self.volume)
 
@@ -124,8 +124,9 @@ music_manager = MusicManager()
 # old soundmanager class, i'll come back to this when we have sound effects to implement
 class _SoundManager():
 
-    def __init__(self, volume: int = 50):
+    def __init__(self):
         self.sounds = {}
+        self.volume = game.settings["sound_volume"] / 100
 
         try:
             with open("resources/audio/sounds.json", "r") as f:
@@ -140,10 +141,7 @@ class _SoundManager():
             except:
                 logger.exception("Failed to load sound")
 
-        self._volume = volume
-
     def play(self, sound):
-        print(self.sounds)
         try:
             pygame.mixer.Sound.play(self.sounds[sound])
         except KeyError:
@@ -151,20 +149,19 @@ class _SoundManager():
         except:
             logger.exception(f"Could not play sound {sound}")
 
-    @property
-    def volume(self):
-        return self._volume
-
-    @volume.setter
-    def volume(self, a):
-        if (a > 100):
+    def change_volume(self, new_volume):
+        """ changes the volume, int given should be between 0 and 100"""
+        # make sure given volume is between 0 and 100
+        if new_volume > 100:
             new_volume = 100
-        elif (a < 0):
+        if new_volume < 0:
             new_volume = 0
-        new_volume = a / 100
 
-        for _, sound in self.sounds.items():
-            sound.set_volume(new_volume)
+        # convert to a float and change volume accordingly
+        self.volume = new_volume / 100
+        game.settings["sound_volume"] = new_volume
+        for sound in self.sounds:
+            pygame.mixer.Sound.set_volume(self.sounds[sound], self.volume)
 
 
 sound_manager = _SoundManager()
