@@ -9812,9 +9812,9 @@
                         "amount": 5
                     }
                 ]
-            }
+            },
             {
-                "text": "This cat, this <i>spirit</i>, has a commanding presence. s_c softly encourages {PRONOUN/s_c/poss} apprentice to the battle, but also makes sure that r_c doesn't get too hurt by the spirit. The Dark Forest spirit argues that r_c would never find out how real warriors fight, but p_l retorts that this is r_c's first time, and they can focus on more battle moves later.",
+                "text": "This cat, this <i>spirit</i>, has a commanding presence. s_c softly encourages the apprentice to the battle, but also makes sure that r_c doesn't get too hurt by the spirit. The Dark Forest spirit argues that r_c would never find out how real warriors fight, but p_l retorts that this is r_c's first time, and they can focus on more battle moves later.",
                 "exp": 10,
                 "weight": 20,
                 "injury": [
@@ -9843,7 +9843,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c says that no, no, {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} want to fight <i>that</i>. The spirit is offended, but surprisingly, p_l sympathizes with {PRONOUN/p_l/poss} apprentice, and brings them to do other safer training.",
+                "text": "r_c says that no, no, {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} want to fight <i>that</i>. The spirit is offended, but surprisingly, p_l sympathizes with the apprentice, and brings {PRONOUN/r_c/object} to do other safer training.",
                 "exp": 0,
                 "weight": 10,
                 "relationships": [
