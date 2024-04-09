@@ -4382,5 +4382,22 @@
                 "path": "resources/images/buttons/unmute.png"
             }
         }
+    },
+	"#audio_settings_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/audio_settings.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/audio_settings_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/audio_settings.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/audio_settings_unavailable.png"
+            }
+        }
     }
 }

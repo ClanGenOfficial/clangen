@@ -82,6 +82,9 @@
         "fullscreen": [
             false,
             true
+        ],
+        "music_volume": [
+            100
         ]
     }
 }
