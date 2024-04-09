@@ -15,6 +15,7 @@ from scripts.game_structure.image_button import UIImageButton
 from scripts.game_structure.windows import SaveError
 from scripts.utility import get_text_box_theme, scale, quit  # pylint: disable=redefined-builtin
 from .Screens import Screens
+from ..game_structure.audio import music_manager
 from ..housekeeping.datadir import get_data_dir
 from ..housekeeping.version import get_version_info
 
@@ -50,6 +51,9 @@ class SettingsScreen(Screens):
     # Contains the text for the checkboxes.
     checkboxes_text = {}
 
+    # Contains the volume elements
+    volume_elements = {}
+
     # contains the tooltips for contributors
     tooltip = {}
 
@@ -70,6 +74,12 @@ class SettingsScreen(Screens):
         """
         TODO: DOCS
         """
+        if event.type == pygame_gui.UI_HORIZONTAL_SLIDER_MOVED:
+            self.update_volume_indicator()
+            music_manager.change_volume(event.value)
+            self.settings_changed = True
+            self.update_save_button()
+
         if event.type == pygame_gui.UI_TEXT_BOX_LINK_CLICKED:
             if platform.system() == 'Darwin':
                 subprocess.Popen(["open", "-u", event.link_target])
@@ -110,6 +120,8 @@ class SettingsScreen(Screens):
             elif event.ui_element == self.general_settings_button:
                 self.open_general_settings()
                 return
+            elif event.ui_element == self.audio_settings_button:
+                self.open_audio_settings()
             elif event.ui_element == self.info_button:
                 self.open_info_screen()
                 return
@@ -183,17 +195,22 @@ class SettingsScreen(Screens):
         self.settings_changed = False
 
         self.general_settings_button = UIImageButton(
-            scale(pygame.Rect((350, 200), (300, 60))),
+            scale(pygame.Rect((200, 200), (300, 60))),
             "",
             object_id="#general_settings_button",
             manager=MANAGER)
+        self.audio_settings_button = UIImageButton(scale(
+            pygame.Rect((500, 200), (300, 60))),
+            "",
+            object_id="#audio_settings_button",
+            manager=MANAGER)
         self.info_button = UIImageButton(scale(
-            pygame.Rect((650, 200), (300, 60))),
+            pygame.Rect((800, 200), (300, 60))),
             "",
             object_id="#info_settings_button",
             manager=MANAGER)
         self.language_button = UIImageButton(scale(
-            pygame.Rect((950, 200), (300, 60))),
+            pygame.Rect((1100, 200), (300, 60))),
             "",
             object_id="#lang_settings_button",
             manager=MANAGER)
@@ -263,6 +280,8 @@ class SettingsScreen(Screens):
         self.clear_sub_settings_buttons_and_text()
         self.general_settings_button.kill()
         del self.general_settings_button
+        self.audio_settings_button.kill()
+        del self.audio_settings_button
         self.info_button.kill()
         del self.info_button
         self.language_button.kill()
@@ -323,6 +342,55 @@ class SettingsScreen(Screens):
         #   It has to separated because the checkboxes must be updated when settings are changed.
         #   Fix if you want. - keyraven
         self.refresh_checkboxes()
+
+    def open_audio_settings(self):
+
+        self.enable_all_menu_buttons()
+        self.audio_settings_button.disable()
+        self.clear_sub_settings_buttons_and_text()
+        self.sub_menu = 'audio'
+        self.save_settings_button.show()
+
+        self.volume_elements["audio_settings_info"] = pygame_gui.elements.UITextBox(
+            "Change the settings for the game audio here.",
+            scale(pygame.Rect((200, 320), (1200, 200))),
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            manager=MANAGER)
+
+        x_pos = 400
+        y_pos = 500
+
+        self.volume_elements["music_volume_text"] = pygame_gui.elements.UITextBox(
+            "Music Volume:",
+            scale(pygame.Rect((x_pos, y_pos), (300, 60))),
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            manager=MANAGER)
+
+        x_pos += 350
+
+        self.volume_elements["volume_slider"] = pygame_gui.elements.UIHorizontalSlider(
+            scale(pygame.Rect((x_pos, y_pos), (400, 60))),
+            start_value=game.settings["music_volume"],
+            value_range=(0, 100),
+            click_increment=1,
+            manager=MANAGER)
+        x_pos += 400
+
+        self.volume_elements["volume_indicator"] = pygame_gui.elements.UITextBox(
+            f"{self.volume_elements['volume_slider'].get_current_value()}",
+            scale(pygame.Rect((x_pos, y_pos), (100, 60))),
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            manager=MANAGER)
+
+    def update_volume_indicator(self):
+        self.volume_elements["volume_indicator"].kill()
+
+        self.volume_elements["volume_indicator"] = pygame_gui.elements.UITextBox(
+            f"{self.volume_elements['volume_slider'].get_current_value()}",
+            scale(pygame.Rect((1150, 500), (100, 60))),
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            manager=MANAGER)
+        pass
 
     def open_info_screen(self):
         """Open's info screen"""
@@ -457,6 +525,9 @@ class SettingsScreen(Screens):
         for text in self.checkboxes_text.values():
             text.kill()
         self.checkboxes_text = {}
+        for item in self.volume_elements.values():
+            item.kill()
+        self.volume_elements = {}
 
     def enable_all_menu_buttons(self):
         """
@@ -465,6 +536,7 @@ class SettingsScreen(Screens):
         self.general_settings_button.enable()
         self.info_button.enable()
         self.language_button.enable()
+        self.audio_settings_button.enable()
 
     def on_use(self):
         """

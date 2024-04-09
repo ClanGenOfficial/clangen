@@ -20,6 +20,7 @@ class MusicManager():
         self.current_music = None
         self.playlist = None
         self.muted = False
+        self.volume = game.settings["music_volume"]/100
 
     def check_music(self, screen):
         """
@@ -52,6 +53,7 @@ class MusicManager():
         """
         self.current_music = music
         pygame.mixer.music.load(music)
+        pygame.mixer.music.set_volume(self.volume)
         pygame.mixer.music.play(loops)
 
     def fade_music(self, fadeout=2000):
@@ -74,6 +76,20 @@ class MusicManager():
         """
         self.muted = False
         self.check_music(screen)
+
+    def change_volume(self, volume):
+        """ changes the volume, int given should be between 0 and 100"""
+        # make sure given volume is between 0 and 100
+        if volume > 100:
+            volume = 100
+        if volume < 0:
+            volume = 0
+
+        # convert to a float and change volume accordingly
+        self.volume = volume/100
+        game.settings["music_volume"] = volume
+        if pygame.mixer.music.get_busy():
+            pygame.mixer.music.set_volume(self.volume)
 
     def get_biome_music(self):
         """
