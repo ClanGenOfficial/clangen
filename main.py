@@ -14,7 +14,7 @@ It then loads the settings, and then loads the start screen.
 
 
 
-""" # pylint: enable=line-too-long
+"""  # pylint: enable=line-too-long
 import shutil
 import sys
 import time
@@ -22,6 +22,8 @@ import os
 import threading
 
 from importlib.util import find_spec
+
+from scripts.game_structure.audio import sound_manager
 
 if not getattr(sys, 'frozen', False):
     requiredModules = [
@@ -46,8 +48,9 @@ if not getattr(sys, 'frozen', False):
                 
                 Please look at the "README.md" file for instructions on how to install them.
                 """)
-        
-        print("If you are still having issues, please ask for help in the clangen discord server: https://discord.gg/clangen")
+
+        print(
+            "If you are still having issues, please ask for help in the clangen discord server: https://discord.gg/clangen")
         sys.exit(1)
 
     del requiredModules
@@ -59,11 +62,9 @@ from scripts.housekeeping.stream_duplexer import UnbufferedStreamDuplexer
 from scripts.housekeeping.datadir import get_log_dir, setup_data_dir
 from scripts.housekeeping.version import get_version_info, VERSION_NAME
 
-
 directory = os.path.dirname(__file__)
 if directory:
     os.chdir(directory)
-
 
 if os.path.exists("auto-updated"):
     print("Clangen starting, deleting auto-updated file")
@@ -72,10 +73,8 @@ if os.path.exists("auto-updated"):
     print("Update Complete!")
     print("New version: " + get_version_info().version_number)
 
-
 setup_data_dir()
 timestr = time.strftime("%Y%m%d_%H%M%S")
-
 
 stdout_file = open(get_log_dir() + f'/stdout_{timestr}.log', 'a')
 stderr_file = open(get_log_dir() + f'/stderr_{timestr}.log', 'a')
@@ -87,8 +86,7 @@ import logging
 
 formatter = logging.Formatter(
     "%(name)s - %(levelname)s - %(filename)s / %(funcName)s / %(lineno)d - %(message)s"
-    )
-
+)
 
 # Logging for file
 timestr = time.strftime("%Y%m%d_%H%M%S")
@@ -103,7 +101,6 @@ stream_handler.setFormatter(formatter)
 logging.root.addHandler(file_handler)
 logging.root.addHandler(stream_handler)
 
-
 prune_logs(logs_to_keep=10, retain_empty_logs=False)
 
 
@@ -113,6 +110,7 @@ def log_crash(logtype, value, tb):
     """
     logging.critical("Uncaught exception", exc_info=(logtype, value, tb))
     sys.__excepthook__(type, value, tb)
+
 
 sys.excepthook = log_crash
 
@@ -130,13 +128,14 @@ if os.environ.get('CODESPACES'):
     print("(use clangen in fullscreen mode for best results)")
     print('')
 
-
 if get_version_info().is_source_build:
     print("Running on source code")
     if get_version_info().version_number == VERSION_NAME:
         print("Failed to get git commit hash, using hardcoded version number instead.")
-        print("Hey testers! We recommend you use git to clone the repository, as it makes things easier for everyone.")  # pylint: disable=line-too-long
-        print("There are instructions at https://discord.com/channels/1003759225522110524/1054942461178421289/1078170877117616169")  # pylint: disable=line-too-long
+        print(
+            "Hey testers! We recommend you use git to clone the repository, as it makes things easier for everyone.")  # pylint: disable=line-too-long
+        print(
+            "There are instructions at https://discord.com/channels/1003759225522110524/1054942461178421289/1078170877117616169")  # pylint: disable=line-too-long
 else:
     print("Running on PyInstaller build")
 
@@ -155,11 +154,8 @@ from scripts.debug_menu import debugmode
 import pygame_gui
 import pygame
 
-
-
-
 # import all screens for initialization (Note - must be done after pygame_gui manager is created)
-from scripts.screens.all_screens import start_screen # pylint: disable=ungrouped-imports
+from scripts.screens.all_screens import start_screen  # pylint: disable=ungrouped-imports
 
 # P Y G A M E
 clock = pygame.time.Clock()
@@ -172,10 +168,11 @@ game.rpc.start_rpc.set()
 # LOAD cats & clan
 finished_loading = False
 
+
 def load_data():
     global finished_loading
-    
-    #load in the spritesheets
+
+    # load in the spritesheets
     sprites.load_all()
 
     clan_list = game.read_clans()
@@ -192,54 +189,55 @@ def load_data():
                 game.switches[
                     'error_message'] = 'There was an error loading the cats file!'
                 game.switches['traceback'] = e
-    
+
     finished_loading = True
+
 
 def loading_animation():
     global finished_loading
-    
+
     # Load images, adjust color
     color = pygame.Surface((200, 210))
     if game.settings["dark mode"]:
         color.fill(game.config["theme"]["light_mode_background"])
     else:
         color.fill(game.config["theme"]["dark_mode_background"])
-    
+
     images = []
     for i in range(1, 11):
         im = pygame.image.load(f"resources/images/loading_animate/startup/{i}.png")
-        im.blit(color, (0,0), special_flags=pygame.BLEND_RGBA_MULT)
+        im.blit(color, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
         images.append(im)
-        
-    #Cleanup
+
+    # Cleanup
     del im
     del color
-    
+
     x = screen.get_width() / 2
     y = screen.get_height() / 2
-    
+
     i = 0
     total_frames = len(images)
     while not finished_loading:
-        clock.tick(8) # Loading screen is 8FPS
+        clock.tick(8)  # Loading screen is 8FPS
 
         if game.settings["dark mode"]:
             screen.fill(game.config["theme"]["dark_mode_background"])
         else:
             screen.fill(game.config["theme"]["light_mode_background"])
-        
-        screen.blit(images[i], (x - images[i].get_width() / 2 , y - images[i].get_height() / 2))
-        
+
+        screen.blit(images[i], (x - images[i].get_width() / 2, y - images[i].get_height() / 2))
+
         i += 1
         if i >= total_frames:
             i = 0
-        
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 quit(savesettings=False)
-            
+
         pygame.display.update()
-    
+
 
 loading_thread = threading.Thread(target=load_data)
 loading_thread.start()
@@ -254,7 +252,7 @@ del finished_loading
 del loading_animation
 del load_data
 
-pygame.mixer.pre_init(buffer=4096)
+pygame.mixer.pre_init(buffer=44100)
 pygame.mixer.init()
 start_screen.screen_switches()
 
@@ -273,7 +271,7 @@ else:
     # Adjust position
     version_number.set_position(
         (800 - version_number.get_relative_rect()[2] - 8,
-        700 - version_number.get_relative_rect()[3]))
+         700 - version_number.get_relative_rect()[3]))
 
 if get_version_info().is_source_build or get_version_info().is_dev():
     dev_watermark = pygame_gui.elements.UILabel(
@@ -282,14 +280,9 @@ if get_version_info().is_source_build or get_version_info().is_dev():
         object_id="#dev_watermark"
     )
 
-
 cursor_img = pygame.image.load('resources/images/cursor.png').convert_alpha()
-cursor = pygame.cursors.Cursor((9,0), cursor_img)
+cursor = pygame.cursors.Cursor((9, 0), cursor_img)
 disabled_cursor = pygame.cursors.Cursor(pygame.SYSTEM_CURSOR_ARROW)
-
-
-
-
 
 while True:
     time_delta = clock.tick(game.switches['fps']) / 1000.0
@@ -311,7 +304,10 @@ while True:
     # EVENTS
     for event in pygame.event.get():
         game.all_screens[game.current_screen].handle_event(event)
-
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            sound_manager.play("button_press")
+        elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
+            sound_manager.play("button_hover")
         if event.type == pygame.QUIT:
             # Dont display if on the start screen or there is no clan.
             if (game.switches['cur_screen'] in ['start screen',
@@ -319,11 +315,10 @@ while True:
                                                 'settings screen',
                                                 'info screen',
                                                 'make clan screen']
-                or not game.clan):
+                    or not game.clan):
                 quit(savesettings=False)
             else:
                 SaveCheck(game.switches['cur_screen'], False, None)
-
 
         # MOUSE CLICK
         if event.type == pygame.MOUSEBUTTONDOWN:
@@ -334,7 +329,7 @@ while True:
                 if game.settings['fullscreen']:
                     print(f"(x: {_[0]}, y: {_[1]})")
                 else:
-                    print(f"(x: {_[0]*2}, y: {_[1]*2})")
+                    print(f"(x: {_[0] * 2}, y: {_[1] * 2})")
                 del _
 
         # F2 turns toggles visual debug mode for pygame_gui, allowed for easier bug fixes.
@@ -345,7 +340,6 @@ while True:
                 MANAGER.print_layer_debug()
 
         MANAGER.process_events(event)
-    
 
     MANAGER.update(time_delta)
 
@@ -356,11 +350,9 @@ while True:
         game.all_screens[game.current_screen].screen_switches()
         game.switch_screens = False
 
-
     debugmode.update1(clock)
     # END FRAME
     MANAGER.draw_ui(screen)
     debugmode.update2(screen)
-
 
     pygame.display.update()

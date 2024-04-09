@@ -355,7 +355,7 @@ class SettingsScreen(Screens):
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER)
 
-        x_pos = 400
+        x_pos = 380
         y_pos = 500
 
         self.volume_elements["music_volume_text"] = pygame_gui.elements.UITextBox(
@@ -371,8 +371,9 @@ class SettingsScreen(Screens):
             start_value=game.settings["music_volume"],
             value_range=(0, 100),
             click_increment=1,
+            object_id='horizontal_slider',
             manager=MANAGER)
-        x_pos += 400
+        x_pos += 385
 
         self.volume_elements["volume_indicator"] = pygame_gui.elements.UITextBox(
             f"{self.volume_elements['volume_slider'].get_current_value()}",
@@ -385,7 +386,7 @@ class SettingsScreen(Screens):
 
         self.volume_elements["volume_indicator"] = pygame_gui.elements.UITextBox(
             f"{self.volume_elements['volume_slider'].get_current_value()}",
-            scale(pygame.Rect((1150, 500), (100, 60))),
+            scale(pygame.Rect((1115, 500), (100, 60))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER)
         pass
@@ -437,7 +438,7 @@ class SettingsScreen(Screens):
 
             i += 1
         self.checkboxes_text["info_container"].set_scrollable_area_dimensions(
-            (1150 / 1600 * screen_x, (i * 56 + y_pos + 550) / 1400 * screen_y))
+            (1150 / 1600 * screen_x, (i * 56 + y_pos + 550) / 1300 * screen_y))
 
     def open_lang_settings(self):
         """Open Language Settings"""
