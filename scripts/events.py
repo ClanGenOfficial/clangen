@@ -82,8 +82,7 @@ class Events:
         Pregnancy_Events.handle_pregnancy_age(game.clan)
         self.check_war()
 
-        if game.clan.game_mode in ['expanded', 'cruel season'
-                                   ] and game.clan.freshkill_pile:
+        if game.clan.game_mode in ['expanded', 'cruel season'] and game.clan.freshkill_pile:
             # feed the cats and update the nutrient status
             relevant_cats = list(
                 filter(lambda _cat: _cat.is_alive() and not _cat.exiled and
@@ -625,7 +624,7 @@ class Events:
             game.clan.freshkill_pile.add_freshkill(total_amount)
             if total_amount > 1:
                 focus_text = f"With the heightened focus of the Clan, {total_amount} additional pieces of prey were gathered."
-            if total_amount == 1:
+            elif total_amount == 1:
                 focus_text = f"With the heightened focus of the Clan, {total_amount} additional piece of prey was gathered."
             else:
                 focus_text = "Despite the additional focus of the Clan, no prey could be gathered."
@@ -730,19 +729,20 @@ class Events:
             for med in healthy_meds:
                 herbs_found.extend(random.sample(HERBS, k=med_amount))
             herb_amount = len(herbs_found)
-            herb_counter = Counter(herbs_found)
-            game.clan.herbs.update(herb_counter)
-            log_text = "With the additional focus of the Clan, following herbs were gathered: "
-            idx = 0
-            for herb, amount in herb_counter.items():
-                log_text += str(amount) + " " + herb.replace("_", " ")
-                idx += 1
-                if idx < len(herb_counter) - 1:
-                    log_text += ", "
-                elif idx < len(herb_counter):
-                    log_text += " and "
-            log_text += "."
-            game.herb_events_list.extend(log_text)
+            if herb_amount > 0:
+                herb_counter = Counter(herbs_found)
+                game.clan.herbs.update(herb_counter)
+                log_text = "With the additional focus of the Clan, following herbs were gathered: "
+                idx = 0
+                for herb, amount in herb_counter.items():
+                    log_text += str(amount) + " " + herb.replace("_", " ")
+                    idx += 1
+                    if idx < len(herb_counter) - 1:
+                        log_text += ", "
+                    elif idx < len(herb_counter):
+                        log_text += " and "
+                log_text += "."
+                game.herb_events_list.append(log_text)
 
             # handle injuries / illness
             relevant_cats = healthy_warriors + healthy_meds
