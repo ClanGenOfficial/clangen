@@ -1,13 +1,14 @@
 import pygame
 import logging
 import ujson
+
 logger = logging.getLogger(__name__)
 
 from scripts.game_structure.game_essentials import game
 
 menu_screens = ['settings screen', 'start screen', 'switch clan screen', 'make clan screen']
 
-menu_music = "resources/audio/music/Generations.wav"
+menu_music = "resources/audio/music/Clangen_Generations_441khz.mp3"
 forest_music = []
 plains_music = []
 beach_music = []
@@ -20,7 +21,7 @@ class MusicManager():
         self.current_music = None
         self.playlist = None
         self.muted = False
-        self.volume = game.settings["music_volume"]/100
+        self.volume = game.settings["music_volume"] / 100
 
     def check_music(self, screen):
         """
@@ -86,7 +87,7 @@ class MusicManager():
             volume = 0
 
         # convert to a float and change volume accordingly
-        self.volume = volume/100
+        self.volume = volume / 100
         game.settings["music_volume"] = volume
         if pygame.mixer.music.get_busy():
             pygame.mixer.music.set_volume(self.volume)
@@ -119,39 +120,30 @@ class MusicManager():
 
 music_manager = MusicManager()
 
+
 # old soundmanager class, i'll come back to this when we have sound effects to implement
-"""class _SoundManager():
+class _SoundManager():
 
     def __init__(self, volume: int = 50):
         self.sounds = {}
 
         try:
-            pygame.mixer.init()
-        except:
-            logger.exception("Failed to initialize sound mixer")
-            return
-
-        try:
-            with open("resources/audio.py/sounds.json", "r") as f:
+            with open("resources/audio/sounds.json", "r") as f:
                 sound_data = ujson.load(f)
         except:
             logger.exception("Failed to load sound index")
             return
-
         for sound in sound_data:
             try:
-                if "name" in sound:
-                    self.sounds[sound["name"]] = pygame.mixer.Sound(
-                        sound["path"])
-                else:
-                    self.sounds[sound["path"]] = pygame.mixer.Sound(
-                        sound["path"])
+                self.sounds[sound] = pygame.mixer.Sound(
+                    sound_data[sound])
             except:
                 logger.exception("Failed to load sound")
 
         self._volume = volume
 
     def play(self, sound):
+        print(self.sounds)
         try:
             pygame.mixer.Sound.play(self.sounds[sound])
         except KeyError:
@@ -175,4 +167,4 @@ music_manager = MusicManager()
             sound.set_volume(new_volume)
 
 
-sound_manager = _SoundManager()"""
+sound_manager = _SoundManager()

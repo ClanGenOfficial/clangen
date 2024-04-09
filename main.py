@@ -21,6 +21,8 @@ import sys
 import threading
 import time
 from importlib.util import find_spec
+from scripts.game_structure.audio import sound_manager
+
 
 if not getattr(sys, "frozen", False):
     requiredModules = [
@@ -62,11 +64,9 @@ from scripts.housekeeping.stream_duplexer import UnbufferedStreamDuplexer
 from scripts.housekeeping.datadir import get_log_dir, setup_data_dir
 from scripts.housekeeping.version import get_version_info, VERSION_NAME
 
-
 directory = os.path.dirname(__file__)
 if directory:
     os.chdir(directory)
-
 
 if os.path.exists("auto-updated"):
     print("Clangen starting, deleting auto-updated file")
@@ -74,7 +74,6 @@ if os.path.exists("auto-updated"):
     shutil.rmtree("Downloads", ignore_errors=True)
     print("Update Complete!")
     print("New version: " + get_version_info().version_number)
-
 
 setup_data_dir()
 timestr = time.strftime("%Y%m%d_%H%M%S")
@@ -92,7 +91,6 @@ formatter = logging.Formatter(
     "%(name)s - %(levelname)s - %(filename)s / %(funcName)s / %(lineno)d - %(message)s"
 )
 
-
 # Logging for file
 timestr = time.strftime("%Y%m%d_%H%M%S")
 log_file_name = get_log_dir() + f"/clangen_{timestr}.log"
@@ -105,7 +103,6 @@ stream_handler = logging.StreamHandler()
 stream_handler.setFormatter(formatter)
 logging.root.addHandler(file_handler)
 logging.root.addHandler(stream_handler)
-
 
 prune_logs(logs_to_keep=10, retain_empty_logs=False)
 
@@ -136,7 +133,6 @@ if os.environ.get("CODESPACES"):
     )
     print("(use clangen in fullscreen mode for best results)")
     print("")
-
 
 if get_version_info().is_source_build:
     print("Running on source code")
@@ -274,7 +270,7 @@ del finished_loading
 del loading_animation
 del load_data
 
-pygame.mixer.pre_init(buffer=4096)
+pygame.mixer.pre_init(buffer=44100)
 pygame.mixer.init()
 start_screen.screen_switches()
 
@@ -338,7 +334,10 @@ while True:
     # EVENTS
     for event in pygame.event.get():
         game.all_screens[game.current_screen].handle_event(event)
-
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            sound_manager.play("button_press")
+        elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
+            sound_manager.play("button_hover")
         if event.type == pygame.QUIT:
             # Dont display if on the start screen or there is no clan.
             if (
@@ -365,7 +364,7 @@ while True:
                 if game.settings["fullscreen"]:
                     print(f"(x: {_[0]}, y: {_[1]})")
                 else:
-                    print(f"(x: {_[0]*2}, y: {_[1]*2})")
+                    print(f"(x: {_[0] * 2}, y: {_[1] * 2})")
                 del _
 
         # F2 turns toggles visual debug mode for pygame_gui, allowed for easier bug fixes.
