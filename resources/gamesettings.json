@@ -90,6 +90,9 @@
         ],
         "music_volume": [
             100
+        ],
+        "sound_volume": [
+            100
         ]
     }
 }

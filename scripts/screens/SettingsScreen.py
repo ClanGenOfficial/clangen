@@ -15,7 +15,7 @@ from scripts.game_structure.image_button import UIImageButton
 from scripts.game_structure.windows import SaveError
 from scripts.utility import get_text_box_theme, scale, quit  # pylint: disable=redefined-builtin
 from .Screens import Screens
-from ..game_structure.audio import music_manager
+from ..game_structure.audio import music_manager, sound_manager
 from ..housekeeping.datadir import get_data_dir
 from ..housekeeping.version import get_version_info
 
@@ -75,10 +75,16 @@ class SettingsScreen(Screens):
         TODO: DOCS
         """
         if event.type == pygame_gui.UI_HORIZONTAL_SLIDER_MOVED:
-            self.update_volume_indicator()
-            music_manager.change_volume(event.value)
-            self.settings_changed = True
-            self.update_save_button()
+            if event.ui_element == self.volume_elements["music_volume_slider"]:
+                self.update_music_volume_indicator()
+                music_manager.change_volume(event.value)
+                self.settings_changed = True
+                self.update_save_button()
+            elif event.ui_element == self.volume_elements["sound_volume_slider"]:
+                self.update_sound_volume_indicator()
+                sound_manager.change_volume(event.value)
+                self.settings_changed = True
+                self.update_save_button()
 
         if event.type == pygame_gui.UI_TEXT_BOX_LINK_CLICKED:
             if platform.system() == 'Darwin':
@@ -357,7 +363,8 @@ class SettingsScreen(Screens):
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER)
 
-        x_pos = 380
+        # music volume elements
+        x_pos = 350
         y_pos = 500
 
         self.volume_elements["music_volume_text"] = pygame_gui.elements.UITextBox(
@@ -366,9 +373,9 @@ class SettingsScreen(Screens):
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER)
 
-        x_pos += 350
+        x_pos += 390
 
-        self.volume_elements["volume_slider"] = pygame_gui.elements.UIHorizontalSlider(
+        self.volume_elements["music_volume_slider"] = pygame_gui.elements.UIHorizontalSlider(
             scale(pygame.Rect((x_pos, y_pos), (400, 60))),
             start_value=game.settings["music_volume"],
             value_range=(0, 100),
@@ -377,21 +384,56 @@ class SettingsScreen(Screens):
             manager=MANAGER)
         x_pos += 385
 
-        self.volume_elements["volume_indicator"] = pygame_gui.elements.UITextBox(
-            f"{self.volume_elements['volume_slider'].get_current_value()}",
+        self.volume_elements["music_volume_indicator"] = pygame_gui.elements.UITextBox(
+            f"{self.volume_elements['music_volume_slider'].get_current_value()}",
             scale(pygame.Rect((x_pos, y_pos), (100, 60))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER)
 
-    def update_volume_indicator(self):
-        self.volume_elements["volume_indicator"].kill()
+        # sound volume elements
+        x_pos = 350
+        y_pos = 600
 
-        self.volume_elements["volume_indicator"] = pygame_gui.elements.UITextBox(
-            f"{self.volume_elements['volume_slider'].get_current_value()}",
+        self.volume_elements["sound_volume_text"] = pygame_gui.elements.UITextBox(
+            "Sound Effect Volume:",
+            scale(pygame.Rect((x_pos, y_pos), (400, 60))),
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            manager=MANAGER)
+
+        x_pos += 390
+
+        self.volume_elements["sound_volume_slider"] = pygame_gui.elements.UIHorizontalSlider(
+            scale(pygame.Rect((x_pos, y_pos), (400, 60))),
+            start_value=game.settings["sound_volume"],
+            value_range=(0, 100),
+            click_increment=1,
+            object_id='horizontal_slider',
+            manager=MANAGER)
+        x_pos += 385
+
+        self.volume_elements["sound_volume_indicator"] = pygame_gui.elements.UITextBox(
+            f"{self.volume_elements['sound_volume_slider'].get_current_value()}",
+            scale(pygame.Rect((x_pos, y_pos), (100, 60))),
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            manager=MANAGER)
+
+    def update_music_volume_indicator(self):
+        self.volume_elements["music_volume_indicator"].kill()
+
+        self.volume_elements["music_volume_indicator"] = pygame_gui.elements.UITextBox(
+            f"{self.volume_elements['music_volume_slider'].get_current_value()}",
             scale(pygame.Rect((1115, 500), (100, 60))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER)
-        pass
+
+    def update_sound_volume_indicator(self):
+        self.volume_elements["sound_volume_indicator"].kill()
+
+        self.volume_elements["sound_volume_indicator"] = pygame_gui.elements.UITextBox(
+            f"{self.volume_elements['sound_volume_slider'].get_current_value()}",
+            scale(pygame.Rect((1115, 600), (100, 60))),
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            manager=MANAGER)
 
     def open_info_screen(self):
         """Open's info screen"""
