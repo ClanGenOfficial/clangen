@@ -136,12 +136,18 @@ class _SoundManager():
             return
         for sound in sound_data:
             try:
-                self.sounds[sound] = pygame.mixer.Sound(
-                    sound_data[sound])
+                self.sounds[sound] = pygame.mixer.Sound("resources/audio/sounds/" +
+                                                        sound_data[sound])
             except:
                 logger.exception("Failed to load sound")
 
-    def play(self, sound):
+    def play(self, sound, button=None):
+        """ plays the given sound, if an ImageButton is passed through then the sound_id of the ImageButton will be
+        used instead """
+        if button:
+            if button.return_sound_id():
+                sound = button.return_sound_id()
+
         try:
             pygame.mixer.Sound.play(self.sounds[sound])
         except KeyError:
