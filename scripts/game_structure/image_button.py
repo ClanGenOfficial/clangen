@@ -11,6 +11,14 @@ class UIImageButton(pygame_gui.elements.UIButton):
     """Subclass of pygame_gui's button class. This allows for auto-scaling of the
         button image."""
 
+    def __init__(self, relative_rect, text="", object_id=None, sound_id=None, visible=True, starting_height=1, manager=None, tool_tip_text=None,
+                 container=None):
+
+        self.sound_id = sound_id
+
+        super().__init__(relative_rect, text=text, object_id=object_id, visible=visible,
+                         starting_height=starting_height, manager=manager, tool_tip_text=tool_tip_text, container=container)
+
     def _set_any_images_from_theme(self):
         changed = False
         normal_image = None
@@ -61,6 +69,9 @@ class UIImageButton(pygame_gui.elements.UIButton):
                 changed = True
 
         return changed
+
+    def return_sound_id(self):
+        return self.sound_id
 
 
 class UISpriteButton():

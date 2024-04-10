@@ -305,7 +305,7 @@ while True:
     for event in pygame.event.get():
         game.all_screens[game.current_screen].handle_event(event)
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            sound_manager.play("button_press")
+            sound_manager.play("button_press", event.ui_element)
         elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
             sound_manager.play("button_hover")
         if event.type == pygame.QUIT:
