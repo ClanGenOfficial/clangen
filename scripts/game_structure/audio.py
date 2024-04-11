@@ -146,16 +146,17 @@ class MusicManager():
         """
         stops all music, current and future
         """
-        pygame.mixer.music.pause()
         self.muted = True
+        pygame.mixer.music.pause()
 
     def unmute_music(self, screen):
         """
         unmutes, allowing current and future music to play
         must pass current screen name to ensure correct music plays when unmuted
         """
-        pygame.mixer.music.unpause()
         self.muted = False
+        pygame.mixer.music.unpause()
+        self.check_music(screen)
 
     def change_volume(self, new_volume):
         """ changes the volume, int given should be between 0 and 100"""
