@@ -301,13 +301,13 @@ class Screens():
             This will fail if event.type != pygame_gui.UI_BUTTON_START_PRESS"""
 
         if event.ui_element == self.mute_button:
-            game.switches['audio_mute'] = True
+            game.switch_setting("audio_mute")
             music_manager.mute_music()
             self.mute_button.hide()
             self.unmute_button.show()
         elif event.ui_element == self.unmute_button:
+            game.switch_setting("audio_mute")
             music_manager.unmute_music(self.name)
-            game.switches['audio_mute'] = False
             self.unmute_button.hide()
             self.mute_button.show()
 

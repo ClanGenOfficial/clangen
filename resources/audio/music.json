@@ -1,5 +1,6 @@
 {
-  "menu_playlist": ["Clangen_Generations_441khz.mp3", "Menu Sound Design 1.mp3"],
+  "menu_playlist": ["resources/audio/music/Menu Sound Design 1.mp3"],
+  "creation_playlist": ["resources/audio/music/Clangen_Generations_441khz.mp3"],
   "forest_playlist": [],
   "plains_playlist": [],
   "beach_playlist": [],
