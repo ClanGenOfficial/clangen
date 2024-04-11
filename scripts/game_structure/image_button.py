@@ -14,12 +14,12 @@ class UIImageButton(pygame_gui.elements.UIButton):
     button image."""
 
     def __init__(self, relative_rect, text="", object_id=None, sound_id=None, visible=True, starting_height=1, manager=None, tool_tip_text=None,
-                 container=None):
+                 container=None, anchors=None):
 
         self.sound_id = sound_id
 
         super().__init__(relative_rect, text=text, object_id=object_id, visible=visible,
-                         starting_height=starting_height, manager=manager, tool_tip_text=tool_tip_text, container=container)
+                         starting_height=starting_height, manager=manager, tool_tip_text=tool_tip_text, container=container, anchors=anchors)
 
     def _set_any_images_from_theme(self):
         changed = False
