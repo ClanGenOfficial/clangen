@@ -1,6 +1,6 @@
 import pygame
 
-from scripts.game_structure.audio import music_manager, menu_screens
+from scripts.game_structure.audio import music_manager
 from scripts.utility import update_sprite, scale
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
@@ -223,10 +223,7 @@ class Screens():
         """This hides the menu buttons, so they are no longer visible
             or interact-able. It does not delete the buttons from memory."""
         for name, button in self.menu_buttons.items():
-            if name in ['mute', 'unmute'] and self.name in menu_screens:
-                pass
-            else:
-                button.hide()
+            button.hide()
 
     def show_menu_buttons(self):
         """This shows all menu buttons, and makes them interact-able. """
@@ -237,11 +234,6 @@ class Screens():
                 continue
             else:
                 button.show()
-
-            if name == 'mute' and game.switches['audio_mute']:
-                button.hide()
-            elif name == 'unmute' and not game.switches['audio_mute']:
-                button.hide()
 
     def hide_mute_buttons(self):
         """ this hides the mute buttons, so they are no longer visible

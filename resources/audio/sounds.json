@@ -1,4 +1,4 @@
 {
-  "button_press": "264149__reitanna__fwunk.wav",
-  "button_hover": "499782__jakebagger__dropping.flac"
+  "button_press": ["264149__reitanna__fwunk.wav"],
+  "button_hover": ["499782__jakebagger__dropping.flac"]
 }
