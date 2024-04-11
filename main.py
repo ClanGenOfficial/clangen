@@ -330,14 +330,15 @@ while True:
     # Draw screens
     # This occurs before events are handled to stop pygame_gui buttons from blinking.
     game.all_screens[game.current_screen].on_use()
-
     # EVENTS
     for event in pygame.event.get():
         game.all_screens[game.current_screen].handle_event(event)
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             sound_manager.play("button_press", event.ui_element)
         elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
-            sound_manager.play("button_hover")
+            if event.ui_element.__class__ not in [CatButton, UISpriteButton]:
+                sound_manager.play("button_hover")
+
         if event.type == pygame.QUIT:
             # Dont display if on the start screen or there is no clan.
             if (
@@ -384,6 +385,9 @@ while True:
         game.all_screens[game.last_screen_forupdate].exit_screen()
         game.all_screens[game.current_screen].screen_switches()
         game.switch_screens = False
+    if not pygame.mixer.music.get_busy() and not game.settings["audio_mute"]:
+        music_manager.play_queued()
+
 
     debugmode.update1(clock)
     # END FRAME

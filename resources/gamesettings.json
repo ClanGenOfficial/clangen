@@ -93,6 +93,10 @@
         ],
         "sound_volume": [
             100
+        ],
+        "audio_mute": [
+            false,
+            true
         ]
     }
 }
