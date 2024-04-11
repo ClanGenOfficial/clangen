@@ -11,7 +11,7 @@ import ujson
 
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
-from scripts.game_structure.image_button import UIImageButton
+from scripts.game_structure.image_button import UIImageButton, UIImageHorizontalSlider
 from scripts.game_structure.windows import SaveError
 from scripts.utility import get_text_box_theme, scale, quit  # pylint: disable=redefined-builtin
 from .Screens import Screens
@@ -375,7 +375,7 @@ class SettingsScreen(Screens):
 
         x_pos += 390
 
-        self.volume_elements["music_volume_slider"] = pygame_gui.elements.UIHorizontalSlider(
+        self.volume_elements["music_volume_slider"] = UIImageHorizontalSlider(
             scale(pygame.Rect((x_pos, y_pos), (400, 60))),
             start_value=game.settings["music_volume"],
             value_range=(0, 100),
@@ -402,7 +402,7 @@ class SettingsScreen(Screens):
 
         x_pos += 390
 
-        self.volume_elements["sound_volume_slider"] = pygame_gui.elements.UIHorizontalSlider(
+        self.volume_elements["sound_volume_slider"] = UIImageHorizontalSlider(
             scale(pygame.Rect((x_pos, y_pos), (400, 60))),
             start_value=game.settings["sound_volume"],
             value_range=(0, 100),
