@@ -252,7 +252,7 @@ class Screens():
 
     def show_mute_buttons(self):
         """This shows all mute buttons, and makes them interact-able. """
-        if game.switches["audio_mute"]:
+        if game.settings["audio_mute"]:
             self.unmute_button.show()
             self.mute_button.hide()
         else:
