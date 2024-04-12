@@ -90,7 +90,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Angry at the insult to {PRONOUN/p_l/poss} Clan, p_l throws {PRONOUN/p_l/self} at the enemy patrol. {PRONOUN/s_c/subject/CAP} {VERB/s_c/drive/drives} the o_c_n patrol away from the border.",
+                "text": "Angry at the insult to {PRONOUN/p_l/poss} Clan, p_l throws {PRONOUN/p_l/self} at the enemy patrol. {PRONOUN/p_l/subject/CAP} {VERB/p_l/drive/drives} the o_c_n patrol away from the border.",
                 "exp": 10,
                 "weight": 20,
                 "other_clan_rep": -2
