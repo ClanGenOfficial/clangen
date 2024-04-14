@@ -1386,6 +1386,109 @@
                     ]
                 }
             ]
+    },
+    {
+        "patrol_id": "dst_train_wilecoyote_storylocked1",
+        "biome": ["desert"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_bord_story",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 1],
+            "apprentice":[2, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1"],
+        "intro_text": "p_l notices app1 staring at a runnerbird thoughtfully, the tip of {PRONOUN/app1/poss} tail lashing. p_l ducks under the meager shade of a shrub to begin a story.",
+        "decline_text": "app1 doesn't want a story, {PRONOUN/app1/subject} {VERB/app1/want/wants} a hunt.",
+        "success_outcomes": [
+                {
+                    "text": "p_l weaves a tale of the runnerbird and the coyote, of hijacks and hazards, highlights and humour, {PRONOUN/p_l/poss} words making the apprentices first crouch in suspence then nearly fall over laughing, leaning on each other to stay upright. It's fun and games and entertainment - and also a lesson in how hard runnerbirds are to catch.",
+                    "exp": 30,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -15
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "app1 and app2 are off like a bolt before p_l can settle them, off in a fruitless pursuit of fast, alert, clever prey. p_l tries not to be smug when the apprentices slouch back, exhausted and prizeless, but it is a little funny.",
+                    "exp": 0,
+                    "weight": 20,
+                    "art": "gen_train_argue",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["respect"],
+                            "amount": -5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["jealous"],
+                            "amount": 10
+                        }
+                    ]
+                },
+                {
+                    "text": "The apprentices run off before p_l can start. Rolling {PRONOUN/p_l/poss} eyes, p_l settles down to wait. They return after a long time, tails dragging, panting and exhausted. Behind them, the runnerbird makes a disrespectful 'MEEP MEEP' call.",
+                    "exp": 0,
+                    "weight": 20,
+                    "injury": [
+                        {
+                            "cats": ["app1"],
+                            "injuries": ["dehydrated"],
+                            "scars": []
+                        },
+                        {
+                            "cats": ["app2"],
+                            "injuries": ["dehydrated"],
+                            "scars": []
+                        }
+                    ],
+                    "history_text": {
+                        "reg_death": "m_c got dehydrated trying to outrun the thunderpath-runner bird.",
+                        "lead_death": "got dehydrated trying to outrun the thunderpath-runner bird"
+                    },
+                    "relationships": [
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
     }
 ]
 
