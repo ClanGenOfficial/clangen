@@ -169,7 +169,7 @@
 		"min_kits": 1,
 		"max_kits": 6,
 		"comment": [
-			"primary mated - 1/chance for kits, relationship and other factors will influence this chance",
+			"primary mated - 1/chance for kits, relationship and other factors will influence this chance (HALVED FOR ROYALTY -60)",
 			"primary unmated - 1/chance for kits, relationship and other factors will influence this chance",
 			"The kit number is incremental. It is 1-6 as default so if you change these numbers, you should probably keep this in mind.",
 			"As in, your max kits number should probably be 5 more than the min kits number.",
@@ -280,7 +280,7 @@
 		"war_injury_modifier": 100
 	},
 	"clan_creation": {
-		"rerolls": 3,
+		"rerolls": -1,
 		"comment": "Set this to -1 for it to be infinite"
 	},
 	"graduation": {
