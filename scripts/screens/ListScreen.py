@@ -238,6 +238,8 @@ class ListScreen(Screens):
             self.show_dead_button.hide()
         else:
             self.show_living_button.hide()
+            if game.sort_type == 'death':
+                game.sort_type = 'rank'
 
         x_pos = 717
         self.choose_group_button = UIImageButton(scale(pygame.Rect((x_pos, y_pos), (380, 68))), "",
