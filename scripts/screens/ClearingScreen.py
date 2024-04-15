@@ -1,6 +1,9 @@
 import pygame
 import pygame_gui
-import ujson
+try:
+    import ujson
+except:
+    import json as ujson
 
 from .Screens import Screens
 from scripts.cat.cats import Cat

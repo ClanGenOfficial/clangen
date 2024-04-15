@@ -2,7 +2,10 @@ import os
 import traceback
 from random import choice
 
-import ujson
+try:
+    import ujson
+except:
+    import json as ujson
 
 class Thoughts():
     @staticmethod

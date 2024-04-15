@@ -1,6 +1,9 @@
 import random
 import os
-import ujson
+try:
+    import ujson
+except:
+    import json as ujson
 
 from scripts.housekeeping.datadir import get_save_dir
 

@@ -9,7 +9,10 @@ TODO: Docs
 from random import choice, choices, randint, random, sample
 import re
 import pygame
-import ujson
+try:
+    import ujson
+except:
+    import json as ujson
 import logging
 from sys import exit as sys_exit
 from typing import Dict

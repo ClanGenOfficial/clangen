@@ -9,7 +9,10 @@ HOWEVER
 
 """
 import unittest
-import ujson
+try:
+    import ujson
+except:
+    import json as ujson
 
 import os
 import sys

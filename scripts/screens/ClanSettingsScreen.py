@@ -7,7 +7,10 @@ import logging
 
 import pygame
 import pygame_gui
-import ujson
+try:
+    import ujson
+except:
+    import json as ujson
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER

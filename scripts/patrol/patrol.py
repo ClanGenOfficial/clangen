@@ -6,7 +6,10 @@ from random import choice, randint, choices
 from typing import List, Tuple
 from itertools import repeat
 
-import ujson
+try:
+    import ujson
+except:
+    import json as ujson
 import pygame
 from os.path import exists as path_exists
 

@@ -1,4 +1,7 @@
-import ujson
+try:
+    import ujson
+except:
+    import json as ujson
 import collections
 import os
 from os.path import exists as file_exists

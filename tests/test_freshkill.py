@@ -1,5 +1,8 @@
 import unittest
-import ujson
+try:
+    import ujson
+except:
+    import json as ujson
 from scripts.cat.cats import Cat
 from scripts.cat.skills import Skill, SkillPath
 from scripts.clan import Clan

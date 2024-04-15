@@ -6,7 +6,10 @@ os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.thoughts import Thoughts
 
-import ujson
+try:
+    import ujson
+except:
+    import json as ujson
 
 from scripts.cat.cats import Cat
 

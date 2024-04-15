@@ -1,4 +1,7 @@
-import ujson
+try:
+    import ujson
+except:
+    import json as ujson
 import random
 from copy import deepcopy
 

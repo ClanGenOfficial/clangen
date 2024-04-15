@@ -4,7 +4,6 @@ import subprocess
 import sys
 from importlib.util import find_spec
 from configparser import ConfigParser
-from platformdirs import user_data_dir
 logger = logging.getLogger(__name__)
 
 VERSION_NAME = "0.9.0"
@@ -46,8 +45,10 @@ def get_version_info():
         if "--launched-through-itch" in sys.argv or "LAUNCHED_THROUGH_ITCH" in os.environ:
             is_itch = True
 
-        if "itch-player" in user_data_dir().lower():
-            is_sandboxed = True
+        if not sys.platform == "emscripten":
+            from platformdirs import user_data_dir
+            if "itch-player" in user_data_dir().lower():
+                is_sandboxed = True
 
         get_version_info.instance = VersionInfo(
             is_source_build, release_channel, version_number, upstream, is_itch, is_sandboxed, git_installed, is_thonny)

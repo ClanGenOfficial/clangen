@@ -1,5 +1,8 @@
 import os
-import ujson
+try:
+    import ujson
+except:
+    import json as ujson
 
 class Single_Interaction():
 

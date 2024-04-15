@@ -9,7 +9,10 @@ This test checks that pronoun tags are formated correctly,
 """
 import os
 import sys
-import ujson
+try:
+    import ujson
+except:
+    import json as ujson
 import unittest
 from scripts.cat.cats import Cat
 from scripts.utility import process_text

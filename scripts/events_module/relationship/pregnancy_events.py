@@ -16,7 +16,10 @@ from scripts.cat_relations.relationship import Relationship
 from scripts.events_module.condition_events import Condition_Events
 from scripts.cat.names import names, Name
 
-import ujson
+try:
+    import ujson
+except:
+    import json as ujson
 
 class Pregnancy_Events():
     """All events which are related to pregnancy such as kitting and defining who are the parents."""

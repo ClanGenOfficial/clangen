@@ -1,5 +1,8 @@
 import os
-import ujson
+try:
+    import ujson
+except:
+    import json as ujson
 from random import choice, shuffle
 from copy import deepcopy
 
