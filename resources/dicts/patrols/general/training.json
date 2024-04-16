@@ -1250,7 +1250,7 @@
         "min_max_status": {
             "all apprentices":[-1, -1]
         },
-        "weight": 10,
+        "weight": 20,
         "intro_text": "p_l flicks {PRONOUN/p_l/poss} tail thoughtfully. What direction {VERB/p_l/do/does} {PRONOUN/p_l/subject} want to take this training patrol?",
         "decline_text": "The cats decide to go help a hunting patrol carry their prey home instead.",
         "chance_of_success": 40,
@@ -1509,7 +1509,7 @@
             "deputy":[-1, -1],
             "leader":[-1, -1]
         },
-        "weight": 10,
+        "weight": 20,
         "intro_text": "It's rare to get the chance to have a full training patrol of warriors.",
         "decline_text": "Rare because something else <i>always</i> comes up. The cats are called away to gather nest materials instead.",
         "chance_of_success": 40,

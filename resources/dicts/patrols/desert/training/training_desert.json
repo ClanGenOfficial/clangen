@@ -1489,6 +1489,206 @@
                     ]
                 }
             ]
+    },
+    {
+        "patrol_id": "dst_train_chupacabra_storylocked1",
+        "biome": ["desert"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_bord_story",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 1]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1"],
+        "intro_text": "The patrol stretches, fluffing out their pelts against the coming night as the stars begin to wake in the sky. p_l hums thoughtfully. There's an old tale of hairless monsters that nevertheless stalk the freezing darkness, unnatural reptiles that lack the sun-worship that defines their kind.",
+        "decline_text": "A cold wind whistles through the rocks, uncomfortable and cutting, and p_l shakes {PRONOUN/p_l/poss} head. This is no time for storytelling, {PRONOUN/p_l/subject}'ll wait until everyone is tucked into a snug den instead.",
+        "success_outcomes": [
+                {
+                    "text": "Once, long ago, a desert Clan refused to patrol their border, fearing not their distant neighbours in a land too spacious for war. The chupacabra took advantage, sneaking through their lands undetected, sipping blood from cats at night. Even if c_n doesn't have enemy cats on their borders, that doesn't make the borderlands safe.",
+                    "exp": 30,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort"],
+                            "amount": -5
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["trust"],
+                            "amount": 5
+                        }
+                    ]
+                },
+                {
+                    "text": "p_l starts telling the story of the deadly chupacabra - but s_c interrupts. They think, personally, that this particular tall tale is driven but a real concern. No, not a monster - mange, the hairloss that can leave an animal mindless with itch and reptilian in appearance. Worth thinking about.",
+                    "exp": 60,
+                    "weight": 20,
+                    "stat_skill": ["HEALER,1"],
+                    "can_have_stat": ["not_pl"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["trust"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "p_l spins a chilling tale to the patrol, rumours of cats going missing in the frozen desert nights, or corpses found drained of blood, of a foul, reptilian horror... too horrific, in fact. No one needed quite <i>that</i> much gory detail, thanks p_l.",
+                    "exp": 0,
+                    "weight": 20,
+                    "art": "gen_train_argue",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "dst_train_lizardsunworship_storylorelocked1",
+        "biome": ["desert"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_bord_story",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6],
+            "apprentice":[1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1", "LORE,1"],
+        "intro_text": "Today is a day for learning the best times to ambush lizards - early in the morning, while they're sitting on the basking rocks caught up in their daily ritual.",
+        "decline_text": "app1 is also interested in this basking ritual, instead of in hunting lessons.",
+        "success_outcomes": [
+                {
+                    "text": "As app1 stares at the lizards from afar, p_l tells the story of the dragons, who gave coveted fire and tried to eat the sun in their greed. The stars struck them down in their arrogance, stripping all their heat and flight, and now their long lost descendants come each morning to worship what they can never attain.",
+                    "exp": 30,
+                    "weight": 20,
+                    "stat_skill": ["STORY,1"],
+                    "can_have_stat": ["p_l"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                },
+                {
+                    "text": "p_l makes sure app1 is focused. The ancestral cats who first discovered c_n's techniques found that by setting up ambushes in the rocks before dawn, and then waiting, the prey would come to them. This technique is why it's so important to understand which rocks the lizards flock to.",
+                    "exp": 30,
+                    "weight": 20,
+                    "stat_skill": ["LORE,1"],
+                    "can_have_stat": ["p_l"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "app1 is too impatient for {PRONOUN/app1/poss} lesson, and runs off to try hunt. The rest of the patrol wait, mildly irritated, until they hear a yelp. app1 has gotten stuck upsidedown in a cervice a lizard escaped into, and lifting {PRONOUN/app1/object} out takes the rest of the morning.",
+                    "exp": 0,
+                    "weight": 20,
+                    "art": "bch_train_stuck",
+                    "relationships": [
+                        {
+                            "cats_to": ["app1"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": -10
+                        },
+                        {
+                            "cats_to": ["app1"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": 3
+                        }
+                    ]
+                }
+            ]
     }
 ]
 
