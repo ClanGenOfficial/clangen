@@ -1379,7 +1379,7 @@
         "pl_skill_constraint": ["STORY,0"],
         "success_outcomes": [
             {
-                "text": "Alright, gather round. p_l is here to tell the cats on the patrol an old story, an ancient, worn thin tale of the loners who come at the call of any who sleep in a circle of mushrooms, cats with metal shards in their eyes and moss growing among their fur, unnatural loners with the power to grant protection - or vengance.",
+                "text": "Alright, gather round. p_l is here to tell the cats on the patrol an old story, an ancient, worn thin tale of the loners who come at the call of any who sleep in a circle of mushrooms, cats with metal shards in their eyes and moss growing among their fur, unnatural loners with the power to grant protection - or vengeance.",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [

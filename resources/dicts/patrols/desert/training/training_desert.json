@@ -1286,7 +1286,7 @@
         "weight": 40,
         "chance_of_success": 60,
         "pl_skill_constraint": ["LORE,1"],
-        "intro_text": "r_c scowls, having to wait {PRONOUN/r_c/poss} turn at the back of the line for the rest of the patrol to finish drinking from the drying pool. {PRONOUN/r_c/poss/CAP} expression is noted by p_l, who starts talking of the history of the water wars, when a long time ago, the Clans of the desert were hit with a particularly bad drought in greenleaf.",
+        "intro_text": "r_c scowls, having to wait {PRONOUN/r_c/poss} turn at the back of the line for the rest of the patrol to finish drinking from the drying pool. {PRONOUN/r_c/poss/CAP} expression is noted by p_l, who starts talking about the history of the water wars, when a long time ago, the Clans of the desert were hit with a particularly bad drought in greenleaf.",
         "decline_text": "The queue doesn't take as long as p_l or r_c were expecting, and the patrol is soon off to other things.",
         "success_outcomes": [
                 {
@@ -1407,7 +1407,7 @@
         "decline_text": "app1 doesn't want a story, {PRONOUN/app1/subject} {VERB/app1/want/wants} a hunt.",
         "success_outcomes": [
                 {
-                    "text": "p_l weaves a tale of the runnerbird and the coyote, of hijacks and hazards, highlights and humour, {PRONOUN/p_l/poss} words making the apprentices first crouch in suspence then nearly fall over laughing, leaning on each other to stay upright. It's fun and games and entertainment - and also a lesson in how hard runnerbirds are to catch.",
+                    "text": "p_l weaves a tale of the runnerbird and the coyote, of hijacks and hazards, highlights and humour, {PRONOUN/p_l/poss} words making the apprentices first crouch in suspense then nearly fall over laughing, leaning on each other to stay upright. It's fun and games and entertainment - and also a lesson in how hard runnerbirds are to catch.",
                     "exp": 30,
                     "weight": 20,
                     "relationships": [
@@ -1537,7 +1537,7 @@
                     ]
                 },
                 {
-                    "text": "p_l starts telling the story of the deadly chupacabra - but s_c interrupts. They think, personally, that this particular tall tale is driven but a real concern. No, not a monster - mange, the hairloss that can leave an animal mindless with itch and reptilian in appearance. Worth thinking about.",
+                    "text": "p_l starts telling the story of the deadly chupacabra - but s_c interrupts. {PRONOUN/s_c/subject/CAP} {VERB/s_c/think/thinks}, personally, that this particular tall tale is driven by a real concern. No, not a monster - mange, the hairloss that can leave an animal mindless with itch and reptilian in appearance. Worth thinking about.",
                     "exp": 60,
                     "weight": 20,
                     "stat_skill": ["HEALER,1"],
@@ -1569,7 +1569,7 @@
             ],
             "fail_outcomes": [
                 {
-                    "text": "p_l spins a chilling tale to the patrol, rumours of cats going missing in the frozen desert nights, or corpses found drained of blood, of a foul, reptilian horror... too horrific, in fact. No one needed quite <i>that</i> much gory detail, thanks p_l.",
+                    "text": "p_l spins a chilling tale to the patrol, rumors of cats going missing in the frozen desert nights, or corpses found drained of blood, of a foul, reptilian horror... too horrific, in fact. No one needed quite <i>that</i> much gory detail, thanks p_l.",
                     "exp": 0,
                     "weight": 20,
                     "art": "gen_train_argue",

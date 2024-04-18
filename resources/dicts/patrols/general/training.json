@@ -439,7 +439,7 @@
         "max_cats": 6,
         "min_max_status": {
             "deputy": [1, 1],
-	    "leader": [-1, -1]
+	        "leader": [-1, -1]
         },
         "weight": 20,
         "intro_text": "While training, p_l admits that {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} think that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} a good deputy.",
@@ -9229,8 +9229,8 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
-            "normal adult": [1, 6],
-            "apprentice": [1, 6]
+            "normal adult": [1, 5],
+            "apprentice": [1, 5]
         },
         "weight": 20,
         "chance_of_success": 60,
@@ -9506,7 +9506,7 @@
         "decline_text": "Today's not a day to learn about the past, apparently.",
         "success_outcomes": [
                 {
-                    "text": "Through his knowledge, he lured the Clans away from StarClan, throttling their faith until it almost died. But he underestimated the loyalty of the Star's warrior, who sent the loyal Clancats back and proved him a fake, until he slunk from their lands, tail between his legs, never to be seen again.",
+                    "text": "Through his knowledge, he lured the Clans away from StarClan, throttling their faith until it almost died. But he underestimated the loyalty of the Star's warrior, who sent the Clancats back and proved him a fake, until he slunk from their lands, tail between his legs, never to be seen again.",
                     "exp": 30,
                     "weight": 20,
                     "relationships": [
@@ -10490,7 +10490,7 @@
         "decline_text": "There's not enough time to continue the tale before bed - another night, perhaps.",
         "success_outcomes": [
             {
-                    "text": "And while these three cats were more powerful than any before them, with even the Stars and the Darkness forced to bow to their will, this is the lesson: That even the three did not succeed alone. That their power was helpful, but their <i>Clan</i> was critical, to fulfill their destined greatness.",
+                    "text": "And while these three cats were more powerful than any before them, with even the Stars and the Darkness forced to bow to their will, this is the lesson: That even the three did not succeed alone. That their power was helpful, but their <i>Clan</i> was critical to fulfill their destined greatness.",
                     "exp": 30,
                     "weight": 20,
                     "relationships": [

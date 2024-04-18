@@ -2236,5 +2236,126 @@
                     ]
                 }
             ]
+    },
+    {
+        "patrol_id": "bch_train_mauifishing_storylocked1",
+        "biome": ["beach"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "bch_train_session1",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice":[2, 6],
+            "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1"],
+        "intro_text": "The fishing lesson has resulted in apprentices starting to look soggy and sorry for themselves. p_l waves {PRONOUN/p_l/poss} tail to catch the attention of the other cats - let's stop for a moment and take a break. Afterall, even Māowi had to work hard to fish!",
+        "decline_text": "Taking a break turns into ending the patrol early.",
+        "success_outcomes": [
+                {
+                    "text": "The great legend Māowi was once a young apprentice, p_l starts the story, who went out fishing with his older, already grown siblings. They had no faith in him, but speaking a great karakia to give StarClan's blessing to his claws, he won a stingray from the ocean that stretched from horizon to horizon and became c_n's territory.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_bord_story",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort", "trust", "platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "p_l tries to start a story to entertain the apprentices, but they're tired and sullen, and don't appreciate being told of the magical fishing talents of a Stars-blessed cat when they're finding it so hard to learn themselves.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1", "app2"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "bch_train_mauislowingthesun_storylocked1",
+        "biome": ["beach"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_bord_story",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1"],
+        "intro_text": "The sun gleams, splashing orange, yellow, and gold across the sea as it meets the horizon. The seagulls call in the distance, rising on the last thermals of the day, as p_l begins the myth of How Māowi Slowed The Sun.",
+        "decline_text": "A story is nice, but the patrol has to get back to camp, the rest will wait for another time.",
+        "success_outcomes": [
+            {
+                    "text": "Once, the sun raced across the sky, each day only lasting a single catnap. The great Māuwi took his siblings, saying a karakia to StarClan to ask for their help in fighitng the sun. They pinned the great flaming sun in a burrow, clawing at it until it gave in and promised to slow, and this is why the sun gives up its race in leaf-bare and slowes the day, bringing greenleaf.",
+                    "exp": 40,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic", "comfort"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort", "trust", "platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        }
+                        ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "p_l gets distracted by the palette of the sunset, and loses the words they were forming. Ah well.",
+                    "exp": 0,
+                    "weight": 20
+                }
+            ]
     }
 ]
