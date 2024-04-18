@@ -4,7 +4,8 @@ import pygame_gui
 from .Screens import Screens
 
 from scripts.cat.cats import Cat
-from scripts.game_structure.image_button import UISpriteButton, UIImageButton, UITextBoxTweaked
+from scripts.game_structure.image_button import UISpriteButton, UIImageButton, UITextBoxTweaked, \
+    UIModifiedScrollingContainer
 from scripts.utility import get_text_box_theme, scale, get_med_cats, shorten_text_to_fit, get_alive_clan_queens
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
 from ..conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
@@ -34,7 +35,7 @@ class AllegiancesScreen(Screens):
         allegiance_list = self.get_allegiances_text()
 
 
-        self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((100, 330), (1430, 1000)))
+        self.scroll_container = UIModifiedScrollingContainer(scale(pygame.Rect((100, 330), (1430, 1000)))
                                                                          , manager=MANAGER)
         
         self.ranks_boxes = []

@@ -5,7 +5,8 @@ import ujson
 from .Screens import Screens
 from scripts.cat.cats import Cat
 from scripts.events_module.freshkill_pile_events import Freshkill_Events
-from scripts.game_structure.image_button import UISpriteButton, UIImageButton, UITextBoxTweaked
+from scripts.game_structure.image_button import UISpriteButton, UIImageButton, UITextBoxTweaked, \
+    UIModifiedScrollingContainer
 from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
 
@@ -586,7 +587,7 @@ class ClearingScreen(Screens):
     def create_checkboxes(self):
         self.delete_checkboxes()
 
-        self.tactic_text["container_general"] = pygame_gui.elements.UIScrollingContainer(
+        self.tactic_text["container_general"] = UIModifiedScrollingContainer(
             scale(pygame.Rect((280, 900), (460, 350))), manager=MANAGER
         )
 
@@ -610,7 +611,7 @@ class ClearingScreen(Screens):
             (400 / 1600 * screen_x, (n * 60 + x_val + 40) / 1600 * screen_y)
         )
 
-        self.additional_text["container_general"] = pygame_gui.elements.UIScrollingContainer(
+        self.additional_text["container_general"] = UIModifiedScrollingContainer(
             scale(pygame.Rect((720, 900), (655, 350))), manager=MANAGER
         )
 

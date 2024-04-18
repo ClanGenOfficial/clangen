@@ -11,7 +11,7 @@ import ujson
 
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
-from scripts.game_structure.image_button import UIImageButton
+from scripts.game_structure.image_button import UIImageButton, UIImageHorizontalSlider, UIModifiedScrollingContainer
 from scripts.game_structure.windows import SaveError
 from scripts.utility import get_text_box_theme, scale, quit  # pylint: disable=redefined-builtin
 from .Screens import Screens
@@ -288,7 +288,7 @@ class SettingsScreen(Screens):
         self.save_settings_button.show()
 
         self.checkboxes_text[
-            "container_general"] = pygame_gui.elements.UIScrollingContainer(
+            "container_general"] = UIModifiedScrollingContainer(
             scale(pygame.Rect((0, 440), (1400, 600))), manager=MANAGER)
 
         n = 0
@@ -328,7 +328,7 @@ class SettingsScreen(Screens):
         self.sub_menu = 'info'
         self.save_settings_button.hide()
 
-        self.checkboxes_text["info_container"] = pygame_gui.elements.UIScrollingContainer(
+        self.checkboxes_text["info_container"] = UIModifiedScrollingContainer(
             scale(pygame.Rect((200, 300), (1200, 1000))),
             manager=MANAGER
         )

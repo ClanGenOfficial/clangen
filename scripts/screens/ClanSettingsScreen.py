@@ -11,7 +11,7 @@ import ujson
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
-from scripts.game_structure.image_button import UIImageButton
+from scripts.game_structure.image_button import UIImageButton, UIModifiedScrollingContainer
 from scripts.utility import get_text_box_theme, scale, quit  # pylint: disable=redefined-builtin
 from .Screens import Screens
 from ..housekeeping.datadir import get_data_dir
@@ -190,7 +190,7 @@ class ClanSettingsScreen(Screens):
         self.sub_menu = 'general'
 
         self.checkboxes_text[
-            "container_general"] = pygame_gui.elements.UIScrollingContainer(
+            "container_general"] = UIModifiedScrollingContainer(
             scale(pygame.Rect((0, 490), (1400, 600))), manager=MANAGER)
 
         n = 0
@@ -232,7 +232,7 @@ class ClanSettingsScreen(Screens):
         self.sub_menu = 'role'
 
         self.checkboxes_text[
-            "container_role"] = pygame_gui.elements.UIScrollingContainer(
+            "container_role"] = UIModifiedScrollingContainer(
             scale(pygame.Rect((0, 490), (1400, 600))), manager=MANAGER)
 
         n = 0
@@ -267,7 +267,7 @@ class ClanSettingsScreen(Screens):
         self.sub_menu = 'relation'
 
         self.checkboxes_text[
-            "container_relation"] = pygame_gui.elements.UIScrollingContainer(
+            "container_relation"] = UIModifiedScrollingContainer(
             scale(pygame.Rect((0, 490), (1400, 600))), manager=MANAGER)
 
         n = 0
