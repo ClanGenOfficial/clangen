@@ -2230,7 +2230,7 @@
         "season": ["greenleaf"],
         "types": ["hunting"],
         "tags": ["illness"],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_heat",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {

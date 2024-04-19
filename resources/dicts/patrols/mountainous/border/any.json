@@ -358,7 +358,7 @@
   "season": ["Any"],
   "types": ["border"],
   "tags": [],
-  "patrol_art": "gen_hunt_fish",
+  "patrol_art": "mnt_bord_waterfall",
   "min_cats": 3,
   "max_cats": 6,
   "min_max_status": {},
