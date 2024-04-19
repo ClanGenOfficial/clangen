@@ -493,7 +493,7 @@
         "season": ["newleaf"],
         "types": ["herb_gathering"],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_gatheringblackberry_newleaf2",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -3858,7 +3858,7 @@
         "season": ["newleaf"],
         "types": ["herb_gathering"],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_gatheringoakleaves_greenleaf1",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -3906,7 +3906,7 @@
         "season": ["newleaf"],
         "types": ["herb_gathering"],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_gatheringoakleaves_greenleaf2",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -4019,7 +4019,7 @@
         "season": ["newleaf"],
         "types": ["herb_gathering"],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_gatheringoakleaves_greenleaf2",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {

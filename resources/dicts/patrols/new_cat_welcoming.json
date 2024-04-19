@@ -1851,7 +1851,7 @@
         "season": ["Any"],
         "types": ["hunting"],
         "tags": ["new_cat"],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_hunt_twolegplace",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {},
