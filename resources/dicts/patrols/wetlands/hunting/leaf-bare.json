@@ -3427,8 +3427,8 @@
                     ],
                     "history_text": {
                         "scar":"m_c was scarred from the bite of the cold stream {PRONOUN/m_c/subject} fell into as an apprentice.",
-                        "reg_death": "The view point c_n thought was safe from avalanches... was not.",
-                        "lead_death": "the view point c_n thought was safe from avalanches... was not"
+                        "reg_death": "Falling into a cold stream gave m_c problems that eventually resulted in {PRONOUN/m_c/poss} death.",
+                        "lead_death": "falling into a cold stream gave m_c problems that eventually resulted in {PRONOUN/m_c/poss} death"
                     }
                 }
             ]

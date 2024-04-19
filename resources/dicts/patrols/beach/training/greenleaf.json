@@ -306,6 +306,7 @@
                     "text": "This is the history p_l is here to teach - every greenleaf, the Twolegs come to this beach, a great migration in their monsters. They swim in this bay, and occasionally the bays to either side, but no more than that, a constrained invasion. Leave them to their rituals. c_n will return to this beach when the seasons change.",
                     "exp": 30,
                     "weight": 20,
+                    "art": "bch_hunt_twolegsobject",
                     "relationships": [
                         {
                             "cats_to": ["p_l"],

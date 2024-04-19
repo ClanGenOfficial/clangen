@@ -1168,5 +1168,70 @@
                     ]
                 }
             ]
+    },
+    {
+        "patrol_id": "wtlnd_train_thegreedyravenandthesnake_storylorelocked1",
+        "biome": ["wetlands"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_train_sunset",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6]
+            },
+        "weight": 20,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["LORE,1", "STORY,1"],
+        "intro_text": "As the patrol shares tongues, p_l asks if they'd like to hear the tale of The Greedy Raven and the Snake.",
+        "decline_text": "Instead, p_l detangles a stubborn knot of fur for r_c.",
+        "success_outcomes": [
+                {
+                    "text": "Long ago, a son of a leader pursued his father's approval and attention, murdering his deputies. But his last victim's mate, a nursing queen, an easy kill, rose from her nest, striking back with the fury of a mother viper. If he had been willing to wait for power to come to him, he would've been a great leader. Instead, his ghost lurks in the Dark Forest.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_bord_story",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort", "trust", "platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "The cats aren't interested in hearing p_l's historical tale, and p_l tries not to let their ears fall in disappointment.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
     }
 ]
