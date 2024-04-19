@@ -313,7 +313,7 @@ class Condition_Events():
     def handle_relationship_changes(cat, injury_event, other_cat):
         cat_to = None
         cat_from = None
-        n = 20
+        n = game.config["relationship"]["influence_condition_events"]
         romantic = 0
         platonic = 0
         dislike = 0
