@@ -3052,7 +3052,7 @@
         "season": ["newleaf"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_hunt_mice",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -3211,7 +3211,7 @@
         "season": ["newleaf"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_hunt_mice",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
