@@ -417,6 +417,8 @@ class ClearingScreen(Screens):
                 self.current_page = 1
             else:
                 self.current_page = len(all_pages)
+        elif self.current_page < 1:
+            self.current_page = 1
 
         # Check for empty list (no cats)
         if all_pages:

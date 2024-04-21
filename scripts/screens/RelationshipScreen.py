@@ -487,6 +487,8 @@ class RelationshipScreen(Screens):
 
         if self.current_page > len(all_pages):
             self.current_page = len(all_pages)
+        elif self.current_page < 1:
+            self.current_page = 1
 
         if self.current_page == 0:
             self.current_page = 1

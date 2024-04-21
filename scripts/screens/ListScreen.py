@@ -579,6 +579,8 @@ class ListScreen(Screens):
         #   the current page to the last page
         if self.list_page > self.all_pages:
             self.list_page = self.all_pages
+        elif self.list_page < 1:
+            self.list_page = 1
 
         # Handle which next buttons are clickable.
         if self.all_pages <= 1:

@@ -372,7 +372,9 @@ class ChooseMentorScreen(Screens):
         # If the number of pages becomes smaller than the number of our current page, set
         #   the current page to the last page
         if self.current_page > len(valid_mentors):
-            self.list_page = len(valid_mentors)
+            self.current_page = len(valid_mentors)
+        elif self.current_page < 1:
+            self.current_page = 1
 
         # Handle which next buttons are clickable.
         if len(valid_mentors) <= 1:
