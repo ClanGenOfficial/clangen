@@ -227,7 +227,7 @@
         "season": ["Any"],
         "types": ["hunting", "border"],
         "tags": ["other_clan"],
-        "patrol_art": "gen_bord_otherclan_hostile",
+        "patrol_art": "gen_bord_otherclan3",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
