@@ -2194,7 +2194,7 @@
         "season": ["Any"],
         "types": ["training"],
         "tags": [],
-        "patrol_art": "gen_train_vision",
+        "patrol_art": "gen_train_vision4",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {

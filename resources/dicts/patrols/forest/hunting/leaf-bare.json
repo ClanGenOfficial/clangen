@@ -1599,7 +1599,7 @@
         "season": ["leaf-bare"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_hunt_leaf-bare_squirrel_treetoptumble",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
