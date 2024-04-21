@@ -2222,6 +2222,90 @@
                 "weight": 20
             }
         ]
+    },
+    {
+        "patrol_id": "mtn_fox_training_red",
+        "biome": ["mountainous"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "The patrol wants to hold a training session for app1. They decide to focus on how to identify different foxes.",
+        "decline_text": "They decide to focus on patrolling the territory instead. Scent training can wait for another day.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "app1 listens carefully as p_l explains how red foxes smell suspiciously like medicine cats - so much so, that red foxes are prone to attacking the medicine cats...",
+                "exp": 20,
+                "weight": 20
+            },
+            {
+                "text": "app1 picks up the instruction quickly and is soon able to recite how red foxes smell herbal, with kits smelling more like dandelion and adults like violets.",
+                "exp": 20,
+                "weight": 5
+            },
+        ],
+        "fail_outcomes": [
+            {
+                "text": "app1 tries to understand the smells that p_l pointed out to them, but the difference still seems daunting.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "s_c struggles to take the lesson seriously and eventually the training session ends early with no real progress made.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["troublesome", "playful"],
+                "can_have_stat": ["app"]
+           }
+        ]
+    },
+    {
+        "patrol_id": "mtn_fox_training_grey",
+        "biome": ["mountainous"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "The patrol wants to hold a training session for app1. They decide to focus on how to identify different foxes.",
+        "decline_text": "They decide to focus on patrolling the territory instead. Training can wait for another day.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "app1 listens carefully as p_l explains how grey foxes roll in the dirtplace to disguise their scent.",
+                "exp": 20,
+                "weight": 20
+            },
+        ],
+       "fail_outcomes": [
+            {
+                "text": "app1 tries to understand the smells that p_l pointed out to them, but the difference still seems daunting.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "s_c struggles to take the lesson seriously and eventually the training session ends early with no real progress made.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["troublesome", "playful"],
+                "can_have_stat": ["app"]
+            }
+        ]
+    },
+        ]
     }
-    
 ]
