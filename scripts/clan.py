@@ -22,7 +22,7 @@ try:
     import ujson
 except:
     import json as ujson
-from scripts import statistics
+from scripts import statistics, web
 
 from scripts.game_structure.game_essentials import game
 from scripts.housekeeping.version import get_version_info, SAVE_VERSION_NUMBER
@@ -838,9 +838,7 @@ class Clan():
             random_herbs = random.choices(HERBS, k=random.randrange(3, 8))
             for herb in random_herbs:
                 herbs.update({herb: random.randint(1, 3)})
-            with open(file_path, 'w', encoding='utf-8') as rel_file:
-                json_string = ujson.dumps(herbs, indent=4)
-                rel_file.write(json_string)
+            game.safe_save(f"{get_save_dir()}/{game.clan.name}/herbs.json", herbs)
             clan.herbs = herbs
 
     def save_herbs(self, clan):
@@ -904,9 +902,8 @@ class Clan():
             else:
                 os.makedirs(get_save_dir() + f"/{game.clan.name}/disasters")
                 clan.primary_disaster = None
-                with open(file_path, 'w', encoding='utf-8') as rel_file:
-                    json_string = ujson.dumps(clan.primary_disaster, indent=4)
-                    rel_file.write(json_string)
+                game.safe_save(file_path, clan.primary_disaster)
+
         except:
             clan.primary_disaster = None
 
@@ -930,10 +927,7 @@ class Clan():
             else:
                 os.makedirs(get_save_dir() + f"/{game.clan.name}/disasters")
                 clan.secondary_disaster = None
-                with open(file_path, 'w', encoding='utf-8') as rel_file:
-                    json_string = ujson.dumps(clan.secondary_disaster,
-                                              indent=4)
-                    rel_file.write(json_string)
+                game.safe_save(file_path, clan.secondary_disaster)
 
         except:
             clan.secondary_disaster = None
