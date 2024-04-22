@@ -391,7 +391,7 @@
                     "text": "s_c sits on the windward side of app1, trying to give {PRONOUN/app1/object} a little more shelter. It's understandable, {PRONOUN/s_c/subject} {VERB/s_c/sympathise/sympathises}, but app1 can't rely on cats in distress only showing up with the sea is inviting. The sympathy (and a little physical warmth) put cheer back into app1, and {PRONOUN/app1/subject} {VERB/app1/take/takes} {PRONOUN/app1/poss} next turn at life guarding practise with enthusiasm.",
                     "exp": 30,
                     "weight": 20,
-                    "art": "gen_happy_cat2",
+                    "art": "gen_train_soggykitty_happy_app",
                     "stat_skill": ["SWIMMER,1"],
                     "can_have_stat": ["p_l"],
                     "relationships": [
@@ -422,7 +422,7 @@
                     "text": "s_c nods. Life guarding isn't easy, even in practise. But they offer up the story of a kitten saved by a c_n warrior, who had the strenght and will to keep the little ball of fur above the waves under nearly impossible circumstances. It makes app1 sit up straight, proud to be carrying on that tradition.",
                     "exp": 30,
                     "weight": 20,
-                    "art": "gen_bord_story",
+                    "art": "gen_train_soggykitty_happy_app",
                     "stat_skill": ["LORE,1"],
                     "can_have_stat": ["p_l"],
                     "relationships": [
@@ -501,7 +501,7 @@
                     "text": "app1 is right - this is far, far too cold of a pool to train in, and they're shivering too badly to continue. Time to go home, and p_l apologises for bringing the patrol out here.",
                     "exp": 0,
                     "weight": 20,
-                    "art": "gen_hunt_huntassessment",
+                    "art": "gen_train_soggykitty_mad_app",
                     "relationships": [
                         {
                             "cats_to": ["p_l"],
