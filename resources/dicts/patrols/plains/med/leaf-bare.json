@@ -176,7 +176,7 @@
         "season": ["leaf-bare"],
         "types": ["herb_gathering"],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_gatheringblackberry_leaf-bare1",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -870,7 +870,7 @@
         "season": ["leaf-bare"],
         "types": ["herb_gathering"],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_gatheringdaisy_leaf-bare1",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1565,7 +1565,7 @@
         "season": ["leaf-bare"],
         "types": ["herb_gathering"],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_gatheringjuniper_leaf-bare1",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {

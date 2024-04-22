@@ -90,7 +90,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Angry at the insult to {PRONOUN/p_l/poss} Clan, p_l throws {PRONOUN/p_l/self} at the enemy patrol. {PRONOUN/s_c/subject/CAP} {VERB/s_c/drive/drives} the o_c_n patrol away from the border.",
+                "text": "Angry at the insult to {PRONOUN/p_l/poss} Clan, p_l throws {PRONOUN/p_l/self} at the enemy patrol. {PRONOUN/p_l/subject/CAP} {VERB/p_l/drive/drives} the o_c_n patrol away from the border.",
                 "exp": 10,
                 "weight": 20,
                 "other_clan_rep": -2
@@ -227,7 +227,7 @@
         "season": ["Any"],
         "types": ["hunting", "border"],
         "tags": ["other_clan"],
-        "patrol_art": "gen_bord_otherclan_hostile",
+        "patrol_art": "gen_bord_otherclan3",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -3513,7 +3513,7 @@
         "season": ["Any"],
         "types": ["border"],
         "tags": ["other_clan", "distrust", "disrespect"],
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "gen_bord_scent_hostile_dislikelocked1",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
