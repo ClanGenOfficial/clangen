@@ -1362,7 +1362,7 @@
         "season": ["Any"],
         "types": ["training"],
         "tags": ["rom_two_apps", "romantic"],
-        "patrol_art": "train_general_intro",
+        "patrol_art": "bch_train_stormwaves",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -1451,7 +1451,7 @@
         "season": ["Any"],
         "types": ["training"],
         "tags": ["rom_two_apps", "romantic"],
-        "patrol_art": "train_general_intro",
+        "patrol_art": "bch_train_stormwaves",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
