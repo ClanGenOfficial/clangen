@@ -3,10 +3,11 @@ import pygame_gui
 
 from .Screens import Screens
 from scripts.cat.cats import Cat
-from scripts.game_structure.image_button import UISpriteButton, UIImageButton, UITextBoxTweaked
 from scripts.utility import get_text_box_theme, scale, get_med_cats, shorten_text_to_fit
 from scripts.game_structure.game_essentials import game, MANAGER
 from ..conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
+from scripts.ui.elements import UITextBoxTweaked, UITextBox
+from scripts.ui.elements.buttons import UIImageButton, UISpriteButton
 
 
 class MedDenScreen(Screens):
@@ -132,12 +133,12 @@ class MedDenScreen(Screens):
                                            object_id="#arrow_right_button"
                                            , manager=MANAGER)
 
-            self.hurt_sick_title = pygame_gui.elements.UITextBox(
+            self.hurt_sick_title = UITextBox(
                 "Hurt & Sick Cats",
                 scale(pygame.Rect((281, 820), (400, 60))),
                 object_id=get_text_box_theme("#text_box_40_horizcenter"), manager=MANAGER
             )
-            self.log_title = pygame_gui.elements.UITextBox(
+            self.log_title = UITextBox(
                 "Medicine Den Log",
                 scale(pygame.Rect((281, 820), (400, 60))),
                 object_id=get_text_box_theme("#text_box_40_horizcenter"), manager=MANAGER
@@ -154,7 +155,7 @@ class MedDenScreen(Screens):
                 img_path = "resources/images/spacer.png"
             else:
                 img_path = "resources/images/spacer_small.png"""
-            self.log_box = pygame_gui.elements.UITextBox(
+            self.log_box = UITextBox(
                 f"{f'<br>-------------------------------<br>'.join(log_text)}<br>",
                 scale(pygame.Rect
                       ((300, 900), (1080, 360))),
@@ -473,7 +474,7 @@ class MedDenScreen(Screens):
 
             name = str(cat.name)
             short_name = shorten_text_to_fit(name, 185, 30)
-            self.cat_names.append(pygame_gui.elements.UITextBox(short_name,
+            self.cat_names.append(UITextBox(short_name,
                                                                 scale(
                                                                     pygame.Rect((pos_x - 60, pos_y + 100), (220, 60))),
                                                                 object_id="#text_box_30_horizcenter", manager=MANAGER))

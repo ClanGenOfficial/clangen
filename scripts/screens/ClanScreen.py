@@ -7,11 +7,11 @@ import random
 from .Screens import Screens
 
 from scripts.cat.cats import Cat
-from scripts.game_structure.image_button import UISpriteButton, UIImageButton
 from scripts.utility import scale
-from scripts.game_structure import image_cache
+from scripts.ui import image_cache
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y
 from scripts.game_structure.windows import SaveError
+from scripts.ui.elements.buttons import UIImageButton, UISpriteButton
 
 
 class ClanScreen(Screens):

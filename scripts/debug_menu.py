@@ -6,6 +6,7 @@ import pygame
 import pygame_gui
 
 from typing import List
+from scripts import web
 from scripts.game_structure.game_essentials import MANAGER, game
 
 from scripts.utility import get_text_box_theme
@@ -87,6 +88,9 @@ class debugConsole(pygame_gui.windows.UIConsoleWindow):
 class debugMode:
     def __init__(self):
 
+        if web.is_web:
+            return
+
         self.coords_display = pygame_gui.elements.UILabel(
             pygame.Rect((0, 0), (-1, -1)),
             "(0, 0)",
@@ -106,6 +110,7 @@ class debugMode:
         self.coords_display.disable()
         self.coords_display.rebuild()
         self.coords_display.hide()
+        
 
     def toggle_console(self):
         if self.console.visible == 0:
@@ -122,6 +127,9 @@ class debugMode:
         """
         This is called BEFORE pygame_gui updates elements
         """
+
+        if web.is_web:
+            return
 
         # Showcoords
         if game.debug_settings['showcoords']:
@@ -162,6 +170,9 @@ class debugMode:
                 MANAGER.set_visual_debug_mode(False)
 
     def update2(self, screen):
+
+        if web.is_web:
+            return
 
         if game.debug_settings['showbounds']:
             elements = MANAGER.ui_group.visible

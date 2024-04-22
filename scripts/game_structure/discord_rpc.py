@@ -23,6 +23,25 @@ status_dict = {
     "med den screen": "In the medicine den",
     }
 
+class _DiscordRPCStub:
+    def __init__(self):
+        pass
+    
+    def run(self):
+        pass
+
+    def get_rpc(self):
+        pass
+
+    def connect(self):
+        pass
+
+    def update(self):
+        pass
+
+    def close(self):
+        pass
+
 class _DiscordRPC(threading.Thread):
     def __init__(self, client_id: str, daemon: bool):
         super().__init__(daemon=daemon)

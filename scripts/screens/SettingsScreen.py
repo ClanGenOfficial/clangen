@@ -14,12 +14,13 @@ except:
 
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
-from scripts.game_structure.image_button import UIImageButton
 from scripts.game_structure.windows import SaveError
 from scripts.utility import get_text_box_theme, scale, quit  # pylint: disable=redefined-builtin
 from .Screens import Screens
 from ..housekeeping.datadir import get_data_dir
 from ..housekeeping.version import get_version_info
+from scripts.ui.elements import UITextBox
+from scripts.ui.elements.buttons import UIImageButton
 
 
 logger = logging.getLogger(__name__)
@@ -296,7 +297,7 @@ class SettingsScreen(Screens):
 
         n = 0
         for code, desc in settings_dict['general'].items():
-            self.checkboxes_text[code] = pygame_gui.elements.UITextBox(
+            self.checkboxes_text[code] = UITextBox(
                 desc[0],
                 scale(pygame.Rect((450, n * 78), (1000, 78))),
                 container=self.checkboxes_text["container_general"],
@@ -309,7 +310,7 @@ class SettingsScreen(Screens):
             "container_general"].set_scrollable_area_dimensions(
             (1360 / 1600 * screen_x, (n * 78 + 80) / 1400 * screen_y))
 
-        self.checkboxes_text['instr'] = pygame_gui.elements.UITextBox(
+        self.checkboxes_text['instr'] = UITextBox(
             """Change the general settings of your game here.\n"""
             """More settings are available in the settings page of your Clan.""",
             scale(pygame.Rect((200, 320), (1200, 200))),
@@ -336,7 +337,7 @@ class SettingsScreen(Screens):
             manager=MANAGER
         )
 
-        self.checkboxes_text['info_text_box'] = pygame_gui.elements.UITextBox(
+        self.checkboxes_text['info_text_box'] = UITextBox(
             self.info_text,
             scale(pygame.Rect((0, 0), (1150, 8000))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
@@ -380,7 +381,7 @@ class SettingsScreen(Screens):
         self.sub_menu = 'language'
         self.save_settings_button.show()
 
-        self.checkboxes_text['instr'] = pygame_gui.elements.UITextBox(
+        self.checkboxes_text['instr'] = UITextBox(
             "Change the language of the game here. This has not been implemented yet.",
             scale(pygame.Rect((200, 320), (1200, 100))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),

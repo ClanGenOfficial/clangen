@@ -20,17 +20,22 @@ from html import escape
 
 import pygame
 import pygame_gui
-from requests.exceptions import RequestException, Timeout
+from scripts.web import is_web
+if not is_web:
+    from requests.exceptions import RequestException, Timeout
 
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache
+from scripts.ui import image_cache
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
-from scripts.game_structure.image_button import UIImageButton
 from scripts.game_structure.windows import UpdateAvailablePopup, ChangelogPopup
 from scripts.utility import scale, quit  # pylint: disable=redefined-builtin
 from .Screens import Screens
 from ..housekeeping.datadir import get_data_dir, get_cache_dir
-from ..housekeeping.update import has_update, UpdateChannel, get_latest_version_number
+from scripts.ui.elements import UITextBox
+from scripts.ui.elements.buttons import UIImageButton
+
+if not is_web:
+    from ..housekeeping.update import has_update, UpdateChannel, get_latest_version_number
 from ..housekeeping.version import get_version_info
 
 logger = logging.getLogger(__name__)
@@ -204,14 +209,14 @@ class StartScreen(Screens):
 
         self.error_box.disable()
 
-        self.error_label = pygame_gui.elements.UITextBox(
+        self.error_label = UITextBox(
             "",
             scale(pygame.Rect((275, 370), (770, 720))),
             object_id="#text_box_22_horizleft",
             starting_height=1,
             manager=MANAGER)
 
-        self.error_gethelp = pygame_gui.elements.UITextBox(
+        self.error_gethelp = UITextBox(
             "Please join the Discord server and ask for technical support. "
             "We\'ll be happy to help! Please include the error message and the traceback below (if available). "
             '<br><a href="https://discord.gg/clangen">Discord</a>',  # pylint: disable=line-too-long
@@ -251,7 +256,7 @@ class StartScreen(Screens):
         try:
             global has_checked_for_update
             global update_available
-            if not get_version_info().is_source_build and not get_version_info().is_itch and get_version_info().upstream.lower() == "ClanGenOfficial/clangen".lower() and \
+            if not is_web and not get_version_info().is_source_build and not get_version_info().is_itch and get_version_info().upstream.lower() == "ClanGenOfficial/clangen".lower() and \
                     game.settings['check_for_updates'] and not has_checked_for_update:
                 if has_update(UpdateChannel(get_version_info().release_channel)):
                     update_available = True
@@ -287,7 +292,7 @@ class StartScreen(Screens):
                 with open(f"{get_cache_dir()}/changelog_popup_shown", 'w') as write_file:
                     write_file.write(get_version_info().version_number)
 
-        self.warning_label = pygame_gui.elements.UITextBox(
+        self.warning_label = UITextBox(
             "Warning: this game includes some mild descriptions of gore, violence, and animal abuse",
             scale(pygame.Rect((100, 1244), (1400, 60))),
             object_id="#default_dark",

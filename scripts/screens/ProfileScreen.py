@@ -21,13 +21,13 @@ from .Screens import Screens
 from scripts.utility import get_text_box_theme, scale_dimentions, shorten_text_to_fit
 from scripts.cat.cats import Cat, BACKSTORIES
 from scripts.cat.pelts import Pelt
-from scripts.game_structure import image_cache
+from scripts.ui import image_cache
 import pygame_gui
 from re import sub
-from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
-
+from scripts.ui.elements import UITextBox, UITextBoxTweaked
+from scripts.ui.elements.buttons import UIImageButton
 
 # ---------------------------------------------------------------------------- #
 #             change how accessory info displays on cat profiles               #
@@ -487,7 +487,7 @@ class ProfileScreen(Screens):
             self.the_cat.thought = "Hello. I am here to drag the dead cats of " + game.clan.name + "Clan into the Dark Forest."
 
 
-        self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name,
+        self.profile_elements["cat_name"] = UITextBox(cat_name,
                                                                           scale(pygame.Rect((50, 280), (-1, 80))),
                                                                           object_id=get_text_box_theme(
                                                                               "#text_box_40_horizcenter"),
@@ -496,7 +496,7 @@ class ProfileScreen(Screens):
 
         self.profile_elements["cat_name"].kill()
 
-        self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name,
+        self.profile_elements["cat_name"] = UITextBox(cat_name,
                                                                           scale(pygame.Rect(
                                                                               (800 - name_text_size.width, 280),
                                                                               (name_text_size.width * 2, 80))),
@@ -505,7 +505,7 @@ class ProfileScreen(Screens):
                                                                           manager=MANAGER)
 
         # Write cat thought
-        self.profile_elements["cat_thought"] = pygame_gui.elements.UITextBox(self.the_cat.thought,
+        self.profile_elements["cat_thought"] = UITextBox(self.the_cat.thought,
                                                                              scale(pygame.Rect((200, 340), (1200, 80))),
                                                                              wrap_to_height=True,
                                                                              object_id=get_text_box_theme(
@@ -974,7 +974,7 @@ class ProfileScreen(Screens):
                 self.toggle_history_sub_tab()
             else:
                 # This will be overwritten in update_disabled_buttons_and_text()
-                self.history_text_box = pygame_gui.elements.UITextBox("", scale(pygame.Rect((80, 480), (615, 142)))
+                self.history_text_box = UITextBox("", scale(pygame.Rect((80, 480), (615, 142)))
                                                                       , manager=MANAGER)
                 self.no_moons = UIImageButton(scale(pygame.Rect(
                     (104, 1028), (68, 68))),

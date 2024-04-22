@@ -7,11 +7,12 @@ from .Screens import Screens
 
 from scripts.utility import get_text_box_theme, scale, scale_dimentions, shorten_text_to_fit
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache
-from scripts.game_structure.image_button import UIImageButton, UISpriteButton, UIRelationStatusBar
+from scripts.ui import image_cache
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from scripts.game_structure.windows import RelationshipLog
 from scripts.game_structure.propagating_thread import PropagatingThread
+from scripts.ui.elements import UITextBox, UIRelationStatusBar
+from scripts.ui.elements.buttons import UIImageButton, UISpriteButton
 
 
 class RelationshipScreen(Screens):
@@ -125,9 +126,9 @@ class RelationshipScreen(Screens):
         self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((1220, 194), (290, 46))),
                                                               object_id="#search_entry_box")
 
-        self.show_dead_text = pygame_gui.elements.UITextBox("Show Dead", scale(pygame.Rect((220, 1010), (200, 60))),
+        self.show_dead_text = UITextBox("Show Dead", scale(pygame.Rect((220, 1010), (200, 60))),
                                                             object_id="#text_box_30_horizleft")
-        self.show_empty_text = pygame_gui.elements.UITextBox("Show Empty", scale(pygame.Rect((220, 1100), (200, 60))),
+        self.show_empty_text = UITextBox("Show Empty", scale(pygame.Rect((220, 1100), (200, 60))),
                                                              object_id="#text_box_30_horizleft")
 
         # Draw the checkboxes
@@ -138,7 +139,7 @@ class RelationshipScreen(Screens):
         self.next_page_button = UIImageButton(scale(pygame.Rect((1160, 1232), (68, 68))), "",
                                               object_id="#relation_list_next")
 
-        self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((890, 1234), (300, 68))),
+        self.page_number = UITextBox("", scale(pygame.Rect((890, 1234), (300, 68))),
                                                          object_id=get_text_box_theme("#text_box_30_horizcenter"))
 
         self.switch_focus_button = UIImageButton(scale(pygame.Rect((170, 780), (272, 60))), "",
@@ -292,11 +293,11 @@ class RelationshipScreen(Screens):
         else:
             self.all_relations = list(self.the_cat.relationships.values()).copy()
 
-        self.focus_cat_elements["header"] = pygame_gui.elements.UITextBox(str(self.the_cat.name) + " Relationships",
+        self.focus_cat_elements["header"] = UITextBox(str(self.the_cat.name) + " Relationships",
                                                                           scale(pygame.Rect((150, 150), (800, 100))),
                                                                           object_id=get_text_box_theme(
                                                                               "#text_box_34_horizleft"))
-        self.focus_cat_elements["details"] = pygame_gui.elements.UITextBox(self.the_cat.genderalign + " - " + \
+        self.focus_cat_elements["details"] = UITextBox(self.the_cat.genderalign + " - " + \
                                                                            str(self.the_cat.moons) + " moons - " + \
                                                                            self.the_cat.personality.trait,
                                                                            scale(pygame.Rect((160, 210), (800, 60))),
@@ -386,7 +387,7 @@ class RelationshipScreen(Screens):
             # Trait
             col1 += f"{self.inspect_cat.personality.trait}\n"
 
-            self.inspect_cat_elements["col1"] = pygame_gui.elements.UITextBox(col1,
+            self.inspect_cat_elements["col1"] = UITextBox(col1,
                                                                               scale(pygame.Rect((120, 650), (180, 180))),
                                                                               object_id="#text_box_22_horizleft_spacing_95",
                                                                               manager=MANAGER)
@@ -434,7 +435,7 @@ class RelationshipScreen(Screens):
                 elif not game.clan.clan_settings["first cousin mates"] and self.inspect_cat.is_cousin(self.the_cat):
                     col2 += "related: cousin"
 
-            self.inspect_cat_elements["col2"] = pygame_gui.elements.UITextBox(col2,
+            self.inspect_cat_elements["col2"] = UITextBox(col2,
                                                                               scale(pygame.Rect((300, 650), (180, 180))),
                                                                               object_id="#text_box_22_horizleft_spacing_95",
                                                                               manager=MANAGER)
@@ -537,7 +538,7 @@ class RelationshipScreen(Screens):
         # CHECK NAME LENGTH - SHORTEN IF NECESSARY
         name = str(the_relationship.cat_to.name)  # get name
         short_name = shorten_text_to_fit(name, 210, 26)
-        self.relation_list_elements["name" + str(i)] = pygame_gui.elements.UITextBox(short_name,
+        self.relation_list_elements["name" + str(i)] = UITextBox(short_name,
                                                                                      scale(pygame.Rect(
                                                                                          (pos_x - 10, pos_y - 50),
                                                                                          (220, 60))),
@@ -623,7 +624,7 @@ class RelationshipScreen(Screens):
         else:
             text = "romantic like:"
 
-        self.relation_list_elements[f'romantic_text{i}'] = pygame_gui.elements.UITextBox(text,
+        self.relation_list_elements[f'romantic_text{i}'] = UITextBox(text,
                                                                                          scale(pygame.Rect(
                                                                                              (pos_x + 6, pos_y + 87 + (
                                                                                                      barbar * bar_count)),
@@ -644,7 +645,7 @@ class RelationshipScreen(Screens):
             text = "platonic love:"
         else:
             text = "platonic like:"
-        self.relation_list_elements[f'plantonic_text{i}'] = pygame_gui.elements.UITextBox(text,
+        self.relation_list_elements[f'plantonic_text{i}'] = UITextBox(text,
                                                                                           scale(pygame.Rect((pos_x + 6,
                                                                                                              pos_y + 87 + (
                                                                                                                      barbar * bar_count)),
@@ -665,7 +666,7 @@ class RelationshipScreen(Screens):
             text = "hate:"
         else:
             text = "dislike:"
-        self.relation_list_elements[f'dislike_text{i}'] = pygame_gui.elements.UITextBox(text,
+        self.relation_list_elements[f'dislike_text{i}'] = UITextBox(text,
                                                                                         scale(pygame.Rect((pos_x + 6,
                                                                                                            pos_y + 87 + (
                                                                                                                    barbar * bar_count)),
@@ -686,7 +687,7 @@ class RelationshipScreen(Screens):
             text = "admiration:"
         else:
             text = "respect:"
-        self.relation_list_elements[f'admiration_text{i}'] = pygame_gui.elements.UITextBox(text,
+        self.relation_list_elements[f'admiration_text{i}'] = UITextBox(text,
                                                                                            scale(pygame.Rect((pos_x + 6,
                                                                                                               pos_y + 87 + (
                                                                                                                       barbar * bar_count)),
@@ -709,7 +710,7 @@ class RelationshipScreen(Screens):
             text = "security:"
         else:
             text = "comfort:"
-        self.relation_list_elements[f'comfortable_text{i}'] = pygame_gui.elements.UITextBox(text,
+        self.relation_list_elements[f'comfortable_text{i}'] = UITextBox(text,
                                                                                             scale(
                                                                                                 pygame.Rect((pos_x + 6,
                                                                                                              pos_y + 87 + (
@@ -731,7 +732,7 @@ class RelationshipScreen(Screens):
             text = "resentment:"
         else:
             text = "jealousy:"
-        self.relation_list_elements[f'jealous_text{i}'] = pygame_gui.elements.UITextBox(text,
+        self.relation_list_elements[f'jealous_text{i}'] = UITextBox(text,
                                                                                         scale(pygame.Rect((pos_x + 6,
                                                                                                            pos_y + 87 + (
                                                                                                                    barbar * bar_count)),
@@ -752,7 +753,7 @@ class RelationshipScreen(Screens):
             text = "reliance:"
         else:
             text = "trust:"
-        self.relation_list_elements[f'trust_text{i}'] = pygame_gui.elements.UITextBox(text,
+        self.relation_list_elements[f'trust_text{i}'] = UITextBox(text,
                                                                                       scale(pygame.Rect((pos_x + 6,
                                                                                                          pos_y + 87 + (
                                                                                                                  barbar * bar_count)),

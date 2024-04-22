@@ -8,9 +8,10 @@ except:
 from .Screens import Screens
 from scripts.cat.cats import Cat
 from scripts.events_module.freshkill_pile_events import Freshkill_Events
-from scripts.game_structure.image_button import UISpriteButton, UIImageButton, UITextBoxTweaked
 from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
+from scripts.ui.elements import UITextBox, UITextBoxTweaked
+from scripts.ui.elements.buttons import UIImageButton, UISpriteButton
 
 with open('resources/clansettings.json', 'r', encoding='utf-8') as f:
     settings_dict = ujson.load(f)
@@ -217,17 +218,17 @@ class ClearingScreen(Screens):
         self.next_page = UIImageButton(scale(pygame.Rect((952, 1272), (68, 68))), "",
                                        object_id="#arrow_right_button"
                                        , manager=MANAGER)
-        self.nutrition_title = pygame_gui.elements.UITextBox(
+        self.nutrition_title = UITextBox(
             "Nutrition Overview",
             scale(pygame.Rect((281, 820), (400, 60))),
             object_id=get_text_box_theme("#text_box_40_horizcenter"), manager=MANAGER
         )
-        self.log_title = pygame_gui.elements.UITextBox(
+        self.log_title = UITextBox(
             "Freshkill Pile Log",
             scale(pygame.Rect((281, 820), (400, 60))),
             object_id=get_text_box_theme("#text_box_40_horizcenter"), manager=MANAGER
         )
-        self.tactic_title = pygame_gui.elements.UITextBox(
+        self.tactic_title = UITextBox(
             "Feeding Tactic",
             scale(pygame.Rect((281, 820), (400, 60))),
             object_id=get_text_box_theme("#text_box_40_horizcenter"), manager=MANAGER
@@ -241,7 +242,7 @@ class ClearingScreen(Screens):
                                                   , manager=MANAGER)
         self.cat_bg.disable()
         log_text = game.freshkill_event_list.copy()
-        self.log_box = pygame_gui.elements.UITextBox(
+        self.log_box = UITextBox(
             f"{f'<br>-------------------------------<br>'.join(log_text)}<br>",
             scale(pygame.Rect
                   ((300, 900), (1080, 360))),
@@ -471,7 +472,7 @@ class ClearingScreen(Screens):
 
             name = str(cat.name)
             short_name = shorten_text_to_fit(name, 185, 30)
-            self.cat_names.append(pygame_gui.elements.UITextBox(short_name,
+            self.cat_names.append(UITextBox(short_name,
                                                                 scale(
                                                                     pygame.Rect((pos_x - 60, pos_y + 100), (220, 60))),
                                                                 object_id="#text_box_30_horizcenter", manager=MANAGER))
@@ -601,7 +602,7 @@ class ClearingScreen(Screens):
             if len(desc) == 4 and isinstance(desc[3], list):
                 x_val += 40
             
-            self.tactic_text[code] = pygame_gui.elements.UITextBox(
+            self.tactic_text[code] = UITextBox(
                 desc[0],
                 scale(pygame.Rect((x_val, n * 70), (1000, 78))),
                 container=self.tactic_text["container_general"],
@@ -625,7 +626,7 @@ class ClearingScreen(Screens):
                 if len(desc) == 4 and isinstance(desc[3], list):
                     x_val += 40
 
-                self.additional_text[code] = pygame_gui.elements.UITextBox(
+                self.additional_text[code] = UITextBox(
                     desc[0],
                     scale(pygame.Rect((x_val, n * 60), (1000, 78))),
                     container=self.additional_text["container_general"],
@@ -634,7 +635,7 @@ class ClearingScreen(Screens):
                 n += 1
 
         x_val = 45
-        self.additional_text["condition_increase"] = pygame_gui.elements.UITextBox(
+        self.additional_text["condition_increase"] = UITextBox(
             "<b>Status-order + needed amount:</b>",
             scale(pygame.Rect((x_val, n * 50 + 10), (1000, 78))),
             container=self.additional_text["container_general"],
@@ -646,7 +647,7 @@ class ClearingScreen(Screens):
         feeding_order = game.prey_config["feeding_order"]
         for status in feeding_order:
             amount = prey_requirement[status]
-            self.additional_text["condition_increase"] = pygame_gui.elements.UITextBox(
+            self.additional_text["condition_increase"] = UITextBox(
                 f"{n}. {status}: {amount} prey",
                 scale(pygame.Rect((x_val, n * 45 + 55), (1000, 78))),
                 container=self.additional_text["container_general"],

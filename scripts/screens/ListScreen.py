@@ -4,9 +4,9 @@ import pygame_gui
 
 from .Screens import Screens
 from scripts.cat.cats import Cat
-from scripts.game_structure.image_button import UISpriteButton, UIImageButton
 from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
+from scripts.ui.elements.buttons import UIImageButton, UISpriteButton
 
 
 class ListScreen(Screens):
@@ -287,7 +287,7 @@ class ListScreen(Screens):
         self.previous_page_button = UIImageButton(scale(pygame.Rect((620, 1190), (68, 68))), "",
                                                   object_id="#arrow_left_button", manager=MANAGER)
 
-        self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1190), (220, 60))),
+        self.page_number = UITextBox("", scale(pygame.Rect((680, 1190), (220, 60))),
                                                          object_id=get_text_box_theme("#text_box_30_horizcenter")
                                                          , manager=MANAGER)  # Text will be filled in later
 

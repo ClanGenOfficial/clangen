@@ -3,12 +3,13 @@ import pygame
 from scripts.utility import update_sprite, scale
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
-from scripts.game_structure import image_cache
-from scripts.game_structure.image_button import UIImageButton
+from scripts.ui import image_cache
 import pygame_gui
 from scripts.game_structure.windows import SaveCheck, EventLoading
 from scripts.game_structure.propagating_thread import PropagatingThread
 from threading import current_thread
+from scripts.ui.elements import UITextBox
+from scripts.ui.elements.buttons import UIImageButton
 
 
 class Screens():
@@ -117,7 +118,7 @@ class Screens():
             starting_height=4
         ),
 
-        "heading": pygame_gui.elements.UITextBox(
+        "heading": UITextBox(
             "",
             scale(pygame.Rect((610, 54), (380, 70))),
             visible=False,
@@ -382,7 +383,7 @@ class Screens():
             manager=MANAGER,
             object_id="#mns_image_moon",
             container=self.menu_buttons['moons_n_seasons'])
-        self.moons_n_seasons_text = pygame_gui.elements.UITextBox(
+        self.moons_n_seasons_text = UITextBox(
             f'{game.clan.age} {moons_text}',
             scale(pygame.Rect((85, 13), (200, 60))),
             container=self.menu_buttons['moons_n_seasons'],
@@ -404,7 +405,7 @@ class Screens():
             manager=MANAGER,
             object_id=season_image_id,
             container=self.menu_buttons['moons_n_seasons'])
-        self.moons_n_seasons_text2 = pygame_gui.elements.UITextBox(
+        self.moons_n_seasons_text2 = UITextBox(
             f'{game.clan.current_season}',
             scale(pygame.Rect((85, 72), (200, 60))),
             container=self.menu_buttons['moons_n_seasons'],

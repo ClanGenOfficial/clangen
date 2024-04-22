@@ -5,9 +5,11 @@ from .Screens import Screens
 
 from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache
-from scripts.game_structure.image_button import UIImageButton, UISpriteButton
+from scripts.ui import image_cache
 from scripts.game_structure.game_essentials import game, MANAGER
+
+from scripts.ui.elements import UITextBox
+from scripts.ui.elements.buttons import UIImageButton, UISpriteButton
 
 
 class FamilyTreeScreen(Screens):
@@ -234,7 +236,7 @@ class FamilyTreeScreen(Screens):
         # the cat whose family tree is being viewed
         self.the_cat = Cat.all_cats[game.switches['cat']]
 
-        self.cat_elements["screen_title"] = pygame_gui.elements.UITextBox(f"{self.the_cat.name}'s Family Tree",
+        self.cat_elements["screen_title"] = UITextBox(f"{self.the_cat.name}'s Family Tree",
                                                                           scale(
                                                                               pygame.Rect((300, 50),
                                                                                           (1000, 100))),
@@ -317,7 +319,7 @@ class FamilyTreeScreen(Screens):
                                                             manager=MANAGER)
         name = str(self.the_cat.name)
         short_name = shorten_text_to_fit(name, 260, 22)
-        self.cat_elements["viewing_cat_text"] = pygame_gui.elements.UITextBox(f"Viewing {short_name}'s Lineage",
+        self.cat_elements["viewing_cat_text"] = UITextBox(f"Viewing {short_name}'s Lineage",
                                                                               scale(
                                                                                   pygame.Rect((150, 1282), (300, 150))),
                                                                               object_id=get_text_box_theme(
@@ -421,7 +423,7 @@ class FamilyTreeScreen(Screens):
 
         self.update_tab()
         if not self.current_group:
-            self.relation_elements["no_cats_notice"] = pygame_gui.elements.UITextBox("None",
+            self.relation_elements["no_cats_notice"] = UITextBox("None",
                                                                                      scale(
                                                                                          pygame.Rect(
                                                                                              (550, 1080),

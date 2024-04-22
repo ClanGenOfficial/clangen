@@ -5,10 +5,11 @@ from .Screens import Screens
 
 from scripts.utility import get_text_box_theme, scale, scale_dimentions
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache
-from scripts.game_structure.image_button import UIImageButton, UISpriteButton
+from scripts.ui import image_cache
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from scripts.game_structure.propagating_thread import PropagatingThread
+from scripts.ui.elements import UITextBox
+from scripts.ui.elements.buttons import UIImageButton, UISpriteButton
 
 
 class ChooseAdoptiveParentScreen(Screens):
@@ -145,7 +146,7 @@ class ChooseAdoptiveParentScreen(Screens):
     def screen_switches(self):
         """Sets up the elements that are always on the page"""
         
-        self.info = pygame_gui.elements.UITextBox(
+        self.info = UITextBox(
             "If a cat is added as an adoptive parent, they will be displayed on the family page and considered a full relative. "
             "Adoptive and blood parents will be treated the same; this also applies to siblings. ",
             scale(pygame.Rect((400, 120), (800, 200))),
@@ -214,11 +215,11 @@ class ChooseAdoptiveParentScreen(Screens):
                                                                container=self.potential_container)
         
         #Checkboxes and text
-        self.mates_current_parents_text = pygame_gui.elements.UITextBox("Mates of current parents", scale(pygame.Rect((1030, 10), (219, -1))),
+        self.mates_current_parents_text = UITextBox("Mates of current parents", scale(pygame.Rect((1030, 10), (219, -1))),
                                                                         object_id="#text_box_26_horizcenter",
                                                                         container=self.potential_container)
         
-        self.unrelated_only_text = pygame_gui.elements.UITextBox("Not closely related", scale(pygame.Rect((1030, 170), (219, -1))),
+        self.unrelated_only_text = UITextBox("Not closely related", scale(pygame.Rect((1030, 170), (219, -1))),
                                                                         object_id="#text_box_26_horizcenter",
                                                                         container=self.potential_container)
 
@@ -541,7 +542,7 @@ class ChooseAdoptiveParentScreen(Screens):
         self.selected_cat_elements = {}
 
     
-        self.current_cat_elements["heading"] = pygame_gui.elements.UITextBox(
+        self.current_cat_elements["heading"] = UITextBox(
             "Choose adoptive parents for " + str(self.the_cat.name),
             scale(pygame.Rect((300, 50), (1000, 80))),
             object_id=get_text_box_theme("#text_box_34_horizcenter"))
@@ -560,7 +561,7 @@ class ChooseAdoptiveParentScreen(Screens):
 
         info = str(self.the_cat.moons) + " moons\n" + self.the_cat.status + "\n" + self.the_cat.genderalign + "\n" + \
                self.the_cat.personality.trait
-        self.current_cat_elements["info"] = pygame_gui.elements.UITextBox(info,
+        self.current_cat_elements["info"] = UITextBox(info,
                                                                           scale(pygame.Rect((1000, 350), (188, 200))),
                                                                           object_id="#text_box_22_horizcenter_vertcenter_spacing_95",
                                                                           manager=MANAGER
@@ -694,7 +695,7 @@ class ChooseAdoptiveParentScreen(Screens):
 
         info = str(self.selected_cat.moons) + " moons\n" + self.selected_cat.status + "\n" + \
                self.selected_cat.genderalign + "\n" + self.selected_cat.personality.trait
-        self.selected_cat_elements["info"] = pygame_gui.elements.UITextBox(info,
+        self.selected_cat_elements["info"] = UITextBox(info,
                                                                    scale(pygame.Rect((412, 350), (188, 200))),
                                                                    object_id="#text_box_22_horizcenter_vertcenter_spacing_95",
                                                                    manager=MANAGER

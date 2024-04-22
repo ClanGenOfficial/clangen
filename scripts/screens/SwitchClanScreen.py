@@ -15,12 +15,13 @@ from scripts.cat.cats import Cat
 from scripts.clan import Clan
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
-from scripts.game_structure.image_button import UIImageButton
 from scripts.game_structure.windows import DeleteCheck, SaveError
 from scripts.utility import get_text_box_theme, scale, quit  # pylint: disable=redefined-builtin
 from .Screens import Screens
 from ..housekeeping.datadir import get_data_dir
 from ..housekeeping.version import get_version_info
+from scripts.ui.elements import UITextBox
+from scripts.ui.elements.buttons import UIImageButton
 
 logger = logging.getLogger(__name__)
 
@@ -110,14 +111,14 @@ class SwitchClanScreen(Screens):
                                        "",
                                        object_id="#main_menu_button",
                                        manager=MANAGER)
-        self.info = pygame_gui.elements.UITextBox(
+        self.info = UITextBox(
             'Note: This will close the game.\n When you open it next, it should have the new Clan.',
             # pylint: disable=line-too-long
             scale(pygame.Rect((200, 1200), (1200, 140))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER)
 
-        self.current_clan = pygame_gui.elements.UITextBox(
+        self.current_clan = UITextBox(
             "",
             scale(pygame.Rect((200, 200), (1200, 140))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
@@ -170,7 +171,7 @@ class SwitchClanScreen(Screens):
             "",
             object_id="#arrow_left_button",
             manager=MANAGER)
-        self.page_number = pygame_gui.elements.UITextBox(
+        self.page_number = UITextBox(
             "",
             scale(pygame.Rect((680, 1080), (220, 60))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),

@@ -8,8 +8,10 @@ from .Screens import Screens
 from scripts.utility import get_text_box_theme
 from scripts.cat.cats import Cat
 import pygame_gui
-from scripts.game_structure.image_button import UIImageButton
 from scripts.game_structure.game_essentials import game, screen_x, MANAGER
+
+from scripts.ui.elements import UITextBox
+from scripts.ui.elements.buttons import UIImageButton
 
 
 class CeremonyScreen(Screens):
@@ -27,11 +29,11 @@ class CeremonyScreen(Screens):
         self.hide_menu_buttons()
         self.the_cat = Cat.all_cats.get(game.switches['cat'])
         if self.the_cat.status == 'leader':
-            self.header = pygame_gui.elements.UITextBox(str(self.the_cat.name) + '\'s Leadership Ceremony',
+            self.header = UITextBox(str(self.the_cat.name) + '\'s Leadership Ceremony',
                                                         scale(pygame.Rect((200, 180), (1200, -1))),
                                                         object_id=get_text_box_theme(), manager=MANAGER)
         else:
-            self.header = pygame_gui.elements.UITextBox(str(self.the_cat.name) + ' has no ceremonies to view.',
+            self.header = UITextBox(str(self.the_cat.name) + ' has no ceremonies to view.',
                                                         scale(pygame.Rect((200, 180), (1200, -1))),
                                                         object_id=get_text_box_theme(), manager=MANAGER)
         if self.the_cat.status == 'leader' and not self.the_cat.dead:
@@ -41,7 +43,7 @@ class CeremonyScreen(Screens):
             self.life_text = ""
 
         self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((100, 300), (1400, 1000))))
-        self.text = pygame_gui.elements.UITextBox(self.life_text,
+        self.text = UITextBox(self.life_text,
                                                   scale(pygame.Rect((0, 0), (1100, -1))),
                                                   object_id=get_text_box_theme("#text_box_30_horizleft"),
                                                   container=self.scroll_container, manager=MANAGER)

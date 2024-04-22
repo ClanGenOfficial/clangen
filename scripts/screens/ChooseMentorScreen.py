@@ -5,9 +5,10 @@ from .Screens import Screens
 
 from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache
-from scripts.game_structure.image_button import UIImageButton, UISpriteButton
+from scripts.ui import image_cache
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
+from scripts.ui.elements import UITextBox
+from scripts.ui.elements.buttons import UIImageButton, UISpriteButton
 
 
 class ChooseMentorScreen(Screens):
@@ -87,11 +88,11 @@ class ChooseMentorScreen(Screens):
         self.the_cat = Cat.all_cats[game.switches['cat']]
         self.mentor = Cat.fetch_cat(self.the_cat.mentor)
 
-        self.heading = pygame_gui.elements.UITextBox("Choose a new mentor for " + str(self.the_cat.name),
+        self.heading = UITextBox("Choose a new mentor for " + str(self.the_cat.name),
                                                      scale(pygame.Rect((300, 50), (1000, 80))),
                                                      object_id=get_text_box_theme("#text_box_34_horizcenter"),
                                                      manager=MANAGER)
-        self.info = pygame_gui.elements.UITextBox("If an apprentice is 6 moons old and their mentor is changed, they "
+        self.info = UITextBox("If an apprentice is 6 moons old and their mentor is changed, they "
                                                   "will not be listed as a former apprentice on their old mentor's "
                                                   "profile. Apprentices without a mentor will have one automatically "
                                                   "assigned next moon. An apprentice's mentor can have an influence on "
@@ -100,14 +101,14 @@ class ChooseMentorScreen(Screens):
                                                   object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
                                                   manager=MANAGER)
         if self.mentor is not None:
-            self.current_mentor_text = pygame_gui.elements.UITextBox(f"{self.the_cat.name}'s current mentor is "
+            self.current_mentor_text = UITextBox(f"{self.the_cat.name}'s current mentor is "
                                                                      f"{self.mentor.name}",
                                                                      scale(pygame.Rect((460, 260), (680, 60))),
                                                                      object_id=get_text_box_theme(
                                                                          "#text_box_22_horizcenter")
                                                                      , manager=MANAGER)
         else:
-            self.current_mentor_text = pygame_gui.elements.UITextBox(f"{self.the_cat.name} does not have a mentor",
+            self.current_mentor_text = UITextBox(f"{self.the_cat.name} does not have a mentor",
                                                                      scale(pygame.Rect((460, 260), (680, 60))),
                                                                      object_id=get_text_box_theme(
                                                                          "#text_box_22_horizcenter")
@@ -140,12 +141,12 @@ class ChooseMentorScreen(Screens):
                                             object_id="#confirm_mentor_button")
         self.remove_mentor = UIImageButton(scale(pygame.Rect((652, 620), (296, 60))), "",
                                             object_id="#remove_mentor_button")
-        self.current_mentor_warning = pygame_gui.elements.UITextBox(
+        self.current_mentor_warning = UITextBox(
             "Current mentor selected",
             scale(pygame.Rect((600, 670), (400, 60))),
             object_id=get_text_box_theme("#text_box_22_horizcenter_red"),
             manager=MANAGER)
-        self.no_mentor_warning = pygame_gui.elements.UITextBox("<font color=#FF0000>No mentor selected</font>"
+        self.no_mentor_warning = UITextBox("<font color=#FF0000>No mentor selected</font>"
                                                                     , scale(pygame.Rect((600, 670), (400, 60))),
                                                                     object_id=get_text_box_theme(
                                                                         "#text_box_22_horizcenter"),
@@ -231,7 +232,7 @@ class ChooseMentorScreen(Screens):
 
         info = self.the_cat.status + "\n" + self.the_cat.genderalign + \
                "\n" + self.the_cat.personality.trait + "\n" + self.the_cat.skills.skill_string(short=True)
-        self.apprentice_details["apprentice_info"] = pygame_gui.elements.UITextBox(
+        self.apprentice_details["apprentice_info"] = UITextBox(
             info,
             scale(pygame.Rect((980, 325), (210, 250))),
             object_id="#text_box_22_horizcenter_vertcenter_spacing_95",
@@ -352,7 +353,7 @@ class ChooseMentorScreen(Screens):
                 info += f"\n{len(self.selected_mentor.former_apprentices)} former app(s)"
             if len(self.selected_mentor.apprentice) >= 1:
                 info += f"\n{len(self.selected_mentor.apprentice)} current app(s)"
-            self.selected_details["selected_info"] = pygame_gui.elements.UITextBox(info,
+            self.selected_details["selected_info"] = UITextBox(info,
                                                                                    scale(pygame.Rect((420, 325),
                                                                                                      (210, 250))),
                                                                                    object_id="#text_box_22_horizcenter_vertcenter_spacing_95",

@@ -20,15 +20,16 @@ from scripts.cat.names import Name
 from pygame_gui.elements import UIWindow
 
 from scripts.housekeeping.datadir import get_save_dir, get_cache_dir, get_saved_images_dir, get_data_dir
-from scripts.game_structure import image_cache
+from scripts.ui import image_cache
 from scripts.game_structure.game_essentials import game, screen_x, screen_y
-from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
 from scripts.housekeeping.progress_bar_updater import UIUpdateProgressBar
 
 from scripts.utility import scale, quit, update_sprite, scale_dimentions, logger, process_text
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.housekeeping.version import get_version_info
 from scripts.web import is_web
+from scripts.ui.elements import UITextBoxTweaked
+from scripts.ui.elements.buttons import UIImageButton
 
 if not is_web:
     from scripts.housekeeping.update import self_update, UpdateChannel, get_latest_version_number
@@ -298,14 +299,14 @@ class ChangeCatName(UIWindow):
 
         self.specsuffic_hidden = self.the_cat.name.specsuffix_hidden
 
-        self.heading = pygame_gui.elements.UITextBox(f"-Change {self.the_cat.name}'s Name-",
+        self.heading = UITextBox(f"-Change {self.the_cat.name}'s Name-",
                                                      scale(pygame.Rect(
                                                          (0, 20), (800, 80))),
                                                      object_id="#text_box_30_horizcenter",
                                                      manager=MANAGER,
                                                      container=self)
 
-        self.name_changed = pygame_gui.elements.UITextBox("Name Changed!", scale(pygame.Rect((490, 260), (800, 80))),
+        self.name_changed = UITextBox("Name Changed!", scale(pygame.Rect((490, 260), (800, 80))),
                                                           visible=False,
                                                           object_id="#text_box_30_horizleft",
                                                           manager=MANAGER,
@@ -477,7 +478,7 @@ class SpecifyCatGender(UIWindow):
             object_id="#exit_window_button",
             container=self
         )
-        self.heading = pygame_gui.elements.UITextBox(f"-Change {self.the_cat.name}'s Gender-"
+        self.heading = UITextBox(f"-Change {self.the_cat.name}'s Gender-"
                                                      f"<br> You can set this to anything! "
                                                      f"Gender alignment does not affect gameplay.",
                                                      scale(pygame.Rect(
@@ -486,7 +487,7 @@ class SpecifyCatGender(UIWindow):
                                                      manager=MANAGER,
                                                      container=self)
 
-        self.gender_changed = pygame_gui.elements.UITextBox("Gender Changed!",
+        self.gender_changed = UITextBox("Gender Changed!",
                                                             scale(pygame.Rect(
                                                                 (490, 260), (800, 80))),
                                                             visible=False,
@@ -545,7 +546,7 @@ class KillCat(UIWindow):
         cat_dict = {
             "m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))
         }
-        self.heading = pygame_gui.elements.UITextBox(f"<b>-- How did this cat die? --</b>",
+        self.heading = UITextBox(f"<b>-- How did this cat die? --</b>",
                                                      scale(pygame.Rect(
                                                          (20, 20), (860, 150))),
                                                      object_id="#text_box_30_horizcenter_spacing_95",
@@ -583,13 +584,13 @@ class KillCat(UIWindow):
                 '{VERB/m_c/were/was} killed by a higher power.', cat_dict)
 
             self.all_lives_check.hide()
-            self.life_text = pygame_gui.elements.UITextBox('Take all the leader\'s lives',
+            self.life_text = UITextBox('Take all the leader\'s lives',
                                                            scale(pygame.Rect(
                                                                (120, 295), (900, 80))),
                                                            object_id="#text_box_30_horizleft",
                                                            manager=MANAGER,
                                                            container=self)
-            self.beginning_prompt = pygame_gui.elements.UITextBox(self.prompt,
+            self.beginning_prompt = UITextBox(self.prompt,
                                                                   scale(pygame.Rect(
                                                                       (50, 60), (900, 80))),
                                                                   object_id="#text_box_30_horizleft",
@@ -612,7 +613,7 @@ class KillCat(UIWindow):
             self.all_lives_check.hide()
             self.one_life_check.hide()
 
-            self.beginning_prompt = pygame_gui.elements.UITextBox(self.prompt,
+            self.beginning_prompt = UITextBox(self.prompt,
                                                                   scale(pygame.Rect(
                                                                       (50, 60), (900, 80))),
                                                                   object_id="#text_box_30_horizleft",
@@ -1022,27 +1023,27 @@ class RelationshipLog(UIWindow):
             "There are no relationship logs."
 
         if not opposite_log_string:
-            self.log = pygame_gui.elements.UITextBox(log_string,
+            self.log = UITextBox(log_string,
                                                      scale(pygame.Rect(
                                                          (30, 70), (953, 850))),
                                                      object_id="#text_box_30_horizleft",
                                                      manager=MANAGER,
                                                      container=self)
         else:
-            self.log = pygame_gui.elements.UITextBox(log_string,
+            self.log = UITextBox(log_string,
                                                      scale(pygame.Rect(
                                                          (30, 70), (953, 500))),
                                                      object_id="#text_box_30_horizleft",
                                                      manager=MANAGER,
                                                      container=self)
-            self.opp_heading = pygame_gui.elements.UITextBox("<u><b>OTHER PERSPECTIVE</b></u>",
+            self.opp_heading = UITextBox("<u><b>OTHER PERSPECTIVE</b></u>",
                                                              scale(pygame.Rect(
                                                                  (30, 550), (953, 560))),
                                                              object_id="#text_box_30_horizleft",
                                                              manager=MANAGER,
                                                              container=self)
             self.opp_heading.disable()
-            self.opp_log = pygame_gui.elements.UITextBox(opposite_log_string,
+            self.opp_log = UITextBox(opposite_log_string,
                                                          scale(pygame.Rect(
                                                              (30, 610), (953, 465))),
                                                          object_id="#text_box_30_horizleft",
@@ -1080,7 +1081,7 @@ class SaveError(UIWindow):
                          resizable=False)
         self.set_blocking(True)
         game.switches['window_open'] = True
-        self.changelog_popup_title = pygame_gui.elements.UITextBox(
+        self.changelog_popup_title = UITextBox(
             f"<strong>Saving Failed!</strong>\n\n{error_text}",
             scale(pygame.Rect((40, 20), (890, 750))),
             object_id="#text_box_30",
@@ -1176,7 +1177,7 @@ class SaveAsImage(UIWindow):
             starting_height=2
         )
 
-        self.confirm_text = pygame_gui.elements.UITextBox(
+        self.confirm_text = UITextBox(
             "",
             scale(pygame.Rect((10, 250), (780, 90))),
             object_id="#text_box_26_horizcenter_vertcenter_spacing_95",
@@ -1312,19 +1313,19 @@ class ChangeCatToggles(UIWindow):
         self.refresh_checkboxes()
         
         # Text
-        self.text_1 = pygame_gui.elements.UITextBox("Prevent fading", scale(pygame.Rect(110, 60, -1, 50)), 
+        self.text_1 = UITextBox("Prevent fading", scale(pygame.Rect(110, 60, -1, 50)), 
                                                     object_id="#text_box_30_horizleft_pad_0_8",
                                                     container=self)
         
-        self.text_2 = pygame_gui.elements.UITextBox("Prevent kits", scale(pygame.Rect(110, 110, -1, 50)), 
+        self.text_2 = UITextBox("Prevent kits", scale(pygame.Rect(110, 110, -1, 50)), 
                                                     object_id="#text_box_30_horizleft_pad_0_8",
                                                     container=self)
         
-        self.text_3 = pygame_gui.elements.UITextBox("Prevent retirement", scale(pygame.Rect(110, 160, -1, 50)), 
+        self.text_3 = UITextBox("Prevent retirement", scale(pygame.Rect(110, 160, -1, 50)), 
                                                     object_id="#text_box_30_horizleft_pad_0_8",
                                                     container=self)
         
-        self.text_4 = pygame_gui.elements.UITextBox("Limit romantic interactions and mate changes",
+        self.text_4 = UITextBox("Limit romantic interactions and mate changes",
                                                     scale(pygame.Rect(110, 210, -1, 50)), 
                                                     object_id="#text_box_30_horizleft_pad_0_8",
                                                     container=self)
@@ -1448,7 +1449,7 @@ class SelectFocusClans(UIWindow):
 
         # Text
         self.texts = {}
-        self.texts["prompt"] = pygame_gui.elements.UITextBox(
+        self.texts["prompt"] = UITextBox(
             "<b>Which Clans will you target?</b>",
             scale(pygame.Rect((0, 10), (600, 60))),
             object_id="#text_box_30_horizcenter",
@@ -1456,7 +1457,7 @@ class SelectFocusClans(UIWindow):
         )
         n = 0
         for clan in game.clan.all_clans:
-            self.texts[clan.name] = pygame_gui.elements.UITextBox(
+            self.texts[clan.name] = UITextBox(
                 clan.name + "clan",
                 scale(pygame.Rect(215, n * 55 + 77, -1, 50)),
                 object_id="#text_box_30_horizleft_pad_0_8",

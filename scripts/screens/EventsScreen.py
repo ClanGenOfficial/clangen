@@ -4,12 +4,14 @@ from .Screens import Screens
 import pygame
 from scripts.events import events_class
 from scripts.utility import get_living_clan_cat_count, get_text_box_theme, scale, shorten_text_to_fit
-from scripts.game_structure.image_button import IDImageButton, UIImageButton
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
 from ..cat.cats import Cat
-from ..game_structure import image_cache
+from ..ui import image_cache
 from scripts.event_class import Single_Event
 from scripts.game_structure.windows import GameOver
+
+from scripts.ui.elements import UITextBox
+from scripts.ui.elements.buttons import UIImageButton, IDImageButton
 
 
 class EventsScreen(Screens):
@@ -249,15 +251,15 @@ class EventsScreen(Screens):
             self.freshkill_pile_button =  UIImageButton(scale(pygame.Rect((1270, 210), (282, 60))), "", object_id="#freshkill_pile_button"
                                              , manager=MANAGER)
 
-        self.heading = pygame_gui.elements.UITextBox("See which events are currently happening in the Clan.",
+        self.heading = UITextBox("See which events are currently happening in the Clan.",
                                                      scale(pygame.Rect((200, 220), (1200, 80))),
                                                      object_id=get_text_box_theme("#text_box_30_horizcenter"),
                                                      manager=MANAGER)
-        self.season = pygame_gui.elements.UITextBox(f'Current season: {game.clan.current_season}',
+        self.season = UITextBox(f'Current season: {game.clan.current_season}',
                                                     scale(pygame.Rect((200, 280), (1200, 80))),
                                                     object_id=get_text_box_theme("#text_box_30_horizcenter"),
                                                     manager=MANAGER)
-        self.clan_age = pygame_gui.elements.UITextBox("",
+        self.clan_age = UITextBox("",
                                                       scale(pygame.Rect((200, 340), (1200, 80))),
                                                       object_id=get_text_box_theme("#text_box_30_horizcenter"),
                                                       manager=MANAGER)
@@ -332,7 +334,7 @@ class EventsScreen(Screens):
         self.events_container_y = self.event_container.get_relative_rect()[3]
 
         # Display text
-        # self.explain_text = pygame_gui.elements.UITextBox(self.display_text, scale(pygame.Rect((25,110),(750,40))))
+        # self.explain_text = UITextBox(self.display_text, scale(pygame.Rect((25,110),(750,40))))
 
         # Draw and disable the correct menu buttons.
         self.set_disabled_menu_buttons(["events_screen"])
@@ -561,7 +563,7 @@ class EventsScreen(Screens):
         button_padding = 80/1400 * screen_x
         for ev in self.display_events:
             if isinstance(ev.text, str):  # Check to make sure text is a string.
-                self.display_events_elements["event" + str(i)] = pygame_gui.elements.UITextBox(ev.text,
+                self.display_events_elements["event" + str(i)] = UITextBox(ev.text,
                                                                                                pygame.Rect((0, y), (box_length - 20, -1)),
                                                                                                object_id=get_text_box_theme("#text_box_30_horizleft"),
                                                                                                container=self.event_container,

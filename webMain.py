@@ -4,6 +4,10 @@ Shim for pygbag (web runner) to detect all imports
 
 print("Loading...")
 
+import os
+print(os.getcwd())
+print(os.listdir())
+
 import i18n
 import pygame
 import pygame_gui
@@ -21,6 +25,7 @@ from scripts.cat.sprites import sprites
 from scripts.clan import clan_class
 from scripts.utility import get_text_box_theme, quit, scale  # pylint: disable=redefined-builtin
 from scripts.debug_menu import debugmode
+from scripts.screens.all_screens import start_screen
 
 
 from main import main

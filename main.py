@@ -23,6 +23,7 @@ import threading
 import asyncio
 
 
+from scripts.game_structure.discord_rpc import _DiscordRPCStub
 from scripts.housekeeping.log_cleanup import prune_logs
 from scripts.housekeeping.stream_duplexer import UnbufferedStreamDuplexer
 from scripts.housekeeping.datadir import get_log_dir, setup_data_dir
@@ -168,21 +169,24 @@ async def main():
         import pygame
 
         # import all screens for initialization (Note - must be done after pygame_gui manager is created)
-        try:
-            from scripts.screens.all_screens import start_screen  # pylint: disable=ungrouped-imports
-        except ImportError as e:
-            logging.exception("Failed to import all_screens")
-            raise e
+        from scripts.screens.all_screens import start_screen  # pylint: disable=ungrouped-imports
 
         # P Y G A M E
         clock = pygame.time.Clock()
-        pygame.display.set_icon(pygame.image.load('resources/images/icon.png'))
+
+        try:
+            pygame.display.set_icon(pygame.image.load('resources/images/icon.png'))
+        except Exception as e:
+            logging.exception("Failed to load icon")
+            logging.exception(e)
 
         if not web.is_web:
 
             game.rpc = _DiscordRPC("1076277970060185701", daemon=True)
             game.rpc.start()
             game.rpc.start_rpc.set()
+        else:
+            game.rpc = _DiscordRPCStub()
         
 
         # LOAD cats & clan
@@ -263,14 +267,16 @@ async def main():
             loading_thread.start()
 
             loading_animation()
+
+            loading_thread.join()
+            del loading_thread
         else:
             print("Loading data")
-            await load_data()
+            load_data()
 
         # The loading thread should be done by now. This line
         # is just for safety. Plus some cleanup.
-        loading_thread.join()
-        del loading_thread
+        
         global finished_loading
         del finished_loading
         del loading_animation

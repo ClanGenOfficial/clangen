@@ -19,7 +19,7 @@ from typing import Dict
 
 
 logger = logging.getLogger(__name__)
-from scripts.game_structure import image_cache
+from scripts.ui import image_cache
 from scripts.cat.history import History
 from scripts.cat.names import names
 from scripts.cat.pelts import Pelt

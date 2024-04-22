@@ -6,10 +6,11 @@ from .Screens import Screens
 
 from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache
-from scripts.game_structure.image_button import UIImageButton, UISpriteButton, UIRelationStatusBar
+from scripts.ui import image_cache
 from scripts.game_structure.game_essentials import game, MANAGER
 from math import ceil
+from scripts.ui.elements import UITextBox, UIRelationStatusBar
+from scripts.ui.elements.buttons import UIImageButton, UISpriteButton
 
 
 class MediationScreen(Screens):
@@ -166,13 +167,13 @@ class MediationScreen(Screens):
         self.deselect_2 = UIImageButton(scale(pygame.Rect((1210, 868), (254, 60))), "",
                                         object_id="#remove_cat_button")
 
-        self.results = pygame_gui.elements.UITextBox("",
+        self.results = UITextBox("",
                                                      scale(pygame.Rect((560, 770), (458, 200))),
                                                      object_id=get_text_box_theme(
                                                          "#text_box_22_horizcenter_spacing_95"),
                                                      manager=MANAGER)
 
-        self.error = pygame_gui.elements.UITextBox("",
+        self.error = UITextBox("",
                                                    scale(pygame.Rect((560, 75), (458, 115))),
                                                    object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
                                                    manager=MANAGER)
@@ -239,7 +240,7 @@ class MediationScreen(Screens):
                 self.mediate_button.enable()
                 self.sabotoge_button.enable()
 
-            self.mediator_elements["details"] = pygame_gui.elements.UITextBox(text,
+            self.mediator_elements["details"] = UITextBox(text,
                                                                               scale(pygame.Rect((x_value, 520),
                                                                                                 (310, 120))),
                                                                               object_id=get_text_box_theme(
@@ -415,7 +416,7 @@ class MediationScreen(Screens):
         else:
             _t = cat.personality.trait
         col1 += "\n" + _t
-        self.selected_cat_elements["col1" + tag] = pygame_gui.elements.UITextBox(col1,
+        self.selected_cat_elements["col1" + tag] = UITextBox(col1,
                                                                                  scale(pygame.Rect((x + 42, y + 252),
                                                                                                    (180, -1))),
                                                                                  object_id="#text_box_22_horizleft_spacing_95",
@@ -461,7 +462,7 @@ class MediationScreen(Screens):
             elif not game.clan.clan_settings["first cousin mates"] and other_cat.is_cousin(cat):
                 col2 += "cousin"
 
-        self.selected_cat_elements["col2" + tag] = pygame_gui.elements.UITextBox(col2,
+        self.selected_cat_elements["col2" + tag] = UITextBox(col2,
                                                                                  scale(pygame.Rect((x + 220, y + 252),
                                                                                                    (161, -1))),
                                                                                  object_id="#text_box_22_horizleft_spacing_95",
@@ -515,7 +516,7 @@ class MediationScreen(Screens):
             else:
                 text = "romantic like:"
 
-            self.selected_cat_elements[f'romantic_text{tag}'] = pygame_gui.elements.UITextBox(text, scale(pygame.Rect(
+            self.selected_cat_elements[f'romantic_text{tag}'] = UITextBox(text, scale(pygame.Rect(
                 (x + x_start, y + y_start + (barbar * bar_count) - 10),
                 (300, 60))),
                                                                                               object_id="#text_box_22_horizleft")
@@ -534,7 +535,7 @@ class MediationScreen(Screens):
                 text = "platonic love:"
             else:
                 text = "platonic like:"
-            self.selected_cat_elements[f'plantonic_text{tag}'] = pygame_gui.elements.UITextBox(text, scale(pygame.Rect(
+            self.selected_cat_elements[f'plantonic_text{tag}'] = UITextBox(text, scale(pygame.Rect(
                 (x + x_start, y + y_start + (barbar * bar_count) - 10),
                 (300, 60))),
                                                                                                object_id="#text_box_22_horizleft")
@@ -553,7 +554,7 @@ class MediationScreen(Screens):
                 text = "hate:"
             else:
                 text = "dislike:"
-            self.selected_cat_elements[f'dislike_text{tag}'] = pygame_gui.elements.UITextBox(text, scale(pygame.Rect(
+            self.selected_cat_elements[f'dislike_text{tag}'] = UITextBox(text, scale(pygame.Rect(
                 (x + x_start, y + y_start + (barbar * bar_count) - 10),
                 (300, 60))),
                                                                                              object_id="#text_box_22_horizleft")
@@ -572,7 +573,7 @@ class MediationScreen(Screens):
                 text = "admiration:"
             else:
                 text = "respect:"
-            self.selected_cat_elements[f'admiration_text{tag}'] = pygame_gui.elements.UITextBox(text, scale(pygame.Rect(
+            self.selected_cat_elements[f'admiration_text{tag}'] = UITextBox(text, scale(pygame.Rect(
                 (x + x_start, y + y_start + (barbar * bar_count) - 10),
                 (300, 60))),
                                                                                                 object_id="#text_box_22_horizleft")
@@ -592,7 +593,7 @@ class MediationScreen(Screens):
                 text = "security:"
             else:
                 text = "comfortable:"
-            self.selected_cat_elements[f'comfortable_text{tag}'] = pygame_gui.elements.UITextBox(text,
+            self.selected_cat_elements[f'comfortable_text{tag}'] = UITextBox(text,
                                                                                                  scale(pygame.Rect(
                                                                                                      (x + x_start,
                                                                                                       y + y_start + (
@@ -615,7 +616,7 @@ class MediationScreen(Screens):
                 text = "resentment:"
             else:
                 text = "jealousy:"
-            self.selected_cat_elements[f'jealous_text{tag}'] = pygame_gui.elements.UITextBox(text, scale(pygame.Rect(
+            self.selected_cat_elements[f'jealous_text{tag}'] = UITextBox(text, scale(pygame.Rect(
                 (x + x_start, y + y_start + (barbar * bar_count) - 10),
                 (300, 60))),
                                                                                              object_id="#text_box_22_horizleft")
@@ -634,7 +635,7 @@ class MediationScreen(Screens):
                 text = "reliance:"
             else:
                 text = "trust:"
-            self.selected_cat_elements[f'trust_text{tag}'] = pygame_gui.elements.UITextBox(text, scale(pygame.Rect(
+            self.selected_cat_elements[f'trust_text{tag}'] = UITextBox(text, scale(pygame.Rect(
                 (x + x_start, y + y_start + (barbar * bar_count) - 10),
                 (300, 60))),
                                                                                            object_id="#text_box_22_horizleft")

@@ -3,7 +3,6 @@ import platform
 
 from scripts.housekeeping.version import get_version_info
 
-
 def setup_data_dir():
     os.makedirs(get_data_dir(), exist_ok=True)
     try:
@@ -26,9 +25,14 @@ def setup_data_dir():
 
 
 def get_data_dir():
+    # Cant import the normal is_web because of circular imports
+    if platform.system() == 'Emscripten':
+        return '/saves'
+    
+
     if get_version_info().is_source_build:
         return '.'
-
+    
     from platformdirs import user_data_dir
 
     if get_version_info().is_dev():

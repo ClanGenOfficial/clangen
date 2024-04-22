@@ -25,7 +25,7 @@ from scripts.utility import get_med_cats, get_personality_compatibility, event_t
     leader_ceremony_text_adjust
 from scripts.game_structure.game_essentials import game, screen
 from scripts.cat_relations.relationship import Relationship
-from scripts.game_structure import image_cache
+from scripts.ui import image_cache
 from scripts.event_class import Single_Event
 from .thoughts import Thoughts
 from scripts.cat_relations.inheritance import Inheritance

@@ -9,10 +9,11 @@ from .Screens import Screens
 
 from scripts.utility import get_text_box_theme, shorten_text_to_fit
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache
+from scripts.ui import image_cache
 import pygame_gui
-from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
+from scripts.ui.elements import UITextBox, UITextBoxTweaked
+from scripts.ui.elements.buttons import UIImageButton
 
 
 class RoleScreen(Screens):
@@ -196,7 +197,7 @@ class RoleScreen(Screens):
                                                                          "#text_box_22_horizcenter"),
                                                                      manager=MANAGER, line_spacing=0.95)
 
-        self.selected_cat_elements["role_blurb"] = pygame_gui.elements.UITextBox(self.get_role_blurb(),
+        self.selected_cat_elements["role_blurb"] = UITextBox(self.get_role_blurb(),
                                                                                  scale(pygame.Rect((340, 400),
                                                                                                    (1120, 270))),
                                                                                  object_id="#text_box_26_horizcenter_vertcenter_spacing_95",

@@ -1,13 +1,17 @@
 import pygame
 import pygame_gui
-import ujson
+try:
+    import ujson
+except ImportError:
+    import json as ujson
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.windows import SelectFocusClans
 from scripts.screens.Screens import Screens
-from scripts.game_structure.image_button import UIImageButton
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
 from scripts.utility import get_med_cats, scale, get_text_box_theme
+from scripts.ui.elements import UITextBox
+from scripts.ui.elements.buttons import UIImageButton
 
 with open('resources/clansettings.json', 'r', encoding='utf-8') as f:
     settings_dict = ujson.load(f)
@@ -276,14 +280,14 @@ class WarriorDenScreen(Screens):
             else:
                 next_change = f"0 moons"
 
-        self.focus_information["current_focus"] = pygame_gui.elements.UITextBox(
+        self.focus_information["current_focus"] = UITextBox(
             f"<b>Current Focus:</b> {name}{desc}<br><b>Focus Last Changed:</b> {last_change_text}<br>(next change in {next_change})",
             scale(pygame.Rect((100, 145), (710, 80))),
             wrap_to_height=True,
             object_id=get_text_box_theme("#text_box_30_horizcenter_vertcenter_spacing_95"),
             manager=MANAGER
         )
-        self.focus_text = pygame_gui.elements.UITextBox(
+        self.focus_text = UITextBox(
             f"What should your warriors focus on?",
             scale(pygame.Rect((184, 428), (544, 30))),
             wrap_to_height=True,
@@ -300,7 +304,7 @@ class WarriorDenScreen(Screens):
             self.focus_information["side_text"].kill()
 
         # create the new info text
-        self.focus_information["side_text"] = pygame_gui.elements.UITextBox(
+        self.focus_information["side_text"] = UITextBox(
             f"<b>Selected information:</b><br>" + settings_dict["clan_focus"][self.active_code][1],
             scale(pygame.Rect((830, 932), (636, 260))),
             wrap_to_height=True,

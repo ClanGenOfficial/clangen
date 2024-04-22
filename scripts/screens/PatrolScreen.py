@@ -4,11 +4,12 @@ import pygame_gui
 
 from .Screens import Screens
 from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
-from scripts.game_structure.image_button import UIImageButton, UISpriteButton
 from scripts.patrol.patrol import Patrol
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.game_structure.propagating_thread import PropagatingThread
+from scripts.ui.elements import UITextBox
+from scripts.ui.elements.buttons import UIImageButton, UISpriteButton
 
 
 class PatrolScreen(Screens):
@@ -294,7 +295,7 @@ class PatrolScreen(Screens):
             else:
                 text = ""
 
-            self.elements['info'] = pygame_gui.elements.UITextBox(
+            self.elements['info'] = UITextBox(
                 text, scale(pygame.Rect((500, 1050), (600, 800))),
                 object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER
             )
@@ -371,7 +372,7 @@ class PatrolScreen(Screens):
         self.patrol_stage = 'choose_cats'
         self.patrol_screen = 'patrol_cats'  # List
 
-        self.elements["info"] = pygame_gui.elements.UITextBox(
+        self.elements["info"] = UITextBox(
             'Choose up to six cats to take on patrol.\n'
             'Smaller patrols help cats gain more experience, but larger patrols are safer.',
             scale(pygame.Rect((375, 190), (850, 200))), object_id=get_text_box_theme("#text_box_22_horizcenter"))
@@ -449,7 +450,7 @@ class PatrolScreen(Screens):
                                                     object_id="#remove_all_button", manager=MANAGER)
 
         # Text box for skills and traits. Hidden for now, and with no text in it
-        self.elements["skills_box"] = pygame_gui.elements.UITextBox("",
+        self.elements["skills_box"] = UITextBox("",
                                                                     scale(pygame.Rect((1020, 1020), (480, 180))),
                                                                     visible=False,
                                                                     object_id="#text_box_22_horizcenter_spacing_95",
@@ -463,12 +464,12 @@ class PatrolScreen(Screens):
         # add prey information
         if game.clan.game_mode != 'classic':
             current_amount =  round(game.clan.freshkill_pile.total_amount,2)
-            self.elements['current_prey'] = pygame_gui.elements.UITextBox(
+            self.elements['current_prey'] = UITextBox(
                 f"current prey: {current_amount}", scale(pygame.Rect((600, 1260), (400, 800))),
                 object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER
             )
             needed_amount = round(game.clan.freshkill_pile.amount_food_needed(),2)
-            self.elements['needed_prey'] = pygame_gui.elements.UITextBox(
+            self.elements['needed_prey'] = UITextBox(
                 f"needed prey: {needed_amount}", scale(pygame.Rect((600, 1295), (400, 800))),
                 object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER
             )
@@ -525,7 +526,7 @@ class PatrolScreen(Screens):
         # Prepare Intro Text
         # adjusting text for solo patrols
         #intro_text = adjust_patrol_text(intro_text, self.patrol_obj)
-        self.elements["patrol_text"] = pygame_gui.elements.UITextBox(self.display_text,
+        self.elements["patrol_text"] = UITextBox(self.display_text,
                                                                      scale(pygame.Rect((770, 345), (670, 500))),
                                                                      object_id="#text_box_30_horizleft_pad_10_10_spacing_95",
                                                                      manager=MANAGER)
@@ -547,7 +548,7 @@ class PatrolScreen(Screens):
             if x.skills.secondary and x.skills.secondary.get_short_skill() not in skills:
                 skills.append(x.skills.secondary.get_short_skill())
 
-        self.elements['patrol_info'] = pygame_gui.elements.UITextBox(
+        self.elements['patrol_info'] = UITextBox(
             f'patrol leader: {str(self.patrol_obj.patrol_leader.name)} \n'
             f'patrol members: {self.get_list_text(members)} \n'
             f'patrol skills: {self.get_list_text(skills)} \n'
@@ -612,7 +613,7 @@ class PatrolScreen(Screens):
         if self.outcome_art is not None and self.elements.get('intro_image') is not None:
             self.elements['intro_image'].set_image(self.outcome_art)
 
-        self.elements["patrol_results"] = pygame_gui.elements.UITextBox("",
+        self.elements["patrol_results"] = UITextBox("",
                                                                         scale(pygame.Rect((1100, 1000), (344, 300))),
                                                                         object_id=get_text_box_theme(
                                                                             "#text_box_22_horizcenter_spacing_95"),
@@ -807,13 +808,13 @@ class PatrolScreen(Screens):
             name = str(self.selected_cat.name)  # get name
             short_name = shorten_text_to_fit(name, 350, 30)
 
-            self.elements['selected_name'] = pygame_gui.elements.UITextBox(short_name,
+            self.elements['selected_name'] = UITextBox(short_name,
                                                                            scale(pygame.Rect((600, 650), (400, 60))),
                                                                            object_id=get_text_box_theme(
                                                                                "#text_box_30_horizcenter"),
                                                                            manager=MANAGER)
 
-            self.elements['selected_bio'] = pygame_gui.elements.UITextBox(str(self.selected_cat.status) +
+            self.elements['selected_bio'] = UITextBox(str(self.selected_cat.status) +
                                                                           "\n" + str(self.selected_cat.personality.trait) +
                                                                           "\n" + str(self.selected_cat.skills.skill_string(short=True)) +
                                                                           "\n" + str(
@@ -847,7 +848,7 @@ class PatrolScreen(Screens):
                     scale(pygame.Rect((306, 600), (190, 60))),
                     name,
                     object_id=get_text_box_theme())
-                self.elements['mate_info'] = pygame_gui.elements.UITextBox(
+                self.elements['mate_info'] = UITextBox(
                     "mate",
                     scale(pygame.Rect((300, 650), (200, 60))),
                     object_id=get_text_box_theme("#text_box_22_horizcenter"))
@@ -904,7 +905,7 @@ class PatrolScreen(Screens):
                         scale(pygame.Rect((1106, 600), (190, 60))),
                         name,
                         object_id=get_text_box_theme(), manager=MANAGER)
-                    self.elements['app_mentor_info'] = pygame_gui.elements.UITextBox(
+                    self.elements['app_mentor_info'] = UITextBox(
                         relation,
                         scale(pygame.Rect((1100, 650), (200, 60))),
                         object_id=get_text_box_theme("#text_box_22_horizcenter"))

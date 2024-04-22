@@ -5,9 +5,10 @@ from .Screens import Screens
 
 from scripts.utility import get_personality_compatibility, get_text_box_theme, scale, scale_dimentions
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache
-from scripts.game_structure.image_button import UIImageButton, UISpriteButton
+from scripts.ui import image_cache
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
+from scripts.ui.elements import UITextBox
+from scripts.ui.elements.buttons import UIImageButton, UISpriteButton
 
 
 class ChooseMateScreen(Screens):
@@ -172,7 +173,7 @@ class ChooseMateScreen(Screens):
             
     def screen_switches(self):
         """Sets up the elements that are always on the page"""
-        self.info = pygame_gui.elements.UITextBox(
+        self.info = UITextBox(
             "If a cat has mates, then they will be loyal and only have kittens with their mates"
             " (unless affairs are toggled on.) Potential mates are listed below! The lines "
             "connecting the two cats may give a hint on their compatibility with one another "
@@ -223,7 +224,7 @@ class ChooseMateScreen(Screens):
                                                                    scale_dimentions((20, 352))), 
                                                                container=self.offspring_container)
         
-        self.with_selected_cat_text = pygame_gui.elements.UITextBox("Offspring with selected cat", scale(pygame.Rect((1035, 25), (209, -1))),
+        self.with_selected_cat_text = UITextBox("Offspring with selected cat", scale(pygame.Rect((1035, 25), (209, -1))),
                                                                    object_id="#text_box_26_horizcenter",
                                                                    container=self.offspring_container)
         
@@ -242,11 +243,11 @@ class ChooseMateScreen(Screens):
                                                                container=self.potential_container)
         
         #Checkboxes and text
-        self.single_only_text = pygame_gui.elements.UITextBox("No mates", scale(pygame.Rect((1035, 22), (209, -1))),
+        self.single_only_text = UITextBox("No mates", scale(pygame.Rect((1035, 22), (209, -1))),
                                                               object_id="#text_box_26_horizcenter",
                                                               container=self.potential_container)
         
-        self.have_kits_text = pygame_gui.elements.UITextBox("Can have biological kits", scale(pygame.Rect((1035, 150), (209, -1))),
+        self.have_kits_text = UITextBox("Can have biological kits", scale(pygame.Rect((1035, 150), (209, -1))),
                                                               object_id="#text_box_26_horizcenter",
                                                               container=self.potential_container)
         
@@ -465,7 +466,7 @@ class ChooseMateScreen(Screens):
             else:
                 text = f"{self.the_cat.name} has no offspring."
             
-            self.no_kits_message = pygame_gui.elements.UITextBox(text, scale(pygame.Rect((0, 0), (994, 352))),
+            self.no_kits_message = UITextBox(text, scale(pygame.Rect((0, 0), (994, 352))),
                                                                  container=self.offspring_container, 
                                                                  object_id="#text_box_30_horizcenter_vertcenter")
     
@@ -645,7 +646,7 @@ class ChooseMateScreen(Screens):
         self.offspring_page = 0
         self.potential_mates_page = 0
 
-        self.current_cat_elements["heading"] = pygame_gui.elements.UITextBox(
+        self.current_cat_elements["heading"] = UITextBox(
             "Choose a mate for " + str(self.the_cat.name),
             scale(pygame.Rect((300, 50), (1000, 80))),
             object_id=get_text_box_theme("#text_box_34_horizcenter"))
@@ -670,7 +671,7 @@ class ChooseMateScreen(Screens):
                 info += "mates"
             else:
                 info += "mate"
-        self.current_cat_elements["info"] = pygame_gui.elements.UITextBox(info,
+        self.current_cat_elements["info"] = UITextBox(info,
                                                                           scale(pygame.Rect((412, 350), (188, 200))),
                                                                           object_id="#text_box_22_horizcenter_vertcenter_spacing_95",
                                                                           manager=MANAGER
@@ -808,7 +809,7 @@ class ChooseMateScreen(Screens):
             else:
                 info += "mate"
         
-        self.selected_cat_elements["info"] = pygame_gui.elements.UITextBox(info,
+        self.selected_cat_elements["info"] = UITextBox(info,
                                                                    scale(pygame.Rect((1000, 350), (188, 200))),
                                                                    object_id="#text_box_22_horizcenter_vertcenter_spacing_95",
                                                                    manager=MANAGER
@@ -816,7 +817,7 @@ class ChooseMateScreen(Screens):
         
         
         if not game.clan.clan_settings["same sex birth"] and self.the_cat.gender == self.selected_cat.gender:
-            self.selected_cat_elements["no kit warning"] = pygame_gui.elements.UITextBox(
+            self.selected_cat_elements["no kit warning"] = UITextBox(
                 f"<font pixel_size={int(22 / 1400 * screen_y)}> This pair can't have biological kittens </font>", 
                 scale(pygame.Rect((550, 250), (498, 50))),
                 object_id=get_text_box_theme("#text_box_22_horizcenter_vertcenter_spacing_95"))
