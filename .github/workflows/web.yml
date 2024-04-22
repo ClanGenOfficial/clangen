@@ -1,4 +1,4 @@
-name: pygbag_build
+name: Web
 on: [workflow_dispatch, push]
 permissions:
   contents: read
@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:  
-  build-pygbag:
+  build-web:
     
     name: Build for Emscripten
     runs-on: ubuntu-latest
