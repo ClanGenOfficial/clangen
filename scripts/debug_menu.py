@@ -113,6 +113,8 @@ class debugMode:
         
 
     def toggle_console(self):
+        if web.is_web:
+            return
         if self.console.visible == 0:
             self.console.show()
             self.console.command_entry.focus()
