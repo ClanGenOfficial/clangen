@@ -59,7 +59,7 @@ class ClearingScreen(Screens):
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
-                self.change_screen('camp screen')
+                self.change_screen(game.last_screen_forupdate)
             if event.ui_element == self.stop_focus_button:
                 self.feed_all_button.show()
                 self.stop_focus_button.hide()
@@ -178,6 +178,10 @@ class ClearingScreen(Screens):
             self.tab_list = self.hungry_cats
 
     def screen_switches(self):
+        if game.clan.game_mode == "classic":
+            self.change_screen(game.last_screen_forupdate)
+            return
+
         self.hide_menu_buttons()
         self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))), "", object_id="#back_button"
                                          , manager=MANAGER)
@@ -531,6 +535,8 @@ class ClearingScreen(Screens):
 
 
     def exit_screen(self):
+        if game.clan.game_mode == "classic":
+            return
         self.info_messages.kill()
         self.stop_focus_button.kill()
         self.feed_all_button.kill()
@@ -559,7 +565,9 @@ class ClearingScreen(Screens):
         self.log_box.kill()
         self.tactic_tab.kill()
         self.tactic_title.kill()
-        self.delete_checkboxes()        
+        self.delete_checkboxes()
+        if self.focus_cat:
+            self.focus_cat.kill()
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]

@@ -1415,3 +1415,97 @@ class ChangeCatToggles(UIWindow):
                 self.refresh_checkboxes()
         
         return super().process_event(event)
+
+class SelectFocusClans(UIWindow):
+    """This window allows the user to select the clans to be sabotaged, aided or raided in the focus setting."""
+
+    def __init__(self):
+        super().__init__(scale(pygame.Rect((500, 420), (600, 450))),
+                         window_display_title='Change Cat Name',
+                         object_id='#change_cat_name_window',
+                         resizable=False)
+        game.switches['window_open'] = True
+        self.set_blocking(True)
+        self.back_button = UIImageButton(
+            scale(pygame.Rect((540, 10), (44, 44))),
+            "",
+            object_id="#exit_window_button",
+            container=self
+        )
+        self.save_button = UIImageButton(
+            scale(pygame.Rect((161, 360),(278, 60))),
+            "",
+            object_id="#change_focus_button",
+            container=self
+        )
+        self.save_button.disable()
+
+        self.checkboxes = {}
+        self.refresh_checkboxes()
+
+        # Text
+        self.texts = {}
+        self.texts["prompt"] = pygame_gui.elements.UITextBox(
+            "<b>Which Clans will you target?</b>",
+            scale(pygame.Rect((0, 10), (600, 60))),
+            object_id="#text_box_30_horizcenter",
+            container=self
+        )
+        n = 0
+        for clan in game.clan.all_clans:
+            self.texts[clan.name] = pygame_gui.elements.UITextBox(
+                clan.name + "clan",
+                scale(pygame.Rect(215, n * 55 + 77, -1, 50)),
+                object_id="#text_box_30_horizleft_pad_0_8",
+                container=self
+            )
+            n += 1
+        
+    def refresh_checkboxes(self):
+        for x in self.checkboxes.values():
+            x.kill()
+        self.checkboxes = {}
+
+        n = 0
+        for clan in game.clan.all_clans:
+            box_type = "#unchecked_checkbox"
+            if clan.name in game.clan.clans_in_focus:
+                box_type = "#checked_checkbox"
+
+            self.checkboxes[clan.name] = UIImageButton(
+                scale(pygame.Rect(150, n * 55 + 70, 68, 68)),
+                "",
+                container=self,
+                object_id=box_type
+            )
+            n += 1
+
+    def process_event(self, event):
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element == self.back_button:
+                game.clan.clans_in_focus = []
+                game.switches['window_open'] = False
+                game.all_screens['warrior den screen'].exit_screen()
+                game.all_screens['warrior den screen'].screen_switches()
+                self.kill()
+            if event.ui_element == self.save_button:
+                game.switches['window_open'] = False
+                game.all_screens['warrior den screen'].save_focus()
+                game.all_screens['warrior den screen'].exit_screen()
+                game.all_screens['warrior den screen'].screen_switches()
+                self.kill()
+            if event.ui_element in self.checkboxes.values():
+                for clan_name, value in self.checkboxes.items():
+                    if value == event.ui_element:
+                        if value.object_ids[1] == "#unchecked_checkbox":
+                            game.clan.clans_in_focus.append(clan_name)
+                        if value.object_ids[1] == "#checked_checkbox":
+                            game.clan.clans_in_focus.remove(clan_name)
+                        self.refresh_checkboxes()
+                if len(game.clan.clans_in_focus) < 1 and self.save_button.is_enabled:
+                    self.save_button.disable()
+                if len(game.clan.clans_in_focus) >= 1 and not self.save_button.is_enabled:
+                    self.save_button.enable()
+        
+        return super().process_event(event)
+

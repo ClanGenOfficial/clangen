@@ -1246,7 +1246,7 @@
         "season": ["Any"],
         "types": ["herb_gathering"],
         "tags": ["romantic"],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_cobwebapps",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -1443,7 +1443,7 @@
         "season": ["Any"],
         "types": ["herb_gathering"],
         "tags": ["romantic"],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_cobwebapps",
         "min_cats": 3,
         "max_cats": 3,
         "min_max_status": {
@@ -1531,7 +1531,7 @@
         "season": ["Any"],
         "types": ["herb_gathering"],
         "tags": ["romantic"],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_cobwebapps",
         "min_cats": 4,
         "max_cats": 4,
         "min_max_status": {
@@ -1619,7 +1619,7 @@
         "season": ["Any"],
         "types": ["herb_gathering"],
         "tags": ["romantic"],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_cobwebapps",
         "min_cats": 5,
         "max_cats": 5,
         "min_max_status": {
@@ -1707,7 +1707,7 @@
         "season": ["Any"],
         "types": ["herb_gathering"],
         "tags": ["romantic", "rom_two_apps"],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_cobwebapps",
         "min_cats": 6,
         "max_cats": 6,
         "min_max_status": {

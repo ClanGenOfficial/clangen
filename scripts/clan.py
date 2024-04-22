@@ -134,6 +134,7 @@ class Clan():
         all_settings.append(_settings['role'])
         all_settings.append(_settings['relation'])
         all_settings.append(_settings['freshkill_tactics'])
+        all_settings.append(_settings['clan_focus'])
 
         for setting in all_settings:  # Add all the settings to the settings dictionary
             for setting_name, inf in setting.items():
@@ -158,6 +159,8 @@ class Clan():
             "enemy": None, 
             "duration": 0,
         }
+        self.last_focus_change = None
+        self.clans_in_focus = []
 
         self.faded_ids = [
         ]  # Stores ID's of faded cats, to ensure these IDs aren't reused.
@@ -418,6 +421,8 @@ class Clan():
             "biome": self.biome,
             "camp_bg": self.camp_bg,
             "gamemode": self.game_mode,
+            "last_focus_change": self.last_focus_change,
+            "clans_in_focus": self.clans_in_focus,
             "instructor": self.instructor.ID,
             "reputation": self.reputation,
             "mediated": game.mediated,
@@ -774,6 +779,9 @@ class Clan():
             if clan_data["faded_cats"].strip():  # Check for empty string
                 for cat in clan_data["faded_cats"].split(","):
                     game.clan.faded_ids.append(cat)
+
+        game.clan.last_focus_change = clan_data.get("last_focus_change")
+        game.clan.clans_in_focus = clan_data.get("clans_in_focus", [])
 
         # Patrolled cats
         if "patrolled_cats" in clan_data:

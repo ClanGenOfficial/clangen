@@ -1,5 +1,7 @@
-<strong>TBD</strong>
+<strong>v0.11.2</strong>
 - Fix: ensure that the changelog is read as UTF-8
+- Fix: issue with manual feeding with tactic "low nutrition first"
+- Fix: edge case of a cat has the exiled status, but is not outside
 
 <strong>v0.11.1</strong>
 - Fix: The changelog. Yep, just the changelog. Yes, it happened again-
