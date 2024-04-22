@@ -10,6 +10,7 @@ from scripts.game_structure.propagating_thread import PropagatingThread
 from threading import current_thread
 from scripts.ui.elements import UITextBox
 from scripts.ui.elements.buttons import UIImageButton
+from scripts.web import is_web
 
 
 class Screens():
@@ -141,7 +142,8 @@ class Screens():
 
         game.switches['cur_screen'] = new_screen
         game.switch_screens = True
-        game.rpc.update_rpc.set()
+        if not is_web:
+            game.rpc.update_rpc.set()
 
     def __init__(self, name=None):
         self.name = name
