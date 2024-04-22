@@ -10,6 +10,8 @@ import pygame_gui
 import asyncio
 import platform
 
+import pygame_gui.core.text
+import pygame_gui.core.text.text_line_chunk
 
 from scripts.game_structure.load_cat import load_cats, version_convert
 from scripts.game_structure.windows import SaveCheck
@@ -20,5 +22,10 @@ from scripts.clan import clan_class
 from scripts.utility import get_text_box_theme, quit, scale  # pylint: disable=redefined-builtin
 from scripts.debug_menu import debugmode
 
+
 from main import main
-asyncio.run(main())
+try:
+    asyncio.run(main())
+except Exception as e:
+    print(e)
+    quit()

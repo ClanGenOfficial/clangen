@@ -1,6 +1,7 @@
 import pygame
 import pygame_gui
 
+from scripts import web
 from scripts.housekeeping.datadir import get_save_dir, get_temp_dir
 
 try:
@@ -596,8 +597,8 @@ else:
 
 def load_manager(res: tuple):
     # initialize pygame_gui manager, and load themes
-    manager = pygame_gui.ui_manager.UIManager(
-        res, 'resources/theme/defaults.json', enable_live_theme_updates=False)
+    manager = pygame_gui.UIManager(
+        res, f'resources/theme/{"web_" if web.is_web else ""}defaults.json', enable_live_theme_updates=False)
     manager.add_font_paths(
         font_name='notosans',
         regular_path='resources/fonts/NotoSans-Medium.ttf',
@@ -605,46 +606,49 @@ def load_manager(res: tuple):
         italic_path='resources/fonts/NotoSans-MediumItalic.ttf',
         bold_italic_path='resources/fonts/NotoSans-ExtraBoldItalic.ttf'
     )
-    
 
     if res[0] > 800:
-        manager.get_theme().load_theme('resources/theme/defaults.json')
-        manager.get_theme().load_theme('resources/theme/buttons.json')
-        manager.get_theme().load_theme('resources/theme/text_boxes.json')
-        manager.get_theme().load_theme('resources/theme/text_boxes_dark.json')
+        manager.get_theme().load_theme(f'resources/theme/{"web_" if web.is_web else ""}defaults.json')
+        manager.get_theme().load_theme(f'resources/theme/{"web_" if web.is_web else ""}buttons.json')
+        manager.get_theme().load_theme(f'resources/theme/{"web_" if web.is_web else ""}text_boxes.json')
+        manager.get_theme().load_theme(f'resources/theme/{"web_" if web.is_web else ""}text_boxes_dark.json')
         manager.get_theme().load_theme('resources/theme/vertical_scroll_bar.json')
         manager.get_theme().load_theme('resources/theme/window_base.json')
-        manager.get_theme().load_theme('resources/theme/tool_tips.json')
+        manager.get_theme().load_theme(f'resources/theme/{"web_" if web.is_web else ""}tool_tips.json')
 
-        manager.preload_fonts([
-            {'name': 'notosans', 'point_size': 30, 'style': 'italic'},
-            {'name': 'notosans', 'point_size': 26, 'style': 'italic'},
-            {'name': 'notosans', 'point_size': 30, 'style': 'bold'},
-            {'name': 'notosans', 'point_size': 26, 'style': 'bold'},
-            {'name': 'notosans', 'point_size': 22, 'style': 'bold'},
-        ])
+        if not web.is_web:
+            manager.preload_fonts([
+                {'name': 'notosans', 'point_size': 30, 'style': 'italic'},
+                {'name': 'notosans', 'point_size': 26, 'style': 'italic'},
+                {'name': 'notosans', 'point_size': 30, 'style': 'bold'},
+                {'name': 'notosans', 'point_size': 26, 'style': 'bold'},
+                {'name': 'notosans', 'point_size': 22, 'style': 'bold'},
+            ])
 
     else:
-        manager.get_theme().load_theme('resources/theme/defaults_small.json')
-        manager.get_theme().load_theme('resources/theme/buttons_small.json')
-        manager.get_theme().load_theme('resources/theme/text_boxes_small.json')
-        manager.get_theme().load_theme('resources/theme/text_boxes_dark_small.json')
+        manager.get_theme().load_theme(f'resources/theme/{"web_" if web.is_web else ""}defaults_small.json')
+        manager.get_theme().load_theme(f'resources/theme/{"web_" if web.is_web else ""}buttons_small.json')
+        manager.get_theme().load_theme(f'resources/theme/{"web_" if web.is_web else ""}text_boxes_small.json')
+        manager.get_theme().load_theme(f'resources/theme/{"web_" if web.is_web else ""}text_boxes_dark_small.json')
         manager.get_theme().load_theme('resources/theme/vertical_scroll_bar.json')
         manager.get_theme().load_theme('resources/theme/window_base_small.json')
-        manager.get_theme().load_theme('resources/theme/tool_tips_small.json')
+        manager.get_theme().load_theme(f'resources/theme/{"web_" if web.is_web else ""}tool_tips_small.json')
 
-        manager.preload_fonts([
-            {'name': 'notosans', 'point_size': 11, 'style': 'bold'},
-            {'name': 'notosans', 'point_size': 13, 'style': 'bold'},
-            {'name': 'notosans', 'point_size': 15, 'style': 'bold'},
-            {'name': 'notosans', 'point_size': 13, 'style': 'italic'},
-            {'name': 'notosans', 'point_size': 15, 'style': 'italic'}
-        ])
+        if not web.is_web:
+            manager.preload_fonts([
+                {'name': 'notosans', 'point_size': 11, 'style': 'bold'},
+                {'name': 'notosans', 'point_size': 13, 'style': 'bold'},
+                {'name': 'notosans', 'point_size': 15, 'style': 'bold'},
+                {'name': 'notosans', 'point_size': 13, 'style': 'italic'},
+                {'name': 'notosans', 'point_size': 15, 'style': 'italic'}
+            ])
         
     manager.get_theme().load_theme('resources/theme/windows.json')
     manager.get_theme().load_theme('resources/theme/image_buttons.json')
+
 
     return manager
 
 
 MANAGER = load_manager((screen_x, screen_y))
+

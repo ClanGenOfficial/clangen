@@ -22,7 +22,7 @@ try:
     import ujson
 except:
     import json as ujson
-import statistics
+from scripts import statistics
 
 from scripts.game_structure.game_essentials import game
 from scripts.housekeeping.version import get_version_info, SAVE_VERSION_NUMBER
