@@ -256,6 +256,13 @@ config = {
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes"/>
 
+    <meta content="Clangen" property="og:title" />
+    <meta content="Web port of the warrior cats fangame: Clangen" property="og:description" />
+    <meta content="https://clangen-web.github.io/clangen/icon.png" property="og:image" />
+    <meta content="#ac9d72" data-react-helmet="true" name="theme-color" />
+
+    <link rel="manifest" href="manifest.json" />
+
     <link rel="prefetch" href="{{cookiecutter.cdn}}pythonrc.py">
     <link rel="prefetch" href="{{cookiecutter.cdn}}vt/xterm.js">
     <link rel="prefetch" href="{{cookiecutter.cdn}}vt/xterm-addon-image.js">
@@ -343,6 +350,7 @@ config = {
 
     <script src="{{cookiecutter.cdn}}/browserfs.min.js"></script>
 
+    <script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("service-worker.js")</script>
 </head>
 
 <body>
