@@ -7,7 +7,7 @@ from scripts.cat.cats import Cat
 from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from scripts.ui.elements.buttons import UIImageButton, UISpriteButton
-
+from scripts.ui.elements import UITextBox
 
 class ListScreen(Screens):
     # the amount of cats a page can hold is 20, so the amount of pages is cats/20
