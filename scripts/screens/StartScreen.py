@@ -26,6 +26,7 @@ from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from scripts.game_structure.image_button import UIImageButton
+from scripts.buttons import UIButton
 from scripts.game_structure.windows import UpdateAvailablePopup, ChangelogPopup
 from scripts.utility import scale, quit  # pylint: disable=redefined-builtin
 from .Screens import Screens
@@ -153,27 +154,27 @@ class StartScreen(Screens):
         self.hide_menu_buttons()
         # Create buttons
 
-        self.continue_button = UIImageButton(scale(
+        self.continue_button = UIButton(scale(
             pygame.Rect((140, 620), (384, 70))),
             "",
             object_id="#continue_button",
             manager=MANAGER)
-        self.switch_clan_button = UIImageButton(
+        self.switch_clan_button = UIButton(
             scale(pygame.Rect((140, 710), (384, 70))),
             "",
             object_id="#switch_clan_button",
             manager=MANAGER)
-        self.new_clan_button = UIImageButton(scale(
+        self.new_clan_button = UIButton(scale(
             pygame.Rect((140, 800), (384, 70))),
             "",
             object_id="#new_clan_button",
             manager=MANAGER)
-        self.settings_button = UIImageButton(scale(
+        self.settings_button = UIButton(scale(
             pygame.Rect((140, 890), (384, 70))),
             "",
             object_id="#settings_button",
             manager=MANAGER)
-        self.quit = UIImageButton(scale(pygame.Rect((140, 980), (384, 70))),
+        self.quit = UIButton(scale(pygame.Rect((140, 980), (384, 70))),
                                   "",
                                   object_id="#quit_button",
                                   manager=MANAGER)

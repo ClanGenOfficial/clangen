@@ -1,0 +1,9 @@
+{
+    "ja": {
+        "#continue_button": "続行",
+        "#switch_clan_button": "クランを切り替える",
+        "#new_clan_button": "新しいクラン",
+        "#settings_button": "設定",
+        "#quit_button": "ゲームを終了する"
+    }
+}
