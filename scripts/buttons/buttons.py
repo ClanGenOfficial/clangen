@@ -6,9 +6,10 @@ import warnings
 from os import listdir
 from typing import Union, Optional, Dict
 
-import scripts.game_structure.image_button
+
 from scripts.game_structure.game_essentials import MANAGER
 from scripts.buttons.color_palette import Palette
+from scripts.ui.elements.buttons import UISpriteButton
 
 try:
     import ujson
@@ -217,7 +218,7 @@ class ButtonCache():
     def clear_cache():
         ButtonCache._storage = []
 
-class UIButton(scripts.game_structure.image_button.UISpriteButton):
+class UIButton(UISpriteButton):
     def __init__(self, relative_rect, text = "", visible=1, starting_height=1, object_id=None,
                  manager=MANAGER, container=None, tool_tip_text=None):
         self.relative_rect = relative_rect
