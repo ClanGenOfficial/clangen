@@ -5,6 +5,9 @@ import subprocess
 def runAndGatherOutput(command):
     process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     stdout, stderr = process.communicate()
+    print(stdout.decode('utf-8'))
+    if stderr:
+        print(stderr.decode('utf-8'))
     return stdout.decode('utf-8')
 
 release_channel = os.environ.get('RELEASE_CHANNEL', 'development')
