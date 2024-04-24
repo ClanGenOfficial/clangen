@@ -154,10 +154,10 @@ class ProfileScreen(Screens):
 
             if game.switches['window_open']:
                 pass
-            elif event.ui_element == self.back_button:
+            elif self.back_button == event.ui_element:
                 self.close_current_tab()
                 self.change_screen(game.last_screen_forProfile)
-            elif event.ui_element == self.previous_cat_button:
+            elif self.previous_cat_button == event.ui_element:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
                     self.clear_profile()
                     game.switches['cat'] = self.previous_cat
@@ -165,7 +165,7 @@ class ProfileScreen(Screens):
                     self.update_disabled_buttons_and_text()
                 else:
                     print("invalid previous cat", self.previous_cat)
-            elif event.ui_element == self.next_cat_button:
+            elif self.next_cat_button == event.ui_element:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
                     self.clear_profile()
                     game.switches['cat'] = self.next_cat
@@ -173,18 +173,18 @@ class ProfileScreen(Screens):
                     self.update_disabled_buttons_and_text()
                 else:
                     print("invalid next cat", self.previous_cat)
-            elif event.ui_element == self.inspect_button:
+            elif self.inspect_button == event.ui_element:
                 self.close_current_tab()
                 self.change_screen("sprite inspect screen")
-            elif event.ui_element == self.relations_tab_button:
+            elif self.relations_tab_button == event.ui_element:
                 self.toggle_relations_tab()
-            elif event.ui_element == self.roles_tab_button:
+            elif self.roles_tab_button == event.ui_element:
                 self.toggle_roles_tab()
-            elif event.ui_element == self.personal_tab_button:
+            elif self.personal_tab_button == event.ui_element:
                 self.toggle_personal_tab()
-            elif event.ui_element == self.dangerous_tab_button:
+            elif self.dangerous_tab_button == event.ui_element:
                 self.toggle_dangerous_tab()
-            elif event.ui_element == self.backstory_tab_button:
+            elif self.backstory_tab_button == event.ui_element:
                 if self.open_sub_tab is None:
                     if game.switches['favorite_sub_tab'] is None:
                         self.open_sub_tab = 'life events'
@@ -192,20 +192,20 @@ class ProfileScreen(Screens):
                         self.open_sub_tab = game.switches['favorite_sub_tab']
 
                 self.toggle_history_tab()
-            elif event.ui_element == self.conditions_tab_button:
+            elif self.conditions_tab_button == event.ui_element:
                 self.toggle_conditions_tab()
             elif "leader_ceremony" in self.profile_elements and \
                     event.ui_element == self.profile_elements["leader_ceremony"]:
                 self.change_screen('ceremony screen')
-            elif event.ui_element == self.profile_elements["med_den"]:
+            elif self.profile_elements["med_den"] == event.ui_element:
                 self.change_screen('med den screen')
             elif "mediation" in self.profile_elements and event.ui_element == self.profile_elements["mediation"]:
                 self.change_screen('mediation screen')
-            elif event.ui_element == self.profile_elements["favourite_button"]:
+            elif self.profile_elements["favourite_button"] == event.ui_element:
                 self.the_cat.favourite = False
                 self.profile_elements["favourite_button"].hide()
                 self.profile_elements["not_favourite_button"].show()
-            elif event.ui_element == self.profile_elements["not_favourite_button"]:
+            elif self.profile_elements["not_favourite_button"] == event.ui_element:
                 self.the_cat.favourite = True
                 self.profile_elements["favourite_button"].show()
                 self.profile_elements["not_favourite_button"].hide()
@@ -243,26 +243,26 @@ class ProfileScreen(Screens):
     def handle_tab_events(self, event):
         # Relations Tab
         if self.open_tab == 'relations':
-            if event.ui_element == self.family_tree_button:
+            if self.family_tree_button == event.ui_element:
                 self.change_screen('see kits screen')
-            elif event.ui_element == self.see_relationships_button:
+            elif self.see_relationships_button == event.ui_element:
                 self.change_screen('relationship screen')
-            elif event.ui_element == self.choose_mate_button:
+            elif self.choose_mate_button == event.ui_element:
                 self.change_screen('choose mate screen')
-            elif event.ui_element == self.change_adoptive_parent_button:
+            elif self.change_adoptive_parent_button == event.ui_element:
                 self.change_screen('choose adoptive parent screen')
 
         # Roles Tab
         elif self.open_tab == 'roles':
-            if event.ui_element == self.manage_roles:
+            if self.manage_roles == event.ui_element:
                 self.change_screen('role screen')
-            elif event.ui_element == self.change_mentor_button:
+            elif self.change_mentor_button == event.ui_element:
                 self.change_screen('choose mentor screen')
         # Personal Tab
         elif self.open_tab == 'personal':
-            if event.ui_element == self.change_name_button:
+            if self.change_name_button == event.ui_element:
                 ChangeCatName(self.the_cat)
-            elif event.ui_element == self.specify_gender_button:
+            elif self.specify_gender_button == event.ui_element:
                 SpecifyCatGender(self.the_cat)
                 '''if self.the_cat.genderalign in ["female", "trans female"]:
                     self.the_cat.pronouns = [self.the_cat.default_pronouns[1].copy()]
@@ -270,7 +270,7 @@ class ProfileScreen(Screens):
                     self.the_cat.pronouns = [self.the_cat.default_pronouns[2].copy()]
                 else: self.the_cat.pronouns = [self.the_cat.default_pronouns[0].copy()]'''
             #when button is pressed...
-            elif event.ui_element == self.cis_trans_button:
+            elif self.cis_trans_button == event.ui_element:
                 #if the cat is anything besides m/f/transm/transf then turn them back to cis
                 if self.the_cat.genderalign not in ["female", "trans female", "male", "trans male"]:
                     self.the_cat.genderalign = self.the_cat.gender
@@ -300,13 +300,13 @@ class ProfileScreen(Screens):
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
-            elif event.ui_element == self.cat_toggles_button:
+            elif self.cat_toggles_button == event.ui_element:
                 ChangeCatToggles(self.the_cat)
         # Dangerous Tab
         elif self.open_tab == 'dangerous':
-            if event.ui_element == self.kill_cat_button:
+            if self.kill_cat_button == event.ui_element:
                 KillCat(self.the_cat)
-            elif event.ui_element == self.exile_cat_button:
+            elif self.exile_cat_button == event.ui_element:
                 if not self.the_cat.dead and not self.the_cat.exiled:
                     Cat.exile(self.the_cat)
                     self.clear_profile()
@@ -327,14 +327,14 @@ class ProfileScreen(Screens):
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
-            elif event.ui_element == self.destroy_accessory_button:
+            elif self.destroy_accessory_button == event.ui_element:
                 self.the_cat.pelt.accessory = None
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
         # History Tab
         elif self.open_tab == 'history':
-            if event.ui_element == self.sub_tab_1:
+            if self.sub_tab_1 == event.ui_element:
                 if self.open_sub_tab == 'user notes':
                     self.notes_entry.kill()
                     self.display_notes.kill()
@@ -345,40 +345,40 @@ class ProfileScreen(Screens):
                     self.help_button.kill()
                 self.open_sub_tab = 'life events'
                 self.toggle_history_sub_tab()
-            elif event.ui_element == self.sub_tab_2:
+            elif self.sub_tab_2 == event.ui_element:
                 if self.open_sub_tab == 'life events':
                     self.history_text_box.kill()
                 self.open_sub_tab = 'user notes'
                 self.toggle_history_sub_tab()
-            elif event.ui_element == self.fav_tab:
+            elif self.fav_tab == event.ui_element:
                 game.switches['favorite_sub_tab'] = None
                 self.fav_tab.hide()
                 self.not_fav_tab.show()
-            elif event.ui_element == self.not_fav_tab:
+            elif self.not_fav_tab == event.ui_element:
                 game.switches['favorite_sub_tab'] = self.open_sub_tab
                 self.fav_tab.show()
                 self.not_fav_tab.hide()
-            elif event.ui_element == self.save_text:
+            elif self.save_text == event.ui_element:
                 self.user_notes = sub(r"[^A-Za-z0-9<->/.()*'&#!?,| _+=@~:;[]{}%$^`]+", "", self.notes_entry.get_text())
                 self.save_user_notes()
                 self.editing_notes = False
                 self.update_disabled_buttons_and_text()
-            elif event.ui_element == self.edit_text:
+            elif self.edit_text == event.ui_element:
                 self.editing_notes = True
                 self.update_disabled_buttons_and_text()
-            elif event.ui_element == self.no_moons:
+            elif self.no_moons == event.ui_element:
                 game.switches["show_history_moons"] = True
                 self.update_disabled_buttons_and_text()
-            elif event.ui_element == self.show_moons:
+            elif self.show_moons == event.ui_element:
                 game.switches["show_history_moons"] = False
                 self.update_disabled_buttons_and_text()
 
         # Conditions Tab
         elif self.open_tab == 'conditions':
-            if event.ui_element == self.right_conditions_arrow:
+            if self.right_conditions_arrow == event.ui_element:
                 self.conditions_page += 1
                 self.display_conditions_page()
-            if event.ui_element == self.left_conditions_arrow:
+            if self.left_conditions_arrow == event.ui_element:
                 self.conditions_page -= 1
                 self.display_conditions_page()
 

@@ -278,33 +278,33 @@ class Screens():
             This will fail if event.type != pygame_gui.UI_BUTTON_START_PRESS"""
         if game.switches['window_open']:
             pass
-        elif event.ui_element == self.menu_buttons["events_screen"]:
+        elif self.menu_buttons["events_screen"] == event.ui_element:
             self.change_screen('events screen')
-        elif event.ui_element == self.menu_buttons["camp_screen"]:
+        elif self.menu_buttons["camp_screen"] == event.ui_element:
             self.change_screen('camp screen')
-        elif event.ui_element == self.menu_buttons["catlist_screen"]:
+        elif self.menu_buttons["catlist_screen"] == event.ui_element:
             self.change_screen('list screen')
-        elif event.ui_element == self.menu_buttons["patrol_screen"]:
+        elif self.menu_buttons["patrol_screen"] == event.ui_element:
             self.change_screen('patrol screen')
-        elif event.ui_element == self.menu_buttons["main_menu"]:
+        elif self.menu_buttons["main_menu"] == event.ui_element:
             SaveCheck(game.switches['cur_screen'], True, self.menu_buttons["main_menu"])
-        elif event.ui_element == self.menu_buttons["allegiances"]:
+        elif self.menu_buttons["allegiances"] == event.ui_element:
             self.change_screen('allegiances screen')
-        elif event.ui_element == self.menu_buttons["clan_settings"]:
+        elif self.menu_buttons["clan_settings"] == event.ui_element:
             self.change_screen('clan settings screen')
-        elif event.ui_element == self.menu_buttons["moons_n_seasons_arrow"]:
+        elif self.menu_buttons["moons_n_seasons_arrow"] == event.ui_element:
             if game.settings['mns open']:
                 game.settings['mns open'] = False
             else:
                 game.settings['mns open'] = True
             self.update_mns()
-        elif event.ui_element == self.menu_buttons["dens"]:
+        elif self.menu_buttons["dens"] == event.ui_element:
             self.update_dens()
-        elif event.ui_element == self.menu_buttons["clearing"]:
+        elif self.menu_buttons["clearing"] == event.ui_element:
             self.change_screen('clearing screen')
-        elif event.ui_element == self.menu_buttons["med_cat_den"]:
+        elif self.menu_buttons["med_cat_den"] == event.ui_element:
             self.change_screen('med den screen')
-        elif event.ui_element == self.menu_buttons["warrior_den"]:
+        elif self.menu_buttons["warrior_den"] == event.ui_element:
             self.change_screen('warrior den screen')
 
     def update_dens(self):

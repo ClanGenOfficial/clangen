@@ -58,9 +58,9 @@ class ClearingScreen(Screens):
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.back_button:
+            if self.back_button == event.ui_element:
                 self.change_screen(game.last_screen_forupdate)
-            if event.ui_element == self.stop_focus_button:
+            if self.stop_focus_button == event.ui_element:
                 self.feed_all_button.show()
                 self.stop_focus_button.hide()
                 self.feed_one_button.hide()
@@ -74,7 +74,7 @@ class ClearingScreen(Screens):
                     self.focus_name.kill()
             elif event.ui_element in [self.feed_one_button, self.feed_max_button]:
                 amount = 1
-                if event.ui_element == self.feed_max_button:
+                if self.feed_max_button == event.ui_element:
                     nutrition_info = game.clan.freshkill_pile.nutrition_info
                     max_amount = nutrition_info[self.focus_cat_object.ID].max_score
                     current_amount = nutrition_info[self.focus_cat_object.ID].current_score
@@ -95,7 +95,7 @@ class ClearingScreen(Screens):
                     self.cats_tab.enable()
                     self.tactic_tab.enable()
                     self.handle_tab_toggles()
-            elif event.ui_element == self.feed_all_button:
+            elif self.feed_all_button == event.ui_element:
                 game.clan.freshkill_pile.already_fed = []
                 game.clan.freshkill_pile.feed_cats(self.hungry_cats, True)
                 game.clan.freshkill_pile.already_fed = []
@@ -113,20 +113,20 @@ class ClearingScreen(Screens):
                     self.cats_tab.enable()
                     self.tactic_tab.enable()
                     self.handle_tab_toggles()
-            elif event.ui_element == self.next_page:
+            elif self.next_page == event.ui_element:
                 self.current_page += 1
                 self.update_nutrition_cats()
-            elif event.ui_element == self.last_page:
+            elif self.last_page == event.ui_element:
                 self.current_page -= 1
                 self.update_nutrition_cats()
-            elif event.ui_element == self.hungry_tab:
+            elif self.hungry_tab == event.ui_element:
                 self.tab_showing.enable()
                 self.tab_list = self.hungry_cats
                 self.tab_showing = self.hungry_tab
                 self.hungry_tab.disable()
                 self.update_cats_list()
                 self.update_nutrition_cats()
-            elif event.ui_element == self.satisfied_tab:
+            elif self.satisfied_tab == event.ui_element:
                 self.tab_showing.enable()
                 self.tab_list = self.satisfied_cats
                 self.tab_showing = self.satisfied_tab
@@ -136,19 +136,19 @@ class ClearingScreen(Screens):
             elif event.ui_element in self.cat_buttons.values() and event.ui_element != self.focus_cat:
                 self.focus_cat_object = event.ui_element.return_cat_object()
                 self.update_focus_cat()
-            elif event.ui_element == self.cats_tab:
+            elif self.cats_tab == event.ui_element:
                 self.open_tab = "cats"
                 self.cats_tab.disable()
                 self.log_tab.enable()
                 self.tactic_tab.enable()
                 self.handle_tab_toggles()
-            elif event.ui_element == self.log_tab:
+            elif self.log_tab == event.ui_element:
                 self.open_tab = "log"
                 self.log_tab.disable()
                 self.cats_tab.enable()
                 self.tactic_tab.enable()
                 self.handle_tab_toggles()
-            elif event.ui_element == self.tactic_tab:
+            elif self.tactic_tab == event.ui_element:
                 self.open_tab = "tactic"
                 self.log_tab.enable()
                 self.cats_tab.enable()

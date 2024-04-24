@@ -78,13 +78,13 @@ class SettingsScreen(Screens):
             elif platform.system() == 'Linux':
                 subprocess.Popen(['xdg-open', event.link_target])
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.main_menu_button:
+            if self.main_menu_button == event.ui_element:
                 self.change_screen('start screen')
                 return
-            if event.ui_element == self.fullscreen_toggle:
+            if self.fullscreen_toggle == event.ui_element:
                 game.switch_setting('fullscreen')
                 quit(savesettings=True, clearevents=False)
-            elif event.ui_element == self.open_data_directory_button:
+            elif self.open_data_directory_button == event.ui_element:
                 if platform.system() == 'Darwin':
                     subprocess.Popen(["open", "-R", get_data_dir()])
                 elif platform.system() == 'Windows':
@@ -95,7 +95,7 @@ class SettingsScreen(Screens):
                     except OSError:
                         logger.exception("Failed to call to xdg-open.")
                 return
-            elif event.ui_element == self.save_settings_button:
+            elif self.save_settings_button == event.ui_element:
                 self.save_settings()
                 try:
                     game.save_settings()
@@ -105,13 +105,13 @@ class SettingsScreen(Screens):
                 self.settings_changed = False
                 self.update_save_button()
                 return
-            elif event.ui_element == self.general_settings_button:
+            elif self.general_settings_button == event.ui_element:
                 self.open_general_settings()
                 return
-            elif event.ui_element == self.info_button:
+            elif self.info_button == event.ui_element:
                 self.open_info_screen()
                 return
-            elif event.ui_element == self.language_button:
+            elif self.language_button == event.ui_element:
                 self.open_lang_settings()
             if self.sub_menu in ['general', 'relation', 'language']:
                 self.handle_checkbox_events(event)

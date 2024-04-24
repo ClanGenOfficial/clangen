@@ -48,17 +48,17 @@ class ChooseMentorScreen(Screens):
                 self.selected_mentor = event.ui_element.return_cat_object()
                 self.update_selected_cat()
                 self.update_buttons()
-            elif event.ui_element == self.confirm_mentor:
+            elif self.confirm_mentor == event.ui_element:
                 self.change_mentor(self.selected_mentor)
                 self.update_buttons()
                 self.update_selected_cat()
-            elif event.ui_element == self.remove_mentor:
+            elif self.remove_mentor == event.ui_element:
                 self.change_mentor(self.selected_mentor)
                 self.update_buttons()
                 self.update_selected_cat()
-            elif event.ui_element == self.back_button:
+            elif self.back_button == event.ui_element:
                 self.change_screen('profile screen')
-            elif event.ui_element == self.next_cat_button:
+            elif self.next_cat_button == event.ui_element:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
                     game.switches['cat'] = self.next_cat
                     self.update_apprentice()
@@ -67,7 +67,7 @@ class ChooseMentorScreen(Screens):
                     self.update_buttons()
                 else:
                     print("invalid next cat", self.next_cat)
-            elif event.ui_element == self.previous_cat_button:
+            elif self.previous_cat_button == event.ui_element:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
                     game.switches['cat'] = self.previous_cat
                     self.update_apprentice()
@@ -76,10 +76,10 @@ class ChooseMentorScreen(Screens):
                     self.update_buttons()
                 else:
                     print("invalid previous cat", self.previous_cat)
-            elif event.ui_element == self.next_page_button:
+            elif self.next_page_button == event.ui_element:
                 self.current_page += 1
                 self.update_cat_list()
-            elif event.ui_element == self.previous_page_button:
+            elif self.previous_page_button == event.ui_element:
                 self.current_page -= 1
                 self.update_cat_list()
 

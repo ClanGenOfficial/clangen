@@ -69,7 +69,7 @@ class StartScreen(Screens):
             }
             if event.ui_element in screens:
                 self.change_screen(screens[event.ui_element])
-            elif event.ui_element == self.open_data_directory_button:
+            elif self.open_data_directory_button == event.ui_element:
                 if platform.system() == 'Darwin':
                     subprocess.Popen(["open", "-R", get_data_dir()])
                 elif platform.system() == 'Windows':
@@ -77,7 +77,7 @@ class StartScreen(Screens):
                 elif platform.system() == 'Linux':
                     subprocess.Popen(['xdg-open', get_data_dir()])
                 return
-            elif event.ui_element == self.closebtn:
+            elif self.closebtn == event.ui_element:
                 self.error_box.kill()
                 self.error_label.kill()
                 self.error_gethelp.kill()
@@ -85,11 +85,11 @@ class StartScreen(Screens):
                 self.open_data_directory_button.kill()
                 # game.switches['error_message'] = ''
                 # game.switches['traceback'] = ''
-            elif event.ui_element == self.update_button:
+            elif self.update_button == event.ui_element:
                 UpdateAvailablePopup(game.switches['last_screen'])
-            elif event.ui_element == self.quit:
+            elif self.quit == event.ui_element:
                 quit(savesettings=False, clearevents=False)
-            elif event.ui_element == self.social_buttons['discord_button']:
+            elif self.social_buttons['discord_button'] == event.ui_element:
                 if platform.system() == 'Darwin':
                     subprocess.Popen(
                         ["open", "-u", "https://discord.gg/clangen"])
@@ -98,7 +98,7 @@ class StartScreen(Screens):
                 elif platform.system() == 'Linux':
                     subprocess.Popen(
                         ['xdg-open', "https://discord.gg/clangen"])
-            elif event.ui_element == self.social_buttons['tumblr_button']:
+            elif self.social_buttons['tumblr_button'] == event.ui_element:
                 if platform.system() == 'Darwin':
                     subprocess.Popen(
                         ["open", "-u", "https://officialclangen.tumblr.com/"])
@@ -108,7 +108,7 @@ class StartScreen(Screens):
                 elif platform.system() == 'Linux':
                     subprocess.Popen(
                         ['xdg-open', "https://officialclangen.tumblr.com/"])
-            elif event.ui_element == self.social_buttons['twitter_button']:
+            elif self.social_buttons['twitter_button'] == event.ui_element:
                 if platform.system() == 'Darwin':
                     subprocess.Popen(
                         ["open", "-u", "https://twitter.com/OfficialClangen"])

@@ -84,19 +84,19 @@ class ChooseAdoptiveParentScreen(Screens):
         
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             # Cat buttons list
-            if event.ui_element == self.back_button:
+            if self.back_button == event.ui_element:
                 self.selected_mate_index = 0
                 self.change_screen('profile screen')
-            elif event.ui_element == self.toggle_adoptive_parent:
+            elif self.toggle_adoptive_parent == event.ui_element:
                 self.work_thread = self.loading_screen_start_work(self.change_adoptive_parent)
                 
-            elif event.ui_element == self.previous_cat_button:
+            elif self.previous_cat_button == event.ui_element:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
                     game.switches["cat"] = self.previous_cat
                     self.update_current_cat_info()
                 else:
                     print("invalid previous cat", self.previous_cat)
-            elif event.ui_element == self.next_cat_button:
+            elif self.next_cat_button == event.ui_element:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat): 
                     game.switches["cat"] = self.next_cat
                     self.update_current_cat_info()
@@ -104,34 +104,34 @@ class ChooseAdoptiveParentScreen(Screens):
                     print("invalid next cat", self.next_cat)
             
             #Checkboxes
-            elif event.ui_element == self.checkboxes.get("mates_current_parents"):
+            elif self.checkboxes.get("mates_current_parents") == event.ui_element:
                 self.mates_current_parents = not self.mates_current_parents
                 self.update_potential_parents_container()
-            elif event.ui_element == self.checkboxes.get("unrelated_only"):
+            elif self.checkboxes.get("unrelated_only") == event.ui_element:
                 self.unrelated_only = not self.unrelated_only
                 self.update_potential_parents_container()
             
             # Next and last page buttons
-            elif event.ui_element == self.potential_next_page:
+            elif self.potential_next_page == event.ui_element:
                 self.potential_parents_page += 1
                 self.update_potential_mates_container_page()
-            elif event.ui_element == self.potential_last_page:
+            elif self.potential_last_page == event.ui_element:
                 self.potential_parents_page -= 1
                 self.update_potential_mates_container_page()
-            elif event.ui_element == self.adoptive_next_page:
+            elif self.adoptive_next_page == event.ui_element:
                 self.adoptive_page += 1
                 self.update_adoptive_parents_container_page()
-            elif event.ui_element == self.adoptive_last_page:
+            elif self.adoptive_last_page == event.ui_element:
                 self.adoptive_page -= 1
                 self.update_adoptive_parents_container_page()
                 
-            elif event.ui_element == self.tab_buttons.get("birth"):
+            elif self.tab_buttons.get("birth") == event.ui_element:
                 self.open_tab = "birth"
                 self.switch_tab()
-            elif event.ui_element == self.tab_buttons.get("adoptive"):
+            elif self.tab_buttons.get("adoptive") == event.ui_element:
                 self.open_tab = "adoptive"
                 self.switch_tab()
-            elif event.ui_element == self.tab_buttons.get("potential"):
+            elif self.tab_buttons.get("potential") == event.ui_element:
                 self.open_tab = "potential"
                 self.switch_tab()
             elif event.ui_element in self.potential_parents_buttons.values() or \

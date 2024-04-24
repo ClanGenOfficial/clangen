@@ -24,52 +24,52 @@ class RoleScreen(Screens):
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.back_button:
+            if self.back_button == event.ui_element:
                 self.change_screen("profile screen")
-            elif event.ui_element == self.next_cat_button:
+            elif self.next_cat_button == event.ui_element:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
                     game.switches["cat"] = self.next_cat
                     self.update_selected_cat()
                 else:
                     print("invalid next cat", self.next_cat)
-            elif event.ui_element == self.previous_cat_button:
+            elif self.previous_cat_button == event.ui_element:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
                     game.switches["cat"] = self.previous_cat
                     self.update_selected_cat()
                 else:
                     print("invalid previous cat", self.previous_cat)
-            elif event.ui_element == self.promote_leader:
+            elif self.promote_leader == event.ui_element:
                 if self.the_cat == game.clan.deputy:
                     game.clan.deputy = None
                 game.clan.new_leader(self.the_cat)
                 if game.sort_type == "rank":
                     Cat.sort_cats()
                 self.update_selected_cat()
-            elif event.ui_element == self.promote_deputy:
+            elif self.promote_deputy == event.ui_element:
                 game.clan.deputy = self.the_cat
                 self.the_cat.status_change("deputy", resort=True)
                 self.update_selected_cat()
-            elif event.ui_element == self.switch_warrior:
+            elif self.switch_warrior == event.ui_element:
                 self.the_cat.status_change("warrior", resort=True)
                 self.update_selected_cat()
-            elif event.ui_element == self.switch_med_cat:
+            elif self.switch_med_cat == event.ui_element:
                 self.the_cat.status_change("medicine cat", resort=True)
                 self.update_selected_cat()
-            elif event.ui_element == self.retire:
+            elif self.retire == event.ui_element:
                 self.the_cat.status_change("elder", resort=True)
                 # Since you can't "unretire" a cat, apply the skill and trait change
                 # here
                 self.update_selected_cat()
-            elif event.ui_element == self.switch_mediator:
+            elif self.switch_mediator == event.ui_element:
                 self.the_cat.status_change("mediator", resort=True)
                 self.update_selected_cat()
-            elif event.ui_element == self.switch_warrior_app:
+            elif self.switch_warrior_app == event.ui_element:
                 self.the_cat.status_change("apprentice", resort=True)
                 self.update_selected_cat()
-            elif event.ui_element == self.switch_med_app:
+            elif self.switch_med_app == event.ui_element:
                 self.the_cat.status_change("medicine cat apprentice", resort=True)
                 self.update_selected_cat()
-            elif event.ui_element == self.switch_mediator_app:
+            elif self.switch_mediator_app == event.ui_element:
                 self.the_cat.status_change("mediator apprentice", resort=True)
                 self.update_selected_cat()
         

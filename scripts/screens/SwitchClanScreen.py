@@ -33,12 +33,12 @@ class SwitchClanScreen(Screens):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if game.switches['window_open']:
                 pass
-            elif event.ui_element == self.main_menu:
+            elif self.main_menu == event.ui_element:
                 self.change_screen('start screen')
-            elif event.ui_element == self.next_page_button:
+            elif self.next_page_button == event.ui_element:
                 self.page += 1
                 self.update_page()
-            elif event.ui_element == self.previous_page_button:
+            elif self.previous_page_button == event.ui_element:
                 self.page -= 1
                 self.update_page()
             else:

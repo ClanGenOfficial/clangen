@@ -70,7 +70,7 @@ class PatrolScreen(Screens):
                 self.change_screen('list screen')
 
     def handle_choose_cats_events(self, event):
-        if event.ui_element == self.elements["random"]:
+        if self.elements["random"] == event.ui_element:
             self.selected_cat = choice(self.able_cats)
             self.update_selected_cat()
             self.update_button()
@@ -79,14 +79,14 @@ class PatrolScreen(Screens):
             self.selected_cat = event.ui_element.return_cat_object()
             self.update_selected_cat()
             self.update_button()
-        elif event.ui_element == self.elements["add_remove_cat"]:
+        elif self.elements["add_remove_cat"] == event.ui_element:
             if self.selected_cat in self.current_patrol:
                 self.current_patrol.remove(self.selected_cat)
             else:
                 self.current_patrol.append(self.selected_cat)
             self.update_cat_images_buttons()
             self.update_button()
-        elif event.ui_element == self.elements['add_one']:
+        elif self.elements['add_one'] == event.ui_element:
             if len(self.current_patrol) < 6:
                 if not game.clan.clan_settings['random med cat']:
                     able_no_med = [cat for cat in self.able_cats if
@@ -100,7 +100,7 @@ class PatrolScreen(Screens):
                 self.current_patrol.append(self.selected_cat)
             self.update_cat_images_buttons()
             self.update_button()
-        elif event.ui_element == self.elements['add_three']:
+        elif self.elements['add_three'] == event.ui_element:
             if len(self.current_patrol) <= 3:
                 if not game.clan.clan_settings['random med cat']:
                     able_no_med = [cat for cat in self.able_cats if
@@ -112,7 +112,7 @@ class PatrolScreen(Screens):
                     self.current_patrol += sample(self.able_cats, k=3)
             self.update_cat_images_buttons()
             self.update_button()
-        elif event.ui_element == self.elements['add_six']:
+        elif self.elements['add_six'] == event.ui_element:
             if len(self.current_patrol) == 0:
                 if not game.clan.clan_settings['random med cat']:
                     able_no_med = [cat for cat in self.able_cats if
@@ -124,79 +124,79 @@ class PatrolScreen(Screens):
                     self.current_patrol += sample(self.able_cats, k=6)
             self.update_cat_images_buttons()
             self.update_button()
-        elif event.ui_element == self.elements['remove_all']:
+        elif self.elements['remove_all'] == event.ui_element:
             self.current_patrol = []
             self.update_cat_images_buttons()
             self.update_button()
-        elif event.ui_element == self.elements['patrol_tab']:
+        elif self.elements['patrol_tab'] == event.ui_element:
             self.patrol_screen = 'patrol_cats'
             self.update_cat_images_buttons()
             self.update_button()
-        elif event.ui_element == self.elements['skills']:
+        elif self.elements['skills'] == event.ui_element:
             self.patrol_screen = 'skills'
             self.update_cat_images_buttons()
             self.update_button()
-        elif event.ui_element == self.elements["next_page"]:
+        elif self.elements["next_page"] == event.ui_element:
             self.current_page += 1
             self.update_cat_images_buttons()
             self.update_button()
-        elif event.ui_element == self.elements["last_page"]:
+        elif self.elements["last_page"] == event.ui_element:
             self.current_page -= 1
             self.update_cat_images_buttons()
             self.update_button()
-        elif event.ui_element == self.elements["paw"]:
+        elif self.elements["paw"] == event.ui_element:
             if self.patrol_type == 'training':
                 self.patrol_type = 'general'
             else:
                 self.patrol_type = 'training'
             self.update_button()
-        elif event.ui_element == self.elements["claws"]:
+        elif self.elements["claws"] == event.ui_element:
             if self.patrol_type == 'border':
                 self.patrol_type = 'general'
             else:
                 self.patrol_type = 'border'
             self.update_button()
-        elif event.ui_element == self.elements["herb"]:
+        elif self.elements["herb"] == event.ui_element:
             if self.patrol_type == 'med':
                 self.patrol_type = 'general'
             else:
                 self.patrol_type = 'med'
             self.update_button()
-        elif event.ui_element == self.elements["mouse"]:
+        elif self.elements["mouse"] == event.ui_element:
             if self.patrol_type == 'hunting':
                 self.patrol_type = 'general'
             else:
                 self.patrol_type = 'hunting'
             self.update_button()
-        elif event.ui_element == self.elements['patrol_start']:
+        elif self.elements['patrol_start'] == event.ui_element:
             self.selected_cat = None
             self.start_patrol_thread = self.loading_screen_start_work(self.run_patrol_start, "start")
-        elif event.ui_element == self.elements.get('mate_button'):
+        elif self.elements.get('mate_button') == event.ui_element:
             self.selected_cat = self.mate
             self.update_button()
             self.update_cat_images_buttons()
             self.update_selected_cat()
-        elif event.ui_element == self.elements.get('app_mentor_button'):
+        elif self.elements.get('app_mentor_button') == event.ui_element:
             self.selected_cat = self.app_mentor
             self.update_button()
             self.update_cat_images_buttons()
             self.update_selected_cat()
-        elif event.ui_element == self.elements.get('cycle_app_mentor_left_button'):
+        elif self.elements.get('cycle_app_mentor_left_button') == event.ui_element:
             self.selected_apprentice_index -= 1
             self.app_mentor = self.selected_cat.apprentice[self.selected_apprentice_index]
             self.update_selected_cat()
             self.update_button()
-        elif event.ui_element == self.elements.get('cycle_app_mentor_right_button'):
+        elif self.elements.get('cycle_app_mentor_right_button') == event.ui_element:
             self.selected_apprentice_index += 1
             self.app_mentor = self.selected_cat.apprentice[self.selected_apprentice_index]
             self.update_selected_cat()
             self.update_button()
-        elif event.ui_element == self.elements.get('cycle_mate_left_button'):
+        elif self.elements.get('cycle_mate_left_button') == event.ui_element:
             self.selected_mate_index -= 1
             self.mate = self.selected_cat.mate[self.selected_mate_index]
             self.update_selected_cat()
             self.update_button()
-        elif event.ui_element == self.elements.get('cycle_mate_right_button'):
+        elif self.elements.get('cycle_mate_right_button') == event.ui_element:
             self.selected_mate_index += 1
             self.mate = self.selected_cat.mate[self.selected_mate_index]
             self.update_selected_cat()
@@ -205,20 +205,20 @@ class PatrolScreen(Screens):
     def handle_patrol_events_event(self, event):
         
         inp = None
-        if event.ui_element == self.elements["proceed"]:            
+        if self.elements["proceed"] == event.ui_element:            
             inp = "proceed"
-        elif event.ui_element == self.elements["not_proceed"]:
+        elif self.elements["not_proceed"] == event.ui_element:
             inp = "notproceed"
-        elif event.ui_element == self.elements["antagonize"]:
+        elif self.elements["antagonize"] == event.ui_element:
             inp = "antagonize"
         
         if inp:
             self.proceed_patrol_thread = self.loading_screen_start_work(self.run_patrol_proceed, "proceed", (inp,))
 
     def handle_patrol_complete_events(self, event):
-        if event.ui_element == self.elements['patrol_again']:
+        if self.elements['patrol_again'] == event.ui_element:
             self.open_choose_cats_screen()
-        elif event.ui_element == self.elements["clan_return"]:
+        elif self.elements["clan_return"] == event.ui_element:
             self.change_screen('camp screen')
 
     def screen_switches(self):

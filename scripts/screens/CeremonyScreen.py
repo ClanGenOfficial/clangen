@@ -67,7 +67,7 @@ class CeremonyScreen(Screens):
         if game.switches['window_open']:
             pass
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.back_button:
+            if self.back_button == event.ui_element:
                 self.change_screen('profile screen')
         
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:

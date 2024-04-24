@@ -42,7 +42,7 @@ class WarriorDenScreen(Screens):
         if game.switches['window_open']:
             pass
         elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.back_button:
+            if self.back_button == event.ui_element:
                 self.change_screen(game.last_screen_forupdate)
             if event.ui_element in self.focus_buttons.values():
                 for code, value in self.focus_buttons.items():
@@ -83,7 +83,7 @@ class WarriorDenScreen(Screens):
                         self.create_side_info()
                         break
 
-            elif event.ui_element == self.save_button:
+            elif self.save_button == event.ui_element:
                 if self.active_code in self.other_clan_settings:
                     SelectFocusClans()
                 else:

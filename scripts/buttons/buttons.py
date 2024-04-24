@@ -281,7 +281,11 @@ class UIButton(scripts.game_structure.image_button.UISpriteButton):
         return hash(self.id)
 
     def __eq__(self, other):
-        return self.id == other.id
+        if isinstance(other, UIButton):
+            return self.id == other.id
+        elif self.button == other:
+            return True
+        return False
 
 class CatButton(pygame_gui.elements.UIButton):
     def __init__(self,

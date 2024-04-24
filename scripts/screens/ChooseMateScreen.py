@@ -89,20 +89,20 @@ class ChooseMateScreen(Screens):
         
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             # Cat buttons list
-            if event.ui_element == self.back_button:
+            if self.back_button == event.ui_element:
                 self.selected_mate_index = 0
                 self.change_screen('profile screen')
-            elif event.ui_element == self.toggle_mate:
+            elif self.toggle_mate == event.ui_element:
                 
                 self.work_thread = self.loading_screen_start_work(self.change_mate)
                 
-            elif event.ui_element == self.previous_cat_button:
+            elif self.previous_cat_button == event.ui_element:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
                     game.switches["cat"] = self.previous_cat
                     self.update_current_cat_info()
                 else:
                     print("invalid previous cat", self.previous_cat)
-            elif event.ui_element == self.next_cat_button:
+            elif self.next_cat_button == event.ui_element:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat): 
                     game.switches["cat"] = self.next_cat
                     self.update_current_cat_info()
@@ -110,19 +110,19 @@ class ChooseMateScreen(Screens):
                     print("invalid next cat", self.next_cat)
                     
             # Checkboxes
-            elif event.ui_element == self.checkboxes.get("single_only"):
+            elif self.checkboxes.get("single_only") == event.ui_element:
                 if self.single_only:
                     self.single_only = False
                 else:
                     self.single_only = True
                 self.update_potential_mates_container()
-            elif event.ui_element == self.checkboxes.get("have_kits_only"):
+            elif self.checkboxes.get("have_kits_only") == event.ui_element:
                 if self.have_kits_only:
                     self.have_kits_only = False
                 else:
                     self.have_kits_only = True
                 self.update_potential_mates_container()
-            elif event.ui_element == self.checkboxes.get("kits_selected_pair"):
+            elif self.checkboxes.get("kits_selected_pair") == event.ui_element:
                 if self.kits_selected_pair:
                     self.kits_selected_pair = False
                 else:
@@ -130,33 +130,33 @@ class ChooseMateScreen(Screens):
                 self.update_offspring_container()
             
             # Next and last page buttons
-            elif event.ui_element == self.offspring_next_page:
+            elif self.offspring_next_page == event.ui_element:
                 self.offspring_page += 1
                 self.update_offspring_container_page()
-            elif event.ui_element == self.offspring_last_page:
+            elif self.offspring_last_page == event.ui_element:
                 self.offspring_page -= 1
                 self.update_offspring_container_page()
-            elif event.ui_element == self.potential_next_page:
+            elif self.potential_next_page == event.ui_element:
                 self.potential_mates_page += 1
                 self.update_potential_mates_container_page()
-            elif event.ui_element == self.potential_last_page:
+            elif self.potential_last_page == event.ui_element:
                 self.potential_mates_page -= 1
                 self.update_potential_mates_container_page()
-            elif event.ui_element == self.mates_next_page:
+            elif self.mates_next_page == event.ui_element:
                 self.mates_page += 1
                 self.update_mates_container_page()
-            elif event.ui_element == self.mates_last_page:
+            elif self.mates_last_page == event.ui_element:
                 self.mates_page -= 1
                 self.update_mates_container_page()
                 
                 
-            elif event.ui_element == self.tab_buttons.get("mates"):
+            elif self.tab_buttons.get("mates") == event.ui_element:
                 self.open_tab = "mates"
                 self.switch_tab()
-            elif event.ui_element == self.tab_buttons.get("offspring"):
+            elif self.tab_buttons.get("offspring") == event.ui_element:
                 self.open_tab = "offspring"
                 self.switch_tab()
-            elif event.ui_element == self.tab_buttons.get("potential"):
+            elif self.tab_buttons.get("potential") == event.ui_element:
                 self.open_tab = "potential"
                 self.switch_tab()
             elif event.ui_element in self.mates_cat_buttons.values() or \

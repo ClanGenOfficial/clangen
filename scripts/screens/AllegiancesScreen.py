@@ -267,33 +267,33 @@ class MedDenScreen(Screens):
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.back_button:
+            if self.back_button == event.ui_element:
                 self.change_screen('camp screen')
-            elif event.ui_element == self.next_med:
+            elif self.next_med == event.ui_element:
                 self.current_med += 1
                 self.update_med_cat()
-            elif event.ui_element == self.last_med:
+            elif self.last_med == event.ui_element:
                 self.current_med -= 1
                 self.update_med_cat()
-            elif event.ui_element == self.next_page:
+            elif self.next_page == event.ui_element:
                 self.current_page += 1
                 self.update_sick_cats()
-            elif event.ui_element == self.last_page:
+            elif self.last_page == event.ui_element:
                 self.current_page -= 1
                 self.update_sick_cats()
-            elif event.ui_element == self.in_den_tab:
+            elif self.in_den_tab == event.ui_element:
                 self.in_den_tab.disable()
                 self.tab_showing.enable()
                 self.tab_list = self.in_den_cats
                 self.tab_showing = self.in_den_tab
                 self.update_sick_cats()
-            elif event.ui_element == self.out_den_tab:
+            elif self.out_den_tab == event.ui_element:
                 self.tab_showing.enable()
                 self.tab_list = self.out_den_cats
                 self.tab_showing = self.out_den_tab
                 self.out_den_tab.disable()
                 self.update_sick_cats()
-            elif event.ui_element == self.minor_tab:
+            elif self.minor_tab == event.ui_element:
                 self.tab_showing.enable()
                 self.tab_list = self.minor_cats
                 self.tab_showing = self.minor_tab
@@ -303,16 +303,16 @@ class MedDenScreen(Screens):
                 cat = event.ui_element.return_cat_object()
                 game.switches["cat"] = cat.ID
                 self.change_screen('profile screen')
-            elif event.ui_element == self.med_cat:
+            elif self.med_cat == event.ui_element:
                 cat = event.ui_element.return_cat_object()
                 game.switches["cat"] = cat.ID
                 self.change_screen('profile screen')
-            elif event.ui_element == self.cats_tab:
+            elif self.cats_tab == event.ui_element:
                 self.open_tab = "cats"
                 self.cats_tab.disable()
                 self.log_tab.enable()
                 self.handle_tab_toggles()
-            elif event.ui_element == self.log_tab:
+            elif self.log_tab == event.ui_element:
                 self.open_tab = "log"
                 self.log_tab.disable()
                 self.cats_tab.enable()

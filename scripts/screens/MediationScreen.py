@@ -33,33 +33,33 @@ class MediationScreen(Screens):
     def handle_event(self, event):
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.back_button:
+            if self.back_button == event.ui_element:
                 self.change_screen('profile screen')
-            elif event.ui_element == self.last_med:
+            elif self.last_med == event.ui_element:
                 self.selected_mediator -= 1
                 self.update_mediator_info()
-            elif event.ui_element == self.next_med:
+            elif self.next_med == event.ui_element:
                 self.selected_mediator += 1
                 self.update_mediator_info()
-            elif event.ui_element == self.next_page:
+            elif self.next_page == event.ui_element:
                 self.page += 1
                 self.update_page()
-            elif event.ui_element == self.previous_page:
+            elif self.previous_page == event.ui_element:
                 self.page -= 1
                 self.update_page()
-            elif event.ui_element == self.romantic_checkbox:
+            elif self.romantic_checkbox == event.ui_element:
                 if self.allow_romantic:
                     self.allow_romantic = False
                 else:
                     self.allow_romantic = True
                 self.update_buttons()
-            elif event.ui_element == self.deselect_1:
+            elif self.deselect_1 == event.ui_element:
                 self.selected_cat_1 = None
                 self.update_selected_cats()
-            elif event.ui_element == self.deselect_2:
+            elif self.deselect_2 == event.ui_element:
                 self.selected_cat_2 = None
                 self.update_selected_cats()
-            elif event.ui_element == self.mediate_button:
+            elif self.mediate_button == event.ui_element:
                 game.mediated.append([self.selected_cat_1.ID, self.selected_cat_2.ID])
                 game.patrolled.append(self.mediators[self.selected_mediator].ID)
                 output = Cat.mediate_relationship(
@@ -68,7 +68,7 @@ class MediationScreen(Screens):
                 self.results.set_text(output)
                 self.update_selected_cats()
                 self.update_mediator_info()
-            elif event.ui_element == self.sabotoge_button:
+            elif self.sabotoge_button == event.ui_element:
                 game.mediated.append([self.selected_cat_1.ID, self.selected_cat_2.ID])
                 game.patrolled.append(self.mediators[self.selected_mediator].ID)
                 output = Cat.mediate_relationship(
@@ -78,12 +78,12 @@ class MediationScreen(Screens):
                 self.results.set_text(output)
                 self.update_selected_cats()
                 self.update_mediator_info()
-            elif event.ui_element == self.random1:
+            elif self.random1 == event.ui_element:
                 self.selected_cat_1 = self.random_cat()
                 if pygame.key.get_mods() & pygame.KMOD_SHIFT:
                     self.selected_cat_2 = self.random_cat()
                 self.update_selected_cats()
-            elif event.ui_element == self.random2:
+            elif self.random2 == event.ui_element:
                 self.selected_cat_2 = self.random_cat()
                 if pygame.key.get_mods() & pygame.KMOD_SHIFT:
                     self.selected_cat_1 = self.random_cat()

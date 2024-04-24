@@ -73,10 +73,10 @@ class FamilyTreeScreen(Screens):
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.back_button:
+            if self.back_button == event.ui_element:
                 self.change_screen('profile screen')
                 game.switches['root_cat'] = None
-            elif event.ui_element == self.previous_cat_button:
+            elif self.previous_cat_button == event.ui_element:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
                     game.switches['cat'] = self.previous_cat
                     game.switches['root_cat'] = Cat.all_cats[self.previous_cat]
@@ -84,7 +84,7 @@ class FamilyTreeScreen(Screens):
                     self.screen_switches()
                 else:
                     print("invalid previous cat", self.previous_cat)
-            elif event.ui_element == self.next_cat_button:
+            elif self.next_cat_button == event.ui_element:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
                     game.switches['cat'] = self.next_cat
                     game.switches['root_cat'] = Cat.all_cats[self.next_cat]
@@ -92,57 +92,57 @@ class FamilyTreeScreen(Screens):
                     self.screen_switches()
                 else:
                     print("invalid next cat", self.next_cat)
-            elif event.ui_element == self.parents_button:
+            elif self.parents_button == event.ui_element:
                 self.current_group = self.parents
                 self.current_group_name = "parents"
                 self.handle_relation_groups()
-            elif event.ui_element == self.siblings_button:
+            elif self.siblings_button == event.ui_element:
                 self.current_group = self.siblings
                 self.current_group_name = "siblings"
                 self.handle_relation_groups()
-            elif event.ui_element == self.sibling_mates_button:
+            elif self.sibling_mates_button == event.ui_element:
                 self.current_group = self.siblings_mates
                 self.current_group_name = "siblings_mates"
                 self.handle_relation_groups()
-            elif event.ui_element == self.sibling_kits_button:
+            elif self.sibling_kits_button == event.ui_element:
                 self.current_group = self.siblings_kits
                 self.current_group_name = "siblings_kits"
                 self.handle_relation_groups()
-            elif event.ui_element == self.parents_siblings_button:
+            elif self.parents_siblings_button == event.ui_element:
                 self.current_group = self.parents_siblings
                 self.current_group_name = "parents_siblings"
                 self.handle_relation_groups()
-            elif event.ui_element == self.cousins_button:
+            elif self.cousins_button == event.ui_element:
                 self.current_group = self.cousins
                 self.current_group_name = "cousins"
                 self.handle_relation_groups()
-            elif event.ui_element == self.grandparents_button:
+            elif self.grandparents_button == event.ui_element:
                 self.current_group = self.grandparents
                 self.current_group_name = "grandparents"
                 self.handle_relation_groups()
-            elif event.ui_element == self.mates_button:
+            elif self.mates_button == event.ui_element:
                 self.current_group = self.mates
                 self.current_group_name = "mates"
                 self.handle_relation_groups()
-            elif event.ui_element == self.kits_button:
+            elif self.kits_button == event.ui_element:
                 self.current_group = self.kits
                 self.current_group_name = "kits"
                 self.handle_relation_groups()
-            elif event.ui_element == self.kits_mates_button:
+            elif self.kits_mates_button == event.ui_element:
                 self.current_group = self.kits_mates
                 self.current_group_name = "kits_mates"
                 self.handle_relation_groups()
-            elif event.ui_element == self.grandkits_button:
+            elif self.grandkits_button == event.ui_element:
                 self.current_group = self.grandkits
                 self.current_group_name = "grandkits"
                 self.handle_relation_groups()
-            elif event.ui_element == self.previous_group_page:
+            elif self.previous_group_page == event.ui_element:
                 self.group_page_number -= 1
                 self.handle_relation_groups()
-            elif event.ui_element == self.next_group_page:
+            elif self.next_group_page == event.ui_element:
                 self.group_page_number += 1
                 self.handle_relation_groups()
-            elif event.ui_element == self.cat_elements["center_cat_image"]:
+            elif self.cat_elements["center_cat_image"] == event.ui_element:
                 self.change_screen('profile screen')
                 game.switches['root_cat'] = None
             elif event.ui_element in self.relation_elements.values() or self.cat_elements.values():

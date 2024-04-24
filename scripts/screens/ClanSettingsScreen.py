@@ -61,7 +61,7 @@ class ClanSettingsScreen(Screens):
             elif platform.system() == 'Linux':
                 subprocess.Popen(['xdg-open', event.link_target])
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.open_data_directory_button:
+            if self.open_data_directory_button == event.ui_element:
                 if platform.system() == 'Darwin':
                     subprocess.Popen(["open", "-R", get_data_dir()])
                 elif platform.system() == 'Windows':
@@ -72,16 +72,16 @@ class ClanSettingsScreen(Screens):
                     except OSError:
                         logger.exception("Failed to call to xdg-open.")
                 return
-            elif event.ui_element == self.relation_settings_button:
+            elif self.relation_settings_button == event.ui_element:
                 self.open_relation_settings()
                 return
-            elif event.ui_element == self.general_settings_button:
+            elif self.general_settings_button == event.ui_element:
                 self.open_general_settings()
                 return
-            elif event.ui_element == self.role_settings_button:
+            elif self.role_settings_button == event.ui_element:
                 self.open_roles_settings()
                 return
-            elif event.ui_element == self.clan_stats_button:
+            elif self.clan_stats_button == event.ui_element:
                 self.open_clan_stats()
                 return
             self.handle_checkbox_events(event)

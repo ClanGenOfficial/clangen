@@ -29,4 +29,4 @@ class ListLanguagesCmd(Command):
     def callback(self, args: List[str]):
         add_output_line_to_log("Available languages:")
         for lang in _Language.supported_languages:
-            add_output_line_to_log(f"- {lang.lstrip("buttons.")}")
+            add_output_line_to_log(f'- {lang.lstrip("buttons.")}')

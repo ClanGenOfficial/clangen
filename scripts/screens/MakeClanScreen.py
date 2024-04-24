@@ -108,7 +108,7 @@ class MakeClanScreen(Screens):
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.main_menu:
+            if self.main_menu == event.ui_element:
                 self.change_screen('start screen')
             if self.sub_screen == "game mode":
                 self.handle_game_mode_event(event)
@@ -140,17 +140,17 @@ class MakeClanScreen(Screens):
     def handle_game_mode_event(self, event):
         """Handle events for the game mode screen"""
         # Game mode selection buttons
-        if event.ui_element == self.elements['classic_mode_button']:
+        if self.elements['classic_mode_button'] == event.ui_element:
             self.game_mode = 'classic'
             self.refresh_text_and_buttons()
-        elif event.ui_element == self.elements['expanded_mode_button']:
+        elif self.elements['expanded_mode_button'] == event.ui_element:
             self.game_mode = 'expanded'
             self.refresh_text_and_buttons()
-        elif event.ui_element == self.elements['cruel_mode_button']:
+        elif self.elements['cruel_mode_button'] == event.ui_element:
             self.game_mode = 'cruel season'
             self.refresh_text_and_buttons()
         # When the next_step button is pressed, go to the Clan naming page.
-        elif event.ui_element == self.elements['next_step']:
+        elif self.elements['next_step'] == event.ui_element:
             game.settings['game_mode'] = self.game_mode
             self.open_name_clan()
     
@@ -176,11 +176,11 @@ class MakeClanScreen(Screens):
                 self.open_name_clan()
 
     def handle_name_clan_event(self, event):
-        if event.ui_element == self.elements["random"]:
+        if self.elements["random"] == event.ui_element:
             self.elements["name_entry"].set_text(choice(names.names_dict["normal_prefixes"]))
-        elif event.ui_element == self.elements["reset_name"]:
+        elif self.elements["reset_name"] == event.ui_element:
             self.elements["name_entry"].set_text("")
-        elif event.ui_element == self.elements['next_step']:
+        elif self.elements['next_step'] == event.ui_element:
             new_name = sub(r'[^A-Za-z0-9 ]+', "", self.elements["name_entry"].get_text()).strip()
             if not new_name:
                 self.elements["error"].set_text("Your Clan's name cannot be empty")
@@ -192,7 +192,7 @@ class MakeClanScreen(Screens):
                 return
             self.clan_name = new_name
             self.open_choose_leader()
-        elif event.ui_element == self.elements['previous_step']:
+        elif self.elements['previous_step'] == event.ui_element:
             self.clan_name = ""
             self.open_game_mode()
     
@@ -257,16 +257,16 @@ class MakeClanScreen(Screens):
                 self.selected_cat = event.ui_element.return_cat_object()
                 self.refresh_cat_images_and_info(self.selected_cat)
                 self.refresh_text_and_buttons()
-        elif event.ui_element == self.elements['select_cat']:
+        elif self.elements['select_cat'] == event.ui_element:
             self.leader = self.selected_cat
             self.selected_cat = None
             self.open_choose_deputy()
-        elif event.ui_element == self.elements['previous_step']:
+        elif self.elements['previous_step'] == event.ui_element:
             self.clan_name = ""
             self.open_name_clan()
 
     def handle_choose_deputy_event(self, event):
-        if event.ui_element == self.elements['previous_step']:
+        if self.elements['previous_step'] == event.ui_element:
             self.leader = None
             self.selected_cat = None
             self.open_choose_leader()
@@ -281,13 +281,13 @@ class MakeClanScreen(Screens):
                 self.selected_cat = event.ui_element.return_cat_object()
                 self.refresh_cat_images_and_info(self.selected_cat)
                 self.refresh_text_and_buttons()
-        elif event.ui_element == self.elements['select_cat']:
+        elif self.elements['select_cat'] == event.ui_element:
             self.deputy = self.selected_cat
             self.selected_cat = None
             self.open_choose_med_cat()
 
     def handle_choose_med_event(self, event):
-        if event.ui_element == self.elements['previous_step']:
+        if self.elements['previous_step'] == event.ui_element:
             self.deputy = None
             self.selected_cat = None
             self.open_choose_deputy()
@@ -302,13 +302,13 @@ class MakeClanScreen(Screens):
                 self.selected_cat = event.ui_element.return_cat_object()
                 self.refresh_cat_images_and_info(self.selected_cat)
                 self.refresh_text_and_buttons()
-        elif event.ui_element == self.elements['select_cat']:
+        elif self.elements['select_cat'] == event.ui_element:
             self.med_cat = self.selected_cat
             self.selected_cat = None
             self.open_choose_members()
 
     def handle_choose_members_event(self, event):
-        if event.ui_element == self.elements['previous_step']:
+        if self.elements['previous_step'] == event.ui_element:
             if not self.members:
                 self.med_cat = None
                 self.selected_cat = None
@@ -330,59 +330,59 @@ class MakeClanScreen(Screens):
                     self.selected_cat = event.ui_element.return_cat_object()
                     self.refresh_cat_images_and_info(self.selected_cat)
                     self.refresh_text_and_buttons()
-        elif event.ui_element == self.elements['select_cat']:
+        elif self.elements['select_cat'] == event.ui_element:
             self.members.append(self.selected_cat)
             self.selected_cat = None
             self.refresh_cat_images_and_info(None)
             self.refresh_text_and_buttons()
-        elif event.ui_element == self.elements['next_step']:
+        elif self.elements['next_step'] == event.ui_element:
             self.selected_cat = None
             self.open_choose_background()
 
     def handle_choose_background_event(self, event):
-        if event.ui_element == self.elements['previous_step']:
+        if self.elements['previous_step'] == event.ui_element:
             self.open_choose_members()
-        elif event.ui_element == self.elements['forest_biome']:
+        elif self.elements['forest_biome'] == event.ui_element:
             self.biome_selected = "Forest"
             self.selected_camp_tab = 1
             self.refresh_text_and_buttons()
-        elif event.ui_element == self.elements['mountain_biome']:
+        elif self.elements['mountain_biome'] == event.ui_element:
             self.biome_selected = "Mountainous"
             self.selected_camp_tab = 1
             self.refresh_text_and_buttons()
-        elif event.ui_element == self.elements['plains_biome']:
+        elif self.elements['plains_biome'] == event.ui_element:
             self.biome_selected = "Plains"
             self.selected_camp_tab = 1
             self.refresh_text_and_buttons()
-        elif event.ui_element == self.elements['beach_biome']:
+        elif self.elements['beach_biome'] == event.ui_element:
             self.biome_selected = "Beach"
             self.selected_camp_tab = 1
             self.refresh_text_and_buttons()
-        elif event.ui_element == self.tabs["tab1"]:
+        elif self.tabs["tab1"] == event.ui_element:
             self.selected_camp_tab = 1
             self.refresh_selected_camp()
-        elif event.ui_element == self.tabs["tab2"]:
+        elif self.tabs["tab2"] == event.ui_element:
             self.selected_camp_tab = 2
             self.refresh_selected_camp()
-        elif event.ui_element == self.tabs["tab3"]:
+        elif self.tabs["tab3"] == event.ui_element:
             self.selected_camp_tab = 3
             self.refresh_selected_camp()
-        elif event.ui_element == self.tabs["tab4"]:
+        elif self.tabs["tab4"] == event.ui_element:
             self.selected_camp_tab = 4
             self.refresh_selected_camp()
-        elif event.ui_element == self.tabs["newleaf_tab"]:
+        elif self.tabs["newleaf_tab"] == event.ui_element:
             self.selected_season = "Newleaf"
             self.refresh_text_and_buttons()
-        elif event.ui_element == self.tabs["greenleaf_tab"]:
+        elif self.tabs["greenleaf_tab"] == event.ui_element:
             self.selected_season = "Greenleaf"
             self.refresh_text_and_buttons()
-        elif event.ui_element == self.tabs["leaffall_tab"]:
+        elif self.tabs["leaffall_tab"] == event.ui_element:
             self.selected_season = "Leaf-fall"
             self.refresh_text_and_buttons()
-        elif event.ui_element == self.tabs["leafbare_tab"]:
+        elif self.tabs["leafbare_tab"] == event.ui_element:
             self.selected_season = "Leaf-bare"
             self.refresh_text_and_buttons()
-        elif event.ui_element == self.elements["random_background"]:
+        elif self.elements["random_background"] == event.ui_element:
             # Select a random biome and background
             old_biome = self.biome_selected
             possible_biomes = ['Forest', 'Mountainous', 'Plains', 'Beach']
@@ -396,7 +396,7 @@ class MakeClanScreen(Screens):
                 self.selected_camp_tab = randrange(1, 4)
             self.refresh_selected_camp()
             self.refresh_text_and_buttons()
-        elif event.ui_element == self.elements['done_button']:
+        elif self.elements['done_button'] == event.ui_element:
             self.save_clan()
             self.open_clan_saved_screen()
     
@@ -436,7 +436,7 @@ class MakeClanScreen(Screens):
             self.open_clan_saved_screen()
 
     def handle_saved_clan_event(self, event):
-        if event.ui_element == self.elements["continue"]:
+        if self.elements["continue"] == event.ui_element:
             self.change_screen('camp screen')
 
     def exit_screen(self):

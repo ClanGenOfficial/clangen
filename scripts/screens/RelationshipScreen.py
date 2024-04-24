@@ -67,33 +67,33 @@ class RelationshipScreen(Screens):
             if event.ui_element in self.sprite_buttons.values():
                 self.inspect_cat = event.ui_element.return_cat_object()
                 self.update_inspected_relation()
-            elif event.ui_element == self.back_button:
+            elif self.back_button == event.ui_element:
                 self.change_screen("profile screen")
-            elif event.ui_element == self.switch_focus_button:
+            elif self.switch_focus_button == event.ui_element:
                 game.switches["cat"] = self.inspect_cat.ID
                 self.update_focus_cat()
-            elif event.ui_element == self.view_profile_button:
+            elif self.view_profile_button == event.ui_element:
                 game.switches["cat"] = self.inspect_cat.ID
                 self.change_screen('profile screen')
-            elif event.ui_element == self.next_cat_button:
+            elif self.next_cat_button == event.ui_element:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
                     game.switches["cat"] = self.next_cat
                     self.update_focus_cat()
                 else:
                     print("invalid next cat", self.next_cat)
-            elif event.ui_element == self.previous_cat_button:
+            elif self.previous_cat_button == event.ui_element:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
                     game.switches["cat"] = self.previous_cat
                     self.update_focus_cat()
                 else:
                     print("invalid previous cat", self.previous_cat)
-            elif event.ui_element == self.previous_page_button:
+            elif self.previous_page_button == event.ui_element:
                 self.current_page -= 1
                 self.update_cat_page()
-            elif event.ui_element == self.next_page_button:
+            elif self.next_page_button == event.ui_element:
                 self.current_page += 1
                 self.update_cat_page()
-            elif event.ui_element == self.log_icon:
+            elif self.log_icon == event.ui_element:
                 if self.inspect_cat.ID not in self.the_cat.relationships:
                     return
                 RelationshipLog(
@@ -103,12 +103,12 @@ class RelationshipScreen(Screens):
                     [self.back_button, self.log_icon, self.checkboxes["show_dead"], self.checkboxes["show_empty"],\
                      self.show_dead_text, self.show_empty_text]
                 )
-            elif event.ui_element == self.checkboxes["show_dead"]:
+            elif self.checkboxes["show_dead"] == event.ui_element:
                 game.clan.clan_settings['show dead relation'] = not game.clan.clan_settings['show dead relation']
                 self.update_checkboxes()
                 self.apply_cat_filter()
                 self.update_cat_page()
-            elif event.ui_element == self.checkboxes["show_empty"]:
+            elif self.checkboxes["show_empty"] == event.ui_element:
                 game.clan.clan_settings['show empty relation'] = not game.clan.clan_settings['show empty relation'] 
                 self.update_checkboxes()
                 self.apply_cat_filter()

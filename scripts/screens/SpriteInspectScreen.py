@@ -49,33 +49,33 @@ class SpriteInspectScreen(Screens):
             return
         
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.back_button:
+            if self.back_button == event.ui_element:
                 self.change_screen("profile screen")
-            elif event.ui_element == self.next_cat_button:
+            elif self.next_cat_button == event.ui_element:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
                     game.switches["cat"] = self.next_cat
                     self.cat_setup()
                 else:
                     print("invalid next cat", self.next_cat)
-            elif event.ui_element == self.previous_cat_button:
+            elif self.previous_cat_button == event.ui_element:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
                     game.switches["cat"] = self.previous_cat
                     self.cat_setup()
                 else:
                     print("invalid previous cat", self.previous_cat)
-            elif event.ui_element == self.next_life_stage:
+            elif self.next_life_stage == event.ui_element:
                 self.displayed_life_stage = min(self.displayed_life_stage + 1, 
                                                 len(self.valid_life_stages) - 1)
                 self.update_disabled_buttons()
                 self.make_cat_image()
-            elif event.ui_element == self.save_image_button:
+            elif self.save_image_button == event.ui_element:
                 SaveAsImage(self.generate_image_to_save(), str(self.the_cat.name))
-            elif event.ui_element == self.previous_life_stage:
+            elif self.previous_life_stage == event.ui_element:
                 self.displayed_life_stage = max(self.displayed_life_stage - 1, 
                                                 0)
                 self.update_disabled_buttons()
                 self.make_cat_image()
-            elif event.ui_element == self.checkboxes["platform_shown"]:
+            elif self.checkboxes["platform_shown"] == event.ui_element:
                 if self.platform_shown:
                     self.platform_shown = False
                 else:
@@ -83,7 +83,7 @@ class SpriteInspectScreen(Screens):
                 
                 self.set_background_visablity()
                 self.update_checkboxes()
-            elif event.ui_element == self.checkboxes["scars_shown"]:
+            elif self.checkboxes["scars_shown"] == event.ui_element:
                 if self.scars_shown:
                     self.scars_shown = False
                 else:
@@ -91,7 +91,7 @@ class SpriteInspectScreen(Screens):
                 
                 self.make_cat_image()
                 self.update_checkboxes()
-            elif event.ui_element == self.checkboxes["acc_shown"]:
+            elif self.checkboxes["acc_shown"] == event.ui_element:
                 if self.acc_shown:
                     self.acc_shown = False
                 else:
@@ -99,7 +99,7 @@ class SpriteInspectScreen(Screens):
                 
                 self.make_cat_image()
                 self.update_checkboxes()
-            elif event.ui_element == self.checkboxes["override_dead_lineart"]:
+            elif self.checkboxes["override_dead_lineart"] == event.ui_element:
                 if self.override_dead_lineart:
                     self.override_dead_lineart = False
                 else:
@@ -107,7 +107,7 @@ class SpriteInspectScreen(Screens):
                 
                 self.make_cat_image()
                 self.update_checkboxes()
-            elif event.ui_element == self.checkboxes["override_not_working"]:
+            elif self.checkboxes["override_not_working"] == event.ui_element:
                 if self.override_not_working:
                     self.override_not_working = False
                 else:
@@ -115,11 +115,11 @@ class SpriteInspectScreen(Screens):
                 
                 self.make_cat_image()
                 self.update_checkboxes()
-            elif event.ui_element == self.cat_elements["favourite_button"]:
+            elif self.cat_elements["favourite_button"] == event.ui_element:
                 self.the_cat.favourite = False
                 self.cat_elements["favourite_button"].hide()
                 self.cat_elements["not_favourite_button"].show()
-            elif event.ui_element == self.cat_elements["not_favourite_button"]:
+            elif self.cat_elements["not_favourite_button"] == event.ui_element:
                 self.the_cat.favourite = True
                 self.cat_elements["favourite_button"].show()
                 self.cat_elements["not_favourite_button"].hide()
