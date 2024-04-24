@@ -85,9 +85,9 @@ def handle_creation() -> None:
         id = f"#{id}"
     
     text = input("Text: ")
-    rounded_corners = input("Rounded Corners (True, True, True, True): ").split(", ")
+    rounded_corners = input("Rounded Corners (starting top left, clockwise) (True, True, True, True): ").split(", ")
+    shadow_sides = input("Shadows (starting left, clockwise) (True, True, False, False): ").split(", ")
     is_hanging = input("Is Hanging (true/False): ")
-    shadow_sides = input("Shadow Sides (True, True, False, False): ").split(", ")
     
     if rounded_corners == ['']: rounded_corners = [True, True, True, True]
     else: rounded_corners = [bool(i) if str(i).lower() in ['true', '1'] else False for i in rounded_corners]
