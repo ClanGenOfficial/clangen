@@ -1,0 +1,31 @@
+import os
+import subprocess
+
+from .main import main as BuildWeb
+
+def runAndGatherOutput(command):
+    process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    stdout, stderr = process.communicate()
+    return stdout.decode('utf-8')
+
+release_channel = os.environ.get('RELEASE_CHANNEL', 'development')
+
+if runAndGatherOutput('poetry') == '':
+    print('Poetry not found. Installing...')
+    print(runAndGatherOutput('pipx install poetry'))
+    print(runAndGatherOutput('poetry install --with build --all-extras'))
+
+print('Building web...')
+
+commitHash = runAndGatherOutput('git rev-parse HEAD').strip()
+upstream = runAndGatherOutput('git remote get-url origin').strip()
+
+with open('version.ini', 'w') as versionFile:
+    versionFile.write(f"""[DEFAULT]
+version_number={commitHash}
+release_channel={release_channel}
+upstream={upstream}
+""")
+
+runAndGatherOutput('poetry run pygbag --ume_block 0 --template web.tmpl --build webMain.py')
+
