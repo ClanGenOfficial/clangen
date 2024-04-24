@@ -1,7 +1,6 @@
 import os
 import subprocess
 
-from .main import main as BuildWeb
 
 def runAndGatherOutput(command):
     process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -9,11 +8,6 @@ def runAndGatherOutput(command):
     return stdout.decode('utf-8')
 
 release_channel = os.environ.get('RELEASE_CHANNEL', 'development')
-
-if runAndGatherOutput('poetry') == '':
-    print('Poetry not found. Installing...')
-    print(runAndGatherOutput('pipx install poetry'))
-    print(runAndGatherOutput('poetry install --with build --all-extras'))
 
 print('Building web...')
 
