@@ -64,17 +64,17 @@ class EventsScreen(Screens):
         if game.switches['window_open']:
             pass
         elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
-            if event.ui_element == self.ceremonies_events_button and self.ceremony_alert:
+            if self.ceremonies_events_button and self.ceremony_alert == event.ui_element:
                 self.ceremony_alert.kill()
-            elif event.ui_element == self.birth_death_events_button and self.birth_death_alert:
+            elif self.birth_death_events_button and self.birth_death_alert == event.ui_element:
                 self.birth_death_alert.kill()
-            elif event.ui_element == self.relationship_events_button and self.relation_alert:
+            elif self.relationship_events_button and self.relation_alert == event.ui_element:
                 self.relation_alert.kill()
-            elif event.ui_element == self.health_events_button and self.health_alert:
+            elif self.health_events_button and self.health_alert == event.ui_element:
                 self.health_alert.kill()
-            elif event.ui_element == self.other_clans_events_button and self.other_clans_alert:
+            elif self.other_clans_events_button and self.other_clans_alert == event.ui_element:
                 self.other_clans_alert.kill()
-            elif event.ui_element == self.misc_events_button and self.misc_alert:
+            elif self.misc_events_button and self.misc_alert == event.ui_element:
                 self.misc_alert.kill()
         
         if game.switches['window_open']:
@@ -82,14 +82,14 @@ class EventsScreen(Screens):
         
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             
-            if event.ui_element == self.timeskip_button:
+            if self.timeskip_button == event.ui_element:
                 self.events_thread = self.loading_screen_start_work(events_class.one_moon)
             
             if game.clan.game_mode != "classic" and event.ui_element == self.freshkill_pile_button:
                 self.change_screen('clearing screen')
 
             # Change the type of events displayed
-            elif event.ui_element == self.all_events_button:
+            elif self.all_events_button == event.ui_element:
                 if self.event_container.vert_scroll_bar:
                     self.scroll_height[self.event_display_type] = self.event_container.vert_scroll_bar.scroll_position / self.event_container.vert_scroll_bar.scrollable_height
                 self.event_display_type = "all events"
@@ -97,7 +97,7 @@ class EventsScreen(Screens):
                 self.update_list_buttons(self.all_events_button)
                 self.display_events = self.all_events
                 self.update_events_display()
-            elif event.ui_element == self.ceremonies_events_button:
+            elif self.ceremonies_events_button == event.ui_element:
                 if self.event_container.vert_scroll_bar:
                     self.scroll_height[self.event_display_type] = self.event_container.vert_scroll_bar.scroll_position / self.event_container.vert_scroll_bar.scrollable_height
                 self.event_display_type = "ceremony events"
@@ -106,7 +106,7 @@ class EventsScreen(Screens):
                 self.update_list_buttons(self.ceremonies_events_button, self.ceremony_alert)
                 self.display_events = self.ceremony_events
                 self.update_events_display()
-            elif event.ui_element == self.birth_death_events_button:
+            elif self.birth_death_events_button == event.ui_element:
                 if self.event_container.vert_scroll_bar:
                     self.scroll_height[self.event_display_type] = self.event_container.vert_scroll_bar.scroll_position / self.event_container.vert_scroll_bar.scrollable_height
                 self.event_display_type = "birth death events"
@@ -115,7 +115,7 @@ class EventsScreen(Screens):
                 self.update_list_buttons(self.birth_death_events_button, self.birth_death_alert)
                 self.display_events = self.birth_death_events
                 self.update_events_display()
-            elif event.ui_element == self.relationship_events_button:
+            elif self.relationship_events_button == event.ui_element:
                 if self.event_container.vert_scroll_bar:
                     self.scroll_height[self.event_display_type] = self.event_container.vert_scroll_bar.scroll_position / self.event_container.vert_scroll_bar.scrollable_height
                 self.event_display_type = "relationship events"
@@ -124,7 +124,7 @@ class EventsScreen(Screens):
                 self.update_list_buttons(self.relationship_events_button, self.relation_alert)
                 self.display_events = self.relation_events
                 self.update_events_display()
-            elif event.ui_element == self.health_events_button:
+            elif self.health_events_button == event.ui_element:
                 if self.event_container.vert_scroll_bar:
                     self.scroll_height[self.event_display_type] = self.event_container.vert_scroll_bar.scroll_position / self.event_container.vert_scroll_bar.scrollable_height
                 self.event_display_type = "health events"
@@ -133,7 +133,7 @@ class EventsScreen(Screens):
                 self.update_list_buttons(self.health_events_button, self.health_alert)
                 self.display_events = self.health_events
                 self.update_events_display()
-            elif event.ui_element == self.other_clans_events_button:
+            elif self.other_clans_events_button == event.ui_element:
                 if self.event_container.vert_scroll_bar:
                     self.scroll_height[self.event_display_type] = self.event_container.vert_scroll_bar.scroll_position / self.event_container.vert_scroll_bar.scrollable_height
                 self.event_display_type = "other clans events"
@@ -142,7 +142,7 @@ class EventsScreen(Screens):
                 self.update_list_buttons(self.other_clans_events_button, self.other_clans_alert)
                 self.display_events = self.other_clans_events
                 self.update_events_display()
-            elif event.ui_element == self.misc_events_button:
+            elif self.misc_events_button == event.ui_element:
                 if self.event_container.vert_scroll_bar:
                     self.scroll_height[self.event_display_type] = self.event_container.vert_scroll_bar.scroll_position / self.event_container.vert_scroll_bar.scrollable_height
                 self.event_display_type = "misc events"

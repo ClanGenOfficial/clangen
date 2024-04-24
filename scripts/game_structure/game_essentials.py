@@ -140,7 +140,7 @@ class Game():
         'show_history_moons': False,
         'fps': 30
     }
-    all_screens = {}
+    all_screens = {None: None}
     cur_events = {}
     map_info = {}
 

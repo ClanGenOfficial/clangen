@@ -47,7 +47,7 @@ class ClanScreen(Screens):
         if game.switches['window_open']:
             pass
         elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.save_button:
+            if self.save_button == event.ui_element:
                 try:
                     self.save_button_saving_state.show()
                     self.save_button.disable()
@@ -64,21 +64,21 @@ class ClanScreen(Screens):
             if event.ui_element in self.cat_buttons:
                 game.switches["cat"] = event.ui_element.return_cat_id()
                 self.change_screen('profile screen')
-            if event.ui_element == self.label_toggle:
+            if self.label_toggle == event.ui_element:
                 if game.clan.clan_settings['den labels']:
                     game.clan.clan_settings['den labels'] = False
                 else:
                     game.clan.clan_settings['den labels'] = True
                 self.update_buttons_and_text()
-            if event.ui_element == self.med_den_label:
+            if self.med_den_label == event.ui_element:
                 self.change_screen('med den screen')
             else:
                 self.menu_button_pressed(event)
-            if event.ui_element == self.clearing_label:
+            if self.clearing_label == event.ui_element:
                 self.change_screen('clearing screen')
             else:
                 self.menu_button_pressed(event)
-            if event.ui_element == self.warrior_den_label:
+            if self.warrior_den_label == event.ui_element:
                 self.change_screen('warrior den screen')
         
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:

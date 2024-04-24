@@ -71,31 +71,31 @@ class ListScreen(Screens):
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.choose_group_button and not self.group_options_visible:
+            if self.choose_group_button and not self.group_options_visible == event.ui_element:
                 self.update_view_buttons()
-            elif event.ui_element == self.choose_group_button and self.group_options_visible:
+            elif self.choose_group_button and self.group_options_visible == event.ui_element:
                 self.update_view_buttons()
-            elif event.ui_element == self.your_clan_button:
+            elif self.your_clan_button == event.ui_element:
                 self.update_view_buttons()
                 self.get_your_clan_cats()
                 self.update_search_cats(self.search_bar.get_text())
-            elif event.ui_element == self.cotc_button:
+            elif self.cotc_button == event.ui_element:
                 self.update_view_buttons()
                 self.get_cotc_cats()
                 self.update_search_cats(self.search_bar.get_text())
-            elif event.ui_element == self.sc_button:
+            elif self.sc_button == event.ui_element:
                 self.update_view_buttons()
                 self.get_sc_cats()
                 self.update_search_cats(self.search_bar.get_text())
-            elif event.ui_element == self.df_button:
+            elif self.df_button == event.ui_element:
                 self.update_view_buttons()
                 self.get_df_cats()
                 self.update_search_cats(self.search_bar.get_text())
-            elif event.ui_element == self.ur_button:
+            elif self.ur_button == event.ui_element:
                 self.update_view_buttons()
                 self.get_ur_cats()
                 self.update_search_cats(self.search_bar.get_text())
-            elif event.ui_element == self.show_dead_button:
+            elif self.show_dead_button == event.ui_element:
                 self.death_status = 'dead'
                 self.group_options_visible = True
                 self.filter_options_visible = True
@@ -105,7 +105,7 @@ class ListScreen(Screens):
                 self.show_living_button.show()
                 self.get_sc_cats()
                 self.update_search_cats(self.search_bar.get_text())
-            elif event.ui_element == self.show_living_button:
+            elif self.show_living_button == event.ui_element:
                 if game.sort_type == 'death':
                     game.sort_type = 'rank'
                 self.death_status = 'living'
@@ -118,18 +118,18 @@ class ListScreen(Screens):
                 self.show_living_button.hide()
                 self.get_your_clan_cats()
                 self.update_search_cats(self.search_bar.get_text())
-            elif event.ui_element == self.next_page_button:
+            elif self.next_page_button == event.ui_element:
                 self.list_page += 1
                 self.update_page()
-            elif event.ui_element == self.previous_page_button:
+            elif self.previous_page_button == event.ui_element:
                 self.list_page -= 1
                 self.update_page()
-            elif event.ui_element == self.filter_fav:
+            elif self.filter_fav == event.ui_element:
                 self.filter_not_fav.show()
                 self.filter_fav.hide()
                 game.clan.clan_settings["show fav"] = False
                 self.update_page()
-            elif event.ui_element == self.filter_not_fav:
+            elif self.filter_not_fav == event.ui_element:
                 self.filter_not_fav.hide()
                 self.filter_fav.show()
                 game.clan.clan_settings["show fav"] = True
@@ -141,27 +141,27 @@ class ListScreen(Screens):
                                       self.filter_by_age_reverse,
                                       self.filter_by_rank]:
                 self.update_filter_buttons()
-            elif event.ui_element == self.filter_age:
+            elif self.filter_age == event.ui_element:
                 game.sort_type = "age"
                 self.update_filter_buttons()
                 self.update_search_cats(self.search_bar.get_text())
-            elif event.ui_element == self.filter_age_reverse:
+            elif self.filter_age_reverse == event.ui_element:
                 game.sort_type = "reverse_age"
                 self.update_filter_buttons()
                 self.update_search_cats(self.search_bar.get_text())
-            elif event.ui_element == self.filter_rank:
+            elif self.filter_rank == event.ui_element:
                 game.sort_type = "rank"
                 self.update_filter_buttons()
                 self.update_search_cats(self.search_bar.get_text())
-            elif event.ui_element == self.filter_id:
+            elif self.filter_id == event.ui_element:
                 game.sort_type = "id"
                 self.update_filter_buttons()
                 self.update_search_cats(self.search_bar.get_text())
-            elif event.ui_element == self.filter_exp:
+            elif self.filter_exp == event.ui_element:
                 game.sort_type = "exp"
                 self.update_filter_buttons()
                 self.update_search_cats(self.search_bar.get_text())
-            elif event.ui_element == self.filter_death:
+            elif self.filter_death == event.ui_element:
                 game.sort_type = "death"
                 self.update_filter_buttons()
                 self.update_search_cats(self.search_bar.get_text())

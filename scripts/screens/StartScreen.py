@@ -27,6 +27,7 @@ if not is_web:
 from scripts.cat.cats import Cat
 from scripts.ui import image_cache
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
+from scripts.buttons import UIButton
 from scripts.game_structure.windows import UpdateAvailablePopup, ChangelogPopup
 from scripts.utility import scale, quit  # pylint: disable=redefined-builtin
 from .Screens import Screens
@@ -73,7 +74,7 @@ class StartScreen(Screens):
             }
             if event.ui_element in screens:
                 self.change_screen(screens[event.ui_element])
-            elif event.ui_element == self.open_data_directory_button:
+            elif self.open_data_directory_button == event.ui_element:
                 if platform.system() == 'Darwin':
                     subprocess.Popen(["open", "-R", get_data_dir()])
                 elif platform.system() == 'Windows':
@@ -81,7 +82,7 @@ class StartScreen(Screens):
                 elif platform.system() == 'Linux':
                     subprocess.Popen(['xdg-open', get_data_dir()])
                 return
-            elif event.ui_element == self.closebtn:
+            elif self.closebtn == event.ui_element:
                 self.error_box.kill()
                 self.error_label.kill()
                 self.error_gethelp.kill()
@@ -89,11 +90,11 @@ class StartScreen(Screens):
                 self.open_data_directory_button.kill()
                 # game.switches['error_message'] = ''
                 # game.switches['traceback'] = ''
-            elif event.ui_element == self.update_button:
+            elif self.update_button == event.ui_element:
                 UpdateAvailablePopup(game.switches['last_screen'])
-            elif event.ui_element == self.quit:
+            elif self.quit == event.ui_element:
                 quit(savesettings=False, clearevents=False)
-            elif event.ui_element == self.social_buttons['discord_button']:
+            elif self.social_buttons['discord_button'] == event.ui_element:
                 if platform.system() == 'Darwin':
                     subprocess.Popen(
                         ["open", "-u", "https://discord.gg/clangen"])
@@ -102,7 +103,7 @@ class StartScreen(Screens):
                 elif platform.system() == 'Linux':
                     subprocess.Popen(
                         ['xdg-open', "https://discord.gg/clangen"])
-            elif event.ui_element == self.social_buttons['tumblr_button']:
+            elif self.social_buttons['tumblr_button'] == event.ui_element:
                 if platform.system() == 'Darwin':
                     subprocess.Popen(
                         ["open", "-u", "https://officialclangen.tumblr.com/"])
@@ -112,7 +113,7 @@ class StartScreen(Screens):
                 elif platform.system() == 'Linux':
                     subprocess.Popen(
                         ['xdg-open', "https://officialclangen.tumblr.com/"])
-            elif event.ui_element == self.social_buttons['twitter_button']:
+            elif self.social_buttons['twitter_button'] == event.ui_element:
                 if platform.system() == 'Darwin':
                     subprocess.Popen(
                         ["open", "-u", "https://twitter.com/OfficialClangen"])
@@ -158,27 +159,27 @@ class StartScreen(Screens):
         self.hide_menu_buttons()
         # Create buttons
 
-        self.continue_button = UIImageButton(scale(
+        self.continue_button = UIButton(scale(
             pygame.Rect((140, 620), (384, 70))),
             "",
             object_id="#continue_button",
             manager=MANAGER)
-        self.switch_clan_button = UIImageButton(
+        self.switch_clan_button = UIButton(
             scale(pygame.Rect((140, 710), (384, 70))),
             "",
             object_id="#switch_clan_button",
             manager=MANAGER)
-        self.new_clan_button = UIImageButton(scale(
+        self.new_clan_button = UIButton(scale(
             pygame.Rect((140, 800), (384, 70))),
             "",
             object_id="#new_clan_button",
             manager=MANAGER)
-        self.settings_button = UIImageButton(scale(
+        self.settings_button = UIButton(scale(
             pygame.Rect((140, 890), (384, 70))),
             "",
             object_id="#settings_button",
             manager=MANAGER)
-        self.quit = UIImageButton(scale(pygame.Rect((140, 980), (384, 70))),
+        self.quit = UIButton(scale(pygame.Rect((140, 980), (384, 70))),
                                   "",
                                   object_id="#quit_button",
                                   manager=MANAGER)
