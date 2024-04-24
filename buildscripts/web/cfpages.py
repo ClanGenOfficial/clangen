@@ -23,5 +23,4 @@ release_channel={release_channel}
 upstream={upstream}
 """)
 
-runAndGatherOutput('poetry run pygbag --ume_block 0 --template web.tmpl --build webMain.py')
-
+print(runAndGatherOutput('poetry run pygbag --ume_block 0 --template web.tmpl --build webMain.py'))
