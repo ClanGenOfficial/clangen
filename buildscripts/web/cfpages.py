@@ -9,6 +9,8 @@ def runAndGatherOutput(command):
 
 release_channel = os.environ.get('RELEASE_CHANNEL', 'development')
 
+print(runAndGatherOutput('poetry install --with build --all-extras'))
+
 print('Building web...')
 
 commitHash = runAndGatherOutput('git rev-parse HEAD').strip()
