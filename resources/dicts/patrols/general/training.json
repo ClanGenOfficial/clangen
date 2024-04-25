@@ -9487,6 +9487,146 @@
             ]
     },
     {
+        "patrol_id": "gen_train_furiousatwhiskergrove_storylorespeakerteacherlocked1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_bord_story",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1", "LORE,1", "SPEAKER,1", "TEACHER,1"],
+        "intro_text": "Once upon a time lived a Clan filthy and pathetic, who did nothing but steal from others, never giving thought to the hurt they did, or credit to the hunter's hard work...",
+        "decline_text": "No one is interested bringing up that frustrating fable today.",
+            "success_outcomes": [
+                {
+                "text": "Smug, slimey, greasy and unpleasent, the cats of the Whisker Grove stole from c_n and every other Clan, a bunch of pathetic poofy poncy wastes of air. Everyone should despise them for being cowardly ungrateful thieves, and should one ever be found in c_n's lands they will be driven out.",
+                "exp": 30,
+                "weight": 20,
+                "art": "scaryghost_INTRO",
+                "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic", "respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        }
+                    ]
+                },
+                {
+                    "text": "The cats of the Whisker Grove are a bunch of dung-gargling scat scooters, s_c spits. They stole from c_n, the mouse-hearts, and is rumoured they're such such fox-dung-furred theives that Silverpelt herself threw them out from StarClan.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "scaryghost_INTRO",
+                    "can_have_stat": ["p_l"],
+                    "stat_trait": [
+                        "fierce",
+                        "responsible",
+                        "bloodthirsty",
+                        "vengeful",
+                        "strict",
+                        "righteous"
+                    ],
+                    "relationships": [
+                            {
+                                "cats_to": ["p_l"],
+                                "cats_from": ["patrol"],
+                                "mutual": true,
+                                "values": ["platonic", "respect"],
+                                "amount": 5
+                            },
+                            {
+                                "cats_to": ["p_l"],
+                                "cats_from": ["patrol"],
+                                "mutual": false,
+                                "values": ["respect"],
+                                "amount": 5
+                            }
+                        ]
+                },
+                {
+                    "text": "The cats of the Whisker Grove are repulsive, s_c says, and the rest of the patorl is surprised to here the quiet fury in {PRONOUN/s_c/poss} tone. s_c will never forgive those who steal from the kind and generous, who take other cats hard work and try to turn a profit on it.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "scaryghost_INTRO",
+                    "can_have_stat": ["p_l"],
+                    "stat_trait": [
+                        "compassionate",
+                        "loving",
+                        "faithful"
+                    ],
+                    "relationships": [
+                            {
+                                "cats_to": ["p_l"],
+                                "cats_from": ["patrol"],
+                                "mutual": true,
+                                "values": ["platonic", "respect"],
+                                "amount": 5
+                            },
+                            {
+                                "cats_to": ["p_l"],
+                                "cats_from": ["patrol"],
+                                "mutual": false,
+                                "values": ["respect"],
+                                "amount": 5
+                            }
+                        ]
+                },
+                {
+                    "text": "The cats of the Whisker Grove are dirt grubbing sticky-paws uninspired little balls of dung, s_c snarls, and sharpens {PRONOUN/s_c/poss} claws. If they're ever spotted in c_n lands again, s_c will rip their pelt off!",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "scaryghost_INTRO",
+                    "can_have_stat": ["p_l"],
+                    "stat_trait": [
+                        "daring",
+                        "bold",
+                        "flamboyant",
+                        "ambitious",
+                        "bloodthirsty",
+                        "fierce",
+                        "vengeful"
+                    ],
+                    "relationships": [
+                            {
+                                "cats_to": ["p_l"],
+                                "cats_from": ["patrol"],
+                                "mutual": true,
+                                "values": ["platonic", "respect"],
+                                "amount": 5
+                            },
+                            {
+                                "cats_to": ["p_l"],
+                                "cats_from": ["patrol"],
+                                "mutual": false,
+                                "values": ["respect"],
+                                "amount": 5
+                            }
+                        ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "Denser than a twoleg, opportunistic and sly, the cats of the Whisker Grove are no Clancats. They stole from c_n and the other Clans, harming the trust c_n has in outsiders greatly. p_l sighs. Maybe c_n will never have the same relationship with cats outside the Clan again, thanks to those ungrateful theives.",
+                    "exp": 0,
+                    "weight": 20
+                }
+            ]
+    },
+    {
         "patrol_id": "gen_train_solreference_lorelocked1",
         "biome": ["Any"],
         "season": ["Any"],
