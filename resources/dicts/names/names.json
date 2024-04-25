@@ -114,7 +114,7 @@
     "Wind", "Wing", "Wish", "Wisteria", "Wolf", "Wolverine", "Wood", "Worm", "Wren", "Yarrow", "Yew", 
     "Zinnia",
     "Dragon", "Wyvern", "Earth", "Eternal", "Time", "Ghost", "Magic", "Mind", "Royal", "Shade", "Spirit", "Soul", "Energy", "Fae", "Wyrm",
-    "Kirin", "Orchid", "Drake", "Hydra", "Sealed", "Pure", "Radiant", "Vampire", "Death", "Life"
+    "Kirin", "Orchid", "Drake", "Hydra", "Sealed", "Pure", "Radiant", "Vampire", "Death", "Life", "Flashy", "Flamboyant"
   ],
 
   "colour_prefixes": {
@@ -419,7 +419,8 @@
     "Nina", "Matthias", "Wylan", "Dirtyhands", "Wraith", "Monomon", "Lurien", "Herrah", "Shabor", "Pharaoh", "Porki", "Dark", "Radiance", "Yato", "Yatogami", "Hiyori", "Yukine", "Bishamonten", "Viina",
     "Kazuma", "Kofuku", "Daikoku", "Armstrong", "Hohenheim", "Scar", "Astarion", "Gale", "Laezel", "Karlach", "Wyll", "Jaheira", "Minsc", "Minthara", "Halsin", "Zevlor", "Raphael", "Gortash", "Bhaal", "Orin",
     "Ketheric", "Faerun", "Shar", "Selune", "Mystra", "Balthazar", "Absolute", "Cazador", "Szarr", "Vampire", "Mol", "Balduran", "Kagha", "Orpheus", "Dame Aylin", "Isobel", "Tiamat", "Zariel", "Mizora",
-    "Withers", "Elminster", "Aasimar"
+    "Withers", "Elminster", "Aasimar", "Tanjiro", "Kamado", "Nezuko", "Zenitsu", "Inosuke", "Tengen Uzui", "Makio", "Suma", "Hinatsuru", "Rengoku", "Tomioka", "Shinobu", "Kanroji", "Tokito", "Muzan", "Kibutsuji",
+    "Demon", "Devil", "Yuiichiro", "Akaza", "Daki", "Gyutaro", "Ubuyashiki", "Gomei", "Obanai", "Sanemi", "Genya", "Kanae", "Nichirin", "Kimetsu", "Haganezuka"
     ],
 	"animal_suffixes": [
 		"badger", "bat", "bear", "bee", "beetle", "bird", "bug", "cricket", "deer", "eagle", "elk", "falcon", "fawn", "fish", "fox", "goose", "hare", "hawk", "horse", 
