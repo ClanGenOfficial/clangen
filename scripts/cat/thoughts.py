@@ -67,6 +67,11 @@ class Thoughts():
             if camp not in thought["camp"]:
                 return False
 
+        # This is for checking the 'not_working' status
+        if "not_working" in thought:
+            if thought["not_working"] != main_cat.not_working():
+                return False
+
         # This is for checking if another cat is needed and there is a other cat
         r_c_in = [thought_str for thought_str in thought["thoughts"] if "r_c" in thought_str]
         if len(r_c_in) > 0 and not random_cat:
