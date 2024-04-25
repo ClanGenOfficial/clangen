@@ -575,10 +575,8 @@ class ListScreen(Screens):
         elif self.current_group == 'df':
             self.update_heading_text(f'Dark Forest')
 
-        # If the number of pages becomes smaller than the number of our current page, set
-        #   the current page to the last page
-        if self.list_page > self.all_pages:
-            self.list_page = self.all_pages
+        # clamp current page to a valid page number
+        self.list_page = max(1, min(self.list_page, self.all_pages))
 
         # Handle which next buttons are clickable.
         if self.all_pages <= 1:
