@@ -648,11 +648,7 @@ class PatrolScreen(Screens):
         else:
             all_pages = self.chunks(self.able_cats, 15)
 
-        if self.current_page > len(all_pages):
-            if len(all_pages) == 0:
-                self.current_page = 1
-            else:
-                self.current_page = len(all_pages)
+        self.current_page = max(1, min(self.current_page, len(all_pages)))
 
         # Check for empty list (no able cats)
         if all_pages:

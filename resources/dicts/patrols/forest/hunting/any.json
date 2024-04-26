@@ -191,7 +191,7 @@
         "season": ["Any"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_hunt_twolegplace",
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
@@ -242,7 +242,7 @@
         "season": ["Any"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_hunt_twolegplace",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
@@ -705,7 +705,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The noise leads {PRONOUN/s_c/object} to a coyote that's busy stripping the last of the meat from a carcass. {PRONOUN/s_c/subject/CAP} {VERB/s_c/wait/waits} till the coyote leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned.",
+                "text": "The noise leads {PRONOUN/r_c/object} to a coyote that's busy stripping the last of the meat from a carcass. {PRONOUN/r_c/subject/CAP} {VERB/r_c/wait/waits} till the coyote leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned.",
                 "exp": 0,
                 "weight": 20
             },
@@ -948,7 +948,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The noise leads them to a wolf that's busy stripping the last of the meat from a carcass. {PRONOUN/s_c/subject/CAP} {VERB/s_c/wait/waits} till the wolf leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned.",
+                "text": "The noise leads {PRONOUN/r_c/object} to a wolf that's busy stripping the last of the meat from a carcass. {PRONOUN/r_c/subject/CAP} {VERB/r_c/wait/waits} till the wolf leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned.",
                 "exp": 0,
                 "weight": 20
             },
@@ -1087,8 +1087,8 @@
             "apprentice": [1, 6]
         },
         "weight": 20,
-        "intro_text": "r_c's mentor assesses {PRONOUN/s_c/object} by sending {PRONOUN/s_c/object} on a solo hunt.",
-        "decline_text": "r_c asks {PRONOUN/s_c/poss} mentor to do the assessment some other time.",
+        "intro_text": "r_c's mentor assesses {PRONOUN/r_c/object} by sending {PRONOUN/r_c/object} on a solo hunt.",
+        "decline_text": "r_c asks {PRONOUN/r_c/poss} mentor to do the assessment some other time.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -3067,7 +3067,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c drops into a crouch and begins to stalk forward. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} preparing to pounce when {PRONOUN/s_c/poss} paw lightly brushes a twig and the vole immediately takes off. {PRONOUN/s_c/subject/CAP} {VERB/s_c/give/gives} chase, but the critter disappears into a burrow. Mouse-dung!",
+                "text": "r_c drops into a crouch and begins to stalk forward. {PRONOUN/s_c/subject/CAP}{VERB/r_c/'re/'s} preparing to pounce when {PRONOUN/r_c/poss} paw lightly brushes a twig and the vole immediately takes off. {PRONOUN/r_c/subject/CAP} {VERB/r_c/give/gives} chase, but the critter disappears into a burrow. Mouse-dung!",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
