@@ -31,6 +31,11 @@ jobs:
         echo "version_number=${{ github.sha }}" >> version.ini
         echo "release_channel=web" >> version.ini
         echo "upstream=${{ github.repository }}" >> version.ini
+    # This only runs on development builds, please write release commits manually
+    - name: Write commit file
+      if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+      run: |
+        git log --pretty="format:%H|||%cd|||%b|||%s" -15 --no-decorate --merges --grep="Merge pull request" --date=short > changelog.txt
     - name: Build
       run: python3 -m pygbag --ume_block 0 --template static/index.html --build $GITHUB_WORKSPACE/webMain.py
     - name: Setup Pages
