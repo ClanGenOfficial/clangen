@@ -120,7 +120,7 @@ class RoleScreen(Screens):
         self.switch_warrior = UIImageButton(scale(pygame.Rect((451, 720), (344, 72))), "",
                                             object_id="#switch_warrior_button",
                                             manager=MANAGER)
-        self.retire = UIImageButton(scale(pygame.Rect((451, 792), (334, 72))), "",
+        self.retire = UIImageButton(scale(pygame.Rect((451, 792), (344, 72))), "",
                                     object_id="#retire_button",
                                     manager=MANAGER)
         self.switch_med_cat = UIImageButton(scale(pygame.Rect((805, 720), (344, 104))), "",
@@ -423,7 +423,7 @@ class RoleScreen(Screens):
     def get_role_blurb(self):
         if self.the_cat.status == "warrior":
             output = f"{self.the_cat.name} is a <b>warrior</b>. Warriors are adult cats who feed and protect their " \
-                     f"Clan. They are trained to hunt and fight in addition to the ways of the warrior code. " \
+                     f"Clan. They are trained to hunt and fight in addition to the ways of the Warrior Code. " \
                      f"Warriors are essential to the survival of a Clan, and usually make up the bulk of it's members. "
         elif self.the_cat.status == "leader":
             output = f"{self.the_cat.name} is the <b>leader</b> of {game.clan.name}Clan. The guardianship of all " \

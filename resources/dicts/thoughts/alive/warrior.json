@@ -353,7 +353,7 @@
             "Spends all day chatting and laughing with some other warriors",
             "Forgot where {PRONOUN/m_c/subject} put something, and every other warrior offers to help {PRONOUN/m_c/object} find it",
             "Is a little exhausted from how many cats come to {PRONOUN/m_c/object} for things",
-            "Feels happy knowing {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} someone other's can talk to",
+            "Feels happy knowing {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} someone others can talk to",
             "Carefully curates {PRONOUN/m_c/poss} appearance to be dazzling, but not too dazzling"
         ],
         "main_trait_constraint": [
@@ -379,7 +379,8 @@
             "Stuck {PRONOUN/m_c/poss} tongue out at a mouse that escaped {PRONOUN/m_c/poss} pounce",
             "Makes immature jokes all day, leaving everyone else rolling their eyes",
             "Doesn't want to share a piece of fresh-kill",
-            "Has felt bad all day about stepping on a bug"
+            "Has felt bad all day about stepping on a bug",
+            "Is complaining about being sent on dawn patrol"
         ],
         "main_trait_constraint": [
             "childish"
@@ -796,7 +797,7 @@
     {
         "id": "responsible_warrior",
         "thoughts": [
-            "Is making sure {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} done all of their daily duties",
+            "Is making sure {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} done all of {PRONOUN/m_c/poss} daily duties",
             "Is planning to wake up early tomorrow",
             "Was the first to rise this morning",
             "Roused the other cats awake at dawn",
@@ -832,7 +833,7 @@
         "id": "responsible_warrior_to_living_apprentices",
         "thoughts": [
             "Doesn't approve of the trouble the apprentices have been making",
-            "Scolds the apprentices for not taking the warrior code seriously"
+            "Scolds the apprentices for not taking the Warrior Code seriously"
         ],
         "random_status_constraint": [
             "apprentice"
@@ -953,7 +954,7 @@
             "Is conducting a rather rigorous training session for the younger warriors",
             "Takes pride in how well-run {PRONOUN/m_c/poss} patrols always are",
             "Is telling off younger cats for petty dishonesty out on patrol",
-            "Feels that a new rule should be added to the warrior code",
+            "Feels that a new rule should be added to the Warrior Code",
             "Goes around camp policing everyone's posture",
             "Makes sure everyone only takes one piece of fresh-kill and no more",
             "Is encouraging the deputy to be more harsh"

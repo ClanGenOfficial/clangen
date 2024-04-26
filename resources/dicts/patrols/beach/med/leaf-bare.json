@@ -256,7 +256,7 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                   "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 }
             },
             {
@@ -271,7 +271,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 }
             }
         ]
@@ -415,7 +416,7 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -446,7 +447,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -603,7 +605,7 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -634,7 +636,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -709,9 +712,16 @@
                 "text": "r_c digs and digs and digs, but eventually {PRONOUN/r_c/subject} {VERB/r_c/have/haves} to admit failure and give up the search for burdock root. The cold has leached all the heat from {PRONOUN/r_c/poss} pelt, and {PRONOUN/r_c/subject} {VERB/r_c/arrive/arrives} back at camp miserable and cold.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+				"injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTMITT"]
+                    }
+                ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 }
             },
             {
@@ -726,7 +736,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 }
             }
         ]
@@ -870,7 +881,7 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -901,7 +912,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -1058,7 +1070,7 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -1089,7 +1101,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -1167,7 +1180,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 }
             }
         ]
@@ -1311,7 +1325,7 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -1342,7 +1356,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -1482,6 +1497,9 @@
                         "injuries": ["shivering"]
                     }
                 ],
+                "history_text": {
+                    "reg_death": "This cat froze to death."
+                },
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -1511,7 +1529,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -1588,7 +1607,7 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 }
             },
             {
@@ -1603,7 +1622,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 }
             }
         ]
@@ -1747,7 +1767,7 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -1778,7 +1798,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -1935,7 +1956,7 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -1966,7 +1987,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -2043,7 +2065,7 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "m_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
+                    "reg_death": "m_c died from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
                 }
             },
             {
@@ -2058,7 +2080,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
+                    "scar": "m_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare.",
+                    "reg_death": "m_c died from injuries sustained after falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
                 }
             }
         ]
@@ -2233,7 +2256,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
+                    "scar": "m_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare.",
+                    "reg_death": "m_c died from injuries sustained after falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
                 },
                 "relationships": [
                     {
@@ -2421,7 +2445,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
+                    "scar": "m_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare.",
+                    "reg_death": "m_c died from injuries sustained after falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
                 },
                 "relationships": [
                     {
@@ -2498,7 +2523,7 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 }
             },
             {
@@ -2513,7 +2538,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 }
             }
         ]
@@ -2657,7 +2683,7 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -2688,7 +2714,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -2845,7 +2872,7 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -2876,7 +2903,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {

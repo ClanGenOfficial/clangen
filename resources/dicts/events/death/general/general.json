@@ -486,6 +486,7 @@
         "camp": "any",
         "tags": [
             "multi_death",
+	    "other_cat",
             "classic",
             "Newleaf",
             "Greenleaf",
@@ -503,6 +504,7 @@
         "tags": [
             "multi_death",
             "classic",
+	    "other_cat",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
@@ -520,6 +522,7 @@
             "multi_death",
             "classic",
             "Newleaf",
+	    "other_cat",
             "Greenleaf",
             "Leaf-fall",
             "Leaf-bare"
@@ -763,6 +766,20 @@
         "history_text": {
             "reg_death": "This cat died from old age life.",
             "lead_death": "lost all remaining lives from old age."
-        }
+            }
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "death_text": "m_c couldn't miss today! Such a bright day out, a perfect day to go for a walk. That was until m_c detected another scent, a strong one, and a foul one. {PRONOUN/m_c/subject/CAP} scrambled away from the area, but not before abnormally long claws slashed across their face.",
+        "history_text": {
+            "reg_death": "m_c was killed by an unknown predator."
+        },
+          "cat_trait": null
     }
 ]

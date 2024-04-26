@@ -925,7 +925,7 @@ class ChangelogPopup(UIWindow):
                 ["git", "log", r"--pretty=format:%H|||%cd|||%b|||%s", "-15", "--no-decorate", "--merges", "--grep=Merge pull request", "--date=short"]).decode("utf-8")
             dynamic_changelog = True
         else:
-            with open("changelog.txt", "r") as read_file:
+            with open("changelog.txt", "r", encoding='utf-8') as read_file:
                 file_cont = read_file.read()
 
         if get_version_info().is_dev() and not get_version_info().is_source_build:

@@ -46,7 +46,7 @@
                 ]
             },
             {
-                "text": "By the end of the patrol s_c is able to hide stealthily within the grass, their movements barely noticeable.",
+                "text": "By the end of the patrol s_c is able to hide stealthily within the grass, {PRONOUN/s_c/poss} movements barely noticeable.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": ["calm", "careful", "sneaky", "quiet", "patient"],
@@ -64,7 +64,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 tries to hide within the grass, but they can't quite manage to make themselves still and quiet enough to avoid detection.",
+                "text": "app1 tries to hide within the grass, but {PRONOUN/app1/subject} can't quite manage to make {PRONOUN/app1/self} still and quiet enough to avoid detection.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -94,7 +94,7 @@
                 ]
             },
             {
-                "text": "app1 makes their way into the tall grass to try out the advice p_l has given them, but they go crashing down into a hole, where whatever lives there gives them a sharp bite! It seems the grass was hiding more than just cats. r_c ends up limping back to camp.",
+                "text": "app1 makes {PRONOUN/app1/poss} way into the tall grass to try out the advice p_l has given {PRONOUN/app1/object}, but {PRONOUN/app1/subject} {VERB/app1/go/goes} crashing down into a hole, where whatever lives there gives {PRONOUN/app1/object} a sharp bite! It seems the grass was hiding more than just cats. app1 ends up limping back to camp.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -133,7 +133,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Feeling ever so alone on their solo patrol, r_c carefully sniffs around the mouth of the burrow, but the scent change is unmistakable - a new badger occupant has moved in. Creeping forward, belly flat in the dirt, they manage just enough of a glimpse to confirm the badger's presence. Heart pounding, r_c sprints back to camp to warn everyone.",
+                "text": "Feeling ever so alone on {PRONOUN/r_c/poss} solo patrol, r_c carefully sniffs around the mouth of the burrow, but the scent change is unmistakable - a new badger occupant has moved in. Creeping forward, belly flat in the dirt, {PRONOUN/r_c/subject} {VERB/r_c/manage/manages} just enough of a glimpse to confirm the badger's presence. Heart pounding, r_c sprints back to camp to warn everyone.",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
@@ -147,7 +147,7 @@
                 ]
             },
             {
-                "text": "Feeling ever so alone on their solo patrol, r_c carefully sniffs around the mouth of the burrow, but after a few moments, realizes that the scent is relatively weak. A badger was here, no doubt about it, but it doesn't seem to have taken up residence. This will be important information to report back at camp.",
+                "text": "Feeling ever so alone on {PRONOUN/r_c/poss} solo patrol, r_c carefully sniffs around the mouth of the burrow, but after a few moments, realizes that the scent is relatively weak. A badger was here, no doubt about it, but it doesn't seem to have taken up residence. This will be important information to report back at camp.",
                 "exp": 30,
                 "weight": 5,
                 "relationships": [
@@ -161,7 +161,7 @@
                 ]
             },
             {
-                "text": "s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking their head in front of a predator. They search the grass around the sett thoroughly until they come upon some fresh badger scat - stinky, horrible, and perfect proof of the new occupant of the sett.",
+                "text": "s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking {PRONOUN/s_c/poss} head in front of a predator. {PRONOUN/s_c/subject/CAP} {VERB/s_c/search/searches} the grass around the sett thoroughly until {PRONOUN/s_c/subject} {VERB/s_c/come/comes} upon some fresh badger scat - stinky, horrible, and perfect proof of the new occupant of the sett.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -176,7 +176,7 @@
                 ]
             },
             {
-                "text": "Carefully considering their options, r_c decides on a stakeout, and watches from a safe hiding place in the grass. When the badger pokes its head above ground at dusk, they're prepared, and dart off back to camp to warn everyone before the predator has blinked the sleep out of its eyes.",
+                "text": "Carefully considering {PRONOUN/s_c/poss} options, s_c decides on a stakeout, and watches from a safe hiding place in the grass. When the badger pokes its head above ground at dusk, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} prepared, and {VERB/s_c/dart/darts} off back to camp to warn everyone before the predator has blinked the sleep out of its eyes.",
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": [
@@ -203,7 +203,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Well, the only way to know is to check! s_c scrambles into the den for a look and comes nose to nose with its occupant. It's only by the grace of StarClan that they're able to redirect that speed to twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows them up the burrow tunnel.",
+                "text": "Well, the only way to know is to check! s_c scrambles into the den for a look and comes nose to nose with its occupant. It's only by the grace of StarClan that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to redirect that speed to twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows {PRONOUN/s_c/object} up the burrow tunnel.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -231,7 +231,7 @@
                 ]
             },
             {
-                "text": "r_c carefully approaches the burrow, trying to figure out if there's anything new inside. It's so dark, and it all smells the same... They try to creep just a little closer - but the ground drops away steeply beneath their paws and they lose their footing, skidding right into the disturbed badger's lethal jaws.",
+                "text": "r_c carefully approaches the burrow, trying to figure out if there's anything new inside. It's so dark, and it all smells the same... {PRONOUN/r_c/subject/CAP} {VERB/r_c/try/tries} to creep just a little closer - but the ground drops away steeply beneath {PRONOUN/r_c/poss} paws and {PRONOUN/r_c/subject} {VERB/r_c/lose/loses} {PRONOUN/r_c/poss} footing, skidding right into the disturbed badger's lethal jaws.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -251,7 +251,7 @@
                 ]
             },
             {
-                "text": "While r_c is carefully sniffing at the burrow entrance, there's a rustle in the grass behind them. It's difficult to say who's more surprised - r_c or the badger. It charges for the sett and r_c leaps out of the way, but its claws catch their pelt, and it's a bloodied cat that limps back into camp to report the whole sorry adventure.",
+                "text": "While r_c is carefully sniffing at the burrow entrance, there's a rustle in the grass behind {PRONOUN/r_c/object}. It's difficult to say who's more surprised - r_c or the badger. It charges for the sett and r_c leaps out of the way, but its claws catch {PRONOUN/r_c/poss} pelt, and it's a bloodied cat that limps back into camp to report the whole sorry adventure.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -322,7 +322,7 @@
                 ]
             },
             {
-                "text": "s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking their head in front of a predator. They lead the patrol on a search of the grass around the sett until they come upon some fresh badger scat - stinky, horrible, and perfect proof of the new occupant of the sett.",
+                "text": "s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking {PRONOUN/s_c/poss} head in front of a predator. {PRONOUN/s_c/subject/CAP} {VERB/s_c/lead/leads} the patrol on a search of the grass around the sett until they come upon some fresh badger scat - stinky, horrible, and perfect proof of the new occupant of the sett.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -369,7 +369,7 @@
                 "weight": 20
             },
             {
-                "text": "Well, the only way to know is to check! s_c scrambles into the den for a look and comes nose to nose with its occupant. It's only by the grace of StarClan that they're able to redirect that speed to twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows them up the burrow tunnel.",
+                "text": "Well, the only way to know is to check! s_c scrambles into the den for a look and comes nose to nose with its occupant. It's only by the grace of StarClan that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to redirect that speed to twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows {PRONOUN/s_c/object} up the burrow tunnel.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -413,18 +413,18 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Trailing behind the patrol, the ground trembles beneath r_c's paws. They look around wildly for safe footing - just as the earth caves in beneath them and the world goes dark.",
-        "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
+        "intro_text": "Trailing behind the patrol, the ground trembles beneath r_c's paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly for safe footing - just as the earth caves in beneath {PRONOUN/r_c/object} and the world goes dark.",
+        "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on the edge of the obstruction, and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 20,
         "success_outcomes": [
             {
-                "text": "Their Clanmates come running at their yowls, and r_c is soon freed, shaken but unharmed. The patrol settles down as everyone comforts each other.",
+                "text": "{PRONOUN/r_c/poss/CAP} Clanmates come running at {PRONOUN/r_c/poss} yowls, and r_c is soon freed, shaken but unharmed. The patrol settles down as everyone comforts each other.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": true,
                         "values": ["platonic", "comfort", "trust"],
                         "amount": 5
@@ -437,8 +437,15 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
+                        "values": ["platonic", "comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": true,
                         "values": ["platonic", "comfort", "trust"],
                         "amount": 5
@@ -446,14 +453,21 @@
                 ]
             },
             {
-                "text": "Without letting themselves panic, s_c looks around for anything that could help. They snap a branch off a nearby scrub and clench it between their teeth, offering it to r_c. Between r_c's scrambling and s_c's determination, they're pulled free of the quagmire unharmed.",
+                "text": "Without letting {PRONOUN/s_c/self} panic, s_c looks around for anything that could help. {PRONOUN/s_c/subject/CAP} {VERB/s_c/snap/snaps} a branch off a nearby scrub and {VERB/s_c/clench/clenches} it between {PRONOUN/s_c/poss} teeth, offering it to r_c. Between r_c's scrambling and s_c's determination, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} pulled free of the quagmire unharmed.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": ["r_c"],
+                        "cats_from": ["s_c"],
+                        "mutual": true,
+                        "values": ["platonic", "comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": true,
                         "values": ["platonic", "comfort", "trust"],
                         "amount": 5
@@ -461,7 +475,7 @@
                 ]
             },
             {
-                "text": "Creeping in as close as possible, s_c purrs to r_c, keeping them calm as the patrol carefully digs down to them. r_c blinks up at them, holding on to their presence in the scary situation.",
+                "text": "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as the patrol carefully digs down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -478,8 +492,15 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": ["r_c"],
+                        "cats_from": ["s_c"],
+                        "mutual": true,
+                        "values": ["platonic", "comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": true,
                         "values": ["platonic", "comfort", "trust"],
                         "amount": 5
@@ -494,8 +515,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": true,
                         "values": ["platonic", "comfort", "trust"],
                         "amount": -5
@@ -503,7 +524,7 @@
                 ]
             },
             {
-                "text": "As s_c rarely has patience for other cats, r_c tells them harshly that they don't have time for some idiot who got stuck, making s_c resentful as they dig themselves out.",
+                "text": "As s_c rarely has patience for other cats, p_l tells {PRONOUN/s_c/object} harshly that they don't have time for some idiot who got stuck, making s_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/s_c/self} out.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -517,18 +538,26 @@
                     "vengeful",
                     "bossy"
                 ],
+                "can_have_stat": ["r_c"],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["p_l"],
                         "mutual": true,
-                        "values": ["platonic", "comfort", "trust"],
+                        "values": ["platonic", "comfort", "trust", "respect"],
                         "amount": -5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 5
                     }
                 ]
             },
             {
-                "text": "Hurt and wheezing, r_c hears the patrol panicking as they drift to StarClan.",
+                "text": "Hurt and wheezing, r_c hears the patrol panicking as {PRONOUN/r_c/subject} {VERB/r_c/drift/drifts} to StarClan.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -539,8 +568,8 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": true,
                         "values": ["platonic", "comfort", "trust"],
                         "amount": -5
@@ -548,7 +577,7 @@
                 ]
             },
             {
-                "text": "The patrol eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured.",
+                "text": "The patrol eventually manages to rescue r_c, but {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to be helped back to camp, battered and injured.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -565,8 +594,8 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": true,
                         "values": ["platonic", "comfort", "trust"],
                         "amount": -5
@@ -574,7 +603,7 @@
                 ]
             },
             {
-                "text": "The patrol can't help s_c in time, and as s_c starts to drift off to StarClan, the eyes of r_c glint malevolently. Was this...? s_c doesn't have a chance to finish their last thought.",
+                "text": "The patrol can't help r_c in time, and as r_c starts to drift off to StarClan, the eyes of s_c glint malevolently. Was this...? r_c doesn't have a chance to finish {PRONOUN/r_c/poss} last thought.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -588,7 +617,7 @@
                     "vengeful",
                     "bossy"
                 ],
-                "dead_cats": ["s_c"],
+                "dead_cats": ["r_c"],
                 "history_text": {
                     "scar": "m_c carries a scar from being trapped on patrol",
                     "reg_death": "m_c tragically died after being trapped on patrol.",
@@ -596,8 +625,8 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": true,
                         "values": ["platonic", "comfort", "trust"],
                         "amount": -5
@@ -605,7 +634,7 @@
                 ]
             },
             {
-                "text": "Even though r_c made it out, they swear someone pushed them, and blame s_c. s_c denies it and says they should get r_c back to camp to get their injury looked at.",
+                "text": "Even though r_c made it out, {PRONOUN/r_c/subject} swear someone pushed them, and blame s_c. s_c denies it and says they should get r_c back to camp to get {PRONOUN/r_c/poss} injury looked at.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -633,11 +662,18 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": ["r_c"],
+                        "cats_from": ["s_c"],
                         "mutual": true,
                         "values": ["platonic", "comfort", "trust"],
                         "amount": -5
+                    },
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["s_c"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 5
                     }
                 ]
             }
@@ -654,18 +690,18 @@
         "max_cats": 2,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Trailing behind p_l, the ground trembles beneath r_c's paws. They look around wildly for safe footing - just as the earth caves in beneath them and the world goes dark.",
-        "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
+        "intro_text": "Trailing behind p_l, the ground trembles beneath r_c's paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly for safe footing - just as the earth caves in beneath {PRONOUN/r_c/object} and the world goes dark.",
+        "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on the edge of the obstruction, and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "p_l comes running at their yowls, and r_c is soon freed, shaken but unharmed. The cats settle down as they comfort each other.",
+                "text": "p_l comes running at {PRONOUN/r_c/poss} yowls, and r_c is soon freed, shaken but unharmed. The cats settle down as they comfort each other.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["platonic", "comfort", "trust"],
                         "amount": 5
@@ -678,8 +714,8 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["platonic", "comfort", "trust"],
                         "amount": 5
@@ -687,14 +723,15 @@
                 ]
             },
             {
-                "text": "Without letting themselves panic, s_c looks around for anything that could help. They snap a branch off a nearby scrub and clench it between their teeth, offering it to r_c. Between r_c's scrambling and s_c's determination, they're pulled free of the quagmire unharmed.",
+                "text": "Without letting {PRONOUN/s_c/self} panic, s_c looks around for anything that could help. {PRONOUN/s_c/subject/CAP} {VERB/s_c/snap/snaps} a branch off a nearby scrub and {VERB/s_c/clench/clenches} it between {PRONOUN/s_c/poss} teeth, offering it to r_c. Between r_c's scrambling and s_c's determination, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} pulled free of the quagmire unharmed.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"],
+                "can_have_stat": ["p_l"],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["platonic", "comfort", "trust"],
                         "amount": 5
@@ -702,7 +739,7 @@
                 ]
             },
             {
-                "text": "Creeping in as close as possible, s_c purrs to r_c, keeping them calm as they carefully dig down to them. r_c blinks up at them, holding on to their presence in the scary situation.",
+                "text": "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/s_c/subject} carefully dig down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -717,10 +754,11 @@
                     "wise",
                     "inquisitive"
                 ],
+                "can_have_stat": ["p_l"],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["platonic", "comfort", "trust"],
                         "amount": 5
@@ -735,8 +773,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["platonic", "comfort", "trust"],
                         "amount": -5
@@ -744,7 +782,7 @@
                 ]
             },
             {
-                "text": "As s_c rarely has patience for other cats, r_c tells them harshly that they don't have time for some idiot who got stuck, making s_c resentful as they dig themselves out.",
+                "text": "As s_c rarely has patience for other cats, p_l tells {PRONOUN/s_c/object} harshly that {PRONOUN/p_l/subject} {VERB/p_l/don/doesn}'t have time for some idiot who got stuck, making s_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/s_c/self} out.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -758,18 +796,26 @@
                     "vengeful",
                     "bossy"
                 ],
+                "can_have_stat": ["r_c"],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["p_l"],
                         "mutual": true,
                         "values": ["platonic", "comfort", "trust"],
                         "amount": -5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 5
                     }
                 ]
             },
             {
-                "text": "Hurt and wheezing, r_c hears p_l panicking as they drift to StarClan.",
+                "text": "Hurt and wheezing, r_c hears p_l panicking as {PRONOUN/r_c/subject} {VERB/r_c/drift/drifts} to StarClan.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -777,19 +823,10 @@
                     "scar": "m_c carries a scar from being trapped on patrol",
                     "reg_death": "m_c tragically died after being trapped on patrol.",
                     "lead_death": "died after being trapped on patrol"
-                },
-                "relationships": [
-                    {
-                        "cats_to": ["r_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
-                        "mutual": true,
-                        "values": ["platonic", "comfort", "trust"],
-                        "amount": -5
-                    }
-                ]
+                }
             },
             {
-                "text": "p_l eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured.",
+                "text": "p_l eventually manages to rescue r_c, but {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to be helped back to camp, battered and injured.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -806,8 +843,8 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["platonic", "comfort", "trust"],
                         "amount": -5
@@ -827,12 +864,12 @@
         "max_cats": 2,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Trailing behind p_l, the ground trembles beneath r_c's paws. They look around wildly for safe footing - just as the earth caves in beneath them and the world goes dark.",
-        "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
+        "intro_text": "Trailing behind p_l, the ground trembles beneath r_c's paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly for safe footing - just as the earth caves in beneath {PRONOUN/r_c/object} and the world goes dark.",
+        "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on the edge of the obstruction, and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "p_l comes running at their yowls, and r_c is soon freed, shaken but unharmed. r_c has never noticed how strong p_l is before.",
+                "text": "p_l comes running at {PRONOUN/r_c/poss} yowls, and r_c is soon freed, shaken but unharmed. r_c has never noticed how strong p_l is before.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -860,7 +897,7 @@
                 ]
             },
             {
-                "text": "Without letting themselves panic, s_c looks around for anything that could help. They snap a branch off a nearby scrub and clench it between their teeth, offering it to r_c. Between r_c's scrambling and s_c's determination, they're pulled free of the quagmire unharmed, r_c a little breathless at the display.",
+                "text": "Without letting {PRONOUN/s_c/self} panic, s_c looks around for anything that could help. {PRONOUN/s_c/subject/CAP} {VERB/s_c/snap/snaps} a branch off a nearby scrub and {VERB/s_c/clench/clenches} it between {PRONOUN/s_c/poss} teeth, offering it to r_c. Between r_c's scrambling and s_c's determination, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} pulled free of the quagmire unharmed, r_c a little breathless at the display.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"],
@@ -875,7 +912,7 @@
                 ]
             },
             {
-                "text": "Creeping in as close as possible, s_c purrs to r_c, keeping them calm as they carefully dig down to them. r_c blinks up at them, holding on to their presence in the scary situation.",
+                "text": "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/s_c/subject} carefully dig down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -917,7 +954,7 @@
                 ]
             },
             {
-                "text": "As s_c rarely has patience for other cats, r_c tells them harshly that they don't have time for some idiot who got stuck, making s_c resentful as they dig themselves out.",
+                "text": "As s_c rarely has patience for other cats, p_l tells {PRONOUN/s_c/object} harshly that {PRONOUN/p_l/subject} {VERB/p_l/don/doesn}'t have time for some idiot who got stuck, making s_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/s_c/self} out.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -931,6 +968,7 @@
                     "vengeful",
                     "bossy"
                 ],
+                "can_have_stat": ["r_c"],
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -938,11 +976,18 @@
                         "mutual": true,
                         "values": ["romantic", "comfort", "trust"],
                         "amount": -5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 5
                     }
                 ]
             },
             {
-                "text": "Hurt and wheezing, r_c hears p_l panicking as they drift to StarClan.",
+                "text": "Hurt and wheezing, r_c hears p_l panicking as {PRONOUN/r_c/subject} {VERB/r_c/drift/drifts} to StarClan.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -950,19 +995,10 @@
                     "scar": "m_c carries a scar from being trapped on patrol",
                     "reg_death": "m_c tragically died after being trapped on patrol.",
                     "lead_death": "died after being trapped on patrol"
-                },
-                "relationships": [
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": true,
-                        "values": ["romantic", "comfort", "trust"],
-                        "amount": -5
-                    }
-                ]
+                }
             },
             {
-                "text": "p_l eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured.",
+                "text": "p_l eventually manages to rescue r_c, but {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to be helped back to camp, battered and injured.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1000,17 +1036,17 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "r_c is training alone out on the plains when suddenly, the ground trembles beneath their paws. They look around wildly for safe footing - just as the earth caves in beneath them and the world goes dark.",
-        "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
+        "intro_text": "r_c is training alone out on the plains when suddenly, the ground trembles beneath {PRONOUN/r_c/poss} paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly for safe footing - just as the earth caves in beneath {PRONOUN/r_c/object} and the world goes dark.",
+        "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on the edge of the obstruction, and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "r_c spends the entire day carefully working their way free and gets nothing else done, but at least they're unharmed.",
+                "text": "r_c spends the entire day carefully working {PRONOUN/r_c/poss} way free and gets nothing else done, but at least {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} unharmed.",
                 "exp": 20,
                 "weight": 20
             },
             {
-                "text": "s_c tries to remain calm, clawing soil away from their muzzle so they can breathe. As the shock wears off, they realize the earth seems looser in one place. With a surge of energy, they burst through the weak point, terrified and covered in dirt. They may have a new nightmare to take back with them, but at least they're alive.",
+                "text": "s_c tries to remain calm, clawing soil away from {PRONOUN/s_c/poss} muzzle so {PRONOUN/s_c/subject} can breathe. As the shock wears off, {PRONOUN/s_c/subject} {VERB/s_c/realize/realizes} the earth seems looser in one place. With a surge of energy, {PRONOUN/s_c/subject} {VERB/s_c/burst/bursts} through the weak point, terrified and covered in dirt. {PRONOUN/s_c/subject/CAP} may have a new nightmare to take back with {PRONOUN/s_c/object}, but at least {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} alive.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"]
@@ -1018,12 +1054,12 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c tries their best, but unfortunately, they're only able to work their head free. They yowl until their voice is hoarse and their throat is sore, and thankfully, a patrol passes by after a few hours and frees their hapless Clanmate.",
+                "text": "r_c tries {PRONOUN/r_c/poss} best, but unfortunately, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} only able to work {PRONOUN/r_c/poss} head free. {PRONOUN/r_c/subject/CAP} {VERB/r_c/yowl/yowls} until {PRONOUN/r_c/poss} voice is hoarse and {PRONOUN/r_c/poss} throat is sore, and thankfully, a patrol passes by after a few hours and frees their hapless Clanmate.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "Hurt and wheezing, r_c does their best to hang on and wait for a patrol, but they succumb to their injuries and drift to StarClan alone.",
+                "text": "Hurt and wheezing, r_c does {PRONOUN/r_c/poss} best to hang on and wait for a patrol, but {PRONOUN/r_c/subject} succumb to {PRONOUN/r_c/poss} injuries and drift to StarClan alone.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -1034,7 +1070,7 @@
                 }
             },
             {
-                "text": "r_c eventually manages to pull themselves free, but they're wheezing and injured. It's all they can do to find some tall grass to shelter in through the night out on the plains until a patrol finds them the next morning and helps them to the medicine den.",
+                "text": "r_c eventually manages to pull {PRONOUN/r_c/self} free, but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} wheezing and injured. It's all {PRONOUN/r_c/subject} can do to find some tall grass to shelter in through the night out on the plains until a patrol finds {PRONOUN/r_c/object} the next morning and helps {PRONOUN/r_c/object} to the medicine den.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1137,12 +1173,12 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "r_c heads out into the grasslands alone, wanting to explore and have some time to themselves.",
-        "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
+        "intro_text": "r_c heads out into the grasslands alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out a thick field of tall grass they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date.",
+                "text": "r_c heads off to map out a thick field of tall grass {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure {PRONOUN/r_c/poss} mental map is up to date.",
                 "exp": 20,
                 "weight": 20
             },
@@ -1158,7 +1194,7 @@
                 "stat_skill": ["CLEVER,1"]
             },
             {
-                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way.",
+                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} last passed this way.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1180,7 +1216,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c shivers a little, thinking of the dangers of solo patrols. . . No, definitely not. They turn around and slink straight back to camp.",
+                "text": "s_c shivers a little, thinking of the dangers of solo patrols. . . No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and {VERB/s_c/slink/slinks} straight back to camp.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["insecure", "lonesome", "nervous"]
@@ -1200,17 +1236,17 @@
             "deputy": [1, 6]
         },
         "weight": 20,
-        "intro_text": "r_c heads out into the grasslands alone, wanting to explore and have some time to themselves.",
-        "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
+        "intro_text": "r_c heads out into the grasslands alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out a thick field of tall grass they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
+                "text": "r_c heads off to map out a thick field of tall grass {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
                 "exp": 20,
                 "weight": 20
             },
             {
-                "text": "r_c rounds a corner and stumbles across a tiny, perfect pond! Purring, they take the opportunity for a small moment of peace, relaxing and enjoying the view.",
+                "text": "r_c rounds a corner and stumbles across a tiny, perfect pond! Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a small moment of peace, relaxing and enjoying the view.",
                 "exp": 20,
                 "weight": 5
             },
@@ -1221,7 +1257,7 @@
                 "stat_skill": ["CLEVER,1"]
             },
             {
-                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way.",
+                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} last passed this way.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1238,12 +1274,12 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c gets lost in the territory. Somehow. Their pelt is burning with shame by the time they finally return, sneaking back to their den to avoid any embarrassing questions.",
+                "text": "r_c gets lost in the territory. Somehow. {PRONOUN/r_c/poss/CAP} pelt is burning with shame by the time {PRONOUN/r_c/subject} finally {VERB/r_c/return/returns}, sneaking back to {PRONOUN/r_c/poss} den to avoid any embarrassing questions.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "s_c wavers in their decision. They have so much work to do, so many other things demanding their time. . . No, definitely not. They turn around and march straight back to camp.",
+                "text": "s_c wavers in {PRONOUN/s_c/poss} decision. {PRONOUN/s_c/subject/CAP} {VERB/s_c/have/has} so much work to do, so many other things demanding {PRONOUN/s_c/poss} time. . . No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and {VERB/s_c/march/marches} straight back to camp.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["insecure", "lonesome", "nervous"]
@@ -1263,17 +1299,17 @@
             "leader": [1, 6]
         },
         "weight": 20,
-        "intro_text": "r_c heads out into the grasslands alone, wanting to explore and have some time to themselves.",
-        "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
+        "intro_text": "r_c heads out into the grasslands alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out a thick field of tall grass they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
+                "text": "r_c heads off to map out a thick field of tall grass {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
                 "exp": 20,
                 "weight": 20
             },
             {
-                "text": "r_c rounds a corner and stumbles across a tiny, perfect pond! Purring, they take the opportunity for a small moment of peace, relaxing and enjoying the view.",
+                "text": "r_c rounds a corner and stumbles across a tiny, perfect pond! Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a small moment of peace, relaxing and enjoying the view.",
                 "exp": 20,
                 "weight": 5
             },
@@ -1284,7 +1320,7 @@
                 "stat_skill": ["CLEVER,1"]
             },
             {
-                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way.",
+                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} last passed this way.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1301,12 +1337,12 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c gets lost in the territory. Somehow. Their pelt is burning with shame by the time they finally return, sneaking back to their den to avoid any embarrassing questions.",
+                "text": "r_c gets lost in the territory. Somehow. {PRONOUN/r_c/poss/CAP} pelt is burning with shame by the time {PRONOUN/r_c/subject} finally {VERB/r_c/return/returns}, sneaking back to {PRONOUN/r_c/poss} den to avoid any embarrassing questions.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "s_c wavers in their decision. They have so much work to do, so many other things demanding their time. . . No, definitely not. They turn around and march straight back to camp.",
+                "text": "s_c wavers in {PRONOUN/s_c/poss} decision. {PRONOUN/s_c/subject/CAP} {VERB/s_c/have/has} so much work to do, so many other things demanding {PRONOUN/s_c/poss} time. . . No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and {VERB/s_c/march/marches} straight back to camp.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["insecure", "lonesome", "nervous"]
@@ -2829,4 +2865,5 @@
             }
         ]
     }
+    
 ]

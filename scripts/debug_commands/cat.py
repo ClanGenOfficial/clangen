@@ -1,8 +1,8 @@
 from typing import List
 
-from scripts.debugCommands.command import Command
+from scripts.debug_commands.command import Command
 
-from scripts.debugCommands.utils import add_output_line_to_log
+from scripts.debug_commands.utils import add_output_line_to_log
 
 from scripts.game_structure.game_essentials import game
 from scripts.cat.cats import Cat
@@ -46,7 +46,6 @@ class listCatsCommand(Command):
 class ageCatsCommand(Command):
     name = "age"
     description = "Age a cat"
-    aliases = ["a"]
     usage = "<cat name|id> [number]"
 
     def callback(self, args: List[str]):

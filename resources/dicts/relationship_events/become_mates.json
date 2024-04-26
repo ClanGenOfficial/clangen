@@ -20,10 +20,10 @@
 		"The Clan gathers to celebrate a new pair of mates, m_c and r_c.",
 		"In a bright spot this moon, m_c and r_c have announced their commitment as mates.",
 		"m_c puts their paw over r_c's, as they announce they've become mates.",
-		"m_c bunts {PRONOUN/m_c/poss} against r_c's as c_n celebrates the new mates.",
+		"m_c bunts {PRONOUN/m_c/poss} head against r_c's as c_n celebrates the new mates.",
 		"It's funny how love has worked for m_c and r_c. Slowly at first, like a little trip or tumble, and then suddenly falling all at once.",
 		"Maybe it's surprising to some cats. It doesn't feel like it should be, m_c is so sure {PRONOUN/m_c/subject} {VERB/m_c/want/wants} r_c as {PRONOUN/m_c/poss} mate, and r_c loves {PRONOUN/m_c/object} just as much in return.",
-		"This moom marks the beginning of the rest of their lives together for m_c and r_c.",
+		"This moon marks the beginning of the rest of their lives together for m_c and r_c.",
 		"Tails twined together, m_c and r_c announce that love has blossomed between them. They've become mates.",
 		"It's endearing how embarassed m_c is, with {PRONOUN/m_c/object} and r_c briefly becoming the center of attention as new mates.",
 		"No one is going to blame m_c for the pride {PRONOUN/m_c/subject} display in succcessfully asking r_c to become {PRONOUN/m_c/poss} mate. It's a wonderful life event to celebrate, and something to rightfully congratulate the couple on."
@@ -47,9 +47,9 @@
 		"m_c was so confident r_c felt the same. But {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't}. m_c <i>really</i> doesn't want to talk about it.",
 		"r_c's rejection of m_c was very... public. Everyone's still feeling awkward about it.",
 		"m_c's dreams of romance and love have been crushed by r_c's rejection.",
-		"After being rejected by r_c, m_c's barely been visible round camp. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} good a hiding when {PRONOUN/m_c/subject} want to be.",
+		"After being rejected by r_c, m_c's barely been visible round camp. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} good at hiding when {PRONOUN/m_c/subject} want to be.",
 		"m_c confesses {PRONOUN/m_c/poss} feelings to r_c, asking to be mates. And the answer, well, it's not yes.",
-		"Look, r_c is sorry, but {PRONOUN/r_c/subject} just don't see m_c that way. m_c slinks off, rejected.",
+		"Look, r_c is sorry, but {PRONOUN/r_c/subject} just {VERB/r_c/don't/doesn't} see m_c that way. m_c slinks off, rejected.",
 		"m_c's confession of love to r_c could've gone better. Actually, anything would've been better than the rejection {PRONOUN/m_c/subject} got."
 	]
 }
