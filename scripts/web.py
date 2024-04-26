@@ -148,10 +148,16 @@ def error(e):
     print(e)
     if not is_web:
         return
-    platform.window.gameError(str(e))
+    try:
+        platform.window.gameError(str(e))
+    except Exception as e:
+        print(e)
 
 def notifyFinishLoading():
     """Notifies the loader that the game has finished loading"""
     if not is_web:
         return
-    platform.window.gameReady()
+    try:
+        platform.window.gameReady()
+    except Exception as e:
+        print(e)

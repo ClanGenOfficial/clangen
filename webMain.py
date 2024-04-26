@@ -28,7 +28,6 @@ from scripts.debug_menu import debugmode
 from scripts.screens.all_screens import start_screen
 from scripts.web import notifyFinishLoading
 
-game.debug_settings['showbounds'] = True
 
 notifyFinishLoading()
 
