@@ -1172,7 +1172,7 @@ class PatrolOutcome():
             # I'm not 100% sure which one is supposed to be which...
             history_text = history_text if "m_c" not in history_text else history_text.replace("m_c", str(cat.name))
             history_text = history_text if "r_c" not in history_text else history_text.replace("r_c", str(patrol.patrol_random_cat.name))
-            history_text = history_text if "o_c_n" not in history_text else history_text.replace("o_c_n", str(patrol.other_clan.name))
+            history_text = history_text if "o_c_n" not in history_text else history_text.replace("o_c_n", f"{str(patrol.other_clan.name)}Clan")
             
             History.add_scar(cat, history_text)
         else:
@@ -1200,10 +1200,10 @@ class PatrolOutcome():
             history_scar = None
         
         if final_death_history and isinstance(final_death_history, str):
-            final_death_history = final_death_history if "o_c_n" not in final_death_history else final_death_history.replace("o_c_n", str(patrol.other_clan.name))
+            final_death_history = final_death_history if "o_c_n" not in final_death_history else final_death_history.replace("o_c_n", f"{str(patrol.other_clan.name)}Clan")
         
         if history_scar and isinstance(history_scar, str):
-            history_scar = history_scar if "o_c_n" not in history_scar else history_scar.replace("o_c_n", str(patrol.other_clan.name))
+            history_scar = history_scar if "o_c_n" not in history_scar else history_scar.replace("o_c_n", f"{str(patrol.other_clan.name)}Clan")
         
         
         History.add_possible_history(cat, condition=condition, death_text=final_death_history, scar_text=history_scar)
@@ -1225,7 +1225,7 @@ class PatrolOutcome():
             final_death_history = "m_c died on patrol."
         
         if final_death_history and isinstance(final_death_history, str):
-            final_death_history = final_death_history.replace("o_c_n", str(patrol.other_clan.name))
+            final_death_history = final_death_history.replace("o_c_n", f"{str(patrol.other_clan.name)}Clan")
         
         History.add_death(cat, death_text=final_death_history)
         

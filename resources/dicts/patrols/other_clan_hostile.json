@@ -108,7 +108,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As your patrol is checking the border markings, a o_c_n patrol appears and begins jeering at the p_l.",
+        "intro_text": "As your patrol is checking the border markings, a o_c_n patrol appears and begins jeering at p_l.",
         "decline_text": "Your patrol decides this isn't worthwhile and backs off from the other patrol, leaving the area.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -452,6 +452,7 @@
                 "text": "s_c is relentless in tracking the scent and at the end of it finds a o_c_n apprentice. The young cat has a freshly killed rabbit in their mouth and s_c yowls in anger, not hesitating before attacking the apprentice. The o_c_n cat is driven off of your territory and the rabbit brought back to camp for your own cats.",
                 "exp": 0,
                 "weight": 20,
+                "prey": ["small"],
                 "stat_trait": ["bloodthirsty", "cold", "fierce", "strict", "vengeful"],
                 "other_clan_rep": -1
             },
