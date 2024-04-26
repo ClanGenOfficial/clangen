@@ -265,7 +265,7 @@ class Game():
                 write_file.write(_data)
                 write_file.flush()
                 os.fsync(write_file.fileno())
-        # web.pushdb()
+        web.pushdb()
 
     def read_clans(self):
         '''with open(get_save_dir() + '/clanlist.txt', 'r') as read_file:
