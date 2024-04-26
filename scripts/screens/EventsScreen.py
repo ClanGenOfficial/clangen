@@ -12,7 +12,7 @@ from scripts.game_structure.windows import GameOver
 
 from scripts.ui.elements import UITextBox
 from scripts.buttons.buttons import UIImageButton, IDImageButton
-
+from scripts.web import is_web
 
 class EventsScreen(Screens):
     event_display_type = "all events"
@@ -83,7 +83,11 @@ class EventsScreen(Screens):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             
             if self.timeskip_button == event.ui_element:
-                self.events_thread = self.loading_screen_start_work(events_class.one_moon)
+                if not is_web:
+                    self.events_thread = self.loading_screen_start_work(events_class.one_moon)
+                else:
+                    events_class.one_moon()
+                    self.timeskip_done()
             
             if game.clan.game_mode != "classic" and event.ui_element == self.freshkill_pile_button:
                 self.change_screen('clearing screen')

@@ -10,7 +10,7 @@ from scripts.game_structure.game_essentials import game, screen, screen_x, scree
 from scripts.ui.elements import UITextBox
 from scripts.buttons.buttons import UIImageButton
 from scripts.buttons.buttons import UISpriteButton
-
+from scripts.web import is_web
 
 
 class ChooseMateScreen(Screens):
@@ -96,8 +96,11 @@ class ChooseMateScreen(Screens):
                 self.selected_mate_index = 0
                 self.change_screen('profile screen')
             elif self.toggle_mate == event.ui_element:
-                
-                self.work_thread = self.loading_screen_start_work(self.change_mate)
+                if not is_web:
+                    self.work_thread = self.loading_screen_start_work(self.change_mate)
+                else:
+                    self.change_mate()
+                    self.update_both()
                 
             elif self.previous_cat_button == event.ui_element:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):

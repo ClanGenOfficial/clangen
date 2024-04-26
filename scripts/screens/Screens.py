@@ -164,8 +164,7 @@ class Screens():
             Returns the started thread. """
 
         work_thread = PropagatingThread(target=self._work_target, args=(target, args),
-                                        name=thread_name, daemon=True)
-
+                                    name=thread_name, daemon=True)
         game.switches['window_open'] = True
         work_thread.start()
 
@@ -186,6 +185,7 @@ class Screens():
     def loading_screen_on_use(self,
                               work_thread: PropagatingThread,
                               final_actions: callable,
+                              thread_name: str = "work_thread",
                               loading_screen_pos: tuple = None,
                               delay: float = 0.7) -> None:
         """Handles all actions that must be run every frame for the loading window to work. 

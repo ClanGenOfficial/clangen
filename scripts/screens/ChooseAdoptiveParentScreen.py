@@ -11,7 +11,7 @@ from scripts.game_structure.propagating_thread import PropagatingThread
 from scripts.ui.elements import UITextBox
 from scripts.buttons.buttons import UIImageButton
 from scripts.buttons.buttons import UISpriteButton
-
+from scripts.web import is_web
 
 
 class ChooseAdoptiveParentScreen(Screens):
@@ -91,7 +91,11 @@ class ChooseAdoptiveParentScreen(Screens):
                 self.selected_mate_index = 0
                 self.change_screen('profile screen')
             elif self.toggle_adoptive_parent == event.ui_element:
-                self.work_thread = self.loading_screen_start_work(self.change_adoptive_parent)
+                if is_web:
+                    self.change_adoptive_parent()
+                    self.update_after_change()
+                else:
+                    self.work_thread = self.loading_screen_start_work(self.change_adoptive_parent)
                 
             elif self.previous_cat_button == event.ui_element:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):

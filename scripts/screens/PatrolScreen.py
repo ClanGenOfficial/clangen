@@ -7,11 +7,10 @@ from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
 from scripts.patrol.patrol import Patrol
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game, MANAGER
-from scripts.game_structure.propagating_thread import PropagatingThread
 from scripts.ui.elements import UITextBox
 from scripts.buttons.buttons import UIImageButton
 from scripts.buttons.buttons import UISpriteButton
-
+from scripts.web import is_web
 
 class PatrolScreen(Screens):
     able_box = pygame.transform.scale(pygame.image.load("resources/images/patrol_able_cats.png").convert_alpha(),
@@ -172,7 +171,11 @@ class PatrolScreen(Screens):
             self.update_button()
         elif self.elements['patrol_start'] == event.ui_element:
             self.selected_cat = None
-            self.start_patrol_thread = self.loading_screen_start_work(self.run_patrol_start, "start")
+            if not is_web:
+                self.start_patrol_thread = self.loading_screen_start_work(self.run_patrol_start, "start")
+            else:
+                self.run_patrol_start()
+                self.open_patrol_event_screen()
         elif self.elements.get('mate_button') == event.ui_element:
             self.selected_cat = self.mate
             self.update_button()
@@ -215,7 +218,11 @@ class PatrolScreen(Screens):
             inp = "antagonize"
         
         if inp:
-            self.proceed_patrol_thread = self.loading_screen_start_work(self.run_patrol_proceed, "proceed", (inp,))
+            if not is_web:
+                self.proceed_patrol_thread = self.loading_screen_start_work(self.run_patrol_proceed, "proceed", (inp,))
+            else:
+                self.run_patrol_proceed(inp)
+                self.open_patrol_complete_screen()
 
     def handle_patrol_complete_events(self, event):
         if self.elements['patrol_again'] == event.ui_element:

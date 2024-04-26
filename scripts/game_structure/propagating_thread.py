@@ -4,7 +4,7 @@ from time import time
 class PropagatingThread(Thread):
     """ Thread that catched any exceptions and re-raised them when .join is called. 
     Heavily barrowed from https://stackoverflow.com/questions/2829329/catch-a-threads-exception-in-the-caller-thread """
-    
+   
     def start(self) -> None:
         self.start_time = time()
         
@@ -26,3 +26,4 @@ class PropagatingThread(Thread):
     def get_time_from_start(self):
         """Returns the time since the tread started"""
         return time() - self.start_time
+    

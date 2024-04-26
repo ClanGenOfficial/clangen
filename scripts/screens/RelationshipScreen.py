@@ -10,7 +10,6 @@ from scripts.cat.cats import Cat
 from scripts.ui import image_cache
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from scripts.game_structure.windows import RelationshipLog
-from scripts.game_structure.propagating_thread import PropagatingThread
 from scripts.ui.elements import UITextBox, UIRelationStatusBar
 from scripts.buttons.buttons import UIImageButton
 from scripts.buttons.buttons import UISpriteButton
