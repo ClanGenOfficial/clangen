@@ -308,13 +308,19 @@ class BuildCache:
         BuildCache._corners = {}
 
 theme = ujson.load(open("resources/theme/image_buttons.json"))
-def get_image(type: str, combined_element_ids: list[str]):
-    combined_element_ids = [id for id in combined_element_ids if '#' in id][0]
-    if theme.get(combined_element_ids) is None or theme[combined_element_ids]["images"].get(type) is None:
-        raise LookupError
-    return pygame.image.load(theme[combined_element_ids]["images"][type]["path"]).convert_alpha()
+def get_image(image_id: str, combined_element_ids):
+    # taken directly from pygame_gui.core.UIAppearanceTheme, modified for our use
+    combined_element_ids = [id for id in combined_element_ids if '#' in id]
+    if isinstance(combined_element_ids, str):
+        combined_element_ids = [combined_element_ids]
+    for combined_element_id in combined_element_ids:
+        if (combined_element_id in theme and
+            image_id in theme[combined_element_id].get('images')):
+            # return theme[combined_element_id][image_id].surface
+            return pygame.image.load(theme[combined_element_id]["images"][image_id]["path"]).convert_alpha()
 
-
+    raise LookupError('Unable to find any image with id: ' + str(image_id) +
+                        ' with combined_element_ids: ' + str(combined_element_ids))
 
 class UISpriteButton():
     """This is for use with the cat sprites. It wraps together a UIImage and Transparent Button.
@@ -451,6 +457,7 @@ class UIImageButton(pygame_gui.elements.UIButton):
     def _set_any_images_from_theme(self):
         changed = False
         normal_image = None
+        self.ui_theme.load_theme("resources/theme/image_buttons.json")
         try:
             normal_image = get_image('normal_image', self.combined_element_ids)
             normal_image = pygame.transform.scale(normal_image, self.relative_rect.size)  # auto-rescale the image
@@ -459,7 +466,6 @@ class UIImageButton(pygame_gui.elements.UIButton):
             normal_image = None
         finally:
             if normal_image != self.normal_image:
-                self.ui_theme.load_theme("resources/theme/image_buttons.json")
                 self.normal_image = normal_image
                 self.hovered_image = normal_image
                 self.selected_image = normal_image
