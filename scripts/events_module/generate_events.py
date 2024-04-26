@@ -616,62 +616,44 @@ class GenerateEvents:
 class ShortEvent:
     def __init__(
             self,
-            camp="any",
+            event_id="",
+            biome=None,
+            camp=None,
+            season=None,
             tags=None,
+            weight=0,
             event_text="",
-            history_text=None,
-            cat_trait=None,
-            cat_skill=None,
-            other_cat_trait=None,
-            other_cat_skill=None,
-            cat_negate_trait=None,
-            cat_negate_skill=None,
-            other_cat_negate_trait=None,
-            other_cat_negate_skill=None,
-            backstory_constraint=None,
+            new_accessory=None,
+            m_c=None,
+            r_c=None,
+            new_cat=None,
             injury=None,
-            loner=False,
-            new_name=False,
-            kittypet=False,
-            kit=False,
-            litter=False,
-            backstory=None,
-            other_clan=None,
-            reputation=None,
-            accessories=None
+            relationships=None,
+            outsider=None,
+            other_clan=None
     ):
-        self.camp = camp
-        self.tags = tags
+        if not event_id:
+            print("WARNING: moon event has no event_id")
+        self.event_id = event_id
+        self.biome = biome if biome else ["any"]
+        self.camp = camp if camp else ["any"]
+        self.season = season if season else ["any"]
+        self.tags = tags if tags else []
+        self.weight = weight
         self.event_text = event_text
-        self.history_text = history_text
-        self.cat_trait = cat_trait if cat_trait else []
-        self.cat_skill = cat_skill if cat_skill else []
-        self.other_cat_trait = other_cat_trait if other_cat_trait else []
-        self.other_cat_skill = other_cat_skill if other_cat_skill else []
-        self.cat_negate_trait = cat_negate_trait if cat_negate_trait else []
-        self.cat_negate_skill = cat_negate_skill if cat_negate_skill else []
-        self.other_cat_negate_trait = other_cat_negate_trait if other_cat_negate_trait else []
-        self.other_cat_negate_skill = other_cat_negate_skill if other_cat_negate_skill else []
-        self.backstory_constraint = backstory_constraint
+        self.new_accessory = new_accessory
+        self.m_c = m_c if m_c else {}
+        self.r_c = r_c if r_c else {}
+        self.new_cat = new_cat if new_cat else []
+        self.injury = injury if injury else []
+        self.relationships = relationships if relationships else []
+        self.outsider = outsider if outsider else {}
+        self.other_clan = other_clan if other_clan else {}
 
-        # for injury event
-        self.injury = injury
-
-        # for new cat events
-        self.loner = loner
-        self.new_name = new_name
-        self.kittypet = kittypet
-        self.kit = kit
-        self.litter = litter
-        self.backstory = backstory
-        self.other_clan = other_clan
-        self.reputation = reputation
-
-        # for misc events
-        self.accessories = accessories
 
 
 """
+OUTDATED - LEFT FOR REFERENCE
 Tagging Guidelines: (if you add more tags, please add guidelines for them here) 
 "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare" < specify season.  If event happens in all seasons then include all of those tags.
 
