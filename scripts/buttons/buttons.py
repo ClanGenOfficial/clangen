@@ -308,7 +308,6 @@ class BuildCache:
         BuildCache._edges = {}
         BuildCache._corners = {}
 
-
 class UIButton(scripts.game_structure.image_button.UISpriteButton):
     def __init__(self, relative_rect, text = "", visible=1, starting_height=1, object_id=None,
                  manager=MANAGER, container=None, tool_tip_text=None):
@@ -376,6 +375,10 @@ class UIButton(scripts.game_structure.image_button.UISpriteButton):
         if not "id" in other.__dict__:
             return False
         return self.id == other.id
+    
+    @property
+    def is_enabled(self):
+        return self.button.is_enabled
 
 class CatButton(pygame_gui.elements.UIButton):
     def __init__(self,
