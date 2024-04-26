@@ -382,12 +382,7 @@ async def main():
             await asyncio.sleep(0)
     except Exception as e:
         if web.is_web:
-            web.evalWindow("""
-            if (confirm('An error has occurred. Would you like to open the console?')) {
-                debug();
-            } else {
-                window.location.reload();
-            }""")
+            web.error(str(e))
         raise e
 
 if __name__ == "__main__":

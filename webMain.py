@@ -26,6 +26,10 @@ from scripts.clan import clan_class
 from scripts.utility import get_text_box_theme, quit, scale  # pylint: disable=redefined-builtin
 from scripts.debug_menu import debugmode
 from scripts.screens.all_screens import start_screen
+from scripts.web import notifyFinishLoading
+
+notifyFinishLoading()
+
 
 
 from main import main

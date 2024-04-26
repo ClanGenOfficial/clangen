@@ -143,3 +143,15 @@ def freeMemory():
             os.remove(file)
 
 
+def error(e):
+    """Displays an error message to the loader"""
+    print(e)
+    if not is_web:
+        return
+    platform.window.gameError(str(e))
+
+def notifyFinishLoading():
+    """Notifies the loader that the game has finished loading"""
+    if not is_web:
+        return
+    platform.window.gameReady()
