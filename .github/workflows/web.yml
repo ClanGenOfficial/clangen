@@ -1,0 +1,45 @@
+name: Web
+on: [workflow_dispatch, push]
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:  
+  build-web:
+    
+    name: Build for Emscripten
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
+    - name: Chxeckout
+      uses: actions/checkout@v2
+    - name: Setup Python
+      run: python3 -m pip install pygbag
+    - name: Write version file
+      run: |
+        echo "[DEFAULT]" > version.ini
+        echo "version_number=${{ github.sha }}" >> version.ini
+        echo "release_channel=web" >> version.ini
+        echo "upstream=${{ github.repository }}" >> version.ini
+    - name: Build
+      run: python3 -m pygbag --ume_block 0 --template web.tmpl --build $GITHUB_WORKSPACE/webMain.py
+    - name: Setup Pages
+      uses: actions/configure-pages@v3
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
+        # Upload entire repository
+        path: 'build/web'
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v1
