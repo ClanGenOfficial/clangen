@@ -1,6 +1,6 @@
 ---
 name: Enhancement
-about: Suggest specific changes to the existing code. This form is NOT for making suggestions for the game.  It is for contributors to request code changes from other contributors, these changes are frequently ones that have already been discussed within developer channels
+about: Suggest changes to the existing code. This is NOT for making suggestions for the game. It's for contributors to request code changes from other contributors, usually ones that have been discussed.
 title: "[CODE]"
 labels: 'enhancement'
 ---
