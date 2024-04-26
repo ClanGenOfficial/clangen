@@ -459,7 +459,7 @@ class UIImageButton(pygame_gui.elements.UIButton):
             normal_image = None
         finally:
             if normal_image != self.normal_image:
-                self.ui_theme.load_theme("resources/buttons.json")
+                self.ui_theme.load_theme("resources/theme/image_buttons.json")
                 self.normal_image = normal_image
                 self.hovered_image = normal_image
                 self.selected_image = normal_image
