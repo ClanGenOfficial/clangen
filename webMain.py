@@ -4,9 +4,9 @@ Shim for pygbag (web runner) to detect all imports
 
 print("Loading...")
 
-import os
-print(os.getcwd())
-print(os.listdir())
+import random
+import time
+random.seed(time.time())
 
 import i18n
 import pygame
