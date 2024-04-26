@@ -485,11 +485,7 @@ class RelationshipScreen(Screens):
 
         all_pages = self.chunks(self.filtered_cats, 8)
 
-        if self.current_page > len(all_pages):
-            self.current_page = len(all_pages)
-
-        if self.current_page == 0:
-            self.current_page = 1
+        self.current_page = max(1, min(self.current_page, len(all_pages)))
 
         if all_pages:
             display_rel = all_pages[self.current_page - 1]
