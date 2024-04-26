@@ -355,16 +355,7 @@ def reformat(path):
                             info["scars"].append(tag)
                             event["tags"].remove(tag)
 
-                if "history_text" in event:
-                    if event["history_text"]:
-                        info["history"] = {}
-                        if "scar" in event["history_text"]:
-                            info["history"]["scar"] = event["history_text"]["scar"]
-                        if "reg_death" in event["history_text"]:
-                            info["history"]["reg_death"] = event["history_text"]["reg_death"]
-                        if "lead_death" in event["history_text"]:
-                            info["history"]["lead_death"] = event["history_text"]["lead_death"]
-                new_format["injury"].append(info)
+
 
             if "other_cat_injure" in event["tags"]:
                 event["tags"].remove("other_cat_injure")
@@ -390,6 +381,18 @@ def reformat(path):
                     if tag in pools:
                         info["injuries"].append(tag)
                         event["tags"].remove(tag)
+
+                new_format["injury"].append(info)
+
+        if "history_text" in event:
+            if event["history_text"]:
+                new_format["history"] = {}
+                if "scar" in event["history_text"]:
+                    new_format["history"]["scar"] = event["history_text"]["scar"]
+                if "reg_death" in event["history_text"]:
+                    new_format["history"]["reg_death"] = event["history_text"]["reg_death"]
+                if "lead_death" in event["history_text"]:
+                    new_format["history"]["lead_death"] = event["history_text"]["lead_death"]
 
         for tag in event["tags"]:
             if tag in ["other_cat", "other_cat_kit", "other_cat_med", "other_cat_warrior", "other_cat_dep",

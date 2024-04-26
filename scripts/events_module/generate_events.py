@@ -14,7 +14,7 @@ resource_directory = "resources/dicts/events/"
 
 class GenerateEvents:
     loaded_events = {}
-    
+
     INJURY_DISTRIBUTION = None
     with open(f"resources/dicts/conditions/event_injuries_distribution.json", 'r') as read_file:
         INJURY_DISTRIBUTION = ujson.loads(read_file.read())
@@ -95,37 +95,21 @@ class GenerateEvents:
                 if not event_text:
                     print(f"WARNING: some events resources which are used in generate_events. Have no 'event_text'.")
                 event = ShortEvent(
-                    camp=event["camp"] if "camp" in event else "any",
-                    tags=event["tags"],
+                    event_id=event["event_id"] if "event_id" in event else "",
+                    biome=event["biome"] if "biome" in event else ["any"],
+                    camp=event["camp"] if "camp" in event else ["any"],
+                    season=event["season"] if "season" in event else ["any"],
+                    tags=event["tags"] if "tags" in event else [],
+                    weight=event["weight"] if "weight" in event else 20,
                     event_text=event_text,
-                    history_text=event["history_text"] if "history_text" in event else {},
-                    cat_trait= event["cat_trait"] if "cat_trait" in event else [],
-                    cat_skill=event["cat_skill"] if "cat_skill" in event else [],
-                    other_cat_trait=event["other_cat_trait"] if "other_cat_trait" in event else [],
-                    other_cat_skill=event["other_cat_skill"] if "other_cat_skill" in event else [],
-                    cat_negate_trait=event["cat_negate_trait"] if "cat_negate_trait" in event else [],
-                    cat_negate_skill=event["cat_negate_skill"] if "cat_negate_skill" in event else [],
-                    other_cat_negate_trait=event[
-                        "other_cat_negate_trait"] if "other_cat_negate_trait" in event else [],
-                    other_cat_negate_skill=event[
-                        "other_cat_negate_skill"] if "other_cat_negate_skill" in event else [],
-                    backstory_constraint=event["backstory_constraint"] if "backstory_constraint" in event else [],
-
-                    # injury event only
-                    injury=event["injury"] if "injury" in event else None,
-
-                    # new cat event only
-                    loner=event["loner"] if "loner" in event else False,
-                    kittypet=event["kittypet"] if "kittypet" in event else False,
-                    other_clan=event["other_clan"] if "other_clan" in event else False,
-                    kit=event["kit"] if "kit" in event else False,
-                    new_name=event["new_name"] if "new_name" in event else False,
-                    litter=event["litter"] if "litter" in event else False,
-                    backstory=event["backstory"] if "backstory" in event else None,
-                    reputation=event["reputation"] if "reputation" in event else None,
-
-                    # for misc events only
-                    accessories=event["accessories"] if "accessories" in event else None
+                    new_accessory=event["new_accessory"] if "new_accessory" in event else [],
+                    m_c=event["m_c"] if "m_c" in event else {},
+                    r_c=event["r_c"] if "r_c" in event else {},
+                    new_cat=event["new_cat"] if "new_cat" in event else [],
+                    injury=event["injury"] if "injury" in event else [],
+                    relationships=event["relationships"] if "relationships" in event else [],
+                    outsider=event["outsider"] if "outsider" in event else {},
+                    other_clan=event["other_clan"] if "other_clan" in event else {}
                 )
                 event_list.append(event)
 
@@ -167,9 +151,9 @@ class GenerateEvents:
                 event = None
                 for event in events_dict:
                     if event["event"] != specific_event:
-                        #print(event["event"], 'is not', specific_event)
+                        # print(event["event"], 'is not', specific_event)
                         continue
-                    #print(event["event"], "is", specific_event)
+                    # print(event["event"], "is", specific_event)
                     event = OngoingEvent(
                         event=event["event"],
                         camp=event["camp"],
@@ -264,13 +248,14 @@ class GenerateEvents:
         return event_list
 
     @staticmethod
-    def filter_possible_short_events(possible_events, cat, other_cat, war, enemy_clan, other_clan, alive_kits, murder=False, murder_reveal=False):
+    def filter_possible_short_events(possible_events, cat, other_cat, war, enemy_clan, other_clan, alive_kits,
+                                     murder=False, murder_reveal=False):
         final_events = []
 
         minor = []
         major = []
         severe = []
-        
+
         # Chance to bypass the skill or trait requirements. 
         trait_skill_bypass = 15
 
@@ -280,12 +265,22 @@ class GenerateEvents:
             war_event = False
 
         for event in possible_events:
-            
-            # Normally, there is a chance to bypass skill and trait requirments. 
-            # the "skill_trait_required" tags turns this off. Lets grab this tag once, for simplicity. 
+
+            # check biome
+            if game.clan.biome.lower() not in event.biome and "any" not in event.biome:
+                continue
+            # check camp
+            if game.clan.camp_bg.lower() not in event.camp and "any" not in event.camp:
+                continue
+            # check season
+            if game.clan.current_season.lower() not in event.season and "any" not in event.season:
+                continue
+
+            # check tags
             prevent_bypass = "skill_trait_required" in event.tags
-            
-            if war_event and ("war" not in event.tags and "hostile" not in event.tags):
+
+            # ensure that war events only happen during war
+            if war_event and ("war" not in event.tags and "hostile" not in event.other_clan["current_rep"]):
                 continue
             if not war and "war" in event.tags:
                 continue
@@ -293,18 +288,16 @@ class GenerateEvents:
             # some events are classic only
             if game.clan.game_mode in ["expanded", "cruel season"] and "classic" in event.tags:
                 continue
-
-            if "other_cat" in event.tags and not other_cat:
+            # cruel season only events
+            if game.clan.game_mode in ["classic", "expanded"] and "cruel_season" in event.tags:
                 continue
 
-            if event.backstory_constraint and cat.backstory not in event.backstory_constraint:
-                continue
-
+            # ensure murder only happens when meant to
             if murder and "murder" not in event.tags:
                 continue
             if not murder and "murder" in event.tags:
                 continue
-
+            # ensure reveal only happens when meant to
             if murder_reveal and "murder_reveal" not in event.tags:
                 continue
             if not murder_reveal and "murder_reveal" in event.tags:
@@ -323,59 +316,17 @@ class GenerateEvents:
                 if game.clan.leader_lives > 3:
                     continue
 
-            # check season
-            if game.clan.current_season not in event.tags:
-                continue
-
-            if event.reputation:
-                reputation = game.clan.reputation
-                # hostile
-                if 1 <= reputation <= 30 and "hostile" not in event.reputation:
-                    continue
-                # neutral
-                elif 31 <= reputation <= 70 and "neutral" not in event.reputation:
-                    continue
-                # welcoming
-                elif 71 <= reputation <= 100 and "welcoming" not in event.reputation:
-                    continue
-
-            # check that injury is possible
-            if event.injury in GenerateEvents.INJURIES:
-
-                if event.injury == 'mangled tail' and ('NOTAIL' in cat.pelt.scars or 'HALFTAIL' in cat.pelt.scars):
-                    continue
-
-                if event.injury == 'torn ear' and 'NOEAR' in cat.pelt.scars:
-                    continue
-
-            # check meddie tags
-            if "medicine_cat" in event.tags and cat.status != "medicine cat":
-                continue
-            elif "medicine_cat_app" in event.tags and cat.status != "medicine cat apprentice":
-                continue
-
-            # other Clan related checks
-            if "other_clan" in event.tags:
-                if "war" in event.tags and not war:
-                    continue
-                if "ally" in event.tags and int(other_clan.relations) < 17:
-                    continue
-                elif "neutral" in event.tags and (int(other_clan.relations) <= 7 or int(other_clan.relations) >= 17):
-                    continue
-                elif "hostile" in event.tags and int(other_clan.relations) > 7:
-                    continue
-
             # check if Clan has kits
             if "clan_kits" in event.tags and not alive_kits:
                 continue
-            
+
+            # If the cat or any of their mates have "no kits" toggled, forgo the adoption event.
             if "adoption" in event.tags:
-                # If the cat or any of their mates have "no kits" toggled, forgo the adoption event.
                 if cat.no_kits:
                     continue
                 if any(cat.fetch_cat(i).no_kits for i in cat.mate):
                     continue
-            
+
             # check for old age
             if "old_age" in event.tags and cat.moons < game.config["death_related"]["old_age_death_start"]:
                 continue
@@ -384,156 +335,176 @@ class GenerateEvents:
                     and int(random.random() * 3):
                 continue
 
-            # check other_cat status and other identifiers
-            if other_cat:
-                if "other_cat_leader" in event.tags and other_cat.status != "leader":
+            if event.m_c:
+                if cat.age not in event.m_c["age"]:
                     continue
-                if "other_cat_dep" in event.tags and other_cat.status != "deputy":
+                if cat.status not in event.m_c["status"]:
                     continue
-                if "other_cat_med" in event.tags and other_cat.status != "medicine cat":
-                    continue
-                if "other_cat_med_app" in event.tags and other_cat.status != "medicine cat apprentice":
-                    continue
-                if "other_cat_warrior" in event.tags and other_cat.status != "warrior":
-                    continue
-                if "other_cat_app" in event.tags and other_cat.status != "apprentice":
-                    continue
-                if "other_cat_elder" in event.tags and other_cat.status != "elder":
-                    continue
-                if "other_cat_adult" in event.tags and other_cat.age in ["senior", "kitten", "newborn"]:
-                    continue
-                if "other_cat_kit" in event.tags and other_cat.status not in ['newborn', 'kitten']:
-                    continue
+                if event.m_c["relationship_status"]:
+                    pass
 
-                if "other_cat_mate" in event.tags and other_cat.ID not in cat.mate:
-                    continue
-                if "other_cat_child" in event.tags and other_cat.ID not in cat.get_children():
-                    continue
-                if "other_cat_parent" in event.tags and other_cat.ID not in cat.get_parents():
-                    continue
-
-                if "other_cat_own_app" in event.tags and other_cat.ID not in cat.apprentice:
-                    continue
-                if "other_cat_mentor" in event.tags and other_cat.ID != cat.mentor:
-                    continue
-                
-                # check other cat trait and skill
+                # check cat trait and skill
                 has_trait = False
-                if event.other_cat_trait:
-                    if other_cat.personality.trait in event.other_cat_trait:
+                if event.m_c["trait"]:
+                    if cat.personality.trait in event.m_c["trait"]:
                         has_trait = True
-                
+
                 has_skill = False
-                if event.other_cat_skill:
-                    for _skill in event.other_cat_skill:
+                if event.m_c["skill"]:
+                    for _skill in event.m_c["skill"]:
                         split = _skill.split(",")
-                        
+
                         if len(split) < 2:
                             print("Cat skill incorrectly formatted", _skill)
                             continue
-                        
-                        if other_cat.skills.meets_skill_requirement(split[0], int(split[1])):
+
+                        if cat.skills.meets_skill_requirement(split[0], int(split[1])):
                             has_skill = True
                             break
-                    
-                # There is a small chance to bypass the skill or trait requirments.  
-                if event.other_cat_trait and event.other_cat_skill:
+
+                if event.m_c["trait"] and event.m_c["skill"]:
                     if not (has_trait or has_skill) and (prevent_bypass or int(random.random() * trait_skill_bypass)):
                         continue
-                elif event.other_cat_trait:
+                elif event.m_c["trait"]:
                     if not has_trait and (prevent_bypass or int(random.random() * trait_skill_bypass)):
                         continue
-                elif event.other_cat_skill:
+                elif event.m_c["skill"]:
                     if not has_skill and (prevent_bypass or int(random.random() * trait_skill_bypass)):
                         continue
-                
-                
+
                 # check cat negate trait and skill
                 has_trait = False
-                if event.other_cat_negate_trait:
-                    if other_cat.personality.trait in event.other_cat_negate_trait:
+                if event.m_c["not_trait"]:
+                    if cat.personality.trait in event.m_c["not_trait"]:
                         has_trait = True
-                
+
                 has_skill = False
-                if event.other_cat_negate_trait:
-                    for _skill in event.other_cat_negate_trait:
+                if event.m_c["not_skill"]:
+                    for _skill in event.m_c["not_skill"]:
                         split = _skill.split(",")
-                        
+
                         if len(split) < 2:
                             print("Cat skill incorrectly formatted", _skill)
                             continue
-                        
+
+                        if cat.skills.meets_skill_requirement(split[0], int(split[1])):
+                            has_skill = True
+                            break
+
+                # There is a small chance to bypass the skill or trait requirements.
+                if (has_trait or has_skill) and (prevent_bypass or int(random.random() * trait_skill_bypass)):
+                    continue
+
+                # check backstory
+                if cat.backstory not in event.m_c["backstory"]:
+                    continue
+
+            # check that an other_cat is available to use for r_c
+            if event.r_c and other_cat:
+                if other_cat.age not in event.r_c["age"]:
+                    continue
+                if other_cat.status not in event.r_c["status"]:
+                    continue
+                if event.r_c["relationship_status"]:
+                    pass
+
+                # check other_cat trait and skill
+                has_trait = False
+                if event.r_c["trait"]:
+                    if other_cat.personality.trait in event.r_c["trait"]:
+                        has_trait = True
+
+                has_skill = False
+                if event.r_c["skill"]:
+                    for _skill in event.r_c["skill"]:
+                        split = _skill.split(",")
+
+                        if len(split) < 2:
+                            print("other_cat skill incorrectly formatted", _skill)
+                            continue
+
                         if other_cat.skills.meets_skill_requirement(split[0], int(split[1])):
                             has_skill = True
                             break
-                    
-                # There is a small chance to bypass the skill or trait requirments.  
-                if (has_trait or has_skill) and int(random.random() * trait_skill_bypass):
+
+                if event.r_c["trait"] and event.r_c["skill"]:
+                    if not (has_trait or has_skill) and (prevent_bypass or int(random.random() * trait_skill_bypass)):
+                        continue
+                elif event.r_c["trait"]:
+                    if not has_trait and (prevent_bypass or int(random.random() * trait_skill_bypass)):
+                        continue
+                elif event.r_c["skill"]:
+                    if not has_skill and (prevent_bypass or int(random.random() * trait_skill_bypass)):
+                        continue
+
+                # check other_cat negate trait and skill
+                has_trait = False
+                if event.r_c["not_trait"]:
+                    if other_cat.personality.trait in event.r_c["not_trait"]:
+                        has_trait = True
+
+                has_skill = False
+                if event.r_c["not_skill"]:
+                    for _skill in event.r_c["not_skill"]:
+                        split = _skill.split(",")
+
+                        if len(split) < 2:
+                            print("other_cat skill incorrectly formatted", _skill)
+                            continue
+
+                        if other_cat.skills.meets_skill_requirement(split[0], int(split[1])):
+                            has_skill = True
+                            break
+
+                # There is a small chance to bypass the skill or trait requirements.
+                if (has_trait or has_skill) and (prevent_bypass or int(random.random() * trait_skill_bypass)):
                     continue
 
+                # check backstory
+                if other_cat.backstory not in event.r_c["backstory"]:
+                    continue
             else:
-                if "other_cat" in event.tags or "multi_death" in event.tags:
+                continue
+
+            # check that injury is possible
+            if event.injury:
+                for injury in event.injury["injuries"]:
+                    if injury in GenerateEvents.INJURIES:
+                        if injury == 'mangled tail' and (
+                                'NOTAIL' in cat.pelt.scars or 'HALFTAIL' in cat.pelt.scars):
+                            continue
+
+                        if injury == 'torn ear' and 'NOEAR' in cat.pelt.scars:
+                            continue
+
+            # check if outsider event is allowed
+            if event.outsider:
+                # hostile
+                if 1 <= game.clan.reputation <= 30 and "hostile" not in event.outsider["current_rep"]:
+                    continue
+                # neutral
+                elif 31 <= game.clan.reputation <= 70 and "neutral" not in event.outsider["current_rep"]:
+                    continue
+                # welcoming
+                elif 71 <= game.clan.reputation <= 100 and "welcoming" not in event.outsider["current_rep"]:
+                    continue
+
+            # other Clan related checks
+            if event.other_clan:
+                if "war" in event.tags and not war:  # just double-checking
+                    continue
+                # ally
+                if "ally" in event.other_clan["current_rep"] and int(other_clan.relations) < 17:
+                    continue
+                # neutral
+                elif "neutral" in event.other_clan["current_rep"] and (int(other_clan.relations) <= 7 or int(other_clan.relations) >= 17):
+                    continue
+                # hostile
+                elif "hostile" in event.other_clan["current_rep"] and int(other_clan.relations) > 7:
                     continue
 
             # check for mate if the event requires one
             if "mate" in event.tags and len(cat.mate) < 1:
-                continue
-
-
-            # check cat trait and skill
-            has_trait = False
-            if event.cat_trait:
-                if cat.personality.trait in event.cat_trait:
-                    has_trait = True
-            else:
-                has_trait = None
-            
-            has_skill = False
-            if event.cat_skill:
-                for _skill in event.cat_skill:
-                    split = _skill.split(",")
-                    
-                    if len(split) < 2:
-                        print("Cat skill incorrectly formatted", _skill)
-                        continue
-                    
-                    if cat.skills.meets_skill_requirement(split[0], int(split[1])):
-                        has_skill = True
-                        break
-            
-            # There is a small chance to bypass the skill or trait requirments.  
-            if event.cat_trait and event.cat_skill:
-                if not (has_trait or has_skill) and (prevent_bypass or int(random.random() * trait_skill_bypass)):
-                    continue
-            elif event.cat_trait:
-                if not has_trait and (prevent_bypass or int(random.random() * trait_skill_bypass)):
-                    continue
-            elif event.cat_skill:
-                if not has_skill and (prevent_bypass or int(random.random() * trait_skill_bypass)):
-                    continue
-            
-            
-            # check cat negate trait and skill
-            has_trait = False
-            if event.cat_negate_trait:
-                if cat.personality.trait in event.cat_negate_trait:
-                    has_trait = True
-            
-            has_skill = False
-            if event.cat_negate_skill:
-                for _skill in event.cat_negate_skill:
-                    split = _skill.split(",")
-                    
-                    if len(split) < 2:
-                        print("Cat skill incorrectly formatted", _skill)
-                        continue
-                    
-                    if cat.skills.meets_skill_requirement(split[0], int(split[1])):
-                        has_skill = True
-                        break
-                
-            # There is a small chance to bypass the skill or trait requirments.  
-            if (has_trait or has_skill) and int(random.random() * trait_skill_bypass):
                 continue
 
             # determine injury severity chance
@@ -557,7 +528,8 @@ class GenerateEvents:
                 minor_chance = GenerateEvents.INJURY_DISTRIBUTION[cat.status]['minor']
                 major_chance = GenerateEvents.INJURY_DISTRIBUTION[cat.status]['major']
                 severe_chance = GenerateEvents.INJURY_DISTRIBUTION[cat.status]['severe']
-                severity_chosen = random.choices(["minor", "major", "severe"], [minor_chance, major_chance, severe_chance], k=1)
+                severity_chosen = random.choices(["minor", "major", "severe"],
+                                                 [minor_chance, major_chance, severe_chance], k=1)
                 if severity_chosen[0] == 'minor':
                     final_events = minor
                 elif severity_chosen[0] == 'major':
@@ -586,7 +558,7 @@ class GenerateEvents:
                 )"""
                 return event_list
             else:
-                #print(specific_event)
+                # print(specific_event)
                 event = (
                     GenerateEvents.generate_ongoing_events(event_type, biome, specific_event)
                 )
@@ -643,14 +615,62 @@ class ShortEvent:
         self.event_text = event_text
         self.new_accessory = new_accessory
         self.m_c = m_c if m_c else {}
+        if self.m_c:
+            if "age" not in self.m_c:
+                self.m_c["age"] = []
+            if "status" not in self.m_c:
+                self.m_c["status"] = []
+            if "relationship_status" not in self.m_c:
+                self.m_c["relationship_status"] = []
+            if "skill" not in self.m_c:
+                self.m_c["skill"] = []
+            if "not_skill" not in self.m_c:
+                self.m_c["not_skill"] = []
+            if "not_trait" not in self.m_c:
+                self.m_c["not_trait"] = []
+            if "age" not in self.m_c:
+                self.m_c["age"] = []
+            if "backstory" not in self.m_c:
+                self.m_c["backstory"] = []
+            if "dies" not in self.m_c:
+                self.m_c["dies"] = False
+
         self.r_c = r_c if r_c else {}
+        if self.r_c:
+            if "age" not in self.r_c:
+                self.r_c["age"] = []
+            if "status" not in self.r_c:
+                self.r_c["status"] = []
+            if "relationship_status" not in self.r_c:
+                self.r_c["relationship_status"] = []
+            if "skill" not in self.r_c:
+                self.r_c["skill"] = []
+            if "not_skill" not in self.r_c:
+                self.r_c["not_skill"] = []
+            if "not_trait" not in self.r_c:
+                self.r_c["not_trait"] = []
+            if "age" not in self.r_c:
+                self.r_c["age"] = []
+            if "backstory" not in self.r_c:
+                self.r_c["backstory"] = []
+            if "dies" not in self.r_c:
+                self.r_c["dies"] = False
+
         self.new_cat = new_cat if new_cat else []
         self.injury = injury if injury else []
         self.relationships = relationships if relationships else []
         self.outsider = outsider if outsider else {}
+        if self.outsider:
+            if "current_rep" not in self.outsider:
+                self.outsider["current_rep"] = []
+            if "changed" not in self.outsider:
+                self.outsider["changed"] = 0
         self.other_clan = other_clan if other_clan else {}
-
-
+        if self.other_clan:
+            if "current_rep" not in self.other_clan:
+                self.other_clan["current_rep"] = []
+            if "changed" not in self.other_clan:
+                self.other_clan["changed"] = 0
 
 """
 OUTDATED - LEFT FOR REFERENCE
