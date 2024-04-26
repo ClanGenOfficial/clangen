@@ -93,9 +93,8 @@
             "Saw a Twoleg kit playing with a dog",
             "Saw a Twoleg kit playing with a kittypet",
             "Saw a kittypet rolling around a Twoleg garden",
-            "Is thinking about a strange Twoleg object they saw recently",
+            "Is thinking about a strange Twoleg object {PRONOUN/m_c/subject} saw recently",
             "Is wondering what the inside of a Twoleg den looks like",
-            "Is complaining about being sent on dawn patrol",
             "Is wondering if kittypet life is really so bad",
             "Saw a pair of Twolegs near camp today!"
         ],
@@ -207,7 +206,7 @@
         "id": "gen_to_alive_apprentice",
         "thoughts": [
             "Is finding r_c annoying",
-            "Lectures r_c on the warrior code",
+            "Lectures r_c on the Warrior Code",
             "Makes note of r_c's journey as an apprentice",
             "Is wondering if r_c will be chosen for the next Gathering",
             "Wants to go on patrol with r_c",
@@ -550,8 +549,8 @@
     {
         "id": "gen_otherclan",
         "thoughts": [
-            "Is wondering how their old Clan is doing",
-            "Is thinking about their old Clanmates"
+            "Is wondering how {PRONOUN/m_c/poss} old Clan is doing",
+            "Is thinking about {PRONOUN/m_c/poss} old Clanmates"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -714,10 +713,10 @@
         "thoughts": [
             "Wishes r_c would stop teasing {PRONOUN/m_c/object} about being a kittypet",
             "Tells r_c about Twoleg behavior",
-            "Is asking r_c about certain clan customs",
+            "Is asking r_c about certain Clan customs",
             "Wonders if r_c thinks less of {PRONOUN/m_c/object} because of {PRONOUN/m_c/poss} past",
             "Spends all day trying to outshine r_c and prove former kittypets are just as good as Clanborn apprentices",
-            "Is jealous of how well r_c fits in, just because of {PRONOUN/r_c/poss} clan roots",
+            "Is jealous of how well r_c fits in, just because of {PRONOUN/r_c/poss} Clan roots",
             "Patiently answers r_c's slightly rude questions about kittypet life"
         ],
         "main_backstory_constraint": ["kittypet1", "kittypet2", "kittypet3", "kittypet4", "refugee3", "tragedy_survivor3", "guided1"],
@@ -770,7 +769,7 @@
         "thoughts": [
             "Is teaching kits about what plants to stay away from",
             "Chased kits out of {PRONOUN/m_c/poss} den",
-            "Is visiting the nursery for to give r_c a checkup"
+            "Is visiting the nursery to give r_c a checkup"
         ],
         "main_status_constraint": [
             "medicine cat",
@@ -1036,12 +1035,12 @@
             "Remembers fondly when r_c would beg to be taught a new fighting move",
             "Goes to teach r_c a new move {PRONOUN/m_c/subject} learned, but remembered r_c is among the stars now",
             "Misses r_c nagging {PRONOUN/m_c/object} about apprentice duties",
-            "Is tearing up after finding r_c's old mossball",
+            "Is tearing up after finding r_c's old moss-ball",
             "Hopes that somehow, someway, the kits in StarClan are learning the hunting crouch",
-            "Wonders if the kits get mossballs in StarClan",
+            "Wonders if the kits get moss-balls in StarClan",
             "Hopes that the kits in StarClan get time to play games",
             "Looks up at the night sky, and wonders which stars are long-gone kits",
-            "Thought {PRONOUN/m_c/subject} saw a stray kit infront of the nursery, but it vanished",
+            "Thought {PRONOUN/m_c/subject} saw a stray kit in front of the nursery, but it vanished",
             "Walks in the nursery, hoping to see r_c again, but then realizes that r_c isn't coming back"
         ],
         "main_status_constraint": [
@@ -1410,7 +1409,7 @@
     {
         "id": "childish_apprentice_to_apprentice",
         "thoughts": [
-            "Managed to convince another apprentice to play mossball instead of finishing their duties"
+            "Managed to convince another apprentice to play moss-ball instead of finishing their duties"
         ],
         "main_status_constraint": [
             "apprentice",

@@ -7,9 +7,6 @@ from .ChooseAdoptiveParentScreen import ChooseAdoptiveParentScreen
 from .ProfileScreen import ProfileScreen
 from .RoleScreen import RoleScreen
 from .SpriteInspectScreen import SpriteInspectScreen
-from .DFScreen import DFScreen
-from .StarClanScreen import StarClanScreen
-from .UnknownResScreen import UnknownResScreen
 from .MakeClanScreen import MakeClanScreen
 from .MedDenScreen import MedDenScreen
 from .RelationshipScreen import RelationshipScreen
@@ -21,10 +18,10 @@ from .EventsScreen import EventsScreen
 from .ChooseMateScreen import ChooseMateScreen
 from .ChooseMentorScreen import ChooseMentorScreen
 from .FamilyTreeScreen import FamilyTreeScreen
-from .OutsideClanScreen import OutsideClanScreen
 from .MediationScreen import MediationScreen
 from .ClanSettingsScreen import ClanSettingsScreen
 from .ClearingScreen import ClearingScreen
+from .WarriorDenScreen import WarriorDenScreen
 
 # ---------------------------------------------------------------------------- #
 #                                  UI RULES                                    #
@@ -64,11 +61,9 @@ make_clan_screen = MakeClanScreen('make clan screen')
 allegiances_screen = AllegiancesScreen('allegiances screen')
 camp_screen = ClanScreen('camp screen')
 catlist_screen = ListScreen('list screen')
-starclan_screen = StarClanScreen('starclan screen')
-df_screen = DFScreen('dark forest screen')
 med_den_screen = MedDenScreen('med den screen')
 freshkill_pile_screen = ClearingScreen('clearing screen')
-
+warrior_den_screen = WarriorDenScreen('warrior den screen')
 
 events_screen = EventsScreen('events screen')
 
@@ -89,6 +84,3 @@ relationship_screen = RelationshipScreen('relationship screen')
 view_children_screen = FamilyTreeScreen('see kits screen')
 mediation_screen = MediationScreen("mediation screen")
 
-
-outside_clan_screen = OutsideClanScreen('other screen')
-unknown_residence_screen = UnknownResScreen('unknown residence screen')

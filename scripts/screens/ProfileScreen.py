@@ -220,15 +220,21 @@ class ProfileScreen(Screens):
                 pass
 
             elif event.key == pygame.K_LEFT:
-                self.clear_profile()
-                game.switches['cat'] = self.previous_cat
-                self.build_profile()
-                self.update_disabled_buttons_and_text()
+                if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
+                    self.clear_profile()
+                    game.switches['cat'] = self.previous_cat
+                    self.build_profile()
+                    self.update_disabled_buttons_and_text()
+                else:
+                    print("invalid previous cat", self.previous_cat)
             elif event.key == pygame.K_RIGHT:
-                self.clear_profile()
-                game.switches['cat'] = self.next_cat
-                self.build_profile()
-                self.update_disabled_buttons_and_text()
+                if isinstance(Cat.fetch_cat(self.next_cat), Cat):
+                    self.clear_profile()
+                    game.switches['cat'] = self.next_cat
+                    self.build_profile()
+                    self.update_disabled_buttons_and_text()
+                else:
+                    print("invalid next cat", self.previous_cat)
             
             elif event.key == pygame.K_ESCAPE:
                 self.close_current_tab()
@@ -353,7 +359,7 @@ class ProfileScreen(Screens):
                 self.fav_tab.show()
                 self.not_fav_tab.hide()
             elif event.ui_element == self.save_text:
-                self.user_notes = sub(r"[^A-Za-z0-9<->/.()*'&#!?,| ]+", "", self.notes_entry.get_text())
+                self.user_notes = sub(r"[^A-Za-z0-9<->/.()*'&#!?,| _+=@~:;[]{}%$^`]+", "", self.notes_entry.get_text())
                 self.save_user_notes()
                 self.editing_notes = False
                 self.update_disabled_buttons_and_text()
@@ -554,7 +560,7 @@ class ProfileScreen(Screens):
         self.profile_elements["favourite_button"] = UIImageButton(scale(pygame.Rect
                                                                         ((x_pos, 287), (56, 56))),
                                                                   "",
-                                                                  object_id="#fav_cat",
+                                                                  object_id="#fav_star",
                                                                   manager=MANAGER,
                                                                   tool_tip_text='Remove favorite status',
                                                                   starting_height=2)
@@ -563,7 +569,7 @@ class ProfileScreen(Screens):
                                                                             ((x_pos, 287),
                                                                              (56, 56))),
                                                                       "",
-                                                                      object_id="#not_fav_cat",
+                                                                      object_id="#not_fav_star",
                                                                       manager=MANAGER,
                                                                       tool_tip_text='Mark as favorite',
                                                                       starting_height=2)
@@ -625,7 +631,10 @@ class ProfileScreen(Screens):
         if is_instructor:
             current_cat_found = 1
 
-        for check_cat in Cat.all_cats_list:
+        if len(Cat.ordered_cat_list) == 0:
+            Cat.ordered_cat_list = Cat.all_cats_list
+
+        for check_cat in Cat.ordered_cat_list:
             if check_cat.ID == self.the_cat.ID:
                 current_cat_found = 1
             else:
@@ -1445,7 +1454,7 @@ class ProfileScreen(Screens):
                     if not moons:
                         name_list.append(name)
                     else:
-                        name_list.append(name + f" (Moon {', '.join(victim_names[name])})")
+                        name_list.append(f"{name} (Moon {victim_names[name][0]})")
 
                 if len(name_list) == 1:
                     victim_text = f"{self.the_cat.name} murdered {name_list[0]}."

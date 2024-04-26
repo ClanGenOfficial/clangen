@@ -523,7 +523,7 @@
         "id": "lost_leg/tail_gen_retired_to_alive_kit",
         "thoughts": [
             "Tells the story of how {PRONOUN/m_c/subject} lost {PRONOUN/m_c/poss} limb to an interested group of kits",
-            "Is playing along as r_c tells the legend of how {PRONOUN/m_c/subject} lost their limb"
+            "Is playing along as r_c tells the legend of how {PRONOUN/m_c/subject} lost {PRONOUN/m_c/poss} limb"
         ],
         "perm_conditions": {
             "m_c": [
@@ -561,7 +561,7 @@
     {
         "id": "missing_leg_gen_retired_to_alive_gen",
         "thoughts": [
-            "Ironically giggles after hearing r_c's dramtic response to stubbing {PRONOUN/r_c/poss} paw",
+            "Ironically giggles after hearing r_c's dramatic response to stubbing {PRONOUN/r_c/poss} paw",
             "Is excited to no longer have to step on sharp stones",
             "Manages to make a once-difficult jump with ease",
             "Boasts about being the champion of balancing on one leg"

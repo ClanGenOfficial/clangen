@@ -9,6 +9,7 @@ from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton, UIRelationStatusBar
 from scripts.game_structure.game_essentials import game, MANAGER
+from math import ceil
 
 
 class MediationScreen(Screens):
@@ -18,12 +19,16 @@ class MediationScreen(Screens):
         self.selected_mediator = None
         self.selected_cat_1 = None
         self.selected_cat_2 = None
+        self.search_bar = None
+        self.search_bar_image = None
         self.mediator_elements = {}
         self.mediators = []
         self.cat_buttons = []
         self.page = 1
         self.selected_cat_elements = {}
         self.allow_romantic = True
+        self.current_listed_cats = None
+        self.previous_search_text = ""
 
     def handle_event(self, event):
 
@@ -64,7 +69,7 @@ class MediationScreen(Screens):
                 self.update_selected_cats()
                 self.update_mediator_info()
             elif event.ui_element == self.sabotoge_button:
-                game.mediated.append(f"{self.selected_cat_1.ID}, {self.selected_cat_2.ID}")
+                game.mediated.append([self.selected_cat_1.ID, self.selected_cat_2.ID])
                 game.patrolled.append(self.mediators[self.selected_mediator].ID)
                 output = Cat.mediate_relationship(
                     self.mediators[self.selected_mediator], self.selected_cat_1, self.selected_cat_2,
@@ -175,6 +180,15 @@ class MediationScreen(Screens):
         self.random1 = UIImageButton(scale(pygame.Rect((396, 864), (68, 68))), "", object_id="#random_dice_button")
         self.random2 = UIImageButton(scale(pygame.Rect((1136, 864), (68, 68))), "", object_id="#random_dice_button")
 
+        self.search_bar_image = pygame_gui.elements.UIImage(scale(pygame.Rect((110, 1250), (236, 68))),
+                                                            pygame.image.load(
+                                                                "resources/images/search_bar.png").convert_alpha(),
+                                                            manager=MANAGER)
+        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((120, 1258), (230, 55))),
+                                                              object_id="#search_entry_box",
+                                                              initial_text="name search",
+                                                              manager=MANAGER)
+
         self.update_buttons()
         self.update_mediator_info()
 
@@ -254,20 +268,20 @@ class MediationScreen(Screens):
         self.all_cats_list = [i for i in Cat.all_cats_list if
                               (i.ID != self.mediators[self.selected_mediator].ID) and not (i.dead or i.outside)]
         self.all_cats = self.chunks(self.all_cats_list, 24)
-
+        self.current_listed_cats = self.all_cats_list
+        self.all_pages = int(ceil(len(self.current_listed_cats)/24.0)) if len(self.current_listed_cats) > 24 else 1
         self.update_page()
 
     def update_page(self):
         for cat in self.cat_buttons:
             cat.kill()
-        self.cat_buttons = []
-
-        if self.page > len(self.all_cats):
-            self.page = len(self.all_cats)
+        self.cat_buttons = []            
+        if self.page > self.all_pages:
+            self.page = self.all_pages
         elif self.page < 1:
             self.page = 1
 
-        if self.page >= len(self.all_cats):
+        if self.page >= self.all_pages:
             self.next_page.disable()
         else:
             self.next_page.enable()
@@ -279,26 +293,28 @@ class MediationScreen(Screens):
 
         x = 130
         y = 970
-        for cat in self.all_cats[self.page - 1]:
-            if game.clan.clan_settings["show fav"] and cat.favourite:
-                _temp = pygame.transform.scale(
-                            pygame.image.load(
-                                f"resources/images/fav_marker.png").convert_alpha(),
-                            (100, 100))
-                    
+        chunked_cats = self.chunks(self.current_listed_cats, 24)
+        if chunked_cats:
+            for cat in chunked_cats[self.page - 1]:
+                if game.clan.clan_settings["show fav"] and cat.favourite:
+                    _temp = pygame.transform.scale(
+                                pygame.image.load(
+                                    f"resources/images/fav_marker.png").convert_alpha(),
+                                (100, 100))
+                        
+                    self.cat_buttons.append(
+                        pygame_gui.elements.UIImage(
+                            scale(pygame.Rect((x, y), (100, 100))),
+                            _temp))
+                    self.cat_buttons[-1].disable()
+                
                 self.cat_buttons.append(
-                    pygame_gui.elements.UIImage(
-                        scale(pygame.Rect((x, y), (100, 100))),
-                        _temp))
-                self.cat_buttons[-1].disable()
-            
-            self.cat_buttons.append(
-                UISpriteButton(scale(pygame.Rect((x, y), (100, 100))), cat.sprite, cat_object=cat)
-            )
-            x += 110
-            if x > 1400:
-                y += 110
-                x = 130
+                    UISpriteButton(scale(pygame.Rect((x, y), (100, 100))), cat.sprite, cat_object=cat)
+                )
+                x += 110
+                if x > 1400:
+                    y += 110
+                    x = 130
 
     def update_selected_cats(self):
         for ele in self.selected_cat_elements:
@@ -685,6 +701,24 @@ class MediationScreen(Screens):
                                                    object_id="#unchecked_checkbox",
                                                    tool_tip_text="Allow effects on romantic like, if possible. ",
                                                    manager=MANAGER)
+            
+    def update_search_cats(self, search_text):
+        """Run this function when the search text changes, or when the screen is switched to."""
+        self.current_listed_cats = []
+        Cat.sort_cats(self.all_cats_list)
+
+        search_text = search_text.strip()
+        if search_text not in ['', 'name search']:
+            for cat in self.all_cats_list:
+                if search_text.lower() in str(cat.name).lower():
+                    self.current_listed_cats.append(cat)
+        else:
+            self.current_listed_cats = self.all_cats_list.copy()
+
+        self.all_pages = int(ceil(len(self.current_listed_cats)/24.0)) if len(self.current_listed_cats) > 24 else 1
+
+        Cat.ordered_cat_list = self.current_listed_cats
+        self.update_page()
 
     def exit_screen(self):
         self.selected_cat_1 = None
@@ -740,6 +774,18 @@ class MediationScreen(Screens):
         del self.romantic_checkbox_text
         self.error.kill()
         del self.error
+        self.search_bar_image.kill()
+        del self.search_bar_image
+        self.search_bar.kill()
+        del self.search_bar
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
+
+    def on_use(self):
+        # Only update the positions if the search text changes
+        if self.search_bar.is_focused and self.search_bar.get_text() == "name search":
+            self.search_bar.set_text("")
+        if self.search_bar.get_text() != self.previous_search_text:
+            self.update_search_cats(self.search_bar.get_text())
+        self.previous_search_text = self.search_bar.get_text()

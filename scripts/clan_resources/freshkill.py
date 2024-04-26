@@ -81,6 +81,7 @@ class Freshkill_Pile():
             self.total_amount = game.prey_config["start_amount"]
         self.nutrition_info = {}
         self.living_cats = []
+        self.already_fed = []
         self.needed_prey = 0
 
     def add_freshkill(self, amount) -> None:
@@ -94,6 +95,7 @@ class Freshkill_Pile():
         """
         self.pile["expires_in_4"] += amount
         self.total_amount += amount
+        self.total_amount = round(self.total_amount, 2)
 
     def remove_freshkill(self, amount, take_random: bool = False) -> None:
         """
@@ -126,13 +128,17 @@ class Freshkill_Pile():
         # kits under 3 months are feed by the queen
         for queen_id, their_kits in queen_dict.items():
             queen = Cat.fetch_cat(queen_id)
+            if queen and (queen.outside or queen.status == "exiled"):
+                continue
             young_kits = [kit for kit in their_kits if kit.moons < 3]
             if len(young_kits) > 0:
                 relevant_queens.append(queen)
-        pregnant_cats = [cat for cat in living_cats if "pregnant" in cat.injuries and cat.ID not in queen_dict.keys()]
+        pregnant_cats = [
+            cat for cat in living_cats if "pregnant" in cat.injuries and cat.ID not in queen_dict.keys() and not cat.outside and cat.status != "exiled"
+        ]
 
         # all normal status cats calculation
-        needed_prey = sum([PREY_REQUIREMENT[cat.status] for cat in living_cats if cat.status not in ["newborn", "kitten"]])
+        needed_prey = sum([PREY_REQUIREMENT[cat.status] for cat in living_cats if cat.status not in ["newborn", "kitten", "exiled"] and not cat.outside])
         # increase the number for sick cats
         if game.clan and game.clan.game_mode == "cruel season":
             sick_cats = [cat for cat in living_cats if cat.not_working() and "pregnant" not in cat.injuries]
@@ -140,7 +146,7 @@ class Freshkill_Pile():
         # increase the number of prey which are missing for relevant queens an pregnant cats
         needed_prey += (len(relevant_queens) + len(pregnant_cats)) * (PREY_REQUIREMENT["queen/pregnant"] - PREY_REQUIREMENT["warrior"])
         # increase the number of prey for kits, which are not taken care by a queen
-        needed_prey += sum([PREY_REQUIREMENT[cat.status] for cat in living_kits])
+        needed_prey += sum([PREY_REQUIREMENT[cat.status] for cat in living_kits if not cat.outside])
         
         self.needed_prey = needed_prey
 
@@ -164,7 +170,9 @@ class Freshkill_Pile():
                 event_list.append(f"Some prey expired, {amount} pieces were removed from the pile.")
         self.total_amount = sum(self.pile.values())
         value_diff = self.total_amount
+        self.already_fed = []
         self.feed_cats(living_cats)
+        self.already_fed = []
         value_diff -= sum(self.pile.values())
         event_list.append(f"{value_diff} pieces of prey were consumed.")
         self._update_needed_food(living_cats)
@@ -360,6 +368,10 @@ class Freshkill_Pile():
                 feeding_amount += 1
             elif self.amount_food_needed() < self.total_amount and self.nutrition_info[cat.ID].percentage < 100:
                 feeding_amount += 0.5
+
+            if not_moon_feeding:
+                needed_amount = 0
+
             self.feed_cat(cat, feeding_amount, needed_amount)
 
         # feed the rest according to their status
@@ -399,8 +411,8 @@ class Freshkill_Pile():
                     best_hunter.insert(0,cat)
                     living_cats.remove(cat)
 
-        sorted_group = best_hunter + living_cats
-        self.feed_group(sorted_group, not_moon_feeding)
+        self.feed_group(best_hunter, not_moon_feeding)
+        self.tactic_status(living_cats, not_moon_feeding)
 
     def tactic_sick_injured_first(self, living_cats: List[Cat], not_moon_feeding = False) -> None:
         """
@@ -413,8 +425,8 @@ class Freshkill_Pile():
         """
         sick_cats = [cat for cat in living_cats if cat.is_ill() or cat.is_injured()]
         healthy_cats = [cat for cat in living_cats if not cat.is_ill() and not cat.is_injured()]
-        sorted_cats = sick_cats + healthy_cats
-        self.feed_group(sorted_cats, not_moon_feeding)
+        self.feed_group(sick_cats, not_moon_feeding)
+        self.tactic_status(healthy_cats, not_moon_feeding)
 
     # ---------------------------------------------------------------------------- #
     #                               helper functions                               #
@@ -428,6 +440,8 @@ class Freshkill_Pile():
             ----------
             group : list
                 the list of cats which should be feed
+            not_moon_feeding: boolean
+                defines if this is an additional feeding round
         """
         if len(group) == 0:
             return
@@ -437,6 +451,8 @@ class Freshkill_Pile():
 
         # first feed the cats with the lowest nutrition
         for cat in group:
+            if cat in self.already_fed:
+                continue
             status = str(cat.status)
             # check if this is a kit, if so check if they are fed by the mother
             if status in ["newborn", "kitten"] and fed_kits and cat in fed_kits:
@@ -489,6 +505,7 @@ class Freshkill_Pile():
         order = ["expires_in_1", "expires_in_2", "expires_in_3", "expires_in_4"]
         for key in order:
             remaining_amount = self.take_from_pile(key, remaining_amount)
+        self.already_fed.append(cat)
 
         if remaining_amount > 0 and amount_difference == 0:
             self.nutrition_info[cat.ID].current_score -= remaining_amount
@@ -530,6 +547,7 @@ class Freshkill_Pile():
             remaining_amount = given_amount - self.pile[pile_group]
             self.total_amount -= self.pile[pile_group]
             self.pile[pile_group] = 0
+        self.total_amount = round(self.total_amount, 2)
 
         return remaining_amount
 

@@ -5,7 +5,7 @@
         "season": ["Any"],
         "types": ["border"],
         "tags": ["new_cat"],
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "gen_gen_newcat_hostile",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -84,7 +84,7 @@
         "season": ["Any"],
         "types": ["border"],
         "tags": ["new_cat"],
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "gen_gen_newcat_hostile",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -543,7 +543,7 @@
                 ]
             },
             {
-                "text": "Try as they might, the ptrol can't identify who left this scent trail or where it leads. It doesn't smell like a Clancat, but that's little reassurance as the cats head back to report this to the rest of c_n.",
+                "text": "Try as they might, the patrol can't identify who left this scent trail or where it leads. It doesn't smell like a Clancat, but that's little reassurance as the cats head back to report this to the rest of c_n.",
                 "exp": 0,
                 "weight": 20,
                 "outsider_rep": 0
@@ -1277,7 +1277,7 @@
         "season": ["Any"],
         "types": ["hunting"],
         "tags": ["new_cat"],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_hunt_twolegplace",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {},

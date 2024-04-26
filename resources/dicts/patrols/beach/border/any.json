@@ -965,7 +965,7 @@
         },
         "weight": 20,
         "intro_text": "While on patrol, app1 notices some suspicious pawprints in the wet sand on the beach.",
-        "decline_text": "{PRONOUN/app1/subject} {VERB/app1/decide/decides} not to investigate.",
+        "decline_text": "{PRONOUN/app1/subject/CAP} {VERB/app1/decide/decides} not to investigate.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1051,7 +1051,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "While on patrol, r_c notices some suspicious pawprints in the wet sand on the beach.",
-        "decline_text": "{PRONOUN/r_c/subject} {VERB/r_c/decide/decides} not to investigate.",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} not to investigate.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1196,7 +1196,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "While on patrol, r_c notices some suspicious pawprints in the wet sand on the beach.",
-        "decline_text": "{PRONOUN/r_c/subject} {VERB/r_c/decide/decides} not to investigate.",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} not to investigate.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1343,7 +1343,7 @@
         },
         "weight": 20,
         "intro_text": "While on patrol, app1 notices some suspicious pawprints in the wet sand on the beach.",
-        "decline_text": "{PRONOUN/app1/subject} {VERB/app1/decide/decides} not to investigate.",
+        "decline_text": "{PRONOUN/app1/subject/CAP} {VERB/app1/decide/decides} not to investigate.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1414,7 +1414,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "While on patrol, r_c notices some suspicious pawprints in the wet sand on the beach.",
-        "decline_text": "{PRONOUN/r_c/subject} {VERB/r_c/decide/decides} not to investigate.",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} not to investigate.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -1537,7 +1537,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "While on patrol, r_c notices some suspicious pawprints in the wet sand on the beach.",
-        "decline_text": "{PRONOUN/r_c/subject} {VERB/r_c/decide/decides} not to investigate.",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} not to investigate.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -1662,7 +1662,7 @@
         },
         "weight": 20,
         "intro_text": "While on patrol, app1 notices some suspicious pawprints in the wet sand on the beach.",
-        "decline_text": "{PRONOUN/app1/subject} {VERB/app1/decide/decides} not to investigate.",
+        "decline_text": "{PRONOUN/app1/subject/CAP} {VERB/app1/decide/decides} not to investigate.",
         "chance_of_success": 30,
         "success_outcomes": [
             {

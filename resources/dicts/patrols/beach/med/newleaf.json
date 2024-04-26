@@ -89,7 +89,7 @@
         "season": ["newleaf"],
         "types": ["herb_gathering"],
         "tags": ["romantic"],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_flower_date_med_med",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -487,7 +487,7 @@
         "season": ["newleaf"],
         "types": ["herb_gathering"],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_gatheringblackberry_newleaf2",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -1418,7 +1418,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "With the snows of leaf-bare nearly vanished, newleaf winning its place in the seasonal cycle, p_l heads out to gather daisy leaves. {PRONOUN/p_l/subject/CAP} {VERB/p_l/assemble/assembles} a little group of warriors to help {PRONOUN/p_l/subject} carry the herbs.",
+        "intro_text": "With the snows of leaf-bare nearly vanished, newleaf winning its place in the seasonal cycle, p_l heads out to gather daisy leaves. {PRONOUN/p_l/subject/CAP} {VERB/p_l/assemble/assembles} a little group of warriors to help {PRONOUN/p_l/object} carry the herbs.",
         "decline_text": "{PRONOUN/p_l/subject/CAP}'re stopped before {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -3993,7 +3993,7 @@
         "season": ["newleaf"],
         "types": ["herb_gathering"],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_gatheringoakleaves_greenleaf1",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -4040,7 +4040,7 @@
         "season": ["newleaf"],
         "types": ["herb_gathering"],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_gatheringoakleaves_greenleaf2",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -4154,7 +4154,7 @@
         "season": ["newleaf"],
         "types": ["herb_gathering"],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_gatheringoakleaves_greenleaf2",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
