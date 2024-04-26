@@ -14,6 +14,7 @@ import pygame_gui
 # import asyncio
 import pygbag.aio as asyncio
 import platform
+import traceback
 
 import pygame_gui.core.text
 import pygame_gui.core.text.text_line_chunk
@@ -38,5 +39,5 @@ from main import main
 try:
     asyncio.run(main())
 except Exception as e:
-    print(e)
+    traceback.print_exc()
     quit()
