@@ -33,7 +33,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": -5
                     }
                 ]
@@ -54,7 +54,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": -5
                     }
                 ]
@@ -76,7 +76,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": -5
                     }
                 ]
@@ -99,7 +99,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": 5
                     }
                 ]
