@@ -11,7 +11,8 @@ random.seed(time.time())
 import i18n
 import pygame
 import pygame_gui
-import asyncio
+# import asyncio
+import pygbag.aio as asyncio
 import platform
 
 import pygame_gui.core.text

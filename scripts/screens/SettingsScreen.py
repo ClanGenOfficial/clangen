@@ -20,7 +20,9 @@ from .Screens import Screens
 from ..housekeeping.datadir import get_data_dir
 from ..housekeeping.version import get_version_info
 from scripts.ui.elements import UITextBox
-from scripts.buttons.buttons import UIImageButton
+from scripts.buttons.buttons import UIImageButton, UIButton
+from scripts.game_structure.save_exporter import import_clan
+import scripts.web as web
 
 
 logger = logging.getLogger(__name__)
@@ -117,6 +119,14 @@ class SettingsScreen(Screens):
                 return
             elif self.language_button == event.ui_element:
                 self.open_lang_settings()
+            elif self.import_clan_button == event.ui_element:
+                self.import_clan_button.text = "Importing..."
+                self.import_clan_button.disable()
+                import_clan()
+                self.import_clan_button.text = "Import Clan"
+                self.import_clan_button.enable()
+                return
+
             if self.sub_menu in ['general', 'relation', 'language']:
                 self.handle_checkbox_events(event)
 
@@ -223,6 +233,15 @@ class SettingsScreen(Screens):
                 "When you reopen, the game"
                 " will be fullscreen. ")
 
+        self.import_clan_button = UIButton(
+            scale(pygame.Rect((50, 1210 + (80 if web.is_web else 0)), (356, 60))),
+            "",
+            object_id="#import_clan_button",
+            manager=MANAGER,
+            tool_tip_text="Imports a clan from a zip file. "
+            "Note: This will close the game."
+        )
+
         self.open_data_directory_button = UIImageButton(
             scale(pygame.Rect((50, 1290), (356, 60))),
             "",
@@ -232,7 +251,7 @@ class SettingsScreen(Screens):
                           "This is where save files "
                           "and logs are stored.")
 
-        if get_version_info().is_sandboxed:
+        if get_version_info().is_sandboxed or web.is_web:
             self.open_data_directory_button.hide()
 
         self.update_save_button()
@@ -262,20 +281,10 @@ class SettingsScreen(Screens):
         TODO: DOCS
         """
         self.clear_sub_settings_buttons_and_text()
-        self.general_settings_button.kill()
-        del self.general_settings_button
-        self.info_button.kill()
-        del self.info_button
-        self.language_button.kill()
-        del self.language_button
-        self.save_settings_button.kill()
-        del self.save_settings_button
-        self.main_menu_button.kill()
-        del self.main_menu_button
-        self.fullscreen_toggle.kill()
-        del self.fullscreen_toggle
-        self.open_data_directory_button.kill()
-        del self.open_data_directory_button
+        # replaces the list of "{button}.kill()" and "del {button}" with a loop. this shouldn't break ever hopefully
+        for button in [i for i in self.__dict__ if i.endswith("_button") or isinstance(self.__dict__[i], (UIButton, UIImageButton))]:
+            self.__dict__[button].kill()
+            del self.__dict__[button]
 
         game.settings = self.settings_at_open
 

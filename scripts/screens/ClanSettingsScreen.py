@@ -19,7 +19,9 @@ from .Screens import Screens
 from ..housekeeping.datadir import get_data_dir
 from ..housekeeping.version import get_version_info
 from scripts.ui.elements import UITextBox
-from scripts.buttons.buttons import UIImageButton
+from scripts.buttons.buttons import UIImageButton, UIButton
+from scripts.game_structure.save_exporter import export_clan
+import scripts.web as web
 
 
 logger = logging.getLogger(__name__)
@@ -88,6 +90,13 @@ class ClanSettingsScreen(Screens):
             elif self.clan_stats_button == event.ui_element:
                 self.open_clan_stats()
                 return
+            elif self.export_clan_button == event.ui_element:
+                self.export_clan_button.text = "Exporting..."
+                self.export_clan_button.disable()
+                export_clan()
+                self.export_clan_button.text = "Export Clan"
+                self.export_clan_button.enable()
+                return
             self.handle_checkbox_events(event)
             self.menu_button_pressed(event)
 
@@ -152,17 +161,25 @@ class ClanSettingsScreen(Screens):
             object_id="#clan_stats_button",
             manager=MANAGER)
 
-        
+        self.export_clan_button = UIButton(
+            scale(pygame.Rect((50, 1210 + (80 if web.is_web else 0)), (356, 60))),
+            "",
+            object_id="#export_clan_button",
+            manager=MANAGER,
+            tool_tip_text="Exports your clan to a file. "
+                          "This file can be imported into another game. "
+        )
+
         self.open_data_directory_button = UIImageButton(
             scale(pygame.Rect((50, 1290), (356, 60))),
             "",
             object_id="#open_data_directory_button",
             manager=MANAGER,
             tool_tip_text="Opens the data directory. "
-                          "This is where save files "
-                          "and logs are stored.")
+                        "This is where save files "
+                        "and logs are stored.")
 
-        if get_version_info().is_sandboxed:
+        if get_version_info().is_sandboxed or web.is_web:   
             self.open_data_directory_button.hide()
 
         self.sub_menu = 'general'
@@ -174,16 +191,10 @@ class ClanSettingsScreen(Screens):
         TODO: DOCS
         """
         self.clear_sub_settings_buttons_and_text()
-        self.general_settings_button.kill()
-        del self.general_settings_button
-        self.relation_settings_button.kill()
-        del self.relation_settings_button
-        self.role_settings_button.kill()
-        del self.role_settings_button
-        self.open_data_directory_button.kill()
-        del self.open_data_directory_button
-        self.clan_stats_button.kill()
-        del self.clan_stats_button
+        # replaces the list of "{button}.kill()" and "del {button}" with a loop. this shouldn't break ever hopefully
+        for button in [i for i in self.__dict__ if i.endswith("_button") or isinstance(self.__dict__[i], (UIButton, UIImageButton))]:
+            self.__dict__[button].kill()
+            del self.__dict__[button]
         self.hide_menu_buttons()
 
     def open_general_settings(self):
