@@ -32,7 +32,7 @@ jobs:
         echo "release_channel=web" >> version.ini
         echo "upstream=${{ github.repository }}" >> version.ini
     - name: Build
-      run: python3 -m pygbag --ume_block 0 --template web.tmpl --build $GITHUB_WORKSPACE/webMain.py
+      run: python3 -m pygbag --ume_block 0 --template static/index.html --build $GITHUB_WORKSPACE/webMain.py
     - name: Setup Pages
       uses: actions/configure-pages@v3
     - name: Upload artifact
