@@ -7,6 +7,7 @@ from os import listdir
 from typing import Union, Optional, Dict
 
 import scripts.game_structure.image_button
+from scripts.game_structure.game_essentials import game
 from scripts.game_structure.game_essentials import MANAGER
 from scripts.buttons.color_palette import Palette
 
@@ -18,7 +19,7 @@ except:
 pygame.font.init()
 DEBUG = True
 
-class _Language():
+class _Language:
     """Class for rendering button text in other languages, from languages/buttons/(lang).json"""
     LANGUAGE: str = "en-us"
     supported_languages: list[str] = [x.removesuffix('.json').lstrip("buttons.") for x in listdir('languages/buttons/')]
@@ -62,10 +63,9 @@ class _Language():
         i18n.set('locale', language)
         ButtonCache.clear_cache()
         # bodged together reload script
-        from scripts.game_structure.game_essentials import game
         game.all_screens[game.current_screen].exit_screen()
         game.all_screens[game.current_screen].screen_switches()
-    
+
     @staticmethod
     def get_language() -> str:
         """Returns the currently set language
@@ -96,7 +96,7 @@ class _Language():
         search = _Language.dict_global.get(object_id)
         if search is not None:
             return search
-        
+
         if "checkbox" in object_id:
             return '' # silently return just so it doesn't yell at you, checkbox is supposed to be blank :)
         if _Language.LANGUAGE == 'en-us':
@@ -150,7 +150,7 @@ class _Style:
                 return style
         return [True, True, False, False]
 
-class ButtonCache():
+class ButtonCache:
     """Custom class that allows for caching of pygame.Surface objects, and their attributes"""
     _storage = []
     @staticmethod
@@ -212,10 +212,101 @@ class ButtonCache():
         ButtonCache._storage.append(store)
         del store
         return surface
-    
+
     @staticmethod
     def clear_cache():
         ButtonCache._storage = []
+
+class Constructor:
+    @staticmethod
+    def corner(palette, shadow_corner1: bool, shadow_corner2: bool, rounded: bool = True):
+        surface = pygame.Surface((10, 8), pygame.SRCALPHA)
+        surface = surface.convert_alpha()
+        if rounded:
+            # outline
+            pygame.draw.rect(surface, palette[0], (6, 2, 4, 2))
+            pygame.draw.rect(surface, palette[0], (4, 4, 2, 2))
+            pygame.draw.rect(surface, palette[0], (2, 6, 2, 2))
+            # inline
+            pygame.draw.rect(surface, palette[1], (6, 4, 4, 2))
+            pygame.draw.rect(surface, palette[1], (4, 6, 2, 2))
+            # fill
+            if shadow_corner1 and shadow_corner2:
+                pygame.draw.rect(surface, palette[3], (6, 6, 4, 2))
+            else:
+                pygame.draw.rect(surface, palette[2], (6, 6, 4, 2))
+            return surface
+
+        # outline
+        pygame.draw.rect(surface, palette[0], (0, 0, 10, 2))
+        pygame.draw.rect(surface, palette[0], (0, 0, 2, 8))
+        # inline
+        pygame.draw.rect(surface, palette[1], (2, 2, 8, 2))
+        pygame.draw.rect(surface, palette[1], (2, 2, 2, 6))
+        # fill
+        pygame.draw.rect(surface, palette[2], (4, 4, 6, 2))
+        if shadow_corner1:
+            pygame.draw.rect(surface, palette[3], (4, 4, 6, 2))
+        if shadow_corner2:
+            pygame.draw.rect(surface, palette[3], (4, 4, 2, 4))
+        return surface
+
+    @staticmethod
+    def edge(palette, length: int, rotate: bool = False, flip: bool = False, shadow = False):
+        odd = False
+        if round(length / 2) != int(length / 2):
+            if not rotate:
+                length += 1
+                odd = True
+        if length <= 0:
+            length = 0
+        surface = pygame.Surface((length, 6), pygame.SRCALPHA)
+        surface = surface.convert_alpha()
+        # outline
+        pygame.draw.rect(surface, palette[0], (0, 0, length, 2))
+        # inline
+        pygame.draw.rect(surface, palette[1], (0, 2, length if not odd else length-1, 2))
+        # fill
+        if shadow:
+            pygame.draw.rect(surface, palette[3], (0, 4, length if not odd else length-1, 2))
+        else:
+            pygame.draw.rect(surface, palette[2], (0, 4, length if not odd else length-1, 2))
+
+        if rotate and flip:
+            surface = pygame.transform.rotate(surface, 90)
+            surface = pygame.transform.flip(surface, True, False)
+        elif rotate:
+            surface = pygame.transform.rotate(surface, 90)
+        elif flip:
+            surface = pygame.transform.flip(surface, False, True)
+
+        return surface
+
+class BuildCache:
+    _edges = {}
+    _corners = {}
+    @staticmethod
+    def load_edge(palette: list, length: int, rotate: bool = False, flip: bool = False, shadow = False):
+        if BuildCache._edges.get(hash((tuple(palette), length, rotate, flip, shadow))):
+            return BuildCache._edges[hash((tuple(palette), length, rotate, flip, shadow))]
+
+        edge = Constructor.edge(palette, length, rotate, flip, shadow)
+        BuildCache._edges[hash((tuple(palette), length, rotate, flip, shadow))] = edge
+        return edge
+
+    @staticmethod
+    def load_corner(palette: list, shadow_corner1: bool, shadow_corner2: bool, rounded: bool = True):
+        if BuildCache._corners.get(hash((tuple(palette), shadow_corner1, shadow_corner2, rounded))):
+            return BuildCache._corners[hash((tuple(palette), shadow_corner1, shadow_corner2, rounded))]
+
+        corner = Constructor.corner(palette, shadow_corner1, shadow_corner2, rounded)
+        BuildCache._corners[hash((tuple(palette), shadow_corner1, shadow_corner2, rounded))] = corner
+        return corner
+
+    @staticmethod
+    def clear_cache():
+        BuildCache._edges = {}
+        BuildCache._corners = {}
 
 class UIButton(scripts.game_structure.image_button.UISpriteButton):
     def __init__(self, relative_rect, text = "", visible=1, starting_height=1, object_id=None,
@@ -237,11 +328,11 @@ class UIButton(scripts.game_structure.image_button.UISpriteButton):
             sprite = cache['surface']
         else:
             sprite = ButtonCache.store_button(
-                        Button.new(size=relative_rect.size, 
-                                   text=self.text, 
-                                   rounded_corners=self.rounded_corners, 
-                                   hanging=self.hanging, 
-                                   shadows=self.shadows, 
+                        Button.new(size=relative_rect.size,
+                                   text=self.text,
+                                   rounded_corners=self.rounded_corners,
+                                   hanging=self.hanging,
+                                   shadows=self.shadows,
                                    object_id=object_id),
                         object_id, hover=False, unavailable=False)
         self.image = pyggui_UIImage(relative_rect,
@@ -276,16 +367,18 @@ class UIButton(scripts.game_structure.image_button.UISpriteButton):
     def rebuild(self):
         self.image.rebuild()
         self.button.rebuild()
-    
+
     def __hash__(self):
         return hash(self.id)
 
     def __eq__(self, other):
-        if isinstance(other, UIButton):
-            return self.id == other.id
-        elif self.button == other:
-            return True
-        return False
+        if not "id" in other.__dict__:
+            return False
+        return self.id == other.id
+    
+    @property
+    def is_enabled(self):
+        return self.button.is_enabled
 
 class CatButton(pygame_gui.elements.UIButton):
     def __init__(self,
@@ -383,14 +476,14 @@ class CatButton(pygame_gui.elements.UIButton):
         self.internal.image.set_image(pygame.transform.scale(sprite, self.relative_rect.size))
         super().on_unhovered()
     def rebuild(self):
-        for key in ["normal_bg", "hovered_bg", "disabled_bg", "selected_bg", "active_bg", 
+        for key in ["normal_bg", "hovered_bg", "disabled_bg", "selected_bg", "active_bg",
                     "normal_text", "hovered_text", "selected_text", "disabled_text", 
                     "link_text", "link_hover", "link_selected", "text_shadow", 
                     "normal_border", "hovered_border", "disabled_border", "active_border", "selected_border", 
                     "normal_text_shadow"]:
             self.colours[key] = pygame.Color(0, 0, 0, 0) # yes i know this solution is hacky give me a BREAK
         super().rebuild()
-    
+
     def __hash__(self):
         return hash(self.id)
 
@@ -430,14 +523,14 @@ class _Symbol:
     @staticmethod
     def __init__(web: bool = False) -> None:
         """Populates _Symbol.custom with the appropriate custom symbols"""
-        if web: 
+        if web:
             load = _Symbol._web_load
         else:
             load = _Symbol.load
 
         for k,v in _Symbol.symbols.items():
             _Symbol.custom[k] = load(v)
-        
+
         for k,v in _Symbol.flipped_symbols.items():
             _Symbol.custom[k] = pygame.transform.flip(load(v), True, False)
 
@@ -487,7 +580,7 @@ class RectButton:
         self.size = size
         if hanging:
             self.size[1] -= 6
-        
+
         self.surface = pygame.Surface(self.size, pygame.SRCALPHA)
         self.surface = self.surface.convert_alpha()
         self.hover = hover
@@ -496,78 +589,16 @@ class RectButton:
         self.shadow = shadows
         self.hanging = hanging
         self.symbol = False
-        
+
         if unavailable:
             self.palette = Palette.unavailable
         elif hover:
             self.palette = Palette.hover
         else:
             self.palette = Palette.palette
-        
+
         self.text = self._render_text(text)
         self._build()
-    
-    def _corner(self, shadow_corner1: bool, shadow_corner2: bool, rounded: bool = True):
-        surface = pygame.Surface((10, 8), pygame.SRCALPHA)
-        surface = surface.convert_alpha()
-        if rounded:
-            # outline
-            pygame.draw.rect(surface, self.palette[0], (6, 2, 4, 2))
-            pygame.draw.rect(surface, self.palette[0], (4, 4, 2, 2))
-            pygame.draw.rect(surface, self.palette[0], (2, 6, 2, 2))
-            # inline
-            pygame.draw.rect(surface, self.palette[1], (6, 4, 4, 2))
-            pygame.draw.rect(surface, self.palette[1], (4, 6, 2, 2))
-            # fill
-            if shadow_corner1 and shadow_corner2:
-                pygame.draw.rect(surface, self.palette[3], (6, 6, 4, 2))
-            else:
-                pygame.draw.rect(surface, self.palette[2], (6, 6, 4, 2))
-            return surface
-
-        # outline
-        pygame.draw.rect(surface, self.palette[0], (0, 0, 10, 2))
-        pygame.draw.rect(surface, self.palette[0], (0, 0, 2, 8))
-        # inline
-        pygame.draw.rect(surface, self.palette[1], (2, 2, 8, 2))
-        pygame.draw.rect(surface, self.palette[1], (2, 2, 2, 6))
-        # fill
-        pygame.draw.rect(surface, self.palette[2], (4, 4, 6, 2))
-        if shadow_corner1:
-            pygame.draw.rect(surface, self.palette[3], (4, 4, 6, 2))
-        if shadow_corner2:
-            pygame.draw.rect(surface, self.palette[3], (4, 4, 2, 4))
-        return surface
-    
-    def _edge(self, length: int, rotate: bool = False, flip: bool = False, shadow = False):
-        odd = False
-        if round(length / 2) != int(length / 2):
-            if not rotate:
-                length += 1
-                odd = True
-        if length <= 0:
-            length = 0
-        surface = pygame.Surface((length, 6), pygame.SRCALPHA)
-        surface = surface.convert_alpha()
-        # outline
-        pygame.draw.rect(surface, self.palette[0], (0, 0, length, 2))
-        # inline
-        pygame.draw.rect(surface, self.palette[1], (0, 2, length if not odd else length-1, 2))
-        # fill
-        if shadow:
-            pygame.draw.rect(surface, self.palette[3], (0, 4, length if not odd else length-1, 2))
-        else:
-            pygame.draw.rect(surface, self.palette[2], (0, 4, length if not odd else length-1, 2))
-
-        if rotate and flip:
-            surface = pygame.transform.rotate(surface, 90)
-            surface = pygame.transform.flip(surface, True, False)
-        elif rotate:
-            surface = pygame.transform.rotate(surface, 90)
-        elif flip:
-            surface = pygame.transform.flip(surface, False, True)
-
-        return surface
 
     def _render_text(self, text) -> pygame.Surface:
         if _Symbol.custom.get(text):
@@ -634,16 +665,16 @@ class RectButton:
         # fill [5]
         pygame.draw.rect(self.surface, self.palette[2], (4, 4, self.size[0]-8, self.size[1]-8))
         # corners [1, 3, 7, 9]
-        self.surface.blit(self._corner(self.shadow[0], self.shadow[1], rounded=self.rounded_corners[0]), (0, 0))
-        self.surface.blit(pygame.transform.flip(self._corner(self.shadow[0], self.shadow[2], rounded=self.rounded_corners[1]), True, False), (self.size[0]-10, 0))
-        self.surface.blit(pygame.transform.flip(self._corner(self.shadow[3], self.shadow[1], rounded=self.rounded_corners[2]), False, True), (0, self.size[1] - 8))
-        self.surface.blit(pygame.transform.flip(self._corner(self.shadow[3], self.shadow[2], rounded=self.rounded_corners[3]), True, True), (self.size[0]-10, self.size[1] - 8))
+        self.surface.blit(BuildCache.load_corner(self.palette, self.shadow[0], self.shadow[1], rounded=self.rounded_corners[0]), (0, 0))
+        self.surface.blit(pygame.transform.flip(BuildCache.load_corner(self.palette, self.shadow[0], self.shadow[2], rounded=self.rounded_corners[1]), True, False), (self.size[0]-10, 0))
+        self.surface.blit(pygame.transform.flip(BuildCache.load_corner(self.palette, self.shadow[3], self.shadow[1], rounded=self.rounded_corners[2]), False, True), (0, self.size[1] - 8))
+        self.surface.blit(pygame.transform.flip(BuildCache.load_corner(self.palette, self.shadow[3], self.shadow[2], rounded=self.rounded_corners[3]), True, True), (self.size[0]-10, self.size[1] - 8))
 
         # edges [2, 4, 6, 8]
-        self.surface.blit(self._edge(self.size[0]-20, shadow=self.shadow[0]), (10, 0))
-        self.surface.blit(self._edge(self.size[1]-16, rotate=True, shadow=self.shadow[1]), (0, 8))
-        self.surface.blit(self._edge(self.size[1]-16, rotate=True, flip=True, shadow=self.shadow[2]), (self.size[0]-6, 8))
-        self.surface.blit(self._edge(self.size[0]-20, flip=True, shadow=self.shadow[3]), (10, self.size[1]-6))
+        self.surface.blit(BuildCache.load_edge(self.palette, self.size[0]-20, shadow=self.shadow[0]), (10, 0))
+        self.surface.blit(BuildCache.load_edge(self.palette, self.size[1]-16, rotate=True, shadow=self.shadow[1]), (0, 8))
+        self.surface.blit(BuildCache.load_edge(self.palette, self.size[1]-16, rotate=True, flip=True, shadow=self.shadow[2]), (self.size[0]-6, 8))
+        self.surface.blit(BuildCache.load_edge(self.palette, self.size[0]-20, flip=True, shadow=self.shadow[3]), (10, self.size[1]-6))
 
         # text & hang
         if self.hanging:
@@ -674,7 +705,6 @@ class RectButton:
         surface.blit(connector, (12, 0))
         surface.blit(connector, (self.size[0]-22, 0))
         self.surface = surface
-
 
 class SquareButton(RectButton):
     def _corner(self, shadow_corner1: bool, shadow_corner2: bool, rounded: bool = True):
@@ -745,7 +775,7 @@ class Button:
             button = RectButton(size, text, hover, unavailable, rounded_corners, shadows, hanging)
         return button.surface
 
-class CustomButton():
+class CustomButton:
     @staticmethod
     def handle(object_id: str,
                size: tuple,
@@ -762,7 +792,7 @@ class CustomButton():
         raise ValueError("object_id not recognized")
 
     @staticmethod
-    def checkbox(checked: bool = False, 
+    def checkbox(checked: bool = False,
                  hover: bool = False,
                  unavailable: bool = False) -> pygame.Surface:
         surface = pygame.Surface((34, 34), pygame.SRCALPHA).convert_alpha()
