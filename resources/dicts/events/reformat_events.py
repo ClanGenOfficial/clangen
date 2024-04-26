@@ -521,15 +521,15 @@ def reformat(path):
         dict_text = ujson.dumps(new_format, indent=4)
         dict_text = dict_text.replace("\/", "/")  # ujson tries to escape "/", but doesn't end up doing a good job.
 
-        if "misc" in path:
+        if "injury" in path:
             if "plains" in path:
-                misc_plains.append(dict_text)
+                injury_plains.append(dict_text)
 
     string = ""
-    for event in misc_plains:
+    for event in injury_plains:
         string = string + event
 
-    with open("misc_events/plains.json", "w") as write_file:
+    with open("injury/plains.json", "w") as write_file:
         write_file.write(string)
 
 
