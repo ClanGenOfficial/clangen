@@ -6,7 +6,9 @@ from .Screens import Screens
 from scripts.cat.cats import Cat
 from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
-from scripts.ui.elements.buttons import UIImageButton, UISpriteButton
+from scripts.buttons.buttons import UIImageButton
+from scripts.buttons.buttons import UISpriteButton
+
 from scripts.ui.elements import UITextBox
 
 class ListScreen(Screens):

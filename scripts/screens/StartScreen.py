@@ -33,7 +33,7 @@ from scripts.utility import scale, quit  # pylint: disable=redefined-builtin
 from .Screens import Screens
 from ..housekeeping.datadir import get_data_dir, get_cache_dir
 from scripts.ui.elements import UITextBox
-from scripts.ui.elements.buttons import UIImageButton
+from scripts.buttons.buttons import UIImageButton
 
 if not is_web:
     from ..housekeeping.update import has_update, UpdateChannel, get_latest_version_number

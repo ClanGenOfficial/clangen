@@ -7,10 +7,9 @@ from os import listdir
 from typing import Union, Optional, Dict
 
 
+from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import MANAGER, game
 from scripts.buttons.color_palette import Palette
-from scripts.ui.elements.buttons import UISpriteButton
-
 try:
     import ujson
 except:
@@ -308,6 +307,71 @@ class BuildCache:
         BuildCache._edges = {}
         BuildCache._corners = {}
 
+theme = ujson.load(open("resources/theme/image_buttons.json"))
+def get_image(type: str, combined_element_ids: list[str]):
+    combined_element_ids = [id for id in combined_element_ids if '#' in id][0]
+    if theme.get(combined_element_ids) is None or theme[combined_element_ids]["images"].get(type) is None:
+        raise LookupError
+    return pygame.image.load(theme[combined_element_ids]["images"][type]["path"]).convert_alpha()
+
+
+
+class UISpriteButton():
+    """This is for use with the cat sprites. It wraps together a UIImage and Transparent Button.
+        For most functions, this can be used exactly like other pygame_gui elements. """
+
+    def __init__(self, relative_rect, sprite, cat_id=None, visible=1, cat_object=None, starting_height=1,
+                 manager=None, container=None, tool_tip_text=None):
+
+        # We have to scale the image before putting it into the image object. Otherwise, the method of upscaling that UIImage uses will make the pixel art fuzzy
+        self.image = pygame_gui.elements.UIImage(relative_rect, pygame.transform.scale(sprite, relative_rect.size),
+                                                 visible=visible, manager=manager, container=container,
+                                                 )
+        self.image.disable()
+        # The transparent button. This a subclass that UIButton that also hold the cat_id.
+        self.button = OldCatButton(relative_rect, visible=visible, cat_id=cat_id, cat_object=cat_object,
+                                starting_height=starting_height, manager=manager, tool_tip_text=tool_tip_text,
+                                container=container)
+
+    def return_cat_id(self):
+        return self.button.return_cat_id()
+
+    def return_cat_object(self):
+        return self.button.return_cat_object()
+
+    def enable(self):
+        self.button.enable()
+
+    def disable(self):
+        self.button.disable()
+
+    def hide(self):
+        self.image.hide()
+        self.button.hide()
+
+    def show(self):
+        self.image.show()
+        self.button.show()
+
+    def kill(self):
+        self.button.kill()
+        self.image.kill()
+        del self
+
+    def set_image(self, new_image):
+        self.image.set_image(new_image)
+
+    '''This is to simplify event handling. Rather that writing 
+            'if event.ui_element = cat_sprite_object.button'
+            you can treat is as any other single pygame UI element and write:
+            'if event.ui_element = cat_sprite_object. '''
+
+    def __eq__(self, __o: object) -> bool:
+        if self.button == __o:
+            return True
+        else:
+            return False
+
 class UIButton(UISpriteButton):
     def __init__(self, relative_rect, text = "", visible=1, starting_height=1, object_id=None,
                  manager=MANAGER, container=None, tool_tip_text=None):
@@ -379,16 +443,123 @@ class UIButton(UISpriteButton):
     @property
     def is_enabled(self):
         return self.button.is_enabled
+    
+class UIImageButton(pygame_gui.elements.UIButton):
+    """Subclass of pygame_gui's button class. This allows for auto-scaling of the
+        button image."""
+
+    def _set_any_images_from_theme(self):
+        changed = False
+        normal_image = None
+        try:
+            normal_image = get_image('normal_image', self.combined_element_ids)
+            normal_image = pygame.transform.scale(normal_image, self.relative_rect.size)  # auto-rescale the image
+            normal_image = normal_image.premul_alpha()
+        except LookupError:
+            normal_image = None
+        finally:
+            if normal_image != self.normal_image:
+                self.ui_theme.load_theme("resources/buttons.json")
+                self.normal_image = normal_image
+                self.hovered_image = normal_image
+                self.selected_image = normal_image
+                self.disabled_image = normal_image
+                changed = True
+
+        hovered_image = None
+        try:
+            hovered_image = get_image('hovered_image', self.combined_element_ids)
+            hovered_image = pygame.transform.scale(hovered_image, self.relative_rect.size)  # auto-rescale the image
+            hovered_image = hovered_image.premul_alpha()
+        except LookupError:
+            hovered_image = self.normal_image
+        finally:
+            if hovered_image != self.hovered_image:
+                self.hovered_image = hovered_image
+                changed = True
+
+        selected_image = None
+        try:
+            selected_image = get_image('selected_image', self.combined_element_ids)
+            selected_image = pygame.transform.scale(selected_image, self.relative_rect.size)  # auto-rescale the image
+            selected_image = selected_image.premul_alpha()
+        except LookupError:
+            selected_image = self.normal_image
+        finally:
+            if selected_image != self.selected_image:
+                self.selected_image = selected_image
+                changed = True
+
+        disabled_image = None
+        try:
+            disabled_image = get_image('disabled_image', self.combined_element_ids)
+            disabled_image = pygame.transform.scale(disabled_image, self.relative_rect.size)  # auto-rescale the image
+            disabled_image = disabled_image.premul_alpha()
+        except LookupError:
+            disabled_image = self.normal_image
+        finally:
+            if disabled_image != self.disabled_image:
+                self.disabled_image = disabled_image
+                changed = True
+
+        return changed
+
+
+
+class IDImageButton(UIImageButton):
+    """Class to handle the "involved cats" button on the events page. It stores the IDs of the cat's involved."""
+
+    def __init__(self,
+                 relative_rect,
+                 text="",
+                 ids=None,
+                 object_id=None,
+                 container=None,
+                 manager=None,
+                 layer_starting_height=1):
+
+        if ids:
+            self.ids = ids
+        else:
+            self.ids = None
+
+        super().__init__(relative_rect, text, object_id=object_id, container=container,
+                         starting_height=layer_starting_height, manager=manager)
+        # This button will auto-disable if no ids are entered.
+        if not self.ids:
+            self.disable()
+
+class OldCatButton(pygame_gui.elements.UIButton):
+    """Basic UIButton subclass for at sprite buttons. It stores the cat ID. """
+
+    def __init__(self, relative_rect, cat_id=None, visible=True, cat_object=None, starting_height=1, manager=None, tool_tip_text=None, container=None):
+        self.cat_id = cat_id
+        self.cat_object = cat_object
+        super().__init__(relative_rect, "", object_id="#cat_button", visible=visible,
+                         starting_height=starting_height, manager=manager, tool_tip_text=tool_tip_text, container=container)
+
+    def return_cat_id(self):
+        return self.cat_id
+
+    def return_cat_object(self):
+        return self.cat_object
+
+    def set_id(self, id):
+        self.cat_id = id
 
 class CatButton(pygame_gui.elements.UIButton):
     def __init__(self,
                  relative_rect,
+                 cat_id: str = None,
+                 cat_object: Cat = None,
                  visible=True,
                  starting_height=1,
                  manager=MANAGER,
                  tool_tip_text=None,
                  container=None,
                  internal=None) -> None:
+        self.cat_id = cat_id
+        self.cat_object = cat_object
         self.id = internal.id
         self.rounded_corners = internal.rounded_corners
         self.hanging = internal.hanging
@@ -402,6 +573,15 @@ class CatButton(pygame_gui.elements.UIButton):
                          manager=manager,
                          tool_tip_text=tool_tip_text,
                          container=container)
+    def return_cat_id(self):
+        return self.cat_id
+
+    def return_cat_object(self):
+        return self.cat_object
+
+    def set_id(self, id):
+        self.cat_id = id
+        
     def on_hovered(self):
         self.hover = True
         cache = ButtonCache.load_button(
@@ -476,11 +656,11 @@ class CatButton(pygame_gui.elements.UIButton):
         self.internal.image.set_image(pygame.transform.scale(sprite, self.relative_rect.size))
         super().on_unhovered()
     def rebuild(self):
-        for key in ["normal_bg", "hovered_bg", "disabled_bg", "selected_bg", "active_bg",
-                    "normal_text", "hovered_text", "selected_text", "disabled_text", 
-                    "link_text", "link_hover", "link_selected", "text_shadow", 
-                    "normal_border", "hovered_border", "disabled_border", "active_border", "selected_border", 
-                    "normal_text_shadow"]:
+        for key in ['normal_bg', 'hovered_bg', 'disabled_bg', 'selected_bg', 'active_bg',  
+                    'normal_text', 'hovered_text', 'disabled_text', 'selected_text','active_text', 
+                    'normal_text_shadow', 'hovered_text_shadow', 'disabled_text_shadow', 
+                    'selected_text_shadow', 'active_text_shadow', 'normal_border', 'hovered_border', 
+                    'disabled_border', 'selected_border', 'active_border', 'link_text', 'link_hover', 'link_selected', 'text_shadow']:
             self.colours[key] = pygame.Color(0, 0, 0, 0) # yes i know this solution is hacky give me a BREAK
         super().rebuild()
 
@@ -830,3 +1010,4 @@ class pyggui_UIImage(pygame_gui.elements.UIImage):
         self.original_image = None
 
         super().set_image(image_surface, image_is_alpha_premultiplied)
+        

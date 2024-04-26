@@ -9,7 +9,8 @@ from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.game_structure.propagating_thread import PropagatingThread
 from scripts.ui.elements import UITextBox
-from scripts.ui.elements.buttons import UIImageButton, UISpriteButton
+from scripts.buttons.buttons import UIImageButton
+from scripts.buttons.buttons import UISpriteButton
 
 
 class PatrolScreen(Screens):

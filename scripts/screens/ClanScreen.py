@@ -11,7 +11,9 @@ from scripts.utility import scale
 from scripts.ui import image_cache
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y
 from scripts.game_structure.windows import SaveError
-from scripts.ui.elements.buttons import UIImageButton, UISpriteButton
+from scripts.buttons.buttons import UIImageButton
+from scripts.buttons.buttons import UISpriteButton
+
 
 
 class ClanScreen(Screens):

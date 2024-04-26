@@ -13,7 +13,9 @@ from scripts.ui import image_cache
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from scripts.patrol.patrol import Patrol
 from scripts.ui.elements import UITextBox
-from scripts.ui.elements.buttons import UIImageButton, UISpriteButton
+from scripts.buttons.buttons import UIImageButton
+from scripts.buttons.buttons import UISpriteButton
+
 
 class MakeClanScreen(Screens):
     # UI images

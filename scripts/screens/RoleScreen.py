@@ -13,7 +13,7 @@ from scripts.ui import image_cache
 import pygame_gui
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
 from scripts.ui.elements import UITextBox, UITextBoxTweaked
-from scripts.ui.elements.buttons import UIImageButton
+from scripts.buttons.buttons import UIImageButton
 
 
 class RoleScreen(Screens):

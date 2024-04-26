@@ -11,7 +11,7 @@ from scripts.cat.cats import Cat
 import pygame_gui
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.ui.elements import UITextBox, UITextBoxTweaked
-from scripts.ui.elements.buttons import UIImageButton
+from scripts.buttons.buttons import UIImageButton
 
 
 class SpriteInspectScreen(Screens):

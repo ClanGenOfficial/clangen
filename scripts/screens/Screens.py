@@ -9,7 +9,7 @@ from scripts.game_structure.windows import SaveCheck, EventLoading
 from scripts.game_structure.propagating_thread import PropagatingThread
 from threading import current_thread
 from scripts.ui.elements import UITextBox
-from scripts.ui.elements.buttons import UIImageButton
+from scripts.buttons.buttons import UIImageButton
 from scripts.web import is_web
 
 

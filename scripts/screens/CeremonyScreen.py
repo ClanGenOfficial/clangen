@@ -11,7 +11,7 @@ import pygame_gui
 from scripts.game_structure.game_essentials import game, screen_x, MANAGER
 
 from scripts.ui.elements import UITextBox
-from scripts.ui.elements.buttons import UIImageButton
+from scripts.buttons.buttons import UIImageButton
 
 
 class CeremonyScreen(Screens):

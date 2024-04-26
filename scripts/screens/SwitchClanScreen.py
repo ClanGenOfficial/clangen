@@ -21,7 +21,7 @@ from .Screens import Screens
 from ..housekeeping.datadir import get_data_dir
 from ..housekeeping.version import get_version_info
 from scripts.ui.elements import UITextBox
-from scripts.ui.elements.buttons import UIImageButton
+from scripts.buttons.buttons import UIImageButton
 
 logger = logging.getLogger(__name__)
 

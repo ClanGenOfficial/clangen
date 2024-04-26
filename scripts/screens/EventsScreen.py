@@ -11,7 +11,7 @@ from scripts.event_class import Single_Event
 from scripts.game_structure.windows import GameOver
 
 from scripts.ui.elements import UITextBox
-from scripts.ui.elements.buttons import UIImageButton, IDImageButton
+from scripts.buttons.buttons import UIImageButton, IDImageButton
 
 
 class EventsScreen(Screens):

@@ -7,7 +7,9 @@ from scripts.utility import get_text_box_theme, scale, get_med_cats, shorten_tex
 from scripts.game_structure.game_essentials import game, MANAGER
 from ..conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
 from scripts.ui.elements import UITextBoxTweaked, UITextBox
-from scripts.ui.elements.buttons import UIImageButton, UISpriteButton
+from scripts.buttons.buttons import UIImageButton
+from scripts.buttons.buttons import UISpriteButton
+
 
 
 class MedDenScreen(Screens):

@@ -27,7 +27,7 @@ from re import sub
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
 from scripts.ui.elements import UITextBox, UITextBoxTweaked
-from scripts.ui.elements.buttons import UIImageButton
+from scripts.buttons.buttons import UIImageButton
 
 # ---------------------------------------------------------------------------- #
 #             change how accessory info displays on cat profiles               #
