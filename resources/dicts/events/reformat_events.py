@@ -27,24 +27,11 @@ misc_mountainous = []
 misc_plains = []
 
 def reformat(path):
-    if "fresh" in path:
-        return
-    if "nutrition" in path:
-        return
-    if "disasters" in path:
-        return
-    if "ceremony" in path:
-        return
-    if "dislike" in path:
-        return
-    if "jealousy" in path:
-        return
-    if "witness" in path:
-        return
-    if "template" in path:
-        return
-    if "reactions" in path:
-        return
+    not_allowed = ["fresh", "nutrition", "disasters", "ceremony", "dislike", "jealousy", "witness",
+                   "template", "reactions", "beach.json", "forest.json", "new_general.json", "mountainous.json", "plains.json"]
+    for item in not_allowed:
+        if item in path:
+            return
     try:
         with open(path, "r") as read_file:
             events = read_file.read()
@@ -533,60 +520,19 @@ def reformat(path):
 
         dict_text = ujson.dumps(new_format, indent=4)
         dict_text = dict_text.replace("\/", "/")  # ujson tries to escape "/", but doesn't end up doing a good job.
-        print(dict_text)
 
-        with open(path, "w") as write_file:
-            write_file.write(dict_text)
-        break
-
-"""        if "death" in path:
-            if "beach" in path:
-                death_beach.append(dict_text)
-            if "forest" in path:
-                death_forest.append(dict_text)
-            if "general" in path:
-                death_general.append(dict_text)
-            if "mountainous" in path:
-                death_mountainous.append(dict_text)
-            if "plains" in path:
-                death_plains.append(dict_text)
-        if "injury" in path:
-            if "beach" in path:
-                injury_beach.append(dict_text)
-            if "forest" in path:
-                injury_forest.append(dict_text)
-            if "general" in path:
-                injury_general.append(dict_text)
-            if "mountainous" in path:
-                injury_mountainous.append(dict_text)
-            if "plains" in path:
-                injury_plains.append(dict_text)
-        if "new_cat" in path:
-            if "beach" in path:
-                new_beach.append(dict_text)
-            if "forest" in path:
-                new_forest.append(dict_text)
-            if "general" in path:
-                new_general.append(dict_text)
-            if "mountainous" in path:
-                new_mountainous.append(dict_text)
-            if "plains" in path:
-                new_plains.append(dict_text)
         if "misc" in path:
-            if "beach" in path:
-                misc_beach.append(dict_text)
-            if "forest" in path:
-                misc_forest.append(dict_text)
-            if "general" in path:
-                misc_general.append(dict_text)
-            if "mountainous" in path:
-                misc_mountainous.append(dict_text)
             if "plains" in path:
                 misc_plains.append(dict_text)
-    
-                
-    with open("resources/dicts/events/death/beach.json", "w") as write_file:
-        write_file.write(death_beach)"""
+
+    string = ""
+    for event in misc_plains:
+        string = string + event
+
+    with open("misc_events/plains.json", "w") as write_file:
+        write_file.write(string)
+
+
 
 
 root_dir = "../events"

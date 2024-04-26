@@ -1,0 +1,1066 @@
+[    
+    {
+        "event_id": "bch_death",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "greenleaf",
+            "newleaf",
+            "leaf-fall"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c had not realized {PRONOUN/m_c/poss} fatal mistake until {PRONOUN/m_c/subject} felt {PRONOUN/m_c/poss} paws get clammy and {PRONOUN/m_c/poss} blood, once burning hot and dry after being out in the sun with no water nor shade, turned cold. As the world turned right-side up and {PRONOUN/m_c/poss} consciousness faded right before {PRONOUN/m_c/poss} eyes, m_c knew {PRONOUN/m_c/subject} {VERB/m_c/were/was} beyond saving, as dehydration and overheating claimed the last bits of {PRONOUN/m_c/poss} strength.",
+        "m_c": {
+            "age": [
+                "adolescent"
+            ],
+            "status": [
+                "apprentice"
+            ],
+            "dies": true
+        }
+    },
+    {
+        "event_id": "bch_death",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "greenleaf",
+            "newleaf",
+            "leaf-fall"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "r_c noticed m_c hadn't shown up for training again, yet after further prodding realized {PRONOUN/m_c/subject} hadn't been at camp for a few days. However, r_c never expected to find m_c like this: dead and dried out, their tattered pelt lifeless and dull.",
+        "m_c": {
+            "age": [
+                "adolescent"
+            ],
+            "status": [
+                "apprentice"
+            ],
+            "relationship_status": [
+                "app/mentor"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "age": [],
+            "status": []
+        },
+        "relationships": [
+            {
+                "values": [],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "greenleaf",
+            "newleaf",
+            "leaf-fall"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "r_c realizes {PRONOUN/r_c/subject} {VERB/r_c/haven't/hasn't} seen m_c around camp for a few days. Checking {PRONOUN/m_c/subject} favorite spots yields nothing, so r_c decides to go out and search for {PRONOUN/m_c/object} in the Clans' territory. However, r_c could never have expected to find m_c's shriveled-up body, clearly dead for some time now.",
+        "m_c": {
+            "age": [
+                "adolescent"
+            ],
+            "status": [
+                "apprentice"
+            ],
+            "relationship_status": [],
+            "dies": true
+        },
+        "r_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": []
+        },
+        "relationships": [
+            {
+                "values": [],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "greenleaf",
+            "newleaf",
+            "leaf-fall"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "r_c is frantic with worry; m_c, {PRONOUN/r_c/poss} child, hadn't been seen around camp, no matter who {PRONOUN/r_c/subject} asked and where {PRONOUN/r_c/subject} searched. It's not until r_c stumbles across m_c's body, withered under the sun, that, with a despairing sound, {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/poss} greatest fears have come true.",
+        "m_c": {
+            "age": [
+                "adolescent"
+            ],
+            "status": [
+                "apprentice"
+            ],
+            "relationship_status": [
+                "child/parent"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "age": [],
+            "status": []
+        },
+        "relationships": [
+            {
+                "values": [],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "greenleaf",
+            "newleaf",
+            "leaf-fall"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c couldn't speak, yell for help, or beg StarClan to give {PRONOUN/m_c/subject} a sign they were still with {PRONOUN/m_c/object}, {PRONOUN/m_c/poss} tongue having swelled up inside {PRONOUN/m_c/poss} dried mouth. As m_c collapses, feeling {PRONOUN/m_c/poss} body internally shut down because of dehydration and heat exhaustion, {PRONOUN/m_c/subject} pray that {PRONOUN/m_c/poss} clanmates locate m_c's body before {PRONOUN/m_c/subject} become unrecognizable under the sun.",
+        "m_c": {
+            "age": [
+                "adolescent"
+            ],
+            "status": [
+                "apprentice"
+            ],
+            "dies": true
+        }
+    },
+    {
+        "event_id": "bch_death",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "greenleaf",
+            "newleaf",
+            "leaf-fall"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c knew {PRONOUN/m_c/subject} made a mistake, as {PRONOUN/m_c/subject} felt {PRONOUN/m_c/poss} last bits of strength slip away from {PRONOUN/m_c/object} and {PRONOUN/m_c/poss} heart stopped beating. {PRONOUN/m_c/poss/CAP} body only discovered days later, r_c wailing at the shriveled body of {PRONOUN/r_c/poss} apprentice, who succumbed to heat and dehydration.",
+        "m_c": {
+            "age": [
+                "adolescent"
+            ],
+            "status": [
+                "apprentice"
+            ],
+            "relationship_status": [
+                "app/mentor"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "age": [],
+            "status": []
+        },
+        "relationships": [
+            {
+                "values": [],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "greenleaf",
+            "newleaf",
+            "leaf-fall"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "It was purely accidental that r_c stumbled across m_c's decaying body in the sunlight, simply hoping to stretch {PRONOUN/r_c/poss} paws outside of camp. Now, r_c must explain to m_c's remaining family or friends that {PRONOUN/m_c/subject} {VERB/m_c/are/is} never returning home, having been caught unprepared under the treacherous sun.",
+        "m_c": {
+            "age": [
+                "adolescent"
+            ],
+            "status": [
+                "apprentice"
+            ],
+            "relationship_status": [],
+            "dies": true
+        },
+        "r_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": []
+        },
+        "relationships": [
+            {
+                "values": [],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "greenleaf",
+            "newleaf",
+            "leaf-fall"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c  never meant to meet StarClan this way, rotting away under the sun after fainting from dehydration, heat exhaustion, and overexertion. r_c tragically discovers {PRONOUN/m_c/poss} body, unable to stop {PRONOUN/r_c/poss} desperate wails at the site of {PRONOUN/r_c/poss} child's body.",
+        "m_c": {
+            "age": [
+                "adolescent"
+            ],
+            "status": [
+                "apprentice"
+            ],
+            "relationship_status": [
+                "child/parent"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "age": [],
+            "status": []
+        },
+        "relationships": [
+            {
+                "values": [],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "greenleaf",
+            "newleaf",
+            "leaf-fall"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "r_c's mournful sounds pierced through c_n's territory as {PRONOUN/r_c/subject} stumble on the lifeless, decaying corpse of m_c. m_c had disappeared from camp days ago, having not returned, but only now did r_c understand why  {PRONOUN/r_c/poss} child didn't come back home; m_c was caught out in the treacherous sun, ill-prepared, succumbing to dehydration and exhaustion.",
+        "m_c": {
+            "age": [
+                "adolescent"
+            ],
+            "status": [
+                "apprentice"
+            ],
+            "relationship_status": [],
+            "dies": true
+        },
+        "r_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": []
+        },
+        "relationships": [
+            {
+                "values": [],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "greenleaf",
+            "newleaf",
+            "leaf-fall"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c asked r_c to meet them at their unique spot, which r_c readily accepted and journeyed through the territory. Yet, with a heartbroken sound that clawed its way out of r_c's throat, {PRONOUN/r_c/subject} {VERB/r_c/stumble/stumbles} upon m_c's body, passing from dehydration; r_c curses m_c for tainting what could have been a good memory of {PRONOUN/r_c/inposs}.",
+        "m_c": {
+            "age": [
+                "adolescent"
+            ],
+            "status": [
+                "apprentice"
+            ],
+            "relationship_status": [],
+            "dies": true
+        },
+        "r_c": {
+            "age": [],
+            "status": [],
+            "trait": [
+                "ambitious",
+                "bloodthirsty",
+                "cold",
+                "fierce",
+                "shameless",
+                "strict",
+                "troublesome",
+                "vengeful"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "romantic"
+                ],
+                "amount": -5
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "greenleaf",
+            "newleaf",
+            "leaf-fall"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c asked r_c to meet them at their unique spot, which r_c readily accepted and journeyed through the territory. Yet, with a heartbroken sound that clawed its way out of r_c's throat, {PRONOUN/r_c/subject} {VERB/r_c/stumble/stumbles} upon m_c's body, passing from dehydration.",
+        "m_c": {
+            "age": [
+                "adolescent"
+            ],
+            "status": [
+                "apprentice"
+            ],
+            "relationship_status": [],
+            "dies": true
+        },
+        "r_c": {
+            "age": [
+                "adolescent"
+            ],
+            "status": []
+        },
+        "relationships": [
+            {
+                "values": [],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "greenleaf",
+            "newleaf",
+            "leaf-fall"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c had invited r_c out days earlier, aiming to train and grow closer together. However, when r_c arrived, m_c never showed up; m_c wasn't seen around camp, nor had {PRONOUN/m_c/subject} been to training. It wasn't until r_c stumbles upon {PRONOUN/m_c/poss} body, the former succumbing to dehydration and exhaustion, that {PRONOUN/r_c/subject} understands why.",
+        "m_c": {
+            "age": [
+                "adolescent"
+            ],
+            "status": [
+                "apprentice"
+            ],
+            "relationship_status": [],
+            "dies": true
+        },
+        "r_c": {
+            "age": [
+                "adolescent"
+            ],
+            "status": []
+        },
+        "relationships": [
+            {
+                "values": [],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "tags": [
+            "classic"
+        ],
+        "weight": 20,
+        "event_text": "m_c died from dehydration and heat stroke.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "status": [
+                "kitten"
+            ],
+            "dies": true
+        }
+    },
+    {
+        "event_id": "bch_death",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c lost a life when {PRONOUN/m_c/subject} fell from the top branches of a tree.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "leader"
+            ],
+            "dies": true
+        }
+    },
+    {
+        "event_id": "bch_death",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [
+            "all_lives",
+            "no_body"
+        ],
+        "weight": 20,
+        "event_text": "m_c was washed out to sea, never to be seen again.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "leader"
+            ],
+            "dies": true
+        }
+    },
+    {
+        "event_id": "bch_death",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [
+            "all_lives",
+            "shock",
+            "no_body"
+        ],
+        "weight": 20,
+        "event_text": "m_c was lost to the sea while trying to save r_c from drowning.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "leader"
+            ],
+            "relationship_status": [],
+            "trait": [
+                "altruistic",
+                "bold",
+                "ambitious",
+                "compassionate",
+                "daring",
+                "confident",
+                "fierce",
+                "loyal",
+                "loving",
+                "empathetic",
+                "responsible"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "age": [],
+            "status": []
+        },
+        "injury": [],
+        "relationships": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "platonic",
+                    "trust",
+                    "respect",
+                    "dislike"
+                ],
+                "amount": -5
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [
+            "all_lives",
+            "murder",
+            "revealed",
+            "no_body"
+        ],
+        "weight": 20,
+        "event_text": "m_c was pushed off a cliff into the rock-filled waves below. r_c stood at the edge, eyes narrowed and unblinking till the body slid beneath the waves.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "leader"
+            ],
+            "relationship_status": [],
+            "trait": [
+                "adventurous",
+                "daring",
+                "bold",
+                "childish",
+                "confident",
+                "playful"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [],
+            "skill": [
+                "HUNTER,2",
+                "CLEVER,2",
+                "SENSE,2",
+                "INSIGHTFUL,1"
+            ],
+            "trait": [
+                "bloodthirsty",
+                "ambitious",
+                "bold",
+                "careful",
+                "calm",
+                "cold",
+                "fierce",
+                "insecure",
+                "nervous",
+                "responsible",
+                "sneaky",
+                "strict",
+                "vengeful",
+                "wise"
+            ]
+        },
+        "relationships": [
+            {
+                "values": [],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [
+            "all_lives",
+            "murder",
+            "revealed",
+            "no_body"
+        ],
+        "weight": 20,
+        "event_text": "m_c was pushed off a cliff into the rock-filled waves below. r_c insists it was an accident, that m_c slipped on loose shale.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "leader"
+            ],
+            "relationship_status": [],
+            "trait": [
+                "adventurous",
+                "daring",
+                "bold",
+                "childish",
+                "confident",
+                "playful"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [],
+            "skill": [
+                "HUNTER,2",
+                "CLEVER,2",
+                "SENSE,2",
+                "INSIGHTFUL,1"
+            ],
+            "trait": [
+                "bloodthirsty",
+                "ambitious",
+                "bold",
+                "careful",
+                "calm",
+                "cold",
+                "fierce",
+                "insecure",
+                "nervous",
+                "responsible",
+                "sneaky",
+                "strict",
+                "vengeful",
+                "wise"
+            ]
+        },
+        "relationships": [
+            {
+                "values": [],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [
+            "all_lives",
+            "murder",
+            "revealed",
+            "no_body"
+        ],
+        "weight": 20,
+        "event_text": "Usually m_c is well aware of when the high tide will come in, but today {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} distracted and run ragged with Clan business. Trapped against the cliffs with treacherous waves pulling at {PRONOUN/m_c/poss} paws, the last thing {PRONOUN/m_c/subject} {VERB/m_c/see/sees} is the smug grin of r_c sat high above on the rocks.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "leader"
+            ],
+            "relationship_status": [],
+            "trait": [
+                "responsible",
+                "loyal",
+                "lonesome"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [],
+            "skill": [
+                "HUNTER,2",
+                "CLEVER,2",
+                "SENSE,2",
+                "SPEAKER,2"
+            ],
+            "trait": [
+                "ambitious",
+                "bold",
+                "careful",
+                "calm",
+                "cold",
+                "confident",
+                "daring",
+                "lonesome",
+                "shameless",
+                "sneaky",
+                "strange",
+                "vengeful",
+                "wise"
+            ]
+        },
+        "relationships": [
+            {
+                "values": [],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [
+            "clan_kits",
+            "kit_manipulated",
+            "murder",
+            "revealed"
+        ],
+        "weight": 20,
+        "event_text": "m_c saves one of the Clan's kits from drowning, but loses a life in the process. The kit is well scolded for straying into the water, but is even more subdued than expected afterwards; sending nervous glances at r_c that no one else seems to catch.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "leader"
+            ],
+            "relationship_status": [],
+            "trait": [
+                "ambitious",
+                "bold",
+                "compassionate",
+                "confident",
+                "daring",
+                "fierce",
+                "loving",
+                "loyal",
+                "responsible",
+                "righteous",
+                "thoughtful",
+                "vengeful"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "age": [],
+            "status": [],
+            "skill": [
+                "CLEVER,2",
+                "SPEAKER,2"
+            ],
+            "trait": [
+                "ambitious",
+                "careful",
+                "calm",
+                "cold",
+                "confident",
+                "daring",
+                "shameless",
+                "sneaky",
+                "strange",
+                "vengeful",
+                "wise"
+            ]
+        },
+        "relationships": [
+            {
+                "values": [],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death",
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [
+            "no_body"
+        ],
+        "weight": 20,
+        "event_text": "m_c was washed out to sea, never to be seen again.",
+        "m_c": {
+            "age": [],
+            "status": [],
+            "dies": true
+        }
+    },
+    {
+        "event_id": "bch_death",
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c was poisoned by a sea creature and died.",
+        "m_c": {
+            "age": [],
+            "status": [],
+            "dies": true
+        }
+    },
+    {
+        "event_id": "bch_death",
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [
+            "shock",
+            "no_body"
+        ],
+        "weight": 20,
+        "event_text": "m_c was lost to the sea while trying to save r_c from drowning.",
+        "m_c": {
+            "age": [],
+            "status": [],
+            "relationship_status": [],
+            "trait": [
+                "altruistic",
+                "bold",
+                "ambitious",
+                "compassionate",
+                "daring",
+                "confident",
+                "fierce",
+                "loyal",
+                "loving",
+                "empathetic",
+                "responsible"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "age": [],
+            "status": []
+        },
+        "injury": [],
+        "relationships": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "platonic",
+                    "trust",
+                    "respect",
+                    "dislike"
+                ],
+                "amount": -5
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death",
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "tags": [
+            "classic"
+        ],
+        "weight": 20,
+        "event_text": "m_c died from dehydration and heat stroke.",
+        "m_c": {
+            "age": [],
+            "status": [],
+            "dies": true
+        }
+    },
+    {
+        "event_id": "bch_death",
+        "camp": [
+            "camp3"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [
+            "no_body"
+        ],
+        "weight": 20,
+        "event_text": "m_c found {PRONOUN/m_c/self} staring at an odd shadow in the sea. One distracted paw slipped and {PRONOUN/m_c/subject} fell into the waves where something large and unseen tangled around {PRONOUN/m_c/object}, dragging {PRONOUN/m_c/object} into the abyss. ",
+        "m_c": {
+            "age": [],
+            "status": [],
+            "dies": true
+        }
+    },
+    {
+        "event_id": "bch_death",
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [
+            "war"
+        ],
+        "weight": 20,
+        "event_text": "m_c drowned after being pushed out to sea by o_c warriors.",
+        "m_c": {
+            "age": [],
+            "status": [],
+            "dies": true
+        }
+    }
+]
