@@ -28,7 +28,7 @@ from scripts.utility import scale, quit, update_sprite, scale_dimentions, logger
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.housekeeping.version import get_version_info
 from scripts.web import is_web
-from scripts.ui.elements import UITextBoxTweaked
+from scripts.ui.elements import UITextBoxTweaked, UITextBox
 from scripts.buttons.buttons import UIImageButton
 
 if not is_web:
