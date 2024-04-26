@@ -73,9 +73,9 @@ class ListScreen(Screens):
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if self.choose_group_button and not self.group_options_visible == event.ui_element:
+            if self.choose_group_button == event.ui_element and not self.group_options_visible:
                 self.update_view_buttons()
-            elif self.choose_group_button and self.group_options_visible == event.ui_element:
+            elif self.choose_group_button == event.ui_element and self.group_options_visible:
                 self.update_view_buttons()
             elif self.your_clan_button == event.ui_element:
                 self.update_view_buttons()
