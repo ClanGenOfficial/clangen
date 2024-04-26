@@ -12,7 +12,7 @@ from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
 from scripts.ui.elements import UITextBox, UITextBoxTweaked
 from scripts.buttons.buttons import UIImageButton
-from scripts.buttons.buttons import UISpriteButton
+from scripts.ui.elements.buttons.UISpriteButton import UISpriteButton
 
 
 with open('resources/clansettings.json', 'r', encoding='utf-8') as f:

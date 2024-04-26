@@ -10,6 +10,7 @@ from typing import Union, Optional, Dict
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import MANAGER, game
 from scripts.buttons.color_palette import Palette
+from scripts.ui.elements.buttons.UISpriteButton import UISpriteButton
 try:
     import ujson
 except:
@@ -322,62 +323,6 @@ def get_image(image_id: str, combined_element_ids):
     raise LookupError('Unable to find any image with id: ' + str(image_id) +
                         ' with combined_element_ids: ' + str(combined_element_ids))
 
-class UISpriteButton():
-    """This is for use with the cat sprites. It wraps together a UIImage and Transparent Button.
-        For most functions, this can be used exactly like other pygame_gui elements. """
-
-    def __init__(self, relative_rect, sprite, cat_id=None, visible=1, cat_object=None, starting_height=1,
-                 manager=None, container=None, tool_tip_text=None):
-
-        # We have to scale the image before putting it into the image object. Otherwise, the method of upscaling that UIImage uses will make the pixel art fuzzy
-        self.image = pygame_gui.elements.UIImage(relative_rect, pygame.transform.scale(sprite, relative_rect.size),
-                                                 visible=visible, manager=manager, container=container,
-                                                 )
-        self.image.disable()
-        # The transparent button. This a subclass that UIButton that also hold the cat_id.
-        self.button = OldCatButton(relative_rect, visible=visible, cat_id=cat_id, cat_object=cat_object,
-                                starting_height=starting_height, manager=manager, tool_tip_text=tool_tip_text,
-                                container=container)
-
-    def return_cat_id(self):
-        return self.button.return_cat_id()
-
-    def return_cat_object(self):
-        return self.button.return_cat_object()
-
-    def enable(self):
-        self.button.enable()
-
-    def disable(self):
-        self.button.disable()
-
-    def hide(self):
-        self.image.hide()
-        self.button.hide()
-
-    def show(self):
-        self.image.show()
-        self.button.show()
-
-    def kill(self):
-        self.button.kill()
-        self.image.kill()
-        del self
-
-    def set_image(self, new_image):
-        self.image.set_image(new_image)
-
-    '''This is to simplify event handling. Rather that writing 
-            'if event.ui_element = cat_sprite_object.button'
-            you can treat is as any other single pygame UI element and write:
-            'if event.ui_element = cat_sprite_object. '''
-
-    def __eq__(self, __o: object) -> bool:
-        if self.button == __o:
-            return True
-        else:
-            return False
-
 class UIButton(UISpriteButton):
     def __init__(self, relative_rect, text = "", visible=1, starting_height=1, object_id=None,
                  manager=MANAGER, container=None, tool_tip_text=None):
@@ -414,7 +359,7 @@ class UIButton(UISpriteButton):
                                     starting_height=starting_height)
         self.image.disable()
         # The transparent button. This a subclass that UIButton that also hold the cat_id.
-        self.button = CatButton(relative_rect, visible=visible,
+        self.button = BaseButton(relative_rect, visible=visible,
                                 starting_height=starting_height+1,
                                 manager=manager, tool_tip_text=tool_tip_text,
                                 internal=self, container=container)
@@ -511,7 +456,6 @@ class UIImageButton(pygame_gui.elements.UIButton):
         return changed
 
 
-
 class IDImageButton(UIImageButton):
     """Class to handle the "involved cats" button on the events page. It stores the IDs of the cat's involved."""
 
@@ -535,37 +479,16 @@ class IDImageButton(UIImageButton):
         if not self.ids:
             self.disable()
 
-class OldCatButton(pygame_gui.elements.UIButton):
-    """Basic UIButton subclass for at sprite buttons. It stores the cat ID. """
 
-    def __init__(self, relative_rect, cat_id=None, visible=True, cat_object=None, starting_height=1, manager=None, tool_tip_text=None, container=None):
-        self.cat_id = cat_id
-        self.cat_object = cat_object
-        super().__init__(relative_rect, "", object_id="#cat_button", visible=visible,
-                         starting_height=starting_height, manager=manager, tool_tip_text=tool_tip_text, container=container)
-
-    def return_cat_id(self):
-        return self.cat_id
-
-    def return_cat_object(self):
-        return self.cat_object
-
-    def set_id(self, id):
-        self.cat_id = id
-
-class CatButton(pygame_gui.elements.UIButton):
+class BaseButton(pygame_gui.elements.UIButton):
     def __init__(self,
                  relative_rect,
-                 cat_id: str = None,
-                 cat_object: Cat = None,
                  visible=True,
                  starting_height=1,
                  manager=MANAGER,
                  tool_tip_text=None,
                  container=None,
                  internal=None) -> None:
-        self.cat_id = cat_id
-        self.cat_object = cat_object
         self.id = internal.id
         self.rounded_corners = internal.rounded_corners
         self.hanging = internal.hanging
@@ -579,15 +502,6 @@ class CatButton(pygame_gui.elements.UIButton):
                          manager=manager,
                          tool_tip_text=tool_tip_text,
                          container=container)
-    def return_cat_id(self):
-        return self.cat_id
-
-    def return_cat_object(self):
-        return self.cat_object
-
-    def set_id(self, id):
-        self.cat_id = id
-        
     def on_hovered(self):
         self.hover = True
         cache = ButtonCache.load_button(
@@ -674,7 +588,7 @@ class CatButton(pygame_gui.elements.UIButton):
         return hash(self.id)
 
     def __eq__(self, other):
-        if not isinstance(other, CatButton):
+        if not isinstance(other, BaseButton):
             return False
         return self.id == other.id
 

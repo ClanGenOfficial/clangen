@@ -11,7 +11,7 @@ from scripts.game_structure.game_essentials import game, MANAGER
 from math import ceil
 from scripts.ui.elements import UITextBox, UIRelationStatusBar
 from scripts.buttons.buttons import UIImageButton
-from scripts.buttons.buttons import UISpriteButton
+from scripts.ui.elements.buttons.UISpriteButton import UISpriteButton
 
 
 
