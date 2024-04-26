@@ -21,4 +21,4 @@ We encourage you to have already made progress or to plan to also contribute art
 
 
 **Relevant Links**
-Is there a draft PR already made?  Is there a forum post fo
+Is there a draft PR already made?  Is there a forum post for it? Link them here.
