@@ -1233,5 +1233,205 @@
                     ]
                 }
             ]
+    },
+    {
+        "patrol_id": "wtlnd_train_bogbodies_storylorelocked1",
+        "biome": ["wetlands"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_train_ghost",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6],
+            "apprentice": [2, 6]
+            },
+        "weight": 20,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["LORE,1", "STORY,1"],
+        "intro_text": "Alright, listen up. It's not... a fun tale, but the apprentice need to learn about the bog. And, er... the bodies...",
+        "decline_text": "On second thought, app1 looks a bit nervous. p_l will wait to explain this until another, happier day.",
+        "success_outcomes": [
+                {
+                    "text": "In the heartbreaking event that a Clanmate is lost and you're nearby, p_l explains seriously, you cannot leave their body in the wetlands. Their body and spirit will both sink into the murk, the bog will take them, and they'll never be able to find their way to StarClan.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "scaryghost_INTRO",
+                    "stat_skill": ["STORY,1"],
+                    "can_have_stat": ["p_l"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                },
+                {
+                    "text": "In the heartbreaking event that a Clanmate is lost and you're nearby, p_l explains seriously, you cannot leave their body in the wetlands. Bodies don't decay, in the bog, it keeps them, and holds them, and traps the spirit...",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "scaryghost_INTRO",
+                    "stat_skill": ["LORE,1"],
+                    "can_have_stat": ["p_l"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "p_l starts to talk about undecaying bodies lying in bogs, and that's... a bit beyond what the apprentices can handle, it turns out.",
+                    "exp": 0,
+                    "weight": 20,
+                    "art": "gen_scared_cat_app",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "wtlnd_train_glowingmushrooms_apprentices_storylorelocked1",
+        "biome": ["wetlands"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_app_crouching_perplexed",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [-1, -1],
+            "apprentice": [2, 6]
+            },
+        "weight": 20,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["LORE,0", "STORY,0"],
+        "intro_text": "Poking their noses out of camp at night (which they're definitely not supposed to do), app1 and app2 spot something glowing among the trees...",
+        "decline_text": "On second thought, camp is great, let's stay here.",
+        "success_outcomes": [
+                {
+                    "text": "One heartbeat. Another. The light doesn't change. s_c creeps forward, whiskers aquiver. It's a mushroom! A gift from passing spirits, s_c bets, left to light their way through the swamp!",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_happy_cat2",
+                    "stat_skill": ["STORY,1"],
+                    "can_have_stat": ["app"],
+                    "relationships": [
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                },
+                {
+                    "text": "One heartbeat. Another. The light doesn't change. s_c creeps forward, whiskers aquiver. It's a mushroom! s_c has heard of these, StarClan once left a trail to guide c_n cats out of danger during a disaster!",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_happy_cat2",
+                    "stat_skill": ["LORE,1"],
+                    "can_have_stat": ["app"],
+                    "relationships": [
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "It's too weird, app1 refuses to go near the light, and almost gets them caught sneaking back into camp with how much {PRONOUN/app1/subject}{VERB/app1/'re/'s} panicking.",
+                    "exp": 0,
+                    "weight": 20,
+                    "art": "gen_scared_cat_app",
+                    "relationships": [
+                        {
+                            "cats_to": ["app1"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["comfort"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
     }
 ]
