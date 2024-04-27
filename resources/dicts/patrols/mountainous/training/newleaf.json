@@ -647,7 +647,7 @@
             ],
             "fail_outcomes": [
                 {
-                    "text": "app1 takes one look at the bear emerging on the opposite slope, and turns to run for home. It takes p_l almost half the distance to camp to catch up with {PRONOUN/app1/object} again, and {PRONOUN/p_l/subject} {VERB/p_l.congratulate/congratulates} app1 on {PRONOUN/app1/poss} speed as {PRONOUN/p_l/subject} {VERB/p_l/pant/pants}. app1 didn't need to worry, though, that sow is slowed by her newborn cubs.",
+                    "text": "app1 takes one look at the bear emerging on the opposite slope, and turns to run for home. It takes p_l almost half the distance to camp to catch up with {PRONOUN/app1/object} again, and {PRONOUN/p_l/subject} {VERB/p_l/congratulate/congratulates} app1 on {PRONOUN/app1/poss} speed as {PRONOUN/p_l/subject} {VERB/p_l/pant/pants}. app1 didn't need to worry, though, that sow is slowed by her newborn cubs.",
                     "exp": 0,
                     "weight": 20,
                     "relationships": [
