@@ -1612,7 +1612,6 @@
                 "text": "r_c marks a little, but they reach a section where the border is muddled, and have to give up and go home.",
                 "exp": 0,
                 "weight": 20,
-                "prey": ["very_small"],
                 "other_clan_rep": -1
             },
             {
@@ -1629,7 +1628,6 @@
                     "troublesome",
                     "vengeful"
                 ],
-                "prey": ["very_small"],
                 "other_clan_rep": -1
             },
             {
