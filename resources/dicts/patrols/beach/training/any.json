@@ -2357,5 +2357,64 @@
                     "weight": 20
                 }
             ]
+    },
+    {
+        "patrol_id": "bch_train_themoonandthetides_storylorelocked1",
+        "biome": ["beach"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_bord_story",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6]
+            },
+        "weight": 30,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["LORE,1", "STORY,1"],
+        "intro_text": "The beat of the tides, in and out, like life's breath or a heartbeat, might at first seem like it's connected to the spirit of the land, p_l says. But that's wrong.",
+        "decline_text": "No one seems interested in p_l's story.",
+        "success_outcomes": [
+                {
+                    "text": "While they wash at the land, the tides are connected to the moon, p_l meows. At night this becomes obvious - the new moon and the full moon both produce spring tides of unusal strength. And every so often, if the moon is displeased, a spring tide gains twice the height a strength, producing a king tide.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_hunt_vision",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort", "trust", "platonic"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "Learning about the tides is boring - shoving each other into the water, now <i>that's</i> training! p_l is not pleased.",
+                    "exp": 0,
+                    "weight": 20,
+                    "art": "gen_train_soggykitty_mad_warrior",
+                    "relationships": [
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ]
     }
 ]
