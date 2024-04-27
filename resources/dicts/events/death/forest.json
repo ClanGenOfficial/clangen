@@ -1,6 +1,271 @@
-[
+[    {
+        "event_id": "fst_death_",
+        "biome": [
+            "forest"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c was found dead and cold in the snow.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "status": [
+                "kitten"
+            ],
+            "dies": true
+        },
+        "history": {
+            "reg_death": "m_c froze to death."
+        }
+    },
     {
-        "event_id": "fst_death",
+        "event_id": "fst_death_",
+        "biome": [
+            "forest"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c froze to death during a harsh snowstorm.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "status": [
+                "kitten"
+            ],
+            "dies": true
+        },
+        "history": {
+            "reg_death": "m_c froze to death."
+        }
+    },
+    {
+        "event_id": "fst_death_",
+        "biome": [
+            "forest"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c disappeared from the nursery and was later found dead, not far from camp.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "status": [
+                "kitten"
+            ],
+            "trait": [
+                "daring",
+                "impulsive",
+                "attention-seeker",
+                "troublesome"
+            ],
+            "dies": true
+        },
+        "history": {
+            "reg_death": "m_c froze to death."
+        }
+    },
+    {
+        "event_id": "fst_death_",
+        "biome": [
+            "forest"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c was playing on the ice, when it cracked and {PRONOUN/m_c/subject} fell in.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "status": [
+                "kitten"
+            ],
+            "trait": [
+                "daring",
+                "attention-seeker",
+                "impulsive"
+            ],
+            "dies": true
+        },
+        "history": {
+            "reg_death": "m_c froze to death after falling through ice."
+        }
+    },
+    {
+        "event_id": "fst_death_",
+        "biome": [
+            "forest"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "tags": [
+            "classic"
+        ],
+        "weight": 20,
+        "event_text": "m_c died from dehydration and heat stroke.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "status": [
+                "kitten"
+            ],
+            "dies": true
+        },
+        "history": {
+            "reg_death": "m_c died of dehydration and heat stroke."
+        }
+    },
+    {
+        "event_id": "fst_death_",
+        "biome": [
+            "forest"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "leaf-fall",
+            "leaf-bare"
+        ],
+        "tags": [
+            "no_body"
+        ],
+        "weight": 20,
+        "event_text": "m_c wandered away from camp in the night, never to be seen again.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "status": [
+                "kitten"
+            ],
+            "dies": true
+        },
+        "history": {
+            "reg_death": "m_c was eaten by a predator."
+        }
+    },
+    {
+        "event_id": "fst_death_",
+        "biome": [
+            "forest"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "leaf-fall",
+            "leaf-bare"
+        ],
+        "tags": [
+            "no_body"
+        ],
+        "weight": 20,
+        "event_text": "m_c vanished from camp after sneaking out, and the search parties find nothing but blood.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "status": [
+                "kitten"
+            ],
+            "dies": true
+        },
+        "history": {
+            "reg_death": "m_c was eaten by a predator."
+        }
+    },
+    {
+        "event_id": "fst_death_",
+        "biome": [
+            "forest"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "leaf-fall",
+            "leaf-bare"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c is found within a few fox-lengths of camp, {PRONOUN/m_c/poss} tiny body cold and covered in bites. The scent of mouse hangs heavy in the air...",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "status": [
+                "kitten"
+            ],
+            "dies": true
+        },
+        "history": {
+            "reg_death": "m_c was killed by a feisty mouse."
+        }
+    },
+    {
+        "event_id": "fst_death_",
+        "biome": [
+            "forest"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "leaf-fall",
+            "leaf-bare"
+        ],
+        "tags": [
+            "no_body"
+        ],
+        "weight": 20,
+        "event_text": "m_c can be heard boasting that {PRONOUN/m_c/subject}'{VERB/m_c/re/s} ready to be made an apprentice <i>right now</i>, and that {PRONOUN/m_c/subject}'{VERB/m_c/re/s} already one of the best hunters in the Clan. That evening, to prove {PRONOUN/m_c/poss} point, {PRONOUN/m_c/subject} sneak out of camp, intending to catch something for the fresh-kill pile. A frantic search party follows {PRONOUN/m_c/poss} trail, only to find blood and the foul stench of a shrew at the end.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "status": [
+                "kitten"
+            ],
+            "dies": true
+        },
+        "history": {
+            "reg_death": "m_c was eaten by a shrew."
+        }
+    },
+    {
+        "event_id": "fst_death_",
         "camp": [
             "any"
         ],
@@ -16,10 +281,14 @@
             "age": [],
             "status": [],
             "dies": true
+        },
+        "history": {
+            "reg_death": "m_c was squished by a falling branch.",
+            "lead_death": "was squished by a falling branch."
         }
     },
     {
-        "event_id": "fst_death",
+        "event_id": "fst_death_",
         "camp": [
             "any"
         ],
@@ -55,6 +324,9 @@
             "age": [],
             "status": []
         },
+        "history": {
+            "reg_death": "m_c was lured onto thin ice by r_c, resulting in {PRONOUN/m_c/poss} death."
+        },
         "relationships": [
             {
                 "cats_from": [
@@ -72,7 +344,7 @@
         ]
     },
     {
-        "event_id": "fst_death",
+        "event_id": "fst_death_",
         "camp": [
             "any"
         ],
@@ -118,6 +390,9 @@
             ],
             "dies": true
         },
+        "history": {
+            "reg_death": "m_c and r_c went to play on the ice of a frozen pond, not knowing it was too thin."
+        },
         "relationships": [
             {
                 "values": [],
@@ -126,7 +401,7 @@
         ]
     },
     {
-        "event_id": "fst_death",
+        "event_id": "fst_death_",
         "camp": [
             "any"
         ],
@@ -149,249 +424,13 @@
                 "oblivious"
             ],
             "dies": true
+        },
+        "history": {
+            "reg_death": "m_c fell out of a tree while trying to escape from a dog."
         }
     },
     {
-        "event_id": "fst_death",
-        "biome": [
-            "forest"
-        ],
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c was found dead and cold in the snow.",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "dies": true
-        }
-    },
-    {
-        "event_id": "fst_death",
-        "biome": [
-            "forest"
-        ],
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c froze to death during a harsh snowstorm.",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "dies": true
-        }
-    },
-    {
-        "event_id": "fst_death",
-        "biome": [
-            "forest"
-        ],
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c disappeared from the nursery and was later found dead, not far from camp.",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "trait": [
-                "daring",
-                "impulsive",
-                "attention-seeker",
-                "troublesome"
-            ],
-            "dies": true
-        }
-    },
-    {
-        "event_id": "fst_death",
-        "biome": [
-            "forest"
-        ],
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c was playing on the ice, when it cracked and {PRONOUN/m_c/subject} fell in.",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "trait": [
-                "daring",
-                "attention-seeker",
-                "impulsive"
-            ],
-            "dies": true
-        }
-    },
-    {
-        "event_id": "fst_death",
-        "biome": [
-            "forest"
-        ],
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "greenleaf"
-        ],
-        "tags": [
-            "classic"
-        ],
-        "weight": 20,
-        "event_text": "m_c died from dehydration and heat stroke.",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "dies": true
-        }
-    },
-    {
-        "event_id": "fst_death",
-        "biome": [
-            "forest"
-        ],
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "leaf-fall",
-            "leaf-bare"
-        ],
-        "tags": [
-            "no_body"
-        ],
-        "weight": 20,
-        "event_text": "m_c wandered away from camp in the night, never to be seen again.",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "dies": true
-        }
-    },
-    {
-        "event_id": "fst_death",
-        "biome": [
-            "forest"
-        ],
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "leaf-fall",
-            "leaf-bare"
-        ],
-        "tags": [
-            "no_body"
-        ],
-        "weight": 20,
-        "event_text": "m_c vanished from camp after sneaking out, and the search parties find nothing but blood.",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "dies": true
-        }
-    },
-    {
-        "event_id": "fst_death",
-        "biome": [
-            "forest"
-        ],
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "leaf-fall",
-            "leaf-bare"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c is found within a few fox-lengths of camp, {PRONOUN/m_c/poss} tiny body cold and covered in bites. The scent of mouse hangs heavy in the air...",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "dies": true
-        }
-    },
-    {
-        "event_id": "fst_death",
-        "biome": [
-            "forest"
-        ],
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "leaf-fall",
-            "leaf-bare"
-        ],
-        "tags": [
-            "no_body"
-        ],
-        "weight": 20,
-        "event_text": "m_c can be heard boasting that {PRONOUN/m_c/subject}'{VERB/m_c/re/s} ready to be made an apprentice <i>right now</i>, and that {PRONOUN/m_c/subject}'{VERB/m_c/re/s} already one of the best hunters in the Clan. That evening, to prove {PRONOUN/m_c/poss} point, {PRONOUN/m_c/subject} sneak out of camp, intending to catch something for the fresh-kill pile. A frantic search party follows {PRONOUN/m_c/poss} trail, only to find blood and the foul stench of a shrew at the end.",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "dies": true
-        }
-    },
-    {
-        "event_id": "fst_death",
+        "event_id": "fst_death_",
         "biome": [
             "forest"
         ],
@@ -417,10 +456,13 @@
                 "leader"
             ],
             "dies": true
+        },
+        "history": {
+            "lead_death": "fell into the river"
         }
     },
     {
-        "event_id": "fst_death",
+        "event_id": "fst_death_",
         "biome": [
             "forest"
         ],
@@ -444,10 +486,13 @@
                 "leader"
             ],
             "dies": true
+        },
+        "history": {
+            "lead_death": "{VERB/m_c/were/was} crushed by a falling tree"
         }
     },
     {
-        "event_id": "fst_death",
+        "event_id": "fst_death_",
         "biome": [
             "forest"
         ],
@@ -471,10 +516,13 @@
                 "leader"
             ],
             "dies": true
+        },
+        "history": {
+            "lead_death": "{VERB/m_c/were/was} grabbed by a hawk"
         }
     },
     {
-        "event_id": "fst_death",
+        "event_id": "fst_death_",
         "biome": [
             "forest"
         ],
@@ -499,10 +547,13 @@
                 "leader"
             ],
             "dies": true
+        },
+        "history": {
+            "lead_death": "{VERB/m_c/were/was} swept away by a flood"
         }
     },
     {
-        "event_id": "fst_death",
+        "event_id": "fst_death_",
         "biome": [
             "forest"
         ],
@@ -526,10 +577,13 @@
                 "leader"
             ],
             "dies": true
+        },
+        "history": {
+            "lead_death": "fell from a tall tree"
         }
     },
     {
-        "event_id": "fst_death",
+        "event_id": "fst_death_",
         "biome": [
             "forest"
         ],
@@ -577,6 +631,9 @@
             "age": [],
             "status": []
         },
+        "history": {
+            "lead_death": "defended r_c from a hawk"
+        },
         "relationships": [
             {
                 "cats_from": [
@@ -596,7 +653,7 @@
         ]
     },
     {
-        "event_id": "fst_death",
+        "event_id": "fst_death_",
         "biome": [
             "forest"
         ],
@@ -626,10 +683,13 @@
                 "FIGHTER,2"
             ],
             "dies": true
+        },
+        "history": {
+            "lead_death": "{VERB/m_c/were/was} carried away by a hawk"
         }
     },
     {
-        "event_id": "fst_death",
+        "event_id": "fst_death_",
         "biome": [
             "forest"
         ],
@@ -658,6 +718,8 @@
                 "leader"
             ],
             "dies": true
+        },
+        "history": {
+            "lead_death": "{VERB/m_c/were/was} swept away by the river"
         }
-    }
-]
+    }]

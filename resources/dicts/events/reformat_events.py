@@ -27,6 +27,8 @@ misc_mountainous = []
 misc_plains = []
 
 def reformat(path):
+    if "Copy" not in path:
+        return
     not_allowed = ["fresh", "nutrition", "disasters", "ceremony", "dislike", "jealousy", "witness",
                    "template", "reactions", "beach.json", "forest.json", "new_general.json", "mountainous.json", "plains.json"]
     for item in not_allowed:
@@ -334,7 +336,8 @@ def reformat(path):
 
             if "injury" in event:
                 info = {"cats": ["m_c"],
-                        "injuries": event["injury"]}
+                        "injuries": []}
+                info["injuries"].append(event["injury"])
                 if "scar" in event["tags"]:
                     event["tags"].remove("scar")
                     info["scars"] = []
@@ -355,7 +358,7 @@ def reformat(path):
                             info["scars"].append(tag)
                             event["tags"].remove(tag)
 
-
+                new_format["injury"].append(info)
 
             if "other_cat_injure" in event["tags"]:
                 event["tags"].remove("other_cat_injure")
@@ -381,6 +384,26 @@ def reformat(path):
                     if tag in pools:
                         info["injuries"].append(tag)
                         event["tags"].remove(tag)
+
+                if "scar" in event["tags"]:
+                    event["tags"].remove("scar")
+                    info["scars"] = []
+                    scar_list = ["ONE", "TWO", "THREE", "TAILSCAR", "SNOUT", "CHEEK", "SIDE", "THROAT", "TAILBASE",
+                                 "BELLY",
+                                 "LEGBITE", "NECKBITE", "FACE", "MANLEG", "BRIGHTHEART", "MANTAIL", "BRIDGE",
+                                 "RIGHTBLIND",
+                                 "LEFTBLIND", "BOTHBLIND", "BEAKCHEEK", "BEAKLOWER", "CATBITE", "RATBITE", "QUILLCHUNK",
+                                 "QUILLSCRATCH", "HINDLEG", "BACK", "QUILLSIDE", "SCRATCHSIDE", "BEAKSIDE",
+                                 "CATBITETWO",
+                                 "FOUR", "LEFTEAR", "RIGHTEAR", "NOTAIL", "HALFTAIL", "NOPAW", "NOLEFTEAR",
+                                 "NORIGHTEAR",
+                                 "NOEAR", "SNAKE", "TOETRAP", "BURNPAWS", "BURNTAIL", "BURNBELLY", "BURNRUMP",
+                                 "FROSTFACE",
+                                 "FROSTTAIL", "FROSTMITT", "FROSTSOCK", "TOE", "SNAKETWO"]
+                    for tag in event["tags"]:
+                        if tag in scar_list:
+                            info["scars"].append(tag)
+                            event["tags"].remove(tag)
 
                 new_format["injury"].append(info)
 
@@ -525,17 +548,48 @@ def reformat(path):
         dict_text = dict_text.replace("\/", "/")  # ujson tries to escape "/", but doesn't end up doing a good job.
 
         if "injury" in path:
+            if "beach" in path:
+                injury_beach.append(dict_text)
+            if "forest" in path:
+                injury_forest.append(dict_text)
+            if "general" in path:
+                injury_general.append(dict_text)
+            if "mountainous" in path:
+                injury_mountainous.append(dict_text)
             if "plains" in path:
                 injury_plains.append(dict_text)
 
-    string = ""
-    for event in injury_plains:
-        string = string + event
 
-    with open("injury/plains.json", "w") as write_file:
-        write_file.write(string)
-
-
+    if injury_beach:
+        string = ""
+        for event in injury_beach:
+            string = string + event
+        with open("injury/beach.json", "w") as write_file:
+            write_file.write(string)
+    if injury_forest:
+        string = ""
+        for event in injury_forest:
+            string = string + event
+        with open("injury/forest.json", "w") as write_file:
+            write_file.write(string)
+    if injury_general:
+        string = ""
+        for event in injury_general:
+            string = string + event
+        with open("injury/general.json", "w") as write_file:
+            write_file.write(string)
+    if injury_mountainous:
+        string = ""
+        for event in injury_mountainous:
+            string = string + event
+        with open("injury/mountainous.json", "w") as write_file:
+            write_file.write(string)
+    if injury_plains:
+        string = ""
+        for event in injury_plains:
+            string = string + event
+        with open("injury/plains.json", "w") as write_file:
+            write_file.write(string)
 
 
 root_dir = "../events"

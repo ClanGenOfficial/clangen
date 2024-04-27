@@ -1,4 +1,146 @@
-[    
+[
+    {
+        "event_id": "fst_injury_",
+        "biome": [
+            "forest"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c went out for a walk, but slipped on the ice and broke a bone.",
+        "m_c": {
+            "age": [
+                "senior",
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "elder"
+            ],
+            "status": []
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "broken bone"
+                ],
+                "scars": [
+                    "TOETRAP"
+                ]
+            }
+        ],
+        "history": {
+            "scar": "m_c was scarred after slipping on ice.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after slipping on ice."
+        }
+    },
+    {
+        "event_id": "fst_injury_",
+        "biome": [
+            "forest"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c was grabbed by a hawk, but luckily r_c saves {PRONOUN/m_c/object}! The kit is still left injured from the ordeal.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "status": [
+                "kitten"
+            ],
+            "relationship_status": []
+        },
+        "r_c": {
+            "age": [],
+            "status": []
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "claw-wound"
+                ],
+                "scars": [
+                    "TWO"
+                ]
+            }
+        ],
+        "history": {
+            "scar": "m_c was scarred as a kit, when a hawk tried to carry {PRONOUN/m_c/object} off.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a hawk tried to carry {PRONOUN/m_c/object} off."
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "values": [
+                    "platonic",
+                    "comfort",
+                    "respect",
+                    "dislike"
+                ],
+                "amount": -5
+            }
+        ]
+    },
+    {
+        "event_id": "fst_injury_",
+        "biome": [
+            "forest"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c snuck out of camp and returned cold and shivering, frostbite nipping at {PRONOUN/m_c/poss} paws.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "status": [
+                "kitten"
+            ],
+            "trait": [
+                "daring",
+                "impulsive",
+                "inquisitive",
+                "troublesome"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "frostbite"
+                ],
+                "scars": [
+                    "FROSTMITT"
+                ]
+            }
+        ],
+        "history": {
+            "scar": "m_c was scarred by frostbite.",
+            "reg_death": "m_c died after {PRONOUN/m_c/subject} got frostbite sneaking out of camp."
+        }
+    },
     {
         "event_id": "fst_injury_",
         "biome": [
@@ -33,7 +175,9 @@
                 "cats": [
                     "m_c"
                 ],
-                "injuries": "sprain"
+                "injuries": [
+                    "sprain"
+                ]
             }
         ]
     },
@@ -74,16 +218,18 @@
                 "cats": [
                     "m_c"
                 ],
-                "injuries": "broken bone",
+                "injuries": [
+                    "broken bone"
+                ],
                 "scars": [
                     "SIDE"
-                ],
-                "history": {
-                    "scar": "m_c was scarred after falling from a tall tree.",
-                    "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tall tree."
-                }
+                ]
             }
-        ]
+        ],
+        "history": {
+            "scar": "m_c was scarred after falling from a tall tree.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tall tree."
+        }
     },
     {
         "event_id": "fst_injury_",
@@ -112,16 +258,18 @@
                 "cats": [
                     "m_c"
                 ],
-                "injuries": "broken bone",
+                "injuries": [
+                    "broken bone"
+                ],
                 "scars": [
                     "SIDE"
-                ],
-                "history": {
-                    "scar": "m_c was scarred after falling from a tree.",
-                    "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tree."
-                }
+                ]
             }
-        ]
+        ],
+        "history": {
+            "scar": "m_c was scarred after falling from a tree.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tree."
+        }
     },
     {
         "event_id": "fst_injury_",
@@ -150,16 +298,18 @@
                 "cats": [
                     "m_c"
                 ],
-                "injuries": "claw-wound",
+                "injuries": [
+                    "claw-wound"
+                ],
                 "scars": [
                     "TWO"
-                ],
-                "history": {
-                    "scar": "m_c was scarred after an owl tried to carry {PRONOUN/m_c/object} off.",
-                    "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after an owl tried to carry {PRONOUN/m_c/object} off."
-                }
+                ]
             }
-        ]
+        ],
+        "history": {
+            "scar": "m_c was scarred after an owl tried to carry {PRONOUN/m_c/object} off.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after an owl tried to carry {PRONOUN/m_c/object} off."
+        }
     },
     {
         "event_id": "fst_injury_",
@@ -199,12 +349,14 @@
                 "cats": [
                     "m_c"
                 ],
-                "injuries": "broken back",
-                "history": {
-                    "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tall tree and breaking {PRONOUN/m_c/poss} back."
-                }
+                "injuries": [
+                    "broken back"
+                ]
             }
         ],
+        "history": {
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tall tree and breaking {PRONOUN/m_c/poss} back."
+        },
         "relationships": [
             {
                 "cats_from": [
@@ -243,7 +395,9 @@
                 "cats": [
                     "m_c"
                 ],
-                "injuries": "bruises"
+                "injuries": [
+                    "bruises"
+                ]
             }
         ]
     },
@@ -267,7 +421,9 @@
                 "cats": [
                     "m_c"
                 ],
-                "injuries": "sprain"
+                "injuries": [
+                    "sprain"
+                ]
             }
         ]
     },
@@ -291,7 +447,9 @@
                 "cats": [
                     "m_c"
                 ],
-                "injuries": "torn pelt"
+                "injuries": [
+                    "torn pelt"
+                ]
             }
         ]
     },
@@ -315,7 +473,9 @@
                 "cats": [
                     "m_c"
                 ],
-                "injuries": "small cut"
+                "injuries": [
+                    "small cut"
+                ]
             }
         ]
     },
@@ -339,7 +499,9 @@
                 "cats": [
                     "m_c"
                 ],
-                "injuries": "small cut"
+                "injuries": [
+                    "small cut"
+                ]
             }
         ]
     },
@@ -364,16 +526,18 @@
                 "cats": [
                     "m_c"
                 ],
-                "injuries": "frostbite",
+                "injuries": [
+                    "frostbite"
+                ],
                 "scars": [
                     "FROSTTAIL"
-                ],
-                "history": {
-                    "scar": "m_c was scarred by frostbite.",
-                    "reg_death": "m_c died after {PRONOUN/m_c/subject} got frostbite."
-                }
+                ]
             }
-        ]
+        ],
+        "history": {
+            "scar": "m_c was scarred by frostbite.",
+            "reg_death": "m_c died after {PRONOUN/m_c/subject} got frostbite."
+        }
     },
     {
         "event_id": "fst_injury_",
@@ -397,12 +561,14 @@
                 "cats": [
                     "m_c"
                 ],
-                "injuries": "water in their lungs",
-                "history": {
-                    "reg_death": "m_c died from water-inhalation after falling in the river."
-                }
+                "injuries": [
+                    "water in their lungs"
+                ]
             }
-        ]
+        ],
+        "history": {
+            "reg_death": "m_c died from water-inhalation after falling in the river."
+        }
     },
     {
         "event_id": "fst_injury_",
@@ -424,16 +590,18 @@
                 "cats": [
                     "m_c"
                 ],
-                "injuries": "mangled tail",
+                "injuries": [
+                    "mangled tail"
+                ],
                 "scars": [
                     "MANTAIL"
-                ],
-                "history": {
-                    "scar": "m_c was scarred by a falling tree.",
-                    "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a tree fell on {PRONOUN/m_c/object}."
-                }
+                ]
             }
-        ]
+        ],
+        "history": {
+            "scar": "m_c was scarred by a falling tree.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a tree fell on {PRONOUN/m_c/object}."
+        }
     },
     {
         "event_id": "fst_injury_",
@@ -455,16 +623,18 @@
                 "cats": [
                     "m_c"
                 ],
-                "injuries": "burn",
+                "injuries": [
+                    "burn"
+                ],
                 "scars": [
                     "BURNRUMP"
-                ],
-                "history": {
-                    "scar": "m_c's pelt was burned by a forest fire.",
-                    "reg_death": "m_c died from {PRONOUN/m_c/poss} burns after a forest fire."
-                }
+                ]
             }
-        ]
+        ],
+        "history": {
+            "scar": "m_c's pelt was burned by a forest fire.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} burns after a forest fire."
+        }
     },
     {
         "event_id": "fst_injury_",
@@ -499,16 +669,18 @@
                 "cats": [
                     "m_c"
                 ],
-                "injuries": "burn",
+                "injuries": [
+                    "burn"
+                ],
                 "scars": [
                     "BURNPAWS"
-                ],
-                "history": {
-                    "scar": "m_c's pelt was burned by a forest fire.",
-                    "reg_death": "m_c died from {PRONOUN/m_c/poss} burns after a forest fire."
-                }
+                ]
             }
         ],
+        "history": {
+            "scar": "m_c's pelt was burned by a forest fire.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} burns after a forest fire."
+        },
         "relationships": [
             {
                 "cats_from": [
@@ -548,16 +720,18 @@
                 "cats": [
                     "m_c"
                 ],
-                "injuries": "severe burn",
+                "injuries": [
+                    "severe burn"
+                ],
                 "scars": [
                     "BURNTAIL"
-                ],
-                "history": {
-                    "scar": "m_c's pelt was burned by a forest fire.",
-                    "reg_death": "m_c died from {PRONOUN/m_c/poss} burns after a forest fire."
-                }
+                ]
             }
-        ]
+        ],
+        "history": {
+            "scar": "m_c's pelt was burned by a forest fire.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} burns after a forest fire."
+        }
     },
     {
         "event_id": "fst_injury_",
@@ -592,16 +766,18 @@
                 "cats": [
                     "m_c"
                 ],
-                "injuries": "severe burn",
+                "injuries": [
+                    "severe burn"
+                ],
                 "scars": [
                     "BURNBELLY"
-                ],
-                "history": {
-                    "scar": "m_c's pelt was burned by a forest fire.",
-                    "reg_death": "m_c died from {PRONOUN/m_c/poss} burns after a forest fire."
-                }
+                ]
             }
         ],
+        "history": {
+            "scar": "m_c's pelt was burned by a forest fire.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} burns after a forest fire."
+        },
         "relationships": [
             {
                 "cats_from": [
@@ -666,14 +842,16 @@
                 "cats": [
                     "m_c"
                 ],
-                "injuries": "shivering",
-                "scars": [],
-                "history": {
-                    "scar": "m_c got frostbitten after falling into a frozen pond.",
-                    "reg_death": "m_c died from the cold after falling into a frozen pond."
-                }
+                "injuries": [
+                    "shivering"
+                ],
+                "scars": []
             }
         ],
+        "history": {
+            "scar": "m_c got frostbitten after falling into a frozen pond.",
+            "reg_death": "m_c died from the cold after falling into a frozen pond."
+        },
         "relationships": [
             {
                 "cats_from": [
@@ -724,144 +902,9 @@
                 "cats": [
                     "m_c"
                 ],
-                "injuries": "headache"
+                "injuries": [
+                    "headache"
+                ]
             }
         ]
-    },
-    {
-        "event_id": "fst_injury_",
-        "biome": [
-            "forest"
-        ],
-        "season": [
-            "any"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c was grabbed by a hawk, but luckily r_c saves {PRONOUN/m_c/object}! The kit is still left injured from the ordeal.",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "relationship_status": []
-        },
-        "r_c": {
-            "age": [],
-            "status": []
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": "claw-wound",
-                "scars": [
-                    "TWO"
-                ],
-                "history": {
-                    "scar": "m_c was scarred as a kit, when a hawk tried to carry {PRONOUN/m_c/object} off.",
-                    "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a hawk tried to carry {PRONOUN/m_c/object} off."
-                }
-            }
-        ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "platonic",
-                    "comfort",
-                    "respect",
-                    "dislike"
-                ],
-                "amount": -5
-            }
-        ]
-    },
-    {
-        "event_id": "fst_injury_",
-        "biome": [
-            "forest"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c snuck out of camp and returned cold and shivering, frostbite nipping at {PRONOUN/m_c/poss} paws.",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "trait": [
-                "daring",
-                "impulsive",
-                "inquisitive",
-                "troublesome"
-            ]
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": "frostbite",
-                "scars": [
-                    "FROSTMITT"
-                ],
-                "history": {
-                    "scar": "m_c was scarred by frostbite.",
-                    "reg_death": "m_c died after {PRONOUN/m_c/subject} got frostbite sneaking out of camp."
-                }
-            }
-        ]
-    },
-    {
-        "event_id": "fst_injury_",
-        "biome": [
-            "forest"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c went out for a walk, but slipped on the ice and broke a bone.",
-        "m_c": {
-            "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "elder"
-            ],
-            "status": []
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": "broken bone",
-                "scars": [
-                    "TOETRAP"
-                ],
-                "history": {
-                    "scar": "m_c was scarred after slipping on ice.",
-                    "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after slipping on ice."
-                }
-            }
-        ]
-    }
-]
+    }]

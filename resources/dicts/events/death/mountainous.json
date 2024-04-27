@@ -1,4 +1,4 @@
-[    
+[
     {
         "event_id": "mtn_death_",
         "biome": [
@@ -26,6 +26,9 @@
                 "leader"
             ],
             "dies": true
+        },
+        "history": {
+            "lead_death": "fell into the river"
         }
     },
     {
@@ -53,6 +56,9 @@
                 "leader"
             ],
             "dies": true
+        },
+        "history": {
+            "lead_death": "{VERB/m_c/were/was} grabbed by an eagle"
         }
     },
     {
@@ -81,6 +87,9 @@
                 "leader"
             ],
             "dies": true
+        },
+        "history": {
+            "lead_death": "{VERB/m_c/were/was} swept away by a flood"
         }
     },
     {
@@ -108,6 +117,9 @@
                 "leader"
             ],
             "dies": true
+        },
+        "history": {
+            "lead_death": "fell from a tall tree"
         }
     },
     {
@@ -160,6 +172,9 @@
         "r_c": {
             "age": [],
             "status": []
+        },
+        "history": {
+            "lead_death": "defended r_c from a hawk"
         },
         "relationships": [
             {
@@ -230,6 +245,9 @@
             "age": [],
             "status": []
         },
+        "history": {
+            "lead_death": "defended r_c from an eagle"
+        },
         "relationships": [
             {
                 "cats_from": [
@@ -279,6 +297,9 @@
                 "FIGHTER,3"
             ],
             "dies": true
+        },
+        "history": {
+            "lead_death": "{VERB/m_c/were/was} carried away by an eagle"
         }
     },
     {
@@ -311,6 +332,9 @@
                 "leader"
             ],
             "dies": true
+        },
+        "history": {
+            "lead_death": "{VERB/m_c/were/was} swept away by the river"
         }
     },
     {
@@ -341,6 +365,9 @@
                 "leader"
             ],
             "dies": true
+        },
+        "history": {
+            "lead_death": "{VERB/m_c/were/was} buried alive in an avalanche"
         }
     },
     {
@@ -372,6 +399,9 @@
                 "leader"
             ],
             "dies": true
+        },
+        "history": {
+            "lead_death": "{VERB/m_c/were/was} buried alive in a landslide"
         }
     },
     {
@@ -401,6 +431,9 @@
                 "leader"
             ],
             "dies": true
+        },
+        "history": {
+            "lead_death": "{VERB/m_c/were/was} buried alive in a mudslide"
         }
     },
     {
@@ -430,6 +463,9 @@
                 "leader"
             ],
             "dies": true
+        },
+        "history": {
+            "lead_death": "slipped off the edge of a cliff"
         }
     },
     {
@@ -472,6 +508,9 @@
                 "sneaky"
             ]
         },
+        "history": {
+            "lead_death": "{VERB/m_c/were/was} shoved off a cliff by r_c"
+        },
         "relationships": [
             {
                 "mututal": true,
@@ -501,6 +540,9 @@
             "age": [],
             "status": [],
             "dies": true
+        },
+        "history": {
+            "reg_death": "m_c was buried alive in an avalanche."
         }
     },
     {
@@ -520,6 +562,9 @@
             "age": [],
             "status": [],
             "dies": true
+        },
+        "history": {
+            "reg_death": "m_c was buried alive in a landslide."
         }
     },
     {
@@ -537,6 +582,9 @@
             "age": [],
             "status": [],
             "dies": true
+        },
+        "history": {
+            "reg_death": "m_c was buried alive in a mudslide."
         }
     },
     {
@@ -558,6 +606,9 @@
                 "childish"
             ],
             "dies": true
+        },
+        "history": {
+            "reg_death": "m_c slipped off the edge of a cliff."
         }
     },
     {
@@ -575,6 +626,9 @@
             "age": [],
             "status": [],
             "dies": true
+        },
+        "history": {
+            "reg_death": "m_c froze to death."
         }
     },
     {
@@ -592,6 +646,9 @@
             "age": [],
             "status": [],
             "dies": true
+        },
+        "history": {
+            "reg_death": "m_c froze to death."
         }
     },
     {
@@ -609,6 +666,9 @@
             "age": [],
             "status": [],
             "dies": true
+        },
+        "history": {
+            "reg_death": "m_c froze to death after falling through ice."
         }
     },
     {
@@ -642,6 +702,9 @@
                 "CLEVER,2",
                 "HUNTER,3"
             ]
+        },
+        "history": {
+            "reg_death": "m_c was pushed off a cliff by r_c."
         },
         "relationships": [
             {
@@ -692,6 +755,9 @@
                 "FIGHTER,2"
             ]
         },
+        "history": {
+            "reg_death": "m_c was pushed off a cliff by r_c."
+        },
         "relationships": [
             {
                 "cats_from": [
@@ -725,6 +791,10 @@
             "age": [],
             "status": [],
             "dies": true
+        },
+        "history": {
+            "reg_death": "m_c was crushed by a falling boulder.",
+            "lead_death": "{VERB/m_c/were/was} crushed by a falling boulder."
         }
     },
     {
@@ -750,6 +820,9 @@
         "r_c": {
             "age": [],
             "status": []
+        },
+        "history": {
+            "reg_death": "m_c was grabbed by a hawk, never to be seen again."
         },
         "relationships": [
             {
@@ -780,6 +853,9 @@
                 "kitten"
             ],
             "dies": true
+        },
+        "history": {
+            "reg_death": "m_c froze to death."
         }
     },
     {
@@ -804,6 +880,9 @@
                 "kitten"
             ],
             "dies": true
+        },
+        "history": {
+            "reg_death": "m_c froze to death."
         }
     },
     {
@@ -834,6 +913,9 @@
                 "troublesome"
             ],
             "dies": true
+        },
+        "history": {
+            "reg_death": "m_c froze to death."
         }
     },
     {
@@ -863,6 +945,9 @@
                 "impulsive"
             ],
             "dies": true
+        },
+        "history": {
+            "reg_death": "m_c froze to death after falling through ice."
         }
     }
 ]

@@ -1,606 +1,6 @@
 [
     {
-        "event_id": "bch_injury_",
-        "biome": [
-            "beach"
-        ],
-        "camp": [
-            "camp1"
-        ],
-        "season": [
-            "any"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c was grabbed by a seagull, but luckily r_c saves {PRONOUN/m_c/object}! The kit is still left injured from the ordeal.",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "relationship_status": []
-        },
-        "r_c": {
-            "age": [],
-            "status": []
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": "claw-wound",
-                "scars": [
-                    "TWO"
-                ],
-                "history": {
-                    "scar": "m_c was scarred as a kit, when a seagull tried to carry {PRONOUN/m_c/object} off.",
-                    "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a seagull tried to carry {PRONOUN/m_c/object} off."
-                }
-            }
-        ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "platonic",
-                    "comfort",
-                    "respect",
-                    "dislike"
-                ],
-                "amount": -5
-            }
-        ]
-    },
-    {
-        "event_id": "bch_injury_",
-        "biome": [
-            "beach"
-        ],
-        "camp": [
-            "camp1"
-        ],
-        "season": [
-            "any"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c was grabbed by an osprey, but luckily r_c saves {PRONOUN/m_c/object}! The kit is still left injured from the ordeal.",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "relationship_status": []
-        },
-        "r_c": {
-            "age": [
-                "young adult",
-                "adult",
-                "senior adult"
-            ],
-            "status": []
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": "claw-wound",
-                "scars": [
-                    "TWO"
-                ],
-                "history": {
-                    "scar": "m_c was scarred as a kit, when an osprey tried to carry {PRONOUN/m_c/object} off.",
-                    "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after an osprey tried to carry {PRONOUN/m_c/object} off."
-                }
-            }
-        ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "platonic",
-                    "comfort",
-                    "trust",
-                    "respect",
-                    "dislike"
-                ],
-                "amount": -5
-            }
-        ]
-    },
-    {
-        "event_id": "bch_injury_",
-        "biome": [
-            "beach"
-        ],
-        "camp": [
-            "camp2"
-        ],
-        "season": [
-            "greenleaf",
-            "newleaf"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "r_c dares m_c to try and swim out of camp and m_c can't possibly refuse the challenge. {PRONOUN/m_c/subject/CAP} {VERB/m_c/do/does}n't make it far, however, before {PRONOUN/m_c/poss} meager swimming skills fail {PRONOUN/m_c/object} and {PRONOUN/m_c/subject} nearly {VERB/m_c/drown/drowns} before an adult spots {PRONOUN/m_c/object} and comes to the rescue.",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "relationship_status": [],
-            "trait": [
-                "daring",
-                "impulsive",
-                "attention-seeker"
-            ]
-        },
-        "r_c": {
-            "age": [],
-            "status": [],
-            "trait": [
-                "troublesome",
-                "bossy",
-                "bullying",
-                "daring",
-                "impulsive"
-            ]
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": "water in their lungs",
-                "history": {
-                    "reg_death": "m_c died of water-inhalation, after trying to swim out of camp."
-                }
-            }
-        ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "respect"
-                ],
-                "amount": -5
-            }
-        ]
-    },
-    {
-        "event_id": "bch_injury_",
-        "biome": [
-            "beach"
-        ],
-        "camp": [
-            "camp2"
-        ],
-        "season": [
-            "leaf-fall",
-            "leaf-bare"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "r_c dares m_c to try and swim out of camp. m_c can't possibly refuse the challenge, but the water is freezing when {PRONOUN/m_c/subject} jump in. Though an adult quickly notices and scoops {PRONOUN/m_c/object} out, m_c is still shivering violently from the cold.",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "relationship_status": [],
-            "trait": [
-                "daring",
-                "impulsive",
-                "attention-seeker"
-            ]
-        },
-        "r_c": {
-            "age": [],
-            "status": [],
-            "trait": [
-                "troublesome",
-                "bossy",
-                "bullying",
-                "daring",
-                "impulsive"
-            ]
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": "shivering",
-                "history": {
-                    "reg_death": "m_c died after swimming through freezing water when dared by r_c."
-                }
-            }
-        ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "respect"
-                ],
-                "amount": -5
-            }
-        ]
-    },
-    {
-        "event_id": "bch_injury_",
-        "biome": [
-            "beach"
-        ],
-        "camp": [
-            "camp1"
-        ],
-        "season": [
-            "greenleaf",
-            "newleaf",
-            "leaf-fall"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c is hopping around in the tide pools when {PRONOUN/m_c/subject} {VERB/m_c/trip/trips} and {VERB/m_c/fall/falls} onto the rocks. Thankfully, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} only a bit bruised.",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "trait": [
-                "bouncy"
-            ]
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": "bruises"
-            }
-        ]
-    },
-    {
-        "event_id": "bch_injury_",
-        "biome": [
-            "beach"
-        ],
-        "camp": [
-            "camp1"
-        ],
-        "season": [
-            "leaf-fall",
-            "leaf-bare"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c is playing around on the iced-over tide pools, slipping and sliding every which way, when {PRONOUN/m_c/subject} {VERB/m_c/slip/slips} a little too much and take a tumble.",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "trait": [
-                "bouncy",
-                "daring",
-                "impulsive",
-                "noisy",
-                "troublesome",
-                "attention-seeker"
-            ]
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": "bruises"
-            }
-        ]
-    },
-    {
-        "event_id": "bch_injury_",
-        "biome": [
-            "beach"
-        ],
-        "camp": [
-            "camp2"
-        ],
-        "season": [
-            "any"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c is jumping around on the rocks when {PRONOUN/m_c/subject} {VERB/m_c/slip/slips} and {VERB/m_c/fall/falls}. The soft sand of the cave floor softens {PRONOUN/m_c/poss} landing, but {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} still sporting some new bruises.",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "trait": [
-                "bouncy",
-                "daring",
-                "impulsive",
-                "noisy",
-                "troublesome",
-                "attention-seeker"
-            ]
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": "bruises"
-            }
-        ]
-    },
-    {
-        "event_id": "bch_injury_",
-        "biome": [
-            "beach"
-        ],
-        "camp": [
-            "camp1"
-        ],
-        "season": [
-            "leaf-fall",
-            "leaf-bare"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c is playing around on the iced-over tide pools, slipping and sliding every which way, when {PRONOUN/m_c/subject} {VERB/m_c/slip/slips} a little too much and take a tumble.",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "trait": [
-                "bouncy",
-                "daring",
-                "impulsive",
-                "noisy",
-                "troublesome",
-                "attention-seeker"
-            ]
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": "scrapes"
-            }
-        ]
-    },
-    {
-        "event_id": "bch_injury_",
-        "biome": [
-            "beach"
-        ],
-        "camp": [
-            "camp1"
-        ],
-        "season": [
-            "leaf-fall",
-            "leaf-bare"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c is playing around on the iced-over tide pools, slipping and sliding every which way, when {PRONOUN/m_c/subject} {VERB/m_c/slip/slips} a little too much and {VERB/m_c/twist/twists} {PRONOUN/m_c/poss} paw.",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "trait": [
-                "bouncy",
-                "daring",
-                "impulsive",
-                "noisy",
-                "troublesome",
-                "attention-seeker"
-            ]
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": "sprain"
-            }
-        ]
-    },
-    {
-        "event_id": "bch_injury_",
-        "biome": [
-            "beach"
-        ],
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "greenleaf",
-            "newleaf",
-            "leaf-fall"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c found a hole in the rocks and, curious as all kits are, stuck {PRONOUN/m_c/poss} paw inside. The whole camp comes running when {PRONOUN/m_c/subject} {VERB/m_c/screech/screeches} in pain. It seems a snake was living in that hole.",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "trait": [
-                "daring",
-                "impulsive",
-                "noisy",
-                "troublesome",
-                "attention-seeker",
-                "inquisitive",
-                "quiet"
-            ]
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": "snake bite",
-                "scars": [
-                    "SNAKE"
-                ],
-                "history": {
-                    "scar": "m_c was scarred as a kit, when a snake bit {PRONOUN/m_c/object}.",
-                    "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a snake bit {PRONOUN/m_c/object}."
-                }
-            }
-        ]
-    },
-    {
-        "event_id": "bch_injury_",
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c was climbing a tree when {PRONOUN/m_c/subject} fell. Luckily, {PRONOUN/m_c/subject} {VERB/m_c/were/was} only bruised by the incident.",
-        "m_c": {
-            "age": [],
-            "status": []
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": "bruises"
-            }
-        ]
-    },
-    {
-        "event_id": "bch_injury_",
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c stepped on some sharp stones while walking along the shoreline.",
-        "m_c": {
-            "age": [],
-            "status": []
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": "cracked pads"
-            }
-        ]
-    },
-    {
-        "event_id": "bch_injury_",
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c was climbing a tree and got a splinter from one of the branches.",
-        "m_c": {
-            "age": [],
-            "status": []
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": "small cut"
-            }
-        ]
-    },
-    {
-        "event_id": "bch_injury_",
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c was dragged out into the ocean by the tide, and inhaled a lot of water before managing to get out. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} been hacking and sputtering ever since.",
-        "m_c": {
-            "age": [],
-            "status": []
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": "water in their lungs",
-                "history": {
-                    "reg_death": "m_c died from water-inhalation after being dragged out to sea."
-                }
-            }
-        ]
-    },
-    {
-        "event_id": "bch_injury_",
+        "event_id": "bch_injury",
         "biome": [
             "beach"
         ],
@@ -636,19 +36,21 @@
                 "cats": [
                     "m_c"
                 ],
-                "injuries": "broken bone",
+                "injuries": [
+                    "broken bone"
+                ],
                 "scars": [
                     "SIDE"
-                ],
-                "history": {
-                    "scar": "m_c was scarred after falling from a tall tree.",
-                    "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tall tree."
-                }
+                ]
             }
-        ]
+        ],
+        "history": {
+            "scar": "m_c was scarred after falling from a tall tree.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tall tree."
+        }
     },
     {
-        "event_id": "bch_injury_",
+        "event_id": "bch_injury",
         "biome": [
             "beach"
         ],
@@ -693,12 +95,14 @@
                 "cats": [
                     "m_c"
                 ],
-                "injuries": "water in their lungs",
-                "history": {
-                    "reg_death": "m_c died from water-inhalation when {PRONOUN/m_c/subject} nearly drowned."
-                }
+                "injuries": [
+                    "water in their lungs"
+                ]
             }
         ],
+        "history": {
+            "reg_death": "m_c died from water-inhalation when {PRONOUN/m_c/subject} nearly drowned."
+        },
         "relationships": [
             {
                 "cats_from": [
@@ -719,7 +123,7 @@
         ]
     },
     {
-        "event_id": "bch_injury_",
+        "event_id": "bch_injury",
         "biome": [
             "beach"
         ],
@@ -745,12 +149,14 @@
                 "cats": [
                     "m_c"
                 ],
-                "injuries": "cracked pads"
+                "injuries": [
+                    "cracked pads"
+                ]
             }
         ]
     },
     {
-        "event_id": "bch_injury_",
+        "event_id": "bch_injury",
         "biome": [
             "beach"
         ],
@@ -784,12 +190,14 @@
                 "cats": [
                     "m_c"
                 ],
-                "injuries": "bruises"
+                "injuries": [
+                    "bruises"
+                ]
             }
         ]
     },
     {
-        "event_id": "bch_injury_",
+        "event_id": "bch_injury",
         "biome": [
             "beach"
         ],
@@ -825,12 +233,14 @@
                 "cats": [
                     "m_c"
                 ],
-                "injuries": "bruises"
+                "injuries": [
+                    "bruises"
+                ]
             }
         ]
     },
     {
-        "event_id": "bch_injury_",
+        "event_id": "bch_injury",
         "biome": [
             "beach"
         ],
@@ -870,12 +280,14 @@
                 "cats": [
                     "m_c"
                 ],
-                "injuries": "shivering",
-                "history": {
-                    "reg_death": "m_c died after swimming through freezing water when dared by r_c."
-                }
+                "injuries": [
+                    "shivering"
+                ]
             }
         ],
+        "history": {
+            "reg_death": "m_c died after swimming through freezing water when dared by r_c."
+        },
         "relationships": [
             {
                 "cats_from": [
@@ -892,7 +304,7 @@
         ]
     },
     {
-        "event_id": "bch_injury_",
+        "event_id": "bch_injury",
         "biome": [
             "beach"
         ],
@@ -929,12 +341,14 @@
                 "cats": [
                     "m_c"
                 ],
-                "injuries": "dehydrated",
-                "history": {
-                    "reg_death": "m_c died of dehydration after drinking salt water."
-                }
+                "injuries": [
+                    "dehydrated"
+                ]
             }
         ],
+        "history": {
+            "reg_death": "m_c died of dehydration after drinking salt water."
+        },
         "relationships": [
             {
                 "cats_from": [
@@ -952,5 +366,632 @@
                 "amount": -5
             }
         ]
-    }
-]
+    },
+    {
+        "event_id": "bch_injury",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "camp1"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c was grabbed by a seagull, but luckily r_c saves {PRONOUN/m_c/object}! The kit is still left injured from the ordeal.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "status": [
+                "kitten"
+            ],
+            "relationship_status": []
+        },
+        "r_c": {
+            "age": [],
+            "status": []
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "claw-wound"
+                ],
+                "scars": [
+                    "TWO"
+                ]
+            }
+        ],
+        "history": {
+            "scar": "m_c was scarred as a kit, when a seagull tried to carry {PRONOUN/m_c/object} off.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a seagull tried to carry {PRONOUN/m_c/object} off."
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "values": [
+                    "platonic",
+                    "comfort",
+                    "respect",
+                    "dislike"
+                ],
+                "amount": -5
+            }
+        ]
+    },
+    {
+        "event_id": "bch_injury",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "camp1"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c was grabbed by an osprey, but luckily r_c saves {PRONOUN/m_c/object}! The kit is still left injured from the ordeal.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "status": [
+                "kitten"
+            ],
+            "relationship_status": []
+        },
+        "r_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": []
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "claw-wound"
+                ],
+                "scars": [
+                    "TWO"
+                ]
+            }
+        ],
+        "history": {
+            "scar": "m_c was scarred as a kit, when an osprey tried to carry {PRONOUN/m_c/object} off.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after an osprey tried to carry {PRONOUN/m_c/object} off."
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "values": [
+                    "platonic",
+                    "comfort",
+                    "trust",
+                    "respect",
+                    "dislike"
+                ],
+                "amount": -5
+            }
+        ]
+    },
+    {
+        "event_id": "bch_injury",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "camp2"
+        ],
+        "season": [
+            "greenleaf",
+            "newleaf"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "r_c dares m_c to try and swim out of camp and m_c can't possibly refuse the challenge. {PRONOUN/m_c/subject/CAP} {VERB/m_c/do/does}n't make it far, however, before {PRONOUN/m_c/poss} meager swimming skills fail {PRONOUN/m_c/object} and {PRONOUN/m_c/subject} nearly {VERB/m_c/drown/drowns} before an adult spots {PRONOUN/m_c/object} and comes to the rescue.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "status": [
+                "kitten"
+            ],
+            "relationship_status": [],
+            "trait": [
+                "daring",
+                "impulsive",
+                "attention-seeker"
+            ]
+        },
+        "r_c": {
+            "age": [],
+            "status": [],
+            "trait": [
+                "troublesome",
+                "bossy",
+                "bullying",
+                "daring",
+                "impulsive"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "water in their lungs"
+                ]
+            }
+        ],
+        "history": {
+            "reg_death": "m_c died of water-inhalation, after trying to swim out of camp."
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "respect"
+                ],
+                "amount": -5
+            }
+        ]
+    },
+    {
+        "event_id": "bch_injury",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "camp2"
+        ],
+        "season": [
+            "leaf-fall",
+            "leaf-bare"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "r_c dares m_c to try and swim out of camp. m_c can't possibly refuse the challenge, but the water is freezing when {PRONOUN/m_c/subject} jump in. Though an adult quickly notices and scoops {PRONOUN/m_c/object} out, m_c is still shivering violently from the cold.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "status": [
+                "kitten"
+            ],
+            "relationship_status": [],
+            "trait": [
+                "daring",
+                "impulsive",
+                "attention-seeker"
+            ]
+        },
+        "r_c": {
+            "age": [],
+            "status": [],
+            "trait": [
+                "troublesome",
+                "bossy",
+                "bullying",
+                "daring",
+                "impulsive"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "shivering"
+                ]
+            }
+        ],
+        "history": {
+            "reg_death": "m_c died after swimming through freezing water when dared by r_c."
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "respect"
+                ],
+                "amount": -5
+            }
+        ]
+    },
+    {
+        "event_id": "bch_injury",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "camp1"
+        ],
+        "season": [
+            "greenleaf",
+            "newleaf",
+            "leaf-fall"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c is hopping around in the tide pools when {PRONOUN/m_c/subject} {VERB/m_c/trip/trips} and {VERB/m_c/fall/falls} onto the rocks. Thankfully, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} only a bit bruised.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "status": [
+                "kitten"
+            ],
+            "trait": [
+                "bouncy"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "bruises"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "bch_injury",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "camp1"
+        ],
+        "season": [
+            "leaf-fall",
+            "leaf-bare"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c is playing around on the iced-over tide pools, slipping and sliding every which way, when {PRONOUN/m_c/subject} {VERB/m_c/slip/slips} a little too much and take a tumble.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "status": [
+                "kitten"
+            ],
+            "trait": [
+                "bouncy",
+                "daring",
+                "impulsive",
+                "noisy",
+                "troublesome",
+                "attention-seeker"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "bruises"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "bch_injury",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "camp2"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c is jumping around on the rocks when {PRONOUN/m_c/subject} {VERB/m_c/slip/slips} and {VERB/m_c/fall/falls}. The soft sand of the cave floor softens {PRONOUN/m_c/poss} landing, but {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} still sporting some new bruises.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "status": [
+                "kitten"
+            ],
+            "trait": [
+                "bouncy",
+                "daring",
+                "impulsive",
+                "noisy",
+                "troublesome",
+                "attention-seeker"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "bruises"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "bch_injury",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "camp1"
+        ],
+        "season": [
+            "leaf-fall",
+            "leaf-bare"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c is playing around on the iced-over tide pools, slipping and sliding every which way, when {PRONOUN/m_c/subject} {VERB/m_c/slip/slips} a little too much and take a tumble.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "status": [
+                "kitten"
+            ],
+            "trait": [
+                "bouncy",
+                "daring",
+                "impulsive",
+                "noisy",
+                "troublesome",
+                "attention-seeker"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "scrapes"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "bch_injury",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "camp1"
+        ],
+        "season": [
+            "leaf-fall",
+            "leaf-bare"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c is playing around on the iced-over tide pools, slipping and sliding every which way, when {PRONOUN/m_c/subject} {VERB/m_c/slip/slips} a little too much and {VERB/m_c/twist/twists} {PRONOUN/m_c/poss} paw.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "status": [
+                "kitten"
+            ],
+            "trait": [
+                "bouncy",
+                "daring",
+                "impulsive",
+                "noisy",
+                "troublesome",
+                "attention-seeker"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "sprain"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "bch_injury",
+        "biome": [
+            "beach"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "greenleaf",
+            "newleaf",
+            "leaf-fall"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c found a hole in the rocks and, curious as all kits are, stuck {PRONOUN/m_c/poss} paw inside. The whole camp comes running when {PRONOUN/m_c/subject} {VERB/m_c/screech/screeches} in pain. It seems a snake was living in that hole.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "status": [
+                "kitten"
+            ],
+            "trait": [
+                "daring",
+                "impulsive",
+                "noisy",
+                "troublesome",
+                "attention-seeker",
+                "inquisitive",
+                "quiet"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "snake bite"
+                ],
+                "scars": [
+                    "SNAKE"
+                ]
+            }
+        ],
+        "history": {
+            "scar": "m_c was scarred as a kit, when a snake bit {PRONOUN/m_c/object}.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a snake bit {PRONOUN/m_c/object}."
+        }
+    },
+    {
+        "event_id": "bch_injury",
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c was climbing a tree when {PRONOUN/m_c/subject} fell. Luckily, {PRONOUN/m_c/subject} {VERB/m_c/were/was} only bruised by the incident.",
+        "m_c": {
+            "age": [],
+            "status": []
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "bruises"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "bch_injury",
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c stepped on some sharp stones while walking along the shoreline.",
+        "m_c": {
+            "age": [],
+            "status": []
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "cracked pads"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "bch_injury",
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c was climbing a tree and got a splinter from one of the branches.",
+        "m_c": {
+            "age": [],
+            "status": []
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "small cut"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "bch_injury",
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c was dragged out into the ocean by the tide, and inhaled a lot of water before managing to get out. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} been hacking and sputtering ever since.",
+        "m_c": {
+            "age": [],
+            "status": []
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "water in their lungs"
+                ]
+            }
+        ],
+        "history": {
+            "reg_death": "m_c died from water-inhalation after being dragged out to sea."
+        }
+    }]
