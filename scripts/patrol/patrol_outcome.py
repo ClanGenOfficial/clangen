@@ -171,11 +171,13 @@ class PatrolOutcome():
         return outcome_list
 
     def execute_outcome(self, patrol:'Patrol') -> tuple:
-        """ Excutes the outcome. Returns a tuple with the final outcome text, the results text, and any outcome art
+        """ 
+        Excutes the outcome. Returns a tuple with the final outcome text, the results text, and any outcome art
         format: (Outcome text, results text, outcome art (might be None))
-        """
-        
+        """        
         results = []
+        # the text has to be processed before - otherwise leader might be referenced with their warrior name
+        processed_text = patrol.process_text(self.text, self.stat_cat)
         
         # This order is important. 
         results.append(self._handle_new_cats(patrol))
@@ -192,8 +194,6 @@ class PatrolOutcome():
         
         # Filter out empty results strings
         results = [x for x in results if x]
-        
-        processed_text = patrol.process_text(self.text, self.stat_cat)
         
         print("PATROL END -----------------------------------------------------")
         
