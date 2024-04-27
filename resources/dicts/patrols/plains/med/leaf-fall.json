@@ -5981,6 +5981,7 @@
                 "text": "Mallow has a very literal name - it mellows things out, helping calm both the gut and the respiratory system. Perhaps it's not the most powerful herb in their arsenal, but it's excellent at helping in combination with others.",
                 "exp": 30,
                 "weight": 20,
+                "art": "gen_med_gatheringmallow_newleaf3",
                 "herbs": ["mallow"],
                 "relationships": [
                     {
@@ -6010,6 +6011,7 @@
                 "text": "They find mallow... but r_c ends up eating it instead of carrying it back, resulting in the herbs being ruined.",
                 "exp": 0,
                 "weight": 20,
+                "art": "gen_med_gatheringmallow_newleaf3",
                 "relationships": [
                     {
                         "cats_to": ["r_c"],
@@ -6116,6 +6118,7 @@
                 "text": "It's said that when oak leaves are chewed or mixed into a poultice, their power to prevent infection is the result of the strength of ancient trees being given to the cats using them. Therefore the older the tree, the better its leaves are as herbs.",
                 "exp": 30,
                 "weight": 20,
+                "art": "gen_med_gatheringoakleaves_leaf-fall2",
                 "herbs": ["oak_leaves"],
                 "relationships": [
                     {
@@ -6147,6 +6150,7 @@
                 "text": "Whatever tale p_l was reminded of, it does nothing to help {PRONOUN/p_l/object} climb the damn tree and fetch the leaves. {PRONOUN/p_l/subject/CAP} misjudge a step and are left clinging, claws out and eyes wide. Let's return to the ground. Now.",
                 "exp": 0,
                 "weight": 20,
+                "art": "gen_med_gatheringoakleaves_leaf-fall2",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
