@@ -37,7 +37,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c is in the middle of the beach when the flood hits {PRONOUN/r_c/object}, freezing water rushing from inland, sweeping {PRONOUN/r_c/object} straight out to sea to die in the cold ocean.",
+                "text": "r_c is in the middle of the beach when the flood hits {PRONOUN/r_c/object}. Freezing water rushes from inland, sweeping {PRONOUN/r_c/object} straight out to sea to die in the cold ocean.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
