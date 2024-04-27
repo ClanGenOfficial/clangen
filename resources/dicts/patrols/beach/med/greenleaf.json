@@ -4695,7 +4695,7 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "p_l heads out to find ragwort, holding the particular fractal shape of its furled leaves in {PRONOUN/p_l/poss} mind to distinguish it from every other low growing patch of greenery.",
+        "intro_text": "p_l heads out to find ragwort, holding the particular fractal shape of its furled leaves in {PRONOUN/p_l/poss} mind to distinguish it from every other low-growing patch of greenery.",
         "decline_text": "{PRONOUN/p_l/poss/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
@@ -4706,13 +4706,13 @@
                 "herbs": ["ragwort"]
             },
             {
-                "text": "Ragwort brings strength to cats who need it, and eases aching joints, but StarClan it tastes absolutely <i>foul.</i> p_l's pleased with {PRONOUN/p_l/poss} harvest, but really wishes {PRONOUN/p_l/subject} had a way to bring it back to camp that didn't need {PRONOUN/p_l/object} to carry it in {PRONOUN/p_l/poss} mouth.",
+                "text": "Ragwort brings strength to cats who need it and eases aching joints, but StarClan it tastes absolutely <i>foul.</i> p_l's pleased with {PRONOUN/p_l/poss} harvest, but really wishes {PRONOUN/p_l/subject} had a way to bring it back to camp that didn't need {PRONOUN/p_l/object} to carry it in {PRONOUN/p_l/poss} mouth.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "ragwort"]
             },
             {
-                "text": "s_c has discovered a trick to harvesting the bountiful but foul ragwort - using {PRONOUN/s_c/poss} claws to tear leaves from the plant, then carefully carrying them back to camp without chewing or salivating. It's difficult but doable, if only just.",
+                "text": "s_c has discovered a trick to harvesting the bountiful, but foul, ragwort - using {PRONOUN/s_c/poss} claws to tear leaves from the plant, then carefully carrying them back to camp without chewing or salivating. It's difficult but doable, if only just.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -4744,7 +4744,7 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "p_l heads out to find ragwort, holding the particular fractal shape of its furled leaves in {PRONOUN/p_l/poss} mind to distinguish it from every other low growing patch of greenery, and doing {PRONOUN/p_l/poss} best to describe the shape to app1.",
+        "intro_text": "p_l heads out to find ragwort, holding the particular fractal shape of its furled leaves in {PRONOUN/p_l/poss} mind to distinguish it from every other low-growing patch of greenery, and doing {PRONOUN/p_l/poss} best to describe the shape to app1.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
@@ -4771,7 +4771,7 @@
                 ]
             },
             {
-                "text": "Ragwort brings strength to cats who need it, and eases aching joints, but StarClan it tastes absolutely <i>foul.</i> p_l's pleased with {PRONOUN/p_l/poss} harvest, but really wishes {PRONOUN/p_l/subject} had a way to bring it back to camp that didn't need {PRONOUN/p_l/object} to carry it in {PRONOUN/p_l/poss} mouth, and has a lot of sympathy for app1's disgusted expression.",
+                "text": "Ragwort brings strength to cats who need it and eases aching joints, but StarClan it tastes absolutely <i>foul.</i> p_l's pleased with {PRONOUN/p_l/poss} harvest but really wishes {PRONOUN/p_l/subject} had a way to bring it back to camp that didn't need {PRONOUN/p_l/object} to carry it in {PRONOUN/p_l/poss} mouth. {PRONOUN/p_l/subject} {VERB/p_l/have/has} a lot of sympathy for app1's disgusted expression.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "ragwort"],
@@ -4793,7 +4793,7 @@
                 ]
             },
             {
-                "text": "s_c has discovered a trick to harvesting the bountiful, but foul, ragwort - using {PRONOUN/s_c/poss} claws to tear leaves from the plant, then carefully carrying them back to camp without chewing or salivating. It's difficult, but doable, if only just, and app1 is desperately grateful to learn the trick.",
+                "text": "s_c has discovered a trick to harvesting the bountiful, but foul, ragwort - using {PRONOUN/s_c/poss} claws to tear leaves from the plant, then carefully carrying them back to camp without chewing or salivating. It's difficult but doable, if only just, and app1 is desperately grateful to learn the trick.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -4855,12 +4855,12 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l heads out to find ragwort, holding the particular fractal shape of its furled leaves in {PRONOUN/p_l/poss} mind to distinguish it from every other low growing patch of greenery. {PRONOUN/p_l/subject/CAP} {VERB/p_l/bring/brings} warriors with {PRONOUN/p_l/object} to carry it back to camp.",
+        "intro_text": "p_l heads out to find ragwort, holding the particular fractal shape of its furled leaves in {PRONOUN/p_l/poss} mind to distinguish it from every other low-growing patch of greenery. {PRONOUN/p_l/subject/CAP} {VERB/p_l/bring/brings} warriors with {PRONOUN/p_l/object} to carry it back to camp.",
         "decline_text": "{PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} stopped before {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Ugh. The ragwort p_l finds is flowering, and the yellow flowers of the plant waft out their scent, leaving a foul taste hanging in the air. There a chorus of long-suffering sighs as the cats get to work, accomplishing their unpleasant task professionally, but without any joy.",
+                "text": "Ugh. The ragwort p_l finds is flowering, and the yellow flowers of the plant waft out their scent, leaving a foul taste hanging in the air. There is a chorus of long-suffering sighs as the cats get to work, accomplishing their unpleasant task professionally but without any joy.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["ragwort"],
@@ -4882,7 +4882,7 @@
                 ]
             },
             {
-                "text": "Ragwort brings strength to cats who need it, and eases aching joints, but StarClan it tastes absolutely <i>foul.</i> p_l's pleased with {PRONOUN/p_l/poss} harvest, but really wishes {PRONOUN/p_l/subject} had a way to bring it back to camp that didn't need {PRONOUN/p_l/object} to carry it in {PRONOUN/p_l/poss} mouth, a sentiment that the patrol helping {PRONOUN/p_l/object} definitely shares... at length, very descriptively.",
+                "text": "Ragwort brings strength to cats who need it and eases aching joints, but StarClan it tastes absolutely <i>foul.</i> p_l's pleased with {PRONOUN/p_l/poss} harvest but really wishes {PRONOUN/p_l/subject} had a way to bring it back to camp that didn't need {PRONOUN/p_l/object} to carry it in {PRONOUN/p_l/poss} mouth. The patrol helping {PRONOUN/p_l/object} definitely shares the sentiment... at length, very descriptively.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "ragwort"],
@@ -4904,7 +4904,7 @@
                 ]
             },
             {
-                "text": "s_c has discovered a trick to harvesting the bountiful, but foul, ragwort - using {PRONOUN/s_c/poss} claws to tear leaves from the plant, then carefully carrying them back to camp without chewing or salivating. Some of the warriors are too impatient to follow {PRONOUN/s_c/poss} lead, and end up suffering the taste of ragwort as the patrol brings back loads of the leaves.",
+                "text": "s_c has discovered a trick to harvesting the bountiful, but foul, ragwort - using {PRONOUN/s_c/poss} claws to tear leaves from the plant, then carefully carrying them back to camp without chewing or salivating. Some of the warriors are too impatient to follow {PRONOUN/s_c/poss} lead and end up suffering the taste of ragwort as the patrol brings back loads of the leaves.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -4969,18 +4969,18 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "p_l identifies them as raspberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit, especially its leaves.",
+                "text": "p_l identifies them as raspberries and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit, especially its leaves.",
                 "exp": 30,
                 "weight": 20,
                 "herbs": ["raspberry"]
             },
             {
-                "text": "p_l knows deathberries when {PRONOUN/p_l/subject} {VERB/p_l/see/sees} them, and slips back to camp to report it to the leader - the warriors will need to be told to avoid this bush.",
+                "text": "p_l knows deathberries when {PRONOUN/p_l/subject} {VERB/p_l/see/sees} them and slips back to camp to report it to the leader - the warriors will need to be told to avoid this bush.",
                 "exp": 30,
                 "weight": 5
             },
             {
-                "text": "It takes little intelligence to recognize deathberries, but a great deal to collect them anyway. If s_c can dry them out, these berries will be sufficient for c_n for years to come. By using {PRONOUN/s_c/poss} weight to snap off one of the bush's branches, and then carefully carrying it back to camp, s_c manages to bring them safely home.",
+                "text": "It takes little intelligence to recognize deathberries but a great deal to collect them anyway. If s_c can dry them out, these berries will be sufficient for c_n for years to come. By using {PRONOUN/s_c/poss} weight to snap off one of the bush's branches and then carefully carrying it back to camp, s_c manages to bring them safely home.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"]
@@ -5038,7 +5038,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "app1 identifies them as raspberries, and carefully chews off a branch laden with them to bring back to camp. {PRONOUN/app1/subject/CAP} can't quite remember what raspberries treat, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure it's something to do with kitting.",
+                "text": "app1 identifies them as raspberries and carefully chews off a branch laden with them to bring back to camp. {PRONOUN/app1/subject/CAP} can't quite remember what raspberries treat, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure it's something to do with kitting.",
                 "exp": 30,
                 "weight": 20,
                 "herbs": ["raspberry"]
@@ -5166,7 +5166,7 @@
                 ]
             },
             {
-                "text": "Good for all coughs, all wounds, and all poisons - but it'd be dangerous to assume tansy has no downsides. p_l quietly teaches app1 how tansy is also used to ease the passing of mortally wounded cats, and to induce losing a litter in queens whose pregnancy is risking {PRONOUN/p_l/poss} life. This means it's not used for pregnant or nursing queens, nor for kits.",
+                "text": "Good for all coughs, all wounds, and all poisons - but it'd be dangerous to assume tansy has no downsides. p_l quietly teaches app1 how tansy is also used to ease the passing of mortally wounded cats and to induce losing a litter in queens whose pregnancy is risking {PRONOUN/p_l/poss} life. This means it's not used for pregnant or nursing queens, nor for kits.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "tansy"],
@@ -5362,11 +5362,11 @@
         },
         "weight": 20,
         "intro_text": "p_l has finally put enough time aside to go search for thyme.",
-        "decline_text": "{PRONOUN/p_l/poss/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, and {VERB/p_l/decide/decides} to go another day.",
+        "decline_text": "{PRONOUN/p_l/poss/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "It calms racing hearts and minds, bringing cats back from the shock of loss or injury... thyme is always both helpful and pleasant to have around, and p_l makes sure to organize the herb stores so that the scent wafts near {PRONOUN/p_l/poss} nest.",
+                "text": "It calms racing hearts and minds, bringing cats back from the shock of loss or injury... Thyme is always both helpful and pleasant to have around, and p_l makes sure to organize the herb stores so that the scent wafts near {PRONOUN/p_l/poss} nest.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["thyme"]
@@ -5431,7 +5431,7 @@
                 ]
             },
             {
-                "text": "It calms racing hearts and minds, bringing cats back from the shock of loss or injury... thyme is always both helpful and pleasant to have around, and p_l makes sure to organize the herb stores so that the scent wafts near the nests {PRONOUN/p_l/subject} and app1 curl up in at night.",
+                "text": "It calms racing hearts and minds, bringing cats back from the shock of loss or injury... Thyme is always both helpful and pleasant to have around, and p_l makes sure to organize the herb stores so that the scent wafts near the nests {PRONOUN/p_l/subject} and app1 curl up in at night.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "thyme"],
@@ -5520,7 +5520,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "It calms racing hearts and minds, bringing cats back from the shock of loss or injury... thyme is always both helpful and pleasant to have around, and p_l decides that this patrol has brought back so much there's no harm in letting the warriors take a stem each for their nests.",
+                "text": "It calms racing hearts and minds, bringing cats back from the shock of loss or injury... Thyme is always both helpful and pleasant to have around, and p_l decides that this patrol has brought back so much there's no harm in letting the warriors take a stem each for their nests.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["thyme"],
@@ -5605,7 +5605,7 @@
         },
         "weight": 20,
         "intro_text": "p_l heads out on what promises to be a fragrant patrol, searching for wild garlic.",
-        "decline_text": "{PRONOUN/p_l/poss/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, and {VERB/p_l/decide/decides} to go another day.",
+        "decline_text": "{PRONOUN/p_l/poss/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -5621,7 +5621,7 @@
                 "herbs": ["many_herbs", "wild_garlic"]
             },
             {
-                "text": "s_c, ever eagle-eyed, spots grass that looks suspiciously tall, with oddly thick blades. One sniff confirms it as wild garlic, and this patch has heaps to harvest.",
+                "text": "s_c, ever eagle-eyed, spots grass that looks suspiciously tall with oddly thick blades. One sniff confirms it as wild garlic, and this patch has heaps to harvest.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -5702,7 +5702,7 @@
                 ]
             },
             {
-                "text": "s_c, ever eagle-eyed, spots grass that looks suspiciously tall, with oddly thick blades. One sniff confirms it as wild garlic, and this patch has heaps to harvest with app1.",
+                "text": "s_c, ever eagle-eyed, spots grass that looks suspiciously tall with oddly thick blades. One sniff confirms it as wild garlic, and this patch has heaps to harvest with app1.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -5813,7 +5813,7 @@
                 ]
             },
             {
-                "text": "s_c, ever eagle-eyed, spots grass that looks suspiciously tall, with oddly thick blades. One sniff confirms it as wild garlic, and the patch has heaps for {PRONOUN/s_c/poss} patrol to harvest.",
+                "text": "s_c, ever eagle-eyed, spots grass that looks suspiciously tall with oddly thick blades. One sniff confirms it as wild garlic, and the patch has heaps for {PRONOUN/s_c/poss} patrol to harvest.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],

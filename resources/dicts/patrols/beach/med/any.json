@@ -181,7 +181,7 @@
         },
         "weight": 20,
         "intro_text": "app1 has been sent out onto the beaches to try to find some specific herbs alone.",
-        "decline_text": "Nervous and sneezing due to the salty air, they decide to go back to camp and try again another day. {PRONOUN/app1/poss/CAP} mentor won't be very pleased, but {PRONOUN/app1/subject} rationalize that it's better to go with confidence than nerves.",
+        "decline_text": "Nervous and sneezing due to the salty air, {PRONOUN/app1/subject} {VERB/app1/decide/decides} to go back to camp and try again another day. {PRONOUN/app1/poss/CAP} mentor won't be very pleased, but {PRONOUN/app1/subject} rationalize that it's better to go with confidence than nerves.",
         "chance_of_success": 65,
         "success_outcomes": [
             {
