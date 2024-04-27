@@ -410,6 +410,8 @@ class Pregnancy_Events():
 
             if cat.outside:
                 possible_events = events["birth"]["outside_death"]
+            if game.clan.leader_lives > 1:
+                possible_events = events["birth"]["lead_death"]
             event_list.append(choice(possible_events))
 
             if cat.status == 'leader':
