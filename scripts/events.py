@@ -7,10 +7,10 @@ TODO: Docs
 """
 
 # pylint: enable=line-too-long
+import re
 from collections import Counter
 import random
 import traceback
-import re
 
 from scripts.cat.history import History
 from scripts.patrol.patrol import Patrol
