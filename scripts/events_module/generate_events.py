@@ -4,6 +4,7 @@ import random
 
 import ujson
 from scripts.game_structure.game_essentials import game
+from scripts.utility import filter_relationship_type, get_cats_of_romantic_interest
 
 resource_directory = "resources/dicts/events/"
 
@@ -335,6 +336,10 @@ class GenerateEvents:
                     and int(random.random() * 3):
                 continue
 
+            # if the event is marked as changing romantic interest, check that the cats are allowed to be romantic
+            if "romance" in event.tags and other_cat.is_potential_mate(cat):
+                continue
+
             if event.m_c:
                 if cat.age not in event.m_c["age"]:
                     continue
@@ -406,7 +411,10 @@ class GenerateEvents:
                 if other_cat.status not in event.r_c["status"]:
                     continue
                 if event.r_c["relationship_status"]:
-                    pass
+                    if not filter_relationship_type(group=[cat, other_cat],
+                                                    filter_types=event.r_c["relationship_status"],
+                                                    event_id=event.event_id):
+                        continue
 
                 # check other_cat trait and skill
                 has_trait = False
@@ -497,7 +505,8 @@ class GenerateEvents:
                 if "ally" in event.other_clan["current_rep"] and int(other_clan.relations) < 17:
                     continue
                 # neutral
-                elif "neutral" in event.other_clan["current_rep"] and (int(other_clan.relations) <= 7 or int(other_clan.relations) >= 17):
+                elif "neutral" in event.other_clan["current_rep"] and (
+                        int(other_clan.relations) <= 7 or int(other_clan.relations) >= 17):
                     continue
                 # hostile
                 elif "hostile" in event.other_clan["current_rep"] and int(other_clan.relations) > 7:
@@ -507,35 +516,6 @@ class GenerateEvents:
             if "mate" in event.tags and len(cat.mate) < 1:
                 continue
 
-            # determine injury severity chance
-            if event.injury:
-                injury = GenerateEvents.INJURIES[event.injury]
-                severity = injury['severity']
-
-                if severity == 'minor':
-                    minor.append(event)
-                elif severity == 'major':
-                    major.append(event)
-                else:
-                    severe.append(event)
-
-            else:
-                final_events.append(event)
-
-        # determine which injury severity list will be used
-        if minor or major or severe:
-            if cat.status in GenerateEvents.INJURY_DISTRIBUTION:
-                minor_chance = GenerateEvents.INJURY_DISTRIBUTION[cat.status]['minor']
-                major_chance = GenerateEvents.INJURY_DISTRIBUTION[cat.status]['major']
-                severe_chance = GenerateEvents.INJURY_DISTRIBUTION[cat.status]['severe']
-                severity_chosen = random.choices(["minor", "major", "severe"],
-                                                 [minor_chance, major_chance, severe_chance], k=1)
-                if severity_chosen[0] == 'minor':
-                    final_events = minor
-                elif severity_chosen[0] == 'major':
-                    final_events = major
-                else:
-                    final_events = severe
 
         return final_events
 
@@ -671,6 +651,7 @@ class ShortEvent:
                 self.other_clan["current_rep"] = []
             if "changed" not in self.other_clan:
                 self.other_clan["changed"] = 0
+
 
 """
 OUTDATED - LEFT FOR REFERENCE

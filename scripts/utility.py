@@ -5,7 +5,7 @@ TODO: Docs
 
 
 """  # pylint: enable=line-too-long
-
+from itertools import combinations
 from random import choice, choices, randint, random, sample
 import re
 import pygame
@@ -624,6 +624,179 @@ def get_amount_of_cats_with_relation_value_towards(cat, value, all_cats):
 
     return return_dict
 
+
+def filter_relationship_type(group: list, filter_types: list, event_id: str = None, patrol_leader=None):
+    """
+    filters for specific types of relationships between groups of cat objects, returns bool
+    :param group: the group of cats to be tested (make sure they're in the correct order (i.e. if testing for parent/child, the cat being tested as parent must be index 0)
+    :param filter_types: the relationship types to check for. possible types: "siblings", "mates", "mates_with_pl" (PATROL ONLY), "not_mates", "parent/child", "child/parent", "mentor/app", "app/mentor", (following tags check if value is over given int) "romantic_int", "platonic_int", "dislike_int", "comfortable_int", "jealousy_int", "trust_int"
+    :param event_id: if the event has an ID, include it here
+    :param patrol_leader: if you are testing a patrol, ensure you include the self.patrol_leader here
+    """
+    possible_rel_types = ["siblings", "mates", "mates_with_pl", "not_mates", "parent/child", "child/parent", "mentor/app", "app/mentor"]
+    possible_value_types = ["romantic", "platonic", "dislike", "comfortable", "jealousy", "trust"]
+
+    for rel in filter_types:
+        if rel not in possible_rel_types and rel not in possible_value_types:
+            print(f"WARNING: {rel} not in possible_rel_types or possible_value_types of filter_relationship_type function.")
+
+    if "siblings" in filter_types:
+        test_cat = group[0]
+        testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
+
+        siblings = [test_cat.is_sibling(inter_cat) for inter_cat in testing_cats]
+        if not all(siblings):
+            return False
+
+    if "mates" in filter_types:
+        # first test if more than one cat
+        if len(group) == 1:
+            return False
+
+        # then if cats don't have the needed number of mates
+        if not all(len(i.mate) >= (len(group) - 1) for i in group):
+            return False
+
+        # Now the expensive test.  We have to see if everone is mates with each other
+        # Hopefully the cheaper tests mean this is only needed on events with a small number of cats
+        for x in combinations(group, 2):
+            if x[0].ID not in x[1].mate:
+                return False
+
+    # check if all cats are mates with p_l (they do not have to be mates with each other)
+    if "mates_with_pl" in filter_types:
+        # First test if there is more than one cat
+        if len(group) == 1:
+            return False
+
+        # Check each cat to see if it is mates with the patrol leader
+        for cat in group:
+            if cat.ID == patrol_leader.ID:
+                continue
+            if cat.ID not in patrol_leader.mate:
+                return False
+
+    # Check if all cats are not mates
+    if "not_mates" in filter_types:
+        # opposite of mate check
+        for x in combinations(group, 2):
+            if x[0].ID in x[1].mate:
+                return False
+
+    # Check if the cats are in a parent/child relationship
+    if "parent/child" in filter_types:
+        # It should be exactly two cats for a "parent/child" event
+        if len(group) != 2:
+            return False
+        # test for parentage
+        if not group[0].is_parent(group[1]):
+            return False
+
+    if "child/parent" in filter_types:
+        # It should be exactly two cats for a "parent/child" event
+        if len(group) != 2:
+            return False
+        # test for parentage
+        if not group[1].is_parent(group[0]):
+            return False
+
+    if "mentor/app" in filter_types:
+        # It should be exactly two cats for a "parent/child" event
+        if len(group) != 2:
+            return False
+        # test for parentage
+        if not group[1].ID in group[0].apprentice:
+            return False
+
+    if "app/mentor" in filter_types:
+        # It should be exactly two cats for a "parent/child" event
+        if len(group) != 2:
+            return False
+        # test for parentage
+        if not group[0].ID in group[1].apprentice:
+            return False
+
+    # Filtering relationship values
+    break_loop = False
+    for v_type in possible_value_types:
+        # first get all tags for current value types
+        tags = [constraint for constraint in filter_types if v_type in constraint]
+
+        # If there is not a tag for the current value type, check next one
+        if len(tags) == 0:
+            continue
+
+            # there should be only one value constraint for each alue type
+        elif len(tags) > 1:
+            print(f"ERROR: event {event_id} has multiple relationship constraints for the value {v_type}.")
+            break_loop = True
+            break
+
+        # try to extract the value/threshold from the text
+        try:
+            threshold = int(tags[0].split('_')[1])
+        except Exception as e:
+            print(
+                f"ERROR: event {event_id} with the relationship constraint for the value {v_type} follows not the formatting guidelines.")
+            break_loop = True
+            break
+
+        if threshold > 100:
+            print(
+                f"ERROR: event {event_id} has a relationship constraints for the value {v_type}, which is higher than the max value of a relationship.")
+            break_loop = True
+            break
+
+        if threshold <= 0:
+            print(
+                f"ERROR: event {event_id} has a relationship constraints for the value {v_type}, which is lower than the min value of a relationship or 0.")
+            break_loop = True
+            break
+
+        # each cat has to have relationships with this relationship value above the threshold
+        fulfilled = True
+        for inter_cat in group:
+            rel_above_threshold = []
+            group_ids = [cat.ID for cat in group]
+            relevant_relationships = list(
+                filter(lambda rel: rel.cat_to.ID in group_ids and rel.cat_to.ID != inter_cat.ID,
+                       list(inter_cat.relationships.values())
+                       )
+            )
+
+            # get the relationships depending on the current value type + threshold
+            if v_type == "romantic":
+                rel_above_threshold = [i for i in relevant_relationships if i.romantic_love >= threshold]
+            elif v_type == "platonic":
+                rel_above_threshold = [i for i in relevant_relationships if i.platonic_like >= threshold]
+            elif v_type == "dislike":
+                rel_above_threshold = [i for i in relevant_relationships if i.dislike >= threshold]
+            elif v_type == "comfortable":
+                rel_above_threshold = [i for i in relevant_relationships if i.comfortable >= threshold]
+            elif v_type == "jealousy":
+                rel_above_threshold = [i for i in relevant_relationships if i.jealousy >= threshold]
+            elif v_type == "trust":
+                rel_above_threshold = [i for i in relevant_relationships if i.trust >= threshold]
+
+            # if the lengths are not equal, one cat has not the relationship value which is needed to another cat of
+            # the event
+            if len(rel_above_threshold) + 1 != len(group):
+                fulfilled = False
+                break
+
+        if not fulfilled:
+            break_loop = True
+            break
+
+        # if break is used in the loop, the condition are not fulfilled
+        # and this event should not be added to the filtered list
+        if break_loop:
+            return False
+
+        return True
+
+def filter_relationship_value():
+    pass
 
 def change_relationship_values(cats_to: list,
                                cats_from: list,
