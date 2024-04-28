@@ -10,6 +10,7 @@ TODO: Docs
 from collections import Counter
 import random
 import traceback
+import re
 
 from scripts.cat.history import History
 from scripts.patrol.patrol import Patrol
@@ -2129,7 +2130,6 @@ class Events:
             for poor_little_meowmeow in dead_cats:
                 poor_little_meowmeow.die()
                 # this next bit is temporary until we can rework it
-                import re
                 if re.search("(drown|drowns) after the camp becomes flooded.", event_string):
                     History.add_death(poor_little_meowmeow, 'This cat died when the camp was flooded.')
                 elif re.search("(are|is) killed after a fire rages through the camp.", event_string):
