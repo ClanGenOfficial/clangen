@@ -109,8 +109,8 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a pronghorn fawn carcass. It's impossible to say whether the fox killed it or found it.",
-        "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "intro_text": "The patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a pronghorn fawn carcass. It's impossible to say whether the fox killed it or found it.",
+        "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -150,7 +150,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
@@ -172,7 +171,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
+                "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -246,8 +245,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a pronghorn fawn carcass. It's impossible to say whether the fox killed it or found it.",
-        "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "intro_text": "The patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a pronghorn fawn carcass. It's impossible to say whether the fox killed it or found it.",
+        "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 20,
         "success_outcomes": [
             {
@@ -287,7 +286,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
@@ -309,7 +307,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there were no injuries.",
+                "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -424,7 +422,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
@@ -545,8 +542,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox - but is it red, or swift?",
-        "decline_text": "Your patrol decides not to pursue the fox.",
+        "intro_text": "The patrol catches the scent of a fox - but is it red, or swift?",
+        "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 10,
         "success_outcomes": [
             {
@@ -598,7 +595,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "bloodthirsty",
                     "bold",
@@ -709,8 +705,8 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox - but is it red, or swift?",
-        "decline_text": "Your patrol decides not to pursue the fox.",
+        "intro_text": "The patrol catches the scent of a fox - but is it red, or swift?",
+        "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 10,
         "success_outcomes": [
             {
@@ -748,7 +744,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "bloodthirsty",
                     "bold",
@@ -824,7 +819,6 @@
                 "weight": 10,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "bloodthirsty",
                     "bold",
@@ -866,8 +860,8 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox - but is it red, or swift?",
-        "decline_text": "Your patrol decides not to pursue the fox.",
+        "intro_text": "The patrol catches the scent of a fox - but is it red, or swift?",
+        "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -885,7 +879,7 @@
                 ]
             },
             {
-                "text": "Your patrol drives away the fox, seeks out her den, and kills her cubs. It's brutal, but these fluffy small foxes would one day have grown to be kit-killers and thieves.",
+                "text": "The patrol drives away the fox, seeks out her den, and kills her cubs. It's brutal, but these fluffy small foxes would one day have grown to be kit-killers and thieves.",
                 "exp": 30,
                 "weight": 5,
                 "relationships": [
@@ -919,7 +913,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "bloodthirsty",
                     "bold",
@@ -1058,8 +1051,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox - but is it red, or swift?",
-        "decline_text": "Your patrol decides not to pursue the fox.",
+        "intro_text": "The patrol catches the scent of a fox - but is it red, or swift?",
+        "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1157,7 +1150,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "r_c catches the scent of a fox - but is it red, or swift?",
-        "decline_text": "Your patrol decides not to pursue the fox.",
+        "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 20,
         "success_outcomes": [
             {
@@ -1254,8 +1247,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox. Tracking it, they find a swift fox feeding on a calf carcass. The cat-sized predator definitely didn't kill this massive hunk of fresh-kill.",
-        "decline_text": "Your patrol decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
+        "intro_text": "The patrol catches the scent of a fox. Tracking it, they find a swift fox feeding on a calf carcass. The cat-sized predator definitely didn't kill this massive hunk of fresh-kill.",
+        "decline_text": "The patrol decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1294,7 +1287,6 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "patient",
                     "responsible",
                     "thoughtful",
@@ -1391,7 +1383,6 @@
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "patient",
                     "responsible",
                     "thoughtful",
@@ -1816,7 +1807,7 @@
         },
         "weight": 20,
         "intro_text": "r_c catches scent of a mouse nearby. The grass, growing thick and lush, could easily hide a hundred.",
-        "decline_text": "Your patrol ignores the mouse.",
+        "decline_text": "The patrol ignores the mouse.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -1862,7 +1853,7 @@
         },
         "weight": 20,
         "intro_text": "app1 catches scent of a mouse nearby. {PRONOUN/app1/subject/CAP} {VERB/app1/lash/lashes} {PRONOUN/app1/poss} tail, wondering where in the tall grass the scent's owner could be.",
-        "decline_text": "Your patrol ignores the mouse.",
+        "decline_text": "The patrol ignores the mouse.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1880,7 +1871,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol narrowly misses the mouse.",
+                "text": "The patrol narrowly misses the mouse.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -1902,7 +1893,7 @@
         },
         "weight": 20,
         "intro_text": "app1 catches scent of a mouse nearby. p_l points out the little path the mouse has trodded into the dirt at the base of the grass stalks - that's what it'll try to use as an escape path.",
-        "decline_text": "Your patrol ignores the mouse.",
+        "decline_text": "The patrol ignores the mouse.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -2073,7 +2064,7 @@
         "chance_of_success": 30,
         "relationship_constraint": null,
         "pl_skill_constraint": null,
-        "intro_text": "Your patrol hears a strange sound coming from the grass. What is that? It's like... a hiss and rustle at once?",
+        "intro_text": "The patrol hears a strange sound coming from the grass. What is that? It's like... a hiss and rustle at once?",
         "decline_text": "p_l knows <i>exactly</i> what that sound is. Get away! Now! lead_name will have to be informed of this venoumous threat on their hunting path.",
         "success_outcomes": [
             { 
