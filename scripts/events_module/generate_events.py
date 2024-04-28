@@ -346,7 +346,10 @@ class GenerateEvents:
                 if cat.status not in event.m_c["status"]:
                     continue
                 if event.m_c["relationship_status"]:
-                    pass
+                    if not filter_relationship_type(group=[cat, other_cat],
+                                                    filter_types=event.m_c["relationship_status"],
+                                                    event_id=event.event_id):
+                        continue
 
                 # check cat trait and skill
                 has_trait = False
