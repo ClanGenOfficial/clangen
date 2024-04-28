@@ -14,6 +14,7 @@ import logging
 from sys import exit as sys_exit
 from typing import Dict
 
+from scripts.clan_resources.freshkill import FRESHKILL_EVENT_TRIGGER_FACTOR
 
 logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache

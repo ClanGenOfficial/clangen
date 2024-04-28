@@ -19,7 +19,14 @@
         },
         "history": {
             "reg_death": "m_c was washed out to sea."
-        }
+        },
+        "supplies": [
+            {
+                "type": "",
+                "trigger": "",
+                "adjust": ""
+            }
+        ]
     },
     {
         "event_id": "bch_death_",
