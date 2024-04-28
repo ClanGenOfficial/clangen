@@ -36,7 +36,9 @@
     "storm", "streak", "stream", "strike", "stripe", "sun", "swarm", "swipe", "swoop", "talon", "tangle",
     "thistle", "thorn", "thrift", "throat", "thrush", "thud", "thunder", "tiger", "timber", "toe", "tooth", "trail", "tree", 
     "trot", "tumble", "twist", "valley", "watcher", "water", "wave", "web", "whisper", "whistle", "willow", "wind", "wing", "wish", "wisp", 
-    "zoom"
+    "zoom",
+    "dragon", "earth", "ghost", "magic", "ground", "guardian", "knight", "mind", "seeker", "soul", "emperor", "day", "life",
+    "lurker", "hunter", "vessel", "forest", "air", "energy", "time", "eternity", "instinct", "vampire", "wizard", "barbarian", "death", "silence"
   ],
   "pelt_suffixes": {
     "TwoColour": ["patch", "spot", "splash", "patch", "spots", "swan"],
@@ -110,7 +112,9 @@
     "Torn", "Tremble", "Trickle", "Trout", "Tuft", "Tulip", "Tumble", "Turtle", "Valley", "Vine", "Vixen", "Wasp", "Weasel", "Web", 
     "Weed", "Weevil", "Wet", "Wheat", "Whimsy", "Whirl", "Whisker", "Whisper", "Whispering", "Whistle", "Whorl", "Wild", "Willow", 
     "Wind", "Wing", "Wish", "Wisteria", "Wolf", "Wolverine", "Wood", "Worm", "Wren", "Yarrow", "Yew", 
-    "Zinnia"
+    "Zinnia",
+    "Dragon", "Wyvern", "Earth", "Eternal", "Time", "Ghost", "Magic", "Mind", "Royal", "Shade", "Spirit", "Soul", "Energy", "Fae", "Wyrm",
+    "Kirin", "Orchid", "Drake", "Hydra", "Sealed", "Pure", "Radiant", "Vampire", "Death", "Life", "Flashy", "Flamboyant"
   ],
 
   "colour_prefixes": {
@@ -410,12 +414,19 @@
     "Worm", "Wrath", "X'ek", "Xelle", "Xhosa", "Xiao", "Xola", "Yaoyao", "Yazhu", "Yeet", "Yeeted", "Yen", "Yeobo", "Yeza", 
     "Yinuo", "Yippee", "Yokai", "Yoonmin", "Yooted", "Yoshi", "Yote", "Yuca", "Yuka", "Yuki", "Yumeko", "Yusuke", "Yuzu", "Yvaine", 
     "Zach", "Zachary", "Zahra", "Zambezi", "Zambia", "Zaniah", "Zari", "Zariah", "Zazu", "Zebra", "Zekrom", "Zelda", "Zell", 
-    "Zendaya", "Zenith", "Zeraora", "Zikomo", "Zim", "Zion", "Zira", "Ziti", "Zoe", "Zoomie", "Zorro", "Zorua", "Zuberi", "Zuko", "Zuma", "Zuna", "Zuva"
+    "Zendaya", "Zenith", "Zeraora", "Zikomo", "Zim", "Zion", "Zira", "Ziti", "Zoe", "Zoomie", "Zorro", "Zorua", "Zuberi", "Zuko", "Zuma", "Zuna", "Zuva",
+    "Olivier", "Kaz", "Kira", "Shira", "Marina", "Nur", "Roy", "Gala", "Bilbo", "Geralt", "Witcher", "Homunculus", "Alchemist", "The Knight", "Inej", "Jesper",
+    "Nina", "Matthias", "Wylan", "Dirtyhands", "Wraith", "Monomon", "Lurien", "Herrah", "Shabor", "Pharaoh", "Porki", "Dark", "Radiance", "Yato", "Yatogami", "Hiyori", "Yukine", "Bishamonten", "Viina",
+    "Kazuma", "Kofuku", "Daikoku", "Armstrong", "Hohenheim", "Scar", "Astarion", "Gale", "Laezel", "Karlach", "Wyll", "Jaheira", "Minsc", "Minthara", "Halsin", "Zevlor", "Raphael", "Gortash", "Bhaal", "Orin",
+    "Ketheric", "Faerun", "Shar", "Selune", "Mystra", "Balthazar", "Absolute", "Cazador", "Szarr", "Vampire", "Mol", "Balduran", "Kagha", "Orpheus", "Dame Aylin", "Isobel", "Tiamat", "Zariel", "Mizora",
+    "Withers", "Elminster", "Aasimar", "Tanjiro", "Kamado", "Nezuko", "Zenitsu", "Inosuke", "Tengen Uzui", "Makio", "Suma", "Hinatsuru", "Rengoku", "Tomioka", "Shinobu", "Kanroji", "Tokito", "Muzan", "Kibutsuji",
+    "Demon", "Devil", "Yuiichiro", "Akaza", "Daki", "Gyutaro", "Ubuyashiki", "Gomei", "Obanai", "Sanemi", "Genya", "Kanae", "Nichirin", "Kimetsu", "Haganezuka"
     ],
 	"animal_suffixes": [
 		"badger", "bat", "bear", "bee", "beetle", "bird", "bug", "cricket", "deer", "eagle", "elk", "falcon", "fawn", "fish", "fox", "goose", "hare", "hawk", "horse", 
     "jay", "kestrel", "kite", "lamb", "leopard", "lion", "minnow", "moth", "mouse", "newt", "ram", "raven", "roach", "scorpion", "sheep", "snake", "spider", 
-    "squid", "swan", "thrush", "tiger", "turtle"
+    "squid", "swan", "thrush", "tiger", "turtle",
+    "hyena", "wolf", "crow"
 	],
 	"animal_prefixes": [
 		"Addax", "Adder", "Albatross", "Alligator", "Alpaca", "Ant", "Antelope", "Aphid", "Avocet", "Axolotl", "Badger", "Barracuda", "Bass", "Bat", "Bear", "Beaver", 
@@ -430,9 +441,10 @@
     "Roach", "Robin", "Sable", "Salamander", "Salmon", "Sardine", "Scorpion", "Seabass", "Seagull", "Serpent", "Shark", "Sheep", "Shrew", "Shrike", "Skink", "Skunk", 
     "Slug", "Snail", "Snake", "Sparrow", "Spider", "Spoonbill", "Squid", "Squirrel", "Stag", "Starling", "Stoat", "Stork", "Swallow", "Swan", "Tadpole", "Taipan", 
     "Tarantula", "Tiger", "Toad", "Trout", "Turtle", "Viper", "Vixen", "Vole", "Vulture", "Warbler", "Wasp", "Weasel", "Weevil", "Whale", "Wolf", "Wolverine", "Worm", 
-    "Wren"
+    "Wren",
+    "Bull", "Hyena", "Jaguar", "Seal", "Capybara", "Genet", "Monkey"
 	],
 	"inappropriate_names": [
-		"wetback", "yellowface", "redface", "blackface", "brownface", "pancakeface", "yellowbone", "molesting"
+		
 	]
 }

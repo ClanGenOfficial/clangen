@@ -1,1 +1,745 @@
-[]
+[
+    {
+        "patrol_id": "wtlnd_med_lungwort7",
+        "biome": [
+            "wetlands"
+        ],
+        "season": [
+            "leaf-fall"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [
+                -1,
+                -1
+            ],
+            "medicine cat": [
+                1,
+                6
+            ],
+            "medicine cat apprentice": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
+        },
+        "weight": 20,
+        "intro_text": "p_l and app1 head out for lungwort, with p_l starting a lesson on the value of this rare herb for treating yellowcough.",
+        "decline_text": "A cat grabs p_l's attention before they can leave. Sighing, the expedition is delayed for another time.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest before the plant dies back in leaf-bare. For just a second, they feel the weight of their responsibilities lift, and they let out a whoop and stop to play with app1.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "dislike"
+                        ],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers them with praise, app1 feeling like they could burst with accomplishment.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "dislike"
+                        ],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": [
+                    "SENSE,2",
+                    "CLEVER,3"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "dislike"
+                        ],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Night falls, and still s_c insists they keep going - lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "patient"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "dislike"
+                        ],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Not only do they not find anything, app1 seems to take in absolutely nothing of what p_l is teaching them, and by the time they're back at camp p_l wants to scream.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "dislike"
+                        ],
+                        "amount": 5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_med_lungwort8",
+        "biome": [
+            "wetlands"
+        ],
+        "season": [
+            "leaf-fall"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "medicine cat": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "all apprentices": [
+                -1,
+                -1
+            ]
+        },
+        "weight": 20,
+        "intro_text": "p_l is on a mission to find lungwort now that leaf-bare is on the horizon. As the only reliable cure for yellowcough, they're determined that c_n stock up on it.",
+        "decline_text": "A cat grabs p_l's attention before they can leave camp.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest before the plant dies back in leaf-bare. For just a second, they feel the weight of their responsibilities lift, the strength of that relief catching them off guard.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. Frustratingly, p_l doesn't have the capacity to cart everything back to camp, but they stick the location in their mind as a place to return to.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": [
+                    "SENSE,2",
+                    "CLEVER,3"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "patient"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l searches until their pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "sore"
+                        ],
+                        "scars": []
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_med_lungwort9",
+        "biome": [
+            "wetlands"
+        ],
+        "season": [
+            "leaf-fall"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 3,
+        "min_max_status": {
+            "medicine cat": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
+        },
+        "weight": 20,
+        "intro_text": "p_l is on a mission to find lungwort now that leaf-bare is on the horizon. As the only reliable cure for yellowcough, they're determined that c_n won't run out of it. They take along a warrior escort to help.",
+        "decline_text": "A cat grabs p_l's attention before they can leave.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest before the plant dies back in leaf-bare. For just a second, they feel the weight of their responsibilities lift, the strength of that relief catching them off guard.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": [
+                    "lungwort"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "dislike"
+                        ],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l loads up their mostly-obliging escort and carries the extensive harvest home, tail waving jovially with their good mood.",
+                "exp": 20,
+                "weight": 5,
+                "herbs": [
+                    "many_herbs",
+                    "lungwort",
+                    "plantain"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "dislike"
+                        ],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": [
+                    "many_herbs",
+                    "lungwort"
+                ],
+                "stat_skill": [
+                    "SENSE,2",
+                    "CLEVER,3"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "dislike"
+                        ],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": [
+                    "many_herbs",
+                    "lungwort"
+                ],
+                "stat_trait": [
+                    "patient"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "dislike"
+                        ],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "By the time they give up and return to camp, p_l is approaching explosion point with r_c. They've gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "troublesome",
+                    "childish"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "dislike"
+                        ],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "p_l searches until their pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "sore"
+                        ],
+                        "scars": []
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "dislike"
+                        ],
+                        "amount": 5
+                    }
+                ]
+            }
+        ]
+    },
+	{
+        "patrol_id": "wtlnd_med_romance5",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["herb_gathering"],
+        "tags": ["romantic"],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "p_l goes out with a warrior escort, both for safety as they try to stock up under the clear leaf-fall skies, and for carrying capacity should they find anything.",
+        "decline_text": "Their escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "Surprisingly, r_c actually starts up a conversation with them about the herbs they're looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes their heart feel lighter getting to share their knowledge and skills with someone who respects them.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just an herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["MEDIATOR,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common and the other cat bluntly refuses to talk about boring herbs.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Not only do they not find anything, but p_l is <i>this</i> close to murdering s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["troublesome", "childish"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_med_romance6",
+        "biome": ["wetlands"],
+        "season": ["leaf-fall"],
+        "types": ["herb_gathering"],
+        "tags": ["romantic"],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "p_l heads out, leading a patrol of medicine cats to go stock up on the ripening harvest available in leaf-fall.",
+        "decline_text": ". . .And they're called back almost immediately, as one of the elders starts hacking up something.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "The ground is slippery with damp, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just an herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["MEDIATOR,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l", "s_c"],
+                        "cats_from": ["r_c", "r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Not only do they not find anything, but p_l is <i>this</i> close to murdering s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["troublesome", "childish"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l", "s_c"],
+                        "cats_from": ["r_c", "r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
+    }
+]
