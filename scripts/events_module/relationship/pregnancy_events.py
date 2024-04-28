@@ -714,6 +714,10 @@ class Pregnancy_Events():
                 kit = Cat(parent1=cat.ID, moons=0, backstory=backstory, status='newborn')
                 kit.thought = f"Snuggles up to the belly of {cat.name}"
 
+            # Prevent duplicate prefixes in the same litter
+            while kit.name.prefix in [kitty.name.prefix for kitty in all_kitten]:
+                kit.name = Name("newborn")
+
             all_kitten.append(kit)
             # adoptive parents are set at the end, when everything else is decided
 
