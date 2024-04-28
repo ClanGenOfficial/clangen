@@ -16,7 +16,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "r_c tracks the scent of a large dog, wandering along the edge of the Clan's territory.",
+        "intro_text": "r_c tracks the scent of a large dog along the edge of the Clan's territory.",
         "decline_text": "r_c decides not to pursue such a dangerous creature, especially seeing as it hasn't crossed the border.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -42,7 +42,7 @@
                 ]
             },
             {
-                "text": "s_c sets up an ambush for the wandering dog, bloodying its snout and leading it on a wild chasing dance across the border and out of c_n territory.",
+                "text": "s_c sets up an ambush for the wandering dog. When the dog nears {PRONOUN/s_c/poss}'s hiding spot, s_c leaps out with claws unsheathed, bloodies its snout, and leads it on a wild chasing dance across the border and out of c_n territory.",
                 "exp": 40,
                 "weight": 20,
                 "stat_skill": [
@@ -66,11 +66,10 @@
                 ]
             },
             {
-                "text": "{PRONOUN/s_c/subject/CAP} {VERB/s_c/don't/doesn't} feel like {PRONOUN/s_c/subject} {VERB/s_c/have/has} anything like the skill or power, but s_c would give {PRONOUN/s_c/poss} life for c_n, charging in to courageously lead the dog away from c_n territory. Each booming bark has to be the herald of {PRONOUN/s_c/poss} doom, each rancid breath the last thing {PRONOUN/s_c/subject}'ll ever smell, but somehow, eventually, limbs and lungs burning, {PRONOUN/s_c/subject} {VERB/s_c/leap/leaps} to refuge.",
+                "text": "{PRONOUN/s_c/subject} {VERB/s_c/do/does}n't feel like {PRONOUN/s_c/subject} {VERB/s_c/have/has} the skill or power to take on a dog single-pawed, but s_c would give {PRONOUN/s_c/poss} life for c_n. {PRONOUN/s_c/subject} {VERB/s_c/charge/charges} in courageously to lead the dog away from c_n territory. Each booming bark could be the herald of their doom, each rancid breath the last thing {PRONOUN/s_c/subject} might ever smell, but somehow, limbs and lungs burning, {PRONOUN/s_c/subject} eventually {VERB/s_c/leap/leaps} to refuge.",
                 "exp": 40,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "ambitious",
                     "compassionate",
                     "confident",
@@ -131,7 +130,7 @@
                 ]
             },
             {
-                "text": "r_c would give {PRONOUN/r_c/poss} life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/charge/charges} past the huge dog to lead it far, far from c_n, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} it. Fear gives them speed, but it only takes one successful hit. Miraculously {PRONOUN/r_c/subject} {VERB/r_c/fly/flies} out of the dog's jaws while it shakes {PRONOUN/r_c/object}, landing in a refuge. r_c is injured, desperate, and terrified - but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alive.",
+                "text": "r_c would give {PRONOUN/r_c/poss} life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/charge/charges} past the huge dog to lead it far, far from c_n, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} it. Fear gives them speed, but it only takes one successful hit. Miraculously {PRONOUN/r_c/subject} {VERB/r_c/fly/flies} out of the dog's jaws while it shakes {PRONOUN/r_c/object}, landing safely. r_c is injured, desperate, and terrified - but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alive.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -191,12 +190,12 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol tracks the scent of a large dog, wandering along the edge of the Clan's territory.",
-        "decline_text": "Your patrol decides not to pursue such a dangerous creature, especially seeing as it hasn't crossed the border.",
+        "intro_text": "The patrol tracks the scent of a large dog along the edge of the Clan's territory.",
+        "decline_text": "The patrol decides not to pursue such a dangerous creature, especially seeing as it hasn't crossed the border.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The patrol shadows the dog, sending a message back to warn camp. It's an exhausting and stressful day, but by the time night falls they've confirmed that the dog is leaving the local area, and the patrol has assured c_n's safety.",
+                "text": "The patrol shadows the dog, sending a message back to warn camp. It's an exhausting and stressful day, but by the time night falls, they've confirmed that the dog is leaving the local area, and the patrol has assured c_n's safety.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -217,7 +216,7 @@
                 ]
             },
             {
-                "text": "Your patrol gathers their courage and valiantly tries to lead away the dog. With such a small group of cats, they can only lead it a short distance, but it's better than nothing.",
+                "text": "The patrol gathers their courage and valiantly tries to lead away the dog. With such a small group of cats, they can only lead it a short distance, but it's better than nothing.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -238,7 +237,7 @@
                 ]
             },
             {
-                "text": "s_c sets up a careful ambush ahead of the dog, and the surprising, darting attack bloodies the dog's flank, dissuading it from heading further into c_n territory.",
+                "text": "s_c sets up a careful ambush ahead of the dog, and {PRONOUN/s_c/poss} surprising, darting attack bloodies the dog's flank, dissuading it from heading further into c_n territory.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": [
@@ -266,7 +265,6 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "confident",
                     "empathetic",
@@ -297,7 +295,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol tries to keep watch on the dog from a distance, but it spots the cats and they have to scatter. Everyone escapes just fine, but they lose track of the dog. It could be anywhere still out there, lurking, waiting to attack.",
+                "text": "The patrol tries to keep watch over the dog from a distance, but it spots the cats and forces them to scatter. Everyone escapes just fine, but they lose track of the dog. It could be anywhere - still out there, lurking, waiting to attack.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -434,12 +432,12 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol stumbles across a large dog, wandering in the middle of the Clan's territory.",
-        "decline_text": "Your patrol decides not to pursue such a dangerous creature. c_n will just have to hope it doesn't come any nearer to camp.",
+        "intro_text": "The patrol stumbles across a large dog wandering through the middle of the Clan's territory.",
+        "decline_text": "The patrol decides not to pursue such a dangerous creature. c_n will just have to hope it doesn't come any nearer to camp.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "They decide that no cat is going to be surprised by this predator again, and the patrol shadows the dog, sending a message to warn camp. With enough cats to keep watch, rest, track, and send messages forward and back from camp, c_n is kept safe from the wandering dog.",
+                "text": "They decide that no cat is going to be surprised by this predator again, and the patrol shadows the dog, sending a message to warn camp. With enough cats to keep watch, rest, track, and send messages back and forth, c_n is kept safe from the wandering dog.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -460,7 +458,7 @@
                 ]
             },
             {
-                "text": "Your patrol gathers their courage and valiantly drives away the dog. Together, working as one, and with all the strength of StarClan behind them, the patrol presses the dog. By keeping up a series of small skirmishes through the entire day, they drive it all the way off c_n territory.",
+                "text": "The patrol gathers their courage and valiantly drives away the dog. Together, working as one, and with all the strength of StarClan behind them, the patrol harries the dog. By keeping up a series of small skirmishes through the entire day, they drive it all the way off c_n territory.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -481,7 +479,7 @@
                 ]
             },
             {
-                "text": "s_c has just enough time to yell out a plan, leading the whole large patrol in a skillful battle plan against the dog that protects the cats from the chance of injury. The dog tucks tail, and runs for more friendly lands.",
+                "text": "s_c has just enough time to yowl out a plan, leading the whole large patrol in a skillful battle maneuver against the dog that protects the cats from the chance of injury. The dog tucks tail and runs for more friendly lands.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": [
@@ -509,7 +507,6 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "confident",
                     "empathetic",
@@ -540,7 +537,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol tries to keep watch on the dog from a distance, but it spots the cats and they have to scatter. It's not as bad as it could've been though, r_c manages to keep track of the dog's position, and it doesn't come any further into c_n territory.",
+                "text": "The patrol tries to keep watch on the dog from a distance, but it spots the cats and forces them to scatter. It's not as bad as it could've been, though; r_c manages to keep track of the dog's position, and it doesn't come any further into c_n territory.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -674,7 +671,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol comes across a small dog.",
+        "intro_text": "The patrol comes across a small dog.",
         "decline_text": "The patrol decides not to pursue the dog.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -747,7 +744,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait miserably and humiliatingly in a safe spot until the beast calms down.",
+                "text": "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement until the only thing to do is wait, miserable and humiliated, in a safe spot for the beast to calm down.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -854,9 +851,8 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol comes across a small dog, right on the border of c_n territory.",
-        "decline_text": "p_l decides not to pursue the dog, instead cutting the patrol short to head back to camp and report it.",
-        "chance_of_success": 60,
+        "intro_text": "The patrol comes across a small dog right on the border of c_n territory.",
+        "decline_text": "p_l decides not to pursue the dog and instead cuts the patrol short to head back to camp and report it.",        "chance_of_success": 60,
         "success_outcomes": [
             {
                 "text": "p_l hisses at the small dog, and the rest of {PRONOUN/p_l/poss} small team back {PRONOUN/p_l/object} up. The dog skitters back, yapping loudly, apparently shocked by the display, and the patrol breaks out into yowls and caterwauls, screaming until the small beast's nerve breaks, and it runs from the c_n border into the distance.",
@@ -881,7 +877,7 @@
                 ]
             },
             {
-                "text": "The patrol paces towards the small dog, claws out, fur up, backed up with the courage of their Clanmates. The dog breaks into a barking fit, but that's their opportunity to attack, covering each other as they push the creature away from their lands.",
+                "text": "The patrol paces towards the small dog, claws out, fur up, backed up with the courage of their Clanmates. The dog breaks into a barking fit, but that's their opportunity to attack, covering each other as they push the creature away from their territory.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -903,7 +899,7 @@
                 ]
             },
             {
-                "text": "s_c calls out a battle plan, and the cats flow into it, carefully covering each other and driving the dog backwards until its nerve breaks, it tucks tail, and it runs from c_n territory headed deep into the wilderness.",
+                "text": "s_c calls out a battle plan, and the cats flow into it, carefully covering each other and driving the dog backwards until it loses its nerve, tucks tail, and runs from c_n territory, deep into the wilderness.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": [
@@ -930,12 +926,12 @@
         ],
         "fail_outcomes": [
             {
-                "text": "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait exasperatedly in a safe spot until the beast calms down.",
+                "text": "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait, exasperated, in a safe spot for the beast to calm down.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "The dog gets a lucky hit in on r_c, though together all the cats are still able to drive it off successfully.",
+                "text": "The dog gets a lucky hit in on r_c, though together the patrol is still able to drive it off successfully.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -974,12 +970,11 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol comes across a small dog, right on the border of c_n territory.",
-        "decline_text": "p_l decides not to pursue the dog, instead cutting the patrol short to head back to camp and report it.",
-        "chance_of_success": 60,
+        "intro_text": "The patrol comes across a small dog right on the border of c_n territory.",
+        "decline_text": "p_l decides not to pursue the dog and instead cuts the patrol short to head back to camp and report it.",        "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "The patrol paces towards the small dog, claws out, fur up, backed up with the courage of their Clanmates. The dog breaks into a barking fit, but that's their opportunity to attack, covering each other as they push the creature away from their lands.",
+                "text": "The patrol paces towards the small dog, claws out, fur up, backed up with the courage of their Clanmates. The dog breaks into a barking fit, but that's their opportunity to attack, covering each other as they push the creature away from their territory.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
@@ -1001,7 +996,7 @@
                 ]
             },
             {
-                "text": "Mobbed by cats and near blind with the blood in its eyes, the dog flees from c_n, yelping pitifully.",
+                "text": "Mobbed by cats and near-blind with the blood in its eyes, the dog flees from c_n, yelping pitifully.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -1023,7 +1018,7 @@
                 ]
             },
             {
-                "text": "s_c calls out a battle plan, and the cats flow into it, carefully covering each other and driving the dog backwards until its nerve breaks, it tucks tail, and it runs from c_n territory headed deep into the wilderness.",
+                "text": "s_c calls out a battle plan, and the cats flow into it, carefully covering each other and driving the dog backwards until it loses its nerve, tucks tail, and runs from c_n territory, deep into the wilderness.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": [
@@ -1050,12 +1045,12 @@
         ],
         "fail_outcomes": [
             {
-                "text": "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait exasperatedly in a safe spot until the beast calms down.",
+                "text": "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait, exasperated, in a safe spot for the beast to calm down.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "The dog gets a lucky hit in on r_c, though together all the cats are still able to drive it off successfully.",
+                "text": "The dog gets a lucky hit in on r_c, though together the patrol is still able to drive it off successfully.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
