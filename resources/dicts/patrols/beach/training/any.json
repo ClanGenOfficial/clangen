@@ -128,6 +128,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
+                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -311,6 +312,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
+                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -484,6 +486,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
+                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -1582,6 +1585,7 @@
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
+                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",

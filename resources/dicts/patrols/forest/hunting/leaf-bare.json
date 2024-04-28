@@ -319,6 +319,7 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
+                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
@@ -463,6 +464,7 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
+                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
@@ -607,6 +609,7 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
+                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
@@ -767,6 +770,7 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
+                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
@@ -900,6 +904,7 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
+                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
@@ -1005,6 +1010,7 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
+                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
@@ -2578,7 +2584,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "r_c takes a risk, hunting amongst the trees that have lost their leaves, rather than the still-lush evergreens. {PRONOUN/r_c/poss/CAP} judgment pays off, netting them a f_mp_s. {PRONOUN/r_c/subject/CAP}'ll have to discuss it with the others back at camp, maybe c_n has been overhunting the evergreen woods..?",
+                "text": "r_c takes a risk, hunting amongst the trees that have lost their leaves, rather than the still-lush evergreens. {PRONOUN/r_c/poss/CAP} judgement pays off, netting them a f_mp_s. {PRONOUN/r_c/subject/CAP}'ll have to discuss it with the others back at camp, maybe c_n has been overhunting the evergreen woods..?",
                 "exp": 25,
                 "weight": 5,
                 "prey": ["medium"]
@@ -3004,6 +3010,7 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
+                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
@@ -3148,6 +3155,7 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
+                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
@@ -3292,6 +3300,7 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
+                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
@@ -3454,6 +3463,7 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
+                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
@@ -3587,6 +3597,7 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
+                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
@@ -3692,6 +3703,7 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
+                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
