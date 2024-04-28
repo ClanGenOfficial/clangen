@@ -2285,7 +2285,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c skids on mud as {PRONOUN/r_c/subject}{VERB/r_c/'re's} getting to an exciting part and has to stop the story to pay attention to the path. ",
+                "text": "r_c skids on mud as {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} getting to an exciting part and has to stop the story to pay attention to the path. ",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
