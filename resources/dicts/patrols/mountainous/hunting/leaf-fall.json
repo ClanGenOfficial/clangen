@@ -1614,7 +1614,7 @@
             "all apprentices": [2, 2]
         },
         "weight": 20,
-        "intro_text": "It's nice to get the chance to go out hunting with app2. app1 knows they're still in the apprentice den , but with different mentors and focuses and skills - it's not the same as it was back in the nursery as littermates. And they'd better take the chance to hunt together while the prey is still running, before the snows blanket c_n territory and freshkill becomes critical.",
+        "intro_text": "It's nice to get the chance to go out hunting with app2. app1 knows they're still in the apprentice den , but with different mentors and focuses and skills - it's not the same as it was back in the nursery as littermates. And they'd better take the chance to hunt together while the prey is still running, before the snows blanket c_n territory and fresh-kill becomes critical.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 35,
         "relationship_constraint": ["siblings"],
@@ -1822,7 +1822,7 @@
             "all apprentices": [3, 3]
         },
         "weight": 20,
-        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den , but with different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And they'd better take the chance to hunt together while the prey is still running, before the snows blanket c_n territory and freshkill becomes critical.",
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den , but with different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And they'd better take the chance to hunt together while the prey is still running, before the snows blanket c_n territory and fresh-kill becomes critical.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 35,
         "relationship_constraint": ["siblings"],
@@ -2030,7 +2030,7 @@
             "all apprentices": [4, 4]
         },
         "weight": 20,
-        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den , but with different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And they'd better take the chance to hunt together while the prey is still running, before the snows blanket c_n territory and freshkill becomes critical.",
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den , but with different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And they'd better take the chance to hunt together while the prey is still running, before the snows blanket c_n territory and fresh-kill becomes critical.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 35,
         "relationship_constraint": ["siblings"],
@@ -2238,7 +2238,7 @@
             "all apprentices": [5, 5]
         },
         "weight": 20,
-        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den , but with different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And they'd better take the chance to hunt together while the prey is still running, before the snows blanket c_n territory and freshkill becomes critical.",
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den , but with different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And they'd better take the chance to hunt together while the prey is still running, before the snows blanket c_n territory and fresh-kill becomes critical.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 35,
         "relationship_constraint": ["siblings"],
@@ -2444,7 +2444,7 @@
             "apprentice": [1, 6]
         },
         "weight": 20,
-        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den , but with different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And they'd better take the chance to hunt together while the prey is still running, before the snows blanket c_n territory and freshkill becomes critical.",
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den , but with different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And they'd better take the chance to hunt together while the prey is still running, before the snows blanket c_n territory and fresh-kill becomes critical.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 35,
         "relationship_constraint": ["siblings"],
@@ -3174,7 +3174,7 @@
                 ]
             },
             {
-                "text": "r_c always feels like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} padding in p_l's footsteps, especially today, watching {PRONOUN/p_l/object} haul back such a good catch of prey for the clan, a contribution that more than makes up for r_c's meagre offerings.",
+                "text": "r_c always feels like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} padding in p_l's footsteps, especially today, watching {PRONOUN/p_l/object} {VERB/p_l/haul/hauls} back such a good catch of prey for the Clan, a contribution that more than makes up for r_c's meagre offerings.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"],
@@ -3590,7 +3590,7 @@
                 ]
             },
             {
-                "text": "r_c always feels like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} padding in p_l's footsteps, especially today, watching {PRONOUN/p_l/object} haul back such a good catch of prey for the clan, a contribution that more than makes up for r_c's meagre offerings.",
+                "text": "r_c always feels like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} padding in p_l's footsteps, especially today, watching {PRONOUN/p_l/object} {VERB/p_l/haul/hauls} back such a good catch of prey for the Clan, a contribution that more than makes up for r_c's meagre offerings.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"],
