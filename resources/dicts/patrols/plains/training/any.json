@@ -161,7 +161,7 @@
                 ]
             },
             {
-                "text": "s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking {PRONOUN/s_c/poss} head in front of a predator. {PRONOUN/s_c/subject/CAP} {VERB/s_c/search/searches} the grass around the sett thoroughly until {PRONOUN/s_c/subject} {VERB/s_c/come/comes} upon some fresh badger scat - stinky, horrible, and incontrovertible of the new occupant of the sett.",
+                "text": "s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking {PRONOUN/s_c/poss} head in front of a predator. {PRONOUN/s_c/subject/CAP} {VERB/s_c/search/searches} the grass around the sett thoroughly until {PRONOUN/s_c/subject} {VERB/s_c/come/comes} upon some fresh badger scat - stinky, horrible, and perfect proof of the new occupant of the sett.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -322,7 +322,7 @@
                 ]
             },
             {
-                "text": "s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking {PRONOUN/s_c/poss} head in front of a predator. {PRONOUN/s_c/subject/CAP} {VERB/s_c/lead/leads} the patrol on a search of the grass around the sett until they come upon some fresh badger scat - stinky, horrible, and incontrovertible of the new occupant of the sett.",
+                "text": "s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking {PRONOUN/s_c/poss} head in front of a predator. {PRONOUN/s_c/subject/CAP} {VERB/s_c/lead/leads} the patrol on a search of the grass around the sett until they come upon some fresh badger scat - stinky, horrible, and perfect proof of the new occupant of the sett.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],

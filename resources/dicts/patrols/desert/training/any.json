@@ -73,7 +73,7 @@
                 "weight": 5
             },
             {
-                "text": "s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking their head in front of a predator. They search the scrubland around the sett thoroughly, and come up with fresh badger scat, stinky, horrible, and incontrovertible of the new occupant of the sett.",
+                "text": "s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking their head in front of a predator. They search the scrubland around the sett thoroughly, and come up with fresh badger scat, stinky, horrible, and perfect proof of the new occupant of the sett.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"]
@@ -153,7 +153,7 @@
                 "weight": 5
             },
             {
-                "text": "s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking their head in front of a predator. They lead the patrol on a search of the scrubland around the sett, and come up with fresh badger scat, stinky, horrible, and incontrovertible of the new occupant.",
+                "text": "s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking their head in front of a predator. They lead the patrol on a search of the scrubland around the sett, and come up with fresh badger scat, stinky, horrible, and perfect proof of the new occupant.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"]
