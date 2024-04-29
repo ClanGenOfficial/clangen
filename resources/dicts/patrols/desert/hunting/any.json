@@ -1304,7 +1304,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "One tiny kit fox? r-c sees it off with a pawswipe, not interested in trying to take the fox as prey when the peccary carcass exists. They try to bring as much of the peccary back to camp as they can possibly carry.",
+                "text": "One tiny kit fox? r_c sees it off with a pawswipe, not interested in trying to take the fox as prey when the peccary carcass exists. They try to bring as much of the peccary back to camp as they can possibly carry.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["huge"],
