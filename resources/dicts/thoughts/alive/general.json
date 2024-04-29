@@ -83,6 +83,7 @@
     },
     {
         "id": "gen_alive_not_working_insteadinthemedden",
+        "not_working": true,
         "thoughts": [
             "Misses {PRONOUN/m_c/poss} own nest, despite the ones in the medicine den being... fine",
             "Can't get the sharp smell of the herb stores out of {PRONOUN/m_c/poss} nose",
@@ -95,13 +96,11 @@
             "Eats some prey because {PRONOUN/m_c/suject} know {PRONOUN/m_c/subject} should, not because of hunger",
             "Stands up for a second and feels lightheaded",
             "Isn't having a fun time"
-        ],
-        "main_status_constraint": [
-            "not_working"
         ]
     },
     {
         "id": "gen_alive_not_working_insteadinthemedden_withmedcat",
+        "not_working": true,
         "thoughts": [
             "Watches r_c fuss around the herb stores, half-asleep",
             "Isn't goign to argue with r_c about {PRONOUN/m_c/poss} medical care",
@@ -110,15 +109,13 @@
             "Asks r_c for pain relief",
             "Wishes {PRONOUN/m_c/subject} understood what r_c is doing"
         ],
-        "main_status_constraint": [
-            "not_working"
-        ],
         "random_status_constraint": [
             "medicine cat"
         ]
     },
     {
         "id": "gen_alive_not_working_insteadinthemedden_withmedcatapp",
+        "not_working": true,
         "thoughts": [
             "Laps up water r_c has brought {PRONOUN/m_c/object}",
             "Grunts in pain as r_c changes {PRONOUN/m_c/poss} nest bedding",
@@ -126,9 +123,6 @@
             "Tells r_c {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing a good job",
             "Asks r_c for pain relief",
             "Wishes {PRONOUN/m_c/subject} understood what r_c is doing"
-        ],
-        "main_status_constraint": [
-            "not_working"
         ],
         "random_status_constraint": [
             "medicine cat apprentice"
