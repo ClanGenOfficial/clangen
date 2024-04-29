@@ -119,6 +119,10 @@
 	"outside_death": [
 		"Some say m_c didn't make it.",
 		"Some say m_c would have needed a medicine cat to survive."
+	],
+	"lead_death": [
+		"m_c lost one of {PRONOUN/m_c/poss} nine lives, but gave birth to a {insert}.",
+		"Although m_c gave birth to a {insert}, it came at the cost of one of {PRONOUN/m_c/poss} nine lives."
 	]
   }
 }
