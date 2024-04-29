@@ -65,7 +65,6 @@ class Events:
         Patrol.used_patrols.clear()
         game.patrolled.clear()
         game.just_died.clear()
-        
 
         if any(
                 str(cat.status) in {
@@ -88,16 +87,15 @@ class Events:
                 filter(lambda _cat: _cat.is_alive() and not _cat.exiled and
                                  not _cat.outside, Cat.all_cats.values()))
             game.clan.freshkill_pile.time_skip(relevant_cats, game.freshkill_event_list)
-            # handle freshkill pile events, after feeding
-            # first 5 moons there will not be any freshkill pile event
-            if game.clan.age >= 5:
-                Freshkill_Events.handle_amount_freshkill_pile(game.clan.freshkill_pile, relevant_cats)
+            # get the moonskip freshkill
             self.get_moon_freshkill()
-            # make a notification if the Clan has not enough prey
+            # make a notification if the Clan does not have enough prey
             if FRESHKILL_EVENT_ACTIVE and not game.clan.freshkill_pile.clan_has_enough_food():
                 event_string = f"{game.clan.name}Clan doesn't have enough prey for next moon!"
                 game.cur_events_list.insert(0, Single_Event(event_string))
                 game.freshkill_event_list.append(event_string)
+                # TODO: this notif might need to move closer to end of moon skip order,
+                #  to ensure that supply changes are correctly reflected by notif
 
         rejoin_upperbound = game.config["lost_cat"]["rejoin_chance"]
         if random.randint(1, rejoin_upperbound) == 1:
@@ -239,7 +237,9 @@ class Events:
                 SaveError(traceback.format_exc())
 
     def mediator_events(self, cat):
-        """ Check for mediator events """
+        """
+        Check for mediator events
+        """
         # If the cat is a mediator, check if they visited other clans
         if cat.status in ["mediator", "mediator apprentice"] and not cat.not_working():
             # 1 /10 chance
@@ -988,10 +988,15 @@ class Events:
         cat.one_moon()
 
         # Handle Mediator Events
+        # TODO: this is not a great way to handle them, ideally they should be converted to ShortEvent format,
+        #  unsure how best to convert and still preserve their functionality?
+        #  can i add them to misc_events or do i need to create new mediator_event just for them?
         self.mediator_events(cat)
 
         # handle nutrition amount
         # (CARE: the cats has to be fed before - should be handled in "one_moon" function)
+        # TODO: these events need to be handled differently, ideally not with the ShortEvent format.
+        #  Should handle the same way we handle normal illness/injury for sake of consistency
         if game.clan.game_mode in ['expanded', 'cruel season'
                                    ] and game.clan.freshkill_pile:
             Freshkill_Events.handle_nutrient(
@@ -1028,7 +1033,7 @@ class Events:
         self.handle_apprentice_EX(cat)  # This must be before perform_ceremonies!
         # this HAS TO be before the cat.is_disabled() so that disabled kits can choose a med cat or mediator position
         self.perform_ceremonies(cat)
-        cat.skills.progress_skill(cat) # This must be done after ceremonies. 
+        cat.skills.progress_skill(cat)  # This must be done after ceremonies.
 
         # check for death/reveal/risks/retire caused by permanent conditions
         if cat.is_disabled():
@@ -1087,6 +1092,8 @@ class Events:
         """
         interactions with other clans
         """
+        # TODO: need to add a way to preserve [rel_up, rel_down, neutral] choice to ensure any
+        #  triggered short war events line up with the ongoing war event text
         # if there are somehow no other clans, don't proceed
         if not game.clan.all_clans:
             return
@@ -1178,7 +1185,8 @@ class Events:
         """
         ceremonies
         """
-
+        # TODO: hardcoded events, not good, consider how to convert.
+        #  we *do* have a ceremony dict and format, not sure why it isn't being used here
         # PROMOTE DEPUTY TO LEADER, IF NEEDED -----------------------
         if game.clan.leader:
             leader_dead = game.clan.leader.dead
@@ -1650,6 +1658,7 @@ class Events:
         """
         accessories
         """
+        # TODO: does this need to be separated from other misc_events? can we consider. not doing that?
 
         if not cat:
             return
@@ -1705,8 +1714,7 @@ class Events:
                     if other_clan.name == game.clan.war["enemy"]:
                         enemy_clan = other_clan
                         break
-            
-            
+
             MiscEvents.handle_misc_events(
                 cat,
                 other_cat,
@@ -1877,13 +1885,13 @@ class Events:
                 if other_clan.name == game.clan.war["enemy"]:
                     enemy_clan = other_clan
                     break
-            
-
 
         # If there are possible other cats...
+        # TODO: consider moving other cat identity determination elsewhere? utility.py? it's repeated for each event...
+        #  don't like having the code repeated over and over
         if possible_other_cats:
             other_cat = random.choice(possible_other_cats)
-
+            # TODO: add a chance to choose parent/child pair
             if cat.status in ["apprentice", "medicine cat apprentice"
                               ] and not int(random.random() * 3):
                 if cat.mentor is not None:
@@ -2041,6 +2049,7 @@ class Events:
 
     def handle_mass_extinctions(self, cat):  # pylint: disable=unused-argument
         """Affects random cats in the clan, no cat needs to be passed to this function."""
+        # TODO: really gotta figure out how to handle these as ShortEvents
         alive_cats = list(
             filter(
                 lambda kitty: (kitty.status != "leader" and not kitty.dead and
@@ -2245,6 +2254,7 @@ class Events:
                     sick_meowmeow.get_ill(
                         illness, event_triggered=True)  # SPREAD THE GERMS >:)
 
+                # TODO: hardcoded text events, not good, need to consider how to convert
                 illness_name = str(illness).capitalize()
                 if illness == 'kittencough':
                     event = f'{illness_name} has spread around the nursery. ' \
@@ -2266,6 +2276,7 @@ class Events:
 
     def coming_out(self, cat):
         """turnin' the kitties trans..."""
+        # TODO: should figure out how to handle these as a ShortEvent, we don't want hardcoded text
         if cat.genderalign == cat.gender:
             if cat.moons < 6:
                 return
@@ -2329,6 +2340,7 @@ class Events:
 
     def check_and_promote_deputy(self):
         """Checks if a new deputy needs to be appointed, and appointed them if needed. """
+        # TODO: can these events be handled as ceremony events?
         if (not game.clan.deputy or game.clan.deputy.dead
                 or game.clan.deputy.outside or game.clan.deputy.status == "elder"):
             if game.clan.clan_settings.get('deputy'):

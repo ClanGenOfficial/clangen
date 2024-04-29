@@ -526,9 +526,15 @@ class GenerateEvents:
                     continue
 
             if event.supplies:
+                # TODO: freshkill events were previously locked out until clan 5 moons old, should we keep that?
                 clan_size = get_living_clan_cat_count(Cat)
                 for supply in event.supplies:
                     if supply["type"] == "freshkill":
+                        # classic mode doesn't do freshkill
+                        # TODO: consider if events could still be allowed as "flavor" rather than actual supply changes
+                        if game.clan.game_mode == "classic":
+                            continue
+
                         discard = True
                         pile = game.clan.freshkill_pile
                         needed_amount = pile.amount_food_needed()

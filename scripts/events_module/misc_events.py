@@ -15,6 +15,7 @@ from scripts.event_class import Single_Event
 
 class MiscEvents():
     """All events that do not fit in a different category."""
+    # TODO: adjust to fit new event format, consider what can move to utility.py
 
     @staticmethod
     def handle_misc_events(cat, other_cat=None, war=False, enemy_clan=None, alive_kits=False, accessory=False, ceremony=False):

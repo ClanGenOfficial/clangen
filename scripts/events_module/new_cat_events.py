@@ -18,6 +18,7 @@ from scripts.cat.history import History
 
 class NewCatEvents:
     """All events with a connection to new cats."""
+    # TODO: adjust to new event format, consider what can be moved to utility.py
 
     @staticmethod
     def handle_new_cats(cat: Cat, other_cat, war, enemy_clan, alive_kits):

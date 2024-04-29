@@ -15,7 +15,8 @@ from scripts.event_class import Single_Event
 
 class Death_Events():
     """All events with a connection to death."""
-    
+    # TODO: adjust to fit new event format, consider what can move to utility.py
+
     @staticmethod
     def handle_deaths(cat, other_cat, war, enemy_clan, alive_kits, murder=False):
         """ 

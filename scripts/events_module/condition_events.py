@@ -182,6 +182,7 @@ class Condition_Events():
             text = event_string
         else:
             # EVENTS
+            # TODO: adjust this to new format accordingly, consider what can be moved into utility.py
             if not triggered and \
                     cat.personality.trait in ["adventurous",
                                             "bold",
