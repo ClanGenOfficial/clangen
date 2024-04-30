@@ -1189,7 +1189,79 @@
 				"prey": ["very_small"]
             }
         ]
+    },
+    {
+        "patrol_id": "mtn_hunt_wareprey_lorelocked1",
+        "biome": ["mountainous"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 5],
+           "apprentice":[1, 5]
+            },
+        "weight": 40,
+        "chance_of_success": 50,
+        "pl_skill_constraint": ["LORE,1"],
+        "intro_text": "The grouse are busy practicing their silly mating dance. app1 laughs at them under {PRONOUN/app1/poss} breath, mocking the stupid birds for dropping their guard.",
+        "decline_text": "A songbird on a branch overhead sings, and the grouse startle and take flight. Dung.",
+        "success_outcomes": [
+                {
+                    "text": "p_l waves a tail across app1's path, stopping {PRONOUN/app1/object} with a stern stare.Remember those who've been hurt by grouse - beaks tearing deep, their eyes scratched, limping from sharp-toothed claws. app1 nods, and apologies. Every hunt deserves respect.",
+                    "exp": 30,
+                    "weight": 20,
+                    "prey": ["medium"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": false,
+                            "values": ["comfort", "trust", "respect", "dislike"],
+                            "amount": 10
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "Leaping forward with overconfidence, app1 gets a grouse foot to the face and a beak bite for {PRONOUN/app1/poss} trouble.",
+                    "exp": 0,
+                    "weight": 20,
+                    "prey": ["medium"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": true,
+                            "values": ["respect", "trust"],
+                            "amount": -10
+                        }
+                    ],
+                    "injury": [
+                        {
+                        "cats": ["app1"],
+                        "injuries": ["small cut", "beak_bite"],
+                        "scars": ["SNOUT", "BEAKCHEEK"],
+                        "no_results": false
+                        }
+                    ],
+                    "history_text": {
+                        "scar": "r_c was permantly marked by the barb of a stingray as an apprentice - but {PRONOUN/r_c/subject} survived.",
+                        "reg_death": "r_c died from the strike of a stingray encountered on a hunt as a foolish apprentice.",
+                        "lead_death": "from the strike of a stingray encountered on a hunt as a foolish apprentice"
+                        }
+                }
+            ]
     }
-    
     
 ]

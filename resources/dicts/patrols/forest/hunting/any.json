@@ -3147,5 +3147,71 @@
                 }
             }
         ]
+    },
+    {
+        "patrol_id": "fst_hunt_risingclangift_storylorelocked1",
+        "biome": ["forest"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "fst_hunt_gonetwolegtrap",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 5],
+           "apprentice":[1, 5]
+            },
+        "weight": 40,
+        "chance_of_success": 50,
+        "pl_skill_constraint": ["STORY,1", "LORE,1"],
+        "intro_text": "As they wander, searching for prey, p_l finds something far more dangerous, and calls the rest of the patrol over for a lesson.",
+        "decline_text": "No one wants to get anywhere near the dangerous traps, not even to learn about them.",
+        "success_outcomes": [
+                {
+                    "text": "These Twoleg traps are powerful and dangerous, p_l instructs. Strong enough to hold a rabid fox and with gaps so small not even a flickering plume of scorching fire could escape, no cat should ever wander into their metal jaws. They bring only a little bit of prey home, but the lesson is worth the time it took away from hunting.",
+                    "exp": 30,
+                    "weight": 20,
+                    "prey": ["small"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": false,
+                            "values": ["comfort", "trust"],
+                            "amount": 10
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "p_l has to pull app1 out by the tail, and loudly scolds {PRONOUN/app1/object} all the way back to camp. Twoleg traps aren't cool, and app1 has just proven {PRONOUN/app1/self} an idiot, not a brave warrior.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": false,
+                            "values": ["jealous", "dislike"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": true,
+                            "values": ["comfort", "trust"],
+                            "amount": -10
+                        }
+                    ]
+                }
+            ]
     }
 ]

@@ -2101,6 +2101,320 @@
                 ]
             }
         ]
-    }    
-    
+    },
+    {
+        "patrol_id": "bch_train_ottercreationmyth_storylocked1",
+        "biome": ["beach"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1"],
+        "intro_text": "As the patrol takes a long moment to bask, p_l begins a story. Once upon a time, many seasons ago, there was a great warrior, sleek furred and strong, for whom swimming was easier than walking...",
+        "decline_text": "A story is nice, but the patrol has to get back to their training, the rest will wait for another time.",
+        "success_outcomes": [
+            {
+                    "text": "They slipped into the ocean to feed their clan, again and again, and each time they had to leave the water their heart broke a little more. Eventually, they didn't leave at all, their fur grown fluffy and buoyant, and now the sea otter floats, happy and fulfilled with the oceanic world.",
+                    "exp": 40,
+                    "weight": 20,
+                    "art": "gen_hunt_fish",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic", "comfort"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        }
+                        ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "r_c, settling down eagerly for the tale, feels a spike of pain in {PRONOUN/r_c/poss} paw pad and yelps. {PRONOUN/r_c/subject/CAP} {VERB/r_c/have/has} to report to the medicine den, but p_l reassures {PRONOUN/r_c/object} that {PRONOUN/p_l/subject}'ll wait to tell this tale until r_c can hear it.",
+                    "exp": 0,
+                    "weight": 20,
+                    "injury": [
+                        {
+                            "cats": ["r_c"],
+                            "injuries": ["small cut"]
+                        }
+                    ],
+                    "history_text": {
+                        "scar": "m_c got a small cut while out training, which has left a scar.",
+                        "reg_death": "m_c died from complications from a small cut.",
+                        "lead_death": "from complications from a small cut"
+                    },
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["r_c"],
+                            "mutual": true,
+                            "values": ["platonic", "comfort"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "bch_train_foxdawn_lorelocked1",
+        "biome": ["beach"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_bord_story",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice":[2, 6],
+            "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["LORE,1"],
+        "intro_text": "p_l notices app1 fall awkwardly again, and calls a halt to the lesson, saying they all need to catch their breath. Instead, p_l will tell the apprentices about the fox warrior - have they heard this history?",
+        "decline_text": "app1, surly and embarrassed, stalks off away from the training grounds before p_l can offer the comfort of {PRONOUN/p_l/poss} story.",
+        "success_outcomes": [
+                {
+                    "text": "The fox warrior was not the biggest, or fastest, or strongest of his clan. A fox took his eye, a dog weakened his leg, frostbite almost took his life, yet he took them all without a flinch, never backing down, his only wish to shield his clan. Some say he still sneaks down from StarClan to defend us on occasion, a true warrior, never forgotten.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_hunt_vision",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort", "trust", "platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "app1 can't sit still and listen to p_l's story, not when {PRONOUN/app1/subject}{VERB/app1/'re/'s} smarting from {PRONOUN/app1/poss} failures. p_l doesn't push it, instead letting app1 go and run off {PRONOUN/app1/poss} energy - there'll be time enough for listening another day, and app1's persistence is as fox warrior-like as anyone could wish.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": true,
+                            "values": ["respect"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "bch_train_mauifishing_storylocked1",
+        "biome": ["beach"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "bch_train_session1",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice":[2, 6],
+            "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1"],
+        "intro_text": "The fishing lesson has resulted in apprentices starting to look soggy and sorry for themselves. p_l waves {PRONOUN/p_l/poss} tail to catch the attention of the other cats - let's stop for a moment and take a break. Afterall, even Maowi had to work hard to fish!",
+        "decline_text": "Taking a break turns into ending the patrol early.",
+        "success_outcomes": [
+                {
+                    "text": "The great legend Maowi was once a young apprentice, p_l starts the story, who went out fishing with his older, already grown siblings. They had no faith in him, but speaking a great karakia to give StarClan's blessing to his claws, he won a stingray from the ocean that stretched from horizon to horizon and became c_n's territory.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_bord_story",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort", "trust", "platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "p_l tries to start a story to entertain the apprentices, but they're tired and sullen, and don't appreciate being told of the magical fishing talents of a Stars-blessed cat when they're finding it so hard to learn themselves.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1", "app2"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "bch_train_mauislowingthesun_storylocked1",
+        "biome": ["beach"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_bord_story",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1"],
+        "intro_text": "The sun gleams, splashing orange, yellow, and gold across the sea as it meets the horizon. The seagulls call in the distance, rising on the last thermals of the day, as p_l begins the myth of How Maowi Slowed The Sun.",
+        "decline_text": "A story is nice, but the patrol has to get back to camp, the rest will wait for another time.",
+        "success_outcomes": [
+            {
+                    "text": "Once, the sun raced across the sky, each day only lasting a single catnap. The great Mauwi took his siblings, saying a karakia to StarClan to ask for their help in fighting the sun. They pinned the great flaming sun in a burrow, clawing at it until it gave in and promised to slow, and this is why the sun gives up its race in leaf-bare and slows the day, bringing greenleaf.",
+                    "exp": 40,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic", "comfort"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort", "trust", "platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        }
+                        ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "p_l gets distracted by the palette of the sunset, and loses the words they were forming. Ah well.",
+                    "exp": 0,
+                    "weight": 20
+                }
+            ]
+    },
+    {
+        "patrol_id": "bch_train_themoonandthetides_storylorelocked1",
+        "biome": ["beach"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_bord_story",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6]
+            },
+        "weight": 30,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["LORE,1", "STORY,1"],
+        "intro_text": "The beat of the tides, in and out, like life's breath or a heartbeat, might at first seem like it's connected to the spirit of the land, p_l says. But that's wrong.",
+        "decline_text": "No one seems interested in p_l's story.",
+        "success_outcomes": [
+                {
+                    "text": "While they wash at the land, the tides are connected to the moon, p_l meows. At night this becomes obvious - the new moon and the full moon both produce spring tides of unusal strength. And every so often, if the moon is displeased, a spring tide gains twice the height a strength, producing a king tide.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_hunt_vision",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort", "trust", "platonic"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "Learning about the tides is boring - shoving each other into the water, now <i>that's</i> training! p_l is not pleased.",
+                    "exp": 0,
+                    "weight": 20,
+                    "art": "gen_train_soggykitty_mad_warrior",
+                    "relationships": [
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ]
+    }
 ]

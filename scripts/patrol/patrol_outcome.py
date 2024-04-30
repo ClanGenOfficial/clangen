@@ -213,6 +213,12 @@ class PatrolOutcome():
                 return False
             return True
         
+        #Code to allow anyone but p_l to be selected as stat cat
+        if not allowed_specfic or "not_pl" in allowed_specfic:
+            if kitty is patrol.patrol_leader:
+                return False
+            return True
+        
         # Otherwise, check to see if the cat matched any of the specfic cats
         if "p_l" in allowed_specfic and kitty == patrol.patrol_leader:
             return True
