@@ -3237,5 +3237,200 @@
                 "prey": ["very_small"]
             }
         ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_leafbare_kingfisher_storylorehunterclimberteacherlocked1",
+        "biome": ["wetland"],
+        "season": ["leaf-bare"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 3,
+        "min_max_status": {
+            "apprentice":[1, 6],
+            "normal adult": [1, 6]
+            },
+        "weight": 20,
+        "chance_of_success": 40,
+        "pl_skill_constraint": ["STORY,1", "LORE,1", "HUNTER,2", "CLIMBER,2", "TEACHER,1"],
+        "intro_text": "Amid the drab leaf-bare shaded world, a flash of brillint color above a big stream catches app1's attention.",
+        "decline_text": "It's out of the ordinary... and might be dangerous. app1 ignores it.",
+        "success_outcomes": [
+            {
+                "text": "s_c explodes from the bushes, just as much of a blur as the bird as it tries to escape, but {PRONOUN/s_c/poss} pounce is too high, {PRONOUN/s_c/poss} claws too quick. app1 tries not to look too impressed (gotta keep it cool), but that's exactly the kind of warrior {PRONOUN/app1/subject} {VERB/app1/want/wants} to be, an astonishing hunter.",
+                "exp": 30,
+                "weight": 20,
+                "art": "gen_train_sneakprey",
+                "prey": ["medium"],
+                "stat_skill": ["HUNTER,2"],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["respect", "jealous"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "It's only because app1 was already looking that they spot s_c, high on the tree above the bright bird, edging forward carefully and steathily. app1 freezes, watching. s_c descends on the kingfisher from the one direciton it wasn't watching, behind and above it, letting momentum do the work of killing as the apprentice watches with shining eyes.",
+                "exp": 30,
+                "weight": 20,
+                "art": "gen_train_sneakprey",
+                "prey": ["medium"],
+                "stat_skill": ["CLIMBER,2"],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["respect", "jealous"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "A kingfisher, p_l whispers from app1's side. They'll take it down together, next time it dives for something in the stream. It's a good plan, and though they have to quickly warm up afterwards, sharing tongues to get cold water off pelts, they win a nice prize for the fresh-kill pile.",
+                "exp": 30,
+                "weight": 20,
+                "art": "gen_train_sunny6",
+                "prey": ["small"],
+                "stat_skill": ["TEACHER,1"],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["respect", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["respect", "comfort"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "The patrol brings down the kingfisher in a flurry of feathers, and as app1 regains {PRONOUN/app1/poss} breath, s_c smiles, putting a paw on the bird. For a half-moon each year around the shortest day, the storms will not come, and that is when the kingfishers lay their eggs, in the halcyon days.",
+                "exp": 30,
+                "weight": 20,
+                "art": "gen_train_sneakprey",
+                "prey": ["small"],
+                "stat_skill": ["STORY,1"],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["respect", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["respect", "comfort"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "The patrol brings down the kingfisher in a flurry of feathers. As app1 regains {PRONOUN/app1/poss} breath, p_l scoffs. Don't let anyone tell you foolish myths of halcyon days, app1. Kingfishers nest not in the dead of leaf-bare, but in newleaf, like most birds.",
+                "exp": 30,
+                "weight": 20,
+                "art": "gen_train_sneakprey",
+                "prey": ["small"],
+                "stat_skill": ["LORE,1"],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["respect", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["respect", "comfort"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "It's a kingfisher, p_l whispers. Go on, give it a shot. app1 creeps closer, easily tracking the bright bird in the foliage, but the kingfisher has its own hunt. It dips into the frosty stream, and comes up with a small frog held in its beak. A twig snaps under app1's paw, and the bird flees - but it leaves the frog behind for app1 to take!",
+                "exp": 30,
+                "weight": 1,
+                "art": "gen_train_sneakprey",
+                "prey": ["small"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": true,
+                        "values": ["respect", "trust"],
+                        "amount": 10
+                    }
+                ]
+            }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "app1 tilts their head, confused at the sudden splash of color in a cold world. Thie kingfisher sees the movement, and flies off. Drat.",
+                    "exp": 0,
+                    "weight": 10,
+                    "relationships": [
+                        {
+                            "cats_to": ["app1"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": -5
+                        }
+                    ]
+                },
+                {
+                    "text": "Trying to catch the kingfisher, app1 misjudges their pounce and ends up getting hauled out of the freezing stream by their scruff. It's neither dignified nor comfortable.",
+                    "exp": 0,
+                    "weight": 20,
+                    "injury": [
+                        {
+                            "cats": ["app1"],
+                            "injuries": ["shivering"],
+                            "scars": []
+                        }
+                    ],
+                    "history_text": {
+                        "scar":"m_c was scarred from the bite of the cold stream {PRONOUN/m_c/subject} fell into as an apprentice.",
+                        "reg_death": "Falling into a cold stream gave m_c problems that eventually resulted in {PRONOUN/m_c/poss} death.",
+                        "lead_death": "falling into a cold stream gave m_c problems that eventually resulted in {PRONOUN/m_c/poss} death"
+                    }
+                }
+            ]
     }
 ]

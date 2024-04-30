@@ -1,1 +1,102 @@
-[]
+[
+    {
+        "patrol_id": "dst_train_greenleaf_flippedseasons_storylorelocked1",
+        "biome": ["desert"],
+        "season": ["greenleaf"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "fst_hunt_heat",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1", "LORE,1"],
+        "intro_text": "Greenleaf, bah, r_c scoffs. There's nothing green about the leaves right now, why does c_n call the dry season that?!",
+        "decline_text": "The patrol is too busy finding shelter form the sun to consider r_c's question.",
+        "success_outcomes": [
+                {
+                    "text": "It's ancient, p_l explains. Older then c_n... maybe older than this land. No one is sure what cursed the desert so dry, but in other places, the sun brings light, warmth that is a relief and not a punishment, and there the dry season when the sun reaches its peak power is also the season of green leaves.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_bord_story",
+                    "stat_skill": ["STORY,1"],
+                    "can_have_stat": ["p_l"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                },
+                {
+                    "text": "There are Clans beyond the desert, p_l instructs. In high places and low, wet and, well, {PRONOUN/p_l/subject} {VERB/p_l/suppose/supposes} c_n are the cats from where it is dry. Greenleaf being the name of the dry season is older than the experience of there <i>being</i> a dry season. In those distant places, greenleaf is the season of plenty, not the harsh thing it is here.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_bord_story",
+                    "stat_skill": ["LORE,1"],
+                    "can_have_stat": ["p_l"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "There's no time to answer r_c's question. The patrol has been out too long, in conditions too dry, and places too exposed to the scorching sun. They prioritise finding shade, but they'll need to check themselves for heatstroke when they return to camp.",
+                    "exp": 0,
+                    "weight": 20,
+                    "injury": [
+                        {
+                            "cats": ["multi"],
+                            "injuries": ["dehydrated"],
+                            "scars": []
+                        }
+                    ],
+                    "history_text": {
+                        "reg_death": "m_c got dehydrated training under the hot greenleaf sun, and it eventually sapped {PRONOUN/m_c/subject} life from {PRONOUN/m_c/object}.",
+                        "lead_death": "got dehydrated training under the hot greenleaf sun, and it eventually sapped {PRONOUN/m_c/subject} life from {PRONOUN/m_c/object}"
+                    }
+                }
+            ]
+    }
+]

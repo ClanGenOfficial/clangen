@@ -11,7 +11,12 @@
     "m_c feels heavy and bloated, {PRONOUN/m_c/poss} joints hurting with the extra weight of the litter held snugly between. Very snugly. Uncomfortably snugly.", 
     "m_c wonders how many names {PRONOUN/m_c/subject} should think about, for {PRONOUN/m_c/poss} kits. {PRONOUN/m_c/subject/CAP} have no idea how many {PRONOUN/m_c/subject}'ll need, and what if {PRONOUN/m_c/subject} meet {PRONOUN/m_c/poss} litter for the first time and one of the names just doesn't fit?!",
     "m_c feels like {PRONOUN/m_c/poss} entire existence is one long trip between water and the dirtplace, again and again. This pregnancy is so much harder than {PRONOUN/m_c/subject} were expecting.",
-    "m_c curls up, purring at {PRONOUN/m_c/poss} belly, hoping the unknown number of kittens within can hear {PRONOUN/m_c/poss} love for them - {PRONOUN/m_c/subject} can't wait to meet them." 
+    "m_c curls up, purring at {PRONOUN/m_c/poss} belly, hoping the unknown number of kittens within can hear {PRONOUN/m_c/poss} love for them - {PRONOUN/m_c/subject} can't wait to meet them.",
+    "{PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} endearing proud to be carrying the next generation, it's all m_c can talk about.",
+    "All the old tales about queens fighting to the death to protect {PRONOUN/m_c/poss} babies suddenly make sense to m_c. {PRONOUN/m_c/subject/CAP} feel up to fighting the sun itself, powered by the love {PRONOUN/m_c/subject} feel for {PRONOUN/m_c/poss} yet to arrive litter.",
+    "m_c feels like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} eating enough at each meal to feed an army, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} predicting a big litter. Or perhaps one very plump kit.",
+    "m_c has begun hoarding little trinkets, stashing bits of fluff and feather and shiny rocks into {PRONOUN/m_c/poss} birthing nest to stock it with kitten toys.",
+    "m_c invites {PRONOUN/m_c/poss} friends to feel {PRONOUN/m_c/poss} litter kick - surely these kittens are going to be talented warriors, because, well - ow."
   ],
 
 
@@ -19,7 +24,7 @@
     " {PRONOUN/m_c/subject/CAP} {VERB/m_c/decide/decides} to move into the nursery in preparation for {PRONOUN/m_c/poss} soon-to-come kits.",
     " {PRONOUN/m_c/subject/CAP} {VERB/m_c/don't/doesn't} believe {PRONOUN/m_c/subject} can efficiently perform {PRONOUN/m_c/poss} duties while expecting kits and {VERB/m_c/decide/decides} to move into the nursery.",
     " Time to move to the nursery and relax before the new arrivals make their appearance.",
-    " When one waddles more than pads around camp, one has to accept that one should move into the nursery.",
+    " Though, when one waddles more than pads around camp, one has to accept that {PRONOUN/m_c/subject} should move into the nursery.",
     " {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} been moved into the nursery, against {PRONOUN/m_c/poss} grumbling protests.",
     " Pregnancy sucks. m_c gives in, and moves into the nursery.",
     " It's time to settle into the nursery, and make sure everything is perfectly prepared.",
@@ -29,7 +34,7 @@
   "minor_severity": [
     " {PRONOUN/m_c/subject/CAP} won't be moving into the nursery just yet.",
     " {PRONOUN/m_c/subject/CAP} {VERB/m_c/choose/chooses} to continue {PRONOUN/m_c/poss} duties as usual for now.",
-    " {PRONOUN/m_c/subject/CAP} {VERB/m_c/snap/snaps} that this doesn't mean {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} incapacitated, and {PRONOUN/m_c/subject} aren't moving {PRONOUN/m_c/poss} nest yet!",
+    " c_n wants to congratulate m_c - but the rising celebration is interrupted by m_c snapping, completely unprovoked, that this pregnancy doesn't make {PRONOUN/m_c/object} a wilting flower and {PRONOUN/m_c/subject} will not be moving {PRONOUN/m_c/poss} nest. Pregnancy hormones are terrifying.",
     " {PRONOUN/m_c/subject/CAP} {VERB/m_c/aren't/isn't} keen on being confined to the nursery just yet.",
     " Life goes on for now - {PRONOUN/m_c/subject}'ll move into the nursery, but not this moon.",
     " {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} still full of energy, and moving to the nursery would feel stifling - maybe next moon.",
@@ -64,7 +69,7 @@
       "m_c is so, so grateful that {PRONOUN/m_c/poss} adorable {insert} is here - both thrilled to meet them, and thrilled that r_c can take a turn parenting while m_c finally takes a little break from the stuffy air of the nursery.",
       "m_c and r_c were so busy worrying about and looking forward to the birth that it's only now that they look at their {insert}, and wonder what to name them.",
       "Purring with r_c against {PRONOUN/m_c/poss} back, m_c feels like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going to explode with love, looking at {PRONOUN/m_c/poss} tiny new {insert}."
-                               
+      
     ],
     "dead_mate": [
       "m_c looks at {PRONOUN/m_c/poss} {insert}, choking on both a purr and a wail. How are {PRONOUN/m_c/subject} supposed to do this without r_c?",
@@ -119,6 +124,10 @@
 	"outside_death": [
 		"Some say m_c didn't make it.",
 		"Some say m_c would have needed a medicine cat to survive."
+	],
+	"lead_death": [
+		"m_c lost one of {PRONOUN/m_c/poss} nine lives, but gave birth to a {insert}.",
+		"Although m_c gave birth to a {insert}, it came at the cost of one of {PRONOUN/m_c/poss} nine lives."
 	]
   }
 }

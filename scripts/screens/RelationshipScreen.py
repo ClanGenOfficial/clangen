@@ -96,18 +96,41 @@ class RelationshipScreen(Screens):
             elif event.ui_element == self.log_icon:
                 if self.inspect_cat.ID not in self.the_cat.relationships:
                     return
-                RelationshipLog(
-                    self.the_cat.relationships[self.inspect_cat.ID],
-                    [self.view_profile_button, self.switch_focus_button,\
-                        self.next_cat_button,self.previous_cat_button,self.next_page_button],
-                    [self.back_button, self.log_icon, self.checkboxes["show_dead"], self.checkboxes["show_empty"],\
-                     self.show_dead_text, self.show_empty_text]
-                )
+                if self.next_cat == 0 and self.previous_cat == 0:
+                    RelationshipLog(
+                        self.the_cat.relationships[self.inspect_cat.ID],
+                        [self.view_profile_button, self.switch_focus_button, self.next_page_button, self.previous_cat_button,
+                         self.next_page_button],
+                        [self.back_button, self.log_icon, self.checkboxes["show_dead"], self.checkboxes["show_empty"], \
+                         self.show_dead_text, self.show_empty_text]
+                    )
+                elif self.next_cat == 0:
+                    RelationshipLog(
+                        self.the_cat.relationships[self.inspect_cat.ID],
+                        [self.view_profile_button, self.switch_focus_button, self.previous_cat_button, self.next_page_button],
+                        [self.back_button, self.log_icon, self.checkboxes["show_dead"], self.checkboxes["show_empty"],\
+                         self.show_dead_text, self.show_empty_text]
+                    )
+                elif self.previous_cat == 0:
+                    RelationshipLog(
+                        self.the_cat.relationships[self.inspect_cat.ID],
+                        [self.view_profile_button, self.switch_focus_button, self.next_cat_button,
+                         self.next_page_button],
+                        [self.back_button, self.log_icon, self.checkboxes["show_dead"], self.checkboxes["show_empty"], \
+                         self.show_dead_text, self.show_empty_text]
+                    )
+                else:
+                    RelationshipLog(
+                        self.the_cat.relationships[self.inspect_cat.ID],
+                        [self.view_profile_button, self.switch_focus_button, self.next_page_button, self.next_cat_button, self.previous_cat_button, 
+                         self.next_page_button],
+                        [self.back_button, self.log_icon, self.checkboxes["show_dead"],
+                         self.checkboxes["show_empty"], self.show_dead_text, self.show_empty_text]
+                    )
             elif event.ui_element == self.checkboxes["show_dead"]:
                 game.clan.clan_settings['show dead relation'] = not game.clan.clan_settings['show dead relation']
                 self.update_checkboxes()
                 self.apply_cat_filter()
-                self.update_cat_page()
             elif event.ui_element == self.checkboxes["show_empty"]:
                 game.clan.clan_settings['show empty relation'] = not game.clan.clan_settings['show empty relation'] 
                 self.update_checkboxes()
@@ -485,11 +508,7 @@ class RelationshipScreen(Screens):
 
         all_pages = self.chunks(self.filtered_cats, 8)
 
-        if self.current_page > len(all_pages):
-            self.current_page = len(all_pages)
-
-        if self.current_page == 0:
-            self.current_page = 1
+        self.current_page = max(1, min(self.current_page, len(all_pages)))
 
         if all_pages:
             display_rel = all_pages[self.current_page - 1]

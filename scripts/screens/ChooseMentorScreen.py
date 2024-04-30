@@ -369,10 +369,8 @@ class ChooseMentorScreen(Screens):
         """Updates the cat sprite buttons. """
         valid_mentors = self.chunks(self.get_valid_mentors(), 30)
 
-        # If the number of pages becomes smaller than the number of our current page, set
-        #   the current page to the last page
-        if self.current_page > len(valid_mentors):
-            self.list_page = len(valid_mentors)
+        # clamp current page to a valid page number
+        self.current_page = max(1, min(self.current_page, len(valid_mentors)))
 
         # Handle which next buttons are clickable.
         if len(valid_mentors) <= 1:

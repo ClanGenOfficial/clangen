@@ -966,5 +966,472 @@
                 ]
             }
         ]
+    },
+    {
+        "patrol_id": "wtlnd_train_moosemyth_storylocked1",
+        "biome": ["wetlands"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1"],
+        "intro_text": "p_l holds up their tail and freezes in place. app1 swallows back {PRONOUN/app1/poss} terror as the ground rumbles ominously beneath them. Crouching down, following p_l's guidance, {PRONOUN/app1/subject} {VERB/app1/stare/stares} in awe as a giant, hulking beast with tree branches on its head practically <i>appears</i> from the swamp.",
+        "decline_text": "app1 scurries away before the moose draws near, leaving the reeking scent of fear in {PRONOUN/app1/poss} wake. p_l sighs in annoyance and follows after {PRONOUN/p_l/poss} apprentice.",
+        "success_outcomes": [
+                {
+                    "text": "Once upon a time, p_l murmurs, voice barely a whisper, Twolegs attacked the wetlands, ripping down trees, choking off rivers, reshaping the earth itself. Seeing the destruction, the stars blessed the fallen trees to rise, undead and massive, and drive the Twolegs from the swamps. Moose are very dangerous - but their presence shields c_n.",
+                    "exp": 30,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        }
+                    ]
+                },
+                {
+                    "text": "As the gigantic moose wanders by, p_l quietly begins to speak. The ancestors of the Clans were starving. They almost gave up settling in the swamp, but they came across a battle between two giants. A wolf was hunting a moose. The moose gave its life, and the cats were able to survive off its meat. Some cats still live amongst its bones!",
+                    "exp": 30,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "app1's courage breaks in the sight of such a huge animal. {PRONOUN/app1/subject/CAP} {VERB/app1/try/tries} to run from it, but p_l has to pin {PRONOUN/app1/object} to the ground as the sudden movement startles the moose. One blow from those big hooves would easily kill a cat.",
+                    "exp": 0,
+                    "weight": 20,
+                    "injury": [
+                        {
+                            "cats": ["app1"],
+                            "injuries": ["shock"]
+                        }
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": false,
+                            "values": ["comfort"],
+                            "amount": -10
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "wtlnd_train_thechasedones_lorelocked1",
+        "biome": ["wetlands"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_bord_story",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6],
+            "apprentice":[1, 6]
+            },
+        "weight": 20,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["LORE,1"],
+        "intro_text": "It's been a hard swimming lesson - app1 has just fallen back in, trying to clamber out with {PRONOUN/app1/poss} claws dug into a tree root, and {PRONOUN/app1/subject}{VERB/app1/'re/'s} looking particularly sorry for {PRONOUN/app1/self}. p_l suggests they take a break, {PRONOUN/p_l/subject} {VERB/p_l/have/has} a story to share. Does app1 know why c_n lives in the quagmire?",
+        "decline_text": "No, and though {PRONOUN/app1/subject}{VERB/app1/'re/'s} polite, app1 doesn't want to hear about it, {PRONOUN/app1/subject}'d just like some help getting the water out of {PRONOUN/app1/poss} pelt.",
+        "success_outcomes": [
+                {
+                    "text": "Long ago, rebels were driven from their former Clans, desperately seeking a new life. But the lands were crowded with other cats, vicious and territorial, and the refugees were chased beyond land and familiarity. Only there did they find safety, in water others cringe from. c_n remembers their lessons still, gaining safety from their swamp.",
+                    "exp": 30,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort", "trust", "platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "p_l tries to share the long ago history of the safe refuge the swamps offered - but app1 throws back {PRONOUN/app1/poss} head and yowls. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} <i>care</i> what some ancient cat did, {PRONOUN/app1/subject} <i>hate</i> this, water is awful!",
+                    "exp": 0,
+                    "weight": 20,
+                    "art": "gen_train_argue",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": true,
+                            "values": ["respect", "platonic", "comfort"],
+                            "amount": -5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": true,
+                            "values": ["dislike"],
+                            "amount": 15
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": false,
+                            "values": ["jealous"],
+                            "amount": 5
+                        }
+                    ]
+                },
+                {
+                    "text": "Long ago, rebels were driven from their former Clans, desperately seeking a new life, p_l begins. But app1 interrupts {PRONOUN/p_l/object} - so those cats were too cowardly to fight then? The exiles should've attacked and taken over, not surrendered and run.",
+                    "exp": 0,
+                    "weight": 20,
+                    "art": "gen_train_argue",
+                    "can_have_stat":["not_pl"],
+                    "stat_trait": [
+                        "troublesome",
+                        "rebellious",
+                        "fierce",
+                        "cold",
+                        "grumpy"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["s_c"],
+                            "mutual": true,
+                            "values": ["respect", "platonic", "comfort"],
+                            "amount": -5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["s_c"],
+                            "mutual": true,
+                            "values": ["dislike"],
+                            "amount": 15
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["s_c"],
+                            "mutual": false,
+                            "values": ["jealous"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "wtlnd_train_thegreedyravenandthesnake_storylorelocked1",
+        "biome": ["wetlands"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_train_sunset",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6]
+            },
+        "weight": 20,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["LORE,1", "STORY,1"],
+        "intro_text": "As the patrol shares tongues, p_l asks if they'd like to hear the tale of The Greedy Raven and the Snake.",
+        "decline_text": "Instead, p_l detangles a stubborn knot of fur for r_c.",
+        "success_outcomes": [
+                {
+                    "text": "Long ago, a son of a leader pursued his father's approval and attention, murdering his deputies. But his last victim's mate, a nursing queen, an easy kill, rose from her nest, striking back with the fury of a mother viper. If he had been willing to wait for power to come to him, he would've been a great leader. Instead, his ghost lurks in the Dark Forest.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_bord_story",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort", "trust", "platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "The cats aren't interested in hearing p_l's historical tale, and p_l tries not to let their ears fall in disappointment.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "wtlnd_train_bogbodies_storylorelocked1",
+        "biome": ["wetlands"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_train_ghost",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6],
+            "apprentice": [2, 6]
+            },
+        "weight": 20,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["LORE,1", "STORY,1"],
+        "intro_text": "Alright, listen up. It's not... a fun tale, but the apprentice need to learn about the bog. And, er... the bodies...",
+        "decline_text": "On second thought, app1 looks a bit nervous. p_l will wait to explain this until another, happier day.",
+        "success_outcomes": [
+                {
+                    "text": "In the heartbreaking event that a Clanmate is lost and you're nearby, p_l explains seriously, you cannot leave their body in the wetlands. Their body and spirit will both sink into the murk, the bog will take them, and they'll never be able to find their way to StarClan.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "scaryghost_INTRO",
+                    "stat_skill": ["STORY,1"],
+                    "can_have_stat": ["p_l"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                },
+                {
+                    "text": "In the heartbreaking event that a Clanmate is lost and you're nearby, p_l explains seriously, you cannot leave their body in the wetlands. Bodies don't decay, in the bog, it keeps them, and holds them, and traps the spirit...",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "scaryghost_INTRO",
+                    "stat_skill": ["LORE,1"],
+                    "can_have_stat": ["p_l"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "p_l starts to talk about undecaying bodies lying in bogs, and that's... a bit beyond what the apprentices can handle, it turns out.",
+                    "exp": 0,
+                    "weight": 20,
+                    "art": "gen_scared_cat_app",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "wtlnd_train_glowingmushrooms_apprentices_storylorelocked1",
+        "biome": ["wetlands"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_app_crouching_perplexed",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [-1, -1],
+            "apprentice": [2, 6]
+            },
+        "weight": 20,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["LORE,0", "STORY,0"],
+        "intro_text": "Poking their noses out of camp at night (which they're definitely not supposed to do), app1 and app2 spot something glowing among the trees...",
+        "decline_text": "On second thought, camp is great, let's stay here.",
+        "success_outcomes": [
+                {
+                    "text": "One heartbeat. Another. The light doesn't change. s_c creeps forward, whiskers aquiver. It's a mushroom! A gift from passing spirits, s_c bets, left to light their way through the swamp!",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_happy_cat2",
+                    "stat_skill": ["STORY,1"],
+                    "can_have_stat": ["app"],
+                    "relationships": [
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                },
+                {
+                    "text": "One heartbeat. Another. The light doesn't change. s_c creeps forward, whiskers aquiver. It's a mushroom! s_c has heard of these, StarClan once left a trail to guide c_n cats out of danger during a disaster!",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_happy_cat2",
+                    "stat_skill": ["LORE,1"],
+                    "can_have_stat": ["app"],
+                    "relationships": [
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "It's too weird, app1 refuses to go near the light, and almost gets them caught sneaking back into camp with how much {PRONOUN/app1/subject}{VERB/app1/'re/'s} panicking.",
+                    "exp": 0,
+                    "weight": 20,
+                    "art": "gen_scared_cat_app",
+                    "relationships": [
+                        {
+                            "cats_to": ["app1"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["comfort"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
     }
 ]
