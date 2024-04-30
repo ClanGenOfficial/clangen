@@ -6271,7 +6271,7 @@
         "season": ["Any"],
         "types": ["training"],
         "tags": ["romantic"],
-        "patrol_art": "train_general_intro",
+        "patrol_art": "gen_train_speakingromance1",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
