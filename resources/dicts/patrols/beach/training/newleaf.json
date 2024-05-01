@@ -19,7 +19,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "As the cats watch, the silence is broken as one of the massive boulders rears up and snorts. The apprentices jolt with fear, app1's fur standing on end while app2 looks seconds away from fleeing, but p_l flicks {PRONOUN/p_l/poss} tail encouragingly. These are nosy-seals, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}, as the beach full of 'boulders' suddenly seems far more intimidating.",
+                "text": "As the cats watch, the silence is broken as one of the massive boulders rears up and snorts. The apprentices jolt with fear, app1's fur standing on end while app2 looks seconds away from fleeing, but p_l flicks {PRONOUN/p_l/poss} tail encouragingly. These are nosy-seals, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}, and the beach full of 'boulders' suddenly seems far more intimidating.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -33,7 +33,7 @@
                 ]
             },
             {
-                "text": "app1 and app2's jaws drop, disbelieving, as p_l explains these are animals, not a rockslide. They stare as a nosy-seal wakes from his slumber and bellows a challenge to his neighbor, flinching as the monolithic animals crash towards each other. Each drips enough blood to fill the veins of an entire cat, crashing and careening off each other.",
+                "text": "app1 and app2's jaws drop in disbelief when p_l explains these are animals, not a rockslide. They stare as a nosy-seal wakes from his slumber and bellows a challenge to his neighbor, flinching as the monolithic animals crash towards each other. Each drips enough blood to fill the veins of an entire cat, crashing and careening off each other.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -47,7 +47,7 @@
                 ]
             },
             {
-                "text": "As the 'rocks' wake and reveal themselves to be the most massive animals app1 and app2 have ever seen, s_c reassures them - they may never have seen these frightening seals before, but c_n has. s_c spends the morning quizzing the apprentices until each is able to identify a male nosy-seal with his trunk vs the comparatively smaller females.",
+                "text": "As the 'rocks' wake and reveal themselves to be the most massive animals app1 and app2 have ever seen, s_c reassures them - they may never have seen these frightening seals before, but c_n has. s_c spends the morning quizzing the apprentices until each is able to identify a male nosy-seal with his trunk versus the comparatively smaller females.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["TEACHER,1"],
@@ -63,7 +63,7 @@
                 ]
             },
             {
-                "text": "As the sun hits them and the massive boulders wake with grumbling snorts, app1 and app2 both look about to run. s_c quickly calms them, explaining that these massive yearly visitors to c_n are nosy-seals, and that if the cats don't bother them, they won't bother the cats.",
+                "text": "As the sun hits them and the massive boulders wake with grumbling snorts, app1 and app2 both look about to run. s_c quickly calms them, explaining that these massive yearly visitors to c_n are nosy-seals and that if the cats don't bother them, they won't bother the cats.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -112,11 +112,11 @@
         },
         "weight": 20,
         "intro_text": "p_l suggests to r_c that it is the perfect weather to go for a swim in the ocean together.",
-        "decline_text": "r_c isn't convinced, and suggests they should probably focus on the patrol instead.",
+        "decline_text": "r_c isn't convinced and suggests they should probably focus on the patrol instead.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "p_l flashes r_c a playful look and leaps smoothly into the water. When p_l emerges from the water, {PRONOUN/p_l/poss} slicked fur clinging to {PRONOUN/p_l/poss} muscles, r_c can't help but admire p_l for {PRONOUN/p_l/poss} strength. With the way r_c's heart is fluttering, it may not just be p_l's strength {PRONOUN/r_c/subject} {VERB/r_c/admire/admires}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/brush/brushes} it aside and plunge in after {PRONOUN/p_l/object}.",
+                "text": "p_l flashes r_c a playful look and leaps smoothly into the water. When p_l emerges from the water, {PRONOUN/p_l/poss} slicked fur clinging to {PRONOUN/p_l/poss} muscles, r_c can't help but admire p_l for {PRONOUN/p_l/poss} strength. With the way r_c's heart is fluttering, it may not just be p_l's strength {PRONOUN/r_c/subject} {VERB/r_c/admire/admires}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/brush/brushes} it aside and {VERB/r_c/plunge/plunges} in after {PRONOUN/p_l/object}.",
                 "exp": 5,
                 "weight": 20,
                 "relationships": [
@@ -130,7 +130,7 @@
                 ]
             },
             {
-                "text": "Silence meets {PRONOUN/p_l/poss} question, and just as p_l is about to turn and ask again, r_c shoves {PRONOUN/p_l/object} bodily into the water. Spluttering from the cold saltwater, p_l finds it quite difficult to scowl as though {PRONOUN/p_l/subject} {VERB/p_l/mean/means} it, captivated by the sound of r_c's joyous laughter, the sunlight catching on {PRONOUN/p_l/poss} pelt in just the right way.",
+                "text": "Silence meets {PRONOUN/p_l/poss} question, and just as p_l is about to turn and ask again, r_c shoves {PRONOUN/p_l/object} into the water. Spluttering from the cold saltwater, p_l finds it quite difficult to scowl as though {PRONOUN/p_l/subject} {VERB/p_l/mean/means} it, captivated by the sound of r_c's joyous laughter, the sunlight catching on {PRONOUN/p_l/poss} pelt in just the right way.",
                 "exp": 5,
                 "weight": 5,
                 "relationships": [
@@ -175,5 +175,218 @@
                 ]
             }
         ]
+    },
+    {
+        "patrol_id": "bch_train_newleaf_keepyourfooting_loreteacherswimmerrunnerlocked1",
+        "biome": ["beach"],
+        "season": ["newleaf"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "bch_train_session1",
+        "min_cats": 2,
+        "max_cats": 3,
+        "min_max_status": {
+           "normal adult": [1, 6],
+           "apprentice": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["LORE,1", "TEACHER,1", "SWIMMER,1", "RUNNER,1"],
+        "intro_text": "Okay, but, app1 knows how to <i>walk</i>. What're they <i>really</i> here to train to do?",
+        "decline_text": "Unable to convince app1 of the importance of training to keep {PRONOUN/app1/poss} footing, p_l gives up and takes them all home.",
+        "success_outcomes": [
+                {
+                    "text": "s_c rolls {PRONOUN/s_c/poss} eyes. Yes, they <i>are</i> really here to walk and run and jump around the rockpools. It rained last night, and the rock is slippery, and this is perfect conditions. s_c tells the tale of a kit once saved by a warrior sprinting along the rocks in a storm, as app1 falls over and skids harmlessly into a pool.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_train_soggykitty_happy_app",
+                    "stat_skill": ["LORE,1"],
+                    "can_have_stat": ["p_l"],
+                    "injury": [
+                        {
+                            "cats": ["app1"],
+                            "injuries": ["bruises"],
+                            "scars": []
+                        }
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic", "trust"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 10
+                        }
+                        ]
+                },
+                {
+                    "text": "Hey now, s_c chides. Rock scrambling is it's own art form, in c_n's territory. What if app1 needs to cross an exposed area during a storm, or if a battle between clans occured in the tide pools? app1 conceeds, and pays attention as s_c teaches, gaining sure-footed confidence that will serve {PRONOUN/app1/object} well.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_train_soggykitty_happy_app",
+                    "stat_skill": ["TEACHER,1"],
+                    "can_have_stat": ["p_l"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic", "trust"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 10
+                        }
+                        ]
+                },
+                {
+                    "text": "s_c laughs. No, they're here for something way cooler - literally. Wetter, too. Here the rool pools are of deceptively difference depths, and s_c's going to teach app1 how to judge which ones are deep enough to dive into, and which ones won't even get {PRONOUN/app1/poss} belly fur wet.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_train_soggykitty_happy_app",
+                    "stat_skill": ["SWIMMER,1"],
+                    "can_have_stat": ["p_l"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic", "trust"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 10
+                        }
+                        ]
+                },
+                {
+                    "text": "app1 thinks {PRONOUN/app1/subject} {VERB/app1/know/knows} how to walk on the rocks, s_c asks, tail tip twitching. Alright, prove it - catch s_c. app1 scrambles after {PRONOUN/s_c/object}, leaping, sprinting, twisting. But s_c is always just out of reach, a fox-length away, calling encouragements and teasing taunts as app1 is left panting, exhausted, and admiring.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "fst_hunt_fun1",
+                    "stat_skill": ["RUNNER,1"],
+                    "can_have_stat": ["p_l"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": false,
+                            "values": ["platonic", "trust", "dislike"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 10
+                        }
+                        ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "In {PRONOUN/app1/poss} haste to prove {PRONOUN/app1/subject} {VERB/app1/need/needs} no lessons on rock scrambling, app1... miscalculates. p_l hauls {PRONOUN/app1/object} from the rockpool by the scruff, hoping the fall will make the lesson stick when {PRONOUN/p_l/poss} teaching couldn't.",
+                    "exp": 0,
+                    "weight": 20,
+                    "art": "gen_train_soggykitty_mad_app",
+                    "injury": [
+                        {
+                            "cats": ["app1"],
+                            "injuries": ["bruises"],
+                            "scars": []
+                        },
+                        {
+                            "cats": ["app1"],
+                            "injuries": ["sore"],
+                            "scars": []
+                        },
+                        {
+                            "cats": ["app1"],
+                            "injuries": ["sprain"],
+                            "scars": []
+                        }
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": true,
+                            "values": ["comfort", "trust"],
+                            "amount": -5
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": -5
+                        }
+                        ]
+                },
+                {
+                    "text": "In {PRONOUN/app1/poss} haste to prove {PRONOUN/app1/subject} {VERB/app1/need/needs} no lessons on rock scrambling, app1... miscalculates. The water in newleaf isn't leaf-bare chill, but the cold makes {PRONOUN/app1/poss} mouth open in surprise, and by the time p_l hauls {PRONOUN/app1/object} out {PRONOUN/app1/subject}{VERB/app1/'ve/'s} inhaled sea water.",
+                    "exp": 0,
+                    "weight": 20,
+                    "art": "gen_train_soggykitty_mad_app",
+                    "injury": [
+                        {
+                            "cats": ["app1"],
+                            "injuries": ["bruises"],
+                            "scars": []
+                        },
+                        {
+                            "cats": ["app1"],
+                            "injuries": ["sore"],
+                            "scars": []
+                        },
+                        {
+                            "cats": ["app1"],
+                            "injuries": ["sprain"],
+                            "scars": []
+                        },
+                        {
+                            "cats": ["app1"],
+                            "injuries": ["water in their lungs"],
+                            "scars": []
+                        }
+                    ],
+                    "history_text": {
+                        "reg_death": "m_c died from complications caused by inhaling water after falling into a rock pool.",
+                        "lead_death": "complications caused by inhaling water after falling into a rock pool"
+                    },
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": true,
+                            "values": ["comfort", "trust"],
+                            "amount": -5
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": -5
+                        }
+                        ]
+                }
+            ]
     }
 ]

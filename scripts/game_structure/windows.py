@@ -1058,6 +1058,7 @@ class RelationshipLog(UIWindow):
         game.switches['window_open'] = False
         for button in self.disable_button_list:
             button.enable()
+
         for button in self.hide_button_list:
             button.show()
             button.enable()

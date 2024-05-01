@@ -52,5 +52,186 @@
                 ]
             }
         ]
+    },
+    {
+        "patrol_id": "dst_train_leafbare_flippedseasons_storylorelocked1",
+        "biome": ["desert"],
+        "season": ["leaf-bare"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "fst_hunt_random_greenleafsolowarrior1",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1", "LORE,1"],
+        "intro_text": "The coolness of the rain sliding along r_c's pelt is something to be savored, a rare treat as the gentle rainshower washes by c_n. And the ground - it's so green, so alive! Why under the Stars does c_n not call this season greenleaf, when everything around them springs to life?!",
+        "decline_text": "Not every cat on the patrol is such a fan of the damp, and while r_c is given time to live in the moment, they all want to move on soon.",
+        "success_outcomes": [
+                {
+                    "text": "It's ancient, p_l explains. Older then c_n... maybe older than this land. No one is sure what cursed the desert so dry, but in other places, the sun brings light, warmth that is a relief and not a punishment, and there the dry season when the sun reaches its peak power is also the season of green leaves.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_bord_story",
+                    "stat_skill": ["STORY,1"],
+                    "can_have_stat": ["p_l"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                },
+                {
+                    "text": "There are Clans beyond the desert, p_l instructs. In high places and low, wet and, well, {PRONOUN/p_l/subject} {VERB/p_l/suppose/supposes} c_n are the cats from where it is dry. Greenleaf being the name of the dry season is older than the experience of there <i>being</i> a dry season. In those distant places, greenleaf is the season of plenty, not the harsh thing it is here.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_bord_story",
+                    "stat_skill": ["LORE,1"],
+                    "can_have_stat": ["p_l"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "There might be novelty in the patter of rain on fur, but novelty isn't always fun. When the cats try and trian, the ground has turned into a slippery, muddy mess that their claws can't grip. No one is seriously hurt, but no one's dignity escapes unscathed either.",
+                    "exp": 0,
+                    "weight": 20,
+                    "injury": [
+                        {
+                            "cats": ["multi"],
+                            "injuries": ["sore", "bruises"],
+                            "scars": []
+                        }
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort"],
+                            "amount": 3
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "dst_train_leafbare_dreamtime_storylocked1",
+        "biome": ["desert"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_bord_story",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6],
+            "apprentice": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1"],
+        "intro_text": "In the beginning of dreams, the land was flat and empty, p_l whispers, setting the stage for a story.",
+        "decline_text": "Storytime is interrupted by a rain shower, not that anyone minds more water in c_n's territory.",
+        "success_outcomes": [
+                {
+                    "text": "The Goorialla rainbow serpant cut great gouges into the land, searching for life to not be alone. He called forth frogs who spat up the rivers, and animals to populate the land, and laid down the first rules, rules not of the Warrior Code, but of ecosystems and biospheres.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_bord_story",
+                    "stat_skill": ["STORY,1"],
+                    "can_have_stat": ["p_l"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "Before dreams? How can you be <i>before dreams</i>, app1 asks, and won't just settle down and let p_l tell the tale.",
+                    "exp": 0,
+                    "weight": 20,
+                    "art": "gen_train_argue",
+                    "relationships": [
+                        {
+                            "cats_to": ["app1"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": -5
+                        },
+                        {
+                            "cats_to": ["app1"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ]
     }
 ]

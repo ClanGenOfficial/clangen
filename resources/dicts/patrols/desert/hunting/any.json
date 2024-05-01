@@ -2234,7 +2234,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -2256,7 +2256,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -2280,7 +2280,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -2303,7 +2303,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": 5
                     }
                 ],
@@ -2325,7 +2325,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": 5
                     }
                 ],
@@ -2704,5 +2704,77 @@
                 "prey": ["very_small"]
             }
         ]
+    },
+    {
+        "patrol_id": "dst_hunt_wareprey_lorelocked1",
+        "biome": ["desert"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 5],
+           "apprentice":[1, 5]
+            },
+        "weight": 40,
+        "chance_of_success": 50,
+        "pl_skill_constraint": ["LORE,1"],
+        "intro_text": "The patrol lies in ambush, concealed around the narrow rocky gully leading to a deep shadowed pool of water. app1 spots a gila monster ambling into range, striped red and black, and purrs with dark amusement as the prey approaches its doom.",
+        "decline_text": "There'll be smaller, easy prey lured into this trap. The patrol lets the monster pass without a fight.",
+        "success_outcomes": [
+                {
+                    "text": "p_l waves a tail across app1's path, stopping {PRONOUN/app1/object} with a stern stare. Remember the venom in the fangs of that monster. Don't count your prey until it's on the fresh-kill pile. r_c nods, and apologizes. Every hunt deserves respect.",
+                    "exp": 30,
+                    "weight": 20,
+                    "prey": ["medium"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": false,
+                            "values": ["comfort", "trust", "respect", "dislike"],
+                            "amount": 10
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "app1 leaps down in a beautiful ambush that bounces right off the gila's tough hide. The lizard hisses, striking backwards with its fangs, and escapes, leaving app1 to limp home.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": true,
+                            "values": ["respect", "trust"],
+                            "amount": -10
+                        }
+                    ],
+                    "injury": [
+                        {
+                        "cats": ["app1"],
+                        "injuries": ["bite-wound", "poisoned"],
+                        "scars": ["SNAKETWO"],
+                        "no_results": false
+                        }
+                    ],
+                    "history_text": {
+                        "scar": "r_c was permantly marked by the bite of a gila monster as an apprentice - but {PRONOUN/r_c/subject} survived.",
+                        "reg_death": "r_c died from the bite of a gila monster encountered on a hunt as a foolish apprentice.",
+                        "lead_death": "from the bite of a gila monster encountered on a hunt as a foolish apprentice"
+                        }
+                }
+            ]
     }
 ]

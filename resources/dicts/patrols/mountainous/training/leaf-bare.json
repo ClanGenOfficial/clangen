@@ -382,5 +382,596 @@
                 "weight": 20
             }
         ]
+    },
+    {
+        "patrol_id": "mtn_train_leafbare_darkforestfable_storylorelocked1",
+        "biome": ["mountainous"],
+        "season": ["leaf-bare"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1", "LORE,1"],
+        "intro_text": "Once, before myth and magic, there was only StarClan, and no Dark Forest. p_l gathers the patrol, talking in hushed meows of the birth of that place.",
+        "decline_text": "A happier story, the cats ask, please. No one wants difficulty sleeping tonight.",
+        "success_outcomes": [
+                {
+                    "text": "A dead warrior woke in StarClan, business unfinished and hate for the living in their heart. They brought ruin and destruction upon the living Clan - but c_n was not without allies. The other cats of StarClan leapt to battle and tore a hole in Silverpelt, casting out the traitor, condemning them to walk a path of decay and cruelty.",
+                    "exp": 30,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["trust", "respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort"],
+                            "amount": 3
+                        }
+                    ]
+                },
+                {
+                    "text": "s_c can't help but be overly fascinated as p_l speaks about how a warrior was so powerful that they needed to tear a hole in silverpelt just to be able to stop them. s_c hopes to one day be that powerful.",
+                    "exp": 30,
+                    "weight": 20,
+                    "can_have_stat": ["not_pl_rc"],
+                    "stat_skill": ["DARK,1"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["trust", "respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["s_c"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 10
+                        }
+                    ]
+                },
+                {
+                    "text": "s_c hears the tale and is inspired. {PRONOUN/s_c/subject/CAP} {VERB/s_c/wish/wishes} {PRONOUN/s_c/subject} {VERB/s_c/were/was} as strong as the cats in the tale.",
+                    "exp": 30,
+                    "weight": 20,
+                    "can_have_stat": ["not_pl_rc"],
+                    "stat_trait": [
+                        "bloodthirsty",
+                        "troublesome",
+                        "arrogant",
+                        "confident"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["trust", "respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["s_c"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 10
+                        }
+                    ]
+                },
+                {
+                    "text": "At the end of the tale, s_c is inspired by how strong the outcast warrior is, but going against StarClan, that seems like a fool's errand. While s_c wouldn't mind being free of some of the rules of the Clan, {PRONOUN/s_c/subject} wouldn't dare go against StarClan.",
+                    "exp": 30,
+                    "weight": 20,
+                    "can_have_stat": ["not_pl_rc"],
+                    "stat_trait": [
+                        "rebellious"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["trust", "respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["s_c"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "r_c listens, shivering, as p_l describes the birth of the Dark Forest, the ancient, barely won battle between the good cats of the stars and the traitor amidst. {PRONOUN/r_c/subject/CAP} can't stop thinking about it in {PRONOUN/r_c/poss} nest that night, {PRONOUN/r_c/poss} sleep broken and uneasy.",
+                    "exp": 0,
+                    "weight": 20,
+                  "injury": [
+                                {
+                        "cats": ["r_c"],
+                        "injuries": ["constant nightmares"],
+                        "scars": [],
+                        "no_results": false
+                                }
+                            ],
+                        "history_text": {
+                        "reg_death": "r_c died from lack of sleep, {PRONOUN/r_c/poss} vision haunted by dark shadows.",
+                        "lead_death": "from lack of sleep, {PRONOUN/r_c/poss} vision haunted by dark shadows"
+                       }
+                },
+                {
+                    "text": "p_l notices how eager and happy s_c seems to be, and feels a bit uneasy after finishing the tale. No cat should be that pleased to hear this story...",
+                    "exp": 0,
+                    "weight": 20,
+                    "can_have_stat": ["not_pl_rc"],
+                    "stat_skill": ["DARK,1"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["trust", "respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["trust", "respect"],
+                            "amount": -10
+                        }
+                    ]
+                },
+                {
+                    "text": "At the end of the tale, p_l asks s_c what {PRONOUN/s_c/subject} {VERB/s_c/think/thinks}. s_c admits to not paying attention to some nursery story meant to scare kits.",
+                    "exp": 30,
+                    "weight": 20,
+                    "can_have_stat": ["not_pl_rc"],
+                    "stat_trait": [
+                        "rebellious"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["trust", "respect"],
+                            "amount": -10
+                        },
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "mtn_train_leafbare_warmthoftheclan_storylorelocked1",
+        "biome": ["mountainous"],
+        "season": ["leaf-bare"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1", "LORE,1"],
+        "intro_text": "p_l gathers some of {PRONOUN/p_l/poss} Clanmates, huddled together for warmth, and offers a tale to take everyone's mind off of the storm raging outside camp.",
+        "decline_text": "The wind, howling and vast, drowns p_l out. There'll be no stories today.",
+        "success_outcomes": [
+                {
+                    "text": "Once, long ago, cats roamed without a Clan, fending for themselves. Leaf-bare picked off the elderly, weak, and unlucky one by one, eating away at them. But one cat opened the warmth of their heart to shelter others in their nest, pelts sharing heat, many paws making light work. They became the first Leader, and those cats the first Clan.",
+                    "exp": 40,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort", "platonic"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "p_l tries, but the wind keeps creeping through the outer walls of the den, and the story is cut short as the cats work to repair it. r_c starts shivering halfway through the repair job.",
+                    "exp": 0,
+                    "weight": 20,
+                    "injury": [
+                                {
+                        "cats": ["r_c"],
+                        "injuries": ["shivering"],
+                        "scars": [],
+                        "no_results": false
+                                }
+                            ],
+                    "history_text": {
+                        "reg_death": "r_c died as a consequence of poor den construction, getting too cold in leaf-bare.",
+                        "lead_death": "as a consequence of poor den construction, getting too cold in leaf-bare"
+                       }
+                },
+                {
+                    "text": "p_l tries, but the wind keeps creeping through the outer walls of the den, and the story is cut short as the cats work to repair it.",
+                    "exp": 0,
+                    "weight": 20
+                }
+            ]
+    },
+    {
+        "patrol_id": "mtn_train_leafbare_thecurseofleafbare_lorelocked1",
+        "biome": ["mountainous"],
+        "season": ["leaf-bare"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_bord_story",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["LORE,1"],
+        "intro_text": "Many seasons ago, p_l begins, there was born a powerful, Stars-gifted apprentice, one coveted by the Clans around them. Pulled in many directions, they could not keep the peace, as all demanded their time and skill.",
+        "decline_text": "r_c doesn't have time to listen to p_l's story - {PRONOUN/r_c/subject} {VERB/r_c/apologize/apologizes}, but {PRONOUN/r_c/subject} rather {VERB/r_c/feel/feels} like that long dead overworked apprentice {PRONOUN/r_c/self}, right now!",
+        "success_outcomes": [
+                {
+                    "text": "After moons of having their clan attacked and targeted, the apprentice raged, calling on their hidden power. They summoned a powerful snowstorm and created leafbare in their anger before fleeing the clans, never to return and never to walk the stars, their life and talents wasted by cruel petty fighting.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "scaryghost_INTRO",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort", "trust", "platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "Rudely, r_c leaves in the middle of p_l's tale, stealing the momentum from it. p_l trails off, embarrassed.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["r_c"],
+                            "mutual": true,
+                            "values": ["respect", "platonic", "comfort"],
+                            "amount": -5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["r_c"],
+                            "mutual": true,
+                            "values": ["dislike"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["r_c"],
+                            "mutual": false,
+                            "values": ["jealous"],
+                            "amount": 5
+                        }
+                    ]
+                },
+                {
+                    "text": "s_c is so concerned with the health of the long dead apprentice it actually derails p_l's story, and {PRONOUN/p_l/subject} {VERB/p_l/have/has} to gently remind {PRONOUN/s_c/object} that this apprentice is long beyond helping.",
+                    "exp": 0,
+                    "weight": 20,
+                    "art": "scaryghost_INTRO",
+                    "can_have_stat":["not_pl"],
+                    "stat_trait": [
+                        "nervous",
+                        "insecure",
+                        "gloomy"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["r_c"],
+                            "mutual": true,
+                            "values": ["respect", "platonic", "comfort"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "mtn_train_leafbare_avalanche_storylorecleverinsightteacherlocked1",
+        "biome": ["mountainous"],
+        "season": ["leaf-bare"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "mtn_hunt_leaffallsnowstorm",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice":[2, 6],
+            "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1", "LORE,1", "CLEVER,1", "INSIGHTFUL,1", "TEACHER,1"],
+        "intro_text": "It's an old, important lesson. The apprentices are brought out to a valley, one side, steep, one shallow. The patrol settles on the shallow side, and the young cats are asked to study the clumped snow on the sharp wall across from them. Today, they will learn of avalanches.",
+        "decline_text": "...Or they would, if the valley wasn't so misted over it's barely possible to see the other side.",
+        "success_outcomes": [
+                {
+                    "text": "The Mountain's Roar is not rage of blood and sinew, no anger of tooth or claw. It's unfeeling, unthinking, and uncaring, the deep rumble of the snowcaps themselves falling to their doom, p_l tells them. If they ever, <i>ever</i> feel their whiskers tremble with the noise, the only solution is to run - not down, but to the side, away from where the snow will flow. Do they understand?",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_train_ghost",
+                    "stat_skill": ["STORY,1"],
+                    "can_have_stat": ["p_l"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1", "app2"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort"],
+                            "amount": -3
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["trust"],
+                            "amount": 5
+                        }
+                    ]
+                },
+                {
+                    "text": "Somberly, p_l lists the cats {PRONOUN/p_l/subject} {VERB/p_l/know/knows} who died to avalanche, who thought they were faster, who didn't heed the signs, who weren't cautious. Most of these cats were dead long before p_l was born, {PRONOUN/p_l/poss} knowledge of history going back gnerations, but this is what history is <i>for</i>. To learn from it.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_train_ghost",
+                    "stat_skill": ["LORE,1"],
+                    "can_have_stat": ["p_l"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1", "app2"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort"],
+                            "amount": -3
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["trust"],
+                            "amount": 5
+                        }
+                    ]
+                },
+                {
+                    "text": "There are tricks to it, p_l explains. Avalanches fall like sudden floods of water, or mud, but with unimaginable force. If you're caught, it's luck whether you survive. So don't get caught - run to the side of the slope, out of the path of the flow, horizonal, not tyring to race anything. Climb, climb anything. The tree will get swept away, but they might float.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_train_ghost",
+                    "stat_skill": ["CLEVER,1", "INSIGHTFUL,1"],
+                    "can_have_stat": ["p_l"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1", "app2"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort"],
+                            "amount": -3
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["trust"],
+                            "amount": 5
+                        }
+                    ]
+                },
+                {
+                    "text": "p_l sees the apprentices nerves, and takes a moment to reassure them. The patrol is safe on this side of the valley. The important things to remember with avalanches is the warning sides, the trembling of snowpack under paw, the quiver in your whiskers that warns of danger.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_bord_story",
+                    "stat_skill": ["CLEVER,1", "INSIGHTFUL,1"],
+                    "can_have_stat": ["p_l"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1", "app2"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["trust"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "The apprentices immediately start daring each other to go over and poke at the precarious snow. Highing disapproving, p_l cancels the lesson and sets them to cleaning the dirtplace instead.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1", "app2"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": -5
+                        }
+                    ]
+                },
+                {
+                    "text": "The cats think they're safe on the other side of the valley. It's a well known spot for teaching, distant but with a view of the avalanche prone spot on the otherside, c_n cats have been here before. Surely they're safe. They are mistaken.",
+                    "exp": 0,
+                    "weight": 1,
+                    "injury": [
+                        {
+                            "cats": ["patrol"],
+                            "injuries": ["shivering"],
+                            "scars": []
+                        }
+                    ],
+                    "dead_cats": ["multi"],
+                    "history_text": {
+                        "scar":"m_c was scarred from the bite of the cold of an avalanche, though {PRONOUN/m_c/subject} escaped with {PRONOUN/m_c/poss} life.",
+                        "reg_death": "The view point c_n thought was safe from avalanches... was not.",
+                        "lead_death": "the view point c_n thought was safe from avalanches... was not"
+                    }
+                }
+            ]
     }
 ]
