@@ -6,25 +6,27 @@ TODO: Docs
 
 """  # pylint: enable=line-too-long
 
-from random import choice, choices, randint, random, sample
 import re
+from random import choice, choices, randint, random, sample
+
 import pygame
+
 try:
     import ujson
 except:
     import json as ujson
+
 import logging
 from sys import exit as sys_exit
 from typing import Dict
 
-
 logger = logging.getLogger(__name__)
-from scripts.ui import image_cache
 from scripts.cat.history import History
 from scripts.cat.names import names
 from scripts.cat.pelts import Pelt
 from scripts.cat.sprites import sprites
 from scripts.game_structure.game_essentials import game, screen_x, screen_y
+from scripts.ui import image_cache
 from scripts.web import is_web, reload
 
 # ---------------------------------------------------------------------------- #
@@ -1417,7 +1419,7 @@ def quit(savesettings=False, clearevents=False):
         game.save_settings()
     if clearevents:
         game.cur_events_list.clear()
-    if not is_web:
+    if is_web:
         game.rpc.close_rpc.set()
         game.rpc.update_rpc.set()
         if game.rpc.is_alive():
@@ -1448,3 +1450,4 @@ with open(f"resources/dicts/prey_text_replacements.json", 'r') as read_file:
 
 with open(f"resources/dicts/backstories.json", 'r') as read_file:
     BACKSTORIES = ujson.loads(read_file.read())
+    # BACKSTORIES = ujson.loads(read_file.read())

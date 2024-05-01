@@ -105,6 +105,8 @@
         "#begin_anew_button": "begin anew",
         "#not_yet_button": "not yet",
         "#done_button": "done",
-        "#cancel_button": "cancel"
+        "#cancel_button": "cancel",
+        "#export_clan_button": "Export Clan",
+        "#import_clan_button": "Import Clan"
     }
 }

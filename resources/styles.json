@@ -71,7 +71,9 @@
         "#outside_clan_button": [false, true, false, true],
         "#starclan_button": [true, false, true, false],
         "#unknown_residence_button": [false, false, false, false],
-        "#dark_forest_button": [false, true, false, true]
+        "#dark_forest_button": [false, true, false, true],
+        "#export_clan_button": [true, true, true, true],
+        "#import_clan_button": [true, true, true, true]
     },
     "hanging": {
         "#english_lang_button": false,
@@ -98,7 +100,9 @@
         "#switch_mediator_button": true,
         "#switch_warrior_app_button": true,
         "#switch_med_app_button": true,
-        "#switch_mediator_app_button": true
+        "#switch_mediator_app_button": true,
+        "#export_clan_button": false,
+        "#import_clan_button": false
     },
     "shadow": {
         "#filter_by_closed_button": [true, true, true, false],
@@ -109,6 +113,8 @@
         "#filter_exp_button": [true, true, true, false],
         "#starclan_button": [true, false, true, false],
         "#unknown_residence_button": [true, true, true, false],
-        "#dark_forest_button": [true, true, false, false]
+        "#dark_forest_button": [true, true, false, false],
+        "#export_clan_button": [true, true, false, false],
+        "#import_clan_button": [true, true, false, false]
     }
 }

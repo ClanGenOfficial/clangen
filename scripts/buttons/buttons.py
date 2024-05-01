@@ -488,7 +488,7 @@ class BaseButton(pygame_gui.elements.UIButton):
                  manager=MANAGER,
                  tool_tip_text=None,
                  container=None,
-                 internal=None) -> None:
+                 internal: UIButton=None) -> None:
         self.id = internal.id
         self.rounded_corners = internal.rounded_corners
         self.hanging = internal.hanging

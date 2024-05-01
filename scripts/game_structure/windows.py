@@ -1,38 +1,39 @@
+import logging
 import os
+import platform
 import shutil
+import subprocess
 import threading
 import time
+from platform import system
+from random import choice
 from re import search as re_search
-import platform
+from re import sub
+from sys import exit
 
 import pygame
 import pygame_gui
-from sys import exit
-from re import sub
-from platform import system
-from random import choice
-import logging
-import subprocess
-
-
-from scripts.cat.history import History
-from scripts.cat.names import Name
 from pygame_gui.elements import UIWindow
 
-from scripts.housekeeping.datadir import get_save_dir, get_cache_dir, get_saved_images_dir, get_data_dir
-from scripts.ui import image_cache
-from scripts.game_structure.game_essentials import game, screen_x, screen_y
-from scripts.housekeeping.progress_bar_updater import UIUpdateProgressBar
-
-from scripts.utility import scale, quit, update_sprite, scale_dimentions, logger, process_text
-from scripts.game_structure.game_essentials import game, MANAGER
-from scripts.housekeeping.version import get_version_info
-from scripts.web import is_web
-from scripts.ui.elements import UITextBoxTweaked, UITextBox
 from scripts.buttons.buttons import UIImageButton
+from scripts.cat.history import History
+from scripts.cat.names import Name
+from scripts.game_structure.game_essentials import (MANAGER, game, screen_x,
+                                                    screen_y)
+from scripts.housekeeping.datadir import (get_cache_dir, get_data_dir,
+                                          get_save_dir, get_saved_images_dir)
+from scripts.housekeeping.progress_bar_updater import UIUpdateProgressBar
+from scripts.housekeeping.version import get_version_info
+from scripts.ui import image_cache
+from scripts.ui.elements import UITextBox, UITextBoxTweaked
+from scripts.utility import (logger, process_text, quit, scale,
+                             scale_dimentions, update_sprite)
+from scripts.web import is_web
 
 if not is_web:
-    from scripts.housekeeping.update import self_update, UpdateChannel, get_latest_version_number
+    from scripts.housekeeping.update import (UpdateChannel,
+                                             get_latest_version_number,
+                                             self_update)
 
 class SaveCheck(UIWindow):
     def __init__(self, last_screen, isMainMenu, mm_btn):
@@ -1331,7 +1332,6 @@ class ChangeCatToggles(UIWindow):
                                                     container=self)
         
         # Text
-        
     def refresh_checkboxes(self):
         
         for x in self.checkboxes.values():

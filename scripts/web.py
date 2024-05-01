@@ -3,14 +3,13 @@ Wrapper around the web platform to make it easier to work with
 """
 # pylint: disable=no-member
 import asyncio
-import platform
 import os
+import platform
 import shutil
 
 from scripts.housekeeping.datadir import get_data_dir, get_save_dir
 
 is_web = platform.system() == 'Emscripten'
-
 class window:
     """
     Shim to get around the fact that the web platform doesn't have a filesystem
