@@ -14,7 +14,7 @@ from scripts.game_structure.game_essentials import game, screen, screen_x, scree
 from scripts.patrol.patrol import Patrol
 from scripts.ui.elements import UITextBox
 from scripts.buttons.buttons import UIImageButton
-from scripts.buttons.buttons import UISpriteButton
+from scripts.ui.elements.buttons.UISpriteButton import UISpriteButton
 
 
 class MakeClanScreen(Screens):

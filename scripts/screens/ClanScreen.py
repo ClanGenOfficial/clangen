@@ -12,7 +12,7 @@ from scripts.ui import image_cache
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y
 from scripts.game_structure.windows import SaveError
 from scripts.buttons.buttons import UIImageButton
-from scripts.buttons.buttons import UISpriteButton
+from scripts.ui.elements.buttons.UISpriteButton import UISpriteButton
 
 
 

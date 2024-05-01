@@ -1,2 +1,2 @@
-# from .catbutton import CatButton
+from .catbutton import CatButton
 # from .imagebutton import UIImageButton, IDImageButton

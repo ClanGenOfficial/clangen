@@ -10,7 +10,7 @@ from scripts.game_structure.game_essentials import game, screen, screen_x, scree
 from scripts.game_structure.propagating_thread import PropagatingThread
 from scripts.ui.elements import UITextBox
 from scripts.buttons.buttons import UIImageButton
-from scripts.buttons.buttons import UISpriteButton
+from scripts.ui.elements.buttons.UISpriteButton import UISpriteButton
 from scripts.web import is_web
 
 
