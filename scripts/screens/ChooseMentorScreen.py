@@ -45,7 +45,7 @@ class ChooseMentorScreen(Screens):
         self.mentor = None
         self.the_cat = None
 
-    def handle_event(self, event):
+    async def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element in self.cat_list_buttons.values():
                 self.selected_mentor = event.ui_element.return_cat_object()

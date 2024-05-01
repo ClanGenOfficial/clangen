@@ -55,7 +55,7 @@ class ClanSettingsScreen(Screens):
     # Contains the text for the checkboxes.
     checkboxes_text = {}
 
-    def handle_event(self, event):
+    async def handle_event(self, event):
         """
         TODO: DOCS
         """

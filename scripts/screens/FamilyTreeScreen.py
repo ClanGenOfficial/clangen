@@ -75,7 +75,7 @@ class FamilyTreeScreen(Screens):
         self.current_group = None
         self.current_group_name = None
 
-    def handle_event(self, event):
+    async def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if self.back_button == event.ui_element:
                 self.change_screen('profile screen')

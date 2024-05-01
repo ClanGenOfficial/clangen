@@ -108,7 +108,7 @@ class MakeClanScreen(Screens):
         # self.worldseed = randrange(10000)
         self.open_game_mode()
 
-    def handle_event(self, event):
+    async def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if self.main_menu == event.ui_element:
                 self.change_screen('start screen')

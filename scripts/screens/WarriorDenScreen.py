@@ -39,7 +39,7 @@ class WarriorDenScreen(Screens):
         self.other_clan_settings = ["sabotage other clans", "aid other clans", "raid other clans"]
         self.not_classic_codes = ["hunting", "raid other clans", "hoarding"]
 
-    def handle_event(self, event):
+    async def handle_event(self, event):
         """
         Here are button presses / events are handled.
         """

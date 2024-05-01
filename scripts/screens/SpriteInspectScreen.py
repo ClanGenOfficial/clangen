@@ -44,7 +44,7 @@ class SpriteInspectScreen(Screens):
         
         super().__init__(name)
     
-    def handle_event(self, event):
+    async def handle_event(self, event):
         # Don't handle the events if a window is open.     
         if game.switches['window_open']:
             return
@@ -125,7 +125,7 @@ class SpriteInspectScreen(Screens):
                 self.cat_elements["favourite_button"].show()
                 self.cat_elements["not_favourite_button"].hide()
     
-        return super().handle_event(event)
+        return await super().handle_event(event)
     
     def screen_switches(self):        
         self.next_cat_button = UIImageButton(scale(pygame.Rect((1244, 50), (306, 60))), "", object_id="#next_cat_button"

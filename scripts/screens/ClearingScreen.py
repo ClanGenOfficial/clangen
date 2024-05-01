@@ -62,7 +62,7 @@ class ClearingScreen(Screens):
 
         self.open_tab = None
 
-    def handle_event(self, event):
+    async def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if self.back_button == event.ui_element:
                 self.change_screen(game.last_screen_forupdate)

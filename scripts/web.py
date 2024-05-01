@@ -190,6 +190,6 @@ def uploadFile(filename):
 async def downloadFile(filename, accept = None):
     if not is_web:
         return
-    await promiseToAsync(platform.window.files.upload(filename, accept))
+    newFileName = await promiseToAsync(platform.window.files.upload(filename, accept))
     
-    return filename
+    return newFileName

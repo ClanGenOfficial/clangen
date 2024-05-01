@@ -343,6 +343,7 @@ class Game():
         else:
             if os.path.exists(get_save_dir() + '/currentclan.txt'):
                 os.remove(get_save_dir() + '/currentclan.txt')
+        web.pushdb()
 
     def save_settings(self):
         """ Save user settings for later use """

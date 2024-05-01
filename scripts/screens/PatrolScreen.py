@@ -50,7 +50,7 @@ class PatrolScreen(Screens):
         self.proceed_patrol_thread = None
         self.outcome_art = None
 
-    def handle_event(self, event):
+    async def handle_event(self, event):
         if game.switches["window_open"]:
             return
         

@@ -30,7 +30,7 @@ class SwitchClanScreen(Screens):
     TODO: DOCS
     """
 
-    def handle_event(self, event):
+    async def handle_event(self, event):
         """
         TODO: DOCS
         """

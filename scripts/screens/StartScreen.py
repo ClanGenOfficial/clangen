@@ -55,7 +55,7 @@ class StartScreen(Screens):
         self.bg = pygame.transform.scale(self.bg, (screen_x, screen_y))
         self.social_buttons = {}
 
-    def handle_event(self, event):
+    async def handle_event(self, event):
         """This is where events that occur on this page are handled.
         For the pygame_gui rewrite, button presses are also handled here. """
         if event.type == pygame_gui.UI_TEXT_BOX_LINK_CLICKED:

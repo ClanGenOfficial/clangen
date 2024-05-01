@@ -65,7 +65,7 @@ class CeremonyScreen(Screens):
     def on_use(self):
         pass
 
-    def handle_event(self, event):
+    async def handle_event(self, event):
         if game.switches['window_open']:
             pass
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:

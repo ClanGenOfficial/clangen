@@ -85,7 +85,7 @@ class ChooseMateScreen(Screens):
         #Loading screen
         self.work_thread = None
         
-    def handle_event(self, event):
+    async def handle_event(self, event):
         """ Handles events. """
         if game.switches["window_open"]:
             return

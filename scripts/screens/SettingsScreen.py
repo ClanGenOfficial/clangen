@@ -72,7 +72,7 @@ class SettingsScreen(Screens):
             info_text += string
             info_text += "<br>"
 
-    def handle_event(self, event):
+    async def handle_event(self, event):
         """
         TODO: DOCS
         """
@@ -122,7 +122,7 @@ class SettingsScreen(Screens):
             elif self.import_clan_button == event.ui_element:
                 self.import_clan_button.text = "Importing..."
                 self.import_clan_button.disable()
-                import_clan()
+                await import_clan()
                 self.import_clan_button.text = "Import Clan"
                 self.import_clan_button.enable()
                 return

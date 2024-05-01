@@ -329,7 +329,7 @@ async def main():
 
             # EVENTS
             for event in pygame.event.get():
-                game.all_screens[game.current_screen].handle_event(event)
+                await game.all_screens[game.current_screen].handle_event(event)
 
                 if event.type == pygame.QUIT:
                     # Dont display if on the start screen or there is no clan.

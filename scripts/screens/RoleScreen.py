@@ -23,7 +23,7 @@ class RoleScreen(Screens):
     next_cat = None
     previous_cat = None
 
-    def handle_event(self, event):
+    async def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if self.back_button == event.ui_element:
                 self.change_screen("profile screen")

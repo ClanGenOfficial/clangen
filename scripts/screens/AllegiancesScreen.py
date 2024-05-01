@@ -15,7 +15,7 @@ from scripts.ui.elements.buttons.UISpriteButton import UISpriteButton
 class AllegiancesScreen(Screens):
     allegiance_list = []
 
-    def handle_event(self, event):
+    async def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             self.menu_button_pressed(event)
 
@@ -267,7 +267,7 @@ class MedDenScreen(Screens):
 
         self.open_tab = None
 
-    def handle_event(self, event):
+    async def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if self.back_button == event.ui_element:
                 self.change_screen('camp screen')

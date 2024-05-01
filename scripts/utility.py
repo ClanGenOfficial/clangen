@@ -1419,7 +1419,7 @@ def quit(savesettings=False, clearevents=False):
         game.save_settings()
     if clearevents:
         game.cur_events_list.clear()
-    if is_web:
+    if not is_web:
         game.rpc.close_rpc.set()
         game.rpc.update_rpc.set()
         if game.rpc.is_alive():

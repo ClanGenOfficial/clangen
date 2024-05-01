@@ -80,7 +80,7 @@ class ChooseAdoptiveParentScreen(Screens):
         
         self.work_thread = PropagatingThread()
 
-    def handle_event(self, event):
+    async def handle_event(self, event):
         """ Handles events. """
         if game.switches["window_open"]:
             return

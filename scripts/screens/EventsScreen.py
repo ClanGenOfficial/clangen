@@ -60,7 +60,7 @@ class EventsScreen(Screens):
 
         self.first_opened = False
 
-    def handle_event(self, event):
+    async def handle_event(self, event):
         if game.switches['window_open']:
             pass
         elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:

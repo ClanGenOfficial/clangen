@@ -229,7 +229,7 @@ class Screens():
         """Runs when this screen is switched to."""
         pass
 
-    def handle_event(self, event):
+    async def handle_event(self, event):
         """This is where events that occur on this page are handled.
         For the pygame_gui rewrite, button presses are also handled here. """
         pass

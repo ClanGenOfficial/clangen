@@ -71,7 +71,7 @@ class ListScreen(Screens):
             pygame.image.load("resources/images/urbg.png").convert(),
             (screen_x, screen_y))
 
-    def handle_event(self, event):
+    async def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if self.choose_group_button == event.ui_element and not self.group_options_visible:
                 self.update_view_buttons()

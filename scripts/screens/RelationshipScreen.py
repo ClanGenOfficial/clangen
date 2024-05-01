@@ -64,7 +64,7 @@ class RelationshipScreen(Screens):
         self.previous_cat_button = None
         self.log_icon = None
 
-    def handle_event(self, event):
+    async def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element in self.sprite_buttons.values():
                 self.inspect_cat = event.ui_element.return_cat_object()

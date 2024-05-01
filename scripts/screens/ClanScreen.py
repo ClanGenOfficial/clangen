@@ -45,7 +45,7 @@ class ClanScreen(Screens):
             elif game.clan.current_season == 'Leaf-fall':
                 screen.blit(self.leaffall_bg, (0, 0))
 
-    def handle_event(self, event):
+    async def handle_event(self, event):
         if game.switches['window_open']:
             pass
         elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
