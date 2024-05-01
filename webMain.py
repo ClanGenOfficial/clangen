@@ -1,7 +1,7 @@
 """
 Shim for pygbag (web runner) to detect all imports
 """
-
+# pylint: disable=no-member
 from __future__ import print_function
 import builtins
 

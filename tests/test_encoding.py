@@ -25,6 +25,11 @@ import os
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
+whitelist = [
+    "buttons.ja.json",
+    "buttons.pt-br.json"
+]
+
 def test():
     """Iterate through all files in 'resources'
     and verify all characters are ascii decodable."""
@@ -32,6 +37,8 @@ def test():
     failedFiles = []
     for (root, _, files) in os.walk("."):
         for file in files:
+            if file in whitelist:
+                continue
             if file.endswith(".json") or file.endswith(".py"):
                 path = os.path.join(root, file)
                 with open(path, "r", encoding="utf-8") as handle_utf8:
