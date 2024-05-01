@@ -142,6 +142,13 @@ def freeMemory():
         else:
             os.remove(file)
 
+def setDownloadLogsCallback(callback):
+    """
+    Sets a callback to download logs
+    """
+    if not is_web:
+        return
+    platform.window.downloadLogsCallback = callback
 
 def error(e):
     """Displays an error message to the loader"""
@@ -161,3 +168,29 @@ def notifyFinishLoading():
         platform.window.gameReady()
     except Exception as e:
         print(e)
+
+async def promiseToAsync(promise):
+    """
+    Converts a promise to an async function
+    """
+    def then(f):
+        nonlocal result
+        result = f
+    result = None
+    promise.then(then)
+
+    while result is None:
+        await asyncio.sleep(0.1)
+    return result
+
+def uploadFile(filename):
+    if not is_web:
+        return
+    platform.window.MM.download(filename)
+
+async def downloadFile(filename, accept = None):
+    if not is_web:
+        return
+    await promiseToAsync(platform.window.files.upload(filename, accept))
+    
+    return filename

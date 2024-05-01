@@ -2,8 +2,11 @@
 Shim for pygbag (web runner) to detect all imports
 """
 
+import asyncio
+
 print("Loading...")
 
+import os
 import random
 import time
 random.seed(time.time())
@@ -11,8 +14,26 @@ random.seed(time.time())
 import i18n
 import pygame
 import pygame_gui
-import asyncio
 import platform
+
+from scripts.web import notifyFinishLoading, setDownloadLogsCallback, uploadFile, downloadFile, error
+from scripts.housekeeping.datadir import get_log_dir
+
+def downloadLogs():
+    log_dir = get_log_dir()
+    files = os.listdir(log_dir)
+    # filter files that start with clangen_
+    files = [f for f in files if f.startswith("clangen_")]
+    
+    # format: clangen_YYYYMMDD_HHMMSS.log
+    files.sort()
+
+    # get the latest file
+    if len(files) > 0:
+        latest = files[-1]
+        uploadFile(os.path.join(log_dir, latest))
+
+setDownloadLogsCallback(downloadLogs)
 
 import pygame_gui.core.text
 import pygame_gui.core.text.text_line_chunk
@@ -26,7 +47,6 @@ from scripts.clan import clan_class
 from scripts.utility import get_text_box_theme, quit, scale  # pylint: disable=redefined-builtin
 from scripts.debug_menu import debugmode
 from scripts.screens.all_screens import start_screen
-from scripts.web import notifyFinishLoading
 
 
 notifyFinishLoading()
@@ -38,4 +58,5 @@ try:
     asyncio.run(main())
 except Exception as e:
     print(e)
+    error(e)
     quit()
