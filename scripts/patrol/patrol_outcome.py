@@ -528,11 +528,6 @@ class PatrolOutcome():
             # Injury or scar the cats
             results = []
             for _cat in cats:
-                if game.clan and game.clan.game_mode == "classic":
-                    if self.__handle_scarring(_cat, scars, patrol):
-                        results.append(f"{_cat.name} was scarred.")
-                    continue
-                
                 # Non-classic, give condition
                 if not possible_injuries:
                     continue

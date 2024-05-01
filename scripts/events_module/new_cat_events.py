@@ -245,7 +245,7 @@ class NewCatEvents:
                         )
 
         # give injuries to other cat if tagged as such
-        if "injured" in new_cat_event.tags and game.clan.game_mode != "classic":
+        if "injured" in new_cat_event.tags:
             major_injuries = []
             if "major_injury" in new_cat_event.tags:
                 for injury in INJURIES:

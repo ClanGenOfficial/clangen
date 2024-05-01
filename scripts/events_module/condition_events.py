@@ -88,9 +88,9 @@ class Condition_Events():
         This function handles overall the illnesses in 'expanded' (or 'cruel season') game mode.
         It will return a bool to indicate if the cat is dead.
         """
-        # return immediately if they're already dead or in the wrong game-mode
+        # return immediately if they're already dead
         triggered = False
-        if cat.dead or game.clan.game_mode == "classic":
+        if cat.dead:
             if cat.dead:
                 triggered = True
             return triggered
@@ -272,8 +272,7 @@ class Condition_Events():
                             if possible_scar or possible_death:
                                 History.add_possible_history(cat, injury_event.injury, scar_text=possible_scar, 
                                                              death_text=possible_death, other_cat=other_cat)
-                            
-                        cat.get_injured(injury_event.injury)
+                    cat.get_injured(injury_event.injury)
 
         # just double-checking that trigger is only returned True if the cat is dead
         if cat.status != "leader":
@@ -552,9 +551,6 @@ class Condition_Events():
         # need to hold this number so that we can check if the leader has died
         starting_life_count = game.clan.leader_lives
 
-        if game.clan.game_mode == "classic":
-            return triggered
-
         injuries = deepcopy(cat.injuries)
         for injury in injuries:
             if injury in game.switches['skip_conditions']:
@@ -659,9 +655,6 @@ class Condition_Events():
         """
         triggered = False
         event_types = ["health"]
-
-        if game.clan.game_mode == "classic":
-            return triggered
 
         event_list = []
 

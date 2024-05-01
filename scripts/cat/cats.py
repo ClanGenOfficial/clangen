@@ -1355,8 +1355,6 @@ class Cat():
         relevant_relationship = self.relationships[chosen_cat.ID]
         relevant_relationship.start_interaction()
 
-        if game.game_mode == "classic":
-            return
         # handle contact with ill cat if
         if self.is_ill():
             relevant_relationship.cat_to.contact_with_ill_cat(self)
@@ -1578,9 +1576,6 @@ class Cat():
         severity = leave 'default' to keep default severity, otherwise set to the desired severity
                    ('minor', 'major', 'severe')
         """
-        if game.clan.game_mode == "classic":
-            return
-        
         if name not in ILLNESSES:
             print(f"WARNING: {name} is not in the illnesses collection.")
             return
@@ -1643,9 +1638,6 @@ class Cat():
             }
 
     def get_injured(self, name, event_triggered=False, lethal=True, severity='default'):
-        if game.clan and game.clan.game_mode == "classic":
-            return
-        
         if name not in INJURIES:
             if name not in INJURIES:
                 print(f"WARNING: {name} is not in the injuries collection.")
