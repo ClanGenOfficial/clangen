@@ -1753,7 +1753,7 @@
         "season": ["Any"],
         "types": ["training"],
         "tags": ["rom_two_apps", "romantic"],
-        "patrol_art": "train_general_intro",
+        "patrol_art": "fst_train_willow1",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
