@@ -439,7 +439,7 @@
         "max_cats": 6,
         "min_max_status": {
             "deputy": [1, 1],
-	    "leader": [-1, -1]
+	        "leader": [-1, -1]
         },
         "weight": 20,
         "intro_text": "While training, p_l admits that {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} think that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} a good deputy.",
@@ -1233,6 +1233,1039 @@
                         "mutual": false,
                         "values": ["dislike"],
                         "amount": 5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_train_adultsonly_notlikethatyoumoron1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro.png",
+        "min_cats": 5,
+        "max_cats": 6,
+        "min_max_status": {
+            "all apprentices":[-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "p_l flicks {PRONOUN/p_l/poss} tail thoughtfully. What direction {VERB/p_l/do/does} {PRONOUN/p_l/subject} want to take this training patrol?",
+        "decline_text": "The cats decide to go help a hunting patrol carry their prey home instead.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "Everyone has had enough on their shoulders lately - p_l decides to lead a very light casual sparring session which ends with the patrol flopped around chatting to each other. It's just what's needed to lower their stress levels.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike", "jealous"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "They all need to stay sharp. p_l decides on a hard, punishing sparring session, driving the patrol on until they're all exhausted, to tired to even lash their tails. There are no hard feelings about it though - of everyone, p_l sets {PRONOUN/p_l/self} the hardest goals, leading by example.",
+                "exp": 60,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "r_c might be keen on practising {PRONOUN/r_c/poss} tracking, but s_c has no time for that on {PRONOUN/s_c/poss} adgenda - {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} constructed a through list of battle moves that {PRONOUN/s_c/poss} Clanmates have been performing badly at, and it takes priority over whatever r_c wants. r_c conceeds with a lashing tail, but no outright rebellion.",
+                "exp": 40,
+                "weight": 20,
+                "can_have_stat":["p_l"],
+                "stat_trait": [
+                    "responsible",
+                    "sincere",
+                    "cold",
+                    "calm",
+                    "strict"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "As the group splits up to practise hiding their tracks from each other, r_c pairs up with p_l. {PRONOUN/r_c/subject/CAP} {VERB/r_c/confess/confesses}, whiskers twitching with amusement, some gossip that {PRONOUN/r_c/subject} heard about another of {PRONOUN/r_c/poss} Clanmates. p_l stares at {PRONOUN/r_c/object}, unimpressed with r_c's rumour spreading. You should build your Clanmates up, not tear them down.",
+                "exp": 40,
+                "weight": 20,
+                "can_have_stat":["p_l"],
+                "stat_trait": [
+                    "faithful",
+                    "sincere",
+                    "loyal"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 20
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 25
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c has an awesome spot to show everyone, far out from camp near one of c_n's borders. {PRONOUN/s_c/subject/CAP} lead the way with a jaunty raised tail, setting off on {PRONOUN/s_c/poss} adventure. The patrol spends so long galavanting about with s_c that it's past dark by the time they return to camp, tired, muddy, and with shining eyes.",
+                "exp": 20,
+                "weight": 20,
+                "can_have_stat":["p_l"],
+                "stat_trait": [
+                    "daring",
+                    "adventurous",
+                    "troublesome"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 10
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Without a clear direction of {PRONOUN/p_l/poss} own, p_l puts the goals of the training up for a vote. It's a terrible idea, literally herding cats, and no one can agree on what they should all be focusing on.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c hovers, torn between {PRONOUN/s_c/poss} vague to-do list and r_c's insistence on doing some tracking training. In the end, the patrol accomplishes neither. Not a stellar leadership moment there, s_c.",
+                "exp": 0,
+                "weight": 20,
+                "can_have_stat":["p_l"],
+                "stat_trait": [
+                    "insecure",
+                    "childish",
+                    "compassionate",
+                    "gloomy"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -20
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "As the group splits up to practise hiding their tracks from each other, r_c pairs up with p_l. Both decend into sharing the latest gossip, whiskers twitching with amusement at the misfortune of others. Neither one knows they have an offended eavesdropper - the cat's out of the bag, and by the time the patrol ends, all of c_n will know who's been spreading these rumours.",
+                "exp": 0,
+                "weight": 20,
+                "can_have_stat":["p_l"],
+                "stat_trait": [
+                    "shameless",
+                    "flamboyant",
+                    "cunning"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["clan"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust", "comfort"],
+                        "amount": -15
+                    },
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust", "comfort"],
+                        "amount": -15
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["respect", "comfort", "trust", "platonic"],
+                        "amount": 25
+                    }
+                ]
+            },
+            {
+                "text": "s_c has an awesome spot to show everyone, far out from camp near one of c_n's borders. {PRONOUN/s_c/subject/CAP} lead the way with a jaunty raised tail, setting off on {PRONOUN/s_c/poss} adventure. They return having run foul of the landscape - not seriously so, but definitely annoyingly. Maybe they'll think better of following s_c next time.",
+                "exp": 0,
+                "weight": 20,
+                "can_have_stat":["p_l"],
+                "stat_trait": [
+                    "daring",
+                    "adventurous",
+                    "troublesome",
+                    "rebellious"
+                ],
+                "injury": [
+                    {
+                        "cats": ["multi"],
+                        "injuries": ["minor_injury"],
+                        "scars": []
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": -10
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_train_adultsonly_notlikethatyoumoron2",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro.png",
+        "min_cats": 6,
+        "max_cats": 6,
+        "min_max_status": {
+            "all apprentices":[-1, -1],
+            "deputy":[-1, -1],
+            "leader":[-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "It's rare to get the chance to have a full training patrol of warriors.",
+        "decline_text": "Rare because something else <i>always</i> comes up. The cats are called away to gather nest materials instead.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "The cats have a relaxing training session, chatting as much as they train.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike", "jealous"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The cats take advantage of the rare opportunity to work on some extremely challenging battle moves, ones that can only be practised with claws out for traction and grip, ones that need another warrior right there to catch in exactly the right way, ones that require complete precision. You'd think it'd be the talented fighters who shine in such sessions, but no, s_c is the crucial voice in the group, preventing mistakes, calling advice, plotting out variations to try.",
+                "exp": 60,
+                "weight": 20,
+                "can_have_stat":["any"],
+                "stat_skill": [
+                    "CLEVER,2",
+                    "TEACHER,1",
+                    "INSIGHTFUL,1"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 30
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 20
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c doesn't much care what the patrol does - {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} keen to use the opportunity for a slightly different aim. As they all train, s_c checks in with {PRONOUN/s_c/poss} fellow warriors, just casually, asking about their lives and how they think c_n is doing. It's good to find solutions to problems while they're still small.",
+                "exp": 60,
+                "weight": 20,
+                "can_have_stat":["any"],
+                "stat_trait": [
+                    "compassionate",
+                    "loyal",
+                    "faithful",
+                    "sincere",
+                    "thoughtful"
+                ],
+                "stat_skill": [
+                    "SPEAKER,2",
+                    "MEDIATOR,1",
+                    "INSIGHTFUL,3"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 15
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c doesn't much care what the patrol does - {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} keen to use the opportunity for a slightly different aim. As they all train, s_c checks in with {PRONOUN/s_c/poss} fellow warriors, just casually, asking about how happy they are with c_n's leadership, if they think the Clan is going in the right direction.",
+                "exp": 60,
+                "weight": 20,
+                "can_have_stat":["any"],
+                "stat_trait": [
+                    "ambitious",
+                    "arrogant",
+                    "rebellious",
+                    "grumpy",
+                    "cunning"
+                ],
+                "stat_skill": [
+                    "SPEAKER,2",
+                    "MEDIATOR,1",
+                    "INSIGHTFUL,3"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "respect", "trust"],
+                        "amount": 15
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Even amid the company of fellow warriors, there's something about s_c's force of personality that shines. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'ve/'s} at the centre of the group, offering the punchline of every joke, always with the perfect witty retort or gentle smile. r_c hangs back, tail tip occasionally twitching with envy.",
+                "exp": 40,
+                "weight": 20,
+                "can_have_stat":["not_pl_rc"],
+                "stat_trait": [
+                    "charismatic"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "respect", "platonic"],
+                        "amount": 20
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["jealous"],
+                        "amount": 30
+                    }
+                ]
+            },
+            {
+                "text": "Just because everyone here is a warrior, doesn't mean everything's going to go smoothly. When p_l gets in r_c's way at the end of a hard set of exercises, tripping {PRONOUN/r_c/object} into faceplanting {PRONOUN/r_c/poss} muzzle into the dirt, the entire afternoon nearly goes to fox-dung. It's only s_c's levelheaded serenity that saves it. {PRONOUN/s_c/subject/CAP} {VERB/s_c/calm/calms} everyone down and {VERB/s_c/prevent/prevents} anything from escalating.",
+                "exp": 40,
+                "weight": 20,
+                "can_have_stat":["not_pl_rc"],
+                "stat_trait": [
+                    "calm",
+                    "careful",
+                    "wise"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "respect", "platonic", "trust"],
+                        "amount": 20
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 10
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The more senior warriors immediately claim authority over the training session. This doesn't go well - it's <i>training</i>, everyone should get the chance to contribute, and no one is going to let themselves be talked down to like a six month old apprentice!",
+                "exp": 0,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike", "jealous"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "The cats take advantage of the rare opportunity to work on some extremely challenging battle moves. s_c tries to take charge, but not everyone can land on an opponent's forehead or turn on one pad. Though no one disputes s_c's fighting talent, {PRONOUN/s_c/poss} <i>teaching</i> talent leaves a lot to be desired, and the training session ends in failure.",
+                "exp": 0,
+                "weight": 20,
+                "can_have_stat":["any"],
+                "stat_skill": [
+                    "FIGHTER,3"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "s_c doesn't much care what the patrol does - {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} keen to use the opportunity for a slightly different aim. As they all train, s_c checks in with {PRONOUN/s_c/poss} fellow warriors, stiffly casual, asking about their lives and impressing on them the need for Clan loyalty. The rest of the patrol takes it as an insult.",
+                "exp": 0,
+                "weight": 20,
+                "can_have_stat":["any"],
+                "stat_trait": [
+                    "righteous",
+                    "cold",
+                    "insecure",
+                    "oblivious"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust", "respect", "platonic"],
+                        "amount": -15
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 15
+                    }
+                ]
+            },
+            {
+                "text": "As they all train, s_c checks in with {PRONOUN/s_c/poss} fellow warriors, just casually, asking about how happy they are with c_n's leadership, if they think the Clan is going in the right direction. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'ve/'s} transparently oily about it, and the group comes back to camp mildly digusted with s_c's lack of faith.",
+                "exp": 0,
+                "weight": 20,
+                "can_have_stat":["any"],
+                "stat_trait": [
+                    "ambitious",
+                    "arrogant",
+                    "rebellious",
+                    "grumpy",
+                    "cunning"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "respect", "trust"],
+                        "amount": -15
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Not every pair of Clanmates are born friends. But stars! s_c is just <i>so</i> easily offended, so surly and ill-tempered. After one too many comments, r_c explodes, lashing out with words far more cutting than claws, and storms off. The rest of the patrol glances around awkwardly. They should scold r_c, but too many of them agree with {PRONOUN/r_c/poss} opinion of s_c.",
+                "exp": 0,
+                "weight": 20,
+                "can_have_stat":["not_pl_rc"],
+                "stat_trait": [
+                    "grumpy"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "platonic"],
+                        "amount": -15
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 20
+                    },
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": ["jealous"],
+                        "amount": 20
+                    }
+                ]
+            },
+            {
+                "text": "Just because everyone here is a warrior, doesn't mean everything's going to go smoothly. When p_l gets in r_c's way at the end of a hard set of exercises, tripping {PRONOUN/r_c/object} into faceplanting {PRONOUN/r_c/poss} muzzle into the dirt, the entire afternoon goes to fox-dung, absolutely not helped by s_c's very woeful mutterings about how it <i>nearly</i> worked and whose fault it is.",
+                "exp": 0,
+                "weight": 20,
+                "can_have_stat":["not_pl_rc"],
+                "stat_trait": [
+                    "gloomy"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 15
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["platonic", "trust"],
+                        "amount": -15
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_train_groupwithleader1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro.png",
+        "min_cats": 5,
+        "max_cats": 6,
+        "min_max_status": {
+            "leader":[1, 6]
+        },
+        "weight": 20,
+        "intro_text": "p_l heads out with a group of {PRONOUN/p_l/poss} cats to go train.",
+        "decline_text": "A messager comes from the border, and p_l sighs. The patrol will have to go out without {PRONOUN/p_l/object} - this could be important.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "It's not that they do anything remarkable together, that's not the point. Instead, the purpose of this training is to get out of camp and amoungst {PRONOUN/p_l/poss} Clanmates, and it's important for p_l to get this chance at much as possible.",
+                "exp": 30,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "respect", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "It's rarer than s_c would like, the chance to stretch {PRONOUN/s_c/poss} legs and use {PRONOUN/s_c/poss} skills. It's a part of {PRONOUN/s_c/self} that s_c really values, {PRONOUN/s_c/poss} abililty to teach, to watch that moment when r_c finally <i>gets</i> it and {PRONOUN/r_c/poss} eyes light up in understanding. Perhaps s_c should make time for this more often.",
+                "exp": 60,
+                "weight": 20,
+                "can_have_stat":["p_l"],
+                "stat_skill": [
+                    "TEACHER,2"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "respect", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["comfort", "respect", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": 20
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "r_c asks what they should do - but s_c doesn't care! {PRONOUN/s_c/subject/CAP} don't want to lead this, to be The Leader here. Please, for this afternoon, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} just another Clanmate. And it's such a beutiful break from {PRONOUN/s_c/poss} responsibilities, laughing and playing with the other cats til dusk, carefree and unburdened.",
+                "exp": 40,
+                "weight": 20,
+                "can_have_stat":["p_l"],
+                "stat_trait": [
+                    "playful",
+                    "childish",
+                    "shameless"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "platonic"],
+                        "amount": 20
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike", "jealous"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c has a comprehensive list to get through - it's good to make sure {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} always got a clear assessment of c_n's capabilities. Should the world come to threaten them, s_c will know which Clanmates {PRONOUN/s_c/subject} can rely on, and which will be suited to what tasks. It's a hard, challenging, productive afternoon.",
+                "exp": 40,
+                "weight": 20,
+                "can_have_stat":["p_l"],
+                "stat_trait": [
+                    "cold",
+                    "righteous",
+                    "responsible",
+                    "strict",
+                    "lonesome"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 30
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 40
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": -20
+                    }
+                ]
+            },
+            {
+                "text": "As the cats train, s_c strikes up conversation - carefully casual - about that disputed piece of territory c_n has with o_c_n. It's important to test the waters about such, to gather the mood of the Clan. Just in case.",
+                "exp": 40,
+                "weight": 20,
+                "can_have_stat":["p_l"],
+                "stat_trait": [
+                    "daring",
+                    "arrogant",
+                    "ambitious",
+                    "bloodthirsty",
+                    "vengeful"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["trust", "comfort"],
+                        "amount": 20
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "As the cats train, r_c quietly takes s_c aside. It's - it's nothing important, {PRONOUN/r_c/subject} just wanted some advice about something. s_c always has time for {PRONOUN/s_c/poss} Clanmates, it's no trouble at all, and when r_c rejoins the group afterwards, padding like weight has fallen off {PRONOUN/r_c/poss} shoulders, the rest of the group shares a smile. There's nothing like the reassurance of sage, careful wisdom to help a cat, it's definitely one of s_c talents as leader.",
+                "exp": 40,
+                "weight": 20,
+                "can_have_stat":["p_l"],
+                "stat_trait": [
+                    "wise",
+                    "thoughtful",
+                    "calm",
+                    "careful"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["trust", "comfort", "respect"],
+                        "amount": 20
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["trust", "comfort", "respect"],
+                        "amount": 15
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c doesn't take charge or lead the patrol haring off after some massive adventure. That just isn't {PRONOUN/s_c/poss} style. Instead the cats are reminded of the kindness that dwells within their leader's heart, helping r_c up off the ground, reassuring someone else when they get a move wrong, little sparks of empathy that remind everyone why c_n follows s_c.",
+                "exp": 40,
+                "weight": 20,
+                "can_have_stat":["p_l"],
+                "stat_trait": [
+                    "compassionate",
+                    "charismatic",
+                    "loving",
+                    "sincere"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["trust", "comfort", "respect"],
+                        "amount": 20
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["trust", "comfort", "respect"],
+                        "amount": 15
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "s_c's tense as the patrol heads out, everyone can see it. Eventually, r_c asks what's wrong, and s_c admits {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} worried about one of {PRONOUN/s_c/poss} recent decisions. r_c tries to comfort {PRONOUN/s_c/object}, but s_c interrupts - {PRONOUN/s_c/subject} {VERB/s_c/don't/doesn't} want easy comfort, {PRONOUN/s_c/subject} {VERB/s_c/want/wants} r_c and the rest of the patrol's opinions. The trust {PRONOUN/s_c/subject} {VERB/s_c/place/places} in {PRONOUN/s_c/poss} patrolmates is well rewarded with an indepth group discussion on the issue.",
+                "exp": 40,
+                "weight": 20,
+                "can_have_stat":["p_l"],
+                "stat_trait": [
+                    "nervous",
+                    "insecure",
+                    "gloomy"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["trust", "comfort"],
+                        "amount": 20
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["trust", "comfort"],
+                        "amount": 15
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": ["trust", "comfort", "respect"],
+                        "amount": 30
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Well, they sure do train. But p_l doesn't feel like {PRONOUN/p_l/subject} actually got any quality time with {PRONOUN/p_l/poss} Clanmates, which is a bit of a disappointment.",
+                "exp": 0,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 1
+                    }
+                ]
+            },
+            {
+                "text": "Try as s_c might, {PRONOUN/s_c/subject} just {VERB/s_c/don't/doesn't} manage to connect with {PRONOUN/s_c/poss} training group. Not that there's anything wrong with the moves they're all practising, but no one wants to talk about ladybugs, or consider the shape of clouds together. It's just... it's a little lonely, that's all.",
+                "exp": 0,
+                "weight": 20,
+                "can_have_stat":["p_l"],
+                "stat_trait": [
+                    "strange"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": -15
+                    }
+                ]
+            },
+            {
+                "text": "Try as s_c might, {PRONOUN/s_c/subject} just aren't feeling it today. {PRONOUN/s_c/subject/CAP} participate in training, of course they do, but s_c just isn't a social butterfly.",
+                "exp": 0,
+                "weight": 20,
+                "can_have_stat":["p_l"],
+                "stat_trait": [
+                    "grumpy"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": -15
                     }
                 ]
             }
@@ -6271,7 +7304,7 @@
         "season": ["Any"],
         "types": ["training"],
         "tags": ["romantic"],
-        "patrol_art": "train_general_intro",
+        "patrol_art": "gen_train_speakingromance1",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -8196,20 +9229,20 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
-            "normal adult": [1, 6],
-            "apprentice": [1, 6]
+            "normal adult": [1, 5],
+            "apprentice": [1, 5]
         },
         "weight": 20,
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1", "LORE,1"],
         "intro_text": "Legends tell of the first clan cat that created the stars above and below upon death...",
         "decline_text": "No one is interested in fables today.",
-        "success_outcomes": [
-            {
-        "text": "The first cat to ever pad through the stars, Silverpelt decorates her fur with the gleaming souls of fallen warriors to keep her company in StarClan.",
-        "exp": 30,
-    "weight": 20,
-        "relationships": [
+            "success_outcomes": [
+                {
+                "text": "The first cat to ever pad through the stars, Silverpelt decorates her fur with the gleaming souls of fallen warriors to keep her company in StarClan.",
+                "exp": 30,
+                "weight": 20,
+                "relationships": [
                         {
                             "cats_to": ["p_l"],
                             "cats_from": ["patrol"],
@@ -8224,12 +9257,143 @@
                             "values": ["respect"],
                             "amount": 5
                         }
-    ]
-    }
-        ],
+                    ]
+                },
+                {
+                    "text": "app1 listens as p_l speaks about the first cat to ever pad through the stars. It's with awe that {PRONOUN/app1/subject} {VERB/app1/hear/hears} that Silverpelt decorates her fur with the gleaming souls of fallen warriors to keep her company in StarClan.",
+                    "exp": 30,
+                    "weight": 20,
+                    "relationships": [
+                            {
+                                "cats_to": ["p_l"],
+                                "cats_from": ["patrol"],
+                                "mutual": true,
+                                "values": ["platonic", "respect"],
+                                "amount": 5
+                            },
+                            {
+                                "cats_to": ["p_l"],
+                                "cats_from": ["app1"],
+                                "mutual": false,
+                                "values": ["platonic", "respect"],
+                                "amount": 5
+                            },
+                            {
+                                "cats_to": ["p_l"],
+                                "cats_from": ["patrol"],
+                                "mutual": false,
+                                "values": ["respect"],
+                                "amount": 5
+                            }
+                        ]
+                    },
+                    {
+                        "text": "s_c listens about the first cat to pad through the stars, and wonders how she got up there in the first place.",
+                        "exp": 30,
+                        "weight": 20,
+                        "can_have_stat": ["not_pl_rc"],
+                        "stat_trait": [
+                            "thoughtful",
+                            "wise",
+                            "cunning"
+                        ],
+                        "relationships": [
+                                {
+                                    "cats_to": ["p_l"],
+                                    "cats_from": ["patrol"],
+                                    "mutual": true,
+                                    "values": ["platonic", "respect"],
+                                    "amount": 5
+                                },
+                                {
+                                    "cats_to": ["p_l"],
+                                    "cats_from": ["s_c"],
+                                    "mutual": false,
+                                    "values": ["trust"],
+                                    "amount": 5
+                                },
+                                {
+                                    "cats_to": ["p_l"],
+                                    "cats_from": ["patrol"],
+                                    "mutual": false,
+                                    "values": ["respect"],
+                                    "amount": 5
+                                }
+                            ]
+                        },
+                        {
+                            "text": "s_c can't help but think that Silverpelt must have been lonely, if she decided to decorate her pelt with souls of fallen warriors.",
+                            "exp": 30,
+                            "weight": 20,
+                            "can_have_stat": ["not_pl_rc"],
+                            "stat_trait": [
+                                "lonesome",
+                                "gloomy",
+                                "compassionate",
+                                "sincere"
+                            ],
+                            "relationships": [
+                                    {
+                                        "cats_to": ["p_l"],
+                                        "cats_from": ["patrol"],
+                                        "mutual": true,
+                                        "values": ["platonic", "respect"],
+                                        "amount": 5
+                                    },
+                                    {
+                                        "cats_to": ["p_l"],
+                                        "cats_from": ["s_c"],
+                                        "mutual": false,
+                                        "values": ["trust"],
+                                        "amount": 5
+                                    },
+                                    {
+                                        "cats_to": ["p_l"],
+                                        "cats_from": ["patrol"],
+                                        "mutual": false,
+                                        "values": ["respect"],
+                                        "amount": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "text": "s_c would love to be as strong as silverpelt, to be able to move the souls of dead cats so easily...",
+                                "exp": 30,
+                                "weight": 20,
+                                "can_have_stat": ["not_pl_rc"],
+                                "stat_trait": [
+                                    "troublesome",
+                                    "arrogant",
+                                    "confident"
+                                ],
+                                "relationships": [
+                                        {
+                                            "cats_to": ["p_l"],
+                                            "cats_from": ["patrol"],
+                                            "mutual": true,
+                                            "values": ["platonic", "respect"],
+                                            "amount": 5
+                                        },
+                                        {
+                                            "cats_to": ["p_l"],
+                                            "cats_from": ["s_c"],
+                                            "mutual": false,
+                                            "values": ["trust"],
+                                            "amount": 5
+                                        },
+                                        {
+                                            "cats_to": ["p_l"],
+                                            "cats_from": ["patrol"],
+                                            "mutual": false,
+                                            "values": ["respect"],
+                                            "amount": 5
+                                        }
+                                    ]
+                                }
+            ],
             "fail_outcomes": [
                 {
-                    "text": "Legends build no muscles and practice no pounces, app1 is uninterested in the lesson.",
+                    "text": "Legends build no muscles and practice no pounces. app1 is uninterested in the lesson.",
                     "exp": 0,
                     "weight": 20,
                     "relationships": [
@@ -8241,9 +9405,293 @@
                             "amount": -5
                         }
                     ]
+                },
+                {
+                    "text": "app1 drifts off for a cat nap as p_l speaks.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": -5
+                        },
+                        {
+                            "cats_to": ["app1"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": -5
+                        }
+                    ]
+                },
+                {
+                    "text": "s_c interrupts p_l, saying that {PRONOUN/s_c/subject} already {VERB/s_c/know/knows} this story as well as {PRONOUN/s_c/subject} {VERB/s_c/know/knows} {PRONOUN/s_c/poss} claws.",
+                    "exp": 0,
+                    "weight": 20,
+                    "can_have_stat": ["app"],
+                    "stat_trait": [
+                        "arrogant",
+                        "wise",
+                        "bold",
+                        "confident",
+                        "cold",
+                        "childish",
+                        "shameless"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": -10
+                        },
+                        {
+                            "cats_to": ["app1"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["platonic", "respect", "trust"],
+                            "amount": -5
+                        }
+                    ]
+                },
+                {
+                    "text": "s_c shuffles {PRONOUN/s_c/poss} paws, not liking the idea of such a powerful being to be the one who controls where {PRONOUN/s_c/subject} {VERB/s_c/go/goes} after death.",
+                    "exp": 0,
+                    "weight": 20,
+                    "can_have_stat": ["app"],
+                    "stat_trait": [
+                        "nervous",
+                        "insecure"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": false,
+                            "values": ["comfort"],
+                            "amount": -10
+                        },
+                        {
+                            "cats_to": ["app1"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": -5
+                        }
+                    ]
                 }
             ]
-    },    
+    },
+    {
+        "patrol_id": "gen_train_furiousatwhiskergrove_storylorespeakerteacherlocked1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_bord_story",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1", "LORE,1", "SPEAKER,1", "TEACHER,1"],
+        "intro_text": "Once upon a time lived a Clan filthy and pathetic, who did nothing but steal from others, never giving thought to the hurt they did, or credit to the hunter's hard work...",
+        "decline_text": "No one is interested bringing up that frustrating fable today.",
+            "success_outcomes": [
+                {
+                "text": "Smug, slimey, greasy and unpleasent, the cats of the Whisker Grove stole from c_n and every other Clan, a bunch of pathetic poofy poncy wastes of air. Everyone should despise them for being cowardly ungrateful thieves, and should one ever be found in c_n's lands they will be driven out.",
+                "exp": 30,
+                "weight": 20,
+                "art": "scaryghost_INTRO",
+                "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic", "respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        }
+                    ]
+                },
+                {
+                    "text": "The cats of the Whisker Grove are a bunch of dung-gargling scat scooters, s_c spits. They stole from c_n, the mouse-hearts, and is rumoured they're such such fox-dung-furred theives that Silverpelt herself threw them out from StarClan.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "scaryghost_INTRO",
+                    "can_have_stat": ["p_l"],
+                    "stat_trait": [
+                        "fierce",
+                        "responsible",
+                        "bloodthirsty",
+                        "vengeful",
+                        "strict",
+                        "righteous"
+                    ],
+                    "relationships": [
+                            {
+                                "cats_to": ["p_l"],
+                                "cats_from": ["patrol"],
+                                "mutual": true,
+                                "values": ["platonic", "respect"],
+                                "amount": 5
+                            },
+                            {
+                                "cats_to": ["p_l"],
+                                "cats_from": ["patrol"],
+                                "mutual": false,
+                                "values": ["respect"],
+                                "amount": 5
+                            }
+                        ]
+                },
+                {
+                    "text": "The cats of the Whisker Grove are repulsive, s_c says, and the rest of the patorl is surprised to here the quiet fury in {PRONOUN/s_c/poss} tone. s_c will never forgive those who steal from the kind and generous, who take other cats hard work and try to turn a profit on it.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "scaryghost_INTRO",
+                    "can_have_stat": ["p_l"],
+                    "stat_trait": [
+                        "compassionate",
+                        "loving",
+                        "faithful"
+                    ],
+                    "relationships": [
+                            {
+                                "cats_to": ["p_l"],
+                                "cats_from": ["patrol"],
+                                "mutual": true,
+                                "values": ["platonic", "respect"],
+                                "amount": 5
+                            },
+                            {
+                                "cats_to": ["p_l"],
+                                "cats_from": ["patrol"],
+                                "mutual": false,
+                                "values": ["respect"],
+                                "amount": 5
+                            }
+                        ]
+                },
+                {
+                    "text": "The cats of the Whisker Grove are dirt grubbing sticky-paws uninspired little balls of dung, s_c snarls, and sharpens {PRONOUN/s_c/poss} claws. If they're ever spotted in c_n lands again, s_c will rip their pelt off!",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "scaryghost_INTRO",
+                    "can_have_stat": ["p_l"],
+                    "stat_trait": [
+                        "daring",
+                        "bold",
+                        "flamboyant",
+                        "ambitious",
+                        "bloodthirsty",
+                        "fierce",
+                        "vengeful"
+                    ],
+                    "relationships": [
+                            {
+                                "cats_to": ["p_l"],
+                                "cats_from": ["patrol"],
+                                "mutual": true,
+                                "values": ["platonic", "respect"],
+                                "amount": 5
+                            },
+                            {
+                                "cats_to": ["p_l"],
+                                "cats_from": ["patrol"],
+                                "mutual": false,
+                                "values": ["respect"],
+                                "amount": 5
+                            }
+                        ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "Denser than a twoleg, opportunistic and sly, the cats of the Whisker Grove are no Clancats. They stole from c_n and the other Clans, harming the trust c_n has in outsiders greatly. p_l sighs. Maybe c_n will never have the same relationship with cats outside the Clan again, thanks to those ungrateful theives.",
+                    "exp": 0,
+                    "weight": 20
+                }
+            ]
+    },
+    {
+        "patrol_id": "gen_train_solreference_lorelocked1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_bord_story",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6],
+            "apprentice":[1, 6]
+            },
+        "weight": 20,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["LORE,1"],
+        "intro_text": "Crossing {PRONOUN/p_l/poss} paws, p_l clears {PRONOUN/p_l/poss} throat. Long ago in the deep time, a rogue caught the ear of a ghost, and stole a secret about the sun blinking.",
+        "decline_text": "Today's not a day to learn about the past, apparently.",
+        "success_outcomes": [
+                {
+                    "text": "Through his knowledge, he lured the Clans away from StarClan, throttling their faith until it almost died. But he underestimated the power of StarClan's chosen three, who shone starlight back into the shadows and sent the false prophet fleeing with his tail between his legs. Who are the chosen three? p_l chuckles. That's a story for another day.",
+                    "exp": 30,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort", "trust", "platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "He <i>knew</i> that the sun was going to <i>blink</i>?! r_c is impressed - this rogue must've been gifted with magic! Quietly, p_l puts {PRONOUN/p_l/poss} paws over {PRONOUN/p_l/poss} face, groaning in dismay.",
+                    "exp": 0,
+                    "weight": 20,
+                    "art": "gen_train_argue",
+                    "relationships": [
+                        {
+                            "cats_to": ["r_c"],
+                            "cats_from": ["p_l"],
+                            "mutual": true,
+                            "values": ["respect", "platonic", "comfort"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
+    },
     {
         "patrol_id": "gen_train_lorelocked1",
         "biome": ["Any"],
@@ -9047,6 +10495,236 @@
                 ]
             }
         ]
+    },
+    {
+        "patrol_id": "gen_train_silverpeltfable_storylorelocked1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 6]
+                    },
+        "weight": 20,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1", "LORE,1"],
+        "intro_text": "Legends tell of the first clan cat that created the stars above and below upon death...",
+        "decline_text": "No one is interested in fables today.",
+        "success_outcomes": [
+            {
+                "text": "The first cat to ever pad through the stars, Silverpelt decorates her fur with the gleaming souls of fallen warriors to keep her company in Starclan.",
+                "exp": 30,
+                "weight": 20,
+                "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic", "respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        }
+                     ]
+            }
+        ],
+            "fail_outcomes": [
+                {
+                    "text": "Legends build no muscles and practice no pounces, app1 is uninterested in the lesson.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": false,
+                            "values": ["platonic", "respect"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "gen_train_firestarfable_storylorelocked1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 6]
+            },
+        "weight": 20,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1", "LORE,1"],
+        "intro_text": "Many seasons ago, before even c_n itself, stood five ancient clans, each the spike on a single great star. They padded into danger, where hills of bones seeped blood into the soil.",
+        "decline_text": "r_c isn't interested in hearing p_l's tale.",
+        "success_outcomes": [
+            {
+                    "text": "Fire alone could save the Clans. It swept through their lands, scorching evil to ash, driving out those with cowardice in their hearts, until the good and strong could reclaim their places and peace ruled among the elements.",
+                    "exp": 30,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic", "respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        }
+                        ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "Not this old nursery tale again. r_c is bored of it.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["r_c"],
+                            "mutual": false,
+                            "values": ["platonic", "respect"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "gen_train_powerofthreefable_storylorelocked1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 6],
+           "apprentice": [2, 6]
+            },
+        "weight": 20,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1", "LORE,1"],
+        "intro_text": "p_l gathers the apprentices for a lesson. Long ago, before even c_n's ancestors padded the world, there were three, the kin of fire, who held the power of the stars in their paws.",
+        "decline_text": "There's not enough time to continue the tale before bed - another night, perhaps.",
+        "success_outcomes": [
+            {
+                    "text": "And while these three cats were more powerful than any before them, with even the Stars and the Darkness forced to bow to their will, this is the lesson: That even the three did not succeed alone. That their power was helpful, but their <i>Clan</i> was critical to fulfill their destined greatness.",
+                    "exp": 30,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic", "comfort"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        }
+                        ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "The apprentices ask questions, more confused than ever. What was the fighter's power, even? What even <i>was</i> their great destiny, it doesn't sound like their powers were even necessary to achieve it at all!",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1", "app2"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "gen_train_constellations_storylocked1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 5,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [2, 6],
+           "apprentice": [2, 6]
+            },
+        "weight": 20,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1"],
+        "intro_text": "It's been a long day, and a hard training session as dusk slowly settles into night. The cats lie in the training grounds, warriors satisfied, apprentices utterly exhausted, and p_l tilts {PRONOUN/p_l/poss} head back to stare up at the stars.",
+        "decline_text": "Time to head home for a bite to eat and a well deserved rest.",
+        "success_outcomes": [
+            {
+                    "text": "Do you see them, p_l asks, hush and reverent? All those who've gone before, the great silver pelt of StarClan spread before our eyes, thousands of cats who lived and loved and laughed, bright sparks one after another in succession from generation to generation to, well, <i>us</i>.",
+                    "exp": 40,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic", "comfort"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 15
+                        }
+                        ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "Do you see them, p_l asks, hush and reverent? app1 doesn't see <i>anything</i>, app1 is face down in the dust asleep. p_l murrps in amusement, and goes to carry the tired apprentice home.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": true,
+                            "values": ["platonic", "comfort"],
+                            "amount": 10
+                        }
+                    ]
+                }
+            ]
     },
     {
         "patrol_id": "gen_train_pumpkineyes",

@@ -149,5 +149,90 @@
                 "stat_trait": ["cold", "strict", "arrogant", "grumpy", "lonesome"]
             }
         ]
+    },
+    {
+        "patrol_id": "pln_train_newleaf_circleoflife_storylorelocked1",
+        "biome": ["plains"],
+        "season": ["newleaf"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_med_herbsmeadow",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["LORE,1", "STORY,1"],
+        "intro_text": "As the training patrol pads out, p_l gives in to the impulse to dig {PRONOUN/p_l/poss} claws into the soil, feeling the newly sprouting grass tearing under {PRONOUN/p_l/poss} pads. There's something special about this time of year.",
+        "decline_text": "Still, that's no excuse to goof off. Time to focus on {PRONOUN/p_l/poss} work.",
+        "success_outcomes": [
+                {
+                    "text": "This is the cycle, the fundemental truth underlying c_n. The grass sprouts in the spring as the snows retreat, grows heavy and flush with life in summer, drips wiht seed in leaf-fall, and is buried and withered in leaf-bare. Everything underpinning all their lives depends on it.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_bord_story",
+                    "stat_skill": ["LORE,1"],
+                    "can_have_stat": ["p_l"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        }
+                    ]
+                },
+                {
+                    "text": "Everything we see exists together in a delicate balance, s_c explains. A warrior must respect all life, from the crawling ant to the leaping rabbit. Yes, evne though we eat rabbit. One day, when we die, our bodies will become the grass, and the rabbits eat the grass. We are all connected in the great cycle.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_bord_story",
+                    "stat_skill": ["STORY,1"],
+                    "can_have_stat": ["p_l"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "p_l spends too long admiring the scenery, and gets left behind by the rest of the patrol. {PRONOUN/p_l/subject/CAP} {VERB/p_l/catch/catches} up, huffing and puffing, and no one is too pleased with {PRONOUN/p_l/poss} lack of attention.",
+                    "exp": 0,
+                    "weight": 20,
+                    "art": "running_warrior2",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
     }
 ]
