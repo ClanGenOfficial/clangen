@@ -446,7 +446,6 @@
             ],
             "status": [],
             "trait": [
-                "altruistic",
                 "calm",
                 "careful",
                 "insecure",
@@ -490,7 +489,6 @@
                 "MEDIATOR,1"
             ],
             "trait": [
-                "altruistic",
                 "calm",
                 "compassionate",
                 "empathetic",
@@ -572,7 +570,6 @@
             "status": [],
             "relationship_status": [],
             "trait": [
-                "altruistic",
                 "calm",
                 "compassionate",
                 "empathetic",
@@ -644,7 +641,6 @@
             "status": [],
             "relationship_status": [],
             "trait": [
-                "altruistic",
                 "calm",
                 "compassionate",
                 "empathetic",
@@ -716,7 +712,6 @@
             "status": [],
             "relationship_status": [],
             "trait": [
-                "altruistic",
                 "calm",
                 "compassionate",
                 "empathetic",
@@ -1620,7 +1615,6 @@
                 "FIGHTER,1"
             ],
             "trait": [
-                "altruistic",
                 "compassionate",
                 "loving",
                 "empathetic",
@@ -1691,7 +1685,6 @@
                 "FIGHTER,1"
             ],
             "trait": [
-                "altruistic",
                 "compassionate",
                 "loving",
                 "empathetic",
@@ -1887,7 +1880,6 @@
                 "FIGHTER,1"
             ],
             "trait": [
-                "altruistic",
                 "compassionate",
                 "loving",
                 "empathetic",
@@ -2047,7 +2039,6 @@
                 "FIGHTER,2"
             ],
             "trait": [
-                "altruistic",
                 "compassionate",
                 "loving",
                 "empathetic",
@@ -2125,7 +2116,6 @@
                 "FIGHTER,2"
             ],
             "trait": [
-                "altruistic",
                 "compassionate",
                 "loving",
                 "empathetic",
@@ -2524,7 +2514,6 @@
                 "FIGHTER,3"
             ],
             "trait": [
-                "altruistic",
                 "compassionate",
                 "loving",
                 "empathetic",
@@ -2653,7 +2642,6 @@
                 "FIGHTER,2"
             ],
             "trait": [
-                "altruistic",
                 "compassionate",
                 "loving",
                 "empathetic",
@@ -2731,7 +2719,6 @@
                 "FIGHTER,2"
             ],
             "trait": [
-                "altruistic",
                 "compassionate",
                 "loving",
                 "empathetic",
@@ -3740,7 +3727,6 @@
             ],
             "relationship_status": [],
             "trait": [
-                "altruistic",
                 "compassionate",
                 "loving",
                 "empathetic",
@@ -4699,7 +4685,6 @@
             ],
             "relationship_status": [],
             "trait": [
-                "altruistic",
                 "compassionate",
                 "loving",
                 "empathetic",
@@ -4814,7 +4799,6 @@
             ],
             "relationship_status": [],
             "trait": [
-                "altruistic",
                 "compassionate",
                 "loving",
                 "empathetic",
@@ -7549,7 +7533,6 @@
             "trait": [
                 "ambitious",
                 "bold",
-                "altruistic",
                 "daring",
                 "fierce",
                 "responsible"
@@ -7646,7 +7629,6 @@
             "trait": [
                 "ambitious",
                 "bold",
-                "altruistic",
                 "daring",
                 "fierce",
                 "responsible"

@@ -1,6 +1,7 @@
 [
     {
-        "event_id": "bch_death_",
+        "event_id": "bch_death_drown_any1",
+        "biome": ["beach"],
         "camp": [
             "any"
         ],
@@ -8,28 +9,24 @@
             "any"
         ],
         "tags": [
-            "no_body"
+            "no_body",
+            "all_lives"
         ],
         "weight": 20,
         "event_text": "m_c was washed out to sea, never to be seen again.",
         "m_c": {
-            "age": [],
-            "status": [],
+            "age": ["any"],
+            "status": ["any"],
             "dies": true
         },
         "history": {
-            "reg_death": "m_c was washed out to sea."
-        },
-        "supplies": [
-            {
-                "type": "",
-                "trigger": "",
-                "adjust": ""
-            }
-        ]
+            "reg_death": "m_c was washed out to sea.",
+            "lead_death": "{VERB/m_c/were/was} washed out to sea"
+        }
     },
     {
-        "event_id": "bch_death_",
+        "event_id": "bch_death_poison_any1",
+        "biome": [ "beach" ],
         "camp": [
             "any"
         ],
@@ -40,16 +37,18 @@
         "weight": 20,
         "event_text": "m_c was poisoned by a sea creature and died.",
         "m_c": {
-            "age": [],
-            "status": [],
+            "age": [ "any" ],
+            "status": [ "any"],
             "dies": true
         },
         "history": {
-            "reg_death": "m_c was killed by a poisonous sea creature."
+            "reg_death": "m_c was killed by a poisonous sea creature.",
+            "lead_death": "{VERB/m_c/were/was} killed by a poisonous sea creature"
         }
     },
     {
-        "event_id": "bch_death_",
+        "event_id": "bch_death_drown_any2",
+        "biome": [ "beach" ],
         "camp": [
             "any"
         ],
@@ -58,16 +57,16 @@
         ],
         "tags": [
             "shock",
-            "no_body"
+            "no_body",
+            "all_lives"
         ],
         "weight": 20,
         "event_text": "m_c was lost to the sea while trying to save r_c from drowning.",
         "m_c": {
-            "age": [],
-            "status": [],
+            "age": [ "any" ],
+            "status": [ "any" ],
             "relationship_status": [],
             "trait": [
-                "altruistic",
                 "bold",
                 "ambitious",
                 "compassionate",
@@ -82,8 +81,8 @@
             "dies": true
         },
         "r_c": {
-            "age": [],
-            "status": []
+            "age": [ "any" ],
+            "status": [ "any" ]
         },
         "injury": [
             {
@@ -96,7 +95,8 @@
             }
         ],
         "history": {
-            "reg_death": "m_c was lost to the sea while trying to save r_c."
+            "reg_death": "m_c was lost to the sea while trying to save r_c.",
+            "lead_death": "{VERB/m_c/were/was} washed out to sea while trying to save r_c"
         },
         "relationships": [
             {
@@ -109,15 +109,27 @@
                 "values": [
                     "platonic",
                     "trust",
-                    "respect",
+                    "respect"
+                ],
+                "amount": 15
+            },
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
                     "dislike"
                 ],
-                "amount": -5
+                "amount": -15
             }
         ]
     },
     {
-        "event_id": "bch_death_",
+        "event_id": "bch_death_heat_greenleaf1",
+        "biome": [ "beach" ],
         "camp": [
             "any"
         ],
@@ -130,16 +142,18 @@
         "weight": 20,
         "event_text": "m_c died from dehydration and heat stroke.",
         "m_c": {
-            "age": [],
-            "status": [],
+            "age": [ "any" ],
+            "status": [ "any" ],
             "dies": true
         },
         "history": {
-            "reg_death": "m_c died of dehydration and heat stroke."
+            "reg_death": "m_c died of dehydration and heat stroke.",
+            "lead_death": "died of dehydration and heat stroke"
         }
     },
     {
-        "event_id": "bch_death_",
+        "event_id": "bch_death_abyss_any1",
+        "biome": [ "beach" ],
         "camp": [
             "camp3"
         ],
@@ -150,18 +164,20 @@
             "no_body"
         ],
         "weight": 20,
-        "event_text": "m_c found {PRONOUN/m_c/self} staring at an odd shadow in the sea. One distracted paw slipped and {PRONOUN/m_c/subject} fell into the waves where something large and unseen tangled around {PRONOUN/m_c/object}, dragging {PRONOUN/m_c/object} into the abyss. ",
+        "event_text": "m_c found {PRONOUN/m_c/self} staring at an odd shadow in the sea. One distracted paw slipped and {PRONOUN/m_c/subject} fell into the waves where something large and unseen tangled around {PRONOUN/m_c/object}, dragging {PRONOUN/m_c/object} into the abyss.",
         "m_c": {
-            "age": [],
-            "status": [],
+            "age": [ "any" ],
+            "status": [ "any" ],
             "dies": true
         },
         "history": {
-            "reg_death": "m_c was taken by a mysterious sea creature."
+            "reg_death": "m_c was taken by a mysterious sea creature.",
+            "lead_death": "{VERB/m_c/were/was taken by a mysterious sea creature"
         }
     },
     {
-        "event_id": "bch_death_",
+        "event_id": "bch_death_drown_any3",
+        "biome": [ "beach" ],
         "camp": [
             "any"
         ],
@@ -174,16 +190,30 @@
         "weight": 20,
         "event_text": "m_c drowned after being pushed out to sea by o_c warriors.",
         "m_c": {
-            "age": [],
-            "status": [],
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult" 
+                ],
+            "status": [
+                "apprentice",
+                "warrior" ],
             "dies": true
         },
         "history": {
-            "reg_death": "m_c was pushed out to sea by enemy warriors."
+            "reg_death": "m_c was pushed out to sea by enemy warriors.",
+            "lead_death": "{VERB/m_c/were/was pushed out to sea by enemy warriors"
+        },
+        "other_clan": {
+          "current_rep": [
+            "hostile"
+          ],
+          "changed": -5
         }
     },
     {
-        "event_id": "bch_death_",
+        "event_id": "bch_death_heat_multiapp1",
         "biome": [
             "beach"
         ],
@@ -212,7 +242,7 @@
         }
     },
     {
-        "event_id": "bch_death_",
+        "event_id": "bch_death_heat_multiapp2",
         "biome": [
             "beach"
         ],
@@ -240,21 +270,17 @@
             "dies": true
         },
         "r_c": {
-            "age": [],
-            "status": []
+            "age": [ "young adult",
+            "adult",
+            "senior adult" ],
+            "status": [ "any" ]
         },
         "history": {
             "reg_death": "m_c died due to dehydration and overheating."
-        },
-        "relationships": [
-            {
-                "values": [],
-                "amount": 5
-            }
-        ]
+        }
     },
     {
-        "event_id": "bch_death_",
+        "event_id": "bch_death_heat_multiapp3",
         "biome": [
             "beach"
         ],
@@ -285,20 +311,14 @@
                 "adult",
                 "senior adult"
             ],
-            "status": []
+            "status": [ "any" ]
         },
         "history": {
             "reg_death": "m_c died due to dehydration and heat exhaustion."
-        },
-        "relationships": [
-            {
-                "values": [],
-                "amount": 5
-            }
-        ]
+        }
     },
     {
-        "event_id": "bch_death_",
+        "event_id": "bch_death_heat_multichild1",
         "biome": [
             "beach"
         ],
@@ -326,21 +346,15 @@
             "dies": true
         },
         "r_c": {
-            "age": [],
-            "status": []
+            "age": [ "any" ],
+            "status": [ "any" ]
         },
         "history": {
             "reg_death": "m_c shriveled up under the sun because of heat exhaustion and dehydration."
-        },
-        "relationships": [
-            {
-                "values": [],
-                "amount": 5
-            }
-        ]
+        }
     },
     {
-        "event_id": "bch_death_",
+        "event_id": "bch_death_heat_multiapp4",
         "biome": [
             "beach"
         ],
@@ -369,7 +383,7 @@
         }
     },
     {
-        "event_id": "bch_death_",
+        "event_id": "bch_death_heat_multiapp5",
         "biome": [
             "beach"
         ],
@@ -397,21 +411,15 @@
             "dies": true
         },
         "r_c": {
-            "age": [],
-            "status": []
+            "age": [ "any" ],
+            "status": [ "any" ]
         },
         "history": {
             "reg_death": "m_c succumbed to dehydration and heat exhaustion."
-        },
-        "relationships": [
-            {
-                "values": [],
-                "amount": 5
-            }
-        ]
+        }
     },
     {
-        "event_id": "bch_death_",
+        "event_id": "bch_death_heat_multiapp6",
         "biome": [
             "beach"
         ],
@@ -442,23 +450,15 @@
                 "adult",
                 "senior adult"
             ],
-            "status": []
+            "status": [ "any" ]
         },
         "history": {
             "reg_death": "m_c was caught outside unprepared for the heat, dying because of dehydration and overheating."
-        },
-        "relationships": [
-            {
-                "values": [],
-                "amount": 5
-            }
-        ]
+        }
     },
     {
-        "event_id": "bch_death_",
-        "biome": [
-            "beach"
-        ],
+        "event_id": "bch_death_heat_multichild2",
+        "biome": [ "beach" ],
         "camp": [
             "any"
         ],
@@ -488,19 +488,11 @@
         },
         "history": {
             "reg_death": "m_c tragically died due to dehydration and overheating."
-        },
-        "relationships": [
-            {
-                "values": [],
-                "amount": 5
-            }
-        ]
+        }
     },
     {
-        "event_id": "bch_death_",
-        "biome": [
-            "beach"
-        ],
+        "event_id": "bch_death_heat_multichild3",
+        "biome": [ "beach" ],
         "camp": [
             "any"
         ],
@@ -519,7 +511,9 @@
             "status": [
                 "apprentice"
             ],
-            "relationship_status": [],
+            "relationship_status": [
+                "child/parent"
+            ],
             "dies": true
         },
         "r_c": {
@@ -528,23 +522,15 @@
                 "adult",
                 "senior adult"
             ],
-            "status": []
+            "status": [ "any" ]
         },
         "history": {
             "reg_death": "m_c died because of overheating and dehydration."
-        },
-        "relationships": [
-            {
-                "values": [],
-                "amount": 5
-            }
-        ]
+        }
     },
     {
-        "event_id": "bch_death_",
-        "biome": [
-            "beach"
-        ],
+        "event_id": "bch_death_heat_multiromance1",
+        "biome": [ "beach" ],
         "camp": [
             "any"
         ],
@@ -553,22 +539,24 @@
             "newleaf",
             "leaf-fall"
         ],
-        "tags": [],
+        "tags": [
+            "romance"
+        ],
         "weight": 20,
         "event_text": "m_c asked r_c to meet them at their unique spot, which r_c readily accepted and journeyed through the territory. Yet, with a heartbroken sound that clawed its way out of r_c's throat, {PRONOUN/r_c/subject} {VERB/r_c/stumble/stumbles} upon m_c's body, passing from dehydration; r_c curses m_c for tainting what could have been a good memory of {PRONOUN/r_c/inposs}.",
         "m_c": {
             "age": [
-                "adolescent"
+                "any"
             ],
             "status": [
-                "apprentice"
+                "any"
             ],
-            "relationship_status": [],
+            "relationship_status": [ "can_romance" ],
             "dies": true
         },
         "r_c": {
-            "age": [],
-            "status": [],
+            "age": [ "any" ],
+            "status": [ "any" ],
             "trait": [
                 "ambitious",
                 "bloodthirsty",
@@ -581,7 +569,7 @@
             ]
         },
         "history": {
-            "reg_death": "m_c was caught unprepared out in the heat, dying due to dehydration and heatexhustion."
+            "reg_death": "m_c was caught unprepared out in the heat and died of dehydration and heat exhaustion."
         },
         "relationships": [
             {
@@ -599,10 +587,8 @@
         ]
     },
     {
-        "event_id": "bch_death_",
-        "biome": [
-            "beach"
-        ],
+        "event_id": "bch_death_heat_multiromance2",
+        "biome": [ "beach" ],
         "camp": [
             "any"
         ],
@@ -613,7 +599,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c asked r_c to meet them at their unique spot, which r_c readily accepted and journeyed through the territory. Yet, with a heartbroken sound that clawed its way out of r_c's throat, {PRONOUN/r_c/subject} {VERB/r_c/stumble/stumbles} upon m_c's body, passing from dehydration.",
+        "event_text": "m_c had invited r_c out days earlier, aiming to train and grow closer together. However, when r_c arrived, m_c never showed up; m_c wasn't seen around camp, nor had {PRONOUN/m_c/subject} been to training. It wasn't until r_c stumbles upon {PRONOUN/m_c/poss} body, the former succumbing to dehydration and exhaustion, that {PRONOUN/r_c/subject} {VERB/r_c/understand/understands} why.",
         "m_c": {
             "age": [
                 "adolescent"
@@ -621,79 +607,33 @@
             "status": [
                 "apprentice"
             ],
-            "relationship_status": [],
+            "relationship_status": [ "can_romance" ],
             "dies": true
         },
         "r_c": {
-            "age": [
-                "adolescent"
-            ],
-            "status": []
-        },
-        "history": {
-            "reg_death": "m_c was caught unprepared out in the heat, dying due to dehydration and heatexhustion."
-        },
-        "relationships": [
-            {
-                "values": [],
-                "amount": 5
-            }
-        ]
-    },
-    {
-        "event_id": "bch_death_",
-        "biome": [
-            "beach"
-        ],
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "greenleaf",
-            "newleaf",
-            "leaf-fall"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c had invited r_c out days earlier, aiming to train and grow closer together. However, when r_c arrived, m_c never showed up; m_c wasn't seen around camp, nor had {PRONOUN/m_c/subject} been to training. It wasn't until r_c stumbles upon {PRONOUN/m_c/poss} body, the former succumbing to dehydration and exhaustion, that {PRONOUN/r_c/subject} understands why.",
-        "m_c": {
             "age": [
                 "adolescent"
             ],
             "status": [
                 "apprentice"
-            ],
-            "relationship_status": [],
-            "dies": true
-        },
-        "r_c": {
-            "age": [
-                "adolescent"
-            ],
-            "status": []
+            ]
         },
         "history": {
             "reg_death": "m_c was ill-prepared for the heat and succumbed to dehydration."
-        },
-        "relationships": [
-            {
-                "values": [],
-                "amount": 5
-            }
-        ]
+        }
     },
     {
-        "event_id": "bch_death_",
-        "biome": [
-            "beach"
-        ],
+        "event_id": "bch_death_tree_anyleader",
+        "biome": [ "beach" ],
         "camp": [
             "any"
         ],
         "season": [
             "any"
         ],
-        "tags": [],
+        "tags": [
+            "some_lives"
+        ],
         "weight": 20,
         "event_text": "m_c lost a life when {PRONOUN/m_c/subject} fell from the top branches of a tree.",
         "m_c": {
@@ -713,10 +653,8 @@
         }
     },
     {
-        "event_id": "bch_death_",
-        "biome": [
-            "beach"
-        ],
+        "event_id": "bch_death_drown_anyleader1",
+        "biome": [ "beach" ],
         "camp": [
             "any"
         ],
@@ -746,10 +684,8 @@
         }
     },
     {
-        "event_id": "bch_death_",
-        "biome": [
-            "beach"
-        ],
+        "event_id": "bch_death_drown_anyleader2",
+        "biome": [ "beach" ],
         "camp": [
             "any"
         ],
@@ -775,7 +711,6 @@
             ],
             "relationship_status": [],
             "trait": [
-                "altruistic",
                 "bold",
                 "ambitious",
                 "compassionate",
@@ -790,8 +725,8 @@
             "dies": true
         },
         "r_c": {
-            "age": [],
-            "status": []
+            "age": [ "any" ],
+            "status": [ "any" ]
         },
         "injury": [
             {
@@ -817,18 +752,28 @@
                 "values": [
                     "platonic",
                     "trust",
-                    "respect",
+                    "respect"
+                ],
+                "amount": 15
+            },
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
                     "dislike"
                 ],
-                "amount": -5
+                "amount": -15
             }
+
         ]
     },
     {
-        "event_id": "bch_death_",
-        "biome": [
-            "beach"
-        ],
+        "event_id": "bch_death_murder_anyleader1",
+        "biome": [ "beach" ],
         "camp": [
             "any"
         ],
@@ -842,7 +787,7 @@
             "no_body"
         ],
         "weight": 20,
-        "event_text": "m_c was pushed off a cliff into the rock-filled waves below. r_c stood at the edge, eyes narrowed and unblinking till the body slid beneath the waves.",
+        "event_text": "m_c was pushed off a cliff into the rock-filled waves below. r_c stood at the edge, eyes narrowed and unblinking, till the body slid beneath the waves.",
         "m_c": {
             "age": [
                 "young adult",
@@ -870,7 +815,7 @@
                 "adult",
                 "senior adult"
             ],
-            "status": [],
+            "status": [ "any" ],
             "skill": [
                 "HUNTER,2",
                 "CLEVER,2",
@@ -899,16 +844,28 @@
         },
         "relationships": [
             {
-                "values": [],
-                "amount": 5
+                "cats_from": [ "m_c" ],
+                "cats_to": [ "r_c" ],
+                "mutual": true,
+                "values": [
+                    "dislike"
+                ],
+                "amount": 25
+            },
+            {
+                "cats_from": [ "m_c" ],
+                "cats_to": [ "r_c" ],
+                "mutual": false,
+                "values": [
+                    "trust"
+                ],
+                "amount": -25
             }
         ]
     },
     {
-        "event_id": "bch_death_",
-        "biome": [
-            "beach"
-        ],
+        "event_id": "bch_death_murder_anyleader2",
+        "biome": [ "beach" ],
         "camp": [
             "any"
         ],
@@ -922,7 +879,7 @@
             "no_body"
         ],
         "weight": 20,
-        "event_text": "m_c was pushed off a cliff into the rock-filled waves below. r_c insists it was an accident, that m_c slipped on loose shale.",
+        "event_text": "m_c was pushed off a cliff into the rock-filled waves below. r_c insists it was an accident and that m_c slipped on loose shale.",
         "m_c": {
             "age": [
                 "young adult",
@@ -950,7 +907,7 @@
                 "adult",
                 "senior adult"
             ],
-            "status": [],
+            "status": [ "any" ],
             "skill": [
                 "HUNTER,2",
                 "CLEVER,2",
@@ -979,16 +936,28 @@
         },
         "relationships": [
             {
-                "values": [],
-                "amount": 5
+                "cats_from": [ "m_c" ],
+                "cats_to": [ "r_c" ],
+                "mutual": true,
+                "values": [
+                    "dislike"
+                ],
+                "amount": 25
+            },
+            {
+                "cats_from": [ "m_c" ],
+                "cats_to": [ "r_c" ],
+                "mutual": false,
+                "values": [
+                    "trust"
+                ],
+                "amount": -25
             }
         ]
     },
     {
-        "event_id": "bch_death_",
-        "biome": [
-            "beach"
-        ],
+        "event_id": "bch_death_murder_anyleader3",
+        "biome": [ "beach" ],
         "camp": [
             "any"
         ],
@@ -1027,7 +996,7 @@
                 "adult",
                 "senior adult"
             ],
-            "status": [],
+            "status": [ "any" ],
             "skill": [
                 "HUNTER,2",
                 "CLEVER,2",
@@ -1055,16 +1024,28 @@
         },
         "relationships": [
             {
-                "values": [],
-                "amount": 5
+                "cats_from": [ "m_c" ],
+                "cats_to": [ "r_c" ],
+                "mutual": true,
+                "values": [
+                    "dislike"
+                ],
+                "amount": 25
+            },
+            {
+                "cats_from": [ "m_c" ],
+                "cats_to": [ "r_c" ],
+                "mutual": false,
+                "values": [
+                    "trust"
+                ],
+                "amount": -25
             }
         ]
     },
     {
-        "event_id": "bch_death_",
-        "biome": [
-            "beach"
-        ],
+        "event_id": "bch_death_murder_anyleader4",
+        "biome": [ "beach" ],
         "camp": [
             "any"
         ],
@@ -1075,10 +1056,11 @@
             "clan_kits",
             "kit_manipulated",
             "murder",
-            "revealed"
+            "revealed",
+            "some_lives"
         ],
         "weight": 20,
-        "event_text": "m_c saves one of the Clan's kits from drowning, but loses a life in the process. The kit is well scolded for straying into the water, but is even more subdued than expected afterwards; sending nervous glances at r_c that no one else seems to catch.",
+        "event_text": "m_c saves one of the Clan's kits from drowning, but loses a life in the process. The kit is well scolded for straying into the water but is even more subdued than expected afterwards; sending nervous glances at r_c that no one else seems to catch.",
         "m_c": {
             "age": [
                 "young adult",
@@ -1129,19 +1111,11 @@
         },
         "history": {
             "lead_death": "saved a drowning kit that was set up by r_c"
-        },
-        "relationships": [
-            {
-                "values": [],
-                "amount": 5
-            }
-        ]
+        }
     },
     {
-        "event_id": "bch_death_",
-        "biome": [
-            "beach"
-        ],
+        "event_id": "bch_death_heat_anykit1",
+        "biome": [ "beach" ],
         "camp": [
             "any"
         ],
