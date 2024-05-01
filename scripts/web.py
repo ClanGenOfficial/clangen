@@ -193,3 +193,8 @@ async def downloadFile(filename, accept = None):
     newFileName = await promiseToAsync(platform.window.files.upload(filename, accept))
     
     return newFileName
+
+def closeGracefully():
+    if not is_web:
+        return
+    platform.window.closeGracefully()

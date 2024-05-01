@@ -27,7 +27,7 @@ from scripts.cat.pelts import Pelt
 from scripts.cat.sprites import sprites
 from scripts.game_structure.game_essentials import game, screen_x, screen_y
 from scripts.ui import image_cache
-from scripts.web import is_web, reload
+from scripts.web import is_web, reload, closeGracefully
 
 # ---------------------------------------------------------------------------- #
 #                              Counting Cats                                   #
@@ -1424,12 +1424,11 @@ def quit(savesettings=False, clearevents=False):
         game.rpc.update_rpc.set()
         if game.rpc.is_alive():
             game.rpc.join(1)
+    else:
+        closeGracefully()
     pygame.display.quit()
     pygame.quit()
-    if not is_web:
-        sys_exit()
-    else:
-        reload()
+    sys_exit()
 
 
 PERMANENT = None
