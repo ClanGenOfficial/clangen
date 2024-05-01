@@ -1599,20 +1599,6 @@
             {
                 "text": "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any dandelions under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
                 "exp": 0,
-                "weight": 20
-            },
-            {
-                "text": "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any dandelions under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
-                "exp": 0,
-                "weight": 10,
-                "dead_cats": ["r_c"],
-                "history_text": {
-                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
-                }
-            },
-            {
-                "text": "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any dandelions under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
-                "exp": 0,
                 "weight": 10,
                 "injury": [
                     {
@@ -2024,7 +2010,7 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "It's not finding fresh juniper that's the problem. As an evergreen plant,  juniper is known to grow reliably even during the cold seasons - the problem is that juniper grows in large shrubs sometimes large enough to be trees, and trying to climb in these slippery conditions is a disaster just waiting to happen. p_l hesitates in bringing app1 along under these conditions, but tells themself it's a learning opportunity.",
+        "intro_text": "It's not finding fresh juniper that's the problem. As an evergreen plant,  juniper is known to grow reliably even during the cold seasons - the problem is that juniper grows in large shrubs sometimes large enough to be trees, and trying to climb in these slippery conditions is a disaster just waiting to happen.",
         "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
         "chance_of_success": 40,
         "success_outcomes": [
