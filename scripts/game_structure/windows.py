@@ -1316,7 +1316,8 @@ class ChangeCatToggles(UIWindow):
         # Text
         self.text_1 = UITextBox("Prevent fading", scale(pygame.Rect(110, 60, -1, 50)), 
                                                     object_id="#text_box_30_horizleft_pad_0_8",
-                                                    container=self)
+                                                    container=self,
+                                                    manager=MANAGER)
         
         self.text_2 = UITextBox("Prevent kits", scale(pygame.Rect(110, 110, -1, 50)), 
                                                     object_id="#text_box_30_horizleft_pad_0_8",

@@ -2,6 +2,20 @@
 Shim for pygbag (web runner) to detect all imports
 """
 
+from __future__ import print_function
+import builtins
+
+builtin_print = builtins.print
+def print(*args, **kwargs):
+    excludes = [
+        "pygame_gui/ui_manager.py",
+        "Trying to pre-load font id"
+    ]
+    if any([str(args).__contains__(exclude) for exclude in excludes]): return 
+    platform.window.console.log(str(args))
+    return builtin_print(*args, **kwargs)
+builtins.print = print
+
 import asyncio
 
 print("Loading...")
@@ -49,7 +63,6 @@ from scripts.debug_menu import debugmode
 from scripts.screens.all_screens import start_screen
 
 
-notifyFinishLoading()
 
 
 

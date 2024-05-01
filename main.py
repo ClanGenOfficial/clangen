@@ -168,6 +168,10 @@ async def main():
 
         # import all screens for initialization (Note - must be done after pygame_gui manager is created)
         from scripts.screens.all_screens import start_screen  # pylint: disable=ungrouped-imports
+        
+        if web.is_web:
+            web.notifyFinishLoading()
+        # Initialize pygame
 
         # P Y G A M E
         clock = pygame.time.Clock()

@@ -11,7 +11,7 @@ except: pass
 
 from scripts.game_structure.game_essentials import game
 from scripts.clan import Clan
-from scripts.housekeeping.datadir import get_save_dir
+from scripts.housekeeping.datadir import get_save_dir, get_data_dir
 import scripts.web as web
 from scripts.web import downloadFile, uploadFile, is_web
 
@@ -54,6 +54,7 @@ def export_clan() -> None:
 
 async def import_clan(): 
     """Imports a clan's data from a zip file."""
+    print("hjgkasd")
     extensions = [("Compressed file", ["*.zip"])]
     clan_name = None
     zip_path = None
@@ -70,8 +71,11 @@ async def import_clan():
     if not isinstance(game.switches['clan_list'], list):
         game.switches['clan_list'] = []
     # pylint: disable=no-member
-    game.switches['clan_list'].insert(0, clan_name)
+    if clan_name not in game.switches['clan_list']:
+        game.switches['clan_list'].insert(0, clan_name)
     with zipfile.ZipFile(zip_path, "r") as zf:
-        zf.extractall(''.join(get_save_dir().split("/")[:-1]))
+        # zf.extractall(''.join(get_save_dir().split("/")[:-1]))
+        print(get_data_dir())
+        zf.extractall(get_data_dir())
     clan = Clan()
     clan.switch_clans(game.switches['clan_list'][0])

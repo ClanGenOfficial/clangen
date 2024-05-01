@@ -29,6 +29,7 @@ logger = logging.getLogger(__name__)
 
 with open('resources/gamesettings.json', 'r', encoding='utf-8') as f:
     settings_dict = ujson.load(f)
+    if web.is_web: settings_dict['general'].pop('discord')
 
 class SettingsScreen(Screens):
     """
@@ -76,6 +77,9 @@ class SettingsScreen(Screens):
         """
         TODO: DOCS
         """
+        try:
+            print(event.ui_element)
+        except: pass
         if event.type == pygame_gui.UI_TEXT_BOX_LINK_CLICKED:
             if platform.system() == 'Darwin':
                 subprocess.Popen(["open", "-u", event.link_target])
