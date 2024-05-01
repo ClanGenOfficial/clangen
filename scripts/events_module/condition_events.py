@@ -241,37 +241,23 @@ class Condition_Events():
                     #print(injury_event.event_text)
                     text = event_text_adjust(Cat, injury_event.event_text, cat, other_cat, other_clan_name)
 
-                    if game.clan.game_mode == "classic":
-                        if "scar" in injury_event.tags and len(cat.pelt.scars) < 4:
-                            # add tagged scar
-                            for scar in Pelt.scars1 + Pelt.scars2 + Pelt.scars3:
-                                if scar in injury_event.tags:
-                                    cat.pelt.scars.append(scar)
+                    # record proper history text possibilities
+                    if injury_event.history_text:
+                        possible_scar = None
+                        possible_death = None
+                        if "scar" in injury_event.history_text:
+                            possible_scar = history_text_adjust(injury_event.history_text['scar'],
+                                                                other_clan_name, game.clan, other_cat_rc = other_cat)
+                        if cat.status == 'leader' and 'lead_death' in injury_event.history_text:
+                            possible_death = history_text_adjust(injury_event.history_text['lead_death'],
+                                                                other_clan_name, game.clan, other_cat_rc = other_cat)
+                        elif cat.status != 'leader' and 'reg_death' in injury_event.history_text:
+                            possible_death = history_text_adjust(injury_event.history_text['reg_death'],
+                                                                other_clan_name, game.clan, other_cat_rc = other_cat)
 
-                            # add scar history
-                            if injury_event.history_text:
-                                if "scar" in injury_event.history_text:
-                                    history_text = history_text_adjust(injury_event.history_text['scar'],
-                                                                              other_clan_name, game.clan)
-                                    History.add_scar(cat, history_text, other_cat=other_cat)
-                    else:
-                        # record proper history text possibilities
-                        if injury_event.history_text:
-                            possible_scar = None
-                            possible_death = None
-                            if "scar" in injury_event.history_text:
-                                possible_scar = history_text_adjust(injury_event.history_text['scar'],
-                                                                   other_clan_name, game.clan, other_cat_rc = other_cat)
-                            if cat.status == 'leader' and 'lead_death' in injury_event.history_text:
-                                possible_death = history_text_adjust(injury_event.history_text['lead_death'],
-                                                                    other_clan_name, game.clan, other_cat_rc = other_cat)
-                            elif cat.status != 'leader' and 'reg_death' in injury_event.history_text:
-                                possible_death = history_text_adjust(injury_event.history_text['reg_death'],
-                                                                    other_clan_name, game.clan, other_cat_rc = other_cat)
-
-                            if possible_scar or possible_death:
-                                History.add_possible_history(cat, injury_event.injury, scar_text=possible_scar, 
-                                                             death_text=possible_death, other_cat=other_cat)
+                        if possible_scar or possible_death:
+                            History.add_possible_history(cat, injury_event.injury, scar_text=possible_scar, 
+                                                            death_text=possible_death, other_cat=other_cat)
                     cat.get_injured(injury_event.injury)
 
         # just double-checking that trigger is only returned True if the cat is dead
