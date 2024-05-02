@@ -161,7 +161,7 @@ class SettingsScreen(Screens):
                         game.switch_setting(key)
                     self.settings_changed = True
                     self.update_save_button()
-                    if self.sub_menu == 'general' and event.ui_element is self.checkboxes['discord']:
+                    if not web.is_web and self.sub_menu == 'general' and event.ui_element is self.checkboxes['discord']:
                         if game.settings['discord']:
                             print("Starting Discord RPC")
                             game.rpc = _DiscordRPC("1076277970060185701",
