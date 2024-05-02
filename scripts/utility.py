@@ -555,6 +555,76 @@ def get_personality_compatibility(cat1, cat2):
 
     return None
 
+def get_skills(cat):
+    # Gathering primary and secondary skills of a cat, if they exist
+    skills = []
+    if cat.skills.primary:
+        skills.append(cat.skills.primary.path)
+    if hasattr(cat.skills, 'secondary') and cat.skills.secondary:
+        skills.append(cat.skills.secondary.path)
+    return skills
+
+def mentor_skill_compatibility(mentor, apprentice):
+    # Getting the list of skills for both mentor and apprentice
+    mentor_skills = get_skills(mentor)
+    apprentice_skills = get_skills(apprentice)
+
+    # Checking for any common skills between mentor and apprentice
+    for skill in mentor_skills:
+        if skill in apprentice_skills:
+            return True
+    return False
+
+def get_mentor_compatibility(mentor, apprentice):
+    """Returns:
+        True - if personalities have a positive compatibility
+        False - if personalities have a negative compatibility
+        None - if personalities have a neutral compatibility
+    """
+    personality1 = mentor.personality.trait
+    personality2 = apprentice.personality.trait
+
+    if personality1 == personality2:
+        if personality1 is None:
+            return None
+        return True
+
+    # Define the compatibility mapping
+    compatibility_mapping = {
+        0: 4,
+        1: 3,
+        2: 2,
+        3: 1, 4: 1,
+        5: 0, 6: 0,
+        7: -1, 8: -1, 9: -1,
+        10: -2, 11: -2, 12: -2,
+        13: -3, 14: -3,
+        15: -4, 16: -4
+    }
+
+    # Calculating the differences
+    lawfulness_diff = abs(mentor.personality.lawfulness - apprentice.personality.lawfulness)
+    sociability_diff = abs(mentor.personality.sociability - apprentice.personality.sociability)
+    aggression_diff = abs(mentor.personality.aggression - apprentice.personality.aggression)
+    stability_diff = abs(mentor.personality.stability - apprentice.personality.stability)
+
+    # Converting differences to compatibility scores using the mapping
+    lawfulness_score = compatibility_mapping.get(lawfulness_diff, 0)  # Default to 0 if not found in the mapping
+    sociability_score = compatibility_mapping.get(sociability_diff, 0)
+    aggression_score = compatibility_mapping.get(aggression_diff, 0)
+    stability_score = compatibility_mapping.get(stability_diff, 0)
+
+    # Combine the scores for a total compatibility score
+    total_compatibility_score = lawfulness_score + sociability_score + aggression_score + stability_score
+
+    if total_compatibility_score <= -2:
+        return False
+        running_total += 1
+    elif total_compatibility_score >= 5:
+        return True
+    else:
+        return None
+
 
 def get_cats_of_romantic_interest(cat):
     """Returns a list of cats, those cats are love interest of the given cat"""
