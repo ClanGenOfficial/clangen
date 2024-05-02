@@ -21,10 +21,19 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     
     steps:
-    - name: Chxeckout
-      uses: actions/checkout@v2
-    - name: Setup Python
-      run: python3 -m pip install pygbag
+    - uses: actions/checkout@v3
+    - name: Setup Python 3.11 x64
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        architecture: 'x64'
+    - name: Install poetry
+      uses: abatilo/actions-poetry@v2
+      with:
+        poetry-version: 1.4.1
+    - name: install dependencies
+      run: poetry install --only build
+    
     - name: Write version file
       run: |
         echo "[DEFAULT]" > version.ini
@@ -37,14 +46,14 @@ jobs:
       run: |
         git log --pretty="format:%H|||%cd|||%b|||%s" -15 --no-decorate --merges --grep="Merge pull request" --date=short > changelog.txt
     - name: Build
-      run: python3 -m pygbag --ume_block 0 --template static/index.html --build $GITHUB_WORKSPACE/webMain.py
+      run: poetry run python3 ./scripts/web.py
     - name: Setup Pages
       uses: actions/configure-pages@v3
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v1
       with:
         # Upload entire repository
-        path: 'build/web'
+        path: 'build'
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v1

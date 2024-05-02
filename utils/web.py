@@ -1,6 +1,7 @@
 import os
 import zipfile
 import sys
+from shutil import copytree, rmtree
 
 pack_paths = [
     "languages",
@@ -18,6 +19,7 @@ pack_ignore = [
 ]
 
 build_path = "build"
+static_path = "static"
 zip_name = "clangen.apk"
 zip_path = os.path.join(build_path, zip_name)
 
@@ -27,11 +29,10 @@ def pack():
     Packs all of pack_paths into a zip file with a parent folder of "assets"
     """
 
-    if not os.path.exists(build_path):
-        os.mkdir(build_path)
+    if os.path.exists(build_path):
+        rmtree(build_path)
     
-    if os.path.exists(zip_path):
-        os.remove(zip_path)
+    copytree(static_path, build_path)
     
     with zipfile.ZipFile(zip_path, "w") as zf:
         for path in pack_paths:
@@ -46,8 +47,6 @@ def pack():
                         zf.write(os.path.join(dirname, filename), os.path.join("assets", dirname, filename))
             else:
                 zf.write(path, os.path.join("assets", path))
-        
-        
 
     print(f"Packaged to {zip_path}")
 
@@ -71,7 +70,7 @@ def serve():
     
 
 if __name__ == "__main__":
-    if "-h" in sys.argv or "--help" in sys.argv or len(sys.argv) == 1:
+    if "-h" in sys.argv or "--help" in sys.argv:
         print("Usage: python utils/web.py [--no-pack] [serve] [--port <port>]")
         sys.exit(0)
 
