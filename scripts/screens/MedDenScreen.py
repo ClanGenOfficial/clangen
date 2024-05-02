@@ -500,7 +500,7 @@ class MedDenScreen(Screens):
                                                 ((216, 190), (792, 448))),
                                           "",
                                           object_id="#med_cat_den_hover",
-                                          tool_tip_text=herb_display, manager=MANAGER
+                                          tool_tip_text=None, manager=MANAGER
                                           )
         else:
             count = 1
@@ -522,7 +522,10 @@ class MedDenScreen(Screens):
             if added is False:
                 holding_pairs.extend(pair)
 
-            herb_display = "<br>".join(holding_pairs)
+            if game.clan.game_mode == 'classic':
+                herb_display = None
+            else:
+                herb_display = "<br>".join(holding_pairs)
             self.den_base = UIImageButton(scale(pygame.Rect
                                                 ((216, 190), (792, 448))),
                                           "",
