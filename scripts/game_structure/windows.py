@@ -1315,21 +1315,20 @@ class ChangeCatToggles(UIWindow):
         self.refresh_checkboxes()
         
         # Text
-        self.text_1 = UITextBox("Prevent fading", scale(pygame.Rect(110, 60, -1, 50)), 
-                                                    object_id="#text_box_30_horizleft_pad_0_8",
-                                                    container=self,
-                                                    manager=MANAGER)
-        
-        self.text_2 = UITextBox("Prevent kits", scale(pygame.Rect(110, 110, -1, 50)), 
+        self.text_1 = UITextBox("Prevent fading", scale(pygame.Rect(110, 60, 680, 50)), 
                                                     object_id="#text_box_30_horizleft_pad_0_8",
                                                     container=self)
         
-        self.text_3 = UITextBox("Prevent retirement", scale(pygame.Rect(110, 160, -1, 50)), 
+        self.text_2 = UITextBox("Prevent kits", scale(pygame.Rect(110, 110, 680, 50)), 
+                                                    object_id="#text_box_30_horizleft_pad_0_8",
+                                                    container=self)
+        
+        self.text_3 = UITextBox("Prevent retirement", scale(pygame.Rect(110, 160, 680, 50)), 
                                                     object_id="#text_box_30_horizleft_pad_0_8",
                                                     container=self)
         
         self.text_4 = UITextBox("Limit romantic interactions and mate changes",
-                                                    scale(pygame.Rect(110, 210, -1, 50)), 
+                                                    scale(pygame.Rect(110, 210, 750, 50)), 
                                                     object_id="#text_box_30_horizleft_pad_0_8",
                                                     container=self)
         

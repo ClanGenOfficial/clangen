@@ -54,7 +54,6 @@ def export_clan() -> None:
 
 async def import_clan(): 
     """Imports a clan's data from a zip file."""
-    print("hjgkasd")
     extensions = [("Compressed file", ["*.zip"])]
     clan_name = None
     zip_path = None

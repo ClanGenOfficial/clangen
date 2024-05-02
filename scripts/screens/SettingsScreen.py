@@ -77,9 +77,6 @@ class SettingsScreen(Screens):
         """
         TODO: DOCS
         """
-        try:
-            print(event.ui_element)
-        except: pass
         if event.type == pygame_gui.UI_TEXT_BOX_LINK_CLICKED:
             if platform.system() == 'Darwin':
                 subprocess.Popen(["open", "-u", event.link_target])
