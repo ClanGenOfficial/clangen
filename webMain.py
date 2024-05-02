@@ -27,6 +27,8 @@ random.seed(time.time())
 
 import i18n
 import pygame
+import shutil
+shutil.copyfile("resources/fonts/clangen.ttf", "/data/data/org.python/assets/build/env/pygame_gui/data/FiraCode-Regular.ttf")
 import pygame_gui
 import platform
 
