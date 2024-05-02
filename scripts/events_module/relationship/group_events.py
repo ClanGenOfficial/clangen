@@ -104,8 +104,7 @@ class Group_Events():
         chosen_interaction = choice(possibilities)
 
         # TRIGGER ALL NEEDED FUNCTIONS TO REFLECT THE INTERACTION
-        if game.clan.game_mode != 'classic':
-            Group_Events.injuring_cats(chosen_interaction, abbreviations_cat_id)
+        Group_Events.injuring_cats(chosen_interaction, abbreviations_cat_id)
         amount = game.config["relationship"]["in_decrease_value"][chosen_interaction.intensity]
 
         if len(chosen_interaction.general_reaction) > 0:
@@ -444,9 +443,6 @@ class Group_Events():
         if not all_fulfilled:
             return False
 
-        # if the interaction has injuries constraints, but the Clan is in classic mode
-        if game.clan.game_mode == 'classic' and len(interaction.has_injuries) > 0:
-            return False
         # check if all cats fulfill the injuries constraints
         all_fulfilled = True
         for abbr, constraint in interaction.has_injuries.items():

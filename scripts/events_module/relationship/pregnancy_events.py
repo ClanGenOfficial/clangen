@@ -222,10 +222,9 @@ class Pregnancy_Events():
             }
 
             text = choice(Pregnancy_Events.PREGNANT_STRINGS["announcement"])
-            if clan.game_mode != 'classic':
-                severity = random.choices(["minor", "major"], [3, 1], k=1)
-                cat.get_injured("pregnant", severity=severity[0])
-                text += choice(Pregnancy_Events.PREGNANT_STRINGS[f"{severity[0]}_severity"])
+            severity = random.choices(["minor", "major"], [3, 1], k=1)
+            cat.get_injured("pregnant", severity=severity[0])
+            text += choice(Pregnancy_Events.PREGNANT_STRINGS[f"{severity[0]}_severity"])
             text = event_text_adjust(Cat, text, cat, clan=clan)
             game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
         else:
@@ -258,10 +257,9 @@ class Pregnancy_Events():
             }
 
             text = choice(Pregnancy_Events.PREGNANT_STRINGS["announcement"])
-            if clan.game_mode != 'classic':
-                severity = random.choices(["minor", "major"], [3, 1], k=1)
-                pregnant_cat.get_injured("pregnant", severity=severity[0])
-                text += choice(Pregnancy_Events.PREGNANT_STRINGS[f"{severity[0]}_severity"])
+            severity = random.choices(["minor", "major"], [3, 1], k=1)
+            pregnant_cat.get_injured("pregnant", severity=severity[0])
+            text += choice(Pregnancy_Events.PREGNANT_STRINGS[f"{severity[0]}_severity"])
             text = event_text_adjust(Cat, text, pregnant_cat, clan=clan)
             game.cur_events_list.append(Single_Event(text, "birth_death", pregnant_cat.ID))
 
@@ -305,13 +303,12 @@ class Pregnancy_Events():
         else:
             text = Pregnancy_Events.PREGNANT_STRINGS["litter_guess"][2]
 
-        if clan.game_mode != 'classic':
-            try:
-                if cat.injuries["pregnant"]["severity"] == "minor":
-                    cat.injuries["pregnant"]["severity"] = "major"
-                    text += choice(Pregnancy_Events.PREGNANT_STRINGS["major_severity"])
-            except:
-                print("Is this an old save? Cat does not have the pregnant condition")
+        try:
+            if cat.injuries["pregnant"]["severity"] == "minor":
+                cat.injuries["pregnant"]["severity"] = "major"
+                text += choice(Pregnancy_Events.PREGNANT_STRINGS["major_severity"])
+        except:
+            print("Is this an old save? Cat does not have the pregnant condition")
 
         text = event_text_adjust(Cat, text, cat, clan=clan)
         game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
@@ -423,7 +420,7 @@ class Pregnancy_Events():
                 cat.die()
                 death_event = (f"{cat.name} died while kitting.")
             History.add_death(cat, death_text=death_event)
-        elif clan.game_mode != 'classic' and not cat.outside:  # if cat doesn't die, give recovering from birth
+        elif not cat.outside:  # if cat doesn't die, give recovering from birth
             cat.get_injured("recovering from birth", event_triggered=True)
             if 'blood loss' in cat.injuries:
                 if cat.status == 'leader':
@@ -441,7 +438,7 @@ class Pregnancy_Events():
                             possible_events.remove(event)
 
                 event_list.append(choice(possible_events))
-        if clan.game_mode != 'classic' and not cat.dead: 
+        if not cat.dead: 
             #If they are dead in childbirth above, all condition are cleared anyway. 
             try:
                 cat.injuries.pop("pregnant")

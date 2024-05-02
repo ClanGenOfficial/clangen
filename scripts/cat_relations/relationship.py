@@ -128,8 +128,8 @@ class Relationship():
         self.used_interaction_ids.append(self.chosen_interaction.id)
 
         self.interaction_affect_relationships(in_de_crease, intensity, rel_type)
-        # give cats injuries if the game mode is not classic
-        if self.chosen_interaction.get_injuries and game_mode != 'classic':
+        # give cats injuries
+        if self.chosen_interaction.get_injuries:
             injuries = []
             for abbreviations, injury_dict in self.chosen_interaction.get_injuries.items():
                 if "injury_names" not in injury_dict:

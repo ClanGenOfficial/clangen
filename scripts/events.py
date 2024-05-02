@@ -147,7 +147,7 @@ class Events:
                 ghost_names.append(str(ghost.name))
             insert = adjust_list_text(ghost_names)
 
-            if len(Cat.dead_cats) > 1 and game.clan.game_mode != 'classic':
+            if len(Cat.dead_cats) > 1:
                 event = f"The past moon, {insert} have taken their place in StarClan. {game.clan.name}Clan mourns their " \
                         f"loss, and their Clanmates will miss where they had been in their lives. Moments of their " \
                         f"lives are shared in stories around the circle of mourners as those that were closest to them " \
@@ -2162,9 +2162,9 @@ class Events:
 
     def handle_outbreaks(self, cat):
         """Try to infect some cats."""
-        # check if the cat is ill, if game mode is classic,
-        # or if Clan has sufficient med cats in expanded mode
-        if not cat.is_ill() or game.clan.game_mode == 'classic':
+        # check if the cat is ill,
+        # or if Clan has sufficient med cats
+        if not cat.is_ill():
             return
 
         # check how many kitties are already ill

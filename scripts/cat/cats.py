@@ -451,7 +451,7 @@ class Cat():
                 fetched_cat.update_mentor()
         self.update_mentor()
 
-        if game.clan and game.clan.game_mode != 'classic' and not (self.outside or self.exiled) and body != None:
+        if game.clan and not (self.outside or self.exiled) and body != None:
             self.grief(body)
 
         if not self.outside:
@@ -578,8 +578,7 @@ class Cat():
                 text = event_text_adjust(Cat, text, self, cat)
                 
                 # grief the cat
-                if game.clan.game_mode != 'classic':
-                    cat.get_ill("grief stricken", event_triggered=True, severity="major")
+                cat.get_ill("grief stricken", event_triggered=True, severity="major")
             
             # If major grief fails, but there are still very_high or high values, 
             # it can fail to to minor grief. If they have a family relation, bypass the roll. 

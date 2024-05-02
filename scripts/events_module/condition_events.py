@@ -170,7 +170,7 @@ class Condition_Events():
         involved_cats = [cat.ID]
 
         # handle if the current cat is already injured
-        if cat.is_injured() and game.clan.game_mode != 'classic':
+        if cat.is_injured():
             for injury in cat.injuries:
                 if injury == "pregnant" and cat.ID not in game.clan.pregnancy_data:
                     print(f"INFO: deleted pregnancy condition of {cat.ID} due no pregnancy data in the clan.")
