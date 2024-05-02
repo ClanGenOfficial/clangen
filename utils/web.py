@@ -13,6 +13,10 @@ pack_paths = [
     "webMain.py",
 ]
 
+pack_ignore = [
+    "__pycache__",
+]
+
 build_path = "build"
 zip_name = "clangen.apk"
 zip_path = os.path.join(build_path, zip_name)
@@ -32,7 +36,11 @@ def pack():
     with zipfile.ZipFile(zip_path, "w") as zf:
         for path in pack_paths:
             if os.path.isdir(path):
+                if path in pack_ignore:
+                    continue
                 for dirname, subdirs, files in os.walk(path):
+                    if dirname in pack_ignore:
+                        continue
                     zf.write(dirname, os.path.join("assets", dirname))
                     for filename in files:
                         zf.write(os.path.join(dirname, filename), os.path.join("assets", dirname, filename))
