@@ -5,7 +5,6 @@ from .Screens import Screens
 
 from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
 from scripts.cat.cats import Cat
-from scripts.cat.skills import SkillPath
 from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
