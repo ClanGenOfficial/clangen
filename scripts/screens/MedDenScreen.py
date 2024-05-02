@@ -262,6 +262,8 @@ class MedDenScreen(Screens):
             else:
                 insert = 'medicine cats'
             meds_cover = f"Your {insert} can care for a Clan of up to {number} members, including themselves."
+            if game.clan.game_mode == 'classic':
+                meds_cover = ''
 
             if len(self.meds) >= 1 and number == 0:
                 meds_cover = f"You have no medicine cats who are able to work. Your Clan will be at a higher risk of death and disease."
