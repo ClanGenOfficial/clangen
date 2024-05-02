@@ -3,6 +3,7 @@ import pygame_gui
 
 from .Screens import Screens
 from scripts.cat.cats import Cat
+from scripts.clan import HERBS
 from scripts.game_structure.image_button import UISpriteButton, UIImageButton, UITextBoxTweaked
 from scripts.utility import get_text_box_theme, scale, get_med_cats, shorten_text_to_fit
 from scripts.game_structure.game_essentials import game, MANAGER
@@ -529,7 +530,15 @@ class MedDenScreen(Screens):
                                           tool_tip_text=herb_display, manager=MANAGER
                                           )
 
-        herbs = game.clan.herbs
+        if game.clan.game_mode == 'classic':
+            # draw every herb in classic
+            herbs = {}
+            for herb in HERBS:
+                # 2 so we have both cobwebs
+                herbs[herb] = 2
+        else:
+            # otherwise draw the herbs you have
+            herbs = game.clan.herbs
         for herb in herbs:
             if herb == 'cobwebs':
                 self.herbs["cobweb1"] = pygame_gui.elements.UIImage(scale(pygame.Rect
