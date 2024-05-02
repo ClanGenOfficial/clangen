@@ -27,12 +27,6 @@ jobs:
       with:
         python-version: '3.11'
         architecture: 'x64'
-    - name: Install poetry
-      uses: abatilo/actions-poetry@v2
-      with:
-        poetry-version: 1.4.1
-    - name: install dependencies
-      run: poetry install --only build
     
     - name: Write version file
       run: |
@@ -46,7 +40,7 @@ jobs:
       run: |
         git log --pretty="format:%H|||%cd|||%b|||%s" -15 --no-decorate --merges --grep="Merge pull request" --date=short > changelog.txt
     - name: Build
-      run: poetry run python3 ./scripts/web.py
+      run: python3 ./scripts/web.py
     - name: Setup Pages
       uses: actions/configure-pages@v3
     - name: Upload artifact
