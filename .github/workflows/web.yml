@@ -40,7 +40,7 @@ jobs:
       run: |
         git log --pretty="format:%H|||%cd|||%b|||%s" -15 --no-decorate --merges --grep="Merge pull request" --date=short > changelog.txt
     - name: Build
-      run: python3 ./scripts/web.py
+      run: python3 ./utils/web.py
     - name: Setup Pages
       uses: actions/configure-pages@v3
     - name: Upload artifact
