@@ -933,7 +933,10 @@ class Condition_Events():
                   "'splinter', disregard this! otherwise, check that your condition is in the correct dict or report "
                   "this as a bug.")
             return
-        herb_set = clan_herbs.intersection(needed_herbs)
+        if game.clan.game_mode != "classic":
+            herb_set = needed_herbs
+        else:
+            herb_set = clan_herbs.intersection(needed_herbs)
         usable_herbs = list(herb_set)
 
         if not source[condition]["herbs"]:
@@ -957,23 +960,25 @@ class Condition_Events():
 
             herb_used = usable_herbs[0]
             # Failsafe, since I have no idea why we are getting 0-herb entries.
-            while game.clan.herbs[herb_used] <= 0:
-                print(f"Warning: {herb_used} was chosen to use, although you currently have "
-                      f"{game.clan.herbs[herb_used]}. Removing {herb_used} from herb dict, finding a new herb...")
-                game.clan.herbs.pop(herb_used)
-                usable_herbs.pop(0)
-                if usable_herbs:
-                    herb_used = usable_herbs[0]
-                else:
-                    print("No herbs to use for this injury")
-                    return
-                print(f"New herb found: {herb_used}")
+            if game.clan.game_mode != "classic":
+                while game.clan.herbs[herb_used] <= 0:
+                    print(f"Warning: {herb_used} was chosen to use, although you currently have "
+                        f"{game.clan.herbs[herb_used]}. Removing {herb_used} from herb dict, finding a new herb...")
+                    game.clan.herbs.pop(herb_used)
+                    usable_herbs.pop(0)
+                    if usable_herbs:
+                        herb_used = usable_herbs[0]
+                    else:
+                        print("No herbs to use for this injury")
+                        return
+                    print(f"New herb found: {herb_used}")
 
             # deplete the herb
             amount_used = 1
-            game.clan.herbs[herb_used] -= amount_used
-            if game.clan.herbs[herb_used] <= 0:
-                game.clan.herbs.pop(herb_used)
+            if game.clan.game_mode != "classic":
+                game.clan.herbs[herb_used] -= amount_used
+                if game.clan.herbs[herb_used] <= 0:
+                    game.clan.herbs.pop(herb_used)
 
             # applying a modifier for herb priority. herbs that are better for the condition will have stronger effects
             count = 0
