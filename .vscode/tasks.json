@@ -16,6 +16,26 @@
           "message": 4
         }
       }
-    }
+    },
+    {
+        "label": "Pack Web",
+        "type": "shell",
+        "command": "poetry run python ./utils/web.py",
+        "problemMatcher": {
+            "owner": "python",
+            "fileLocation": ["relative", "${workspaceFolder}"],
+            "pattern": {
+                "regexp": "^(.*):(\\d+):(\\d+):\\s+(.*)$",
+                "file": 1,
+                "line": 2,
+                "column": 3,
+                "message": 4
+            }
+        },
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      }
   ]
 }

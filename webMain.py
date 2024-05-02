@@ -3,6 +3,7 @@ Shim for pygbag (web runner) to detect all imports
 """
 # pylint: disable=no-member
 from __future__ import print_function
+import pygbag.aio as asyncio
 import builtins
 
 builtin_print = builtins.print
@@ -16,7 +17,6 @@ def print(*args, **kwargs):
     return builtin_print(*args, **kwargs)
 builtins.print = print
 
-import asyncio
 
 print("Loading...")
 

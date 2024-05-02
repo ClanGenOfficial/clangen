@@ -15,12 +15,17 @@ It then loads the settings, and then loads the start screen.
 
 
 """  # pylint: enable=line-too-long
+import scripts.web as web
+if web.is_web:
+    import pygbag.aio as asyncio
+else:
+    import asyncio
 import shutil
 import sys
 import time
 import os
 import threading
-import asyncio
+
 
 from scripts.housekeeping.log_cleanup import prune_logs
 from scripts.housekeeping.stream_duplexer import UnbufferedStreamDuplexer
@@ -33,7 +38,6 @@ async def main():
     try:
         print("Starting...")
 
-        import scripts.web as web
         from importlib.util import find_spec
 
         if not web.is_web:
