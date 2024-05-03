@@ -5,11 +5,8 @@ import os
 import ujson
 
 from scripts.game_structure.game_essentials import game
-from scripts.events_module.condition_events import Condition_Events
 from scripts.cat.cats import Cat
 from scripts.utility import get_cats_same_age, get_cats_of_romantic_interest, get_free_possible_mates
-from scripts.event_class import Single_Event
-from scripts.cat_relations.relationship import Relationship
 from scripts.events_module.relationship.romantic_events import Romantic_Events
 from scripts.events_module.relationship.welcoming_events import Welcoming_Events
 from scripts.events_module.relationship.group_events import Group_Events

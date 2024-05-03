@@ -7,7 +7,7 @@ import ujson
 from scripts.cat.cats import Cat
 from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE, FRESHKILL_EVENT_TRIGGER_FACTOR
 from scripts.game_structure.game_essentials import game
-from scripts.utility import filter_relationship_type, get_cats_of_romantic_interest, get_living_clan_cat_count
+from scripts.utility import filter_relationship_type, get_living_clan_cat_count
 
 resource_directory = "resources/dicts/events/"
 
