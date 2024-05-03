@@ -359,7 +359,7 @@ class ProfileScreen(Screens):
                 self.fav_tab.show()
                 self.not_fav_tab.hide()
             elif event.ui_element == self.save_text:
-                self.user_notes = sub(r"[^A-Za-z0-9<->/.()*'&#!?,| _+=@~:;[]{}%$^`]+", "", self.notes_entry.get_text())
+                self.user_notes = self.notes_entry.get_text()
                 self.save_user_notes()
                 self.editing_notes = False
                 self.update_disabled_buttons_and_text()
