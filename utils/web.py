@@ -1,14 +1,21 @@
+from http.server import SimpleHTTPRequestHandler
 import os
 import zipfile
 import sys
 from shutil import copytree, rmtree
+
+build_path = "build"
+static_path = "static"
+zip_name = "clangen.apk"
+zip_path = os.path.join(build_path, zip_name)
+version_path = "version.ini"
 
 pack_paths = [
     "languages",
     "resources",
     "scripts",
     "sprites",
-    "version.ini",
+    version_path,
     "changelog.txt",
     "main.py",
     "webMain.py",
@@ -17,11 +24,6 @@ pack_paths = [
 pack_ignore = [
     "__pycache__",
 ]
-
-build_path = "build"
-static_path = "static"
-zip_name = "clangen.apk"
-zip_path = os.path.join(build_path, zip_name)
 
 
 def pack():
@@ -59,13 +61,18 @@ def serve():
     import http.server
 
     os.chdir(build_path)
+
+    class CORSRequestHandler (SimpleHTTPRequestHandler):
+        def end_headers (self):
+            self.send_header('Access-Control-Allow-Origin', '*')
+            SimpleHTTPRequestHandler.end_headers(self)
+
     
     handler = http.server.SimpleHTTPRequestHandler
 
-    with http.server.HTTPServer(("", port), handler) as server:
-        # Serve files
-        print("Serving on port", port)
-        server.serve_forever()
+    with http.server.HTTPServer(("", port), CORSRequestHandler) as httpd:
+        print(f"Serving at http://localhost:{port}")
+        httpd.serve_forever()
 
     
 
@@ -75,6 +82,13 @@ if __name__ == "__main__":
         sys.exit(0)
 
     if "--no-pack" not in sys.argv:
+        if os.path.exists(version_path):
+            print("Regenerating version.ini")
+            os.remove(version_path)
+        else:
+            print("Generating version.ini")
+        from version import main as make_version_ini
+        make_version_ini(silent = True)
         pack()
 
     if "serve" in sys.argv:

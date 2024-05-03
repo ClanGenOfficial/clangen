@@ -28,7 +28,19 @@ random.seed(time.time())
 import i18n
 import pygame
 import shutil
-shutil.copyfile("resources/fonts/NotoSans-Regular.ttf", "/data/data/org.python/assets/build/env/pygame_gui/data/FiraCode-Regular.ttf")
+
+font_mappings = {
+    "NotoSans-Regular.ttf": "FiraCode-Regular.ttf",
+    "NotoSans-Bold.ttf": "FiraCode-Bold.ttf",
+    "NotoSans-Italic.ttf": "FiraCode-RegulatItalic.ttf",
+    "NotoSans-BoldItalic.ttf": "FiraCode-BoldItalic.ttf"
+
+}
+
+for ours, theirs in font_mappings.items():
+    print(f"Replacing {theirs} with {ours}")
+    shutil.copyfile(f"resources/fonts/{ours}", f"/data/data/org.python/assets/build/env/pygame_gui/data/{theirs}")
+
 import pygame_gui
 import platform
 
