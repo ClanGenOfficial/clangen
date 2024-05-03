@@ -1688,7 +1688,155 @@
                 "lost_cats": ["r_c"]
             }
         ]
+    },
+    {
+        "patrol_id": "pln_train_beautyandthebeast_storylocked1",
+        "biome": ["plains"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "gen_bord_story",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1"],
+        "intro_text": "As the cats remark the border, p_l asks if they remember the tale of the beautiful molly and the monstrous tom. Once upon a time, the mighty tom of the plains found a beautiful molly on the border of his lands, skinny and trembling...",
+        "decline_text": "This... really isn't the time to stop for a story.",
+        "success_outcomes": [
+                {
+                    "text": "Outraged, the tom drew his claws - only for the molly to disappear in a burst of starlight, StarClan judging the tom for his monstrous heart. His scent grew foul, his whiskers fell off, his claws blunted, and the first coyote was born, howling his anger and loss.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_train_ghost",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                },
+                {
+                    "text": "With a terrifying anger, the tom unsheathed his claws... but luckily for the molly, she was a StarClan cat in disguise, and with a burst of starlight, Starclan judged him, and turned him into a horrifying monster... a <i>coyote</i>.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_train_ghost",
+                    "can_have_stat":["p_l"],
+                    "stat_trait": [
+                        "nervous",
+                        "insecure",
+                        "gloomy"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                },
+                {
+                    "text": "The powerful tom went to chase her off, but StarClan judged him a monster, and cursed him to become a coyote. It is a lesson all can take note of - the Stars will judge you for your actions.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_train_ghost",
+                    "can_have_stat":["p_l"],
+                    "stat_trait": [
+                        "cold",
+                        "arrogant",
+                        "righteous"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                },
+                {
+                    "text": "The tom drove the molly off and was cursed by StarClan for his cruelty. And good thing too, s_c pipes up! Evil like that should always be punished!",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_train_ghost",
+                    "can_have_stat":["not_pl"],
+                    "stat_trait": [
+                        "compassionate",
+                        "faithful",
+                        "loving",
+                        "responsible"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        },
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "The patrol isn't interested in hearing p_l's fable as they work. A pity - one should always remember the lessons of c_n's myths.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
     }
-    
     
 ]

@@ -283,5 +283,152 @@
                 }
             }
         ]
+    },
+    {
+        "patrol_id": "bch_train_greenleaf_twolegmigration_lorelocked1",
+        "biome": ["beach"],
+        "season": ["greenleaf"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_bord_story",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["LORE,1"],
+        "intro_text": "p_l leads the patrol out to a promontory of rock, pointing out the Twoleg monsters crowding the sandy shoreline below as they twinkle in the sunlight.",
+        "decline_text": "Clearly there'll be no using this part of their territory today then. The patrol goes to report this back to camp.",
+        "success_outcomes": [
+                {
+                    "text": "This is the history p_l is here to teach - every greenleaf, the Twolegs come to this beach, a great migration in their monsters. They swim in this bay, and occasionally the bays to either side, but no more than that, a constrained invasion. Leave them to their rituals. c_n will return to this beach when the seasons change.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "bch_hunt_twolegsobject",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic", "trust"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 10
+                        }
+                        ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "The monsters unnerve the patrol, who don't want to stick around to hear p_l's lesson. p_l disapproves, but lets the patrol end early.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["comfort", "trust"],
+                            "amount": -2
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": -5
+                        }
+                        ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "bch_train_greenleaf_dryhot1",
+        "biome": ["beach"],
+        "season": ["greenleaf"],
+        "types": ["training"],
+        "tags": ["romance"],
+        "patrol_art": "fst_hunt_heat",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [2, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "relationship_constraint": ["not_mates"],
+        "intro_text": "This is just oppressive. The sand burns the patrols paws as they dart from one refuge of dune-bursh to another, the distant training grounds they were supposed to go to looking more and more out of reach.",
+        "decline_text": "Time to go back home and wait it out.",
+        "success_outcomes": [
+                {
+                    "text": "They all stagger towards the nearest rockpool and flop into it, not hunting, purely there for the water and damp coats. r_c swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/laugh/laughes}, welcoming it and returning the favour. There's nothing like swimming in greenleaf, and the patrol devolves into a waterfight.",
+                    "exp": 20,
+                    "weight": 10,
+                    "art": "gen_train_soggykitty_happy_warrior",
+                    "relationships": [
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic", "comfort"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["r_c"],
+                            "mutual": true,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                },
+                {
+                    "text": "They all stagger towards the nearest rockpool and flop into it, not hunting, purely there for the water and damp coats. r_c swipes water towards p_l and PRONOUN/p_l/subject} {VERB/p_l/laugh/laughes}, welcoming it and returning the favour, batting back in mock spashy fight at the rest of the patrol fades away, just the two of them in their own little world",
+                    "exp": 20,
+                    "weight": 10,
+                    "art": "fst_train_newleafmatesonadates_70locked1",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["r_c"],
+                            "mutual": true,
+                            "values": ["platonic", "comfort", "romantic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["r_c"],
+                            "mutual": true,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "It's a long walk home, and not a pleasent one. They probably should have drunk more water before going out to train. Or not gone out at all.",
+                    "exp": 0,
+                    "weight": 20,
+                    "injury": [
+                        {
+                            "cats": ["multi"],
+                            "injuries": ["dehydrated"],
+                            "scars": []
+                        }
+                    ],
+                    "history_text": {
+                        "reg_death": "m_c got dehydrated training under the hot greenleaf sun, and it eventually sapped {PRONOUN/m_c/subject} life from {PRONOUN/m_c/object}.",
+                        "lead_death": "got dehydrated training under the hot greenleaf sun, and it eventually sapped {PRONOUN/m_c/subject} life from {PRONOUN/m_c/object}"
+                    }
+                }
+            ]
     }
 ]
