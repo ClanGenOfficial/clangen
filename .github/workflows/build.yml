@@ -60,6 +60,7 @@ jobs:
             os-group: "windows"
             python-version: "3.8"
             python-arch: "x86"
+            poetry-version: "1.5.1"
             package-name: "Clangen_Win32"
             package-type: "zip"
             api-id: "win32"
@@ -69,6 +70,7 @@ jobs:
             os-group: "windows"
             python-version: "3.8"
             python-arch: "x64"
+            poetry-version: "1.5.1"
             package-name: "Clangen_Win64"
             package-type: "zip"
             api-id: "win64"
@@ -78,6 +80,7 @@ jobs:
             os-group: "windows"
             python-version: "3.11"
             python-arch: "x64"
+            poetry-version: "1.5.1"
             package-name: "Clangen_Win64_Windows10+"
             package-type: "zip"
             api-id: "win10+"
@@ -87,6 +90,7 @@ jobs:
             os-group: "linux"
             python-version: "3.11"
             python-arch: "x64"
+            poetry-version: "1.7.1"
             package-name: "Clangen_Linux64_glibc2.31+"
             package-type: "tar.xz"
             api-id: "linux2.31"
@@ -96,6 +100,7 @@ jobs:
             os-group: "linux"
             python-version: "3.11"
             python-arch: "x64"
+            poetry-version: "1.7.1"
             package-name: "Clangen_Linux64_glibc2.35+"
             package-type: "tar.xz"
             api-id: "linux2.35"
@@ -105,6 +110,7 @@ jobs:
             os-group: "macOS"
             python-version: "3.11"
             python-arch: "x64"
+            poetry-version: "1.7.1"
             package-name: "Clangen_macOS64"
             package-type: "dmg"
             api-id: "macOS"
@@ -121,7 +127,7 @@ jobs:
       - name: Install poetry
         uses: abatilo/actions-poetry@v2
         with:
-          poetry-version: 1.7.1
+          poetry-version: ${{ matrix.poetry-version }}
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
