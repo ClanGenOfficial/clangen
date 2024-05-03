@@ -204,3 +204,15 @@ jobs:
         if: ${{ env.IS_RELEASE == 1 }}
         with:
           files: ${{ matrix.package-name }}.${{ matrix.package-type }}
+  confirm_release:
+    runs-on: ubuntu-22.04
+    if: vars.USE_UPDATE_API != ''
+    needs:
+      - build
+    steps:
+      - name: Confirm release
+        run: |
+          curl -X 'POST' \
+            'https://clangen.io/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NAME }}/Confirm' \
+            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
+            -H 'accept: */*'
