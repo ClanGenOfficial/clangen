@@ -15,9 +15,9 @@ jobs:
   build-self-updater:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Set up cargo cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         continue-on-error: false
         with:
           path: |
@@ -35,7 +35,7 @@ jobs:
           cargo build --release
       
       - name: Upload self-updater
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: self_updater
           path: self_updater/target/release/self_updater.exe
