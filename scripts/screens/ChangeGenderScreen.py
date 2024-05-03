@@ -40,7 +40,7 @@ class ChangeGenderScreen(Screens):
         self.removalbuttons = {}
         self.pronoun_template = [
             {
-                "name": "Custom",
+                "ID": "Custom",
                 "subject": "",
                 "object": "",
                 "poss": "",
@@ -96,22 +96,22 @@ class ChangeGenderScreen(Screens):
                     pronouns_data = ujson.load(file)
 
                 for pronounset in pronouns_data["default_pronouns"]:
-                    add_button_id = f"add_button_{pronounset['name']}" + "preset"
+                    add_button_id = f"add_button_{pronounset['ID']}" + "preset"
                     if event.ui_element == self.buttons.get(add_button_id):
                         print("added")
                         for x in range(len(pronouns_data["default_pronouns"])):
-                            if pronounset['name'] == pronouns_data["default_pronouns"][x]['name']:
+                            if pronounset['ID'] == pronouns_data["default_pronouns"][x]['ID']:
                                 print("in default")
                                 if not self.is_duplicate(pronounset):
                                     self.the_cat.pronouns.append(pronounset)
                                     self.update_selected_cat()
                 for pronounset in game.clan.custom_pronouns:
-                    remove_button_id = f"remove_button_{pronounset['name']}" + "preset"
-                    add_button_id = f"add_button_{pronounset['name']}" + "preset"
+                    remove_button_id = f"remove_button_{pronounset['ID']}" + "preset"
+                    add_button_id = f"add_button_{pronounset['ID']}" + "preset"
                     if event.ui_element == self.buttons.get(add_button_id):
                         print("added")
                         for x in range(len(game.clan.custom_pronouns)):
-                            if pronounset['name'] == game.clan.custom_pronouns[x]['name']:
+                            if pronounset['ID'] == game.clan.custom_pronouns[x]['ID']:
                                 print("in custom")
                                 if not self.is_duplicate(pronounset):
                                     self.the_cat.pronouns.append(pronounset)
@@ -120,7 +120,7 @@ class ChangeGenderScreen(Screens):
                         game.clan.custom_pronouns.remove(pronounset)
                         self.update_selected_cat()
                 for pronounset in self.the_cat.pronouns:
-                    remove_button_id = f"remove_button_{pronounset['name']}"
+                    remove_button_id = f"remove_button_{pronounset['ID']}"
                     if event.ui_element == self.removalbuttons.get(remove_button_id):
                         self.the_cat.pronouns.remove(pronounset)
                         self.update_selected_cat()
@@ -174,7 +174,7 @@ class ChangeGenderScreen(Screens):
 
     def get_sample_text(self, pronouns):
         text = ""
-        text += f"Demo: {pronouns['name']} <br>"
+        text += f"Demo: {pronouns['ID']} <br>"
         subject = f"{pronouns['subject']} are quick. <br>"
         if pronouns["conju"] == 2:
             subject = f"{pronouns['subject']} is quick. <br>"
@@ -280,13 +280,13 @@ class ChangeGenderScreen(Screens):
         with open('resources/dicts/pronouns.json', 'r', encoding='utf-8') as file:
             pronouns_data = ujson.load(file)
         for pronounset in pronouns_data["default_pronouns"]:
-            add_button_id = f"add_button_{pronounset['name']}" + "preset"
+            add_button_id = f"add_button_{pronounset['ID']}" + "preset"
             if self.is_duplicate(pronounset):
                 self.buttons.get(add_button_id).disable()
             else:
                 self.buttons.get(add_button_id).enable()
         for pronounset in game.clan.custom_pronouns:
-            add_button_id = f"add_button_{pronounset['name']}" + "preset"
+            add_button_id = f"add_button_{pronounset['ID']}" + "preset"
             if self.is_duplicate(pronounset):
                 self.buttons.get(add_button_id).disable()
             else:
@@ -310,7 +310,7 @@ class ChangeGenderScreen(Screens):
         pronoun_frame = "resources/images/pronoun_frame.png"
 
         for pronounset in self.the_cat.pronouns:
-            checkname = self.the_cat.pronouns[n]['name']
+            checkname = self.the_cat.pronouns[n]['ID']
             displayname = f"{self.the_cat.pronouns[n]['subject']}/"
             displayname += f"{self.the_cat.pronouns[n]['object']}/"
             displayname += f"{self.the_cat.pronouns[n]['inposs']}/"
@@ -371,7 +371,7 @@ class ChangeGenderScreen(Screens):
 
         if n == 1:
             for pronounset in self.the_cat.pronouns:
-                checkname = pronounset['name']
+                checkname = pronounset['ID']
                 button_id = f"remove_button_{checkname}"
                 if button_id in self.removalbuttons:
                     self.removalbuttons[button_id].disable()
@@ -402,7 +402,7 @@ class ChangeGenderScreen(Screens):
         pronoun_frame = "resources/images/pronoun_frame.png"
 
         for pronounset in pronouns_dict["default_pronouns"]:
-            checkname = pronouns_dict["default_pronouns"][n]['name'] + "preset"
+            checkname = pronouns_dict["default_pronouns"][n]['ID'] + "preset"
             displayname = f"{pronouns_dict['default_pronouns'][n]['subject']}/"
             displayname += f"{pronouns_dict['default_pronouns'][n]['object']}/"
             displayname += f"{pronouns_dict['default_pronouns'][n]['inposs']}/"
@@ -475,7 +475,7 @@ class ChangeGenderScreen(Screens):
             ycoor += 104
         n = 0
         for pronounset in game.clan.custom_pronouns:
-            checkname = game.clan.custom_pronouns[n]['name'] + "preset"
+            checkname = game.clan.custom_pronouns[n]['ID'] + "preset"
             displayname = f"{game.clan.custom_pronouns[n]['subject']}/"
             displayname += f"{game.clan.custom_pronouns[n]['object']}/"
             displayname += f"{game.clan.custom_pronouns[n]['inposs']}/"
@@ -555,7 +555,7 @@ class ChangeGenderScreen(Screens):
     def is_duplicate(self, preset):
         # checks to see if a preset with the same name is already in the cats pronouns
         for pronounset in self.the_cat.pronouns:
-            if preset["name"] == pronounset["name"]:
+            if preset["ID"] == pronounset["ID"]:
                 return True
         return False
 

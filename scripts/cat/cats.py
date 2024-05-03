@@ -77,7 +77,7 @@ class Cat():
 
     default_pronouns = [
         {
-            "name": "Neutral",
+            "ID": "Neutral",
             "subject": "they",
             "object": "them",
             "poss": "their",
@@ -86,7 +86,7 @@ class Cat():
             "conju": 1
         },
         {
-            "name": "Feminine",
+            "ID": "Feminine",
             "subject": "she",
             "object": "her",
             "poss": "her",
@@ -95,7 +95,7 @@ class Cat():
             "conju": 2
         },
         {
-            "name": "Masculine",
+            "ID": "Masculine",
             "subject": "he",
             "object": "him",
             "poss": "his",
@@ -1907,7 +1907,7 @@ class Cat():
             if self.is_injured():
                 for y in self.injuries:
                     illness_infect = list(
-                        filter(lambda ill: ill["name"] == illness_name, self.injuries[y]["illness_infectiousness"]))
+                        filter(lambda ill: ill["ID"] == illness_name, self.injuries[y]["illness_infectiousness"]))
                     if illness_infect is not None and len(illness_infect) > 0:
                         illness_infect = illness_infect[0]
                         rate -= illness_infect["lower_by"]
