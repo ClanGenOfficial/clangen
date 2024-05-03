@@ -119,7 +119,7 @@ jobs:
             ~/.cargo/git/db/
             target/
           key: selfupdater-${{ matrix.os }}-${{ hashFiles('**/Cargo.lock') }}
-          restore-keys: selfupdater-
+          restore-keys: selfupdater-${{ matrix.os }}-
       - name: install dependencies
         run: poetry install --with build --all-extras --no-root
       - name: Write version file
