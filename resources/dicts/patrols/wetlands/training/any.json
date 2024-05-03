@@ -35,7 +35,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c tries to hide within the water, but they can't quite manage to make themselves still and quiet enough to avoid detection.",
+                "text": "r_c tries to hide within the water, but {PRONOUN/r_c/object} can't quite manage to make themselves still and quiet enough to avoid detection.",
                 "exp": 0,
                 "weight": 20
             },
@@ -58,7 +58,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Up at the front of the patrol, p_l hears a Twoleg monster zoom past on the water, and then startled yowling. Turning back, they spot r_c being washed away by the wave the monster brought in its wake.",
+        "intro_text": "Up at the front of the patrol, p_l hears a Twoleg monster zoom past on the water, and then startled yowling. Turning back, {PRONOUN/p_l/object} {VERB/p_l/spot/spots} r_c being washed away by the wave the monster brought in its wake.",
         "decline_text": "p_l runs back to camp to fetch help.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -148,7 +148,7 @@
                 ]
             },
             {
-                "text": "Harshly, s_c tells their Clanmate that they're on their own - this patrol is too important to wait for some idiot who got stuck.",
+                "text": "Harshly, s_c tells {PRONOUN/s_c/poss} Clanmate that they're on their own - this patrol is too important to wait for some idiot who got stuck.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -319,7 +319,7 @@
                 ]
             },
             {
-                "text": "Hurt and wheezing, r_c hears the patrol panicking as they drift to StarClan under the water.",
+                "text": "Hurt and wheezing, r_c hears the patrol panicking as {PRONOUN/r_c/subject} {VERB/r_c/drift/drifts} to StarClan under the water.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
