@@ -145,7 +145,7 @@ jobs:
           name: self_updater
           path: resources/self_updater.exe
       - name: Run PyInstaller
-        run: poetry run python3 -m PyInstaller Clangen.spec
+        run: poetry run PyInstaller Clangen.spec
         env:
           IS_RELEASE: ${{ env.IS_RELEASE == 1 }}
       - name: Copy itch.toml
