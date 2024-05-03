@@ -563,7 +563,7 @@ jobs:
   build_macos64:
     # For commits to the original mac build action see:
     # https://github.com/ClanGenOfficial/clangen/blob/29c9e39fed9a09b8de906f5c3b91dc044fe9b9a5/.github/workflows/main.yml
-    runs-on: macos-latest
+    runs-on: macos-13
     if: ${{ !startsWith(github.ref, 'ref/heads/release') }}
     env:
       gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
