@@ -22,7 +22,7 @@ def test():
         for file in files:
             if file.endswith(".json"):
                 path = os.path.join(root, file)
-                with open(path, "r") as file:
+                with open(path, "r", encoding="utf-8") as file:
                     try:
                         contents = file.read()
                     except UnicodeDecodeError as e:

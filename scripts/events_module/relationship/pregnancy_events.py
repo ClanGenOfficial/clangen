@@ -25,7 +25,7 @@ class Pregnancy_Events():
     biggest_family = {}
     
     PREGNANT_STRINGS = None
-    with open(f"resources/dicts/conditions/pregnancy.json", 'r') as read_file:
+    with open(f"resources/dicts/conditions/pregnancy.json", 'r', encoding="utf-8") as read_file:
         PREGNANT_STRINGS = ujson.loads(read_file.read())
    
     @staticmethod

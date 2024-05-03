@@ -11,7 +11,7 @@ class FreshkillPile(unittest.TestCase):
 
     def setUp(self) -> None:
         self.prey_config = None
-        with open("resources/prey_config.json", 'r') as read_file:
+        with open("resources/prey_config.json", 'r', encoding="utf-8") as read_file:
             self.prey_config = ujson.loads(read_file.read())
         self.amount = self.prey_config["start_amount"]
         self.prey_requirement = self.prey_config["prey_requirement"]

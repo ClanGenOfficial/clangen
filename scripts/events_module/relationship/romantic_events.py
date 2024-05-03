@@ -33,11 +33,11 @@ class Romantic_Events():
     resource_directory = "resources/dicts/relationship_events/"
 
     MATE_DICTS = None
-    with open(f"{resource_directory}become_mates.json", 'r') as read_file:
+    with open(f"{resource_directory}become_mates.json", 'r', encoding="utf-8") as read_file:
         MATE_DICTS = ujson.loads(read_file.read())
 
     POLY_MATE_DICTS = None
-    with open(f"{resource_directory}become_mates_poly.json", 'r') as read_file:
+    with open(f"{resource_directory}become_mates_poly.json", 'r', encoding="utf-8") as read_file:
         POLY_MATE_DICTS = ujson.loads(read_file.read())
 
     # ---------------------------------------------------------------------------- #

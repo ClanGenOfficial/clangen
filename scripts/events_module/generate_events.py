@@ -16,11 +16,11 @@ class GenerateEvents:
     loaded_events = {}
     
     INJURY_DISTRIBUTION = None
-    with open(f"resources/dicts/conditions/event_injuries_distribution.json", 'r') as read_file:
+    with open(f"resources/dicts/conditions/event_injuries_distribution.json", 'r', encoding="utf-8") as read_file:
         INJURY_DISTRIBUTION = ujson.loads(read_file.read())
 
     INJURIES = None
-    with open(f"resources/dicts/conditions/injuries.json", 'r') as read_file:
+    with open(f"resources/dicts/conditions/injuries.json", 'r', encoding="utf-8") as read_file:
         INJURIES = ujson.loads(read_file.read())
 
     @staticmethod
@@ -29,6 +29,7 @@ class GenerateEvents:
             with open(
                     file_path,
                     "r",
+                    encoding="utf-8"
             ) as read_file:
                 events = ujson.loads(read_file.read())
         except:
@@ -44,6 +45,7 @@ class GenerateEvents:
             with open(
                     file_path,
                     "r",
+                    encoding="utf-8"
             ) as read_file:
                 events = ujson.loads(read_file.read())
         except:
@@ -58,6 +60,7 @@ class GenerateEvents:
             with open(
                     file_path,
                     "r",
+                    encoding="utf-8"
             ) as read_file:
                 events = ujson.loads(read_file.read())
         except:

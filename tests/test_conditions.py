@@ -67,7 +67,7 @@ class TestsIllnesses(unittest.TestCase):
         resource_directory = "resources/dicts/conditions/"
 
         ILLNESSES = None
-        with open(f"{resource_directory}Illnesses.json", 'r') as read_file:
+        with open(f"{resource_directory}Illnesses.json", 'r', encoding="utf-8") as read_file:
             ILLNESSES = ujson.loads(read_file.read())
         return ILLNESSES
 
@@ -77,7 +77,7 @@ class TestInjury(unittest.TestCase):
         resource_directory = "resources/dicts/conditions/"
 
         INJURIES = None
-        with open(f"{resource_directory}Injuries.json", 'r') as read_file:
+        with open(f"{resource_directory}Injuries.json", 'r', encoding="utf-8") as read_file:
             INJURIES = ujson.loads(read_file.read())
         return INJURIES
     

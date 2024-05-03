@@ -236,7 +236,7 @@ def self_update(
 
     elif platform.system() == 'Linux':
         current_folder = os.getcwd()
-        with tarfile.open("download.tmp", 'r') as tar_ref:
+        with tarfile.open("download.tmp", 'r', encoding="utf-8") as tar_ref:
             tar_ref.extractall('Downloads')
         os.remove("download.tmp")
         shutil.move("Downloads/Clangen", "../clangen_update")

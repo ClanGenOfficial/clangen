@@ -1038,7 +1038,7 @@ class ProfileScreen(Screens):
             return
 
         try:
-            with open(notes_file_path, 'r') as read_file:
+            with open(notes_file_path, 'r', encoding="utf-8") as read_file:
                 rel_data = ujson.loads(read_file.read())
                 self.user_notes = 'Click the check mark to enter notes about your cat!'
                 if str(self.the_cat.ID) in rel_data:

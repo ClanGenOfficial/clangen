@@ -293,14 +293,14 @@ class Thoughts():
         THOUGHTS = []
         # newborns only pull from their status thoughts. this is done for convenience
         if main_cat.age == 'newborn':
-            with open(f"{base_path}{life_dir}{spec_dir}/newborn.json", 'r') as read_file:
+            with open(f"{base_path}{life_dir}{spec_dir}/newborn.json", 'r', encoding="utf-8") as read_file:
                 THOUGHTS = ujson.loads(read_file.read())
             loaded_thoughts = THOUGHTS
         else:
-            with open(f"{base_path}{life_dir}{spec_dir}/{status}.json", 'r') as read_file:
+            with open(f"{base_path}{life_dir}{spec_dir}/{status}.json", 'r', encoding="utf-8") as read_file:
                 THOUGHTS = ujson.loads(read_file.read())
             GENTHOUGHTS = []
-            with open(f"{base_path}{life_dir}{spec_dir}/general.json", 'r') as read_file:
+            with open(f"{base_path}{life_dir}{spec_dir}/general.json", 'r', encoding="utf-8") as read_file:
                 GENTHOUGHTS = ujson.loads(read_file.read())
             loaded_thoughts = THOUGHTS 
             loaded_thoughts += GENTHOUGHTS

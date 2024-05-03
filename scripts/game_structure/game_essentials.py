@@ -153,7 +153,7 @@ class Game():
     }
 
     # Init Settings
-    with open("resources/gamesettings.json", 'r') as read_file:
+    with open("resources/gamesettings.json", 'r', encoding="utf-8") as read_file:
         _settings = ujson.loads(read_file.read())
 
     for setting, values in _settings['__other'].items():
@@ -189,10 +189,10 @@ class Game():
         self.keyspressed = []
         self.switch_screens = False
 
-        with open(f"resources/game_config.json", 'r') as read_file:
+        with open(f"resources/game_config.json", 'r', encoding="utf-8") as read_file:
             self.config = ujson.loads(read_file.read())
 
-        with open(f"resources/prey_config.json", 'r') as read_file:
+        with open(f"resources/prey_config.json", 'r', encoding="utf-8") as read_file:
             self.prey_config = ujson.loads(read_file.read())
 
         if self.config['fun']['april_fools']:
@@ -231,13 +231,13 @@ class Game():
             i = 0
             while True:
                 # Attempt to write to temp file
-                with open(temp_file_path, "w") as write_file:
+                with open(temp_file_path, "w", encoding="utf-8") as write_file:
                     write_file.write(_data)
                     write_file.flush()
                     os.fsync(write_file.fileno())
 
                 # Read the entire file back in
-                with open(temp_file_path, 'r') as read_file:
+                with open(temp_file_path, 'r', encoding="utf-8") as read_file:
                     _read_data = read_file.read()
 
                 if _data != _read_data:
@@ -257,13 +257,13 @@ class Game():
                 return
         else:
             os.makedirs(dir_name, exist_ok=True)
-            with open(path, 'w') as write_file:
+            with open(path, 'w', encoding="utf-8") as write_file:
                 write_file.write(_data)
                 write_file.flush()
                 os.fsync(write_file.fileno())
 
     def read_clans(self):
-        '''with open(get_save_dir() + '/clanlist.txt', 'r') as read_file:
+        '''with open(get_save_dir() + '/clanlist.txt', 'r', encoding="utf-8") as read_file:
             clan_list = read_file.read()
             if_clans = len(clan_list)
         if if_clans > 0:
@@ -291,7 +291,7 @@ class Game():
         # so we can load it automatically
 
         if os.path.exists(get_save_dir() + '/clanlist.txt'):
-            with open(get_save_dir() + '/clanlist.txt', 'r') as f:
+            with open(get_save_dir() + '/clanlist.txt', 'r', encoding="utf-8") as f:
                 loaded_clan = f.read().strip().splitlines()
                 if loaded_clan:
                     loaded_clan = loaded_clan[0]
@@ -302,7 +302,7 @@ class Game():
                 self.safe_save(get_save_dir() +
                                '/currentclan.txt', loaded_clan)
         elif os.path.exists(get_save_dir() + '/currentclan.txt'):
-            with open(get_save_dir() + '/currentclan.txt', 'r') as f:
+            with open(get_save_dir() + '/currentclan.txt', 'r', encoding="utf-8") as f:
                 loaded_clan = f.read().strip()
         else:
             loaded_clan = None
@@ -328,7 +328,7 @@ class Game():
                 clans.append(f"{clan_name}\n")
 
         if clans:
-            with open(get_save_dir() + '/clanlist.txt', 'w') as f:
+            with open(get_save_dir() + '/clanlist.txt', 'w', encoding="utf-8") as f:
                 f.writelines(clans)'''
         if loaded_clan:
             if os.path.exists(get_save_dir() + '/clanlist.txt'):
@@ -351,7 +351,7 @@ class Game():
         """ Load settings that user has saved from previous use """
         
         try:
-            with open(get_save_dir() + '/settings.json', 'r') as read_file:
+            with open(get_save_dir() + '/settings.json', 'r', encoding="utf-8") as read_file:
                 settings_data = ujson.loads(read_file.read())
         except FileNotFoundError:
             return
@@ -368,7 +368,7 @@ class Game():
         # add translation information here
         if os.path.exists('languages/' + game.settings['language'] + '.txt'):
             with open('languages/' + game.settings['language'] + '.txt',
-                      'r') as read_file:
+                      'r', encoding="utf-8") as read_file:
                 raw_language = read_file.read()
             game.language = literal_eval(raw_language)
 
@@ -482,14 +482,14 @@ class Game():
 
         # Save the copies, flush the file.
         if game.clan.clan_settings["save_faded_copy"]:
-            with open(get_save_dir() + '/' + clanname + '/faded_cats_info_copy.txt', 'a') as write_file:
+            with open(get_save_dir() + '/' + clanname + '/faded_cats_info_copy.txt', 'a', encoding='utf-8') as write_file:
 
                 if not os.path.exists(get_save_dir() + '/' + clanname + '/faded_cats_info_copy.txt'):
                     # Create the file if it doesn't exist
-                    with open(get_save_dir() + '/' + clanname + '/faded_cats_info_copy.txt', 'w') as create_file:
+                    with open(get_save_dir() + '/' + clanname + '/faded_cats_info_copy.txt', 'w', encoding="utf-8") as create_file:
                         pass
 
-                with open(get_save_dir() + '/' + clanname + '/faded_cats_info_copy.txt', 'a') as write_file:
+                with open(get_save_dir() + '/' + clanname + '/faded_cats_info_copy.txt', 'a', encoding='utf-8') as write_file:
                     write_file.write(copy_of_info)
 
                     write_file.flush()
@@ -509,7 +509,7 @@ class Game():
         """In order to siblings to work correctly, and not to lose relation info on fading, we have to keep track of
         both active and faded cat's faded offpsring. This will add a faded offspring to a faded parents file. """
         try:
-            with open(get_save_dir() + '/' + self.clan.name + '/faded_cats/' + parent + ".json", 'r') as read_file:
+            with open(get_save_dir() + '/' + self.clan.name + '/faded_cats/' + parent + ".json", 'r', encoding="utf-8") as read_file:
                 cat_info = ujson.loads(read_file.read())
         except:
             print("ERROR: loading faded cat")
@@ -531,7 +531,7 @@ class Game():
         events_path = f'{get_save_dir()}/{clanname}/events.json'
         events_list = []
         try:
-            with open(events_path, 'r') as f:
+            with open(events_path, 'r', encoding="utf-8") as f:
                 events_list = ujson.loads(f.read())
             for event_dict in events_list:
                 event_obj = Single_Event.from_dict(event_dict)
@@ -576,7 +576,7 @@ game = Game()
 
 if not os.path.exists(get_save_dir() + '/settings.txt'):
     os.makedirs(get_save_dir(), exist_ok=True)
-    with open(get_save_dir() + '/settings.txt', 'w') as write_file:
+    with open(get_save_dir() + '/settings.txt', 'w', encoding="utf-8") as write_file:
         write_file.write('')
 game.load_settings()
 

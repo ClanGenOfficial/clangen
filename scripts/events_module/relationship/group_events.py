@@ -30,17 +30,17 @@ class Group_Events():
             continue
         file_path = os.path.join(base_path, cat_amount, "neutral.json")
         GROUP_INTERACTION_MASTER_DICT[cat_amount] = {}
-        with open(file_path, 'r') as read_file:
+        with open(file_path, 'r', encoding="utf-8") as read_file:
             welcome_list = ujson.load(read_file)
             GROUP_INTERACTION_MASTER_DICT[cat_amount]["neutral"] = create_group_interaction(welcome_list)
         
         file_path = os.path.join(base_path, cat_amount, "positive.json")
-        with open(file_path, 'r') as read_file:
+        with open(file_path, 'r', encoding="utf-8") as read_file:
             welcome_list = ujson.load(read_file)
             GROUP_INTERACTION_MASTER_DICT[cat_amount]["positive"] = create_group_interaction(welcome_list)
 
         file_path = os.path.join(base_path, cat_amount, "negative.json")
-        with open(file_path, 'r') as read_file:
+        with open(file_path, 'r', encoding="utf-8") as read_file:
             welcome_list = ujson.load(read_file)
             GROUP_INTERACTION_MASTER_DICT[cat_amount]["negative"] = create_group_interaction(welcome_list)
             

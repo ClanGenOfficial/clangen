@@ -43,7 +43,7 @@ def history_regex_helper(m):
 
 def reformat_history_text(path):
     try:
-        with open(path, "r") as read_file:
+        with open(path, "r", encoding="utf-8") as read_file:
             patrols = read_file.read()
             patrol_ujson = ujson.loads(patrols)
             
@@ -59,7 +59,7 @@ def reformat_history_text(path):
 
     patrols = re.sub(r'"history_text" ?\: ?\[(.*?)\]', history_regex_helper, patrols, flags=re.DOTALL)
     
-    with open(path, "w") as write_file:
+    with open(path, "w", encoding="utf-8") as write_file:
             write_file.write(patrols)
                     
     
@@ -108,7 +108,7 @@ def patrol_success_regex_helper(m):
 
 def reformat_success_text(path):
     try:
-        with open(path, "r") as read_file:
+        with open(path, "r", encoding="utf-8") as read_file:
             patrols = read_file.read()
             patrol_ujson = ujson.loads(patrols)
             
@@ -124,7 +124,7 @@ def reformat_success_text(path):
 
     patrols = re.sub(r'"success_text" ?\: ?\[(.*?)\]', patrol_success_regex_helper, patrols, flags=re.DOTALL)
     
-    with open(path, "w") as write_file:
+    with open(path, "w", encoding="utf-8") as write_file:
             write_file.write(patrols)
                     
 root_dir = "../patrols"

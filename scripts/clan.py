@@ -72,7 +72,7 @@ class Clan():
         'Leaf-bare',
     ]
 
-    with open("resources/placements.json", 'r') as read_file:
+    with open("resources/placements.json", 'r', encoding="utf-8") as read_file:
         layouts = ujson.loads(read_file.read())
     
     age = 0
@@ -122,7 +122,7 @@ class Clan():
         # Init Settings
         self.clan_settings = {}
         self.setting_lists = {}
-        with open("resources/clansettings.json", 'r') as read_file:
+        with open("resources/clansettings.json", 'r', encoding="utf-8") as read_file:
             _settings = ujson.loads(read_file.read())
 
         for setting, values in _settings['__other'].items():

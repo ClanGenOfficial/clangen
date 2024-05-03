@@ -19,11 +19,11 @@ def get_patrol_details(path):
     patrols = None
 
     if path == ".\explicit_patrol_art.json":
-        with open(path, "r") as read_file:
+        with open(path, "r", encoding="utf-8") as read_file:
             EXPLICIT_PATROL_ART = ujson.loads(read_file.read())
     else:
         try:
-            with open(path, "r") as read_file:
+            with open(path, "r", encoding="utf-8") as read_file:
                 patrols = ujson.loads(read_file.read())
         except:
             print(f'Something went wrong with {path}')

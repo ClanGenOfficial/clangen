@@ -870,7 +870,7 @@ class UpdateAvailablePopup(UIWindow):
                 self.box_unchecked.hide()
                 self.box_checked.enable()
                 self.box_checked.show()
-                with open(f"{get_cache_dir()}/suppress_update_popup", 'w') as write_file:
+                with open(f"{get_cache_dir()}/suppress_update_popup", 'w', encoding="utf-8") as write_file:
                     write_file.write(get_latest_version_number())
             elif event.ui_element == self.box_checked:
                 self.box_checked.disable()
