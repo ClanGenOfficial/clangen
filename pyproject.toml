@@ -13,7 +13,7 @@ repository = "https://github.com/ClanGenOfficial/clangen"
 keywords = ["warriorcats", "fanedit", "game", "pygame"]
 
 [tool.poetry.dependencies]
-python = ">=3.7.2,<3.12"
+python = ">=3.8,<3.13"
 pygame-ce = "^2.2.1"
 ujson = "^5.7.0"
 pygame-gui = "0.6.9"
@@ -22,7 +22,6 @@ pypresence = {version = "^4.2.1", optional = true}
 pgpy = "^0.6.0"
 requests = "^2.28.2"
 strenum = "^0.4.10"
-pyinstaller = "5.12.0"
 
 
 [tool.poetry.group.test]
@@ -33,7 +32,7 @@ pylint = "^2.17.3"
 [tool.poetry.group.build]
 optional = true
 [tool.poetry.group.build.dependencies]
-pyinstaller = "^5.10.1"
+pyinstaller = "^6.6.0"
 pillow = "^9.5.0"
 setuptools = "^67.7.2"
 wheel = "^0.40.0"

@@ -14,7 +14,7 @@
         },
         "weight": 20,
         "intro_text": "p_l suggests to r_c that it is the perfect weather to go for a swim in the ocean together.",
-        "decline_text": "r_c isn't convinced, and suggests they should probably focus on the patrol instead.",
+        "decline_text": "r_c isn't convinced and suggests they should probably focus on the patrol instead.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -32,7 +32,7 @@
                 ]
             },
             {
-                "text": "Silence meets {PRONOUN/p_l/poss} question, and just as p_l is about to turn and ask again, r_c shoves {PRONOUN/p_l/object} bodily into the water. Spluttering from the cold saltwater, p_l finds it quite difficult to scowl as though {PRONOUN/p_l/subject} {VERB/p_l/mean/means} it, captivated by the sound of r_c's joyous laughter, the sunlight catching on {PRONOUN/r_c/poss} pelt in just the right way.",
+                "text": "Silence meets {PRONOUN/p_l/poss} question, and just as p_l is about to turn and ask again, r_c shoves {PRONOUN/p_l/object} into the water. Spluttering from the cold saltwater, p_l finds it quite difficult to scowl as though {PRONOUN/p_l/subject} {VERB/p_l/mean/means} it, captivated by the sound of r_c's joyous laughter, the sunlight catching on {PRONOUN/r_c/poss} pelt in just the right way.",
                 "exp": 5,
                 "weight": 5,
                 "relationships": [
@@ -92,7 +92,7 @@
             "all apprentices": [2, 2]
         },
         "weight": 20,
-        "intro_text": "app1 notices app2's absence, and follows {PRONOUN/app2/poss} unobscured trail to the cliff's edge. What in the seven seas is app2 doing out here? There's an eagle nest, app2 explains, {PRONOUN/app2/poss} tail swooping up over {PRONOUN/app2/poss} back to point, here, look. The chicks are trying to fly!",
+        "intro_text": "app1 notices app2's absence and follows {PRONOUN/app2/poss} unobscured trail to the cliff's edge. What in the seven seas is app2 doing out here? There's an eagle nest, app2 explains, {PRONOUN/app2/poss} tail swooping up over {PRONOUN/app2/poss} back to point - look, the chicks are trying to fly!",
         "decline_text": "That's lovely, but, like, can app2 watch from a place that isn't a damned cliff edge?",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -118,7 +118,7 @@
                 ]
             },
             {
-                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} edge over beside app2, both apprentices staring down at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!!",
+                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} {VERB/app1/edge/edges} over beside app2, both apprentices staring down at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -141,12 +141,12 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It's not app1's thing, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} happy to bask a couple tail lengths away until app2 is done eagle watching.",
+                "text": "It's not app1's thing, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} happy to bask a couple tail-lengths away until app2 is done eagle watching.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices flinch backwards with yelps and yowls, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} {PRONOUN/s_c/self} losing {PRONOUN/s_c/poss} grip, {PRONOUN/s_c/poss} heart jumping with terror as sudden pain sparks down {PRONOUN/s_c/poss} flank. The other apprentice digs fangs into s_c's side, saving {PRONOUN/s_c/poss} life, if not {PRONOUN/s_c/poss} pelt.",
+                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices flinch backwards with yelps and yowls, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} {PRONOUN/s_c/self} losing {PRONOUN/s_c/poss} grip. {PRONOUN/s_c/poss/CAP} heart jumps with terror as sudden pain sparks down {PRONOUN/s_c/poss} flank. The other apprentice digs fangs into s_c's side, saving {PRONOUN/s_c/poss} life, if not {PRONOUN/s_c/poss} pelt.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -185,7 +185,7 @@
             "all apprentices": [2, 2]
         },
         "weight": 20,
-        "intro_text": "app1 notices app2's absence, and follows {PRONOUN/app2/poss} unobscured trail to the cliff's edge. What in the seven seas is app2 doing out here? There's an eagle nest, app2 explains, {PRONOUN/app2/poss} tail swooping up over {PRONOUN/app2/poss} back to point, here, look. The chicks are trying to fly!",
+        "intro_text": "app1 notices app2's absence and follows {PRONOUN/app2/poss} unobscured trail to the cliff's edge. What in the seven seas is app2 doing out here? There's an eagle nest, app2 explains, {PRONOUN/app2/poss} tail swooping up over {PRONOUN/app2/poss} back to point - look, the chicks are trying to fly!",
         "decline_text": "That's lovely, but, like, can app2 watch from a place that isn't a damned cliff edge?",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -211,7 +211,7 @@
                 ]
             },
             {
-                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} edge over beside app2, both apprentices staring down at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!!",
+                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} edge over beside app2, both apprentices staring down at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -234,12 +234,12 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It's not app1's thing, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} happy to bask a couple tail lengths away until app2 is done eagle watching.",
+                "text": "It's not app1's thing, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} happy to bask a couple tail-lengths away until app2 is done eagle watching.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices flinch backwards with yelps and yowls, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} {PRONOUN/s_c/self} losing {PRONOUN/s_c/poss} grip, {PRONOUN/s_c/poss} heart jumping with terror as sudden pain sparks down {PRONOUN/s_c/poss} flank. The other apprentice digs fangs into s_c's side, saving {PRONOUN/s_c/poss} life, if not {PRONOUN/s_c/poss} pelt.",
+                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices flinch backwards with yelps and yowls, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} {PRONOUN/s_c/self} losing {PRONOUN/s_c/poss} grip. {PRONOUN/s_c/poss/CAP} heart jumps with terror as sudden pain sparks down {PRONOUN/s_c/poss} flank. The other apprentice digs fangs into s_c's side, saving {PRONOUN/s_c/poss} life, if not {PRONOUN/s_c/poss} pelt.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -283,5 +283,152 @@
                 }
             }
         ]
+    },
+    {
+        "patrol_id": "bch_train_greenleaf_twolegmigration_lorelocked1",
+        "biome": ["beach"],
+        "season": ["greenleaf"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_bord_story",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["LORE,1"],
+        "intro_text": "p_l leads the patrol out to a promontory of rock, pointing out the Twoleg monsters crowding the sandy shoreline below as they twinkle in the sunlight.",
+        "decline_text": "Clearly there'll be no using this part of their territory today then. The patrol goes to report this back to camp.",
+        "success_outcomes": [
+                {
+                    "text": "This is the history p_l is here to teach - every greenleaf, the Twolegs come to this beach, a great migration in their monsters. They swim in this bay, and occasionally the bays to either side, but no more than that, a constrained invasion. Leave them to their rituals. c_n will return to this beach when the seasons change.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "bch_hunt_twolegsobject",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic", "trust"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 10
+                        }
+                        ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "The monsters unnerve the patrol, who don't want to stick around to hear p_l's lesson. p_l disapproves, but lets the patrol end early.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["comfort", "trust"],
+                            "amount": -2
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": -5
+                        }
+                        ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "bch_train_greenleaf_dryhot1",
+        "biome": ["beach"],
+        "season": ["greenleaf"],
+        "types": ["training"],
+        "tags": ["romance"],
+        "patrol_art": "fst_hunt_heat",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [2, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "relationship_constraint": ["not_mates"],
+        "intro_text": "This is just oppressive. The sand burns the patrols paws as they dart from one refuge of dune-bursh to another, the distant training grounds they were supposed to go to looking more and more out of reach.",
+        "decline_text": "Time to go back home and wait it out.",
+        "success_outcomes": [
+                {
+                    "text": "They all stagger towards the nearest rockpool and flop into it, not hunting, purely there for the water and damp coats. r_c swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/laugh/laughes}, welcoming it and returning the favour. There's nothing like swimming in greenleaf, and the patrol devolves into a waterfight.",
+                    "exp": 20,
+                    "weight": 10,
+                    "art": "gen_train_soggykitty_happy_warrior",
+                    "relationships": [
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic", "comfort"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["r_c"],
+                            "mutual": true,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                },
+                {
+                    "text": "They all stagger towards the nearest rockpool and flop into it, not hunting, purely there for the water and damp coats. r_c swipes water towards p_l and PRONOUN/p_l/subject} {VERB/p_l/laugh/laughes}, welcoming it and returning the favour, batting back in mock spashy fight at the rest of the patrol fades away, just the two of them in their own little world",
+                    "exp": 20,
+                    "weight": 10,
+                    "art": "fst_train_newleafmatesonadates_70locked1",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["r_c"],
+                            "mutual": true,
+                            "values": ["platonic", "comfort", "romantic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["r_c"],
+                            "mutual": true,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "It's a long walk home, and not a pleasent one. They probably should have drunk more water before going out to train. Or not gone out at all.",
+                    "exp": 0,
+                    "weight": 20,
+                    "injury": [
+                        {
+                            "cats": ["multi"],
+                            "injuries": ["dehydrated"],
+                            "scars": []
+                        }
+                    ],
+                    "history_text": {
+                        "reg_death": "m_c got dehydrated training under the hot greenleaf sun, and it eventually sapped {PRONOUN/m_c/subject} life from {PRONOUN/m_c/object}.",
+                        "lead_death": "got dehydrated training under the hot greenleaf sun, and it eventually sapped {PRONOUN/m_c/subject} life from {PRONOUN/m_c/object}"
+                    }
+                }
+            ]
     }
 ]

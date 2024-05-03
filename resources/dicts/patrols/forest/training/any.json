@@ -69,7 +69,7 @@
         "season": ["Any"],
         "types": ["training"],
         "tags": [],
-        "patrol_art": "train_general_intro",
+        "patrol_art": "fst_train_sett",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -230,7 +230,7 @@
         "season": ["Any"],
         "types": ["training"],
         "tags": [],
-        "patrol_art": "train_general_intro",
+        "patrol_art": "fst_train_sett",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -402,7 +402,8 @@
                         "values": ["platonic", "comfort", "trust"],
                         "amount": 5
                     }
-                ]
+                ],
+                "art": "fst_train_stuck_outcome"
             },
             {
                 "text": "p_l tugs on just the right branch, lifting the pile off of r_c for long enough for the other cat to scramble free.",
@@ -416,7 +417,8 @@
                         "values": ["platonic", "comfort", "trust"],
                         "amount": 5
                     }
-                ]
+                ],
+                "art": "fst_train_stuck_outcome"
             },
             {
                 "text": "Without letting themselves panic, s_c carefully assesses the branches trapping their Clanmate, then throws their weight onto one. It acts as a lever, forcing the entire pile up and allowing r_c to scrabble free, shaken but grateful.",
@@ -431,7 +433,8 @@
                         "values": ["platonic", "comfort", "trust"],
                         "amount": 5
                     }
-                ]
+                ],
+                "art": "fst_train_stuck_outcome"
             },
             {
                 "text": "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as the patrol carefully works to remove the branches pinning {PRONOUN/r_c/object} down. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation.",
@@ -456,7 +459,8 @@
                         "values": ["platonic", "comfort", "trust"],
                         "amount": 5
                     }
-                ]
+                ],
+                "art": "fst_train_stuck_outcome"
             }
         ],
         "fail_outcomes": [
@@ -472,7 +476,8 @@
                         "values": ["platonic", "comfort", "trust"],
                         "amount": -5
                     }
-                ]
+                ],
+                "art": "fst_train_stuck_outcome"
             },
             {
                 "text": "As s_c rarely has patience for other cats, r_c tells them harshly that they don't have time for some idiot who got stuck, making s_c resentful as they pull themselves out from under the branches.",
@@ -496,7 +501,8 @@
                         "values": ["platonic", "comfort", "trust"],
                         "amount": -5
                     }
-                ]
+                ],
+                "art": "fst_train_stuck_outcome"
             },
             {
                 "text": "Hurt and wheezing, r_c hears the patrol panicking as they drift to StarClan.",
@@ -516,7 +522,8 @@
                         "values": ["platonic", "comfort", "trust"],
                         "amount": -5
                     }
-                ]
+                ],
+                "art": "fst_train_stuck_outcome"
             },
             {
                 "text": "The patrol eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured.",
@@ -542,7 +549,8 @@
                         "values": ["platonic", "comfort", "trust"],
                         "amount": -5
                     }
-                ]
+                ],
+                "art": "fst_train_stuck_outcome"
             },
             {
                 "text": "The patrol can't help s_c in time, and as s_c starts to drift off to StarClan, the eyes of r_c glint malevolently. Was this...? s_c doesn't have a chance to finish their last thought.",
@@ -572,7 +580,8 @@
                         "values": ["platonic", "comfort", "trust"],
                         "amount": -5
                     }
-                ]
+                ],
+                "art": "fst_train_stuck_outcome"
             },
             {
                 "text": "Even though r_c made it out, they swear someone pushed them, and blame s_c. s_c denies it and says they should get r_c back to camp to get their injury looked at.",
@@ -608,7 +617,8 @@
                         "values": ["platonic", "comfort", "trust"],
                         "amount": -5
                     }
-                ]
+                ],
+                "art": "gen_warrior_crouching"
             }
         ]
     },
@@ -639,7 +649,8 @@
                         "values": ["platonic", "comfort", "trust"],
                         "amount": 5
                     }
-                ]
+                ],
+                "art": "fst_train_stuck_outcome"
             },
             {
                 "text": "p_l tugs on just the right branch, lifting the pile off of r_c for long enough for the other cat to scramble free.",
@@ -653,7 +664,8 @@
                         "values": ["platonic", "comfort", "trust"],
                         "amount": 5
                     }
-                ]
+                ],
+                "art": "fst_train_stuck_outcome"
             },
             {
                 "text": "Without letting themselves panic, s_c carefully assesses the branches trapping their Clanmate, then throws their weight onto one. It acts as a lever, forcing the entire pile up and allowing r_c to scrabble free, shaken but grateful.",
@@ -668,7 +680,8 @@
                         "values": ["platonic", "comfort", "trust"],
                         "amount": 5
                     }
-                ]
+                ],
+                "art": "fst_train_stuck_outcome"
             },
             {
                 "text": "Creeping in as close as possible, s_c purrs to r_c, keeping them calm as they carefully dig down to them. r_c blinks up at them, holding on to their presence in the scary situation.",
@@ -694,7 +707,8 @@
                         "values": ["platonic", "comfort", "trust"],
                         "amount": 5
                     }
-                ]
+                ],
+                "art": "fst_train_stuck_outcome"
             }
         ],
         "fail_outcomes": [
@@ -710,7 +724,8 @@
                         "values": ["platonic", "comfort", "trust"],
                         "amount": -5
                     }
-                ]
+                ],
+                "art": "fst_train_stuck_outcome"
             },
             {
                 "text": "As s_c rarely has patience for other cats, r_c tells them harshly that they don't have time for some idiot who got stuck, making s_c resentful as they pull themselves out from under the branches.",
@@ -735,7 +750,8 @@
                         "values": ["platonic", "comfort", "trust"],
                         "amount": -5
                     }
-                ]
+                ],
+                "art": "fst_train_stuck_outcome"
             },
             {
                 "text": "Hurt and wheezing, r_c hears p_l panicking as they drift to StarClan.",
@@ -755,7 +771,8 @@
                         "values": ["platonic", "comfort", "trust"],
                         "amount": -5
                     }
-                ]
+                ],
+                "art": "fst_train_stuck_outcome"
             },
             {
                 "text": "p_l eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured.",
@@ -781,7 +798,8 @@
                         "values": ["platonic", "comfort", "trust"],
                         "amount": -5
                     }
-                ]
+                ],
+                "art": "fst_train_stuck_outcome"
             }
         ]
     },
@@ -812,7 +830,8 @@
                         "values": ["romantic", "comfort", "trust"],
                         "amount": 5
                     }
-                ]
+                ],
+                "art": "fst_train_stuck_outcome"
             },
             {
                 "text": "p_l tugs on just the right branch, lifting the pile off of r_c for long enough for the other cat to scramble free. r_c admires how smart p_l is.",
@@ -826,7 +845,8 @@
                         "values": ["romantic", "comfort", "trust"],
                         "amount": 5
                     }
-                ]
+                ],
+                "art": "fst_train_stuck_outcome"
             },
             {
                 "text": "Without letting themselves panic, s_c carefully assesses the branches trapping their Clanmate, then throws their weight onto one. It acts as a lever, forcing the entire pile up and allowing r_c to scrabble free, shaken but grateful. r_c is impressed by s_c's wits.",
@@ -841,7 +861,8 @@
                         "values": ["romantic", "comfort", "trust"],
                         "amount": 5
                     }
-                ]
+                ],
+                "art": "fst_train_stuck_outcome"
             },
             {
                 "text": "Creeping in as close as possible, s_c purrs to r_c, keeping them calm as they carefully dig down to them. r_c blinks up at them, holding on to their presence in the scary situation.",
@@ -867,7 +888,8 @@
                         "values": ["romantic", "comfort", "trust"],
                         "amount": 5
                     }
-                ]
+                ],
+                "art": "fst_train_stuck_outcome"
             }
         ],
         "fail_outcomes": [
@@ -883,7 +905,8 @@
                         "values": ["romantic", "comfort", "trust"],
                         "amount": -5
                     }
-                ]
+                ],
+                "art": "fst_train_stuck_outcome"
             },
             {
                 "text": "As s_c rarely has patience for other cats, r_c tells them harshly that they don't have time for some idiot who got stuck, making s_c resentful as they pull themselves out from under the branches.",
@@ -908,7 +931,8 @@
                         "values": ["romantic", "comfort", "trust"],
                         "amount": -5
                     }
-                ]
+                ],
+                "art": "fst_train_stuck_outcome"
             },
             {
                 "text": "Hurt and wheezing, r_c hears p_l panicking as they drift to StarClan.",
@@ -928,7 +952,8 @@
                         "values": ["romantic", "comfort", "trust"],
                         "amount": -5
                     }
-                ]
+                ],
+                "art": "fst_train_stuck_outcome"
             },
             {
                 "text": "p_l eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured.",
@@ -954,7 +979,8 @@
                         "values": ["romantic", "comfort", "trust"],
                         "amount": -5
                     }
-                ]
+                ],
+                "art": "fst_train_stuck_outcome"
             }
         ]
     },
@@ -976,20 +1002,23 @@
             {
                 "text": "r_c spends the entire day carefully working their way free and gets nothing else done, but at least they're unharmed.",
                 "exp": 20,
-                "weight": 20
+                "weight": 20,
+                "art": "fst_train_stuck_outcome"
             },
             {
                 "text": "s_c takes a breath and tries to remain calm. Looking around to try to find a way out, they spot a place where all the branches are seemingly resting on one. With a surge of energy, they crash their way out through the weak point, twig-covered but free.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["CLEVER,1"]
+                "stat_skill": ["CLEVER,1"],
+                "art": "fst_train_stuck_outcome"
             }
         ],
         "fail_outcomes": [
             {
                 "text": "Pinned under the branches, r_c yowls until their voice is hoarse and their throat is sore, and thankfully, a patrol passes by after a few hours and frees their hapless Clanmate.",
                 "exp": 0,
-                "weight": 20
+                "weight": 20,
+                "art": "fst_train_stuck_outcome"
             },
             {
                 "text": "Hurt and wheezing, r_c does their best to hang on and wait for a patrol, but they succumb to their injuries and drift to StarClan alone.",
@@ -1000,7 +1029,8 @@
                     "scar": "m_c carries a scar from being trapped on patrol.",
                     "reg_death": "m_c tragically died after being trapped on patrol.",
                     "lead_death": "died after being trapped on patrol"
-                }
+                },
+                "art": "fst_train_stuck_outcome"
             },
             {
                 "text": "r_c eventually manages to pull themselves free, but they're battered and injured. It's all they can do to find a bush to shelter under through the night in the cold forest until a patrol finds them the next morning and helps them to the medicine den.",
@@ -1017,7 +1047,8 @@
                     "scar": "m_c carries a scar from being trapped on patrol.",
                     "reg_death": "m_c tragically died after being trapped on patrol.",
                     "lead_death": "died after being trapped on patrol"
-                }
+                },
+                "art": "fst_train_stuck_outcome"
             }
         ]
     },
@@ -1288,7 +1319,7 @@
         "season": ["Any"],
         "types": ["training"],
         "tags": [],
-        "patrol_art": "train_general_intro",
+        "patrol_art": "fst_train_porcupine",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -1396,7 +1427,7 @@
         "season": ["Any"],
         "types": ["training"],
         "tags": [],
-        "patrol_art": "train_general_intro",
+        "patrol_art": "fst_train_porcupine",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -1504,7 +1535,7 @@
         "season": ["Any"],
         "types": ["training"],
         "tags": [],
-        "patrol_art": "train_general_intro",
+        "patrol_art": "fst_train_porcupine",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -1613,7 +1644,7 @@
         "season": ["Any"],
         "types": ["training"],
         "tags": [],
-        "patrol_art": "train_general_intro",
+        "patrol_art": "fst_train_porcupine",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -1722,7 +1753,7 @@
         "season": ["Any"],
         "types": ["training"],
         "tags": ["rom_two_apps", "romantic"],
-        "patrol_art": "train_general_intro",
+        "patrol_art": "fst_train_willow1",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -2238,6 +2269,63 @@
                 "weight": 20
             }
         ]
+    },
+    {
+        "patrol_id": "fst_train_wareprey_lorelocked1",
+        "biome": ["forest"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 3,
+        "min_max_status": {
+           "normal adult": [1, 5],
+           "apprentice":[1, 5]
+            },
+        "weight": 40,
+        "chance_of_success": 50,
+        "pl_skill_constraint": ["LORE,1"],
+        "intro_text": "app1 watches the shrew scurry below {PRONOUN/app1/object}, lining up a flawless pounce from the tree branches. {PRONOUN/app1/subject/CAP} {VERB/app1/purr/purrs} with amusement towards {PRONOUN/app1/poss} hapless prey.",
+        "decline_text": "This is too easy - r_c declines to chase it, wanting harder prey.",
+        "success_outcomes": [
+                {
+                    "text": "p_l waves a tail across app1's path, stopping {PRONOUN/app1/object} with a stern stare. app1 isn't just being disrespectful - {PRONOUN/app1/subject}{VERB/app1/'re/'s} being stupid. That's a hero's shrew, it'd be able to hold ten of app1 on its spine without sweating, and inedible besides, like all shrews. app1 nods, and apologies. Every hunt deserves respect.",
+                    "exp": 30,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": false,
+                            "values": ["comfort", "trust", "respect", "dislike"],
+                            "amount": 10
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "app1 leaps from on high, claws extended - but when {PRONOUN/app1/subject} {VERB/app1/land/lands} squarely on the shrew, it doesn't even flinch, and up close this prey smells foul and wretched. Maybe this wasn't the best idea...",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": true,
+                            "values": ["respect", "trust"],
+                            "amount": -10
+                        }
+                    ]
+                }
+            ]
     }
-    
 ]

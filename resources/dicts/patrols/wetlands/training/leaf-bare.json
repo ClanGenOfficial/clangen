@@ -1,1 +1,60 @@
-[]
+[
+    {
+        "patrol_id": "wtlnd_train_leafbare_serpentmyth_storylocked1",
+        "biome": ["wetlands"],
+        "season": ["leaf-bare"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_med_vision",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 6],
+           "apprentice": [2, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1"],
+        "intro_text": "p_l takes the apprentices out at dusk, setting the atmosphere for a fun story.",
+        "decline_text": "They're stopped - the camp has need of a little more work, this will have to wait for another night.",
+        "success_outcomes": [
+            {
+                    "text": "On the brightest night of leafbare, under a full, piercing, blue moon, a great serpent will rise from the centre of the swamp, banishing fangs dripping poison and a scaled pelt thicker than a monster. The apprentices shiver as p_l builds the image. It will rear up, higher than the tallest tree, no, twice as high, and <i>bite</i> the moon, swallowing it whole!",
+                    "exp": 40,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        }
+                        ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "The apprentices are inattentive and twitchy. p_l lets them go before {PRONOUN/p_l/subject} really start the story. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} not going to waste {PRONOUN/p_l/poss} time on an unappreciative audience.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["trust", "respect", "platonic"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
+    }
+]

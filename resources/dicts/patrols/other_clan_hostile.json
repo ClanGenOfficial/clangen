@@ -90,7 +90,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Angry at the insult to {PRONOUN/p_l/poss} Clan, p_l throws {PRONOUN/p_l/self} at the enemy patrol. {PRONOUN/s_c/subject/CAP} {VERB/s_c/drive/drives} the o_c_n patrol away from the border.",
+                "text": "Angry at the insult to {PRONOUN/p_l/poss} Clan, p_l throws {PRONOUN/p_l/self} at the enemy patrol. {PRONOUN/p_l/subject/CAP} {VERB/p_l/drive/drives} the o_c_n patrol away from the border.",
                 "exp": 10,
                 "weight": 20,
                 "other_clan_rep": -2
@@ -108,7 +108,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As your patrol is checking the border markings, a o_c_n patrol appears and begins jeering at the p_l.",
+        "intro_text": "As your patrol is checking the border markings, a o_c_n patrol appears and begins jeering at p_l.",
         "decline_text": "Your patrol decides this isn't worthwhile and backs off from the other patrol, leaving the area.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -227,7 +227,7 @@
         "season": ["Any"],
         "types": ["hunting", "border"],
         "tags": ["other_clan"],
-        "patrol_art": "gen_bord_otherclan_hostile",
+        "patrol_art": "gen_bord_otherclan3",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -452,6 +452,7 @@
                 "text": "s_c is relentless in tracking the scent and at the end of it finds a o_c_n apprentice. The young cat has a freshly killed rabbit in their mouth and s_c yowls in anger, not hesitating before attacking the apprentice. The o_c_n cat is driven off of your territory and the rabbit brought back to camp for your own cats.",
                 "exp": 0,
                 "weight": 20,
+                "prey": ["small"],
                 "stat_trait": ["bloodthirsty", "cold", "fierce", "strict", "vengeful"],
                 "other_clan_rep": -1
             },
@@ -1062,6 +1063,13 @@
                     "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
                 },
                 "other_clan_rep": -1
+            },
+            {
+                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c looses a life.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["r_c"],
+                "other_clan_rep": -6
             }
         ]
     },
@@ -1324,6 +1332,13 @@
                     "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
                 },
                 "other_clan_rep": -1
+            },
+            {
+                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c looses a life.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["r_c"],
+                "other_clan_rep": -6
             }
         ]
     },
@@ -1789,6 +1804,13 @@
                     "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
                 },
                 "other_clan_rep": -1
+            },
+            {
+                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c looses a life.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["r_c"],
+                "other_clan_rep": -6
             }
         ]
     },
@@ -2050,6 +2072,13 @@
                     "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
                 },
                 "other_clan_rep": -1
+            },
+            {
+                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c looses a life.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["r_c"],
+                "other_clan_rep": -6
             }
         ]
     },
@@ -2515,6 +2544,13 @@
                     "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
                 },
                 "other_clan_rep": -1
+            },
+            {
+                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c looses a life.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["r_c"],
+                "other_clan_rep": -6
             }
         ]
     },
@@ -2777,6 +2813,13 @@
                     "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
                 },
                 "other_clan_rep": -1
+            },
+            {
+                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c looses a life.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["r_c"],
+                "other_clan_rep": -6
             }
         ]
     },
@@ -3242,6 +3285,13 @@
                     "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
                 },
                 "other_clan_rep": -1
+            },
+            {
+                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c looses a life.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["r_c"],
+                "other_clan_rep": -6
             }
         ]
     },
@@ -3504,6 +3554,13 @@
                     "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
                 },
                 "other_clan_rep": -1
+            },
+            {
+                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c looses a life.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["r_c"],
+                "other_clan_rep": -6
             }
         ]
     },
@@ -3513,7 +3570,7 @@
         "season": ["Any"],
         "types": ["border"],
         "tags": ["other_clan", "distrust", "disrespect"],
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "gen_bord_scent_hostile_dislikelocked1",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},

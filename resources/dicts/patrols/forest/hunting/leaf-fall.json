@@ -157,7 +157,7 @@
         "season": ["leaf-fall"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_hunt_leaf-bare_squirrel_treetoptumble",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -399,6 +399,7 @@
                     "playful",
                     "righteous"
                 ],
+                "can_have_stat": ["r_c"],
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -2837,7 +2838,7 @@
         "season": ["leaf-fall"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_hunt_mice",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -2904,7 +2905,7 @@
         "season": ["leaf-fall"],
         "types": ["hunting"],
         "tags": ["romantic"],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_hunt_mice_ohnotheyrehot",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -2996,7 +2997,7 @@
         "season": ["leaf-fall"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_hunt_mice",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},

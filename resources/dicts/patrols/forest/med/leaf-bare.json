@@ -176,7 +176,7 @@
         "season": ["leaf-bare"],
         "types": ["herb_gathering"],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_gatheringblackberry_leaf-bare1",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -880,7 +880,7 @@
         "season": ["leaf-bare"],
         "types": ["herb_gathering"],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_gatheringdaisy_leaf-bare1",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1584,7 +1584,7 @@
         "season": ["leaf-bare"],
         "types": ["herb_gathering"],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_gatheringjuniper_leaf-bare1",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -2283,5 +2283,62 @@
                 ]
             }
         ]
+    },
+    {
+        "patrol_id": "fst_med_leafbare_yewcolour_storylocked1",
+        "biome": ["forest"],
+        "season": ["leaf-bare"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "gen_bord_story",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+           "medicine cat": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1"],
+        "intro_text": "As the patrol spreads out under p_l's watch, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a deathberry bush, and [VERB/p_l/call/calls} the cats back. To stress the lesson about caution, p_l tells the story of How The Yew Got Its Color.",
+        "decline_text": "It's probably fine to let the patrol go without telling the story, the bush has been pointed out and {PRONOUN/p_l/poss} Clanmates warned.",
+        "success_outcomes": [
+            {
+                    "text": "Two lovers met in leaf-bare at the border between their Clans, under the shelter of a bushy white-berried yew. One night, it was not love that met there, but a great battle between their rival Clans, one neither would stagger from alive. The yew drank of their blood, and in the colder moons, even now, you can see it shining in its deathberries.",
+                    "exp": 40,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                        ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "p_l is so busy preventing any cat from touching the deathberries - they're <i>called that for a reason too you know</i> - that {PRONOUN/p_l/subject} never {VERB/p_l/begin/begins} {PRONOUN/p_l/poss} story.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["trust", "respect", "platonic"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
     }
 ]

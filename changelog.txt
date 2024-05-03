@@ -1,45 +1,26 @@
-<strong>v0.10.6</strong>
-- Fixed the constantly dizzy condition.
-- Added an entry in the game_config.json to engulf the world in never ending Halloween festivities. Or something like that.
-- Fixed the fail outcomes of some patrols.
-- Fix issue where cat-pairs who were sabotages where not tracked correctly.
-- Removed country based names from the name pools within the game.
-- Fix "Pair has already been mediated" sometimes showing up when a pair had not been mediated that moon.
-- Fix 'retire' button alignment.
-- Minor spelling fixes
+<strong>v0.11.2</strong>
+- Fix: ensure that the changelog is read as UTF-8
+- Fix: issue with manual feeding with tactic "low nutrition first"
+- Fix: edge case of a cat has the exiled status, but is not outside
 
-<strong>v0.10.5</strong>
-- Added a small notice in the settings page outlining that some settings are now clan-specific
+<strong>v0.11.1</strong>
+- Fix: The changelog. Yep, just the changelog. Yes, it happened again-
 
-<strong>v0.10.1 - v0.10.4</strong>
-- Properly fixed a bug causing the game to crash when the changelog contains text. Now you can once again bask in the glory of those super long change notes! Yay!
-- All praise Archanyhm for spending the past hour trying to fix this. Poor Arch. (I am actually the one writing this)
-
-<strong>v0.10.0</strong>
-
-<strong>Content Warning</strong>
-<u><em>This update contains Halloween imagery that may be disturbing to some users. Viewer discretion is advised.</em></u>
-Remember you can opt in and out of this feature to cater your own experience!
-
-- Festive Halloween patrols will now start appearing around the spooky season!
-- Expanded our ability to restrict events and patrols to certain date ranges.
-- Added a toggle to prevent a cat from retiring
-- Added a toggle to limit a cat's romantic interactions and prevent automatic mate changes.
-- Many settings are now stored on a per-clan basis.
-- New Loading Animations
-- New Murder Reveal Events!
-- Under the hood, patrols have been significantly refactored.
-- Added Masked Tabbies!
-- New White Patches: BOWTIE, MUSTACHE, REVERSEHEART, SPARROW, VEST, LOVEBUG, TRIXIE, SPARKLE, RIGHTEAR, LEFTEAR, ESTRELLA, REVERSEEYE, BACKSPOT, EYEBAGS, FADEBELLY, SAMMY, FRONT, BLOSSOMSTEP, BULLSEYE, SHOOTINGSTAR, EYESPOT, PEBBLE, TAILTWO, BUDDY. FCONE, FCTWO, MIA, DIGIT, SCAR, BUSTER, FINN, KROPKA, HAWKBLAZE, LOCKET, PRINCESS, ROSINA, CAKE
-- New Vitiligo Pattern: SMOKEY
-- New Tortie Patch Patterns: SMOKE, GRUMPYFACE, BRIE, BELOVED, SHILOH, BODY
-- New Plains Background: Wasteland.
-- New thoughts, patrols, and events!
-- New names!
-- New patrol art!
-- Adjustments to grief events. In some cases, grief events are replaced by grief thoughts.
-- Added "Change to Nonbinary" Button
-- Dead cats can now be sorted by total age (age living + age dead)
-- Cat relationships will show strong relationships first.
-- Change the way spritesheets are stored in memory. This significantly decreases memory usage.
-- Lots of bugfixes!
+<strong>v0.11.0</strong>
+- Feature: Freshkill pile & nutrition system
+- Feature: "Destroy accessory" button
+- Content: Lakeside Forest Background
+- Content: Murder for the new year
+- Content: expanded scars: "HINDLEG", "BACK", "QUILLSIDE", "SCRATCHSIDE", "TOE", "BEAKSIDE", "CATBITETWO", "SNAKETWO", "FOUR"
+    Expanded tortie: 'FRECKLED' white patches: 'BLAZEMASK', 'TEARS'
+- Content: Sibling and constrained patrols
+- Content: weights and mates
+- Content: expanded war events
+- Content: more patrols
+- QOL: Cat List UI Update
+- QOL: same sex setting update
+- QOL: update for freshkill switch
+- QOL: Patrol type decision enabled in classic
+- QOL: updated credits list
+- QOL:  change to poetry
+- Plus many more bug fixes, tweaks to events and patrols, and more! Aprils fools - we made an actual game update.

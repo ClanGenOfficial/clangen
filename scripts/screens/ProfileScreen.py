@@ -359,7 +359,7 @@ class ProfileScreen(Screens):
                 self.fav_tab.show()
                 self.not_fav_tab.hide()
             elif event.ui_element == self.save_text:
-                self.user_notes = sub(r"[^A-Za-z0-9<->/.()*'&#!?,| ]+", "", self.notes_entry.get_text())
+                self.user_notes = sub(r"[^A-Za-z0-9<->/.()*'&#!?,| _+=@~:;[]{}%$^`]+", "", self.notes_entry.get_text())
                 self.save_user_notes()
                 self.editing_notes = False
                 self.update_disabled_buttons_and_text()
@@ -1454,7 +1454,7 @@ class ProfileScreen(Screens):
                     if not moons:
                         name_list.append(name)
                     else:
-                        name_list.append(name + f" (Moon {', '.join(victim_names[name])})")
+                        name_list.append(f"{name} (Moon {victim_names[name][0]})")
 
                 if len(name_list) == 1:
                     victim_text = f"{self.the_cat.name} murdered {name_list[0]}."

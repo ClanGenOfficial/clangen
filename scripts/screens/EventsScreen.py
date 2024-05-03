@@ -275,14 +275,6 @@ class EventsScreen(Screens):
         self.timeskip_button = UIImageButton(scale(pygame.Rect((620, 436), (360, 60))), "", object_id="#timeskip_button"
                                              , manager=MANAGER)
 
-        # commenting out for now as there seems to be a consensus that it isn't needed anymore?
-        #if game.clan.closed_borders:
-        #    self.toggle_borders_button = pygame_gui.elements.UIButton(scale(pygame.Rect((500, 210), (200, 30))),
-        #                                                              "Open Clan Borders")
-        #else:
-        #    self.toggle_borders_button = pygame_gui.elements.UIButton(scale(pygame.Rect((500, 210), (200, 30))),
-        #                                                              "Close Clan Borders")
-
         # Sets up the buttons to switch between the event types.
         self.all_events_button = UIImageButton(
             scale(pygame.Rect((120, 570), (300, 60))),
@@ -410,7 +402,7 @@ class EventsScreen(Screens):
             ele.kill()
         self.cat_profile_buttons = []
 
-        # self.hide_menu_buttons()
+        self.hide_menu_buttons()
 
     def on_use(self):
         

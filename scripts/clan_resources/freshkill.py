@@ -128,13 +128,17 @@ class Freshkill_Pile():
         # kits under 3 months are feed by the queen
         for queen_id, their_kits in queen_dict.items():
             queen = Cat.fetch_cat(queen_id)
+            if queen and (queen.outside or queen.status == "exiled"):
+                continue
             young_kits = [kit for kit in their_kits if kit.moons < 3]
             if len(young_kits) > 0:
                 relevant_queens.append(queen)
-        pregnant_cats = [cat for cat in living_cats if "pregnant" in cat.injuries and cat.ID not in queen_dict.keys()]
+        pregnant_cats = [
+            cat for cat in living_cats if "pregnant" in cat.injuries and cat.ID not in queen_dict.keys() and not cat.outside and cat.status != "exiled"
+        ]
 
         # all normal status cats calculation
-        needed_prey = sum([PREY_REQUIREMENT[cat.status] for cat in living_cats if cat.status not in ["newborn", "kitten"]])
+        needed_prey = sum([PREY_REQUIREMENT[cat.status] for cat in living_cats if cat.status not in ["newborn", "kitten", "exiled"] and not cat.outside])
         # increase the number for sick cats
         if game.clan and game.clan.game_mode == "cruel season":
             sick_cats = [cat for cat in living_cats if cat.not_working() and "pregnant" not in cat.injuries]
@@ -142,7 +146,7 @@ class Freshkill_Pile():
         # increase the number of prey which are missing for relevant queens an pregnant cats
         needed_prey += (len(relevant_queens) + len(pregnant_cats)) * (PREY_REQUIREMENT["queen/pregnant"] - PREY_REQUIREMENT["warrior"])
         # increase the number of prey for kits, which are not taken care by a queen
-        needed_prey += sum([PREY_REQUIREMENT[cat.status] for cat in living_kits])
+        needed_prey += sum([PREY_REQUIREMENT[cat.status] for cat in living_kits if not cat.outside])
         
         self.needed_prey = needed_prey
 
@@ -364,6 +368,10 @@ class Freshkill_Pile():
                 feeding_amount += 1
             elif self.amount_food_needed() < self.total_amount and self.nutrition_info[cat.ID].percentage < 100:
                 feeding_amount += 0.5
+
+            if not_moon_feeding:
+                needed_amount = 0
+
             self.feed_cat(cat, feeding_amount, needed_amount)
 
         # feed the rest according to their status

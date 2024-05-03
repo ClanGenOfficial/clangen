@@ -70,7 +70,7 @@
         "season": ["Any"],
         "types": ["training"],
         "tags": [],
-        "patrol_art": "train_general_intro",
+        "patrol_art": "mtn_train_sett",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -231,7 +231,7 @@
         "season": ["Any"],
         "types": ["training"],
         "tags": [],
-        "patrol_art": "train_general_intro",
+        "patrol_art": "mtn_train_sett",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -1379,7 +1379,7 @@
         "pl_skill_constraint": ["STORY,0"],
         "success_outcomes": [
             {
-                "text": "Alright, gather round. p_l is here to tell the cats on the patrol an old story, an ancient, worn thin tale of the loners who come at the call of any who sleep in a circle of mushrooms, cats with metal shards in their eyes and moss growing among their fur, unnatural loners with the power to grant protection - or vengance.",
+                "text": "Alright, gather round. p_l is here to tell the cats on the patrol an old story, an ancient, worn thin tale of the loners who come at the call of any who sleep in a circle of mushrooms, cats with metal shards in their eyes and moss growing among their fur, unnatural loners with the power to grant protection - or vengeance.",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
@@ -2222,6 +2222,64 @@
                 "weight": 20
             }
         ]
+    },
+    {
+        "patrol_id": "mtn_train_mountainlion_storylocked1",
+        "biome": ["mountainous"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_bord_story",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult":[1,6],
+            "apprentice":[2,6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1"],
+        "intro_text": "The training patrol gathers around old scat, so that the apprentices can learn a Sharptooth's ragged scent. p_l swishes {PRONOUN/p_l/poss} tail - do the apprentices know what this predator used to be?",
+        "decline_text": "The apprentices are too focused on trying to catch the old, nearly gone scent in their snouts to listen to stories - p_l will save this one for another time.",
+        "success_outcomes": [
+                {
+                    "text": "Long ago there lived a rogue, outcast and hated by all, obsessed with power and fighting. They made a bargain with blood and decay, giving up their ability to speak in exchange for great killing power, and have never regretted the trade.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_train_ghost",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["respect", "trust"],
+                            "amount": 10
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "Long ago there lived- app1 interrupts p_l, trying to ask where {PRONOUN/app1/subject} might find a Sharptooth to fight it. That is <i>not</i> the lesson here, and p_l stares down {PRONOUN/p_l/poss} muzzle, highly disapproving.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["app1"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": -10
+                        },
+                        {
+                            "cats_to": ["app1"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ]
     }
-    
 ]

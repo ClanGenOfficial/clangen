@@ -25,7 +25,7 @@
                 "weight": 5
             },
             {
-                "text": "The scent leads to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, leaping from the rocky outcrops above, and quickly overwhelms the lone cat. {PRONOUN/s_c/subject/CAP} {VERB/m_c/accept/accepts} the rogue's surrender graciously, and escort them out of c_n territory promptly.",
+                "text": "The scent leads to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, leaping from the rocky outcrops above, and quickly overwhelms the lone cat. {PRONOUN/s_c/subject/CAP} {VERB/s_c/accept/accepts} the rogue's surrender graciously, and escort them out of c_n territory promptly.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"]
@@ -924,7 +924,7 @@
         "season": ["greenleaf"],
         "types": ["border"],
         "tags": [],
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "gen_bord_shortswim",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},

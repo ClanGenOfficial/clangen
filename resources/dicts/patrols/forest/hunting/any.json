@@ -191,7 +191,7 @@
         "season": ["Any"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_hunt_twolegplace",
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
@@ -242,7 +242,7 @@
         "season": ["Any"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_hunt_twolegplace",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
@@ -705,7 +705,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The noise leads {PRONOUN/s_c/object} to a coyote that's busy stripping the last of the meat from a carcass. {PRONOUN/s_c/subject/CAP} {VERB/s_c/wait/waits} till the coyote leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned.",
+                "text": "The noise leads {PRONOUN/r_c/object} to a coyote that's busy stripping the last of the meat from a carcass. {PRONOUN/r_c/subject/CAP} {VERB/r_c/wait/waits} till the coyote leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned.",
                 "exp": 0,
                 "weight": 20
             },
@@ -948,7 +948,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The noise leads them to a wolf that's busy stripping the last of the meat from a carcass. {PRONOUN/s_c/subject/CAP} {VERB/s_c/wait/waits} till the wolf leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned.",
+                "text": "The noise leads {PRONOUN/r_c/object} to a wolf that's busy stripping the last of the meat from a carcass. {PRONOUN/r_c/subject/CAP} {VERB/r_c/wait/waits} till the wolf leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned.",
                 "exp": 0,
                 "weight": 20
             },
@@ -1087,8 +1087,8 @@
             "apprentice": [1, 6]
         },
         "weight": 20,
-        "intro_text": "r_c's mentor assesses {PRONOUN/s_c/object} by sending {PRONOUN/s_c/object} on a solo hunt.",
-        "decline_text": "r_c asks {PRONOUN/s_c/poss} mentor to do the assessment some other time.",
+        "intro_text": "r_c's mentor assesses {PRONOUN/r_c/object} by sending {PRONOUN/r_c/object} on a solo hunt.",
+        "decline_text": "r_c asks {PRONOUN/r_c/poss} mentor to do the assessment some other time.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -3067,7 +3067,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c drops into a crouch and begins to stalk forward. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} preparing to pounce when {PRONOUN/s_c/poss} paw lightly brushes a twig and the vole immediately takes off. {PRONOUN/s_c/subject/CAP} {VERB/s_c/give/gives} chase, but the critter disappears into a burrow. Mouse-dung!",
+                "text": "r_c drops into a crouch and begins to stalk forward. {PRONOUN/s_c/subject/CAP}{VERB/r_c/'re/'s} preparing to pounce when {PRONOUN/r_c/poss} paw lightly brushes a twig and the vole immediately takes off. {PRONOUN/r_c/subject/CAP} {VERB/r_c/give/gives} chase, but the critter disappears into a burrow. Mouse-dung!",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -3147,5 +3147,71 @@
                 }
             }
         ]
+    },
+    {
+        "patrol_id": "fst_hunt_risingclangift_storylorelocked1",
+        "biome": ["forest"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "fst_hunt_gonetwolegtrap",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 5],
+           "apprentice":[1, 5]
+            },
+        "weight": 40,
+        "chance_of_success": 50,
+        "pl_skill_constraint": ["STORY,1", "LORE,1"],
+        "intro_text": "As they wander, searching for prey, p_l finds something far more dangerous, and calls the rest of the patrol over for a lesson.",
+        "decline_text": "No one wants to get anywhere near the dangerous traps, not even to learn about them.",
+        "success_outcomes": [
+                {
+                    "text": "These Twoleg traps are powerful and dangerous, p_l instructs. Strong enough to hold a rabid fox and with gaps so small not even a flickering plume of scorching fire could escape, no cat should ever wander into their metal jaws. They bring only a little bit of prey home, but the lesson is worth the time it took away from hunting.",
+                    "exp": 30,
+                    "weight": 20,
+                    "prey": ["small"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": false,
+                            "values": ["comfort", "trust"],
+                            "amount": 10
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "p_l has to pull app1 out by the tail, and loudly scolds {PRONOUN/app1/object} all the way back to camp. Twoleg traps aren't cool, and app1 has just proven {PRONOUN/app1/self} an idiot, not a brave warrior.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": false,
+                            "values": ["jealous", "dislike"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": true,
+                            "values": ["comfort", "trust"],
+                            "amount": -10
+                        }
+                    ]
+                }
+            ]
     }
 ]

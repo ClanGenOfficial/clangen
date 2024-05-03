@@ -36,7 +36,7 @@
         "season": ["Any"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "pln_hunt_twolegplace",
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
@@ -87,7 +87,7 @@
         "season": ["Any"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "pln_hunt_twolegplace",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
@@ -2784,5 +2784,77 @@
                 "weight": 20
             }
         ]
+    },
+    {
+        "patrol_id": "pln_hunt_wareprey_lorelocked1",
+        "biome": ["plains"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "gen_hunt_hare",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 5],
+           "apprentice":[1, 5]
+            },
+        "weight": 40,
+        "chance_of_success": 50,
+        "pl_skill_constraint": ["LORE,1"],
+        "intro_text": "app1 lines up a perfect run to kill an unwary hare, mocking the animal under {PRONOUN/app1/poss} breath.",
+        "decline_text": "This is too easy - app1 declines to chase it, wanting harder prey.",
+        "success_outcomes": [
+                {
+                    "text": "p_l waves a tail across app1's path, stopping {PRONOUN/app1/object} with a stern stare. Remember those who've been hurt by hares - the wind kicked out of them, their eyes scratched, limping from sharp-toothed bites. app1 nods, and apologies. Every hunt deserves respect.",
+                    "exp": 30,
+                    "weight": 20,
+                    "prey": ["medium"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": false,
+                            "values": ["comfort", "trust", "respect", "dislike"],
+                            "amount": 10
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "app1 leaps forward, feet launching {PRONOUN/app1/self} beautifully. But the hare {PRONOUN/app1/object} so mocked squeals, writhing upwards, its clawed hind feet kicking backwards and raking across app1's face.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": true,
+                            "values": ["respect", "trust"],
+                            "amount": -10
+                        }
+                    ],
+                    "injury": [
+                        {
+                        "cats": ["app1"],
+                        "injuries": ["small cut", "damaged eyes"],
+                        "scars": ["SNOUT", "LEFTBLIND"],
+                        "no_results": false
+                        }
+                    ],
+                    "history_text": {
+                        "scar": "r_c was permantly marked by the claws of a hare as an apprentice - but {PRONOUN/r_c/subject} survived.",
+                        "reg_death": "r_c died from the claws of a hare encountered on a hunt as a foolish apprentice.",
+                        "lead_death": "from the claws of a hare encountered on a hunt as a foolish apprentice"
+                        }
+                }
+            ]
     }
 ]

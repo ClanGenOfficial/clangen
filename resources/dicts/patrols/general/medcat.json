@@ -166,7 +166,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -188,7 +188,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -212,7 +212,7 @@
                         "cats_to": ["r_c"],
                         "cats_from": ["patrol"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -235,7 +235,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": 5
                     }
                 ]
@@ -257,7 +257,7 @@
                         "cats_to": ["r_c"],
                         "cats_from": ["s_c"],
                         "mutual": false,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": 15
                     }
                 ]
@@ -299,7 +299,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -321,7 +321,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -344,7 +344,7 @@
                         "cats_to": ["s_c"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -367,7 +367,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": false,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": 5
                     }
                 ]
@@ -389,7 +389,7 @@
                         "cats_to": ["r_c"],
                         "cats_from": ["s_c"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": 15
                     }
                 ]
@@ -480,7 +480,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -502,7 +502,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -532,7 +532,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -555,7 +555,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": false,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": 5
                     }
                 ]
@@ -577,7 +577,7 @@
                         "cats_to": ["p_l", "p_l"],
                         "cats_from": ["patrol", "r_c"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": 5
                     }
                 ]
@@ -2770,7 +2770,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": -5
                     }
                 ]
@@ -2792,7 +2792,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": -5
                     }
                 ]
@@ -2815,7 +2815,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": -5
                     }
                 ]
@@ -2838,7 +2838,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": 5
                     }
                 ]
@@ -2860,7 +2860,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": 5
                     }
                 ]
@@ -3335,7 +3335,7 @@
         },
         "weight": 20,
         "intro_text": "As r_c follows a trail into a darkly shadowed part of the territory on the hunt for herbs, night shadows begin to play with {PRONOUN/r_c/poss} vision. Was that movement up ahead? r_c spots the undisguisable silhouette of a cat ahead. Malicious eyes and bristled fur meet {PRONOUN/r_c/object} as {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} amongst the shadows. The stranger's fur is translucent, and it moves as though made from a strange dark mist.",
-        "decline_text": "r_c's tail bristles with fear, a cold shiver creeping along {PRONOUN/r_c/poss} back. This is definitely not a Starclan cat, and {PRONOUN/r_c/subject} quickly {VERB/r_c/turn/turns} the back to camp - herbs can wait until morning.",
+        "decline_text": "r_c's tail bristles with fear, a cold shiver creeping along {PRONOUN/r_c/poss} back. This is definitely not a StarClan cat, and {PRONOUN/r_c/subject} quickly {VERB/r_c/turn/turns} the back to camp - herbs can wait until morning.",
         "chance_of_success": 50,
         "success_outcomes": [
             {

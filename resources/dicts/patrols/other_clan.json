@@ -1612,7 +1612,6 @@
                 "text": "r_c marks a little, but they reach a section where the border is muddled, and have to give up and go home.",
                 "exp": 0,
                 "weight": 20,
-                "prey": ["very_small"],
                 "other_clan_rep": -1
             },
             {
@@ -1629,7 +1628,6 @@
                     "troublesome",
                     "vengeful"
                 ],
-                "prey": ["very_small"],
                 "other_clan_rep": -1
             },
             {
@@ -2890,6 +2888,80 @@
                     }
                 ],
                 "history_text": { "scar": "m_c got injured patrolling on the border." },
+                "other_clan_rep": -1
+            }
+        ]
+    },
+    {
+        "patrol_id": "fst_bord_risingclanref_neutral_lorelocked1",
+        "biome": ["forest"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["other_clan"],
+        "patrol_art": "gen_bord_otherclan_allies",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice":[1, 6],
+            "normal adult": [1, 6]
+        },
+        "weight": 40,
+        "pl_skill_constraint": ["LORE,1"],
+        "intro_text": "The border patrol, busy remarking, comes across an o_c_n patrol doing the same, and the apprentices from both sides perk up at the chance for a break in the monotony. Chuckling, p_l offers the chance for a small tale - <i>if</i> they can all sit still for it!",
+        "decline_text": "The apprentices can't sit still, but it's no great loss, the patrol just continue on with their work.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "Once, there was a cat called Scrap. And she was a little bit of nothing, no talents, no courage, no beauty, she thought herself worthless and stupid. Yet when her Clan was threatened by invading rogues, she rose up. Nervous, flighty, scared and small - the savior of her clan, marked with moth wings tucked behind her ear.",
+                "exp": 20,
+                "weight": 20,
+                "other_clan_rep": 2,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "platonic"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust", "platonic"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Just as flighty as Scrap and significantly more social, the apprentices just won't sit down and shut up, and p_l's storytelling skills are wasted - though the o_c_n cats seem to appreciate the attempt.",
+                "exp": 0,
+                "weight": 20,
+                "other_clan_rep": 0
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "Once, there was a cat called Scrap. Possessed of few talents and no courage in her own eyes, she nevertheless rose to the occasion when her Clan needed her - as would <i>any</i> c_n warrior, p_l warns the o_c_n patrol.",
+                "exp": 10,
+                "weight": 20,
+                "other_clan_rep": -2
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "Once, there was a cat called Scrap. Possessed of few talents and no courage, she- Oh, she was a typical c_n cat then, the o_c_n apprentice laughs. p_l glares, breaking into a hiss that startles the impudent teenager away from the border.",
+                "exp": 0,
+                "weight": 20,
                 "other_clan_rep": -1
             }
         ]

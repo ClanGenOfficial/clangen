@@ -5,7 +5,7 @@
         "season": ["Any"],
         "types": ["border"],
         "tags": [],
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "gen_border_dogscent_clanmember",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -125,7 +125,7 @@
         "season": ["Any"],
         "types": ["border"],
         "tags": ["patrol_rel", "pos_fail"],
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "gen_border_dogscent_clanmember",
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {},
@@ -1522,6 +1522,389 @@
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,0"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_bord_dislike",
+        "biome": ["any"],
+        "season": ["any"],
+        "types": [],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "warrior": [2, 2]
+        },
+        "weight": 20,
+        "chance_of_success": 50,
+        "relationship_constraint": ["dislike_20"],
+        "intro_text": "p_l and r_c have been bickering non-stop the entire time they've been patrolling.",
+        "decline_text": "Unable to work together, the two return to camp.",
+        "success_outcomes": [
+            {
+                "text": "Despite the bickering, the two manage to patrol the border without incident.",
+                "exp": 10,
+                "weight": 20
+            },
+            {
+                "text": "At one point during the bickering, the two start to come to a better understanding of each other, resulting in them forging some respect for each other.",
+                "exp": 10,
+                "weight": 10,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["respect"],
+                        "amount": 3
+                    }	
+                ]
+            },
+            {
+                "text": "p_l and r_c had been bickering the entire morning. But when {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} the shadow of a rouge falling on r_c, {PRONOUN/p_l/subject} {VERB/p_l/react/reacts} without thought, leaping forward, claws ripping into the enemy's back and flipping them off r_c with a ferocious snarl. r_c is badly injured, but will live thanks to p_l dragging {PRONOUN/r_c/object} back to camp.",
+                "exp": 10,
+                "weight": 5,
+                "injury": {
+                    "cats": ["r_c"],
+                    "injuries": ["battle_injury", "battle_injury"]
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["respect", "trust"],
+                        "amount": 3
+                    }	
+                ]
+            },
+            {
+                "text": "s_c can't resist the temptation to make pointed remarks {PRONOUN/s_c/subject} {VERB/s_c/know/knows} are hurtful to r_c. But when r_c starts crying, {PRONOUN/s_c/poss} pelt prickles with shame, and {PRONOUN/s_c/subject} awkwardly apologize.",
+                "exp": 10,
+                "weight": 10,
+                "can_have_stat": ["p_l"],
+                "stat_trait": ["troublesome", "fierce", "bloodthirsty", "cold", "childish", "shameless", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivous", "rebellious"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["dislike", "trust", "comfort"],
+                        "amount": 5
+                    }	
+                ]
+            },
+            {
+                "text": "As s_c pounces on a bug, r_c can't help but snap that this is exactly what {PRONOUN/r_c/subject} dislikes about s_c. s_c retortes that r_c needs to learn to lighten up and enjoy life. r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does} know how to have fun, and s_c says to prove it, resulting in an imprompto contest to see who can catch the most bugs.",
+                "exp": 10,
+                "weight": 10,
+                "can_have_stat": ["p_l"],
+                "stat_trait": ["flamboyant", "strange", "playful", "childish"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["platonic"],
+                        "amount": 5
+                    }	
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The bickering gets to be too much, and r_c storms back to camp irritated.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "While they are bickering, r_c trips, and p_l snickers, earning r_c's ire.",
+                "exp": 0,
+                "weight": 20,
+                "injury": {
+                    "cats": ["r_c"],
+                    "injuries": ["minor_injury"]
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 3
+                    }	
+                ]
+            },
+            {
+                "text": "As the duo are patroling, they are ambushed by a rogue! r_c is badly injured, and succumbs to the wounds when p_l flees, leaving {PRONOUN/r_c/object} behind.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["r_c"]
+            },
+            {
+                "text": "s_c can't resist the temptation to make pointed remarks {PRONOUN/s_c/subject} {VERB/s_c/know/knows} are hurtful to r_c. But when a verbal barb sinks too deep and r_c starts crying, s_c lashes their tail, snapping at r_c to focus on patrolling. r_c runs off, leaving s_c to finish the patrol alone.",
+                "exp": 0,
+                "weight": 10,
+                "can_have_stat": ["p_l"],
+                "stat_trait": ["troublesome", "fierce", "bloodthirsty", "cold", "childish", "shameless", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivous", "rebellious"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": -5
+                    }		
+                ]
+            },
+            {
+                "text": "As s_c pounces on a bug, r_c can't help but snap that this is exactly what {PRONOUN/r_c/subject} dislikes about s_c. s_c retortes that r_c needs to learn to lighten up and enjoy life. r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does} know how to have fun, and s_c says to prove it, but r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does}n't have to prove anything to s_c.",
+                "exp": 0,
+                "weight": 10,
+                "can_have_stat": ["p_l"],
+                "stat_trait": ["flamboyant", "strange", "playful", "childish"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }	
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_bord_dislike2",
+        "biome": ["any"],
+        "season": ["any"],
+        "types": [],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "warrior": [2, 2]
+        },
+        "weight": 20,
+        "chance_of_success": 40,
+        "relationship_constraint": ["dislike_60"],
+        "intro_text": "p_l and r_c have been arguing non-stop the entire time they've been patrolling.",
+        "decline_text": "Unable to work together, the two return to camp.",
+        "success_outcomes": [
+            {
+                "text": "Despite the arguing, the two manage to patrol the border without incident.",
+                "exp": 10,
+                "weight": 8
+            },
+            {
+                "text": "Right in the middle of another argument, the two are attacked along the border by an o_c_n patrol, despite the two hating each other, they fight back to back to fight off the patrol, sending the other patrol fleeing back to their territory.",
+                "exp": 10,
+                "weight": 1,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["respect", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }	
+                ],
+                "other_clan_rep": -1
+            },
+            {
+                "text": "At one point during the arguing, the two start to come to a better understanding of each other, resulting in them forging some respect for each other.",
+                "exp": 10,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["respect"],
+                        "amount": 3
+                    }	
+                ]
+            },
+            {
+                "text": "p_l and r_c had been arguing the entire morning. But when {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} the shadow of a rouge falling on r_c, {PRONOUN/p_l/subject} {VERB/p_l/react/reacts} without thought, leaping forward, claws ripping into the enemy's back and flipping them off r_c with a ferocious snarl. r_c is badly injured, but will live thanks to p_l dragging {PRONOUN/r_c/object} back to camp.",
+                "exp": 10,
+                "weight": 15,
+                "injury": {
+                    "cats": ["r_c"],
+                    "injuries": ["battle_injury", "battle_injury"]
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["respect", "trust"],
+                        "amount": 3
+                    }	
+                ]
+            },
+            {
+                "text": "s_c can't resist the temptation to make pointed remarks {PRONOUN/s_c/subject} {VERB/s_c/know/knows} are hurtful to r_c. But when r_c starts crying, {PRONOUN/s_c/poss} pelt prickles with shame, and {PRONOUN/s_c/subject} awkwardly apologize.",
+                "exp": 10,
+                "weight": 10,
+                "can_have_stat": ["p_l"],
+                "stat_trait": ["troublesome", "fierce", "bloodthirsty", "cold", "childish", "shameless", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivous", "rebellious"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["dislike", "trust", "comfort"],
+                        "amount": 5
+                    }	
+                ]
+            },
+            {
+                "text": "As s_c pounces on a bug, r_c can't help but snap that this is exactly what {PRONOUN/r_c/subject} dislikes about s_c. s_c retortes that r_c needs to learn to lighten up and enjoy life. r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does} know how to have fun, and s_c says to prove it, resulting in an imprompto contest to see who can catch the most bugs.",
+                "exp": 10,
+                "weight": 10,
+                "can_have_stat": ["p_l"],
+                "stat_trait": ["flamboyant", "strange", "playful", "childish"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["platonic"],
+                        "amount": 5
+                    }	
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The arguing gets to be too much, and r_c storms back to camp irritated.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "In the midst of another argument, p_l swiftly swipes at r_c to shut {PRONOUN/r_c/object} up. r_c hisses, and slashes back. Fur flies as both cats trade blows. The chaotic brawl ends with both of them wounded and a tense silence in the air. When they return to camp, many eyes stare in judgement. The clan is disappointed in their actions.",
+                "exp": 0,
+                "weight": 10,
+                "injury": {
+                    "cats": ["r_c", "p_l"],
+                    "injuries": ["minor_injury","minor_injury","battle_injury"]
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["trust", "platonic"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l", "r_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }	
+                ]
+            },
+            {
+                "text": "As the duo are patroling, too distracted by their argument, they didn't notice the shadow desending on them as they are ambushed by a rogue. r_c is badly injured, and succumbs to the wounds when p_l flees, leaving {PRONOUN/r_c/object} behind.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["r_c"]
+            },
+            {
+                "text": "As the duo are patroling, they are ambushed by an o_c_n patrol! p_l is fighting for {PRONOUN/p_l/poss} life, when out of the corner of {PRONOUN/p_l/poss} eye {PRONOUN/p_l/subject} {VERB/p_l/see/sees} r_c fleeing. Outnumbered and overwhelmed, p_l is killed.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["p_l"],
+                "other_clan_rep": -2
+            },
+            {
+                "text": "s_c can't resist the temptation to make pointed remarks {PRONOUN/s_c/subject} {VERB/s_c/know/knows} are hurtful to r_c. But when a verbal barb sinks too deep and r_c starts crying, s_c lashes their tail, snapping at r_c to focus on patrolling. r_c runs off, leaving s_c to finish the patrol alone.",
+                "exp": 0,
+                "weight": 10,
+                "can_have_stat": ["p_l"],
+                "stat_trait": ["troublesome", "fierce", "bloodthirsty", "cold", "childish", "shameless", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivous", "rebellious"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": -5
+                    }		
+                ]
+            },
+            {
+                "text": "As s_c pounces on a bug, r_c can't help but snap that this is exactly what {PRONOUN/r_c/subject} dislikes about s_c. s_c retortes that r_c needs to learn to lighten up and enjoy life. r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does} know how to have fun, and s_c says to prove it, but r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does}n't have to prove anything to s_c.",
+                "exp": 0,
+                "weight": 10,
+                "can_have_stat": ["p_l"],
+                "stat_trait": ["flamboyant", "strange", "playful", "childish"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }	
+                ]
+            },
+            {
+                "text": "s_c, increasingly irritated by r_c's presence, succumbs to unsettling whispers urging violence. In a moment of fury, s_c snaps, succumbing to the dark whispers and ending r_c's existence.",
+                "exp": 0,
+                "weight": 10,
+                "can_have_stat": ["p_l"],
+                "dead_cats": ["r_c"],
+                "stat_skill": ["DARK,1"]
+            },
+            {
+                "text": "s_c, increasingly irritated by p_l's presence, succumbs to unsettling whispers urging violence. In a moment of fury, s_c snaps, succumbing to the dark whispers and ending p_l's existence.",
+                "exp": 0,
+                "weight": 10,
+                "can_have_stat": ["r_c"],
+                "dead_cats": ["p_l"],
+                "stat_skill": ["DARK,1"]
+            },
+            {
+                "text": "The arguing escalates, attracting the attention of a o_c_n patrol. The rival clan did not seem impressed by their arguing, and mocked c_n for not even being able to work together.",
+                "exp": 0,
+                "weight": 10,
+                "other_clan_rep": -1
             }
         ]
     }
