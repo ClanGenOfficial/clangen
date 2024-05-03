@@ -12,35 +12,9 @@ env:
 
 jobs:
 
-  build-self-updater:
-    runs-on: windows-latest
+  configure-release:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Set up cargo cache
-        uses: actions/cache@v4
-        continue-on-error: false
-        with:
-          path: |
-            ~/.cargo/bin/
-            ~/.cargo/registry/index/
-            ~/.cargo/registry/cache/
-            ~/.cargo/git/db/
-            target/
-          key: selfupdater-${{ hashFiles('**/Cargo.lock') }}
-          restore-keys: selfupdater-
-      - name: Build self-updater
-        shell: bash
-        run: |
-          cd self_updater
-          cargo build --release
-      
-      - name: Upload self-updater
-        uses: actions/upload-artifact@v4
-        with:
-          name: self_updater
-          path: self_updater/target/release/self_updater.exe
-      
-
       - name: Configure Release
         if: startsWith(github.ref, 'refs/tags/')
         shell: bash
@@ -49,8 +23,6 @@ jobs:
           echo "RELEASE_CHANNEL=${{ vars.STABLE_RELEASE_CHANNEL }}" >> $GITHUB_ENV
           echo "IS_RELEASE=1" >> $GITHUB_ENV
   build:
-    needs:
-      - build-self-updater
     strategy:
       matrix:
         platform: [win32, win64, win10, linux2.31, linux2.35, macOS]
@@ -134,6 +106,19 @@ jobs:
           python-version: ${{ matrix.python-version }}
           architecture: ${{ matrix.python-arch }}
           cache: "poetry"
+      - name: Set up cargo cache
+        if: ${{ matrix.os-group == 'windows' }}
+        uses: actions/cache@v4
+        continue-on-error: false
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+          key: selfupdater-${{ matrix.os }}-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: selfupdater-
       - name: install dependencies
         run: poetry install --with build --all-extras --no-root
       - name: Write version file
@@ -144,12 +129,13 @@ jobs:
         run: |
           git log --pretty="format:%H|||%cd|||%b|||%s" -15 --no-decorate --merges --grep="Merge pull request" --date=short > changelog.txt
       
-      - name: Download self updater
+      - name: Build self-updater
         if: ${{ matrix.os-group == 'windows' }}
-        uses: actions/download-artifact@v3
-        with:
-          name: self_updater
-          path: resources/self_updater.exe
+        shell: bash
+        run: |
+          cd self_updater
+          cargo build --release
+          cp target/release/self_updater.exe ../resources/self_updater.exe
       - name: Run PyInstaller
         run: poetry run pyinstaller Clangen.spec
         env:
