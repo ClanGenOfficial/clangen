@@ -370,6 +370,8 @@ class PatrolOutcome():
             elif _cat == "multi":
                 cat_num = random.randint(1, max(1, len(patrol.patrol_cats) - 1))
                 out_set.update(random.sample(patrol.patrol_cats, cat_num))
+            elif _cat == "clan":
+                out_set.update([x for x in Cat.all_cats_list if not (x.dead or x.outside or x.exiled)])
             elif _cat == "some_clan":
                 clan_cats = [x for x in Cat.all_cats_list if not (x.dead or x.outside)]
                 out_set.update(random.sample(clan_cats, k=min(len(clan_cats), choice([2, 3, 4]))))
