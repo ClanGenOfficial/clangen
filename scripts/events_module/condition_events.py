@@ -219,7 +219,7 @@ class Condition_Events():
                     other_clan = game.clan.all_clans[0]
                     other_clan_name = f'{other_clan.name}Clan'
 
-                possible_events = GenerateEvents.possible_short_events(cat.status, cat.age, "injury")
+                possible_events = GenerateEvents.possible_short_events("injury")
                 final_events = GenerateEvents.filter_possible_short_events(possible_events, cat, other_cat, war,
                                                                            enemy_clan, other_clan, alive_kits)
 

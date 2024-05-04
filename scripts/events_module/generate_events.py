@@ -74,52 +74,50 @@ class GenerateEvents:
         GenerateEvents.loaded_events = {}
 
     @staticmethod
-    def generate_short_events(event_triggered, cat_type, biome):
+    def generate_short_events(event_triggered, biome):
 
-        if cat_type and not biome:
-            file_path = f"{resource_directory}{event_triggered}/{cat_type}.json"
-        elif not cat_type and biome:
-            file_path = f"{resource_directory}{event_triggered}/{biome}.json"
-        else:
-            file_path = f"{resource_directory}{event_triggered}/{biome}/{cat_type}.json"
+        file_path = f"{resource_directory}{event_triggered}/{biome}.json"
 
-        if file_path in GenerateEvents.loaded_events:
-            return GenerateEvents.loaded_events[file_path]
-        else:
-            events_dict = GenerateEvents.get_short_event_dicts(file_path)
+        try:
+            if file_path in GenerateEvents.loaded_events:
+                return GenerateEvents.loaded_events[file_path]
+            else:
+                events_dict = GenerateEvents.get_short_event_dicts(file_path)
 
-            event_list = []
-            if not events_dict:
+                event_list = []
+                if not events_dict:
+                    return event_list
+                for event in events_dict:
+                    event_text = event["event_text"] if "event_text" in event else None
+                    if not event_text:
+                        event_text = event["death_text"] if "death_text" in event else None
+
+                    if not event_text:
+                        print(f"WARNING: some events resources which are used in generate_events. Have no 'event_text'.")
+                    event = ShortEvent(
+                        event_id=event["event_id"] if "event_id" in event else "",
+                        biome=event["biome"] if "biome" in event else ["any"],
+                        camp=event["camp"] if "camp" in event else ["any"],
+                        season=event["season"] if "season" in event else ["any"],
+                        tags=event["tags"] if "tags" in event else [],
+                        weight=event["weight"] if "weight" in event else 20,
+                        event_text=event_text,
+                        new_accessory=event["new_accessory"] if "new_accessory" in event else [],
+                        m_c=event["m_c"] if "m_c" in event else {},
+                        r_c=event["r_c"] if "r_c" in event else {},
+                        new_cat=event["new_cat"] if "new_cat" in event else [],
+                        injury=event["injury"] if "injury" in event else [],
+                        relationships=event["relationships"] if "relationships" in event else [],
+                        outsider=event["outsider"] if "outsider" in event else {},
+                        other_clan=event["other_clan"] if "other_clan" in event else {}
+                    )
+                    event_list.append(event)
+
+                # Add to loaded events.
+                GenerateEvents.loaded_events[file_path] = event_list
                 return event_list
-            for event in events_dict:
-                event_text = event["event_text"] if "event_text" in event else None
-                if not event_text:
-                    event_text = event["death_text"] if "death_text" in event else None
-
-                if not event_text:
-                    print(f"WARNING: some events resources which are used in generate_events. Have no 'event_text'.")
-                event = ShortEvent(
-                    event_id=event["event_id"] if "event_id" in event else "",
-                    biome=event["biome"] if "biome" in event else ["any"],
-                    camp=event["camp"] if "camp" in event else ["any"],
-                    season=event["season"] if "season" in event else ["any"],
-                    tags=event["tags"] if "tags" in event else [],
-                    weight=event["weight"] if "weight" in event else 20,
-                    event_text=event_text,
-                    new_accessory=event["new_accessory"] if "new_accessory" in event else [],
-                    m_c=event["m_c"] if "m_c" in event else {},
-                    r_c=event["r_c"] if "r_c" in event else {},
-                    new_cat=event["new_cat"] if "new_cat" in event else [],
-                    injury=event["injury"] if "injury" in event else [],
-                    relationships=event["relationships"] if "relationships" in event else [],
-                    outsider=event["outsider"] if "outsider" in event else {},
-                    other_clan=event["other_clan"] if "other_clan" in event else {}
-                )
-                event_list.append(event)
-
-            # Add to loaded events.
-            GenerateEvents.loaded_events[file_path] = event_list
-            return event_list
+        except:
+            print(f"WARNING: {file_path} was not found, check short event generation")
 
     @staticmethod
     def generate_ongoing_events(event_type, biome, specific_event=None):
@@ -174,80 +172,24 @@ class GenerateEvents:
                 return event
 
     @staticmethod
-    def possible_short_events(cat_type=None, age=None, event_type=None):
+    def possible_short_events(event_type=None):
         event_list = []
-        biome = None
 
-        excluded_from_general = []
-        warrior_adjacent_ranks = []
-
-        if event_type == 'death':
-            warrior_adjacent_ranks.extend(["deputy", "apprentice"])
-            excluded_from_general.extend(["kitten", "leader", "newborn"])
-        elif event_type in ['injury', 'nutrition', 'misc_events', 'new_cat']:
-            warrior_adjacent_ranks.extend(["deputy", "apprentice", "leader"])
-            excluded_from_general.extend(["kitten", "leader", "newborn"])
-
-        if cat_type in ["medicine cat", "medicine cat apprentice"]:
-            cat_type = "medicine"
-        elif cat_type in ["mediator", "mediator apprentice"]:
-            cat_type = "mediator"
-
-        # skip the rest of the loading if there is an unrecognised cat type
-        if cat_type not in game.clan.CAT_TYPES:
-            print(
-                f"WARNING: unrecognised cat status {cat_type} in generate_events. Have you added it to CAT_TYPES in "
-                f"clan.py?")
-
-        elif game.clan.biome not in game.clan.BIOME_TYPES:
+        # skip the rest of the loading if there is an unrecognised biome
+        if game.clan.biome not in game.clan.BIOME_TYPES:
             print(
                 f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES "
                 f"in clan.py?")
 
-        # NUTRITION this needs biome to be None so is handled separately
-        elif event_type == 'nutrition':
-            event_list.extend(
-                GenerateEvents.generate_short_events(event_type, cat_type, biome))
+        biome = game.clan.biome.lower()
 
-            if cat_type in warrior_adjacent_ranks:
-                event_list.extend(
-                    GenerateEvents.generate_short_events(event_type, "warrior", biome))
+        # biome specific events
+        event_list.extend(
+            GenerateEvents.generate_short_events(event_type, biome))
 
-            if cat_type not in excluded_from_general:
-                event_list.extend(
-                    GenerateEvents.generate_short_events(event_type, "general", biome))
-
-        else:
-            biome = game.clan.biome.lower()
-
-            # RANK SPECIFIC
-            # biome specific rank specific events
-            event_list.extend(
-                GenerateEvents.generate_short_events(event_type, cat_type, biome))
-
-            # any biome rank specific events
-            event_list.extend(
-                GenerateEvents.generate_short_events(event_type, cat_type, "general"))
-
-            # WARRIOR-LIKE
-            if cat_type in warrior_adjacent_ranks:
-                # biome specific warrior events for "warrior-like" ranks
-                event_list.extend(
-                    GenerateEvents.generate_short_events(event_type, "warrior", biome))
-
-                # any biome warrior events for "warrior-like" ranks
-                event_list.extend(
-                    GenerateEvents.generate_short_events(event_type, "warrior", "general"))
-
-            # GENERAL
-            if cat_type not in excluded_from_general:
-                # biome specific general rank events
-                event_list.extend(
-                    GenerateEvents.generate_short_events(event_type, "general", biome))
-
-                # any biome general rank events
-                event_list.extend(
-                    GenerateEvents.generate_short_events(event_type, "general", "general"))
+        # any biome events
+        event_list.extend(
+            GenerateEvents.generate_short_events(event_type, "general"))
 
         return event_list
 

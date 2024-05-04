@@ -42,7 +42,7 @@ class Freshkill_Events():
 
         # get all events for a certain status of a cat
         cat_nutrition = nutrition_info[cat.ID]
-        possible_events = GenerateEvents.possible_short_events(cat.status, cat.age, "nutrition")
+        possible_events = GenerateEvents.possible_short_events("nutrition")
 
         # get the other needed information and values to create a event
         possible_other_cats = [i for i in Cat.all_cats.values() if not (i.dead or i.outside) and i.ID != cat.ID]
@@ -201,7 +201,7 @@ class Freshkill_Events():
             while other_cat.ID == cat.ID:
                 other_cat = random.choice(living_cats)
 
-        possible_events = GenerateEvents.possible_short_events(cat.status, cat.age, "freshkill_pile")
+        possible_events = GenerateEvents.possible_short_events("freshkill_pile")
         possible_tasks = []
         for tag_type in EVENT_WEIGHT_TYPE:
             possible_tasks.extend(tag_type * EVENT_WEIGHT_TYPE[tag_type])

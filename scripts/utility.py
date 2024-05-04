@@ -197,6 +197,18 @@ def get_random_moon_cat(Cat, main_cat, parent_child_modifier=False, mentor_app_m
     return random_cat
 
 
+def get_warring_clan():
+    """
+    returns enemy clan if a war is currently ongoing
+    """
+    enemy_clan = None
+    if game.clan.war.get("at_war", False):
+        for other_clan in game.clan.all_clans:
+            if other_clan.name == game.clan.war["enemy"]:
+                enemy_clan = other_clan
+
+    return enemy_clan
+
 # ---------------------------------------------------------------------------- #
 #                          Handling Outside Factors                            #
 # ---------------------------------------------------------------------------- #

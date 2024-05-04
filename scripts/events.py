@@ -30,8 +30,10 @@ from scripts.events_module.freshkill_pile_events import Freshkill_Events
 from scripts.events_module.outsider_events import OutsiderEvents
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
-from scripts.utility import change_clan_relations, change_clan_reputation, get_alive_kits, get_med_cats, ceremony_text_adjust, \
-    get_current_season, adjust_list_text, ongoing_event_text_adjust, event_text_adjust
+from scripts.utility import change_clan_relations, change_clan_reputation, get_alive_kits, get_med_cats, \
+    ceremony_text_adjust, \
+    get_current_season, adjust_list_text, ongoing_event_text_adjust, event_text_adjust, get_random_moon_cat, \
+    get_warring_clan
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
 from scripts.game_structure.windows import SaveError
@@ -533,11 +535,7 @@ class Events:
             if game.clan.war.get("at_war", False):
                 
                 # If at war, grab enemy clans
-                enemy_clan = None
-                for other_clan in game.clan.all_clans:
-                    if other_clan.name == game.clan.war["enemy"]:
-                        enemy_clan = other_clan
-                        break
+                enemy_clan = get_warring_clan()
                 
                 possible_events.append(
                     f"{enemy_clan} breaks into the camp and ravages the herb stores, "
@@ -1671,14 +1669,8 @@ class Events:
             self.ceremony_accessory = False
             return
 
-        # find other_cat
-        other_cat = random.choice(list(Cat.all_cats.values()))
-        countdown = int(len(Cat.all_cats) / 3)
-        while cat == other_cat or other_cat.dead or other_cat.outside:
-            other_cat = random.choice(list(Cat.all_cats.values()))
-            countdown -= 1
-            if countdown <= 0:
-                return
+        # find random_cat
+        random_cat = get_random_moon_cat(Cat, main_cat=cat)
 
         # chance to gain acc
         acc_chances = game.config["accessory_generation"]
@@ -1707,17 +1699,11 @@ class Events:
             chance = 1
         if not int(random.random() * chance):
             
-            enemy_clan = None
-            if game.clan.war.get("at_war", False):
-                
-                for other_clan in game.clan.all_clans:
-                    if other_clan.name == game.clan.war["enemy"]:
-                        enemy_clan = other_clan
-                        break
+            enemy_clan = get_warring_clan()
 
             MiscEvents.handle_misc_events(
                 cat,
-                other_cat,
+                random_cat,
                 game.clan.war.get("at_war", False),
                 enemy_clan,
                 alive_kits=get_alive_kits(Cat),
@@ -1799,38 +1785,17 @@ class Events:
         chance = max(chance, 1)
 
         # choose other cat
-        possible_other_cats = list(
-            filter(
-                lambda c: not c.dead and not c.exiled and not c.outside and
-                          (c.ID != cat.ID), Cat.all_cats.values()))
-
-        # If there are possible other cats...
-        if possible_other_cats:
-            other_cat = random.choice(possible_other_cats)
-
-            if cat.status in ["apprentice", "medicine cat apprentice"
-                              ] and not int(random.random() * 3):
-                if cat.mentor is not None:
-                    other_cat = Cat.fetch_cat(cat.mentor)
-        else:
-            # Otherwise, other_cat is None
-            other_cat = None
+        random_cat = get_random_moon_cat(Cat, main_cat=cat, parent_child_modifier=True, mentor_app_modifier=True)
 
         if not int(random.random() * chance) and \
                 cat.age != 'kitten' and cat.age != 'adolescent' and not self.new_cat_invited:
             self.new_cat_invited = True
 
-            enemy_clan = None
-            if game.clan.war.get("at_war", False):
-                
-                for other_clan in game.clan.all_clans:
-                    if other_clan.name == game.clan.war["enemy"]:
-                        enemy_clan = other_clan
-                        break
+            enemy_clan = get_warring_clan()
             
             new_cats = NewCatEvents.handle_new_cats(
                 cat=cat,
-                other_cat=other_cat,
+                other_cat=random_cat,
                 war=game.clan.war.get("at_war", False),
                 enemy_clan=enemy_clan,
                 alive_kits=get_alive_kits(Cat))
@@ -1844,25 +1809,12 @@ class Events:
         if hit:
             return
 
-        other_cat = random.choice(list(Cat.all_cats.values()))
-        countdown = int(len(Cat.all_cats) / 3)
-        while cat == other_cat or other_cat.dead or other_cat.outside:
-            other_cat = random.choice(list(Cat.all_cats.values()))
-            countdown -= 1
-            if countdown <= 0:
-                other_cat = None
-                break
+        random_cat = get_random_moon_cat(Cat, main_cat=cat)
 
-        enemy_clan = None
-        if game.clan.war.get("at_war", False):
-            
-            for other_clan in game.clan.all_clans:
-                if other_clan.name == game.clan.war["enemy"]:
-                    enemy_clan = other_clan
-                    break
+        enemy_clan = get_warring_clan()
         
         MiscEvents.handle_misc_events(cat,
-                                            other_cat,
+                                            random_cat,
                                             game.clan.war.get("at_war", False),
                                             enemy_clan,
                                             alive_kits=get_alive_kits(Cat))
@@ -1871,34 +1823,12 @@ class Events:
         """
         decide if cat dies
         """
-        # choose other cat
-        possible_other_cats = list(
-            filter(
-                lambda c: not c.dead and not c.exiled and not c.outside and
-                          (c.ID != cat.ID), Cat.all_cats.values()))
-        
-        # If at war, grab enemy clans
-        enemy_clan = None
-        if game.clan.war.get("at_war", False):
-            
-            for other_clan in game.clan.all_clans:
-                if other_clan.name == game.clan.war["enemy"]:
-                    enemy_clan = other_clan
-                    break
 
-        # If there are possible other cats...
-        # TODO: consider moving other cat identity determination elsewhere? utility.py? it's repeated for each event...
-        #  don't like having the code repeated over and over
-        if possible_other_cats:
-            other_cat = random.choice(possible_other_cats)
-            # TODO: add a chance to choose parent/child pair
-            if cat.status in ["apprentice", "medicine cat apprentice"
-                              ] and not int(random.random() * 3):
-                if cat.mentor is not None:
-                    other_cat = Cat.fetch_cat(cat.mentor)
-        else:
-            # Otherwise, other_cat is None
-            other_cat = None
+        # If at war, grab enemy clans
+        enemy_clan = get_warring_clan()
+
+        # try to get the random_cat
+        random_cat = get_random_moon_cat(Cat, cat, parent_child_modifier=True, mentor_app_modifier=True)
 
         # check if Clan has kits, if True then Clan has kits
         alive_kits = get_alive_kits(Cat)
@@ -1907,7 +1837,7 @@ class Events:
         if not int(random.random() * game.get_config_value("death_related", "leader_death_chance")) \
                 and cat.status == 'leader' \
                 and not cat.not_working():
-            Death_Events.handle_deaths(cat, other_cat, game.clan.war.get("at_war", False), enemy_clan, alive_kits)
+            Death_Events.handle_deaths(cat, random_cat, game.clan.war.get("at_war", False), enemy_clan, alive_kits)
             return True
 
         # chance to die of old age
@@ -1917,11 +1847,11 @@ class Events:
         # made old_age_death_chance into a separate value to make testing with print statements easier
         old_age_death_chance = ((1 + death_curve_value) ** (cat.moons - age_start)) - 1
         if random.random() <= old_age_death_chance:
-            Death_Events.handle_deaths(cat, other_cat, game.clan.war.get("at_war", False), enemy_clan, alive_kits)
+            Death_Events.handle_deaths(cat, random_cat, game.clan.war.get("at_war", False), enemy_clan, alive_kits)
             return True
         # max age has been indicated to be 300, so if a cat reaches that age, they die of old age
         elif cat.moons >= 300:
-            Death_Events.handle_deaths(cat, other_cat, game.clan.war.get("at_war", False), enemy_clan, alive_kits)
+            Death_Events.handle_deaths(cat, random_cat, game.clan.war.get("at_war", False), enemy_clan, alive_kits)
             return True
 
         # disaster death chance
@@ -1933,10 +1863,10 @@ class Events:
         # final death chance and then, if not triggered, head to injuries
         if not int(random.random() * game.get_config_value("death_related", f"{game.clan.game_mode}_death_chance")) \
                 and not cat.not_working():  # 1/400
-            Death_Events.handle_deaths(cat, other_cat, game.clan.war.get("at_war", False), enemy_clan, alive_kits)
+            Death_Events.handle_deaths(cat, random_cat, game.clan.war.get("at_war", False), enemy_clan, alive_kits)
             return True
         else:
-            triggered_death = Condition_Events.handle_injuries(cat, other_cat, alive_kits, game.clan.war.get("at_war", False),
+            triggered_death = Condition_Events.handle_injuries(cat, random_cat, alive_kits, game.clan.war.get("at_war", False),
                                                                     enemy_clan, game.clan.current_season)
             return triggered_death
 
@@ -1962,14 +1892,8 @@ class Events:
             chosen_target = random.choice(targets)
             #print("Random Murder!", str(cat.name),  str(Cat.fetch_cat(chosen_target.cat_to).name))
             
-            # If at war, grab enemy clans
-            enemy_clan = None
-            if game.clan.war.get("at_war", False):
-                
-                for other_clan in game.clan.all_clans:
-                    if other_clan.name == game.clan.war["enemy"]:
-                        enemy_clan = other_clan
-                        break
+            # If at war, grab enemy clan
+            enemy_clan = get_warring_clan()
             
             Death_Events.handle_deaths(Cat.fetch_cat(chosen_target.cat_to), cat, game.clan.war.get("at_war", False),
                                             enemy_clan, alive_kits=get_alive_kits(Cat), murder=True)
@@ -2035,14 +1959,8 @@ class Events:
                 print(cat.name, 'TARGET CHOSEN', Cat.fetch_cat(chosen_target.cat_to).name)
                 print("KILL KILL KILL")
                 
-                # If at war, grab enemy clans
-                enemy_clan = None
-                if game.clan.war.get("at_war", False):
-                    
-                    for other_clan in game.clan.all_clans:
-                        if other_clan.name == game.clan.war["enemy"]:
-                            enemy_clan = other_clan
-                            break
+                # If at war, grab enemy clan
+                enemy_clan = get_warring_clan()
                 
                 Death_Events.handle_deaths(Cat.fetch_cat(chosen_target.cat_to), cat, game.clan.war.get("at_war", False),
                                                 enemy_clan, alive_kits=get_alive_kits(Cat), murder=True)

@@ -32,7 +32,7 @@ class MiscEvents():
         if other_clan:
             other_clan_name = f'{other_clan.name}Clan'
 
-        possible_events = GenerateEvents.possible_short_events(cat.status, cat.age, "misc_events")
+        possible_events = GenerateEvents.possible_short_events("misc_events")
         acc_checked_events = []
         for event in possible_events:
             if (ceremony and "ceremony" not in event.tags) or (not ceremony and "ceremony" in event.tags):
