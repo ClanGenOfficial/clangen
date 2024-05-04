@@ -19,7 +19,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "As the cats watch, the silence is broken as one of the massive boulders rears up and snorts. The apprentices jolt with fear, app1's fur standing on end while app2 looks seconds away from fleeing, but p_l flicks {PRONOUN/p_l/poss} tail encouragingly. These are nosy-seals, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}, as the beach full of 'boulders' suddenly seems far more intimidating.",
+                "text": "As the cats watch, the silence is broken as one of the massive boulders rears up and snorts. The apprentices jolt with fear, app1's fur standing on end while app2 looks seconds away from fleeing, but p_l flicks {PRONOUN/p_l/poss} tail encouragingly. These are nosy-seals, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}, and the beach full of 'boulders' suddenly seems far more intimidating.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -33,7 +33,7 @@
                 ]
             },
             {
-                "text": "app1 and app2's jaws drop, disbelieving, as p_l explains these are animals, not a rockslide. They stare as a nosy-seal wakes from his slumber and bellows a challenge to his neighbor, flinching as the monolithic animals crash towards each other. Each drips enough blood to fill the veins of an entire cat, crashing and careening off each other.",
+                "text": "app1 and app2's jaws drop in disbelief when p_l explains these are animals, not a rockslide. They stare as a nosy-seal wakes from his slumber and bellows a challenge to his neighbor, flinching as the monolithic animals crash towards each other. Each drips enough blood to fill the veins of an entire cat, crashing and careening off each other.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -47,7 +47,7 @@
                 ]
             },
             {
-                "text": "As the 'rocks' wake and reveal themselves to be the most massive animals app1 and app2 have ever seen, s_c reassures them - they may never have seen these frightening seals before, but c_n has. s_c spends the morning quizzing the apprentices until each is able to identify a male nosy-seal with his trunk vs the comparatively smaller females.",
+                "text": "As the 'rocks' wake and reveal themselves to be the most massive animals app1 and app2 have ever seen, s_c reassures them - they may never have seen these frightening seals before, but c_n has. s_c spends the morning quizzing the apprentices until each is able to identify a male nosy-seal with his trunk versus the comparatively smaller females.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["TEACHER,1"],
@@ -63,7 +63,7 @@
                 ]
             },
             {
-                "text": "As the sun hits them and the massive boulders wake with grumbling snorts, app1 and app2 both look about to run. s_c quickly calms them, explaining that these massive yearly visitors to c_n are nosy-seals, and that if the cats don't bother them, they won't bother the cats.",
+                "text": "As the sun hits them and the massive boulders wake with grumbling snorts, app1 and app2 both look about to run. s_c quickly calms them, explaining that these massive yearly visitors to c_n are nosy-seals and that if the cats don't bother them, they won't bother the cats.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -112,11 +112,11 @@
         },
         "weight": 20,
         "intro_text": "p_l suggests to r_c that it is the perfect weather to go for a swim in the ocean together.",
-        "decline_text": "r_c isn't convinced, and suggests they should probably focus on the patrol instead.",
+        "decline_text": "r_c isn't convinced and suggests they should probably focus on the patrol instead.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "p_l flashes r_c a playful look and leaps smoothly into the water. When p_l emerges from the water, {PRONOUN/p_l/poss} slicked fur clinging to {PRONOUN/p_l/poss} muscles, r_c can't help but admire p_l for {PRONOUN/p_l/poss} strength. With the way r_c's heart is fluttering, it may not just be p_l's strength {PRONOUN/r_c/subject} {VERB/r_c/admire/admires}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/brush/brushes} it aside and plunge in after {PRONOUN/p_l/object}.",
+                "text": "p_l flashes r_c a playful look and leaps smoothly into the water. When p_l emerges from the water, {PRONOUN/p_l/poss} slicked fur clinging to {PRONOUN/p_l/poss} muscles, r_c can't help but admire p_l for {PRONOUN/p_l/poss} strength. With the way r_c's heart is fluttering, it may not just be p_l's strength {PRONOUN/r_c/subject} {VERB/r_c/admire/admires}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/brush/brushes} it aside and {VERB/r_c/plunge/plunges} in after {PRONOUN/p_l/object}.",
                 "exp": 5,
                 "weight": 20,
                 "relationships": [
@@ -130,7 +130,7 @@
                 ]
             },
             {
-                "text": "Silence meets {PRONOUN/p_l/poss} question, and just as p_l is about to turn and ask again, r_c shoves {PRONOUN/p_l/object} bodily into the water. Spluttering from the cold saltwater, p_l finds it quite difficult to scowl as though {PRONOUN/p_l/subject} {VERB/p_l/mean/means} it, captivated by the sound of r_c's joyous laughter, the sunlight catching on {PRONOUN/p_l/poss} pelt in just the right way.",
+                "text": "Silence meets {PRONOUN/p_l/poss} question, and just as p_l is about to turn and ask again, r_c shoves {PRONOUN/p_l/object} into the water. Spluttering from the cold saltwater, p_l finds it quite difficult to scowl as though {PRONOUN/p_l/subject} {VERB/p_l/mean/means} it, captivated by the sound of r_c's joyous laughter, the sunlight catching on {PRONOUN/p_l/poss} pelt in just the right way.",
                 "exp": 5,
                 "weight": 5,
                 "relationships": [

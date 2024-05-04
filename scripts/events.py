@@ -880,7 +880,7 @@ class Events:
                         self.ceremony(x, "warrior")
                 elif x.status in ["kitten", "newborn"] and x.moons >= 6:
                     self.ceremony(x, "apprentice") 
-            else:
+            elif x.status != 'medicine cat':
                 if x.moons == 0:
                     x.status = 'newborn'
                 elif x.moons < 6:
