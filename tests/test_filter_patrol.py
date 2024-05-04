@@ -94,14 +94,14 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         patrol = Patrol()
         patrol.add_patrol_cats([parent, cat1], test_clan)
         patrol.patrol_leader = parent
-        patrol.patrol_random_cat = cat1
+        patrol.random_cat = cat1
         self.assertTrue(patrol._filter_relationship(con_patrol_event))
         self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
         patrol = Patrol()
         patrol.add_patrol_cats([parent, cat1], test_clan)
         patrol.patrol_leader = cat1
-        patrol.patrol_random_cat = parent
+        patrol.random_cat = parent
         self.assertFalse(patrol._filter_relationship(con_patrol_event))
         self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
@@ -109,7 +109,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         cat_list = [cat1, cat2, parent]
         patrol.add_patrol_cats(cat_list, test_clan)
         patrol.patrol_leader = parent
-        patrol.patrol_random_cat = cat2
+        patrol.random_cat = cat2
         self.assertFalse(patrol._filter_relationship(con_patrol_event))
         self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
@@ -131,14 +131,14 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         patrol = Patrol()
         patrol.add_patrol_cats([parent, cat1], test_clan)
         patrol.patrol_leader = cat1
-        patrol.patrol_random_cat = parent
+        patrol.random_cat = parent
         self.assertTrue(patrol._filter_relationship(con_patrol_event))
         self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
         patrol = Patrol()
         patrol.add_patrol_cats([parent, cat1], test_clan)
         patrol.patrol_leader = parent
-        patrol.patrol_random_cat = cat1
+        patrol.random_cat = cat1
         self.assertFalse(patrol._filter_relationship(con_patrol_event))
         self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
@@ -146,7 +146,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         cat_list = [cat1, cat2, parent]
         patrol.add_patrol_cats(cat_list, test_clan)
         patrol.patrol_leader = parent
-        patrol.patrol_random_cat = cat2
+        patrol.random_cat = cat2
         self.assertFalse(patrol._filter_relationship(con_patrol_event))
         self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 

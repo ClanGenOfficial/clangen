@@ -43,7 +43,7 @@ class Patrol():
         self.patrol_event: PatrolEvent = None
     
         self.patrol_leader = None
-        self.patrol_random_cat = None
+        self.random_cat = None
         self.patrol_cats = []
         self.patrol_apprentices = []
         self.other_clan = None
@@ -83,7 +83,7 @@ class Patrol():
         
         if romantic_event_choice and Patrol.decide_if_romantic(romantic_event_choice, 
                                                                self.patrol_leader, 
-                                                               self.patrol_random_cat, 
+                                                               self.random_cat,
                                                                self.patrol_apprentices):
             print("did the romance")
             self.patrol_event = romantic_event_choice
@@ -200,12 +200,12 @@ class Patrol():
         # DETERMINE RANDOM CAT
         #Find random cat
         if len(patrol_cats) > 1:
-            self.patrol_random_cat = choice([i for i in patrol_cats if i != self.patrol_leader])
+            self.random_cat = choice([i for i in patrol_cats if i != self.patrol_leader])
         else:
-            self.patrol_random_cat = choice(patrol_cats)
+            self.random_cat = choice(patrol_cats)
             
         print("Patrol Leader:", str(self.patrol_leader.name))
-        print("Random Cat:", str(self.patrol_random_cat.name))
+        print("Random Cat:", str(self.random_cat.name))
 
     def get_possible_patrols(self, current_season:str, biome:str, patrol_type:str,
                              game_setting_disaster=None) -> Tuple[List[PatrolEvent]]:
@@ -753,10 +753,10 @@ class Patrol():
 
         replace_dict = {
             "p_l": (str(self.patrol_leader.name), choice(self.patrol_leader.pronouns)),
-            "r_c": (str(self.patrol_random_cat.name), choice(self.patrol_random_cat.pronouns)),
+            "r_c": (str(self.random_cat.name), choice(self.random_cat.pronouns)),
         }
 
-        other_cats = [i for i in self.patrol_cats if i not in [self.patrol_leader, self.patrol_random_cat]]
+        other_cats = [i for i in self.patrol_cats if i not in [self.patrol_leader, self.random_cat]]
         if len(other_cats) >= 1:
             replace_dict['o_c1'] = (str(other_cats[0].name),
                                     choice(other_cats[0].pronouns))

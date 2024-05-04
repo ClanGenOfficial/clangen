@@ -183,9 +183,7 @@ class PatrolOutcome():
         results.append(self._handle_death(patrol))
         results.append(self._handle_lost(patrol))
         results.append(self._handle_condition_and_scars(patrol))
-        results.append(unpack_rel_block(Cat, self.relationship_effects,
-                                        cat_group=[patrol.patrol_random_cat, patrol.patrol_leader, self.stat_cat,
-                                                   patrol.patrol_apprentices, patrol.new_cats, patrol.patrol_cats]))
+        results.append(unpack_rel_block(Cat, self.relationship_effects, Patrol, stat_cat=self.stat_cat))
         results.append(self._handle_rep_changes(patrol))
         results.append(self._handle_other_clan_relations(patrol))
         results.append(self._handle_prey(patrol))
@@ -210,7 +208,7 @@ class PatrolOutcome():
         # With allowed_specfic empty, that means the stat can can be anyone that's not patrol leader
         # or stat cat. This can
         if not allowed_specfic or "not_pl_rc" in allowed_specfic:
-            if kitty in (patrol.patrol_leader, patrol.patrol_random_cat):
+            if kitty in (patrol.patrol_leader, patrol.random_cat):
                 return False
             return True
 
@@ -223,7 +221,7 @@ class PatrolOutcome():
         # Otherwise, check to see if the cat matched any of the specfic cats
         if "p_l" in allowed_specfic and kitty == patrol.patrol_leader:
             return True
-        if "r_c" in allowed_specfic and kitty == patrol.patrol_random_cat:
+        if "r_c" in allowed_specfic and kitty == patrol.random_cat:
             return True
         if "app1" in allowed_specfic and len(patrol.patrol_apprentices) >= 1 and \
                 kitty == patrol.patrol_apprentices[0]:
@@ -357,7 +355,7 @@ class PatrolOutcome():
 
             for _cat in cat_list:
                 if _cat == "r_c":
-                    out_set.add(patrol.patrol_random_cat)
+                    out_set.add(patrol.random_cat)
                 elif _cat == "p_l":
                     out_set.add(patrol.patrol_leader)
                 elif _cat == "s_c":
@@ -422,7 +420,7 @@ class PatrolOutcome():
 
             for _cat in cat_list:
                 if _cat == "r_c":
-                    out_set.add(patrol.patrol_random_cat)
+                    out_set.add(patrol.random_cat)
                 elif _cat == "p_l":
                     out_set.add(patrol.patrol_leader)
                 elif _cat == "s_c":
@@ -463,7 +461,7 @@ class PatrolOutcome():
 
             for _cat in cat_list:
                 if _cat == "r_c":
-                    out_set.add(patrol.patrol_random_cat)
+                    out_set.add(patrol.random_cat)
                 elif _cat == "p_l":
                     out_set.add(patrol.patrol_leader)
                 elif _cat == "s_c":
@@ -574,7 +572,7 @@ class PatrolOutcome():
 
             for _cat in cat_list:
                 if _cat == "r_c":
-                    out_set.add(patrol.patrol_random_cat)
+                    out_set.add(patrol.random_cat)
                 elif _cat == "p_l":
                     out_set.add(patrol.patrol_leader)
                 elif _cat == "s_c":
@@ -905,7 +903,7 @@ class PatrolOutcome():
         # GATHER MATES
         in_patrol_cats = {
             "p_l": patrol.patrol_leader,
-            "r_c": patrol.patrol_random_cat,
+            "r_c": patrol.random_cat,
         }
         if self.stat_cat:
             in_patrol_cats["s_c"] = self.stat_cat
@@ -1174,7 +1172,7 @@ class PatrolOutcome():
             # I'm not 100% sure which one is supposed to be which...
             history_text = history_text if "m_c" not in history_text else history_text.replace("m_c", str(cat.name))
             history_text = history_text if "r_c" not in history_text else history_text.replace("r_c",
-                                                                                               str(patrol.patrol_random_cat.name))
+                                                                                               str(patrol.random_cat.name))
             history_text = history_text if "o_c_n" not in history_text else history_text.replace("o_c_n",
                                                                                                  f"{str(patrol.other_clan.name)}Clan")
 
