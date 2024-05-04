@@ -687,7 +687,7 @@ class PronounCreation(UIWindow):
             pronoun_template["conju"] = 2
        # if save button or add to cat is pressed, set 'name' as a counting number thing as an invisible identifier
         newid = len(game.clan.custom_pronouns)+1
-        pronoun_template['name'] = "custom" + str(newid)
+        pronoun_template['ID'] = "custom" + str(newid)
         return pronoun_template
     
     def is_box_full(self, entry):
