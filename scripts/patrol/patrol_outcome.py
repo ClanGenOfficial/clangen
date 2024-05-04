@@ -15,7 +15,7 @@ from scripts.clan import HERBS
 from scripts.utility import (
     change_clan_relations,
     change_clan_reputation,
-    change_relationship_values, create_new_cat, unpack_rel_block,
+    change_relationship_values, create_new_cat, unpack_rel_block, event_text_adjust,
 )
 from scripts.game_structure.game_essentials import game
 from scripts.cat.skills import SkillPath
@@ -176,7 +176,7 @@ class PatrolOutcome():
         """
         results = []
         # the text has to be processed before - otherwise leader might be referenced with their warrior name
-        processed_text = patrol.process_text(self.text, self.stat_cat)
+        processed_text = event_text_adjust(Cat, self.text, Patrol, self.stat_cat)
 
         # This order is important. 
         results.append(self._handle_new_cats(patrol))

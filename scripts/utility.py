@@ -1346,81 +1346,7 @@ def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
     return text
 
 
-def event_text_adjust(Cat,
-                      text,
-                      main_cat,
-                      random_cat=None,
-                      other_clan_name=None,
-                      new_cat=None,
-                      clan=None,
-                      murder_reveal=False,
-                      victim=None):
-    """
-    This function takes the given text and returns it with the abbreviations replaced appropriately
-    :param Cat: Always give the Cat class
-    :param text: The text that needs to be changed
-    :param cat: The cat taking the place of m_c
-    :param other_cat: The cat taking the place of r_c
-    :param other_clan_name: The other clan involved in the event
-    :param new_cat: The cat taking the place of n_c
-    :param clan: The player's Clan
-    :param murder_reveal: Whether or not this event is a murder reveal
-    :return: the adjusted text
-    """
-
-    cat_dict = {}
-
-    if main_cat:
-        if main_cat.pronouns:
-            cat_dict["m_c"] = (str(main_cat.name), choice(main_cat.pronouns))
-        else:
-            cat_dict["m_c"] = (str(main_cat.name))
-
-        cat_dict["p_l"] = cat_dict["m_c"]  # why???
-
-    if "acc_plural" in text:
-        text = text.replace("acc_plural", str(ACC_DISPLAY[main_cat.pelt.accessory]["plural"]))
-    if "acc_singular" in text:
-        text = text.replace("acc_singular", str(ACC_DISPLAY[main_cat.pelt.accessory]["singular"]))
-
-    if random_cat:
-        if random_cat.pronouns:
-            cat_dict["r_c"] = (str(random_cat.name), choice(random_cat.pronouns))
-        else:
-            cat_dict["r_c"] = (str(random_cat.name))
-
-    if new_cat:
-        cat_dict["n_c_pre"] = (str(new_cat.name.prefix), None)
-        cat_dict["n_c"] = (str(new_cat.name), choice(new_cat.pronouns))
-
-    if other_clan_name:
-        text = text.replace("o_c", other_clan_name)
-    if clan:
-        clan_name = str(clan.name)
-    else:
-        if game.clan is None:
-            clan_name = game.switches["clan_list"][0]
-        else:
-            clan_name = str(game.clan.name)
-
-    text = text.replace("c_n", clan_name + "Clan")
-
-    if murder_reveal and victim:
-        victim_cat = Cat.fetch_cat(victim)
-        cat_dict["mur_c"] = (str(victim_cat.name), choice(victim_cat.pronouns))
-
-    # Dreams and Omens
-    text, senses, list_type = find_special_list_types(text)
-    if list_type:
-        chosen_items = get_special_snippet_list(list_type, randint(1, 3), sense_groups=senses)
-        text = text.replace(list_type, chosen_items)
-
-    adjust_text = process_text(text, cat_dict)
-
-    return adjust_text
-
-
-def new_event_text_adjust(Cat, text, event, stat_cat=None):
+def event_text_adjust(Cat, text, event, stat_cat=None):
     """
     handles finding abbreviations in the text and replacing them appropriately, returns the adjusted text
     :param Cat: always pass the Cat class
@@ -1515,7 +1441,6 @@ def new_event_text_adjust(Cat, text, event, stat_cat=None):
 
     # mur_c (murdered cat for reveals)
     if "mur_c" in text:
-        # TODO: add self.victim_cat to death events class
         replace_dict["mur_c"] = (str(event.victim_cat.name), choice(event.victim_cat.pronouns))
 
     # lead_name
