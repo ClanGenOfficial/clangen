@@ -7,6 +7,7 @@ TODO: Docs
 """
 
 # pylint: enable=line-too-long
+import re
 from collections import Counter
 import random
 import traceback
@@ -2129,7 +2130,28 @@ class Events:
             for poor_little_meowmeow in dead_cats:
                 poor_little_meowmeow.die()
                 # this next bit is temporary until we can rework it
-                History.add_death(poor_little_meowmeow, 'This cat died after disaster struck the Clan.')
+                if re.search("(drown|drowns) after the camp becomes flooded.", event_string):
+                    History.add_death(poor_little_meowmeow, 'This cat died when the camp was flooded.')
+                elif re.search("(are|is) killed after a fire rages through the camp.", event_string):
+                    History.add_death(poor_little_meowmeow, 'This cat died when a fire raged through camp.')
+                elif re.search("(are|is) killed in an ambush by a group of rogues.", event_string):
+                    History.add_death(poor_little_meowmeow, 'This cat died in a rogue ambush.')
+                elif re.search("(go|goes) missing in the night.", event_string):
+                    History.add_death(poor_little_meowmeow, 'This cat went missing in the night.')
+                elif re.search("(are|is) killed after a badger attack.", event_string):
+                    History.add_death(poor_little_meowmeow, 'This cat was killed in a badger attack.')
+                elif re.search("(die|dies) to a greencough outbreak.", event_string):
+                    History.add_death(poor_little_meowmeow, 'This cat died to a greencough outbreak.')
+                elif re.search("(eat|eats) tainted fresh-kill and die.", event_string):
+                    History.add_death(poor_little_meowmeow, 'This cat died after eating tainted fresh-kill.')
+                elif re.search("(die|dies) after freezing from a snowstorm.", event_string):
+                    History.add_death(poor_little_meowmeow, 'This cat froze to death in a snowstorm.')
+                elif re.search("(starve|starves) to death when no prey is found.", event_string):
+                    History.add_death(poor_little_meowmeow, 'This cat starved to death when no prey was found.')
+                elif re.search("(die|dies) after overheating.", event_string):
+                    History.add_death(poor_little_meowmeow, 'This cat died to a heatwave.')
+                elif re.search("(die|dies) after the water dries up from drought.", event_string):
+                    History.add_death(poor_little_meowmeow, 'This cat died to dehydration after a drought.')
 
     def handle_illnesses_or_illness_deaths(self, cat):
         """ 
