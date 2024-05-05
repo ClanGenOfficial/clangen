@@ -6,7 +6,7 @@ TODO: Docs
 
 """  # pylint: enable=line-too-long
 from itertools import combinations
-from random import choice, choices, randint, random, sample
+from random import choice, choices, randint, random, sample, randrange
 import re
 import pygame
 import ujson
@@ -264,6 +264,262 @@ def change_clan_relations(other_clan, difference):
         clan_relations = 0
     # setting it in the Clan save
     game.clan.all_clans[y].relations = clan_relations
+
+
+def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, attribute_list: List[str]):
+    """
+    Creates a single new_cat block and then generates and returns the cats within the block
+    :param Cat: always pass Cat class
+    :param Relationship: always pass Relationship class
+    :param event: always pass the event class
+    :param in_event_cats: dict containing involved cats' abbreviations as keys and cat objects as values
+    :param i: index of the cat block
+    :param attribute_list: attribute list contained within the block
+    """
+
+    thought = "Is looking around the camp with wonder"
+
+    # gather bio parents
+    parent1 = None
+    parent2 = None
+    for tag in attribute_list:
+        match = re.match(r"parent:([,0-9]+)", tag)
+        if not match:
+            continue
+
+        parent_indexes = match.group(1).split(",")
+        if not parent_indexes:
+            continue
+
+        parent_indexes = [int(index) for index in parent_indexes]
+        for index in parent_indexes:
+            if index >= i:
+                continue
+
+            if parent1 is None:
+                parent1 = event.new_cats[index][0]
+            else:
+                parent2 = event.new_cats[index][0]
+        break
+
+    # gather mates
+    give_mates = []
+    for tag in attribute_list:
+        match = re.match(r"mate:([_,0-9a-zA-Z]+)", tag)
+        if not match:
+            continue
+
+        mate_indexes = match.group(1).split(",")
+
+        # TODO: make this less ugly
+        for index in mate_indexes:
+            if index in in_event_cats:
+                if in_event_cats[index] in ["apprentice", "medicine cat apprentice", "mediator apprentice"]:
+                    print("Can't give apprentices mates")
+                    continue
+
+                give_mates.append(in_event_cats[index])
+
+            try:
+                index = int(index)
+            except ValueError:
+                print(f"mate-index not correct: {index}")
+                continue
+
+            if index >= i:
+                continue
+
+            give_mates.extend(event.new_cats[index])
+
+    # determine gender
+    if "male" in attribute_list:
+        gender = "male"
+    elif "female" in attribute_list:
+        gender = "female"
+    elif "can_birth" in attribute_list and not game.clan.clan_settings["same sex birth"]:
+        gender = "female"
+    else:
+        gender = None
+
+    # will the cat get a new name?
+    if "new_name" in attribute_list:
+        new_name = True
+    elif "old_name" in attribute_list:
+        new_name = False
+    else:
+        new_name = choice([True, False])
+
+    # STATUS - must be handled before backstories
+    status = None
+    for _tag in attribute_list:
+        match = re.match(r"status:(.+)", _tag)
+        if not match:
+            continue
+
+        if match.group(1) in ["newborn", "kitten", "elder", "apprentice", "warrior",
+                              "mediator apprentice", "mediator", "medicine cat apprentice",
+                              "medicine cat"]:
+            status = match.group(1)
+            break
+
+    # SET AGE
+    age = None
+    for _tag in attribute_list:
+        match = re.match(r"age:(.+)", _tag)
+        if not match:
+            continue
+
+        if match.group(1) in Cat.age_moons:
+            age = randint(Cat.age_moons[match.group(1)][0], Cat.age_moons[match.group(1)][1])
+            break
+
+        # Set same as first mate
+        if match.group(1) == "mate" and give_mates:
+            age = randint(Cat.age_moons[give_mates[0].age][0],
+                          Cat.age_moons[give_mates[0].age][1])
+            break
+
+        if match.group(1) == "has_kits":
+            age = randint(19, 120)
+            break
+
+    # CAT TYPES AND BACKGROUND
+    if "kittypet" in attribute_list:
+        cat_type = "kittypet"
+    elif "rogue" in attribute_list:
+        cat_type = "rogue"
+    elif "loner" in attribute_list:
+        cat_type = "loner"
+    elif "clancat" in attribute_list:
+        cat_type = "former Clancat"
+    else:
+        cat_type = choice(['kittypet', 'loner', 'former Clancat'])
+
+    # LITTER
+    litter = False
+    if "litter" in attribute_list:
+        litter = True
+        if status not in ["kitten", "newborn"]:
+            status = "kitten"
+
+    # CHOOSE DEFAULT BACKSTORY BASED ON CAT TYPE, STATUS
+    if status in ("kitten", "newborn"):
+        chosen_backstory = choice(BACKSTORIES["backstory_categories"]["abandoned_backstories"])
+    elif status == "medicine cat" and cat_type == "former Clancat":
+        chosen_backstory = choice(["medicine_cat", "disgraced1"])
+    elif status == "medicine cat":
+        chosen_backstory = choice(["wandering_healer1", "wandering_healer2"])
+    else:
+        if cat_type == "former Clancat":
+            x = "former_clancat"
+        else:
+            x = cat_type
+        chosen_backstory = choice(BACKSTORIES["backstory_categories"].get(f"{x}_backstories", ["outsider1"]))
+
+    # OPTION TO OVERRIDE DEFAULT BACKSTORY
+    for _tag in attribute_list:
+        match = re.match(r"backsotry:(.+)", _tag)
+        if match:
+            stor = [x for x in match.group(1).split(",") if x in BACKSTORIES["backstories"]]
+            if not stor:
+                continue
+            chosen_backstory = choice(stor)
+            break
+
+    # KITTEN THOUGHT
+    if status in ["kitten", "newborn"]:
+        thought = "Is snuggled safe in the nursery"
+
+    # MEETING - DETERMINE IF THIS IS AN OUTSIDE CAT
+    outside = False
+    if "meeting" in attribute_list:
+        outside = True
+        status = cat_type
+        new_name = False
+        thought = "Is wondering about those new cats"
+
+    # IS THE CAT DEAD?
+    alive = True
+    if "dead" in attribute_list:
+        alive = False
+        thought = "Explores a new, starry world"
+
+    # Now we generate the new cat
+    new_cats = create_new_cat(Cat,
+                              Relationship,
+                              new_name=new_name,
+                              loner=cat_type in ["loner", "rogue"],
+                              kittypet=cat_type == "kittypet",
+                              other_clan=cat_type == 'former Clancat',
+                              kit=False if litter else status in ["kitten", "newborn"],
+                              # this is for singular kits, litters need this to be false
+                              litter=litter,
+                              backstory=chosen_backstory,
+                              status=status,
+                              age=age,
+                              gender=gender,
+                              thought=thought,
+                              alive=alive,
+                              outside=outside,
+                              parent1=parent1.ID if parent1 else None,
+                              parent2=parent2.ID if parent2 else None
+                              )
+
+    # NEXT
+    # add relations to bio parents, if needed
+    # add relations to cats generated within the same block, as they are littermates
+    # add mates
+    # THIS DOES NOT ADD RELATIONS TO CATS IN THE EVENT, those are added within the relationships block of the event
+
+    for n_c in new_cats:
+
+        # SET MATES
+        for inter_cat in give_mates:
+            if n_c == inter_cat or n_c.ID in inter_cat.mate:
+                continue
+
+            # this is some duplicate work, since this triggers inheritance re-calcs
+            # TODO: optimize
+            n_c.set_mate(inter_cat)
+
+        # LITTERMATES
+        for inter_cat in new_cats:
+            if n_c == inter_cat:
+                continue
+
+            y = randrange(0, 20)
+            start_relation = Relationship(n_c, inter_cat, False, True)
+            start_relation.platonic_like += 30 + y
+            start_relation.comfortable = 10 + y
+            start_relation.admiration = 15 + y
+            start_relation.trust = 10 + y
+            n_c.relationships[inter_cat.ID] = start_relation
+
+        # BIO PARENTS
+        for par in (parent1, parent2):
+            if not par:
+                continue
+
+            y = randrange(0, 20)
+            start_relation = Relationship(par, n_c, False, True)
+            start_relation.platonic_like += 30 + y
+            start_relation.comfortable = 10 + y
+            start_relation.admiration = 15 + y
+            start_relation.trust = 10 + y
+            par.relationships[n_c.ID] = start_relation
+
+            y = randrange(0, 20)
+            start_relation = Relationship(n_c, par, False, True)
+            start_relation.platonic_like += 30 + y
+            start_relation.comfortable = 10 + y
+            start_relation.admiration = 15 + y
+            start_relation.trust = 10 + y
+            n_c.relationships[par.ID] = start_relation
+
+        # UPDATE INHERITANCE
+        n_c.create_inheritance_new_cat()
+
+    return new_cats
 
 
 def create_new_cat(Cat,
@@ -1405,22 +1661,22 @@ def event_text_adjust(Cat, text, event, stat_cat=None):
         if abbr in text:
             if len(event.patrol_apprentices) > 0:
                 replace_dict["app1"] = (
-                str(event.patrol_apprentices[0].name), choice(event.patrol_apprentices[0].pronouns))
+                    str(event.patrol_apprentices[0].name), choice(event.patrol_apprentices[0].pronouns))
             if len(event.patrol_apprentices) > 1:
                 replace_dict["app2"] = (
-                str(event.patrol_apprentices[1].name), choice(event.patrol_apprentices[1].pronouns))
+                    str(event.patrol_apprentices[1].name), choice(event.patrol_apprentices[1].pronouns))
             if len(event.patrol_apprentices) > 2:
                 replace_dict["app3"] = (
-                str(event.patrol_apprentices[2].name), choice(event.patrol_apprentices[2].pronouns))
+                    str(event.patrol_apprentices[2].name), choice(event.patrol_apprentices[2].pronouns))
             if len(event.patrol_apprentices) > 3:
                 replace_dict["app4"] = (
-                str(event.patrol_apprentices[3].name), choice(event.patrol_apprentices[3].pronouns))
+                    str(event.patrol_apprentices[3].name), choice(event.patrol_apprentices[3].pronouns))
             if len(event.patrol_apprentices) > 4:
                 replace_dict["app5"] = (
-                str(event.patrol_apprentices[4].name), choice(event.patrol_apprentices[4].pronouns))
+                    str(event.patrol_apprentices[4].name), choice(event.patrol_apprentices[4].pronouns))
             if len(event.patrol_apprentices) > 5:
                 replace_dict["app6"] = (
-                str(event.patrol_apprentices[5].name), choice(event.patrol_apprentices[5].pronouns))
+                    str(event.patrol_apprentices[5].name), choice(event.patrol_apprentices[5].pronouns))
             # running this once will cover all abbrs, so break
             break
 
@@ -1435,7 +1691,6 @@ def event_text_adjust(Cat, text, event, stat_cat=None):
 
                 replace_dict[f"n_c:{i}"] = (str(new_cats[i].name), pronoun)
                 replace_dict[f"n_c_pre:{i}"] = (str(new_cats[i].name.prefix), pronoun)
-
 
     # mur_c (murdered cat for reveals)
     if "mur_c" in text:

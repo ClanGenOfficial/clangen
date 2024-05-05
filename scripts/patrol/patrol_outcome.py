@@ -15,7 +15,7 @@ from scripts.clan import HERBS
 from scripts.utility import (
     change_clan_relations,
     change_clan_reputation,
-    change_relationship_values, create_new_cat, unpack_rel_block, event_text_adjust,
+    change_relationship_values, create_new_cat, unpack_rel_block, event_text_adjust, create_new_cat_block,
 )
 from scripts.game_structure.game_essentials import game
 from scripts.cat.skills import SkillPath
@@ -843,10 +843,16 @@ class PatrolOutcome():
             return ""
 
         results = []
+        in_event_cats = {
+            "p_l": patrol.patrol_leader,
+            "r_c": patrol.random_cat,
+        }
+        if self.stat_cat:
+            in_event_cats["s_c"] = self.stat_cat
+
         for i, attribute_list in enumerate(self.new_cat):
 
-            patrol.new_cats.append(self.__create_new_cat_block(i, attribute_list,
-                                                               patrol))
+            patrol.new_cats.append(create_new_cat_block(Cat, Relationship, patrol, in_event_cats, i, attribute_list))
 
             for cat in patrol.new_cats[-1]:
                 if cat.dead:
@@ -874,6 +880,8 @@ class PatrolOutcome():
 
     def __create_new_cat_block(self, i: int, attribute_list: List[str], patrol: 'Patrol') -> List[Cat]:
         """Creates a single new_cat block """
+
+        # TODO: remove if new utility works
 
         thought = choice(["Is looking around the camp with wonder", "Is getting used to their new home"])
 

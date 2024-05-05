@@ -222,7 +222,6 @@ class MiscEvents():
                 except ValueError:
                     print(f'attempted to remove {acc} from possible acc list, but it was not in the list!')
 
-
         cat.pelt.accessory = random.choice(acc_list)
 
     @staticmethod

@@ -107,7 +107,7 @@ class GenerateEvents:
                         r_c=event["r_c"] if "r_c" in event else {},
                         new_cat=event["new_cat"] if "new_cat" in event else [],
                         injury=event["injury"] if "injury" in event else [],
-                        history=event["history"] if "history" in event else {},
+                        history=event["history"] if "history" in event else [],
                         relationships=event["relationships"] if "relationships" in event else [],
                         outsider=event["outsider"] if "outsider" in event else {},
                         other_clan=event["other_clan"] if "other_clan" in event else {}
@@ -652,7 +652,7 @@ class ShortEvent:
 
         self.new_cat = new_cat if new_cat else []
         self.injury = injury if injury else []
-        self.history = history if history else {}
+        self.history = history if history else []
         self.relationships = relationships if relationships else []
         self.outsider = outsider if outsider else {}
         if self.outsider:

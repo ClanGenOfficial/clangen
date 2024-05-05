@@ -3,9 +3,11 @@ from typing import List
 
 from scripts.cat.cats import Cat, INJURIES
 from scripts.cat.history import History
+from scripts.cat.pelts import Pelt
+from scripts.cat_relations.relationship import Relationship
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values, get_alive_kits, \
-    history_text_adjust, get_warring_clan, unpack_rel_block, change_clan_reputation
+    history_text_adjust, get_warring_clan, unpack_rel_block, change_clan_reputation, create_new_cat_block
 from scripts.game_structure.game_essentials import game
 from scripts.event_class import Single_Event
 
@@ -16,6 +18,7 @@ from scripts.event_class import Single_Event
 
 class Death_Events():
     """All events with a connection to death."""
+
     # TODO: adjust to fit new event format, consider what can move to utility.py
     def __init__(self):
         self.involved_cats = []
@@ -27,7 +30,7 @@ class Death_Events():
         self.victim_cat = None
         self.other_clan = None
         self.other_clan_name = None
-        
+
         self.chosen_event = None
         self.additional_event_text = ""
 
@@ -79,6 +82,7 @@ class Death_Events():
             self.involved_cats.append(self.random_cat.ID)
 
         # create new cats (must happen here so that new cats can be included in further changes)
+        self.handle_new_cats()
 
         # change relationships before killing anyone
         unpack_rel_block(Cat, self.chosen_event.relationships, Death_Events)
@@ -100,6 +104,7 @@ class Death_Events():
         self.handle_death()
 
         # handle injuries
+        # TODO: figure out how to handle injuries
         if self.chosen_event.injury:
             for injury in self.chosen_event.injury:
                 pass
@@ -120,10 +125,12 @@ class Death_Events():
 
         # change supplies
         if self.chosen_event.supplies:
+            # TODO: figure out how to do
             pass
 
         # give accessory
         if self.chosen_event.new_accessory:
+            self.handle_accessories()
             pass
 
         # TODO: move text adjust down? i don't think that breaks it
@@ -138,21 +145,88 @@ class Death_Events():
 
         game.cur_events_list.append(Single_Event(death_text + " " + additional_event_text, types, self.involved_cats))
 
+    def handle_new_cats(self):
+
+        if not self.chosen_event.new_cat:
+            return
+
+        extra_text = None
+
+        in_event_cats = {
+            "m_c": self.main_cat
+        }
+        if self.random_cat:
+            in_event_cats["r_c"] = self.random_cat
+        for i, attribute_list in enumerate(self.chosen_event.new_cat):
+
+            self.new_cats.append(
+                create_new_cat_block(Cat, Relationship, Death_Events, in_event_cats, i, attribute_list))
+
+            # check if we want to add some extra info to the event text
+            for cat in self.new_cats[-1]:
+                if cat.dead:
+                    extra_text = f"{cat.name}'s ghost now wanders."
+                elif cat.outside:
+                    extra_text = f"The Clan now knows of {cat.name}."
+
+        # Check to see if any young litters joined with alive parents.
+        # If so, see if recoveing from birth condition is needed and give the condition
+        for sub in self.new_cats:
+            if sub[0].moons < 3:
+                # Search for parent
+                for sub_sub in self.new_cats:
+                    if sub_sub[0] != sub[0] and (
+                            sub_sub[0].gender == "female" or game.clan.clan_settings['same sex birth']) \
+                            and sub_sub[0].ID in (sub[0].parent1, sub[0].parent2) and not (
+                            sub_sub[0].dead or sub_sub[0].outside):
+                        sub_sub[0].get_injured("recovering from birth")
+                        break  # Break - only one parent ever gives birth
+
+        if extra_text:
+            self.chosen_event.event_text = self.chosen_event.event_text + " " + extra_text
+
+    def handle_accessories(self):
+        """
+        handles giving accessories to the main_cat
+        """
+        if "misc" not in self.types:
+            self.types.append("misc")
+        acc_list = []
+        possible_accs = self.chosen_event.new_accessory
+        if "WILD" in possible_accs:
+            acc_list.extend(Pelt.wild_accessories)
+        if "PLANT" in possible_accs:
+            acc_list.extend(Pelt.plant_accessories)
+        if "COLLAR" in possible_accs:
+            acc_list.extend(Pelt.collars)
+
+        for acc in possible_accs:
+            if acc not in ["WILD", "PLANT", "COLLAR"]:
+                acc_list.append(acc)
+
+        if "NOTAIL" in self.main_cat.pelt.scars or "HALFTAIL" in self.main_cat.pelt.scars:
+            for acc in Pelt.tail_accessories:
+                try:
+                    acc_list.remove(acc)
+                except ValueError:
+                    print(f'attempted to remove {acc} from possible acc list, but it was not in the list!')
+
+        self.main_cat.pelt.accessory = random.choice(acc_list)
+
     def handle_history(self, murder):
         """
         handles assigning histories
         """
-
         for block in self.chosen_event.history:
             # main_cat's history
-            if "m_c" in self.chosen_event.history["cats"]:
+            if "m_c" in block["cats"]:
                 # death history
                 if self.chosen_event.r_c["dies"]:
                     # find history
                     if self.main_cat.status == "leader":
-                        death_history = self.chosen_event.history.get("lead_death")
+                        death_history = block.get("lead_death")
                     else:
-                        death_history = self.chosen_event.history.get("reg_death")
+                        death_history = block.get("reg_death")
 
                     # handle murder
                     murder_unrevealed_history = None
@@ -163,9 +237,9 @@ class Death_Events():
                             # FIXME: seems like there are no events that make use of unrevealed history?
                             #  does it work? is it just not being utilized correctly?
                             if self.main_cat.status == 'leader':
-                                murder_unrevealed_history = self.chosen_event.history_text.get("lead_murder_unrevealed")
+                                murder_unrevealed_history = block.get("lead_murder_unrevealed")
                             else:
-                                murder_unrevealed_history = self.chosen_event.history_text.get("reg_murder_unrevealed")
+                                murder_unrevealed_history = block.get("reg_murder_unrevealed")
                             revealed = False
 
                         death_history = history_text_adjust(death_history, self.other_clan_name, game.clan)
@@ -186,16 +260,16 @@ class Death_Events():
                     pass
 
             # random_cat history
-            if "r_c" in self.chosen_event.history["cats"]:
+            if "r_c" in block["cats"]:
                 # death history
                 # TODO: problematic as we currently cannot mark who is the r_c and who is the m_c
                 #  should consider if we can have history text be converted to use the cat's ID number in place of abbrs
                 if self.chosen_event.r_c["dies"]:
                     if self.random_cat.status == 'leader':
-                        death_history = history_text_adjust(self.chosen_event.history_text.get('lead_death'),
+                        death_history = history_text_adjust(block.get('lead_death'),
                                                             self.other_clan_name, game.clan)
                     else:
-                        death_history = history_text_adjust(self.chosen_event.history_text.get('reg_death'),
+                        death_history = history_text_adjust(block.get('reg_death'),
                                                             self.other_clan_name, game.clan)
 
                     History.add_death(self.random_cat, death_history, other_cat=self.random_cat)
@@ -280,7 +354,7 @@ class Death_Events():
         possible_witness = list(
             filter(
                 lambda c: not c.dead and not c.exiled and not c.outside and
-                (c.ID != main_cat.ID) and (c.ID != random_cat.ID), Cat.all_cats.values()))
+                          (c.ID != main_cat.ID) and (c.ID != random_cat.ID), Cat.all_cats.values()))
         # If there are possible other cats...
         if possible_witness:
             witness = random.choice(possible_witness)
@@ -295,5 +369,3 @@ class Death_Events():
                                        comfortable=-40,
                                        trust=-50
                                        )
-
-
