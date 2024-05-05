@@ -4,7 +4,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["any"],
-    "tags": ["murder_reveal"],
+    "tags": ["murder_reveal", "clan_discovery"],
     "weight": 5,
     "event_text": "m_c can't keep this secret anymore. {PRONOUN/m_c/subject/CAP} {VERB/m_c/request/requests} a Clan meeting, where {PRONOUN/m_c/subject} {VERB/m_c/reveal/reveals} the terrible secret {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} kept; {PRONOUN/m_c/subject} killed mur_c.",
     "m_c": {
@@ -62,7 +62,7 @@
   "biome": ["any"],
   "camp": ["any"],
   "season": ["any"],
-  "tags": ["murder_reveal"],
+  "tags": ["murder_reveal", "clan_discovery"],
   "weight": 5,
   "event_text": "m_c boldly confesses to the entire Clan that {PRONOUN/m_c/subject} killed mur_c. m_c claims that mur_c deserved to pay for what {PRONOUN/mur_c/subject} did.",
   "m_c": {
@@ -90,7 +90,7 @@
   "biome": ["any"],
   "camp": ["any"],
   "season": ["any"],
-  "tags": ["murder_reveal"],
+  "tags": ["murder_reveal", "clan_discovery"],
   "weight": 10,
   "event_text": "m_c's cold eyes don't blink when {PRONOUN/m_c/subject} {VERB/m_c/are/is} accused of murdering mur_c, and only simply states that the Clan is better off without mur_c anyways.",
   "m_c": {
@@ -616,7 +616,11 @@
     "weight": 5,
     "event_text": "m_c and r_c are so cuddled up and cozy in their nest they almost miss the dawn patrol.",
     "m_c": {
+      "age": ["young adult", "adult", "senior adult"],
       "relationship_status": ["mates"]
+    },
+    "r_c": {
+      "age": ["young adult", "adult", "senior adult"]
     },
     "relationships": [
         {
@@ -683,19 +687,25 @@
     ]
   },
   {
-    "event_id": "gen_misc_any_mate5",
+    "event_id": "gen_misc_any_romance1",
     "biome": ["any"],
     "camp": ["any"],
     "season": ["any"],
+    "tags":["romance"],
     "weight": 15,
     "event_text": "m_c and r_c take a late night patrol out of camp to watch the sun rise.",
     "m_c": {
+      "age": ["young adult", "adult", "senior adult"],
+      "relationship_status": ["can_romance"]
+    },
+    "r_c": {
+      "age": ["young adult", "adult", "senior adult"],
       "relationship_status": ["can_romance"]
     },
     "relationships": [
         {
           "mutual": true,
-          "values": ["romantic", "comfort","trust"],
+          "values": ["romantic", "comfort", "trust"],
           "amount": 10
         }
     ]
@@ -705,9 +715,15 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["any"],
+    "tags":["romance"],
     "weight": 15,
     "event_text": "m_c and r_c take an early evening patrol out of camp to watch the moon rise.",
     "m_c": {
+      "age": ["young adult", "adult", "senior adult"],
+      "relationship_status": ["can_romance"]
+    },
+    "r_c": {
+      "age": ["young adult", "adult", "senior adult"],
       "relationship_status": ["can_romance"]
     },
     "relationships": [
@@ -726,7 +742,11 @@
     "weight": 5,
     "event_text": "m_c sits still as r_c helps remove some leftover Leaf-bare fluff from the back of {PRONOUN/m_c/poss} neck.",
     "m_c": {
+      "age": ["young adult", "adult", "senior adult","senior"],
       "relationship_status": ["mates"]
+    },
+    "r_c": {
+      "age": ["young adult", "adult", "senior adult", "senior"]
     },
     "relationships": [
         {
@@ -744,7 +764,11 @@
     "weight": 10,
     "event_text": "It's tough working in such extreme heat. m_c and r_c spend their evening relaxing together and cooling down in the shade.",
     "m_c": {
+      "age": ["young adult", "adult", "senior adult","senior"],
       "relationship_status": ["mates"]
+    },
+    "r_c": {
+      "age": ["young adult", "adult", "senior adult", "senior"]
     },
     "relationships": [
         {
@@ -763,7 +787,11 @@
     "event_text": "m_c gives r_c a acc_singular to make up for a bad fight between them.",
     "new_accessory": ["WILD", "PLANT"],
     "m_c": {
+      "age": ["young adult", "adult", "senior adult","senior"],
       "relationship_status": ["mates"]
+    },
+    "r_c": {
+      "age": ["young adult", "adult", "senior adult", "senior"]
     },
     "relationships": [
         {
@@ -782,7 +810,11 @@
     "event_text": "m_c gifts {PRONOUN/m_c/poss} beloved r_c with a acc_singular to wear in {PRONOUN/m_c/poss} pelt.",
     "new_accessory": ["WILD", "PLANT"],
     "m_c": {
+      "age": ["young adult", "adult", "senior adult","senior"],
       "relationship_status": ["mates"]
+    },
+    "r_c": {
+      "age": ["young adult", "adult", "senior adult", "senior"]
     },
     "relationships": [
         {
@@ -801,7 +833,11 @@
     "event_text": "m_c and r_c spend the evening chasing cicadas around camp. m_c keeps a trophy of {PRONOUN/m_c/poss} catch on {PRONOUN/m_c/poss} pelt.",
     "new_accessory": ["CICADA WINGS"],
     "m_c": {
+      "age": ["young adult", "adult", "senior adult","senior"],
       "relationship_status": ["mates"]
+    },
+    "r_c": {
+      "age": ["young adult", "adult", "senior adult", "senior"]
     },
     "relationships": [
         {
@@ -820,7 +856,11 @@
     "event_text": "r_c gives m_c the prettiest fallen leaf {PRONOUN/r_c/subject} can find. m_c wears it with pride.",
     "new_accessory": ["MAPLE LEAF"],
     "m_c": {
+      "age": ["young adult", "adult", "senior adult","senior"],
       "relationship_status": ["mates"]
+    },
+    "r_c": {
+      "age": ["young adult", "adult", "senior adult", "senior"]
     },
     "relationships": [
         {
