@@ -228,6 +228,7 @@ class MiscEvents():
     @staticmethod
     def handle_murder_self_reveals(cat):
         ''' Handles reveals for murders where the murderer reveals themself '''
+        # FIXME: unused?
         if cat.personality.lawfulness > 8:
             murderer_guilty = random.choice([True, False])
         chance_of_reveal = 120
@@ -245,3 +246,4 @@ class MiscEvents():
     @staticmethod
     def handle_murder_witness_reveals(cat, other_cat):
         ''' Handles reveals where the witness reveals the murderer '''
+        # FIXME: empty?

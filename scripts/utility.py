@@ -1436,8 +1436,6 @@ def event_text_adjust(Cat, text, event, stat_cat=None):
                 replace_dict[f"n_c:{i}"] = (str(new_cats[i].name), pronoun)
                 replace_dict[f"n_c_pre:{i}"] = (str(new_cats[i].name.prefix), pronoun)
 
-            # running this once will cover all abbrs, so break
-            break
 
     # mur_c (murdered cat for reveals)
     if "mur_c" in text:
