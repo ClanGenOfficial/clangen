@@ -63,11 +63,13 @@ class Condition_Events():
         INJURY_RISK_STRINGS = ujson.loads(read_file.read())
 
     CONGENITAL_CONDITION_GOT_STRINGS = None
-    with open(f"resources/dicts/conditions/condition_got_strings/gain_congenital_condition_strings.json", 'r') as read_file:
+    with open(f"resources/dicts/conditions/condition_got_strings/gain_congenital_condition_strings.json",
+              'r') as read_file:
         CONGENITAL_CONDITION_GOT_STRINGS = ujson.loads(read_file.read())
 
     PERMANENT_CONDITION_GOT_STRINGS = None
-    with open(f"resources/dicts/conditions/condition_got_strings/gain_permanent_condition_strings.json", 'r') as read_file:
+    with open(f"resources/dicts/conditions/condition_got_strings/gain_permanent_condition_strings.json",
+              'r') as read_file:
         PERMANENT_CONDITION_GOT_STRINGS = ujson.loads(read_file.read())
 
     ILLNESS_HEALED_STRINGS = None
@@ -161,7 +163,8 @@ class Condition_Events():
         has_other_clan = False
         triggered = False
         text = None
-        random_number = int(random.random() * game.get_config_value("condition_related", f"{game.clan.game_mode}_injury_chance"))
+        random_number = int(
+            random.random() * game.get_config_value("condition_related", f"{game.clan.game_mode}_injury_chance"))
 
         if cat.dead:
             triggered = True
@@ -185,16 +188,16 @@ class Condition_Events():
             # TODO: adjust this to new format accordingly, consider what can be moved into utility.py
             if not triggered and \
                     cat.personality.trait in ["adventurous",
-                                            "bold",
-                                            "daring",
-                                            "confident",
-                                            "ambitious",
-                                            "bloodthirsty",
-                                            "fierce",
-                                            "strict",
-                                            "troublesome",
-                                            "vengeful",
-                                            "impulsive"] and \
+                                              "bold",
+                                              "daring",
+                                              "confident",
+                                              "ambitious",
+                                              "bloodthirsty",
+                                              "fierce",
+                                              "strict",
+                                              "troublesome",
+                                              "vengeful",
+                                              "impulsive"] and \
                     random_number <= 15:
                 triggered = True
             elif not triggered and random_number <= 5:
@@ -239,7 +242,7 @@ class Condition_Events():
                         involved_cats.append(other_cat.ID)
                         Condition_Events.handle_relationship_changes(cat, injury_event, other_cat)
 
-                    #print(injury_event.event_text)
+                    # print(injury_event.event_text)
                     text = event_text_adjust(Cat, injury_event.event_text, cat, other_cat, other_clan_name)
 
                     if game.clan.game_mode == "classic":
@@ -253,7 +256,7 @@ class Condition_Events():
                             if injury_event.history_text:
                                 if "scar" in injury_event.history_text:
                                     history_text = history_text_adjust(injury_event.history_text['scar'],
-                                                                              other_clan_name, game.clan)
+                                                                       other_clan_name, game.clan)
                                     History.add_scar(cat, history_text, other_cat=other_cat)
                     else:
                         # record proper history text possibilities
@@ -262,18 +265,18 @@ class Condition_Events():
                             possible_death = None
                             if "scar" in injury_event.history_text:
                                 possible_scar = history_text_adjust(injury_event.history_text['scar'],
-                                                                   other_clan_name, game.clan, other_cat_rc = other_cat)
+                                                                    other_clan_name, game.clan, other_cat_rc=other_cat)
                             if cat.status == 'leader' and 'lead_death' in injury_event.history_text:
                                 possible_death = history_text_adjust(injury_event.history_text['lead_death'],
-                                                                    other_clan_name, game.clan, other_cat_rc = other_cat)
+                                                                     other_clan_name, game.clan, other_cat_rc=other_cat)
                             elif cat.status != 'leader' and 'reg_death' in injury_event.history_text:
                                 possible_death = history_text_adjust(injury_event.history_text['reg_death'],
-                                                                    other_clan_name, game.clan, other_cat_rc = other_cat)
+                                                                     other_clan_name, game.clan, other_cat_rc=other_cat)
 
                             if possible_scar or possible_death:
-                                History.add_possible_history(cat, injury_event.injury, scar_text=possible_scar, 
+                                History.add_possible_history(cat, injury_event.injury, scar_text=possible_scar,
                                                              death_text=possible_death, other_cat=other_cat)
-                            
+
                         cat.get_injured(injury_event.injury)
 
         # just double-checking that trigger is only returned True if the cat is dead
@@ -293,7 +296,8 @@ class Condition_Events():
             # Add event text to the relationship log if two cats are involved
             if other_cat:
                 pos_rel_event = ["romantic", "platonic", "neg_dislike", "respect", "comfort", "neg_jealousy", "trust"]
-                neg_rel_event = ["neg_romantic", "neg_platonic", "dislike", "neg_respect", "neg_comfort", "jealousy", "neg_trust"]
+                neg_rel_event = ["neg_romantic", "neg_platonic", "dislike", "neg_respect", "neg_comfort", "jealousy",
+                                 "neg_trust"]
                 effect = ""
                 if any(tag in injury_event.tags for tag in pos_rel_event):
                     effect = " (positive effect)"
@@ -423,7 +427,8 @@ class Condition_Events():
                         for x in conditions:
                             if x in scarless_conditions:
                                 possible_conditions.append(x)
-                        if len(possible_conditions) > 0 and not int(random.random() * game.config["condition_related"]["permanent_condition_chance"]):
+                        if len(possible_conditions) > 0 and not int(
+                                random.random() * game.config["condition_related"]["permanent_condition_chance"]):
                             perm_condition = random.choice(possible_conditions)
                         else:
                             return perm_condition
@@ -604,12 +609,13 @@ class Condition_Events():
                     try:
                         event = random.choice(Condition_Events.INJURY_HEALED_STRINGS[injury])
                     except KeyError:
-                        print(f"WARNING: {injury} couldn't be found in the healed strings dict! placeholder string was used.")
+                        print(
+                            f"WARNING: {injury} couldn't be found in the healed strings dict! placeholder string was used.")
                         event = f"m_c's injury {injury} has healed"
                 event = event_text_adjust(Cat, event, cat, other_cat=None)
-                
+
                 game.herb_events_list.append(event)
-                    
+
                 History.remove_possible_history(cat, injury)
                 cat.injuries.pop(injury)
                 cat.healed_condition = False
@@ -623,21 +629,21 @@ class Condition_Events():
 
                     # choose event string and ensure Clan's med cat number aligns with event text
                     random_index = random.randrange(0, len(possible_string_list))
-                    
+
                     med_list = get_med_cats(Cat)
-                    #If the cat is a med cat, don't conister them as one for the event. 
+                    # If the cat is a med cat, don't conister them as one for the event.
                     if cat in med_list:
                         med_list.remove(cat)
-                    
-                    #Choose med cat, if you can
+
+                    # Choose med cat, if you can
                     if med_list:
                         med_cat = random.choice(med_list)
                     else:
                         med_cat = None
-                    
+
                     if not med_cat and random_index < 2 and len(possible_string_list) >= 3:
                         random_index = 2
-        
+
                     event = possible_string_list[random_index]
                     event = event_text_adjust(Cat, event, cat, other_cat=med_cat)  # adjust the text
                 if event is not None:
@@ -756,7 +762,8 @@ class Condition_Events():
                 Condition_Events.use_herbs(cat, condition, conditions, Condition_Events.PERMANENT)
 
             # give risks
-            Condition_Events.give_risks(cat, event_list, condition, condition_progression, conditions, cat.permanent_condition)
+            Condition_Events.give_risks(cat, event_list, condition, condition_progression, conditions,
+                                        cat.permanent_condition)
 
         Condition_Events.determine_retirement(cat, triggered)
 
@@ -767,7 +774,7 @@ class Condition_Events():
 
     @staticmethod
     def determine_retirement(cat, triggered):
-        
+
         if game.clan.clan_settings['retirement'] or cat.no_retire:
             return
 
@@ -777,14 +784,15 @@ class Condition_Events():
             for condition in cat.permanent_condition:
                 if cat.permanent_condition[condition]['severity'] not in ['major', 'severe']:
                     continue
-                    
+
                 if cat.permanent_condition[condition]['severity'] == "severe":
                     # Higher changes for "severe". These are meant to be nearly 100% without
                     # being 100%
                     retire_chances = {
                         'newborn': 0,
                         'kitten': 0,
-                        'adolescent': 50,  # This is high so instances where an cat retires the same moon they become an apprentice is rare
+                        'adolescent': 50,
+                        # This is high so instances where an cat retires the same moon they become an apprentice is rare
                         'young adult': 10,
                         'adult': 5,
                         'senior adult': 5,
@@ -800,7 +808,7 @@ class Condition_Events():
                         'senior adult': 50,
                         'senior': 10
                     }
-                
+
                 chance = int(retire_chances.get(cat.age))
                 if not int(random.random() * chance):
                     retire_involved = [cat.ID]
@@ -823,12 +831,12 @@ class Condition_Events():
 
                     if cat.age == 'adolescent':
                         event += f" They are given the name {cat.name.prefix}{cat.name.suffix} in honor " \
-                                    f"of their contributions to {game.clan.name}Clan."
+                                 f"of their contributions to {game.clan.name}Clan."
 
                     cat.retire_cat()
                     # Don't add this to the condition event list: instead make it it's own event, a ceremony. 
                     game.cur_events_list.append(
-                            Single_Event(event, "ceremony", retire_involved))
+                        Single_Event(event, "ceremony", retire_involved))
 
     @staticmethod
     def give_risks(cat, event_list, condition, progression, conditions, dictionary):
@@ -886,7 +894,8 @@ class Condition_Events():
                     elif dictionary == cat.injuries:
                         possible_string_list = Condition_Events.INJURY_RISK_STRINGS[condition][new_condition_name]
                     else:
-                        possible_string_list = Condition_Events.PERM_CONDITION_RISK_STRINGS[condition][new_condition_name]
+                        possible_string_list = Condition_Events.PERM_CONDITION_RISK_STRINGS[condition][
+                            new_condition_name]
 
                     # if it is a progressive condition, then remove the old condition and keep the new one
                     if condition in progression and new_condition_name == progression.get(condition):
@@ -1033,9 +1042,19 @@ class Condition_Events():
                 if risk['chance'] > 2:
                     risk['chance'] -= 1
 
-
 # ---------------------------------------------------------------------------- #
 #                                LOAD RESOURCES                                #
 # ---------------------------------------------------------------------------- #
 
-
+INJURY_GROUPS = {
+    "battle_injury": ["claw-wound", "mangled leg", "mangled tail", "torn pelt", "cat bite"],
+    "minor_injury": ["sprain", "sore", "bruises", "scrapes"],
+    "blunt_force_injury": ["broken bone", "broken back", "head damage", "broken jaw"],
+    "hot_injury": ["heat exhaustion", "heat stroke", "dehydrated"],
+    "cold_injury": ["shivering", "frostbite"],
+    "big_bite_injury": ["bite-wound", "broken bone", "torn pelt", "mangled leg", "mangled tail"],
+    "small_bite_injury": ["bite-wound", "torn ear", "torn pelt", "scrapes"],
+    "beak_bite": ["beak bite", "torn ear", "scrapes"],
+    "rat_bite": ["rat bite", "torn ear", "torn pelt"],
+    "sickness": ["greencough", "redcough", "whitecough", "yellowcough"]
+}

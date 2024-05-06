@@ -7,7 +7,7 @@ import ujson
 from scripts.cat.cats import Cat
 from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE, FRESHKILL_EVENT_TRIGGER_FACTOR
 from scripts.game_structure.game_essentials import game
-from scripts.utility import filter_relationship_type, get_living_clan_cat_count
+from scripts.utility import filter_relationship_type, get_living_clan_cat_count, get_alive_kits, get_alive_apps
 
 resource_directory = "resources/dicts/events/"
 
@@ -195,7 +195,7 @@ class GenerateEvents:
         return event_list
 
     @staticmethod
-    def filter_possible_short_events(possible_events, cat, other_cat, war, enemy_clan, other_clan, alive_kits,
+    def filter_possible_short_events(possible_events, cat, other_cat, war, other_clan,
                                      murder=False, murder_reveal=False):
         final_events = []
 
@@ -206,7 +206,7 @@ class GenerateEvents:
         # Chance to bypass the skill or trait requirements. 
         trait_skill_bypass = 15
 
-        if war and random.randint(1, 10) != 1 and other_clan == enemy_clan:
+        if war and random.randint(1, 10) != 1:
             war_event = True
         else:
             war_event = False
@@ -244,6 +244,7 @@ class GenerateEvents:
                 continue
             if not murder and "murder" in event.tags:
                 continue
+
             # ensure reveal only happens when meant to
             if murder_reveal and "murder_reveal" not in event.tags:
                 continue
@@ -264,7 +265,11 @@ class GenerateEvents:
                     continue
 
             # check if Clan has kits
-            if "clan_kits" in event.tags and not alive_kits:
+            if "clan_kits" in event.tags and not get_alive_kits(Cat):
+                continue
+
+            # check if Clan has apps
+            if "clan_apps" in event.tags and not get_alive_apps(Cat):
                 continue
 
             # If the cat or any of their mates have "no kits" toggled, forgo the adoption event.
@@ -472,7 +477,9 @@ class GenerateEvents:
                 # TODO: freshkill events were previously locked out until clan 5 moons old, should we keep that?
                 clan_size = get_living_clan_cat_count(Cat)
                 for supply in event.supplies:
-                    if supply["type"] == "freshkill":
+                    trigger = supply["trigger"]
+                    supply_type = supply["type"]
+                    if supply_type == "freshkill":
                         # classic mode doesn't do freshkill
                         # TODO: consider if events could still be allowed as "flavor" rather than actual supply changes
                         if game.clan.game_mode == "classic":
@@ -485,13 +492,13 @@ class GenerateEvents:
                             continue
 
                         # "low" means total_amount must be less than half what is needed
-                        if "low" in supply["trigger"]:
+                        if "low" in trigger:
                             if needed_amount / 2 > pile.total_amount:
                                 discard = False
 
                         # "adequate" means total_amount must be greater than half needed,
                         # but not greater than 1 moons worth of food
-                        if "adequate" in supply["trigger"]:
+                        if "adequate" in trigger:
                             if needed_amount / 2 < pile.total_amount < needed_amount:
                                 discard = False
 
@@ -509,20 +516,74 @@ class GenerateEvents:
                             f" -- FRESHKILL: trigger amount {trigger_value}. current amount (after feed, before moon gathering) {pile.total_amount}")
 
                         # "full" means total_amount is enough for 1 moons worth, but is not over the multiplier
-                        if "full" in supply["trigger"]:
+                        if "full" in trigger:
                             # check this quick to see if we can skip the math
                             if needed_amount < pile.total_amount < trigger_value:
                                 discard = False
 
                         # "excess" means total_amount is over the multiplier and there's too much food!
-                        if "excess" in supply["trigger"]:
+                        if "excess" in trigger:
                             if pile.total_amount > trigger_value:
                                 discard = False
 
                         if discard:
                             continue
 
-                    # TODO: figure out how to make this function for herbs
+                    else:  # if supply type wasn't freshkill, then it must be an herb type
+                        herbs = game.clan.herbs
+                        needed_amount = int(clan_size * 3)
+                        discard = True
+
+                        if supply_type == "all_herb":
+                            if "low" in trigger:
+                                for herb in herbs:
+                                    if herbs[herb] < needed_amount / 2:
+                                        discard = False
+                                    else:
+                                        discard = True
+                                        break
+                            if "adequate" in trigger:
+                                for herb in herbs:
+                                    if needed_amount / 2 < herbs[herb] < needed_amount:
+                                        discard = False
+                                    else:
+                                        discard = True
+                                        break
+                            if "full" in trigger:
+                                for herb in herbs:
+                                    if needed_amount < herbs[herb] < needed_amount * 2:
+                                        discard = False
+                                    else:
+                                        discard = True
+                                        break
+                            if "excess" in trigger:
+                                for herb in herbs:
+                                    if needed_amount * 2 < herbs[herb]:
+                                        discard = False
+                                    else:
+                                        discard = True
+                                        break
+                        else:
+                            if supply_type == "any_herb":
+                                chosen_herb = random.choice(herbs.keys)
+                            else:
+                                chosen_herb = supply_type
+
+                            if "low" in trigger:
+                                if chosen_herb < needed_amount / 2:
+                                    discard = False
+                            if "adequate" in trigger:
+                                if needed_amount / 2 < chosen_herb < needed_amount:
+                                    discard = False
+                            if "full" in trigger:
+                                if needed_amount < chosen_herb < needed_amount * 2:
+                                    discard = False
+                            if "excess" in trigger:
+                                if needed_amount * 2 < chosen_herb:
+                                    discard = False
+
+                        if discard:
+                            continue
 
         return final_events
 

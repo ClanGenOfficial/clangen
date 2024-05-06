@@ -24,6 +24,7 @@ from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_resources.freshkill import ADDITIONAL_PREY, PREY_REQUIREMENT, HUNTER_EXP_BONUS, HUNTER_BONUS, \
     FRESHKILL_ACTIVE
+from scripts.events_module.condition_events import INJURY_GROUPS
 
 
 class PatrolOutcome():
@@ -487,18 +488,7 @@ class PatrolOutcome():
             return list(out_set)
 
         results = []
-        condition_lists = {
-            "battle_injury": ["claw-wound", "mangled leg", "mangled tail", "torn pelt", "cat bite"],
-            "minor_injury": ["sprain", "sore", "bruises", "scrapes"],
-            "blunt_force_injury": ["broken bone", "broken back", "head damage", "broken jaw"],
-            "hot_injury": ["heat exhaustion", "heat stroke", "dehydrated"],
-            "cold_injury": ["shivering", "frostbite"],
-            "big_bite_injury": ["bite-wound", "broken bone", "torn pelt", "mangled leg", "mangled tail"],
-            "small_bite_injury": ["bite-wound", "torn ear", "torn pelt", "scrapes"],
-            "beak_bite": ["beak bite", "torn ear", "scrapes"],
-            "rat_bite": ["rat bite", "torn ear", "torn pelt"],
-            "sickness": ["greencough", "redcough", "whitecough", "yellowcough"]
-        }
+        condition_lists = INJURY_GROUPS
 
         for block in self.injury:
             cats = gather_cat_objects(block.get("cats", ()), patrol)

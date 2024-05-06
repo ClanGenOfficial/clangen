@@ -69,6 +69,14 @@ def get_alive_kits(Cat):
 
     return alive_kits
 
+def get_alive_apps(Cat):
+    """
+    returns a list of IDs for all living apprentices in the clan
+    """
+    alive_apps = [i for i in Cat.all_cats.values() if
+                  i.status in ["apprentice", "medicine cat apprentice", "mediator apprentice"] and not i.dead and not i.outside]
+
+    return alive_apps
 
 def get_med_cats(Cat, working=True):
     """

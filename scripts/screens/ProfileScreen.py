@@ -1141,6 +1141,7 @@ class ProfileScreen(Screens):
             i = 0
             for scar in scar_history:
                 # base adjustment to get the cat's name and moons if needed
+                # TODO: change event_text_adjust for the history displays
                 new_text = (event_text_adjust(Cat,
                                               scar["text"],
                                               self.the_cat,
