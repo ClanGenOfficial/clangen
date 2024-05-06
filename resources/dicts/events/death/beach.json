@@ -19,10 +19,14 @@
             "status": ["any"],
             "dies": true
         },
-        "history": {
-            "reg_death": "m_c was washed out to sea.",
+        "history":
+        [ 
+            {
+                "cats": [ "m_c" ],
+                "reg_death": "m_c was washed out to sea.",
             "lead_death": "{VERB/m_c/were/was} washed out to sea"
-        }
+            }
+        ]
     },
     {
         "event_id": "bch_death_poison_any1",
@@ -41,10 +45,13 @@
             "status": [ "any"],
             "dies": true
         },
-        "history": {
-            "reg_death": "m_c was killed by a poisonous sea creature.",
-            "lead_death": "{VERB/m_c/were/was} killed by a poisonous sea creature"
-        }
+        "history": [
+            {
+                "cats": [ "m_c" ],
+                "reg_death": "m_c was killed by a poisonous sea creature.",
+                "lead_death": "{VERB/m_c/were/was} killed by a poisonous sea creature"
+            }
+        ]
     },
     {
         "event_id": "bch_death_drown_any2",
@@ -94,10 +101,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": [ "m_c" ],
             "reg_death": "m_c was lost to the sea while trying to save r_c.",
             "lead_death": "{VERB/m_c/were/was} washed out to sea while trying to save r_c"
-        },
+        }
+    ],
         "relationships": [
             {
                 "cats_from": [
@@ -146,10 +156,13 @@
             "status": [ "any" ],
             "dies": true
         },
-        "history": {
+        "history":
+        [ {
+            "cats": ["m_c"],
             "reg_death": "m_c died of dehydration and heat stroke.",
             "lead_death": "died of dehydration and heat stroke"
         }
+    ]
     },
     {
         "event_id": "bch_death_abyss_any1",
@@ -170,10 +183,12 @@
             "status": [ "any" ],
             "dies": true
         },
-        "history": {
+        "history": [{
+            "cats": ["m_c"],
             "reg_death": "m_c was taken by a mysterious sea creature.",
             "lead_death": "{VERB/m_c/were/was taken by a mysterious sea creature"
         }
+    ]
     },
     {
         "event_id": "bch_death_drown_any3",
@@ -201,10 +216,13 @@
                 "warrior" ],
             "dies": true
         },
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "reg_death": "m_c was pushed out to sea by enemy warriors.",
             "lead_death": "{VERB/m_c/were/was pushed out to sea by enemy warriors"
-        },
+        }
+        ],
         "other_clan": {
           "current_rep": [
             "hostile"
@@ -237,9 +255,12 @@
             ],
             "dies": true
         },
-        "history": {
+        "history": [
+            {
+            "cats": [ "m_c" ],
             "reg_death": "m_c succumbed to dehydration and overheating."
         }
+    ]
     },
     {
         "event_id": "bch_death_heat_multiapp2",
@@ -275,9 +296,12 @@
             "senior adult" ],
             "status": [ "any" ]
         },
-        "history": {
+        "history": [
+            {
+            "cats": [ "m_c" ],
             "reg_death": "m_c died due to dehydration and overheating."
         }
+        ]
     },
     {
         "event_id": "bch_death_heat_multiapp3",
@@ -313,9 +337,12 @@
             ],
             "status": [ "any" ]
         },
-        "history": {
+        "history": [
+            {
+            "cats": [ "m_c" ],
             "reg_death": "m_c died due to dehydration and heat exhaustion."
         }
+    ]
     },
     {
         "event_id": "bch_death_heat_multichild1",
@@ -349,9 +376,12 @@
             "age": [ "any" ],
             "status": [ "any" ]
         },
-        "history": {
+        "history": [
+            {
+            "cats": [ "m_c" ],
             "reg_death": "m_c shriveled up under the sun because of heat exhaustion and dehydration."
         }
+    ]
     },
     {
         "event_id": "bch_death_heat_multiapp4",
@@ -378,9 +408,12 @@
             ],
             "dies": true
         },
-        "history": {
+        "history": [
+            {
+            "cats": [ "m_c" ],
             "reg_death": "m_c was claimed by dehydration and heat exhaustion."
         }
+    ]
     },
     {
         "event_id": "bch_death_heat_multiapp5",
@@ -414,9 +447,12 @@
             "age": [ "any" ],
             "status": [ "any" ]
         },
-        "history": {
+        "history": [
+            {
+            "cats": [ "m_c" ],
             "reg_death": "m_c succumbed to dehydration and heat exhaustion."
         }
+    ]
     },
     {
         "event_id": "bch_death_heat_multiapp6",
@@ -452,9 +488,12 @@
             ],
             "status": [ "any" ]
         },
-        "history": {
+        "history": [
+            {
+            "cats": [ "m_c" ],
             "reg_death": "m_c was caught outside unprepared for the heat, dying because of dehydration and overheating."
         }
+    ]
     },
     {
         "event_id": "bch_death_heat_multichild2",
@@ -486,9 +525,12 @@
             "age": [],
             "status": []
         },
-        "history": {
+        "history": [
+            {
+            "cats": [ "m_c" ],
             "reg_death": "m_c tragically died due to dehydration and overheating."
         }
+    ]
     },
     {
         "event_id": "bch_death_heat_multichild3",
@@ -524,9 +566,11 @@
             ],
             "status": [ "any" ]
         },
-        "history": {
+        "history": [
+            {
+            "cats": [ "m_c" ],
             "reg_death": "m_c died because of overheating and dehydration."
-        }
+        } ]
     },
     {
         "event_id": "bch_death_heat_multiromance1",
@@ -568,9 +612,12 @@
                 "vengeful"
             ]
         },
-        "history": {
+        "history": [
+            {
+            "cats": [ "m_c" ],
             "reg_death": "m_c was caught unprepared out in the heat and died of dehydration and heat exhaustion."
-        },
+        }
+    ],
         "relationships": [
             {
                 "cats_from": [
@@ -618,9 +665,12 @@
                 "apprentice"
             ]
         },
-        "history": {
+        "history": [
+            {
+            "cats": [ "m_c" ],
             "reg_death": "m_c was ill-prepared for the heat and succumbed to dehydration."
         }
+    ]
     },
     {
         "event_id": "bch_death_tree_anyleader",
@@ -648,9 +698,12 @@
             ],
             "dies": true
         },
-        "history": {
+        "history": [
+            {
+            "cats": [ "m_c" ],
             "lead_death": "fell from a tall tree"
         }
+    ]
     },
     {
         "event_id": "bch_death_drown_anyleader1",
@@ -679,9 +732,12 @@
             ],
             "dies": true
         },
-        "history": {
+        "history": [
+            {
+            "cats": [ "m_c" ],
             "lead_death": "{VERB/m_c/were/was} washed out to sea"
         }
+    ]
     },
     {
         "event_id": "bch_death_drown_anyleader2",
@@ -738,9 +794,12 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+            "cats": [ "m_c" ],
             "lead_death": "{VERB/m_c/were/was} lost to the sea while trying to save r_c"
-        },
+        }
+    ],
         "relationships": [
             {
                 "cats_from": [
@@ -839,9 +898,12 @@
                 "wise"
             ]
         },
-        "history": {
+        "history": [
+            {
+            "cats": [ "m_c" ],
             "lead_death": "{VERB/m_c/were/was} shoved off a cliff by r_c"
-        },
+        }
+        ],
         "relationships": [
             {
                 "cats_from": [ "m_c" ],
@@ -931,9 +993,12 @@
                 "wise"
             ]
         },
-        "history": {
+        "history": [
+            {
+            "cats": [ "m_c" ],
             "lead_death": "{VERB/m_c/were/was} shoved off a cliff by r_c"
-        },
+        }
+    ],
         "relationships": [
             {
                 "cats_from": [ "m_c" ],
@@ -1019,9 +1084,12 @@
                 "wise"
             ]
         },
-        "history": {
+        "history": [
+            {
+            "cats": [ "m_c" ],
             "lead_death": "{VERB/m_c/were/was} trapped in the tides by r_c"
-        },
+        } 
+    ],
         "relationships": [
             {
                 "cats_from": [ "m_c" ],
@@ -1109,9 +1177,12 @@
                 "wise"
             ]
         },
-        "history": {
+        "history": [
+            {
+            "cats": [ "m_c" ],
             "lead_death": "saved a drowning kit that was set up by r_c"
         }
+    ]
     },
     {
         "event_id": "bch_death_heat_anykit1",
@@ -1136,7 +1207,10 @@
             ],
             "dies": true
         },
-        "history": {
+        "history": [
+            {
+            "cats": [ "m_c" ],
             "reg_death": "m_c died of dehydration and heat stroke."
         }
+        ]
     }]
