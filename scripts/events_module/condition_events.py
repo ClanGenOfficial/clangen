@@ -6,6 +6,7 @@ from scripts.cat.cats import Cat
 from scripts.cat.history import History
 from scripts.cat.pelts import Pelt
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
+from scripts.events_module.handle_short_events import handle_short_events
 from scripts.utility import event_text_adjust, get_med_cats, change_relationship_values, change_clan_relations, \
     history_text_adjust
 from scripts.game_structure.game_essentials import game
@@ -155,7 +156,7 @@ class Condition_Events():
         return triggered
 
     @staticmethod
-    def handle_injuries(cat, other_cat=None, alive_kits=None, war=None, enemy_clan=None, season=None):
+    def handle_injuries(cat, random_cat=None):
         """ 
         This function handles overall the injuries in 'expanded' (or 'cruel season') game mode.
         Returns: boolean - if an event was triggered
@@ -182,10 +183,8 @@ class Condition_Events():
                 elif injury == 'pregnant':
                     return triggered
             triggered, event_string = Condition_Events.handle_already_injured(cat)
-            text = event_string
         else:
             # EVENTS
-            # TODO: adjust this to new format accordingly, consider what can be moved into utility.py
             if not triggered and \
                     cat.personality.trait in ["adventurous",
                                               "bold",
@@ -211,73 +210,9 @@ class Condition_Events():
                         # print(f"rest and recover - injury prevented for {cat.name}")
                         return False
 
-                if war:
-                    other_clan = enemy_clan
-                else:
-                    other_clan = random.choice(game.clan.all_clans)
-                if other_clan:
-                    other_clan_name = f'{other_clan.name}Clan'
-
-                if other_clan_name == 'None':
-                    other_clan = game.clan.all_clans[0]
-                    other_clan_name = f'{other_clan.name}Clan'
-
-                possible_events = GenerateEvents.possible_short_events("injury")
-                final_events = GenerateEvents.filter_possible_short_events(possible_events, cat, other_cat, war,
-                                                                           enemy_clan, other_clan, alive_kits)
-
-                if len(final_events) > 0:
-                    injury_event = random.choice(final_events)
-
-                    if "other_clan" in injury_event.tags or "war" in injury_event.tags:
-                        has_other_clan = True
-
-                    if "rel_up" in injury_event.tags:
-                        change_clan_relations(other_clan, difference=1)
-                    elif "rel_down" in injury_event.tags:
-                        change_clan_relations(other_clan, difference=-1)
-
-                    # let's change some relationship values \o/ check if another cat is mentioned
-                    if "other_cat" in injury_event.tags:
-                        involved_cats.append(other_cat.ID)
-                        Condition_Events.handle_relationship_changes(cat, injury_event, other_cat)
-
-                    # print(injury_event.event_text)
-                    text = event_text_adjust(Cat, injury_event.event_text, cat, other_cat, other_clan_name)
-
-                    if game.clan.game_mode == "classic":
-                        if "scar" in injury_event.tags and len(cat.pelt.scars) < 4:
-                            # add tagged scar
-                            for scar in Pelt.scars1 + Pelt.scars2 + Pelt.scars3:
-                                if scar in injury_event.tags:
-                                    cat.pelt.scars.append(scar)
-
-                            # add scar history
-                            if injury_event.history_text:
-                                if "scar" in injury_event.history_text:
-                                    history_text = history_text_adjust(injury_event.history_text['scar'],
-                                                                       other_clan_name, game.clan)
-                                    History.add_scar(cat, history_text, other_cat=other_cat)
-                    else:
-                        # record proper history text possibilities
-                        if injury_event.history_text:
-                            possible_scar = None
-                            possible_death = None
-                            if "scar" in injury_event.history_text:
-                                possible_scar = history_text_adjust(injury_event.history_text['scar'],
-                                                                    other_clan_name, game.clan, other_cat_rc=other_cat)
-                            if cat.status == 'leader' and 'lead_death' in injury_event.history_text:
-                                possible_death = history_text_adjust(injury_event.history_text['lead_death'],
-                                                                     other_clan_name, game.clan, other_cat_rc=other_cat)
-                            elif cat.status != 'leader' and 'reg_death' in injury_event.history_text:
-                                possible_death = history_text_adjust(injury_event.history_text['reg_death'],
-                                                                     other_clan_name, game.clan, other_cat_rc=other_cat)
-
-                            if possible_scar or possible_death:
-                                History.add_possible_history(cat, injury_event.injury, scar_text=possible_scar,
-                                                             death_text=possible_death, other_cat=other_cat)
-
-                        cat.get_injured(injury_event.injury)
+                handle_short_events.handle_event(event_type="health",
+                                                 main_cat=cat,
+                                                 random_cat=random_cat)
 
         # just double-checking that trigger is only returned True if the cat is dead
         if cat.status != "leader":
@@ -286,31 +221,6 @@ class Condition_Events():
                 triggered = True
             else:
                 triggered = False
-
-        if text is not None:
-            types = ["health"]
-            if cat.dead:
-                types.append("birth_death")
-            if has_other_clan:
-                types.append("other_clans")
-            # Add event text to the relationship log if two cats are involved
-            if other_cat:
-                pos_rel_event = ["romantic", "platonic", "neg_dislike", "respect", "comfort", "neg_jealousy", "trust"]
-                neg_rel_event = ["neg_romantic", "neg_platonic", "dislike", "neg_respect", "neg_comfort", "jealousy",
-                                 "neg_trust"]
-                effect = ""
-                if any(tag in injury_event.tags for tag in pos_rel_event):
-                    effect = " (positive effect)"
-                elif any(tag in injury_event.tags for tag in neg_rel_event):
-                    effect = " (negative effect)"
-
-                log_text = text + effect
-
-                if cat.moons == 1:
-                    cat.relationships[other_cat.ID].log.append(log_text + f" - {cat.name} was {cat.moons} moon old")
-                else:
-                    cat.relationships[other_cat.ID].log.append(log_text + f" - {cat.name} was {cat.moons} moons old")
-            game.cur_events_list.append(Single_Event(text, types, involved_cats))
 
         return triggered
 

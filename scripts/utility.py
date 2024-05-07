@@ -1132,7 +1132,6 @@ def gather_cat_objects(Cat, abbr_list: List[str], event, stat_cat=None) -> list:
     :param event: the event class
     :param stat_cat: only cat object that gets passed on its own if present (should only be on patrols)
     """
-    # TODO: this ain't gonna work, fix
     out_set = set()
 
     for abbr in abbr_list:
@@ -1221,6 +1220,26 @@ def unpack_rel_block(Cat, relationship_effects: List[dict], event, stat_cat=None
         if "respect" in values:
             admiration = amount
 
+        # TODO: i don't think this works?  need to add something that pulls event text
+        #  and then checks if it was a pos or neg rel event to add the correct effect indicator
+        #  i.e. (positive effect), (negative effect) as well as the "cat.name was cat.moons moons old"
+        """  # this is what was used in injury code
+                        pos_rel_event = ["romantic", "platonic", "neg_dislike", "respect", "comfort", "neg_jealousy", "trust"]
+                neg_rel_event = ["neg_romantic", "neg_platonic", "dislike", "neg_respect", "neg_comfort", "jealousy",
+                                 "neg_trust"]
+                effect = ""
+                if any(tag in injury_event.tags for tag in pos_rel_event):
+                    effect = " (positive effect)"
+                elif any(tag in injury_event.tags for tag in neg_rel_event):
+                    effect = " (negative effect)"
+
+                log_text = text + effect
+
+                if cat.moons == 1:
+                    cat.relationships[other_cat.ID].log.append(log_text + f" - {cat.name} was {cat.moons} moon old")
+                else:
+                    cat.relationships[other_cat.ID].log.append(log_text + f" - {cat.name} was {cat.moons} moons old")
+                    """
         # Get log
         log1 = None
         log2 = None

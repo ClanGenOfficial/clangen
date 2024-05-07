@@ -99,6 +99,7 @@ class GenerateEvents:
                         biome=event["biome"] if "biome" in event else ["any"],
                         camp=event["camp"] if "camp" in event else ["any"],
                         season=event["season"] if "season" in event else ["any"],
+                        sub_type=event["sub_type"] if "sub_type" in event else [],
                         tags=event["tags"] if "tags" in event else [],
                         weight=event["weight"] if "weight" in event else 20,
                         event_text=event_text,
@@ -195,10 +196,10 @@ class GenerateEvents:
         return event_list
 
     @staticmethod
-    def filter_possible_short_events(possible_events, cat, other_cat, war, other_clan,
-                                     murder=False, murder_reveal=False):
+    def filter_possible_short_events(possible_events, cat, random_cat, other_clan, sub_types=None):
         final_events = []
 
+        # TODO: put the injury severity code back?
         minor = []
         major = []
         severe = []
@@ -206,12 +207,20 @@ class GenerateEvents:
         # Chance to bypass the skill or trait requirements. 
         trait_skill_bypass = 15
 
-        if war and random.randint(1, 10) != 1:
+        if "war" in sub_types and random.randint(1, 10) != 1:
             war_event = True
         else:
             war_event = False
+            sub_types.remove("war")
 
         for event in possible_events:
+            # check for event sub_type
+            for sub in sub_types:
+                if sub not in event.sub_type:
+                    continue
+            for sub in event.sub_type:
+                if sub not in sub_types:
+                    continue
 
             # check biome
             if game.clan.biome.lower() not in event.biome and "any" not in event.biome:
@@ -227,9 +236,7 @@ class GenerateEvents:
             prevent_bypass = "skill_trait_required" in event.tags
 
             # ensure that war events only happen during war
-            if war_event and ("war" not in event.tags and "hostile" not in event.other_clan["current_rep"]):
-                continue
-            if not war and "war" in event.tags:
+            if war_event and ("war" not in event.sub_type and "hostile" not in event.other_clan["current_rep"]):
                 continue
 
             # some events are classic only
@@ -237,18 +244,6 @@ class GenerateEvents:
                 continue
             # cruel season only events
             if game.clan.game_mode in ["classic", "expanded"] and "cruel_season" in event.tags:
-                continue
-
-            # ensure murder only happens when meant to
-            if murder and "murder" not in event.tags:
-                continue
-            if not murder and "murder" in event.tags:
-                continue
-
-            # ensure reveal only happens when meant to
-            if murder_reveal and "murder_reveal" not in event.tags:
-                continue
-            if not murder_reveal and "murder_reveal" in event.tags:
                 continue
 
             # make complete leader death less likely until the leader is over 150 moons
@@ -273,22 +268,22 @@ class GenerateEvents:
                 continue
 
             # If the cat or any of their mates have "no kits" toggled, forgo the adoption event.
-            if "adoption" in event.tags:
+            if "adoption" in event.sub_type:
                 if cat.no_kits:
                     continue
                 if any(cat.fetch_cat(i).no_kits for i in cat.mate):
                     continue
 
             # check for old age
-            if "old_age" in event.tags and cat.moons < game.config["death_related"]["old_age_death_start"]:
+            if "old_age" in event.sub_type and cat.moons < game.config["death_related"]["old_age_death_start"]:
                 continue
             # remove some non-old age events to encourage elders to die of old age more often
-            if "old_age" not in event.tags and cat.moons > game.config["death_related"]["old_age_death_start"] \
+            if "old_age" not in event.sub_type and cat.moons > game.config["death_related"]["old_age_death_start"] \
                     and int(random.random() * 3):
                 continue
 
             # if the event is marked as changing romantic interest, check that the cats are allowed to be romantic
-            if "romance" in event.tags and other_cat.is_potential_mate(cat):
+            if "romance" in event.sub_type and random_cat.is_potential_mate(cat):
                 continue
 
             if event.m_c:
@@ -297,7 +292,7 @@ class GenerateEvents:
                 if cat.status not in event.m_c["status"]:
                     continue
                 if event.m_c["relationship_status"]:
-                    if not filter_relationship_type(group=[cat, other_cat],
+                    if not filter_relationship_type(group=[cat, random_cat],
                                                     filter_types=event.m_c["relationship_status"],
                                                     event_id=event.event_id):
                         continue
@@ -358,22 +353,22 @@ class GenerateEvents:
                 if cat.backstory not in event.m_c["backstory"]:
                     continue
 
-            # check that an other_cat is available to use for r_c
-            if event.r_c and other_cat:
-                if other_cat.age not in event.r_c["age"]:
+            # check that an random_cat is available to use for r_c
+            if event.r_c and random_cat:
+                if random_cat.age not in event.r_c["age"]:
                     continue
-                if other_cat.status not in event.r_c["status"]:
+                if random_cat.status not in event.r_c["status"]:
                     continue
                 if event.r_c["relationship_status"]:
-                    if not filter_relationship_type(group=[cat, other_cat],
+                    if not filter_relationship_type(group=[cat, random_cat],
                                                     filter_types=event.r_c["relationship_status"],
                                                     event_id=event.event_id):
                         continue
 
-                # check other_cat trait and skill
+                # check random_cat trait and skill
                 has_trait = False
                 if event.r_c["trait"]:
-                    if other_cat.personality.trait in event.r_c["trait"]:
+                    if random_cat.personality.trait in event.r_c["trait"]:
                         has_trait = True
 
                 has_skill = False
@@ -382,10 +377,10 @@ class GenerateEvents:
                         split = _skill.split(",")
 
                         if len(split) < 2:
-                            print("other_cat skill incorrectly formatted", _skill)
+                            print("random_cat skill incorrectly formatted", _skill)
                             continue
 
-                        if other_cat.skills.meets_skill_requirement(split[0], int(split[1])):
+                        if random_cat.skills.meets_skill_requirement(split[0], int(split[1])):
                             has_skill = True
                             break
 
@@ -399,10 +394,10 @@ class GenerateEvents:
                     if not has_skill and (prevent_bypass or int(random.random() * trait_skill_bypass)):
                         continue
 
-                # check other_cat negate trait and skill
+                # check random_cat negate trait and skill
                 has_trait = False
                 if event.r_c["not_trait"]:
-                    if other_cat.personality.trait in event.r_c["not_trait"]:
+                    if random_cat.personality.trait in event.r_c["not_trait"]:
                         has_trait = True
 
                 has_skill = False
@@ -411,10 +406,10 @@ class GenerateEvents:
                         split = _skill.split(",")
 
                         if len(split) < 2:
-                            print("other_cat skill incorrectly formatted", _skill)
+                            print("random_cat skill incorrectly formatted", _skill)
                             continue
 
-                        if other_cat.skills.meets_skill_requirement(split[0], int(split[1])):
+                        if random_cat.skills.meets_skill_requirement(split[0], int(split[1])):
                             has_skill = True
                             break
 
@@ -423,7 +418,7 @@ class GenerateEvents:
                     continue
 
                 # check backstory
-                if other_cat.backstory not in event.r_c["backstory"]:
+                if random_cat.backstory not in event.r_c["backstory"]:
                     continue
             else:
                 continue
@@ -456,7 +451,7 @@ class GenerateEvents:
 
             # other Clan related checks
             if event.other_clan:
-                if "war" in event.tags and not war:  # just double-checking
+                if "war" in event.sub_type and "war" not in sub_types:  # just double-checking
                     continue
 
                 # don't waste time checking rep if any rep is allowed
@@ -645,6 +640,7 @@ class ShortEvent:
             biome=None,
             camp=None,
             season=None,
+            sub_type=None,
             tags=None,
             weight=0,
             event_text="",
@@ -665,6 +661,7 @@ class ShortEvent:
         self.biome = biome if biome else ["any"]
         self.camp = camp if camp else ["any"]
         self.season = season if season else ["any"]
+        self.sub_type = sub_type if sub_type else []
         self.tags = tags if tags else []
         self.weight = weight
         self.event_text = event_text

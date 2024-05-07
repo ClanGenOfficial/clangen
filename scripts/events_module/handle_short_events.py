@@ -1,17 +1,15 @@
 import random
 from typing import List
 
-from scripts.cat.cats import Cat, INJURIES
+from scripts.cat.cats import Cat
 from scripts.cat.history import History
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
-from scripts.clan import HERBS
 from scripts.clan_resources.freshkill import Freshkill_Pile
 from scripts.events_module.condition_events import INJURY_GROUPS
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values, get_alive_kits, \
-    history_text_adjust, get_warring_clan, unpack_rel_block, change_clan_reputation, create_new_cat_block, \
-    get_living_clan_cat_count
+    history_text_adjust, get_warring_clan, unpack_rel_block, change_clan_reputation, create_new_cat_block
 from scripts.game_structure.game_essentials import game
 from scripts.event_class import Single_Event
 
@@ -24,23 +22,36 @@ class HandleShortEvents():
     """Handles generating and executing ShortEvents"""
 
     def __init__(self):
-        self.involved_cats = []
         self.types = []
+        self.sub_types = []
 
+        # cats
+        self.involved_cats = []
         self.main_cat = None
         self.random_cat = None
         self.new_cats: List[List[Cat]] = []
         self.victim_cat = None
+        self.multi_cat: List = []
+
         self.other_clan = None
         self.other_clan_name = None
 
         self.chosen_event = None
         self.additional_event_text = ""
 
-    def handle_event(self, event_type: str, main_cat: Cat, random_cat: Cat, murder: bool = False):
+    def handle_event(self, event_type: str, main_cat: Cat, random_cat: Cat, sub_type: list = None):
         """ 
         This function handles the generation and execution of the event
         """
+
+        # ---------------------------------------------------------------------------- #
+        #                                gather info                                   #
+        # ---------------------------------------------------------------------------- #
+
+        self.types.append(event_type)
+        if sub_type:
+            self.sub_types.extend(sub_type)
+
         # gather main and random cats
         self.main_cat = main_cat
         self.random_cat = random_cat
@@ -50,17 +61,19 @@ class HandleShortEvents():
 
         # check for war and assign self.other_clan accordingly
         if game.clan.war.get("at_war", False):
-            enemy_clan = get_warring_clan()  # TODO: if we can just find enemy clan here, take these checks out of event.py
+            enemy_clan = get_warring_clan()
             self.other_clan = enemy_clan
             self.other_clan_name = None
-            war = True
+            self.sub_types.append("war")
         else:
             self.other_clan = random.choice(game.clan.all_clans if game.clan.all_clans else None)
             self.other_clan_name = f'{self.other_clan.name}Clan'
-            war = False
+
+        # checking if a mass death should happen
+        if "mass_death" in self.sub_types:
+            self.handle_mass_death()
 
         # checking if a murder reveal should happen
-        reveal = False
         if event_type == "misc":
             self.victim_cat = None
             cat_history = History.get_murders(self.main_cat)
@@ -72,22 +85,20 @@ class HandleShortEvents():
                         if murder_history[murder_index]["revealed"] is True:
                             continue
                         self.victim_cat = murder_history[murder_index]["victim"]
-                        reveal = True
+                        self.sub_types.append("murder_reveal")
                         break
 
         # NOW find the possible events and filter
         possible_short_events = GenerateEvents.possible_short_events("death")
 
-        final_events = GenerateEvents.filter_possible_short_events(possible_short_events,
-                                                                   self.main_cat,
-                                                                   self.random_cat,
-                                                                   war,
-                                                                   self.other_clan,
-                                                                   murder=murder,
-                                                                   murder_reveal=reveal)
+        final_events = GenerateEvents.filter_possible_short_events(possible_events=possible_short_events,
+                                                                   cat=self.main_cat,
+                                                                   random_cat=self.random_cat,
+                                                                   other_clan=self.other_clan,
+                                                                   sub_types=self.sub_types)
 
         # ---------------------------------------------------------------------------- #
-        #                                  kill cats                                   #
+        #                               do the event                                   #
         # ---------------------------------------------------------------------------- #
         try:
             self.chosen_event = (random.choice(final_events))
@@ -105,7 +116,8 @@ class HandleShortEvents():
         self.handle_new_cats()
 
         # change relationships before killing anyone
-        unpack_rel_block(Cat, self.chosen_event.relationships, self)
+        if self.chosen_event.relationships:
+            unpack_rel_block(Cat, self.chosen_event.relationships, self)
 
         # used in some murder events, this kinda sucks tho it would be nice to change how this sort of thing is handled
         if "kit_manipulated" in self.chosen_event.tags:
@@ -124,7 +136,7 @@ class HandleShortEvents():
         self.handle_death()
 
         # add necessary histories
-        self.handle_death_history(murder)
+        self.handle_death_history()
 
         # handle injuries and injury history
         self.handle_injury()
@@ -156,7 +168,8 @@ class HandleShortEvents():
         death_text = event_text_adjust(Cat, self.chosen_event.event_text, self)
         additional_event_text = ""
 
-        game.cur_events_list.append(Single_Event(death_text + " " + additional_event_text, self.types, self.involved_cats))
+        game.cur_events_list.append(
+            Single_Event(death_text + " " + additional_event_text, self.types, self.involved_cats))
 
     def handle_new_cats(self):
 
@@ -281,7 +294,47 @@ class HandleShortEvents():
             else:
                 self.additional_event_text += self.random_cat.die(body)
 
-    def handle_death_history(self, murder):
+    def handle_mass_death(self):
+        # gather living clan cats except leader bc leader lives would be frustrating to handle in these
+        alive_cats = list(
+            filter(
+                lambda kitty: (kitty.status != "leader" and not kitty.dead and
+                               not kitty.outside), Cat.all_cats.values()))
+
+        # make sure all cats in the pool fit the event requirements
+        requirements = self.chosen_event.m_c
+        for kitty in alive_cats:
+            if kitty.status not in requirements["status"] and requirements["status"] != "any":
+                alive_cats.remove(kitty)
+            if kitty.age not in requirements["age"] and requirements["age"] != "any":
+                alive_cats.remove(kitty)
+
+        alive_count = len(alive_cats)
+
+        # if there's enough eligible cats, then we KILL
+        if alive_count > 15:
+            max_deaths = int(alive_count / 2)  # 1/2 of alive cats
+            if max_deaths > 10:  # make this into a game config setting?
+                max_deaths = 10  # we don't want to have massive events with a wall of names to read
+            weights = []
+            population = []
+            for n in range(2, max_deaths):
+                population.append(n)
+                weight = 1 / (0.75 * n)  # Lower chance for more dead cats
+                weights.append(weight)
+            dead_count = random.choices(population, weights=weights)[0]
+
+            dead_cats = random.sample(alive_cats, dead_count)
+            if self.main_cat not in dead_cats:
+                dead_cats.append(self.main_cat)  # gotta include the cat that rolled for death in the first place
+
+            for kitty in dead_cats:
+                self.multi_cat.append(kitty)
+                self.involved_cats.append(kitty.ID)
+
+                kitty.die()
+
+    def handle_death_history(self):
         """
         handles assigning histories
         """
@@ -298,7 +351,7 @@ class HandleShortEvents():
 
                     # handle murder
                     murder_unrevealed_history = None
-                    if murder:
+                    if "murder" in self.chosen_event.sub_types:
                         if "revealed" in self.chosen_event.tags:
                             revealed = True
                         else:
@@ -338,7 +391,20 @@ class HandleShortEvents():
 
                     History.add_death(self.random_cat, death_history, other_cat=self.random_cat)
 
-            for abbr in self.chosen_event.history["cats"]:
+            # multi_cat history
+            if "multi_cat" in block["cats"]:
+                for cat in self.multi_cat:
+                    if cat.status == "leader":
+                        death_history = history_text_adjust(block.get('lead_death'),
+                                                            self.other_clan_name, game.clan, self.random_cat)
+                    else:
+                        death_history = history_text_adjust(block.get('reg_death'),
+                                                            self.other_clan_name, game.clan, self.random_cat)
+
+                    History.add_death(cat, death_history, other_cat=self.random_cat)
+
+            # new_cat history
+            for abbr in block["cats"]:
                 if "n_c" in abbr:
                     for i, new_cats in enumerate(self.new_cats):
                         if new_cats[i].dead:
@@ -552,3 +618,6 @@ class HandleShortEvents():
                                        comfortable=-40,
                                        trust=-50
                                        )
+
+
+handle_short_events = HandleShortEvents()
