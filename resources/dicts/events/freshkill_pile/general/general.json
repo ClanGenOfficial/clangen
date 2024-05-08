@@ -24,7 +24,7 @@
         "other_cat_skill": null,
         "supplies": [
             {
-            "type": "fresh-kill",
+            "type": "freshkill",
             "trigger": "excess",
             "adjust": "reduce half"
             }

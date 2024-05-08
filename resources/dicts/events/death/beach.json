@@ -15,8 +15,8 @@
         "weight": 20,
         "event_text": "m_c was washed out to sea, never to be seen again.",
         "m_c": {
-            "age": ["any"],
-            "status": ["any"],
+            "age": [ "adolescent", "young adult", "adult", "senior adult" ],
+            "status": ["leader", "deputy", "mediator", "medicine cat", "mediator apprentice", "medicine cat apprentice", "warrior", "apprentice", "elder"],
             "dies": true
         },
         "history":
@@ -70,8 +70,8 @@
         "weight": 20,
         "event_text": "m_c was lost to the sea while trying to save r_c from drowning.",
         "m_c": {
-            "age": [ "any" ],
-            "status": [ "any" ],
+            "age": [ "adolescent", "young adult", "adult", "senior adult" ],
+            "status": [ "leader", "deputy", "mediator", "medicine cat", "mediator apprentice", "medicine cat apprentice", "warrior", "apprentice", "elder" ],
             "relationship_status": [],
             "trait": [
                 "bold",
@@ -179,14 +179,14 @@
         "weight": 20,
         "event_text": "m_c found {PRONOUN/m_c/self} staring at an odd shadow in the sea. One distracted paw slipped and {PRONOUN/m_c/subject} fell into the waves where something large and unseen tangled around {PRONOUN/m_c/object}, dragging {PRONOUN/m_c/object} into the abyss.",
         "m_c": {
-            "age": [ "any" ],
-            "status": [ "any" ],
+            "age": [ "adolescent", "young adult", "adult", "senior adult" ],
+            "status": [ "leader", "deputy", "mediator", "medicine cat", "mediator apprentice", "medicine cat apprentice", "warrior", "apprentice", "elder" ],
             "dies": true
         },
         "history": [{
             "cats": ["m_c"],
             "reg_death": "m_c was taken by a mysterious sea creature.",
-            "lead_death": "{VERB/m_c/were/was taken by a mysterious sea creature"
+            "lead_death": "{VERB/m_c/were/was} taken by a mysterious sea creature"
         }
     ]
     },
@@ -213,14 +213,18 @@
                 ],
             "status": [
                 "apprentice",
-                "warrior" ],
+                "warrior",
+                "leader",
+                "deputy",
+                "mediator",
+                "medicine cat" ],
             "dies": true
         },
         "history": [
             {
                 "cats": ["m_c"],
             "reg_death": "m_c was pushed out to sea by enemy warriors.",
-            "lead_death": "{VERB/m_c/were/was pushed out to sea by enemy warriors"
+            "lead_death": "{VERB/m_c/were/was} pushed out to sea by enemy warriors"
         }
         ],
         "other_clan": {
@@ -243,7 +247,7 @@
             "newleaf",
             "leaf-fall"
         ],
-        "tags": [],
+        "tags": [ "classic" ],
         "weight": 20,
         "event_text": "m_c had not realized {PRONOUN/m_c/poss} fatal mistake until {PRONOUN/m_c/subject} felt {PRONOUN/m_c/poss} paws get clammy and {PRONOUN/m_c/poss} blood, once burning hot and dry after being out in the sun with no water nor shade, turned cold. As the world turned right-side up and {PRONOUN/m_c/poss} consciousness faded right before {PRONOUN/m_c/poss} eyes, m_c knew {PRONOUN/m_c/subject} {VERB/m_c/were/was} beyond saving, as dehydration and overheating claimed the last bits of {PRONOUN/m_c/poss} strength.",
         "m_c": {
@@ -569,7 +573,8 @@
         "history": [
             {
             "cats": [ "m_c" ],
-            "reg_death": "m_c died because of overheating and dehydration."
+            "reg_death": "m_c died because of overheating and dehydration.",
+            "lead_death": "died of overheating and dehydration"
         } ]
     },
     {
@@ -615,7 +620,8 @@
         "history": [
             {
             "cats": [ "m_c" ],
-            "reg_death": "m_c was caught unprepared out in the heat and died of dehydration and heat exhaustion."
+            "reg_death": "m_c was caught unprepared in the heat and died of dehydration and heat exhaustion.",
+            "lead_death": "{VERB/m_c/were/was} caught unprepared in the heat and died of dehydration and heat exhaustion"
         }
     ],
         "relationships": [
@@ -649,7 +655,7 @@
         "event_text": "m_c had invited r_c out days earlier, aiming to train and grow closer together. However, when r_c arrived, m_c never showed up; m_c wasn't seen around camp, nor had {PRONOUN/m_c/subject} been to training. It wasn't until r_c stumbles upon {PRONOUN/m_c/poss} body, the former succumbing to dehydration and exhaustion, that {PRONOUN/r_c/subject} {VERB/r_c/understand/understands} why.",
         "m_c": {
             "age": [
-                "adolescent"
+                "adolescent", "young adult"
             ],
             "status": [
                 "apprentice"
@@ -659,7 +665,7 @@
         },
         "r_c": {
             "age": [
-                "adolescent"
+                "adolescent", "young adult"
             ],
             "status": [
                 "apprentice"
@@ -669,39 +675,6 @@
             {
             "cats": [ "m_c" ],
             "reg_death": "m_c was ill-prepared for the heat and succumbed to dehydration."
-        }
-    ]
-    },
-    {
-        "event_id": "bch_death_tree_anyleader",
-        "biome": [ "beach" ],
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "tags": [
-            "some_lives"
-        ],
-        "weight": 20,
-        "event_text": "m_c lost a life when {PRONOUN/m_c/subject} fell from the top branches of a tree.",
-        "m_c": {
-            "age": [
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ],
-            "status": [
-                "leader"
-            ],
-            "dies": true
-        },
-        "history": [
-            {
-            "cats": [ "m_c" ],
-            "lead_death": "fell from a tall tree"
         }
     ]
     },
@@ -839,10 +812,9 @@
         "season": [
             "any"
         ],
+        "sub_type": [ "murder" ],
         "tags": [
             "all_lives",
-            "murder",
-            "revealed",
             "no_body"
         ],
         "weight": 20,
@@ -934,10 +906,9 @@
         "season": [
             "any"
         ],
+        "sub_type": [ "murder" ],
         "tags": [
             "all_lives",
-            "murder",
-            "revealed",
             "no_body"
         ],
         "weight": 20,
@@ -1029,10 +1000,9 @@
         "season": [
             "any"
         ],
+        "sub_type": [ "murder" ],
         "tags": [
             "all_lives",
-            "murder",
-            "revealed",
             "no_body"
         ],
         "weight": 20,
@@ -1120,11 +1090,10 @@
         "season": [
             "any"
         ],
+        "sub_type": [ "murder" ],
         "tags": [
             "clan_kits",
             "kit_manipulated",
-            "murder",
-            "revealed",
             "some_lives"
         ],
         "weight": 20,
