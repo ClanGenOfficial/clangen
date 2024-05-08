@@ -2439,8 +2439,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox. Tracking it, they find a swift fox feeding on a fish about as big as it is. The cat-sized predator definitely didn't kill this.",
-        "decline_text": "Your patrol decides not to quarrel with the fox. There're plenty of fish in the river for everyone, and it's best to focus on feeding the Clan rather than quarreling.",
+        "intro_text": "The patrol catches the scent of a fox. Tracking it, they find a swift fox feeding on a fish about as big as it is. The cat-sized predator definitely didn't kill this.",
+        "decline_text": "The patrol decides not to quarrel with the fox. There're plenty of fish in the river for everyone, and it's best to focus on feeding the Clan rather than quarreling.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -2479,7 +2479,6 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "patient",
                     "responsible",
                     "thoughtful",
@@ -2576,7 +2575,6 @@
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "patient",
                     "responsible",
                     "thoughtful",
@@ -2675,8 +2673,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox. Tracking it, they find a kit fox fishing on a branch overlooking the shallows.",
-        "decline_text": "Your patrol decides not to quarrel with the fox. There're plenty of fish in the river for everyone, and it's best to focus on feeding the Clan rather than quarreling.",
+        "intro_text": "The patrol catches the scent of a fox. Tracking it, they find a kit fox fishing on a branch overlooking the shallows.",
+        "decline_text": "The patrol decides not to quarrel with the fox. There're plenty of fish in the river for everyone, and it's best to focus on feeding the Clan rather than quarreling.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -2730,7 +2728,6 @@
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "patient",
                     "responsible",
                     "thoughtful",
@@ -2810,7 +2807,6 @@
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "patient",
                     "responsible",
                     "thoughtful",
@@ -2844,8 +2840,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox. Tracking it, they find a swift fox feeding on a fish about as big as it is. The cat-sized predator definitely didn't kill this.",
-        "decline_text": "Your patrol decides not to quarrel with the fox. There're plenty of fish in the river for everyone, and it's best to focus on feeding the Clan rather than quarreling.",
+        "intro_text": "The patrol catches the scent of a fox. Tracking it, they find a swift fox feeding on a fish about as big as it is. The cat-sized predator definitely didn't kill this.",
+        "decline_text": "The patrol decides not to quarrel with the fox. There're plenty of fish in the river for everyone, and it's best to focus on feeding the Clan rather than quarreling.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -2884,7 +2880,6 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "patient",
                     "responsible",
                     "thoughtful",
@@ -2981,7 +2976,6 @@
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "patient",
                     "responsible",
                     "thoughtful",
@@ -3080,8 +3074,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox. Tracking it, they find a kit fox fishing on a branch overlooking the shallows.",
-        "decline_text": "Your patrol decides not to quarrel with the fox. There're plenty of fish in the river for everyone, and it's best to focus on feeding the Clan rather than quarreling.",
+        "intro_text": "The patrol catches the scent of a fox. Tracking it, they find a kit fox fishing on a branch overlooking the shallows.",
+        "decline_text": "The patrol decides not to quarrel with the fox. There're plenty of fish in the river for everyone, and it's best to focus on feeding the Clan rather than quarreling.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -3135,7 +3129,6 @@
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "patient",
                     "responsible",
                     "thoughtful",
@@ -3215,7 +3208,6 @@
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "patient",
                     "responsible",
                     "thoughtful",

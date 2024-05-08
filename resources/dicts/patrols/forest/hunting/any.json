@@ -1562,7 +1562,6 @@
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -1637,7 +1636,6 @@
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -1712,7 +1710,6 @@
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -1782,7 +1779,6 @@
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -1867,7 +1863,6 @@
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -1996,7 +1991,6 @@
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -2129,7 +2123,6 @@
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",

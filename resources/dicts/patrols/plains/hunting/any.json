@@ -10,12 +10,12 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol comes across a prairie dog.",
-        "decline_text": "Your patrol decides to look for other prey.",
+        "intro_text": "The patrol comes across a prairie dog.",
+        "decline_text": "The patrol decides to look for other prey.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Your patrol catches the prairie dog!",
+                "text": "The patrol catches the prairie dog!",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
@@ -23,7 +23,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol narrowly misses the prairie dog.",
+                "text": "The patrol narrowly misses the prairie dog.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -917,8 +917,8 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol encounters a patch of bare ground where a lot of Twolegs linger.",
-        "decline_text": "Your patrol decides to hunt elsewhere.",
+        "intro_text": "The patrol encounters a patch of bare ground where a lot of Twolegs linger.",
+        "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -967,7 +967,6 @@
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -992,8 +991,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol encounters a patch of bare ground where a lot of Twolegs linger.",
-        "decline_text": "Your patrol decides to hunt elsewhere.",
+        "intro_text": "The patrol encounters a patch of bare ground where a lot of Twolegs linger.",
+        "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 10,
         "success_outcomes": [
             {
@@ -1042,7 +1041,6 @@
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -1067,8 +1065,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol encounters a patch of bare ground where a lot of Twolegs linger.",
-        "decline_text": "Your patrol decides to hunt elsewhere.",
+        "intro_text": "The patrol encounters a patch of bare ground where a lot of Twolegs linger.",
+        "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 10,
         "success_outcomes": [
             {
@@ -1119,7 +1117,6 @@
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -1190,7 +1187,6 @@
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -1275,7 +1271,6 @@
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -1402,7 +1397,6 @@
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -1534,7 +1528,6 @@
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -1711,19 +1704,19 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "Your patrol crosses the Thunderpath and can hunt on the other side.",
+                "text": "The patrol crosses the Thunderpath and can hunt on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
             },
             {
-                "text": "Your patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
+                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["medium"]
             },
             {
-                "text": "Your patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
+                "text": "The patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -1801,19 +1794,19 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Your patrol crosses the Thunderpath and can hunt on the other side.",
+                "text": "The patrol crosses the Thunderpath and can hunt on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
             },
             {
-                "text": "Your patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
+                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["medium"]
             },
             {
-                "text": "Your patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
+                "text": "The patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -1890,19 +1883,19 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "Your patrol crosses the Thunderpath and can hunt on the other side.",
+                "text": "The patrol crosses the Thunderpath and can hunt on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["large"]
             },
             {
-                "text": "Your patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of lots of prey.",
+                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of lots of prey.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["large"]
             },
             {
-                "text": "Your patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds several flattened pieces of roadkill. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
+                "text": "The patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds several flattened pieces of roadkill. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -1974,19 +1967,19 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "Your patrol crosses the Thunderpath and can hunt on the other side.",
+                "text": "The patrol crosses the Thunderpath and can hunt on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["large"]
             },
             {
-                "text": "Your patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of lots of prey.",
+                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of lots of prey.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["large"]
             },
             {
-                "text": "Your patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
+                "text": "The patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],

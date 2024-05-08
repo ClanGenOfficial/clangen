@@ -10,12 +10,12 @@
         "max_cats": 4,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol comes across a turtle.",
-        "decline_text": "Your patrol decides to look for other prey.",
+        "intro_text": "The patrol comes across a turtle.",
+        "decline_text": "The patrol decides to look for other prey.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Your patrol catches the turtle!",
+                "text": "The patrol catches the turtle!",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["large"]
@@ -23,7 +23,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol narrowly misses the turtle.",
+                "text": "The patrol narrowly misses the turtle.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -828,8 +828,8 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol encounters a sandy beach where a lot of Twolegs linger.",
-        "decline_text": "Your patrol decides to hunt elsewhere.",
+        "intro_text": "The patrol encounters a sandy beach where a lot of Twolegs linger.",
+        "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -903,8 +903,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol encounters a sandy beach where a lot of Twolegs linger.",
-        "decline_text": "Your patrol decides to hunt elsewhere.",
+        "intro_text": "The patrol encounters a sandy beach where a lot of Twolegs linger.",
+        "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 10,
         "success_outcomes": [
             {
@@ -978,8 +978,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol encounters a sandy beach where a lot of Twolegs linger.",
-        "decline_text": "Your patrol decides to hunt elsewhere.",
+        "intro_text": "The patrol encounters a sandy beach where a lot of Twolegs linger.",
+        "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 10,
         "success_outcomes": [
             {
@@ -1617,19 +1617,19 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "Your patrol crosses the Thunderpath and can hunt on the other side.",
+                "text": "The patrol crosses the Thunderpath and can hunt on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
             },
             {
-                "text": "Your patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws but a successful haul of prey nonetheless.",
+                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws but a successful haul of prey nonetheless.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["medium"]
             },
             {
-                "text": "Your patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's both a reminder of the danger of the Thunderpath and a good source of scavenged meat.",
+                "text": "The patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's both a reminder of the danger of the Thunderpath and a good source of scavenged meat.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -1703,19 +1703,19 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "Your patrol crosses the Thunderpath and can hunt on the other side.",
+                "text": "The patrol crosses the Thunderpath and can hunt on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
             },
             {
-                "text": "Your patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws but a successful haul of prey nonetheless.",
+                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws but a successful haul of prey nonetheless.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["medium"]
             },
             {
-                "text": "Your patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's both a reminder of the danger of the Thunderpath and a good source of scavenged meat.",
+                "text": "The patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's both a reminder of the danger of the Thunderpath and a good source of scavenged meat.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -1789,19 +1789,19 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "Your patrol crosses the Thunderpath and can hunt on the other side.",
+                "text": "The patrol crosses the Thunderpath and can hunt on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["large"]
             },
             {
-                "text": "Your patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws but a successful haul of prey nonetheless.",
+                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws but a successful haul of prey nonetheless.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["large"]
             },
             {
-                "text": "Your patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds several flattened pieces of roadkill. It's both a reminder of the danger of the Thunderpath and a good source of scavenged meat.",
+                "text": "The patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds several flattened pieces of roadkill. It's both a reminder of the danger of the Thunderpath and a good source of scavenged meat.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -1871,19 +1871,19 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "Your patrol crosses the Thunderpath and can hunt on the other side.",
+                "text": "The patrol crosses the Thunderpath and can hunt on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["large"]
             },
             {
-                "text": "Your patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws but a successful haul of prey nonetheless.",
+                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws but a successful haul of prey nonetheless.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["large"]
             },
             {
-                "text": "Your patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds several flattened pieces of roadkill. It's both a reminder of the danger of the Thunderpath and a good source of scavenged meat.",
+                "text": "The patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds several flattened pieces of roadkill. It's both a reminder of the danger of the Thunderpath and a good source of scavenged meat.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -2458,7 +2458,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Your patrol uses the eagle as a scout for their own hunt and eventually manages several smaller catches from the same area, which cumulatively are just as impressive as the eagle's massive catch.",
+                "text": "The patrol uses the eagle as a scout for their own hunt and eventually manages several smaller catches from the same area, which cumulatively are just as impressive as the eagle's massive catch.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["large"],
@@ -2611,7 +2611,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Your patrol uses the eagle as a scout for their own hunt and eventually manage several smaller catches from the same area, which cumulatively are just as impressive as the eagle's massive catch.",
+                "text": "The patrol uses the eagle as a scout for their own hunt and eventually manage several smaller catches from the same area, which cumulatively are just as impressive as the eagle's massive catch.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["large"],
@@ -2766,8 +2766,8 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a shark that the waves have washed ashore in the night.",
-        "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "intro_text": "The patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a shark that the waves have washed ashore in the night.",
+        "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -2848,7 +2848,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
+                "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2939,8 +2939,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a shark that the waves have washed ashore in the night.",
-        "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "intro_text": "The patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a shark that the waves have washed ashore in the night.",
+        "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -3021,7 +3021,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there were no injuries.",
+                "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -3285,8 +3285,8 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox - but is it red or gray? Tracking it, they find a stocky gray fox feeding on an unidentifiable but deliciously stinky mound of carrion the sea has washed up onto the shore.",
-        "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "intro_text": "The patrol catches the scent of a fox - but is it red or gray? Tracking it, they find a stocky gray fox feeding on an unidentifiable but deliciously stinky mound of carrion the sea has washed up onto the shore.",
+        "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -3390,7 +3390,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
+                "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -3478,8 +3478,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox - but is it red or gray? Tracking it, they find a stocky gray fox feeding on an unidentifiable but deliciously stinky mound of carrion the sea has washed up onto the shore.",
-        "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "intro_text": "The patrol catches the scent of a fox - but is it red or gray? Tracking it, they find a stocky gray fox feeding on an unidentifiable but deliciously stinky mound of carrion the sea has washed up onto the shore.",
+        "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -3582,7 +3582,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there were no injuries.",
+                "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -3829,8 +3829,8 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox - but is it red or gray? And is it worth a fight if they encounter it?",
-        "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "intro_text": "The patrol catches the scent of a fox - but is it red or gray? And is it worth a fight if they encounter it?",
+        "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -4063,8 +4063,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox - but is it red or gray? And is it worth a fight if they encounter it?",
-        "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "intro_text": "The patrol catches the scent of a fox - but is it red or gray? And is it worth a fight if they encounter it?",
+        "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -4480,8 +4480,8 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox - but is it red or gray? And is it worth a fight if they encounter it?",
-        "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "intro_text": "The patrol catches the scent of a fox - but is it red or gray? And is it worth a fight if they encounter it?",
+        "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -4737,8 +4737,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox - but is it red or gray? And is it worth a fight if they encounter it?",
-        "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "intro_text": "The patrol catches the scent of a fox - but is it red or gray? And is it worth a fight if they encounter it?",
+        "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 10,
         "success_outcomes": [
             {
