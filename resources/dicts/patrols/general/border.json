@@ -29,7 +29,7 @@
                 ]
             },
             {
-                "text": "s_c sets up an ambush for the wandering dog. When the dog nears {PRONOUN/s_c/poss}'s hiding spot, s_c leaps out with claws unsheathed, bloodies its snout, and leads it on a wild chasing dance across the border and out of c_n territory.",
+                "text": "s_c sets up an ambush for the wandering dog. When the dog nears {PRONOUN/s_c/poss} hiding spot, s_c leaps out with claws unsheathed, bloodies its snout, and leads it on a wild chasing dance across the border and out of c_n territory.",
                 "exp": 40,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
