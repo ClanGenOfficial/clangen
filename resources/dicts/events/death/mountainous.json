@@ -510,6 +510,7 @@
             "dies": true
         },
         "history": {
+            "cats": "m_c",
             "reg_death": "m_c was buried alive in an avalanche."
         }
     },
@@ -532,6 +533,7 @@
             "dies": true
         },
         "history": {
+            "cats": "m_c",
             "reg_death": "m_c was buried alive in a landslide."
         }
     },
@@ -552,6 +554,7 @@
             "dies": true
         },
         "history": {
+            "cats": "m_c",
             "reg_death": "m_c was buried alive in a mudslide."
         }
     },
@@ -647,9 +650,8 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "murder"
-        ],
+        "sub_type": [ "murder" ],
+        "tags": [],
         "weight": 20,
         "event_text": "m_c was pushed off a cliff onto the sharp rocks at the bottom. The culprit is unknown.",
         "m_c": {
@@ -672,6 +674,7 @@
             ]
         },
         "history": {
+            "cats": "m_c",
             "reg_death": "m_c was pushed off a cliff by r_c."
         },
         "relationships": [
@@ -698,10 +701,8 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "murder",
-            "revealed"
-        ],
+        "sub_type": [ "murder", "revealed" ],
+        "tags": [],
         "weight": 20,
         "event_text": "m_c was pushed off a cliff onto the sharp rocks at the bottom. r_c stands above {PRONOUN/m_c/object}, watching as they fall.",
         "m_c": {
@@ -724,6 +725,7 @@
             ]
         },
         "history": {
+            "cats": "m_c",
             "reg_death": "m_c was pushed off a cliff by r_c."
         },
         "relationships": [
@@ -750,9 +752,8 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "war"
-        ],
+        "sub_type": "war",
+        "tags": [],
         "weight": 20,
         "event_text": "m_c was killed by a falling boulder pushed from a cliff above {PRONOUN/m_c/object} by o_c warriors.",
         "m_c": {
@@ -761,6 +762,7 @@
             "dies": true
         },
         "history": {
+            "cats": "m_c",
             "reg_death": "m_c was crushed by a falling boulder.",
             "lead_death": "{VERB/m_c/were/was} crushed by a falling boulder."
         }
@@ -790,6 +792,7 @@
             "status": []
         },
         "history": {
+            "cats": "m_c",
             "reg_death": "m_c was grabbed by a hawk, never to be seen again."
         },
         "relationships": [
