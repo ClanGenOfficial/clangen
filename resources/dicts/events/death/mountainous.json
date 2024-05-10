@@ -701,7 +701,7 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "murder", "revealed" ],
+        "sub_type": [ "murder" ],
         "tags": [],
         "weight": 20,
         "event_text": "m_c was pushed off a cliff onto the sharp rocks at the bottom. r_c stands above {PRONOUN/m_c/object}, watching as they fall.",

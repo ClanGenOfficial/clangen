@@ -218,7 +218,7 @@
             "newleaf",
             "leaf-bare"
         ],
-        "sub_type": [ "murder", "revealed" ],
+        "sub_type": [ "murder" ],
         "tags": [],
         "weight": 20,
         "event_text": "m_c agreed to venture with r_c out onto a frozen pond. m_c went first while r_c hung back. m_c slid around playfully, taunting the other cat to chase {PRONOUN/m_c/object}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} about to launch another teasing remark when the ice cracked below {PRONOUN/m_c/poss} paws. r_c lingered to make sure {PRONOUN/m_c/subject} didn't surface before running back to camp with a yowl.",
