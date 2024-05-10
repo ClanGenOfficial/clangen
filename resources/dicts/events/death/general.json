@@ -60,7 +60,6 @@
             "status": [],
             "relationship_status": [],
             "trait": [
-                "altruistic",
                 "bold",
                 "ambitious",
                 "compassionate",
@@ -660,7 +659,6 @@
             "age": [],
             "status": [],
             "trait": [
-                "altruistic",
                 "bold",
                 "ambitious",
                 "compassionate",
@@ -834,7 +832,6 @@
             "status": [],
             "relationship_status": [],
             "trait": [
-                "altruistic",
                 "bold",
                 "ambitious",
                 "compassionate",
@@ -977,7 +974,6 @@
             ],
             "status": [],
             "trait": [
-                "altruistic",
                 "bold",
                 "ambitious",
                 "compassionate",
@@ -2233,7 +2229,6 @@
                 "charismatic",
                 "confident",
                 "daring",
-                "altruistic",
                 "empathetic",
                 "compassionate",
                 "loving",
@@ -2322,7 +2317,6 @@
                 "charismatic",
                 "confident",
                 "daring",
-                "altruistic",
                 "empathetic",
                 "compassionate",
                 "loving",
@@ -2411,7 +2405,6 @@
                 "charismatic",
                 "confident",
                 "daring",
-                "altruistic",
                 "empathetic",
                 "compassionate",
                 "loving",
@@ -3783,6 +3776,39 @@
         }
     },
     {
+        "event_id": "gen_death_tree_anyleader",
+        "biome": [ "beach", "forest", "mountainous" ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [
+            "some_lives"
+        ],
+        "weight": 20,
+        "event_text": "m_c lost a life when {PRONOUN/m_c/subject} fell from the top branches of a tree.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "leader"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+            "cats": [ "m_c" ],
+            "lead_death": "fell from a tall tree"
+        }
+    ]
+    },
+    {
         "event_id": "gen_death_",
         "camp": [
             "any"
@@ -4010,7 +4036,6 @@
                 "FIGHTER,2"
             ],
             "trait": [
-                "altruistic",
                 "bold",
                 "bloodthirsty",
                 "ambitious",
@@ -4078,7 +4103,6 @@
                 "FIGHTER,3"
             ],
             "trait": [
-                "altruistic",
                 "bold",
                 "bloodthirsty",
                 "ambitious",
@@ -4146,7 +4170,6 @@
                 "FIGHTER,2"
             ],
             "trait": [
-                "altruistic",
                 "bold",
                 "bloodthirsty",
                 "ambitious",
@@ -4211,7 +4234,6 @@
             ],
             "relationship_status": [],
             "trait": [
-                "altruistic",
                 "bold",
                 "compassionate",
                 "ambitious",
@@ -4274,7 +4296,6 @@
             ],
             "relationship_status": [],
             "trait": [
-                "altruistic",
                 "bold",
                 "ambitious",
                 "compassionate",
@@ -4337,7 +4358,6 @@
             ],
             "relationship_status": [],
             "trait": [
-                "altruistic",
                 "bold",
                 "ambitious",
                 "compassionate",
@@ -4406,7 +4426,6 @@
                 "FIGHTER,3"
             ],
             "trait": [
-                "altruistic",
                 "bold",
                 "bloodthirsty",
                 "ambitious",
@@ -4459,7 +4478,6 @@
                 "FIGHTER,3"
             ],
             "trait": [
-                "altruistic",
                 "bold",
                 "bloodthirsty",
                 "ambitious",
@@ -4571,7 +4589,6 @@
                 "FIGHTER,2"
             ],
             "trait": [
-                "altruistic",
                 "bold",
                 "compassionate",
                 "confident",
@@ -4658,7 +4675,6 @@
                 "FIGHTER,2"
             ],
             "trait": [
-                "altruistic",
                 "bold",
                 "compassionate",
                 "confident",
@@ -4745,7 +4761,6 @@
                 "FIGHTER,2"
             ],
             "trait": [
-                "altruistic",
                 "bold",
                 "compassionate",
                 "confident",
@@ -4832,7 +4847,6 @@
                 "FIGHTER,2"
             ],
             "trait": [
-                "altruistic",
                 "bold",
                 "compassionate",
                 "confident",
@@ -5006,7 +5020,6 @@
                 "leader"
             ],
             "trait": [
-                "altruistic",
                 "bold",
                 "ambitious",
                 "compassionate",
@@ -5525,7 +5538,6 @@
             ],
             "relationship_status": [],
             "trait": [
-                "altruistic",
                 "bold",
                 "ambitious",
                 "compassionate",
