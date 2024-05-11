@@ -2851,7 +2851,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c lost a life when a hawk attempted to grab and lift {PRONOUN/m_c/object}.",
+        "event_text": "A hawk attempted to grab and lift m_c.",
         "m_c": {
             "age": [
                 "young adult",
@@ -2882,7 +2882,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c lost a life defending r_c from a hawk.",
+        "event_text": "m_c was killed defending r_c from a hawk.",
         "m_c": {
             "age": [
                 "young adult",
@@ -3030,7 +3030,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c lost a life defending r_c from an eagle.",
+        "event_text": "m_c was killed defending r_c from an eagle.",
         "m_c": {
             "age": [
                 "young adult",
@@ -4052,7 +4052,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "Lightning struck in camp, and m_c lost a life.",
+        "event_text": "Lightning struck in camp, killing m_c.",
         "m_c": {
             "age": [
                 "young adult",
@@ -4084,7 +4084,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c lost a life after being swept away by a flood.",
+        "event_text": "m_c was swept away by a flood.",
         "m_c": {
             "age": [
                 "young adult",
@@ -4103,39 +4103,7 @@
         }
     },
     {
-        "event_id": "gen_death_fox_anylead1",
-        "biome": ["any"],
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c was mortally wounded by a fox and lost a life.",
-        "m_c": {
-            "age": [
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ],
-            "status": [
-                "leader"
-            ],
-            "not_skill": [
-                "FIGHTER,2"
-            ],
-            "dies": true
-        },
-        "history": {
-            "cats": ["m_c"],
-            "lead_death": "{VERB/m_c/were/was} mortally wounded by a fox"
-        }
-    },
-    {
-        "event_id": "gen_death_tree_anylead1",
+        "event_id": "gen_death_tree_any1",
         "biome": [ "beach", "forest", "mountainous" ],
         "camp": [
             "any"
@@ -4145,16 +4113,17 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c lost a life when {PRONOUN/m_c/subject} fell from the top branches of a tree.",
+        "event_text": "m_c fell from the top branches of a tree.",
         "m_c": {
             "age": [
+                "adolescent",
                 "young adult",
                 "adult",
                 "senior adult",
                 "senior"
             ],
             "status": [
-                "leader"
+                "apprentice", "warrior", "deputy", "leader"
             ],
             "dies": true
         },
@@ -4166,7 +4135,7 @@
     ]
     },
     {
-        "event_id": "gen_death_dog_anylead1",
+        "event_id": "gen_death_dog_any2",
         "biome": ["any"],
         "camp": [
             "any"
@@ -4176,7 +4145,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c lost a life to a dog.",
+        "event_text": "m_c died in a fight with a dog.",
         "m_c": {
             "age": [
                 "young adult",
@@ -4185,7 +4154,7 @@
                 "senior"
             ],
             "status": [
-                "leader"
+                "apprentice", "warrior", "deputy", "leader"
             ],
             "not_skill": [
                 "FIGHTER,2"
@@ -4194,11 +4163,12 @@
         },
         "history": {
             "cats": ["m_c"],
+            "reg_death": "m_c was mauled by a dog.",
             "lead_death": "{VERB/m_c/were/was} mauled by a dog"
         }
     },
     {
-        "event_id": "gen_death_badger_anylead1",
+        "event_id": "gen_death_badger_any1",
         "biome": ["any"],
         "camp": [
             "any"
@@ -4208,16 +4178,17 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c lost a life to a badger.",
+        "event_text": "m_c died in a fight with a badger.",
         "m_c": {
             "age": [
+                "adolescent",
                 "young adult",
                 "adult",
                 "senior adult",
                 "senior"
             ],
             "status": [
-                "leader"
+                "apprentice", "warrior", "deputy", "leader"
             ],
             "not_skill": [
                 "FIGHTER,2"
@@ -4230,7 +4201,7 @@
         }
     },
     {
-        "event_id": "gen_death_rogue_anylead1",
+        "event_id": "gen_death_rogue_any1",
         "biome": ["any"],
         "camp": [
             "any"
@@ -4240,16 +4211,17 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c lost a life while fighting off a rogue.",
+        "event_text": "m_c died in a fight with a rogue.",
         "m_c": {
             "age": [
+                "adolescent",
                 "young adult",
                 "adult",
                 "senior adult",
                 "senior"
             ],
             "status": [
-                "leader"
+                "apprentice", "warrior", "deputy", "leader"
             ],
             "not_skill": [
                 "FIGHTER,2"
@@ -4258,11 +4230,12 @@
         },
         "history": {
             "cats": ["m_c"],
+            "reg_death": "m_c was killed in a fight with a rogue.",
             "lead_death": "fought a rogue"
         }
     },
     {
-        "event_id": "gen_death_spider_anylead1",
+        "event_id": "gen_death_spider_any1",
         "biome": ["any"],
         "camp": [
             "any"
@@ -4272,26 +4245,24 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c was bit by a venomous spider, and lost a life.",
+        "event_text": "m_c was bitten by a venomous spider.",
         "m_c": {
             "age": [
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
+                "any"
             ],
             "status": [
-                "leader"
+                "any"
             ],
             "dies": true
         },
         "history": {
             "cats": ["m_c"],
-            "lead_death": "{VERB/m_c/were/was} bit by a venomous spider"
+            "reg_death": "m_c was bitten by a venomous spider.",
+            "lead_death": "{VERB/m_c/were/was} bitten by a venomous spider"
         }
     },
     {
-        "event_id": "gen_death_snake_anylead1",
+        "event_id": "gen_death_badprey_any1",
         "biome": ["any"],
         "camp": [
             "any"
@@ -4301,9 +4272,10 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c was bit by a venomous snake, and lost a life.",
+        "event_text": "m_c ate tainted fresh-kill and died.",
         "m_c": {
             "age": [
+                "apprentice",
                 "young adult",
                 "adult",
                 "senior adult",
@@ -4316,35 +4288,7 @@
         },
         "history": {
             "cats": ["m_c"],
-            "lead_death": "{VERB/m_c/were/was} bit by a venomous snake"
-        }
-    },
-    {
-        "event_id": "gen_death_badprey_anylead1",
-        "biome": ["any"],
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c ate tainted fresh-kill and lost a life.",
-        "m_c": {
-            "age": [
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ],
-            "status": [
-                "leader"
-            ],
-            "dies": true
-        },
-        "history": {
-            "cats": ["m_c"],
+            "reg_death": "m_c died after eating tained fresh-kill.",
             "lead_death": "ate tainted fresh-kill"
         }
     },
@@ -4359,7 +4303,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c failed to interpret a warning sign from StarClan and lost a life as a result.",
+        "event_text": "m_c failed to interpret a warning sign from StarClan.",
         "m_c": {
             "age": [
                 "young adult",
@@ -4382,7 +4326,7 @@
         }
     },
     {
-        "event_id": "gen_death_dog_anylead2",
+        "event_id": "gen_death_dog_anylead1",
         "biome": ["any"],
         "camp": [
             "any"
@@ -4392,7 +4336,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c lost a life defending r_c from a dog.",
+        "event_text": "m_c was killed defending r_c from a dog.",
         "m_c": {
             "age": [
                 "young adult",
@@ -4471,7 +4415,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c lost a life defending r_c from a badger.",
+        "event_text": "m_c was killed defending r_c from a badger.",
         "m_c": {
             "age": [
                 "young adult",
@@ -4550,7 +4494,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c lost a life defending r_c from a fox.",
+        "event_text": "m_c was killed defending r_c from a fox.",
         "m_c": {
             "age": [
                 "young adult",
@@ -4630,7 +4574,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c lost a life saving r_c from drowning.",
+        "event_text": "m_c died while saving r_c from drowning.",
         "m_c": {
             "age": [
                 "young adult",
@@ -4704,7 +4648,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c lost a life saving r_c from a monster.",
+        "event_text": "m_c saved r_c from a monster but was run over in the process.",
         "m_c": {
             "age": [
                 "young adult",
@@ -4778,7 +4722,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c lost a life saving r_c from a snake.",
+        "event_text": "m_c saved r_c from a snake and was bitten in the process.",
         "m_c": {
             "age": [
                 "young adult",
@@ -4856,7 +4800,7 @@
             "clan_kits"
         ],
         "weight": 20,
-        "event_text": "m_c lost a life defending the kits from o_c warriors.",
+        "event_text": "m_c was killed defending the kits from o_c warriors.",
         "m_c": {
             "age": [
                 "young adult",
@@ -4909,7 +4853,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c lost a life defending r_c from o_c warriors.",
+        "event_text": "m_c was killed defending r_c from o_c warriors.",
         "m_c": {
             "age": [
                 "young adult",
@@ -4997,7 +4941,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c lost a life to an apprentice from o_c.",
+        "event_text": "m_c was killed by an apprentice from o_c.",
         "m_c": {
             "age": [
                 "young adult",
@@ -5036,7 +4980,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c lost a life trying to save an apprentice from o_c.",
+        "event_text": "m_c died trying to save an apprentice from o_c.",
         "m_c": {
             "age": [
                 "young adult",
@@ -5087,7 +5031,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c lost a life to a warrior from o_c.",
+        "event_text": "m_c was killed by a warrior from o_c.",
         "m_c": {
             "age": [
                 "young adult",
@@ -5126,7 +5070,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c lost a life trying to save a warrior from o_c.",
+        "event_text": "m_c died saving a warrior from o_c.",
         "m_c": {
             "age": [
                 "young adult",
@@ -5177,7 +5121,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c lost a life to the leader of o_c.",
+        "event_text": "m_c was killed by the leader of o_c.",
         "m_c": {
             "age": [
                 "young adult",
@@ -5216,7 +5160,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c lost a life trying to save the leader of o_c.",
+        "event_text": "m_c was killed saving the leader of o_c.",
         "m_c": {
             "age": [
                 "young adult",
@@ -5267,7 +5211,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c lost a life to the deputy of o_c.",
+        "event_text": "m_c was killed by the deputy of o_c.",
         "m_c": {
             "age": [
                 "young adult",
@@ -5306,7 +5250,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c lost a life trying to save the deputy of o_c.",
+        "event_text": "m_c was killed saving the deputy of o_c.",
         "m_c": {
             "age": [
                 "young adult",
@@ -5435,7 +5379,7 @@
         }
     },
     {
-        "event_id": "gen_death_dog_anylead3",
+        "event_id": "gen_death_dog_anylead2",
         "biome": ["any"],
         "camp": [
             "any"
@@ -5646,7 +5590,7 @@
             "classic"
         ],
         "weight": 20,
-        "event_text": "m_c lost a life to greencough.",
+        "event_text": "m_c died of greencough.",
         "m_c": {
             "age": [
                 "young adult",
@@ -5711,7 +5655,7 @@
             "classic"
         ],
         "weight": 20,
-        "event_text": "m_c lost a life to whitecough.",
+        "event_text": "m_c died of whitecough.",
         "m_c": {
             "age": [
                 "young adult",
@@ -5776,7 +5720,7 @@
             "classic"
         ],
         "weight": 20,
-        "event_text": "m_c lost a life to yellowcough.",
+        "event_text": "m_c died of yellowcough.",
         "m_c": {
             "age": [
                 "young adult",
@@ -5841,7 +5785,7 @@
             "classic"
         ],
         "weight": 20,
-        "event_text": "m_c lost a life to infected wounds.",
+        "event_text": "m_c succumbed to {PRONOUN/m_c/poss} infected wounds.",
         "m_c": {
             "age": [
                 "young adult",
@@ -6014,7 +5958,7 @@
         "sub_type": [ "murder" ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c was pushed under a monster and lost a life.",
+        "event_text": "m_c was pushed under a monster.",
         "m_c": {
             "age": [
                 "young adult",

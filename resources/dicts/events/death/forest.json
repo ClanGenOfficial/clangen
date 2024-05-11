@@ -54,7 +54,7 @@
         }
     },
     {
-        "event_id": "fst_death_tree_anylead1",
+        "event_id": "fst_death_tree_any1",
         "biome": [
             "forest"
         ],
@@ -66,21 +66,23 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c was crushed and lost a life when a tree fell into camp.",
+        "event_text": "m_c was crushed when a tree fell into camp.",
         "m_c": {
             "age": [
+                "adolescent",
                 "young adult",
                 "adult",
                 "senior adult",
                 "senior"
             ],
             "status": [
-                "leader"
+                "any"
             ],
             "dies": true
         },
         "history": {
             "cats": ["m_c"],
+            "reg_death": "m_c was crushed by a falling tree.",
             "lead_death": "{VERB/m_c/were/was} crushed by a falling tree"
         }
     }
