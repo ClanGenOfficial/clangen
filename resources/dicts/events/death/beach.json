@@ -138,33 +138,6 @@
         ]
     },
     {
-        "event_id": "bch_death_heat_greenleaf1",
-        "biome": [ "beach" ],
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "greenleaf"
-        ],
-        "tags": [
-            "classic"
-        ],
-        "weight": 20,
-        "event_text": "m_c died from dehydration and heat stroke.",
-        "m_c": {
-            "age": [ "any" ],
-            "status": [ "any" ],
-            "dies": true
-        },
-        "history":
-        [ {
-            "cats": ["m_c"],
-            "reg_death": "m_c died of dehydration and heat stroke.",
-            "lead_death": "died of dehydration and heat stroke"
-        }
-    ]
-    },
-    {
         "event_id": "bch_death_abyss_any1",
         "biome": [ "beach" ],
         "camp": [
@@ -199,9 +172,8 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "war"
-        ],
+        "sub_type": [ "war" ],
+        "tags": [],
         "weight": 20,
         "event_text": "m_c drowned after being pushed out to sea by o_c warriors.",
         "m_c": {
@@ -1152,34 +1124,4 @@
             "lead_death": "saved a drowning kit that was set up by r_c"
         }
     ]
-    },
-    {
-        "event_id": "bch_death_heat_anykit1",
-        "biome": [ "beach" ],
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "greenleaf"
-        ],
-        "tags": [
-            "classic"
-        ],
-        "weight": 20,
-        "event_text": "m_c died from dehydration and heat stroke.",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "dies": true
-        },
-        "history": [
-            {
-            "cats": [ "m_c" ],
-            "reg_death": "m_c died of dehydration and heat stroke."
-        }
-        ]
     }]
