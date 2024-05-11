@@ -1970,7 +1970,7 @@
     },
     {
         "event_id": "gen_death_bury_any1",
-        "biome": ["any"],
+        "biome": ["beach", "plains", "forest"],
         "camp": [
             "any"
         ],
@@ -1993,7 +1993,7 @@
     },
     {
         "event_id": "gen_death_bury_any2",
-        "biome": ["plains"],
+        "biome": ["plains", "forest", "beach"],
         "camp": [
             "any"
         ],
@@ -2108,7 +2108,7 @@
     },
     {
         "event_id": "gen_death_bury_any3",
-        "biome": ["any"],
+        "biome": ["plains", "beach", "forest"],
         "camp": [
             "any"
         ],
@@ -2125,6 +2125,7 @@
             "dies": true
         },
         "history": {
+            "cats": ["m_c"],
             "reg_death": "m_c suffocated underground.",
             "lead_death": "{VERB/m_c/were/was} suffocated underground."
         }
@@ -2528,7 +2529,7 @@
             "leaf-fall",
             "leaf-bare"
         ],
-        "tags": [ "all_lives" ],
+        "tags": [ "all_lives", "no_body" ],
         "weight": 20,
         "event_text": "m_c was buried alive in an avalanche.",
         "m_c": {
@@ -2553,7 +2554,7 @@
             "newleaf",
             "leaf-fall"
         ],
-        "tags": [],
+        "tags": [ "all_lives", "no_body" ],
         "weight": 20,
         "event_text": "m_c was buried alive in a landslide.",
         "m_c": {
@@ -2614,6 +2615,39 @@
         "history": {
             "cats": ["m_c"],
             "reg_death": "m_c slipped off the edge of a cliff.",
+            "lead_death": "slipped off the edge of a cliff"
+        }
+    },
+    {
+        "event_id": "gen_death_cliff_anylead1",
+        "biome": [
+            "mountainous", "forest", "beach"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [
+            "all_lives"
+        ],
+        "weight": 20,
+        "event_text": "m_c slipped off a cliff onto the sharp rocks at the bottom and couldn't recover.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "leader"
+            ],
+            "dies": true
+        },
+        "history": {
+            "cats": ["m_c"],
             "lead_death": "slipped off the edge of a cliff"
         }
     },
@@ -2747,7 +2781,7 @@
     },
     {
         "event_id": "gen_death_war_any3",
-        "biome": ["any"],
+        "biome": ["mountainous", "forest", "beach"],
         "camp": [
             "any"
         ],
@@ -2767,6 +2801,12 @@
             "cats": ["m_c"],
             "reg_death": "m_c was crushed by a falling boulder.",
             "lead_death": "{VERB/m_c/were/was} crushed by a falling boulder."
+        },
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -5
         }
     },
     {
@@ -2799,8 +2839,342 @@
         }
     },
     {
+        "event_id": "gen_death_hawk_anylead1",
+        "biome": [
+            "forest", "mountainous", "plains", "wetlands"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c lost a life when a hawk attempted to grab and lift {PRONOUN/m_c/object}.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "leader"
+            ],
+            "dies": true
+        },
+        "history": {
+            "cats": ["m_c"],
+            "lead_death": "{VERB/m_c/were/was} grabbed by a hawk"
+        }
+    },
+    {
+        "event_id": "gen_death_hawk_anylead2",
+        "biome": [
+            "forest", "mountainous", "plains", "wetlands"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c lost a life defending r_c from a hawk.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "leader"
+            ],
+            "not_skill": [
+                "FIGHTER,2"
+            ],
+            "trait": [
+                "bold",
+                "bloodthirsty",
+                "ambitious",
+                "daring",
+                "confident",
+                "fierce",
+                "loyal",
+                "loving",
+                "empathetic",
+                "responsible",
+                "righteous",
+                "vengeful"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "age": [ "kitten", "adolescent" ],
+            "status": [ "any" ]
+        },
+        "history": {
+            "cats": ["m_c"],
+            "lead_death": "defended r_c from a hawk"
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "platonic",
+                    "trust",
+                    "respect"
+                ],
+                "amount": 15
+            },
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "dislike"
+                ],
+                "amount": -15
+            }
+        ]
+    },
+    {
+        "event_id": "gen_death_hawk_anylead3",
+        "biome": [
+            "forest", "mountainous", "plains", "wetlands"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [
+            "all_lives",
+            "no_body"
+        ],
+        "weight": 20,
+        "event_text": "m_c was carried off by a hawk, never to be seen again.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "leader"
+            ],
+            "not_skill": [
+                "FIGHTER,2"
+            ],
+            "dies": true
+        },
+        "history": {
+            "cats": ["m_c"],
+            "lead_death": "{VERB/m_c/were/was} carried away by a hawk"
+        }
+    },
+    {
+        "event_id": "gen_death_eagle_anylead1",
+        "biome": [
+            "plains", "mountainous"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c was grabbed and dropped by an eagle, losing a life.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "leader"
+            ],
+            "dies": true
+        },
+        "history": {
+            "cats": ["m_c"],
+            "lead_death": "{VERB/m_c/were/was} grabbed by an eagle"
+        }
+    },
+    {
+        "event_id": "gen_death_eagle_anylead2",
+        "biome": [
+            "mountainous", "plains"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c lost a life defending r_c from an eagle.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "leader"
+            ],
+            "relationship_status": [],
+            "not_skill": [
+                "FIGHTER,2"
+            ],
+            "trait": [
+                "bold",
+                "bloodthirsty",
+                "ambitious",
+                "daring",
+                "confident",
+                "fierce",
+                "loyal",
+                "loving",
+                "empathetic",
+                "responsible",
+                "righteous",
+                "vengeful"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "age": [ "kitten", "adolescent"],
+            "status": [ "any" ]
+        },
+        "history": {
+            "cats": ["m_c"],
+            "lead_death": "defended r_c from an eagle"
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "platonic",
+                    "comfort",
+                    "trust",
+                    "respect"
+                ],
+                "amount": 15
+            },
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "dislike"
+                ],
+                "amount": -15
+            }
+        ]
+    },
+    {
+        "event_id": "gen_death_eagle_anylead3",
+        "biome": [
+            "mountainous", "plains"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [
+            "all_lives",
+            "no_body"
+        ],
+        "weight": 20,
+        "event_text": "m_c was carried off by an eagle, never to be seen again.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "leader"
+            ],
+            "not_skill": [
+                "FIGHTER,3"
+            ],
+            "dies": true
+        },
+        "history": {
+            "cats": ["m_c"],
+            "lead_death": "{VERB/m_c/were/was} carried away by an eagle"
+        }
+    },
+    {
+        "event_id": "gen_death_river_multilead2",
+        "biome": [
+            "forest", "mountainous", "plains", "wetlands"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "greenleaf",
+            "newleaf",
+            "leaf-fall"
+        ],
+        "tags": [
+            "all_lives",
+            "no_body"
+        ],
+        "weight": 20,
+        "event_text": "m_c fell into a river and was swept away by the current, never to be seen again.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "leader"
+            ],
+            "dies": true
+        },
+        "history": {
+            "cats": ["m_c"],
+            "lead_death": "{VERB/m_c/were/was} swept away by the river"
+        }
+    },
+    {
         "event_id": "gen_death_hawk_any2",
-        "biome": ["any"],
+        "biome": ["forest", "mountainous", "plains", "wetlands"],
         "camp": [
             "any"
         ],
@@ -2814,10 +3188,10 @@
         "event_text": "m_c was taken by a hawk, never to be seen again.",
         "m_c": {
             "age": [
-                "kitten"
+                "kitten", "adolescent"
             ],
             "status": [
-                "kitten"
+                "any"
             ],
             "dies": true
         },
@@ -2857,7 +3231,7 @@
     },
     {
         "event_id": "gen_death_drown_multi2",
-        "biome": ["any"],
+        "biome": ["plains", "forest", "mountainous", "plains"],
         "camp": [
             "any"
         ],
@@ -2871,20 +3245,20 @@
         "event_text": "m_c fell into the river and drowned.",
         "m_c": {
             "age": [
-                "kitten"
+                "adolescent", "young adult", "adult", "senior adult", "senior"
             ],
             "status": [
-                "kitten"
+                "any"
             ],
-            "trait": [
-                "daring",
-                "impulsive"
-            ],
+            "not_skill": [
+                "SWIMMER,2"
+                ],
             "dies": true
         },
         "history": {
             "cats": ["m_c"],
-            "reg_death": "m_c fell into the river and drowned."
+            "reg_death": "m_c fell into the river and drowned.",
+            "lead_death": "fell into the river and drowned"
         }
     },
     {
@@ -3007,93 +3381,6 @@
         }
     },
     {
-        "event_id": "gen_death_whitecough_multi1",
-        "biome": ["any"],
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "leaf-fall",
-            "leaf-bare"
-        ],
-        "tags": [
-            "classic"
-        ],
-        "weight": 20,
-        "event_text": "m_c was too weak to fight off whitecough and died.",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "dies": true
-        },
-        "history": {
-            "cats": ["m_c"],
-            "reg_death": "m_c died of whitecough."
-        }
-    },
-    {
-        "event_id": "gen_death_greencough_multi1",
-        "biome": ["any"],
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "leaf-fall",
-            "leaf-bare"
-        ],
-        "tags": [
-            "classic"
-        ],
-        "weight": 20,
-        "event_text": "m_c died of greencough.",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "dies": true
-        },
-        "history": {
-            "cats": ["m_c"],
-            "reg_death": "m_c died of greencough."
-        }
-    },
-    {
-        "event_id": "gen_death_cold_multi1",
-        "biome": ["any"],
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "leaf-fall",
-            "leaf-bare"
-        ],
-        "tags": [
-            "classic"
-        ],
-        "weight": 20,
-        "event_text": "m_c caught a cold, slowly fading until {PRONOUN/m_c/subject} eventually passed on.",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "dies": true
-        },
-        "history": {
-            "cats": ["m_c"],
-            "reg_death": "m_c was killed by sickness."
-        }
-    },
-    {
         "event_id": "gen_death_kittencough_any1",
         "biome": ["any"],
         "camp": [
@@ -3126,41 +3413,6 @@
         "history": {
             "cats": ["m_c", "r_c"],
             "reg_death": "This cat died of kittencough."
-        }
-    },
-    {
-        "event_id": "gen_death_whitecough_any1",
-        "biome": ["any"],
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "tags": [
-            "classic"
-        ],
-        "weight": 20,
-        "event_text": "r_c and m_c catch whitecough and fade away quickly.",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "dies": true
-        },
-        "r_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [ "kitten" ],
-            "dies": true
-        },
-        "history": {
-            "cats": ["m_c", "r_c"],
-            "reg_death": "This cat died of whitecough."
         }
     },
     {
@@ -3668,13 +3920,7 @@
         "weight": 20,
         "event_text": "m_c, already feeling weak, couldn't make it through a case of whitecough.",
         "m_c": {
-            "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
-            ],
+            "age": [  "any"  ],
             "status": [ "any" ],
             "dies": true
         },
@@ -3700,11 +3946,7 @@
         "event_text": "m_c was too weak to recover from an illness and passed away.",
         "m_c": {
             "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
+                "any"
             ],
             "status": [ "any" ],
             "dies": true
@@ -3731,11 +3973,7 @@
         "event_text": "Weakened by a lack of prey, m_c couldn't fight off whitecough and passed away.",
         "m_c": {
             "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "any"
             ],
             "status": [ "any" ],
             "dies": true
@@ -3762,13 +4000,9 @@
         "event_text": "m_c was taken quickly by a case of greencough.",
         "m_c": {
             "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "any"
             ],
-            "status": [],
+            "status": [ "any" ],
             "dies": true
         },
         "history": {
@@ -3793,8 +4027,6 @@
         "m_c": {
             "age": [
                 "senior",
-                "adolescent",
-                "young adult",
                 "adult",
                 "senior adult"
             ],
@@ -3836,6 +4068,38 @@
         "history": {
             "cats": ["m_c"],
             "lead_death": "{VERB/m_c/were/was} struck by lightning"
+        }
+    },
+    {
+        "event_id": "gen_death_flood_multilead1",
+        "biome": [
+            "forest", "mountainous", "plains", "beach", "wetlands"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "greenleaf",
+            "newleaf"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c lost a life after being swept away by a flood.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "leader"
+            ],
+            "dies": true
+        },
+        "history": {
+            "cats": ["m_c"],
+            "lead_death": "{VERB/m_c/were/was} swept away by a flood"
         }
     },
     {
@@ -6028,6 +6292,76 @@
         ]
     },
     {
+        "event_id": "gen_death_murder_anyleader4",
+        "biome": [ "beach", "forest", "mountainous", "wetlands", "plains" ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [ "murder" ],
+        "tags": [
+            "clan_kits",
+            "some_lives"
+        ],
+        "weight": 20,
+        "event_text": "m_c saves one of the Clan's kits from drowning, but loses a life in the process. The kit is well scolded for straying into the water but is even more subdued than expected afterwards; sending nervous glances at r_c that no one else seems to catch.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "leader"
+            ],
+            "trait": [
+                "ambitious",
+                "bold",
+                "compassionate",
+                "confident",
+                "daring",
+                "fierce",
+                "loving",
+                "loyal",
+                "responsible",
+                "righteous",
+                "thoughtful",
+                "vengeful"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "age": [ "young adult", "adult", "senior adult", "senior" ],
+            "status": [ "any" ],
+            "skill": [
+                "CLEVER,2",
+                "SPEAKER,2"
+            ],
+            "trait": [
+                "ambitious",
+                "careful",
+                "calm",
+                "cold",
+                "confident",
+                "daring",
+                "shameless",
+                "sneaky",
+                "strange",
+                "vengeful",
+                "wise"
+            ]
+        },
+        "history": [
+            {
+            "cats": [ "m_c" ],
+            "lead_death": "saved a drowning kit that was set up by r_c"
+        }
+    ]
+    },
+    {
         "event_id": "gen_death_war_anyfriendlyfire1",
         "biome": ["any"],
         "camp": [
@@ -6456,5 +6790,191 @@
                 "amount": -15
             }
         ]
+    },
+    {
+        "event_id": "gen_death_freeze_leafbarekit1",
+        "biome": [
+            "any"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c disappeared from the nursery and was later found dead, not far from camp.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "status": [
+                "kitten"
+            ],
+            "trait": [
+                "daring",
+                "impulsive",
+                "attention-seeker",
+                "troublesome"
+            ],
+            "dies": true
+        },
+        "history": {
+            "cats": ["m_c"],
+            "reg_death": "m_c froze to death."
+        }
+    },
+    {
+        "event_id": "gen_death_drown_leafbarekit1",
+        "biome": [
+            "forest", "plains", "mountainous", "beach", "wetlands"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c was playing on the ice, when it cracked and {PRONOUN/m_c/subject} fell in.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "status": [
+                "kitten"
+            ],
+            "trait": [
+                "daring",
+                "attention-seeker",
+                "impulsive"
+            ],
+            "dies": true
+        },
+        "history": {
+            "cats": ["m_c"],
+            "reg_death": "m_c froze to death after falling through ice."
+        }
+    },
+    {
+        "event_id": "gen_death_predator_anykit1",
+        "biome": [
+            "any"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "leaf-fall",
+            "leaf-bare"
+        ],
+        "tags": [
+            "no_body"
+        ],
+        "weight": 20,
+        "event_text": "m_c wandered away from camp in the night, never to be seen again.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "status": [
+                "kitten"
+            ],
+            "dies": true
+        },
+        "history": {
+            "cats": ["m_c"],
+            "reg_death": "m_c was eaten by a predator."
+        }
+    },
+    {
+        "event_id": "gen_death_predator_anykit2",
+        "biome": [
+            "any"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [
+            "no_body"
+        ],
+        "weight": 20,
+        "event_text": "m_c vanished from camp after sneaking out, and the search parties find nothing but blood.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "status": [
+                "kitten"
+            ],
+            "dies": true
+        },
+        "history": {
+            "cats": ["m_c"],
+            "reg_death": "m_c was eaten by a predator."
+        }
+    },
+    {
+        "event_id": "gen_death_mouse_anykit1",
+        "biome": [
+            "forest", "plains", "moutainous", "wetlands"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c is found within a few fox-lengths of camp, {PRONOUN/m_c/poss} tiny body cold and covered in bites. The scent of mouse hangs heavy in the air...",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "status": [
+                "kitten"
+            ],
+            "dies": true
+        },
+        "history": {
+            "cats": ["m_c"],
+            "reg_death": "m_c was killed by a feisty mouse."
+        }
+    },
+    {
+        "event_id": "gen_death_shrew_anykit",
+        "biome": [
+            "forest", "plains", "moutainous", "wetlands"
+        ],
+        "camp": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [
+            "no_body"
+        ],
+        "weight": 20,
+        "event_text": "m_c can be heard boasting that {PRONOUN/m_c/subject}'{VERB/m_c/re/s} ready to be made an apprentice <i>right now</i>, and that {PRONOUN/m_c/subject}'{VERB/m_c/re/s} already one of the best hunters in the Clan. That evening, to prove {PRONOUN/m_c/poss} point, {PRONOUN/m_c/subject} sneak out of camp, intending to catch something for the fresh-kill pile. A frantic search party follows {PRONOUN/m_c/poss} trail, only to find blood and the foul stench of a shrew at the end.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "status": [
+                "kitten"
+            ],
+            "dies": true
+        },
+        "history": {
+            "cats": ["m_c"],
+            "reg_death": "m_c was eaten by a shrew."
+        }
     }
 ]
