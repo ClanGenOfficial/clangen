@@ -493,7 +493,7 @@
             "dies": true
         },
         "history": {
-            "cats": "m_c",
+            "cats": ["m_c"],
             "reg_death": "m_c was buried alive when a burrow collapsed."
         }
     },
@@ -565,7 +565,7 @@
         "season": [
             "any"
         ],
-        "sub_type": "war",
+        "sub_type": [ "war" ],
         "tags": [],
         "weight": 20,
         "event_text": "m_c was sealed into a cramped rabbit burrow by o_c warriors. {PRONOUN/m_c/subject/CAP} didn't make it out alive.",
@@ -615,7 +615,7 @@
             "status": []
         },
         "history": {
-            "cats": "m_c",
+            "cats": ["m_c"],
             "reg_death": "m_c was lured onto thin ice by r_c, resulting in {PRONOUN/m_c/poss} death."
         },
         "relationships": [

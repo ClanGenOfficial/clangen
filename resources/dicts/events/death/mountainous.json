@@ -510,7 +510,7 @@
             "dies": true
         },
         "history": {
-            "cats": "m_c",
+            "cats": ["m_c"],
             "reg_death": "m_c was buried alive in an avalanche."
         }
     },
@@ -533,7 +533,7 @@
             "dies": true
         },
         "history": {
-            "cats": "m_c",
+            "cats": ["m_c"],
             "reg_death": "m_c was buried alive in a landslide."
         }
     },
@@ -554,7 +554,7 @@
             "dies": true
         },
         "history": {
-            "cats": "m_c",
+            "cats": ["m_c"],
             "reg_death": "m_c was buried alive in a mudslide."
         }
     },
@@ -674,7 +674,7 @@
             ]
         },
         "history": {
-            "cats": "m_c",
+            "cats": ["m_c"],
             "reg_death": "m_c was pushed off a cliff by r_c."
         },
         "relationships": [
@@ -725,7 +725,7 @@
             ]
         },
         "history": {
-            "cats": "m_c",
+            "cats": ["m_c"],
             "reg_death": "m_c was pushed off a cliff by r_c."
         },
         "relationships": [
@@ -752,7 +752,7 @@
         "season": [
             "any"
         ],
-        "sub_type": "war",
+        "sub_type": [ "war" ],
         "tags": [],
         "weight": 20,
         "event_text": "m_c was killed by a falling boulder pushed from a cliff above {PRONOUN/m_c/object} by o_c warriors.",
@@ -762,7 +762,7 @@
             "dies": true
         },
         "history": {
-            "cats": "m_c",
+            "cats": ["m_c"],
             "reg_death": "m_c was crushed by a falling boulder.",
             "lead_death": "{VERB/m_c/were/was} crushed by a falling boulder."
         }
@@ -792,7 +792,7 @@
             "status": []
         },
         "history": {
-            "cats": "m_c",
+            "cats": ["m_c"],
             "reg_death": "m_c was grabbed by a hawk, never to be seen again."
         },
         "relationships": [

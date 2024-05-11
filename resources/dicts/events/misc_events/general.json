@@ -518,7 +518,7 @@
         "season": [
             "any"
         ],
-        "sub_type": "war",
+        "sub_type": [ "war" ],
         "tags": [],
         "weight": 20,
         "event_text": "m_c's knowledge of herbs and healing is being put to the test, with injuries becoming more severe in the midst of war.",
@@ -542,7 +542,7 @@
         "season": [
             "any"
         ],
-        "sub_type": "war",
+        "sub_type": [ "war" ],
         "tags": [],
         "weight": 20,
         "event_text": "m_c watches every little thing around {PRONOUN/m_c/object} for any omen that indicates what the Clan should do in the war. The losses weigh heavy on the hearts of every cat.",
@@ -569,7 +569,7 @@
         "season": [
             "any"
         ],
-        "sub_type": "war",
+        "sub_type": [ "war" ],
         "tags": [],
         "weight": 20,
         "event_text": "m_c preps battle herbs into small bundles to rush to the battlefield in case of severe injuries.",
@@ -590,7 +590,7 @@
         "season": [
             "leaf-bare"
         ],
-        "sub_type": "war",
+        "sub_type": [ "war" ],
         "tags": [],
         "weight": 20,
         "event_text": "m_c hopes to find the herbs that c_n needs in the war, and goes to look for them even in this leafbare's harsh weather.",
@@ -614,7 +614,7 @@
         "season": [
             "any"
         ],
-        "sub_type": "war",
+        "sub_type": [ "war" ],
         "tags": [],
         "weight": 20,
         "event_text": "c_n is in a badly need of herbs, and m_c knows it, but can't bring {PRONOUN/m_c/self} to leave {PRONOUN/m_c/poss} patients' side.",
@@ -1493,7 +1493,7 @@
         "season": [
             "any"
         ],
-        "sub_type": "war",
+        "sub_type": [ "war" ],
         "tags": [],
         "weight": 20,
         "event_text": "As the deputy, m_c is doing {PRONOUN/m_c/poss} best to prepare for leadership in the case that the worst happens.",
@@ -1516,7 +1516,7 @@
         "season": [
             "any"
         ],
-        "sub_type": "war",
+        "sub_type": [ "war" ],
         "tags": [],
         "weight": 20,
         "event_text": "m_c is struggling to accept the fact that {PRONOUN/m_c/subject} may have to step up as leader if r_c loses {PRONOUN/r_c/poss} last life. How could {PRONOUN/m_c/subject} {VERB/m_c/go/goes} on without {PRONOUN/m_c/poss} beloved leader? How difficult will it to be to lead in {PRONOUN/r_c/poss} stead?",
@@ -1565,7 +1565,7 @@
         "season": [
             "any"
         ],
-        "sub_type": "war",
+        "sub_type": [ "war" ],
         "tags": [],
         "weight": 20,
         "event_text": "m_c is struggling to accept the fact that {PRONOUN/m_c/subject} may have to step up as leader if r_c loses {PRONOUN/r_c/poss} last life.",
@@ -1609,7 +1609,7 @@
         "season": [
             "any"
         ],
-        "sub_type": "war",
+        "sub_type": [ "war" ],
         "tags": [],
         "weight": 20,
         "event_text": "m_c is heavily relying on the tactical advice and experience of the elders, namely r_c.",
@@ -2755,7 +2755,7 @@
         "season": [
             "any"
         ],
-        "sub_type": "war",
+        "sub_type": [ "war" ],
         "tags": [],
         "weight": 20,
         "event_text": "m_c feels like {PRONOUN/m_c/subject} might be growing up too fast in the midst of war.",
@@ -2926,7 +2926,7 @@
         "season": [
             "any"
         ],
-        "sub_type": "war",
+        "sub_type": [ "war" ],
         "tags": [],
         "weight": 20,
         "event_text": "m_c is conversing with r_c about ways to potentially end this war without bloodshed.",
@@ -2985,7 +2985,7 @@
         "season": [
             "any"
         ],
-        "sub_type": "war",
+        "sub_type": [ "war" ],
         "tags": [],
         "weight": 20,
         "event_text": "m_c is conversing with r_c about ways to potentially end this war- but not without bloodshed.",
@@ -3044,7 +3044,7 @@
         "season": [
             "any"
         ],
-        "sub_type": "war",
+        "sub_type": [ "war" ],
         "tags": [],
         "weight": 20,
         "event_text": "m_c is giving r_c bad war advice on purpose.",
@@ -3103,7 +3103,7 @@
         "season": [
             "any"
         ],
-        "sub_type": "war",
+        "sub_type": [ "war" ],
         "tags": [],
         "weight": 20,
         "event_text": "m_c is checking in on every cat in the camp to make sure everyone is staying healthy in the midst of war.",
@@ -3285,7 +3285,7 @@
         "season": [
             "any"
         ],
-        "sub_type": "war",
+        "sub_type": [ "war" ],
         "tags": [],
         "weight": 20,
         "event_text": "m_c feels burdened with the weight of {PRONOUN/m_c/poss} decisions, knowing that every choice they make could mean the difference between victory and defeat.",
@@ -3309,7 +3309,7 @@
         "season": [
             "any"
         ],
-        "sub_type": "war",
+        "sub_type": [ "war" ],
         "tags": [],
         "weight": 20,
         "event_text": "m_c's relationships with {PRONOUN/m_c/poss} Clanmates are strained, with some questioning {PRONOUN/m_c/poss} decisions and others relying on {PRONOUN/m_c/object} more heavily than ever.",
@@ -3333,7 +3333,7 @@
         "season": [
             "any"
         ],
-        "sub_type": "war",
+        "sub_type": [ "war" ],
         "tags": [],
         "weight": 20,
         "event_text": "m_c is forced to be a symbol of strength and unity for {PRONOUN/m_c/poss} Clan, even in the face of {PRONOUN/m_c/poss} own doubts and fears.",

@@ -72,7 +72,7 @@
         "season": [
             "any"
         ],
-        "sub_type": "war",
+        "sub_type": [ "war" ],
         "tags": [],
         "weight": 20,
         "event_text": "The apprentices of the Clan are taking special training to learn how to land on enemies when jumping from trees.",

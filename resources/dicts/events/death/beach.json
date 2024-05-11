@@ -1,7 +1,7 @@
 [
     {
         "event_id": "bch_death_drown_any1",
-        "biome": ["beach", ""],
+        "biome": ["beach"],
         "camp": [
             "any"
         ],
@@ -172,7 +172,7 @@
         "season": [
             "any"
         ],
-        "sub_type": "war",
+        "sub_type": [ "war" ],
         "tags": [],
         "weight": 20,
         "event_text": "m_c drowned after being pushed out to sea by o_c warriors.",
