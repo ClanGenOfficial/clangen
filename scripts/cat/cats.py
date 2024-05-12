@@ -407,13 +407,12 @@ class Cat():
 
     def die(self, body: bool = True):
         """
-        This is used to kill a cat.
+        This is used to kill a cat.  Note, this does not remove leader lives, you must remove the leader life prior to
+        calling this function.
 
         body - defaults to True, use this to mark if the body was recovered so
         that grief messages will align with body status 
         - if it is None, a lost cat died and therefore not trigger grief, since the clan does not know
-
-        May return some additional text to add to the death event.
         """
         if self.status == 'leader' and 'pregnant' in self.injuries and game.clan.leader_lives > 0:
             self.illnesses.clear()
@@ -423,20 +422,15 @@ class Cat():
             self.illnesses.clear()
         
         # Deal with leader death
-        text = ""
         if self.status == 'leader':
             if game.clan.leader_lives > 0:
                 self.thought = 'Was startled to find themself in Silverpelt for a moment... did they lose a life?'
-                return ""
+                return
             elif game.clan.leader_lives <= 0:
                 self.dead = True
                 game.just_died.append(self.ID)
                 game.clan.leader_lives = 0
                 self.thought = 'Is surprised to find themself walking the stars of Silverpelt'
-                if game.clan.instructor.df is False:
-                    text = 'They\'ve lost their last life and have travelled to StarClan.'
-                else:
-                    text = 'They\'ve lost their last life and have travelled to the Dark Forest.'
         else:
             self.dead = True
             game.just_died.append(self.ID)
@@ -467,7 +461,7 @@ class Cat():
             self.thought = "Is fascinated by the new ghostly world they've stumbled into"
             game.clan.add_to_unknown(self)
 
-        return text
+        return
 
     def exile(self):
         """This is used to send a cat into exile. This removes the cat's status and gives them a special 'exiled'
@@ -1384,16 +1378,7 @@ class Cat():
             if self.status == "leader":
                 self.leader_death_heal = True
                 game.clan.leader_lives -= 1
-                if game.clan.leader_lives > 0:
-                    text = f"{self.name} lost a life to {illness}."
-                    # game.health_events_list.append(text)
-                    # game.birth_death_events_list.append(text)
-                    game.cur_events_list.append(Single_Event(text, ["birth_death", "health"], game.clan.leader.ID))
-                elif game.clan.leader_lives <= 0:
-                    text = f"{self.name} lost their last life to {illness}."
-                    # game.health_events_list.append(text)
-                    # game.birth_death_events_list.append(text)
-                    game.cur_events_list.append(Single_Event(text, ["birth_death", "health"], game.clan.leader.ID))
+
             self.die()
             return False
 

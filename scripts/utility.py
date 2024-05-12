@@ -78,6 +78,15 @@ def get_alive_apps(Cat):
 
     return alive_apps
 
+def get_alive_newborns(Cat):
+    """
+    returns a list of IDs for all living newborns in the clan
+    """
+    alive_newborns = [i for i in Cat.all_cats.values() if
+                  i.status in ["newborn"] and not i.dead and not i.outside]
+
+    return alive_newborns
+
 def get_med_cats(Cat, working=True):
     """
     returns a list of all meds and med apps currently alive, in the clan, and able to work
@@ -1370,6 +1379,25 @@ def change_relationship_values(cats_to: list,
 #                               Text Adjust                                    #
 # ---------------------------------------------------------------------------- #
 
+def get_leader_life_notice() -> str:
+    """
+    Returns a string specifying how many lives the leader has left or notifying of the leader's full death
+    """
+    text = ""
+
+    lives = game.clan.leader_lives
+
+    if lives > 0:
+        text = f"The leader has {int(lives)} lives left."
+    elif lives <= 0:
+        if game.clan.instructor.df is False:
+            text = 'The leader has no lives left and has travelled to StarClan.'
+        else:
+            text = 'The leader has no lives left and has travelled to the Dark Forest.'
+
+    return text
+
+
 def pronoun_repl(m, cat_pronouns_dict, raise_exception=False):
     """ Helper function for add_pronouns. If raise_exception is 
     False, any error in pronoun formatting will not raise an 
@@ -1764,7 +1792,6 @@ def event_text_adjust(Cat, text, event, stat_cat=None):
     text = text.replace('c_n', str(game.clan.name) + 'Clan')
 
     # other_clan_name
-    # TODO: make sure moon events are making a self.other_clan
     other_clan_name = event.other_clan.name
     pos = 0
     for x in range(text.count('o_c_n')):

@@ -9,7 +9,8 @@ from scripts.clan_resources.freshkill import Freshkill_Pile
 from scripts.events_module.condition_events import INJURY_GROUPS
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values, get_alive_kits, \
-    history_text_adjust, get_warring_clan, unpack_rel_block, change_clan_reputation, create_new_cat_block
+    history_text_adjust, get_warring_clan, unpack_rel_block, change_clan_reputation, create_new_cat_block, \
+    get_leader_life_notice
 from scripts.game_structure.game_essentials import game
 from scripts.event_class import Single_Event
 
@@ -264,16 +265,16 @@ class HandleShortEvents():
             if self.main_cat.status == 'leader':
                 if "all_lives" in self.chosen_event.tags:
                     game.clan.leader_lives -= 10
-                    self.additional_event_text += self.main_cat.die(body)
                 elif "some_lives" in self.chosen_event.tags:
                     game.clan.leader_lives -= random.randrange(2, current_lives - 1)
-                    self.additional_event_text += self.main_cat.die(body)
                 else:
                     game.clan.leader_lives -= 1
-                    self.additional_event_text += self.main_cat.die(body)
+
+                self.main_cat.die(body)
+                self.additional_event_text = get_leader_life_notice()
 
             else:
-                self.additional_event_text += self.main_cat.die(body)
+                self.main_cat.die(body)
 
         # kill random_cat
         if self.chosen_event.r_c["dies"]:
@@ -283,16 +284,16 @@ class HandleShortEvents():
             if self.random_cat.status == 'leader':
                 if "all_lives" in self.chosen_event.tags:
                     game.clan.leader_lives -= 10
-                    self.additional_event_text += self.random_cat.die(body)
                 elif "some_lives" in self.chosen_event.tags:
                     game.clan.leader_lives -= random.randrange(2, current_lives - 1)
-                    self.additional_event_text += self.random_cat.die(body)
                 else:
                     game.clan.leader_lives -= 1
-                    self.additional_event_text += self.random_cat.die(body)
+
+                self.random_cat.die(body)
+                self.additional_event_text = get_leader_life_notice()
 
             else:
-                self.additional_event_text += self.random_cat.die(body)
+                self.random_cat.die(body)
 
     def handle_mass_death(self):
         # gather living clan cats except leader bc leader lives would be frustrating to handle in these

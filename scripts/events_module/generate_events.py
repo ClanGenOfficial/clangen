@@ -7,7 +7,8 @@ import ujson
 from scripts.cat.cats import Cat
 from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE, FRESHKILL_EVENT_TRIGGER_FACTOR
 from scripts.game_structure.game_essentials import game
-from scripts.utility import filter_relationship_type, get_living_clan_cat_count, get_alive_kits, get_alive_apps
+from scripts.utility import filter_relationship_type, get_living_clan_cat_count, get_alive_kits, get_alive_apps, \
+    get_alive_newborns
 
 resource_directory = "resources/dicts/events/"
 
@@ -251,8 +252,21 @@ class GenerateEvents:
                 if int(cat.moons) < 150 and int(random.random() * 5):
                     continue
 
-            # make sure that 'some lives' events don't show up if the leader doesn't have multiple lives to spare
-            if "some_lives" in event.tags and game.clan.leader_lives <= 3:
+            leader_lives = game.clan.leader_lives
+
+            # make sure that 'some lives' and "lives_remain" events don't show up if the leader doesn't have multiple
+            # lives to spare
+            if "some_lives" in event.tags and leader_lives <= 3:
+                continue
+            if "lives_remain" in event.tags and leader_lives < 2:
+                continue
+
+            # check leader life count
+            if "high_lives" in event.tags and leader_lives not in [7, 8, 9]:
+                continue
+            elif "mid_lives" in event.tags and leader_lives not in [4, 5, 6]:
+                continue
+            elif "low_lives" in event.tags and leader_lives not in [1, 2, 3]:
                 continue
 
             if "low_lives" in event.tags:
@@ -265,6 +279,10 @@ class GenerateEvents:
 
             # check if Clan has apps
             if "clan_apps" in event.tags and not get_alive_apps(Cat):
+                continue
+
+            # check if Clan has newborns
+            if "clan_newborns" in event.tags and not get_alive_newborns(Cat):
                 continue
 
             # If the cat or any of their mates have "no kits" toggled, forgo the adoption event.

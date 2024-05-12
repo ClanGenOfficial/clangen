@@ -986,19 +986,15 @@ class Events:
         cat.one_moon()
 
         # Handle Mediator Events
-        # TODO: this is not a great way to handle them, ideally they should be converted to ShortEvent format,
-        #  unsure how best to convert and still preserve their functionality?
-        #  can i add them to misc_events or do i need to create new mediator_event just for them?
+        # TODO: this is not a great way to handle them, ideally they should be converted to ShortEvent format
         self.mediator_events(cat)
 
         # handle nutrition amount
-        # (CARE: the cats has to be fed before - should be handled in "one_moon" function)
-        # TODO: these events need to be handled differently, ideally not with the ShortEvent format.
-        #  Should handle the same way we handle normal illness/injury for sake of consistency
+        # (CARE: the cats have to be fed before this happens - should be handled in "one_moon" function)
         if game.clan.game_mode in ['expanded', 'cruel season'
                                    ] and game.clan.freshkill_pile:
-            Freshkill_Events.handle_nutrient(
-                cat, game.clan.freshkill_pile.nutrition_info)
+            Condition_Events.handle_nutrient(cat, game.clan.freshkill_pile.nutrition_info)
+
             if cat.dead:
                 return
 
@@ -1183,7 +1179,7 @@ class Events:
         """
         ceremonies
         """
-        # TODO: hardcoded events, not good, consider how to convert.
+        # TODO: hardcoded events, not good, consider how to convert to ShortEvent
         #  we *do* have a ceremony dict and format, not sure why it isn't being used here
         # PROMOTE DEPUTY TO LEADER, IF NEEDED -----------------------
         if game.clan.leader:
@@ -1658,7 +1654,6 @@ class Events:
         """
         accessories
         """
-        # TODO: does this need to be separated from other misc_events? can we consider. not doing that?
 
         if not cat:
             return
