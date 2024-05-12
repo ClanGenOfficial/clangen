@@ -1665,6 +1665,7 @@ def event_text_adjust(Cat, text, event, stat_cat=None):
     :param event: the class of the event the text belongs to (i.e. Patrol, DeathEvent, ect.)
     :param stat_cat: if adjusting a patrol, pass self.stat_cat
     """
+    # TODO: need to figure out how to make this work in instances where an event class isn't usable
 
     vowels = ['A', 'E', 'I', 'O', 'U']
     if not text:

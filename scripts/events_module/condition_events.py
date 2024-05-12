@@ -4,16 +4,12 @@ from copy import deepcopy
 
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
-from scripts.cat.pelts import Pelt
 from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE, MAL_PERCENTAGE, STARV_PERCENTAGE
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
-from scripts.events_module.freshkill_pile_events import Freshkill_Events
 from scripts.events_module.handle_short_events import handle_short_events
-from scripts.utility import event_text_adjust, get_med_cats, change_relationship_values, change_clan_relations, \
-    history_text_adjust, get_leader_life_notice
+from scripts.utility import event_text_adjust, get_med_cats, get_leader_life_notice
 from scripts.game_structure.game_essentials import game
 from scripts.events_module.scar_events import Scar_Events
-from scripts.events_module.generate_events import GenerateEvents
 from scripts.event_class import Single_Event
 
 

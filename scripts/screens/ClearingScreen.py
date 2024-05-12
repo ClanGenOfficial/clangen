@@ -4,10 +4,10 @@ import ujson
 
 from .Screens import Screens
 from scripts.cat.cats import Cat
-from scripts.events_module.freshkill_pile_events import Freshkill_Events
 from scripts.game_structure.image_button import UISpriteButton, UIImageButton, UITextBoxTweaked
 from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
+from ..events_module.condition_events import Condition_Events
 
 with open('resources/clansettings.json', 'r', encoding='utf-8') as f:
     settings_dict = ujson.load(f)
@@ -80,7 +80,7 @@ class ClearingScreen(Screens):
                     current_amount = nutrition_info[self.focus_cat_object.ID].current_score
                     amount = max_amount - current_amount
                 game.clan.freshkill_pile.feed_cat(self.focus_cat_object, amount, 0)
-                Freshkill_Events.handle_nutrient(self.focus_cat_object, game.clan.freshkill_pile.nutrition_info)
+                Condition_Events.handle_nutrient(self.focus_cat_object, game.clan.freshkill_pile.nutrition_info)
                 self.update_cats_list()
                 self.update_nutrition_cats()
                 self.update_focus_cat()
