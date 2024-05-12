@@ -155,7 +155,6 @@
                 "FIGHTER,2"
             ],
             "trait": [
-                "altruistic",
                 "bold",
                 "bloodthirsty",
                 "ambitious",
@@ -227,7 +226,6 @@
                 "FIGHTER,2"
             ],
             "trait": [
-                "altruistic",
                 "bold",
                 "bloodthirsty",
                 "ambitious",
@@ -495,29 +493,8 @@
             "dies": true
         },
         "history": {
+            "cats": ["m_c"],
             "reg_death": "m_c was buried alive when a burrow collapsed."
-        }
-    },
-    {
-        "event_id": "pln_death_",
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "greenleaf"
-        ],
-        "tags": [
-            "classic"
-        ],
-        "weight": 20,
-        "event_text": "m_c died from dehydration and heat stroke.",
-        "m_c": {
-            "age": [],
-            "status": [],
-            "dies": true
-        },
-        "history": {
-            "reg_death": "m_c died of dehydration and heat stroke."
         }
     },
     {
@@ -588,9 +565,8 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "war"
-        ],
+        "sub_type": [ "war" ],
+        "tags": [],
         "weight": 20,
         "event_text": "m_c was sealed into a cramped rabbit burrow by o_c warriors. {PRONOUN/m_c/subject/CAP} didn't make it out alive.",
         "m_c": {
@@ -612,10 +588,8 @@
             "newleaf",
             "leaf-bare"
         ],
-        "tags": [
-            "murder",
-            "revealed"
-        ],
+        "sub_type": [ "murder" ],
+        "tags": [],
         "weight": 20,
         "event_text": "m_c agreed to venture with r_c out onto a frozen pond. m_c went first while r_c hung back. m_c slid around playfully, taunting the other cat to chase {PRONOUN/m_c/object}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} about to launch another teasing remark when the ice cracked below {PRONOUN/m_c/poss} paws. r_c lingered to make sure {PRONOUN/m_c/subject} didn't surface before running back to camp with a yowl.",
         "m_c": {
@@ -641,6 +615,7 @@
             "status": []
         },
         "history": {
+            "cats": ["m_c"],
             "reg_death": "m_c was lured onto thin ice by r_c, resulting in {PRONOUN/m_c/poss} death."
         },
         "relationships": [
@@ -776,34 +751,5 @@
         },
         "history": {
             "reg_death": "m_c froze to death after falling through ice."
-        }
-    },
-    {
-        "event_id": "pln_death_",
-        "biome": [
-            "plains"
-        ],
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "greenleaf"
-        ],
-        "tags": [
-            "classic"
-        ],
-        "weight": 20,
-        "event_text": "m_c died from dehydration and heat stroke.",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "dies": true
-        },
-        "history": {
-            "reg_death": "m_c died of dehydration and heat stroke."
         }
     }]
