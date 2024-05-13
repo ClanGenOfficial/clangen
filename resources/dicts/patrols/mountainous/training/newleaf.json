@@ -147,7 +147,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "This close to the nest the eagles take remarkably little notice of other animals. app1 can even see sparrows nipping in and out of their own nests, tiny things woven into the eagle one. It's a great opportunity to watch the birds and learn their body language, and a side of them app1 never expected to see, observing them with their chicks.",
+                "text": "This close to the nest, the eagles take remarkably little notice of other animals. app1 can even see sparrows nipping in and out of their own nests, tiny things woven into the eagle one. It's a great opportunity to watch the birds and learn their body language, and a side of them app1 never expected to see, observing them with their chicks.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -568,7 +568,6 @@
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -602,5 +601,64 @@
                 "weight": 20
             }
         ]
+    },
+    {
+        "patrol_id": "mtn_train_newleaf_hibernation_storylorelocked1",
+        "biome": ["mountainous"],
+        "season": ["newleaf"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_warrior_crouching_perplexed",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6],
+            "apprentice": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1", "LORE,1"],
+        "intro_text": "Look at this. p_l gesture with their tail, calling app1's attention to the other side of the vast valley. In the snow, something is erupting out of a massive burrow.",
+        "decline_text": "Let's not be anywhere near a bear newly emerged from hibernation, the cats decide.",
+        "success_outcomes": [
+                {
+                    "text": "Have you ever starved? Felt hunger gnawing your belly until it flips, filled it with water just to get a moment's relief, felt your limbs tremble with weakness as your mind desperately yearns for prey? How long did that take, a day, a week? Imagine months without food. Stay away from bears emerging from hibernation.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_train_ghost",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["trust"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "app1 takes one look at the bear emerging on the opposite slope, and turns to run for home. It takes p_l almost half the distance to camp to catch up with {PRONOUN/app1/object} again, and {PRONOUN/p_l/subject} {VERB/p_l/congratulate/congratulates} app1 on {PRONOUN/app1/poss} speed as {PRONOUN/p_l/subject} {VERB/p_l/pant/pants}. app1 didn't need to worry, though, that sow is slowed by her newborn cubs.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": false,
+                            "values": ["respect", "comfort"],
+                            "amount": 10
+                        }
+                    ]
+                }
+            ]
     }
 ]

@@ -794,7 +794,7 @@ class Cat():
         the allegiances. If short is true, it will generate a very short one, with the minimal amount of information. """
         output = Pelt.describe_appearance(self, short)
         # Add "a" or "an"
-        if output[0].lower() in "aiou":
+        if output[0].lower() in "aeiou":
             output = f"an {output}"
         else:
             output = f"a {output}"

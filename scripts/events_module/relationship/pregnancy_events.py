@@ -7,7 +7,8 @@ from scripts.utility import (
     get_highest_romantic_relation,
     get_med_cats,
     event_text_adjust,
-    get_personality_compatibility
+    get_personality_compatibility,
+    change_relationship_values
 )
 from scripts.game_structure.game_essentials import game
 from scripts.cat.cats import Cat, cat_class
@@ -410,6 +411,8 @@ class Pregnancy_Events():
 
             if cat.outside:
                 possible_events = events["birth"]["outside_death"]
+            if game.clan.leader_lives > 1:
+                possible_events = events["birth"]["lead_death"]
             event_list.append(choice(possible_events))
 
             if cat.status == 'leader':
@@ -711,6 +714,10 @@ class Pregnancy_Events():
                 kit = Cat(parent1=cat.ID, moons=0, backstory=backstory, status='newborn')
                 kit.thought = f"Snuggles up to the belly of {cat.name}"
 
+            # Prevent duplicate prefixes in the same litter
+            while kit.name.prefix in [kitty.name.prefix for kitty in all_kitten]:
+                kit.name = Name("newborn")
+
             all_kitten.append(kit)
             # adoptive parents are set at the end, when everything else is decided
 
@@ -737,19 +744,22 @@ class Pregnancy_Events():
                 if the_cat.dead or the_cat.outside:
                     continue
                 if the_cat.ID in kit.get_parents():
-                    y = random.randrange(0, 20)
+                    parent_to_kit = game.config["new_cat"]["parent_buff"]["parent_to_kit"]
+                    y = random.randrange(0, 15)
                     start_relation = Relationship(the_cat, kit, False, True)
-                    start_relation.platonic_like += 30 + y
-                    start_relation.comfortable = 10 + y
-                    start_relation.admiration = 15 + y
-                    start_relation.trust = 10 + y
+                    start_relation.platonic_like += parent_to_kit["platonic"] + y
+                    start_relation.comfortable = parent_to_kit["comfortable"] + y
+                    start_relation.admiration = parent_to_kit["admiration"] + y
+                    start_relation.trust = parent_to_kit["trust"] + y
                     the_cat.relationships[kit.ID] = start_relation
-                    y = random.randrange(0, 20)
+
+                    kit_to_parent = game.config["new_cat"]["parent_buff"]["kit_to_parent"]
+                    y = random.randrange(0, 15)
                     start_relation = Relationship(kit, the_cat, False, True)
-                    start_relation.platonic_like += 30 + y
-                    start_relation.comfortable = 10 + y
-                    start_relation.admiration = 15 + y
-                    start_relation.trust = 10 + y
+                    start_relation.platonic_like += kit_to_parent["platonic"] + y
+                    start_relation.comfortable = kit_to_parent["comfortable"] + y
+                    start_relation.admiration = kit_to_parent["admiration"] + y
+                    start_relation.trust = kit_to_parent["trust"] + y
                     kit.relationships[the_cat.ID] = start_relation
                 else:
                     the_cat.relationships[kit.ID] = Relationship(the_cat, kit)
@@ -787,6 +797,33 @@ class Pregnancy_Events():
             kit.adoptive_parents = final_adoptive_parents
             kit.inheritance.update_inheritance()
             kit.inheritance.update_all_related_inheritance()
+
+            # update relationship for adoptive parents
+            for parent_id in final_adoptive_parents:
+                parent = Cat.fetch_cat(parent_id)
+                if parent:
+                    kit_to_parent = game.config["new_cat"]["parent_buff"]["kit_to_parent"]
+                    parent_to_kit = game.config["new_cat"]["parent_buff"]["parent_to_kit"]
+                    change_relationship_values(
+                        cats_from=[kit],
+                        cats_to=[parent.ID],
+                        platonic_like=kit_to_parent["platonic"],
+                        dislike=kit_to_parent["dislike"],
+                        admiration=kit_to_parent["admiration"],
+                        comfortable=kit_to_parent["comfortable"],
+                        jealousy=kit_to_parent["jealousy"],
+                        trust=kit_to_parent["trust"]
+                    )
+                    change_relationship_values(
+                        cats_from=[parent],
+                        cats_to=[kit.ID],
+                        platonic_like=parent_to_kit["platonic"],
+                        dislike=parent_to_kit["dislike"],
+                        admiration=parent_to_kit["admiration"],
+                        comfortable=parent_to_kit["comfortable"],
+                        jealousy=parent_to_kit["jealousy"],
+                        trust=parent_to_kit["trust"]
+                    )
 
         if blood_parent:
             blood_parent.outside = True

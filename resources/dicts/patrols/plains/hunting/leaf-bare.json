@@ -268,8 +268,8 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a pronghorn carcass, either a small doe or one of last newleaf's fawns. It's impossible to say whether the fox killed it or found it.",
-        "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "intro_text": "The patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a pronghorn carcass, either a small doe or one of last newleaf's fawns. It's impossible to say whether the fox killed it or found it.",
+        "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -309,7 +309,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
@@ -331,7 +330,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
+                "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -405,8 +404,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a pronghorn carcass, either a small doe or one of last newleaf's fawns. It's impossible to say whether the fox killed it or found it.",
-        "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "intro_text": "The patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a pronghorn carcass, either a small doe or one of last newleaf's fawns. It's impossible to say whether the fox killed it or found it.",
+        "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 10,
         "success_outcomes": [
             {
@@ -446,7 +445,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
@@ -468,7 +466,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there were no injuries.",
+                "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -583,7 +581,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
@@ -708,8 +705,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox. Tracking it, they find a swift fox feeding on a cow carcass, either a small female or one of last newleaf's calves. The cat-sized predator definitely didn't kill this massive hunk of fresh-kill.",
-        "decline_text": "Your patrol decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
+        "intro_text": "The patrol catches the scent of a fox. Tracking it, they find a swift fox feeding on a cow carcass, either a small female or one of last newleaf's calves. The cat-sized predator definitely didn't kill this massive hunk of fresh-kill.",
+        "decline_text": "The patrol decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -748,7 +745,6 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "patient",
                     "responsible",
                     "thoughtful",
@@ -845,7 +841,6 @@
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "patient",
                     "responsible",
                     "thoughtful",
@@ -1270,7 +1265,7 @@
         },
         "weight": 20,
         "intro_text": "r_c catches scent of a mouse nearby. But there aren't any footprints imprinted on top of the snow to follow.",
-        "decline_text": "Your patrol ignores the mouse.",
+        "decline_text": "The patrol ignores the mouse.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1316,7 +1311,7 @@
         },
         "weight": 20,
         "intro_text": "app1 catches scent of a mouse nearby. But they lash they tail, confused - everything is covered in snow, where could the prey be?",
-        "decline_text": "Your patrol ignores the mouse.",
+        "decline_text": "The patrol ignores the mouse.",
         "chance_of_success": 20,
         "success_outcomes": [
             {
@@ -1366,7 +1361,7 @@
         },
         "weight": 20,
         "intro_text": "app1 catches scent of a mouse nearby. They're confused, asking where it could be, given there's not footprints in the snow, until p_l indicates the snowdrift itself with a wave of their tail.",
-        "decline_text": "Your patrol ignores the mouse.",
+        "decline_text": "The patrol ignores the mouse.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -3257,7 +3252,7 @@
                 ]
             },
             {
-                "text": "r_c always feels like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} padding in p_l's footsteps, especially today, watching {PRONOUN/p_l/object} haul back a good catch of prey for the clan, a contribution that just about makes up for r_c's meagre offerings.",
+                "text": "r_c always feels like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} padding in p_l's footsteps, especially today, watching {PRONOUN/p_l/object} {VERB/p_l/haul/hauls} back a good catch of prey for the Clan, a contribution that just about makes up for r_c's meagre offerings.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["small"],
@@ -3673,7 +3668,7 @@
                 ]
             },
             {
-                "text": "r_c always feels like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} padding in p_l's footsteps, especially today, watching {PRONOUN/p_l/object} haul back a good catch of prey for the clan, a contribution that just about makes up for r_c's meagre offerings.",
+                "text": "r_c always feels like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} padding in p_l's footsteps, especially today, watching {PRONOUN/p_l/object} {VERB/p_l/haul/hauls} back a good catch of prey for the Clan, a contribution that just about makes up for r_c's meagre offerings.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["small"],
@@ -3817,7 +3812,7 @@
         "chance_of_success": 30,
         "relationship_constraint": null,
         "pl_skill_constraint": null,
-        "intro_text": "Leaf-bare is taking its toll. Your patrol is cold, frustrated, and most of all, hungry. p_l notices something odd. Is that a fox in the distance? Why is it jumping into the snow like that?",
+        "intro_text": "Leaf-bare is taking its toll. The patrol is cold, frustrated, and most of all, hungry. p_l notices something odd. Is that a fox in the distance? Why is it jumping into the snow like that?",
         "decline_text": "First the cold, and the snow, and now a fox? This is too much for one day, p_l decides. Back to camp, another patrol can try again later.",
         "success_outcomes": [
             { 

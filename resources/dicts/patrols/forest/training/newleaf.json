@@ -5,7 +5,7 @@
         "season": ["newleaf"],
         "types": ["training"],
         "tags": ["romantic"],
-        "patrol_art": "train_general_intro",
+        "patrol_art": "gen_flower_date",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -33,7 +33,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": -5
                     }
                 ]
@@ -54,7 +54,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": -5
                     }
                 ]
@@ -76,7 +76,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": -5
                     }
                 ]
@@ -99,7 +99,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": 5
                     }
                 ]
@@ -112,7 +112,7 @@
         "season": ["newleaf"],
         "types": ["training"],
         "tags": ["romantic"],
-        "patrol_art": "train_general_intro",
+        "patrol_art": "fst_train_newleafmatesonadates_70locked1",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -223,5 +223,126 @@
                 ]
             }
         ]
+    },
+    {
+        "patrol_id": "fst_train_newleaf_mapleshadereference_storylorelocked1",
+        "biome": ["forest"],
+        "season": ["newleaf"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_train_ghost",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [-1, -1],
+           "apprentice":[1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,0", "LORE,0"],
+        "intro_text": "Hiding from a newleaf rain shower under a bush, p_l whispers to the other apprentices - have they heard the story of the Shaded Vengeance?",
+        "decline_text": "Oh, the rain let up - back to training!",
+        "success_outcomes": [
+                {
+                    "text": "Once upon a time lived a calico cat with entitlement and lust living in her heart. She had an affair with a cat from another Clan, and when both she and her lover's mate bore him kits, she exploded into rage, dragging her litter into the river where they drowned. She still roams the riverbank, looking for young cats to kit-nap...",
+                    "exp": 30,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "trust", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["jealous"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "That old nursery tale? They're apprentices, they're too old for such silly things.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "trust", "platonic"],
+                            "amount": -10
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "fst_train_newleaf_crowrock_storylocked1",
+        "biome": ["forest"],
+        "season": ["newleaf"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "crows_mocking_INTRO",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            },
+        "weight": 20,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1"],
+        "intro_text": "There's a saying, about crows in newleaf...",
+        "decline_text": "Cats say many things. Doesn't mean it's worth listening to.",
+        "success_outcomes": [
+                {
+                    "text": "It's said, p_l whispers, that if you leave a shiny, beautiful rock out under a crow's nest, they will leave you a beautiful thing in return...",
+                    "exp": 30,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["comfort", "platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "No one is interested in hearing superstitions about crows - surely it's better to hunt them instead?",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": -10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": 3
+                        }
+                    ]
+                }
+            ]
     }
 ]

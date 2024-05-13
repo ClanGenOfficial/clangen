@@ -10,8 +10,8 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol comes across a shrew.",
-        "decline_text": "Your patrol decides to look for other prey.",
+        "intro_text": "The patrol comes across a shrew.",
+        "decline_text": "The patrol decides to look for other prey.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -36,7 +36,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol narrowly misses the shrew.",
+                "text": "The patrol narrowly misses the shrew.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -659,7 +659,7 @@
         },
         "weight": 20,
         "intro_text": "r_c encounters a swarm of Twolegs, gathered at the foot of the mountain.",
-        "decline_text": "Your patrol decides to hunt elsewhere.",
+        "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -708,7 +708,6 @@
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -735,12 +734,12 @@
             "leader": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "Your patrol encounters a swarm of Twolegs, gathered at the foot of the mountain.",
-        "decline_text": "Your patrol decides to hunt elsewhere.",
+        "intro_text": "The patrol encounters a swarm of Twolegs, gathered at the foot of the mountain.",
+        "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Your patrol immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",
+                "text": "The patrol immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"]
@@ -787,7 +786,6 @@
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -814,12 +812,12 @@
             "leader": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "Your patrol encounters a swarm of Twolegs, gathered at the foot of the mountain.",
-        "decline_text": "Your patrol decides to hunt elsewhere.",
+        "intro_text": "The patrol encounters a swarm of Twolegs, gathered at the foot of the mountain.",
+        "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "Your patrol immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",
+                "text": "The patrol immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["large"]
@@ -866,7 +864,6 @@
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -896,19 +893,19 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "Your patrol waits until they can hear the wind whistling, not a murmur of a monster, and crosses the Thunderpath to hunt on the other side.",
+                "text": "The patrol waits until they can hear the wind whistling, not a murmur of a monster, and crosses the Thunderpath to hunt on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
             },
             {
-                "text": "Your patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
+                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["medium"]
             },
             {
-                "text": "Your patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
+                "text": "The patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -985,19 +982,19 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Your patrol waits until they can hear the wind whistling, not a murmur of a monster, and crosses the Thunderpath to hunt on the other side.",
+                "text": "The patrol waits until they can hear the wind whistling, not a murmur of a monster, and crosses the Thunderpath to hunt on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
             },
             {
-                "text": "Your patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
+                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["medium"]
             },
             {
-                "text": "Your patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
+                "text": "The patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -1189,7 +1186,79 @@
 				"prey": ["very_small"]
             }
         ]
+    },
+    {
+        "patrol_id": "mtn_hunt_wareprey_lorelocked1",
+        "biome": ["mountainous"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 5],
+           "apprentice":[1, 5]
+            },
+        "weight": 40,
+        "chance_of_success": 50,
+        "pl_skill_constraint": ["LORE,1"],
+        "intro_text": "The grouse are busy practicing their silly mating dance. app1 laughs at them under {PRONOUN/app1/poss} breath, mocking the stupid birds for dropping their guard.",
+        "decline_text": "A songbird on a branch overhead sings, and the grouse startle and take flight. Dung.",
+        "success_outcomes": [
+                {
+                    "text": "p_l waves a tail across app1's path, stopping {PRONOUN/app1/object} with a stern stare.Remember those who've been hurt by grouse - beaks tearing deep, their eyes scratched, limping from sharp-toothed claws. app1 nods, and apologies. Every hunt deserves respect.",
+                    "exp": 30,
+                    "weight": 20,
+                    "prey": ["medium"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": false,
+                            "values": ["comfort", "trust", "respect", "dislike"],
+                            "amount": 10
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "Leaping forward with overconfidence, app1 gets a grouse foot to the face and a beak bite for {PRONOUN/app1/poss} trouble.",
+                    "exp": 0,
+                    "weight": 20,
+                    "prey": ["medium"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": true,
+                            "values": ["respect", "trust"],
+                            "amount": -10
+                        }
+                    ],
+                    "injury": [
+                        {
+                        "cats": ["app1"],
+                        "injuries": ["small cut", "beak_bite"],
+                        "scars": ["SNOUT", "BEAKCHEEK"],
+                        "no_results": false
+                        }
+                    ],
+                    "history_text": {
+                        "scar": "r_c was permantly marked by the barb of a stingray as an apprentice - but {PRONOUN/r_c/subject} survived.",
+                        "reg_death": "r_c died from the strike of a stingray encountered on a hunt as a foolish apprentice.",
+                        "lead_death": "from the strike of a stingray encountered on a hunt as a foolish apprentice"
+                        }
+                }
+            ]
     }
-    
     
 ]

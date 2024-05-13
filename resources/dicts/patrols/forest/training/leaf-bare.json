@@ -33,7 +33,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": -5
                     }
                 ]
@@ -54,7 +54,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": -5
                     }
                 ]
@@ -76,7 +76,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": -5
                     }
                 ]
@@ -99,11 +99,284 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": 5
                     }
                 ]
             }
         ]
+    },
+    {
+        "patrol_id": "fst_train_leafbare_snowmyth_storylocked1",
+        "biome": ["forest"],
+        "season": ["leaf-bare"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_med_vision",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [2, 6],
+            "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1"],
+        "intro_text": "As snow swirls around c_n's camp, unusually deep, p_l gathers some apprentices to {PRONOUN/p_l/object}.",
+        "decline_text": "Trying to get apprentices to do anything is like, well, herding cats.",
+        "success_outcomes": [
+                {
+                    "text": "See those bright, pure white drifts? That's stardust, swept down from StarClan as they clean out their nests in deep leafbare.",
+                    "exp": 30,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "One of the apprentices starts a snowball fight instead, and p_l becomes a soaked, shivering casualty of the conflict.",
+                    "exp": 0,
+                    "weight": 20,
+                    "injury": [
+                        {
+                            "cats": ["p_l"],
+                            "injuries": ["shivering"]
+                        }
+                    ],
+                    "history_text": {
+                        "scar": "m_c was soaked in leaf-bare, and it progressed to scarring frostbite.",
+                        "reg_death": "m_c was soaked in leaf-bare, eventually killing {PRONOUN/m_c/object}.",
+                        "lead_death": "soaked in leaf-bare, eventually killing {PRONOUN/m_c/object}"
+                    },
+                    "relationships": [
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": -10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["app1"],
+                            "cats_from": ["app2"],
+                            "mutual": true,
+                            "values": ["platonic"],
+                            "amount": 10
+                        }
+                    ]
+                },
+                {
+                    "text": "s_c, wary of any more work, stalks off before p_l can assign {PRONOUN/s_c/object} more chores - and misses out on p_l's excellent storytelling as a result.",
+                    "exp": 0,
+                    "weight": 20,
+                    "can_have_stat": ["any", "app"],
+                    "stat_trait": [
+                        "shameless",
+                        "arrogant",
+                        "bold",
+                        "cold"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["s_c"],
+                            "mutual": false,
+                            "values": ["jealous", "respect"],
+                            "amount": 10
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "fst_train_leafbare_underwaterpanthermyth_storylocked1",
+        "biome": ["forest"],
+        "season": ["leaf-bare"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_med_medwarriorapp_curiosity",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1"],
+        "intro_text": "The wind blows across the lake, almost sounding like the moans of a hungry cat. p_l has a gleam in {PRONOUN/p_l/poss} eye that tells app1 {PRONOUN/p_l/subject} {VERB/p_l/have/has} a story to tell...",
+        "decline_text": "app1 is too hungry and cold to stop for a story now! {PRONOUN/app1/subject/CAP} pad away in search of food.",
+        "success_outcomes": [
+                {
+                    "text": "p_l tells a tale of a great cat who lives under the ice and controls the lake. Long ago, a trickster thought himself smarter than the water cat, and teased her from the ice. She broke the ice and drowned him in revenge, flooding the entire forest in newleaf. That's why it's always important to respect the ice in leafbare.",
+                    "exp": 30,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "Hearing p_l describe the Underwater Panther, how she's always waiting, just out of reach, ready to pull cats down - app1 starts shivering, and p_l calls the whole thing off to go get {PRONOUN/app1/object} warmed up.",
+                    "exp": 0,
+                    "weight": 20,
+                    "injury": [
+                        {
+                            "cats": ["app1"],
+                            "injuries": ["shivering"]
+                        }
+                    ],
+                    "history_text": {
+                        "scar": "m_c was soaked in leaf-bare, and it progressed to scarring frostbite.",
+                        "reg_death": "m_c was soaked in leaf-bare, eventually killing {PRONOUN/m_c/object}.",
+                        "lead_death": "soaked in leaf-bare, eventually killing {PRONOUN/m_c/object}"
+                    },
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": false,
+                            "values": ["comfort"],
+                            "amount": -10
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "fst_train_leafbare_thecurseofleafbare_lorelocked1",
+        "biome": ["forest"],
+        "season": ["leaf-bare"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_bord_story",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["LORE,1"],
+        "intro_text": "Many seasons ago, p_l begins, there was born a powerful, Stars-gifted apprentice, one coveted by the Clans around them. Pulled in many directions, they could not keep the peace, as all demanded their time and skill.",
+        "decline_text": "r_c doesn't have time to listen to p_l's story - {PRONOUN/r_c/subject} {VERB/r_c/apologize/apologizes}, but {PRONOUN/r_c/subject} rather {VERB/r_c/feel/feels} like that long dead overworked apprentice {PRONOUN/r_c/self}, right now!",
+        "success_outcomes": [
+                {
+                    "text": "After moons of having their clan attacked and targeted, the apprentice raged, calling on their hidden power. They summoned a powerful snowstorm and created leafbare in their anger before fleeing the clans, never to return and never to walk the stars, their life and talents wasted by cruel petty fighting.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "scaryghost_INTRO",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort", "trust", "platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "Rudely, r_c leaves in the middle of p_l's tale, stealing the momentum from it. p_l trails off, embarrassed.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["r_c"],
+                            "mutual": true,
+                            "values": ["respect", "platonic", "comfort"],
+                            "amount": -5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["r_c"],
+                            "mutual": true,
+                            "values": ["dislike"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["r_c"],
+                            "mutual": false,
+                            "values": ["jealous"],
+                            "amount": 5
+                        }
+                    ]
+                },
+                {
+                    "text": "s_c is so concerned with the health of the long dead apprentice it actually derails p_l's story, and {PRONOUN/p_l/subject} {VERB/p_l/have/has} to gently remind {PRONOUN/s_c/object} that this apprentice is long beyond helping.",
+                    "exp": 0,
+                    "weight": 20,
+                    "art": "scaryghost_INTRO",
+                    "can_have_stat":["not_pl"],
+                    "stat_trait": [
+                        "nervous",
+                        "insecure",
+                        "gloomy"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["r_c"],
+                            "mutual": true,
+                            "values": ["respect", "platonic", "comfort"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
     }
 ]
