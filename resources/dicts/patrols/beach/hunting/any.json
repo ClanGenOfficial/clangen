@@ -839,7 +839,7 @@
                 "prey": ["small"]
             },
             {
-                "text": "Slyly, r_c uses the chance to get food, practicing {PRONOUN/r_c/poss} best kittypet impression until just the right moment, when {PRONOUN/r_c/subject} {VERB/r_c/dart/darts forward and {VERB/r_c/make/makes} off with a sandwich in {PRONOUN/r_c/poss} mouth.",
+                "text": "Slyly, r_c uses the chance to get food, practicing {PRONOUN/r_c/poss} best kittypet impression until just the right moment, when {PRONOUN/r_c/subject} {VERB/r_c/dart/darts} forward and {VERB/r_c/make/makes} off with a sandwich in {PRONOUN/r_c/poss} mouth.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["small"]
@@ -4999,7 +4999,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "When r_c spots the gray fox {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} tracked dipping into a sheltered cove, {PRONOUN/r_c/subject} {VERB/r_c/hang/hangs back. {PRONOUN/r_c/subject} {VERB/r_c/sneak/sneaks} around until {PRONOUN/r_c/subject} {VERB/r_c/see/sees} the fox caching a bird kill in an old log a storm washed in moons ago. {PRONOUN/r_c/subject/CAP} simply {VERB/r_c/wait/waits} for it to finish and leave, then {VERB/r_c/creep/creeps} in to steal the fox's hard work, bringing the prize back to camp for the fresh-kill pile. Sometimes winning a battle doesn't require fighting.",
+                "text": "When r_c spots the gray fox {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} tracked dipping into a sheltered cove, {PRONOUN/r_c/subject} {VERB/r_c/hang/hangs} back. {PRONOUN/r_c/subject} {VERB/r_c/sneak/sneaks} around until {PRONOUN/r_c/subject} {VERB/r_c/see/sees} the fox caching a bird kill in an old log a storm washed in moons ago. {PRONOUN/r_c/subject/CAP} simply {VERB/r_c/wait/waits} for it to finish and leave, then {VERB/r_c/creep/creeps} in to steal the fox's hard work, bringing the prize back to camp for the fresh-kill pile. Sometimes winning a battle doesn't require fighting.",
                 "exp": 15,
                 "weight": 20,
                 "prey": ["small"]

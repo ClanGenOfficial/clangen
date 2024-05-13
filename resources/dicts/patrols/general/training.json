@@ -2252,7 +2252,7 @@
                 ]
             },
             {
-                "text": "Try as s_c might, {PRONOUN/s_c/subject} just {VERB/s_c/are/is}n't feeling it today. {PRONOUN/s_c/subject/CAP} {VERB/s_c/participate/participates} in training, of course {PRONOUN/s_c/subject} {VERB/s_c/do/does, but s_c just isn't a social butterfly.",
+                "text": "Try as s_c might, {PRONOUN/s_c/subject} just {VERB/s_c/are/is}n't feeling it today. {PRONOUN/s_c/subject/CAP} {VERB/s_c/participate/participates} in training, of course {PRONOUN/s_c/subject} {VERB/s_c/do/does}, but s_c just isn't a social butterfly.",
                 "exp": 0,
                 "weight": 20,
                 "can_have_stat":["p_l"],
