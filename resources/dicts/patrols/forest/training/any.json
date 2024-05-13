@@ -2,7 +2,7 @@
     {
         "patrol_id": "fst_train_session1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "fst_train_session1",
@@ -66,7 +66,7 @@
     {
         "patrol_id": "fst_train_sett1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "fst_train_sett",
@@ -227,7 +227,7 @@
     {
         "patrol_id": "fst_train_sett2",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "fst_train_sett",
@@ -378,7 +378,7 @@
     {
         "patrol_id": "fst_train_stuck1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "fst_train_stuck",
@@ -479,7 +479,7 @@
                 "art": "fst_train_stuck_outcome"
             },
             {
-                "text": "As s_c rarely has patience for other cats, r_c tells them harshly that they don't have time for some idiot who got stuck, making s_c resentful as they pull themselves out from under the branches.",
+                "text": "As s_c rarely has patience for other cats, r_c tells them harshly that they don't have time for some mouse-brain who got stuck, making s_c resentful as they pull themselves out from under the branches.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -624,7 +624,7 @@
     {
         "patrol_id": "fst_train_stuck2",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "fst_train_stuck",
@@ -726,7 +726,7 @@
                 "art": "fst_train_stuck_outcome"
             },
             {
-                "text": "As s_c rarely has patience for other cats, r_c tells them harshly that they don't have time for some idiot who got stuck, making s_c resentful as they pull themselves out from under the branches.",
+                "text": "As s_c rarely has patience for other cats, r_c tells them harshly that they don't have time for some mouse-brain who got stuck, making s_c resentful as they pull themselves out from under the branches.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -804,7 +804,7 @@
     {
         "patrol_id": "fst_train_stuck3",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": ["romantic"],
         "patrol_art": "fst_train_stuck",
@@ -906,7 +906,7 @@
                 "art": "fst_train_stuck_outcome"
             },
             {
-                "text": "As s_c rarely has patience for other cats, r_c tells them harshly that they don't have time for some idiot who got stuck, making s_c resentful as they pull themselves out from under the branches.",
+                "text": "As s_c rarely has patience for other cats, r_c tells them harshly that they don't have time for some mouse-brain who got stuck, making s_c resentful as they pull themselves out from under the branches.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -984,7 +984,7 @@
     {
         "patrol_id": "fst_train_stuck4",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "fst_train_stuck",
@@ -1052,7 +1052,7 @@
     {
         "patrol_id": "fst_train_soloapp1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "gen_train_soloapp",
@@ -1124,7 +1124,7 @@
     {
         "patrol_id": "fst_train_solo2",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "gen_train_solo",
@@ -1187,7 +1187,7 @@
     {
         "patrol_id": "fst_train_solo3",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "gen_train_solo",
@@ -1207,7 +1207,7 @@
                 "weight": 20
             },
             {
-                "text": "r_c rounds a corner and stumbles across a tiny, perfect waterfall! Purring, they take the opportunity for a small moment of peace, relaxing and enjoying the view.",
+                "text": "r_c rounds a corner and stumbles across a tiny, perfect waterfall! Purring, they take the opportunity for a moment of peace, relaxing and enjoying the view.",
                 "exp": 20,
                 "weight": 5
             },
@@ -1250,7 +1250,7 @@
     {
         "patrol_id": "fst_train_solo4",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "gen_train_solo",
@@ -1270,7 +1270,7 @@
                 "weight": 20
             },
             {
-                "text": "r_c rounds a corner and stumbles across a tiny, perfect waterfall! Purring, they take the opportunity for a small moment of peace, relaxing and enjoying the view.",
+                "text": "r_c rounds a corner and stumbles across a tiny, perfect waterfall! Purring, they take the opportunity for a moment of peace, relaxing and enjoying the view.",
                 "exp": 20,
                 "weight": 5
             },
@@ -1313,7 +1313,7 @@
     {
         "patrol_id": "fst_train_porcupine1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "fst_train_porcupine",
@@ -1421,7 +1421,7 @@
     {
         "patrol_id": "fst_train_porcupine2",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "fst_train_porcupine",
@@ -1529,7 +1529,7 @@
     {
         "patrol_id": "fst_train_porcupine3",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "fst_train_porcupine",
@@ -1638,7 +1638,7 @@
     {
         "patrol_id": "fst_train_porcupine4",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "fst_train_porcupine",
@@ -1747,7 +1747,7 @@
     {
         "patrol_id": "fst_train_willow1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": ["rom_two_apps", "romantic"],
         "patrol_art": "fst_train_willow1",
@@ -1758,7 +1758,7 @@
             "all apprentices": [2, 2]
         },
         "weight": 20,
-        "intro_text": "Off in the woods, app1 waits for app2 underneath the low hanging branches of a willow. The tip of their tail keeps twitching in excitement.",
+        "intro_text": "Off in the woods, app1 waits for app2 underneath the low hanging branches of a willow. The tip of their tail twitches in excitement.",
         "decline_text": "Oh no! They both forgot that they were on elder nest change duty today!",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -1777,7 +1777,7 @@
                 ]
             },
             {
-                "text": "app2 emerges into the hidden soft light under the willow tree. Seeing app1, they trot up, asking why app1 wanted to meet there. app1 looks away with a purr, making up some nonsense about fight training that makes no sense. Instead, both apprentices hang out there all afternoon, awkward and thrilled.",
+                "text": "app2 emerges into the hidden soft light under the willow tree. Seeing app1, {PRONOUN/app2/subject} {VERB/app2/trot/trots} up, asking why app1 wanted to meet there. app1 looks away with a purr, making up some nonsense about fight training. Instead, both apprentices hang out there all afternoon, awkward and thrilled.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -1791,7 +1791,7 @@
                 ]
             },
             {
-                "text": "app2 emerges into the hidden soft light under the willow tree. Seeing s_c, they trot up, asking why s_c wanted to meet there. Stuttering but determined, s_c explains that they wondered if, possibly, maybe, app2 would like to go on a... date? app2 looks away with a purr and murmurs a soft yes to the willow roots, suddenly unable to make eye contact.",
+                "text": "app2 emerges into the hidden soft light under the willow tree. Seeing s_c, they trot up, asking why s_c wanted to meet there. Stuttering but determined, s_c explains that they wondered if, possibly, maybe, app2 would like to hang out... just the two of them? app2 looks away with a purr and mumbles a soft yes to the willow roots, suddenly unable to make eye contact.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -1818,7 +1818,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 bursts out from cover, pouncing on app2 with claws sheathed and giggling. app2 rolls with the blow and kicks app1 off, but they scramble to their feet looking hurt, and storm off in a huff.",
+                "text": "app1 bursts out from cover, pouncing on app2 with claws sheathed and giggling. app2 rolls with the blow and kicks app1 off, but {PRONOUN/app2/subject} {VERB/app2/scramble/scrambles} to PPRONOUN/app2/poss} feet looking hurt and {VERB/app2/storm/storms} off in a huff.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1832,7 +1832,7 @@
                 ]
             },
             {
-                "text": "app2 emerges into the hidden soft light under the willow tree. Seeing app1, they trot up, asking why app1 wanted to meet there. app1 status out some nonsense about hunting, and then runs off into the forest.",
+                "text": "app2 emerges into the hidden soft light under the willow tree. Seeing app1, {PRONOUN/app2/subject} {VERB/app2/trot/trots} up, asking why app1 wanted to meet there. app1 stutters out some nonsense about hunting and then runs off into the forest.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1850,7 +1850,7 @@
     {
         "patrol_id": "fst_train_sunset1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": ["romantic"],
         "patrol_art": "gen_train_sunset",
@@ -1861,13 +1861,13 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "r_c approaches p_l, asking if they wouldn't mind showing r_c their hunting techniques, and perhaps doing some training with them?",
-        "decline_text": "r_c declines gently, explaining that they have too much work to do.",
+        "intro_text": "r_c approaches p_l, asking if {PRONOUN/p_l/subject} wouldn't mind showing r_c {PRONOUN/p_l/poss} hunting techniques, and perhaps doing some training with {PRONOUN/r_c/object}?",
+        "decline_text": "r_c declines gently, explaining that {PRONOUN/r_c/subject} {VERB/r_c/have/has} too much work to do.",
         "chance_of_success": 60,
         "relationship_constraint": ["not_mates"],
         "success_outcomes": [
             {
-                "text": "The cats go out together in the late of the day, as the shadows stretch long under the trees. p_l goes through their tricks, showing r_c how they shift their balance to make less noise on leaf litter, as r_c watches with eyes that p_l notices are a bit too admiring for what's just a little trick. They smirk, showing off a little.",
+                "text": "The cats go out together late in the day, as the shadows stretch long under the trees. p_l goes through {PRONOUN/p_l/poss} tricks, showing r_c how {PRONOUN/p_l/subject} {VERB/p_l/shift/shifts} {PRONOUN/p_l/poss} balance to make less noise on leaf litter. r_c watches with eyes that p_l notices are a bit too admiring for what's just a little trick. {PRONOUN/r_c/subject/CAP} {VERB/r_c/smirk/smirks}, showing off a little.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
@@ -1881,7 +1881,7 @@
                 ]
             },
             {
-                "text": "It's a long but satisfying training session, with both cats having an in-depth chance to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching them instead of the sun, and smiles.",
+                "text": "It's a long but satisfying training session, and both cats get the chance to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching {PRONOUN/r_c/object} instead of the sunset and smiles.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -1895,7 +1895,7 @@
                 ]
             },
             {
-                "text": "s_c is a fantastic hunter, and r_c isn't shy about telling them so. They blush, but work through it, showing r_c how to hold their balance on a branch so stably they'll be able to nap while waiting for prey to ambush below.",
+                "text": "s_c is a fantastic hunter, and r_c isn't shy about telling {PRONOUN/s_c/object} so. {PRONOUN/s_c/subject/CAP} {VERB/s_c/blush/blushes}, but {VERB/s_c/work/works} through it, showing r_c how to hold {PRONOUN/r_c/poss} balance on a branch so stably {PRONOUN/r_c/subject}'ll be able to nap while waiting to ambush prey below.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["HUNTER,3"],
@@ -1910,7 +1910,7 @@
                 ]
             },
             {
-                "text": "r_c marvels at the opportunity to have s_c's time to themselves. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so.",
+                "text": "r_c marvels at the opportunity to have s_c's time to {PRONOUN/r_c/self}. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -1936,7 +1936,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l tries, but both the cats are too tired after a long day's work, and end up snapping at each other. It's nothing serious, but both agree to take some time to cool off.",
+                "text": "p_l tries, but both the cats are too tired after a long day's work and end up snapping at each other. It's nothing serious, but both agree to take some time to cool off.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1968,7 +1968,7 @@
     {
         "patrol_id": "fst_train_arguingromance1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": ["romantic", "pos_jealousy"],
         "patrol_art": "train_general_intro",
@@ -1984,7 +1984,7 @@
         "relationship_constraint": ["dislike_10", "not_mates"],
         "success_outcomes": [
             {
-                "text": "r_c shows {PRONOUN/p_l/object} a stunningly successful move {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been working on to rapidly change directions in a hunt by clawing tree trunks to skid to a halt, and p_l can't let {PRONOUN/p_l/self} look bad in comparison, showing off {PRONOUN/p_l/poss} battle-back-flip with a smug smirk.",
+                "text": "r_c shows {PRONOUN/p_l/object} a stunningly successful move {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been working on to rapidly change directions in a hunt by clawing tree trunks to skid to a halt, and p_l can't let {PRONOUN/p_l/self} look bad in comparison, showing off {PRONOUN/p_l/poss} battle backflip with a smug smirk.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -1998,7 +1998,7 @@
                 ]
             },
             {
-                "text": "r_c shows off how far {PRONOUN/r_c/subject} can pounce, which means p_l shows off how fast {PRONOUN/p_l/subject} can run, which means r_c shows off how sharp {PRONOUN/r_c/poss} claws are, which means p_l shows off how shiny {PRONOUN/p_l/poss} pelt is, which means r_c shows off how long {PRONOUN/r_c/poss} legs are, which means p_l shows off how cool {PRONOUN/p_l/poss} scars are - this goes on all afternoon.",
+                "text": "r_c shows off how far {PRONOUN/r_c/subject} can pounce, so p_l shows off how fast {PRONOUN/p_l/subject} can run, so r_c shows off how sharp {PRONOUN/r_c/poss} claws are, so p_l shows off how shiny {PRONOUN/p_l/poss} pelt is, so r_c shows off how long {PRONOUN/r_c/poss} legs are, so p_l shows off how cool {PRONOUN/p_l/poss} scars are - this goes on all afternoon.",
                 "exp": 15,
                 "weight": 5,
                 "relationships": [
@@ -2032,7 +2032,7 @@
     {
         "patrol_id": "fst_train_groveclan1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "train_general_intro",
@@ -2043,12 +2043,12 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "Out in the forest, p_l asks app1 if they know why c_n chooses to live in the woods, under the canopy, rather than any other environment.",
-        "decline_text": "app1 seems distracted. p_l shrugs, and decides to focus on more active training today instead.",
+        "intro_text": "Out in the forest, p_l asks app1 if {PRONOUN/app1/subject} {VERB/app1/know/knows} why c_n chooses to live in the woods under the canopy, rather than any other environment.",
+        "decline_text": "app1 seems distracted. p_l shrugs and decides to focus on more active training today instead.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Their ancestors lived in a sheltered redwood grove, and it protected them from the elements and fed their prey and kept their kits dry, p_l explains. But one day, Twolegs destroyed their home with fire and monsters, and the cats of that Clan scattered. Some, after many trials, founded c_n, and chose a place that seemed familiar and safe.",
+                "text": "Their ancestors lived in a sheltered redwood grove, and it protected them from the elements and fed their prey and kept their kits dry, p_l explains. But one day, Twolegs destroyed their home with fire and monsters, and the cats of that Clan scattered. Some, after many trials, founded c_n and chose a place that seemed familiar and safe.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -2069,7 +2069,7 @@
                 ]
             },
             {
-                "text": "p_l shows app1 how the trees protect from wind and rain, how, like their ancestors have done for generations, c_n has learnt to jump between branches like the squirrels they hunt. app1 nods, talking about how the plains or beaches wouldn't have those advantages.",
+                "text": "p_l shows app1 how the trees protect from wind and rain, how, like their ancestors have done for generations, c_n has learnt to jump between branches like the squirrels they hunt. app1 nods and points out that plains or beaches wouldn't have those advantages.",
                 "exp": 15,
                 "weight": 5,
                 "relationships": [
@@ -2136,11 +2136,11 @@
                 ]
             },
             {
-                "text": "Churlish and grumpy, app1 storms past p_l, not interested in hearing their dumb lesson.",
+                "text": "Churlish and grumpy, app1 storms past p_l, not interested in hearing {PRONOUN/p_l/poss} dumb lesson.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["troublesome"],
-                "can_have_stat": ["adult"],
+                "can_have_stat": ["app"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -2163,7 +2163,7 @@
     {
         "patrol_id": "fst_train_flatwoods1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": ["halloween"],
         "patrol_art": "flatwoods_INTRO",
@@ -2182,7 +2182,7 @@
         "decline_text": "Before the apprentices can pursue the fallen StarClan cat, the worst of all possibilities happens - a warrior discovers them, sending them back to camp with a loud scolding.",
         "success_outcomes": [
             {
-                "text": "Scrambling up the hill, app1 shoves app2 up a slightly too big step, both of them panting eagerly as they run. The mist swirls around them, stinking strangely as they search for the StarClan cat, until app2 bumps into a huge, tall pillar, one that blinks down with slow, glowing red eyes.",
+                "text": "Scrambling up the hill, app1 shoves app2 up a slightly too big step, both of them panting as they run. Strange-smelling mist swirls around them as they search for the StarClan cat, until app2 bumps into a huge, tall pillar - one that blinks down with slow, glowing red eyes.",
                 "exp": 0,
                 "weight": 20
             }
@@ -2198,7 +2198,7 @@
     {
         "patrol_id": "fst_train_doverdemon",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": ["halloween"],
         "patrol_art": "doverdemon_INTRO",
@@ -2237,7 +2237,7 @@
     {
         "patrol_id": "fst_train_crows1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": ["halloween"],
         "patrol_art": "crows_mocking_INTRO",
@@ -2270,7 +2270,7 @@
     {
         "patrol_id": "fst_train_wareprey_lorelocked1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "hunt_general_intro",

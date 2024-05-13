@@ -1,8 +1,8 @@
 [
     {
         "patrol_id": "dst_bord_dog1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -121,8 +121,8 @@
     },
     {
         "patrol_id": "dst_bord_dog2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["patrol_rel", "pos_fail"],
         "patrol_art": "bord_general_intro",
@@ -283,8 +283,8 @@
     },
     {
         "patrol_id": "dst_bord_dog3",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["patrol_rel", "pos_fail"],
         "patrol_art": "bord_general_intro",
@@ -445,8 +445,8 @@
     },
     {
         "patrol_id": "dst_bord_smalldog1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -567,8 +567,8 @@
     },
     {
         "patrol_id": "dst_bord_smalldog2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -649,8 +649,8 @@
     },
     {
         "patrol_id": "dst_bord_smalldog3",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",

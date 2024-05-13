@@ -2,7 +2,7 @@
     {
         "patrol_id": "bch_med_soloripples1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_soloripples",
@@ -15,7 +15,7 @@
         },
         "weight": 20,
         "intro_text": "While gathering fresh water, p_l sees strange ripples on the surface of a puddle.",
-        "decline_text": "p_l is in too much of a hurry, not sparing the rippling water a second glance.",
+        "decline_text": "p_l is in too much of a hurry and doesn't spare the rippling water a second glance.",
         "chance_of_success": 45,
         "pl_skill_constraint": ["PROPHET,1"],
         "success_outcomes": [
@@ -34,7 +34,7 @@
                 ]
             },
             {
-                "text": "p_l is greeted with the vision of a cat {PRONOUN/p_l/subject} had failed to save, content and happy in StarClan. The cat gives them a gentle smile, softly telling p_l that {PRONOUN/p_l/subject} {VERB/p_l/were/was} never at fault for their death. p_l feels {PRONOUN/p_l/poss} shoulders sag with the weight of {PRONOUN/p_l/poss} relief, feeling the burden of the death lift from over {PRONOUN/p_l/poss} head.",
+                "text": "p_l is greeted with the vision of a cat {PRONOUN/p_l/subject} had failed to save, content and happy in StarClan. The cat gives them a gentle smile, softly telling p_l that {PRONOUN/p_l/subject} {VERB/p_l/were/was} never at fault for their death. p_l's shoulders sag with the weight of {PRONOUN/p_l/poss} relief, and p_l feels the burden of the death lift from over {PRONOUN/p_l/poss} head.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -59,7 +59,7 @@
     {
         "patrol_id": "bch_med_clair1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -98,7 +98,7 @@
     {
         "patrol_id": "bch_med_herblocation1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -167,7 +167,7 @@
     {
         "patrol_id": "bch_med_herblocation2",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "bch_med_herblocation2",
@@ -208,7 +208,7 @@
     {
         "patrol_id": "bch_med_herbsdandy1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_herbsdandy",
@@ -250,7 +250,7 @@
     {
         "patrol_id": "bch_med_appfirstsign1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -285,7 +285,7 @@
     {
         "patrol_id": "bch_med_rainygathering1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_rainygathering",
@@ -372,7 +372,7 @@
     {
         "patrol_id": "bch_med_gatheringcobwebs1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -412,7 +412,7 @@
     {
         "patrol_id": "bch_med_cobweblesson1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_cobweblesson",
@@ -481,7 +481,7 @@
     {
         "patrol_id": "bch_med_cobwebhelp1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -591,7 +591,7 @@
     {
         "patrol_id": "bch_med_gatheringhorsetail1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -632,7 +632,7 @@
     {
         "patrol_id": "bch_med_horsetaillesson1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -745,7 +745,7 @@
     {
         "patrol_id": "bch_med_horsetailhelp1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -834,7 +834,7 @@
     {
         "patrol_id": "bch_med_gatheringmoss1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_gatheringmoss",
@@ -867,7 +867,7 @@
     {
         "patrol_id": "bch_med_gatheringmoss2",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_gatheringmoss",
@@ -935,7 +935,7 @@
     {
         "patrol_id": "bch_med_gatheringmoss3",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_gatheringmoss",
@@ -1001,7 +1001,7 @@
     {
         "patrol_id": "bch_med_gatheringmoss4",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_gatheringmoss",
@@ -1053,7 +1053,7 @@
     {
         "patrol_id": "bch_med_gatheringrosemary1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_gatheringrosemary",
@@ -1105,7 +1105,7 @@
     {
         "patrol_id": "bch_med_gatheringrosemary2",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_gatheringrosemary",
@@ -1156,7 +1156,7 @@
     {
         "patrol_id": "bch_med_discussion1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": [],
         "tags": [],
         "patrol_art": "gen_med_discussion",
@@ -1224,7 +1224,7 @@
     {
         "patrol_id": "bch_med_dwindleherbsgathering1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": [],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -1333,7 +1333,7 @@
     {
         "patrol_id": "bch_med_cobwebapps1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic"],
         "patrol_art": "gen_med_cobwebapps",
@@ -1421,7 +1421,7 @@
     {
         "patrol_id": "bch_med_cobwebapps2",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic"],
         "patrol_art": "gen_med_cobwebapps",
@@ -1511,7 +1511,7 @@
     {
         "patrol_id": "bch_med_cobwebapps3",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic"],
         "patrol_art": "gen_med_cobwebapps",
@@ -1601,7 +1601,7 @@
     {
         "patrol_id": "bch_med_cobwebapps4",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic"],
         "patrol_art": "gen_med_cobwebapps",
@@ -1691,7 +1691,7 @@
     {
         "patrol_id": "bch_med_cobwebapps5",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic", "six_apprentices"],
         "patrol_art": "gen_med_cobwebapps",
@@ -1780,7 +1780,7 @@
     {
         "patrol_id": "bch_med_cobwebapps6",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -1869,7 +1869,7 @@
     {
         "patrol_id": "bch_med_cobwebapps7",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -1958,7 +1958,7 @@
     {
         "patrol_id": "bch_med_cobwebapps8",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -2047,7 +2047,7 @@
     {
         "patrol_id": "bch_med_cobwebapps9",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["six_apprentices"],
         "patrol_art": "med_general_intro",
@@ -2136,7 +2136,7 @@
     {
         "patrol_id": "bch_med_mossapps1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic"],
         "patrol_art": "gen_med_mossapps",
@@ -2227,7 +2227,7 @@
     {
         "patrol_id": "bch_med_mossapps2",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic", "rom_two_apps"],
         "patrol_art": "gen_med_mossapps",
@@ -2318,7 +2318,7 @@
     {
         "patrol_id": "bch_med_mossapps3",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic", "rom_two_apps"],
         "patrol_art": "gen_med_mossapps",
@@ -2407,7 +2407,7 @@
     {
         "patrol_id": "bch_med_mossapps4",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_mossapps",
@@ -2496,7 +2496,7 @@
     {
         "patrol_id": "bch_med_mossapps5",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_mossapps",
@@ -2585,7 +2585,7 @@
     {
         "patrol_id": "bch_med_mossapps6",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic", "rom_two_apps"],
         "patrol_art": "gen_med_mossapps",
@@ -2674,7 +2674,7 @@
     {
         "patrol_id": "bch_med_mossapps7",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_mossapps",
@@ -2763,7 +2763,7 @@
     {
         "patrol_id": "bch_med_mossapps8",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic"],
         "patrol_art": "gen_med_mossapps",
@@ -2852,7 +2852,7 @@
     {
         "patrol_id": "bch_med_mossapps9",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["six_apprentices"],
         "patrol_art": "gen_med_mossapps",

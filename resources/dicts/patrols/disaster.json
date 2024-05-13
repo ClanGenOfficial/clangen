@@ -443,7 +443,7 @@
     {
         "patrol_id": "pln_bord_abandontwolegdis1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["disaster"],
         "patrol_art": "gen_bord_abandontwolegdis",
@@ -489,7 +489,7 @@
     {
         "patrol_id": "pln_bord_abandontwolegdis2",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["disaster"],
         "patrol_art": "gen_bord_abandontwolegdis",
@@ -1414,7 +1414,7 @@
     {
         "patrol_id": "bch_bord_abandontwolegdis1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["disaster"],
         "patrol_art": "gen_bord_abandontwolegdis",
@@ -1465,7 +1465,7 @@
     {
         "patrol_id": "bch_bord_abandontwolegdis2",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["disaster"],
         "patrol_art": "gen_bord_abandontwolegdis",
@@ -1516,7 +1516,7 @@
     {
         "patrol_id": "bch_bord_flashflooddis1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["disaster"],
         "patrol_art": "bord_general_intro",
@@ -1612,7 +1612,7 @@
     {
         "patrol_id": "bch_bord_flashflooddis2",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["disaster"],
         "patrol_art": "bord_general_intro",
@@ -1671,7 +1671,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As the patrol crosses a beach, shivering with the cold, there's a creaking, rushing sound, like a wave - but out of sync with the ocean.",
+        "intro_text": "As the patrol crosses a beach, shivering with the cold, {PRONOUN/r_c/subject} {VERB/r_c/hear/hears} a creaking, rushing sound, like a wave - but out of sync with the ocean.",
         "decline_text": "The patrol scrambles back the way they came, fluffed up and panting.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -1748,7 +1748,7 @@
     {
         "patrol_id": "wtlnd_bord_flashflooddis1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["disaster"],
         "patrol_art": "bord_general_intro",
@@ -1841,7 +1841,7 @@
     {
         "patrol_id": "wtlnd_bord_flashflooddis2",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["disaster"],
         "patrol_art": "bord_general_intro",
@@ -1897,7 +1897,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As the patrol crosses a muddy bog, shivering with the cold, there's a creaking, rushing sound, like a wave - but the swamp shouldn't have any waves.",
+        "intro_text": "As the patrol crosses a muddy bog, shivering with the cold, {PRONOUN/r_c/subject} {VERB/r_c/hear/hears} a creaking, rushing sound, like a wave - but the swamp shouldn't have any waves.",
         "decline_text": "The patrol scrambles back the way they came, fluffed up and panting.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -1971,7 +1971,7 @@
     {
         "patrol_id": "fst_bord_roguedis1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["disaster"],
         "patrol_art": "bord_general_intro",
@@ -2035,7 +2035,7 @@
     {
         "patrol_id": "mtn_bord_roguedis1",
         "biome": ["mountainous"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["disaster"],
         "patrol_art": "bord_general_intro",
@@ -2099,7 +2099,7 @@
     {
         "patrol_id": "pln_bord_roguedis1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["disaster"],
         "patrol_art": "bord_general_intro",
@@ -2163,7 +2163,7 @@
     {
         "patrol_id": "bch_bord_roguedis1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["disaster"],
         "patrol_art": "bord_general_intro",
