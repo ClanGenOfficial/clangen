@@ -696,7 +696,7 @@
                 ]
             },
             {
-                "text": "The patrol backtracks and finds r_c at the bottom of a precarious looking embankment, but are encouraged to join {PRONOUN/r_c/object} - r_c has found a fallen bird's nest, and needs help carting the delicious nestlings back to camp.",
+                "text": "The patrol backtracks and finds r_c at the bottom of a precarious looking embankment, but are encouraged to join {PRONOUN/r_c/object} - r_c has found a fallen bird's nest, and needs help carrying the delicious nestlings back to camp.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"],
@@ -2637,7 +2637,6 @@
                 "weight": 10,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "bloodthirsty",
                     "bold",
@@ -5715,7 +5714,7 @@
                 ]
             },
             {
-                "text": "r_c always feels like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} padding in p_l's footsteps, especially today, watching {PRONOUN/p_l/object} haul back such a good catch of prey for the clan, a contribution that more than makes up for r_c's meagre offerings.",
+                "text": "r_c always feels like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} padding in p_l's footsteps, especially today, watching {PRONOUN/p_l/object} {VERB/p_l/haul/hauls} back such a good catch of prey for the Clan, a contribution that more than makes up for r_c's meagre offerings.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["large"],
@@ -6131,7 +6130,7 @@
                 ]
             },
             {
-                "text": "r_c always feels like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} padding in p_l's footsteps, especially today, watching {PRONOUN/p_l/object} haul back such a good catch of prey for the clan, a contribution that more than makes up for r_c's meagre offerings.",
+                "text": "r_c always feels like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} padding in p_l's footsteps, especially today, watching {PRONOUN/p_l/object} {VERB/p_l/haul/hauls} back such a good catch of prey for the Clan, a contribution that more than makes up for r_c's meagre offerings.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["large"],
@@ -6313,7 +6312,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol brings the herbs back to camp, only to find out that while the herbs promote good gut health, they're not a rare resource. Still, c_n will be eating an extra healthy dinner tonight with the herbs sprinkled into their freshkill.",
+                "text": "The patrol brings the herbs back to camp, only to find out that while the herbs promote good gut health, they're not a rare resource. Still, c_n will be eating an extra healthy dinner tonight with the herbs sprinkled into their fresh-kill.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [

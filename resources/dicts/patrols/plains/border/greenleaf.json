@@ -5,7 +5,7 @@
         "season": ["greenleaf"],
         "types": ["border"],
         "tags": [],
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "pln_bord_shortswim1",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},

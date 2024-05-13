@@ -10,8 +10,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol finds a loner who is interested in joining the Clan. They banter with the cat a bit, making them feel more welcome.",
-        "decline_text": "Your patrol decides to leave the loner be.",
+        "intro_text": "The patrol finds a loner who is interested in joining the Clan. They banter with the cat a bit, making them feel more welcome.",
+        "decline_text": "The patrol decides to leave the loner be.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -71,7 +71,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Your patrol approaches the loner and tells them firmly that newcomers aren't being taken in right now. The loner seems disappointed, but leaves anyway.",
+                "text": "The patrol approaches the loner and tells them firmly that newcomers aren't being taken in right now. The loner seems disappointed, but leaves anyway.",
                 "exp": 10,
                 "weight": 20,
                 "outsider_rep": -2
@@ -168,8 +168,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol finds a kittypet who is interested in joining the Clan. They banter with the cat a bit, making them feel more welcome.",
-        "decline_text": "Your patrol decides to leave the kittypet be.",
+        "intro_text": "The patrol finds a kittypet who is interested in joining the Clan. They banter with the cat a bit, making them feel more welcome.",
+        "decline_text": "The patrol decides to leave the kittypet be.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -229,7 +229,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Your patrol approaches the kittypet and tells them firmly that newcomers aren't being taken in right now. The kittypet seems disappointed, but leaves anyway.",
+                "text": "The patrol approaches the kittypet and tells them firmly that newcomers aren't being taken in right now. The kittypet seems disappointed, but leaves anyway.",
                 "exp": 10,
                 "weight": 20,
                 "outsider_rep": -2
@@ -371,7 +371,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Your patrol helps the cat to the nearest healer. They can't spare the herbs for an outsider right now.",
+                "text": "The patrol helps the cat to the nearest healer. They can't spare the herbs for an outsider right now.",
                 "exp": 10,
                 "weight": 20,
                 "outsider_rep": -2
@@ -855,7 +855,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "Your patrol attempts to take the kit to a neighboring Clan instead of leaving it, but it dies on the journey. They give it a small burial.",
+                "text": "The patrol attempts to take the kit to a neighboring Clan instead of leaving it, but it dies on the journey. They give it a small burial.",
                 "exp": 0,
                 "weight": 20,
                 "outsider_rep": -1
@@ -863,7 +863,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Your patrol can't bear to leave the kit alone, so they take it to the border of the closest Clan and wait for a patrol to arrive. The other Clan agrees to take the kit.",
+                "text": "The patrol can't bear to leave the kit alone, so they take it to the border of the closest Clan and wait for a patrol to arrive. The other Clan agrees to take the kit.",
                 "exp": 10,
                 "weight": 20,
                 "outsider_rep": -2
@@ -946,7 +946,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "r_c finds a loner who offers their healing skills in exchange for shelter.",
-        "decline_text": "Your patrol politely declines their offer.",
+        "decline_text": "The patrol politely declines their offer.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1103,7 +1103,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol cautiously moves towards the sound of barking. Near the border, they spot a dog chasing something. Oh no, it's a cat!",
+        "intro_text": "The patrol cautiously moves towards the sound of barking. Near the border, they spot a dog chasing something. Oh no, it's a cat!",
         "decline_text": "The patrol decides not to interfere. Surely the cat can handle itself, the dog isn't even that big.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -1185,7 +1185,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Your patrol watches as the loner climbs up a spindly tree to escape the dog, and then promptly proceed to chase the dog out of the territory. On their way back, they advise the loner that this is a dangerous area and maybe they shouldn't return.",
+                "text": "The patrol watches as the loner climbs up a spindly tree to escape the dog, and then promptly proceed to chase the dog out of the territory. On their way back, they advise the loner that this is a dangerous area and maybe they shouldn't return.",
                 "exp": 10,
                 "weight": 20,
                 "outsider_rep": -2

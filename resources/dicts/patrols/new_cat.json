@@ -10,8 +10,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol finds a loner who is interested in joining the Clan.",
-        "decline_text": "Your patrol decides not to confront the loner.",
+        "intro_text": "The patrol finds a loner who is interested in joining the Clan.",
+        "decline_text": "The patrol decides not to confront the loner.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -71,7 +71,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Your patrol drives the loner off of the territory.",
+                "text": "The patrol drives the loner off of the territory.",
                 "exp": 10,
                 "weight": 20,
                 "outsider_rep": -2
@@ -168,8 +168,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol finds a kittypet who is interested in joining the Clan.",
-        "decline_text": "Your patrol decides not to confront the kittypet.",
+        "intro_text": "The patrol finds a kittypet who is interested in joining the Clan.",
+        "decline_text": "The patrol decides not to confront the kittypet.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -229,7 +229,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Your patrol drives the kittypet off of the territory.",
+                "text": "The patrol drives the kittypet off of the territory.",
                 "exp": 10,
                 "weight": 20,
                 "outsider_rep": -2
@@ -379,7 +379,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Your patrol drives the cat off of the territory. It's not c_n's problem.",
+                "text": "The patrol drives the cat off of the territory. It's not c_n's problem.",
                 "exp": 10,
                 "weight": 20,
                 "outsider_rep": -2
@@ -871,7 +871,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "The kit smells of Twolegs, your patrol has no interest in what will surely grow to be a weak cat.",
+                "text": "The kit smells of Twolegs, the patrol has no interest in what will surely grow to be a weak cat.",
                 "exp": 0,
                 "weight": 20,
                 "outsider_rep": -1
@@ -879,7 +879,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Your patrol moves the kit away from the territory, they have no interest in strange kits.",
+                "text": "The patrol moves the kit away from the territory, they have no interest in strange kits.",
                 "exp": 10,
                 "weight": 20,
                 "outsider_rep": -2
@@ -1022,7 +1022,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Your patrol drives the cat off of the territory.",
+                "text": "The patrol drives the cat off of the territory.",
                 "exp": 10,
                 "weight": 20,
                 "outsider_rep": -2
@@ -1119,7 +1119,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol cautiously moves towards the sound of barking. Near the border, they spot a dog chasing something. Oh no, it's a cat!",
+        "intro_text": "The patrol cautiously moves towards the sound of barking. Near the border, they spot a dog chasing something. Oh no, it's a cat!",
         "decline_text": "The patrol decides not to interfere. Surely the cat can handle itself, the dog isn't even that big.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -1201,7 +1201,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Your patrol watches as the loner climbs up a spindly tree to escape the dog, and then promptly proceed to chase the dog out of the territory and warn the loner not to cross the border.",
+                "text": "The patrol watches as the loner climbs up a spindly tree to escape the dog, and then promptly proceed to chase the dog out of the territory and warn the loner not to cross the border.",
                 "exp": 10,
                 "weight": 20,
                 "outsider_rep": -2
@@ -1910,7 +1910,7 @@
                 "outsider_rep": 1
             },
             {
-                "text": "The patrol walks into an ambush set by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the ferocity of LionClan, the strength of TigerClan, and the agility of LeopardClan. Shaken, but no more than bruised, the patrol manages to retreat to safety.",
+                "text": "The patrol walks into an ambush set by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the courage of LionClan, the strength of TigerClan, and the agility of LeopardClan. Shaken, but no more than bruised, the patrol manages to retreat to safety.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -1948,7 +1948,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol walks into an ambush. Before p_l can so much as yowl a warning, a group of rogues creeps from the shadows to surround the Clan cats on all sides. Few of the cats manage to escape, and any that are left behind are found the next morning, cold and covered in battle wounds.",
+                "text": "The patrol walks into an ambush. Before p_l can so much as yowl a warning, a group of rogues creeps from the shadows to surround the Clan cats on all sides. Few of the cats manage to escape, and any that are left behind are found the next morning, cold and covered in battle wounds.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["multi"],
@@ -2101,8 +2101,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol hears some odd noises coming from an abandoned Twoleg nest out on the plains.",
-        "decline_text": "Your patrol decides not to investigate.",
+        "intro_text": "The patrol hears some odd noises coming from an abandoned Twoleg nest out on the plains.",
+        "decline_text": "The patrol decides not to investigate.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -2123,7 +2123,7 @@
                 "outsider_rep": 1
             },
             {
-                "text": "It's just an odd loner singing to themself. When they see the patrol they invite them to sing too, but instead, p_l offers the somewhat battered looking and strange cat an introduction to c_n. It's got to be far less lonely than their current life.",
+                "text": "It's just an odd loner singing to themself. When they see the patrol they invite them to sing too, but instead, p_l offers the somewhat battered-looking and strange cat an introduction to c_n. It's got to be far less lonely than their current life.",
                 "exp": 30,
                 "weight": 5,
                 "new_cat": [
@@ -2140,7 +2140,7 @@
                 "outsider_rep": 1
             },
             {
-                "text": "Your patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the ferocity of LionClan, the strength of TigerClan, and the flexibility of LeopardClan. Shaken, but no more than bruised, the patrol manages to retreat to safety.",
+                "text": "The patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the courage of LionClan, the strength of TigerClan, and the dexterity of LeopardClan. Shaken, but no more than bruised, the patrol manages to retreat to safety.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -2178,7 +2178,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol walks into an ambush by a group of rogues and everyone is slaughtered.",
+                "text": "The patrol walks into an ambush by a group of rogues, and everyone is slaughtered.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol"],
@@ -2239,7 +2239,7 @@
                 "outsider_rep": 1
             },
             {
-                "text": "It's just an odd loner singing to themself. When they see r_c, they invite {PRONOUN/r_c/object} to sing too, but instead, r_c offers the somewhat battered looking and strange cat an introduction to c_n. It's got to be far less lonely than their current life.",
+                "text": "It's just an odd loner singing to themself. When they see r_c, they invite {PRONOUN/r_c/object} to sing too, but instead, r_c offers the somewhat battered-looking and strange cat an introduction to c_n. It's got to be far less lonely than their current life.",
                 "exp": 30,
                 "weight": 5,
                 "new_cat": [

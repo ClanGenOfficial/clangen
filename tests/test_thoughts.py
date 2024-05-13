@@ -10,6 +10,67 @@ import ujson
 
 from scripts.cat.cats import Cat
 
+class TestNotWorkingThoughts(unittest.TestCase):
+    def setUp(self):
+        self.main = Cat(status="warrior")
+        self.other = Cat(status="warrior")
+        self.biome = "Forest"
+        self.season = "Newleaf"
+        self.camp = "camp2"
+
+        self.thoughts = [
+            {"id": "test_not_working_true", "thoughts": [], "not_working": True},
+            {"id": "test_not_working_false", "thoughts": [], "not_working": False},
+            {"id": "test_not_working_any", "thoughts": []},
+        ]
+
+    def available_thought_ids(self):
+        """Return a list of id's for available thoughts"""
+        possible = [thought for thought in self.thoughts if
+                    Thoughts.cats_fulfill_thought_constraints(
+                        self.main,
+                        self.other,
+                        thought,
+                        "expanded",
+                        self.biome,
+                        self.season,
+                        self.camp)]
+
+        return {thought["id"] for thought in possible}
+
+    def test_not_working_thought_null(self):
+        self.assertEqual({"test_not_working_false", "test_not_working_any"}, self.available_thought_ids())
+
+    def test_not_working_thought_injury_minor(self):
+        # given
+        self.main.injuries["test-injury-1"] = {"severity": "minor"}
+
+        # then
+        self.assertEqual({"test_not_working_false", "test_not_working_any"}, self.available_thought_ids())
+
+    def test_not_working_thought_injury_major(self):
+        # given
+        self.main.injuries["test-injury-1"] = {"severity": "major"}
+
+        # then
+        self.assertEqual({"test_not_working_any", "test_not_working_true"}, self.available_thought_ids())
+
+    def test_not_working_thought_illness_minor(self):
+        # given
+        self.main.illnesses["test-illness-1"] = {"severity": "minor"}
+
+        # then
+        self.assertEqual({"test_not_working_false", "test_not_working_any"}, self.available_thought_ids())
+
+    def test_not_working_thought_illness_major(self):
+        # given
+        self.main.illnesses["test-illness-1"] = {"severity": "major"}
+
+        # then
+        self.assertEqual({"test_not_working_any", "test_not_working_true"}, self.available_thought_ids())
+
+
+
 class TestsGetStatusThought(unittest.TestCase):
 
     def test_medicine_thought(self):

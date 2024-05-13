@@ -82,7 +82,7 @@
         "thoughts": [
             "Wants to show r_c in c_n a whole new world as a rogue",
             "Is waiting to ambush r_c in c_n",
-            "Watches r_c with slitted eyes as they patrol the Clan's border",
+            "Watches r_c with slitted eyes as {PRONOUN/r_c/object} patrol the Clan's border",
             "Wonders if r_c would chase {PRONOUN/m_c/object} off immediately"
         ],
         "random_status_constraint": [

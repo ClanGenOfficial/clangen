@@ -1,1 +1,84 @@
-[]
+[
+    {
+        "patrol_id": "wtlnd_train_greenleaf_humidhot1",
+        "biome": ["wetlands"],
+        "season": ["greenleaf"],
+        "types": ["training"],
+        "tags": ["romance"],
+        "patrol_art": "fst_hunt_heat",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [2, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "relationship_constraint": ["not_mates"],
+        "intro_text": "This is just oppressive. The patrol gives up on battle training, the humidity lies over the wetlands like a blanket, thick, suffocating, sapping their strength as surely as a viper's bite would.",
+        "decline_text": "Time to go back home and wait it out.",
+        "success_outcomes": [
+                {
+                    "text": "They all stagger towards the nearest pond and flop into it, not hunting, purely there for the water and damp coats. r_c swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/laugh/laughes}, welcoming it and returning the favour. There's nothing like swimming in greenleaf, and the patrol devolves into a waterfight.",
+                    "exp": 20,
+                    "weight": 10,
+                    "art": "gen_train_soggykitty_happy_warrior",
+                    "relationships": [
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic", "comfort"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["r_c"],
+                            "mutual": true,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                },
+                {
+                    "text": "They all stagger towards the nearest pond and flop into it, not hunting, purely there for the water and damp coats. r_c swipes water towards p_l and PRONOUN/p_l/subject} {VERB/p_l/laugh/laughes}, welcoming it and returning the favour, batting back in mock spashy fight at the rest of the patrol fades away, just the two of them in their own little world",
+                    "exp": 20,
+                    "weight": 10,
+                    "art": "fst_train_newleafmatesonadates_70locked1",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["r_c"],
+                            "mutual": true,
+                            "values": ["platonic", "comfort", "romantic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["r_c"],
+                            "mutual": true,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "It's a long walk home, and not a pleasent one. They probably should have drunk more water before going out to train. Or not gone out at all.",
+                    "exp": 0,
+                    "weight": 20,
+                    "injury": [
+                        {
+                            "cats": ["multi"],
+                            "injuries": ["dehydrated"],
+                            "scars": []
+                        }
+                    ],
+                    "history_text": {
+                        "reg_death": "m_c got dehydrated training under the hot greenleaf sun, and it eventually sapped {PRONOUN/m_c/subject} life from {PRONOUN/m_c/object}.",
+                        "lead_death": "got dehydrated training under the hot greenleaf sun, and it eventually sapped {PRONOUN/m_c/subject} life from {PRONOUN/m_c/object}"
+                    }
+                }
+            ]
+    }
+]

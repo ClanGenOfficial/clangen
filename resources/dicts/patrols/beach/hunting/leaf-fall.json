@@ -347,8 +347,8 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox - but is it red or gray?",
-        "decline_text": "Your patrol decides not to pursue the fox.",
+        "intro_text": "The patrol catches the scent of a fox - but is it red or gray?",
+        "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -366,7 +366,7 @@
                 ]
             },
             {
-                "text": "Your patrol drives away the red fox and seeks out her den, but her leaf-fall cubs are near full-grown and scatter into the wilderness. Hopefully leaf-bare takes care of them.",
+                "text": "The patrol drives away the red fox and seeks out her den, but her leaf-fall cubs are near full-grown and scatter into the wilderness. Hopefully leaf-bare takes care of them.",
                 "exp": 30,
                 "weight": 5,
                 "relationships": [
@@ -537,8 +537,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox - but is it red or gray?",
-        "decline_text": "Your patrol decides not to pursue the fox.",
+        "intro_text": "The patrol catches the scent of a fox - but is it red or gray?",
+        "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -693,8 +693,8 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox - but is it red or gray?",
-        "decline_text": "Your patrol decides not to pursue the fox.",
+        "intro_text": "The patrol catches the scent of a fox - but is it red or gray?",
+        "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 20,
         "success_outcomes": [
             {
@@ -840,8 +840,8 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox - but is it red or gray?",
-        "decline_text": "Your patrol decides not to pursue the fox.",
+        "intro_text": "The patrol catches the scent of a fox - but is it red or gray?",
+        "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -859,7 +859,7 @@
                 ]
             },
             {
-                "text": "Your patrol drives away the gray fox and seeks out her den, but her leaf-fall cubs are near full-grown and scatter into the wilderness. Hopefully leaf-bare takes care of them, but if c_n spots them, they won't hesitate.",
+                "text": "The patrol drives away the gray fox and seeks out her den, but her leaf-fall cubs are near full-grown and scatter into the wilderness. Hopefully leaf-bare takes care of them, but if c_n spots them, they won't hesitate.",
                 "exp": 30,
                 "weight": 5,
                 "relationships": [
@@ -1001,8 +1001,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox - but is it red or gray?",
-        "decline_text": "Your patrol decides not to pursue the fox.",
+        "intro_text": "The patrol catches the scent of a fox - but is it red or gray?",
+        "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -1162,8 +1162,8 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox - but is it red or gray?",
-        "decline_text": "Your patrol decides not to pursue the fox.",
+        "intro_text": "The patrol catches the scent of a fox - but is it red or gray?",
+        "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -3116,7 +3116,7 @@
                 ]
             },
             {
-                "text": "r_c always feels like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} padding in p_l's footsteps, especially today, watching {PRONOUN/p_l/object} haul back such a good catch of prey for the clan, a contribution that more than makes up for r_c's meagre offerings.",
+                "text": "r_c always feels like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} padding in p_l's footsteps, especially today, watching {PRONOUN/p_l/object} {VERB/p_l/haul/hauls} back such a good catch of prey for the Clan, a contribution that more than makes up for r_c's meagre offerings.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"],
@@ -3532,7 +3532,7 @@
                 ]
             },
             {
-                "text": "r_c always feels like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} padding in p_l's footsteps, especially today, watching {PRONOUN/p_l/object} haul back such a good catch of prey for the clan - a contribution that more than makes up for r_c's meagre offerings.",
+                "text": "r_c always feels like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} padding in p_l's footsteps, especially today, watching {PRONOUN/p_l/object} {VERB/p_l/haul/hauls} back such a good catch of prey for the Clan - a contribution that more than makes up for r_c's meagre offerings.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"],
