@@ -199,7 +199,7 @@
                 }
             },
             {
-                "text": "The patrol can't help s_c in time, and as s_c starts to drift off to StarClan, the eyes of r_c glint malevolently. Was this...? s_c doesn't have a chance to finish {PRONOUN/r_c/poss} last thought.",
+                "text": "The patrol can't help r_c in time, and as r_c starts to drift off to StarClan, the eyes of s_c glint malevolently. Was this...? r_c doesn't have a chance to finish {PRONOUN/r_c/poss} last thought.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -212,7 +212,7 @@
                     "troublesome",
                     "vengeful"
                 ],
-                "dead_cats": ["s_c"],
+                "dead_cats": ["r_c"],
                 "history_text": {
                     "scar": "m_c carries a scar from being trapped on patrol.",
                     "reg_death": "m_c tragically died after being trapped on patrol.",
