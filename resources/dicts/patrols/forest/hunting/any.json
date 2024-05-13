@@ -1562,7 +1562,6 @@
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -1637,7 +1636,6 @@
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -1712,7 +1710,6 @@
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -1782,7 +1779,6 @@
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -1867,7 +1863,6 @@
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -1996,7 +1991,6 @@
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -2129,7 +2123,6 @@
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -3067,7 +3060,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c drops into a crouch and begins to stalk forward. {PRONOUN/s_c/subject/CAP}{VERB/r_c/'re/'s} preparing to pounce when {PRONOUN/r_c/poss} paw lightly brushes a twig and the vole immediately takes off. {PRONOUN/r_c/subject/CAP} {VERB/r_c/give/gives} chase, but the critter disappears into a burrow. Mouse-dung!",
+                "text": "r_c drops into a crouch and begins to stalk forward. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} preparing to pounce when {PRONOUN/r_c/poss} paw lightly brushes a twig and the vole immediately takes off. {PRONOUN/r_c/subject/CAP} {VERB/r_c/give/gives} chase, but the critter disappears into a burrow. Mouse-dung!",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]

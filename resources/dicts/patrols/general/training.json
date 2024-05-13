@@ -2287,7 +2287,7 @@
         },
         "weight": 10,
         "intro_text": "The patrol has a disagreement and looks to p_l to settle the dispute.",
-        "decline_text": "Your patrol decides to head home.",
+        "decline_text": "The patrol decides to head home.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -2312,7 +2312,7 @@
                 ]
             },
             {
-                "text": "p_l listens to both sides, then makes a careful judgement. It keeps no one happy, the mark of an excellent compromise.",
+                "text": "p_l listens to both sides, then makes a careful judgment. It keeps no one happy, the mark of an excellent compromise.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -2490,7 +2490,7 @@
         },
         "weight": 20,
         "intro_text": "While out training together, app1 starts an argument with p_l about the technique they're working on.",
-        "decline_text": "Your patrol decides to head home.",
+        "decline_text": "The patrol decides to head home.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -2671,7 +2671,7 @@
         },
         "weight": 10,
         "intro_text": "The patrol has a disagreement and looks to p_l to settle the dispute.",
-        "decline_text": "Your patrol decides to head home.",
+        "decline_text": "The patrol decides to head home.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -2696,7 +2696,7 @@
                 ]
             },
             {
-                "text": "p_l listens to both sides, then makes a careful judgement. It keeps no one happy, the mark of an excellent compromise.",
+                "text": "p_l listens to both sides, then makes a careful judgment. It keeps no one happy, the mark of an excellent compromise.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -2832,7 +2832,7 @@
                 ]
             },
             {
-                "text": "Making a cold, factual judgement, s_c logically lays out which side {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} on, and why, convincing the rest of the patrol.",
+                "text": "Making a cold, factual judgment, s_c logically lays out which side {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} on, and why, convincing the rest of the patrol.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [

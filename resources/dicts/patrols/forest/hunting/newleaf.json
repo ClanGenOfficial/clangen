@@ -408,7 +408,7 @@
                 ]
             },
             {
-                "text": "The patrol finds r_c at the bottom of a precarious looking embankment, but are encouraged to join {PRONOUN/r_c/object} - r_c has found a fallen bird's nest, and needs help carting the delicious nestlings back to camp.",
+                "text": "The patrol finds r_c at the bottom of a precarious looking embankment, but are encouraged to join {PRONOUN/r_c/object} - r_c has found a fallen bird's nest, and needs help carrying the delicious nestlings back to camp.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"],
@@ -1197,7 +1197,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
@@ -1334,7 +1333,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
@@ -1471,7 +1469,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
@@ -1633,7 +1630,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
@@ -1763,7 +1759,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
@@ -1869,7 +1864,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
@@ -2042,7 +2036,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "bloodthirsty",
                     "bold",
@@ -2234,7 +2227,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "bloodthirsty",
                     "bold",
@@ -2384,7 +2376,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "bloodthirsty",
                     "bold",
@@ -2547,7 +2538,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "bloodthirsty",
                     "bold",
@@ -2711,7 +2701,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "bloodthirsty",
                     "bold",
@@ -2861,7 +2850,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "bloodthirsty",
                     "bold",

@@ -11,7 +11,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the bushes! An ambush!",
-        "decline_text": "The patrol turns tail and races away! The borders left open for the rogues to muddy.",
+        "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -61,7 +61,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The rogues are terrifyingly coordinated and are quick to use the patrol's shock and confusion against them. The patrol cats are picked off one by one, only a couple managing to escape the slaughter.",
+                "text": "The rogues are terrifyingly coordinated and use the patrol's shock and confusion against them. The patrol cats are picked off one by one, and only a couple manage to escape the slaughter.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["multi"],
@@ -81,7 +81,7 @@
                 ]
             },
             {
-                "text": "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and eventually the patrol retreats, r_c badly wounded.",
+                "text": "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion, and eventually the patrol retreats, r_c badly wounded.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -120,7 +120,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "As r_c is marking the border lines, a gang of rogues bursts from the bushes! An ambush!",
-        "decline_text": "r_c turns tail and races away! The rogues have them far outnumbered, warning the Clan is more important than dying needlessly.",
+        "decline_text": "r_c turns tail and races away! The rogues have them far outnumbered; warning the Clan is more important than dying needlessly.",
         "chance_of_success": 20,
         "success_outcomes": [
             {
@@ -138,7 +138,7 @@
                 ]
             },
             {
-                "text": "s_c snarls at the rogues, outnumbered but not cowed. They throw themselves at the intruders with such ferocity and fury that the rogues are taken aback. Alarmed by the lack of fear and self-preservation from the Clan cat, the rogues freeze. s_c sees their opportunity to run and takes it, racing back to the camp to gather more warriors and return.",
+                "text": "s_c snarls at the rogues, outnumbered but not cowed. They throw themselves at the intruders with such ferocity that the rogues are taken aback. Alarmed by the lack of fear and self-preservation from the Clan cat, the rogues freeze. s_c sees their opportunity to run and takes it, racing back to the camp to gather more warriors and return.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,2"],
@@ -155,7 +155,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "s_c snarls at the rogues, outnumbered but not cowed. They throw themselves at the intruders with such ferocity and fury that the rogues are taken aback. For a moment the rogues are stunned by the reaction, but the shock doesn't last long before they descend upon the warrior once more. Eventually, s_c has no choice but to escape before they're killed.",
+                "text": "s_c snarls at the rogues, outnumbered but not cowed. They throw themselves at the intruders with such ferocity that the rogues are taken aback. Their shock only lasts a moment before they descend upon the warrior once more. Eventually, s_c has no choice but to escape before they're killed.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["bloodthirsty", "fierce", "vengeful"],
@@ -202,7 +202,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "As the patrol is marking the border lines, a gang of rogues strides out of the brush, challenging the Clan cats.",
-        "decline_text": "The patrol turns tail and races away! The borders left open for the rogues to muddy.",
+        "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -266,7 +266,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The rogues are terrifyingly coordinated and are quick to use the patrol's momentary surprise to their advantage. The patrol cats are picked off one by one, only a couple managing to escape the slaughter.",
+                "text": "The rogues are terrifyingly coordinated and use the patrol's momentary surprise to their advantage. The patrol cats are picked off one by one, and only a couple manage to escape the slaughter.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["multi"],
@@ -286,7 +286,7 @@
                 ]
             },
             {
-                "text": "The rogues posture and jeer, eventually provoking a battle. They prove to be strong fighters and eventually the patrol is forced to retreat, r_c badly injured.",
+                "text": "The rogues posture and jeer, eventually provoking a battle. They prove to be strong fighters, and the patrol is forced to retreat, r_c badly injured.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -314,7 +314,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "The patrol descends into battle without a second thought, but the rogues are stronger than expected and eventually the patrol is forced to retreat.",
+                "text": "The patrol descends into battle without a second thought, but the rogues are stronger than expected, and eventually the patrol is forced to retreat.",
                 "exp": 0,
                 "weight": 20
             }
@@ -338,17 +338,17 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "r_c has heard rumors that there is a badger denning in a certain part of c_n territory.",
+        "intro_text": "r_c has heard rumors that a badger is denning in a certain part of c_n territory.",
         "decline_text": "They note the area as a place to avoid and go on a nice solo hunt instead.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Concerned for the Clan, r_c creeps through the woods, searching for the sett. It's empty when they arrive, its owner out foraging late. The sunlight blinds the beast as it fumbles its way back, and r_c attacks - but all it gives them is the opportunity for a lucky hit and an easy retreat, and r_c must give up the idea of saving the Clan single-pawed.",
+                "text": "Concerned for the Clan, r_c creeps through the woods, searching for the sett. It's empty when they arrive; its owner must be out foraging late. The sunlight blinds the beast as it fumbles its way back, and r_c attacks - but all it gives them is the opportunity for a lucky hit and an easy retreat, and r_c must give up the idea of saving the Clan single-pawed.",
                 "exp": 40,
                 "weight": 20
             },
             {
-                "text": "Worried about their Clanmates, s_c sets out to try to solve the problem on their own. Once they find the sett, they set to yowling, challenging the beast to come out and fight until it emerges, grumbling and blinking in the sunlight. While s_c manages to get several good swipes in, the badger holds its ground, and they return to camp deflated.",
+                "text": "Worried about their Clanmates, s_c sets out to try to solve the problem on their own. Once they find the sett, they hurl challenges at the beast to come out and fight, kicking up a racket until the badger emerges, grumbling and blinking in the sunlight. While s_c manages to get several good swipes in, the badger holds its ground, and they return to camp deflated.",
                 "exp": 40,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,2"]
@@ -372,7 +372,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Well, the only way to know is to check! Once they find the sett, s_c scrambles inside for a look and comes nose to nose with its occupant. It's only by the grace of StarClan that they're able to redirect that speed to twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows them up the burrow tunnel.",
+                "text": "Well, the only way to know is to check! Once they find the sett, s_c scrambles inside for a look and comes nose to nose with its occupant. It's only by the grace of StarClan that they're able to redirect that speed and twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows them up the burrow tunnel.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -391,7 +391,7 @@
                 ]
             },
             {
-                "text": "r_c carefully approaches the burrow, trying to figure out if there's anything new inside. It's so dark, and it all smells the same... They try to creep just a little closer - but the ground drops away steeply beneath their paws and they lose their footing, skidding right into the disturbed badger's lethal jaws.",
+                "text": "r_c carefully approaches the burrow to figure out if there's anything new inside. It's so dark, and it all smells the same... They try to creep just a little closer - but the ground drops away steeply beneath their paws and they lose their footing, skidding right into the disturbed badger's lethal jaws.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -402,7 +402,7 @@
                 }
             },
             {
-                "text": "While r_c is carefully sniffing at the burrow entrance, there's a rustle from the woods behind them. It's difficult to say who's more surprised - r_c or the badger. It charges for the sett and r_c leaps out of the way, but its claws catch their pelt, and it's a bloodied cat that limps back into camp to report the whole sorry adventure.",
+                "text": "While r_c is carefully sniffing at the burrow entrance, there's a rustle from the woods behind them. It's difficult to say who's more surprised - r_c or the badger. It charges for the sett, and r_c leaps out of the way, but its claws catch their pelt. r_c limps back to camp with blood trailing in {PRONOUN/r_c/poss} wake to report the whole sorry adventure.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -431,12 +431,12 @@
         "max_cats": 4,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "The patrol discusses the rumors they've been hearing that there's a badger denning in a certain part of c_n territory.",
+        "intro_text": "The patrol discusses the rumors they've been hearing that a badger is denning in a certain part of c_n territory.",
         "decline_text": "Everyone agrees it's concerning, and the patrol is much more alert than usual while collecting moss for bedding.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Once they find the sett, the cats discuss their next move. If a badger has moved in, they need to confirm it, but how? Eventually p_l comes up with a plan - stuffing bushes into the mouth of the sett. The cats will be able to come back tomorrow to see if anything has shoved them out of the way.",
+                "text": "Once they find the sett, the cats discuss their next move. If a badger has moved in, they need to confirm it, but how? p_l comes up with a plan - stuffing bushes into the mouth of the sett. The cats will be able to come back tomorrow to see if anything has shoved them out of the way.",
                 "exp": 40,
                 "weight": 20,
                 "relationships": [
@@ -450,7 +450,7 @@
                 ]
             },
             {
-                "text": "The patrol organizes, and once the sett is found the cats lift a long skinny branch from the forest floor, shoving the end into the sett. With half the branch's length to go there's an outraged explosion of fizzing from the depths of the burrow, and the patrol retreats to report back to camp. With any luck, it's been injured, but no one wants to check.",
+                "text": "The patrol organizes, and once the sett is found, the cats lift a long skinny branch from the forest floor and shove the end into the mouth of the den. With half the branch's length to go, there's an outraged explosion of fizzing from the depths of the burrow. The patrol retreats to report back to camp. With any luck, it's been injured, but no one wants to check.",
                 "exp": 40,
                 "weight": 5,
                 "relationships": [
@@ -464,7 +464,7 @@
                 ]
             },
             {
-                "text": "s_c decides there has to be an easy way to figure out if a badger has moved in, one that doesn't involve sticking head in front of a predator. They lead the patrol on a search of the clearing around the sett until they come upon some fresh badger scat - stinky, horrible, and perfect proof of the new occupant of the sett.",
+                "text": "s_c decides there has to be an easy way to figure out if a badger has moved in, one that doesn't involve sticking anyone's head in front of a predator. They lead the patrol on a search of the clearing around the sett until they come upon some fresh badger scat - stinky, horrible, and perfect proof of the new occupant of the sett.",
                 "exp": 40,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -479,7 +479,7 @@
                 ]
             },
             {
-                "text": "Carefully considering their options, s_c decides to set up a stakeout with the patrol. When the badger pokes its head above the ground at dusk, they're prepared, and in unison everyone turns for home. The cats fade into the underbrush before the predator has even blinked the sleep out of its eyes.",
+                "text": "Carefully considering their options, s_c sets up a stakeout with the patrol. When the badger pokes its head above the ground at dusk, they're prepared, and in unison everyone turns for home. The cats fade into the underbrush before the predator has even blinked the sleep out of its eyes.",
                 "exp": 40,
                 "weight": 20,
                 "stat_trait": [
@@ -506,7 +506,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The cats try to find enough bits of undergrowth in the nearby forest to block the opening to the sett, but the area is pretty bare. Before they know it, they're tired, thirsty, and returning home with nothing to show for it.",
+                "text": "The cats try to find enough bits of undergrowth in the nearby forest to block the opening to the sett, but the area is pretty bare. Before they know it, they're tired, thirsty, and forced to return home with nothing to show for it.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -520,7 +520,7 @@
                 ]
             },
             {
-                "text": "Well, the only way to know is to check! Once they find the sett, s_c scrambles inside for a look and comes nose to nose with its occupant. It's only by the grace of StarClan that they're able to redirect that speed to twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows them up the burrow tunnel.",
+                "text": "Well, the only way to know is to check! Once they find the sett, s_c scrambles inside for a look and comes nose to nose with its occupant. It's only by the grace of StarClan that they're able to redirect that speed and twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows them up the burrow tunnel.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -548,7 +548,7 @@
                 ]
             },
             {
-                "text": "As the patrol is sniffing around the burrow entrance there's a rustle from the woods. It's difficult to say who's more surprised - the cats or the badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process, but everyone gets home safe in the end. . . including the badger.",
+                "text": "As the patrol is sniffing around the burrow entrance, they hear a rustle from the woods. It's difficult to say who's more surprised - the cats or the badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process, but everyone gets home safe in the end. . . including the badger.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -586,12 +586,12 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "The patrol discusses the rumors they've been hearing that there's a badger denning in a certain part of c_n territory.",
+        "intro_text": "The patrol discusses the rumors they've been hearing that a badger is denning in a certain part of c_n territory.",
         "decline_text": "Everyone agrees it's concerning, and the patrol is much more alert than usual while collecting moss for bedding.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Once they find the sett, the cats discuss their next move. If a badger has moved in, they need to confirm it, but how? Eventually p_l comes up with a plan - stuffing bushes into the mouth of the sett. The cats will be able to come back tomorrow to see if anything has shoved them out of the way.",
+                "text": "Once they find the sett, the cats discuss their next move. If a badger has moved in, they need to confirm it, but how? p_l comes up with a plan - stuffing bushes into the mouth of the sett. The cats will be able to come back tomorrow to see if anything has shoved them out of the way.",
                 "exp": 40,
                 "weight": 20,
                 "relationships": [
@@ -605,7 +605,7 @@
                 ]
             },
             {
-                "text": "The patrol organizes, and once the sett is found the cats lift a long skinny branch from the forest floor, shoving the end into the sett. With half the branch's length to go there's an outraged explosion of fizzing from the depths of the burrow, and the patrol retreats to report back to camp. With any luck, it's been injured, but no one wants to check.",
+                "text": "The patrol organizes, and once the sett is found, the cats lift a long skinny branch from the forest floor and shove the end into the sett. With half the branch's length to go, there's an outraged explosion of fizzing from the depths of the burrow. The patrol retreats to report back to camp. With any luck, it's been injured, but no one wants to check.",
                 "exp": 40,
                 "weight": 5,
                 "relationships": [
@@ -619,7 +619,7 @@
                 ]
             },
             {
-                "text": "s_c decides there has to be an easy way to figure out if a badger has moved in, one that doesn't involve sticking head in front of a predator. They lead the patrol on a search of the clearing around the sett until they come upon some fresh badger scat - stinky, horrible, and perfect proof of the new occupant of the sett.",
+                "text": "s_c decides there has to be an easy way to figure out if a badger has moved in, one that doesn't involve sticking anyone's head in front of a predator. They lead the patrol on a search of the clearing around the sett until they come upon some fresh badger scat - stinky, horrible, and perfect proof of the new occupant of the sett.",
                 "exp": 40,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -661,7 +661,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The cats try to find enough bits of undergrowth in the nearby forest to block the opening to the sett, but the area is pretty bare. Before they know it, they're tired, thirsty, and returning home with nothing to show for it.",
+                "text": "The cats try to find enough bits of undergrowth in the nearby forest to block the opening to the sett, but the area is pretty bare. Before they know it, they're tired, thirsty, and forced to return home with nothing to show for it.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -675,7 +675,7 @@
                 ]
             },
             {
-                "text": "Well, the only way to know is to check! Once they find the sett, s_c scrambles inside for a look and comes nose to nose with its occupant. It's only by the grace of StarClan that they're able to redirect that speed to twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows them up the burrow tunnel.",
+                "text": "Well, the only way to know is to check! Once they find the sett, s_c scrambles inside for a look and comes nose to nose with its occupant. It's only by the grace of StarClan that they're able to redirect that speed and twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows them up the burrow tunnel.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -703,7 +703,7 @@
                 ]
             },
             {
-                "text": "As the patrol is sniffing around the burrow entrance there's a rustle from the woods. It's difficult to say who's more surprised - the cats or the badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process, but everyone gets home safe in the end. . . including the badger.",
+                "text": "As the patrol is sniffing around the burrow entrance, they hear a rustle from the woods. It's difficult to say who's more surprised - the cats or the badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process, but everyone gets home safe in the end. . . including the badger.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -762,7 +762,7 @@
                 "stat_skill": ["FIGHTER,1"]
             },
             {
-                "text": "Boldly, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight.",
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leave c_n territory. Intimidated by {PRONOUN/s_c/poss} confidence, the rogue gives in and leaves without a fight.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -787,18 +787,18 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful they're alone.",
+                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alone.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap, climbing into the trees and trying to break a branch onto the rogue's head, but they aren't as smart as they think they are. The trap fails, and the rogue wanders on.",
+                "text": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap, climbing into the trees and trying to break a branch onto the rogue's head, but {PRONOUN/s_c/subject} {VERB/s_c/aren't/isn't} as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"]
             },
             {
-                "text": "Nose to the ground following the trail, r_c doesn't see the blow that kills them.",
+                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow that kills {PRONOUN/r_c/object}.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -809,7 +809,7 @@
                 }
             },
             {
-                "text": "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run.",
+                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -859,7 +859,7 @@
                 "stat_skill": ["CLEVER,1"]
             },
             {
-                "text": "Boldly, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight.",
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leave c_n territory. Intimidated by {PRONOUN/s_c/poss} confidence, the rogue gives in and leaves without a fight.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -884,18 +884,18 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful they're alone.",
+                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alone.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle-hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, but this is one battle-hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject}'d like to think. The rogue escapes {PRONOUN/s_c/poss} grasp and runs off further into c_n territory.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"]
             },
             {
-                "text": "Nose to the ground following the trail, r_c doesn't see the blow that kills them.",
+                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow that kills {PRONOUN/r_c/object}.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -906,7 +906,7 @@
                 }
             },
             {
-                "text": "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themself to their feet, spitting with outrage, but the rogue that did it has already turned and run.",
+                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -938,28 +938,28 @@
         },
         "weight": 20,
         "intro_text": "While on patrol, app1 notices some suspicious pawprints in the mud beneath the canopy.",
-        "decline_text": "They decide not to investigate.",
+        "decline_text": "{PRONOUN/app1/subject/CAP} {VERB/app1/decide/decides} not to investigate.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The pawprints lead to a trespassing rogue. app1 quickly hides themselves behind a bush, and sets up an ambush that lets them pretend to be a far bigger and more impressive fighter, sending the rogue fleeing off c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. app1 quickly hides {PRONOUN/app1/self} behind a bush and sets up an ambush that lets {PRONOUN/app1/object} pretend to be a far bigger and more impressive fighter. app1 sends the rogue fleeing off c_n territory.",
                 "exp": 10,
                 "weight": 20
             },
             {
-                "text": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... they're pretty sure this is their mentor's scent. And their mentor has been hinting there'll be a test soon.",
+                "text": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting {PRONOUN/app1/subject}'ll have an assessment soon.",
                 "exp": 10,
                 "weight": 5
             }
         ],
         "fail_outcomes": [
             {
-                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful they're alone. They don't want to look dumb in front of other cats.",
+                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful {PRONOUN/app1/subject}{VERB/app1/'re/'s} alone. {PRONOUN/app1/subject} {VERB/app1/do/does}n't want to look dumb in front of other cats.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "Boldly, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. The rogue is not impressed by this teenager, and ignores them completely.",
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leave c_n territory. The rogue is not impressed by this adolescent and ignores {PRONOUN/s_c/object} completely.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -983,7 +983,7 @@
                 "can_have_stat": ["app"]
             },
             {
-                "text": "Nose to the ground following the trail, app1 doesn't see the blow that kills them.",
+                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, app1 doesn't see the blow that kills {PRONOUN/app1/object}.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -994,7 +994,7 @@
                 }
             },
             {
-                "text": "Nose to the ground following the trail, app1 doesn't see the blow coming. They haul themselves to their feet, squealing with pain, and run for home.",
+                "text": "Following the trail with {PRONOUN/app1/poss} nose to the ground, app1 doesn't see the blow coming. {PRONOUN/app1/subject/CAP} {VERB/app1/haul/hauls} {PRONOUN/app1/self} to {PRONOUN/app1/poss} feet, squealing with pain, and {VERB/app1/run/runs} for home.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1028,7 +1028,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves behind a bush and sets up an ambush that sends the rogue fleeing off c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. The patrol quickly hides behind a bush and sets up an ambush that sends the rogue fleeing off c_n territory.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
@@ -1056,7 +1056,7 @@
                 ]
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, and together with r_c drives them off c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue with a furious hiss and, together with r_c, drives them off c_n territory.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -1071,7 +1071,7 @@
                 ]
             },
             {
-                "text": "Boldly, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, s_c and r_c demand the rogue leaves c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight.",
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, s_c and r_c demand the rogue leave c_n territory. The rogue is intimidated by their confidence and leaves without a fight.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -1105,7 +1105,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that their patrol is so small. Less eyes watching that embarrassing moment.",
+                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that their patrol is so small. Fewer eyes watching that embarrassing moment.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1119,7 +1119,7 @@
                 ]
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap, climbing into the trees and trying to break a branch onto the rogue's head, but they aren't as smart as they think they are. The trap fails, and the rogue wanders on.",
+                "text": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap, climbing into the trees and trying to break a branch onto the rogue's head, but {PRONOUN/s_c/subject} {VERB/s_c/aren't/isn't} as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -1134,7 +1134,7 @@
                 ]
             },
             {
-                "text": "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run from the patrol.",
+                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run from the patrol.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1177,7 +1177,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves behind a bush and sets up an ambush that sends the rogue fleeing off c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. The patrol quickly hides behind a bush and sets up an ambush that sends the rogue fleeing off c_n territory.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
@@ -1205,7 +1205,7 @@
                 ]
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c sets up a trap, climbing into the trees with r_c and breaking a branch onto the rogue's head that sends the startled intruder yowling as they flee c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. s_c sets up a trap, climbing into the trees with r_c and breaking a branch onto the rogue's head. The startled intruder yowls as they flee c_n territory.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -1220,7 +1220,7 @@
                 ]
             },
             {
-                "text": "Boldly, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, s_c and r_c demand the rogue leaves c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight.",
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, s_c and r_c demand the rogue leave c_n territory. The rogue is intimidated by their confidence and leaves without a fight.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -1254,7 +1254,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that their patrol is so small. Less eyes watching that embarrassing moment.",
+                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that their patrol is so small. Fewer eyes watching that embarrassing moment.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1268,7 +1268,7 @@
                 ]
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, but this is one battle-hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject}'d like to think. The rogue escapes {PRONOUN/s_c/poss} grasp and runs off further into c_n territory.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -1283,7 +1283,7 @@
                 ]
             },
             {
-                "text": "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run.",
+                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1324,11 +1324,11 @@
         },
         "weight": 20,
         "intro_text": "While on patrol, app1 notices some suspicious pawprints in the mud beneath the canopy.",
-        "decline_text": "They decide not to investigate.",
+        "decline_text": "{PRONOUN/app1/subject/CAP} {VERB/app1/decide/decides} not to investigate.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves behind a bush and sets up an ambush, sending the rogue fleeing off c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. The patrol quickly hides behind a bush and sets up an ambush, sending the rogue fleeing off c_n territory.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
@@ -1342,7 +1342,7 @@
                 ]
             },
             {
-                "text": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting there'll be a test soon.",
+                "text": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting {PRONOUN/app1/subject}'ll have an assessment soon.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -1356,7 +1356,7 @@
                 ]
             },
             {
-                "text": "Boldly, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, {PRONOUN/app1/subject} demand the rogue leaves c_n territory. The rogue is not impressed by the teenager, but reluctantly leaves c_n territory. r_c is impressed that s_c got the rogue to leave.",
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leave c_n territory. The rogue is not impressed by the adolescent but reluctantly leaves c_n territory. r_c is impressed that s_c got the rogue to leave.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -1391,7 +1391,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful that {PRONOUN/app1/poss} patrol is so small. Less eyes watching that embarrassing moment. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} want to look dumb in front of other cats.",
+                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful that {PRONOUN/app1/poss} patrol is so small. Fewer eyes watching that embarrassing moment. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} want to look dumb in front of other cats.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1405,7 +1405,7 @@
                 ]
             },
             {
-                "text": "Boldly, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, {PRONOUN/app1/subject} demand the rogue leaves c_n territory. The rogue is not impressed by the teenager, and staring right at the apprentice with claws unsheathed, mark their scent over one of the trees, before wandering off, clearly not listening to s_c.",
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/app1/subject} {VERB/app1/demand/demands} the rogue leave c_n territory. The rogue is not impressed by the adolescent and stares right at the apprentice with claws unsheathed as they mark their scent over one of the trees before wandering off.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -1438,7 +1438,7 @@
                 ]
             },
             {
-                "text": "Nose to the ground following the trail, app1 doesn't see the blow coming. They haul themselves to their feet, squealing with pain, and run for home.",
+                "text": "Following the trail with {PRONOUN/app1/poss} nose to the ground, app1 doesn't see the blow coming. {PRONOUN/app1/subject/CAP} {VERB/app1/haul/hauls} {PRONOUN/app1/self} to {PRONOUN/app1/poss} feet, squealing with pain, and {VERB/app1/run/runs} for home.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1481,7 +1481,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves behind a bush and sets up an ambush that sends the rogue fleeing off c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. The patrol quickly hides behind a bush and sets up an ambush that sends the rogue fleeing off c_n territory.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
@@ -1509,7 +1509,7 @@
                 ]
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, and together with r_c drives them off c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. With a furious hiss, s_c throws themselves at the rogue and, together with r_c, drives them off c_n territory.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -1524,7 +1524,7 @@
                 ]
             },
             {
-                "text": "Boldly, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by their confidence and the number of cats, the rogue gives in and leaves without a fight.",
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by their confidence and the number of cats, the rogue gives in and leaves without a fight.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -1572,7 +1572,7 @@
                 ]
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap, climbing into the trees and trying to break a branch onto the rogue's head, but they aren't as smart as they think they are. The trap fails, and the rogue wanders on.",
+                "text": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap, climbing into the trees and trying to break a branch onto the rogue's head, but {PRONOUN/s_c/subject} {VERB/s_c/aren't/isn't} as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -1604,7 +1604,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves behind a bush and sets up an ambush that sends the rogue fleeing off c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. The patrol quickly hides behind a bush and sets up an ambush that sends the rogue fleeing off c_n territory.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
@@ -1632,7 +1632,7 @@
                 ]
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c sets up a trap, climbing into the trees with r_c and breaking a branch onto the rogue's head that sends the startled intruder yowling as they flee c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. s_c sets up a trap by climbing into the trees with r_c and breaking a branch onto the rogue's head. The startled intruder yowls as they flee c_n territory.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -1647,7 +1647,7 @@
                 ]
             },
             {
-                "text": "Boldly, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by their confidence and the number of cats, the rogue gives in and leaves without a fight.",
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by their confidence and the number of cats, the rogue gives in and leaves without a fight.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -1695,7 +1695,7 @@
                 ]
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, but this is one battle-hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject}'d like to think. The rogue escapes {PRONOUN/s_c/poss} grasp and runs off further into c_n territory.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -1725,11 +1725,11 @@
         },
         "weight": 20,
         "intro_text": "While on patrol, app1 notices some suspicious pawprints in the mud beneath the canopy.",
-        "decline_text": "They decide not to investigate.",
+        "decline_text": "{PRONOUN/app1/subject/CAP} {VERB/app1/decide/decides} not to investigate.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves behind a bush and sets up an ambush, sending the rogue fleeing off c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. The patrol quickly hides behind a bush and sets up an ambush, sending the rogue fleeing off c_n territory.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
@@ -1743,7 +1743,7 @@
                 ]
             },
             {
-                "text": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... they're pretty sure this is their mentor's scent. And their mentor has been hinting there'll be a test soon.",
+                "text": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting {PRONOUN/app1/subject}'ll have an assessment soon.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -1759,7 +1759,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, and can't meet the eyes of the rest of the patrol. They don't want to look dumb in front of other cats.",
+                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, and can't meet the eyes of the rest of the patrol. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't want to look dumb in front of other cats.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1773,7 +1773,7 @@
                 ]
             },
             {
-                "text": "Boldly, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. The rogue is not impressed by the young cat, but with the full patrol backing them up, leaves c_n territory.",
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leave c_n territory. The rogue is not impressed by the adolescent, but with the full patrol backing {PRONOUN/s_c/object} up, the rogue leaves c_n territory.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -1837,7 +1837,7 @@
                 ]
             },
             {
-                "text": "s_c spins a story, vivid and engaging, telling the tale of a massive war their ancestors fought over the border the patrol is headed to mark. Not only does it keep every cat entertained, but it also emphasizes the importance of the patrol and motivates everyone.",
+                "text": "s_c spins a vivid, engaging tale of a massive war their ancestors fought over the border the patrol is headed to mark. Not only does it keep every cat entertained, but it also emphasizes the importance of the patrol and motivates everyone.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -1876,7 +1876,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "As the patrol weaves through the trees and undergrowth, it becomes obvious that the bushes block the sound of their meows, and p_l gives up on their story.",
+                "text": "As the patrol weaves through the trees and undergrowth, it becomes obvious that the bushes block the sound of {PRONOUN/p_l/poss} meows, and p_l gives up on {PRONOUN/p_l/poss} story.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1890,7 +1890,7 @@
                 ]
             },
             {
-                "text": "s_c takes p_l aside, and reminds them coldly to focus on their duties.",
+                "text": "s_c takes p_l aside and reminds {PRONOUN/p_l/object} coldly to focus on their duties.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -1932,17 +1932,17 @@
         "relationship_constraint": [],
         "pl_skill_constraint": [],
         "intro_text": "Padding through the forest at night on a dare, the apprentices gasp as light streaks across the sky. A StarClan cat has fallen!",
-        "decline_text": "Before the apprentices can pursue the fallen StarClan cat, the worst of all possibilities happens - a warrior discovers them, sending them back to camp with a loud scolding.",
+        "decline_text": "Before the apprentices can pursue the fallen StarClan cat, the worst possible thing happens - a warrior discovers them and sends them back to camp with a loud scolding.",
         "success_outcomes": [
             {
-                "text": "Scrambling up the hill, app1 shoves app2 up a slightly too big step, both of them panting eagerly as they run. The mist swirls around them, stinking strangely as they search for the StarClan cat, until app2 bumps into a huge, tall pillar, one that blinks down with slow, glowing red eyes.",
+                "text": "Scrambling up the hill, app1 shoves app2 up a slightly too big step, both of them panting eagerly as they run. The mist swirls around them, stinking strangely as they search for the StarClan cat, until app2 bumps into a huge pillar that blinks down with slow, glowing red eyes.",
                 "exp": 0,
                 "weight": 20
             }
         ],
         "fail_outcomes": [
             {
-                "text": "app2 gets stuck on a big stone step as the apprentices try to scramble uphill - and by the time they climb up, only the dissipating, strangely scented mist says that anything magical passed through here at all.",
+                "text": "app2 gets stuck on a big stone step as the apprentices try to scramble uphill. By the time they climb up, only the dissipating, strangely-scented mist says that anything magical passed through here at all.",
                 "exp": 0,
                 "weight": 20
             }

@@ -10,8 +10,8 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches scent of a mouse nearby.",
-        "decline_text": "Your patrol ignores the mouse.",
+        "intro_text": "The patrol catches scent of a mouse nearby.",
+        "decline_text": "The patrol ignores the mouse.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -29,7 +29,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol narrowly misses the mouse.",
+                "text": "The patrol narrowly misses the mouse.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -50,8 +50,8 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "Your patrol comes across a mouse.",
-        "decline_text": "Your patrol ignores the mouse.",
+        "intro_text": "The patrol comes across a mouse.",
+        "decline_text": "The patrol ignores the mouse.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -69,7 +69,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol narrowly misses the mouse.",
+                "text": "The patrol narrowly misses the mouse.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -87,12 +87,12 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol comes across a large rat.",
-        "decline_text": "Your patrol ignores the rat.",
+        "intro_text": "The patrol comes across a large rat.",
+        "decline_text": "The patrol ignores the rat.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Your patrol catches the rat! More fresh-kill!",
+                "text": "The patrol catches the rat! More fresh-kill!",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"]
@@ -113,7 +113,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol misses the rat, and their confidence is shaken.",
+                "text": "The patrol misses the rat, and their confidence is shaken.",
                 "exp": 0,
                 "weight": 20
             }
@@ -130,12 +130,12 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol comes across a large hare.",
-        "decline_text": "Your patrol ignores the hare.",
+        "intro_text": "The patrol comes across a large hare.",
+        "decline_text": "The patrol ignores the hare.",
         "chance_of_success": 20,
         "success_outcomes": [
             {
-                "text": "Your patrol catches the hare!",
+                "text": "The patrol catches the hare!",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["large"]
@@ -150,7 +150,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol narrowly misses the hare.",
+                "text": "The patrol narrowly misses the hare.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -168,12 +168,12 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol comes across a bird that's occupied scratching at the ground for insects.",
-        "decline_text": "Your patrol ignores the bird.",
+        "intro_text": "The patrol comes across a bird that's occupied scratching at the ground for insects.",
+        "decline_text": "The patrol ignores the bird.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Your patrol catches the bird before it flies away!",
+                "text": "The patrol catches the bird before it flies away!",
                 "exp": 15,
                 "weight": 20,
                 "prey": ["small"]
@@ -187,7 +187,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol narrowly misses the bird.",
+                "text": "The patrol narrowly misses the bird.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -205,8 +205,8 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol comes across a squirrel. It's engrossed in nibbling at a morsel beneath a tree.",
-        "decline_text": "Your patrol ignores the squirrel.",
+        "intro_text": "The patrol comes across a squirrel. It's engrossed in nibbling at a morsel beneath a tree.",
+        "decline_text": "The patrol ignores the squirrel.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -224,7 +224,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol narrowly misses the squirrel as it's alerted by a bird's alarm call.",
+                "text": "The patrol narrowly misses the squirrel as it's alerted by a bird's alarm call.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -242,8 +242,8 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol glimpses the shadow of a fish as they pad past a stream.",
-        "decline_text": "Your patrol ignores the fish.",
+        "intro_text": "The patrol glimpses the shadow of a fish as they pad past a stream.",
+        "decline_text": "The patrol ignores the fish.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -279,8 +279,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol sees the shadow of a school of fish in the river.",
-        "decline_text": "Your patrol ignores the fish.",
+        "intro_text": "The patrol sees the shadow of a school of fish in the river.",
+        "decline_text": "The patrol ignores the fish.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -412,7 +412,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol jumps after it, but the rabbit has too great of a head start.",
+                "text": "The patrol jumps after it, but the rabbit has too great of a head start.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1449,7 +1449,7 @@
     "chance_of_success": 50,
     "success_outcomes": [
         {
-            "text": "{PRONOUN/p_l/poss/CAP} judgement is accurate - these hunting grounds are excellent, p_l will have to bring {PRONOUN/p_l/poss} Clanmates back here another day.",
+            "text": "{PRONOUN/p_l/poss/CAP} judgment is accurate - these hunting grounds are excellent, p_l will have to bring {PRONOUN/p_l/poss} Clanmates back here another day.",
             "exp": 25,
             "weight": 10,
             "prey": ["large"]
@@ -1607,7 +1607,7 @@
             "prey": ["very_small"]
         },
         {
-            "text": "It doesn't matter how keen on hunting app1 is - if the prey isn't there, not even the mightiest hunter in StarClan can do anything, let alone a rangy teenager. Still, not much is better than nothing.",
+            "text": "It doesn't matter how keen on hunting app1 is - if the prey isn't there, not even the mightiest hunter in StarClan can do anything, let alone a rangy adolescent. Still, not much is better than nothing.",
             "exp": 20,
             "weight": 20,
             "stat_skill": ["HUNTER,0"],
@@ -3670,14 +3670,14 @@
     "chance_of_success": 50,
     "success_outcomes": [
         {
-            "text": "Your patrol confronts the strange cat - they are obviously an intruder on c_n territory, and they don't look like the friendly type. The dark silhouette seems to flicker in and out of view as the patrol runs toward it, gradually reappearing further and further away. The patrol stops, watching the stranger in the distance. Glowing, haunted eyes watch them back from the shadows. The patrol returns home, mesmerized by the strangeness of what they just witnessed.",
+            "text": "The patrol confronts the strange cat - they are obviously an intruder on c_n territory, and they don't look like the friendly type. The dark silhouette seems to flicker in and out of view as the patrol runs toward it, gradually reappearing further and further away. The patrol stops, watching the stranger in the distance. Glowing, haunted eyes watch them back from the shadows. The patrol returns home, mesmerized by the strangeness of what they just witnessed.",
             "exp": 10,
             "weight": 20
         }
     ],
     "fail_outcomes": [
         {
-            "text": "Your patrol confronts the strange cat - they are obviously an intruder on c_n territory, and they don't look like the friendly type. The strange cat shrieks, an awful, blood-curdling scream that makes r_c's fur stand on end. Overcome by terror, the patrol flees back to camp.",
+            "text": "The patrol confronts the strange cat - they are obviously an intruder on c_n territory, and they don't look like the friendly type. The strange cat shrieks, an awful, blood-curdling scream that makes r_c's fur stand on end. Overcome by terror, the patrol flees back to camp.",
             "exp": 0,
             "weight": 10,
             "injury": [

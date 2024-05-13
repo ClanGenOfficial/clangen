@@ -891,8 +891,8 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a mountain goat carcass, either a small nanny or one of last newleaf's kids. It's impossible to say whether the fox killed it or found it.",
-        "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "intro_text": "The patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a mountain goat carcass, either a small nanny or one of last newleaf's kids. It's impossible to say whether the fox killed it or found it.",
+        "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -932,7 +932,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
@@ -954,7 +953,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
+                "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1028,8 +1027,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a mountain goat carcass, either a small nanny or one of last newleaf's kids. It's impossible to say whether the fox killed it or found it.",
-        "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "intro_text": "The patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a mountain goat carcass, either a small nanny or one of last newleaf's kids. It's impossible to say whether the fox killed it or found it.",
+        "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 20,
         "success_outcomes": [
             {
@@ -1069,7 +1068,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
@@ -1091,7 +1089,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there were no injuries.",
+                "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1206,7 +1204,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
@@ -1228,7 +1225,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
+                "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
