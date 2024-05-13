@@ -23,11 +23,11 @@
   },
   "possible_tints": {
     "basic": ["pink", "gray", "red", "orange", "none"],
-    "warm": ["yellow", "purple"],
-    "cool": ["blue", "purple", "black"],
+    "warm": ["yellow", "purple", "dilutegray", "diluteyellow", "dilutepink"],
+    "cool": ["blue", "purple", "black", "dilutered", "dilutegray", "diluteyellow", "dilutepink"],
     "white": ["yellow"],
-    "monochrome": ["blue", "black"],
-    "brown": ["yellow", "purple", "black"]
+    "monochrome": ["blue", "black", "dilutepurple", "dilutegray", "diluteyellow", "dilutepink"],
+    "brown": ["yellow", "purple", "black", "dilutered", "dilutepurple", "dilutegray", "diluteyellow", "dilutepink"]
   },
   "tint_colours":
   {
@@ -39,6 +39,16 @@
     "yellow": [250, 248, 225],
     "purple": [235, 225, 244],
     "blue": [218, 237, 245],
+    "none": null
+  },
+  "dilute_tint_colours":
+  {
+    "dilutepink": [2, 18, 18],
+    "dilutegray": [30, 30, 30],
+    "dilutered": [7, 29, 29],
+    "diluteyellow": [5, 7, 30],
+    "dilutepurple": [20, 30, 11],
+    "diluteblue": [37, 18, 10],
     "none": null
   }
 }
