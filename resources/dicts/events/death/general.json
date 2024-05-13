@@ -2950,43 +2950,6 @@
         ]
     },
     {
-        "event_id": "gen_death_hawk_anylead3",
-        "biome": [
-            "forest", "mountainous", "plains", "wetlands"
-        ],
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "tags": [
-            "all_lives",
-            "no_body"
-        ],
-        "weight": 20,
-        "event_text": "m_c was carried off by a hawk, never to be seen again.",
-        "m_c": {
-            "age": [
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ],
-            "status": [
-                "leader"
-            ],
-            "not_skill": [
-                "FIGHTER,2"
-            ],
-            "dies": true
-        },
-        "history": {
-            "cats": ["m_c"],
-            "lead_death": "{VERB/m_c/were/was} carried away by a hawk"
-        }
-    },
-    {
         "event_id": "gen_death_eagle_anylead1",
         "biome": [
             "plains", "mountainous"
@@ -3958,33 +3921,6 @@
         }
     },
     {
-        "event_id": "gen_death_whitecough_leafbare2",
-        "biome": ["any"],
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "tags": [
-            "classic"
-        ],
-        "weight": 20,
-        "event_text": "Weakened by a lack of prey, m_c couldn't fight off whitecough and passed away.",
-        "m_c": {
-            "age": [
-                "any"
-            ],
-            "status": [ "any" ],
-            "dies": true
-        },
-        "history": {
-            "cats": ["m_c"],
-            "reg_death": "m_c died of whitecough.",
-            "lead_death": "died of whitecough"
-        }
-    },
-    {
         "event_id": "gen_death_greencough_leafbare2",
         "biome": ["any"],
         "camp": [
@@ -4197,6 +4133,7 @@
         },
         "history": {
             "cats": ["m_c"],
+            "reg_death": "m_c was killed by a badger.",
             "lead_death": "{VERB/m_c/were/was} killed by a badger"
         }
     },
@@ -4303,7 +4240,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c failed to interpret a warning sign from StarClan.",
+        "event_text": "m_c failed to interpret a warning sign from StarClan and couldn't foresee the circumstances of {PRONOUN/m_c/poss} death.",
         "m_c": {
             "age": [
                 "young adult",
@@ -4722,7 +4659,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c saved r_c from a snake and was bitten in the process.",
+        "event_text": "m_c saved r_c from a snake and was bitten in the process. The venom killed {PRONOUN/m_c/object}.",
         "m_c": {
             "age": [
                 "young adult",
