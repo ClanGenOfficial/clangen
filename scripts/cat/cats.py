@@ -290,6 +290,7 @@ class Cat():
          # These things should only run when generating a new cat, rather than loading one in.
         if not loading_cat:
             # trans cat chances
+            theythemdefault = game.settings["they them default"] 
             self.genderalign = self.gender
             trans_chance = randint(0, 50)
             nb_chance = randint(0, 75)
@@ -297,77 +298,58 @@ class Cat():
             if self.age in ['kitten', 'newborn']:
                 trans_chance = 0
                 nb_chance = 0
-            if game:
-                if game.settings["they them default"] is True:
-                    self.pronouns = [self.default_pronouns[0].copy()]
-                    #print("Game is asigning they/them pronouns")
-                    if nb_chance == 1:
-                        self.genderalign = "nonbinary"
-                    elif trans_chance == 1:
-                        if self.gender == "female":
-                            self.genderalign = "trans male"
-                        else:
-                            self.genderalign = "trans female"
-                #assigning pronouns to afab cats            
-                elif self.gender == "female":
-                    if trans_chance == 1:
+            if theythemdefault is True:
+                self.pronouns = [self.default_pronouns[0].copy()]
+                if nb_chance == 1:
+                    self.genderalign = "nonbinary"
+                elif trans_chance == 1:
+                    if self.gender == "female":
                         self.genderalign = "trans male"
-                        self.pronouns = [self.default_pronouns[2].copy()]
-                        #print("Trans Male: game is asigning he/him pronouns")
-                    elif nb_chance == 1:
-                        self.genderalign = "nonbinary"
-                        self.pronouns = [self.default_pronouns[0].copy()]
-                        #print("Nonbinary: game is asigning they/them pronouns")
                     else:
-                        self.pronouns = [self.default_pronouns[1].copy()]
-                        #print("Female: game is asigning she/her pronouns")
-                        
-                #assigning pronouns to amab cats            
-                elif self.gender == "male":
-                    if trans_chance == 1:
                         self.genderalign = "trans female"
-                        self.pronouns = [self.default_pronouns[1].copy()]
-                        #print("Trans Female: game is asigning she/her pronouns")
-                    elif nb_chance == 1:
-                        self.genderalign = "nonbinary"
-                        self.pronouns = [self.default_pronouns[0].copy()]
-                        #print("Nonbinary: game is asigning they/them pronouns")
-                    else:
-                        self.pronouns = [self.default_pronouns[2].copy()]
-                        #print("Male: game is asigning he/him pronouns")
-                    
-        # APPEARANCE
-        self.pelt = Pelt.generate_new_pelt(self.gender, [Cat.fetch_cat(i) for i in (self.parent1, self.parent2) if i], self.age)
-            
-        #Personality
-        self.personality = Personality(kit_trait=self.is_baby())
+            else:
+                # Assigning pronouns based on gender and chance
+                if self.gender in ["female", "trans female"]:
+                    self.pronouns = [self.default_pronouns[1].copy()]
+                elif self.gender in ["male", "trans male"]:
+                    self.pronouns = [self.default_pronouns[2].copy()]
+                else:
+                    self.pronouns = [self.default_pronouns[0].copy()]
+                    self.genderalign = "nonbinary"
 
-        # experience and current patrol status
-        if self.age in ['young', 'newborn']:
-            self.experience = 0
-        elif self.age in ['adolescent']:
-            m = self.moons
-            self.experience = 0
-            while m > Cat.age_moons['adolescent'][0]:
-                ran = game.config["graduation"]["base_app_timeskip_ex"]
-                exp = choice(
-                    list(range(ran[0][0], ran[0][1] + 1)) + list(range(ran[1][0], ran[1][1] + 1)))
-                self.experience += exp + 3
-                m -= 1
-        elif self.age in ['young adult', 'adult']:
-            self.experience = randint(Cat.experience_levels_range["prepared"][0],
-                                      Cat.experience_levels_range["proficient"][1])
-        elif self.age in ['senior adult']:
-            self.experience = randint(Cat.experience_levels_range["competent"][0],
-                                      Cat.experience_levels_range["expert"][1])
-        elif self.age in ['senior']:
-            self.experience = randint(Cat.experience_levels_range["competent"][0],
-                                      Cat.experience_levels_range["master"][1])
-        else:
-            self.experience = 0
+                    
+            # APPEARANCE
+            self.pelt = Pelt.generate_new_pelt(self.gender, [Cat.fetch_cat(i) for i in (self.parent1, self.parent2) if i], self.age)
                 
-        if not skill_dict:
-            self.skills = CatSkills.generate_new_catskills(self.status, self.moons)
+            #Personality
+            self.personality = Personality(kit_trait=self.is_baby())
+
+            # experience and current patrol status
+            if self.age in ['young', 'newborn']:
+                self.experience = 0
+            elif self.age in ['adolescent']:
+                m = self.moons
+                self.experience = 0
+                while m > Cat.age_moons['adolescent'][0]:
+                    ran = game.config["graduation"]["base_app_timeskip_ex"]
+                    exp = choice(
+                        list(range(ran[0][0], ran[0][1] + 1)) + list(range(ran[1][0], ran[1][1] + 1)))
+                    self.experience += exp + 3
+                    m -= 1
+            elif self.age in ['young adult', 'adult']:
+                self.experience = randint(Cat.experience_levels_range["prepared"][0],
+                                        Cat.experience_levels_range["proficient"][1])
+            elif self.age in ['senior adult']:
+                self.experience = randint(Cat.experience_levels_range["competent"][0],
+                                        Cat.experience_levels_range["expert"][1])
+            elif self.age in ['senior']:
+                self.experience = randint(Cat.experience_levels_range["competent"][0],
+                                        Cat.experience_levels_range["master"][1])
+            else:
+                self.experience = 0
+                    
+            if not skill_dict:
+                self.skills = CatSkills.generate_new_catskills(self.status, self.moons)
 
         # In camp status
         self.in_camp = 1
@@ -1918,7 +1900,7 @@ class Cat():
             if self.is_injured():
                 for y in self.injuries:
                     illness_infect = list(
-                        filter(lambda ill: ill["ID"] == illness_name, self.injuries[y]["illness_infectiousness"]))
+                        filter(lambda ill: ill["name"] == illness_name, self.injuries[y]["illness_infectiousness"]))
                     if illness_infect is not None and len(illness_infect) > 0:
                         illness_infect = illness_infect[0]
                         rate -= illness_infect["lower_by"]

@@ -464,9 +464,6 @@ class Clan():
         clan_data["med_cat_number"] = self.med_cat_number
         clan_data["med_cat_predecessors"] = self.med_cat_predecessors
         
-        if self.custom_pronouns:
-            clan_data["custom_pronouns"] = self.custom_pronouns
-
         # LIST OF CLAN CATS
         clan_data['clan_cats'] = ",".join([str(i) for i in self.clan_cats])
 
@@ -755,11 +752,6 @@ class Clan():
         game.clan.deputy_predecessors = clan_data["deputy_predecessors"]
         game.clan.med_cat_predecessors = clan_data["med_cat_predecessors"]
         game.clan.med_cat_number = clan_data["med_cat_number"]
-        if "custom_pronouns" in clan_data.keys():
-            if clan_data["custom_pronouns"]:
-                game.clan.custom_pronouns = clan_data["custom_pronouns"]
-        else:
-            game.clan.custom_pronouns = []
 
         # Instructor Info
         if clan_data["instructor"] in Cat.all_cats:

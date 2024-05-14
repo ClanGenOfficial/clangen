@@ -183,8 +183,6 @@ def json_load():
                     cat["scar_event"] if "scar_event" in cat else []
                 )
 
-            # new_cat.pronouns = cat["pronouns"] if "pronouns" in cat else [new_cat.default_pronouns[0].copy()]
-            # new_cat.pronouns = cat.get("pronouns", new_cat.default_pronouns[0].copy())
             all_cats.append(new_cat)
 
         except KeyError as e:
