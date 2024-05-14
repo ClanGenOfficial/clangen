@@ -191,7 +191,9 @@ class ClanSettingsScreen(Screens):
 
         self.checkboxes_text[
             "container_general"] = pygame_gui.elements.UIScrollingContainer(
-            scale(pygame.Rect((0, 490), (1400, 600))), manager=MANAGER)
+            scale(pygame.Rect((0, 490), (1400, 600))),
+            allow_scroll_x=False,
+            manager=MANAGER)
 
         n = 0
         for code, desc in settings_dict['general'].items():
@@ -233,7 +235,9 @@ class ClanSettingsScreen(Screens):
 
         self.checkboxes_text[
             "container_role"] = pygame_gui.elements.UIScrollingContainer(
-            scale(pygame.Rect((0, 490), (1400, 600))), manager=MANAGER)
+            scale(pygame.Rect((0, 490), (1400, 600))),
+            allow_scroll_x=False,
+            manager=MANAGER)
 
         n = 0
         for code, desc in settings_dict['role'].items():
@@ -268,7 +272,9 @@ class ClanSettingsScreen(Screens):
 
         self.checkboxes_text[
             "container_relation"] = pygame_gui.elements.UIScrollingContainer(
-            scale(pygame.Rect((0, 490), (1400, 600))), manager=MANAGER)
+            scale(pygame.Rect((0, 490), (1400, 600))),
+            allow_scroll_x=False,
+            manager=MANAGER)
 
         n = 0
         for code, desc in settings_dict['relation'].items():

@@ -583,7 +583,9 @@ class ClearingScreen(Screens):
         self.delete_checkboxes()
 
         self.tactic_text["container_general"] = pygame_gui.elements.UIScrollingContainer(
-            scale(pygame.Rect((280, 900), (460, 350))), manager=MANAGER
+            scale(pygame.Rect((280, 900), (460, 350))),
+            allow_scroll_x=False,
+            manager=MANAGER
         )
 
         n = 0
@@ -607,7 +609,9 @@ class ClearingScreen(Screens):
         )
 
         self.additional_text["container_general"] = pygame_gui.elements.UIScrollingContainer(
-            scale(pygame.Rect((720, 900), (655, 350))), manager=MANAGER
+            scale(pygame.Rect((720, 900), (655, 350))),
+            allow_scroll_x=False,
+            manager=MANAGER
         )
 
         n = 0

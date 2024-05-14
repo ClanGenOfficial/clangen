@@ -72,6 +72,7 @@ class Screens():
         "moons_n_seasons": pygame_gui.elements.UIScrollingContainer(
             scale(pygame.Rect((50, 120), (306, 150))),
             visible=False,
+            allow_scroll_x=False,
             manager=MANAGER),
         "moons_n_seasons_arrow": UIImageButton(
             scale(pygame.Rect((349, 161), (44, 68))),
@@ -364,6 +365,7 @@ class Screens():
             object_id="#arrow_mns_button")
         self.menu_buttons['moons_n_seasons'] = pygame_gui.elements.UIScrollingContainer(
             scale(pygame.Rect((50, 120), (306, 150))),
+            allow_scroll_x=False,
             manager=MANAGER)
         self.moons_n_seasons_bg = UIImageButton(
             scale(pygame.Rect((0, 0), (306, 150))),
@@ -423,6 +425,7 @@ class Screens():
 
         self.menu_buttons['moons_n_seasons'] = pygame_gui.elements.UIScrollingContainer(
             scale(pygame.Rect((50, 120), (100, 150))),
+            allow_scroll_x=False,
             manager=MANAGER)
         self.moons_n_seasons_bg = UIImageButton(
             scale(pygame.Rect((0, 0), (100, 150))),
