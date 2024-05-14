@@ -208,7 +208,9 @@ class WarriorDenScreen(Screens):
         create the buttons for the different focuses
         """
         self.focus["button_container"] = pygame_gui.elements.UIScrollingContainer(
-            scale(pygame.Rect((200, 520), (700, 800))), manager=MANAGER
+            scale(pygame.Rect((200, 520), (700, 800))),
+            allow_scroll_x=False,
+            manager=MANAGER
         )
 
         # n increments the y placement

@@ -916,6 +916,7 @@ class ChangelogPopup(UIWindow):
 
         self.scrolling_container = pygame_gui.elements.UIScrollingContainer(
             scale(pygame.Rect((20, 130), (960, 650))),
+            allow_scroll_x=False,
             container=self,
             manager=MANAGER)
 

@@ -229,13 +229,25 @@ class SpriteInspectScreen(Screens):
 
         self.cat_elements["cat_name"].kill()
 
-        self.cat_elements["cat_name"] = pygame_gui.elements.UITextBox(short_name,
-                                                                      scale(pygame.Rect(
-                                                                        (800 - name_text_size.width, 120),
-                                                                        (name_text_size.width * 2, 80))),
-                                                                       object_id=get_text_box_theme(
-                                                                        "#text_box_40_horizcenter"), manager=MANAGER)
-        
+        # don't like having to do this, but for some reason the usual scaling is not working here
+        if game.settings['fullscreen']:
+            self.cat_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name,
+                                                                              scale(pygame.Rect(
+                                                                                  (800 - name_text_size.width, 120),
+                                                                                  (name_text_size.width * 2, 80))),
+                                                                              object_id=get_text_box_theme(
+                                                                                  "#text_box_40_horizcenter"),
+                                                                              manager=MANAGER)
+        else:
+            self.cat_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name,
+                                                                          scale(pygame.Rect(
+                                                                              (800 - name_text_size.width, 120),
+                                                                              (-1, 80))),
+                                                                          object_id=get_text_box_theme(
+                                                                              "#text_box_40_horizcenter"),
+                                                                          manager=MANAGER)
+
+
         # Fullscreen
         if game.settings['fullscreen']:
             x_pos = 745 - name_text_size.width//2
@@ -244,7 +256,7 @@ class SpriteInspectScreen(Screens):
         self.cat_elements["favourite_button"] = UIImageButton(scale(pygame.Rect
                                                                 ((x_pos, 127), (56, 56))),
                                                               "",
-                                                              object_id="#fav_cat",
+                                                              object_id="#fav_star",
                                                               manager=MANAGER,
                                                               tool_tip_text='Remove favorite status',
                                                               starting_height=2)
@@ -253,7 +265,7 @@ class SpriteInspectScreen(Screens):
                                                                     ((x_pos, 127),
                                                                         (56, 56))),
                                                                  "",
-                                                                 object_id="#not_fav_cat",
+                                                                 object_id="#not_fav_star",
                                                                  manager=MANAGER,
                                                                  tool_tip_text='Mark as favorite',
                                                                  starting_height=2)  

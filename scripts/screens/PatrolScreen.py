@@ -379,11 +379,14 @@ class PatrolScreen(Screens):
                                                                  pygame.image.load(
                                                                      "resources/images/patrol_cat_frame.png").convert_alpha()
                                                                  , manager=MANAGER)
+        self.elements["cat_frame"].disable()
 
         # Frames
         self.elements["able_frame"] = pygame_gui.elements.UIImage(
             scale(pygame.Rect((80, 920), self.able_box.get_size())),
-            self.able_box, manager=MANAGER)
+            self.able_box,
+            starting_height=1,
+            manager=MANAGER)
         self.elements["able_frame"].disable()
 
         self.elements["patrol_frame"] = pygame_gui.elements.UIImage(
@@ -431,11 +434,13 @@ class PatrolScreen(Screens):
 
         # Able cat page buttons
         self.elements['last_page'] = UIImageButton(scale(pygame.Rect((150, 924), (68, 68))), "",
-                                                   object_id="#patrol_last_page"
-                                                   , manager=MANAGER)
+                                                   object_id="#patrol_last_page",
+                                                   starting_height=2,
+                                                   manager=MANAGER)
         self.elements['next_page'] = UIImageButton(scale(pygame.Rect((482, 924), (68, 68))), "",
-                                                   object_id="#patrol_next_page"
-                                                   , manager=MANAGER)
+                                                   object_id="#patrol_next_page",
+                                                   starting_height=2,
+                                                   manager=MANAGER)
 
         # Tabs for the current patrol
         self.elements['patrol_tab'] = UIImageButton(scale(pygame.Rect((1010, 920), (160, 70))), "",
