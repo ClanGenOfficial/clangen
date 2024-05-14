@@ -953,6 +953,7 @@ class Events:
         # aging the cat
         cat.one_moon()
         cat.manage_outside_trait()
+        self.handle_outside_EX(cat)
             
         cat.skills.progress_skill(cat)
         Pregnancy_Events.handle_having_kits(cat, clan=game.clan)
@@ -1719,7 +1720,38 @@ class Events:
         self.ceremony_accessory = False
 
         return
+        
+    # This gives outsiders exp. There may be a better spot for it to go,
+    # but I put it here to keep the exp functions together
+    def handle_outside_EX(self, cat):
+        if cat.outside:
 
+            if cat.not_working() and int(random.random() * 3):
+                return
+            
+            if cat.age == 'kitten':
+                return
+
+            if cat.age == 'adolescent':
+                ran = game.config["outside_ex"]["base_adolescent_timeskip_ex"]
+            elif cat.age == 'senior':
+                ran = game.config["outside_ex"]["base_senior_timeskip_ex"]
+            else:
+                ran = game.config["outside_ex"]["base_adult_timeskip_ex"]
+
+            role_modifier = 1
+            if cat.status == "kittypet":
+                # Kittypets will gain exp at 2/3 the rate of loners or exiled cats, as this assumes they are
+                # kept indoors at least part of the time and can't hunt/fight as much
+                role_modifier = 0.6
+                
+            exp = random.choice(list(range(ran[0][0], ran[0][1] + 1)) + list(range(ran[1][0], ran[1][1] + 1)))
+
+            if game.clan.game_mode == "classic":
+                exp += random.randint(0, 3)
+
+            cat.experience += max(exp * role_modifier, 1)
+            
     def handle_apprentice_EX(self, cat):
         """
         TODO: DOCS
