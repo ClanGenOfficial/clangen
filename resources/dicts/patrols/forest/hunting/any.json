@@ -1552,7 +1552,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol mostly ignores the Twolegs. As they hunt, they hear a yelp from r_c. {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} crawled into a metal Twolegs box, and there's nothing {PRONOUN/r_c/subject} or the rest of the patrol can do to get {PRONOUN/r_c/object} out - eventually the Twolegs notice, and r_c is taken by them.",
+                "text": "The patrol mostly ignores the Twolegs. As they hunt, they hear a yelp from r_c. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'ve/'s} crawled into a metal Twolegs box, and there's nothing {PRONOUN/r_c/subject} or the rest of the patrol can do to get {PRONOUN/r_c/object} out - eventually the Twolegs notice, and r_c is taken by them.",
                 "exp": 0,
                 "weight": 10,
                 "lost_cats": ["r_c"]
@@ -1626,7 +1626,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol mostly ignores the Twolegs. As they hunt, they hear a yelp from r_c. {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} crawled into a metal Twolegs box, and there's nothing {PRONOUN/r_c/subject} or the rest of the patrol can do to get {PRONOUN/r_c/object} out - eventually the Twolegs notice, and r_c is taken by them.",
+                "text": "The patrol mostly ignores the Twolegs. As they hunt, they hear a yelp from r_c. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'ve/'s} crawled into a metal Twolegs box, and there's nothing {PRONOUN/r_c/subject} or the rest of the patrol can do to get {PRONOUN/r_c/object} out - eventually the Twolegs notice, and r_c is taken by them.",
                 "exp": 0,
                 "weight": 10,
                 "lost_cats": ["r_c"]
@@ -1700,7 +1700,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol mostly ignores the Twolegs. As they hunt, they hear a yelp from r_c. {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} crawled into a metal Twolegs box, and there's nothing {PRONOUN/r_c/subject} or the rest of the patrol can do to get {PRONOUN/r_c/object} out - eventually the Twolegs notice, and r_c is taken by them.",
+                "text": "The patrol mostly ignores the Twolegs. As they hunt, they hear a yelp from r_c. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'ve/'s} crawled into a metal Twolegs box, and there's nothing {PRONOUN/r_c/subject} or the rest of the patrol can do to get {PRONOUN/r_c/object} out - eventually the Twolegs notice, and r_c is taken by them.",
                 "exp": 0,
                 "weight": 10,
                 "lost_cats": ["r_c"]
@@ -2042,7 +2042,7 @@
             "all apprentices": [2, 2]
         },
         "weight": 20,
-        "intro_text": "{PRONOUN/app2/poss} eyes daring app1 to say no, app2 suggests hunting by the Twoleg dens. Where apprentices are definitely not allowed.",
+        "intro_text": "{PRONOUN/app2/poss/CAP} eyes daring app1 to say no, app2 suggests hunting by the Twoleg dens. Where apprentices are definitely not allowed.",
         "decline_text": "On second thought, they decide to reline their nests today instead.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -2181,7 +2181,7 @@
                 "weight": 20
             },
             {
-                "text": "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around {PRONOUN/r_c/self}. {PRONOUN/r_c/poss} fur stands on end as {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} standing in a metal tunnel, cloaked in rust and camouflage. It's to {PRONOUN/r_c/poss} great fortune that this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leave/leaves} quickly.",
+                "text": "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around {PRONOUN/r_c/self}. {PRONOUN/r_c/poss/CAP} fur stands on end as {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} standing in a metal tunnel, cloaked in rust and camouflage. It's to {PRONOUN/r_c/poss} great fortune that this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leave/leaves} quickly.",
                 "exp": 20,
                 "weight": 5
             },
@@ -2237,7 +2237,7 @@
                 "weight": 20
             },
             {
-                "text": "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around {PRONOUN/r_c/self}. {PRONOUN/r_c/poss} fur stands on end as {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} standing in a metal tunnel, cloaked in rust and camouflage. It's to {PRONOUN/r_c/poss} great fortune that this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leave/leaves} quickly.",
+                "text": "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around {PRONOUN/r_c/self}. {PRONOUN/r_c/poss/CAP} fur stands on end as {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} standing in a metal tunnel, cloaked in rust and camouflage. It's to {PRONOUN/r_c/poss} great fortune that this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leave/leaves} quickly.",
                 "exp": 20,
                 "weight": 5
             },

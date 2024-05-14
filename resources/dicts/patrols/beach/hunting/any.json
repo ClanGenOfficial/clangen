@@ -1359,7 +1359,7 @@
             "all apprentices": [2, 2]
         },
         "weight": 20,
-        "intro_text": "{PRONOUN/app2/poss} eyes daring app1 to say no, app2 suggests hunting by the Twoleg dens... where apprentices are definitely not allowed.",
+        "intro_text": "{PRONOUN/app2/poss/CAP} eyes daring app1 to say no, app2 suggests hunting by the Twoleg dens... where apprentices are definitely not allowed.",
         "decline_text": "On second thought, they decide to recline in their nests today instead.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -1482,7 +1482,7 @@
                 "weight": 20
             },
             {
-                "text": "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around {PRONOUN/r_c/self}. {PRONOUN/r_c/poss} fur stands on end as {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} standing in a metal tunnel, cloaked in rust and camouflage. It's to {PRONOUN/r_c/poss} great fortune that this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leave/leaves} quickly.",
+                "text": "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around {PRONOUN/r_c/self}. {PRONOUN/r_c/poss/CAP} fur stands on end as {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} standing in a metal tunnel, cloaked in rust and camouflage. It's to {PRONOUN/r_c/poss} great fortune that this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leave/leaves} quickly.",
                 "exp": 20,
                 "weight": 5
             },
@@ -1552,7 +1552,7 @@
                 "weight": 20
             },
             {
-                "text": "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around {PRONOUN/r_c/self}. {PRONOUN/r_c/poss} fur stands on end as {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} standing in a metal tunnel, cloaked in rust and camouflage. It's to {PRONOUN/r_c/poss} great fortune that this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leave/leaves} quickly.",
+                "text": "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around {PRONOUN/r_c/self}. {PRONOUN/r_c/poss/CAP} fur stands on end as {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} standing in a metal tunnel, cloaked in rust and camouflage. It's to {PRONOUN/r_c/poss} great fortune that this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leave/leaves} quickly.",
                 "exp": 20,
                 "weight": 5
             },
@@ -4301,7 +4301,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "When r_c spots the red fox {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} tracked dipping into a sheltered cove, {PRONOUN/r_c/subject} {VERB/r_c/hang/hangs} back. {PRONOUN/r_c/subject} {VERB/r_c/sneak/sneaks} around until {PRONOUN/r_c/subject} {VERB/r_c/see/sees} the fox burying a fish for later. {PRONOUN/r_c/subject/CAP} simply {VERB/r_c/wait/waits} for it to finish and leave, then {VERB/r_c/creep/creeps} in to steal the fox's hard work, bringing the prize back to camp for the fresh-kill pile. Sometimes winning a battle doesn't require fighting.",
+                "text": "When r_c spots the red fox {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} tracked dipping into a sheltered cove, {PRONOUN/r_c/subject} {VERB/r_c/hang/hangs} back. {PRONOUN/r_c/subject/CAP} {VERB/r_c/sneak/sneaks} around until {PRONOUN/r_c/subject} {VERB/r_c/see/sees} the fox burying a fish for later. {PRONOUN/r_c/subject/CAP} simply {VERB/r_c/wait/waits} for it to finish and leave, then {VERB/r_c/creep/creeps} in to steal the fox's hard work, bringing the prize back to camp for the fresh-kill pile. Sometimes winning a battle doesn't require fighting.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"],
@@ -4999,7 +4999,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "When r_c spots the gray fox {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} tracked dipping into a sheltered cove, {PRONOUN/r_c/subject} {VERB/r_c/hang/hangs} back. {PRONOUN/r_c/subject} {VERB/r_c/sneak/sneaks} around until {PRONOUN/r_c/subject} {VERB/r_c/see/sees} the fox caching a bird kill in an old log a storm washed in moons ago. {PRONOUN/r_c/subject/CAP} simply {VERB/r_c/wait/waits} for it to finish and leave, then {VERB/r_c/creep/creeps} in to steal the fox's hard work, bringing the prize back to camp for the fresh-kill pile. Sometimes winning a battle doesn't require fighting.",
+                "text": "When r_c spots the gray fox {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} tracked dipping into a sheltered cove, {PRONOUN/r_c/subject} {VERB/r_c/hang/hangs} back. {PRONOUN/r_c/subject/CAP} {VERB/r_c/sneak/sneaks} around until {PRONOUN/r_c/subject} {VERB/r_c/see/sees} the fox caching a bird kill in an old log a storm washed in moons ago. {PRONOUN/r_c/subject/CAP} simply {VERB/r_c/wait/waits} for it to finish and leave, then {VERB/r_c/creep/creeps} in to steal the fox's hard work, bringing the prize back to camp for the fresh-kill pile. Sometimes winning a battle doesn't require fighting.",
                 "exp": 15,
                 "weight": 20,
                 "prey": ["small"]

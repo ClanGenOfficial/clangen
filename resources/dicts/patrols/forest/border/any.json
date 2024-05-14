@@ -809,7 +809,7 @@
                 }
             },
             {
-                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run.",
+                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -906,7 +906,7 @@
                 }
             },
             {
-                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run.",
+                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1134,7 +1134,7 @@
                 ]
             },
             {
-                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run from the patrol.",
+                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run from the patrol.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1283,7 +1283,7 @@
                 ]
             },
             {
-                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run.",
+                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [

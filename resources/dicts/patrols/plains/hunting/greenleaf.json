@@ -2084,7 +2084,7 @@
             ]
         },
         { 
-        "text": "r_c finds {PRONOUN/r_c/self} face to fang with a rattling snake. {PRONOUN/r_c/subject} {VERB/r_c/flinch/flinches} away just as the snake snaps it's dripping fangs shut a single fur's length from {PRONOUN/r_c/poss} nose. r_c bolts back to the patrol. They'll need to alter their hunting path, that was too close!",
+        "text": "r_c finds {PRONOUN/r_c/self} face to fang with a rattling snake. {PRONOUN/r_c/subject/CAP} {VERB/r_c/flinch/flinches} away just as the snake snaps it's dripping fangs shut a single fur's length from {PRONOUN/r_c/poss} nose. r_c bolts back to the patrol. They'll need to alter their hunting path, that was too close!",
                 "exp": 5,
                 "weight": 20, 
                 "prey": ["very small"],

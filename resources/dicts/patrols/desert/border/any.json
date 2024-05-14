@@ -538,7 +538,7 @@
                 ]
             },
             {
-                "text": "Small, yappy, but. . . still a dog. r_c peers down from the tree where the animal has trapped {PRONOUN/r_c/object}, wincing in pain. {PRONOUN/r_c/subject} won't underestimate these ugly creatures again.",
+                "text": "Small, yappy, but. . . still a dog. r_c peers down from the tree where the animal has trapped {PRONOUN/r_c/object}, wincing in pain. {PRONOUN/r_c/subject/CAP} won't underestimate these ugly creatures again.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [

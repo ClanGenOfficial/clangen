@@ -3756,7 +3756,7 @@
             "all apprentices": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "r_c wakes from a dream of rich yolk, tongue sticking out ready to lap from an eggshell. However, when {PRONOUN/r_c/subject} {VERB/r_c/poke/pokes} {PRONOUN/r_c/poss} head out of {PRONOUN/r_c/poss} den to go nest raiding, there's rain pouring down outside. But... {PRONOUN/r_c/subject} can still taste egg on {PRONOUN/r_c/poss} tongue...",
+        "intro_text": "r_c wakes from a dream of rich yolk, tongue sticking out ready to lap from an eggshell. However, when {PRONOUN/r_c/subject} {VERB/r_c/poke/pokes} {PRONOUN/r_c/poss} head out of {PRONOUN/r_c/poss} den to go nest raiding, there's rain pouring down outside. But... {PRONOUN/r_c/subject/CAP} can still taste egg on {PRONOUN/r_c/poss} tongue...",
         "decline_text": "Nope, nope going out in this weather is a bad idea.",
         "chance_of_success": 25,
         "success_outcomes": [

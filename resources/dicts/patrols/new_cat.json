@@ -2199,7 +2199,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "r_c can sense it's a trap, and waits just outside, setting {PRONOUN/r_c/poss} own trap. {PRONOUN/r_c/subject} {VERB/r_c/manage/manages} to set up such a yowl that it sends the rogues running as if LionClan were after them.",
+                "text": "r_c can sense it's a trap, and waits just outside, setting {PRONOUN/r_c/poss} own trap. {PRONOUN/r_c/subject/CAP} {VERB/r_c/manage/manages} to set up such a yowl that it sends the rogues running as if LionClan were after them.",
                 "exp": 30,
                 "weight": 20,
                 "outsider_rep": -2
@@ -2315,7 +2315,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "r_c can sense it's a trap, and waits just outside, setting {PRONOUN/r_c/poss} own trap. {PRONOUN/r_c/subject} {VERB/r_c/manage/manages} to set up such a yowl that it sends the rogues running as if LionClan were after them.",
+                "text": "r_c can sense it's a trap, and waits just outside, setting {PRONOUN/r_c/poss} own trap. {PRONOUN/r_c/subject/CAP} {VERB/r_c/manage/manages} to set up such a yowl that it sends the rogues running as if LionClan were after them.",
                 "exp": 30,
                 "weight": 20,
                 "outsider_rep": -2

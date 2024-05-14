@@ -2870,7 +2870,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "r_c sees a fish {PRONOUN/r_c/subject}'d like for the fresh-kill pile, but while perched on a rock setting up a good pounce a rogue wave washes them into the ocean. {PRONOUN/r_c/subject} {VERB/r_c/bob/bobs} to the surface and splutter {PRONOUN/r_c/poss} way to shore, but {PRONOUN/r_c/poss} breath comes short and wheezing after the dunking. Fleas and ticks!",
+                "text": "r_c sees a fish {PRONOUN/r_c/subject}'d like for the fresh-kill pile, but while perched on a rock setting up a good pounce a rogue wave washes them into the ocean. {PRONOUN/r_c/subject/CAP} {VERB/r_c/bob/bobs} to the surface and splutter {PRONOUN/r_c/poss} way to shore, but {PRONOUN/r_c/poss} breath comes short and wheezing after the dunking. Fleas and ticks!",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -3286,7 +3286,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "r_c sees a fish {PRONOUN/r_c/subject}'d like for the fresh-kill pile, but while perched on a rock setting up a good pounce a rogue wave washes them into the ocean. {PRONOUN/r_c/subject} {VERB/r_c/bob/bobs} to the surface and splutter {PRONOUN/r_c/poss} way to shore, but {PRONOUN/r_c/poss} breath comes short and wheezing after the dunking. Fleas and ticks!",
+                "text": "r_c sees a fish {PRONOUN/r_c/subject}'d like for the fresh-kill pile, but while perched on a rock setting up a good pounce a rogue wave washes them into the ocean. {PRONOUN/r_c/subject/CAP} {VERB/r_c/bob/bobs} to the surface and splutter {PRONOUN/r_c/poss} way to shore, but {PRONOUN/r_c/poss} breath comes short and wheezing after the dunking. Fleas and ticks!",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
