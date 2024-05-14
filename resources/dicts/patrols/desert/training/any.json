@@ -1197,7 +1197,7 @@
                 ]
             },
             {
-                "text": "s_c is a fantastic hunter, and p_l isn't shy about telling {PRONOUN/s_c/object} so. {PRONOUN/s_c/subject/CAP} {VERB/s_c/blush/blushes}, but {VERB/s_c/work/works} through it, showing p_l how to use the sandscape to blend into the horizon so that prey won't see their silhouette.",
+                "text": "s_c is a fantastic hunter, and p_l isn't shy about telling {PRONOUN/s_c/object} so. {PRONOUN/s_c/subject/CAP} {VERB/s_c/blush/blushes}, but {VERB/s_c/work/works} through it, showing p_l how to use the sandscape to blend into the horizon so that prey won't see {PRONOUN/p_l/poss} silhouette.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["HUNTER,3"],

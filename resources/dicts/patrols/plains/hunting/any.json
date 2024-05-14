@@ -1704,7 +1704,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The patrol crosses the Thunderpath and hunt on the other side.",
+                "text": "The patrol crosses the Thunderpath and hunts on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
@@ -1794,7 +1794,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The patrol crosses the Thunderpath and hunt on the other side.",
+                "text": "The patrol crosses the Thunderpath and hunts on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
@@ -1883,7 +1883,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "The patrol crosses the Thunderpath and hunt on the other side.",
+                "text": "The patrol crosses the Thunderpath and hunts on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["large"]
@@ -1967,7 +1967,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "The patrol crosses the Thunderpath and hunt on the other side.",
+                "text": "The patrol crosses the Thunderpath and hunts on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["large"]

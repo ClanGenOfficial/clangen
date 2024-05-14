@@ -2181,7 +2181,7 @@
                 "weight": 20
             },
             {
-                "text": "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around {PRONOUN/r_c/object}, only for {PRONOUN/r_c/poss} fur to stand on end as {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} standing in a metal tunnel, cloaked in rust and camouflage. It's to {PRONOUN/r_c/poss} great fortune that this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leave/leaves} quickly.",
+                "text": "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around {PRONOUN/r_c/self}. {PRONOUN/r_c/poss} fur stands on end as {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} standing in a metal tunnel, cloaked in rust and camouflage. It's to {PRONOUN/r_c/poss} great fortune that this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leave/leaves} quickly.",
                 "exp": 20,
                 "weight": 5
             },
@@ -2237,7 +2237,7 @@
                 "weight": 20
             },
             {
-                "text": "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around {PRONOUN/r_c/object}, only for {PRONOUN/r_c/poss} fur to stand on end as {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} standing in a metal tunnel, cloaked in rust and camouflage. It's to {PRONOUN/r_c/poss} great fortune that this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leave/leaves} quickly.",
+                "text": "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around {PRONOUN/r_c/self}. {PRONOUN/r_c/poss} fur stands on end as {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} standing in a metal tunnel, cloaked in rust and camouflage. It's to {PRONOUN/r_c/poss} great fortune that this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leave/leaves} quickly.",
                 "exp": 20,
                 "weight": 5
             },
@@ -2294,7 +2294,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The patrol crosses the Thunderpath and hunt on the other side.",
+                "text": "The patrol crosses the Thunderpath and hunts on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["large"]
@@ -2383,7 +2383,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The patrol crosses the Thunderpath and hunt on the other side.",
+                "text": "The patrol crosses the Thunderpath and hunts on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["large"]
@@ -2472,7 +2472,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "The patrol crosses the Thunderpath and hunt on the other side.",
+                "text": "The patrol crosses the Thunderpath and hunts on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
@@ -2556,7 +2556,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "The patrol crosses the Thunderpath and hunt on the other side.",
+                "text": "The patrol crosses the Thunderpath and hunts on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["large"]
