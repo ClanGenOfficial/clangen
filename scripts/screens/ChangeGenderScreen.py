@@ -91,17 +91,17 @@ class ChangeGenderScreen(Screens):
                 self.next_cat_button.disable()
                 self.back_button.disable()
 
-            else:
+            elif event.ui_element in self.buttons.values() or event.ui_element in self.removalbuttons.values():
                 with open('resources/dicts/pronouns.json', 'r', encoding='utf-8') as file:
                     pronouns_data = ujson.load(file)
 
                 for pronounset in pronouns_data["default_pronouns"]:
                     add_button_id = f"add_button_{pronounset['ID']}" + "preset"
                     if event.ui_element == self.buttons.get(add_button_id):
-                        print("added")
+                        #print("added")
                         for x in range(len(pronouns_data["default_pronouns"])):
                             if pronounset['ID'] == pronouns_data["default_pronouns"][x]['ID']:
-                                print("in default")
+                                #print("in default")
                                 if not self.is_duplicate(pronounset):
                                     self.the_cat.pronouns.append(pronounset)
                                     self.update_selected_cat()
@@ -109,10 +109,10 @@ class ChangeGenderScreen(Screens):
                     remove_button_id = f"remove_button_{pronounset['ID']}" + "preset"
                     add_button_id = f"add_button_{pronounset['ID']}" + "preset"
                     if event.ui_element == self.buttons.get(add_button_id):
-                        print("added")
+                        #print("added")
                         for x in range(len(game.clan.custom_pronouns)):
                             if pronounset['ID'] == game.clan.custom_pronouns[x]['ID']:
-                                print("in custom")
+                                #print("in custom")
                                 if not self.is_duplicate(pronounset):
                                     self.the_cat.pronouns.append(pronounset)
                                     self.update_selected_cat()
@@ -125,17 +125,7 @@ class ChangeGenderScreen(Screens):
                         self.the_cat.pronouns.remove(pronounset)
                         self.update_selected_cat()
                         break
-
-        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
-            if event.key == pygame.K_ESCAPE:
-                self.change_screen("profile screen")
-            elif event.key == pygame.K_RIGHT:
-                game.switches["cat"] = self.next_cat
-                self.update_selected_cat()
-            elif event.key == pygame.K_LEFT:
-                game.switches["cat"] = self.previous_cat
-                self.update_selected_cat()
-
+                    
     def screen_switches(self):
         self.next_cat_button = UIImageButton(scale(pygame.Rect((1244, 50), (306, 60))), "", object_id="#next_cat_button"
                                              , manager=MANAGER)

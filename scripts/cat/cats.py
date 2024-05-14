@@ -316,7 +316,6 @@ class Cat():
                 else:
                     self.pronouns = [self.default_pronouns[0].copy()]
                     self.genderalign = "nonbinary"
-
                     
             # APPEARANCE
             self.pelt = Pelt.generate_new_pelt(self.gender, [Cat.fetch_cat(i) for i in (self.parent1, self.parent2) if i], self.age)
