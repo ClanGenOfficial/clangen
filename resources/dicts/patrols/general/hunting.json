@@ -2748,7 +2748,7 @@
             "prey": ["medium"]
         },
         {
-            "text": "s_c is complimented on {PRONOUN/s_c/poss} hunting talents. {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} humble about it, but that doesn't make it less true.",
+            "text": "s_c is complimented on {PRONOUN/s_c/poss} hunting talents. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} humble about it, but that doesn't make it less true.",
             "exp": 30,
             "weight": 20,
             "stat_skill": ["HUNTER,0"],

@@ -91,7 +91,7 @@
                 ]
             },
             {
-                "text": "Not letting {PRONOUN/s_c/self} panic, s_c darts away for a branch. {PRONOUN/s_c/subject} {VERB/s_c/shove/shoves} it into the water, and the shocked and waterlogged r_c clings to it until {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} washed to shore.",
+                "text": "Not letting {PRONOUN/s_c/self} panic, s_c darts away for a branch. {PRONOUN/s_c/subject/CAP} {VERB/s_c/shove/shoves} it into the water, and the shocked and waterlogged r_c clings to it until {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} washed to shore.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"],
@@ -236,7 +236,7 @@
                 ]
             },
             {
-                "text": "Not letting {PRONOUN/s_c/self} panic, s_c darts away for a branch. {PRONOUN/s_c/subject} {VERB/s_c/shove/shoves} it into the water, and the shocked and waterlogged r_c clings to it until {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} washed to shore.",
+                "text": "Not letting {PRONOUN/s_c/self} panic, s_c darts away for a branch. {PRONOUN/s_c/subject/CAP} {VERB/s_c/shove/shoves} it into the water, and the shocked and waterlogged r_c clings to it until {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} washed to shore.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"],
@@ -492,7 +492,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c shivers a little, thinking of the dangers of solo patrols. . . No, definitely not. {PRONOUN/s_c/subject} {VERB/s_c/turn/turns} around and {VERB/s_c/go/goes} straight back to camp.",
+                "text": "s_c shivers a little, thinking of the dangers of solo patrols. . . No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and {VERB/s_c/go/goes} straight back to camp.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["insecure", "lonesome", "nervous"]

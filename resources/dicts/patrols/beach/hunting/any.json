@@ -5012,7 +5012,7 @@
                 "prey": ["small"]
             },
             {
-                "text": "It's a situation that calls for careful, deliberate action. s_c tracks the scent trail and finds a gray fox holding a plump mouse at its end. {PRONOUN/s_c/subject} {VERB/s_c/wait/waits} for the fox to cache its fresh-kill in a hole and leave to continue its hunt, then {PRONOUN/s_c/subject} {VERB/s_c/slink/slinks} out of the bushes. s_c picks up the prey and strolls back to camp, having successfully outwitted the competing predator.",
+                "text": "It's a situation that calls for careful, deliberate action. s_c tracks the scent trail and finds a gray fox holding a plump mouse at its end. {PRONOUN/s_c/subject/CAP} {VERB/s_c/wait/waits} for the fox to cache its fresh-kill in a hole and leave to continue its hunt, then {PRONOUN/s_c/subject} {VERB/s_c/slink/slinks} out of the bushes. s_c picks up the prey and strolls back to camp, having successfully outwitted the competing predator.",
                 "exp": 15,
                 "weight": 20,
                 "stat_trait": [
