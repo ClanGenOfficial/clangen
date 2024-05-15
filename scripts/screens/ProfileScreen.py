@@ -514,10 +514,10 @@ class ProfileScreen(Screens):
 
         # Write cat thought
         self.profile_elements["cat_thought"] = pygame_gui.elements.UITextBox(self.the_cat.thought,
-                                                                             scale(pygame.Rect((200, 340), (1200, 80))),
+                                                                             scale(pygame.Rect((200, 340), (1200, -1))),
                                                                              wrap_to_height=True,
                                                                              object_id=get_text_box_theme(
-                                                                                 "#text_box_30_horizcenter_spacing_95")
+                                                                                 "#text_box_30_horizcenter")
                                                                              , manager=MANAGER)
 
         self.profile_elements["cat_info_column1"] = UITextBoxTweaked(self.generate_column1(self.the_cat),
