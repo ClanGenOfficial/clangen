@@ -8,7 +8,8 @@
         "weight": 20,
         "event_text": "A loner leaves their litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/poss} own.",
         "m_c": {
-            "age": ["young adult", "adult", "senior adult", "senior"]
+            "age": ["young adult", "adult", "senior adult", "senior"],
+            "status": ["any"]
         },
         "new_cat": [
             ["age:has_kits", "meeting", "loner", "can_birth"],
@@ -32,7 +33,8 @@
         "weight": 10,
         "event_text": "A rogue leaves their litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/poss} own.",
         "m_c": {
-            "age": ["young adult", "adult", "senior adult", "senior"]
+            "age": ["young adult", "adult", "senior adult", "senior"],
+            "status": ["any"]
         },
         "new_cat": [
             ["age:has_kits", "meeting", "rogue", "can_birth"],
@@ -56,7 +58,8 @@
         "weight": 10,
         "event_text": "A o_c queen decides to leave their litter with you. m_c takes them as {PRONOUN/m_c/poss} own.",
         "m_c": {
-            "age": ["young adult", "adult", "senior adult", "senior"]
+            "age": ["young adult", "adult", "senior adult", "senior"],
+            "status": ["any"]
         },
         "new_cat": [
             ["age:has_kits", "meeting", "clancat", "can_birth"],
@@ -80,7 +83,8 @@
         "weight": 5,
         "event_text": "A kittypet leaves their litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/poss} own.",
         "m_c": {
-            "age": ["young adult", "adult", "senior adult", "senior"]
+            "age": ["young adult", "adult", "senior adult", "senior"],
+            "status": ["any"]
         },
         "new_cat": [
             ["age:has_kits", "meeting", "kittypet", "can_birth"],
@@ -104,7 +108,8 @@
         "weight": 20,
         "event_text": "m_c finds an abandoned litter, and decides to adopt them as {PRONOUN/m_c/poss} own.",
         "m_c": {
-            "age": ["young adult", "adult", "senior adult", "senior"]
+            "age": ["young adult", "adult", "senior adult", "senior"],
+            "status": ["any"]
         },
         "new_cat": [
             [
@@ -121,6 +126,10 @@
         "season": ["any"],
         "weight": 20,
         "event_text": "m_c finds an abandoned kit and names {PRONOUN/n_c/object} n_c.",
+        "m_c": {
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "status": ["any"]
+        },
         "new_cat": [
             [
                 "new_name",
@@ -190,10 +199,12 @@
         "event_text": "m_c and r_c, in the early hours of the day, informed whoever else was awake that they had to handle something and ventured out of camp. Hours later, m_c, r_c, and another cat confidently strode into camp, tails entwined with each other. m_c introduced n_c:0 to the Clan, stating that {PRONOUN/n_c/subject} {VERB/n_c/are/is} staying.",
         "m_c": {
             "age": ["young adult", "adult", "senior adult", "senior"],
+            "status": ["any"],
             "relationship_status": ["mates"]
           },
           "r_c": {
             "age": ["young adult", "adult", "senior adult", "senior"],
+            "status": ["any"],
             "relationship_status": ["mates"]
         },
         "new_cat": [
@@ -242,6 +253,10 @@
         "season": ["any"],
         "weight": 15,
         "event_text": "m_c finds a loner named n_c_pre, who joins the Clan. The loner decides to keep {PRONOUN/n_c/poss} old name.",
+        "m_c": {
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "status": ["any"]
+        },
         "new_cat": [
             [
                 "old_name",
@@ -287,6 +302,10 @@
         "season": ["any"],
         "weight": 20,
         "event_text": "m_c finds a loner named n_c_pre, who joins the Clan. The loner decides to take on a more Clan-like name, and is now called n_c.",
+        "m_c": {
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "status": ["any"]
+        },
         "new_cat": [
             [
                 "new_name",
@@ -320,6 +339,10 @@
         "season": ["any"],
         "weight": 20,
         "event_text": "m_c finds a kittypet named n_c_pre, who joins the Clan. The kittypet decides to keep {PRONOUN/n_c/poss} old name.",
+        "m_c": {
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "status": ["any"]
+        },
         "new_cat": [
             [
                 "old_name",
@@ -335,21 +358,10 @@
         "season": ["any"],
         "weight": 20,
         "event_text": "m_c finds a kittypet named n_c_pre, who joins the Clan. The kittypet decides to take on a more Clan-like name, and is now called n_c.",
-        "new_cat": [
-            [
-                "new_name",
-                "kittypet",
-                "status: warrior" 
-            ]
-        ]
-    },
-    {
-        "event_id": "gen_new_cat_anykittypet2",
-        "biome": ["any"],
-        "camp": ["any"],
-        "season": ["any"],
-        "weight": 20,
-        "event_text": "m_c finds a kittypet named n_c_pre, who joins the Clan. The kittypet decides to take on a more Clan-like name, and is now called n_c.",
+        "m_c": {
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "status": ["any"]
+        },
         "new_cat": [
             [
                 "new_name",
@@ -374,7 +386,7 @@
         ]
     },
     {
-        "event_id": "gen_new_cat_anykittypet3",
+        "event_id": "gen_new_cat_anykittypet4",
         "biome": ["any"],
         "camp": ["any"],
         "season": ["any"],
@@ -388,7 +400,6 @@
             ]
         ]
     },
-
     {
         "event_id": "gen_new_cat_anyrogue1",
         "biome": ["any"],
@@ -396,6 +407,10 @@
         "season": ["any"],
         "weight": 20,
         "event_text": "m_c finds a rogue named n_c_pre, who joins the Clan. The rogue decides to keep {PRONOUN/n_c/poss} old name.",
+        "m_c": {
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "status": ["any"]
+        },
         "new_cat": [
             [
                 "old_name",
@@ -411,6 +426,10 @@
         "season": ["any"],
         "weight": 20,
         "event_text": "m_c finds a rogue named n_c_pre, who joins the Clan. The rogue decides to take on a more Clan-like name, and is now called n_c.",
+        "m_c": {
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "status": ["any"]
+        },
         "new_cat": [
             [
                 "new_name",
@@ -457,6 +476,10 @@
         "season": ["any"],
         "weight": 20,
         "event_text": "m_c finds a warrior from o_c named n_c, who asks to join the Clan.",
+        "m_c": {
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "status": ["any"]
+        },
         "new_cat": [
             [
                 "old_name",
