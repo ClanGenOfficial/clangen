@@ -471,7 +471,7 @@ class MedDenScreen(Screens):
             short_name = shorten_text_to_fit(name, 185, 30)
             self.cat_names.append(pygame_gui.elements.UITextBox(short_name,
                                                                 scale(
-                                                                    pygame.Rect((pos_x - 60, pos_y + 100), (220, 60))),
+                                                                    pygame.Rect((pos_x - 60, pos_y + 100), (220, -1))),
                                                                 object_id="#text_box_30_horizcenter", manager=MANAGER))
 
             pos_x += 200

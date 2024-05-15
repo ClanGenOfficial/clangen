@@ -491,7 +491,6 @@ class ProfileScreen(Screens):
                                                                               "#text_box_40_horizcenter"),
                                                                           manager=MANAGER)
         name_text_size = self.profile_elements["cat_name"].get_relative_rect()
-        print(name_text_size)
         self.profile_elements["cat_name"].kill()
 
         # don't like having to do this, but for some reason the usual scaling is not working here
@@ -514,10 +513,10 @@ class ProfileScreen(Screens):
 
         # Write cat thought
         self.profile_elements["cat_thought"] = pygame_gui.elements.UITextBox(self.the_cat.thought,
-                                                                             scale(pygame.Rect((200, 340), (1200, 80))),
+                                                                             scale(pygame.Rect((200, 340), (1200, -1))),
                                                                              wrap_to_height=True,
                                                                              object_id=get_text_box_theme(
-                                                                                 "#text_box_30_horizcenter_spacing_95")
+                                                                                 "#text_box_30_horizcenter")
                                                                              , manager=MANAGER)
 
         self.profile_elements["cat_info_column1"] = UITextBoxTweaked(self.generate_column1(self.the_cat),

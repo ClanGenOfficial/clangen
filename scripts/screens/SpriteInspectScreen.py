@@ -144,23 +144,28 @@ class SpriteInspectScreen(Screens):
         self.save_image_button = UIImageButton(scale(pygame.Rect((50, 190),(270, 60))), "", object_id="#save_image_button")
         
         # Toggle Text:
-        self.platform_shown_text = pygame_gui.elements.UITextBox("Show Platform", scale(pygame.Rect((310, 1160), (290, 100))),
+        self.platform_shown_text = pygame_gui.elements.UITextBox("Show Platform",
+                                                                 scale(pygame.Rect((300, 1160), (-1, 100))),
                                                                  object_id=get_text_box_theme(
                                                                               "#text_box_34_horizcenter"), 
                                                                  starting_height=2)
-        self.scars_shown_text = pygame_gui.elements.UITextBox("Show Scar(s)", scale(pygame.Rect((710, 1160), (290, 100))),
+        self.scars_shown_text = pygame_gui.elements.UITextBox("Show Scar(s)",
+                                                              scale(pygame.Rect((700, 1160), (-1, 100))),
                                                               object_id=get_text_box_theme(
                                                                               "#text_box_34_horizcenter"), 
                                                                  starting_height=2)
-        self.acc_shown_text = pygame_gui.elements.UITextBox("Show Accessory", scale(pygame.Rect((1100, 1160), (290, 100))),
+        self.acc_shown_text = pygame_gui.elements.UITextBox("Show Accessory",
+                                                            scale(pygame.Rect((1090, 1160), (-1, 100))),
                                                             object_id=get_text_box_theme(
                                                                               "#text_box_34_horizcenter"), 
                                                             starting_height=2)
-        self.override_dead_lineart_text = pygame_gui.elements.UITextBox("Show as Living", scale(pygame.Rect((510, 1260), (290, 100))),
+        self.override_dead_lineart_text = pygame_gui.elements.UITextBox("Show as Living",
+                                                                        scale(pygame.Rect((500, 1260), (-1, 100))),
                                                                         object_id=get_text_box_theme(
                                                                               "#text_box_34_horizcenter"), 
                                                                         starting_height=2)
-        self.override_not_working_text = pygame_gui.elements.UITextBox("Show as Healthy", scale(pygame.Rect((910, 1260), (290, 100))),
+        self.override_not_working_text = pygame_gui.elements.UITextBox("Show as Healthy",
+                                                                       scale(pygame.Rect((900, 1260), (-1, 100))),
                                                                  object_id=get_text_box_theme(
                                                                               "#text_box_34_horizcenter"), 
                                                                  starting_height=2)
