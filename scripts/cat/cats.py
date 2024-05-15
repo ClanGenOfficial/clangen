@@ -685,7 +685,7 @@ class Cat():
         ids = []
         for child_id in children:
             child = Cat.all_cats[child_id]
-            if child.outside and not child.exiled and child.moons < 12:
+            if child.outside and not child.exiled and not child.dead and child.moons < 12:
                 child.add_to_clan()
                 ids.append(child_id)
         

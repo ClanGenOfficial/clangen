@@ -307,7 +307,7 @@ class Clan():
         """
         TODO: DOCS
         """
-        if cat.ID in Cat.all_cats and not cat.outside and cat.ID in Cat.outside_cats:
+        if cat.ID in Cat.all_cats and not cat.outside and not cat.dead and cat.ID in Cat.outside_cats:
             # The outside-value must be set to True before the cat can go to cotc
             Cat.outside_cats.pop(cat.ID)
             cat.clan = str(game.clan.name)
