@@ -491,7 +491,6 @@ class ProfileScreen(Screens):
                                                                               "#text_box_40_horizcenter"),
                                                                           manager=MANAGER)
         name_text_size = self.profile_elements["cat_name"].get_relative_rect()
-        print(name_text_size)
         self.profile_elements["cat_name"].kill()
 
         # don't like having to do this, but for some reason the usual scaling is not working here
