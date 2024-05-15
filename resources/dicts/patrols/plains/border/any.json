@@ -2,7 +2,7 @@
     {
         "patrol_id": "pln_bord_tunnel1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "pln_bord_tunnel",
@@ -154,7 +154,7 @@
     {
         "patrol_id": "pln_bord_tunnel2",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "pln_bord_tunnel",
@@ -234,7 +234,7 @@
     {
         "patrol_id": "pln_bord_rogue1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -343,7 +343,7 @@
     {
         "patrol_id": "pln_bord_rogue2",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -389,7 +389,7 @@
     {
         "patrol_id": "pln_bord_rogue3",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -508,7 +508,7 @@
     {
         "patrol_id": "pln_bord_trackrogue1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
@@ -607,7 +607,7 @@
     {
         "patrol_id": "pln_bord_trackrogue2",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
@@ -706,7 +706,7 @@
     {
         "patrol_id": "pln_bord_trackrogue3",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
@@ -794,7 +794,7 @@
     {
         "patrol_id": "pln_bord_trackrogue4",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
@@ -941,7 +941,7 @@
     {
         "patrol_id": "pln_bord_trackrogue5",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
@@ -1088,7 +1088,7 @@
     {
         "patrol_id": "pln_bord_trackrogue6",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
@@ -1161,7 +1161,7 @@
     {
         "patrol_id": "pln_bord_trackrogue7",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
@@ -1251,7 +1251,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
+                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment and can't meet the eyes of the rest of the patrol.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1284,7 +1284,7 @@
     {
         "patrol_id": "pln_bord_trackrogue8",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
@@ -1374,7 +1374,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
+                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment and can't meet the eyes of the rest of the patrol.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1407,7 +1407,7 @@
     {
         "patrol_id": "pln_bord_trackrogue9",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
@@ -1452,7 +1452,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, and can't meet the eyes of the rest of the patrol. {PRONOUN/app1/subject/CAP} don't want to look dumb in front of other cats.",
+                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment and can't meet the eyes of the rest of the patrol. {PRONOUN/app1/subject/CAP} don't want to look dumb in front of other cats.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1503,7 +1503,7 @@
     {
         "patrol_id": "plains_bord_story1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -1609,7 +1609,7 @@
     {
         "patrol_id": "pln_bord_frnight1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["halloween"],
         "patrol_art": "pln_fresno",
@@ -1650,7 +1650,7 @@
     {
         "patrol_id": "pln_bord_ufo1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["halloween"],
         "patrol_art": "pln_UFO",
@@ -1692,7 +1692,7 @@
     {
         "patrol_id": "pln_train_beautyandthebeast_storylocked1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_story",

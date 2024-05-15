@@ -2,7 +2,7 @@
     {
         "patrol_id": "fst_hunt_porcupine1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "fst_hunt_porcupine",
@@ -83,7 +83,7 @@
     {
         "patrol_id": "fst_hunt_porcupine2",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "fst_hunt_porcupine",
@@ -158,7 +158,7 @@
     {
         "patrol_id": "fst_hunt_rabbitburrow1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -188,7 +188,7 @@
     {
         "patrol_id": "fst_hunt_twolegplace1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "fst_hunt_twolegplace",
@@ -207,7 +207,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "The patrol finds some astonishingly fat chickens running around the Twoleg nest, and helps themselves to one.",
+                "text": "The patrol finds some astonishingly fat chickens running around the Twoleg nest and helps themselves to one.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["large"]
@@ -239,7 +239,7 @@
     {
         "patrol_id": "fst_hunt_twolegplace2",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "fst_hunt_twolegplace",
@@ -258,7 +258,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "The patrol finds some astonishingly fat chickens running around the Twoleg nest, and helps themselves to as many as they can carry.",
+                "text": "The patrol finds some astonishingly fat chickens running around the Twoleg nest and helps themselves to as many as they can carry.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["large"]
@@ -290,7 +290,7 @@
     {
         "patrol_id": "fst_hunt_squirrelchase1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "fst_hunt_squirrelchase",
@@ -357,7 +357,7 @@
     {
         "patrol_id": "fst_hunt_burrow1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_burrow",
@@ -417,7 +417,7 @@
     {
         "patrol_id": "fst_hunt_burrow2",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_burrow",
@@ -469,7 +469,7 @@
     {
         "patrol_id": "fst_hunt_howl1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "fst_hunt_howl",
@@ -562,7 +562,7 @@
     {
         "patrol_id": "fst_hunt_howl2",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "fst_hunt_howl",
@@ -655,7 +655,7 @@
     {
         "patrol_id": "fst_hunt_howl3",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "fst_hunt_howl",
@@ -730,7 +730,7 @@
     {
         "patrol_id": "fst_hunt_howl4",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "fst_hunt_howl",
@@ -823,7 +823,7 @@
     {
         "patrol_id": "fst_hunt_howl5",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "fst_hunt_howl",
@@ -898,7 +898,7 @@
     {
         "patrol_id": "fst_hunt_howl6",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "fst_hunt_howl",
@@ -973,7 +973,7 @@
     {
         "patrol_id": "fst_hunt_strange1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_strange",
@@ -992,7 +992,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "A stinky bush will do! The plan works and their hunt goes well.",
+                "text": "A stinky bush will do! The plan works, and their hunt goes well.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"]
@@ -1028,7 +1028,7 @@
     {
         "patrol_id": "fst_hunt_strange2",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_strange",
@@ -1077,7 +1077,7 @@
     {
         "patrol_id": "fst_hunt_huntassessment1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_huntassessment",
@@ -1098,13 +1098,13 @@
                 "prey": ["medium"]
             },
             {
-                "text": "r_c focuses completely on {PRONOUN/r_c/poss} test, slipping into a clear-eyed, razor focused routine of catch and stash, catch and stash. Eventually {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} caught enough to need {PRONOUN/r_c/poss} mentor's help carrying it back to camp, and the feeling seeing {PRONOUN/r_c/poss} prey stock the fresh-kill pile - {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} ready to burst with happiness!",
+                "text": "r_c focuses completely on {PRONOUN/r_c/poss} test, slipping into a clear-eyed, focused routine of catch and stash, catch and stash. Eventually {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} caught enough to need {PRONOUN/r_c/poss} mentor's help carrying it back to camp, and the feeling seeing {PRONOUN/r_c/poss} prey stock the fresh-kill pile - {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} ready to burst with happiness!",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["large"]
             },
             {
-                "text": "It's a terrible day for hunting, the prey running sparse and alert. But s_c takes {PRONOUN/s_c/poss} time and doesn't let the conditions discourage {PRONOUN/s_c/object}, until eventually the perfect opportunity falls into place and {PRONOUN/s_c/subject} {VERB/s_c/pull/pulls} off a perfect catch!",
+                "text": "It's a terrible day for hunting, the prey running sparse and alert. But s_c takes {PRONOUN/s_c/poss} time and doesn't let the conditions discourage {PRONOUN/s_c/object}, until eventually the right opportunity presents itself and {PRONOUN/s_c/subject} {VERB/s_c/pull/pulls} off a perfect catch!",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1126,12 +1126,12 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Hunting is poor, and while r_c's mentor is disappointed, they don't expect r_c to be able to catch what isn't there.",
+                "text": "Hunting is poor, and while r_c's mentor is disappointed, they don't expect r_c to catch what isn't there.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "s_c is too hasty, bouncing after first one prey, then another, and it ends with {PRONOUN/s_c/object} empty pawed and exhausted. {PRONOUN/s_c/poss/CAP} mentor is disappointed - {PRONOUN/s_c/subject} clearly need more training.",
+                "text": "s_c is too hasty, bouncing after first one prey, then another, and it ends with {PRONOUN/s_c/object} empty-pawed and exhausted. {PRONOUN/s_c/poss/CAP} mentor is disappointed - {PRONOUN/s_c/subject} clearly need more training.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -1164,7 +1164,7 @@
     {
         "patrol_id": "fst_hunt_solo2",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -1183,13 +1183,13 @@
                 "prey": ["medium"]
             },
             {
-                "text": "r_c finds a fat, dumb, slow rabbit, and {PRONOUN/r_c/subject} can barely drag the thing back to camp, but by the stars it's juicy when {PRONOUN/r_c/subject} {VERB/r_c/sit/sits} down to eat it with {PRONOUN/r_c/poss} Clanmates.",
+                "text": "r_c finds a fat, dumb, slow rabbit, and {PRONOUN/r_c/subject} can barely drag the thing back to camp, but great StarClan, it's juicy when {PRONOUN/r_c/subject} {VERB/r_c/sit/sits} down to eat it with {PRONOUN/r_c/poss} Clanmates.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["large"]
             },
             {
-                "text": "s_c gets the chance to try out an idea {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} been sitting on for a while. There's a rabbit warren that {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} spotted that's particularly badly built, and {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} to dig down into one of the dens, fishing baby rabbits out by the pawful.",
+                "text": "s_c gets the chance to try out an idea {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} been sitting on for a while. There's a rabbit warren that {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} spotted that's particularly badly built, and {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} down into one of the dens, fishing baby rabbits out by the pawful.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -1232,7 +1232,7 @@
     {
         "patrol_id": "fst_hunt_solo3",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -1253,13 +1253,13 @@
                 "prey": ["medium"]
             },
             {
-                "text": "r_c finds a fat, dumb, slow rabbit, and {PRONOUN/r_c/subject} can barely drag the thing back to camp, but by the stars it's juicy when {PRONOUN/r_c/subject} {VERB/r_c/sit/sits} down to eat it with {PRONOUN/r_c/poss} Clanmates. Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a small moment of peace, relaxing with {PRONOUN/r_c/poss} friends.",
+                "text": "r_c finds a fat, dumb, slow rabbit, and {PRONOUN/r_c/subject} can barely drag the thing back to camp, but great StarClan, it's juicy when {PRONOUN/r_c/subject} {VERB/r_c/sit/sits} down to eat it with {PRONOUN/r_c/poss} Clanmates. Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a moment of peace, relaxing with {PRONOUN/r_c/poss} friends.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["large"]
             },
             {
-                "text": "s_c gets the chance to try out an idea {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} been sitting on for a while. There's a rabbit warren that {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} spotted that's particularly badly built, and {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} to dig down into one of the dens, fishing a couple baby rabbits out. This is a good spot to remember if c_n hits hard times.",
+                "text": "s_c gets the chance to try out an idea {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} been sitting on for a while. There's a rabbit warren that {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} spotted that's particularly badly built, and {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} down into one of the dens, fishing a couple baby rabbits out. This is a good spot to remember if c_n hits hard times.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -1302,7 +1302,7 @@
     {
         "patrol_id": "fst_hunt_solo4",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -1323,13 +1323,13 @@
                 "prey": ["medium"]
             },
             {
-                "text": "r_c finds a fat, dumb, slow rabbit, and {PRONOUN/r_c/subject} can barely drag the thing back to camp, but by the stars it's juicy when {PRONOUN/r_c/subject} {VERB/r_c/sit/sits} down to eat it with {PRONOUN/r_c/poss} Clanmates. Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a small moment of peace, relaxing with {PRONOUN/r_c/poss} friends.",
+                "text": "r_c finds a fat, dumb, slow rabbit, and {PRONOUN/r_c/subject} can barely drag the thing back to camp, but great StarClan, it's juicy when {PRONOUN/r_c/subject} {VERB/r_c/sit/sits} down to eat it with {PRONOUN/r_c/poss} Clanmates. Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a moment of peace, relaxing with {PRONOUN/r_c/poss} friends.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["large"]
             },
             {
-                "text": "s_c gets the chance to try out an idea {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} been sitting on for a while. There's a rabbit warren that {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} spotted that's particularly badly built, and {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} to dig down into one of the dens, fishing a couple baby rabbits out. This is a good spot to remember if c_n hits hard times.",
+                "text": "s_c gets the chance to try out an idea {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} been sitting on for a while. There's a rabbit warren that {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} spotted that's particularly badly built, and {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} down into one of the dens, fishing a couple baby rabbits out. This is a good spot to remember if c_n hits hard times.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -1372,7 +1372,7 @@
     {
         "patrol_id": "fst_hunt_noise1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -1385,13 +1385,13 @@
         "chance_of_success": 20,
         "success_outcomes": [
             {
-                "text": "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise. {PRONOUN/r_c/subject/CAP} find {PRONOUN/r_c/self} to be correct when {PRONOUN/r_c/subject} pounce into the bush and return to the patrol with the tasty morsel dangling from {PRONOUN/r_c/poss} mouth. One more for the fresh-kill pile!",
+                "text": "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise. {PRONOUN/r_c/subject/CAP} find {PRONOUN/r_c/self} to be correct when {PRONOUN/r_c/subject} pounce into the bush and return to the patrol with the tasty morsel dangling from {PRONOUN/r_c/poss} jaws. One more for the fresh-kill pile!",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
             },
             {
-                "text": "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out! s_c is quick to react and manages to snag the rabbit before it can disappear.",
+                "text": "p_l pads towards the bush to check on the noise when a rabbit bursts out! s_c is quick to react and snags the rabbit before it can disappear.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1"],
@@ -1413,7 +1413,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still manages to take a bite out of {PRONOUN/r_c/object} before the rest of the patrol can back {PRONOUN/r_c/object} up.",
+                "text": "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still gets its teeth into {PRONOUN/r_c/object} before the rest of the patrol can back {PRONOUN/r_c/object} up.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1431,7 +1431,7 @@
     {
         "patrol_id": "fst_hunt_noise2",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -1444,13 +1444,13 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise. {PRONOUN/r_c/subject/CAP} {VERB/r_c/find/finds} {PRONOUN/r_c/self} to be correct when {PRONOUN/r_c/subject} {VERB/r_c/pounce/pounces} into the bush and {VERB/r_c/return/returns} to the patrol with the tasty morsel dangling from {PRONOUN/r_c/poss} mouth.",
+                "text": "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise. {PRONOUN/r_c/subject/CAP} {VERB/r_c/find/finds} {PRONOUN/r_c/self} to be correct when {PRONOUN/r_c/subject} {VERB/r_c/pounce/pounces} into the bush and {VERB/r_c/return/returns} to the patrol with the tasty morsel dangling from {PRONOUN/r_c/poss} jaws.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["small"]
             },
             {
-                "text": "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out! s_c is quick to react and manages to snag the rabbit before it can disappear.",
+                "text": "p_l pads towards the bush to check on the noise when a rabbit bursts out! s_c is quick to react and snags the rabbit before it can disappear.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1"],
@@ -1483,7 +1483,7 @@
                 }
             },
             {
-                "text": "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still manages to take a bite out of {PRONOUN/r_c/object} before the rest of the patrol can back {PRONOUN/r_c/object} up.",
+                "text": "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still gets its teeth into {PRONOUN/r_c/object} before the rest of the patrol can back {PRONOUN/r_c/object} up.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1504,7 +1504,7 @@
     {
         "patrol_id": "fst_hunt_gonetnr1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "fst_hunt_gonetnr",
@@ -1523,13 +1523,13 @@
                 "prey": ["medium"]
             },
             {
-                "text": "Slyly, r_c uses the chance to get food, practicing {PRONOUN/r_c/poss} best kittypet impression until just the right moment, before darting forward and making off with a sandwich in {PRONOUN/r_c/poss} mouth.",
+                "text": "Slyly, r_c uses the chance to get food, practicing {PRONOUN/r_c/poss} best kittypet impression until just the right moment, when {PRONOUN/r_c/subject} {VERB/r_c/dart/darts} forward and {VERB/r_c/make/makes} off with a sandwich in {PRONOUN/r_c/poss} mouth.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"]
             },
             {
-                "text": "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
+                "text": "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol they need to leave. Now.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,3"]
@@ -1552,7 +1552,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol mostly ignores the Twolegs. As they hunt, they hear a yelp from r_c. {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} crawled into a metal Twolegs box, and there's nothing {PRONOUN/r_c/subject} or the rest of the patrol can do to get {PRONOUN/r_c/object} out - eventually the Twolegs notice, and r_c is taken by them.",
+                "text": "The patrol mostly ignores the Twolegs. As they hunt, they hear a yelp from r_c. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'ve/'s} crawled into a metal Twolegs box, and there's nothing {PRONOUN/r_c/subject} or the rest of the patrol can do to get {PRONOUN/r_c/object} out - eventually the Twolegs notice, and r_c is taken by them.",
                 "exp": 0,
                 "weight": 10,
                 "lost_cats": ["r_c"]
@@ -1578,7 +1578,7 @@
     {
         "patrol_id": "fst_hunt_gonetnr2",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "fst_hunt_gonetnr",
@@ -1597,13 +1597,13 @@
                 "prey": ["medium"]
             },
             {
-                "text": "Slyly, r_c uses the chance to get food, practicing {PRONOUN/r_c/poss} best kittypet impression until just the right moment, before darting forward and making off with a large lump of meat in {PRONOUN/r_c/poss} mouth.",
+                "text": "Slyly, r_c uses the chance to get food, practicing {PRONOUN/r_c/poss} best kittypet impression until just the right moment, when {PRONOUN/r_c/subject} {VERB/r_c/dart/darts} forward and {VERB/r_c/make/makes} off with a hunk of meat in {PRONOUN/r_c/poss} mouth.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["large"]
             },
             {
-                "text": "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
+                "text": "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol they need to leave. Now.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,3"]
@@ -1626,7 +1626,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol mostly ignores the Twolegs. As they hunt, they hear a yelp from r_c. {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} crawled into a metal Twolegs box, and there's nothing {PRONOUN/r_c/subject} or the rest of the patrol can do to get {PRONOUN/r_c/object} out - eventually the Twolegs notice, and r_c is taken by them.",
+                "text": "The patrol mostly ignores the Twolegs. As they hunt, they hear a yelp from r_c. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'ve/'s} crawled into a metal Twolegs box, and there's nothing {PRONOUN/r_c/subject} or the rest of the patrol can do to get {PRONOUN/r_c/object} out - eventually the Twolegs notice, and r_c is taken by them.",
                 "exp": 0,
                 "weight": 10,
                 "lost_cats": ["r_c"]
@@ -1652,7 +1652,7 @@
     {
         "patrol_id": "fst_hunt_gonetnr3",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "fst_hunt_gonetnr",
@@ -1671,13 +1671,13 @@
                 "prey": ["small"]
             },
             {
-                "text": "Slyly, r_c uses the chance to get food, practicing {PRONOUN/r_c/poss} best kittypet impression until just the right moment, before darting forward and making off with a sandwich in {PRONOUN/r_c/poss} mouth.",
+                "text": "Slyly, r_c uses the chance to get food, practicing {PRONOUN/r_c/poss} best kittypet impression until just the right moment, when {PRONOUN/r_c/subject} {VERB/r_c/dart/darts} forward and {VERB/r_c/make/makes} off with a sandwich in {PRONOUN/r_c/poss} mouth.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["small"]
             },
             {
-                "text": "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
+                "text": "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol they need to leave. Now.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,3"]
@@ -1700,7 +1700,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol mostly ignores the Twolegs. As they hunt, they hear a yelp from r_c. {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} crawled into a metal Twolegs box, and there's nothing {PRONOUN/r_c/subject} or the rest of the patrol can do to get {PRONOUN/r_c/object} out - eventually the Twolegs notice, and r_c is taken by them.",
+                "text": "The patrol mostly ignores the Twolegs. As they hunt, they hear a yelp from r_c. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'ve/'s} crawled into a metal Twolegs box, and there's nothing {PRONOUN/r_c/subject} or the rest of the patrol can do to get {PRONOUN/r_c/object} out - eventually the Twolegs notice, and r_c is taken by them.",
                 "exp": 0,
                 "weight": 10,
                 "lost_cats": ["r_c"]
@@ -1726,7 +1726,7 @@
     {
         "patrol_id": "fst_hunt_gonetwolegden1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -1775,7 +1775,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The Twolegs here are friendly, and a little carelessly, s_c goes to hunt in their garden. But there's a new thing there, a box, suspicious and strange. Wisely, s_c avoids it, and returns to c_n territory.",
+                "text": "The Twolegs here are friendly, and a little carelessly, s_c goes to hunt in their garden. But there's a new thing there: a strange, suspicious box. Wisely, s_c avoids it, and returns to c_n territory.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -1797,7 +1797,7 @@
                 "lost_cats": ["r_c"]
             },
             {
-                "text": "Carelessly, r_c is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, {PRONOUN/r_c/subject} {VERB/r_c/discover/discovers} that a broken window is just wide enough to push {PRONOUN/r_c/self} out to safety through, but the glass leaves {PRONOUN/r_c/object} bleeding as {PRONOUN/r_c/subject} {VERB/r_c/run/runs} back to c_n.",
+                "text": "Carelessly, r_c is seen by Twolegs and locked, hissing and spitting, in a monster's den. Overnight, {PRONOUN/r_c/subject} {VERB/r_c/discover/discovers} that a broken window is just wide enough to push {PRONOUN/r_c/self} out to safety through, but the glass leaves {PRONOUN/r_c/object} bleeding as {PRONOUN/r_c/subject} {VERB/r_c/run/runs} back to c_n.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1813,7 +1813,7 @@
     {
         "patrol_id": "fst_hunt_gonetwolegden2",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -1859,7 +1859,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "A little carelessly, s_c jumps a fence to hunt in a den's garden. But there's a new thing there, a box, suspicious and strange. Wisely, s_c avoids it, and returns to c_n territory.",
+                "text": "A little carelessly, s_c jumps a fence to hunt in a den's garden. But there's a new thing there: a strange, suspicious box. Wisely, s_c avoids it, and returns to c_n territory.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -1885,7 +1885,7 @@
     {
         "patrol_id": "fst_hunt_twolegdencatdare1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": ["romantic"],
         "patrol_art": "gen_hunt_twolegdencatdare",
@@ -1895,7 +1895,7 @@
             "all apprentices": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "Boldly, eyes daring p_l to say no, r_c suggests hunting by the Twoleg dens.",
+        "intro_text": "{PRONOUN/r_c/poss} eyes daring p_l to say no, r_c suggests hunting by the Twoleg dens.",
         "decline_text": "On second thought, they decide to reline their nests today instead.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -1973,7 +1973,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Carelessly, r_c is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, {PRONOUN/r_c/subject} {VERB/r_c/hear/hears} p_l yowling from outside, and the two cats manage to craft an escape plan through a broken window. Shivering, r_c presses {PRONOUN/r_c/poss} pelt against p_l on the way back to c_n.",
+                "text": "Carelessly, r_c is seen by Twolegs and locked, hissing and spitting, in a monster's den. Overnight, {PRONOUN/r_c/subject} {VERB/r_c/hear/hears} p_l yowling from outside, and the two cats manage to craft an escape plan through a broken window. Shivering, r_c presses {PRONOUN/r_c/poss} pelt against p_l on the way back to c_n.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1987,7 +1987,7 @@
                 ]
             },
             {
-                "text": "The Twolegs here are friendly, and a little carelessly, s_c goes to hunt in their garden. But there's a new thing there, a box, suspicious and strange. Wisely, s_c avoids it, and returns to c_n territory.",
+                "text": "The Twolegs here are friendly, and a little carelessly, s_c goes to hunt in their garden. But there's a new thing there: a strange, suspicious box. Wisely, s_c avoids it, and returns to c_n territory.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -2031,7 +2031,7 @@
     {
         "patrol_id": "fst_hunt_twolegdenappdare1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": ["rom_two_apps", "romantic"],
         "patrol_art": "gen_hunt_twolegdenappdare",
@@ -2042,7 +2042,7 @@
             "all apprentices": [2, 2]
         },
         "weight": 20,
-        "intro_text": "Boldly, eyes daring app1 to say no, app2 suggests hunting by the Twoleg dens. Where apprentices are definitely not allowed.",
+        "intro_text": "{PRONOUN/app2/poss/CAP} eyes daring app1 to say no, app2 suggests hunting by the Twoleg dens. Where apprentices are definitely not allowed.",
         "decline_text": "On second thought, they decide to reline their nests today instead.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -2105,7 +2105,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Carelessly, app2 is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, {PRONOUN/app2/subject} {VERB/app2/hear/hears} app1 yowling from outside, and the two cats manage to craft an escape plan through a broken window. Shivering, app2 presses {PRONOUN/app2/poss} pelt against app1 as they pad home.",
+                "text": "Carelessly, app2 is seen by Twolegs and locked, hissing and spitting, in a monster's den. Overnight, {PRONOUN/app2/subject} {VERB/app2/hear/hears} app1 yowling from outside, and the two cats manage to craft an escape plan through a broken window. Shivering, app2 presses {PRONOUN/app2/poss} pelt against app1 as they pad home.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2119,7 +2119,7 @@
                 ]
             },
             {
-                "text": "A little carelessly, s_c jumps a fence to hunt in a den's garden. But there's a new thing there, a box, suspicious and strange. Wisely, s_c avoids it, and returns to c_n territory.",
+                "text": "A little carelessly, s_c jumps a fence to hunt in a den's garden. But there's a new thing there: a strange, suspicious box. Wisely, s_c avoids it, and returns to c_n territory.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -2163,7 +2163,7 @@
     {
         "patrol_id": "fst_hunt_gonetwolegtrap1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "fst_hunt_gonetwolegtrap",
@@ -2181,7 +2181,7 @@
                 "weight": 20
             },
             {
-                "text": "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around {PRONOUN/r_c/object}, only for {PRONOUN/r_c/poss} fur to stand on end as {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} standing in a metal tunnel, cloaked in rust and camouflage. It's to {PRONOUN/r_c/poss} great fortune that this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leave/leaves} quickly.",
+                "text": "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around {PRONOUN/r_c/self}. {PRONOUN/r_c/poss/CAP} fur stands on end as {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} standing in a metal tunnel, cloaked in rust and camouflage. It's to {PRONOUN/r_c/poss} great fortune that this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leave/leaves} quickly.",
                 "exp": 20,
                 "weight": 5
             },
@@ -2219,7 +2219,7 @@
     {
         "patrol_id": "fst_hunt_gonetwolegtrap2",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "fst_hunt_gonetwolegtrap",
@@ -2237,7 +2237,7 @@
                 "weight": 20
             },
             {
-                "text": "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around {PRONOUN/r_c/object}, only for {PRONOUN/r_c/poss} fur to stand on end as {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} standing in a metal tunnel, cloaked in rust and camouflage. It's to {PRONOUN/r_c/poss} great fortune that this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leave/leaves} quickly.",
+                "text": "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around {PRONOUN/r_c/self}. {PRONOUN/r_c/poss/CAP} fur stands on end as {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} standing in a metal tunnel, cloaked in rust and camouflage. It's to {PRONOUN/r_c/poss} great fortune that this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leave/leaves} quickly.",
                 "exp": 20,
                 "weight": 5
             },
@@ -2281,7 +2281,7 @@
     {
         "patrol_id": "fst_hunt_thunderpath1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": ["retirement"],
         "patrol_art": "gen_hunt_thunderpath",
@@ -2294,13 +2294,13 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The patrol crosses the Thunderpath and can hunt on the other side.",
+                "text": "The patrol crosses the Thunderpath and hunts on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["large"]
             },
             {
-                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
+                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with damp paws, but a successful haul of prey.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["large"]
@@ -2313,7 +2313,7 @@
                 "prey": ["large"]
             },
             {
-                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across calmly to hunt on the other side.",
+                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across to hunt on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -2370,7 +2370,7 @@
     {
         "patrol_id": "fst_hunt_thunderpath2",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": ["retirement", "cruel_season"],
         "patrol_art": "gen_hunt_thunderpath",
@@ -2383,13 +2383,13 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The patrol crosses the Thunderpath and can hunt on the other side.",
+                "text": "The patrol crosses the Thunderpath and hunts on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["large"]
             },
             {
-                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
+                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with damp paws, but a successful haul of prey.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["large"]
@@ -2402,7 +2402,7 @@
                 "prey": ["large"]
             },
             {
-                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across calmly to hunt on the other side.",
+                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across to hunt on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -2459,7 +2459,7 @@
     {
         "patrol_id": "fst_hunt_thunderpath3",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": ["retirement"],
         "patrol_art": "gen_hunt_thunderpath",
@@ -2472,13 +2472,13 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "The patrol crosses the Thunderpath and can hunt on the other side.",
+                "text": "The patrol crosses the Thunderpath and hunts on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
             },
             {
-                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of lots of prey.",
+                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with damp paws, but a successful haul of lots of prey.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["large"]
@@ -2491,7 +2491,7 @@
                 "prey": ["large"]
             },
             {
-                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across calmly with the patrol to hunt on the other side.",
+                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across with the patrol to hunt on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -2543,7 +2543,7 @@
     {
         "patrol_id": "fst_hunt_thunderpath4",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": ["retirement", "cruel_season"],
         "patrol_art": "gen_hunt_thunderpath",
@@ -2556,13 +2556,13 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "The patrol crosses the Thunderpath and can hunt on the other side.",
+                "text": "The patrol crosses the Thunderpath and hunts on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["large"]
             },
             {
-                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of lots of prey.",
+                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with damp paws, but a successful haul of lots of prey.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["large"]
@@ -2575,7 +2575,7 @@
                 "prey": ["large"]
             },
             {
-                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across calmly with the patrol to hunt on the other side.",
+                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across with the patrol to hunt on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -2632,7 +2632,7 @@
     {
         "patrol_id": "fst_hunt_fun1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "fst_hunt_fun1",
@@ -2676,7 +2676,7 @@
     {
         "patrol_id": "fst_hunt_fun2",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "fst_hunt_fun2",
@@ -2714,7 +2714,7 @@
     {
         "patrol_id": "fst_hunt_fun3",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": ["romantic"],
         "patrol_art": "fst_hunt_fun3",
@@ -2797,7 +2797,7 @@
     {
         "patrol_id": "fst_hunt_fun4",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": ["romantic"],
         "patrol_art": "fst_hunt_fun4",
@@ -2864,7 +2864,7 @@
     {
         "patrol_id": "fst_hunt_lillizard1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_lillizard",
@@ -2959,7 +2959,7 @@
     {
         "patrol_id": "fst_hunt_lillizard2",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": ["rom_two_apps", "romantic"],
         "patrol_art": "gen_hunt_lillizard",
@@ -3026,7 +3026,7 @@
     {
         "patrol_id": "fst_hunt_vole1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "fst_hunt_vole",
@@ -3070,7 +3070,7 @@
     {
         "patrol_id": "fst_hunt_flatwoods1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": ["halloween"],
         "patrol_art": "flatwoods_INTRO",
@@ -3105,7 +3105,7 @@
     {
         "patrol_id": "fst_hunt_doverdemon",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": ["halloween"],
         "patrol_art": "doverdemon_INTRO",
@@ -3144,7 +3144,7 @@
     {
         "patrol_id": "fst_hunt_risingclangift_storylorelocked1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "fst_hunt_gonetwolegtrap",

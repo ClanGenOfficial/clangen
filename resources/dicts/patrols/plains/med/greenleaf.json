@@ -5016,7 +5016,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Ugh. The ragwort p_l finds is flowering, and the yellow flowers of the plant waft out their scent, leaving a foul taste hanging in the air. There a chorus of long-suffering sighs as the cats get to work, accomplishing their unpleasant task professionally, but without any joy.",
+                "text": "Ugh. The ragwort p_l finds is flowering, and the yellow flowers of the plant waft out their scent, leaving a foul taste hanging in the air. There a chorus of long-suffering sighs as the cats get to work, accomplishing their unpleasant task diligently, but without any joy.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["ragwort"],

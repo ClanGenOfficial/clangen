@@ -1,8 +1,8 @@
 [
     {
         "patrol_id": "gen_bord_dog1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_border_dogscent_clanmember",
@@ -44,7 +44,7 @@
                 ]
             },
             {
-                "text": "{PRONOUN/s_c/subject} {VERB/s_c/do/does}n't feel like {PRONOUN/s_c/subject} {VERB/s_c/have/has} the skill or power to take on a dog single-pawed, but s_c would give {PRONOUN/s_c/poss} life for c_n. {PRONOUN/s_c/subject} {VERB/s_c/charge/charges} in courageously to lead the dog away from c_n territory. Each booming bark could be the herald of their doom, each rancid breath the last thing {PRONOUN/s_c/subject} might ever smell, but somehow, limbs and lungs burning, {PRONOUN/s_c/subject} eventually {VERB/s_c/leap/leaps} to refuge.",
+                "text": "{PRONOUN/s_c/subject} {VERB/s_c/do/does}n't feel like {PRONOUN/s_c/subject} {VERB/s_c/have/has} the skill or power to take on a dog single-pawed, but s_c would give {PRONOUN/s_c/poss} life for c_n. {PRONOUN/s_c/subject/CAP} {VERB/s_c/charge/charges} in courageously to lead the dog away from c_n territory. Each booming bark could be the herald of their doom, each rancid breath the last thing {PRONOUN/s_c/subject} might ever smell, but somehow, limbs and lungs burning, {PRONOUN/s_c/subject} eventually {VERB/s_c/leap/leaps} to refuge.",
                 "exp": 40,
                 "weight": 20,
                 "stat_trait": [
@@ -120,8 +120,8 @@
     },
     {
         "patrol_id": "gen_bord_dog2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["patrol_rel", "pos_fail"],
         "patrol_art": "gen_border_dogscent_clanmember",
@@ -281,8 +281,8 @@
     },
     {
         "patrol_id": "gen_bord_dog3",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["patrol_rel", "pos_fail"],
         "patrol_art": "bord_general_intro",
@@ -442,8 +442,8 @@
     },
     {
         "patrol_id": "gen_bord_smalldog1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -519,8 +519,8 @@
     },
     {
         "patrol_id": "gen_bord_smalldog2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -600,8 +600,8 @@
     },
     {
         "patrol_id": "gen_bord_smalldog3",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -682,8 +682,8 @@
     },
     {
         "patrol_id": "gen_bord_abandonedkittypet1_kittypet4",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "bord_general_intro",
@@ -765,8 +765,8 @@
     },
     {
         "patrol_id": "gen_bord_otherclankits1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -901,8 +901,8 @@
     },
     {
         "patrol_id": "gen_border_otherclan_badger1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -1000,8 +1000,8 @@
     },
     {
         "patrol_id": "gen_border_trainingapprentices1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["disrespect"],
         "patrol_art": "train_general_intro",
@@ -1086,8 +1086,8 @@
     },
     {
         "patrol_id": "gen_border_otherclan_meeting1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["non-lethal", "disrespect", "other_clan", "clan_to_pl", "distrust"],
         "patrol_art": "bord_general_intro",
@@ -1290,8 +1290,8 @@
     },
     {
         "patrol_id": "gen_bord_kittybat",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["halloween"],
         "patrol_art": "kittybat_INTRO",
@@ -1318,7 +1318,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Falling over, paws waving helplessly in the air and somehow making the situation <i>even worse</i>, the patrol passes the idiotic kittypet by, leaving them to their stupidity while they focus on their actual task.",
+                "text": "Falling over, paws waving helplessly in the air and somehow making the situation <i>even worse</i>, the patrol passes the mouse-brained kittypet by, leaving them to their stupidity while they focus on their actual task.",
                 "exp": 0,
                 "weight": 20,
                 "outsider_rep": -1
@@ -1343,7 +1343,7 @@
     },
     {
         "patrol_id": "gen_border_pumpkineyes",
-        "biome": ["Any"],
+        "biome": ["any"],
         "season": ["leaf-fall"],
         "types": ["border"],
         "tags": ["halloween"],
@@ -1431,7 +1431,7 @@
     },
     {
         "patrol_id": "gen_bord_trickortreat",
-        "biome": ["Any"],
+        "biome": ["any"],
         "season": ["leaf-fall"],
         "types": ["border"],
         "tags": ["halloween"],
@@ -1475,8 +1475,8 @@
     },
     {
         "patrol_id": "gen_bord_scarecrow",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["halloween"],
         "patrol_art": "scarecrow_INTRO",

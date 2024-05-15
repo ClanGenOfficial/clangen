@@ -824,7 +824,7 @@
       "rank": ["kitten"],
       "life_giving": [
         {
-          "text": "Emerging from the line comes r_c, a quiet calm to {PRONOUN/r_c/object} despite {PRONOUN/r_c/poss} small stature. {PRONOUN/r_c/subject} very carefully {VERB/r_c/offer/offers} a life for [virtue], sounding as though {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} trying very hard to remember the right words to say. Once finished, {PRONOUN/r_c/subject} {VERB/r_c/rush/rushes} back to the line of starry pelts.",
+          "text": "Emerging from the line comes r_c, a quiet calm to {PRONOUN/r_c/object} despite {PRONOUN/r_c/poss} small stature. {PRONOUN/r_c/subject/CAP} very carefully {VERB/r_c/offer/offers} a life for [virtue], sounding as though {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} trying very hard to remember the right words to say. Once finished, {PRONOUN/r_c/subject} {VERB/r_c/rush/rushes} back to the line of starry pelts.",
           "virtue": ["caution", "love", "patience", "trust", "optimism", "friendship"]
         }
       ]

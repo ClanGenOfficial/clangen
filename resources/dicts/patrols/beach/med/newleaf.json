@@ -3375,7 +3375,7 @@
                 ]
             },
             {
-                "text": "By the time {PRONOUN/p_l/subject} {VERB/p_l/give/gives} up and return to camp, p_l is approaching the explosion point with s_c. {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today.",
+                "text": "By the time {PRONOUN/p_l/subject} {VERB/p_l/give/gives} up and return to camp, p_l is approaching the explosion point with s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'ve/'s} gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["troublesome", "childish"],
