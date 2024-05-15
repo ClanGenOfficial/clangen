@@ -1762,6 +1762,11 @@ class Cat():
         if name not in PERMANENT:
             print(str(self.name), f"WARNING: {name} is not in the permanent conditions collection.")
             return
+        
+        if "blind" in self.permanent_condition and name == "failing eyesight":
+            return
+        if "deaf" in self.permanent_condition and name == "partial hearing loss":
+            return
 
         # remove accessories if need be
         if 'NOTAIL' in self.pelt.scars and self.pelt.accessory in ['RED FEATHERS', 'BLUE FEATHERS', 'JAY FEATHERS']:
