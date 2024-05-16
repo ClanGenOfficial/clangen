@@ -8,10 +8,11 @@ from scripts.game_structure.game_essentials import game
 from scripts.event_class import Single_Event
 from scripts.cat.cats import Cat
 
+
 class Welcoming_Events():
     """All events which are related to welcome a new cat in the clan."""
-    
-    @staticmethod    
+
+    @staticmethod
     def welcome_cat(clan_cat: Cat, new_cat: Cat) -> None:
         """Checks and triggers the welcome event from the Clan cat to the new cat.
 
@@ -49,32 +50,32 @@ class Welcoming_Events():
         interaction_str = choice(random_interaction.interactions)
 
         # prepare string for display
-        interaction_str = event_text_adjust(Cat, interaction_str, clan_cat, new_cat)
+        interaction_str = event_text_adjust(Cat, interaction_str, main_cat=clan_cat, random_cat=new_cat)
 
         # influence the relationship
         new_to_clan_cat = game.config["new_cat"]["rel_buff"]["new_to_clan_cat"]
         clan_cat_to_new = game.config["new_cat"]["rel_buff"]["clan_cat_to_new"]
         change_relationship_values(
-            cats_to=        [clan_cat.ID], 
-            cats_from=      [new_cat],
-            romantic_love=  new_to_clan_cat["romantic"],
-            platonic_like=  new_to_clan_cat["platonic"],
-            dislike=        new_to_clan_cat["dislike"],
-            admiration=     new_to_clan_cat["admiration"],
-            comfortable=    new_to_clan_cat["comfortable"],
-            jealousy=       new_to_clan_cat["jealousy"],
-            trust=          new_to_clan_cat["trust"]
+            cats_to=[clan_cat],
+            cats_from=[new_cat],
+            romantic_love=new_to_clan_cat["romantic"],
+            platonic_like=new_to_clan_cat["platonic"],
+            dislike=new_to_clan_cat["dislike"],
+            admiration=new_to_clan_cat["admiration"],
+            comfortable=new_to_clan_cat["comfortable"],
+            jealousy=new_to_clan_cat["jealousy"],
+            trust=new_to_clan_cat["trust"]
         )
         change_relationship_values(
-            cats_to=        [new_cat.ID], 
-            cats_from=      [clan_cat],
-            romantic_love=  clan_cat_to_new["romantic"],
-            platonic_like=  clan_cat_to_new["platonic"],
-            dislike=        clan_cat_to_new["dislike"],
-            admiration=     clan_cat_to_new["admiration"],
-            comfortable=    clan_cat_to_new["comfortable"],
-            jealousy=       clan_cat_to_new["jealousy"],
-            trust=          clan_cat_to_new["trust"]
+            cats_to=[new_cat],
+            cats_from=[clan_cat],
+            romantic_love=clan_cat_to_new["romantic"],
+            platonic_like=clan_cat_to_new["platonic"],
+            dislike=clan_cat_to_new["dislike"],
+            admiration=clan_cat_to_new["admiration"],
+            comfortable=clan_cat_to_new["comfortable"],
+            jealousy=clan_cat_to_new["jealousy"],
+            trust=clan_cat_to_new["trust"]
         )
 
         # add it to the event list
@@ -83,11 +84,11 @@ class Welcoming_Events():
 
         # the effect is set through the settings, therefore a rough assumption has to be made
         effect = " (neutral effect)"
-        if clan_cat_to_new["romantic"] > 0 or\
-            clan_cat_to_new["platonic"] > 0 or\
-            clan_cat_to_new["admiration"] > 0 or\
-            new_to_clan_cat["comfortable"] > 0 or\
-            clan_cat_to_new["trust"] > 0:
+        if clan_cat_to_new["romantic"] > 0 or \
+                clan_cat_to_new["platonic"] > 0 or \
+                clan_cat_to_new["admiration"] > 0 or \
+                new_to_clan_cat["comfortable"] > 0 or \
+                clan_cat_to_new["trust"] > 0:
             effect = " (positive effect)"
         elif clan_cat_to_new["dislike"] > 0 or clan_cat_to_new["jealousy"] > 0:
             effect = " (negative effect)"
@@ -97,20 +98,24 @@ class Welcoming_Events():
         # add to relationship logs
         if new_cat.ID in clan_cat.relationships:
             if clan_cat.age == 1:
-                clan_cat.relationships[new_cat.ID].log.append(interaction_str + f" - {clan_cat.name} was {clan_cat.moons} moons old")
+                clan_cat.relationships[new_cat.ID].log.append(
+                    interaction_str + f" - {clan_cat.name} was {clan_cat.moons} moons old")
             else:
-                clan_cat.relationships[new_cat.ID].log.append(interaction_str + f" - {clan_cat.name} was {clan_cat.moons} moons old")
+                clan_cat.relationships[new_cat.ID].log.append(
+                    interaction_str + f" - {clan_cat.name} was {clan_cat.moons} moons old")
 
             new_cat.relationships[clan_cat.ID].link_relationship()
 
         if clan_cat.ID in new_cat.relationships:
             if new_cat.age == 1:
-                new_cat.relationships[clan_cat.ID].log.append(interaction_str + f" - {new_cat.name} was {new_cat.moons} moon old")
+                new_cat.relationships[clan_cat.ID].log.append(
+                    interaction_str + f" - {new_cat.name} was {new_cat.moons} moon old")
             else:
-                new_cat.relationships[clan_cat.ID].log.append(interaction_str + f" - {new_cat.name} was {new_cat.moons} moons old")
+                new_cat.relationships[clan_cat.ID].log.append(
+                    interaction_str + f" - {new_cat.name} was {new_cat.moons} moons old")
 
     @staticmethod
-    def filter_welcome_interactions(welcome_interactions : list, new_cat: Cat) -> list:
+    def filter_welcome_interactions(welcome_interactions: list, new_cat: Cat) -> list:
         """Filter welcome events based on states.
     
             Parameters
@@ -138,7 +143,8 @@ class Welcoming_Events():
                 if "under" in interaction.new_cat_moons and new_cat.moons > threshold_moon:
                     continue
                 if "over" not in interaction.new_cat_moons and "under" not in interaction.new_cat_moons:
-                    print(f"ERROR: The new cat welcoming event {interaction.id} has a not valid moon restriction for the new cat.")
+                    print(
+                        f"ERROR: The new cat welcoming event {interaction.id} has a not valid moon restriction for the new cat.")
                     continue
 
             filtered.append(interaction)
@@ -156,11 +162,12 @@ class Welcome_Interaction():
         self.id = id
         self.background = background
         self.new_cat_moons = new_cat_moons
-        
+
         if interactions:
             self.interactions = interactions
         else:
             self.interactions = ["m_c is welcoming r_c."]
+
 
 # ---------------------------------------------------------------------------- #
 #                   build master dictionary for interactions                   #
@@ -175,7 +182,7 @@ def create_welcome_interaction(inter_list) -> list:
             interactions=inter["interactions"] if "interactions" in inter else None,
             background=inter["background"] if "background" in inter else None,
             new_cat_moons=inter["new_cat_moons"] if "new_cat_moons" in inter else None
-            )
+        )
         )
 
     return created_list

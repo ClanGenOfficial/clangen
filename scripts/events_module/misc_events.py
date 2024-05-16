@@ -63,7 +63,8 @@ class MiscEvents():
                     break
 
         #print('misc event', cat.ID)
-        final_events = GenerateEvents.filter_possible_short_events(acc_checked_events, cat, other_cat, war, enemy_clan, other_clan,
+        final_events = GenerateEvents.filter_possible_short_events(Cat=Cat,
+                                                                   acc_checked_events, cat, other_cat, war, enemy_clan, other_clan,
                                                                    alive_kits, murder_reveal=reveal)
 
         # ---------------------------------------------------------------------------- #
@@ -93,8 +94,8 @@ class MiscEvents():
             difference = 1
             change_clan_relations(other_clan, difference=difference)
 
-        event_text = event_text_adjust(Cat, misc_event.event_text, cat, other_cat, other_clan_name, murder_reveal=reveal, victim=victim)
-        
+        #event_text = event_text_adjust(Cat, misc_event.event_text, main_cat=cat, random_cat=other_cat, other_clan=other_clan_name, victim_cat=murder_reveal=reveal, victim=victim)
+        event_text = None
         if event_text:
             # Add event text to the relationship log if two cats are involved
             if other_cat:

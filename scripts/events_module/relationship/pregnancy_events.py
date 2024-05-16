@@ -226,7 +226,7 @@ class Pregnancy_Events():
                 severity = random.choices(["minor", "major"], [3, 1], k=1)
                 cat.get_injured("pregnant", severity=severity[0])
                 text += choice(Pregnancy_Events.PREGNANT_STRINGS[f"{severity[0]}_severity"])
-            text = event_text_adjust(Cat, text, cat, clan=clan)
+            text = event_text_adjust(Cat, text, main_cat=cat, clan=game.clan)
             game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
         else:
             if not other_cat and cat.gender == 'male':
@@ -262,7 +262,7 @@ class Pregnancy_Events():
                 severity = random.choices(["minor", "major"], [3, 1], k=1)
                 pregnant_cat.get_injured("pregnant", severity=severity[0])
                 text += choice(Pregnancy_Events.PREGNANT_STRINGS[f"{severity[0]}_severity"])
-            text = event_text_adjust(Cat, text, pregnant_cat, clan=clan)
+            text = event_text_adjust(Cat, text, main_cat=pregnant_cat, clan=game.clan)
             game.cur_events_list.append(Single_Event(text, "birth_death", pregnant_cat.ID))
 
     @staticmethod
@@ -313,7 +313,7 @@ class Pregnancy_Events():
             except:
                 print("Is this an old save? Cat does not have the pregnant condition")
 
-        text = event_text_adjust(Cat, text, cat, clan=clan)
+        text = event_text_adjust(Cat, text, main_cat=cat, clan=game.clan)
         game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
 
     @staticmethod
@@ -450,7 +450,7 @@ class Pregnancy_Events():
         print_event = " ".join(event_list)
         print_event = print_event.replace("{insert}", insert)
         
-        print_event = event_text_adjust(Cat, print_event, cat, other_cat, clan=clan)
+        print_event = event_text_adjust(Cat, print_event, main_cat=cat, random_cat=other_cat, clan=game.clan)
         # display event
         game.cur_events_list.append(Single_Event(print_event, ["health", "birth_death"], involved_cats))
 
@@ -806,7 +806,7 @@ class Pregnancy_Events():
                     parent_to_kit = game.config["new_cat"]["parent_buff"]["parent_to_kit"]
                     change_relationship_values(
                         cats_from=[kit],
-                        cats_to=[parent.ID],
+                        cats_to=[parent],
                         platonic_like=kit_to_parent["platonic"],
                         dislike=kit_to_parent["dislike"],
                         admiration=kit_to_parent["admiration"],
@@ -816,7 +816,7 @@ class Pregnancy_Events():
                     )
                     change_relationship_values(
                         cats_from=[parent],
-                        cats_to=[kit.ID],
+                        cats_to=[kit],
                         platonic_like=parent_to_kit["platonic"],
                         dislike=parent_to_kit["dislike"],
                         admiration=parent_to_kit["admiration"],

@@ -4,8 +4,6 @@ import random
 
 import ujson
 
-from scripts.cat.cats import Cat
-from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE, FRESHKILL_EVENT_TRIGGER_FACTOR
 from scripts.game_structure.game_essentials import game
 from scripts.utility import filter_relationship_type, get_living_clan_cat_count, get_alive_kits, get_alive_apps, \
     get_alive_newborns
@@ -197,7 +195,7 @@ class GenerateEvents:
         return event_list
 
     @staticmethod
-    def filter_possible_short_events(possible_events, cat, random_cat, other_clan, sub_types=None):
+    def filter_possible_short_events(Cat_class, possible_events, cat, random_cat, other_clan, freshkill_active, freshkill_trigger_factor, sub_types=None, ):
         final_events = []
 
         # TODO: put the injury severity code back?
@@ -208,13 +206,16 @@ class GenerateEvents:
         # Chance to bypass the skill or trait requirements. 
         trait_skill_bypass = 15
 
+        # check if generated event should be a war event
         if "war" in sub_types and random.randint(1, 10) != 1:
             war_event = True
-        else:
+        else:  # otherwise, take all war events out
             war_event = False
-            sub_types.remove("war")
+            if "war" in sub_types:
+                sub_types.remove("war")
 
         for event in possible_events:
+            # print(event.event_id)
             # check for event sub_type
             for sub in sub_types:
                 if sub not in event.sub_type:
@@ -233,11 +234,12 @@ class GenerateEvents:
             if game.clan.current_season.lower() not in event.season and "any" not in event.season:
                 continue
 
+
             # check tags
             prevent_bypass = "skill_trait_required" in event.tags
 
             # ensure that war events only happen during war
-            if war_event and ("war" not in event.sub_type and "hostile" not in event.other_clan["current_rep"]):
+            if war_event and "war" not in event.sub_type:
                 continue
 
             # some events are classic only
@@ -274,15 +276,15 @@ class GenerateEvents:
                     continue
 
             # check if Clan has kits
-            if "clan_kits" in event.tags and not get_alive_kits(Cat):
+            if "clan_kits" in event.tags and not get_alive_kits(Cat_class):
                 continue
 
             # check if Clan has apps
-            if "clan_apps" in event.tags and not get_alive_apps(Cat):
+            if "clan_apps" in event.tags and not get_alive_apps(Cat_class):
                 continue
 
             # check if Clan has newborns
-            if "clan_newborns" in event.tags and not get_alive_newborns(Cat):
+            if "clan_newborns" in event.tags and not get_alive_newborns(Cat_class):
                 continue
 
             # If the cat or any of their mates have "no kits" toggled, forgo the adoption event.
@@ -301,13 +303,14 @@ class GenerateEvents:
                 continue
 
             # if the event is marked as changing romantic interest, check that the cats are allowed to be romantic
-            if "romance" in event.sub_type and random_cat.is_potential_mate(cat):
-                continue
+            if random_cat:
+                if "romance" in event.sub_type and not random_cat.is_potential_mate(cat):
+                    continue
 
             if event.m_c:
-                if cat.age not in event.m_c["age"]:
+                if cat.age not in event.m_c["age"] and "any" not in event.m_c["age"]:
                     continue
-                if cat.status not in event.m_c["status"]:
+                if cat.status not in event.m_c["status"] and "any" not in event.m_c["age"]:
                     continue
                 if event.m_c["relationship_status"]:
                     if not filter_relationship_type(group=[cat, random_cat],
@@ -320,6 +323,7 @@ class GenerateEvents:
                 if event.m_c["trait"]:
                     if cat.personality.trait in event.m_c["trait"]:
                         has_trait = True
+
 
                 has_skill = False
                 if event.m_c["skill"]:
@@ -343,6 +347,7 @@ class GenerateEvents:
                 elif event.m_c["skill"]:
                     if not has_skill and (prevent_bypass or int(random.random() * trait_skill_bypass)):
                         continue
+
 
                 # check cat negate trait and skill
                 has_trait = False
@@ -368,14 +373,16 @@ class GenerateEvents:
                     continue
 
                 # check backstory
-                if cat.backstory not in event.m_c["backstory"]:
-                    continue
+                if event.m_c["backstory"]:
+                    if cat.backstory not in event.m_c["backstory"]:
+                        continue
 
-            # check that an random_cat is available to use for r_c
+
+            # check that a random_cat is available to use for r_c
             if event.r_c and random_cat:
-                if random_cat.age not in event.r_c["age"]:
+                if random_cat.age not in event.r_c["age"] and "any" not in event.r_c["age"]:
                     continue
-                if random_cat.status not in event.r_c["status"]:
+                if random_cat.status not in event.r_c["status"] and "any" not in event.r_c["age"]:
                     continue
                 if event.r_c["relationship_status"]:
                     if not filter_relationship_type(group=[cat, random_cat],
@@ -436,21 +443,23 @@ class GenerateEvents:
                     continue
 
                 # check backstory
-                if random_cat.backstory not in event.r_c["backstory"]:
-                    continue
-            else:
-                continue
+                if event.r_c["backstory"]:
+                    if random_cat.backstory not in event.r_c["backstory"]:
+                        continue
 
             # check that injury is possible
             if event.injury:
-                for injury in event.injury["injuries"]:
-                    if injury in GenerateEvents.INJURIES:
-                        if injury == 'mangled tail' and (
-                                'NOTAIL' in cat.pelt.scars or 'HALFTAIL' in cat.pelt.scars):
-                            continue
+                print(event.injury)
+                for block in event.injury:
+                    for injury in block["injuries"]:
+                        if injury in GenerateEvents.INJURIES:
+                            if injury == 'mangled tail' and (
+                                    'NOTAIL' in cat.pelt.scars or 'HALFTAIL' in cat.pelt.scars):
+                                continue
 
-                        if injury == 'torn ear' and 'NOEAR' in cat.pelt.scars:
-                            continue
+                            if injury == 'torn ear' and 'NOEAR' in cat.pelt.scars:
+                                continue
+
 
             # check if outsider event is allowed
             if event.outsider:
@@ -466,6 +475,7 @@ class GenerateEvents:
                 # welcoming
                 elif 71 <= game.clan.reputation <= 100 and "welcoming" not in event.outsider["current_rep"]:
                     continue
+
 
             # other Clan related checks
             if event.other_clan:
@@ -486,9 +496,12 @@ class GenerateEvents:
                 elif "hostile" in event.other_clan["current_rep"] and int(other_clan.relations) > 7:
                     continue
 
-            if event.supplies:
-                # TODO: freshkill events were previously locked out until clan 5 moons old, should we keep that?
-                clan_size = get_living_clan_cat_count(Cat)
+
+            # clans below a certain age can't have their supplies messed with
+            if game.clan.age < 5 and event.supplies:
+                continue
+            elif event.supplies:
+                clan_size = get_living_clan_cat_count(Cat_class)
                 for supply in event.supplies:
                     trigger = supply["trigger"]
                     supply_type = supply["type"]
@@ -501,7 +514,7 @@ class GenerateEvents:
                         discard = True
                         pile = game.clan.freshkill_pile
                         needed_amount = pile.amount_food_needed()
-                        if not FRESHKILL_EVENT_ACTIVE:
+                        if not freshkill_active:
                             continue
 
                         # "low" means total_amount must be less than half what is needed
@@ -516,7 +529,7 @@ class GenerateEvents:
                                 discard = False
 
                         # now do the math to find how much is too much prey
-                        trigger_factor = FRESHKILL_EVENT_TRIGGER_FACTOR
+                        trigger_factor = freshkill_trigger_factor
                         divider = 35 if game.clan.game_mode == "expanded" else 20
                         trigger_factor = trigger_factor - round(pow((clan_size / divider), 2))
                         if trigger_factor < 2 and game.clan.game_mode == "expanded":
@@ -597,6 +610,9 @@ class GenerateEvents:
 
                         if discard:
                             continue
+
+            final_events.append(event)
+            print("check")
 
         return final_events
 
@@ -696,6 +712,8 @@ class ShortEvent:
                 self.m_c["skill"] = []
             if "not_skill" not in self.m_c:
                 self.m_c["not_skill"] = []
+            if "trait" not in self.m_c:
+                self.m_c["trait"] = []
             if "not_trait" not in self.m_c:
                 self.m_c["not_trait"] = []
             if "age" not in self.m_c:
@@ -717,6 +735,8 @@ class ShortEvent:
                 self.r_c["skill"] = []
             if "not_skill" not in self.r_c:
                 self.r_c["not_skill"] = []
+            if "trait" not in self.r_c:
+                self.r_c["trait"] = []
             if "not_trait" not in self.r_c:
                 self.r_c["not_trait"] = []
             if "age" not in self.r_c:

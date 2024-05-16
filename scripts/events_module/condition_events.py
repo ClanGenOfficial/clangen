@@ -123,19 +123,18 @@ class Condition_Events():
 
         # handle death first, if percentage is 0 or lower, the cat will die
         if cat_nutrition.percentage <= 0:
-
+            text = ""
             if cat.status == "leader":
                 game.clan.leader_lives -= 1
-
-            # kill and retrive leader life text
-            text = cat.die()
+                # kill and retrive leader life text
+                text = get_leader_life_notice()
 
             possible_string_list = Condition_Events.ILLNESS_DEATH_STRINGS["starving"]
             event = random.choice(possible_string_list) + " " + text
             # first event in string lists is always appropriate for history formatting
             history_event = possible_string_list[0]
 
-            event = event_text_adjust(Cat, event.strip(), cat)
+            event = event_text_adjust(Cat, event.strip(), main_cat=cat)
 
             if cat.status == 'leader':
                 history_event = history_event.replace("m_c ", "")
@@ -194,7 +193,7 @@ class Condition_Events():
             cat.get_ill(illness)
 
         if event:
-            event_text = event_text_adjust(Cat, event, cat)
+            event_text = event_text_adjust(Cat, event, main_cat=cat)
             types = ["health"]
             game.cur_events_list.append(Single_Event(event_text, types, [cat.ID]))
 
@@ -326,7 +325,8 @@ class Condition_Events():
 
                 handle_short_events.handle_event(event_type="health",
                                                  main_cat=cat,
-                                                 random_cat=random_cat)
+                                                 random_cat=random_cat,
+                                                 freshkill_pile=game.clan.freshkill_pile)
 
         # just double-checking that trigger is only returned True if the cat is dead
         if cat.status != "leader":
@@ -465,7 +465,7 @@ class Condition_Events():
                     event = "m_c was killed by their illness." + " " + get_leader_life_notice()
                     history_event = "m_c died to an illness."
 
-                event = event_text_adjust(Cat, event, cat)
+                event = event_text_adjust(Cat, event, main_cat=cat)
 
                 if cat.status == 'leader':
                     event = event + " " + get_leader_life_notice()
@@ -494,7 +494,7 @@ class Condition_Events():
                 # choose event string
                 random_index = int(random.random() * len(possible_string_list))
                 event = possible_string_list[random_index]
-                event = event_text_adjust(Cat, event, cat, other_cat=None)
+                event = event_text_adjust(Cat, event, main_cat=cat, random_cat=None)
                 event_list.append(event)
                 game.herb_events_list.append(event)
 
@@ -567,7 +567,7 @@ class Condition_Events():
                     event = "m_c was killed by their injuries." + " " + get_leader_life_notice()
                     history_text = "m_c died to an injury."
 
-                event = event_text_adjust(Cat, event, cat)
+                event = event_text_adjust(Cat, event, main_cat=cat)
 
                 if cat.status == 'leader':
                     event = event + " " + get_leader_life_notice()
@@ -598,7 +598,7 @@ class Condition_Events():
                             f"WARNING: {injury} couldn't be found in the healed strings dict! placeholder string was used.")
                         event = f"m_c's injury {injury} has healed"
 
-                event = event_text_adjust(Cat, event, cat, other_cat=None)
+                event = event_text_adjust(Cat, event, main_cat=cat, random_cat=None)
 
                 game.herb_events_list.append(event)
 
@@ -631,7 +631,7 @@ class Condition_Events():
                         random_index = 2
 
                     event = possible_string_list[random_index]
-                    event = event_text_adjust(Cat, event, cat, other_cat=med_cat)  # adjust the text
+                    event = event_text_adjust(Cat, event, main_cat=cat, random_cat=med_cat)  # adjust the text
                 if event is not None:
                     event_list.append(event)
                 continue
@@ -732,7 +732,7 @@ class Condition_Events():
                     if med_cat == cat:
                         random_index = 1
                 event = possible_string_list[random_index]
-                event = event_text_adjust(Cat, event, cat, other_cat=med_cat)  # adjust the text
+                event = event_text_adjust(Cat, event, main_cat=cat, random_cat=med_cat)  # adjust the text
                 event_list.append(event)
                 continue
 
@@ -905,7 +905,7 @@ class Condition_Events():
                     print(f"WARNING: {condition} couldn't be found in the risk strings! placeholder string was used")
                     event = "m_c's condition has gotten worse."
 
-                event = event_text_adjust(Cat, event, cat, other_cat=med_cat)  # adjust the text
+                event = event_text_adjust(Cat, event, main_cat=cat, random_cat=med_cat)  # adjust the text
                 event_list.append(event)
 
                 # we add the condition to this game switch, this is so we can ensure it's skipped over for this moon
@@ -1028,19 +1028,3 @@ class Condition_Events():
                 if risk['chance'] > 2:
                     risk['chance'] -= 1
 
-# ---------------------------------------------------------------------------- #
-#                                LOAD RESOURCES                                #
-# ---------------------------------------------------------------------------- #
-
-INJURY_GROUPS = {
-    "battle_injury": ["claw-wound", "mangled leg", "mangled tail", "torn pelt", "cat bite"],
-    "minor_injury": ["sprain", "sore", "bruises", "scrapes"],
-    "blunt_force_injury": ["broken bone", "broken back", "head damage", "broken jaw"],
-    "hot_injury": ["heat exhaustion", "heat stroke", "dehydrated"],
-    "cold_injury": ["shivering", "frostbite"],
-    "big_bite_injury": ["bite-wound", "broken bone", "torn pelt", "mangled leg", "mangled tail"],
-    "small_bite_injury": ["bite-wound", "torn ear", "torn pelt", "scrapes"],
-    "beak_bite": ["beak bite", "torn ear", "scrapes"],
-    "rat_bite": ["rat bite", "torn ear", "torn pelt"],
-    "sickness": ["greencough", "redcough", "whitecough", "yellowcough"]
-}

@@ -499,12 +499,13 @@ class Group_Events():
         if "trust" in dictionary and dictionary["trust"] != "neutral":
             platonic = amount if dictionary["trust"] == "increase" else amount *-1
 
-
-        for inter_cat_id in abbreviations_cat_id.values():
-            inter_cat = Cat.all_cats[inter_cat_id]
+        abbreviations_cat = []
+        for cat in abbreviations_cat_id:
+            abbreviations_cat.append(Cat.fetch_cat(cat))
+        for inter_cat in abbreviations_cat:
             change_relationship_values(
                 cats_from=[inter_cat],
-                cats_to=list(abbreviations_cat_id.values()),
+                cats_to=list(abbreviations_cat),
                 romantic_love=romantic,
                 platonic_like=platonic,
                 dislike=dislike,
@@ -529,6 +530,7 @@ class Group_Events():
             cat_from_id = abbreviations_cat_id[abbre_from]
             cat_to_id = abbreviations_cat_id[abbre_to]
             cat_from = Cat.all_cats[cat_from_id]
+            cat_to = Cat.all_cats[cat_to_id]
 
             # set all values to influence the relationship
             romantic = 0
@@ -555,7 +557,7 @@ class Group_Events():
 
             change_relationship_values(
                 cats_from=[cat_from],
-                cats_to=[cat_to_id],
+                cats_to=[cat_to],
                 romantic_love=romantic,
                 platonic_like=platonic,
                 dislike=dislike,

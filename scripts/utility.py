@@ -14,8 +14,6 @@ import logging
 from sys import exit as sys_exit
 from typing import Dict, List
 
-from scripts.clan_resources.freshkill import FRESHKILL_EVENT_TRIGGER_FACTOR
-
 logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache
 from scripts.cat.history import History
@@ -69,23 +67,27 @@ def get_alive_kits(Cat):
 
     return alive_kits
 
+
 def get_alive_apps(Cat):
     """
     returns a list of IDs for all living apprentices in the clan
     """
     alive_apps = [i for i in Cat.all_cats.values() if
-                  i.status in ["apprentice", "medicine cat apprentice", "mediator apprentice"] and not i.dead and not i.outside]
+                  i.status in ["apprentice", "medicine cat apprentice",
+                               "mediator apprentice"] and not i.dead and not i.outside]
 
     return alive_apps
+
 
 def get_alive_newborns(Cat):
     """
     returns a list of IDs for all living newborns in the clan
     """
     alive_newborns = [i for i in Cat.all_cats.values() if
-                  i.status in ["newborn"] and not i.dead and not i.outside]
+                      i.status in ["newborn"] and not i.dead and not i.outside]
 
     return alive_newborns
+
 
 def get_med_cats(Cat, working=True):
     """
@@ -209,7 +211,7 @@ def get_random_moon_cat(Cat, main_cat, parent_child_modifier=False, mentor_app_m
                     and not int(random() * 3):
                 random_cat = Cat.fetch_cat(main_cat.mentor)
             elif main_cat.apprentice and not int(random() * 3):
-                random_cat = choice(main_cat.apprentice)
+                random_cat = Cat.fetch_cat(choice(main_cat.apprentice))
 
     return random_cat
 
@@ -1337,10 +1339,10 @@ def change_relationship_values(cats_to: list,
                 continue
 
             # if the cats don't know each other, start a new relationship
-            if single_cat_to not in single_cat_from.relationships:
+            if single_cat_to.ID not in single_cat_from.relationships:
                 single_cat_from.create_one_relationship(single_cat_to)
 
-            rel = single_cat_from.relationships[single_cat_to]
+            rel = single_cat_from.relationships[single_cat_to.ID]
 
             # here we just double-check that the cats are allowed to be romantic with each other
             if single_cat_from.is_potential_mate(single_cat_to,
@@ -1657,13 +1659,32 @@ def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
     return text
 
 
-def event_text_adjust(Cat, text, event, stat_cat=None):
+def event_text_adjust(Cat,
+                      text,
+                      patrol_leader=None,
+                      main_cat=None,
+                      random_cat=None,
+                      stat_cat=None,
+                      victim_cat=None,
+                      patrol_cats: list = None,
+                      patrol_apprentices: list = None,
+                      new_cats: list = None,
+                      clan=None,
+                      other_clan=None):
     """
     handles finding abbreviations in the text and replacing them appropriately, returns the adjusted text
     :param Cat: always pass the Cat class
     :param text: the text being adjusted
-    :param event: the class of the event the text belongs to (i.e. Patrol, DeathEvent, ect.)
-    :param stat_cat: if adjusting a patrol, pass self.stat_cat
+    :param patrol_leader: Cat object for patrol_leader (p_l), if present
+    :param main_cat: Cat object for main_cat (m_c), if present
+    :param random_cat: Cat object for random_cat (r_c), if present
+    :param stat_cat: Cat object for stat_cat (s_c), if present
+    :param victim_cat: Cat object for victim_cat (mur_c), if present
+    :param patrol_cats: List of Cat objects for cats in patrol, if present
+    :param patrol_apprentices: List of Cat objects for patrol_apprentices (app#), if present
+    :param new_cats: List of Cat objects for new_cats (n_c#), if present
+    :param clan: pass game.clan
+    :param other_clan: OtherClan object for other_clan (o_c_n), if present
     """
     # TODO: need to figure out how to make this work in instances where an event class isn't usable
 
@@ -1675,16 +1696,16 @@ def event_text_adjust(Cat, text, event, stat_cat=None):
 
     # main_cat
     if "m_c" in text:
-        replace_dict["m_c"] = (str(event.main_cat.name), choice(event.main_cat.pronouns))
+        replace_dict["m_c"] = (str(main_cat.name), choice(main_cat.pronouns))
 
     # patrol_lead
     if "p_l" in text:
-        replace_dict["p_l"] = (str(event.patrol_leader.name), choice(event.patrol_leader.pronouns))
+        replace_dict["p_l"] = (str(patrol_leader.name), choice(patrol_leader.pronouns))
 
     # random_cat
     if "r_c" in text:
-        if event.random_cat:
-            replace_dict["r_c"] = (str(event.random_cat.name), choice(event.random_cat.pronouns))
+        if random_cat:
+            replace_dict["r_c"] = (str(random_cat.name), choice(random_cat.pronouns))
 
     # stat cat
     if "s_c" in text:
@@ -1695,7 +1716,7 @@ def event_text_adjust(Cat, text, event, stat_cat=None):
     other_cat_abbr = ["o_c1", "o_c2", "o_c3", "o_c4"]
     for abbr in other_cat_abbr:
         if abbr in text:
-            other_cats = [i for i in event.patrol_cats if i not in [event.patrol_leader, event.random_cat]]
+            other_cats = [i for i in patrol_cats if i not in [patrol_leader, random_cat]]
             if len(other_cats) >= 1:
                 replace_dict['o_c1'] = (str(other_cats[0].name),
                                         choice(other_cats[0].pronouns))
@@ -1715,31 +1736,31 @@ def event_text_adjust(Cat, text, event, stat_cat=None):
     app_abbr = ["app1", "app2", "app3", "app4", "app5", "app6"]
     for abbr in app_abbr:
         if abbr in text:
-            if len(event.patrol_apprentices) > 0:
+            if len(patrol_apprentices) > 0:
                 replace_dict["app1"] = (
-                    str(event.patrol_apprentices[0].name), choice(event.patrol_apprentices[0].pronouns))
-            if len(event.patrol_apprentices) > 1:
+                    str(patrol_apprentices[0].name), choice(patrol_apprentices[0].pronouns))
+            if len(patrol_apprentices) > 1:
                 replace_dict["app2"] = (
-                    str(event.patrol_apprentices[1].name), choice(event.patrol_apprentices[1].pronouns))
-            if len(event.patrol_apprentices) > 2:
+                    str(patrol_apprentices[1].name), choice(patrol_apprentices[1].pronouns))
+            if len(patrol_apprentices) > 2:
                 replace_dict["app3"] = (
-                    str(event.patrol_apprentices[2].name), choice(event.patrol_apprentices[2].pronouns))
-            if len(event.patrol_apprentices) > 3:
+                    str(patrol_apprentices[2].name), choice(patrol_apprentices[2].pronouns))
+            if len(patrol_apprentices) > 3:
                 replace_dict["app4"] = (
-                    str(event.patrol_apprentices[3].name), choice(event.patrol_apprentices[3].pronouns))
-            if len(event.patrol_apprentices) > 4:
+                    str(patrol_apprentices[3].name), choice(patrol_apprentices[3].pronouns))
+            if len(patrol_apprentices) > 4:
                 replace_dict["app5"] = (
-                    str(event.patrol_apprentices[4].name), choice(event.patrol_apprentices[4].pronouns))
-            if len(event.patrol_apprentices) > 5:
+                    str(patrol_apprentices[4].name), choice(patrol_apprentices[4].pronouns))
+            if len(patrol_apprentices) > 5:
                 replace_dict["app6"] = (
-                    str(event.patrol_apprentices[5].name), choice(event.patrol_apprentices[5].pronouns))
+                    str(patrol_apprentices[5].name), choice(patrol_apprentices[5].pronouns))
             # running this once will cover all abbrs, so break
             break
 
     # new_cats (include pre version)
     for abbr in text:
         if "n_c" in abbr:
-            for i, new_cats in enumerate(event.new_cats):
+            for i, new_cats in enumerate(new_cats):
                 if len(new_cats > 1):
                     pronoun = Cat.default_pronouns[0]  # They/them for multiple cats
                 else:
@@ -1750,15 +1771,15 @@ def event_text_adjust(Cat, text, event, stat_cat=None):
 
     # mur_c (murdered cat for reveals)
     if "mur_c" in text:
-        replace_dict["mur_c"] = (str(event.victim_cat.name), choice(event.victim_cat.pronouns))
+        replace_dict["mur_c"] = (str(victim_cat.name), choice(victim_cat.pronouns))
 
     # lead_name
-    if "lead_name" in event:
+    if "lead_name" in text:
         leader = Cat.fetch_cat(game.clan.leader)
         replace_dict["lead_name"] = (str(leader.name), choice(leader.pronouns))
 
     # dep_name
-    if "dep_name" in event:
+    if "dep_name" in text:
         deputy = Cat.fetch_cat(game.clan.deputy)
         replace_dict["dep_name"] = (str(deputy.name), choice(deputy.pronouns))
 
@@ -1768,51 +1789,58 @@ def event_text_adjust(Cat, text, event, stat_cat=None):
         replace_dict["med_name"] = (str(med.name), choice(med.pronouns))
 
     # assign all names and pronouns
-    text = process_text(text, replace_dict)
+    if replace_dict:
+        text = process_text(text, replace_dict)
 
     # clan_name
-    clan_name = game.clan.name
-    pos = 0
-    for x in range(text.count('c_n')):
-        if 'c_n' in text:
-            for y in vowels:
-                if str(clan_name).startswith(y):
-                    modify = text.split()
-                    if 'c_n' in modify:
-                        pos = modify.index('c_n')
-                    if "c_n's" in modify:
-                        pos = modify.index("c_n's")
-                    if 'c_n.' in modify:
-                        pos = modify.index('c_n.')
-                    if modify[pos - 1] == 'a':
-                        modify.remove('a')
-                        modify.insert(pos - 1, 'an')
-                    text = " ".join(modify)
-                    break
+    if "c_n" in text:
+        try:
+            clan_name = clan.name
+        except AttributeError:
+            clan_name = game.switches['clan_list'][0]
 
-    text = text.replace('c_n', str(game.clan.name) + 'Clan')
+        pos = 0
+        for x in range(text.count('c_n')):
+            if 'c_n' in text:
+                for y in vowels:
+                    if str(clan_name).startswith(y):
+                        modify = text.split()
+                        if 'c_n' in modify:
+                            pos = modify.index('c_n')
+                        if "c_n's" in modify:
+                            pos = modify.index("c_n's")
+                        if 'c_n.' in modify:
+                            pos = modify.index('c_n.')
+                        if modify[pos - 1] == 'a':
+                            modify.remove('a')
+                            modify.insert(pos - 1, 'an')
+                        text = " ".join(modify)
+                        break
+
+        text = text.replace('c_n', str(clan_name) + 'Clan')
 
     # other_clan_name
-    other_clan_name = event.other_clan.name
-    pos = 0
-    for x in range(text.count('o_c_n')):
-        if 'o_c_n' in text:
-            for y in vowels:
-                if str(other_clan_name).startswith(y):
-                    modify = text.split()
-                    if 'o_c_n' in modify:
-                        pos = modify.index('o_c_n')
-                    if "o_c_n's" in modify:
-                        pos = modify.index("o_c_n's")
-                    if 'o_c_n.' in modify:
-                        pos = modify.index('o_c_n.')
-                    if modify[pos - 1] == 'a':
-                        modify.remove('a')
-                        modify.insert(pos - 1, 'an')
-                    text = " ".join(modify)
-                    break
+    if "o_c_n" in text:
+        other_clan_name = other_clan.name
+        pos = 0
+        for x in range(text.count('o_c_n')):
+            if 'o_c_n' in text:
+                for y in vowels:
+                    if str(other_clan_name).startswith(y):
+                        modify = text.split()
+                        if 'o_c_n' in modify:
+                            pos = modify.index('o_c_n')
+                        if "o_c_n's" in modify:
+                            pos = modify.index("o_c_n's")
+                        if 'o_c_n.' in modify:
+                            pos = modify.index('o_c_n.')
+                        if modify[pos - 1] == 'a':
+                            modify.remove('a')
+                            modify.insert(pos - 1, 'an')
+                        text = " ".join(modify)
+                        break
 
-    text = text.replace('o_c_n', str(other_clan_name) + 'Clan')
+        text = text.replace('o_c_n', str(other_clan_name) + 'Clan')
 
     # prey lists
     text = adjust_prey_abbr(text)
@@ -1825,11 +1853,11 @@ def event_text_adjust(Cat, text, event, stat_cat=None):
 
     # acc_plural (only works for main_cat's acc)
     if "acc_plural" in text:
-        text = text.replace("acc_plural", str(ACC_DISPLAY[event.main_cat.pelt.accessory]["plural"]))
+        text = text.replace("acc_plural", str(ACC_DISPLAY[main_cat.pelt.accessory]["plural"]))
 
     # acc_singular (only works for main_cat's acc)
     if "acc_singular" in text:
-        text = text.replace("acc_singular", str(ACC_DISPLAY[event.main_cat.pelt.accessory]["singular"]))
+        text = text.replace("acc_singular", str(ACC_DISPLAY[main_cat.pelt.accessory]["singular"]))
 
     return text
 

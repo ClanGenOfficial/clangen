@@ -7,6 +7,8 @@ import re
 import pygame
 from os.path import exists as path_exists
 
+from scripts.events_module.handle_short_events import INJURY_GROUPS
+
 if TYPE_CHECKING:
     from scripts.patrol.patrol import Patrol
 
@@ -24,7 +26,6 @@ from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_resources.freshkill import ADDITIONAL_PREY, PREY_REQUIREMENT, HUNTER_EXP_BONUS, HUNTER_BONUS, \
     FRESHKILL_ACTIVE
-from scripts.events_module.condition_events import INJURY_GROUPS
 
 
 class PatrolOutcome():
@@ -177,7 +178,15 @@ class PatrolOutcome():
         """
         results = []
         # the text has to be processed before - otherwise leader might be referenced with their warrior name
-        processed_text = event_text_adjust(Cat, self.text, Patrol, self.stat_cat)
+        processed_text = event_text_adjust(Cat,
+                                           self.text,
+                                           patrol_leader=patrol.patrol_leader,
+                                           stat_cat=self.stat_cat,
+                                           patrol_cats=patrol.patrol_cats,
+                                           patrol_apprentices=patrol.patrol_apprentices,
+                                           new_cats=patrol.new_cats,
+                                           clan=game.clan,
+                                           other_clan=patrol.other_clan)
 
         # This order is important. 
         results.append(self._handle_new_cats(patrol))
@@ -644,7 +653,7 @@ class PatrolOutcome():
                     print(f"something is wrong with relationship log: {log}")
 
             change_relationship_values(
-                [i.ID for i in cats_to_ob],
+                cats_to_ob,
                 cats_from_ob,
                 romantic_love,
                 platonic_like,
@@ -658,7 +667,7 @@ class PatrolOutcome():
 
             if block.get("mutual"):
                 change_relationship_values(
-                    [i.ID for i in cats_from_ob],
+                    cats_from_ob,
                     cats_to_ob,
                     romantic_love,
                     platonic_like,

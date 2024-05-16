@@ -35,9 +35,10 @@
     "m_c is sick with yellowcough."
   ],
   "malnourished": [
-
+    "m_c has become malnourished.",
+    "Lack of freshkill has left m_c malnourished."
   ],
   "starving": [
-
+    "m_c is starving."
   ]
 }

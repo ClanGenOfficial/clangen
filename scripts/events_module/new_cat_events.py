@@ -268,6 +268,7 @@ class NewCatEvents:
             difference = 1
             change_clan_relations(other_clan, difference=difference)
 
+        return
         event_text = event_text_adjust(Cat, new_cat_event.event_text, cat, other_cat, other_clan_name,
                                        new_cat=created_cats[0])
 

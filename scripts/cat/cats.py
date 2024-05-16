@@ -569,7 +569,7 @@ class Cat():
                 
                 text = choice(possible_strings)
                 text += ' ' + choice(MINOR_MAJOR_REACTION["major"])
-                text = event_text_adjust(Cat, text, self, cat)
+                text = event_text_adjust(Cat, text, self, main_cat=cat)
                 
                 # grief the cat
                 if game.clan.game_mode != 'classic':
@@ -629,7 +629,7 @@ class Cat():
                                                                 body_status)
                     )
                 
-                text = event_text_adjust(Cat, choice(possible_strings), self, cat)
+                text = event_text_adjust(Cat, choice(possible_strings), self, main_cat=cat)
                 if cat.ID not in Cat.grief_strings:
                     Cat.grief_strings[cat.ID] = []
                 
@@ -1330,7 +1330,7 @@ class Cat():
         # get chosen thought
         chosen_thought = Thoughts.get_chosen_thought(self, other_cat, game_mode, biome, season, camp)
 
-        chosen_thought = event_text_adjust(Cat, chosen_thought, self, other_cat)
+        chosen_thought = event_text_adjust(Cat, chosen_thought, main_cat=self, random_cat=other_cat, clan=game.clan)
 
         # insert thought
         self.thought = str(chosen_thought)

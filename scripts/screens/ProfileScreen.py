@@ -1144,8 +1144,8 @@ class ProfileScreen(Screens):
                 # TODO: change event_text_adjust for the history displays
                 new_text = (event_text_adjust(Cat,
                                               scar["text"],
-                                              self.the_cat,
-                                              Cat.fetch_cat(scar["involved"])))
+                                              main_cat=self.the_cat,
+                                              random_cat=Cat.fetch_cat(scar["involved"])))
                 if moons:
                     new_text += f" (Moon {scar['moon']})"
 
@@ -1319,12 +1319,17 @@ class ProfileScreen(Screens):
         ''' returns the adjusted murder history text for the victim '''
         if event["text"] == death["text"] and event["moon"] == death["moon"]:
             if event["revealed"] is True: 
-                final_text = event_text_adjust(Cat, event["text"], self.the_cat, Cat.fetch_cat(death["involved"]))
+                final_text = event_text_adjust(Cat,
+                                               event["text"],
+                                               main_cat=self.the_cat,
+                                               random_cat=Cat.fetch_cat(death["involved"]))
                 if event.get("revelation_text"):
                     final_text = final_text + event["revelation_text"]
                 return final_text
             else:
-                return event_text_adjust(Cat, event["unrevealed_text"], self.the_cat, Cat.fetch_cat(death["involved"]))
+                return event_text_adjust(Cat, event["unrevealed_text"],
+                                         main_cat=self.the_cat,
+                                         random_cat=Cat.fetch_cat(death["involved"]))
         return None
 
 
@@ -1353,9 +1358,13 @@ class ProfileScreen(Screens):
                             break
 
                 if found_murder and text is not None and not event["revealed"]:
-                    text = event_text_adjust(Cat, event["unrevealed_text"], self.the_cat, Cat.fetch_cat(death["involved"]))
+                    text = event_text_adjust(Cat, event["unrevealed_text"],
+                                             main_cat=self.the_cat,
+                                             random_cat=Cat.fetch_cat(death["involved"]))
                 elif not found_murder:
-                    text = event_text_adjust(Cat, death["text"], self.the_cat, Cat.fetch_cat(death["involved"]))
+                    text = event_text_adjust(Cat, death["text"],
+                                             main_cat=self.the_cat,
+                                             random_cat=Cat.fetch_cat(death["involved"]))
 
                 if self.the_cat.status == 'leader':
                     if index == death_number - 1 and self.the_cat.dead:

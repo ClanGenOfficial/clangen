@@ -21,12 +21,10 @@ from scripts.cat.cats import Cat, cat_class
 from scripts.clan import HERBS
 from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE, FRESHKILL_EVENT_ACTIVE
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
-from scripts.events_module.misc_events import MiscEvents
 from scripts.events_module.new_cat_events import NewCatEvents
 from scripts.events_module.relation_events import Relation_Events
 from scripts.events_module.condition_events import Condition_Events
 from scripts.events_module.handle_short_events import handle_short_events
-# from scripts.events_module.disaster_events import DisasterEvents
 from scripts.events_module.outsider_events import OutsiderEvents
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
@@ -129,7 +127,7 @@ class Events:
                 for _val in values:
                     if _val[2] == "minor":
                         # Apply the grief message as a thought to the cat
-                        text = event_text_adjust(Cat, _val[0], Cat.fetch_cat(cat_id), Cat.fetch_cat(_val[1][0]))
+                        text = event_text_adjust(Cat, _val[0], main_cat=Cat.fetch_cat(cat_id), random_cat=Cat.fetch_cat(_val[1][0]))
                         Cat.fetch_cat(cat_id).thought = text
                     else:
                         game.cur_events_list.append(
@@ -860,7 +858,7 @@ class Events:
             else:
                 text += "child."
 
-        text = event_text_adjust(Cat, text, lost_cat, clan=game.clan)
+        text = event_text_adjust(Cat, text, main_cat=lost_cat, clan=game.clan)
 
         game.cur_events_list.append(
             Single_Event(text, "misc", [lost_cat.ID] + additional_cats))
@@ -999,7 +997,7 @@ class Events:
                 return
 
         # prevent injured or sick cats from unrealistic Clan events
-        if cat.is_ill() or cat.is_injured():
+        """if cat.is_ill() or cat.is_injured():
             if cat.is_ill() and cat.is_injured():
                 if random.getrandbits(1):
                     triggered_death = Condition_Events.handle_injuries(cat)
@@ -1016,7 +1014,7 @@ class Events:
             game.switches['skip_conditions'].clear()
             if cat.dead:
                 return
-            self.handle_outbreaks(cat)
+            self.handle_outbreaks(cat)"""
 
         # newborns don't do much
         if cat.status == 'newborn':
@@ -1052,9 +1050,9 @@ class Events:
         if cat.is_ill() or cat.is_injured():
             return
 
-        self.invite_new_cats(cat)
-        self.other_interactions(cat)
-        self.gain_accessories(cat)
+        # self.invite_new_cats(cat)
+        # self.other_interactions(cat)
+        # self.gain_accessories(cat)
 
         # switches between the two death handles
         if random.getrandbits(1):
@@ -1703,7 +1701,8 @@ class Events:
             handle_short_events.handle_event(event_type="misc",
                                              main_cat=Cat,
                                              random_cat=random_cat,
-                                             sub_type=sub_type)
+                                             sub_type=sub_type,
+                                             freshkill_pile=game.clan.freshkill_pile)
 
         self.ceremony_accessory = False
 
@@ -1826,12 +1825,13 @@ class Events:
         alive_kits = get_alive_kits(Cat)
 
         # chance to kill leader: 1/125 by default
-        if not int(random.random() * game.get_config_value("death_related", "leader_death_chance")) \
+        if not int(random.random() * 1) \
                 and cat.status == 'leader' \
                 and not cat.not_working():
             handle_short_events.handle_event(event_type="birth_death",
                                              main_cat=cat,
-                                             random_cat=random_cat)
+                                             random_cat=random_cat,
+                                             freshkill_pile=game.clan.freshkill_pile)
             return True
 
         # chance to die of old age
@@ -1844,14 +1844,16 @@ class Events:
             handle_short_events.handle_event(event_type="birth_death",
                                              main_cat=cat,
                                              random_cat=random_cat,
-                                             sub_type=["old_age"])
+                                             sub_type=["old_age"],
+                                             freshkill_pile=game.clan.freshkill_pile)
             return True
         # max age has been indicated to be 300, so if a cat reaches that age, they die of old age
         elif cat.moons >= 300:
             handle_short_events.handle_event(event_type="birth_death",
                                              main_cat=cat,
                                              random_cat=random_cat,
-                                             sub_type=["old_age"])
+                                             sub_type=["old_age"],
+                                             freshkill_pile=game.clan.freshkill_pile)
             return True
 
         # disaster death chance
@@ -1860,7 +1862,8 @@ class Events:
                 handle_short_events.handle_event(event_type="birth_death",
                                                  main_cat=cat,
                                                  random_cat=random_cat,
-                                                 sub_type=["mass_death"])
+                                                 sub_type=["mass_death"],
+                                                 freshkill_pile=game.clan.freshkill_pile)
                 return True
 
         # final death chance and then, if not triggered, head to injuries
@@ -1868,7 +1871,8 @@ class Events:
                 and not cat.not_working():  # 1/400
             handle_short_events.handle_event(event_type="birth_death",
                                              main_cat=cat,
-                                             random_cat=random_cat)
+                                             random_cat=random_cat,
+                                             freshkill_pile=game.clan.freshkill_pile)
             return True
         else:
             triggered_death = Condition_Events.handle_injuries(cat, random_cat)
@@ -1900,7 +1904,8 @@ class Events:
             handle_short_events.handle_event(event_type="birth_death",
                                              main_cat=Cat.fetch_cat(chosen_target.cat_to),
                                              random_cat=cat,
-                                             sub_type=["murder"])
+                                             sub_type=["murder"],
+                                             freshkill_pile=game.clan.freshkill_pile)
 
             return
 
@@ -1970,7 +1975,8 @@ class Events:
                 handle_short_events.handle_event(event_type="birth_death",
                                                  main_cat=Cat.fetch_cat(chosen_target.cat_to),
                                                  random_cat=cat,
-                                                 murder=True)
+                                                 sub_type=["murder"],
+                                                 freshkill_pile=game.clan.freshkill_pile)
 
     def handle_mass_extinctions(self, cat):  # pylint: disable=unused-argument
         """Affects random cats in the clan, no cat needs to be passed to this function."""
