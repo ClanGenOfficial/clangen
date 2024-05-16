@@ -31,6 +31,8 @@ from scripts.clan_resources.freshkill import ADDITIONAL_PREY, PREY_REQUIREMENT, 
 class PatrolOutcome():
     """ Holds all info on patrol outcomes, and methods to handle that outcome """
 
+    # TODO: COMPARE WITH DEV PATROL_OUTCOME.PY AND RESOLVE ANY INCONSISTENCIES
+
     def __init__(self,
                  success: bool = True,
                  antagonize: bool = False,
