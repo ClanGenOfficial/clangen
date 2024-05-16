@@ -102,21 +102,21 @@ class Screens():
             visible=False,
             manager=MANAGER,
             object_id="#med_den_button",
-            starting_height=4),
+            starting_height=10),
         "warrior_den": UIImageButton(
             scale(pygame.Rect((50, 280), (242, 56))),
             "",
             visible=False,
             manager=MANAGER,
             object_id="#warrior_den_button",
-            starting_height=4),
+            starting_height=10),
         "clearing": UIImageButton(
             scale(pygame.Rect((50, 360), (162, 56))),
             "",
             visible=False,
             manager=MANAGER,
             object_id="#clearing_button",
-            starting_height=4
+            starting_height=10
         ),
 
         "heading": pygame_gui.elements.UITextBox(

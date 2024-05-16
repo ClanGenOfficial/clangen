@@ -441,6 +441,13 @@ class SettingsScreen(Screens):
         """
         TODO: DOCS
         """
+        if "info_container" in self.checkboxes_text:
+            self.checkboxes_text["info_container"].kill()
+
+        if "container_general" in self.checkboxes_text:
+            self.checkboxes_text["container_general"].kill()
+
+
         for checkbox in self.checkboxes.values():
             checkbox.kill()
         self.checkboxes = {}
