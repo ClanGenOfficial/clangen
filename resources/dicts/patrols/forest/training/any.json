@@ -479,7 +479,7 @@
                 "art": "fst_train_stuck_outcome"
             },
             {
-                "text": "As s_c rarely has patience for other cats, r_c tells them harshly that they don't have time for some mouse-brain who got stuck, making s_c resentful as they pull themselves out from under the branches.",
+                "text": "As s_c rarely has patience for other cats, s_c tells them harshly that they don't have time for some mouse-brain who got stuck, making r_c resentful as they pull themselves out from under the branches.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -552,7 +552,7 @@
                 "art": "fst_train_stuck_outcome"
             },
             {
-                "text": "The patrol can't help s_c in time, and as s_c starts to drift off to StarClan, the eyes of r_c glint malevolently. Was this...? s_c doesn't have a chance to finish their last thought.",
+                "text": "The patrol can't help r_c in time, and as r_c starts to drift off to StarClan, the eyes of s_c glint malevolently. Was this...? r_c doesn't have a chance to finish their last thought.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -565,7 +565,7 @@
                     "troublesome",
                     "vengeful"
                 ],
-                "dead_cats": ["s_c"],
+                "dead_cats": ["r_c"],
                 "history_text": {
                     "scar": "m_c carries a scar from being trapped on patrol.",
                     "reg_death": "m_c tragically died after being trapped on patrol.",
@@ -632,7 +632,7 @@
         "max_cats": 2,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Trailing behind p_l , there's a mighty crash above r_c. They look around wildly - just as the world is blotted out by a tangle of heavy falling branches.",
+        "intro_text": "Trailing behind p_l, there's a mighty crash above r_c. They look around wildly - just as the world is blotted out by a tangle of heavy falling branches.",
         "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -726,7 +726,7 @@
                 "art": "fst_train_stuck_outcome"
             },
             {
-                "text": "As s_c rarely has patience for other cats, r_c tells them harshly that they don't have time for some mouse-brain who got stuck, making s_c resentful as they pull themselves out from under the branches.",
+                "text": "As s_c rarely has patience for other cats, s_c tells them harshly that they don't have time for some mouse-brain who got stuck, making r_c resentful as they pull themselves out from under the branches.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -906,7 +906,7 @@
                 "art": "fst_train_stuck_outcome"
             },
             {
-                "text": "As s_c rarely has patience for other cats, r_c tells them harshly that they don't have time for some mouse-brain who got stuck, making s_c resentful as they pull themselves out from under the branches.",
+                "text": "As s_c rarely has patience for other cats, s_c tells them harshly that they don't have time for some mouse-brain who got stuck, making r_c resentful as they pull themselves out from under the branches.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
