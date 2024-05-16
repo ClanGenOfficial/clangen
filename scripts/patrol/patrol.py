@@ -589,11 +589,11 @@ class Patrol():
             if flag:
                 continue
             
-            if biome not in patrol.biome and "Any" not in patrol.biome:
+            if biome not in patrol.biome and "any" not in patrol.biome:
                 continue
-            if camp not in patrol.camp and "Any" not in patrol.camp:
+            if camp not in patrol.camp and "any" not in patrol.camp:
                 continue
-            if current_season not in patrol.season and "Any" not in patrol.season:
+            if current_season not in patrol.season and "any" not in patrol.season:
                 continue
 
             if 'hunting' not in patrol.types and patrol_type == 'hunting':
