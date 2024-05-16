@@ -877,6 +877,33 @@ class PatrolOutcome():
                 
                 give_mates.extend(patrol.new_cats[index])
         
+        give_romance = []
+        for tag in attribute_list:
+            match = re.match(r"romance:([_,0-9a-zA-Z]+)", tag)
+            if not match:
+                continue
+            
+            romance_indexes = match.group(1).split(",")
+            
+            # TODO: make this less ugly
+            for index in romance_indexes:
+                if index in in_patrol_cats:
+                    if in_patrol_cats[index] in ("apprentice", "medicine cat apprentice"):
+                        print("Can't romance apprentices")
+                        continue
+                    
+                    give_romance.append(in_patrol_cats[index])
+                        
+                try:
+                    index = int(index)
+                except ValueError:
+                    print(f"romance-index not correct: {index}")
+                    continue
+                
+                if index >= i:
+                    continue
+                
+                give_romance.extend(patrol.new_cats[index])
         
         # DETERMINE GENDER
         if "male" in attribute_list:
@@ -924,6 +951,11 @@ class PatrolOutcome():
             if match.group(1) == "mate" and give_mates:
                 age = randint(Cat.age_moons[give_mates[0].age][0], 
                               Cat.age_moons[give_mates[0].age][1])
+                break
+
+            if match.group(1) == "romance" and give_romance:
+                age = randint(Cat.age_moons[give_romance[0].age][0], 
+                              Cat.age_moons[give_romance[0].age][1])
                 break
                 
             if match.group(1) == "has_kits":
