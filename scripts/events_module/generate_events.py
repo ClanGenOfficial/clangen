@@ -234,7 +234,6 @@ class GenerateEvents:
             if game.clan.current_season.lower() not in event.season and "any" not in event.season:
                 continue
 
-
             # check tags
             prevent_bypass = "skill_trait_required" in event.tags
 
@@ -310,7 +309,7 @@ class GenerateEvents:
             if event.m_c:
                 if cat.age not in event.m_c["age"] and "any" not in event.m_c["age"]:
                     continue
-                if cat.status not in event.m_c["status"] and "any" not in event.m_c["age"]:
+                if cat.status not in event.m_c["status"] and "any" not in event.m_c["status"]:
                     continue
                 if event.m_c["relationship_status"]:
                     if not filter_relationship_type(group=[cat, random_cat],
@@ -377,12 +376,11 @@ class GenerateEvents:
                     if cat.backstory not in event.m_c["backstory"]:
                         continue
 
-
             # check that a random_cat is available to use for r_c
             if event.r_c and random_cat:
                 if random_cat.age not in event.r_c["age"] and "any" not in event.r_c["age"]:
                     continue
-                if random_cat.status not in event.r_c["status"] and "any" not in event.r_c["age"]:
+                if random_cat.status not in event.r_c["status"] and "any" not in event.r_c["status"]:
                     continue
                 if event.r_c["relationship_status"]:
                     if not filter_relationship_type(group=[cat, random_cat],

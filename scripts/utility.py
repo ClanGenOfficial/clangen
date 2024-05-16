@@ -204,7 +204,7 @@ def get_random_moon_cat(Cat, main_cat, parent_child_modifier=False, mentor_app_m
                     if Cat.fetch_cat(parent) in possible_r_c:
                         possible_parents.append(parent)
             if possible_parents:
-                random_cat = choice(possible_parents)
+                random_cat = Cat.fetch_cat(choice(possible_parents))
         if mentor_app_modifier:
             if main_cat.status in ["apprentice", "mediator apprentice", "medicine cat apprentice"] \
                     and main_cat.mentor \
@@ -213,6 +213,9 @@ def get_random_moon_cat(Cat, main_cat, parent_child_modifier=False, mentor_app_m
             elif main_cat.apprentice and not int(random() * 3):
                 random_cat = Cat.fetch_cat(choice(main_cat.apprentice))
 
+    if isinstance(random_cat, str):
+        print(f"WARNING: random cat was {random_cat} instead of cat object")
+        random_cat = Cat.fetch_cat(random_cat)
     return random_cat
 
 
@@ -1682,7 +1685,7 @@ def event_text_adjust(Cat,
     :param victim_cat: Cat object for victim_cat (mur_c), if present
     :param patrol_cats: List of Cat objects for cats in patrol, if present
     :param patrol_apprentices: List of Cat objects for patrol_apprentices (app#), if present
-    :param new_cats: List of Cat objects for new_cats (n_c#), if present
+    :param new_cats: List of Cat objects for new_cats (n_c:index), if present
     :param clan: pass game.clan
     :param other_clan: OtherClan object for other_clan (o_c_n), if present
     """
@@ -1792,6 +1795,29 @@ def event_text_adjust(Cat,
     if replace_dict:
         text = process_text(text, replace_dict)
 
+    # other_clan_name
+    if "o_c_n" in text:
+        other_clan_name = other_clan.name
+        pos = 0
+        for x in range(text.count('o_c_n')):
+            if 'o_c_n' in text:
+                for y in vowels:
+                    if str(other_clan_name).startswith(y):
+                        modify = text.split()
+                        if 'o_c_n' in modify:
+                            pos = modify.index('o_c_n')
+                        if "o_c_n's" in modify:
+                            pos = modify.index("o_c_n's")
+                        if 'o_c_n.' in modify:
+                            pos = modify.index('o_c_n.')
+                        if modify[pos - 1] == 'a':
+                            modify.remove('a')
+                            modify.insert(pos - 1, 'an')
+                        text = " ".join(modify)
+                        break
+
+        text = text.replace('o_c_n', str(other_clan_name) + 'Clan')
+
     # clan_name
     if "c_n" in text:
         try:
@@ -1818,29 +1844,6 @@ def event_text_adjust(Cat,
                         break
 
         text = text.replace('c_n', str(clan_name) + 'Clan')
-
-    # other_clan_name
-    if "o_c_n" in text:
-        other_clan_name = other_clan.name
-        pos = 0
-        for x in range(text.count('o_c_n')):
-            if 'o_c_n' in text:
-                for y in vowels:
-                    if str(other_clan_name).startswith(y):
-                        modify = text.split()
-                        if 'o_c_n' in modify:
-                            pos = modify.index('o_c_n')
-                        if "o_c_n's" in modify:
-                            pos = modify.index("o_c_n's")
-                        if 'o_c_n.' in modify:
-                            pos = modify.index('o_c_n.')
-                        if modify[pos - 1] == 'a':
-                            modify.remove('a')
-                            modify.insert(pos - 1, 'an')
-                        text = " ".join(modify)
-                        break
-
-        text = text.replace('o_c_n', str(other_clan_name) + 'Clan')
 
     # prey lists
     text = adjust_prey_abbr(text)

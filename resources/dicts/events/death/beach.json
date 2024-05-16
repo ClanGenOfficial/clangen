@@ -175,7 +175,7 @@
         "sub_type": [ "war" ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c drowned after being pushed out to sea by o_c warriors.",
+        "event_text": "m_c drowned after being pushed out to sea by o_c_n warriors.",
         "m_c": {
             "age": [
                 "adolescent",

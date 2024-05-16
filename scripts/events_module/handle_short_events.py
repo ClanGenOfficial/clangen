@@ -89,7 +89,7 @@ class HandleShortEvents():
                         break
 
         # NOW find the possible events and filter
-        possible_short_events = GenerateEvents.possible_short_events("death")
+        possible_short_events = GenerateEvents.possible_short_events(event_type)
 
         final_events = GenerateEvents.filter_possible_short_events(Cat_class=Cat,
                                                                    possible_events=possible_short_events,

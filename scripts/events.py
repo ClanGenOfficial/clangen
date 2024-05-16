@@ -1818,14 +1818,11 @@ class Events:
                 cat.age != 'kitten' and cat.age != 'adolescent' and not self.new_cat_invited:
             self.new_cat_invited = True
 
-            enemy_clan = get_warring_clan()
-
-            new_cats = NewCatEvents.handle_new_cats(
-                cat=cat,
-                other_cat=random_cat,
-                war=game.clan.war.get("at_war", False),
-                enemy_clan=enemy_clan,
-                alive_kits=get_alive_kits(Cat))
+            handle_short_events.handle_event(event_type="new_cat",
+                                             main_cat=cat,
+                                             random_cat=random_cat,
+                                             freshkill_pile=game.clan.freshkill_pile)
+            # TODO: move in handle_short_events?
             Relation_Events.welcome_new_cats(new_cats)
 
     def other_interactions(self, cat):
@@ -1856,8 +1853,8 @@ class Events:
         # check if Clan has kits, if True then Clan has kits
         alive_kits = get_alive_kits(Cat)
 
-        # chance to kill leader: 1/125 by default
-        if not int(random.random() * 1) \
+        # chance to kill leader: 1/50 by default
+        if not int(random.random() * game.get_config_value("death_related", "leader_death_chance")) \
                 and cat.status == 'leader' \
                 and not cat.not_working():
             handle_short_events.handle_event(event_type="birth_death",
