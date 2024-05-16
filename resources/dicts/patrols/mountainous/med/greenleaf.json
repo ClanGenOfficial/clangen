@@ -214,7 +214,7 @@
                 "herbs": ["many_herbs", "goldenrod", "betony"]
             },
             {
-                "text": "s_c is able to find the sought-after herb quickly, as {PRONOUN/s_c/subject} can easily spot the purple blossoms among the other plants, and {PRONOUN/p_l/subject} {VERB/s_c/bring/brings} back a great haul of betony for the herb stores. {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} even able to pick out a goldenrod bush on {PRONOUN/s_c/poss} path home.",
+                "text": "s_c is able to find the sought-after herb quickly, as {PRONOUN/s_c/subject} can easily spot the purple blossoms among the other plants, and {PRONOUN/p_l/subject} {VERB/s_c/bring/brings} back a great haul of betony for the herb stores. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} even able to pick out a goldenrod bush on {PRONOUN/s_c/poss} path home.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -4806,7 +4806,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Ugh. The ragwort p_l finds is flowering, and the yellow flowers of the plant waft out their scent, leaving a foul taste hanging in the air. It's so bad, p_l almost misses the burdock plant ready to be harvested nearby. There a chorus of long-suffering sighs as the cats get to work, accomplishing their unpleasant task professionally, but without any joy.",
+                "text": "Ugh. The ragwort p_l finds is flowering, and the yellow flowers of the plant waft out their scent, leaving a foul taste hanging in the air. It's so bad, p_l almost misses the burdock plant ready to be harvested nearby. There a chorus of long-suffering sighs as the cats get to work, accomplishing their unpleasant task diligently, but without any joy.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["burdock", "ragwort"],

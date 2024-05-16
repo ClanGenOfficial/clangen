@@ -34,7 +34,7 @@
                 ]
             },
             {
-                "text": "s_c catches a great d_mp_s, and two d_tp_p! But {PRONOUN/s_c/poss} sibling comes up empty pawed. s_c offers to let {PRONOUN/r_c/object} claim the smaller prey as {PRONOUN/r_c/poss} own, but the insulting suggestion just causes a massive argument.",
+                "text": "s_c catches a great d_mp_s, and two d_tp_p! But {PRONOUN/s_c/poss} sibling comes up empty-pawed. s_c offers to let {PRONOUN/r_c/object} claim the smaller prey as {PRONOUN/r_c/poss} own, but the insulting suggestion just causes a massive argument.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"],
@@ -165,7 +165,7 @@
             "all apprentices": [2, 2]
         },
         "weight": 40,
-        "intro_text": "The clouds are out, making the world seem murky after all the strong sunny days recently. And just like the clouds, app1 and {PRONOUN/app1/poss} littermate are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
+        "intro_text": "The clouds are out, making the world murky after all the recent sunny days. And just like the clouds, app1 and {PRONOUN/app1/poss} littermate are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
         "relationship_constraint": ["siblings"],
@@ -246,7 +246,7 @@
                 ]
             },
             {
-                "text": "s_c catches a great d_mp_s, and two d_tp_p! But their siblings come up empty pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument.",
+                "text": "s_c catches a great d_mp_s, and two d_tp_p! But their siblings come up empty-pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["HUNTER,0"],
@@ -376,7 +376,7 @@
             "all apprentices": [3, 3]
         },
         "weight": 40,
-        "intro_text": "The clouds are out, making the world seem murky after all the strong sunny days recently. And just like the clouds, app1 and {PRONOUN/app1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
+        "intro_text": "The clouds are out, making the world murky after all the recent sunny days. And just like the clouds, app1 and {PRONOUN/app1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
         "relationship_constraint": ["siblings"],
@@ -457,7 +457,7 @@
                 ]
             },
             {
-                "text": "s_c catches a great d_mp_s, and two d_tp_p! But their siblings come up empty pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument.",
+                "text": "s_c catches a great d_mp_s, and two d_tp_p! But their siblings come up empty-pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["HUNTER,0"],
@@ -587,7 +587,7 @@
             "all apprentices": [4, 4]
         },
         "weight": 40,
-        "intro_text": "The clouds are out, making the world seem murky after all the strong sunny days recently. And just like the clouds, app1 and {PRONOUN/app1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
+        "intro_text": "The clouds are out, making the world murky after all the recent sunny days. And just like the clouds, app1 and {PRONOUN/app1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
         "relationship_constraint": ["siblings"],
@@ -668,7 +668,7 @@
                 ]
             },
             {
-                "text": "s_c catches a great d_mp_s, and two d_tp_p! But their siblings come up empty pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument.",
+                "text": "s_c catches a great d_mp_s, and two d_tp_p! But their siblings come up empty-pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["HUNTER,0"],
@@ -798,7 +798,7 @@
             "all apprentices": [5, 5]
         },
         "weight": 40,
-        "intro_text": "The clouds are out, making the world seem murky after all the strong sunny days recently. And just like the clouds, app1 and {PRONOUN/app1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
+        "intro_text": "The clouds are out, making the world murky after all the recent sunny days. And just like the clouds, app1 and {PRONOUN/app1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
         "relationship_constraint": ["siblings"],
@@ -879,7 +879,7 @@
                 ]
             },
             {
-                "text": "s_c catches a great d_mp_s, and two d_tp_p! But their siblings come up empty pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument.",
+                "text": "s_c catches a great d_mp_s, and two d_tp_p! But their siblings come up empty-pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["HUNTER,0"],
@@ -1009,7 +1009,7 @@
             "all apprentices": [6, 6]
         },
         "weight": 40,
-        "intro_text": "The clouds are out, making the world seem murky after all the strong sunny days recently. And just like the clouds, app1 and {PRONOUN/app1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
+        "intro_text": "The clouds are out, making the world murky after all the recent sunny days. And just like the clouds, app1 and {PRONOUN/app1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
         "relationship_constraint": ["siblings"],
@@ -1714,7 +1714,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "r_c comes down with a crippling headache, making {PRONOUN/r_c/object} stagger, dizzy and weak, as {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} helped back to camp.",
+                "text": "r_c comes down with a debilitating headache, making {PRONOUN/r_c/object} stagger, dizzy and weak, as {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} helped back to camp.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -2130,7 +2130,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "r_c comes down with a crippling headache, making {PRONOUN/r_c/object} stagger, dizzy and weak, as {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} helped back to camp.",
+                "text": "r_c comes down with a debilitating headache, making {PRONOUN/r_c/object} stagger, dizzy and weak, as {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} helped back to camp.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [

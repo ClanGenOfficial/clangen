@@ -169,7 +169,7 @@ class SwitchClanScreen(Screens):
             manager=MANAGER)
         self.page_number = pygame_gui.elements.UITextBox(
             "",
-            scale(pygame.Rect((680, 1080), (220, 60))),
+            scale(pygame.Rect((680, 1080), (220, 70))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER)
         self.page = 0

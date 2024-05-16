@@ -1,8 +1,8 @@
 [
     {
         "patrol_id": "gen_bord_newcat1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "gen_bord_newcat",
@@ -80,8 +80,8 @@
     },
     {
         "patrol_id": "gen_bord_newcat3",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "gen_bord_newcat",
@@ -159,8 +159,8 @@
     },
     {
         "patrol_id": "gen_bord_newcatkittypet2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "bord_general_intro",
@@ -238,8 +238,8 @@
     },
     {
         "patrol_id": "gen_bord_newcatkittypet6",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "bord_general_intro",
@@ -317,8 +317,8 @@
     },
     {
         "patrol_id": "gen_bord_newcatthunderpath3",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "gen_bord_newcatthunderpath",
@@ -388,8 +388,8 @@
     },
     {
         "patrol_id": "gen_bord_newcatthunderpath4",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "gen_bord_newcatthunderpath",
@@ -459,8 +459,8 @@
     },
     {
         "patrol_id": "gen_bord_sparrowgift1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "bord_general_intro",
@@ -499,7 +499,7 @@
                 ]
             },
             {
-                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. s_c steps up, and tells the patrol they'll be taking this kittypet back to camp for healing. In Tigger's name. {PRONOUN/s_c/subject}'ll tell the story later.",
+                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. s_c steps up, and tells the patrol they'll be taking this kittypet back to camp for healing. In Tigger's name. {PRONOUN/s_c/subject/CAP}'ll tell the story later.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["LORE,1", "STORY,1"],
@@ -575,7 +575,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. They try to drive the kittypet off - but {PRONOUN/n_c:0/poss} too weak, and the warriors too practised at unnecessarily strong battle moves.",
+                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. They try to drive the kittypet off - but {PRONOUN/n_c:0/poss} too weak, and the warriors too practiced at unnecessarily strong battle moves.",
                 "exp": 0,
                 "weight": 20,
                 "outsider_rep": -4,
@@ -598,8 +598,8 @@
     },
     {
         "patrol_id": "gen_bord_binglegift1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "bord_general_intro",
@@ -824,8 +824,8 @@
     },
     {
         "patrol_id": "gen_bord_newkit2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "gen_bord_newkit",
@@ -888,8 +888,8 @@
     },
     {
         "patrol_id": "gen_bord_newkit6",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "gen_bord_newkit",
@@ -952,8 +952,8 @@
     },
     {
         "patrol_id": "gen_bord_healer1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "bord_general_intro",
@@ -1031,8 +1031,8 @@
     },
     {
         "patrol_id": "gen_bord_healer4",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "bord_general_intro",
@@ -1110,8 +1110,8 @@
     },
     {
         "patrol_id": "gen_bord_lonerchase1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "gen_bord_lonerchase",
@@ -1210,8 +1210,8 @@
     },
     {
         "patrol_id": "gen_med_rescue1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["new_cat"],
         "patrol_art": "gen_med_rescue",
@@ -1291,8 +1291,8 @@
     },
     {
         "patrol_id": "gen_med_rescue2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["new_cat"],
         "patrol_art": "gen_med_rescue",
@@ -1382,8 +1382,8 @@
     },
     {
         "patrol_id": "gen_med_rescue3",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["new_cat"],
         "patrol_art": "gen_med_rescue",
@@ -1465,8 +1465,8 @@
     },
     {
         "patrol_id": "gen_med_rescue4",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["new_cat"],
         "patrol_art": "gen_med_rescue",
@@ -1558,8 +1558,8 @@
     },
     {
         "patrol_id": "gen_med_rescuesoloapp1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["new_cat"],
         "patrol_art": "med_general_intro",
@@ -1647,8 +1647,8 @@
     },
     {
         "patrol_id": "gen_med_rescuesoloapp2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["new_cat"],
         "patrol_art": "med_general_intro",
@@ -1747,7 +1747,7 @@
     {
         "patrol_id": "bch_bord_newcat_abandontwoleg1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "gen_bord_abandontwolegdis",
@@ -1863,7 +1863,7 @@
     {
         "patrol_id": "bch_bord_newcat_abandontwoleg2",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "gen_bord_abandontwolegdis",
@@ -1979,7 +1979,7 @@
     {
         "patrol_id": "fst_bord_noise2",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "bord_general_intro",
@@ -2009,7 +2009,7 @@
                 "outsider_rep": 1
             },
             {
-                "text": "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out with a young cat chasing it! p_l stops the cat, impressed with their hunting skills, and invites them to join the Clan, to which the young cat agrees.",
+                "text": "p_l pads towards the bush to check on the noise when a rabbit bursts out with a young cat chasing it! p_l stops the cat, impressed with their hunting skills, and invites them to join the Clan, to which the young cat agrees.",
                 "exp": 10,
                 "weight": 5,
                 "new_cat": [
@@ -2093,7 +2093,7 @@
     {
         "patrol_id": "pln_bord_abandontwoleg1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat", "disaster"],
         "patrol_art": "gen_bord_abandontwolegdis",
@@ -2199,7 +2199,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "r_c can sense it's a trap, and waits just outside, setting {PRONOUN/r_c/poss} own trap. {PRONOUN/r_c/subject} {VERB/r_c/manage/manages} to set up such a yowl that it sends the rogues running as if LionClan were after them.",
+                "text": "r_c can sense it's a trap, and waits just outside, setting {PRONOUN/r_c/poss} own trap. {PRONOUN/r_c/subject/CAP} {VERB/r_c/manage/manages} to set up such a yowl that it sends the rogues running as if LionClan were after them.",
                 "exp": 30,
                 "weight": 20,
                 "outsider_rep": -2
@@ -2209,7 +2209,7 @@
     {
         "patrol_id": "pln_bord_abandontwoleg2",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "gen_bord_abandontwolegdis",
@@ -2315,7 +2315,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "r_c can sense it's a trap, and waits just outside, setting {PRONOUN/r_c/poss} own trap. {PRONOUN/r_c/subject} {VERB/r_c/manage/manages} to set up such a yowl that it sends the rogues running as if LionClan were after them.",
+                "text": "r_c can sense it's a trap, and waits just outside, setting {PRONOUN/r_c/poss} own trap. {PRONOUN/r_c/subject/CAP} {VERB/r_c/manage/manages} to set up such a yowl that it sends the rogues running as if LionClan were after them.",
                 "exp": 30,
                 "weight": 20,
                 "outsider_rep": -2
@@ -2325,7 +2325,7 @@
     {
         "patrol_id": "fst_hunt_twolegplacekittens1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": ["new_cat"],
         "patrol_art": "fst_hunt_twolegplace",
@@ -2431,8 +2431,8 @@
     },
     {
         "patrol_id": "gen_bord_curiouskittypet2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "bord_general_intro",
@@ -2554,8 +2554,8 @@
     },
     {
         "patrol_id": "gen_bord_injuredcat2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "bord_general_intro",
@@ -2668,8 +2668,8 @@
     },
     {
         "patrol_id": "gen_bord_injuredcatsolo2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "bord_general_intro",
@@ -2905,8 +2905,8 @@
     },
     {
         "patrol_id": "gen_bord_elder_rescue1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "bord_general_intro",

@@ -2,7 +2,7 @@
     {
         "patrol_id": "mtn_bord_rogue1",
         "biome": ["mountainous"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -66,7 +66,7 @@
     {
         "patrol_id": "mtn_bord_rogue2",
         "biome": ["mountainous"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -112,7 +112,7 @@
     {
         "patrol_id": "mtn_bord_rogue3",
         "biome": ["mountainous"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -249,7 +249,7 @@
     {
         "patrol_id": "mtn_bord_story1",
         "biome": ["mountainous"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_story",
@@ -355,7 +355,7 @@
     {
   "patrol_id": "mnt_bord_waterfall",
   "biome": ["mountainous"],
-  "season": ["Any"],
+  "season": ["any"],
   "types": ["border"],
   "tags": [],
   "patrol_art": "mnt_bord_waterfall",
@@ -508,7 +508,7 @@
 {
     "patrol_id": "mtn_bord_mothman1",
     "biome": ["mountainous"],
-    "season": ["Any"],
+    "season": ["any"],
     "types": ["border"],
     "tags": ["halloween"],
     "patrol_art": "mothman_INTRO",
@@ -599,7 +599,7 @@
 {
 	"patrol_id": "mtn_bord_jerseydevil1",
 	"biome": ["mountainous"],
-	"season": ["Any"],
+	"season": ["any"],
 	"types": ["border"],
 	"tags": ["halloween"],
 	"patrol_art": "jerseydevil_INTRO",

@@ -1,8 +1,8 @@
 [
     {
         "patrol_id": "gen_bord_otherclan_allies1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "gen_bord_otherclan_allies",
@@ -75,8 +75,8 @@
     },
     {
         "patrol_id": "gen_bord_otherclan_allies2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "gen_bord_otherclan_allies",
@@ -157,8 +157,8 @@
     },
     {
         "patrol_id": "gen_bord_otherclan_allies3",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["hunting", "border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -247,7 +247,7 @@
     },
     {
         "patrol_id": "gen_med_borderherb1",
-        "biome": ["Any"],
+        "biome": ["any"],
         "season": ["leaf-bare"],
         "types": ["herb_gathering"],
         "tags": ["other_clan"],
@@ -299,8 +299,8 @@
     },
     {
         "patrol_id": "gen_bord_scent_allies1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "gen_bord_scent_allies",
@@ -403,8 +403,8 @@
     },
     {
         "patrol_id": "gen_bord_scent_allies2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "gen_bord_scent_allies",
@@ -501,7 +501,7 @@
     {
         "patrol_id": "fst_bord_solo_allies1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -579,7 +579,7 @@
     {
         "patrol_id": "fst_bord_solo_allies2",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -671,7 +671,7 @@
     {
         "patrol_id": "fst_bord_solo_allies3",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -770,7 +770,7 @@
     {
         "patrol_id": "fst_bord_solo_allies4",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -838,7 +838,7 @@
     {
         "patrol_id": "fst_bord_solo_allies5",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -913,7 +913,7 @@
     {
         "patrol_id": "pln_bord_solo_allies1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -991,7 +991,7 @@
     {
         "patrol_id": "pln_bord_solo_allies2",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -1083,7 +1083,7 @@
     {
         "patrol_id": "pln_bord_solo_allies3",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -1182,7 +1182,7 @@
     {
         "patrol_id": "pln_bord_solo_allies4",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -1250,7 +1250,7 @@
     {
         "patrol_id": "pln_bord_solo_allies5",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -1325,7 +1325,7 @@
     {
         "patrol_id": "mtn_bord_solo_allies1",
         "biome": ["mountainous"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -1403,7 +1403,7 @@
     {
         "patrol_id": "mtn_bord_solo_allies2",
         "biome": ["mountainous"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -1495,7 +1495,7 @@
     {
         "patrol_id": "mtn_bord_solo_allies3",
         "biome": ["mountainous"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -1594,7 +1594,7 @@
     {
         "patrol_id": "mtn_bord_solo_allies4",
         "biome": ["mountainous"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -1662,7 +1662,7 @@
     {
         "patrol_id": "mtn_bord_solo_allies5",
         "biome": ["mountainous"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -1737,7 +1737,7 @@
     {
         "patrol_id": "bch_bord_solo_allies1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -1815,7 +1815,7 @@
     {
         "patrol_id": "bch_bord_solo_allies2",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -1907,7 +1907,7 @@
     {
         "patrol_id": "bch_bord_solo_allies3",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -2006,7 +2006,7 @@
     {
         "patrol_id": "bch_bord_solo_allies4",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -2074,7 +2074,7 @@
     {
         "patrol_id": "bch_bord_solo_ally5",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -2149,7 +2149,7 @@
     {
         "patrol_id": "fst_bord_risingclanref_allies_lorelocked1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "gen_bord_otherclan_allies",

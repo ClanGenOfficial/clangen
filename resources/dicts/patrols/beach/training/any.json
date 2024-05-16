@@ -2,7 +2,7 @@
     {
         "patrol_id": "bch_train_session1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "bch_train_session1",
@@ -68,7 +68,7 @@
     {
         "patrol_id": "bch_train_stuck1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "bch_train_stuck",
@@ -156,7 +156,7 @@
                 "weight": 20
             },
             {
-                "text": "As s_c rarely has patience for other cats, {PRONOUN/s_c/subject} {VERB/s_c/tell/tells} r_c harshly that {PRONOUN/s_c/subject} {VERB/s_c/do/does}n't have time for some idiot who got stuck, making r_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out of the sand.",
+                "text": "As s_c rarely has patience for other cats, {PRONOUN/s_c/subject} {VERB/s_c/tell/tells} r_c harshly that {PRONOUN/s_c/subject} {VERB/s_c/do/does}n't have time for some mouse-brain who got stuck, making r_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out of the sand.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -199,7 +199,7 @@
                 }
             },
             {
-                "text": "The patrol can't help s_c in time, and as s_c starts to drift off to StarClan, the eyes of r_c glint malevolently. Was this...? s_c doesn't have a chance to finish {PRONOUN/r_c/poss} last thought.",
+                "text": "The patrol can't help r_c in time, and as r_c starts to drift off to StarClan, the eyes of s_c glint malevolently. Was this...? r_c doesn't have a chance to finish {PRONOUN/r_c/poss} last thought.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -212,7 +212,7 @@
                     "troublesome",
                     "vengeful"
                 ],
-                "dead_cats": ["s_c"],
+                "dead_cats": ["r_c"],
                 "history_text": {
                     "scar": "m_c carries a scar from being trapped on patrol.",
                     "reg_death": "m_c tragically died after being trapped on patrol.",
@@ -251,7 +251,7 @@
     {
         "patrol_id": "bch_train_stuck2",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "bch_train_stuck",
@@ -348,7 +348,7 @@
                 ]
             },
             {
-                "text": "As s_c rarely has patience for other cats, {PRONOUN/s_c/object} {VERB/s_c/tell/tells} r_c harshly that {PRONOUN/s_c/subject} {VERB/s_c/do/does}n't have time for some idiot who got stuck, making r_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out of the sand.",
+                "text": "As s_c rarely has patience for other cats, {PRONOUN/s_c/object} {VERB/s_c/tell/tells} r_c harshly that {PRONOUN/s_c/subject} {VERB/s_c/do/does}n't have time for some mouse-brain who got stuck, making r_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out of the sand.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -423,7 +423,7 @@
     {
         "patrol_id": "bch_train_stuck3",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": ["romantic"],
         "patrol_art": "bch_train_stuck",
@@ -522,7 +522,7 @@
                 ]
             },
             {
-                "text": "As s_c rarely has patience for other cats, {PRONOUN/s_c/subject} {VERB/s_c/tell/tells} r_c harshly that {PRONOUN/s_c/subject} {VERB/s_c/do/does}n't have time for some idiot who got stuck, making r_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out of the sand.",
+                "text": "As s_c rarely has patience for other cats, {PRONOUN/s_c/subject} {VERB/s_c/tell/tells} r_c harshly that {PRONOUN/s_c/subject} {VERB/s_c/do/does}n't have time for some mouse-brain who got stuck, making r_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out of the sand.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -598,7 +598,7 @@
     {
         "patrol_id": "bch_train_stuck4",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "bch_train_stuck",
@@ -661,7 +661,7 @@
     {
         "patrol_id": "bch_train_soloapp1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "gen_train_soloapp",
@@ -733,7 +733,7 @@
     {
         "patrol_id": "bch_train_solo2",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "gen_train_solo",
@@ -796,7 +796,7 @@
     {
         "patrol_id": "bch_train_solo3",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "gen_train_solo",
@@ -816,7 +816,7 @@
                 "weight": 20
             },
             {
-                "text": "r_c rounds a corner and stumbles across a tiny, perfect waterfall! Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a small moment of peace, relaxing and enjoying the view.",
+                "text": "r_c rounds a corner and stumbles across a tiny, perfect waterfall! Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a moment of peace, relaxing and enjoying the view.",
                 "exp": 20,
                 "weight": 5
             },
@@ -859,7 +859,7 @@
     {
         "patrol_id": "bch_train_solo4",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "gen_train_solo",
@@ -879,7 +879,7 @@
                 "weight": 20
             },
             {
-                "text": "r_c rounds a corner and stumbles across a tiny, perfect waterfall! Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a small moment of peace, relaxing and enjoying the view.",
+                "text": "r_c rounds a corner and stumbles across a tiny, perfect waterfall! Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a moment of peace, relaxing and enjoying the view.",
                 "exp": 20,
                 "weight": 5
             },
@@ -922,7 +922,7 @@
     {
         "patrol_id": "bch_train_octopus1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "bch_train_octopus",
@@ -1030,7 +1030,7 @@
     {
         "patrol_id": "bch_train_octopus2",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "bch_train_octopus",
@@ -1138,7 +1138,7 @@
     {
         "patrol_id": "bch_train_octopus3",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "bch_train_octopus",
@@ -1247,7 +1247,7 @@
     {
         "patrol_id": "bch_train_octopus4",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "bch_train_octopus",
@@ -1356,7 +1356,7 @@
     {
         "patrol_id": "bch_train_stormwaves1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": ["rom_two_apps", "romantic"],
         "patrol_art": "bch_train_stormwaves",
@@ -1400,7 +1400,7 @@
                 ]
             },
             {
-                "text": "app2 rounds the top of the cliff and sees s_c, asking why s_c wanted to meet there. Stuttering but determined, s_c explains that {PRONOUN/s_c/subject} wondered if, possibly, maybe, app2 would like to go on a... date? app2 looks away with a purr and mumbles a soft yes to the ground, suddenly unable to make eye contact. They watch the storm together, quietly thrilled.",
+                "text": "app2 rounds the top of the cliff and sees s_c, asking why s_c wanted to meet there. Stuttering but determined, s_c explains that {PRONOUN/s_c/subject} wondered if, possibly, maybe, app2 would like to hang out... just the two of them? app2 looks away with a purr and mumbles a soft yes to the ground, suddenly unable to make eye contact. They watch the storm together, quietly thrilled.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -1445,7 +1445,7 @@
     {
         "patrol_id": "bch_train_stormwaves2",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": ["rom_two_apps", "romantic"],
         "patrol_art": "bch_train_stormwaves",
@@ -1489,7 +1489,7 @@
                 ]
             },
             {
-                "text": "app2 rounds the top of the cliff and sees s_c, asking why s_c wanted to meet there. Stuttering but determined, s_c explains that {PRONOUN/s_c/subject} wondered if, possibly, maybe, app2 would like to go on a... date? app2 looks away with a purr and mumbles a soft yes to the ground, suddenly unable to make eye contact. They watch the storm together, quietly thrilled.",
+                "text": "app2 rounds the top of the cliff and sees s_c, asking why s_c wanted to meet there. Stuttering but determined, s_c explains that {PRONOUN/s_c/subject} wondered if, possibly, maybe, app2 would like to hang out... just the two of them? app2 looks away with a purr and mumbles a soft yes to the ground, suddenly unable to make eye contact. They watch the storm together, quietly thrilled.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -1534,7 +1534,7 @@
     {
         "patrol_id": "bch_train_shellhunt1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": ["rom_two_apps", "romantic"],
         "patrol_art": "hunt_general_intro",
@@ -1622,7 +1622,7 @@
     {
         "patrol_id": "bch_train_sunset1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": ["romantic"],
         "patrol_art": "gen_train_sunset",
@@ -1727,7 +1727,7 @@
     {
         "patrol_id": "bch_train_sunset2",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": ["romantic"],
         "patrol_art": "gen_train_sunset",
@@ -1832,7 +1832,7 @@
     {
         "patrol_id": "bch_train_biolumin1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": ["romantic"],
         "patrol_art": "train_general_intro",
@@ -1914,7 +1914,7 @@
     {
         "patrol_id": "bch_train_arguingromance1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": ["romantic", "pos_jealousy"],
         "patrol_art": "train_general_intro",
@@ -1944,7 +1944,7 @@
                 ]
             },
             {
-                "text": "r_c shows off how far {PRONOUN/r_c/subject} can pounce, which means p_l shows off how fast {PRONOUN/p_l/subject} can run, which means r_c shows off how sharp {PRONOUN/r_c/poss} claws are, which means p_l shows off how shiny {PRONOUN/p_l/poss} pelt is, which means r_c shows off how long {PRONOUN/r_c/poss} legs are, which means p_l shows off how cool {PRONOUN/p_l/poss} scars are - this goes on all afternoon.",
+                "text": "r_c shows off how far {PRONOUN/r_c/subject} can pounce, so p_l shows off how fast {PRONOUN/p_l/subject} can run, so r_c shows off how sharp {PRONOUN/r_c/poss} claws are, so p_l shows off how shiny {PRONOUN/p_l/poss} pelt is, so r_c shows off how long {PRONOUN/r_c/poss} legs are, so p_l shows off how cool {PRONOUN/p_l/poss} scars are - this goes on all afternoon.",
                 "exp": 15,
                 "weight": 5,
                 "relationships": [
@@ -1978,7 +1978,7 @@
     {
         "patrol_id": "bch_training_dolphinlore1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "train_general_intro",
@@ -2034,7 +2034,7 @@
     {
         "patrol_id": "bch_train_nessie1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": ["halloween"],
         "patrol_art": "nessie_INTRO",
@@ -2064,7 +2064,7 @@
     {
         "patrol_id": "bch_train_frogman1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": ["halloween"],
         "patrol_art": "loveland_frog_INTRO",
@@ -2101,7 +2101,7 @@
     {
         "patrol_id": "bch_train_ottercreationmyth_storylocked1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "train_general_intro",
@@ -2170,7 +2170,7 @@
     {
         "patrol_id": "bch_train_foxdawn_lorelocked1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "gen_bord_story",
@@ -2236,7 +2236,7 @@
     {
         "patrol_id": "bch_train_mauifishing_storylocked1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "bch_train_session1",
@@ -2302,7 +2302,7 @@
     {
         "patrol_id": "bch_train_mauislowingthesun_storylocked1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "gen_bord_story",
@@ -2357,7 +2357,7 @@
     {
         "patrol_id": "bch_train_themoonandthetides_storylorelocked1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "gen_bord_story",

@@ -1,8 +1,8 @@
 [
     {
         "patrol_id": "gen_bord_dog1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_border_dogscent_clanmember",
@@ -44,7 +44,7 @@
                 ]
             },
             {
-                "text": "{PRONOUN/s_c/subject} {VERB/s_c/do/does}n't feel like {PRONOUN/s_c/subject} {VERB/s_c/have/has} the skill or power to take on a dog single-pawed, but s_c would give {PRONOUN/s_c/poss} life for c_n. {PRONOUN/s_c/subject} {VERB/s_c/charge/charges} in courageously to lead the dog away from c_n territory. Each booming bark could be the herald of their doom, each rancid breath the last thing {PRONOUN/s_c/subject} might ever smell, but somehow, limbs and lungs burning, {PRONOUN/s_c/subject} eventually {VERB/s_c/leap/leaps} to refuge.",
+                "text": "{PRONOUN/s_c/subject} {VERB/s_c/do/does}n't feel like {PRONOUN/s_c/subject} {VERB/s_c/have/has} the skill or power to take on a dog single-pawed, but s_c would give {PRONOUN/s_c/poss} life for c_n. {PRONOUN/s_c/subject/CAP} {VERB/s_c/charge/charges} in courageously to lead the dog away from c_n territory. Each booming bark could be the herald of their doom, each rancid breath the last thing {PRONOUN/s_c/subject} might ever smell, but somehow, limbs and lungs burning, {PRONOUN/s_c/subject} eventually {VERB/s_c/leap/leaps} to refuge.",
                 "exp": 40,
                 "weight": 20,
                 "stat_trait": [
@@ -120,8 +120,8 @@
     },
     {
         "patrol_id": "gen_bord_dog2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["patrol_rel", "pos_fail"],
         "patrol_art": "gen_border_dogscent_clanmember",
@@ -281,8 +281,8 @@
     },
     {
         "patrol_id": "gen_bord_dog3",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["patrol_rel", "pos_fail"],
         "patrol_art": "bord_general_intro",
@@ -442,8 +442,8 @@
     },
     {
         "patrol_id": "gen_bord_smalldog1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -519,8 +519,8 @@
     },
     {
         "patrol_id": "gen_bord_smalldog2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -600,8 +600,8 @@
     },
     {
         "patrol_id": "gen_bord_smalldog3",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -682,8 +682,8 @@
     },
     {
         "patrol_id": "gen_bord_abandonedkittypet1_kittypet4",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "bord_general_intro",
@@ -765,8 +765,8 @@
     },
     {
         "patrol_id": "gen_bord_otherclankits1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -901,8 +901,8 @@
     },
     {
         "patrol_id": "gen_border_otherclan_badger1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -1000,8 +1000,8 @@
     },
     {
         "patrol_id": "gen_border_trainingapprentices1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["disrespect"],
         "patrol_art": "train_general_intro",
@@ -1086,8 +1086,8 @@
     },
     {
         "patrol_id": "gen_border_otherclan_meeting1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["non-lethal", "disrespect", "other_clan", "clan_to_pl", "distrust"],
         "patrol_art": "bord_general_intro",
@@ -1290,8 +1290,8 @@
     },
     {
         "patrol_id": "gen_bord_kittybat",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["halloween"],
         "patrol_art": "kittybat_INTRO",
@@ -1318,7 +1318,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Falling over, paws waving helplessly in the air and somehow making the situation <i>even worse</i>, the patrol passes the idiotic kittypet by, leaving them to their stupidity while they focus on their actual task.",
+                "text": "Falling over, paws waving helplessly in the air and somehow making the situation <i>even worse</i>, the patrol passes the mouse-brained kittypet by, leaving them to their stupidity while they focus on their actual task.",
                 "exp": 0,
                 "weight": 20,
                 "outsider_rep": -1
@@ -1343,7 +1343,7 @@
     },
     {
         "patrol_id": "gen_border_pumpkineyes",
-        "biome": ["Any"],
+        "biome": ["any"],
         "season": ["leaf-fall"],
         "types": ["border"],
         "tags": ["halloween"],
@@ -1431,7 +1431,7 @@
     },
     {
         "patrol_id": "gen_bord_trickortreat",
-        "biome": ["Any"],
+        "biome": ["any"],
         "season": ["leaf-fall"],
         "types": ["border"],
         "tags": ["halloween"],
@@ -1475,8 +1475,8 @@
     },
     {
         "patrol_id": "gen_bord_scarecrow",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["halloween"],
         "patrol_art": "scarecrow_INTRO",
@@ -1905,5 +1905,271 @@
                 "other_clan_rep": -1
             }
         ]
+    },
+    {
+        "patrol_id": "gen_bord_otherclanapp",
+        "biome": [ "any" ],
+        "season": [ "any" ],
+        "types": [ "border" ],
+        "tags": [ "other_clan" ],
+        "patrol_art": "gen_bord_otherclan_allies",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [ 1, 5],
+            "warrior": [1, 5]
+        },
+        "weight": 20,
+        "chance_of_success": 40,
+        "intro_text": "The patrol reaches o_c's border just as a o_c_n patrol approaches from the other side. The cats of both Clans shift uneasily, waiting for someone to break the silence. app1 perks up when {PRONOUN/app1/subject} {VERB/app1/spot/spots} another apprentice in the o_c_n patrol.",
+        "decline_text": "p_l quickly marks the border and then steers {PRONOUN/p_l/poss} patrol away from the o_c_n patrol. Best not to risk a confrontation.",
+        "success_outcomes": [
+            {
+                "text": "app1 calls out a greeting to the other apprentice, {PRONOUN/app1/poss} eyes shining and tail raised. It's exciting to chat with another Clan's apprentice somewhere other than a Gathering, where {PRONOUN/app1/subject}{VERB/app1/'re/'s} supposed to be on {PRONOUN/app1/poss} best behavior. The ice is broken between the patrols, and they stop for a chat before each carrying on their way.",
+                "exp": 15,
+                "weight": 40,
+                "stat_skill": [ "SPEAKER,1", "CLEVER,1", "MEDIATOR,1" ],
+                "stat_trait": [ "childish", "playful", "charismatic", "bold", "compassionate", "confident", "adventurous", "sincere", "flamboyant", "loving", "wise" ],
+                "can_have_stat": [ "app1" ],
+                "art": "gen_happy_cat2",
+                "other_clan_rep": 2,
+                "relationships":
+                {
+                    "cats_from": [ "patrol" ],
+                    "cats_to": [ "app1" ],
+                    "mutual": false,
+                    "values": [ "platonic", "trust", "respect" ],
+                    "amount": 10
+                }
+            },
+            {
+                "text": "app1 watches the other apprentice from across the border as the two patrols get on with marking their side of the border in silence. Every so often, app1 looks up and catches the other apprentice's eye; would they have been friends, if they were born in the same Clan? The patrol passes without incident, and app1 can't help casting a look back at the border as {PRONOUN/app1/subject} {VERB/app1/leave/leaves}.",
+                "exp": 15,
+                "weight": 40,
+                "stat_trait": [ "careful", "nervous", "gloomy", "lonesome", "strange", "calm", "thoughtful" ],
+                "can_have_stat": [ "app1" ],
+                "other_clan_rep": 1,
+                "art": "gen_train_speakingromance1"
+            },
+            {
+                "text": "p_l dips {PRONOUN/p_l/poss} head to the o_c_n patrol in respect, and the patrol carries on marking the border. app1 is distracted from the other apprentice and helps p_l mark a tree stump.",
+                "exp": 10,
+                "weight": 20,
+                "other_clan_rep": 1
+            },
+            {
+                "text": "Before app1 gets the chance to greet the other apprentice, r_c spots {PRONOUN/r_c/poss} friend from o_c_n and chirps a hello. The patrol stops for a chat, and app1 peeps at the other apprentice from behind the cluster of {PRONOUN/app1/poss} Clanmates.",
+                "exp": 10,
+                "weight": 20,
+                "other_clan_rep": 1,
+                "art": "gen_speaking_cat_w3"
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "app1 averts {PRONOUN/app1/poss} eyes from the other apprentice. Friendships with other Clans shouldn't be encouraged; loyalty to c_n comes first. The patrol continues marking the border in icy silence",
+                "exp": 0,
+                "weight": 40,
+                "stat_trait": [ "cold", "loyal", "faithful", "righteous", "ambitious", "grumpy", "oblivious", "careful", "nervous", "strict" ],
+                "can_have_stat": [ "app1" ],
+                "other_clan_rep": -1
+            },
+            {
+                "text": "app1 calls out a greeting to the other apprentice, {PRONOUN/app1/poss} eyes shining and tail raised. The other apprentice glances at their mentor for a cue, and their mentor scowls at app1. Once they've left the border, r_c chides app1, reminding {PRONOUN/app1/object} not to be overly friendly with o_c_n.",
+                "exp": 0,
+                "weight": 40,
+                "stat_trait": [ "childish", "playful", "charismatic", "bold", "compassionate", "confident", "adventurous", "sincere", "flamboyant", "loving", "wise" ],
+                "can_have_stat": [ "app1" ],
+                "other_clan_rep": -1,
+                "relationships":
+                {
+                    "cats_from": [ "patrol" ],
+                    "cats_to": [ "app1" ],
+                    "mutual": false,
+                    "values": [ "dislike" ],
+                    "amount": 5
+                }
+            },
+            {
+                "text": "app1 waves {PRONOUN/app1/poss} tail to the other apprentice, but s_c yanks {PRONOUN/app1/object} back. With {PRONOUN/s_c/poss} lip curled, s_c lectures app1 not to nurture friendships with other Clans, since they might one day meet in battle. The o_c_n patrol is well within earshot of this lecture, and app1 slinks back to camp with humiliation burning under {PRONOUN/app1/poss} pelt.",
+                "exp": 0,
+                "weight": 40,
+                "stat_trait": [ "bloodthirsty", "fierce", "vengeful", "cold", "arrogant" ],
+                "can_have_stat": [ "any", "adult" ],
+                "other_clan_rep": -1,
+                "relationships":
+                [
+                    {
+                        "cats_from": [ "s_c" ],
+                        "cats_to": [ "app1" ],
+                        "mutual": true,
+                        "values": [ "dislike" ],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "app1 greets the other apprentice confidently, and {PRONOUN/app1/poss} Clanmates strike up a conversation with the o_c_n patrol as well. app1 tells the other apprentice all about {PRONOUN/app1/poss} mastery of some of the trickiest battle moves and the most advanced hunting strategies. The other apprentice rolls their eyes, unimpressed with app1's braggadocio, and the o_c_n patrol moves on.",
+                "exp": 0,
+                "weight": 40,
+                "stat_trait": [ "bloodthirsty", "fierce", "daring", "competitive", "shameless", "arrogant", "oblivious", "troublesome", "confident", "flamboyant", "bold" ],
+                "can_have_stat": [ "app1" ],
+                "other_clan_rep": 0
+            },
+            {
+                "text": "Things are too awkward and tense for app1 to feel confident speaking up and greeting the other apprentice. Maybe next time.",
+                "exp": 0,
+                "weight": 10,
+                "other_clan_rep": 0
+            }
+        ],
+        "antag_success_outcomes":
+        [
+            {
+                "text": "app1 sashays up to the border with a smirk and marks the border just a <i>bit</i> further forward than {PRONOUN/app1/subject} should. r_c points this out to app1, who protests that it's just one little mouse-length and shoots an insolent smile at the o_c_n apprentice. The o_c_n patrol's annoyed stares follow c_n's patrol as they carry on.",
+                "exp": 15,
+                "weight": 40,
+                "stat_trait": [ "arrogant", "troublesome", "shameless", "confident", "daring", "flamboyant", "sneaky", "daring", "cunning", "rebellious", "vengeful", "bold" ],
+                "can_have_stat": [ "app1" ],
+                "other_clan_rep": -2,
+                "art": "gen_bord_twocat_hostile_app_warrior",
+                "relationships":[
+                    {
+                        "cats_to": [ "app1" ],
+                        "cats_from": [ "r_c" ],
+                        "values": [ "dislike" ],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": [ "app1" ],
+                        "cats_from": [ "patrol" ],
+                        "values": [ "dislike" ],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "app1 doesn't get the chance to meow hello to the o_c_n apprentice - s_c hisses and arches {PRONOUN/s_c/poss} back, staring down the other patrol. The o_c_n warriors respond in kind, fluffing out their pelts and slitting their eyes. Tension hangs heavy in the air, and both patrols spend more time posturing than border-marking.",
+                "exp": 15,
+                "weight": 40,
+                "stat_trait": [ "bloodthirsty", "fierce", "vengeful", "cold", "arrogant", "daring", "bold", "confident" ],
+                "can_have_stat": [ "any", "adult" ],
+                "other_clan_rep": -2,
+                "art": "gen_bord_twocat_hostile_app_warrior",
+                "relationships": [
+                    {
+                        "cats_from": [ "patrol" ],
+                        "cats_to": [ "s_c" ],
+                        "values": [ "dislike" ],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "app1 takes the opportunity to extol the virtues of c_n and how much {PRONOUN/app1/subject} {VERB/app1/pity/pities} this other apprentice for having the misfortune to be born into o_c_n. By the end of {PRONOUN/app1/poss} tirade, the other apprentice is seething with irritation and embarrassment. The patrols part ways with pinned-back ears and prickling pelts.",
+                "exp": 15,
+                "weight": 40,
+                "stat_trait": [ "arrogant", "troublesome", "shameless", "confident", "daring", "flamboyant", "sneaky", "daring", "cunning", "rebellious", "vengeful", "bold" ],
+                "can_have_stat": [ "app1" ],
+                "other_clan_rep": -2,
+                "art": "gen_bord_twocat_hostile_app_warrior"
+            },
+            {
+                "text": "app1 glances up at the other apprentice from time to time while marking the border. {PRONOUN/app1/subject/CAP} never {VERB/app1/get/gets} a chance to meow hello, because r_c spots the o_c_n apprentice peering over the border and coolly asks them to focus on their own territory. An o_c_n warrior responds that r_c should concern {PRONOUN/r_c/self} with <i>{PRONOUN/r_c/poss}</i> apprentices, not o_c's. Pelts bristle and ears flatten before the patrols part ways.",
+                "exp": 15,
+                "weight": 20,
+                "other_clan_rep": -2,
+                "art": "gen_bord_twocat_hostile_app_warrior"
+            },
+                {
+                "text": "app1 arches {PRONOUN/app1/poss} back and spits an insult at the o_c_n apprentice. They're as scrawny as a mouse in leaf-bare! Doesn't o_c_n bother feeding their kits? Oh, sorry, they're an <i>apprentice?</i> Wow, app1 didn't think an apprentice could even <i>be</i> that small.",
+                "exp": 15,
+                "weight": 40,
+                "stat_skill": [ "SPEAKER,1" ],
+                "stat_trait": [ "arrogant", "troublesome", "shameless", "charismatic", "confident", "daring", "flamboyant", "sneaky", "daring", "cunning", "rebellious", "vengeful", "bold", "childish", "playful" ],
+                "other_clan_rep": -2,
+                "art": "gen_bord_twocat_hostile_app_warrior"
+                }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "The sneering comment has barely left app1's mouth before the other apprentice bunches their hind legs and springs across the border, claws out! The two apprentices tussle for a moment, hissing and spitting, then r_c and a o_c_n warrior drag them off each other. app1 trades spiteful looks with the other apprentice as the patrols hurry away from each other. {PRONOUN/app1/subject/CAP}'ll be hearing about this back at camp.",
+                "exp": 0,
+                "weight": 20,
+                "other_clan_rep": -2,
+                "art": "gen_battle_app_app",
+                "injury": [
+                    {
+                        "cats": [ "app1" ],
+                        "injuries": [ "battle_injury" ],
+                        "scars": [ "LEGBITE" ]
+                    }
+                ],
+                "history_text":
+                {
+                    "cats": [ "app1" ],
+                    "reg_death": "app1 died after picking a fight with a o_c_n apprentice on patrol.",
+                    "scar": "app1 was scarred by a o_c_n apprentice after a border scrum."
+                },
+                "relationships":[
+                    {
+                        "cats_to": [ "app1" ],
+                        "cats_from": [ "patrol" ],
+                        "values": [ "dislike" ],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "app1 raises {PRONOUN/app1/poss} hackles, staring down the other apprentice until they spit a challenge back. Tempers flare, and the patrols size each other up. It doesn't take much for the o_c_n patrol to decide c_n has put a paw wrong and leap across the border with claws unsheathed and teeth bared. s_c breaks up the skirmish, convincing {PRONOUN/s_c/poss} Clanmates not to waste all the medicine cat's herbs on a petty dispute.",
+                "exp": 0,
+                "weight": 40,
+                "stat_skill": [ "MEDIATOR,1", "SPEAKER,1", "TEACHER,1", "INSIGHTFUL,1"],
+                "stat_trait": [ "charismatic", "compassionate", "responsible", "faithful", "loyal", "calm", "wise", "sincere", "thoughtful", "loving" ],
+                "can_have_stat": [ "any", "adult" ],
+                "other_clan_rep": -2,
+                "art": "gen_battle_app_other_clan",
+                "injury": [
+                    {
+                        "cats": [ "multi" ],
+                        "injuries": [ "minor_injury" ]
+                    },
+                    {
+                        "cats": [ "r_c" ],
+                        "injuries": [ "small_bite_injury" ],
+                        "scar": [ "LEGBITE" ]
+                    }
+                ],
+                "history_text":
+                {
+                    "cats": [ "r_c" ],
+                    "reg_death": "r_c died from injuries sustained in a border skirmish.",
+                    "scar": "r_c was scarred in a border skirmish."
+                },
+                "relationships":[
+                    {
+                        "cats_to": [ "app1" ],
+                        "cats_from": [ "patrol" ],
+                        "values": [ "dislike" ],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "o_c_n came looking for a fight, and app1 is eager to give it to them. The rest of {PRONOUN/app1/poss} patrol has no choice but to back {PRONOUN/app1/object} up; they can't let an apprentice get shredded. The skirmish rages until most of them are bloodied and panting - neither patrol wants to admit defeat, but if things escalate any further, they might be carrying their Clanmates home for a vigil.",
+                "exp": 0,
+                "weight": 10,
+                "other_clan_rep": -2,
+                "art": "gen_battle_app_other_clan",
+                "injury": [
+                    {
+                        "cats": [ "multi" ],
+                        "injuries": [ "battle_injury" ],
+                        "scar": [ "NECKBITE", "SNOUT" ]
+                    }
+                ]
+            }
+        ]
+
     }
 ]

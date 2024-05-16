@@ -18,11 +18,11 @@ from .Screens import Screens
 from ..housekeeping.datadir import get_data_dir
 from ..housekeeping.version import get_version_info
 
-
 logger = logging.getLogger(__name__)
 
 with open('resources/gamesettings.json', 'r', encoding='utf-8') as f:
     settings_dict = ujson.load(f)
+
 
 class SettingsScreen(Screens):
     """
@@ -207,8 +207,8 @@ class SettingsScreen(Screens):
                 object_id="#toggle_fullscreen_button",
                 manager=MANAGER,
                 tool_tip_text="This will close the game. "
-                "When you reopen, the game"
-                " will be windowed. ")
+                              "When you reopen, the game"
+                              " will be windowed. ")
         else:
             self.fullscreen_toggle = UIImageButton(
                 scale(pygame.Rect((1234, 50), (316, 72))),
@@ -216,8 +216,8 @@ class SettingsScreen(Screens):
                 object_id="#toggle_fullscreen_button",
                 manager=MANAGER,
                 tool_tip_text="This will close the game. "
-                "When you reopen, the game"
-                " will be fullscreen. ")
+                              "When you reopen, the game"
+                              " will be fullscreen. ")
 
         self.open_data_directory_button = UIImageButton(
             scale(pygame.Rect((50, 1290), (356, 60))),
@@ -289,7 +289,9 @@ class SettingsScreen(Screens):
 
         self.checkboxes_text[
             "container_general"] = pygame_gui.elements.UIScrollingContainer(
-            scale(pygame.Rect((0, 440), (1400, 600))), manager=MANAGER)
+            scale(pygame.Rect((0, 440), (1400, 600))),
+            allow_scroll_x=False,
+            manager=MANAGER)
 
         n = 0
         for code, desc in settings_dict['general'].items():
@@ -319,7 +321,6 @@ class SettingsScreen(Screens):
         #   Fix if you want. - keyraven
         self.refresh_checkboxes()
 
-
     def open_info_screen(self):
         """Open's info screen"""
         self.enable_all_menu_buttons()
@@ -330,12 +331,13 @@ class SettingsScreen(Screens):
 
         self.checkboxes_text["info_container"] = pygame_gui.elements.UIScrollingContainer(
             scale(pygame.Rect((200, 300), (1200, 1000))),
+            allow_scroll_x=False,
             manager=MANAGER
         )
 
         self.checkboxes_text['info_text_box'] = pygame_gui.elements.UITextBox(
             self.info_text,
-            scale(pygame.Rect((0, 0), (1150, 8000))),
+            scale(pygame.Rect((0, 0), (1150, -1))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             container=self.checkboxes_text["info_container"],
             manager=MANAGER)
@@ -458,4 +460,3 @@ class SettingsScreen(Screens):
         """
         TODO: DOCS
         """
-
