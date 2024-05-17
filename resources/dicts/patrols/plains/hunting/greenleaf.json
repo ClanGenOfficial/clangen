@@ -2153,7 +2153,7 @@
     
             },
             {
-                "text": "r_c finds {PRONOUN/r_c/self} face to fang with a rattling snake. There is no time to react. Effortlessly, the snake's teeth find r_c's veins. For a horrific moment, every drop of blood in r_c's body burns, and then {PRONOUN/r_c/poss} clan finds {PRONOUN/r_c/poss} cold.",
+                "text": "r_c finds {PRONOUN/r_c/self} face to fang with a rattling snake. There is no time to react. Effortlessly, the snake's teeth find r_c's veins. For a horrific moment, every drop of blood in r_c's body burns, and then {PRONOUN/r_c/poss} Clan finds {PRONOUN/r_c/poss} cold.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"]
@@ -3826,7 +3826,7 @@
                 ]
             },
             {
-                "text": "r_c always feels like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} padding in p_l's footsteps, especially today, watching {PRONOUN/p_l/object} haul back such a good catch of prey for the clan, a contribution that more than makes up for r_c's meagre offerings.",
+                "text": "r_c always feels like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} padding in p_l's footsteps, especially today, watching {PRONOUN/p_l/object} haul back such a good catch of prey for the Clan, a contribution that more than makes up for r_c's meagre offerings.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["large"],
@@ -4242,7 +4242,7 @@
                 ]
             },
             {
-                "text": "r_c always feels like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} padding in p_l's footsteps, especially today, watching {PRONOUN/p_l/object} haul back such a good catch of prey for the clan, a contribution that more than makes up for r_c's meagre offerings.",
+                "text": "r_c always feels like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} padding in p_l's footsteps, especially today, watching {PRONOUN/p_l/object} haul back such a good catch of prey for the Clan, a contribution that more than makes up for r_c's meagre offerings.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["large"],

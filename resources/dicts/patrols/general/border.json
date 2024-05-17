@@ -1799,7 +1799,7 @@
                 "weight": 20
             },
             {
-                "text": "In the midst of another argument, p_l swiftly swipes at r_c to shut {PRONOUN/r_c/object} up. r_c hisses, and slashes back. Fur flies as both cats trade blows. The chaotic brawl ends with both of them wounded and a tense silence in the air. When they return to camp, many eyes stare in judgement. The clan is disappointed in their actions.",
+                "text": "In the midst of another argument, p_l swiftly swipes at r_c to shut {PRONOUN/r_c/object} up. r_c hisses, and slashes back. Fur flies as both cats trade blows. The chaotic brawl ends with both of them wounded and a tense silence in the air. When they return to camp, many eyes stare in judgement. The Clan is disappointed in their actions.",
                 "exp": 0,
                 "weight": 10,
                 "injury": {
@@ -1899,7 +1899,7 @@
                 "stat_skill": ["DARK,1"]
             },
             {
-                "text": "The arguing escalates, attracting the attention of a o_c_n patrol. The rival clan did not seem impressed by their arguing, and mocked c_n for not even being able to work together.",
+                "text": "The arguing escalates, attracting the attention of a o_c_n patrol. The rival Clan did not seem impressed by their arguing, and mocked c_n for not even being able to work together.",
                 "exp": 0,
                 "weight": 10,
                 "other_clan_rep": -1
