@@ -78,7 +78,6 @@ class EventsScreen(Screens):
             return
         
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            
             if event.ui_element == self.timeskip_button:
                 self.events_thread = self.loading_screen_start_work(events_class.one_moon)
 

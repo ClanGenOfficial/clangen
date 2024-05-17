@@ -87,6 +87,7 @@ class Screens():
                     "resources/images/vertical_bar.png").convert_alpha(),
                 (380, 70)),
             visible=False,
+            starting_height=1,
             manager=MANAGER),
         "dens": UIImageButton(
             scale(pygame.Rect((50, 120), (142, 60))),
@@ -101,21 +102,21 @@ class Screens():
             visible=False,
             manager=MANAGER,
             object_id="#med_den_button",
-            starting_height=4),
+            starting_height=10),
         "warrior_den": UIImageButton(
             scale(pygame.Rect((50, 280), (242, 56))),
             "",
             visible=False,
             manager=MANAGER,
             object_id="#warrior_den_button",
-            starting_height=4),
+            starting_height=10),
         "clearing": UIImageButton(
             scale(pygame.Rect((50, 360), (162, 56))),
             "",
             visible=False,
             manager=MANAGER,
             object_id="#clearing_button",
-            starting_height=4
+            starting_height=10
         ),
 
         "heading": pygame_gui.elements.UITextBox(
@@ -311,13 +312,17 @@ class Screens():
 
     def update_dens(self):
         dens = ["dens_bar", "med_cat_den", "warrior_den", "clearing", ]
-        # this feels convoluted but its all i got, feel free to streamline
+
         for den in dens:
-            # if the dropdown isn't visible, make it visible
-            if not self.menu_buttons[den].visible:
-                # if it's classic mode, don't show the clearing button and shorten the dens_bar
-                if game.clan.game_mode == "classic" and den == "clearing":
-                    if self.menu_buttons['med_cat_den'].visible:
+            # if dropdown is visible, hide
+            if self.menu_buttons[den].visible:
+                self.menu_buttons[den].hide()
+            else:  # else, show
+                if game.clan.game_mode != "classic":
+                    self.menu_buttons[den].show()
+                else:  # classic doesn't get access to clearing, so we can't show its button here
+                    if den == "clearing":
+                        # redraw this to be shorter
                         self.menu_buttons["dens_bar"].kill()
                         self.menu_buttons.update({
                             "dens_bar": pygame_gui.elements.UIImage(
@@ -327,13 +332,10 @@ class Screens():
                                         "resources/images/vertical_bar.png").convert_alpha(),
                                     (380, 70)),
                                 visible=True,
+                                starting_height=1,
                                 manager=MANAGER)})
                     else:
-                        self.menu_buttons[den].hide()
-                else:
-                    self.menu_buttons[den].show()
-            else:
-                self.menu_buttons[den].hide()
+                        self.menu_buttons[den].show()
 
     def update_heading_text(self, text):
         """Updates the menu heading text"""
