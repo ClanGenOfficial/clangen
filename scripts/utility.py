@@ -707,6 +707,19 @@ def change_relationship_values(cats_to: list,
 #                               Text Adjust                                    #
 # ---------------------------------------------------------------------------- #
 
+def get_other_clan_relation(relation):
+    """
+    converts int value into string relation and returns string: "hostile", "neutral", or "ally"
+    :param relation: the other_clan.relations value
+    """
+
+    if int(relation) >= 17:
+        return "ally"
+    elif 7 < int(relation) < 17:
+        return "neutral"
+    elif int(relation) <= 7:
+        return "hostile"
+
 def pronoun_repl(m, cat_pronouns_dict, raise_exception=False):
     """ Helper function for add_pronouns. If raise_exception is 
     False, any error in pronoun formatting will not raise an 
