@@ -22,12 +22,12 @@
     "CHOCOLATE": "brown"
   },
   "possible_tints": {
-    "basic": ["pink", "gray", "red", "orange", "none"],
-    "warm": ["yellow", "purple", "dilutegray", "diluteyellow", "dilutepink"],
-    "cool": ["blue", "purple", "black", "dilutered", "dilutegray", "diluteyellow", "dilutepink"],
+    "basic": ["pink", "gray", "red", "orange", "none", "warmdilute"],
+    "warm": ["yellow", "purple", "dilute", "cooldilute"],
+    "cool": ["purple", "black", "dilute"],
     "white": ["yellow"],
-    "monochrome": ["blue", "black", "dilutepurple", "dilutegray", "diluteyellow", "dilutepink"],
-    "brown": ["yellow", "purple", "black", "dilutered", "dilutepurple", "dilutegray", "diluteyellow", "dilutepink"]
+    "monochrome": ["blue", "black", "dilute", "cooldilute"],
+    "brown": ["yellow", "purple", "black", "dilute", "cooldilute"]
   },
   "tint_colours":
   {
@@ -43,12 +43,9 @@
   },
   "dilute_tint_colours":
   {
-    "dilutepink": [2, 18, 18],
-    "dilutegray": [30, 30, 30],
-    "dilutered": [7, 29, 29],
-    "diluteyellow": [5, 7, 30],
-    "dilutepurple": [20, 30, 11],
-    "diluteblue": [37, 18, 10],
+    "dilute": [20, 20, 20],
+    "warmdilute": [25, 15, 7],
+    "cooldilute": [7, 15, 25],
     "none": null
   }
 }
