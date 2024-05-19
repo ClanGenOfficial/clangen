@@ -2,15 +2,18 @@ import pygame
 
 import ujson
 
+from scripts.cat.names import names
 from scripts.game_structure.game_essentials import game
+
 
 class Sprites():
     cat_tints = {}
     white_patches_tints = {}
+    clan_symbols = []
 
     def __init__(self, size=None):
         """Class that handles and hold all spritesheets. 
-        Size is normall automatically determined by the size
+        Size is normally automatically determined by the size
         of the lineart. If a size is passed, it will override 
         this value. """
         self.size = None
@@ -20,7 +23,7 @@ class Sprites():
 
         # Shared empty sprite for placeholders
         self.blank_sprite = None
-        
+
         self.load_tints()
 
     def load_tints(self):
@@ -35,7 +38,7 @@ class Sprites():
                 self.white_patches_tints = ujson.loads(read_file.read())
         except:
             print("ERROR: Reading White Patches Tints")
-            
+
     def spritesheet(self, a_file, name):
         """
         Add spritesheet called name from a_file.
@@ -51,18 +54,16 @@ class Sprites():
                    pos,
                    name,
                    sprites_x=3,
-                   sprites_y=7):  # pos = ex. (2, 3), no single pixels
+                   sprites_y=7,
+                   no_index=False):  # pos = ex. (2, 3), no single pixels
         """
-        Divide sprites on a sprite-sheet into groups of sprites that are easily accessible.
-
-        Parameters:
-        spritesheet -- Name of spritesheet.
-        pos -- (x,y) tuple of offsets. NOT pixel offset, but offset of other sprites.
-        name -- Name of group to make.
-        
-        Keyword Arguments
-        sprites_x -- Number of sprites horizontally (default: 3)
-        sprites_y -- Number of sprites vertically (default: 3)
+        Divide sprites on a spritesheet into groups of sprites that are easily accessible
+        :param spritesheet: Name of spritesheet file
+        :param pos: (x,y) tuple of offsets. NOT pixel offset, but offset of other sprites
+        :param name: Name of group being made
+        :param sprites_x: default 3, number of sprites horizontally
+        :param sprites_y: default 3, number of sprites vertically
+        :param no_index: default False, set True if sprite name does not require cat pose index
         """
 
         group_x_ofs = pos[0] * sprites_x * self.size
@@ -72,6 +73,11 @@ class Sprites():
         # splitting group into singular sprites and storing into self.sprites section
         for y in range(sprites_y):
             for x in range(sprites_x):
+                if no_index:
+                    full_name = f"{name}"
+                else:
+                    full_name = f"{name}{i}"
+
                 try:
                     new_sprite = pygame.Surface.subsurface(
                         self.spritesheets[spritesheet],
@@ -79,22 +85,25 @@ class Sprites():
                         group_y_ofs + y * self.size,
                         self.size, self.size
                     )
+
                 except ValueError:
                     # Fallback for non-existent sprites
+                    print(f"WARNING: nonexistent sprite - {full_name}")
                     if not self.blank_sprite:
                         self.blank_sprite = pygame.Surface(
                             (self.size, self.size),
                             pygame.HWSURFACE | pygame.SRCALPHA
                         )
                     new_sprite = self.blank_sprite
-                self.sprites[f'{name}{i}'] = new_sprite
+
+                self.sprites[full_name] = new_sprite
                 i += 1
 
     def load_all(self):
         # get the width and height of the spritesheet
         lineart = pygame.image.load('sprites/lineart.png')
         width, height = lineart.get_size()
-        del lineart # unneeded
+        del lineart  # unneeded
 
         # if anyone changes lineart for whatever reason update this
         if isinstance(self.size, int):
@@ -102,22 +111,23 @@ class Sprites():
         elif width / 3 == height / 7:
             self.size = width / 3
         else:
-            self.size = 50 # default, what base clangen uses
+            self.size = 50  # default, what base clangen uses
             print(f"lineart.png is not 3x7, falling back to {self.size}")
-            print(f"if you are a modder, please update scripts/cat/sprites.py and do a search for 'if width / 3 == height / 7:'")
+            print(
+                f"if you are a modder, please update scripts/cat/sprites.py and do a search for 'if width / 3 == height / 7:'")
 
-        del width, height # unneeded
+        del width, height  # unneeded
 
         for x in [
             'lineart', 'singlecolours', 'speckledcolours', 'tabbycolours',
             'whitepatches', 'eyes', 'eyes2', 'skin', 'scars', 'missingscars',
             'collars', 'bellcollars', 'bowcollars', 'nyloncollars',
-            'bengalcolours', 'marbledcolours', 'rosettecolours', 'smokecolours', 'tickedcolours', 
+            'bengalcolours', 'marbledcolours', 'rosettecolours', 'smokecolours', 'tickedcolours',
             'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours',
-            'maskedcolours', 
-            'shadersnewwhite', 'lineartdead', 'tortiepatchesmasks', 
+            'maskedcolours',
+            'shadersnewwhite', 'lineartdead', 'tortiepatchesmasks',
             'medcatherbs', 'lineartdf', 'lightingnew', 'fademask',
-            'fadestarclan', 'fadedarkforest'
+            'fadestarclan', 'fadedarkforest', 'symbols'
 
         ]:
             if 'lineart' in x and game.config['fun']['april_fools']:
@@ -140,48 +150,49 @@ class Sprites():
             self.make_group('fadedarkforest', (i, 0), f'fadedf{i}')
 
         for a, i in enumerate(
-                ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 
-                'DARKBLUE', 'GREY', 'CYAN', 'EMERALD', 'HEATHERBLUE', 'SUNLITICE']):
+                ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE',
+                 'DARKBLUE', 'GREY', 'CYAN', 'EMERALD', 'HEATHERBLUE', 'SUNLITICE']):
             self.make_group('eyes', (a, 0), f'eyes{i}')
             self.make_group('eyes2', (a, 0), f'eyes2{i}')
         for a, i in enumerate(
                 ['COPPER', 'SAGE', 'COBALT', 'PALEBLUE', 'BRONZE', 'SILVER',
-                'PALEYELLOW', 'GOLD', 'GREENYELLOW']):
+                 'PALEYELLOW', 'GOLD', 'GREENYELLOW']):
             self.make_group('eyes', (a, 1), f'eyes{i}')
             self.make_group('eyes2', (a, 1), f'eyes2{i}')
 
         # white patches
         for a, i in enumerate(['FULLWHITE', 'ANY', 'TUXEDO', 'LITTLE', 'COLOURPOINT', 'VAN', 'ANYTWO',
-            'MOON', 'PHANTOM', 'POWDER', 'BLEACHED', 'SAVANNAH', 'FADESPOTS', 'PEBBLESHINE']):
+                               'MOON', 'PHANTOM', 'POWDER', 'BLEACHED', 'SAVANNAH', 'FADESPOTS', 'PEBBLESHINE']):
             self.make_group('whitepatches', (a, 0), f'white{i}')
-        for a, i in enumerate(['EXTRA', 'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 
-            'LIGHTSONG', 'VITILIGO', 'BLACKSTAR', 'PIEBALD', 'CURVED', 'PETAL', 'SHIBAINU', 'OWL']):
+        for a, i in enumerate(['EXTRA', 'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL',
+                               'LIGHTSONG', 'VITILIGO', 'BLACKSTAR', 'PIEBALD', 'CURVED', 'PETAL', 'SHIBAINU', 'OWL']):
             self.make_group('whitepatches', (a, 1), f'white{i}')
         # ryos white patches
         for a, i in enumerate(['TIP', 'FANCY', 'FRECKLES', 'RINGTAIL', 'HALFFACE', 'PANTSTWO', 'GOATEE', 'VITILIGOTWO',
-            'PAWS', 'MITAINE', 'BROKENBLAZE', 'SCOURGE', 'DIVA', 'BEARD']):
+                               'PAWS', 'MITAINE', 'BROKENBLAZE', 'SCOURGE', 'DIVA', 'BEARD']):
             self.make_group('whitepatches', (a, 2), f'white{i}')
         for a, i in enumerate(['TAIL', 'BLAZE', 'PRINCE', 'BIB', 'VEE', 'UNDERS', 'HONEY',
-            'FAROFA', 'DAMIEN', 'MISTER', 'BELLY', 'TAILTIP', 'TOES', 'TOPCOVER']):
+                               'FAROFA', 'DAMIEN', 'MISTER', 'BELLY', 'TAILTIP', 'TOES', 'TOPCOVER']):
             self.make_group('whitepatches', (a, 3), f'white{i}')
         for a, i in enumerate(
                 ['APRON', 'CAPSADDLE', 'MASKMANTLE', 'SQUEAKS', 'STAR', 'TOESTAIL', 'RAVENPAW',
-                'PANTS', 'REVERSEPANTS', 'SKUNK', 'KARPATI', 'HALFWHITE', 'APPALOOSA', 'DAPPLEPAW']):
+                 'PANTS', 'REVERSEPANTS', 'SKUNK', 'KARPATI', 'HALFWHITE', 'APPALOOSA', 'DAPPLEPAW']):
             self.make_group('whitepatches', (a, 4), f'white{i}')
         # beejeans white patches + perrio's point marks, painted, and heart2 + anju's new marks + key's blackstar
         for a, i in enumerate(['HEART', 'LILTWO', 'GLASS', 'MOORISH', 'SEPIAPOINT', 'MINKPOINT', 'SEALPOINT',
-            'MAO', 'LUNA', 'CHESTSPECK', 'WINGS', 'PAINTED', 'HEARTTWO', 'WOODPECKER']):
+                               'MAO', 'LUNA', 'CHESTSPECK', 'WINGS', 'PAINTED', 'HEARTTWO', 'WOODPECKER']):
             self.make_group('whitepatches', (a, 5), f'white{i}')
         # acorn's white patches + ryos' bub + fable lovebug + frankie trixie
         for a, i in enumerate(['BOOTS', 'MISS', 'COW', 'COWTWO', 'BUB', 'BOWTIE', 'MUSTACHE', 'REVERSEHEART',
-            'SPARROW', 'VEST', 'LOVEBUG', 'TRIXIE', 'SAMMY', 'SPARKLE']):
+                               'SPARROW', 'VEST', 'LOVEBUG', 'TRIXIE', 'SAMMY', 'SPARKLE']):
             self.make_group('whitepatches', (a, 6), f'white{i}')
         # acorn's white patches: the sequel
         for a, i in enumerate(['RIGHTEAR', 'LEFTEAR', 'ESTRELLA', 'SHOOTINGSTAR', 'EYESPOT', 'REVERSEEYE',
-            'FADEBELLY', 'FRONT', 'BLOSSOMSTEP', 'PEBBLE', 'TAILTWO', 'BUDDY', 'BACKSPOT', 'EYEBAGS']):
+                               'FADEBELLY', 'FRONT', 'BLOSSOMSTEP', 'PEBBLE', 'TAILTWO', 'BUDDY', 'BACKSPOT',
+                               'EYEBAGS']):
             self.make_group('whitepatches', (a, 7), f'white{i}')
         for a, i in enumerate(['BULLSEYE', 'FINN', 'DIGIT', 'KROPKA', 'FCTWO', 'FCONE', 'MIA', 'SCAR',
-            'BUSTER', 'SMOKEY', 'HAWKBLAZE', 'CAKE', 'ROSINA', 'PRINCESS']):
+                               'BUSTER', 'SMOKEY', 'HAWKBLAZE', 'CAKE', 'ROSINA', 'PRINCESS']):
             self.make_group('whitepatches', (a, 8), f'white{i}')
         for a, i in enumerate(['LOCKET', 'BLAZEMASK', 'TEARS', 'DOUGIE']):
             self.make_group('whitepatches', (a, 9), 'white' + i)
@@ -284,15 +295,21 @@ class Sprites():
             self.make_group('maskedcolours', (a, 1), f'masked{i}')
         for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
             self.make_group('maskedcolours', (a, 2), f'masked{i}')
-            
+
         # new new torties
         for a, i in enumerate(['ONE', 'TWO', 'THREE', 'FOUR', 'REDTAIL', 'DELILAH', 'HALF', 'STREAK', 'MASK', 'SMOKE']):
             self.make_group('tortiepatchesmasks', (a, 0), f"tortiemask{i}")
-        for a, i in enumerate(['MINIMALONE', 'MINIMALTWO', 'MINIMALTHREE', 'MINIMALFOUR', 'OREO', 'SWOOP', 'CHIMERA', 'CHEST', 'ARMTAIL', 'GRUMPYFACE']):
+        for a, i in enumerate(
+                ['MINIMALONE', 'MINIMALTWO', 'MINIMALTHREE', 'MINIMALFOUR', 'OREO', 'SWOOP', 'CHIMERA', 'CHEST',
+                 'ARMTAIL', 'GRUMPYFACE']):
             self.make_group('tortiepatchesmasks', (a, 1), f"tortiemask{i}")
-        for a, i in enumerate(['MOTTLED', 'SIDEMASK', 'EYEDOT', 'BANDANA', 'PACMAN', 'STREAMSTRIKE', 'SMUDGED', 'DAUB', 'EMBER', 'BRIE']):
+        for a, i in enumerate(
+                ['MOTTLED', 'SIDEMASK', 'EYEDOT', 'BANDANA', 'PACMAN', 'STREAMSTRIKE', 'SMUDGED', 'DAUB', 'EMBER',
+                 'BRIE']):
             self.make_group('tortiepatchesmasks', (a, 2), f"tortiemask{i}")
-        for a, i in enumerate(['ORIOLE', 'ROBIN', 'BRINDLE', 'PAIGE', 'ROSETAIL', 'SAFI', 'DAPPLENIGHT', 'BLANKET', 'BELOVED', 'BODY']):
+        for a, i in enumerate(
+                ['ORIOLE', 'ROBIN', 'BRINDLE', 'PAIGE', 'ROSETAIL', 'SAFI', 'DAPPLENIGHT', 'BLANKET', 'BELOVED',
+                 'BODY']):
             self.make_group('tortiepatchesmasks', (a, 3), f"tortiemask{i}")
         for a, i in enumerate(['SHILOH', 'FRECKLED', 'HEARTBEAT']):
             self.make_group('tortiepatchesmasks', (a, 4), f"tortiemask{i}")
@@ -306,13 +323,14 @@ class Sprites():
             self.make_group('skin', (a, 2), f"skin{i}")
 
         self.load_scars()
+        self.load_symbols()
 
     def load_scars(self):
         """
         Loads scar sprites and puts them into groups.
         """
         for a, i in enumerate(
-                ["ONE", "TWO", "THREE", "MANLEG", "BRIGHTHEART", "MANTAIL", 
+                ["ONE", "TWO", "THREE", "MANLEG", "BRIGHTHEART", "MANTAIL",
                  "BRIDGE", "RIGHTBLIND", "LEFTBLIND", "BOTHBLIND", "BURNPAWS", "BURNTAIL"]):
             self.make_group('scars', (a, 0), f'scars{i}')
         for a, i in enumerate(
@@ -382,7 +400,28 @@ class Sprites():
             self.make_group('nyloncollars', (a, 1), f'collars{i}')
         for a, i in enumerate(["PINKNYLON", "PURPLENYLON", "MULTINYLON", "INDIGONYLON"]):
             self.make_group('nyloncollars', (a, 2), f'collars{i}')
-            
 
-# CREATE INSTANCE 
+    def load_symbols(self):
+        """
+        loads clan symbols
+        """
+        prefixes = names.names_dict["normal_prefixes"]
+
+        letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T",
+                   "V", "W", "Y", "Z"]
+
+        # sprite names will format as "symbolPREFIX"
+        y_pos = 1
+        for letter in letters:
+            print([i for i in prefixes if letter in i])
+            for a, i in enumerate([i for i in prefixes if letter in i]):
+                print(a, i)
+                self.clan_symbols.append(f"symbol{i.upper()}")
+                self.make_group('symbols', (a, y_pos), f"symbol{i.upper()}", sprites_x=1, sprites_y=1, no_index=True)
+
+            y_pos += 1
+        print(self.clan_symbols)
+
+
+# CREATE INSTANCE
 sprites = Sprites()

@@ -23,7 +23,8 @@ import statistics
 
 from scripts.game_structure.game_essentials import game
 from scripts.housekeeping.version import get_version_info, SAVE_VERSION_NUMBER
-from scripts.utility import update_sprite, get_current_season, quit  # pylint: disable=redefined-builtin
+from scripts.utility import update_sprite, get_current_season, quit, \
+    clan_symbol_sprite  # pylint: disable=redefined-builtin
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.names import names
 from scripts.clan_resources.freshkill import Freshkill_Pile, Nutrition
@@ -473,6 +474,9 @@ class Clan():
             [str(i.relations) for i in self.all_clans])
         clan_data["other_clan_temperament"] = ",".join(
             [str(i.temperament) for i in self.all_clans])
+        clan_data["other_clan_chosen_symbol"] = ",".join(
+            [str(i.chosen_symbol) for i in self.all_clans]
+        )
         clan_data["war"] = self.war
 
         self.save_herbs(game.clan)
@@ -757,11 +761,19 @@ class Clan():
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
 
-        for name, relation, temper in zip(
-                clan_data["other_clans_names"].split(","),
-                clan_data["other_clans_relations"].split(","),
-                clan_data["other_clan_temperament"].split(",")):
-            game.clan.all_clans.append(OtherClan(name, int(relation), temper))
+        if "other_clan_chosen_symbol" not in clan_data:
+            for name, relation, temper in zip(
+                    clan_data["other_clans_names"].split(","),
+                    clan_data["other_clans_relations"].split(","),
+                    clan_data["other_clan_temperament"].split(",")):
+                game.clan.all_clans.append(OtherClan(name, int(relation), temper))
+        else:
+            for name, relation, temper, symbol in zip(
+                    clan_data["other_clans_names"].split(","),
+                    clan_data["other_clans_relations"].split(","),
+                    clan_data["other_clan_temperament"].split(","),
+                    clan_data["other_clan_chosen_symbol"].split(",")):
+                game.clan.all_clans.append(OtherClan(name, int(relation), temper, symbol))
 
         for cat in clan_data["clan_cats"].split(","):
             if cat in Cat.all_cats:
@@ -1118,12 +1130,16 @@ class OtherClan():
         'bloodthirsty', 'amiable', 'gracious'
     ]
 
-    def __init__(self, name='', relations=0, temperament=''):
+    def __init__(self, name='', relations=0, temperament='', chosen_symbol=""):
         self.name = name or choice(names.names_dict["normal_prefixes"])
         self.relations = relations or randint(8, 12)
         self.temperament = temperament or choice(self.temperament_list)
         if self.temperament not in self.temperament_list:
             self.temperament = choice(self.temperament_list)
+
+        self.chosen_symbol = None  # have to establish None first so that clan_symbol_sprite works
+        self.chosen_symbol = chosen_symbol if chosen_symbol else clan_symbol_sprite(self, return_string=True)
+        print(self.chosen_symbol)
 
     def __repr__(self):
         return f"{self.name}Clan"
