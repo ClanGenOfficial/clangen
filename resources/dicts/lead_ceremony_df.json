@@ -279,7 +279,7 @@
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
       "life_giving": [
         {
-          "text": "r_c stepped forth with hypnotic grace, {PRONOUN/r_c/poss} presence pulling the very air into a hushed stillness. With calculated movement, {PRONOUN/r_c/subject} exuded an unsettling tranquility, {PRONOUN/r_c/poss} eyes shining with ravening intelligence. {PRONOUN/r_c/subject} slowly drew nearer, giving m_c a life for [virtue].",
+          "text": "r_c stepped forth with hypnotic grace, {PRONOUN/r_c/poss} presence pulling the very air into a hushed stillness. With calculated movement, {PRONOUN/r_c/subject} exuded an unsettling tranquility, {PRONOUN/r_c/poss} eyes shining with ravening intelligence. {PRONOUN/r_c/subject/CAP} slowly drew nearer, giving m_c a life for [virtue].",
           "virtue": ["ambition", "bravery", "certainty", "clear judgment", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "ferocity", "cunningness", "shamelessness", "zealotry", "bloodlust", "authority"]
         },
@@ -981,7 +981,7 @@
       "rank": ["apprentice", "medicine cat apprentice", "mediator apprentice"],
       "life_giving": [
         {
-          "text": "A young cat is next to give a life. {PRONOUN/r_c/subject} {VERB/r_c/hesitate/hesitates}, before an older cat shoves {PRONOUN/r_c/object} forward, growling in {PRONOUN/r_c/poss} ear. r_c stretches up to give a life for [virtue].",
+          "text": "A young cat is next to give a life. {PRONOUN/r_c/subject/CAP} {VERB/r_c/hesitate/hesitates}, before an older cat shoves {PRONOUN/r_c/object} forward, growling in {PRONOUN/r_c/poss} ear. r_c stretches up to give a life for [virtue].",
           "virtue": ["happiness", "honesty", "humor", "justice", "mentoring", "trust"]
         }
       ]

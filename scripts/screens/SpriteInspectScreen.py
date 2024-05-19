@@ -144,23 +144,28 @@ class SpriteInspectScreen(Screens):
         self.save_image_button = UIImageButton(scale(pygame.Rect((50, 190),(270, 60))), "", object_id="#save_image_button")
         
         # Toggle Text:
-        self.platform_shown_text = pygame_gui.elements.UITextBox("Show Platform", scale(pygame.Rect((310, 1160), (290, 100))),
+        self.platform_shown_text = pygame_gui.elements.UITextBox("Show Platform",
+                                                                 scale(pygame.Rect((300, 1160), (-1, 100))),
                                                                  object_id=get_text_box_theme(
                                                                               "#text_box_34_horizcenter"), 
                                                                  starting_height=2)
-        self.scars_shown_text = pygame_gui.elements.UITextBox("Show Scar(s)", scale(pygame.Rect((710, 1160), (290, 100))),
+        self.scars_shown_text = pygame_gui.elements.UITextBox("Show Scar(s)",
+                                                              scale(pygame.Rect((700, 1160), (-1, 100))),
                                                               object_id=get_text_box_theme(
                                                                               "#text_box_34_horizcenter"), 
                                                                  starting_height=2)
-        self.acc_shown_text = pygame_gui.elements.UITextBox("Show Accessory", scale(pygame.Rect((1100, 1160), (290, 100))),
+        self.acc_shown_text = pygame_gui.elements.UITextBox("Show Accessory",
+                                                            scale(pygame.Rect((1090, 1160), (-1, 100))),
                                                             object_id=get_text_box_theme(
                                                                               "#text_box_34_horizcenter"), 
                                                             starting_height=2)
-        self.override_dead_lineart_text = pygame_gui.elements.UITextBox("Show as Living", scale(pygame.Rect((510, 1260), (290, 100))),
+        self.override_dead_lineart_text = pygame_gui.elements.UITextBox("Show as Living",
+                                                                        scale(pygame.Rect((500, 1260), (-1, 100))),
                                                                         object_id=get_text_box_theme(
                                                                               "#text_box_34_horizcenter"), 
                                                                         starting_height=2)
-        self.override_not_working_text = pygame_gui.elements.UITextBox("Show as Healthy", scale(pygame.Rect((910, 1260), (290, 100))),
+        self.override_not_working_text = pygame_gui.elements.UITextBox("Show as Healthy",
+                                                                       scale(pygame.Rect((900, 1260), (-1, 100))),
                                                                  object_id=get_text_box_theme(
                                                                               "#text_box_34_horizcenter"), 
                                                                  starting_height=2)
@@ -229,13 +234,25 @@ class SpriteInspectScreen(Screens):
 
         self.cat_elements["cat_name"].kill()
 
-        self.cat_elements["cat_name"] = pygame_gui.elements.UITextBox(short_name,
-                                                                      scale(pygame.Rect(
-                                                                        (800 - name_text_size.width, 120),
-                                                                        (name_text_size.width * 2, 80))),
-                                                                       object_id=get_text_box_theme(
-                                                                        "#text_box_40_horizcenter"), manager=MANAGER)
-        
+        # don't like having to do this, but for some reason the usual scaling is not working here
+        if game.settings['fullscreen']:
+            self.cat_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name,
+                                                                              scale(pygame.Rect(
+                                                                                  (800 - name_text_size.width, 120),
+                                                                                  (name_text_size.width * 2, 80))),
+                                                                              object_id=get_text_box_theme(
+                                                                                  "#text_box_40_horizcenter"),
+                                                                              manager=MANAGER)
+        else:
+            self.cat_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name,
+                                                                          scale(pygame.Rect(
+                                                                              (800 - name_text_size.width, 120),
+                                                                              (-1, 80))),
+                                                                          object_id=get_text_box_theme(
+                                                                              "#text_box_40_horizcenter"),
+                                                                          manager=MANAGER)
+
+
         # Fullscreen
         if game.settings['fullscreen']:
             x_pos = 745 - name_text_size.width//2
@@ -244,7 +261,7 @@ class SpriteInspectScreen(Screens):
         self.cat_elements["favourite_button"] = UIImageButton(scale(pygame.Rect
                                                                 ((x_pos, 127), (56, 56))),
                                                               "",
-                                                              object_id="#fav_cat",
+                                                              object_id="#fav_star",
                                                               manager=MANAGER,
                                                               tool_tip_text='Remove favorite status',
                                                               starting_height=2)
@@ -253,7 +270,7 @@ class SpriteInspectScreen(Screens):
                                                                     ((x_pos, 127),
                                                                         (56, 56))),
                                                                  "",
-                                                                 object_id="#not_fav_cat",
+                                                                 object_id="#not_fav_star",
                                                                  manager=MANAGER,
                                                                  tool_tip_text='Mark as favorite',
                                                                  starting_height=2)  

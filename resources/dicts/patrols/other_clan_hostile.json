@@ -1,8 +1,8 @@
 [
     {
         "patrol_id": "gen_bord_otherclan_hostile1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "gen_bord_otherclan_hostile",
@@ -99,8 +99,8 @@
     },
     {
         "patrol_id": "gen_bord_otherclan_hostile2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "gen_bord_otherclan_hostile",
@@ -223,8 +223,8 @@
     },
     {
         "patrol_id": "gen_bord_otherclan_hostile3",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["hunting", "border"],
         "tags": ["other_clan"],
         "patrol_art": "gen_bord_otherclan3",
@@ -342,7 +342,7 @@
     },
     {
         "patrol_id": "gen_med_borderherb3",
-        "biome": ["Any"],
+        "biome": ["any"],
         "season": ["leaf-bare"],
         "types": ["herb_gathering"],
         "tags": ["other_clan"],
@@ -407,8 +407,8 @@
     },
     {
         "patrol_id": "gen_bord_scent_hostile1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "gen_bord_scent_hostile",
@@ -506,8 +506,8 @@
     },
     {
         "patrol_id": "gen_bord_scent_hostile2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "gen_bord_scent_hostile",
@@ -605,7 +605,7 @@
     {
         "patrol_id": "fst_bord_solo1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -751,7 +751,7 @@
     {
         "patrol_id": "fst_bord_solo2",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -909,7 +909,7 @@
     {
         "patrol_id": "fst_bord_solo3",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -1073,7 +1073,7 @@
     {
         "patrol_id": "fst_bord_solo4",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -1203,7 +1203,7 @@
     {
         "patrol_id": "fst_bord_solo5",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -1340,7 +1340,7 @@
     {
         "patrol_id": "pln_bord_solo1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -1486,7 +1486,7 @@
     {
         "patrol_id": "pln_bord_solo2",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -1644,7 +1644,7 @@
     {
         "patrol_id": "pln_bord_solo3",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -1809,7 +1809,7 @@
     {
         "patrol_id": "pln_bord_solo4",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -1938,7 +1938,7 @@
     {
         "patrol_id": "pln_bord_solo5",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -2075,7 +2075,7 @@
     {
         "patrol_id": "mtn_bord_solo1",
         "biome": ["mountainous"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -2221,7 +2221,7 @@
     {
         "patrol_id": "mtn_bord_solo2",
         "biome": ["mountainous"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -2379,7 +2379,7 @@
     {
         "patrol_id": "mtn_bord_solo3",
         "biome": ["mountainous"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -2544,7 +2544,7 @@
     {
         "patrol_id": "mtn_bord_solo4",
         "biome": ["mountainous"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -2674,7 +2674,7 @@
     {
         "patrol_id": "mtn_bord_solo5",
         "biome": ["mountainous"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -2811,7 +2811,7 @@
     {
         "patrol_id": "bch_bord_solo1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -2957,7 +2957,7 @@
     {
         "patrol_id": "bch_bord_solo2",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -3115,7 +3115,7 @@
     {
         "patrol_id": "bch_bord_solo3",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -3280,7 +3280,7 @@
     {
         "patrol_id": "bch_bord_solo4",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -3410,7 +3410,7 @@
     {
         "patrol_id": "bch_bord_solo5",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -3546,8 +3546,8 @@
     },
     {
         "patrol_id": "gen_bord_scent_hostile_dislikelocked1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan", "distrust", "disrespect"],
         "patrol_art": "gen_bord_scent_hostile_dislikelocked1",
@@ -3686,8 +3686,8 @@
     },
     {
         "patrol_id": "gen_bord_ambush_hostile_disaster1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan", "antag_death", "disaster"],
         "patrol_art": "bord_general_intro",
@@ -3705,7 +3705,7 @@
                 "weight": 20
             },
             {
-                "text": "This smacks of a setup to s_c. If {PRONOUN/s_c/subject} were trying to get away with attacking c_n, this is how {PRONOUN/s_c/subject}'d do it, tempt some idiot with an opportunity that looked too good to resist. So, assuming cunning eyes are already watching {PRONOUN/s_c/object}, {PRONOUN/s_c/subject} {VERB/s_c/lay/lies} down to bask in front of the border instead. Good old psychological warfare.",
+                "text": "This smacks of a setup to s_c. If {PRONOUN/s_c/subject} were trying to get away with attacking c_n, this is how {PRONOUN/s_c/subject}'d do it, tempt some mouse-brain with an opportunity that looked too good to resist. So, assuming cunning eyes are already watching {PRONOUN/s_c/object}, {PRONOUN/s_c/subject} {VERB/s_c/lay/lies} down to bask in front of the border instead. Good old psychological warfare.",
                 "exp": 50,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,2", "MEDIATOR,2"]
@@ -3772,8 +3772,8 @@
     },
     {
         "patrol_id": "gen_bord_ambush_hostile_disaster2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan", "antag_death", "disaster"],
         "patrol_art": "bord_general_intro",
@@ -3791,7 +3791,7 @@
                 "weight": 20
             },
             {
-                "text": "This smacks of a setup to s_c. If {PRONOUN/s_c/subject} were trying to get away with attacking c_n, this is how {PRONOUN/s_c/subject}'d do it, tempt some idiot with an opportunity that looked too good to resist. So, assuming cunning eyes are already watching {PRONOUN/s_c/object}, {PRONOUN/s_c/subject} {VERB/s_c/lay/lies} down to bask in front of the border instead, talking loudly with {PRONOUN/s_c/poss} patrolmates. Good old psychological warfare.",
+                "text": "This smacks of a setup to s_c. If {PRONOUN/s_c/subject} were trying to get away with attacking c_n, this is how {PRONOUN/s_c/subject}'d do it, tempt some mouse-brain with an opportunity that looked too good to resist. So, assuming cunning eyes are already watching {PRONOUN/s_c/object}, {PRONOUN/s_c/subject} {VERB/s_c/lay/lies} down to bask in front of the border instead, talking loudly with {PRONOUN/s_c/poss} patrolmates. Good old psychological warfare.",
                 "exp": 50,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,2", "MEDIATOR,2"]
@@ -3884,8 +3884,8 @@
     },
     {
         "patrol_id": "gen_bord_ambush_hostile_disaster3",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan", "antag_death"],
         "patrol_art": "bord_general_intro",
@@ -3903,7 +3903,7 @@
                 "weight": 20
             },
             {
-                "text": "This smacks of a setup to s_c. If {PRONOUN/s_c/subject} were trying to get away with attacking c_n, this is how {PRONOUN/s_c/subject}'d do it, tempt some idiot with an opportunity that looked too good to resist. So, assuming cunning eyes are already watching {PRONOUN/s_c/object}, {PRONOUN/s_c/subject} {VERB/s_c/lay/lies} down to bask in front of the border instead, talking loudly with {PRONOUN/s_c/poss} patrolmates. Good old psychological warfare.",
+                "text": "This smacks of a setup to s_c. If {PRONOUN/s_c/subject} were trying to get away with attacking c_n, this is how {PRONOUN/s_c/subject}'d do it, tempt some mouse-brain with an opportunity that looked too good to resist. So, assuming cunning eyes are already watching {PRONOUN/s_c/object}, {PRONOUN/s_c/subject} {VERB/s_c/lay/lies} down to bask in front of the border instead, talking loudly with {PRONOUN/s_c/poss} patrolmates. Good old psychological warfare.",
                 "exp": 50,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,2", "MEDIATOR,2"]

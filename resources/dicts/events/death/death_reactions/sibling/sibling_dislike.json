@@ -2,14 +2,14 @@
   "general": {
     "body": [
       "It's sad, the vigil. More so, however, because r_c knows {PRONOUN/r_c/subject} should care, but {PRONOUN/r_c/subject} just {VERB/r_c/don't/doesn't} have any grief for m_c.",
-      "r_c is called to m_c's vigil, but declines to speak. {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} not sure {PRONOUN/r_c/subject}'d have anything good to say.",
+      "r_c is called to m_c's vigil, but declines to speak. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} not sure {PRONOUN/r_c/subject}'d have anything good to say.",
       "{PRONOUN/r_c/subject/CAP} {VERB/r_c/know/knows} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} supposed to be distraught, but r_c simply isn't. The bad blood between them outweighs any sibling bond {PRONOUN/r_c/subject} might have had with m_c.",
       "Maybe r_c would have mourned m_c, once upon a time. After all, they are siblings. But not in this time, not now."
 
    ],
    "no_body": [
       "It's sad, the vigil. More so, however, because r_c knows {PRONOUN/r_c/subject} should care, but {PRONOUN/r_c/subject} just {VERB/r_c/don't/doesn't} have any grief for m_c.",
-      "r_c is called to m_c's vigil, but declines to speak. {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} not sure {PRONOUN/r_c/subject}'d have anything good to say.",
+      "r_c is called to m_c's vigil, but declines to speak. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} not sure {PRONOUN/r_c/subject}'d have anything good to say.",
       "{PRONOUN/r_c/subject/CAP} {VERB/r_c/know/knows} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} supposed to be distraught, but r_c simply isn't. The bad blood between them outweighs any sibling bond {PRONOUN/r_c/subject} might have had with m_c.",
       "Maybe r_c would have mourned m_c, once upon a time. After all, they are siblings. But not in this time, not now."
 
