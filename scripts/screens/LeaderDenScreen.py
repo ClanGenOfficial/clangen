@@ -373,7 +373,7 @@ class LeaderDenScreen(Screens):
 
         for ele in self.screen_elements:
             self.screen_elements[ele].kill()
-            
+
         # killing containers kills all inner elements as well
         self.focus_frame_container.kill()
         self.other_clan_selection_container.kill()
