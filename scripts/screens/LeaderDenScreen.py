@@ -111,13 +111,22 @@ class LeaderDenScreen(Screens):
         )
 
         # LEADER DEN BG AND LEADER SPRITE
-        self.screen_elements["bg_image"] = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((0, 0), (1400, 900))),
-            pygame.image.load(
-                f"resources/images/lead_den_bg/{game.clan.biome.lower()}/{game.clan.camp_bg.lower()}.png").convert_alpha(),
-            object_id="#lead_den_bg",
-            starting_height=1,
-            manager=MANAGER)
+        try:
+            self.screen_elements["bg_image"] = pygame_gui.elements.UIImage(
+                scale(pygame.Rect((0, 0), (1400, 900))),
+                pygame.image.load(
+                    f"resources/images/lead_den_bg/{game.clan.biome.lower()}/{game.clan.camp_bg.lower()}.png").convert_alpha(),
+                object_id="#lead_den_bg",
+                starting_height=1,
+                manager=MANAGER)
+        except:
+            self.screen_elements["bg_image"] = pygame_gui.elements.UIImage(
+                scale(pygame.Rect((0, 0), (1400, 900))),
+                pygame.image.load(
+                    f"resources/images/lead_den_bg/{game.clan.biome.lower()}/camp1.png").convert_alpha(),
+                object_id="#lead_den_bg",
+                starting_height=1,
+                manager=MANAGER)
 
         self.screen_elements["lead_image"] = pygame_gui.elements.UIImage(
             scale(pygame.Rect((460, 460), (300, 300))),
