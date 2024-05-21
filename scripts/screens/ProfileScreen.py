@@ -1070,10 +1070,7 @@ class ProfileScreen(Screens):
         output = ""
         if self.open_sub_tab == 'life events':
             # start our history with the backstory, since all cats get one
-            if self.the_cat.status not in ["rogue", "kittypet", "loner", "former Clancat"]:
-                life_history = [str(self.get_backstory_text())]
-            else:
-                life_history = []
+            life_history = [str(self.get_backstory_text())]
 
             # now get apprenticeship history and add that if any exists
             app_history = self.get_apprenticeship_text()
@@ -1122,10 +1119,11 @@ class ProfileScreen(Screens):
             adjust_text = str(bs_blurb).replace('This cat', str(self.the_cat.name))
             text = adjust_text
         else:
-            text = str(self.the_cat.name) + " was born into the Clan where {PRONOUN/m_c/subject} currently reside."
+            text = str(self.the_cat.name) + "'s past history is unknown."
 
         beginning = History.get_beginning(self.the_cat)
         if beginning:
+            print(beginning['clan_born'])
             if beginning['clan_born']:
                 text += " {PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} born on Moon " + str(
                     beginning['moon']) + " during " + str(beginning['birth_season']) + "."

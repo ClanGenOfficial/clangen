@@ -61,12 +61,12 @@ class Events:
         game.freshkill_events_list = []
         game.mediated = []
         game.switches['saved_clan'] = False
+        game.clan.clan_settings["outsider_interaction"] = False
         self.new_cat_invited = False
         Relation_Events.clear_trigger_dict()
         Patrol.used_patrols.clear()
         game.patrolled.clear()
         game.just_died.clear()
-        
 
         if any(
                 str(cat.status) in {
@@ -100,13 +100,17 @@ class Events:
                 game.cur_events_list.insert(0, Single_Event(event_string))
                 game.freshkill_event_list.append(event_string)
 
-        rejoin_upperbound = game.config["lost_cat"]["rejoin_chance"]
-        if random.randint(1, rejoin_upperbound) == 1:
+        if "found_lost_cat_ID" in game.clan.clan_settings:
             self.handle_lost_cats_return()
+            game.clan.clan_settings["found_lost_cat_ID"] = []
+        else:
+            rejoin_upperbound = game.config["lost_cat"]["rejoin_chance"]
+            if random.randint(1, rejoin_upperbound) == 1:
+                self.handle_lost_cats_return()
 
         # Calling of "one_moon" functions.
         for cat in Cat.all_cats.copy().values():
-            if not cat.outside or cat.dead:
+            if not cat.outside and not cat.dead:
                 self.one_moon_cat(cat)
             else:
                 self.one_moon_outside_cat(cat)
@@ -136,8 +140,6 @@ class Events:
                             Single_Event(_val[0], ["birth_death", "relation"],
                                         _val[1]))
             
-            
-                
             Cat.grief_strings.clear()
 
         if Cat.dead_cats:
@@ -828,47 +830,58 @@ class Events:
         """
         TODO: DOCS
         """
-        
-        eligable_cats = []
-        for cat in Cat.all_cats.values():
-            if cat.outside and cat.ID not in Cat.outside_cats:
-                # The outside-value must be set to True before the cat can go to cotc
-                Cat.outside_cats.update({cat.ID: cat})
-                
-            if cat.outside and cat.status not in [
-                'kittypet', 'loner', 'rogue', 'former Clancat'
-            ] and not cat.exiled and not cat.dead:
-                eligable_cats.append(cat)
-        
-        if not eligable_cats:
-            return
-        
-        lost_cat = random.choice(eligable_cats)
-        
-        text = [
-            'After a long journey, m_c has finally returned home to c_n.',
-            'm_c was found at the border, tired, but happy to be home.',
-            "m_c strides into camp, much to the everyone's surprise. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} home!",
-            "{PRONOUN/m_c/subject/CAP} met so many friends on {PRONOUN/m_c/poss} journey, but c_n is where m_c truly belongs. With a tearful goodbye, " 
-                "{PRONOUN/m_c/subject} {VERB/m_c/return/returns} home."
-        ]
-        lost_cat.outside = False
-        additional_cats = lost_cat.add_to_clan()
-        text = random.choice(text)
-        
-        if additional_cats:
-            text += " {PRONOUN/m_c/subject/CAP} {VERB/m_c/bring/brings} along {PRONOUN/m_c/poss} "
-            if len(additional_cats) > 1:
-                text += str(len(additional_cats)) + " childen."
-            else:
-                text += "child."
-         
-        text = event_text_adjust(Cat, text, lost_cat, clan=game.clan)
-        
-        game.cur_events_list.append(
-                Single_Event(text, "misc", [lost_cat.ID] + additional_cats))
-        
-        # Proform a ceremony if needed
+        lost_cat = None
+        additional_cats = []
+        cat_predetermined = False
+
+        if "found_lost_cat_ID" in game.clan.clan_settings:
+            if game.clan.clan_settings["found_lost_cat_ID"]:
+                cat_IDs = game.clan.clan_settings["found_lost_cat_ID"]
+                cat_predetermined = True
+                lost_cat = Cat.fetch_cat(cat_IDs[-1])
+                additional_cats = cat_IDs.pop(-1)
+
+        if not cat_predetermined:
+            eligible_cats = []
+            for cat in Cat.all_cats.values():
+                if cat.outside and cat.ID not in Cat.outside_cats:
+                    # The outside-value must be set to True before the cat can go to cotc
+                    Cat.outside_cats.update({cat.ID: cat})
+
+                if cat.outside and cat.status not in [
+                    'kittypet', 'loner', 'rogue', 'former Clancat', 'driven off'
+                ] and not cat.exiled and not cat.dead:
+                    eligible_cats.append(cat)
+
+            if not eligible_cats:
+                return
+
+            lost_cat = random.choice(eligible_cats)
+
+            text = [
+                'After a long journey, m_c has finally returned home to c_n.',
+                'm_c was found at the border, tired, but happy to be home.',
+                "m_c strides into camp, much to the everyone's surprise. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} home!",
+                "{PRONOUN/m_c/subject/CAP} met so many friends on {PRONOUN/m_c/poss} journey, but c_n is where m_c truly belongs. With a tearful goodbye, " 
+                    "{PRONOUN/m_c/subject} {VERB/m_c/return/returns} home."
+            ]
+            lost_cat.outside = False
+            additional_cats = lost_cat.add_to_clan()
+            text = random.choice(text)
+
+            if additional_cats:
+                text += " {PRONOUN/m_c/subject/CAP} {VERB/m_c/bring/brings} along {PRONOUN/m_c/poss} "
+                if len(additional_cats) > 1:
+                    text += str(len(additional_cats)) + " children."
+                else:
+                    text += "child."
+
+            text = event_text_adjust(Cat, text, lost_cat, clan=game.clan)
+
+            game.cur_events_list.append(
+                    Single_Event(text, "misc", [lost_cat.ID] + additional_cats))
+
+        # Perform a ceremony if needed
         for x in [lost_cat] + [Cat.fetch_cat(i) for i in additional_cats]:             
            
             if x.status in ["apprentice", "medicine cat apprentice", "mediator apprentice", "kitten", "newborn"]: 
@@ -1048,7 +1061,7 @@ class Events:
         cat.thoughts()
 
         # relationships have to be handled separately, because of the ceremony name change
-        if not cat.dead or cat.outside:
+        if not cat.dead and not cat.outside:
            Relation_Events.handle_relationships(cat)
 
         # now we make sure ill and injured cats don't get interactions they shouldn't

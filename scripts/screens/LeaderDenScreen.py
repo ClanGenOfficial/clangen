@@ -1,15 +1,17 @@
+import random
+
 import pygame
 import pygame_gui
 
-from scripts.cat.cats import Cat
-from scripts.cat.sprites import sprites
+from scripts.cat.cats import Cat, BACKSTORIES
+from scripts.cat.history import History
 from scripts.clan import OtherClan
-from scripts.game_structure.windows import SelectFocusClans
-from scripts.screens.Screens import Screens
+from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton
-from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
-from scripts.utility import get_med_cats, scale, get_text_box_theme, get_other_clan_relation, get_other_clan, \
-    clan_symbol_sprite, shorten_text_to_fit
+from scripts.game_structure.windows import NotificationWindow
+from scripts.screens.Screens import Screens
+from scripts.utility import scale, get_text_box_theme, get_other_clan_relation, get_other_clan, \
+    clan_symbol_sprite, shorten_text_to_fit, event_text_adjust
 
 
 class LeaderDenScreen(Screens):
@@ -34,6 +36,7 @@ class LeaderDenScreen(Screens):
         self.focus_outsider_container = None
         self.focus_outsider_button_container = None
         self.focus_outsider_elements = {}
+        self.focus_button = {}
 
         self.other_clan_selection_container = None
         self.other_clan_selection_elements = {}
@@ -77,6 +80,10 @@ class LeaderDenScreen(Screens):
             elif event.ui_element in self.outsider_cat_buttons.values():
                 self.focus_cat = event.ui_element.return_cat_object()
                 self.update_outsider_focus()
+            elif event.ui_element in self.focus_button.values():
+                result = self.handle_outsider_interaction(event.ui_element.get_object_ids()[3])
+                self.update_outsider_cats()
+                NotificationWindow(result)
 
     def screen_switches(self):
         """
@@ -86,12 +93,15 @@ class LeaderDenScreen(Screens):
         self.hide_menu_buttons()
 
         # BACK AND HELP
-        self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))), "", object_id="#back_button"
-                                         , manager=MANAGER)
+        self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))),
+                                         "",
+                                         object_id="#back_button",
+                                         manager=MANAGER)
         self.help_button = UIImageButton(scale(pygame.Rect(
             (1450, 50), (68, 68))),
             "",
-            object_id="#help_button", manager=MANAGER,
+            object_id="#help_button",
+            manager=MANAGER,
             tool_tip_text="This screen allows you to check on the other cats who live nearby, both Outsiders and "
                           "other Clan cats.  You can control how the leader of your Clan will treat other leaders at "
                           "Gatherings, but keep in mind that you can only determine one interaction each moon!  "
@@ -174,7 +184,7 @@ class LeaderDenScreen(Screens):
         handles the creation of focus_frame_container
         """
         self.focus_frame_container = pygame_gui.elements.UIAutoResizingContainer(
-            scale(pygame.Rect((1019, 122), (100, 100))),
+            scale(pygame.Rect((1019, 122), (0, 0))),
             object_id="#focus_frame_container",
             starting_height=3,
             manager=MANAGER)
@@ -424,7 +434,7 @@ class LeaderDenScreen(Screens):
         handles finding and displaying outsider cats
         """
         # get cats for list
-        outsiders = [i for i in Cat.all_cats.values() if i.outside and not i.dead]
+        outsiders = [i for i in Cat.all_cats.values() if i.outside and not i.dead and i.status != "driven off"]
 
         # separate them into chunks for the pages
         outsider_chunks = self.chunks(outsiders, 18)
@@ -490,20 +500,22 @@ class LeaderDenScreen(Screens):
 
     def update_outsider_focus(self):
 
-        # killing so we can reset
+        # clearing so we can reset
         if self.focus_outsider_container:
-            self.focus_outsider_container.kill()
-
-        self.focus_outsider_container = pygame_gui.elements.UIAutoResizingContainer(
-            scale(pygame.Rect((0, 0), (0, 0))),
-            object_id="#focus_outsider_container",
-            container=self.focus_frame_container,
-            starting_height=1,
-            manager=MANAGER
-        )
+            for ele in self.focus_outsider_elements:
+                self.focus_outsider_elements[ele].kill()
+            self.focus_outsider_elements = {}
+        else:
+            self.focus_outsider_container = pygame_gui.elements.UIAutoResizingContainer(
+                scale(pygame.Rect((0, 0), (0, 0))),
+                object_id="#focus_outsider_container",
+                container=self.focus_frame_container,
+                starting_height=1,
+                manager=MANAGER
+            )
 
         self.focus_outsider_elements["cat_sprite"] = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((90, 45), (300, 300))),
+            scale(pygame.Rect((90, 50), (300, 300))),
             pygame.transform.scale(self.focus_cat.sprite, (300, 300)),
             object_id="#focus_cat_sprite",
             container=self.focus_outsider_container,
@@ -534,7 +546,7 @@ class LeaderDenScreen(Screens):
         )
         self.focus_outsider_elements["cat_skills"] = pygame_gui.elements.UILabel(
             relative_rect=scale(pygame.Rect((20, 450), (436, -1))),
-            text=f"{self.focus_cat.skills.skill_string(short=True)}",
+            text=f"Skills: {self.focus_cat.skills.skill_string(short=True)}",
             object_id="#text_box_22_horizcenter",
             container=self.focus_outsider_container,
             manager=MANAGER
@@ -547,38 +559,162 @@ class LeaderDenScreen(Screens):
             starting_height=1,
             manager=MANAGER
         )
+        self.focus_outsider_button_container.clear()
         y_pos = 0
-        self.focus_outsider_elements["hunt_down"] = UIImageButton(
+        self.focus_button["hunt_down"] = UIImageButton(
             scale(pygame.Rect((0, y_pos), (242, 60))),
             "",
             object_id="#outsider_hunt",
+            tool_tip_text="This cat will be killed if found.",
             container=self.focus_outsider_button_container,
             starting_height=3,
             manager=MANAGER,
         )
         y_pos += 70
-        self.focus_outsider_elements["drive_off"] = UIImageButton(
+        self.focus_button["drive_off"] = UIImageButton(
             scale(pygame.Rect((0, y_pos), (242, 60))),
             "",
             object_id="#outsider_drive",
+            tool_tip_text="This cat will be driven out of the area if found (they will no longer be accessible in game.)",
             container=self.focus_outsider_button_container,
             starting_height=3,
             manager=MANAGER,
         )
-        y_pos += 73
-        self.focus_outsider_elements["invite_in"] = UIImageButton(
+        y_pos += 70
+        self.focus_button["invite_in"] = UIImageButton(
             scale(pygame.Rect((0, y_pos), (242, 60))),
             "",
             object_id="#outsider_invite",
+            tool_tip_text="This cat will join the Clan if found.",
             container=self.focus_outsider_button_container,
             starting_height=3,
             manager=MANAGER,
             visible=False
         )
-        if self.focus_cat.outside and not self.focus_cat.exiled and self.focus_cat.status not in ['kittypet', 'loner', 'rogue', 'former Clancat']:
-            self.focus_outsider_elements["invite_in"].change_object_id("#outsider_search")
 
-        self.focus_outsider_elements["invite_in"].show()
+        if self.focus_cat.outside and not self.focus_cat.exiled and self.focus_cat.status not in ['kittypet', 'loner', 'rogue', 'former Clancat', 'driven off']:
+            self.focus_button["invite_in"].change_object_id("#outsider_search")
+        else:
+            self.focus_button["invite_in"].change_object_id("#outsider_invite")
+
+        self.focus_button["invite_in"].show()
+
+        if "outsider_interaction" in game.clan.clan_settings:
+            if game.clan.clan_settings["outsider_interaction"]:
+                print("outsider buttons disabled")
+                self.focus_outsider_button_container.disable()
+
+    def handle_outsider_interaction(self, object_id):
+        """
+        handles determining the outcome of an outsider interaction, returns result text
+        :param object_id: the object id of the interaction button pressed
+        """
+        result_text = None
+        thought = None
+
+        game.clan.clan_settings["outsider_interaction"] = True
+
+        # percentage of success
+        success = False
+        success_chance = int(game.clan.reputation) / 100
+        print(f"CHANCE: {success_chance}")
+        if random.random() < success_chance:
+            success = True
+            print("INTERACTION SUCCESS")
+        else:
+            print("INTERACTION FAIL")
+
+        if not success:
+            thought = "Heard rumors that c_n was searching for them"
+            result_text = "m_c could not be found by the Clan."
+        else:
+            if object_id == "#outsider_hunt":
+                History.add_death(self.focus_cat, death_text="m_c was killed by the Clan.")
+                self.focus_cat.die()
+                result_text = "m_c was found and killed by a search party. c_n's reputation among Outsiders has " \
+                              "greatly lowered. "
+                game.clan.reputation += -30
+
+            elif object_id == "#outsider_drive":
+                self.focus_cat.status = "driven off"
+                result_text = "m_c was found and driven out of the area. c_n's reputation among Outsiders has lowered."
+                game.clan.reputation += -10
+
+            elif object_id == "#outsider_invite":
+                result_text = "m_c was found and invited into the Clan. c_n's reputation among Outsiders has improved."
+                game.clan.reputation += 20
+
+                if self.focus_cat.exiled:
+                    thought = "Is surprised c_n has welcomed {PRONOUN/m_c/object} back"
+                else:
+                    thought = "Is curious about the Clan that sought {PRONOUN/m_c/object} out"
+
+                # adds to clan and also checks for accompanying kits
+                additional_cats = self.focus_cat.add_to_clan()
+                if additional_cats:
+                    result_text += "m_c brings along {PRONOUN/m_c/poss} "
+                    if len(additional_cats) > 1:
+                        result_text += str(len(additional_cats)) + " children."
+                    else:
+                        result_text += "child"
+
+                additional_cats.append(self.focus_cat.ID)
+                # clan_setting will check ceremonies on timeskip
+                game.clan.clan_settings["found_lost_cat_ID"] = additional_cats
+
+            elif object_id == "#outsider_search":
+                self.focus_cat.add_to_clan()
+                thought = "Is ecstatic that c_n found {PRONOUN/m_c/object}!"
+
+                result_text = "m_c was found and brought back to the Clan. c_n's reputation among Outsiders has " \
+                              "improved. "
+                game.clan.reputation += 20
+
+                # adds to clan and also checks for accompanying kits
+                additional_cats = self.focus_cat.add_to_clan()
+                if additional_cats:
+                    result_text += "m_c brings along {PRONOUN/m_c/poss} "
+                    if len(additional_cats) > 1:
+                        result_text += str(len(additional_cats)) + " children."
+                    else:
+                        result_text += "child"
+
+                additional_cats.append(self.focus_cat.ID)
+                # clan_setting will check ceremonies on timeskip
+                game.clan.clan_settings["found_lost_cat_ID"] = additional_cats
+
+        # set status
+        if not self.focus_cat.dead and self.focus_cat.status.lower() in ["kittypet", "loner", "rogue", "former clancat"]:
+            if self.focus_cat.backstory in BACKSTORIES["backstory_categories"]["healer_backstories"]:
+                self.focus_cat.status = "medicine cat"
+            elif self.focus_cat.age in ["newborn", "kitten"]:
+                self.focus_cat.status = self.focus_cat.age
+            elif self.focus_cat.age == "senior":
+                self.focus_cat.status = "elder"
+            elif self.focus_cat.age == "adolescent":
+                self.focus_cat.status = "apprentice"
+                self.focus_cat.update_mentor()
+            else:
+                self.focus_cat.status = "warrior"
+
+        # only one interaction allowed per moon
+        self.focus_outsider_button_container.disable()
+
+        # adjust text
+        result_text = event_text_adjust(Cat, result_text, self.focus_cat, clan=game.clan)
+
+        # set thought
+        if thought:
+            self.focus_cat.thought = event_text_adjust(Cat, thought, self.focus_cat, clan=game.clan)
+
+        # check reputation value
+        print(f"New Rep: {int(game.clan.reputation)}")
+        if game.clan.reputation < 0:
+            game.clan.reputation = 0
+        elif game.clan.reputation > 100:
+            game.clan.reputation = 100
+
+        return result_text
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
