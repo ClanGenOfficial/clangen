@@ -4756,5 +4756,73 @@
                 "path": "resources/images/buttons/other_clan_selection_hover.png"
             }
         }
+    },
+    "#outsider_hunt": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/outsider_hunt.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/outsider_hunt_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/outsider_hunt_hover.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/outsider_hunt_unavailable.png"
+            }
+        }
+    },
+    "#outsider_drive": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/outsider_drive.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/outsider_drive_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/outsider_drive_hover.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/outsider_drive_unavailable.png"
+            }
+        }
+    },
+    "#outsider_search": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/outsider_search.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/outsider_search_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/outsider_search_hover.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/outsider_search_unavailable.png"
+            }
+        }
+    },
+    "#outsider_invite": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/outsider_invite.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/outsider_invite_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/outsider_invite_hover.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/outsider_invite_unavailable.png"
+            }
+        }
     }
 }

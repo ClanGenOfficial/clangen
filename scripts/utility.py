@@ -1237,6 +1237,8 @@ def clan_symbol_sprite(clan, return_string=False):
         if f"symbol{clan_name.upper()}" in sprites.clan_symbols:
             return f"symbol{clan_name.upper()}"
         else:
+            # give random symbol if no matching symbol exists
+            print(f"WARNING: no clan symbol for {clan_name.upper()}")
             return f"{choice(sprites.clan_symbols)}"
     else:
         try:
