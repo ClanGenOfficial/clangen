@@ -184,7 +184,7 @@ class LeaderDenScreen(Screens):
         self.leader_name = game.clan.leader.name
         self.clan_temper = game.clan.temperament
 
-        if game.clan.leader.not_working and self.helper_cat:
+        if game.clan.leader.not_working() and self.helper_cat:
             self.helper_name = self.helper_cat.name
             self.screen_elements["notice_text"] = pygame_gui.elements.UITextBox(
                 relative_rect=scale(pygame.Rect((135, 750), (890, -1))),
@@ -192,7 +192,7 @@ class LeaderDenScreen(Screens):
                 object_id=get_text_box_theme("#text_box_30_horizcenter_spacing_95"),
                 manager=MANAGER
             )
-        elif game.clan.leader.not_working:
+        elif game.clan.leader.not_working():
             self.no_gathering = True
             self.screen_elements["notice_text"] = pygame_gui.elements.UITextBox(
                 relative_rect=scale(pygame.Rect((135, 750), (890, -1))),
@@ -471,6 +471,7 @@ class LeaderDenScreen(Screens):
             visible=False)
 
         if self.no_gathering:
+            print('')
             self.focus_frame_elements["negative_interaction"].disable()
             self.focus_frame_elements["positive_interaction"].disable()
 
@@ -537,10 +538,14 @@ class LeaderDenScreen(Screens):
         else:
             event_text += f"Clan relations worsened.)"
 
-        self.focus_clan.relations += rel_change
         event_text = event_text_adjust(Cat, event_text, cat=gathering_cat,
                                        other_clan_name=f"{self.focus_clan.name}Clan", clan=game.clan)
-        game.clan.clan_settings["lead_den_event"] = [event_text, gathering_cat.ID]
+        game.clan.clan_settings["lead_den_event"] = {
+            "text": event_text,
+            "ID": gathering_cat.ID,
+            "other_clan": self.focus_clan.name,
+            "rel_change": rel_change
+        }
         print(game.clan.clan_settings["lead_den_event"])
 
     def _compare_temper(self, player_temper_int, other_temper_int) -> float:
@@ -586,6 +591,10 @@ class LeaderDenScreen(Screens):
             elif other_index == 0 and clan_index == 2:
                 fail_chance += 0.1
                 print("opposite extremes of aggress temper +10%")
+
+        if fail_chance > 0.5:
+            print("fail chance too high - changed to 50%")
+            fail_chance = 0.5
 
         return fail_chance
 

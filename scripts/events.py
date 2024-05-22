@@ -31,8 +31,9 @@ from scripts.events_module.freshkill_pile_events import Freshkill_Events
 from scripts.events_module.outsider_events import OutsiderEvents
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
-from scripts.utility import change_clan_relations, change_clan_reputation, get_alive_kits, get_med_cats, ceremony_text_adjust, \
-    get_current_season, adjust_list_text, ongoing_event_text_adjust, event_text_adjust
+from scripts.utility import change_clan_relations, change_clan_reputation, get_alive_kits, get_med_cats, \
+    ceremony_text_adjust, \
+    get_current_season, adjust_list_text, ongoing_event_text_adjust, event_text_adjust, get_other_clan
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
 from scripts.game_structure.windows import SaveError
@@ -110,8 +111,12 @@ class Events:
 
         # Adding in any potential lead den events that have been saved
         if "lead_den_event" in game.clan.clan_settings:
-            lead_event = game.clan.clan_settings["lead_den_event"]
-            game.cur_events_list.append(Single_Event(lead_event[0], "other_clans", lead_event[1]))
+            if game.clan.clan_settings["lead_den_event"]:
+                lead_event = game.clan.clan_settings["lead_den_event"]
+                affected_clan = get_other_clan(lead_event["other_clan"])
+                affected_clan.relations += lead_event["rel_change"]
+                game.cur_events_list.append(Single_Event(lead_event["text"], "other_clans", lead_event["ID"]))
+                game.clan.clan_settings["lead_den_event"] = {}
 
         # Calling of "one_moon" functions.
         for cat in Cat.all_cats.copy().values():
