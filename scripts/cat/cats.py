@@ -674,7 +674,7 @@ class Cat():
         game.clan.add_to_outside(self)
 
     def add_to_clan(self) -> list:
-        """ Makes a "outside cat" a Clan cat. Returns a list of any additional cats that
+        """ Makes an "outside cat" a Clan cat. Returns a list of any additional cats that
             are coming with them. """
         self.outside = False
         if not self.exiled:
