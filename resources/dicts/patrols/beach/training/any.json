@@ -2117,7 +2117,7 @@
         "decline_text": "A story is nice, but the patrol has to get back to their training, the rest will wait for another time.",
         "success_outcomes": [
             {
-                    "text": "They slipped into the ocean to feed their clan, again and again, and each time they had to leave the water their heart broke a little more. Eventually, they didn't leave at all, their fur grown fluffy and buoyant, and now the sea otter floats, happy and fulfilled with the oceanic world.",
+                    "text": "They slipped into the ocean to feed their Clan, again and again, and each time they had to leave the water their heart broke a little more. Eventually, they didn't leave at all, their fur grown fluffy and buoyant, and now the sea otter floats, happy and fulfilled with the oceanic world.",
                     "exp": 40,
                     "weight": 20,
                     "art": "gen_hunt_fish",
@@ -2187,7 +2187,7 @@
         "decline_text": "app1, surly and embarrassed, stalks off away from the training grounds before p_l can offer the comfort of {PRONOUN/p_l/poss} story.",
         "success_outcomes": [
                 {
-                    "text": "The fox warrior was not the biggest, or fastest, or strongest of his clan. A fox took his eye, a dog weakened his leg, frostbite almost took his life, yet he took them all without a flinch, never backing down, his only wish to shield his clan. Some say he still sneaks down from StarClan to defend us on occasion, a true warrior, never forgotten.",
+                    "text": "The fox warrior was not the biggest, or fastest, or strongest of his Clan. A fox took his eye, a dog weakened his leg, frostbite almost took his life, yet he took them all without a flinch, never backing down, his only wish to shield his Clan. Some say he still sneaks down from StarClan to defend us on occasion, a true warrior, never forgotten.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_hunt_vision",
