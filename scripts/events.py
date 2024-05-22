@@ -883,12 +883,8 @@ class Events:
                     Single_Event(text, "misc", cat_IDs))
 
         # Perform a ceremony if needed
-        print(cat_IDs)
         for cat_ID in cat_IDs:
             x = Cat.fetch_cat(cat_ID)
-            print(x)
-            print(x.name)
-            print(x.status)
             if x.status in ["apprentice", "medicine cat apprentice", "mediator apprentice", "kitten", "newborn"]: 
                 if x.moons >= 15:
                     if x.status == "medicine cat apprentice":

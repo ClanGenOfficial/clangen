@@ -579,14 +579,16 @@ class LeaderDenScreen(Screens):
             manager=MANAGER
         )
 
-        self.focus_outsider_button_container = pygame_gui.elements.UIAutoResizingContainer(
-            scale(pygame.Rect((118, 505), (0, 0))),
-            object_id="#focus_outsider_button_container",
-            container=self.focus_outsider_container,
-            starting_height=1,
-            manager=MANAGER
-        )
-        self.focus_outsider_button_container.clear()
+        if self.focus_outsider_button_container:
+            self.focus_outsider_button_container.clear()
+        else:
+            self.focus_outsider_button_container = pygame_gui.elements.UIAutoResizingContainer(
+                scale(pygame.Rect((118, 505), (0, 0))),
+                object_id="#focus_outsider_button_container",
+                container=self.focus_outsider_container,
+                starting_height=1,
+                manager=MANAGER
+            )
         y_pos = 0
         self.focus_button["hunt_down"] = UIImageButton(
             scale(pygame.Rect((0, y_pos), (242, 60))),
