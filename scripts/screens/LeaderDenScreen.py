@@ -538,8 +538,6 @@ class LeaderDenScreen(Screens):
         else:
             event_text += f"Clan relations worsened.)"
 
-        event_text = event_text_adjust(Cat, event_text, cat=gathering_cat,
-                                       other_clan_name=f"{self.focus_clan.name}Clan", clan=game.clan)
         game.clan.clan_settings["lead_den_event"] = {
             "text": event_text,
             "ID": gathering_cat.ID,

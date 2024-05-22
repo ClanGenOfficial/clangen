@@ -115,7 +115,12 @@ class Events:
                 lead_event = game.clan.clan_settings["lead_den_event"]
                 affected_clan = get_other_clan(lead_event["other_clan"])
                 affected_clan.relations += lead_event["rel_change"]
-                game.cur_events_list.append(Single_Event(lead_event["text"], "other_clans", lead_event["ID"]))
+                event_text = event_text_adjust(Cat,
+                                               lead_event["text"],
+                                               cat=Cat.fetch_cat(lead_event["ID"]),
+                                               other_clan_name=f"{lead_event['other_clan']}Clan",
+                                               clan=game.clan)
+                game.cur_events_list.append(Single_Event(event_text, "other_clans", lead_event["ID"]))
                 game.clan.clan_settings["lead_den_event"] = {}
 
         # Calling of "one_moon" functions.
