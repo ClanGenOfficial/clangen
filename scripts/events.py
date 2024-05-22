@@ -122,6 +122,7 @@ class Events:
                                                clan=game.clan)
                 game.cur_events_list.append(Single_Event(event_text, "other_clans", lead_event["ID"]))
                 game.clan.clan_settings["lead_den_event"] = {}
+                game.clan.clan_settings["clan_interaction"] = None
 
         # Calling of "one_moon" functions.
         for cat in Cat.all_cats.copy().values():

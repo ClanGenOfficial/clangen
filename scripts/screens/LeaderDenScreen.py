@@ -214,13 +214,15 @@ class LeaderDenScreen(Screens):
             manager=MANAGER
         )
 
+        current_setting = None
         # INITIAL DISPLAY - display currently chosen interaction OR first clan in list
         if "clan_interaction" in game.clan.clan_settings:
             current_setting = game.clan.clan_settings["clan_interaction"]
-            if current_setting:
-                self.focus_clan = get_other_clan(current_setting[0])
-                self.update_other_clan_focus()
-                self.update_interaction_choice(current_setting[1])
+
+        if current_setting:
+            self.focus_clan = get_other_clan(current_setting[0])
+            self.update_other_clan_focus()
+            self.update_interaction_choice(current_setting[1])
         else:
             self.focus_clan = game.clan.all_clans[0]
             self.update_other_clan_focus()
