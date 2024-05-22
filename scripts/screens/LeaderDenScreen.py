@@ -656,7 +656,9 @@ class LeaderDenScreen(Screens):
             result_text = "m_c could not be found by the Clan."
         else:
             if object_id == "#outsider_hunt":
-                History.add_death(self.focus_cat, death_text=history_text_adjust("m_c was killed by c_n.", clan=game.clan))
+                History.add_death(self.focus_cat, death_text=history_text_adjust("m_c was killed by c_n.",
+                                                                                 other_clan_name=None,
+                                                                                 clan=game.clan))
                 self.focus_cat.die()
                 result_text = "m_c was found and killed by a search party. c_n's reputation among Outsiders has " \
                               "greatly lowered. "

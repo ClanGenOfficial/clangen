@@ -831,15 +831,14 @@ class Events:
         TODO: DOCS
         """
         lost_cat = None
-        additional_cats = []
+        cat_IDs = []
         cat_predetermined = False
 
         if "found_lost_cat_ID" in game.clan.clan_settings:
             if game.clan.clan_settings["found_lost_cat_ID"]:
+                print("found predetermined lost cats")
                 cat_IDs = game.clan.clan_settings["found_lost_cat_ID"]
                 cat_predetermined = True
-                lost_cat = Cat.fetch_cat(cat_IDs[-1])
-                additional_cats = cat_IDs.pop(-1)
 
         if not cat_predetermined:
             eligible_cats = []
@@ -857,6 +856,7 @@ class Events:
                 return
 
             lost_cat = random.choice(eligible_cats)
+            cat_IDs.append(lost_cat.ID)
 
             text = [
                 'After a long journey, m_c has finally returned home to c_n.',
@@ -867,6 +867,7 @@ class Events:
             ]
             lost_cat.outside = False
             additional_cats = lost_cat.add_to_clan()
+            cat_IDs.extend(additional_cats)
             text = random.choice(text)
 
             if additional_cats:
@@ -879,11 +880,15 @@ class Events:
             text = event_text_adjust(Cat, text, lost_cat, clan=game.clan)
 
             game.cur_events_list.append(
-                    Single_Event(text, "misc", [lost_cat.ID] + additional_cats))
+                    Single_Event(text, "misc", cat_IDs))
 
         # Perform a ceremony if needed
-        for x in [lost_cat] + [Cat.fetch_cat(i) for i in additional_cats]:             
-           
+        print(cat_IDs)
+        for cat_ID in cat_IDs:
+            x = Cat.fetch_cat(cat_ID)
+            print(x)
+            print(x.name)
+            print(x.status)
             if x.status in ["apprentice", "medicine cat apprentice", "mediator apprentice", "kitten", "newborn"]: 
                 if x.moons >= 15:
                     if x.status == "medicine cat apprentice":
@@ -899,9 +904,9 @@ class Events:
                     x.status = 'newborn'
                 elif x.moons < 6:
                     x.status = "kitten"
-                elif x.moons < 12:
+                elif x.moons < 12 and x.status != "apprentice":
                     x.status_change('apprentice')
-                elif x.moons < 120:
+                elif x.moons < 120 and x.status != "warrior":
                     x.status_change('warrior')
                 else:
                     x.status_change('elder')      
