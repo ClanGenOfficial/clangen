@@ -413,14 +413,14 @@ class Sprites():
         # sprite names will format as "symbolPREFIX"
         y_pos = 1
         for letter in letters:
-            print([i for i in prefixes if letter in i])
+            # print([i for i in prefixes if letter in i])
             for a, i in enumerate([i for i in prefixes if letter in i]):
-                print(a, i)
+                # print(a, i)
                 self.clan_symbols.append(f"symbol{i.upper()}")
                 self.make_group('symbols', (a, y_pos), f"symbol{i.upper()}", sprites_x=1, sprites_y=1, no_index=True)
 
             y_pos += 1
-        print(self.clan_symbols)
+        # print(self.clan_symbols)
 
 
 # CREATE INSTANCE

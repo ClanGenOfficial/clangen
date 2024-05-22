@@ -24,6 +24,7 @@ class LeaderDenScreen(Screens):
 
         self.focus_cat = None
         self.focus_clan = None
+        self.deputy_name = None
         self.leader_name = None
         self.clan_temper = None
 
@@ -128,11 +129,19 @@ class LeaderDenScreen(Screens):
                 starting_height=1,
                 manager=MANAGER)
 
+        if game.clan.leader.not_working:
+            self.screen_elements["dep_image"] = pygame_gui.elements.UIImage(
+                scale(pygame.Rect((520, 410), (300, 300))),
+                pygame.transform.scale(game.clan.deputy.sprite, (300, 300)),
+                object_id="#dep_cat_image",
+                starting_height=2,
+                manager=MANAGER)
+
         self.screen_elements["lead_image"] = pygame_gui.elements.UIImage(
             scale(pygame.Rect((460, 460), (300, 300))),
             pygame.transform.scale(game.clan.leader.sprite, (300, 300)),
             object_id="#lead_cat_image",
-            starting_height=2,
+            starting_height=3,
             manager=MANAGER)
 
         # FOCUS FRAME - container and inner elements
@@ -147,14 +156,23 @@ class LeaderDenScreen(Screens):
 
         # NOTICE TEXT - leader intention and other clan impressions
         self.leader_name = game.clan.leader.name
+        self.deputy_name = game.clan.deputy.name
         self.clan_temper = game.clan.temperament
 
-        self.screen_elements["notice_text"] = pygame_gui.elements.UITextBox(
-            relative_rect=scale(pygame.Rect((135, 750), (890, -1))),
-            html_text=f" {self.leader_name} is considering how to handle the next Gathering. ",
-            object_id=get_text_box_theme("#text_box_30_horizcenter_spacing_95"),
-            manager=MANAGER
-        )
+        if game.clan.leader.not_working:
+            self.screen_elements["notice_text"] = pygame_gui.elements.UITextBox(
+                relative_rect=scale(pygame.Rect((135, 750), (890, -1))),
+                html_text=f" {self.leader_name} and {self.deputy_name} are discussing how to handle the next Gathering. ",
+                object_id=get_text_box_theme("#text_box_30_horizcenter_spacing_95"),
+                manager=MANAGER
+            )
+        else:
+            self.screen_elements["notice_text"] = pygame_gui.elements.UITextBox(
+                relative_rect=scale(pygame.Rect((135, 750), (890, -1))),
+                html_text=f" {self.leader_name} is considering how to handle the next Gathering. ",
+                object_id=get_text_box_theme("#text_box_30_horizcenter_spacing_95"),
+                manager=MANAGER
+            )
         self.screen_elements["temper_text"] = pygame_gui.elements.UITextBox(
             relative_rect=scale(pygame.Rect((135, 820), (890, -1))),
             html_text=f"The other Clans think {game.clan.name}Clan is {self.clan_temper}.",
@@ -693,7 +711,7 @@ class LeaderDenScreen(Screens):
                 game.clan.clan_settings["found_lost_cat_ID"] = additional_cats
 
         # set status
-        if not self.focus_cat.dead and self.focus_cat.status.lower() in ["kittypet", "loner", "rogue", "former clancat"]:
+        if not self.focus_cat.dead and self.focus_cat.status.lower() in ["kittypet", "loner", "rogue", "former clancat", "exiled"]:
             if self.focus_cat.backstory in BACKSTORIES["backstory_categories"]["healer_backstories"]:
                 self.focus_cat.status = "medicine cat"
             elif self.focus_cat.age in ["newborn", "kitten"]:
