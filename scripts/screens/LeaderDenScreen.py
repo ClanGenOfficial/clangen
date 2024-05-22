@@ -11,7 +11,7 @@ from scripts.game_structure.image_button import UIImageButton, UISpriteButton
 from scripts.game_structure.windows import NotificationWindow
 from scripts.screens.Screens import Screens
 from scripts.utility import scale, get_text_box_theme, get_other_clan_relation, get_other_clan, \
-    clan_symbol_sprite, shorten_text_to_fit, event_text_adjust
+    clan_symbol_sprite, shorten_text_to_fit, event_text_adjust, history_text_adjust
 
 
 class LeaderDenScreen(Screens):
@@ -656,7 +656,7 @@ class LeaderDenScreen(Screens):
             result_text = "m_c could not be found by the Clan."
         else:
             if object_id == "#outsider_hunt":
-                History.add_death(self.focus_cat, death_text="m_c was killed by the Clan.")
+                History.add_death(self.focus_cat, death_text=history_text_adjust("m_c was killed by c_n.", clan=game.clan))
                 self.focus_cat.die()
                 result_text = "m_c was found and killed by a search party. c_n's reputation among Outsiders has " \
                               "greatly lowered. "
