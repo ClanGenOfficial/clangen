@@ -73,6 +73,12 @@ class Clan():
         'Leaf-bare',
     ]
 
+    temperament_dict = {
+        "low_social": ['cunning', 'proud', 'bloodthirsty'],
+        "mid_social": ['amiable', 'stoic', 'wary'],
+        "high_social": ['gracious', 'mellow', 'logical']
+    }
+
     with open("resources/placements.json", 'r') as read_file:
         layouts = ujson.loads(read_file.read())
 
@@ -1094,11 +1100,11 @@ class Clan():
 
         # _temperament = ['low_aggression', 'med_aggression', 'high_aggression', ]
         if 11 <= clan_sociability:
-            _temperament = ['gracious', 'mellow', 'logical']
+            _temperament = self.temperament_dict["high_social"]
         elif 7 <= clan_sociability:
-            _temperament = ['amiable', 'stoic', 'wary']
+            _temperament = self.temperament_dict["mid_social"]
         else:
-            _temperament = ['cunning', 'proud', 'bloodthirsty']
+            _temperament = self.temperament_dict["low_social"]
 
         if 11 <= clan_aggression:
             _temperament = _temperament[2]

@@ -1,0 +1,13 @@
+[
+  {
+    "interaction_type": "appease",
+    "event_text": "m_c spends the Gathering attempting small talk with o_c_n's leader and doing {PRONOUN/m_c/poss} best to smooth over the harsh edges of their Clans' relationship.",
+    "rel_change": 2,
+    "m_c": {
+      "status": ["leader"],
+      "skill": ["SPEAKER,1"]
+    },
+    "player_clan_temper": ["gracious", "mellow", "logical", "amiable", "cunning", "stoic"],
+    "other_clan_temper": ["any"]
+  }
+]

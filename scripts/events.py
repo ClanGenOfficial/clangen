@@ -110,7 +110,7 @@ class Events:
 
         # Calling of "one_moon" functions.
         for cat in Cat.all_cats.copy().values():
-            if not cat.outside and not cat.dead:
+            if not cat.outside or cat.dead:
                 self.one_moon_cat(cat)
             else:
                 self.one_moon_outside_cat(cat)

@@ -6,18 +6,22 @@ import pygame_gui
 from scripts.cat.cats import Cat, BACKSTORIES
 from scripts.cat.history import History
 from scripts.clan import OtherClan
+from scripts.events_module.generate_events import generate_events
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton
 from scripts.game_structure.windows import NotificationWindow
 from scripts.screens.Screens import Screens
 from scripts.utility import scale, get_text_box_theme, get_other_clan_relation, get_other_clan, \
-    clan_symbol_sprite, shorten_text_to_fit, event_text_adjust, history_text_adjust
+    clan_symbol_sprite, shorten_text_to_fit, event_text_adjust, history_text_adjust, get_med_cats
 
 
 class LeaderDenScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.helper_cat = None
+        self.no_gathering = False
+        self.helper_name = None
         self.current_page = 1
         self.help_button = None
         self.back_button = None
@@ -120,7 +124,7 @@ class LeaderDenScreen(Screens):
                 object_id="#lead_den_bg",
                 starting_height=1,
                 manager=MANAGER)
-        except:
+        except FileNotFoundError:
             self.screen_elements["bg_image"] = pygame_gui.elements.UIImage(
                 scale(pygame.Rect((0, 0), (1400, 900))),
                 pygame.image.load(
@@ -129,13 +133,31 @@ class LeaderDenScreen(Screens):
                 starting_height=1,
                 manager=MANAGER)
 
+        self.helper_cat = None
         if game.clan.leader.not_working:
-            self.screen_elements["dep_image"] = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((520, 410), (300, 300))),
-                pygame.transform.scale(game.clan.deputy.sprite, (300, 300)),
-                object_id="#dep_cat_image",
-                starting_height=2,
-                manager=MANAGER)
+            self.helper_cat = game.clan.deputy  # if lead is sick, dep helps
+            if game.clan.deputy.not_working:  # if dep is sick, med cat helps
+                meds = get_med_cats(Cat)
+                if meds:
+                    self.helper_cat = random.choice(meds)
+                else:  # if no meds, mediator helps
+                    mediators = [i for i in Cat.all_cats.values() if not i.dead and not i.exiled and not i.outside and not i.not_working() and i.status in ["mediator", "mediator apprentice"]]
+                    if mediators:
+                        self.helper_cat = random.choice(mediators)
+                    else:
+                        self.helper_cat = None
+            if not self.helper_cat:  # if no meds or mediators available, literally anyone please anyone help
+                adults = [i for i in Cat.all_cats.values() if not i.dead and not i.exiled and not i.outside and i.status not in ["newborn", "kitten", "apprentice"]]
+                if adults:
+                    self.helper_cat = random.choice(adults)
+
+            if self.helper_cat:
+                self.screen_elements["helper_image"] = pygame_gui.elements.UIImage(
+                    scale(pygame.Rect((520, 410), (300, 300))),
+                    pygame.transform.scale(self.helper_cat.sprite, (300, 300)),
+                    object_id="#helper_cat_image",
+                    starting_height=2,
+                    manager=MANAGER)
 
         self.screen_elements["lead_image"] = pygame_gui.elements.UIImage(
             scale(pygame.Rect((460, 460), (300, 300))),
@@ -156,13 +178,21 @@ class LeaderDenScreen(Screens):
 
         # NOTICE TEXT - leader intention and other clan impressions
         self.leader_name = game.clan.leader.name
-        self.deputy_name = game.clan.deputy.name
         self.clan_temper = game.clan.temperament
 
-        if game.clan.leader.not_working:
+        if game.clan.leader.not_working and self.helper_cat:
+            self.helper_name = self.helper_cat.name
             self.screen_elements["notice_text"] = pygame_gui.elements.UITextBox(
                 relative_rect=scale(pygame.Rect((135, 750), (890, -1))),
-                html_text=f" {self.leader_name} and {self.deputy_name} are discussing how to handle the next Gathering. ",
+                html_text=f" {self.leader_name} and {self.helper_name} are discussing how to handle the next Gathering. ",
+                object_id=get_text_box_theme("#text_box_30_horizcenter_spacing_95"),
+                manager=MANAGER
+            )
+        elif game.clan.leader.not_working:
+            self.no_gathering = True
+            self.screen_elements["notice_text"] = pygame_gui.elements.UITextBox(
+                relative_rect=scale(pygame.Rect((135, 750), (890, -1))),
+                html_text=f" There is no one to attend the next Gathering. {self.leader_name} must hope to recover in time for the next one. ",
                 object_id=get_text_box_theme("#text_box_30_horizcenter_spacing_95"),
                 manager=MANAGER
             )
@@ -341,6 +371,33 @@ class LeaderDenScreen(Screens):
             manager=MANAGER
         )
 
+    def open_clans_tab(self):
+        """
+        handles opening clans tab and closing outsiders tab
+        """
+        self.outsider_selection_container.hide()
+        self.focus_outsider_container.hide()
+
+        self.focus_clan_container.show()
+        self.other_clan_selection_container.show()
+
+        self.focus_frame_elements["clans_tab"].disable()
+        self.focus_frame_elements["outsiders_tab"].enable()
+
+    def open_outsiders_tab(self):
+        """
+        handles opening outsiders tab and closing clans tab
+        """
+        self.other_clan_selection_container.hide()
+        self.focus_clan_container.hide()
+
+        self.outsider_selection_container.show()
+        self.focus_outsider_container.show()
+        self.update_outsider_cats()
+
+        self.focus_frame_elements["outsiders_tab"].disable()
+        self.focus_frame_elements["clans_tab"].enable()
+
     def update_other_clan_focus(self):
         """
         handles changing the clan that is currently in focus
@@ -408,6 +465,10 @@ class LeaderDenScreen(Screens):
             manager=MANAGER,
             visible=False)
 
+        if self.no_gathering:
+            self.focus_frame_elements["negative_interaction"].disable()
+            self.focus_frame_elements["positive_interaction"].disable()
+
         interaction = OtherClan.interaction_dict[relation]
         self.focus_frame_elements["negative_interaction"].change_object_id(f"#clan_{interaction[0]}")
         self.focus_frame_elements["negative_interaction"].show()
@@ -429,101 +490,64 @@ class LeaderDenScreen(Screens):
         self.screen_elements["notice_text"].set_text(
             f" {self.leader_name} has decided to {interaction} {other_clan}Clan.")
 
-    def open_clans_tab(self):
-        """
-        handles opening clans tab and closing outsiders tab
-        """
-        self.outsider_selection_container.hide()
-        self.focus_outsider_container.hide()
+    def handle_other_clan_interaction(self, interaction_type: str):
 
-        self.focus_clan_container.show()
-        self.other_clan_selection_container.show()
+        gathering_cat = game.clan.leader if not self.helper_cat else self.helper_cat
 
-        self.focus_frame_elements["clans_tab"].disable()
-        self.focus_frame_elements["outsiders_tab"].enable()
+        success = False
 
-    def open_outsiders_tab(self):
-        """
-        handles opening outsiders tab and closing clans tab
-        """
-        self.other_clan_selection_container.hide()
-        self.focus_clan_container.hide()
+        player_temper_int = self.find_temper_int(self.clan_temper)
+        other_temper_int = self.find_temper_int(self.focus_clan.temperament)
+        fail_chance = (abs(int(player_temper_int - other_temper_int))) / 100
 
-        self.outsider_selection_container.show()
-        self.focus_outsider_container.show()
-        self.update_outsider_cats()
+        if random.random() >= fail_chance:
+            success = True
 
-        self.focus_frame_elements["outsiders_tab"].disable()
-        self.focus_frame_elements["clans_tab"].enable()
+        events = generate_events.possible_lead_den_events(cat=gathering_cat,
+                                                          other_clan_temper=self.focus_clan.temperament,
+                                                          player_clan_temper=self.clan_temper,
+                                                          event_type="other_clan",
+                                                          interaction_type=interaction_type,
+                                                          success=success
+                                                          )
 
-    def update_outsider_cats(self):
-        """
-        handles finding and displaying outsider cats
-        """
-        # get cats for list
-        outsiders = [i for i in Cat.all_cats.values() if i.outside and not i.dead and not i.driven_out]
-
-        # separate them into chunks for the pages
-        outsider_chunks = self.chunks(outsiders, 18)
-
-        # clamp current page to a valid page number
-        self.current_page = max(1, min(self.current_page, len(outsider_chunks)))
-
-        # handles which arrow buttons are clickable
-        if len(outsider_chunks) <= 1:
-            self.outsider_selection_elements["page_left"].disable()
-            self.outsider_selection_elements["page_right"].disable()
-        elif self.current_page >= len(outsider_chunks):
-            self.outsider_selection_elements["page_left"].enable()
-            self.outsider_selection_elements["page_right"].disable()
-        elif self.current_page == 1 and len(outsider_chunks) > 1:
-            self.outsider_selection_elements["page_left"].disable()
-            self.outsider_selection_elements["page_right"].enable()
+        chosen_event = random.choice(events)
+        event_text = chosen_event["event_text"]
+        if success:
+            event_text += f" ({interaction_type.capitalize()} {self.focus_clan.name}Clan success! "
         else:
-            self.outsider_selection_elements["page_left"].enable()
-            self.outsider_selection_elements["page_right"].enable()
+            event_text += f" ({interaction_type.capitalize()} {self.focus_clan.name}Clan failure! "
 
-        # CREATE DISPLAY
-        display_cats = []
-        if outsider_chunks:
-            display_cats = outsider_chunks[self.current_page - 1]
+        rel_change = chosen_event["rel_change"]
+        if rel_change > 0:
+            event_text += f"Clan relations improved.)"
+        elif rel_change == 0:
+            event_text += f"Clan relations unchanged.)"
+        else:
+            event_text += f"Clan relation worsened.)"
 
-        # container for all the cat sprites and names
-        self.outsider_cat_list_container = pygame_gui.elements.UIAutoResizingContainer(
-            scale(pygame.Rect((112, 44), (0, 0))),
-            container=self.outsider_selection_container,
-            starting_height=3,
-            object_id="#outsider_cat_list",
-            manager=MANAGER
-        )
+        self.focus_clan.relations += rel_change
 
-        # Kill all currently displayed cats
-        for ele in self.outsider_cat_buttons:
-            self.outsider_cat_buttons[ele].kill()
-        self.outsider_cat_buttons = {}
+    def find_temper_int(self, temper: str) -> int:
+        """
+        returns int value (social rank + aggression rank) of given temperament
+        """
+        temper_dict = game.clan.temperament_dict
+        temper_int = 0
 
-        pos_x = 0
-        pos_y = 0
-        i = 0
-        for cat in display_cats:
-            self.outsider_cat_buttons[f"sprite{str(i)}"] = UISpriteButton(
-                scale(pygame.Rect((10 + pos_x, 0 + pos_y), (100, 100))),
-                cat.sprite,
-                cat_object=cat,
-                container=self.outsider_cat_list_container,
-                object_id=f"#sprite{str(i)}",
-                tool_tip_text=str(cat.name),
-                starting_height=2,
-                manager=MANAGER
-            )
+        if temper in temper_dict["low_social"]:
+            temper_int += 1
+            social_list = temper_dict["low_social"]
+        elif temper in temper_dict["mid_social"]:
+            temper_int += 2
+            social_list = temper_dict["mid_social"]
+        else:
+            temper_int += 3
+            social_list = temper_dict["high_social"]
 
-            # changing pos
-            pos_x += 120
-            if pos_x >= 1140:  # checks if row is full
-                pos_x = 0
-                pos_y += 120
+        temper_int += int(social_list.index(temper)) + 1
 
-            i += 1
+        return temper_int
 
     def update_outsider_focus(self):
 
@@ -633,6 +657,75 @@ class LeaderDenScreen(Screens):
                 print("outsider buttons disabled")
                 self.focus_outsider_button_container.disable()
 
+    def update_outsider_cats(self):
+        """
+        handles finding and displaying outsider cats
+        """
+        # get cats for list
+        outsiders = [i for i in Cat.all_cats.values() if i.outside and not i.dead and not i.driven_out]
+
+        # separate them into chunks for the pages
+        outsider_chunks = self.chunks(outsiders, 18)
+
+        # clamp current page to a valid page number
+        self.current_page = max(1, min(self.current_page, len(outsider_chunks)))
+
+        # handles which arrow buttons are clickable
+        if len(outsider_chunks) <= 1:
+            self.outsider_selection_elements["page_left"].disable()
+            self.outsider_selection_elements["page_right"].disable()
+        elif self.current_page >= len(outsider_chunks):
+            self.outsider_selection_elements["page_left"].enable()
+            self.outsider_selection_elements["page_right"].disable()
+        elif self.current_page == 1 and len(outsider_chunks) > 1:
+            self.outsider_selection_elements["page_left"].disable()
+            self.outsider_selection_elements["page_right"].enable()
+        else:
+            self.outsider_selection_elements["page_left"].enable()
+            self.outsider_selection_elements["page_right"].enable()
+
+        # CREATE DISPLAY
+        display_cats = []
+        if outsider_chunks:
+            display_cats = outsider_chunks[self.current_page - 1]
+
+        # container for all the cat sprites and names
+        self.outsider_cat_list_container = pygame_gui.elements.UIAutoResizingContainer(
+            scale(pygame.Rect((112, 44), (0, 0))),
+            container=self.outsider_selection_container,
+            starting_height=3,
+            object_id="#outsider_cat_list",
+            manager=MANAGER
+        )
+
+        # Kill all currently displayed cats
+        for ele in self.outsider_cat_buttons:
+            self.outsider_cat_buttons[ele].kill()
+        self.outsider_cat_buttons = {}
+
+        pos_x = 0
+        pos_y = 0
+        i = 0
+        for cat in display_cats:
+            self.outsider_cat_buttons[f"sprite{str(i)}"] = UISpriteButton(
+                scale(pygame.Rect((10 + pos_x, 0 + pos_y), (100, 100))),
+                cat.sprite,
+                cat_object=cat,
+                container=self.outsider_cat_list_container,
+                object_id=f"#sprite{str(i)}",
+                tool_tip_text=str(cat.name),
+                starting_height=2,
+                manager=MANAGER
+            )
+
+            # changing pos
+            pos_x += 120
+            if pos_x >= 1140:  # checks if row is full
+                pos_x = 0
+                pos_y += 120
+
+            i += 1
+
     def handle_outsider_interaction(self, object_id):
         """
         handles determining the outcome of an outsider interaction, returns result text
@@ -646,6 +739,8 @@ class LeaderDenScreen(Screens):
         # percentage of success
         success = False
         success_chance = int(game.clan.reputation) / 100
+        if game.clan.leader.not_working:
+            success_chance = success_chance / 1.2
         print(f"CHANCE: {success_chance}")
         if random.random() < success_chance:
             success = True

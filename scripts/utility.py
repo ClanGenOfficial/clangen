@@ -68,7 +68,7 @@ def get_alive_kits(Cat):
     return alive_kits
 
 
-def get_med_cats(Cat, working=True):
+def get_med_cats(Cat, working=True) -> list:
     """
     returns a list of all meds and med apps currently alive, in the clan, and able to work
 
