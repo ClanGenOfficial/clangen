@@ -108,6 +108,11 @@ class Events:
             if random.randint(1, rejoin_upperbound) == 1:
                 self.handle_lost_cats_return()
 
+        # Adding in any potential lead den events that have been saved
+        if "lead_den_event" in game.clan.clan_settings:
+            lead_event = game.clan.clan_settings["lead_den_event"]
+            game.cur_events_list.append(Single_Event(lead_event[0], "other_clans", lead_event[1]))
+
         # Calling of "one_moon" functions.
         for cat in Cat.all_cats.copy().values():
             if not cat.outside or cat.dead:
@@ -904,8 +909,8 @@ class Events:
                     x.status_change('apprentice')
                 elif x.moons < 120 and x.status != "warrior":
                     x.status_change('warrior')
-                else:
-                    x.status_change('elder')      
+                elif x.moons > 120:
+                    x.status_change('elder')
 
     def handle_fading(self, cat):
         """

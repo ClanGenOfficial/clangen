@@ -139,15 +139,19 @@ class LeaderDenScreen(Screens):
             if game.clan.deputy.not_working:  # if dep is sick, med cat helps
                 meds = get_med_cats(Cat)
                 if meds:
-                    self.helper_cat = random.choice(meds)
+                    self.helper_cat = meds[0]
                 else:  # if no meds, mediator helps
-                    mediators = [i for i in Cat.all_cats.values() if not i.dead and not i.exiled and not i.outside and not i.not_working() and i.status in ["mediator", "mediator apprentice"]]
+                    mediators = [i for i in Cat.all_cats.values() if
+                                 not i.dead and not i.exiled and not i.outside and not i.not_working() and i.status in [
+                                     "mediator", "mediator apprentice"]]
                     if mediators:
-                        self.helper_cat = random.choice(mediators)
+                        self.helper_cat = mediators[0]
                     else:
                         self.helper_cat = None
             if not self.helper_cat:  # if no meds or mediators available, literally anyone please anyone help
-                adults = [i for i in Cat.all_cats.values() if not i.dead and not i.exiled and not i.outside and i.status not in ["newborn", "kitten", "apprentice"]]
+                adults = [i for i in Cat.all_cats.values() if
+                          not i.dead and not i.exiled and not i.outside and i.status not in ["newborn", "kitten",
+                                                                                             "apprentice"]]
                 if adults:
                     self.helper_cat = random.choice(adults)
 
@@ -393,6 +397,7 @@ class LeaderDenScreen(Screens):
 
         self.outsider_selection_container.show()
         self.focus_outsider_container.show()
+
         self.update_outsider_cats()
 
         self.focus_frame_elements["outsiders_tab"].disable()
@@ -490,15 +495,22 @@ class LeaderDenScreen(Screens):
         self.screen_elements["notice_text"].set_text(
             f" {self.leader_name} has decided to {interaction} {other_clan}Clan.")
 
+        self.handle_other_clan_interaction(interaction)
+
     def handle_other_clan_interaction(self, interaction_type: str):
 
         gathering_cat = game.clan.leader if not self.helper_cat else self.helper_cat
 
         success = False
 
-        player_temper_int = self.find_temper_int(self.clan_temper)
-        other_temper_int = self.find_temper_int(self.focus_clan.temperament)
-        fail_chance = (abs(int(player_temper_int - other_temper_int))) / 100
+        player_temper_int = self._find_temper_int(self.clan_temper)
+        other_temper_int = self._find_temper_int(self.focus_clan.temperament)
+        fail_chance = self._compare_temper(player_temper_int, other_temper_int)
+
+        if gathering_cat != game.clan.leader:
+            print("gathering cat isn't clan leader: fail_chance * 1.4")
+            fail_chance = fail_chance * 1.4
+        print(f"Clan Interaction Failure Chance: {fail_chance}")
 
         if random.random() >= fail_chance:
             success = True
@@ -510,13 +522,12 @@ class LeaderDenScreen(Screens):
                                                           interaction_type=interaction_type,
                                                           success=success
                                                           )
-
         chosen_event = random.choice(events)
         event_text = chosen_event["event_text"]
         if success:
-            event_text += f" ({interaction_type.capitalize()} {self.focus_clan.name}Clan success! "
+            event_text += f" ({interaction_type.capitalize()} o_c success! "
         else:
-            event_text += f" ({interaction_type.capitalize()} {self.focus_clan.name}Clan failure! "
+            event_text += f" ({interaction_type.capitalize()} o_c failure! "
 
         rel_change = chosen_event["rel_change"]
         if rel_change > 0:
@@ -524,11 +535,62 @@ class LeaderDenScreen(Screens):
         elif rel_change == 0:
             event_text += f"Clan relations unchanged.)"
         else:
-            event_text += f"Clan relation worsened.)"
+            event_text += f"Clan relations worsened.)"
 
         self.focus_clan.relations += rel_change
+        event_text = event_text_adjust(Cat, event_text, cat=gathering_cat,
+                                       other_clan_name=f"{self.focus_clan.name}Clan", clan=game.clan)
+        game.clan.clan_settings["lead_den_event"] = [event_text, gathering_cat.ID]
+        print(game.clan.clan_settings["lead_den_event"])
 
-    def find_temper_int(self, temper: str) -> int:
+    def _compare_temper(self, player_temper_int, other_temper_int) -> float:
+        """
+        compares two temper ints and finds the chance of failure between them, adds additional modifiers for distance
+        between two tempers on the temperament chart.  returns percent chance of failure
+        """
+        # base equation for fail chance (temper_int - temper_int) / 10
+        fail_chance = (abs(int(player_temper_int - other_temper_int))) / 10
+        print(f"BASE FAIL CHANCE: {fail_chance} ({player_temper_int} - {other_temper_int})")
+
+        temper_dict = game.clan.temperament_dict
+        clan_index = 0
+        clan_social = None
+        other_index = 0
+        other_social = None
+        for row in temper_dict:
+            if self.clan_temper in temper_dict[row]:
+                clan_index = temper_dict[row].index(self.clan_temper)
+                clan_social = row
+            if self.focus_clan.temperament in temper_dict[row]:
+                other_index = temper_dict[row].index(self.focus_clan.temperament)
+                other_social = row
+
+        # checks social distance between tempers and adds modifiers appropriately
+        if clan_social != other_social:
+            fail_chance += 0.05
+            print("not in same social row +5%")
+            if clan_social == "low social" and other_social == "high_social":
+                fail_chance += 0.1
+                print("opposite extremes of social temper +10%")
+            elif other_social == "low social" and clan_social == "high_social":
+                fail_chance += 0.1
+                print("opposite extremes of social temper +10%")
+
+        # checks aggression distance between tempers and adds modifiers appropriately
+        if clan_index != other_index:
+            fail_chance += 0.05
+            print("not in same aggress column +5%")
+            if clan_index == 0 and other_index == 2:
+                fail_chance += 0.1
+                print("opposite extremes of aggress temper +10%")
+            elif other_index == 0 and clan_index == 2:
+                fail_chance += 0.1
+                print("opposite extremes of aggress temper +10%")
+
+        return fail_chance
+
+    @staticmethod
+    def _find_temper_int(temper: str) -> int:
         """
         returns int value (social rank + aggression rank) of given temperament
         """
@@ -539,10 +601,10 @@ class LeaderDenScreen(Screens):
             temper_int += 1
             social_list = temper_dict["low_social"]
         elif temper in temper_dict["mid_social"]:
-            temper_int += 2
+            temper_int += 3
             social_list = temper_dict["mid_social"]
         else:
-            temper_int += 3
+            temper_int += 5
             social_list = temper_dict["high_social"]
 
         temper_int += int(social_list.index(temper)) + 1
@@ -613,6 +675,11 @@ class LeaderDenScreen(Screens):
                 starting_height=1,
                 manager=MANAGER
             )
+
+        # for some reason this container gets divorced from its parent container sometimes
+        # so this is here to ensure it's attached to its container
+        self.focus_outsider_container.add_element(self.focus_outsider_button_container)
+
         y_pos = 0
         self.focus_button["hunt_down"] = UIImageButton(
             scale(pygame.Rect((0, y_pos), (242, 60))),
@@ -628,7 +695,8 @@ class LeaderDenScreen(Screens):
             scale(pygame.Rect((0, y_pos), (242, 60))),
             "",
             object_id="#outsider_drive",
-            tool_tip_text="This cat will be driven out of the area if found (they will no longer be accessible in game.)",
+            tool_tip_text="This cat will be driven out of the area if found (they will no longer be accessible in "
+                          "game.)",
             container=self.focus_outsider_button_container,
             starting_height=3,
             manager=MANAGER,
@@ -645,7 +713,10 @@ class LeaderDenScreen(Screens):
             visible=False
         )
 
-        if self.focus_cat.outside and not self.focus_cat.exiled and self.focus_cat.status not in ['kittypet', 'loner', 'rogue', 'former Clancat', 'driven off']:
+        if self.focus_cat.outside and not self.focus_cat.exiled and self.focus_cat.status not in ['kittypet', 'loner',
+                                                                                                  'rogue',
+                                                                                                  'former Clancat',
+                                                                                                  'driven off']:
             self.focus_button["invite_in"].change_object_id("#outsider_search")
         else:
             self.focus_button["invite_in"].change_object_id("#outsider_invite")
@@ -812,7 +883,8 @@ class LeaderDenScreen(Screens):
                 game.clan.clan_settings["found_lost_cat_ID"] = additional_cats
 
         # set status
-        if not self.focus_cat.dead and self.focus_cat.status.lower() in ["kittypet", "loner", "rogue", "former clancat", "exiled"]:
+        if not self.focus_cat.dead and self.focus_cat.status.lower() in ["kittypet", "loner", "rogue", "former clancat",
+                                                                         "exiled"]:
             if self.focus_cat.backstory in BACKSTORIES["backstory_categories"]["healer_backstories"]:
                 self.focus_cat.status = "medicine cat"
             elif self.focus_cat.age in ["newborn", "kitten"]:

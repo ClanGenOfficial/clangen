@@ -1126,7 +1126,6 @@ class ProfileScreen(Screens):
         if not self.the_cat.dead and self.the_cat.status not in ['kittypet', 'loner', 'rogue', 'former Clancat']:
             beginning = History.get_beginning(self.the_cat)
             if beginning:
-                print(beginning['clan_born'])
                 if beginning['clan_born']:
                     text += " {PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} born on Moon " + str(
                         beginning['moon']) + " during " + str(beginning['birth_season']) + "."

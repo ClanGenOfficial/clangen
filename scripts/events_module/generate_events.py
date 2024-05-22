@@ -641,7 +641,6 @@ class GenerateEvents:
         possible_events = []
 
         events = GenerateEvents.get_lead_den_event_dicts(event_type, success)
-
         for event in events:
             if event["interaction_type"] != interaction_type:
                 continue
@@ -675,7 +674,7 @@ class GenerateEvents:
                 if not has_skill:
                     continue
 
-            possible_events.extend(event)
+            possible_events.append(event)
 
         return possible_events
 
