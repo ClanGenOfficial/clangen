@@ -461,7 +461,7 @@ class LeaderDenScreen(Screens):
         handles finding and displaying outsider cats
         """
         # get cats for list
-        outsiders = [i for i in Cat.all_cats.values() if i.outside and not i.dead and i.status != "driven off"]
+        outsiders = [i for i in Cat.all_cats.values() if i.outside and not i.dead and not i.driven_out]
 
         # separate them into chunks for the pages
         outsider_chunks = self.chunks(outsiders, 18)
@@ -665,7 +665,9 @@ class LeaderDenScreen(Screens):
                 game.clan.reputation += -30
 
             elif object_id == "#outsider_drive":
-                self.focus_cat.status = "driven off"
+                self.focus_cat.status = "exiled"
+                self.focus_cat.exiled = True
+                self.focus_cat.driven_out = True
                 result_text = "m_c was found and driven out of the area. c_n's reputation among Outsiders has lowered."
                 game.clan.reputation += -10
 
