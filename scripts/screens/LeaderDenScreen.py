@@ -134,9 +134,9 @@ class LeaderDenScreen(Screens):
                 manager=MANAGER)
 
         self.helper_cat = None
-        if game.clan.leader.not_working:
+        if game.clan.leader.not_working():
             self.helper_cat = game.clan.deputy  # if lead is sick, dep helps
-            if game.clan.deputy.not_working:  # if dep is sick, med cat helps
+            if game.clan.deputy.not_working():  # if dep is sick, med cat helps
                 meds = get_med_cats(Cat)
                 if meds:
                     self.helper_cat = meds[0]
