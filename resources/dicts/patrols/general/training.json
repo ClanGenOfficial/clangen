@@ -8880,7 +8880,7 @@
                 ]
             },
             {
-                "text": "p_l sits down with app1 in the training grounds. What's wrong? As the deputy, p_l could - app1 cuts {PRONOUN/p_l/object} off. Yes, app1 knows {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} the deputy, <i>everyone</i> knows p_l is the deputy! That's the problem! Everyone expects so much, just because app1 happened to be born into p_l's nest, like that's helped app1 at all! p_l curls around them sympathetically, listening, heart sinking to hear the burden placed on {PRONOUN/p_l/poss} child by the clan.",
+                "text": "p_l sits down with app1 in the training grounds. What's wrong? As the deputy, p_l could - app1 cuts {PRONOUN/p_l/object} off. Yes, app1 knows {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} the deputy, <i>everyone</i> knows p_l is the deputy! That's the problem! Everyone expects so much, just because app1 happened to be born into p_l's nest, like that's helped app1 at all! p_l curls around them sympathetically, listening, heart sinking to hear the burden placed on {PRONOUN/p_l/poss} child by the Clan.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -10876,7 +10876,7 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "{PRONOUN/app1/poss/CAP} mentor sends {PRONOUN/app1/object} out with other apprentices from the clan to assess {PRONOUN/app1/poss} hunting skills. {PRONOUN/app1/poss} group argues about who should really lead this patrol. app2 wants to be in charge, but {PRONOUN/app2/subject} {VERB/app2/are/is}n't the easiest cat to work with. app1 thinks {PRONOUN/app1/subject} should speak up.",
+        "intro_text": "{PRONOUN/app1/poss/CAP} mentor sends {PRONOUN/app1/object} out with other apprentices from the Clan to assess {PRONOUN/app1/poss} hunting skills. {PRONOUN/app1/poss} group argues about who should really lead this patrol. app2 wants to be in charge, but {PRONOUN/app2/subject} {VERB/app2/are/is}n't the easiest cat to work with. app1 thinks {PRONOUN/app1/subject} should speak up.",
         "decline_text": "app1 confesses to {PRONOUN/app1/poss} mentor that {PRONOUN/app1/subject} do not feel ready for {PRONOUN/app1/poss} assessment. {PRONOUN/app1/poss} mentor looks disappointed but seems to understand and offers to postpone the test until next moon. Part of app1 cannot help but wonder if the other apprentices will think poorly of {PRONOUN/app1/object}.",
         "chance_of_success": 60,
         "success_outcomes": [

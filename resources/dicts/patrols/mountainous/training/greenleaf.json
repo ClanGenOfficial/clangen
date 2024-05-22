@@ -1386,7 +1386,7 @@
                         ]
                 },
                 {
-                    "text": "s_c promises that if c_n ever has a terrible leader while <i>{PRONOUN/s_c/subject}{VERB/s_c/'re/'s}</i> alive, {PRONOUN/s_c/subject}'ll make sure to save the clan. Yes, that she-cat gave them the sunset with her death - but her Clan's evil leader lived on.",
+                    "text": "s_c promises that if c_n ever has a terrible leader while <i>{PRONOUN/s_c/subject}{VERB/s_c/'re/'s}</i> alive, {PRONOUN/s_c/subject}'ll make sure to save the Clan. Yes, that she-cat gave them the sunset with her death - but her Clan's evil leader lived on.",
                     "exp": 30,
                     "weight": 20,
                     "can_have_stat": ["not_pl_rc"],
