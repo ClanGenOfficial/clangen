@@ -84,6 +84,18 @@ class Events:
         Pregnancy_Events.handle_pregnancy_age(game.clan)
         self.check_war()
 
+        # this needs to be handled before nutrition
+        if "found_lost_cat_ID" in game.clan.clan_settings:
+            if game.clan.clan_settings["found_lost_cat_ID"]:
+                self.handle_lost_cats_return()
+                game.clan.clan_settings["found_lost_cat_ID"] = []
+            else:
+                rejoin_upperbound = game.config["lost_cat"]["rejoin_chance"]
+                if random.randint(1, rejoin_upperbound) == 1:
+                    self.handle_lost_cats_return()
+        else:
+            game.clan.clan_settings["found_lost_cat_ID"] = []
+
         if game.clan.game_mode in ['expanded', 'cruel season'] and game.clan.freshkill_pile:
             # feed the cats and update the nutrient status
             relevant_cats = list(
@@ -101,16 +113,7 @@ class Events:
                 game.cur_events_list.insert(0, Single_Event(event_string))
                 game.freshkill_event_list.append(event_string)
 
-        if "found_lost_cat_ID" in game.clan.clan_settings:
-            if game.clan.clan_settings["found_lost_cat_ID"]:
-                self.handle_lost_cats_return()
-                game.clan.clan_settings["found_lost_cat_ID"] = []
-            else:
-                rejoin_upperbound = game.config["lost_cat"]["rejoin_chance"]
-                if random.randint(1, rejoin_upperbound) == 1:
-                    self.handle_lost_cats_return()
-        else:
-            game.clan.clan_settings["found_lost_cat_ID"] = []
+
 
         # Adding in any potential lead den events that have been saved
         if "lead_den_event" in game.clan.clan_settings:
@@ -917,7 +920,7 @@ class Events:
                         self.ceremony(x, "mediator")
                     else:
                         self.ceremony(x, "warrior")
-                elif x.status in ["kitten", "newborn"] or x.moons >= 6:
+                elif x.status not in ["apprentice", "medicine cat apprentice", "mediator apprentice"] and x.moons >= 6:
                     self.ceremony(x, "apprentice") 
             elif x.status != 'medicine cat':
                 if x.moons == 0:

@@ -5,6 +5,7 @@ import pygame_gui
 
 from scripts.cat.cats import Cat, BACKSTORIES
 from scripts.cat.history import History
+from scripts.cat.names import Name
 from scripts.clan import OtherClan
 from scripts.events_module.generate_events import generate_events
 from scripts.game_structure.game_essentials import game, MANAGER
@@ -135,8 +136,10 @@ class LeaderDenScreen(Screens):
 
         self.helper_cat = None
         if game.clan.leader.not_working():
-            self.helper_cat = game.clan.deputy  # if lead is sick, dep helps
-            if game.clan.deputy.not_working() or game.clan.deputy.dead:  # if dep is sick, med cat helps
+            if game.clan.deputy:
+                if game.clan.deputy.not_working() or game.clan.deputy.dead:
+                    self.helper_cat = game.clan.deputy  # if lead is sick, dep helps
+            if not self.helper_cat:  # if dep is sick, med cat helps
                 meds = get_med_cats(Cat)
                 if meds:
                     self.helper_cat = meds[0]
@@ -815,6 +818,7 @@ class LeaderDenScreen(Screens):
         """
         result_text = None
         thought = None
+        additional_cats = []
 
         game.clan.clan_settings["outsider_interaction"] = True
 
@@ -862,11 +866,11 @@ class LeaderDenScreen(Screens):
                 # adds to clan and also checks for accompanying kits
                 additional_cats = self.focus_cat.add_to_clan()
                 if additional_cats:
-                    result_text += "m_c brings along {PRONOUN/m_c/poss} "
+                    result_text += " m_c brings along {PRONOUN/m_c/poss} "
                     if len(additional_cats) > 1:
-                        result_text += str(len(additional_cats)) + " children."
+                        result_text += str(len(additional_cats)) + " kittens."
                     else:
-                        result_text += "child"
+                        result_text += "kit."
 
                 additional_cats.append(self.focus_cat.ID)
                 # clan_setting will check ceremonies on timeskip
@@ -878,36 +882,52 @@ class LeaderDenScreen(Screens):
                 thought = "Is ecstatic that c_n found {PRONOUN/m_c/object}!"
 
                 result_text = "m_c was found and brought back to the Clan. c_n's reputation among Outsiders has " \
-                              "improved. "
+                              "improved."
                 game.clan.reputation += 20
 
                 # adds to clan and also checks for accompanying kits
                 additional_cats = self.focus_cat.add_to_clan()
                 if additional_cats:
-                    result_text += "m_c brings along {PRONOUN/m_c/poss} "
+                    result_text += " m_c brings along {PRONOUN/m_c/poss} "
                     if len(additional_cats) > 1:
-                        result_text += str(len(additional_cats)) + " children."
+                        result_text += str(len(additional_cats)) + " kittens."
                     else:
-                        result_text += "child"
+                        result_text += "kit."
 
                 additional_cats.append(self.focus_cat.ID)
                 # clan_setting will check ceremonies on timeskip
                 game.clan.clan_settings["found_lost_cat_ID"] = additional_cats
 
         # set status
-        if not self.focus_cat.dead and self.focus_cat.status.lower() in ["kittypet", "loner", "rogue", "former clancat",
-                                                                         "exiled"]:
-            if self.focus_cat.backstory in BACKSTORIES["backstory_categories"]["healer_backstories"]:
-                self.focus_cat.status = "medicine cat"
-            elif self.focus_cat.age in ["newborn", "kitten"]:
-                self.focus_cat.status = self.focus_cat.age
-            elif self.focus_cat.age == "senior":
-                self.focus_cat.status = "elder"
-            elif self.focus_cat.age == "adolescent":
-                self.focus_cat.status = "apprentice"
-                self.focus_cat.update_mentor()
-            else:
-                self.focus_cat.status = "warrior"
+        if not additional_cats:
+            additional_cats = [self.focus_cat.ID]
+
+        for cat_id in additional_cats:
+            invited_cat = Cat.fetch_cat(cat_id)
+            if not invited_cat.dead and invited_cat.status.lower() in ["kittypet", "loner", "rogue", "former clancat",
+                                                                             "exiled"]:
+                if invited_cat.backstory in BACKSTORIES["backstory_categories"]["healer_backstories"]:
+                    invited_cat.status = "medicine cat"
+                elif invited_cat.age in ["newborn", "kitten"]:
+                    invited_cat.status = invited_cat.age
+                    if not invited_cat.name.suffix:
+                        invited_cat.name = Name(invited_cat.status,
+                                                invited_cat.name.prefix,
+                                                invited_cat.name.suffix,
+                                                invited_cat.pelt.colour,
+                                                invited_cat.pelt.name,
+                                                invited_cat.pelt.tortiepattern,
+                                                game.clan.biome
+                                                )
+                        invited_cat.name.give_suffix(pelt=None, biome=game.clan.biome, tortiepattern=None)
+                        invited_cat.specsuffix_hidden = False
+                elif invited_cat.age == "senior":
+                    invited_cat.status = "elder"
+                elif invited_cat.age == "adolescent":
+                    invited_cat.status = "apprentice"
+                    invited_cat.update_mentor()
+                else:
+                    invited_cat.status = "warrior"
 
         # only one interaction allowed per moon
         self.focus_outsider_button_container.disable()
