@@ -393,6 +393,8 @@ class LeaderDenScreen(Screens):
         self.focus_frame_elements["clans_tab"].disable()
         self.focus_frame_elements["outsiders_tab"].enable()
 
+        self.update_temper_text(temper=True)
+
     def open_outsiders_tab(self):
         """
         handles opening outsiders tab and closing clans tab
@@ -407,6 +409,8 @@ class LeaderDenScreen(Screens):
 
         self.focus_frame_elements["outsiders_tab"].disable()
         self.focus_frame_elements["clans_tab"].enable()
+
+        self.update_temper_text(temper=False)
 
     def update_other_clan_focus(self):
         """
@@ -742,6 +746,25 @@ class LeaderDenScreen(Screens):
                 print("outsider buttons disabled")
                 self.focus_outsider_button_container.disable()
 
+    def update_temper_text(self, temper=True):
+        """
+        changes between clan temper and clan rep text
+        :param temper: default True. True sets to clan temper text, False sets to clan rep text
+        """
+
+        if temper:
+            self.screen_elements["temper_text"].set_text(f"The other Clans think {game.clan.name}Clan is {self.clan_temper}.")
+        else:
+            self.clan_rep = game.clan.reputation
+            if 1 <= int(self.clan_rep) <= 30:
+                reputation = "hostile"
+            elif 31 <= int(self.clan_rep) <= 70:
+                reputation = "neutral"
+            else:
+                reputation = "welcoming"
+
+            self.screen_elements["temper_text"].set_text(f"Outsiders view your clan as {reputation}.")
+
     def update_outsider_cats(self):
         """
         handles finding and displaying outsider cats
@@ -824,9 +847,11 @@ class LeaderDenScreen(Screens):
 
         # percentage of success
         success = False
-        success_chance = int(game.clan.reputation) / 100
+        success_chance = (int(game.clan.reputation) / 100) / 1.5
         if game.clan.leader.not_working:
             success_chance = success_chance / 1.2
+        if success_chance <= 0:
+            success = 0.1
         print(f"CHANCE: {success_chance}")
         if random.random() < success_chance:
             success = True
@@ -845,18 +870,18 @@ class LeaderDenScreen(Screens):
                 self.focus_cat.die()
                 result_text = "m_c was found and killed by a search party. c_n's reputation among Outsiders has " \
                               "greatly lowered. "
-                game.clan.reputation += -30
+                game.clan.reputation += -40
 
             elif object_id == "#outsider_drive":
                 self.focus_cat.status = "exiled"
                 self.focus_cat.exiled = True
                 self.focus_cat.driven_out = True
                 result_text = "m_c was found and driven out of the area. c_n's reputation among Outsiders has lowered."
-                game.clan.reputation += -10
+                game.clan.reputation += -20
 
             elif object_id == "#outsider_invite":
                 result_text = "m_c was found and invited into the Clan. c_n's reputation among Outsiders has improved."
-                game.clan.reputation += 20
+                game.clan.reputation += 5
 
                 if self.focus_cat.exiled:
                     thought = "Is surprised c_n has welcomed {PRONOUN/m_c/object} back"
@@ -881,9 +906,7 @@ class LeaderDenScreen(Screens):
                 self.focus_cat.add_to_clan()
                 thought = "Is ecstatic that c_n found {PRONOUN/m_c/object}!"
 
-                result_text = "m_c was found and brought back to the Clan. c_n's reputation among Outsiders has " \
-                              "improved."
-                game.clan.reputation += 20
+                result_text = "m_c was found and brought back to the Clan."
 
                 # adds to clan and also checks for accompanying kits
                 additional_cats = self.focus_cat.add_to_clan()
@@ -928,6 +951,7 @@ class LeaderDenScreen(Screens):
                     invited_cat.update_mentor()
                 else:
                     invited_cat.status = "warrior"
+            invited_cat.create_relationships_new_cat()
 
         # only one interaction allowed per moon
         self.focus_outsider_button_container.disable()
@@ -940,11 +964,11 @@ class LeaderDenScreen(Screens):
             self.focus_cat.thought = event_text_adjust(Cat, thought, self.focus_cat, clan=game.clan)
 
         # check reputation value
-        print(f"New Rep: {int(game.clan.reputation)}")
         if game.clan.reputation < 0:
             game.clan.reputation = 0
         elif game.clan.reputation > 100:
             game.clan.reputation = 100
+        print(f"New Rep: {int(game.clan.reputation)}")
 
         return result_text
 

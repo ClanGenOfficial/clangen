@@ -103,7 +103,6 @@ class NewCatEvents:
         elif "new_med" in new_cat_event.tags:
             status = "medicine cat"
 
-
         created_cats = create_new_cat(Cat,
                                       Relationship,
                                       new_cat_event.new_name,
