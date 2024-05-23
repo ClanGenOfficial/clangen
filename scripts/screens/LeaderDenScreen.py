@@ -676,13 +676,15 @@ class LeaderDenScreen(Screens):
 
         if self.focus_outsider_button_container:
             self.focus_outsider_button_container.clear()
+            self.focus_outsider_button_container.show()
         else:
             self.focus_outsider_button_container = pygame_gui.elements.UIAutoResizingContainer(
                 scale(pygame.Rect((118, 505), (0, 0))),
                 object_id="#focus_outsider_button_container",
                 container=self.focus_outsider_container,
                 starting_height=1,
-                manager=MANAGER
+                manager=MANAGER,
+                visible=True
             )
 
         # for some reason this container gets divorced from its parent container sometimes
@@ -724,8 +726,7 @@ class LeaderDenScreen(Screens):
 
         if self.focus_cat.outside and not self.focus_cat.exiled and self.focus_cat.status not in ['kittypet', 'loner',
                                                                                                   'rogue',
-                                                                                                  'former Clancat',
-                                                                                                  'driven off']:
+                                                                                                  'former Clancat']:
             self.focus_button["invite_in"].change_object_id("#outsider_search")
         else:
             self.focus_button["invite_in"].change_object_id("#outsider_invite")
