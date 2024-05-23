@@ -113,16 +113,20 @@ class Events:
         if "lead_den_event" in game.clan.clan_settings:
             if game.clan.clan_settings["lead_den_event"]:
                 lead_event = game.clan.clan_settings["lead_den_event"]
-                affected_clan = get_other_clan(lead_event["other_clan"])
-                affected_clan.relations += lead_event["rel_change"]
-                event_text = event_text_adjust(Cat,
-                                               lead_event["text"],
-                                               cat=Cat.fetch_cat(lead_event["ID"]),
-                                               other_clan_name=f"{lead_event['other_clan']}Clan",
-                                               clan=game.clan)
-                game.cur_events_list.append(Single_Event(event_text, "other_clans", lead_event["ID"]))
-                game.clan.clan_settings["lead_den_event"] = {}
-                game.clan.clan_settings["clan_interaction"] = None
+                # need to check if the involved cat is still a valid cat
+                involved_cat = Cat.fetch_cat(lead_event["ID"])
+                if not involved_cat.exiled and not involved_cat.dead and not involved_cat.outside:
+                    # it's a valid cat, so let's do the event
+                    affected_clan = get_other_clan(lead_event["other_clan"])
+                    affected_clan.relations += lead_event["rel_change"]
+                    event_text = event_text_adjust(Cat,
+                                                   lead_event["text"],
+                                                   cat=involved_cat,
+                                                   other_clan_name=f"{lead_event['other_clan']}Clan",
+                                                   clan=game.clan)
+                    game.cur_events_list.append(Single_Event(event_text, "other_clans", lead_event["ID"]))
+            game.clan.clan_settings["lead_den_event"] = {}
+            game.clan.clan_settings["clan_interaction"] = None
 
         # Calling of "one_moon" functions.
         for cat in Cat.all_cats.copy().values():
