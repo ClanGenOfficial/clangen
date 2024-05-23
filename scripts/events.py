@@ -102,12 +102,15 @@ class Events:
                 game.freshkill_event_list.append(event_string)
 
         if "found_lost_cat_ID" in game.clan.clan_settings:
-            self.handle_lost_cats_return()
-            game.clan.clan_settings["found_lost_cat_ID"] = []
-        else:
-            rejoin_upperbound = game.config["lost_cat"]["rejoin_chance"]
-            if random.randint(1, rejoin_upperbound) == 1:
+            if game.clan.clan_settings["found_lost_cat_ID"]:
                 self.handle_lost_cats_return()
+                game.clan.clan_settings["found_lost_cat_ID"] = []
+            else:
+                rejoin_upperbound = game.config["lost_cat"]["rejoin_chance"]
+                if random.randint(1, rejoin_upperbound) == 1:
+                    self.handle_lost_cats_return()
+        else:
+            game.clan.clan_settings["found_lost_cat_ID"] = []
 
         # Adding in any potential lead den events that have been saved
         if "lead_den_event" in game.clan.clan_settings:
@@ -903,6 +906,7 @@ class Events:
                     Single_Event(text, "misc", cat_IDs))
 
         # Perform a ceremony if needed
+        print("checking ceremonies for returned cat")
         for cat_ID in cat_IDs:
             x = Cat.fetch_cat(cat_ID)
             if x.status in ["apprentice", "medicine cat apprentice", "mediator apprentice", "kitten", "newborn"]: 
@@ -913,7 +917,7 @@ class Events:
                         self.ceremony(x, "mediator")
                     else:
                         self.ceremony(x, "warrior")
-                elif x.status in ["kitten", "newborn"] and x.moons >= 6:
+                elif x.status in ["kitten", "newborn"] or x.moons >= 6:
                     self.ceremony(x, "apprentice") 
             elif x.status != 'medicine cat':
                 if x.moons == 0:

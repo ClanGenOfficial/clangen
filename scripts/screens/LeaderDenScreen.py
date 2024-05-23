@@ -136,7 +136,7 @@ class LeaderDenScreen(Screens):
         self.helper_cat = None
         if game.clan.leader.not_working():
             self.helper_cat = game.clan.deputy  # if lead is sick, dep helps
-            if game.clan.deputy.not_working():  # if dep is sick, med cat helps
+            if game.clan.deputy.not_working() or game.clan.deputy.dead:  # if dep is sick, med cat helps
                 meds = get_med_cats(Cat)
                 if meds:
                     self.helper_cat = meds[0]
@@ -733,6 +733,7 @@ class LeaderDenScreen(Screens):
 
         self.focus_button["invite_in"].show()
 
+        self.focus_outsider_button_container.enable()
         if "outsider_interaction" in game.clan.clan_settings:
             if game.clan.clan_settings["outsider_interaction"]:
                 print("outsider buttons disabled")
@@ -870,6 +871,7 @@ class LeaderDenScreen(Screens):
                 additional_cats.append(self.focus_cat.ID)
                 # clan_setting will check ceremonies on timeskip
                 game.clan.clan_settings["found_lost_cat_ID"] = additional_cats
+                print(game.clan.clan_settings["found_lost_cat_ID"])
 
             elif object_id == "#outsider_search":
                 self.focus_cat.add_to_clan()
