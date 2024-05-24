@@ -410,11 +410,53 @@ class Patrol:
 
         return True
 
-    def _filter_relationship(self, patrol: PatrolEvent):
+    def _get_cats_from_tag(self, cat1, cat2):
+
+        app_abbr = ["app1", "app2", "app3", "app4", "app5", "app6"]
+        o_c_abbr = ["o_c1", "o_c2", "o_c3", "o_c4"]
+        other_cats = [i for i in self.patrol_cats if i not in [self.patrol_leader, self.patrol_random_cat, self.patrol_apprentices]]
+
+        for inter_cat in self.patrol_cats:
+            if inter_cat.ID == self.patrol_leader.ID:
+                if cat1 == "p_l":
+                    cat1 = inter_cat
+                elif cat2 == "p_l":
+                    cat2 = inter_cat
+            elif inter_cat.ID == self.patrol_random_cat.ID:
+                if cat1 == "r_c":
+                    cat1 = inter_cat
+                elif cat2 == "r_c":
+                    cat2 = inter_cat
+           
+        if (len(self.patrol_apprentices) == 0) and ((cat1 in app_abbr) or (cat2 in app_abbr)):
+            cat1 = None
+        for i, abbr in enumerate(app_abbr):
+            if abbr in [cat1, cat2]:
+                if len(self.patrol_apprentices) > i:
+                    if cat1 == abbr:
+                        cat1 = self.patrol_apprentices[i]
+                    else:
+                        cat2 = self.patrol_apprentices[i]
+            
+        if (len(other_cats) == 0) and ((cat1 in o_c_abbr) or (cat2 in o_c_abbr)):
+            cat1 = None
+        for i, abbr in enumerate(o_c_abbr):
+            if abbr in [cat1, cat2]:
+                if len(other_cats) > i:
+                    if cat1 == abbr:
+                        cat1 = other_cats[i]
+                    else:
+                        cat2 = other_cats[i]
+
+        return[cat1, cat2]
+
+    def _filter_relationship(self, patrol:PatrolEvent):
         """
         Filter the incoming patrol list according to the relationship constraints, if there are constraints.
 
         """
+        cat_types = ["p_l", "r_c", "app1", "app2", "app3", "app4", "app5", "app6", "o_c1", "o_c2", "o_c3", "o_c4"]
+        patrol_id = patrol.patrol_id
 
         # filtering - relationship status
         # check if all are siblings
@@ -425,8 +467,17 @@ class Patrol:
             siblings = [test_cat.is_sibling(inter_cat) for inter_cat in testing_cats]
             if not all(siblings):
                 return False
+            
+        # check if all are not siblings
+        if "not_siblings" in patrol.relationship_constraints:
+            test_cat = self.patrol_cats[0]
+            testing_cats = [cat for cat in self.patrol_cats if cat.ID != test_cat.ID]
 
-        # check if the cats are mates
+            siblings = [test_cat.is_sibling(inter_cat) for inter_cat in testing_cats]
+            if all(siblings):
+                return False
+
+        # check if all the cats are mates
         if "mates" in patrol.relationship_constraints:
             # First test if there is more then one cat
             if len(self.patrol_cats) == 1:
@@ -465,6 +516,41 @@ class Patrol:
                 if x[0].ID in x[1].mate:
                     return False
 
+        for tag in patrol.relationship_constraints:
+            if any("mates" in tag for tag in patrol.relationship_constraints) and any(acronym in tag for acronym in cat_types):
+                # First test if there is more than one cat
+                if len(self.patrol_cats) == 1:
+                    return False
+
+                try:
+                    if "not_mates" in tag:
+                        acronyms = "_".join([(tag.split('_')[2]), (tag.split('_')[3]), (tag.split('_')[4])])
+                    else:
+                        acronyms = "_".join([(tag.split('_')[1]), (tag.split('_')[2]), (tag.split('_')[3])])
+                    cat1 = (acronyms.split('/')[0])
+                    cat2 = (acronyms.split('/')[1])
+                except Exception as e:
+                    print(
+                        f"ERROR: patrol {patrol_id} with the mates constraint {tag} doesn't follow the formatting guidelines.")
+                    return False
+
+                # get specified cats
+                cats = self._get_cats_from_tag(cat1, cat2)
+                cat1 = cats[0]
+                cat2 = cats[1]
+
+                # means there is no other_cat
+                if not cat1:
+                    return False
+
+                # reverse check
+                if "not_mates" in tag:
+                    if cat1.ID in cat2.mate:
+                        return False
+                else:
+                    if cat1.ID not in cat2.mate:
+                        return False
+
         # check if the cats are in a parent/child relationship
         if "parent/child" in patrol.relationship_constraints:
             # it should be exactly two cats for a "parent/child" patrol
@@ -483,19 +569,38 @@ class Patrol:
             if not self.patrol_random_cat.is_parent(self.patrol_leader):
                 return False
 
+        # check if the cats aren't in a parent/child relationship
+        if "not_parent/child" in patrol.relationship_constraints:
+            # it should be exactly two cats for a "parent/child" patrol
+            if len(self.patrol_cats) != 2:
+                return False
+            # when there are two cats in the patrol, p_l and r_c are different cats per default
+            if self.patrol_leader.is_parent(self.patrol_random_cat):
+                return False
+
+        # check if the cats aren't in a child/parent relationship
+        if "not_child/parent" in patrol.relationship_constraints:
+            # it should be exactly two cats for a "child/parent" patrol
+            if len(self.patrol_cats) != 2:
+                return False
+            # when there are two cats in the patrol, p_l and r_c are different cats per default
+            if self.patrol_random_cat.is_parent(self.patrol_leader):
+                return False
+
         # filtering - relationship values
         # when there will be more relationship values or other tags, this should be updated
         value_types = [
             "romantic",
             "platonic",
             "dislike",
+            "admiration",
             "comfortable",
             "jealousy",
             "trust",
         ]
+        cat_types = ["p_l", "r_c", "app1", "app2", "app3", "app4", "app5", "app6", "o_c1", "o_c2", "o_c3", "o_c4"]
         break_loop = False
         for v_type in value_types:
-            patrol_id = patrol.patrol_id
             # first get all tags for the current value type
             tags = [
                 constraint
@@ -507,90 +612,121 @@ class Patrol:
             if len(tags) == 0:
                 continue
 
-            # there should be only one value constraint for each value type
+            # there should be only one regular value constraint for each value type
             elif len(tags) > 1:
-                print(
-                    f"ERROR: patrol {patrol_id} has multiple relationship constraints for the value {v_type}."
-                )
-                break_loop = True
-                break
+                v_tag = 1
+                for tag in tags:
+                    if any(acronym in tag for acronym in cat_types):
+                        continue
+                    else:
+                        v_tag += 1
+                        if v_tag > 1:
+                            print(f"ERROR: patrol {patrol_id} has multiple regular relationship constraints for the value {v_type}.")
+                            break_loop = True
+                            break
 
-            threshold = 0
-            # try to extract the value/threshold from the text
-            try:
-                threshold = int(tags[0].split("_")[1])
-            except Exception as e:
-                print(
-                    f"ERROR: patrol {patrol_id} with the relationship constraint for the value {v_type} follows not the formatting guidelines."
-                )
-                break_loop = True
-                break
-
-            if threshold > 100:
-                print(
-                    f"ERROR: patrol {patrol_id} has a relationship constraints for the value {v_type}, which is higher than the max value of a relationship."
-                )
-                break_loop = True
-                break
-
-            if threshold <= 0:
-                print(
-                    f"ERROR: patrol {patrol_id} has a relationship constraints for the value {v_type}, which is lower than the min value of a relationship or 0."
-                )
-                break_loop = True
-                break
-
-            # each cat has to have relationships with this relationship value above the threshold
-            fulfilled = True
-            for inter_cat in self.patrol_cats:
-                rel_above_threshold = []
-                patrol_cats_ids = [cat.ID for cat in self.patrol_cats]
-                relevant_relationships = list(
-                    filter(
-                        lambda rel: rel.cat_to.ID in patrol_cats_ids
-                        and rel.cat_to.ID != inter_cat.ID,
-                        list(inter_cat.relationships.values()),
-                    )
-                )
-
-                # get the relationships depending on the current value type + threshold
-                if v_type == "romantic":
-                    rel_above_threshold = [
-                        i
-                        for i in relevant_relationships
-                        if i.romantic_love >= threshold
-                    ]
-                elif v_type == "platonic":
-                    rel_above_threshold = [
-                        i
-                        for i in relevant_relationships
-                        if i.platonic_like >= threshold
-                    ]
-                elif v_type == "dislike":
-                    rel_above_threshold = [
-                        i for i in relevant_relationships if i.dislike >= threshold
-                    ]
-                elif v_type == "comfortable":
-                    rel_above_threshold = [
-                        i for i in relevant_relationships if i.comfortable >= threshold
-                    ]
-                elif v_type == "jealousy":
-                    rel_above_threshold = [
-                        i for i in relevant_relationships if i.jealousy >= threshold
-                    ]
-                elif v_type == "trust":
-                    rel_above_threshold = [
-                        i for i in relevant_relationships if i.trust >= threshold
-                    ]
-
-                # if the lengths are not equal, one cat has not the relationship value which is needed to another cat of the patrol
-                if len(rel_above_threshold) + 1 != len(self.patrol_cats):
-                    fulfilled = False
+            for tag in tags:
+                threshold = 0
+                # try to extract the value/threshold from the text
+                try:
+                    threshold = int(tag.split('_')[-1])
+                except Exception as e:
+                    print(
+                        f"ERROR: patrol {patrol_id} with the relationship constraint for the value {v_type} doesn't follow the formatting guidelines.")
+                    break_loop = True
                     break
 
-            if not fulfilled:
-                break_loop = True
-                break
+                if threshold > 100:
+                    print(
+                        f"ERROR: patrol {patrol_id} has a relationship constraints for the value {v_type}, which is higher than the max value of a relationship.")
+                    break_loop = True
+                    break
+
+                if threshold <= 0:
+                    print(
+                        f"ERROR: patrol {patrol_id} has a relationship constraints for the value {v_type}, which is lower than the min value of a relationship or 0.")
+                    break_loop = True
+                    break
+
+                # if one-way, try to get cat tags
+                if any(acronym in tag for acronym in cat_types):
+                    
+                    if len(self.patrol_cats) == 1:
+                        break_loop = True
+                        break
+
+                    try:
+                        # check for apprentices, which don't use an underscore in their abbrevation
+                        if any("app" in tag for acronym in cat_types):
+                            if any(acronym in tag for acronym in ["p_l", "r_c", "o_c1", "o_c2", "o_c3", "o_c4"]):
+                                acronyms = "_".join([(tag.split('_')[1]), (tag.split('_')[2])])
+                            else:
+                                acronyms = (tag.split('_')[1])
+                        else:
+                            acronyms = "_".join([(tag.split('_')[1]), (tag.split('_')[2]), (tag.split('_')[3])])
+                        cat1 = (acronyms.split('/')[0])
+                        cat2 = (acronyms.split('/')[1])
+                    except Exception as e:
+                        print(
+                            f"ERROR: patrol {patrol_id} with the relationship constraint for the value {v_type} doesn't follow the formatting guidelines.")
+                        break_loop = True
+                        break
+
+                    # get specified cats
+                    cats = self._get_cats_from_tag(cat1, cat2)
+                    cat1 = cats[0]
+                    cat2 = cats[1]
+
+                    # means there is no apprentice or other_cat in patrol
+                    if not cat1:
+                        break_loop = True
+                        break
+
+                    # try to check relationship
+                    try:
+                        value_check = check_relationship_value(cat1, cat2, v_type)
+                    except Exception as e:
+                        print(
+                            f"ERROR: patrol {patrol_id} with the relationship constraint for the value {v_type} couldn't check relationship between {cat1} and {cat2}.")
+                        break_loop = True
+                        break
+
+                    if not value_check >= threshold:            
+                        break_loop = True
+                        break
+                else:
+
+                    # each cat has to have relationships with this relationship value above the threshold
+                    fulfilled = True
+                    for inter_cat in self.patrol_cats:
+                        rel_above_threshold = []
+                        patrol_cats_ids = [cat.ID for cat in self.patrol_cats]
+                        relevant_relationships = list(
+                            filter(lambda rel: rel.cat_to.ID in patrol_cats_ids and rel.cat_to.ID != inter_cat.ID,
+                                   list(inter_cat.relationships.values())
+                                   )
+                        )
+
+                        # get the relationships depending on the current value type + threshold
+                        if v_type == "romantic":
+                            rel_above_threshold = [i for i in relevant_relationships if i.romantic_love >= threshold]
+                        elif v_type == "platonic":
+                            rel_above_threshold = [i for i in relevant_relationships if i.platonic_like >= threshold]
+                        elif v_type == "dislike":
+                            rel_above_threshold = [i for i in relevant_relationships if i.dislike >= threshold]
+                        elif v_type == "admiration":
+                            rel_above_threshold = [i for i in relevant_relationships if i.admiration >= threshold]
+                        elif v_type == "comfortable":
+                            rel_above_threshold = [i for i in relevant_relationships if i.comfortable >= threshold]
+                        elif v_type == "jealousy":
+                            rel_above_threshold = [i for i in relevant_relationships if i.jealousy >= threshold]
+                        elif v_type == "trust":
+                            rel_above_threshold = [i for i in relevant_relationships if i.trust >= threshold]
+
+                        # if the lengths are not equal, one cat has not the relationship value which is needed to another cat of the patrol
+                        if len(rel_above_threshold) + 1 != len(self.patrol_cats):
+                            break_loop = True
+                            break
 
         # if break is used in the loop, the condition are not fulfilled
         # and this patrol should not be added to the filtered list
