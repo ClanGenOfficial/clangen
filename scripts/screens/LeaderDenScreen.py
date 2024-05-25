@@ -70,7 +70,6 @@ class LeaderDenScreen(Screens):
                     if f"button{i}" not in self.other_clan_selection_elements:
                         continue
                     if event.ui_element == self.other_clan_selection_elements[f"button{i}"]:
-                        print("button press")
                         self.focus_clan = game.clan.all_clans[i]
                         self.update_other_clan_focus()
             elif event.ui_element == self.focus_frame_elements["negative_interaction"]:
@@ -753,7 +752,8 @@ class LeaderDenScreen(Screens):
         """
 
         if temper:
-            self.screen_elements["temper_text"].set_text(f"The other Clans think {game.clan.name}Clan is {self.clan_temper}.")
+            self.screen_elements["temper_text"].set_text(
+                f"The other Clans think {game.clan.name}Clan is {self.clan_temper}.")
         else:
             self.clan_rep = game.clan.reputation
             if 1 <= int(self.clan_rep) <= 30:
@@ -928,7 +928,7 @@ class LeaderDenScreen(Screens):
         for cat_id in additional_cats:
             invited_cat = Cat.fetch_cat(cat_id)
             if not invited_cat.dead and invited_cat.status.lower() in ["kittypet", "loner", "rogue", "former clancat",
-                                                                             "exiled"]:
+                                                                       "exiled"]:
                 if invited_cat.backstory in BACKSTORIES["backstory_categories"]["healer_backstories"]:
                     invited_cat.status = "medicine cat"
                 elif invited_cat.age in ["newborn", "kitten"]:

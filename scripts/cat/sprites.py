@@ -1,3 +1,5 @@
+import os
+
 import pygame
 
 import ujson
@@ -16,6 +18,7 @@ class Sprites():
         Size is normally automatically determined by the size
         of the lineart. If a size is passed, it will override 
         this value. """
+        self.symbol_dict = None
         self.size = None
         self.spritesheets = {}
         self.images = {}
@@ -127,7 +130,7 @@ class Sprites():
             'maskedcolours',
             'shadersnewwhite', 'lineartdead', 'tortiepatchesmasks',
             'medcatherbs', 'lineartdf', 'lightingnew', 'fademask',
-            'fadestarclan', 'fadedarkforest', 'symbols'
+            'fadestarclan', 'fadedarkforest', 'symbols', 'symbols_v2'
 
         ]:
             if 'lineart' in x and game.config['fun']['april_fools']:
@@ -405,19 +408,24 @@ class Sprites():
         """
         loads clan symbols
         """
-        prefixes = names.names_dict["normal_prefixes"]
+
+        if os.path.exists('resources/dicts/clan_symbols.json'):
+            with open('resources/dicts/clan_symbols.json') as read_file:
+                self.symbol_dict = ujson.loads(read_file.read())
 
         letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T",
                    "V", "W", "Y", "Z"]
 
-        # sprite names will format as "symbolPREFIX"
+        # sprite names will format as "symbol{PREFIX}{INDEX}"
         y_pos = 1
         for letter in letters:
-            # print([i for i in prefixes if letter in i])
-            for a, i in enumerate([i for i in prefixes if letter in i]):
-                # print(a, i)
-                self.clan_symbols.append(f"symbol{i.upper()}")
-                self.make_group('symbols', (a, y_pos), f"symbol{i.upper()}", sprites_x=1, sprites_y=1, no_index=True)
+            for i, symbol in enumerate([symbol for symbol in self.symbol_dict if letter in symbol and self.symbol_dict[symbol]["variants"]]):
+                for variant_index in range(self.symbol_dict[symbol]["variants"]):
+                    self.clan_symbols.append(f"symbol{symbol.upper()}{variant_index}")
+                    self.make_group('symbols_v2',
+                                    (i, y_pos),
+                                    f"symbol{symbol.upper()}{variant_index}",
+                                    sprites_x=1, sprites_y=1, no_index=True)
 
             y_pos += 1
         # print(self.clan_symbols)

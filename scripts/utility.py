@@ -1227,27 +1227,31 @@ def clan_symbol_sprite(clan, return_string=False):
     """
     clan_name = clan.name
     if clan.chosen_symbol:
-        print("symbol already chosen")
         if return_string:
             return clan.chosen_symbol
         else:
             return sprites.sprites[f"{clan.chosen_symbol}"]
-
-    if return_string:
-        if f"symbol{clan_name.upper()}" in sprites.clan_symbols:
-            return f"symbol{clan_name.upper()}"
-        else:
-            # give random symbol if no matching symbol exists
-            print(f"WARNING: no clan symbol for {clan_name.upper()}")
-            return f"{choice(sprites.clan_symbols)}"
     else:
-        try:
-            # look for matching symbol
-            return sprites.sprites[f"symbol{clan_name.upper()}"]
-        except KeyError:
-            # give random symbol if no matching symbol exists
-            print(f"WARNING: no clan symbol for {clan_name.upper()}")
-            return sprites.sprites[f"{choice(sprites.clan_symbols)}"]
+        possible_sprites = []
+        for sprite in sprites.clan_symbols:
+            if clan_name.upper() in sprite:
+                possible_sprites.append(sprite)
+
+        if return_string:  # returns the str of the symbol
+            if possible_sprites:
+                return choice(possible_sprites)
+            else:
+                # give random symbol if no matching symbol exists
+                print(f"WARNING: attempted to return symbol string, but there's no clan symbol for {clan_name.upper()}")
+                return f"{choice(sprites.clan_symbols)}"
+
+        else:  # returns the actual sprite of the symbol
+            if possible_sprites:
+                return sprites.sprites[choice(possible_sprites)]
+            else:
+                # give random symbol if no matching symbol exists
+                print(f"WARNING: attempted to return symbol sprite, but there's no clan symbol for {clan_name.upper()}")
+                return sprites.sprites[f"{choice(sprites.clan_symbols)}"]
 
 
 def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, always_living=False,
