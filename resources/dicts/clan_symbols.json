@@ -264,7 +264,7 @@
     "tags": ["location", "animal", "cat"]
   }, 
   "Cedar": {
-    "variants": 0,
+    "variants": 1,
     "tags": ["plant", "leaf"]
   }, 
   "Chaffinch": {
@@ -1164,8 +1164,8 @@
     "tags": []
   }, 
   "Pansy": {
-    "variants": 0,
-    "tags": []
+    "variants": 1,
+    "tags": ["plant", "flower"]
   }, 
   "Panther": {
     "variants": 1, 
@@ -1188,12 +1188,12 @@
     "tags": []
   }, 
   "Peak": {
-    "variants": 0,
-    "tags": []
+    "variants": 1,
+    "tags": ["location"]
   }, 
   "Pear": {
-    "variants": 0,
-    "tags": []
+    "variants": 1,
+    "tags": ["plant", "object"]
   }, 
   "Peat": {
     "variants": 0,
@@ -1344,8 +1344,8 @@
     "tags": []
   }, 
   "Reed": {
-    "variants": 0, 
-    "tags": []
+    "variants": 1,
+    "tags": ["plant"]
   }, 
   "Ridge": {
     "variants": 0, 
@@ -1380,8 +1380,8 @@
     "tags": []
   }, 
   "Root": {
-    "variants": 0, 
-    "tags": []
+    "variants": 1,
+    "tags": ["plant"]
   }, 
   "Rose": {
     "variants": 0, 
@@ -1392,12 +1392,12 @@
     "tags": []
   }, 
   "Rowan": {
-    "variants": 0, 
-    "tags": []
+    "variants": 1,
+    "tags": ["plant"]
   }, 
   "Rubble": {
-    "variants": 0, 
-    "tags": []
+    "variants": 1,
+    "tags": ["nature", "object"]
   }, 
   "Runnel": {
     "variants": 0, 
@@ -1412,8 +1412,8 @@
     "tags": []
   }, 
   "Rye": {
-    "variants": 0, 
-    "tags": []
+    "variants": 1,
+    "tags": ["plant"]
   }, 
   "Sable": {
     "variants": 0, 
@@ -1576,8 +1576,8 @@
     "tags": []
   }, 
   "Sorrel": {
-    "variants": 0,
-    "tags": []
+    "variants": 1,
+    "tags": ["plant"]
   }, 
   "Spark": {
     "variants": 0,
@@ -1628,8 +1628,8 @@
     "tags": []
   }, 
   "Spruce": {
-    "variants": 0,
-    "tags": []
+    "variants": 1,
+    "tags": ["plant", "tree"]
   }, 
   "Squirrel": {
     "variants": 0,

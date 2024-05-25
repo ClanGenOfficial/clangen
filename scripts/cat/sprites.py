@@ -130,7 +130,7 @@ class Sprites():
             'maskedcolours',
             'shadersnewwhite', 'lineartdead', 'tortiepatchesmasks',
             'medcatherbs', 'lineartdf', 'lightingnew', 'fademask',
-            'fadestarclan', 'fadedarkforest', 'symbols', 'symbols_v2'
+            'fadestarclan', 'fadedarkforest', 'symbols'
 
         ]:
             if 'lineart' in x and game.config['fun']['april_fools']:
@@ -413,16 +413,17 @@ class Sprites():
             with open('resources/dicts/clan_symbols.json') as read_file:
                 self.symbol_dict = ujson.loads(read_file.read())
 
+        # U and X omitted from letter list due to having no prefixes
         letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T",
                    "V", "W", "Y", "Z"]
 
-        # sprite names will format as "symbol{PREFIX}{INDEX}"
+        # sprite names will format as "symbol{PREFIX}{INDEX}", ex. "symbolSPRING0"
         y_pos = 1
         for letter in letters:
             for i, symbol in enumerate([symbol for symbol in self.symbol_dict if letter in symbol and self.symbol_dict[symbol]["variants"]]):
                 for variant_index in range(self.symbol_dict[symbol]["variants"]):
                     self.clan_symbols.append(f"symbol{symbol.upper()}{variant_index}")
-                    self.make_group('symbols_v2',
+                    self.make_group('symbols',
                                     (i, y_pos),
                                     f"symbol{symbol.upper()}{variant_index}",
                                     sprites_x=1, sprites_y=1, no_index=True)
