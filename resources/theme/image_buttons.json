@@ -4824,5 +4824,39 @@
                 "path": "resources/images/buttons/outsider_invite_unavailable.png"
             }
         }
+    },
+    "#symbol_select_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/blank.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/symbol_selection_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/symbol_selection_hover.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/symbol_selection_hover.png"
+            }
+        }
+    },
+    "#filters_tab_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/filters_tab.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/filters_tab_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/filters_tab_hover.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/filters_tab_hover.png"
+            }
+        }
     }
 }

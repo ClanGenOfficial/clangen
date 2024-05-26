@@ -65,6 +65,12 @@ class LeaderDenScreen(Screens):
         elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
                 self.change_screen(game.last_screen_forupdate)
+            elif event.ui_element == self.outsider_selection_elements["page_right"]:
+                self.current_page += 1
+                self.update_outsider_cats()
+            elif event.ui_element == self.outsider_selection_elements["page_left"]:
+                self.current_page -= 1
+                self.update_outsider_cats()
             elif event.ui_element in self.other_clan_selection_elements.values():
                 for i in range(0, 5):
                     if f"button{i}" not in self.other_clan_selection_elements:

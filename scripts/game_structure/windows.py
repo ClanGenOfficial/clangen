@@ -27,6 +27,132 @@ from scripts.utility import scale, quit, update_sprite, scale_dimentions, logger
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.housekeeping.version import get_version_info
 
+class SymbolFilterWindow(UIWindow):
+    def __init__(self):
+        game.switches['window_open'] = True
+
+        super().__init__(scale(pygame.Rect((500, 350), (600, 700))),
+                         window_display_title='Symbol Filters',
+                         object_id="#filter_window")
+
+        self.possible_tags = {
+            "plant": ["flower", "tree"],
+            "animal": ["cat", "fish", "bird", "mammal", "bug", "other animals"],
+            "element": ["water", "fire", "earth", "air", "light"],
+            "location": [],
+            "descriptor": [],
+            "miscellaneous": []
+        }
+
+        self.back_button = UIImageButton(
+            scale(pygame.Rect((540, 10), (44, 44))),
+            "",
+            object_id="#exit_window_button",
+            starting_height=10,
+            container=self
+        )
+        self.filter_title = pygame_gui.elements.UILabel(
+            scale(pygame.Rect((10, 10), (-1, -1))),
+            text="Show Symbols With:",
+            object_id="#text_box_40",
+            container=self
+        )
+        self.filter_container = pygame_gui.elements.UIScrollingContainer(
+            scale(pygame.Rect((10, 70), (570, 620))),
+            manager=MANAGER,
+            starting_height=1,
+            object_id="#filter_container",
+            allow_scroll_x=False,
+            container=self
+        )
+        self.checkbox = {}
+        self.checkbox_text = {}
+        x_pos = 30
+        y_pos = 40
+        for tag, subtags in self.possible_tags.items():
+            self.checkbox[tag] = UIImageButton(
+                scale(pygame.Rect((x_pos, y_pos), (68, 68))),
+                "",
+                object_id="#checked_checkbox",
+                container=self.filter_container,
+                starting_height=2,
+                manager=MANAGER
+            )
+            if tag in game.switches["disallowed_symbol_tags"]:
+                self.checkbox[tag].change_object_id("#unchecked_checkbox")
+
+            self.checkbox_text[tag] = pygame_gui.elements.UILabel(
+                scale(pygame.Rect((x_pos + 80, y_pos + 6), (-1, -1))),
+                text=str(tag),
+                container=self.filter_container,
+                object_id="#text_box_30_horizleft",
+                manager=MANAGER
+            )
+            y_pos += 70
+            if subtags:
+                for s_tag in subtags:
+                    self.checkbox[s_tag] = UIImageButton(
+                        scale(pygame.Rect((x_pos + 70, y_pos), (68, 68))),
+                        "",
+                        object_id="#checked_checkbox",
+                        container=self.filter_container,
+                        starting_height=2,
+                        manager=MANAGER
+                    )
+
+                    if s_tag in game.switches["disallowed_symbol_tags"]:
+                        self.checkbox[s_tag].change_object_id("#unchecked_checkbox")
+
+                    self.checkbox_text[s_tag] = pygame_gui.elements.UILabel(
+                        scale(pygame.Rect((x_pos + 150, y_pos + 6), (-1, -1))),
+                        text=s_tag,
+                        container=self.filter_container,
+                        object_id="#text_box_30_horizleft",
+                        manager=MANAGER
+                    )
+                    y_pos += 60
+                y_pos += 10
+
+    def process_event(self, event):
+        super().process_event(event)
+
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element == self.back_button:
+                game.switches['window_open'] = False
+                self.kill()
+
+            elif event.ui_element in self.checkbox.values():
+                for tag, element in self.checkbox.items():
+                    if element == event.ui_element:
+                        # find out what state the checkbox was in when clicked
+                        object_ids = element.get_object_ids()
+                        # handle checked checkboxes becoming unchecked
+                        if "#checked_checkbox" in object_ids:
+                            self.checkbox[tag].change_object_id("#unchecked_checkbox")
+                            # add tag to disallowed list
+                            if tag not in game.switches["disallowed_symbol_tags"]:
+                                game.switches['disallowed_symbol_tags'].append(tag)
+                            # if tag had subtags, also add those subtags
+                            if tag in self.possible_tags:
+                                for s_tag in self.possible_tags[tag]:
+                                    self.checkbox[s_tag].change_object_id("#unchecked_checkbox")
+                                    self.checkbox[s_tag].disable()
+                                    if s_tag not in game.switches:
+                                        game.switches['disallowed_symbol_tags'].append(s_tag)
+
+                        # handle unchecked checkboxes becoming checked
+                        elif "#unchecked_checkbox" in object_ids:
+                            self.checkbox[tag].change_object_id("#checked_checkbox")
+                            # remove tag from disallowed list
+                            if tag in game.switches["disallowed_symbol_tags"]:
+                                game.switches["disallowed_symbol_tags"].remove(tag)
+                            # if tag had subtags, also add those subtags
+                            if tag in self.possible_tags:
+                                for s_tag in self.possible_tags[tag]:
+                                    self.checkbox[s_tag].change_object_id("#checked_checkbox")
+                                    self.checkbox[s_tag].enable()
+                                    if s_tag in game.switches["disallowed_symbol_tags"]:
+                                        game.switches["disallowed_symbol_tags"].remove(s_tag)
 
 class NotificationWindow(UIWindow):
     def __init__(self, notif_text):

@@ -1,1922 +1,1922 @@
 {
   "Adder": {
     "variants": 1,
-    "tags": ["animal"]
+    "tags0": ["animal", "other animals"]
   },
   "Alder": {
     "variants": 1,
-    "tags": ["plant", "leaf"]
+    "tags0": ["plant", "leaf"]
   },
   "Ant": {
     "variants": 1,
-    "tags": ["bug"]
+    "tags0": ["bug"]
   },
   "Antler": {
     "variants": 1,
-    "tags": ["object", "animal"]
+    "tags0": ["animal", "mammal"]
   },
   "Aphid": {
     "variants": 1,
-    "tags": ["bug"]
+    "tags0": ["bug"]
   },
   "Apple": {
     "variants": 1,
-    "tags": ["plant", "object"]
+    "tags0": ["plant"]
   },
   "Apricot": {
     "variants": 1,
-    "tags": ["plant", "object"]
+    "tags0": ["plant"]
   },
   "Arch": {
     "variants": 1,
-    "tags": ["location"]
+    "tags0": ["location"]
   },
   "Aspen": {
     "variants": 1,
-    "tags": ["plant", "tree"]
+    "tags0": ["plant", "tree"]
   },
   "Aster": {
     "variants": 1,
-    "tags": ["plant", "flower"]
+    "tags0": ["plant", "flower"]
   },
   "Badger": {
     "variants": 1,
-    "tags": ["animal"]
+    "tags0": ["animal", "mammal"]
   },
   "Barley": {
     "variants": 1,
-    "tags": ["plant"]
+    "tags0": ["plant"]
   },
   "Basil": {
     "variants": 1,
-    "tags": ["plant", "leaf"]
+    "tags0": ["plant", "leaf"]
   },
   "Bass": {
     "variants": 0,
-    "tags": ["animal"]
+    "tags0": ["animal", "fish"]
   },
   "Bay": {
     "variants": 1,
-    "tags": ["location"]
+    "tags0": ["location"]
   },
   "Beam": {
     "variants": 1,
-    "tags": ["nature"]
+    "tags0": ["element", "light"]
   },
   "Bear": {
     "variants": 0,
-    "tags": ["animal"]
+    "tags0": ["animal", "mammal"]
   },
   "Beaver": {
     "variants": 0,
-    "tags": ["animal"]
+    "tags0": ["animal", "mammal"]
   },
   "Bee": {
     "variants": 1,
-    "tags": ["bug"]
+    "tags0": ["bug"]
   },
   "Beech": {
     "variants": 0,
-    "tags": ["plant"]
+    "tags0": ["plant"]
   },
   "Beetle": {
     "variants": 1,
-    "tags": ["bug"]
+    "tags0": ["bug"]
   },
   "Berry": {
     "variants": 1,
-    "tags": ["plant", "object"]
+    "tags0": ["plant"]
   },
   "Big": {
     "variants": 1, 
-    "tags": ["animal", "cat"]
+    "tags0": ["animal", "cat"]
   }, 
   "Billow": {
     "variants": 1,
-    "tags": ["nature", "action"]
+    "tags0": ["element", "air"]
   },
   "Birch": {
     "variants": 0,
-    "tags": ["plant"]
+    "tags0": ["plant"]
   },
   "Bird": {
     "variants": 0,
-    "tags": ["animal"]
+    "tags0": ["animal", "bird"]
   },
   "Bite": {
     "variants": 0,
-    "tags": ["action"]
+    "tags0": ["miscellaneous"]
   }, 
   "Bitter": {
     "variants": 1, 
-    "tags": ["descriptor"]
+    "tags0": ["descriptor"]
   }, 
   "Bittern": {
     "variants": 0,
-    "tags": ["animal"]
+    "tags0": ["animal", "bird"]
   }, 
   "Bliss": {
     "variants": 0,
-    "tags": ["emotion"]
+    "tags0": ["miscellaneous"]
   }, 
   "Blizzard": {
     "variants": 0,
-    "tags": ["nature"]
+    "tags0": ["element"]
   }, 
   "Bloom": {
     "variants": 1, 
-    "tags": ["plant", "flower"]
+    "tags0": ["plant", "flower"]
   }, 
   "Blossom": {
     "variants": 1, 
-    "tags": ["plant", "flower"]
+    "tags0": ["plant", "flower"]
   }, 
   "Blotch": {
     "variants": 0,
-    "tags": ["descriptor"]
+    "tags0": ["descriptor"]
   }, 
   "Bluebell": {
     "variants": 1, 
-    "tags": ["plant", "flower"]
+    "tags0": ["plant", "flower"]
   }, 
   "Bluff": {
     "variants": 1, 
-    "tags": ["location"]
+    "tags0": ["location"]
   }, 
   "Bog": {
     "variants": 1, 
-    "tags": ["location"]
+    "tags0": ["location"]
   }, 
   "Borage": {
     "variants": 1, 
-    "tags": ["plant", "flower"]
+    "tags0": ["plant", "flower"]
   }, 
   "Bough": {
     "variants": 1, 
-    "tags": ["plant", "object"]
+    "tags0": ["plant"]
   }, 
   "Boulder": {
     "variants": 0,
-    "tags": ["nature", "object"]
+    "tags0": ["element", "earth"]
   }, 
   "Bounce": {
     "variants": 1, 
-    "tags": ["action"]
+    "tags0": ["miscellaneous"]
   }, 
   "Bracken": {
     "variants": 1, 
-    "tags": ["plant"]
+    "tags0": ["plant"]
   }, 
   "Bramble": {
     "variants": 1, 
-    "tags": ["plant"]
+    "tags0": ["plant"]
   }, 
   "Brave": {
     "variants": 0,
-    "tags": ["emotion", "descriptor"]
+    "tags0": ["miscellaneous", "descriptor"]
   }, 
   "Breeze": {
     "variants": 0,
-    "tags": ["nature"]
+    "tags0": ["element", "air"]
   }, 
   "Briar": {
     "variants": 1, 
-    "tags": ["plant", "flower"]
+    "tags0": ["plant", "flower"]
   }, 
   "Bright": {
     "variants": 1, 
-    "tags": ["descriptor", "nature"]
+    "tags0": ["descriptor", "element", "light"]
   }, 
   "Brindle": {
     "variants": 0,
-    "tags": ["descriptor"]
+    "tags0": ["descriptor"]
   }, 
   "Bristle": {
     "variants": 1, 
-    "tags": ["emotion", "action", "animal", "cat"]
+    "tags0": ["miscellaneous", "animal", "cat"]
   }, 
   "Broken": {
     "variants": 0,
-    "tags": ["descriptor"]
+    "tags0": ["descriptor"]
   }, 
   "Brook": {
     "variants": 1, 
-    "tags": ["location"]
+    "tags0": ["location"]
   }, 
   "Brush": {
     "variants": 1, 
-    "tags": ["plant", "location"]
+    "tags0": ["plant", "location"]
   }, 
   "Bubbling": {
     "variants": 1, 
-    "tags": ["action", "nature"]
+    "tags0": ["miscellaneous", "element", "water"]
   }, 
   "Bud": {
     "variants": 1, 
-    "tags": ["plant", "flower"]
+    "tags0": ["plant", "flower"]
   }, 
   "Bug": {
-    "variants": 1, 
-    "tags": ["bug"]
+    "variants": 0,
+    "tags0": ["bug"]
   }, 
   "Bumble": {
     "variants": 1, 
-    "tags": ["bug"]
+    "tags0": ["bug"]
   }, 
   "Burdock": {
     "variants": 1, 
-    "tags": ["plant", "flower"]
+    "tags0": ["plant", "flower"]
   }, 
   "Burr": {
     "variants": 1, 
-    "tags": ["plant", "object"]
+    "tags0": ["plant"]
   }, 
   "Burrow": {
     "variants": 0,
-    "tags": ["location"]
+    "tags0": ["location"]
   }, 
   "Bush": {
     "variants": 1, 
-    "tags": ["plant"]
+    "tags0": ["plant"]
   }, 
   "Butterfly": {
     "variants": 0,
-    "tags": ["bug"]
+    "tags0": ["bug"]
   }, 
   "Buzzard": {
     "variants": 0,
-    "tags": ["animal"]
+    "tags0": ["animal", "bird"]
   }, 
   "Carnation": {
     "variants": 0,
-    "tags": ["plant"]
+    "tags0": ["plant"]
   }, 
   "Carp": {
     "variants": 1, 
-    "tags": ["animal"]
+    "tags0": ["animal", "fish"]
   }, 
   "Caterpillar": {
     "variants": 0,
-    "tags": ["bug"]
+    "tags0": ["bug"]
   }, 
   "Cave": {
     "variants": 1, 
-    "tags": ["location", "animal", "cat"]
+    "tags0": ["location", "animal", "cat"]
   }, 
   "Cedar": {
     "variants": 1,
-    "tags": ["plant", "leaf"]
+    "tags0": ["plant", "leaf"]
   }, 
   "Chaffinch": {
     "variants": 0,
-    "tags": ["animal"]
+    "tags0": ["animal", "bird"]
   }, 
   "Chasing": {
     "variants": 1, 
-    "tags": ["action", "animal", "cat"]
+    "tags0": ["miscellaneous", "animal", "cat"]
   }, 
   "Cherry": {
     "variants": 0,
-    "tags": ["plant"]
+    "tags0": ["plant"]
   }, 
   "Chervil": {
     "variants": 1, 
-    "tags": ["plant", "leaf"]
+    "tags0": ["plant", "leaf"]
   }, 
   "Chestnut": {
     "variants": 1, 
-    "tags": ["plant", "object"]
+    "tags0": ["plant"]
   }, 
   "Chirp": {
     "variants": 0,
-    "tags": ["action"]
+    "tags0": ["miscellaneous"]
   }, 
   "Chive": {
     "variants": 1, 
-    "tags": ["plant"]
+    "tags0": ["plant"]
   }, 
   "Cicada": {
     "variants": 0,
-    "tags": ["bug"]
+    "tags0": ["bug"]
   }, 
   "Claw": {
     "variants": 0,
-    "tags": ["object", "action"]
+    "tags0": ["miscellaneous"]
   }, 
   "Clay": {
     "variants": 0,
-    "tags": ["object", "nature"]
+    "tags0": ["element", "earth"]
   }, 
   "Clear": {
     "variants": 1, 
-    "tags": ["descriptor"]
+    "tags0": ["descriptor"]
   }, 
   "Cliff": {
     "variants": 0,
-    "tags": ["location"]
+    "tags0": ["location"]
   }, 
   "Clover": {
     "variants": 0,
-    "tags": ["plant"]
+    "tags0": ["plant"]
   }, 
   "Comfrey": {
     "variants": 1, 
-    "tags": ["plant", "flower"]
+    "tags0": ["plant", "flower"]
   }, 
   "Condor": {
     "variants": 0,
-    "tags": ["animal"]
+    "tags0": ["animal", "bird"]
   }, 
   "Cone": {
     "variants": 1, 
-    "tags": ["plant", "object"]
+    "tags0": ["plant"]
   }, 
   "Conifer": {
     "variants": 0,
-    "tags": ["plant"]
+    "tags0": ["plant"]
   }, 
   "Conker": {
     "variants": 1, 
-    "tags": ["plant", "object"]
+    "tags0": ["plant"]
   }, 
   "Copse": {
     "variants": 1, 
-    "tags": ["plant", "location", "tree"]
+    "tags0": ["plant", "location", "tree"]
   }, 
   "Cougar": {
     "variants": 0,
-    "tags": ["animal"]
+    "tags0": ["animal", "mammal"]
   }, 
   "Coyote": {
     "variants": 0,
-    "tags": ["animal"]
+    "tags0": ["animal", "mammal"]
   }, 
   "Crag": {
     "variants": 1, 
-    "tags": ["location"]
+    "tags0": ["location"]
   }, 
   "Crane": {
     "variants": 0,
-    "tags": ["animal"]
+    "tags0": ["animal", "bird"]
   }, 
   "Creek": {
     "variants": 0,
-    "tags": ["location"]
+    "tags0": ["location"]
   }, 
   "Cress": {
     "variants": 1, 
-    "tags": ["plant"]
+    "tags0": ["plant"]
   }, 
   "Crest": {
     "variants": 1, 
-    "tags": ["animal"]
+    "tags0": ["animal", "bird"]
   }, 
   "Crested": {
     "variants": 1, 
-    "tags": ["animal"]
+    "tags0": ["animal", "bird"]
   }, 
   "Cricket": {
     "variants": 0,
-    "tags": ["bug"]
+    "tags0": ["bug"]
   }, 
   "Crooked": {
     "variants": 0,
-    "tags": ["descriptor"]
+    "tags0": ["descriptor"]
   }, 
   "Crouch": {
     "variants": 0,
-    "tags": ["action"]
+    "tags0": ["miscellaneous"]
   }, 
   "Curl": {
     "variants": 1, 
-    "tags": ["action", "animal", "cat"]
+    "tags0": ["miscellaneous", "animal", "cat"]
   }, 
   "Curlew": {
     "variants": 0,
-    "tags": ["plant"]
+    "tags0": ["plant"]
   }, 
   "Curly": {
     "variants": 0,
-    "tags": ["descriptor"]
+    "tags0": ["descriptor"]
   }, 
   "Current": {
     "variants": 0,
-    "tags": ["nature"]
+    "tags0": ["element", "water"]
   }, 
   "Cypress": {
     "variants": 0,
-    "tags": ["plant"]
+    "tags0": ["plant"]
   }, 
   "Dahlia": {
     "variants": 1, 
-    "tags": ["plant", "flower"]
+    "tags0": ["plant", "flower"]
   }, 
   "Daisy": {
     "variants": 0,
-    "tags": ["plant"]
+    "tags0": ["plant"]
   }, 
   "Dancing": {
     "variants": 1, 
-    "tags": ["action"]
+    "tags0": ["miscellaneous"]
   }, 
   "Dapple": {
     "variants": 0,
-    "tags": ["descriptor"]
+    "tags0": ["descriptor"]
   }, 
   "Dappled": {
     "variants": 0,
-    "tags": ["descriptor"]
+    "tags0": ["descriptor"]
   }, 
   "Dart": {
     "variants": 1, 
-    "tags": ["fish"]
+    "tags0": ["fish"]
   }, 
   "Dash": {
     "variants": 0,
-    "tags": ["action"]
+    "tags0": ["miscellaneous"]
   }, 
   "Dawn": {
     "variants": 0,
-    "tags": ["time"]
+    "tags0": ["time"]
   }, 
   "Dazzle": {
     "variants": 0,
-    "tags": ["action", "descriptor"]
+    "tags0": ["miscellaneous", "descriptor"]
   }, 
   "Dew": {
     "variants": 0,
-    "tags": ["nature", "object"]
+    "tags0": ["element", "water"]
   }, 
   "Dog": {
     "variants": 0,
-    "tags": ["animal"]
+    "tags0": ["animal", "mammal"]
   }, 
   "Down": {
     "variants": 0,
-    "tags": ["object", "animal"]
+    "tags0": []
   }, 
   "Downy": {
     "variants": 1, 
-    "tags": ["object", "animal"]
+    "tags0": ["animal", "bird"]
   }, 
   "Dream": {
     "variants": 1, 
-    "tags": ["action", "emotion"]
+    "tags0": ["miscellaneous"]
   }, 
   "Drift": {
     "variants": 1, 
-    "tags": ["nature"]
+    "tags0": ["element", "air"]
   }, 
   "Drizzle": {
     "variants": 1, 
-    "tags": ["nature"]
+    "tags0": ["element", "water"]
   }, 
   "Droplet": {
     "variants": 0,
-    "tags": ["nature", "object"]
+    "tags0": ["element", "water"]
   }, 
   "Dry": {
     "variants": 0,
-    "tags": ["nature"]
+    "tags0": []
   }, 
   "Duck": {
     "variants": 0,
-    "tags": ["animal"]
+    "tags0": ["animal", "bird"]
   }, 
   "Dusk": {
     "variants": 0,
-    "tags": ["time"]
+    "tags0": ["time"]
   }, 
   "Eagle": {
     "variants": 1, 
-    "tags": ["animal"]
+    "tags0": ["animal", "bird"]
   }, 
   "Echo": {
     "variants": 0,
-    "tags": ["action"]
+    "tags0": ["miscellaneous"]
   }, 
   "Edelweiss": {
     "variants": 1, 
-    "tags": ["plant", "flower"]
+    "tags0": ["plant", "flower"]
   }, 
   "Egret": {
     "variants": 0,
-    "tags": ["animal"]
+    "tags0": ["animal", "bird"]
   }, 
   "Elder": {
     "variants": 0,
-    "tags": ["plant"]
+    "tags0": ["plant"]
   }, 
   "Elm": {
     "variants": 1, 
-    "tags": ["plant", "tree"]
+    "tags0": ["plant", "tree"]
   }, 
   "Ermine": {
     "variants": 0,
-    "tags": ["animal"]
+    "tags0": ["animal", "mammal"]
   }, 
   "Faith": {
     "variants": 0,
-    "tags": ["emotion"]
+    "tags0": ["miscellaneous"]
   }, 
   "Falcon": {
     "variants": 0,
-    "tags": ["animal"]
+    "tags0": ["animal", "bird"]
   }, 
   "Fallen": {
     "variants": 0,
-    "tags": ["action", "emotion"]
+    "tags0": ["miscellaneous"]
   }, 
   "Falling": {
     "variants": 0,
-    "tags": ["action"]
+    "tags0": ["miscellaneous"]
   }, 
   "Fallow": {
     "variants": 0,
-    "tags": ["location", "descriptor"]
+    "tags0": ["location", "descriptor"]
   }, 
   "Fawn": {
     "variants": 0,
-    "tags": ["animal"]
+    "tags0": ["animal", "mammal"]
   }, 
   "Feather": {
     "variants": 0,
-    "tags": ["animal", "object"]
+    "tags0": ["animal", "bird"]
   }, 
   "Fennel": {
     "variants": 1, 
-    "tags": ["plant"]
+    "tags0": ["plant"]
   }, 
   "Fern": {
     "variants": 0,
-    "tags": ["plant"]
+    "tags0": ["plant"]
   }, 
   "Ferret": {
     "variants": 0,
-    "tags": ["animal"]
+    "tags0": ["animal", "mammal"]
   }, 
   "Fickle": {
     "variants": 0,
-    "tags": ["action", "emotion", "descriptor"]
+    "tags0": ["miscellaneous", "descriptor"]
   }, 
   "Fidget": {
     "variants": 0,
-    "tags": ["action"]
+    "tags0": ["miscellaneous"]
   }, 
   "Fierce": {
     "variants": 0,
-    "tags": ["emotion", "descriptor"]
+    "tags0": ["miscellaneous", "descriptor"]
   }, 
   "Fin": {
     "variants": 0,
-    "tags": [""]
+    "tags0": [""]
   }, 
   "Finch": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Fir": {
     "variants": 1, 
-    "tags": ["plant", "tree"]
+    "tags0": ["plant", "tree"]
   }, 
   "Fish": {
     "variants": 1, 
-    "tags": ["animal"]
+    "tags0": ["animal", "fish"]
   }, 
   "Flail": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Flash": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Flax": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Fleck": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Fleet": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Flicker": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Flight": {
     "variants": 1, 
-    "tags": ["object", "animal"]
+    "tags0": ["animal", "bird"]
   }, 
   "Flint": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Flip": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Flit": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Flood": {
     "variants": 1, 
-    "tags": ["nature"]
+    "tags0": ["element", "water"]
   }, 
   "Flower": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Fluff": {
     "variants": 1, 
-    "tags": ["descriptor"]
+    "tags0": ["descriptor"]
   }, 
   "Fluffy": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Flutter": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Fly": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Fog": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Foggy": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Freckle": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Fringe": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Frog": {
     "variants": 1, 
-    "tags": ["animal"]
+    "tags0": ["animal", "other animals"]
   }, 
   "Frond": {
-    "variants": 1, 
-    "tags": []
+    "variants": 0,
+    "tags0": []
   }, 
   "Fruit": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Fumble": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Furled": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Furze": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Fuzz": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Fuzzy": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Gale": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Gander": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Gardenia": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Garlic": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Gentle": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Gill": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Glade": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Goose": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Gorge": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Gorse": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Grass": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Gravel": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Grouse": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Gull": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Guppy": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Gust": {
     "variants": 1, 
-    "tags": ["nature"]
+    "tags0": ["element", "air"]
   }, 
   "Hail": {
     "variants": 1, 
-    "tags": ["object", "nature"]
+    "tags0": ["element", "water"]
   }, 
   "Half": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Hare": {
     "variants": 1, 
-    "tags": ["animal"]
+    "tags0": ["animal", "mammal"]
   }, 
   "Hatch": {
     "variants": 1, 
-    "tags": ["animal", "object"]
+    "tags0": ["animal", "other animals"]
   }, 
   "Haven": {
     "variants": 1, 
-    "tags": ["action", "emotion", "animal", "cat"]
+    "tags0": ["miscellaneous", "animal", "cat"]
   }, 
   "Hawk": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Hay": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Hazel": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Hazy": {
     "variants": 1, 
-    "tags": ["nature"]
+    "tags0": ["element", "air"]
   }, 
   "Heart": {
     "variants": 1, 
-    "tags": ["object", "emotion"]
+    "tags0": ["miscellaneous"]
   }, 
   "Heath": {
-    "variants": 1, 
-    "tags": []
+    "variants": 0,
+    "tags0": []
   }, 
   "Heavy": {
     "variants": 1, 
-    "tags": ["descriptor", "animal", "cat"]
+    "tags0": ["descriptor", "animal", "cat"]
   }, 
   "Hemlock": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Heron": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Hill": {
     "variants": 1, 
-    "tags": ["location", "animal", "cat"]
+    "tags0": ["location", "animal", "cat"]
   }, 
   "Hollow": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Holly": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Honey": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Hoot": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Hop": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Hope": {
     "variants": 1, 
-    "tags": ["emotion", "action", "animal", "cat"]
+    "tags0": ["miscellaneous", "animal", "cat"]
   }, 
   "Hornet": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Hound": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Howl": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Hush": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Hyacinth": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Iris": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Ivy": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Jackdaw": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Jagged": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Jay": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Jumble": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Jump": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Junco": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Juniper": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Kestrel": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Kink": {
     "variants": 1, 
-    "tags": ["descriptor", "animal", "cat"]
+    "tags0": ["descriptor", "animal", "cat"]
   }, 
   "Kite": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Lake": {
     "variants": 1, 
-    "tags": ["location", "nature"]
+    "tags0": ["location", "element", "water"]
   }, 
   "Larch": {
     "variants": 1, 
-    "tags": ["plant", "leaf"]
+    "tags0": ["plant", "leaf"]
   }, 
   "Lark": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Laurel": {
     "variants": 1, 
-    "tags": ["plant", "leaf"]
+    "tags0": ["plant", "leaf"]
   }, 
   "Lavender": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Leaf": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Leap": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Leopard": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Lichen": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Light": {
     "variants": 1, 
-    "tags": ["nature"]
+    "tags0": ["element", "light"]
   }, 
   "Lightning": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Lilac": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Lily": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Lion": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Little": {
     "variants": 1, 
-    "tags": ["descriptor", "animal", "cat"]
+    "tags0": ["descriptor", "animal", "cat"]
   }, 
   "Lizard": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Locust": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Long": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Lotus": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Loud": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Low": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Luck": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Lupine": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Lynx": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Mallow": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Mantis": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Maple": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Marigold": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Marsh": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Meadow": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Midge": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Milk": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Milkweed": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Mink": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Minnow": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Mistle": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Mite": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Mole": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Moon": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Moor": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Morning": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Moss": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Mossy": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Moth": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Mottle": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Mottled": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Mouse": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Mumble": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Murk": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Myrtle": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Nectar": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Needle": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Nettle": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Newt": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Nightingale": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Nimble": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Nut": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Oak": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Oat": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Odd": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "One": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Oriole": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Osprey": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Pansy": {
     "variants": 1,
-    "tags": ["plant", "flower"]
+    "tags0": ["plant", "flower"]
   }, 
   "Panther": {
     "variants": 1, 
-    "tags": ["animal"]
+    "tags0": ["animal", "mammal"]
   }, 
   "Parsley": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Partridge": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Patch": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Patchouli": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Peak": {
     "variants": 1,
-    "tags": ["location"]
+    "tags0": ["location"]
   }, 
   "Pear": {
     "variants": 1,
-    "tags": ["plant", "object"]
+    "tags0": ["plant"]
   }, 
   "Peat": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Perch": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Petal": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Petunia": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Pheasant": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Pigeon": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Pike": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Pine": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Piper": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Plover": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Plum": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Pod": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Pond": {
     "variants": 1, 
-    "tags": ["location"]
+    "tags0": ["location"]
   }, 
   "Pool": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Pop": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Poppy": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Posy": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Pounce": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Prance": {
     "variants": 1, 
-    "tags": ["action", "animal", "cat"]
+    "tags0": ["miscellaneous", "animal", "cat"]
   }, 
   "Prickle": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Prim": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Primrose": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Puddle": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Python": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Quail": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Quick": {
     "variants": 1, 
-    "tags": ["action", "animal", "cat"]
+    "tags0": ["miscellaneous", "animal", "cat"]
   }, 
   "Quiet": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Quill": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Quiver": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Rabbit": {
     "variants": 1, 
-    "tags": ["animal"]
+    "tags0": ["animal", "mammal"]
   }, 
   "Raccoon": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Ragged": {
     "variants": 1, 
-    "tags": ["descriptor"]
+    "tags0": ["descriptor"]
   }, 
   "Rain": {
     "variants": 1, 
-    "tags": ["nature"]
+    "tags0": ["element", "water"]
   }, 
   "Rainbow": {
     "variants": 0, 
-    "tags": []
+    "tags0": []
   }, 
   "Rat": {
     "variants": 0, 
-    "tags": []
+    "tags0": []
   }, 
   "Rattle": {
     "variants": 0, 
-    "tags": []
+    "tags0": []
   }, 
   "Raven": {
     "variants": 0, 
-    "tags": []
+    "tags0": []
   }, 
   "Reed": {
     "variants": 1,
-    "tags": ["plant"]
+    "tags0": ["plant"]
   }, 
   "Ridge": {
     "variants": 0, 
-    "tags": []
+    "tags0": []
   }, 
   "Rift": {
     "variants": 0, 
-    "tags": []
+    "tags0": []
   }, 
   "Rindle": {
     "variants": 0, 
-    "tags": []
+    "tags0": []
   }, 
   "Ripple": {
     "variants": 0, 
-    "tags": []
+    "tags0": []
   }, 
   "River": {
     "variants": 1,
-    "tags": ["nature", "location"]
+    "tags0": ["element", "location", "water"]
   }, 
   "Roach": {
     "variants": 0, 
-    "tags": []
+    "tags0": []
   }, 
   "Roar": {
     "variants": 0, 
-    "tags": []
+    "tags0": []
   }, 
   "Rook": {
     "variants": 0, 
-    "tags": []
+    "tags0": []
   }, 
   "Root": {
     "variants": 1,
-    "tags": ["plant"]
+    "tags0": ["plant"]
   }, 
   "Rose": {
     "variants": 0, 
-    "tags": []
+    "tags0": []
   }, 
   "Rosy": {
     "variants": 0, 
-    "tags": []
+    "tags0": []
   }, 
   "Rowan": {
     "variants": 1,
-    "tags": ["plant"]
+    "tags0": ["plant"]
   }, 
   "Rubble": {
     "variants": 1,
-    "tags": ["nature", "object"]
+    "tags0": ["element", "earth"]
   }, 
   "Runnel": {
     "variants": 0, 
-    "tags": []
+    "tags0": []
   }, 
   "Running": {
     "variants": 0, 
-    "tags": []
+    "tags0": []
   }, 
   "Rush": {
     "variants": 0, 
-    "tags": []
+    "tags0": []
   }, 
   "Rye": {
     "variants": 1,
-    "tags": ["plant"]
+    "tags0": ["plant"]
   }, 
   "Sable": {
     "variants": 0, 
-    "tags": []
+    "tags0": []
   }, 
   "Sapling": {
     "variants": 0, 
-    "tags": []
+    "tags0": []
   }, 
   "Scorch": {
     "variants": 0, 
-    "tags": []
+    "tags0": []
   }, 
   "Scratch": {
     "variants": 0, 
-    "tags": []
+    "tags0": []
   }, 
   "Seed": {
     "variants": 0, 
-    "tags": []
+    "tags0": []
   }, 
   "Serpent": {
     "variants": 0, 
-    "tags": []
+    "tags0": []
   }, 
   "Shard": {
     "variants": 1, 
-    "tags": ["object", "nature"]
+    "tags0": ["element", "earth"]
   }, 
   "Sharp": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Shell": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Shimmer": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Shine": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Shining": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Shivering": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Short": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Shrew": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Shrub": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Shy": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Silent": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Silk": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Silt": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Skip": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Sky": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Slate": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Sleek": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Sleepy": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Sleet": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Slight": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Slip": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Sloe": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Slope": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Slumber": {
     "variants": 1,
-    "tags": ["action", "animal", "cat"]
+    "tags0": ["miscellaneous", "animal", "cat"]
   }, 
   "Small": {
     "variants": 1, 
-    "tags": ["descriptor", "animal", "cat"]
+    "tags0": ["descriptor", "animal", "cat"]
   }, 
   "Snail": {
-    "variants": 1, 
-    "tags": []
+    "variants": 0,
+    "tags0": []
   }, 
   "Snake": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Snap": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Sneeze": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Snip": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Snowy": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Soft": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Song": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Sorrel": {
     "variants": 1,
-    "tags": ["plant"]
+    "tags0": ["plant"]
   }, 
   "Spark": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Sparrow": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Speckle": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Spider": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Spike": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Splash": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Splinter": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Spore": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Spot": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Spotted": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Spring": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Sprout": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Spruce": {
     "variants": 1,
-    "tags": ["plant", "tree"]
+    "tags0": ["plant", "tree"]
   }, 
   "Squirrel": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Starling": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Stem": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Stoat": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Stork": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Streak": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Stream": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Strike": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Stumpy": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Sunny": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Swallow": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Swamp": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Swarm": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Sweet": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Swift": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Sycamore": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Tadpole": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Tall": {
     "variants": 1, 
-    "tags": ["descriptor", "cat", "animal"]
+    "tags0": ["descriptor", "cat", "animal"]
   }, 
   "Talon": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Tangle": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Tansy": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Tawny": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Tempest": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Thistle": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Thorn": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Thrift": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Thrush": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Thunder": {
     "variants": 1,
-    "tags": ["nature"]
+    "tags0": ["element"]
   }, 
   "Thyme": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Tiger": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Timber": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Tiny": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Toad": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Torn": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Tremble": {
     "variants": 1, 
-    "tags": ["action"]
+    "tags0": ["miscellaneous"]
   }, 
   "Trickle": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Trout": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Tuft": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Tulip": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Tumble": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Turtle": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Valley": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Vine": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Vixen": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Wasp": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Weasel": {
     "variants": 1, 
-    "tags": ["animal"]
+    "tags0": ["animal", "mammal"]
   }, 
   "Web": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Weed": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Weevil": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Wet": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Wheat": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Whimsy": {
     "variants": 1, 
-    "tags": ["action", "emotion", "animal", "cat"]
+    "tags0": ["miscellaneous", "animal", "cat"]
   }, 
   "Whirl": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Whisker": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Whisper": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Whispering": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Whistle": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Whorl": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Wild": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Willow": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Wind": {
     "variants": 1,
-    "tags": ["element"]
+    "tags0": ["element", "air"]
   }, 
   "Wing": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Wish": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Wisteria": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Wolf": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Wolverine": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Wood": {
     "variants": 1, 
-    "tags": ["plant", "tree"]
+    "tags0": ["plant", "tree"]
   }, 
   "Worm": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Wren": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Yarrow": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Yew": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }, 
   "Zinnia": {
     "variants": 0,
-    "tags": []
+    "tags0": []
   }
 }

@@ -429,7 +429,7 @@ class Sprites():
                                     sprites_x=1, sprites_y=1, no_index=True)
 
             y_pos += 1
-        # print(self.clan_symbols)
+        print(self.clan_symbols)
 
 
 # CREATE INSTANCE

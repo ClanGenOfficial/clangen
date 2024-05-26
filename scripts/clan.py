@@ -23,14 +23,12 @@ import statistics
 
 from scripts.game_structure.game_essentials import game
 from scripts.housekeeping.version import get_version_info, SAVE_VERSION_NUMBER
-from scripts.utility import update_sprite, get_current_season, quit, \
+from scripts.utility import get_current_season, quit, \
     clan_symbol_sprite  # pylint: disable=redefined-builtin
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.names import names
 from scripts.clan_resources.freshkill import Freshkill_Pile, Nutrition
 from scripts.cat.sprites import sprites
-from sys import exit  # pylint: disable=redefined-builtin
-
 
 class Clan():
     """
@@ -93,6 +91,7 @@ class Clan():
                  medicine_cat=None,
                  biome='Forest',
                  camp_bg=None,
+                 symbol=None,
                  game_mode='classic',
                  starting_members=[],
                  starting_season='Newleaf',
@@ -122,6 +121,7 @@ class Clan():
         # This is the first cat in starclan, to "guide" the other dead cats there.
         self.biome = biome
         self.camp_bg = camp_bg
+        self.chosen_symbol = symbol
         self.game_mode = game_mode
         self.pregnancy_data = {}
         self.inheritance = {}
@@ -426,6 +426,7 @@ class Clan():
             "clanage": self.age,
             "biome": self.biome,
             "camp_bg": self.camp_bg,
+            "clan_symbol": self.chosen_symbol,
             "gamemode": self.game_mode,
             "last_focus_change": self.last_focus_change,
             "clans_in_focus": self.clans_in_focus,
@@ -594,10 +595,10 @@ class Clan():
                 general[7] = 'classic'
             elif general[8] == 'None':
                 general[8] = 50
-            game.clan = Clan(general[0],
-                             Cat.all_cats[leader_info[0]],
-                             Cat.all_cats.get(deputy_info[0], None),
-                             Cat.all_cats.get(med_cat_info[0], None),
+            game.clan = Clan(name=general[0],
+                             leader=Cat.all_cats[leader_info[0]],
+                             deputy=Cat.all_cats.get(deputy_info[0], None),
+                             medicine_cat=Cat.all_cats.get(med_cat_info[0], None),
                              biome=general[2],
                              camp_bg=general[3],
                              game_mode=general[7], self_run_init_functions=False)
@@ -611,10 +612,10 @@ class Clan():
             elif general[7] == 'None':
                 general[7] = 'classic'
             game.clan = Clan(
-                general[0],
-                Cat.all_cats[leader_info[0]],
-                Cat.all_cats.get(deputy_info[0], None),
-                Cat.all_cats.get(med_cat_info[0], None),
+                name=general[0],
+                leader=Cat.all_cats[leader_info[0]],
+                deputy=Cat.all_cats.get(deputy_info[0], None),
+                medicine_cat=Cat.all_cats.get(med_cat_info[0], None),
                 biome=general[2],
                 camp_bg=general[3],
                 game_mode=general[7],
@@ -627,20 +628,22 @@ class Clan():
             elif general[3] == 'None':
                 general[3] = 'camp1'
             game.clan = Clan(
-                general[0],
-                Cat.all_cats[leader_info[0]],
-                Cat.all_cats.get(deputy_info[0], None),
-                Cat.all_cats.get(med_cat_info[0], None),
+                name=general[0],
+                leader=Cat.all_cats[leader_info[0]],
+                deputy=Cat.all_cats.get(deputy_info[0], None),
+                medicine_cat=Cat.all_cats.get(med_cat_info[0], None),
                 biome=general[2],
                 camp_bg=general[3],
                 self_run_init_functions=False
             )
             game.clan.post_initialization_functions()
         elif len(general) == 3:
-            game.clan = Clan(general[0], Cat.all_cats[leader_info[0]],
-                             Cat.all_cats.get(deputy_info[0], None),
-                             Cat.all_cats.get(med_cat_info[0], None),
-                             general[2], self_run_init_functions=False)
+            game.clan = Clan(name=general[0],
+                             leader=Cat.all_cats[leader_info[0]],
+                             deputy=Cat.all_cats.get(deputy_info[0], None),
+                             medicine_cat=Cat.all_cats.get(med_cat_info[0], None),
+                             biome=general[2],
+                             self_run_init_functions=False)
             game.clan.post_initialization_functions()
         else:
             game.clan = Clan(general[0], Cat.all_cats[leader_info[0]],
@@ -691,6 +694,10 @@ class Clan():
             else:
                 print('WARNING: Cat not found:', cat)
         self.load_pregnancy(game.clan)
+
+        # assigning a symbol, since this save would be too old to have a chosen symbol
+        game.clan.chosen_symbol = clan_symbol_sprite(game.clan, return_string=True)
+
         game.switches['error_message'] = ''
 
     def load_clan_json(self):
@@ -733,13 +740,14 @@ class Clan():
         else:
             med_cat = None
 
-        game.clan = Clan(clan_data["clanname"],
-                         leader,
-                         deputy,
-                         med_cat,
+        game.clan = Clan(name=clan_data["clanname"],
+                         leader=leader,
+                         deputy=deputy,
+                         medicine_cat=med_cat,
                          biome=clan_data["biome"],
                          camp_bg=clan_data["camp_bg"],
-                         game_mode=clan_data["gamemode"], self_run_init_functions=False)
+                         game_mode=clan_data["gamemode"],
+                         self_run_init_functions=False)
         game.clan.post_initialization_functions()
 
         game.clan.reputation = int(clan_data["reputation"])
@@ -766,6 +774,12 @@ class Clan():
             # update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
+
+        # check for symbol
+        if "clan_symbol" in clan_data:
+            game.clan.chosen_symbol = clan_data["clan_symbol"]
+        else:
+            game.clan.chosen_symbol = clan_symbol_sprite(game.clan, return_string=True)
 
         if "other_clan_chosen_symbol" not in clan_data:
             for name, relation, temper in zip(
