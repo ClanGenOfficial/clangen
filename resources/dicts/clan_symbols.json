@@ -9,7 +9,7 @@
   },
   "Ant": {
     "variants": 1,
-    "tags0": ["bug"]
+    "tags0": ["animal", "bug" ]
   },
   "Antler": {
     "variants": 1,
@@ -17,7 +17,7 @@
   },
   "Aphid": {
     "variants": 1,
-    "tags0": ["bug"]
+    "tags0": ["animal", "bug" ]
   },
   "Apple": {
     "variants": 1,
@@ -73,7 +73,7 @@
   },
   "Bee": {
     "variants": 1,
-    "tags0": ["bug"]
+    "tags0": ["animal", "bug" ]
   },
   "Beech": {
     "variants": 0,
@@ -81,7 +81,7 @@
   },
   "Beetle": {
     "variants": 1,
-    "tags0": ["bug"]
+    "tags0": ["animal", "bug" ]
   },
   "Berry": {
     "variants": 1,
@@ -215,13 +215,13 @@
     "variants": 1, 
     "tags0": ["plant", "flower"]
   }, 
-  "Bug": {
+  "bug" : {
     "variants": 0,
-    "tags0": ["bug"]
+    "tags0": ["animal", "bug" ]
   }, 
   "Bumble": {
     "variants": 1, 
-    "tags0": ["bug"]
+    "tags0": ["animal", "bug" ]
   }, 
   "Burdock": {
     "variants": 1, 
@@ -241,7 +241,7 @@
   }, 
   "Butterfly": {
     "variants": 0,
-    "tags0": ["bug"]
+    "tags0": ["animal", "bug" ]
   }, 
   "Buzzard": {
     "variants": 0,
@@ -257,7 +257,7 @@
   }, 
   "Caterpillar": {
     "variants": 0,
-    "tags0": ["bug"]
+    "tags0": ["animal", "bug" ]
   }, 
   "Cave": {
     "variants": 1, 
@@ -297,7 +297,7 @@
   }, 
   "Cicada": {
     "variants": 0,
-    "tags0": ["bug"]
+    "tags0": ["animal", "bug" ]
   }, 
   "Claw": {
     "variants": 0,
@@ -377,7 +377,7 @@
   }, 
   "Cricket": {
     "variants": 0,
-    "tags0": ["bug"]
+    "tags0": ["animal", "bug" ]
   }, 
   "Crooked": {
     "variants": 0,
