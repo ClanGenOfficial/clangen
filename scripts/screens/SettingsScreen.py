@@ -345,11 +345,11 @@ class SettingsScreen(Screens):
         self.checkboxes_text['info_text_box'].disable()
 
         i = 0
-        y_pos = 731
+        y_pos = 690
         for tooltip in self.tooltip_text:
             if not tooltip:
                 self.tooltip[f'tip{i}'] = UIImageButton(
-                    scale(pygame.Rect((400, i * 56 + y_pos), (400, 56))),
+                    scale(pygame.Rect((400, i * 52 + y_pos), (400, 52))),
                     "",
                     object_id="#blank_button",
                     container=self.checkboxes_text["info_container"],
@@ -358,7 +358,7 @@ class SettingsScreen(Screens):
                 ),
             else:
                 self.tooltip[f'tip{i}'] = UIImageButton(
-                    scale(pygame.Rect((400, i * 56 + y_pos), (400, 56))),
+                    scale(pygame.Rect((400, i * 52 + y_pos), (400, 52))),
                     "",
                     object_id="#blank_button",
                     container=self.checkboxes_text["info_container"],
@@ -441,6 +441,13 @@ class SettingsScreen(Screens):
         """
         TODO: DOCS
         """
+        if "info_container" in self.checkboxes_text:
+            self.checkboxes_text["info_container"].kill()
+
+        if "container_general" in self.checkboxes_text:
+            self.checkboxes_text["container_general"].kill()
+
+
         for checkbox in self.checkboxes.values():
             checkbox.kill()
         self.checkboxes = {}
