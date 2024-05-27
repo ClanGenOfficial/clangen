@@ -866,7 +866,7 @@ class LeaderDenScreen(Screens):
             print("INTERACTION FAIL")
 
         if not success:
-            thought = "Heard rumors that clan cats were searching for {PRONOUN/m_c/object}"
+            thought = "Heard rumors that Clan cats were searching for {PRONOUN/m_c/object}"
             self.focus_cat.thought = event_text_adjust(Cat, thought, self.focus_cat, clan=game.clan)
             result_text = "m_c could not be found by the Clan."
         else:
@@ -958,7 +958,7 @@ class LeaderDenScreen(Screens):
                         invited_cat.update_mentor()
                     else:
                         invited_cat.status = "warrior"
-                        
+
                 invited_cat.create_relationships_new_cat()
 
                 invited_cat.thought = event_text_adjust(Cat, thought, self.focus_cat, clan=game.clan)

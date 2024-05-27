@@ -250,25 +250,26 @@ class EventsScreen(Screens):
             self.display_events = self.all_events
 
         self.clan_symbol = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((485, 210), (200, 200))),
+            scale(pygame.Rect((455, 210), (200, 200))),
             pygame.transform.scale(clan_symbol_sprite(game.clan), (200, 200)),
             object_id=f"clan_symbol",
             starting_height=1,
             manager=MANAGER)
 
-        self.heading = pygame_gui.elements.UITextBox("Click 'Timeskip One Moon' to progress the game forward.",
-                                                     scale(pygame.Rect((690, 205), (500, -1))),
+        self.heading = pygame_gui.elements.UITextBox("Timeskip to progress your Clan's life.",
+                                                     scale(pygame.Rect((680, 310), (500, -1))),
                                                      object_id=get_text_box_theme("#text_box_30_horizleft_spacing_95"),
                                                      manager=MANAGER)
 
         self.season = pygame_gui.elements.UITextBox(f'Current season: {game.clan.current_season}',
-                                                    scale(pygame.Rect((690, 300), (1200, 80))),
+                                                    scale(pygame.Rect((680, 205), (1200, 80))),
                                                     object_id=get_text_box_theme("#text_box_30"),
                                                     manager=MANAGER)
         self.clan_age = pygame_gui.elements.UITextBox("",
-                                                      scale(pygame.Rect((690, 340), (1200, 80))),
+                                                      scale(pygame.Rect((680, 245), (1200, 80))),
                                                       object_id=get_text_box_theme("#text_box_30"),
                                                       manager=MANAGER)
+
         self.events_frame = pygame_gui.elements.UIImage(scale(pygame.Rect((412, 532), (1068, 740))),
                                                         image_cache.load_image(
                                                             "resources/images/event_page_frame.png").convert_alpha()
