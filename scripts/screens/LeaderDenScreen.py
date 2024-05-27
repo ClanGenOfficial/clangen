@@ -867,6 +867,7 @@ class LeaderDenScreen(Screens):
 
         if not success:
             thought = "Heard rumors that clan cats were searching for {PRONOUN/m_c/object}"
+            self.focus_cat.thought = event_text_adjust(Cat, thought, self.focus_cat, clan=game.clan)
             result_text = "m_c could not be found by the Clan."
         else:
             if object_id == "#outsider_hunt":
@@ -957,17 +958,16 @@ class LeaderDenScreen(Screens):
                         invited_cat.update_mentor()
                     else:
                         invited_cat.status = "warrior"
+                        
                 invited_cat.create_relationships_new_cat()
+
+                invited_cat.thought = event_text_adjust(Cat, thought, self.focus_cat, clan=game.clan)
 
         # only one interaction allowed per moon
         self.focus_outsider_button_container.disable()
 
         # adjust text
         result_text = event_text_adjust(Cat, result_text, self.focus_cat, clan=game.clan)
-
-        # set thought
-        if thought:
-            self.focus_cat.thought = event_text_adjust(Cat, thought, self.focus_cat, clan=game.clan)
 
         # check reputation value
         if game.clan.reputation < 0:
