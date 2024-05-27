@@ -1234,15 +1234,16 @@ def clan_symbol_sprite(clan, return_string=False):
     else:
         possible_sprites = []
         for sprite in sprites.clan_symbols:
-            if clan_name.upper() in sprite:
+            name = sprite.strip("1234567890")
+            if f"symbol{clan_name.upper()}" == name:
                 possible_sprites.append(sprite)
-
+        print(possible_sprites)
         if return_string:  # returns the str of the symbol
             if possible_sprites:
                 return choice(possible_sprites)
             else:
                 # give random symbol if no matching symbol exists
-                print(f"WARNING: attempted to return symbol string, but there's no clan symbol for {clan_name.upper()}")
+                print(f"WARNING: attempted to return symbol string, but there's no clan symbol for {clan_name.upper()}.  Random symbol string returned.")
                 return f"{choice(sprites.clan_symbols)}"
 
         else:  # returns the actual sprite of the symbol
@@ -1250,7 +1251,7 @@ def clan_symbol_sprite(clan, return_string=False):
                 return sprites.sprites[choice(possible_sprites)]
             else:
                 # give random symbol if no matching symbol exists
-                print(f"WARNING: attempted to return symbol sprite, but there's no clan symbol for {clan_name.upper()}")
+                print(f"WARNING: attempted to return symbol sprite, but there's no clan symbol for {clan_name.upper()}.  Random symbol sprite returned.")
                 return sprites.sprites[f"{choice(sprites.clan_symbols)}"]
 
 

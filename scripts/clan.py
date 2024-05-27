@@ -1151,7 +1151,9 @@ class OtherClan():
     ]
 
     def __init__(self, name='', relations=0, temperament='', chosen_symbol=""):
-        self.name = name or choice(names.names_dict["normal_prefixes"])
+        clan_names = names.names_dict["normal_prefixes"]
+        clan_names.extend(names.names_dict["clan_prefixes"])
+        self.name = name or choice(clan_names)
         self.relations = relations or randint(8, 12)
         self.temperament = temperament or choice(self.temperament_list)
         if self.temperament not in self.temperament_list:

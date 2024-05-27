@@ -852,21 +852,21 @@ class LeaderDenScreen(Screens):
         game.clan.clan_settings["outsider_interaction"] = True
 
         # percentage of success
-        success = False
         success_chance = (int(game.clan.reputation) / 100) / 1.5
         if game.clan.leader.not_working:
             success_chance = success_chance / 1.2
         if success_chance <= 0:
-            success = 0.1
+            success_chance = 0.1
         print(f"CHANCE: {success_chance}")
         if random.random() < success_chance:
             success = True
             print("INTERACTION SUCCESS")
         else:
+            success = False
             print("INTERACTION FAIL")
 
         if not success:
-            thought = "Heard rumors that c_n was searching for them"
+            thought = "Heard rumors that clan cats were searching for {PRONOUN/m_c/object}"
             result_text = "m_c could not be found by the Clan."
         else:
             if object_id == "#outsider_hunt":
@@ -927,37 +927,37 @@ class LeaderDenScreen(Screens):
                 # clan_setting will check ceremonies on timeskip
                 game.clan.clan_settings["found_lost_cat_ID"] = additional_cats
 
-        # set status
-        if not additional_cats:
-            additional_cats = [self.focus_cat.ID]
+            # set status
+            if not additional_cats:
+                additional_cats = [self.focus_cat.ID]
 
-        for cat_id in additional_cats:
-            invited_cat = Cat.fetch_cat(cat_id)
-            if not invited_cat.dead and invited_cat.status.lower() in ["kittypet", "loner", "rogue", "former clancat",
-                                                                       "exiled"]:
-                if invited_cat.backstory in BACKSTORIES["backstory_categories"]["healer_backstories"]:
-                    invited_cat.status = "medicine cat"
-                elif invited_cat.age in ["newborn", "kitten"]:
-                    invited_cat.status = invited_cat.age
-                    if not invited_cat.name.suffix:
-                        invited_cat.name = Name(invited_cat.status,
-                                                invited_cat.name.prefix,
-                                                invited_cat.name.suffix,
-                                                invited_cat.pelt.colour,
-                                                invited_cat.pelt.name,
-                                                invited_cat.pelt.tortiepattern,
-                                                game.clan.biome
-                                                )
-                        invited_cat.name.give_suffix(pelt=None, biome=game.clan.biome, tortiepattern=None)
-                        invited_cat.specsuffix_hidden = False
-                elif invited_cat.age == "senior":
-                    invited_cat.status = "elder"
-                elif invited_cat.age == "adolescent":
-                    invited_cat.status = "apprentice"
-                    invited_cat.update_mentor()
-                else:
-                    invited_cat.status = "warrior"
-            invited_cat.create_relationships_new_cat()
+            for cat_id in additional_cats:
+                invited_cat = Cat.fetch_cat(cat_id)
+                if not invited_cat.dead and invited_cat.status.lower() in ["kittypet", "loner", "rogue", "former clancat",
+                                                                           "exiled"]:
+                    if invited_cat.backstory in BACKSTORIES["backstory_categories"]["healer_backstories"]:
+                        invited_cat.status = "medicine cat"
+                    elif invited_cat.age in ["newborn", "kitten"]:
+                        invited_cat.status = invited_cat.age
+                        if not invited_cat.name.suffix:
+                            invited_cat.name = Name(invited_cat.status,
+                                                    invited_cat.name.prefix,
+                                                    invited_cat.name.suffix,
+                                                    invited_cat.pelt.colour,
+                                                    invited_cat.pelt.name,
+                                                    invited_cat.pelt.tortiepattern,
+                                                    game.clan.biome
+                                                    )
+                            invited_cat.name.give_suffix(pelt=None, biome=game.clan.biome, tortiepattern=None)
+                            invited_cat.specsuffix_hidden = False
+                    elif invited_cat.age == "senior":
+                        invited_cat.status = "elder"
+                    elif invited_cat.age == "adolescent":
+                        invited_cat.status = "apprentice"
+                        invited_cat.update_mentor()
+                    else:
+                        invited_cat.status = "warrior"
+                invited_cat.create_relationships_new_cat()
 
         # only one interaction allowed per moon
         self.focus_outsider_button_container.disable()
