@@ -684,7 +684,7 @@ class Condition_Events():
                 event_types.append("birth_death")
                 event = f"{cat.name} died from complications caused by {condition}."
                 if cat.status == "leader" and game.clan.leader_lives >= 1:
-                    event = f"{cat.name} lost a live to {condition}."
+                    event = f"{cat.name} lost a life to {condition}."
                 event_list.append(event)
 
                 if cat.status != 'leader':
