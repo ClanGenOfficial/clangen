@@ -20,7 +20,7 @@
 
 ## Proof of Testing
 
-<!-- Include any screenshots or debugging steps here. At least one form of proof of testing is REQUIRED for all new content. You must be able to compile and run the code before you PR it here. -->
+<!-- Include any screenshots or debugging steps here. At least one form of proof of testing is REQUIRED for all new content. You must be able to run the code locally before you PR it here. -->
 
 ## Changelog/Credits
 
