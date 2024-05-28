@@ -113,8 +113,6 @@ class Events:
                 game.cur_events_list.insert(0, Single_Event(event_string))
                 game.freshkill_event_list.append(event_string)
 
-
-
         # Adding in any potential lead den events that have been saved
         if "lead_den_event" in game.clan.clan_settings:
             if game.clan.clan_settings["lead_den_event"]:

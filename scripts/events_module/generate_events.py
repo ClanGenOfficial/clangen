@@ -644,14 +644,31 @@ class GenerateEvents:
         for event in events:
             if event["interaction_type"] != interaction_type:
                 continue
-            if other_clan_temper not in event["other_clan_temper"] and "any" not in event["other_clan_temper"]:
-                continue
-            if player_clan_temper not in event["player_clan_temper"] and "any" not in event["player_clan_temper"]:
-                continue
+
+            if "other_clan_temper" in event or "player_clan_temper" in event:
+                if other_clan_temper not in event["other_clan_temper"] and "any" not in event["other_clan_temper"]:
+                    continue
+                if player_clan_temper not in event["player_clan_temper"] and "any" not in event["player_clan_temper"]:
+                    continue
+            elif "outsider_rep" in event:
+                reputation = game.clan.reputation
+                # hostile
+                if 1 <= reputation <= 30 and "hostile" not in event.reputation and "any" not in event.reputation:
+                    continue
+                # neutral
+                elif 31 <= reputation <= 70 and "neutral" not in event.reputation and "any" not in event.reputation:
+                    continue
+                # welcoming
+                elif 71 <= reputation <= 100 and "welcoming" not in event.reputation and "any" not in event.reputation:
+                    continue
 
             cat_info = event["m_c"]
             if "status" in cat_info:
-                if cat.status not in cat_info["status"]:
+                # special lost cat check
+                if event_type == "outsider":
+                    if cat.status not in ["loner", "rogue", "kittypet", "former clancat", "exiled"] and "lost" not in cat_info["status"]:
+                        continue
+                if cat.status not in cat_info["status"] and "any" not in cat_info["status"]:
                     continue
             if "age" in cat_info:
                 if cat.age not in cat_info["age"]:
