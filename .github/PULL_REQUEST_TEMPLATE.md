@@ -14,13 +14,13 @@
 
 ## Linked Issues
 
-<!-- If this is not a bugfix, you can remove this section. -->
+<!-- If this is not related to an issue, you can remove this section. -->
 <!-- If this was in response to a github issue, please write it here with the format Fixes: #1234 so that github knows to link the issues. -->
 <!-- If this PR was the result of discussion/testing on the discord, please add a link to the discord conversation here. -->
 
 ## Proof of Testing
 
-<!-- Include any screenshots or debugging steps here. At least one form of proof of testing is REQUIRED for all new content. You must be able to run the code locally before you PR it here. -->
+<!-- Include any screenshots, debugging steps or links to beta testing threads here. At least one form of proof of testing is REQUIRED for all new content. You must be able to run the code locally before you PR it here. -->
 
 ## Changelog/Credits
 
