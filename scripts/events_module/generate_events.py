@@ -627,14 +627,14 @@ class GenerateEvents:
 
         return possible_events
 
-    def possible_lead_den_events(self, cat, other_clan_temper, player_clan_temper, event_type: str,
-                                 interaction_type: str, success: bool) -> list:
+    def possible_lead_den_events(self, cat, event_type: str, interaction_type: str, success: bool,
+                                 other_clan_temper=None, player_clan_temper=None) -> list:
         """
         finds and generates a list of possible leader den events
         :param cat: the cat object of the cat attending the Gathering
         :param other_clan_temper: the temperament of the other clan
         :param player_clan_temper: the temperament of the player clan
-        :param event_type: other_clan or outsider (only other_clan currently has dicts, outsider is still hardcoded)
+        :param event_type: other_clan or outsider
         :param interaction_type: str retrieved from object_ID of selected interaction button
         :param success: True if the interaction was a success, False if it was a failure
         """
@@ -650,16 +650,17 @@ class GenerateEvents:
                     continue
                 if player_clan_temper not in event["player_clan_temper"] and "any" not in event["player_clan_temper"]:
                     continue
-            elif "outsider_rep" in event:
+
+            elif "reputation" in event:
                 reputation = game.clan.reputation
                 # hostile
-                if 1 <= reputation <= 30 and "hostile" not in event.reputation and "any" not in event.reputation:
+                if 1 <= reputation <= 30 and "hostile" not in event["reputation"] and "any" not in event["reputation"]:
                     continue
                 # neutral
-                elif 31 <= reputation <= 70 and "neutral" not in event.reputation and "any" not in event.reputation:
+                elif 31 <= reputation <= 70 and "neutral" not in event["reputation"] and "any" not in event["reputation"]:
                     continue
                 # welcoming
-                elif 71 <= reputation <= 100 and "welcoming" not in event.reputation and "any" not in event.reputation:
+                elif 71 <= reputation <= 100 and "welcoming" not in event["reputation"] and "any" not in event["reputation"]:
                     continue
 
             cat_info = event["m_c"]

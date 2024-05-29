@@ -2,7 +2,7 @@
   {
     "interaction_type": "hunt",
     "event_text": "After a long search, m_c is found and killed where they stand.",
-    "outsider_rep": ["any"],
+    "reputation": ["any"],
     "rep_change": -10,
     "m_c": {
       "status": ["loner", "rogue", "kittypet", "exiled", "lost"],
@@ -13,7 +13,7 @@
   {
     "interaction_type": "drive",
     "event_text": "m_c was found near c_n territory and driven far out of the surrounding lands.",
-    "outsider_rep": ["any"],
+    "reputation": ["any"],
     "rep_change": -2,
     "m_c": {
       "status": ["loner", "rogue", "kittypet", "exiled", "lost"],
@@ -23,7 +23,7 @@
   {
     "interaction_type": "invite",
     "event_text": "m_c was found and invited into the Clan.",
-    "outsider_rep": ["any"],
+    "reputation": ["any"],
     "rep_change": -1,
     "m_c": {
       "status": ["loner", "rogue", "kittypet"],
@@ -44,7 +44,7 @@
   {
     "interaction_type": "invite",
     "event_text": "m_c was found and invited back into the Clan.",
-    "outsider_rep": ["any"],
+    "reputation": ["any"],
     "rep_change": -1,
     "m_c": {
       "status": ["exiled"],
@@ -65,7 +65,7 @@
   {
     "interaction_type": "search",
     "event_text": "m_c was found brought back to the safety of the Clan",
-    "outsider_rep": ["any"],
+    "reputation": ["any"],
     "rep_change": -1,
     "m_c": {
       "status": ["lost"],

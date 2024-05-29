@@ -3,35 +3,33 @@ import random
 import pygame
 import pygame_gui
 
-from scripts.cat.cats import Cat, BACKSTORIES
-from scripts.cat.history import History
-from scripts.cat.names import Name
+from scripts.cat.cats import Cat
 from scripts.clan import OtherClan
-from scripts.events_module.generate_events import generate_events
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton
-from scripts.game_structure.windows import NotificationWindow
 from scripts.screens.Screens import Screens
 from scripts.utility import scale, get_text_box_theme, get_other_clan_relation, get_other_clan, \
-    clan_symbol_sprite, shorten_text_to_fit, event_text_adjust, history_text_adjust, get_med_cats
+    clan_symbol_sprite, shorten_text_to_fit, get_med_cats
 
 
 class LeaderDenScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
-        self.helper_cat = None
-        self.no_gathering = False
-        self.helper_name = None
+
         self.current_page = 1
         self.help_button = None
         self.back_button = None
 
-        self.focus_cat = None
         self.focus_clan = None
+        self.focus_cat = None
+        self.helper_cat = None
+        self.helper_name = None
         self.deputy_name = None
         self.leader_name = None
         self.clan_temper = None
+        self.clan_rep = None
+        self.no_gathering = False
 
         self.screen_elements = {}
 
@@ -80,10 +78,10 @@ class LeaderDenScreen(Screens):
                         self.update_other_clan_focus()
             elif event.ui_element == self.focus_frame_elements["negative_interaction"]:
                 object_id = self.focus_frame_elements["negative_interaction"].get_object_ids()
-                self.update_interaction_choice(object_id[2])
+                self.update_clan_interaction_choice(object_id[2])
             elif event.ui_element == self.focus_frame_elements["positive_interaction"]:
                 object_id = self.focus_frame_elements["positive_interaction"].get_object_ids()
-                self.update_interaction_choice(object_id[2])
+                self.update_clan_interaction_choice(object_id[2])
             elif event.ui_element == self.focus_frame_elements["clans_tab"]:
                 self.open_clans_tab()
             elif event.ui_element == self.focus_frame_elements["outsiders_tab"]:
@@ -92,14 +90,21 @@ class LeaderDenScreen(Screens):
                 self.focus_cat = event.ui_element.return_cat_object()
                 self.update_outsider_focus()
             elif event.ui_element in self.focus_button.values():
-                result = self.handle_outsider_interaction(event.ui_element.get_object_ids()[3])
+                self.update_outsider_interaction_choice(event.ui_element.get_object_ids()[3])
                 self.update_outsider_cats()
-                NotificationWindow(result)
 
     def screen_switches(self):
         """
         Handle creating new elements when switching to this screen
         """
+        # just making sure these are set up ahead of time
+        if "lead_den_interaction" not in game.clan.clan_settings:
+            game.clan.clan_settings["lead_den_interaction"] = False
+        if "lead_den_clan_event" not in game.clan.clan_settings:
+            game.clan.clan_settings["lead_den_clan_event"] = {}
+        if "lead_den_outsider_event" not in game.clan.clan_settings:
+            game.clan.clan_settings["lead_den_outsider_event"] = {}
+
         # no menu header allowed
         self.hide_menu_buttons()
 
@@ -192,29 +197,33 @@ class LeaderDenScreen(Screens):
         self.leader_name = game.clan.leader.name
         self.clan_temper = game.clan.temperament
 
+        self.screen_elements["clan_notice_text"] = pygame_gui.elements.UITextBox(
+            relative_rect=scale(pygame.Rect((135, 750), (890, -1))),
+            html_text=f" {self.leader_name} is considering how to handle the next Gathering. ",
+            object_id=get_text_box_theme("#text_box_30_horizcenter_spacing_95"),
+            visible=False,
+            manager=MANAGER
+        )
+        self.screen_elements["outsider_notice_text"] = pygame_gui.elements.UITextBox(
+            relative_rect=scale(pygame.Rect((135, 750), (890, -1))),
+            html_text=f" {self.leader_name} is considering what to do about nearby Outsiders. ",
+            object_id=get_text_box_theme("#text_box_30_horizcenter_spacing_95"),
+            visible=False,
+            manager=MANAGER
+        )
+
         if game.clan.leader.not_working() and self.helper_cat:
             self.helper_name = self.helper_cat.name
-            self.screen_elements["notice_text"] = pygame_gui.elements.UITextBox(
-                relative_rect=scale(pygame.Rect((135, 750), (890, -1))),
-                html_text=f" {self.leader_name} and {self.helper_name} are discussing how to handle the next Gathering. ",
-                object_id=get_text_box_theme("#text_box_30_horizcenter_spacing_95"),
-                manager=MANAGER
-            )
+            self.screen_elements["clan_notice_text"].set_text(f" {self.leader_name} and {self.helper_name} are discussing how to handle the next Gathering. ")
+            self.screen_elements["outsider_notice_text"].set_text(f" {self.leader_name} and {self.helper_name} are discussing what to do about nearby Outsiders. ")
+
         elif game.clan.leader.not_working():
             self.no_gathering = True
-            self.screen_elements["notice_text"] = pygame_gui.elements.UITextBox(
-                relative_rect=scale(pygame.Rect((135, 750), (890, -1))),
-                html_text=f" There is no one to attend the next Gathering. {self.leader_name} must hope to recover in time for the next one. ",
-                object_id=get_text_box_theme("#text_box_30_horizcenter_spacing_95"),
-                manager=MANAGER
-            )
-        else:
-            self.screen_elements["notice_text"] = pygame_gui.elements.UITextBox(
-                relative_rect=scale(pygame.Rect((135, 750), (890, -1))),
-                html_text=f" {self.leader_name} is considering how to handle the next Gathering. ",
-                object_id=get_text_box_theme("#text_box_30_horizcenter_spacing_95"),
-                manager=MANAGER
-            )
+            self.screen_elements["clan_notice_text"].set_text(f" There is no one to attend the next Gathering. {self.leader_name} must hope to recover in time for the next one. ")
+            self.screen_elements["outsider_notice_text"].set_text(f" {self.leader_name} is considering what to do about nearby Outsiders. ")
+
+        self.screen_elements["clan_notice_text"].show()
+
         self.screen_elements["temper_text"] = pygame_gui.elements.UITextBox(
             relative_rect=scale(pygame.Rect((135, 820), (890, -1))),
             html_text=f"The other Clans think {game.clan.name}Clan is {self.clan_temper}.",
@@ -222,15 +231,12 @@ class LeaderDenScreen(Screens):
             manager=MANAGER
         )
 
-        current_setting = None
         # INITIAL DISPLAY - display currently chosen interaction OR first clan in list
-        if "clan_interaction" in game.clan.clan_settings:
-            current_setting = game.clan.clan_settings["clan_interaction"]
-
-        if current_setting:
-            self.focus_clan = get_other_clan(current_setting[0])
+        if game.clan.clan_settings["lead_den_clan_event"]:
+            current_setting = game.clan.clan_settings["lead_den_clan_event"]
+            self.focus_clan = get_other_clan(current_setting["other_clan"])
             self.update_other_clan_focus()
-            self.update_interaction_choice(current_setting[1])
+            self.update_clan_interaction_choice(current_setting["interaction_type"])
         else:
             self.focus_clan = game.clan.all_clans[0]
             self.update_other_clan_focus()
@@ -398,7 +404,7 @@ class LeaderDenScreen(Screens):
         self.focus_frame_elements["clans_tab"].disable()
         self.focus_frame_elements["outsiders_tab"].enable()
 
-        self.update_temper_text(temper=True)
+        self.update_text(clan=True)
 
     def open_outsiders_tab(self):
         """
@@ -415,7 +421,7 @@ class LeaderDenScreen(Screens):
         self.focus_frame_elements["outsiders_tab"].disable()
         self.focus_frame_elements["clans_tab"].enable()
 
-        self.update_temper_text(temper=False)
+        self.update_text(clan=False)
 
     def update_other_clan_focus(self):
         """
@@ -496,23 +502,22 @@ class LeaderDenScreen(Screens):
         self.focus_frame_elements["positive_interaction"].change_object_id(f"#clan_{interaction[1]}")
         self.focus_frame_elements["positive_interaction"].show()
 
-    def update_interaction_choice(self, object_id):
+    def update_clan_interaction_choice(self, object_id):
         """
-        handles changing chosen clan interaction. updates clan_settings and notice text.
+        handles changing chosen clan interaction. updates notice text.
         :param object_id: the object ID of the interaction button
         """
 
         interaction = object_id.replace("#clan_", "")
         other_clan = self.focus_clan.name
 
-        game.clan.clan_settings["clan_interaction"] = [other_clan, interaction]
-
-        self.screen_elements["notice_text"].set_text(
+        self.screen_elements["clan_notice_text"].set_text(
             f" {self.leader_name} has decided to {interaction} {other_clan}Clan.")
 
         self.handle_other_clan_interaction(interaction)
 
     def handle_other_clan_interaction(self, interaction_type: str):
+        game.clan.clan_settings["lead_den_interaction"] = True
 
         gathering_cat = game.clan.leader if not self.helper_cat else self.helper_cat
 
@@ -530,35 +535,13 @@ class LeaderDenScreen(Screens):
         if random.random() >= fail_chance:
             success = True
 
-        events = generate_events.possible_lead_den_events(cat=gathering_cat,
-                                                          other_clan_temper=self.focus_clan.temperament,
-                                                          player_clan_temper=self.clan_temper,
-                                                          event_type="other_clan",
-                                                          interaction_type=interaction_type,
-                                                          success=success
-                                                          )
-        chosen_event = random.choice(events)
-        event_text = chosen_event["event_text"]
-        if success:
-            event_text += f" ({interaction_type.capitalize()} o_c success! "
-        else:
-            event_text += f" ({interaction_type.capitalize()} o_c failure! "
-
-        rel_change = chosen_event["rel_change"]
-        if rel_change > 0:
-            event_text += f"Clan relations improved.)"
-        elif rel_change == 0:
-            event_text += f"Clan relations unchanged.)"
-        else:
-            event_text += f"Clan relations worsened.)"
-
-        game.clan.clan_settings["lead_den_event"] = {
-            "text": event_text,
-            "ID": gathering_cat.ID,
+        game.clan.clan_settings["lead_den_clan_event"] = {
+            "cat_ID": gathering_cat.ID,
             "other_clan": self.focus_clan.name,
-            "rel_change": rel_change
+            "player_clan_temper": self.clan_temper,
+            "interaction_type": interaction_type,
+            "success": success
         }
-        print(game.clan.clan_settings["lead_den_event"])
 
     def _compare_temper(self, player_temper_int, other_temper_int) -> float:
         """
@@ -751,16 +734,22 @@ class LeaderDenScreen(Screens):
                 print("outsider buttons disabled")
                 self.focus_outsider_button_container.disable()
 
-    def update_temper_text(self, temper=True):
+    def update_text(self, clan=True):
         """
         changes between clan temper and clan rep text
-        :param temper: default True. True sets to clan temper text, False sets to clan rep text
+        :param clan: default True. True sets to other_clan text, False sets to outsider text
         """
 
-        if temper:
+        if clan:
+            self.screen_elements["outsider_notice_text"].hide()
+            self.screen_elements["clan_notice_text"].show()
+
             self.screen_elements["temper_text"].set_text(
                 f"The other Clans think {game.clan.name}Clan is {self.clan_temper}.")
         else:
+            self.screen_elements["outsider_notice_text"].show()
+            self.screen_elements["clan_notice_text"].hide()
+
             self.clan_rep = game.clan.reputation
             if 1 <= int(self.clan_rep) <= 30:
                 reputation = "hostile"
@@ -840,23 +829,47 @@ class LeaderDenScreen(Screens):
 
             i += 1
 
+    def update_outsider_interaction_choice(self, object_id):
+        """
+        handles changing chosen outsider interaction. updates notice text.
+        :param object_id: the object ID of the interaction button
+        """
+        outsider = self.focus_cat.name
+
+        interaction = "This should not appear - report as bug"
+        if object_id == "#outsider_hunt":
+            interaction = "hunt down"
+        elif object_id == "#outsider_drive":
+            interaction = "drive off"
+        elif object_id == "#outsider_invite":
+            interaction = "invite in"
+        elif object_id == "#outsider_search":
+            interaction = "search for"
+
+        self.screen_elements["outsider_notice_text"].set_text(
+            f" {self.leader_name} has decided to {interaction} {outsider}.")
+
+        self.handle_outsider_interaction(object_id)
+
     def handle_outsider_interaction(self, object_id):
         """
         handles determining the outcome of an outsider interaction, returns result text
         :param object_id: the object id of the interaction button pressed
         """
-        result_text = None
-        thought = None
-        additional_cats = []
-
-        game.clan.clan_settings["outsider_interaction"] = True
+        game.clan.clan_settings["lead_den_interaction"] = True
+        interaction_type = object_id.replace("#outsider_", "")
 
         # percentage of success
         success_chance = (int(game.clan.reputation) / 100) / 1.5
         if game.clan.leader.not_working:
             success_chance = success_chance / 1.2
+        # searching should be extra hard, after all those kitties are LOST
+        if interaction_type == "search":
+            success_chance = success_chance / 2
+        # if we got to zero somehow, reset to give a teeny little chance of success
         if success_chance <= 0:
             success_chance = 0.1
+
         print(f"CHANCE: {success_chance}")
         if random.random() < success_chance:
             success = True
@@ -865,118 +878,12 @@ class LeaderDenScreen(Screens):
             success = False
             print("INTERACTION FAIL")
 
-        if not success:
-            thought = "Heard rumors that Clan cats were searching for {PRONOUN/m_c/object}"
-            self.focus_cat.thought = event_text_adjust(Cat, thought, self.focus_cat, clan=game.clan)
-            result_text = "m_c could not be found by the Clan."
-        else:
-            if object_id == "#outsider_hunt":
-                History.add_death(self.focus_cat, death_text=history_text_adjust("m_c was killed by c_n.",
-                                                                                 other_clan_name=None,
-                                                                                 clan=game.clan))
-                self.focus_cat.die()
-                result_text = "m_c was found and killed by a search party. c_n's reputation among Outsiders has " \
-                              "greatly lowered. "
-                game.clan.reputation += -40
-
-            elif object_id == "#outsider_drive":
-                self.focus_cat.status = "exiled"
-                self.focus_cat.exiled = True
-                self.focus_cat.driven_out = True
-                result_text = "m_c was found and driven out of the area. c_n's reputation among Outsiders has lowered."
-                game.clan.reputation += -20
-
-            elif object_id == "#outsider_invite":
-                result_text = "m_c was found and invited into the Clan. c_n's reputation among Outsiders has improved."
-                game.clan.reputation += 5
-
-                if self.focus_cat.exiled:
-                    thought = "Is surprised c_n has welcomed {PRONOUN/m_c/object} back"
-                else:
-                    thought = "Is curious about the Clan that sought {PRONOUN/m_c/object} out"
-
-                # adds to clan and also checks for accompanying kits
-                additional_cats = self.focus_cat.add_to_clan()
-                if additional_cats:
-                    result_text += " m_c brings along {PRONOUN/m_c/poss} "
-                    if len(additional_cats) > 1:
-                        result_text += str(len(additional_cats)) + " kittens."
-                    else:
-                        result_text += "kit."
-
-                additional_cats.append(self.focus_cat.ID)
-                # clan_setting will check ceremonies on timeskip
-                game.clan.clan_settings["found_lost_cat_ID"] = additional_cats
-                print(game.clan.clan_settings["found_lost_cat_ID"])
-
-            elif object_id == "#outsider_search":
-                self.focus_cat.add_to_clan()
-                thought = "Is ecstatic that c_n found {PRONOUN/m_c/object}!"
-
-                result_text = "m_c was found and brought back to the Clan."
-
-                # adds to clan and also checks for accompanying kits
-                additional_cats = self.focus_cat.add_to_clan()
-                if additional_cats:
-                    result_text += " m_c brings along {PRONOUN/m_c/poss} "
-                    if len(additional_cats) > 1:
-                        result_text += str(len(additional_cats)) + " kittens."
-                    else:
-                        result_text += "kit."
-
-                additional_cats.append(self.focus_cat.ID)
-                # clan_setting will check ceremonies on timeskip
-                game.clan.clan_settings["found_lost_cat_ID"] = additional_cats
-
-            # set status
-            if not additional_cats:
-                additional_cats = [self.focus_cat.ID]
-
-            for cat_id in additional_cats:
-                invited_cat = Cat.fetch_cat(cat_id)
-                if not invited_cat.dead and invited_cat.status.lower() in ["kittypet", "loner", "rogue", "former clancat",
-                                                                           "exiled"]:
-                    if invited_cat.backstory in BACKSTORIES["backstory_categories"]["healer_backstories"]:
-                        invited_cat.status = "medicine cat"
-                    elif invited_cat.age in ["newborn", "kitten"]:
-                        invited_cat.status = invited_cat.age
-                        if not invited_cat.name.suffix:
-                            invited_cat.name = Name(invited_cat.status,
-                                                    invited_cat.name.prefix,
-                                                    invited_cat.name.suffix,
-                                                    invited_cat.pelt.colour,
-                                                    invited_cat.pelt.name,
-                                                    invited_cat.pelt.tortiepattern,
-                                                    game.clan.biome
-                                                    )
-                            invited_cat.name.give_suffix(pelt=None, biome=game.clan.biome, tortiepattern=None)
-                            invited_cat.specsuffix_hidden = False
-                    elif invited_cat.age == "senior":
-                        invited_cat.status = "elder"
-                    elif invited_cat.age == "adolescent":
-                        invited_cat.status = "apprentice"
-                        invited_cat.update_mentor()
-                    else:
-                        invited_cat.status = "warrior"
-
-                invited_cat.create_relationships_new_cat()
-
-                invited_cat.thought = event_text_adjust(Cat, thought, self.focus_cat, clan=game.clan)
-
-        # only one interaction allowed per moon
-        self.focus_outsider_button_container.disable()
-
-        # adjust text
-        result_text = event_text_adjust(Cat, result_text, self.focus_cat, clan=game.clan)
-
-        # check reputation value
-        if game.clan.reputation < 0:
-            game.clan.reputation = 0
-        elif game.clan.reputation > 100:
-            game.clan.reputation = 100
-        print(f"New Rep: {int(game.clan.reputation)}")
-
-        return result_text
+        game.clan.clan_settings["lead_den_outsider_event"] = {
+            "cat_ID": self.focus_cat.ID,
+            "interaction_type": interaction_type,
+            "success": success
+        }
+        print(game.clan.clan_settings["lead_den_outsider_event"])
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]

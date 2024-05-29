@@ -2,7 +2,7 @@
   {
     "interaction_type": "hunt",
     "event_text": "Despite a long search, m_c could not be found by the Clan.",
-    "outsider_rep": ["any"],
+    "reputation": ["any"],
     "rep_change": -2,
     "m_c": {
       "status": ["loner", "rogue", "kittypet"],
@@ -18,7 +18,7 @@
   {
     "interaction_type": "hunt",
     "event_text": "Despite a long search, m_c could not be found by the Clan.",
-    "outsider_rep": ["any"],
+    "reputation": ["any"],
     "rep_change": -2,
     "m_c": {
       "status": ["exiled", "lost"],
@@ -38,7 +38,7 @@
   {
     "interaction_type": "hunt",
     "event_text": "A patrol catches sight of m_c, but the outsider manages to escape.",
-    "outsider_rep": ["any"],
+    "reputation": ["any"],
     "rep_change": -2,
     "m_c": {
       "status": ["loner", "rogue", "kittypet"],
@@ -54,7 +54,7 @@
   {
     "interaction_type": "hunt",
     "event_text": "A patrol catches sight of m_c, but their old Clanmate manages to escape.",
-    "outsider_rep": ["any"],
+    "reputation": ["any"],
     "rep_change": -2,
     "m_c": {
       "status": ["exiled", "lost"],
@@ -74,7 +74,7 @@
   {
     "interaction_type": "drive",
     "event_text": "Despite a long search, m_c could not be found by the Clan.",
-    "outsider_rep": ["any"],
+    "reputation": ["any"],
     "rep_change": -1,
     "m_c": {
       "status": ["loner", "rogue", "kittypet"],
@@ -90,7 +90,7 @@
   {
     "interaction_type": "drive",
     "event_text": "Despite a long search, m_c could not be found by the Clan.",
-    "outsider_rep": ["any", "lost"],
+    "reputation": ["any", "lost"],
     "rep_change": -1,
     "m_c": {
       "status": ["exiled"],
@@ -106,7 +106,7 @@
   {
     "interaction_type": "invite",
     "event_text": "Despite a long search, m_c could not be found by the Clan.",
-    "outsider_rep": ["any"],
+    "reputation": ["any"],
     "rep_change": 1,
     "m_c": {
       "status": ["loner", "rogue", "kittypet"],
@@ -122,7 +122,7 @@
   {
     "interaction_type": "invite",
     "event_text": "Despite a long search, m_c could not be found by the Clan.",
-    "outsider_rep": ["any"],
+    "reputation": ["any"],
     "rep_change": 1,
     "m_c": {
       "status": ["exiled"],
@@ -142,7 +142,7 @@
   {
     "interaction_type": "search",
     "event_text": "Despite a long search, m_c could not be found by the Clan.",
-    "outsider_rep": ["any"],
+    "reputation": ["any"],
     "rep_change": 1,
     "m_c": {
       "status": ["lost"],

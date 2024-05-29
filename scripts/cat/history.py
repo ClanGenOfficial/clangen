@@ -165,7 +165,6 @@ class History:
             "age": cat.moons,
             "moon": game.clan.age
         }
-        print(cat.history.beginning)
 
     @staticmethod
     def add_mentor_facet_influence_strings(cat):

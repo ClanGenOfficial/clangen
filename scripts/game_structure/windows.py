@@ -27,6 +27,7 @@ from scripts.utility import scale, quit, update_sprite, scale_dimentions, logger
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.housekeeping.version import get_version_info
 
+
 class SymbolFilterWindow(UIWindow):
     def __init__(self):
         game.switches['window_open'] = True
@@ -154,39 +155,6 @@ class SymbolFilterWindow(UIWindow):
                                     if s_tag in game.switches["disallowed_symbol_tags"]:
                                         game.switches["disallowed_symbol_tags"].remove(s_tag)
 
-class NotificationWindow(UIWindow):
-    def __init__(self, notif_text):
-        game.switches['window_open'] = True
-
-        super().__init__(scale(pygame.Rect((400, 400), (800, 400))),
-                         window_display_title='Notification',
-                         object_id="#notif_window")
-
-        self.message = pygame_gui.elements.UITextBox(
-            relative_rect=scale(pygame.Rect((20, 20), (760, 360))),
-            html_text=notif_text,
-            object_id="#text_box_30_horizcenter_vertcenter",
-            container=self,
-            starting_height=1,
-            manager=MANAGER
-        )
-
-        self.back_button = UIImageButton(
-            scale(pygame.Rect((740, 10), (44, 44))),
-            "",
-            object_id="#exit_window_button",
-            starting_height=2,
-            container=self
-        )
-
-    def process_event(self, event):
-        super().process_event(event)
-
-        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.back_button:
-                game.switches['window_open'] = False
-                self.kill()
-
 
 class SaveCheck(UIWindow):
     def __init__(self, last_screen, isMainMenu, mm_btn):
@@ -208,7 +176,7 @@ class SaveCheck(UIWindow):
         self.mm_btn = mm_btn
         # adding a variable for starting_height to make sure that this menu is always on top
         top_stack_menu_layer_height = 10000
-        if (self.isMainMenu):
+        if self.isMainMenu:
             self.mm_btn.disable()
             self.main_menu_button = UIImageButton(
                 scale(pygame.Rect((146, 310), (305, 60))),
