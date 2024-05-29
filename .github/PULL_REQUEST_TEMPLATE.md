@@ -1,6 +1,6 @@
 <!-- Write BELOW The Headers and ABOVE The comments else it may not be viewable. -->
 <!-- You can view CONTRIBUTING.md for a detailed description of the pull request process. -->
-<!-- Be sure to name your PR something descriptive and succinct; include Bugfix:, Feature:, Enchancement: or Content: in the title to describe what type of PR it is. -->
+<!-- Be sure to name your PR something descriptive and succinct; include Bugfix:, Feature:, Enhancement: or Content: in the title to describe what type of PR it is. -->
 
 ## About The Pull Request
 
