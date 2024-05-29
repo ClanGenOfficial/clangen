@@ -225,7 +225,12 @@ class Clan():
         game.save_cats()
         number_other_clans = randint(3, 5)
         for _ in range(number_other_clans):
-            self.all_clans.append(OtherClan())
+            other_clan_names = [str(i.name) for i in self.all_clans] + [game.clan.name]
+            other_clan_name = choice(names.names_dict["normal_prefixes"])
+            while other_clan_name in other_clan_names:
+                other_clan_name = choice(names.names_dict["normal_prefixes"])
+            other_clan = OtherClan(name=other_clan_name)
+            self.all_clans.append(other_clan)
         self.save_clan()
         game.save_clanlist(self.name)
         game.switches['clan_list'] = game.read_clans()
@@ -307,7 +312,7 @@ class Clan():
         """
         TODO: DOCS
         """
-        if cat.ID in Cat.all_cats and not cat.outside and cat.ID in Cat.outside_cats:
+        if cat.ID in Cat.all_cats and not cat.outside and not cat.dead and cat.ID in Cat.outside_cats:
             # The outside-value must be set to True before the cat can go to cotc
             Cat.outside_cats.pop(cat.ID)
             cat.clan = str(game.clan.name)

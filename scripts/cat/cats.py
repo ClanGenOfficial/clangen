@@ -685,7 +685,7 @@ class Cat():
         ids = []
         for child_id in children:
             child = Cat.all_cats[child_id]
-            if child.outside and not child.exiled and child.moons < 12:
+            if child.outside and not child.exiled and not child.dead and child.moons < 12:
                 child.add_to_clan()
                 ids.append(child_id)
         
@@ -1761,6 +1761,11 @@ class Cat():
     def get_permanent_condition(self, name, born_with=False, event_triggered=False):
         if name not in PERMANENT:
             print(str(self.name), f"WARNING: {name} is not in the permanent conditions collection.")
+            return
+        
+        if "blind" in self.permanent_condition and name == "failing eyesight":
+            return
+        if "deaf" in self.permanent_condition and name == "partial hearing loss":
             return
 
         # remove accessories if need be
