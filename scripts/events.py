@@ -65,7 +65,6 @@ class Events:
         game.freshkill_events_list = []
         game.mediated = []
         game.switches['saved_clan'] = False
-        game.clan.clan_settings["outsider_interaction"] = False
         self.new_cat_invited = False
         Relation_Events.clear_trigger_dict()
         Patrol.used_patrols.clear()

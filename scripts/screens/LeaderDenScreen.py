@@ -729,10 +729,9 @@ class LeaderDenScreen(Screens):
         self.focus_button["invite_in"].show()
 
         self.focus_outsider_button_container.enable()
-        if "outsider_interaction" in game.clan.clan_settings or self.focus_cat.age == "newborn":
-            if game.clan.clan_settings["outsider_interaction"]:
-                print("outsider buttons disabled")
-                self.focus_outsider_button_container.disable()
+        if self.focus_cat.age == "newborn":  # not allowed to do things to newborns
+            print("outsider buttons disabled")
+            self.focus_outsider_button_container.disable()
 
     def update_text(self, clan=True):
         """

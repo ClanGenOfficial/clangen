@@ -57,8 +57,7 @@ class Sprites():
                    pos,
                    name,
                    sprites_x=3,
-                   sprites_y=7,
-                   no_index=False):  # pos = ex. (2, 3), no single pixels
+                   sprites_y=7):  # pos = ex. (2, 3), no single pixels
 
         """
         Divide sprites on a spritesheet into groups of sprites that are easily accessible
@@ -67,7 +66,6 @@ class Sprites():
         :param name: Name of group being made
         :param sprites_x: default 3, number of sprites horizontally
         :param sprites_y: default 3, number of sprites vertically
-        :param no_index: default False, set True if sprite name does not require cat pose index
         """
 
         group_x_ofs = pos[0] * sprites_x * self.size
@@ -77,10 +75,7 @@ class Sprites():
         # splitting group into singular sprites and storing into self.sprites section
         for y in range(sprites_y):
             for x in range(sprites_x):
-                if no_index:
-                    full_name = f"{name}"
-                else:
-                    full_name = f"{name}{i}"
+                full_name = f"{name}{i}"
 
                 try:
                     new_sprite = pygame.Surface.subsurface(
@@ -329,7 +324,7 @@ class Sprites():
             for col, nyloncollar in enumerate(nyloncollars):
                 self.make_group('nyloncollars', (col, row), f'collars{nyloncollar}')
 
-            
+
     def load_symbols(self):
         """
         loads clan symbols
@@ -351,8 +346,8 @@ class Sprites():
                     self.clan_symbols.append(f"symbol{symbol.upper()}{variant_index}")
                     self.make_group('symbols',
                                     (i, y_pos),
-                                    f"symbol{symbol.upper()}{variant_index}",
-                                    sprites_x=1, sprites_y=1, no_index=True)
+                                    f"symbol{symbol.upper()}",
+                                    sprites_x=variant_index + 1, sprites_y=1)
 
             y_pos += 1
         print(self.clan_symbols)
