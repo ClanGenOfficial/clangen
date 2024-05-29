@@ -782,7 +782,7 @@
         },
         "weight": 10,
         "intro_text": "r_c finds a nice spot to sun {PRONOUN/r_c/self}.",
-        "decline_text": "{PRONOUN/r_c/subject} {VERB/r_c/decide/decides} to stay focused instead.",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} to stay focused instead.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
