@@ -2373,7 +2373,7 @@
         "decline_text": "No one seems interested in p_l's story.",
         "success_outcomes": [
                 {
-                    "text": "While they wash at the land, the tides are connected to the moon, p_l meows. At night this becomes obvious - the new moon and the full moon both produce spring tides of unusal strength. And every so often, if the moon is displeased, a spring tide gains twice the height a strength, producing a king tide.",
+                    "text": "While they wash at the land, the tides are connected to the moon, p_l meows. At night this becomes obvious - the new moon and the full moon both produce spring tides of unusal strength. And every so often, if the moon is displeased, a spring tide gains twice the height and strength, producing a king tide.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_hunt_vision",
