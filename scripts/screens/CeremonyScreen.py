@@ -40,7 +40,9 @@ class CeremonyScreen(Screens):
         else:
             self.life_text = ""
 
-        self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((100, 300), (1400, 1000))))
+        self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((100, 300), (1400, 1000))),
+                                                                         allow_scroll_x=False,
+                                                                         manager=MANAGER)
         self.text = pygame_gui.elements.UITextBox(self.life_text,
                                                   scale(pygame.Rect((0, 0), (1100, -1))),
                                                   object_id=get_text_box_theme("#text_box_30_horizleft"),

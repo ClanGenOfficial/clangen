@@ -455,6 +455,7 @@
             "Greenleaf",
             "Leaf-fall",
             "Leaf-bare",
+            "rc_to_mc",
             "comfort",
             "respect",
             "clan_kits"
@@ -466,7 +467,7 @@
         ]
     },
     {
-        "camp": "Any",
+        "camp": "any",
         "tags": [
             "Leaf-fall",
             "clan_kits",
@@ -652,6 +653,7 @@
             "Leaf-bare",
             "Leaf-fall",
             "murder_reveal",
+	    "clan_discovery",
             "other_cat"
         ],
         "event_text": "m_c boldly confesses to the entire Clan that {PRONOUN/m_c/subject} killed mur_c. m_c claims that mur_c deserved to pay for what {PRONOUN/mur_c/subject} did.",

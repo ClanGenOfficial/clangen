@@ -7,6 +7,7 @@ TODO: Docs
 """
 
 # pylint: enable=line-too-long
+import re
 from collections import Counter
 import random
 import traceback
@@ -952,6 +953,7 @@ class Events:
         # aging the cat
         cat.one_moon()
         cat.manage_outside_trait()
+        self.handle_outside_EX(cat)
             
         cat.skills.progress_skill(cat)
         Pregnancy_Events.handle_having_kits(cat, clan=game.clan)
@@ -1718,7 +1720,38 @@ class Events:
         self.ceremony_accessory = False
 
         return
+        
+    # This gives outsiders exp. There may be a better spot for it to go,
+    # but I put it here to keep the exp functions together
+    def handle_outside_EX(self, cat):
+        if cat.outside:
 
+            if cat.not_working() and int(random.random() * 3):
+                return
+            
+            if cat.age == 'kitten':
+                return
+
+            if cat.age == 'adolescent':
+                ran = game.config["outside_ex"]["base_adolescent_timeskip_ex"]
+            elif cat.age == 'senior':
+                ran = game.config["outside_ex"]["base_senior_timeskip_ex"]
+            else:
+                ran = game.config["outside_ex"]["base_adult_timeskip_ex"]
+
+            role_modifier = 1
+            if cat.status == "kittypet":
+                # Kittypets will gain exp at 2/3 the rate of loners or exiled cats, as this assumes they are
+                # kept indoors at least part of the time and can't hunt/fight as much
+                role_modifier = 0.6
+                
+            exp = random.choice(list(range(ran[0][0], ran[0][1] + 1)) + list(range(ran[1][0], ran[1][1] + 1)))
+
+            if game.clan.game_mode == "classic":
+                exp += random.randint(0, 3)
+
+            cat.experience += max(exp * role_modifier, 1)
+            
     def handle_apprentice_EX(self, cat):
         """
         TODO: DOCS
@@ -2129,7 +2162,28 @@ class Events:
             for poor_little_meowmeow in dead_cats:
                 poor_little_meowmeow.die()
                 # this next bit is temporary until we can rework it
-                History.add_death(poor_little_meowmeow, 'This cat died after disaster struck the Clan.')
+                if re.search("(drown|drowns) after the camp becomes flooded.", event_string):
+                    History.add_death(poor_little_meowmeow, 'This cat died when the camp was flooded.')
+                elif re.search("(are|is) killed after a fire rages through the camp.", event_string):
+                    History.add_death(poor_little_meowmeow, 'This cat died when a fire raged through camp.')
+                elif re.search("(are|is) killed in an ambush by a group of rogues.", event_string):
+                    History.add_death(poor_little_meowmeow, 'This cat died in a rogue ambush.')
+                elif re.search("(go|goes) missing in the night.", event_string):
+                    History.add_death(poor_little_meowmeow, 'This cat went missing in the night.')
+                elif re.search("(are|is) killed after a badger attack.", event_string):
+                    History.add_death(poor_little_meowmeow, 'This cat was killed in a badger attack.')
+                elif re.search("(die|dies) to a greencough outbreak.", event_string):
+                    History.add_death(poor_little_meowmeow, 'This cat died to a greencough outbreak.')
+                elif re.search("(eat|eats) tainted fresh-kill and die.", event_string):
+                    History.add_death(poor_little_meowmeow, 'This cat died after eating tainted fresh-kill.')
+                elif re.search("(die|dies) after freezing from a snowstorm.", event_string):
+                    History.add_death(poor_little_meowmeow, 'This cat froze to death in a snowstorm.')
+                elif re.search("(starve|starves) to death when no prey is found.", event_string):
+                    History.add_death(poor_little_meowmeow, 'This cat starved to death when no prey was found.')
+                elif re.search("(die|dies) after overheating.", event_string):
+                    History.add_death(poor_little_meowmeow, 'This cat died to a heatwave.')
+                elif re.search("(die|dies) after the water dries up from drought.", event_string):
+                    History.add_death(poor_little_meowmeow, 'This cat died to dehydration after a drought.')
 
     def handle_illnesses_or_illness_deaths(self, cat):
         """ 
