@@ -10506,8 +10506,9 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-           "normal adult": [1, 6]
-                    },
+            "normal adult": [1, 5],
+            "apprentice": [1, 5]
+        },
         "weight": 20,
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1", "LORE,1"],
