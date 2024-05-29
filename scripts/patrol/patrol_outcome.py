@@ -176,11 +176,13 @@ class PatrolOutcome():
         format: (Outcome text, results text, outcome art (might be None))
         """        
         results = []
+        # This must be done before text processing so that the new cat's pronouns are generated first
+        results.append(self._handle_new_cats(patrol))
+
         # the text has to be processed before - otherwise leader might be referenced with their warrior name
         processed_text = patrol.process_text(self.text, self.stat_cat)
         
         # This order is important. 
-        results.append(self._handle_new_cats(patrol))
         results.append(self._handle_death(patrol))
         results.append(self._handle_lost(patrol))
         results.append(self._handle_condition_and_scars(patrol))
