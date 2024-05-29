@@ -57,7 +57,8 @@ class Sprites():
                    pos,
                    name,
                    sprites_x=3,
-                   sprites_y=7):  # pos = ex. (2, 3), no single pixels
+                   sprites_y=7,
+                   no_index=False):  # pos = ex. (2, 3), no single pixels
 
         """
         Divide sprites on a spritesheet into groups of sprites that are easily accessible
@@ -66,6 +67,7 @@ class Sprites():
         :param name: Name of group being made
         :param sprites_x: default 3, number of sprites horizontally
         :param sprites_y: default 3, number of sprites vertically
+        :param no_index: default False, set True if sprite name does not require cat pose index
         """
 
         group_x_ofs = pos[0] * sprites_x * self.size
@@ -75,7 +77,10 @@ class Sprites():
         # splitting group into singular sprites and storing into self.sprites section
         for y in range(sprites_y):
             for x in range(sprites_x):
-                full_name = f"{name}{i}"
+                if no_index:
+                    full_name = f"{name}"
+                else:
+                    full_name = f"{name}{i}"
 
                 try:
                     new_sprite = pygame.Surface.subsurface(
@@ -342,12 +347,15 @@ class Sprites():
         y_pos = 1
         for letter in letters:
             for i, symbol in enumerate([symbol for symbol in self.symbol_dict if letter in symbol and self.symbol_dict[symbol]["variants"]]):
+                x_mod = 0
                 for variant_index in range(self.symbol_dict[symbol]["variants"]):
+                    x_mod += variant_index
                     self.clan_symbols.append(f"symbol{symbol.upper()}{variant_index}")
                     self.make_group('symbols',
-                                    (i, y_pos),
-                                    f"symbol{symbol.upper()}",
-                                    sprites_x=variant_index + 1, sprites_y=1)
+                                    (i + x_mod, y_pos),
+                                    f"symbol{symbol.upper()}{variant_index}",
+                                    sprites_x=1, sprites_y=1, no_index=True)
+
 
             y_pos += 1
         print(self.clan_symbols)
