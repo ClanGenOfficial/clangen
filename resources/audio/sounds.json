@@ -1,4 +1,4 @@
 {
-  "button_press": ["264149__reitanna__fwunk.wav"],
-  "button_hover": ["499782__jakebagger__dropping.flac"]
+  "button_press": ["Button_Click_1.mp3","Button_Click_2.mp3","Button_Click_3.mp3","Button_Click_4.mp3","Button_Click_5.mp3"],
+  "button_hover": ["Button_Hover_1.mp3","Button_Hover_2.mp3","Button_Hover_3.mp3","Button_Hover_4.mp3","Button_Hover_5.mp3"]
 }
