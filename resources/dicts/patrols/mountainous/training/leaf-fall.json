@@ -50,7 +50,6 @@
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -91,7 +90,7 @@
         "season": ["leaf-fall"],
         "types": ["training"],
         "tags": [],
-        "patrol_art": "train_general_intro",
+        "patrol_art": "mtn_train_towhee",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -162,7 +161,7 @@
         "season": ["leaf-fall"],
         "types": ["training"],
         "tags": [],
-        "patrol_art": "train_general_intro",
+        "patrol_art": "mtn_train_towhee",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -233,7 +232,7 @@
         "season": ["leaf-fall"],
         "types": ["training"],
         "tags": [],
-        "patrol_art": "train_general_intro",
+        "patrol_art": "mtn_train_towhee",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -305,7 +304,7 @@
         "season": ["leaf-fall"],
         "types": ["training"],
         "tags": [],
-        "patrol_art": "train_general_intro",
+        "patrol_art": "mtn_train_towhee",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -576,5 +575,299 @@
                 }
             }
         ]
+    },
+    {
+        "patrol_id": "mtn_train_leaffall_darkforestfable_storylorelocked1",
+        "biome": ["mountainous"],
+        "season": ["leaf-fall"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1", "LORE,1"],
+        "intro_text": "Once, before myth and magic, there was only StarClan, and no Dark Forest. p_l gathers the patrol, talking in hushed meows of the birth of that place.",
+        "decline_text": "A happier story, the cats ask, please. No one wants difficulty sleeping tonight.",
+        "success_outcomes": [
+            {
+        "text": "A dead warrior woke in StarClan, business unfinished and hate for the living in their heart. They brought ruin and destruction upon the living Clan - but c_n was not without allies. The other cats of StarClan leapt to battle and tore a hole in Silverpelt, casting out the traitor, condemning them to walk a path of decay and cruelty.",
+        "exp": 30,
+        "weight": 20,
+        "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["trust", "respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort"],
+                            "amount": 3
+                        }
+                    ]
+                },
+                {
+                    "text": "s_c can't help but be overly fascinated as p_l speaks about how a warrior was so powerful that they needed to tear a hole in silverpelt just to be able to stop them. s_c hopes to one day be that powerful.",
+                    "exp": 30,
+                    "weight": 20,
+                    "can_have_stat": ["not_pl_rc"],
+                    "stat_skill": ["DARK,1"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["trust", "respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["s_c"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 10
+                        }
+                    ]
+                },
+                {
+                    "text": "s_c hears the tale and is inspired. {PRONOUN/s_c/subject/CAP} {VERB/s_c/wish/wishes} {PRONOUN/s_c/subject} {VERB/s_c/were/was} as strong as the cats in the tale.",
+                    "exp": 30,
+                    "weight": 20,
+                    "can_have_stat": ["not_pl_rc"],
+                    "stat_trait": [
+                        "bloodthirsty",
+                        "troublesome",
+                        "arrogant",
+                        "confident"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["trust", "respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["s_c"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 10
+                        }
+                    ]
+                },
+                {
+                    "text": "At the end of the tale, s_c is inspired by how strong the outcast warrior is, but going against StarClan, that seems like a fool's errand. While s_c wouldn't mind being free of some of the rules of the Clan, {PRONOUN/s_c/subject} wouldn't dare go against StarClan.",
+                    "exp": 30,
+                    "weight": 20,
+                    "can_have_stat": ["not_pl_rc"],
+                    "stat_trait": [
+                        "rebellious"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["trust", "respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["s_c"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "r_c listens, shivering, as p_l describes the birth of the Dark Forest, the ancient, barely won battle between the good cats of the stars and the traitor amidst. {PRONOUN/r_c/subject/CAP} can't stop thinking about it in {PRONOUN/r_c/poss} nest that night, {PRONOUN/r_c/poss} sleep broken and uneasy.",
+                    "exp": 0,
+                    "weight": 20,
+                    "injury": [
+                                {
+                        "cats": ["r_c"],
+                        "injuries": ["constant nightmares"],
+                        "scars": [],
+                        "no_results": false
+                                }
+                            ],
+                        "history_text": {
+                        "reg_death": "r_c died from lack of sleep, {PRONOUN/r_c/poss} vision haunted by dark shadows.",
+                        "lead_death": "from lack of sleep, {PRONOUN/r_c/poss} vision haunted by dark shadows"
+                       }
+                },
+                {
+                    "text": "p_l notices how eager and happy s_c seems to be, and feels a bit uneasy after finishing the tale. No cat should be that pleased to hear this story...",
+                    "exp": 0,
+                    "weight": 20,
+                    "can_have_stat": ["not_pl_rc"],
+                    "stat_skill": ["DARK,1"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["trust", "respect"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["trust", "respect"],
+                            "amount": -10
+                        }
+                    ]
+                },
+                {
+                    "text": "At the end of the tale, p_l asks s_c what {PRONOUN/s_c/subject} {VERB/s_c/think/thinks}. s_c admits to not paying attention to some nursery story meant to scare kits.",
+                    "exp": 30,
+                    "weight": 20,
+                    "can_have_stat": ["not_pl_rc"],
+                    "stat_trait": [
+                        "rebellious"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["trust", "respect"],
+                            "amount": -10
+                        },
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "mtn_train_leaffall_eclipsemyth_storylocked1",
+        "biome": ["mountainous"],
+        "season": ["leaf-fall"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_train_ghost",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1"],
+        "intro_text": "Gather round, gather round. p_l sits in the center of the group, in the most prominent place, and drops {PRONOUN/p_l/poss} voice down low as a hush falls - today, {PRONOUN/p_l/subject}'ll tell the story of StarClan's Great Anger.",
+        "decline_text": "A leaf-fall rainshower chooses that moment to break - thematic, perhaps, but wet. The cats decide to pick up the story some other time.",
+        "success_outcomes": [
+            {
+                    "text": "At first, few but the medicine cats noticed the leaf-fall, its harshness, the snows early, the prey scarce. All noticed on the day StarClan hissed - the great sun itself blinking dark under their anger. All paid heed to the omens then, and the Clans turned back to the Stars, begging for life and sun to return. They learned a lesson not soon forgotten.",
+                    "exp": 40,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": 10
+                        }
+                        ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "r_c refuses to believe their ancestors ever blotted out the sun - not that they couldn't, but that they wouldn't ever hurt the Clans, their own beloved descendants.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["r_c"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 5
+                        }
+                    ]
+                },
+                {
+                    "text": "If StarClan hissed at them, they should've hissed back, s_c argues. Their ancestors are nothing without c_n!",
+                    "exp": 0,
+                    "weight": 20,
+                    "can_have_stat": ["r_c"],
+                    "stat_trait": [
+                        "rebellious"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["r_c"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["respect", "trust", "platonic"],
+                            "amount": -5
+                        },
+                        {
+                            "cats_to": ["r_c"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["r_c"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
     }
 ]

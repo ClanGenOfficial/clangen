@@ -10,8 +10,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "There are dark clouds on the horizon and p_l wonders if they should continue.",
-        "decline_text": "Your patrol decides to head back early.",
+        "intro_text": "There are dark clouds on the horizon, and p_l wonders if they should continue.",
+        "decline_text": "The patrol decides to head back early.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -29,7 +29,7 @@
                 ]
             },
             {
-                "text": "The cats become wet from the rain but otherwise the patrol is successful.",
+                "text": "The cats get wet in the rain, but the patrol is otherwise successful.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -43,7 +43,7 @@
                 ]
             },
             {
-                "text": "s_c makes a careful judgement, and the patrol keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
+                "text": "s_c makes a careful judgment, and the patrol keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"],
@@ -75,7 +75,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
+                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol"],
@@ -106,8 +106,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "There are dark clouds on the horizon and p_l wonders if they should continue.",
-        "decline_text": "Your patrol decides to head back early.",
+        "intro_text": "There are dark clouds on the horizon, and p_l wonders if they should continue.",
+        "decline_text": "The patrol decides to head back early.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -125,7 +125,7 @@
                 ]
             },
             {
-                "text": "The cats become wet from the rain but otherwise the patrol is successful.",
+                "text": "The cats get wet in the rain, but the patrol is otherwise successful.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -139,7 +139,7 @@
                 ]
             },
             {
-                "text": "s_c makes a careful judgement, and the patrol keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
+                "text": "s_c makes a careful judgment, and the patrol keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"],
@@ -171,7 +171,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
+                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol"],
@@ -202,8 +202,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "There are dark clouds on the horizon and p_l wonders if they should continue.",
-        "decline_text": "Your patrol decides to head back early.",
+        "intro_text": "There are dark clouds on the horizon, and p_l wonders if they should continue.",
+        "decline_text": "The patrol decides to head back early.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -221,7 +221,7 @@
                 ]
             },
             {
-                "text": "The cats become wet from the rain but otherwise the patrol is successful.",
+                "text": "The cats get wet in the rain, but the patrol is otherwise successful.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -235,7 +235,7 @@
                 ]
             },
             {
-                "text": "s_c makes a careful judgement, and the patrol keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
+                "text": "s_c makes a careful judgment, and the patrol keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"],
@@ -267,7 +267,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
+                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol"],
@@ -299,7 +299,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
-        "decline_text": "Your patrol decides to head back early.",
+        "decline_text": "The patrol decides to head back early.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -308,12 +308,12 @@
                 "weight": 20
             },
             {
-                "text": "r_c becomes wet from the rain but otherwise the patrol is successful.",
+                "text": "r_c gets wet in the rain, but the patrol is otherwise successful.",
                 "exp": 20,
                 "weight": 5
             },
             {
-                "text": "s_c makes a careful judgement and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the high ground as the rain pours down around {PRONOUN/s_c/object}.",
+                "text": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the high ground as the rain pours down around {PRONOUN/s_c/object}.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"]
@@ -327,7 +327,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
+                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps r_c away.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol"],
@@ -350,7 +350,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
-        "decline_text": "Your patrol decides to head back early.",
+        "decline_text": "The patrol decides to head back early.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -359,12 +359,12 @@
                 "weight": 20
             },
             {
-                "text": "r_c becomes wet from the rain but otherwise the patrol is successful.",
+                "text": "r_c gets wet in the rain, but the patrol is otherwise successful.",
                 "exp": 20,
                 "weight": 5
             },
             {
-                "text": "s_c makes a careful judgement and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the high ground as the rain pours down around {PRONOUN/s_c/object}.",
+                "text": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the high ground as the rain pours down around {PRONOUN/s_c/object}.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"]
@@ -378,7 +378,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
+                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps r_c away.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol"],
@@ -401,7 +401,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
-        "decline_text": "Your patrol decides to head back early.",
+        "decline_text": "The patrol decides to head back early.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -410,12 +410,12 @@
                 "weight": 20
             },
             {
-                "text": "r_c becomes wet from the rain but otherwise the patrol is successful.",
+                "text": "r_c gets wet in the rain, but the patrol is otherwise successful.",
                 "exp": 20,
                 "weight": 5
             },
             {
-                "text": "s_c makes a careful judgement and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the high ground as the rain pours down around {PRONOUN/s_c/object}.",
+                "text": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the high ground as the rain pours down around {PRONOUN/s_c/object}.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"]
@@ -429,7 +429,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
+                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps r_c away.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol"],
@@ -443,16 +443,16 @@
     {
         "patrol_id": "pln_bord_abandontwolegdis1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["disaster"],
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "gen_bord_abandontwolegdis",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol hears some odd noises coming from an abandoned Twoleg nest out on the plains.",
-        "decline_text": "Your patrol decides not to investigate.",
+        "intro_text": "The patrol hears some odd noises coming from an abandoned Twoleg nest out on the plains.",
+        "decline_text": "The patrol decides not to investigate.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -461,7 +461,7 @@
                 "weight": 20
             },
             {
-                "text": "Your patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the ferocity of LionClan, the strength of TigerClan, and the flexibility of LeopardClan. Shaken, but no more than bruised, the patrol manages to retreat to safety.",
+                "text": "The patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the courage of LionClan, the strength of TigerClan, and the dexterity of LeopardClan. Shaken, but no more than bruised, the patrol manages to retreat to safety.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"]
@@ -475,7 +475,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol walks into an ambush by a group of rogues and everyone is slaughtered.",
+                "text": "The patrol walks into an ambush by a group of rogues, and everyone is slaughtered.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol"],
@@ -489,16 +489,16 @@
     {
         "patrol_id": "pln_bord_abandontwolegdis2",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["disaster"],
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "gen_bord_abandontwolegdis",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
         "intro_text": "r_c hears some odd noises coming from an abandoned Twoleg nest out on the plains.",
-        "decline_text": "Your patrol decides not to investigate.",
+        "decline_text": "The patrol decides not to investigate.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -548,8 +548,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "There are dark clouds on the horizon and p_l wonders if they should continue.",
-        "decline_text": "Your patrol decides to head back early.",
+        "intro_text": "There are dark clouds on the horizon, and p_l wonders if they should continue.",
+        "decline_text": "The patrol decides to head back early.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -567,7 +567,7 @@
                 ]
             },
             {
-                "text": "The cats become wet from the rain but otherwise the patrol is successful.",
+                "text": "The cats get wet in the rain, but the patrol is otherwise successful.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -581,7 +581,7 @@
                 ]
             },
             {
-                "text": "s_c makes a careful judgement, and the patrol keeps going, but they make sure to stay far from the riverbanks as the rain begins to pour around them.",
+                "text": "s_c makes a careful judgment, and the patrol keeps going, but they make sure to stay far from the riverbanks as the rain begins to pour around them.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"],
@@ -613,7 +613,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
+                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol"],
@@ -644,8 +644,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "There are dark clouds on the horizon and p_l wonders if they should continue.",
-        "decline_text": "Your patrol decides to head back early.",
+        "intro_text": "There are dark clouds on the horizon, and p_l wonders if they should continue.",
+        "decline_text": "The patrol decides to head back early.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -663,7 +663,7 @@
                 ]
             },
             {
-                "text": "The cats become wet from the rain but otherwise the patrol is successful.",
+                "text": "The cats get wet in the rain, but the patrol is otherwise successful.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -677,7 +677,7 @@
                 ]
             },
             {
-                "text": "s_c makes a careful judgement, and the patrol keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
+                "text": "s_c makes a careful judgment, and the patrol keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"],
@@ -709,7 +709,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
+                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
                 "exp": 0,
                 "weight": 10,
                 "lost_cats": ["patrol"],
@@ -736,8 +736,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "There are dark clouds on the horizon and p_l wonders if they should continue.",
-        "decline_text": "Your patrol decides to head back early.",
+        "intro_text": "There are dark clouds on the horizon, and p_l wonders if they should continue.",
+        "decline_text": "The patrol decides to head back early.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -755,7 +755,7 @@
                 ]
             },
             {
-                "text": "The cats become wet from the rain but otherwise the patrol is successful.",
+                "text": "The cats get wet in the rain, but the patrol is otherwise successful.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -769,7 +769,7 @@
                 ]
             },
             {
-                "text": "s_c makes a careful judgement, and the patrol keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
+                "text": "s_c makes a careful judgment, and the patrol keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"],
@@ -801,7 +801,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
+                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
                 "exp": 0,
                 "weight": 10,
                 "lost_cats": ["patrol"],
@@ -829,7 +829,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
-        "decline_text": "Your patrol decides to head back early.",
+        "decline_text": "The patrol decides to head back early.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -838,12 +838,12 @@
                 "weight": 20
             },
             {
-                "text": "r_c becomes wet from the rain but otherwise the patrol is successful.",
+                "text": "r_c gets wet in the rain, but the patrol is otherwise successful.",
                 "exp": 20,
                 "weight": 5
             },
             {
-                "text": "s_c makes a careful judgement and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the high ground as the rain pours down around them.",
+                "text": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the high ground as the rain pours down around them.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"]
@@ -857,7 +857,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
+                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps r_c away.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol"],
@@ -880,7 +880,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
-        "decline_text": "Your patrol decides to head back early.",
+        "decline_text": "The patrol decides to head back early.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -889,12 +889,12 @@
                 "weight": 20
             },
             {
-                "text": "r_c becomes wet from the rain but otherwise the patrol is successful.",
+                "text": "r_c gets wet in the rain, but the patrol is otherwise successful.",
                 "exp": 20,
                 "weight": 5
             },
             {
-                "text": "s_c makes a careful judgement and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the high ground as the rain pours down around {PRONOUN/s_c/object}.",
+                "text": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the high ground as the rain pours down around {PRONOUN/s_c/object}.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"]
@@ -908,7 +908,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
+                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps r_c away.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol"],
@@ -931,7 +931,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
-        "decline_text": "Your patrol decides to head back early.",
+        "decline_text": "The patrol decides to head back early.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -940,12 +940,12 @@
                 "weight": 20
             },
             {
-                "text": "r_c becomes wet from the rain but otherwise the patrol is successful.",
+                "text": "r_c gets wet in the rain, but the patrol is otherwise successful.",
                 "exp": 20,
                 "weight": 5
             },
             {
-                "text": "s_c makes a careful judgement and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the high ground as the rain pours down around {PRONOUN/s_c/object}.",
+                "text": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the high ground as the rain pours down around {PRONOUN/s_c/object}.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"]
@@ -959,7 +959,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
+                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps r_c away.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol"],
@@ -981,8 +981,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "There are dark clouds on the horizon and p_l wonders if they should continue.",
-        "decline_text": "Your patrol decides to head back early.",
+        "intro_text": "There are dark clouds on the horizon, and p_l wonders if they should continue.",
+        "decline_text": "The patrol decides to head back early.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1000,7 +1000,7 @@
                 ]
             },
             {
-                "text": "The cats become wet from the rain but otherwise the patrol is successful.",
+                "text": "The cats get wet in the rain, but the patrol is otherwise successful.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -1014,7 +1014,7 @@
                 ]
             },
             {
-                "text": "s_c makes a careful judgement, and the patrol keeps going. They stick to the ridges, avoiding the mountain valleys as the rain begins to pour around them.",
+                "text": "s_c makes a careful judgment, and the patrol keeps going. They stick to the ridges, avoiding the mountain valleys as the rain begins to pour around them.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"],
@@ -1046,7 +1046,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
+                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol"],
@@ -1077,8 +1077,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "There are dark clouds on the horizon and p_l wonders if they should continue.",
-        "decline_text": "Your patrol decides to head back early.",
+        "intro_text": "There are dark clouds on the horizon, and p_l wonders if they should continue.",
+        "decline_text": "The patrol decides to head back early.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1096,7 +1096,7 @@
                 ]
             },
             {
-                "text": "The cats become wet from the rain but otherwise the patrol is successful.",
+                "text": "The cats get wet in the rain, but the patrol is otherwise successful.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -1110,7 +1110,7 @@
                 ]
             },
             {
-                "text": "s_c makes a careful judgement, and the patrol keeps going. They stick to the ridges, avoiding the mountain valleys as the rain begins to pour around them.",
+                "text": "s_c makes a careful judgment, and the patrol keeps going. They stick to the ridges, avoiding the mountain valleys as the rain begins to pour around them.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"],
@@ -1142,7 +1142,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
+                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol"],
@@ -1173,8 +1173,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "There are dark clouds on the horizon and p_l wonders if they should continue.",
-        "decline_text": "Your patrol decides to head back early.",
+        "intro_text": "There are dark clouds on the horizon, and p_l wonders if they should continue.",
+        "decline_text": "The patrol decides to head back early.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1192,7 +1192,7 @@
                 ]
             },
             {
-                "text": "The cats become wet from the rain but otherwise the patrol is successful.",
+                "text": "The cats get wet in the rain, but the patrol is otherwise successful.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -1206,7 +1206,7 @@
                 ]
             },
             {
-                "text": "s_c makes a careful judgement, and the patrol keeps going. They stick to the ridges, avoiding the mountain valleys as the rain begins to pour around them.",
+                "text": "s_c makes a careful judgment, and the patrol keeps going. They stick to the ridges, avoiding the mountain valleys as the rain begins to pour around them.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"],
@@ -1238,7 +1238,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
+                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol"],
@@ -1270,7 +1270,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
-        "decline_text": "Your patrol decides to head back early.",
+        "decline_text": "The patrol decides to head back early.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1279,12 +1279,12 @@
                 "weight": 20
             },
             {
-                "text": "r_c becomes wet from the rain but otherwise the patrol is successful.",
+                "text": "r_c gets wet in the rain, but the patrol is otherwise successful.",
                 "exp": 20,
                 "weight": 5
             },
             {
-                "text": "s_c makes a careful judgement and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the ridges and avoid the mountain valleys as the rain pours down around {PRONOUN/s_c/object}.",
+                "text": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the ridges and avoid the mountain valleys as the rain pours down around {PRONOUN/s_c/object}.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"]
@@ -1298,7 +1298,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
+                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps r_c away.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol"],
@@ -1321,7 +1321,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
-        "decline_text": "Your patrol decides to head back early.",
+        "decline_text": "The patrol decides to head back early.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1330,12 +1330,12 @@
                 "weight": 20
             },
             {
-                "text": "r_c becomes wet from the rain but otherwise the patrol is successful.",
+                "text": "r_c gets wet in the rain, but the patrol is otherwise successful.",
                 "exp": 20,
                 "weight": 5
             },
             {
-                "text": "s_c makes a careful judgement and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the ridges and avoid the mountain valleys as the rain pours down around them.",
+                "text": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the ridges and avoid the mountain valleys as the rain pours down around them.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"]
@@ -1349,7 +1349,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
+                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps r_c away.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol"],
@@ -1372,7 +1372,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
-        "decline_text": "Your patrol decides to head back early.",
+        "decline_text": "The patrol decides to head back early.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1381,12 +1381,12 @@
                 "weight": 20
             },
             {
-                "text": "r_c becomes wet from the rain but otherwise the patrol is successful.",
+                "text": "r_c gets wet in the rain, but the patrol is otherwise successful.",
                 "exp": 20,
                 "weight": 5
             },
             {
-                "text": "s_c makes a careful judgement and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the ridges and avoid the mountain valleys as the rain pours down around them.",
+                "text": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the ridges and avoid the mountain valleys as the rain pours down around them.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"]
@@ -1400,7 +1400,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
+                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps r_c away.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol"],
@@ -1414,16 +1414,16 @@
     {
         "patrol_id": "bch_bord_abandontwolegdis1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["disaster"],
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "gen_bord_abandontwolegdis",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach.",
-        "decline_text": "Your patrol decides not to investigate.",
+        "intro_text": "The patrol hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach.",
+        "decline_text": "The patrol decides not to investigate.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1437,7 +1437,7 @@
                 "weight": 5
             },
             {
-                "text": "Your patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the ferocity of LionClan, the strength of TigerClan, and the flexibility of LeopardClan. Shaken, but no more than bruised, the patrol manages to retreat to safety.",
+                "text": "The patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the courage of LionClan, the strength of TigerClan, and the dexterity of LeopardClan. Shaken, but no more than bruised, the patrol manages to retreat to safety.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"]
@@ -1451,7 +1451,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol walks into an ambush by a group of rogues and everyone is slaughtered.",
+                "text": "The patrol walks into an ambush by a group of rogues, and everyone is slaughtered.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol"],
@@ -1465,16 +1465,16 @@
     {
         "patrol_id": "bch_bord_abandontwolegdis2",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["disaster"],
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "gen_bord_abandontwolegdis",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
         "intro_text": "r_c hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach.",
-        "decline_text": "Your patrol decides not to investigate.",
+        "decline_text": "The patrol decides not to investigate.",
         "chance_of_success": 10,
         "success_outcomes": [
             {
@@ -1516,7 +1516,7 @@
     {
         "patrol_id": "bch_bord_flashflooddis1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["disaster"],
         "patrol_art": "bord_general_intro",
@@ -1524,8 +1524,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "There are dark clouds on the horizon and p_l wonders if they should continue.",
-        "decline_text": "Your patrol decides to head back early.",
+        "intro_text": "There are dark clouds on the horizon, and p_l wonders if they should continue.",
+        "decline_text": "The patrol decides to head back early.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1543,7 +1543,7 @@
                 ]
             },
             {
-                "text": "The cats become wet from the rain but otherwise the patrol is successful.",
+                "text": "The cats get wet in the rain, but the patrol is otherwise successful.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -1557,7 +1557,7 @@
                 ]
             },
             {
-                "text": "s_c makes a careful judgement, and the patrol keeps going. They stick to the clifftops, avoiding the low beaches as the rain begins to pour around them.",
+                "text": "s_c makes a careful judgment, and the patrol keeps going. They stick to the clifftops, avoiding the low beaches as the rain begins to pour around them.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"],
@@ -1589,7 +1589,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
+                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol"],
@@ -1612,7 +1612,7 @@
     {
         "patrol_id": "bch_bord_flashflooddis2",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["disaster"],
         "patrol_art": "bord_general_intro",
@@ -1621,7 +1621,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
-        "decline_text": "Your patrol decides to head back early.",
+        "decline_text": "The patrol decides to head back early.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1630,12 +1630,12 @@
                 "weight": 20
             },
             {
-                "text": "r_c becomes wet from the rain but otherwise the patrol is successful.",
+                "text": "r_c gets wet in the rain, but the patrol is otherwise successful.",
                 "exp": 20,
                 "weight": 5
             },
             {
-                "text": "s_c makes a careful judgement and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/stick/sticks} to the clifftops, avoiding the low beaches as the rain pours down around {PRONOUN/s_c/object}.",
+                "text": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/stick/sticks} to the clifftops, avoiding the low beaches as the rain pours down around {PRONOUN/s_c/object}.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"]
@@ -1649,7 +1649,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
+                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps r_c away.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol"],
@@ -1671,8 +1671,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As the patrol crosses a beach, shivering with the cold, there's a creaking, rushing sound, like a wave - but out of sync with the ocean.",
-        "decline_text": "Your patrol scrambles back the way they came, fluffed up and panting.",
+        "intro_text": "As the patrol crosses a beach, shivering with the cold, {PRONOUN/r_c/subject} {VERB/r_c/hear/hears} a creaking, rushing sound, like a wave - but out of sync with the ocean.",
+        "decline_text": "The patrol scrambles back the way they came, fluffed up and panting.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1748,7 +1748,7 @@
     {
         "patrol_id": "wtlnd_bord_flashflooddis1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["disaster"],
         "patrol_art": "bord_general_intro",
@@ -1756,8 +1756,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "There are dark clouds on the horizon and p_l wonders if they should continue.",
-        "decline_text": "Your patrol decides to head back early.",
+        "intro_text": "There are dark clouds on the horizon, and p_l wonders if they should continue.",
+        "decline_text": "The patrol decides to head back early.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1775,7 +1775,7 @@
                 ]
             },
             {
-                "text": "The cats become wet from the rain but otherwise the patrol is successful.",
+                "text": "The cats get wet in the rain, but the patrol is otherwise successful.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -1789,7 +1789,7 @@
                 ]
             },
             {
-                "text": "s_c makes a careful judgement, and the patrol keeps going. They stick to solid ground, sometimes routing themselves through the trees as the rain begins to pour around them.",
+                "text": "s_c makes a careful judgment, and the patrol keeps going. They stick to solid ground, sometimes routing themselves through the trees as the rain begins to pour around them.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"],
@@ -1821,7 +1821,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "There is a downpour and a sudden flood from the overflowing river in the swamp sweeps all of the cats in the patrol away.",
+                "text": "There is a downpour, and a sudden flood from the overflowing river in the swamp sweeps all of the cats in the patrol away.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol"],
@@ -1841,7 +1841,7 @@
     {
         "patrol_id": "wtlnd_bord_flashflooddis2",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["disaster"],
         "patrol_art": "bord_general_intro",
@@ -1859,12 +1859,12 @@
                 "weight": 20
             },
             {
-                "text": "r_c becomes wet from the rain but otherwise the patrol is successful.",
+                "text": "r_c gets wet in the rain, but the patrol is otherwise successful.",
                 "exp": 20,
                 "weight": 5
             },
             {
-                "text": "s_c makes a careful judgement, and keeps going. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stick/sticks} to solid ground, sometimes routing {PRONOUN/s_c/self} through the trees as the rain begins to pour around {PRONOUN/s_c/object}.",
+                "text": "s_c makes a careful judgment and keeps going. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stick/sticks} to solid ground, sometimes routing {PRONOUN/s_c/self} through the trees as the rain begins to pour around {PRONOUN/s_c/object}.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"]
@@ -1878,7 +1878,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "There is a downpour and a sudden flood from the overflowing river in the swamp sweeps r_c away.",
+                "text": "There is a downpour, and a sudden flood from the overflowing river in the swamp sweeps r_c away.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol"],
@@ -1897,8 +1897,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As the patrol crosses a muddy bog, shivering with the cold, there's a creaking, rushing sound, like a wave - but the swamp shouldn't have any waves.",
-        "decline_text": "Your patrol scrambles back the way they came, fluffed up and panting.",
+        "intro_text": "As the patrol crosses a muddy bog, shivering with the cold, {PRONOUN/r_c/subject} {VERB/r_c/hear/hears} a creaking, rushing sound, like a wave - but the swamp shouldn't have any waves.",
+        "decline_text": "The patrol scrambles back the way they came, fluffed up and panting.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1971,7 +1971,7 @@
     {
         "patrol_id": "fst_bord_roguedis1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["disaster"],
         "patrol_art": "bord_general_intro",
@@ -1980,7 +1980,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the bushes! An ambush!",
-        "decline_text": "The patrol turns tail and races away! The borders left open for the rogues to muddy.",
+        "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1989,13 +1989,13 @@
                 "weight": 20
             },
             {
-                "text": "s_c immediately leaps to protect {PRONOUN/s_c/poss} Clanmates, {PRONOUN/s_c/poss} ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
+                "text": "s_c immediately leaps to protect {PRONOUN/s_c/poss} Clanmates. {PRONOUN/s_c/poss/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"]
             },
             {
-                "text": "s_c revels in the battle, leaping into the fray with {PRONOUN/s_c/poss} teeth bared and claws ready. The rogues are quickly driven away by the patrol.",
+                "text": "s_c revels in the battle, leaping into the fray with {PRONOUN/s_c/poss} teeth bared and claws unsheathed. The rogues are quickly driven away by the patrol.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": ["bloodthirsty", "fierce", "vengeful"]
@@ -2014,7 +2014,7 @@
                 }
             },
             {
-                "text": "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and eventually the patrol retreats, r_c badly wounded.",
+                "text": "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion, and eventually the patrol retreats, r_c badly wounded.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -2035,7 +2035,7 @@
     {
         "patrol_id": "mtn_bord_roguedis1",
         "biome": ["mountainous"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["disaster"],
         "patrol_art": "bord_general_intro",
@@ -2044,7 +2044,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!",
-        "decline_text": "The patrol turns tail and races away! The borders left open for the rogues to muddy.",
+        "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -2053,13 +2053,13 @@
                 "weight": 20
             },
             {
-                "text": "s_c immediately leaps to protect {PRONOUN/s_c/poss} Clanmates, {PRONOUN/s_c/poss} ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
+                "text": "s_c immediately leaps to protect {PRONOUN/s_c/poss} Clanmates. {PRONOUN/s_c/poss/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"]
             },
             {
-                "text": "s_c revels in the battle, leaping into the fray with {PRONOUN/s_c/poss} teeth bared and claws ready. The rogues are quickly driven away by the patrol.",
+                "text": "s_c revels in the battle, leaping into the fray with {PRONOUN/s_c/poss} teeth bared and claws unsheathed. The rogues are quickly driven away by the patrol.",
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": ["bloodthirsty", "fierce", "vengeful"]
@@ -2078,7 +2078,7 @@
                 }
             },
             {
-                "text": "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and eventually the patrol retreats, r_c badly wounded.",
+                "text": "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion, and eventually the patrol retreats, r_c badly wounded.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -2099,7 +2099,7 @@
     {
         "patrol_id": "pln_bord_roguedis1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["disaster"],
         "patrol_art": "bord_general_intro",
@@ -2108,7 +2108,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the long grass! An ambush!",
-        "decline_text": "The patrol turns tail and races away! The borders left open for the rogues to muddy.",
+        "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -2117,13 +2117,13 @@
                 "weight": 20
             },
             {
-                "text": "s_c immediately leaps to protect {PRONOUN/s_c/poss} Clanmates, {PRONOUN/s_c/poss} ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
+                "text": "s_c immediately leaps to protect {PRONOUN/s_c/poss} Clanmates. {PRONOUN/s_c/poss/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"]
             },
             {
-                "text": "s_c revels in the battle, leaping into the fray with {PRONOUN/s_c/poss} teeth bared and claws ready. The rogues are quickly driven away by the patrol.",
+                "text": "s_c revels in the battle, leaping into the fray with {PRONOUN/s_c/poss} teeth bared and claws unsheathed. The rogues are quickly driven away by the patrol.",
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": ["bloodthirsty", "fierce", "vengeful"]
@@ -2142,7 +2142,7 @@
                 }
             },
             {
-                "text": "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and eventually the patrol retreats, r_c badly wounded.",
+                "text": "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion, and eventually the patrol retreats, r_c badly wounded.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -2163,7 +2163,7 @@
     {
         "patrol_id": "bch_bord_roguedis1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["disaster"],
         "patrol_art": "bord_general_intro",
@@ -2181,13 +2181,13 @@
                 "weight": 20
             },
             {
-                "text": "s_c immediately leaps to protect {PRONOUN/s_c/poss} Clanmates, {PRONOUN/s_c/poss} ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
+                "text": "s_c immediately leaps to protect {PRONOUN/s_c/poss} Clanmates. {PRONOUN/s_c/poss/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"]
             },
             {
-                "text": "s_c revels in the battle, leaping into the fray with {PRONOUN/s_c/poss} teeth bared and claws ready. The rogues are quickly driven away by the patrol.",
+                "text": "s_c revels in the battle, leaping into the fray with {PRONOUN/s_c/poss} teeth bared and claws unsheathed. The rogues are quickly driven away by the patrol.",
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": ["bloodthirsty", "fierce", "vengeful"]

@@ -11,22 +11,22 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "gen_bord_shortswim",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "r_c looks at the small stream {PRONOUN/r_c/subject} {VERB/r_c/have/has} to cross to continue on to mark the border, and debates if {PRONOUN/r_c/subject} should stop for a quick swim to cool off.",
+        "intro_text": "r_c looks at the small stream {PRONOUN/r_c/subject} {VERB/r_c/have/has} to cross to continue on to mark the border and {VERB/r_c/debate/debates} if {PRONOUN/r_c/subject} should stop for a quick swim to cool off.",
         "decline_text": "r_c decides to continue with the patrol instead.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "They stop to swim for a few moments and feel rejuvenated, cooled and ready to continue.",
+                "text": "{PRONOUN/r_c/subject} {VERB/r_c/stop/stops} to swim for a few moments and {VERB/r_c/feel/feels} rejuvenated, cooled, and ready to carry on marking the border.",
                 "exp": 5,
                 "weight": 20
             },
             {
-                "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/keep/keeps} going, responsibly, although instead of leaping the little stream r_c wades through it, letting the water cool {PRONOUN/r_c/poss} paws pleasantly.",
+                "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/stick/sticks} to {PRONOUN/r_c/poss} task, although instead of leaping the little stream, r_c wades through it. The water cools {PRONOUN/r_c/poss} paws pleasantly.",
                 "exp": 5,
                 "weight": 20,
                 "stat_trait": [
@@ -41,7 +41,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "{PRONOUN/r_c/subject/CAP} get distracted while splashing in the water. r_c swears {PRONOUN/r_c/subject} saw a fish, but it derails {PRONOUN/r_c/poss} border patrol completely and {PRONOUN/r_c/subject} {VERB/r_c/get/gets} nothing done.",
+                "text": "{PRONOUN/r_c/subject/CAP} get distracted while splashing in the water. r_c swears {PRONOUN/r_c/subject} saw a fish, but it derails {PRONOUN/r_c/poss} border patrol completely, and {PRONOUN/r_c/subject} {VERB/r_c/get/gets} nothing done.",
                 "exp": 0,
                 "weight": 20
             }

@@ -184,7 +184,7 @@ def self_update(
         with zipfile.ZipFile("download.tmp") as zip_ref:
             zip_ref.extractall('Downloads')
         os.remove("download.tmp")
-        shutil.copy("./Downloads/Clangen/resources/self_updater.exe", "./Downloads/self_updater.exe")
+        shutil.copy("./Downloads/Clangen/_internal/resources/self_updater.exe", "./Downloads/self_updater.exe")
         announce_restart_callback()
         time.sleep(3)
         subprocess.Popen(

@@ -61,7 +61,7 @@ class ClearingScreen(Screens):
             self.mute_button_pressed(event)
 
             if event.ui_element == self.back_button:
-                self.change_screen('camp screen')
+                self.change_screen(game.last_screen_forupdate)
             if event.ui_element == self.stop_focus_button:
                 self.feed_all_button.show()
                 self.stop_focus_button.hide()
@@ -181,6 +181,11 @@ class ClearingScreen(Screens):
 
     def screen_switches(self):
         self.show_mute_buttons()
+
+        if game.clan.game_mode == "classic":
+            self.change_screen(game.last_screen_forupdate)
+            return
+
         self.hide_menu_buttons()
         self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))), "", object_id="#back_button"
                                          , manager=MANAGER)
@@ -411,11 +416,7 @@ class ClearingScreen(Screens):
         else:
             all_pages = self.chunks(tab_list, 10)
 
-        if self.current_page > len(all_pages):
-            if len(all_pages) == 0:
-                self.current_page = 1
-            else:
-                self.current_page = len(all_pages)
+        self.current_page = max(1, min(self.current_page, len(all_pages)))
 
         # Check for empty list (no cats)
         if all_pages:
@@ -534,6 +535,8 @@ class ClearingScreen(Screens):
 
 
     def exit_screen(self):
+        if game.clan.game_mode == "classic":
+            return
         self.info_messages.kill()
         self.stop_focus_button.kill()
         self.feed_all_button.kill()
@@ -562,7 +565,9 @@ class ClearingScreen(Screens):
         self.log_box.kill()
         self.tactic_tab.kill()
         self.tactic_title.kill()
-        self.delete_checkboxes()        
+        self.delete_checkboxes()
+        if self.focus_cat:
+            self.focus_cat.kill()
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
@@ -582,7 +587,9 @@ class ClearingScreen(Screens):
         self.delete_checkboxes()
 
         self.tactic_text["container_general"] = pygame_gui.elements.UIScrollingContainer(
-            scale(pygame.Rect((280, 900), (460, 350))), manager=MANAGER
+            scale(pygame.Rect((280, 900), (460, 350))),
+            allow_scroll_x=False,
+            manager=MANAGER
         )
 
         n = 0
@@ -606,7 +613,9 @@ class ClearingScreen(Screens):
         )
 
         self.additional_text["container_general"] = pygame_gui.elements.UIScrollingContainer(
-            scale(pygame.Rect((720, 900), (655, 350))), manager=MANAGER
+            scale(pygame.Rect((720, 900), (655, 350))),
+            allow_scroll_x=False,
+            manager=MANAGER
         )
 
         n = 0

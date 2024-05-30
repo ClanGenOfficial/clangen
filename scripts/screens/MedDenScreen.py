@@ -57,7 +57,7 @@ class MedDenScreen(Screens):
             self.mute_button_pressed(event)
 
             if event.ui_element == self.back_button:
-                self.change_screen('camp screen')
+                self.change_screen(game.last_screen_forupdate)
             elif event.ui_element == self.next_med:
                 self.current_med += 1
                 self.update_med_cat()
@@ -165,13 +165,13 @@ class MedDenScreen(Screens):
             )
             self.log_box.hide()
             self.cats_tab = UIImageButton(scale(pygame.Rect
-                                                ((218, 924), (68, 150))),
+                                                ((218, 924), (70, 150))),
                                           "",
                                           object_id="#hurt_sick_cats_button", manager=MANAGER
                                           )
             self.cats_tab.disable()
             self.log_tab = UIImageButton(scale(pygame.Rect
-                                               ((218, 1104), (68, 128))),
+                                               ((218, 1104), (70, 128))),
                                          "",
                                          object_id="#med_den_log_button", manager=MANAGER
                                          )
@@ -423,11 +423,7 @@ class MedDenScreen(Screens):
         else:
             all_pages = self.chunks(tab_list, 10)
 
-        if self.current_page > len(all_pages):
-            if len(all_pages) == 0:
-                self.current_page = 1
-            else:
-                self.current_page = len(all_pages)
+        self.current_page = max(1, min(self.current_page, len(all_pages)))
 
         # Check for empty list (no cats)
         if all_pages:
@@ -478,7 +474,7 @@ class MedDenScreen(Screens):
             short_name = shorten_text_to_fit(name, 185, 30)
             self.cat_names.append(pygame_gui.elements.UITextBox(short_name,
                                                                 scale(
-                                                                    pygame.Rect((pos_x - 60, pos_y + 100), (220, 60))),
+                                                                    pygame.Rect((pos_x - 60, pos_y + 100), (220, -1))),
                                                                 object_id="#text_box_30_horizcenter", manager=MANAGER))
 
             pos_x += 200

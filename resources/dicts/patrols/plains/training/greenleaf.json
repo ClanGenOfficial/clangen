@@ -17,12 +17,12 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "HAH! app1 pounces, the pathetic bug crunching underneath {PRONOUN/app1/poss} mighty blow, splattering and - eww. Eww, eww eww eww there's bug juice all over {PRONOUN/app1/poss} paws, it's between {PRONOUN/app1/poss} toes, EWWWWW!",
+                "text": "Ha! app1 pounces, the pathetic bug crunching underneath {PRONOUN/app1/poss} mighty blow, splattering and - ewwwww. Ew, ew ew ew, there's bug juice all over {PRONOUN/app1/poss} paws, between {PRONOUN/app1/poss} toes, EWWWWW!",
                 "exp": 20,
                 "weight": 20
             },
             {
-                "text": "HAH! app1 leaps, tail lashing furiously as the beetle buzzes under {PRONOUN/app1/poss} forepaws, claws sheathed. {PRONOUN/app1/subject/CAP} {VERB/app1/bat/bats} the bug off the rock and onto the ground, pouncing after it, jumping and twisting as {PRONOUN/app1/poss} colorful prey flits around {PRONOUN/app1/poss} head in confused-concussed beetle-behavior, unused to being an apprentice's new favorite toy.",
+                "text": "Ha! app1 leaps, tail lashing furiously as the beetle buzzes under {PRONOUN/app1/poss} forepaws, claws sheathed. {PRONOUN/app1/subject/CAP} {VERB/app1/bat/bats} the bug off the rock and onto the ground, pouncing after it, jumping and twisting as {PRONOUN/app1/poss} colorful prey flits around {PRONOUN/app1/poss} head in confused-concussed beetle-behavior, unused to being an apprentice's new favorite toy.",
                 "exp": 20,
                 "weight": 5
             },
@@ -149,5 +149,144 @@
                 "stat_trait": ["cold", "strict", "arrogant", "grumpy", "lonesome"]
             }
         ]
+    },
+    {
+        "patrol_id": "pln_train_greenleaf_lackofshade_storyloreteacherlocked1",
+        "biome": ["plains"],
+        "season": ["greenleaf"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "fst_hunt_heat",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [2, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["LORE,1", "TEACHER,1", "STORY,1"],
+        "intro_text": "Ugh. r_c loves the plains, but the baking hot sun isn't it's best look.",
+        "decline_text": "It's too hot for this - let's head back to camp.",
+        "success_outcomes": [
+                {
+                    "text": "Many generations ago, it wasn't always like this, p_l murmurs. Sure, this has always been plains - but there were more trees winding round the rivers, bushes clinging to sheltered dips in the land. Twolegs caused a hidious drought of swirling dust that killed off the patchy trees. It's their fault.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_med_gatheringoakleaves_leaf-fall1",
+                    "stat_skill": ["LORE,1"],
+                    "can_have_stat": ["p_l"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        }
+                    ]
+                },
+                {
+                    "text": "It's not much, s_c huffs apologetically, but hold on. {PRONOUN/s_c/subject/CAP} {VERB/s_c/make/makes} a little nest under to a huge clump of grass, right near the stems, and offer it to r_c. There - the water within the stems and the partial shade will keep that area cool. Time for a break to let themselves cool down.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_train_vision4",
+                    "stat_skill": ["TEACHER,1"],
+                    "can_have_stat": ["p_l"],
+                    "relationships": [
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["r_c"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        }
+                    ]
+                },
+                {
+                    "text": "s_c tries to distract r_c from the heat by telling the story of The Earth-Cat's Ticks, where trees are the ticks sucking sap-blood from the grassy pelt of the earth. It's a little disgusting, but in a funny way, and it gives r_c something to make a face about that isn't the exhausting heat.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_train_sunset",
+                    "stat_skill": ["STORY,1"],
+                    "can_have_stat": ["p_l"],
+                    "relationships": [
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["r_c"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "r_c's right, and even worse, there's not a lick of shade to be had. The cats turn back for home, but by the time they return to camp they're dehydrated and exhausted.",
+                    "exp": 0,
+                    "weight": 20,
+                    "injury": [
+                        {
+                            "cats": ["multi"],
+                            "injuries": ["dehydrated"],
+                            "scars": []
+                        }
+                    ],
+                    "history_text": {
+                        "reg_death": "The hot greenleaf sun is more dangerous than you might imagine, and its heat killed m_c.",
+                        "lead_death": "m_c got dehyrated and it progressed to killing {PRONOUN/m_c/object}"
+                    }
+                },
+                {
+                    "text": "Ah, but r_c will miss this heat in leaf-bare, p_l banters back. We always want what we don't have, the grass is always greener on the other side of the river.",
+                    "exp": 0,
+                    "weight": 20,
+                    "art": "gen_train_sunset",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["r_c"],
+                            "mutual": true,
+                            "values": ["platonic"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ]
     }
 ]

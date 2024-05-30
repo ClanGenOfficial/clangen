@@ -269,7 +269,7 @@ jobs:
           IS_RELEASE: 1
       - name: Create archive (.zip)
         run: |
-          cp dist/Clangen/.itch.toml dist/ 
+          cp dist/Clangen/_internal/.itch.toml dist/ 
           tar.exe -a -c -f Clangen_Win32.zip -C dist Clangen .itch.toml
       - uses: actions/upload-artifact@v3
         with:
@@ -393,7 +393,7 @@ jobs:
           IS_RELEASE: 1
       - name: Create archive (.zip)
         run: |
-          cp dist/Clangen/.itch.toml dist/ 
+          cp dist/Clangen/_internal/.itch.toml dist/ 
           tar.exe -a -c -f Clangen_Win64.zip -C dist Clangen .itch.toml
       - uses: actions/upload-artifact@v3
         with:
@@ -517,7 +517,7 @@ jobs:
           IS_RELEASE: 1
       - name: Create archive (.zip)
         run: |
-          cp dist/Clangen/.itch.toml dist/ 
+          cp dist/Clangen/_internal/.itch.toml dist/ 
           tar.exe -a -c -f Clangen_Win64_Windows10+.zip -C dist Clangen .itch.toml
       - uses: actions/upload-artifact@v3
         with:
@@ -563,7 +563,7 @@ jobs:
   build_macos64:
     # For commits to the original mac build action see:
     # https://github.com/ClanGenOfficial/clangen/blob/29c9e39fed9a09b8de906f5c3b91dc044fe9b9a5/.github/workflows/main.yml
-    runs-on: macos-latest
+    runs-on: macos-13
     if: ${{ !startsWith(github.ref, 'ref/heads/release') }}
     env:
       gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}

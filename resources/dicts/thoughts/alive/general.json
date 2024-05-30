@@ -82,6 +82,53 @@
         ]
     },
     {
+        "id": "gen_alive_not_working_insteadinthemedden",
+        "not_working": true,
+        "thoughts": [
+            "Misses {PRONOUN/m_c/poss} own nest, despite the ones in the medicine den being... fine",
+            "Can't get the sharp smell of the herb stores out of {PRONOUN/m_c/poss} nose",
+            "Feeling confined and cooped up",
+            "Just wants to sleep",
+            "Why is recovering so exhausting!",
+            "Basking in the sun at the medicine den entrance",
+            "Feeling frustrated at {PRONOUN/m_c/poss} own exhaustion",
+            "Doesn't think {PRONOUN/m_c/subject} should have to sleep in the medicine den",
+            "Eats some prey because {PRONOUN/m_c/subject} know {PRONOUN/m_c/subject} should, not because of hunger",
+            "Stands up for a second and feels lightheaded",
+            "Isn't having a fun time"
+        ]
+    },
+    {
+        "id": "gen_alive_not_working_insteadinthemedden_withmedcat",
+        "not_working": true,
+        "thoughts": [
+            "Watches r_c fuss around the herb stores, half-asleep",
+            "Isn't goign to argue with r_c about {PRONOUN/m_c/poss} medical care",
+            "Is going to argue with r_c about {PRONOUN/m_c/poss} medical care",
+            "Dutifully stretching out {PRONOUN/m_c/poss} limbs like r_c told {PRONOUN/m_c/object} to",
+            "Asks r_c for pain relief",
+            "Wishes {PRONOUN/m_c/subject} understood what r_c is doing"
+        ],
+        "random_status_constraint": [
+            "medicine cat"
+        ]
+    },
+    {
+        "id": "gen_alive_not_working_insteadinthemedden_withmedcatapp",
+        "not_working": true,
+        "thoughts": [
+            "Laps up water r_c has brought {PRONOUN/m_c/object}",
+            "Grunts in pain as r_c changes {PRONOUN/m_c/poss} nest bedding",
+            "Wishes r_c would be a bit more quiet as {PRONOUN/r_c/subject} {VERB/r_c/work/works}",
+            "Tells r_c {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing a good job",
+            "Asks r_c for pain relief",
+            "Wishes {PRONOUN/m_c/subject} understood what r_c is doing"
+        ],
+        "random_status_constraint": [
+            "medicine cat apprentice"
+        ]
+    },
+    {
         "id": "gen_not_kittypet",
         "thoughts": [
             "Is thinking about how awful kittypet food must taste",

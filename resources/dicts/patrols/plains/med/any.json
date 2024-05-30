@@ -2,7 +2,7 @@
     {
         "patrol_id": "pln_med_soloripples1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_soloripples",
@@ -58,7 +58,7 @@
     {
         "patrol_id": "pln_med_clair1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -97,7 +97,7 @@
     {
         "patrol_id": "pln_med_herblocation1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -166,7 +166,7 @@
     {
         "patrol_id": "pln_med_herblocation2",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "pln_med_herblocation2",
@@ -207,7 +207,7 @@
     {
         "patrol_id": "pln_med_appfirstsign1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -242,7 +242,7 @@
     {
         "patrol_id": "pln_med_rainygathering1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_rainygathering",
@@ -352,7 +352,7 @@
     {
         "patrol_id": "pln_med_gatheringcobwebs1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -392,7 +392,7 @@
     {
         "patrol_id": "pln_med_cobweblesson1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_cobweblesson",
@@ -461,7 +461,7 @@
     {
         "patrol_id": "pln_med_cobwebhelp1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -571,7 +571,7 @@
     {
         "patrol_id": "pln_med_gatheringhorsetail1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -618,7 +618,7 @@
     {
         "patrol_id": "pln_med_horsetaillesson1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -731,7 +731,7 @@
     {
         "patrol_id": "pln_med_horsetailhelp1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -841,7 +841,7 @@
     {
         "patrol_id": "pln_med_gatheringmoss1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_gatheringmoss",
@@ -873,7 +873,7 @@
     {
         "patrol_id": "pln_med_gatheringmoss2",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_gatheringmoss",
@@ -941,7 +941,7 @@
     {
         "patrol_id": "pln_med_gatheringmoss3",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_gatheringmoss",
@@ -1007,7 +1007,7 @@
     {
         "patrol_id": "pln_med_gatheringmoss4",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_gatheringmoss",
@@ -1059,7 +1059,7 @@
     {
         "patrol_id": "pln_med_gatheringrosemary1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_gatheringrosemary",
@@ -1111,7 +1111,7 @@
     {
         "patrol_id": "pln_med_gatheringrosemary2",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_gatheringrosemary",
@@ -1160,7 +1160,7 @@
     {
         "patrol_id": "pln_med_discussion1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": [],
         "tags": [],
         "patrol_art": "gen_med_discussion",
@@ -1228,10 +1228,10 @@
     {
         "patrol_id": "pln_med_cobwebapps1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic"],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_cobwebapps",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -1316,7 +1316,7 @@
     {
         "patrol_id": "pln_med_dwindleherbsgathering1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": [],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -1425,10 +1425,10 @@
     {
         "patrol_id": "pln_med_cobwebapps2",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic", "rom_two_apps"],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_cobwebapps",
         "min_cats": 3,
         "max_cats": 3,
         "min_max_status": {
@@ -1513,10 +1513,10 @@
     {
         "patrol_id": "pln_med_cobwebapps3",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic", "rom_two_apps"],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_cobwebapps",
         "min_cats": 4,
         "max_cats": 4,
         "min_max_status": {
@@ -1601,10 +1601,10 @@
     {
         "patrol_id": "pln_med_cobwebapps4",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic", "rom_two_apps"],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_cobwebapps",
         "min_cats": 5,
         "max_cats": 5,
         "min_max_status": {
@@ -1689,10 +1689,10 @@
     {
         "patrol_id": "pln_med_cobwebapps5",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic", "rom_two_apps"],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_cobwebapps",
         "min_cats": 6,
         "max_cats": 6,
         "min_max_status": {
@@ -1777,7 +1777,7 @@
     {
         "patrol_id": "pln_med_cobwebapps6",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -1866,7 +1866,7 @@
     {
         "patrol_id": "pln_med_cobwebapps7",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -1955,7 +1955,7 @@
     {
         "patrol_id": "pln_med_cobwebapps8",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -2044,7 +2044,7 @@
     {
         "patrol_id": "pln_med_cobwebapps9",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["six_apprentices"],
         "patrol_art": "med_general_intro",
@@ -2133,7 +2133,7 @@
     {
         "patrol_id": "pln_med_mossapps1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic"],
         "patrol_art": "gen_med_mossapps",
@@ -2222,7 +2222,7 @@
     {
         "patrol_id": "pln_med_mossapps2",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic", "rom_two_apps"],
         "patrol_art": "gen_med_mossapps",
@@ -2311,7 +2311,7 @@
     {
         "patrol_id": "pln_med_mossapps3",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic", "rom_two_apps"],
         "patrol_art": "gen_med_mossapps",
@@ -2400,7 +2400,7 @@
     {
         "patrol_id": "pln_med_mossapps4",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_mossapps",
@@ -2489,7 +2489,7 @@
     {
         "patrol_id": "pln_med_mossapps5",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_mossapps",
@@ -2578,7 +2578,7 @@
     {
         "patrol_id": "pln_med_mossapps6",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic", "rom_two_apps"],
         "patrol_art": "gen_med_mossapps",
@@ -2667,7 +2667,7 @@
     {
         "patrol_id": "pln_med_mossapps7",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_mossapps",
@@ -2756,7 +2756,7 @@
     {
         "patrol_id": "pln_med_mossapps8",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic", "rom_two_apps"],
         "patrol_art": "gen_med_mossapps",
@@ -2845,7 +2845,7 @@
     {
         "patrol_id": "pln_med_mossapps9",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["six_apprentices"],
         "patrol_art": "gen_med_mossapps",

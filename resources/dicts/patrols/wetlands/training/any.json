@@ -2,7 +2,7 @@
     {
         "patrol_id": "wtl_any_train_session1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "train_general_intro",
@@ -12,8 +12,8 @@
             "apprentice": [1, 6]
         },
         "weight": 20,
-        "intro_text": "The patrol wants to hold a training session for r_c.  They decide to focus on how best hunt and hide while wading through cheek deep water.",
-        "decline_text": "They decide to focus on the patrolling the territory instead, training can wait for another day.",
+        "intro_text": "The patrol wants to hold a training session for r_c. They decide to focus on how best hunt and hide while wading through cheek-deep water.",
+        "decline_text": "They decide to focus on the patrolling the territory instead. Training can wait for another day.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -22,25 +22,25 @@
                 "weight": 20
             },
             {
-                "text": "r_c picks up the instruction quickly and the patrol soon plays a small game of leapfrog within the shallow pools to test the apprentice's abilities.",
+                "text": "r_c picks up the instruction quickly, and the patrol plays a small game of leapfrog within the shallow pools to test {PRONOUN/r_c/poss} abilities.",
                 "exp": 20,
                 "weight": 5
             },
             {
-                "text": "By the end of the patrol s_c is able to hide stealthily within the water, their movements barely noticeable.",
+                "text": "By the end of the patrol, s_c is able to hide in the water, {PRONOUN/s_c/poss} movements barely creating ripples.",
                 "exp": 20,
                 "weight": 20,
-                "stat_trait": ["calm", "careful", "sneak", "quiet", "patient"]
+                "stat_trait": ["calm", "careful", "sneaky", "quiet", "patient"]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "r_c tries to hide within the water, but they can't quite manage to make themselves still and quiet enough to avoid detection.",
+                "text": "r_c tries to hide within the water, but {PRONOUN/r_c/object} can't quite make {PRONOUN/r_c/self} still and quiet enough to avoid detection.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "s_c struggles to take the lesson seriously and eventually the training session ends early with no real progress made.",
+                "text": "s_c struggles to take the lesson seriously, and the training session ends early with no real progress made.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["troublesome", "playful", "noisy"]
@@ -50,7 +50,7 @@
     {
         "patrol_id": "wtlnd_train_stuck1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "train_general_intro",
@@ -58,12 +58,12 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Up at the front of the patrol, p_l hears a Twoleg monster zoom past on the water, and then startled yowling. Turning back, they spot r_c being washed away by the wave the monster brought in its wake.",
+        "intro_text": "Up at the front of the patrol, p_l hears a Twoleg monster zoom past on the water, followed by startled yowling. Turning back, {PRONOUN/p_l/object} {VERB/p_l/spot/spots} r_c being washed away by the wave surging in the monster's wake.",
         "decline_text": "p_l runs back to camp to fetch help.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "p_l fishes their Clanmate up from the swamp, and settles down to groom the water from their pelt, everyone relieved to have gotten off so lightly.",
+                "text": "p_l fishes their Clanmate out from the swamp and settles down to groom the water from their pelt. Everyone is relieved to have gotten off so lightly.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -77,7 +77,7 @@
                 ]
             },
             {
-                "text": "p_l leaps into the water, lifting r_c for long enough for the other cat to get back to shore.",
+                "text": "p_l leaps into the water, lifting r_c for long enough for {PRONOUN/r_c/object} to get back to shore.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -91,7 +91,7 @@
                 ]
             },
             {
-                "text": "Not letting themselves panic, s_c darts away for a branch, shoving it into the water and giving the shocked and waterlogged r_c something to cling to.",
+                "text": "Not letting {PRONOUN/s_c/self} panic, s_c darts away for a branch. {PRONOUN/s_c/subject/CAP} {VERB/s_c/shove/shoves} it into the water, and the shocked and waterlogged r_c clings to it until {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} washed to shore.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"],
@@ -106,11 +106,10 @@
                 ]
             },
             {
-                "text": "s_c calls to their disorientated Clanmate, helping r_c find the shoreline as the swamped cat struggles back to dry land.",
+                "text": "s_c calls to {PRONOUN/s_c/poss} disoriented Clanmate, helping r_c find the shoreline as the swamped cat struggles back to dry land.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -148,7 +147,7 @@
                 ]
             },
             {
-                "text": "Harshly, s_c tells their Clanmate that they're on their own - this patrol is too important to wait for some idiot who got stuck.",
+                "text": "Harshly, s_c tells {PRONOUN/s_c/poss} Clanmate that {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on {PRONOUN/r_c/poss} own - this patrol is too important to wait for some mouse-brain who got stuck.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -173,7 +172,7 @@
                 ]
             },
             {
-                "text": "p_l works frantically, but r_c is under the water for too long, and slips away as the patrol tries desperately to find them.",
+                "text": "p_l works frantically, but r_c is under the water for too long and slips away as the patrol desperately searches for {PRONOUN/r_c/object}.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -196,7 +195,7 @@
     {
         "patrol_id": "wtlnd_train_stuck2",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "train_general_intro",
@@ -204,12 +203,12 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Trailing behind the patrol, there's a roar as a Twoleg monster passes the patrol on the nearby water. r_c looks up just in time to screech in terror as the wake from the monster sweeps over the path, knocking them into the water.",
-        "decline_text": "Thankfully, they're near the bank, and wriggle their way clear.",
+        "intro_text": "Trailing behind the patrol, r_c hears a roar as a Twoleg monster passes the cats on the nearby water. r_c looks up just in time to screech in terror as the wake from the monster sweeps over the path, knocking {PRONOUN/r_c/object} into the water.",
+        "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/s} near the bank and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Their Clanmates come running at their yowls, and r_c is soon back on dry land, shaken but unharmed. The patrol settles down as everyone comforts each other.",
+                "text": "{PRONOUN/r_c/poss/CAP} Clanmates come running at {PRONOUN/r_c/poss} yowls, and r_c is soon back on dry land, shaken but unharmed. The patrol settles down as everyone comforts each other.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -223,7 +222,7 @@
                 ]
             },
             {
-                "text": "p_l leaps into the water, lifting r_c for long enough for the other cat to get back to shore.",
+                "text": "p_l leaps into the water, lifting r_c for long enough for {PRONOUN/r_c/object} to get back to shore.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -237,7 +236,7 @@
                 ]
             },
             {
-                "text": "Not letting themselves panic, s_c darts away for a branch, shoving it into the water and giving the shocked and waterlogged r_c something to cling to.",
+                "text": "Not letting {PRONOUN/s_c/self} panic, s_c darts away for a branch. {PRONOUN/s_c/subject/CAP} {VERB/s_c/shove/shoves} it into the water, and the shocked and waterlogged r_c clings to it until {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} washed to shore.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"],
@@ -252,11 +251,10 @@
                 ]
             },
             {
-                "text": "s_c calls to their disorientated Clanmate, helping r_c find the shoreline as the swamped cat struggles back to dry land. r_c holds their voice in their mind, letting it lead them back to safety.",
+                "text": "s_c calls to {PRONOUN/s_c/poss} disoriented Clanmate, helping r_c find the shoreline as the swamped cat struggles back to dry land. r_c holds s_c's voice in {PRONOUN/r_c/poss} mind, letting it lead {PRONOUN/r_c/object} back to safety.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -294,7 +292,7 @@
                 ]
             },
             {
-                "text": "Harshly, s_c tells r_c that they're on their own - this patrol is too important to wait for some idiot who got stuck.",
+                "text": "Harshly, s_c tells {PRONOUN/s_c/poss} Clanmate that {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on {PRONOUN/r_c/poss} own - this patrol is too important to wait for some mouse-brain who got stuck.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -319,7 +317,7 @@
                 ]
             },
             {
-                "text": "Hurt and wheezing, r_c hears the patrol panicking as they drift to StarClan under the water.",
+                "text": "Hurt and wheezing, r_c hears the patrol panicking as {PRONOUN/r_c/subject} {VERB/r_c/drift/drifts} to StarClan under the water.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -342,7 +340,7 @@
     {
         "patrol_id": "wtlnd_train_stuck3",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "train_general_intro",
@@ -350,29 +348,29 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Out in the wetlands training alone, there's a roar as a Twoleg monster passes r_c on the nearby water. r_c looks up just in time to screech in terror as the wake from the monster sweeps over the path, knocking them into the water.",
-        "decline_text": "Thankfully, they're near the bank, and wriggle their way clear.",
+        "intro_text": "Out in the wetlands, training alone, r_c hears a roar as a Twoleg monster passes on the nearby water. r_c looks up just in time to screech in terror as the wake from the monster sweeps over the path, knocking {PRONOUN/r_c/object} into the water.",
+        "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/s} near the bank and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "r_c wasn't planning on a bath, but they cope well, hauling themselves back to dry land to sit there waterlogged and miserable.",
+                "text": "r_c wasn't planning on a bath, but {PRONOUN/r_c/subject} {VERB/r_c/cope/copes} well, hauling {PRONOUN/r_c/self} back to dry land to sit there waterlogged and miserable.",
                 "exp": 20,
                 "weight": 20
             },
             {
-                "text": "r_c stops themselves from panicking, allowing their body to gently float to the surface as their lungs burn. Only then do they lift their head up, gasping for air, and start paddling back to shore.",
+                "text": "r_c stops {PRONOUN/r_c/self} from panicking, allowing {PRONOUN/r_c/poss} body to gently float to the surface as {PRONOUN/r_c/poss} lungs burn. Only then {VERB/r_c/do/does} {PRONOUN/r_c/subject} {VERB/r_c/thrust/thrusts} {PRONOUN/r_c/poss} head up, gasping for air, and {VERB/r_c/start/starts} paddling back to shore.",
                 "exp": 20,
                 "weight": 5
             }
         ],
         "fail_outcomes": [
             {
-                "text": "r_c strikes out wildly, but their swimming attempts do more harm than good, and it's only the grace of StarClan the saves them when the river washes them back to shore.",
+                "text": "r_c strikes out wildly, but {PRONOUN/r_c/poss} swimming attempts do more harm than good, and only by the grace of StarClan does the river wash {PRONOUN/r_c/object} back to shore.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "Hurt and wheezing, r_c is alone as they drift to StarClan under the water.",
+                "text": "Hurt and wheezing, r_c is alone as {PRONOUN/r_c/subject} {VERB/r_c/drift/drifts} to StarClan under the water.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -386,7 +384,7 @@
     {
         "patrol_id": "wtlnd_train_soloapp1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "train_general_intro",
@@ -401,12 +399,12 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "At least this is a good chance to learn the territory! r_c heads off to map out the paths of solid ground through a boggy section they've always found confusing.",
+                "text": "At least this is a good chance to learn the territory! r_c heads off to map out the paths of solid ground through a boggy area {PRONOUN/r_c/subject}{VERB/r_c/'ve/s} always found confusing.",
                 "exp": 20,
                 "weight": 20
             },
             {
-                "text": "r_c clambers through a muddy section and stumbles across a tiny island rising from the swamp.",
+                "text": "r_c clambers through a muddy area and stumbles across a tiny island rising from the swamp.",
                 "exp": 20,
                 "weight": 5
             },
@@ -433,7 +431,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c shivers a little, imagining what could be out there. . . no, definitely not. They turn around and go straight back to camp.",
+                "text": "s_c shivers a little, imagining what could be out there. . . No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and {VERB/r_c/go/goes} straight back to camp.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["insecure", "lonesome", "nervous"]
@@ -443,7 +441,7 @@
     {
         "patrol_id": "wtlnd_train_solo2",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "train_general_intro",
@@ -451,17 +449,17 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "r_c heads out into the swamps alone, wanting to explore and have some time to themselves.",
-        "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
+        "intro_text": "r_c heads out into the swamps alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out the paths of solid ground through a boggy section they've always found confusing. Hunting, fighting, driving off predators, it all requires knowledge of their home turf, it's always worth making sure their mental map is up to date.",
+                "text": "r_c heads off to map out the paths of solid ground through a boggy area {PRONOUN/r_c/subject}{VERB/r_c/'ve/s} always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of {PRONOUN/r_c/poss} home turf, and it's always worth making sure {PRONOUN/r_c/poss} mental map is up to date.",
                 "exp": 20,
                 "weight": 20
             },
             {
-                "text": "r_c clambers through a muddy section and stumbles across a tiny island rising from the swamp.",
+                "text": "r_c clambers through a muddy area and stumbles across a tiny island rising from the swamp.",
                 "exp": 20,
                 "weight": 5
             },
@@ -472,7 +470,7 @@
                 "stat_skill": ["CLEVER,1"]
             },
             {
-                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way.",
+                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} last passed this way.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -494,7 +492,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c shivers a little, thinking of the dangers of solo patrols. . . no, definitely not. They turn around and go straight back to camp.",
+                "text": "s_c shivers a little, thinking of the dangers of solo patrols. . . No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and {VERB/s_c/go/goes} straight back to camp.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["insecure", "lonesome", "nervous"]
@@ -504,7 +502,7 @@
     {
         "patrol_id": "wtlnd_train_solo3",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "train_general_intro",
@@ -514,28 +512,28 @@
             "deputy": [1, 6]
         },
         "weight": 20,
-        "intro_text": "r_c heads out into the swamps alone, wanting to explore and have some time to themselves.",
-        "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
+        "intro_text": "r_c heads out into the swamps alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out the paths of solid ground through a boggy section they've always found confusing. Hunting, fighting, driving off predators, it all requires knowledge of their home turf, it's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
+                "text": "r_c heads off to map out the paths of solid ground through a boggy area {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of {PRONOUN/r_c/poss} home turf, and it's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels a little like more work though and isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
                 "exp": 20,
                 "weight": 20
             },
             {
-                "text": "r_c rounds a corner and stumbles across a tiny island rising from the swamp. Purring, they take the opportunity for a small moment of peace, relaxing and enjoying the view.",
+                "text": "r_c rounds a corner and stumbles across a tiny island rising from the swamp. Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a moment of peace, relaxing and enjoying the view.",
                 "exp": 20,
                 "weight": 5
             },
             {
-                "text": "s_c rounds a corner and stumbles across a tiny island rising from the swamp. Further investigation shows it's dry and lush, and s_c purrs. This reliable prey hunting ground could be important during times of scarcity, there's a relief to discovering it.",
+                "text": "s_c rounds a corner and stumbles across a tiny island rising from the swamp. Further investigation shows it's dry and lush, and s_c purrs. This reliable prey hunting ground could be important during times of scarcity; there's a relief to the discovery.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"]
             },
             {
-                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way.",
+                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} last passed this way.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -557,7 +555,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c wavers in their decision. They have so much work to do, so many other things pulling on their time. . . no, definitely not. They turn around and go straight back to camp.",
+                "text": "s_c wavers in their decision. {PRONOUN/s_c/subject/CAP} {VERB/s_c/have/has} so much work to do, so many other things pulling on {PRONOUN/s_c/poss} time. . . No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and {VERB/s_c/go/goes} straight back to camp.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["insecure", "lonesome", "nervous"]
@@ -567,7 +565,7 @@
     {
         "patrol_id": "wtlnd_train_solo4",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "train_general_intro",
@@ -577,28 +575,28 @@
             "leader": [1, 6]
         },
         "weight": 20,
-        "intro_text": "r_c heads out into the swamps alone, wanting to explore and have some time to themselves.",
-        "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
+        "intro_text": "r_c heads out into the swamps alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out the paths of solid ground through a boggy section they've always found confusing. Hunting, fighting, driving off predators, it all requires knowledge of their home turf, it's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
+                "text": "r_c heads off to map out the paths of solid ground through a boggy area {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of {PRONOUN/r_c/poss} home turf, and it's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels a little like more work though and isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
                 "exp": 20,
                 "weight": 20
             },
             {
-                "text": "r_c rounds a corner and stumbles across a tiny island rising from the swamp. Purring, they take the opportunity for a small moment of peace, relaxing and enjoying the view.",
+                "text": "r_c rounds a corner and stumbles across a tiny island rising from the swamp. Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a moment of peace, relaxing and enjoying the view.",
                 "exp": 20,
                 "weight": 5
             },
             {
-                "text": "s_c rounds a corner and stumbles across a tiny island rising from the swamp. Further investigation shows it's dry and lush, and s_c purrs. This reliable prey hunting ground could be important during times of scarcity, there's a relief to discovering it.",
+                "text": "s_c rounds a corner and stumbles across a tiny island rising from the swamp. Further investigation shows it's dry and lush, and s_c purrs. This reliable prey hunting ground could be important during times of scarcity; there's a relief to the discovery.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"]
             },
             {
-                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way.",
+                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} last passed this way.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -620,7 +618,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c wavers in their decision. They have so much work to do, so many other things pulling on their time. . . no, definitely not. They turn around and go straight back to camp.",
+                "text": "s_c wavers in their decision. {PRONOUN/s_c/subject/CAP} {VERB/s_c/have/has} so much work to do, so many other things pulling on {PRONOUN/s_c/poss} time. . . No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and {VERB/s_c/go/goes} straight back to camp.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["insecure", "lonesome", "nervous"]
@@ -630,7 +628,7 @@
     {
         "patrol_id": "wtlnd_train_fireflies",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": ["rom_two_apps", "romantic"],
         "patrol_art": "train_general_intro",
@@ -641,12 +639,12 @@
             "all apprentices": [2, 2]
         },
         "weight": 20,
-        "intro_text": "The fireflies swarm over the heart of c_n's territory, gleaming and dancing and flashing around app1 as they wait for app2.",
+        "intro_text": "Fireflies swarm over the heart of c_n's territory, gleaming, dancing, and flashing around app1 as {PRONOUN/app1/subject} {VERB/app1/wait/waits} for app2.",
         "decline_text": "The apprentices are called back to camp to deal with kitsitting.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "app2 bursts out from cover, pouncing on app1 with claws sheathed and giggling. app1 rolls with the gentle blow and bats app2 off, bounding after them with promises of getting them back! On and on the chase goes, neither interested in winning it as they play under the light of the fireflies.",
+                "text": "A giggling app2 bursts out from cover, pouncing on app1 with claws sheathed. app1 rolls with the gentle blow and bats app2 off, bounding after {PRONOUN/app2/subject} with promises of getting {PRONOUN/app2/subject} back! On and on the chase goes, neither interested in winning it as they play under the light of the fireflies.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
@@ -660,7 +658,7 @@
                 ]
             },
             {
-                "text": "app2 emerges from the dark, trotting up to app1 and asking why they wanted to meet there. app1 looks away with a purr, making up some nonsense about trying to catch the fireflies that makes no sense. Instead, both apprentices hang out under the swarm of light, awkward and thrilled.",
+                "text": "app2 emerges from the dark, trots up to app1, and asks why {PRONOUN/app1/subject} wanted to meet there. app1 looks away with a purr, making up some nonsense about trying to catch the fireflies. Both apprentices hang out under the swarm of light, awkward and thrilled.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -674,7 +672,7 @@
                 ]
             },
             {
-                "text": "app2 emerges, the lights of the swarm reflected in their eyes. Seeing s_c, they ask why s_c wanted to meet there. Stuttering but determined, s_c explains that they wondered if, possibly, maybe, app2 would like to go on a... date? app2 looks away with a purr, murmuring a soft yes to the ground, unable to make eye contact.",
+                "text": "app2 emerges, the lights of the swarm reflected in {PRONOUN/app2/poss} eyes. Seeing s_c, {PRONOUN/app2/subject} {VERB/app2/ask/asks} why s_c wanted to meet there. Stuttering but determined, s_c explains that {PRONOUN/s_c/subject} wondered if, possibly, maybe, app2 would like to hang out together... just the two of them? app2 looks away with a purr, mumbling a soft yes to the ground.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -701,7 +699,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app2 refuses to come out into the night, and app1 gives up on their idea, disappointed they didn't get to spend time with app2.",
+                "text": "app2 refuses to come out into the night, and app1 gives up on {PRONOUN/app1/poss} idea, disappointed {PRONOUN/app1/subject} didn't get to spend time with app2.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -715,7 +713,7 @@
                 ]
             },
             {
-                "text": "app2, seeing app1, asks why app1 wanted to meet there. app1 stutters out some nonsense about hunting, and then runs off into the sparkling night, their romantic ideas shattered.",
+                "text": "app2, seeing app1, asks why app1 wanted to meet there. app1 stutters out some nonsense about hunting and then runs off into the sparkling night, abandoning {PRONOUN/app1/poss} romantic plans.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -733,7 +731,7 @@
     {
         "patrol_id": "wtlnd_train_arguingromance1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": ["romantic", "pos_jealousy"],
         "patrol_art": "train_general_intro",
@@ -743,13 +741,13 @@
             "all apprentices": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "p_l paddles across a little streamlet, on PRONOUN/p_l/poss} way to a little dry hump of raised ground near camp that's good for training. Upon arrival, {PRONOUN/p_l/subject} find r_c doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c/object}. While Clanmates will do better training together, r_c just rubs {PRONOUN/p_l/subject} the wrong way.",
+        "intro_text": "p_l paddles across a little streamlet on {PRONOUN/p_l/poss} way to a hump of raised ground near camp that's good for training. Upon arrival, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} r_c doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c/object}. While Clanmates will do better training together, r_c just rubs {PRONOUN/p_l/subject} the wrong way.",
         "decline_text": "...It's fine to train somewhere else, p_l decides. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} really want to interact with r_c.",
         "chance_of_success": 60,
         "relationship_constraint": ["dislike_10"],
         "success_outcomes": [
             {
-                "text": "r_c shows {PRONOUN/p_l/object} a stunningly successful technique {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been working on to judge the depth and danger of quagmires, and p_l can't let {PRONOUN/p_l/self} look bad in comparison, showing off {PRONOUN/p_l/poss} battle-back-flip with a smug smirk.",
+                "text": "r_c shows {PRONOUN/p_l/object} a deft technique {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been working on to judge the depth and danger of quagmires, and p_l can't let {PRONOUN/p_l/self} look bad in comparison, showing off {PRONOUN/p_l/poss} battle backflip with a smug smirk.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -763,7 +761,7 @@
                 ]
             },
             {
-                "text": "r_c shows off how far {PRONOUN/r_c/subject} can pounce, which means p_l shows off how fast {PRONOUN/p_l/subject} can run, which means r_c shows off how sharp {PRONOUN/r_c/poss} claws are, which means p_l shows off how shiny {PRONOUN/p_l/poss} pelt is, which means r_c shows off how long {PRONOUN/r_c/poss} legs are, which means p_l shows off how cool {PRONOUN/p_l/poss} scars are - this goes on all afternoon.",
+                "text": "r_c shows off how far {PRONOUN/r_c/subject} can pounce, so p_l shows off how fast {PRONOUN/p_l/subject} can run, so r_c shows off how sharp {PRONOUN/r_c/poss} claws are, so p_l shows off how shiny {PRONOUN/p_l/poss} pelt is, sp r_c shows off how long {PRONOUN/r_c/poss} legs are, so p_l shows off how cool {PRONOUN/p_l/poss} scars are - this goes on all afternoon.",
                 "exp": 15,
                 "weight": 5,
                 "relationships": [
@@ -797,7 +795,7 @@
     {
         "patrol_id": "wtlnd_train_sunset1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": ["romantic"],
         "patrol_art": "train_general_intro",
@@ -808,12 +806,12 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l approaches r_c, asking if they wouldn't mind showing p_l their hunting techniques, and perhaps doing some training with them?",
-        "decline_text": "r_c declines gently, explaining that they have too much work to do.",
+        "intro_text": "p_l approaches r_c, asking if {PRONOUN/r_c/subject} wouldn't mind showing p_l {PRONOUN/r_c/poss} hunting techniques, and perhaps training together?",
+        "decline_text": "r_c declines gently, explaining that {PRONOUN/r_c/subject} {VERB/r_c/have/has} too much work to do.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "The cats go out together in the late of the day, as the swamp seems made of shadows. r_c goes through their tricks, showing p_l how they use the direction of the sun to avoid casting a shadow on pools as they fish, as p_l watches with eyes that r_c notices are a bit too admiring for what's just a little trick. They smirk, showing off a little.",
+                "text": "The cats go out together late in the day, when the swamp seems made of shadows. r_c goes through {PRONOUN/r_c/poss} tricks, showing p_l how {PRONOUN/r_c/subject} {VERB/r_c/use/uses} the direction of the sun to avoid casting a shadow on pools as {PRONOUN/r_c/subject} {VERB/r_c/fish/fishes}, as p_l watches with eyes that r_c notices are a bit too admiring for what's just a little trick. {PRONOUN/r_c/subject/CAP} {VERB/r_c/smirk/smirks}, showing off a little.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
@@ -827,7 +825,7 @@
                 ]
             },
             {
-                "text": "It's a long but satisfying training session, with both cats having an in-depth chance to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching them instead of the sun, and smiles.",
+                "text": "It's a long but satisfying training session, giving both cats the chance to test themselves and work on their skills. It ends with them sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching {PRONOUN/r_c/object} instead of the sunset and smiles.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -841,7 +839,7 @@
                 ]
             },
             {
-                "text": "s_c is a fantastic hunter, and p_l isn't shy about telling them so. They blush, but work through it, showing p_l how to use the scraps of old crowfood from the fresh-kill pile to attract fish, frogs, newts, salamanders and other squishy things in the murky pools.",
+                "text": "s_c is a fantastic hunter, and p_l isn't shy about telling {PRONOUN/s_c/object} so. {PRONOUN/s_c/subject/CAP} {VERB/s_c/blush/blushes}, but {VERB/s_c/work/works} through it, showing p_l how to use the scraps of old crowfood from the fresh-kill pile to attract fish, frogs, newts, salamanders, and other squishy things in the murky pools.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["HUNTER,3"],
@@ -857,7 +855,7 @@
                 ]
             },
             {
-                "text": "p_l marvels at the opportunity to have s_c's time to themselves. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so.",
+                "text": "p_l marvels at the opportunity to have s_c's time to {PRONOUN/p_l/self}. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -884,7 +882,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c tries, but both the cats are too tired after a long day's work, and end up snapping at each other. It's nothing serious, but both agree to take some time to cool off.",
+                "text": "r_c tries, but both the cats are too tired after a long day's work and end up snapping at each other. It's nothing serious, but both agree to take some time to cool off.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -916,7 +914,7 @@
     {
         "patrol_id": "wtlnd_train_any_beetlesoloapp1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "train_general_intro",
@@ -931,17 +929,17 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "HAH! app1 pounces, the pathetic bug crunching underneath {PRONOUN/app1/poss} mighty blow, splattering and - eww. Eww, eww eww eww there's bug juice all over {PRONOUN/app1/poss} paws, it's between {PRONOUN/app1/poss} toes, EWWWWW!",
+                "text": "Ha! app1 pounces, the pathetic bug crunching underneath {PRONOUN/app1/poss} mighty blow, splattering and... Ewwwww. Ew, ew ew ew, there's bug juice all over {PRONOUN/app1/poss} paws, between {PRONOUN/app1/poss} toes - EWWWWW!",
                 "exp": 20,
                 "weight": 20
             },
             {
-                "text": "HAH! app1 leaps, tail lashing furiously as the beetle buzzes under {PRONOUN/app1/poss} forepaws, claws sheathed. {PRONOUN/app1/subject/CAP} {VERB/app1/bat/bats} the bug off the rock and onto the ground, pouncing after it, jumping and twisting as {PRONOUN/app1/poss} colorful prey flits around {PRONOUN/app1/poss} head in confused-concussed beetle-behavior, unused to being an apprentice's new favorite toy.",
+                "text": "Ha! app1 leaps, tail lashing as the beetle buzzes under {PRONOUN/app1/poss} paws. {PRONOUN/app1/subject/CAP} {VERB/app1/bat/bats} the bug off the rock and onto the ground, then {VERB/app1/pounce/pounces} after it. app1 jumps and twists as {PRONOUN/app1/poss} colorful prey flits around {PRONOUN/app1/poss} head in typical concussed beetle fashion, unused to being an apprentice's new favorite toy.",
                 "exp": 20,
                 "weight": 5
             },
             {
-                "text": "s_c pounces, flipping the beetle with soft paws and flopping over onto {PRONOUN/app1/poss} back, watching the insect scurry from one paw to the other, so completely entranced by its color and tiny, perfect legs that {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} notice {PRONOUN/app1/poss} own skill catching and keeping the bug.",
+                "text": "s_c pounces, flipping the beetle with soft paws and flopping over onto {PRONOUN/app1/poss} back. {PRONOUN/s_c/subject/CAP} {VERB/s_c/watch/watches} the insect scurry from one paw to the other, so entranced by its color and tiny, perfect legs that {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} notice {PRONOUN/app1/poss} own skill in catching and keeping the bug.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["HUNTER,0"]
@@ -966,5 +964,472 @@
                 ]
             }
         ]
+    },
+    {
+        "patrol_id": "wtlnd_train_moosemyth_storylocked1",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1"],
+        "intro_text": "p_l holds up their tail and freezes in place. app1 swallows {PRONOUN/app1/poss} terror as the ground rumbles ominously beneath them. Crouching down, following p_l's guidance, {PRONOUN/app1/subject} {VERB/app1/stare/stares} in awe as a giant, hulking beast with tree branches on its head emerges from the swamp.",
+        "decline_text": "app1 scurries away before the moose draws near, leaving the reeking scent of fear in {PRONOUN/app1/poss} wake. p_l sighs in annoyance and follows after {PRONOUN/p_l/poss} apprentice.",
+        "success_outcomes": [
+                {
+                    "text": "Once upon a time, p_l murmurs, voice barely a whisper, Twolegs attacked the wetlands, ripping down trees, choking off rivers, and reshaping the earth itself. Seeing the destruction, the stars blessed the fallen trees to rise, undead and massive, and drive the Twolegs from the swamps. Moose are very dangerous - but their presence shields c_n.",
+                    "exp": 30,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        }
+                    ]
+                },
+                {
+                    "text": "As the gigantic moose wanders by, p_l quietly begins to {PRONOUN/p_l/poss} tale. The ancestors of the Clans were starving. They almost gave up settling in the swamp, but then they came across a battle between two giants. A wolf brought down a moose and left after eating its fill. The cats were able to survive off the remaining meat, and some cats still live amongst its bones!",
+                    "exp": 30,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "app1's courage falters in the sight of such a huge animal. {PRONOUN/app1/subject/CAP} {VERB/app1/try/tries} to run from it, but p_l pins {PRONOUN/app1/object} to the ground lest the sudden movement startle the moose. One blow from those big hooves would easily kill a cat.",
+                    "exp": 0,
+                    "weight": 20,
+                    "injury": [
+                        {
+                            "cats": ["app1"],
+                            "injuries": ["shock"]
+                        }
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": false,
+                            "values": ["comfort"],
+                            "amount": -10
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "wtlnd_train_thechasedones_lorelocked1",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_bord_story",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6],
+            "apprentice":[1, 6]
+            },
+        "weight": 20,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["LORE,1"],
+        "intro_text": "It's been a hard swimming lesson - app1 has just fallen back in, and {PRONOUN/app1/subject} {VERB/app1/try/tries} to clamber out with {PRONOUN/app1/poss} claws dug into a tree root. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} looking particularly sorry for {PRONOUN/app1/self}, so p_l suggests they take a break; {PRONOUN/p_l/subject} {VERB/p_l/have/has} a story to share. Does app1 know why c_n lives in the quagmire?",
+        "decline_text": "No, and though {PRONOUN/app1/subject}{VERB/app1/'re/'s} polite, app1 doesn't want to hear about it. {PRONOUN/app1/subject/CAP}{VERB/app1/'d/'s} just like some help drying off.",
+        "success_outcomes": [
+                {
+                    "text": "Long ago, rebels were driven from their former Clans and sought a new life. But the lands were crowded with other cats, vicious and territorial, and the refugees were chased beyond land and familiarity. It was only in the waters that others cringed from where they found safety. c_n remembers those lessons still and treasures their swamps for the safety they provide.",
+                    "exp": 30,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort", "trust", "platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "p_l tries to share the long ago history of the safe refuge the swamps offered - but app1 throws back {PRONOUN/app1/poss} head and yowls. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} <i>care</i> what some ancient cat did; {PRONOUN/app1/subject} <i>{VERB/app1/hate/hates}</i> this. Water is awful!",
+                    "exp": 0,
+                    "weight": 20,
+                    "art": "gen_train_argue",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": true,
+                            "values": ["respect", "platonic", "comfort"],
+                            "amount": -5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": true,
+                            "values": ["dislike"],
+                            "amount": 15
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": false,
+                            "values": ["jealous"],
+                            "amount": 5
+                        }
+                    ]
+                },
+                {
+                    "text": "Long ago, rebels were driven from their former Clans and sought a new life, p_l begins. But app1 interrupts {PRONOUN/p_l/object} - so these rebels were too cowardly to fight? The exiles should've attacked and taken over, not surrendered and run.",
+                    "exp": 0,
+                    "weight": 20,
+                    "art": "gen_train_argue",
+                    "can_have_stat":["not_pl"],
+                    "stat_trait": [
+                        "troublesome",
+                        "rebellious",
+                        "fierce",
+                        "cold",
+                        "grumpy"
+                    ],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["s_c"],
+                            "mutual": true,
+                            "values": ["respect", "platonic", "comfort"],
+                            "amount": -5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["s_c"],
+                            "mutual": true,
+                            "values": ["dislike"],
+                            "amount": 15
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["s_c"],
+                            "mutual": false,
+                            "values": ["jealous"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "wtlnd_train_thegreedyravenandthesnake_storylorelocked1",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_train_sunset",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6]
+            },
+        "weight": 20,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["LORE,1", "STORY,1"],
+        "intro_text": "As the patrol shares tongues, p_l asks if they'd like to hear the tale of The Greedy Raven and the Snake.",
+        "decline_text": "Instead, p_l detangles a stubborn knot of fur for r_c.",
+        "success_outcomes": [
+                {
+                    "text": "Long ago, a leader's son pursued his father's approval and attention by murdering his deputies. But his last victim's mate, a queen nursing the kits of the dead deputy, rose from her nest and struck back with the fury of a mother viper. If the leader's son had been willing to wait for power to come to him, he would've been a great leader. Instead, his ghost lurks in the Dark Forest.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_bord_story",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort", "trust", "platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "The cats aren't interested in hearing p_l's historical tale, and p_l tries not to let {PRONOUN/p_l/poss} ears fall in disappointment.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "wtlnd_train_bogbodies_storylorelocked1",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_train_ghost",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6],
+            "apprentice": [2, 6]
+            },
+        "weight": 20,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["LORE,1", "STORY,1"],
+        "intro_text": "Alright, listen up, p_l orders. It's not a <i>fun</i> tale, but apprentices need to learn about the bog. And, er... the bodies...",
+        "decline_text": "On second thought, app1 looks a bit nervous. p_l will wait to explain this until another, happier, day.",
+        "success_outcomes": [
+                {
+                    "text": "In the heartbreaking event that a Clanmate is lost and you're nearby, p_l explains seriously, you cannot leave their body in the wetlands. Their body and spirit will both sink into the murk, the bog will take them, and they'll never be able to find their way to StarClan.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "scaryghost_INTRO",
+                    "stat_skill": ["STORY,1"],
+                    "can_have_stat": ["p_l"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                },
+                {
+                    "text": "In the heartbreaking event that a Clanmate is lost and you're nearby, p_l explains seriously, you cannot leave their body in the wetlands. Bodies don't decay in the bog. It traps the spirit deep in its murky depths...",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "scaryghost_INTRO",
+                    "stat_skill": ["LORE,1"],
+                    "can_have_stat": ["p_l"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "p_l starts to talk about undecaying bodies lying in bogs, and that's... a bit beyond what the apprentices can handle, it turns out.",
+                    "exp": 0,
+                    "weight": 20,
+                    "art": "gen_scared_cat_app",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "wtlnd_train_glowingmushrooms_apprentices_storylorelocked1",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_app_crouching_perplexed",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [-1, -1],
+            "apprentice": [2, 6]
+            },
+        "weight": 20,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["LORE,0", "STORY,0"],
+        "intro_text": "Poking their noses out of camp at night (which they're definitely not supposed to do), app1 and app2 spot something glowing among the trees...",
+        "decline_text": "On second thought, camp is great, and they want to stay there.",
+        "success_outcomes": [
+                {
+                    "text": "One heartbeat passes. Then another. The light doesn't change. s_c creeps forward, whiskers aquiver. It's a mushroom! A gift from passing spirits, s_c bets, left to light their way through the swamp!",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_happy_cat2",
+                    "stat_skill": ["STORY,1"],
+                    "can_have_stat": ["app"],
+                    "relationships": [
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                },
+                {
+                    "text": "One heartbeat passes. Then another. The light doesn't change. s_c creeps forward, whiskers aquiver. It's a mushroom! s_c has heard of these; StarClan once left a trail to guide c_n cats out of danger during a disaster!",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_happy_cat2",
+                    "stat_skill": ["LORE,1"],
+                    "can_have_stat": ["app"],
+                    "relationships": [
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "trust"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["s_c"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "It's too weird. app1 refuses to go near the light and almost gets them caught sneaking back into camp with how much {PRONOUN/app1/subject}{VERB/app1/'re/'s} panicking.",
+                    "exp": 0,
+                    "weight": 20,
+                    "art": "gen_scared_cat_app",
+                    "relationships": [
+                        {
+                            "cats_to": ["app1"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["comfort"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
     }
 ]

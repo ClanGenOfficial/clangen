@@ -2,7 +2,7 @@
     {
         "patrol_id": "bch_med_soloripples1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_soloripples",
@@ -15,12 +15,12 @@
         },
         "weight": 20,
         "intro_text": "While gathering fresh water, p_l sees strange ripples on the surface of a puddle.",
-        "decline_text": "p_l is in too much of a hurry, not sparing the rippling water a second glance.",
+        "decline_text": "p_l is in too much of a hurry and doesn't spare the rippling water a second glance.",
         "chance_of_success": 45,
         "pl_skill_constraint": ["PROPHET,1"],
         "success_outcomes": [
             {
-                "text": "As p_l looks into the puddle, {PRONOUN/p_l/subject}'re greeted by an intense vision. {PRONOUN/p_l/subject/CAP} {VERB/p_l/drop/drops} what {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} doing and race back to the camp to consult with the leader - water can wait, this is far too important.",
+                "text": "As p_l looks into the puddle, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} greeted by an intense vision. {PRONOUN/p_l/subject/CAP} {VERB/p_l/drop/drops} what {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} doing and {VERB/p_l/race/races} back to the camp to consult with the leader - water can wait, this is far more important.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
@@ -34,7 +34,7 @@
                 ]
             },
             {
-                "text": "p_l is greeted with the vision of a cat {PRONOUN/p_l/subject} had failed to save, content and happy in StarClan. The cat gives them a gentle smile, softly telling p_l that {PRONOUN/p_l/subject} {VERB/p_l/were/was} never at fault for their death. p_l feels {PRONOUN/p_l/poss} shoulders sag with the weight of {PRONOUN/p_l/poss} relief, feeling the burden of the death lift from over {PRONOUN/p_l/poss} head.",
+                "text": "p_l is greeted with the vision of a cat {PRONOUN/p_l/subject} had failed to save, content and happy in StarClan. The cat gives them a gentle smile, softly telling p_l that {PRONOUN/p_l/subject} {VERB/p_l/were/was} never at fault for their death. p_l's shoulders sag with the weight of {PRONOUN/p_l/poss} relief, and p_l feels the burden of the death lift from over {PRONOUN/p_l/poss} head.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -59,7 +59,7 @@
     {
         "patrol_id": "bch_med_clair1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -70,7 +70,7 @@
         },
         "weight": 20,
         "intro_text": "While on a trip to gather herbs, p_l slows to a stop. The random patch of beach {PRONOUN/p_l/subject} {VERB/p_l/linger/lingers} on doesn't look important, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} suddenly overcome by an otherworldly feeling of clair_list_emotional. What could this mean?",
-        "decline_text": "p_l is in too much of a hurry, {PRONOUN/p_l/subject} {VERB/p_l/shake/shakes} the feeling off and {VERB/p_l/resolve/resolves} to forget the disconcerting experience.",
+        "decline_text": "p_l is in too much of a hurry. {PRONOUN/p_l/subject/CAP} {VERB/p_l/shake/shakes} the feeling off and {VERB/p_l/resolve/resolves} to forget the disconcerting experience.",
         "chance_of_success": 45,
         "pl_skill_constraint": ["CLAIRVOYANT,1"],
         "success_outcomes": [
@@ -81,7 +81,7 @@
                 "herbs": ["random_herbs"]
             },
             {
-                "text": "These feelings could prove important, they have in the past, at least. p_l makes {PRONOUN/p_l/self} comfortable on the beach, letting the feelings wash over {PRONOUN/p_l/object} and carry {PRONOUN/p_l/object} away. Eventually {PRONOUN/p_l/subject} {VERB/p_l/return/returns} to herb collecting, content in the new knowledge and understanding {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} gained.",
+                "text": "These feelings could prove important; they have in the past, at least. p_l makes {PRONOUN/p_l/self} comfortable on the beach, letting the feelings wash over {PRONOUN/p_l/object} and carry {PRONOUN/p_l/object} away. Eventually {PRONOUN/p_l/subject} {VERB/p_l/return/returns} to herb collecting, content in the new knowledge and understanding {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} gained.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["random_herbs"]
@@ -98,7 +98,7 @@
     {
         "patrol_id": "bch_med_herblocation1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -112,7 +112,7 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "p_l looks at the calm, cloudless sky, and decides it's a good opportunity to show app1 where some of the most commonly needed herbs are located in {PRONOUN/p_l/poss} territory, as well as where and when to burrow into the sand to find the more potent roots {PRONOUN/p_l/subject} {VERB/p_l/tend/tends} to use.",
+        "intro_text": "p_l looks at the calm, cloudless sky and decides it's a good opportunity to show app1 where some of the most commonly needed herbs are located in {PRONOUN/p_l/poss} territory, as well as where and when to burrow into the sand to find the more potent roots {PRONOUN/p_l/subject} {VERB/p_l/tend/tends} to use.",
         "decline_text": "As {PRONOUN/p_l/subject} {VERB/p_l/look/looks} at app1's absent-minded gaze, {PRONOUN/p_l/subject} {VERB/p_l/hesitate/hesitates} and change {PRONOUN/p_l/poss} mind. Maybe another day would be best, when app1 is more focused... and less liable to get sand everywhere, or damage the herbs.",
         "chance_of_success": 65,
         "success_outcomes": [
@@ -167,7 +167,7 @@
     {
         "patrol_id": "bch_med_herblocation2",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "bch_med_herblocation2",
@@ -181,7 +181,7 @@
         },
         "weight": 20,
         "intro_text": "app1 has been sent out onto the beaches to try to find some specific herbs alone.",
-        "decline_text": "Nervous and sneezing due to the salty air, they decide to go back to camp and try again another day. {PRONOUN/app1/poss/CAP} mentor won't be very pleased, but {PRONOUN/app1/subject} rationalize that it's better to go with confidence than nerves.",
+        "decline_text": "Nervous and sneezing due to the salty air, {PRONOUN/app1/subject} {VERB/app1/decide/decides} to go back to camp and try again another day. {PRONOUN/app1/poss/CAP} mentor won't be very pleased, but {PRONOUN/app1/subject} rationalize that it's better to go with confidence than nerves.",
         "chance_of_success": 65,
         "success_outcomes": [
             {
@@ -199,7 +199,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 goes to an herb patch {PRONOUN/app1/subject}{VERB/app1/'re/'s} sure {PRONOUN/app1/subject} {VERB/app1/know/knows}, only to find the plants withered and dead. {PRONOUN/app1/subject/CAP} {VERB/app1/give/gives} up and return to camp, {PRONOUN/app1/poss} tail dragging miserably along the ground.",
+                "text": "app1 goes to an herb patch {PRONOUN/app1/subject}{VERB/app1/'re/'s} sure {PRONOUN/app1/subject} {VERB/app1/know/knows}, only to find the plants withered and dead. {PRONOUN/app1/subject/CAP} {VERB/app1/give/gives} up and {VERB/app1/return/returns} to camp, {PRONOUN/app1/poss} tail dragging miserably along the ground.",
                 "exp": 0,
                 "weight": 20
             }
@@ -208,7 +208,7 @@
     {
         "patrol_id": "bch_med_herbsdandy1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_herbsdandy",
@@ -227,13 +227,13 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "The two medicine cats find the plants in good shape, and are able to collect plenty.",
+                "text": "The two medicine cats find the plants in good shape and are able to collect plenty.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["dandelion"]
             },
             {
-                "text": "The dandelions are so plentiful, it seems there's enough for cats and rabbits alike to take what they need.",
+                "text": "The dandelions are so plentiful that it seems there's enough for cats and rabbits alike to take what they need.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "dandelion"]
@@ -250,7 +250,7 @@
     {
         "patrol_id": "bch_med_appfirstsign1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -285,7 +285,7 @@
     {
         "patrol_id": "bch_med_rainygathering1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_rainygathering",
@@ -372,7 +372,7 @@
     {
         "patrol_id": "bch_med_gatheringcobwebs1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -385,7 +385,7 @@
         },
         "weight": 20,
         "intro_text": "p_l heads out into the territory to stock up on cobwebs, something the Clan never seems to have enough of.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving their patients behind, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving their patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 80,
         "success_outcomes": [
             {
@@ -403,7 +403,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Over-tired from caring for {PRONOUN/p_l/poss} patients all day and night, the only cobwebs p_l manages to 'collect' are the ones {PRONOUN/p_l/subject} accidentally walked into.",
+                "text": "Overtired from caring for {PRONOUN/p_l/poss} patients all day and night, the only cobwebs p_l manages to 'collect' are the ones {PRONOUN/p_l/subject} accidentally walked into.",
                 "exp": 0,
                 "weight": 20
             }
@@ -412,7 +412,7 @@
     {
         "patrol_id": "bch_med_cobweblesson1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_cobweblesson",
@@ -427,7 +427,7 @@
         },
         "weight": 20,
         "intro_text": "p_l heads out into the territory with app1, both to stock up on cobwebs and to teach the apprentice how to gather one of the Clan's most vital medical tools.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} have second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/subject} also bringing {PRONOUN/p_l/poss} apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/subject} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 80,
         "success_outcomes": [
             {
@@ -481,7 +481,7 @@
     {
         "patrol_id": "bch_med_cobwebhelp1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -493,7 +493,7 @@
         },
         "weight": 20,
         "intro_text": "c_n can never have enough cobwebs, p_l instructs {PRONOUN/p_l/poss} team, leading them out to search for them.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP}'re stopped before {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} stopped before {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -519,7 +519,7 @@
                 ]
             },
             {
-                "text": "The patrol brings back a truly massive haul, and return in good humor, laughing as {PRONOUN/p_l/subject} set down {PRONOUN/p_l/poss} sticks of spun-up webbing in the medicine cat den. p_l joins everyone as they sit down to share tongues, ridding their pelts of dust and the odd spider as the cats catch up with each other and enjoy the day.",
+                "text": "The patrol brings back a truly massive haul and return in good humor, laughing as {PRONOUN/p_l/subject} set down {PRONOUN/p_l/poss} sticks of spun-up webbing in the medicine cat den. p_l joins everyone as they sit down to share tongues, ridding their pelts of dust and the odd spider as the cats catch up with each other and enjoy the day.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "cobwebs"],
@@ -566,7 +566,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Can warriors not pay attention, even to something as simple as cobwebs?! p_l holds {PRONOUN/p_l/poss} breath and counts to ten before {PRONOUN/p_l/subject} {VERB/p_l/dismiss/dismisses} the patrol, every found cobweb ruined, what little {PRONOUN/p_l/subject} did manage to find.",
+                "text": "Can warriors not pay attention, even to something as simple as cobwebs?! p_l holds {PRONOUN/p_l/poss} breath and counts to ten before {PRONOUN/p_l/subject} {VERB/p_l/dismiss/dismisses} the patrol, every found cobweb ruined - what little {PRONOUN/p_l/subject} did manage to find.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -591,7 +591,7 @@
     {
         "patrol_id": "bch_med_gatheringhorsetail1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -604,11 +604,11 @@
         },
         "weight": 20,
         "intro_text": "p_l heads out on an herb-gathering patrol, searching for the ever-green, ever-reliable horsetail to harvest for the herb stores.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} have second thoughts about leaving their patients behind, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving their patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Snapping off the thick horsetail stem near the base of the plant allows p_l to drag an entire big, long shoot back to camp, where {PRONOUN/p_l/subject} diligently process it down further into smaller stem sections that are easily stored.",
+                "text": "Snapping off the thick horsetail stem near the base of the plant allows p_l to drag an entire big, long shoot back to camp, where {PRONOUN/p_l/subject} diligently {VERB/p_l/process/processes} it down further into smaller stem sections that are easily stored.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["horsetail"]
@@ -632,7 +632,7 @@
     {
         "patrol_id": "bch_med_horsetaillesson1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -646,7 +646,7 @@
         },
         "weight": 20,
         "intro_text": "p_l heads out on an herb-gathering patrol, searching for the ever-green, ever-reliable horsetail to harvest for the herb stores. app1 trots after {PRONOUN/p_l/object}, asking {PRONOUN/p_l/object} why horsetail grows so weirdly without leaves.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving their patients behind, especially with them also bringing their apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -672,7 +672,7 @@
                 ]
             },
             {
-                "text": "Snapping off the thick horsetail stem near the base of the plant allows p_l to drag an entire big, long shoot back to camp, where app1 processes it down further into small stem sections that are easily stored, making a neat pile in the medicine cat den with {PRONOUN/p_l/self}.",
+                "text": "Snapping off the thick horsetail stem near the base of the plant allows p_l to drag an entire big, long shoot back to camp, where app1 processes it down further into small stem sections that are easily stored, making a neat pile in the medicine cat den with p_l.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "horsetail"],
@@ -745,7 +745,7 @@
     {
         "patrol_id": "bch_med_horsetailhelp1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -758,11 +758,11 @@
         },
         "weight": 20,
         "intro_text": "Bringing a motley assortment of Clanmates along with {PRONOUN/p_l/object}, p_l heads out on an herb-gathering patrol, searching for the ever-green, ever-reliable horsetail to harvest for the herb stores.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP}'re stopped before {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} stopped before {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Snapping off the thick horsetail stem near the base of the plant allows p_l to drag an entire shoot back to camp. The patrol helps pull along the massive bush, causing several cats in camp to fluff up in alarm when the patrol drags it through camp, where {PRONOUN/p_l/subject} diligently process it down further into smaller stem sections that are easily stored.",
+                "text": "Snapping off the thick horsetail stem near the base of the plant allows p_l to drag an entire shoot back to camp. The patrol helps pull along the massive bush, causing several cats in camp to fluff up in alarm when the patrol drags it through camp, where {PRONOUN/p_l/subject} diligently {VERB/p_l/process/processes} it down further into smaller stem sections that are easily stored.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["horsetail"],
@@ -834,7 +834,7 @@
     {
         "patrol_id": "bch_med_gatheringmoss1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_gatheringmoss",
@@ -846,7 +846,7 @@
         },
         "weight": 20,
         "intro_text": "p_l notices that the moss in the medicine den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
-        "decline_text": "A cat requires their attention just as {PRONOUN/p_l/subject} go to leave. Moss will have to wait.",
+        "decline_text": "A cat requires {PRONOUN/p_l/poss} attention just as {PRONOUN/p_l/subject} go to leave. Moss will have to wait.",
         "chance_of_success": 80,
         "success_outcomes": [
             {
@@ -867,7 +867,7 @@
     {
         "patrol_id": "bch_med_gatheringmoss2",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_gatheringmoss",
@@ -882,11 +882,11 @@
         },
         "weight": 20,
         "intro_text": "p_l notices that the moss in the medicine den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
-        "decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
+        "decline_text": "A cat requires {PRONOUN/p_l/poss} attention just as p_l goes to leave. Moss will have to wait.",
         "chance_of_success": 80,
         "success_outcomes": [
             {
-                "text": "p_l leads the way to the best moss patch {PRONOUN/p_l/subject} {VERB/p_l/know/knows}, with app1 following close behind. The two cats begin cutting off bits of moss and making their respective piles - once the piles turn into mouthfuls, they pick up the bundles of new bedding and start back towards camp.",
+                "text": "p_l leads the way to the best moss patch {PRONOUN/p_l/subject} {VERB/p_l/know/knows} with app1 following close behind. The two cats begin cutting off bits of moss and making their respective piles. Once the piles turn into mouthfuls, they pick up the bundles of new bedding and start back towards camp.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["moss"],
@@ -935,7 +935,7 @@
     {
         "patrol_id": "bch_med_gatheringmoss3",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_gatheringmoss",
@@ -948,7 +948,7 @@
         },
         "weight": 20,
         "intro_text": "p_l notices that the moss in the medicine den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
-        "decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
+        "decline_text": "A cat requires {PRONOUN/p_l/poss} attention just as p_l goes to leave. Moss will have to wait.",
         "chance_of_success": 80,
         "success_outcomes": [
             {
@@ -1001,7 +1001,7 @@
     {
         "patrol_id": "bch_med_gatheringmoss4",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_gatheringmoss",
@@ -1014,11 +1014,11 @@
         },
         "weight": 20,
         "intro_text": "p_l notices that the moss in the medicine den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
-        "decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
+        "decline_text": "A cat requires {PRONOUN/p_l/poss} attention just as p_l goes to leave. Moss will have to wait.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "p_l leads the way to the best moss patch {PRONOUN/p_l/subject} {VERB/p_l/know/knows}, with {PRONOUN/p_l/poss} entourage following close behind. The cats begin cutting off bits of moss and making their respective piles - once the piles turn into mouthfuls, they pick up the bundles of new bedding and start back towards camp.",
+                "text": "p_l leads the way to the best moss patch {PRONOUN/p_l/subject} {VERB/p_l/know/knows}, with {PRONOUN/p_l/poss} entourage following close behind. The cats begin cutting off bits of moss and making their respective piles. Once the piles turn into mouthfuls, they pick up the bundles of new bedding and start back towards camp.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["moss"],
@@ -1053,7 +1053,7 @@
     {
         "patrol_id": "bch_med_gatheringrosemary1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_gatheringrosemary",
@@ -1105,7 +1105,7 @@
     {
         "patrol_id": "bch_med_gatheringrosemary2",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_gatheringrosemary",
@@ -1156,7 +1156,7 @@
     {
         "patrol_id": "bch_med_discussion1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": [],
         "tags": [],
         "patrol_art": "gen_med_discussion",
@@ -1170,7 +1170,7 @@
         },
         "weight": 20,
         "intro_text": "p_l and r_c head inland to look for herbs, discussing the latest news.",
-        "decline_text": "It seems like some mischievous cat has gotten into the herb storage and they have to sort it all over again.",
+        "decline_text": "It seems like some mischievous cat has gotten into the herb storage, and they have to sort it all over again.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -1206,7 +1206,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "They fail to interpret any signs, and are too irritated with each other to discuss any other news. Furthermore, neither cat manages to gather anything, the trip cut short by the ominous looking clouds springing up over the ocean.",
+                "text": "They fail to interpret any signs and are too irritated with each other to discuss any other news. Furthermore, neither cat manages to gather anything when the trip is cut short by the ominous looking clouds springing up over the ocean.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1224,7 +1224,7 @@
     {
         "patrol_id": "bch_med_dwindleherbsgathering1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": [],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -1287,7 +1287,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Both p_l and r_c are tense and it shows. Even though it should not be this hard to find any herbs they fail to find even a single one. They return to camp frustrated and irritated with each other.",
+                "text": "Both p_l and r_c are tense and it shows. Even though it should not be this hard to find any herbs, they fail to find even a single one. They return to camp frustrated and irritated with each other.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1308,7 +1308,7 @@
                 ]
             },
             {
-                "text": "Even though there should be many herbs they fail to find anything. p_l blames r_c for distracting {PRONOUN/p_l/object} and they get into a huge argument.",
+                "text": "Even though there should be many herbs, they fail to find anything. p_l blames r_c for distracting {PRONOUN/p_l/object}, and they get into a huge argument.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1333,10 +1333,10 @@
     {
         "patrol_id": "bch_med_cobwebapps1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic"],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_cobwebapps",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -1350,7 +1350,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "It makes app1 laugh, muffled through {PRONOUN/app1/poss} own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
+                "text": "It makes app1 laugh, muffled through {PRONOUN/app1/poss} own cobweb gathering stick. It's good to have a friend around for the boring bits of the day. app2 seems to lighten up every situation.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["cobwebs"],
@@ -1396,7 +1396,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered..",
+                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there are cobwebs spun around the ends of them, and they end up completely ruining what they've gathered...",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1421,10 +1421,10 @@
     {
         "patrol_id": "bch_med_cobwebapps2",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic"],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_cobwebapps",
         "min_cats": 3,
         "max_cats": 3,
         "min_max_status": {
@@ -1440,7 +1440,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "app3 ignores it, but it makes app1 laugh, muffled through {PRONOUN/app1/poss} own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
+                "text": "app3 ignores it, but it makes app1 laugh, muffled through {PRONOUN/app1/poss} own cobweb gathering stick. It's good to have a friend around for the boring bits of the day. app2 seems to lighten up every situation.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["cobwebs"],
@@ -1486,7 +1486,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered..",
+                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there are cobwebs spun around the ends of them, and they end up completely ruining what they've gathered...",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1511,10 +1511,10 @@
     {
         "patrol_id": "bch_med_cobwebapps3",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic"],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_cobwebapps",
         "min_cats": 4,
         "max_cats": 4,
         "min_max_status": {
@@ -1576,7 +1576,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered..",
+                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there are cobwebs spun around the ends of them, and they end up completely ruining what they've gathered...",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1601,10 +1601,10 @@
     {
         "patrol_id": "bch_med_cobwebapps4",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic"],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_cobwebapps",
         "min_cats": 5,
         "max_cats": 5,
         "min_max_status": {
@@ -1620,7 +1620,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The other apprentices ignore it, but it makes app1 laugh, muffled through {PRONOUN/app1/poss} own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
+                "text": "The other apprentices ignore it, but it makes app1 laugh, muffled through {PRONOUN/app1/poss} own cobweb gathering stick. It's good to have a friend around for the boring bits of the day. app2 seems to lighten up every situation.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["cobwebs"],
@@ -1666,7 +1666,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered..",
+                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there are cobwebs spun around the ends of them, and they end up completely ruining what they've gathered...",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1691,10 +1691,10 @@
     {
         "patrol_id": "bch_med_cobwebapps5",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic", "six_apprentices"],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_cobwebapps",
         "min_cats": 6,
         "max_cats": 6,
         "min_max_status": {
@@ -1709,7 +1709,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The other apprentices ignore it, but it makes app1 laugh, muffled through {PRONOUN/app1/poss} own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
+                "text": "The other apprentices ignore it, but it makes app1 laugh, muffled through {PRONOUN/app1/poss} own cobweb gathering stick. It's good to have a friend around for the boring bits of the day. app2 seems to lighten up every situation.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["cobwebs"],
@@ -1755,7 +1755,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered..",
+                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there are cobwebs spun around the ends of them, and they end up completely ruining what they've gathered...",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1780,7 +1780,7 @@
     {
         "patrol_id": "bch_med_cobwebapps6",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -1820,7 +1820,7 @@
                 ]
             },
             {
-                "text": "... However, once out of camp, the apprentices realize they're out of their depth, and turn to p_l for help. p_l, to {PRONOUN/p_l/poss} credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul there's a new feeling of rapport between everyone, regardless of their role.",
+                "text": "... However, once out of camp, the apprentices realize they're out of their depth, and turn to p_l for help. p_l, to {PRONOUN/p_l/poss} credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul, there's a new feeling of rapport between everyone, regardless of their role.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "cobwebs"],
@@ -1844,7 +1844,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l is disgusted with the general disdain {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} from the other apprentices, and how hypocritical it is to tell them herb gathering is easy when the patrol hasn't found <i>any</i> cobwebs! {PRONOUN/p_l/subject/CAP} {VERB/p_l/stalk/stalks} back to the medicine cat den in a huff, unable to bear being near the other apprentices for any longer than {PRONOUN/p_l/subject} {VERB/p_l/have/has} been.",
+                "text": "p_l is disgusted with the general disdain {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} from the other apprentices and how hypocritical it is to tell them herb gathering is easy when the patrol hasn't found <i>any</i> cobwebs! {PRONOUN/p_l/subject/CAP} {VERB/p_l/stalk/stalks} back to the medicine cat den in a huff, unable to bear being near the other apprentices for any longer than {PRONOUN/p_l/subject} {VERB/p_l/have/has} been.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1869,7 +1869,7 @@
     {
         "patrol_id": "bch_med_cobwebapps7",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -1933,7 +1933,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l is disgusted with the general disdain {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} from the other apprentices, and how hypocritical it is to tell them herb gathering is easy when the patrol hasn't found <i>any</i> cobwebs! {PRONOUN/p_l/subject/CAP} {VERB/p_l/stalk/stalks} back to the medicine cat den in a huff, unable to bear being near the other apprentices for any longer than {PRONOUN/p_l/subject} {VERB/p_l/have/has} been.",
+                "text": "p_l is disgusted with the general disdain {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} from the other apprentices and how hypocritical it is to tell them herb gathering is easy when the patrol hasn't found <i>any</i> cobwebs! {PRONOUN/p_l/subject/CAP} {VERB/p_l/stalk/stalks} back to the medicine cat den in a huff, unable to bear being near the other apprentices for any longer than {PRONOUN/p_l/subject} {VERB/p_l/have/has} been.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1958,7 +1958,7 @@
     {
         "patrol_id": "bch_med_cobwebapps8",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -2022,7 +2022,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l is disgusted with the general disdain {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} from the other apprentices, and how hypocritical it is to tell them herb gathering is easy when the patrol hasn't found <i>any</i> cobwebs! {PRONOUN/p_l/subject/CAP} {VERB/p_l/stalk/stalks} back to the medicine cat den in a huff, unable to bear being near the other apprentices for any longer than {PRONOUN/p_l/subject} {VERB/p_l/have/has} been.",
+                "text": "p_l is disgusted with the general disdain {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} from the other apprentices and how hypocritical it is to tell them herb gathering is easy when the patrol hasn't found <i>any</i> cobwebs! {PRONOUN/p_l/subject/CAP} {VERB/p_l/stalk/stalks} back to the medicine cat den in a huff, unable to bear being near the other apprentices for any longer than {PRONOUN/p_l/subject} {VERB/p_l/have/has} been.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2047,7 +2047,7 @@
     {
         "patrol_id": "bch_med_cobwebapps9",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["six_apprentices"],
         "patrol_art": "med_general_intro",
@@ -2111,7 +2111,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l is disgusted with the general disdain {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} from the other apprentices, and how hypocritical it is to tell them herb gathering is easy when the patrol hasn't found <i>any</i> cobwebs! {PRONOUN/p_l/subject/CAP} {VERB/p_l/stalk/stalks} back to the medicine cat den in a huff, unable to bear being near the other apprentices for any longer than {PRONOUN/p_l/subject} {VERB/p_l/have/has} been.",
+                "text": "p_l is disgusted with the general disdain {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} from the other apprentices and how hypocritical it is to tell them herb gathering is easy when the patrol hasn't found <i>any</i> cobwebs! {PRONOUN/p_l/subject/CAP} {VERB/p_l/stalk/stalks} back to the medicine cat den in a huff, unable to bear being near the other apprentices for any longer than {PRONOUN/p_l/subject} {VERB/p_l/have/has} been.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2136,7 +2136,7 @@
     {
         "patrol_id": "bch_med_mossapps1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic"],
         "patrol_art": "gen_med_mossapps",
@@ -2156,7 +2156,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "There's nothing to apologize for! r_c bumps p_l's shoulder affectionately, brushing past {PRONOUN/p_l/self} with a smile as {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp. It's a fine way to spend the afternoon, and a cool cat to spend it with!",
+                "text": "There's nothing to apologize for! r_c bumps p_l's shoulder affectionately, brushing past {PRONOUN/p_l/self} with a smile as {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp. It's a fine way to spend the afternoon and a cool cat to spend it with!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss"],
@@ -2227,7 +2227,7 @@
     {
         "patrol_id": "bch_med_mossapps2",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic", "rom_two_apps"],
         "patrol_art": "gen_med_mossapps",
@@ -2247,7 +2247,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Though the other cat of their group doesn't look thrilled, app2 insists there's nothing to apologize for. app2 bumps app1's shoulder affectionately, brushing past {PRONOUN/app1/object} with a smile as {PRONOUN/app2/subject} {VERB/app2/leave/leaves} camp. It's a fine way to spend the afternoon, and a cool cat to spend it with!",
+                "text": "Though the other cat of their group doesn't look thrilled, app2 insists there's nothing to apologize for. app2 bumps app1's shoulder affectionately, brushing past {PRONOUN/app1/object} with a smile as {PRONOUN/app2/subject} {VERB/app2/leave/leaves} camp. It's a fine way to spend the afternoon and a cool cat to spend it with!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss"],
@@ -2318,7 +2318,7 @@
     {
         "patrol_id": "bch_med_mossapps3",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic", "rom_two_apps"],
         "patrol_art": "gen_med_mossapps",
@@ -2336,7 +2336,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "Though the others of {PRONOUN/p_l/poss} group don't look thrilled, app1 insists there's nothing to apologize for. app1 bumps app2's shoulder affectionately, brushing past {PRONOUN/app2/object} with a smile as {PRONOUN/app1/subject} {VERB/app1/leave/leaves} camp. It's a fine way to spend the afternoon, and a cool cat to spend it with!",
+                "text": "Though the others of {PRONOUN/p_l/poss} group don't look thrilled, app1 insists there's nothing to apologize for. app1 bumps app2's shoulder affectionately, brushing past {PRONOUN/app2/object} with a smile as {PRONOUN/app1/subject} {VERB/app1/leave/leaves} camp. It's a fine way to spend the afternoon and a cool cat to spend it with!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss"],
@@ -2407,7 +2407,7 @@
     {
         "patrol_id": "bch_med_mossapps4",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_mossapps",
@@ -2425,7 +2425,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
+                "text": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around and instead {VERB/p_l/encourage/encourages} the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss"],
@@ -2447,7 +2447,7 @@
                 ]
             },
             {
-                "text": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
+                "text": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around and instead {VERB/p_l/encourage/encourages} the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "moss"],
@@ -2496,7 +2496,7 @@
     {
         "patrol_id": "bch_med_mossapps5",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_mossapps",
@@ -2514,7 +2514,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
+                "text": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around and instead {VERB/p_l/encourage/encourages} the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss"],
@@ -2585,7 +2585,7 @@
     {
         "patrol_id": "bch_med_mossapps6",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic", "rom_two_apps"],
         "patrol_art": "gen_med_mossapps",
@@ -2603,7 +2603,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "Though the others of their group don't look thrilled, app1 insists there's nothing to apologize for. app1 bumps app2's shoulder affectionately, brushing past {PRONOUN/app2/object} with a smile as {PRONOUN/app1/subject} {VERB/app1/leave/leaves} camp. It's a fine way to spend the afternoon, and a cool cat to spend it with!",
+                "text": "Though the others of their group don't look thrilled, app1 insists there's nothing to apologize for. app1 bumps app2's shoulder affectionately, brushing past {PRONOUN/app2/object} with a smile as {PRONOUN/app1/subject} {VERB/app1/leave/leaves} camp. It's a fine way to spend the afternoon and a cool cat to spend it with!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss"],
@@ -2674,7 +2674,7 @@
     {
         "patrol_id": "bch_med_mossapps7",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_mossapps",
@@ -2692,7 +2692,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
+                "text": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around and instead {VERB/p_l/encourage/encourages} the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss"],
@@ -2714,7 +2714,7 @@
                 ]
             },
             {
-                "text": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
+                "text": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around and instead {VERB/p_l/encourage/encourages} the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "moss"],
@@ -2763,7 +2763,7 @@
     {
         "patrol_id": "bch_med_mossapps8",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic"],
         "patrol_art": "gen_med_mossapps",
@@ -2781,7 +2781,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "Though the others of their group don't look thrilled, app1 insists there's nothing to apologize for. app1 bumps app2's shoulder affectionately, brushing past {PRONOUN/app2/self} with a smile as {PRONOUN/app1/subject} {VERB/app1/leave/leaves} camp. It's a fine way to spend the afternoon, and a cool cat to spend it with!",
+                "text": "Though the others of their group don't look thrilled, app1 insists there's nothing to apologize for. app1 bumps app2's shoulder affectionately, brushing past {PRONOUN/app2/self} with a smile as {PRONOUN/app1/subject} {VERB/app1/leave/leaves} camp. It's a fine way to spend the afternoon and a cool cat to spend it with!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss"],
@@ -2852,7 +2852,7 @@
     {
         "patrol_id": "bch_med_mossapps9",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["six_apprentices"],
         "patrol_art": "gen_med_mossapps",
@@ -2869,7 +2869,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
+                "text": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around and instead {VERB/p_l/encourage/encourages} the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss"],
@@ -2891,7 +2891,7 @@
                 ]
             },
             {
-                "text": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
+                "text": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around and instead {VERB/p_l/encourage/encourages} the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "moss"],

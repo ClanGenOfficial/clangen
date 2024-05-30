@@ -156,6 +156,78 @@
             false
         ]
     },
+    "clan_focus":{
+        "business as usual":[
+            "Business As Usual",
+            "The Clan has no specific focus and won't get any bonuses.",
+            true,
+            "usual_focus",
+            "#usual_focus_button"
+        ],
+        "hunting":[
+            "Feeding the Clan",
+            "The Clan will focus on hunting, each working warrior (including deputy and leader) and each working apprentice will gather additional prey on each moonskip.",
+            false,
+            "hunting_focus",
+            "#hunting_focus_button"
+        ],
+        "herb gathering":[
+            "Assisting with Herb Gathering",
+            "The Clan will focus on herb gathering, each medicine cat and medicine cat apprentice will gather additional herbs on each moonskip due to extra help from the warriors.",
+            false,
+            "herb_focus",
+            "#herb_focus_button"
+        ],
+        "threaten outsiders": [
+            "Threatening Outsiders",
+            "The relationship with cats outside of the Clan decreases due to intentionally threatening behavior from your warriors.",
+            false,
+            "threaten_focus",
+            "#threaten_focus_button"
+        ],
+        "seek outsiders": [
+            "Entreating with Outsiders",
+            "The relationship with cats outside of the Clan increases as your warriors make efforts to sow seeds of friendship.",
+            false,
+            "entreat_focus",
+            "#entreat_focus_button"
+        ],
+        "rest and recover":[
+            "Resting and Recovering",
+            "The Clan will take more care and time in their tasks and therefore the rate of injuries, illnesses and outbreaks will be reduced.",
+            false,
+            "rest_focus",
+            "#rest_focus_button"
+        ],
+        "sabotage other clans": [
+            "Sabotaging Other Clans",
+            "Your mediator and warriors work together to undermine the other Clans. Only available if you have a working mediator. Selecting this will also allow you to choose which Clans you target.",
+            false,
+            "sabotage_focus",
+            "#sabotage_focus_button"
+        ],
+        "aid other clans": [
+            "Helping Other Clans",
+            "Your mediator and warriors work together to help the other Clans with whatever they need. Only available if you have a working mediator. Selecting this will also allow you to choose which Clans you target.",
+            false,
+            "help_focus",
+            "#help_focus_button"
+        ],
+        "raid other clans": [
+            "Raiding Other Clans",
+            "Your warriors begin crossing borders for resources. Prey and herbs will greatly increase each moonskip, but injuries and illnesses will increase and the relationship with other Clans decrease. You will be able to choose which Clans you target.",
+            false,
+            "raid_focus",
+            "#raid_focus_button"
+        ],
+        "hoarding":[
+            "Hoarding Resources",
+            "Your warriors begin stockpiling as many resources as they can get their paws on, regardless of their own safety. Prey and herbs will increase each moonskip, but injuries and illnesses will also increase.",
+            false,
+            "hoard_focus",
+            "#hoard_focus_button"
+        ]
+    },
     "..": "these are special. they do not have a display name or a tooltip",
     "__other": {
         "show dead relation": [

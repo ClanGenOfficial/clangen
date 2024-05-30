@@ -2,7 +2,7 @@
     {
         "patrol_id": "dst_gen_hunt_twolegplace1",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -53,7 +53,7 @@
     {
         "patrol_id": "dst_gen_hunt_twolegplace2",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -104,7 +104,7 @@
     {
         "patrol_id": "dst_hunt_strange1",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -123,7 +123,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "A sand bath will do! The plan works and their hunt goes well.",
+                "text": "A sand bath will do! The plan works, and their hunt goes well.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"]
@@ -159,7 +159,7 @@
     {
         "patrol_id": "dst_hunt_strange2",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -208,7 +208,7 @@
     {
         "patrol_id": "dst_hunt_huntassessment1",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -229,13 +229,13 @@
                 "prey": ["medium"]
             },
             {
-                "text": "r_c focuses completely on {PRONOUN/r_c/poss} test, slipping into a cleareyed, razor focused routine of catch and stash, catch and stash. Eventually {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} caught enough to need {PRONOUN/r_c/poss} mentor's help carrying it back to camp, and the feeling seeing {PRONOUN/r_c/poss} prey stock the fresh-kill pile - {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} ready to burst with happiness!",
+                "text": "r_c focuses completely on {PRONOUN/r_c/poss} test, slipping into a cleareyed, focused routine of catch and stash, catch and stash. Eventually {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} caught enough to need {PRONOUN/r_c/poss} mentor's help carrying it back to camp, and the feeling seeing {PRONOUN/r_c/poss} prey stock the fresh-kill pile - {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} ready to burst with happiness!",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["large"]
             },
             {
-                "text": "It's a terrible day for hunting, the prey running sparse and alert. But s_c takes {PRONOUN/s_c/poss} time and doesn't let the conditions discourage {PRONOUN/s_c/subject}, until eventually the perfect opportunity falls into place and {PRONOUN/s_c/subject} pull off a perfect catch!",
+                "text": "It's a terrible day for hunting, the prey running sparse and alert. But s_c takes {PRONOUN/s_c/poss} time and doesn't let the conditions discourage {PRONOUN/s_c/subject}, until eventually the right opportunity presents itself and {PRONOUN/s_c/subject} pull off a perfect catch!",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -257,12 +257,12 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Hunting is poor, and while r_c's mentor is disappointed, they don't expect r_c to be able to catch what isn't there.",
+                "text": "Hunting is poor, and while r_c's mentor is disappointed, they don't expect r_c to catch what isn't there.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "s_c is too hasty, bouncing after first one prey, then another, and it ends with them empty pawed and exhausted. Their mentor is disappointed - they clearly need more training.",
+                "text": "s_c is too hasty, bouncing after first one prey, then another, and it ends with them empty-pawed and exhausted. Their mentor is disappointed - they clearly need more training.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -282,7 +282,7 @@
     {
         "patrol_id": "dst_hunt_solo2",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -301,7 +301,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "r_c finds a fat, dumb, slow ground squirrel, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their Clanmates.",
+                "text": "r_c finds a fat, dumb, slow ground squirrel, and they can barely drag the thing back to camp, but great StarClan, it's juicy when they sit down to eat it with their Clanmates.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"]
@@ -340,7 +340,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. The come back to camp, empty pawed and prickling with frustration.",
+                "text": "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. The come back to camp, empty-pawed and prickling with frustration.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["bold", "childish", "confident", "daring", "playful"]
@@ -350,7 +350,7 @@
     {
         "patrol_id": "dst_hunt_solo3",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -371,7 +371,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "r_c finds a fat, dumb, slow ground squirrel, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their Clanmates. Purring, they take the opportunity for a small moment of peace, relaxing with their friends.",
+                "text": "r_c finds a fat, dumb, slow ground squirrel, and they can barely drag the thing back to camp, but great StarClan, it's juicy when they sit down to eat it with their Clanmates. Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a moment of peace, relaxing with their friends.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"]
@@ -420,7 +420,7 @@
     {
         "patrol_id": "dst_hunt_solo4",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -441,7 +441,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "r_c finds a fat, dumb, slow ground squirrel, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their Clanmates. Purring, they take the opportunity for a small moment of peace, relaxing with their friends.",
+                "text": "r_c finds a fat, dumb, slow ground squirrel, and they can barely drag the thing back to camp, but great StarClan, it's juicy when they sit down to eat it with their Clanmates. Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a moment of peace, relaxing with their friends.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"]
@@ -490,7 +490,7 @@
     {
         "patrol_id": "dst_hunt_gonetnr1",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -499,7 +499,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "r_c encounters a swarm of Twolegs, gathered in a dry riverbed.",
-        "decline_text": "Your patrol decides to hunt elsewhere.",
+        "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -544,7 +544,6 @@
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -566,7 +565,7 @@
     {
         "patrol_id": "dst_hunt_gonetnr2",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -575,11 +574,11 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "r_c encounters a swarm of Twolegs, gathered in a dry riverbed.",
-        "decline_text": "Your patrol decides to hunt elsewhere.",
+        "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Your patrol immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",
+                "text": "The patrol immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"]
@@ -591,7 +590,7 @@
                 "prey": ["small"]
             },
             {
-                "text": "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
+                "text": "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol they need to leave. Now.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,3"],
@@ -620,7 +619,6 @@
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -642,7 +640,7 @@
     {
         "patrol_id": "dst_hunt_gonetnr3",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -651,11 +649,11 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "r_c encounters a swarm of Twolegs, gathered in a dry riverbed.",
-        "decline_text": "Your patrol decides to hunt elsewhere.",
+        "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "Your patrol immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",
+                "text": "The patrol immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"]
@@ -667,7 +665,7 @@
                 "prey": ["small"]
             },
             {
-                "text": "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
+                "text": "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol they need to leave. Now.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,3"],
@@ -696,7 +694,6 @@
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -718,7 +715,7 @@
     {
         "patrol_id": "dst_hunt_thunderpath1",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": ["retirement"],
         "patrol_art": "hunt_general_intro",
@@ -731,26 +728,26 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Your patrol waits until they can hear the wind whistling, not a murmur of a monster, and crosses the Thunderpath to hunt on the other side.",
+                "text": "The patrol waits until they can hear the wind whistling, not a murmur of a monster, and crosses the Thunderpath to hunt on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
             },
             {
-                "text": "Your patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly sandy paws, but a successful haul of prey.",
+                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly sandy paws, but a successful haul of prey.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["medium"]
             },
             {
-                "text": "Your patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
+                "text": "The patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
                 "prey": ["medium"]
             },
             {
-                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across calmly to hunt on the other side. The deserts have so few monsters passing through anyway, there's no need to be hasty.",
+                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across to hunt on the other side. The deserts have so few monsters passing through anyway, there's no need to be hasty.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -790,7 +787,7 @@
     {
         "patrol_id": "dst_hunt_thunderpath2",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": ["retirement", "cruel_season"],
         "patrol_art": "hunt_general_intro",
@@ -803,26 +800,26 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Your patrol waits until they can hear the wind whistling, not a murmur of a monster, and crosses the Thunderpath to hunt on the other side.",
+                "text": "The patrol waits until they can hear the wind whistling, not a murmur of a monster, and crosses the Thunderpath to hunt on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
             },
             {
-                "text": "Your patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly sandy paws, but a successful haul of prey.",
+                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly sandy paws, but a successful haul of prey.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["medium"]
             },
             {
-                "text": "Your patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
+                "text": "The patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
                 "prey": ["medium"]
             },
             {
-                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across calmly to hunt on the other side. The deserts have so few monsters passing through anyway, there's no need to be hasty.",
+                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across to hunt on the other side. The deserts have so few monsters passing through anyway, there's no need to be hasty.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -862,7 +859,7 @@
     {
         "patrol_id": "dst_hunt_swiftfox_anysteal1",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -870,7 +867,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol spots a swift fox in the distance, trotting through the scrubland with a desert hare in its jaws.",
+        "intro_text": "The patrol spots a swift fox in the distance, trotting through the scrubland with a desert hare in its jaws.",
         "decline_text": "Best not to risk a fight. The patrol watches it go.",
         "chance_of_success": 70,
         "success_outcomes": [
@@ -890,7 +887,7 @@
                 ]
             },
             {
-                "text": "With many cats, they're able to catch the swift fox, even though it lives up to its name. It might be swift, but it's not much else, and your patrol manages to pull it down and kill the intruder, protecting c_n's lands. Oh, and they also win that hare too.",
+                "text": "With many cats, they're able to catch the swift fox, even though it lives up to its name. It might be swift, but it's not much else, and the patrol manages to pull it down and kill the intruder, protecting c_n's lands. Oh, and they also win that hare too.",
                 "exp": 30,
                 "weight": 5,
                 "prey": ["small"],
@@ -965,7 +962,7 @@
     {
         "patrol_id": "dst_hunt_swiftfox_anysteal2",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -1037,7 +1034,7 @@
     {
         "patrol_id": "dst_hunt_kitfox_scavenge1",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -1045,8 +1042,8 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox. Tracking it, they find a kit fox feeding on a young collared peccary, a bit too big to be called a piglet. It looks like this youngster got on the wrong side of the dominant boar of its group. The kit fox is barely strong enough to open the carcass.",
-        "decline_text": "Your patrol decides the boar is probably coming back, and they don't want to be here when it arrives to feed on its victim.",
+        "intro_text": "The patrol catches the scent of a fox. Tracking it, they find a kit fox feeding on a young collared peccary, a bit too big to be called a piglet. It looks like this youngster got on the wrong side of the dominant boar of its group. The kit fox is barely strong enough to open the carcass.",
+        "decline_text": "The patrol decides the boar is probably coming back, and they don't want to be here when it arrives to feed on its victim.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -1101,7 +1098,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
@@ -1164,7 +1160,7 @@
     {
         "patrol_id": "dst_hunt_kitfox_scavenge2",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -1172,8 +1168,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox. Tracking it, they find a kit fox feeding on a young collared peccary, a bit too big to be called a piglet. It looks like this youngster got on the wrong side of the dominant boar of its group. The kit fox is barely strong enough to open the carcass.",
-        "decline_text": "Your patrol decides the boar is probably coming back, and they don't want to be here when it arrives to feed on its victim.",
+        "intro_text": "The patrol catches the scent of a fox. Tracking it, they find a kit fox feeding on a young collared peccary, a bit too big to be called a piglet. It looks like this youngster got on the wrong side of the dominant boar of its group. The kit fox is barely strong enough to open the carcass.",
+        "decline_text": "The patrol decides the boar is probably coming back, and they don't want to be here when it arrives to feed on its victim.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -1228,7 +1224,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
@@ -1291,7 +1286,7 @@
     {
         "patrol_id": "dst_hunt_kitfox_scavenge3",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -1304,7 +1299,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "One tiny kit fox? r-c sees it off with a pawswipe, not interested in trying to take the fox as prey when the peccary carcass exists. They try to bring as much of the peccary back to camp as they can possibly carry.",
+                "text": "One tiny kit fox? r_c sees it off with a pawswipe, not interested in trying to take the fox as prey when the peccary carcass exists. They try to bring as much of the peccary back to camp as they can possibly carry.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["huge"],
@@ -1355,7 +1350,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "adventurous",
-                    "altruistic",
                     "ambitious",
                     "confident",
                     "daring",
@@ -1377,7 +1371,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
+                "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1439,7 +1433,7 @@
     {
         "patrol_id": "dst_hunt_kitfox_steal1",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -1467,7 +1461,7 @@
                 ]
             },
             {
-                "text": "The kit fox isn't crazy, and immediately drops the mouse, running for its life from the patrol. But your patrol is faster, though it exhausts them, and together they bring down the small fox for the fresh-kill pile.",
+                "text": "The kit fox isn't crazy, and immediately drops the mouse, running for its life from the patrol. But the patrol is faster, though it exhausts them, and together they bring down the small fox for the fresh-kill pile.",
                 "exp": 15,
                 "weight": 5,
                 "prey": ["medium"],
@@ -1573,7 +1567,7 @@
     {
         "patrol_id": "dst_hunt_kitfox_steal2",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -1653,7 +1647,7 @@
     {
         "patrol_id": "dst_hunt_kitfox_steal3",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -1681,7 +1675,7 @@
                 ]
             },
             {
-                "text": "The kit fox isn't crazy, and immediately drops the mouse, running for its life from the patrol. But your patrol is faster, though it exhausts them, and together they bring down the small fox for the fresh-kill pile.",
+                "text": "The kit fox isn't crazy, and immediately drops the mouse, running for its life from the patrol. But the patrol is faster, though it exhausts them, and together they bring down the small fox for the fresh-kill pile.",
                 "exp": 15,
                 "weight": 5,
                 "prey": ["small"],
@@ -1763,8 +1757,8 @@
     },
 	{
         "patrol_id": "dst_hunt_mouse1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -1772,8 +1766,8 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches scent of a mouse nearby.",
-        "decline_text": "Your patrol ignores the mouse.",
+        "intro_text": "The patrol catches scent of a mouse nearby.",
+        "decline_text": "The patrol ignores the mouse.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -1791,7 +1785,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol narrowly misses the mouse.",
+                "text": "The patrol narrowly misses the mouse.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -1800,8 +1794,8 @@
     },
     {
         "patrol_id": "dst_hunt_mouse2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -1812,8 +1806,8 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "Your patrol comes across a mouse.",
-        "decline_text": "Your patrol ignores the mouse.",
+        "intro_text": "The patrol comes across a mouse.",
+        "decline_text": "The patrol ignores the mouse.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -1831,7 +1825,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol narrowly misses the mouse.",
+                "text": "The patrol narrowly misses the mouse.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -1840,8 +1834,8 @@
     },
     {
         "patrol_id": "dst_hunt_rat1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -1849,12 +1843,12 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol comes across a large rat.",
-        "decline_text": "Your patrol ignores the rat.",
+        "intro_text": "The patrol comes across a large rat.",
+        "decline_text": "The patrol ignores the rat.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Your patrol catches the rat! More fresh-kill!",
+                "text": "The patrol catches the rat! More fresh-kill!",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"]
@@ -1875,7 +1869,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol misses the rat, and their confidence is shaken.",
+                "text": "The patrol misses the rat, and their confidence is shaken.",
                 "exp": 0,
                 "weight": 20
             }
@@ -1883,8 +1877,8 @@
     },
     {
         "patrol_id": "dst_hunt_hare1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -1892,12 +1886,12 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol comes across a large hare.",
-        "decline_text": "Your patrol ignores the hare.",
+        "intro_text": "The patrol comes across a large hare.",
+        "decline_text": "The patrol ignores the hare.",
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "Your patrol catches the hare!",
+                "text": "The patrol catches the hare!",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["large"]
@@ -1912,7 +1906,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol narrowly misses the hare.",
+                "text": "The patrol narrowly misses the hare.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -1921,8 +1915,8 @@
     },
     {
         "patrol_id": "dst_hunt_bird1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -1930,12 +1924,12 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol comes across a bird that's occupied scratching at the ground for insects.",
-        "decline_text": "Your patrol ignores the bird.",
+        "intro_text": "The patrol comes across a bird that's occupied scratching at the ground for insects.",
+        "decline_text": "The patrol ignores the bird.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Your patrol catches the bird before it flies away!",
+                "text": "The patrol catches the bird before it flies away!",
                 "exp": 15,
                 "weight": 20,
                 "prey": ["small"]
@@ -1949,7 +1943,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol narrowly misses the bird.",
+                "text": "The patrol narrowly misses the bird.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -1958,8 +1952,8 @@
     },
     {
         "patrol_id": "dst_hunt_squirrel1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -1967,8 +1961,8 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol comes across a squirrel. It's engrossed in nibbling at a morsel beneath a tree.",
-        "decline_text": "Your patrol ignores the squirrel.",
+        "intro_text": "The patrol comes across a squirrel. It's engrossed in nibbling at a morsel beneath a tree.",
+        "decline_text": "The patrol ignores the squirrel.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -1986,7 +1980,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol narrowly misses the squirrel as it's alerted by a bird's alarm call.",
+                "text": "The patrol narrowly misses the squirrel as it's alerted by a bird's alarm call.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -1995,8 +1989,8 @@
     },
     {
         "patrol_id": "dst_hunt_fish1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -2004,8 +1998,8 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol glimpses the shadow of a fish as they pad past a stream.",
-        "decline_text": "Your patrol ignores the fish.",
+        "intro_text": "The patrol glimpses the shadow of a fish as they pad past a stream.",
+        "decline_text": "The patrol ignores the fish.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -2032,8 +2026,8 @@
     },
     {
         "patrol_id": "dst_hunt_fish2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -2041,8 +2035,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol sees the shadow of a school of fish in the river.",
-        "decline_text": "Your patrol ignores the fish.",
+        "intro_text": "The patrol sees the shadow of a school of fish in the river.",
+        "decline_text": "The patrol ignores the fish.",
         "chance_of_success": 10,
         "success_outcomes": [
             {
@@ -2070,8 +2064,8 @@
     },
     {
         "patrol_id": "gen_hunt_rabbit1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_rabbit",
@@ -2123,8 +2117,8 @@
     },
     {
         "patrol_id": "dst_hunt_rabbit2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -2170,7 +2164,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol jumps after it, but the rabbit has too great of a head start.",
+                "text": "The patrol jumps after it, but the rabbit has too great of a head start.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2204,8 +2198,8 @@
     },
     {
         "patrol_id": "dst_hunt_vision1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -2234,7 +2228,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -2256,7 +2250,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -2280,7 +2274,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -2303,7 +2297,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": 5
                     }
                 ],
@@ -2325,7 +2319,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": 5
                     }
                 ],
@@ -2335,8 +2329,8 @@
     },
     {
         "patrol_id": "dst_hunt_vision2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -2379,8 +2373,8 @@
     },
 	{
         "patrol_id": "dst_hunt_sneakprey1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": ["disrespect", "distrust"],
         "patrol_art": "hunt_general_intro",
@@ -2445,8 +2439,8 @@
     },
     {
         "patrol_id": "dst_hunt_sneakprey2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": ["disrespect", "distrust"],
         "patrol_art": "hunt_general_intro",
@@ -2511,8 +2505,8 @@
     },
     {
         "patrol_id": "dst_hunt_sneak",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": ["disrespect", "distrust"],
         "patrol_art": "hunt_general_intro",
@@ -2620,8 +2614,8 @@
     },
     {
         "patrol_id": "dst_hunt_sneakprey4",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": ["disrespect", "distrust"],
         "patrol_art": "hunt_general_intro",
@@ -2704,5 +2698,77 @@
                 "prey": ["very_small"]
             }
         ]
+    },
+    {
+        "patrol_id": "dst_hunt_wareprey_lorelocked1",
+        "biome": ["desert"],
+        "season": ["any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 5],
+           "apprentice":[1, 5]
+            },
+        "weight": 40,
+        "chance_of_success": 50,
+        "pl_skill_constraint": ["LORE,1"],
+        "intro_text": "The patrol lies in ambush, concealed around the narrow rocky gully leading to a deep shadowed pool of water. app1 spots a gila monster ambling into range, striped red and black, and purrs with dark amusement as the prey approaches its doom.",
+        "decline_text": "There'll be smaller, easy prey lured into this trap. The patrol lets the monster pass without a fight.",
+        "success_outcomes": [
+                {
+                    "text": "p_l waves a tail across app1's path, stopping {PRONOUN/app1/object} with a stern stare. Remember the venom in the fangs of that monster. Don't count your prey until it's on the fresh-kill pile. r_c nods, and apologizes. Every hunt deserves respect.",
+                    "exp": 30,
+                    "weight": 20,
+                    "prey": ["medium"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": false,
+                            "values": ["comfort", "trust", "respect", "dislike"],
+                            "amount": 10
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "app1 leaps down in a beautiful ambush that bounces right off the gila's tough hide. The lizard hisses, striking backwards with its fangs, and escapes, leaving app1 to limp home.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": true,
+                            "values": ["respect", "trust"],
+                            "amount": -10
+                        }
+                    ],
+                    "injury": [
+                        {
+                        "cats": ["app1"],
+                        "injuries": ["bite-wound", "poisoned"],
+                        "scars": ["SNAKETWO"],
+                        "no_results": false
+                        }
+                    ],
+                    "history_text": {
+                        "scar": "r_c was permantly marked by the bite of a gila monster as an apprentice - but {PRONOUN/r_c/subject} survived.",
+                        "reg_death": "r_c died from the bite of a gila monster encountered on a hunt as a foolish apprentice.",
+                        "lead_death": "from the bite of a gila monster encountered on a hunt as a foolish apprentice"
+                        }
+                }
+            ]
     }
 ]

@@ -171,11 +171,13 @@ class PatrolOutcome():
         return outcome_list
 
     def execute_outcome(self, patrol:'Patrol') -> tuple:
-        """ Excutes the outcome. Returns a tuple with the final outcome text, the results text, and any outcome art
+        """ 
+        Excutes the outcome. Returns a tuple with the final outcome text, the results text, and any outcome art
         format: (Outcome text, results text, outcome art (might be None))
-        """
-        
+        """        
         results = []
+        # the text has to be processed before - otherwise leader might be referenced with their warrior name
+        processed_text = patrol.process_text(self.text, self.stat_cat)
         
         # This order is important. 
         results.append(self._handle_new_cats(patrol))
@@ -193,8 +195,6 @@ class PatrolOutcome():
         # Filter out empty results strings
         results = [x for x in results if x]
         
-        processed_text = patrol.process_text(self.text, self.stat_cat)
-        
         print("PATROL END -----------------------------------------------------")
         
         return (processed_text, " ".join(results), self.get_outcome_art())
@@ -210,6 +210,12 @@ class PatrolOutcome():
         # or stat cat. This can
         if not allowed_specfic or "not_pl_rc" in allowed_specfic:
             if kitty in (patrol.patrol_leader, patrol.patrol_random_cat):
+                return False
+            return True
+        
+        #Code to allow anyone but p_l to be selected as stat cat
+        if not allowed_specfic or "not_pl" in allowed_specfic:
+            if kitty is patrol.patrol_leader:
                 return False
             return True
         
@@ -339,6 +345,43 @@ class PatrolOutcome():
                     cat.experience = cat.experience + gained_exp
                     
         return ""
+    
+    def gather_cat_objects(self, cat_list: List[str], patrol:'Patrol') -> list:
+        """
+            #TODO: DOCS
+        """
+        out_set = set()
+            
+        for _cat in cat_list:
+            if _cat == "r_c":
+                out_set.add(patrol.patrol_random_cat)
+            elif _cat == "p_l":
+                out_set.add(patrol.patrol_leader)
+            elif _cat == "s_c":
+                out_set.add(self.stat_cat)
+            elif _cat == "app":
+                out_set.add(choice(patrol.patrol_apprentices))
+            elif _cat == "app1" and len(patrol.patrol_apprentices) >= 1:
+                out_set.add(patrol.patrol_apprentices[0])
+            elif _cat == "app2" and len(patrol.patrol_apprentices) >= 2:
+                out_set.add(patrol.patrol_apprentices[1])
+            elif _cat == "patrol":
+                out_set.update(patrol.patrol_cats)
+            elif _cat == "multi":
+                cat_num = random.randint(1, max(1, len(patrol.patrol_cats) - 1))
+                out_set.update(random.sample(patrol.patrol_cats, cat_num))
+            elif _cat == "clan":
+                out_set.update([x for x in Cat.all_cats_list if not (x.dead or x.outside or x.exiled)])
+            elif _cat == "some_clan":
+                clan_cats = [x for x in Cat.all_cats_list if not (x.dead or x.outside)]
+                out_set.update(random.sample(clan_cats, k=min(len(clan_cats), choice([2, 3, 4]))))
+            elif re.match(r"n_c:[0-9]+", _cat):
+                index = re.match(r"n_c:([0-9]+)", _cat).group(1)
+                index = int(index)
+                if index < len(patrol.new_cats):
+                    out_set.update(patrol.new_cats[index])
+
+        return list(out_set)
          
     def _handle_death(self, patrol:'Patrol') -> str:
         """Handle killing cats """
@@ -349,29 +392,7 @@ class PatrolOutcome():
         #body_tags = ("body", "no_body")
         #leader_lives = ("all_lives", "some_lives")
         
-        def gather_cat_objects(cat_list, patrol: 'Patrol') -> list:
-            out_set = set()
-            
-            for _cat in cat_list:
-                if _cat == "r_c":
-                    out_set.add(patrol.patrol_random_cat)
-                elif _cat == "p_l":
-                    out_set.add(patrol.patrol_leader)
-                elif _cat == "s_c":
-                    out_set.add(self.stat_cat)
-                elif _cat == "app1" and len(patrol.patrol_apprentices) >= 1:
-                    out_set.add(patrol.patrol_apprentices[0])
-                elif _cat == "app2" and len(patrol.patrol_apprentices) >= 2:
-                    out_set.add(patrol.patrol_apprentices[1])
-                elif _cat == "patrol":
-                    out_set.update(patrol.patrol_cats)
-                elif _cat == "multi":
-                    cats_dying = random.randint(1, max(1, len(patrol.patrol_cats) - 1))
-                    out_set.update(random.sample(patrol.patrol_cats, cats_dying))
-                    
-            return list(out_set)
-        
-        cats_to_kill = gather_cat_objects(self.dead_cats, patrol)
+        cats_to_kill = self.gather_cat_objects(self.dead_cats, patrol)
         if not cats_to_kill:
             print(f"Something was indicated in dead_cats, but no cats were indicated: {self.dead_cats}")
             return ""
@@ -412,29 +433,7 @@ class PatrolOutcome():
         if not self.lost_cats:
             return ""
         
-        def gather_cat_objects(cat_list, patrol: 'Patrol') -> list: 
-            out_set = set()
-            
-            for _cat in cat_list:
-                if _cat == "r_c":
-                    out_set.add(patrol.patrol_random_cat)
-                elif _cat == "p_l":
-                    out_set.add(patrol.patrol_leader)
-                elif _cat == "s_c":
-                    out_set.add(self.stat_cat)
-                elif _cat == "app1" and len(patrol.patrol_apprentices) >= 1:
-                    out_set.add(patrol.patrol_apprentices[0])
-                elif _cat == "app2" and len(patrol.patrol_apprentices) >= 2:
-                    out_set.add(patrol.patrol_apprentices[1])
-                elif _cat == "patrol":
-                    out_set.update(patrol.patrol_cats)
-                elif _cat == "multi":
-                    cats_dying = random.randint(1, max(1, len(patrol.patrol_cats) - 1))
-                    out_set.update(random.sample(patrol.patrol_cats, cats_dying))
-                    
-            return list(out_set)
-        
-        cats_to_lose = gather_cat_objects(self.lost_cats, patrol)
+        cats_to_lose = self.gather_cat_objects(self.lost_cats, patrol)
         if not cats_to_lose:
             print(f"Something was indicated in lost_cats, but no cats were indicated: {self.lost_cats}")
             return ""
@@ -454,37 +453,6 @@ class PatrolOutcome():
         if not self.injury:
             return ""
         
-        def gather_cat_objects(cat_list, patrol: 'Patrol') -> list:
-            out_set = set()
-            
-            for _cat in cat_list:
-                if _cat == "r_c":
-                    out_set.add(patrol.patrol_random_cat)
-                elif _cat == "p_l":
-                    out_set.add(patrol.patrol_leader)
-                elif _cat == "s_c":
-                    out_set.add(self.stat_cat)
-                elif _cat == "app1" and len(patrol.patrol_apprentices) >= 1:
-                    out_set.add(patrol.patrol_apprentices[0])
-                elif _cat == "app2" and len(patrol.patrol_apprentices) >= 2:
-                    out_set.add(patrol.patrol_apprentices[1])
-                elif _cat == "patrol":
-                    out_set.update(patrol.patrol_cats)
-                elif _cat == "multi":
-                    cat_num = random.randint(1, max(1, len(patrol.patrol_cats) - 1))
-                    out_set.update(random.sample(patrol.patrol_cats, cat_num))
-                elif _cat == "some_clan":
-                    clan_cats = [x for x in Cat.all_cats_list if not (x.dead or x.outside)]
-                    out_set.update(random.sample(clan_cats, k=min(len(clan_cats), choice([2, 3, 4]))))
-                elif re.match(r"n_c:[0-9]+", _cat):
-                    index = re.match(r"n_c:([0-9]+)", _cat).group(1)
-                    index = int(index)
-                    if index < len(patrol.new_cats):
-                        out_set.update(patrol.new_cats[index])
-                    
-                    
-            return list(out_set)
-        
         results = []
         condition_lists = {
             "battle_injury": ["claw-wound", "mangled leg", "mangled tail", "torn pelt", "cat bite"],
@@ -500,7 +468,7 @@ class PatrolOutcome():
         }
         
         for block in self.injury:
-            cats = gather_cat_objects(block.get("cats", ()), patrol)
+            cats = self.gather_cat_objects(block.get("cats", ()), patrol)
             injury = block.get("injuries", ())
             scars = block.get("scars", ())
             
@@ -566,31 +534,6 @@ class PatrolOutcome():
         """ Handle any needed changes in relationship """
         
         possible_values = ("romantic", "platonic", "dislike", "comfort", "jealous", "trust", "respect")
-
-        def gather_cat_objects(cat_list: List[str], patrol:'Patrol') -> list:
-            out_set = set()
-            for _cat in cat_list:
-                if _cat == "r_c":
-                    out_set.add(patrol.patrol_random_cat)
-                elif _cat == "p_l":
-                    out_set.add(patrol.patrol_leader)
-                elif _cat == "s_c":
-                    out_set.add(self.stat_cat)
-                elif _cat == "app1" and len(patrol.patrol_apprentices) >= 1:
-                    out_set.add(patrol.patrol_apprentices[0])
-                elif _cat == "app2" and len(patrol.patrol_apprentices) >= 2:
-                    out_set.add(patrol.patrol_apprentices[1])
-                elif _cat == "clan":
-                    out_set.update([x for x in Cat.all_cats_list if not (x.dead or x.outside or x.exiled)])
-                elif _cat == "patrol":
-                    out_set.update(patrol.patrol_cats)
-                elif re.match(r"n_c:[0-9]+", _cat):
-                    index = re.match(r"n_c:([0-9]+)", _cat).group(1)
-                    index = int(index)
-                    if index < len(patrol.new_cats):
-                        out_set.update(patrol.new_cats[index])
-                    
-            return list(out_set)
                     
         for block in self.relationship_effects:
             cats_from = block.get("cats_from", ())
@@ -599,8 +542,8 @@ class PatrolOutcome():
             values = [x for x in block.get("values", ()) if x in possible_values]
             
             # Gather acual cat objects:
-            cats_from_ob = gather_cat_objects(cats_from, patrol)
-            cats_to_ob = gather_cat_objects(cats_to, patrol)
+            cats_from_ob = self.gather_cat_objects(cats_from, patrol)
+            cats_to_ob = self.gather_cat_objects(cats_to, patrol)
             
             # Remove any "None" that might have snuck in
             if None in cats_from_ob:
@@ -832,7 +775,7 @@ class PatrolOutcome():
             print(f"PREY ADDED: {total_amount}")
             game.freshkill_event_list.append(f"{total_amount} pieces of prey were caught on a patrol.")
             game.clan.freshkill_pile.add_freshkill(total_amount)
-            results = f"A {amount_text} amount of prey is brought to camp"
+            results = f"A {amount_text} amount of prey is brought to camp."
             
         return results
 
@@ -1172,7 +1115,7 @@ class PatrolOutcome():
             # I'm not 100% sure which one is supposed to be which...
             history_text = history_text if "m_c" not in history_text else history_text.replace("m_c", str(cat.name))
             history_text = history_text if "r_c" not in history_text else history_text.replace("r_c", str(patrol.patrol_random_cat.name))
-            history_text = history_text if "o_c_n" not in history_text else history_text.replace("o_c_n", str(patrol.other_clan.name))
+            history_text = history_text if "o_c_n" not in history_text else history_text.replace("o_c_n", f"{str(patrol.other_clan.name)}Clan")
             
             History.add_scar(cat, history_text)
         else:
@@ -1200,10 +1143,10 @@ class PatrolOutcome():
             history_scar = None
         
         if final_death_history and isinstance(final_death_history, str):
-            final_death_history = final_death_history if "o_c_n" not in final_death_history else final_death_history.replace("o_c_n", str(patrol.other_clan.name))
+            final_death_history = final_death_history if "o_c_n" not in final_death_history else final_death_history.replace("o_c_n", f"{str(patrol.other_clan.name)}Clan")
         
         if history_scar and isinstance(history_scar, str):
-            history_scar = history_scar if "o_c_n" not in history_scar else history_scar.replace("o_c_n", str(patrol.other_clan.name))
+            history_scar = history_scar if "o_c_n" not in history_scar else history_scar.replace("o_c_n", f"{str(patrol.other_clan.name)}Clan")
         
         
         History.add_possible_history(cat, condition=condition, death_text=final_death_history, scar_text=history_scar)
@@ -1225,7 +1168,7 @@ class PatrolOutcome():
             final_death_history = "m_c died on patrol."
         
         if final_death_history and isinstance(final_death_history, str):
-            final_death_history = final_death_history.replace("o_c_n", str(patrol.other_clan.name))
+            final_death_history = final_death_history.replace("o_c_n", f"{str(patrol.other_clan.name)}Clan")
         
         History.add_death(cat, death_text=final_death_history)
         

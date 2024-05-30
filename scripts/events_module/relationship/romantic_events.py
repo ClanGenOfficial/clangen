@@ -672,7 +672,7 @@ class Romantic_Events():
         """Prepares the relationship event string for display"""
         # replace mates with their names
         if "[m_c_mates]" in mate_string:
-            mate_names = [str(cat_from.fetch_cat(mate_id).name) for mate_id in cat_from.mate]
+            mate_names = [str(cat_from.fetch_cat(mate_id).name) for mate_id in cat_from.mate if cat_from.fetch_cat(mate_id) is not None and not cat_from.fetch_cat(mate_id).dead and not cat_from.fetch_cat(mate_id).outside]
             mate_name_string = mate_names[0]
             if len(mate_names) == 2:
                 mate_name_string = mate_names[0] + " and " + mate_names[1]
@@ -681,7 +681,7 @@ class Romantic_Events():
             mate_string = mate_string.replace("[m_c_mates]", mate_name_string)
 
         if "[r_c_mates]" in mate_string:
-            mate_names = [str(cat_to.fetch_cat(mate_id).name) for mate_id in cat_to.mate]
+            mate_names = [str(cat_from.fetch_cat(mate_id).name) for mate_id in cat_from.mate if cat_from.fetch_cat(mate_id) is not None and not cat_from.fetch_cat(mate_id).dead and not cat_from.fetch_cat(mate_id).outside]
             mate_name_string = mate_names[0]
             if len(mate_names) == 2:
                 mate_name_string = mate_names[0] + " and " + mate_names[1]

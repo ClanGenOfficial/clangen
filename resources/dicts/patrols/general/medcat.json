@@ -1,8 +1,8 @@
 [
     {
         "patrol_id": "gen_med_sunny1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_sunny",
@@ -54,7 +54,6 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -95,8 +94,8 @@
     },
     {
         "patrol_id": "gen_med_sunny2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_sunny",
@@ -133,8 +132,8 @@
     },
     {
         "patrol_id": "gen_med_vision1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_vision",
@@ -166,7 +165,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -188,7 +187,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -212,7 +211,7 @@
                         "cats_to": ["r_c"],
                         "cats_from": ["patrol"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -235,7 +234,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": 5
                     }
                 ]
@@ -257,7 +256,7 @@
                         "cats_to": ["r_c"],
                         "cats_from": ["s_c"],
                         "mutual": false,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": 15
                     }
                 ]
@@ -266,8 +265,8 @@
     },
     {
         "patrol_id": "gen_med_vision2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_vision",
@@ -299,7 +298,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -321,7 +320,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -344,7 +343,7 @@
                         "cats_to": ["s_c"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -367,7 +366,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": false,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": 5
                     }
                 ]
@@ -389,7 +388,7 @@
                         "cats_to": ["r_c"],
                         "cats_from": ["s_c"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": 15
                     }
                 ]
@@ -398,8 +397,8 @@
     },
     {
         "patrol_id": "gen_med_vision3",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_vision",
@@ -440,8 +439,8 @@
     },
     {
         "patrol_id": "gen_med_vision4",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_vision",
@@ -480,7 +479,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -502,7 +501,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -532,7 +531,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -555,7 +554,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": false,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": 5
                     }
                 ]
@@ -577,7 +576,7 @@
                         "cats_to": ["p_l", "p_l"],
                         "cats_from": ["patrol", "r_c"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": 5
                     }
                 ]
@@ -586,8 +585,8 @@
     },
     {
         "patrol_id": "gen_med_ghost_star1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_ghost_star",
@@ -653,8 +652,8 @@
     },
     {
         "patrol_id": "gen_med_ghost_star2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_ghost_star",
@@ -764,8 +763,8 @@
     },
     {
         "patrol_id": "gen_med_ghost_star3",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_ghost_star",
@@ -824,8 +823,8 @@
     },
     {
         "patrol_id": "gen_med_ghost_star4",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_ghost_star",
@@ -940,8 +939,8 @@
     },
     {
         "patrol_id": "gen_med_medwar_natureofstarclan",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -1024,8 +1023,8 @@
     },
     {
         "patrol_id": "gen_med_medwar_natureofdeath",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -1094,8 +1093,8 @@
     },
     {
         "patrol_id": "gen_med_medwar_puddles",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -1147,8 +1146,8 @@
     },
     {
         "patrol_id": "gen_med_group_randomherb1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -1222,8 +1221,8 @@
     },
     {
         "patrol_id": "gen_med_group_randomherb2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -1297,8 +1296,8 @@
     },
     {
         "patrol_id": "gen_med_appgroup_randomherb1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -1357,8 +1356,8 @@
     },
     {
         "patrol_id": "gen_med_appgroup_randomherb2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -1417,8 +1416,8 @@
     },
     {
         "patrol_id": "gen_med_appgroup_randomherb3",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -1477,8 +1476,8 @@
     },
     {
         "patrol_id": "gen_med_appgroup_randomherb4",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["six_apprentices"],
         "patrol_art": "med_general_intro",
@@ -1536,8 +1535,8 @@
     },
     {
         "patrol_id": "gen_med_appwarrior_bossypants1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_appwarrior_bossypants",
@@ -1603,8 +1602,8 @@
     },
     {
         "patrol_id": "gen_med_appwarrior_bossypants2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["disrespect", "distrust"],
         "patrol_art": "gen_med_appwarrior_bossypants",
@@ -1643,8 +1642,8 @@
     },
     {
         "patrol_id": "gen_med_medappwarriorapp_siblings1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -1743,8 +1742,8 @@
     },
     {
         "patrol_id": "gen_med_medwarrior_siblings1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_medwarrior_siblings",
@@ -1858,8 +1857,8 @@
     },
     {
         "patrol_id": "gen_med_medwarriorapp_curiosity1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_medwarriorapp_curiosity",
@@ -1958,8 +1957,8 @@
     },
     {
         "patrol_id": "gen_med_medwarriorapp_curiosity2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_medwarriorapp_curiosity",
@@ -2058,8 +2057,8 @@
     },
     {
         "patrol_id": "gen_med_medwarriorapp_curiosity3",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_medwarriorapp_curiosity",
@@ -2158,8 +2157,8 @@
     },
     {
         "patrol_id": "gen_med_medwarriorapp_curiosity4",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_medwarriorapp_curiosity",
@@ -2258,8 +2257,8 @@
     },
     {
         "patrol_id": "gen_med_medwarriorapp_curiosity5",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_medwarriorapp_curiosity",
@@ -2358,8 +2357,8 @@
     },
     {
         "patrol_id": "gen_med_discussion1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_discussion",
@@ -2443,8 +2442,8 @@
     },
     {
         "patrol_id": "gen_med_discussion2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_discussion",
@@ -2528,8 +2527,8 @@
     },
     {
         "patrol_id": "gen_med_discussion3",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_discussion",
@@ -2597,8 +2596,8 @@
     },
     {
         "patrol_id": "gen_med_discussion4",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_discussion",
@@ -2666,8 +2665,8 @@
     },
     {
         "patrol_id": "gen_med_discussion5",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_discussion",
@@ -2735,8 +2734,8 @@
     },
     {
         "patrol_id": "gen_med_warappmedapp_herbcontest1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_warappmedapp_herbcontest",
@@ -2770,7 +2769,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": -5
                     }
                 ]
@@ -2792,7 +2791,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": -5
                     }
                 ]
@@ -2815,7 +2814,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": -5
                     }
                 ]
@@ -2838,7 +2837,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": 5
                     }
                 ]
@@ -2860,7 +2859,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": 5
                     }
                 ]
@@ -2869,8 +2868,8 @@
     },
     {
         "patrol_id": "gen_med_warappmedapp_herbcontest2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_warappmedapp_herbcontest",
@@ -2910,8 +2909,8 @@
     },
     {
         "patrol_id": "gen_med_discussnews1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -2978,8 +2977,8 @@
     },
     {
         "patrol_id": "gen_med_herbsgathering1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -3060,8 +3059,8 @@
     },
     {
         "patrol_id": "gen_med_catminthunt_20locked1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic"],
         "patrol_art": "med_general_intro",
@@ -3149,8 +3148,8 @@
     },
     {
     	"patrol_id": "gen_med_deathsheadmoth1",
-    	"biome": ["Any"],
-    	"season": ["Any"],
+    	"biome": ["any"],
+    	"season": ["any"],
     	"types": ["herb_gathering"],
     	"tags": ["halloween"],
     	"patrol_art": "deathsheadmoth_INTRO",
@@ -3196,7 +3195,7 @@
 	},
     {
         "patrol_id": "gen_med_pumpkinpatch1",
-        "biome": ["Any"],
+        "biome": ["any"],
         "season": ["leaf-fall"],
         "types": ["herb_gathering"],
         "tags": ["romantic", "halloween"],
@@ -3239,7 +3238,7 @@
     },
     {
         "patrol_id": "gen_med_pumpkinpatch2",
-        "biome": ["Any"],
+        "biome": ["any"],
         "season": ["leaf-fall"],
         "types": ["herb_gathering"],
         "tags": ["romantic", "halloween"],
@@ -3280,8 +3279,8 @@
     },
     {
         "patrol_id": "gen_med_friendly_ghost",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["halloween"],
         "patrol_art": "friendlyghost_INTRO",
@@ -3321,8 +3320,8 @@
     },
     {
         "patrol_id": "gen_med_scary_ghost1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["halloween"],
         "patrol_art": "med_general_intro",
@@ -3335,7 +3334,7 @@
         },
         "weight": 20,
         "intro_text": "As r_c follows a trail into a darkly shadowed part of the territory on the hunt for herbs, night shadows begin to play with {PRONOUN/r_c/poss} vision. Was that movement up ahead? r_c spots the undisguisable silhouette of a cat ahead. Malicious eyes and bristled fur meet {PRONOUN/r_c/object} as {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} amongst the shadows. The stranger's fur is translucent, and it moves as though made from a strange dark mist.",
-        "decline_text": "r_c's tail bristles with fear, a cold shiver creeping along {PRONOUN/r_c/poss} back. This is definitely not a Starclan cat, and {PRONOUN/r_c/subject} quickly {VERB/r_c/turn/turns} the back to camp - herbs can wait until morning.",
+        "decline_text": "r_c's tail bristles with fear, a cold shiver creeping along {PRONOUN/r_c/poss} back. This is definitely not a StarClan cat, and {PRONOUN/r_c/subject} quickly {VERB/r_c/turn/turns} the back to camp - herbs can wait until morning.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -3360,8 +3359,8 @@
     },
     {
         "patrol_id": "gen_med_witch_cat",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["halloween", "random_herbs"],
         "patrol_art": "gen_hunt_strange",
