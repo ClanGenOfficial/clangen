@@ -421,6 +421,12 @@ class LeaderDenScreen(Screens):
         self.focus_frame_elements["outsiders_tab"].disable()
         self.focus_frame_elements["clans_tab"].enable()
 
+        if game.clan.clan_settings["lead_den_outsider_event"]:
+            current_setting = game.clan.clan_settings["lead_den_outsider_event"]
+            self.focus_cat = Cat.fetch_cat(current_setting["cat_ID"])
+            self.update_outsider_focus()
+            self.update_outsider_interaction_choice(current_setting["interaction_type"])
+
         self.update_text(clan=False)
 
     def update_other_clan_focus(self):
@@ -835,14 +841,14 @@ class LeaderDenScreen(Screens):
         """
         outsider = self.focus_cat.name
 
-        interaction = "This should not appear - report as bug"
-        if object_id == "#outsider_hunt":
+        interaction = "this should not appear - report as bug!"
+        if object_id in ["#outsider_hunt", "hunt"]:
             interaction = "hunt down"
-        elif object_id == "#outsider_drive":
+        elif object_id in ["#outsider_drive", "drive"]:
             interaction = "drive off"
-        elif object_id == "#outsider_invite":
+        elif object_id in ["#outsider_invite", "invite"]:
             interaction = "invite in"
-        elif object_id == "#outsider_search":
+        elif object_id in ["#outsider_search", "search"]:
             interaction = "search for"
 
         self.screen_elements["outsider_notice_text"].set_text(
