@@ -583,11 +583,15 @@
     },
     "relationships": [
         {
+          "cats_from": ["m_c"],
+          "cats_to": ["r_c"],
           "mututal": true,
           "values": ["platonic", "comfort", "trust"],
           "amount": 5
         },
         {
+          "cats_from": ["m_c"],
+          "cats_to": ["r_c"],
           "mututal": true,
           "values": ["dislike"],
           "amount": -5
@@ -692,11 +696,15 @@
     },
     "relationships": [
         {
+            "cats_from": ["r_c"],
+            "cats_to": ["m_c"],
             "mututal": true,
             "values": ["platonic","comfort"],
             "amount": 5
         },
         {
+            "cats_from": ["r_c"],
+            "cats_to": ["m_c"],
             "mututal": true,
             "values": ["dislike"],
             "amount": -5
@@ -736,6 +744,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "The tension between c_n and o_c_n is palpable, with even the smallest actions potentially leading to violence.",
+    "m_c": {},
     "other_clan": {
         "current_rep": ["hostile"],
         "changed": -5

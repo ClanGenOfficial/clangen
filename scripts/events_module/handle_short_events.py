@@ -52,6 +52,7 @@ class HandleShortEvents():
         # TODO: re-add the code for existing outsiders joining clan
 
         self.types.append(event_type)
+        self.sub_types = []
         if sub_type:
             self.sub_types.extend(sub_type)
 
@@ -98,7 +99,6 @@ class HandleShortEvents():
         # NOW find the possible events and filter
         possible_short_events = GenerateEvents.possible_short_events(event_type)
 
-        print(self.sub_types)
         final_events = GenerateEvents.filter_possible_short_events(Cat_class=Cat,
                                                                    possible_events=possible_short_events,
                                                                    cat=self.main_cat,
@@ -107,7 +107,6 @@ class HandleShortEvents():
                                                                    freshkill_active=FRESHKILL_EVENT_ACTIVE,
                                                                    freshkill_trigger_factor=FRESHKILL_EVENT_TRIGGER_FACTOR,
                                                                    sub_types=self.sub_types)
-        print(final_events)
         # ---------------------------------------------------------------------------- #
         #                               do the event                                   #
         # ---------------------------------------------------------------------------- #

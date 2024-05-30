@@ -215,14 +215,18 @@ class GenerateEvents:
                 sub_types.remove("war")
 
         for event in possible_events:
-            # print(event.event_id)
             # check for event sub_type
+            wrong_type = False
             for sub in sub_types:
                 if sub not in event.sub_type:
+                    wrong_type = True
                     continue
             for sub in event.sub_type:
                 if sub not in sub_types:
+                    wrong_type = True
                     continue
+            if wrong_type:
+                continue
 
             # check biome
             if game.clan.biome.lower() not in event.biome and "any" not in event.biome:
@@ -698,11 +702,15 @@ class ShortEvent:
         self.event_text = event_text
         self.new_accessory = new_accessory
         self.m_c = m_c if m_c else {}
+        if not self.m_c:
+            self.m_c = {
+                "age": ["any"]
+            }
         if self.m_c:
             if "age" not in self.m_c:
-                self.m_c["age"] = []
+                self.m_c["age"] = ["any"]
             if "status" not in self.m_c:
-                self.m_c["status"] = []
+                self.m_c["status"] = ["any"]
             if "relationship_status" not in self.m_c:
                 self.m_c["relationship_status"] = []
             if "skill" not in self.m_c:
