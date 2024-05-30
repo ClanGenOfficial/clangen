@@ -1051,7 +1051,7 @@ class Events:
         if cat.is_ill() or cat.is_injured():
             return
 
-        # self.invite_new_cats(cat)
+        self.invite_new_cats(cat)
         # self.other_interactions(cat)
         # self.gain_accessories(cat)
 
@@ -1700,7 +1700,7 @@ class Events:
                 sub_type.append("ceremony")
 
             handle_short_events.handle_event(event_type="misc",
-                                             main_cat=Cat,
+                                             main_cat=cat,
                                              random_cat=random_cat,
                                              sub_type=sub_type,
                                              freshkill_pile=game.clan.freshkill_pile)
@@ -1814,7 +1814,7 @@ class Events:
         # choose other cat
         random_cat = get_random_moon_cat(Cat, main_cat=cat, parent_child_modifier=True, mentor_app_modifier=True)
 
-        if not int(random.random() * chance) and \
+        if not int(random.random() * 1) and \
                 cat.age != 'kitten' and cat.age != 'adolescent' and not self.new_cat_invited:
             self.new_cat_invited = True
 
@@ -1822,8 +1822,6 @@ class Events:
                                              main_cat=cat,
                                              random_cat=random_cat,
                                              freshkill_pile=game.clan.freshkill_pile)
-            # TODO: move in handle_short_events?
-            Relation_Events.welcome_new_cats(new_cats)
 
     def other_interactions(self, cat):
         """
@@ -1844,14 +1842,8 @@ class Events:
         decide if cat dies
         """
 
-        # If at war, grab enemy clans
-        enemy_clan = get_warring_clan()
-
         # try to get the random_cat
         random_cat = get_random_moon_cat(Cat, cat, parent_child_modifier=True, mentor_app_modifier=True)
-
-        # check if Clan has kits, if True then Clan has kits
-        alive_kits = get_alive_kits(Cat)
 
         # chance to kill leader: 1/50 by default
         if not int(random.random() * game.get_config_value("death_related", "leader_death_chance")) \

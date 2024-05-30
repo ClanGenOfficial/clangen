@@ -132,10 +132,15 @@ def get_living_clan_cat_count(Cat):
     return count
 
 
-def get_cats_same_age(cat, range=10):  # pylint: disable=redefined-builtin
-    """Look for all cats in the Clan and returns a list of cats, which are in the same age range as the given cat."""
+def get_cats_same_age(Cat, cat, age_range=10):  # pylint: disable=redefined-builtin
+    """
+    Look for all cats in the Clan and returns a list of cats, which are in the same age range as the given cat.
+    :param Cat: Cat class
+    :param cat: the given cat
+    :param age_range: default 10. The allowed age difference between the two cats 
+    """
     cats = []
-    for inter_cat in cat.all_cats.values():
+    for inter_cat in Cat.all_cats.values():
         if inter_cat.dead or inter_cat.outside or inter_cat.exiled:
             continue
         if inter_cat.ID == cat.ID:
@@ -147,7 +152,7 @@ def get_cats_same_age(cat, range=10):  # pylint: disable=redefined-builtin
                 inter_cat.create_one_relationship(cat)
             continue
 
-        if inter_cat.moons <= cat.moons + range and inter_cat.moons <= cat.moons - range:
+        if inter_cat.moons <= cat.moons + age_range and inter_cat.moons <= cat.moons - age_range:
             cats.append(inter_cat)
 
     return cats
@@ -288,7 +293,7 @@ def change_clan_relations(other_clan, difference):
     game.clan.all_clans[y].relations = clan_relations
 
 
-def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, attribute_list: List[str]):
+def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, attribute_list: List[str]) -> list:
     """
     Creates a single new_cat block and then generates and returns the cats within the block
     :param Cat: always pass Cat class

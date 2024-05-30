@@ -7,6 +7,7 @@ from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_resources.freshkill import Freshkill_Pile, FRESHKILL_EVENT_ACTIVE, FRESHKILL_EVENT_TRIGGER_FACTOR
 from scripts.events_module.generate_events import GenerateEvents
+from scripts.events_module.relation_events import Relation_Events
 from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values, get_alive_kits, \
     history_text_adjust, get_warring_clan, unpack_rel_block, change_clan_reputation, create_new_cat_block, \
     get_leader_life_notice
@@ -55,6 +56,9 @@ class HandleShortEvents():
         # gather main and random cats
         self.main_cat = main_cat
         self.random_cat = random_cat
+
+        # reset new_cat list
+        self.new_cats = []
 
         # random cat gets added to involved later on, only if the event chosen requires a random cat
         self.involved_cats = [self.main_cat.ID]
@@ -200,15 +204,18 @@ class HandleShortEvents():
             self.new_cats.append(
                 create_new_cat_block(Cat, Relationship, self, in_event_cats, i, attribute_list))
 
-            # check if we want to add some extra info to the event text
+            # check if we want to add some extra info to the event text and if we need to welcome
             for cat in self.new_cats[-1]:
                 if cat.dead:
                     extra_text = f"{cat.name}'s ghost now wanders."
                 elif cat.outside:
-                    extra_text = f"The Clan now knows of {cat.name}."
+                    extra_text = f"The Clan has met {cat.name}."
+                else:
+                    Relation_Events.welcome_new_cats([cat])
+                self.involved_cats.append(cat.ID)
 
         # Check to see if any young litters joined with alive parents.
-        # If so, see if recoveing from birth condition is needed and give the condition
+        # If so, see if recovering from birth condition is needed and give the condition
         for sub in self.new_cats:
             if sub[0].moons < 3:
                 # Search for parent

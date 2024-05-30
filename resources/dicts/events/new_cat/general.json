@@ -6,7 +6,7 @@
         "season": ["any"],
         "sub_type": ["adoption"],
         "weight": 20,
-        "event_text": "A loner leaves their litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/poss} own.",
+        "event_text": "A loner leaves {PRONOUN/n_c:0/poss} litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/poss} own.",
         "m_c": {
             "age": ["young adult", "adult", "senior adult", "senior"],
             "status": ["any"]
@@ -31,7 +31,7 @@
         "season": ["any"],
          "sub_type": ["adoption"],
         "weight": 10,
-        "event_text": "A rogue leaves their litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/poss} own.",
+        "event_text": "A rogue leaves {PRONOUN/n_c:0/poss} litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/poss} own.",
         "m_c": {
             "age": ["young adult", "adult", "senior adult", "senior"],
             "status": ["any"]
@@ -41,8 +41,8 @@
             [
                 "new_name",
                 "parent:0",
-                "backstory: abandoned2, outsider1",
-                "status: litter" 
+                "backstory:abandoned2, outsider1",
+                "litter"
             ]
         ],
         "outsider": {
@@ -62,10 +62,8 @@
             "status": ["any"]
         },
         "new_cat": [
-            ["age:has_kits", "meeting", "clancat", "can_birth"],
             [
                 "new_name",
-                "parent:0",
                 "backstory:abandoned2, outsider1",
                 "litter"
             ]
@@ -81,7 +79,7 @@
         "season": ["any"],
          "sub_type": ["adoption"],
         "weight": 5,
-        "event_text": "A kittypet leaves their litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/poss} own.",
+        "event_text": "A kittypet leaves {PRONOUN/n_c:0/poss} litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/poss} own.",
         "m_c": {
             "age": ["young adult", "adult", "senior adult", "senior"],
             "status": ["any"]
@@ -125,7 +123,7 @@
         "camp": ["any"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "m_c finds an abandoned kit and names {PRONOUN/n_c/object} n_c:0.",
+        "event_text": "m_c finds an abandoned kit and names {PRONOUN/n_c:0/object} n_c:0.",
         "m_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
             "status": ["any"]
@@ -133,8 +131,8 @@
         "new_cat": [
             [
                 "new_name",
-                "backstory: abandoned1, abandoned2, orphaned3, orphaned4, outsider1",
-                "status: kitten"
+                "backstory:abandoned1, abandoned2, orphaned3, orphaned4, outsider1",
+                "status:kitten"
             ]
         ]
     },
@@ -144,14 +142,26 @@
         "camp": ["any"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "A loner brings their kit named n_c_pre:1 to the Clan, stating they no longer can care for {PRONOUN/n_c/object}.",
+        "event_text": "m_c finds a loner near the border. It seems {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} bringing {PRONOUN/n_c:0/poss} kit named n_c_pre:1 to the Clan, as {PRONOUN/n_c:0/subject} could no longer care for {PRONOUN/n_c:1/object}.",
+        "m_c": {
+            "status": [
+                "leader",
+                "deputy",
+                "warrior",
+                "medicine cat",
+                "apprentice",
+                "medicine cat apprentice",
+                "mediator",
+                "mediator apprentice"
+            ]
+        },
         "new_cat": [
             ["age:has_kits", "meeting", "loner", "can_birth"],
             [
                 "new_name",
                 "parent:0",
-                "backstory: abandoned2, outsider1",
-                "status: kitten" 
+                "backstory:abandoned2, outsider1",
+                "status:kitten"
             ]
         ]
     },
@@ -161,14 +171,26 @@
         "camp": ["any"],
         "season": ["any"],
         "weight": 10,
-        "event_text": "A kittypet brings their kit named n_c_pre:1 to the Clan, stating they no longer can care for {PRONOUN/n_c/object}.",
+        "event_text": "m_c finds a kittypet near the border. It seems {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} bringing {PRONOUN/n_c:0/poss} kit named n_c_pre:1 to the Clan, as {PRONOUN/n_c:0/subject} could no longer care for {PRONOUN/n_c:1/object}.",
+        "m_c": {
+            "status": [
+                "leader",
+                "deputy",
+                "warrior",
+                "medicine cat",
+                "apprentice",
+                "medicine cat apprentice",
+                "mediator",
+                "mediator apprentice"
+            ]
+        },
         "new_cat": [
             ["age:has_kits", "meeting", "kittypet", "can_birth"],
             [
                 "new_name",
                 "parent:0",
-                "backstory: abandoned2, outsider1",
-                "status: kitten" 
+                "backstory:abandoned2, outsider1",
+                "status:kitten"
             ]
         ]
     },
@@ -178,14 +200,18 @@
         "camp": ["any"],
         "season": ["any"],
         "weight": 5,
-        "event_text": "A rogue brings their kit named n_c_pre:1 to the Clan, stating they no longer can care for {PRONOUN/n_c/object}.",
-        "new_cat": [
+        "event_text": "m_c finds a rogue near the border. It seems {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} bringing {PRONOUN/n_c:0/poss} kit named n_c_pre:1 to the Clan, as {PRONOUN/n_c:0/subject} could no longer care for {PRONOUN/n_c:1/object}.",
+        "m_c": {
+            "status": [
+                "leader", "deputy", "warrior", "medicine cat", "apprentice", "medicine cat apprentice", "mediator", "mediator apprentice"
+            ]
+        },"new_cat": [
             ["age:has_kits", "meeting", "rogue", "can_birth"],
             [
                 "new_name",
                 "parent:0",
-                "backstory: abandoned2, outsider1",
-                "status: kitten" 
+                "backstory:abandoned2, outsider1",
+                "status:kitten"
             ]
         ]
     },  
@@ -211,7 +237,7 @@
             [
                 "old_name",
                 "loner",
-                "status: warrior",
+                "status:warrior",
                 "mate:m_c,r_c" 
             ]
         ],
@@ -261,7 +287,7 @@
             [
                 "old_name",
                 "loner",
-                "status: warrior" 
+                "status:warrior"
             ]
         ]
     },
@@ -271,12 +297,15 @@
         "camp": ["any"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "A loner waits on the border for a patrol, asking to join the Clan. The loner decides to take on a more Clan-like name, and is now called n_c:0.",
+        "event_text": "A loner waits on the border for a patrol and, finding one led by m_c, asks to join the Clan. The loner decides to take on a more Clan-like name, and is now called n_c:0.",
+        "m_c": {
+            "status": ["warrior", "deputy", "leader", "medicine cat"]
+        },
         "new_cat": [
             [
                 "new_name",
                 "loner",
-                "status: warrior"
+                "status:warrior"
             ]
         ]
     },
@@ -286,12 +315,16 @@
         "camp": ["any"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "A loner waits on the border for a patrol, asking to join the Clan. The loner decides to keep {PRONOUN/n_c/poss} old name, n_c_pre:0.",
-        "new_cat": [
+        "event_text": "A loner waits on the border for a patrol and, finding one lead by m_c, asks to join the Clan. The loner decides to keep {PRONOUN/n_c/poss} old name, n_c_pre:0.",
+        "m_c": {
+            "status": [
+                "leader", "deputy", "warrior", "medicine cat"
+            ]
+        },"new_cat": [
             [
                 "old_name",
                 "loner",
-                "status: warrior"
+                "status:warrior"
             ]
         ]
     },
@@ -310,7 +343,7 @@
             [
                 "new_name",
                 "loner",
-                "status: warrior"
+                "status:warrior"
             ]
         ]
     },
@@ -320,12 +353,15 @@
         "camp": ["any"],
         "season": ["any"],
         "weight": 15,
-        "event_text": "While the Clan has no love for outsiders, sometimes new blood is needed. A patrol heads out and finds a wandering cat to bring into the Clan. The new cat, n_c_pre:0 takes on a more Clan-like name and is now known as n_c:0.",
+        "event_text": "While the Clan has no love for outsiders, sometimes new blood is needed. A patrol lead by m_c heads out and finds a wandering cat to bring into the Clan. The new cat, n_c_pre:0 takes on a more Clan-like name and is now known as n_c:0.",
+        "m_c": {
+            "status": ["leader", "deputy", "warrior"]
+        },
         "new_cat": [
             [
                 "new_name",
                 "loner",
-                "status: warrior" 
+                "status:warrior"
             ]
         ],
         "outsider": {
@@ -347,7 +383,7 @@
             [
                 "old_name",
                 "kittypet",
-                "status: warrior" 
+                "status:warrior"
             ]
         ]
     },
@@ -366,7 +402,7 @@
             [
                 "new_name",
                 "kittypet",
-                "status: warrior" 
+                "status:warrior"
             ]
         ]
     },
@@ -376,12 +412,15 @@
         "camp": ["any"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "A kittypet waits on the border for a patrol, asking to join the Clan. The kittypet decides to keep {PRONOUN/n_c/poss} old name, n_c_pre:0.",
+        "event_text": "A kittypet waits on the border for a patrol and, finding one lead by m_c, asks to join the Clan. The kittypet decides to keep {PRONOUN/n_c/poss} old name, n_c_pre:0.",
+        "m_c": {
+            "status": ["leader", "deputy", "warrior", "medicine cat"]
+        },
         "new_cat": [
             [
                 "old_name",
                 "kittypet",
-                "status: warrior" 
+                "status:warrior"
             ]
         ]
     },
@@ -391,12 +430,17 @@
         "camp": ["any"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "A kittypet waits on the border for a patrol, asking to join the Clan. The kittypet decides to take on a more Clan-like name, and is now called n_c:0.",
+        "event_text": "A kittypet waits on the border for a patrol and, finding one lead by m_c, asks to join the Clan. The kittypet decides to take on a more Clan-like name, and is now called n_c:0.",
+        "m_c": {
+            "status": [
+                "leader", "deputy", "warrior", "medicine cat"
+            ]
+        },
         "new_cat": [
             [
                 "new_name",
                 "kittypet",
-                "status: warrior" 
+                "status:warrior"
             ]
         ]
     },
@@ -415,7 +459,7 @@
             [
                 "old_name",
                 "rogue",
-                "status: warrior" 
+                "status:warrior"
             ]
         ]
     },
@@ -434,7 +478,7 @@
             [
                 "new_name",
                 "rogue",
-                "status: warrior" 
+                "status:warrior"
             ]
         ]
     },
@@ -444,12 +488,15 @@
         "camp": ["any"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "A rogue waits on the border for a patrol, asking to join the Clan. The rogue decides to keep {PRONOUN/n_c/poss} old name, n_c_pre:0.",
+        "event_text": "A rogue waits on the border for a patrol and, finding one lead by m_c, asks to join the Clan. The rogue decides to keep {PRONOUN/n_c/poss} old name, n_c_pre:0.",
+        "m_c": {
+            "status": ["leader", "deputy", "warrior", "medicine cat"]
+        },
         "new_cat": [
             [
                 "old_name",
                 "rogue",
-                "status: warrior" 
+                "status:warrior"
             ]
         ]
     },
@@ -459,12 +506,15 @@
         "camp": ["any"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "A rogue waits on the border for a patrol, asking to join the Clan. The rogue decides to keep {PRONOUN/n_c/poss} old name, n_c_pre:0.",
+        "event_text": "A rogue waits on the border for a patrol and, finding one lead by m_c, asks to join the Clan. The rogue decides to keep {PRONOUN/n_c/poss} old name, n_c_pre:0.",
+        "m_c": {
+            "status": ["leader", "deputy", "warrior", "medicine cat"]
+        },
         "new_cat": [
             [
                 "new_name",
                 "rogue",
-                "status: warrior" 
+                "status:warrior"
             ]
         ]
     },
@@ -484,7 +534,7 @@
             [
                 "old_name",
                 "clancat",
-                "status:{warrior}"
+                "status:warrior"
             ]
         ]
     },
@@ -494,12 +544,15 @@
         "camp": ["any"],
         "season": ["any"],
         "weight": 10,
-        "event_text": "An injured warrior from o_c asks to join, in exchange for healing.",
+        "event_text": "m_c meets an injured warrior from o_c who asks to join the Clan, in exchange for healing.",
+        "m_c": {
+            "status": ["medicine cat", "leader", "warrior", "deputy", "apprentice", "medicine cat apprentice", "mediator", "mediator apprentice"]
+        },
         "new_cat": [
             [
                 "old_name",
                 "clancat",
-                "status:{warrior}"
+                "status:warrior"
             ]
         ],
         "injury": [
@@ -516,7 +569,12 @@
         "season": ["any"],
         "sub_type": ["war"],
         "weight": 15,
-        "event_text": "A member of o_c defects in the war and chooses to join c_n. {PRONOUN/n_c/subject/CAP} {VERB/n_c/decide/decides} to keep {PRONOUN/n_c/poss} name.",
+        "event_text": "A member of o_c defects in the war and chooses to join c_n, m_c finds {PRONOUN/n_c:0/object} waiting at the border. {PRONOUN/n_c/subject/CAP} {VERB/n_c/decide/decides} to keep {PRONOUN/n_c/poss} name.",
+        "m_c": {
+            "status": [
+                "leader", "deputy", "warrior", "medicine cat", "apprentice", "medicine cat apprentice", "mediator", "mediator apprentice"
+            ]
+        },
         "new_cat": [
           [
             "old_name", 
@@ -532,7 +590,12 @@
         "season": ["any"],
         "sub_type": ["war"],
         "weight": 10,
-        "event_text": "n_c_pre:0, the deputy of o_c, has defected to c_n in the war. {PRONOUN/n_c/subject/CAP} {VERB/n_c/decide/decides} to keep {PRONOUN/n_c/poss} name.",
+        "event_text": "n_c_pre:0, the deputy of o_c, has defected to c_n in the war, m_c find {PRONOUN/n_c:0/object at the border. {PRONOUN/n_c/subject/CAP} {VERB/n_c/decide/decides} to keep {PRONOUN/n_c/poss} name.",
+        "m_c": {
+            "status": [
+                "leader", "deputy", "warrior", "medicine cat", "apprentice", "medicine cat apprentice", "mediator", "mediator apprentice"
+            ]
+        },
         "new_cat": [
           [
             "old_name", 
@@ -548,7 +611,12 @@
         "season": ["any"],
         "sub_type": ["war"],
         "weight": 15,
-        "event_text": "n_c_pre:0, the medicine cat of o_c, has defected to c_n in the war. {PRONOUN/n_c/subject/CAP} {VERB/n_c/decide/decides} to keep {PRONOUN/n_c/poss} name.",
+        "event_text": "n_c_pre:0, the medicine cat of o_c, has defected to c_n in the war, {PRONOUN/n_c:0/subject} meet m_c at the border. {PRONOUN/n_c/subject/CAP} {VERB/n_c/decide/decides} to keep {PRONOUN/n_c/poss} name.",
+        "m_c": {
+            "status": [
+                "leader", "deputy", "warrior", "medicine cat", "apprentice", "medicine cat apprentice", "mediator", "mediator apprentice"
+            ]
+        },
         "new_cat": [
           [
             "old_name", 
