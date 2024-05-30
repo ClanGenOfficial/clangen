@@ -1,188 +1,20 @@
 [
     {
-        "event_id": "pln_injury_",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "any"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c was grabbed by an eagle, but luckily r_c saves {PRONOUN/m_c/object}! The kit is still left injured from the ordeal.",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "relationship_status": []
-        },
-        "r_c": {
-            "age": [],
-            "status": []
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "claw-wound"
-                ],
-                "scars": [
-                    "TWO"
-                ]
-            }
-        ],
-        "history": {
-            "scar": "m_c was scarred as a kit, when an eagle tried to carry {PRONOUN/m_c/object} off.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after an eagle tried to carry {PRONOUN/m_c/object} off."
-        },
-        "relationships": [
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "platonic",
-                    "comfort",
-                    "trust",
-                    "respect"
-                ],
-                "amount": 5
-            }
-        ]
-    },
-    {
-        "event_id": "pln_injury_",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "any"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c was grabbed by a hawk, but luckily r_c saves {PRONOUN/m_c/object}! The kit is still left injured from the ordeal.",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "relationship_status": []
-        },
-        "r_c": {
-            "age": [],
-            "status": []
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "claw-wound"
-                ],
-                "scars": [
-                    "TWO"
-                ]
-            }
-        ],
-        "history": {
-            "scar": "m_c was scarred as a kit, when a hawk tried to carry {PRONOUN/m_c/object} off.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a hawk tried to carry {PRONOUN/m_c/object} off."
-        },
-        "relationships": [
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "platonic",
-                    "comfort",
-                    "trust",
-                    "respect"
-                ],
-                "amount": 5
-            }
-        ]
-    },
-    {
-        "event_id": "pln_injury_",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c snuck out of camp and returned cold and shivering, frostbite nipping at {PRONOUN/m_c/poss} paws.",
-        "m_c": {
-            "age": [
-                "kitten"
-            ],
-            "status": [
-                "kitten"
-            ],
-            "trait": [
-                "daring",
-                "impulsive",
-                "inquisitive",
-                "troublesome"
-            ]
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "frostbite"
-                ],
-                "scars": [
-                    "FROSTMITT"
-                ]
-            }
-        ],
-        "history": {
-            "scar": "m_c was scarred as a kit by frostbite.",
-            "reg_death": "m_c died after they got frostbite sneaking out of camp."
-        }
-    },
-    {
-        "event_id": "pln_injury_",
-        "season": [
-            "any"
-        ],
-        "tags": [],
+        "event_id": "pln_injury_brokenbone_anyany1",
+        "biome": ["plains"],
+        "camp": ["any"],
+        "season": ["any"],
         "weight": 20,
         "event_text": "m_c was grabbed and dropped by an eagle, but {PRONOUN/m_c/subject} somehow survived.",
         "m_c": {
-            "age": [],
-            "status": []
+            "age": ["any"],
+            "status": ["any"]
         },
         "injury": [
             {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "broken bone"
-                ],
-                "scars": [
-                    "TWO"
-                ]
+             "cats": ["m_c"],
+             "injuries": ["broken bone"],
+             "scars": ["TWO"]
             }
         ],
         "history": {
@@ -191,237 +23,78 @@
         }
     },
     {
-        "event_id": "pln_injury_",
-        "season": [
-            "any"
-        ],
-        "tags": [],
+        "event_id": "pln_injury_bruisessprain_anyany1",
+        "biome": ["plains"],
+        "camp": ["any"],
+        "season": ["any"],
         "weight": 20,
         "event_text": "m_c was running over the hills, when {PRONOUN/m_c/subject} tripped over {PRONOUN/m_c/poss} own legs and hit the ground hard.",
         "m_c": {
-            "age": [],
-            "status": []
+            "age": ["any"],
+            "status": ["any"]
         },
         "injury": [
             {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "bruises"
-                ]
+             "cats": ["m_c"],
+             "injuries": ["bruises", "sprain"]
             }
         ]
     },
     {
-        "event_id": "pln_injury_",
-        "season": [
-            "newleaf",
-            "leaf-fall"
-        ],
-        "tags": [],
+        "event_id": "pln_injury_sprain_anyany1",
+        "biome": ["plains"],
+        "camp": ["any"],
+        "season": ["any"],
         "weight": 20,
         "event_text": "The ground inside the camp has turned into a muddy mess from the rain. m_c sprains {PRONOUN/m_c/poss} paw while trying to walk through the muck.",
         "m_c": {
-            "age": [],
-            "status": []
+            "age": ["any"],
+            "status": ["any"]
         },
         "injury": [
             {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "sprain"
-                ]
+             "cats": ["m_c"],
+             "injuries": ["sprain"]
             }
         ]
     },
     {
-        "event_id": "pln_injury_",
-        "season": [
-            "any"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c trips over an unseen rabbit hole, spraining {PRONOUN/m_c/poss} paw.",
-        "m_c": {
-            "age": [],
-            "status": []
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "sprain"
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "pln_injury_",
-        "season": [
-            "any"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c was running over the hills, when {PRONOUN/m_c/subject} tripped over {PRONOUN/m_c/poss} own legs and hit the ground hard.",
-        "m_c": {
-            "age": [],
-            "status": []
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "sprain"
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "pln_injury_",
-        "season": [
-            "any"
-        ],
-        "tags": [],
+        "event_id": "pln_injury_sore_anyany1",
+        "biome": ["plains"],
+        "camp": ["any"],
+        "season": ["any"],
         "weight": 20,
         "event_text": "m_c is feeling extremely sore from the long distances {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} run lately.",
         "m_c": {
-            "age": [],
-            "status": []
+            "age": ["any"],
+            "status": ["any"]
         },
         "injury": [
             {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "sore"
-                ]
+             "cats": ["m_c"],
+             "injuries": ["sore"]
             }
         ]
-    },
+    },  
     {
-        "event_id": "pln_injury_",
-        "season": [
-            "any"
-        ],
+        "event_id": "pln_injury_mangledleg_multimultitraidany1",
+        "biome": ["plains"],
+        "camp": ["any"],
+        "season": ["greenleaf", "newleaf", "leaf-fall"],
+        "sub_type": [],
         "tags": [],
-        "weight": 20,
-        "event_text": "m_c survived a vicious eagle attack - with the claw marks to prove it!",
-        "m_c": {
-            "age": [],
-            "status": []
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "claw-wound"
-                ],
-                "scars": [
-                    "ONE"
-                ]
-            }
-        ],
-        "history": {
-            "scar": "m_c was scarred by an eagle.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after fighting an eagle."
-        }
-    },
-    {
-        "event_id": "pln_injury_",
-        "season": [
-            "leaf-fall",
-            "leaf-bare"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c was out wandering the territory for a bit too long and came back with frostbite.",
-        "m_c": {
-            "age": [],
-            "status": []
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "frostbite"
-                ],
-                "scars": [
-                    "FROSTTAIL"
-                ]
-            }
-        ],
-        "history": {
-            "scar": "m_c was scarred by frostbite.",
-            "reg_death": "m_c died after {PRONOUN/m_c/subject} got frostbite."
-        }
-    },
-    {
-        "event_id": "pln_injury_",
-        "season": [
-            "greenleaf",
-            "newleaf",
-            "leaf-fall"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c fell into a river, and inhaled a lot of water before managing to get out. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} been hacking and sputtering ever since.",
-        "m_c": {
-            "age": [],
-            "status": []
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "water in their lungs"
-                ]
-            }
-        ],
-        "history": {
-            "reg_death": "m_c died from water-inhalation after falling in the river."
-        }
-    },
-    {
-        "event_id": "pln_injury_",
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "tags": [],
-        "weight": 20,
+        "weight": 0,
         "event_text": "Playfully following a butterfly outside the camp, m_c accidentally steps into a rabbit burrow severely injuring {PRONOUN/m_c/poss} leg and letting out a yelp of pain.",
         "m_c": {
-            "age": [],
-            "status": [],
-            "trait": [
-                "childish",
-                "playful"
-            ]
+            "age": ["any"],
+            "status": ["any"],
+            "trait": ["childish", "playful"]
         },
         "injury": [
             {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "mangled leg"
-                ]
+             "cats": ["m_c"],
+             "injuries": ["mangled leg"],
+             "scars": ["MANLEG"]
             }
         ],
         "history": {
@@ -430,38 +103,21 @@
         }
     },
     {
-        "event_id": "pln_injury_",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "tags": [],
+        "event_id": "pln_injury_brokenbone_multiany1",
+        "biome": ["plains"],
+        "camp": ["any"],
+        "season": ["greenleaf", "newleaf", "leaf-fall"],
         "weight": 20,
         "event_text": "m_c went out for a walk, but slipped on the ice and broke a bone.",
         "m_c": {
-            "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "elder"
-            ],
-            "status": []
+            "age": ["senior", "adolescent", "young adult", "adult", "senior adult"],
+            "status": ["any"]
         },
         "injury": [
             {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "broken bone"
-                ],
-                "scars": [
-                    "TOETRAP"
-                ]
+             "cats": ["m_c"],
+             "injuries": ["broken bone"],
+             "scars": ["TOETRAP"]
             }
         ],
         "history": {
@@ -470,39 +126,22 @@
         }
     },
     {
-        "event_id": "pln_injury_",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "any"
-        ],
-        "tags": [],
+        "event_id": "pln_injury_sprain_anymultitraitapprentice1",
+        "biome": ["plains"],
+        "camp": ["any"],
+        "season": ["any"],
         "weight": 20,
         "event_text": "m_c was running around excitedly on patrol, when {PRONOUN/m_c/poss} paw landed right in a rabbit hole, twisting uncomfortably. {PRONOUN/m_c/subject/CAP} limped the whole way home.",
         "m_c": {
-            "age": [
-                "adolescent"
-            ],
-            "status": [
-                "apprentice"
-            ],
-            "trait": [
-                "adventurous",
-                "bold",
-                "daring",
-                "playful",
-                "childish"
-            ]
+            "age": ["adolescent"],
+            "status": ["apprentice"],
+            "trait": ["adventurous", "bold", "daring", "playful", "childish"]
         },
         "injury": [
             {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "sprain"
-                ]
+             "cats": ["m_c"],
+             "injuries": ["sprain"]
             }
         ]
-    }]
+    }
+]
