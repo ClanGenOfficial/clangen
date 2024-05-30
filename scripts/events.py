@@ -1052,7 +1052,7 @@ class Events:
             return
 
         self.invite_new_cats(cat)
-        # self.other_interactions(cat)
+        self.other_interactions(cat)
         # self.gain_accessories(cat)
 
         # switches between the two death handles
@@ -1827,7 +1827,7 @@ class Events:
         """
         TODO: DOCS
         """
-        hit = int(random.random() * 30)
+        hit = int(random.random() * 1)
         if hit:
             return
 
@@ -1835,7 +1835,8 @@ class Events:
 
         handle_short_events.handle_event(event_type="misc",
                                          main_cat=cat,
-                                         random_cat=random_cat)
+                                         random_cat=random_cat,
+                                         freshkill_pile=game.clan.freshkill_pile)
 
     def handle_injuries_or_general_death(self, cat):
         """

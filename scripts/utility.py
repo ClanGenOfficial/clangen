@@ -982,10 +982,8 @@ def filter_relationship_type(group: list, filter_types: list, event_id: str = No
                           "mentor/app", "app/mentor"]
     possible_value_types = ["romantic", "platonic", "dislike", "comfortable", "jealousy", "trust"]
 
-    for rel in filter_types:
-        if rel not in possible_rel_types and rel not in possible_value_types:
-            print(
-                f"WARNING: {rel} not in possible_rel_types or possible_value_types of filter_relationship_type function.")
+
+    # TODO: add "can_romance"
 
     if "siblings" in filter_types:
         test_cat = group[0]
@@ -1073,7 +1071,7 @@ def filter_relationship_type(group: list, filter_types: list, event_id: str = No
         if len(tags) == 0:
             continue
 
-            # there should be only one value constraint for each alue type
+            # there should be only one value constraint for each value type
         elif len(tags) > 1:
             print(f"ERROR: event {event_id} has multiple relationship constraints for the value {v_type}.")
             break_loop = True

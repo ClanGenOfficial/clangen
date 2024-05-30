@@ -610,7 +610,6 @@ class GenerateEvents:
                             continue
 
             final_events.append(event)
-            print("check")
 
         return final_events
 

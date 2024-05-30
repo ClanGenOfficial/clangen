@@ -98,6 +98,7 @@ class HandleShortEvents():
         # NOW find the possible events and filter
         possible_short_events = GenerateEvents.possible_short_events(event_type)
 
+        print(self.sub_types)
         final_events = GenerateEvents.filter_possible_short_events(Cat_class=Cat,
                                                                    possible_events=possible_short_events,
                                                                    cat=self.main_cat,
