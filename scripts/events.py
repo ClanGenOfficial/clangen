@@ -1814,7 +1814,7 @@ class Events:
         # choose other cat
         random_cat = get_random_moon_cat(Cat, main_cat=cat, parent_child_modifier=True, mentor_app_modifier=True)
 
-        if not int(random.random() * 1) and \
+        if not int(random.random() * chance) and \
                 cat.age != 'kitten' and cat.age != 'adolescent' and not self.new_cat_invited:
             self.new_cat_invited = True
 

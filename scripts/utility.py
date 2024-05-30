@@ -1766,16 +1766,16 @@ def event_text_adjust(Cat,
             break
 
     # new_cats (include pre version)
-    for abbr in text:
-        if "n_c" in abbr:
-            for i, new_cats in enumerate(new_cats):
-                if len(new_cats > 1):
-                    pronoun = Cat.default_pronouns[0]  # They/them for multiple cats
-                else:
-                    pronoun = choice(new_cats[0].pronouns)
+    if "n_c" in text:
+        print("n_c abbr detected")
+        for i, cat in enumerate(new_cats):
+            if len(new_cats) > 1:
+                pronoun = Cat.default_pronouns[0]  # They/them for multiple cats
+            else:
+                pronoun = choice(cat.pronouns)
 
-                replace_dict[f"n_c:{i}"] = (str(new_cats[i].name), pronoun)
-                replace_dict[f"n_c_pre:{i}"] = (str(new_cats[i].name.prefix), pronoun)
+            replace_dict[f"n_c:{i}"] = (str(cat.name), pronoun)
+            replace_dict[f"n_c_pre:{i}"] = (str(cat.name.prefix), pronoun)
 
     # mur_c (murdered cat for reveals)
     if "mur_c" in text:

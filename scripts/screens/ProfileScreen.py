@@ -490,17 +490,25 @@ class ProfileScreen(Screens):
                                                                               "#text_box_40_horizcenter"),
                                                                           manager=MANAGER)
         name_text_size = self.profile_elements["cat_name"].get_relative_rect()
-
         self.profile_elements["cat_name"].kill()
 
-        self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name,
-                                                                          scale(pygame.Rect(
-                                                                              (800 - name_text_size.width, 280),
-                                                                              (name_text_size.width * 2, 80))),
-                                                                          object_id=get_text_box_theme(
-                                                                              "#text_box_40_horizcenter"),
-                                                                          manager=MANAGER)
-
+        # don't like having to do this, but for some reason the usual scaling is not working here
+        if game.settings['fullscreen']:
+            self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name,
+                                                                              scale(pygame.Rect(
+                                                                                  (800 - name_text_size.width, 280),
+                                                                                  (name_text_size.width * 2, 80))),
+                                                                              object_id=get_text_box_theme(
+                                                                                  "#text_box_40_horizcenter"),
+                                                                              manager=MANAGER)
+        else:
+            self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name,
+                                                                              scale(pygame.Rect(
+                                                                                  (800 - name_text_size.width, 280),
+                                                                                  (-1, 80))),
+                                                                              object_id=get_text_box_theme(
+                                                                                  "#text_box_40_horizcenter"),
+                                                                              manager=MANAGER)
         # Write cat thought
         self.profile_elements["cat_thought"] = pygame_gui.elements.UITextBox(self.the_cat.thought,
                                                                              scale(pygame.Rect((200, 340), (1200, 80))),

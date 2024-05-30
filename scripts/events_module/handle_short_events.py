@@ -30,6 +30,7 @@ class HandleShortEvents():
         self.involved_cats = []
         self.main_cat = None
         self.random_cat = None
+        self.new_cat_objects = []
         self.new_cats: List[List[Cat]] = []
         self.victim_cat = None
         self.multi_cat: List = []
@@ -48,6 +49,7 @@ class HandleShortEvents():
         # ---------------------------------------------------------------------------- #
         #                                gather info                                   #
         # ---------------------------------------------------------------------------- #
+        # TODO: re-add the code for existing outsiders joining clan
 
         self.types.append(event_type)
         if sub_type:
@@ -59,6 +61,7 @@ class HandleShortEvents():
 
         # reset new_cat list
         self.new_cats = []
+        self.new_cat_objects = []
 
         # random cat gets added to involved later on, only if the event chosen requires a random cat
         self.involved_cats = [self.main_cat.ID]
@@ -177,7 +180,7 @@ class HandleShortEvents():
                                        main_cat=self.main_cat,
                                        random_cat=self.random_cat,
                                        victim_cat=self.victim_cat,
-                                       new_cats=self.new_cats,
+                                       new_cats=self.new_cat_objects,
                                        clan=game.clan,
                                        other_clan=self.other_clan)
 
@@ -213,6 +216,7 @@ class HandleShortEvents():
                 else:
                     Relation_Events.welcome_new_cats([cat])
                 self.involved_cats.append(cat.ID)
+                self.new_cat_objects.append(cat)
 
         # Check to see if any young litters joined with alive parents.
         # If so, see if recovering from birth condition is needed and give the condition

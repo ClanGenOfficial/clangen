@@ -275,7 +275,7 @@
     "camp": ["any"],
     "season": ["any"],
     "weight": 20,
-    "event_text": "m_c accidentally trespasses onto o_c's territory.",
+    "event_text": "m_c accidentally trespasses onto o_c_n's territory.",
     "m_c": {
         "age": ["adolescent", "young adult", "adult", "senior adult"],
         "status": ["any"]
@@ -723,7 +723,7 @@
     "camp": ["any"],
     "season": ["any"],
     "weight": 10,
-    "event_text": "The war with o_c is beginning to disrupt the daily lives of c_n, forcing them to adapt to new routines and living situations in order to better defend themselves.",
+    "event_text": "The war with o_c_n is beginning to disrupt the daily lives of c_n, forcing them to adapt to new routines and living situations in order to better defend themselves.",
     "other_clan": {
         "current_rep": ["hostile"],
         "changed": -10
@@ -735,7 +735,7 @@
     "camp": ["any"],
     "season": ["any"],
     "weight": 20,
-    "event_text": "The tension between c_n and o_c is palpable, with even the smallest actions potentially leading to violence.",
+    "event_text": "The tension between c_n and o_c_n is palpable, with even the smallest actions potentially leading to violence.",
     "other_clan": {
         "current_rep": ["hostile"],
         "changed": -5
@@ -1249,7 +1249,7 @@
         "season": ["any"],
         "sub_type": ["war"],
         "weight": 10,
-        "event_text": "m_c is being comforted by r_c after having nightmares about the big, bad o_c cats.",
+        "event_text": "m_c is being comforted by r_c after having nightmares about the big, bad o_c_n cats.",
         "m_c": {
             "age": ["kitten"],
             "status": ["kitten"],
@@ -1879,7 +1879,7 @@
     "camp": ["any"],
     "season": ["any"],
     "weight": 10,
-    "event_text": "m_c was seen touching noses with someone from o_c. Scandalous!",
+    "event_text": "m_c was seen touching noses with someone from o_c_n. Scandalous!",
     "m_c": {
         "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
         "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
@@ -1895,7 +1895,7 @@
     "camp": ["any"],
     "season": ["any"],
     "weight": 10,
-    "event_text": "m_c was loitering around o_c's border, looking for a specific cat.",
+    "event_text": "m_c was loitering around o_c_n's border, looking for a specific cat.",
     "m_c": {
         "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
         "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
@@ -1907,7 +1907,7 @@
     "camp": ["any"],
     "season": ["any"],
     "weight": 10,
-    "event_text": "m_c was seen racing along the border with {PRONOUN/m_c/poss} rival from o_c.",
+    "event_text": "m_c was seen racing along the border with {PRONOUN/m_c/poss} rival from o_c_n.",
     "m_c": {
         "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
         "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
@@ -1924,7 +1924,7 @@
     "season": ["any"],
     "tags": [],
     "weight": 10,
-    "event_text": "m_c was seen arguing, and borderline-fighting, with a cat from o_c.",
+    "event_text": "m_c was seen arguing, and borderline-fighting, with a cat from o_c_n.",
     "m_c": {
         "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
         "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
@@ -1940,7 +1940,7 @@
     "camp": ["any"],
     "season": ["any"],
     "weight": 10,
-    "event_text": "m_c was seen speaking calmly to a cat from o_c.",
+    "event_text": "m_c was seen speaking calmly to a cat from o_c_n.",
     "m_c": {
         "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
         "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]

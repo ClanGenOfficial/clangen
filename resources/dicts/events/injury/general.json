@@ -1164,7 +1164,7 @@
             "war"
         ],
         "weight": 20,
-        "event_text": "A brutal battle against o_c leaves m_c injured.",
+        "event_text": "A brutal battle against o_c_n leaves m_c injured.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -1193,8 +1193,8 @@
             }
         ],
         "history": {
-            "scar": "m_c was scarred in a fight against o_c.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a battle with o_c."
+            "scar": "m_c was scarred in a fight against o_c_n.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a battle with o_c_n."
         },
         "other_clan": {
             "current_rep": [
@@ -1218,7 +1218,7 @@
             "war"
         ],
         "weight": 20,
-        "event_text": "m_c came out worse for wear after a border skirmish with o_c.",
+        "event_text": "m_c came out worse for wear after a border skirmish with o_c_n.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -1247,8 +1247,8 @@
             }
         ],
         "history": {
-            "scar": "m_c was scarred in a fight against o_c.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a battle with o_c."
+            "scar": "m_c was scarred in a fight against o_c_n.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a battle with o_c_n."
         },
         "other_clan": {
             "current_rep": [
@@ -1269,7 +1269,7 @@
             "any"
         ],
         "weight": 20,
-        "event_text": "On a border patrol near the o_c border, m_c could no longer take o_c's jeers and smirks. {PRONOUN/m_c/subject/CAP} lashed out at the first jeering cat {PRONOUN/m_c/subject} saw, although the hotheaded move wasn't smart as m_c couldn't escape the skirmish without injury.",
+        "event_text": "On a border patrol near the o_c_n border, m_c could no longer take o_c_n's jeers and smirks. {PRONOUN/m_c/subject/CAP} lashed out at the first jeering cat {PRONOUN/m_c/subject} saw, although the hotheaded move wasn't smart as m_c couldn't escape the skirmish without injury.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -1332,7 +1332,7 @@
             "clan_kits"
         ],
         "weight": 20,
-        "event_text": "While o_c attempted a surprise attack on the c_n camp, m_c fiercely guarded the nursery. However, it didn't end with m_c unscathed, and {PRONOUN/m_c/subject} walked away with a gushing wound in {PRONOUN/m_c/poss} flank.",
+        "event_text": "While o_c_n attempted a surprise attack on the c_n camp, m_c fiercely guarded the nursery. However, it didn't end with m_c unscathed, and {PRONOUN/m_c/subject} walked away with a gushing wound in {PRONOUN/m_c/poss} flank.",
         "m_c": {
             "age": [
                 "adolescent",
