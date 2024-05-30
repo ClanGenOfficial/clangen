@@ -120,6 +120,9 @@ class MakeClanScreen(Screens):
         self.open_game_mode()
 
     def handle_event(self, event):
+        if game.switches["window_open"]:
+            return
+
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.main_menu:
                 self.change_screen('start screen')

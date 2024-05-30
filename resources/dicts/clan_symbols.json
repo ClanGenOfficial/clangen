@@ -1297,11 +1297,11 @@
   }, 
   "Mottle": {
     "variants": 1,
-    "tags0": ["description"]
+    "tags0": ["descriptor"]
   }, 
   "Mottled": {
     "variants": 1,
-    "tags0": ["description"]
+    "tags0": ["descriptor"]
   }, 
   "Mouse": {
     "variants": 1,
