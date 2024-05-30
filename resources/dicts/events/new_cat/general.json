@@ -4,7 +4,7 @@
         "biome": ["any"],
         "camp": ["any"],
         "season": ["any"],
-        "sub_types": ["adoption"],
+        "sub_type": ["adoption"],
         "weight": 20,
         "event_text": "A loner leaves their litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/poss} own.",
         "m_c": {
@@ -29,7 +29,7 @@
         "biome": ["any"],
         "camp": ["any"],
         "season": ["any"],
-         "sub_types": ["adoption"],
+         "sub_type": ["adoption"],
         "weight": 10,
         "event_text": "A rogue leaves their litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/poss} own.",
         "m_c": {
@@ -54,7 +54,7 @@
         "biome": ["any"],
         "camp": ["any"],
         "season": ["any"],
-         "sub_types": ["adoption"],
+         "sub_type": ["adoption"],
         "weight": 10,
         "event_text": "A o_c queen decides to leave their litter with you. m_c takes them as {PRONOUN/m_c/poss} own.",
         "m_c": {
@@ -79,7 +79,7 @@
         "biome": ["any"],
         "camp": ["any"],
         "season": ["any"],
-         "sub_types": ["adoption"],
+         "sub_type": ["adoption"],
         "weight": 5,
         "event_text": "A kittypet leaves their litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/poss} own.",
         "m_c": {
@@ -104,7 +104,7 @@
         "biome": ["any"],
         "camp": ["any"],
         "season": ["any"],
-         "sub_types": ["adoption"],
+         "sub_type": ["adoption"],
         "weight": 20,
         "event_text": "m_c finds an abandoned litter, and decides to adopt them as {PRONOUN/m_c/poss} own.",
         "m_c": {
@@ -514,7 +514,7 @@
         "biome": ["any"],
         "camp": ["any"],
         "season": ["any"],
-        "sub_types": ["war"],
+        "sub_type": ["war"],
         "weight": 15,
         "event_text": "A member of o_c defects in the war and chooses to join c_n. {PRONOUN/n_c/subject/CAP} {VERB/n_c/decide/decides} to keep {PRONOUN/n_c/poss} name.",
         "new_cat": [
@@ -530,7 +530,7 @@
         "biome": ["any"],
         "camp": ["any"],
         "season": ["any"],
-        "sub_types": ["war"],
+        "sub_type": ["war"],
         "weight": 10,
         "event_text": "n_c, the deputy of o_c, has defected to c_n in the war. {PRONOUN/n_c/subject/CAP} {VERB/n_c/decide/decides} to keep {PRONOUN/n_c/poss} name.",
         "new_cat": [
@@ -546,7 +546,7 @@
         "biome": ["any"],
         "camp": ["any"],
         "season": ["any"],
-        "sub_types": ["war"],
+        "sub_type": ["war"],
         "weight": 15,
         "event_text": "n_c, the medicine cat of o_c, has defected to c_n in the war. {PRONOUN/n_c/subject/CAP} {VERB/n_c/decide/decides} to keep {PRONOUN/n_c/poss} name.",
         "new_cat": [
