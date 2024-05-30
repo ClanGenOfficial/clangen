@@ -1817,6 +1817,19 @@
         "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
         "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
     },
+    "new_cat": [
+      ["meeting", "kittypet",
+                "exists"]
+    ],
+    "relationships": [
+      {
+        "cats_from": ["m_c"],
+        "cats_to": ["n_c:0"],
+        "mutual": true,
+        "values": ["platonic"],
+        "amount": 10
+      }
+    ],
     "outsider": {
       "current_rep": ["any"],
       "changed": -5
@@ -1833,6 +1846,19 @@
         "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
         "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
     },
+    "new_cat": [
+      ["meeting", "kittypet",
+                "exists"]
+    ],
+    "relationships": [
+      {
+        "cats_from": ["m_c"],
+        "cats_to": ["n_c:0"],
+        "mutual": true,
+        "values": ["platonic"],
+        "amount": 15
+      }
+    ],
     "outsider": {
       "current_rep": ["any"],
       "changed": 5
@@ -1849,6 +1875,19 @@
         "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
         "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
     },
+    "new_cat": [
+      ["meeting", "kittypet",
+                "exists"]
+    ],
+    "relationships": [
+      {
+        "cats_from": ["m_c"],
+        "cats_to": ["n_c:0"],
+        "mutual": true,
+        "values": ["platonic"],
+        "amount": 10
+      }
+    ],
     "outsider": {
       "current_rep": ["any"],
       "changed": 7
@@ -1865,6 +1904,19 @@
         "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
         "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
     },
+    "new_cat": [
+      ["meeting", "kittypet",
+                "exists"]
+    ],
+    "relationships": [
+      {
+        "cats_from": ["m_c"],
+        "cats_to": ["n_c:0"],
+        "mutual": true,
+        "values": ["dislike"],
+        "amount": 10
+      }
+    ],
     "outsider": {
       "current_rep": ["any"],
       "changed": -5
@@ -1880,7 +1932,20 @@
     "m_c": {
         "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
         "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
-    }
+    },
+    "new_cat": [
+      ["meeting", "kittypet",
+                "exists"]
+    ],
+    "relationships": [
+      {
+        "cats_from": ["m_c"],
+        "cats_to": ["n_c:0"],
+        "mutual": true,
+        "values": ["trust"],
+        "amount": 10
+      }
+    ]
   },
   {
     "event_id": "gen_misc_any_scandalous_other_clan1",
@@ -1970,6 +2035,19 @@
         "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
         "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
     },
+    "new_cat": [
+      ["meeting", "loner",
+                "exists"]
+    ],
+    "relationships": [
+      {
+        "cats_from": ["m_c"],
+        "cats_to": ["n_c:0"],
+        "mutual": true,
+        "values": ["dislike"],
+        "amount": 15
+      }
+    ],
     "outsider": {
       "current_rep": ["any"],
       "changed": -5
@@ -1986,6 +2064,19 @@
         "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
         "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
     },
+    "new_cat": [
+      ["meeting", "loner",
+                "exists"]
+    ],
+    "relationships": [
+      {
+        "cats_from": ["m_c"],
+        "cats_to": ["n_c:0"],
+        "mutual": true,
+        "values": ["platonic"],
+        "amount": 15
+      }
+    ],
     "outsider": {
       "current_rep": ["any"],
       "changed": 5
@@ -2001,7 +2092,20 @@
     "m_c": {
         "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
         "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
-    }
+    },
+    "new_cat": [
+      ["meeting", "loner",
+                "exists"]
+    ],
+    "relationships": [
+      {
+        "cats_from": ["m_c"],
+        "cats_to": ["n_c:0"],
+        "mutual": true,
+        "values": ["respect", "trust"],
+        "amount": 5
+      }
+    ]
   },
   {
     "event_id": "gen_misc_any_scandalous1",
@@ -2026,6 +2130,19 @@
         "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
         "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
     },
+    "new_cat": [
+      ["meeting", "rogue",
+                "exists"]
+    ],
+    "relationships": [
+      {
+        "cats_from": ["m_c"],
+        "cats_to": ["n_c:0"],
+        "mutual": true,
+        "values": ["platonic"],
+        "amount": 10
+      }
+    ],
     "outsider": {
       "current_rep": ["any"],
       "changed": 5
@@ -2042,6 +2159,19 @@
         "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
         "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
     },
+    "new_cat": [
+      ["meeting", "rogue",
+                "exists"]
+    ],
+    "relationships": [
+      {
+        "cats_from": ["m_c"],
+        "cats_to": ["n_c:0"],
+        "mutual": true,
+        "values": ["platonic"],
+        "amount": 15
+      }
+    ],
     "outsider": {
       "current_rep": ["any"],
       "changed": 5
@@ -2061,7 +2191,20 @@
     "outsider": {
       "current_rep": ["any"],
       "changed": -5
-    }
+    },
+    "new_cat": [
+      ["meeting", "rogue",
+                "exists"]
+    ],
+    "relationships": [
+      {
+        "cats_from": ["m_c"],
+        "cats_to": ["n_c:0"],
+        "mutual": true,
+        "values": ["dislike"],
+        "amount": 10
+      }
+    ]
   },
   {
     "event_id": "gen_misc_any_wartraitmediator1",
@@ -2462,7 +2605,7 @@
     "camp": ["any"],
     "season": ["any"],
     "weight": 10,
-    "event_text": "m_c was seen loudly bickering with the medicine cat of o_c.",
+    "event_text": "m_c was seen loudly bickering with the medicine cat of o_c_n.",
     "m_c":{
       "age":["any"],
       "status": ["medicine cat"]

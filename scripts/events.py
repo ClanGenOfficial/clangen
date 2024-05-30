@@ -19,7 +19,7 @@ import ujson
 
 from scripts.cat.cats import Cat, cat_class
 from scripts.clan import HERBS
-from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE, FRESHKILL_EVENT_ACTIVE
+from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
 from scripts.events_module.relation_events import Relation_Events
 from scripts.events_module.condition_events import Condition_Events
@@ -27,10 +27,10 @@ from scripts.events_module.handle_short_events import handle_short_events
 from scripts.events_module.outsider_events import OutsiderEvents
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
-from scripts.utility import change_clan_relations, change_clan_reputation, get_alive_kits, get_med_cats, \
+from scripts.utility import change_clan_relations, change_clan_reputation, \
     ceremony_text_adjust, \
     get_current_season, adjust_list_text, ongoing_event_text_adjust, event_text_adjust, get_random_moon_cat, \
-    get_warring_clan
+    get_warring_clan, get_alive_status_cats
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
 from scripts.game_structure.windows import SaveError
@@ -313,7 +313,7 @@ class Events:
                 game.clan.herbs.update({new_herb: 1})
         else:
             event_list = []
-            meds_available = get_med_cats(Cat)
+            meds_available = get_alive_status_cats(Cat, ["medicine cat", "medicine cat apprentice"], working=True, sort=True)
             for med in meds_available:
                 if game.clan.current_season in ['Newleaf', 'Greenleaf']:
                     amount = random.choices([0, 1, 2, 3], [1, 2, 2, 2], k=1)
@@ -369,7 +369,7 @@ class Events:
             if clan.relations > 17:
                 allies.append(clan)
 
-        meds = get_med_cats(Cat, working=False)
+        meds = get_alive_status_cats(Cat, ["medicine cat", "medicine cat apprentice"], sort=True)
         if len(meds) == 1:
             insert = "medicine cat"
         else:
@@ -998,7 +998,7 @@ class Events:
                 return
 
         # prevent injured or sick cats from unrealistic Clan events
-        """if cat.is_ill() or cat.is_injured():
+        if cat.is_ill() or cat.is_injured():
             if cat.is_ill() and cat.is_injured():
                 if random.getrandbits(1):
                     triggered_death = Condition_Events.handle_injuries(cat)
@@ -1015,7 +1015,7 @@ class Events:
             game.switches['skip_conditions'].clear()
             if cat.dead:
                 return
-            self.handle_outbreaks(cat)"""
+            self.handle_outbreaks(cat)
 
         # newborns don't do much
         if cat.status == 'newborn':
@@ -1827,7 +1827,7 @@ class Events:
         """
         TODO: DOCS
         """
-        hit = int(random.random() * 1)
+        hit = int(random.random() * 30)
         if hit:
             return
 
@@ -2170,7 +2170,7 @@ class Events:
         if already_sick_count >= alive_count * .25:
             return
 
-        meds = get_med_cats(Cat)
+        meds = get_alive_status_cats(Cat, ["medicine cat", "medicine cat apprentice"], working=True, sort=True)
 
         for illness in cat.illnesses:
             # check if illness can infect other cats

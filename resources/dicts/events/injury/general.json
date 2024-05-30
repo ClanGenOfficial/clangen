@@ -1192,10 +1192,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred in a fight against o_c_n.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a battle with o_c_n."
-        },
+            }
+        ],
         "other_clan": {
             "current_rep": [
                 "hostile"
@@ -1246,10 +1249,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred in a fight against o_c_n.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a battle with o_c_n."
-        },
+            }
+        ],
         "other_clan": {
             "current_rep": [
                 "hostile"
@@ -1430,10 +1436,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred as a kit by frostbite.",
             "reg_death": "m_c died after they got frostbite sneaking out of camp."
-        }
+            }
+        ]
     },
     {
         "event_id": "multi_injury_anykit1",
@@ -1491,10 +1500,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred as a kit, when an eagle tried to carry {PRONOUN/m_c/object} off.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after an eagle tried to carry {PRONOUN/m_c/object} off."
-        },
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -1570,10 +1582,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred as a kit, when an eagle tried to carry {PRONOUN/m_c/object} off.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after an eagle tried to carry {PRONOUN/m_c/object} off."
-        },
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -1620,9 +1635,12 @@
                 ]
             }
         ],
-        "history": {
-            "reg_death": "m_c died from water-inhalation after falling in the river."
-        }
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died from water-inhalation after falling in the river."
+            }
+        ]
     },
     {
         "event_id": "gen_injury_multifrostbite1",
@@ -1651,10 +1669,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by frostbite.",
             "reg_death": "m_c died after {PRONOUN/m_c/subject} got frostbite."
-        }
+            }
+        ]
     },
     {
         "event_id": "multi_injury_leafbarebrokenbone1",
@@ -1693,10 +1714,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred after slipping on ice.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after slipping on ice."
-        }
+            }
+        ]
     },
     {
         "event_id": "multi_injury_anybrokenbone1",
@@ -1725,10 +1749,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred when an eagle grabbed {PRONOUN/m_c/object}.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after an eagle grabbed {PRONOUN/m_c/object}."
-        }
+            }
+        ]
     },
     {
         "event_id": "multi_injury_anysmallcut1",
@@ -1760,10 +1787,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred after slipping on ice.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after slipping on ice."
-        }
+            }
+        ]
     },
     {
         "event_id": "multi_injury_anybruises1",
@@ -1841,10 +1871,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred after falling from a tall tree.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tall tree."
-        }
+            }
+        ]
     },
     {
         "event_id": "gen_injury_sore_anymultiage1",
@@ -1916,10 +1949,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred when {PRONOUN/m_c/subject} fell through a snowdrift and down the mountain.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling down the mountain."
-        }
+            }
+        ]
     },
     {
         "event_id": "gen_injury_",
@@ -1955,10 +1991,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred when {PRONOUN/m_c/subject} fell off a cliff.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling off a cliff."
-        }
+            }
+        ]
     },
     {
         "event_id": "multi_injury_clawwound_any1",
@@ -1987,10 +2026,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by an eagle.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after fighting an eagle."
-        }
+            }
+        ]
     },
     {
         "event_id": "gen_injury_smallcut_any2",
@@ -2173,10 +2215,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred when they accidentally ran their leg into a rabbit burrow.",
             "reg_death": "m_c died from wounds caused by when they accidentally ran into a rabbit burrow."
-        }
+            }
+        ]
     },
     {
         "event_id": "gen_injury_bruises_anymultiagestatustraitfighter1",
@@ -2809,10 +2854,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by a dog.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after fighting a dog."
-        }
+            }
+        ]
     },
     {
         "event_id": "gen_injury_bitewound_anymultiagestatustraitnotfighterothercat1",
@@ -2885,10 +2933,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by a fox while rescuing r_c.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after saving r_c from a fox."
-        },
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -2971,10 +3022,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by a fox while protecting r_c.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after protecting r_c from a fox."
-        },
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -3045,10 +3099,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by a rogue.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after fighting a rogue."
-        }
+            }
+        ]
     },
     {
         "event_id": "gen_injury_brokenbone_anymultiagestatustraitnotfighter1",
@@ -3102,10 +3159,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by a big dog.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after fighting a big dog."
-        }
+            }
+        ]
     },
     {
         "event_id": "gen_injury_brokenbone_anymultiagestatustraitnotfighterothercat1",
@@ -3179,10 +3239,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by a big dog while rescuing r_c.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after saving r_c from a big dog."
-        },
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -3253,10 +3316,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by a hawk.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after fighting a hawk."
-        }
+            }
+        ]
     },
     {
         "event_id": "gen_injury_clawwound_anymultiagestatustraitnotfighterothercat1",
@@ -3324,10 +3390,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by a hawk while rescuing r_c.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after saving r_c from a hawk."
-        },
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -3414,10 +3483,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by a rogue while protecting r_c.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after protecting r_c from a rogue."
-        },
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -3508,10 +3580,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred during a harsh training exercise with r_c.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a harsh training exercise with r_c."
-        },
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -3606,10 +3681,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by o_c warriors, after being ordered to go over the border by r_c.",
             "reg_death": "m_c died from wounds caused by o_c warriors, after being ordered to go over the border by r_c.."
-        },
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -3708,10 +3786,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by a Clanmate that r_c encouraged {PRONOUN/m_c/object} to fight.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a fight with a Clanmate that r_c encouraged."
-        },
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -3801,10 +3882,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by a fox, while trying to follow r_c's orders.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after fighting a fox on r_c's orders."
-        },
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -3894,10 +3978,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by a big dog, while trying to follow r_c's orders.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after fighting a big dog on r_c's orders."
-        },
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -3962,10 +4049,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred when a hare scratched {PRONOUN/m_c/poss} eyes.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a hare scratched {PRONOUN/m_c/poss} eyes."
-        }
+            }
+        ]
     },
     {
         "event_id": "gen_injury_sore_war_anyapprentice2",
@@ -4074,10 +4164,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred after a fight with o_c cats.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after fighting with o_c cats."
-        },
+            }
+        ],
         "other_clan": {
             "current_rep": [
                 "hostile"
@@ -4152,10 +4245,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred fighting a rogue that {PRONOUN/m_c/poss} mentor, r_c, encouraged {PRONOUN/m_c/object} to attack.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/poss} mentor encouraged {PRONOUN/m_c/object} to fight a rogue."
-        },
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -4248,10 +4344,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred fighting an enemy warrior that {PRONOUN/m_c/poss} mentor, r_c, encouraged {PRONOUN/m_c/object} to attack.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/poss} mentor encouraged {PRONOUN/m_c/object} to fight an enemy warrior."
-        },
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -4344,10 +4443,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred fighting a dog that {PRONOUN/m_c/poss} mentor, r_c, encouraged {PRONOUN/m_c/object} to attack.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/poss} mentor encouraged {PRONOUN/m_c/object} to fight a dog."
-        },
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -4440,10 +4542,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred fighting a fox that {PRONOUN/m_c/poss} mentor, r_c, encouraged {PRONOUN/m_c/object} to attack.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/poss} mentor encouraged {PRONOUN/m_c/object} to fight a fox."
-        },
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -4544,10 +4649,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by {PRONOUN/m_c/poss} mentor, r_c's, harsh training.",
             "reg_death": "m_c died from wounds caused by {PRONOUN/m_c/poss} mentor's harsh training."
-        },
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -5098,10 +5206,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by {PRONOUN/m_c/poss} mentor, r_c, for failing to defend the territory well enough.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/poss} mentor, r_c, hurt {PRONOUN/m_c/object} for failing to defend the territory well enough."
-        },
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -5193,10 +5304,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by {PRONOUN/m_c/poss} mentor, r_c, for accidentally crossing the border.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/poss} mentor hurt {PRONOUN/m_c/object} for accidentally crossing the border."
-        },
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -5294,10 +5408,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by {PRONOUN/m_c/poss} mentor, r_c, for messing with a Twoleg object.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/poss} mentor hurt {PRONOUN/m_c/object} for messing with a Twoleg object."
-        },
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -5391,10 +5508,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by {PRONOUN/m_c/poss} mentor, r_c, during battle training.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/poss} mentor insisted on training with unsheathed claws."
-        },
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -5490,10 +5610,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by {PRONOUN/m_c/poss} mentor, r_c, for disobeying {PRONOUN/r_c/object}.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/poss} mentor hurt {PRONOUN/m_c/object} for disobeying {PRONOUN/r_c/object}."
-        },
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -5587,10 +5710,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred after fighting with {PRONOUN/m_c/poss} mentor, r_c.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after fighting with {PRONOUN/m_c/poss} mentor."
-        },
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -5691,10 +5817,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by {PRONOUN/m_c/poss} mentor, r_c's, harsh training.",
             "reg_death": "m_c died from wounds caused by {PRONOUN/m_c/poss} mentor's harsh training."
-        },
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -5782,10 +5911,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by {PRONOUN/m_c/poss} mentor, r_c, when {PRONOUN/r_c/subject} used a Twoleg trap for training.",
             "reg_death": "m_c died from wounds caused by {PRONOUN/m_c/poss} mentor using a Twoleg trap for training."
-        },
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -5889,9 +6021,12 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "reg_death": "m_c died from water-inhalation after being dragged out to sea."
-        }
+            }
+        ]
     },
     {
         "event_id": "gen_injury_snakebite_anymultiage1",
@@ -5932,10 +6067,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by a snake bite.",
             "reg_death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} bitten by a snake."
-        }
+            }
+        ]
     },
     {
         "event_id": "gen_injury_bruises_anymultisage2",
@@ -6523,11 +6661,14 @@
                 ]
             }
         ],
-        "history": {
-            "scar": "m_c was scarred when {PRONOUN/m_c/subject} fought a trespassing rogue.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/subject} fought a trespassing rogue.",
-            "lead_death": "couldn't survive {PRONOUN/m_c/poss} injuries after {PRONOUN/m_c/subject} fought a trespassing rogue"
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred when {PRONOUN/m_c/subject} fought a trespassing rogue.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/subject} fought a trespassing rogue.",
+                "lead_death": "couldn't survive {PRONOUN/m_c/poss} injuries after {PRONOUN/m_c/subject} fought a trespassing rogue"
         }
+        ]
     },
     {
         "event_id": "gen_injury_mangledtail_any1",
@@ -6568,10 +6709,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by a Twoleg trap.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} injuries caused by a Twoleg trap."
-        }
+            }
+        ]
     },
     {
         "event_id": "gen_injury_mangledtail_anyothercatleader1",
@@ -6635,10 +6779,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was maimed by r_c for questioning {PRONOUN/r_c/poss} leadership.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after being maimed by r_c for questioning {PRONOUN/r_c/poss} leadership."
-        },
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -6711,10 +6858,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by a dog.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/subject} {VERB/m_c/were/was} hurt by a dog."
-        }
+            }
+        ]
     },
     {
         "event_id": "gen_injury_mangledtail_anynotskillfighter1",
@@ -6753,10 +6903,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by a fox.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/subject} {VERB/m_c/were/was} hurt by a fox."
-        }
+            }
+        ]
     },
     {
         "event_id": "gen_injury_catbite_anyothercat1",
@@ -6812,10 +6965,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by r_c for disobeying orders.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after being hurt by r_c for disobeying {PRONOUN/r_c/object}."
-        },
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -6902,10 +7058,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by r_c for speaking out against {PRONOUN/r_c/object}.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after being hurt by r_c for {PRONOUN/m_c/poss} dissent."
-        },
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -6992,10 +7151,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by r_c to make an example out of {PRONOUN/m_c/object}.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after being hurt by r_c to make an example out of {PRONOUN/m_c/object}."
-        },
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -7128,10 +7290,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c, unbelievably, was scarred when {PRONOUN/m_c/subject} tried to eat a bee.",
             "reg_death": "m_c died from complications caused by a bee sting."
-        }
+            }
+        ]
     },
     {
         "event_id": "gen_injury_tornear_anymultistatus2",
@@ -7172,9 +7337,14 @@
                 ]
             }
         ],
-        "history": {
-            "scar": "m_c's ear was torn when {PRONOUN/m_c/subject} accidentally crossed the border and was caught by an enemy warrior."
-        },
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c's ear was torn when {PRONOUN/m_c/subject} accidentally crossed the border and was caught by an enemy warrior.",
+                "reg_death": "m_c died to an injury from an enemy warrior.",
+                "lead_death": "succumbed to an injury from an enemy warrior"
+            }
+        ],
         "other_clan": {
             "current_rep": [
                 "any"
@@ -7221,9 +7391,12 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c's ear was torn in a scuffle when {PRONOUN/m_c/subject} chased off an enemy warrior."
-        },
+            }
+        ],
         "other_clan": {
             "current_rep": [
                 "any"
@@ -7265,11 +7438,14 @@
                 ]
             }
         ],
-        "history": {
-            "scar": "m_c was scarred when {PRONOUN/m_c/subject} {VERB/m_c/were/was} attacked by a group of rats.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/subject} {VERB/m_c/were/was} attacked by a group of rats.",
-            "lead_death": "couldn't survive {PRONOUN/m_c/poss} injuries after {PRONOUN/m_c/subject} {VERB/m_c/were/was} attacked by a group of rats"
-        }
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred when {PRONOUN/m_c/subject} {VERB/m_c/were/was} attacked by a group of rats.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/subject} {VERB/m_c/were/was} attacked by a group of rats.",
+                "lead_death": "couldn't survive {PRONOUN/m_c/poss} injuries after {PRONOUN/m_c/subject} {VERB/m_c/were/was} attacked by a group of rats"
+            }
+            ]
     },
     {
         "event_id": "gen_injury_beesting_multiany2",
@@ -7306,10 +7482,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c, unbelievably, was scarred when {PRONOUN/m_c/subject} stepped on a bee.",
             "reg_death": "m_c died from complications caused by a bee sting."
-        }
+            }
+        ]
     },
     {
         "event_id": "gen_injury_beesting_multiany1",
@@ -7346,10 +7525,13 @@
                 ]
             }
         ],
-        "history": {
+        "history": [
+            {
+                "cats": ["m_c"],
             "scar": "m_c was scarred by a swarm of bees.",
             "reg_death": "m_c died from complications caused by bee stings."
-        }
+            }
+        ]
     },
     {
         "event_id": "gen_injury_headache_anyany1",

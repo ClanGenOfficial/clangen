@@ -8,9 +8,9 @@ from scripts.cat_relations.relationship import Relationship
 from scripts.clan_resources.freshkill import Freshkill_Pile, FRESHKILL_EVENT_ACTIVE, FRESHKILL_EVENT_TRIGGER_FACTOR
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.events_module.relation_events import Relation_Events
-from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values, get_alive_kits, \
+from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values, \
     history_text_adjust, get_warring_clan, unpack_rel_block, change_clan_reputation, create_new_cat_block, \
-    get_leader_life_notice
+    get_leader_life_notice, get_alive_status_cats
 from scripts.game_structure.game_essentials import game
 from scripts.event_class import Single_Event
 
@@ -41,7 +41,8 @@ class HandleShortEvents():
         self.chosen_event = None
         self.additional_event_text = ""
 
-    def handle_event(self, event_type: str, main_cat: Cat, random_cat: Cat, freshkill_pile: Freshkill_Pile, sub_type: list = None):
+    def handle_event(self, event_type: str, main_cat: Cat, random_cat: Cat, freshkill_pile: Freshkill_Pile,
+                     sub_type: list = None):
         """ 
         This function handles the generation and execution of the event
         """
@@ -97,16 +98,21 @@ class HandleShortEvents():
                         break
 
         # NOW find the possible events and filter
+        if event_type == "birth_death":
+            event_type = "death"
+        elif event_type == "health":
+            event_type = "injury"
         possible_short_events = GenerateEvents.possible_short_events(event_type)
 
-        final_events = GenerateEvents.filter_possible_short_events(Cat_class=Cat,
-                                                                   possible_events=possible_short_events,
-                                                                   cat=self.main_cat,
-                                                                   random_cat=self.random_cat,
-                                                                   other_clan=self.other_clan,
-                                                                   freshkill_active=FRESHKILL_EVENT_ACTIVE,
-                                                                   freshkill_trigger_factor=FRESHKILL_EVENT_TRIGGER_FACTOR,
-                                                                   sub_types=self.sub_types)
+        final_events = GenerateEvents.filter_possible_short_events(
+            Cat_class=Cat,
+            possible_events=possible_short_events,
+            cat=self.main_cat,
+            random_cat=self.random_cat,
+            other_clan=self.other_clan,
+            freshkill_active=FRESHKILL_EVENT_ACTIVE,
+            freshkill_trigger_factor=FRESHKILL_EVENT_TRIGGER_FACTOR,
+            sub_types=self.sub_types)
         # ---------------------------------------------------------------------------- #
         #                               do the event                                   #
         # ---------------------------------------------------------------------------- #
@@ -132,7 +138,7 @@ class HandleShortEvents():
 
         # used in some murder events, this kinda sucks tho it would be nice to change how this sort of thing is handled
         if "kit_manipulated" in self.chosen_event.tags:
-            kit = Cat.fetch_cat(random.choice(get_alive_kits(Cat)))
+            kit = Cat.fetch_cat(random.choice(get_alive_status_cats(Cat, ["kitten"])))
             self.involved_cats.append(kit.ID)
             change_relationship_values([self.random_cat],
                                        [kit],
@@ -447,31 +453,31 @@ class HandleShortEvents():
 
         # now go through each injury block
         for block in self.chosen_event.injury:
-            cats_affected = self.chosen_event.injury["cats"]
+            cats_affected = block["cats"]
 
             # classic mode only gains scars, not injuries
             if game.clan.game_mode == "classic":
                 for abbr in cats_affected:
                     # MAIN CAT
                     if abbr == "m_c":
-                        if self.chosen_event.injury["scars"] and len(self.main_cat.pelt.scars) < 4:
+                        if block["scars"] and len(self.main_cat.pelt.scars) < 4:
                             # add a scar
-                            self.main_cat.pelt.scars.append(random.choice(self.chosen_event.injury["scars"]))
+                            self.main_cat.pelt.scars.append(random.choice(block["scars"]))
                             self.handle_injury_history(self.main_cat, "m_c")
 
                     # RANDOM CAT
                     elif abbr == "r_c":
-                        if self.chosen_event.injury["scars"] and len(self.random_cat.pelt.scars) < 4:
+                        if block["scars"] and len(self.random_cat.pelt.scars) < 4:
                             # add a scar
-                            self.random_cat.pelt.scars.append(random.choice(self.chosen_event.injury["scars"]))
+                            self.random_cat.pelt.scars.append(random.choice(block["scars"]))
                             self.handle_injury_history(self.random_cat, "r_c")
 
                     # NEW CATS
                     elif "n_c" in abbr:
                         for i, new_cats in enumerate(self.new_cats):
-                            if self.chosen_event.injury["scars"] and len(new_cats[i].pelt.scars) < 4:
+                            if block["scars"] and len(new_cats[i].pelt.scars) < 4:
                                 # add a scar
-                                new_cats[i].pelt.scars.append(random.choice(self.chosen_event.injury["scars"]))
+                                new_cats[i].pelt.scars.append(random.choice(block["scars"]))
                                 self.handle_injury_history(new_cats[i], abbr)
 
             # now give injuries to other modes
@@ -518,13 +524,17 @@ class HandleShortEvents():
         # if injury is false, then this is classic and they just need scar history
         if not injury:
             for block in self.chosen_event.history:
-                if cat_abbr in block["cats"]:
+                if "scar" not in block:
+                    return
+                elif cat_abbr in block["cats"]:
                     history_text = history_text_adjust(block["scar"], self.other_clan_name, game.clan, self.random_cat)
                     History.add_scar(cat, history_text)
                     break
         else:
             for block in self.chosen_event.history:
-                if cat_abbr in block["cats"]:
+                if "scar" not in block:
+                    return
+                elif cat_abbr in block["cats"]:
                     possible_scar = history_text_adjust(block["scar"], self.other_clan_name, game.clan, self.random_cat)
                     if cat.status == "leader":
                         possible_death = history_text_adjust(block["lead_death"], self.other_clan_name, game.clan,
@@ -641,7 +651,6 @@ class HandleShortEvents():
 
 
 handle_short_events = HandleShortEvents()
-
 
 # ---------------------------------------------------------------------------- #
 #                                LOAD RESOURCES                                #

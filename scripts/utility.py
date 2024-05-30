@@ -58,59 +58,30 @@ def get_alive_clan_queens(living_cats):
     return queen_dict, living_kits
 
 
-def get_alive_kits(Cat):
+def get_alive_status_cats(Cat, get_status: list, working: bool = False, sort: bool = False) -> list:
     """
-    returns a list of IDs for all living kittens in the clan
+    returns a list of cat objects for all living cats of get_status in Clan
+    :param Cat: Cat class
+    :param get_status: list of statuses searching for
+    :param working: default False, set to True if you would like the list to only include working cats
+    :param sort: default False, set to True if you would like list sorted by descending moon age
     """
-    alive_kits = [i for i in Cat.all_cats.values() if
-                  i.age in ['kitten', 'newborn'] and not i.dead and not i.outside]
 
-    return alive_kits
-
-
-def get_alive_apps(Cat):
-    """
-    returns a list of IDs for all living apprentices in the clan
-    """
-    alive_apps = [i for i in Cat.all_cats.values() if
-                  i.status in ["apprentice", "medicine cat apprentice",
-                               "mediator apprentice"] and not i.dead and not i.outside]
-
-    return alive_apps
-
-
-def get_alive_newborns(Cat):
-    """
-    returns a list of IDs for all living newborns in the clan
-    """
-    alive_newborns = [i for i in Cat.all_cats.values() if
-                      i.status in ["newborn"] and not i.dead and not i.outside]
-
-    return alive_newborns
-
-
-def get_med_cats(Cat, working=True):
-    """
-    returns a list of all meds and med apps currently alive, in the clan, and able to work
-
-    set working to False if you want all meds and med apps regardless of their work status
-    """
-    all_cats = Cat.all_cats.values()
-    possible_med_cats = [i for i in all_cats if
-                         i.status in ['medicine cat apprentice', 'medicine cat'] and not (i.dead or i.outside)]
+    alive_cats = [i for i in Cat.all_cats.values() if i.status in get_status and not i.dead and not i.outside]
 
     if working:
-        possible_med_cats = [i for i in possible_med_cats if not i.not_working()]
+        alive_cats = [i for i in alive_cats if not i.not_working()]
 
-    # Sort the cats by age before returning
-    possible_med_cats = sorted(possible_med_cats, key=lambda cat: cat.moons, reverse=True)
+    if sort:
+        alive_cats = sorted(alive_cats, key=lambda cat: cat.moons, reverse=True)
 
-    return possible_med_cats
+    return alive_cats
 
 
 def get_living_cat_count(Cat):
     """
-    TODO: DOCS
+    Returns the int of all living cats, both in and out of the Clan
+    :param Cat: Cat class
     """
     count = 0
     for the_cat in Cat.all_cats.values():
@@ -122,7 +93,8 @@ def get_living_cat_count(Cat):
 
 def get_living_clan_cat_count(Cat):
     """
-    TODO: DOCS
+    Returns the int of all living cats within the Clan
+    :param Cat: Cat class
     """
     count = 0
     for the_cat in Cat.all_cats.values():
@@ -132,7 +104,7 @@ def get_living_clan_cat_count(Cat):
     return count
 
 
-def get_cats_same_age(Cat, cat, age_range=10):  # pylint: disable=redefined-builtin
+def get_cats_same_age(Cat, cat, age_range=10):
     """
     Look for all cats in the Clan and returns a list of cats, which are in the same age range as the given cat.
     :param Cat: Cat class
@@ -444,11 +416,13 @@ def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, 
         chosen_backstory = choice(BACKSTORIES["backstory_categories"].get(f"{x}_backstories", ["outsider1"]))
 
     # OPTION TO OVERRIDE DEFAULT BACKSTORY
+    bs_override = False
     for _tag in attribute_list:
         match = re.match(r"backsotry:(.+)", _tag)
         if match:
             stor = [x for x in match.group(1).split(",") if x in BACKSTORIES["backstories"]]
             if not stor:
+                bs_override = True
                 continue
             chosen_backstory = choice(stor)
             break
@@ -471,80 +445,135 @@ def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, 
         alive = False
         thought = "Explores a new, starry world"
 
+    # check if we can use an existing cat here
+    chosen_cat = None
+    if "exists" in attribute_list:
+        existing_outsiders = [i for i in Cat.all_cats.values() if i.outside and not i.dead]
+        possible_outsiders = []
+        for cat in existing_outsiders:
+            if bs_override:
+                continue
+            if cat_type != cat.status:
+                continue
+            if age != Cat.age_moons[cat.age]:
+                continue
+            if gender != cat.gender:
+                continue
+
+            possible_outsiders.append(cat)
+        if possible_outsiders:
+            chosen_cat = choice(possible_outsiders)
+            game.clan.add_to_clan(chosen_cat)
+            chosen_cat.status = status
+            chosen_cat.outside = outside
+            if not alive:
+                chosen_cat.die()
+
+            if new_name:
+                name = chosen_cat.name
+                if choice([1, 2]) == 1:  # adding suffix to OG name
+                    spaces = name.count(" ")
+                    if spaces > 0:
+                        # make a list of the words within the name, then add the OG name back in the list
+                        words = name.split(" ")
+                        words.append(name)
+                        new_prefix = choice(words)  # pick new prefix from that list
+                        name = new_prefix
+                        chosen_cat.name.prefix = name
+                        chosen_cat.name.give_suffix(
+                            pelt=chosen_cat.pelt,
+                            biome=game.clan.biome,
+                            tortiepattern=chosen_cat.tortiepattern
+                        )
+                else:  # completely new name
+                    chosen_cat.name.give_prefix(
+                        eyes=chosen_cat.eyes,
+                        colour=chosen_cat.colour,
+                        biome=game.clan.biome
+                    )
+                    chosen_cat.name.give_suffix(
+                        pelt=chosen_cat.pelt,
+                        biome=game.clan.biome,
+                        tortiepattern=chosen_cat.tortiepattern
+                    )
+
+            new_cats = [chosen_cat]
+
     # Now we generate the new cat
-    new_cats = create_new_cat(Cat,
-                              Relationship,
-                              new_name=new_name,
-                              loner=cat_type in ["loner", "rogue"],
-                              kittypet=cat_type == "kittypet",
-                              other_clan=cat_type == 'former Clancat',
-                              kit=False if litter else status in ["kitten", "newborn"],
-                              # this is for singular kits, litters need this to be false
-                              litter=litter,
-                              backstory=chosen_backstory,
-                              status=status,
-                              age=age,
-                              gender=gender,
-                              thought=thought,
-                              alive=alive,
-                              outside=outside,
-                              parent1=parent1.ID if parent1 else None,
-                              parent2=parent2.ID if parent2 else None
-                              )
+    if not chosen_cat:
+        new_cats = create_new_cat(Cat,
+                                  Relationship,
+                                  new_name=new_name,
+                                  loner=cat_type in ["loner", "rogue"],
+                                  kittypet=cat_type == "kittypet",
+                                  other_clan=cat_type == 'former Clancat',
+                                  kit=False if litter else status in ["kitten", "newborn"],
+                                  # this is for singular kits, litters need this to be false
+                                  litter=litter,
+                                  backstory=chosen_backstory,
+                                  status=status,
+                                  age=age,
+                                  gender=gender,
+                                  thought=thought,
+                                  alive=alive,
+                                  outside=outside,
+                                  parent1=parent1.ID if parent1 else None,
+                                  parent2=parent2.ID if parent2 else None
+                                  )
 
-    # NEXT
-    # add relations to bio parents, if needed
-    # add relations to cats generated within the same block, as they are littermates
-    # add mates
-    # THIS DOES NOT ADD RELATIONS TO CATS IN THE EVENT, those are added within the relationships block of the event
+        # NEXT
+        # add relations to bio parents, if needed
+        # add relations to cats generated within the same block, as they are littermates
+        # add mates
+        # THIS DOES NOT ADD RELATIONS TO CATS IN THE EVENT, those are added within the relationships block of the event
 
-    for n_c in new_cats:
+        for n_c in new_cats:
 
-        # SET MATES
-        for inter_cat in give_mates:
-            if n_c == inter_cat or n_c.ID in inter_cat.mate:
-                continue
+            # SET MATES
+            for inter_cat in give_mates:
+                if n_c == inter_cat or n_c.ID in inter_cat.mate:
+                    continue
 
-            # this is some duplicate work, since this triggers inheritance re-calcs
-            # TODO: optimize
-            n_c.set_mate(inter_cat)
+                # this is some duplicate work, since this triggers inheritance re-calcs
+                # TODO: optimize
+                n_c.set_mate(inter_cat)
 
-        # LITTERMATES
-        for inter_cat in new_cats:
-            if n_c == inter_cat:
-                continue
+            # LITTERMATES
+            for inter_cat in new_cats:
+                if n_c == inter_cat:
+                    continue
 
-            y = randrange(0, 20)
-            start_relation = Relationship(n_c, inter_cat, False, True)
-            start_relation.platonic_like += 30 + y
-            start_relation.comfortable = 10 + y
-            start_relation.admiration = 15 + y
-            start_relation.trust = 10 + y
-            n_c.relationships[inter_cat.ID] = start_relation
+                y = randrange(0, 20)
+                start_relation = Relationship(n_c, inter_cat, False, True)
+                start_relation.platonic_like += 30 + y
+                start_relation.comfortable = 10 + y
+                start_relation.admiration = 15 + y
+                start_relation.trust = 10 + y
+                n_c.relationships[inter_cat.ID] = start_relation
 
-        # BIO PARENTS
-        for par in (parent1, parent2):
-            if not par:
-                continue
+            # BIO PARENTS
+            for par in (parent1, parent2):
+                if not par:
+                    continue
 
-            y = randrange(0, 20)
-            start_relation = Relationship(par, n_c, False, True)
-            start_relation.platonic_like += 30 + y
-            start_relation.comfortable = 10 + y
-            start_relation.admiration = 15 + y
-            start_relation.trust = 10 + y
-            par.relationships[n_c.ID] = start_relation
+                y = randrange(0, 20)
+                start_relation = Relationship(par, n_c, False, True)
+                start_relation.platonic_like += 30 + y
+                start_relation.comfortable = 10 + y
+                start_relation.admiration = 15 + y
+                start_relation.trust = 10 + y
+                par.relationships[n_c.ID] = start_relation
 
-            y = randrange(0, 20)
-            start_relation = Relationship(n_c, par, False, True)
-            start_relation.platonic_like += 30 + y
-            start_relation.comfortable = 10 + y
-            start_relation.admiration = 15 + y
-            start_relation.trust = 10 + y
-            n_c.relationships[par.ID] = start_relation
+                y = randrange(0, 20)
+                start_relation = Relationship(n_c, par, False, True)
+                start_relation.platonic_like += 30 + y
+                start_relation.comfortable = 10 + y
+                start_relation.admiration = 15 + y
+                start_relation.trust = 10 + y
+                n_c.relationships[par.ID] = start_relation
 
-        # UPDATE INHERITANCE
-        n_c.create_inheritance_new_cat()
+            # UPDATE INHERITANCE
+            n_c.create_inheritance_new_cat()
 
     return new_cats
 
@@ -1644,7 +1673,7 @@ def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
         kitty = Cat.fetch_cat(game.clan.deputy)
         cat_dict["dep_name"] = (str(kitty.name), choice(kitty.pronouns))
     if "med_name" in text:
-        kitty = choice(get_med_cats(Cat, working=False))
+        kitty = choice(get_alive_status_cats(Cat, ["medicine cat"], working=True))
         cat_dict["med_name"] = (str(kitty.name), choice(kitty.pronouns))
 
     if cat_dict:
@@ -1791,7 +1820,7 @@ def event_text_adjust(Cat,
 
     # med_name
     if "med_name" in text:
-        med = choice(get_med_cats(Cat, working=False))
+        med = choice(get_alive_status_cats(Cat, ["medicine cat"], working=True))
         replace_dict["med_name"] = (str(med.name), choice(med.pronouns))
 
     # assign all names and pronouns

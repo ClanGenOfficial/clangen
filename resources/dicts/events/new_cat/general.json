@@ -287,7 +287,8 @@
             [
                 "old_name",
                 "loner",
-                "status:warrior"
+                "status:warrior",
+                "exists"
             ]
         ]
     },
@@ -305,7 +306,8 @@
             [
                 "new_name",
                 "loner",
-                "status:warrior"
+                "status:warrior",
+                "exists"
             ]
         ]
     },
@@ -315,7 +317,7 @@
         "camp": ["any"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "A loner waits on the border for a patrol and, finding one lead by m_c, asks to join the Clan. The loner decides to keep {PRONOUN/n_c/poss} old name, n_c_pre:0.",
+        "event_text": "A loner waits on the border for a patrol and, finding one lead by m_c, asks to join the Clan. The loner decides to keep {PRONOUN/n_c:0/poss} old name, n_c_pre:0.",
         "m_c": {
             "status": [
                 "leader", "deputy", "warrior", "medicine cat"
@@ -324,7 +326,8 @@
             [
                 "old_name",
                 "loner",
-                "status:warrior"
+                "status:warrior",
+                "exists"
             ]
         ]
     },
@@ -343,7 +346,8 @@
             [
                 "new_name",
                 "loner",
-                "status:warrior"
+                "status:warrior",
+                "exists"
             ]
         ]
     },
@@ -361,7 +365,8 @@
             [
                 "new_name",
                 "loner",
-                "status:warrior"
+                "status:warrior",
+                "exists"
             ]
         ],
         "outsider": {
@@ -383,7 +388,8 @@
             [
                 "old_name",
                 "kittypet",
-                "status:warrior"
+                "status:warrior",
+                "exists"
             ]
         ]
     },
@@ -402,7 +408,8 @@
             [
                 "new_name",
                 "kittypet",
-                "status:warrior"
+                "status:warrior",
+                "exists"
             ]
         ]
     },
@@ -420,7 +427,8 @@
             [
                 "old_name",
                 "kittypet",
-                "status:warrior"
+                "status:warrior",
+                "exists"
             ]
         ]
     },
@@ -440,7 +448,8 @@
             [
                 "new_name",
                 "kittypet",
-                "status:warrior"
+                "status:warrior",
+                "exists"
             ]
         ]
     },
@@ -459,7 +468,8 @@
             [
                 "old_name",
                 "rogue",
-                "status:warrior"
+                "status:warrior",
+                "exists"
             ]
         ]
     },
@@ -478,7 +488,8 @@
             [
                 "new_name",
                 "rogue",
-                "status:warrior"
+                "status:warrior",
+                "exists"
             ]
         ]
     },
@@ -496,7 +507,8 @@
             [
                 "old_name",
                 "rogue",
-                "status:warrior"
+                "status:warrior",
+                "exists"
             ]
         ]
     },
@@ -514,7 +526,8 @@
             [
                 "new_name",
                 "rogue",
-                "status:warrior"
+                "status:warrior",
+                "exists"
             ]
         ]
     },

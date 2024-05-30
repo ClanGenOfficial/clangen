@@ -5,8 +5,7 @@ import random
 import ujson
 
 from scripts.game_structure.game_essentials import game
-from scripts.utility import filter_relationship_type, get_living_clan_cat_count, get_alive_kits, get_alive_apps, \
-    get_alive_newborns
+from scripts.utility import filter_relationship_type, get_living_clan_cat_count,get_alive_status_cats
 
 resource_directory = "resources/dicts/events/"
 
@@ -241,10 +240,6 @@ class GenerateEvents:
             # check tags
             prevent_bypass = "skill_trait_required" in event.tags
 
-            # ensure that war events only happen during war
-            if war_event and "war" not in event.sub_type:
-                continue
-
             # some events are classic only
             if game.clan.game_mode in ["expanded", "cruel season"] and "classic" in event.tags:
                 continue
@@ -274,20 +269,16 @@ class GenerateEvents:
             elif "low_lives" in event.tags and leader_lives not in [1, 2, 3]:
                 continue
 
-            if "low_lives" in event.tags:
-                if game.clan.leader_lives > 3:
-                    continue
-
             # check if Clan has kits
-            if "clan_kits" in event.tags and not get_alive_kits(Cat_class):
+            if "clan_kits" in event.tags and not get_alive_status_cats(Cat_class, ["kitten"]):
                 continue
 
             # check if Clan has apps
-            if "clan_apps" in event.tags and not get_alive_apps(Cat_class):
+            if "clan_apps" in event.tags and not get_alive_status_cats(Cat_class, ["apprentice", "medicine cat apprentice", "mediator apprentice"]):
                 continue
 
             # check if Clan has newborns
-            if "clan_newborns" in event.tags and not get_alive_newborns(Cat_class):
+            if "clan_newborns" in event.tags and not get_alive_status_cats(Cat_class, ["newborn"]):
                 continue
 
             # If the cat or any of their mates have "no kits" toggled, forgo the adoption event.
@@ -327,7 +318,6 @@ class GenerateEvents:
                     if cat.personality.trait in event.m_c["trait"]:
                         has_trait = True
 
-
                 has_skill = False
                 if event.m_c["skill"]:
                     for _skill in event.m_c["skill"]:
@@ -350,7 +340,6 @@ class GenerateEvents:
                 elif event.m_c["skill"]:
                     if not has_skill and (prevent_bypass or int(random.random() * trait_skill_bypass)):
                         continue
-
 
                 # check cat negate trait and skill
                 has_trait = False
@@ -451,53 +440,75 @@ class GenerateEvents:
 
             # check that injury is possible
             if event.injury:
-                print(event.injury)
+                # determine which injury severity list will be used
+                allowed_severity = None
+                discard = False
+                if cat.status in GenerateEvents.INJURY_DISTRIBUTION:
+                    minor_chance = GenerateEvents.INJURY_DISTRIBUTION[cat.status]['minor']
+                    major_chance = GenerateEvents.INJURY_DISTRIBUTION[cat.status]['major']
+                    severe_chance = GenerateEvents.INJURY_DISTRIBUTION[cat.status]['severe']
+                    severity_chosen = random.choices(["minor", "major", "severe"],
+                                                     [minor_chance, major_chance, severe_chance], k=1)
+                    if severity_chosen[0] == 'minor':
+                        allowed_severity = "minor"
+                    elif severity_chosen[0] == 'major':
+                        allowed_severity = "major"
+                    else:
+                        allowed_severity = "severe"
+
                 for block in event.injury:
                     for injury in block["injuries"]:
                         if injury in GenerateEvents.INJURIES:
-                            if injury == 'mangled tail' and (
-                                    'NOTAIL' in cat.pelt.scars or 'HALFTAIL' in cat.pelt.scars):
-                                continue
+                            if GenerateEvents.INJURIES[injury]["severity"] != allowed_severity:
+                                discard = True
+                                break
 
-                            if injury == 'torn ear' and 'NOEAR' in cat.pelt.scars:
-                                continue
+                            if "m_c" in block["cats"]:
+                                if injury == 'mangled tail' and (
+                                        'NOTAIL' in cat.pelt.scars or 'HALFTAIL' in cat.pelt.scars):
+                                    continue
 
+                                if injury == 'torn ear' and 'NOEAR' in cat.pelt.scars:
+                                    continue
+                            if "r_c" in block["cats"]:
+                                if injury == 'mangled tail' and (
+                                        'NOTAIL' in random_cat.pelt.scars or 'HALFTAIL' in random_cat.pelt.scars):
+                                    continue
+
+                                if injury == 'torn ear' and 'NOEAR' in random_cat.pelt.scars:
+                                    continue
+
+                if discard:
+                    continue
 
             # check if outsider event is allowed
             if event.outsider:
                 # don't waste time checking rep if any rep is allowed
-                if "any" in event.outsider["current_rep"]:
-                    pass
-                # hostile
-                elif 1 <= game.clan.reputation <= 30 and "hostile" not in event.outsider["current_rep"]:
-                    continue
-                # neutral
-                elif 31 <= game.clan.reputation <= 70 and "neutral" not in event.outsider["current_rep"]:
-                    continue
-                # welcoming
-                elif 71 <= game.clan.reputation <= 100 and "welcoming" not in event.outsider["current_rep"]:
-                    continue
-
+                if "any" not in event.outsider["current_rep"]:
+                    # hostile
+                    if 1 <= game.clan.reputation <= 30 and "hostile" not in event.outsider["current_rep"]:
+                        continue
+                    # neutral
+                    elif 31 <= game.clan.reputation <= 70 and "neutral" not in event.outsider["current_rep"]:
+                        continue
+                    # welcoming
+                    elif 71 <= game.clan.reputation <= 100 and "welcoming" not in event.outsider["current_rep"]:
+                        continue
 
             # other Clan related checks
             if event.other_clan:
-                if "war" in event.sub_type and "war" not in sub_types:  # just double-checking
-                    continue
-
                 # don't waste time checking rep if any rep is allowed
-                if "any" in event.other_clan["current_rep"]:
-                    pass
-                # ally
-                elif "ally" in event.other_clan["current_rep"] and int(other_clan.relations) < 17:
-                    continue
-                # neutral
-                elif "neutral" in event.other_clan["current_rep"] and (
-                        int(other_clan.relations) <= 7 or int(other_clan.relations) >= 17):
-                    continue
-                # hostile
-                elif "hostile" in event.other_clan["current_rep"] and int(other_clan.relations) > 7:
-                    continue
-
+                if "any" not in event.other_clan["current_rep"]:
+                    # ally
+                    if "ally" in event.other_clan["current_rep"] and int(other_clan.relations) < 17:
+                        continue
+                    # neutral
+                    elif "neutral" in event.other_clan["current_rep"] and (
+                            int(other_clan.relations) <= 7 or int(other_clan.relations) >= 17):
+                        continue
+                    # hostile
+                    elif "hostile" in event.other_clan["current_rep"] and int(other_clan.relations) > 7:
+                        continue
 
             # clans below a certain age can't have their supplies messed with
             if game.clan.age < 5 and event.supplies:
@@ -701,11 +712,9 @@ class ShortEvent:
         self.weight = weight
         self.event_text = event_text
         self.new_accessory = new_accessory
-        self.m_c = m_c if m_c else {}
-        if not self.m_c:
-            self.m_c = {
-                "age": ["any"]
-            }
+        self.m_c = m_c if m_c else {
+            "age": ["any"]
+        }
         if self.m_c:
             if "age" not in self.m_c:
                 self.m_c["age"] = ["any"]

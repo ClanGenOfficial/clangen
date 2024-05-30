@@ -5,10 +5,9 @@ from scripts.cat.history import History
 from scripts.utility import (
     create_new_cat,
     get_highest_romantic_relation,
-    get_med_cats,
     event_text_adjust,
     get_personality_compatibility,
-    change_relationship_values
+    change_relationship_values, get_alive_status_cats
 )
 from scripts.game_structure.game_essentials import game
 from scripts.cat.cats import Cat, cat_class
@@ -402,7 +401,7 @@ class Pregnancy_Events():
         if not int(random.random() * death_chance):  # chance for a cat to die during childbirth
             possible_events = events["birth"]["death"]
             # just makin sure meds aren't mentioned if they aren't around or if they are a parent
-            meds = get_med_cats(Cat, working=False)
+            meds = get_alive_status_cats(Cat, ["medicine cat", "medicine cat apprentice"], sort=True)
             mate_is_med = [mate_id for mate_id in cat.mate if mate_id in meds]
             if not meds or cat in meds or len(mate_is_med) > 0:
                 for event in possible_events:
@@ -433,7 +432,7 @@ class Pregnancy_Events():
                 History.add_possible_history(cat, 'blood loss', death_text=death_event)
                 possible_events = events["birth"]["difficult_birth"]
                 # just makin sure meds aren't mentioned if they aren't around or if they are a parent
-                meds = get_med_cats(Cat, working=False)
+                meds = get_alive_status_cats(Cat, ["medicine cat", "medicine cat apprentice"])
                 mate_is_med = [mate_id for mate_id in cat.mate if mate_id in meds]
                 if not meds or cat in meds or len(mate_is_med) > 0:
                     for event in possible_events:
