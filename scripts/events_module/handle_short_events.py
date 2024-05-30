@@ -72,7 +72,7 @@ class HandleShortEvents():
         if game.clan.war.get("at_war", False):
             enemy_clan = get_warring_clan()
             self.other_clan = enemy_clan
-            self.other_clan_name = None
+            self.other_clan_name = f"{self.other_clan.name}Clan"
             self.sub_types.append("war")
         else:
             self.other_clan = random.choice(game.clan.all_clans if game.clan.all_clans else None)
@@ -182,7 +182,7 @@ class HandleShortEvents():
         if self.chosen_event.new_accessory:
             self.handle_accessories()
 
-        death_text = event_text_adjust(Cat, self.chosen_event.event_text,
+        event_text = event_text_adjust(Cat, self.chosen_event.event_text,
                                        main_cat=self.main_cat,
                                        random_cat=self.random_cat,
                                        victim_cat=self.victim_cat,
@@ -191,7 +191,7 @@ class HandleShortEvents():
                                        other_clan=self.other_clan)
 
         game.cur_events_list.append(
-            Single_Event(death_text + " " + self.additional_event_text, self.types, self.involved_cats))
+            Single_Event(event_text + " " + self.additional_event_text, self.types, self.involved_cats))
 
     def handle_new_cats(self):
 
@@ -218,7 +218,7 @@ class HandleShortEvents():
                 if cat.dead:
                     extra_text = f"{cat.name}'s ghost now wanders."
                 elif cat.outside:
-                    extra_text = f"The Clan has met {cat.name}."
+                    extra_text = f"The Clan has encountered {cat.name}."
                 else:
                     Relation_Events.welcome_new_cats([cat])
                 self.involved_cats.append(cat.ID)

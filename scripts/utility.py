@@ -417,8 +417,9 @@ def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, 
 
     # OPTION TO OVERRIDE DEFAULT BACKSTORY
     bs_override = False
+    stor = []
     for _tag in attribute_list:
-        match = re.match(r"backsotry:(.+)", _tag)
+        match = re.match(r"backstory:(.+)", _tag)
         if match:
             stor = [x for x in match.group(1).split(",") if x in BACKSTORIES["backstories"]]
             if not stor:
@@ -448,17 +449,24 @@ def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, 
     # check if we can use an existing cat here
     chosen_cat = None
     if "exists" in attribute_list:
+        print("looking for existing new cat")
         existing_outsiders = [i for i in Cat.all_cats.values() if i.outside and not i.dead]
         possible_outsiders = []
         for cat in existing_outsiders:
-            if bs_override:
+            if bs_override and cat.backstory not in stor:
+                print("wrong backstory")
                 continue
             if cat_type != cat.status:
-                continue
-            if age != Cat.age_moons[cat.age]:
+                print("wrong status")
                 continue
             if gender != cat.gender:
+                print("wrong gender")
                 continue
+            
+            if age not in Cat.age_moons[cat.age]:
+                print(f"wrong age")
+                continue
+
 
             possible_outsiders.append(cat)
         if possible_outsiders:
@@ -1624,7 +1632,8 @@ def find_special_list_types(text):
 
 def history_text_adjust(text,
                         other_clan_name,
-                        clan, other_cat_rc=None):
+                        clan,
+                        other_cat_rc=None):
     """
     we want to handle history text on its own because it needs to preserve the pronoun tags and cat abbreviations.
     this is so that future pronoun changes or name changes will continue to be reflected in history
@@ -1680,7 +1689,7 @@ def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
         text = process_text(text, cat_dict)
 
     if other_clan_name:
-        text = text.replace("o_c", other_clan_name)
+        text = text.replace("o_c_n", other_clan_name)
     if clan:
         clan_name = str(clan.name)
     else:
@@ -1794,7 +1803,6 @@ def event_text_adjust(Cat,
 
     # new_cats (include pre version)
     if "n_c" in text:
-        print("n_c abbr detected")
         for i, cat in enumerate(new_cats):
             if len(new_cats) > 1:
                 pronoun = Cat.default_pronouns[0]  # They/them for multiple cats

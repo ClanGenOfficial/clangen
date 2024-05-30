@@ -497,6 +497,8 @@ class GenerateEvents:
 
             # other Clan related checks
             if event.other_clan:
+                if not other_clan:
+                    continue
                 # don't waste time checking rep if any rep is allowed
                 if "any" not in event.other_clan["current_rep"]:
                     # ally

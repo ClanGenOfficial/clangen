@@ -459,7 +459,7 @@
         "camp": ["any"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "m_c finds a rogue named n_c_pre:0, who joins the Clan. The rogue decides to keep {PRONOUN/n_c/poss} old name.",
+        "event_text": "m_c finds a rogue named n_c_pre:0, who joins the Clan. The rogue decides to keep {PRONOUN/n_c:0/poss} old name.",
         "m_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
             "status": ["any"]
@@ -538,7 +538,7 @@
         "camp": ["any"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "m_c finds a warrior from o_c_n named n_c_pre:0, who asks to join the Clan.",
+        "event_text": "m_c finds a warrior from o_c_n named n_c:0, who asks to join the Clan.",
         "m_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
             "status": ["any"]
