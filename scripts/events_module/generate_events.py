@@ -667,9 +667,12 @@ class GenerateEvents:
             if "status" in cat_info:
                 # special lost cat check
                 if event_type == "outsider":
-                    if cat.status not in ["loner", "rogue", "kittypet", "former clancat", "exiled"] and "lost" not in cat_info["status"]:
+                    if cat.status not in ["loner", "rogue", "kittypet", "former clancat", "exiled"]:
+                        if "lost" not in cat_info["status"]:
+                            continue
+                    elif cat.status not in cat_info["status"] and "any" not in cat_info["status"]:
                         continue
-                if cat.status not in cat_info["status"] and "any" not in cat_info["status"]:
+                elif cat.status not in cat_info["status"] and "any" not in cat_info["status"]:
                     continue
             if "age" in cat_info:
                 if cat.age not in cat_info["age"]:
