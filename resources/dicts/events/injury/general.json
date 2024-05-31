@@ -7727,22 +7727,14 @@
         },
         "injury": [
             {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "claw-wound"
-                ]
+                "cats": ["m_c"],
+                "injuries": ["claw-wound"]
             }
         ],
         "relationships": [
             {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
                 "mutual": true,
                 "values": [
                     "trust",
@@ -7757,5 +7749,72 @@
             ],
             "changed": -5
         }
-    }
+    },
+  {
+    "event_id": "gen_injury_freshkill_anyrat1",
+    "biome": ["any"],
+    "camp": ["any"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "m_c was taking some prey from the fresh-kill pile only to find a horde of rats! {PRONOUN/m_c/subject/CAP} called to r_c for help and together they fought off the rats, but not before being injured.",
+    "m_c": {
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+        },
+    "r_c": {
+        "age": ["young adult", "adult", "senior adult", "senior"]
+        },
+    "injury": [
+        {
+            "cats": ["m_c", "r_c"],
+            "injuries": ["rat_bite"]
+        }
+    ],
+    "history:": [
+      {
+          "cats": ["m_c", "r_c"],
+          "scar": "{VERB/m_c/were/was} hurt while defending the fresh-kill pile from rats.",
+          "reg_death": "Died from {PRONOUN/m_c/poss} wounds after defending the fresh-kill pile from rats.",
+          "lead_death": "{VERB/m_c/were/was} killed by rats while defending the fresh-kill pile"
+      }
+    ],
+    "supplies": [
+      {
+          "type": "freshkill",
+          "trigger": ["excess"],
+          "adjust": "reduce_eighth"
+      }
+    ]
+  },
+  {
+    "event_id": "gen_injury_freshkill_anyrat2",
+    "biome": ["any"],
+    "camp": ["any"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "m_c was taking some prey from the fresh-kill pile only to find a horde of rats! While m_c managed to fight off every last rat, {PRONOUN/m_c/subject} got injured in the process.",
+    "m_c": {
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+        },
+    "injury": [
+        {
+            "cats": ["m_c"],
+            "injuries": ["rat_bite"]
+        }
+    ],
+    "history:": [
+      {
+          "cats": ["m_c"],
+          "scar": "{VERB/m_c/were/was} hurt while defending the fresh-kill pile from rats.",
+          "reg_death": "Died from {PRONOUN/m_c/poss} wounds after defending the fresh-kill pile from rats.",
+          "lead_death": "{VERB/m_c/were/was} killed by rats while defending the fresh-kill pile"
+      }
+    ],
+    "supplies": [
+      {
+          "type": "freshkill",
+          "trigger": ["excess"],
+          "adjust": "reduce_eighth"
+      }
+    ]
+  }
 ]

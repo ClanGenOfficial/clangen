@@ -1991,9 +1991,6 @@ class Events:
                 print(cat.name, 'TARGET CHOSEN', Cat.fetch_cat(chosen_target.cat_to).name)
                 print("KILL KILL KILL")
 
-                # If at war, grab enemy clan
-                enemy_clan = get_warring_clan()
-
                 handle_short_events.handle_event(event_type="birth_death",
                                                  main_cat=Cat.fetch_cat(chosen_target.cat_to),
                                                  random_cat=cat,

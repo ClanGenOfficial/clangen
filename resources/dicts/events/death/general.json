@@ -7023,5 +7023,65 @@
     "m_c": {
         "age": ["adolescent", "adult", "young adult", "senior adult"]
     }
+  },
+  {
+    "event_id": "gen_death_freshkill_anyfox1",
+    "biome": ["any"],
+    "camp": ["any"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "m_c woke up in the middle of the night to a strange noise. No one else was awake, or so {PRONOUN/m_c/subject} thought, until seeing someone at the fresh-kill pile. Before m_c could realize {PRONOUN/m_c/poss} mistake, sharp canine teeth were at {PRONOUN/m_c/poss} throat, ensuring the Clan wakes up to find {PRONOUN/m_c/poss} nest empty, and the prey gone.",
+    "m_c": {
+        "status": ["any"]
+    },
+    "history:": [
+      {
+          "cats": ["m_c"],
+          "reg_death": "m_c was killed by a fox that snuck into camp.",
+          "lead_death": "{VERB/m_c/were/was} killed by a fox that snuck into camp"
+      }
+    ],
+    "supplies": [
+      {
+          "type": "freshkill",
+          "trigger": ["excess"],
+          "adjust": "reduce_half"
+      }
+    ]
+  },
+  {
+    "event_id": "gen_death_freshkill_anyrat1",
+    "biome": ["any"],
+    "camp": ["any"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "m_c was taking some prey from the fresh-kill pile only to find a horde of rats! {PRONOUN/m_c/subject/CAP} called to r_c for help and together they fought off the rats, but m_c didn't survive.",
+    "m_c": {
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+        },
+    "r_c": {
+        "age": ["young adult", "adult", "senior adult", "senior"]
+        },
+    "injury": [
+        {
+            "cats": ["r_c"],
+            "injuries": ["rat_bite"]
+        }
+    ],
+    "history:": [
+      {
+          "cats": ["m_c", "r_c"],
+          "scar": "{VERB/m_c/were/was} hurt while defending the fresh-kill pile from rats.",
+          "reg_death": "m_c was killed by rats while defending the fresh-kill pile.",
+          "lead_death": "{VERB/m_c/were/was} killed by rats while defending the fresh-kill pile"
+      }
+    ],
+    "supplies": [
+      {
+          "type": "freshkill",
+          "trigger": ["excess"],
+          "adjust": "reduce_eighth"
+      }
+    ]
   }
 ]

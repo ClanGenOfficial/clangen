@@ -3066,5 +3066,50 @@
     "r_c": {"age":["any"],
       "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"]
     }
+  },
+  {
+    "event_id": "gen_misc_any_leaderapprentice1",
+    "biome": ["any"],
+    "camp": ["any"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "m_c assesses r_c's progress.",
+    "m_c":{
+      "age":["any"],
+      "status":["leader"]
+    },
+    "r_c": {"age":["any"],
+      "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"]
+    }
+  },
+  {
+    "event_id": "gen_misc_freshkill_anystolen1",
+    "biome": ["any"],
+    "camp": ["any"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "The Clan worked hard to gather plenty of fresh-kill, but woke up to find pawprints leading away from the fresh-kill pile, and missing prey.",
+    "supplies": [
+      {
+          "type": "freshkill",
+          "trigger": ["excess"],
+          "adjust": "reduce_half"
+      }
+    ]
+  },
+  {
+    "event_id": "gen_misc_freshkill_anystolen1",
+    "biome": ["any"],
+    "camp": ["any"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "The Clan gathered a stockpile of food to save, the more the better, but one night the fresh-kill pile was drastically reduced and paw prints were found on the ground.",
+    "supplies": [
+      {
+          "type": "freshkill",
+          "trigger": ["excess"],
+          "adjust": "reduce_half"
+      }
+    ]
   }
 ]
