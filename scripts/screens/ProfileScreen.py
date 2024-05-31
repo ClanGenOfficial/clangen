@@ -387,11 +387,18 @@ class ProfileScreen(Screens):
         self.the_cat = Cat.all_cats.get(game.switches['cat'])
 
         # Set up the menu buttons, which appear on all cat profile images.
-        self.next_cat_button = UIImageButton(scale(pygame.Rect((1244, 50), (306, 60))), "", object_id="#next_cat_button"
-                                             , manager=MANAGER)
-        self.previous_cat_button = UIImageButton(scale(pygame.Rect((50, 50), (306, 60))), "",
-                                                 object_id="#previous_cat_button"
-                                                 , manager=MANAGER)
+        self.next_cat_button = UIImageButton(
+            scale(pygame.Rect((1244, 50), (306, 60))),
+            "",
+            object_id="#next_cat_button",
+            sound_id="page_flip",
+            manager=MANAGER)
+        self.previous_cat_button = UIImageButton(
+            scale(pygame.Rect((50, 50), (306, 60))),
+            "",
+            object_id="#previous_cat_button",
+            sound_id="page_flip",
+            manager=MANAGER)
         self.back_button = UIImageButton(scale(pygame.Rect((50, 120), (210, 60))), "", object_id="#back_button"
                                          , manager=MANAGER)
         self.inspect_button = UIImageButton(scale(pygame.Rect((1482, 120), (68, 68))), "",
@@ -504,12 +511,12 @@ class ProfileScreen(Screens):
                                                                               manager=MANAGER)
         else:
             self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name,
-                                                                          scale(pygame.Rect(
-                                                                              (800 - name_text_size.width, 280),
-                                                                              (-1, 80))),
-                                                                          object_id=get_text_box_theme(
-                                                                              "#text_box_40_horizcenter"),
-                                                                          manager=MANAGER)
+                                                                              scale(pygame.Rect(
+                                                                                  (800 - name_text_size.width, 280),
+                                                                                  (-1, 80))),
+                                                                              object_id=get_text_box_theme(
+                                                                                  "#text_box_40_horizcenter"),
+                                                                              manager=MANAGER)
 
         # Write cat thought
         self.profile_elements["cat_thought"] = pygame_gui.elements.UITextBox(self.the_cat.thought,

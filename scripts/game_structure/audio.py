@@ -3,9 +3,10 @@ import random
 import pygame
 import logging
 
+import pygame_gui
 import ujson
 
-from scripts.game_structure.image_button import UIImageButton
+from scripts.game_structure.image_button import UIImageButton, CatButton, UISpriteButton
 from scripts.game_structure.game_essentials import game
 
 logger = logging.getLogger(__name__)
@@ -67,7 +68,7 @@ class MusicManager():
 
         # other screens
         elif screen not in menu_screens and screen not in creation_screens and self.current_playlist != self.biome_playlist:
-            # print("biome screen")
+            print("biome screen")
             self.fade_music()
             self.play_playlist(self.biome_playlist)
 
@@ -140,7 +141,8 @@ class MusicManager():
         """
         fades the music out, by default the fade is 2 seconds
         """
-        if pygame.mixer.get_busy():
+        if pygame.mixer.music.get_busy():
+            print("busy mixer")
             pygame.mixer.music.fadeout(fadeout)
 
     def mute_music(self):
@@ -200,6 +202,7 @@ class _SoundManager():
     def __init__(self):
         self.sounds = {}
         self.volume = game.settings["sound_volume"] / 100
+        self.pressed = None
 
         # open up the sound dictionary
         try:
@@ -221,7 +224,23 @@ class _SoundManager():
             except:
                 logger.exception("Failed to load sound")
 
-    def play(self, sound=list, button=None):
+    def handle_sound_events(self, event):
+        """
+        assigns universal sound effects to event.type objects
+        SHOULD NOT BE USED FOR INDIVIDUAL UNIQUE BUTTON SOUNDS
+        UIImageButtons have sound_id parameter for assigning unique sounds to individual buttons
+        :param event: the event that is taking place
+        """
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            self.pressed = event.ui_element
+            self.play("button_press", event.ui_element)
+        elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
+            if event.ui_element.__class__ not in [CatButton, UISpriteButton]:
+                if self.pressed != event.ui_element:
+                    self.play("button_hover")
+            self.pressed = None
+
+    def play(self, sound, button=None):
         """ plays the given sound, if an ImageButton is passed through then the sound_id of the ImageButton will be
         used instead """
         if game.settings["audio_mute"]:
