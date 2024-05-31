@@ -108,7 +108,7 @@ class MigrateSave(unittest.TestCase):
         if os.path.exists(get_save_dir()):
             shutil.rmtree(get_save_dir())
 
-        # tests/testSaves/save<id> to saves
+        # copy tests/testSaves/save<id> to saves
         shutil.copytree('tests/testSaves/save' + str(id), get_save_dir())
 
     def test_migrate_save_onread(self):
