@@ -728,7 +728,7 @@ class LeaderDenScreen(Screens):
             "",
             object_id="#outsider_drive",
             tool_tip_text="This cat will be driven out of the area if found (they will no longer be accessible in "
-                          "game.)",
+                          "game).",
             container=self.focus_outsider_button_container,
             starting_height=3,
             manager=MANAGER,
