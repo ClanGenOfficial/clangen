@@ -782,7 +782,7 @@
         },
         "weight": 10,
         "intro_text": "r_c finds a nice spot to sun {PRONOUN/r_c/self}.",
-        "decline_text": "{PRONOUN/r_c/subject} {VERB/r_c/decide/decides} to stay focused instead.",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} to stay focused instead.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -1570,7 +1570,7 @@
                 ]
             },
             {
-                "text": "s_c doesn't much care what the patrol does - {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} keen to use the opportunity for a slightly different aim. As they all train, s_c casually checks in with {PRONOUN/s_c/poss} fellow warriors about their lives and how they think c_n is doing. It's good to find solutions to problems while they're still small.",
+                "text": "s_c doesn't much care what the patrol does - {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} keen to use the opportunity for a slightly different aim. As they all train, s_c casually checks in with {PRONOUN/s_c/poss} fellow warriors about their lives and how they think c_n is doing. It's good to find solutions to problems while they're still small.",
                 "exp": 60,
                 "weight": 20,
                 "can_have_stat":["any"],
@@ -1611,7 +1611,7 @@
                 ]
             },
             {
-                "text": "s_c doesn't much care what the patrol does - {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} keen to use the opportunity for a slightly different aim. As they all train, s_c casually checks in with {PRONOUN/s_c/poss} fellow warriors about how happy they are with c_n's leadership and if they think the Clan is going in the right direction.",
+                "text": "s_c doesn't much care what the patrol does - {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} keen to use the opportunity for a slightly different aim. As they all train, s_c casually checks in with {PRONOUN/s_c/poss} fellow warriors about how happy they are with c_n's leadership and if they think the Clan is going in the right direction.",
                 "exp": 60,
                 "weight": 20,
                 "can_have_stat":["any"],
@@ -1752,7 +1752,7 @@
                 ]
             },
             {
-                "text": "s_c doesn't much care what the patrol does - {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} keen to use the opportunity for a slightly different aim. As they all train, s_c checks in with {PRONOUN/s_c/poss} fellow warriors, stiffly casual, asking about their lives and impressing on them the need for Clan loyalty. The rest of the patrol takes it as an insult.",
+                "text": "s_c doesn't much care what the patrol does - {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} keen to use the opportunity for a slightly different aim. As they all train, s_c checks in with {PRONOUN/s_c/poss} fellow warriors, stiffly casual, asking about their lives and impressing on them the need for Clan loyalty. The rest of the patrol takes it as an insult.",
                 "exp": 0,
                 "weight": 20,
                 "can_have_stat":["any"],
@@ -10506,8 +10506,9 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-           "normal adult": [1, 6]
-                    },
+            "normal adult": [1, 5],
+            "apprentice": [1, 5]
+        },
         "weight": 20,
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1", "LORE,1"],

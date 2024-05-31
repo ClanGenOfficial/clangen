@@ -327,7 +327,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "r_c finds a wounded cat near the Thunderpath.",
-        "decline_text": "{PRONOUN/r_c/subject} leave the wounded cat alone.",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} leave the wounded cat alone.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
