@@ -793,7 +793,7 @@ class LeaderDenScreen(Screens):
         outsiders = [i for i in Cat.all_cats.values() if i.outside and not i.dead and not i.driven_out]
 
         # separate them into chunks for the pages
-        outsider_chunks = self.chunks(outsiders, 18)
+        outsider_chunks = self.chunks(outsiders, 20)
 
         # clamp current page to a valid page number
         self.current_page = max(1, min(self.current_page, len(outsider_chunks)))
@@ -819,7 +819,7 @@ class LeaderDenScreen(Screens):
 
         # container for all the cat sprites and names
         self.outsider_cat_list_container = pygame_gui.elements.UIAutoResizingContainer(
-            scale(pygame.Rect((112, 44), (0, 0))),
+            scale(pygame.Rect((80, 54), (0, 0))),
             container=self.outsider_selection_container,
             starting_height=3,
             object_id="#outsider_cat_list",

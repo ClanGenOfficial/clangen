@@ -273,22 +273,18 @@ class Events:
             )
             chosen_event = random.choice(events)
 
-            # get text and append interaction text
+            # get text
             event_text = chosen_event["event_text"]
-            if info_dict["success"]:
-                event_text += f" ({info_dict['interaction_type'].capitalize()} o_c success! "
-            else:
-                event_text += f" ({info_dict['interaction_type'].capitalize()} o_c failure! "
 
             # change relations and append relation text
             rel_change = chosen_event["rel_change"]
             other_clan.relations += rel_change
             if rel_change > 0:
-                event_text += f"Clan relations improved.)"
+                event_text += f" (o_c relations improved.)"
             elif rel_change == 0:
-                event_text += f"Clan relations unchanged.)"
+                event_text += f" (o_c relations unchanged.)"
             else:
-                event_text += f"Clan relations worsened.)"
+                event_text += f" (o_c relations worsened.)"
 
             # adjust text and add to event list
             event_text = event_text_adjust(Cat,
