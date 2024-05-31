@@ -9,7 +9,7 @@ from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton
 from scripts.screens.Screens import Screens
 from scripts.utility import scale, get_text_box_theme, get_other_clan_relation, get_other_clan, \
-    clan_symbol_sprite, shorten_text_to_fit, get_med_cats
+    clan_symbol_sprite, shorten_text_to_fit, get_med_cats, get_living_clan_cat_count
 
 
 class LeaderDenScreen(Screens):
@@ -144,10 +144,20 @@ class LeaderDenScreen(Screens):
                 starting_height=1,
                 manager=MANAGER)
 
+        self.screen_elements["lead_image"] = pygame_gui.elements.UIImage(
+            scale(pygame.Rect((460, 460), (300, 300))),
+            pygame.transform.scale(game.clan.leader.sprite, (300, 300)),
+            object_id="#lead_cat_image",
+            starting_height=3,
+            manager=MANAGER)
+
         self.helper_cat = None
-        if game.clan.leader.not_working():
+        if game.clan.leader.dead:
+            self.screen_elements["lead_image"].hide()
+            self.no_gathering = True
+        elif game.clan.leader.not_working():
             if game.clan.deputy:
-                if game.clan.deputy.not_working() or game.clan.deputy.dead:
+                if not game.clan.deputy.not_working() and not game.clan.deputy.dead:
                     self.helper_cat = game.clan.deputy  # if lead is sick, dep helps
             if not self.helper_cat:  # if dep is sick, med cat helps
                 meds = get_med_cats(Cat)
@@ -164,7 +174,7 @@ class LeaderDenScreen(Screens):
             if not self.helper_cat:  # if no meds or mediators available, literally anyone please anyone help
                 adults = [i for i in Cat.all_cats.values() if
                           not i.dead and not i.exiled and not i.outside and i.status not in ["newborn", "kitten",
-                                                                                             "apprentice"]]
+                                                                                             "apprentice", "leader"]]
                 if adults:
                     self.helper_cat = random.choice(adults)
 
@@ -176,12 +186,7 @@ class LeaderDenScreen(Screens):
                     starting_height=2,
                     manager=MANAGER)
 
-        self.screen_elements["lead_image"] = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((460, 460), (300, 300))),
-            pygame.transform.scale(game.clan.leader.sprite, (300, 300)),
-            object_id="#lead_cat_image",
-            starting_height=3,
-            manager=MANAGER)
+
 
         # FOCUS FRAME - container and inner elements
         self.create_focus_frame()
@@ -212,11 +217,26 @@ class LeaderDenScreen(Screens):
             manager=MANAGER
         )
 
-        if game.clan.leader.not_working() and self.helper_cat:
+        # if no one is alive, give a special notice
+        if not get_living_clan_cat_count(Cat):
+            self.no_gathering = True
+            self.screen_elements["clan_notice_text"].set_text(
+                f" No one is left to attend a Gathering. ")
+            self.screen_elements["outsider_notice_text"].set_text(
+                f" Outsiders do not concern themselves with a dead Clan. ")
+        # if leader is dead and no one new is leading, give special notice
+        elif game.clan.leader.dead:
+            self.no_gathering = True
+            self.screen_elements["clan_notice_text"].set_text(
+                f" With {self.leader_name} dead, the Clan can't focus on what to say at the Gathering. ")
+            self.screen_elements["outsider_notice_text"].set_text(
+                f" With {self.leader_name} dead, the Clan can't concern themselves with Outsiders. ")
+        # if leader is sick but helper is available, give special notice
+        elif game.clan.leader.not_working() and self.helper_cat:
             self.helper_name = self.helper_cat.name
             self.screen_elements["clan_notice_text"].set_text(f" {self.leader_name} and {self.helper_name} are discussing how to handle the next Gathering. ")
             self.screen_elements["outsider_notice_text"].set_text(f" {self.leader_name} and {self.helper_name} are discussing what to do about nearby Outsiders. ")
-
+        # if leader is sick but no helper is available, give special notice
         elif game.clan.leader.not_working():
             self.no_gathering = True
             self.screen_elements["clan_notice_text"].set_text(f" There is no one to attend the next Gathering. {self.leader_name} must hope to recover in time for the next one. ")
