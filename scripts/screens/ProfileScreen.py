@@ -438,12 +438,14 @@ class ProfileScreen(Screens):
             scale(pygame.Rect((1244, 50), (306, 60))),
             "",
             object_id="#next_cat_button",
+            sound_id="page_flip",
             manager=MANAGER,
         )
         self.previous_cat_button = UIImageButton(
             scale(pygame.Rect((50, 50), (306, 60))),
             "",
             object_id="#previous_cat_button",
+            sound_id="page_flip",
             manager=MANAGER,
         )
         self.back_button = UIImageButton(
