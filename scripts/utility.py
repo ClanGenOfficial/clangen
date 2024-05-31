@@ -495,14 +495,14 @@ def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, 
                         )
                 else:  # completely new name
                     chosen_cat.name.give_prefix(
-                        eyes=chosen_cat.eyes,
-                        colour=chosen_cat.colour,
+                        eyes=chosen_cat.pelt.eye_colour,
+                        colour=chosen_cat.pelt.colour,
                         biome=game.clan.biome
                     )
                     chosen_cat.name.give_suffix(
-                        pelt=chosen_cat.pelt,
+                        pelt=chosen_cat.pelt.colour,
                         biome=game.clan.biome,
-                        tortiepattern=chosen_cat.tortiepattern
+                        tortiepattern=chosen_cat.pelt.tortiepattern
                     )
 
             new_cats = [chosen_cat]
@@ -1015,10 +1015,11 @@ def filter_relationship_type(group: list, filter_types: list, event_id: str = No
     :param event_id: if the event has an ID, include it here
     :param patrol_leader: if you are testing a patrol, ensure you include the self.patrol_leader here
     """
+    # keeping this list here just for quick reference of what tags are handled here
     possible_rel_types = ["siblings", "mates", "mates_with_pl", "not_mates", "parent/child", "child/parent",
                           "mentor/app", "app/mentor"]
-    possible_value_types = ["romantic", "platonic", "dislike", "comfortable", "jealousy", "trust"]
 
+    possible_value_types = ["romantic", "platonic", "dislike", "comfortable", "jealousy", "trust", "admiration"]
 
     # TODO: add "can_romance"
 
@@ -1119,19 +1120,19 @@ def filter_relationship_type(group: list, filter_types: list, event_id: str = No
             threshold = int(tags[0].split('_')[1])
         except Exception as e:
             print(
-                f"ERROR: event {event_id} with the relationship constraint for the value {v_type} follows not the formatting guidelines.")
+                f"ERROR: event {event_id} with the relationship constraint for the value does not {v_type} follow the formatting guidelines.")
             break_loop = True
             break
 
         if threshold > 100:
             print(
-                f"ERROR: event {event_id} has a relationship constraints for the value {v_type}, which is higher than the max value of a relationship.")
+                f"ERROR: event {event_id} has a relationship constraint for the value {v_type}, which is higher than the max value of a relationship.")
             break_loop = True
             break
 
         if threshold <= 0:
             print(
-                f"ERROR: event {event_id} has a relationship constraints for the value {v_type}, which is lower than the min value of a relationship or 0.")
+                f"ERROR: event {event_id} has a relationship constraint for the value {v_type}, which is lower than the min value of a relationship or 0.")
             break_loop = True
             break
 
@@ -1159,6 +1160,8 @@ def filter_relationship_type(group: list, filter_types: list, event_id: str = No
                 rel_above_threshold = [i for i in relevant_relationships if i.jealousy >= threshold]
             elif v_type == "trust":
                 rel_above_threshold = [i for i in relevant_relationships if i.trust >= threshold]
+            elif v_type == "admiration":
+                rel_above_threshold = [i for i in relevant_relationships if i.admiration >= threshold]
 
             # if the lengths are not equal, one cat has not the relationship value which is needed to another cat of
             # the event
@@ -1713,6 +1716,7 @@ def event_text_adjust(Cat,
                       patrol_cats: list = None,
                       patrol_apprentices: list = None,
                       new_cats: list = None,
+                      multi_cats: list = None,
                       clan=None,
                       other_clan=None):
     """
@@ -1812,6 +1816,8 @@ def event_text_adjust(Cat,
             replace_dict[f"n_c:{i}"] = (str(cat.name), pronoun)
             replace_dict[f"n_c_pre:{i}"] = (str(cat.name.prefix), pronoun)
 
+
+
     # mur_c (murdered cat for reveals)
     if "mur_c" in text:
         replace_dict["mur_c"] = (str(victim_cat.name), choice(victim_cat.pronouns))
@@ -1834,6 +1840,17 @@ def event_text_adjust(Cat,
     # assign all names and pronouns
     if replace_dict:
         text = process_text(text, replace_dict)
+
+    # multi_cat
+    if "multi_cat" in text:
+        print("multi_cat detected in text")
+        name_list = []
+        for _cat in multi_cats:
+            name_list.append(str(_cat.name))
+        print(name_list)
+        list_text = adjust_list_text(name_list)
+        print(list_text)
+        text = text.replace("multi_cat", list_text)
 
     # other_clan_name
     if "o_c_n" in text:

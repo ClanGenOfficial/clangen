@@ -60,10 +60,14 @@
                 "scars": ["TWO"]
             }
         ],
-        "history": {
-            "scar": "m_c was scarred after an owl tried to carry {PRONOUN/m_c/object} off.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after an owl tried to carry {PRONOUN/m_c/object} off."
-        }
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred after an owl tried to carry {PRONOUN/m_c/object} off.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after an owl tried to carry {PRONOUN/m_c/object} off.",
+                "lead_death": "died from {PRONOUN/m_c/poss} wounds after an owl tried to carry {PRONOUN/m_c/object} off"
+            }
+        ]
     },
     {
         "event_id": "fst_injury_brokenback_anyapprentice1",
@@ -141,10 +145,14 @@
                 "scars": ["MANTAIL"]
             }
         ],
-        "history": {
-            "scar": "m_c was scarred by a falling tree.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a tree fell on {PRONOUN/m_c/object}."
-        }
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred by a falling tree.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a tree fell on {PRONOUN/m_c/object}.",
+                "lead_death": "died from {PRONOUN/m_c/poss} wounds after a tree fell on {PRONOUN/m_c/object}"
+            }
+        ]
     },
     {
         "event_id": "fst_injury_burn_greenleafany1",
@@ -164,10 +172,15 @@
                 "scars": ["BURNRUMP"]
             }
         ],
-        "history": {
-            "scar": "m_c's pelt was burned by a forest fire.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} burns after a forest fire."
-        }
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c's pelt was burned by a forest fire.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} burns after a forest fire.",
+                "lead_death": "died from {PRONOUN/m_c/poss} burns after a forest fire"
+
+            }
+        ]
     },
     {
         "event_id": "fst_injury_burn_greenleafmultiage1",
@@ -192,10 +205,14 @@
                 "scars": ["BURNPAWS", "BURNBELLY"]
             }
         ],
-        "history": {
-            "scar": "m_c's pelt was burned by a forest fire.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} burns after a forest fire."
-        },
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c's pelt was burned by a forest fire.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} burns after a forest fire.",
+                "lead_death": "died from {PRONOUN/m_c/poss} burns after a forest fire"
+            }
+        ],
         "relationships": [
             {
                 "cats_from": ["r_c"],
@@ -229,10 +246,14 @@
                 "scars": ["BURNTAIL"]
             }
         ],
-        "history": {
-            "scar": "m_c's pelt was burned by a forest fire.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} burns after a forest fire."
-        }
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c's pelt was burned by a forest fire.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} burns after a forest fire.",
+                "lead_death": "died from {PRONOUN/m_c/poss} burns after a forest fire"
+            }
+        ]
     },
     {
         "event_id": "fst_injury_shivering_multiapprentice1",
@@ -259,10 +280,13 @@
                 "scars": ["FROSTPAWS"]
             }
         ],
-        "history": {
-            "scar": "m_c got frostbitten after falling into a frozen pond.",
-            "reg_death": "m_c died from the cold after falling into a frozen pond."
-        },
+        "history": [
+            {
+                "cats_": ["m_c"],
+                "scar": "m_c got frostbitten after falling into a frozen pond.",
+                "reg_death": "m_c died from the cold after falling into a frozen pond."
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [ "r_c" ], 

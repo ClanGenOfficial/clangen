@@ -34,6 +34,7 @@ class HandleShortEvents():
         self.new_cats: List[List[Cat]] = []
         self.victim_cat = None
         self.multi_cat: List = []
+        self.dead_cats = []
 
         self.other_clan = None
         self.other_clan_name = None
@@ -52,6 +53,7 @@ class HandleShortEvents():
         # ---------------------------------------------------------------------------- #
         # TODO: re-add the code for existing outsiders joining clan
 
+        self.types = []
         self.types.append(event_type)
         self.sub_types = []
         if sub_type:
@@ -78,10 +80,6 @@ class HandleShortEvents():
             self.other_clan = random.choice(game.clan.all_clans if game.clan.all_clans else None)
             self.other_clan_name = f'{self.other_clan.name}Clan'
 
-        # checking if a mass death should happen
-        if "mass_death" in self.sub_types:
-            self.handle_mass_death()
-
         # checking if a murder reveal should happen
         if event_type == "misc":
             self.victim_cat = None
@@ -93,7 +91,7 @@ class HandleShortEvents():
                         murder_index = murder_history.index(murder)
                         if murder_history[murder_index]["revealed"] is True:
                             continue
-                        self.victim_cat = murder_history[murder_index]["victim"]
+                        self.victim_cat = Cat.fetch_cat(murder_history[murder_index]["victim"])
                         self.sub_types.append("murder_reveal")
                         break
 
@@ -128,6 +126,15 @@ class HandleShortEvents():
         # check if another cat is present
         if self.chosen_event.r_c:
             self.involved_cats.append(self.random_cat.ID)
+
+        # checking if a mass death should happen, happens here so that we can toss the event if needed
+        if "mass_death" in self.chosen_event.sub_type:
+            if not game.clan.clan_settings["disasters"]:
+                return
+            self.handle_mass_death()
+            if len(self.multi_cat) <= 2:
+                print("Mass death event was selected, but there weren't enough cats available.")
+                return
 
         # create new cats (must happen here so that new cats can be included in further changes)
         self.handle_new_cats()
@@ -187,9 +194,11 @@ class HandleShortEvents():
                                        random_cat=self.random_cat,
                                        victim_cat=self.victim_cat,
                                        new_cats=self.new_cat_objects,
+                                       multi_cats=self.multi_cat,
                                        clan=game.clan,
                                        other_clan=self.other_clan)
 
+        print(self.types)
         game.cur_events_list.append(
             Single_Event(event_text + " " + self.additional_event_text, self.types, self.involved_cats))
 
@@ -271,8 +280,9 @@ class HandleShortEvents():
     def handle_death(self):
         """
         handles killing/murdering cats and assigning histories
+        :param dead_list: list of cats predetermined to die
         """
-
+        dead_list = self.dead_cats if self.dead_cats else []
         current_lives = int(game.clan.leader_lives)
 
         # check if the bodies are retrievable
@@ -282,12 +292,21 @@ class HandleShortEvents():
             body = True
         pass
 
-        # kill main cat
-        if self.chosen_event.m_c["dies"]:
+        if self.chosen_event.m_c["dies"] and self.main_cat not in dead_list:
+            dead_list.append(self.main_cat)
+        if self.chosen_event.r_c:
+            if self.chosen_event.r_c["dies"] and self.random_cat not in dead_list:
+                dead_list.append(self.random_cat)
+
+        if not dead_list:
+            return
+
+        # kill cats
+        for cat in dead_list:
             if "birth_death" not in self.types:
                 self.types.append("birth_death")
 
-            if self.main_cat.status == 'leader':
+            if cat.status == 'leader':
                 if "all_lives" in self.chosen_event.tags:
                     game.clan.leader_lives -= 10
                 elif "some_lives" in self.chosen_event.tags:
@@ -295,47 +314,30 @@ class HandleShortEvents():
                 else:
                     game.clan.leader_lives -= 1
 
-                self.main_cat.die(body)
+                cat.die(body)
                 self.additional_event_text = get_leader_life_notice()
 
             else:
-                self.main_cat.die(body)
-
-        # kill random_cat
-        if self.chosen_event.r_c:
-            if self.chosen_event.r_c["dies"]:
-                if "birth_death" not in self.types:
-                    self.types.append("birth_death")
-
-                if self.random_cat.status == 'leader':
-                    if "all_lives" in self.chosen_event.tags:
-                        game.clan.leader_lives -= 10
-                    elif "some_lives" in self.chosen_event.tags:
-                        game.clan.leader_lives -= random.randrange(2, current_lives - 1)
-                    else:
-                        game.clan.leader_lives -= 1
-
-                    self.random_cat.die(body)
-                    self.additional_event_text = get_leader_life_notice()
-
-                else:
-                    self.random_cat.die(body)
+                cat.die(body)
 
     def handle_mass_death(self):
+        """
+        finds cats eligible for the death, if not enough cats are eligible then event is tossed.
+        cats that will die are added to self.dead_cats
+        """
         # gather living clan cats except leader bc leader lives would be frustrating to handle in these
         alive_cats = list(
             filter(
-                lambda kitty: (kitty.status != "leader" and not kitty.dead and
-                               not kitty.outside), Cat.all_cats.values()))
+                lambda kitty: (not kitty.dead and not kitty.outside), Cat.all_cats.values()))
 
         # make sure all cats in the pool fit the event requirements
         requirements = self.chosen_event.m_c
         for kitty in alive_cats:
-            if kitty.status not in requirements["status"] and requirements["status"] != "any":
+            if kitty.status not in requirements["status"] and "any" not in requirements["status"]:
                 alive_cats.remove(kitty)
-            if kitty.age not in requirements["age"] and requirements["age"] != "any":
+                continue
+            if kitty.age not in requirements["age"] and "any" not in requirements["age"]:
                 alive_cats.remove(kitty)
-
         alive_count = len(alive_cats)
 
         # if there's enough eligible cats, then we KILL
@@ -350,16 +352,21 @@ class HandleShortEvents():
                 weight = 1 / (0.75 * n)  # Lower chance for more dead cats
                 weights.append(weight)
             dead_count = random.choices(population, weights=weights)[0]
+            if dead_count < 2:
+                dead_count = 2
 
-            dead_cats = random.sample(alive_cats, dead_count)
-            if self.main_cat not in dead_cats:
-                dead_cats.append(self.main_cat)  # gotta include the cat that rolled for death in the first place
+            self.dead_cats = random.sample(alive_cats, dead_count)
+            if self.main_cat not in self.dead_cats:
+                self.dead_cats.append(self.main_cat)  # got to include the cat that rolled for death in the first place
 
-            for kitty in dead_cats:
+            for kitty in self.dead_cats:
+                if "lost" in self.chosen_event.tags:
+                    kitty.gone()
+                    self.dead_cats.remove(kitty)
                 self.multi_cat.append(kitty)
                 self.involved_cats.append(kitty.ID)
-
-                kitty.die()
+        else:
+            return
 
     def handle_death_history(self):
         """

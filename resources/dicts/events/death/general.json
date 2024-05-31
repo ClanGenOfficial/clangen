@@ -6861,5 +6861,167 @@
             "cats": ["m_c"],
             "reg_death": "m_c was eaten by a shrew."
         }]
+    },
+  {
+    "event_id": "multi_death_massdeath_flood1",
+    "biome": ["forest", "beach", "plains"],
+    "season": ["newleaf"],
+    "sub_type": ["mass_death"],
+    "tags": [],
+    "weight": 10,
+    "event_text": "multi_cat drown after the camp becomes flooded.",
+    "history:": [
+      {
+      "cats": ["multi_cat"],
+      "reg_death": "m_c drowned when the camp flooded.",
+      "lead_death": "drowned during a camp flood"
+      }
+    ]
+  },
+  {
+    "event_id": "multi_death_massdeath_fire1",
+    "biome": ["any"],
+    "season": ["greenleaf"],
+    "sub_type": ["mass_death"],
+    "tags": [],
+    "weight": 10,
+    "event_text": "multi_cat are killed after a fire rages through the camp.",
+    "history:": [
+      {
+      "cats": ["all"],
+      "reg_death": "m_c died in a fire that raged through camp.",
+      "lead_death": "died during a fire"
+      }
+    ]
+  },
+  {
+    "event_id": "multi_death_massdeath_rogue1",
+    "biome": ["any"],
+    "season": ["any"],
+    "sub_type": ["mass_death"],
+    "tags": [],
+    "weight": 10,
+    "event_text": "multi_cat are killed in an ambush by a group of rogues.",
+    "m_c": {
+        "status": ["leader", "deputy", "apprentice", "warrior"]
+    },
+    "history:": [
+      {
+      "cats": ["multi_cat"],
+      "reg_death": "m_c was killed by a rogue ambush.",
+      "lead_death": "died to a rogue ambush"
+      }
+    ]
+  },
+  {
+    "event_id": "multi_death_massdeath_badger1",
+    "biome": ["any"],
+    "season": ["any"],
+    "sub_type": ["mass_death"],
+    "tags": [],
+    "weight": 10,
+    "event_text": "multi_cat are killed in a badger attack.",
+    "m_c": {
+        "status": ["leader", "deputy", "apprentice", "warrior"]
+    },
+    "history:": [
+      {
+      "cats": ["multi_cat"],
+      "reg_death": "m_c was killed in a badger attack.",
+      "lead_death": "died to a badger"
+      }
+    ]
+  },
+  {
+    "event_id": "multi_death_massdeath_snow1",
+    "biome": ["any"],
+    "season": ["leaf-bare"],
+    "sub_type": ["mass_death"],
+    "tags": [],
+    "weight": 10,
+    "event_text": "multi_cat freeze during a snowstorm.",
+    "history:": [
+      {
+      "cats": ["multi_cat"],
+      "reg_death": "m_c died in a snowstorm.",
+      "lead_death": "froze in a snowstorm"
+      }
+    ]
+  },
+  {
+    "event_id": "multi_death_massdeath_heat1",
+    "biome": ["any"],
+    "season": ["greenleaf"],
+    "sub_type": ["mass_death"],
+    "tags": [],
+    "weight": 10,
+    "event_text": "multi_cat die after the water dries up from a drought.",
+    "history:": [
+      {
+      "cats": ["multi_cat"],
+      "reg_death": "m_c died to a drought.",
+      "lead_death": "died during a drought"
+      }
+    ]
+  },
+  {
+    "event_id": "multi_death_massdeath_greencough1",
+    "biome": ["any"],
+    "season": ["any"],
+    "sub_type": ["mass_death"],
+    "tags": ["classic"],
+    "weight": 10,
+    "event_text": "multi_cat die to a greencough outbreak.",
+    "history:": [
+      {
+      "cats": ["multi_cat"],
+      "reg_death": "m_c died from greencough.",
+      "lead_death": "died to greencough"
+      }
+    ]
+  },
+  {
+    "event_id": "multi_death_massdeath_starvation1",
+    "biome": ["any"],
+    "season": ["leaf-bare"],
+    "sub_type": ["mass_death"],
+    "tags": ["classic"],
+    "weight": 10,
+    "event_text": "multi_cat starve when no prey can be found.",
+    "history:": [
+      {
+      "cats": ["multi_cat"],
+      "reg_death": "m_c starved.",
+      "lead_death": "starved"
+      }
+    ]
+  },
+  {
+    "event_id": "multi_death_massdeath_greencough1",
+    "biome": ["any"],
+    "season": ["any"],
+    "sub_type": ["mass_death"],
+    "tags": ["classic"],
+    "weight": 10,
+    "event_text": "multi_cat eat tainted freshkill and die.",
+    "history:": [
+      {
+      "cats": ["multi_cat"],
+      "reg_death": "m_c died from tainted freshkill.",
+      "lead_death": "died to tainted freshkill"
+      }
+    ]
+  },
+  {
+    "event_id": "multi_death_massdeath_twoleg1",
+    "biome": ["any"],
+    "season": ["any"],
+    "sub_type": ["mass_death"],
+    "tags": ["lost"],
+    "weight": 10,
+    "event_text": "multi_cat are taken away by Twolegs.",
+    "m_c": {
+        "age": ["adolescent", "adult", "young adult", "senior adult"]
     }
+  }
 ]

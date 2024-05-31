@@ -1672,8 +1672,9 @@
         "history": [
             {
                 "cats": ["m_c"],
-            "scar": "m_c was scarred by frostbite.",
-            "reg_death": "m_c died after {PRONOUN/m_c/subject} got frostbite."
+                "scar": "m_c was scarred by frostbite.",
+                "reg_death": "m_c died after {PRONOUN/m_c/subject} got frostbite.",
+                "lead_death": "died from frostbite"
             }
         ]
     },
@@ -1790,8 +1791,9 @@
         "history": [
             {
                 "cats": ["m_c"],
-            "scar": "m_c was scarred after slipping on ice.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after slipping on ice."
+                "scar": "m_c was scarred after slipping on ice.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after slipping on ice.",
+                "lead_death": "died from {PRONOUN/m_c/poss} wounds after slipping on ice."
             }
         ]
     },
@@ -1916,7 +1918,7 @@
         ]
     },
     {
-        "event_id": "gen_injury_",
+        "event_id": "gen_injury_snowdrift",
         "season": [
             "leaf-fall",
             "leaf-bare"
@@ -1952,13 +1954,14 @@
         "history": [
             {
                 "cats": ["m_c"],
-            "scar": "m_c was scarred when {PRONOUN/m_c/subject} fell through a snowdrift and down the mountain.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling down the mountain."
+                "scar": "m_c was scarred when {PRONOUN/m_c/subject} fell through a snowdrift and down the mountain.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling down the mountain.",
+                "lead_death": "died from {PRONOUN/m_c/poss} wounds after falling down the mountain"
             }
         ]
     },
     {
-        "event_id": "gen_injury_",
+        "event_id": "gen_injury_cliffbreak1",
         "season": [
             "leaf-fall",
             "leaf-bare"
@@ -1994,8 +1997,9 @@
         "history": [
             {
                 "cats": ["m_c"],
-            "scar": "m_c was scarred when {PRONOUN/m_c/subject} fell off a cliff.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling off a cliff."
+                "scar": "m_c was scarred when {PRONOUN/m_c/subject} fell off a cliff.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling off a cliff.",
+                "lead_death": "died from {PRONOUN/m_c/poss} wounds after falling off a cliff"
             }
         ]
     },
@@ -2139,7 +2143,7 @@
         ]
     },
     {
-        "event_id": "gen_injury_",
+        "event_id": "gen_injury_sorerun1",
         "biome": [
             "any"
         ],
@@ -6072,8 +6076,10 @@
         "history": [
             {
                 "cats": ["m_c"],
-            "scar": "m_c was scarred by a snake bite.",
-            "reg_death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} bitten by a snake."
+                "scar": "m_c was scarred by a snake bite.",
+                "reg_death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} bitten by a snake.",
+                "lead_death": "after {PRONOUN/m_c/subject} {VERB/m_c/were/was} bitten by a snake"
+
             }
         ]
     },
@@ -7310,8 +7316,9 @@
         "history": [
             {
                 "cats": ["m_c"],
-            "scar": "m_c, unbelievably, was scarred when {PRONOUN/m_c/subject} tried to eat a bee.",
-            "reg_death": "m_c died from complications caused by a bee sting."
+                "scar": "m_c, unbelievably, was scarred when {PRONOUN/m_c/subject} tried to eat a bee.",
+                "reg_death": "m_c died from complications caused by a bee sting.",
+                "lead_death": "died from complications caused by a bee sting"
             }
         ]
     },

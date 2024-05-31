@@ -197,21 +197,12 @@ class GenerateEvents:
     def filter_possible_short_events(Cat_class, possible_events, cat, random_cat, other_clan, freshkill_active, freshkill_trigger_factor, sub_types=None, ):
         final_events = []
 
-        # TODO: put the injury severity code back?
-        minor = []
-        major = []
-        severe = []
-
         # Chance to bypass the skill or trait requirements. 
         trait_skill_bypass = 15
 
         # check if generated event should be a war event
-        if "war" in sub_types and random.randint(1, 10) != 1:
-            war_event = True
-        else:  # otherwise, take all war events out
-            war_event = False
-            if "war" in sub_types:
-                sub_types.remove("war")
+        if "war" in sub_types and random.randint(1, 10) == 1:
+            sub_types.remove("war")
 
         for event in possible_events:
             # check for event sub_type

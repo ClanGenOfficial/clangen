@@ -453,16 +453,15 @@ class Condition_Events():
                 continue
 
             # death event text and break bc any other illnesses no longer matter
-            if cat.dead or cat.leader_death_heal:
-
+            if cat.dead or (cat.status == 'leader' and starting_life_count != game.clan.leader_lives):
                 try:
                     possible_string_list = Condition_Events.ILLNESS_DEATH_STRINGS[illness]
-                    event = random.choice(possible_string_list) + " " + get_leader_life_notice()
+                    event = random.choice(possible_string_list)
                     # first event in string lists is always appropriate for history formatting
                     history_event = possible_string_list[0]
                 except KeyError:
                     print(f"WARNING: {illness} does not have an injury death string, placeholder used.")
-                    event = "m_c was killed by their illness." + " " + get_leader_life_notice()
+                    event = "m_c was killed by their illness."
                     history_event = "m_c died to an illness."
 
                 event = event_text_adjust(Cat, event, main_cat=cat)
@@ -558,13 +557,13 @@ class Condition_Events():
 
                 try:
                     possible_string_list = Condition_Events.INJURY_DEATH_STRINGS[injury]
-                    event = random.choice(possible_string_list) + " " + get_leader_life_notice()
+                    event = random.choice(possible_string_list)
 
                     # first string in the list is always appropriate for history text
                     history_text = possible_string_list[0]
                 except KeyError:
                     print(f'WARNING: {injury} does not have an injury death string, placeholder used')
-                    event = "m_c was killed by their injuries." + " " + get_leader_life_notice()
+                    event = "m_c was killed by their injuries."
                     history_text = "m_c died to an injury."
 
                 event = event_text_adjust(Cat, event, main_cat=cat)
