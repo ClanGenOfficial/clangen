@@ -1,13 +1,12 @@
 """
 
- Please dont put this *unittest* in the tests/unittest github action.
-HOWEVER
- Please keep the raw python script and the unittest, so it can be run by the tests/pronoun_test github action.
+ Please do not put this *unittest* in the tests/unittest GitHub action.
+HOWEVER,
+ Please keep the raw python script and the unittest, so it can be run by the tests/pronoun_test GitHub action.
 
 This test checks that pronoun tags are formated correctly, 
 
 """
-import os
 import sys
 import ujson
 import unittest
@@ -19,12 +18,13 @@ import os
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
+
 def test():
     """Iterate through all files in 'resources'
     and verify that any detected pronoun tags are 
     formatted correctly."""
     failed = False
-    failedFiles = []
+    failed_files = []
     
     # Note - we are replacing with a singular-conjugated pronoun,
     # to ensure that we are catching cases where only one verb conjugation
@@ -66,19 +66,18 @@ def test():
                 
                 if not test_replacement_failure(path, replacement_dict):
                     failed = True
-                    failedFiles.append(path)
+                    failed_files.append(path)
                 
     if failed:
         # Set the GITHUB_OUTPUT environment variable to the list of failed files
         if "GITHUB_OUTPUT" in os.environ:
             with open(os.environ["GITHUB_OUTPUT"], "a") as handle:
-                print(f"files={':'.join(failedFiles)}", file=handle)
+                print(f"files={':'.join(failed_files)}", file=handle)
         else:
-            print(f"files={':'.join(failedFiles)}")
+            print(f"files={':'.join(failed_files)}")
         sys.exit(1)
     else:
         sys.exit(0)
-
 
 
 def test_replacement_failure(path: str, repl_dict: dict) -> bool:
@@ -104,9 +103,9 @@ def test_replacement_failure(path: str, repl_dict: dict) -> bool:
             print(_e)
             success = False
         else: 
-            ## This test for any pronoun or verb tag fragments that might have
-            ## sneaked through. This is most likely caused by using the incorrect type of
-            ## brackets
+            # This test for any pronoun or verb tag fragments that might have
+            # sneaked through. This is most likely caused by using the incorrect type of
+            # brackets
             if re.search(r"\{PRONOUN|\(PRONOUN|\{VERB|\(VERB", processed):
                 print(f"::error file={path}: \"{_str}\" contains pronoun tag fragments after replacment")
                 success = False
@@ -133,7 +132,8 @@ def get_all_strings(data):
         all_strings.append(data)
         
     return all_strings
-    
+
+
 class TestPronouns(unittest.TestCase):
     """Test for some common pronoun tagging errors in resources"""
 

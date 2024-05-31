@@ -220,7 +220,7 @@
                 }
             },
             {
-                "text": "Even though s_c made it out, {PRONOUN/s_c/subject} {VERB/s_c/swear/swears} someone pushed {PRONOUN/s_c/object}, and {VERB/s_c/blame/blames} r_c. r_c denies it and says they should get s_c back to camp to get {PRONOUN/s_c/poss} injury looked at.",
+                "text": "Even though r_c made it out, {PRONOUN/r_c/subject} {VERB/r_c/swear/swears} someone pushed {PRONOUN/r_c/object}, and {VERB/r_c/blame/blames} s_c. s_c denies it and says they should get r_c back to camp to get {PRONOUN/r_c/poss} injury looked at.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -235,7 +235,7 @@
                 ],
                 "injury": [
                     {
-                        "cats": ["s_c"],
+                        "cats": ["r_c"],
                         "injuries": ["blunt_force_injury"],
                         "scars": ["CHEEK"]
                     }
@@ -2373,7 +2373,7 @@
         "decline_text": "No one seems interested in p_l's story.",
         "success_outcomes": [
                 {
-                    "text": "While they wash at the land, the tides are connected to the moon, p_l meows. At night this becomes obvious - the new moon and the full moon both produce spring tides of unusal strength. And every so often, if the moon is displeased, a spring tide gains twice the height a strength, producing a king tide.",
+                    "text": "While they wash at the land, the tides are connected to the moon, p_l meows. At night this becomes obvious - the new moon and the full moon both produce spring tides of unusal strength. And every so often, if the moon is displeased, a spring tide gains twice the height and strength, producing a king tide.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_hunt_vision",
