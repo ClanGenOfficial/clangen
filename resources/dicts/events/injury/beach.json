@@ -480,8 +480,11 @@
                 "injuries": ["water in their lungs"]
             }
         ],
-        "history": {
-            "reg_death": "m_c died from water-inhalation after being dragged out to sea."
-        }
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died from water-inhalation after being dragged out to sea."
+            }
+        ]
     }    
 ]

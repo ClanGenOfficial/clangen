@@ -6876,8 +6876,9 @@
         "history": [
             {
                 "cats": ["m_c"],
-            "scar": "m_c was scarred by a dog.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/subject} {VERB/m_c/were/was} hurt by a dog."
+                "scar": "m_c was scarred by a dog.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/subject} {VERB/m_c/were/was} hurt by a dog.",
+                "lead_death": "died from {PRONOUN/m_c/poss} wounds after being hurt by a dog"
             }
         ]
     },

@@ -459,11 +459,11 @@ def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, 
             if cat_type != cat.status:
                 print("wrong status")
                 continue
-            if gender != cat.gender:
+            if gender and gender != cat.gender:
                 print("wrong gender")
                 continue
-            
-            if age not in Cat.age_moons[cat.age]:
+            print(f"{age}, {Cat.age_moons[cat.age]}")
+            if age and age not in Cat.age_moons[cat.age]:
                 print(f"wrong age")
                 continue
 
@@ -478,7 +478,7 @@ def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, 
                 chosen_cat.die()
 
             if new_name:
-                name = chosen_cat.name
+                name = f"{chosen_cat.name.prefix}"
                 if choice([1, 2]) == 1:  # adding suffix to OG name
                     spaces = name.count(" ")
                     if spaces > 0:
