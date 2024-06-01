@@ -189,7 +189,8 @@
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "no_body"
         ],
         "death_text": "r_c, guarding camp, yowls a warning as they spot a circling shadow, right below m_c. r_c starts sprinting to m_c's position, but couldn't get there in time, not before m_c was carried high into the sky.",
         "history_text": {
