@@ -156,7 +156,7 @@ class FreshkillPile(unittest.TestCase):
 
         freshkill_pile.add_cat_to_nutrition(lowest_warrior)
         max_score = freshkill_pile.nutrition_info[lowest_warrior.ID].max_score
-        give_score =  max_score - self.prey_requirement["warrior"]
+        give_score = max_score - self.prey_requirement["warrior"]
         freshkill_pile.nutrition_info[lowest_warrior.ID].current_score = give_score
 
         freshkill_pile.add_cat_to_nutrition(middle_warrior)
@@ -177,7 +177,7 @@ class FreshkillPile(unittest.TestCase):
         freshkill_pile.tactic_less_nutrition_first(living_cats)
 
         # then
-        self.assertEqual(freshkill_pile.total_amount,0)
+        self.assertEqual(freshkill_pile.total_amount, 0)
         self.assertGreaterEqual(
             freshkill_pile.nutrition_info[lowest_warrior.ID].percentage, 60)
         self.assertGreaterEqual(
@@ -200,7 +200,6 @@ class FreshkillPile(unittest.TestCase):
         }
         healthy_cat = Cat()
         healthy_cat.status = "warrior"
-
 
         freshkill_pile = Freshkill_Pile()
         # be able to feed one queen and some of the warrior
@@ -255,7 +254,7 @@ class FreshkillPile(unittest.TestCase):
             [lowest_warrior, middle_warrior, highest_warrior])
 
         # then
-        #self.assertEqual(freshkill_pile.total_amount,0)
+        # self.assertEqual(freshkill_pile.total_amount,0)
         self.assertLess(
             freshkill_pile.nutrition_info[lowest_warrior.ID].percentage, 70)
         self.assertLess(
@@ -361,7 +360,6 @@ class FreshkillPile(unittest.TestCase):
         cat3 = Cat()
         cat3.status = "warrior"
 
-
         freshkill_pile = Freshkill_Pile()
         # be able to feed one queen and some of the warrior
         current_amount = self.prey_requirement["queen/pregnant"]
@@ -398,7 +396,6 @@ class FreshkillPile(unittest.TestCase):
         }
         healthy_cat = Cat()
         healthy_cat.status = "warrior"
-
 
         freshkill_pile = Freshkill_Pile()
         # be able to feed one queen and some of the warrior
