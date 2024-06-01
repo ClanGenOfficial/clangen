@@ -1881,7 +1881,7 @@
             "prey": ["huge"]
         },
         {
-            "text": "It's cold, alone by themself. But app1 shakes it off, and {PRONOUN/app1/subject} {VERB/app1/find/finds} enough food that the Clan will have questions, waking up with a fresh-kill pile weirdly fuller than when they went to sleep.",
+            "text": "It's cold, alone by {PRONOUN/app1/self}. But app1 shakes it off, and {PRONOUN/app1/subject} {VERB/app1/find/finds} enough food that the Clan will have questions, waking up with a fresh-kill pile weirdly fuller than when they went to sleep.",
             "exp": 20,
             "weight": 10,
             "prey": ["huge"]

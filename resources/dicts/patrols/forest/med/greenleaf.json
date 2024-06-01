@@ -1282,7 +1282,7 @@
         },
         "weight": 20,
         "intro_text": "p_l wanders off into the territory, keeping an eye out for the purple flowers that betony grows.",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, and decide to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -1553,7 +1553,7 @@
         },
         "weight": 20,
         "intro_text": "The blackberry brambles will be at their peak leaf growth soon, if they aren't there already. p_l heads out to replenish the Clan's stocks.",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, and decide to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -1824,7 +1824,7 @@
         },
         "weight": 20,
         "intro_text": "With the full sun of greenleaf fueling plant growth everywhere, it's the perfect time to hunt for burdock. p_l heads out to replenish the Clan's stocks.",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, and decide to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
