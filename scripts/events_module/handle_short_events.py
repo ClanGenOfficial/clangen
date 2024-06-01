@@ -10,7 +10,7 @@ from scripts.events_module.generate_events import GenerateEvents
 from scripts.events_module.relation_events import Relation_Events
 from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values, \
     history_text_adjust, get_warring_clan, unpack_rel_block, change_clan_reputation, create_new_cat_block, \
-    get_leader_life_notice, get_alive_status_cats
+    get_leader_life_notice, get_alive_status_cats, get_living_clan_cat_count
 from scripts.game_structure.game_essentials import game
 from scripts.event_class import Single_Event
 
@@ -35,6 +35,7 @@ class HandleShortEvents():
         self.victim_cat = None
         self.multi_cat: List = []
         self.dead_cats = []
+        self.chosen_herb = None
 
         self.other_clan = None
         self.other_clan_name = None
@@ -196,7 +197,8 @@ class HandleShortEvents():
                                        new_cats=self.new_cat_objects,
                                        multi_cats=self.multi_cat,
                                        clan=game.clan,
-                                       other_clan=self.other_clan)
+                                       other_clan=self.other_clan,
+                                       chosen_herb=self.chosen_herb)
 
         print(self.types)
         game.cur_events_list.append(
@@ -591,6 +593,10 @@ class HandleShortEvents():
 
         adjustment = block["adjust"]
         supply_type = block["type"]
+        trigger = block["trigger"]
+
+        clan_size = get_living_clan_cat_count(Cat)
+        needed_amount = int(clan_size * 3)
 
         # adjust entire herb store
         if supply_type == "all_herb":
@@ -610,22 +616,33 @@ class HandleShortEvents():
         else:
             # picking a random herb to adjust
             if supply_type == "any_herb":
-                chosen_herb = random.choice(herbs.keys)
+                possible_herbs = []
+                for herb in herbs:
+                    if "low" in trigger and herbs[herb] < needed_amount / 2:
+                        possible_herbs.append(herb)
+                    if "adequate" in trigger and needed_amount / 2 < herbs[herb] < needed_amount:
+                        possible_herbs.append(herb)
+                    if "full" in trigger and needed_amount < herbs[herb] < needed_amount * 2:
+                        possible_herbs.append(herb)
+                    if "excess" in trigger and needed_amount * 2 < herbs[herb]:
+                        possible_herbs.append(herb)
+                self.chosen_herb = random.choice(possible_herbs)
+
             # if it wasn't a random herb or all herbs, then it's one specific herb
             else:
-                chosen_herb = supply_type
+                self.chosen_herb = supply_type
 
             # now adjust the supply for the chosen_herb
             if adjustment == "reduce_full":
-                game.clan.herbs[chosen_herb] = 0
+                game.clan.herbs[self.chosen_herb] = 0
             elif adjustment == "reduce_half":
-                game.clan.herbs[chosen_herb] = game.clan.herbs[chosen_herb] / 2
+                game.clan.herbs[self.chosen_herb] = game.clan.herbs[self.chosen_herb] / 2
             elif adjustment == "reduce_quarter":
-                game.clan.herbs[chosen_herb] = game.clan.herbs[chosen_herb] / 4
+                game.clan.herbs[self.chosen_herb] = game.clan.herbs[self.chosen_herb] / 4
             elif adjustment == "reduce_eighth":
-                game.clan.herbs[chosen_herb] = game.clan.herbs[chosen_herb] / 8
+                game.clan.herbs[self.chosen_herb] = game.clan.herbs[self.chosen_herb] / 8
             elif "increase" in adjustment:
-                game.clan.herbs[chosen_herb] += adjustment.split("_")[1]
+                game.clan.herbs[self.chosen_herb] += adjustment.split("_")[1]
 
     @staticmethod
     def handle_witness(main_cat, random_cat):

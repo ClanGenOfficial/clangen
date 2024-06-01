@@ -1718,7 +1718,8 @@ def event_text_adjust(Cat,
                       new_cats: list = None,
                       multi_cats: list = None,
                       clan=None,
-                      other_clan=None):
+                      other_clan=None,
+                      chosen_herb=None):
     """
     handles finding abbreviations in the text and replacing them appropriately, returns the adjusted text
     :param Cat: always pass the Cat class
@@ -1918,6 +1919,9 @@ def event_text_adjust(Cat,
     # acc_singular (only works for main_cat's acc)
     if "acc_singular" in text:
         text = text.replace("acc_singular", str(ACC_DISPLAY[main_cat.pelt.accessory]["singular"]))
+
+    if "herb_given" in text:
+        text = text.replace("herb_given", str(chosen_herb))
 
     return text
 

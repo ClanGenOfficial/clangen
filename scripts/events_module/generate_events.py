@@ -595,11 +595,25 @@ class GenerateEvents:
                                     else:
                                         discard = True
                                         break
+                        elif supply_type == "any_herb":
+                            for herb in herbs.keys():
+                                if "low" in trigger and herbs[herb] < needed_amount / 2:
+                                    discard = False
+                                    break
+                                if "adequate" in trigger and needed_amount / 2 < herbs[herb] < needed_amount:
+                                    discard = False
+                                    break
+                                if "full" in trigger and needed_amount < herbs[herb] < needed_amount * 2:
+                                    discard = False
+                                    break
+                                if "excess" in trigger and needed_amount * 2 < herbs[herb]:
+                                    discard = False
+                                    break
+                            if discard:
+                                continue
+
                         else:
-                            if supply_type == "any_herb":
-                                chosen_herb = random.choice(herbs.keys)
-                            else:
-                                chosen_herb = supply_type
+                            chosen_herb = supply_type
 
                             if "low" in trigger:
                                 if chosen_herb < needed_amount / 2:

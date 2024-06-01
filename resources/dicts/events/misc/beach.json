@@ -54,5 +54,20 @@
       "trait": ["thoughtful", "wise", "righteous"],
       "not_trait": ["bloodthirsty", "ambitious"]
     }
+  },
+  {
+    "event_id": "bch_misc_herb_leafbareflooddestruction1",
+    "biome": ["any"],
+    "camp": ["any"],
+    "season": ["leaf-bare"],
+    "weight": 5,
+    "event_text": "A huge wave crashes into camp, leaving everyone soaked and the herb stores irreparably damaged.",
+    "supplies": [
+      {
+          "type": "all_herb",
+          "trigger": ["always"],
+          "adjust": "reduce_full"
+      }
+    ]
   }
 ]
