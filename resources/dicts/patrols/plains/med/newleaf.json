@@ -1269,17 +1269,17 @@
         },
         "weight": 20,
         "intro_text": "Newleaf has brought new life to c_n's territory, and p_l heads out to gather fresh goldenrod for the stores.",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/poss/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "The many stems of goldenrod surround p_l as they work, snipping off stems and clumps of tiny yellow flowers to bring back to c_n's herb stores.",
+                "text": "The many stems of goldenrod surround p_l as {PRONOUN/p_l/subject} {VERB/p_l/work/works}, snipping off stems and clumps of tiny yellow flowers to bring back to c_n's herb stores.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["goldenrod"]
             },
             {
-                "text": "It always amazes p_l how quickly the goldenrod bushes sprout back up after leaf-bare, and they collect more goldenrod than they were anticipating.",
+                "text": "It always amazes p_l how quickly the goldenrod bushes sprout back up after leaf-bare, and {PRONOUN/p_l/subject} {VERB/p_l/collect/collects} more goldenrod than {PRONOUN/p_l/subject} {VERB/p_l/were/was} anticipating.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "goldenrod"]

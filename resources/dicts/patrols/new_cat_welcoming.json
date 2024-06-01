@@ -2096,7 +2096,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "The patrol approaches cautiously. The loner draws {PRONOUN/n_c:0/self} up, but doing so causes {PRONOUN/n_c:0/object} to let out another hiss. p_l offers to bring {PRONOUN/n_c:0/object} to camp. Though {PRONOUN/n_c:0/subject} seem hesitant, the loner agrees.",
+                "text": "The patrol approaches cautiously. The loner draws {PRONOUN/n_c:0/self} up, but doing so causes {PRONOUN/n_c:0/object} to let out another hiss. p_l offers to bring {PRONOUN/n_c:0/object} to camp. Though {PRONOUN/n_c:0/subject} {VERB/n_c:0/seem/seems} hesitant, the loner agrees.",
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
