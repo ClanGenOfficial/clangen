@@ -180,8 +180,16 @@ class MediationScreen(Screens):
                                                    object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
                                                    manager=MANAGER)
 
-        self.random1 = UIImageButton(scale(pygame.Rect((396, 864), (68, 68))), "", object_id="#random_dice_button")
-        self.random2 = UIImageButton(scale(pygame.Rect((1136, 864), (68, 68))), "", object_id="#random_dice_button")
+        self.random1 = UIImageButton(
+            scale(pygame.Rect((396, 864), (68, 68))),
+            "",
+            object_id="#random_dice_button",
+            sound_id="dice_roll")
+        self.random2 = UIImageButton(
+            scale(pygame.Rect((1136, 864), (68, 68))),
+            "",
+            object_id="#random_dice_button",
+            sound_id="dice_roll")
 
         self.search_bar_image = pygame_gui.elements.UIImage(scale(pygame.Rect((110, 1250), (236, 68))),
                                                             pygame.image.load(
@@ -272,13 +280,13 @@ class MediationScreen(Screens):
                               (i.ID != self.mediators[self.selected_mediator].ID) and not (i.dead or i.outside)]
         self.all_cats = self.chunks(self.all_cats_list, 24)
         self.current_listed_cats = self.all_cats_list
-        self.all_pages = int(ceil(len(self.current_listed_cats)/24.0)) if len(self.current_listed_cats) > 24 else 1
+        self.all_pages = int(ceil(len(self.current_listed_cats) / 24.0)) if len(self.current_listed_cats) > 24 else 1
         self.update_page()
 
     def update_page(self):
         for cat in self.cat_buttons:
             cat.kill()
-        self.cat_buttons = []            
+        self.cat_buttons = []
         if self.page > self.all_pages:
             self.page = self.all_pages
         elif self.page < 1:
@@ -301,16 +309,16 @@ class MediationScreen(Screens):
             for cat in chunked_cats[self.page - 1]:
                 if game.clan.clan_settings["show fav"] and cat.favourite:
                     _temp = pygame.transform.scale(
-                                pygame.image.load(
-                                    f"resources/images/fav_marker.png").convert_alpha(),
-                                (100, 100))
-                        
+                        pygame.image.load(
+                            f"resources/images/fav_marker.png").convert_alpha(),
+                        (100, 100))
+
                     self.cat_buttons.append(
                         pygame_gui.elements.UIImage(
                             scale(pygame.Rect((x, y), (100, 100))),
                             _temp))
                     self.cat_buttons[-1].disable()
-                
+
                 self.cat_buttons.append(
                     UISpriteButton(scale(pygame.Rect((x, y), (100, 100))), cat.sprite, cat_object=cat)
                 )
@@ -476,7 +484,6 @@ class MediationScreen(Screens):
         if other_cat:
             name = str(cat.name)
             short_name = shorten_text_to_fit(name, 136, 22)
-
 
             self.selected_cat_elements[f"relation_heading{tag}"] = pygame_gui.elements.UILabel(
                 scale(pygame.Rect((x + 40, y + 320),
@@ -704,7 +711,7 @@ class MediationScreen(Screens):
                                                    object_id="#unchecked_checkbox",
                                                    tool_tip_text="Allow effects on romantic like, if possible. ",
                                                    manager=MANAGER)
-            
+
     def update_search_cats(self, search_text):
         """Run this function when the search text changes, or when the screen is switched to."""
         self.current_listed_cats = []
@@ -718,7 +725,7 @@ class MediationScreen(Screens):
         else:
             self.current_listed_cats = self.all_cats_list.copy()
 
-        self.all_pages = int(ceil(len(self.current_listed_cats)/24.0)) if len(self.current_listed_cats) > 24 else 1
+        self.all_pages = int(ceil(len(self.current_listed_cats) / 24.0)) if len(self.current_listed_cats) > 24 else 1
 
         Cat.ordered_cat_list = self.current_listed_cats
         self.update_page()

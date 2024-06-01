@@ -327,13 +327,15 @@ class ChangeCatName(UIWindow):
                                            object_id="#random_dice_button",
                                            manager=MANAGER,
                                            container=self,
-                                           tool_tip_text='Randomize the prefix')
+                                           tool_tip_text='Randomize the prefix',
+                                           sound_id="dice_roll")
 
         self.random_suffix = UIImageButton(scale(pygame.Rect((563 + x_pos, 97 + y_pos), (68, 68))), "",
                                            object_id="#random_dice_button",
                                            manager=MANAGER,
                                            container=self,
-                                           tool_tip_text='Randomize the suffix')
+                                           tool_tip_text='Randomize the suffix',
+                                           sound_id="dice_roll")
 
         # 636
         self.toggle_spec_block_on = UIImageButton(scale(pygame.Rect((405 + x_pos, 160 + y_pos), (68, 68))), "",
@@ -1137,7 +1139,8 @@ class SaveAsImage(UIWindow):
             object_id="#save_image_button",
             starting_height=2,
             container=self,
-            anchors={'centerx': 'centerx'}
+            anchors={'centerx': 'centerx'},
+            sound_id="save_button"
         )
 
         self.open_data_directory_button = UIImageButton(

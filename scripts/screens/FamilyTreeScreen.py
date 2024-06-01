@@ -170,9 +170,11 @@ class FamilyTreeScreen(Screens):
         self.current_group_name = None
         # prev/next and back buttons
         self.previous_cat_button = UIImageButton(scale(pygame.Rect((50, 50), (306, 60))), "",
-                                                 object_id="#previous_cat_button", manager=MANAGER)
+                                                 object_id="#previous_cat_button", manager=MANAGER,
+                                                 sound_id="page_flip")
         self.next_cat_button = UIImageButton(scale(pygame.Rect((1244, 50), (306, 60))), "",
-                                             object_id="#next_cat_button", manager=MANAGER)
+                                             object_id="#next_cat_button", manager=MANAGER,
+                                             sound_id="page_flip")
         self.back_button = UIImageButton(scale(pygame.Rect((50, 120), (210, 60))), "",
                                          object_id="#back_button", manager=MANAGER)
 
@@ -241,7 +243,8 @@ class FamilyTreeScreen(Screens):
                                                                           scale(
                                                                               pygame.Rect((300, 50),
                                                                                           (1000, 100))),
-                                                                          object_id=get_text_box_theme("#text_box_30_horizcenter"),
+                                                                          object_id=get_text_box_theme(
+                                                                              "#text_box_30_horizcenter"),
                                                                           manager=MANAGER, )
 
         # will need these later to adjust positioning
@@ -290,7 +293,7 @@ class FamilyTreeScreen(Screens):
         if self.parents_siblings:
             if not self.siblings_mates and not self.siblings_kits:
                 x_dim += 433
-        
+
         # collect mates
         if self.mates or self.kits:
             x_pos += 276
@@ -342,10 +345,9 @@ class FamilyTreeScreen(Screens):
         name = str(self.the_cat.name)
         short_name = shorten_text_to_fit(name, 114, 22)
 
-        self.cat_elements["center_cat_name"] = pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect((10 + x_pos, 90 + y_pos), (145, 100))), short_name, object_id="#text_box_22_horizcenter", manager=MANAGER, container=self.family_tree)
-
-
-
+        self.cat_elements["center_cat_name"] = pygame_gui.elements.ui_label.UILabel(
+            scale(pygame.Rect((10 + x_pos, 90 + y_pos), (145, 100))), short_name, object_id="#text_box_22_horizcenter",
+            manager=MANAGER, container=self.family_tree)
 
         if self.parents:
             self.siblings_button = UIImageButton(scale(pygame.Rect((152 + x_pos, 65 + y_pos), (316, 60))),
@@ -449,16 +451,16 @@ class FamilyTreeScreen(Screens):
             _kitty = Cat.fetch_cat(kitty)
             info_text = f"{str(_kitty.name)}"
             additional_info = self.the_cat.inheritance.get_cat_info(kitty)
-            if len(additional_info["type"]) > 0: # types is always real
+            if len(additional_info["type"]) > 0:  # types is always real
                 rel_types = [str(rel_type.value) for rel_type in additional_info["type"]]
-                rel_types = set(rel_types) # remove duplicates
-                if "" in rel_types: 
-                    rel_types.remove("")       # removes empty
+                rel_types = set(rel_types)  # remove duplicates
+                if "" in rel_types:
+                    rel_types.remove("")  # removes empty
                 if len(rel_types) > 0:
                     info_text += "\n"
                     info_text += ', '.join(rel_types)
                 if len(additional_info["additional"]) > 0:
-                    add_info = set(additional_info["additional"]) # remove duplicates
+                    add_info = set(additional_info["additional"])  # remove duplicates
                     info_text += "\n"
                     info_text += ', '.join(add_info)
 
@@ -667,4 +669,3 @@ class FamilyTreeScreen(Screens):
         del self.next_group_page
         self.previous_group_page.kill()
         del self.previous_group_page
-
