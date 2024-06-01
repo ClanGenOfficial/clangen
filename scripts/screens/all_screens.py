@@ -22,6 +22,7 @@ from .FamilyTreeScreen import FamilyTreeScreen
 from .MediationScreen import MediationScreen
 from .ClanSettingsScreen import ClanSettingsScreen
 from .ClearingScreen import ClearingScreen
+from .ChangeGenderScreen import ChangeGenderScreen
 from .WarriorDenScreen import WarriorDenScreen
 
 # ---------------------------------------------------------------------------- #
@@ -67,6 +68,7 @@ freshkill_pile_screen = ClearingScreen('clearing screen')
 warrior_den_screen = WarriorDenScreen('warrior den screen')
 leader_den_screen = LeaderDenScreen('leader den screen')
 
+
 events_screen = EventsScreen('events screen')
 
 
@@ -85,4 +87,5 @@ choose_adoptive_parent_screen = ChooseAdoptiveParentScreen('choose adoptive pare
 relationship_screen = RelationshipScreen('relationship screen')
 view_children_screen = FamilyTreeScreen('see kits screen')
 mediation_screen = MediationScreen("mediation screen")
+change_gender_screen = ChangeGenderScreen("change gender screen")
 

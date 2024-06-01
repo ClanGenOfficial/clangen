@@ -282,7 +282,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "They have an in-depth conversation about r_c's vision as they walk. By the time they head back to camp, they have a good idea of what they should do with the information.",
+                "text": "They have an in-depth conversation about r_c's vision as they walk. By the time they head back to camp, {PRONOUN/r_c/subject} {VERB/r_c/have/has} a good idea of what {PRONOUN/r_c/subject} should do with the information.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -409,12 +409,12 @@
             "healer cats": [1, 6]
         },
         "weight": 20,
-        "intro_text": "As {PRONOUN/p_l/subject} head out to gather cobwebs, p_l thinks about the dream {PRONOUN/p_l/subject} had last night. . . was it sent by StarClan?",
+        "intro_text": "As {PRONOUN/p_l/subject} {VERB/p_l/head/heads} out to gather cobwebs, p_l thinks about the dream {PRONOUN/p_l/subject} had last night. . . was it sent by StarClan?",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/push/pushes} it from {PRONOUN/p_l/poss} mind.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "It definitely distracts {PRONOUN/p_l/object} from the hunt for cobwebs, but p_l uses the time by {PRONOUN/p_l/self} to put {PRONOUN/p_l/poss} thoughts in order. The sign from {PRONOUN/p_l/poss} ancestors will need acting upon, and {PRONOUN/p_l/subject} return to camp to assemble the leader and deputy.",
+                "text": "It definitely distracts {PRONOUN/p_l/object} from the hunt for cobwebs, but p_l uses the time by {PRONOUN/p_l/self} to put {PRONOUN/p_l/poss} thoughts in order. The sign from {PRONOUN/p_l/poss} ancestors will need acting upon, and {PRONOUN/p_l/subject} {VERB/p_l/return/returns} to camp to assemble the leader and deputy.",
                 "exp": 20,
                 "weight": 20
             },

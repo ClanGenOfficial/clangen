@@ -224,7 +224,7 @@
     {
         "id": "gen_to_alive_med_cat_app",
         "thoughts": [
-            "Is grateful to r_c for {PRONOUN/m_c/poss} treatment",
+            "Is grateful for the treatment r_c gave {PRONOUN/m_c/object}",
             "Is in awe of r_c's growth as a medicine cat apprentice",
             "Thinks r_c will make a good medicine cat",
             "Has doubts about r_c's abilities",
@@ -258,7 +258,7 @@
             "Is wondering if r_c will be chosen for the next Gathering",
             "Wants to go on patrol with r_c",
             "Doesn't want to go on patrol with r_c",
-            "Thinks r_c needs to work on their stalking technique",
+            "Thinks r_c needs to work on {PRONOUN/r_c/poss} stalking technique",
             "Saw r_c sneaking a bite of fresh-kill",
             "Thinks r_c will make a fine warrior",
             "Is proud of r_c's progress"
