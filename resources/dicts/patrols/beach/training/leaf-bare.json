@@ -121,7 +121,7 @@
                         ]
                 },
                 {
-                    "text": "This day will be a day of heroes, s_c whispers, capturing their Clanmates attention. Heroes born, or made, or found - such things always appear in c_n's history, a stranger arriving soaked from a storm, a new life brought into the world as winds howl outside, a warrior rising to need. The storms mark it.",
+                    "text": "This day will be a day of heroes, s_c whispers, capturing their Clanmates' attention. Heroes born, or made, or found - such things always appear in c_n's history, a stranger arriving soaked from a storm, a new life brought into the world as winds howl outside, a warrior rising to need. The storms mark it.",
                     "exp": 40,
                     "weight": 20,
                     "art": "bch_train_stormwaves",
@@ -154,7 +154,7 @@
             ],
             "fail_outcomes": [
                 {
-                    "text": "Thunder cracks and the wind shift, throwing ocean spray from the waves on the gathered cats. Time to retreat to drier locations.",
+                    "text": "Thunder cracks and the wind shifts, throwing ocean spray from the waves on the gathered cats. Time to retreat to drier locations.",
                     "exp": 0,
                     "weight": 20,
                     "art": "gen_train_soggykitty_mad_warrior"

@@ -675,15 +675,16 @@ class Condition_Events():
         for condition in conditions:
 
             # checking if the cat has a congenital condition to reveal and handling duration and death
+            prev_lives = game.clan.leader_lives
             status = cat.moon_skip_permanent_condition(condition)
 
             # if cat is dead, break
-            if cat.dead or cat.status == 'leader':
+            if cat.dead or game.clan.leader_lives < prev_lives:
                 triggered = True
                 event_types.append("birth_death")
                 event = f"{cat.name} died from complications caused by {condition}."
-                if cat.status == "leader" and not cat.dead:
-                    event = f"{cat.name} lost a live to {condition}."
+                if cat.status == "leader" and game.clan.leader_lives >= 1:
+                    event = f"{cat.name} lost a life to {condition}."
                 event_list.append(event)
 
                 if cat.status != 'leader':

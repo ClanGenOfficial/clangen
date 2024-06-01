@@ -14,6 +14,7 @@
         "tags": [
             "other_cat",
             "other_cat_adult",
+            "mc_to_rc",
             "platonic",
             "comfort",
             "respect",
@@ -73,6 +74,7 @@
             "Leaf-fall",
             "other_cat",
             "other_cat_kit",
+            "to_both",
             "comfort",
             "platonic"
         ],
@@ -90,6 +92,7 @@
             "Leaf-bare",
             "other_cat",
             "other_cat_app",
+            "rc_to_mc",
             "dislike",
             "jealousy"
         ],
@@ -233,7 +236,9 @@
         "tags": [
             "Leaf-bare",
             "other_cat",
-            "other_cat_app"
+            "other_cat_app",
+            "to_both",
+            "comfort"
         ],
         "event_text": "m_c encourages r_c to play in the snow with {PRONOUN/m_c/object} during a patrol.",
         "cat_trait": "playful"
@@ -247,6 +252,7 @@
             "Leaf-fall",
             "other_cat",
             "other_cat_app",
+            "to_both",
             "romantic",
             "comfort",
             "trust"

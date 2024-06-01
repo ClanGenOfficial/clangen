@@ -2499,17 +2499,17 @@
                 "weight": 20
             },
             {
-                "text": "When p_l arrives back at camp, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless.",
+                "text": "When p_l arrives back at camp, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless. At least {PRONOUN/p_l/poss} den is nice and warm, chasing away the chill.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "When p_l arrives back at camp, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless.",
+                "text": "Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless, and this mistake cost r_c {PRONOUN/r_c/poss} life.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
+                    "reg_death": "m_c froze to death from searching for herbs in leaf-bare."
                 }
             },
             {
@@ -2643,7 +2643,7 @@
                 ]
             },
             {
-                "text": "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless.",
+                "text": "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless. Luckily r_c's clanmates help to keep the chill from getting worse.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2664,12 +2664,12 @@
                 ]
             },
             {
-                "text": "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless.",
+                "text": "When the failed patrol arrives back at camp, it's clear that one member didn't survive the cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive, senseless, and had cost them a friend.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
+                    "reg_death": "m_c froze to death from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -2832,7 +2832,7 @@
                 ]
             },
             {
-                "text": "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless.",
+                "text": "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless. With r_c's clanmates by {PRONOUN/r_c/poss} side, the chill was prevented from seeping in.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2853,7 +2853,7 @@
                 ]
             },
             {
-                "text": "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless.",
+                "text": "When the failed patrol arrives back at camp, r_c is frozen stiff, beyond saving. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive, senseless, and had cost them a friend.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],

@@ -33,29 +33,31 @@ class AllegiancesScreen(Screens):
         self.update_heading_text(f'{game.clan.name}Clan')
         allegiance_list = self.get_allegiances_text()
 
+        self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect(
+            (100, 330), (1430, 1000))),
+            allow_scroll_x=False,
+            manager=MANAGER)
 
-        self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((100, 330), (1430, 1000)))
-                                                                         , manager=MANAGER)
-        
         self.ranks_boxes = []
         self.names_boxes = []
         y_pos = 0
         for x in allegiance_list:
             self.ranks_boxes.append(pygame_gui.elements.UITextBox(x[0],
-                                   scale(pygame.Rect((0, y_pos), (300, -1))),
-                                   object_id=get_text_box_theme("#text_box_30_horizleft"),
-                                   container=self.scroll_container, manager=MANAGER))
+                                                                  scale(pygame.Rect((0, y_pos), (300, -1))),
+                                                                  object_id=get_text_box_theme(
+                                                                      "#text_box_30_horizleft"),
+                                                                  container=self.scroll_container, manager=MANAGER))
             self.ranks_boxes[-1].disable()
 
             self.names_boxes.append(pygame_gui.elements.UITextBox(x[1],
-                                    scale(pygame.Rect((300, y_pos), (1060, -1))),
-                                    object_id=get_text_box_theme("#text_box_30_horizleft"),
-                                    container=self.scroll_container, manager=MANAGER))
+                                                                  scale(pygame.Rect((300, y_pos), (1060, -1))),
+                                                                  object_id=get_text_box_theme(
+                                                                      "#text_box_30_horizleft"),
+                                                                  container=self.scroll_container, manager=MANAGER))
             self.names_boxes[-1].disable()
-            
-            y_pos += 1400 * self.names_boxes[-1].get_relative_rect()[3] / screen_y 
 
-        
+            y_pos += 1400 * self.names_boxes[-1].get_relative_rect()[3] / screen_y
+
         self.scroll_container.set_scrollable_area_dimensions((1360 / 1600 * screen_x, y_pos / 1400 * screen_y))
 
     def exit_screen(self):
@@ -69,19 +71,19 @@ class AllegiancesScreen(Screens):
         del self.scroll_container
         self.heading.kill()
         del self.heading
-    
-    def generate_one_entry(self, cat, extra_details = ""):
-            """ Extra Details will be placed after the cat description, but before the apprentice (if they have one. )"""
-            output = f"{str(cat.name).upper()} - {cat.describe_cat()} {extra_details}"
 
-            if len(cat.apprentice) > 0:
-                if len(cat.apprentice) == 1:
-                    output += "\n      APPRENTICE: "
-                else:
-                    output += "\n      APPRENTICES: "     
-                output += ", ".join([str(Cat.fetch_cat(i).name).upper() for i in cat.apprentice if Cat.fetch_cat(i)])
+    def generate_one_entry(self, cat, extra_details=""):
+        """ Extra Details will be placed after the cat description, but before the apprentice (if they have one. )"""
+        output = f"{str(cat.name).upper()} - {cat.describe_cat()} {extra_details}"
 
-            return output
+        if len(cat.apprentice) > 0:
+            if len(cat.apprentice) == 1:
+                output += "\n      APPRENTICE: "
+            else:
+                output += "\n      APPRENTICES: "
+            output += ", ".join([str(Cat.fetch_cat(i).name).upper() for i in cat.apprentice if Cat.fetch_cat(i)])
+
+        return output
 
     def get_allegiances_text(self):
         """Determine Text. Ouputs list of tuples. """
@@ -119,15 +121,15 @@ class AllegiancesScreen(Screens):
                 living_warriors.remove(queen)
             elif queen in living_elders:
                 living_elders.remove(queen)
-            
-        #Clan Leader Box:
+
+        # Clan Leader Box:
         # Pull the Clan leaders
         outputs = []
         if game.clan.leader and not (game.clan.leader.dead or game.clan.leader.outside):
-                outputs.append([
-                    '<b><u>LEADER</u></b>',
-                    self.generate_one_entry(game.clan.leader)
-                ])
+            outputs.append([
+                '<b><u>LEADER</u></b>',
+                self.generate_one_entry(game.clan.leader)
+            ])
 
         # Deputy Box:
         if game.clan.deputy and not (game.clan.deputy.dead or game.clan.deputy.outside):
@@ -135,7 +137,7 @@ class AllegiancesScreen(Screens):
                 '<b><u>DEPUTY</u></b>',
                 self.generate_one_entry(game.clan.deputy)
             ])
-        
+
         # Medicine Cat Box:
         if living_meds:
             _box = ["", ""]
@@ -143,10 +145,10 @@ class AllegiancesScreen(Screens):
                 _box[0] = '<b><u>MEDICINE CAT</u></b>'
             else:
                 _box[0] = '<b><u>MEDICINE CATS</u></b>'
-            
+
             _box[1] = "\n".join([self.generate_one_entry(i) for i in living_meds])
             outputs.append(_box)
-        
+
         # Mediator Box:
         if living_mediators:
             _box = ["", ""]
@@ -154,37 +156,37 @@ class AllegiancesScreen(Screens):
                 _box[0] = '<b><u>MEDIATOR</u></b>'
             else:
                 _box[0] = '<b><u>MEDIATORS</u></b>'
-            
+
             _box[1] = "\n".join([self.generate_one_entry(i) for i in living_mediators])
             outputs.append(_box)
 
-         # Warrior Box:
+        # Warrior Box:
         if living_warriors:
             _box = ["", ""]
             if len(living_warriors) == 1:
                 _box[0] = '<b><u>WARRIOR</u></b>'
             else:
                 _box[0] = '<b><u>WARRIORS</u></b>'
-            
+
             _box[1] = "\n".join([self.generate_one_entry(i) for i in living_warriors])
             outputs.append(_box)
-        
-         # Apprentice Box:
+
+        # Apprentice Box:
         if living_apprentices:
             _box = ["", ""]
             if len(living_apprentices) == 1:
                 _box[0] = '<b><u>APPRENTICE</u></b>'
             else:
                 _box[0] = '<b><u>APPRENTICES</u></b>'
-            
+
             _box[1] = "\n".join([self.generate_one_entry(i) for i in living_apprentices])
             outputs.append(_box)
-        
-         # Queens and Kits Box:
+
+        # Queens and Kits Box:
         if queen_dict or living_kits:
             _box = ["", ""]
             _box[0] = '<b><u>QUEENS AND KITS</u></b>'
-            
+
             # This one is a bit different.  First all the queens, and the kits they are caring for. 
             all_entries = []
             for q in queen_dict:
@@ -201,7 +203,7 @@ class AllegiancesScreen(Screens):
 
                 all_entries.append(self.generate_one_entry(queen, kittens))
 
-            #Now kittens without carers
+            # Now kittens without carers
             for k in living_kits:
                 all_entries.append(f"{str(k.name).upper()} - {k.describe_cat(short=True)}")
 
@@ -215,13 +217,13 @@ class AllegiancesScreen(Screens):
                 _box[0] = '<b><u>ELDER</u></b>'
             else:
                 _box[0] = '<b><u>ELDERS</u></b>'
-            
+
             _box[1] = "\n".join([self.generate_one_entry(i) for i in living_elders])
             outputs.append(_box)
 
         return outputs
 
-            
+
 class MedDenScreen(Screens):
     cat_buttons = {}
     conditions_hover = {}
@@ -410,7 +412,8 @@ class MedDenScreen(Screens):
             for cat in self.injured_and_sick_cats:
                 if cat.injuries:
                     for injury in cat.injuries:
-                        if cat.injuries[injury]["severity"] != 'minor' and injury not in ["pregnant", 'recovering from birth',
+                        if cat.injuries[injury]["severity"] != 'minor' and injury not in ["pregnant",
+                                                                                          'recovering from birth',
                                                                                           "sprain", "lingering shock"]:
                             if cat not in self.in_den_cats:
                                 self.in_den_cats.append(cat)
@@ -419,7 +422,8 @@ class MedDenScreen(Screens):
                             elif cat in self.minor_cats:
                                 self.minor_cats.remove(cat)
                             break
-                        elif injury in ['recovering from birth', "sprain", "lingering shock", "pregnant"] and cat not in self.in_den_cats:
+                        elif injury in ['recovering from birth', "sprain", "lingering shock",
+                                        "pregnant"] and cat not in self.in_den_cats:
                             if cat not in self.out_den_cats:
                                 self.out_den_cats.append(cat)
                             if cat in self.minor_cats:
@@ -599,7 +603,8 @@ class MedDenScreen(Screens):
             self.med_name = pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect
                                                                        ((1050, 310), (450, 60))),
                                                                  short_name,
-                                                                 object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER
+                                                                 object_id=get_text_box_theme(
+                                                                     "#text_box_30_horizcenter"), manager=MANAGER
                                                                  )
             self.med_info = UITextBoxTweaked(
                 "",
@@ -678,7 +683,6 @@ class MedDenScreen(Screens):
                                                                    manager=MANAGER,
                                                                    tool_tip_text=conditions,
                                                                    starting_height=2)
-
 
             name = str(cat.name)
             short_name = shorten_text_to_fit(name, 185, 30)

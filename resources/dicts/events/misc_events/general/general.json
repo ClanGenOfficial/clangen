@@ -455,6 +455,7 @@
             "Greenleaf",
             "Leaf-fall",
             "Leaf-bare",
+            "rc_to_mc",
             "comfort",
             "respect",
             "clan_kits"
@@ -466,7 +467,7 @@
         ]
     },
     {
-        "camp": "Any",
+        "camp": "any",
         "tags": [
             "Leaf-fall",
             "clan_kits",

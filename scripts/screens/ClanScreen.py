@@ -384,7 +384,7 @@ class ClanScreen(Screens):
 
         self.label_toggle.kill()
         if game.clan.clan_settings['den labels']:
-            self.label_toggle = UIImageButton(scale(pygame.Rect((50, 1282), (68, 68))), "",
+            self.label_toggle = UIImageButton(scale(pygame.Rect((50, 1282), (68, 68))), "", starting_height=2,
                                               object_id="#checked_checkbox")
             self.warrior_den_label.show()
             self.clearing_label.show()
@@ -394,7 +394,7 @@ class ClanScreen(Screens):
             self.med_den_label.show()
             self.elder_den_label.show()
         else:
-            self.label_toggle = UIImageButton(scale(pygame.Rect((50, 1282), (68, 68))), "",
+            self.label_toggle = UIImageButton(scale(pygame.Rect((50, 1282), (68, 68))), "", starting_height=2,
                                               object_id="#unchecked_checkbox")
             self.warrior_den_label.hide()
             self.clearing_label.hide()
