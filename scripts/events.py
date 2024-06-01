@@ -377,6 +377,9 @@ class Events:
                             else:
                                 invited_cat.status = "warrior"
 
+                            if "guided" in invited_cat.backstory:
+                                invited_cat.backstory = "outsider1"
+
                         invited_cat.create_relationships_new_cat()
 
                 # this handles ceremonies for cats coming into the clan
