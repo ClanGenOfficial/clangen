@@ -33,7 +33,7 @@
                 ]
             },
             {
-                "text": "They are greeted with the vision of a cat they had failed to save looking content and happy in StarClan, saying that they were not at fault for their death. They feel unburdened and at peace after receiving that vision.",
+                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is} greeted with the vision of a cat {PRONOUN/p_l/subject} had failed to save looking content and happy in StarClan, saying that {PRONOUN/p_l/subject} were not at fault for their death. {PRONOUN/p_l/subject/CAP} {VERB/p_l/feel/feels} unburdened and at peace after receiving that vision.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -49,7 +49,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "They gaze into the puddle, only to see the weird ripples were caused by a small frog. p_l feels disappointed, because they really could have used some guidance from StarClan.",
+                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/gaze/gazes} into the puddle, only to see the weird ripples were caused by a small frog. p_l feels disappointed, because {PRONOUN/p_l/subject} really could have used some guidance from StarClan.",
                 "exp": 0,
                 "weight": 20
             }

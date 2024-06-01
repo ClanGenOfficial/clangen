@@ -3927,7 +3927,7 @@
                 ]
             },
             {
-                "text": "s_c suggests they form two teams to fight each other - claws sheathed, of course. p_l takes {PRONOUN/s_c/subject} up on the good idea!",
+                "text": "s_c suggests they form two teams to fight each other - claws sheathed, of course. p_l takes {PRONOUN/s_c/object} up on the good idea!",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -3978,7 +3978,7 @@
                 ]
             },
             {
-                "text": "Just as they're starting, p_l puts a paw wrong and goes down hard. s_c rushes in and checks {PRONOUN/p_l/subject} over, firmly instructing p_l to stay on the sidelines. p_l sits the rest of the session out and avoids further injury, yowling encouragement and instructions to {PRONOUN/p_l/poss} Clanmates.",
+                "text": "Just as they're starting, p_l puts a paw wrong and goes down hard. s_c rushes in and checks {PRONOUN/p_l/object} over, firmly instructing p_l to stay on the sidelines. p_l sits the rest of the session out and avoids further injury, yowling encouragement and instructions to {PRONOUN/p_l/poss} Clanmates.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["HEALER,1"],
