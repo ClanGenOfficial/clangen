@@ -1727,7 +1727,7 @@ class SaveAsImage(UIWindow):
             starting_height=2,
             container=self,
             anchors={"centerx": "centerx"},
-            sound_id="save_button",
+            sound_id="save",
         )
 
         self.open_data_directory_button = UIImageButton(

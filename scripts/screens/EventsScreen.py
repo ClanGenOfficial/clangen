@@ -362,6 +362,7 @@ class EventsScreen(Screens):
             "",
             object_id="#timeskip_button",
             manager=MANAGER,
+            sound_id="timeskip",
         )
 
         # Sets up the buttons to switch between the event types.
