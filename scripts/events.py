@@ -2340,13 +2340,13 @@ class Events:
             if random.getrandbits(1):  # 50/50
                 if cat.gender == "male":
                     cat.genderalign = "trans female"
-                    # cat.pronouns = [cat.default_pronouns[1].copy()]
+                    cat.pronouns = [cat.default_pronouns[1].copy()]
                 else:
                     cat.genderalign = "trans male"
-                    # cat.pronouns = [cat.default_pronouns[2].copy()]
+                    cat.pronouns = [cat.default_pronouns[2].copy()]
             else:
                 cat.genderalign = "nonbinary"
-                # cat.pronouns = [cat.default_pronouns[0].copy()]
+                cat.pronouns = [cat.default_pronouns[0].copy()]
 
             if cat.gender == 'male':
                 gender = 'tom'

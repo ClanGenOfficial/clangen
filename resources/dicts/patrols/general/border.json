@@ -529,7 +529,8 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "The patrol comes across a small dog right on the border of c_n territory.",
-        "decline_text": "p_l decides not to pursue the dog and instead cuts the patrol short to head back to camp and report it.",        "chance_of_success": 40,
+        "decline_text": "p_l decides not to pursue the dog and instead cuts the patrol short to head back to camp and report it.",        
+        "chance_of_success": 40,
         "success_outcomes": [
             {
                 "text": "p_l hisses at the small dog, and the rest of {PRONOUN/p_l/poss} small team back {PRONOUN/p_l/object} up. The dog skitters back, yapping loudly, apparently shocked by the display. The patrol breaks out into yowls and caterwauls until the dog loses its nerve and runs from the c_n border into the distance.",
