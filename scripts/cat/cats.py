@@ -77,7 +77,6 @@ class Cat():
 
     default_pronouns = [
         {
-            "ID": "Neutral",
             "subject": "they",
             "object": "them",
             "poss": "their",
@@ -86,7 +85,6 @@ class Cat():
             "conju": 1
         },
         {
-            "ID": "Feminine",
             "subject": "she",
             "object": "her",
             "poss": "her",
@@ -95,7 +93,6 @@ class Cat():
             "conju": 2
         },
         {
-            "ID": "Masculine",
             "subject": "he",
             "object": "him",
             "poss": "his",

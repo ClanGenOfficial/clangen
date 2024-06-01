@@ -1,7 +1,6 @@
 {
   "default_pronouns": [
     {
-      "ID": "Neutral",
       "subject": "they",
       "object": "them",
       "poss": "their",
@@ -10,7 +9,6 @@
       "conju": 1
     },
     {
-      "ID": "Feminine",
       "subject": "she",
       "object": "her",
       "poss": "her",
@@ -19,7 +17,6 @@
       "conju": 2
     },
     {
-      "ID": "Masculine",
       "subject": "he",
       "object": "him",
       "poss": "his",
