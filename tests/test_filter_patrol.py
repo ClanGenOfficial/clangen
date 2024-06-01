@@ -1,16 +1,18 @@
 import unittest
 
-import os
-os.environ["SDL_VIDEODRIVER"] = "dummy"
-os.environ["SDL_AUDIODRIVER"] = "dummy"
-
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship
 from scripts.patrol.patrol import PatrolEvent, Patrol
 from scripts.clan import Clan
 
-# TODO: redo them! Filtering is not working like this anymore but it got removed from .github/workflows/test.yml 
+import os
+os.environ["SDL_VIDEODRIVER"] = "dummy"
+os.environ["SDL_AUDIODRIVER"] = "dummy"
+
+
+# TODO: redo them! Filtering is not working like this anymore, but it got removed from .github/workflows/test.yml
 # so they are not failing!
+
 
 class TestRelationshipConstraintPatrols(unittest.TestCase):
 
@@ -26,7 +28,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         self.assertTrue(cat1.is_sibling(cat2))
         self.assertTrue(cat2.is_sibling(cat1))
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraints= ["siblings"]
+        con_patrol_event.relationship_constraints = ["siblings"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
         no_con_patrol_event.relationship_constraints = []
 
@@ -155,8 +157,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         cat1 = Cat()
         cat2 = Cat()
 
-        relationship1 = Relationship(cat1,cat2)
-        relationship2 = Relationship(cat2,cat1)
+        relationship1 = Relationship(cat1, cat2)
+        relationship2 = Relationship(cat2, cat1)
 
         relationship1.romantic_love = 20
         relationship2.romantic_love = 20
@@ -195,8 +197,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         cat1 = Cat()
         cat2 = Cat()
 
-        relationship1 = Relationship(cat1,cat2)
-        relationship2 = Relationship(cat2,cat1)
+        relationship1 = Relationship(cat1, cat2)
+        relationship2 = Relationship(cat2, cat1)
 
         relationship1.platonic_like = 20
         relationship2.platonic_like = 20
@@ -234,8 +236,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         cat1 = Cat()
         cat2 = Cat()
 
-        relationship1 = Relationship(cat1,cat2)
-        relationship2 = Relationship(cat2,cat1)
+        relationship1 = Relationship(cat1, cat2)
+        relationship2 = Relationship(cat2, cat1)
 
         relationship1.dislike = 20
         relationship2.dislike = 20
@@ -274,8 +276,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         cat1 = Cat()
         cat2 = Cat()
 
-        relationship1 = Relationship(cat1,cat2)
-        relationship2 = Relationship(cat2,cat1)
+        relationship1 = Relationship(cat1, cat2)
+        relationship2 = Relationship(cat2, cat1)
 
         relationship1.comfortable = 20
         relationship2.comfortable = 20
@@ -314,8 +316,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         cat1 = Cat()
         cat2 = Cat()
 
-        relationship1 = Relationship(cat1,cat2)
-        relationship2 = Relationship(cat2,cat1)
+        relationship1 = Relationship(cat1, cat2)
+        relationship2 = Relationship(cat2, cat1)
 
         relationship1.jealousy = 20
         relationship2.jealousy = 20
@@ -354,8 +356,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         cat1 = Cat()
         cat2 = Cat()
 
-        relationship1 = Relationship(cat1,cat2)
-        relationship2 = Relationship(cat2,cat1)
+        relationship1 = Relationship(cat1, cat2)
+        relationship2 = Relationship(cat2, cat1)
 
         relationship1.trust = 20
         relationship2.trust = 20
@@ -395,12 +397,12 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         cat2 = Cat()
         cat3 = Cat()
 
-        relationship1_2 = Relationship(cat1,cat2)
-        relationship1_3 = Relationship(cat1,cat3)
-        relationship2_1 = Relationship(cat2,cat1)
-        relationship2_3 = Relationship(cat2,cat3)
-        relationship3_1 = Relationship(cat3,cat1)
-        relationship3_2 = Relationship(cat3,cat2)
+        relationship1_2 = Relationship(cat1, cat2)
+        relationship1_3 = Relationship(cat1, cat3)
+        relationship2_1 = Relationship(cat2, cat1)
+        relationship2_3 = Relationship(cat2, cat3)
+        relationship3_1 = Relationship(cat3, cat1)
+        relationship3_2 = Relationship(cat3, cat2)
 
         relationship1_2.romantic_love = 20
         relationship1_3.romantic_love = 20
@@ -447,7 +449,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         self.assertFalse(patrol._filter_relationship(con_patrol_event))
         self.assertTrue(patrol._filter_relationship(no_con_patrol_event))
 
-
         # when - different relationship values
         cat3.relationships[cat2.ID].romantic_love = 5
         con_patrol_event = PatrolEvent(patrol_id="test1")
@@ -464,8 +465,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         cat1 = Cat()
         cat2 = Cat()
 
-        relationship1 = Relationship(cat1,cat2)
-        relationship2 = Relationship(cat2,cat1)
+        relationship1 = Relationship(cat1, cat2)
+        relationship2 = Relationship(cat2, cat1)
 
         relationship1.romantic_love = 20
         relationship2.romantic_love = 20

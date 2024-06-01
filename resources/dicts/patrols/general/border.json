@@ -529,7 +529,8 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "The patrol comes across a small dog right on the border of c_n territory.",
-        "decline_text": "p_l decides not to pursue the dog and instead cuts the patrol short to head back to camp and report it.",        "chance_of_success": 40,
+        "decline_text": "p_l decides not to pursue the dog and instead cuts the patrol short to head back to camp and report it.",        
+        "chance_of_success": 40,
         "success_outcomes": [
             {
                 "text": "p_l hisses at the small dog, and the rest of {PRONOUN/p_l/poss} small team back {PRONOUN/p_l/object} up. The dog skitters back, yapping loudly, apparently shocked by the display. The patrol breaks out into yowls and caterwauls until the dog loses its nerve and runs from the c_n border into the distance.",
@@ -1921,7 +1922,7 @@
         },
         "weight": 20,
         "chance_of_success": 40,
-        "intro_text": "The patrol reaches o_c's border just as a o_c_n patrol approaches from the other side. The cats of both Clans shift uneasily, waiting for someone to break the silence. app1 perks up when {PRONOUN/app1/subject} {VERB/app1/spot/spots} another apprentice in the o_c_n patrol.",
+        "intro_text": "The patrol reaches o_c_n's border just as a o_c_n patrol approaches from the other side. The cats of both Clans shift uneasily, waiting for someone to break the silence. app1 perks up when {PRONOUN/app1/subject} {VERB/app1/spot/spots} another apprentice in the o_c_n patrol.",
         "decline_text": "p_l quickly marks the border and then steers {PRONOUN/p_l/poss} patrol away from the o_c_n patrol. Best not to risk a confrontation.",
         "success_outcomes": [
             {
@@ -2075,7 +2076,7 @@
                 "art": "gen_bord_twocat_hostile_app_warrior"
             },
             {
-                "text": "app1 glances up at the other apprentice from time to time while marking the border. {PRONOUN/app1/subject/CAP} never {VERB/app1/get/gets} a chance to meow hello, because r_c spots the o_c_n apprentice peering over the border and coolly asks them to focus on their own territory. An o_c_n warrior responds that r_c should concern {PRONOUN/r_c/self} with <i>{PRONOUN/r_c/poss}</i> apprentices, not o_c's. Pelts bristle and ears flatten before the patrols part ways.",
+                "text": "app1 glances up at the other apprentice from time to time while marking the border. {PRONOUN/app1/subject/CAP} never {VERB/app1/get/gets} a chance to meow hello, because r_c spots the o_c_n apprentice peering over the border and coolly asks them to focus on their own territory. An o_c_n warrior responds that r_c should concern {PRONOUN/r_c/self} with <i>{PRONOUN/r_c/poss}</i> apprentices, not o_c_n's. Pelts bristle and ears flatten before the patrols part ways.",
                 "exp": 15,
                 "weight": 20,
                 "other_clan_rep": -2,

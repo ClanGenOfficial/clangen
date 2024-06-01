@@ -782,7 +782,7 @@
         },
         "weight": 10,
         "intro_text": "r_c finds a nice spot to sun {PRONOUN/r_c/self}.",
-        "decline_text": "{PRONOUN/r_c/subject} {VERB/r_c/decide/decides} to stay focused instead.",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} to stay focused instead.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -1570,7 +1570,7 @@
                 ]
             },
             {
-                "text": "s_c doesn't much care what the patrol does - {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} keen to use the opportunity for a slightly different aim. As they all train, s_c casually checks in with {PRONOUN/s_c/poss} fellow warriors about their lives and how they think c_n is doing. It's good to find solutions to problems while they're still small.",
+                "text": "s_c doesn't much care what the patrol does - {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} keen to use the opportunity for a slightly different aim. As they all train, s_c casually checks in with {PRONOUN/s_c/poss} fellow warriors about their lives and how they think c_n is doing. It's good to find solutions to problems while they're still small.",
                 "exp": 60,
                 "weight": 20,
                 "can_have_stat":["any"],
@@ -1611,7 +1611,7 @@
                 ]
             },
             {
-                "text": "s_c doesn't much care what the patrol does - {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} keen to use the opportunity for a slightly different aim. As they all train, s_c casually checks in with {PRONOUN/s_c/poss} fellow warriors about how happy they are with c_n's leadership and if they think the Clan is going in the right direction.",
+                "text": "s_c doesn't much care what the patrol does - {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} keen to use the opportunity for a slightly different aim. As they all train, s_c casually checks in with {PRONOUN/s_c/poss} fellow warriors about how happy they are with c_n's leadership and if they think the Clan is going in the right direction.",
                 "exp": 60,
                 "weight": 20,
                 "can_have_stat":["any"],
@@ -1752,7 +1752,7 @@
                 ]
             },
             {
-                "text": "s_c doesn't much care what the patrol does - {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} keen to use the opportunity for a slightly different aim. As they all train, s_c checks in with {PRONOUN/s_c/poss} fellow warriors, stiffly casual, asking about their lives and impressing on them the need for Clan loyalty. The rest of the patrol takes it as an insult.",
+                "text": "s_c doesn't much care what the patrol does - {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} keen to use the opportunity for a slightly different aim. As they all train, s_c checks in with {PRONOUN/s_c/poss} fellow warriors, stiffly casual, asking about their lives and impressing on them the need for Clan loyalty. The rest of the patrol takes it as an insult.",
                 "exp": 0,
                 "weight": 20,
                 "can_have_stat":["any"],
@@ -10506,8 +10506,9 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-           "normal adult": [1, 6]
-                    },
+            "normal adult": [1, 5],
+            "apprentice": [1, 5]
+        },
         "weight": 20,
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1", "LORE,1"],
@@ -10995,8 +10996,8 @@
                 "weight": 10,
                 "dead_cats": ["app1"],
                 "history_text": {
-                    "scar": "r_c carries a scar from when they fought with a Clanmate as an apprentice.",
-                    "death": "r_c died when they distractedly ran onto the thunderpath as an apprentice."
+                    "scar": "r_c carries a scar from when {PRONOUN/r_c/subject} fought with a Clanmate as an apprentice.",
+                    "death": "r_c died when {PRONOUN/r_c/subject} distractedly ran onto the thunderpath as an apprentice."
                 },
                 "relationships": [
                     {
@@ -11028,7 +11029,7 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "r_c carries a scar from when they fought with a Clanmate as an apprentice.",
+                    "scar": "r_c carries a scar from when {PRONOUN/r_c/subject} fought with a Clanmate as an apprentice.",
                     "death": "r_c died from fighting with a Clanmate as an apprentice."
                 },
                 "relationships": [
@@ -11065,7 +11066,7 @@
         },
         "weight": 20,
         "intro_text": "It is almost dawn when the deputy rouses app1 for {PRONOUN/app1/poss} assessment. {PRONOUN/app1/subject/CAP} are meant to find p_l posing as an enemy warrior somewhere on the territory and handle the situation. p_l could be anywhere!",
-        "decline_text": "app1 sheepishly looks up at the deputy, a guilty gleam in {PRONOUN/app1/poss} eyes, and says that {PRONOUN/app1/subject} have a stomachache. They {PRONOUN/app1/subject/CAP} hurriedly {VERB/app1/run/runs} to the medicine den, wondering how {PRONOUN/app1/subject} are going to get away with this fake illness at sunhigh when the Clan shares tongues.",
+        "decline_text": "app1 sheepishly looks up at the deputy, a guilty gleam in {PRONOUN/app1/poss} eyes, and says that {PRONOUN/app1/subject} {VERB/app1/have/has} a stomachache. {PRONOUN/app1/subject/CAP} hurriedly {VERB/app1/run/runs} to the medicine den, wondering how {PRONOUN/app1/subject} {VERB/app1/are/is} going to get away with this fake illness at sunhigh when the Clan shares tongues.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -11157,7 +11158,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Admittedly, {PRONOUN/app1/subject} knew {PRONOUN/app1/subject} weren't ready. app1 can't find p_l, and by the time sundown approaches, {PRONOUN/app1/poss} mentor appears to take {PRONOUN/app1/object} home. app1 cannot help but feel like a failure after this. Back at camp, {PRONOUN/app1/subject} can see p_l's whiskers twitching in amusement at {PRONOUN/app1/poss} predicament.",
+                "text": "Admittedly, {PRONOUN/app1/subject} knew {PRONOUN/app1/subject} {VERB/app1/weren't/wasn't} ready. app1 can't find p_l, and by the time sundown approaches, {PRONOUN/app1/poss} mentor appears to take {PRONOUN/app1/object} home. app1 cannot help but feel like a failure after this. Back at camp, {PRONOUN/app1/subject} can see p_l's whiskers twitching in amusement at {PRONOUN/app1/poss} predicament.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [

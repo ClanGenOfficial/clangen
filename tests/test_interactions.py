@@ -8,6 +8,7 @@ from scripts.cat_relations.interaction import (
     cats_fulfill_single_interaction_constraints
 )
 
+
 class RelationshipConstraints(unittest.TestCase):
     def test_siblings(self):
         # given
@@ -94,6 +95,7 @@ class RelationshipConstraints(unittest.TestCase):
         self.assertTrue(rel_fulfill_rel_constraints(rel, ["trust_50_lower"], "test"))
         self.assertFalse(rel_fulfill_rel_constraints(rel, ["trust_30_lower"], "test"))
 
+
 class SingleInteractionCatConstraints(unittest.TestCase):
     def test_status(self):
         # given
@@ -117,17 +119,26 @@ class SingleInteractionCatConstraints(unittest.TestCase):
 
         # then
         for game_mode in ["classic", "expanded", "cruel season"]:
-            self.assertTrue(cats_fulfill_single_interaction_constraints(warrior, warrior, warrior_to_all, game_mode))
-            self.assertTrue(cats_fulfill_single_interaction_constraints(warrior, warrior, warrior_to_warrior, game_mode))
-            self.assertFalse(cats_fulfill_single_interaction_constraints(warrior, warrior, medicine_to_warrior, game_mode))
+            self.assertTrue(cats_fulfill_single_interaction_constraints(
+                warrior, warrior, warrior_to_all, game_mode))
+            self.assertTrue(cats_fulfill_single_interaction_constraints(
+                warrior, warrior, warrior_to_warrior, game_mode))
+            self.assertFalse(cats_fulfill_single_interaction_constraints(
+                warrior, warrior, medicine_to_warrior, game_mode))
 
-            self.assertTrue(cats_fulfill_single_interaction_constraints(warrior, medicine, warrior_to_all, game_mode))
-            self.assertFalse(cats_fulfill_single_interaction_constraints(warrior, medicine, warrior_to_warrior, game_mode))
-            self.assertFalse(cats_fulfill_single_interaction_constraints(warrior, medicine, medicine_to_warrior, game_mode))
+            self.assertTrue(cats_fulfill_single_interaction_constraints(
+                warrior, medicine, warrior_to_all, game_mode))
+            self.assertFalse(cats_fulfill_single_interaction_constraints(
+                warrior, medicine, warrior_to_warrior, game_mode))
+            self.assertFalse(cats_fulfill_single_interaction_constraints(
+                warrior, medicine, medicine_to_warrior, game_mode))
 
-            self.assertFalse(cats_fulfill_single_interaction_constraints(medicine, warrior, warrior_to_all, game_mode))
-            self.assertFalse(cats_fulfill_single_interaction_constraints(medicine, warrior, warrior_to_warrior, game_mode))
-            self.assertTrue(cats_fulfill_single_interaction_constraints(medicine, warrior, medicine_to_warrior, game_mode))
+            self.assertFalse(cats_fulfill_single_interaction_constraints(
+                medicine, warrior, warrior_to_all, game_mode))
+            self.assertFalse(cats_fulfill_single_interaction_constraints(
+                medicine, warrior, warrior_to_warrior, game_mode))
+            self.assertTrue(cats_fulfill_single_interaction_constraints(
+                medicine, warrior, medicine_to_warrior, game_mode))
 
     def test_trait(self):
         # given
@@ -144,7 +155,6 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         all_to_calm = Single_Interaction("test")
         all_to_calm.main_trait_constraint = ["troublesome", "calm"]
         all_to_calm.random_trait_constraint = ["calm"]
-
 
         # then
         for game_mode in ["classic", "expanded", "cruel season"]:
@@ -172,7 +182,6 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         all_to_hunter = Single_Interaction("test")
         all_to_hunter.main_skill_constraint = ["good fighter", "good hunter"]
         all_to_hunter.random_skill_constraint = ["good hunter"]
-
 
         # then
         for game_mode in ["classic", "expanded", "cruel season"]:
