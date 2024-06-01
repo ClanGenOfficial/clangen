@@ -1437,8 +1437,8 @@
     "tags0": []
   },
   "Pebble": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["element", "earth"]
   },
   "Perch": {
     "variants": 0,
@@ -1701,8 +1701,8 @@
     "tags0": []
   },
   "Scale": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["animal"]
   },
   "Scorch": {
     "variants": 0, 
@@ -1725,8 +1725,8 @@
     "tags0": []
   },
   "Shade": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["animal", "cat"]
   },
   "Shadow": {
     "variants": 1,
@@ -1909,8 +1909,8 @@
     "tags0": ["animal", "bug"]
   }, 
   "Spike": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["miscellaneous"]
   },
   "Spindle": {
     "variants": 0,
@@ -1969,16 +1969,16 @@
     "tags0": []
   },
   "Stone": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["element", "earth"]
   },
   "Stork": {
     "variants": 0,
     "tags0": []
   },
   "Storm": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["element", "air", "water"]
   },
   "Streak": {
     "variants": 0,
@@ -2013,8 +2013,8 @@
     "tags0": []
   },
   "Swan": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["animal", "bird"]
   },
   "Swarm": {
     "variants": 0,
@@ -2221,16 +2221,16 @@
     "tags0": []
   }, 
   "Whisper": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["animal", "cat"]
   }, 
   "Whispering": {
     "variants": 0,
     "tags0": []
   }, 
   "Whistle": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["animal", "mammal"]
   }, 
   "Whorl": {
     "variants": 1,
@@ -2257,8 +2257,8 @@
     "tags0": []
   },
   "Wisp": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["element", "air"]
   },
   "Wisteria": {
     "variants": 1,
