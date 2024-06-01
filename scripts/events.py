@@ -352,6 +352,9 @@ class Events:
                     for cat_ID in invited_cats:
                         invited_cat = Cat.fetch_cat(cat_ID)
                         if invited_cat.status.lower() in ["kittypet", "loner", "rogue", "former clancat", "exiled"]:
+                            if "guided" in invited_cat.backstory and invited_cat.status != "exiled":
+                                invited_cat.backstory = "outsider1"
+
                             if invited_cat.backstory in BACKSTORIES["backstory_categories"]["healer_backstories"]:
                                 invited_cat.status = "medicine cat"
 
@@ -377,8 +380,7 @@ class Events:
                             else:
                                 invited_cat.status = "warrior"
 
-                            if "guided" in invited_cat.backstory:
-                                invited_cat.backstory = "outsider1"
+
 
                         invited_cat.create_relationships_new_cat()
 
