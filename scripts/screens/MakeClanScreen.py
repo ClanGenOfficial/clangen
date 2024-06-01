@@ -1179,7 +1179,7 @@ class MakeClanScreen(Screens):
                                                                         (200, 200)), manager=MANAGER)
         self.elements["continue"] = UIImageButton(scale(pygame.Rect((692, 500), (204, 60))), "",
                                                   object_id="#continue_button_small",
-                                                  sound_id="save_button")
+                                                  sound_id="save")
         self.elements["save_confirm"] = pygame_gui.elements.UITextBox('Your Clan has been created and saved!',
                                                                       scale(pygame.Rect((200, 140), (1200, 60))),
                                                                       object_id=get_text_box_theme(
