@@ -846,9 +846,9 @@ class MakeClanScreen(Screens):
                 manager=MANAGER,
             )
             self.tabs["tab4"] = UIImageButton(
-              scale(pygame.Rect((215, 570), (308, 60))), 
-              "", 
-              object_id="#ruins_tab", 
+              scale(pygame.Rect((215, 570), (308, 60))),
+              "",
+              object_id="#ruins_tab",
               manager=MANAGER
             )
         elif self.biome_selected == "Plains":
@@ -1202,6 +1202,7 @@ class MakeClanScreen(Screens):
             "",
             object_id="#random_dice_button",
             manager=MANAGER,
+            sound_id="dice_roll",
         )
 
         self.elements["error"] = pygame_gui.elements.UITextBox(
@@ -1280,6 +1281,7 @@ class MakeClanScreen(Screens):
             "",
             object_id="#random_dice_button",
             manager=MANAGER,
+            sound_id="dice_roll",
         )
         y_pos += 80
         self.elements["roll2"] = UIImageButton(
@@ -1287,6 +1289,7 @@ class MakeClanScreen(Screens):
             "",
             object_id="#random_dice_button",
             manager=MANAGER,
+            sound_id="dice_roll",
         )
         y_pos += 80
         self.elements["roll3"] = UIImageButton(
@@ -1294,6 +1297,7 @@ class MakeClanScreen(Screens):
             "",
             object_id="#random_dice_button",
             manager=MANAGER,
+            sound_id="dice_roll",
         )
 
         _tmp = 160
@@ -1304,6 +1308,7 @@ class MakeClanScreen(Screens):
             "",
             object_id="#random_dice_button",
             manager=MANAGER,
+            sound_id="dice_roll",
         )
         del _tmp
         self.elements["reroll_count"] = pygame_gui.elements.UILabel(
@@ -1870,6 +1875,7 @@ class MakeClanScreen(Screens):
             scale(pygame.Rect((692, 500), (204, 60))),
             "",
             object_id="#continue_button_small",
+            sound_id="save_button",
         )
         self.elements["save_confirm"] = pygame_gui.elements.UITextBox(
             "Your Clan has been created and saved!",

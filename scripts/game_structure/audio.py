@@ -228,7 +228,7 @@ class _SoundManager():
         """
         assigns universal sound effects to event.type objects
         SHOULD NOT BE USED FOR INDIVIDUAL UNIQUE BUTTON SOUNDS
-        UIImageButtons have sound_id parameter for assigning unique sounds to individual buttons
+        UIImageButtons have a sound_id parameter for assigning unique sounds to individual buttons
         :param event: the event that is taking place
         """
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:

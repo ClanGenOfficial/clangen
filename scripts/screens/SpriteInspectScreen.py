@@ -139,12 +139,14 @@ class SpriteInspectScreen(Screens):
             "",
             object_id="#next_cat_button",
             manager=MANAGER,
+            sound_id="page_flip",
         )
         self.previous_cat_button = UIImageButton(
             scale(pygame.Rect((50, 50), (306, 60))),
             "",
             object_id="#previous_cat_button",
             manager=MANAGER,
+            sound_id="page_flip",
         )
         self.back_button = UIImageButton(
             scale(pygame.Rect((50, 120), (210, 60))),

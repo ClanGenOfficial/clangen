@@ -239,11 +239,13 @@ class MediationScreen(Screens):
             scale(pygame.Rect((396, 864), (68, 68))),
             "",
             object_id="#random_dice_button",
+            sound_id="dice_roll",
         )
         self.random2 = UIImageButton(
             scale(pygame.Rect((1136, 864), (68, 68))),
             "",
             object_id="#random_dice_button",
+            sound_id="dice_roll",
         )
 
         self.search_bar_image = pygame_gui.elements.UIImage(

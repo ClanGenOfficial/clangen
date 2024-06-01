@@ -52,7 +52,7 @@ class PatrolScreen(Screens):
     def handle_event(self, event):
         if game.switches["window_open"]:
             return
-        
+
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if self.patrol_stage == "choose_cats":
                 self.handle_choose_cats_events(event)
@@ -92,7 +92,7 @@ class PatrolScreen(Screens):
             if len(self.current_patrol) < 6:
                 if not game.clan.clan_settings['random med cat']:
                     able_no_med = [cat for cat in self.able_cats if
-                                cat.status not in ['medicine cat', 'medicine cat apprentice']]
+                                   cat.status not in ['medicine cat', 'medicine cat apprentice']]
                     if len(able_no_med) == 0:
                         able_no_med = self.able_cats
                     self.selected_cat = choice(able_no_med)
@@ -106,7 +106,7 @@ class PatrolScreen(Screens):
             if len(self.current_patrol) <= 3:
                 if not game.clan.clan_settings['random med cat']:
                     able_no_med = [cat for cat in self.able_cats if
-                                cat.status not in ['medicine cat', 'medicine cat apprentice']]
+                                   cat.status not in ['medicine cat', 'medicine cat apprentice']]
                     if len(able_no_med) < 3:
                         able_no_med = self.able_cats
                     self.current_patrol += sample(able_no_med, k=3)
@@ -118,7 +118,7 @@ class PatrolScreen(Screens):
             if len(self.current_patrol) == 0:
                 if not game.clan.clan_settings['random med cat']:
                     able_no_med = [cat for cat in self.able_cats if
-                                cat.status not in ['medicine cat', 'medicine cat apprentice']]
+                                   cat.status not in ['medicine cat', 'medicine cat apprentice']]
                     if len(able_no_med) < 6:
                         able_no_med = self.able_cats
                     self.current_patrol += sample(able_no_med, k=6)
@@ -203,17 +203,17 @@ class PatrolScreen(Screens):
             self.mate = self.selected_cat.mate[self.selected_mate_index]
             self.update_selected_cat()
             self.update_button()
-            
+
     def handle_patrol_events_event(self, event):
-        
+
         inp = None
-        if event.ui_element == self.elements["proceed"]:            
+        if event.ui_element == self.elements["proceed"]:
             inp = "proceed"
         elif event.ui_element == self.elements["not_proceed"]:
             inp = "notproceed"
         elif event.ui_element == self.elements["antagonize"]:
             inp = "antagonize"
-        
+
         if inp:
             self.proceed_patrol_thread = self.loading_screen_start_work(self.run_patrol_proceed, "proceed", (inp,))
 
@@ -404,18 +404,26 @@ class PatrolScreen(Screens):
         self.elements["add_remove_cat"].disable()
 
         # Randomizing buttons
-        self.elements["random"] = UIImageButton(scale(pygame.Rect((646, 990), (68, 68))), "",
-                                                object_id="#random_dice_button"
-                                                , manager=MANAGER)
-        self.elements["add_one"] = UIImageButton(scale(pygame.Rect((726, 990), (68, 68))), "",
-                                                 object_id="#add_one_button"
-                                                 , manager=MANAGER)
-        self.elements["add_three"] = UIImageButton(scale(pygame.Rect((806, 990), (68, 68))), "",
-                                                   object_id="#add_three_button"
-                                                   , manager=MANAGER)
-        self.elements["add_six"] = UIImageButton(scale(pygame.Rect((886, 990), (68, 68))), "",
-                                                 object_id="#add_six_button"
-                                                 , manager=MANAGER)
+        self.elements["random"] = UIImageButton(
+            scale(pygame.Rect((646, 990), (68, 68))), "",
+            object_id="#random_dice_button",
+            manager=MANAGER,
+            sound_id="dice_roll")
+        self.elements["add_one"] = UIImageButton(
+            scale(pygame.Rect((726, 990), (68, 68))), "",
+            object_id="#add_one_button",
+            manager=MANAGER,
+            sound_id="dice_roll")
+        self.elements["add_three"] = UIImageButton(
+            scale(pygame.Rect((806, 990), (68, 68))), "",
+            object_id="#add_three_button",
+            manager=MANAGER,
+            sound_id="dice_roll")
+        self.elements["add_six"] = UIImageButton(
+            scale(pygame.Rect((886, 990), (68, 68))), "",
+            object_id="#add_six_button",
+            manager=MANAGER,
+            sound_id="dice_roll")
 
         # patrol type buttons - disabled for now
         self.elements['paw'] = UIImageButton(scale(pygame.Rect((646, 1120), (68, 68))), "",
@@ -473,12 +481,12 @@ class PatrolScreen(Screens):
 
         # add prey information
         if game.clan.game_mode != 'classic':
-            current_amount =  round(game.clan.freshkill_pile.total_amount,2)
+            current_amount = round(game.clan.freshkill_pile.total_amount, 2)
             self.elements['current_prey'] = pygame_gui.elements.UITextBox(
                 f"current prey: {current_amount}", scale(pygame.Rect((600, 1260), (400, 800))),
                 object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER
             )
-            needed_amount = round(game.clan.freshkill_pile.amount_food_needed(),2)
+            needed_amount = round(game.clan.freshkill_pile.amount_food_needed(), 2)
             self.elements['needed_prey'] = pygame_gui.elements.UITextBox(
                 f"needed prey: {needed_amount}", scale(pygame.Rect((600, 1295), (400, 800))),
                 object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER
@@ -492,7 +500,7 @@ class PatrolScreen(Screens):
             self.display_text = self.patrol_obj.setup_patrol(self.current_patrol, self.patrol_type)
         except RuntimeError:
             self.display_text = None
-        
+
     def open_patrol_event_screen(self):
         """Open the patrol event screen. This sets up the patrol starting"""
         self.clear_page()
@@ -523,19 +531,17 @@ class PatrolScreen(Screens):
                                                                        pygame.image.load(
                                                                            "resources/images/patrol_sprite_frame.png").convert_alpha(),
                                                                        (640, 640)
-                                                                   ), manager=MANAGER) 
-
+                                                                   ), manager=MANAGER)
 
         self.elements['intro_image'] = pygame_gui.elements.UIImage(
-                        scale(pygame.Rect((150, 300), (600, 600))),
-                        pygame.transform.scale(
-                            self.patrol_obj.get_patrol_art(), (600, 600))
-                    )
-        
+            scale(pygame.Rect((150, 300), (600, 600))),
+            pygame.transform.scale(
+                self.patrol_obj.get_patrol_art(), (600, 600))
+        )
 
         # Prepare Intro Text
         # adjusting text for solo patrols
-        #intro_text = adjust_patrol_text(intro_text, self.patrol_obj)
+        # intro_text = adjust_patrol_text(intro_text, self.patrol_obj)
         self.elements["patrol_text"] = pygame_gui.elements.UITextBox(self.display_text,
                                                                      scale(pygame.Rect((770, 345), (670, 500))),
                                                                      object_id="#text_box_30_horizleft_pad_10_10_spacing_95",
@@ -551,10 +557,10 @@ class PatrolScreen(Screens):
         for x in self.patrol_obj.patrol_cats:
             if x.personality.trait not in traits:
                 traits.append(x.personality.trait)
-            
+
             if x.skills.primary and x.skills.primary.get_short_skill() not in skills:
                 skills.append(x.skills.primary.get_short_skill())
-                
+
             if x.skills.secondary and x.skills.secondary.get_short_skill() not in skills:
                 skills.append(x.skills.secondary.get_short_skill())
 
@@ -598,7 +604,7 @@ class PatrolScreen(Screens):
 
     def run_patrol_proceed(self, user_input):
         """Proceeds the patrol - to be run in the seperate thread. """
-        
+
         if user_input in ["nopro", "notproceed"]:
             self.display_text, self.results_text, self.outcome_art = self.patrol_obj.proceed_patrol("decline")
         elif user_input in ["antag", "antagonize"]:
@@ -618,7 +624,7 @@ class PatrolScreen(Screens):
                                                      object_id="#return_to_clan", manager=MANAGER)
         self.elements['patrol_again'] = UIImageButton(scale(pygame.Rect((1120, 274), (324, 60))), "",
                                                       object_id="#patrol_again", manager=MANAGER)
-                
+
         # Update patrol art, if needed.
         if self.outcome_art is not None and self.elements.get('intro_image') is not None:
             self.elements['intro_image'].set_image(self.outcome_art)
@@ -733,10 +739,10 @@ class PatrolScreen(Screens):
             for x in self.current_patrol:
                 if x.skills.primary and x.skills.primary.get_short_skill() not in patrol_skills:
                     patrol_skills.append(x.skills.primary.get_short_skill())
-                
+
                 if x.skills.secondary and x.skills.secondary.get_short_skill() not in patrol_skills:
                     patrol_skills.append(x.skills.secondary.get_short_skill())
-                
+
                 if x.personality.trait not in patrol_traits:
                     patrol_traits.append(x.personality.trait)
 
@@ -821,8 +827,10 @@ class PatrolScreen(Screens):
                                                                            manager=MANAGER)
 
             self.elements['selected_bio'] = pygame_gui.elements.UITextBox(str(self.selected_cat.status) +
-                                                                          "\n" + str(self.selected_cat.personality.trait) +
-                                                                          "\n" + str(self.selected_cat.skills.skill_string(short=True)) +
+                                                                          "\n" + str(
+                self.selected_cat.personality.trait) +
+                                                                          "\n" + str(
+                self.selected_cat.skills.skill_string(short=True)) +
                                                                           "\n" + str(
                 self.selected_cat.experience_level) +
                                                                           (f' ({str(self.selected_cat.experience)})' if
@@ -877,7 +885,6 @@ class PatrolScreen(Screens):
                         object_id="#arrow_right_button",
                         manager=MANAGER)
                     self.update_button()
-
 
             # Draw mentor or apprentice
             relation = "should not display"
@@ -961,7 +968,7 @@ class PatrolScreen(Screens):
         self.hide_menu_buttons()
 
     def on_use(self):
-        
+
         self.loading_screen_on_use(self.start_patrol_thread, self.open_patrol_event_screen, (700, 500))
         self.loading_screen_on_use(self.proceed_patrol_thread, self.open_patrol_complete_screen, (350, 500))
 
@@ -974,6 +981,3 @@ class PatrolScreen(Screens):
         # Removes duplicates.
         patrol_set = list(patrol_list)
         return ", ".join(patrol_set)
-
-
-

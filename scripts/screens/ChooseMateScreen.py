@@ -220,9 +220,10 @@ class ChooseMateScreen(Screens):
             scale(pygame.Rect((50, 50), (306, 60))),
             "",
             object_id="#previous_cat_button",
+            sound_id="page_flip",
         )
         self.next_cat_button = UIImageButton(
-            scale(pygame.Rect((1244, 50), (306, 60))), "", object_id="#next_cat_button"
+            scale(pygame.Rect((1244, 50), (306, 60))), "", object_id="#next_cat_button", sound_id="page_flip",
         )
         self.back_button = UIImageButton(
             scale(pygame.Rect((50, 1290), (210, 60))), "", object_id="#back_button"
