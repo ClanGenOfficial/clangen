@@ -186,11 +186,11 @@
         },
         "weight": 20,
         "intro_text": "Hmm. p_l heads out, deciding that c_n needs more blackberry leaves in their stores.",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "While blackberries don't lose their leaves completely, leaf-bare is hard on any plant. p_l has to balance the plant's needs, the Clan's needs, and their own frozen paws, as they try to gather what they can.",
+                "text": "While blackberries don't lose their leaves completely, leaf-bare is hard on any plant. p_l has to balance the plant's needs, the Clan's needs, and {PRONOUN/p_l/poss} own frozen paws, as {PRONOUN/p_l/subject} try to gather what they can.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["blackberry"]
@@ -211,7 +211,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The blackberry bramble has died back, withered and dry, and p_l can't get any fresh leaves from this. They note with growing concern that leaf-bare might have killed the plant.",
+                "text": "The blackberry bramble has died back, withered and dry, and p_l can't get any fresh leaves from this. {PRONOUN/p_l/subject/CAP} {VERB/p_l/note/notes} with growing concern that leaf-bare might have killed the plant.",
                 "exp": 0,
                 "weight": 20
             },
