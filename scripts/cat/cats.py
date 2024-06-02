@@ -1901,8 +1901,8 @@ class Cat():
             if self.is_injured():
                 for y in self.injuries:
                     illness_infect = list(
-                        filter(lambda ill: ill["name"] == illness_name, self.injuries[y]["illness_infectiousness"]))
-                    if illness_infect is not None and len(illness_infect) > 0:
+                        filter(lambda ill: ill["name"] == illness_name, self.injuries[y]["illness_infectiousness"])) #pylint: disable=cell-var-from-loop
+                    if illness_infect is not None and len(illness_infect) > 0: #pylint: disable=cell-var-from-loop
                         illness_infect = illness_infect[0]
                         rate -= illness_infect["lower_by"]
 
