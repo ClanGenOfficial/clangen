@@ -5,15 +5,15 @@ import os.path
 import itertools
 import sys
 
-from .history import History
-from .skills import CatSkills
-from ..housekeeping.datadir import get_save_dir
-from ..events_module.generate_events import GenerateEvents
+from scripts.cat.history import History
+from scripts.cat.skills import CatSkills
+from scripts.housekeeping.datadir import get_save_dir
+from scripts.events_module.generate_events import GenerateEvents
 
 import ujson # type: ignore
 
-from .names import Name
-from .pelts import Pelt
+from scripts.cat.names import Name
+from scripts.cat.pelts import Pelt
 from scripts.conditions import Illness, Injury, PermanentCondition, get_amount_cat_for_one_medic, \
     medical_cats_condition_fulfilled
 import bisect
@@ -24,7 +24,7 @@ from scripts.game_structure.game_essentials import game, screen
 from scripts.cat_relations.relationship import Relationship
 from scripts.game_structure import image_cache
 from scripts.event_class import Single_Event
-from .thoughts import Thoughts
+from scripts.cat.thoughts import Thoughts
 from scripts.cat_relations.inheritance import Inheritance
 
 
