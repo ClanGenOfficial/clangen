@@ -210,7 +210,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Though {PRONOUN/n_c:0/subject} decline politely, the descriptions of Clan life seem to have frightened the kittypet.",
+                "text": "Though {PRONOUN/n_c:0/subject} {VERB/n_c:0/decline/declines} politely, the descriptions of Clan life seem to have frightened the kittypet.",
                 "exp": 0,
                 "weight": 20,
                 "outsider_rep": 0,

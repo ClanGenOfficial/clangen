@@ -5001,7 +5001,7 @@
         },
         "weight": 20,
         "intro_text": "As newleaf brings green to c_n's lands, p_l goes out in a search for tansy. They bring app1 with them for an important lesson on its use.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -5049,7 +5049,7 @@
                 ]
             },
             {
-                "text": "Tansy might smell sharp enough to be enjoyed freshening up dens, but it sure tastes... interesting. s_c isn't sure they'll ever get used to it, but at least it's a reminder to be careful around the potentially poisonous herb, and app1 thankfully seems to be taking the appropriate amount of care harvesting it.",
+                "text": "Tansy might smell sharp enough to be enjoyed freshening up dens, but it sure tastes... interesting. s_c isn't sure {PRONOUN/s_c/subject}'ll ever get used to it, but at least it's a reminder to be careful around the potentially poisonous herb, and app1 thankfully seems to be taking the appropriate amount of care harvesting it.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -5074,7 +5074,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Try as they might, p_l can't quite remember the exact shape of the tansy leaves, and {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as they say.",
+                "text": "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the tansy leaves, and {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as they say.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
