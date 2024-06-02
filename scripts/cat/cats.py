@@ -678,7 +678,6 @@ class Cat:
 
             # Negative "grief" messages are just for flavor. 
             high_values = []
-            very_high_values = []
             if to_self.dislike > 50:
                 high_values.append("dislike")
 
@@ -3040,7 +3039,7 @@ class Cat:
 #                               PERSONALITY CLASS                              #
 # ---------------------------------------------------------------------------- #
 
-class Personality():
+class Personality:
     """Hold personality information for a cat, and functions to deal with it """
     facet_types = ["lawfulness", "sociability", "aggression", "stability"]
     facet_range = [0, 16]
@@ -3280,7 +3279,7 @@ class Personality():
             amount_affected = int(
                 possible_facets[facet_affected] / abs(possible_facets[facet_affected]) * randint(1, 2))
             self[facet_affected] += amount_affected
-            return (mentor.ID, facet_affected, amount_affected)
+            return mentor.ID, facet_affected, amount_affected
         else:
             # This will only trigger if they have the same personality.
             return None
