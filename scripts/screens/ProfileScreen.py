@@ -1065,10 +1065,7 @@ class ProfileScreen(Screens):
         output = ""
         if self.open_sub_tab == 'life events':
             # start our history with the backstory, since all cats get one
-            if self.the_cat.status not in ["rogue", "kittypet", "loner", "former Clancat"]:
-                life_history = [str(self.get_backstory_text())]
-            else:
-                life_history = []
+            life_history = [str(self.get_backstory_text())]
 
             # now get apprenticeship history and add that if any exists
             app_history = self.get_apprenticeship_text()
@@ -1110,23 +1107,26 @@ class ProfileScreen(Screens):
         bs_blurb = None
         if self.the_cat.backstory:
             bs_blurb = BACKSTORIES["backstories"][self.the_cat.backstory]
-        if self.the_cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:
+        if self.the_cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat'] and self.the_cat.dead:
+            bs_blurb = f"This cat was a {self.the_cat.status} in life."
+        elif self.the_cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:
             bs_blurb = f"This cat is a {self.the_cat.status} and currently resides outside of the Clans."
 
         if bs_blurb is not None:
             adjust_text = str(bs_blurb).replace('This cat', str(self.the_cat.name))
             text = adjust_text
         else:
-            text = str(self.the_cat.name) + " was born into the Clan where {PRONOUN/m_c/subject} currently reside."
+            text = str(self.the_cat.name) + "'s past history is unknown."
 
-        beginning = History.get_beginning(self.the_cat)
-        if beginning:
-            if beginning['clan_born']:
-                text += " {PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} born on Moon " + str(
-                    beginning['moon']) + " during " + str(beginning['birth_season']) + "."
-            else:
-                text += " {PRONOUN/m_c/subject/CAP} joined the Clan on Moon " + str(
-                    beginning['moon']) + " at the age of " + str(beginning['age']) + " Moons."
+        if not self.the_cat.dead and self.the_cat.status not in ['kittypet', 'loner', 'rogue', 'former Clancat']:
+            beginning = History.get_beginning(self.the_cat)
+            if beginning:
+                if beginning['clan_born']:
+                    text += " {PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} born on Moon " + str(
+                        beginning['moon']) + " during " + str(beginning['birth_season']) + "."
+                else:
+                    text += " {PRONOUN/m_c/subject/CAP} joined the Clan on Moon " + str(
+                        beginning['moon']) + " at the age of " + str(beginning['age']) + " Moons."
 
         text = process_text(text, cat_dict)
         return text
