@@ -459,7 +459,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find a poor old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. p_l doesn't know where their Twoleg is, but offers to bring the stranger back to camp, where medicine can help them.",
+                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find a poor old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. p_l doesn't know where {PRONOUN/n_c:0/poss} Twoleg is, but offers to bring the stranger back to camp, where medicine can help {PRONOUN/n_c:0/object}.",
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
