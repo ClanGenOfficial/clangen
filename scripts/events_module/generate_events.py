@@ -100,7 +100,7 @@ class GenerateEvents:
                         sub_type=event["sub_type"] if "sub_type" in event else [],
                         tags=event["tags"] if "tags" in event else [],
                         weight=event["weight"] if "weight" in event else 20,
-                        event_text=event_text,
+                        text=event_text,
                         new_accessory=event["new_accessory"] if "new_accessory" in event else [],
                         m_c=event["m_c"] if "m_c" in event else {},
                         r_c=event["r_c"] if "r_c" in event else {},
@@ -573,33 +573,34 @@ class GenerateEvents:
                     else:  # if supply type wasn't freshkill, then it must be a herb type
                         herbs = game.clan.herbs
                         needed_amount = int(clan_size * 3)
+                        entire_supply_needed_amount = needed_amount * len(herbs.keys())
                         discard = True
 
                         if supply_type == "all_herb":
                             if "low" in trigger:
                                 for herb in herbs:
-                                    if herbs[herb] < needed_amount / 2:
+                                    if herbs[herb] < entire_supply_needed_amount / 2:
                                         discard = False
                                     else:
                                         discard = True
                                         break
                             if "adequate" in trigger:
                                 for herb in herbs:
-                                    if needed_amount / 2 < herbs[herb] < needed_amount:
+                                    if entire_supply_needed_amount / 2 < herbs[herb] < entire_supply_needed_amount:
                                         discard = False
                                     else:
                                         discard = True
                                         break
                             if "full" in trigger:
                                 for herb in herbs:
-                                    if needed_amount < herbs[herb] < needed_amount * 2:
+                                    if entire_supply_needed_amount < herbs[herb] < entire_supply_needed_amount * 2:
                                         discard = False
                                     else:
                                         discard = True
                                         break
                             if "excess" in trigger:
                                 for herb in herbs:
-                                    if needed_amount * 2 < herbs[herb]:
+                                    if entire_supply_needed_amount * 2 < herbs[herb]:
                                         discard = False
                                     else:
                                         discard = True
@@ -693,7 +694,7 @@ class GenerateEvents:
 class ShortEvent:
     """
     A moon event that only affects the moon it was triggered on.  Can involve two cats directly and be restricted by various constraints.
-    - full documentation available on github wiki
+    - full documentation available on GitHub wiki
     """
 
     def __init__(
@@ -705,7 +706,7 @@ class ShortEvent:
             sub_type=None,
             tags=None,
             weight=0,
-            event_text="",
+            text="",
             new_accessory=None,
             m_c=None,
             r_c=None,
@@ -726,7 +727,7 @@ class ShortEvent:
         self.sub_type = sub_type if sub_type else []
         self.tags = tags if tags else []
         self.weight = weight
-        self.event_text = event_text
+        self.text = text
         self.new_accessory = new_accessory
         self.m_c = m_c if m_c else {
             "age": ["any"]

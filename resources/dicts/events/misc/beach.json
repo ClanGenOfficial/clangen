@@ -60,7 +60,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["leaf-bare"],
-    "weight": 5,
+    "weight": 1,
     "event_text": "A huge wave crashes into camp, leaving everyone soaked and the herb stores irreparably damaged.",
     "supplies": [
       {

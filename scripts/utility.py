@@ -1274,6 +1274,8 @@ def unpack_rel_block(Cat, relationship_effects: List[dict], event, stat_cat=None
             print(f"Relationship block incorrectly formatted: {block}")
             continue
 
+        positive = False
+
         # grabbing values
         romantic_love = 0
         platonic_like = 0
@@ -1284,22 +1286,41 @@ def unpack_rel_block(Cat, relationship_effects: List[dict], event, stat_cat=None
         trust = 0
         if "romantic" in values:
             romantic_love = amount
+            if amount > 0:
+                positive = True
         if "platonic" in values:
             platonic_like = amount
+            if amount > 0:
+                positive = True
         if "dislike" in values:
             dislike = amount
+            if amount < 0:
+                positive = True
         if "comfort" in values:
             comfortable = amount
+            if amount > 0:
+                positive = True
         if "jealous" in values:
             jealousy = amount
+            if amount < 0:
+                positive = True
         if "trust" in values:
             trust = amount
+            if amount > 0:
+                positive = True
         if "respect" in values:
             admiration = amount
+            if amount > 0:
+                positive = True
 
         # TODO: i don't think this works?  need to add something that pulls event text
         #  and then checks if it was a pos or neg rel event to add the correct effect indicator
         #  i.e. (positive effect), (negative effect) as well as the "cat.name was cat.moons moons old"
+        if positive:
+            effect = f" (positive effect)"
+        else:
+            effect = f" (negative effect)"
+
         """  # this is what was used in injury code
                         pos_rel_event = ["romantic", "platonic", "neg_dislike", "respect", "comfort", "neg_jealousy", "trust"]
                 neg_rel_event = ["neg_romantic", "neg_platonic", "dislike", "neg_respect", "neg_comfort", "jealousy",
@@ -1332,6 +1353,11 @@ def unpack_rel_block(Cat, relationship_effects: List[dict], event, stat_cat=None
                     log1 = log[0]
             else:
                 print(f"something is wrong with relationship log: {log}")
+
+        if not log1:
+            log1 = event.text + effect
+        if not log2:
+            log2 = event.text + effect
 
         change_relationship_values(
             cats_to_ob,
@@ -1440,7 +1466,15 @@ def change_relationship_values(cats_to: list,
                   " /Trust: " + str(trust)) if changed else print("No relationship change")'''
 
             if log and isinstance(log, str):
-                rel.log.append(log)
+                print(log)
+                if single_cat_to.moons <= 1:
+                    log_text = log + f"- {single_cat_to.name} was {single_cat_to.moons} moon old"
+                    if log_text not in rel.log:
+                        rel.log.append(log_text)
+                else:
+                    log_text = log + f"- {single_cat_to.name} was {single_cat_to.moons} moons old"
+                    if log_text not in rel.log:
+                        rel.log.append(log_text)
 
 
 # ---------------------------------------------------------------------------- #

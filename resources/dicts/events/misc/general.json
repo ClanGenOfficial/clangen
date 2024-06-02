@@ -3308,7 +3308,7 @@
     "camp": ["any"],
     "season": ["any"],
     "subtype": ["war"],
-    "weight": 10,
+    "weight": 1,
     "event_text": "o_c_n breaks into the camp and ravages the herb stores, taking some for themselves and destroying the rest.",
     "supplies": [
       {
@@ -3327,7 +3327,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["any"],
-    "weight": 5,
+    "weight": 1,
     "event_text": "Some sort of pest got into the herb stores and completely destroyed them. c_n will have to clean it out and start over anew.",
     "supplies": [
       {
@@ -3342,7 +3342,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["any"],
-    "weight": 5,
+    "weight": 1,
     "event_text": "Abnormally strong winds blew through the camp last night and scattered the herb store into a useless state.",
     "supplies": [
       {
@@ -3357,7 +3357,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["any"],
-    "weight": 5,
+    "weight": 1,
     "event_text": "Some kind of blight has infected the herb stores. c_n has no choice but to clear out all the old herbs.",
     "supplies": [
       {
@@ -3372,7 +3372,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["leaf-bare"],
-    "weight": 5,
+    "weight": 1,
     "event_text": "Freezing temperatures have not just affected the cats. It's also frostbitten the stored herbs. They're useless now and will have to be replaced.",
     "supplies": [
       {
@@ -3387,7 +3387,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["newleaf"],
-    "weight": 5,
+    "weight": 1,
     "event_text": "The newleaf rain has left the air humid and the whole camp damp. The herb stores are found to be growing mold and have to be thrown out.",
     "supplies": [
       {
@@ -3402,7 +3402,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["greenleaf"],
-    "weight": 5,
+    "weight": 1,
     "event_text": "The persistent, dry heat managed to cause a small fire in the herb stores. While no one was injured, the herbs are little more than ashes now.",
     "supplies": [
       {

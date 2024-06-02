@@ -25,6 +25,7 @@ class HandleShortEvents():
     def __init__(self):
         self.types = []
         self.sub_types = []
+        self.text = None
 
         # cats
         self.involved_cats = []
@@ -122,6 +123,7 @@ class HandleShortEvents():
         except IndexError:
             print(f"WARNING: no {event_type}: {self.sub_types} events found for {self.main_cat.name}")
             return
+        self.text = self.chosen_event.text
 
         self.additional_event_text = ""
 
@@ -143,6 +145,14 @@ class HandleShortEvents():
 
         # change relationships before killing anyone
         if self.chosen_event.relationships:
+            # we're doing this here to make sure rel logs get adjusted text
+            self.text = event_text_adjust(Cat, self.chosen_event.text,
+                                          main_cat=self.main_cat,
+                                          random_cat=self.random_cat,
+                                          victim_cat=self.victim_cat,
+                                          new_cats=self.new_cat_objects,
+                                          clan=game.clan,
+                                          other_clan=self.other_clan)
             unpack_rel_block(Cat, self.chosen_event.relationships, self)
 
         # used in some murder events, this kinda sucks tho it would be nice to change how this sort of thing is handled
@@ -193,19 +203,20 @@ class HandleShortEvents():
         if self.chosen_event.new_accessory:
             self.handle_accessories()
 
-        event_text = event_text_adjust(Cat, self.chosen_event.event_text,
-                                       main_cat=self.main_cat,
-                                       random_cat=self.random_cat,
-                                       victim_cat=self.victim_cat,
-                                       new_cats=self.new_cat_objects,
-                                       multi_cats=self.multi_cat,
-                                       clan=game.clan,
-                                       other_clan=self.other_clan,
-                                       chosen_herb=self.chosen_herb)
+        # adjust text again to account for info that wasn't available when we do rel changes
+        self.text = event_text_adjust(Cat, self.chosen_event.text,
+                                      main_cat=self.main_cat,
+                                      random_cat=self.random_cat,
+                                      victim_cat=self.victim_cat,
+                                      new_cats=self.new_cat_objects,
+                                      multi_cats=self.multi_cat,
+                                      clan=game.clan,
+                                      other_clan=self.other_clan,
+                                      chosen_herb=self.chosen_herb)
 
         print(self.types)
         game.cur_events_list.append(
-            Single_Event(event_text + " " + self.additional_event_text, self.types, self.involved_cats))
+            Single_Event(self.text + " " + self.additional_event_text, self.types, self.involved_cats))
 
     def handle_new_cats(self):
 
@@ -252,7 +263,7 @@ class HandleShortEvents():
                         break  # Break - only one parent ever gives birth
 
         if extra_text:
-            self.chosen_event.event_text = self.chosen_event.event_text + " " + extra_text
+            self.chosen_event.text = self.chosen_event.text + " " + extra_text
 
     def handle_accessories(self):
         """
