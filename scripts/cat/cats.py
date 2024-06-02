@@ -134,39 +134,29 @@ class Cat:
                  loading_cat=False,  # Set to true if you are loading a cat at start-up.
                  **kwargs
                  ):
+        """Initialise the cat.
 
-        # This must be at the top. It's a smaller list of things to init, which is only for faded cats
+        :param prefix: Cat's prefix (e.g. Fire- for Fireheart)
+        :param gender: Cat's gender, default None
+        :param status: Cat's age range, default "newborn"
+        :param backstory: Cat's origin, default "clanborn"
+        :param parent1: ID of parent 1, default None
+        :param parent2: ID of parent 2, default None
+        :param suffix: Cat's suffix (e.g. -heart for Fireheart)
+        :param specsuffix_hidden: Whether cat has a special suffix (-kit, -paw, etc.), default False
+        :param ID: Cat's unique ID, default None
+        :param moons: Cat's age, default None
+        :param example: If cat is an example cat, default False
+        :param faded: If cat is faded, default False
+        :param skill_dict: TODO find a good definition for this
+        :param pelt: Body details, default None
+        :param loading_cat: If loading a cat rather than generating a new one, default False
+        :param kwargs: TODO what are the possible args here? ["biome", ]
+        """
+
         self.history = None
-        if faded:
-            self.ID = ID
-            self.name = Name(status, prefix=prefix, suffix=suffix)
-            self.parent1 = None
-            self.parent2 = None
-            self.adoptive_parents = []
-            self.mate = []
-            self.status = status
-            self.pronouns = []  #Needs to be set as a list
-            self.moons = moons
-            self.dead_for = 0
-            self.dead = True
-            self.outside = False
-            self.exiled = False
-            self.inheritance = None  # This should never be used, but just for safety
-            if "df" in kwargs:
-                self.df = kwargs["df"]
-            else:
-                self.df = False
-            if moons > 300:
-                # Out of range, always elder
-                self.age = 'senior'
-            else:
-                # In range
-                for key_age in self.age_moons.keys():
-                    if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
-                        self.age = key_age
-
-            self.set_faded()  # Sets the faded sprite and faded tag (self.faded = True)
-
+        if faded:  # This must be at the top. It's a smaller list of things to init, which is only for faded cats
+            self.init_faded(ID, status, prefix, suffix, moons, **kwargs)
             return
 
         self.generate_events = GenerateEvents()
@@ -218,7 +208,7 @@ class Cat:
         self.no_kits = False
         self.no_mates = False
         self.no_retire = False
-        self.prevent_fading = False  # Prevents a cat from fading.
+        self.prevent_fading = False  # Prevents a cat from fading
 
         self.faded_offspring = []  # Stores of a list of faded offspring, for relation tracking purposes
 
@@ -252,27 +242,19 @@ class Cat:
             self.age = choice(self.ages)
         elif moons is not None:
             self.moons = moons
-            if moons > 300:
-                # Out of range, always elder
-                self.age = 'senior'
-            elif moons == 0:
-                self.age = 'newborn'
-            else:
-                # In range
-                for key_age in self.age_moons.keys():
-                    if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
-                        self.age = key_age
-        else:
-            if status == 'newborn':
-                self.age = 'newborn'
-            elif status == 'kitten':
-                self.age = 'kitten'
-            elif status == 'elder':
-                self.age = 'senior'
-            elif status in ['apprentice', 'mediator apprentice', 'medicine cat apprentice']:
-                self.age = 'adolescent'
-            else:
-                self.age = choice(['young adult', 'adult', 'adult', 'senior adult'])
+            self.init_moons_age(moons)
+        else:  # status is not None
+            match status:
+                case 'newborn':
+                    self.age = 'newborn'
+                case 'kitten':
+                    self.age = 'kitten'
+                case 'elder':
+                    self.age = 'senior'
+                case 'apprentice' | 'mediator apprentice' | 'medicine cat apprentice':
+                    self.age = 'adolescent'
+                case _:
+                    self.age = choice(['young adult', 'adult', 'adult', 'senior adult'])
             self.moons = randint(self.age_moons[self.age][0], self.age_moons[self.age][1])
 
         # backstory
@@ -291,67 +273,7 @@ class Cat:
 
         # These things should only run when generating a new cat, rather than loading one in.
         if not loading_cat:
-            # trans cat chances
-            theythemdefault = game.settings["they them default"]
-            self.genderalign = self.gender
-            trans_chance = randint(0, 50)
-            nb_chance = randint(0, 75)
-            #newborns can't be trans, sorry babies
-            if self.age in ['kitten', 'newborn']:
-                trans_chance = 0
-                nb_chance = 0
-            if theythemdefault is True:
-                self.pronouns = [self.default_pronouns[0].copy()]
-                if nb_chance == 1:
-                    self.genderalign = "nonbinary"
-                elif trans_chance == 1:
-                    if self.gender == "female":
-                        self.genderalign = "trans male"
-                    else:
-                        self.genderalign = "trans female"
-            else:
-                # Assigning pronouns based on gender and chance
-                if self.gender in ["female", "trans female"]:
-                    self.pronouns = [self.default_pronouns[1].copy()]
-                elif self.gender in ["male", "trans male"]:
-                    self.pronouns = [self.default_pronouns[2].copy()]
-                else:
-                    self.pronouns = [self.default_pronouns[0].copy()]
-                    self.genderalign = "nonbinary"
-
-            # APPEARANCE
-            self.pelt = Pelt.generate_new_pelt(self.gender,
-                                               [Cat.fetch_cat(i) for i in (self.parent1, self.parent2) if i], self.age)
-
-            # Personality
-            self.personality = Personality(kit_trait=self.is_baby())
-
-            # experience and current patrol status
-            if self.age in ['young', 'newborn']:
-                self.experience = 0
-            elif self.age in ['adolescent']:
-                m = self.moons
-                self.experience = 0
-                while m > Cat.age_moons['adolescent'][0]:
-                    ran = game.config["graduation"]["base_app_timeskip_ex"]
-                    exp = choice(
-                        list(range(ran[0][0], ran[0][1] + 1)) + list(range(ran[1][0], ran[1][1] + 1)))
-                    self.experience += exp + 3
-                    m -= 1
-            elif self.age in ['young adult', 'adult']:
-                self.experience = randint(Cat.experience_levels_range["prepared"][0],
-                                          Cat.experience_levels_range["proficient"][1])
-            elif self.age in ['senior adult']:
-                self.experience = randint(Cat.experience_levels_range["competent"][0],
-                                          Cat.experience_levels_range["expert"][1])
-            elif self.age in ['senior']:
-                self.experience = randint(Cat.experience_levels_range["competent"][0],
-                                          Cat.experience_levels_range["master"][1])
-            else:
-                self.experience = 0
-
-            if not skill_dict:
-                self.skills = CatSkills.generate_new_catskills(self.status, self.moons)
+            self.init_generate_cat(skill_dict)
 
         # In camp status
         self.in_camp = 1
@@ -388,6 +310,130 @@ class Cat:
 
         if self.ID not in ["0", None]:
             Cat.insert_cat(self)
+
+    def init_faded(self, cat_id, status, prefix, suffix, moons, **kwargs):
+        """Perform faded-specific initialisation
+
+        :param cat_id: Cat ID
+        :param status: Cat status
+        :param prefix: Cat's prefix
+        :param suffix: Cat's suffix
+        :param moons: Age in moons
+        :param kwargs:
+
+        :return: None
+        """
+        self.ID = cat_id
+        self.name = Name(status, prefix=prefix, suffix=suffix)
+        self.parent1 = None
+        self.parent2 = None
+        self.adoptive_parents = []
+        self.mate = []
+        self.status = status
+        self.pronouns = []  # Needs to be set as a list
+        self.moons = moons
+        self.dead_for = 0
+        self.dead = True
+        self.outside = False
+        self.exiled = False
+        self.inheritance = None  # This should never be used, but just for safety
+        if "df" in kwargs:
+            self.df = kwargs["df"]
+        else:
+            self.df = False
+
+        self.init_moons_age(moons)
+
+        self.set_faded()  # Sets the faded sprite and faded tag (self.faded = True)
+        return True
+
+    def init_moons_age(self, moons):
+        """
+        Gets the correct life stage for associated moons
+
+        :param moons: Age in moons
+        :return: None
+        """
+        if moons > 300:
+            # Out of range, always elder
+            self.age = 'senior'
+        elif moons == 0:
+            self.age = 'newborn'
+        else:
+            # In range
+            for key_age in self.age_moons.keys():
+                if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
+                    self.age = key_age
+
+    def init_generate_cat(self, skill_dict):
+        """
+        Used to roll a new cat
+        :param skill_dict: TODO what is a skill dict exactly
+        :return: None
+        """
+        # trans cat chances
+        theythemdefault = game.settings["they them default"]
+        self.genderalign = self.gender
+        trans_chance = randint(0, 50)
+        nb_chance = randint(0, 75)
+        # newborns can't be trans, sorry babies
+        if self.age in ['kitten', 'newborn']:
+            trans_chance = 0
+            nb_chance = 0
+        if theythemdefault:
+            self.pronouns = [self.default_pronouns[0].copy()]
+            if nb_chance == 1:
+                self.genderalign = "nonbinary"
+            elif trans_chance == 1:
+                if self.gender == "female":
+                    self.genderalign = "trans male"
+                else:
+                    self.genderalign = "trans female"
+        else:
+            # Assigning pronouns based on gender and chance
+            match self.gender:
+                case "female" | "trans female":
+                    self.pronouns = [self.default_pronouns[1].copy()]
+                case "male" | "trans male":
+                    self.pronouns = [self.default_pronouns[2].copy()]
+                case _:
+                    self.pronouns = [self.default_pronouns[0].copy()]
+                    self.genderalign = "nonbinary"
+
+        # APPEARANCE
+        self.pelt = Pelt.generate_new_pelt(self.gender,
+                                           [Cat.fetch_cat(i) for i in (self.parent1, self.parent2) if i], self.age)
+
+        # Personality
+        self.personality = Personality(kit_trait=self.is_baby())
+
+        # experience and current patrol status
+        match self.age:
+            case 'young' | 'newborn':
+                self.experience = 0
+            case 'adolescent':
+                m = self.moons
+                self.experience = 0
+                while m > Cat.age_moons['adolescent'][0]:
+                    ran = game.config["graduation"]["base_app_timeskip_ex"]
+                    exp = choice(
+                        list(range(ran[0][0], ran[0][1] + 1)) + list(range(ran[1][0], ran[1][1] + 1)))
+                    self.experience += exp + 3
+                    m -= 1
+            case 'young adult' | 'adult':
+                self.experience = randint(Cat.experience_levels_range["prepared"][0],
+                                          Cat.experience_levels_range["proficient"][1])
+            case 'senior adult':
+                self.experience = randint(Cat.experience_levels_range["competent"][0],
+                                          Cat.experience_levels_range["expert"][1])
+            case 'senior':
+                self.experience = randint(Cat.experience_levels_range["competent"][0],
+                                          Cat.experience_levels_range["master"][1])
+            case _:
+                self.experience = 0
+
+        if not skill_dict:
+            self.skills = CatSkills.generate_new_catskills(self.status, self.moons)
 
     def __repr__(self):
         return "CAT OBJECT:" + self.ID
