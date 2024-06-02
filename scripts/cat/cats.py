@@ -772,9 +772,9 @@ class Cat():
         if self.status in ["warrior", "medicine cat", "mediator"]:
             # Give a couple doses of mentor influence:
             if mentor:
-                max = randint(0, 2)
+                max_influence = randint(0, 2)
                 i = 0
-                while max > i:
+                while max_influence > i:
                     i += 1
                     affect_personality = self.personality.mentor_influence(Cat.fetch_cat(mentor))
                     affect_skills = self.skills.mentor_influence(Cat.fetch_cat(mentor))
@@ -1271,7 +1271,7 @@ class Cat():
         
         if old_age != self.age:
             # Things to do if the age changes
-            self.personality.facet_wobble(max=2)
+            self.personality.facet_wobble(facet_max=2)
         
         # Set personality to correct type
         self.personality.set_kit(self.is_baby())
@@ -2269,8 +2269,8 @@ class Cat():
 
     def init_all_relationships(self):
         """Create Relationships to all current Clancats."""
-        for id in self.all_cats:
-            the_cat = self.all_cats.get(id)
+        for cat_id in self.all_cats:
+            the_cat = self.all_cats.get(cat_id)
             if the_cat.ID is not self.ID:
                 mates = the_cat.ID in self.mate
                 are_parents = False
@@ -2719,12 +2719,12 @@ class Cat():
             if game.clan == None: clan = game.switches['clan_list'][0]
             if game.clan != None: clan = game.clan.name
 
-            with open(get_save_dir() + '/' + clan + '/faded_cats/' + cat + ".json", 'r') as read_file:
+            with open(get_save_dir() + '/' + clan + '/faded_cats/' + cat + ".json", 'r', encoding="utf-8") as read_file:
                 cat_info = ujson.loads(read_file.read())
                                 # If loading cats is attempted before the Clan is loaded, we would need to use this.
         except AttributeError:  # NOPE, cats are always loaded before the Clan, so doesnt make sense to throw an error
             with open(get_save_dir() + '/' + game.switches['clan_list'][0] + '/faded_cats/' + cat + ".json",
-                      'r') as read_file:
+                      'r', encoding="utf-8") as read_file:
                 cat_info = ujson.loads(read_file.read())
         except:
             print("ERROR: in loading faded cat")
@@ -3178,12 +3178,12 @@ class Personality():
             print("No possible traits! Using 'strange'")
             self.trait = "strange"
             
-    def facet_wobble(self, max=5):
+    def facet_wobble(self, facet_max=5):
         """Makes a small adjustment to all the facets, and redetermines trait if needed."""        
-        self.lawfulness += randint(-max, max)
-        self.stability += randint(-max, max)
-        self.aggression += randint(-max, max)
-        self.sociability += randint(-max, max)
+        self.lawfulness += randint(-facet_max, facet_max)
+        self.stability += randint(-facet_max, facet_max)
+        self.aggression += randint(-facet_max, facet_max)
+        self.sociability += randint(-facet_max, facet_max)
         
     def mentor_influence(self, mentor:Cat):
         """applies mentor influence after the pair go on a patrol together 
