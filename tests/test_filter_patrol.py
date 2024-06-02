@@ -51,7 +51,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         patrol = Patrol()
         patrol.add_patrol_cats([cat1, cat2, parent], test_clan)
-        self.assertTrue(filter_relationship_type(patrol.patrol_cats,
+        self.assertFalse(filter_relationship_type(patrol.patrol_cats,
                                                  con_patrol_event.relationship_constraints,
                                                  con_patrol_event.patrol_id,
                                                  patrol.patrol_leader))
@@ -91,7 +91,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         patrol = Patrol()
         patrol.add_patrol_cats([mate1, cat1], test_clan)
-        self.assertTrue(filter_relationship_type(patrol.patrol_cats,
+        self.assertFalse(filter_relationship_type(patrol.patrol_cats,
                                                  con_patrol_event.relationship_constraints,
                                                  con_patrol_event.patrol_id,
                                                  patrol.patrol_leader))
@@ -102,7 +102,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         patrol = Patrol()
         patrol.add_patrol_cats([mate1, mate2, cat1], test_clan)
-        self.assertTrue(filter_relationship_type(patrol.patrol_cats,
+        self.assertFalse(filter_relationship_type(patrol.patrol_cats,
                                                  con_patrol_event.relationship_constraints,
                                                  con_patrol_event.patrol_id,
                                                  patrol.patrol_leader))
@@ -667,7 +667,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
                                                  con_patrol_event.relationship_constraints,
                                                  con_patrol_event.patrol_id,
                                                  patrol.patrol_leader))
-        self.assertTrue(filter_relationship_type(patrol.patrol_cats,
+        self.assertFalse(filter_relationship_type(patrol.patrol_cats,
                                                  con_patrol_event2.relationship_constraints,
                                                  con_patrol_event2.patrol_id,
                                                  patrol.patrol_leader))

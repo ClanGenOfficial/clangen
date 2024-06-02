@@ -1021,8 +1021,6 @@ def filter_relationship_type(group: list, filter_types: list, event_id: str = No
 
     possible_value_types = ["romantic", "platonic", "dislike", "comfortable", "jealousy", "trust", "admiration"]
 
-
-
     if "siblings" in filter_types:
         test_cat = group[0]
         testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
@@ -1083,7 +1081,7 @@ def filter_relationship_type(group: list, filter_types: list, event_id: str = No
         if patrol_leader:
             if patrol_leader in group:
                 group.remove(patrol_leader)
-            group.append(patrol_leader)
+            group.insert(0, patrol_leader)
         # It should be exactly two cats for a "parent/child" event
         if len(group) != 2:
             return False
@@ -1107,7 +1105,7 @@ def filter_relationship_type(group: list, filter_types: list, event_id: str = No
         if patrol_leader:
             if patrol_leader in group:
                 group.remove(patrol_leader)
-            group.append(patrol_leader)
+            group.insert(0, patrol_leader)
         # It should be exactly two cats for a "parent/child" event
         if len(group) != 2:
             return False
