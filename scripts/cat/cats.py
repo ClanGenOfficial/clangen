@@ -2550,7 +2550,7 @@ class Cat:
             apply_bonus = True
             # EX gain on success
             if mediator.status != "mediator apprentice":
-                EX_gain = randint(10, 24)
+                exp_gain = randint(10, 24)
 
                 gm_modifier = 1
                 if game.clan and game.clan.game_mode == 'expanded':
@@ -2566,7 +2566,7 @@ class Cat:
                     lvl_modifier = 2
                 else:
                     lvl_modifier = 1
-                mediator.experience += EX_gain / lvl_modifier / gm_modifier
+                mediator.experience += exp_gain / lvl_modifier / gm_modifier
 
         if mediator.status == "mediator apprentice":
             mediator.experience += max(randint(1, 6), 1)
