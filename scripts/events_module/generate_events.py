@@ -200,11 +200,13 @@ class GenerateEvents:
         # Chance to bypass the skill or trait requirements. 
         trait_skill_bypass = 15
 
+
         # check if generated event should be a war event
         if "war" in sub_types and random.randint(1, 10) == 1:
             sub_types.remove("war")
 
         for event in possible_events:
+
             # check for event sub_type
             wrong_type = False
             for sub in sub_types:
