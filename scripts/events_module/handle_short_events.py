@@ -64,9 +64,10 @@ class HandleShortEvents():
         self.main_cat = main_cat
         self.random_cat = random_cat
 
-        # reset new_cat list
+        # reset cat lists
         self.new_cats = []
         self.new_cat_objects = []
+        self.dead_cats = []
 
         # random cat gets added to involved later on, only if the event chosen requires a random cat
         self.involved_cats = [self.main_cat.ID]
@@ -181,6 +182,8 @@ class HandleShortEvents():
         # change supplies
         if self.chosen_event.supplies:
             for block in self.chosen_event.supplies:
+                if "misc" not in self.types:
+                    self.types.append("misc")
                 if block["type"] == "freshkill":
                     self.handle_freshkill_supply(block, freshkill_pile)
                 else:  # if freshkill isn't being adjusted, then it must be a herb supply
@@ -282,7 +285,6 @@ class HandleShortEvents():
     def handle_death(self):
         """
         handles killing/murdering cats and assigning histories
-        :param dead_list: list of cats predetermined to die
         """
         dead_list = self.dead_cats if self.dead_cats else []
         current_lives = int(game.clan.leader_lives)

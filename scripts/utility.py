@@ -1173,19 +1173,20 @@ def filter_relationship_type(group: list, filter_types: list, event_id: str = No
             break_loop = True
             break
 
-        # if break is used in the loop, the condition are not fulfilled
-        # and this event should not be added to the filtered list
-        if break_loop:
-            return False
+    # if break is used in the loop, the condition are not fulfilled
+    # and this event should not be added to the filtered list
+    if break_loop:
+        return False
 
-        return True
+    return True
 
 
 def gather_cat_objects(Cat, abbr_list: List[str], event, stat_cat=None) -> list:
     """
     gathers cat objects from list of abbreviations used within an event format block
     :param Cat: Cat class
-    :param abbr_list:The list of abbreviations, supports "m_c", "r_c", "p_l", "s_c", "app1", "app2", "clan", "patrol", "n_c{index}"
+    :param abbr_list:The list of abbreviations, supports "m_c", "r_c", "p_l", "s_c", "app1", "app2", "clan",
+    "some_clan", "patrol", "multi", "n_c{index}"
     :param event: the event class
     :param stat_cat: only cat object that gets passed on its own if present (should only be on patrols)
     """
@@ -1206,8 +1207,13 @@ def gather_cat_objects(Cat, abbr_list: List[str], event, stat_cat=None) -> list:
             out_set.add(event.patrol_apprentices[1])
         elif abbr == "clan":
             out_set.update([x for x in Cat.all_cats_list if not (x.dead or x.outside or x.exiled)])
+        elif abbr == "some_clan":
+            out_set.update([x for x in Cat.all_cats_list if not (x.dead or x.outside or x.exiled)])
         elif abbr == "patrol":
             out_set.update(event.patrol_cats)
+        elif abbr == "multi":
+            cat_num = randint(1, max(1, len(event.patrol_cats) - 1))
+            out_set.update(sample(event.patrol_cats, cat_num))
         elif re.match(r"n_c:[0-9]+", abbr):
             index = re.match(r"n_c:([0-9]+)", abbr).group(1)
             index = int(index)
