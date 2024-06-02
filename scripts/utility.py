@@ -1335,9 +1335,15 @@ def unpack_rel_block(Cat, relationship_effects: List[dict], event, stat_cat=None
                 print(f"something is wrong with relationship log: {log}")
 
         if not log1:
-            log1 = event.text + effect
+            try:
+                log1 = event.text + effect
+            except AttributeError:
+                print(f"WARNING: event changed relationships but did not create a relationship log")
         if not log2:
-            log2 = event.text + effect
+            try:
+                log2 = event.text + effect
+            except AttributeError:
+                print(f"WARNING: event changed relationships but did not create a relationship log")
 
         change_relationship_values(
             cats_to_ob,
