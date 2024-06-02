@@ -900,7 +900,7 @@ class Cat():
             )
             return
         try:
-            with open(cat_history_directory, 'r', encoding="utf-8") as read_file:
+            with open(cat_history_directory, 'r', encoding="utf-8") as read_file: #pylint: disable=redefined-outer-name
                 history_data = ujson.loads(read_file.read())
                 self.history = History(
                     beginning=history_data["beginning"] if "beginning" in history_data else {},
@@ -1961,7 +1961,7 @@ class Cat():
             return
 
         try:
-            with open(condition_cat_directory, 'r', encoding='utf-8') as read_file:
+            with open(condition_cat_directory, 'r', encoding='utf-8') as read_file: #pylint: disable=redefined-outer-name
                 rel_data = ujson.loads(read_file.read())
                 self.illnesses = rel_data.get("illnesses", {})
                 self.injuries = rel_data.get("injuries", {})
@@ -2393,7 +2393,7 @@ class Cat():
                     cat.create_one_relationship(self)
                 return
             try:
-                with open(relation_cat_directory, 'r', encoding="utf-8") as read_file:
+                with open(relation_cat_directory, 'r', encoding="utf-8") as read_file: #pylint: disable=redefined-outer-name
                     rel_data = ujson.loads(read_file.read())
                     for rel in rel_data:
                         cat_to = self.all_cats.get(rel['cat_to_id'])
@@ -2719,7 +2719,7 @@ class Cat():
             if game.clan == None: clan = game.switches['clan_list'][0]
             if game.clan != None: clan = game.clan.name
 
-            with open(get_save_dir() + '/' + clan + '/faded_cats/' + cat + ".json", 'r', encoding="utf-8") as read_file:
+            with open(get_save_dir() + '/' + clan + '/faded_cats/' + cat + ".json", 'r', encoding="utf-8") as read_file: #pylint: disable=redefined-outer-name
                 cat_info = ujson.loads(read_file.read())
                                 # If loading cats is attempted before the Clan is loaded, we would need to use this.
         except AttributeError:  # NOPE, cats are always loaded before the Clan, so doesnt make sense to throw an error
