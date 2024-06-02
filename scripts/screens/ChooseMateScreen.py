@@ -298,8 +298,7 @@ class ChooseMateScreen(Screens):
         for ele in self.mates_cat_buttons:
             self.mates_cat_buttons[ele].kill()
         self.mates_cat_buttons = {}
-        
-        
+
         # Different layout for a single mate - they are just big in the center
         if len(self.all_mates) == 1 and len(self.all_mates[0]) == 1:
             
