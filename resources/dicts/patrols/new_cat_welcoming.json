@@ -1990,7 +1990,7 @@
                 "outsider_rep": 1
             },
             {
-                "text": "The patrol follows the noise and comes upon a kittypet that's sniffing around. The kittypet notices them and bundles towards the patrol, whose pelts bush out in surprise. The kittypet quickly begins a story about how {PRONOUN/n_c:0/subject}{VERB/n_c:0/'ve/'s} been training for <i>days</i> now and they're finally ready to join c_n. Well alright then!",
+                "text": "The patrol follows the noise and comes upon a kittypet that's sniffing around. The kittypet notices them and bundles towards the patrol, whose pelts bush out in surprise. The kittypet quickly begins a story about how {PRONOUN/n_c:0/subject}{VERB/n_c:0/'ve/'s} been training for <i>days</i> now and {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} finally ready to join c_n. Well alright then!",
                 "exp": 10,
                 "weight": 5,
                 "new_cat": [

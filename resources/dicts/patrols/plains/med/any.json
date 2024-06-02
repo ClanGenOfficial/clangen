@@ -747,7 +747,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "As a plant that grows without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den. Having other cats to help them makes the patrol an easy afternoon's work.",
+                "text": "As a plant that grows without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den. Having other cats to help {PRONOUN/p_l/object} makes the patrol an easy afternoon's work.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["horsetail"],
@@ -816,7 +816,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and the cats snappy with each other.",
+                "text": "p_l is distracted today, and it affects {PRONOUN/p_l/poss} work. The patrol is unsuccessful, and the cats snappy with each other.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1122,7 +1122,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l has to attend to one of their grimmer jobs as a medicine cat - the grounds where c_n goes to mourn their dead need to be tended to. They're bringing along r_c as their assistant for this trip, and the two cats head out in relative silence.",
+        "intro_text": "p_l has to attend to one of {PRONOUN/p_l/poss} grimmer jobs as a medicine cat - the grounds where c_n goes to mourn their dead need to be tended to. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} bringing along r_c as {PRONOUN/p_l/poss} assistant for this trip, and the two cats head out in relative silence.",
         "decline_text": "Just before the two can leave, a cat calls for their attention.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -1144,7 +1144,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see r_c holding one of their paws off the ground. It seems that the other cat stepped on a thorn. Ouch! They'll have to go back to camp and fix that up.",
+                "text": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see r_c holding one of {PRONOUN/r_c/poss} paws off the ground. It seems that the other cat stepped on a thorn. Ouch! They'll have to go back to camp and fix that up.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
