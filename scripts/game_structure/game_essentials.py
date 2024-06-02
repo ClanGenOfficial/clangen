@@ -134,7 +134,8 @@ class Game():
         'window_open': False,
         'skip_conditions': [],
         'show_history_moons': False,
-        'fps': 30
+        'fps': 30,
+        'war_rel_change_type': 'neutral'
     }
     all_screens = {}
     cur_events = {}

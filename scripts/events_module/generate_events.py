@@ -294,6 +294,7 @@ class GenerateEvents:
 
             if event.m_c:
                 if cat.age not in event.m_c["age"] and "any" not in event.m_c["age"]:
+
                     continue
                 if cat.status not in event.m_c["status"] and "any" not in event.m_c["status"]:
                     continue
@@ -490,6 +491,14 @@ class GenerateEvents:
             if event.other_clan:
                 if not other_clan:
                     continue
+
+                # during a war we want to encourage the clans to have positive events
+                # when the overall war notice was positive
+                if "war" in event.sub_type:
+                    rel_change_type = game.switches["war_rel_change_type"]
+                    if event.other_clan["changed"] < 0 and rel_change_type != "rel_down":
+                        continue
+
                 # don't waste time checking rep if any rep is allowed
                 if "any" not in event.other_clan["current_rep"]:
                     # ally
@@ -561,7 +570,7 @@ class GenerateEvents:
                         if discard:
                             continue
 
-                    else:  # if supply type wasn't freshkill, then it must be an herb type
+                    else:  # if supply type wasn't freshkill, then it must be a herb type
                         herbs = game.clan.herbs
                         needed_amount = int(clan_size * 3)
                         discard = True

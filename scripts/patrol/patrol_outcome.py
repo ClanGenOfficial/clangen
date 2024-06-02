@@ -54,7 +54,7 @@ class PatrolOutcome():
                  outsider_rep: Union[int, None] = None,
                  other_clan_rep: Union[int, None] = None,
                  relationship_effects: List[dict] = None,
-                 relationship_constaints: List[str] = None,
+                 relationship_constraints: List[str] = None,
                  outcome_art: Union[str, None] = None,
                  outcome_art_clean: Union[str, None] = None,
                  stat_cat: Cat = None):
@@ -81,7 +81,7 @@ class PatrolOutcome():
         self.outsider_rep = outsider_rep
         self.other_clan_rep = other_clan_rep
         self.relationship_effects = relationship_effects if relationship_effects is not None else []
-        self.relationship_constaints = relationship_constaints if relationship_constaints is not None else []
+        self.relationship_constraints = relationship_constraints if relationship_constraints is not None else []
         self.outcome_art = outcome_art
         self.outcome_art_clean = outcome_art_clean
 
@@ -111,9 +111,9 @@ class PatrolOutcome():
                     continue
 
             # TODO: outcome relationship constraints   
-            # if not patrol._satify_relationship_constaints(patrol, out.relationship_constaints):
+            # if not patrol._satify_relationship_constraints(patrol, out.relationship_constraints):
             #    continue
-            # elif out.relationship_constaints:
+            # elif out.relationship_constraints:
             #    special = True
 
             if special:
@@ -167,7 +167,7 @@ class PatrolOutcome():
                     outsider_rep=_d.get("outsider_rep"),
                     other_clan_rep=_d.get("other_clan_rep"),
                     relationship_effects=_d.get("relationships"),
-                    relationship_constaints=_d.get("relationship_constraint"),
+                    relationship_constraints=_d.get("relationship_constraint"),
                     outcome_art=_d.get("art"),
                     outcome_art_clean=_d.get("art_clean")
                 )
