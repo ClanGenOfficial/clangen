@@ -196,16 +196,24 @@ class GenerateEvents:
     @staticmethod
     def filter_possible_short_events(Cat_class, possible_events, cat, random_cat, other_clan, freshkill_active, freshkill_trigger_factor, sub_types=None, ):
         final_events = []
+        incorrect_format = []
 
         # Chance to bypass the skill or trait requirements. 
         trait_skill_bypass = 15
-
 
         # check if generated event should be a war event
         if "war" in sub_types and random.randint(1, 10) == 1:
             sub_types.remove("war")
 
         for event in possible_events:
+            if event.history:
+                if not isinstance(event.history, list) or "cats" not in event.history[0]:
+                    if f"{event.event_id} history formatted incorrectly" not in incorrect_format:
+                        incorrect_format.append(f"{event.event_id} history formatted incorrectly")
+            if event.injury:
+                if not isinstance(event.injury, list) or "cats" not in event.injury[0]:
+                    if f"{event.event_id} injury formatted incorrectly" not in incorrect_format:
+                        incorrect_format.append(f"{event.event_id} injury formatted incorrectly")
 
             # check for event sub_type
             wrong_type = False
@@ -644,6 +652,9 @@ class GenerateEvents:
                             continue
 
             final_events.append(event)
+
+        for notice in incorrect_format:
+            print(notice)
 
         return final_events
 

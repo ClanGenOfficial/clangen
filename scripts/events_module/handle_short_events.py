@@ -214,7 +214,6 @@ class HandleShortEvents():
                                       other_clan=self.other_clan,
                                       chosen_herb=self.chosen_herb)
 
-        print(self.types)
         game.cur_events_list.append(
             Single_Event(self.text + " " + self.additional_event_text, self.types, self.involved_cats))
 

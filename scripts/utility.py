@@ -1313,31 +1313,11 @@ def unpack_rel_block(Cat, relationship_effects: List[dict], event, stat_cat=None
             if amount > 0:
                 positive = True
 
-        # TODO: i don't think this works?  need to add something that pulls event text
-        #  and then checks if it was a pos or neg rel event to add the correct effect indicator
-        #  i.e. (positive effect), (negative effect) as well as the "cat.name was cat.moons moons old"
         if positive:
             effect = f" (positive effect)"
         else:
             effect = f" (negative effect)"
 
-        """  # this is what was used in injury code
-                        pos_rel_event = ["romantic", "platonic", "neg_dislike", "respect", "comfort", "neg_jealousy", "trust"]
-                neg_rel_event = ["neg_romantic", "neg_platonic", "dislike", "neg_respect", "neg_comfort", "jealousy",
-                                 "neg_trust"]
-                effect = ""
-                if any(tag in injury_event.tags for tag in pos_rel_event):
-                    effect = " (positive effect)"
-                elif any(tag in injury_event.tags for tag in neg_rel_event):
-                    effect = " (negative effect)"
-
-                log_text = text + effect
-
-                if cat.moons == 1:
-                    cat.relationships[other_cat.ID].log.append(log_text + f" - {cat.name} was {cat.moons} moon old")
-                else:
-                    cat.relationships[other_cat.ID].log.append(log_text + f" - {cat.name} was {cat.moons} moons old")
-                    """
         # Get log
         log1 = None
         log2 = None
@@ -1415,12 +1395,14 @@ def change_relationship_values(cats_to: list,
     use the relationship value params to indicate how much the values should change.
     
     This is just for test prints - DON'T DELETE - you can use this to test if relationships are changing
+
+        """
     changed = False
     if romantic_love == 0 and platonic_like == 0 and dislike == 0 and admiration == 0 and \
             comfortable == 0 and jealousy == 0 and trust == 0:
         changed = False
     else:
-        changed = True"""
+        changed = True
 
     # pick out the correct cats
     for single_cat_from in cats_from:
@@ -1455,15 +1437,15 @@ def change_relationship_values(cats_to: list,
             rel.jealousy += jealousy
             rel.trust += trust
 
-            '''# for testing purposes - DON'T DELETE - you can use this to test if relationships are changing
-            print(str(kitty.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
+            # for testing purposes - DON'T DELETE - you can use this to test if relationships are changing
+            print(str(single_cat_from.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
                   "Romantic: " + str(romantic_love) +
                   " /Platonic: " + str(platonic_like) +
                   " /Dislike: " + str(dislike) +
                   " /Respect: " + str(admiration) +
                   " /Comfort: " + str(comfortable) +
                   " /Jealousy: " + str(jealousy) +
-                  " /Trust: " + str(trust)) if changed else print("No relationship change")'''
+                  " /Trust: " + str(trust)) if changed else print("No relationship change")
 
             if log and isinstance(log, str):
                 print(log)
