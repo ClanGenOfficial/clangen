@@ -1955,7 +1955,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 refuses to believe tunnels could possibly be hard to navigate. {PRONOUN/app1/subject/CAP} also refuse to get any closer to them, and start an argument with p_l about it. app2 sides with p_l and no one learns anything in the squabbling.",
+                "text": "app1 refuses to believe tunnels could possibly be hard to navigate. {PRONOUN/app1/subject/CAP} also {VERB/app1/refuse/refuses} to get any closer to them, and start an argument with p_l about it. app2 sides with p_l and no one learns anything in the squabbling.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_train_argue",

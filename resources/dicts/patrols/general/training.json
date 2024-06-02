@@ -10095,7 +10095,7 @@
             "normal adult": [1, 6]
         },
         "weight": 30,
-        "intro_text": "While practicing their pounce, app1 goes down hard, falling in exactly the wrong way. {PRONOUN/app1/subject/CAP} scramble up with a yelp, one paw held off the ground.",
+        "intro_text": "While practicing their pounce, app1 goes down hard, falling in exactly the wrong way. {PRONOUN/app1/subject/CAP} {VERB/app1/scramble/scrambles} up with a yelp, one paw held off the ground.",
         "decline_text": "It's only a couple minutes before {PRONOUN/app1/subject}{VERB/app1/'re/'s} bouncing around again - apprentices are made of cotton-fluff.",
         "chance_of_success": 60,
         "pl_skill_constraint": ["HEALER,1"],
