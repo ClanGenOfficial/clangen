@@ -3255,11 +3255,11 @@ resource_directory = "resources/dicts/events/death/death_reactions/"
 with open(f"{resource_directory}minor_major.json", 'r', encoding="utf-8") as read_file:
     MINOR_MAJOR_REACTION = ujson.loads(read_file.read())
 
-with open(f"resources/dicts/lead_ceremony_sc.json", 'r', encoding="utf-8") as read_file:
+with open("resources/dicts/lead_ceremony_sc.json", 'r', encoding="utf-8") as read_file:
     LEAD_CEREMONY_SC = ujson.loads(read_file.read())
 
-with open(f"resources/dicts/lead_ceremony_df.json", 'r', encoding="utf-8") as read_file:
+with open("resources/dicts/lead_ceremony_df.json", 'r', encoding="utf-8") as read_file:
     LEAD_CEREMONY_DF = ujson.loads(read_file.read())
 
-with open(f"resources/dicts/backstories.json", 'r', encoding="utf-8") as read_file:
+with open("resources/dicts/backstories.json", 'r', encoding="utf-8") as read_file:
     BACKSTORIES = ujson.loads(read_file.read())
