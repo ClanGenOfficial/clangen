@@ -1,6 +1,6 @@
-'''
+"""
 Contains the Cat and Personality classes
-'''
+"""
 from __future__ import annotations
 from random import choice, randint, sample, random, choices, getrandbits, randrange
 from typing import Dict, List, Any
@@ -13,7 +13,7 @@ from scripts.cat.skills import CatSkills
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.events_module.generate_events import GenerateEvents
 
-import ujson # type: ignore
+import ujson  # type: ignore
 
 from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
@@ -21,7 +21,8 @@ from scripts.conditions import Illness, Injury, PermanentCondition, get_amount_c
     medical_cats_condition_fulfilled
 import bisect
 
-from scripts.utility import get_med_cats, get_personality_compatibility, event_text_adjust, update_sprite, \
+from scripts.utility import get_med_cats, \
+    get_personality_compatibility, event_text_adjust, update_sprite, \
     leader_ceremony_text_adjust
 from scripts.game_structure.game_essentials import game, screen
 from scripts.cat_relations.relationship import Relationship
@@ -464,14 +465,12 @@ class Cat:
     def is_alive(self):
         """Check if this cat is alive
 
-        :return: true if alive, false if dead
-        :rtype: bool
+        :return: True if alive, False if dead
         """
         return not self.dead
 
     def die(self, body: bool = True):
-        """
-        This is used to kill a cat.
+        """Kills cat.
 
         body - defaults to True, use this to mark if the body was recovered so
         that grief messages will align with body status 
@@ -515,7 +514,7 @@ class Cat:
                 fetched_cat.update_mentor()
         self.update_mentor()
 
-        if game.clan and game.clan.game_mode != 'classic' and not (self.outside or self.exiled) and body != None:
+        if game.clan and game.clan.game_mode != 'classic' and not (self.outside or self.exiled) and body is not None:
             self.grief(body)
 
         if not self.outside:
@@ -962,7 +961,7 @@ class Cat:
             )
             return
         try:
-            with open(cat_history_directory, 'r', encoding="utf-8") as read_file:  #pylint: disable=redefined-outer-name
+            with open(cat_history_directory, 'r', encoding="utf-8") as read_file:
                 history_data = ujson.loads(read_file.read())
                 self.history = History(
                     beginning=history_data["beginning"] if "beginning" in history_data else {},
@@ -1866,8 +1865,7 @@ class Cat:
         moons_until = condition["moons_until"]
         if born_with and moons_until != 0:
             moons_until = randint(moons_until - 1, moons_until + 1)  # creating a range in which a condition can present
-            if moons_until < 0:
-                moons_until = 0
+            moons_until = max(moons_until, 0)
 
         if born_with and self.status not in ['kitten', 'newborn']:
             moons_until = -2
@@ -1921,8 +1919,7 @@ class Cat:
         non_minor_illnesses = [illness for illness in self.illnesses if self.illnesses[illness]['severity'] != 'minor']
         if "starving" in non_minor_illnesses and len(non_minor_illnesses) == 1:
             return True
-        else:
-            return False
+        return False
 
     def retire_cat(self):
         """This is only for cats that retire due to health condition"""
@@ -2575,10 +2572,7 @@ class Cat:
 
         # determine the traits to effect
         # Are they mates?
-        if rel1.cat_from.ID in rel1.cat_to.mate:
-            mates = True
-        else:
-            mates = False
+        mates = (rel1.cat_from.ID in rel1.cat_to.mate)
 
         pos_traits = ["platonic", "respect", "comfortable", "trust"]
         if allow_romantic and (mates or cat1.is_potential_mate(cat2)):
@@ -2791,14 +2785,13 @@ class Cat:
     def load_faded_cat(cat: str):
         """Loads a faded cat, returning the cat object. This object is saved nowhere else. """
         try:
-            if game.clan == None: clan = game.switches['clan_list'][0]
-            if game.clan != None: clan = game.clan.name
+            clan = game.switches['clan_list'][0] if game.clan is None else game.clan.name
 
             with open(get_save_dir() + '/' + clan + '/faded_cats/' + cat + ".json", 'r',
-                      encoding="utf-8") as read_file:  #pylint: disable=redefined-outer-name
+                      encoding="utf-8") as read_file:
                 cat_info = ujson.loads(read_file.read())
                 # If loading cats is attempted before the Clan is loaded, we would need to use this.
-        except AttributeError:  # NOPE, cats are always loaded before the Clan, so doesnt make sense to throw an error
+        except AttributeError:  # NOPE, cats are always loaded before the Clan, so doesn't make sense to throw an error
             with open(get_save_dir() + '/' + game.switches['clan_list'][0] + '/faded_cats/' + cat + ".json",
                       'r', encoding="utf-8") as read_file:
                 cat_info = ujson.loads(read_file.read())
@@ -2851,8 +2844,6 @@ class Cat:
 
     @staticmethod
     def insert_cat(c: Cat):
-        # disable unnecessary lambda in this function
-        # pylint: disable=unnecessary-lambda
         try:
             if game.sort_type == "age":
                 bisect.insort(Cat.all_cats_list, c, key=lambda x: Cat.get_adjusted_age(x))
@@ -3278,7 +3269,7 @@ class Personality():
         if possible_facets:
             # Choice trait to effect, weighted by the abs of the difference (higher difference = more likely to effect)
             facet_affected = \
-            choices([i for i in possible_facets], weights=[abs(i) for i in possible_facets.values()], k=1)[0]
+                choices([i for i in possible_facets], weights=[abs(i) for i in possible_facets.values()], k=1)[0]
             # stupid python with no sign() function by default. 
             amount_affected = int(
                 possible_facets[facet_affected] / abs(possible_facets[facet_affected]) * randint(1, 2))
