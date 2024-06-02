@@ -2750,6 +2750,8 @@ class Cat():
 
     @staticmethod
     def sort_cats(given_list=[]):
+        # disable unnecessary lambda in this function
+        # pylint: disable=unnecessary-lambda
         if not given_list:
             given_list = Cat.all_cats_list
         if game.sort_type == "age":
@@ -2771,6 +2773,8 @@ class Cat():
 
     @staticmethod
     def insert_cat(c: Cat):
+        # disable unnecessary lambda in this function
+        # pylint: disable=unnecessary-lambda
         try:
             if game.sort_type == "age":
                 bisect.insort(Cat.all_cats_list, c, key=lambda x: Cat.get_adjusted_age(x))
