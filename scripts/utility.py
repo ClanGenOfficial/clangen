@@ -449,26 +449,19 @@ def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, 
     # check if we can use an existing cat here
     chosen_cat = None
     if "exists" in attribute_list:
-        print("looking for existing new cat")
         existing_outsiders = [i for i in Cat.all_cats.values() if i.outside and not i.dead]
         possible_outsiders = []
         for cat in existing_outsiders:
             if bs_override and cat.backstory not in stor:
-                print("wrong backstory")
                 continue
             if cat_type != cat.status:
-                print("wrong status")
                 continue
             if gender and gender != cat.gender:
-                print("wrong gender")
                 continue
-            print(f"{age}, {Cat.age_moons[cat.age]}")
             if age and age not in Cat.age_moons[cat.age]:
-                print(f"wrong age")
                 continue
-
-
             possible_outsiders.append(cat)
+
         if possible_outsiders:
             chosen_cat = choice(possible_outsiders)
             game.clan.add_to_clan(chosen_cat)
@@ -1454,7 +1447,6 @@ def change_relationship_values(cats_to: list,
                   " /Trust: " + str(trust)) if changed else print("No relationship change")
 
             if log and isinstance(log, str):
-                print(log)
                 if single_cat_to.moons <= 1:
                     log_text = log + f"- {single_cat_to.name} was {single_cat_to.moons} moon old"
                     if log_text not in rel.log:
@@ -1886,13 +1878,10 @@ def event_text_adjust(Cat,
 
     # multi_cat
     if "multi_cat" in text:
-        print("multi_cat detected in text")
         name_list = []
         for _cat in multi_cats:
             name_list.append(str(_cat.name))
-        print(name_list)
         list_text = adjust_list_text(name_list)
-        print(list_text)
         text = text.replace("multi_cat", list_text)
 
     # other_clan_name
