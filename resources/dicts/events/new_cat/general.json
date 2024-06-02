@@ -603,7 +603,7 @@
         "season": ["any"],
         "sub_type": ["war"],
         "weight": 10,
-        "event_text": "n_c:0, the deputy of o_c_n, has defected to c_n in the war, m_c find {PRONOUN/n_c:0/object at the border. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/decide/decides} to keep {PRONOUN/n_c:0/poss} name.",
+        "event_text": "n_c:0, the deputy of o_c_n, has defected to c_n in the war, m_c finds {PRONOUN/n_c:0/object} at the border. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/decide/decides} to keep {PRONOUN/n_c:0/poss} name.",
         "m_c": {
             "status": [
                 "leader", "deputy", "warrior", "medicine cat", "apprentice", "medicine cat apprentice", "mediator", "mediator apprentice"

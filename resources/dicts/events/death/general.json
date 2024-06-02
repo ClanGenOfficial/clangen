@@ -1795,7 +1795,7 @@
         "history": [{
             "cats": ["m_c"],
             "reg_death": "m_c {VERB/m_c/were/was} pushed into a ravine by r_c.",
-            "lead_death": "{VERB/were/was} pushed into a ravine by r_c"
+            "lead_death": "{VERB/m_c/were/was} pushed into a ravine by r_c"
         }],
         "relationships": [
             {
@@ -1991,7 +1991,7 @@
         "history": [{
             "cats": ["m_c"],
             "reg_death": "m_c fell into a hidden burrow.",
-            "lead_death": "{VERB/m_c/were/was buried alive in a hidden burrow"
+            "lead_death": "{VERB/m_c/were/was} buried alive in a hidden burrow"
         }]
     },
     {
