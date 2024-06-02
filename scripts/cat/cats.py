@@ -1228,7 +1228,9 @@ class Cat:
                     i += 1
                 else:
                     print(
-                        f'WARNING: life list had no items for giver #{giver_cat.ID}. Using default life. If you are a beta tester, please report and ping scribble along with all the info you can about the giver cat mentioned in this warning.')
+                        f'WARNING: life list had no items for giver #{giver_cat.ID}. Using default life. '
+                        f'If you are a beta tester, please report and ping scribble along with '
+                        f'all the info you can about the giver cat mentioned in this warning.')
                     chosen_life = ceremony_dict["default_life"]
                     break
 
@@ -1412,7 +1414,7 @@ class Cat:
 
     def relationship_interaction(self):
         """Randomly choose a cat of the Clan and have a interaction with them."""
-        cats_to_choose = [iter_cat for iter_cat in Cat.all_cats.values() if iter_cat.ID != self.ID and \
+        cats_to_choose = [iter_cat for iter_cat in Cat.all_cats.values() if iter_cat.ID != self.ID and
                           not iter_cat.outside and not iter_cat.exiled and not iter_cat.dead]
         # if there are no cats to interact, stop
         if len(cats_to_choose) < 1:
@@ -1980,7 +1982,8 @@ class Cat:
                     # prevent rate lower 0 and print warning message
                     if rate < 0:
                         print(
-                            f"WARNING: injury {self.injuries[y]['name']} has lowered chance of {illness_name} infection to {rate}")
+                            f"WARNING: injury {self.injuries[y]['name']} has lowered \
+                            chance of {illness_name} infection to {rate}")
                         rate = 1
 
             if not random() * rate:
@@ -2104,9 +2107,8 @@ class Cat:
             print("Everything is terrible!! (new_mentor {new_mentor} is a Cat D:)")
             return
         # Check if cat can have a mentor
-        illegible_for_mentor = self.dead or self.outside or self.exiled or self.status not in ["apprentice",
-                                                                                               "mediator apprentice",
-                                                                                               "medicine cat apprentice"]
+        illegible_for_mentor = (self.dead or self.outside or self.exiled or self.status not in
+                                ["apprentice", "mediator apprentice", "medicine cat apprentice"])
         if illegible_for_mentor:
             self.__remove_mentor()
             return
@@ -2179,7 +2181,7 @@ class Cat:
             if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
                 return False
 
-            # the +1 is necessary because both might not already aged up
+            # the +1 is necessary because both might not already be aged up
             # if only one is aged up at this point, later they are more moons apart than the setting defined
             # game_config boolian "override_same_age_group" disables the same-age group check.
             if game.config["mates"].get("override_same_age_group", False) or self.age != other_cat.age:
@@ -3111,7 +3113,11 @@ class Personality():
 
     def __repr__(self) -> str:
         """For debugging"""
-        return f"{self.trait}: lawfulness {self.lawfulness}, aggression {self.aggression}, sociability {self.sociability}, stablity {self.stability}"
+        return (f"{self.trait}: "
+                f"lawfulness {self.lawfulness}, "
+                f"aggression {self.aggression}, "
+                f"sociability {self.sociability}, "
+                f"stability {self.stability}")
 
     def get_facet_string(self):
         """For saving the facets to file."""
