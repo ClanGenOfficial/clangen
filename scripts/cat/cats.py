@@ -125,7 +125,7 @@ class Cat:
                  parent2=None,
                  suffix=None,
                  specsuffix_hidden=False,
-                 cat_id=None,
+                 ID=None,
                  moons=None,
                  example=False,
                  faded=False,
@@ -144,7 +144,7 @@ class Cat:
         :param parent2: ID of parent 2, default None
         :param suffix: Cat's suffix (e.g. -heart for Fireheart)
         :param specsuffix_hidden: Whether cat has a special suffix (-kit, -paw, etc.), default False
-        :param cat_id: Cat's unique ID, default None
+        :param ID: Cat's unique ID, default None
         :param moons: Cat's age, default None
         :param example: If cat is an example cat, default False
         :param faded: If cat is faded, default False
@@ -156,7 +156,7 @@ class Cat:
 
         self.history = None
         if faded:  # This must be at the top. It's a smaller list of things to init, which is only for faded cats
-            self.init_faded(cat_id, status, prefix, suffix, moons, **kwargs)
+            self.init_faded(ID, status, prefix, suffix, moons, **kwargs)
             return
 
         self.generate_events = GenerateEvents()
@@ -224,7 +224,7 @@ class Cat:
         self.history = None
 
         # setting ID
-        if cat_id is None:
+        if ID is None:
             potential_id = str(next(Cat.id_iter))
 
             if game.clan:
@@ -236,7 +236,7 @@ class Cat:
                 potential_id = str(next(Cat.id_iter))
             self.ID = potential_id
         else:
-            self.ID = cat_id
+            self.ID = ID
 
         # age and status
         if status is None and moons is None:
@@ -312,10 +312,10 @@ class Cat:
         if self.ID not in ["0", None]:
             Cat.insert_cat(self)
 
-    def init_faded(self, cat_id, status, prefix, suffix, moons, **kwargs):
+    def init_faded(self, ID, status, prefix, suffix, moons, **kwargs):
         """Perform faded-specific initialisation
 
-        :param cat_id: Cat ID
+        :param ID: Cat ID
         :param status: Cat status
         :param prefix: Cat's prefix
         :param suffix: Cat's suffix
@@ -324,7 +324,7 @@ class Cat:
 
         :return: None
         """
-        self.ID = cat_id
+        self.ID = ID
         self.name = Name(status, prefix=prefix, suffix=suffix)
         self.parent1 = None
         self.parent2 = None
@@ -2346,8 +2346,8 @@ class Cat:
 
     def init_all_relationships(self):
         """Create Relationships to all current Clancats."""
-        for cat_id in self.all_cats:
-            the_cat = self.all_cats.get(cat_id)
+        for ID in self.all_cats:
+            the_cat = self.all_cats.get(ID)
             if the_cat.ID is not self.ID:
                 mates = the_cat.ID in self.mate
                 are_parents = False
@@ -2772,16 +2772,16 @@ class Cat:
         self.sprite = image_cache.load_image(f"sprites/faded/{file_name}").convert_alpha()
 
     @staticmethod
-    def fetch_cat(cat_id: str):
+    def fetch_cat(ID: str):
         """Fetches a cat object. Works for both faded and non-faded cats. Returns none if no cat was found. """
-        if not cat_id or isinstance(cat_id, Cat):  # Check if argument is None or Cat.
-            return cat_id
-        elif not isinstance(cat_id, str):  # Invalid type
+        if not ID or isinstance(ID, Cat):  # Check if argument is None or Cat.
+            return ID
+        elif not isinstance(ID, str):  # Invalid type
             return None
-        if cat_id in Cat.all_cats:
-            return Cat.all_cats[cat_id]
+        if ID in Cat.all_cats:
+            return Cat.all_cats[ID]
         else:
-            ob = Cat.load_faded_cat(cat_id)
+            ob = Cat.load_faded_cat(ID)
             if ob:
                 return ob
             else:
@@ -2805,7 +2805,7 @@ class Cat:
             print("ERROR: in loading faded cat")
             return False
 
-        cat_ob = Cat(cat_id=cat_info["ID"], prefix=cat_info["name_prefix"], suffix=cat_info["name_suffix"],
+        cat_ob = Cat(ID=cat_info["ID"], prefix=cat_info["name_prefix"], suffix=cat_info["name_suffix"],
                      status=cat_info["status"], moons=cat_info["moons"], faded=True,
                      df=cat_info["df"] if "df" in cat_info else False)
         if cat_info["parent1"]:
