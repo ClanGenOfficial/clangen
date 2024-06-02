@@ -1021,7 +1021,7 @@ def filter_relationship_type(group: list, filter_types: list, event_id: str = No
 
     possible_value_types = ["romantic", "platonic", "dislike", "comfortable", "jealousy", "trust", "admiration"]
 
-    # TODO: add "can_romance"
+
 
     if "siblings" in filter_types:
         test_cat = group[0]
@@ -1068,6 +1068,10 @@ def filter_relationship_type(group: list, filter_types: list, event_id: str = No
 
     # Check if the cats are in a parent/child relationship
     if "parent/child" in filter_types:
+        if patrol_leader:
+            if patrol_leader in group:
+                group.remove(patrol_leader)
+            group.insert(0, patrol_leader)
         # It should be exactly two cats for a "parent/child" event
         if len(group) != 2:
             return False
@@ -1076,6 +1080,10 @@ def filter_relationship_type(group: list, filter_types: list, event_id: str = No
             return False
 
     if "child/parent" in filter_types:
+        if patrol_leader:
+            if patrol_leader in group:
+                group.remove(patrol_leader)
+            group.append(patrol_leader)
         # It should be exactly two cats for a "parent/child" event
         if len(group) != 2:
             return False
@@ -1084,6 +1092,10 @@ def filter_relationship_type(group: list, filter_types: list, event_id: str = No
             return False
 
     if "mentor/app" in filter_types:
+        if patrol_leader:
+            if patrol_leader in group:
+                group.remove(patrol_leader)
+            group.insert(0, patrol_leader)
         # It should be exactly two cats for a "parent/child" event
         if len(group) != 2:
             return False
@@ -1092,6 +1104,10 @@ def filter_relationship_type(group: list, filter_types: list, event_id: str = No
             return False
 
     if "app/mentor" in filter_types:
+        if patrol_leader:
+            if patrol_leader in group:
+                group.remove(patrol_leader)
+            group.append(patrol_leader)
         # It should be exactly two cats for a "parent/child" event
         if len(group) != 2:
             return False
