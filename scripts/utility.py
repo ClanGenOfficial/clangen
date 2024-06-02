@@ -1237,7 +1237,6 @@ def clan_symbol_sprite(clan, return_string=False):
             name = sprite.strip("1234567890")
             if f"symbol{clan_name.upper()}" == name:
                 possible_sprites.append(sprite)
-        print(possible_sprites)
         if return_string:  # returns the str of the symbol
             if possible_sprites:
                 return choice(possible_sprites)

@@ -1110,13 +1110,9 @@ class Clan():
             clan_sociability = round(
                 weight * statistics.mean([i.personality.sociability for i in [leader, deputy] if i]) + \
                 (1 - weight) * statistics.median([i.personality.sociability for i in all_cats]))
-            print(statistics.mean([i.personality.sociability for i in [leader, deputy] if i]))
-            print(clan_sociability)
             clan_aggression = round(
                 weight * statistics.mean([i.personality.aggression for i in [leader, deputy] if i]) + \
                 (1 - weight) * statistics.median([i.personality.aggression for i in all_cats]))
-            print(statistics.mean([i.personality.aggression for i in [leader, deputy] if i]))
-            print(clan_aggression)
         elif (leader or deputy):
             clan_sociability = round(statistics.mean([i.personality.sociability for i in [leader, deputy] if i]))
             clan_aggression = round(statistics.mean([i.personality.aggression for i in [leader, deputy] if i]))
@@ -1176,7 +1172,6 @@ class OtherClan():
 
         self.chosen_symbol = None  # have to establish None first so that clan_symbol_sprite works
         self.chosen_symbol = chosen_symbol if chosen_symbol else clan_symbol_sprite(self, return_string=True)
-        print(self.chosen_symbol)
 
     def __repr__(self):
         return f"{self.name}Clan"
