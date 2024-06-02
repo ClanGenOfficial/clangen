@@ -152,7 +152,7 @@ class LeaderDenScreen(Screens):
             manager=MANAGER)
 
         self.helper_cat = None
-        if game.clan.leader.dead:
+        if game.clan.leader.dead or game.clan.leader.exiled:
             self.screen_elements["lead_image"].hide()
             self.no_gathering = True
         elif game.clan.leader.not_working():
@@ -185,8 +185,6 @@ class LeaderDenScreen(Screens):
                     object_id="#helper_cat_image",
                     starting_height=2,
                     manager=MANAGER)
-
-
 
         # FOCUS FRAME - container and inner elements
         self.create_focus_frame()
@@ -225,12 +223,12 @@ class LeaderDenScreen(Screens):
             self.screen_elements["outsider_notice_text"].set_text(
                 f" Outsiders do not concern themselves with a dead Clan. ")
         # if leader is dead and no one new is leading, give special notice
-        elif game.clan.leader.dead:
+        elif game.clan.leader.dead or game.clan.leader.exiled:
             self.no_gathering = True
             self.screen_elements["clan_notice_text"].set_text(
-                f" With {self.leader_name} dead, the Clan can't focus on what to say at the Gathering. ")
+                f" Without no one to lead, the Clan can't focus on what to say at the Gathering. ")
             self.screen_elements["outsider_notice_text"].set_text(
-                f" With {self.leader_name} dead, the Clan can't concern themselves with Outsiders. ")
+                f" Without no one to lead, the Clan can't concern themselves with Outsiders. ")
         # if leader is sick but helper is available, give special notice
         elif game.clan.leader.not_working() and self.helper_cat:
             self.helper_name = self.helper_cat.name
