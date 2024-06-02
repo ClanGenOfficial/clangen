@@ -10,7 +10,7 @@ from .skills import CatSkills
 from ..housekeeping.datadir import get_save_dir
 from ..events_module.generate_events import GenerateEvents
 
-import ujson
+import ujson # type: ignore
 
 from .names import Name
 from .pelts import Pelt
