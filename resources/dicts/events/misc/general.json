@@ -494,7 +494,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["leaf-fall"],
-    "tags": ["clan_kits"],
+    "tags": ["clan:kitten"],
     "weight": 20,
     "event_text": "The older cats look fondly upon the kits who are dashing in and out of leaf piles at the edge of camp."
   },
@@ -779,7 +779,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["any"],
-    "tags": ["clan_kits"],
+    "tags": ["clan:kitten"],
     "weight": 10,
     "event_text": "m_c listens bashfully as r_c tells the story of how {PRONOUN/r_c/subject} fell in love with {PRONOUN/r_c/poss} mate to a group of starry-eyed kits.",
     "m_c": {
@@ -828,7 +828,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["any"],
-    "tags": ["clan_kits"],
+    "tags": ["clan:kitten"],
     "weight": 15,
     "event_text": "m_c and r_c watch the Clan's kits play and daydream about having their own one day.",
     "m_c": {
@@ -2818,7 +2818,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["any"],
-    "tags": ["clan_kits"],
+    "tags": ["clan:kitten"],
     "weight": 15,
     "event_text": "m_c calls out to some eager kits, and after they have situated themselves in front of m_c, {PRONOUN/m_c/subject} {VERB/m_c/start/starts} telling the kits a thrilling story of times long past.",
     "m_c": {

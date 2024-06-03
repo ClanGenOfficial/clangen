@@ -290,23 +290,23 @@ class GenerateEvents:
             elif "low_lives" in event.tags and leader_lives not in [1, 2, 3]:
                 continue
 
-            # check if Clan has kits
-            if "clan_kits" in event.tags and not get_alive_status_cats(Cat_class, ["kitten"]):
+            discard = False
+            for rank in Cat_class.rank_sort_order:
+                if f"clan:{rank}" in event.tags and not get_alive_status_cats(Cat_class, [rank]):
+                    discard = True
+            if discard:
                 continue
 
-            # check if Clan has apps
-            if "clan_apps" in event.tags and not get_alive_status_cats(Cat_class, ["apprentice", "medicine cat apprentice", "mediator apprentice"]):
-                continue
-
-            # check if Clan has newborns
-            if "clan_newborns" in event.tags and not get_alive_status_cats(Cat_class, ["newborn"]):
+            if "clan_apps" in event.tags and not get_alive_status_cats(Cat_class,
+                                                                       ["apprentice", "medicine cat apprentice",
+                                                                        "mediator apprentice"]):
                 continue
 
             # If the cat or any of their mates have "no kits" toggled, forgo the adoption event.
             if "adoption" in event.sub_type:
                 if cat.no_kits:
                     continue
-                if any(cat.fetch_cat(i).no_kits for i in cat.mate):
+                if any(Cat_class.fetch_cat(i).no_kits for i in cat.mate):
                     continue
 
             # check for old age

@@ -584,7 +584,7 @@
             "any"
         ],
         "tags": [
-            "clan_kits"
+            "clan:kitten"
         ],
         "weight": 20,
         "event_text": "m_c saved r_c from a snake but was bitten in the process. The venom killed {PRONOUN/m_c/object}.",
@@ -4738,7 +4738,7 @@
             "any"
         ],
         "tags": [
-            "clan_kits"
+            "clan:kitten"
         ],
         "weight": 20,
         "event_text": "m_c was killed defending the kits from o_c_n warriors.",
@@ -6194,7 +6194,7 @@
         ],
         "sub_type": [ "murder" ],
         "tags": [
-            "clan_kits",
+            "clan:kitten",
             "some_lives"
         ],
         "weight": 20,
@@ -6814,7 +6814,7 @@
     {
         "event_id": "gen_death_mouse_anykit1",
         "biome": [
-            "forest", "plains", "moutainous", "wetlands"
+            "forest", "plains", "mountainous", "wetlands"
         ],
         "camp": [
             "any"
@@ -6842,7 +6842,7 @@
     {
         "event_id": "gen_death_shrew_anykit",
         "biome": [
-            "forest", "plains", "moutainous", "wetlands"
+            "forest", "plains", "mountainous", "wetlands"
         ],
         "camp": [
             "any"

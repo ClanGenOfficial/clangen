@@ -371,7 +371,7 @@
             "leaf-bare"
         ],
         "tags": [
-            "clan_kits"
+            "clan:kitten"
         ],
         "weight": 20,
         "event_text": "m_c was play-fighting with the kits, but may have overdone it a bit. {PRONOUN/m_c/subject/CAP}'ll be sore for the next few days.",
@@ -1335,7 +1335,7 @@
             "any"
         ],
         "tags": [
-            "clan_kits"
+            "clan:kitten"
         ],
         "weight": 20,
         "event_text": "While o_c_n attempted a surprise attack on the c_n camp, m_c fiercely guarded the nursery. However, it didn't end with m_c unscathed, and {PRONOUN/m_c/subject} walked away with a gushing wound in {PRONOUN/m_c/poss} flank.",
@@ -1398,7 +1398,7 @@
         "biome": [
             "plains",
             "forest",
-            "mountanious"
+            "mountainous"
         ],
         "camp": [
             "any"
@@ -1449,7 +1449,7 @@
         "biome": [
             "plains",
             "forest",
-            "mountanious"
+            "mountainous"
         ],
         "camp": [
             "any"
@@ -1531,7 +1531,7 @@
         "biome": [
             "plains",
             "forest",
-            "mountanious"
+            "mountainous"
         ],
         "camp": [
             "any"
@@ -1613,7 +1613,7 @@
         "biome": [
             "plains",
             "forest",
-            "mountanious"
+            "mountainous"
         ],
         "camp": [
             "any"
@@ -2007,7 +2007,7 @@
         "event_id": "multi_injury_clawwound_any1",
         "biome": [
             "plains",
-            "mountainious"
+            "mountainous"
         ],
         "camp": [
             "any"
