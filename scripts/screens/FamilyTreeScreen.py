@@ -264,7 +264,7 @@ class FamilyTreeScreen(Screens):
         self.siblings_kits = self.the_cat.inheritance.get_siblings_kits()
         self.parents_siblings = self.the_cat.inheritance.get_parents_siblings()
         self.cousins = self.the_cat.inheritance.get_cousins()
-        self.grandparents = self.the_cat.inheritance.get_grand_parents()
+        self.grandparents = self.the_cat.inheritance.get_grandparents()
         self.grandkits = self.the_cat.inheritance.get_grand_kits()
 
         # collect grandparents
