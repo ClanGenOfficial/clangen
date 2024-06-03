@@ -1505,6 +1505,8 @@
         },
         "relationships": [
           {
+            "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
             "mutual": true,
             "values": ["platonic", "comfort", "respect", "trust"],
             "amount": 15

@@ -231,8 +231,8 @@ class HandleShortEvents():
         if not self.chosen_event.new_cat:
             return
 
-        if "new_cat" not in self.types:
-            self.types.append("new_cat")
+        if "misc" not in self.types:
+            self.types.append("misc")
 
         extra_text = None
 

@@ -17,10 +17,13 @@
                 "scars": ["SIDE"]
             }
         ],
-        "history": {
-            "scar": "m_c was scarred when {PRONOUN/m_c/subject} fell through a snowdrift and down the mountain.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling down the mountain."
-        }
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred when {PRONOUN/m_c/subject} fell through a snowdrift and down the mountain.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling down the mountain."
+            }
+        ]
     },
     {
         "event_id": "mtn_injury_brokenbone_anyany1",
@@ -40,10 +43,13 @@
                 "scars": ["MANLEG"]
             }
         ],
-        "history": {
-            "scar": "m_c was scarred when {PRONOUN/m_c/subject} fell off a cliff.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling off a cliff."
-        }
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred when {PRONOUN/m_c/subject} fell off a cliff.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling off a cliff."
+            }
+        ]
     },
     {
         "event_id": "mtn_injury_mangledtail_anyany1",
@@ -63,10 +69,13 @@
                 "scars": ["MANTAIL"]
             }
         ],
-        "history": {
-            "scar": "m_c was scarred by falling rocks.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after rocks fell on {PRONOUN/m_c/object}."
-        }
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred by falling rocks.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after rocks fell on {PRONOUN/m_c/object}."
+            }
+        ]
     },
     {
         "event_id": "mtn_injury_brokenbone_anyapprentice1",
@@ -87,9 +96,12 @@
                 "scars": ["FACE"]
             }
         ],
-        "history": {
-            "scar": "m_c was scarred after falling from a tall cliff.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tall cliff."
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred after falling from a tall cliff.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tall cliff."
         }
+        ]
     }    
 ]
