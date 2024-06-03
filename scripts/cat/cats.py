@@ -2,34 +2,33 @@
 Contains the Cat and Personality classes
 """
 from __future__ import annotations
+
+import bisect
+import itertools
+import os.path
+import sys
 from random import choice, randint, sample, random, choices, getrandbits, randrange
 from typing import Dict, List, Any
-import os.path
-import itertools
-import sys
-
-from scripts.cat.history import History
-from scripts.cat.skills import CatSkills
-from scripts.housekeeping.datadir import get_save_dir
-from scripts.events_module.generate_events import GenerateEvents
 
 import ujson  # type: ignore
 
+from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
+from scripts.cat.skills import CatSkills
+from scripts.cat.thoughts import Thoughts
+from scripts.cat_relations.inheritance import Inheritance
+from scripts.cat_relations.relationship import Relationship
 from scripts.conditions import Illness, Injury, PermanentCondition, get_amount_cat_for_one_medic, \
     medical_cats_condition_fulfilled
-import bisect
-
+from scripts.event_class import Single_Event
+from scripts.events_module.generate_events import GenerateEvents
+from scripts.game_structure import image_cache
+from scripts.game_structure.game_essentials import game, screen
+from scripts.housekeeping.datadir import get_save_dir
 from scripts.utility import get_med_cats, \
     get_personality_compatibility, event_text_adjust, update_sprite, \
     leader_ceremony_text_adjust
-from scripts.game_structure.game_essentials import game, screen
-from scripts.cat_relations.relationship import Relationship
-from scripts.game_structure import image_cache
-from scripts.event_class import Single_Event
-from scripts.cat.thoughts import Thoughts
-from scripts.cat_relations.inheritance import Inheritance
 
 
 class Cat:
