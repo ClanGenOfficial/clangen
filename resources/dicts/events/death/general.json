@@ -5853,10 +5853,12 @@
             ],
             "dies": true
         },
-        "history": [{
+        "history": [
+            {
             "cats": ["m_c"],
             "lead_death": "died of old age"
-        }]
+            }
+        ]
     },
     {
         "event_id": "gen_death_age_anylead7",
@@ -5882,10 +5884,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "m_c": "m_c",
+        "history": [
+            {
+            "cats": ["m_c"],
             "lead_death": "died of old age"
-        }]
+        }
+        ]
     },
     {
         "event_id": "gen_death_murder_anylead1",
@@ -6144,9 +6148,12 @@
             "age": [ "young adult", "adult", "senior adult" ],
             "status": [ "any" ]
         },
-        "history": [{
-            "lead_death": "{VERB/m_c/were/was} indirectly murdered by r_c in a fatal dog attack"
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "lead_death": "{VERB/m_c/were/was} indirectly murdered by r_c in a fatal dog attack"
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [

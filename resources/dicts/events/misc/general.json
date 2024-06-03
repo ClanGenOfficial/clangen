@@ -853,7 +853,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["any"],
-    "tags":["romance"],
+    "sub_type":["romance"],
     "weight": 15,
     "event_text": "m_c and r_c take a late night patrol out of camp to watch the sun rise.",
     "m_c": {
@@ -879,21 +879,21 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["any"],
-    "tags":["romance"],
+    "subtype":["romance"],
     "weight": 15,
     "event_text": "m_c and r_c take an early evening patrol out of camp to watch the moon rise.",
     "m_c": {
       "age": ["young adult", "adult", "senior adult"],
-      "status":["any"],
-      "relationship_status": ["can_romance"]
+      "status":["any"]
     },
     "r_c": {
       "age": ["young adult", "adult", "senior adult"],
-      "status":["any"],
-      "relationship_status": ["can_romance"]
+      "status":["any"]
     },
     "relationships": [
         {
+          "cats_from": ["m_c"],
+          "cats_to": ["r_c"],
           "mutual": true,
           "values": ["romantic", "comfort","trust"],
           "amount": 10
@@ -3161,7 +3161,7 @@
     "season": ["any"],
     "tags": ["clan_wide"],
     "weight": 10,
-    "event_text": "The o_c_n medicine cat comes asking if c_n has any herb_given to spare. Graciously, your Clan decides to aid their allies and share the herbs.",
+    "event_text": "The o_c_n medicine cat comes asking if c_n has any given_herb to spare. Graciously, your Clan decides to aid their allies and share the herbs.",
     "supplies": [
       {
           "type": "any_herb",
@@ -3181,7 +3181,7 @@
     "season": ["any"],
     "tags": ["clan_wide"],
     "weight": 10,
-    "event_text": "The medicine cat apprentice from o_c_n comes asking for herb_given. They refuse to say why their Clan needs them but c_n still provides them with what they need.",
+    "event_text": "The medicine cat apprentice from o_c_n comes asking for given_herb. They refuse to say why their Clan needs them but c_n still provides them with what they need.",
     "supplies": [
       {
           "type": "any_herb",
@@ -3201,7 +3201,7 @@
     "season": ["any"],
     "tags": ["clan_wide"],
     "weight": 10,
-    "event_text": "The o_c_n medicine cat comes asking if c_n has any herb_given to spare. However, c_n only has enough for themselves and they refuse to share.",
+    "event_text": "The o_c_n medicine cat comes asking if c_n has any given_herb to spare. However, c_n only has enough for themselves and they refuse to share.",
     "supplies": [
       {
           "type": "any_herb",
@@ -3221,7 +3221,7 @@
     "season": ["any"],
     "tags": ["clan_wide"],
     "weight": 10,
-    "event_text": "The medicine cat apprentice from o_c_n comes asking for herbs. They refuse to say why their Clan needs them and c_n decides not to share their precious few herb_given.",
+    "event_text": "The medicine cat apprentice from o_c_n comes asking for herbs. They refuse to say why their Clan needs them and c_n decides not to share their precious few given_herb.",
     "supplies": [
       {
           "type": "any_herb",
@@ -3438,7 +3438,7 @@
     "season": ["greenleaf"],
     "tags": ["clan_wide"],
     "weight": 10,
-    "event_text": "As the herb stores are being inspected, it's noticed that some of the herb_given went bad. They'll need to be replaced.",
+    "event_text": "As the herb stores are being inspected, it's noticed that some of the given_herb went bad. They'll need to be replaced.",
     "supplies": [
       {
           "type": "any_herb",

@@ -21,9 +21,12 @@
                 "injuries": ["water in their lungs"]
             }
         ],
-        "history": {
-            "reg_death": "m_c died from water-inhalation when {PRONOUN/m_c/subject} nearly drowned."
-        },
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died from water-inhalation when {PRONOUN/m_c/subject} nearly drowned."
+            }
+        ],
         "relationships": [
             {
                 "cats_from": ["m_c"],
@@ -119,9 +122,12 @@
                 "injuries": ["shivering"]
             }
         ],
-        "history": {
-            "reg_death": "m_c died after swimming through freezing water when dared by r_c."
-        },
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died after swimming through freezing water when dared by r_c."
+            }
+        ],
         "relationships": [
             {
                 "cats_from": ["r_c"],
@@ -155,9 +161,12 @@
                 "injuries": ["dehydrated"]
             }
         ],
-        "history": {
-            "reg_death": "m_c died of dehydration after drinking salt water."
-        },
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died of dehydration after drinking salt water."
+            }
+        ],
         "relationships": [
             {
                 "cats_from": ["r_c"],
@@ -195,10 +204,13 @@
                 "scars": ["TWO"]
             }
         ],
-        "history": {
-            "scar": "m_c was scarred as a kit, when a seagull tried to carry {PRONOUN/m_c/object} off.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a seagull tried to carry {PRONOUN/m_c/object} off."
-        },
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred as a kit, when a seagull tried to carry {PRONOUN/m_c/object} off.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a seagull tried to carry {PRONOUN/m_c/object} off."
+            }
+        ],
         "relationships": [
             {
                 "cats_from": ["m_c"],
@@ -236,10 +248,13 @@
                 "scars": ["TWO"]
             }
         ],
-        "history": {
-            "scar": "m_c was scarred as a kit, when an osprey tried to carry {PRONOUN/m_c/object} off.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after an osprey tried to carry {PRONOUN/m_c/object} off."
-        },
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred as a kit, when an osprey tried to carry {PRONOUN/m_c/object} off.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after an osprey tried to carry {PRONOUN/m_c/object} off."
+            }
+        ],
         "relationships": [
             {
                 "cats_from": ["m_c"],
@@ -278,9 +293,12 @@
                 "injuries": ["water in their lungs"]
             }
         ],
-        "history": {
-            "reg_death": "m_c died of water-inhalation, after trying to swim out of camp."
-        },
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died of water-inhalation, after trying to swim out of camp."
+            }
+        ],
         "relationships": [
             {
                 "cats_from": ["r_c"],
@@ -313,9 +331,12 @@
                 "injuries": ["shivering"]
             }
         ],
-        "history": {
-            "reg_death": "m_c died after swimming through freezing water when dared by r_c."
-        },
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died after swimming through freezing water when dared by r_c."
+            }
+        ],
         "relationships": [
             {
                 "cats_from": ["r_c"],
@@ -439,10 +460,13 @@
                 "scars": ["SNAKE"]
             }
         ],
-        "history": {
-            "scar": "m_c was scarred as a kit, when a snake bit {PRONOUN/m_c/object}.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a snake bit {PRONOUN/m_c/object}."
-        }
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred as a kit, when a snake bit {PRONOUN/m_c/object}.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a snake bit {PRONOUN/m_c/object}."
+            }
+        ]
     },
 
     {

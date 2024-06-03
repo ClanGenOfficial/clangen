@@ -562,9 +562,6 @@
             "leaf-fall"
         ],
         "sub_type": ["romance"],
-        "tags": [
-            "romance"
-        ],
         "weight": 20,
         "event_text": "m_c asked r_c to meet them at their unique spot, which r_c readily accepted and journeyed through the territory. Yet, with a heartbroken sound that clawed its way out of r_c's throat, {PRONOUN/r_c/subject} {VERB/r_c/stumble/stumbles} upon m_c's body, passing from dehydration; r_c curses m_c for tainting what could have been a good memory of {PRONOUN/r_c/inposs}.",
         "m_c": {

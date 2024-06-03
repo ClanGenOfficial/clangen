@@ -220,7 +220,7 @@
         "biome": ["any"],
         "camp": ["any"],
         "season": ["any"],
-        "tags":["romance"],
+        "sub_type":["romance"],
         "weight": 5,
         "event_text": "m_c and r_c, in the early hours of the day, informed whoever else was awake that they had to handle something and ventured out of camp. Hours later, m_c, r_c, and another cat confidently strode into camp, tails entwined with each other. m_c introduced n_c:0 to the Clan, stating that {PRONOUN/n_c/subject} {VERB/n_c/are/is} staying.",
         "m_c": {
