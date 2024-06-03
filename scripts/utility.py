@@ -1753,7 +1753,7 @@ def event_text_adjust(Cat,
                       multi_cats: list = None,
                       clan=None,
                       other_clan=None,
-                      chosen_herb=None):
+                      chosen_herb: str = None):
     """
     handles finding abbreviations in the text and replacing them appropriately, returns the adjusted text
     :param Cat: always pass the Cat class
@@ -1850,8 +1850,6 @@ def event_text_adjust(Cat,
 
             replace_dict[f"n_c:{i}"] = (str(cat.name), pronoun)
             replace_dict[f"n_c_pre:{i}"] = (str(cat.name.prefix), pronoun)
-
-
 
     # mur_c (murdered cat for reveals)
     if "mur_c" in text:
@@ -1951,8 +1949,8 @@ def event_text_adjust(Cat,
     if "acc_singular" in text:
         text = text.replace("acc_singular", str(ACC_DISPLAY[main_cat.pelt.accessory]["singular"]))
 
-    if "herb_given" in text:
-        text = text.replace("herb_given", str(chosen_herb))
+    if "given_herb" in text:
+        text = text.replace("given_herb", str(chosen_herb))
 
     return text
 

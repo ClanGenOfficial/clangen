@@ -3087,6 +3087,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["any"],
+    "tags": ["clan_wide"],
     "weight": 20,
     "event_text": "The Clan worked hard to gather plenty of fresh-kill, but woke up to find pawprints leading away from the fresh-kill pile, and missing prey.",
     "supplies": [
@@ -3102,6 +3103,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["any"],
+    "tags": ["clan_wide"],
     "weight": 20,
     "event_text": "The Clan gathered a stockpile of food to save, the more the better, but one night the fresh-kill pile was drastically reduced and paw prints were found on the ground.",
     "supplies": [
@@ -3117,6 +3119,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["any"],
+    "tags": ["clan_wide"],
     "weight": 10,
     "event_text": "The o_c_n medicine cat comes asking if c_n has any herbs to spare. Unfortunately, the c_n herb stocks are far too low and c_n is unable to provide any help.",
     "supplies": [
@@ -3136,6 +3139,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["any"],
+    "tags": ["clan_wide"],
     "weight": 10,
     "event_text": "A medicine cat from o_c_n comes comes to c_n, asking for herbs to heal their sick Clanmates. c_n quickly shoos them away, not willing to admit that they already don't have enough to support themselves.",
     "supplies": [
@@ -3155,6 +3159,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["any"],
+    "tags": ["clan_wide"],
     "weight": 10,
     "event_text": "The o_c_n medicine cat comes asking if c_n has any herb_given to spare. Graciously, your Clan decides to aid their allies and share the herbs.",
     "supplies": [
@@ -3174,6 +3179,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["any"],
+    "tags": ["clan_wide"],
     "weight": 10,
     "event_text": "The medicine cat apprentice from o_c_n comes asking for herb_given. They refuse to say why their Clan needs them but c_n still provides them with what they need.",
     "supplies": [
@@ -3193,6 +3199,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["any"],
+    "tags": ["clan_wide"],
     "weight": 10,
     "event_text": "The o_c_n medicine cat comes asking if c_n has any herb_given to spare. However, c_n only has enough for themselves and they refuse to share.",
     "supplies": [
@@ -3212,6 +3219,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["any"],
+    "tags": ["clan_wide"],
     "weight": 10,
     "event_text": "The medicine cat apprentice from o_c_n comes asking for herbs. They refuse to say why their Clan needs them and c_n decides not to share their precious few herb_given.",
     "supplies": [
@@ -3231,6 +3239,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["any"],
+    "tags": ["clan_wide"],
     "weight": 5,
     "event_text": "The o_c_n medicine cat apprentice comes to c_n's camp, pleading for help with a yellowcough epidemic. c_n provides the cat with some of their extra lungwort.",
     "supplies": [
@@ -3250,6 +3259,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["any"],
+    "tags": ["clan_wide"],
     "weight": 10,
     "event_text": "A medicine cat from o_c_n comes to c_n, asking for lungwort to heal a case of yellowcough. c_n has some extra, and so decides to share with their allies.",
     "supplies": [
@@ -3269,6 +3279,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["any"],
+    "tags": ["clan_wide"],
     "weight": 5,
     "event_text": "The o_c_n medicine cat apprentice comes to c_n's camp, pleading for help with a yellowcough epidemic. However, c_n has none that they are willing to share..",
     "supplies": [
@@ -3288,6 +3299,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["any"],
+    "tags": ["clan_wide"],
     "weight": 10,
     "event_text": "A medicine cat from o_c_n comes to c_n, asking for lungwort to heal a case of yellowcough. However, c_n hardly has enough for their own Clan and so refuses.",
     "supplies": [
@@ -3308,6 +3320,7 @@
     "camp": ["any"],
     "season": ["any"],
     "subtype": ["war"],
+    "tags": ["clan_wide"],
     "weight": 1,
     "event_text": "o_c_n breaks into the camp and ravages the herb stores, taking some for themselves and destroying the rest.",
     "supplies": [
@@ -3327,6 +3340,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["any"],
+    "tags": ["clan_wide"],
     "weight": 1,
     "event_text": "Some sort of pest got into the herb stores and completely destroyed them. c_n will have to clean it out and start over anew.",
     "supplies": [
@@ -3342,6 +3356,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["any"],
+    "tags": ["clan_wide"],
     "weight": 1,
     "event_text": "Abnormally strong winds blew through the camp last night and scattered the herb store into a useless state.",
     "supplies": [
@@ -3357,6 +3372,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["any"],
+    "tags": ["clan_wide"],
     "weight": 1,
     "event_text": "Some kind of blight has infected the herb stores. c_n has no choice but to clear out all the old herbs.",
     "supplies": [
@@ -3372,6 +3388,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["leaf-bare"],
+    "tags": ["clan_wide"],
     "weight": 1,
     "event_text": "Freezing temperatures have not just affected the cats. It's also frostbitten the stored herbs. They're useless now and will have to be replaced.",
     "supplies": [
@@ -3387,6 +3404,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["newleaf"],
+    "tags": ["clan_wide"],
     "weight": 1,
     "event_text": "The newleaf rain has left the air humid and the whole camp damp. The herb stores are found to be growing mold and have to be thrown out.",
     "supplies": [
@@ -3402,6 +3420,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["greenleaf"],
+    "tags": ["clan_wide"],
     "weight": 1,
     "event_text": "The persistent, dry heat managed to cause a small fire in the herb stores. While no one was injured, the herbs are little more than ashes now.",
     "supplies": [
@@ -3417,7 +3436,8 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["greenleaf"],
-    "weight": 15,
+    "tags": ["clan_wide"],
+    "weight": 10,
     "event_text": "As the herb stores are being inspected, it's noticed that some of the herb_given went bad. They'll need to be replaced.",
     "supplies": [
       {
@@ -3432,6 +3452,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["any"],
+    "tags": ["clan_wide"],
     "weight": 15,
     "event_text": "The Clan has gathered plenty of moss recently, time to refresh the dens!",
     "supplies": [
@@ -3447,6 +3468,7 @@
     "biome": ["any"],
     "camp": ["any"],
     "season": ["any"],
+    "tags": ["clan_wide"],
     "weight": 25,
     "event_text": "The herb stores have quite a lot of given_herb, the excess is given back to the earth",
     "supplies": [

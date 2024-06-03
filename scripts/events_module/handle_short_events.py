@@ -203,6 +203,9 @@ class HandleShortEvents():
         if self.chosen_event.new_accessory:
             self.handle_accessories()
 
+        if "clan_wide" in self.chosen_event.tags:
+            self.involved_cats.clear()
+
         # adjust text again to account for info that wasn't available when we do rel changes
         self.text = event_text_adjust(Cat, self.chosen_event.text,
                                       main_cat=self.main_cat,
