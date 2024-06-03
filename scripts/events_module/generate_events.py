@@ -125,7 +125,8 @@ class GenerateEvents:
                         history=event["history"] if "history" in event else [],
                         relationships=event["relationships"] if "relationships" in event else [],
                         outsider=event["outsider"] if "outsider" in event else {},
-                        other_clan=event["other_clan"] if "other_clan" in event else {}
+                        other_clan=event["other_clan"] if "other_clan" in event else {},
+                        supplies=event["supplies"] if "supplies" in event else []
                     )
                     event_list.append(event)
 
@@ -546,6 +547,7 @@ class GenerateEvents:
                 continue
             elif event.supplies:
                 clan_size = get_living_clan_cat_count(Cat_class)
+                discard = True
                 for supply in event.supplies:
                     trigger = supply["trigger"]
                     supply_type = supply["type"]
@@ -555,7 +557,6 @@ class GenerateEvents:
                         if game.clan.game_mode == "classic":
                             continue
 
-                        discard = True
                         pile = game.clan.freshkill_pile
                         needed_amount = pile.amount_food_needed()
                         if not freshkill_active:
@@ -582,8 +583,7 @@ class GenerateEvents:
                             trigger_factor = 1.2
 
                         trigger_value = round(trigger_factor * needed_amount, 2)
-                        print(
-                            f" -- FRESHKILL: trigger amount {trigger_value}. current amount (after feed, before moon gathering) {pile.total_amount}")
+                        # print(f" -- FRESHKILL: trigger amount {trigger_value}. current amount (after feed, before moon gathering) {pile.total_amount}")
 
                         # "full" means total_amount is enough for 1 moons worth, but is not over the multiplier
                         if "full" in trigger:
@@ -597,7 +597,7 @@ class GenerateEvents:
                                 discard = False
 
                         if discard:
-                            continue
+                            break
 
                     else:  # if supply type wasn't freshkill, then it must be a herb type
                         herbs = game.clan.herbs
@@ -649,26 +649,30 @@ class GenerateEvents:
                                     discard = False
                                     break
                             if discard:
-                                continue
+                                break
 
                         else:
                             chosen_herb = supply_type
+                            if chosen_herb not in herbs:
+                                continue
 
                             if "low" in trigger:
-                                if chosen_herb < needed_amount / 2:
+                                if herbs[chosen_herb] < needed_amount / 2:
                                     discard = False
                             if "adequate" in trigger:
-                                if needed_amount / 2 < chosen_herb < needed_amount:
+                                if needed_amount / 2 < herbs[chosen_herb] < needed_amount:
                                     discard = False
                             if "full" in trigger:
-                                if needed_amount < chosen_herb < needed_amount * 2:
+                                if needed_amount < herbs[chosen_herb] < needed_amount * 2:
                                     discard = False
                             if "excess" in trigger:
-                                if needed_amount * 2 < chosen_herb:
+                                if needed_amount * 2 < herbs[chosen_herb]:
                                     discard = False
 
-                        if discard:
-                            continue
+                            if discard:
+                                break
+                if discard:
+                    continue
 
             final_events.append(event)
 

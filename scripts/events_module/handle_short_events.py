@@ -195,6 +195,7 @@ class HandleShortEvents():
         # change supplies
         if self.chosen_event.supplies:
             for block in self.chosen_event.supplies:
+                print(block)
                 if "misc" not in self.types:
                     self.types.append("misc")
                 if block["type"] == "freshkill":
@@ -607,8 +608,7 @@ class HandleShortEvents():
             freshkill_pile.add_freshkill(increase_amount)
 
     def handle_herb_supply(self, block):
-        if "misc" not in self.types:
-            self.types.append("misc")
+        print("handling herb supply")
 
         herbs = game.clan.herbs
 
@@ -667,18 +667,18 @@ class HandleShortEvents():
 
             # now adjust the supply for the chosen_herb
             if adjustment == "reduce_full":
-                game.clan.herbs[self.chosen_herb] = 0
+                herbs[self.chosen_herb] = 0
             elif adjustment == "reduce_half":
-                game.clan.herbs[self.chosen_herb] = game.clan.herbs[self.chosen_herb] / 2
+                herbs[self.chosen_herb] = game.clan.herbs[self.chosen_herb] / 2
             elif adjustment == "reduce_quarter":
-                game.clan.herbs[self.chosen_herb] = game.clan.herbs[self.chosen_herb] / 4
+                herbs[self.chosen_herb] = game.clan.herbs[self.chosen_herb] / 4
             elif adjustment == "reduce_eighth":
-                game.clan.herbs[self.chosen_herb] = game.clan.herbs[self.chosen_herb] / 8
+                herbs[self.chosen_herb] = game.clan.herbs[self.chosen_herb] / 8
             elif "increase" in adjustment:
-                game.clan.herbs[self.chosen_herb] += adjustment.split("_")[1]
+                herbs[self.chosen_herb] += adjustment.split("_")[1]
 
         if not self.chosen_herb:
-            self.chosen_herb = random.choice(herbs.keys())
+            self.chosen_herb = random.choice(list(herbs.keys()))
         if self.chosen_herb:
             herb_list.append(self.chosen_herb)
 

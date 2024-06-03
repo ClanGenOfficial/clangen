@@ -1153,6 +1153,8 @@
         },
         "relationships": [
           {
+            "cats_from": ["m_c"],
+            "cats_to": ["r_c"],
             "mutual": true,
             "values": ["platonic", "trust", "comfort"],
             "amount": 10
@@ -3068,27 +3070,12 @@
     }
   },
   {
-    "event_id": "gen_misc_any_leaderapprentice1",
-    "biome": ["any"],
-    "camp": ["any"],
-    "season": ["any"],
-    "weight": 20,
-    "event_text": "m_c assesses r_c's progress.",
-    "m_c":{
-      "age":["any"],
-      "status":["leader"]
-    },
-    "r_c": {"age":["any"],
-      "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"]
-    }
-  },
-  {
     "event_id": "gen_misc_freshkill_anystolen1",
     "biome": ["any"],
     "camp": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
-    "weight": 20,
+    "weight": 10,
     "event_text": "The Clan worked hard to gather plenty of fresh-kill, but woke up to find pawprints leading away from the fresh-kill pile, and missing prey.",
     "supplies": [
       {
@@ -3104,7 +3091,7 @@
     "camp": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
-    "weight": 20,
+    "weight": 10,
     "event_text": "The Clan gathered a stockpile of food to save, the more the better, but one night the fresh-kill pile was drastically reduced and paw prints were found on the ground.",
     "supplies": [
       {
@@ -3240,7 +3227,7 @@
     "camp": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
-    "weight": 5,
+    "weight": 10,
     "event_text": "The o_c_n medicine cat apprentice comes to c_n's camp, pleading for help with a yellowcough epidemic. c_n provides the cat with some of their extra lungwort.",
     "supplies": [
       {
@@ -3281,7 +3268,7 @@
     "season": ["any"],
     "tags": ["clan_wide"],
     "weight": 5,
-    "event_text": "The o_c_n medicine cat apprentice comes to c_n's camp, pleading for help with a yellowcough epidemic. However, c_n has none that they are willing to share..",
+    "event_text": "The o_c_n medicine cat apprentice comes to c_n's camp, pleading for help with a yellowcough epidemic. However, c_n has none that they are willing to share.",
     "supplies": [
       {
           "type": "lungwort",
@@ -3321,7 +3308,7 @@
     "season": ["any"],
     "subtype": ["war"],
     "tags": ["clan_wide"],
-    "weight": 1,
+    "weight": 5,
     "event_text": "o_c_n breaks into the camp and ravages the herb stores, taking some for themselves and destroying the rest.",
     "supplies": [
       {
@@ -3469,7 +3456,7 @@
     "camp": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
-    "weight": 25,
+    "weight": 30,
     "event_text": "The herb stores have quite a lot of given_herb, the excess is given back to the earth",
     "supplies": [
       {

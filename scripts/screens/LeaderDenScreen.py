@@ -9,7 +9,7 @@ from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton
 from scripts.screens.Screens import Screens
 from scripts.utility import scale, get_text_box_theme, get_other_clan_relation, get_other_clan, \
-    clan_symbol_sprite, shorten_text_to_fit, get_med_cats, get_living_clan_cat_count
+    clan_symbol_sprite, shorten_text_to_fit, get_living_clan_cat_count, get_alive_status_cats
 
 
 class LeaderDenScreen(Screens):
@@ -160,7 +160,7 @@ class LeaderDenScreen(Screens):
                 if not game.clan.deputy.not_working() and not game.clan.deputy.dead:
                     self.helper_cat = game.clan.deputy  # if lead is sick, dep helps
             if not self.helper_cat:  # if dep is sick, med cat helps
-                meds = get_med_cats(Cat)
+                meds = get_alive_status_cats(Cat, get_status=["medicine cat", "medicine cat apprentice"], working=True, sort=True)
                 if meds:
                     self.helper_cat = meds[0]
                 else:  # if no meds, mediator helps
