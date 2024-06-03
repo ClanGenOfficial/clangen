@@ -1192,7 +1192,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The patrol swiftly jumps into action. They capture the dog's attention and draw it away from the cat. r_c stays hidden and goes to the cat while the rest of the patrol lures the dog away. They're unharmed, and this display of bravery makes {PRONOUN/n_c:0/object} want to join the Clan!",
+                "text": "The patrol swiftly jumps into action. They capture the dog's attention and draw it away from the cat. r_c stays hidden and goes to the cat while the rest of the patrol lures the dog away. {PRONOUN/n_c:0/subject/CAP}{VERB/n_c:0/'re/'s} unharmed, and this display of bravery makes {PRONOUN/n_c:0/object} want to join the Clan!",
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [

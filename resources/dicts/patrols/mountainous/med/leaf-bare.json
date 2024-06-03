@@ -1963,8 +1963,8 @@
             "healer cats": [1, 6]
         },
         "weight": 20,
-        "intro_text": "There's a limited selection of herbs p_l can even look for in leaf-bare, but if they or app1 can only remember where the wild garlic grew in greenleaf it's theirs for the taking.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "intro_text": "There's a limited selection of herbs p_l can even look for in leaf-bare, but if {PRONOUN/p_l/subject} or app1 can only remember where the wild garlic grew in greenleaf, it's theirs for the taking.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -2012,7 +2012,7 @@
                 ]
             },
             {
-                "text": "s_c knows exactly where to go - there was a thick patch of wild garlic that grew in an exposed area. They prove themself right, and it's only an utter and complete pain to dig out the bulbs. Well, at least they've got them now.",
+                "text": "s_c knows exactly where to go - there was a thick patch of wild garlic that grew in an exposed area. {PRONOUN/s_c/subject/CAP} prove {PRONOUN/s_c/self} right, and it's only an utter and complete pain to dig out the bulbs. Well, at least {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} got them now.",
                 "exp": 40,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -2037,7 +2037,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l searches and searches, but eventually they have to admit defeat. They can't remember where the garlic grew when the world was warm.",
+                "text": "p_l searches and searches, but eventually {PRONOUN/p_l/subject} have to admit defeat. {PRONOUN/p_l/subject/CAP} can't remember where the garlic grew when the world was warm.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
