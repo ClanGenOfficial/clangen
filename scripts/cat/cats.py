@@ -1418,7 +1418,7 @@ class Cat:
         self.thought = str(chosen_thought)
 
     def relationship_interaction(self):
-        """Randomly choose a cat of the Clan and have a interaction with them."""
+        """Randomly choose a cat of the Clan and have an interaction with them."""
         cats_to_choose = [iter_cat for iter_cat in Cat.all_cats.values() if iter_cat.ID != self.ID and
                           not iter_cat.outside and not iter_cat.exiled and not iter_cat.dead]
         # if there are no cats to interact, stop
@@ -2188,7 +2188,7 @@ class Cat:
 
             # the +1 is necessary because both might not already be aged up
             # if only one is aged up at this point, later they are more moons apart than the setting defined
-            # game_config boolian "override_same_age_group" disables the same-age group check.
+            # game_config boolean "override_same_age_group" disables the same-age group check.
             if game.config["mates"].get("override_same_age_group", False) or self.age != other_cat.age:
                 if abs(self.moons - other_cat.moons) > game.config["mates"]["age_range"] + 1:
                     return False
