@@ -14,7 +14,7 @@ resource_directory = "resources/dicts/events/"
 
 class GenerateEvents:
     loaded_events = {}
-    
+
     INJURY_DISTRIBUTION = None
     with open(f"resources/dicts/conditions/event_injuries_distribution.json", 'r') as read_file:
         INJURY_DISTRIBUTION = ujson.loads(read_file.read())
@@ -66,6 +66,22 @@ class GenerateEvents:
         return events
 
     @staticmethod
+    def get_lead_den_event_dicts(event_type: str, success: bool):
+
+        try:
+            file_path = f"{resource_directory}/leader_den/{'success' if success else 'fail'}/{event_type}.json"
+            with open(
+                    file_path,
+                    "r"
+            ) as read_file:
+                events = ujson.loads(read_file.read())
+        except:
+            events = None
+            print(f"ERROR: Unable to load lead den events for {event_type} {'success' if success else 'fail'}.")
+
+        return events
+
+    @staticmethod
     def clear_loaded_events():
         GenerateEvents.loaded_events = {}
 
@@ -99,7 +115,7 @@ class GenerateEvents:
                     tags=event["tags"],
                     event_text=event_text,
                     history_text=event["history_text"] if "history_text" in event else {},
-                    cat_trait= event["cat_trait"] if "cat_trait" in event else [],
+                    cat_trait=event["cat_trait"] if "cat_trait" in event else [],
                     cat_skill=event["cat_skill"] if "cat_skill" in event else [],
                     other_cat_trait=event["other_cat_trait"] if "other_cat_trait" in event else [],
                     other_cat_skill=event["other_cat_skill"] if "other_cat_skill" in event else [],
@@ -167,9 +183,9 @@ class GenerateEvents:
                 event = None
                 for event in events_dict:
                     if event["event"] != specific_event:
-                        #print(event["event"], 'is not', specific_event)
+                        # print(event["event"], 'is not', specific_event)
                         continue
-                    #print(event["event"], "is", specific_event)
+                    # print(event["event"], "is", specific_event)
                     event = OngoingEvent(
                         event=event["event"],
                         camp=event["camp"],
@@ -264,13 +280,14 @@ class GenerateEvents:
         return event_list
 
     @staticmethod
-    def filter_possible_short_events(possible_events, cat, other_cat, war, enemy_clan, other_clan, alive_kits, murder=False, murder_reveal=False):
+    def filter_possible_short_events(possible_events, cat, other_cat, war, enemy_clan, other_clan, alive_kits,
+                                     murder=False, murder_reveal=False):
         final_events = []
 
         minor = []
         major = []
         severe = []
-        
+
         # Chance to bypass the skill or trait requirements. 
         trait_skill_bypass = 15
 
@@ -280,11 +297,11 @@ class GenerateEvents:
             war_event = False
 
         for event in possible_events:
-            
+
             # Normally, there is a chance to bypass skill and trait requirments. 
             # the "skill_trait_required" tags turns this off. Lets grab this tag once, for simplicity. 
             prevent_bypass = "skill_trait_required" in event.tags
-            
+
             if war_event and ("war" not in event.tags and "hostile" not in event.tags):
                 continue
             if not war and "war" in event.tags:
@@ -368,14 +385,14 @@ class GenerateEvents:
             # check if Clan has kits
             if "clan_kits" in event.tags and not alive_kits:
                 continue
-            
+
             if "adoption" in event.tags:
                 # If the cat or any of their mates have "no kits" toggled, forgo the adoption event.
                 if cat.no_kits:
                     continue
                 if any(cat.fetch_cat(i).no_kits for i in cat.mate):
                     continue
-            
+
             # check for old age
             if "old_age" in event.tags and cat.moons < game.config["death_related"]["old_age_death_start"]:
                 continue
@@ -416,26 +433,26 @@ class GenerateEvents:
                     continue
                 if "other_cat_mentor" in event.tags and other_cat.ID != cat.mentor:
                     continue
-                
+
                 # check other cat trait and skill
                 has_trait = False
                 if event.other_cat_trait:
                     if other_cat.personality.trait in event.other_cat_trait:
                         has_trait = True
-                
+
                 has_skill = False
                 if event.other_cat_skill:
                     for _skill in event.other_cat_skill:
                         split = _skill.split(",")
-                        
+
                         if len(split) < 2:
                             print("Cat skill incorrectly formatted", _skill)
                             continue
-                        
+
                         if other_cat.skills.meets_skill_requirement(split[0], int(split[1])):
                             has_skill = True
                             break
-                    
+
                 # There is a small chance to bypass the skill or trait requirments.  
                 if event.other_cat_trait and event.other_cat_skill:
                     if not (has_trait or has_skill) and (prevent_bypass or int(random.random() * trait_skill_bypass)):
@@ -446,27 +463,26 @@ class GenerateEvents:
                 elif event.other_cat_skill:
                     if not has_skill and (prevent_bypass or int(random.random() * trait_skill_bypass)):
                         continue
-                
-                
+
                 # check cat negate trait and skill
                 has_trait = False
                 if event.other_cat_negate_trait:
                     if other_cat.personality.trait in event.other_cat_negate_trait:
                         has_trait = True
-                
+
                 has_skill = False
                 if event.other_cat_negate_trait:
                     for _skill in event.other_cat_negate_trait:
                         split = _skill.split(",")
-                        
+
                         if len(split) < 2:
                             print("Cat skill incorrectly formatted", _skill)
                             continue
-                        
+
                         if other_cat.skills.meets_skill_requirement(split[0], int(split[1])):
                             has_skill = True
                             break
-                    
+
                 # There is a small chance to bypass the skill or trait requirments.  
                 if (has_trait or has_skill) and int(random.random() * trait_skill_bypass):
                     continue
@@ -479,7 +495,6 @@ class GenerateEvents:
             if "mate" in event.tags and len(cat.mate) < 1:
                 continue
 
-
             # check cat trait and skill
             has_trait = False
             if event.cat_trait:
@@ -487,20 +502,20 @@ class GenerateEvents:
                     has_trait = True
             else:
                 has_trait = None
-            
+
             has_skill = False
             if event.cat_skill:
                 for _skill in event.cat_skill:
                     split = _skill.split(",")
-                    
+
                     if len(split) < 2:
                         print("Cat skill incorrectly formatted", _skill)
                         continue
-                    
+
                     if cat.skills.meets_skill_requirement(split[0], int(split[1])):
                         has_skill = True
                         break
-            
+
             # There is a small chance to bypass the skill or trait requirments.  
             if event.cat_trait and event.cat_skill:
                 if not (has_trait or has_skill) and (prevent_bypass or int(random.random() * trait_skill_bypass)):
@@ -511,27 +526,26 @@ class GenerateEvents:
             elif event.cat_skill:
                 if not has_skill and (prevent_bypass or int(random.random() * trait_skill_bypass)):
                     continue
-            
-            
+
             # check cat negate trait and skill
             has_trait = False
             if event.cat_negate_trait:
                 if cat.personality.trait in event.cat_negate_trait:
                     has_trait = True
-            
+
             has_skill = False
             if event.cat_negate_skill:
                 for _skill in event.cat_negate_skill:
                     split = _skill.split(",")
-                    
+
                     if len(split) < 2:
                         print("Cat skill incorrectly formatted", _skill)
                         continue
-                    
+
                     if cat.skills.meets_skill_requirement(split[0], int(split[1])):
                         has_skill = True
                         break
-                
+
             # There is a small chance to bypass the skill or trait requirments.  
             if (has_trait or has_skill) and int(random.random() * trait_skill_bypass):
                 continue
@@ -557,7 +571,8 @@ class GenerateEvents:
                 minor_chance = GenerateEvents.INJURY_DISTRIBUTION[cat.status]['minor']
                 major_chance = GenerateEvents.INJURY_DISTRIBUTION[cat.status]['major']
                 severe_chance = GenerateEvents.INJURY_DISTRIBUTION[cat.status]['severe']
-                severity_chosen = random.choices(["minor", "major", "severe"], [minor_chance, major_chance, severe_chance], k=1)
+                severity_chosen = random.choices(["minor", "major", "severe"],
+                                                 [minor_chance, major_chance, severe_chance], k=1)
                 if severity_chosen[0] == 'minor':
                     final_events = minor
                 elif severity_chosen[0] == 'major':
@@ -586,7 +601,7 @@ class GenerateEvents:
                 )"""
                 return event_list
             else:
-                #print(specific_event)
+                # print(specific_event)
                 event = (
                     GenerateEvents.generate_ongoing_events(event_type, biome, specific_event)
                 )
@@ -611,6 +626,81 @@ class GenerateEvents:
         # print(possible_events)
 
         return possible_events
+
+    def possible_lead_den_events(self, cat, event_type: str, interaction_type: str, success: bool,
+                                 other_clan_temper=None, player_clan_temper=None) -> list:
+        """
+        finds and generates a list of possible leader den events
+        :param cat: the cat object of the cat attending the Gathering
+        :param other_clan_temper: the temperament of the other clan
+        :param player_clan_temper: the temperament of the player clan
+        :param event_type: other_clan or outsider
+        :param interaction_type: str retrieved from object_ID of selected interaction button
+        :param success: True if the interaction was a success, False if it was a failure
+        """
+        possible_events = []
+
+        events = GenerateEvents.get_lead_den_event_dicts(event_type, success)
+        for event in events:
+            if event["interaction_type"] != interaction_type:
+                continue
+
+            if "other_clan_temper" in event or "player_clan_temper" in event:
+                if other_clan_temper not in event["other_clan_temper"] and "any" not in event["other_clan_temper"]:
+                    continue
+                if player_clan_temper not in event["player_clan_temper"] and "any" not in event["player_clan_temper"]:
+                    continue
+
+            elif "reputation" in event:
+                reputation = game.clan.reputation
+                # hostile
+                if 1 <= reputation <= 30 and "hostile" not in event["reputation"] and "any" not in event["reputation"]:
+                    continue
+                # neutral
+                elif 31 <= reputation <= 70 and "neutral" not in event["reputation"] and "any" not in event["reputation"]:
+                    continue
+                # welcoming
+                elif 71 <= reputation <= 100 and "welcoming" not in event["reputation"] and "any" not in event["reputation"]:
+                    continue
+
+            cat_info = event["m_c"]
+            if "status" in cat_info:
+                # special lost cat check
+                if event_type == "outsider":
+                    if cat.status not in ["loner", "rogue", "kittypet", "former clancat", "exiled"]:
+                        if "lost" not in cat_info["status"]:
+                            continue
+                    elif cat.status not in cat_info["status"] and "any" not in cat_info["status"]:
+                        continue
+                elif cat.status not in cat_info["status"] and "any" not in cat_info["status"]:
+                    continue
+            if "age" in cat_info:
+                if cat.age not in cat_info["age"]:
+                    continue
+            if "trait" in cat_info:
+                if cat.personality.trait not in cat_info["trait"]:
+                    continue
+            if "skill" in cat_info:
+                has_skill = False
+                for _skill in cat_info["skill"]:
+                    split = _skill.split(",")
+
+                    if len(split) < 2:
+                        print("Cat skill incorrectly formatted", _skill)
+                        continue
+
+                    if cat.skills.meets_skill_requirement(split[0], int(split[1])):
+                        has_skill = True
+                        break
+                if not has_skill:
+                    continue
+
+            possible_events.append(event)
+
+        return possible_events
+
+
+generate_events = GenerateEvents()
 
 
 class ShortEvent:

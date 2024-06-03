@@ -58,6 +58,15 @@
                 "outsider_rep": -1,
                 "new_cat": [
                     ["meeting", "loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
                 ]
             }
         ],
@@ -66,7 +75,19 @@
                 "text": "The patrol advances threateningly towards the loner, who retaliates with a quick swipe to p_l's muzzle. While p_l is stunned, they make their getaway.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": -1
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["meeting", "loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["clan"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 15
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -74,7 +95,19 @@
                 "text": "The patrol tells the cat to leave or feel their claws. The loner seems to choose life and quickly takes off.",
                 "exp": 10,
                 "weight": 20,
-                "outsider_rep": -2
+                "outsider_rep": -2,
+                "new_cat": [
+                    ["loner", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
             }
         ]
     },
@@ -145,7 +178,19 @@
                 "text": "p_l advances threateningly towards the loner, who retaliates with a quick swipe to {PRONOUN/p_l/poss} muzzle. While p_l is stunned, they make their getaway.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": -1
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["meeting", "loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["clan"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 15
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -153,7 +198,19 @@
                 "text": "p_l tells the cat to leave or feel {PRONOUN/p_l/poss} claws. The loner seems to choose life and quickly takes off.",
                 "exp": 10,
                 "weight": 20,
-                "outsider_rep": -2
+                "outsider_rep": -2,
+                "new_cat": [
+                    ["loner", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
             }
         ]
     },
@@ -993,7 +1050,19 @@
                 "text": "The patrol advances threateningly towards the loner, who retaliates with a quick swipe to p_l's muzzle. While p_l is stunned, they make their getaway.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": -1
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["meeting", "loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["clan"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 15
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -1001,7 +1070,19 @@
                 "text": "Healer or not, the patrol tells the cat to leave or feel their claws. The loner seems to choose life and quickly takes off.",
                 "exp": 10,
                 "weight": 20,
-                "outsider_rep": -2
+                "outsider_rep": -2,
+                "new_cat": [
+                    ["loner", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
             }
         ]
     },
@@ -1072,7 +1153,19 @@
                 "text": "p_l advances threateningly towards the loner, who retaliates with a quick swipe to {PRONOUN/p_l/poss} muzzle. While p_l is stunned, they make their getaway.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": -1
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["meeting", "loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["clan"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 15
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -1080,7 +1173,19 @@
                 "text": "Healer or not, p_l tells the cat to leave or feel {PRONOUN/p_l/poss} claws. The loner seems to choose life and quickly takes off.",
                 "exp": 10,
                 "weight": 20,
-                "outsider_rep": -2
+                "outsider_rep": -2,
+                "new_cat": [
+                    ["loner", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
             }
         ]
     },
@@ -1165,7 +1270,19 @@
                 "text": "The loner escapes the dog by climbing a tree and scowls at the patrol, who stood by watching. The patrol leers back in return. c_n doesn't owe loners anything.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": -1
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["loner", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["clan"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 20
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -1173,7 +1290,19 @@
                 "text": "The patrol watches as the loner climbs up a spindly tree to escape the dog, and then promptly proceed to chase the dog out of the territory and viciously spit at the loner not to cross the border.",
                 "exp": 10,
                 "weight": 20,
-                "outsider_rep": -2
+                "outsider_rep": -2,
+                "new_cat": [
+                    ["loner", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["clan"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
             }
         ]
     },
@@ -1206,7 +1335,19 @@
                 "text": "s_c takes the lead in checking the noise, and it's a good thing {PRONOUN/s_c/subject} did, because the moment {PRONOUN/s_c/subject} step closer to the bush a rogue comes springing out! s_c is quick to bat them away, hissing and spitting, before promptly chasing the rogue out of the territory.  It was hardly a fight, really. ",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,1"]
+                "stat_skill": ["FIGHTER,1"],
+                "new_cat": [
+                    ["rogue", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -1225,6 +1366,18 @@
                 "text": "p_l takes the lead in checking the source of the noise and comes face to face with a rogue hiding in the bush! The rogue takes a swipe at p_l, but doesn't get much damage in before p_l retaliates and chases the intruder out of c_n territory.",
                 "exp": 0,
                 "weight": 10,
+                "new_cat": [
+                    ["rogue", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ],
                 "injury": [
                     {
                         "cats": ["p_l"],
@@ -1242,6 +1395,20 @@
                 "text": "p_l starts to pad towards the bush. Before {PRONOUN/p_l/subject} can even reach it, however, a gang of rogues bursts out of hiding! A fight ensues and though the rogues are eventually driven off, r_c is killed in the process.",
                 "exp": 0,
                 "weight": 10,
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1", "n_c:2"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ],
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -1260,7 +1427,21 @@
             {
                 "text": "p_l finds a gang of rogues in the bush! p_l has to turn tail and run, the sound of gloating the last thing in p_l's ears, hearing how little the rogues think of c_n.",
                 "exp": 0,
-                "weight": 20
+                "weight": 20,
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1", "n_c:2"],
+                        "cats_to": ["clan"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [

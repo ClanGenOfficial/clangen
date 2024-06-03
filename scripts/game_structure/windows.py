@@ -15,7 +15,6 @@ import logging
 import subprocess
 import ujson
 
-
 from scripts.cat.history import History
 from scripts.cat.names import Name
 from pygame_gui.elements import UIWindow
@@ -29,7 +28,135 @@ from scripts.utility import scale, get_text_box_theme, quit, update_sprite, scal
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.housekeeping.version import get_version_info
 
-    
+
+class SymbolFilterWindow(UIWindow):
+    def __init__(self):
+        game.switches['window_open'] = True
+
+        super().__init__(scale(pygame.Rect((500, 350), (600, 700))),
+                         window_display_title='Symbol Filters',
+                         object_id="#filter_window")
+
+        self.possible_tags = {
+            "plant": ["flower", "tree"],
+            "animal": ["cat", "fish", "bird", "mammal", "bug", "other animals"],
+            "element": ["water", "fire", "earth", "air", "light"],
+            "location": [],
+            "descriptor": [],
+            "miscellaneous": []
+        }
+
+        self.back_button = UIImageButton(
+            scale(pygame.Rect((540, 10), (44, 44))),
+            "",
+            object_id="#exit_window_button",
+            starting_height=10,
+            container=self
+        )
+        self.filter_title = pygame_gui.elements.UILabel(
+            scale(pygame.Rect((10, 10), (-1, -1))),
+            text="Show Symbols With:",
+            object_id="#text_box_40",
+            container=self
+        )
+        self.filter_container = pygame_gui.elements.UIScrollingContainer(
+            scale(pygame.Rect((10, 70), (570, 620))),
+            manager=MANAGER,
+            starting_height=1,
+            object_id="#filter_container",
+            allow_scroll_x=False,
+            container=self
+        )
+        self.checkbox = {}
+        self.checkbox_text = {}
+        x_pos = 30
+        y_pos = 40
+        for tag, subtags in self.possible_tags.items():
+            self.checkbox[tag] = UIImageButton(
+                scale(pygame.Rect((x_pos, y_pos), (68, 68))),
+                "",
+                object_id="#checked_checkbox",
+                container=self.filter_container,
+                starting_height=2,
+                manager=MANAGER
+            )
+            if tag in game.switches["disallowed_symbol_tags"]:
+                self.checkbox[tag].change_object_id("#unchecked_checkbox")
+
+            self.checkbox_text[tag] = pygame_gui.elements.UILabel(
+                scale(pygame.Rect((x_pos + 80, y_pos + 6), (-1, -1))),
+                text=str(tag),
+                container=self.filter_container,
+                object_id="#text_box_30_horizleft",
+                manager=MANAGER
+            )
+            y_pos += 70
+            if subtags:
+                for s_tag in subtags:
+                    self.checkbox[s_tag] = UIImageButton(
+                        scale(pygame.Rect((x_pos + 70, y_pos), (68, 68))),
+                        "",
+                        object_id="#checked_checkbox",
+                        container=self.filter_container,
+                        starting_height=2,
+                        manager=MANAGER
+                    )
+
+                    if s_tag in game.switches["disallowed_symbol_tags"]:
+                        self.checkbox[s_tag].change_object_id("#unchecked_checkbox")
+
+                    self.checkbox_text[s_tag] = pygame_gui.elements.UILabel(
+                        scale(pygame.Rect((x_pos + 150, y_pos + 6), (-1, -1))),
+                        text=s_tag,
+                        container=self.filter_container,
+                        object_id="#text_box_30_horizleft",
+                        manager=MANAGER
+                    )
+                    y_pos += 60
+                y_pos += 10
+
+    def process_event(self, event):
+        super().process_event(event)
+
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element == self.back_button:
+                game.switches['window_open'] = False
+                self.kill()
+
+            elif event.ui_element in self.checkbox.values():
+                for tag, element in self.checkbox.items():
+                    if element == event.ui_element:
+                        # find out what state the checkbox was in when clicked
+                        object_ids = element.get_object_ids()
+                        # handle checked checkboxes becoming unchecked
+                        if "#checked_checkbox" in object_ids:
+                            self.checkbox[tag].change_object_id("#unchecked_checkbox")
+                            # add tag to disallowed list
+                            if tag not in game.switches["disallowed_symbol_tags"]:
+                                game.switches['disallowed_symbol_tags'].append(tag)
+                            # if tag had subtags, also add those subtags
+                            if tag in self.possible_tags:
+                                for s_tag in self.possible_tags[tag]:
+                                    self.checkbox[s_tag].change_object_id("#unchecked_checkbox")
+                                    self.checkbox[s_tag].disable()
+                                    if s_tag not in game.switches:
+                                        game.switches['disallowed_symbol_tags'].append(s_tag)
+
+                        # handle unchecked checkboxes becoming checked
+                        elif "#unchecked_checkbox" in object_ids:
+                            self.checkbox[tag].change_object_id("#checked_checkbox")
+                            # remove tag from disallowed list
+                            if tag in game.switches["disallowed_symbol_tags"]:
+                                game.switches["disallowed_symbol_tags"].remove(tag)
+                            # if tag had subtags, also add those subtags
+                            if tag in self.possible_tags:
+                                for s_tag in self.possible_tags[tag]:
+                                    self.checkbox[s_tag].change_object_id("#checked_checkbox")
+                                    self.checkbox[s_tag].enable()
+                                    if s_tag in game.switches["disallowed_symbol_tags"]:
+                                        game.switches["disallowed_symbol_tags"].remove(s_tag)
+
+
 class SaveCheck(UIWindow):
     def __init__(self, last_screen, isMainMenu, mm_btn):
         game.switches['window_open'] = True
@@ -50,7 +177,7 @@ class SaveCheck(UIWindow):
         self.mm_btn = mm_btn
         # adding a variable for starting_height to make sure that this menu is always on top
         top_stack_menu_layer_height = 10000
-        if (self.isMainMenu):
+        if self.isMainMenu:
             self.mm_btn.disable()
             self.main_menu_button = UIImageButton(
                 scale(pygame.Rect((146, 310), (305, 60))),
@@ -462,13 +589,13 @@ class ChangeCatName(UIWindow):
 
 
 class PronounCreation(UIWindow):
-    #This window allows the user to create a pronoun set
+    # This window allows the user to create a pronoun set
 
     def __init__(self, cat):
         super().__init__(scale(pygame.Rect((160, 300), (1300, 800))),
-                             window_display_title='Create Cat Pronouns',
-                             object_id='#change_cat_gender_window',
-                             resizable=False)
+                         window_display_title='Create Cat Pronouns',
+                         object_id='#change_cat_gender_window',
+                         resizable=False)
         game.switches['window_open'] = True
         self.the_cat = cat
         self.conju = 1
@@ -478,26 +605,26 @@ class PronounCreation(UIWindow):
         self.checkbox_label = {}
         Demo_frame = "resources/images/demo_frame.png"
         self.back_button = UIImageButton(
-                scale(pygame.Rect((1230, 20), (44, 44))),
-                "",
-                object_id="#exit_window_button",
-                container=self
-            )
+            scale(pygame.Rect((1230, 20), (44, 44))),
+            "",
+            object_id="#exit_window_button",
+            container=self
+        )
         self.heading = pygame_gui.elements.UITextBox(f"Create new pronouns,"
-                                                         f" you have full control. "
-                                                         f"<br> Test your created pronouns before saving them!",
-                                                         scale(pygame.Rect((30, 120), (760, 150))),
-                                                         object_id="#text_box_30_horizcenter_spacing_95",
-                                                         manager=MANAGER,
-                                                         container=self)
-        
+                                                     f" you have full control. "
+                                                     f"<br> Test your created pronouns before saving them!",
+                                                     scale(pygame.Rect((30, 120), (760, 150))),
+                                                     object_id="#text_box_30_horizcenter_spacing_95",
+                                                     manager=MANAGER,
+                                                     container=self)
+
         # Create a sub-container for the Demo frame and sample text
         demo_container_rect = scale(pygame.Rect((795, 115), (851, 1184)))
         self.demo_container = pygame_gui.elements.UIScrollingContainer(
             relative_rect=demo_container_rect,
             manager=MANAGER,
             container=self)
-        
+
         # Add the Demo frame to the sub-container
         self.elements["demo_frame"] = pygame_gui.elements.UIImage(
             scale(pygame.Rect((0, 0), (414, 576))),
@@ -511,7 +638,7 @@ class PronounCreation(UIWindow):
             scale(pygame.Rect((150, 30), (450, 65))),
             object_id="#text_box_34_horizleft",
             manager=MANAGER, container=self.demo_container)
-        
+
         # Add UITextBox for the sample text to the sub-container
         self.sample_text_box = pygame_gui.elements.UITextBox(
             self.get_sample_text(self.the_cat.pronouns[0]),
@@ -526,56 +653,55 @@ class PronounCreation(UIWindow):
             scale(pygame.Rect((200, 30), (450, 65))),
             object_id="#text_box_40_horizcenter",
             manager=MANAGER, container=self)
-        
+
         # Adjusted positions for labels
         self.box_labels["subject"] = pygame_gui.elements.UITextBox("Subject",
-                                                            scale(pygame.Rect(
-                                                                (175, 230), (200, 60))),
-                                                            object_id="#text_box_30_horizcenter_spacing_95",
-                                                            manager=MANAGER,
-                                                            container=self)
+                                                                   scale(pygame.Rect(
+                                                                       (175, 230), (200, 60))),
+                                                                   object_id="#text_box_30_horizcenter_spacing_95",
+                                                                   manager=MANAGER,
+                                                                   container=self)
 
         self.box_labels["object"] = pygame_gui.elements.UITextBox("Object",
-                                                            scale(pygame.Rect(
-                                                                (425, 230), (200, 60))),
-                                                            object_id="#text_box_30_horizcenter_spacing_95",
-                                                            manager=MANAGER,
-                                                            container=self)
+                                                                  scale(pygame.Rect(
+                                                                      (425, 230), (200, 60))),
+                                                                  object_id="#text_box_30_horizcenter_spacing_95",
+                                                                  manager=MANAGER,
+                                                                  container=self)
 
         self.box_labels["poss"] = pygame_gui.elements.UITextBox("Possessive",
-                                                        scale(pygame.Rect(
-                                                            (50, 410), (200, 60))),
-                                                        object_id="#text_box_30_horizcenter_spacing_95",
-                                                        manager=MANAGER,
-                                                        container=self)
+                                                                scale(pygame.Rect(
+                                                                    (50, 410), (200, 60))),
+                                                                object_id="#text_box_30_horizcenter_spacing_95",
+                                                                manager=MANAGER,
+                                                                container=self)
 
         self.box_labels["inposs"] = pygame_gui.elements.UITextBox("Independent<br>Possessive",
-                                                            scale(pygame.Rect(
-                                                                (250, 370), (300, 120))),
-                                                            object_id="#text_box_30_horizcenter_spacing_95",
-                                                            manager=MANAGER,
-                                                            container=self)
+                                                                  scale(pygame.Rect(
+                                                                      (250, 370), (300, 120))),
+                                                                  object_id="#text_box_30_horizcenter_spacing_95",
+                                                                  manager=MANAGER,
+                                                                  container=self)
 
         self.box_labels["self"] = pygame_gui.elements.UITextBox("Reflexive",
-                                                            scale(pygame.Rect(
-                                                                (550, 410), (200, 60))),
-                                                            object_id="#text_box_30_horizcenter_spacing_95",
-                                                            manager=MANAGER,
-                                                            container=self)
+                                                                scale(pygame.Rect(
+                                                                    (550, 410), (200, 60))),
+                                                                object_id="#text_box_30_horizcenter_spacing_95",
+                                                                manager=MANAGER,
+                                                                container=self)
         self.checkbox_label["singular_label"] = pygame_gui.elements.UITextBox("Singular",
-                                                            scale(pygame.Rect(
-                                                                (255, 570), (200, 60))),
-                                                            object_id="#text_box_30_horizcenter_spacing_95",
-                                                            manager=MANAGER,
-                                                            container=self)
+                                                                              scale(pygame.Rect(
+                                                                                  (255, 570), (200, 60))),
+                                                                              object_id="#text_box_30_horizcenter_spacing_95",
+                                                                              manager=MANAGER,
+                                                                              container=self)
         self.checkbox_label["plural_label"] = pygame_gui.elements.UITextBox("Plural",
-                                                            scale(pygame.Rect(
-                                                                (470, 570), (200, 60))),
-                                                            object_id="#text_box_30_horizcenter_spacing_95",
-                                                            manager=MANAGER,
-                                                            container=self)
+                                                                            scale(pygame.Rect(
+                                                                                (470, 570), (200, 60))),
+                                                                            object_id="#text_box_30_horizcenter_spacing_95",
+                                                                            manager=MANAGER,
+                                                                            container=self)
 
-        
         # Row 1
         self.boxes["subject"] = pygame_gui.elements.UITextEntryLine(
             scale(pygame.Rect((180, 290), (200, 60))),
@@ -607,44 +733,44 @@ class PronounCreation(UIWindow):
             placeholder_text=self.the_cat.pronouns[0]['self'],
             manager=MANAGER,
             container=self)
-        
+
         # Save Confirmation
         self.pronoun_added = pygame_gui.elements.UITextBox(f"Pronoun saved and added to presets!",
-                                                                scale(pygame.Rect(
-                                                                    (550,700), (800, 80))),
-                                                                visible=False,
-                                                                object_id="#text_box_30_horizleft",
-                                                                manager=MANAGER, container=self)
+                                                           scale(pygame.Rect(
+                                                               (550, 700), (800, 80))),
+                                                           visible=False,
+                                                           object_id="#text_box_30_horizleft",
+                                                           manager=MANAGER, container=self)
 
         # Add buttons
         self.buttons = {}
         self.buttons["save_pronouns"] = UIImageButton(scale(pygame.Rect((350, 670), (146, 60))), "",
-            manager=MANAGER, object_id="#save_button_pronoun",
-            container=self)
-        #Creating Checkmarks
+                                                      manager=MANAGER, object_id="#save_button_pronoun",
+                                                      container=self)
+        # Creating Checkmarks
         self.buttons["singular_unchecked"] = UIImageButton(scale(pygame.Rect((225, 570), (68, 68))), "",
-                                             object_id="#unchecked_checkbox",
-                                             starting_height=2,
-                                             visible=False,
-                                             manager=MANAGER, container=self)
+                                                           object_id="#unchecked_checkbox",
+                                                           starting_height=2,
+                                                           visible=False,
+                                                           manager=MANAGER, container=self)
         self.buttons["singular_checked"] = UIImageButton(scale(pygame.Rect((225, 570), (68, 68))), "",
-                                             object_id="#checked_checkbox",
-                                             starting_height=2,
-                                             visible=False,
-                                             manager=MANAGER, container=self)
-            
+                                                         object_id="#checked_checkbox",
+                                                         starting_height=2,
+                                                         visible=False,
+                                                         manager=MANAGER, container=self)
+
         self.buttons["plural_unchecked"] = UIImageButton(scale(pygame.Rect((455, 570), (68, 68))), "",
-                                             object_id="#unchecked_checkbox",
-                                             starting_height=2,
-                                             visible=False,
-                                             manager=MANAGER, container=self)
+                                                         object_id="#unchecked_checkbox",
+                                                         starting_height=2,
+                                                         visible=False,
+                                                         manager=MANAGER, container=self)
         self.buttons["plural_checked"] = UIImageButton(scale(pygame.Rect((455, 570), (68, 68))), "",
-                                             object_id="#checked_checkbox",
-                                             starting_height=2,
-                                             visible=False,
-                                             manager=MANAGER, container=self)
+                                                       object_id="#checked_checkbox",
+                                                       starting_height=2,
+                                                       visible=False,
+                                                       manager=MANAGER, container=self)
         if self.the_cat.pronouns[0]['conju'] == 1:
-            #self.buttons["plural"].disable()
+            # self.buttons["plural"].disable()
             self.buttons["plural_checked"].show()
             self.buttons["singular_unchecked"].show()
         else:
@@ -653,23 +779,23 @@ class PronounCreation(UIWindow):
             self.conju = 2
 
         self.buttons["test_set"] = UIImageButton(scale(pygame.Rect((120, 475), (208, 60))), "",
-                                             object_id="#test_set_button",
-                                             starting_height=2,
-                                             manager=MANAGER, container=self.demo_container)
+                                                 object_id="#test_set_button",
+                                                 starting_height=2,
+                                                 manager=MANAGER, container=self.demo_container)
 
         self.set_blocking(True)
 
     def get_new_pronouns(self):
         pronoun_template = {
-                "name": "",
-                "subject": "",
-                "object": "",
-                "poss": "",
-                "inposs": "",
-                "self": "",
-                "conju": 1
-            }
-        
+            "name": "",
+            "subject": "",
+            "object": "",
+            "poss": "",
+            "inposs": "",
+            "self": "",
+            "conju": 1
+        }
+
         if sub(r'[^A-Za-z0-9 ]+', "", self.boxes["subject"].get_text()) != "":
             pronoun_template["subject"] = sub(
                 r'[^A-Za-z0-9 ]+', "", self.boxes["subject"].get_text())
@@ -687,17 +813,17 @@ class PronounCreation(UIWindow):
                 r'[^A-Za-z0-9 ]+', "", self.boxes["self"].get_text())
         if self.conju == 2:
             pronoun_template["conju"] = 2
-       # if save button or add to cat is pressed, set 'name' as a counting number thing as an invisible identifier
-        newid = len(game.clan.custom_pronouns)+1
+        # if save button or add to cat is pressed, set 'name' as a counting number thing as an invisible identifier
+        newid = len(game.clan.custom_pronouns) + 1
         pronoun_template['ID'] = "custom" + str(newid)
         return pronoun_template
-    
+
     def is_box_full(self, entry):
         if entry.get_text() == "":
             return False
         else:
             return True
-        
+
     def are_boxes_full(self):
         values = []
         values.append(self.is_box_full(self.boxes["subject"]))
@@ -709,7 +835,7 @@ class PronounCreation(UIWindow):
             if value is False:
                 return False
         return True
-    
+
     def process_event(self, event):
         super().process_event(event)
 
@@ -722,7 +848,7 @@ class PronounCreation(UIWindow):
             elif event.ui_element == self.buttons["save_pronouns"]:
                 if self.are_boxes_full():
                     new_pronouns = self.get_new_pronouns()
-                    #self.the_cat.pronouns.append(new_pronouns)
+                    # self.the_cat.pronouns.append(new_pronouns)
                     game.clan.custom_pronouns.append(new_pronouns)
                     print("Pronouns saved")
                     self.pronoun_added.show()
@@ -748,7 +874,7 @@ class PronounCreation(UIWindow):
                     manager=MANAGER,
                     container=self.demo_container
                 )
-    
+
     def get_sample_text(self, pronouns):
         text = ""
         subject = f"{pronouns['subject']} are quick. <br>"
@@ -760,13 +886,14 @@ class PronounCreation(UIWindow):
         text += poss.capitalize()
         text += f"That den is {pronouns['inposs']}. <br>"
         text += f"This cat hunts by {pronouns['self']}.<br>"
-        #Full Sentence Example, doesn't fit.
+        # Full Sentence Example, doesn't fit.
         '''sentence = f"{pronouns['poss']} keen sense alerted {pronouns['object']} to prey and {pronouns['subject']} decided to treat {pronouns['self']} by catching prey that would be {pronouns['inposs']} alone to eat. "
         if pronouns["conju"] == 2:
             sentence = f"{pronouns['poss']} keen sense alerted {pronouns['object']} to prey and {pronouns['subject']} decides to treat {pronouns['self']} by catching prey that would be {pronouns['inposs']} alone to eat. "
         text += sentence.capitalize()'''
-        #print (len(game.clan.custom_pronouns)+1)
+        # print (len(game.clan.custom_pronouns)+1)
         return text
+
 
 class KillCat(UIWindow):
     """This window allows the user to specify the cat's gender"""
@@ -1173,7 +1300,8 @@ class ChangelogPopup(UIWindow):
         dynamic_changelog = False
         if get_version_info().is_dev() and get_version_info().is_source_build and get_version_info().git_installed:
             file_cont = subprocess.check_output(
-                ["git", "log", r"--pretty=format:%H|||%cd|||%b|||%s", "-15", "--no-decorate", "--merges", "--grep=Merge pull request", "--date=short"]).decode("utf-8")
+                ["git", "log", r"--pretty=format:%H|||%cd|||%b|||%s", "-15", "--no-decorate", "--merges",
+                 "--grep=Merge pull request", "--date=short"]).decode("utf-8")
             dynamic_changelog = True
         else:
             with open("changelog.txt", "r", encoding='utf-8') as read_file:
@@ -1187,15 +1315,15 @@ class ChangelogPopup(UIWindow):
             file_cont = ""
             for line in commits:
                 info = line.split("|||")
-                                
+
                 # Get PR number so we can link the PR
                 pr_number = re_search(r"Merge pull request #([0-9]*?) ", info[3])
                 if pr_number:
-                    
-                    # For some reason, multi-line links on pygame_gui's text boxes don't work very well. 
+                    # For some reason, multi-line links on pygame_gui's text boxes don't work very well.
                     # So, to work around that, just add a little "link" at the end
-                    info[2] += f" <a href='https://github.com/ClanGenOfficial/clangen/pull/{pr_number.group(1)}'>(link)</a>"
-                
+                    info[
+                        2] += f" <a href='https://github.com/ClanGenOfficial/clangen/pull/{pr_number.group(1)}'>(link)</a>"
+
                 # Format: DATE- \n PR Title (link)
                 file_cont += f"<b>{info[1]}</b>\n- {info[2]}\n"
 
@@ -1216,7 +1344,6 @@ class ChangelogPopup(UIWindow):
             container=self
         )
 
-
     def process_event(self, event):
         super().process_event(event)
 
@@ -1224,6 +1351,7 @@ class ChangelogPopup(UIWindow):
             if event.ui_element == self.close_button:
                 game.switches['window_open'] = False
                 self.kill()
+
 
 class RelationshipLog(UIWindow):
     """This window allows the user to see the relationship log of a certain relationship."""
@@ -1266,7 +1394,8 @@ class RelationshipLog(UIWindow):
         if relationship.opposite_relationship and len(relationship.opposite_relationship.log) > 0:
             opposite_log_string = f"{f'<br>-----------------------------<br>'.join(relationship.opposite_relationship.log)}<br>"
 
-        log_string = f"{f'<br>-----------------------------<br>'.join(relationship.log)}<br>" if len(relationship.log) > 0 else\
+        log_string = f"{f'<br>-----------------------------<br>'.join(relationship.log)}<br>" if len(
+            relationship.log) > 0 else \
             "There are no relationship logs."
 
         if not opposite_log_string:
@@ -1491,10 +1620,10 @@ class SaveAsImage(UIWindow):
 
 class EventLoading(UIWindow):
     def __init__(self, pos):
-        
-        if pos is None: 
+
+        if pos is None:
             pos = (800, 700)
-        
+
         super().__init__(scale(pygame.Rect(pos, (200, 200))),
                          window_display_title='Game Over',
                          object_id='#loading_window',
@@ -1539,6 +1668,7 @@ class EventLoading(UIWindow):
         self.end_animation = True
         super().kill()
 
+
 class ChangeCatToggles(UIWindow):
     """This window allows the user to edit various cat behavior toggles"""
 
@@ -1559,33 +1689,33 @@ class ChangeCatToggles(UIWindow):
 
         self.checkboxes = {}
         self.refresh_checkboxes()
-        
+
         # Text
-        self.text_1 = pygame_gui.elements.UITextBox("Prevent fading", scale(pygame.Rect(110, 60, -1, 50)), 
+        self.text_1 = pygame_gui.elements.UITextBox("Prevent fading", scale(pygame.Rect(110, 60, -1, 50)),
                                                     object_id="#text_box_30_horizleft_pad_0_8",
                                                     container=self)
-        
-        self.text_2 = pygame_gui.elements.UITextBox("Prevent kits", scale(pygame.Rect(110, 110, -1, 50)), 
+
+        self.text_2 = pygame_gui.elements.UITextBox("Prevent kits", scale(pygame.Rect(110, 110, -1, 50)),
                                                     object_id="#text_box_30_horizleft_pad_0_8",
                                                     container=self)
-        
-        self.text_3 = pygame_gui.elements.UITextBox("Prevent retirement", scale(pygame.Rect(110, 160, -1, 50)), 
+
+        self.text_3 = pygame_gui.elements.UITextBox("Prevent retirement", scale(pygame.Rect(110, 160, -1, 50)),
                                                     object_id="#text_box_30_horizleft_pad_0_8",
                                                     container=self)
-        
+
         self.text_4 = pygame_gui.elements.UITextBox("Limit romantic interactions and mate changes",
-                                                    scale(pygame.Rect(110, 210, -1, 50)), 
+                                                    scale(pygame.Rect(110, 210, -1, 50)),
                                                     object_id="#text_box_30_horizleft_pad_0_8",
                                                     container=self)
-        
+
         # Text
-        
+
     def refresh_checkboxes(self):
-        
+
         for x in self.checkboxes.values():
             x.kill()
         self.checkboxes = {}
-        
+
         # Prevent Fading
         if self.the_cat == game.clan.instructor:
             box_type = "#checked_checkbox"
@@ -1596,51 +1726,50 @@ class ChangeCatToggles(UIWindow):
         else:
             box_type = "#unchecked_checkbox"
             tool_tip = "Prevents cat from fading away after being dead for 202 moons."
-        
+
         # Fading
         self.checkboxes["prevent_fading"] = UIImageButton(scale(pygame.Rect(45, 50, 68, 68)), "",
                                                           container=self,
                                                           object_id=box_type,
                                                           tool_tip_text=tool_tip)
-        
+
         if self.the_cat == game.clan.instructor:
             self.checkboxes["prevent_fading"].disable()
-        
-        
-        #No Kits
+
+        # No Kits
         if self.the_cat.no_kits:
             box_type = "#checked_checkbox"
             tool_tip = "Prevent the cat from adopting or having kittens."
         else:
             box_type = "#unchecked_checkbox"
             tool_tip = "Prevent the cat from adopting or having kittens."
-        
+
         self.checkboxes["prevent_kits"] = UIImageButton(scale(pygame.Rect(45, 100, 68, 68)), "",
                                                         container=self,
                                                         object_id=box_type,
                                                         tool_tip_text=tool_tip)
-        
-        #No Retire
+
+        # No Retire
         if self.the_cat.no_retire:
             box_type = "#checked_checkbox"
             tool_tip = "Allow cat to retiring automatically."
         else:
             box_type = "#unchecked_checkbox"
             tool_tip = "Prevent cat from retiring automatically."
-        
+
         self.checkboxes["prevent_retire"] = UIImageButton(scale(pygame.Rect(45, 150, 68, 68)), "",
                                                           container=self,
                                                           object_id=box_type,
                                                           tool_tip_text=tool_tip)
-        
-        #No mates
+
+        # No mates
         if self.the_cat.no_mates:
             box_type = "#checked_checkbox"
             tool_tip = "Prevent cat from automatically taking a mate, breaking up, or having romantic interactions with non-mates."
         else:
             box_type = "#unchecked_checkbox"
             tool_tip = "Prevent cat from automatically taking a mate, breaking up, or having romantic interactions with non-mates."
-        
+
         self.checkboxes["prevent_mates"] = UIImageButton(scale(pygame.Rect(45, 200, 68, 68)), "",
                                                          container=self,
                                                          object_id=box_type,
@@ -1665,8 +1794,9 @@ class ChangeCatToggles(UIWindow):
             elif event.ui_element == self.checkboxes["prevent_mates"]:
                 self.the_cat.no_mates = not self.the_cat.no_mates
                 self.refresh_checkboxes()
-        
+
         return super().process_event(event)
+
 
 class SelectFocusClans(UIWindow):
     """This window allows the user to select the clans to be sabotaged, aided or raided in the focus setting."""
@@ -1685,7 +1815,7 @@ class SelectFocusClans(UIWindow):
             container=self
         )
         self.save_button = UIImageButton(
-            scale(pygame.Rect((161, 360),(278, 60))),
+            scale(pygame.Rect((161, 360), (278, 60))),
             "",
             object_id="#change_focus_button",
             container=self
@@ -1712,7 +1842,7 @@ class SelectFocusClans(UIWindow):
                 container=self
             )
             n += 1
-        
+
     def refresh_checkboxes(self):
         for x in self.checkboxes.values():
             x.kill()
@@ -1758,6 +1888,5 @@ class SelectFocusClans(UIWindow):
                     self.save_button.disable()
                 if len(game.clan.clans_in_focus) >= 1 and not self.save_button.is_enabled:
                     self.save_button.enable()
-        
-        return super().process_event(event)
 
+        return super().process_event(event)

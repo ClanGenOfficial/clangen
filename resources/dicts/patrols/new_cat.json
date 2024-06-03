@@ -63,10 +63,22 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "The loner is unimpressed by their hostility and decides this Clan is not for them.",
+                "text": "The loner is unimpressed by their hostility and decides this Clan is not for {PRONOUN/n_c:0/object}.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": -1
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["meeting", "loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 40
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -142,10 +154,22 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "The loner is unimpressed by p_l's hostility and decides this Clan is not for them.",
+                "text": "The loner is unimpressed by their hostility and decides this Clan is not for {PRONOUN/n_c:0/object}.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": -1
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["meeting", "loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 40
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -614,7 +638,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "There's no guarentee that {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} still in the area - so p_l's ears perk up to pick up {PRONOUN/n_c:0/poss} scent. n_c:0 is basking on some Twoleg rubbish, but when {PRONOUN/n_c:0/subject} spot p_l, {PRONOUN/n_c:0/subject} jump down, trotting over with tail up, happily touching noses with p_l.",
+                "text": "There's no guarantee that {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} still in the area - so p_l's ears perk up to pick up {PRONOUN/n_c:0/poss} scent. n_c:0 is basking on some Twoleg rubbish, but when {PRONOUN/n_c:0/subject} spot p_l, {PRONOUN/n_c:0/subject} jump down, trotting over with tail up, happily touching noses with p_l.",
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
@@ -1014,10 +1038,22 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "The loner is unimpressed by their hostility and decides this Clan is not for them.",
+                "text": "The loner is unimpressed by their hostility and decides this Clan is not for {PRONOUN/n_c:0/object}.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": -1
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["meeting", "loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 40
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -1093,10 +1129,22 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "The loner is unimpressed by p_l's hostility and decides this Clan is not for them.",
+                "text": "The loner is unimpressed by their hostility and decides this Clan is not for {PRONOUN/n_c:0/object}.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": -1
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["meeting", "loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 40
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -1196,7 +1244,19 @@
                 "text": "The loner escapes the dog by climbing a tree and scowls at the patrol, who stood by watching.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": -1
+                "outsider_rep": -1,
+                "new_cat": [
+                    "meeting", "loner"
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 40
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -1204,7 +1264,10 @@
                 "text": "The patrol watches as the loner climbs up a spindly tree to escape the dog, and then promptly proceed to chase the dog out of the territory and warn the loner not to cross the border.",
                 "exp": 10,
                 "weight": 20,
-                "outsider_rep": -2
+                "outsider_rep": -2,
+                "new_cat": [
+                    "meeting", "loner"
+                ]
             }
         ]
     },
@@ -1799,35 +1862,25 @@
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
                 "new_cat": [
-                    ["status:elder", "age:senior", "loner"]
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"]
                 ],
                 "relationships": [
                     {
-                        "cats_from": ["n_c:0"],
+                        "cats_from": ["n_c:0", "n_c:1", "n_c:2"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
-                        "amount": 10
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
                     }
-                ],
-                "outsider_rep": 1
+                ]
             },
             {
                 "text": "s_c has a bad feeling about this. At first it seems like {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats lingering around the Twoleg nest. Forewarned, s_c retreats to safety.",
                 "exp": 30,
                 "weight": 20,
-                "stat_trait": ["careful", "insecure", "nervous"],
-                "new_cat": [
-                    ["status:elder", "age:senior", "loner"]
-                ],
-                "relationships": [
-                    {
-                        "cats_from": ["n_c:0"],
-                        "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
-                        "amount": 10
-                    }
-                ],
-                "outsider_rep": 1
+                "stat_trait": ["careful", "insecure", "nervous"]
             }
         ],
         "fail_outcomes": [
@@ -1848,7 +1901,20 @@
                 "text": "p_l can sense it's a trap, and tries to get the upper paw, only to find rogues waiting for {PRONOUN/p_l/object} there too. p_l escapes with {PRONOUN/p_l/poss} life, but fear in {PRONOUN/p_l/poss} heart.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": -1
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1", "n_c:2"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -1856,7 +1922,20 @@
                 "text": "p_l can sense it's a trap, and waits just outside, setting {PRONOUN/p_l/poss} own trap. {PRONOUN/p_l/subject/CAP} {VERB/p_l/manage/manages} to set up such a yowl that it sends the rogues running as if LionClan were after them.",
                 "exp": 30,
                 "weight": 20,
-                "outsider_rep": -2
+                "outsider_rep": -2,
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1", "n_c:2"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ]
             }
         ]
     },
@@ -1915,14 +1994,17 @@
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
                 "new_cat": [
-                    ["status:elder", "age:senior", "loner"]
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting", "dead"]
                 ],
                 "relationships": [
                     {
-                        "cats_from": ["n_c:0"],
+                        "cats_from": ["n_c:0", "n_c:1", "n_c:2"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
-                        "amount": 10
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
                     }
                 ],
                 "outsider_rep": 1
@@ -1931,18 +2013,6 @@
                 "text": "s_c signals for the patrol to stop. Carefully, quietly, {PRONOUN/s_c/subject} {VERB/s_c/explain/explains} {PRONOUN/s_c/poss} concerns about the unknown situation. At first it seems like {PRONOUN/p_l/subject}{VERB/s_c/'re/'s} being too cautious - but then p_l picks up on the scent of strange cats lingering around the Twoleg nest. Forewarned, the patrol retreats to safety.",
                 "exp": 30,
                 "weight": 20,
-                "stat_trait": ["careful", "insecure", "nervous"],
-                "new_cat": [
-                    ["status:elder", "age:senior", "loner"]
-                ],
-                "relationships": [
-                    {
-                        "cats_from": ["n_c:0"],
-                        "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
-                        "amount": 10
-                    }
-                ],
                 "outsider_rep": 1
             }
         ],
@@ -1956,7 +2026,21 @@
                     "reg_death": "This cat died in an ambush set by rogues.",
                     "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
                 },
-                "outsider_rep": -1
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1", "n_c:2"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ]
             }
         ],
         "antag_fail_outcomes": [
@@ -1964,7 +2048,20 @@
                 "text": "r_c can sense it's a trap, and tries to get the upper paw, only to find rogues waiting for {PRONOUN/r_c/object} there too. r_c escapes with {PRONOUN/r_c/poss} life, but fear in {PRONOUN/r_c/poss} heart.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": -1
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -1972,7 +2069,20 @@
                 "text": "r_c can sense it's a trap, and waits just outside, setting {PRONOUN/r_c/poss} own trap. {PRONOUN/r_c/subject/CAP} {VERB/r_c/manage/manages} to set up such a yowl that it sends the rogues running as if LionClan were after them.",
                 "exp": 30,
                 "weight": 20,
-                "outsider_rep": -2
+                "outsider_rep": -2,
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ]
             }
         ]
     },
@@ -2062,6 +2172,18 @@
                 "text": "p_l takes the lead in checking the source of the noise and comes face to face with a rogue hiding in the bush! The rogue takes a swipe at p_l, but doesn't get much damage in before p_l retaliates and chases the intruder out of c_n territory.",
                 "exp": 0,
                 "weight": 10,
+                "new_cat": [
+                    ["rogue", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1", "n_c:2"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ],
                 "injury": [
                     {
                         "cats": ["p_l"],
@@ -2078,7 +2200,27 @@
                 "text": "A loner and their kits emerge from the bush, but p_l shakes {PRONOUN/p_l/poss} head, and {VERB/p_l/tell/tells} the loner {PRONOUN/p_l/subject} meant it when {PRONOUN/p_l/subject} said {PRONOUN/p_l/subject} didn't want to see them again. The loner hisses and scratches at p_l. Rumors start at camp over what p_l said to the loner.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": -1
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["loner", "meeting", "age:adult"],
+                    ["loner", "meeting", "litter", "parent:0"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["p_l"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 15
+                    },
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["p_l"],
+                        "mutual": true,
+                        "values": ["platonic"],
+                        "amount": 5
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -2086,7 +2228,11 @@
                 "text": "A loner and their kits emerge from the bush, but p_l shakes {PRONOUN/p_l/poss} head, and {VERB/p_l/inform/informs} {PRONOUN/p_l/object} there's no room in c_n.",
                 "exp": 10,
                 "weight": 20,
-                "outsider_rep": -2
+                "outsider_rep": -2,
+                "new_cat": [
+                    ["loner", "meeting", "age:adult"],
+                    ["loner", "meeting", "litter", "parent:0"]
+                ]
             }
         ]
     },
@@ -2145,35 +2291,25 @@
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
                 "new_cat": [
-                    ["status:elder", "age:senior", "loner"]
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting", "dead"]
                 ],
                 "relationships": [
                     {
-                        "cats_from": ["n_c:0"],
+                        "cats_from": ["n_c:0", "n_c:1", "n_c:2"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
-                        "amount": 10
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
                     }
-                ],
-                "outsider_rep": 1
+                ]
             },
             {
                 "text": "s_c signals for the patrol to stop. Carefully, quietly, {PRONOUN/s_c/subject} {VERB/s_c/voice/voices} {PRONOUN/s_c/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety.",
                 "exp": 30,
                 "weight": 20,
-                "stat_trait": ["careful", "insecure", "nervous"],
-                "new_cat": [
-                    ["status:elder", "age:senior", "loner"]
-                ],
-                "relationships": [
-                    {
-                        "cats_from": ["n_c:0"],
-                        "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
-                        "amount": 10
-                    }
-                ],
-                "outsider_rep": 1
+                "stat_trait": ["careful", "insecure", "nervous"]
             }
         ],
         "fail_outcomes": [
@@ -2194,7 +2330,20 @@
                 "text": "r_c can sense it's a trap, and tries to get the upper paw, only to find rogues waiting for {PRONOUN/r_c/object} there too. r_c escapes with {PRONOUN/r_c/poss} life, but fear in {PRONOUN/r_c/poss} heart.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": -1
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -2202,7 +2351,20 @@
                 "text": "r_c can sense it's a trap, and waits just outside, setting {PRONOUN/r_c/poss} own trap. {PRONOUN/r_c/subject/CAP} {VERB/r_c/manage/manages} to set up such a yowl that it sends the rogues running as if LionClan were after them.",
                 "exp": 30,
                 "weight": 20,
-                "outsider_rep": -2
+                "outsider_rep": -2,
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ]
             }
         ]
     },
@@ -2261,35 +2423,25 @@
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
                 "new_cat": [
-                    ["status:elder", "age:senior", "loner"]
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"]
                 ],
                 "relationships": [
                     {
-                        "cats_from": ["n_c:0"],
+                        "cats_from": ["n_c:0", "n_c:1", "n_c:2"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
-                        "amount": 10
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
                     }
-                ],
-                "outsider_rep": 1
+                ]
             },
             {
                 "text": "s_c has a bad feeling about this. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety.",
                 "exp": 30,
                 "weight": 20,
-                "stat_trait": ["careful", "insecure", "nervous"],
-                "new_cat": [
-                    ["status:elder", "age:senior", "loner"]
-                ],
-                "relationships": [
-                    {
-                        "cats_from": ["n_c:0"],
-                        "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
-                        "amount": 10
-                    }
-                ],
-                "outsider_rep": 1
+                "stat_trait": ["careful", "insecure", "nervous"]
             }
         ],
         "fail_outcomes": [
@@ -2310,7 +2462,20 @@
                 "text": "r_c can sense it's a trap, and tries to get the upper paw, only to find rogues waiting for {PRONOUN/r_c/object} there too. r_c escapes with {PRONOUN/r_c/poss} life, but fear in {PRONOUN/r_c/poss} heart.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": -1
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -2318,7 +2483,20 @@
                 "text": "r_c can sense it's a trap, and waits just outside, setting {PRONOUN/r_c/poss} own trap. {PRONOUN/r_c/subject/CAP} {VERB/r_c/manage/manages} to set up such a yowl that it sends the rogues running as if LionClan were after them.",
                 "exp": 30,
                 "weight": 20,
-                "outsider_rep": -2
+                "outsider_rep": -2,
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ]
             }
         ]
     },
@@ -2646,7 +2824,10 @@
                 "text": "The patrol warily approaches the loner, who doesn't seem to notice them. It's obvious that the cat is bleeding out. p_l attempts to staunch the bleeding and carry the cat to camp, but it's no use. Hopefully the loner didn't suffer too much.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": -1
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["loner", "meeting", "dead"]
+                ]
             }
         ],
         "antag_fail_outcomes": [
@@ -2662,7 +2843,10 @@
                 "text": "The patrol launches into attack, only to find the loner that they've been fighting is too weak to fight back. They go home with blood on their paws.",
                 "exp": 10,
                 "weight": 20,
-                "outsider_rep": -2
+                "outsider_rep": -2,
+                "new_cat": [
+                    ["loner", "meeting", "dead"]
+                ]
             }
         ]
     },
@@ -2760,7 +2944,10 @@
                 "text": "p_l warily approaches the loner, who doesn't seem to notice {PRONOUN/p_l/object}. It's obvious that the cat is bleeding out. p_l attempts to staunch the bleeding and carry the cat to camp, but it's no use. Hopefully the loner didn't suffer too much.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": -1
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["loner", "meeting", "dead"]
+                ]
             }
         ],
         "antag_fail_outcomes": [
@@ -2776,7 +2963,10 @@
                 "text": "p_l launches into attack, only to find the loner that {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been fighting is too weak to fight back. {PRONOUN/p_l/subject/CAP} {VERB/p_l/go/goes} home with blood on {PRONOUN/p_l/poss} paws.",
                 "exp": 10,
                 "weight": 20,
-                "outsider_rep": -2
+                "outsider_rep": -2,
+                "new_cat": [
+                    ["loner", "meeting", "dead"]
+                ]
             }
         ]
     },
