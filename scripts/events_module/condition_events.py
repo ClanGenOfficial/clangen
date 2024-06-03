@@ -256,7 +256,6 @@ class Condition_Events():
             if cat.dead:
                 types.append("birth_death")
             game.cur_events_list.append(Single_Event(event_string, types, cat.ID))
-            # game.health_events_list.append(event_string)
 
         # just double-checking that trigger is only returned True if the cat is dead
         if cat.dead:
@@ -272,17 +271,13 @@ class Condition_Events():
         This function handles overall the injuries in 'expanded' (or 'cruel season') game mode.
         Returns: boolean - if an event was triggered
         """
-        has_other_clan = False
         triggered = False
-        text = None
         random_number = int(
             random.random() * game.get_config_value("condition_related", f"{game.clan.game_mode}_injury_chance"))
 
         if cat.dead:
             triggered = True
             return triggered
-
-        involved_cats = [cat.ID]
 
         # handle if the current cat is already injured
         if cat.is_injured() and game.clan.game_mode != 'classic':
@@ -293,7 +288,7 @@ class Condition_Events():
                     return triggered
                 elif injury == 'pregnant':
                     return triggered
-            triggered, event_string = Condition_Events.handle_already_injured(cat)
+            triggered = Condition_Events.handle_already_injured(cat)
         else:
             # EVENTS
             if not triggered and \
@@ -523,7 +518,7 @@ class Condition_Events():
     def handle_already_injured(cat):
         """
         This function handles, when the cat is already injured
-        Returns: boolean (if something happened) and the event_string
+        Returns: True if an event was triggered, False if nothing happened
         """
         triggered = False
         event_list = []
@@ -628,18 +623,24 @@ class Condition_Events():
 
                     event = possible_string_list[random_index]
                     event = event_text_adjust(Cat, event, main_cat=cat, random_cat=med_cat)  # adjust the text
+
                 if event is not None:
                     event_list.append(event)
                 continue
 
             Condition_Events.give_risks(cat, event_list, injury, injury_progression, injuries, cat.injuries)
-
         if len(event_list) > 0:
             event_string = ' '.join(event_list)
         else:
             event_string = None
-        return triggered, event_string
 
+        if event_string:
+            types = ["health"]
+            if cat.dead:
+                types.append("birth_death")
+            game.cur_events_list.append(Single_Event(event_string, types, cat.ID))
+
+        return triggered
     @staticmethod
     def handle_already_disabled(cat):
         """

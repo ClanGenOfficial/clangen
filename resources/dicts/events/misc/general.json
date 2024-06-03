@@ -817,6 +817,8 @@
     },
     "relationships": [
         {
+          "cats_from": ["m_c"],
+          "cats_to": ["r_c"],
           "mutual": true,
           "values": ["trust"],
           "amount": 10

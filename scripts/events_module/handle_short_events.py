@@ -54,7 +54,6 @@ class HandleShortEvents():
         # ---------------------------------------------------------------------------- #
         #                                gather info                                   #
         # ---------------------------------------------------------------------------- #
-        # TODO: re-add the code for existing outsiders joining clan
 
         self.types = []
         self.types.append(event_type)

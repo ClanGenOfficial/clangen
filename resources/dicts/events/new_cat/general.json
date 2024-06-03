@@ -5,7 +5,7 @@
         "camp": ["any"],
         "season": ["any"],
         "sub_type": ["adoption"],
-        "weight": 10,
+        "weight": 5,
         "event_text": "A loner leaves {PRONOUN/n_c:0/poss} litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/poss} own.",
         "m_c": {
             "age": ["young adult", "adult", "senior adult", "senior"],
@@ -21,7 +21,8 @@
             ]
         ],
         "outsider": {
-            "current_rep": ["any"]
+            "current_rep": ["welcoming"],
+            "changed": 1
         }
     },
     {
@@ -30,7 +31,7 @@
         "camp": ["any"],
         "season": ["any"],
          "sub_type": ["adoption"],
-        "weight": 10,
+        "weight": 5,
         "event_text": "A rogue leaves {PRONOUN/n_c:0/poss} litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/poss} own.",
         "m_c": {
             "age": ["young adult", "adult", "senior adult", "senior"],
@@ -46,7 +47,8 @@
             ]
         ],
         "outsider": {
-            "current_rep": ["any"]
+            "current_rep": ["welcoming"],
+            "changed": 1
         }
     },
     {
@@ -55,7 +57,7 @@
         "camp": ["any"],
         "season": ["any"],
          "sub_type": ["adoption"],
-        "weight": 10,
+        "weight": 5,
         "event_text": "A o_c_n queen decides to leave their litter with c_n. m_c takes them as {PRONOUN/m_c/poss} own.",
         "m_c": {
             "age": ["young adult", "adult", "senior adult", "senior"],
@@ -68,8 +70,9 @@
                 "litter"
             ]
         ],
-        "outsider": {
-            "current_rep": ["welcoming"]
+        "other_clan": {
+            "current_rep": ["ally"],
+            "changed": 1
         }
     },
     {
@@ -94,7 +97,8 @@
             ]
         ],
         "outsider": {
-            "current_rep": ["neutral","welcoming"]
+            "current_rep": ["welcoming"],
+            "changed": 1
         }
     },
     {
@@ -141,7 +145,7 @@
         "biome": ["any"],
         "camp": ["any"],
         "season": ["any"],
-        "weight": 10,
+        "weight": 5,
         "event_text": "m_c finds a loner near the border. It seems {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} bringing {PRONOUN/n_c:0/poss} kit named n_c_pre:1 to the Clan, as {PRONOUN/n_c:0/subject} could no longer care for {PRONOUN/n_c:1/object}.",
         "m_c": {
             "status": [
@@ -163,14 +167,18 @@
                 "backstory:abandoned2, outsider1",
                 "status:kitten"
             ]
-        ]
+        ],
+        "outsider": {
+            "current_rep": ["welcoming"],
+            "changed": 1
+        }
     },
     {
         "event_id": "gen_new_cat_anykittypetkit1",
         "biome": ["any"],
         "camp": ["any"],
         "season": ["any"],
-        "weight": 10,
+        "weight": 5,
         "event_text": "m_c finds a kittypet near the border. It seems {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} bringing {PRONOUN/n_c:0/poss} kit named n_c_pre:1 to the Clan, as {PRONOUN/n_c:0/subject} could no longer care for {PRONOUN/n_c:1/object}.",
         "m_c": {
             "status": [
@@ -192,7 +200,11 @@
                 "backstory:abandoned2, outsider1",
                 "status:kitten"
             ]
-        ]
+        ],
+        "outsider": {
+            "current_rep": ["welcoming"],
+            "changed": 1
+        }
     },
     {
         "event_id": "gen_new_cat_anyroguekit1",
@@ -213,7 +225,11 @@
                 "backstory:abandoned2, outsider1",
                 "status:kitten"
             ]
-        ]
+        ],
+        "outsider": {
+            "current_rep": ["welcoming"],
+            "changed": 1
+        }
     },  
     {
         "event_id": "gen_new_cat_anypolymate1",
@@ -290,7 +306,11 @@
                 "status:warrior",
                 "exists"
             ]
-        ]
+        ],
+        "outsider": {
+            "current_rep": ["any"],
+            "changed": 1
+        }
     },
     {
         "event_id": "gen_new_cat_anyloner2",
@@ -309,7 +329,11 @@
                 "status:warrior",
                 "exists"
             ]
-        ]
+        ],
+        "outsider": {
+            "current_rep": ["neutral","welcoming"],
+            "changed": 1
+        }
     },
     {
         "event_id": "gen_new_cat_anyloner3",
@@ -329,7 +353,11 @@
                 "status:warrior",
                 "exists"
             ]
-        ]
+        ],
+        "outsider": {
+            "current_rep": ["neutral","welcoming"],
+            "changed": 1
+        }
     },
     {
         "event_id": "gen_new_cat_anyloner4",
@@ -349,7 +377,11 @@
                 "status:warrior",
                 "exists"
             ]
-        ]
+        ],
+        "outsider": {
+            "current_rep": ["neutral","welcoming"],
+            "changed": 1
+        }
     },
     {
         "event_id": "gen_new_cat_hostile_anyloner1",
@@ -370,7 +402,8 @@
             ]
         ],
         "outsider": {
-            "current_rep": ["hostile"]
+            "current_rep": ["hostile"],
+            "changed": 1
         }
     },
     {
@@ -391,7 +424,11 @@
                 "status:warrior",
                 "exists"
             ]
-        ]
+        ],
+        "outsider": {
+            "current_rep": ["welcoming"],
+            "changed": 1
+        }
     },
     {
         "event_id": "gen_new_cat_anykittypet2",
@@ -411,7 +448,11 @@
                 "status:warrior",
                 "exists"
             ]
-        ]
+        ],
+        "outsider": {
+            "current_rep": ["neutral","welcoming"],
+            "changed": 1
+        }
     },
     {
         "event_id": "gen_new_cat_anykittypet3",
@@ -430,7 +471,11 @@
                 "status:warrior",
                 "exists"
             ]
-        ]
+        ],
+        "outsider": {
+            "current_rep": ["welcoming"],
+            "changed": 1
+        }
     },
     {
         "event_id": "gen_new_cat_anykittypet4",
@@ -451,7 +496,11 @@
                 "status:warrior",
                 "exists"
             ]
-        ]
+        ],
+        "outsider": {
+            "current_rep": ["welcoming"],
+            "changed": 1
+        }
     },
     {
         "event_id": "gen_new_cat_anyrogue1",
@@ -471,7 +520,11 @@
                 "status:warrior",
                 "exists"
             ]
-        ]
+        ],
+        "outsider": {
+            "current_rep": ["neutral","welcoming"],
+            "changed": 1
+        }
     },
     {
         "event_id": "gen_new_cat_anyrogue2",
@@ -491,7 +544,11 @@
                 "status:warrior",
                 "exists"
             ]
-        ]
+        ],
+        "outsider": {
+            "current_rep": ["neutral","welcoming"],
+            "changed": 1
+        }
     },
     {
         "event_id": "gen_new_cat_anyrogue3",
@@ -510,7 +567,11 @@
                 "status:warrior",
                 "exists"
             ]
-        ]
+        ],
+        "outsider": {
+            "current_rep": ["welcoming"],
+            "changed": 1
+        }
     },
     {
         "event_id": "gen_new_cat_anyrogue4",
@@ -529,7 +590,11 @@
                 "status:warrior",
                 "exists"
             ]
-        ]
+        ],
+        "outsider": {
+            "current_rep": ["welcoming"],
+            "changed": 1
+        }
     },
 
     {
@@ -549,7 +614,11 @@
                 "clancat",
                 "status:warrior"
             ]
-        ]
+        ],
+        "other_clan": {
+            "current_rep": ["any"],
+            "changed": -1
+        }
     },
     {
         "event_id": "gen_new_cat_anyotherclancat2",
@@ -573,7 +642,11 @@
             "cats": ["n_c:0"],
             "injuries": ["battle_injury", "big_bite_injury"]
            }
-        ]
+        ],
+        "other_clan": {
+            "current_rep": ["any"],
+            "changed": -1
+        }
     },
     {
         "event_id": "gen_new_cat_war_any1",
@@ -594,7 +667,11 @@
             "backstory:ostracized_warrior,disgraced1,disgraced2,otherclan", 
             "status:warrior"
           ]
-        ]
+        ],
+        "other_clan": {
+            "current_rep": ["any"],
+            "changed": -1
+        }
     },
     {
         "event_id": "gen_new_cat_war_any2",
@@ -615,7 +692,11 @@
             "backstory:ostracized_warrior,disgraced1,disgraced2,disgraced3,otherclan", 
             "status:warrior"
           ]
-        ]
+        ],
+        "other_clan": {
+            "current_rep": ["any"],
+            "changed": -1
+        }
     },
     {
         "event_id": "gen_new_cat_war_any2",
@@ -636,6 +717,10 @@
             "backstory:medicine_cat", 
             "status:medicine_cat"
           ]
-        ]
+        ],
+        "other_clan": {
+            "current_rep": ["any"],
+            "changed": -1
+        }
     }
 ]

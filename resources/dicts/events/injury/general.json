@@ -2940,8 +2940,9 @@
         "history": [
             {
                 "cats": ["m_c"],
-            "scar": "m_c was scarred by a fox while rescuing r_c.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after saving r_c from a fox."
+                "scar": "m_c was scarred by a fox while rescuing r_c.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after saving r_c from a fox.",
+                "lead_death": "died from {PRONOUN/m_c/poss} wounds after saving r_c from a fox"
             }
         ],
         "relationships": [
@@ -3108,6 +3109,25 @@
                 "cats": ["m_c"],
             "scar": "m_c was scarred by a rogue.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after fighting a rogue."
+            }
+        ],
+        "new_cat": [
+            ["rogue", "meeting", "exists"]
+        ],
+        "relationships": [
+            {
+                "cats_from": ["m_c", "clan"],
+                "cats_to": ["r_c"],
+                "mutual": false,
+                "values": ["dislike"],
+                "amount": 10
+            },
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["dislike"],
+                "amount": 10
             }
         ]
     },

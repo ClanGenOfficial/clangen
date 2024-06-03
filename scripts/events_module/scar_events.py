@@ -180,7 +180,6 @@ class Scar_Events():
                 f"{cat.name} healed from their {injury_name} but will forever be marked by a scar.",
                 f"{cat.name}'s {injury_name} has healed, but the injury left them scarred.",
             ]
-            print(f"SCAR GAIN EVENT: {specialty}")
             return random.choice(scar_gain_strings), specialty
         else:
             return None, None
