@@ -7,7 +7,7 @@ from scripts.cat.history import History
 from scripts.utility import change_relationship_values, process_text
 from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
-from scripts.cat_relations.interaction import create_group_interaction, Group_Interaction, rel_fulfill_rel_constraints
+from scripts.cat_relations.interaction import create_group_interaction, GroupInteraction, rel_fulfill_rel_constraints
 from scripts.game_structure.game_essentials import game
 
 class Group_Events():
@@ -363,7 +363,7 @@ class Group_Events():
     # ---------------------------------------------------------------------------- #
 
     @staticmethod
-    def relationship_allow_interaction(interaction: Group_Interaction, abbreviations_cat_id: dict):
+    def relationship_allow_interaction(interaction: GroupInteraction, abbreviations_cat_id: dict):
         """Check if the interaction is allowed with the current chosen cats."""
         fulfilled_list = []
 
@@ -390,7 +390,7 @@ class Group_Events():
         return all(fulfilled_list)
 
     @staticmethod
-    def cat_allow_interaction(interaction: Group_Interaction, abbreviations_cat_id: dict):
+    def cat_allow_interaction(interaction: GroupInteraction, abbreviations_cat_id: dict):
         """Check if the assigned cats fulfill the constraints of the interaction."""
 
         all_fulfilled = True

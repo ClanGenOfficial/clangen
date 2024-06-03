@@ -2,7 +2,7 @@ import unittest
 
 from scripts.cat.cats import Cat, Relationship
 from scripts.cat.skills import Skill, SkillPath
-from scripts.events_module.relationship.group_events import Group_Events, Group_Interaction
+from scripts.events_module.relationship.group_events import Group_Events, GroupInteraction
 
 import os
 
@@ -18,10 +18,10 @@ class MainCatFiltering(unittest.TestCase):
         main_cat.status = "warrior"
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
 
-        interaction1 = Group_Interaction("1")
+        interaction1 = GroupInteraction("1")
         interaction1.status_constraint = {"m_c": ["warrior"]}
 
-        interaction2 = Group_Interaction("2")
+        interaction2 = GroupInteraction("2")
         interaction2.status_constraint = {"m_c": ["healer"]}
         
         # when
@@ -40,10 +40,10 @@ class MainCatFiltering(unittest.TestCase):
         main_cat.status = "warrior"
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
 
-        interaction1 = Group_Interaction("1")
+        interaction1 = GroupInteraction("1")
         interaction1.status_constraint = {"m_c": ["warrior"]}
 
-        interaction2 = Group_Interaction("2")
+        interaction2 = GroupInteraction("2")
         interaction2.status_constraint = {"m_c": ["healer", "warrior"]}
         
         # when
@@ -63,10 +63,10 @@ class MainCatFiltering(unittest.TestCase):
         main_cat.personality.trait = "calm"
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
 
-        interaction1 = Group_Interaction("1")
+        interaction1 = GroupInteraction("1")
         interaction1.trait_constraint = {"m_c": ["calm"]}
 
-        interaction2 = Group_Interaction("2")
+        interaction2 = GroupInteraction("2")
         interaction2.trait_constraint = {"m_c": ["troublesome"]}
         
         # when
@@ -85,10 +85,10 @@ class MainCatFiltering(unittest.TestCase):
         main_cat.personality.trait = "calm"
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
 
-        interaction1 = Group_Interaction("1")
+        interaction1 = GroupInteraction("1")
         interaction1.trait_constraint = {"m_c": ["calm"]}
 
-        interaction2 = Group_Interaction("2")
+        interaction2 = GroupInteraction("2")
         interaction2.trait_constraint = {"m_c": ["troublesome", "calm"]}
         
         # when
@@ -108,10 +108,10 @@ class MainCatFiltering(unittest.TestCase):
         main_cat.skills.primary = Skill(SkillPath.HUNTER, points=9)
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
 
-        interaction1 = Group_Interaction("1")
+        interaction1 = GroupInteraction("1")
         interaction1.skill_constraint = {"m_c": ["HUNTER,1"]}
 
-        interaction2 = Group_Interaction("2")
+        interaction2 = GroupInteraction("2")
         interaction2.skill_constraint = {"m_c": ["HUNTER,2"]}
         
         # when
@@ -130,10 +130,10 @@ class MainCatFiltering(unittest.TestCase):
         main_cat.skills.primary = Skill(SkillPath.HUNTER, 9)
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
 
-        interaction1 = Group_Interaction("1")
+        interaction1 = GroupInteraction("1")
         interaction1.skill_constraint = {"m_c": ["HUNTER,1"]}
 
-        interaction2 = Group_Interaction("2")
+        interaction2 = GroupInteraction("2")
         interaction2.skill_constraint = {"m_c": ["HUNTER,2", "HUNTER,1"]}
         
         # when
@@ -153,10 +153,10 @@ class MainCatFiltering(unittest.TestCase):
         main_cat.backstory = "clanborn"
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
 
-        interaction1 = Group_Interaction("1")
+        interaction1 = GroupInteraction("1")
         interaction1.backstory_constraint = {"m_c": ["clanborn"]}
 
-        interaction2 = Group_Interaction("2")
+        interaction2 = GroupInteraction("2")
         interaction2.backstory_constraint = {"m_c": ["halfclan1"]}
         
         # when
@@ -175,10 +175,10 @@ class MainCatFiltering(unittest.TestCase):
         main_cat.backstory = "clanborn"
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
 
-        interaction1 = Group_Interaction("1")
+        interaction1 = GroupInteraction("1")
         interaction1.backstory_constraint = {"m_c": ["clanborn"]}
 
-        interaction2 = Group_Interaction("2")
+        interaction2 = GroupInteraction("2")
         interaction2.backstory_constraint = {"m_c": ["halfclan1", "clanborn"]}
         
         # when
@@ -198,10 +198,10 @@ class OtherFiltering(unittest.TestCase):
         main_cat = Cat()
         abbreviations_cat_id = {"m_c": main_cat.ID}
 
-        interaction1 = Group_Interaction("1")
+        interaction1 = GroupInteraction("1")
         interaction1.season = ["newleaf"]
 
-        interaction2 = Group_Interaction("2")
+        interaction2 = GroupInteraction("2")
         interaction2.season = ["green-leaf"]
         
         # when
@@ -218,10 +218,10 @@ class OtherFiltering(unittest.TestCase):
         main_cat = Cat()
         abbreviations_cat_id = {"m_c": main_cat.ID}
 
-        interaction1 = Group_Interaction("1")
+        interaction1 = GroupInteraction("1")
         interaction1.season = ["newleaf"]
 
-        interaction2 = Group_Interaction("2")
+        interaction2 = GroupInteraction("2")
         interaction2.season = ["newleaf", "green-leaf"]
         
         # when
@@ -239,10 +239,10 @@ class OtherFiltering(unittest.TestCase):
         main_cat = Cat()
         abbreviations_cat_id = {"m_c": main_cat.ID}
 
-        interaction1 = Group_Interaction("1")
+        interaction1 = GroupInteraction("1")
         interaction1.season = ["newleaf"]
 
-        interaction2 = Group_Interaction("2")
+        interaction2 = GroupInteraction("2")
         interaction2.season = ["Any"]
         
         # when
@@ -260,10 +260,10 @@ class OtherFiltering(unittest.TestCase):
         main_cat = Cat()
         abbreviations_cat_id = {"m_c": main_cat.ID}
 
-        interaction1 = Group_Interaction("1")
+        interaction1 = GroupInteraction("1")
         interaction1.biome = ["forest"]
 
-        interaction2 = Group_Interaction("2")
+        interaction2 = GroupInteraction("2")
         interaction2.biome = ["beach"]
         
         # when
@@ -280,10 +280,10 @@ class OtherFiltering(unittest.TestCase):
         main_cat = Cat()
         abbreviations_cat_id = {"m_c": main_cat.ID}
 
-        interaction1 = Group_Interaction("1")
+        interaction1 = GroupInteraction("1")
         interaction1.biome = ["forest"]
 
-        interaction2 = Group_Interaction("2")
+        interaction2 = GroupInteraction("2")
         interaction2.biome = ["beach", "forest"]
         
         # when
@@ -301,10 +301,10 @@ class OtherFiltering(unittest.TestCase):
         main_cat = Cat()
         abbreviations_cat_id = {"m_c": main_cat.ID}
 
-        interaction1 = Group_Interaction("1")
+        interaction1 = GroupInteraction("1")
         interaction1.biome = ["forest"]
 
-        interaction2 = Group_Interaction("2")
+        interaction2 = GroupInteraction("2")
         interaction1.biome = ["Any"]
         
         # when
@@ -331,10 +331,10 @@ class Abbreviations(unittest.TestCase):
         random3 = Cat()
         random3.status = "warrior"
 
-        interaction1 = Group_Interaction("1")
+        interaction1 = GroupInteraction("1")
         interaction1.status_constraint = {"r_c1": ["warrior"]}
 
-        interaction2 = Group_Interaction("2")
+        interaction2 = GroupInteraction("2")
         interaction2.status_constraint = {"r_c1": ["healer", "warrior"]}
         
         # when
@@ -362,10 +362,10 @@ class Abbreviations(unittest.TestCase):
         random3 = Cat()
         random3.status = "medicine cat"
 
-        interaction1 = Group_Interaction("1")
+        interaction1 = GroupInteraction("1")
         interaction1.status_constraint = {"r_c1": ["warrior"]}
 
-        interaction2 = Group_Interaction("2")
+        interaction2 = GroupInteraction("2")
         interaction2.status_constraint = {"r_c1": ["medicine cat"]}
         
         # when
@@ -496,49 +496,49 @@ class OtherCatsFiltering(unittest.TestCase):
 
         # given - interactions
         # first all true
-        interaction1 = Group_Interaction("test")
+        interaction1 = GroupInteraction("test")
 
-        interaction2 = Group_Interaction("test")
+        interaction2 = GroupInteraction("test")
         interaction2.relationship_constraint = {
             "r_c1_to_r_c2": ["mates"]
         }
 
-        interaction3 = Group_Interaction("test")
+        interaction3 = GroupInteraction("test")
         interaction3.relationship_constraint = {
             "m_c_to_r_c1": ["siblings"]
         }
 
-        interaction4 = Group_Interaction("test")
+        interaction4 = GroupInteraction("test")
         interaction4.relationship_constraint = {
             "m_c_to_r_c1": ["romantic_40"]
         }
 
-        interaction5 = Group_Interaction("test")
+        interaction5 = GroupInteraction("test")
         interaction5.relationship_constraint = {
             "m_c_to_r_c1": ["comfortable_40"]
         }
 
-        interaction6 = Group_Interaction("test")
+        interaction6 = GroupInteraction("test")
         interaction6.relationship_constraint = {
             "m_c_to_r_c1": ["comfortable_40", "romantic_40"]
         }
 
-        interaction7 = Group_Interaction("test")
+        interaction7 = GroupInteraction("test")
         interaction7.relationship_constraint = {
             "m_c_to_r_c1": ["romantic_60_lower"]
         }
 
-        interaction8 = Group_Interaction("test")
+        interaction8 = GroupInteraction("test")
         interaction8.relationship_constraint = {
             "m_c_to_r_c1": ["comfortable_60_lower"]
         }
 
-        interaction9 = Group_Interaction("test")
+        interaction9 = GroupInteraction("test")
         interaction9.relationship_constraint = {
             "m_c_to_r_c2": ["dislike_40"]
         }
 
-        interaction10 = Group_Interaction("test")
+        interaction10 = GroupInteraction("test")
         interaction10.relationship_constraint = {
             "r_c2_to_m_c": ["dislike_40"]
         }
@@ -602,52 +602,52 @@ class OtherCatsFiltering(unittest.TestCase):
         #    - random2 don't trust their mate (random1) because of sibling (main_cat)
 
         # given - interactions
-        interaction1 = Group_Interaction("test")
+        interaction1 = GroupInteraction("test")
         interaction1.relationship_constraint = {
             "r_c1_to_m_c": ["dislike_40"]
         }
 
-        interaction2 = Group_Interaction("test")
+        interaction2 = GroupInteraction("test")
         interaction2.relationship_constraint = {
             "r_c1_to_r_c2": ["not_mates"]
         }
 
-        interaction3 = Group_Interaction("test")
+        interaction3 = GroupInteraction("test")
         interaction3.relationship_constraint = {
             "r_c1_to_r_c2": ["romantic_40_lower"]
         }
 
-        interaction4 = Group_Interaction("test")
+        interaction4 = GroupInteraction("test")
         interaction4.relationship_constraint = {
             "r_c1_to_r_c2": ["romantic_40_lower"]
         }
 
-        interaction5 = Group_Interaction("test")
+        interaction5 = GroupInteraction("test")
         interaction5.relationship_constraint = {
             "r_c1_to_r_c2": ["trust_40_lower"]
         }
 
-        interaction6 = Group_Interaction("test")
+        interaction6 = GroupInteraction("test")
         interaction6.relationship_constraint = {
             "r_c1_to_m_c": ["mates"]
         }
 
-        interaction7 = Group_Interaction("test")
+        interaction7 = GroupInteraction("test")
         interaction7.relationship_constraint = {
             "m_c_to_r_c1": ["comfortable_60"]
         }
 
-        interaction8 = Group_Interaction("test")
+        interaction8 = GroupInteraction("test")
         interaction8.relationship_constraint = {
             "m_c_to_r_c1": ["romantic_40_lower"]
         }
 
-        interaction9 = Group_Interaction("test")
+        interaction9 = GroupInteraction("test")
         interaction9.relationship_constraint = {
             "m_c_to_r_c1": ["comfortable_40_lower"]
         }
 
-        interaction10 = Group_Interaction("test")
+        interaction10 = GroupInteraction("test")
         interaction10.relationship_constraint = {
             "r_c2_to_r_c1": ["trust_40"]
         }

@@ -7,8 +7,8 @@ from scripts.event_class import Single_Event
 from scripts.utility import get_personality_compatibility, process_text
 from scripts.game_structure.game_essentials import game
 from scripts.cat_relations.interaction import (
-    Single_Interaction, 
-    NEUTRAL_INTERACTIONS, 
+    SingleInteraction,
+    NEUTRAL_INTERACTIONS,
     INTERACTION_MASTER_DICT,
     rel_fulfill_rel_constraints,
     cats_fulfill_single_interaction_constraints,
@@ -107,7 +107,7 @@ class Relationship():
         if len(possible_interactions) <= 0:
             print("ERROR: No interaction with this conditions. ", rel_type, in_de_crease, intensity)
             possible_interactions = [
-                Single_Interaction("fall_back", "Any", "Any", "medium", [
+                SingleInteraction("fall_back", "Any", "Any", "medium", [
                     "Default string, this should never appear."
                 ])
             ]
