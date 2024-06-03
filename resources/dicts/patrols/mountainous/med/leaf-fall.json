@@ -2149,17 +2149,17 @@
         },
         "weight": 20,
         "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh goldenrod for the stores.",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Many stems of goldenrod and marigold surround p_l as they work, snipping stems and yellow clumps of tiny flowers to bring back to c_n's herb stores.",
+                "text": "Many stems of goldenrod and marigold surround p_l as {PRONOUN/p_l/subject} {VERB/p_l/work/works}, snipping stems and yellow clumps of tiny flowers to bring back to c_n's herb stores.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["goldenrod", "marigold"]
             },
             {
-                "text": "With the leaf-fall goldenrod bushes starting to die back, p_l collects all they can. That, as it turns out, is actually quite a lot, including an opportunistic haul of marigold.",
+                "text": "With the leaf-fall goldenrod bushes starting to die back, p_l collects all {PRONOUN/p_l/subject} can. That, as it turns out, is actually quite a lot, including an opportunistic haul of marigold.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "goldenrod", "marigold"]
@@ -2174,7 +2174,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l is distracted today, and it affects their work. The patrol is unsuccessful.",
+                "text": "p_l is distracted today, and it affects {PRONOUN/p_l/poss} work. The patrol is unsuccessful.",
                 "exp": 0,
                 "weight": 20
             }
@@ -5335,23 +5335,23 @@
         },
         "weight": 20,
         "intro_text": "The thyme plants are running out of growing time - p_l better go harvest them before leaf-fall is over.",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "The urgency drains out of p_l as they sit amongst the calming thyme, and it's not just the herb stores that'll feel the benefit of this gathering trip, as they have collected a satisfying amount for this type of weather alongside a pawful of goldenrod stems.",
+                "text": "The urgency drains out of p_l as {PRONOUN/p_l/subject} {VERB/p_l/sit/sits} amongst the calming thyme, and it's not just the herb stores that'll feel the benefit of this gathering trip, as {PRONOUN/p_l/subject} {VERB/p_l/have/has} collected a satisfying amount for this type of weather alongside a pawful of goldenrod stems.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["goldenrod", "thyme"]
             },
             {
-                "text": "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasant to have around, and p_l makes sure to organize the herb stores ensuring they have a healthy amount of goldenrod to go alongside the thyme, which p_l places so that the scent wafts near their nest.",
+                "text": "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasant to have around, and p_l makes sure to organize the herb stores ensuring {PRONOUN/p_l/subject} {VERB/p_l/have/has} a healthy amount of goldenrod to go alongside the thyme, which p_l places so that the scent wafts near {PRONOUN/p_l/poss} nest.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "goldenrod", "thyme"]
             },
             {
-                "text": "Thyme, thyme, thyme, there's never enough thyme. s_c snorts at their little joke, mouth crammed full of the herb, as they make their way home. Spotting a small goldenrod plant that looks like it's beginning to shrivel up from the frosts, they pause to gather the remaining stems to make good use of it.",
+                "text": "Thyme, thyme, thyme, there's never enough thyme. s_c snorts at {PRONOUN/p_l/poss} little joke, mouth crammed full of the herb, as {PRONOUN/p_l/subject} {VERB/p_l/make/makes} {PRONOUN/p_l/poss} way home. Spotting a small goldenrod plant that looks like it's beginning to shrivel up from the frosts, {PRONOUN/p_l/subject} {VERB/p_l/pause/pauses} to gather the remaining stems to make good use of it.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -5360,7 +5360,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l has no time - and no thyme. They're forced to give up on the search for today.",
+                "text": "p_l has no time - and no thyme. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} forced to give up on the search for today.",
                 "exp": 0,
                 "weight": 20
             }

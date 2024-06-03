@@ -1403,7 +1403,7 @@
         },
         "weight": 20,
         "intro_text": "p_l heads out on an herb-gathering patrol, searching for the ever-green, ever-reliable horsetail to harvest for the herb stores.",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -1413,13 +1413,13 @@
                 "herbs": ["moss", "horsetail"]
             },
             {
-                "text": "p_l snaps off the thick horsetail stem near the base of the plant, which reveals a small clump of moss! p_l drags the entire big, long shoot back to camp, where they diligently process it down further into smaller stem sections that are easily stored.",
+                "text": "p_l snaps off the thick horsetail stem near the base of the plant, which reveals a small clump of moss! p_l drags the entire big, long shoot back to camp, where {PRONOUN/p_l/subject} diligently {VERB/p_l/process/processes} it down further into smaller stem sections that are easily stored.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "moss", "horsetail"]
             },
             {
-                "text": "s_c deftly picks out an entire horsetail shoot, which so happens to be growing near the river, where there is an abundance of moss to be collected. s_c proudly drags their haul back to camp - quite the impressive addition to the Clan's herb stores.",
+                "text": "s_c deftly picks out an entire horsetail shoot, which so happens to be growing near the river, where there is an abundance of moss to be collected. s_c proudly drags {PRONOUN/s_c/poss} haul back to camp - quite the impressive addition to the Clan's herb stores.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -1428,7 +1428,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l is distracted today, and it affects their work. The patrol is unsuccessful.",
+                "text": "p_l is distracted today, and it affects {PRONOUN/p_l/poss} work. The patrol is unsuccessful.",
                 "exp": 0,
                 "weight": 20
             }
