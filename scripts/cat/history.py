@@ -639,16 +639,17 @@ class History:
         return cat.history.murder
 
     @staticmethod
-    def reveal_murder(cat, other_cat, Cat, victim, murder_index):
-        ''' Reveals the murder properly in all of the associated history text
-        :param cat: The murderer
-        :param other_cat: The cat who discovers the truth about the murder
-        :param Cat: The cat class
-        :param victim: The victim whose murder is being revealed
-        :param murder_index: Index of the murder'''
+    def reveal_murder(murderer, other_cat, cat, victim, murder_index):
+        """ Reveals the murder properly in all associated history text.
 
-        victim = Cat.fetch_cat(victim)
-        murder_history = History.get_murders(cat)
+        :param murderer: The murderer
+        :param other_cat: The cat who discovers the truth about the murder
+        :param cat: The cat class
+        :param victim: The victim whose murder is being revealed
+        :param murder_index: Index of the murder"""
+
+        victim = cat.fetch_cat(victim)
+        murder_history = History.get_murders(murderer)
         victim_history = History.get_murders(victim)
 
         if murder_history:
@@ -656,16 +657,20 @@ class History:
                 murder_history = murder_history["is_murderer"][murder_index]
                 murder_history["revealed"] = True
                 murder_history["revealed_by"] = other_cat.ID
-                murder_history["revelation_text"] = "The truth of {PRONOUN/m_c/poss} crime against [victim] was discovered by [discoverer]."
+                murder_history["revelation_moon"] = game.clan.age
+                murder_history["revelation_text"] = \
+                    "The truth of {PRONOUN/m_c/poss} crime against [victim] was discovered by [discoverer]."
 
                 victim_history = victim_history["is_victim"][0]
                 victim_history["revealed"] = True
                 victim_history["revealed_by"] = other_cat.ID
-                victim_history["revelation_text"] = "The truth of {PRONOUN/m_c/poss} murder was discovered by [discoverer]."
+                victim_history["revelation_moon"] = game.clan.age
+                victim_history["revelation_text"] = \
+                    "The truth of {PRONOUN/m_c/poss} murder was discovered by [discoverer]."
 
                 discoverer = str(other_cat.name)
                 if "clan_discovery" in murder_history:
-                    discoverer = game.clan.name + "Clan"       
+                    discoverer = game.clan.name + "Clan"
 
                 murder_history["revelation_text"] = murder_history["revelation_text"].replace('[victim]', str(victim.name))
                 murder_history["revelation_text"] = murder_history["revelation_text"].replace('[discoverer]', discoverer)
