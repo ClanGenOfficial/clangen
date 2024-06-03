@@ -281,8 +281,8 @@ class Events:
             # adjust text and add to event list
             event_text = event_text_adjust(Cat,
                                            event_text,
-                                           cat=gathering_cat,
-                                           other_clan_name=f"{other_clan.name}Clan",
+                                           main_cat=gathering_cat,
+                                           other_clan=other_clan,
                                            clan=game.clan)
             game.cur_events_list.insert(4, Single_Event(event_text, "other_clans", [gathering_cat.ID]))
             game.clan.clan_settings["lead_den_clan_event"] = {}
@@ -401,7 +401,7 @@ class Events:
             # adjust text and add to event list
             event_text = event_text_adjust(Cat,
                                            event_text,
-                                           cat=outsider_cat,
+                                           main_cat=outsider_cat,
                                            clan=game.clan)
             game.cur_events_list.insert(4, Single_Event(event_text, "misc", involved_cats))
             game.clan.clan_settings["lead_den_outsider_event"] = {}
