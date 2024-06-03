@@ -27,7 +27,7 @@ from scripts.utility import get_current_season, quit, \
     clan_symbol_sprite  # pylint: disable=redefined-builtin
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.names import names
-from scripts.clan_resources.freshkill import Freshkill_Pile, Nutrition
+from scripts.clan_resources.freshkill import FreshkillPile, Nutrition
 from scripts.cat.sprites import sprites
 
 class Clan():
@@ -157,7 +157,7 @@ class Clan():
 
         self.starting_members = starting_members
         if game_mode in ['expanded', 'cruel season']:
-            self.freshkill_pile = Freshkill_Pile()
+            self.freshkill_pile = FreshkillPile()
         else:
             self.freshkill_pile = None
         self.primary_disaster = None
@@ -1038,7 +1038,7 @@ class Clan():
             if os.path.exists(file_path):
                 with open(file_path, 'r', encoding='utf-8') as read_file:  # pylint: disable=redefined-outer-name
                     pile = ujson.load(read_file)
-                    clan.freshkill_pile = Freshkill_Pile(pile)
+                    clan.freshkill_pile = FreshkillPile(pile)
 
                 file_path = get_save_dir() + f"/{game.clan.name}/nutrition_info.json"
                 if os.path.exists(file_path) and clan.freshkill_pile:
@@ -1053,9 +1053,9 @@ class Clan():
                             for cat in Cat.all_cats_list:
                                 clan.freshkill_pile.add_cat_to_nutrition(cat)
             else:
-                clan.freshkill_pile = Freshkill_Pile()
+                clan.freshkill_pile = FreshkillPile()
         except:
-            clan.freshkill_pile = Freshkill_Pile()
+            clan.freshkill_pile = FreshkillPile()
 
     def save_freshkill_pile(self, clan):
         """

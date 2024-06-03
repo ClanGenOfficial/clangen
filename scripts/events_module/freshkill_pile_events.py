@@ -8,12 +8,12 @@ from scripts.utility import event_text_adjust
 from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
 from scripts.clan_resources.freshkill import (
-    Freshkill_Pile, 
-    MAL_PERCENTAGE , 
-    STARV_PERCENTAGE, 
-    FRESHKILL_ACTIVE, 
-    FRESHKILL_EVENT_TRIGGER_FACTOR, 
-    FRESHKILL_EVENT_ACTIVE, 
+    FreshkillPile,
+    MAL_PERCENTAGE ,
+    STARV_PERCENTAGE,
+    FRESHKILL_ACTIVE,
+    FRESHKILL_EVENT_TRIGGER_FACTOR,
+    FRESHKILL_EVENT_ACTIVE,
     EVENT_WEIGHT_TYPE
 )
 
@@ -142,14 +142,14 @@ class Freshkill_Events():
         game.cur_events_list.append(Single_Event(event_text, types, [cat.ID]))
 
     @staticmethod
-    def handle_amount_freshkill_pile(freshkill_pile: Freshkill_Pile, living_cats: list) -> None:
+    def handle_amount_freshkill_pile(freshkill_pile: FreshkillPile, living_cats: list) -> None:
         """
         Handles events (eg. a fox is attacking the camp), which are related to the freshkill pile.
         This function should only be called if the game is in 'expanded' or 'cruel season' mode.
 
             Parameters
             ----------
-            freshkill_pile : Freshkill_Pile
+            freshkill_pile : FreshkillPile
                 the freshkill pile which is used to calculate the event
             living_cats : list
                 a list of cats which have to be feed
