@@ -515,7 +515,7 @@ class Cat:
                 fetched_cat.update_mentor()
         self.update_mentor()
 
-        if game.clan and game.clan.game_mode != 'classic' and not (self.outside or self.exiled) and body is not None:
+        # if game.clan and game.clan.game_mode != 'classic' and not (self.outside or self.exiled) and body is not None:
         if game.clan and game.clan.game_mode != 'classic' and not self.outside and not self.exiled:
             self.grief(body)
 
