@@ -1,5 +1,6 @@
 import pygame
 import pygame_gui
+import ujson
 
 from scripts.cat.cats import Cat
 from scripts.screens.Screens import Screens
@@ -13,9 +14,11 @@ class NurseryScreen(Screens):
     """
 
     def __init__(self, name=None):
-        self.name = name
+        super().__init__(name)
         self.chosen_kits = []
         self.partaking_adult = None
+
+        self.screen_elements = {}
 
     def screen_switches(self):
         """Runs when this screen is switched to."""
@@ -23,6 +26,27 @@ class NurseryScreen(Screens):
         self.hide_menu_buttons()
         self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))), "", object_id="#back_button"
                                          , manager=MANAGER)
+        
+        # BACKGROUND FLOWERS
+        try:
+            if game.settings["dark mode"]:
+                self.screen_elements["bg_image"] = pygame_gui.elements.UIImage(
+                    scale(pygame.Rect((0, 0), (1600, 1400))),
+                    pygame.image.load(
+                        f"resources/images/nursery_flowers_dark.png").convert_alpha(),
+                    object_id="#nursery_flowers_bg",
+                    starting_height=1,
+                    manager=MANAGER)
+            else:
+                self.screen_elements["bg_image"] = pygame_gui.elements.UIImage(
+                    scale(pygame.Rect((0, 0), (1600, 1400))),
+                    pygame.image.load(
+                        f"resources/images/nursery_flowers_light.png").convert_alpha(),
+                    object_id="#nursery_flowers_bg",
+                    starting_height=1,
+                    manager=MANAGER)
+        except FileNotFoundError:
+            print("WARNING: Nursery background images not found.")
 
     def handle_event(self, event):
         """This is where events that occur on this page are handled.
@@ -36,4 +60,7 @@ class NurseryScreen(Screens):
 
     def exit_screen(self):
         """Runs when screen exits"""
-        pass
+        self.back_button.kill()
+
+        for ele in self.screen_elements:
+            self.screen_elements[ele].kill()

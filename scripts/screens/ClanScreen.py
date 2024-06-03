@@ -82,6 +82,8 @@ class ClanScreen(Screens):
                 self.change_screen('warrior den screen')
             if event.ui_element == self.leader_den_label:
                 self.change_screen('leader den screen')
+            if event.ui_element == self.nursery_label:
+                self.change_screen('nursery screen')
 
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
             if event.key == pygame.K_RIGHT:
@@ -164,10 +166,11 @@ class ClanScreen(Screens):
                 image_cache.load_image('resources/images/elder_den.png'),
                 (206, 56)),
         )
-        self.nursery_label = pygame_gui.elements.UIImage(scale(pygame.Rect(self.layout['nursery'], (160, 56))),
-                                                         pygame.transform.scale(
-                                                             image_cache.load_image('resources/images/nursery_den.png'),
-                                                             (160, 56)))
+        self.nursery_label = UIImageButton(
+            scale(pygame.Rect(self.layout["nursery"], (160, 56))),
+            "",
+            object_id="#nursery_button",
+            starting_height=2)
         if game.clan.game_mode == 'classic':
             self.clearing_label = pygame_gui.elements.UIImage(
                 scale(pygame.Rect(self.layout['clearing'], (162, 56))),
