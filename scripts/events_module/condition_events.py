@@ -582,11 +582,10 @@ class Condition_Events():
             elif cat.healed_condition is True:
                 game.switches['skip_conditions'].append(injury)
                 triggered = True
-                scar_given = None
 
                 # Try to give a scar, and get the event text to be displayed
                 event, scar_given = Scar_Events.handle_scars(cat, injury)
-                # If a scar was not given, we need to grab a seperate healed event
+                # If a scar was not given, we need to grab a separate healed event
                 if not scar_given:
                     try:
                         event = random.choice(Condition_Events.INJURY_HEALED_STRINGS[injury])
