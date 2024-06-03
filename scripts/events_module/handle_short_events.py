@@ -387,7 +387,8 @@ class HandleShortEvents():
                     kitty.gone()
                     self.dead_cats.remove(kitty)
                 self.multi_cat.append(kitty)
-                self.involved_cats.append(kitty.ID)
+                if kitty.ID not in self.involved_cats:
+                    self.involved_cats.append(kitty.ID)
         else:
             return
 

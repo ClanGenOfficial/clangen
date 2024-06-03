@@ -2701,6 +2701,8 @@ class Cat():
     @staticmethod
     def load_faded_cat(cat: str):
         """Loads a faded cat, returning the cat object. This object is saved nowhere else. """
+        if not cat.isdigit():
+            return
         try:
             if game.clan == None: clan = game.switches['clan_list'][0]
             if game.clan != None: clan = game.clan.name
