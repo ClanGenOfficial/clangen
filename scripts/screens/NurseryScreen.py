@@ -20,6 +20,11 @@ class NurseryScreen(Screens):
 
         self.screen_elements = {}
 
+        self.adults_selection_container = None
+        self.adults_selection_elements = {}
+        self.kits_selection_container = None
+        self.kits_selection_elements = {}
+
     def screen_switches(self):
         """Runs when this screen is switched to."""
 
@@ -47,6 +52,12 @@ class NurseryScreen(Screens):
                     manager=MANAGER)
         except FileNotFoundError:
             print("WARNING: Nursery background images not found.")
+        
+        # ADULT SELECTION
+        self.create_adults_selection()
+
+        # KITS SELECTION
+        self.create_kits_selection()
 
     def handle_event(self, event):
         """This is where events that occur on this page are handled.
@@ -64,3 +75,44 @@ class NurseryScreen(Screens):
 
         for ele in self.screen_elements:
             self.screen_elements[ele].kill()
+        
+        self.adults_selection_container.kill()
+        self.kits_selection_container.kill()
+    
+    def create_adults_selection(self):
+        """
+        Handles creating a container for the available adults.
+        """
+        self.adults_selection_container = pygame_gui.elements.UIAutoResizingContainer(
+            scale(pygame.Rect((196, 890), (100, 100))),
+            object_id="#adults_selection_container",
+            starting_height=1,
+            manager=MANAGER)
+        self.adults_selection_elements["frame"] = pygame_gui.elements.UIImage(
+            scale(pygame.Rect((0, 0), (540, 402))),
+            pygame.image.load(
+                "resources/images/nursery_adults_frame.png").convert_alpha(),
+            object_id="#adults_selection_frame",
+            container=self.adults_selection_container,
+            starting_height=1,
+            manager=MANAGER
+        )
+    
+    def create_kits_selection(self):
+        """
+        Handles creating a container for the available kittens.
+        """
+        self.kits_selection_container = pygame_gui.elements.UIAutoResizingContainer(
+            scale(pygame.Rect((868, 890), (100, 100))),
+            object_id="#kits_selection_container",
+            starting_height=1,
+            manager=MANAGER)
+        self.kits_selection_elements["frame"] = pygame_gui.elements.UIImage(
+            scale(pygame.Rect((0, 0), (540, 402))),
+            pygame.image.load(
+                "resources/images/nursery_kits_frame.png").convert_alpha(),
+            object_id="#kits_selection_frame",
+            container=self.kits_selection_container,
+            starting_height=1,
+            manager=MANAGER
+        )
