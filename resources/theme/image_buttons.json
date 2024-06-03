@@ -5031,5 +5031,22 @@
                 "path": "resources/images/buttons/filters_tab_hover.png"
             }
         }
+    },
+    "#nursery_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/nursery.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/nursery_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/nursery.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/nursery_unavailable.png"
+            }
+        }
     }
 }

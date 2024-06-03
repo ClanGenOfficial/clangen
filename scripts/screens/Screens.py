@@ -81,7 +81,7 @@ class Screens():
             manager=MANAGER,
             object_id="#arrow_mns_button"),
         "dens_bar": pygame_gui.elements.UIImage(
-            scale(pygame.Rect((80, 120), (20, 320))),
+            scale(pygame.Rect((80, 120), (20, 420))),
             pygame.transform.scale(
                 image_cache.load_image(
                     "resources/images/vertical_bar.png").convert_alpha(),
@@ -117,8 +117,15 @@ class Screens():
             manager=MANAGER,
             object_id="#warrior_den_button",
             starting_height=10),
-        "clearing": UIImageButton(
+        "nursery": UIImageButton(
             scale(pygame.Rect((50, 440), (162, 56))),
+            "",
+            visible=False,
+            manager=MANAGER,
+            object_id="#nursery_button",
+            starting_height=10),
+        "clearing": UIImageButton(
+            scale(pygame.Rect((50, 520), (162, 56))),
             "",
             visible=False,
             manager=MANAGER,
@@ -266,7 +273,7 @@ class Screens():
                 elif not game.clan.clan_settings["moons and seasons"] and game.switches['cur_screen'] != 'camp screen':
                     button.show()
             if name in ['moons_n_seasons', 'moons_n_seasons_arrow', 'dens', 'med_cat_den', 'lead_den', 'clearing', 'warrior_den',
-                        'dens_bar']:
+                        'nursery', 'dens_bar']:
                 continue
             else:
                 button.show()
@@ -317,9 +324,11 @@ class Screens():
             self.change_screen('med den screen')
         elif event.ui_element == self.menu_buttons["warrior_den"]:
             self.change_screen('warrior den screen')
+        elif event.ui_element == self.menu_buttons["nursery"]:
+            self.change_screen('nursery screen')
 
     def update_dens(self):
-        dens = ["dens_bar", "lead_den", "med_cat_den", "warrior_den", "clearing", ]
+        dens = ["dens_bar", "lead_den", "med_cat_den", "warrior_den", "nursery", "clearing" ]
 
         for den in dens:
             # if dropdown is visible, hide
@@ -334,7 +343,7 @@ class Screens():
                         self.menu_buttons["dens_bar"].kill()
                         self.menu_buttons.update({
                             "dens_bar": pygame_gui.elements.UIImage(
-                                scale(pygame.Rect((80, 120), (20, 250))),
+                                scale(pygame.Rect((80, 120), (20, 350))),
                                 pygame.transform.scale(
                                     image_cache.load_image(
                                         "resources/images/vertical_bar.png").convert_alpha(),

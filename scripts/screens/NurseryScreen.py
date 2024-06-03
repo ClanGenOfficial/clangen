@@ -5,6 +5,7 @@ from scripts.cat.cats import Cat
 from scripts.screens.Screens import Screens
 from scripts.game_structure.image_button import UIImageButton
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
+from scripts.utility import scale, get_text_box_theme
 
 class NurseryScreen(Screens):
     """
@@ -14,6 +15,7 @@ class NurseryScreen(Screens):
     def __init__(self, name=None):
         self.name = name
         self.chosen_kits = []
+        self.partaking_adult = None
 
     def screen_switches(self):
         """Runs when this screen is switched to."""

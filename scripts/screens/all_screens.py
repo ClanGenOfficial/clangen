@@ -24,6 +24,7 @@ from .ClanSettingsScreen import ClanSettingsScreen
 from .ClearingScreen import ClearingScreen
 from .ChangeGenderScreen import ChangeGenderScreen
 from .WarriorDenScreen import WarriorDenScreen
+from .NurseryScreen import NurseryScreen
 
 # ---------------------------------------------------------------------------- #
 #                                  UI RULES                                    #
@@ -67,6 +68,7 @@ med_den_screen = MedDenScreen('med den screen')
 freshkill_pile_screen = ClearingScreen('clearing screen')
 warrior_den_screen = WarriorDenScreen('warrior den screen')
 leader_den_screen = LeaderDenScreen('leader den screen')
+nursery_screen = NurseryScreen('nursery screen')
 
 
 events_screen = EventsScreen('events screen')
