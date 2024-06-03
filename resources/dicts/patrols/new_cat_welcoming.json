@@ -66,7 +66,19 @@
                 "text": "The patrol approaches the loner and tries to explain that c_n currently has enough mouths to feed, but the loner seems to take offense and leaves in a huff.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": -1
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["loner", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -74,7 +86,10 @@
                 "text": "The patrol approaches the loner and tells them firmly that newcomers aren't being taken in right now. The loner seems disappointed, but leaves anyway.",
                 "exp": 10,
                 "weight": 20,
-                "outsider_rep": -2
+                "outsider_rep": -2,
+                "new_cat": [
+                    ["loner", "meeting"]
+                ]
             }
         ]
     },
@@ -145,7 +160,19 @@
                 "text": "p_l approaches the loner and tries to explain that c_n currently has enough mouths to feed, but the loner seems to take offense and leaves in a huff.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": -1
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["loner", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["clan"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -153,7 +180,10 @@
                 "text": "p_l approaches the loner and tells them firmly that newcomers aren't being taken in right now. The loner seems disappointed, but leaves anyway.",
                 "exp": 10,
                 "weight": 20,
-                "outsider_rep": -2
+                "outsider_rep": -2,
+                "new_cat": [
+                    ["loner", "meeting"]
+                ]
             }
         ]
     },
@@ -352,13 +382,19 @@
                 "text": "As r_c inspects the cat, {PRONOUN/r_c/subject} {VERB/r_c/find/finds} that they are already hunting with their ancestors. The patrol takes a moment to say a prayer for the cat and bury them.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": 0
+                "outsider_rep": 0,
+                "new_cat": [
+                    ["meeting", "dead"]
+                ]
             },
             {
                 "text": "The cats attempt to carry the cat back to camp, but the cat passes on the way. They stop to bury the cat before continuing home.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": 0
+                "outsider_rep": 0,
+                "new_cat": [
+                    ["meeting", "dead"]
+                ]
             }
         ],
         "antag_fail_outcomes": [
@@ -366,7 +402,10 @@
                 "text": "The patrol attempts to help the cat to a healer nearby, but the cat passes before they can make it. They bury the cat outside their borders.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": -1
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["meeting", "dead"]
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -374,7 +413,10 @@
                 "text": "The patrol helps the cat to the nearest healer. They can't spare the herbs for an outsider right now.",
                 "exp": 10,
                 "weight": 20,
-                "outsider_rep": -2
+                "outsider_rep": -2,
+                "new_cat": [
+                    ["loner", "meeting"]
+                ]
             }
         ]
     },
@@ -415,13 +457,19 @@
                 "text": "As p_l inspects the cat, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} that they are already hunting with their ancestors. {PRONOUN/p_l/subject/CAP} {VERB/p_l/take/takes} a moment to say a prayer for the cat and bury them.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": 0
+                "outsider_rep": 0,
+                "new_cat": [
+                    ["meeting", "dead"]
+                ]
             },
             {
                 "text": "p_l attempts to carry the cat back to camp, but the cat passes on the way. {PRONOUN/p_l/subject/CAP} {VERB/p_l/stop/stops} to bury the cat before continuing home.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": 0
+                "outsider_rep": 0,
+                "new_cat": [
+                    ["meeting", "dead"]
+                ]
             }
         ],
         "antag_fail_outcomes": [
@@ -429,7 +477,10 @@
                 "text": "p_l attempts to help the cat to a healer nearby, but the cat passes before the two can make it back. p_l buries the cat outside c_n borders.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": -1
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["meeting", "dead"]
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -437,7 +488,10 @@
                 "text": "p_l helps the cat to the nearest healer. c_n can't spare the herbs for an outsider right now.",
                 "exp": 10,
                 "weight": 20,
-                "outsider_rep": -2
+                "outsider_rep": -2,
+                "new_cat": [
+                    ["loner", "meeting"]
+                ]
             }
         ]
     },
@@ -1001,7 +1055,19 @@
                 "text": "The patrol says that they can't take on another cat right now and tries to direct the loner somewhere else, but the loner hisses and says that they can find their own way.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": -1
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["loner", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["clan"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -1009,7 +1075,10 @@
                 "text": "The patrol says that they can't take on another cat right now, but they point the loner in the direction of the neighboring Clan.",
                 "exp": 10,
                 "weight": 20,
-                "outsider_rep": -2
+                "outsider_rep": -2,
+                "new_cat": [
+                    ["loner", "meeting"]
+                ]
             }
         ]
     },
@@ -1080,7 +1149,19 @@
                 "text": "p_l says that c_n can't take on another cat right now and tries to direct the loner somewhere else, but the loner hisses and says that they can find their own way.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": -1
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["loner", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["clan"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -1088,7 +1169,10 @@
                 "text": "p_l says that c_n can't take on another cat right now, but {PRONOUN/p_l/subject} {VERB/p_l/point/points} the loner in the direction of the neighboring Clan.",
                 "exp": 10,
                 "weight": 20,
-                "outsider_rep": -2
+                "outsider_rep": -2,
+                "new_cat": [
+                    ["loner", "meeting"]
+                ]
             }
         ]
     },
@@ -1180,7 +1264,19 @@
                 "text": "The loner escapes the dog by climbing a tree and scowls at the patrol, who stood by watching. The patrol leaves, guilt pricking at them.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": -1
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["loner", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["clan"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 20
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -1188,7 +1284,10 @@
                 "text": "The patrol watches as the loner climbs up a spindly tree to escape the dog, and then promptly proceed to chase the dog out of the territory. On their way back, they advise the loner that this is a dangerous area and maybe they shouldn't return.",
                 "exp": 10,
                 "weight": 20,
-                "outsider_rep": -2
+                "outsider_rep": -2,
+                "new_cat": [
+                    ["loner", "meeting"]
+                ]
             }
         ]
     },
@@ -1281,6 +1380,18 @@
                 "text": "p_l takes the lead in checking the source of the noise and comes face to face with a rogue hiding in the bush! The rogue takes a swipe at p_l, but doesn't get much damage in before p_l retaliates and chases the intruder out c_n territory.",
                 "exp": 0,
                 "weight": 10,
+                "new_cat": [
+                    ["rogue", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ],
                 "injury": [
                     {
                         "cats": ["p_l"],
@@ -1297,7 +1408,20 @@
                 "text": "A loner and their kits emerge from the bush, but p_l shakes {PRONOUN/p_l/poss} head, and {VERB/p_l/tell/tells} the loner {PRONOUN/p_l/subject} meant it when {PRONOUN/p_l/subject} said {PRONOUN/p_l/subject} didn't want to see them again. The loner hisses and scratches at p_l. Rumors start at camp over what p_l said to the loner.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": -1
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["loner", "meeting", "age:has_kits"],
+                    ["loner", "litter", "meeting", "parent:0"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["p_l"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 20
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -1305,7 +1429,11 @@
                 "text": "A loner and their kits emerge from the bush, but p_l shakes {PRONOUN/p_l/poss} head, and {VERB/p_l/inform/informs} them there's no room in c_n.",
                 "exp": 10,
                 "weight": 20,
-                "outsider_rep": -2
+                "outsider_rep": -2,
+                "new_cat": [
+                    ["loner", "meeting", "age:has_kits"],
+                    ["loner", "litter", "meeting", "parent:0"]
+                ]
             }
         ]
     },
@@ -2174,7 +2302,10 @@
                 "text": "The patrol warily approaches the loner, who doesn't seem to notice them. It's obvious that the cat is bleeding out. p_l attempts to staunch the bleeding and carry the cat to camp, but it's no use. Hopefully the loner didn't suffer too much.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": -1
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["loner", "meeting", "dead"]
+                ]
             }
         ],
         "antag_fail_outcomes": [
@@ -2190,7 +2321,10 @@
                 "text": "The patrol launches into attack, only to find the loner that they've been fighting is too weak to fight back. They go home with blood on their paws.",
                 "exp": 10,
                 "weight": 20,
-                "outsider_rep": -2
+                "outsider_rep": -2,
+                "new_cat": [
+                    ["loner", "meeting", "dead"]
+                ]
             }
         ]
     },
@@ -2288,7 +2422,10 @@
                 "text": "p_l warily approaches the loner, who doesn't seem to notice {PRONOUN/p_l/object}. It's obvious that the cat is bleeding out. p_l attempts to staunch the bleeding and carry the cat to camp, but it's no use. Hopefully the loner didn't suffer too much.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": -1
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["loner", "meeting", "dead"]
+                ]
             }
         ],
         "antag_fail_outcomes": [
@@ -2304,7 +2441,10 @@
                 "text": "p_l launches into attack, only to find the loner that {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been fighting is too weak to fight back. {PRONOUN/p_l/subject/CAP} {VERB/p_l/go/goes} home with blood on {PRONOUN/p_l/poss} paws.",
                 "exp": 10,
                 "weight": 20,
-                "outsider_rep": -2
+                "outsider_rep": -2,
+                "new_cat": [
+                    ["loner", "meeting", "dead"]
+                ]
             }
         ]
     },

@@ -456,15 +456,33 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "It's just an odd loner singing to themself. The patrol greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility.",
+                "text": "It's just an odd loner singing to {PRONOUN/n_c:0/self}. The patrol greets {PRONOUN/n_c:0/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility.",
                 "exp": 30,
-                "weight": 20
+                "weight": 20,
+                "new_cat": [
+                    ["loner",
+                    "meeting"]
+                ]
             },
             {
                 "text": "The patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the courage of LionClan, the strength of TigerClan, and the dexterity of LeopardClan. Shaken, but no more than bruised, the patrol manages to retreat to safety.",
                 "exp": 30,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,3"]
+                "stat_skill": ["FIGHTER,3"],
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting", "dead"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1", "n_c:3"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ]
             },
             {
                 "text": "s_c signals for the patrol to stop. Carefully, quietly, {PRONOUN/s_c/subject} {VERB/s_c/explain/explains} {PRONOUN/s_c/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety.",
@@ -502,20 +520,42 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "It's just an odd loner singing to themself. r_c greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility.",
+                "text": "It's just an odd loner singing to {PRONOUN/n_c:0/self}. r_c greets {PRONOUN/n_c:0/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility.",
                 "exp": 30,
-                "weight": 20
+                "weight": 20,
+                "new_cat": [
+                    ["loner",
+                    "meeting"]
+                ]
             },
             {
-                "text": "It's just an odd loner singing to themself. When they see r_c, they invite {PRONOUN/r_c/object} to sing too. {PRONOUN/r_c/subject/CAP} politely {VERB/r_c/decline/declines} and continues on {PRONOUN/r_c/poss} solo patrol.",
+                "text": "It's just an odd loner singing to {PRONOUN/n_c:0/self}. When {PRONOUN/n_c:0/subject} see r_c, {PRONOUN/n_c:0/subject} {VERB/n_c:0/invite/invites} {PRONOUN/r_c/object} to sing too. {PRONOUN/r_c/subject/CAP} politely {VERB/r_c/decline/declines} and continues on {PRONOUN/r_c/poss} solo patrol.",
                 "exp": 30,
-                "weight": 5
+                "weight": 5,
+                "new_cat": [
+                    ["loner",
+                    "meeting"]
+                ]
             },
             {
                 "text": "s_c walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c has the fighting skill and confidence to escape, running for {PRONOUN/s_c/poss} life.",
                 "exp": 30,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,3"]
+                "stat_skill": ["FIGHTER,3"],
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1", "n_c:3"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ]
             },
             {
                 "text": "s_c has a bad feeling about this. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety.",
@@ -1427,14 +1467,22 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "It's just an odd loner singing to themself. The patrol greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility.",
+                "text": "It's just an odd loner singing to {PRONOUN/n_c:0/self}. The patrol greets {PRONOUN/n_c:0/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility.",
                 "exp": 30,
-                "weight": 20
+                "weight": 20,
+                "new_cat": [
+                    ["loner",
+                    "meeting"]
+                ]
             },
             {
-                "text": "It's just an odd loner singing to themself. When they see the patrol they invite them to sing, too. The patrol politely declines, but compliments the loner's songs.",
+                "text": "It's just an odd loner singing to {PRONOUN/n_c:0/self}. When {PRONOUN/n_c:0/subject} {VERB/n_c:0/see/sees} the patrol {PRONOUN/n_c:0/subject} {VERB/n_c:0/invite/invites} them to sing, too. The patrol politely declines, but compliments the loner's songs.",
                 "exp": 30,
-                "weight": 5
+                "weight": 5,
+                "new_cat": [
+                    ["loner",
+                    "meeting"]
+                ]
             },
             {
                 "text": "The patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the courage of LionClan, the strength of TigerClan, and the dexterity of LeopardClan. Shaken, but no more than bruised, the patrol manages to retreat to safety.",
@@ -1478,20 +1526,42 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "It's just an odd loner singing to themself. r_c greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility.",
+                "text": "It's just an odd loner singing to {PRONOUN/n_c:0/self}. r_c greets {PRONOUN/n_c:0/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility.",
                 "exp": 30,
-                "weight": 20
+                "weight": 20,
+                "new_cat": [
+                    ["loner",
+                    "meeting"]
+                ]
             },
             {
-                "text": "It's just an odd loner singing to themself. When they see r_c, they invite {PRONOUN/r_c/object} to sing too. {PRONOUN/r_c/subject/CAP} politely {VERB/r_c/decline/declines}, but {VERB/r_c/compliment/compliments} the loner's songs.",
+                "text": "It's just an odd loner singing to {PRONOUN/n_c:0/self}. When {PRONOUN/n_c:0/subject} {VERB/n_c:0/see/sees} r_c, {PRONOUN/n_c:0/subject} {VERB/n_c:0/invite/invites} {PRONOUN/r_c/object} to sing too. {PRONOUN/r_c/subject/CAP} politely {VERB/r_c/decline/declines}, but {VERB/r_c/compliment/compliments} the loner's songs.",
                 "exp": 30,
-                "weight": 5
+                "weight": 5,
+                "new_cat": [
+                    ["loner",
+                    "meeting"]
+                ]
             },
             {
                 "text": "s_c walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c has the fighting skill and confidence to escape, running for {PRONOUN/s_c/poss} life.",
                 "exp": 30,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,3"]
+                "stat_skill": ["FIGHTER,3"],
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1", "n_c:3"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ]
             },
             {
                 "text": "s_c has a bad feeling about this. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety.",
@@ -1986,19 +2056,61 @@
             {
                 "text": "The patrol descends into battle without a second thought, eventually driving the rogues away.",
                 "exp": 20,
-                "weight": 20
+                "weight": 20,
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1", "n_c:3"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ]
             },
             {
                 "text": "s_c immediately leaps to protect {PRONOUN/s_c/poss} Clanmates. {PRONOUN/s_c/poss/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,3"]
+                "stat_skill": ["FIGHTER,3"],
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting", "dead"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1", "n_c:3"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ]
             },
             {
                 "text": "s_c revels in the battle, leaping into the fray with {PRONOUN/s_c/poss} teeth bared and claws unsheathed. The rogues are quickly driven away by the patrol.",
                 "exp": 20,
                 "weight": 20,
-                "stat_trait": ["bloodthirsty", "fierce", "vengeful"]
+                "stat_trait": ["bloodthirsty", "fierce", "vengeful"],
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting", "dead"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1", "n_c:3"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -2017,6 +2129,20 @@
                 "text": "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion, and eventually the patrol retreats, r_c badly wounded.",
                 "exp": 0,
                 "weight": 10,
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1", "n_c:3"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ],
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -2050,19 +2176,61 @@
             {
                 "text": "The patrol descends into battle without a second thought, easily driving the rogues away as they use their knowledge of the rocky terrain to their advantage.",
                 "exp": 30,
-                "weight": 20
+                "weight": 20,
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1", "n_c:3"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ]
             },
             {
                 "text": "s_c immediately leaps to protect {PRONOUN/s_c/poss} Clanmates. {PRONOUN/s_c/poss/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
                 "exp": 30,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,3"]
+                "stat_skill": ["FIGHTER,3"],
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting", "dead"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1", "n_c:3"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ]
             },
             {
                 "text": "s_c revels in the battle, leaping into the fray with {PRONOUN/s_c/poss} teeth bared and claws unsheathed. The rogues are quickly driven away by the patrol.",
                 "exp": 30,
                 "weight": 20,
-                "stat_trait": ["bloodthirsty", "fierce", "vengeful"]
+                "stat_trait": ["bloodthirsty", "fierce", "vengeful"],
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting", "dead"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1", "n_c:3"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -2081,6 +2249,20 @@
                 "text": "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion, and eventually the patrol retreats, r_c badly wounded.",
                 "exp": 0,
                 "weight": 10,
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1", "n_c:3"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ],
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -2114,19 +2296,61 @@
             {
                 "text": "The patrol descends into battle without a second thought, eventually driving the rogues away.",
                 "exp": 30,
-                "weight": 20
+                "weight": 20,
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1", "n_c:3"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ]
             },
             {
                 "text": "s_c immediately leaps to protect {PRONOUN/s_c/poss} Clanmates. {PRONOUN/s_c/poss/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
                 "exp": 30,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,3"]
+                "stat_skill": ["FIGHTER,3"],
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting", "dead"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1", "n_c:3"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ]
             },
             {
                 "text": "s_c revels in the battle, leaping into the fray with {PRONOUN/s_c/poss} teeth bared and claws unsheathed. The rogues are quickly driven away by the patrol.",
                 "exp": 30,
                 "weight": 20,
-                "stat_trait": ["bloodthirsty", "fierce", "vengeful"]
+                "stat_trait": ["bloodthirsty", "fierce", "vengeful"],
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting", "dead"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1", "n_c:3"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -2145,6 +2369,20 @@
                 "text": "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion, and eventually the patrol retreats, r_c badly wounded.",
                 "exp": 0,
                 "weight": 10,
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1", "n_c:3"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ],
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -2178,19 +2416,61 @@
             {
                 "text": "The patrol descends into battle without a second thought, eventually driving the rogues away.",
                 "exp": 30,
-                "weight": 20
+                "weight": 20,
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1", "n_c:3"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ]
             },
             {
                 "text": "s_c immediately leaps to protect {PRONOUN/s_c/poss} Clanmates. {PRONOUN/s_c/poss/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
                 "exp": 30,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,3"]
+                "stat_skill": ["FIGHTER,3"],
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting", "dead"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1", "n_c:3"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ]
             },
             {
                 "text": "s_c revels in the battle, leaping into the fray with {PRONOUN/s_c/poss} teeth bared and claws unsheathed. The rogues are quickly driven away by the patrol.",
                 "exp": 30,
                 "weight": 20,
-                "stat_trait": ["bloodthirsty", "fierce", "vengeful"]
+                "stat_trait": ["bloodthirsty", "fierce", "vengeful"],
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting", "dead"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1", "n_c:3"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -2209,6 +2489,20 @@
                 "text": "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and r_c is badly wounded, forcing the patrol to retreat.",
                 "exp": 0,
                 "weight": 10,
+                "new_cat": [
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"],
+                    ["rogue", "meeting"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0", "n_c:1", "n_c:3"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 50
+                    }
+                ],
                 "injury": [
                     {
                         "cats": ["r_c"],

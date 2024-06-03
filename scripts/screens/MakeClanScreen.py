@@ -13,6 +13,8 @@ from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from scripts.patrol.patrol import Patrol
+from ..cat.sprites import sprites
+from ..game_structure.windows import SymbolFilterWindow
 
 
 class MakeClanScreen(Screens):
@@ -60,6 +62,9 @@ class MakeClanScreen(Screens):
     members = []
     elected_camp = None
 
+    # holds the symbol we have selected
+    symbol_selected = None
+    tag_list_len = 0
     # Holds biome we have selected
     biome_selected = None
     selected_camp_tab = 1
@@ -75,9 +80,16 @@ class MakeClanScreen(Screens):
     # To hold the images for the sections. Makes it easier to kill them
     elements = {}
     tabs = {}
+    symbol_buttons = {}
+
+    # used in symbol screen only - parent container is in element dict
+    text = {}
 
     def __init__(self, name=None):
         super().__init__(name)
+        # current page for symbol choosing
+        self.current_page = 1
+
         self.rolls_left = game.config["clan_creation"]["rerolls"]
         self.menu_warning = None
 
@@ -88,6 +100,7 @@ class MakeClanScreen(Screens):
         self.selected_camp_tab = 1
         self.biome_selected = None
         self.selected_season = "Newleaf"
+        self.symbol_selected = None
         self.choosing_rank = None
         self.leader = None  # To store the Clan leader before conformation
         self.deputy = None
@@ -107,6 +120,9 @@ class MakeClanScreen(Screens):
         self.open_game_mode()
 
     def handle_event(self, event):
+        if game.switches["window_open"]:
+            return
+
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.main_menu:
                 self.change_screen('start screen')
@@ -124,9 +140,11 @@ class MakeClanScreen(Screens):
                 self.handle_choose_members_event(event)
             elif self.sub_screen == 'choose camp':
                 self.handle_choose_background_event(event)
+            elif self.sub_screen == 'choose symbol':
+                self.handle_choose_symbol_event(event)
             elif self.sub_screen == 'saved screen':
                 self.handle_saved_clan_event(event)
-        
+
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
             if self.sub_screen == 'game mode':
                 self.handle_game_mode_key(event)
@@ -153,7 +171,7 @@ class MakeClanScreen(Screens):
         elif event.ui_element == self.elements['next_step']:
             game.settings['game_mode'] = self.game_mode
             self.open_name_clan()
-    
+
     def handle_game_mode_key(self, event):
         if event.key == pygame.K_ESCAPE:
             self.change_screen('start screen')
@@ -177,7 +195,9 @@ class MakeClanScreen(Screens):
 
     def handle_name_clan_event(self, event):
         if event.ui_element == self.elements["random"]:
-            self.elements["name_entry"].set_text(choice(names.names_dict["normal_prefixes"]))
+            clan_names = names.names_dict["normal_prefixes"]
+            clan_names.extend(names.names_dict["clan_prefixes"])
+            self.elements["name_entry"].set_text(choice(clan_names))
         elif event.ui_element == self.elements["reset_name"]:
             self.elements["name_entry"].set_text("")
         elif event.ui_element == self.elements['next_step']:
@@ -195,7 +215,7 @@ class MakeClanScreen(Screens):
         elif event.ui_element == self.elements['previous_step']:
             self.clan_name = ""
             self.open_game_mode()
-    
+
     def handle_name_clan_key(self, event):
         if event.key == pygame.K_ESCAPE:
             self.change_screen('start screen')
@@ -391,15 +411,14 @@ class MakeClanScreen(Screens):
                 possible_biomes.remove(old_biome)
             self.biome_selected = choice(possible_biomes)
             if self.biome_selected == 'Forest':
-                self.selected_camp_tab = randrange (1, 5)
+                self.selected_camp_tab = randrange(1, 5)
             else:
                 self.selected_camp_tab = randrange(1, 4)
             self.refresh_selected_camp()
             self.refresh_text_and_buttons()
-        elif event.ui_element == self.elements['done_button']:
-            self.save_clan()
-            self.open_clan_saved_screen()
-    
+        elif event.ui_element == self.elements['next_step']:
+            self.open_choose_symbol()
+
     def handle_choose_background_key(self, event):
         if event.key == pygame.K_RIGHT:
             if self.biome_selected is None:
@@ -435,6 +454,35 @@ class MakeClanScreen(Screens):
             self.save_clan()
             self.open_clan_saved_screen()
 
+    def handle_choose_symbol_event(self, event):
+        if event.ui_element == self.elements['previous_step']:
+            self.open_choose_background()
+        elif event.ui_element == self.elements["page_right"]:
+            self.current_page += 1
+            self.refresh_symbol_list()
+        elif event.ui_element == self.elements["page_left"]:
+            self.current_page -= 1
+            self.refresh_symbol_list()
+        elif event.ui_element == self.elements['done_button']:
+            self.save_clan()
+            self.open_clan_saved_screen()
+        elif event.ui_element == self.elements["random_symbol_button"]:
+            if self.symbol_selected:
+                if self.symbol_selected in self.symbol_buttons:
+                    self.symbol_buttons[self.symbol_selected].enable()
+            self.symbol_selected = choice(sprites.clan_symbols)
+            self.refresh_text_and_buttons()
+        elif event.ui_element == self.elements["filters_tab"]:
+            SymbolFilterWindow()
+        else:
+            for symbol_id, element in self.symbol_buttons.items():
+                if event.ui_element == element:
+                    if self.symbol_selected:
+                        if self.symbol_selected in self.symbol_buttons:
+                            self.symbol_buttons[self.symbol_selected].enable()
+                    self.symbol_selected = symbol_id
+                    self.refresh_text_and_buttons()
+
     def handle_saved_clan_event(self, event):
         if event.ui_element == self.elements["continue"]:
             self.change_screen('camp screen')
@@ -464,9 +512,17 @@ class MakeClanScreen(Screens):
             else:
                 self.elements["error"].hide()
                 self.elements['next_step'].enable()
-            
+
             # Set the background for the name clan page - done here to avoid GUI layering issues
-            screen.blit(pygame.transform.scale(MakeClanScreen.name_clan_img, (screen_x, screen_y)), (0,0))
+            screen.blit(pygame.transform.scale(MakeClanScreen.name_clan_img, (screen_x, screen_y)), (0, 0))
+
+        # refreshes symbol list when filters are changed
+        # - done here bc refresh_symbol_list cannot be called from windows.py
+        if self.sub_screen == "choose symbol":
+            if len(game.switches["disallowed_symbol_tags"]) != self.tag_list_len:
+                self.tag_list_len = len(game.switches["disallowed_symbol_tags"])
+                # print(game.switches["disallowed_symbol_tags"])
+                self.refresh_symbol_list()
 
     def clear_all_page(self):
         """Clears the entire page, including layout images"""
@@ -474,6 +530,8 @@ class MakeClanScreen(Screens):
             self.elements[image].kill()
         for tab in self.tabs:
             self.tabs[tab].kill()
+        for button in self.symbol_buttons:
+            self.symbol_buttons[button].kill()
         self.elements = {}
 
     def refresh_text_and_buttons(self):
@@ -621,11 +679,24 @@ class MakeClanScreen(Screens):
                 self.tabs['leaffall_tab'].enable()
                 self.tabs['leafbare_tab'].disable()
 
-            if self.biome_selected is not None and self.selected_camp_tab is not None:
-                self.elements['done_button'].enable()
+            if self.biome_selected and self.selected_camp_tab:
+                self.elements['next_step'].enable()
 
             # Deal with tab and shown camp image:
             self.refresh_selected_camp()
+        elif self.sub_screen == "choose symbol":
+            if self.symbol_selected:
+                if self.symbol_selected in self.symbol_buttons:
+                    self.symbol_buttons[self.symbol_selected].disable()
+                # refresh selected symbol image
+                self.elements["selected_symbol"].set_image(
+                    pygame.transform.scale(
+                        sprites.sprites[self.symbol_selected], (200, 200)).convert_alpha()
+                )
+                symbol_name = self.symbol_selected.removeprefix("symbol")
+                self.text["selected"].set_text(f"Selected Symbol: {symbol_name}")
+                self.elements["selected_symbol"].show()
+                self.elements["done_button"].enable()
 
     def refresh_selected_camp(self):
         """Updates selected camp image and tabs"""
@@ -780,6 +851,78 @@ class MakeClanScreen(Screens):
                     tool_tip_text=self._get_cat_tooltip_string(game.choose_cats[u]),
                     cat_object=game.choose_cats[u], manager=MANAGER)
 
+    def refresh_symbol_list(self):
+        # get symbol list
+        symbol_list = sprites.clan_symbols.copy()
+        symbol_attributes = sprites.symbol_dict
+
+        # filtering out tagged symbols
+        for symbol in sprites.clan_symbols:
+            index = symbol[-1]
+            name = symbol.strip("symbol1234567890")
+            tags = symbol_attributes[name.capitalize()][f"tags{index}"]
+            for tag in tags:
+                if tag in game.switches["disallowed_symbol_tags"]:
+                    if symbol in symbol_list:
+                        symbol_list.remove(symbol)
+        # print(symbol_list)
+
+        # separate list into chunks for pages
+        symbol_chunks = self.chunks(symbol_list, 45)
+
+        # clamp current page to a valid page number
+        self.current_page = max(1, min(self.current_page, len(symbol_chunks)))
+
+        # handles which arrow buttons are clickable
+        if len(symbol_chunks) <= 1:
+            self.elements["page_left"].disable()
+            self.elements["page_right"].disable()
+        elif self.current_page >= len(symbol_chunks):
+            self.elements["page_left"].enable()
+            self.elements["page_right"].disable()
+        elif self.current_page == 1 and len(symbol_chunks) > 1:
+            self.elements["page_left"].disable()
+            self.elements["page_right"].enable()
+        else:
+            self.elements["page_left"].enable()
+            self.elements["page_right"].enable()
+
+        display_symbols = []
+        if symbol_chunks:
+            display_symbols = symbol_chunks[self.current_page - 1]
+
+        # Kill all currently displayed symbols
+        symbol_images = [ele for ele in self.elements if ele in sprites.clan_symbols]
+        for ele in symbol_images:
+            self.elements[ele].kill()
+            if self.symbol_buttons:
+                self.symbol_buttons[ele].kill()
+
+        x_pos = 192
+        y_pos = 540
+        for symbol in display_symbols:
+            self.elements[f"{symbol}"] = pygame_gui.elements.UIImage(
+                scale(pygame.Rect((x_pos, y_pos), (100, 100))),
+                sprites.sprites[symbol],
+                object_id=f"#{symbol}",
+                starting_height=3,
+                manager=MANAGER
+            )
+            self.symbol_buttons[f"{symbol}"] = UIImageButton(
+                scale(pygame.Rect((x_pos - 24, y_pos - 24), (148, 148))),
+                "",
+                object_id=f"#symbol_select_button",
+                starting_height=4,
+                manager=MANAGER
+            )
+            x_pos += 140
+            if x_pos >= 1431:
+                x_pos = 192
+                y_pos += 140
+
+        if self.symbol_selected in self.symbol_buttons:
+            self.symbol_buttons[self.symbol_selected].disable()
+
     def _get_cat_tooltip_string(self, cat: Cat):
         """Get tooltip for cat. Tooltip displays name, sex, age group, and trait."""
 
@@ -933,7 +1076,7 @@ class MakeClanScreen(Screens):
                                                                   manager=MANAGER)
 
         self.elements['select_cat'] = UIImageButton(scale(pygame.Rect((468, 696), (664, 104))), "",
-                                                    object_id="#nine_lives_button", 
+                                                    object_id="#nine_lives_button",
                                                     starting_height=2,
                                                     visible=False, manager=MANAGER)
         # Error message, to appear if you can't choose that cat.
@@ -977,7 +1120,7 @@ class MakeClanScreen(Screens):
                                                                   manager=MANAGER)
 
         self.elements['select_cat'] = UIImageButton(scale(pygame.Rect((418, 696), (768, 104))), "",
-                                                    object_id="#support_leader_button", 
+                                                    object_id="#support_leader_button",
                                                     starting_height=2,
                                                     visible=False, manager=MANAGER)
         # Error message, to appear if you can't choose that cat.
@@ -1096,11 +1239,12 @@ class MakeClanScreen(Screens):
         self.clear_all_page()
         self.sub_screen = 'choose camp'
 
+        # Next and previous buttons
         self.elements['previous_step'] = UIImageButton(scale(pygame.Rect((506, 1290), (294, 60))), "",
                                                        object_id="#previous_step_button", manager=MANAGER)
-        self.elements["done_button"] = UIImageButton(scale(pygame.Rect((800, 1290), (294, 60))), "",
-                                                     object_id="#done_arrow_button", manager=MANAGER)
-        self.elements['done_button'].disable()
+        self.elements["next_step"] = UIImageButton(scale(pygame.Rect((800, 1290), (294, 60))), "",
+                                                   object_id="#next_step_button", manager=MANAGER)
+        self.elements['next_step'].disable()
 
         # Biome buttons
         self.elements['forest_biome'] = UIImageButton(scale(pygame.Rect((392, 200), (200, 92))), "",
@@ -1160,14 +1304,166 @@ class MakeClanScreen(Screens):
         # camp art self.elements["camp_art"] = pygame_gui.elements.UIImage(scale(pygame.Rect((175,170),(450, 400))),
         # pygame.image.load(self.get_camp_art_path(1)).convert_alpha(), visible=False)
 
+    def open_choose_symbol(self):
+        # clear screen
+        self.clear_all_page()
+
+        # set basics
+        self.sub_screen = 'choose symbol'
+
+        self.elements['previous_step'] = UIImageButton(scale(pygame.Rect((506, 1290), (294, 60))), "",
+                                                       object_id="#previous_step_button", manager=MANAGER)
+        self.elements["done_button"] = UIImageButton(scale(pygame.Rect((800, 1290), (294, 60))), "",
+                                                     object_id="#done_arrow_button", manager=MANAGER)
+        self.elements['done_button'].disable()
+
+        # create screen specific elements
+        self.elements["text_container"] = pygame_gui.elements.UIAutoResizingContainer(
+            scale(pygame.Rect((170, 230), (0, 0))),
+            object_id="text_container",
+            starting_height=1,
+            manager=MANAGER
+        )
+        self.text["clan_name"] = pygame_gui.elements.UILabel(
+            scale(pygame.Rect((0, 0), (-1, -1))),
+            text=f"{self.clan_name}Clan",
+            container=self.elements["text_container"],
+            object_id=get_text_box_theme("#text_box_40"),
+            manager=MANAGER
+        )
+        self.text["biome"] = pygame_gui.elements.UILabel(
+            scale(pygame.Rect((0, 50), (-1, -1))),
+            text=f"{self.biome_selected}",
+            container=self.elements["text_container"],
+            object_id=get_text_box_theme("#text_box_30_horizleft"),
+            manager=MANAGER
+        )
+        self.text["leader"] = pygame_gui.elements.UILabel(
+            scale(pygame.Rect((0, 90), (-1, -1))),
+            text=f"Leader name: {self.leader.name.prefix}star",
+            container=self.elements["text_container"],
+            object_id=get_text_box_theme("#text_box_30_horizleft"),
+            manager=MANAGER
+        )
+        self.text["recommend"] = pygame_gui.elements.UILabel(
+            scale(pygame.Rect((0, 160), (-1, -1))),
+            text=f"Recommended Symbol: N/A",
+            container=self.elements["text_container"],
+            object_id=get_text_box_theme("#text_box_30_horizleft"),
+            manager=MANAGER
+        )
+        self.text["selected"] = pygame_gui.elements.UILabel(
+            scale(pygame.Rect((0, 200), (-1, -1))),
+            text=f"Selected Symbol: N/A",
+            container=self.elements["text_container"],
+            object_id=get_text_box_theme("#text_box_30_horizleft"),
+            manager=MANAGER
+        )
+
+        self.elements['random_symbol_button'] = UIImageButton(
+            scale(pygame.Rect((993, 412), (68, 68))),
+            "",
+            object_id="#random_dice_button",
+            starting_height=1,
+            tool_tip_text="Select a random symbol!",
+            manager=MANAGER
+        )
+
+        self.elements['symbol_frame'] = pygame_gui.elements.UIImage(
+            scale(pygame.Rect((1081, 181), (338, 332))),
+            pygame.image.load(
+                f"resources/images/symbol_choice_frame.png").convert_alpha(),
+            object_id="#symbol_choice_frame",
+            starting_height=1,
+            manager=MANAGER
+        )
+
+        self.elements["page_left"] = UIImageButton(
+            scale(pygame.Rect((95, 829), (68, 68))),
+            "",
+            object_id="#arrow_left_button",
+            starting_height=1,
+            manager=MANAGER
+        )
+        self.elements["page_right"] = UIImageButton(
+            scale(pygame.Rect((1438, 829), (68, 68))),
+            "",
+            object_id="#arrow_right_button",
+            starting_height=1,
+            manager=MANAGER
+        )
+        self.elements["filters_tab"] = UIImageButton(
+            scale(pygame.Rect((200, 1239), (156, 60))),
+            "",
+            object_id="#filters_tab_button",
+            starting_height=1,
+            manager=MANAGER
+        )
+        self.elements['symbol_list_frame'] = pygame_gui.elements.UIImage(
+            scale(pygame.Rect((152, 500), (1300, 740))),
+            pygame.image.load(
+                f"resources/images/symbol_list_frame.png").convert_alpha(),
+            object_id="#symbol_list_frame",
+            starting_height=2,
+            manager=MANAGER
+        )
+
+        if f"symbol{self.clan_name.upper()}0" in sprites.clan_symbols:
+            self.text["recommend"].set_text(f"Recommended Symbol: {self.clan_name.upper()}0")
+
+        if not self.symbol_selected:
+            if f"symbol{self.clan_name.upper()}0" in sprites.clan_symbols:
+                self.symbol_selected = f"symbol{self.clan_name.upper()}0"
+
+                self.text["selected"].set_text(f"Selected Symbol: {self.clan_name.upper()}0")
+
+        if self.symbol_selected:
+            symbol_name = self.symbol_selected.removeprefix("symbol")
+            self.text["selected"].set_text(f"Selected Symbol: {symbol_name}")
+
+            self.elements["selected_symbol"] = pygame_gui.elements.UIImage(
+                scale(pygame.Rect((1147, 254), (200, 200))),
+                pygame.transform.scale(
+                    sprites.sprites[self.symbol_selected], (200, 200)).convert_alpha(),
+                object_id="#selected_symbol",
+                starting_height=2,
+                manager=MANAGER
+            )
+            self.refresh_symbol_list()
+            while self.symbol_selected not in self.symbol_buttons:
+                self.current_page += 1
+                self.refresh_symbol_list()
+            self.elements["done_button"].enable()
+        else:
+            self.elements["selected_symbol"] = pygame_gui.elements.UIImage(
+                scale(pygame.Rect((1147, 254), (200, 200))),
+                pygame.transform.scale(
+                    sprites.sprites["symbolADDER0"], (200, 200)).convert_alpha(),
+                object_id="#selected_symbol",
+                starting_height=2,
+                manager=MANAGER,
+                visible=False
+            )
+            self.refresh_symbol_list()
+
     def open_clan_saved_screen(self):
         self.clear_all_page()
         self.sub_screen = 'saved screen'
 
-        self.elements["leader_image"] = pygame_gui.elements.UIImage(scale(pygame.Rect((700, 240), (200, 200))),
-                                                                    pygame.transform.scale(
-                                                                        game.clan.leader.sprite,
-                                                                        (200, 200)), manager=MANAGER)
+        self.elements["selected_symbol"] = pygame_gui.elements.UIImage(
+            scale(pygame.Rect((700, 210), (200, 200))),
+            pygame.transform.scale(
+                sprites.sprites[self.symbol_selected], (200, 200)).convert_alpha(),
+            object_id="#selected_symbol",
+            starting_height=1,
+            manager=MANAGER
+        )
+
+        self.elements["leader_image"] = pygame_gui.elements.UIImage(
+            scale(pygame.Rect((700, 250), (200, 200))),
+            pygame.transform.scale(game.clan.leader.sprite, (200, 200)),
+            starting_height=1,
+            manager=MANAGER)
         self.elements["continue"] = UIImageButton(scale(pygame.Rect((692, 500), (204, 60))), "",
                                                   object_id="#continue_button_small")
         self.elements["save_confirm"] = pygame_gui.elements.UITextBox('Your Clan has been created and saved!',
@@ -1177,23 +1473,25 @@ class MakeClanScreen(Screens):
                                                                       manager=MANAGER)
 
     def save_clan(self):
-        
+
         game.mediated.clear()
         game.patrolled.clear()
         game.cat_to_fade.clear()
         Cat.outside_cats.clear()
         Patrol.used_patrols.clear()
         convert_camp = {1: 'camp1', 2: 'camp2', 3: 'camp3', 4: 'camp4'}
-        game.clan = Clan(self.clan_name,
-                         self.leader,
-                         self.deputy,
-                         self.med_cat,
-                         self.biome_selected,
-                         convert_camp[self.selected_camp_tab],
-                         self.game_mode, self.members,
+        game.clan = Clan(name=self.clan_name,
+                         leader=self.leader,
+                         deputy=self.deputy,
+                         medicine_cat=self.med_cat,
+                         biome=self.biome_selected,
+                         camp_bg=convert_camp[self.selected_camp_tab],
+                         symbol=self.symbol_selected,
+                         game_mode=self.game_mode,
+                         starting_members=self.members,
                          starting_season=self.selected_season)
         game.clan.create_clan()
-        #game.clan.starclan_cats.clear()
+        # game.clan.starclan_cats.clear()
         game.cur_events_list.clear()
         game.herb_events_list.clear()
         Cat.grief_strings.clear()
@@ -1214,3 +1512,9 @@ class MakeClanScreen(Screens):
             return f'{camp_bg_base_dir}/{biome}/{start_leave}_camp{campnum}_{light_dark}.png'
         else:
             return None
+
+    def chunks(self, L, n):
+        return [L[x: x + n] for x in range(0, len(L), n)]
+
+
+make_clan_screen = MakeClanScreen()

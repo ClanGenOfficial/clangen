@@ -5,6 +5,12 @@
     "#save_check_window": {
         "prototype": "#window_base_theme"
     },
+    "#notif_window": {
+        "prototype": "#window_base_theme"
+    },
+    "#filter_window": {
+        "prototype": "#window_base_theme"
+    },
     "#delete_check_window": {
         "prototype": "#window_base_theme"
     },

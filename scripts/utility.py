@@ -13,6 +13,7 @@ import ujson
 import logging
 from sys import exit as sys_exit
 from typing import Dict, List
+from typing import Dict
 
 logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache
@@ -212,6 +213,7 @@ def get_warring_clan():
 # ---------------------------------------------------------------------------- #
 #                          Handling Outside Factors                            #
 # ---------------------------------------------------------------------------- #
+
 def get_current_season():
     """
     function to handle the math for finding the Clan's current season
@@ -577,6 +579,13 @@ def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, 
             n_c.create_inheritance_new_cat()
 
     return new_cats
+def get_other_clan(clan_name):
+    """
+    returns the clan object of given clan name
+    """
+    for clan in game.clan.all_clans:
+        if clan.name == clan_name:
+            return clan
 
 
 def create_new_cat(Cat,
@@ -1479,6 +1488,19 @@ def get_leader_life_notice() -> str:
 
     return text
 
+def get_other_clan_relation(relation):
+    """
+    converts int value into string relation and returns string: "hostile", "neutral", or "ally"
+    :param relation: the other_clan.relations value
+    """
+
+    if int(relation) >= 17:
+        return "ally"
+    elif 7 < int(relation) < 17:
+        return "neutral"
+    elif int(relation) <= 7:
+        return "hostile"
+
 
 def pronoun_repl(m, cat_pronouns_dict, raise_exception=False):
     """ Helper function for add_pronouns. If raise_exception is 
@@ -1671,6 +1693,7 @@ def history_text_adjust(text,
                         other_clan_name,
                         clan,
                         other_cat_rc=None):
+
     """
     we want to handle history text on its own because it needs to preserve the pronoun tags and cat abbreviations.
     this is so that future pronoun changes or name changes will continue to be reflected in history
@@ -2110,17 +2133,54 @@ def update_sprite(cat):
     # update class dictionary
     cat.all_cats[cat.ID] = cat
 
+def clan_symbol_sprite(clan, return_string=False):
+    """
+    returns the clan symbol for the given clan_name, if no symbol exists then random symbol is chosen
+    :param clan: the clan object
+    :param return_string: default False, set True if the sprite name string is required rather than the sprite image
+
+    """
+    clan_name = clan.name
+    if clan.chosen_symbol:
+        if return_string:
+            return clan.chosen_symbol
+        else:
+            return sprites.sprites[f"{clan.chosen_symbol}"]
+    else:
+        possible_sprites = []
+        for sprite in sprites.clan_symbols:
+            name = sprite.strip("1234567890")
+            if f"symbol{clan_name.upper()}" == name:
+                possible_sprites.append(sprite)
+        if return_string:  # returns the str of the symbol
+            if possible_sprites:
+                return choice(possible_sprites)
+            else:
+                # give random symbol if no matching symbol exists
+                print(f"WARNING: attempted to return symbol string, but there's no clan symbol for {clan_name.upper()}.  Random symbol string returned.")
+                return f"{choice(sprites.clan_symbols)}"
+
+        else:  # returns the actual sprite of the symbol
+            if possible_sprites:
+                return sprites.sprites[choice(possible_sprites)]
+            else:
+                # give random symbol if no matching symbol exists
+                print(f"WARNING: attempted to return symbol sprite, but there's no clan symbol for {clan_name.upper()}.  Random symbol sprite returned.")
+                return sprites.sprites[f"{choice(sprites.clan_symbols)}"]
+
 
 def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, always_living=False,
                     no_not_working=False) -> pygame.Surface:
-    """Generates the sprite for a cat, with optional arugments that will override certain things. 
-        life_stage: sets the age life_stage of the cat, overriding the one set by it's age. Set to string. 
-        scar_hidden: If True, doesn't display the cat's scars. If False, display cat scars. 
-        acc_hidden: If True, hide the accessory. If false, show the accessory.
-        always_living: If True, always show the cat with living lineart
-        no_not_working: If true, never use the not_working lineart.
-                        If false, use the cat.not_working() to determine the no_working art. 
-        """
+    """
+    Generates the sprite for a cat, with optional arguments that will override certain things.
+
+    :param life_state: sets the age life_stage of the cat, overriding the one set by its age. Set to string.
+    :param scars_hidden: If True, doesn't display the cat's scars. If False, display cat scars.
+    :param acc_hidden: If True, hide the accessory. If false, show the accessory.
+    :param always_living: If True, always show the cat with living lineart
+    :param no_not_working: If true, never use the not_working lineart.
+                    If false, use the cat.not_working() to determine the no_working art.
+    """
 
     if life_state is not None:
         age = life_state

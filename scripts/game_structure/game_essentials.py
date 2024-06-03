@@ -135,7 +135,8 @@ class Game():
         'skip_conditions': [],
         'show_history_moons': False,
         'fps': 30,
-        'war_rel_change_type': 'neutral'
+        'war_rel_change_type': 'neutral',
+        'disallowed_symbol_tags': []
     }
     all_screens = {}
     cur_events = {}
@@ -217,6 +218,7 @@ class Game():
 
         # If write_data is not a string,
         if type(write_data) is not str:
+            print(write_data)
             _data = ujson.dumps(write_data, indent=4)
         else:
             _data = write_data
@@ -543,8 +545,8 @@ class Game():
 
     def get_config_value(self, *args):
         """Fetches a value from the self.config dictionary. Pass each key as a 
-        seperate arugment, in the same order you would access the dictionary. 
-        This function will apply war modifers if the clan is currently at war. """
+        separate argument, in the same order you would access the dictionary.
+        This function will apply war modifiers if the clan is currently at war. """
 
         war_effected = {
             ("death_related", "leader_death_chance"): ("death_related", "war_death_modifier_leader"),
