@@ -195,7 +195,6 @@ class HandleShortEvents():
         # change supplies
         if self.chosen_event.supplies:
             for block in self.chosen_event.supplies:
-                print(block)
                 if "misc" not in self.types:
                     self.types.append("misc")
                 if block["type"] == "freshkill":
@@ -215,7 +214,7 @@ class HandleShortEvents():
                                       main_cat=self.main_cat,
                                       random_cat=self.random_cat,
                                       victim_cat=self.victim_cat,
-                                      new_cats=self.new_cat_objects,
+                                      new_cats=self.new_cats,
                                       multi_cats=self.multi_cat,
                                       clan=game.clan,
                                       other_clan=self.other_clan,
@@ -608,7 +607,6 @@ class HandleShortEvents():
             freshkill_pile.add_freshkill(increase_amount)
 
     def handle_herb_supply(self, block):
-        print("handling herb supply")
 
         herbs = game.clan.herbs
 
@@ -619,7 +617,7 @@ class HandleShortEvents():
         clan_size = get_living_clan_cat_count(Cat)
         needed_amount = int(clan_size * 3)
 
-        self.herb_notice = None
+        self.herb_notice = "Lost "
         herb_list = []
 
         if "reduce" in adjustment:
@@ -637,11 +635,11 @@ class HandleShortEvents():
                 if adjustment == "reduce_full":
                     herbs[herb] = 0
                 elif adjustment == "reduce_half":
-                    herbs[herb] = game.clan.herbs[herb] / 2
+                    herbs[herb] = int(game.clan.herbs[herb] / 2)
                 elif adjustment == "reduce_quarter":
-                    herbs[herb] = game.clan.herbs[herb] / 4
+                    herbs[herb] = int(game.clan.herbs[herb] / 4)
                 elif adjustment == "reduce_eighth":
-                    herbs[herb] = game.clan.herbs[herb] / 8
+                    herbs[herb] = int(game.clan.herbs[herb] / 8)
                 elif "increase" in adjustment:
                     herbs[herb] += adjustment.split("_")[1]
 
@@ -669,11 +667,11 @@ class HandleShortEvents():
             if adjustment == "reduce_full":
                 herbs[self.chosen_herb] = 0
             elif adjustment == "reduce_half":
-                herbs[self.chosen_herb] = game.clan.herbs[self.chosen_herb] / 2
+                herbs[self.chosen_herb] = int(game.clan.herbs[self.chosen_herb] / 2)
             elif adjustment == "reduce_quarter":
-                herbs[self.chosen_herb] = game.clan.herbs[self.chosen_herb] / 4
+                herbs[self.chosen_herb] = int(game.clan.herbs[self.chosen_herb] / 4)
             elif adjustment == "reduce_eighth":
-                herbs[self.chosen_herb] = game.clan.herbs[self.chosen_herb] / 8
+                herbs[self.chosen_herb] = int(game.clan.herbs[self.chosen_herb] / 8)
             elif "increase" in adjustment:
                 herbs[self.chosen_herb] += adjustment.split("_")[1]
 

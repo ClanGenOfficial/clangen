@@ -1865,14 +1865,14 @@ def event_text_adjust(Cat,
 
     # new_cats (include pre version)
     if "n_c" in text:
-        for i, cat in enumerate(new_cats):
+        for i, cat_list in enumerate(new_cats):
             if len(new_cats) > 1:
                 pronoun = Cat.default_pronouns[0]  # They/them for multiple cats
             else:
-                pronoun = choice(cat.pronouns)
+                pronoun = choice(cat_list[0].pronouns)
 
-            replace_dict[f"n_c:{i}"] = (str(cat.name), pronoun)
-            replace_dict[f"n_c_pre:{i}"] = (str(cat.name.prefix), pronoun)
+            replace_dict[f"n_c:{i}"] = (str(cat_list[0].name), pronoun)
+            replace_dict[f"n_c_pre:{i}"] = (str(cat_list[0].name.prefix), pronoun)
 
     # mur_c (murdered cat for reveals)
     if "mur_c" in text:
