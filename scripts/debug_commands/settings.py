@@ -85,24 +85,21 @@ class GetCommand(Command):
                 if len(args) == 1:
                     add_output_line_to_log("Avaliable settings:")
                     for setting, val in game.settings.items():
-                        add_output_line_to_log(
-                            f"  {setting} - {val}")
+                        add_output_line_to_log(f"  {setting} - {val}")
                     return
                 output = game.settings[args[1]]
             elif args[0] == "switch":
                 if len(args) == 1:
                     add_output_line_to_log("Avaliable settings:")
                     for setting, val in game.switches.items():
-                        add_output_line_to_log(
-                            f"  {setting} - {val}")
+                        add_output_line_to_log(f"  {setting} - {val}")
                     return
                 output = game.switches[args[1]]
             elif args[0] == "debug":
                 if len(args) == 1:
                     add_output_line_to_log("Avaliable settings:")
                     for setting, val in game.debug_settings.items():
-                        add_output_line_to_log(
-                            f"  {setting} - {val}")
+                        add_output_line_to_log(f"  {setting} - {val}")
                     return
                 output = game.debug_settings[args[1]]
             else:
