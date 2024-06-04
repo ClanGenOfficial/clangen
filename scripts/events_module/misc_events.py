@@ -61,7 +61,6 @@ class MiscEvents():
                     reveal = True
                     break
 
-        #print('misc event', cat.ID)
         final_events = GenerateEvents.filter_possible_short_events(acc_checked_events, cat, other_cat, war, enemy_clan, other_clan,
                                                                    alive_kits, murder_reveal=reveal)
 
@@ -237,7 +236,6 @@ class MiscEvents():
         chance_of_reveal = 1
 
         chance_roll = random.randint(0, chance_of_reveal)
-        print(chance_roll)
 
         return bool(chance_roll = 1)
 

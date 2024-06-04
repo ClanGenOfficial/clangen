@@ -175,7 +175,6 @@ class Freshkill_Events():
         # check if amount of the freshkill pile is too big and a event will be triggered
         needed_amount = freshkill_pile.amount_food_needed()
         trigger_value = round(trigger_factor * needed_amount, 2)
-        print(f" -- FRESHKILL: trigger amount {trigger_value}. current amount (after feed, before moon gathering) {freshkill_pile.total_amount}")
         if freshkill_pile.total_amount < trigger_value:
             return
 
@@ -183,7 +182,6 @@ class Freshkill_Events():
         chance = 10 - factor
         if chance <= 0:
             chance = 1
-        print(f" -- FRESHKILL: trigger chance of 1/{chance}")
         choice = random.randint(1,chance)
         if choice != 1:
             return

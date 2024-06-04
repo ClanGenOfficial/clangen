@@ -328,7 +328,6 @@ class LeaderDenScreen(Screens):
         for i, other_clan in enumerate(game.clan.all_clans):
             if other_clan.name == game.clan.name:
                 continue
-            print(f"index{i}")
             x_pos = 256
             self.other_clan_selection_elements[f"button{i}"] = UIImageButton(
                 scale(pygame.Rect((17 + (x_pos * i), 20), (268, 348))),
@@ -515,7 +514,6 @@ class LeaderDenScreen(Screens):
             visible=False)
 
         if self.no_gathering:
-            print('')
             self.focus_frame_elements["negative_interaction"].disable()
             self.focus_frame_elements["positive_interaction"].disable()
 
@@ -552,9 +550,7 @@ class LeaderDenScreen(Screens):
         fail_chance = self._compare_temper(player_temper_int, other_temper_int)
 
         if gathering_cat != game.clan.leader:
-            print("gathering cat isn't clan leader: fail_chance * 1.4")
             fail_chance = fail_chance * 1.4
-        print(f"Clan Interaction Failure Chance: {fail_chance}")
 
         if random.random() >= fail_chance:
             success = True
@@ -574,7 +570,6 @@ class LeaderDenScreen(Screens):
         """
         # base equation for fail chance (temper_int - temper_int) / 10
         fail_chance = (abs(int(player_temper_int - other_temper_int))) / 10
-        print(f"BASE FAIL CHANCE: {fail_chance} ({player_temper_int} - {other_temper_int})")
 
         temper_dict = game.clan.temperament_dict
         clan_index = 0
@@ -592,27 +587,20 @@ class LeaderDenScreen(Screens):
         # checks social distance between tempers and adds modifiers appropriately
         if clan_social != other_social:
             fail_chance += 0.05
-            print("not in same social row +5%")
             if clan_social == "low social" and other_social == "high_social":
                 fail_chance += 0.1
-                print("opposite extremes of social temper +10%")
             elif other_social == "low social" and clan_social == "high_social":
                 fail_chance += 0.1
-                print("opposite extremes of social temper +10%")
 
         # checks aggression distance between tempers and adds modifiers appropriately
         if clan_index != other_index:
             fail_chance += 0.05
-            print("not in same aggress column +5%")
             if clan_index == 0 and other_index == 2:
                 fail_chance += 0.1
-                print("opposite extremes of aggress temper +10%")
             elif other_index == 0 and clan_index == 2:
                 fail_chance += 0.1
-                print("opposite extremes of aggress temper +10%")
 
         if fail_chance > 0.5:
-            print("fail chance too high - changed to 50%")
             fail_chance = 0.5
 
         return fail_chance
@@ -754,7 +742,6 @@ class LeaderDenScreen(Screens):
 
         self.focus_outsider_button_container.enable()
         if self.focus_cat.age == "newborn":  # not allowed to do things to newborns
-            print("outsider buttons disabled")
             self.focus_outsider_button_container.disable()
 
     def update_text(self, clan=True):
@@ -893,20 +880,16 @@ class LeaderDenScreen(Screens):
         if success_chance <= 0:
             success_chance = 0.1
 
-        print(f"CHANCE: {success_chance}")
         if random.random() < success_chance:
             success = True
-            print("INTERACTION SUCCESS")
         else:
             success = False
-            print("INTERACTION FAIL")
 
         game.clan.clan_settings["lead_den_outsider_event"] = {
             "cat_ID": self.focus_cat.ID,
             "interaction_type": interaction_type,
             "success": success
         }
-        print(game.clan.clan_settings["lead_den_outsider_event"])
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]

@@ -175,7 +175,6 @@ class NewCatEvents:
             new_cat.create_inheritance_new_cat()
 
             if "m_c" in new_cat_event.tags:
-                # print('moon event new cat rel gain')
                 cat.create_one_relationship(new_cat)
                 new_cat.create_one_relationship(cat)
                 
