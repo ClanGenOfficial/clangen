@@ -62,19 +62,14 @@ class ChangeGenderScreen(Screens):
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
                     game.switches["cat"] = self.next_cat
                     self.update_selected_cat()
-                # else:
-                # print("invalid next cat", self.next_cat)
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
                     game.switches["cat"] = self.previous_cat
                     self.update_selected_cat()
-                # else:
-                # print("invalid previous cat", self.previous_cat)
             elif event.ui_element == self.buttons["save"]:
                 if self.are_boxes_full():
                     gender_identity = self.get_new_identity()
                     self.the_cat.genderalign = gender_identity
-                    print("New Gender Identity Unlocked!")
                     self.selected_cat_elements["identity_changed"].show()
                     self.selected_cat_elements["cat_gender"].kill()
                     self.selected_cat_elements["cat_gender"] = pygame_gui.elements.UITextBox(

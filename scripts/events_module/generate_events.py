@@ -183,9 +183,7 @@ class GenerateEvents:
                 event = None
                 for event in events_dict:
                     if event["event"] != specific_event:
-                        # print(event["event"], 'is not', specific_event)
                         continue
-                    # print(event["event"], "is", specific_event)
                     event = OngoingEvent(
                         event=event["event"],
                         camp=event["camp"],
@@ -601,7 +599,6 @@ class GenerateEvents:
                 )"""
                 return event_list
             else:
-                # print(specific_event)
                 event = (
                     GenerateEvents.generate_ongoing_events(event_type, biome, specific_event)
                 )
@@ -622,8 +619,6 @@ class GenerateEvents:
             possible_events.extend(events["general"][body_status])
             if trait in events:
                 possible_events.extend(events[trait][body_status])
-
-        # print(possible_events)
 
         return possible_events
 

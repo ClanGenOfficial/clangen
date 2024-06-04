@@ -327,7 +327,6 @@ class DeleteCheck(UIWindow):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.delete_it_button:
                 game.switches['window_open'] = False
-                print("delete")
                 rempath = get_save_dir() + "/" + self.clan_name
                 shutil.rmtree(rempath)
                 if os.path.exists(rempath + 'clan.json'):
@@ -848,9 +847,7 @@ class PronounCreation(UIWindow):
             elif event.ui_element == self.buttons["save_pronouns"]:
                 if self.are_boxes_full():
                     new_pronouns = self.get_new_pronouns()
-                    # self.the_cat.pronouns.append(new_pronouns)
                     game.clan.custom_pronouns.append(new_pronouns)
-                    print("Pronouns saved")
                     self.pronoun_added.show()
             elif event.ui_element == self.buttons["singular_unchecked"]:
                 self.buttons["plural_checked"].hide()
