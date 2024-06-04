@@ -847,9 +847,7 @@ class PronounCreation(UIWindow):
             elif event.ui_element == self.buttons["save_pronouns"]:
                 if self.are_boxes_full():
                     new_pronouns = self.get_new_pronouns()
-                    # self.the_cat.pronouns.append(new_pronouns)
                     game.clan.custom_pronouns.append(new_pronouns)
-                    print("Pronouns saved")
                     self.pronoun_added.show()
             elif event.ui_element == self.buttons["singular_unchecked"]:
                 self.buttons["plural_checked"].hide()
