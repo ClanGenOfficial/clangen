@@ -265,22 +265,28 @@ class Cat:
             self.age = choice(self.ages)
         elif moons is not None:
             self.moons = moons
-            self.init_moons_age(moons)
-        else:  # status is not None
-            match status:
-                case "newborn":
-                    self.age = "newborn"
-                case "kitten":
-                    self.age = "kitten"
-                case "elder":
-                    self.age = "senior"
-                case "apprentice" | "mediator apprentice" | "medicine cat apprentice":
-                    self.age = "adolescent"
-                case _:
-                    self.age = choice(["young adult", "adult", "adult", "senior adult"])
-            self.moons = randint(
-                self.age_moons[self.age][0], self.age_moons[self.age][1]
-            )
+            if moons > 300:
+                # Out of range, always elder
+                self.age = 'senior'
+            elif moons == 0:
+                self.age = 'newborn'
+            else:
+                # In range
+                for key_age in self.age_moons.keys():
+                    if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
+                        self.age = key_age
+        else:
+            if status == 'newborn':
+                self.age = 'newborn'
+            elif status == 'kitten':
+                self.age = 'kitten'
+            elif status == 'elder':
+                self.age = 'senior'
+            elif status in ['apprentice', 'mediator apprentice', 'medicine cat apprentice']:
+                self.age = 'adolescent'
+            else:
+                self.age = choice(['young adult', 'adult', 'adult', 'senior adult'])
+            self.moons = randint(self.age_moons[self.age][0], self.age_moons[self.age][1])
 
         # backstory
         if self.backstory is None:
@@ -404,15 +410,15 @@ class Cat:
         :return: None
         """
         # trans cat chances
-        theythemdefault = game.settings["they them default"]
+        theythemdefault = game.settings["they them default"] 
         self.genderalign = self.gender
         trans_chance = randint(0, 50)
         nb_chance = randint(0, 75)
-        # newborns can't be trans, sorry babies
-        if self.age in ["kitten", "newborn"]:
+        #newborns can't be trans, sorry babies
+        if self.age in ['kitten', 'newborn']:
             trans_chance = 0
             nb_chance = 0
-        if theythemdefault:
+        if theythemdefault is True:
             self.pronouns = [self.default_pronouns[0].copy()]
             if nb_chance == 1:
                 self.genderalign = "nonbinary"
@@ -423,14 +429,13 @@ class Cat:
                     self.genderalign = "trans female"
         else:
             # Assigning pronouns based on gender and chance
-            match self.gender:
-                case "female" | "trans female":
-                    self.pronouns = [self.default_pronouns[1].copy()]
-                case "male" | "trans male":
-                    self.pronouns = [self.default_pronouns[2].copy()]
-                case _:
-                    self.pronouns = [self.default_pronouns[0].copy()]
-                    self.genderalign = "nonbinary"
+            if self.gender in ["female", "trans female"]:
+                self.pronouns = [self.default_pronouns[1].copy()]
+            elif self.gender in ["male", "trans male"]:
+                self.pronouns = [self.default_pronouns[2].copy()]
+            else:
+                self.pronouns = [self.default_pronouns[0].copy()]
+                self.genderalign = "nonbinary"
 
         # APPEARANCE
         self.pelt = Pelt.generate_new_pelt(
@@ -442,11 +447,10 @@ class Cat:
         # Personality
         self.personality = Personality(kit_trait=self.is_baby())
 
-        # experience and current patrol status
-        match self.age:
-            case "young" | "newborn":
+            # experience and current patrol status
+            if self.age in ['young', 'newborn']:
                 self.experience = 0
-            case "adolescent":
+            elif self.age in ['adolescent']:
                 m = self.moons
                 self.experience = 0
                 while m > Cat.age_moons["adolescent"][0]:
@@ -457,22 +461,16 @@ class Cat:
                     )
                     self.experience += exp + 3
                     m -= 1
-            case "young adult" | "adult":
-                self.experience = randint(
-                    Cat.experience_levels_range["prepared"][0],
-                    Cat.experience_levels_range["proficient"][1],
-                )
-            case "senior adult":
-                self.experience = randint(
-                    Cat.experience_levels_range["competent"][0],
-                    Cat.experience_levels_range["expert"][1],
-                )
-            case "senior":
-                self.experience = randint(
-                    Cat.experience_levels_range["competent"][0],
-                    Cat.experience_levels_range["master"][1],
-                )
-            case _:
+            elif self.age in ['young adult', 'adult']:
+                self.experience = randint(Cat.experience_levels_range["prepared"][0],
+                                        Cat.experience_levels_range["proficient"][1])
+            elif self.age in ['senior adult']:
+                self.experience = randint(Cat.experience_levels_range["competent"][0],
+                                        Cat.experience_levels_range["expert"][1])
+            elif self.age in ['senior']:
+                self.experience = randint(Cat.experience_levels_range["competent"][0],
+                                        Cat.experience_levels_range["master"][1])
+            else:
                 self.experience = 0
 
         if not skill_dict:
