@@ -1255,7 +1255,6 @@ class Clan:
 
     @temperament.setter
     def temperament(self, val):
-        # print("Clan temperament set by member personality --> you can not set it externally.", val)
         return
 
 

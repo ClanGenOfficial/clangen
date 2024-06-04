@@ -379,7 +379,6 @@ class Events:
                 success=info_dict["success"],
             )
             chosen_event = random.choice(events)
-            print(chosen_event)
 
             # get event text
             event_text = chosen_event["event_text"]
@@ -702,7 +701,6 @@ class Events:
                 else:
                     print("No herbs to destroy")
                     return
-                print(f"New herb found: {bad_herb}")
 
             herb_amount = random.randrange(1, game.clan.herbs[bad_herb] + 1)
             # deplete the herb
@@ -750,7 +748,6 @@ class Events:
                     else:
                         print("No herbs to destroy")
                         return
-                    print(f"New herb found: {herb_given}")
 
                 if game.clan.herbs[herb_given] > 2:
                     herb_amount = random.randrange(
@@ -1244,7 +1241,6 @@ class Events:
             game.cur_events_list.append(Single_Event(text, "misc", cat_IDs))
 
         # Perform a ceremony if needed
-        print("checking ceremonies for returned cat")
         for cat_ID in cat_IDs:
             x = Cat.fetch_cat(cat_ID)
             if x.status in [
@@ -2555,7 +2551,6 @@ class Events:
                 return
 
             chosen_target = random.choice(targets)
-            # print("Random Murder!", str(cat.name),  str(Cat.fetch_cat(chosen_target.cat_to).name))
 
             # If at war, grab enemy clans
             enemy_clan = None
@@ -2591,11 +2586,8 @@ class Events:
         murder_capable = max(1, murder_capable)
 
         if random.getrandbits(murder_capable) != 1:
-            # print(f'{cat.name} is currently not capable of murder')
             return
 
-        # print("Murder Capable: " + str(murder_capable))
-        # print(f'{cat.name} is feeling murderous')
         # If random murder is not triggered, targets can only be those they have some dislike for
         hate_relation = [
             i
@@ -2617,7 +2609,6 @@ class Events:
         # if we have some, then we need to decide if this cat will kill
         if targets:
             chosen_target = random.choice(targets)
-            # print(cat.name, 'TARGET CHOSEN', Cat.fetch_cat(chosen_target.cat_to).name)
 
             kill_chance = game.config["death_related"]["base_murder_kill_chance"]
 
@@ -2631,7 +2622,6 @@ class Events:
                     + chosen_target.comfortable
                 )
             )
-            # print("Relation Modifier: ", relation_modifier)
             kill_chance -= relation_modifier
 
             if (
@@ -2639,14 +2629,12 @@ class Events:
                 and "(high negative effect)" in chosen_target.log[-1]
             ):
                 kill_chance -= 50
-                # print(str(chosen_target.log[-1]))
 
             if (
                 len(chosen_target.log) > 0
                 and "(medium negative effect)" in chosen_target.log[-1]
             ):
                 kill_chance -= 20
-                # print(str(chosen_target.log[-1]))
 
             # little easter egg just for fun
             if (
@@ -2656,8 +2644,6 @@ class Events:
                 kill_chance -= 10
 
             kill_chance = max(1, int(kill_chance))
-
-            # print("Final kill chance: " + str(kill_chance))
 
             if not int(random.random() * kill_chance):
                 print(
@@ -2924,7 +2910,6 @@ class Events:
                         "outbreak_prevention"
                     ]
                     if not int(random.random() * stopping_chance):
-                        # print(f"rest and recover - outbreak of {illness} prevented")
                         continue
 
                 if illness == "kittencough":

@@ -217,7 +217,6 @@ class Game:
 
         # If write_data is not a string,
         if type(write_data) is not str:
-            print(write_data)
             _data = ujson.dumps(write_data, indent=4)
         else:
             _data = write_data
@@ -318,7 +317,6 @@ class Game:
         if not clan_list:
             print("No clans found")
             return None
-        # print('Clans found:', clan_list)
         return clan_list
 
     def save_clanlist(self, loaded_clan=None):
