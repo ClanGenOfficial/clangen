@@ -10,12 +10,12 @@ from scripts.game_structure.game_essentials import MANAGER, game
 
 from scripts.utility import get_text_box_theme
 from scripts.debug_commands import commandList
-from scripts.debug_commands.utils import setDebugClass
+from scripts.debug_commands.utils import set_debug_class
 
 
 class debugConsole(pygame_gui.windows.UIConsoleWindow):
     def __init__(self, rect, manager):
-        setDebugClass(self)
+        set_debug_class(self)
         super().__init__(rect, manager, window_title="Debug Console",
                          object_id="#debug_console", visible=0)
 
@@ -34,7 +34,7 @@ class debugConsole(pygame_gui.windows.UIConsoleWindow):
             for cmd in commandList:
                 if command in cmd._aliases:  # pylint: disable=protected-access
                     commandFound = True
-                    if not cmd.bypassConjoinedStrings:
+                    if not cmd.bypass_conjoined_strings:
                         _args = []
                         curArgGroup = ""
                         inGroup = False
@@ -54,7 +54,7 @@ class debugConsole(pygame_gui.windows.UIConsoleWindow):
                                     curArgGroup += " " + arg
                         args = _args
                     if len(args) > 0:
-                        for subcommand in cmd.subCommands:
+                        for subcommand in cmd.sub_commands:
                             if args[0] in subcommand._aliases:  # pylint: disable=protected-access
                                 args = args[1:]
                                 cmd = subcommand
