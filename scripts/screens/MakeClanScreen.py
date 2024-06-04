@@ -6,7 +6,7 @@ from .Screens import Screens
 
 from scripts.utility import get_text_box_theme, scale
 from scripts.clan import Clan
-from scripts.cat.cats import create_example_cats, Cat
+from scripts.cat.cats import create_example_cats, create_cat, Cat
 from scripts.cat.names import names
 from re import sub
 from scripts.game_structure import image_cache
@@ -196,9 +196,13 @@ class MakeClanScreen(Screens):
                 self.open_name_clan()
 
     def handle_random_clan_prompt_event(self, event):
-        if event.ui_element == self.elements['yes_button']:
-            print("todo!")
-        elif event.ui_element == self.elements['no_button']:
+        if event.ui_element == self.elements["yes_button"]:
+            self.elements["yes_button"].set_text("Yes")
+            self.random_quick_start()
+            self.save_clan()
+            self.open_clan_saved_screen()
+        elif event.ui_element == self.elements["no_button"]:
+            self.elements["yes_button"].set_text("No")
             self.open_name_clan()
 
     def handle_name_clan_event(self, event):
@@ -411,13 +415,14 @@ class MakeClanScreen(Screens):
             self.selected_season = "Leaf-bare"
             self.refresh_text_and_buttons()
         elif event.ui_element == self.elements["random_background"]:
-            # Select a random biome and background
-            old_biome = self.biome_selected
-            possible_biomes = ['Forest', 'Mountainous', 'Plains', 'Beach']
-            # ensuring that the new random camp will not be the same one
-            if old_biome is not None:
-                possible_biomes.remove(old_biome)
-            self.biome_selected = choice(possible_biomes)
+            # # Select a random biome and background
+            # old_biome = self.biome_selected
+            # possible_biomes = ['Forest', 'Mountainous', 'Plains', 'Beach']
+            # # ensuring that the new random camp will not be the same one
+            # if old_biome is not None:
+            #     possible_biomes.remove(old_biome)
+            # self.biome_selected = choice(possible_biomes)
+            self.biome_selected = self.random_biome_selection()
             if self.biome_selected == 'Forest':
                 self.selected_camp_tab = randrange(1, 5)
             else:
@@ -542,15 +547,19 @@ class MakeClanScreen(Screens):
         self.elements = {}
 
     def random_quick_start(self):
-        # TODO: Random clan name (name must not already exist)
-        
-        # TODO: Random biome selected
-        # TODO: Use Recommended Symbol / Random symbol selection
+        self.clan_name = self.random_clan_name()
+        self.biome_selected = self.random_biome_selection()
         if f"symbol{self.clan_name.upper()}0" in sprites.clan_symbols:
-            # self.text["recommend"].set_text(f"Recommended Symbol: {self.clan_name.upper()}0")
-            return
-        # TODO: Random Leader, Deputy, Med Cat
-        # TODO: Random rest of cats
+            # Use recommended symbol if it exists
+            self.symbol_selected = f"symbol{self.clan_name.upper()}0"
+        else:
+            self.symbol_selected = choice(sprites.clan_symbols)
+        self.leader = create_cat(status='warrior')
+        self.deputy = create_cat(status='warrior')
+        self.med_cat = create_cat(status='warrior')
+        for _ in range(randrange(4, 8)):
+            random_status = choice(['kitten', 'apprentice', 'warrior', 'warrior', 'elder'])
+            self.members.append(create_cat(status=random_status))
 
     def refresh_text_and_buttons(self):
         """Refreshes the button states and text boxes"""
@@ -953,10 +962,14 @@ class MakeClanScreen(Screens):
         print(f"todo!")
 
     def random_biome_selection(self):
-        print(f"todo!")
-
-    def random_cat_selection(self):
-        print(f"todo!")
+        # Select a random biome and background
+        old_biome = self.biome_selected
+        possible_biomes = ['Forest', 'Mountainous', 'Plains', 'Beach']
+        # ensuring that the new random camp will not be the same one
+        if old_biome is not None:
+            possible_biomes.remove(old_biome)
+        chosen_biome = choice(possible_biomes)
+        return chosen_biome
 
     def _get_cat_tooltip_string(self, cat: Cat):
         """Get tooltip for cat. Tooltip displays name, sex, age group, and trait."""
@@ -1013,15 +1026,15 @@ class MakeClanScreen(Screens):
         self.sub_screen = 'random clan prompt'
 
         self.elements['prompt_text'] = pygame_gui.elements.UITextBox(
-            "Do you want to create a completely random clan?",
+            "Would you like to create a completely random clan? The season will be set to Newleaf.",
             scale(pygame.Rect((300, 400), (1000, 200))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER
         )
         
-        self.elements['yes_button'] = UIImageButton(scale(pygame.Rect((400, 650), (200, 60))), "",
+        self.elements['yes_button'] = UIImageButton(scale(pygame.Rect((506, 650), (200, 60))), "Yes",
                                                     object_id="#yes_button", manager=MANAGER)
-        self.elements['no_button'] = UIImageButton(scale(pygame.Rect((800, 650), (200, 60))), "",
+        self.elements['no_button'] = UIImageButton(scale(pygame.Rect((800, 650), (200, 60))), "No",
                                                 object_id="#no_button", manager=MANAGER)
 
     def open_name_clan(self):
