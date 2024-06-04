@@ -447,31 +447,31 @@ class Cat:
         # Personality
         self.personality = Personality(kit_trait=self.is_baby())
 
-            # experience and current patrol status
-            if self.age in ['young', 'newborn']:
-                self.experience = 0
-            elif self.age in ['adolescent']:
-                m = self.moons
-                self.experience = 0
-                while m > Cat.age_moons["adolescent"][0]:
-                    ran = game.config["graduation"]["base_app_timeskip_ex"]
-                    exp = choice(
-                        list(range(ran[0][0], ran[0][1] + 1))
-                        + list(range(ran[1][0], ran[1][1] + 1))
-                    )
-                    self.experience += exp + 3
-                    m -= 1
-            elif self.age in ['young adult', 'adult']:
-                self.experience = randint(Cat.experience_levels_range["prepared"][0],
-                                        Cat.experience_levels_range["proficient"][1])
-            elif self.age in ['senior adult']:
-                self.experience = randint(Cat.experience_levels_range["competent"][0],
-                                        Cat.experience_levels_range["expert"][1])
-            elif self.age in ['senior']:
-                self.experience = randint(Cat.experience_levels_range["competent"][0],
-                                        Cat.experience_levels_range["master"][1])
-            else:
-                self.experience = 0
+        # experience and current patrol status
+        if self.age in ['young', 'newborn']:
+            self.experience = 0
+        elif self.age in ['adolescent']:
+            m = self.moons
+            self.experience = 0
+            while m > Cat.age_moons["adolescent"][0]:
+                ran = game.config["graduation"]["base_app_timeskip_ex"]
+                exp = choice(
+                    list(range(ran[0][0], ran[0][1] + 1))
+                    + list(range(ran[1][0], ran[1][1] + 1))
+                )
+                self.experience += exp + 3
+                m -= 1
+        elif self.age in ['young adult', 'adult']:
+            self.experience = randint(Cat.experience_levels_range["prepared"][0],
+                                    Cat.experience_levels_range["proficient"][1])
+        elif self.age in ['senior adult']:
+            self.experience = randint(Cat.experience_levels_range["competent"][0],
+                                    Cat.experience_levels_range["expert"][1])
+        elif self.age in ['senior']:
+            self.experience = randint(Cat.experience_levels_range["competent"][0],
+                                    Cat.experience_levels_range["master"][1])
+        else:
+            self.experience = 0
 
         if not skill_dict:
             self.skills = CatSkills.generate_new_catskills(self.status, self.moons)

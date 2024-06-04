@@ -5,7 +5,7 @@ from random import choice, randint
 import ujson
 
 from scripts.cat.cats import Cat
-from scripts.events_module.relationship.group_events import Group_Events
+from scripts.events_module.relationship.group_events import GroupEvents
 from scripts.events_module.relationship.romantic_events import Romantic_Events
 from scripts.events_module.relationship.welcoming_events import Welcoming_Events
 from scripts.game_structure.game_essentials import game
@@ -192,7 +192,7 @@ class Relation_Events:
                 )
             )
 
-        interacted_cat_ids = Group_Events.start_interaction(
+        interacted_cat_ids = GroupEvents.start_interaction(
             cat, possible_interaction_cats
         )
         for id in interacted_cat_ids:
