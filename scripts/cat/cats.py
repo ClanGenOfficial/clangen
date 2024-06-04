@@ -3207,7 +3207,7 @@ class Personality():
             #This will only trigger if they have the same personality. 
             return None
 
-# Creates a random cat (for the startup only)
+# Creates a random cat
 def create_cat(status, moons=None, biome=None):
     new_cat = Cat(status=status, biome=biome)
     
