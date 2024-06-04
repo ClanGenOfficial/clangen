@@ -194,36 +194,36 @@ class FreshkillPile:
         self._update_needed_food(living_cats)
         self.update_total_amount()
 
-    def feed_cats(self, living_cats: list, manual_feeding=False) -> None:
+    def feed_cats(self, living_cats: list, additional_food_round=False) -> None:
         """
         Handles to feed all living clan cats. This happens before the aging up.
 
             Parameters
             ----------
             :param list living_cats: list of living cats which should be fed
-            :param manual_feeding: Whether this is a manual feeding from the freshkill pile, default False
+            :param additional_food_round: Whether this is a manual feeding from the freshkill pile, default False
         """
         self.update_nutrition(living_cats)
         # NOTE: this is for testing purposes
         if not game.clan:
-            self.tactic_status(living_cats, manual_feeding)
+            self.tactic_status(living_cats, additional_food_round)
             return
 
         # NOTE: the tactics should have their own function for testing purposes
         if game.clan.clan_settings["younger first"]:
-            self.tactic_younger_first(living_cats, manual_feeding)
+            self.tactic_younger_first(living_cats, additional_food_round)
         elif game.clan.clan_settings["less nutrition first"]:
-            self.tactic_less_nutrition_first(living_cats, manual_feeding)
+            self.tactic_less_nutrition_first(living_cats, additional_food_round)
         elif game.clan.clan_settings["more experience first"]:
-            self.tactic_more_experience_first(living_cats, manual_feeding)
+            self.tactic_more_experience_first(living_cats, additional_food_round)
         elif game.clan.clan_settings["hunter first"]:
-            self.tactic_hunter_first(living_cats, manual_feeding)
+            self.tactic_hunter_first(living_cats, additional_food_round)
         elif game.clan.clan_settings["sick/injured first"]:
-            self.tactic_sick_injured_first(living_cats, manual_feeding)
+            self.tactic_sick_injured_first(living_cats, additional_food_round)
         elif game.clan.clan_settings["by-status"]:
-            self.tactic_status(living_cats, manual_feeding)
+            self.tactic_status(living_cats, additional_food_round)
         else:
-            self.tactic_status(living_cats, manual_feeding)
+            self.tactic_status(living_cats, additional_food_round)
 
     def amount_food_needed(self):
         """Get the amount of freshkill the clan needs.
@@ -249,11 +249,11 @@ class FreshkillPile:
     #                                    tactics                                   #
     # ---------------------------------------------------------------------------- #
 
-    def tactic_status(self, living_cats: List[Cat], manual_feeding=False) -> None:
+    def tactic_status(self, living_cats: List[Cat], additional_food_round=False) -> None:
         """Feed cats in order of status, resolving ties with age.
 
         :param list living_cats: Cats to feed
-        :param bool manual_feeding: Determines if not player-initiated, default False
+        :param bool additional_food_round: Determines if not player-initiated, default False
         """
         queen_dict, kits = get_alive_clan_queens(living_cats)
         fed_kits = []
@@ -303,30 +303,30 @@ class FreshkillPile:
 
             sorted_group = sorted(relevant_group, key=lambda x: x.moons)
             if feeding_status == "queen/pregnant":
-                self.feed_group(sorted_group, manual_feeding, True)
+                self.feed_group(sorted_group, additional_food_round, True)
             elif feeding_status in ["newborn", "kitten"]:
-                self.feed_group(sorted_group, manual_feeding, False, fed_kits)
+                self.feed_group(sorted_group, additional_food_round, False, fed_kits)
             else:
-                self.feed_group(sorted_group, manual_feeding)
+                self.feed_group(sorted_group, additional_food_round)
 
     def tactic_younger_first(
-        self, living_cats: List[Cat], manual_feeding=False
+        self, living_cats: List[Cat], additional_food_round=False
     ) -> None:
         """Feed cats in order of age, youngest first.
 
         :param list living_cats: Cats to feed
-        :param bool manual_feeding: Determines if not player-initiated, default False
+        :param bool additional_food_round: Determines if not player-initiated, default False
         """
         sorted_cats = sorted(living_cats, key=lambda x: x.moons)
-        self.feed_group(sorted_cats, manual_feeding)
+        self.feed_group(sorted_cats, additional_food_round)
 
     def tactic_less_nutrition_first(
-        self, living_cats: List[Cat], manual_feeding=False
+        self, living_cats: List[Cat], additional_food_round=False
     ) -> None:
         """Feed cats in order of nutrition, lowest first.
 
         :param list living_cats: Cats to feed
-        :param bool manual_feeding: Determines if not player-initiated, default False
+        :param bool additional_food_round: Determines if not player-initiated, default False
         """
         if len(living_cats) == 0:
             return
@@ -404,31 +404,31 @@ class FreshkillPile:
             ):
                 feeding_amount += 0.5
 
-            if manual_feeding:
+            if additional_food_round:
                 needed_amount = 0
 
             self.feed_cat(cat, feeding_amount, needed_amount)
 
         # feed the rest according to their status
         remaining_cats = [fetch_cat.fetch_cat(info[0]) for info in satisfied.items()]
-        self.tactic_status(remaining_cats, manual_feeding)
+        self.tactic_status(remaining_cats, additional_food_round)
 
     def tactic_more_experience_first(
-        self, living_cats: List[Cat], manual_feeding=False
+        self, living_cats: List[Cat], additional_food_round=False
     ) -> None:
         """Feed cats in order of experience, highest first.
 
         :param list living_cats: Cats to feed
-        :param bool manual_feeding: Determines if not player-initiated, default False
+        :param bool additional_food_round: Determines if not player-initiated, default False
         """
         sorted_cats = sorted(living_cats, key=lambda x: x.experience, reverse=True)
-        self.feed_group(sorted_cats, manual_feeding)
+        self.feed_group(sorted_cats, additional_food_round)
 
-    def tactic_hunter_first(self, living_cats: List[Cat], manual_feeding=False) -> None:
+    def tactic_hunter_first(self, living_cats: List[Cat], additional_food_round=False) -> None:
         """Feed cats with the hunter skill first, then everyone else according to status.
 
         :param list living_cats: Cats to feed
-        :param bool manual_feeding: Determines if not player-initiated, default False
+        :param bool additional_food_round: Determines if not player-initiated, default False
         """
         best_hunter = []
         for search_rank in range(1, 4):
@@ -450,35 +450,35 @@ class FreshkillPile:
                     best_hunter.insert(0, cat)
                     living_cats.remove(cat)
 
-        self.feed_group(best_hunter, manual_feeding)
-        self.tactic_status(living_cats, manual_feeding)
+        self.feed_group(best_hunter, additional_food_round)
+        self.tactic_status(living_cats, additional_food_round)
 
     def tactic_sick_injured_first(
-        self, living_cats: List[Cat], manual_feeding=False
+        self, living_cats: List[Cat], additional_food_round=False
     ) -> None:
         """Feed cats in order of health, with sick/injured first.
 
         :param list living_cats: Cats to feed
-        :param bool manual_feeding: Determines if not player-initiated, default False
+        :param bool additional_food_round: Determines if not player-initiated, default False
         """
         sick_cats = [cat for cat in living_cats if cat.is_ill() or cat.is_injured()]
         healthy_cats = [
             cat for cat in living_cats if not cat.is_ill() and not cat.is_injured()
         ]
-        self.feed_group(sick_cats, manual_feeding)
-        self.tactic_status(healthy_cats, manual_feeding)
+        self.feed_group(sick_cats, additional_food_round)
+        self.tactic_status(healthy_cats, additional_food_round)
 
     # ---------------------------------------------------------------------------- #
     #                               helper functions                               #
     # ---------------------------------------------------------------------------- #
 
     def feed_group(
-        self, group: list, manual_feeding=False, queens_only=False, fed_kits=None
+        self, group: list, additional_food_round=False, queens_only=False, fed_kits=None
     ) -> None:
         """Feed a group of cats.
 
         :param list group: Cats to feed
-        :param bool manual_feeding: Determines if not player-initiated, default False
+        :param bool additional_food_round: Determines if not player-initiated, default False
         :param bool queens_only: if this group is exclusively queens/pregnant cats, default False
         :param list fed_kits: list of kits in the group
         """
@@ -533,7 +533,7 @@ class FreshkillPile:
             ):
                 feeding_amount += 0.5
 
-            if not manual_feeding:
+            if additional_food_round:
                 needed_amount = 0
             self.feed_cat(cat, feeding_amount, needed_amount)
 
