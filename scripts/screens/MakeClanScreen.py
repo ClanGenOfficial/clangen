@@ -207,8 +207,6 @@ class MakeClanScreen(Screens):
 
     def handle_name_clan_event(self, event):
         if event.ui_element == self.elements["random"]:
-            # clan_names = names.names_dict["normal_prefixes"]
-            # clan_names.extend(names.names_dict["clan_prefixes"])
             self.elements["name_entry"].set_text(self.random_clan_name())
         elif event.ui_element == self.elements["reset_name"]:
             self.elements["name_entry"].set_text("")
@@ -415,13 +413,7 @@ class MakeClanScreen(Screens):
             self.selected_season = "Leaf-bare"
             self.refresh_text_and_buttons()
         elif event.ui_element == self.elements["random_background"]:
-            # # Select a random biome and background
-            # old_biome = self.biome_selected
-            # possible_biomes = ['Forest', 'Mountainous', 'Plains', 'Beach']
-            # # ensuring that the new random camp will not be the same one
-            # if old_biome is not None:
-            #     possible_biomes.remove(old_biome)
-            # self.biome_selected = choice(possible_biomes)
+            # Select a random biome and background
             self.biome_selected = self.random_biome_selection()
             if self.biome_selected == 'Forest':
                 self.selected_camp_tab = randrange(1, 5)
@@ -545,21 +537,6 @@ class MakeClanScreen(Screens):
         for button in self.symbol_buttons:
             self.symbol_buttons[button].kill()
         self.elements = {}
-
-    def random_quick_start(self):
-        self.clan_name = self.random_clan_name()
-        self.biome_selected = self.random_biome_selection()
-        if f"symbol{self.clan_name.upper()}0" in sprites.clan_symbols:
-            # Use recommended symbol if it exists
-            self.symbol_selected = f"symbol{self.clan_name.upper()}0"
-        else:
-            self.symbol_selected = choice(sprites.clan_symbols)
-        self.leader = create_cat(status='warrior')
-        self.deputy = create_cat(status='warrior')
-        self.med_cat = create_cat(status='warrior')
-        for _ in range(randrange(4, 8)):
-            random_status = choice(['kitten', 'apprentice', 'warrior', 'warrior', 'elder'])
-            self.members.append(create_cat(status=random_status))
 
     def refresh_text_and_buttons(self):
         """Refreshes the button states and text boxes"""
@@ -949,6 +926,21 @@ class MakeClanScreen(Screens):
         if self.symbol_selected in self.symbol_buttons:
             self.symbol_buttons[self.symbol_selected].disable()
 
+    def random_quick_start(self):
+        self.clan_name = self.random_clan_name()
+        self.biome_selected = self.random_biome_selection()
+        if f"symbol{self.clan_name.upper()}0" in sprites.clan_symbols:
+            # Use recommended symbol if it exists
+            self.symbol_selected = f"symbol{self.clan_name.upper()}0"
+        else:
+            self.symbol_selected = choice(sprites.clan_symbols)
+        self.leader = create_cat(status='warrior')
+        self.deputy = create_cat(status='warrior')
+        self.med_cat = create_cat(status='warrior')
+        for _ in range(randrange(4, 8)):
+            random_status = choice(['kitten', 'apprentice', 'warrior', 'warrior', 'elder'])
+            self.members.append(create_cat(status=random_status))
+
     def random_clan_name(self):
         clan_names = names.names_dict["normal_prefixes"] + names.names_dict["clan_prefixes"]
         while True:
@@ -956,11 +948,7 @@ class MakeClanScreen(Screens):
             if chosen_name.casefold() not in [clan.casefold() for clan in game.switches['clan_list']]:
                 return chosen_name
             print("Generated clan name was already in use! Rerolling...")
-
     
-    def random_symbol_selection(self):
-        print(f"todo!")
-
     def random_biome_selection(self):
         # Select a random biome and background
         old_biome = self.biome_selected
