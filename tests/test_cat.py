@@ -1,12 +1,10 @@
-from copy import deepcopy
+import os
 import unittest
+from copy import deepcopy
 from unittest.mock import patch
 
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship
-
-import os
-
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"

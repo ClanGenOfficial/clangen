@@ -2,8 +2,8 @@ import unittest
 
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
-from scripts.patrol.patrol import Patrol
 from scripts.clan import Clan
+from scripts.patrol.patrol import Patrol
 
 
 class TestCondition(unittest.TestCase):

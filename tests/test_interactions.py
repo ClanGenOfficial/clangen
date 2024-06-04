@@ -1,7 +1,7 @@
 import unittest
+
 from scripts.cat.cats import Cat, Relationship
 from scripts.cat.skills import SkillPath, Skill
-
 from scripts.cat_relations.interaction import (
     SingleInteraction,
     rel_fulfill_rel_constraints,

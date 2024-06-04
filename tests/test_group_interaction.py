@@ -1,10 +1,9 @@
+import os
 import unittest
 
 from scripts.cat.cats import Cat, Relationship
 from scripts.cat.skills import Skill, SkillPath
 from scripts.events_module.relationship.group_events import Group_Events, GroupInteraction
-
-import os
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"

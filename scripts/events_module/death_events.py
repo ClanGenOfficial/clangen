@@ -2,11 +2,11 @@ import random
 
 from scripts.cat.cats import Cat, INJURIES
 from scripts.cat.history import History
+from scripts.event_class import Single_Event
 from scripts.events_module.generate_events import GenerateEvents
+from scripts.game_structure.game_essentials import game
 from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values, get_alive_kits, \
     history_text_adjust
-from scripts.game_structure.game_essentials import game
-from scripts.event_class import Single_Event
 
 
 # ---------------------------------------------------------------------------- #

@@ -18,19 +18,35 @@ from scripts.utility import get_personality_compatibility, process_text
 #                           START Relationship class                           #
 # ---------------------------------------------------------------------------- #
 
+
 class Relationship:
     used_interaction_ids = []
 
-    def __init__(self, cat_from, cat_to, mates=False, family=False, romantic_love=0, platonic_like=0, dislike=0,
-                 admiration=0, comfortable=0, jealousy=0, trust=0, log=None) -> None:
+    def __init__(
+        self,
+        cat_from,
+        cat_to,
+        mates=False,
+        family=False,
+        romantic_love=0,
+        platonic_like=0,
+        dislike=0,
+        admiration=0,
+        comfortable=0,
+        jealousy=0,
+        trust=0,
+        log=None,
+    ) -> None:
         self.chosen_interaction = None
         self.history = History()
         self.cat_from = cat_from
         self.cat_to = cat_to
         self.mates = mates
         self.family = family
-        self.opposite_relationship = None  # link to opposite relationship will be created later
-        self.interaction_str = ''
+        self.opposite_relationship = (
+            None  # link to opposite relationship will be created later
+        )
+        self.interaction_str = ""
         self.triggered_event = False
         if log:
             self.log = log
@@ -99,25 +115,38 @@ class Relationship:
         all_interactions = NEUTRAL_INTERACTIONS.copy()
         if in_de_crease != "neutral":
             all_interactions = INTERACTION_MASTER_DICT[rel_type][in_de_crease].copy()
-            possible_interactions = self.get_relevant_interactions(all_interactions, intensity, biome, season,
-                                                                   game_mode)
+            possible_interactions = self.get_relevant_interactions(
+                all_interactions, intensity, biome, season, game_mode
+            )
         else:
             intensity = None
-            possible_interactions = self.get_relevant_interactions(all_interactions, intensity, biome, season,
-                                                                   game_mode)
+            possible_interactions = self.get_relevant_interactions(
+                all_interactions, intensity, biome, season, game_mode
+            )
 
         if len(possible_interactions) <= 0:
-            print("ERROR: No interaction with this conditions. ", rel_type, in_de_crease, intensity)
+            print(
+                "ERROR: No interaction with this conditions. ",
+                rel_type,
+                in_de_crease,
+                intensity,
+            )
             possible_interactions = [
-                SingleInteraction("fall_back", "Any", "Any", "medium", [
-                    "Default string, this should never appear."
-                ])
+                SingleInteraction(
+                    "fall_back",
+                    "Any",
+                    "Any",
+                    "medium",
+                    ["Default string, this should never appear."],
+                )
             ]
 
         # check if the current interaction id is already used and us another if so
         chosen_interaction = choice(possible_interactions)
-        while chosen_interaction.id in self.used_interaction_ids \
-                and len(possible_interactions) > 2:
+        while (
+            chosen_interaction.id in self.used_interaction_ids
+            and len(possible_interactions) > 2
+        ):
             possible_interactions.remove(chosen_interaction)
             chosen_interaction = choice(possible_interactions)
 
@@ -131,11 +160,16 @@ class Relationship:
 
         self.interaction_affect_relationships(in_de_crease, intensity, rel_type)
         # give cats injuries if the game mode is not classic
-        if self.chosen_interaction.get_injuries and game_mode != 'classic':
+        if self.chosen_interaction.get_injuries and game_mode != "classic":
             injuries = []
-            for abbreviations, injury_dict in self.chosen_interaction.get_injuries.items():
+            for (
+                abbreviations,
+                injury_dict,
+            ) in self.chosen_interaction.get_injuries.items():
                 if "injury_names" not in injury_dict:
-                    print(f"ERROR: there are no injury names in the chosen interaction {self.chosen_interaction.id}.")
+                    print(
+                        f"ERROR: there are no injury names in the chosen interaction {self.chosen_interaction.id}."
+                    )
                     continue
 
                 injured_cat = self.cat_from
@@ -146,18 +180,31 @@ class Relationship:
                     injured_cat.get_injured(inj, True)
                     injuries.append(inj)
 
-                possible_scar = self.adjust_interaction_string(
-                    injury_dict["scar_text"]) if "scar_text" in injury_dict else None
-                possible_death = self.adjust_interaction_string(
-                    injury_dict["death_text"]) if "death_text" in injury_dict else None
+                possible_scar = (
+                    self.adjust_interaction_string(injury_dict["scar_text"])
+                    if "scar_text" in injury_dict
+                    else None
+                )
+                possible_death = (
+                    self.adjust_interaction_string(injury_dict["death_text"])
+                    if "death_text" in injury_dict
+                    else None
+                )
                 if injured_cat.status == "leader":
-                    possible_death = self.adjust_interaction_string(
-                        injury_dict["death_leader_text"]) if "death_leader_text" in injury_dict else None
+                    possible_death = (
+                        self.adjust_interaction_string(injury_dict["death_leader_text"])
+                        if "death_leader_text" in injury_dict
+                        else None
+                    )
 
                 if possible_scar or possible_death:
                     for condition in injuries:
-                        self.history.add_possible_history(injured_cat, condition, scar_text=possible_scar,
-                                                          death_text=possible_death)
+                        self.history.add_possible_history(
+                            injured_cat,
+                            condition,
+                            scar_text=possible_scar,
+                            death_text=possible_death,
+                        )
 
         # get any possible interaction string out of this interaction
         interaction_str = choice(self.chosen_interaction.interactions)
@@ -173,22 +220,32 @@ class Relationship:
 
         interaction_str = interaction_str + effect
         if self.cat_from.moons == 1:
-            self.log.append(interaction_str + f" - {self.cat_from.name} was {self.cat_from.moons} moon old")
+            self.log.append(
+                interaction_str
+                + f" - {self.cat_from.name} was {self.cat_from.moons} moon old"
+            )
         else:
-            self.log.append(interaction_str + f" - {self.cat_from.name} was {self.cat_from.moons} moons old")
+            self.log.append(
+                interaction_str
+                + f" - {self.cat_from.name} was {self.cat_from.moons} moons old"
+            )
         relevant_event_tabs = ["relation", "interaction"]
         if self.chosen_interaction.get_injuries:
             relevant_event_tabs.append("health")
-        game.cur_events_list.append(Single_Event(
-            interaction_str, ["relation", "interaction"], [self.cat_to.ID, self.cat_from.ID]
-        ))
+        game.cur_events_list.append(
+            Single_Event(
+                interaction_str,
+                ["relation", "interaction"],
+                [self.cat_to.ID, self.cat_from.ID],
+            )
+        )
 
     def adjust_interaction_string(self, string):
-        """ Adjusts the string text for viewing """
+        """Adjusts the string text for viewing"""
 
         cat_dict = {
             "m_c": (str(self.cat_from.name), choice(self.cat_from.pronouns)),
-            "r_c": (str(self.cat_to.name), choice(self.cat_to.pronouns))
+            "r_c": (str(self.cat_to.name), choice(self.cat_to.pronouns)),
         }
 
         return process_text(string, cat_dict)
@@ -196,17 +253,17 @@ class Relationship:
     def get_amount(self, in_de_crease: str, intensity: str) -> int:
         """Calculates the amount of such an interaction.
 
-            Parameters
-            ----------
-            in_de_crease : list
-                if the relationship value is increasing or decreasing the value
-            intensity : str
-                the intensity of the affect
+        Parameters
+        ----------
+        in_de_crease : list
+            if the relationship value is increasing or decreasing the value
+        intensity : str
+            the intensity of the affect
 
-            Returns
-            -------
-            amount : int
-                the amount (negative or positive) for the given parameter
+        Returns
+        -------
+        amount : int
+            the amount (negative or positive) for the given parameter
         """
         if in_de_crease == "neutral":
             return 0
@@ -228,23 +285,27 @@ class Relationship:
             amount -= game.config["relationship"]["compatibility_effect"]
         return amount
 
-    def interaction_affect_relationships(self, in_de_crease: str, intensity: str, rel_type: str) -> None:
+    def interaction_affect_relationships(
+        self, in_de_crease: str, intensity: str, rel_type: str
+    ) -> None:
         """Affects the relationship according to the chosen types.
 
-            Parameters
-            ----------
-            in_de_crease : list
-                if the relationship value is increasing or decreasing the value
-            intensity : str
-                the intensity of the affect
-            rel_type : str
-                relationship value type which needs to be affected
+        Parameters
+        ----------
+        in_de_crease : list
+            if the relationship value is increasing or decreasing the value
+        intensity : str
+            the intensity of the affect
+        rel_type : str
+            relationship value type which needs to be affected
 
-            Returns
-            -------
+        Returns
+        -------
         """
         amount = self.get_amount(in_de_crease, intensity)
-        passive_buff = int(abs(amount / game.config["relationship"]["passive_influence_div"]))
+        passive_buff = int(
+            abs(amount / game.config["relationship"]["passive_influence_div"])
+        )
 
         # influence the own relationship
         if rel_type == "romantic":
@@ -277,13 +338,13 @@ class Relationship:
     def change_according_dictionary(self, dictionary: dict) -> None:
         """Change the relationship value types according to the in- or decrease of the given dictionary.
 
-            Parameters
-            ----------
-            dictionary : dict
-                dictionary which defines the changes to the relationship
+        Parameters
+        ----------
+        dictionary : dict
+            dictionary which defines the changes to the relationship
 
-            Returns
-            -------
+        Returns
+        -------
         """
         for key, value in dictionary.items():
             if value == "neutral":
@@ -308,13 +369,13 @@ class Relationship:
     def positive_interaction(self) -> bool:
         """Returns if the interaction should be a positive interaction or not.
 
-            Parameters
-            ----------
+        Parameters
+        ----------
 
-            Returns
-            -------
-            positive : bool
-                if the event has a positive or negative impact of the relationship
+        Returns
+        -------
+        positive : bool
+            if the event has a positive or negative impact of the relationship
 
         """
         # base for non-existing platonic like / dislike
@@ -333,17 +394,17 @@ class Relationship:
 
     def get_interaction_type(self, positive: bool) -> str:
         """Returns the type of the interaction which should be made.
-        
-            Parameters
-            ----------
-            positive : bool
-                if the event has a positive or negative impact of the relationship, 
-                this defines which weight will be used to get the type of the interaction
 
-            Returns
-            -------
-            rel_type : string
-                the relationship type which will happen
+        Parameters
+        ----------
+        positive : bool
+            if the event has a positive or negative impact of the relationship,
+            this defines which weight will be used to get the type of the interaction
+
+        Returns
+        -------
+        rel_type : string
+            the relationship type which will happen
         """
         value_weights = {
             "trust": 1,
@@ -352,7 +413,7 @@ class Relationship:
             "admiration": 1,
             "dislike": 1,
             "platonic": 1,
-            "romantic": 1
+            "romantic": 1,
         }
 
         # change the weights according if the interaction should be positive or negative
@@ -373,8 +434,12 @@ class Relationship:
 
         # if a romantic relationship is not possible, remove this type, mut only if there are no mates
         # if there already mates (set up by the user for example), don't remove this type
-        mate_from_to = self.cat_from.is_potential_mate(self.cat_to, for_love_interest=True)
-        mate_to_from = self.cat_to.is_potential_mate(self.cat_from, for_love_interest=True)
+        mate_from_to = self.cat_from.is_potential_mate(
+            self.cat_to, for_love_interest=True
+        )
+        mate_to_from = self.cat_to.is_potential_mate(
+            self.cat_from, for_love_interest=True
+        )
         if (not mate_from_to or not mate_to_from) and not self.mates:
             while "romantic" in types:
                 types.remove("romantic")
@@ -382,11 +447,17 @@ class Relationship:
         rel_type = choice(types)
         return rel_type
 
-    def get_relevant_interactions(self, interactions: list, intensity: str, biome: str, season: str,
-                                  game_mode: str) -> list:
+    def get_relevant_interactions(
+        self,
+        interactions: list,
+        intensity: str,
+        biome: str,
+        season: str,
+        game_mode: str,
+    ) -> list:
         """
         Filter interactions based on the status and other constraints.
-            
+
             Parameters
             ----------
             interactions : list
@@ -413,24 +484,35 @@ class Relationship:
             return filtered
 
         for interact in interactions:
-            in_tags = list(filter(lambda interact_biome: interact_biome not in _biome, interact.biome))
+            in_tags = list(
+                filter(
+                    lambda interact_biome: interact_biome not in _biome, interact.biome
+                )
+            )
             if len(in_tags) > 0:
                 continue
 
-            in_tags = list(filter(lambda interact_season: interact_season not in _season, interact.season))
+            in_tags = list(
+                filter(
+                    lambda interact_season: interact_season not in _season,
+                    interact.season,
+                )
+            )
             if len(in_tags) > 0:
                 continue
 
             if intensity is not None and interact.intensity != intensity:
                 continue
 
-            cats_fulfill_conditions = cats_fulfill_single_interaction_constraints(self.cat_from, self.cat_to, interact,
-                                                                                  game_mode)
+            cats_fulfill_conditions = cats_fulfill_single_interaction_constraints(
+                self.cat_from, self.cat_to, interact, game_mode
+            )
             if not cats_fulfill_conditions:
                 continue
 
-            relationship_fulfill_conditions = rel_fulfill_rel_constraints(self, interact.relationship_constraint,
-                                                                          interact.id)
+            relationship_fulfill_conditions = rel_fulfill_rel_constraints(
+                self, interact.relationship_constraint, interact.id
+            )
             if not relationship_fulfill_conditions:
                 continue
 

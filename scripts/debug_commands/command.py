@@ -1,6 +1,7 @@
 """
 Base command class for debug mode.
 """
+
 from abc import ABC, abstractmethod
 from typing import List
 

@@ -1,9 +1,9 @@
 # pylint: disable=line-too-long
+import logging
 import os
 import platform
 import subprocess
 import traceback
-import logging
 
 import pygame
 import pygame_gui

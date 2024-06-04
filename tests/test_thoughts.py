@@ -1,9 +1,9 @@
+import os
 import unittest
 
-from scripts.cat.thoughts import Thoughts
 from scripts.cat.cats import Cat
+from scripts.cat.thoughts import Thoughts
 
-import os
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
