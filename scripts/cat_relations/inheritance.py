@@ -8,7 +8,7 @@ while mating and for the display of the family tree screen.
 
 """
 
-from enum import StrEnum  # pylint: disable=no-name-in-module
+from strenum import StrEnum  # pylint: disable=no-name-in-module
 
 
 class RelationType(StrEnum):

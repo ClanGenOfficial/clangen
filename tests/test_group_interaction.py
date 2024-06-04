@@ -3,7 +3,7 @@ import unittest
 
 from scripts.cat.cats import Cat, Relationship
 from scripts.cat.skills import Skill, SkillPath
-from scripts.events_module.relationship.group_events import Group_Events, GroupInteraction
+from scripts.events_module.relationship.group_events import GroupEvents, GroupInteraction
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
@@ -12,7 +12,7 @@ os.environ["SDL_AUDIODRIVER"] = "dummy"
 class MainCatFiltering(unittest.TestCase):
     def test_main_cat_status_one(self):
         # given
-        group_events = Group_Events()
+        group_events = GroupEvents()
         main_cat = Cat()
         main_cat.status = "warrior"
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
@@ -34,7 +34,7 @@ class MainCatFiltering(unittest.TestCase):
 
     def test_main_cat_status_all(self):
         # given
-        group_events = Group_Events()
+        group_events = GroupEvents()
         main_cat = Cat()
         main_cat.status = "warrior"
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
@@ -57,7 +57,7 @@ class MainCatFiltering(unittest.TestCase):
 
     def test_main_cat_trait_one(self):
         # given
-        group_events = Group_Events()
+        group_events = GroupEvents()
         main_cat = Cat()
         main_cat.personality.trait = "calm"
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
@@ -79,7 +79,7 @@ class MainCatFiltering(unittest.TestCase):
 
     def test_main_cat_trait_all(self):
         # given
-        group_events = Group_Events()
+        group_events = GroupEvents()
         main_cat = Cat()
         main_cat.personality.trait = "calm"
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
@@ -102,7 +102,7 @@ class MainCatFiltering(unittest.TestCase):
 
     def test_main_cat_skill_one(self):
         # given
-        group_events = Group_Events()
+        group_events = GroupEvents()
         main_cat = Cat(moons=40)
         main_cat.skills.primary = Skill(SkillPath.HUNTER, points=9)
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
@@ -124,7 +124,7 @@ class MainCatFiltering(unittest.TestCase):
 
     def test_main_cat_skill_all(self):
         # given
-        group_events = Group_Events()
+        group_events = GroupEvents()
         main_cat = Cat()
         main_cat.skills.primary = Skill(SkillPath.HUNTER, 9)
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
@@ -147,7 +147,7 @@ class MainCatFiltering(unittest.TestCase):
 
     def test_main_cat_backstory_one(self):
         # given
-        group_events = Group_Events()
+        group_events = GroupEvents()
         main_cat = Cat()
         main_cat.backstory = "clanborn"
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
@@ -169,7 +169,7 @@ class MainCatFiltering(unittest.TestCase):
 
     def test_main_cat_backstory_all(self):
         # given
-        group_events = Group_Events()
+        group_events = GroupEvents()
         main_cat = Cat()
         main_cat.backstory = "clanborn"
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
@@ -205,7 +205,7 @@ class OtherFiltering(unittest.TestCase):
         
         # when
         all_interactions = [interaction1, interaction2]
-        filtered_interactions = Group_Events().get_main_cat_interactions(
+        filtered_interactions = GroupEvents().get_main_cat_interactions(
             all_interactions, "Any", "newleaf", abbreviations_cat_id)
 
         # then
@@ -225,7 +225,7 @@ class OtherFiltering(unittest.TestCase):
         
         # when
         all_interactions = [interaction1, interaction2]
-        filtered_interactions = Group_Events().get_main_cat_interactions(
+        filtered_interactions = GroupEvents().get_main_cat_interactions(
             all_interactions, "Any", "newleaf", abbreviations_cat_id)
 
         # then
@@ -246,7 +246,7 @@ class OtherFiltering(unittest.TestCase):
         
         # when
         all_interactions = [interaction1, interaction2]
-        filtered_interactions = Group_Events().get_main_cat_interactions(
+        filtered_interactions = GroupEvents().get_main_cat_interactions(
             all_interactions, "Any", "newleaf", abbreviations_cat_id)
 
         # then
@@ -267,7 +267,7 @@ class OtherFiltering(unittest.TestCase):
         
         # when
         all_interactions = [interaction1, interaction2]
-        filtered_interactions = Group_Events().get_main_cat_interactions(
+        filtered_interactions = GroupEvents().get_main_cat_interactions(
             all_interactions, "forest", "Any", abbreviations_cat_id)
 
         # then
@@ -287,7 +287,7 @@ class OtherFiltering(unittest.TestCase):
         
         # when
         all_interactions = [interaction1, interaction2]
-        filtered_interactions = Group_Events().get_main_cat_interactions(
+        filtered_interactions = GroupEvents().get_main_cat_interactions(
             all_interactions, "forest", "Any", abbreviations_cat_id)
 
         # then
@@ -308,7 +308,7 @@ class OtherFiltering(unittest.TestCase):
         
         # when
         all_interactions = [interaction1, interaction2]
-        filtered_interactions = Group_Events().get_main_cat_interactions(
+        filtered_interactions = GroupEvents().get_main_cat_interactions(
             all_interactions, "forest", "Any", abbreviations_cat_id)
 
         # then
@@ -339,7 +339,7 @@ class Abbreviations(unittest.TestCase):
         # when
         all_interactions = [interaction1, interaction2]
         interaction_cats = [random1, random2]
-        abbreviations_possibilities, cat_abbreviations_counter = Group_Events().get_abbreviations_possibilities(
+        abbreviations_possibilities, cat_abbreviations_counter = GroupEvents().get_abbreviations_possibilities(
             all_interactions, 3, interaction_cats
         )
 
@@ -370,7 +370,7 @@ class Abbreviations(unittest.TestCase):
         # when
         all_interactions = [interaction1, interaction2]
         interaction_cats = [random1, random2, random3]
-        abbreviations_possibilities, cat_abbreviations_counter = Group_Events().get_abbreviations_possibilities(
+        abbreviations_possibilities, cat_abbreviations_counter = GroupEvents().get_abbreviations_possibilities(
             all_interactions, 3, interaction_cats
         )
 
@@ -394,7 +394,7 @@ class Abbreviations(unittest.TestCase):
         }
         
         # when
-        new_possibilities = Group_Events().remove_abbreviations_missing_cats(
+        new_possibilities = GroupEvents().remove_abbreviations_missing_cats(
             abbreviations_possibilities
         )
 
@@ -436,7 +436,7 @@ class Abbreviations(unittest.TestCase):
                 "r_c2": 2
             }
         }
-        abbreviations_cat_id = Group_Events().set_abbreviations_cats(
+        abbreviations_cat_id = GroupEvents().set_abbreviations_cats(
             interaction_cats, abbreviations_cat_id, cat_abbreviations_counter)
 
         # then
@@ -543,16 +543,16 @@ class OtherCatsFiltering(unittest.TestCase):
         }
 
         # then
-        self.assertTrue(Group_Events().relationship_allow_interaction(interaction1, abbreviations_cat_id))
-        self.assertTrue(Group_Events().relationship_allow_interaction(interaction2, abbreviations_cat_id))
-        self.assertTrue(Group_Events().relationship_allow_interaction(interaction3, abbreviations_cat_id))
-        self.assertTrue(Group_Events().relationship_allow_interaction(interaction4, abbreviations_cat_id))
-        self.assertTrue(Group_Events().relationship_allow_interaction(interaction5, abbreviations_cat_id))
-        self.assertTrue(Group_Events().relationship_allow_interaction(interaction6, abbreviations_cat_id))
-        self.assertTrue(Group_Events().relationship_allow_interaction(interaction7, abbreviations_cat_id))
-        self.assertTrue(Group_Events().relationship_allow_interaction(interaction8, abbreviations_cat_id))
-        self.assertTrue(Group_Events().relationship_allow_interaction(interaction9, abbreviations_cat_id))
-        self.assertTrue(Group_Events().relationship_allow_interaction(interaction10, abbreviations_cat_id))
+        self.assertTrue(GroupEvents().relationship_allow_interaction(interaction1, abbreviations_cat_id))
+        self.assertTrue(GroupEvents().relationship_allow_interaction(interaction2, abbreviations_cat_id))
+        self.assertTrue(GroupEvents().relationship_allow_interaction(interaction3, abbreviations_cat_id))
+        self.assertTrue(GroupEvents().relationship_allow_interaction(interaction4, abbreviations_cat_id))
+        self.assertTrue(GroupEvents().relationship_allow_interaction(interaction5, abbreviations_cat_id))
+        self.assertTrue(GroupEvents().relationship_allow_interaction(interaction6, abbreviations_cat_id))
+        self.assertTrue(GroupEvents().relationship_allow_interaction(interaction7, abbreviations_cat_id))
+        self.assertTrue(GroupEvents().relationship_allow_interaction(interaction8, abbreviations_cat_id))
+        self.assertTrue(GroupEvents().relationship_allow_interaction(interaction9, abbreviations_cat_id))
+        self.assertTrue(GroupEvents().relationship_allow_interaction(interaction10, abbreviations_cat_id))
 
     def test_relationship_allow_false(self):
         # given
@@ -652,13 +652,13 @@ class OtherCatsFiltering(unittest.TestCase):
         }
 
         # then
-        self.assertFalse(Group_Events().relationship_allow_interaction(interaction1, abbreviations_cat_id))
-        self.assertFalse(Group_Events().relationship_allow_interaction(interaction2, abbreviations_cat_id))
-        self.assertFalse(Group_Events().relationship_allow_interaction(interaction3, abbreviations_cat_id))
-        self.assertFalse(Group_Events().relationship_allow_interaction(interaction4, abbreviations_cat_id))
-        self.assertFalse(Group_Events().relationship_allow_interaction(interaction5, abbreviations_cat_id))
-        self.assertFalse(Group_Events().relationship_allow_interaction(interaction6, abbreviations_cat_id))
-        self.assertFalse(Group_Events().relationship_allow_interaction(interaction7, abbreviations_cat_id))
-        self.assertFalse(Group_Events().relationship_allow_interaction(interaction8, abbreviations_cat_id))
-        self.assertFalse(Group_Events().relationship_allow_interaction(interaction9, abbreviations_cat_id))
-        self.assertFalse(Group_Events().relationship_allow_interaction(interaction10, abbreviations_cat_id))
+        self.assertFalse(GroupEvents().relationship_allow_interaction(interaction1, abbreviations_cat_id))
+        self.assertFalse(GroupEvents().relationship_allow_interaction(interaction2, abbreviations_cat_id))
+        self.assertFalse(GroupEvents().relationship_allow_interaction(interaction3, abbreviations_cat_id))
+        self.assertFalse(GroupEvents().relationship_allow_interaction(interaction4, abbreviations_cat_id))
+        self.assertFalse(GroupEvents().relationship_allow_interaction(interaction5, abbreviations_cat_id))
+        self.assertFalse(GroupEvents().relationship_allow_interaction(interaction6, abbreviations_cat_id))
+        self.assertFalse(GroupEvents().relationship_allow_interaction(interaction7, abbreviations_cat_id))
+        self.assertFalse(GroupEvents().relationship_allow_interaction(interaction8, abbreviations_cat_id))
+        self.assertFalse(GroupEvents().relationship_allow_interaction(interaction9, abbreviations_cat_id))
+        self.assertFalse(GroupEvents().relationship_allow_interaction(interaction10, abbreviations_cat_id))

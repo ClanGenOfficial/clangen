@@ -16,7 +16,7 @@ from scripts.game_structure.game_essentials import game
 from scripts.utility import change_relationship_values, process_text
 
 
-class Group_Events:
+class GroupEvents:
 
     # ---------------------------------------------------------------------------- #
     #                   build master dictionary for interactions                   #
@@ -78,7 +78,7 @@ class Group_Events:
         abbreviations_cat_id["m_c"] = cat.ID  # set the main cat
         chosen_interaction = None
 
-        cat_amount = choice(list(Group_Events.GROUP_INTERACTION_MASTER_DICT.keys()))
+        cat_amount = choice(list(GroupEvents.GROUP_INTERACTION_MASTER_DICT.keys()))
         inter_type = choice(["negative", "positive", "neutral"])
 
         # if the chosen amount is bigger than the given interaction cats,
@@ -92,7 +92,7 @@ class Group_Events:
             abbreviations_cat_id[new_key] = None
 
         # get all possibilities
-        possibilities = Group_Events.GROUP_INTERACTION_MASTER_DICT[cat_amount][
+        possibilities = GroupEvents.GROUP_INTERACTION_MASTER_DICT[cat_amount][
             inter_type
         ]
 
@@ -102,12 +102,12 @@ class Group_Events:
 
         # start filter for main cat / basic checks
         # - this might reduce the amount of checks which will be needed when checking for other cats
-        possibilities = Group_Events.get_main_cat_interactions(
+        possibilities = GroupEvents.get_main_cat_interactions(
             possibilities, biome, season, abbreviations_cat_id
         )
 
         # get possible interactions, considering the possible interacting cats
-        possibilities = Group_Events.get_filtered_interactions(
+        possibilities = GroupEvents.get_filtered_interactions(
             possibilities, int(cat_amount), interact_cats, abbreviations_cat_id
         )
 
@@ -119,24 +119,24 @@ class Group_Events:
 
         # TRIGGER ALL NEEDED FUNCTIONS TO REFLECT THE INTERACTION
         if game.clan.game_mode != "classic":
-            Group_Events.injuring_cats(chosen_interaction, abbreviations_cat_id)
+            GroupEvents.injuring_cats(chosen_interaction, abbreviations_cat_id)
         amount = game.config["relationship"]["in_decrease_value"][
             chosen_interaction.intensity
         ]
 
         if len(chosen_interaction.general_reaction) > 0:
             # if there is a general reaction in the interaction, then use this
-            Group_Events.influence_general_relationship(
+            GroupEvents.influence_general_relationship(
                 amount, abbreviations_cat_id, chosen_interaction
             )
         else:
-            Group_Events.influence_specific_relationships(
+            GroupEvents.influence_specific_relationships(
                 amount, abbreviations_cat_id, chosen_interaction
             )
 
         # choose the interaction text and display
         interaction_str = choice(chosen_interaction.interactions)
-        interaction_str = Group_Events.prepare_text(
+        interaction_str = GroupEvents.prepare_text(
             interaction_str, abbreviations_cat_id
         )
         # TODO: add the interaction to the relationship log?
@@ -247,14 +247,14 @@ class Group_Events:
         """
         # first handle the abbreviations possibilities for the cats
         abbr_per_interaction, cat_abbreviations_counter = (
-            Group_Events.get_abbreviations_possibilities(
+            GroupEvents.get_abbreviations_possibilities(
                 interactions, int(amount), interact_cats
             )
         )
-        abbr_per_interaction = Group_Events.remove_abbreviations_missing_cats(
+        abbr_per_interaction = GroupEvents.remove_abbreviations_missing_cats(
             abbr_per_interaction
         )
-        abbreviations_cat_id = Group_Events.set_abbreviations_cats(
+        abbreviations_cat_id = GroupEvents.set_abbreviations_cats(
             interact_cats, abbreviations_cat_id, cat_abbreviations_counter
         )
 
@@ -273,7 +273,7 @@ class Group_Events:
                 continue
 
             # check how the cats are and if they are fulfill the constraints like: status, trait, skill, ...
-            cat_allow_interaction = Group_Events.cat_allow_interaction(
+            cat_allow_interaction = GroupEvents.cat_allow_interaction(
                 interact, abbreviations_cat_id
             )
             if not cat_allow_interaction:
@@ -281,7 +281,7 @@ class Group_Events:
 
             # now check for relationship constraints
             relationship_allow_interaction = (
-                Group_Events.relationship_allow_interaction(
+                GroupEvents.relationship_allow_interaction(
                     interact, abbreviations_cat_id
                 )
             )
@@ -686,14 +686,14 @@ class Group_Events:
                 injuries.append(inj)
 
             possible_scar = (
-                Group_Events.prepare_text(
+                GroupEvents.prepare_text(
                     injury_dict["scar_text"], abbreviations_cat_id
                 )
                 if "scar_text" in injury_dict
                 else None
             )
             possible_death = (
-                Group_Events.prepare_text(
+                GroupEvents.prepare_text(
                     injury_dict["death_text"], abbreviations_cat_id
                 )
                 if "death_text" in injury_dict
@@ -701,7 +701,7 @@ class Group_Events:
             )
             if injured_cat.status == "leader":
                 possible_death = (
-                    Group_Events.prepare_text(
+                    GroupEvents.prepare_text(
                         injury_dict["death_leader_text"], abbreviations_cat_id
                     )
                     if "death_leader_text" in injury_dict

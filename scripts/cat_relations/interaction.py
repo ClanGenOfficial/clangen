@@ -101,7 +101,7 @@ class GroupInteraction:
         self.get_injuries = get_injuries if get_injuries else {}
         self.has_injuries = has_injuries if has_injuries else {}
         self.relationship_constraint = (
-            relationship_constraint if relationship_constraint else []
+            relationship_constraint if relationship_constraint else {}
         )
         self.backstory_constraint = backstory_constraint if backstory_constraint else {}
         self.status_constraint = status_constraint if status_constraint else {}

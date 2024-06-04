@@ -158,7 +158,6 @@ class Condition_Events:
                         "illness_prevent"
                     ]
                     if not int(random.random() * stopping_chance):
-                        # print(f"rest and recover - illness prevented for {cat.name}")
                         return triggered
 
                 season_dict = Condition_Events.ILLNESSES_SEASON_LIST[season]
@@ -267,7 +266,6 @@ class Condition_Events:
                         "injury_prevent"
                     ]
                     if not int(random.random() * stopping_chance):
-                        # print(f"rest and recover - injury prevented for {cat.name}")
                         return False
 
                 if war:
@@ -312,7 +310,6 @@ class Condition_Events:
                             cat, injury_event, other_cat
                         )
 
-                    # print(injury_event.event_text)
                     text = event_text_adjust(
                         Cat, injury_event.event_text, cat, other_cat, other_clan_name
                     )
@@ -1236,7 +1233,6 @@ class Condition_Events:
                 else:
                     print("No herbs to use for this injury")
                     return
-                print(f"New herb found: {herb_used}")
 
             # deplete the herb
             amount_used = 1

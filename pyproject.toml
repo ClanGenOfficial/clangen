@@ -38,5 +38,14 @@ pillow = "^9.5.0"
 setuptools = "^67.7.2"
 wheel = "^0.40.0"
 
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.2"
+
 [tool.poetry.extras]
 discord = ["pypresence"]
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "."
+]

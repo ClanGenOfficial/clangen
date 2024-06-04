@@ -1041,7 +1041,6 @@ class ProfileScreen(Screens):
             bs_text = the_cat.status
         else:
             if the_cat.backstory:
-                # print(the_cat.backstory)
                 for category in BACKSTORIES["backstory_categories"]:
                     if (
                         the_cat.backstory

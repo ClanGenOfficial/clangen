@@ -225,18 +225,17 @@ class Pelt:
     def check_and_convert(self, convert_dict):
         """Checks for old-type properties for the appearance-related properties
         that are stored in Pelt, and converts them. To be run when loading a cat in. """
-
-        # First, convert from some old names that may be in white_patches.
-        match self.white_patches:
-            case 'POINTMARK':
-                self.white_patches = "SEALPOINT"
-            case 'PANTS2':
-                self.white_patches = 'PANTSTWO'
-            case 'ANY2':
-                self.white_patches = 'ANYTWO'
-            case "VITILIGO2":
-                self.white_patches = "VITILIGOTWO"
-
+        
+        # First, convert from some old names that may be in white_patches. 
+        if self.white_patches == 'POINTMARK':
+            self.white_patches = "SEALPOINT"
+        elif self.white_patches == 'PANTS2':
+            self.white_patches = 'PANTSTWO'
+        elif self.white_patches == 'ANY2':
+            self.white_patches = 'ANYTWO'
+        elif self.white_patches == "VITILIGO2":
+            self.white_patches = "VITILIGOTWO"
+            
         if self.vitiligo == "VITILIGO2":
             self.vitiligo = "VITILIGOTWO"
 
@@ -274,27 +273,25 @@ class Pelt:
 
         if self.length == 'long':
             if self.cat_sprites['adult'] not in [9, 10, 11]:
-                match self.cat_sprites['adult']:
-                    case 0:
-                        self.cat_sprites['adult'] = 9
-                    case 1:
-                        self.cat_sprites['adult'] = 10
-                    case 2:
-                        self.cat_sprites['adult'] = 11
+                if self.cat_sprites['adult'] == 0:
+                    self.cat_sprites['adult'] = 9
+                elif self.cat_sprites['adult'] == 1:
+                    self.cat_sprites['adult'] = 10
+                elif self.cat_sprites['adult'] == 2:
+                    self.cat_sprites['adult'] = 11
                 self.cat_sprites['young adult'] = self.cat_sprites['adult']
                 self.cat_sprites['senior adult'] = self.cat_sprites['adult']
                 self.cat_sprites['para_adult'] = 16
         else:
             self.cat_sprites['para_adult'] = 15
         if self.cat_sprites['senior'] not in [12, 13, 14]:
-            match self.cat_sprites['senior']:
-                case 3:
-                    self.cat_sprites['senior'] = 12
-                case 4:
-                    self.cat_sprites['senior'] = 13
-                case 5:
-                    self.cat_sprites['senior'] = 14
-
+            if self.cat_sprites['senior'] == 3:
+                self.cat_sprites['senior'] = 12
+            elif self.cat_sprites['senior'] == 4:
+                self.cat_sprites['senior'] = 13
+            elif self.cat_sprites['senior'] == 5:
+                self.cat_sprites['senior'] = 14
+        
         if self.pattern in convert_dict["old_tortie_patches"]:
             old_pattern = self.pattern
             self.pattern = convert_dict["old_tortie_patches"][old_pattern][1]
@@ -305,17 +302,16 @@ class Pelt:
             # tortiecolour and pelt_colour will be the same. Therefore, let's also re-set the pelt color
             self.colour = self.tortiecolour
             self.tortiecolour = convert_dict["old_tortie_patches"][old_pattern][0]
-
-        match self.pattern:
-            case "MINIMAL1":
-                self.pattern = "MINIMALONE"
-            case "MINIMAL2":
-                self.pattern = "MINIMALTWO"
-            case "MINIMAL3":
-                self.pattern = "MINIMALTHREE"
-            case "MINIMAL4":
-                self.pattern = "MINIMALFOUR"
-
+            
+        if self.pattern == "MINIMAL1":
+            self.pattern = "MINIMALONE"
+        elif self.pattern == "MINIMAL2":
+            self.pattern = "MINIMALTWO"
+        elif self.pattern == "MINIMAL3":
+            self.pattern = "MINIMALTHREE"
+        elif self.pattern == "MINIMAL4":
+            self.pattern = "MINIMALFOUR"
+        
     def init_eyes(self, parents):
         if not parents:
             self.eye_colour = choice(Pelt.eye_colours)
