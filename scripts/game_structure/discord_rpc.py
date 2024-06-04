@@ -6,10 +6,12 @@ Discord RPC is not required for the game to run.
 If you do not have the pypresence module installed,
 this file will not be used, and the game will run as normal.
 """
-from time import time
-from scripts.game_structure.game_essentials import game
-import threading
+
 import asyncio
+import threading
+from time import time
+
+from scripts.game_structure.game_essentials import game
 
 status_dict = {
     "start screen": "At the start screen",
@@ -21,7 +23,8 @@ status_dict = {
     "starclan screen": "Viewing StarClan",
     "dark forest screen": "Viewing the Dark Forest",
     "med den screen": "In the medicine den",
-    }
+}
+
 
 class _DiscordRPC(threading.Thread):
     def __init__(self, client_id: str, daemon: bool):
@@ -29,14 +32,14 @@ class _DiscordRPC(threading.Thread):
         self._rpc = None
         self._client_id = client_id
         self._connected = False
-        self._start_time = round(time()*1000)
+        self._start_time = round(time() * 1000)
         self._rpc_supported = False
         self._event_loop = asyncio.new_event_loop()
 
         self.start_rpc = threading.Event()
         self.update_rpc = threading.Event()
         self.close_rpc = threading.Event()
-            
+
     def run(self):
         self.start_rpc.wait()
         self.get_rpc()
@@ -53,6 +56,7 @@ class _DiscordRPC(threading.Thread):
         try:
             # raise ImportError # uncomment this line to disable rpc without uninstalling pypresence
             from pypresence import Presence, DiscordNotFound
+
             print("Discord RPC is supported")
         except ImportError:
             print("Pypresence not installed, Discord RPC isn't supported.")
@@ -60,8 +64,7 @@ class _DiscordRPC(threading.Thread):
             return
         # Check if Discord is running.
         try:
-            self._rpc = Presence(client_id=self._client_id,
-                                 loop=self._event_loop)
+            self._rpc = Presence(client_id=self._client_id, loop=self._event_loop)
             print("Discord found!")
         except DiscordNotFound:
             print("Discord not running.")
@@ -88,42 +91,47 @@ class _DiscordRPC(threading.Thread):
     def update(self):
         if self._connected:
             try:
-                state_text = status_dict[game.switches['cur_screen']]
+                state_text = status_dict[game.switches["cur_screen"]]
             except KeyError:
                 state_text = "Leading the Clan"
 
             try:
-                img_str = f"{game.clan.biome}_{game.clan.current_season.replace('-', '')}_{game.clan.camp_bg}_{'dark' if game.settings['dark mode'] else 'light'}"
+                img_str = (f"{game.clan.biome}_{game.clan.current_season.replace('-', '')}_"
+                           f"{game.clan.camp_bg}_{'dark' if game.settings['dark mode'] else 'light'}")
                 img_text = game.clan.biome
             except AttributeError:
-                print("Failed to get image string, game may not be fully loaded yet. Dont worry, it will fix itself. Hopefully.")
-                img_str = "discord" # fallback incase the game isn't loaded yet
+                print("Failed to get image string, game may not be fully loaded yet. "
+                      "Don't worry, it will fix itself. Hopefully.")
+                img_str = "discord"  # fallback incase the game isn't loaded yet
                 img_text = "Clangen!!"
-            
+
             # Example: beach_greenleaf_camp1_dark
 
-            clan_name = 'Loading...'
-            cats_amount = 0
             if game.clan:
-                clan_name =  f"{game.clan.name}Clan"
+                clan_name = f"{game.clan.name}Clan"
                 cats_amount = len(game.clan.clan_cats)
                 clan_age = game.clan.age
             else:
-                clan_name = 'Loading...'
+                clan_name = "Loading..."
                 cats_amount = 0
                 clan_age = 0
             try:
                 self._rpc.update(
                     state=state_text,
-                    details=f"Managing {clan_name} for {clan_age} moons" ,
+                    details=f"Managing {clan_name} for {clan_age} moons",
                     large_image=img_str.lower(),
                     large_text=img_text,
                     small_image="discord",
                     small_text=f"Managing {cats_amount} cats",
                     start=self._start_time,
-                    buttons=[{"label": "Join The Server", "url": "https://discord.gg/clangen"}],
+                    buttons=[
+                        {
+                            "label": "Join The Server",
+                            "url": "https://discord.gg/clangen",
+                        }
+                    ],
                 )
-            except BaseException: # pylint: disable=broad-except
+            except BaseException:  # pylint: disable=broad-except
                 print("Discord rpc had issue updating, disabling...")
                 self._rpc_supported = False
                 self._connected = False
@@ -134,4 +142,3 @@ class _DiscordRPC(threading.Thread):
         if self._connected:
             self._rpc.close()
             self._connected = False
-            
