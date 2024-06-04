@@ -821,7 +821,7 @@ class Events:
                 else:
                     text += "child."
 
-            text = event_text_adjust(Cat, text, lost_cat, clan=game.clan)
+            text = event_text_adjust(Cat, text, main_cat=lost_cat, clan=game.clan)
 
             game.cur_events_list.append(
                 Single_Event(text, "misc", cat_IDs))
