@@ -2418,24 +2418,24 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "p_l sniffs the clean, fresh morning air, wondering if they can smell juniper berries on the breeze.",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "intro_text": "p_l sniffs the clean, fresh morning air, wondering if {PRONOUN/p_l/subject} can smell juniper berries on the breeze.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Leaf-fall brings with it gleaming dots of blue as the juniper trees deck themselves with their hard-fleshed berries, wafting their pleasant scent from their branches. There's a lot to enjoy about gathering them. As they pad home, p_l's worries that leaf-bare will strip the territory of precious herbs grows. They notice a fallen oak branch nearby and stop to collect a few undamaged leaves. They're starting to turn colors, but the leaves are still usable.",
+                "text": "Leaf-fall brings with it gleaming dots of blue as the juniper trees deck themselves with their hard-fleshed berries, wafting their pleasant scent from their branches. There's a lot to enjoy about gathering them. As {PRONOUN/p_l/subject} {VERB/p_l/pad/pads} home, p_l's worries that leaf-bare will strip the territory of precious herbs grows. {PRONOUN/p_l/subject/CAP} {VERB/p_l/notice/notices} a fallen oak branch nearby and {VERB/p_l/stop/stops} to collect a few undamaged leaves. They're starting to turn colors, but the leaves are still usable.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["oak_leaves", "juniper"]
             },
             {
-                "text": "Juniper berries are useful for so many things, from calming minds and easing breathing to soothing aching bellies and as a traveling herb. p_l will always feel better having a good solid store of the stuff to use, especially because the berries keep forever in the herb stores. They pass a lone, gnarled oak tree on the way back to camp and make sure to stop to gather some of the leaves while they're there. Oak leaves are great for fighting infections.",
+                "text": "Juniper berries are useful for so many things, from calming minds and easing breathing to soothing aching bellies and as a traveling herb. p_l will always feel better having a good solid store of the stuff to use, especially because the berries keep forever in the herb stores. {PRONOUN/p_l/subject/CAP} {VERB/p_l/pass/passes} a lone, gnarled oak tree on the way back to camp and {VERB/p_l/make/makes} sure to stop to gather some of the leaves while {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} there. Oak leaves are great for fighting infections.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "oak_leaves", "juniper"]
             },
             {
-                "text": "s_c follows not their eyes, but their nose, tracking the juniper trees by the scent of their fragrant berries to find an excellent crop. s_c climbs into the low-growing tree to better reach the berries. From their vantage point, they are able to reach a low oak branch. They are astounded the branch has a healthy collection of still-green oak leaves. They take the opportunity to gather a pawful.",
+                "text": "s_c follows not {PRONOUN/s_c/poss} eyes, but {PRONOUN/s_c/poss} nose, tracking the juniper trees by the scent of their fragrant berries to find an excellent crop. s_c climbs into the low-growing tree to better reach the berries. From {PRONOUN/s_c/poss} vantage point, {PRONOUN/s_c/subject} {VERB/s_c/are/is} able to reach a low oak branch. {PRONOUN/s_c/subject/CAP} {VERB/s_c/are/is} astounded the branch has a healthy collection of still-green oak leaves. {PRONOUN/s_c/subject/CAP} {VERB/s_c/take/takes} the opportunity to gather a pawful.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -2444,7 +2444,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l seems to have forgotten where to find a juniper tree, much to their own embarrassment.",
+                "text": "p_l seems to have forgotten where to find a juniper tree, much to {PRONOUN/p_l/poss} own embarrassment.",
                 "exp": 0,
                 "weight": 20
             }
