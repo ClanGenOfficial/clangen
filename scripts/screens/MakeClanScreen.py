@@ -542,6 +542,14 @@ class MakeClanScreen(Screens):
             self.symbol_buttons[button].kill()
         self.elements = {}
 
+    # def random_quick_start(self):
+    #     # TODO: Random clan name (name must not already exist)
+
+    #     # TODO: Random biome selected
+    #     # TODO: Random symbol selected
+    #     # TODO: Random Leader, Deputy, Med Cat
+    #     # TODO: Random rest of cats
+
     def refresh_text_and_buttons(self):
         """Refreshes the button states and text boxes"""
         if self.sub_screen == "game mode":
