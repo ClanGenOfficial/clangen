@@ -203,9 +203,9 @@ class MakeClanScreen(Screens):
 
     def handle_name_clan_event(self, event):
         if event.ui_element == self.elements["random"]:
-            clan_names = names.names_dict["normal_prefixes"]
-            clan_names.extend(names.names_dict["clan_prefixes"])
-            self.elements["name_entry"].set_text(choice(clan_names))
+            # clan_names = names.names_dict["normal_prefixes"]
+            # clan_names.extend(names.names_dict["clan_prefixes"])
+            self.elements["name_entry"].set_text(self.random_clan_name())
         elif event.ui_element == self.elements["reset_name"]:
             self.elements["name_entry"].set_text("")
         elif event.ui_element == self.elements['next_step']:
@@ -541,13 +541,16 @@ class MakeClanScreen(Screens):
             self.symbol_buttons[button].kill()
         self.elements = {}
 
-    # def random_quick_start(self):
-    #     # TODO: Random clan name (name must not already exist)
-
-    #     # TODO: Random biome selected
-    #     # TODO: Random symbol selected
-    #     # TODO: Random Leader, Deputy, Med Cat
-    #     # TODO: Random rest of cats
+    def random_quick_start(self):
+        # TODO: Random clan name (name must not already exist)
+        
+        # TODO: Random biome selected
+        # TODO: Use Recommended Symbol / Random symbol selection
+        if f"symbol{self.clan_name.upper()}0" in sprites.clan_symbols:
+            # self.text["recommend"].set_text(f"Recommended Symbol: {self.clan_name.upper()}0")
+            return
+        # TODO: Random Leader, Deputy, Med Cat
+        # TODO: Random rest of cats
 
     def refresh_text_and_buttons(self):
         """Refreshes the button states and text boxes"""
@@ -936,6 +939,24 @@ class MakeClanScreen(Screens):
 
         if self.symbol_selected in self.symbol_buttons:
             self.symbol_buttons[self.symbol_selected].disable()
+
+    def random_clan_name(self):
+        clan_names = names.names_dict["normal_prefixes"] + names.names_dict["clan_prefixes"]
+        while True:
+            chosen_name = choice(clan_names)
+            if chosen_name.casefold() not in [clan.casefold() for clan in game.switches['clan_list']]:
+                return chosen_name
+            print("Generated clan name was already in use! Rerolling...")
+
+    
+    def random_symbol_selection(self):
+        print(f"todo!")
+
+    def random_biome_selection(self):
+        print(f"todo!")
+
+    def random_cat_selection(self):
+        print(f"todo!")
 
     def _get_cat_tooltip_string(self, cat: Cat):
         """Get tooltip for cat. Tooltip displays name, sex, age group, and trait."""
