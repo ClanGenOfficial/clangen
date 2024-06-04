@@ -1,8 +1,7 @@
 [
     {
         "event_id": "bch_injury_waterinlungs_anyapprentic1",
-        "biome": ["beach"],
-        "camp": ["any"],
+        "location": ["beach"],
         "season": ["any"],
         "weight": 20,
         "event_text": "m_c went out of camp alone to practice swimming in the ocean; unfortunately, {PRONOUN/m_c/poss} inexperience led to {PRONOUN/m_c/object} being swept up by a riptide. r_c heard {PRONOUN/m_c/poss} cries and saved {PRONOUN/m_c/object}, but m_c almost drowned.",
@@ -46,8 +45,7 @@
     },
     {
         "event_id": "bch_injury_crackedpads_anyapprentice1",
-        "biome": ["beach"],
-        "camp": ["any"],
+        "location": ["beach"],
         "season": ["any"],
         "weight": 20,
         "event_text": "m_c's paw pads aren't used to all the salt water {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been traipsing around in since becoming an apprentice, they've become cracked and sore.",
@@ -64,8 +62,7 @@
     },
     {
         "event_id": "bch_injury_bruises_anymultitraitapprentice1",
-        "biome": ["beach"],
-        "camp": ["camp2"],
+        "location": ["beach:camp2"],
         "season": ["leaf-bare"],
         "weight": 20,
         "event_text": "m_c was dashing around the apprentice rock, when {PRONOUN/m_c/subject} slipped and fell into the high tide waters of the cave. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} alright, though a bit bruised and embarrassed.",
@@ -83,8 +80,7 @@
     },
     {
         "event_id": "bch_injury_bruises_multimultitraitapprentice1",
-        "biome": ["beach"],
-        "camp": ["camp1"],
+        "location": ["beach:camp1"],
         "season": ["greenleaf", "newleaf", "leaf-fall"],
         "weight": 20,
         "event_text": "m_c was messing around in the tide pools of the camp clearing, when {PRONOUN/m_c/poss} paw slipped and {PRONOUN/m_c/subject} fell in face first. {PRONOUN/m_c/poss/CAP} pride is wounded, but otherwise {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} only bruised.",
@@ -102,8 +98,7 @@
     },
     {
         "event_id": "bch_injury_shivering_multiapprentice1",
-        "biome": ["beach"],
-        "camp": ["any"],
+        "location": ["beach"],
         "season": ["leaf-fall", "leaf-bare"],
         "weight": 20,
         "event_text": "m_c unwisely decided to go out swimming alone after r_c dared {PRONOUN/m_c/object} to. {PRONOUN/m_c/subject/CAP} made it back, but ended up drenched and shivering violently in the cold air.",
@@ -140,8 +135,7 @@
     },
     {
         "event_id": "bch_injury_dehydrated_anyapprentice1",
-        "biome": ["beach"],
-        "camp": ["any"],
+        "location": ["beach"],
         "season": ["any"],
         "weight": 20,
         "event_text": "m_c rarely pays attention when r_c talks about proper ocean safety, and it shows when m_c gets thirsty on patrol and drinks salt water. {PRONOUN/m_c/subject/CAP} {VERB/m_c/come/comes} back to camp severely dehydrated.",
@@ -184,8 +178,7 @@
     },
     {
         "event_id": "bch_injury_clawwound_anycamp1kit1",
-        "biome": ["beach"],
-        "camp": ["camp1"],
+        "location": ["beach:camp1"],
         "season": ["any"],
         "weight": 20,
         "event_text": "m_c was grabbed by a seagull, but luckily r_c saves {PRONOUN/m_c/object}! The kit is still left injured from the ordeal.",
@@ -228,8 +221,7 @@
     },
     {
         "event_id": "bch_injury_clawwound_anycamp1kit2",
-        "biome": ["beach"],
-        "camp": ["camp1"],
+        "location": ["beach:camp1"],
         "season": ["any"],
         "weight": 20,
         "event_text": "m_c was grabbed by an osprey, but luckily r_c saves {PRONOUN/m_c/object}! The kit is still left injured from the ordeal.",
@@ -272,8 +264,7 @@
     },
     {
         "event_id": "bch_injury_waterinlungs_multikit1",
-        "biome": ["beach"],
-        "camp": ["camp2"],
+        "location": ["beach:camp2"],
         "season": ["greenleaf", "newleaf"],
         "weight": 20,
         "event_text": "r_c dares m_c to try and swim out of camp and m_c can't possibly refuse the challenge. {PRONOUN/m_c/subject/CAP} {VERB/m_c/do/does}n't make it far, however, before {PRONOUN/m_c/poss} meager swimming skills fail {PRONOUN/m_c/object} and {PRONOUN/m_c/subject} nearly {VERB/m_c/drown/drowns} before an adult spots {PRONOUN/m_c/object} and comes to the rescue.",
@@ -310,8 +301,7 @@
     },
     {
         "event_id": "bch_injury_shivering_multiapprentice2",
-        "biome": ["beach"],
-        "camp": ["camp2"],
+        "location": ["beach:camp2"],
         "season": ["leaf-fall", "leaf-bare"],
         "weight": 20,
         "event_text": "r_c dares m_c to try and swim out of camp. m_c can't possibly refuse the challenge, but the water is freezing when {PRONOUN/m_c/subject} jump in. Though an adult quickly notices and scoops {PRONOUN/m_c/object} out, m_c is still shivering violently from the cold.",
@@ -348,8 +338,7 @@
     },
     {
         "event_id": "bch_injury_bruises_multibouncykit1",
-        "biome": ["beach"],
-        "camp": ["camp1"],
+        "location": ["beach:camp1"],
         "season": ["greenleaf", "newleaf", "leaf-fall"],
         "weight": 20,
         "event_text": "m_c is hopping around in the tide pools when {PRONOUN/m_c/subject} {VERB/m_c/trip/trips} and {VERB/m_c/fall/falls} onto the rocks. Thankfully, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} only a bit bruised.",
@@ -367,8 +356,7 @@
     },
     {
         "event_id": "bch_injury_bruises_multicamp1multitraitkit1",
-        "biome": ["beach"],
-        "camp": ["camp1"],
+        "location": ["beach:camp1"],
         "season": ["leaf-fall", "leaf-bare"],
         "weight": 20,
         "event_text": "m_c is playing around on the iced-over tide pools, slipping and sliding every which way, when {PRONOUN/m_c/subject} {VERB/m_c/slip/slips} a little too much and take a tumble.",
@@ -386,8 +374,7 @@
     },
     {
         "event_id": "bch_injury_bruises_anycamp2multitraitkit",
-        "biome": ["beach"],
-        "camp": ["camp2"],
+        "location": ["beach:camp2"],
         "season": ["any"],
         "weight": 20,
         "event_text": "m_c is jumping around on the rocks when {PRONOUN/m_c/subject} {VERB/m_c/slip/slips} and {VERB/m_c/fall/falls}. The soft sand of the cave floor softens {PRONOUN/m_c/poss} landing, but {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} still sporting some new bruises.",
@@ -405,8 +392,7 @@
     },
     {
         "event_id": "bch_injury_scrapes_multicamp1multitraitkit1",
-        "biome": ["beach"],
-        "camp": ["camp1"],
+        "location": ["beach:camp1"],
         "season": ["leaf-fall", "leaf-bare"],
         "weight": 20,
         "event_text": "m_c is playing around on the iced-over tide pools, slipping and sliding every which way, when {PRONOUN/m_c/subject} {VERB/m_c/slip/slips} a little too much and take a tumble.",
@@ -424,8 +410,7 @@
     },
     {
         "event_id": "bch_injury_sprain_multicamp1multitraitkit1",
-        "biome": ["beach"],
-        "camp": ["camp1"],
+        "location": ["beach:camp1"],
         "season": ["leaf-fall", "leaf-bare"],
         "weight": 20,
         "event_text": "m_c is playing around on the iced-over tide pools, slipping and sliding every which way, when {PRONOUN/m_c/subject} {VERB/m_c/slip/slips} a little too much and {VERB/m_c/twist/twists} {PRONOUN/m_c/poss} paw.",
@@ -443,8 +428,7 @@
     },
     {
         "event_id": "bch_injury_snakebite_multimultitraitkit1",
-        "biome": ["beach"],
-        "camp": ["any"],
+        "location": ["beach"],
         "season": ["greenleaf", "newleaf", "leaf-fall"],
         "weight": 20,
         "event_text": "m_c found a hole in the rocks and, curious as all kits are, stuck {PRONOUN/m_c/poss} paw inside. The whole camp comes running when {PRONOUN/m_c/subject} {VERB/m_c/screech/screeches} in pain. It seems a snake was living in that hole.",
@@ -471,8 +455,7 @@
 
     {
         "event_id": "bch_injury_crackedpads_any1",
-        "biome": ["beach"],
-        "camp": ["any"],
+        "location": ["beach"],
         "season": ["any"],
         "weight": 20,
         "event_text": "m_c stepped on some sharp stones while walking along the shoreline.",
@@ -489,8 +472,7 @@
     },
     {
         "event_id": "bch_injury_waterinlungs_any1",
-        "biome": ["beach"],
-        "camp": ["any"],
+        "location": ["beach"],
         "season": ["any"],
         "weight": 20,
         "event_text": "m_c was dragged out into the ocean by the tide, and inhaled a lot of water before managing to get out. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} been hacking and sputtering ever since.",

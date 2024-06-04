@@ -1,9 +1,7 @@
 [
     {
         "event_id": "fst_death_war_any1",
-        "camp": [
-            "any"
-        ],
+        "location": ["any"],
         "season": [
             "any"
         ],
@@ -26,9 +24,7 @@
     },
     {
         "event_id": "fst_death_dog_any1",
-        "camp": [
-            "any"
-        ],
+        "location": ["any"],
         "season": [
             "any"
         ],
@@ -59,12 +55,10 @@
     },
     {
         "event_id": "fst_death_tree_any1",
-        "biome": [
+        "location": [
             "forest"
         ],
-        "camp": [
-            "any"
-        ],
+        "location": ["any"],
         "season": [
             "any"
         ],

@@ -1,10 +1,7 @@
 [
     {
         "event_id": "gen_injury_bruises_anykitten1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -42,10 +39,7 @@
     },
     {
         "event_id": "gen_injury_bruises_anykitten2",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -83,10 +77,7 @@
     },
     {
         "event_id": "gen_injury_bruises_anykitten3",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -126,10 +117,7 @@
     },
     {
         "event_id": "gen_injury_scrapes_anykitten1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -167,10 +155,7 @@
     },
     {
         "event_id": "gen_injury_scrapes_anykitten2",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -208,10 +193,7 @@
     },
     {
         "event_id": "gen_injury_scrapes_anykitten3",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -251,10 +233,7 @@
     },
     {
         "event_id": "gen_injury_headache_anykitten1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -286,10 +265,7 @@
     },
     {
         "event_id": "gen_injury_severeheadache_anykit1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -318,10 +294,7 @@
     },
     {
         "event_id": "gen_injury_bruisessore_anymultiage1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -358,10 +331,7 @@
     },
     {
         "event_id": "gen_injury_bruisessore_anymultiageclankits1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -404,10 +374,7 @@
     },
     {
         "event_id": "gen_injury_jointpain_anysenioradultsenior1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -440,10 +407,7 @@
     },
     {
         "event_id": "gen_injury_jointpain_anysenioradultsenior2",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -476,10 +440,7 @@
     },
     {
         "event_id": "gen_injury_jointpain_anysenioradultsenior3",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -512,10 +473,7 @@
     },
     {
         "event_id": "gen_injury_jointpain_anymultiage1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -554,10 +512,7 @@
     },
     {
         "event_id": "gen_injury_brokenbone_anymultiage1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -609,10 +564,7 @@
     },
     {
         "event_id": "gen_injury_tickbites_anysenioradultsenior1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -645,10 +597,7 @@
     },
     {
         "event_id": "gen_injury_tickbites_anysenioradultsenior2",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -690,10 +639,7 @@
     },
     {
         "event_id": "gen_injury_tickbites_anysenioradultsenior3",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -735,10 +681,7 @@
     },
     {
         "event_id": "gen_injury_tickbites_anysenioradultsenior4",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -781,10 +724,7 @@
     },
     {
         "event_id": "gen_injury_clawwound_anymultitraitmultiage1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -895,10 +835,7 @@
     },
     {
         "event_id": "gen_injury_clawwound_anymultitraitmultiage2",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -1000,10 +937,7 @@
     },
     {
         "event_id": "gen_injury_bitewound_anymultitraitmultiage1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -1105,10 +1039,7 @@
     },
     {
         "event_id": "gen_injury_bruises_anymultiagestatustrait1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -1151,10 +1082,7 @@
     },
     {
         "event_id": "gen_injury_war_clawwound_anymultitraitmultistatus2",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -1208,10 +1136,7 @@
     },
     {
         "event_id": "gen_injury_war_catbite_anymultitraitmultistatus1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -1265,10 +1190,7 @@
     },
     {
         "event_id": "gen_injury_catbite_anyotherclanhostileany1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -1325,10 +1247,7 @@
     },
     {
         "event_id": "gen_injury_clawwound_anyclankitsmultistatus1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -1370,12 +1289,9 @@
     },
     {
         "event_id": "multi_injury_anysprain2",
-        "biome": [
+        "location": [
             "plains",
             "forest"
-        ],
-        "camp": [
-            "any"
         ],
         "season": [
             "any"
@@ -1395,13 +1311,10 @@
     },
     {
         "event_id": "multi_injury_multikitfrostbite1",
-        "biome": [
+        "location": [
             "plains",
             "forest",
             "mountainous"
-        ],
-        "camp": [
-            "any"
         ],
         "season": [
             "leaf-fall",
@@ -1446,13 +1359,10 @@
     },
     {
         "event_id": "multi_injury_anykit1",
-        "biome": [
+        "location": [
             "plains",
             "forest",
             "mountainous"
-        ],
-        "camp": [
-            "any"
         ],
         "season": [
             "any"
@@ -1528,13 +1438,10 @@
     },
     {
         "event_id": "multi_injury_anykit1",
-        "biome": [
+        "location": [
             "plains",
             "forest",
             "mountainous"
-        ],
-        "camp": [
-            "any"
         ],
         "season": [
             "any"
@@ -1610,13 +1517,10 @@
     },
     {
         "event_id": "multi_injury_multiwaterinthelungs1",
-        "biome": [
+        "location": [
             "plains",
             "forest",
             "mountainous"
-        ],
-        "camp": [
-            "any"
         ],
         "season": [
             "greenleaf",
@@ -1644,10 +1548,7 @@
     },
     {
         "event_id": "gen_injury_multifrostbite1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -1680,13 +1581,10 @@
     },
     {
         "event_id": "multi_injury_leafbarebrokenbone1",
-        "biome": [
+        "location": [
             "plains",
             "mountainous",
             "forest"
-        ],
-        "camp": [
-            "any"
         ],
         "season": [
             "leaf-bare"
@@ -1725,12 +1623,9 @@
     },
     {
         "event_id": "multi_injury_anybrokenbone1",
-        "biome": [
+        "location": [
             "plains",
             "mountainous"
-        ],
-        "camp": [
-            "any"
         ],
         "season": [
             "any"
@@ -1760,13 +1655,10 @@
     },
     {
         "event_id": "multi_injury_anysmallcut1",
-        "biome": [
+        "location": [
             "beach",
             "mountainous",
             "forest"
-        ],
-        "camp": [
-            "any"
         ],
         "season": [
             "any"
@@ -1799,13 +1691,10 @@
     },
     {
         "event_id": "multi_injury_anybruises1",
-        "biome": [
+        "location": [
             "beach",
             "mountainous",
             "forest"
-        ],
-        "camp": [
-            "any"
         ],
         "season": [
             "any"
@@ -1830,12 +1719,9 @@
     },
     {
         "event_id": "multi_injury_anybruises1",
-        "biome": [
+        "location": [
             "beach",
             "forest"
-        ],
-        "camp": [
-            "any"
         ],
         "season": [
             "any"
@@ -1883,10 +1769,7 @@
     },
     {
         "event_id": "gen_injury_sore_anymultiage1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -2005,12 +1888,9 @@
     },
     {
         "event_id": "multi_injury_clawwound_any1",
-        "biome": [
+        "location": [
             "plains",
             "mountainous"
-        ],
-        "camp": [
-            "any"
         ],
         "season": [
             "any"
@@ -2040,10 +1920,7 @@
     },
     {
         "event_id": "gen_injury_smallcut_any2",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -2076,10 +1953,7 @@
     },
     {
         "event_id": "gen_injury_bruises_anymultisage3",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -2144,10 +2018,7 @@
     },
     {
         "event_id": "gen_injury_sorerun1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -2181,10 +2052,7 @@
     },
     {
         "event_id": "gen_injury_mangledleg_anymultiagemultitrait1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -2229,10 +2097,7 @@
     },
     {
         "event_id": "gen_injury_bruises_anymultiagestatustraitfighter1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -2277,10 +2142,7 @@
     },
     {
         "event_id": "gen_injury_bruises_anymultiagestatustraitfighter2",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -2325,10 +2187,7 @@
     },
     {
         "event_id": "gen_injury_bruises_anymultiagestatustraitfighter3",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -2373,10 +2232,7 @@
     },
     {
         "event_id": "gen_injury_bruises_anymultiagestatustraitfighter4",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -2456,10 +2312,7 @@
     },
     {
         "event_id": "gen_injury_bruises_anymultiagestatustraitfighter5",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -2540,10 +2393,7 @@
     },
     {
         "event_id": "gen_injury_scrapes_anymultiagestatustrait1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -2584,10 +2434,7 @@
     },
     {
         "event_id": "gen_injury_scrapes_anymultiagestatustraitfighter1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -2632,10 +2479,7 @@
     },
     {
         "event_id": "gen_injury_scrapes_anymultiagestatustraitfighter2",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -2680,10 +2524,7 @@
     },
     {
         "event_id": "gen_injury_scrapes_anymultiagestatustraitfighter3",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -2764,10 +2605,7 @@
     },
     {
         "event_id": "gen_injury_sprain_anymultiagestatustrait1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -2808,10 +2646,7 @@
     },
     {
         "event_id": "gen_injury_bitewound_anymultiagestatustraitnotfighter1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -2868,10 +2703,7 @@
     },
     {
         "event_id": "gen_injury_bitewound_anymultiagestatustraitnotfighterothercat1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -2965,10 +2797,7 @@
     },
     {
         "event_id": "gen_injury_bitewound_anymultiagestatustraitnotfighterothercatleader1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -3054,10 +2883,7 @@
     },
     {
         "event_id": "gen_injury_catbite_anymultiagestatustraitnotfighter1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -3133,10 +2959,7 @@
     },
     {
         "event_id": "gen_injury_brokenbone_anymultiagestatustraitnotfighter1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -3194,10 +3017,7 @@
     },
     {
         "event_id": "gen_injury_brokenbone_anymultiagestatustraitnotfighterothercat1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -3292,10 +3112,7 @@
     },
     {
         "event_id": "gen_injury_clawwound_anymultiagestatustraitnotfighter1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -3352,10 +3169,7 @@
     },
     {
         "event_id": "gen_injury_clawwound_anymultiagestatustraitnotfighterothercat1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -3443,10 +3257,7 @@
     },
     {
         "event_id": "gen_injury_clawwound_anymultiagemultistatusnotfightermultitraitothercatleader1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -3548,10 +3359,7 @@
     },
     {
         "event_id": "gen_injury_clawwoundcatbite_anymultiagenotfighterothercatmultitrait3",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -3645,10 +3453,7 @@
     },
     {
         "event_id": "gen_injury_clawwoundcatbite_anymultiagenotfighterothercatmultitrait2",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -3753,10 +3558,7 @@
     },
     {
         "event_id": "gen_injury_clawwoundcatbite_anymultiagenotfighterothercatmultitrait1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -3851,10 +3653,7 @@
     },
     {
         "event_id": "gen_injury_mangledleg_anyapprenticenotfighterothercatmultistatusmultitrait2",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -3947,10 +3746,7 @@
     },
     {
         "event_id": "gen_injury_mangledleg_anyapprenticenotfighterothercatmultistatusmultitrait1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -4043,10 +3839,7 @@
     },
     {
         "event_id": "gen_injury_damagedeyes_anyapprentice1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -4085,10 +3878,7 @@
     },
     {
         "event_id": "gen_injury_sore_war_anyapprentice2",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -4120,10 +3910,7 @@
     },
     {
         "event_id": "gen_injury_bruises_war_anyapprentice1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -4155,10 +3942,7 @@
     },
     {
         "event_id": "gen_injury_mangledtail_war_anyapprenticehostile1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -4206,10 +3990,7 @@
     },
     {
         "event_id": "gen_injury_catbite_anyapprenticemultitraitappmentor4",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -4310,10 +4091,7 @@
     },
     {
         "event_id": "gen_injury_catbite_anyapprenticemultitraitappmentor3",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -4409,10 +4187,7 @@
     },
     {
         "event_id": "gen_injury_bitewound_anyapprenticeappmentorfightermultitrait2",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -4508,10 +4283,7 @@
     },
     {
         "event_id": "gen_injury_bitewound_anyapprenticeappmentorfightermultitrait1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -4607,10 +4379,7 @@
     },
     {
         "event_id": "gen_injury_catbite_anyapprenticemultitraitappmentor1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -4703,10 +4472,7 @@
     },
     {
         "event_id": "gen_injury_bruises_anyapprenticemultitraitappmentor1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -4752,10 +4518,7 @@
     },
     {
         "event_id": "gen_injury_bruises_anyapprentice2",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -4784,10 +4547,7 @@
     },
     {
         "event_id": "gen_injury_bruises_anyapprentice1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -4816,10 +4576,7 @@
     },
     {
         "event_id": "gen_injury_bruises_anyapprenticemultitrait1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -4856,10 +4613,7 @@
     },
     {
         "event_id": "gen_injury_scrapes_anyapprenticemultitrait1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -4896,10 +4650,7 @@
     },
     {
         "event_id": "gen_injury_sprain_anyapprenticemultitraitappmentor1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -4945,10 +4696,7 @@
     },
     {
         "event_id": "gen_injury_sprain_anyapprenticemultitrait3",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -4984,10 +4732,7 @@
     },
     {
         "event_id": "gen_injury_sprain_anyapprenticemultitrait2",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -5029,10 +4774,7 @@
     },
     {
         "event_id": "gen_injury_sprain_anyapprenticemultitrait1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -5069,10 +4811,7 @@
     },
     {
         "event_id": "gen_injury_crackedpads_anyapprenticemultitraitappmentor1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -5118,10 +4857,7 @@
     },
     {
         "event_id": "gen_injury_sore_anyapprenticemultitraitappmentor1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -5167,10 +4903,7 @@
     },
     {
         "event_id": "gen_injury_clawwoundcatbite_anyapprenticemultitraitappmentorothercat1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -5271,10 +5004,7 @@
     },
     {
         "event_id": "gen_injury_clawwoundcatbite_anyapprenticemultitraitappmentorothercat3",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -5369,10 +5099,7 @@
     },
     {
         "event_id": "gen_injury_clawwoundcatbite_anyapprenticemultitraitappmentorothercat2",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -5473,10 +5200,7 @@
     },
     {
         "event_id": "gen_injury_clawwound_anyapprenticemultitraitappmentorothercatskillfighter",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -5573,10 +5297,7 @@
     },
     {
         "event_id": "gen_injury_clawwoundcatbite_anyapprenticemultitraitappmentorothercat1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -5675,10 +5396,7 @@
     },
     {
         "event_id": "gen_injury_clawwoundcatbite_anyapprenticemultitraitappmentorothercat1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -5775,10 +5493,7 @@
     },
     {
         "event_id": "gen_injury_clawwound_anyapprenticemultitraitappmentorothercat1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -5882,10 +5597,7 @@
     },
     {
         "event_id": "gen_injury_mangledleg_anyapprenticeappmentorothercat1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -5976,10 +5688,7 @@
     },
     {
         "event_id": "gen_injury_crackedpads_anymultiage1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -6013,10 +5722,7 @@
     },
     {
         "event_id": "gen_injury_waterintheirlungs_anymultiage1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -6056,10 +5762,7 @@
     },
     {
         "event_id": "gen_injury_snakebite_anymultiage1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -6105,10 +5808,7 @@
     },
     {
         "event_id": "gen_injury_bruises_anymultisage2",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -6142,10 +5842,7 @@
     },
     {
         "event_id": "gen_injury_dislocatedjoint_anymultiage2",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -6179,10 +5876,7 @@
     },
     {
         "event_id": "gen_injury_dislocatedjoint_anymultiage1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -6216,10 +5910,7 @@
     },
     {
         "event_id": "gen_injury_sprain_anymultiage5",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -6253,10 +5944,7 @@
     },
     {
         "event_id": "gen_injury_sprain_anymultiage4",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -6290,10 +5978,7 @@
     },
     {
         "event_id": "gen_injury_sprain_anymultiage3",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -6327,10 +6012,7 @@
     },
     {
         "event_id": "gen_injury_sprain_anymultiage2",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -6364,10 +6046,7 @@
     },
     {
         "event_id": "gen_injury_sprain_anymultiage1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -6401,10 +6080,7 @@
     },
     {
         "event_id": "gen_injury_crackedpads_any2",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -6469,10 +6145,7 @@
     },
     {
         "event_id": "gen_injury_crackedpads_anyskillcampmultitrait1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -6517,10 +6190,7 @@
     },
     {
         "event_id": "gen_injury_sore_anymultiage2",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -6554,10 +6224,7 @@
     },
     {
         "event_id": "gen_injury_tornpelt_anyskillclevermultitrait2",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -6603,10 +6270,7 @@
     },
     {
         "event_id": "gen_injury_tornpelt_anyskillclevermultitrait1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -6652,10 +6316,7 @@
     },
     {
         "event_id": "gen_injury_clawwound_any1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -6712,10 +6373,7 @@
     },
     {
         "event_id": "gen_injury_mangledtail_any1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -6760,10 +6418,7 @@
     },
     {
         "event_id": "gen_injury_mangledtail_anyothercatleader1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -6859,10 +6514,7 @@
     },
     {
         "event_id": "gen_injury_mangledtail_anynotskillfighter2",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -6910,10 +6562,7 @@
     },
     {
         "event_id": "gen_injury_mangledtail_anynotskillfighter1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -6956,10 +6605,7 @@
     },
     {
         "event_id": "gen_injury_catbite_anyothercat1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -7049,10 +6695,7 @@
     },
     {
         "event_id": "gen_injury_catbite_anyothercat2",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -7142,10 +6785,7 @@
     },
     {
         "event_id": "gen_injury_catbite_anyothercatleader1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -7235,10 +6875,7 @@
     },
     {
         "event_id": "gen_injury_smallcut_anymultiage1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -7271,10 +6908,7 @@
     },
     {
         "event_id": "gen_injury_smallcut_any1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -7303,9 +6937,6 @@
     },
     {
         "event_id": "gen_injury_beesting_multiany3",
-        "camp": [
-            "any"
-        ],
         "season": [
             "greenleaf",
             "newleaf"
@@ -7344,10 +6975,7 @@
     },
     {
         "event_id": "gen_injury_tornear_anymultistatus2",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -7398,10 +7026,7 @@
     },
     {
         "event_id": "gen_injury_tornear_anymultistatus1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -7452,10 +7077,7 @@
     },
     {
         "event_id": "gen_injury_ratbite_anyany1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -7495,10 +7117,7 @@
     },
     {
         "event_id": "gen_injury_beesting_multiany2",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -7538,10 +7157,7 @@
     },
     {
         "event_id": "gen_injury_beesting_multiany1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -7581,10 +7197,7 @@
     },
     {
         "event_id": "gen_injury_headache_anyany1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -7613,10 +7226,7 @@
     },
     {
         "event_id": "gen_injury_severeheadache_anyany1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -7645,10 +7255,7 @@
     },
     {
         "event_id": "gen_injury_mangledleg_anymultistatusnotcareful1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -7691,10 +7298,7 @@
     },
     {
         "event_id": "gen_injury_war_clawwound_anymultitraitmultistatus1",
-        "biome": [
-            "any"
-        ],
-        "camp": [
+        "location": [
             "any"
         ],
         "season": [
@@ -7772,8 +7376,7 @@
     },
   {
     "event_id": "gen_injury_freshkill_anyrat1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c was taking some prey from the fresh-kill pile only to find a horde of rats! {PRONOUN/m_c/subject/CAP} called to r_c for help and together they fought off the rats, but not before being injured.",
@@ -7807,8 +7410,7 @@
   },
   {
     "event_id": "gen_injury_freshkill_anyrat2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c was taking some prey from the fresh-kill pile only to find a horde of rats! While m_c managed to fight off every last rat, {PRONOUN/m_c/subject} got injured in the process.",

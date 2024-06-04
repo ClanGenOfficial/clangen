@@ -1,8 +1,7 @@
 [
     {
         "event_id": "gen_new_cat_adoption_anylonerlitter1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "sub_type": ["adoption"],
         "weight": 5,
@@ -27,8 +26,7 @@
     },
     {
         "event_id": "gen_new_cat_adoption_anyroguelitter1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
          "sub_type": ["adoption"],
         "weight": 5,
@@ -53,8 +51,7 @@
     },
     {
         "event_id": "gen_new_cat_adoption_anywelcomingotherclanlitter1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
          "sub_type": ["adoption"],
         "weight": 5,
@@ -77,8 +74,7 @@
     },
     {
         "event_id": "gen_new_cat_adoption_anymultirepkittypetlitter1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
          "sub_type": ["adoption"],
         "weight": 5,
@@ -103,8 +99,7 @@
     },
     {
         "event_id": "gen_new_cat_adoption_anylitter1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
          "sub_type": ["adoption"],
         "weight": 5,
@@ -123,8 +118,7 @@
     },
     {
         "event_id": "gen_new_cat_anykit1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "weight": 5,
         "event_text": "m_c finds an abandoned kit and names {PRONOUN/n_c:0/object} n_c:0.",
@@ -142,8 +136,7 @@
     },
     {
         "event_id": "gen_new_cat_anylonerkit1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "weight": 5,
         "event_text": "m_c finds a loner near the border. It seems {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} bringing {PRONOUN/n_c:0/poss} kit named n_c_pre:1 to the Clan, as {PRONOUN/n_c:0/subject} could no longer care for {PRONOUN/n_c:1/object}.",
@@ -175,8 +168,7 @@
     },
     {
         "event_id": "gen_new_cat_anykittypetkit1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "weight": 5,
         "event_text": "m_c finds a kittypet near the border. It seems {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} bringing {PRONOUN/n_c:0/poss} kit named n_c_pre:1 to the Clan, as {PRONOUN/n_c:0/subject} could no longer care for {PRONOUN/n_c:1/object}.",
@@ -208,8 +200,7 @@
     },
     {
         "event_id": "gen_new_cat_anyroguekit1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "weight": 5,
         "event_text": "m_c finds a rogue near the border. It seems {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} bringing {PRONOUN/n_c:0/poss} kit named n_c_pre:1 to the Clan, as {PRONOUN/n_c:0/subject} could no longer care for {PRONOUN/n_c:1/object}.",
@@ -233,8 +224,7 @@
     },  
     {
         "event_id": "gen_new_cat_anypolymate1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "sub_type":["romance"],
         "weight": 5,
@@ -290,8 +280,7 @@
     },
     {
         "event_id": "gen_new_cat_anyloner1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "weight": 15,
         "event_text": "m_c finds a loner named n_c_pre:0, who joins the Clan. The loner decides to keep {PRONOUN/n_c:0/poss} old name.",
@@ -314,8 +303,7 @@
     },
     {
         "event_id": "gen_new_cat_anyloner2",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "weight": 20,
         "event_text": "A loner waits on the border for a patrol and, finding one led by m_c, asks to join the Clan. The loner decides to take on a more Clan-like name, and is now called n_c:0.",
@@ -337,8 +325,7 @@
     },
     {
         "event_id": "gen_new_cat_anyloner3",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "weight": 20,
         "event_text": "A loner waits on the border for a patrol and, finding one lead by m_c, asks to join the Clan. The loner decides to keep {PRONOUN/n_c:0/poss} old name, n_c_pre:0.",
@@ -361,8 +348,7 @@
     },
     {
         "event_id": "gen_new_cat_anyloner4",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "weight": 20,
         "event_text": "m_c finds a loner named n_c_pre:0, who joins the Clan. The loner decides to take on a more Clan-like name, and is now called n_c:0.",
@@ -385,8 +371,7 @@
     },
     {
         "event_id": "gen_new_cat_hostile_anyloner1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "weight": 15,
         "event_text": "While the Clan has no love for outsiders, sometimes new blood is needed. A patrol lead by m_c heads out and finds a wandering cat to bring into the Clan. The new cat, n_c_pre:0 takes on a more Clan-like name and is now known as n_c:0.",
@@ -408,8 +393,7 @@
     },
     {
         "event_id": "gen_new_cat_anykittypet1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "weight": 20,
         "event_text": "m_c finds a kittypet named n_c_pre:0, who joins the Clan. The kittypet decides to keep {PRONOUN/n_c:0/poss} old name.",
@@ -432,8 +416,7 @@
     },
     {
         "event_id": "gen_new_cat_anykittypet2",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "weight": 20,
         "event_text": "m_c finds a kittypet named n_c_pre:0, who joins the Clan. The kittypet decides to take on a more Clan-like name, and is now called n_c:0.",
@@ -456,8 +439,7 @@
     },
     {
         "event_id": "gen_new_cat_anykittypet3",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "weight": 20,
         "event_text": "A kittypet waits on the border for a patrol and, finding one lead by m_c, asks to join the Clan. The kittypet decides to keep {PRONOUN/n_c/poss} old name, n_c_pre:0.",
@@ -479,8 +461,7 @@
     },
     {
         "event_id": "gen_new_cat_anykittypet4",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "weight": 20,
         "event_text": "A kittypet waits on the border for a patrol and, finding one lead by m_c, asks to join the Clan. The kittypet decides to take on a more Clan-like name, and is now called n_c:0.",
@@ -504,8 +485,7 @@
     },
     {
         "event_id": "gen_new_cat_anyrogue1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "weight": 20,
         "event_text": "m_c finds a rogue named n_c_pre:0, who joins the Clan. The rogue decides to keep {PRONOUN/n_c:0/poss} old name.",
@@ -528,8 +508,7 @@
     },
     {
         "event_id": "gen_new_cat_anyrogue2",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "weight": 20,
         "event_text": "m_c finds a rogue named n_c_pre:0, who joins the Clan. The rogue decides to take on a more Clan-like name, and is now called n_c:0.",
@@ -552,8 +531,7 @@
     },
     {
         "event_id": "gen_new_cat_anyrogue3",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "weight": 20,
         "event_text": "A rogue waits on the border for a patrol and, finding one lead by m_c, asks to join the Clan. The rogue decides to keep {PRONOUN/n_c/poss} old name, n_c_pre:0.",
@@ -575,8 +553,7 @@
     },
     {
         "event_id": "gen_new_cat_anyrogue4",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "weight": 20,
         "event_text": "A rogue waits on the border for a patrol and, finding one lead by m_c, asks to join the Clan. The rogue decides to keep {PRONOUN/n_c/poss} old name, n_c_pre:0.",
@@ -599,8 +576,7 @@
 
     {
         "event_id": "gen_new_cat_anyotherclancat1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "weight": 20,
         "event_text": "m_c finds a warrior from o_c_n named n_c:0, who asks to join the Clan.",
@@ -622,8 +598,7 @@
     },
     {
         "event_id": "gen_new_cat_anyotherclancat2",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "weight": 10,
         "event_text": "m_c meets an injured warrior from o_c_n who asks to join the Clan, in exchange for healing.",
@@ -650,8 +625,7 @@
     },
     {
         "event_id": "gen_new_cat_war_any1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "sub_type": ["war"],
         "weight": 15,
@@ -675,8 +649,7 @@
     },
     {
         "event_id": "gen_new_cat_war_any2",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "sub_type": ["war"],
         "weight": 10,
@@ -700,8 +673,7 @@
     },
     {
         "event_id": "gen_new_cat_war_any2",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "sub_type": ["war"],
         "weight": 15,

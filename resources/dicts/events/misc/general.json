@@ -1,8 +1,7 @@
 [
   {
     "event_id": "gen_misc_murderreveal_any1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["murder_reveal"],
     "tags": ["clan_discovery"],
@@ -32,8 +31,7 @@
   },
   {
     "event_id": "gen_misc_murderreveal_any2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["murder_reveal"],
     "weight": 10,
@@ -50,8 +48,7 @@
   },
   {
     "event_id": "gen_misc_murderreveal_any3",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["murder_reveal"],
     "weight": 10,
@@ -68,8 +65,7 @@
   },
   {
     "event_id": "gen_misc_murderreveal_any4",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["murder_reveal"],
     "tags": ["clan_discovery"],
@@ -99,8 +95,7 @@
   },
   {
     "event_id": "gen_misc_murderreveal_any5",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["murder_reveal"],
     "tags": ["clan_discovery"],
@@ -114,8 +109,7 @@
   },
   {
     "event_id": "gen_misc_murderreveal_any6",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["murder_reveal"],
     "weight": 10,
@@ -132,8 +126,7 @@
   },
   {
     "event_id": "gen_misc_murderreveal_any7",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["murder_reveal"],
     "weight": 5,
@@ -166,8 +159,7 @@
   },
   {
     "event_id": "gen_misc_murderreveal_any8",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["murder_reveal"],
     "weight": 10,
@@ -184,8 +176,7 @@
   },
   {
     "event_id": "gen_misc_murderreveal_any9",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["murder_reveal"],
     "weight": 10,
@@ -202,8 +193,7 @@
   },
   {
     "event_id": "gen_misc_murderreveal_any10",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["murder_reveal"],
     "weight": 15,
@@ -230,8 +220,7 @@
   },
   {
     "event_id": "gen_misc_murderreveal_any11",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["murder_reveal"],
     "weight": 15,
@@ -257,8 +246,7 @@
   },
   {
     "event_id": "gen_misc_any_collar_accessory1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["accessory"],
     "weight": 5,
@@ -271,8 +259,7 @@
   }, 
   {
     "event_id": "gen_misc_any_misc1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c accidentally trespasses onto o_c_n's territory.",
@@ -287,8 +274,7 @@
   },
   {
     "event_id": "gen_misc_any_misc2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c went for a long walk this morning, deep in thought.",
@@ -299,8 +285,7 @@
   },
   {
     "event_id": "gen_misc_any_misc4",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c spends the evening regaling the Clan with stories of story_list.",
@@ -313,8 +298,7 @@
   },
   {
     "event_id": "gen_misc_any_misc5",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c was trying to fluff up {PRONOUN/m_c/poss} nest when {PRONOUN/m_c/subject} saw a thorn inside of {PRONOUN/m_c/poss} bedding. Another prank, but it could not fool {PRONOUN/m_c/object}!",
@@ -325,8 +309,7 @@
   },
   {
     "event_id": "gen_misc_any_misc6",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c wasn't looking where {PRONOUN/m_c/subject} {VERB/m_c/were/was} going and tripped over a small trunk, but came out of it with only {PRONOUN/m_c/poss} pride bruised.",
@@ -337,8 +320,7 @@
   },
   {
     "event_id": "gen_misc_any_misc7",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c misstepped and slipped from a rock, but landed on {PRONOUN/m_c/poss} feet nimbly, {PRONOUN/m_c/poss} Clanmates commenting on the show of dexterity.",
@@ -349,8 +331,7 @@
   },
   {
     "event_id": "gen_misc_any_misc8",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c tossed a snake out of the camp before it could bite someone.",
@@ -361,8 +342,7 @@
   },
   {
     "event_id": "gen_misc_any_misc9",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c tries to convince r_c to run away with {PRONOUN/m_c/object}.",
@@ -377,8 +357,7 @@
   },
   {
     "event_id": "gen_misc_any_misc10",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c believes {PRONOUN/m_c/subject}'{VERB/m_c/re/s} meant for something greater.",
@@ -389,8 +368,7 @@
   },
   {
     "event_id": "gen_misc_any_misc11",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c believes {PRONOUN/m_c/subject} {VERB/m_c/are/is} part of a new prophecy.",
@@ -401,8 +379,7 @@
   },
   {
     "event_id": "gen_misc_any_misc12",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c went missing for a few days.",
@@ -413,8 +390,7 @@
   },
   {
     "event_id": "gen_misc_any_misc13",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 5,
     "event_text": "m_c is caught breaking the Warrior Code.",
@@ -425,8 +401,7 @@
   },
   {
     "event_id": "gen_misc_any_misc14",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c is caught outside of the Clan's territory.",
@@ -437,8 +412,7 @@
   },
   {
     "event_id": "gen_misc_any_traitmisc1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c considers, as {PRONOUN/m_c/subject} {VERB/m_c/look/looks} out over the Clan, if perhaps this isn't where {PRONOUN/m_c/subject} {VERB/m_c/belong/belongs}.",
@@ -450,8 +424,7 @@
   },
   {
     "event_id": "gen_misc_any_traitmisc2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 20,
     "event_text": "The world around {PRONOUN/m_c/object} feels smaller lately; m_c looks out at the horizon and yearns for something unnameable.",
@@ -463,8 +436,7 @@
   },
   {
     "event_id": "gen_misc_any_dark1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "tags": ["skill_trait_required"],
     "weight": 5,
@@ -477,8 +449,7 @@
   },
   {
     "event_id": "gen_misc_any_ghost1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "tags": ["skill_trait_required"],
     "weight": 5,
@@ -491,8 +462,7 @@
   },
   {
     "event_id": "gen_misc_leaffall_misc1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["leaf-fall"],
     "tags": ["clan:kitten"],
     "weight": 20,
@@ -500,8 +470,7 @@
   },
   {
     "event_id": "gen_misc_leafbare_misc1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["leafbare"],
     "weight": 20,
     "event_text": "m_c and r_c begin a small camp snowball fight while on guard duty, eventually getting the whole Clan to join in.",
@@ -528,8 +497,7 @@
   },
   {
     "event_id": "gen_misc_leafbare_misc2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["leaf-bare"],
     "weight": 15,
     "event_text": "m_c encourages r_c to play in the snow with {PRONOUN/m_c/object} during a patrol.",
@@ -552,8 +520,7 @@
 },
   {
     "event_id": "gen_misc_any_accessory1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["accessory"],
     "weight": 10,
@@ -566,8 +533,7 @@
   },
   {
     "event_id": "gen_misc_any_accessory2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["accessory"],
     "weight": 20,
@@ -600,8 +566,7 @@
   },
   {
     "event_id": "gen_misc_any_accessory3",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["accessory"],
     "weight": 20,
@@ -614,8 +579,7 @@
   },
   {
     "event_id": "gen_misc_any_accessory4",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["ceremony"],
     "weight": 20,
@@ -640,8 +604,7 @@
   }, 
   {
     "event_id": "gen_misc_any_accessory5",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["accessory"],
     "weight": 20,
@@ -665,8 +628,7 @@
   },
   {
     "event_id": "gen_misc_any_accessory6",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["ceremony"],
     "weight": 20,
@@ -679,8 +641,7 @@
   },
   {
     "event_id": "gen_misc_any_accessory7",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["ceremony"],
     "weight": 20,
@@ -713,8 +674,7 @@
   },
   {
     "event_id": "gen_misc_leafbare_accessory1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["leaf-bare"],
     "sub_type": ["accessory"],
     "weight": 20,
@@ -727,8 +687,7 @@
   },
   {
     "event_id": "gen_misc_war_any_any1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 10,
     "event_text": "The war with o_c_n is beginning to disrupt the daily lives of c_n, forcing them to adapt to new routines and living situations in order to better defend themselves.",
@@ -739,8 +698,7 @@
   },
   {
     "event_id": "gen_misc_war_any_any2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 20,
     "event_text": "The tension between c_n and o_c_n is palpable, with even the smallest actions potentially leading to violence.",
@@ -752,8 +710,7 @@
   },
   {
     "event_id": "gen_misc_any_mate1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 5,
     "event_text": "m_c and r_c are so cuddled up and cozy in their nest they almost miss the dawn patrol.",
@@ -776,8 +733,7 @@
   },
   {
     "event_id": "gen_misc_any_mate2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "tags": ["clan:kitten"],
     "weight": 10,
@@ -801,8 +757,7 @@
   },
   {
     "event_id": "gen_misc_any_mate3",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 15,
     "event_text": "m_c watches r_c give an elder the best piece of prey on the pile. {PRONOUN/m_c/subject/CAP} {VERB/m_c/feel/feels} lucky to have such a kind cat as {PRONOUN/m_c/poss} mate.",
@@ -827,8 +782,7 @@
   },
   {
     "event_id": "gen_misc_any_mate4",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "tags": ["clan:kitten"],
     "weight": 15,
@@ -852,8 +806,7 @@
   },
   {
     "event_id": "gen_misc_any_romance1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type":["romance"],
     "weight": 15,
@@ -878,8 +831,7 @@
   },
   {
     "event_id": "gen_misc_any_mate6",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "subtype":["romance"],
     "weight": 15,
@@ -904,8 +856,7 @@
   },
   {
     "event_id": "gen_misc_newleaf_mate1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["newleaf"],
     "weight": 5,
     "event_text": "m_c sits still as r_c helps remove some leftover Leaf-bare fluff from the back of {PRONOUN/m_c/poss} neck.",
@@ -928,8 +879,7 @@
   },
   {
     "event_id": "gen_misc_greenleaf_mate2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["greenleaf"],
     "weight": 10,
     "event_text": "It's tough working in such extreme heat. m_c and r_c spend their evening relaxing together and cooling down in the shade.",
@@ -952,8 +902,7 @@
   },
   {
     "event_id": "gen_misc_any_mateaccessory1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["accessory"],
     "weight": 15,
@@ -978,8 +927,7 @@
   },
   {
     "event_id": "gen_misc_any_mateaccessory2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["accessory"],
     "weight": 5,
@@ -1004,8 +952,7 @@
   },
   {
     "event_id": "gen_misc_greenleaf_mateaccessory1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["greenleaf"],
     "sub_type": ["accessory"],
     "weight": 15,
@@ -1030,8 +977,7 @@
   },
   {
     "event_id": "gen_misc_leaffall_mateaccessory1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["greenleaf"],
     "sub_type": ["accessory"],
     "weight": 10,
@@ -1056,8 +1002,7 @@
   },
   {
     "event_id": "gen_misc_any_retireany1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c thinks about retiring.",
@@ -1068,8 +1013,7 @@
   },
   {
     "event_id": "gen_misc_multi_kit1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["greenleaf", "newleaf"],
     "weight": 15,
     "event_text": "m_c picks some flowers around the camp to bring back to the medicine den.",
@@ -1080,8 +1024,7 @@
   },
   {
     "event_id": "gen_misc_greenleaf_kit1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["greenleaf"],
     "weight": 15,
     "event_text": "m_c chases fireflies around the camp, while the older warriors sleep.",
@@ -1092,8 +1035,7 @@
   },
   {
         "event_id": "gen_misc_any_kitkit1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "weight": 10,
         "event_text": "m_c and r_c try to sneak out of camp, but are caught and returned to the nursery.",
@@ -1117,8 +1059,7 @@
     },
     {
         "event_id": "gen_misc_multi_kitkit1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["newleaf", "greenleaf"],
         "weight": 15,
         "event_text": "m_c and r_c sneak out of camp to chase butterflies.",
@@ -1140,8 +1081,7 @@
     },
     {
         "event_id": "gen_misc_greenleaf_kitkit1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["greenleaf"],
         "weight": 15,
         "event_text": "m_c and r_c chase fireflies around the camp, while the older warriors try to sleep.",
@@ -1165,8 +1105,7 @@
     },
     {
         "event_id": "gen_misc_leaffall_kitkit1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["leaf-fall"],
         "weight": 10,
         "event_text": "m_c and r_c lead a small leaf-gathering hunt, which the adult cats watch with amused purrs.",
@@ -1188,8 +1127,7 @@
     },
     {
         "event_id": "gen_misc_leaffall_kitkit2",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["leaf-fall"],
         "weight": 15,
         "event_text": "m_c and r_c play with the leaves around the camp.",
@@ -1211,8 +1149,7 @@
     },
     {
         "event_id": "gen_misc_leafbare_kitkit1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["leafbare"],
         "weight": 10,
         "event_text": "m_c and r_c make little snow lumps at the entrance to the camp.",
@@ -1234,8 +1171,7 @@
       },
     {
         "event_id": "gen_misc_leafbare_kitkit2",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["leafbare"],
         "weight": 10,
         "event_text": "m_c and r_c flick snow at the older warriors, giggling as they hide behind the nursery.",
@@ -1257,8 +1193,7 @@
     },
     {
         "event_id": "gen_misc_war_any_kitparent1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "sub_type": ["war"],
         "weight": 10,
@@ -1284,8 +1219,7 @@
     },
     {
         "event_id": "gen_misc_any_accessorykit1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "sub_type": ["accessory"],
         "weight": 15,
@@ -1298,8 +1232,7 @@
     },
     {
         "event_id": "gen_misc_any_accessorykit2",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "sub_type": ["accessory"],
         "weight": 15,
@@ -1312,8 +1245,7 @@
     },
     {
         "event_id": "gen_misc_multi_accessorykit1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["newleaf", "greenleaf"],
         "sub_type": ["accessory"],
         "weight": 15,
@@ -1326,8 +1258,7 @@
     },
     {
       "event_id": "gen_misc_newleaf_accessorykit1",
-      "biome": ["any"],
-      "camp": ["any"],
+      "location": ["any"],
       "season": ["newleaf"],
       "sub_type": ["accessory"],
       "weight": 15,
@@ -1340,8 +1271,7 @@
     },
     {
         "event_id": "gen_misc_leaffall_accessorykit1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["leaf-fall"],
         "sub_type": ["accessory"],
         "weight": 15,
@@ -1354,8 +1284,7 @@
     },
     {
         "event_id": "gen_misc_any_traitaccessorykit1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "sub_type": ["accessory"],
         "weight": 15,
@@ -1380,8 +1309,7 @@
     },
     {
         "event_id": "gen_misc_any_accessorykitkit1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "sub_type": ["accessory"],
         "weight": 15,
@@ -1410,8 +1338,7 @@
     },
     {
         "event_id": "gen_misc_any_accessorykitkit2",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "sub_type": ["accessory"],
         "weight": 10,
@@ -1441,8 +1368,7 @@
     },
     {
         "event_id": "gen_misc_any_accessorykitparent1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "sub_type": ["accessory"],
         "weight": 10,
@@ -1460,8 +1386,7 @@
     },
     {
         "event_id": "gen_misc_any_accessorykitparent2",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "sub_type": ["accessory"],
         "weight": 15,
@@ -1480,8 +1405,7 @@
     },
     {
         "event_id": "gen_misc_any_kitapprentice1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "weight": 15,
         "event_text": "m_c is scolded after sneaking out of camp.",
@@ -1492,8 +1416,7 @@
     },
     {
         "event_id": "gen_misc_any_adultsavingkitapprentice1",
-        "biome": ["any"],
-        "camp": ["any"],
+        "location": ["any"],
         "season": ["any"],
         "weight": 15,
         "event_text": "m_c falls into a river, but is saved by r_c.",
@@ -1517,8 +1440,7 @@
     },
     {
       "event_id": "gen_misc_any_apprentice1",
-      "biome": ["any"],
-      "camp": ["any"],
+      "location": ["any"],
       "season": ["any"],
       "weight": 20,
       "event_text": "m_c sneaks out of camp with r_c.",
@@ -1539,8 +1461,7 @@
   },
   {
     "event_id": "gen_misc_any_apprentice2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c and r_c sneak out of camp to see the sun rise.",
@@ -1562,8 +1483,7 @@
   },
   {
     "event_id": "gen_misc_any_apprentice3",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c and r_c sneak out of camp to see the moon rise.",
@@ -1585,8 +1505,7 @@
   },
   {
     "event_id": "gen_misc_any_apprentice4",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c and r_c try to sneak out of camp, but are caught by their mentors.",
@@ -1608,8 +1527,7 @@
   },
   {
     "event_id": "gen_misc_multi_apprentice1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["newleaf", "greenleaf", "leaf-fall"],
     "weight": 20,
     "event_text": "m_c and r_c were practicing climbing when they found a nest of strange eggs.",
@@ -1631,8 +1549,7 @@
   },
   {
     "event_id": "gen_misc_multi_apprentice2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["newleaf", "greenleaf", "leaf-fall"],
     "weight": 20,
     "event_text": "m_c and r_c sneak out of camp to go bird watching.",
@@ -1654,8 +1571,7 @@
   },
   {
     "event_id": "gen_misc_leaffall_apprentice1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["leaf-fall"],
     "weight": 20,
     "event_text": "m_c and r_c play in the fallen leaves outside of camp.",
@@ -1677,8 +1593,7 @@
   },
   {
     "event_id": "gen_misc_leafbare_apprentice1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["leaf-bare"],
     "weight": 20,
     "event_text": "m_c and r_c play in the snow outside of camp.",
@@ -1700,8 +1615,7 @@
   },
   {
     "event_id": "gen_misc_accessoryapprentice1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["accessory"],
     "weight": 20,
@@ -1727,8 +1641,7 @@
   },
   {
     "event_id": "gen_misc_any_accessoryapprentice2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["accessory"],
     "weight": 20,
@@ -1745,8 +1658,7 @@
   },
   {
     "event_id": "gen_misc_leafbare_accessoryapprentice",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["leaf-bare"],
     "sub_type": ["accessory"],
     "weight": 20,
@@ -1759,8 +1671,7 @@
   },
   {
     "event_id": "gen_misc_any_accessoryapprenticekit1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["accessory"],
     "weight": 20,
@@ -1783,8 +1694,7 @@
   },
   {
     "event_id": "gen_misc_war_any_apprentice1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["war"],
     "weight": 10,
@@ -1801,8 +1711,7 @@
   },
   {
     "event_id": "gen_misc_war_any_apprentice2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["war"],
     "weight": 20,
@@ -1814,8 +1723,7 @@
   },
   {
     "event_id": "gen_misc_any_scandalous_kittypet1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 15,
     "event_text": "m_c was caught sharing prey with a kittypet, who was chased off by a patrol.",
@@ -1843,8 +1751,7 @@
   },
   {
     "event_id": "gen_misc_any_scandalous_kittypet2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 15,
     "event_text": "m_c was seen touching noses with a kittypet. Scandalous!",
@@ -1872,8 +1779,7 @@
   },
   {
     "event_id": "gen_misc_any_scandalous_kittypet3",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 15,
     "event_text": "m_c was seen playing with a kittypet over the border.",
@@ -1901,8 +1807,7 @@
   },
   {
     "event_id": "gen_misc_any_scandalous_kittypet4",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 15,
     "event_text": "m_c was seen chasing a kittypet off of the territory.",
@@ -1930,8 +1835,7 @@
   },
   {
     "event_id": "gen_misc_any_scandalous_kittypet5",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 15,
     "event_text": "m_c was seen in a very serious conversation with a kittypet, who ran away when another patrol approached.",
@@ -1955,8 +1859,7 @@
   },
   {
     "event_id": "gen_misc_any_scandalous_other_clan1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c was seen touching noses with someone from o_c_n. Scandalous!",
@@ -1971,8 +1874,7 @@
   },
   {
     "event_id": "gen_misc_any_scandalous_other_clan2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c was loitering around o_c_n's border, looking for a specific cat.",
@@ -1983,8 +1885,7 @@
   },
   {
     "event_id": "gen_misc_any_scandalous_other_clan3",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c was seen racing along the border with {PRONOUN/m_c/poss} rival from o_c_n.",
@@ -1999,8 +1900,7 @@
   },    
   {
     "event_id": "gen_misc_any_scandalous_other_clan4",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "tags": [],
     "weight": 10,
@@ -2016,8 +1916,7 @@
   },
   {
     "event_id": "gen_misc_any_scandalous_other_clan5",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c was seen speaking calmly to a cat from o_c_n.",
@@ -2032,8 +1931,7 @@
   },
   {
     "event_id": "gen_misc_any_scandalous_loner1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 15,
     "event_text": "m_c was seen arguing, and borderline-fighting, with a loner.",
@@ -2061,8 +1959,7 @@
   },
   {
     "event_id": "gen_misc_any_scandalous_loner2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 15,
     "event_text": "m_c was seen touching noses with a loner. Scandalous!",
@@ -2090,8 +1987,7 @@
   },
   {
     "event_id": "gen_misc_any_scandalous_loner3",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 15,
     "event_text": "m_c was seen talking calmly to a loner, before both cats went their separate ways.",
@@ -2115,8 +2011,7 @@
   },
   {
     "event_id": "gen_misc_any_scandalous1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 15,
     "event_text": "m_c was seen taking food from a Twoleg!",
@@ -2127,8 +2022,7 @@
   },
   {
     "event_id": "gen_misc_any_scandalous_rogue1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 15,
     "event_text": "m_c was caught sharing prey with a rogue, who was chased off by a patrol.",
@@ -2156,8 +2050,7 @@
   },
   {
     "event_id": "gen_misc_any_scandalous_rogue2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 15,
     "event_text":  "m_c was seen touching noses with a rogue. Scandalous!",
@@ -2185,8 +2078,7 @@
   },
   {
     "event_id": "gen_misc_any_scandalous_rogue3",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 15,
     "event_text":"m_c was seen chasing a rogue off of the territory.",
@@ -2214,8 +2106,7 @@
   },
   {
     "event_id": "gen_misc_any_wartraitmediator1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["war"],
     "weight": 15,
@@ -2231,8 +2122,7 @@
   },
   {
     "event_id": "gen_misc_any_wartraitmediator2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["war"],
     "weight": 20,
@@ -2254,8 +2144,7 @@
   },
   {
     "event_id": "gen_misc_any_warmediator1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["war"],
     "weight": 15,
@@ -2270,8 +2159,7 @@
   },
   {
     "event_id": "gen_misc_any_mediatortoadult",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c pulls r_c to the side, quietly asking {PRONOUN/r_c/object} abou {PRONOUN/r_c/poss} crush on a fellow Clanmate.",
@@ -2303,8 +2191,7 @@
   },
   {
     "event_id": "gen_misc_any_mediatorkit",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c spots r_c looking a little bit lonely, and invites {PRONOUN/r_c/object} to watch as {PRONOUN/m_c/subject} {VERB/m_c/perform/performs} {PRONOUN/m_c/poss} duties.",
@@ -2335,8 +2222,7 @@
   },
   {
     "event_id": "gen_misc_any_war_mediatorleader1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["war"],
     "weight": 10,
@@ -2367,8 +2253,7 @@
   },
   {
     "event_id": "gen_misc_any_war_mediatorleader2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["war"],
     "weight": 10,
@@ -2394,8 +2279,7 @@
   },
   {
     "event_id": "gen_misc_any_war_mediatorleader3",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["war"],
     "weight": 10,
@@ -2421,8 +2305,7 @@
   },
   {
     "event_id": "gen_misc_any_medicinecatotherclan1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 15,
     "event_text": "m_c visits the other medicine cats.",
@@ -2437,8 +2320,7 @@
   },
   {
     "event_id": "gen_misc_any_medicinecatotherclan2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 15,
     "event_text": "m_c visits o_c_n to converse with their medicine cats about an omen StarClan sent.",
@@ -2454,8 +2336,7 @@
   },
   {
     "event_id": "gen_misc_any_medicinecatotherclan3",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 15,
     "event_text": "m_c visits o_c_n to congratulate them on their new medicine cat.",
@@ -2471,8 +2352,7 @@
   },
   {
     "event_id": "gen_misc_ceremony_any_medicinecatacc1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["ceremony"],
     "weight": 10,
@@ -2501,8 +2381,7 @@
   },
   {
     "event_id": "gen_misc_any_medicinecatleaderomen1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c speaks to r_c about an omen {PRONOUN/m_c/subject} saw while on patrol recently.",
@@ -2518,8 +2397,7 @@
   },
   {
     "event_id": "gen_misc_any_medicinecatmedcatomen1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c speaks to r_c about a potential omen and what it means.",
@@ -2535,8 +2413,7 @@
   },
   {
     "event_id": "gen_misc_any_medicinecatdream1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "tags": ["skill_trait_required"],
     "weight": 10,
@@ -2549,8 +2426,7 @@
   },
   {
     "event_id": "gen_misc_any_medicinecatdream2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "tags": ["skill_trait_required"],
     "weight": 10,
@@ -2563,8 +2439,7 @@
   },
   {
     "event_id": "gen_misc_any_medicinecatclairvoy1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "tags": ["skill_trait_required"],
     "weight": 10,
@@ -2577,8 +2452,7 @@
   },
   {
     "event_id": "gen_misc_any_medicinecatprophet1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c spends {PRONOUN/m_c/poss} day communing with StarClan, attempting to figure out a recent prophecy.",
@@ -2590,8 +2464,7 @@
   },
   {
     "event_id": "gen_misc_any_medicinecatelderlore1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c has been worried that c_n will lose the knowledge r_c has gained through {PRONOUN/r_c/poss} long life, but by sitting with r_c and discussing {PRONOUN/r_c/poss} experiences, m_c will ensure the lessons learned in the past are never forgotten.",
@@ -2607,8 +2480,7 @@
   },
   {
     "event_id": "gen_misc_any_medicinecatscandolous1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c was seen loudly bickering with the medicine cat of o_c_n.",
@@ -2623,8 +2495,7 @@
   },
   {
     "event_id": "gen_misc_any_medicinecatscandolous2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c was seen talking with a traveling loner healer on the border.",
@@ -2635,8 +2506,7 @@
   },
   {
     "event_id": "gen_misc_any_medicinecatwar1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["war"],
     "weight": 10,
@@ -2648,8 +2518,7 @@
   },
   {
     "event_id": "gen_misc_any_medicinecatwar2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["war"],
     "weight": 10,
@@ -2662,8 +2531,7 @@
   },
   {
     "event_id": "gen_misc_any_medicinecatwar3",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["war"],
     "weight": 10,
@@ -2675,8 +2543,7 @@
   },
   {
     "event_id": "gen_misc_any_medcatwar4",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["war"],
     "weight": 10,
@@ -2688,8 +2555,7 @@
   },
   {
     "event_id": "gen_misc_leafbare_medicinecatwar1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["leafbare"],
     "sub_type": ["war"],
     "weight": 10,
@@ -2701,8 +2567,7 @@
   },
   {
     "event_id": "gen_misc_any_medicinecatmedcatapp1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 5,
     "event_text": "m_c is getting increasingly annoyed with r_c because {PRONOUN/r_c/subject} {VERB/r_c/keep/keeps} bothering {PRONOUN/m_c/object} about the most trivial of wounds and aches.",
@@ -2726,8 +2591,7 @@
   },
   {
     "event_id": "gen_misc_any_elder1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c is brought back to camp after wandering off.",
@@ -2738,8 +2602,7 @@
   },
   {
     "event_id": "gen_misc_any_elder2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c awakens with multiple objects stacked on {PRONOUN/m_c/object}, and the sound of giggling cats in the distance.",
@@ -2750,8 +2613,7 @@
   },
   {
     "event_id": "gen_misc_any_insightfulelderleader1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 15,
     "event_text": "m_c speaks to r_c about how to better defend the camp.",
@@ -2767,8 +2629,7 @@
   },
   {
     "event_id": "gen_misc_any_campelder1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c helps reinforce the dens in the camp while the rest of the camp is on patrol.",
@@ -2780,8 +2641,7 @@
   },
   {
     "event_id": "gen_misc_any_campelder2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c places small feathers and shining stones near the nest of each Clanmate while they're on patrol.",
@@ -2793,8 +2653,7 @@
   },
   {
     "event_id": "gen_misc_any_campelder3",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 15,
     "event_text": "m_c keeps an eye on the camp while the warriors are on patrol.",
@@ -2806,8 +2665,7 @@
   },
   {
     "event_id": "gen_misc_any_storyelder1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c calls the younger cats to {PRONOUN/m_c/poss} den to tell stories of the Clan's past.",
@@ -2819,8 +2677,7 @@
   },
   {
     "event_id": "gen_misc_any_storyelder2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "tags": ["clan:kitten"],
     "weight": 15,
@@ -2841,8 +2698,7 @@
   },
   {
     "event_id": "gen_misc_any_retiredeputy1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 15,
     "event_text": "m_c thinks about retiring from being deputy.",
@@ -2853,8 +2709,7 @@
   },
   {
     "event_id": "gen_misc_any_otherclandeputy1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c travels to o_c_n to bring them an important message.",
@@ -2869,8 +2724,7 @@
   },
   {
     "event_id": "gen_misc_any_otherclandeputy2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c travels to the other Clans to bring them an important message.",
@@ -2885,8 +2739,7 @@
   },
   {
     "event_id": "gen_misc_any_wardeputy1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["war"],
     "weight": 10,
@@ -2898,8 +2751,7 @@
   },
   {
     "event_id": "gen_misc_any_warmultitraitdeputyleader1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "sub_type": ["war"],
     "weight": 5,
@@ -2916,8 +2768,7 @@
   },
   {
     "event_id": "gen_misc_any_warmultitraitdeputyleader2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
      "sub_type": ["war"],
     "weight": 10,
@@ -2943,8 +2794,7 @@
   },
   {
     "event_id": "gen_misc_any_wardeputyelder1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
      "sub_type": ["war"],
     "weight": 10,
@@ -2971,8 +2821,7 @@
   },
   {
     "event_id": "gen_misc_any_lowlivesleader1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "tags": ["low_lives"],
     "weight": 10,
@@ -2984,8 +2833,7 @@
   },
   {
     "event_id": "gen_misc_any_lowlivesleader2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "tags": ["low_lives"],
     "weight": 10,
@@ -2997,8 +2845,7 @@
   },
   {
     "event_id": "gen_misc_any_leader1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c feels as though the responsibility of leadership is crushing {PRONOUN/m_c/object}.",
@@ -3009,8 +2856,7 @@
   },
   {
     "event_id": "gen_misc_any_leader2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c calls a Clan meeting to give an important announcement.",
@@ -3021,8 +2867,7 @@
   },
   {
     "event_id": "gen_misc_any_warleader1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
      "sub_type": ["war"],
     "weight": 10,
@@ -3034,8 +2879,7 @@
   },
   {
     "event_id": "gen_misc_any_warleader2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
      "sub_type": ["war"],
     "weight": 10,
@@ -3047,8 +2891,7 @@
   },
   {
     "event_id": "gen_misc_any_warleader3",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
      "sub_type": ["war"],
     "weight": 10,
@@ -3060,8 +2903,7 @@
   },
   {
     "event_id": "gen_misc_any_leaderapprentice1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c assesses r_c's progress.",
@@ -3075,8 +2917,7 @@
   },
   {
     "event_id": "gen_misc_freshkill_anystolen1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
     "weight": 10,
@@ -3091,8 +2932,7 @@
   },
   {
     "event_id": "gen_misc_freshkill_anystolen1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
     "weight": 10,
@@ -3107,8 +2947,7 @@
   },
   {
     "event_id": "gen_misc_herb_anyallyrequest1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
     "weight": 10,
@@ -3127,8 +2966,7 @@
   },
   {
     "event_id": "gen_misc_herb_anyallyrequest2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
     "weight": 10,
@@ -3147,8 +2985,7 @@
   },
   {
     "event_id": "gen_misc_herb_anyallyrequest3",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
     "weight": 10,
@@ -3167,8 +3004,7 @@
   },
   {
     "event_id": "gen_misc_herb_anyallyrequest4",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
     "weight": 10,
@@ -3187,8 +3023,7 @@
   },
   {
     "event_id": "gen_misc_herb_anyallyrequest5",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
     "weight": 10,
@@ -3207,8 +3042,7 @@
   },
   {
     "event_id": "gen_misc_herb_anyallyrequest6",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
     "weight": 10,
@@ -3227,8 +3061,7 @@
   },
   {
     "event_id": "gen_misc_herb_anyallyrequeslungwort1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
     "weight": 10,
@@ -3247,8 +3080,7 @@
   },
   {
     "event_id": "gen_misc_herb_anyallyrequeslungwort2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
     "weight": 10,
@@ -3267,8 +3099,7 @@
   },
   {
     "event_id": "gen_misc_herb_anyallyrequeslungwort3",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
     "weight": 5,
@@ -3287,8 +3118,7 @@
   },
   {
     "event_id": "gen_misc_herb_anyallyrequeslungwort2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
     "weight": 10,
@@ -3307,8 +3137,7 @@
   },
   {
     "event_id": "gen_misc_herb_anywarsteal1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "subtype": ["war"],
     "tags": ["clan_wide"],
@@ -3328,8 +3157,7 @@
   },
   {
     "event_id": "gen_misc_herb_anydestruction1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
     "weight": 1,
@@ -3344,8 +3172,7 @@
   },
   {
     "event_id": "gen_misc_herb_anydestruction2",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
     "weight": 1,
@@ -3360,8 +3187,7 @@
   },
   {
     "event_id": "gen_misc_herb_anydestruction3",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
     "weight": 1,
@@ -3376,8 +3202,7 @@
   },
   {
     "event_id": "gen_misc_herb_leafbaredestruction1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["leaf-bare"],
     "tags": ["clan_wide"],
     "weight": 1,
@@ -3392,8 +3217,7 @@
   },
   {
     "event_id": "gen_misc_herb_newleafdestruction1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["newleaf"],
     "tags": ["clan_wide"],
     "weight": 1,
@@ -3408,8 +3232,7 @@
   },
   {
     "event_id": "gen_misc_herb_greenleafdestruction1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["greenleaf"],
     "tags": ["clan_wide"],
     "weight": 1,
@@ -3424,8 +3247,7 @@
   },
   {
     "event_id": "gen_misc_herb_anyrandomdestruction1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["greenleaf"],
     "tags": ["clan_wide"],
     "weight": 10,
@@ -3440,8 +3262,7 @@
   },
   {
     "event_id": "gen_misc_herb_denrefresh1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
     "weight": 15,
@@ -3456,8 +3277,7 @@
   },
   {
     "event_id": "gen_misc_herb_giveback1",
-    "biome": ["any"],
-    "camp": ["any"],
+    "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
     "weight": 30,

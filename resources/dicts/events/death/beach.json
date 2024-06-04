@@ -1,10 +1,7 @@
 [
     {
         "event_id": "bch_death_drown_any1",
-        "biome": ["beach"],
-        "camp": [
-            "any"
-        ],
+        "location": ["beach"],
         "season": [
             "any"
         ],
@@ -29,10 +26,7 @@
     },
     {
         "event_id": "bch_death_poison_any1",
-        "biome": [ "beach" ],
-        "camp": [
-            "any"
-        ],
+        "location": ["beach"],
         "season": [
             "any"
         ],
@@ -54,10 +48,7 @@
     },
     {
         "event_id": "bch_death_drown_any2",
-        "biome": [ "beach" ],
-        "camp": [
-            "any"
-        ],
+        "location": ["beach"],
         "season": [
             "any"
         ],
@@ -138,10 +129,7 @@
     },
     {
         "event_id": "bch_death_abyss_any1",
-        "biome": [ "beach" ],
-        "camp": [
-            "camp3"
-        ],
+        "location": ["beach:camp3"],
         "season": [
             "any"
         ],
@@ -165,10 +153,7 @@
     },
     {
         "event_id": "bch_death_drown_any3",
-        "biome": [ "beach" ],
-        "camp": [
-            "any"
-        ],
+        "location": ["beach"],
         "season": [
             "any"
         ],
@@ -208,12 +193,7 @@
     },
     {
         "event_id": "bch_death_heat_multiapp1",
-        "biome": [
-            "beach"
-        ],
-        "camp": [
-            "any"
-        ],
+        "location": ["beach"],
         "season": [
             "greenleaf",
             "newleaf",
@@ -240,12 +220,7 @@
     },
     {
         "event_id": "bch_death_heat_multiapp2",
-        "biome": [
-            "beach"
-        ],
-        "camp": [
-            "any"
-        ],
+        "location": ["beach"],
         "season": [
             "greenleaf",
             "newleaf",
@@ -281,12 +256,7 @@
     },
     {
         "event_id": "bch_death_heat_multiapp3",
-        "biome": [
-            "beach"
-        ],
-        "camp": [
-            "any"
-        ],
+        "location": ["beach"],
         "season": [
             "greenleaf",
             "newleaf",
@@ -322,12 +292,7 @@
     },
     {
         "event_id": "bch_death_heat_multichild1",
-        "biome": [
-            "beach"
-        ],
-        "camp": [
-            "any"
-        ],
+        "location": ["beach"],
         "season": [
             "greenleaf",
             "newleaf",
@@ -361,11 +326,8 @@
     },
     {
         "event_id": "bch_death_heat_multiapp4",
-        "biome": [
+        "location": [
             "beach"
-        ],
-        "camp": [
-            "any"
         ],
         "season": [
             "greenleaf",
@@ -393,12 +355,10 @@
     },
     {
         "event_id": "bch_death_heat_multiapp5",
-        "biome": [
+        "location": [
             "beach"
         ],
-        "camp": [
-            "any"
-        ],
+
         "season": [
             "greenleaf",
             "newleaf",
@@ -432,12 +392,10 @@
     },
     {
         "event_id": "bch_death_heat_multiapp6",
-        "biome": [
+        "location": [
             "beach"
         ],
-        "camp": [
-            "any"
-        ],
+
         "season": [
             "greenleaf",
             "newleaf",
@@ -473,10 +431,8 @@
     },
     {
         "event_id": "bch_death_heat_multichild2",
-        "biome": [ "beach" ],
-        "camp": [
-            "any"
-        ],
+        "location": [ "beach" ],
+
         "season": [
             "greenleaf",
             "newleaf",
@@ -510,10 +466,8 @@
     },
     {
         "event_id": "bch_death_heat_multichild3",
-        "biome": [ "beach" ],
-        "camp": [
-            "any"
-        ],
+        "location": [ "beach" ],
+
         "season": [
             "greenleaf",
             "newleaf",
@@ -552,10 +506,8 @@
     },
     {
         "event_id": "bch_death_heat_multiromance1",
-        "biome": [ "beach" ],
-        "camp": [
-            "any"
-        ],
+        "location": [ "beach" ],
+
         "season": [
             "greenleaf",
             "newleaf",
@@ -612,10 +564,8 @@
     },
     {
         "event_id": "bch_death_heat_multiromance2",
-        "biome": [ "beach" ],
-        "camp": [
-            "any"
-        ],
+        "location": [ "beach" ],
+
         "season": [
             "greenleaf",
             "newleaf",
@@ -651,10 +601,8 @@
     },
     {
         "event_id": "bch_death_drown_anyleader1",
-        "biome": [ "beach" ],
-        "camp": [
-            "any"
-        ],
+        "location": [ "beach" ],
+
         "season": [
             "any"
         ],
@@ -685,10 +633,8 @@
     },
     {
         "event_id": "bch_death_drown_anyleader2",
-        "biome": [ "beach" ],
-        "camp": [
-            "any"
-        ],
+        "location": [ "beach" ],
+
         "season": [
             "any"
         ],
@@ -776,10 +722,8 @@
     },
     {
         "event_id": "bch_death_murder_anyleader1",
-        "biome": [ "beach" ],
-        "camp": [
-            "any"
-        ],
+        "location": [ "beach" ],
+
         "season": [
             "any"
         ],
@@ -870,10 +814,7 @@
     },
     {
         "event_id": "bch_death_murder_anyleader2",
-        "biome": [ "beach" ],
-        "camp": [
-            "any"
-        ],
+        "location": [ "beach" ],
         "season": [
             "any"
         ],
@@ -964,10 +905,7 @@
     },
     {
         "event_id": "bch_death_murder_anyleader3",
-        "biome": [ "beach" ],
-        "camp": [
-            "any"
-        ],
+        "location": [ "beach" ],
         "season": [
             "any"
         ],

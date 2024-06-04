@@ -110,8 +110,7 @@ class GenerateEvents:
                         print(f"WARNING: some events resources which are used in generate_events. Have no 'event_text'.")
                     event = ShortEvent(
                         event_id=event["event_id"] if "event_id" in event else "",
-                        biome=event["biome"] if "biome" in event else ["any"],
-                        camp=event["camp"] if "camp" in event else ["any"],
+                        location=event["location"] if "location" in event else ["any"],
                         season=event["season"] if "season" in event else ["any"],
                         sub_type=event["sub_type"] if "sub_type" in event else [],
                         tags=event["tags"] if "tags" in event else [],
@@ -247,12 +246,30 @@ class GenerateEvents:
             if wrong_type:
                 continue
 
-            # check biome
-            if game.clan.biome.lower() not in event.biome and "any" not in event.biome:
+            discard = True
+            for location in event.location:
+                if location == "any":
+                    discard = False
+                    break
+                if ":" in location:
+                    location_info = location.split(":")
+                    req_biome = location_info[0]
+                    req_camps = location_info[1].split("_")
+                else:
+                    req_biome = location
+                    req_camps = ["any"]
+
+                if game.clan.biome.lower() == req_biome or "any" == req_biome:
+                    discard = False
+                if game.clan.camp_bg in req_camps or "any" in req_camps:
+                    discard = False
+
+                if not discard:
+                    break
+
+            if discard:
                 continue
-            # check camp
-            if game.clan.camp_bg.lower() not in event.camp and "any" not in event.camp:
-                continue
+
             # check season
             if game.clan.current_season.lower() not in event.season and "any" not in event.season:
                 continue
@@ -811,8 +828,7 @@ class ShortEvent:
     def __init__(
             self,
             event_id="",
-            biome=None,
-            camp=None,
+            location=None,
             season=None,
             sub_type=None,
             tags=None,
@@ -832,8 +848,7 @@ class ShortEvent:
         if not event_id:
             print("WARNING: moon event has no event_id")
         self.event_id = event_id
-        self.biome = biome if biome else ["any"]
-        self.camp = camp if camp else ["any"]
+        self.location = location if location else ["any"]
         self.season = season if season else ["any"]
         self.sub_type = sub_type if sub_type else []
         self.tags = tags if tags else []

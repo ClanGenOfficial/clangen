@@ -1,8 +1,7 @@
 [
   {
     "event_id": "mtn_misc_war_anyapps1",
-    "biome": ["mountainous"],
-    "camp": ["any"],
+    "location": ["mountainous"],
     "season": ["any"],
     "sub_type": ["war"],
     "tags": ["clan:apprentice"],
@@ -15,8 +14,7 @@
   },
   {
     "event_id": "mtn_misc_anyprophecymedcatprophet1",
-    "biome": ["mountainous"],
-    "camp": ["any"],
+    "location": ["mountainous"],
     "season": ["any"],
     "weight": 10,
     "event_text": "As a storm rages across the mountain outside, m_c is tucked up in the medicine cat den, {PRONOUN/m_c/poss} sleep anything but restful. {PRONOUN/m_c/subject/CAP} {VERB/m_c/keep/keeps} seeing flashes of prophecy_list_sight. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wake/wakes} with a shiver, wondering what {PRONOUN/m_c/poss} dreams mean for the Clan.",
@@ -28,8 +26,7 @@
   },
   {
     "event_id": "mtn_misc_anyomenmedcatomen1",
-    "biome": ["mountainous"],
-    "camp": ["any"],
+    "location": ["mountainous"],
     "season": ["any"],
     "weight": 10,
     "event_text": "The things {PRONOUN/m_c/subject} saw today, omen_list_sight... m_c sits on an isolated mountain ledge, considering what the omens foretell.",
@@ -41,8 +38,7 @@
   },
   {
     "event_id": "mtn_misc_camptwoleafbaremultilore1",
-    "biome": ["mountainous"],
-    "camp": ["camp2"],
+    "location": ["mountainous:camp2"],
     "season": ["leaf-bare"],
     "tags": ["clan:kitten"],
     "weight": 10,

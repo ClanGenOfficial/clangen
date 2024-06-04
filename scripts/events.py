@@ -1770,6 +1770,8 @@ class Events:
                 chance = base_chance
             else:
                 rep_adjust = int(reputation / 2)
+                if rep_adjust == 0:
+                    rep_adjust = 1
                 chance = base_chance + int(300 / rep_adjust)
         # neutral
         elif 31 <= reputation <= 70:
