@@ -128,6 +128,8 @@ class MakeClanScreen(Screens):
                 self.change_screen('start screen')
             if self.sub_screen == "game mode":
                 self.handle_game_mode_event(event)
+            elif self.sub_screen == 'random clan prompt':
+                self.handle_random_clan_prompt_event(event)
             elif self.sub_screen == 'name clan':
                 self.handle_name_clan_event(event)
             elif self.sub_screen == 'choose leader':
@@ -167,10 +169,10 @@ class MakeClanScreen(Screens):
         elif event.ui_element == self.elements['cruel_mode_button']:
             self.game_mode = 'cruel season'
             self.refresh_text_and_buttons()
-        # When the next_step button is pressed, go to the Clan naming page.
+        # When the next_step button is pressed, go to the random clan prompt.
         elif event.ui_element == self.elements['next_step']:
             game.settings['game_mode'] = self.game_mode
-            self.open_name_clan()
+            self.open_random_clan_prompt()
 
     def handle_game_mode_key(self, event):
         if event.key == pygame.K_ESCAPE:
@@ -192,6 +194,12 @@ class MakeClanScreen(Screens):
             if self.elements['next_step'].is_enabled:
                 game.settings['game_mode'] = self.game_mode
                 self.open_name_clan()
+
+    def handle_random_clan_prompt_event(self, event):
+        if event.ui_element == self.elements['yes_button']:
+            print("todo!")
+        elif event.ui_element == self.elements['no_button']:
+            self.open_name_clan()
 
     def handle_name_clan_event(self, event):
         if event.ui_element == self.elements["random"]:
@@ -971,6 +979,23 @@ class MakeClanScreen(Screens):
                                                                    manager=MANAGER)
 
         self.refresh_text_and_buttons()
+
+    def open_random_clan_prompt(self):
+        """Opens the prompt for the player to create a completely random clan"""
+        self.clear_all_page()
+        self.sub_screen = 'random clan prompt'
+
+        self.elements['prompt_text'] = pygame_gui.elements.UITextBox(
+            "Do you want to create a completely random clan?",
+            scale(pygame.Rect((300, 400), (1000, 200))),
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            manager=MANAGER
+        )
+        
+        self.elements['yes_button'] = UIImageButton(scale(pygame.Rect((400, 650), (200, 60))), "",
+                                                    object_id="#yes_button", manager=MANAGER)
+        self.elements['no_button'] = UIImageButton(scale(pygame.Rect((800, 650), (200, 60))), "",
+                                                object_id="#no_button", manager=MANAGER)
 
     def open_name_clan(self):
         """Opens the name Clan screen"""
