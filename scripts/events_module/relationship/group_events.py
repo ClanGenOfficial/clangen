@@ -446,7 +446,7 @@ class Group_Events:
         interaction: GroupInteraction, abbreviations_cat_id: dict
     ):
         """Check if the interaction is allowed with the current chosen cats."""
-        fulfilled_list = []
+        fulfilled_list = {}
 
         for name, rel_constraint in interaction.relationship_constraint.items():
             abbre_from = name.split("_to_")[0]
