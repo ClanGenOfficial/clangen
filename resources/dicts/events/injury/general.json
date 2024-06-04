@@ -932,7 +932,17 @@
                     "dislike"
                 ],
                 "amount": -20
+            },
+            {
+                "cats_from": ["n_c:0"],
+                "cats_to": ["m_c", "r_c"],
+                "mutual": true,
+                "values": ["dislike"],
+                "amount": 10
             }
+        ],
+        "new_cat": [
+            ["meeting", "rogue"]
         ]
     },
     {
@@ -2129,6 +2139,18 @@
                     "bruises"
                 ]
             }
+        ],
+        "new_cat": [
+            ["meeting", "rogue"]
+        ],
+        "relationships": [
+            {
+                "cats_from": ["n_c:0"],
+                "cats_to": ["m_c"],
+                "mutual": true,
+                "values": ["dislike"],
+                "amount": 5
+            }
         ]
     },
     {
@@ -2465,6 +2487,18 @@
                 "injuries": [
                     "scrapes"
                 ]
+            }
+        ],
+        "new_cat": [
+            ["meeting", "rogue"]
+        ],
+        "relationships": [
+            {
+                "cats_from": ["n_c:0"],
+                "cats_to": ["m_c"],
+                "mutual": true,
+                "values": ["dislike"],
+                "amount": 5
             }
         ]
     },
@@ -2933,16 +2967,9 @@
         ],
         "relationships": [
             {
-                "cats_from": ["m_c", "clan"],
-                "cats_to": ["r_c"],
-                "mutual": false,
-                "values": ["dislike"],
-                "amount": 10
-            },
-            {
-                "cats_from": ["r_c"],
-                "cats_to": ["m_c"],
-                "mutual": false,
+                "cats_from": ["m_c"],
+                "cats_to": ["n_c:0"],
+                "mutual": true,
                 "values": ["dislike"],
                 "amount": 10
             }
@@ -3257,11 +3284,6 @@
         "weight": 20,
         "event_text": "m_c was hurt while protecting the leader, r_c, from a rogue.",
         "m_c": {
-            "age": [
-                "young adult",
-                "adult",
-                "senior adult"
-            ],
             "status": [
                 "warrior",
                 "deputy"
@@ -3286,14 +3308,6 @@
             ]
         },
         "r_c": {
-            "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "elder"
-            ],
             "status": [
                 "leader"
             ]
@@ -3345,7 +3359,17 @@
                     "dislike"
                 ],
                 "amount": -10
+            },
+            {
+                "cats_from": ["n_c:0"],
+                "cats_to": ["m_c"],
+                "mutual": true,
+                "values": ["dislike"],
+                "amount": 5
             }
+        ],
+        "new_cat": [
+            ["meeting", "rogue"]
         ]
     },
     {
@@ -4073,7 +4097,17 @@
                     "dislike"
                 ],
                 "amount": 5
+            },
+            {
+                "cats_from": ["n_c:0"],
+                "cats_to": ["m_c", "r_c"],
+                "mutual": false,
+                "values": ["dislike"],
+                "amount": 15
             }
+        ],
+        "new_cat": [
+            ["meeting", "rogue", "exists"]
         ]
     },
     {
