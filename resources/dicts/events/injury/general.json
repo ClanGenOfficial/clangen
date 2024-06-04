@@ -3451,7 +3451,7 @@
             "any"
         ],
         "weight": 20,
-        "event_text": "m_c was hurt by o_c warriors after being ordered by r_c to go over the border.",
+        "event_text": "m_c was hurt by o_c_n warriors after being ordered by r_c to go over the border.",
         "m_c": {
             "age": [
                 "young adult",
@@ -3506,8 +3506,8 @@
         "history": [
             {
                 "cats": ["m_c"],
-            "scar": "m_c was scarred by o_c warriors, after being ordered to go over the border by r_c.",
-            "reg_death": "m_c died from wounds caused by o_c warriors, after being ordered to go over the border by r_c.."
+            "scar": "m_c was scarred by o_c_n warriors, after being ordered to go over the border by r_c.",
+            "reg_death": "m_c died from wounds caused by o_c_n warriors, after being ordered to go over the border by r_c.."
             }
         ],
         "relationships": [
@@ -3943,7 +3943,7 @@
             "war"
         ],
         "weight": 20,
-        "event_text": "A horrible battle occurred between c_n and o_c patrols after the two patrols traded insults at the border. m_c is left badly injured.",
+        "event_text": "A horrible battle occurred between c_n and o_c_n patrols after the two patrols traded insults at the border. m_c is left badly injured.",
         "m_c": {
             "age": [
                 "adolescent"
@@ -3968,8 +3968,8 @@
         "history": [
             {
                 "cats": ["m_c"],
-                "scar": "m_c was scarred after a fight with o_c cats.",
-                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after fighting with o_c cats."
+                "scar": "m_c was scarred after a fight with o_c_n cats.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after fighting with o_c_n cats."
             }
         ],
         "other_clan": {
@@ -7253,7 +7253,7 @@
             "any"
         ],
         "weight": 20,
-        "event_text": "While patrolling the o_c borders, m_c stepped on a concealed pit trap set by what seemed to be o_c warriors. m_c freezes with shock as {PRONOUN/m_c/subject} {VERB/m_c/plunge/plunges} into the depths of the trap, causing m_c to limp back to camp, flanked by other cats on the patrol.",
+        "event_text": "While patrolling the o_c_n borders, m_c stepped on a concealed pit trap set by what seemed to be o_c_n warriors. m_c freezes with shock as {PRONOUN/m_c/subject} {VERB/m_c/plunge/plunges} into the depths of the trap, causing m_c to limp back to camp, flanked by other cats on the patrol.",
         "m_c": {
             "age": [
                 "any"
@@ -7299,7 +7299,7 @@
             "war"
         ],
         "weight": 20,
-        "event_text": "During a skirmish, m_c bounds into battle against an o_c warrior, protecting r_c from a powerful blow. m_c bears the brunt of the strike, and r_c helps them back to camp.",
+        "event_text": "During a skirmish, m_c bounds into battle against an o_c_n warrior, protecting r_c from a powerful blow. m_c bears the brunt of the strike, and r_c helps them back to camp.",
         "m_c": {
             "status": [
                 "warrior",
