@@ -1041,7 +1041,6 @@ class Cat():
                 else:
                     extra_givers = sample(possible_sc_cats, k=amount)
             else:
-                # print(game.clan.darkforest_cats)
                 possible_df_cats = [i for i in game.clan.darkforest_cats if
                                     self.fetch_cat(i) and
                                     i not in life_givers and
@@ -1400,9 +1399,8 @@ class Cat():
             return False
 
         # CLAN FOCUS! - if the focus 'rest and recover' is selected
-        elif game.clan.clan_settings.get("rest and recover") and \
-                self.illnesses[illness]["duration"] + moons_prior - moons_with <= 0:
-            # print(f"rest and recover - illness {illness} of {self.name} healed earlier")
+        elif game.clan.clan_settings.get("rest and recover") and\
+            self.illnesses[illness]["duration"] + moons_prior - moons_with <= 0:
             self.healed_condition = True
             return False
 
@@ -1441,9 +1439,8 @@ class Cat():
 
         # CLAN FOCUS! - if the focus 'rest and recover' is selected
         elif not self.injuries[injury]["complication"] and \
-                game.clan.clan_settings.get("rest and recover") and \
-                self.injuries[injury]["duration"] + moons_prior - moons_with <= 0:
-            # print(f"rest and recover - injury {injury} of {self.name} healed earlier")
+            game.clan.clan_settings.get("rest and recover") and\
+            self.injuries[injury]["duration"] + moons_prior - moons_with <= 0:
             self.healed_condition = True
             return False
 

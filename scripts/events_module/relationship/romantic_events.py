@@ -249,7 +249,6 @@ class Romantic_Events():
             relationship.link_relationship()
             relationship.opposite_relationship.log.append(interaction_str + f" - {cat_to.name} was {cat_to.moons} moons old")
 
-        #print(f"ROMANTIC! {cat_from.name} to {cat_to.name}")
         return True
 
     @staticmethod
@@ -773,5 +772,4 @@ class Romantic_Events():
         # Then, at least a 1/5 chance
         chance_number = max(chance_number, 5)
 
-        #print(f"BREAKUP CHANCE - {cat_to.name}, {cat_from.name}: {chance_number}")
         return chance_number

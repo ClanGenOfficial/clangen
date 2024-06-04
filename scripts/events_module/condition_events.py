@@ -225,7 +225,6 @@ class Condition_Events():
                 if game.clan.clan_settings.get("rest and recover"):
                     stopping_chance = game.config["focus"]["rest and recover"]["illness_prevent"]
                     if not int(random.random() * stopping_chance):
-                        # print(f"rest and recover - illness prevented for {cat.name}")
                         return triggered
 
                 season_dict = Condition_Events.ILLNESSES_SEASON_LIST[season]
@@ -313,13 +312,13 @@ class Condition_Events():
                 if game.clan.clan_settings.get("rest and recover"):
                     stopping_chance = game.config["focus"]["rest and recover"]["injury_prevent"]
                     if not int(random.random() * stopping_chance):
-                        # print(f"rest and recover - injury prevented for {cat.name}")
                         return False
 
                 handle_short_events.handle_event(event_type="health",
                                                  main_cat=cat,
                                                  random_cat=random_cat,
                                                  freshkill_pile=game.clan.freshkill_pile)
+
 
         # just double-checking that trigger is only returned True if the cat is dead
         if cat.status != "leader":
@@ -982,7 +981,6 @@ class Condition_Events():
                 else:
                     print("No herbs to use for this injury")
                     return
-                print(f"New herb found: {herb_used}")
 
             # deplete the herb
             amount_used = 1
