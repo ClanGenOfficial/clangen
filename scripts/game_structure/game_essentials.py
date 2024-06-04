@@ -317,7 +317,6 @@ class Game():
         if not clan_list:
             print('No clans found')
             return None
-        # print('Clans found:', clan_list)
         return clan_list
 
     def save_clanlist(self, loaded_clan=None):

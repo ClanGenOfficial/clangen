@@ -327,7 +327,6 @@ class DeleteCheck(UIWindow):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.delete_it_button:
                 game.switches['window_open'] = False
-                print("delete")
                 rempath = get_save_dir() + "/" + self.clan_name
                 shutil.rmtree(rempath)
                 if os.path.exists(rempath + 'clan.json'):
