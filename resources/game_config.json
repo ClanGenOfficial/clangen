@@ -250,11 +250,14 @@
 		"best_stat_modifier": 10,
 		"fail_stat_cat_modifier": -15,
 		"chance_of_romance_patrol": 16,
-		"debug_ensure_patrol_id": "gen_bord_welcomingbinglegift1",
+		"debug_ensure_patrol_id": null,
 		"comment": [
 			"the Cruel Season difficulty modifier needs to have a space rather than an underscore,",
 			"due to how it's written in the save files. So don't try to 'fix' it."
 		]
+	},
+	"event_generation": {
+		"debug_ensure_event_id": "gen_death_border_any1"
 	},
 	"death_related": {
 		"leader_death_chance": 50,

@@ -116,6 +116,20 @@ class HandleShortEvents():
             freshkill_active=FRESHKILL_EVENT_ACTIVE,
             freshkill_trigger_factor=FRESHKILL_EVENT_TRIGGER_FACTOR,
             sub_types=self.sub_types)
+
+        if isinstance(game.config["event_generation"]["debug_ensure_event_id"], str):
+            found = False
+            for _event in final_events:
+                if _event.event_id == game.config["event_generation"]["debug_ensure_event_id"]:
+                    final_events = [_event]
+                    print(f"debug_ensure_event_id: {game.config['event_generation']['debug_ensure_event_id']} "
+                          f"was set as the only event option")
+                    found = True
+                    break
+            if not found:
+                print(f"debug_ensure_event_id: {game.config['event_generation']['debug_ensure_event_id']} "
+                      f"was not possible for {self.main_cat.name}.  {self.main_cat.name} was looking for a {event_type}: {self.sub_types} event")
+
         # ---------------------------------------------------------------------------- #
         #                               do the event                                   #
         # ---------------------------------------------------------------------------- #
@@ -125,6 +139,7 @@ class HandleShortEvents():
         except IndexError:
             print(f"WARNING: no {event_type}: {self.sub_types} events found for {self.main_cat.name}")
             return
+
         self.text = self.chosen_event.text
 
         self.additional_event_text = ""
@@ -684,7 +699,6 @@ class HandleShortEvents():
         print(f"ENDING HERB SUPPLY: {herbs.items()}")
 
         self.herb_notice = self.herb_notice + adjust_list_text(herb_list)
-
 
     @staticmethod
     def handle_witness(main_cat, random_cat):

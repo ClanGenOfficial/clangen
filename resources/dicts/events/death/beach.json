@@ -12,15 +12,14 @@
         "weight": 20,
         "event_text": "m_c was washed out to sea, never to be seen again.",
         "m_c": {
-            "age": [ "adolescent", "young adult", "adult", "senior adult" ],
-            "status": ["leader", "deputy", "mediator", "medicine cat", "mediator apprentice", "medicine cat apprentice", "warrior", "apprentice", "elder"],
+            "age": [ "adolescent", "young adult", "adult", "senior adult", "senior"],
             "dies": true
         },
         "history":[
             {
                 "cats": [ "m_c" ],
                 "reg_death": "m_c was washed out to sea.",
-            "lead_death": "{VERB/m_c/were/was} washed out to sea"
+                "lead_death": "{VERB/m_c/were/was} washed out to sea"
             }
         ]
     },
@@ -34,13 +33,11 @@
         "weight": 20,
         "event_text": "m_c was poisoned by a sea creature and died.",
         "m_c": {
-            "age": [ "any" ],
-            "status": [ "any"],
             "dies": true
         },
         "history": [
             {
-                "cats": [ "m_c" ],
+                "cats": ["m_c"],
                 "reg_death": "m_c was killed by a poisonous sea creature.",
                 "lead_death": "{VERB/m_c/were/was} killed by a poisonous sea creature"
             }
@@ -60,9 +57,7 @@
         "weight": 20,
         "event_text": "m_c was lost to the sea while trying to save r_c from drowning.",
         "m_c": {
-            "age": [ "adolescent", "young adult", "adult", "senior adult" ],
-            "status": [ "leader", "deputy", "mediator", "medicine cat", "mediator apprentice", "medicine cat apprentice", "warrior", "apprentice", "elder" ],
-            "relationship_status": [],
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
             "trait": [
                 "bold",
                 "ambitious",
@@ -78,14 +73,12 @@
             "dies": true
         },
         "r_c": {
-            "age": [ "any" ],
-            "status": [ "any" ]
+            "age": ["any"],
+            "status": ["any"]
         },
         "injury": [
             {
-                "cats": [
-                    "r_c"
-                ],
+                "cats": ["r_c"],
                 "injuries": [
                     "water in their lungs"
                 ]
@@ -139,8 +132,7 @@
         "weight": 20,
         "event_text": "m_c found {PRONOUN/m_c/self} staring at an odd shadow in the sea. One distracted paw slipped and {PRONOUN/m_c/subject} fell into the waves where something large and unseen tangled around {PRONOUN/m_c/object}, dragging {PRONOUN/m_c/object} into the abyss.",
         "m_c": {
-            "age": [ "adolescent", "young adult", "adult", "senior adult" ],
-            "status": [ "leader", "deputy", "mediator", "medicine cat", "mediator apprentice", "medicine cat apprentice", "warrior", "apprentice", "elder" ],
+            "age": [ "adolescent", "young adult", "adult", "senior adult", "senior"],
             "dies": true
         },
         "history": [
@@ -162,26 +154,22 @@
         "weight": 20,
         "event_text": "m_c drowned after being pushed out to sea by o_c_n warriors.",
         "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult" 
-                ],
             "status": [
                 "apprentice",
                 "warrior",
                 "leader",
                 "deputy",
                 "mediator",
-                "medicine cat" ],
+                "mediator apprentice",
+                "medicine cat",
+                "medicine cat apprentice"],
             "dies": true
         },
         "history": [
             {
                 "cats": ["m_c"],
-            "reg_death": "m_c was pushed out to sea by enemy warriors.",
-            "lead_death": "{VERB/m_c/were/was} pushed out to sea by enemy warriors"
+                "reg_death": "m_c was pushed out to sea by enemy warriors.",
+                "lead_death": "{VERB/m_c/were/was} pushed out to sea by enemy warriors"
             }
         ],
         "other_clan": {
@@ -440,7 +428,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c  never meant to meet StarClan this way, rotting away under the sun after fainting from dehydration, heat exhaustion, and overexertion. r_c tragically discovers {PRONOUN/m_c/poss} body, unable to stop {PRONOUN/r_c/poss} desperate wails at the site of {PRONOUN/r_c/poss} child's body.",
+        "event_text": "m_c never meant to meet StarClan this way, rotting away under the sun after fainting from dehydration, heat exhaustion, and overexertion. r_c tragically discovers {PRONOUN/m_c/poss} body, unable to stop {PRONOUN/r_c/poss} desperate wails at the site of {PRONOUN/r_c/poss} child's body.",
         "m_c": {
             "age": [
                 "adolescent"
@@ -576,9 +564,6 @@
         "weight": 20,
         "event_text": "m_c had invited r_c out days earlier, aiming to train and grow closer together. However, when r_c arrived, m_c never showed up; m_c wasn't seen around camp, nor had {PRONOUN/m_c/subject} been to training. It wasn't until r_c stumbles upon {PRONOUN/m_c/poss} body, the former succumbing to dehydration and exhaustion, that {PRONOUN/r_c/subject} {VERB/r_c/understand/understands} why.",
         "m_c": {
-            "age": [
-                "adolescent", "young adult"
-            ],
             "status": [
                 "apprentice"
             ],
@@ -600,128 +585,7 @@
         ]
     },
     {
-        "event_id": "bch_death_drown_anyleader1",
-        "location": [ "beach" ],
-
-        "season": [
-            "any"
-        ],
-        "tags": [
-            "all_lives",
-            "no_body"
-        ],
-        "weight": 20,
-        "event_text": "m_c was washed out to sea, never to be seen again.",
-        "m_c": {
-            "age": [
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ],
-            "status": [
-                "leader"
-            ],
-            "dies": true
-        },
-        "history": [
-            {
-            "cats": [ "m_c" ],
-            "lead_death": "{VERB/m_c/were/was} washed out to sea"
-            }
-        ]
-    },
-    {
-        "event_id": "bch_death_drown_anyleader2",
-        "location": [ "beach" ],
-
-        "season": [
-            "any"
-        ],
-        "tags": [
-            "all_lives",
-            "shock",
-            "no_body"
-        ],
-        "weight": 20,
-        "event_text": "m_c was lost to the sea while trying to save r_c from drowning.",
-        "m_c": {
-            "age": [
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ],
-            "status": [
-                "leader"
-            ],
-            "relationship_status": [],
-            "trait": [
-                "bold",
-                "ambitious",
-                "compassionate",
-                "daring",
-                "confident",
-                "fierce",
-                "loyal",
-                "loving",
-                "empathetic",
-                "responsible"
-            ],
-            "dies": true
-        },
-        "r_c": {
-            "age": [ "any" ],
-            "status": [ "any" ]
-        },
-        "injury": [
-            {
-                "cats": [
-                    "r_c"
-                ],
-                "injuries": [
-                    "water in their lungs"
-                ]
-            }
-        ],
-        "history": [
-            {
-            "cats": [ "m_c" ],
-            "lead_death": "{VERB/m_c/were/was} lost to the sea while trying to save r_c"
-            }
-        ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "platonic",
-                    "trust",
-                    "respect"
-                ],
-                "amount": 15
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "dislike"
-                ],
-                "amount": -15
-            }
-
-        ]
-    },
-    {
-        "event_id": "bch_death_murder_anyleader1",
+        "event_id": "bch_death_murder_cliffdrop1",
         "location": [ "beach" ],
 
         "season": [
@@ -732,7 +596,7 @@
             "all_lives",
             "no_body"
         ],
-        "weight": 20,
+        "weight": 40,
         "event_text": "m_c was pushed off a cliff into the rock-filled waves below. r_c stood at the edge, eyes narrowed and unblinking, till the body slid beneath the waves.",
         "m_c": {
             "age": [
@@ -741,9 +605,6 @@
                 "senior adult",
                 "senior"
             ],
-            "status": [
-                "leader"
-            ],
             "relationship_status": [],
             "trait": [
                 "adventurous",
@@ -761,7 +622,7 @@
                 "adult",
                 "senior adult"
             ],
-            "status": [ "any" ],
+            "status": ["any"],
             "skill": [
                 "HUNTER,2",
                 "CLEVER,2",
@@ -787,7 +648,8 @@
         },
         "history": [
             {
-            "cats": [ "m_c" ],
+            "cats": ["m_c"],
+            "reg_death": "m_c died when {PRONOUN/m_c/subject} {VERB/m_c/were/was} shoved off a cliff by r_c",
             "lead_death": "{VERB/m_c/were/was} shoved off a cliff by r_c"
             }
         ],
@@ -813,7 +675,7 @@
         ]
     },
     {
-        "event_id": "bch_death_murder_anyleader2",
+        "event_id": "bch_death_murder_cliffdrop2",
         "location": [ "beach" ],
         "season": [
             "any"
@@ -823,7 +685,7 @@
             "all_lives",
             "no_body"
         ],
-        "weight": 20,
+        "weight": 40,
         "event_text": "m_c was pushed off a cliff into the rock-filled waves below. r_c insists it was an accident and that m_c slipped on loose shale.",
         "m_c": {
             "age": [
@@ -832,10 +694,6 @@
                 "senior adult",
                 "senior"
             ],
-            "status": [
-                "leader"
-            ],
-            "relationship_status": [],
             "trait": [
                 "adventurous",
                 "daring",
@@ -848,8 +706,8 @@
         },
         "r_c": {
             "age": [
-                "young adult",
                 "adult",
+                "young adult",
                 "senior adult"
             ],
             "status": [ "any" ],
@@ -879,6 +737,7 @@
         "history": [
             {
             "cats": [ "m_c" ],
+            "reg_death": "m_c died when {PRONOUN/m_c/subject} {VERB/m_c/were/was} shoved off a cliff by r_c",
             "lead_death": "{VERB/m_c/were/was} shoved off a cliff by r_c"
             }
         ],
@@ -904,7 +763,7 @@
         ]
     },
     {
-        "event_id": "bch_death_murder_anyleader3",
+        "event_id": "bch_death_murder_anyleader1",
         "location": [ "beach" ],
         "season": [
             "any"
@@ -914,15 +773,9 @@
             "all_lives",
             "no_body"
         ],
-        "weight": 20,
+        "weight": 40,
         "event_text": "Usually m_c is well aware of when the high tide will come in, but today {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} distracted and run ragged with Clan business. Trapped against the cliffs with treacherous waves pulling at {PRONOUN/m_c/poss} paws, the last thing {PRONOUN/m_c/subject} {VERB/m_c/see/sees} is the smug grin of r_c sat high above on the rocks.",
         "m_c": {
-            "age": [
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ],
             "status": [
                 "leader"
             ],
@@ -989,4 +842,5 @@
                 "amount": -25
             }
         ]
-    }]
+    }
+]

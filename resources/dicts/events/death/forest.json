@@ -10,7 +10,6 @@
         "weight": 20,
         "event_text": "m_c was killed by a falling branch during a battle in a heavily wooded area of the forest.",
         "m_c": {
-            "age": [ "adolescent", "young adult", "adult", "senior adult"],
             "status": [ "apprentice", "warrior", "deputy", "leader"],
             "dies": true
         },
@@ -30,10 +29,8 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c was found dead underneath an oak tree with dog scent wreathing around them, after saying they were going to the dirtplace and not coming back.",
+        "event_text": "m_c was found dead underneath an oak tree with dog scent wreathing around them.",
         "m_c": {
-            "age": [],
-            "status": [],
             "not_skill": [
                 "CLIMBER,2"
             ],
@@ -55,10 +52,7 @@
     },
     {
         "event_id": "fst_death_tree_any1",
-        "location": [
-            "forest"
-        ],
-        "location": ["any"],
+        "location": ["forest"],
         "season": [
             "any"
         ],
@@ -66,16 +60,6 @@
         "weight": 20,
         "event_text": "m_c was crushed when a tree fell into camp.",
         "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ],
-            "status": [
-                "any"
-            ],
             "dies": true
         },
         "history": [

@@ -29,7 +29,7 @@ from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
 from scripts.utility import change_clan_relations, change_clan_reputation, ceremony_text_adjust, get_current_season, \
     adjust_list_text, ongoing_event_text_adjust, event_text_adjust, get_other_clan, history_text_adjust, \
-    get_alive_status_cats, get_random_moon_cat
+    get_alive_status_cats, get_random_moon_cat, unpack_rel_block
 from scripts.events_module.generate_events import GenerateEvents, generate_events
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
 from scripts.game_structure.windows import SaveError
@@ -378,25 +378,23 @@ class Events:
 
             # give new thought to cats
             if "new_thought" in cat_dict:
-                outsider_cat.thought = event_text_adjust(Cat, cat_dict["new_thought"], outsider_cat, clan=game.clan)
+                outsider_cat.thought = event_text_adjust(Cat, text=cat_dict["new_thought"], main_cat=outsider_cat, clan=game.clan)
 
             if "kit_thought" in cat_dict:
                 additional_kits = outsider_cat.get_children()
                 if additional_kits:
                     for kit_ID in additional_kits:
                         kit = Cat.fetch_cat(kit_ID)
-                        kit.thought = event_text_adjust(Cat, cat_dict["kit_thought"], kit,
+                        kit.thought = event_text_adjust(Cat, text=cat_dict["kit_thought"], main_cat=kit,
                                                         clan=game.clan)
             if "relationships" in cat_dict:
-                # relationship blocks currently do not do anything, I'm leaving them in the event dicts anyway
-                # because I plan to make them functional within the moon events reformat which cleans up a lot of
-                # relationship adding utilities.  So either I make it messy now and clean it up later, or I leave it
-                # defunct for now and don't have to untangle it later. - Scribble
+                unpack_rel_block(Cat, cat_dict["relationships"], extra_cat=outsider_cat)
+
                 pass
 
             # adjust text and add to event list
             event_text = event_text_adjust(Cat,
-                                           event_text,
+                                           text=event_text,
                                            main_cat=outsider_cat,
                                            clan=game.clan)
             game.cur_events_list.insert(4, Single_Event(event_text, "misc", involved_cats))

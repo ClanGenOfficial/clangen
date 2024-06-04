@@ -275,7 +275,6 @@ class GenerateEvents:
             # check tags
             prevent_bypass = "skill_trait_required" in event.tags
 
-
             # some events are classic only
             if game.clan.game_mode in ["expanded", "cruel season"] and "classic" in event.tags:
                 continue
@@ -542,6 +541,7 @@ class GenerateEvents:
                 if "war" in event.sub_type:
                     rel_change_type = game.switches["war_rel_change_type"]
                     if event.other_clan["changed"] < 0 and rel_change_type != "rel_down":
+                        # print(f"dropped {event.event_id} due to wrong rel change type")
                         continue
 
                 # don't waste time checking rep if any rep is allowed
@@ -878,9 +878,9 @@ class ShortEvent:
         self.r_c = r_c if r_c else {}
         if self.r_c:
             if "age" not in self.r_c:
-                self.r_c["age"] = []
+                self.r_c["age"] = ["any"]
             if "status" not in self.r_c:
-                self.r_c["status"] = []
+                self.r_c["status"] = ["any"]
             if "relationship_status" not in self.r_c:
                 self.r_c["relationship_status"] = []
             if "skill" not in self.r_c:

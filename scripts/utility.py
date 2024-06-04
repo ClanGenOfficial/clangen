@@ -486,7 +486,7 @@ def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, 
                         chosen_cat.name.give_suffix(
                             pelt=chosen_cat.pelt,
                             biome=game.clan.biome,
-                            tortiepattern=chosen_cat.tortiepattern
+                            tortiepattern=chosen_cat.pelt.tortiepattern
                         )
                 else:  # completely new name
                     chosen_cat.name.give_prefix(
@@ -1134,7 +1134,7 @@ def filter_relationship_type(group: list, filter_types: list, event_id: str = No
         # try to extract the value/threshold from the text
         try:
             threshold = int(tags[0].split('_')[1])
-        except Exception as e:
+        except:
             print(
                 f"ERROR: event {event_id} with the relationship constraint for the value does not {v_type} follow the formatting guidelines.")
             break_loop = True
@@ -1197,20 +1197,25 @@ def filter_relationship_type(group: list, filter_types: list, event_id: str = No
     return True
 
 
-def gather_cat_objects(Cat, abbr_list: List[str], event, stat_cat=None) -> list:
+def gather_cat_objects(Cat, abbr_list: List[str], event, stat_cat=None, extra_cat=None) -> list:
     """
     gathers cat objects from list of abbreviations used within an event format block
     :param Cat: Cat class
-    :param abbr_list:The list of abbreviations, supports "m_c", "r_c", "p_l", "s_c", "app1", "app2", "clan",
+    :param abbr_list: The list of abbreviations, supports "m_c", "r_c", "p_l", "s_c", "app1", "app2", "clan",
     "some_clan", "patrol", "multi", "n_c{index}"
-    :param event: the event class
-    :param stat_cat: only cat object that gets passed on its own if present (should only be on patrols)
+    :param event: the controlling class of the event (e.g. Patrol, HandleShortEvents), default None
+    :param stat_cat: if passing the Patrol class, must include stat_cat separately
+    :param extra_cat: if not passing an event class, include the single affected cat object here. If you are not passing a full event class, then be aware that you can only include "m_c" as a cat abbreviation in your rel block.  The other cat abbreviations will not work.
+    :return: list of cat objects
     """
     out_set = set()
 
     for abbr in abbr_list:
         if abbr == "m_c":
-            out_set.add(event.main_cat)
+            if extra_cat:
+                out_set.add(extra_cat)
+            else:
+                out_set.add(event.main_cat)
         if abbr == "r_c":
             out_set.add(event.random_cat)
         elif abbr == "p_l":
@@ -1239,19 +1244,16 @@ def gather_cat_objects(Cat, abbr_list: List[str], event, stat_cat=None) -> list:
     return list(out_set)
 
 
-def unpack_rel_block(Cat, relationship_effects: List[dict], event, stat_cat=None):
+def unpack_rel_block(Cat, relationship_effects: List[dict], event=None, stat_cat=None, extra_cat=None):
     """
     Unpacks the info from the relationship effect block used in patrol and moon events, then adjusts rel values
-    accordingly:
-    [
-        {
-       "cats_from": [],
-       "cats_to": [],
-       "mutual": false
-       "values" [],
-       "amount": 5
-        }
-    ]
+    accordingly.
+
+    :param Cat: Cat class
+    :param relationship_effects: the relationship effect block
+    :param event: the controlling class of the event (e.g. Patrol, HandleShortEvents), default None
+    :param stat_cat: if passing the Patrol class, must include stat_cat separately
+    :param extra_cat: if not passing an event class, include the single affected cat object here. If you are not passing a full event class, then be aware that you can only include "m_c" as a cat abbreviation in your rel block.  The other cat abbreviations will not work.
     """
     possible_values = ("romantic", "platonic", "dislike", "comfort", "jealous", "trust", "respect")
 
@@ -1262,8 +1264,8 @@ def unpack_rel_block(Cat, relationship_effects: List[dict], event, stat_cat=None
         values = [x for x in block.get("values", ()) if x in possible_values]
 
         # Gather actual cat objects:
-        cats_from_ob = gather_cat_objects(Cat, cats_from, event, stat_cat)
-        cats_to_ob = gather_cat_objects(Cat, cats_to, event, stat_cat)
+        cats_from_ob = gather_cat_objects(Cat, cats_from, event, stat_cat, extra_cat)
+        cats_to_ob = gather_cat_objects(Cat, cats_to, event, stat_cat, extra_cat)
 
         # Remove any "None" that might have snuck in
         if None in cats_from_ob:
@@ -1374,8 +1376,6 @@ def unpack_rel_block(Cat, relationship_effects: List[dict], event, stat_cat=None
                 log=log2
             )
 
-    return ""
-
 
 def change_relationship_values(cats_to: list,
                                cats_from: list,
@@ -1402,15 +1402,16 @@ def change_relationship_values(cats_to: list,
 
     use the relationship value params to indicate how much the values should change.
     
-    This is just for test prints - DON'T DELETE - you can use this to test if relationships are changing
 
         """
-    changed = False
+
+    # This is just for test prints - DON'T DELETE - you can use this to test if relationships are changing
+    """changed = False
     if romantic_love == 0 and platonic_like == 0 and dislike == 0 and admiration == 0 and \
             comfortable == 0 and jealousy == 0 and trust == 0:
         changed = False
     else:
-        changed = True
+        changed = True"""
 
     # pick out the correct cats
     for single_cat_from in cats_from:
@@ -1446,6 +1447,7 @@ def change_relationship_values(cats_to: list,
             rel.trust += trust
 
             # for testing purposes - DON'T DELETE - you can use this to test if relationships are changing
+            """
             print(str(single_cat_from.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
                   "Romantic: " + str(romantic_love) +
                   " /Platonic: " + str(platonic_like) +
@@ -1453,7 +1455,7 @@ def change_relationship_values(cats_to: list,
                   " /Respect: " + str(admiration) +
                   " /Comfort: " + str(comfortable) +
                   " /Jealousy: " + str(jealousy) +
-                  " /Trust: " + str(trust)) if changed else print("No relationship change")
+                  " /Trust: " + str(trust)) if changed else print("No relationship change")"""
 
             if log and isinstance(log, str):
                 if single_cat_to.moons <= 1:
@@ -1792,7 +1794,6 @@ def event_text_adjust(Cat,
     :param clan: pass game.clan
     :param other_clan: OtherClan object for other_clan (o_c_n), if present
     """
-    # TODO: need to figure out how to make this work in instances where an event class isn't usable
 
     vowels = ['A', 'E', 'I', 'O', 'U']
     if not text:
@@ -1818,50 +1819,25 @@ def event_text_adjust(Cat,
         if stat_cat:
             replace_dict["s_c"] = (str(stat_cat.name), choice(stat_cat.pronouns))
 
-    # other_cats?
-    other_cat_abbr = ["o_c1", "o_c2", "o_c3", "o_c4"]
-    for abbr in other_cat_abbr:
-        if abbr in text:
-            other_cats = [i for i in patrol_cats if i not in [patrol_leader, random_cat]]
-            if len(other_cats) >= 1:
-                replace_dict['o_c1'] = (str(other_cats[0].name),
-                                        choice(other_cats[0].pronouns))
-            if len(other_cats) >= 2:
-                replace_dict['o_c2'] = (str(other_cats[1].name),
-                                        choice(other_cats[1].pronouns))
-            if len(other_cats) >= 3:
-                replace_dict['o_c3'] = (str(other_cats[2].name),
-                                        choice(other_cats[2].pronouns))
-            if len(other_cats) == 4:
-                replace_dict['o_c4'] = (str(other_cats[3].name),
-                                        choice(other_cats[3].pronouns))
-            # running this once will cover all abbrs, so break
-            break
+    # other_cats
+    if patrol_cats:
+        other_cats = [i for i in patrol_cats if i not in [patrol_leader, random_cat, patrol_apprentices]]
+        other_cat_abbr = ["o_c1", "o_c2", "o_c3", "o_c4"]
+        for i, abbr in enumerate(other_cat_abbr):
+            if abbr not in text:
+                continue
+            if len(other_cats) > i:
+                replace_dict[abbr] = (str(other_cats[i].name), choice(other_cats[i].pronouns))
 
     # patrol_apprentices
     app_abbr = ["app1", "app2", "app3", "app4", "app5", "app6"]
-    for abbr in app_abbr:
-        if abbr in text:
-            if len(patrol_apprentices) > 0:
-                replace_dict["app1"] = (
-                    str(patrol_apprentices[0].name), choice(patrol_apprentices[0].pronouns))
-            if len(patrol_apprentices) > 1:
-                replace_dict["app2"] = (
-                    str(patrol_apprentices[1].name), choice(patrol_apprentices[1].pronouns))
-            if len(patrol_apprentices) > 2:
-                replace_dict["app3"] = (
-                    str(patrol_apprentices[2].name), choice(patrol_apprentices[2].pronouns))
-            if len(patrol_apprentices) > 3:
-                replace_dict["app4"] = (
-                    str(patrol_apprentices[3].name), choice(patrol_apprentices[3].pronouns))
-            if len(patrol_apprentices) > 4:
-                replace_dict["app5"] = (
-                    str(patrol_apprentices[4].name), choice(patrol_apprentices[4].pronouns))
-            if len(patrol_apprentices) > 5:
-                replace_dict["app6"] = (
-                    str(patrol_apprentices[5].name), choice(patrol_apprentices[5].pronouns))
-            # running this once will cover all abbrs, so break
-            break
+    for i, abbr in enumerate(app_abbr):
+        if abbr not in text:
+            continue
+        if len(patrol_apprentices) > i:
+            replace_dict[abbr] = (
+                str(patrol_apprentices[i].name), choice(patrol_apprentices[i].pronouns)
+            )
 
     # new_cats (include pre version)
     if "n_c" in text:
