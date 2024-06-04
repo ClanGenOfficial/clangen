@@ -3736,7 +3736,7 @@
         ]
     },
     {
-        "event_id": "gen_injury_mangledleg_anyapprenticenotfighterothercatmultistatusmultitrait1",
+        "event_id": "gen_injury_mangledleg_multidislikeforcefight1",
         "location": [
             "any"
         ],
@@ -3746,14 +3746,11 @@
         "weight": 20,
         "event_text": "m_c's leg was badly injured after r_c forced {PRONOUN/m_c/object} to fight a big dog.",
         "m_c": {
-            "age": [
-                "young adult",
-                "adult",
-                "senior adult"
-            ],
             "status": [
-                "any"
+                "apprentice",
+                "warrior"
             ],
+            "relationship_status": ["dislike_50"],
             "not_skill": [
                 "FIGHTER,3"
             ]
@@ -3763,7 +3760,6 @@
                 "any"
             ],
             "status": [
-                "warrior",
                 "deputy",
                 "leader"
             ],
