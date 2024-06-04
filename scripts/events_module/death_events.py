@@ -122,7 +122,7 @@ class Death_Events():
             additional_event_text += cat.die(body)
             death_history = history_text_adjust(death_history, other_clan_name, game.clan)
 
-        History.add_death(cat, death_history, other_cat=other_cat, extra_text=murder_unrevealed_history)
+        History.add_death(cat, death_history, other_cat=other_cat)
 
         # give death history to other cat and kill them if they die
         if "multi_death" in death_cause.tags:
@@ -142,7 +142,8 @@ class Death_Events():
                 additional_event_text += other_cat.die(body)
                 other_death_history = history_text_adjust(death_cause.history_text.get('reg_death'), other_clan_name, game.clan)
 
-            History.add_death(other_cat, other_death_history, other_cat=cat)
+            History.add_death(other_cat, other_death_history, other_cat=cat) 
+            # TODO consider that this used to pass murder_unrevealed_history - is this working properly?
 
         # give injuries to other cat if tagged as such
         if "other_cat_injured" in death_cause.tags:
