@@ -271,11 +271,11 @@ class Events:
             rel_change = chosen_event["rel_change"]
             other_clan.relations += rel_change
             if rel_change > 0:
-                event_text += f" (o_c relations improved.)"
+                event_text += f" (o_c_n relations improved.)"
             elif rel_change == 0:
-                event_text += f" (o_c relations unchanged.)"
+                event_text += f" (o_c_n relations unchanged.)"
             else:
-                event_text += f" (o_c relations worsened.)"
+                event_text += f" (o_c_n relations worsened.)"
 
             # adjust text and add to event list
             event_text = event_text_adjust(Cat,

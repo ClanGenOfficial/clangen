@@ -705,7 +705,7 @@
         ],
         "other_clan": {
             "current_rep": ["any"],
-            "changed": -5
+            "changed": -3
         }
     },
     {
@@ -733,7 +733,7 @@
             "current_rep": [
                 "hostile"
             ],
-            "changed": -5
+            "changed": -3
         }
     },
     {
@@ -817,7 +817,7 @@
             "current_rep": [
                 "hostile"
             ],
-            "changed": -5
+            "changed": -3
         }
     },
     {
@@ -1185,7 +1185,7 @@
         ],
         "other_clan": {
             "current_rep": ["hostile"],
-            "changed": -5
+            "changed": -3
         }
     },
     {
@@ -1242,7 +1242,7 @@
         ],
         "other_clan": {
             "current_rep": ["hostile"],
-            "changed": -5
+            "changed": -3
         }
     },
     {
@@ -1297,7 +1297,7 @@
         ],
         "other_clan": {
             "current_rep": ["hostile"],
-            "changed": -5
+            "changed": -3
         }
     },
     {
@@ -1353,7 +1353,7 @@
         ],
         "other_clan": {
             "current_rep": ["hostile"],
-            "changed": -5
+            "changed": -3
         }
     },
     {
@@ -1376,7 +1376,7 @@
         }],
         "other_clan": {
             "current_rep": ["hostile"],
-            "changed": -5
+            "changed": -3
         }
     },
     {
@@ -2082,7 +2082,7 @@
                 "hostile",
                 "neutral"
             ],
-            "changed": -5
+            "changed": -3
         }
     },
     {
@@ -2215,7 +2215,7 @@
                 "hostile",
                 "neutral"
             ],
-            "changed": -5
+            "changed": -3
         }
     },
     {
@@ -2298,7 +2298,7 @@
                 "hostile",
                 "neutral"
             ],
-            "changed": -5
+            "changed": -3
         }
     },
     {
@@ -2394,7 +2394,7 @@
                 "hostile",
                 "neutral"
             ],
-            "changed": -5
+            "changed": -3
         }
     },
     {
@@ -3248,7 +3248,7 @@
             "current_rep": [
                 "hostile"
             ],
-            "changed": -5
+            "changed": -3
         },
         "supplies": [
             {
@@ -3291,7 +3291,7 @@
             "current_rep": [
                 "hostile"
             ],
-            "changed": -5
+            "changed": -3
         },
         "supplies": [
             {
@@ -3359,7 +3359,7 @@
                 "hostile",
                 "neutral"
             ],
-            "changed": -5
+            "changed": -3
         }
     },
     {
@@ -4286,7 +4286,7 @@
             "current_rep": [
                 "hostile"
             ],
-            "changed": -5
+            "changed": -3
         }
     },
     {
@@ -4370,7 +4370,7 @@
                 "hostile",
                 "neutral"
             ],
-            "changed": -5
+            "changed": -3
         }
     },
     {
@@ -4405,7 +4405,7 @@
                 "hostile",
                 "neutral"
             ],
-            "changed": -5
+            "changed": -3
         }
     },
     {
@@ -4616,7 +4616,7 @@
             "current_rep": [
                 "hostile"
             ],
-            "changed": -5
+            "changed": -3
         }
     },
     {
@@ -4648,7 +4648,7 @@
             "current_rep": [
                 "hostile"
             ],
-            "changed": -5
+            "changed": -3
         }
     },
     {
@@ -4680,7 +4680,7 @@
             "current_rep": [
                 "hostile"
             ],
-            "changed": -5
+            "changed": -3
         }
     },
     {
@@ -5337,7 +5337,7 @@
             "current_rep": [
                 "hostile"
             ],
-            "changed": -5
+            "changed": -3
         }
     },
     {
@@ -5393,7 +5393,7 @@
                 "hostile",
                 "neutral"
             ],
-            "changed": -5
+            "changed": -3
         }
     },
     {
@@ -5435,7 +5435,7 @@
                 "hostile",
                 "neutral"
             ],
-            "changed": -5
+            "changed": -3
         }
     },
     {
