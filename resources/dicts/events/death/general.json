@@ -5654,7 +5654,7 @@
     "tags": [],
     "weight": 10,
     "event_text": "multi_cat drown after the camp becomes flooded.",
-    "history:": [
+    "history": [
       {
       "cats": ["multi_cat"],
       "reg_death": "m_c drowned when the camp flooded.",
@@ -5670,7 +5670,7 @@
     "tags": [],
     "weight": 10,
     "event_text": "multi_cat are killed after a fire rages through the camp.",
-    "history:": [
+    "history": [
       {
       "cats": ["all"],
       "reg_death": "m_c died in a fire that raged through camp.",
@@ -5689,7 +5689,7 @@
     "m_c": {
         "status": ["leader", "deputy", "apprentice", "warrior"]
     },
-    "history:": [
+    "history": [
       {
       "cats": ["multi_cat"],
       "reg_death": "m_c was killed by a rogue ambush.",
@@ -5708,7 +5708,7 @@
     "m_c": {
         "status": ["leader", "deputy", "apprentice", "warrior"]
     },
-    "history:": [
+    "history": [
       {
       "cats": ["multi_cat"],
       "reg_death": "m_c was killed in a badger attack.",
@@ -5724,7 +5724,7 @@
     "tags": [],
     "weight": 10,
     "event_text": "multi_cat freeze during a snowstorm.",
-    "history:": [
+    "history": [
       {
       "cats": ["multi_cat"],
       "reg_death": "m_c died in a snowstorm.",
@@ -5740,7 +5740,7 @@
     "tags": [],
     "weight": 10,
     "event_text": "multi_cat die after the water dries up from a drought.",
-    "history:": [
+    "history": [
       {
       "cats": ["multi_cat"],
       "reg_death": "m_c died to a drought.",
@@ -5756,7 +5756,7 @@
     "tags": ["classic"],
     "weight": 10,
     "event_text": "multi_cat die to a greencough outbreak.",
-    "history:": [
+    "history": [
       {
       "cats": ["multi_cat"],
       "reg_death": "m_c died from greencough.",
@@ -5772,7 +5772,7 @@
     "tags": ["classic"],
     "weight": 10,
     "event_text": "multi_cat starve when no prey can be found.",
-    "history:": [
+    "history": [
       {
       "cats": ["multi_cat"],
       "reg_death": "m_c starved.",
@@ -5788,7 +5788,7 @@
     "tags": ["classic"],
     "weight": 10,
     "event_text": "multi_cat eat tainted freshkill and die.",
-    "history:": [
+    "history": [
       {
       "cats": ["multi_cat"],
       "reg_death": "m_c died from tainted freshkill.",
@@ -5805,7 +5805,11 @@
     "weight": 10,
     "event_text": "multi_cat are taken away by Twolegs.",
     "m_c": {
-        "age": ["adolescent", "adult", "young adult", "senior adult"]
+        "age": [
+            "adolescent",
+            "adult",
+            "young adult",
+            "senior adult"]
     }
   },
   {
@@ -5817,7 +5821,7 @@
     "m_c": {
         "status": ["any"]
     },
-    "history:": [
+    "history": [
       {
           "cats": ["m_c"],
           "reg_death": "m_c was killed by a fox that snuck into camp.",
@@ -5850,7 +5854,7 @@
             "injuries": ["rat_bite"]
         }
     ],
-    "history:": [
+    "history": [
       {
           "cats": ["m_c", "r_c"],
           "scar": "{VERB/m_c/were/was} hurt while defending the fresh-kill pile from rats.",

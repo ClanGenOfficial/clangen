@@ -69,6 +69,7 @@ class HandleShortEvents():
         self.new_cats = []
         self.new_cat_objects = []
         self.dead_cats = []
+        self.multi_cat = []
 
         self.chosen_herb = None
 
@@ -363,9 +364,7 @@ class HandleShortEvents():
         cats that will die are added to self.dead_cats
         """
         # gather living clan cats except leader bc leader lives would be frustrating to handle in these
-        alive_cats = list(
-            filter(
-                lambda kitty: (not kitty.dead and not kitty.outside), Cat.all_cats.values()))
+        alive_cats = [i for i in Cat.all_cats.values() if not i.dead and not i.outside and not i.exiled]
 
         # make sure all cats in the pool fit the event requirements
         requirements = self.chosen_event.m_c
@@ -473,7 +472,7 @@ class HandleShortEvents():
                         death_history = history_text_adjust(block.get('reg_death'),
                                                             self.other_clan_name, game.clan, self.random_cat)
 
-                    History.add_death(cat, death_history, other_cat=self.random_cat)
+                    History.add_death(cat, death_history)
 
             # new_cat history
             for abbr in block["cats"]:

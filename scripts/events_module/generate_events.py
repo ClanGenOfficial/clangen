@@ -306,8 +306,11 @@ class GenerateEvents:
 
             discard = False
             for rank in Cat_class.rank_sort_order:
-                if f"clan:{rank}" in event.tags and not get_alive_status_cats(Cat_class, [rank]):
-                    discard = True
+                if f"clan:{rank}" in event.tags:
+                    if rank in ["leader", "deputy"] and not get_alive_status_cats(Cat_class, [rank]):
+                        discard = True
+                    elif not len(get_alive_status_cats(Cat_class, [rank])) >= 2:
+                        discard = True
             if discard:
                 continue
 
