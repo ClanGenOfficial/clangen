@@ -285,7 +285,7 @@ class HandleShortEvents():
                         sub_sub[0].get_injured("recovering from birth")
                         break  # Break - only one parent ever gives birth
 
-        if extra_text:
+        if extra_text and extra_text not in self.chosen_event.text:
             self.chosen_event.text = self.chosen_event.text + " " + extra_text
 
     def handle_accessories(self):
