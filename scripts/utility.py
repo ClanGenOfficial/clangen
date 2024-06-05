@@ -344,11 +344,14 @@ def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, 
 
     # will the cat get a new name?
     if "new_name" in attribute_list:
+        print("new cat gets new name")
         new_name = True
     elif "old_name" in attribute_list:
+        print("new cat keeps old name")
         new_name = False
     else:
         new_name = choice([True, False])
+        print("new cat picks whether to keep or lose name randomly")
 
     # STATUS - must be handled before backstories
     status = None
@@ -465,6 +468,7 @@ def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, 
             possible_outsiders.append(cat)
 
         if possible_outsiders:
+            print("found possible new cats that already exist")
             chosen_cat = choice(possible_outsiders)
             game.clan.add_to_clan(chosen_cat)
             chosen_cat.status = status
@@ -473,6 +477,7 @@ def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, 
                 chosen_cat.die()
 
             if new_name:
+                print("existing new cat gets a new name")
                 name = f"{chosen_cat.name.prefix}"
                 if choice([1, 2]) == 1:  # adding suffix to OG name
                     spaces = name.count(" ")
@@ -505,7 +510,6 @@ def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, 
     # Now we generate the new cat
     if not chosen_cat:
         new_cats = create_new_cat(Cat,
-                                  Relationship,
                                   new_name=new_name,
                                   loner=cat_type in ["loner", "rogue"],
                                   kittypet=cat_type == "kittypet",
@@ -589,7 +593,6 @@ def get_other_clan(clan_name):
 
 
 def create_new_cat(Cat,
-                   Relationship,
                    new_name: bool = False,
                    loner: bool = False,
                    kittypet: bool = False,
@@ -1797,7 +1800,8 @@ def event_text_adjust(Cat,
 
     vowels = ['A', 'E', 'I', 'O', 'U']
     if not text:
-        text = 'This should not appear, report as a bug please!'
+        text = 'This should not appear, report as a bug please! Tried to adjust the text, but no text was provided.'
+        print("WARNING: Tried to adjust text, but no text was provided.")
 
     replace_dict = {}
 

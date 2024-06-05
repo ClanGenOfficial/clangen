@@ -4886,15 +4886,15 @@
         ]
     },
     {
-        "event_id": "gen_death_murder_anylead1",
+        "event_id": "gen_death_murder_anymonster1",
         "location": ["any"],
         "season": [
             "any"
         ],
         "sub_type": [ "murder" ],
         "tags": [],
-        "weight": 20,
-        "event_text": "m_c was pushed under a monster.",
+        "weight": 15,
+        "event_text": "m_c was pushed under a monster by r_c.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -4906,31 +4906,27 @@
                 "mediator apprentice",
                 "mediator"
             ],
-            "relationship_status": [],
-            "trait": [
-                "bold",
-                "ambitious",
-                "compassionate",
-                "daring",
-                "confident",
-                "fierce",
-                "loyal",
-                "loving",
-                "empathetic",
-                "responsible",
-                "righteous",
-                "vengeful"
-            ],
             "dies": true
         },
         "r_c": {
-            "status": ["apprentice", "mediator apprentice", "medicine cat apprentice", "medicine cat", "mediator", "warrior", "deputy"]
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader",
+                "medicine cat apprentice",
+                "medicine cat",
+                "mediator apprentice",
+                "mediator"
+            ]
         },
-        "history": [{
+        "history": [
+            {
             "cats": ["m_c"],
-            "reg_death": "m_c was pushed under a monster by r_c",
+            "reg_death": "m_c was pushed under a monster by r_c.",
             "lead_death": "{VERB/m_c/were/was} pushed under a monster by r_c"
-        }],
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
