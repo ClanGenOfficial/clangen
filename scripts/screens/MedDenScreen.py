@@ -268,8 +268,7 @@ class MedDenScreen(Screens):
                 meds_cover = f"You have no medicine cats who are able to work. Your Clan will be at a higher risk of death and disease."
 
             herb_amount = sum(game.clan.herbs.values())
-            needed_amount = int(get_living_clan_cat_count(Cat) * 6)
-            print(needed_amount)
+            needed_amount = int(get_living_clan_cat_count(Cat) * 4)
             med_concern = f"This should not appear."
             if herb_amount == 0:
                 med_concern = f"The herb stores are empty and bare, this does not bode well."
