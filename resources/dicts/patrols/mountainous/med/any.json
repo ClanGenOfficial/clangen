@@ -1451,12 +1451,12 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "p_l heads out on an herb-gathering patrol, searching for the ever-green, ever-reliable horsetail to harvest for the herb stores. app1 trots after them, asking them why horsetail grows so weirdly without leaves.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "intro_text": "p_l heads out on an herb-gathering patrol, searching for the ever-green, ever-reliable horsetail to harvest for the herb stores. app1 trots after {PRONOUN/p_l/object}, asking {PRONOUN/p_l/object} why horsetail grows so weirdly without leaves.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "p_l doesn't know why horsetail plants lack leaves, but they encourage app1's interest in the topic. As a plant that grows without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den. p_l is delighted to notice moss growing nearby, too, and stops to gather a hefty bundle - the Clan can never have too much moss.",
+                "text": "p_l doesn't know why horsetail plants lack leaves, but {PRONOUN/p_l/subject} {VERB/p_l/encourage/encourages} app1's interest in the topic. As a plant that grows without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den. p_l is delighted to notice moss growing nearby, too, and stops to gather a hefty bundle - the Clan can never have too much moss.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss", "horsetail"],
@@ -1500,7 +1500,7 @@
                 ]
             },
             {
-                "text": "s_c deftly picks out an entire horsetail shoot, which so happens to be growing near the river, where there is an abundance of moss to be collected. s_c proudly drags their haul back to camp - quite the impressive addition to the Clan's herb stores - while they describe the plant's uses to app1",
+                "text": "s_c deftly picks out an entire horsetail shoot, which so happens to be growing near the river, where there is an abundance of moss to be collected. s_c proudly drags {PRONOUN/s_c/poss} haul back to camp - quite the impressive addition to the Clan's herb stores - while {PRONOUN/s_c/subject} {VERB/s_c/describe/describes} the plant's uses to app1",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -1525,7 +1525,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment.",
+                "text": "p_l is distracted today, and it affects {PRONOUN/p_l/poss} work. The patrol is unsuccessful, and app1 looks up at {PRONOUN/p_l/subject} with disappointment.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [

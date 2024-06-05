@@ -5029,11 +5029,11 @@
         },
         "weight": 20,
         "intro_text": "p_l heads out to find tansy, scenting the air for its sharp smell and eyes on the lookout for tansy's strange, orb-like yellow flowers that greenleaf has brought out in abundance.",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "The yellow dew drops shining merrily in the distance guide p_l into the tansy patch, where they take a good harvest. It's just unfortunate they can't talk themselves out of harvesting some ragwort too - this is going to taste very bad.",
+                "text": "The yellow dew drops shining merrily in the distance guide p_l into the tansy patch, where {PRONOUN/p_l/subject} {VERB/p_l/take/takes} a good harvest. It's just unfortunate {PRONOUN/p_l/subject} can't talk {PRONOUN/p_l/self} out of harvesting some ragwort too - this is going to taste very bad.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["tansy", "ragwort"]
@@ -5045,7 +5045,7 @@
                 "herbs": ["many_herbs", "tansy", "ragwort"]
             },
             {
-                "text": "Tansy might smell sharp enough to be enjoyed freshening up dens, but it sure tastes... interesting. Definitely not improved by the extra ragwort they find. s_c isn't sure they'll ever get used to it, but at least it's a reminder to be careful around the potentially poisonous herb.",
+                "text": "Tansy might smell sharp enough to be enjoyed freshening up dens, but it sure tastes... interesting. Definitely not improved by the extra ragwort {PRONOUN/s_c/subject} {VERB/s_c/find/finds}. s_c isn't sure {PRONOUN/s_c/subject}'ll ever get used to it, but at least it's a reminder to be careful around the potentially poisonous herb.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -5054,7 +5054,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Try as they might, p_l can't quite remember the exact shape of the tansy leaves, and {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as they say.",
+                "text": "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the tansy leaves, and {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as they say.",
                 "exp": 0,
                 "weight": 20
             }

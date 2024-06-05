@@ -23,7 +23,7 @@
                 "weight": 20
             },
             {
-                "text": "app1 picks up the instruction quickly and is soon able to make their way up the cliff.",
+                "text": "app1 picks up the instruction quickly and is soon able to make {PRONOUN/app1/poss} way up the cliff.",
                 "exp": 20,
                 "weight": 5
             },
@@ -36,7 +36,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 tries to see the paw holds that p_l pointed out to them, but the cliff still seems unscalable in their eyes.",
+                "text": "app1 tries to see the paw holds that p_l pointed out to {PRONOUN/app1/object}, but the cliff still seems unscalable in {PRONOUN/app1/poss} eyes.",
                 "exp": 0,
                 "weight": 20
             },
@@ -48,7 +48,7 @@
                 "can_have_stat": ["app"]
             },
             {
-                "text": "app1 begins making their way up the cliff, but a loose paw hold gives way as soon as they step on it! The apprentice tumbles back down the cliff, hurting their leg in the process.",
+                "text": "app1 begins making {PRONOUN/app1/poss} way up the cliff, but a loose paw hold gives way as soon as {PRONOUN/app1/subject} {VERB/app1/step/steps} on it! The apprentice tumbles back down the cliff, hurting {PRONOUN/app1/poss} leg in the process.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
