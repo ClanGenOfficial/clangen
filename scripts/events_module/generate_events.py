@@ -257,15 +257,26 @@ class GenerateEvents:
                     req_biome = location
                     req_camps = ["any"]
 
-                if game.clan.biome.lower() == req_biome or "any" == req_biome:
+                print(f"req biome is: {req_biome}, found biome is: {game.clan.biome.lower()}")
+                print(f"req camp is: {req_camps}, found camp is: {game.clan.camp_bg}")
+
+                if req_biome == game.clan.biome.lower():
+                    print("biome match")
                     discard = False
+                else:
+                    continue
+
                 if game.clan.camp_bg in req_camps or "any" in req_camps:
+                    print("camp match")
                     discard = False
+                else:
+                    continue
 
                 if not discard:
                     break
 
             if discard:
+                print("discarded")
                 continue
 
             # check season
