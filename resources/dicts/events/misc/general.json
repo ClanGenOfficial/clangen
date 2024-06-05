@@ -172,7 +172,23 @@
     "r_c": {
       "age": ["young adult", "adult", "senior adult", "senior"],
       "status": ["any"]
-    }
+    },
+    "relationships": [
+      {
+        "cats_from": ["r_c"],
+        "cats_to": ["m_c"],
+        "mutual": false,
+        "values": ["dislike"],
+        "amount": 30
+      },
+      {
+        "cats_from": ["r_c"],
+        "cats_to": ["m_c"],
+        "mutual": false,
+        "values": ["trust", "respect", "comfort"],
+        "amount": -30
+      }
+    ]
   },
   {
     "event_id": "gen_misc_murderreveal_any9",
@@ -253,15 +269,14 @@
     "event_text":  "m_c disappears for a few days, then returns to camp with a acc_singular around {PRONOUN/m_c/poss} neck.",
     "new_accessory": ["COLLAR"],
     "m_c": {
-        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
-        "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat", "elder", "mediator"]
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
     }
   }, 
   {
     "event_id": "gen_misc_any_misc1",
     "location": ["any"],
     "season": ["any"],
-    "weight": 20,
+    "weight": 10,
     "event_text": "m_c accidentally trespasses onto o_c_n's territory.",
     "m_c": {
         "age": ["adolescent", "young adult", "adult", "senior adult"],
@@ -269,7 +284,7 @@
     },
     "other_clan": {
         "current_rep": ["any"],
-        "changed": -5
+        "changed": -1
     }
   },
   {
@@ -287,7 +302,7 @@
     "event_id": "gen_misc_any_misc4",
     "location": ["any"],
     "season": ["any"],
-    "weight": 20,
+    "weight": 30,
     "event_text": "m_c spends the evening regaling the Clan with stories of story_list.",
     "m_c": {
       "age": ["any"],
@@ -300,7 +315,7 @@
     "event_id": "gen_misc_any_misc5",
     "location": ["any"],
     "season": ["any"],
-    "weight": 20,
+    "weight": 10,
     "event_text": "m_c was trying to fluff up {PRONOUN/m_c/poss} nest when {PRONOUN/m_c/subject} saw a thorn inside of {PRONOUN/m_c/poss} bedding. Another prank, but it could not fool {PRONOUN/m_c/object}!",
     "m_c": {
       "age": ["any"],
@@ -311,7 +326,7 @@
     "event_id": "gen_misc_any_misc6",
     "location": ["any"],
     "season": ["any"],
-    "weight": 20,
+    "weight": 10,
     "event_text": "m_c wasn't looking where {PRONOUN/m_c/subject} {VERB/m_c/were/was} going and tripped over a small trunk, but came out of it with only {PRONOUN/m_c/poss} pride bruised.",
     "m_c": {
       "age": ["any"],
@@ -322,7 +337,7 @@
     "event_id": "gen_misc_any_misc7",
     "location": ["any"],
     "season": ["any"],
-    "weight": 20,
+    "weight": 10,
     "event_text": "m_c misstepped and slipped from a rock, but landed on {PRONOUN/m_c/poss} feet nimbly, {PRONOUN/m_c/poss} Clanmates commenting on the show of dexterity.",
     "m_c": {
       "age": ["any"],
@@ -333,7 +348,7 @@
     "event_id": "gen_misc_any_misc8",
     "location": ["any"],
     "season": ["any"],
-    "weight": 20,
+    "weight": 15,
     "event_text": "m_c tossed a snake out of the camp before it could bite someone.",
     "m_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
@@ -344,7 +359,7 @@
     "event_id": "gen_misc_any_misc9",
     "location": ["any"],
     "season": ["any"],
-    "weight": 20,
+    "weight": 5,
     "event_text": "m_c tries to convince r_c to run away with {PRONOUN/m_c/object}.",
     "m_c": {
         "age": ["young adult","adult","senior","senior adult"],
@@ -359,7 +374,7 @@
     "event_id": "gen_misc_any_misc10",
     "location": ["any"],
     "season": ["any"],
-    "weight": 20,
+    "weight": 5,
     "event_text": "m_c believes {PRONOUN/m_c/subject}'{VERB/m_c/re/s} meant for something greater.",
     "m_c": {
       "age": ["any"],
@@ -370,7 +385,7 @@
     "event_id": "gen_misc_any_misc11",
     "location": ["any"],
     "season": ["any"],
-    "weight": 20,
+    "weight": 5,
     "event_text": "m_c believes {PRONOUN/m_c/subject} {VERB/m_c/are/is} part of a new prophecy.",
     "m_c": {
       "age": ["any"],
@@ -439,7 +454,7 @@
     "location": ["any"],
     "season": ["any"],
     "tags": ["skill_trait_required"],
-    "weight": 5,
+    "weight": 10,
     "event_text": "m_c's dreams are filled with flashing teeth and blood-scent. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wake/wakes} up screaming.",
     "m_c": {
       "age": ["any"],
@@ -452,8 +467,8 @@
     "location": ["any"],
     "season": ["any"],
     "tags": ["skill_trait_required"],
-    "weight": 5,
-    "event_text": "m_c thought {PRONOUN/m_c/subject} saw a familar wispy form lingering at the edge of camp, but the ghost disappeared before {PRONOUN/m_c/subject} could be sure.",
+    "weight": 30,
+    "event_text": "m_c thought {PRONOUN/m_c/subject} saw a familiar wispy form lingering at the edge of camp, but the ghost disappeared before {PRONOUN/m_c/subject} could be sure.",
     "m_c": {
       "age": ["any"],
       "status": ["any"],
@@ -466,7 +481,13 @@
     "season": ["leaf-fall"],
     "tags": ["clan:kitten"],
     "weight": 20,
-    "event_text": "The older cats look fondly upon the kits who are dashing in and out of leaf piles at the edge of camp."
+    "event_text": "The older cats look fondly upon the kits who are dashing in and out of leaf piles at the edge of camp.",
+    "m_c": {
+      "age": ["senior", "senior adult"]
+    },
+    "r_c": {
+      "age": ["senior adult", "senior"]
+    }
   },
   {
     "event_id": "gen_misc_leafbare_misc1",
@@ -475,21 +496,24 @@
     "weight": 20,
     "event_text": "m_c and r_c begin a small camp snowball fight while on guard duty, eventually getting the whole Clan to join in.",
     "m_c": {
-        "age": ["young adult","adult","senior adult"],
-        "status":["any"]
+        "status": ["warrior"],
+      "trait": ["playful"]
     },
     "r_c": {
-        "age": ["young adult","adult","senior adult"],
-        "status":["any"]
+        "status": ["warrior"]
     },
     "relationships": [
         {
-            "mututal": true,
+            "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
+            "mutual": true,
             "values": ["platonic","comfort", "trust"],
             "amount": 5
         },
         {
-            "mututal": true,
+            "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
+            "mutual": true,
             "values": ["dislike"],
             "amount": -5
         }
@@ -502,18 +526,26 @@
     "weight": 15,
     "event_text": "m_c encourages r_c to play in the snow with {PRONOUN/m_c/object} during a patrol.",
     "m_c": {
-        "age": ["young adult","adult","senior adult"],
-        "status":["any"],
+        "status":[
+          "apprentice",
+          "warrior",
+          "deputy",
+          "leader"],
         "trait": ["playful"]
     },
     "r_c":{
-        "age": ["young adult","adult","senior adult"],
-        "status":["any"]
+        "status":[
+          "apprentice",
+          "warrior",
+          "deputy",
+          "leader"]
     },
     "relationships": [
         {
-          "mutual": true,
-          "values": ["comfort"],
+          "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["comfort"],
           "amount": 5
         }
     ]
@@ -551,14 +583,14 @@
         {
           "cats_from": ["m_c"],
           "cats_to": ["r_c"],
-          "mututal": true,
+          "mutual": true,
           "values": ["platonic", "comfort", "trust"],
           "amount": 5
         },
         {
           "cats_from": ["m_c"],
           "cats_to": ["r_c"],
-          "mututal": true,
+          "mutual": true,
           "values": ["dislike"],
           "amount": -5
         }
@@ -597,6 +629,7 @@
         {
           "cats_from": ["r_c"],
           "cats_to": ["m_c"],
+          "mutual": true,
           "values": ["platonic","comfort","respect"],
           "amount": -5
         }
@@ -620,8 +653,10 @@
     },
     "relationships": [
         {
-          "mututal": true,
-          "values": ["platonic", "comfort"],
+          "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["platonic", "comfort"],
           "amount": 5
         }
     ]
@@ -659,14 +694,14 @@
         {
             "cats_from": ["r_c"],
             "cats_to": ["m_c"],
-            "mututal": true,
+            "mutual": true,
             "values": ["platonic","comfort"],
             "amount": 5
         },
         {
             "cats_from": ["r_c"],
             "cats_to": ["m_c"],
-            "mututal": true,
+            "mutual": true,
             "values": ["dislike"],
             "amount": -5
         }
@@ -689,11 +724,12 @@
     "event_id": "gen_misc_war_any_any1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["war"],
     "weight": 10,
     "event_text": "The war with o_c_n is beginning to disrupt the daily lives of c_n, forcing them to adapt to new routines and living situations in order to better defend themselves.",
     "other_clan": {
         "current_rep": ["hostile"],
-        "changed": -10
+        "changed": 0
     }
   },
   {
@@ -705,7 +741,7 @@
     "m_c": {},
     "other_clan": {
         "current_rep": ["hostile"],
-        "changed": -5
+        "changed": 0
     }
   },
   {
@@ -716,17 +752,17 @@
     "event_text": "m_c and r_c are so cuddled up and cozy in their nest they almost miss the dawn patrol.",
     "m_c": {
       "age": ["young adult", "adult", "senior adult"],
-      "status": ["any"],
       "relationship_status": ["mates"]
     },
     "r_c": {
-      "age": ["young adult", "adult", "senior adult"],
-      "status": ["any"]
+      "age": ["young adult", "adult", "senior adult"]
     },
     "relationships": [
         {
-          "mutual": true,
-          "values": ["romantic", "comfort","trust"],
+          "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["romantic", "comfort","trust"],
           "amount": 10
         }
     ]
@@ -749,8 +785,10 @@
     },
     "relationships": [
         {
-          "mutual": true,
-          "values": ["romantic", "platonic","trust"],
+          "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["romantic", "platonic","trust"],
           "amount": 10
         }
     ]
@@ -759,6 +797,7 @@
     "event_id": "gen_misc_any_mate3",
     "location": ["any"],
     "season": ["any"],
+    "tags": ["clan:elder"],
     "weight": 15,
     "event_text": "m_c watches r_c give an elder the best piece of prey on the pile. {PRONOUN/m_c/subject/CAP} {VERB/m_c/feel/feels} lucky to have such a kind cat as {PRONOUN/m_c/poss} mate.",
     "m_c": {
@@ -798,8 +837,10 @@
     },
     "relationships": [
         {
-          "mutual": true,
-          "values": ["trust"],
+          "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["trust"],
           "amount": 10
         }
     ]
@@ -812,19 +853,17 @@
     "weight": 15,
     "event_text": "m_c and r_c take a late night patrol out of camp to watch the sun rise.",
     "m_c": {
-      "age": ["young adult", "adult", "senior adult"],
-      "status": ["any"],
-      "relationship_status": ["can_romance"]
+      "age": ["young adult", "adult", "senior adult"]
     },
     "r_c": {
-      "age": ["young adult", "adult", "senior adult"],
-      "status":["any"],
-      "relationship_status": ["can_romance"]
+      "age": ["young adult", "adult", "senior adult"]
     },
     "relationships": [
         {
-          "mutual": true,
-          "values": ["romantic", "comfort", "trust"],
+          "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["romantic", "comfort", "trust"],
           "amount": 10
         }
     ]
@@ -837,12 +876,10 @@
     "weight": 15,
     "event_text": "m_c and r_c take an early evening patrol out of camp to watch the moon rise.",
     "m_c": {
-      "age": ["young adult", "adult", "senior adult"],
-      "status":["any"]
+      "age": ["young adult", "adult", "senior adult"]
     },
     "r_c": {
-      "age": ["young adult", "adult", "senior adult"],
-      "status":["any"]
+      "age": ["young adult", "adult", "senior adult"]
     },
     "relationships": [
         {
@@ -862,17 +899,17 @@
     "event_text": "m_c sits still as r_c helps remove some leftover Leaf-bare fluff from the back of {PRONOUN/m_c/poss} neck.",
     "m_c": {
       "age": ["young adult", "adult", "senior adult","senior"],
-      "status": ["any"],
       "relationship_status": ["mates"]
     },
     "r_c": {
-      "age": ["young adult", "adult", "senior adult", "senior"],
-      "status": ["any"]
+      "age": ["young adult", "adult", "senior adult", "senior"]
     },
     "relationships": [
         {
-          "mutual": true,
-          "values": ["platonic","trust"],
+          "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["platonic","trust"],
           "amount": 10
         }
     ]
@@ -885,17 +922,17 @@
     "event_text": "It's tough working in such extreme heat. m_c and r_c spend their evening relaxing together and cooling down in the shade.",
     "m_c": {
       "age": ["young adult", "adult", "senior adult","senior"],
-      "status":["any"],
       "relationship_status": ["mates"]
     },
     "r_c": {
-      "age": ["young adult", "adult", "senior adult", "senior"],
-      "status":["any"]
+      "age": ["young adult", "adult", "senior adult", "senior"]
     },
     "relationships": [
         {
-          "mutual": true,
-          "values": ["romantic", "comfort","trust"],
+          "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["romantic", "comfort","trust"],
           "amount": 10
         }
     ]
@@ -910,17 +947,17 @@
     "new_accessory": ["WILD", "PLANT"],
     "m_c": {
       "age": ["young adult", "adult", "senior adult","senior"],
-      "status":["any"],
       "relationship_status": ["mates"]
     },
     "r_c": {
-      "age": ["young adult", "adult", "senior adult", "senior"],
-      "status":["any"]
+      "age": ["young adult", "adult", "senior adult", "senior"]
     },
     "relationships": [
         {
-          "mutual": true,
-          "values": ["romantic", "comfort","trust"],
+          "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["romantic", "comfort","trust"],
           "amount": 10
         }
     ]
@@ -935,17 +972,17 @@
     "new_accessory": ["WILD", "PLANT"],
     "m_c": {
       "age": ["young adult", "adult", "senior adult","senior"],
-      "status":["any"],
       "relationship_status": ["mates"]
     },
     "r_c": {
-      "age": ["young adult", "adult", "senior adult", "senior"],
-      "status":["any"]
+      "age": ["young adult", "adult", "senior adult", "senior"]
     },
     "relationships": [
         {
-          "mutual": true,
-          "values": ["romantic", "comfort","trust"],
+          "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["romantic", "comfort","trust"],
           "amount": 15
         }
     ]
@@ -960,17 +997,17 @@
     "new_accessory": ["CICADA WINGS"],
     "m_c": {
       "age": ["young adult", "adult", "senior adult","senior"],
-      "status":["any"],
       "relationship_status": ["mates"]
     },
     "r_c": {
-      "age": ["young adult", "adult", "senior adult", "senior"],
-      "status": ["any"]
+      "age": ["young adult", "adult", "senior adult", "senior"]
     },
     "relationships": [
         {
-          "mutual": true,
-          "values": ["romantic", "comfort","trust"],
+          "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["romantic", "comfort","trust"],
           "amount": 10
         }
     ]
@@ -985,17 +1022,17 @@
     "new_accessory": ["MAPLE LEAF"],
     "m_c": {
       "age": ["young adult", "adult", "senior adult","senior"],
-      "status":["any"],
       "relationship_status": ["mates"]
     },
     "r_c": {
-      "age": ["young adult", "adult", "senior adult", "senior"],
-      "status":["any"]
+      "age": ["young adult", "adult", "senior adult", "senior"]
     },
     "relationships": [
         {
-          "mutual": true,
-          "values": ["romantic", "comfort","trust"],
+          "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["romantic", "comfort","trust"],
           "amount": 10
         }
     ]
@@ -1007,7 +1044,6 @@
     "weight": 10,
     "event_text": "m_c thinks about retiring.",
     "m_c": {
-        "status": ["any"],
         "age": ["senior adult", "senior"]
     }
   },
@@ -1018,7 +1054,6 @@
     "weight": 15,
     "event_text": "m_c picks some flowers around the camp to bring back to the medicine den.",
     "m_c": {
-      "age": ["kitten"],
       "status": ["kitten"]
     }
   },
@@ -1026,10 +1061,10 @@
     "event_id": "gen_misc_greenleaf_kit1",
     "location": ["any"],
     "season": ["greenleaf"],
+    "tags": ["clan:warrior"],
     "weight": 15,
     "event_text": "m_c chases fireflies around the camp, while the older warriors sleep.",
     "m_c": {
-      "age": ["kitten"],
       "status": ["kitten"]
     }
   },
@@ -1037,14 +1072,12 @@
         "event_id": "gen_misc_any_kitkit1",
         "location": ["any"],
         "season": ["any"],
-        "weight": 10,
+        "weight": 20,
         "event_text": "m_c and r_c try to sneak out of camp, but are caught and returned to the nursery.",
         "m_c": {
-          "age":["kitten"],
           "status": ["kitten"]
         },
         "r_c": {
-          "age":["kitten"],
           "status": ["kitten"]
         },
         "relationships": [
@@ -1064,15 +1097,15 @@
         "weight": 15,
         "event_text": "m_c and r_c sneak out of camp to chase butterflies.",
         "m_c": {
-          "age":["kitten"],
           "status": ["kitten"]
         },
         "r_c": {
-          "age":["kitten"],
           "status": ["kitten"]
         },
         "relationships": [
           {
+            "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
             "mutual": true,
             "values": ["platonic", "trust", "comfort"],
             "amount": 10
@@ -1083,14 +1116,13 @@
         "event_id": "gen_misc_greenleaf_kitkit1",
         "location": ["any"],
         "season": ["greenleaf"],
-        "weight": 15,
+      "tags": ["clan:warrior"],
+        "weight": 20,
         "event_text": "m_c and r_c chase fireflies around the camp, while the older warriors try to sleep.",
         "m_c": {
-            "age": ["kitten"],
             "status": ["kitten"]
         },
         "r_c": {
-          "age":["kitten"],
           "status": ["kitten"]
         },
         "relationships": [
@@ -1107,18 +1139,19 @@
         "event_id": "gen_misc_leaffall_kitkit1",
         "location": ["any"],
         "season": ["leaf-fall"],
-        "weight": 10,
+      "tags": ["clan:warrior"],
+        "weight": 20,
         "event_text": "m_c and r_c lead a small leaf-gathering hunt, which the adult cats watch with amused purrs.",
         "m_c": {
-            "age": ["kitten"],
             "status": ["kitten"]
         },
         "r_c": {
-          "age":["kitten"],
           "status": ["kitten"]
         },
         "relationships": [
           {
+            "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
             "mutual": true,
             "values": ["platonic", "comfort", "trust"],
             "amount": 10
@@ -1129,18 +1162,18 @@
         "event_id": "gen_misc_leaffall_kitkit2",
         "location": ["any"],
         "season": ["leaf-fall"],
-        "weight": 15,
+        "weight": 20,
         "event_text": "m_c and r_c play with the leaves around the camp.",
         "m_c": {
-            "age": ["kitten"],
             "status": ["kitten"]
         },
         "r_c": {
-          "age":["kitten"],
           "status": ["kitten"]
         },
         "relationships": [
           {
+            "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
             "mutual": true,
             "values": ["platonic", "trust", "comfort"],
             "amount": 10
@@ -1150,19 +1183,19 @@
     {
         "event_id": "gen_misc_leafbare_kitkit1",
         "location": ["any"],
-        "season": ["leafbare"],
-        "weight": 10,
+        "season": ["leaf-bare"],
+        "weight": 20,
         "event_text": "m_c and r_c make little snow lumps at the entrance to the camp.",
         "m_c": {
-            "age": ["kitten"],
             "status": ["kitten"]
         },
         "r_c": {
-          "age":["kitten"],
           "status": ["kitten"]
         },
         "relationships": [
           {
+            "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
             "mutual": true,
             "values": ["platonic", "trust", "comfort"],
             "amount": 10
@@ -1172,19 +1205,20 @@
     {
         "event_id": "gen_misc_leafbare_kitkit2",
         "location": ["any"],
-        "season": ["leafbare"],
-        "weight": 10,
+        "season": ["leaf-bare"],
+      "tags": ["clan:warrior"],
+        "weight": 20,
         "event_text": "m_c and r_c flick snow at the older warriors, giggling as they hide behind the nursery.",
         "m_c": {
-            "age": ["kitten"],
             "status": ["kitten"]
         },
         "r_c": {
-          "age":["kitten"],
           "status": ["kitten"]
         },
         "relationships": [
           {
+            "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
             "mutual": true,
             "values": ["platonic", "trust", "comfort"],
             "amount": 10
@@ -1199,12 +1233,10 @@
         "weight": 10,
         "event_text": "m_c is being comforted by r_c after having nightmares about the big, bad o_c_n cats.",
         "m_c": {
-            "age": ["kitten"],
             "status": ["kitten"],
             "relationship_status": ["child/parent"]
         },
         "r_c":{
-          "age":["any"],
           "status": ["any"]
         },
         "relationships": [
@@ -1215,7 +1247,11 @@
             "values": ["comfort"],
             "amount": 20
           }
-        ]
+        ],
+      "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 0
+      }
     },
     {
         "event_id": "gen_misc_any_accessorykit1",
@@ -1226,7 +1262,6 @@
         "event_text": "m_c was playing with acc_plural earlier, and decides to wear some of them.",
         "new_accessory": ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"],
         "m_c": {
-          "age": ["kitten"],
           "status": ["kitten"]
         }
     },
@@ -1239,7 +1274,6 @@
         "event_text": "m_c sneaked out of camp, and brought back with them some acc_singular from when {PRONOUN/m_c/poss} fur got snagged in a bush.",
         "new_accessory": ["HOLLY", "JUNIPER"],
         "m_c": {
-            "age": ["kitten"],
             "status": ["kitten"]
         }
     },
@@ -1252,7 +1286,6 @@
         "event_text": "m_c caught an insect while sneaking outside of the camp and proudly wears its wings as a trophy of {PRONOUN/m_c/poss} journey.",
         "new_accessory": ["MOTH WINGS", "CICADA WINGS"],
         "m_c": {
-          "age": ["kitten"],
           "status": ["kitten"]
         }
     },
@@ -1265,7 +1298,6 @@
       "event_text": "As the wind blows many petals in the camp, m_c picks a few to decorate {PRONOUN/m_c/self}.",
       "new_accessory": ["PETALS"],
       "m_c": {
-        "age": ["kitten"],
         "status": ["kitten"]
       }
     },
@@ -1278,7 +1310,6 @@
         "event_text": "As the wind brings many fallen leaves in the camp, m_c picks a acc_singular to decorate {PRONOUN/m_c/poss} pelt.",
         "new_accessory": ["OAK LEAVES", "MAPLE LEAF"],
         "m_c": {
-            "age": ["kitten"],
             "status": ["kitten"]
         }
     },
@@ -1292,15 +1323,15 @@
         "new_accessory": ["WILD", "PLANT"],
         "m_c": {
           "age": ["kitten"],
-          "status": ["kitten"],
           "trait": ["sweet", "polite"]
         },
         "r_c":{
-          "age":["any"],
-          "status": ["any"]
+          "age":["any"]
         },
         "relationships": [
           {
+            "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
             "mutual": true,
             "values": ["platonic", "comfort", "trust", "respect"],
             "amount": 10
@@ -1316,20 +1347,22 @@
         "event_text": "r_c gives m_c a pretty acc_singular {PRONOUN/r_c/subject} found while playing.",
         "new_accessory": ["WILD", "PLANT"],
         "m_c": {
-            "age": ["kitten"],
-            "status": ["kitten"]
+            "age": ["kitten"]
         },
           "r_c": {
-            "age":["kitten"],
-            "status": ["kitten"]
+            "age":["kitten"]
           },
         "relationships": [
           {
+            "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
             "mutual": true,
             "values": ["platonic", "comfort", "trust"],
             "amount": 10
           },
           {
+            "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
             "mutual": true,
             "values": ["dislike"],
             "amount": -10
@@ -1341,25 +1374,27 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": ["accessory"],
-        "weight": 10,
+        "weight": 20,
         "event_text": "m_c starts bringing a pretty acc_singular everywhere {PRONOUN/m_c/subject} {VERB/m_c/go/goes}, and r_c loudly complains that {PRONOUN/r_c/subject} {VERB/r_c/want/wants} one, too.",
         "new_accessory": ["WILD", "PLANT"],
         "m_c": {
-            "age": ["kitten"],
-            "status": ["kitten"]
+            "age": ["kitten"]
         },
         "r_c": {
           "age":["kitten"],
-          "status": ["kitten"],
           "trait": ["bullying", "impulsive", "attention-seeker"]
         },
         "relationships": [
           {
+            "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
             "mutual": true,
             "values": ["dislike", "jealousy"],
             "amount": 10
           },
           {
+           "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
             "mutual": true,
             "values": [ "platonic", "comfort"],
             "amount": -5
@@ -1376,7 +1411,6 @@
         "new_accessory": ["HERBS", "PETALS", "DRY HERBS"],
         "m_c": {
           "age": ["kitten"],
-          "status": ["kitten"],
           "relationship_status": ["child/parent"]
         },
         "r_c":{
@@ -1394,7 +1428,6 @@
         "new_accessory": ["WILD", "PLANT"],
         "m_c": {
             "age": ["kitten"],
-            "status": ["kitten"],
             "relationship_status": ["child/parent"],
             "trait": ["attention-seeker", "charming"]
         },
@@ -1410,8 +1443,7 @@
         "weight": 15,
         "event_text": "m_c is scolded after sneaking out of camp.",
         "m_c": {
-            "age": ["kitten", "adolescent"],
-            "status": ["kitten", "apprentice"]
+            "age": ["kitten", "adolescent"]
         }
     },
     {
@@ -1421,18 +1453,16 @@
         "weight": 15,
         "event_text": "m_c falls into a river, but is saved by r_c.",
         "m_c": {
-            "age": ["kitten", "adolescent"],
-            "status": ["kitten", "apprentice"]
+            "age": ["kitten", "adolescent"]
         },
         "r_c": {
-          "age": ["young adult", "adult", "senior adult", "senior"],
-          "status":["any"]
+          "age": ["young adult", "adult", "senior adult", "senior"]
         },
         "relationships": [
           {
             "cats_to": ["m_c"],
             "cats_from": ["r_c"],
-            "mutual": true,
+            "mutual": false,
             "values": ["platonic", "comfort", "respect", "trust"],
             "amount": 15
           }
@@ -1445,15 +1475,16 @@
       "weight": 20,
       "event_text": "m_c sneaks out of camp with r_c.",
       "m_c": {
-          "age": ["adolescent"],
-          "status": ["apprentice"]
+          "age": ["adolescent"]
       },
       "r_c": {
-        "age": ["adolescent"],
-        "status": ["apprentice"]
+        "age": ["adolescent"]
       },
       "relationships": [
           {
+              "cats_to": ["m_c"],
+              "cats_from": ["r_c"],
+              "mutual": true,
               "values": ["trust", "platonic"],
               "amount": 10
           }
@@ -1466,16 +1497,16 @@
     "weight": 20,
     "event_text": "m_c and r_c sneak out of camp to see the sun rise.",
     "m_c": {
-        "age": ["adolescent"],
-        "status": ["apprentice"]
+        "age": ["adolescent"]
     },
     "r_c": {
-        "age": ["adolescent"],
-        "status": ["apprentice"]
+        "age": ["adolescent"]
     },
     "relationships": [
         {
-            "mututal": true,
+            "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
+            "mutual": true,
             "values": ["platonic", "comfort", "trust"],
             "amount": 5
         }
@@ -1488,16 +1519,16 @@
     "weight": 20,
     "event_text": "m_c and r_c sneak out of camp to see the moon rise.",
     "m_c": {
-      "age": ["adolescent"],
-      "status": ["apprentice"]
+      "age": ["adolescent"]
     },
     "r_c": {
-      "age": ["adolescent"],
-      "status": ["apprentice"]
+      "age": ["adolescent"]
     },
     "relationships": [
         {
-          "mututal": true,
+          "cats_to": ["m_c"],
+          "cats_from": ["r_c"],
+          "mutual": true,
           "values": ["platonic", "comfort", "trust"],
           "amount": 5
         }
@@ -1519,8 +1550,10 @@
     },
     "relationships": [
         {
-          "mututal": true,
-          "values": ["platonic", "trust"],
+          "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["platonic", "trust"],
           "amount": 10
         }
     ]
@@ -1532,16 +1565,16 @@
     "weight": 20,
     "event_text": "m_c and r_c were practicing climbing when they found a nest of strange eggs.",
     "m_c": {
-        "age": ["adolescent"],
-        "status": ["apprentice"]
+        "age": ["adolescent"]
     },
     "r_c": {
-        "age": ["adolescent"],
-        "status": ["apprentice"]
+        "age": ["adolescent"]
     },
     "relationships": [
         {
-            "mututal": true,
+            "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
+            "mutual": true,
             "values": ["platonic", "trust"],
             "amount": 10
         }
@@ -1554,16 +1587,16 @@
     "weight": 20,
     "event_text": "m_c and r_c sneak out of camp to go bird watching.",
     "m_c": {
-        "age": ["adolescent"],
-        "status": ["apprentice"]
+        "age": ["adolescent"]
     },
     "r_c": {
-        "age": ["adolescent"],
-        "status": ["apprentice"]
+        "age": ["adolescent"]
     },
     "relationships": [
         {
-            "mututal": true,
+            "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
+            "mutual": true,
             "values": ["platonic", "trust"],
             "amount": 10
         }
@@ -1576,16 +1609,16 @@
     "weight": 20,
     "event_text": "m_c and r_c play in the fallen leaves outside of camp.",
     "m_c": {
-        "age": ["adolescent"],
-        "status": ["apprentice"]
+        "age": ["adolescent"]
     },
     "r_c": {
-        "age": ["adolescent"],
-        "status": ["apprentice"]
+        "age": ["adolescent"]
     },
     "relationships": [
         {
-            "mututal": true,
+            "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
+            "mutual": true,
             "values": ["platonic", "trust"],
             "amount": 10
         }
@@ -1598,16 +1631,16 @@
     "weight": 20,
     "event_text": "m_c and r_c play in the snow outside of camp.",
     "m_c": {
-        "age": ["adolescent"],
-        "status": ["apprentice"]
+        "age": ["adolescent"]
     },
     "r_c": {
-        "age": ["adolescent"],
-        "status": ["apprentice"]
+        "age": ["adolescent"]
     },
     "relationships": [
         {
-            "mututal": true,
+            "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
+            "mutual": true,
             "values": ["platonic", "trust"],
             "amount": 10
         }
@@ -1633,7 +1666,9 @@
     },
     "relationships": [
         {
-          "mututal": true,
+          "cats_from": ["m_c"],
+          "cats_to": ["r_c"],
+          "mutual": true,
           "values": ["romantic", "comfort", "trust", "respect"],
           "amount": 10
         }
@@ -1648,11 +1683,9 @@
     "event_text": "m_c, for the umpteenth time, hears r_c complaining about the dry rye stalks underneath {PRONOUN/r_c/poss} paws when {PRONOUN/r_c/subject} {VERB/r_c/finish/finishes} cleaning the elders' den and got an idea. The next day, m_c adorns {PRONOUN/m_c/poss} pelt with acc_plural.",
     "new_accessory": ["RYE STALK"],
     "m_c": {
-      "age": ["adolescent"],
       "status": ["apprentice"]
     },
     "r_c": {
-      "age": ["adolescent"],
       "status": ["apprentice"]
     }
   },
@@ -1665,7 +1698,6 @@
     "event_text": "m_c gets dared to hunt outside in the snow alone, and returns with acc_singular in {PRONOUN/m_c/poss} pelt.",
     "new_accessory": ["WILD", "PLANT"],
     "m_c": {
-      "age": ["adolescent"],
       "status": ["apprentice"]
     }
   },
@@ -1678,15 +1710,16 @@
     "event_text": "m_c is nearly blindsided by r_c as {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} into camp after a long training day, listening to the kit squeak about a type of feather. r_c leads m_c to the nursery, where {PRONOUN/r_c/subject} carefully put acc_plural in m_c's fur.",
     "new_accessory": ["BLUE FEATHERS"],
     "m_c": {
-        "age": ["adolescent"],
-        "status": ["apprentice"]
+        "age": ["adolescent"]
     },
     "r_c": {
-        "age": ["kitten"],
         "status":["kitten"]
     },
     "relationships": [
         {
+            "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
+            "mutual": true,
             "values": ["platonic","comfort"],
             "amount": 10
         }
@@ -1700,13 +1733,8 @@
     "weight": 10,
     "event_text": "m_c is struggling to cope with the violence and chaos of war surrounding {PRONOUN/m_c/object}, finding it difficult to wake up in the morning due to the stress and strain of constant battle training.",
     "m_c": {
-        "age": ["adolescent"],
         "status": ["apprentice"],
         "trait": ["nervous", "lonesome", "playful", "careful", "compassionate", "loving", "insecure"]
-    },
-    "other_clan": {
-        "current_rep": ["hostile"],
-        "changed": -5
     }
   },
   {
@@ -1717,8 +1745,7 @@
     "weight": 20,
     "event_text": "m_c feels like {PRONOUN/m_c/subject} might be growing up too fast in the midst of war.",
     "m_c": {
-        "age": ["adolescent"],
-        "status": ["apprentice"]
+        "age": ["adolescent"]
     }
   },
   {
@@ -1728,12 +1755,10 @@
     "weight": 15,
     "event_text": "m_c was caught sharing prey with a kittypet, who was chased off by a patrol.",
     "m_c": {
-        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
-        "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
     },
     "new_cat": [
-      ["meeting", "kittypet",
-                "exists"]
+      ["meeting", "kittypet", "exists"]
     ],
     "relationships": [
       {
@@ -1756,12 +1781,10 @@
     "weight": 15,
     "event_text": "m_c was seen touching noses with a kittypet. Scandalous!",
     "m_c": {
-        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
-        "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
+        "age": ["young adult", "adult", "senior adult", "senior"]
     },
     "new_cat": [
-      ["meeting", "kittypet",
-                "exists"]
+      ["meeting", "kittypet", "exists"]
     ],
     "relationships": [
       {
@@ -1784,12 +1807,10 @@
     "weight": 15,
     "event_text": "m_c was seen playing with a kittypet over the border.",
     "m_c": {
-        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
-        "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
     },
     "new_cat": [
-      ["meeting", "kittypet",
-                "exists"]
+      ["meeting", "kittypet", "exists"]
     ],
     "relationships": [
       {
@@ -1812,12 +1833,10 @@
     "weight": 15,
     "event_text": "m_c was seen chasing a kittypet off of the territory.",
     "m_c": {
-        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
-        "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
     },
     "new_cat": [
-      ["meeting", "kittypet",
-                "exists"]
+      ["meeting", "kittypet", "exists"]
     ],
     "relationships": [
       {
@@ -1840,12 +1859,10 @@
     "weight": 15,
     "event_text": "m_c was seen in a very serious conversation with a kittypet, who ran away when another patrol approached.",
     "m_c": {
-        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
-        "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
     },
     "new_cat": [
-      ["meeting", "kittypet",
-                "exists"]
+      ["meeting", "kittypet", "exists"]
     ],
     "relationships": [
       {
@@ -1864,12 +1881,11 @@
     "weight": 10,
     "event_text": "m_c was seen touching noses with someone from o_c_n. Scandalous!",
     "m_c": {
-        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
-        "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
     },
     "other_clan": {
       "current_rep": ["any"],
-      "changed": 5
+      "changed": 1
     }
   },
   {
@@ -1879,8 +1895,7 @@
     "weight": 10,
     "event_text": "m_c was loitering around o_c_n's border, looking for a specific cat.",
     "m_c": {
-        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
-        "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
     }
   },
   {
@@ -1890,12 +1905,11 @@
     "weight": 10,
     "event_text": "m_c was seen racing along the border with {PRONOUN/m_c/poss} rival from o_c_n.",
     "m_c": {
-        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
-        "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
     },
     "other_clan": {
       "current_rep": ["any"],
-      "changed": 10
+      "changed": 1
     }
   },    
   {
@@ -1906,12 +1920,11 @@
     "weight": 10,
     "event_text": "m_c was seen arguing, and borderline-fighting, with a cat from o_c_n.",
     "m_c": {
-        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
-        "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
     },
     "other_clan": {
       "current_rep": ["any"],
-      "changed": -5
+      "changed": -1
     }
   },
   {
@@ -1921,12 +1934,11 @@
     "weight": 10,
     "event_text": "m_c was seen speaking calmly to a cat from o_c_n.",
     "m_c": {
-        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
-        "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
     },
     "other_clan": {
       "current_rep": ["any"],
-      "changed": 10
+      "changed": 1
     }
   },
   {
@@ -1936,12 +1948,10 @@
     "weight": 15,
     "event_text": "m_c was seen arguing, and borderline-fighting, with a loner.",
     "m_c": {
-        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
-        "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
     },
     "new_cat": [
-      ["meeting", "loner",
-                "exists"]
+      ["meeting", "loner", "exists"]
     ],
     "relationships": [
       {
@@ -1961,15 +1971,13 @@
     "event_id": "gen_misc_any_scandalous_loner2",
     "location": ["any"],
     "season": ["any"],
-    "weight": 15,
+    "weight": 10,
     "event_text": "m_c was seen touching noses with a loner. Scandalous!",
     "m_c": {
-        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
-        "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
+        "age": ["young adult", "adult", "senior adult", "senior"]
     },
     "new_cat": [
-      ["meeting", "loner",
-                "exists"]
+      ["meeting", "loner", "exists"]
     ],
     "relationships": [
       {
@@ -1989,15 +1997,13 @@
     "event_id": "gen_misc_any_scandalous_loner3",
     "location": ["any"],
     "season": ["any"],
-    "weight": 15,
+    "weight": 10,
     "event_text": "m_c was seen talking calmly to a loner, before both cats went their separate ways.",
     "m_c": {
-        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
-        "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
     },
     "new_cat": [
-      ["meeting", "loner",
-                "exists"]
+      ["meeting", "loner", "exists"]
     ],
     "relationships": [
       {
@@ -2013,26 +2019,23 @@
     "event_id": "gen_misc_any_scandalous1",
     "location": ["any"],
     "season": ["any"],
-    "weight": 15,
+    "weight": 5,
     "event_text": "m_c was seen taking food from a Twoleg!",
     "m_c": {
-        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
-        "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
     }
   },
   {
     "event_id": "gen_misc_any_scandalous_rogue1",
     "location": ["any"],
     "season": ["any"],
-    "weight": 15,
+    "weight": 10,
     "event_text": "m_c was caught sharing prey with a rogue, who was chased off by a patrol.",
     "m_c": {
-        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
-        "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
     },
     "new_cat": [
-      ["meeting", "rogue",
-                "exists"]
+      ["meeting", "rogue",  "exists"]
     ],
     "relationships": [
       {
@@ -2052,15 +2055,13 @@
     "event_id": "gen_misc_any_scandalous_rogue2",
     "location": ["any"],
     "season": ["any"],
-    "weight": 15,
+    "weight": 10,
     "event_text":  "m_c was seen touching noses with a rogue. Scandalous!",
     "m_c": {
-        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
-        "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
+        "age": ["young adult", "adult", "senior adult", "senior"]
     },
     "new_cat": [
-      ["meeting", "rogue",
-                "exists"]
+      ["meeting", "rogue", "exists"]
     ],
     "relationships": [
       {
@@ -2080,7 +2081,7 @@
     "event_id": "gen_misc_any_scandalous_rogue3",
     "location": ["any"],
     "season": ["any"],
-    "weight": 15,
+    "weight": 10,
     "event_text":"m_c was seen chasing a rogue off of the territory.",
     "m_c": {
         "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
@@ -2117,7 +2118,7 @@
       "skill": ["MEDIATOR,2"]
     },
     "other_clan": {
-      "changed": 5
+      "changed": 4
     }
   },
   {
@@ -2154,7 +2155,7 @@
       "status":["mediator", "mediator apprentice"]
     },
     "other_clan": {
-      "changed": -5
+      "changed": -2
     }
   },
   {
@@ -2164,12 +2165,10 @@
     "weight": 10,
     "event_text": "m_c pulls r_c to the side, quietly asking {PRONOUN/r_c/object} abou {PRONOUN/r_c/poss} crush on a fellow Clanmate.",
     "m_c":{
-      "age":["any"],
       "status":["mediator", "mediator apprentice"]
     },
     "r_c": {
-      "age": ["young adult", "adult", "senior adult", "senior"],
-      "status": ["warrior", "mediator", "medicine cat", "deputy", "leader", "elder"],
+      "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
       "trait": ["nervous","insecure","grumpy"]
     },
     "relationships": [
@@ -2193,14 +2192,12 @@
     "event_id": "gen_misc_any_mediatorkit",
     "location": ["any"],
     "season": ["any"],
-    "weight": 10,
+    "weight": 20,
     "event_text": "m_c spots r_c looking a little bit lonely, and invites {PRONOUN/r_c/object} to watch as {PRONOUN/m_c/subject} {VERB/m_c/perform/performs} {PRONOUN/m_c/poss} duties.",
     "m_c":{
-      "age":["any"],
       "status": ["mediator", "mediator apprentice"]
     },
     "r_c": {
-      "age": ["kitten"],
       "status": ["kitten"]
     },
     "relationships": [
@@ -2225,28 +2222,30 @@
     "location": ["any"],
     "season": ["any"],
     "sub_type": ["war"],
-    "weight": 10,
+    "weight": 30,
     "event_text": "m_c is giving r_c bad war advice on purpose.",
     "m_c": {
-      "age":["any"],
       "status": ["mediator", "mediator apprentice"],
       "relationship_status": ["dislike_20"],
       "trait": ["cunning"]
     },
     "r_c": {
-      "age":["any"],
       "status": ["leader"],
       "trait": ["bold", "charismatic","confident", "daring","righteous","ambitious","bloodthirsty","cold","fierce","shameless","strict", "troublesome", "vengeful", "sneaky", "strange"]
     },
     "relationships": [
       {
-        "mutual": true,
-        "values": ["dislike"],
+        "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["dislike"],
         "amount": 10
       },
       {
-        "mutual": true,
-        "values": ["trust", "comfort"],
+        "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["trust", "comfort"],
         "amount": -10
       }
     ]
@@ -2259,11 +2258,9 @@
     "weight": 10,
     "event_text": "m_c is conversing with r_c about ways to potentially end this war without bloodshed.",
     "m_c":{
-      "age":["any"],
       "status": ["mediator", "mediator apprentice"]
     },
     "r_c": {
-      "age":["any"],
       "status": ["leader"],
       "trait": ["calm","careful","insecure","lonesome","loyal","nervous","compassionate","faithful","loving","responsible","thoughtful","wise","inquisitive","childish","playful"]
     },
@@ -2285,11 +2282,9 @@
     "weight": 10,
     "event_text": "m_c is conversing with r_c about ways to potentially end this war- but not without bloodshed.",
     "m_c":{
-      "age":["any"],
       "status": ["mediator", "mediator apprentice"]
     },
     "r_c": {
-      "age":["any"],
       "status": ["leader"],
       "trait": ["bold", "charismatic","confident", "daring","righteous","ambitious","bloodthirsty","cold","fierce","shameless","strict", "troublesome", "vengeful", "sneaky", "strange"]
     },
@@ -2310,12 +2305,11 @@
     "weight": 15,
     "event_text": "m_c visits the other medicine cats.",
     "m_c": {
-        "age": ["young adult","adult","senior adult","senior"],
         "status": ["medicine cat"]
     },
     "other_clan": {
       "current_rep": ["any"],
-      "changed": 10
+      "changed": 1
     }
   },
   {
@@ -2325,13 +2319,12 @@
     "weight": 15,
     "event_text": "m_c visits o_c_n to converse with their medicine cats about an omen StarClan sent.",
     "m_c": {
-        "age": ["young adult","adult","senior adult","senior"],
         "status": ["medicine cat"],
         "skill": ["OMEN,0"]
       },
     "other_clan": {
       "current_rep": ["any"],
-      "changed": 10
+      "changed": 3
     }
   },
   {
@@ -2341,13 +2334,12 @@
     "weight": 15,
     "event_text": "m_c visits o_c_n to congratulate them on their new medicine cat.",
     "m_c": {
-        "age": ["young adult","adult","senior adult","senior"],
         "status": ["medicine cat"],
         "skill": ["MEDIATOR,1"]
       },
     "other_clan": {
       "current_rep": ["any"],
-      "changed": 10
+      "changed": 2
     }
   },
   {
@@ -2359,22 +2351,24 @@
     "event_text": "r_c presents m_c with acc_plural as a congratulations.",
     "new_accessory": ["WILD", "PLANT"],
     "m_c": {
-      "age":["any"],
       "status": ["medicine cat"]
     },
     "r_c": {
-      "age":["any"],
       "status": ["medicine cat"]
     },
     "relationships": [
       {
-        "mutual": true,
-        "values": ["platonic","comfort","trust"],
+        "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["platonic","comfort","trust"],
         "amount": 5
       },
       {
-        "mutual": true,
-        "values": ["dislike"],
+        "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["dislike"],
         "amount": -5
       }
     ]
@@ -2391,7 +2385,6 @@
       "skill": ["OMEN,0"]
       },
     "r_c": {
-      "age":["any"],
       "status": ["leader"]
     }
   },
@@ -2407,7 +2400,6 @@
       "skill": ["OMEN,0"]
       },
     "r_c": {
-      "age":["any"],
       "status": ["medicine cat"]
     }
   },
@@ -2419,7 +2411,6 @@
     "weight": 10,
     "event_text": "m_c walks into the dreams of {PRONOUN/m_c/poss} Clanmates while everyone sleeps.",
     "m_c": {
-      "age":["any"],
       "status": ["medicine cat"],
       "skill": ["DREAM,2"]
     }
@@ -2432,8 +2423,7 @@
     "weight": 10,
     "event_text": "m_c tosses in {PRONOUN/m_c/poss} sleep as {PRONOUN/m_c/poss} dreamself pads through the thoughts of {PRONOUN/m_c/poss} Clanmates, picking up snippets of dream_list. {PRONOUN/m_c/subject/CAP} slowly {VERB/m_c/blink/blinks} awake, wondering whose dreams {PRONOUN/m_c/subject} walked in.",
     "m_c": {
-      "age":["any"],
-      "status": ["medicine cat apprentice", "medicine cat"], 
+      "status": ["medicine cat apprentice", "medicine cat"],
       "skill": ["DREAM,2"]
     }
   },
@@ -2445,7 +2435,6 @@
     "weight": 10,
     "event_text": "m_c correctly warns the leader of an ambush, thanks to {PRONOUN/m_c/poss} clairvoyant nature.",
     "m_c": {
-      "age":["any"],
       "status": ["medicine cat"],
       "skill": ["CLAIRVOYANT,2"]
     }
@@ -2454,10 +2443,9 @@
     "event_id": "gen_misc_any_medicinecatprophet1",
     "location": ["any"],
     "season": ["any"],
-    "weight": 10,
+    "weight": 15,
     "event_text": "m_c spends {PRONOUN/m_c/poss} day communing with StarClan, attempting to figure out a recent prophecy.",
     "m_c": {
-      "age":["any"],
       "status":["medicine cat", "medicine cat apprentice"],
       "skill": ["PROPHET,2"]
     }
@@ -2466,12 +2454,11 @@
     "event_id": "gen_misc_any_medicinecatelderlore1",
     "location": ["any"],
     "season": ["any"],
-    "weight": 10,
+    "weight": 20,
     "event_text": "m_c has been worried that c_n will lose the knowledge r_c has gained through {PRONOUN/r_c/poss} long life, but by sitting with r_c and discussing {PRONOUN/r_c/poss} experiences, m_c will ensure the lessons learned in the past are never forgotten.",
     "m_c": {
-      "age":["any"],
       "status":["medicine cat"],
-      "skill": ["LORE,0"]
+      "skill": ["LORE,1"]
     },
     "r_c": {
         "age": ["senior"],
@@ -2482,15 +2469,14 @@
     "event_id": "gen_misc_any_medicinecatscandolous1",
     "location": ["any"],
     "season": ["any"],
-    "weight": 10,
+    "weight": 15,
     "event_text": "m_c was seen loudly bickering with the medicine cat of o_c_n.",
     "m_c":{
-      "age":["any"],
       "status": ["medicine cat"]
     },
     "other_clan": {
       "current_rep": ["any"],
-      "changed": -5
+      "changed": -1
     }
   },
   {
@@ -2500,9 +2486,20 @@
     "weight": 10,
     "event_text": "m_c was seen talking with a traveling loner healer on the border.",
     "m_c":{
-      "age":["any"],
       "status": ["medicine cat"]
-    }
+    },
+    "new_cat": [
+      ["loner", "meeting", "backstory:wandering_healer2", "exists"]
+    ],
+    "relationships": [
+      {
+        "cats_to": "n_c:0",
+        "cats_from": ["m_c"],
+        "mutual": true,
+        "values": ["platonic"],
+        "amount": 5
+      }
+    ]
   },
   {
     "event_id": "gen_misc_any_medicinecatwar1",
@@ -2512,7 +2509,6 @@
     "weight": 10,
     "event_text": "m_c's knowledge of herbs and healing is being put to the test, with injuries becoming more severe in the midst of war.",
     "m_c": {
-      "age":["any"],
       "status": ["medicine cat", "medicine cat apprentice"]
     }
   },
@@ -2521,10 +2517,9 @@
     "location": ["any"],
     "season": ["any"],
     "sub_type": ["war"],
-    "weight": 10,
+    "weight": 20,
     "event_text": "m_c watches every little thing around {PRONOUN/m_c/object} for any omen that indicates what the Clan should do in the war. The losses weigh heavy on the hearts of every cat.",
     "m_c": {
-      "age":["any"],
       "status": ["medicine cat apprentice", "medicine cat"],
       "skill": ["OMEN,1"]
     }
@@ -2549,20 +2544,24 @@
     "weight": 10,
     "event_text": "c_n is in a badly need of herbs, and m_c knows it, but can't bring {PRONOUN/m_c/self} to leave {PRONOUN/m_c/poss} patients' side.",
     "m_c": {
-      "age":["any"],
       "status": ["medicine cat", "medicine cat apprentice"]
     }
   },
   {
     "event_id": "gen_misc_leafbare_medicinecatwar1",
     "location": ["any"],
-    "season": ["leafbare"],
+    "season": ["leaf-bare"],
     "sub_type": ["war"],
     "weight": 10,
-    "event_text":"m_c hopes to find the herbs that c_n needs in the war, and goes to look for them even in this leafbare's harsh weather.",
+    "event_text": "m_c hopes to find the herbs that c_n needs in the war, and goes to look for them even in this Leaf-bare's harsh weather.",
     "m_c": {
       "age":["any"],
       "status": ["medicine cat apprentice", "medicine cat"]
+    },
+    "supplies": {
+      "type": "any_herb",
+      "trigger": ["low"],
+      "amount": "increase_5"
     }
   },
   {
@@ -2607,7 +2606,6 @@
     "weight": 20,
     "event_text": "m_c awakens with multiple objects stacked on {PRONOUN/m_c/object}, and the sound of giggling cats in the distance.",
     "m_c": {
-      "age": ["any"],
       "status":["elder"]
     }
   },
@@ -2615,12 +2613,12 @@
     "event_id": "gen_misc_any_insightfulelderleader1",
     "location": ["any"],
     "season": ["any"],
-    "weight": 15,
+    "weight": 20,
     "event_text": "m_c speaks to r_c about how to better defend the camp.",
     "m_c": {
       "age":["any"],
       "status":["elder"],
-      "skill": ["INSIGHTFUL,1"]
+      "skill": ["INSIGHTFUL,1", "CAMP,2"]
     },
     "r_c": {
       "age":["any"],
@@ -2631,7 +2629,7 @@
     "event_id": "gen_misc_any_campelder1",
     "location": ["any"],
     "season": ["any"],
-    "weight": 10,
+    "weight": 20,
     "event_text": "m_c helps reinforce the dens in the camp while the rest of the camp is on patrol.",
     "m_c": {
       "age":["any"],
@@ -2643,7 +2641,7 @@
     "event_id": "gen_misc_any_campelder2",
     "location": ["any"],
     "season": ["any"],
-    "weight": 10,
+    "weight": 20,
     "event_text": "m_c places small feathers and shining stones near the nest of each Clanmate while they're on patrol.",
     "m_c": {
       "age":["any"],
@@ -2655,7 +2653,7 @@
     "event_id": "gen_misc_any_campelder3",
     "location": ["any"],
     "season": ["any"],
-    "weight": 15,
+    "weight": 20,
     "event_text": "m_c keeps an eye on the camp while the warriors are on patrol.",
     "m_c": {
       "age":["any"],
@@ -2667,7 +2665,8 @@
     "event_id": "gen_misc_any_storyelder1",
     "location": ["any"],
     "season": ["any"],
-    "weight": 10,
+    "tags": ["clan:apps"],
+    "weight": 20,
     "event_text": "m_c calls the younger cats to {PRONOUN/m_c/poss} den to tell stories of the Clan's past.",
     "m_c": {
       "age":["any"],
@@ -2680,7 +2679,7 @@
     "location": ["any"],
     "season": ["any"],
     "tags": ["clan:kitten"],
-    "weight": 15,
+    "weight": 30,
     "event_text": "m_c calls out to some eager kits, and after they have situated themselves in front of m_c, {PRONOUN/m_c/subject} {VERB/m_c/start/starts} telling the kits a thrilling story of times long past.",
     "m_c": {
       "age": ["senior", "adolescent","young adult", "adult","senior adult"],
@@ -2714,12 +2713,16 @@
     "weight": 10,
     "event_text": "m_c travels to o_c_n to bring them an important message.",
     "m_c":{
-      "age":["any"],
-      "status": ["medicine cat", "deputy"]
+      "status": [
+        "medicine cat",
+        "deputy",
+        "mediator",
+        "mediator apprentice"
+      ]
     },
     "other_clan": {
       "current_rep": ["any"],
-      "changed": 5
+      "changed": 3
     }
   },
   {
@@ -2729,12 +2732,16 @@
     "weight": 10,
     "event_text": "m_c travels to the other Clans to bring them an important message.",
     "m_c":{
-      "age":["any"],
-      "status": ["medicine cat", "deputy"]
+      "status": [
+        "medicine cat",
+        "deputy",
+        "mediator",
+        "mediator apprentice"
+      ]
     },
     "other_clan": {
       "current_rep": ["any"],
-      "changed": 5
+      "changed": 3
     }
   },
   {
@@ -2745,7 +2752,6 @@
     "weight": 10,
     "event_text": "As the deputy, m_c is doing {PRONOUN/m_c/poss} best to prepare for leadership in the case that the worst happens.",
     "m_c":{
-      "age":["any"],
       "status": ["deputy"]
     }
   },
@@ -2754,6 +2760,7 @@
     "location": ["any"],
     "season": ["any"],
     "sub_type": ["war"],
+    "tags": ["low_lives"],
     "weight": 5,
     "event_text": "m_c is struggling to accept the fact that {PRONOUN/m_c/subject} may have to step up as leader if r_c loses {PRONOUN/r_c/poss} last life.",
     "m_c": {
@@ -2771,15 +2778,14 @@
     "location": ["any"],
     "season": ["any"],
      "sub_type": ["war"],
+    "tags": ["low_lives"],
     "weight": 10,
     "event_text": "m_c is struggling to accept the fact that {PRONOUN/m_c/subject} may have to step up as leader if r_c loses {PRONOUN/r_c/poss} last life. How could {PRONOUN/m_c/subject} {VERB/m_c/go/goes} on without {PRONOUN/m_c/poss} beloved leader? How difficult will it to be to lead in {PRONOUN/r_c/poss} stead?",
     "m_c": {
-      "age":["any"],
       "status": ["deputy"],
       "trait": ["insecure","lonesome", "nervous"]
       },
       "r_c": {
-        "age":["any"],
         "status": ["leader"]
       },
     "relationships": [
@@ -2800,20 +2806,18 @@
     "weight": 10,
     "event_text": "m_c is heavily relying on the tactical advice and experience of the elders, namely r_c.",
     "m_c": {
-      "age":["any"],
-      "status": ["deputy"],
+      "status": ["deputy", "leader"],
       "trait": ["insecure","lonesome", "nervous"]
       },
       "r_c": {
-        "age":["any"],
         "status": ["elder"],
-        "skill": ["INSIGHTFUL,1","TEACHER,3", "CLEVER,3", "CAMP,3"]
+        "skill": ["INSIGHTFUL,1", "TEACHER,3", "CLEVER,3", "CAMP,3"]
       },
     "relationships": [
       {
         "cats_from": ["m_c"],
         "cats_to": ["r_c"],
-        "mutual": false,
+        "mutual": true,
         "values": ["respect", "trust"],
         "amount": 10
       }
@@ -2827,7 +2831,6 @@
     "weight": 10,
     "event_text": "m_c thinks about retiring.",
     "m_c":{
-      "age":["any"],
       "status": ["leader"]
     }
   },
@@ -2839,7 +2842,6 @@
     "weight": 10,
     "event_text": "m_c confesses {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} have many lives left.",
     "m_c":{
-      "age":["any"],
       "status":["leader"]
     }
   },
@@ -2850,7 +2852,6 @@
     "weight": 10,
     "event_text": "m_c feels as though the responsibility of leadership is crushing {PRONOUN/m_c/object}.",
     "m_c":{
-      "age":["any"],
       "status": ["leader"]
     }
   },
@@ -2858,10 +2859,9 @@
     "event_id": "gen_misc_any_leader2",
     "location": ["any"],
     "season": ["any"],
-    "weight": 20,
+    "weight": 30,
     "event_text": "m_c calls a Clan meeting to give an important announcement.",
     "m_c":{
-      "age":["any"],
       "status":["leader"]
     }
   },
@@ -2870,10 +2870,9 @@
     "location": ["any"],
     "season": ["any"],
      "sub_type": ["war"],
-    "weight": 10,
+    "weight": 20,
     "event_text": "m_c feels burdened with the weight of {PRONOUN/m_c/poss} decisions, knowing that every choice they make could mean the difference between victory and defeat.",
     "m_c":{
-      "age":["any"],
       "status":["leader"]
     }
   },
@@ -2882,10 +2881,9 @@
     "location": ["any"],
     "season": ["any"],
      "sub_type": ["war"],
-    "weight": 10,
+    "weight": 20,
     "event_text": "m_c's relationships with {PRONOUN/m_c/poss} Clanmates are strained, with some questioning {PRONOUN/m_c/poss} decisions and others relying on {PRONOUN/m_c/object} more heavily than ever.",
     "m_c":{
-      "age":["any"],
       "status":["leader"]
     }
   },
@@ -2894,10 +2892,9 @@
     "location": ["any"],
     "season": ["any"],
      "sub_type": ["war"],
-    "weight": 10,
+    "weight": 20,
     "event_text": "m_c is forced to be a symbol of strength and unity for {PRONOUN/m_c/poss} Clan, even in the face of {PRONOUN/m_c/poss} own doubts and fears.",
     "m_c":{
-      "age":["any"],
       "status": ["leader"]
     }
   },
@@ -2950,7 +2947,7 @@
     "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
-    "weight": 10,
+    "weight": 5,
     "event_text": "The o_c_n medicine cat comes asking if c_n has any herbs to spare. Unfortunately, the c_n herb stocks are far too low and c_n is unable to provide any help.",
     "supplies": [
       {
@@ -2969,7 +2966,7 @@
     "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
-    "weight": 10,
+    "weight": 2,
     "event_text": "A medicine cat from o_c_n comes comes to c_n, asking for herbs to heal their sick Clanmates. c_n quickly shoos them away, not willing to admit that they already don't have enough to support themselves.",
     "supplies": [
       {
@@ -2988,7 +2985,7 @@
     "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
-    "weight": 10,
+    "weight": 5,
     "event_text": "The o_c_n medicine cat comes asking if c_n has any given_herb to spare. Graciously, your Clan decides to aid their allies and share the herbs.",
     "supplies": [
       {
@@ -3007,7 +3004,7 @@
     "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
-    "weight": 10,
+    "weight": 2,
     "event_text": "The medicine cat apprentice from o_c_n comes asking for given_herb. They refuse to say why their Clan needs them but c_n still provides them with what they need.",
     "supplies": [
       {
@@ -3026,7 +3023,7 @@
     "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
-    "weight": 10,
+    "weight": 5,
     "event_text": "The o_c_n medicine cat comes asking if c_n has any given_herb to spare. However, c_n only has enough for themselves and they refuse to share.",
     "supplies": [
       {
@@ -3045,7 +3042,7 @@
     "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
-    "weight": 10,
+    "weight": 2,
     "event_text": "The medicine cat apprentice from o_c_n comes asking for herbs. They refuse to say why their Clan needs them and c_n decides not to share their precious few given_herb.",
     "supplies": [
       {
@@ -3064,7 +3061,7 @@
     "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
-    "weight": 10,
+    "weight": 2,
     "event_text": "The o_c_n medicine cat apprentice comes to c_n's camp, pleading for help with a yellowcough epidemic. c_n provides the cat with some of their extra lungwort.",
     "supplies": [
       {
@@ -3083,7 +3080,7 @@
     "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
-    "weight": 10,
+    "weight": 2,
     "event_text": "A medicine cat from o_c_n comes to c_n, asking for lungwort to heal a case of yellowcough. c_n has some extra, and so decides to share with their allies.",
     "supplies": [
       {
@@ -3102,7 +3099,7 @@
     "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
-    "weight": 5,
+    "weight": 2,
     "event_text": "The o_c_n medicine cat apprentice comes to c_n's camp, pleading for help with a yellowcough epidemic. However, c_n has none that they are willing to share.",
     "supplies": [
       {
@@ -3121,7 +3118,7 @@
     "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
-    "weight": 10,
+    "weight": 2,
     "event_text": "A medicine cat from o_c_n comes to c_n, asking for lungwort to heal a case of yellowcough. However, c_n hardly has enough for their own Clan and so refuses.",
     "supplies": [
       {

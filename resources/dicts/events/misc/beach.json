@@ -8,7 +8,6 @@
     "weight": 15,
     "event_text": "The apprentices of the Clan are taking special training to learn how to disguise their scents from enemies with kelp and seawater.",
     "m_c": {
-      "age": ["any"],
       "status": ["apprentice"]
     }
   },
@@ -16,10 +15,9 @@
     "event_id": "bch_misc_anyprophecymedcatprophet1",
     "location": ["beach"],
     "season": ["any"],
-    "weight": 10,
+    "weight": 20,
     "event_text": "As a storm rages across the beach and waves crash upon the shore, m_c is tucked up in the medicine cat den, {PRONOUN/m_c/poss} sleep anything but restful. {PRONOUN/m_c/subject/CAP} {VERB/m_c/keep/keeps} seeing flashes of prophecy_list_sight. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wake/wakes} with a shiver, wondering what {PRONOUN/m_c/poss} dreams mean for the Clan.",
     "m_c": {
-      "age": ["any"],
       "status": ["medicine cat", "medicine cat apprentice"],
       "skill": ["PROPHET,2"]
     }
@@ -28,10 +26,9 @@
     "event_id": "bch_misc_anyomenmedcatomen1",
     "location": ["beach"],
     "season": ["any"],
-    "weight": 10,
+    "weight": 20,
     "event_text": "The things {PRONOUN/m_c/subject} saw today: omen_list_sight... m_c dips a paw in a rockpool, watching the tiny, crawling life inside, and considering what the omens foretell.",
     "m_c": {
-      "age": ["any"],
       "status": ["medicine cat", "medicine cat apprentice"],
       "skill": ["OMEN,2"]
     }
@@ -44,7 +41,6 @@
     "weight": 15,
     "event_text": "m_c sits by the water, contemplating the calm waves that brush {PRONOUN/m_c/poss} paws and wondering why times are not as peaceful as the tides.",
     "m_c": {
-      "age": ["any"],
       "status": ["leader"],
       "skill": ["MEDIATOR,1"],
       "trait": ["thoughtful", "wise", "righteous"],

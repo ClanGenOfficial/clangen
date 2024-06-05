@@ -6,8 +6,14 @@
         "weight": 20,
         "event_text": "m_c thought {PRONOUN/m_c/subject} {VERB/m_c/were/was} walking on a snowdrift till it gave way and {PRONOUN/m_c/subject} fell down the mountain, breaking {PRONOUN/m_c/poss} leg.",
         "m_c": {
-            "age": ["any"],
-            "status": ["any"]
+
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
         },
         "injury": [
             {
@@ -20,7 +26,8 @@
             {
                 "cats": ["m_c"],
                 "scar": "m_c was scarred when {PRONOUN/m_c/subject} fell through a snowdrift and down the mountain.",
-                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling down the mountain."
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling down the mountain.",
+                "lead_death": "died after falling down the mountain"
             }
         ]
     },
@@ -31,8 +38,13 @@
         "weight": 20,
         "event_text": "m_c fell from a cliff and somehow survived, though not without breaking {PRONOUN/m_c/poss} leg.",
         "m_c": {
-            "age": ["any"],
-            "status": ["any"]
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
         },
         "injury": [
             {
@@ -45,7 +57,8 @@
             {
                 "cats": ["m_c"],
                 "scar": "m_c was scarred when {PRONOUN/m_c/subject} fell off a cliff.",
-                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling off a cliff."
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling off a cliff.",
+                "lead_death": "died after falling off a cliff"
             }
         ]
     },
@@ -56,8 +69,13 @@
         "weight": 20,
         "event_text": "m_c's tail was badly injured by falling rocks.",
         "m_c": {
-            "age": ["any"],
-            "status": ["any"]
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
         },
         "injury": [
             {
@@ -82,7 +100,6 @@
         "weight": 20,
         "event_text": "m_c couldn't help but try to show off by scaling the tallest cliff {PRONOUN/m_c/subject} could find. {PRONOUN/m_c/poss/CAP} plan backfired when {PRONOUN/m_c/subject} slipped and plummeted to the ground.",
         "m_c": {
-            "age": ["adolescent"],
             "status": ["apprentice"],
             "trait": ["adventurous", "ambitious", "bold", "childish", "confident", "daring", "playful", "troublesome"]
         },

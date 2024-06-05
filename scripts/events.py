@@ -270,6 +270,7 @@ class Events:
             # change relations and append relation text
             rel_change = chosen_event["rel_change"]
             other_clan.relations += rel_change
+            print(f"REL CHANGE: {rel_change}, {other_clan.relations}")
             if rel_change > 0:
                 event_text += f" (o_c_n relations improved.)"
             elif rel_change == 0:

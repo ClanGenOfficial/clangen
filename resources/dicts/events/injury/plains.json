@@ -1,34 +1,9 @@
 [
     {
-        "event_id": "pln_injury_brokenbone_anyany1",
-        "location": ["plains"],
-        "season": ["any"],
-        "weight": 20,
-        "event_text": "m_c was grabbed and dropped by an eagle, but {PRONOUN/m_c/subject} somehow survived.",
-        "m_c": {
-            "age": ["any"],
-            "status": ["any"]
-        },
-        "injury": [
-            {
-             "cats": ["m_c"],
-             "injuries": ["broken bone"],
-             "scars": ["TWO"]
-            }
-        ],
-        "history": [
-            {
-                "cats": ["m_c"],
-                "scar": "m_c was scarred when an eagle grabbed {PRONOUN/m_c/object}.",
-                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after an eagle grabbed {PRONOUN/m_c/object}."
-            }
-        ]
-    },
-    {
         "event_id": "pln_injury_bruisessprain_anyany1",
         "location": ["plains"],
         "season": ["any"],
-        "weight": 20,
+        "weight": 30,
         "event_text": "m_c was running over the hills, when {PRONOUN/m_c/subject} tripped over {PRONOUN/m_c/poss} own legs and hit the ground hard.",
         "m_c": {
             "age": ["any"],
@@ -45,7 +20,7 @@
         "event_id": "pln_injury_sprain_anyany1",
         "location": ["plains"],
         "season": ["any"],
-        "weight": 20,
+        "weight": 30,
         "event_text": "The ground inside the camp has turned into a muddy mess from the rain. m_c sprains {PRONOUN/m_c/poss} paw while trying to walk through the muck.",
         "m_c": {
             "age": ["any"],
@@ -62,11 +37,16 @@
         "event_id": "pln_injury_sore_anyany1",
         "location": ["plains"],
         "season": ["any"],
-        "weight": 20,
+        "weight": 30,
         "event_text": "m_c is feeling extremely sore from the long distances {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} run lately.",
         "m_c": {
-            "age": ["any"],
-            "status": ["any"]
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
         },
         "injury": [
             {
@@ -81,8 +61,8 @@
         "season": ["greenleaf", "newleaf", "leaf-fall"],
         "sub_type": [],
         "tags": [],
-        "weight": 0,
-        "event_text": "Playfully following a butterfly outside the camp, m_c accidentally steps into a rabbit burrow severely injuring {PRONOUN/m_c/poss} leg and letting out a yelp of pain.",
+        "weight": 30,
+        "event_text": "Playfully following a butterfly outside the camp, m_c accidentally steps into a rabbit burrow, severely injuring {PRONOUN/m_c/poss} leg and letting out a yelp of pain.",
         "m_c": {
             "age": ["any"],
             "status": ["any"],
@@ -99,31 +79,8 @@
             {
                 "cats": ["m_c"],
                 "scar": "m_c was scarred when they accidentally ran their leg into a rabbit burrow.",
-                "reg_death": "m_c died from wounds caused by when they accidentally ran into a rabbit burrow."
-            }]
-    },
-    {
-        "event_id": "pln_injury_brokenbone_multiany1",
-        "location": ["plains"],
-        "season": ["greenleaf", "newleaf", "leaf-fall"],
-        "weight": 20,
-        "event_text": "m_c went out for a walk, but slipped on the ice and broke a bone.",
-        "m_c": {
-            "age": ["senior", "adolescent", "young adult", "adult", "senior adult"],
-            "status": ["any"]
-        },
-        "injury": [
-            {
-             "cats": ["m_c"],
-             "injuries": ["broken bone"],
-             "scars": ["TOETRAP"]
-            }
-        ],
-        "history": [
-            {
-                "cats": ["m_c"],
-                "scar": "m_c was scarred after slipping on ice.",
-                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after slipping on ice."
+                "reg_death": "m_c died from wounds caused by when they accidentally ran into a rabbit burrow.",
+                "lead_death": "died after stepping in a rabbit burrow"
             }
         ]
     },
@@ -131,7 +88,7 @@
         "event_id": "pln_injury_sprain_anymultitraitapprentice1",
         "location": ["plains"],
         "season": ["any"],
-        "weight": 20,
+        "weight": 30,
         "event_text": "m_c was running around excitedly on patrol, when {PRONOUN/m_c/poss} paw landed right in a rabbit hole, twisting uncomfortably. {PRONOUN/m_c/subject/CAP} limped the whole way home.",
         "m_c": {
             "age": ["adolescent"],
