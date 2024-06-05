@@ -1949,6 +1949,8 @@ def event_text_adjust(Cat,
         text = text.replace("acc_singular", str(ACC_DISPLAY[main_cat.pelt.accessory]["singular"]))
 
     if "given_herb" in text:
+        if "_" in chosen_herb:
+            chosen_herb = chosen_herb.replace("_", " ")
         text = text.replace("given_herb", str(chosen_herb))
 
     return text
