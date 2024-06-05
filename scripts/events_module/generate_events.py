@@ -107,7 +107,7 @@ class GenerateEvents:
                         event_text = event["death_text"] if "death_text" in event else None
 
                     if not event_text:
-                        print(f"WARNING: some events resources which are used in generate_events. Have no 'event_text'.")
+                        print(f"WARNING: some events resources which are used in generate_events have no 'event_text'.")
                     event = ShortEvent(
                         event_id=event["event_id"] if "event_id" in event else "",
                         location=event["location"] if "location" in event else ["any"],
@@ -257,17 +257,12 @@ class GenerateEvents:
                     req_biome = location
                     req_camps = ["any"]
 
-                print(f"req biome is: {req_biome}, found biome is: {game.clan.biome.lower()}")
-                print(f"req camp is: {req_camps}, found camp is: {game.clan.camp_bg}")
-
                 if req_biome == game.clan.biome.lower():
-                    print("biome match")
                     discard = False
                 else:
                     continue
 
                 if game.clan.camp_bg in req_camps or "any" in req_camps:
-                    print("camp match")
                     discard = False
                 else:
                     continue
@@ -276,7 +271,6 @@ class GenerateEvents:
                     break
 
             if discard:
-                print("discarded")
                 continue
 
             # check season

@@ -450,8 +450,6 @@ class HandleShortEvents():
             # random_cat history
             if "r_c" in block["cats"]:
                 # death history
-                # TODO: problematic as we currently cannot mark who is the r_c and who is the m_c
-                #  should consider if we can have history text be converted to use the cat's ID number in place of abbrs
                 if self.chosen_event.r_c["dies"]:
                     if self.random_cat.status == 'leader':
                         death_history = history_text_adjust(block.get('lead_death'),

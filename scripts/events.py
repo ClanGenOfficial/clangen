@@ -88,13 +88,6 @@ class Events:
             game.clan.freshkill_pile.time_skip(relevant_cats, game.freshkill_event_list)
             # get the moonskip freshkill
             self.get_moon_freshkill()
-            # make a notification if the Clan does not have enough prey
-            if FRESHKILL_EVENT_ACTIVE and not game.clan.freshkill_pile.clan_has_enough_food():
-                event_string = f"{game.clan.name}Clan doesn't have enough prey for next moon!"
-                game.cur_events_list.insert(0, Single_Event(event_string))
-                game.freshkill_event_list.append(event_string)
-                # TODO: this notif might need to move closer to end of moon skip order,
-                #  to ensure that supply changes are correctly reflected by notif
 
         # checking if a lost cat returns on their own
         rejoin_upperbound = game.config["lost_cat"]["rejoin_chance"]
@@ -195,6 +188,13 @@ class Events:
                                  [i.ID for i in shaken_cats]))
             Cat.dead_cats.clear()
 
+        if game.clan.game_mode in ['expanded', 'cruel season'] and game.clan.freshkill_pile:
+            # make a notification if the Clan does not have enough prey
+            if FRESHKILL_EVENT_ACTIVE and not game.clan.freshkill_pile.clan_has_enough_food():
+                event_string = f"{game.clan.name}Clan doesn't have enough prey for next moon!"
+                game.cur_events_list.insert(0, Single_Event(event_string))
+                game.freshkill_event_list.append(event_string)
+
         self.herb_gather()
         self.handle_focus()
 
@@ -270,7 +270,6 @@ class Events:
             # change relations and append relation text
             rel_change = chosen_event["rel_change"]
             other_clan.relations += rel_change
-            print(f"REL CHANGE: {rel_change}, {other_clan.relations}")
             if rel_change > 0:
                 event_text += f" (o_c_n relations improved.)"
             elif rel_change == 0:
@@ -1050,8 +1049,6 @@ class Events:
         """
         interactions with other clans
         """
-        # TODO: need to add a way to preserve [rel_up, rel_down, neutral] choice to ensure any
-        #  triggered short war events line up with the ongoing war event text
         # if there are somehow no other clans, don't proceed
         if not game.clan.all_clans:
             return
