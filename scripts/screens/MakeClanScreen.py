@@ -169,10 +169,18 @@ class MakeClanScreen(Screens):
         elif event.ui_element == self.elements['cruel_mode_button']:
             self.game_mode = 'cruel season'
             self.refresh_text_and_buttons()
-        # When the next_step button is pressed, go to the random clan prompt.
+        # Logic for when to quick start clan
         elif event.ui_element == self.elements['next_step']:
             game.settings['game_mode'] = self.game_mode
-            self.open_random_clan_prompt()
+            if '#checked_checkbox' in self.elements['random_clan_checkbox'].object_ids:
+                self.open_random_clan_prompt()
+            else:
+                self.open_name_clan()
+        elif event.ui_element == self.elements['random_clan_checkbox']:
+            if '#checked_checkbox' in self.elements['random_clan_checkbox'].object_ids:
+                self.elements['random_clan_checkbox'].change_object_id("#unchecked_checkbox")
+            else:
+                self.elements['random_clan_checkbox'].change_object_id("#checked_checkbox")
 
     def handle_game_mode_key(self, event):
         if event.key == pygame.K_ESCAPE:
@@ -999,6 +1007,16 @@ class MakeClanScreen(Screens):
         self.elements['next_step'] = UIImageButton(scale(pygame.Rect((800, 1240), (294, 60))), "",
                                                    object_id="#next_step_button",
                                                    manager=MANAGER)
+        self.elements['random_clan_checkbox'] = UIImageButton(scale(pygame.Rect((1120, 1240), (68, 68))), "",
+                                                                    object_id="#unchecked_checkbox",
+                                                                    manager=MANAGER
+        )
+
+        self.elements['random_clan_checkbox_label'] = pygame_gui.elements.UILabel(scale(pygame.Rect((1200, 1246), (-1, -1))), "Quick Start",
+                                                                    manager=MANAGER,
+                                                                    object_id=get_text_box_theme("#text_box_30_horizleft")
+        )
+
         self.elements['mode_details'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((650, 320), (810, 922))),
                                                                       object_id="#text_box_30_horizleft_pad_40_40",
                                                                       manager=MANAGER)
