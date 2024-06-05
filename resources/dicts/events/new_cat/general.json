@@ -556,7 +556,7 @@
         "location": ["any"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "A rogue waits on the border for a patrol and, finding one lead by m_c, asks to join the Clan. The rogue decides to keep {PRONOUN/n_c:0/poss} old name, n_c_pre:0.",
+        "event_text": "A rogue named n_c:0 waits on the border for a patrol and, finding one lead by m_c, asks to join the Clan. The rogue decides to take a new name.",
         "m_c": {
             "status": ["leader", "deputy", "warrior", "medicine cat"]
         },
