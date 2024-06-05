@@ -1329,7 +1329,7 @@ class ProfileScreen(Screens):
                     final_text = final_text + event["revelation_text"]
                 return final_text
             else:
-                return event_text_adjust(Cat, event["unrevealed_text"],
+                return event_text_adjust(Cat, event["text"],
                                          main_cat=self.the_cat,
                                          random_cat=Cat.fetch_cat(death["involved"]))
         return None
@@ -1360,7 +1360,7 @@ class ProfileScreen(Screens):
                             break
 
                 if found_murder and text is not None and not event["revealed"]:
-                    text = event_text_adjust(Cat, event["unrevealed_text"],
+                    text = event_text_adjust(Cat, event["text"],
                                              main_cat=self.the_cat,
                                              random_cat=Cat.fetch_cat(death["involved"]))
                 elif not found_murder:

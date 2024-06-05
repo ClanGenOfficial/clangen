@@ -423,29 +423,10 @@ class HandleShortEvents():
                     # handle murder
                     murder_unrevealed_history = None
                     if "murder" in self.chosen_event.sub_type:
-                        if "revealed" in self.chosen_event.tags:
-                            revealed = True
-                        else:
-                            # FIXME: seems like there are no events that make use of unrevealed history?
-                            #  does it work? is it just not being utilized correctly?
-                            if self.main_cat.status == 'leader':
-                                murder_unrevealed_history = block.get("lead_murder_unrevealed")
-                            else:
-                                murder_unrevealed_history = block.get("reg_murder_unrevealed")
-                            revealed = False
+                        revealed = False
+                        History.add_murders(self.main_cat, self.random_cat, revealed, death_history)
 
-                        death_history = history_text_adjust(death_history, self.other_clan_name, game.clan,
-                                                            self.random_cat)
-
-                        if murder_unrevealed_history:
-                            murder_unrevealed_history = history_text_adjust(murder_unrevealed_history,
-                                                                            self.other_clan_name,
-                                                                            game.clan, self.random_cat)
-                        History.add_murders(self.main_cat, self.random_cat, revealed, death_history,
-                                            murder_unrevealed_history)
-
-                    History.add_death(self.main_cat, death_history, other_cat=self.random_cat,
-                                      extra_text=murder_unrevealed_history)
+                    History.add_death(self.main_cat, death_history, other_cat=self.random_cat)
 
             # random_cat history
             if "r_c" in block["cats"]:
