@@ -56,24 +56,14 @@ class HandleShortEvents():
         #                                gather info                                   #
         # ---------------------------------------------------------------------------- #
 
-        self.types = []
+        self.reset()
+
         self.types.append(event_type)
-        self.sub_types = []
         if sub_type:
             self.sub_types.extend(sub_type)
 
-        # gather main and random cats
         self.main_cat = main_cat
         self.random_cat = random_cat
-        self.victim_cat = None
-
-        # reset cat lists
-        self.new_cats = []
-        self.new_cat_objects = []
-        self.dead_cats = []
-        self.multi_cat = []
-
-        self.chosen_herb = None
 
         # random cat gets added to involved later on, only if the event chosen requires a random cat
         self.involved_cats = [self.main_cat.ID]
@@ -258,6 +248,9 @@ class HandleShortEvents():
             Single_Event(self.text + " " + self.additional_event_text, self.types, self.involved_cats))
 
     def handle_new_cats(self):
+        """
+        handles adding new cats to the clan
+        """
 
         if not self.chosen_event.new_cat:
             return
@@ -334,7 +327,7 @@ class HandleShortEvents():
 
     def handle_death(self):
         """
-        handles killing/murdering cats and assigning histories
+        handles killing/murdering cats
         """
         dead_list = self.dead_cats if self.dead_cats else []
         current_lives = int(game.clan.leader_lives)
@@ -588,6 +581,8 @@ class HandleShortEvents():
     def handle_freshkill_supply(self, block, freshkill_pile: Freshkill_Pile):
         """
         handles adjusting the amount of freshkill according to info in block
+        :param block: supplies block
+        :param freshkill_pile: Freshkill_Pile for clan
         """
         if game.clan.game_mode == "classic":
             return
@@ -616,6 +611,10 @@ class HandleShortEvents():
             freshkill_pile.add_freshkill(increase_amount)
 
     def handle_herb_supply(self, block):
+        """
+        handles adjusting herb supply according to info in event block
+        :param block: supplies block
+        """
 
         herbs = game.clan.herbs
 
@@ -694,6 +693,33 @@ class HandleShortEvents():
                     herbs.pop(herb)
 
         self.herb_notice = self.herb_notice + adjust_list_text(herb_list)
+
+    def reset(self):
+        """
+        resets class attributes
+        """
+        self.herb_notice = None
+        self.types = []
+        self.sub_types = []
+        self.text = None
+
+        # cats
+        self.involved_cats = []
+        self.main_cat = None
+        self.random_cat = None
+        self.new_cat_objects = []
+        self.new_cats: List[List[Cat]] = []
+        self.victim_cat = None
+        self.murder_index = None
+        self.multi_cat: List = []
+        self.dead_cats = []
+        self.chosen_herb = None
+
+        self.other_clan = None
+        self.other_clan_name = None
+
+        self.chosen_event = None
+        self.additional_event_text = ""
 
 
 handle_short_events = HandleShortEvents()
