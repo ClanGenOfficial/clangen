@@ -1,14 +1,12 @@
 import os
 
 import pygame
-
 import ujson
 
-from scripts.cat.names import names
 from scripts.game_structure.game_essentials import game
 
 
-class Sprites():
+class Sprites:
     cat_tints = {}
     white_patches_tints = {}
     clan_symbols = []
@@ -33,13 +31,13 @@ class Sprites():
         try:
             with open("sprites/dicts/tint.json", 'r') as read_file:
                 self.cat_tints = ujson.loads(read_file.read())
-        except:
+        except IOError:
             print("ERROR: Reading Tints")
 
         try:
             with open("sprites/dicts/white_patches_tint.json", 'r') as read_file:
                 self.white_patches_tints = ujson.loads(read_file.read())
-        except:
+        except IOError:
             print("ERROR: Reading White Patches Tints")
 
     def spritesheet(self, a_file, name):
@@ -117,8 +115,8 @@ class Sprites():
         else:
             self.size = 50  # default, what base clangen uses
             print(f"lineart.png is not 3x7, falling back to {self.size}")
-            print(
-                f"if you are a modder, please update scripts/cat/sprites.py and do a search for 'if width / 3 == height / 7:'")
+            print(f"if you are a modder, please update scripts/cat/sprites.py and "
+                  f"do a search for 'if width / 3 == height / 7:'")
 
         del width, height  # unneeded
 

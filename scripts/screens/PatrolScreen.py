@@ -1,14 +1,14 @@
 from random import choice, sample
+
 import pygame
 import pygame_gui
 
-from .Screens import Screens
-from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
-from scripts.game_structure.image_button import UIImageButton, UISpriteButton
-from scripts.patrol.patrol import Patrol
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game, MANAGER
-from scripts.game_structure.propagating_thread import PropagatingThread
+from scripts.game_structure.image_button import UIImageButton, UISpriteButton
+from scripts.patrol.patrol import Patrol
+from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
+from .Screens import Screens
 
 
 class PatrolScreen(Screens):

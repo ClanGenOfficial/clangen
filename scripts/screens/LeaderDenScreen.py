@@ -8,8 +8,16 @@ from scripts.clan import OtherClan
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton
 from scripts.screens.Screens import Screens
-from scripts.utility import scale, get_text_box_theme, get_other_clan_relation, get_other_clan, \
-    clan_symbol_sprite, shorten_text_to_fit, get_med_cats, get_living_clan_cat_count
+from scripts.utility import (
+    scale,
+    get_text_box_theme,
+    get_other_clan_relation,
+    get_other_clan,
+    clan_symbol_sprite,
+    shorten_text_to_fit,
+    get_med_cats,
+    get_living_clan_cat_count,
+)
 
 
 class LeaderDenScreen(Screens):
@@ -57,7 +65,7 @@ class LeaderDenScreen(Screens):
         """
 
         # prevent interaction if a window is open
-        if game.switches['window_open']:
+        if game.switches["window_open"]:
             pass
 
         elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -73,14 +81,21 @@ class LeaderDenScreen(Screens):
                 for i in range(0, 5):
                     if f"button{i}" not in self.other_clan_selection_elements:
                         continue
-                    if event.ui_element == self.other_clan_selection_elements[f"button{i}"]:
+                    if (
+                        event.ui_element
+                        == self.other_clan_selection_elements[f"button{i}"]
+                    ):
                         self.focus_clan = game.clan.all_clans[i]
                         self.update_other_clan_focus()
             elif event.ui_element == self.focus_frame_elements["negative_interaction"]:
-                object_id = self.focus_frame_elements["negative_interaction"].get_object_ids()
+                object_id = self.focus_frame_elements[
+                    "negative_interaction"
+                ].get_object_ids()
                 self.update_clan_interaction_choice(object_id[2])
             elif event.ui_element == self.focus_frame_elements["positive_interaction"]:
-                object_id = self.focus_frame_elements["positive_interaction"].get_object_ids()
+                object_id = self.focus_frame_elements[
+                    "positive_interaction"
+                ].get_object_ids()
                 self.update_clan_interaction_choice(object_id[2])
             elif event.ui_element == self.focus_frame_elements["clans_tab"]:
                 self.open_clans_tab()
@@ -90,7 +105,9 @@ class LeaderDenScreen(Screens):
                 self.focus_cat = event.ui_element.return_cat_object()
                 self.update_outsider_focus()
             elif event.ui_element in self.focus_button.values():
-                self.update_outsider_interaction_choice(event.ui_element.get_object_ids()[3])
+                self.update_outsider_interaction_choice(
+                    event.ui_element.get_object_ids()[3]
+                )
                 self.update_outsider_cats()
 
     def screen_switches(self):
@@ -109,21 +126,23 @@ class LeaderDenScreen(Screens):
         self.hide_menu_buttons()
 
         # BACK AND HELP
-        self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))),
-                                         "",
-                                         object_id="#back_button",
-                                         manager=MANAGER)
-        self.help_button = UIImageButton(scale(pygame.Rect(
-            (1450, 50), (68, 68))),
+        self.back_button = UIImageButton(
+            scale(pygame.Rect((50, 50), (210, 60))),
+            "",
+            object_id="#back_button",
+            manager=MANAGER,
+        )
+        self.help_button = UIImageButton(
+            scale(pygame.Rect((1450, 50), (68, 68))),
             "",
             object_id="#help_button",
             manager=MANAGER,
             tool_tip_text="This screen allows you to check on the other cats who live nearby, both Outsiders and "
-                          "other Clan cats.  You can control how the leader of your Clan will treat other leaders at "
-                          "Gatherings, but keep in mind that you can only determine one interaction each moon!  "
-                          "Likewise, you can consider whether to drive out or invite in Outsider cats.  If you drive "
-                          "out a cat, they will no longer appear in the Cats Outside the Clans list.  If you invite "
-                          "in a cat, they might join your Clan!",
+            "other Clan cats.  You can control how the leader of your Clan will treat other leaders at "
+            "Gatherings, but keep in mind that you can only determine one interaction each moon!  "
+            "Likewise, you can consider whether to drive out or invite in Outsider cats.  If you drive "
+            "out a cat, they will no longer appear in the Cats Outside the Clans list.  If you invite "
+            "in a cat, they might join your Clan!",
         )
 
         # LEADER DEN BG AND LEADER SPRITE
@@ -131,25 +150,30 @@ class LeaderDenScreen(Screens):
             self.screen_elements["bg_image"] = pygame_gui.elements.UIImage(
                 scale(pygame.Rect((0, 0), (1400, 900))),
                 pygame.image.load(
-                    f"resources/images/lead_den_bg/{game.clan.biome.lower()}/{game.clan.camp_bg.lower()}.png").convert_alpha(),
+                    f"resources/images/lead_den_bg/{game.clan.biome.lower()}/{game.clan.camp_bg.lower()}.png"
+                ).convert_alpha(),
                 object_id="#lead_den_bg",
                 starting_height=1,
-                manager=MANAGER)
+                manager=MANAGER,
+            )
         except FileNotFoundError:
             self.screen_elements["bg_image"] = pygame_gui.elements.UIImage(
                 scale(pygame.Rect((0, 0), (1400, 900))),
                 pygame.image.load(
-                    f"resources/images/lead_den_bg/{game.clan.biome.lower()}/camp1.png").convert_alpha(),
+                    f"resources/images/lead_den_bg/{game.clan.biome.lower()}/camp1.png"
+                ).convert_alpha(),
                 object_id="#lead_den_bg",
                 starting_height=1,
-                manager=MANAGER)
+                manager=MANAGER,
+            )
 
         self.screen_elements["lead_image"] = pygame_gui.elements.UIImage(
             scale(pygame.Rect((460, 460), (300, 300))),
             pygame.transform.scale(game.clan.leader.sprite, (300, 300)),
             object_id="#lead_cat_image",
             starting_height=3,
-            manager=MANAGER)
+            manager=MANAGER,
+        )
 
         self.helper_cat = None
         if game.clan.leader.dead or game.clan.leader.exiled:
@@ -164,17 +188,30 @@ class LeaderDenScreen(Screens):
                 if meds:
                     self.helper_cat = meds[0]
                 else:  # if no meds, mediator helps
-                    mediators = [i for i in Cat.all_cats.values() if
-                                 not i.dead and not i.exiled and not i.outside and not i.not_working() and i.status in [
-                                     "mediator", "mediator apprentice"]]
+                    mediators = [
+                        i
+                        for i in Cat.all_cats.values()
+                        if not i.dead
+                        and not i.exiled
+                        and not i.outside
+                        and not i.not_working()
+                        and i.status in ["mediator", "mediator apprentice"]
+                    ]
                     if mediators:
                         self.helper_cat = mediators[0]
                     else:
                         self.helper_cat = None
-            if not self.helper_cat:  # if no meds or mediators available, literally anyone please anyone help
-                adults = [i for i in Cat.all_cats.values() if
-                          not i.dead and not i.exiled and not i.outside and i.status not in ["newborn", "kitten",
-                                                                                             "apprentice", "leader"]]
+            if (
+                not self.helper_cat
+            ):  # if no meds or mediators available, literally anyone please anyone help
+                adults = [
+                    i
+                    for i in Cat.all_cats.values()
+                    if not i.dead
+                    and not i.exiled
+                    and not i.outside
+                    and i.status not in ["newborn", "kitten", "apprentice", "leader"]
+                ]
                 if adults:
                     self.helper_cat = random.choice(adults)
 
@@ -184,7 +221,8 @@ class LeaderDenScreen(Screens):
                     pygame.transform.scale(self.helper_cat.sprite, (300, 300)),
                     object_id="#helper_cat_image",
                     starting_height=2,
-                    manager=MANAGER)
+                    manager=MANAGER,
+                )
 
         # FOCUS FRAME - container and inner elements
         self.create_focus_frame()
@@ -205,40 +243,52 @@ class LeaderDenScreen(Screens):
             html_text=f" {self.leader_name} is considering how to handle the next Gathering. ",
             object_id=get_text_box_theme("#text_box_30_horizcenter_spacing_95"),
             visible=False,
-            manager=MANAGER
+            manager=MANAGER,
         )
         self.screen_elements["outsider_notice_text"] = pygame_gui.elements.UITextBox(
             relative_rect=scale(pygame.Rect((135, 750), (890, -1))),
             html_text=f" {self.leader_name} is considering what to do about nearby Outsiders. ",
             object_id=get_text_box_theme("#text_box_30_horizcenter_spacing_95"),
             visible=False,
-            manager=MANAGER
+            manager=MANAGER,
         )
 
         # if no one is alive, give a special notice
         if not get_living_clan_cat_count(Cat):
             self.no_gathering = True
             self.screen_elements["clan_notice_text"].set_text(
-                f" No one is left to attend a Gathering. ")
+                f" No one is left to attend a Gathering. "
+            )
             self.screen_elements["outsider_notice_text"].set_text(
-                f" Outsiders do not concern themselves with a dead Clan. ")
+                f" Outsiders do not concern themselves with a dead Clan. "
+            )
         # if leader is dead and no one new is leading, give special notice
         elif game.clan.leader.dead or game.clan.leader.exiled:
             self.no_gathering = True
             self.screen_elements["clan_notice_text"].set_text(
-                f" Without no one to lead, the Clan can't focus on what to say at the Gathering. ")
+                f" Without no one to lead, the Clan can't focus on what to say at the Gathering. "
+            )
             self.screen_elements["outsider_notice_text"].set_text(
-                f" Without no one to lead, the Clan can't concern themselves with Outsiders. ")
+                f" Without no one to lead, the Clan can't concern themselves with Outsiders. "
+            )
         # if leader is sick but helper is available, give special notice
         elif game.clan.leader.not_working() and self.helper_cat:
             self.helper_name = self.helper_cat.name
-            self.screen_elements["clan_notice_text"].set_text(f" {self.leader_name} and {self.helper_name} are discussing how to handle the next Gathering. ")
-            self.screen_elements["outsider_notice_text"].set_text(f" {self.leader_name} and {self.helper_name} are discussing what to do about nearby Outsiders. ")
+            self.screen_elements["clan_notice_text"].set_text(
+                f" {self.leader_name} and {self.helper_name} are discussing how to handle the next Gathering. "
+            )
+            self.screen_elements["outsider_notice_text"].set_text(
+                f" {self.leader_name} and {self.helper_name} are discussing what to do about nearby Outsiders. "
+            )
         # if leader is sick but no helper is available, give special notice
         elif game.clan.leader.not_working():
             self.no_gathering = True
-            self.screen_elements["clan_notice_text"].set_text(f" There is no one to attend the next Gathering. {self.leader_name} must hope to recover in time for the next one. ")
-            self.screen_elements["outsider_notice_text"].set_text(f" {self.leader_name} is considering what to do about nearby Outsiders. ")
+            self.screen_elements["clan_notice_text"].set_text(
+                f" There is no one to attend the next Gathering. {self.leader_name} must hope to recover in time for the next one. "
+            )
+            self.screen_elements["outsider_notice_text"].set_text(
+                f" {self.leader_name} is considering what to do about nearby Outsiders. "
+            )
 
         self.screen_elements["clan_notice_text"].show()
 
@@ -246,7 +296,7 @@ class LeaderDenScreen(Screens):
             relative_rect=scale(pygame.Rect((135, 820), (890, -1))),
             html_text=f"The other Clans think {game.clan.name}Clan is {self.clan_temper}.",
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
-            manager=MANAGER
+            manager=MANAGER,
         )
 
         # INITIAL DISPLAY - display currently chosen interaction OR first clan in list
@@ -282,28 +332,35 @@ class LeaderDenScreen(Screens):
             scale(pygame.Rect((1019, 122), (0, 0))),
             object_id="#focus_frame_container",
             starting_height=3,
-            manager=MANAGER)
-        self.focus_frame_elements["frame"] = pygame_gui.elements.UIImage(scale(pygame.Rect((0, 63), (480, 728))),
-                                                                         pygame.image.load(
-                                                                             "resources/images/lead_den_focus_frame.png").convert_alpha(),
-                                                                         object_id="#lead_den_focus_frame",
-                                                                         container=self.focus_frame_container,
-                                                                         starting_height=1,
-                                                                         manager=MANAGER
-                                                                         )
-        self.focus_frame_elements["clans_tab"] = UIImageButton(scale(pygame.Rect((60, 4), (138, 68))),
-                                                               "",
-                                                               object_id="#clans_tab",
-                                                               container=self.focus_frame_container,
-                                                               starting_height=2,
-                                                               manager=MANAGER)
+            manager=MANAGER,
+        )
+        self.focus_frame_elements["frame"] = pygame_gui.elements.UIImage(
+            scale(pygame.Rect((0, 63), (480, 728))),
+            pygame.image.load(
+                "resources/images/lead_den_focus_frame.png"
+            ).convert_alpha(),
+            object_id="#lead_den_focus_frame",
+            container=self.focus_frame_container,
+            starting_height=1,
+            manager=MANAGER,
+        )
+        self.focus_frame_elements["clans_tab"] = UIImageButton(
+            scale(pygame.Rect((60, 4), (138, 68))),
+            "",
+            object_id="#clans_tab",
+            container=self.focus_frame_container,
+            starting_height=2,
+            manager=MANAGER,
+        )
         self.focus_frame_elements["clans_tab"].disable()
-        self.focus_frame_elements["outsiders_tab"] = UIImageButton(scale(pygame.Rect((222, 4), (204, 68))),
-                                                                   "",
-                                                                   object_id="#outsiders_tab",
-                                                                   container=self.focus_frame_container,
-                                                                   starting_height=2,
-                                                                   manager=MANAGER)
+        self.focus_frame_elements["outsiders_tab"] = UIImageButton(
+            scale(pygame.Rect((222, 4), (204, 68))),
+            "",
+            object_id="#outsiders_tab",
+            container=self.focus_frame_container,
+            starting_height=2,
+            manager=MANAGER,
+        )
 
         # TODO: create button images for Drive Off, Hunt Down, Search For, and Invite In
 
@@ -311,19 +368,23 @@ class LeaderDenScreen(Screens):
         """
         handles the creation of other_clan_selection_container
         """
-        self.other_clan_selection_container = pygame_gui.elements.UIAutoResizingContainer(
-            scale(pygame.Rect((132, 902), (100, 100))),
-            object_id="#other_clan_selection_container",
-            starting_height=1,
-            manager=MANAGER)
+        self.other_clan_selection_container = (
+            pygame_gui.elements.UIAutoResizingContainer(
+                scale(pygame.Rect((132, 902), (100, 100))),
+                object_id="#other_clan_selection_container",
+                starting_height=1,
+                manager=MANAGER,
+            )
+        )
         self.other_clan_selection_elements["frame"] = pygame_gui.elements.UIImage(
             scale(pygame.Rect((0, 0), (1324, 388))),
             pygame.image.load(
-                "resources/images/lead_den_clan_frame.png").convert_alpha(),
+                "resources/images/lead_den_clan_frame.png"
+            ).convert_alpha(),
             object_id="#lead_den_clan_frame",
             container=self.other_clan_selection_container,
             starting_height=1,
-            manager=MANAGER
+            manager=MANAGER,
         )
         for i, other_clan in enumerate(game.clan.all_clans):
             if other_clan.name == game.clan.name:
@@ -335,38 +396,46 @@ class LeaderDenScreen(Screens):
                 object_id="#other_clan_select_button",
                 starting_height=2,
                 container=self.other_clan_selection_container,
-                manager=MANAGER
+                manager=MANAGER,
             )
 
-            self.other_clan_selection_elements[f"clan_symbol{i}"] = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((100 + (x_pos * i), 70), (100, 100))),
-                clan_symbol_sprite(other_clan),
-                object_id=f"#clan_symbol{i}",
-                starting_height=1,
-                container=self.other_clan_selection_container,
-                manager=MANAGER
+            self.other_clan_selection_elements[f"clan_symbol{i}"] = (
+                pygame_gui.elements.UIImage(
+                    scale(pygame.Rect((100 + (x_pos * i), 70), (100, 100))),
+                    clan_symbol_sprite(other_clan),
+                    object_id=f"#clan_symbol{i}",
+                    starting_height=1,
+                    container=self.other_clan_selection_container,
+                    manager=MANAGER,
+                )
             )
 
-            self.other_clan_selection_elements[f"clan_name{i}"] = pygame_gui.elements.UILabel(
-                scale(pygame.Rect((27 + (x_pos * i), 210), (244, -1))),
-                text=f"{other_clan.name}Clan",
-                object_id=get_text_box_theme("#text_box_30_horizcenter"),
-                container=self.other_clan_selection_container,
-                manager=MANAGER
+            self.other_clan_selection_elements[f"clan_name{i}"] = (
+                pygame_gui.elements.UILabel(
+                    scale(pygame.Rect((27 + (x_pos * i), 210), (244, -1))),
+                    text=f"{other_clan.name}Clan",
+                    object_id=get_text_box_theme("#text_box_30_horizcenter"),
+                    container=self.other_clan_selection_container,
+                    manager=MANAGER,
+                )
             )
-            self.other_clan_selection_elements[f"clan_temper{i}"] = pygame_gui.elements.UILabel(
-                scale(pygame.Rect((27 + (x_pos * i), 260), (244, -1))),
-                text=f"{other_clan.temperament.strip()}",
-                object_id=get_text_box_theme("#text_box_22_horizcenter"),
-                container=self.other_clan_selection_container,
-                manager=MANAGER
+            self.other_clan_selection_elements[f"clan_temper{i}"] = (
+                pygame_gui.elements.UILabel(
+                    scale(pygame.Rect((27 + (x_pos * i), 260), (244, -1))),
+                    text=f"{other_clan.temperament.strip()}",
+                    object_id=get_text_box_theme("#text_box_22_horizcenter"),
+                    container=self.other_clan_selection_container,
+                    manager=MANAGER,
+                )
             )
-            self.other_clan_selection_elements[f"clan_rel{i}"] = pygame_gui.elements.UILabel(
-                scale(pygame.Rect((27 + (x_pos * i), 290), (244, -1))),
-                text=f"{get_other_clan_relation(other_clan.relations).strip()}",
-                object_id=get_text_box_theme("#text_box_22_horizcenter"),
-                container=self.other_clan_selection_container,
-                manager=MANAGER
+            self.other_clan_selection_elements[f"clan_rel{i}"] = (
+                pygame_gui.elements.UILabel(
+                    scale(pygame.Rect((27 + (x_pos * i), 290), (244, -1))),
+                    text=f"{get_other_clan_relation(other_clan.relations).strip()}",
+                    object_id=get_text_box_theme("#text_box_22_horizcenter"),
+                    container=self.other_clan_selection_container,
+                    manager=MANAGER,
+                )
             )
 
     def create_outsider_selection_box(self):
@@ -375,14 +444,15 @@ class LeaderDenScreen(Screens):
             object_id="#outsider_selection_container",
             starting_height=1,
             manager=MANAGER,
-            visible=False)
+            visible=False,
+        )
         self.outsider_selection_elements["page_left"] = UIImageButton(
             scale(pygame.Rect((0, 140), (68, 68))),
             "",
             object_id="#arrow_left_button",
             container=self.outsider_selection_container,
             starting_height=1,
-            manager=MANAGER
+            manager=MANAGER,
         )
         self.outsider_selection_elements["page_right"] = UIImageButton(
             scale(pygame.Rect((1292, 140), (68, 68))),
@@ -390,22 +460,25 @@ class LeaderDenScreen(Screens):
             object_id="#arrow_right_button",
             container=self.outsider_selection_container,
             starting_height=1,
-            manager=MANAGER)
+            manager=MANAGER,
+        )
         self.outsider_selection_elements["frame"] = pygame_gui.elements.UIImage(
             scale(pygame.Rect((56, 0), (1248, 348))),
             pygame.image.load(
-                "resources/images/lead_den_outsider_frame.png").convert_alpha(),
+                "resources/images/lead_den_outsider_frame.png"
+            ).convert_alpha(),
             object_id="#lead_den_outsider_frame",
             container=self.outsider_selection_container,
             starting_height=2,
-            manager=MANAGER)
+            manager=MANAGER,
+        )
 
         self.focus_outsider_container = pygame_gui.elements.UIAutoResizingContainer(
             scale(pygame.Rect((0, 0), (0, 0))),
             object_id="#focus_outsider_container",
             container=self.focus_frame_container,
             starting_height=1,
-            manager=MANAGER
+            manager=MANAGER,
         )
 
     def open_clans_tab(self):
@@ -458,7 +531,7 @@ class LeaderDenScreen(Screens):
             scale(pygame.Rect((0, 0), (0, 0))),
             object_id="#focus_clan_container",
             container=self.focus_frame_container,
-            manager=MANAGER
+            manager=MANAGER,
         )
 
         self.focus_clan_elements[f"clan_symbol"] = pygame_gui.elements.UIImage(
@@ -467,7 +540,7 @@ class LeaderDenScreen(Screens):
             object_id="#clan_symbol",
             starting_height=1,
             container=self.focus_clan_container,
-            manager=MANAGER
+            manager=MANAGER,
         )
 
         x_pos = 20
@@ -479,21 +552,21 @@ class LeaderDenScreen(Screens):
             text=f"{self.focus_clan.name}Clan",
             object_id="#text_box_30_horizcenter",
             container=self.focus_clan_container,
-            manager=MANAGER
+            manager=MANAGER,
         )
         self.focus_clan_elements[f"clan_temper"] = pygame_gui.elements.UILabel(
             scale(pygame.Rect((x_pos, y_pos + 50), (439, -1))),
             text=f"{self.focus_clan.temperament.strip()}",
             object_id="#text_box_22_horizcenter",
             container=self.focus_clan_container,
-            manager=MANAGER
+            manager=MANAGER,
         )
         self.focus_clan_elements[f"clan_rel"] = pygame_gui.elements.UILabel(
             scale(pygame.Rect((x_pos, y_pos + 80), (439, -1))),
             text=f"{relation}",
             object_id="#text_box_22_horizcenter",
             container=self.focus_clan_container,
-            manager=MANAGER
+            manager=MANAGER,
         )
 
         self.focus_frame_elements["negative_interaction"] = UIImageButton(
@@ -503,7 +576,8 @@ class LeaderDenScreen(Screens):
             container=self.focus_clan_container,
             starting_height=3,
             manager=MANAGER,
-            visible=False)
+            visible=False,
+        )
         self.focus_frame_elements["positive_interaction"] = UIImageButton(
             scale(pygame.Rect((118, 611), (242, 60))),
             "",
@@ -511,17 +585,22 @@ class LeaderDenScreen(Screens):
             container=self.focus_clan_container,
             starting_height=3,
             manager=MANAGER,
-            visible=False)
+            visible=False,
+        )
 
         if self.no_gathering:
             self.focus_frame_elements["negative_interaction"].disable()
             self.focus_frame_elements["positive_interaction"].disable()
 
         interaction = OtherClan.interaction_dict[relation]
-        self.focus_frame_elements["negative_interaction"].change_object_id(f"#clan_{interaction[0]}")
+        self.focus_frame_elements["negative_interaction"].change_object_id(
+            f"#clan_{interaction[0]}"
+        )
         self.focus_frame_elements["negative_interaction"].show()
 
-        self.focus_frame_elements["positive_interaction"].change_object_id(f"#clan_{interaction[1]}")
+        self.focus_frame_elements["positive_interaction"].change_object_id(
+            f"#clan_{interaction[1]}"
+        )
         self.focus_frame_elements["positive_interaction"].show()
 
     def update_clan_interaction_choice(self, object_id):
@@ -534,7 +613,8 @@ class LeaderDenScreen(Screens):
         other_clan = self.focus_clan.name
 
         self.screen_elements["clan_notice_text"].set_text(
-            f" {self.leader_name} has decided to {interaction} {other_clan}Clan.")
+            f" {self.leader_name} has decided to {interaction} {other_clan}Clan."
+        )
 
         self.handle_other_clan_interaction(interaction)
 
@@ -560,7 +640,7 @@ class LeaderDenScreen(Screens):
             "other_clan": self.focus_clan.name,
             "player_clan_temper": self.clan_temper,
             "interaction_type": interaction_type,
-            "success": success
+            "success": success,
         }
 
     def _compare_temper(self, player_temper_int, other_temper_int) -> float:
@@ -640,7 +720,7 @@ class LeaderDenScreen(Screens):
                 object_id="#focus_outsider_container",
                 container=self.focus_frame_container,
                 starting_height=1,
-                manager=MANAGER
+                manager=MANAGER,
             )
 
         self.focus_outsider_elements["cat_sprite"] = pygame_gui.elements.UIImage(
@@ -649,7 +729,7 @@ class LeaderDenScreen(Screens):
             object_id="#focus_cat_sprite",
             container=self.focus_outsider_container,
             starting_height=1,
-            manager=MANAGER
+            manager=MANAGER,
         )
 
         self.focus_outsider_elements["cat_name"] = pygame_gui.elements.UILabel(
@@ -657,41 +737,43 @@ class LeaderDenScreen(Screens):
             text=shorten_text_to_fit(str(self.focus_cat.name), 440, 30),
             object_id="#text_box_30_horizcenter",
             container=self.focus_outsider_container,
-            manager=MANAGER
+            manager=MANAGER,
         )
         self.focus_outsider_elements["cat_status"] = pygame_gui.elements.UILabel(
             relative_rect=scale(pygame.Rect((20, 390), (436, -1))),
             text=f"{self.focus_cat.status}",
             object_id="#text_box_22_horizcenter",
             container=self.focus_outsider_container,
-            manager=MANAGER
+            manager=MANAGER,
         )
         self.focus_outsider_elements["cat_trait"] = pygame_gui.elements.UILabel(
             relative_rect=scale(pygame.Rect((20, 420), (436, -1))),
             text=f"{self.focus_cat.personality.trait}",
             object_id="#text_box_22_horizcenter",
             container=self.focus_outsider_container,
-            manager=MANAGER
+            manager=MANAGER,
         )
         self.focus_outsider_elements["cat_skills"] = pygame_gui.elements.UILabel(
             relative_rect=scale(pygame.Rect((20, 450), (436, -1))),
             text=f"Skills: {self.focus_cat.skills.skill_string(short=True)}",
             object_id="#text_box_22_horizcenter",
             container=self.focus_outsider_container,
-            manager=MANAGER
+            manager=MANAGER,
         )
 
         if self.focus_outsider_button_container:
             self.focus_outsider_button_container.clear()
             self.focus_outsider_button_container.show()
         else:
-            self.focus_outsider_button_container = pygame_gui.elements.UIAutoResizingContainer(
-                scale(pygame.Rect((118, 505), (0, 0))),
-                object_id="#focus_outsider_button_container",
-                container=self.focus_outsider_container,
-                starting_height=1,
-                manager=MANAGER,
-                visible=True
+            self.focus_outsider_button_container = (
+                pygame_gui.elements.UIAutoResizingContainer(
+                    scale(pygame.Rect((118, 505), (0, 0))),
+                    object_id="#focus_outsider_button_container",
+                    container=self.focus_outsider_container,
+                    starting_height=1,
+                    manager=MANAGER,
+                    visible=True,
+                )
             )
 
         # for some reason this container gets divorced from its parent container sometimes
@@ -714,7 +796,7 @@ class LeaderDenScreen(Screens):
             "",
             object_id="#outsider_drive",
             tool_tip_text="This cat will be driven out of the area if found (they will no longer be accessible in "
-                          "game).",
+            "game).",
             container=self.focus_outsider_button_container,
             starting_height=3,
             manager=MANAGER,
@@ -728,12 +810,15 @@ class LeaderDenScreen(Screens):
             container=self.focus_outsider_button_container,
             starting_height=3,
             manager=MANAGER,
-            visible=False
+            visible=False,
         )
 
-        if self.focus_cat.outside and not self.focus_cat.exiled and self.focus_cat.status not in ['kittypet', 'loner',
-                                                                                                  'rogue',
-                                                                                                  'former Clancat']:
+        if (
+            self.focus_cat.outside
+            and not self.focus_cat.exiled
+            and self.focus_cat.status
+            not in ["kittypet", "loner", "rogue", "former Clancat"]
+        ):
             self.focus_button["invite_in"].change_object_id("#outsider_search")
         else:
             self.focus_button["invite_in"].change_object_id("#outsider_invite")
@@ -755,7 +840,8 @@ class LeaderDenScreen(Screens):
             self.screen_elements["clan_notice_text"].show()
 
             self.screen_elements["temper_text"].set_text(
-                f"The other Clans think {game.clan.name}Clan is {self.clan_temper}.")
+                f"The other Clans think {game.clan.name}Clan is {self.clan_temper}."
+            )
         else:
             self.screen_elements["outsider_notice_text"].show()
             self.screen_elements["clan_notice_text"].hide()
@@ -768,14 +854,20 @@ class LeaderDenScreen(Screens):
             else:
                 reputation = "welcoming"
 
-            self.screen_elements["temper_text"].set_text(f"Outsiders view your clan as {reputation}.")
+            self.screen_elements["temper_text"].set_text(
+                f"Outsiders view your clan as {reputation}."
+            )
 
     def update_outsider_cats(self):
         """
         handles finding and displaying outsider cats
         """
         # get cats for list
-        outsiders = [i for i in Cat.all_cats.values() if i.outside and not i.dead and not i.driven_out]
+        outsiders = [
+            i
+            for i in Cat.all_cats.values()
+            if i.outside and not i.dead and not i.driven_out
+        ]
 
         # separate them into chunks for the pages
         outsider_chunks = self.chunks(outsiders, 20)
@@ -808,7 +900,7 @@ class LeaderDenScreen(Screens):
             container=self.outsider_selection_container,
             starting_height=3,
             object_id="#outsider_cat_list",
-            manager=MANAGER
+            manager=MANAGER,
         )
 
         # Kill all currently displayed cats
@@ -828,7 +920,7 @@ class LeaderDenScreen(Screens):
                 object_id=f"#sprite{str(i)}",
                 tool_tip_text=str(cat.name),
                 starting_height=2,
-                manager=MANAGER
+                manager=MANAGER,
             )
 
             # changing pos
@@ -857,7 +949,8 @@ class LeaderDenScreen(Screens):
             interaction = "search for"
 
         self.screen_elements["outsider_notice_text"].set_text(
-            f" {self.leader_name} has decided to {interaction} {outsider}.")
+            f" {self.leader_name} has decided to {interaction} {outsider}."
+        )
 
         self.handle_outsider_interaction(object_id)
 
@@ -888,8 +981,8 @@ class LeaderDenScreen(Screens):
         game.clan.clan_settings["lead_den_outsider_event"] = {
             "cat_ID": self.focus_cat.ID,
             "interaction_type": interaction_type,
-            "success": success
+            "success": success,
         }
 
     def chunks(self, L, n):
-        return [L[x: x + n] for x in range(0, len(L), n)]
+        return [L[x : x + n] for x in range(0, len(L), n)]
