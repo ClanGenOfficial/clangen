@@ -123,7 +123,7 @@ class HandleShortEvents():
             for _event in final_events:
                 if _event.event_id == game.config["event_generation"]["debug_ensure_event_id"]:
                     final_events = [_event]
-                    print(f"debug_ensure_event_id: {game.config['event_generation']['debug_ensure_event_id']} "
+                    print(f"FOUND debug_ensure_event_id: {game.config['event_generation']['debug_ensure_event_id']} "
                           f"was set as the only event option")
                     found = True
                     break
@@ -618,9 +618,6 @@ class HandleShortEvents():
         elif "increase" in adjustment:
             self.herb_notice = "Gained "
 
-        # test print
-        print(f"STARTING HERB SUPPLY: {herbs.items()}")
-
         # adjust entire herb store
         if supply_type == "all_herb":
             for herb in herbs:
@@ -679,9 +676,6 @@ class HandleShortEvents():
             for herb in herb_list:
                 if herb in herbs and herbs[herb] == 0:
                     herbs.pop(herb)
-
-        # test print
-        print(f"ENDING HERB SUPPLY: {herbs.items()}")
 
         self.herb_notice = self.herb_notice + adjust_list_text(herb_list)
 

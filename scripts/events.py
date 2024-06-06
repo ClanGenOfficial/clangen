@@ -1845,7 +1845,7 @@ class Events:
 
         # disaster death chance
         if game.clan.clan_settings.get('disasters'):
-            if not random.getrandbits(9):  # 1/512
+            if not random.getrandbits(10):  # 1/1010
                 handle_short_events.handle_event(event_type="birth_death",
                                                  main_cat=cat,
                                                  random_cat=random_cat,
