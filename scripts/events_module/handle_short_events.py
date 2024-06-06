@@ -642,6 +642,8 @@ class HandleShortEvents():
             if supply_type == "any_herb":
                 possible_herbs = []
                 for herb in herbs:
+                    if "always" in trigger:
+                        possible_herbs.append(herb)
                     if "low" in trigger and herbs[herb] < needed_amount / 2:
                         possible_herbs.append(herb)
                     if "adequate" in trigger and needed_amount / 2 < herbs[herb] < needed_amount:
@@ -672,6 +674,11 @@ class HandleShortEvents():
             self.chosen_herb = random.choice(list(herbs.keys()))
         if self.chosen_herb:
             herb_list.append(self.chosen_herb)
+
+        if herb_list:
+            for herb in herb_list:
+                if herb in herbs and herbs[herb] == 0:
+                    herbs.pop(herb)
 
         # test print
         print(f"ENDING HERB SUPPLY: {herbs.items()}")

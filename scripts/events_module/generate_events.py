@@ -585,6 +585,9 @@ class GenerateEvents:
                         if not freshkill_active:
                             continue
 
+                        if "always" in trigger:
+                            discard = False
+
                         # "low" means total_amount must be less than half what is needed
                         if "low" in trigger:
                             if needed_amount / 2 > pile.total_amount:
@@ -628,7 +631,13 @@ class GenerateEvents:
                         entire_supply_needed_amount = needed_amount * len(herbs.keys())
                         discard = True
 
+                        if not herbs:
+                            break
+
                         if supply_type == "all_herb":
+                            if "always" in trigger:
+                                discard = False
+                                break
                             if "low" in trigger:
                                 for herb in herbs:
                                     if herbs[herb] < entire_supply_needed_amount / 2:
@@ -659,6 +668,9 @@ class GenerateEvents:
                                         break
                         elif supply_type == "any_herb":
                             for herb in herbs.keys():
+                                if "always" in trigger:
+                                    discard = False
+                                    break
                                 if "low" in trigger and herbs[herb] < needed_amount / 2:
                                     discard = False
                                     break
@@ -673,12 +685,12 @@ class GenerateEvents:
                                     break
                             if discard:
                                 break
-
                         else:
                             chosen_herb = supply_type
                             if chosen_herb not in herbs:
                                 continue
-
+                            if "always" in trigger:
+                                discard = False
                             if "low" in trigger:
                                 if herbs[chosen_herb] < needed_amount / 2:
                                     discard = False

@@ -3104,8 +3104,8 @@
     "supplies": [
       {
           "type": "lungwort",
-          "trigger": ["low", "adequate"],
-          "adjust": "reduce_eighth"
+          "trigger": ["low"],
+          "adjust": ""
       }
     ],
     "other_clan": {
