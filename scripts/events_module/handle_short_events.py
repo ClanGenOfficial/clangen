@@ -695,35 +695,6 @@ class HandleShortEvents():
 
         self.herb_notice = self.herb_notice + adjust_list_text(herb_list)
 
-    @staticmethod
-    def handle_witness(main_cat, random_cat):
-        """
-        on hold until personality rework because i'd rather not have to figure this out a second time
-        tentative plan is to have capability for a cat to witness the murder and then have a reaction based off trait
-        and perhaps reveal it to other Clan members
-        """
-        # TODO: this is unused and I'm unsure of the plan for it
-        witness = None
-        # choose the witness
-        possible_witness = list(
-            filter(
-                lambda c: not c.dead and not c.exiled and not c.outside and
-                          (c.ID != main_cat.ID) and (c.ID != random_cat.ID), Cat.all_cats.values()))
-        # If there are possible other cats...
-        if possible_witness:
-            witness = random.choice(possible_witness)
-        if witness:
-            # first, affect relationship
-            change_relationship_values([random_cat],
-                                       [witness],
-                                       romantic_love=-40,
-                                       platonic_like=-40,
-                                       dislike=50,
-                                       admiration=-40,
-                                       comfortable=-40,
-                                       trust=-50
-                                       )
-
 
 handle_short_events = HandleShortEvents()
 
