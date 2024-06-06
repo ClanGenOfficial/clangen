@@ -4,7 +4,7 @@
     "location": ["any"],
     "season": ["any"],
     "sub_type": ["murder_reveal"],
-    "tags": ["clan_discovery"],
+    "tags": ["clan_wide"],
     "weight": 5,
     "event_text": "m_c can't keep this secret anymore. {PRONOUN/m_c/subject/CAP} {VERB/m_c/request/requests} a Clan meeting, where {PRONOUN/m_c/subject} {VERB/m_c/reveal/reveals} the terrible secret {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} kept; {PRONOUN/m_c/subject} killed mur_c.",
     "m_c": {

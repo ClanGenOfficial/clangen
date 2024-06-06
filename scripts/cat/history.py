@@ -367,7 +367,7 @@ class History:
             cat.history.possible_history.pop(condition)
     
     @staticmethod
-    def add_death(cat, death_text, condition=None, other_cat=None, extra_text=None):
+    def add_death(cat, death_text, condition=None, other_cat=None):
         """ Adds death to cat's history. If a condition is passed, it will look into
             possible_history to see if anything is saved there, and, if so, use the text and 
             other_cat there (overriding the 
@@ -655,13 +655,21 @@ class History:
             if "is_murderer" in murder_history:
                 murder_history = murder_history["is_murderer"][murder_index]
                 murder_history["revealed"] = True
-                murder_history["revealed_by"] = other_cat.ID
-                murder_history["revelation_text"] = "The truth of {PRONOUN/m_c/poss} crime against [victim] was discovered by [discoverer]."
+                murder_history["revealed_by"] = other_cat.ID if other_cat else None
+                if not other_cat:
+                    murder_history[
+                        "revelation_text"] = "The truth of {PRONOUN/m_c/poss} crime against [victim] is known to the Clan."
+                else:
+                    murder_history["revelation_text"] = "The truth of {PRONOUN/m_c/poss} crime against [victim] was discovered by [discoverer]."
 
                 victim_history = victim_history["is_victim"][0]
                 victim_history["revealed"] = True
-                victim_history["revealed_by"] = other_cat.ID
-                victim_history["revelation_text"] = "The truth of {PRONOUN/m_c/poss} murder was discovered by [discoverer]."
+                victim_history["revealed_by"] = other_cat.ID if other_cat else None
+                if not other_cat:
+                    murder_history[
+                        "revelation_text"] = "The truth of {PRONOUN/m_c/poss} murder is known to the Clan."
+                else:
+                    victim_history["revelation_text"] = "The truth of {PRONOUN/m_c/poss} murder was discovered by [discoverer]."
 
                 discoverer = str(other_cat.name)
                 if "clan_discovery" in murder_history:

@@ -1359,11 +1359,11 @@ class ProfileScreen(Screens):
                             found_murder = True  # Update the flag if a matching murder event is found
                             break
 
-                if found_murder and text is not None and not event["revealed"]:
-                    text = event_text_adjust(Cat, event["text"],
-                                             main_cat=self.the_cat,
-                                             random_cat=Cat.fetch_cat(death["involved"]))
-                elif not found_murder:
+                        if found_murder and text is not None and not event["revealed"]:
+                            text = event_text_adjust(Cat, event["text"],
+                                                     main_cat=self.the_cat,
+                                                     random_cat=Cat.fetch_cat(death["involved"]))
+                if not found_murder:
                     text = event_text_adjust(Cat, death["text"],
                                              main_cat=self.the_cat,
                                              random_cat=Cat.fetch_cat(death["involved"]))

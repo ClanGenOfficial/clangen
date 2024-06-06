@@ -344,14 +344,11 @@ def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, 
 
     # will the cat get a new name?
     if "new_name" in attribute_list:
-        print("new cat gets new name")
         new_name = True
     elif "old_name" in attribute_list:
-        print("new cat keeps old name")
         new_name = False
     else:
         new_name = choice([True, False])
-        print("new cat picks whether to keep or lose name randomly")
 
     # STATUS - must be handled before backstories
     status = None
@@ -468,7 +465,6 @@ def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, 
             possible_outsiders.append(cat)
 
         if possible_outsiders:
-            print("found possible new cats that already exist")
             chosen_cat = choice(possible_outsiders)
             game.clan.add_to_clan(chosen_cat)
             chosen_cat.status = status
@@ -477,7 +473,6 @@ def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, 
                 chosen_cat.die()
 
             if new_name:
-                print("existing new cat gets a new name")
                 name = f"{chosen_cat.name.prefix}"
                 spaces = name.count(" ")
                 if choice([1, 2]) == 1 and spaces > 0:  # adding suffix to OG name

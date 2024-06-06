@@ -35,6 +35,7 @@ class HandleShortEvents():
         self.new_cat_objects = []
         self.new_cats: List[List[Cat]] = []
         self.victim_cat = None
+        self.murder_index = None
         self.multi_cat: List = []
         self.dead_cats = []
         self.chosen_herb = None
@@ -64,6 +65,7 @@ class HandleShortEvents():
         # gather main and random cats
         self.main_cat = main_cat
         self.random_cat = random_cat
+        self.victim_cat = None
 
         # reset cat lists
         self.new_cats = []
@@ -94,10 +96,10 @@ class HandleShortEvents():
                 if "is_murderer" in cat_history:
                     murder_history = cat_history["is_murderer"]
                     for murder in murder_history:
-                        murder_index = murder_history.index(murder)
-                        if murder_history[murder_index]["revealed"] is True:
+                        self.murder_index = murder_history.index(murder)
+                        if murder_history[self.murder_index]["revealed"] is True:
                             continue
-                        self.victim_cat = Cat.fetch_cat(murder_history[murder_index]["victim"])
+                        self.victim_cat = Cat.fetch_cat(murder_history[self.murder_index]["victim"])
                         self.sub_types.append("murder_reveal")
                         break
 
@@ -194,6 +196,20 @@ class HandleShortEvents():
 
         # handle injuries and injury history
         self.handle_injury()
+
+        # handle murder reveals
+        if "murder_reveal" in self.chosen_event.sub_type:
+            print("MURDER REVEAL")
+            if "clan_wide" in self.chosen_event.tags:
+                other_cat = None
+            else:
+                other_cat = self.random_cat
+            History.reveal_murder(
+                cat=self.main_cat,
+                other_cat=other_cat,
+                Cat=Cat,
+                victim=self.victim_cat,
+                murder_index=self.murder_index)
 
         # change outsider rep
         if self.chosen_event.outsider:
