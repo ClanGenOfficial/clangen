@@ -163,17 +163,17 @@
         },
         "weight": 20,
         "intro_text": "app1 has been sent out into the mountains to try to find herbs alone.",
-        "decline_text": "Nervous and with an eerie sound on the wind scaring them, they decide to go back to camp with their tail dragging behind them and try again another day.",
+        "decline_text": "Nervous and with an eerie sound on the wind scaring them, {PRONOUN/app1/subject} {VERB/app1/decide/decides} to go back to camp with {PRONOUN/app1/poss} tail dragging behind {PRONOUN/app1/object} and try again another day.",
         "chance_of_success": 65,
         "success_outcomes": [
             {
-                "text": "app1 is focused, determined to prove their independence. They find the herbs easily and bring them back to camp with their head held up high - no sweat, no stress, no fuss.",
+                "text": "app1 is focused, determined to prove {PRONOUN/app1/poss} independence. {PRONOUN/app1/subject/CAP} {VERB/app1/find/finds} the herbs easily and {VERB/app1/bring/brings} them back to camp with {PRONOUN/app1/poss} head held up high - no sweat, no stress, no fuss.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["random_herbs"]
             },
             {
-                "text": "app1 goes to an herb patch they're sure they know, only to find the plants withered and dead. They don't give up, hunting around in the area until they find a smaller overlooked bush that still has leaves on it.",
+                "text": "app1 goes to an herb patch {PRONOUN/app1/subject}{VERB/app1/'re/'s} sure {PRONOUN/app1/subject}{VERB/app1/know/knows}, only to find the plants withered and dead. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} give up, hunting around in the area until {PRONOUN/app1/subject} {VERB/app1/find/finds} a smaller overlooked bush that still has leaves on it.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["random_herbs"]
@@ -181,7 +181,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 goes to an herb patch they're sure they know, only to find the plants withered and dead. They give up and return to camp, their tail dragging miserably along the ground.",
+                "text": "app1 goes to an herb patch {PRONOUN/app1/subject}{VERB/app1/'re/'s} sure {PRONOUN/app1/subject}{VERB/app1/know/knows}, only to find the plants withered and dead. {PRONOUN/app1/subject/CAP} {VERB/app1/give/gives} up and return to camp, {PRONOUN/app1/poss} tail dragging miserably along the ground.",
                 "exp": 0,
                 "weight": 20
             }
