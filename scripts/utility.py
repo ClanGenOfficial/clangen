@@ -479,20 +479,19 @@ def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, 
             if new_name:
                 print("existing new cat gets a new name")
                 name = f"{chosen_cat.name.prefix}"
-                if choice([1, 2]) == 1:  # adding suffix to OG name
-                    spaces = name.count(" ")
-                    if spaces > 0:
-                        # make a list of the words within the name, then add the OG name back in the list
-                        words = name.split(" ")
-                        words.append(name)
-                        new_prefix = choice(words)  # pick new prefix from that list
-                        name = new_prefix
-                        chosen_cat.name.prefix = name
-                        chosen_cat.name.give_suffix(
-                            pelt=chosen_cat.pelt,
-                            biome=game.clan.biome,
-                            tortiepattern=chosen_cat.pelt.tortiepattern
-                        )
+                spaces = name.count(" ")
+                if choice([1, 2]) == 1 and spaces > 0:  # adding suffix to OG name
+                    # make a list of the words within the name, then add the OG name back in the list
+                    words = name.split(" ")
+                    words.append(name)
+                    new_prefix = choice(words)  # pick new prefix from that list
+                    name = new_prefix
+                    chosen_cat.name.prefix = name
+                    chosen_cat.name.give_suffix(
+                        pelt=chosen_cat.pelt,
+                        biome=game.clan.biome,
+                        tortiepattern=chosen_cat.pelt.tortiepattern
+                    )
                 else:  # completely new name
                     chosen_cat.name.give_prefix(
                         eyes=chosen_cat.pelt.eye_colour,
