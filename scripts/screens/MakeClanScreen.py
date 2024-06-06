@@ -521,7 +521,6 @@ class MakeClanScreen(Screens):
         if self.sub_screen == "choose symbol":
             if len(game.switches["disallowed_symbol_tags"]) != self.tag_list_len:
                 self.tag_list_len = len(game.switches["disallowed_symbol_tags"])
-                # print(game.switches["disallowed_symbol_tags"])
                 self.refresh_symbol_list()
 
     def clear_all_page(self):
@@ -865,7 +864,6 @@ class MakeClanScreen(Screens):
                 if tag in game.switches["disallowed_symbol_tags"]:
                     if symbol in symbol_list:
                         symbol_list.remove(symbol)
-        # print(symbol_list)
 
         # separate list into chunks for pages
         symbol_chunks = self.chunks(symbol_list, 45)
