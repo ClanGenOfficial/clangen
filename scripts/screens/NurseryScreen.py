@@ -205,7 +205,7 @@ class NurseryScreen(Screens):
 
         # container for all the cat sprites and names
         self.kits_cat_list_container = pygame_gui.elements.UIAutoResizingContainer(
-            scale(pygame.Rect((25, 100), (0, 0))),
+            scale(pygame.Rect((30, 100), (0, 0))),
             container=self.kits_selection_container,
             starting_height=3,
             object_id="#kits_cat_list",
@@ -274,7 +274,7 @@ class NurseryScreen(Screens):
 
         # container for all the cat sprites and names
         self.adult_cat_list_container = pygame_gui.elements.UIAutoResizingContainer(
-            scale(pygame.Rect((25, 100), (0, 0))),
+            scale(pygame.Rect((30, 100), (0, 0))),
             container=self.adult_selection_container,
             starting_height=3,
             object_id="#adult_cat_list",
