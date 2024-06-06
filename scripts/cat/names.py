@@ -1,13 +1,19 @@
-import random
+"""
+Module that handles the name generation for all cats.
+"""
 import os
+import random
+
 import ujson
 
+from scripts.game_structure.game_essentials import game
 from scripts.housekeeping.datadir import get_save_dir
 
-from scripts.game_structure.game_essentials import game
 
-
-class Name():
+class Name:
+    """
+    Stores & handles name generation.
+    """
     if os.path.exists('resources/dicts/names/names.json'):
         with open('resources/dicts/names/names.json') as read_file:
             names_dict = ujson.loads(read_file.read())
@@ -86,7 +92,7 @@ class Name():
                 name_fixpref = False
 
         if self.suffix and not load_existing_name:
-            # Prevent triple letter names from joining prefix and suffix from occuring (ex. Beeeye)
+            # Prevent triple letter names from joining prefix and suffix from occurring (ex. Beeeye)
             triple_letter = False
             possible_three_letter = (self.prefix[-2:] + self.suffix[0], self.prefix[-1] + self.suffix[:2])
             if all(i == possible_three_letter[0][0] for i in possible_three_letter[0]) or \
@@ -100,10 +106,11 @@ class Name():
             nono_name = self.prefix + self.suffix
             # Prevent double names (ex. Iceice)
             # Prevent suffixes containing the prefix (ex. Butterflyfly)
-            
+
             i = 0
             while nono_name.lower() in self.names_dict["inappropriate_names"] or triple_letter or double_animal or \
-                    (self.prefix.lower() in self.suffix.lower() and not str(self.prefix) == '') or (self.suffix.lower() in self.prefix.lower() and not str(self.suffix) == ''):
+                    (self.prefix.lower() in self.suffix.lower() and not str(self.prefix) == '') or (
+                    self.suffix.lower() in self.prefix.lower() and not str(self.suffix) == ''):
 
                 # check if random die was for prefix
                 if name_fixpref:
@@ -113,11 +120,11 @@ class Name():
 
                 nono_name = self.prefix + self.suffix
                 possible_three_letter = (self.prefix[-2:] + self.suffix[0], self.prefix[-1] + self.suffix[:2])
-                if not (all(i == possible_three_letter[0][0] for i in possible_three_letter[0]) or \
+                if not (all(i == possible_three_letter[0][0] for i in possible_three_letter[0]) or
                         all(i == possible_three_letter[1][0] for i in possible_three_letter[1])):
                     triple_letter = False
-                if not (self.prefix in self.names_dict["animal_prefixes"] and self.suffix in self.names_dict[
-                    "animal_suffixes"]):
+                if not (self.prefix in self.names_dict["animal_prefixes"]
+                        and self.suffix in self.names_dict["animal_suffixes"]):
                     double_animal = False
                 i += 1
 
@@ -133,13 +140,14 @@ class Name():
 
         # Add possible prefix categories to list.
         possible_prefix_categories = []
-        if game.config["cat_name_controls"]["allow_eye_names"]: # game config: cat_name_controls
+        if game.config["cat_name_controls"]["allow_eye_names"]:  # game config: cat_name_controls
             if eyes in self.names_dict["eye_prefixes"]:
                 possible_prefix_categories.append(self.names_dict["eye_prefixes"][eyes])
         if colour in self.names_dict["colour_prefixes"]:
             possible_prefix_categories.append(self.names_dict["colour_prefixes"][colour])
         if biome is not None and biome in self.names_dict["biome_prefixes"]:
             possible_prefix_categories.append(self.names_dict["biome_prefixes"][biome])
+
         # Choose appearance-based prefix if possible and named_after_appearance because True.
         if named_after_appearance and possible_prefix_categories and not named_after_biome_:
             prefix_category = random.choice(possible_prefix_categories)
@@ -174,7 +182,8 @@ class Name():
                 self.suffix = random.choice(self.names_dict["normal_suffixes"])
 
     def __repr__(self):
-        # Handles predefined suffixes (such as newborns being kit), then suffixes based on ages (fixes #2004, just trust me)
+        # Handles predefined suffixes (such as newborns being kit),
+        # then suffixes based on ages (fixes #2004, just trust me)
         if self.status in self.names_dict["special_suffixes"] and not self.specsuffix_hidden:
             return self.prefix + self.names_dict["special_suffixes"][self.status]
         if game.config['fun']['april_fools']:

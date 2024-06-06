@@ -1,14 +1,12 @@
+import os
 import unittest
 
-import os
+from scripts.cat.cats import Cat
+from scripts.cat.thoughts import Thoughts
+
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
-from scripts.cat.thoughts import Thoughts
-
-import ujson
-
-from scripts.cat.cats import Cat
 
 class TestNotWorkingThoughts(unittest.TestCase):
     def setUp(self):
@@ -70,7 +68,6 @@ class TestNotWorkingThoughts(unittest.TestCase):
         self.assertEqual({"test_not_working_any", "test_not_working_true"}, self.available_thought_ids())
 
 
-
 class TestsGetStatusThought(unittest.TestCase):
 
     def test_medicine_thought(self):
@@ -101,8 +98,6 @@ class TestsGetStatusThought(unittest.TestCase):
 
         # load thoughts
         thoughts = Thoughts.load_thoughts(cat, None, "expanded", biome, season, camp)
-        """Prints can be turned back on if testing is needed"""
-        #print("Exiled Thoughts: " + str(thoughts))
 
     def test_lost_thoughts(self):
         # given
@@ -114,8 +109,7 @@ class TestsGetStatusThought(unittest.TestCase):
 
         # load thoughts
         thoughts = Thoughts.load_thoughts(cat, None, "expanded", biome, season, camp)
-        """Prints can be turned back on if testing is needed"""
-        #print("Lost Thoughts: " + str(thoughts))
+
 
 class TestFamilyThoughts(unittest.TestCase):
 
@@ -146,4 +140,3 @@ class TestFamilyThoughts(unittest.TestCase):
         # when
 
         # then
-

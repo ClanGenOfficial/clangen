@@ -332,7 +332,7 @@
         "event_text": "c_n is in a badly need of herbs, and m_c knows it, but can't bring {PRONOUN/m_c/self} to leave {PRONOUN/m_c/poss} patients' side."
     },
     {
-        "camp": "Any",
+        "camp": "any",
         "tags": [
             "medicine_cat",
             "medicine_cat_app",

@@ -1,15 +1,16 @@
+import os
 import unittest
 from unittest.mock import patch
 
-import os
+from scripts.cat.cats import Cat
+from scripts.cat_relations.relationship import Relationship
+from scripts.clan import Clan
+from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
+from scripts.events_module.relationship.romantic_events import Romantic_Events
+
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
-from scripts.cat_relations.relationship import Relationship
-from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
-from scripts.events_module.relationship.romantic_events import Romantic_Events
-from scripts.cat.cats import Cat
-from scripts.clan import Clan
 
 class CanHaveKits(unittest.TestCase):
     def test_prevent_kits(self):
@@ -18,37 +19,38 @@ class CanHaveKits(unittest.TestCase):
         cat.no_kits = True
 
         # then
-        self.assertFalse(Pregnancy_Events.check_if_can_have_kits(cat,single_parentage=True, allow_affair=True))
+        self.assertFalse(Pregnancy_Events.check_if_can_have_kits(cat, single_parentage=True, allow_affair=True))
 
     @patch('scripts.events_module.relationship.pregnancy_events.Pregnancy_Events.check_if_can_have_kits')
     def test_no_kit_setting(self, check_if_can_have_kits):
         # given
         test_clan = Clan(name="clan")
         test_clan.pregnancy_data = {}
-        cat1 = Cat(gender = 'female')
+        cat1 = Cat(gender='female')
         cat1.no_kits = True
-        cat2 = Cat(gender = 'male')
+        cat2 = Cat(gender='male')
 
         cat1.mate.append(cat2.ID)
         cat2.mate.append(cat1.ID)
-        relation1 = Relationship(cat1, cat2,mates=True,family=False,romantic_love=100)
-        relation2 = Relationship(cat2, cat1,mates=True,family=False,romantic_love=100)
+        relation1 = Relationship(cat1, cat2, mates=True, family=False, romantic_love=100)
+        relation2 = Relationship(cat2, cat1, mates=True, family=False, romantic_love=100)
         cat1.relationships[cat2.ID] = relation1
         cat2.relationships[cat1.ID] = relation2
 
         # when
         check_if_can_have_kits.return_value = True
-        Pregnancy_Events.handle_having_kits(cat=cat1,clan=test_clan)
+        Pregnancy_Events.handle_having_kits(cat=cat1, clan=test_clan)
 
         # then
         self.assertNotIn(cat1.ID, test_clan.pregnancy_data.keys())
+
 
 class SameSexAdoptions(unittest.TestCase):
     def test_kits_are_adopted(self):
         # given
 
-        cat1 = Cat(gender = 'female', age = "adult", moons=40)
-        cat2 = Cat(gender = 'female', age = "adult", moons=40)
+        cat1 = Cat(gender='female', age="adult", moons=40)
+        cat2 = Cat(gender='female', age="adult", moons=40)
         cat1.mate.append(cat2.ID)
         cat2.mate.append(cat1.ID)
 
@@ -69,17 +71,18 @@ class SameSexAdoptions(unittest.TestCase):
         self.assertTrue(can_have_kits)
         self.assertTrue(kits_are_adopted)
 
+
 class Pregnancy(unittest.TestCase):
     @patch('scripts.events_module.relationship.pregnancy_events.Pregnancy_Events.check_if_can_have_kits')
     def test_single_cat_female(self, check_if_can_have_kits):
         # given
         clan = Clan(name="clan")
-        cat = Cat(gender = 'female')
+        cat = Cat(gender='female')
         clan.pregnancy_data = {}
 
         # when
         check_if_can_have_kits.return_value = True
-        Pregnancy_Events.handle_zero_moon_pregnant(cat,None,clan)
+        Pregnancy_Events.handle_zero_moon_pregnant(cat, None, clan)
 
         # then
         self.assertIn(cat.ID, clan.pregnancy_data.keys())
@@ -88,18 +91,19 @@ class Pregnancy(unittest.TestCase):
     def test_pair(self, check_if_can_have_kits):
         # given
         clan = Clan(name="clan")
-        cat1 = Cat(gender = 'female')
-        cat2 = Cat(gender = 'male')
+        cat1 = Cat(gender='female')
+        cat2 = Cat(gender='male')
 
         clan.pregnancy_data = {}
 
         # when
         check_if_can_have_kits.return_value = True
-        Pregnancy_Events.handle_zero_moon_pregnant(cat1,cat2,clan)
+        Pregnancy_Events.handle_zero_moon_pregnant(cat1, cat2, clan)
 
         # then
         self.assertIn(cat1.ID, clan.pregnancy_data.keys())
         self.assertEqual(clan.pregnancy_data[cat1.ID]["second_parent"], cat2.ID)
+
 
 class Mates(unittest.TestCase):
     def test_platonic_kitten_mating(self):
@@ -107,8 +111,8 @@ class Mates(unittest.TestCase):
         cat1 = Cat(moons=3)
         cat2 = Cat(moons=3)
 
-        relationship1 = Relationship(cat1,cat2)
-        relationship2 = Relationship(cat2,cat1)
+        relationship1 = Relationship(cat1, cat2)
+        relationship2 = Relationship(cat2, cat1)
         relationship1.opposite_relationship = relationship2
         relationship2.opposite_relationship = relationship1
         cat1.relationships[cat2.ID] = relationship1
@@ -119,15 +123,15 @@ class Mates(unittest.TestCase):
         relationship2.platonic_like = 100
 
         # then
-        self.assertFalse(Romantic_Events.check_if_new_mate(cat1,cat2)[0])
+        self.assertFalse(Romantic_Events.check_if_new_mate(cat1, cat2)[0])
 
     def test_platonic_apprentice_mating(self):
         # given
         cat1 = Cat(moons=6)
         cat2 = Cat(moons=6)
 
-        relationship1 = Relationship(cat1,cat2)
-        relationship2 = Relationship(cat2,cat1)
+        relationship1 = Relationship(cat1, cat2)
+        relationship2 = Relationship(cat2, cat1)
         relationship1.opposite_relationship = relationship2
         relationship2.opposite_relationship = relationship1
         cat1.relationships[cat2.ID] = relationship1
@@ -138,15 +142,15 @@ class Mates(unittest.TestCase):
         relationship2.platonic_like = 100
 
         # then
-        self.assertFalse(Romantic_Events.check_if_new_mate(cat1,cat2)[0])
+        self.assertFalse(Romantic_Events.check_if_new_mate(cat1, cat2)[0])
 
     def test_romantic_kitten_mating(self):
         # given
         cat1 = Cat(moons=3)
         cat2 = Cat(moons=3)
 
-        relationship1 = Relationship(cat1,cat2)
-        relationship2 = Relationship(cat2,cat1)
+        relationship1 = Relationship(cat1, cat2)
+        relationship2 = Relationship(cat2, cat1)
         relationship1.opposite_relationship = relationship2
         relationship2.opposite_relationship = relationship1
         cat1.relationships[cat2.ID] = relationship1
@@ -157,15 +161,15 @@ class Mates(unittest.TestCase):
         relationship2.romantic_love = 100
 
         # then
-        self.assertFalse(Romantic_Events.check_if_new_mate(cat1,cat2)[0])
+        self.assertFalse(Romantic_Events.check_if_new_mate(cat1, cat2)[0])
 
     def test_romantic_apprentice_mating(self):
         # given
         cat1 = Cat(moons=6)
         cat2 = Cat(moons=6)
 
-        relationship1 = Relationship(cat1,cat2)
-        relationship2 = Relationship(cat2,cat1)
+        relationship1 = Relationship(cat1, cat2)
+        relationship2 = Relationship(cat2, cat1)
         relationship1.opposite_relationship = relationship2
         relationship2.opposite_relationship = relationship1
         cat1.relationships[cat2.ID] = relationship1
@@ -176,4 +180,4 @@ class Mates(unittest.TestCase):
         relationship2.romantic_love = 100
 
         # then
-        self.assertFalse(Romantic_Events.check_if_new_mate(cat1,cat2)[0])
+        self.assertFalse(Romantic_Events.check_if_new_mate(cat1, cat2)[0])

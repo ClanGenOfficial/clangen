@@ -2,7 +2,7 @@
     {
         "patrol_id": "dst_train_session1",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "train_general_intro",
@@ -50,7 +50,7 @@
     {
         "patrol_id": "dst_train_sett1",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "train_general_intro",
@@ -130,7 +130,7 @@
     {
         "patrol_id": "dst_train_sett2",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "train_general_intro",
@@ -205,7 +205,7 @@
     {
         "patrol_id": "dst_train_stuck1",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "train_general_intro",
@@ -302,7 +302,7 @@
                 ]
             },
             {
-                "text": "Harshly, s_c tells their Clanmate that they're on their own - this patrol is too important to wait for some idiot who got stuck.",
+                "text": "Harshly, s_c tells their Clanmate that they're on their own - this patrol is too important to wait for some mouse-brain who got stuck.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -350,7 +350,7 @@
     {
         "patrol_id": "dst_train_stuck2",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "train_general_intro",
@@ -447,7 +447,7 @@
                 ]
             },
             {
-                "text": "Harshly, s_c tells r_c that they're on their own - this patrol is too important to wait for some idiot who got stuck.",
+                "text": "Harshly, s_c tells r_c that they're on their own - this patrol is too important to wait for some mouse-brain who got stuck.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -495,7 +495,7 @@
     {
         "patrol_id": "dst_train_stuck3",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "train_general_intro",
@@ -539,7 +539,7 @@
     {
         "patrol_id": "dst_train_soloapp1",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "train_general_intro",
@@ -554,7 +554,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "At least this is a good chance to learn the territory! r_c heads off to map out the paths through a rocky maze they've always found confusing.",
+                "text": "At least this is a good chance to learn the territory! r_c heads off to map out the paths through a rocky maze {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing.",
                 "exp": 20,
                 "weight": 20
             },
@@ -596,7 +596,7 @@
     {
         "patrol_id": "dst_train_solo2",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "train_general_intro",
@@ -604,12 +604,12 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "r_c heads out into the desert alone, wanting to explore and have some time to themselves.",
-        "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
+        "intro_text": "r_c heads out into the desert alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out the paths through a rocky maze they've always found confusing. Hunting, fighting, driving off predators, it all requires knowledge of their home turf, it's always worth making sure their mental map is up to date.",
+                "text": "r_c heads off to map out the paths through a rocky maze {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of {PRONOUN/r_c/poss} home turf, and it's always worth making sure {PRONOUN/r_c/poss} mental map is up to date.",
                 "exp": 20,
                 "weight": 20
             },
@@ -625,7 +625,7 @@
                 "stat_skill": ["CLEVER,1"]
             },
             {
-                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way.",
+                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} last passed this way.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -657,7 +657,7 @@
     {
         "patrol_id": "desert_train_solo3",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "train_general_intro",
@@ -667,28 +667,28 @@
             "deputy": [1, 6]
         },
         "weight": 20,
-        "intro_text": "r_c heads out into the desert alone, wanting to explore and have some time to themselves.",
-        "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
+        "intro_text": "r_c heads out into the desert alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out the paths through a rocky maze they've always found confusing. Hunting, fighting, driving off predators, it all requires knowledge of their home turf, it's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
+                "text": "r_c heads off to map out the paths through a rocky maze {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of {PRONOUN/r_c/poss} home turf, and it's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels a little like more work though and isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
                 "exp": 20,
                 "weight": 20
             },
             {
-                "text": "r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Purring, they take the opportunity for a small moment of peace, relaxing and enjoying the view.",
+                "text": "r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a moment of peace, relaxing and enjoying the view.",
                 "exp": 20,
                 "weight": 5
             },
             {
-                "text": "r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Further investigation shows it's springfed, and s_c purrs. This reliable water source will be important during baking hot greenleaf, there's a relief to discovering it.",
+                "text": "r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Further investigation shows it's springfed, and s_c purrs. This reliable water source will be important during baking hot greenleaf; there's a relief to the discovery.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"]
             },
             {
-                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way.",
+                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} last passed this way.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -720,7 +720,7 @@
     {
         "patrol_id": "dst_train_solo4",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "train_general_intro",
@@ -730,28 +730,28 @@
             "leader": [1, 6]
         },
         "weight": 20,
-        "intro_text": "r_c heads out into the desert alone, wanting to explore and have some time to themselves.",
-        "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
+        "intro_text": "r_c heads out into the desert alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out the paths through a rocky maze they've always found confusing. Hunting, fighting, driving off predators, it all requires knowledge of their home turf, it's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
+                "text": "r_c heads off to map out the paths through a rocky maze {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of {PRONOUN/r_c/poss} home turf, and it's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels a little like more work though and isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
                 "exp": 20,
                 "weight": 20
             },
             {
-                "text": "r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Purring, they take the opportunity for a small moment of peace, relaxing and enjoying the view.",
+                "text": "r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a moment of peace, relaxing and enjoying the view.",
                 "exp": 20,
                 "weight": 5
             },
             {
-                "text": "r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Further investigation shows it's springfed, and s_c purrs. This reliable water source will be important during baking hot greenleaf, there's a relief to discovering it.",
+                "text": "r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Further investigation shows it's springfed, and s_c purrs. This reliable water source will be important during baking hot greenleaf; there's a relief to the discovery.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"]
             },
             {
-                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way.",
+                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} last passed this way.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -783,7 +783,7 @@
     {
         "patrol_id": "dst_train_oasisswim1",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": ["rom_two_apps", "romantic"],
         "patrol_art": "train_general_intro",
@@ -827,7 +827,7 @@
                 ]
             },
             {
-                "text": "When s_c shows app2 the hidden pool they've found, app2 can barely believe it! Stuttering but determined, s_c explains that they wondered if, possibly, maybe, app2 would like to go on a... date? app2 looks away with a purr and murmurs a soft yes to the ground, suddenly unable to make eye contact. They swim and bask in the sun together, quietly thrilled.",
+                "text": "When s_c shows app2 the hidden pool they've found, app2 can barely believe it! Stuttering but determined, s_c explains that they wondered if, possibly, maybe, app2 would like to hang out... just the two of them? app2 looks away with a purr and mumbles a soft yes to the ground, suddenly unable to make eye contact. They swim and bask in the sun together, quietly thrilled.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -867,7 +867,7 @@
                 ]
             },
             {
-                "text": "app2 stops them on the rocky path, and asks why app1 wanted to wander off into the wilderness so badly. app1 stutters out some nonsense about hunting, and then runs off into the desert.",
+                "text": "app2 stops them on the rocky path, and asks why app1 wanted to wander off into the wilderness so badly. app1 stutters out some nonsense about hunting and then runs off into the desert.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -885,7 +885,7 @@
     {
         "patrol_id": "dst_train_glowingscorpians1",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": ["rom_two_apps", "romantic"],
         "patrol_art": "train_general_intro",
@@ -929,7 +929,7 @@
                 ]
             },
             {
-                "text": "When s_c shows app2 the glowing scorpions, app2 can barely believe it! Stuttering but determined, s_c explains that they wondered if, possibly, maybe, app2 would like to go on a... date? app2 looks away with a purr and murmurs a soft yes to the ground, suddenly unable to make eye contact. They swim and bask in the sun together, quietly thrilled.",
+                "text": "When s_c shows app2 the glowing scorpions, app2 can barely believe it! Stuttering but determined, s_c explains that they wondered if, possibly, maybe, app2 would like to hang out... just the two of them? app2 looks away with a purr and mumbles a soft yes to the ground, suddenly unable to make eye contact. They swim and bask in the sun together, quietly thrilled.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -969,7 +969,7 @@
                 ]
             },
             {
-                "text": "app2 stops them on the outlook, and asks why app1 wanted to wander off into the wilderness so badly. app1 stutters out some nonsense about hunting, and then runs off into the desert.",
+                "text": "app2 stops them on the outlook, and asks why app1 wanted to wander off into the wilderness so badly. app1 stutters out some nonsense about hunting and then runs off into the desert.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -987,7 +987,7 @@
     {
         "patrol_id": "dst_train_throwsand1",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": ["rom_two_apps", "romantic"],
         "patrol_art": "train_general_intro",
@@ -1031,7 +1031,7 @@
                 ]
             },
             {
-                "text": "When s_c shows app2 the glowing scorpions, app2 can barely believe it! Stuttering but determined, s_c explains that they wondered if, possibly, maybe, app2 would like to go on a... date? app2 looks away with a purr and murmurs a soft yes to the ground, suddenly unable to make eye contact. They swim and bask in the sun together, quietly thrilled.",
+                "text": "When s_c shows app2 the glowing scorpions, app2 can barely believe it! Stuttering but determined, s_c explains that they wondered if, possibly, maybe, app2 would like to hang out... just the two of them? app2 looks away with a purr and mumbles a soft yes to the ground, suddenly unable to make eye contact. They swim and bask in the sun together, quietly thrilled.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -1071,7 +1071,7 @@
                 ]
             },
             {
-                "text": "app2 stops them on the outlook, and asks why app1 wanted to wander off into the wilderness so badly. app1 stutters out some nonsense about hunting, and then runs off into the desert.",
+                "text": "app2 stops them on the outlook, and asks why app1 wanted to wander off into the wilderness so badly. app1 stutters out some nonsense about hunting and then runs off into the desert.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1089,7 +1089,7 @@
     {
         "patrol_id": "dst_train_arguingromance1",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": ["romantic", "pos_jealousy"],
         "patrol_art": "train_general_intro",
@@ -1105,7 +1105,7 @@
         "relationship_constraint": ["dislike_10"],
         "success_outcomes": [
             {
-                "text": "r_c shows {PRONOUN/p_l/object} a stunningly successful move {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been working on to rapidly change directions in deep dry sand, and p_l can't let {PRONOUN/p_l/self} look bad in comparison, showing off {PRONOUN/p_l/poss} battle-back-flip with a smug smirk.",
+                "text": "r_c shows {PRONOUN/p_l/object} a stunningly successful move {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been working on to rapidly change directions in deep dry sand, and p_l can't let {PRONOUN/p_l/self} look bad in comparison, showing off {PRONOUN/p_l/poss} battle backflip with a smug smirk.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -1119,7 +1119,7 @@
                 ]
             },
             {
-                "text": "r_c shows off how far {PRONOUN/r_c/subject} can pounce, which means p_l shows off how fast {PRONOUN/p_l/subject} can run, which means r_c shows off how sharp {PRONOUN/r_c/poss} claws are, which means p_l shows off how shiny {PRONOUN/p_l/poss} pelt is, which means r_c shows off how long {PRONOUN/r_c/poss} legs are, which means p_l shows off how cool {PRONOUN/p_l/poss} scars are - this goes on all afternoon.",
+                "text": "r_c shows off how far {PRONOUN/r_c/subject} can pounce, so p_l shows off how fast {PRONOUN/p_l/subject} can run, so r_c shows off how sharp {PRONOUN/r_c/poss} claws are, so p_l shows off how shiny {PRONOUN/p_l/poss} pelt is, so r_c shows off how long {PRONOUN/r_c/poss} legs are, so p_l shows off how cool {PRONOUN/p_l/poss} scars are - this goes on all afternoon.",
                 "exp": 15,
                 "weight": 5,
                 "relationships": [
@@ -1153,7 +1153,7 @@
     {
         "patrol_id": "dst_train_sunset1",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": ["romantic"],
         "patrol_art": "train_general_intro",
@@ -1169,7 +1169,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "The cats go out together later in the day, as the temperature drops to its best, cool but not cold. r_c goes through their tricks, showing p_l how they use the low slanted light to make tracks more obvious, as p_l watches with eyes that r_c notices are a bit too admiring for what's just a little trick. They smirk, showing off a little.",
+                "text": "The cats go out together later in the day, as the temperature drops to its best, cool but not cold. r_c goes through their tricks, showing p_l how they use the low slanted light to make tracks more obvious, as p_l watches with eyes that r_c notices are a bit too admiring for what's just a little trick. {PRONOUN/r_c/subject/CAP} {VERB/r_c/smirk/smirks}, showing off a little.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
@@ -1183,7 +1183,7 @@
                 ]
             },
             {
-                "text": "it's a long but satisfying training session, with both cats having an in-depth chance to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching them instead of the sun, and smiles.",
+                "text": "it's a long but satisfying training session, and both cats get the chance to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching {PRONOUN/r_c/object} instead of the sunset and smiles.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -1197,7 +1197,7 @@
                 ]
             },
             {
-                "text": "s_c is a fantastic hunter, and p_l isn't shy about telling them so. They blush, but work through it, showing p_l how to use the sandscape to blend into the horizon so that prey won't see their silhouette.",
+                "text": "s_c is a fantastic hunter, and p_l isn't shy about telling {PRONOUN/s_c/object} so. {PRONOUN/s_c/subject/CAP} {VERB/s_c/blush/blushes}, but {VERB/s_c/work/works} through it, showing p_l how to use the sandscape to blend into the horizon so that prey won't see {PRONOUN/p_l/poss} silhouette.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["HUNTER,3"],
@@ -1213,7 +1213,7 @@
                 ]
             },
             {
-                "text": "p_l marvels at the opportunity to have s_c's time to themselves. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so.",
+                "text": "p_l marvels at the opportunity to have s_c's time to {PRONOUN/p_l/self}. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -1240,7 +1240,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c tries, but both the cats are too tired after a long day's work, and end up snapping at each other. It's nothing serious, but both agree to take some time to cool off.",
+                "text": "r_c tries, but both the cats are too tired after a long day's work and end up snapping at each other. It's nothing serious, but both agree to take some time to cool off.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1272,7 +1272,7 @@
     {
         "patrol_id": "dst_train_thewaterwars_lorelocked1",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "gen_bord_story",
@@ -1388,7 +1388,7 @@
     {
         "patrol_id": "dst_train_wilecoyote_storylocked1",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "gen_bord_story",
@@ -1491,7 +1491,7 @@
     {
         "patrol_id": "dst_train_chupacabra_storylocked1",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "gen_bord_story",
@@ -1586,7 +1586,7 @@
     {
         "patrol_id": "dst_train_lizardsunworship_storylorelocked1",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "gen_bord_story",
@@ -1691,7 +1691,7 @@
     {
         "patrol_id": "dst_train_kheprithescarab_storylorelocked1",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "gen_bord_story",
@@ -1805,7 +1805,7 @@
     {
         "patrol_id": "dst_train_fossilsincanyons_storylorelocked1",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "gen_bord_story",

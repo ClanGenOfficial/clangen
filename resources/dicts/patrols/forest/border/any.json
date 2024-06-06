@@ -2,7 +2,7 @@
     {
         "patrol_id": "fst_bord_rogue1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -111,7 +111,7 @@
     {
         "patrol_id": "fst_bord_rogue2",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -193,7 +193,7 @@
     {
         "patrol_id": "fst_bord_rogue3",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -330,7 +330,7 @@
     {
         "patrol_id": "fst_bord_sett1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "fst_bord_sett",
@@ -423,7 +423,7 @@
     {
         "patrol_id": "fst_bord_sett2",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "fst_bord_sett",
@@ -578,7 +578,7 @@
     {
         "patrol_id": "fst_bord_sett3",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "fst_bord_sett",
@@ -733,7 +733,7 @@
     {
         "patrol_id": "fst_bord_trackrogue1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
@@ -809,7 +809,7 @@
                 }
             },
             {
-                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run.",
+                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -830,7 +830,7 @@
     {
         "patrol_id": "fst_bord_trackrogue2",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
@@ -906,7 +906,7 @@
                 }
             },
             {
-                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run.",
+                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -927,7 +927,7 @@
     {
         "patrol_id": "fst_bord_trackrogue3",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
@@ -1015,7 +1015,7 @@
     {
         "patrol_id": "fst_bord_trackrogue4",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
@@ -1134,7 +1134,7 @@
                 ]
             },
             {
-                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run from the patrol.",
+                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run from the patrol.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1164,7 +1164,7 @@
     {
         "patrol_id": "fst_bord_trackrogue5",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
@@ -1283,7 +1283,7 @@
                 ]
             },
             {
-                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run.",
+                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1313,7 +1313,7 @@
     {
         "patrol_id": "fst_bord_trackrogue6",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
@@ -1468,7 +1468,7 @@
     {
         "patrol_id": "fst_bord_trackrogue7",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
@@ -1558,7 +1558,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
+                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment and can't meet the eyes of the rest of the patrol.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1591,7 +1591,7 @@
     {
         "patrol_id": "fst_bord_trackrogue8",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
@@ -1681,7 +1681,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
+                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment and can't meet the eyes of the rest of the patrol.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1714,7 +1714,7 @@
     {
         "patrol_id": "fst_bord_trackrogue9",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
@@ -1759,7 +1759,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, and can't meet the eyes of the rest of the patrol. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't want to look dumb in front of other cats.",
+                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment and can't meet the eyes of the rest of the patrol. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't want to look dumb in front of other cats.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1810,7 +1810,7 @@
     {
         "patrol_id": "fst_bord_story1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_story",
@@ -1916,7 +1916,7 @@
     {
         "patrol_id": "fst_bord_flatwoods1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["halloween"],
         "patrol_art": "flatwoods_INTRO",
@@ -1950,8 +1950,8 @@
     },
     {
         "patrol_id": "fst_bord_bigfoot",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["halloween"],
         "patrol_art": "bigfoot_INTRO",
@@ -1980,7 +1980,7 @@
     {
         "patrol_id": "fst_bord_doverdemon",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["halloween"],
         "patrol_art": "doverdemon_INTRO",
@@ -2019,10 +2019,10 @@
 	{
         "patrol_id": "fst_bord_dog1",
         "biome": [
-            "Any"
+            "any"
         ],
         "season": [
-            "Any"
+            "any"
         ],
         "types": [
             "border"
@@ -2191,10 +2191,10 @@
 	{
         "patrol_id": "fst_bord_dog2",
         "biome": [
-            "Any"
+            "any"
         ],
         "season": [
-            "Any"
+            "any"
         ],
         "types": [
             "border"
@@ -2434,10 +2434,10 @@
 	{
         "patrol_id": "fst_bord_dog3",
         "biome": [
-            "Any"
+            "any"
         ],
         "season": [
-            "Any"
+            "any"
         ],
         "types": [
             "border"
@@ -2677,10 +2677,10 @@
 	{
         "patrol_id": "fst_bord_smalldog1",
         "biome": [
-            "Any"
+            "any"
         ],
         "season": [
-            "Any"
+            "any"
         ],
         "types": [
             "border"
@@ -2857,10 +2857,10 @@
 	{
         "patrol_id": "fst_bord_smalldog2",
         "biome": [
-            "Any"
+            "any"
         ],
         "season": [
-            "Any"
+            "any"
         ],
         "types": [
             "border"
@@ -2976,10 +2976,10 @@
     },{
         "patrol_id": "fst_bord_smalldog3",
         "biome": [
-            "Any"
+            "any"
         ],
         "season": [
-            "Any"
+            "any"
         ],
         "types": [
             "border"

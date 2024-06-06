@@ -2,7 +2,7 @@
     {
         "patrol_id": "wtlnd_bord_soloneutral1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -78,7 +78,7 @@
     {
         "patrol_id": "wtlnd_bord_soloneutral2",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -167,7 +167,7 @@
     {
         "patrol_id": "wtlnd_bord_soloneutral3",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -256,7 +256,7 @@
     {
         "patrol_id": "wtlnd_bord_soloneutral4",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -318,7 +318,7 @@
     {
         "patrol_id": "wtlnd_bord_soloneutral5",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -380,7 +380,7 @@
     {
         "patrol_id": "wtlnd_bord_soloally1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -458,7 +458,7 @@
     {
         "patrol_id": "wtlnd_bord_soloally2",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -536,7 +536,7 @@
     {
         "patrol_id": "wtlnd_bord_soloally3",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -614,7 +614,7 @@
     {
         "patrol_id": "wtlnd_bord_soloally4",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -682,7 +682,7 @@
     {
         "patrol_id": "wtlnd_bord_soloally5",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -750,7 +750,7 @@
     {
         "patrol_id": "wtlnd_bord_solohostile1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -849,7 +849,7 @@
     {
         "patrol_id": "wtlnd_bord_solohostile2",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -959,7 +959,7 @@
     {
         "patrol_id": "wtlnd_bord_solohostile3",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -1069,7 +1069,7 @@
     {
         "patrol_id": "wtlnd_bord_solohostile4",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -1127,7 +1127,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "r_c finds a o_c_n patrol out marking the same border and can't contain {PRONOUN/r_c/poss} hostility. Eventually the other patrol snaps, and r_c doesn't make it back to camp. {PRONOUN/r_c/poss} body is found along the border, and o_c_n boasts about it at the next Gathering.",
+                "text": "r_c finds a o_c_n patrol out marking the same border and can't contain {PRONOUN/r_c/poss} hostility. Eventually the other patrol snaps, and r_c doesn't make it back to camp. {PRONOUN/r_c/poss/CAP} body is found along the border, and o_c_n boasts about it at the next Gathering.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -1142,7 +1142,7 @@
     {
         "patrol_id": "wtlnd_bord_solohostile5",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["other_clan"],
         "patrol_art": "bord_general_intro",
@@ -1215,7 +1215,7 @@
     {
         "patrol_id": "wtlnd_bord_abandontwoleg1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["disaster", "new_cat"],
         "patrol_art": "gen_bord_abandontwolegdis",
@@ -1264,7 +1264,7 @@
     {
         "patrol_id": "wtlnd_bord_abandontwoleg2",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["disaster", "new_cat"],
         "patrol_art": "gen_bord_abandontwolegdis",
@@ -1315,7 +1315,7 @@
     {
         "patrol_id": "wtlnd_bord_flashflood1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -1408,7 +1408,7 @@
     {
         "patrol_id": "wtlnd_bord_flashflood2",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -1501,7 +1501,7 @@
     {
         "patrol_id": "wtlnd_bord_flashflood3",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -1595,7 +1595,7 @@
     {
         "patrol_id": "wtlnd_bord_trackrogue1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -1674,7 +1674,7 @@
     {
         "patrol_id": "wtlnd_bord_trackrogue2",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -1753,7 +1753,7 @@
     {
         "patrol_id": "wtlnd_bord_trackrogue3",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -1823,7 +1823,7 @@
     {
         "patrol_id": "wtlnd_bord_trackrogue4",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -1892,7 +1892,7 @@
     {
         "patrol_id": "wtlnd_bord_trackrogue5",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -1961,7 +1961,7 @@
     {
         "patrol_id": "wtlnd_bord_trackrogue6",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -2021,7 +2021,7 @@
     {
         "patrol_id": "wtlnd_bord_trackrogue7",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -2075,7 +2075,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
+                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment and can't meet the eyes of the rest of the patrol.",
                 "exp": 0,
                 "weight": 20
             },
@@ -2090,7 +2090,7 @@
     {
         "patrol_id": "wtlnd_bord_trackrogue8",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -2144,7 +2144,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
+                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment and can't meet the eyes of the rest of the patrol.",
                 "exp": 0,
                 "weight": 20
             },
@@ -2159,7 +2159,7 @@
     {
         "patrol_id": "wtlnd_bord_trackrogue9",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -2186,7 +2186,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, and can't meet the eyes of the rest of the patrol. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't want to look dumb in front of other cats.",
+                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment and can't meet the eyes of the rest of the patrol. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't want to look dumb in front of other cats.",
                 "exp": 0,
                 "weight": 20
             },
@@ -2219,7 +2219,7 @@
     {
         "patrol_id": "wtlnd_bord_story1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",

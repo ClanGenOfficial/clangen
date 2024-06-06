@@ -1,10 +1,12 @@
-import pygame
 import logging
+
+import pygame
 import ujson
+
 logger = logging.getLogger(__name__)
 
 
-class _SoundManager():
+class _SoundManager:
 
     def __init__(self, volume: int = 50):
         self.sounds = {}
@@ -25,11 +27,9 @@ class _SoundManager():
         for sound in sound_data:
             try:
                 if "name" in sound:
-                    self.sounds[sound["name"]] = pygame.mixer.Sound(
-                        sound["path"])
+                    self.sounds[sound["name"]] = pygame.mixer.Sound(sound["path"])
                 else:
-                    self.sounds[sound["path"]] = pygame.mixer.Sound(
-                        sound["path"])
+                    self.sounds[sound["path"]] = pygame.mixer.Sound(sound["path"])
             except:
                 logger.exception("Failed to load sound")
 
@@ -49,9 +49,9 @@ class _SoundManager():
 
     @volume.setter
     def volume(self, a):
-        if (a > 100):
+        if a > 100:
             new_volume = 100
-        elif (a < 0):
+        elif a < 0:
             new_volume = 0
         new_volume = a / 100
 
