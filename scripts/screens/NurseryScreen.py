@@ -31,6 +31,9 @@ class NurseryScreen(Screens):
         self.kits_selection_elements = {}
         self.kits_cat_buttons = {}
 
+        self.focus_frame_container = None
+        self.focus_frame_elements = {}
+
     def screen_switches(self):
         """Runs when this screen is switched to."""
 
@@ -58,6 +61,9 @@ class NurseryScreen(Screens):
                     manager=MANAGER)
         except FileNotFoundError:
             print("WARNING: Nursery background images not found.")
+        
+        # FOCUS FRAME
+        self.create_focus_frame()
         
         # ADULT SELECTION
         self.create_adult_selection()
@@ -98,6 +104,7 @@ class NurseryScreen(Screens):
         
         self.adult_selection_container.kill()
         self.kits_selection_container.kill()
+        self.focus_frame_container.kill()
     
     def create_adult_selection(self):
         """
@@ -311,3 +318,21 @@ class NurseryScreen(Screens):
     
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
+    
+    def create_focus_frame(self):
+        """
+        handles the creation of focus_frame_container
+        """
+        self.focus_frame_container = pygame_gui.elements.UIAutoResizingContainer(
+            scale(pygame.Rect((1000, 240), (0, 0))),
+            object_id="#focus_frame_container",
+            starting_height=3,
+            manager=MANAGER)
+        self.focus_frame_elements["frame"] = pygame_gui.elements.UIImage(scale(pygame.Rect((0, 0), (400, 550))),
+                                                                         pygame.image.load(
+                                                                             "resources/images/nursery_focus_frame.png").convert_alpha(),
+                                                                         object_id="#nursery_focus_frame",
+                                                                         container=self.focus_frame_container,
+                                                                         starting_height=1,
+                                                                         manager=MANAGER
+                                                                         )
