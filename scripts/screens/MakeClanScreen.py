@@ -75,8 +75,6 @@ class MakeClanScreen(Screens):
     selected_cat = None
     # Hold which sub-screen we are on
     sub_screen = 'game mode'
-    # Holds which ranks we are currently selecting.
-    choosing_rank = None
     # To hold the images for the sections. Makes it easier to kill them
     elements = {}
     tabs = {}
@@ -101,7 +99,6 @@ class MakeClanScreen(Screens):
         self.biome_selected = None
         self.selected_season = "Newleaf"
         self.symbol_selected = None
-        self.choosing_rank = None
         self.leader = None  # To store the Clan leader before conformation
         self.deputy = None
         self.med_cat = None
@@ -410,7 +407,7 @@ class MakeClanScreen(Screens):
             if old_biome is not None:
                 possible_biomes.remove(old_biome)
             self.biome_selected = choice(possible_biomes)
-            if self.biome_selected == 'Forest':
+            if self.biome_selected in ['Forest', "Mountainous"]:
                 self.selected_camp_tab = randrange(1, 5)
             else:
                 self.selected_camp_tab = randrange(1, 4)
@@ -719,6 +716,8 @@ class MakeClanScreen(Screens):
             self.tabs["tab2"] = UIImageButton(scale(pygame.Rect((180, 430), (308, 60))), "", object_id="#cave_tab"
                                               , manager=MANAGER)
             self.tabs["tab3"] = UIImageButton(scale(pygame.Rect((85, 500), (358, 60))), "", object_id="#crystal_tab"
+                                              , manager=MANAGER)
+            self.tabs["tab4"] = UIImageButton(scale(pygame.Rect((215, 570), (308, 60))), "", object_id="#ruins_tab"
                                               , manager=MANAGER)
         elif self.biome_selected == 'Plains':
             self.tabs["tab1"] = UIImageButton(scale(pygame.Rect((128, 360), (308, 60))), "", object_id="#grasslands_tab"
