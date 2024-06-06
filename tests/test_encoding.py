@@ -16,11 +16,11 @@ Suggested commands to find the offending character:
 file -i old_file.txt
 iconv -cf utf-8 -t ascii -o old_file.txt new_file.txt
 diff old_file.txt new_file.txt"""
-import sys
 import difflib
+import os
+import sys
 import unittest
 
-import os
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
@@ -30,13 +30,15 @@ def test():
     and verify all characters are ascii decodable."""
     failed = False
     failed_files = []
-    for (root, _, files) in os.walk("."):
+    for root, _, files in os.walk("."):
         for file in files:
             if file.endswith(".json") or file.endswith(".py"):
                 path = os.path.join(root, file)
                 with open(path, "r", encoding="utf-8") as handle_utf8:
                     utf_read = handle_utf8.readlines()
-                with open(path, "r", encoding="ascii", errors="replace") as handle_ascii:
+                with open(
+                    path, "r", encoding="ascii", errors="replace"
+                ) as handle_ascii:
                     ascii_read = handle_ascii.readlines()
 
                 # Get difference
@@ -48,7 +50,9 @@ def test():
                     if tmp_output:
                         failed = True
                         failed_files.append(path)
-                        print(f"::error file={path}::File {path} contains non-ascii characters")
+                        print(
+                            f"::error file={path}::File {path} contains non-ascii characters"
+                        )
                         print(f"::group::Diff of {path}")
                         print(tmp_output)
                         print("::endgroup::")
@@ -85,8 +89,8 @@ def fix():
     files = os.environ["FILES"].split(":")
 
     replace = {
-        '\\u2026': "...",  # ellipsis but not the same as ...
-        '\\u00F1': "n",  # n with tilde
+        "\\u2026": "...",  # ellipsis but not the same as ...
+        "\\u00F1": "n",  # n with tilde
         # PLEASE TELL LUNA WHEN YOU FIND MORE THAT BREAK IT
     }
 
@@ -104,7 +108,7 @@ def fix():
 
                 with open(file, "w", encoding="utf-8") as handle:
                     handle.write(content)
-    
+
     if skipped:
         sys.exit(1)  # fail so we tell the runner not to make an empty pr
     sys.exit(0)

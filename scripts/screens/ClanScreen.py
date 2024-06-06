@@ -1,17 +1,17 @@
-import pygame
-import pygame_gui
+import random
 import traceback
 from copy import deepcopy
-import random
 
-from .Screens import Screens
+import pygame
+import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.game_structure.image_button import UISpriteButton, UIImageButton
-from scripts.utility import scale
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y
+from scripts.game_structure.image_button import UISpriteButton, UIImageButton
 from scripts.game_structure.windows import SaveError
+from scripts.utility import scale
+from .Screens import Screens
 
 
 class ClanScreen(Screens):

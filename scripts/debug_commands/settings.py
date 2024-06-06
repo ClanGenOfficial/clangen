@@ -2,8 +2,6 @@ from typing import List
 
 from scripts.debug_commands.command import Command
 from scripts.debug_commands.utils import add_output_line_to_log
-from typing import List
-
 from scripts.game_structure.game_essentials import game
 
 
@@ -81,30 +79,27 @@ class GetCommand(Command):
         if len(args) == 0 or args[0] not in ["game", "switch", "debug"]:
             add_output_line_to_log(f"Usage: {self.name} {self.usage}")
             return
-        
+
         try:
             if args[0] == "game":
                 if len(args) == 1:
                     add_output_line_to_log("Avaliable settings:")
                     for setting, val in game.settings.items():
-                        add_output_line_to_log(
-                            f"  {setting} - {val}")
+                        add_output_line_to_log(f"  {setting} - {val}")
                     return
                 output = game.settings[args[1]]
             elif args[0] == "switch":
                 if len(args) == 1:
                     add_output_line_to_log("Avaliable settings:")
                     for setting, val in game.switches.items():
-                        add_output_line_to_log(
-                            f"  {setting} - {val}")
+                        add_output_line_to_log(f"  {setting} - {val}")
                     return
                 output = game.switches[args[1]]
             elif args[0] == "debug":
                 if len(args) == 1:
                     add_output_line_to_log("Avaliable settings:")
                     for setting, val in game.debug_settings.items():
-                        add_output_line_to_log(
-                            f"  {setting} - {val}")
+                        add_output_line_to_log(f"  {setting} - {val}")
                     return
                 output = game.debug_settings[args[1]]
             else:

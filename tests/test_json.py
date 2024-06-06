@@ -8,11 +8,11 @@ HOWEVER,
  Please keep the raw python script, so it can be run by the tests/encoding_test GitHub action.
 
 """
-import unittest
-import ujson
-
 import os
 import sys
+import unittest
+
+import ujson
 
 
 def test():
