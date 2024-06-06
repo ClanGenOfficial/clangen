@@ -1,23 +1,14 @@
 import logging
-import os
-import platform
-import subprocess
-import traceback
 
 import pygame
 import pygame_gui
-import ujson
 
-from scripts.cat.cats import Cat
 from scripts.clan import Clan
-from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from scripts.game_structure.image_button import UIImageButton
-from scripts.game_structure.windows import DeleteCheck, SaveError
-from scripts.utility import get_text_box_theme, scale, quit  # pylint: disable=redefined-builtin
+from scripts.game_structure.windows import DeleteCheck
+from scripts.utility import get_text_box_theme, scale  # pylint: disable=redefined-builtin
 from .Screens import Screens
-from ..housekeeping.datadir import get_data_dir
-from ..housekeeping.version import get_version_info
 
 logger = logging.getLogger(__name__)
 

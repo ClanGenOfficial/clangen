@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: ascii -*-
 from typing import List, Union
+
 from scripts.patrol.patrol_outcome import PatrolOutcome
 
 

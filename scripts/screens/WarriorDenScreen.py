@@ -9,6 +9,7 @@ from scripts.game_structure.image_button import UIImageButton
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
 from scripts.utility import scale, get_text_box_theme, get_alive_status_cats
 
+
 with open('resources/clansettings.json', 'r', encoding='utf-8') as f:
     settings_dict = ujson.load(f)
 
