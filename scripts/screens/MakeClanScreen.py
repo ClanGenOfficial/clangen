@@ -75,8 +75,6 @@ class MakeClanScreen(Screens):
     selected_cat = None
     # Hold which sub-screen we are on
     sub_screen = 'game mode'
-    # Holds which ranks we are currently selecting.
-    choosing_rank = None
     # To hold the images for the sections. Makes it easier to kill them
     elements = {}
     tabs = {}
@@ -101,7 +99,6 @@ class MakeClanScreen(Screens):
         self.biome_selected = None
         self.selected_season = "Newleaf"
         self.symbol_selected = None
-        self.choosing_rank = None
         self.leader = None  # To store the Clan leader before conformation
         self.deputy = None
         self.med_cat = None
