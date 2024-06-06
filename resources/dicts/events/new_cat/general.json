@@ -5,7 +5,7 @@
         "season": ["any"],
         "sub_type": ["adoption"],
         "weight": 5,
-        "event_text": "A loner leaves {PRONOUN/n_c:0/poss} litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/poss} own.",
+        "event_text": "A loner named n_c:0 leaves {PRONOUN/n_c:0/poss} litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/poss} own.",
         "m_c": {
             "age": ["young adult", "adult", "senior adult", "senior"],
             "status": ["any"]
@@ -30,7 +30,7 @@
         "season": ["any"],
          "sub_type": ["adoption"],
         "weight": 5,
-        "event_text": "A rogue leaves {PRONOUN/n_c:0/poss} litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/poss} own.",
+        "event_text": "A rogue named n_c:0 leaves {PRONOUN/n_c:0/poss} litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/poss} own.",
         "m_c": {
             "age": ["young adult", "adult", "senior adult", "senior"],
             "status": ["any"]
@@ -78,7 +78,7 @@
         "season": ["any"],
          "sub_type": ["adoption"],
         "weight": 5,
-        "event_text": "A kittypet leaves {PRONOUN/n_c:0/poss} litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/poss} own.",
+        "event_text": "A kittypet named n_c:0 leaves {PRONOUN/n_c:0/poss} litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/poss} own.",
         "m_c": {
             "age": ["young adult", "adult", "senior adult", "senior"],
             "status": ["any"]
@@ -306,7 +306,7 @@
         "location": ["any"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "A loner waits on the border for a patrol and, finding one led by m_c, asks to join the Clan. The loner decides to take on a more Clan-like name.",
+        "event_text": "A loner waits on the border for a patrol and, finding one led by m_c, asks to join the Clan. The loner decides to take on a more Clan-like name and is now called n_c:0.",
         "m_c": {
             "status": ["warrior", "deputy", "leader", "medicine cat"]
         },
@@ -351,7 +351,7 @@
         "location": ["any"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "m_c finds a loner named n_c:0, who joins the Clan. The loner decides to take on a more Clan-like name.",
+        "event_text": "m_c finds a loner who asks to join the Clan. The loner decides to take on a more Clan-like name and is now called n_c:0.",
         "m_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
             "status": ["any"]
@@ -374,7 +374,7 @@
         "location": ["any"],
         "season": ["any"],
         "weight": 15,
-        "event_text": "While the Clan has no love for outsiders, sometimes new blood is needed. A patrol lead by m_c heads out and finds a wandering cat to bring into the Clan. The new cat, n_c:0 takes on a more Clan-like name and is now known as n_c:0.",
+        "event_text": "While the Clan has no love for outsiders, sometimes new blood is needed. A patrol lead by m_c heads out and finds a wandering cat to bring into the Clan. The new cat takes on a more Clan-like name and is now known as n_c:0.",
         "m_c": {
             "status": ["leader", "deputy", "warrior"]
         },
@@ -419,7 +419,7 @@
         "location": ["any"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "m_c finds a kittypet named n_c:0, who joins the Clan. The kittypet decides to take on a more Clan-like name.",
+        "event_text": "m_c finds a kittypet who joins the Clan. The kittypet decides to take on a more Clan-like name and is now called n_c:0.",
         "m_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
             "status": ["any"]
@@ -464,7 +464,7 @@
         "location": ["any"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "A kittypet waits on the border for a patrol and, finding one lead by m_c, asks to join the Clan. The kittypet decides to take on a more Clan-like name.",
+        "event_text": "A kittypet waits on the border for a patrol and, finding one lead by m_c, asks to join the Clan. The kittypet decides to take on a more Clan-like name and is now called n_c:0.",
         "m_c": {
             "status": [
                 "leader", "deputy", "warrior", "medicine cat"
@@ -511,7 +511,7 @@
         "location": ["any"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "m_c finds a rogue named n_c:0, who joins the Clan. The rogue decides to take on a more Clan-like name.",
+        "event_text": "m_c finds a rogue who asks to join the Clan. The rogue decides to take on a more Clan-like name and is now called n_c:0.",
         "m_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
             "status": ["any"]
@@ -556,7 +556,7 @@
         "location": ["any"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "A rogue named n_c:0 waits on the border for a patrol and, finding one lead by m_c, asks to join the Clan. The rogue decides to take a new name.",
+        "event_text": "A rogue waits on the border for a patrol and, finding one lead by m_c, asks to join the Clan. The rogue decides to take a new name and is now called n_c:0.",
         "m_c": {
             "status": ["leader", "deputy", "warrior", "medicine cat"]
         },
