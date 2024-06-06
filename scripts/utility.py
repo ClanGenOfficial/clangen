@@ -1459,7 +1459,7 @@ def generate_sprite(
         if game.config["fun"]["all_cats_are_newborn"]:
             cat_sprite = str(cat.pelt.cat_sprites["newborn"])
         else:
-            cat_sprite = str(cat.pelt.cat_sprites[age])
+            cat_sprite = str(cat.pelt.cat_sprites[str(age)])
 
     new_sprite = pygame.Surface(
         (sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA

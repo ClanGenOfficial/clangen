@@ -3,6 +3,7 @@ import unittest
 from copy import deepcopy
 from unittest.mock import patch
 
+from scripts.cat.age import Age
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship
 
@@ -14,27 +15,27 @@ class TestCreationAge(unittest.TestCase):
 
     def test_kitten(self):
         test_cat = Cat(moons=5)
-        self.assertEqual(test_cat.age, "kitten")
+        self.assertEqual(test_cat.age, Age.KITTEN)
 
     def test_adolescent(self):
         test_cat = Cat(moons=6)
-        self.assertEqual(test_cat.age, "adolescent")
+        self.assertEqual(test_cat.age, Age.ADOLESCENT)
 
     def test_young_adult(self):
         test_cat = Cat(moons=12)
-        self.assertEqual(test_cat.age, "young adult")
+        self.assertEqual(test_cat.age, Age.YOUNGADULT)
     
     def test_adult(self):
         test_cat = Cat(moons=48)
-        self.assertEqual(test_cat.age, "adult")
+        self.assertEqual(test_cat.age, Age.ADULT)
 
     def test_senior_adult(self):
         test_cat = Cat(moons=96)
-        self.assertEqual(test_cat.age, "senior adult")
+        self.assertEqual(test_cat.age, Age.SENIORADULT)
 
     def test_elder(self):
         test_cat = Cat(moons=120)
-        self.assertEqual(test_cat.age, "senior")
+        self.assertEqual(test_cat.age, Age.SENIOR)
 
 
 class TestRelativesFunction(unittest.TestCase):

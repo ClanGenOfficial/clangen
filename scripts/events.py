@@ -14,6 +14,7 @@ from collections import Counter
 
 import ujson
 
+from scripts.cat.age import Age
 from scripts.cat.cats import Cat, cat_class, BACKSTORIES
 from scripts.cat.history import History
 from scripts.cat.names import Name
@@ -447,7 +448,7 @@ class Events:
                             ):
                                 invited_cat.status = "medicine cat"
 
-                            elif invited_cat.age in ["newborn", "kitten"]:
+                            elif invited_cat.age in [Age.NEWBORN, Age.KITTEN]:
                                 invited_cat.status = invited_cat.age
                                 if not invited_cat.name.suffix:
                                     invited_cat.name = Name(
@@ -466,9 +467,9 @@ class Events:
                                     )
                                     invited_cat.specsuffix_hidden = False
 
-                            elif invited_cat.age == "senior":
+                            elif invited_cat.age == Age.SENIOR:
                                 invited_cat.status = "elder"
-                            elif invited_cat.age == "adolescent":
+                            elif invited_cat.age == Age.ADOLESCENT:
                                 invited_cat.status = "apprentice"
                                 invited_cat.update_mentor()
                             else:
@@ -1676,7 +1677,7 @@ class Events:
                     self.ceremony(cat, "elder")
 
             # apprentice a kitten to either med or warrior
-            if cat.moons == cat_class.age_moons["adolescent"][0]:
+            if cat.moons == cat_class.age_moons[Age.ADOLESCENT][0]:
                 if cat.status == "kitten":
                     med_cat_list = [
                         i
@@ -1689,7 +1690,7 @@ class Events:
                     has_elder_med = [
                         c
                         for c in med_cat_list
-                        if c.age == "senior" and c.status == "medicine cat"
+                        if c.age == Age.SENIOR and c.status == "medicine cat"
                     ]
 
                     very_old_med = [
@@ -2148,9 +2149,9 @@ class Events:
         chance = acc_chances["base_acc_chance"]
         if cat.status in ["medicine cat", "medicine cat apprentice"]:
             chance += acc_chances["med_modifier"]
-        if cat.age in ["kitten", "adolescent"]:
+        if cat.age in [Age.KITTEN, Age.ADOLESCENT]:
             chance += acc_chances["baby_modifier"]
-        elif cat.age in ["senior adult", "senior"]:
+        elif cat.age in [Age.SENIORADULT, Age.SENIOR]:
             chance += acc_chances["elder_modifier"]
         if cat.personality.trait in [
             "adventurous",
@@ -2214,12 +2215,12 @@ class Events:
             if cat.not_working() and int(random.random() * 3):
                 return
 
-            if cat.age == "kitten":
+            if cat.age == Age.KITTEN:
                 return
 
-            if cat.age == "adolescent":
+            if cat.age == Age.ADOLESCENT:
                 ran = game.config["outside_ex"]["base_adolescent_timeskip_ex"]
-            elif cat.age == "senior":
+            elif cat.age == Age.SENIOR:
                 ran = game.config["outside_ex"]["base_senior_timeskip_ex"]
             else:
                 ran = game.config["outside_ex"]["base_adult_timeskip_ex"]
@@ -2346,8 +2347,8 @@ class Events:
 
         if (
             not int(random.random() * chance)
-            and cat.age != "kitten"
-            and cat.age != "adolescent"
+            and cat.age != Age.KITTEN
+            and cat.age != Age.ADOLESCENT
             and not self.new_cat_invited
         ):
             self.new_cat_invited = True
@@ -2526,7 +2527,7 @@ class Events:
         relationships = cat.relationships.values()
         targets = []
 
-        if cat.age in ["kitten", "newborn"]:
+        if cat.age in [Age.NEWBORN, Age.KITTEN]:
             return
 
         # if this cat is unstable and aggressive, we lower the random murder chance
@@ -2989,9 +2990,9 @@ class Events:
                 return
 
             involved_cats = [cat.ID]
-            if cat.age == "adolescent":
+            if cat.age == Age.ADOLESCENT:
                 transing_chance = random.getrandbits(8)  # 2/256
-            elif cat.age == "young adult":
+            elif cat.age == Age.YOUNGADULT:
                 transing_chance = random.getrandbits(9)  # 2/512
             else:
                 # adult, senior adult, elder

@@ -16,10 +16,11 @@ from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
 from scripts.utility import event_text_adjust, scale, ACC_DISPLAY, process_text, chunks
 from scripts.utility import get_text_box_theme, scale_dimentions, shorten_text_to_fit
-from .Screens import Screens
-from ..cat.history import History
-from ..game_structure.windows import ChangeCatName, KillCat, ChangeCatToggles
-from ..housekeeping.datadir import get_save_dir
+from scripts.screens.Screens import Screens
+from scripts.cat.age import Age
+from scripts.cat.history import History
+from scripts.game_structure.windows import ChangeCatName, KillCat, ChangeCatToggles
+from scripts.housekeeping.datadir import get_save_dir
 
 
 # ---------------------------------------------------------------------------- #
@@ -820,12 +821,12 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # AGE
-        if the_cat.age == "kitten":
+        if the_cat.age == Age.KITTEN:
             output += "young"
-        elif the_cat.age == "senior":
+        elif the_cat.age == Age.SENIOR:
             output += "senior"
         else:
-            output += the_cat.age
+            output += str(the_cat.age)
         # NEWLINE ----------
         output += "\n"
 
@@ -2149,7 +2150,7 @@ class ProfileScreen(Screens):
 
             if (
                 self.the_cat.age
-                not in ["young adult", "adult", "senior adult", "senior"]
+                not in [Age.YOUNGADULT, Age.ADULT, Age.SENIORADULT, Age.SENIOR]
                 or self.the_cat.exiled
                 or self.the_cat.outside
             ):
@@ -2492,7 +2493,7 @@ class ProfileScreen(Screens):
 
         if biome not in available_biome:
             biome = available_biome[0]
-        if the_cat.age == "newborn" or the_cat.not_working():
+        if the_cat.age == Age.NEWBORN or the_cat.not_working():
             biome = "nest"
 
         biome = biome.lower()

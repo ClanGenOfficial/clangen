@@ -2,6 +2,7 @@ import random
 from random import choice
 from re import sub
 
+from scripts.cat.age import Age
 from scripts.cat.sprites import sprites
 from scripts.game_structure.game_essentials import game
 
@@ -208,7 +209,7 @@ class Pelt:
         self.skin = skin
 
     @staticmethod
-    def generate_new_pelt(gender: str, parents: tuple = (), age: str = "adult"):
+    def generate_new_pelt(gender: str, parents: tuple = (), age: Age = Age.ADULT):
         new_pelt = Pelt()
 
         pelt_white = new_pelt.init_pattern_color(parents, gender)
@@ -641,12 +642,12 @@ class Pelt:
         self.cat_sprites['senior adult'] = self.cat_sprites['adult']
 
     def init_scars(self, age):
-        if age == "newborn":
+        if age == Age.NEWBORN:
             return
 
-        if age in ['kitten', 'adolescent']:
+        if age in [Age.KITTEN, Age.ADOLESCENT]:
             scar_choice = random.randint(0, 50)  # 2%
-        elif age in ['young adult', 'adult']:
+        elif age in [Age.YOUNGADULT, Age.ADULT]:
             scar_choice = random.randint(0, 20)  # 5%
         else:
             scar_choice = random.randint(0, 15)  # 6.67%
@@ -661,14 +662,14 @@ class Pelt:
             self.scars.remove('HALFTAIL')
 
     def init_accessories(self, age):
-        if age == "newborn":
+        if age == Age.NEWBORN:
             self.accessory = None
             return
 
         acc_display_choice = random.randint(0, 80)
-        if age in ['kitten', 'adolescent']:
+        if age in [Age.KITTEN, Age.ADOLESCENT]:
             acc_display_choice = random.randint(0, 180)
-        elif age in ['young adult', 'adult']:
+        elif age in [Age.YOUNGADULT, Age.ADULT]:
             acc_display_choice = random.randint(0, 100)
 
         if acc_display_choice == 1:
