@@ -371,7 +371,7 @@
         "location": ["any"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "m_c has collected quite a lot of ticks in {PRONOUN/m_c/poss}, and grumbles about the itchy bites dotted through {PRONOUN/m_c/poss} pelt.",
+        "event_text": "m_c has collected quite a lot of ticks in {PRONOUN/m_c/poss} pelt, and grumbles about the itchy bites dotted throughout.",
         "m_c": {
             "age": [
                 "senior adult",
@@ -4342,38 +4342,6 @@
         ]
     },
     {
-        "event_id": "gen_injury_waterintheirlungs_anymultiage1",
-        "location": ["any"],
-        "season": ["any"],
-        "weight": 20,
-        "event_text": "m_c was dragged out into the ocean by the tide, and inhaled a lot of water before managing to get out. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} been hacking and sputtering ever since.",
-        "m_c": {
-            "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
-            ],
-            "status": ["any"]
-        },
-        "injury": [
-            {
-                "cats": ["m_c"],
-                "injuries": [
-                    "water in their lungs"
-                ]
-            }
-        ],
-        "history": [
-            {
-                "cats": ["m_c"],
-                "reg_death": "m_c died from water-inhalation after being dragged out to sea.",
-                "lead_death": "died from water-inhalation"
-            }
-        ]
-    },
-    {
         "event_id": "gen_injury_snakebite_anymultiage1",
         "location": ["any"],
         "season": ["any"],
@@ -5667,8 +5635,8 @@
     "history": [
       {
           "cats": ["m_c", "r_c"],
-          "scar": "{VERB/m_c/were/was} hurt while defending the fresh-kill pile from rats.",
-          "reg_death": "Died from {PRONOUN/m_c/poss} wounds after defending the fresh-kill pile from rats.",
+          "scar": "m_c {VERB/m_c/were/was} hurt while defending the fresh-kill pile from rats.",
+          "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after defending the fresh-kill pile from rats.",
           "lead_death": "{VERB/m_c/were/was} killed by rats while defending the fresh-kill pile"
       }
     ],
@@ -5698,8 +5666,8 @@
     "history": [
       {
           "cats": ["m_c"],
-          "scar": "{VERB/m_c/were/was} hurt while defending the fresh-kill pile from rats.",
-          "reg_death": "Died from {PRONOUN/m_c/poss} wounds after defending the fresh-kill pile from rats.",
+          "scar": "m_c {VERB/m_c/were/was} hurt while defending the fresh-kill pile from rats.",
+          "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after defending the fresh-kill pile from rats.",
           "lead_death": "{VERB/m_c/were/was} killed by rats while defending the fresh-kill pile"
       }
     ],

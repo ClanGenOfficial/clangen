@@ -479,7 +479,7 @@ class HandleShortEvents():
             cats_affected = block["cats"]
 
             # classic mode only gains scars, not injuries
-            if game.clan.game_mode == "classic":
+            if game.clan.game_mode == "classic" and "scars" in block:
                 for abbr in cats_affected:
                     # MAIN CAT
                     if abbr == "m_c":

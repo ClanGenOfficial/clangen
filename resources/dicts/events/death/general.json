@@ -4892,7 +4892,7 @@
             "any"
         ],
         "sub_type": [ "murder" ],
-        "tags": [],
+        "tags": ["low_lives"],
         "weight": 15,
         "event_text": "m_c was pushed under a monster by r_c.",
         "m_c": {
@@ -5839,7 +5839,8 @@
     "weight": 20,
     "event_text": "m_c was taking some prey from the fresh-kill pile only to find a horde of rats! {PRONOUN/m_c/subject/CAP} called to r_c for help and together they fought off the rats, but m_c didn't survive.",
     "m_c": {
-        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+        "dies": true
         },
     "r_c": {
         "age": ["young adult", "adult", "senior adult", "senior"]

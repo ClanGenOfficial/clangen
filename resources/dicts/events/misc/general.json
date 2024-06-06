@@ -2493,8 +2493,8 @@
     ],
     "relationships": [
       {
-        "cats_to": "n_c:0",
         "cats_from": ["m_c"],
+        "cats_to": ["n_c:0"],
         "mutual": true,
         "values": ["platonic"],
         "amount": 5
