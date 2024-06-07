@@ -1,11 +1,11 @@
+import os
 import unittest
 
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship
-from scripts.patrol.patrol import PatrolEvent, Patrol
 from scripts.clan import Clan
+from scripts.patrol.patrol import PatrolEvent, Patrol
 
-import os
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
