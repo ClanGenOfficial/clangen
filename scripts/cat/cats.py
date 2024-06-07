@@ -13,6 +13,7 @@ from typing import Dict, List, Any
 
 import ujson  # type: ignore
 
+from scripts.cat.enums.status import Status
 from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
@@ -136,7 +137,7 @@ class Cat:
         self,
         prefix=None,
         gender=None,
-        status="newborn",
+        status=Status.NEWBORN,
         backstory="clanborn",
         parent1=None,
         parent2=None,
@@ -153,13 +154,13 @@ class Cat:
     ):
         """Initialise the cat.
 
-        :param prefix: Cat's prefix (e.g. Fire- for Fireheart)
-        :param gender: Cat's gender, default None
-        :param status: Cat's age range, default "newborn"
-        :param backstory: Cat's origin, default "clanborn"
-        :param parent1: ID of parent 1, default None
-        :param parent2: ID of parent 2, default None
-        :param suffix: Cat's suffix (e.g. -heart for Fireheart)
+        :param str prefix: Cat's prefix (e.g. Fire- for Fireheart)
+        :param str gender: Cat's gender, default None
+        :param Status status: Cat's role in the clan, default Rank.NEWBORN
+        :param str backstory: Cat's origin, default "clanborn"
+        :param str parent1: ID of parent 1, default None
+        :param str parent2: ID of parent 2, default None
+        :param str suffix: Cat's suffix (e.g. -heart for Fireheart)
         :param specsuffix_hidden: Whether cat has a special suffix (-kit, -paw, etc.), default False
         :param ID: Cat's unique ID, default None
         :param moons: Cat's age, default None
@@ -187,7 +188,7 @@ class Cat:
 
         # Public attributes
         self.gender = gender
-        self.status = status
+        self.status = Status.str_to_status(status)
         self.backstory = backstory
         self.age = None
         self.skills = CatSkills(skill_dict=skill_dict)
@@ -276,13 +277,13 @@ class Cat:
                     if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
                         self.age = key_age
         else:
-            if status == 'newborn':
+            if status == Status.NEWBORN:
                 self.age = 'newborn'
-            elif status == 'kitten':
+            elif status == Status.KITTEN:
                 self.age = 'kitten'
-            elif status == 'elder':
+            elif status == Status.ELDER:
                 self.age = 'senior'
-            elif status in ['apprentice', 'mediator apprentice', 'medicine cat apprentice']:
+            elif status.is_apprentice_any():
                 self.age = 'adolescent'
             else:
                 self.age = choice(['young adult', 'adult', 'adult', 'senior adult'])
@@ -410,7 +411,7 @@ class Cat:
         :return: None
         """
         # trans cat chances
-        theythemdefault = game.settings["they them default"] 
+        theythemdefault = game.settings["they them default"]
         self.genderalign = self.gender
         trans_chance = randint(0, 50)
         nb_chance = randint(0, 75)
@@ -521,9 +522,9 @@ class Cat:
         May return some additional text to add to the death event.
         """
         if (
-            self.status == "leader"
-            and "pregnant" in self.injuries
-            and game.clan.leader_lives > 0
+                self.status == Status.LEADER
+                and "pregnant" in self.injuries
+                and game.clan.leader_lives > 0
         ):
             self.illnesses.clear()
             self.injuries = {
@@ -537,7 +538,7 @@ class Cat:
 
         # Deal with leader death
         text = ""
-        if self.status == "leader":
+        if self.status == Status.LEADER:
             if game.clan.leader_lives > 0:
                 self.thought = "Was startled to find themself in Silverpelt for a moment... did they lose a life?"
                 return ""
@@ -712,7 +713,7 @@ class Cat:
                     )
 
             # If major grief fails, but there are still very_high or high values,
-            # it can fail to to minor grief. If they have a family relation, bypass the roll.
+            # it can fail to minor grief. If they have a family relation, bypass the roll.
             elif (very_high_values or high_values) and (
                 family_relation != "general" or not int(random() * 5)
             ):
@@ -2582,7 +2583,7 @@ class Cat:
             # if they dead (dead cats have no relationships)
             if self.dead or inter_cat.dead:
                 continue
-            # if they are not outside of the Clan at the same time
+            # if they are not outside the Clan at the same time
             if (
                 self.outside
                 and not inter_cat.outside
@@ -3128,8 +3129,7 @@ class Cat:
                 cat_info = ujson.loads(read_file.read())
                 # If loading cats is attempted before the Clan is loaded, we would need to use this.
         except (
-            AttributeError
-        ):  # NOPE, cats are always loaded before the Clan, so doesn't make sense to throw an error
+            AttributeError):  # NOPE, cats are always loaded before the Clan, so doesn't make sense to throw an error
             with open(
                 get_save_dir()
                 + "/"
@@ -3234,10 +3234,11 @@ class Cat:
 
     @staticmethod
     def rank_order(cat: Cat):
-        if cat.status in Cat.rank_sort_order:
-            return Cat.rank_sort_order.index(cat.status)
-        else:
-            return 0
+        return cat.status
+        # if cat.status in Cat.rank_sort_order:
+        #     return Cat.rank_sort_order.index(cat.status)
+        # else:
+        #     return 0
 
     @staticmethod
     def get_adjusted_age(cat: Cat):
@@ -3719,10 +3720,10 @@ def create_example_cats():
     ]
     for a in range(12):
         if a in e:
-            game.choose_cats[a] = Cat(status="warrior", biome=None)
+            game.choose_cats[a] = Cat(status=Status.WARRIOR, biome=None)
         else:
             game.choose_cats[a] = Cat(
-                status=choice(["kitten", "apprentice", "warrior", "warrior", "elder"]),
+                status=choice([Status.KITTEN, Status.APP, Status.WARRIOR, Status.WARRIOR, Status.ELDER]),
                 biome=None,
             )
         if game.choose_cats[a].moons >= 160:

@@ -2,6 +2,7 @@ import os
 import unittest
 
 from scripts.cat.cats import Cat
+from scripts.cat.enums.status import Status
 from scripts.cat.thoughts import Thoughts
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
@@ -10,8 +11,8 @@ os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 class TestNotWorkingThoughts(unittest.TestCase):
     def setUp(self):
-        self.main = Cat(status="warrior")
-        self.other = Cat(status="warrior")
+        self.main = Cat(status=Status.WARRIOR)
+        self.other = Cat(status=Status.WARRIOR)
         self.biome = "Forest"
         self.season = "Newleaf"
         self.camp = "camp2"
@@ -74,8 +75,8 @@ class TestsGetStatusThought(unittest.TestCase):
         # given
         medicine = Cat()
         warrior = Cat()
-        medicine.status = "medicine cat"
-        warrior.status = "warrior"
+        medicine.status = Status.MEDCAT
+        warrior.status = Status.WARRIOR
         medicine.trait = "bold"
         biome = "Forest"
         season = "Newleaf"
@@ -89,7 +90,7 @@ class TestsGetStatusThought(unittest.TestCase):
 
     def test_exiled_thoughts(self):
         # given
-        cat = Cat(status="exiled", moons=40)
+        cat = Cat(status=Status.EXILED, moons=40)
         cat.exiled = True
         cat.outside = True
         biome = "Forest"
@@ -101,7 +102,7 @@ class TestsGetStatusThought(unittest.TestCase):
 
     def test_lost_thoughts(self):
         # given
-        cat = Cat(status="warrior", moons=40)
+        cat = Cat(status=Status.WARRIOR, moons=40)
         cat.outside = True
         biome = "Forest"
         season = "Newleaf"
