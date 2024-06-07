@@ -11,7 +11,7 @@ from scripts.game_structure.game_essentials import (
     screen_y,
     MANAGER,
 )
-from scripts.game_structure.image_button import UISpriteButton, UIImageButton
+from scripts.game_structure.ui_elements import UISpriteButton, UIImageButton
 from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
 from .Screens import Screens
 

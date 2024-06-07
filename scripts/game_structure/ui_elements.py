@@ -721,6 +721,7 @@ class UICheckbox(UIImageButton):
     """
     Creates a checkbox and allows for easy check and uncheck
     """
+
     def __init__(
             self,
             position: tuple,
@@ -731,7 +732,7 @@ class UICheckbox(UIImageButton):
             visible: bool,
             check: bool,
             manager,
-            ):
+    ):
 
         self.checked = False
 
@@ -758,3 +759,102 @@ class UICheckbox(UIImageButton):
         """
         self.checked = False
         self.change_object_id("#unchecked_checkbox")
+
+
+class DisplayCatList(UIAutoResizingContainer):
+
+    def __init__(
+            self,
+            relative_rect: RectLike,
+            container: UIContainer,
+            starting_height: int,
+            object_id: str,
+            manager,
+            cat_list: list,
+            cats_displayed: int,
+            px_between: int,
+            columns: int,
+            next_button: UIImageButton,
+            prev_button: UIImageButton,
+            current_page: int,
+            tool_tip_name: bool
+    ):
+        self.cat_list = cat_list
+        self.cats_displayed = cats_displayed
+        self.px_between = px_between
+        self.columns = columns
+        self.current_page = current_page
+        self.next_button = next_button
+        self.prev_button = prev_button
+        self.tool_tip_name = tool_tip_name
+
+        self.cat_sprites = {}
+
+        super().__init__(relative_rect=relative_rect, container=container, starting_height=starting_height,
+                         object_id=object_id, manager=manager)
+
+        self.display_cats()
+
+    def update_page(self, page_number):
+        """
+        updates current_page and refreshes the cat display
+        """
+
+        self.current_page = page_number
+        self.display_cats()
+
+    def display_cats(self):
+        cat_chunks = [
+            self.cat_list
+            [x: x + self.cats_displayed]
+            for x
+            in range(0, len(self.cat_list), self.cats_displayed)
+        ]
+
+        self.current_page = max(1, min(self.current_page, len(cat_chunks)))
+
+        self.update_arrow_buttons(cat_chunks)
+
+        display_cats = []
+        if cat_chunks:
+            display_cats = cat_chunks[self.current_page - 1]
+
+        for ele in self.elements:
+            ele.kill()
+
+        pos_x = 0
+        pos_y = 0
+        i = 0
+
+        for kitty in display_cats:
+            self.cat_sprites[f"sprite{i}"] = UISpriteButton(
+                scale(pygame.Rect((pos_x, pos_y), (100, 100))),
+                kitty.sprite,
+                cat_object=kitty,
+                container=self,
+                object_id=f"#sprite{str(i)}",
+                tool_tip_text=str(kitty.name) if self.tool_tip_name else None,
+                starting_height=1
+            )
+
+            # changing position
+            pos_x += self.px_between
+            if pos_x >= ((self.px_between + 100) * i):
+                pos_x = 0
+                pos_y += self.px_between
+
+            i += 1
+
+    def update_arrow_buttons(self, cat_chunks):
+        if len(cat_chunks) <= 1:
+            self.prev_button.disable()
+            self.next_button.disable()
+        elif self.current_page >= len(cat_chunks):
+            self.prev_button.enable()
+            self.next_button.disable()
+        elif self.current_page == 1 and len(cat_chunks) > 1:
+            self.prev_button.disable()
+            self.next_button.enable()
+        else:
+            self.prev_button.enable()
+            self.next_button.enable()

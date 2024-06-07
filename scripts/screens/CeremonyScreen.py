@@ -5,14 +5,14 @@ import pygame_gui
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game, screen_x, MANAGER
-from scripts.game_structure.image_button import UIImageButton
+from scripts.game_structure.ui_elements import UIImageButton
 from scripts.utility import get_text_box_theme
 from scripts.utility import scale
 from .Screens import Screens
 from scripts.utility import get_text_box_theme
 from scripts.cat.cats import Cat
 import pygame_gui
-from scripts.game_structure.image_button import UIImageButton, UIModifiedScrollingContainer
+from scripts.game_structure.ui_elements import UIImageButton, UIModifiedScrollingContainer
 from scripts.game_structure.game_essentials import game, screen_x, MANAGER
 from ..cat.history import History
 
