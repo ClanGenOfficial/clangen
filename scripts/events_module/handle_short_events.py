@@ -429,7 +429,7 @@ class HandleShortEvents():
                         death_history = history_text_adjust(block.get('lead_death'),
                                                             self.other_clan_name, game.clan, self.main_cat)
                     else:
-                        death_history = history_text_adjust(block.get('lead_death'),
+                        death_history = history_text_adjust(block.get('reg_death'),
                                                             self.other_clan_name, game.clan, self.main_cat)
 
                     # handle murder

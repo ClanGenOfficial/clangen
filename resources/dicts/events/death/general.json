@@ -1532,7 +1532,7 @@
         "event_text": "m_c is suddenly struck by a sharp pain in {PRONOUN/m_c/poss} chest. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} found later that day, cold.",
         "m_c": {
             "age": [ "senior" ],
-            "status": ["medicine cat", "mediator", "elder" ],
+            "status": ["medicine cat", "mediator", "elder"],
             "dies": true
         },
         "history": [{
