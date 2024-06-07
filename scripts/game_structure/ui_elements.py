@@ -793,17 +793,20 @@ class DisplayCatList(UIAutoResizingContainer):
         super().__init__(relative_rect=relative_rect, container=container, starting_height=starting_height,
                          object_id=object_id, manager=manager)
 
-        self.display_cats()
+        self._display_cats()
 
-    def update_page(self, page_number):
+    def update_display(self, page_number):
         """
         updates current_page and refreshes the cat display
         """
 
         self.current_page = page_number
-        self.display_cats()
+        self._display_cats()
 
-    def display_cats(self):
+    def _display_cats(self):
+        """
+        creates the cat display
+        """
         cat_chunks = [
             self.cat_list
             [x: x + self.cats_displayed]
@@ -813,7 +816,7 @@ class DisplayCatList(UIAutoResizingContainer):
 
         self.current_page = max(1, min(self.current_page, len(cat_chunks)))
 
-        self.update_arrow_buttons(cat_chunks)
+        self._update_arrow_buttons(cat_chunks)
 
         display_cats = []
         if cat_chunks:
@@ -845,7 +848,10 @@ class DisplayCatList(UIAutoResizingContainer):
 
             i += 1
 
-    def update_arrow_buttons(self, cat_chunks):
+    def _update_arrow_buttons(self, cat_chunks):
+        """
+        enables/disables appropriate arrow buttons
+        """
         if len(cat_chunks) <= 1:
             self.prev_button.disable()
             self.next_button.disable()
