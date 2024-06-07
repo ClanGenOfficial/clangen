@@ -331,7 +331,7 @@ class MakeClanScreen(Screens):
         elif event.ui_element in [self.elements["cat" + str(u)] for u in range(0, 12)]:
             if pygame.key.get_mods() & pygame.KMOD_SHIFT:
                 clicked_cat = event.ui_element.return_cat_object()
-                if clicked_cat.age not in ["newborn", "kitten", "adolescent"]:
+                if not clicked_cat.age.is_underage():
                     self.leader = clicked_cat
                     self.selected_cat = None
                     self.open_choose_deputy()
@@ -355,7 +355,7 @@ class MakeClanScreen(Screens):
         elif event.ui_element in [self.elements["cat" + str(u)] for u in range(0, 12)]:
             if pygame.key.get_mods() & pygame.KMOD_SHIFT:
                 clicked_cat = event.ui_element.return_cat_object()
-                if clicked_cat.age not in ["newborn", "kitten", "adolescent"]:
+                if not clicked_cat.age.is_underage():
                     self.deputy = clicked_cat
                     self.selected_cat = None
                     self.open_choose_med_cat()
@@ -376,7 +376,7 @@ class MakeClanScreen(Screens):
         elif event.ui_element in [self.elements["cat" + str(u)] for u in range(0, 12)]:
             if pygame.key.get_mods() & pygame.KMOD_SHIFT:
                 clicked_cat = event.ui_element.return_cat_object()
-                if clicked_cat.age not in ["newborn", "kitten", "adolescent"]:
+                if not clicked_cat.age.is_underage():
                     self.med_cat = clicked_cat
                     self.selected_cat = None
                     self.open_choose_members()
@@ -647,7 +647,7 @@ class MakeClanScreen(Screens):
                 self.elements["next_step"].enable()
         # Show the error message if you try to choose a child for leader, deputy, or med cat.
         elif self.sub_screen in ["choose leader", "choose deputy", "choose med cat"]:
-            if self.selected_cat.age in ["newborn", "kitten", "adolescent"]:
+            if not self.selected_cat.age.is_underage():
                 self.elements["select_cat"].hide()
                 self.elements["error_message"].show()
             else:

@@ -14,6 +14,8 @@ from sys import exit as sys_exit
 import pygame
 import ujson
 
+from scripts.cat.enums.age import Age
+
 logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache
 from scripts.cat.history import History
@@ -77,7 +79,7 @@ def get_alive_kits(Cat):
     alive_kits = [
         i
         for i in Cat.all_cats.values()
-        if i.age in ["kitten", "newborn"] and not i.dead and not i.outside
+        if i.age.is_kit() and not i.dead and not i.outside
     ]
 
     return alive_kits
@@ -249,7 +251,7 @@ def create_new_cat(
     other_clan: bool = None,
     backstory: bool = None,
     status: str = None,
-    age: int = None,
+    moons: int = None,
     gender: str = None,
     thought: str = "Is looking around the camp with wonder",
     alive: bool = True,
@@ -269,7 +271,7 @@ def create_new_cat(
     :param other_clan: if new cat(s) are from a neighboring clan, set true
     :param backstory: a list of possible backstories.json for the new cat(s) - default: None
     :param status: set as the rank you want the new cat to have - default: None (will cause a random status to be picked)
-    :param age: set the age of the new cat(s) - default: None (will be random or if kit/litter is true, will be kitten.
+    :param moons: set the age of the new cat(s) - default: None (will be random or if kit/litter is true, will be kitten.
     :param gender: set the gender (BIRTH SEX) of the cat - default: None (will be random)
     :param thought: if you need to give a custom "welcome" thought, set it here
     :param alive: set this as False to generate the cat as already dead - default: True (alive)
@@ -294,33 +296,35 @@ def create_new_cat(
     else:
         number_of_cats = choices([2, 3, 4, 5], [5, 4, 1, 1], k=1)[0]
 
-    if not isinstance(age, int):
+    if not isinstance(moons, int):
+        # I would like this section to be looked at by someone - seems like this was made before game settings?
+        # Remove this when reviewed (TODO)
         if status == "newborn":
-            age = 0
+            moons = 0
         elif litter or kit:
-            age = randint(1, 5)
+            moons = randint(1, 5)
         elif status in ("apprentice", "medicine cat apprentice", "mediator apprentice"):
-            age = randint(6, 11)
+            moons = randint(6, 11)
         elif status == "warrior":
-            age = randint(23, 120)
+            moons = randint(23, 120)
         elif status == "medicine cat":
-            age = randint(23, 140)
+            moons = randint(23, 140)
         elif status == "elder":
-            age = randint(120, 130)
+            moons = randint(120, 130)
         else:
-            age = randint(6, 120)
+            moons = randint(6, 120)
 
     # setting status
     if not status:
-        if age == 0:
+        if moons == 0:
             status = "newborn"
-        elif age < 6:
+        elif moons < 6:
             status = "kitten"
-        elif 6 <= age <= 11:
+        elif 6 <= moons <= 11:
             status = "apprentice"
-        elif age >= 12:
+        elif moons >= 12:
             status = "warrior"
-        elif age >= 120:
+        elif moons >= 120:
             status = "elder"
 
     # cat creation and naming time
@@ -332,9 +336,9 @@ def create_new_cat(
             _gender = gender
 
         # other Clan cats, apps, and kittens (kittens and apps get indoctrinated lmao no old names for them)
-        if other_clan or kit or litter or age < 12 and not (loner or kittypet):
+        if other_clan or kit or litter or moons < 12 and not (loner or kittypet):
             new_cat = Cat(
-                moons=age,
+                moons=moons,
                 status=status,
                 gender=_gender,
                 backstory=backstory,
@@ -367,7 +371,7 @@ def create_new_cat(
                         new_prefix = choice(words)  # pick new prefix from that list
                         name = new_prefix
                     new_cat = Cat(
-                        moons=age,
+                        moons=moons,
                         prefix=name,
                         status=status,
                         gender=_gender,
@@ -377,7 +381,7 @@ def create_new_cat(
                     )
                 else:  # completely new name
                     new_cat = Cat(
-                        moons=age,
+                        moons=moons,
                         status=status,
                         gender=_gender,
                         backstory=backstory,
@@ -387,7 +391,7 @@ def create_new_cat(
             # these cats keep their old names
             else:
                 new_cat = Cat(
-                    moons=age,
+                    moons=moons,
                     prefix=name,
                     suffix="",
                     status=status,
@@ -402,7 +406,7 @@ def create_new_cat(
             new_cat.pelt.accessory = accessory
 
         # give apprentice aged cat a mentor
-        if new_cat.age == "adolescent":
+        if new_cat.age.is_adolescent():
             new_cat.update_mentor()
 
         # Remove disabling scars, if they generated.
@@ -440,9 +444,9 @@ def create_new_cat(
                     ]:
                         continue
                     # next part ensures that a kit won't get a condition that takes too long to reveal
-                    age = new_cat.moons
+                    moons = new_cat.moons
                     leeway = 5 - (PERMANENT[condition]["moons_until"] + 1)
-                    if age > leeway:
+                    if moons > leeway:
                         continue
                     possible_conditions.append(condition)
 
@@ -1422,7 +1426,8 @@ def generate_sprite(
     :param no_not_working: If true, never use the not_working lineart.
                     If false, use the cat.not_working() to determine the no_working art.
     """
-
+    # I recognise that I am not knowledgeable enough to pass judgement here
+    # I will need some advice to refactor this because it feels like it could do with improvement
     if life_state is not None:
         age = life_state
     else:
@@ -1454,12 +1459,12 @@ def generate_sprite(
                 cat_sprite = str(15)
     else:
         if age == "elder" and not game.config["fun"]["all_cats_are_newborn"]:
-            age = "senior"
+            age = Age.SENIOR
 
         if game.config["fun"]["all_cats_are_newborn"]:
             cat_sprite = str(cat.pelt.cat_sprites["newborn"])
         else:
-            cat_sprite = str(cat.pelt.cat_sprites[str(age)])
+            cat_sprite = str(cat.pelt.cat_sprites[age])
 
     new_sprite = pygame.Surface(
         (sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA

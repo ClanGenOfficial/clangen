@@ -545,7 +545,7 @@ class SpriteInspectScreen(Screens):
 
         if biome not in available_biome:
             biome = available_biome[0]
-        if the_cat.age == "newborn" or the_cat.not_working():
+        if the_cat.age.is_newborn() or the_cat.not_working():
             biome = "nest"
 
         biome = biome.lower()

@@ -122,7 +122,7 @@ class NewCatEvents:
                                           status=random.choice(["loner", "kittypet"]),
                                           alive=False,
                                           thought=thought,
-                                          age=random.randint(15,120),
+                                          moons=random.randint(15, 120),
                                           outside=True)[0]
             
         for new_cat in created_cats:

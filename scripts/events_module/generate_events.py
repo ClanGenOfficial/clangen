@@ -416,9 +416,9 @@ class GenerateEvents:
                     continue
                 if "other_cat_elder" in event.tags and other_cat.status != "elder":
                     continue
-                if "other_cat_adult" in event.tags and other_cat.age in ["senior", "kitten", "newborn"]:
+                if "other_cat_adult" in event.tags and not other_cat.age.is_adult():
                     continue
-                if "other_cat_kit" in event.tags and other_cat.status not in ['newborn', 'kitten']:
+                if "other_cat_kit" in event.tags and not other_cat.age.is_kit():
                     continue
 
                 if "other_cat_mate" in event.tags and other_cat.ID not in cat.mate:

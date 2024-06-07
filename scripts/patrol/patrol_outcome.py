@@ -1198,7 +1198,7 @@ class PatrolOutcome:
             litter=litter,
             backstory=chosen_backstory,
             status=status,
-            age=age,
+            moons=age,
             gender=gender,
             thought=thought,
             alive=alive,
