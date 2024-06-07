@@ -188,7 +188,7 @@ class Cat:
 
         # Public attributes
         self.gender = gender
-        self.status = Status.str_to_status(status)
+        self.status = status
         self.backstory = backstory
         self.age = None
         self.skills = CatSkills(skill_dict=skill_dict)
