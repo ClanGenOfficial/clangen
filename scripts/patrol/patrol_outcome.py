@@ -8,6 +8,8 @@ from typing import List, Dict, Union, TYPE_CHECKING
 
 import pygame
 
+from scripts.cat.enums.age import Age
+
 if TYPE_CHECKING:
     from scripts.patrol.patrol import Patrol
 
@@ -1086,31 +1088,23 @@ class PatrolOutcome:
                 break
 
         # SET AGE
-        age = None
+        age = Age.NONE
         for _tag in attribute_list:
             match = re.match(r"age:(.+)", _tag)
             if not match:
                 continue
 
-            if match.group(1) in Cat.age_moons:
-                age = randint(
-                    Cat.age_moons[match.group(1)][0], Cat.age_moons[match.group(1)][1]
-                )
+            if match.group(1) in Age:
+                age = Age.get_random_moons_for_age(Age.get_from_string(match))
                 break
 
             # Set same as first mate.
             if match.group(1) == "mate" and give_mates:
-                age = randint(
-                    Cat.age_moons[give_mates[0].age][0],
-                    Cat.age_moons[give_mates[0].age][1],
-                )
+                age = Age.get_random_moons_for_age(give_mates[0].age)
                 break
 
             if match.group(1) == "romance" and give_romance:
-                age = randint(
-                    Cat.age_moons[give_romance[0].age][0],
-                    Cat.age_moons[give_romance[0].age][1],
-                )
+                age = Age.get_random_moons_for_age(give_romance[0].age)
                 break
 
             if match.group(1) == "has_kits":

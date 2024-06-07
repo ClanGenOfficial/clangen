@@ -1,28 +1,23 @@
-from enum import Enum, IntEnum
+from enum import Enum
+from strenum import StrEnum
 from random import randint
 
 from scripts.game_structure.game_essentials import game
 
 
-class Age(IntEnum):
+class Age(StrEnum):
     """Cat age group"""
-    NONE = 0
-    NEWBORN = 1
-    KITTEN = 2
-    ADOLESCENT = 3
-    YOUNGADULT = 4
-    ADULT = 5
-    SENIORADULT = 6
-    SENIOR = 7
+    NONE = "ERROR"
+    NEWBORN = "newborn"
+    KITTEN = "kitten"
+    ADOLESCENT = "adolescent"
+    YOUNGADULT = "young adult"
+    ADULT = "adult"
+    SENIORADULT = "senior adult"
+    SENIOR = "senior"
 
     def __str__(self):
-        """ONLY USE FOR JSONING!"""
-        if self.is_young_adult():
-            return "young adult"
-        elif self.is_senior_adult():
-            return "senior adult"
-        else:
-            return self.name.lower()
+        return self.value
 
     def is_kit(self):
         """True if cat is newborn or kitten"""
@@ -85,6 +80,13 @@ class Age(IntEnum):
     def get_random_moons_for_age(age) -> int:
         age_moon = AgeMoonsRange[age.name]
         return randint(age_moon.value[0], age_moon.value[1])
+
+    @staticmethod
+    def get_from_string(string):
+        if string in Age.value:
+            return Age[string]
+        else:
+            return Age.NONE
 
 class AgeMoonsRange(Enum):
     """Relationship between life stage & moons. DO NOT CALL THIS"""
