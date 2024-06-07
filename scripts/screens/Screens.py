@@ -127,7 +127,12 @@ class Screens():
             manager=MANAGER,
             object_id="#clearing_button",
             starting_height=10),
-
+        "heading": pygame_gui.elements.UITextBox(
+            "",
+            scale(pygame.Rect((610, 54), (390, 70))),
+            visible=False,
+            manager=MANAGER,
+            object_id="#text_box_34_horizcenter_light"),
         "mute": UIImageButton(
             scale(pygame.Rect((1482, 1282), (68, 68))),
             "",
