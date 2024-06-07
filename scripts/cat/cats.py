@@ -240,7 +240,9 @@ class Cat:
 
         # age and status
         if status is None and moons is None:
-            self.age = Age(choice(range(Age.NEWBORN, Age.SENIOR)))
+            self.age = choice([Age.NEWBORN, Age.KITTEN, Age.ADOLESCENT, Age.YOUNGADULT,
+                               Age.ADULT, Age.SENIORADULT, Age.SENIOR])
+            self.moons = Age.get_random_moons_for_age(self.age)
         elif moons is not None:
             self.moons = moons
             self.age = Age.get_age_from_moons(moons)
@@ -254,7 +256,7 @@ class Cat:
             elif status in ['apprentice', 'mediator apprentice', 'medicine cat apprentice']:
                 self.age = Age.ADOLESCENT
             else:
-                self.age = Age(choice(range(Age.YOUNGADULT, Age.SENIORADULT)))
+                self.age = choice([Age.YOUNGADULT, Age.ADULT, Age.SENIORADULT])
             self.moons = Age.get_random_moons_for_age(self.age)
 
         # backstory
